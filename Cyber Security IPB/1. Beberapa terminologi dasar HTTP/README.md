@@ -35,7 +35,18 @@ B. Server
 
 # Contoh Request Method
 
-- Buat file .php (Misalkan method.php)
-- Ketikkan syntax seperti di file method.php
-- Letakkan di server (Misalkan di localhost)
-- Buka dibrowser dan lihat hasilnya
+# Utility HTTP Terminal Linux
+
+- curl
+
+# Method GET
+
+# Cookie
+
+- Extension Chrome : EditThisCookie
+
+# Session
+
+# Method POST
+
+# Inspect Element
