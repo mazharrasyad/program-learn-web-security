@@ -1,4 +1,4 @@
-I. System Web
+# System Web
 
 A. Client
 - Memberikan request ke server
@@ -10,7 +10,7 @@ B. Server
 - Contoh : Apache
 - Bahasa Pemrograman : PHP
 
-II. Melihat Request dan Response
+# Melihat Request dan Response
 
 - Buka Browser
 - Cari menu "Developer tools" di pengaturan atau tekan "Ctrl+Shift+I"
@@ -18,14 +18,14 @@ II. Melihat Request dan Response
 - Ketikkan URL
 - Akan muncul request dan response
 
-III. Status Kode
+# Status Kode
 
 - 200 = Ok
 - 404 = Not Found
 - 403 = Forbidden
 - 500 = Server Error
 
-IV. HTTP Request Method
+# HTTP Request Method
 
 - https://developer.mozilla.org/id/docs/Web/HTTP/Methods
 - Contoh :
@@ -33,13 +33,9 @@ IV. HTTP Request Method
   - Head = Menampilkan header
   - POST = Mengirim data
 
-V. Contoh Request Method
+# Contoh Request Method
 
 - Buat file .php (Misalkan method.php)
-- Ketikkan syntax berikut :
-
-<?php
-
-echo $_SERVER['REQUEST_METHOD'];
-
+- Ketikkan syntax seperti di file method.php
 - Letakkan di server (Misalkan di localhost)
+- Buka dibrowser dan lihat hasilnya
