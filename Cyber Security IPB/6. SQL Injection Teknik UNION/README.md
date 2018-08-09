@@ -12,3 +12,9 @@
 - Mengetahui Nama Kolom
 
 # Hanya Mengetahui Nama Database
+
+- Menggunakan database information_schema
+- Karena menyimpan semua nama table yang ada pada database
+- Karena menyimpan semua nama column yang ada pada database
+
+# Filter Intval
