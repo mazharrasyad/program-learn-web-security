@@ -38,6 +38,7 @@ B. Server
 # Utility HTTP Terminal Linux
 
 - curl
+- View Page Source
 
 # Method GET
 
