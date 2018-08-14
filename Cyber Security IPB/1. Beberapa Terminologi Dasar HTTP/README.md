@@ -35,10 +35,12 @@ B. Server
 
 # Contoh Request Method
 
-# Utility HTTP Terminal Linux
+- Melihat kode html dengan klik kanan pada halaman web dan pilih "View Page Source"
+- Atau tekan "Ctrl+U"
 
-- curl
-- View Page Source
+# curl
+
+- curl <URL>
 
 # Method GET
 
