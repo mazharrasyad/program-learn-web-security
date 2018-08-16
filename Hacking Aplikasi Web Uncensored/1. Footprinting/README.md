@@ -103,3 +103,4 @@
 
 - Informasi tentang alokasi IP tempat dimana host berada
 - Informasi letak server hosting berada
+- http://domainwhitepages.com
