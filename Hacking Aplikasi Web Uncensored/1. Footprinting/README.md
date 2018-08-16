@@ -73,3 +73,11 @@
   - Ketikkan "ping nama-website.ext", Contoh : ping detik.com
   - https://ipaddress.com/ip_lookup/
   - http://domainwhitepages.com
+
+# IP Geolocation
+
+- Informasi lokasi website berdasarkan IP yang dimiliki
+- http://lookupserver.com/country
+- http://lookupserver.com/city
+- https://maxmind.com
+- http://whatsmyip.org/iplocation
