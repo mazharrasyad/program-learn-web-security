@@ -81,3 +81,25 @@
 - http://lookupserver.com/city
 - https://maxmind.com
 - http://whatsmyip.org/iplocation
+
+# Reverse IP
+
+- Informasi website lain yang dihosting pada webserver yang sama
+- https://ipaddress.com/reverse_ip
+- https://yougetsignal.com/tools/web-sites-on-web-server
+- https://viewdns.info/reverseip
+
+# Membedah Server Website
+
+- Hosting merupakan layanan penyewaan tempat website di internet
+- Jenis hosting :
+  - Shared Hosting merupakan hosting yang dalam satu server ditaruh account hosting secara bersama-sama dengan beberapa account hosting lain
+  - Virtual Private Server (VPS) merupakan hosting yang dalam satu server hanya terdapat account hosting sendiri
+  - Dedicated Server merupakan hosting yang disediakan sendiri oleh pengguna atau disewa dari jasa pemilik server pusat
+- Informasi website menggunakan dedicated server atau tidak
+- http://dedicatedornot.com/
+
+# Network Whois
+
+- Informasi tentang alokasi IP tempat dimana host berada
+- Informasi letak server hosting berada
