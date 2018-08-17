@@ -40,13 +40,24 @@ B. Server
 
 # curl
 
+- Dijalankan di command prompt atau terminal
 - curl <URL>
+  - Contoh : curl http://localhost/folder/file.php
+  - Catatan : file.php dapat menggunakan method.php
+- curl <option> <URL>
+  - Contoh : curl -X "POST" http://localhost/folder/file.php
+  - Contoh : curl -X "PUT" -A "Browser Saya" http://localhost/folder/file.php
+- curl <option> <URL?Query>
+  - Contoh : curl -X "PUT" -A "Browser Saya" "http://localhost/folder/file.php?name=admin&age=30"
+  - Contoh : curl -v -X "PUT" "http://localhost/folder/file.php?name=admin&age=30"
+  - Contoh : curl -v -X "PUT" "http://localhost/folder/file.php?name=admin&age=30&x\[0\]=a&x\[1\]=b"
 
 # Method GET
 
 # Cookie
 
 - Extension Chrome : EditThisCookie
+- Aktifkan logs di browser untuk melihat perubahan
 
 # Session
 
