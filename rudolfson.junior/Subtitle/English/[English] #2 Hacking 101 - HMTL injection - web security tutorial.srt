@@ -1,0 +1,668 @@
+1
+00:00:00,089 --> 00:00:02,280
+welcome<font color="#E5E5E5"> ladies and gentlemen to</font><font color="#CCCCCC"> the</font>
+
+2
+00:00:02,280 --> 00:00:05,279
+<font color="#E5E5E5">second video</font><font color="#CCCCCC"> of this tutorial</font><font color="#E5E5E5"> series we</font>
+
+3
+00:00:05,279 --> 00:00:09,719
+will learn about<font color="#E5E5E5"> web security and at the</font>
+
+4
+00:00:09,719 --> 00:00:12,179
+<font color="#E5E5E5">beginning everything you learn here is</font>
+
+5
+00:00:12,179 --> 00:00:14,099
+for securing your<font color="#E5E5E5"> own web applications</font>
+
+6
+00:00:14,099 --> 00:00:16,710
+<font color="#E5E5E5">not to hack anybody else's because</font><font color="#CCCCCC"> this</font>
+
+7
+00:00:16,710 --> 00:00:19,410
+is illegal<font color="#CCCCCC"> and of course</font><font color="#E5E5E5"> I'm not liable</font>
+
+8
+00:00:19,410 --> 00:00:22,170
+for any<font color="#E5E5E5"> special direct or indirect</font>
+
+9
+00:00:22,170 --> 00:00:24,570
+<font color="#E5E5E5">damage for any other damage resulting</font>
+
+10
+00:00:24,570 --> 00:00:26,130
+<font color="#CCCCCC">from the use of the information</font>
+
+11
+00:00:26,130 --> 00:00:30,390
+presented in<font color="#E5E5E5"> this video so just use this</font>
+
+12
+00:00:30,390 --> 00:00:32,540
+information<font color="#E5E5E5"> to make your own</font>
+
+13
+00:00:32,540 --> 00:00:37,050
+applications<font color="#E5E5E5"> better more secure but do</font>
+
+14
+00:00:37,050 --> 00:00:39,510
+not hack anybody else because this is
+
+15
+00:00:39,510 --> 00:00:47,129
+evil and it's<font color="#CCCCCC"> Leu so we start with</font>
+
+16
+00:00:47,129 --> 00:00:49,110
+injections<font color="#E5E5E5"> like in the last video an</font>
+
+17
+00:00:49,110 --> 00:00:51,270
+injection is used by an attacker to
+
+18
+00:00:51,270 --> 00:00:54,059
+introduce or inject code into a
+
+19
+00:00:54,059 --> 00:00:56,969
+vulnerable<font color="#CCCCCC"> computer program</font><font color="#E5E5E5"> and change</font>
+
+20
+00:00:56,969 --> 00:00:59,699
+the<font color="#E5E5E5"> colors of execution</font><font color="#CCCCCC"> so this is the</font>
+
+21
+00:00:59,699 --> 00:01:02,190
+citation from<font color="#CCCCCC"> wikipedia and today we</font>
+
+22
+00:01:02,190 --> 00:01:05,549
+will<font color="#E5E5E5"> learn about HTML injections so what</font>
+
+23
+00:01:05,549 --> 00:01:08,909
+do<font color="#E5E5E5"> we need for an HTML injection we need</font>
+
+24
+00:01:08,909 --> 00:01:12,979
+a<font color="#E5E5E5"> heck ball</font><font color="#CCCCCC"> website or web application</font>
+
+25
+00:01:12,979 --> 00:01:18,150
+which does not try to<font color="#E5E5E5"> figure</font><font color="#CCCCCC"> out which</font>
+
+26
+00:01:18,150 --> 00:01:21,420
+content<font color="#CCCCCC"> gets saved into</font><font color="#E5E5E5"> the database and</font>
+
+27
+00:01:21,420 --> 00:01:25,979
+which<font color="#E5E5E5"> content from the database gets</font>
+
+28
+00:01:25,979 --> 00:01:28,590
+displayed on the web application show<font color="#E5E5E5"> so</font>
+
+29
+00:01:28,590 --> 00:01:32,369
+they don't try<font color="#CCCCCC"> to delete HTML tags</font><font color="#E5E5E5"> or</font>
+
+30
+00:01:32,369 --> 00:01:35,340
+something like<font color="#E5E5E5"> that so we need to store</font>
+
+31
+00:01:35,340 --> 00:01:39,840
+<font color="#E5E5E5">a string in the database through</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> form</font>
+
+32
+00:01:39,840 --> 00:01:44,460
+or a text text input and for example
+
+33
+00:01:44,460 --> 00:01:50,130
+<font color="#E5E5E5">like h1 and closing tag h1 and this</font>
+
+34
+00:01:50,130 --> 00:01:52,680
+string has<font color="#E5E5E5"> to</font><font color="#CCCCCC"> be displayed on the</font>
+
+35
+00:01:52,680 --> 00:01:55,619
+<font color="#CCCCCC">website</font><font color="#E5E5E5"> and it will result in</font><font color="#CCCCCC"> something</font>
+
+36
+00:01:55,619 --> 00:02:01,110
+like we see<font color="#CCCCCC"> here so we try this straight</font>
+
+37
+00:02:01,110 --> 00:02:06,450
+out<font color="#E5E5E5"> on</font><font color="#CCCCCC"> our guestbook ok I will use my</font>
+
+38
+00:02:06,450 --> 00:02:12,360
+<font color="#CCCCCC">guestbook on the</font><font color="#E5E5E5"> on</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> localhost so I</font>
+
+39
+00:02:12,360 --> 00:02:13,890
+go to the guestbook
+
+40
+00:02:13,890 --> 00:02:20,370
+and we try an HTML injection with h1 and
+
+41
+00:02:20,370 --> 00:02:27,540
+h2 and you write<font color="#E5E5E5"> something here</font><font color="#CCCCCC"> give</font>
+
+42
+00:02:27,540 --> 00:02:31,470
+feedback and as we see we<font color="#CCCCCC"> inject it some</font>
+
+43
+00:02:31,470 --> 00:02:37,440
+HTML<font color="#E5E5E5"> here</font><font color="#CCCCCC"> ok this</font><font color="#E5E5E5"> is pretty cool because</font>
+
+44
+00:02:37,440 --> 00:02:41,220
+we can<font color="#CCCCCC"> do some stuff</font><font color="#E5E5E5"> and write in</font>
+
+45
+00:02:41,220 --> 00:02:44,970
+somebody else's name<font color="#E5E5E5"> for example I</font><font color="#CCCCCC"> login</font>
+
+46
+00:02:44,970 --> 00:02:49,050
+as admin a password is admin<font color="#E5E5E5"> 1 2 3 4 and</font>
+
+47
+00:02:49,050 --> 00:02:53,330
+we log in and go to the<font color="#E5E5E5"> secret check</font><font color="#CCCCCC"> ok</font>
+
+48
+00:02:53,330 --> 00:02:56,280
+so then we take a look at the page
+
+49
+00:02:56,280 --> 00:03:03,540
+source<font color="#E5E5E5"> so if we have some chat here and</font>
+
+50
+00:03:03,540 --> 00:03:07,050
+we write something<font color="#CCCCCC"> like</font><font color="#E5E5E5"> my message and</font>
+
+51
+00:03:07,050 --> 00:03:12,200
+then these tags closes<font color="#E5E5E5"> that closing tags</font>
+
+52
+00:03:12,200 --> 00:03:15,570
+<font color="#CCCCCC">get called</font><font color="#E5E5E5"> automatically or edit</font>
+
+53
+00:03:15,570 --> 00:03:19,709
+automatically within<font color="#E5E5E5"> the PHP code</font><font color="#CCCCCC"> so</font>
+
+54
+00:03:19,709 --> 00:03:25,080
+let's try<font color="#E5E5E5"> to do something to write a</font>
+
+55
+00:03:25,080 --> 00:03:30,930
+message<font color="#E5E5E5"> in somebody else's</font><font color="#CCCCCC"> name</font><font color="#E5E5E5"> so I try</font>
+
+56
+00:03:30,930 --> 00:03:35,519
+to copy this code<font color="#CCCCCC"> ok</font>
+
+57
+00:03:35,519 --> 00:03:40,920
+and I post it<font color="#E5E5E5"> inside</font><font color="#CCCCCC"> of here so I</font><font color="#E5E5E5"> can</font>
+
+58
+00:03:40,920 --> 00:03:43,350
+write<font color="#CCCCCC"> my message</font><font color="#E5E5E5"> here</font><font color="#CCCCCC"> hello</font>
+
+59
+00:03:43,350 --> 00:03:46,590
+work hard<font color="#E5E5E5"> this</font><font color="#CCCCCC"> is the</font><font color="#E5E5E5"> message which gets</font>
+
+60
+00:03:46,590 --> 00:03:49,260
+shown as admin then<font color="#E5E5E5"> we make a closing</font>
+
+61
+00:03:49,260 --> 00:03:55,830
+<font color="#CCCCCC">tag two closing tags which is for these</font>
+
+62
+00:03:55,830 --> 00:04:00,150
+<font color="#E5E5E5">two panels here so one for the div with</font>
+
+63
+00:04:00,150 --> 00:04:03,350
+class<font color="#E5E5E5"> column small</font><font color="#CCCCCC"> nine and one for the</font>
+
+64
+00:04:03,350 --> 00:04:08,130
+<font color="#E5E5E5">div with the class panel row</font><font color="#CCCCCC"> ok then we</font>
+
+65
+00:04:08,130 --> 00:04:14,640
+open a<font color="#CCCCCC"> new div battle</font><font color="#E5E5E5"> row difficult as</font>
+
+66
+00:04:14,640 --> 00:04:17,040
+<font color="#E5E5E5">panel row and here we write a different</font>
+
+67
+00:04:17,040 --> 00:04:19,470
+name like<font color="#E5E5E5"> salmon then I say I hate my</font>
+
+68
+00:04:19,470 --> 00:04:22,710
+<font color="#CCCCCC">job for example and we write a message</font>
+
+69
+00:04:22,710 --> 00:04:24,660
+in somebody else's name<font color="#CCCCCC"> which is</font><font color="#E5E5E5"> pretty</font>
+
+70
+00:04:24,660 --> 00:04:27,510
+evil<font color="#E5E5E5"> so let's give it a</font><font color="#CCCCCC"> try</font>
+
+71
+00:04:27,510 --> 00:04:33,210
+and as you see I posted as admin<font color="#E5E5E5"> hello</font>
+
+72
+00:04:33,210 --> 00:04:39,420
+work hard<font color="#CCCCCC"> and</font><font color="#E5E5E5"> additionally I</font><font color="#CCCCCC"> added a</font>
+
+73
+00:04:39,420 --> 00:04:43,860
+second a second message in somebody
+
+74
+00:04:43,860 --> 00:04:47,760
+else's name<font color="#E5E5E5"> Simon what I hate my</font><font color="#CCCCCC"> job</font>
+
+75
+00:04:47,760 --> 00:04:50,790
+so this is pretty evil and this should
+
+76
+00:04:50,790 --> 00:04:54,870
+not work in a secure web application<font color="#E5E5E5"> so</font>
+
+77
+00:04:54,870 --> 00:05:00,150
+how can we change<font color="#CCCCCC"> this we need to delete</font>
+
+78
+00:05:00,150 --> 00:05:05,220
+every HTML<font color="#E5E5E5"> tag before</font><font color="#CCCCCC"> we save it into</font>
+
+79
+00:05:05,220 --> 00:05:08,850
+<font color="#E5E5E5">the</font><font color="#CCCCCC"> database and how do we</font><font color="#E5E5E5"> do this in</font><font color="#CCCCCC"> H</font>
+
+80
+00:05:08,850 --> 00:05:13,170
+in PHP<font color="#CCCCCC"> this</font><font color="#E5E5E5"> is a very very unsecure</font>
+
+81
+00:05:13,170 --> 00:05:17,700
+application<font color="#CCCCCC"> I have a</font><font color="#E5E5E5"> video for the</font>
+
+82
+00:05:17,700 --> 00:05:21,090
+secure version<font color="#CCCCCC"> I I have written inside</font>
+
+83
+00:05:21,090 --> 00:05:22,110
+<font color="#CCCCCC">of here</font>
+
+84
+00:05:22,110 --> 00:05:26,670
+<font color="#E5E5E5">and I have a really really old</font><font color="#CCCCCC"> MySQL</font>
+
+85
+00:05:26,670 --> 00:05:32,100
+collection for for the<font color="#CCCCCC"> unsecure version</font>
+
+86
+00:05:32,100 --> 00:05:35,670
+to show<font color="#CCCCCC"> you how it's</font><font color="#E5E5E5"> not done and I can</font>
+
+87
+00:05:35,670 --> 00:05:40,290
+show you the the comments<font color="#E5E5E5"> in some of the</font>
+
+88
+00:05:40,290 --> 00:05:45,500
+next videos but for<font color="#CCCCCC"> now we go into the</font>
+
+89
+00:05:45,500 --> 00:05:49,140
+<font color="#E5E5E5">send secret chat so we have a clean</font>
+
+90
+00:05:49,140 --> 00:05:53,610
+string here and<font color="#E5E5E5"> we say insert this okay</font>
+
+91
+00:05:53,610 --> 00:06:01,670
+but what happens if we say strip tags
+
+92
+00:06:03,980 --> 00:06:13,290
+every HTML<font color="#E5E5E5"> tag gets stripped away except</font>
+
+93
+00:06:13,290 --> 00:06:17,400
+of every tag that I insert here<font color="#E5E5E5"> a second</font>
+
+94
+00:06:17,400 --> 00:06:24,480
+parameter<font color="#E5E5E5"> so I can inject some latex in</font>
+
+95
+00:06:24,480 --> 00:06:27,470
+my deck<font color="#E5E5E5"> in my text but it will not</font><font color="#CCCCCC"> work</font>
+
+96
+00:06:27,470 --> 00:06:31,020
+<font color="#E5E5E5">the</font><font color="#CCCCCC"> same way</font><font color="#E5E5E5"> anymore so</font><font color="#CCCCCC"> if I</font><font color="#E5E5E5"> write Simon</font>
+
+97
+00:06:31,020 --> 00:06:37,340
+and I hate my job<font color="#CCCCCC"> again</font>
+
+98
+00:06:37,810 --> 00:06:43,169
+will not<font color="#E5E5E5"> work anymore in here work hard</font>
+
+99
+00:06:43,169 --> 00:06:46,990
+work<font color="#E5E5E5"> hard</font><font color="#CCCCCC"> if I do this this will not</font>
+
+100
+00:06:46,990 --> 00:06:49,600
+<font color="#CCCCCC">work anymore</font><font color="#E5E5E5"> because every</font><font color="#CCCCCC"> DIF will get</font>
+
+101
+00:06:49,600 --> 00:06:53,020
+stripped away<font color="#E5E5E5"> so if I post this it ends</font>
+
+102
+00:06:53,020 --> 00:06:58,060
+<font color="#CCCCCC">up in admin work hard</font><font color="#E5E5E5"> and Simon</font><font color="#CCCCCC"> I hate</font>
+
+103
+00:06:58,060 --> 00:07:01,330
+my job<font color="#CCCCCC"> and there is</font><font color="#E5E5E5"> something similar in</font>
+
+104
+00:07:01,330 --> 00:07:05,350
+every<font color="#E5E5E5"> in every programming language so</font>
+
+105
+00:07:05,350 --> 00:07:10,000
+<font color="#E5E5E5">you simply have to delete every HTML</font>
+
+106
+00:07:10,000 --> 00:07:14,560
+deck and then add only the<font color="#E5E5E5"> HTML</font><font color="#CCCCCC"> decks</font>
+
+107
+00:07:14,560 --> 00:07:18,310
+that you allow so if we want<font color="#CCCCCC"> to send a</font>
+
+108
+00:07:18,310 --> 00:07:21,120
+link we're still allowed<font color="#E5E5E5"> to send</font><font color="#CCCCCC"> a link</font>
+
+109
+00:07:21,120 --> 00:07:36,070
+for<font color="#CCCCCC"> example I make a link H RAF BW /</font>
+
+110
+00:07:36,070 --> 00:07:42,700
+<font color="#CCCCCC">Leslie google.com</font><font color="#E5E5E5"> and if I post us as</font>
+
+111
+00:07:42,700 --> 00:07:48,130
+you see we're still allowed to<font color="#E5E5E5"> send a</font><font color="#CCCCCC"> a</font>
+
+112
+00:07:48,130 --> 00:07:53,410
+<font color="#CCCCCC">tag</font><font color="#E5E5E5"> because we allowed it</font><font color="#CCCCCC"> within</font><font color="#E5E5E5"> here</font>
+
+113
+00:07:53,410 --> 00:07:56,110
+within the strip<font color="#CCCCCC"> text</font><font color="#E5E5E5"> function the strip</font>
+
+114
+00:07:56,110 --> 00:07:59,710
+<font color="#CCCCCC">tags</font><font color="#E5E5E5"> function is especially for</font><font color="#CCCCCC"> PHP but</font>
+
+115
+00:07:59,710 --> 00:08:04,240
+<font color="#E5E5E5">there is a function that is that uses</font>
+
+116
+00:08:04,240 --> 00:08:08,050
+the same principle<font color="#CCCCCC"> in every HTML</font><font color="#E5E5E5"> in</font>
+
+117
+00:08:08,050 --> 00:08:14,590
+every programming language<font color="#E5E5E5"> okay so but</font>
+
+118
+00:08:14,590 --> 00:08:21,039
+how<font color="#CCCCCC"> can we still send something</font><font color="#E5E5E5"> in in</font>
+
+119
+00:08:21,039 --> 00:08:23,740
+somebody else's name<font color="#CCCCCC"> if we take</font><font color="#E5E5E5"> a look</font>
+
+120
+00:08:23,740 --> 00:08:29,260
+at the at this<font color="#CCCCCC"> adda form that we have</font>
+
+121
+00:08:29,260 --> 00:08:31,990
+here we have a<font color="#E5E5E5"> hidden input field with a</font>
+
+122
+00:08:31,990 --> 00:08:35,349
+value admin let's try to change<font color="#E5E5E5"> this in</font>
+
+123
+00:08:35,349 --> 00:08:38,349
+I don't<font color="#CCCCCC"> know myself</font>
+
+124
+00:08:38,349 --> 00:08:41,140
+for<font color="#E5E5E5"> example let's see what's happened if</font>
+
+125
+00:08:41,140 --> 00:08:47,310
+I post<font color="#E5E5E5"> this form to the server</font><font color="#CCCCCC"> Oh</font>
+
+126
+00:08:47,570 --> 00:08:52,740
+hidden field is used<font color="#E5E5E5"> 40</font><font color="#CCCCCC"> for the</font><font color="#E5E5E5"> username</font>
+
+127
+00:08:52,740 --> 00:08:56,430
+<font color="#E5E5E5">and this is also hackable</font><font color="#CCCCCC"> as you see so</font>
+
+128
+00:08:56,430 --> 00:08:58,230
+I'm still allowed<font color="#CCCCCC"> to change this to</font>
+
+129
+00:08:58,230 --> 00:09:04,019
+Simon and write<font color="#E5E5E5"> something like I hate my</font>
+
+130
+00:09:04,019 --> 00:09:08,970
+<font color="#CCCCCC">job</font><font color="#E5E5E5"> and sent this and you see Simon</font>
+
+131
+00:09:08,970 --> 00:09:12,810
+<font color="#E5E5E5">hates his job</font><font color="#CCCCCC"> so this</font><font color="#E5E5E5"> is still not a</font>
+
+132
+00:09:12,810 --> 00:09:17,279
+pretty cool so what can<font color="#E5E5E5"> we do as you</font><font color="#CCCCCC"> see</font>
+
+133
+00:09:17,279 --> 00:09:24,690
+we have<font color="#CCCCCC"> a post</font><font color="#E5E5E5"> username but when we log</font>
+
+134
+00:09:24,690 --> 00:09:28,980
+in into<font color="#E5E5E5"> our application we have a login</font>
+
+135
+00:09:28,980 --> 00:09:33,269
+<font color="#CCCCCC">we make a session which</font><font color="#E5E5E5"> is called</font>
+
+136
+00:09:33,269 --> 00:09:36,839
+<font color="#CCCCCC">Vinnitsa which means a user in</font><font color="#E5E5E5"> German</font>
+
+137
+00:09:36,839 --> 00:09:41,310
+and set them to<font color="#CCCCCC"> the</font><font color="#E5E5E5"> name which is posted</font>
+
+138
+00:09:41,310 --> 00:09:45,660
+<font color="#E5E5E5">in a login form so maybe we use this</font>
+
+139
+00:09:45,660 --> 00:09:51,600
+session 4 for the<font color="#CCCCCC"> username</font><font color="#E5E5E5"> and not the</font>
+
+140
+00:09:51,600 --> 00:09:57,180
+post parameter in the in the hidden
+
+141
+00:09:57,180 --> 00:09:59,699
+field because this is<font color="#CCCCCC"> pretty unsecure so</font>
+
+142
+00:09:59,699 --> 00:10:04,339
+let's<font color="#E5E5E5"> dry what happens if I say session</font>
+
+143
+00:10:04,339 --> 00:10:10,980
+<font color="#CCCCCC">B not sir</font><font color="#E5E5E5"> and change this and I reload</font>
+
+144
+00:10:10,980 --> 00:10:14,100
+my<font color="#CCCCCC"> page and what happens if</font><font color="#E5E5E5"> I still add</font>
+
+145
+00:10:14,100 --> 00:10:17,279
+something like Simon<font color="#E5E5E5"> and then I write I</font>
+
+146
+00:10:17,279 --> 00:10:19,500
+hate my<font color="#CCCCCC"> job</font>
+
+147
+00:10:19,500 --> 00:10:22,980
+and give the<font color="#E5E5E5"> feedback what happens you</font>
+
+148
+00:10:22,980 --> 00:10:27,389
+see I don't<font color="#CCCCCC"> write as Simon</font><font color="#E5E5E5"> anymore</font><font color="#CCCCCC"> I</font>
+
+149
+00:10:27,389 --> 00:10:30,600
+write as admin<font color="#E5E5E5"> because I take the</font>
+
+150
+00:10:30,600 --> 00:10:35,100
+session for posting to the<font color="#E5E5E5"> server which</font>
+
+151
+00:10:35,100 --> 00:10:38,519
+is a bit<font color="#E5E5E5"> more secure than using a hidden</font>
+
+152
+00:10:38,519 --> 00:10:41,660
+<font color="#E5E5E5">field which is changeable by anybody</font>
+
+153
+00:10:41,660 --> 00:10:45,480
+whom who moves HTML a little bit and
+
+154
+00:10:45,480 --> 00:10:51,120
+<font color="#CCCCCC">knew the inspect function so I guess</font>
+
+155
+00:10:51,120 --> 00:10:54,600
+<font color="#CCCCCC">we're</font><font color="#E5E5E5"> pretty safe here for now of course</font>
+
+156
+00:10:54,600 --> 00:10:57,740
+<font color="#E5E5E5">we're not secure against any</font>
+
+157
+00:10:57,740 --> 00:11:01,350
+against<font color="#E5E5E5"> any SQL injection but we will</font>
+
+158
+00:11:01,350 --> 00:11:05,190
+learn<font color="#E5E5E5"> that's this in a little bit in a</font>
+
+159
+00:11:05,190 --> 00:11:10,860
+later video<font color="#CCCCCC"> so</font><font color="#E5E5E5"> i have here some comments</font>
+
+160
+00:11:10,860 --> 00:11:13,860
+<font color="#E5E5E5">that</font><font color="#CCCCCC"> i will show to you when we talk</font>
+
+161
+00:11:13,860 --> 00:11:17,819
+about<font color="#E5E5E5"> SQL injections but</font><font color="#CCCCCC"> i guess we're</font>
+
+162
+00:11:17,819 --> 00:11:19,860
+finished<font color="#E5E5E5"> and done with the HTML</font>
+
+163
+00:11:19,860 --> 00:11:22,529
+injections<font color="#E5E5E5"> and if you liked this video</font>
+
+164
+00:11:22,529 --> 00:11:25,139
+don't<font color="#CCCCCC"> forget to give me</font><font color="#E5E5E5"> thumbs up to hit</font>
+
+165
+00:11:25,139 --> 00:11:27,269
+the subscribe button<font color="#CCCCCC"> and we see</font><font color="#E5E5E5"> us in</font>
+
+166
+00:11:27,269 --> 00:11:29,430
+<font color="#CCCCCC">the next video don't</font><font color="#E5E5E5"> forget to share</font>
+
+167
+00:11:29,430 --> 00:00:00,000
+this video<font color="#E5E5E5"> everywhere</font><font color="#CCCCCC"> bye</font>
+

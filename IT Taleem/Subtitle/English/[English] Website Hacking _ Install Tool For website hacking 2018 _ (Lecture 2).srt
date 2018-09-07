@@ -1,0 +1,664 @@
+1
+00:00:09,200 --> 00:00:12,870
+in<font color="#E5E5E5"> this video we will set</font><font color="#CCCCCC"> up our lab so</font>
+
+2
+00:00:12,870 --> 00:00:14,759
+<font color="#CCCCCC">that we can learn and understand the</font>
+
+3
+00:00:14,759 --> 00:00:17,130
+security bugs<font color="#E5E5E5"> the first software we need</font>
+
+4
+00:00:17,130 --> 00:00:18,080
+<font color="#E5E5E5">is a</font>
+
+5
+00:00:18,080 --> 00:00:30,590
+[Music]
+
+6
+00:00:30,590 --> 00:00:33,730
+[Applause]
+
+7
+00:00:34,460 --> 00:00:37,500
+<font color="#CCCCCC">Zam</font><font color="#E5E5E5"> helped us to create</font><font color="#CCCCCC"> our localhost on</font>
+
+8
+00:00:37,500 --> 00:00:39,720
+which we will run our own website<font color="#CCCCCC"> for</font>
+
+9
+00:00:39,720 --> 00:00:42,420
+learning<font color="#E5E5E5"> if you already know how</font><font color="#CCCCCC"> to run</font>
+
+10
+00:00:42,420 --> 00:00:44,460
+localhost<font color="#CCCCCC"> then you can use</font><font color="#E5E5E5"> your own</font>
+
+11
+00:00:44,460 --> 00:00:47,460
+familiar software<font color="#E5E5E5"> so let's download this</font>
+
+12
+00:00:47,460 --> 00:00:51,739
+<font color="#CCCCCC">app first go to google</font><font color="#E5E5E5"> and type</font><font color="#CCCCCC"> X</font><font color="#E5E5E5"> the</font>
+
+13
+00:00:51,739 --> 00:00:55,769
+MPP or go to their official<font color="#CCCCCC"> website</font>
+
+14
+00:00:55,769 --> 00:01:02,400
+which is Apache<font color="#E5E5E5"> friends</font><font color="#CCCCCC"> dot</font><font color="#E5E5E5"> org now on</font>
+
+15
+00:01:02,400 --> 00:01:04,800
+this website<font color="#CCCCCC"> you'll see</font><font color="#E5E5E5"> the download</font>
+
+16
+00:01:04,800 --> 00:01:07,560
+<font color="#CCCCCC">section for different operating systems</font>
+
+17
+00:01:07,560 --> 00:01:10,380
+here it is for<font color="#CCCCCC"> Windows system for</font><font color="#E5E5E5"> Linux</font>
+
+18
+00:01:10,380 --> 00:01:13,289
+system and for mac system i am using
+
+19
+00:01:13,289 --> 00:01:16,200
+<font color="#E5E5E5">ubuntu which is a linux distro so i will</font>
+
+20
+00:01:16,200 --> 00:01:18,119
+click<font color="#CCCCCC"> on</font><font color="#E5E5E5"> linux</font><font color="#CCCCCC"> if you are using windows</font>
+
+21
+00:01:18,119 --> 00:01:21,720
+<font color="#E5E5E5">you can click on windows let's click on</font>
+
+22
+00:01:21,720 --> 00:01:25,500
+linux<font color="#E5E5E5"> and a prompt comes in so i already</font>
+
+23
+00:01:25,500 --> 00:01:27,630
+downloaded it<font color="#CCCCCC"> so</font><font color="#E5E5E5"> i</font><font color="#CCCCCC"> will not download it</font>
+
+24
+00:01:27,630 --> 00:01:29,970
+<font color="#E5E5E5">now if you are using windows and you</font>
+
+25
+00:01:29,970 --> 00:01:31,950
+download<font color="#CCCCCC"> the</font><font color="#E5E5E5"> installer then you can run</font>
+
+26
+00:01:31,950 --> 00:01:34,289
+<font color="#E5E5E5">the</font><font color="#CCCCCC"> installer by double click on it now</font>
+
+27
+00:01:34,289 --> 00:01:36,360
+if you<font color="#CCCCCC"> are using linux then</font><font color="#E5E5E5"> i'll show</font>
+
+28
+00:01:36,360 --> 00:01:39,390
+<font color="#CCCCCC">you how</font><font color="#E5E5E5"> to install it now</font><font color="#CCCCCC"> go to</font><font color="#E5E5E5"> your</font>
+
+29
+00:01:39,390 --> 00:01:41,820
+download folder where the file is
+
+30
+00:01:41,820 --> 00:01:46,170
+<font color="#CCCCCC">right-click and open in terminal or open</font>
+
+31
+00:01:46,170 --> 00:01:48,119
+<font color="#E5E5E5">your terminal and change the</font><font color="#CCCCCC"> directory</font>
+
+32
+00:01:48,119 --> 00:01:50,159
+where<font color="#CCCCCC"> the file is located</font>
+
+33
+00:01:50,159 --> 00:01:53,970
+now type<font color="#CCCCCC"> c-h-i Modi to make the file</font>
+
+34
+00:01:53,970 --> 00:01:58,890
+executable<font color="#E5E5E5"> type CH</font><font color="#CCCCCC"> m OD</font><font color="#E5E5E5"> +</font><font color="#CCCCCC"> x and the</font><font color="#E5E5E5"> file</font>
+
+35
+00:01:58,890 --> 00:02:04,229
+<font color="#E5E5E5">name</font><font color="#CCCCCC"> XA MPP here</font><font color="#E5E5E5"> now press enter the</font>
+
+36
+00:02:04,229 --> 00:02:06,829
+file will be converted<font color="#E5E5E5"> into executable</font>
+
+37
+00:02:06,829 --> 00:02:11,130
+now run it with super user permission so
+
+38
+00:02:11,130 --> 00:02:17,579
+type as<font color="#CCCCCC"> you d</font><font color="#E5E5E5"> o space dot</font><font color="#CCCCCC"> for slash and</font>
+
+39
+00:02:17,579 --> 00:02:22,140
+the<font color="#E5E5E5"> file name press enter enter your</font>
+
+40
+00:02:22,140 --> 00:02:26,850
+password and<font color="#E5E5E5"> you'll see our installer on</font>
+
+41
+00:02:26,850 --> 00:02:31,230
+the screen now you<font color="#E5E5E5"> can install it like a</font>
+
+42
+00:02:31,230 --> 00:02:33,900
+Windows<font color="#CCCCCC"> System click on</font><font color="#E5E5E5"> next and</font><font color="#CCCCCC"> install</font>
+
+43
+00:02:33,900 --> 00:02:36,450
+the software<font color="#E5E5E5"> if you have completed the</font>
+
+44
+00:02:36,450 --> 00:02:39,480
+design<font color="#E5E5E5"> and install the software</font><font color="#CCCCCC"> now go</font>
+
+45
+00:02:39,480 --> 00:02:41,970
+to<font color="#E5E5E5"> your computer and go to your opt</font>
+
+46
+00:02:41,970 --> 00:02:45,420
+folder and then inside it<font color="#E5E5E5"> land folder</font>
+
+47
+00:02:45,420 --> 00:02:46,050
+and
+
+48
+00:02:46,050 --> 00:02:49,050
+<font color="#E5E5E5">find the files you are using window</font>
+
+49
+00:02:49,050 --> 00:02:51,570
+system<font color="#E5E5E5"> then your directory will be C</font>
+
+50
+00:02:51,570 --> 00:02:54,330
+Drive or any other<font color="#CCCCCC"> drive on which</font>
+
+51
+00:02:54,330 --> 00:02:56,850
+operating<font color="#E5E5E5"> system is installed inside</font>
+
+52
+00:02:56,850 --> 00:03:00,180
+that drive you'll find exam folder and
+
+53
+00:03:00,180 --> 00:03:02,370
+inside<font color="#E5E5E5"> the exam folder you'll</font><font color="#CCCCCC"> find</font>
+
+54
+00:03:02,370 --> 00:03:05,040
+<font color="#CCCCCC">htdocs</font><font color="#E5E5E5"> folder so this extra Doc's folder</font>
+
+55
+00:03:05,040 --> 00:03:08,040
+contains<font color="#E5E5E5"> your</font><font color="#CCCCCC"> webpages now if you are</font>
+
+56
+00:03:08,040 --> 00:03:09,750
+using<font color="#CCCCCC"> your Windows system then you can</font>
+
+57
+00:03:09,750 --> 00:03:12,090
+run<font color="#E5E5E5"> your exam by double click on its</font>
+
+58
+00:03:12,090 --> 00:03:14,910
+icon<font color="#E5E5E5"> if you are using Linux then you</font>
+
+59
+00:03:14,910 --> 00:03:18,240
+have to do some more<font color="#CCCCCC"> tasks to run</font><font color="#E5E5E5"> it</font>
+
+60
+00:03:18,240 --> 00:03:22,140
+<font color="#CCCCCC">right-click and open in terminal</font><font color="#E5E5E5"> or just</font>
+
+61
+00:03:22,140 --> 00:03:23,670
+<font color="#E5E5E5">open your terminal and change the</font>
+
+62
+00:03:23,670 --> 00:03:25,920
+directly by using CD command which is
+
+63
+00:03:25,920 --> 00:03:31,020
+<font color="#E5E5E5">change direct now here type</font><font color="#CCCCCC"> s UD</font><font color="#E5E5E5"> you for</font>
+
+64
+00:03:31,020 --> 00:03:34,050
+the permission of<font color="#E5E5E5"> super user then press</font>
+
+65
+00:03:34,050 --> 00:03:38,640
+dot slash and name of<font color="#E5E5E5"> the file which is</font>
+
+66
+00:03:38,640 --> 00:03:40,740
+manager - Linux
+
+67
+00:03:40,740 --> 00:03:47,700
+- x64 dot run this file<font color="#E5E5E5"> now press</font><font color="#CCCCCC"> ENTER</font>
+
+68
+00:03:47,700 --> 00:03:54,150
+and<font color="#E5E5E5"> enter the password</font><font color="#CCCCCC"> and you</font><font color="#E5E5E5"> see</font><font color="#CCCCCC"> the</font>
+
+69
+00:03:54,150 --> 00:03:55,770
+application<font color="#CCCCCC"> now go to</font><font color="#E5E5E5"> your manage</font>
+
+70
+00:03:55,770 --> 00:03:58,680
+servers and study or Apache<font color="#E5E5E5"> web server</font>
+
+71
+00:03:58,680 --> 00:04:04,230
+and my skill database fine<font color="#E5E5E5"> now go to</font>
+
+72
+00:04:04,230 --> 00:04:09,260
+your<font color="#E5E5E5"> browser and n type 127.0.0.1</font>
+
+73
+00:04:18,100 --> 00:04:21,160
+if you are running Windows<font color="#CCCCCC"> then you can</font>
+
+74
+00:04:21,160 --> 00:04:23,770
+double<font color="#CCCCCC"> click on your sampai con and</font>
+
+75
+00:04:23,770 --> 00:04:25,720
+you'll find<font color="#CCCCCC"> a</font><font color="#E5E5E5"> product like this only or</font>
+
+76
+00:04:25,720 --> 00:04:28,090
+similar like this<font color="#CCCCCC"> you have to start the</font>
+
+77
+00:04:28,090 --> 00:04:30,670
+<font color="#E5E5E5">services Apache web server and my skill</font>
+
+78
+00:04:30,670 --> 00:04:34,840
+database<font color="#E5E5E5"> for further videos so that's it</font>
+
+79
+00:04:34,840 --> 00:04:37,120
+for this video<font color="#CCCCCC"> in next video</font><font color="#E5E5E5"> we will</font>
+
+80
+00:04:37,120 --> 00:04:39,100
+<font color="#E5E5E5">install more software for setting up our</font>
+
+81
+00:04:39,100 --> 00:04:41,770
+lab thank you and have a<font color="#E5E5E5"> nice day</font><font color="#CCCCCC"> in the</font>
+
+82
+00:04:41,770 --> 00:04:44,050
+previous video<font color="#CCCCCC"> we had installed zem</font>
+
+83
+00:04:44,050 --> 00:04:46,420
+<font color="#CCCCCC">software</font><font color="#E5E5E5"> now in this</font><font color="#CCCCCC"> video we will</font>
+
+84
+00:04:46,420 --> 00:04:48,520
+install and<font color="#CCCCCC"> setup</font><font color="#E5E5E5"> damn vulnerable web</font>
+
+85
+00:04:48,520 --> 00:04:50,990
+application<font color="#E5E5E5"> or</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> short</font>
+
+86
+00:04:50,990 --> 00:05:03,500
+[Music]
+
+87
+00:05:03,500 --> 00:05:07,089
+[Applause]
+
+88
+00:05:07,260 --> 00:05:09,970
+the VW<font color="#E5E5E5"> is a vulnerable web application</font>
+
+89
+00:05:09,970 --> 00:05:12,250
+which is used for<font color="#CCCCCC"> learning purpose you</font>
+
+90
+00:05:12,250 --> 00:05:14,050
+can<font color="#CCCCCC"> go to their official side which is</font>
+
+91
+00:05:14,050 --> 00:05:16,930
+dvwa dot co dot<font color="#CCCCCC"> PUK and</font><font color="#E5E5E5"> you can download</font>
+
+92
+00:05:16,930 --> 00:05:20,170
+the<font color="#CCCCCC"> zip file from there before</font>
+
+93
+00:05:20,170 --> 00:05:22,240
+downloading this<font color="#E5E5E5"> zip file we have</font><font color="#CCCCCC"> to</font>
+
+94
+00:05:22,240 --> 00:05:24,100
+<font color="#E5E5E5">change the permission of</font><font color="#CCCCCC"> htdocs</font><font color="#E5E5E5"> folder</font>
+
+95
+00:05:24,100 --> 00:05:26,440
+which<font color="#CCCCCC"> i told you about in the previous</font>
+
+96
+00:05:26,440 --> 00:05:28,960
+video<font color="#E5E5E5"> if you are using</font><font color="#CCCCCC"> Linux</font><font color="#E5E5E5"> then we</font>
+
+97
+00:05:28,960 --> 00:05:31,450
+have to change the permissions of<font color="#CCCCCC"> htdocs</font>
+
+98
+00:05:31,450 --> 00:05:34,540
+<font color="#CCCCCC">folder so for that we</font><font color="#E5E5E5"> have to go to our</font>
+
+99
+00:05:34,540 --> 00:05:37,900
+opt folder and inside that<font color="#CCCCCC"> lamp directly</font>
+
+100
+00:05:37,900 --> 00:05:39,910
+and in so on the lam directory right
+
+101
+00:05:39,910 --> 00:05:43,030
+click and open in terminal<font color="#E5E5E5"> or just open</font>
+
+102
+00:05:43,030 --> 00:05:45,490
+in terminal<font color="#E5E5E5"> and change the directory by</font>
+
+103
+00:05:45,490 --> 00:05:50,850
+<font color="#E5E5E5">using CD command now right here</font><font color="#CCCCCC"> CH</font><font color="#E5E5E5"> m OD</font>
+
+104
+00:05:50,850 --> 00:05:55,210
+seven seven<font color="#CCCCCC"> seven and then htdocs</font><font color="#E5E5E5"> this</font>
+
+105
+00:05:55,210 --> 00:05:57,700
+will change the permission of<font color="#CCCCCC"> st docs</font>
+
+106
+00:05:57,700 --> 00:06:00,460
+<font color="#E5E5E5">and now we can copy any file into this</font>
+
+107
+00:06:00,460 --> 00:06:06,340
+folder<font color="#CCCCCC"> okay we have to take the</font>
+
+108
+00:06:06,340 --> 00:06:09,190
+<font color="#E5E5E5">permission of super user also so type</font><font color="#CCCCCC"> su</font>
+
+109
+00:06:09,190 --> 00:06:14,950
+<font color="#CCCCCC">do and then enter the password this</font><font color="#E5E5E5"> is</font>
+
+110
+00:06:14,950 --> 00:06:16,900
+for<font color="#E5E5E5"> Linux user if you are Windows user</font>
+
+111
+00:06:16,900 --> 00:06:19,030
+then there is no<font color="#E5E5E5"> need of changing</font>
+
+112
+00:06:19,030 --> 00:06:21,820
+permission you can copy any<font color="#E5E5E5"> file into</font>
+
+113
+00:06:21,820 --> 00:06:25,030
+your<font color="#CCCCCC"> as</font><font color="#E5E5E5"> to doc Snyder clean now</font>
+
+114
+00:06:25,030 --> 00:06:28,990
+permission is changed<font color="#E5E5E5"> go back to</font><font color="#CCCCCC"> your</font>
+
+115
+00:06:28,990 --> 00:06:30,940
+browser and then<font color="#E5E5E5"> click on download</font>
+
+116
+00:06:30,940 --> 00:06:34,930
+section of dvwa<font color="#E5E5E5"> now I am using archive</font>
+
+117
+00:06:34,930 --> 00:06:37,180
+manager to extract the folder into the
+
+118
+00:06:37,180 --> 00:06:40,000
+<font color="#CCCCCC">htdocs folder if you are using Windows</font>
+
+119
+00:06:40,000 --> 00:06:42,430
+you can use<font color="#CCCCCC"> Wynn</font><font color="#E5E5E5"> area or you can just</font>
+
+120
+00:06:42,430 --> 00:06:46,830
+<font color="#E5E5E5">right click on the folder and extracted</font>
+
+121
+00:06:49,650 --> 00:06:56,190
+now go to a computer then opt lamp and
+
+122
+00:06:56,190 --> 00:06:59,730
+inside htdocs'
+
+123
+00:07:03,790 --> 00:07:06,140
+<font color="#E5E5E5">okay now the files are successfully</font>
+
+124
+00:07:06,140 --> 00:07:10,220
+extracted it's time to<font color="#E5E5E5"> start our zamp</font><font color="#CCCCCC"> as</font>
+
+125
+00:07:10,220 --> 00:07:12,710
+<font color="#E5E5E5">I</font><font color="#CCCCCC"> told you in previous video</font><font color="#E5E5E5"> how</font><font color="#CCCCCC"> to</font>
+
+126
+00:07:12,710 --> 00:07:15,710
+start them<font color="#E5E5E5"> if you are using Windows then</font>
+
+127
+00:07:15,710 --> 00:07:18,380
+<font color="#E5E5E5">you can double click on the icon of</font><font color="#CCCCCC"> the</font>
+
+128
+00:07:18,380 --> 00:07:21,320
+Sam<font color="#E5E5E5"> and if you are using Ubuntu then go</font>
+
+129
+00:07:21,320 --> 00:07:24,320
+to your<font color="#CCCCCC"> lamp folder and right click open</font>
+
+130
+00:07:24,320 --> 00:07:26,810
+in terminal and run
+
+131
+00:07:26,810 --> 00:07:31,970
+zamp by using this command now enter the
+
+132
+00:07:31,970 --> 00:07:39,860
+password<font color="#CCCCCC"> and zamp will start on this on</font>
+
+133
+00:07:39,860 --> 00:07:42,290
+this we have<font color="#E5E5E5"> to</font><font color="#CCCCCC"> start two services first</font>
+
+134
+00:07:42,290 --> 00:07:44,420
+is a patch<font color="#E5E5E5"> of web server and the second</font>
+
+135
+00:07:44,420 --> 00:07:50,570
+is<font color="#CCCCCC"> MySQL database now now let's check</font>
+
+136
+00:07:50,570 --> 00:07:53,660
+whether<font color="#E5E5E5"> localhost works or not</font>
+
+137
+00:07:53,660 --> 00:07:56,360
+<font color="#CCCCCC">ok it is working fine go back to your</font>
+
+138
+00:07:56,360 --> 00:07:59,330
+lamp<font color="#CCCCCC"> go back</font><font color="#E5E5E5"> go</font><font color="#CCCCCC"> back to our htdocs</font>
+
+139
+00:07:59,330 --> 00:08:04,220
+folder<font color="#E5E5E5"> and then inside dvwa - master go</font>
+
+140
+00:08:04,220 --> 00:08:07,450
+inside config and<font color="#CCCCCC"> right click</font><font color="#E5E5E5"> on</font>
+
+141
+00:08:07,450 --> 00:08:12,850
+conflict dot anc dot PHP dot bist file
+
+142
+00:08:12,850 --> 00:08:15,910
+<font color="#CCCCCC">right-click</font><font color="#E5E5E5"> it and</font><font color="#CCCCCC"> open it</font><font color="#E5E5E5"> with editor</font>
+
+143
+00:08:15,910 --> 00:08:21,260
+now change this<font color="#E5E5E5"> DV password here this</font>
+
+144
+00:08:21,260 --> 00:08:24,050
+<font color="#E5E5E5">variable we have</font><font color="#CCCCCC"> to change this from</font>
+
+145
+00:08:24,050 --> 00:08:28,040
+password to<font color="#E5E5E5"> none we just simply cancel</font>
+
+146
+00:08:28,040 --> 00:08:32,390
+<font color="#E5E5E5">this out and then we save it by clicking</font>
+
+147
+00:08:32,390 --> 00:08:37,849
+<font color="#CCCCCC">ctrl s and rename this file also which</font>
+
+148
+00:08:37,849 --> 00:08:42,770
+is conflict<font color="#E5E5E5"> not include dot PHP ok now</font>
+
+149
+00:08:42,770 --> 00:08:47,750
+go to your<font color="#E5E5E5"> browser and type 127.0.0.1 a</font>
+
+150
+00:08:47,750 --> 00:08:50,810
+star and then<font color="#E5E5E5"> setup dot PHP you will see</font>
+
+151
+00:08:50,810 --> 00:08:54,140
+this<font color="#E5E5E5"> page here go down and click on</font>
+
+152
+00:08:54,140 --> 00:08:56,450
+<font color="#E5E5E5">create wizard database this</font><font color="#CCCCCC"> will create</font>
+
+153
+00:08:56,450 --> 00:08:59,120
+the<font color="#CCCCCC"> database now</font><font color="#E5E5E5"> it will redirect to</font>
+
+154
+00:08:59,120 --> 00:09:03,440
+this page<font color="#E5E5E5"> dvw - master login dot PHP</font><font color="#CCCCCC"> now</font>
+
+155
+00:09:03,440 --> 00:09:06,440
+you can<font color="#CCCCCC"> login</font><font color="#E5E5E5"> by using default password</font>
+
+156
+00:09:06,440 --> 00:09:09,290
+and username<font color="#E5E5E5"> which our username is admin</font>
+
+157
+00:09:09,290 --> 00:09:14,240
+<font color="#CCCCCC">and the password is</font><font color="#E5E5E5"> PA SS wo Rd which is</font>
+
+158
+00:09:14,240 --> 00:09:16,250
+password
+
+159
+00:09:16,250 --> 00:09:19,670
+as you can see this is our dvwa<font color="#E5E5E5"> which is</font>
+
+160
+00:09:19,670 --> 00:09:21,830
+a vulnerable web application<font color="#E5E5E5"> on this we</font>
+
+161
+00:09:21,830 --> 00:09:24,620
+are<font color="#CCCCCC"> going</font><font color="#E5E5E5"> to learn many web application</font>
+
+162
+00:09:24,620 --> 00:09:27,620
+security<font color="#E5E5E5"> bugs so you can see on the left</font>
+
+163
+00:09:27,620 --> 00:09:29,660
+side<font color="#E5E5E5"> there</font><font color="#CCCCCC"> are many bugs</font><font color="#E5E5E5"> mentioned and</font>
+
+164
+00:09:29,660 --> 00:09:32,480
+<font color="#CCCCCC">turbine tool on most</font><font color="#E5E5E5"> of this in this</font>
+
+165
+00:09:32,480 --> 00:09:34,750
+<font color="#E5E5E5">course</font>
+
+166
+00:09:36,690 --> 00:00:00,000
+[Music]
+

@@ -1,0 +1,556 @@
+1
+00:00:00,089 --> 00:00:02,610
+hello everyone<font color="#E5E5E5"> now let us talk about an</font>
+
+2
+00:00:02,610 --> 00:00:05,640
+web scripting engine<font color="#E5E5E5"> so</font><font color="#CCCCCC"> nmf scripting</font>
+
+3
+00:00:05,640 --> 00:00:07,770
+engine<font color="#E5E5E5"> is actually</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> part of an nmap and</font>
+
+4
+00:00:07,770 --> 00:00:09,660
+it's one<font color="#E5E5E5"> of the most powerful feature of</font>
+
+5
+00:00:09,660 --> 00:00:11,849
+<font color="#CCCCCC">the nmap</font><font color="#E5E5E5"> so through animal scripting</font>
+
+6
+00:00:11,849 --> 00:00:13,620
+engine we<font color="#E5E5E5"> can write our own scripts</font>
+
+7
+00:00:13,620 --> 00:00:16,049
+<font color="#E5E5E5">which we can use in performing different</font>
+
+8
+00:00:16,049 --> 00:00:18,710
+<font color="#E5E5E5">networking tasks so we can also use</font>
+
+9
+00:00:18,710 --> 00:00:20,850
+pre-written scripts of various security
+
+10
+00:00:20,850 --> 00:00:23,430
+<font color="#E5E5E5">researchers present</font><font color="#CCCCCC"> already</font><font color="#E5E5E5"> in animal</font>
+
+11
+00:00:23,430 --> 00:00:25,470
+scripting engine<font color="#E5E5E5"> so one of the most</font>
+
+12
+00:00:25,470 --> 00:00:27,720
+<font color="#CCCCCC">powerful of feature of this tool</font><font color="#E5E5E5"> is that</font>
+
+13
+00:00:27,720 --> 00:00:30,029
+<font color="#E5E5E5">we can use this tool for</font><font color="#CCCCCC"> standing our</font>
+
+14
+00:00:30,029 --> 00:00:32,279
+target and once we scan the target<font color="#E5E5E5"> we</font>
+
+15
+00:00:32,279 --> 00:00:34,860
+<font color="#E5E5E5">can exploit our target so this tool is</font>
+
+16
+00:00:34,860 --> 00:00:37,739
+<font color="#E5E5E5">also comes in the category of V apt tool</font>
+
+17
+00:00:37,739 --> 00:00:39,600
+that is<font color="#E5E5E5"> vulnerability assessment and</font>
+
+18
+00:00:39,600 --> 00:00:42,629
+<font color="#E5E5E5">penetration testing tool so here you can</font>
+
+19
+00:00:42,629 --> 00:00:45,899
+see the NSE script categories<font color="#E5E5E5"> so in</font><font color="#CCCCCC"> NSE</font>
+
+20
+00:00:45,899 --> 00:00:48,120
+<font color="#CCCCCC">under scripting engine the scripts are</font>
+
+21
+00:00:48,120 --> 00:00:49,649
+divided into<font color="#CCCCCC"> different categories as</font>
+
+22
+00:00:49,649 --> 00:00:52,260
+follows so the first one is<font color="#CCCCCC"> auth</font><font color="#E5E5E5"> so the</font>
+
+23
+00:00:52,260 --> 00:00:53,820
+scripts which are present inside<font color="#CCCCCC"> the</font>
+
+24
+00:00:53,820 --> 00:00:55,739
+earth categories are actually used<font color="#CCCCCC"> for</font>
+
+25
+00:00:55,739 --> 00:00:57,750
+finding<font color="#E5E5E5"> the authentication pages or for</font>
+
+26
+00:00:57,750 --> 00:00:59,699
+authentication purposes<font color="#CCCCCC"> then the scripts</font>
+
+27
+00:00:59,699 --> 00:01:00,989
+which are present inside<font color="#E5E5E5"> the</font><font color="#CCCCCC"> Brut</font>
+
+28
+00:01:00,989 --> 00:01:02,430
+categories is actually used for
+
+29
+00:01:02,430 --> 00:01:04,680
+<font color="#CCCCCC">brute-forcing the target</font><font color="#E5E5E5"> like for</font>
+
+30
+00:01:04,680 --> 00:01:06,030
+performing different<font color="#E5E5E5"> good force attack</font>
+
+31
+00:01:06,030 --> 00:01:08,490
+dictionary attacks<font color="#E5E5E5"> to FTP logins</font><font color="#CCCCCC"> astir</font>
+
+32
+00:01:08,490 --> 00:01:10,650
+<font color="#E5E5E5">DP logins and so on so the script</font>
+
+33
+00:01:10,650 --> 00:01:12,570
+present in discovery categories is
+
+34
+00:01:12,570 --> 00:01:15,930
+actually used for<font color="#E5E5E5"> finding the target</font><font color="#CCCCCC"> or</font>
+
+35
+00:01:15,930 --> 00:01:18,479
+<font color="#CCCCCC">used for scanning the target then there</font>
+
+36
+00:01:18,479 --> 00:01:21,030
+are other categories<font color="#CCCCCC"> like dos exploit</font>
+
+37
+00:01:21,030 --> 00:01:23,340
+further used for fuzzing the target and
+
+38
+00:01:23,340 --> 00:01:25,409
+malware<font color="#E5E5E5"> so if you want to know more</font>
+
+39
+00:01:25,409 --> 00:01:28,049
+about NSE scripts categories then you
+
+40
+00:01:28,049 --> 00:01:29,850
+can visit their official<font color="#CCCCCC"> website here is</font>
+
+41
+00:01:29,850 --> 00:01:32,340
+the link given below<font color="#CCCCCC"> so now let's see</font>
+
+42
+00:01:32,340 --> 00:01:34,530
+that<font color="#E5E5E5"> how we can</font><font color="#CCCCCC"> use animal scripting</font>
+
+43
+00:01:34,530 --> 00:01:36,540
+engine in order<font color="#CCCCCC"> to exploit our target</font>
+
+44
+00:01:36,540 --> 00:01:39,930
+now<font color="#CCCCCC"> let's see that how</font><font color="#E5E5E5"> we can use</font><font color="#CCCCCC"> and</font>
+
+45
+00:01:39,930 --> 00:01:42,899
+<font color="#E5E5E5">map scripting engine so in the last</font>
+
+46
+00:01:42,899 --> 00:01:45,720
+video I showed<font color="#CCCCCC"> you</font><font color="#E5E5E5"> that how we can</font><font color="#CCCCCC"> use</font>
+
+47
+00:01:45,720 --> 00:01:48,930
+and map and we all know<font color="#E5E5E5"> that</font><font color="#CCCCCC"> an maps</font>
+
+48
+00:01:48,930 --> 00:01:53,520
+scripting engine is a part of<font color="#E5E5E5"> an map so</font>
+
+49
+00:01:53,520 --> 00:01:55,530
+NSE contains a different different
+
+50
+00:01:55,530 --> 00:01:57,930
+<font color="#E5E5E5">scripts divided into different</font>
+
+51
+00:01:57,930 --> 00:01:59,759
+categories<font color="#E5E5E5"> like script for</font>
+
+52
+00:01:59,759 --> 00:02:02,070
+authentication<font color="#E5E5E5"> script for</font><font color="#CCCCCC"> host discovery</font>
+
+53
+00:02:02,070 --> 00:02:03,540
+script for<font color="#CCCCCC"> reckonings</font>
+
+54
+00:02:03,540 --> 00:02:07,500
+and so on so<font color="#E5E5E5"> forth so let's start and</font>
+
+55
+00:02:07,500 --> 00:02:11,790
+map first<font color="#E5E5E5"> so right now I'm inside my</font>
+
+56
+00:02:11,790 --> 00:02:13,650
+Kali Linux<font color="#E5E5E5"> instance</font>
+
+57
+00:02:13,650 --> 00:02:16,230
+and here is the terminal<font color="#CCCCCC"> cally terminal</font>
+
+58
+00:02:16,230 --> 00:02:19,310
+you can<font color="#E5E5E5"> see so in order to use any</font>
+
+59
+00:02:19,310 --> 00:02:22,409
+script<font color="#CCCCCC"> any of the</font><font color="#E5E5E5"> nmap scripting engine</font>
+
+60
+00:02:22,409 --> 00:02:25,680
+script inside<font color="#E5E5E5"> our and</font><font color="#CCCCCC"> map search what we</font>
+
+61
+00:02:25,680 --> 00:02:27,870
+have to do is we first have to<font color="#E5E5E5"> write an</font>
+
+62
+00:02:27,870 --> 00:02:30,840
+map<font color="#E5E5E5"> then we have to give an</font><font color="#CCCCCC"> additional</font>
+
+63
+00:02:30,840 --> 00:02:35,450
+parameter<font color="#E5E5E5"> called a script - - script</font>
+
+64
+00:02:35,450 --> 00:02:38,700
+<font color="#E5E5E5">followed</font><font color="#CCCCCC"> by the script name</font><font color="#E5E5E5"> so in this</font>
+
+65
+00:02:38,700 --> 00:02:41,340
+first search<font color="#CCCCCC"> I am using a simple</font><font color="#E5E5E5"> script</font>
+
+66
+00:02:41,340 --> 00:02:43,680
+called as banner<font color="#E5E5E5"> so what</font><font color="#CCCCCC"> this script</font>
+
+67
+00:02:43,680 --> 00:02:45,900
+will do the script will make an
+
+68
+00:02:45,900 --> 00:02:48,450
+connection<font color="#CCCCCC"> with</font><font color="#E5E5E5"> an any open port on a</font>
+
+69
+00:02:48,450 --> 00:02:51,090
+server<font color="#E5E5E5"> if that open port sent anything</font>
+
+70
+00:02:51,090 --> 00:02:54,870
+<font color="#E5E5E5">to our script or anything to our request</font>
+
+71
+00:02:54,870 --> 00:02:57,629
+<font color="#E5E5E5">then that script will print out that</font>
+
+72
+00:02:57,629 --> 00:03:01,769
+<font color="#E5E5E5">data here in the result so I'm using</font><font color="#CCCCCC"> the</font>
+
+73
+00:03:01,769 --> 00:03:04,680
+<font color="#E5E5E5">script and map - - script script name is</font>
+
+74
+00:03:04,680 --> 00:03:09,319
+banner<font color="#E5E5E5"> followed by the website name</font>
+
+75
+00:03:18,660 --> 00:03:22,780
+<font color="#E5E5E5">okay so here you</font><font color="#CCCCCC"> can see that it has</font>
+
+76
+00:03:22,780 --> 00:03:26,530
+printed out the banner of<font color="#E5E5E5"> port 22 and</font>
+
+77
+00:03:26,530 --> 00:03:30,910
+banner detail is<font color="#CCCCCC"> ssh version and same</font>
+
+78
+00:03:30,910 --> 00:03:33,910
+like port 3306<font color="#CCCCCC"> it's printing its banner</font>
+
+79
+00:03:33,910 --> 00:03:38,530
+<font color="#E5E5E5">and same for</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> port</font><font color="#CCCCCC"> five</font><font color="#E5E5E5"> nine double</font>
+
+80
+00:03:38,530 --> 00:03:42,220
+zero<font color="#E5E5E5"> so this was the simple script which</font>
+
+81
+00:03:42,220 --> 00:03:43,930
+just print the banner and some any
+
+82
+00:03:43,930 --> 00:03:46,090
+<font color="#E5E5E5">random data sent by the particular port</font>
+
+83
+00:03:46,090 --> 00:03:49,000
+<font color="#E5E5E5">now let's use some another scripts of</font><font color="#CCCCCC"> NS</font>
+
+84
+00:03:49,000 --> 00:03:55,300
+<font color="#CCCCCC">e so n map - - script now</font><font color="#E5E5E5"> I'm using one</font>
+
+85
+00:03:55,300 --> 00:04:01,720
+script called as HTTP headers so first
+
+86
+00:04:01,720 --> 00:04:04,720
+of all what is HTTP headers HTTP headers
+
+87
+00:04:04,720 --> 00:04:07,240
+are nothing but<font color="#E5E5E5"> just our HTTP request</font>
+
+88
+00:04:07,240 --> 00:04:10,680
+and response means how our request and
+
+89
+00:04:10,680 --> 00:04:14,110
+response looks like so there is one
+
+90
+00:04:14,110 --> 00:04:16,570
+script in an web scripting engine called
+
+91
+00:04:16,570 --> 00:04:19,779
+as HTTP headers so<font color="#E5E5E5"> I am using this</font>
+
+92
+00:04:19,779 --> 00:04:23,920
+script so<font color="#CCCCCC"> nmap</font><font color="#E5E5E5"> - - script HTTP headers</font>
+
+93
+00:04:23,920 --> 00:04:28,080
+<font color="#E5E5E5">followed by the website</font><font color="#CCCCCC"> name</font>
+
+94
+00:04:43,950 --> 00:04:48,540
+<font color="#E5E5E5">okay now let's analyze the result so as</font>
+
+95
+00:04:48,540 --> 00:04:50,580
+we<font color="#CCCCCC"> all know that the port number for</font>
+
+96
+00:04:50,580 --> 00:04:54,510
+<font color="#E5E5E5">HTTP is</font><font color="#CCCCCC"> 80</font><font color="#E5E5E5"> and here you can see the list</font>
+
+97
+00:04:54,510 --> 00:04:58,110
+of HTTP header<font color="#E5E5E5"> so now what our HTTP</font>
+
+98
+00:04:58,110 --> 00:05:00,180
+request contains<font color="#E5E5E5"> or what's inside</font><font color="#CCCCCC"> the</font>
+
+99
+00:05:00,180 --> 00:05:03,120
+HTTP header<font color="#E5E5E5"> so here is the list so it</font>
+
+100
+00:05:03,120 --> 00:05:05,580
+also it<font color="#CCCCCC"> contains date</font><font color="#E5E5E5"> the server</font>
+
+101
+00:05:05,580 --> 00:05:07,740
+<font color="#CCCCCC">information</font><font color="#E5E5E5"> to whom it requesting or</font>
+
+102
+00:05:07,740 --> 00:05:10,460
+<font color="#E5E5E5">receiving the request response then</font>
+
+103
+00:05:10,460 --> 00:05:13,920
+access<font color="#E5E5E5"> control X power then connection</font>
+
+104
+00:05:13,920 --> 00:05:17,340
+close connection type text HTML now
+
+105
+00:05:17,340 --> 00:05:19,830
+let's scroll<font color="#CCCCCC"> down and</font><font color="#E5E5E5"> let's read the</font>
+
+106
+00:05:19,830 --> 00:05:25,230
+HTTP header<font color="#E5E5E5"> it's same and the request</font>
+
+107
+00:05:25,230 --> 00:05:33,720
+type<font color="#E5E5E5"> is head so this was all about</font><font color="#CCCCCC"> HTTP</font>
+
+108
+00:05:33,720 --> 00:05:37,080
+headers now let use one script which
+
+109
+00:05:37,080 --> 00:05:39,060
+will<font color="#E5E5E5"> enumerate all</font><font color="#CCCCCC"> the important</font>
+
+110
+00:05:39,060 --> 00:05:41,640
+directories<font color="#CCCCCC"> on a remote server owner</font><font color="#E5E5E5"> or</font>
+
+111
+00:05:41,640 --> 00:05:44,610
+on a remote<font color="#CCCCCC"> website</font><font color="#E5E5E5"> so their script name</font>
+
+112
+00:05:44,610 --> 00:05:48,120
+is HTTP<font color="#CCCCCC"> ennum so let me just write</font><font color="#E5E5E5"> down</font>
+
+113
+00:05:48,120 --> 00:05:51,480
+and map<font color="#E5E5E5"> - - script followed by the</font>
+
+114
+00:05:51,480 --> 00:05:57,230
+script name that is HTTP<font color="#CCCCCC"> ennum and</font>
+
+115
+00:05:57,860 --> 00:06:02,300
+followed<font color="#CCCCCC"> by the website</font><font color="#E5E5E5"> name</font>
+
+116
+00:06:14,770 --> 00:06:20,050
+<font color="#E5E5E5">okay now let's</font><font color="#CCCCCC"> analyze the result so at</font>
+
+117
+00:06:20,050 --> 00:06:22,840
+port<font color="#CCCCCC"> number 80</font><font color="#E5E5E5"> it has an M rated sum of</font>
+
+118
+00:06:22,840 --> 00:06:25,569
+files and some of<font color="#E5E5E5"> its directories here</font>
+
+119
+00:06:25,569 --> 00:06:28,449
+you can see and same for<font color="#CCCCCC"> the</font><font color="#E5E5E5"> port 443</font>
+
+120
+00:06:28,449 --> 00:06:37,810
+slash icon slash images slash help so
+
+121
+00:06:37,810 --> 00:06:41,740
+now if you<font color="#CCCCCC"> remember our last</font><font color="#E5E5E5"> video about</font>
+
+122
+00:06:41,740 --> 00:06:43,870
+<font color="#E5E5E5">scanning the target in which I showed</font>
+
+123
+00:06:43,870 --> 00:06:46,449
+<font color="#CCCCCC">you that how we can scan</font><font color="#E5E5E5"> the different</font>
+
+124
+00:06:46,449 --> 00:06:48,400
+<font color="#E5E5E5">different subdomains of a particular</font>
+
+125
+00:06:48,400 --> 00:06:51,940
+website<font color="#E5E5E5"> by using</font><font color="#CCCCCC"> nach PI scan so there</font>
+
+126
+00:06:51,940 --> 00:06:54,759
+is one script in<font color="#CCCCCC"> nmap called as DNS</font>
+
+127
+00:06:54,759 --> 00:06:57,520
+<font color="#E5E5E5">brute which will perform same tasks as</font>
+
+128
+00:06:57,520 --> 00:07:01,180
+<font color="#E5E5E5">nope I do so now let's use that script</font>
+
+129
+00:07:01,180 --> 00:07:04,960
+<font color="#E5E5E5">to enumerate the sub domain so the</font>
+
+130
+00:07:04,960 --> 00:07:12,130
+script name is DNS<font color="#CCCCCC"> root now let's check</font>
+
+131
+00:07:12,130 --> 00:07:18,659
+<font color="#CCCCCC">the</font><font color="#E5E5E5"> subdomains</font><font color="#CCCCCC"> for google.com hit</font><font color="#E5E5E5"> enter</font>
+
+132
+00:07:24,100 --> 00:07:27,740
+okay<font color="#E5E5E5"> so here you can see that it has</font>
+
+133
+00:07:27,740 --> 00:07:30,350
+listed out all the<font color="#E5E5E5"> subdomains of</font>
+
+134
+00:07:30,350 --> 00:07:35,120
+google.com<font color="#E5E5E5"> along with its IP address so</font>
+
+135
+00:07:35,120 --> 00:07:38,300
+you<font color="#E5E5E5"> can see a long list of detail of a</font>
+
+136
+00:07:38,300 --> 00:07:44,240
+domain names of<font color="#E5E5E5"> Qualcomm so this was a</font>
+
+137
+00:07:44,240 --> 00:07:47,330
+quick short introduction<font color="#CCCCCC"> about</font><font color="#E5E5E5"> nmap</font>
+
+138
+00:07:47,330 --> 00:07:50,750
+scripting engine so thanks for<font color="#CCCCCC"> watching</font>
+
+139
+00:07:50,750 --> 00:00:00,000
+this video
+

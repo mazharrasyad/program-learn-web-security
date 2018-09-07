@@ -1,0 +1,764 @@
+1
+00:00:08,360 --> 00:00:10,559
+hey everybody<font color="#E5E5E5"> John</font><font color="#CCCCCC"> wagging on here with</font>
+
+2
+00:00:10,559 --> 00:00:11,730
+<font color="#CCCCCC">dev</font><font color="#E5E5E5"> central we're coming to you with</font>
+
+3
+00:00:11,730 --> 00:00:13,710
+another<font color="#CCCCCC"> light board lesson and</font><font color="#E5E5E5"> today</font>
+
+4
+00:00:13,710 --> 00:00:15,750
+we're gonna talk<font color="#E5E5E5"> about some a wasp</font><font color="#CCCCCC"> top</font>
+
+5
+00:00:15,750 --> 00:00:19,500
+<font color="#CCCCCC">10</font><font color="#E5E5E5"> vulnerabilities and the wasps top 10</font>
+
+6
+00:00:19,500 --> 00:00:21,750
+just<font color="#E5E5E5"> came out the 2017 version so the</font>
+
+7
+00:00:21,750 --> 00:00:23,869
+latest and<font color="#CCCCCC"> greatest and the number</font><font color="#E5E5E5"> one</font>
+
+8
+00:00:23,869 --> 00:00:26,279
+<font color="#E5E5E5">vulnerability which has been the number</font>
+
+9
+00:00:26,279 --> 00:00:28,460
+<font color="#CCCCCC">one vulnerability</font><font color="#E5E5E5"> for many many years is</font>
+
+10
+00:00:28,460 --> 00:00:32,070
+<font color="#E5E5E5">injection attacks</font><font color="#CCCCCC"> so injection attacks</font>
+
+11
+00:00:32,070 --> 00:00:35,670
+can happen<font color="#E5E5E5"> from database injections LDAP</font>
+
+12
+00:00:35,670 --> 00:00:37,530
+there's all kinds of different injection
+
+13
+00:00:37,530 --> 00:00:40,200
+attacks but the but<font color="#CCCCCC"> the basics around</font>
+
+14
+00:00:40,200 --> 00:00:43,200
+the injection<font color="#CCCCCC"> attack is is relatively</font>
+
+15
+00:00:43,200 --> 00:00:45,030
+similar across all the different<font color="#CCCCCC"> types</font>
+
+16
+00:00:45,030 --> 00:00:46,800
+<font color="#CCCCCC">of injection attacks so I'm going to</font>
+
+17
+00:00:46,800 --> 00:00:49,350
+<font color="#E5E5E5">kind of draw a couple of quick scenario</font>
+
+18
+00:00:49,350 --> 00:00:51,300
+here<font color="#E5E5E5"> talk about</font><font color="#CCCCCC"> how these things</font><font color="#E5E5E5"> happen</font>
+
+19
+00:00:51,300 --> 00:00:53,879
+<font color="#CCCCCC">and</font><font color="#E5E5E5"> maybe some ways to to guard against</font>
+
+20
+00:00:53,879 --> 00:00:55,890
+these all right<font color="#E5E5E5"> so let's say you have a</font>
+
+21
+00:00:55,890 --> 00:00:59,129
+user out here in the<font color="#CCCCCC"> internet and that</font>
+
+22
+00:00:59,129 --> 00:01:01,079
+user wants to<font color="#E5E5E5"> access your web</font>
+
+23
+00:01:01,079 --> 00:01:03,030
+application so you<font color="#E5E5E5"> have a web</font>
+
+24
+00:01:03,030 --> 00:01:05,790
+application out here<font color="#E5E5E5"> and this web</font>
+
+25
+00:01:05,790 --> 00:01:08,790
+application<font color="#E5E5E5"> has you know a page you go</font>
+
+26
+00:01:08,790 --> 00:01:13,110
+to<font color="#E5E5E5"> WWE app</font><font color="#CCCCCC"> comm and it's got a page and</font>
+
+27
+00:01:13,110 --> 00:01:15,330
+maybe<font color="#E5E5E5"> it's got like a you know user name</font>
+
+28
+00:01:15,330 --> 00:01:17,640
+field right<font color="#CCCCCC"> here and like a you know</font>
+
+29
+00:01:17,640 --> 00:01:20,759
+password field right<font color="#CCCCCC"> here and let's say</font>
+
+30
+00:01:20,759 --> 00:01:22,680
+that<font color="#E5E5E5"> part of the part of the design of</font>
+
+31
+00:01:22,680 --> 00:01:24,479
+<font color="#CCCCCC">this web application is</font><font color="#E5E5E5"> certainly a lot</font>
+
+32
+00:01:24,479 --> 00:01:28,080
+of the HTML and<font color="#E5E5E5"> CSS and you</font><font color="#CCCCCC"> know</font>
+
+33
+00:01:28,080 --> 00:01:30,180
+<font color="#E5E5E5">JavaScript and all that kind of all the</font>
+
+34
+00:01:30,180 --> 00:01:31,409
+different components<font color="#CCCCCC"> that go into</font><font color="#E5E5E5"> this</font>
+
+35
+00:01:31,409 --> 00:01:33,900
+but there's also a database back here<font color="#E5E5E5"> so</font>
+
+36
+00:01:33,900 --> 00:01:38,100
+I'm gonna put DB that contains<font color="#E5E5E5"> you know</font>
+
+37
+00:01:38,100 --> 00:01:39,689
+all<font color="#E5E5E5"> kinds of</font><font color="#CCCCCC"> stuff and</font><font color="#E5E5E5"> maybe there's a</font>
+
+38
+00:01:39,689 --> 00:01:41,640
+whole<font color="#E5E5E5"> bunch of different</font><font color="#CCCCCC"> databases</font><font color="#E5E5E5"> but</font>
+
+39
+00:01:41,640 --> 00:01:43,740
+let's say for<font color="#CCCCCC"> example there's one</font><font color="#E5E5E5"> that</font>
+
+40
+00:01:43,740 --> 00:01:47,520
+<font color="#CCCCCC">has all of the usernames and all the</font>
+
+41
+00:01:47,520 --> 00:01:50,220
+passwords<font color="#CCCCCC"> and it's stored here in this</font>
+
+42
+00:01:50,220 --> 00:01:54,780
+database<font color="#CCCCCC"> alright</font><font color="#E5E5E5"> then what happens is</font>
+
+43
+00:01:54,780 --> 00:01:57,450
+when a user<font color="#E5E5E5"> accesses the web application</font>
+
+44
+00:01:57,450 --> 00:01:59,700
+you know here's<font color="#CCCCCC"> the</font><font color="#E5E5E5"> username right here</font>
+
+45
+00:01:59,700 --> 00:02:01,500
+<font color="#E5E5E5">and here's the password field so they're</font>
+
+46
+00:02:01,500 --> 00:02:02,909
+gonna type in their username and type in
+
+47
+00:02:02,909 --> 00:02:05,729
+<font color="#E5E5E5">their password and then this page is</font>
+
+48
+00:02:05,729 --> 00:02:08,310
+<font color="#CCCCCC">going to send a request</font><font color="#E5E5E5"> down to the</font>
+
+49
+00:02:08,310 --> 00:02:10,020
+<font color="#E5E5E5">database and it's going to say hey I've</font>
+
+50
+00:02:10,020 --> 00:02:11,860
+got<font color="#E5E5E5"> this</font><font color="#CCCCCC"> input too</font>
+
+51
+00:02:11,860 --> 00:02:14,020
+to get the username<font color="#E5E5E5"> and password</font><font color="#CCCCCC"> is that</font>
+
+52
+00:02:14,020 --> 00:02:19,210
+one<font color="#E5E5E5"> of our you know accessible usernames</font>
+
+53
+00:02:19,210 --> 00:02:21,940
+and passwords<font color="#CCCCCC"> well when it does that it</font>
+
+54
+00:02:21,940 --> 00:02:25,480
+uses<font color="#CCCCCC"> a</font><font color="#E5E5E5"> certain type of you know language</font>
+
+55
+00:02:25,480 --> 00:02:28,900
+to<font color="#E5E5E5"> communicate with the</font><font color="#CCCCCC"> database and and</font>
+
+56
+00:02:28,900 --> 00:02:30,790
+there's a very very<font color="#E5E5E5"> common one most of</font>
+
+57
+00:02:30,790 --> 00:02:32,140
+<font color="#E5E5E5">you</font><font color="#CCCCCC"> probably know what what we're</font>
+
+58
+00:02:32,140 --> 00:02:33,610
+talking about<font color="#E5E5E5"> here</font><font color="#CCCCCC"> but if you don't know</font>
+
+59
+00:02:33,610 --> 00:02:36,160
+there's this language called structured
+
+60
+00:02:36,160 --> 00:02:40,000
+query language<font color="#CCCCCC"> SQL and so a lot of these</font>
+
+61
+00:02:40,000 --> 00:02:42,640
+injection attacks<font color="#CCCCCC"> focus on sequel</font>
+
+62
+00:02:42,640 --> 00:02:44,590
+injections<font color="#E5E5E5"> it's what there is</font><font color="#CCCCCC"> the way</font>
+
+63
+00:02:44,590 --> 00:02:46,570
+you kind of pronounce that well see what
+
+64
+00:02:46,570 --> 00:02:48,970
+what SQL is is that's<font color="#E5E5E5"> the language used</font>
+
+65
+00:02:48,970 --> 00:02:52,060
+<font color="#E5E5E5">to talk to this database</font><font color="#CCCCCC"> and there may</font>
+
+66
+00:02:52,060 --> 00:02:55,270
+be the<font color="#CCCCCC"> the structure</font><font color="#E5E5E5"> of this may have</font>
+
+67
+00:02:55,270 --> 00:02:57,130
+something<font color="#E5E5E5"> that says something like you</font>
+
+68
+00:02:57,130 --> 00:03:04,110
+<font color="#CCCCCC">know select you know</font><font color="#E5E5E5"> star from you know</font>
+
+69
+00:03:04,110 --> 00:03:08,260
+users<font color="#CCCCCC"> with you know user name this and</font>
+
+70
+00:03:08,260 --> 00:03:11,410
+<font color="#E5E5E5">then you know return whatever so</font><font color="#CCCCCC"> but if</font>
+
+71
+00:03:11,410 --> 00:03:13,090
+you say something<font color="#CCCCCC"> like</font><font color="#E5E5E5"> select star then</font>
+
+72
+00:03:13,090 --> 00:03:15,459
+that means select everything from<font color="#E5E5E5"> say</font>
+
+73
+00:03:15,459 --> 00:03:17,799
+this<font color="#CCCCCC"> user name/password database</font>
+
+74
+00:03:17,799 --> 00:03:20,560
+well typically<font color="#E5E5E5"> you don't want to return</font>
+
+75
+00:03:20,560 --> 00:03:22,840
+that unless<font color="#E5E5E5"> that is</font><font color="#CCCCCC"> a valid request and</font>
+
+76
+00:03:22,840 --> 00:03:24,820
+so what what these malicious users will
+
+77
+00:03:24,820 --> 00:03:27,370
+do is they'll say hey I'm gonna inject
+
+78
+00:03:27,370 --> 00:03:29,799
+maybe some kind<font color="#CCCCCC"> of malicious code</font><font color="#E5E5E5"> in</font>
+
+79
+00:03:29,799 --> 00:03:32,709
+<font color="#CCCCCC">here to trick</font><font color="#E5E5E5"> this back-end</font><font color="#CCCCCC"> database to</font>
+
+80
+00:03:32,709 --> 00:03:36,370
+return all<font color="#CCCCCC"> of this data so then</font><font color="#E5E5E5"> that way</font>
+
+81
+00:03:36,370 --> 00:03:38,860
+I as a bad<font color="#E5E5E5"> guy can see all of your in</font>
+
+82
+00:03:38,860 --> 00:03:41,709
+this<font color="#E5E5E5"> case usernames and passwords</font><font color="#CCCCCC"> and so</font>
+
+83
+00:03:41,709 --> 00:03:44,170
+so<font color="#CCCCCC"> anyway and</font><font color="#E5E5E5"> then and then even beyond</font>
+
+84
+00:03:44,170 --> 00:03:46,060
+<font color="#CCCCCC">that sometimes you can you can type in</font>
+
+85
+00:03:46,060 --> 00:03:49,150
+these these you know sequel commands so
+
+86
+00:03:49,150 --> 00:03:51,549
+that<font color="#CCCCCC"> it actually even</font><font color="#E5E5E5"> tricks the system</font>
+
+87
+00:03:51,549 --> 00:03:54,130
+into<font color="#E5E5E5"> running like system commands you</font>
+
+88
+00:03:54,130 --> 00:03:55,630
+know so so there's a lot<font color="#E5E5E5"> of different</font>
+
+89
+00:03:55,630 --> 00:03:57,040
+things<font color="#E5E5E5"> that could</font><font color="#CCCCCC"> happen from</font><font color="#E5E5E5"> these</font>
+
+90
+00:03:57,040 --> 00:03:59,080
+injection attacks you could you could
+
+91
+00:03:59,080 --> 00:04:00,910
+<font color="#E5E5E5">you know have a leakage of usernames and</font>
+
+92
+00:04:00,910 --> 00:04:03,040
+passwords credit card numbers<font color="#E5E5E5"> you know</font>
+
+93
+00:04:03,040 --> 00:04:04,900
+other kind<font color="#E5E5E5"> of sensitive data you could</font>
+
+94
+00:04:04,900 --> 00:04:07,090
+run system commands off of<font color="#E5E5E5"> these things</font>
+
+95
+00:04:07,090 --> 00:04:10,140
+so the bottom line<font color="#CCCCCC"> is</font><font color="#E5E5E5"> whenever a user</font>
+
+96
+00:04:10,140 --> 00:04:13,000
+you know inputs<font color="#E5E5E5"> say a username and</font>
+
+97
+00:04:13,000 --> 00:04:15,579
+<font color="#CCCCCC">password</font><font color="#E5E5E5"> and and it could be more</font><font color="#CCCCCC"> than</font>
+
+98
+00:04:15,579 --> 00:04:17,108
+just<font color="#E5E5E5"> username and password fields in a</font>
+
+99
+00:04:17,108 --> 00:04:19,060
+web app<font color="#CCCCCC"> but I'm using</font><font color="#E5E5E5"> that</font><font color="#CCCCCC"> as an example</font>
+
+100
+00:04:19,060 --> 00:04:21,459
+here whenever they input<font color="#E5E5E5"> data into</font><font color="#CCCCCC"> that</font>
+
+101
+00:04:21,459 --> 00:04:25,150
+<font color="#E5E5E5">and then that</font><font color="#CCCCCC"> ultimately kicks off a you</font>
+
+102
+00:04:25,150 --> 00:04:26,530
+know a sequel
+
+103
+00:04:26,530 --> 00:04:28,930
+<font color="#E5E5E5">request to a back-end database</font><font color="#CCCCCC"> you want</font>
+
+104
+00:04:28,930 --> 00:04:31,360
+<font color="#CCCCCC">to</font><font color="#E5E5E5"> make sure</font><font color="#CCCCCC"> that all that is is good to</font>
+
+105
+00:04:31,360 --> 00:04:34,330
+go from an authorized valid user<font color="#E5E5E5"> so the</font>
+
+106
+00:04:34,330 --> 00:04:36,520
+question is how do we guard against<font color="#E5E5E5"> this</font>
+
+107
+00:04:36,520 --> 00:04:37,360
+<font color="#E5E5E5">kind of stuff</font>
+
+108
+00:04:37,360 --> 00:04:40,000
+<font color="#E5E5E5">and the short answer</font><font color="#CCCCCC"> is make sure that</font>
+
+109
+00:04:40,000 --> 00:04:41,979
+you<font color="#E5E5E5"> build your web application properly</font>
+
+110
+00:04:41,979 --> 00:04:44,639
+<font color="#CCCCCC">with proper access controls and proper</font>
+
+111
+00:04:44,639 --> 00:04:47,680
+<font color="#E5E5E5">you know proper defense mechanisms in</font>
+
+112
+00:04:47,680 --> 00:04:50,409
+place to<font color="#CCCCCC"> allow this</font><font color="#E5E5E5"> to not go on</font><font color="#CCCCCC"> because</font>
+
+113
+00:04:50,409 --> 00:04:53,370
+frankly<font color="#CCCCCC"> anytime there is a user input</font>
+
+114
+00:04:53,370 --> 00:04:57,159
+<font color="#CCCCCC">that needs</font><font color="#E5E5E5"> to be assumed to be untrusted</font>
+
+115
+00:04:57,159 --> 00:04:59,590
+data<font color="#E5E5E5"> so you need to you need to make</font>
+
+116
+00:04:59,590 --> 00:05:01,629
+sure<font color="#E5E5E5"> that that is valid before you run</font>
+
+117
+00:05:01,629 --> 00:05:03,279
+<font color="#CCCCCC">any</font><font color="#E5E5E5"> kind of back-end</font><font color="#CCCCCC"> database commands</font>
+
+118
+00:05:03,279 --> 00:05:05,650
+<font color="#E5E5E5">all right so a couple</font><font color="#CCCCCC"> of</font><font color="#E5E5E5"> things</font><font color="#CCCCCC"> that you</font>
+
+119
+00:05:05,650 --> 00:05:08,310
+could do to guard against this is a
+
+120
+00:05:08,310 --> 00:05:12,039
+concept<font color="#E5E5E5"> called query parameterization</font>
+
+121
+00:05:12,039 --> 00:05:13,419
+<font color="#CCCCCC">I'm not</font><font color="#E5E5E5"> gonna write it up here because</font>
+
+122
+00:05:13,419 --> 00:05:16,569
+<font color="#CCCCCC">it's big words</font><font color="#E5E5E5"> query parameterization</font>
+
+123
+00:05:16,569 --> 00:05:19,000
+and<font color="#E5E5E5"> basically what that means is</font><font color="#CCCCCC"> that</font>
+
+124
+00:05:19,000 --> 00:05:21,400
+the commands<font color="#E5E5E5"> that are sent from the say</font>
+
+125
+00:05:21,400 --> 00:05:24,340
+this<font color="#CCCCCC"> front-end you know web app page to</font>
+
+126
+00:05:24,340 --> 00:05:26,740
+a back-end database<font color="#CCCCCC"> there are parameters</font>
+
+127
+00:05:26,740 --> 00:05:29,379
+<font color="#E5E5E5">that</font><font color="#CCCCCC"> are involved</font><font color="#E5E5E5"> in that and then there</font>
+
+128
+00:05:29,379 --> 00:05:31,419
+is the there's the very basic sequel
+
+129
+00:05:31,419 --> 00:05:33,610
+command itself<font color="#E5E5E5"> and so what you want to</font>
+
+130
+00:05:33,610 --> 00:05:35,949
+<font color="#CCCCCC">do is you want to separate the sequel</font>
+
+131
+00:05:35,949 --> 00:05:38,949
+statements from<font color="#E5E5E5"> any kind</font><font color="#CCCCCC"> of parameters</font>
+
+132
+00:05:38,949 --> 00:05:42,310
+<font color="#CCCCCC">that would</font><font color="#E5E5E5"> be included</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> a call back to</font>
+
+133
+00:05:42,310 --> 00:05:45,129
+<font color="#E5E5E5">the database so query parameterization</font>
+
+134
+00:05:45,129 --> 00:05:49,150
+is<font color="#E5E5E5"> a huge one</font><font color="#CCCCCC"> kind</font><font color="#E5E5E5"> of kind of above that</font>
+
+135
+00:05:49,150 --> 00:05:51,000
+<font color="#E5E5E5">I would say that</font><font color="#CCCCCC"> you need to validate</font>
+
+136
+00:05:51,000 --> 00:05:54,969
+any kind of<font color="#E5E5E5"> user input so for example if</font>
+
+137
+00:05:54,969 --> 00:05:57,219
+this is a user name and you<font color="#E5E5E5"> know that</font>
+
+138
+00:05:57,219 --> 00:05:58,810
+based on<font color="#CCCCCC"> your web application you only</font>
+
+139
+00:05:58,810 --> 00:06:01,479
+allow<font color="#CCCCCC"> characters that are not</font><font color="#E5E5E5"> numbers</font>
+
+140
+00:06:01,479 --> 00:06:03,819
+not special symbols you know that kind
+
+141
+00:06:03,819 --> 00:06:06,400
+of stuff<font color="#CCCCCC"> then</font><font color="#E5E5E5"> you need to make sure that</font>
+
+142
+00:06:06,400 --> 00:06:08,469
+whatever is put in here you know
+
+143
+00:06:08,469 --> 00:06:11,800
+conforms to the you<font color="#CCCCCC"> know</font><font color="#E5E5E5"> to the to the</font>
+
+144
+00:06:11,800 --> 00:06:13,060
+requirements that<font color="#E5E5E5"> you</font><font color="#CCCCCC"> have</font><font color="#E5E5E5"> for that</font>
+
+145
+00:06:13,060 --> 00:06:15,400
+<font color="#E5E5E5">specific field the same thing with the</font>
+
+146
+00:06:15,400 --> 00:06:19,120
+password so so<font color="#CCCCCC"> anyway so you need to you</font>
+
+147
+00:06:19,120 --> 00:06:20,500
+need<font color="#E5E5E5"> to make sure</font><font color="#CCCCCC"> that those are in</font>
+
+148
+00:06:20,500 --> 00:06:23,199
+<font color="#CCCCCC">place as well</font><font color="#E5E5E5"> there are</font><font color="#CCCCCC"> other there are</font>
+
+149
+00:06:23,199 --> 00:06:25,599
+<font color="#CCCCCC">other kind</font><font color="#E5E5E5"> of controls if you will that</font>
+
+150
+00:06:25,599 --> 00:06:27,339
+<font color="#E5E5E5">you</font><font color="#CCCCCC"> can put in</font><font color="#E5E5E5"> place from a sequel</font>
+
+151
+00:06:27,339 --> 00:06:28,360
+perspective
+
+152
+00:06:28,360 --> 00:06:32,349
+I'll put I'll put limit on here<font color="#CCCCCC"> Li m.i.t</font>
+
+153
+00:06:32,349 --> 00:06:34,779
+so you can do you can<font color="#CCCCCC"> use some limiting</font>
+
+154
+00:06:34,779 --> 00:06:37,120
+different commands or different features
+
+155
+00:06:37,120 --> 00:06:39,880
+in these<font color="#CCCCCC"> databases and database calls</font>
+
+156
+00:06:39,880 --> 00:06:43,750
+<font color="#E5E5E5">that if you were to be exposed and you</font>
+
+157
+00:06:43,750 --> 00:06:45,700
+know someone<font color="#CCCCCC"> did get your</font><font color="#E5E5E5"> entire user</font>
+
+158
+00:06:45,700 --> 00:06:48,010
+<font color="#E5E5E5">name and password list then you can put</font>
+
+159
+00:06:48,010 --> 00:06:49,750
+some<font color="#CCCCCC"> limits in place so that</font><font color="#E5E5E5"> hey when</font>
+
+160
+00:06:49,750 --> 00:06:52,210
+data is is sent back from<font color="#E5E5E5"> a database</font>
+
+161
+00:06:52,210 --> 00:06:54,790
+<font color="#E5E5E5">call then it only limits it to certain</font>
+
+162
+00:06:54,790 --> 00:06:56,830
+<font color="#E5E5E5">amount of data that's ever sent back at</font>
+
+163
+00:06:56,830 --> 00:07:00,520
+any one time<font color="#CCCCCC"> so again in the indicates</font>
+
+164
+00:07:00,520 --> 00:07:02,050
+<font color="#E5E5E5">that you</font><font color="#CCCCCC"> are actually exposed and you</font>
+
+165
+00:07:02,050 --> 00:07:05,710
+can<font color="#CCCCCC"> actually limit the exposure</font><font color="#E5E5E5"> so</font>
+
+166
+00:07:05,710 --> 00:07:07,870
+anyway so there so that this is a very
+
+167
+00:07:07,870 --> 00:07:11,860
+<font color="#E5E5E5">very common attack method</font><font color="#CCCCCC"> - to use you</font>
+
+168
+00:07:11,860 --> 00:07:14,590
+know an injection<font color="#CCCCCC"> into a vulnerable</font>
+
+169
+00:07:14,590 --> 00:07:19,150
+<font color="#E5E5E5">database and man it happens all the time</font>
+
+170
+00:07:19,150 --> 00:07:21,580
+<font color="#E5E5E5">out there so again the the number</font><font color="#CCCCCC"> one</font>
+
+171
+00:07:21,580 --> 00:07:24,910
+answer<font color="#E5E5E5"> is build your web application</font>
+
+172
+00:07:24,910 --> 00:07:27,520
+properly<font color="#E5E5E5"> using the proper controls and</font>
+
+173
+00:07:27,520 --> 00:07:29,740
+then and and there are<font color="#E5E5E5"> some other</font>
+
+174
+00:07:29,740 --> 00:07:32,050
+<font color="#E5E5E5">answers like web application firewalls</font>
+
+175
+00:07:32,050 --> 00:07:33,730
+<font color="#E5E5E5">that you can put in place and and some</font>
+
+176
+00:07:33,730 --> 00:07:35,380
+other<font color="#E5E5E5"> things</font><font color="#CCCCCC"> that you can do but at its</font>
+
+177
+00:07:35,380 --> 00:07:38,680
+<font color="#CCCCCC">heart build this thing correctly so that</font>
+
+178
+00:07:38,680 --> 00:07:42,010
+<font color="#E5E5E5">any kind of malicious or nefarious</font><font color="#CCCCCC"> type</font>
+
+179
+00:07:42,010 --> 00:07:43,600
+of access is not going to be able to get
+
+180
+00:07:43,600 --> 00:07:46,600
+to it in the first<font color="#CCCCCC"> place so so injection</font>
+
+181
+00:07:46,600 --> 00:07:47,980
+attacks huge thing they've been<font color="#E5E5E5"> the</font>
+
+182
+00:07:47,980 --> 00:07:50,350
+number one<font color="#E5E5E5"> vulnerability on the OWASP</font>
+
+183
+00:07:50,350 --> 00:07:52,870
+top<font color="#CCCCCC"> ten for many many years it's</font><font color="#E5E5E5"> still a</font>
+
+184
+00:07:52,870 --> 00:07:55,000
+big<font color="#E5E5E5"> deal it's still you know</font><font color="#CCCCCC"> it's still</font>
+
+185
+00:07:55,000 --> 00:07:57,370
+out there<font color="#E5E5E5"> still used all the time so be</font>
+
+186
+00:07:57,370 --> 00:07:58,780
+careful out there<font color="#CCCCCC"> build your web app</font>
+
+187
+00:07:58,780 --> 00:08:01,360
+properly and and let's be safe on the
+
+188
+00:08:01,360 --> 00:08:02,470
+<font color="#E5E5E5">internet today so thanks for watching</font>
+
+189
+00:08:02,470 --> 00:08:04,990
+<font color="#CCCCCC">this lightboard lesson video and we'll</font>
+
+190
+00:08:04,990 --> 00:08:08,160
+<font color="#E5E5E5">see you</font><font color="#CCCCCC"> guys out</font><font color="#E5E5E5"> there in the community</font>
+
+191
+00:08:13,840 --> 00:00:00,000
+you
+

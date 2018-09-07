@@ -1,0 +1,5460 @@
+1
+00:00:02,860 --> 00:00:07,129
+<font color="#E5E5E5">all right good</font><font color="#CCCCCC"> morning</font><font color="#E5E5E5"> oh</font><font color="#CCCCCC"> but I can't</font>
+
+2
+00:00:07,129 --> 00:00:08,690
+see anything with<font color="#E5E5E5"> those lights so it</font>
+
+3
+00:00:08,690 --> 00:00:10,040
+sounded<font color="#CCCCCC"> like there were three</font><font color="#E5E5E5"> people in</font>
+
+4
+00:00:10,040 --> 00:00:11,539
+the room<font color="#E5E5E5"> but still for those three</font>
+
+5
+00:00:11,539 --> 00:00:14,840
+people<font color="#E5E5E5"> I'll give my best yeah so thank</font>
+
+6
+00:00:14,840 --> 00:00:17,420
+you for for picking<font color="#CCCCCC"> this talk this</font>
+
+7
+00:00:17,420 --> 00:00:19,730
+<font color="#E5E5E5">morning this is such a</font><font color="#CCCCCC"> capacity crowd</font>
+
+8
+00:00:19,730 --> 00:00:22,249
+and I do think it's absolutely worth
+
+9
+00:00:22,249 --> 00:00:25,220
+your time<font color="#CCCCCC"> it's also absolutely worth my</font>
+
+10
+00:00:25,220 --> 00:00:27,650
+time because<font color="#E5E5E5"> this talk has</font><font color="#CCCCCC"> been I</font><font color="#E5E5E5"> think</font>
+
+11
+00:00:27,650 --> 00:00:30,199
+a year<font color="#E5E5E5"> in the</font><font color="#CCCCCC"> making I will be</font><font color="#E5E5E5"> talking</font>
+
+12
+00:00:30,199 --> 00:00:34,310
+<font color="#E5E5E5">about the ovis top ten 2017</font><font color="#CCCCCC"> and if you</font>
+
+13
+00:00:34,310 --> 00:00:37,220
+have followed<font color="#CCCCCC"> that top ten list created</font>
+
+14
+00:00:37,220 --> 00:00:39,530
+<font color="#CCCCCC">and curated by the open web application</font>
+
+15
+00:00:39,530 --> 00:00:43,310
+security project<font color="#CCCCCC"> Oh Beth then you may</font>
+
+16
+00:00:43,310 --> 00:00:45,920
+have<font color="#E5E5E5"> seen</font><font color="#CCCCCC"> that you know there was a list</font>
+
+17
+00:00:45,920 --> 00:00:51,970
+in 2003 and then one in 2004 2007 2010
+
+18
+00:00:51,970 --> 00:00:55,100
+2013<font color="#E5E5E5"> so you kind of see a pattern</font><font color="#CCCCCC"> here</font>
+
+19
+00:00:55,100 --> 00:00:59,780
+right<font color="#CCCCCC"> so at last year's conference we</font>
+
+20
+00:00:59,780 --> 00:01:02,420
+thought<font color="#CCCCCC"> about</font><font color="#E5E5E5"> how about we do a session</font>
+
+21
+00:01:02,420 --> 00:01:06,950
+on OS top<font color="#CCCCCC"> 10 2016 might an awesome idea</font>
+
+22
+00:01:06,950 --> 00:01:09,409
+let's do<font color="#E5E5E5"> that and then we waited and</font>
+
+23
+00:01:09,409 --> 00:01:11,210
+waited and<font color="#E5E5E5"> waited</font><font color="#CCCCCC"> and then we did</font>
+
+24
+00:01:11,210 --> 00:01:14,060
+something<font color="#E5E5E5"> else of course</font><font color="#CCCCCC"> and we were</font>
+
+25
+00:01:14,060 --> 00:01:16,249
+really<font color="#E5E5E5"> we were we wanted to do this then</font>
+
+26
+00:01:16,249 --> 00:01:18,069
+in London at the<font color="#E5E5E5"> London Show in January</font>
+
+27
+00:01:18,069 --> 00:01:20,810
+<font color="#E5E5E5">still no list okay hmm</font>
+
+28
+00:01:20,810 --> 00:01:22,729
+<font color="#E5E5E5">but now we are lucky because a couple</font>
+
+29
+00:01:22,729 --> 00:01:25,640
+<font color="#CCCCCC">weeks back</font><font color="#E5E5E5"> release candidate one of</font><font color="#CCCCCC"> the</font>
+
+30
+00:01:25,640 --> 00:01:29,359
+<font color="#CCCCCC">ovis</font><font color="#E5E5E5"> top</font><font color="#CCCCCC"> ten 2017</font><font color="#E5E5E5"> was released so</font>
+
+31
+00:01:29,359 --> 00:01:31,789
+actually there is something<font color="#E5E5E5"> to talk</font>
+
+32
+00:01:31,789 --> 00:01:37,189
+about<font color="#E5E5E5"> now basically the top ten list of</font>
+
+33
+00:01:37,189 --> 00:01:41,119
+the<font color="#CCCCCC"> overs</font><font color="#E5E5E5"> is a list not of security</font>
+
+34
+00:01:41,119 --> 00:01:42,619
+vulnerabilities<font color="#CCCCCC"> that's a misconception</font>
+
+35
+00:01:42,619 --> 00:01:47,359
+<font color="#CCCCCC">it's a list</font><font color="#E5E5E5"> of security risks</font><font color="#CCCCCC"> right</font><font color="#E5E5E5"> so</font>
+
+36
+00:01:47,359 --> 00:01:49,490
+things<font color="#E5E5E5"> that might happen and it just</font>
+
+37
+00:01:49,490 --> 00:01:52,429
+<font color="#E5E5E5">Europe provides a good overview of what</font>
+
+38
+00:01:52,429 --> 00:01:54,350
+kind<font color="#E5E5E5"> of risks out there for today's web</font>
+
+39
+00:01:54,350 --> 00:01:56,509
+applications<font color="#CCCCCC"> and how to mitigate those</font>
+
+40
+00:01:56,509 --> 00:01:59,600
+with there have been some<font color="#CCCCCC"> discussions</font>
+
+41
+00:01:59,600 --> 00:02:02,719
+well recently<font color="#E5E5E5"> and also since since a</font>
+
+42
+00:02:02,719 --> 00:02:05,509
+while whether this list is still
+
+43
+00:02:05,509 --> 00:02:07,609
+relevant<font color="#E5E5E5"> because</font><font color="#CCCCCC"> how is this list</font>
+
+44
+00:02:07,609 --> 00:02:10,699
+assembled basically security researchers
+
+45
+00:02:10,699 --> 00:02:13,220
+they<font color="#CCCCCC"> analyzed the results of their</font>
+
+46
+00:02:13,220 --> 00:02:15,870
+audits<font color="#E5E5E5"> and they put it into a system</font>
+
+47
+00:02:15,870 --> 00:02:18,540
+if they have<font color="#E5E5E5"> found whatever a certain</font>
+
+48
+00:02:18,540 --> 00:02:20,700
+<font color="#E5E5E5">risk that many times and another risk</font>
+
+49
+00:02:20,700 --> 00:02:23,190
+that<font color="#E5E5E5"> many times</font><font color="#CCCCCC"> its put in and in the</font>
+
+50
+00:02:23,190 --> 00:02:26,430
+end well<font color="#CCCCCC"> the people responsible</font><font color="#E5E5E5"> do best</font>
+
+51
+00:02:26,430 --> 00:02:28,260
+for<font color="#CCCCCC"> that list they kind of do the math</font>
+
+52
+00:02:28,260 --> 00:02:30,480
+<font color="#CCCCCC">try to categorize everything</font><font color="#E5E5E5"> and then</font>
+
+53
+00:02:30,480 --> 00:02:33,239
+put<font color="#E5E5E5"> out a top</font><font color="#CCCCCC"> ten list</font><font color="#E5E5E5"> now if you go</font>
+
+54
+00:02:33,239 --> 00:02:35,610
+<font color="#CCCCCC">through that list some of those items on</font>
+
+55
+00:02:35,610 --> 00:02:38,489
+the list<font color="#E5E5E5"> they seem to be at the wrong</font>
+
+56
+00:02:38,489 --> 00:02:40,260
+position<font color="#CCCCCC"> right</font><font color="#E5E5E5"> at least in my opinion</font>
+
+57
+00:02:40,260 --> 00:02:42,900
+<font color="#E5E5E5">some of those items state they are kind</font>
+
+58
+00:02:42,900 --> 00:02:45,000
+<font color="#E5E5E5">of really weird so you can really argue</font>
+
+59
+00:02:45,000 --> 00:02:47,160
+is this list still so relevant today
+
+60
+00:02:47,160 --> 00:02:51,269
+<font color="#E5E5E5">right but I think</font><font color="#CCCCCC"> it still is</font><font color="#E5E5E5"> because so</font>
+
+61
+00:02:51,269 --> 00:02:53,340
+many<font color="#E5E5E5"> people so many developers are now</font>
+
+62
+00:02:53,340 --> 00:02:55,700
+moving to to web development<font color="#E5E5E5"> and</font>
+
+63
+00:02:55,700 --> 00:02:58,440
+everyone needs<font color="#E5E5E5"> to</font><font color="#CCCCCC"> know about security</font>
+
+64
+00:02:58,440 --> 00:03:03,000
+<font color="#E5E5E5">it's such an important</font><font color="#CCCCCC"> topic</font><font color="#E5E5E5"> so everyone</font>
+
+65
+00:03:03,000 --> 00:03:06,569
+has to<font color="#CCCCCC"> know</font><font color="#E5E5E5"> what risk is and how to how</font>
+
+66
+00:03:06,569 --> 00:03:08,519
+to<font color="#E5E5E5"> work with these risk and therefore</font>
+
+67
+00:03:08,519 --> 00:03:11,190
+<font color="#E5E5E5">this list even</font><font color="#CCCCCC"> though I</font><font color="#E5E5E5"> don't always</font>
+
+68
+00:03:11,190 --> 00:03:12,989
+<font color="#E5E5E5">agree with some</font><font color="#CCCCCC"> of the items</font><font color="#E5E5E5"> on the list</font>
+
+69
+00:03:12,989 --> 00:03:15,510
+or<font color="#E5E5E5"> the ordering of that list is still a</font>
+
+70
+00:03:15,510 --> 00:03:17,459
+very very blessed<font color="#CCCCCC"> so what I would like</font>
+
+71
+00:03:17,459 --> 00:03:20,340
+<font color="#CCCCCC">to do today</font><font color="#E5E5E5"> this morning is I'd like to</font>
+
+72
+00:03:20,340 --> 00:03:22,440
+go over<font color="#E5E5E5"> that list you'll have a look at</font>
+
+73
+00:03:22,440 --> 00:03:23,880
+the<font color="#CCCCCC"> ten items on</font><font color="#E5E5E5"> the list</font>
+
+74
+00:03:23,880 --> 00:03:27,090
+<font color="#E5E5E5">I'll cover each of those items for</font><font color="#CCCCCC"> some</font>
+
+75
+00:03:27,090 --> 00:03:28,799
+of them<font color="#E5E5E5"> we have a look at code or we</font>
+
+76
+00:03:28,799 --> 00:03:30,930
+have a look at countermeasures<font color="#E5E5E5"> and also</font>
+
+77
+00:03:30,930 --> 00:03:34,079
+there are<font color="#CCCCCC"> some wellmaybe attacks that</font>
+
+78
+00:03:34,079 --> 00:03:36,780
+<font color="#CCCCCC">Quaeda do not fit in one</font><font color="#E5E5E5"> of those</font><font color="#CCCCCC"> ten</font>
+
+79
+00:03:36,780 --> 00:03:39,930
+items<font color="#CCCCCC"> so I've added them</font><font color="#E5E5E5"> where I saw</font>
+
+80
+00:03:39,930 --> 00:03:42,480
+<font color="#E5E5E5">them fit as well</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> again</font><font color="#CCCCCC"> you should</font>
+
+81
+00:03:42,480 --> 00:03:45,389
+have<font color="#E5E5E5"> a very good</font><font color="#CCCCCC"> understanding of what</font>
+
+82
+00:03:45,389 --> 00:03:46,980
+to look<font color="#CCCCCC"> out for when talking</font><font color="#E5E5E5"> about web</font>
+
+83
+00:03:46,980 --> 00:03:51,569
+<font color="#CCCCCC">security both old and well trusted risks</font>
+
+84
+00:03:51,569 --> 00:03:53,849
+and vulnerabilities<font color="#E5E5E5"> and also rather</font>
+
+85
+00:03:53,849 --> 00:03:56,669
+novel<font color="#E5E5E5"> attacks so that's the agenda for</font>
+
+86
+00:03:56,669 --> 00:03:59,639
+today and talk<font color="#E5E5E5"> about agenda basically</font>
+
+87
+00:03:59,639 --> 00:04:03,060
+that<font color="#E5E5E5"> is the agenda</font><font color="#CCCCCC"> that's</font><font color="#E5E5E5"> the 2017 top</font>
+
+88
+00:04:03,060 --> 00:04:05,280
+<font color="#CCCCCC">ten list as of</font><font color="#E5E5E5"> release candidate one I</font>
+
+89
+00:04:05,280 --> 00:04:07,049
+expect the final version to<font color="#E5E5E5"> be released</font>
+
+90
+00:04:07,049 --> 00:04:11,160
+and<font color="#E5E5E5"> fall but the the order of the risks</font>
+
+91
+00:04:11,160 --> 00:04:12,930
+<font color="#E5E5E5">and also the names of the risk I think</font>
+
+92
+00:04:12,930 --> 00:04:14,459
+they they<font color="#E5E5E5"> should not they</font><font color="#CCCCCC"> should not</font>
+
+93
+00:04:14,459 --> 00:04:16,649
+change<font color="#E5E5E5"> so we have injection</font><font color="#CCCCCC"> rock</font><font color="#E5E5E5"> with</font>
+
+94
+00:04:16,649 --> 00:04:18,260
+<font color="#CCCCCC">application and session management</font>
+
+95
+00:04:18,260 --> 00:04:21,389
+<font color="#E5E5E5">cross-site scripting</font><font color="#CCCCCC"> and these three</font>
+
+96
+00:04:21,389 --> 00:04:23,849
+items<font color="#CCCCCC"> actually they are the same items</font>
+
+97
+00:04:23,849 --> 00:04:25,500
+as in the previous<font color="#CCCCCC"> list and then there</font>
+
+98
+00:04:25,500 --> 00:04:27,090
+are<font color="#E5E5E5"> some subtle changes</font><font color="#CCCCCC"> Broca access</font>
+
+99
+00:04:27,090 --> 00:04:28,710
+control that's kind of new security
+
+100
+00:04:28,710 --> 00:04:29,580
+misconfigure
+
+101
+00:04:29,580 --> 00:04:32,300
+<font color="#E5E5E5">result sensitive data exposure old</font>
+
+102
+00:04:32,300 --> 00:04:35,340
+insufficient attack protection<font color="#CCCCCC"> ok that</font>
+
+103
+00:04:35,340 --> 00:04:36,750
+sounds a bit<font color="#CCCCCC"> weird we need to talk</font><font color="#E5E5E5"> about</font>
+
+104
+00:04:36,750 --> 00:04:38,190
+that in a bit
+
+105
+00:04:38,190 --> 00:04:39,720
+that's kind of<font color="#CCCCCC"> new cross the request</font>
+
+106
+00:04:39,720 --> 00:04:42,090
+forgery is old using<font color="#E5E5E5"> components with</font>
+
+107
+00:04:42,090 --> 00:04:44,310
+known variability that's old<font color="#E5E5E5"> and very</font>
+
+108
+00:04:44,310 --> 00:04:46,530
+new and a new<font color="#CCCCCC"> word which</font><font color="#E5E5E5"> I didn't find</font>
+
+109
+00:04:46,530 --> 00:04:48,870
+in Webster's dictionary<font color="#CCCCCC"> under protected</font>
+
+110
+00:04:48,870 --> 00:04:51,750
+api's<font color="#E5E5E5"> so let's have a look at those 10</font>
+
+111
+00:04:51,750 --> 00:04:54,210
+and let's start at number<font color="#CCCCCC"> 1</font><font color="#E5E5E5"> and number</font><font color="#CCCCCC"> 1</font>
+
+112
+00:04:54,210 --> 00:04:56,430
+is a thing<font color="#E5E5E5"> that I find a bit weird I</font>
+
+113
+00:04:56,430 --> 00:05:00,120
+<font color="#E5E5E5">mean I I do web development since about</font>
+
+114
+00:05:00,120 --> 00:05:01,830
+20<font color="#E5E5E5"> years now so I started really early</font>
+
+115
+00:05:01,830 --> 00:05:05,700
+<font color="#E5E5E5">and you know back in the hay days there</font>
+
+116
+00:05:05,700 --> 00:05:08,010
+was a lot of injection well I<font color="#E5E5E5"> mean there</font>
+
+117
+00:05:08,010 --> 00:05:09,920
+<font color="#E5E5E5">are different</font><font color="#CCCCCC"> kinds of injections right</font>
+
+118
+00:05:09,920 --> 00:05:13,470
+<font color="#E5E5E5">so alidev injection for instance xpath</font>
+
+119
+00:05:13,470 --> 00:05:15,690
+injection or a thing I kind<font color="#E5E5E5"> of invented</font>
+
+120
+00:05:15,690 --> 00:05:19,590
+<font color="#E5E5E5">for a small paper I once wrote and then</font>
+
+121
+00:05:19,590 --> 00:05:21,480
+<font color="#CCCCCC">I later founded in order about a year</font>
+
+122
+00:05:21,480 --> 00:05:24,150
+later<font color="#CCCCCC"> talked</font><font color="#E5E5E5"> about inside</font><font color="#CCCCCC"> reg X</font>
+
+123
+00:05:24,150 --> 00:05:26,610
+injection<font color="#E5E5E5"> so the idea of</font><font color="#CCCCCC"> course we get</font>
+
+124
+00:05:26,610 --> 00:05:28,830
+input from<font color="#CCCCCC"> the user</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> that input is</font>
+
+125
+00:05:28,830 --> 00:05:32,550
+then put<font color="#E5E5E5"> into well a kind of a query</font>
+
+126
+00:05:32,550 --> 00:05:35,310
+language most<font color="#E5E5E5"> of</font><font color="#CCCCCC"> the time right</font><font color="#E5E5E5"> since</font>
+
+127
+00:05:35,310 --> 00:05:39,570
+many query languages do<font color="#E5E5E5"> not put both</font>
+
+128
+00:05:39,570 --> 00:05:41,700
+commands<font color="#CCCCCC"> and data in the same well</font>
+
+129
+00:05:41,700 --> 00:05:44,520
+<font color="#CCCCCC">stream we might get an injection so a</font>
+
+130
+00:05:44,520 --> 00:05:47,730
+malicious<font color="#CCCCCC"> user could inject</font><font color="#E5E5E5"> kind of</font>
+
+131
+00:05:47,730 --> 00:05:52,140
+<font color="#CCCCCC">commands into our query string now when</font>
+
+132
+00:05:52,140 --> 00:05:54,150
+you talk about injection<font color="#CCCCCC"> I would say</font>
+
+133
+00:05:54,150 --> 00:05:56,820
+over 99% of<font color="#E5E5E5"> instances where</font><font color="#CCCCCC"> we do</font><font color="#E5E5E5"> find</font>
+
+134
+00:05:56,820 --> 00:06:00,840
+injection is sequel injection<font color="#E5E5E5"> right yes</font>
+
+135
+00:06:00,840 --> 00:06:04,620
+in the 1990s<font color="#E5E5E5"> sequin</font><font color="#CCCCCC"> Junction was the</font>
+
+136
+00:06:04,620 --> 00:06:08,130
+same and in the early 2000s sequin
+
+137
+00:06:08,130 --> 00:06:11,280
+<font color="#E5E5E5">Junction was the thing well injection is</font>
+
+138
+00:06:11,280 --> 00:06:15,120
+still<font color="#E5E5E5"> number one on that</font><font color="#CCCCCC"> list</font><font color="#E5E5E5"> hmm that's</font>
+
+139
+00:06:15,120 --> 00:06:17,370
+<font color="#CCCCCC">interesting maybe because I find it</font><font color="#E5E5E5"> so</font>
+
+140
+00:06:17,370 --> 00:06:19,080
+confusing<font color="#E5E5E5"> let's have a look at that list</font>
+
+141
+00:06:19,080 --> 00:06:21,230
+so what<font color="#E5E5E5"> you get</font><font color="#CCCCCC"> as part of that</font><font color="#E5E5E5"> list is</font>
+
+142
+00:06:21,230 --> 00:06:26,070
+a nicely formatted<font color="#E5E5E5"> PDF where for each</font>
+
+143
+00:06:26,070 --> 00:06:28,350
+and every<font color="#CCCCCC"> item</font><font color="#E5E5E5"> on the list you get</font>
+
+144
+00:06:28,350 --> 00:06:31,920
+information countermeasures etc etc and
+
+145
+00:06:31,920 --> 00:06:36,630
+you get<font color="#E5E5E5"> this kind of matrix and you get</font>
+
+146
+00:06:36,630 --> 00:06:40,530
+both<font color="#E5E5E5"> you get like a color scheme so how</font>
+
+147
+00:06:40,530 --> 00:06:42,210
+<font color="#CCCCCC">easy is it to</font>
+
+148
+00:06:42,210 --> 00:06:45,690
+- well attack this<font color="#E5E5E5"> risk how easy just to</font>
+
+149
+00:06:45,690 --> 00:06:48,210
+exploit<font color="#E5E5E5"> that and a transaction is easy</font>
+
+150
+00:06:48,210 --> 00:06:51,630
+to exploit and the impact is severe<font color="#E5E5E5"> and</font>
+
+151
+00:06:51,630 --> 00:06:53,940
+because of<font color="#E5E5E5"> you know those two red flags</font>
+
+152
+00:06:53,940 --> 00:06:57,840
+<font color="#CCCCCC">here</font><font color="#E5E5E5"> maybe that's why it's so much so so</font>
+
+153
+00:06:57,840 --> 00:06:59,819
+far on top of the list<font color="#E5E5E5"> but I mean</font>
+
+154
+00:06:59,819 --> 00:07:04,349
+seriously<font color="#CCCCCC"> those of you who work with</font>
+
+155
+00:07:04,349 --> 00:07:06,449
+<font color="#E5E5E5">perfect application security or I have</font>
+
+156
+00:07:06,449 --> 00:07:08,160
+followed web application security<font color="#E5E5E5"> over</font>
+
+157
+00:07:08,160 --> 00:07:09,840
+the years<font color="#CCCCCC"> I mean how often do you see</font>
+
+158
+00:07:09,840 --> 00:07:12,120
+<font color="#E5E5E5">SQL injection</font><font color="#CCCCCC"> or sequel</font><font color="#E5E5E5"> injection</font><font color="#CCCCCC"> today</font>
+
+159
+00:07:12,120 --> 00:07:15,169
+<font color="#CCCCCC">or in</font><font color="#E5E5E5"> the last few</font><font color="#CCCCCC"> weeks months</font><font color="#E5E5E5"> years</font>
+
+160
+00:07:15,169 --> 00:07:18,060
+since<font color="#CCCCCC"> they I mean I regularly do audits</font>
+
+161
+00:07:18,060 --> 00:07:20,639
+<font color="#E5E5E5">and seek injection is using the least of</font>
+
+162
+00:07:20,639 --> 00:07:23,310
+my concerns<font color="#CCCCCC"> because</font><font color="#E5E5E5"> how how do we</font>
+
+163
+00:07:23,310 --> 00:07:25,620
+communicate<font color="#CCCCCC"> this</font><font color="#E5E5E5"> database</font>
+
+164
+00:07:25,620 --> 00:07:28,199
+these days I mean<font color="#E5E5E5"> if you're using dotnet</font>
+
+165
+00:07:28,199 --> 00:07:30,900
+and<font color="#E5E5E5"> I think the</font><font color="#CCCCCC"> majority of</font><font color="#E5E5E5"> of you are</font>
+
+166
+00:07:30,900 --> 00:07:33,060
+doing<font color="#CCCCCC"> that</font><font color="#E5E5E5"> then Microsoft is kind of</font>
+
+167
+00:07:33,060 --> 00:07:36,000
+<font color="#E5E5E5">forcing us more or less to to use entity</font>
+
+168
+00:07:36,000 --> 00:07:38,699
+framework<font color="#E5E5E5"> with recent versions of entity</font>
+
+169
+00:07:38,699 --> 00:07:42,479
+framework<font color="#E5E5E5"> it's extremely hard to</font><font color="#CCCCCC"> create</font>
+
+170
+00:07:42,479 --> 00:07:45,300
+<font color="#CCCCCC">C congestion</font><font color="#E5E5E5"> because</font><font color="#CCCCCC"> it's extremely hard</font>
+
+171
+00:07:45,300 --> 00:07:48,360
+<font color="#E5E5E5">to you know</font><font color="#CCCCCC"> actually send commands to</font>
+
+172
+00:07:48,360 --> 00:07:51,360
+the database<font color="#E5E5E5"> at the idea of object</font>
+
+173
+00:07:51,360 --> 00:07:53,250
+relational mapping<font color="#E5E5E5"> is that you will use</font>
+
+174
+00:07:53,250 --> 00:07:56,550
+as equal and longer anyway because<font color="#E5E5E5"> you</font>
+
+175
+00:07:56,550 --> 00:07:58,800
+work with objects<font color="#E5E5E5"> right and</font><font color="#CCCCCC"> empty</font>
+
+176
+00:07:58,800 --> 00:08:00,389
+<font color="#E5E5E5">framework in that case does the</font><font color="#CCCCCC"> mapping</font>
+
+177
+00:08:00,389 --> 00:08:01,949
+<font color="#E5E5E5">and if</font><font color="#CCCCCC"> use something</font><font color="#E5E5E5"> else like an</font>
+
+178
+00:08:01,949 --> 00:08:03,780
+hibernate or if you're not<font color="#E5E5E5"> in the dotnet</font>
+
+179
+00:08:03,780 --> 00:08:06,919
+space hibernate or<font color="#E5E5E5"> propyl or whatever</font>
+
+180
+00:08:06,919 --> 00:08:09,270
+<font color="#E5E5E5">well then the framework</font><font color="#CCCCCC"> takes care of</font>
+
+181
+00:08:09,270 --> 00:08:12,840
+that<font color="#E5E5E5"> so really CQ injection</font><font color="#CCCCCC"> I haven't</font>
+
+182
+00:08:12,840 --> 00:08:15,360
+seen this in<font color="#E5E5E5"> quite a while</font><font color="#CCCCCC"> I do know</font>
+
+183
+00:08:15,360 --> 00:08:17,250
+that<font color="#CCCCCC"> there are many instances of</font><font color="#E5E5E5"> C</font>
+
+184
+00:08:17,250 --> 00:08:19,349
+<font color="#E5E5E5">transaction out there old legacy</font>
+
+185
+00:08:19,349 --> 00:08:21,300
+applications that are written<font color="#E5E5E5"> in let's</font>
+
+186
+00:08:21,300 --> 00:08:24,539
+say classic ASP and are still running
+
+187
+00:08:24,539 --> 00:08:27,599
+<font color="#E5E5E5">somewhere I I totally get that and</font>
+
+188
+00:08:27,599 --> 00:08:30,599
+that's that's<font color="#E5E5E5"> really</font><font color="#CCCCCC"> sad but but still</font>
+
+189
+00:08:30,599 --> 00:08:33,510
+number<font color="#E5E5E5"> one on</font><font color="#CCCCCC"> that list</font><font color="#E5E5E5"> I'm I'm not too</font>
+
+190
+00:08:33,510 --> 00:08:34,520
+sure<font color="#CCCCCC"> about</font><font color="#E5E5E5"> it</font>
+
+191
+00:08:34,520 --> 00:08:36,899
+however no matter<font color="#CCCCCC"> which technology we</font>
+
+192
+00:08:36,899 --> 00:08:38,909
+<font color="#CCCCCC">are</font><font color="#E5E5E5"> using in Fanning again signal</font>
+
+193
+00:08:38,909 --> 00:08:40,828
+injection is<font color="#CCCCCC"> so easy there is</font><font color="#E5E5E5"> no excuse</font>
+
+194
+00:08:40,828 --> 00:08:42,299
+for<font color="#E5E5E5"> having sequin gesture in the first</font>
+
+195
+00:08:42,299 --> 00:08:44,820
+place if<font color="#E5E5E5"> you use</font><font color="#CCCCCC"> o our mapping then well</font>
+
+196
+00:08:44,820 --> 00:08:46,770
+you should be safe if you have an
+
+197
+00:08:46,770 --> 00:08:48,600
+<font color="#E5E5E5">up-to-date version of</font><font color="#CCCCCC"> the O our mapper</font>
+
+198
+00:08:48,600 --> 00:08:50,100
+and<font color="#E5E5E5"> we'll talk about that having</font><font color="#CCCCCC"> an</font>
+
+199
+00:08:50,100 --> 00:08:53,550
+up-to-date version<font color="#E5E5E5"> in in a bit and if</font>
+
+200
+00:08:53,550 --> 00:08:55,270
+not well the best
+
+201
+00:08:55,270 --> 00:09:00,100
+to prevent<font color="#CCCCCC"> leak injection</font><font color="#E5E5E5"> is to have per</font>
+
+202
+00:09:00,100 --> 00:09:02,170
+my prepared statements<font color="#CCCCCC"> or parametrized</font>
+
+203
+00:09:02,170 --> 00:09:05,290
+queries right<font color="#E5E5E5"> so you do not have</font>
+
+204
+00:09:05,290 --> 00:09:07,480
+commands<font color="#E5E5E5"> and data</font><font color="#CCCCCC"> in the same string but</font>
+
+205
+00:09:07,480 --> 00:09:09,040
+you have placeholders for<font color="#CCCCCC"> the data and</font>
+
+206
+00:09:09,040 --> 00:09:10,630
+then assign values to<font color="#E5E5E5"> the placeholders</font>
+
+207
+00:09:10,630 --> 00:09:12,400
+and the mechanism then automatically
+
+208
+00:09:12,400 --> 00:09:15,550
+<font color="#E5E5E5">does the escaping for you so really no</font>
+
+209
+00:09:15,550 --> 00:09:18,370
+excuse for<font color="#E5E5E5"> fuel injection really there</font>
+
+210
+00:09:18,370 --> 00:09:21,460
+isn't<font color="#E5E5E5"> but I also do not</font><font color="#CCCCCC"> see through</font>
+
+211
+00:09:21,460 --> 00:09:23,980
+injection<font color="#CCCCCC"> as a big as a problem today as</font>
+
+212
+00:09:23,980 --> 00:09:27,520
+it was<font color="#E5E5E5"> before so still number one</font><font color="#CCCCCC"> but it</font>
+
+213
+00:09:27,520 --> 00:09:29,710
+sounds a bit<font color="#E5E5E5"> weird</font><font color="#CCCCCC"> right because it just</font>
+
+214
+00:09:29,710 --> 00:09:32,050
+doesn't<font color="#E5E5E5"> happen</font><font color="#CCCCCC"> I also have some tiny</font>
+
+215
+00:09:32,050 --> 00:09:34,330
+issues with number<font color="#CCCCCC"> two O's</font><font color="#E5E5E5"> because it's</font>
+
+216
+00:09:34,330 --> 00:09:36,460
+so high<font color="#CCCCCC"> up on the list it's broken</font>
+
+217
+00:09:36,460 --> 00:09:39,780
+authentication settlement now I know
+
+218
+00:09:39,780 --> 00:09:42,670
+<font color="#CCCCCC">section</font><font color="#E5E5E5"> management I mean just if you</font>
+
+219
+00:09:42,670 --> 00:09:43,900
+talk about session management you talk
+
+220
+00:09:43,900 --> 00:09:45,730
+about<font color="#E5E5E5"> things</font><font color="#CCCCCC"> that are broken because if</font>
+
+221
+00:09:45,730 --> 00:09:48,430
+you<font color="#CCCCCC"> Lee read</font><font color="#E5E5E5"> the HTTP specification then</font>
+
+222
+00:09:48,430 --> 00:09:50,950
+you see there that<font color="#E5E5E5"> and I think</font><font color="#CCCCCC"> it's the</font>
+
+223
+00:09:50,950 --> 00:09:52,810
+second sentence<font color="#CCCCCC"> in that specification</font>
+
+224
+00:09:52,810 --> 00:09:56,350
+that HTTP is a stateless protocol
+
+225
+00:09:56,350 --> 00:09:59,110
+<font color="#E5E5E5">meaning with HTTP you can't remember</font>
+
+226
+00:09:59,110 --> 00:10:02,800
+anything<font color="#E5E5E5"> he however applications do need</font>
+
+227
+00:10:02,800 --> 00:10:04,570
+to remember<font color="#E5E5E5"> something</font><font color="#CCCCCC"> whether the users</font>
+
+228
+00:10:04,570 --> 00:10:08,290
+<font color="#E5E5E5">logged in what what kind of items are in</font>
+
+229
+00:10:08,290 --> 00:10:11,620
+the shopping cart cetera so well<font color="#E5E5E5"> session</font>
+
+230
+00:10:11,620 --> 00:10:13,600
+<font color="#E5E5E5">management was kind of vented well first</font>
+
+231
+00:10:13,600 --> 00:10:15,100
+cookies were invented<font color="#CCCCCC"> then session</font>
+
+232
+00:10:15,100 --> 00:10:16,960
+<font color="#CCCCCC">management was invented and essentially</font>
+
+233
+00:10:16,960 --> 00:10:19,390
+<font color="#CCCCCC">people found</font><font color="#E5E5E5"> out you can do session</font>
+
+234
+00:10:19,390 --> 00:10:21,700
+management<font color="#E5E5E5"> without cookies but if you do</font>
+
+235
+00:10:21,700 --> 00:10:23,770
+<font color="#E5E5E5">that your host</font><font color="#CCCCCC"> so ok I have to use</font>
+
+236
+00:10:23,770 --> 00:10:25,120
+cookies and you have session management
+
+237
+00:10:25,120 --> 00:10:27,220
+<font color="#CCCCCC">together with that</font><font color="#E5E5E5"> now there are</font>
+
+238
+00:10:27,220 --> 00:10:30,040
+different<font color="#CCCCCC"> well risks and associated</font>
+
+239
+00:10:30,040 --> 00:10:32,530
+attack vectors against the session
+
+240
+00:10:32,530 --> 00:10:34,960
+management the most<font color="#E5E5E5"> commonly known is</font>
+
+241
+00:10:34,960 --> 00:10:37,690
+session hijacking<font color="#E5E5E5"> the idea is</font><font color="#CCCCCC"> with</font>
+
+242
+00:10:37,690 --> 00:10:40,090
+session management<font color="#E5E5E5"> every session</font><font color="#CCCCCC"> gets a</font>
+
+243
+00:10:40,090 --> 00:10:43,270
+unique name or number<font color="#E5E5E5"> the session ID</font>
+
+244
+00:10:43,270 --> 00:10:46,780
+most<font color="#CCCCCC"> sometimes it's calls so usually the</font>
+
+245
+00:10:46,780 --> 00:10:48,820
+<font color="#E5E5E5">session ID is sent to the client</font><font color="#CCCCCC"> as form</font>
+
+246
+00:10:48,820 --> 00:10:51,340
+of a<font color="#CCCCCC"> cookie</font><font color="#E5E5E5"> and with all subsequent</font>
+
+247
+00:10:51,340 --> 00:10:53,740
+requests the client<font color="#E5E5E5"> sent back that</font>
+
+248
+00:10:53,740 --> 00:10:56,680
+<font color="#E5E5E5">cookie sent back that session ID so the</font>
+
+249
+00:10:56,680 --> 00:10:58,720
+application then knows okay that's the
+
+250
+00:10:58,720 --> 00:11:00,220
+session<font color="#E5E5E5"> abc123</font>
+
+251
+00:11:00,220 --> 00:11:02,410
+<font color="#E5E5E5">and oh yeah I've</font><font color="#CCCCCC"> saw data about</font><font color="#E5E5E5"> that</font>
+
+252
+00:11:02,410 --> 00:11:05,050
+session<font color="#CCCCCC"> okay that</font><font color="#E5E5E5"> that user and the user</font>
+
+253
+00:11:05,050 --> 00:11:06,840
+<font color="#E5E5E5">is these islands of the shopping cart</font>
+
+254
+00:11:06,840 --> 00:11:08,500
+<font color="#E5E5E5">that's great</font>
+
+255
+00:11:08,500 --> 00:11:12,660
+if the<font color="#E5E5E5"> session ID</font><font color="#CCCCCC"> remains a secret</font>
+
+256
+00:11:12,660 --> 00:11:14,830
+<font color="#E5E5E5">because official ID is the only thing</font>
+
+257
+00:11:14,830 --> 00:11:17,590
+<font color="#CCCCCC">that</font><font color="#E5E5E5"> identify the user so if the session</font>
+
+258
+00:11:17,590 --> 00:11:19,690
+ID is stolen<font color="#CCCCCC"> that there are several</font><font color="#E5E5E5"> ways</font>
+
+259
+00:11:19,690 --> 00:11:23,620
+<font color="#E5E5E5">of stealing a session ID</font><font color="#CCCCCC"> then the</font>
+
+260
+00:11:23,620 --> 00:11:26,260
+session<font color="#CCCCCC"> is hijacked</font><font color="#E5E5E5"> so that's the most</font>
+
+261
+00:11:26,260 --> 00:11:29,200
+<font color="#CCCCCC">common attack against session so we need</font>
+
+262
+00:11:29,200 --> 00:11:34,000
+to protect our session IDs<font color="#CCCCCC"> as good as</font>
+
+263
+00:11:34,000 --> 00:11:36,220
+possible<font color="#CCCCCC"> so one of the aspects and this</font>
+
+264
+00:11:36,220 --> 00:11:37,630
+is<font color="#E5E5E5"> also covered in one of the other</font>
+
+265
+00:11:37,630 --> 00:11:40,630
+<font color="#E5E5E5">items on the list is if a session ID is</font>
+
+266
+00:11:40,630 --> 00:11:43,120
+transported unencrypted because<font color="#CCCCCC"> we're a</font>
+
+267
+00:11:43,120 --> 00:11:46,270
+<font color="#E5E5E5">web</font><font color="#CCCCCC"> application it does use HTTPS anyone</font>
+
+268
+00:11:46,270 --> 00:11:49,150
+can intercept<font color="#CCCCCC"> their traffic so here at</font>
+
+269
+00:11:49,150 --> 00:11:50,110
+the conference<font color="#CCCCCC"> if you have the</font>
+
+270
+00:11:50,110 --> 00:11:51,760
+conference<font color="#E5E5E5"> Wi-Fi</font><font color="#CCCCCC"> a conference Wi-Fi</font>
+
+271
+00:11:51,760 --> 00:11:56,430
+<font color="#CCCCCC">isn't it encrypted</font><font color="#E5E5E5"> so everything you</font>
+
+272
+00:11:56,430 --> 00:12:00,420
+load<font color="#E5E5E5"> a request on the conference Wi-Fi</font>
+
+273
+00:12:00,420 --> 00:12:04,750
+<font color="#E5E5E5">which uses HTTP can be seen by other</font>
+
+274
+00:12:04,750 --> 00:12:08,380
+<font color="#CCCCCC">people in the same network as well HTTPS</font>
+
+275
+00:12:08,380 --> 00:12:11,980
+not so much of<font color="#CCCCCC"> course but HTTP yes</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> if</font>
+
+276
+00:12:11,980 --> 00:12:14,830
+<font color="#CCCCCC">a session IDs transported via HTTP then</font>
+
+277
+00:12:14,830 --> 00:12:16,390
+<font color="#E5E5E5">we have a problem then session hijacking</font>
+
+278
+00:12:16,390 --> 00:12:20,500
+<font color="#CCCCCC">is</font><font color="#E5E5E5"> possible there are other risks</font>
+
+279
+00:12:20,500 --> 00:12:24,150
+involved<font color="#CCCCCC"> other tax</font><font color="#E5E5E5"> involved as well so</font>
+
+280
+00:12:24,150 --> 00:12:26,890
+for<font color="#E5E5E5"> instance you can configure your</font>
+
+281
+00:12:26,890 --> 00:12:29,410
+<font color="#E5E5E5">sessions in in various ways one of the</font>
+
+282
+00:12:29,410 --> 00:12:31,900
+<font color="#E5E5E5">aspects of configuring a session is to</font>
+
+283
+00:12:31,900 --> 00:12:33,670
+configure<font color="#E5E5E5"> a session timeout meaning</font>
+
+284
+00:12:33,670 --> 00:12:37,210
+after<font color="#E5E5E5"> which amount of inactivity is the</font>
+
+285
+00:12:37,210 --> 00:12:40,240
+<font color="#E5E5E5">session considered well discarded or</font>
+
+286
+00:12:40,240 --> 00:12:43,600
+expired<font color="#CCCCCC"> and now usually have the scale</font>
+
+287
+00:12:43,600 --> 00:12:46,840
+with<font color="#E5E5E5"> usability on one hand and we</font>
+
+288
+00:12:46,840 --> 00:12:49,000
+<font color="#CCCCCC">security on the</font><font color="#E5E5E5"> other hand you have the</font>
+
+289
+00:12:49,000 --> 00:12:50,740
+best security<font color="#E5E5E5"> if you have a session</font>
+
+290
+00:12:50,740 --> 00:12:52,630
+timeout that's as short as<font color="#CCCCCC"> possible</font>
+
+291
+00:12:52,630 --> 00:12:54,880
+because short session timeout<font color="#E5E5E5"> means if</font>
+
+292
+00:12:54,880 --> 00:12:57,970
+someone steals a session<font color="#E5E5E5"> ID</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> attacker</font>
+
+293
+00:12:57,970 --> 00:13:00,040
+doesn't<font color="#E5E5E5"> have that much time to</font><font color="#CCCCCC"> actually</font>
+
+294
+00:13:00,040 --> 00:13:01,960
+use the stone session ID if the session
+
+295
+00:13:01,960 --> 00:13:04,150
+<font color="#E5E5E5">timeout is set to a low value on the</font>
+
+296
+00:13:04,150 --> 00:13:05,740
+other<font color="#E5E5E5"> hand that means you know if</font><font color="#CCCCCC"> you go</font>
+
+297
+00:13:05,740 --> 00:13:07,750
+to<font color="#E5E5E5"> a page</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> page take some time to load</font>
+
+298
+00:13:07,750 --> 00:13:09,760
+<font color="#E5E5E5">because you know conference Wi-Fi a lot</font>
+
+299
+00:13:09,760 --> 00:13:12,100
+of people<font color="#E5E5E5"> in network you go to another</font>
+
+300
+00:13:12,100 --> 00:13:15,300
+browser<font color="#E5E5E5"> tab</font><font color="#CCCCCC"> do something you go back</font><font color="#E5E5E5"> ah</font>
+
+301
+00:13:15,300 --> 00:13:17,770
+<font color="#E5E5E5">session ID has expired we have two real</font>
+
+302
+00:13:17,770 --> 00:13:20,080
+<font color="#CCCCCC">aughh in</font><font color="#E5E5E5"> bad usability on the other end</font>
+
+303
+00:13:20,080 --> 00:13:21,430
+<font color="#E5E5E5">great security so</font>
+
+304
+00:13:21,430 --> 00:13:25,330
+it's kind of hard to get get both<font color="#CCCCCC"> so</font>
+
+305
+00:13:25,330 --> 00:13:28,210
+there<font color="#E5E5E5"> are several things you can</font><font color="#CCCCCC"> do</font><font color="#E5E5E5"> but</font>
+
+306
+00:13:28,210 --> 00:13:30,880
+<font color="#CCCCCC">basically session management</font><font color="#E5E5E5"> is</font>
+
+307
+00:13:30,880 --> 00:13:33,730
+<font color="#E5E5E5">something that is provided by the</font>
+
+308
+00:13:33,730 --> 00:13:36,040
+<font color="#E5E5E5">framework we are</font><font color="#CCCCCC"> using if you</font><font color="#E5E5E5"> use a</font>
+
+309
+00:13:36,040 --> 00:13:37,390
+<font color="#CCCCCC">pillow net we have</font><font color="#E5E5E5"> session management</font>
+
+310
+00:13:37,390 --> 00:13:39,760
+<font color="#E5E5E5">there if you use PHP the session</font>
+
+311
+00:13:39,760 --> 00:13:41,500
+management there<font color="#E5E5E5"> I mean the Thresh</font>
+
+312
+00:13:41,500 --> 00:13:44,290
+management<font color="#E5E5E5"> at least try to use as many</font>
+
+313
+00:13:44,290 --> 00:13:46,210
+<font color="#E5E5E5">best practices as possible so the</font>
+
+314
+00:13:46,210 --> 00:13:48,580
+session<font color="#E5E5E5"> ID is not and I thought of that</font>
+
+315
+00:13:48,580 --> 00:13:51,310
+an audit recently<font color="#CCCCCC"> six</font><font color="#E5E5E5"> digit number</font><font color="#CCCCCC"> which</font>
+
+316
+00:13:51,310 --> 00:13:53,650
+<font color="#E5E5E5">is kind of easy to guess but it's a long</font>
+
+317
+00:13:53,650 --> 00:13:56,170
+string how to guess<font color="#CCCCCC"> there are settings</font>
+
+318
+00:13:56,170 --> 00:13:58,540
+to<font color="#E5E5E5"> ensure that</font><font color="#CCCCCC"> a session</font><font color="#E5E5E5"> ID is only</font>
+
+319
+00:13:58,540 --> 00:14:01,660
+being transported via<font color="#CCCCCC"> HTTPS there are</font>
+
+320
+00:14:01,660 --> 00:14:03,040
+settings<font color="#CCCCCC"> that the session ID is not</font>
+
+321
+00:14:03,040 --> 00:14:05,860
+accessible to JavaScript<font color="#CCCCCC"> codes</font><font color="#E5E5E5"> so there</font>
+
+322
+00:14:05,860 --> 00:14:08,590
+<font color="#E5E5E5">are options well and usually they are</font>
+
+323
+00:14:08,590 --> 00:14:11,530
+activated<font color="#CCCCCC"> by default</font><font color="#E5E5E5"> so not much can go</font>
+
+324
+00:14:11,530 --> 00:14:12,940
+<font color="#CCCCCC">wrong the only</font><font color="#E5E5E5"> thing you</font><font color="#CCCCCC"> should consider</font>
+
+325
+00:14:12,940 --> 00:14:15,130
+is<font color="#E5E5E5"> that you implement your own</font>
+
+326
+00:14:15,130 --> 00:14:18,280
+<font color="#E5E5E5">additional safeguards</font><font color="#CCCCCC"> for instance you</font>
+
+327
+00:14:18,280 --> 00:14:20,380
+could<font color="#CCCCCC"> store in the session the let's say</font>
+
+328
+00:14:20,380 --> 00:14:24,550
+the<font color="#E5E5E5"> user agent it doesn't mitigate all</font>
+
+329
+00:14:24,550 --> 00:14:28,690
+risks but<font color="#E5E5E5"> if a</font><font color="#CCCCCC"> user is using let's say</font>
+
+330
+00:14:28,690 --> 00:14:31,630
+chrome of<font color="#E5E5E5"> the time and then all of a</font>
+
+331
+00:14:31,630 --> 00:14:34,380
+sudden<font color="#CCCCCC"> the user in the</font><font color="#E5E5E5"> same session is</font>
+
+332
+00:14:34,380 --> 00:14:38,020
+using let's say<font color="#E5E5E5"> edge or</font><font color="#CCCCCC"> LLL take</font>
+
+333
+00:14:38,020 --> 00:14:39,490
+<font color="#CCCCCC">Internet Explorer</font><font color="#E5E5E5"> I mean though</font><font color="#CCCCCC"> is a bad</font>
+
+334
+00:14:39,490 --> 00:14:40,900
+<font color="#E5E5E5">sign if a user is using</font><font color="#CCCCCC"> Internet</font>
+
+335
+00:14:40,900 --> 00:14:43,570
+<font color="#CCCCCC">Explorer right</font><font color="#E5E5E5"> but it suddenly the</font>
+
+336
+00:14:43,570 --> 00:14:45,280
+browser changes then something may be
+
+337
+00:14:45,280 --> 00:14:48,760
+wrong so you might actually<font color="#E5E5E5"> then</font>
+
+338
+00:14:48,760 --> 00:14:52,090
+whatever logout the user or<font color="#E5E5E5"> flag all the</font>
+
+339
+00:14:52,090 --> 00:14:54,300
+actions that the user is doing<font color="#E5E5E5"> from</font><font color="#CCCCCC"> now</font>
+
+340
+00:14:54,300 --> 00:14:57,460
+so that's number<font color="#E5E5E5"> two and it kind</font><font color="#CCCCCC"> of</font>
+
+341
+00:14:57,460 --> 00:14:59,680
+important but I<font color="#E5E5E5"> think it's pretty high</font>
+
+342
+00:14:59,680 --> 00:15:01,630
+up<font color="#E5E5E5"> on the list because if you if you</font>
+
+343
+00:15:01,630 --> 00:15:04,180
+<font color="#E5E5E5">look at some security issues</font><font color="#CCCCCC"> especially</font>
+
+344
+00:15:04,180 --> 00:15:06,790
+<font color="#CCCCCC">at security issues there's one</font><font color="#E5E5E5"> thing it</font>
+
+345
+00:15:06,790 --> 00:15:10,000
+was part of<font color="#CCCCCC"> to listen to so 2003 and has</font>
+
+346
+00:15:10,000 --> 00:15:12,430
+a a top<font color="#E5E5E5"> three position</font>
+
+347
+00:15:12,430 --> 00:15:15,240
+ever<font color="#E5E5E5"> since then and that's of course</font>
+
+348
+00:15:15,240 --> 00:15:18,640
+<font color="#E5E5E5">cross-site scripting that</font><font color="#CCCCCC"> attack is so</font>
+
+349
+00:15:18,640 --> 00:15:22,860
+old that<font color="#E5E5E5"> you would expect well nowadays</font>
+
+350
+00:15:22,860 --> 00:15:26,140
+<font color="#E5E5E5">it should be soft</font><font color="#CCCCCC"> but it</font><font color="#E5E5E5"> isn't it just</font>
+
+351
+00:15:26,140 --> 00:15:30,210
+<font color="#E5E5E5">is the idea of</font><font color="#CCCCCC"> courses</font><font color="#E5E5E5"> that</font><font color="#CCCCCC"> we somehow</font>
+
+352
+00:15:30,210 --> 00:15:33,220
+<font color="#CCCCCC">manage as the attacker to inject some</font>
+
+353
+00:15:33,220 --> 00:15:35,230
+content on a page
+
+354
+00:15:35,230 --> 00:15:37,390
+and that content<font color="#E5E5E5"> usually happens</font><font color="#CCCCCC"> to be</font>
+
+355
+00:15:37,390 --> 00:15:40,840
+<font color="#CCCCCC">JavaScript</font><font color="#E5E5E5"> or you know in the old days</font>
+
+356
+00:15:40,840 --> 00:15:43,240
+it could also<font color="#CCCCCC"> be an object</font><font color="#E5E5E5"> tag that was</font>
+
+357
+00:15:43,240 --> 00:15:44,860
+loading and the young people<font color="#CCCCCC"> in the room</font>
+
+358
+00:15:44,860 --> 00:15:46,480
+<font color="#E5E5E5">doesn't know the</font><font color="#CCCCCC"> term so apologies</font><font color="#E5E5E5"> for</font>
+
+359
+00:15:46,480 --> 00:15:48,580
+<font color="#E5E5E5">that there was loading a plug-in with</font>
+
+360
+00:15:48,580 --> 00:15:50,430
+some content like you know flash or Java
+
+361
+00:15:50,430 --> 00:15:52,780
+<font color="#E5E5E5">because many of those plugins have</font>
+
+362
+00:15:52,780 --> 00:15:54,220
+<font color="#E5E5E5">security vulnerabilities in older</font>
+
+363
+00:15:54,220 --> 00:15:56,140
+versions<font color="#E5E5E5"> so there was an easy way to</font><font color="#CCCCCC"> to</font>
+
+364
+00:15:56,140 --> 00:15:59,440
+well install some interesting<font color="#E5E5E5"> software</font>
+
+365
+00:15:59,440 --> 00:16:02,800
+there<font color="#E5E5E5"> cross-site scripting is still one</font>
+
+366
+00:16:02,800 --> 00:16:05,170
+<font color="#E5E5E5">of the worst attacks</font><font color="#CCCCCC"> to get because</font><font color="#E5E5E5"> if</font>
+
+367
+00:16:05,170 --> 00:16:06,820
+you have cross-site scripting on<font color="#E5E5E5"> a page</font>
+
+368
+00:16:06,820 --> 00:16:09,100
+<font color="#E5E5E5">that only can</font><font color="#CCCCCC"> be attack around arbitrary</font>
+
+369
+00:16:09,100 --> 00:16:11,950
+JavaScript code<font color="#E5E5E5"> but also</font><font color="#CCCCCC"> it's</font><font color="#E5E5E5"> almost</font>
+
+370
+00:16:11,950 --> 00:16:13,660
+impossible to<font color="#E5E5E5"> defend against other</font>
+
+371
+00:16:13,660 --> 00:16:15,370
+attacks including<font color="#E5E5E5"> cross-site request</font>
+
+372
+00:16:15,370 --> 00:16:19,090
+forgery which will come<font color="#E5E5E5"> 5.5 points</font><font color="#CCCCCC"> or</font>
+
+373
+00:16:19,090 --> 00:16:21,610
+further down<font color="#CCCCCC"> on</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> list</font><font color="#E5E5E5"> so cross-site</font>
+
+374
+00:16:21,610 --> 00:16:23,530
+scripting really is a<font color="#E5E5E5"> big problem</font>
+
+375
+00:16:23,530 --> 00:16:26,080
+especially<font color="#E5E5E5"> with modern single page</font>
+
+376
+00:16:26,080 --> 00:16:28,420
+applications new vectors are opening up
+
+377
+00:16:28,420 --> 00:16:30,640
+so I find this pretty interesting<font color="#CCCCCC"> too to</font>
+
+378
+00:16:30,640 --> 00:16:33,700
+<font color="#CCCCCC">mention</font><font color="#E5E5E5"> usually</font><font color="#CCCCCC"> talk about</font><font color="#E5E5E5"> cross-site</font>
+
+379
+00:16:33,700 --> 00:16:35,650
+scripting we are talking about<font color="#CCCCCC"> type 1</font>
+
+380
+00:16:35,650 --> 00:16:37,690
+<font color="#E5E5E5">cross-site scripting and type 2</font>
+
+381
+00:16:37,690 --> 00:16:39,190
+cross-site scripting<font color="#CCCCCC"> Caban cross-site</font>
+
+382
+00:16:39,190 --> 00:16:42,040
+scripting is well<font color="#E5E5E5"> probably worst of them</font>
+
+383
+00:16:42,040 --> 00:16:44,020
+persistent cross-site scripting so the
+
+384
+00:16:44,020 --> 00:16:45,940
+user<font color="#E5E5E5"> sent something let's say</font><font color="#CCCCCC"> javascript</font>
+
+385
+00:16:45,940 --> 00:16:47,890
+<font color="#E5E5E5">to</font><font color="#CCCCCC"> the server</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> server stores it in</font>
+
+386
+00:16:47,890 --> 00:16:50,500
+the<font color="#CCCCCC"> database for instance which is fine</font>
+
+387
+00:16:50,500 --> 00:16:52,150
+because the database doesn't<font color="#E5E5E5"> care it's</font>
+
+388
+00:16:52,150 --> 00:16:54,550
+all about<font color="#CCCCCC"> javascript</font><font color="#E5E5E5"> the problem is that</font>
+
+389
+00:16:54,550 --> 00:16:56,350
+the<font color="#E5E5E5"> web application later can read out</font>
+
+390
+00:16:56,350 --> 00:16:57,970
+<font color="#E5E5E5">the data from the database and maybe</font>
+
+391
+00:16:57,970 --> 00:17:00,940
+puts it on a page verbatim without any
+
+392
+00:17:00,940 --> 00:17:04,270
+encoding so whoever then loads<font color="#E5E5E5"> to</font>
+
+393
+00:17:04,270 --> 00:17:08,020
+certain page<font color="#E5E5E5"> does execute the malicious</font>
+
+394
+00:17:08,020 --> 00:17:10,210
+<font color="#CCCCCC">JavaScript code so that's</font><font color="#E5E5E5"> the worst</font>
+
+395
+00:17:10,210 --> 00:17:11,710
+thing<font color="#CCCCCC"> to happen</font><font color="#E5E5E5"> the most common thing to</font>
+
+396
+00:17:11,710 --> 00:17:13,900
+have<font color="#CCCCCC"> miss</font><font color="#E5E5E5"> non persistent or reflective</font>
+
+397
+00:17:13,900 --> 00:17:16,630
+the cross-site scripting<font color="#CCCCCC"> the user</font><font color="#E5E5E5"> sends</font>
+
+398
+00:17:16,630 --> 00:17:18,130
+something<font color="#E5E5E5"> to the server and the server</font>
+
+399
+00:17:18,130 --> 00:17:20,619
+<font color="#CCCCCC">echoes it back</font><font color="#E5E5E5"> typical example search</font>
+
+400
+00:17:20,619 --> 00:17:22,569
+page<font color="#E5E5E5"> so you have a search field on a</font>
+
+401
+00:17:22,569 --> 00:17:24,190
+page and you<font color="#CCCCCC"> search</font><font color="#E5E5E5"> for something</font>
+
+402
+00:17:24,190 --> 00:17:28,750
+<font color="#CCCCCC">whatever let's say NDC and the resulting</font>
+
+403
+00:17:28,750 --> 00:17:32,020
+page usually<font color="#E5E5E5"> says your search for NDC</font>
+
+404
+00:17:32,020 --> 00:17:36,220
+yielded whatever<font color="#E5E5E5"> 100 matches</font><font color="#CCCCCC"> and that</font>
+
+405
+00:17:36,220 --> 00:17:38,590
+<font color="#CCCCCC">NBC part of the output is something that</font>
+
+406
+00:17:38,590 --> 00:17:40,810
+comes from<font color="#E5E5E5"> the user now what happens if</font>
+
+407
+00:17:40,810 --> 00:17:43,150
+you<font color="#CCCCCC"> do not search for NBC but for script</font>
+
+408
+00:17:43,150 --> 00:17:45,880
+tag and then some code<font color="#E5E5E5"> well if it</font>
+
+409
+00:17:45,880 --> 00:17:48,880
+printed out without any encoding<font color="#E5E5E5"> there</font>
+
+410
+00:17:48,880 --> 00:17:50,410
+you<font color="#E5E5E5"> inject the</font><font color="#CCCCCC"> JavaScript code</font><font color="#E5E5E5"> it's a</font>
+
+411
+00:17:50,410 --> 00:17:52,450
+bit harder<font color="#E5E5E5"> to make</font><font color="#CCCCCC"> sure that someone</font>
+
+412
+00:17:52,450 --> 00:17:54,220
+else is then getting<font color="#CCCCCC"> that</font><font color="#E5E5E5"> JavaScript</font>
+
+413
+00:17:54,220 --> 00:17:56,620
+code but their way to do this<font color="#E5E5E5"> right</font><font color="#CCCCCC"> so</font>
+
+414
+00:17:56,620 --> 00:17:59,640
+these<font color="#E5E5E5"> are the most well important and</font>
+
+415
+00:17:59,640 --> 00:18:02,170
+common<font color="#CCCCCC"> versions of cross-site scripting</font>
+
+416
+00:18:02,170 --> 00:18:04,690
+<font color="#E5E5E5">however there's an additional one and</font>
+
+417
+00:18:04,690 --> 00:18:07,660
+the the<font color="#CCCCCC"> overpass created this kind</font><font color="#E5E5E5"> of</font>
+
+418
+00:18:07,660 --> 00:18:09,220
+<font color="#CCCCCC">classification of</font><font color="#E5E5E5"> cross-site scripting</font>
+
+419
+00:18:09,220 --> 00:18:12,100
+<font color="#CCCCCC">and the first one was not</font><font color="#E5E5E5"> very common</font>
+
+420
+00:18:12,100 --> 00:18:14,590
+until<font color="#CCCCCC"> while back but</font><font color="#E5E5E5"> nowadays it's</font>
+
+421
+00:18:14,590 --> 00:18:16,710
+getting more<font color="#CCCCCC"> and more common dom-based</font>
+
+422
+00:18:16,710 --> 00:18:18,760
+<font color="#E5E5E5">cross-site scripting where everything</font>
+
+423
+00:18:18,760 --> 00:18:21,160
+happens<font color="#CCCCCC"> on the client so the idea</font><font color="#E5E5E5"> is you</font>
+
+424
+00:18:21,160 --> 00:18:22,660
+have a<font color="#E5E5E5"> single page application the</font>
+
+425
+00:18:22,660 --> 00:18:24,250
+single page application read something
+
+426
+00:18:24,250 --> 00:18:27,730
+<font color="#E5E5E5">from URL maybe a URL fragment use it</font>
+
+427
+00:18:27,730 --> 00:18:29,590
+that uses that<font color="#CCCCCC"> information and puts it</font>
+
+428
+00:18:29,590 --> 00:18:33,060
+on the page<font color="#CCCCCC"> so no server interaction</font>
+
+429
+00:18:33,060 --> 00:18:36,220
+well but if<font color="#E5E5E5"> that fragment for instance</font>
+
+430
+00:18:36,220 --> 00:18:38,050
+contains<font color="#CCCCCC"> JavaScript code or if you're</font>
+
+431
+00:18:38,050 --> 00:18:41,020
+<font color="#CCCCCC">using the same angular</font><font color="#E5E5E5"> JS and the</font>
+
+432
+00:18:41,020 --> 00:18:43,840
+fragment contains an angularjs<font color="#E5E5E5"> directive</font>
+
+433
+00:18:43,840 --> 00:18:45,520
+<font color="#E5E5E5">and that directive is then</font><font color="#CCCCCC"> applied to</font>
+
+434
+00:18:45,520 --> 00:18:47,770
+the<font color="#E5E5E5"> page we still have cross-site</font>
+
+435
+00:18:47,770 --> 00:18:49,060
+scripting without the server doing
+
+436
+00:18:49,060 --> 00:18:52,230
+anything right<font color="#CCCCCC"> so there are a lot of new</font>
+
+437
+00:18:52,230 --> 00:18:55,150
+new new issues coming up and<font color="#E5E5E5"> therefore</font>
+
+438
+00:18:55,150 --> 00:18:57,400
+it's super important<font color="#CCCCCC"> to defend against</font>
+
+439
+00:18:57,400 --> 00:18:59,160
+cross-site scripting we<font color="#CCCCCC"> talked about</font>
+
+440
+00:18:59,160 --> 00:19:01,240
+<font color="#E5E5E5">defending against cross-site scripting</font>
+
+441
+00:19:01,240 --> 00:19:03,820
+in a second but that's<font color="#E5E5E5"> just one thing</font><font color="#CCCCCC"> I</font>
+
+442
+00:19:03,820 --> 00:19:07,480
+<font color="#E5E5E5">need to talk about and that's the same</font>
+
+443
+00:19:07,480 --> 00:19:09,370
+written<font color="#E5E5E5"> policy because</font><font color="#CCCCCC"> the same erection</font>
+
+444
+00:19:09,370 --> 00:19:11,950
+<font color="#CCCCCC">policy is the sole security mechanism</font>
+
+445
+00:19:11,950 --> 00:19:14,380
+<font color="#E5E5E5">javascript</font><font color="#CCCCCC"> has</font><font color="#E5E5E5"> two javascript credits</font>
+
+446
+00:19:14,380 --> 00:19:16,840
+this<font color="#E5E5E5"> security mechanism is available</font>
+
+447
+00:19:16,840 --> 00:19:19,330
+<font color="#CCCCCC">since the</font><font color="#E5E5E5"> inception of javascript so</font>
+
+448
+00:19:19,330 --> 00:19:21,070
+there wasn't<font color="#CCCCCC"> in cross-site scripting but</font>
+
+449
+00:19:21,070 --> 00:19:22,690
+they<font color="#E5E5E5"> already kind of had a hunch that</font>
+
+450
+00:19:22,690 --> 00:19:25,240
+something<font color="#E5E5E5"> might happen</font><font color="#CCCCCC"> and it's</font>
+
+451
+00:19:25,240 --> 00:19:27,490
+important<font color="#E5E5E5"> to know because it kind of</font>
+
+452
+00:19:27,490 --> 00:19:30,880
+protects<font color="#E5E5E5"> us</font><font color="#CCCCCC"> from some attacks</font><font color="#E5E5E5"> but on the</font>
+
+453
+00:19:30,880 --> 00:19:32,920
+other hand<font color="#E5E5E5"> it makes attacks</font><font color="#CCCCCC"> if they go</font>
+
+454
+00:19:32,920 --> 00:19:34,840
+through extremely dangerous<font color="#CCCCCC"> so if you</font>
+
+455
+00:19:34,840 --> 00:19:36,610
+have a page and<font color="#E5E5E5"> the page has some inline</font>
+
+456
+00:19:36,610 --> 00:19:39,040
+<font color="#CCCCCC">javascript code and it's also loading</font>
+
+457
+00:19:39,040 --> 00:19:41,170
+<font color="#E5E5E5">javascript code from their own server</font>
+
+458
+00:19:41,170 --> 00:19:43,630
+then maybe from a CDN I was<font color="#E5E5E5"> using jQuery</font>
+
+459
+00:19:43,630 --> 00:19:45,310
+<font color="#E5E5E5">here</font><font color="#CCCCCC"> as an example but this could be any</font>
+
+460
+00:19:45,310 --> 00:19:48,610
+JavaScript library<font color="#CCCCCC"> that JavaScript code</font>
+
+461
+00:19:48,610 --> 00:19:50,800
+that's<font color="#E5E5E5"> in line and the JavaScript code</font>
+
+462
+00:19:50,800 --> 00:19:52,750
+that's<font color="#E5E5E5"> loaded from your own server and</font>
+
+463
+00:19:52,750 --> 00:19:54,460
+<font color="#E5E5E5">the JavaScript code</font><font color="#CCCCCC"> that's loaded from</font>
+
+464
+00:19:54,460 --> 00:19:57,670
+another server they all run in the same
+
+465
+00:19:57,670 --> 00:20:00,730
+security<font color="#E5E5E5"> context and the security</font>
+
+466
+00:20:00,730 --> 00:20:02,650
+context of the<font color="#CCCCCC"> JavaScript</font><font color="#E5E5E5"> code has not</font>
+
+467
+00:20:02,650 --> 00:20:05,080
+to do with<font color="#E5E5E5"> whether</font><font color="#CCCCCC"> javascript code comes</font>
+
+468
+00:20:05,080 --> 00:20:09,400
+from<font color="#E5E5E5"> it only has to do where the</font>
+
+469
+00:20:09,400 --> 00:20:11,500
+<font color="#CCCCCC">JavaScript</font><font color="#E5E5E5"> code is loaded and JavaScript</font>
+
+470
+00:20:11,500 --> 00:20:13,810
+code is loaded<font color="#E5E5E5"> here at example.com port</font>
+
+471
+00:20:13,810 --> 00:20:16,650
+80<font color="#E5E5E5"> using HTTP and that's the</font><font color="#CCCCCC"> so-called</font>
+
+472
+00:20:16,650 --> 00:20:19,750
+<font color="#E5E5E5">origin rich and consisting of protocol</font>
+
+473
+00:20:19,750 --> 00:20:24,820
+<font color="#E5E5E5">domain and port the</font><font color="#CCCCCC"> JavaScript code now</font>
+
+474
+00:20:24,820 --> 00:20:26,890
+runs in the security context of protocol
+
+475
+00:20:26,890 --> 00:20:28,450
+domain and port so it may access
+
+476
+00:20:28,450 --> 00:20:32,200
+<font color="#CCCCCC">anything with these</font><font color="#E5E5E5"> three well</font>
+
+477
+00:20:32,200 --> 00:20:36,340
+<font color="#E5E5E5">attributes</font><font color="#CCCCCC"> or values</font><font color="#E5E5E5"> matching the</font>
+
+478
+00:20:36,340 --> 00:20:40,530
+current HTML page<font color="#E5E5E5"> so JavaScript code can</font>
+
+479
+00:20:40,530 --> 00:20:44,980
+<font color="#E5E5E5">whatever</font><font color="#CCCCCC"> XS cookies set for HTTP</font>
+
+480
+00:20:44,980 --> 00:20:47,740
+examples of common port 80 which is<font color="#CCCCCC"> a</font>
+
+481
+00:20:47,740 --> 00:20:49,540
+<font color="#E5E5E5">necessity for it to work</font>
+
+482
+00:20:49,540 --> 00:20:51,400
+it can also access all<font color="#E5E5E5"> the elements on</font>
+
+483
+00:20:51,400 --> 00:20:53,110
+the<font color="#E5E5E5"> page because it's the same security</font>
+
+484
+00:20:53,110 --> 00:20:55,360
+context<font color="#E5E5E5"> that's also important because if</font>
+
+485
+00:20:55,360 --> 00:20:57,490
+<font color="#E5E5E5">you load jQuery or angularjs or react</font>
+
+486
+00:20:57,490 --> 00:20:59,590
+then you know the frameworks do want to
+
+487
+00:20:59,590 --> 00:21:01,330
+<font color="#E5E5E5">access the current page to do their</font>
+
+488
+00:21:01,330 --> 00:21:04,750
+<font color="#E5E5E5">thing yeah but</font><font color="#CCCCCC"> if you have malicious</font>
+
+489
+00:21:04,750 --> 00:21:06,430
+code injected by a cross-site scripting
+
+490
+00:21:06,430 --> 00:21:08,140
+<font color="#E5E5E5">that code of course</font><font color="#CCCCCC"> runs in the same</font>
+
+491
+00:21:08,140 --> 00:21:09,880
+security<font color="#E5E5E5"> context so</font><font color="#CCCCCC"> it can do anything</font>
+
+492
+00:21:09,880 --> 00:21:12,700
+your own code code is<font color="#E5E5E5"> doing and I mean I</font>
+
+493
+00:21:12,700 --> 00:21:14,350
+have written<font color="#E5E5E5"> code that it's considered</font>
+
+494
+00:21:14,350 --> 00:21:16,120
+<font color="#CCCCCC">dangerous but because it was so buggy</font>
+
+495
+00:21:16,120 --> 00:21:18,640
+but you know if you are<font color="#CCCCCC"> really creating</font>
+
+496
+00:21:18,640 --> 00:21:20,500
+<font color="#E5E5E5">malicious code and injecting it on that</font>
+
+497
+00:21:20,500 --> 00:21:23,890
+page<font color="#CCCCCC"> it's it's a big catastrophe so the</font>
+
+498
+00:21:23,890 --> 00:21:26,590
+same origin<font color="#CCCCCC"> policy</font><font color="#E5E5E5"> it's both something</font>
+
+499
+00:21:26,590 --> 00:21:28,840
+<font color="#E5E5E5">that's a safeguard</font><font color="#CCCCCC"> but on the other hand</font>
+
+500
+00:21:28,840 --> 00:21:30,520
+<font color="#E5E5E5">it makes cross-site scripting even more</font>
+
+501
+00:21:30,520 --> 00:21:33,870
+dangerous<font color="#E5E5E5"> now let's talk</font><font color="#CCCCCC"> about</font>
+
+502
+00:21:33,870 --> 00:21:36,040
+protecting<font color="#E5E5E5"> against cross-site scripting</font>
+
+503
+00:21:36,040 --> 00:21:40,270
+in HTML<font color="#CCCCCC"> we have five</font><font color="#E5E5E5"> special characters</font>
+
+504
+00:21:40,270 --> 00:21:43,390
+we have<font color="#CCCCCC"> the angular</font><font color="#E5E5E5"> brackets opening and</font>
+
+505
+00:21:43,390 --> 00:21:46,240
+closing because<font color="#E5E5E5"> they delimit tags we</font>
+
+506
+00:21:46,240 --> 00:21:47,350
+have<font color="#CCCCCC"> the</font><font color="#E5E5E5"> single and double quotes</font>
+
+507
+00:21:47,350 --> 00:21:49,450
+because<font color="#CCCCCC"> they</font><font color="#E5E5E5"> the limit attribute values</font>
+
+508
+00:21:49,450 --> 00:21:52,780
+and we<font color="#E5E5E5"> have the character</font><font color="#CCCCCC"> ID</font><font color="#E5E5E5"> represent</font>
+
+509
+00:21:52,780 --> 00:21:57,340
+character for<font color="#CCCCCC"> 5ml entities</font><font color="#E5E5E5"> if we have</font>
+
+510
+00:21:57,340 --> 00:22:00,010
+user data<font color="#E5E5E5"> and we would like to output it</font>
+
+511
+00:22:00,010 --> 00:22:02,260
+we have to escape<font color="#E5E5E5"> those five characters</font>
+
+512
+00:22:02,260 --> 00:22:06,730
+<font color="#E5E5E5">if we are in an HTML context I mean</font>
+
+513
+00:22:06,730 --> 00:22:08,440
+technically that that's a blacklist
+
+514
+00:22:08,440 --> 00:22:10,780
+<font color="#CCCCCC">write a list of</font><font color="#E5E5E5"> five forbidden</font>
+
+515
+00:22:10,780 --> 00:22:14,020
+characters and what you learn in when we
+
+516
+00:22:14,020 --> 00:22:16,120
+<font color="#E5E5E5">talk about security</font>
+
+517
+00:22:16,120 --> 00:22:17,710
+that usually<font color="#CCCCCC"> black lists are bad because</font>
+
+518
+00:22:17,710 --> 00:22:20,919
+<font color="#E5E5E5">one missed item in a blacklist meaning</font>
+
+519
+00:22:20,919 --> 00:22:23,140
+security vulnerability<font color="#E5E5E5"> better is a</font>
+
+520
+00:22:23,140 --> 00:22:25,000
+<font color="#CCCCCC">whitelist a</font><font color="#E5E5E5"> list of allowed characters</font>
+
+521
+00:22:25,000 --> 00:22:27,510
+but<font color="#E5E5E5"> this is I think the sole exception</font>
+
+522
+00:22:27,510 --> 00:22:30,309
+where a blacklist is<font color="#E5E5E5"> good enough in an</font>
+
+523
+00:22:30,309 --> 00:22:33,520
+HTML context if your output user data in
+
+524
+00:22:33,520 --> 00:22:36,279
+in JavaScript then well my first
+
+525
+00:22:36,279 --> 00:22:38,400
+recommendation is try another approach
+
+526
+00:22:38,400 --> 00:22:41,350
+<font color="#CCCCCC">seriously</font><font color="#E5E5E5"> try something different</font><font color="#CCCCCC"> but</font><font color="#E5E5E5"> if</font>
+
+527
+00:22:41,350 --> 00:22:43,000
+you have to do it javascript has
+
+528
+00:22:43,000 --> 00:22:44,890
+additional special characters for
+
+529
+00:22:44,890 --> 00:22:46,480
+<font color="#CCCCCC">instance the backslash this needs to</font><font color="#E5E5E5"> be</font>
+
+530
+00:22:46,480 --> 00:22:49,840
+escaped<font color="#CCCCCC"> as well but</font><font color="#E5E5E5"> there are other</font>
+
+531
+00:22:49,840 --> 00:22:55,960
+<font color="#CCCCCC">options too so</font><font color="#E5E5E5"> Internet Explorer 8 yes</font>
+
+532
+00:22:55,960 --> 00:22:58,120
+Internet Explorer<font color="#E5E5E5"> 8 the greatest browser</font>
+
+533
+00:22:58,120 --> 00:23:00,220
+<font color="#E5E5E5">ever written</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> obviously</font><font color="#CCCCCC"> you're</font>
+
+534
+00:23:00,220 --> 00:23:01,870
+laughing<font color="#E5E5E5"> and you</font><font color="#CCCCCC"> know I'm kind of</font>
+
+535
+00:23:01,870 --> 00:23:04,240
+<font color="#E5E5E5">smiling too but you know in retrospect</font>
+
+536
+00:23:04,240 --> 00:23:06,220
+<font color="#E5E5E5">actually it was a decent browser why</font>
+
+537
+00:23:06,220 --> 00:23:08,320
+because it introduced a lot<font color="#E5E5E5"> of security</font>
+
+538
+00:23:08,320 --> 00:23:10,929
+<font color="#E5E5E5">features</font><font color="#CCCCCC"> which first</font><font color="#E5E5E5"> went can unnoticed</font>
+
+539
+00:23:10,929 --> 00:23:13,090
+<font color="#E5E5E5">but were then adapted by most other</font>
+
+540
+00:23:13,090 --> 00:23:16,539
+major browsers<font color="#CCCCCC"> I will not talk about</font>
+
+541
+00:23:16,539 --> 00:23:18,730
+<font color="#CCCCCC">internet explorer 9</font><font color="#E5E5E5"> 10 or 11 these are</font>
+
+542
+00:23:18,730 --> 00:23:20,950
+different kind of beasts but insects or
+
+543
+00:23:20,950 --> 00:23:22,690
+<font color="#CCCCCC">8 introduced among other things are</font>
+
+544
+00:23:22,690 --> 00:23:24,549
+<font color="#CCCCCC">built-in</font><font color="#E5E5E5"> cross-site script cross-site</font>
+
+545
+00:23:24,549 --> 00:23:26,860
+scripting protection so the<font color="#E5E5E5"> most</font>
+
+546
+00:23:26,860 --> 00:23:30,220
+realistic<font color="#E5E5E5"> and when is</font><font color="#CCCCCC"> explore thought</font>
+
+547
+00:23:30,220 --> 00:23:31,600
+<font color="#CCCCCC">okay</font><font color="#E5E5E5"> this might cross-site scripting</font>
+
+548
+00:23:31,600 --> 00:23:33,510
+then cross-site scripting was blocked
+
+549
+00:23:33,510 --> 00:23:36,669
+<font color="#E5E5E5">sounds like a great idea</font><font color="#CCCCCC"> but you</font><font color="#E5E5E5"> know</font>
+
+550
+00:23:36,669 --> 00:23:38,799
+can<font color="#CCCCCC"> we really trust that</font><font color="#E5E5E5"> blocking</font>
+
+551
+00:23:38,799 --> 00:23:41,679
+mechanism<font color="#E5E5E5"> is</font><font color="#CCCCCC"> may</font><font color="#E5E5E5"> be blocking my legit</font>
+
+552
+00:23:41,679 --> 00:23:43,929
+application so<font color="#E5E5E5"> there was an HTTP header</font>
+
+553
+00:23:43,929 --> 00:23:47,620
+<font color="#E5E5E5">X XSS protection and if you set</font><font color="#CCCCCC"> that to</font>
+
+554
+00:23:47,620 --> 00:23:49,450
+<font color="#CCCCCC">zero the cross-site scripting protection</font>
+
+555
+00:23:49,450 --> 00:23:51,549
+was turned off<font color="#E5E5E5"> actually</font><font color="#CCCCCC"> Google did that</font>
+
+556
+00:23:51,549 --> 00:23:53,320
+the day Internet Explorer 8 was released
+
+557
+00:23:53,320 --> 00:23:55,210
+<font color="#CCCCCC">because they were afraid that insects</font>
+
+558
+00:23:55,210 --> 00:23:56,950
+<font color="#CCCCCC">fluoride is doing something</font><font color="#E5E5E5"> funny to the</font>
+
+559
+00:23:56,950 --> 00:23:59,950
+search engine a few weeks later they put
+
+560
+00:23:59,950 --> 00:24:01,779
+it back on because<font color="#E5E5E5"> they found out well</font>
+
+561
+00:24:01,779 --> 00:24:03,730
+it<font color="#CCCCCC"> actually</font><font color="#E5E5E5"> is a pretty</font><font color="#CCCCCC"> good thing</font><font color="#E5E5E5"> the</font>
+
+562
+00:24:03,730 --> 00:24:05,380
+cross-site scripting protection is not
+
+563
+00:24:05,380 --> 00:24:08,950
+perfect<font color="#E5E5E5"> because they want to avoid false</font>
+
+564
+00:24:08,950 --> 00:24:11,890
+positives<font color="#E5E5E5"> at any cost</font><font color="#CCCCCC"> it's better</font><font color="#E5E5E5"> to let</font>
+
+565
+00:24:11,890 --> 00:24:14,049
+in a textbook<font color="#E5E5E5"> through then make an</font>
+
+566
+00:24:14,049 --> 00:24:16,179
+application alleged application not work
+
+567
+00:24:16,179 --> 00:24:18,100
+any longer<font color="#CCCCCC"> because then people think</font><font color="#E5E5E5"> the</font>
+
+568
+00:24:18,100 --> 00:24:22,390
+browser is bad but<font color="#E5E5E5"> still it's a</font><font color="#CCCCCC"> pretty</font>
+
+569
+00:24:22,390 --> 00:24:24,220
+useful feature<font color="#E5E5E5"> it's also implemented now</font>
+
+570
+00:24:24,220 --> 00:24:26,649
+in Chrome<font color="#E5E5E5"> and Safari it's not</font>
+
+571
+00:24:26,649 --> 00:24:29,020
+<font color="#E5E5E5">implemented so by default in Firefox</font>
+
+572
+00:24:29,020 --> 00:24:30,489
+unfortunately
+
+573
+00:24:30,489 --> 00:24:33,190
+so that's why I often<font color="#E5E5E5"> do security</font><font color="#CCCCCC"> tests</font>
+
+574
+00:24:33,190 --> 00:24:34,960
+in<font color="#E5E5E5"> Firefox right because</font><font color="#CCCCCC"> there's a</font>
+
+575
+00:24:34,960 --> 00:24:37,450
+<font color="#CCCCCC">built-in</font><font color="#E5E5E5"> protection but actually it's a</font>
+
+576
+00:24:37,450 --> 00:24:41,320
+pretty useful<font color="#CCCCCC"> thing but I mean truth</font>
+
+577
+00:24:41,320 --> 00:24:43,090
+will<font color="#CCCCCC"> be told it's pretty sad</font><font color="#E5E5E5"> in my</font>
+
+578
+00:24:43,090 --> 00:24:45,369
+opinion<font color="#E5E5E5"> so the browser's have to come</font>
+
+579
+00:24:45,369 --> 00:24:46,989
+with<font color="#E5E5E5"> a protection because we as</font>
+
+580
+00:24:46,989 --> 00:24:48,970
+<font color="#CCCCCC">developers are</font><font color="#E5E5E5"> not good enough to</font>
+
+581
+00:24:48,970 --> 00:24:50,379
+protect<font color="#CCCCCC"> against cross-site scripting</font>
+
+582
+00:24:50,379 --> 00:24:54,039
+<font color="#E5E5E5">that's depressing</font><font color="#CCCCCC"> it really is</font><font color="#E5E5E5"> but maybe</font>
+
+583
+00:24:54,039 --> 00:24:56,440
+I have<font color="#E5E5E5"> something to turn that depression</font>
+
+584
+00:24:56,440 --> 00:24:59,379
+into enthusiasm<font color="#E5E5E5"> and that is something</font>
+
+585
+00:24:59,379 --> 00:25:03,039
+called content<font color="#E5E5E5"> security policy or CSP in</font>
+
+586
+00:25:03,039 --> 00:25:06,580
+short it's a<font color="#CCCCCC"> w3c</font><font color="#E5E5E5"> standard version 2 has</font>
+
+587
+00:25:06,580 --> 00:25:09,359
+<font color="#CCCCCC">been standardized last year it is</font>
+
+588
+00:25:09,359 --> 00:25:13,509
+supported<font color="#CCCCCC"> by all the major browsers</font><font color="#E5E5E5"> if</font>
+
+589
+00:25:13,509 --> 00:25:15,309
+your<font color="#CCCCCC"> interpretation of all the major</font>
+
+590
+00:25:15,309 --> 00:25:17,710
+browsers<font color="#E5E5E5"> means current</font><font color="#CCCCCC"> chrome current</font>
+
+591
+00:25:17,710 --> 00:25:19,389
+Firefox current Safari
+
+592
+00:25:19,389 --> 00:25:21,460
+it's a browser missing there<font color="#CCCCCC"> Oh actually</font>
+
+593
+00:25:21,460 --> 00:25:23,889
+<font color="#E5E5E5">current edge browser has it as well but</font>
+
+594
+00:25:23,889 --> 00:25:25,869
+<font color="#E5E5E5">only if you have to create as update for</font>
+
+595
+00:25:25,869 --> 00:25:27,249
+Windows 10 you know that one<font color="#E5E5E5"> was</font>
+
+596
+00:25:27,249 --> 00:25:29,289
+released<font color="#E5E5E5"> in February March something</font>
+
+597
+00:25:29,289 --> 00:25:31,749
+like that<font color="#E5E5E5"> April well you know that a few</font>
+
+598
+00:25:31,749 --> 00:25:34,359
+<font color="#CCCCCC">months back previous versions of</font><font color="#E5E5E5"> edge</font>
+
+599
+00:25:34,359 --> 00:25:37,239
+only<font color="#E5E5E5"> support an older version of content</font>
+
+600
+00:25:37,239 --> 00:25:38,529
+security policy which is kind of good
+
+601
+00:25:38,529 --> 00:25:41,590
+enough<font color="#E5E5E5"> the major issue with content</font>
+
+602
+00:25:41,590 --> 00:25:44,350
+security policy is Internet Explorer<font color="#E5E5E5"> if</font>
+
+603
+00:25:44,350 --> 00:25:46,960
+the Explorer versions 10 and 11 they do
+
+604
+00:25:46,960 --> 00:25:48,820
+support<font color="#CCCCCC"> an old version of content</font>
+
+605
+00:25:48,820 --> 00:25:50,859
+security policy<font color="#E5E5E5"> but they only support</font>
+
+606
+00:25:50,859 --> 00:25:52,859
+<font color="#E5E5E5">one feature and the feature is I</font>
+
+607
+00:25:52,859 --> 00:25:55,450
+wouldn't<font color="#E5E5E5"> say</font><font color="#CCCCCC"> worse</font><font color="#E5E5E5"> less let's just put</font>
+
+608
+00:25:55,450 --> 00:25:57,730
+it<font color="#CCCCCC"> that way the feature is not in use</font><font color="#E5E5E5"> in</font>
+
+609
+00:25:57,730 --> 00:26:01,179
+the real world<font color="#CCCCCC"> right</font><font color="#E5E5E5"> but still great</font>
+
+610
+00:26:01,179 --> 00:26:03,730
+great technology I could<font color="#E5E5E5"> talk for</font><font color="#CCCCCC"> 4</font>
+
+611
+00:26:03,730 --> 00:26:05,590
+hours<font color="#CCCCCC"> on this but I like</font><font color="#E5E5E5"> just like to</font>
+
+612
+00:26:05,590 --> 00:26:08,109
+show you a quick<font color="#CCCCCC"> example that you see</font>
+
+613
+00:26:08,109 --> 00:26:10,239
+how generally works and I hope<font color="#CCCCCC"> you will</font>
+
+614
+00:26:10,239 --> 00:26:13,269
+<font color="#E5E5E5">be as excited about that as I am</font><font color="#CCCCCC"> so the</font>
+
+615
+00:26:13,269 --> 00:26:16,720
+idea<font color="#E5E5E5"> is this the server sends an HTTP</font>
+
+616
+00:26:16,720 --> 00:26:18,549
+header<font color="#E5E5E5"> content</font><font color="#CCCCCC"> security policy with</font>
+
+617
+00:26:18,549 --> 00:26:21,249
+dashes in between<font color="#E5E5E5"> and a policy telling</font>
+
+618
+00:26:21,249 --> 00:26:23,590
+the<font color="#E5E5E5"> browser where to load data from</font>
+
+619
+00:26:23,590 --> 00:26:27,100
+<font color="#E5E5E5">where to load</font><font color="#CCCCCC"> resources from what what</font>
+
+620
+00:26:27,100 --> 00:26:29,559
+kind of<font color="#E5E5E5"> code to execute and the</font>
+
+621
+00:26:29,559 --> 00:26:32,440
+<font color="#E5E5E5">browser's then enforcing</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> right so</font>
+
+622
+00:26:32,440 --> 00:26:34,359
+browser gets<font color="#E5E5E5"> the center whatever only</font>
+
+623
+00:26:34,359 --> 00:26:37,359
+loads images from<font color="#CCCCCC"> that server</font><font color="#E5E5E5"> and if</font>
+
+624
+00:26:37,359 --> 00:26:39,309
+<font color="#CCCCCC">there are images</font><font color="#E5E5E5"> being loaded from</font>
+
+625
+00:26:39,309 --> 00:26:41,799
+<font color="#E5E5E5">another server the browser trust says no</font>
+
+626
+00:26:41,799 --> 00:26:42,710
+about
+
+627
+00:26:42,710 --> 00:26:45,530
+and that can be<font color="#E5E5E5"> really interesting now</font>
+
+628
+00:26:45,530 --> 00:26:48,050
+actually let's let's have<font color="#E5E5E5"> a look at an</font>
+
+629
+00:26:48,050 --> 00:26:52,280
+<font color="#E5E5E5">example here</font><font color="#CCCCCC"> so I have a page</font><font color="#E5E5E5"> here's the</font>
+
+630
+00:26:52,280 --> 00:26:55,880
+<font color="#E5E5E5">page excuse me</font>
+
+631
+00:26:55,880 --> 00:26:58,940
+<font color="#E5E5E5">so that's a page it has</font><font color="#CCCCCC"> a beautiful</font>
+
+632
+00:26:58,940 --> 00:27:03,620
+<font color="#E5E5E5">image and it also has an alert window it</font>
+
+633
+00:27:03,620 --> 00:27:05,540
+says in line<font color="#E5E5E5"> I'm going to close</font><font color="#CCCCCC"> that</font>
+
+634
+00:27:05,540 --> 00:27:10,280
+<font color="#E5E5E5">window it says external well because</font>
+
+635
+00:27:10,280 --> 00:27:11,930
+there<font color="#E5E5E5"> are two types of JavaScript</font><font color="#CCCCCC"> code</font>
+
+636
+00:27:11,930 --> 00:27:14,960
+on<font color="#CCCCCC"> that</font><font color="#E5E5E5"> page or actually by the way I'm</font>
+
+637
+00:27:14,960 --> 00:27:17,870
+a great designer<font color="#E5E5E5"> so you see we have here</font>
+
+638
+00:27:17,870 --> 00:27:20,990
+beautiful orange orange<font color="#E5E5E5"> bullets okay so</font>
+
+639
+00:27:20,990 --> 00:27:23,240
+let's have<font color="#E5E5E5"> a look at the the code for</font>
+
+640
+00:27:23,240 --> 00:27:26,690
+<font color="#CCCCCC">that</font><font color="#E5E5E5"> I happen to have it open so what we</font>
+
+641
+00:27:26,690 --> 00:27:28,700
+basically<font color="#CCCCCC"> have is</font><font color="#E5E5E5"> we</font><font color="#CCCCCC"> have some inline</font>
+
+642
+00:27:28,700 --> 00:27:31,670
+JavaScript here<font color="#E5E5E5"> then we load an external</font>
+
+643
+00:27:31,670 --> 00:27:33,170
+javascript file but it's you know<font color="#CCCCCC"> it's</font>
+
+644
+00:27:33,170 --> 00:27:35,930
+on the same server but that doesn't
+
+645
+00:27:35,930 --> 00:27:38,120
+<font color="#CCCCCC">really matter</font><font color="#E5E5E5"> at the moment</font><font color="#CCCCCC"> and then we</font>
+
+646
+00:27:38,120 --> 00:27:39,200
+have<font color="#CCCCCC"> two lists here and we have an</font>
+
+647
+00:27:39,200 --> 00:27:41,180
+inline style<font color="#E5E5E5"> for the list and what we</font>
+
+648
+00:27:41,180 --> 00:27:44,450
+also have<font color="#E5E5E5"> is we</font><font color="#CCCCCC"> have</font><font color="#E5E5E5"> two links</font><font color="#CCCCCC"> one link</font>
+
+649
+00:27:44,450 --> 00:27:46,280
+is just loading the page and the<font color="#E5E5E5"> other</font>
+
+650
+00:27:46,280 --> 00:27:49,730
+link is<font color="#E5E5E5"> a pending CSP equals one to the</font>
+
+651
+00:27:49,730 --> 00:27:52,910
+URL of<font color="#CCCCCC"> the page</font><font color="#E5E5E5"> now in the controller</font>
+
+652
+00:27:52,910 --> 00:27:54,820
+<font color="#E5E5E5">that's an MVC application in the</font>
+
+653
+00:27:54,820 --> 00:27:58,790
+controller<font color="#CCCCCC"> what what we do on that page</font>
+
+654
+00:27:58,790 --> 00:28:03,650
+is we check if these<font color="#CCCCCC"> people's one is in</font>
+
+655
+00:28:03,650 --> 00:28:06,710
+the query string and if so we set the
+
+656
+00:28:06,710 --> 00:28:10,370
+content<font color="#E5E5E5"> security policy header to a</font>
+
+657
+00:28:10,370 --> 00:28:14,260
+specific policy value now such a policy
+
+658
+00:28:14,260 --> 00:28:16,730
+<font color="#E5E5E5">looks like this we have a set of</font><font color="#CCCCCC"> so</font>
+
+659
+00:28:16,730 --> 00:28:18,380
+<font color="#CCCCCC">called directive these are those things</font>
+
+660
+00:28:18,380 --> 00:28:21,080
+<font color="#E5E5E5">with the dash in</font><font color="#CCCCCC"> between so the default</font>
+
+661
+00:28:21,080 --> 00:28:25,240
+<font color="#E5E5E5">SRC directive what basically does is</font><font color="#CCCCCC"> it</font>
+
+662
+00:28:25,240 --> 00:28:29,630
+provides a list<font color="#E5E5E5"> of URLs for well</font>
+
+663
+00:28:29,630 --> 00:28:31,760
+<font color="#CCCCCC">everything we load</font><font color="#E5E5E5"> usually with an SRC</font>
+
+664
+00:28:31,760 --> 00:28:35,300
+attribute<font color="#E5E5E5"> default SRC</font><font color="#CCCCCC"> is so to</font><font color="#E5E5E5"> speak the</font>
+
+665
+00:28:35,300 --> 00:28:37,160
+mother of all directives<font color="#E5E5E5"> we have more</font>
+
+666
+00:28:37,160 --> 00:28:39,050
+specific directives for instance<font color="#E5E5E5"> image'</font>
+
+667
+00:28:39,050 --> 00:28:41,390
+SRC<font color="#CCCCCC"> we have two the limiters from or</font>
+
+668
+00:28:41,390 --> 00:28:44,350
+script SRC<font color="#CCCCCC"> very low JavaScript</font><font color="#E5E5E5"> from or</font>
+
+669
+00:28:44,350 --> 00:28:46,940
+<font color="#CCCCCC">stylus SC where to</font><font color="#E5E5E5"> lodestar sheets from</font>
+
+670
+00:28:46,940 --> 00:28:50,450
+font SRC for web<font color="#E5E5E5"> phones etc etc etc but</font>
+
+671
+00:28:50,450 --> 00:28:51,680
+if<font color="#E5E5E5"> it's a different</font><font color="#CCCCCC"> as a receive this</font>
+
+672
+00:28:51,680 --> 00:28:53,750
+kind of compasses most of the other
+
+673
+00:28:53,750 --> 00:28:56,600
+<font color="#CCCCCC">directors</font><font color="#E5E5E5"> so I could provide a list</font><font color="#CCCCCC"> of</font>
+
+674
+00:28:56,600 --> 00:28:58,820
+so origins here or in later<font color="#E5E5E5"> content</font>
+
+675
+00:28:58,820 --> 00:29:01,460
+<font color="#E5E5E5">security policy versions specific URLs</font>
+
+676
+00:29:01,460 --> 00:29:03,590
+or your<font color="#CCCCCC"> fragments</font><font color="#E5E5E5"> but when a conference</font>
+
+677
+00:29:03,590 --> 00:29:07,490
+is<font color="#E5E5E5"> due is</font><font color="#CCCCCC"> hgp whatever</font><font color="#E5E5E5"> local</font><font color="#CCCCCC"> host</font><font color="#E5E5E5"> poured</font>
+
+678
+00:29:07,490 --> 00:29:10,250
+<font color="#E5E5E5">one two three four</font><font color="#CCCCCC"> and then everything</font>
+
+679
+00:29:10,250 --> 00:29:13,280
+<font color="#E5E5E5">can only be loaded from that server now</font>
+
+680
+00:29:13,280 --> 00:29:16,400
+<font color="#E5E5E5">actually this sample page here is not</font>
+
+681
+00:29:16,400 --> 00:29:18,680
+<font color="#E5E5E5">running from</font><font color="#CCCCCC"> localhost port</font><font color="#E5E5E5"> 1 2 3 4</font><font color="#CCCCCC"> but</font>
+
+682
+00:29:18,680 --> 00:29:21,950
+<font color="#CCCCCC">localhost port I don't even know</font><font color="#E5E5E5"> so</font>
+
+683
+00:29:21,950 --> 00:29:23,840
+<font color="#E5E5E5">that's what a good idea but</font><font color="#CCCCCC"> I actually</font>
+
+684
+00:29:23,840 --> 00:29:26,540
+want to do is that everything is loaded
+
+685
+00:29:26,540 --> 00:29:29,960
+from<font color="#E5E5E5"> the current domain the current</font>
+
+686
+00:29:29,960 --> 00:29:32,030
+origin of the current page and for that
+
+687
+00:29:32,030 --> 00:29:34,340
+they<font color="#CCCCCC"> have a constant</font><font color="#E5E5E5"> and because it's a</font>
+
+688
+00:29:34,340 --> 00:29:37,190
+constant<font color="#CCCCCC"> it's limited by single quotes</font>
+
+689
+00:29:37,190 --> 00:29:42,170
+so<font color="#E5E5E5"> info itself means</font><font color="#CCCCCC"> ok load it from</font><font color="#E5E5E5"> the</font>
+
+690
+00:29:42,170 --> 00:29:43,850
+<font color="#E5E5E5">current origin if it's not from a</font>
+
+691
+00:29:43,850 --> 00:29:46,310
+current origin don't load it well if you
+
+692
+00:29:46,310 --> 00:29:49,010
+have a look<font color="#E5E5E5"> at the</font><font color="#CCCCCC"> markup again we see</font>
+
+693
+00:29:49,010 --> 00:29:51,350
+<font color="#CCCCCC">that shouldn't be a</font><font color="#E5E5E5"> problem because the</font>
+
+694
+00:29:51,350 --> 00:29:53,770
+image comes from the current server
+
+695
+00:29:53,770 --> 00:29:56,720
+<font color="#E5E5E5">because a relative path as does the</font>
+
+696
+00:29:56,720 --> 00:30:00,530
+JavaScript code so we might expect<font color="#CCCCCC"> that</font>
+
+697
+00:30:00,530 --> 00:30:03,050
+<font color="#CCCCCC">this content</font><font color="#E5E5E5"> security policy</font><font color="#CCCCCC"> the page</font>
+
+698
+00:30:03,050 --> 00:30:06,110
+<font color="#E5E5E5">works exactly as</font><font color="#CCCCCC"> before now</font><font color="#E5E5E5"> let's try</font>
+
+699
+00:30:06,110 --> 00:30:08,510
+this out<font color="#CCCCCC"> so I click on</font><font color="#E5E5E5"> the CSP link and</font>
+
+700
+00:30:08,510 --> 00:30:12,050
+if<font color="#E5E5E5"> you look</font><font color="#CCCCCC"> very closely bottom</font><font color="#E5E5E5"> left you</font>
+
+701
+00:30:12,050 --> 00:30:13,730
+see<font color="#CCCCCC"> that these peak was</font><font color="#E5E5E5"> one is appended</font>
+
+702
+00:30:13,730 --> 00:30:16,670
+to<font color="#E5E5E5"> URLs</font><font color="#CCCCCC"> ok so when I click on there what</font>
+
+703
+00:30:16,670 --> 00:30:19,430
+I get is a pop-up saying<font color="#E5E5E5"> external or</font>
+
+704
+00:30:19,430 --> 00:30:20,900
+wait a minute<font color="#CCCCCC"> what wasn't</font><font color="#E5E5E5"> there</font><font color="#CCCCCC"> like in</font>
+
+705
+00:30:20,900 --> 00:30:23,110
+line before<font color="#E5E5E5"> ok</font>
+
+706
+00:30:23,110 --> 00:30:25,310
+very weird let's have a look what's that
+
+707
+00:30:25,310 --> 00:30:27,530
+<font color="#E5E5E5">about and then we see where</font><font color="#CCCCCC"> the image is</font>
+
+708
+00:30:27,530 --> 00:30:29,540
+still there but my beautiful orange
+
+709
+00:30:29,540 --> 00:30:31,420
+color<font color="#E5E5E5"> is gone too</font>
+
+710
+00:30:31,420 --> 00:30:35,000
+so the<font color="#E5E5E5"> inline</font><font color="#CCCCCC"> pop-ups</font><font color="#E5E5E5"> the inline alert</font>
+
+711
+00:30:35,000 --> 00:30:37,220
+<font color="#E5E5E5">window didn't show up and the color is</font>
+
+712
+00:30:37,220 --> 00:30:37,880
+<font color="#E5E5E5">gone</font>
+
+713
+00:30:37,880 --> 00:30:41,500
+why because both<font color="#CCCCCC"> of those were in line</font>
+
+714
+00:30:41,500 --> 00:30:43,070
+<font color="#E5E5E5">inline style</font>
+
+715
+00:30:43,070 --> 00:30:46,190
+inline<font color="#CCCCCC"> JavaScript code by default if you</font>
+
+716
+00:30:46,190 --> 00:30:49,720
+<font color="#E5E5E5">have a Content security policy then</font>
+
+717
+00:30:49,720 --> 00:30:53,330
+inline is disabled<font color="#E5E5E5"> and that's a good</font>
+
+718
+00:30:53,330 --> 00:30:55,430
+<font color="#E5E5E5">thing because how does cross-site</font>
+
+719
+00:30:55,430 --> 00:30:57,020
+scripting work let's talk specifically
+
+720
+00:30:57,020 --> 00:30:59,000
+about<font color="#E5E5E5"> cross-site scripting well someone</font>
+
+721
+00:30:59,000 --> 00:31:03,920
+injects script<font color="#E5E5E5"> alert</font><font color="#CCCCCC"> 1 not</font><font color="#E5E5E5"> possible any</font>
+
+722
+00:31:03,920 --> 00:31:05,090
+longer with content security policy
+
+723
+00:31:05,090 --> 00:31:07,460
+because there is no inline code which we
+
+724
+00:31:07,460 --> 00:31:08,410
+can run
+
+725
+00:31:08,410 --> 00:31:12,010
+<font color="#CCCCCC">mmm</font><font color="#E5E5E5"> okay I'm intrigued but there's</font>
+
+726
+00:31:12,010 --> 00:31:13,150
+another<font color="#CCCCCC"> tech vector</font>
+
+727
+00:31:13,150 --> 00:31:19,540
+script SRC equals<font color="#CCCCCC"> HC P attacker.com /</font>
+
+728
+00:31:19,540 --> 00:31:23,350
+bad script<font color="#CCCCCC"> ojs not possible</font><font color="#E5E5E5"> this content</font>
+
+729
+00:31:23,350 --> 00:31:24,760
+security policy because<font color="#E5E5E5"> we're telling</font>
+
+730
+00:31:24,760 --> 00:31:26,680
+<font color="#CCCCCC">the browser</font><font color="#E5E5E5"> only</font><font color="#CCCCCC"> low JavaScript code</font>
+
+731
+00:31:26,680 --> 00:31:28,690
+from<font color="#E5E5E5"> our own server so that attack</font>
+
+732
+00:31:28,690 --> 00:31:32,200
+vector is closed as well<font color="#E5E5E5"> third attack</font>
+
+733
+00:31:32,200 --> 00:31:32,830
+vector
+
+734
+00:31:32,830 --> 00:31:36,820
+<font color="#CCCCCC">stripped SRC equals bad script of Jas so</font>
+
+735
+00:31:36,820 --> 00:31:38,890
+yes we can load malicious<font color="#CCCCCC"> JavaScript</font>
+
+736
+00:31:38,890 --> 00:31:42,100
+code if it is already residing on<font color="#CCCCCC"> the</font>
+
+737
+00:31:42,100 --> 00:31:45,280
+target server<font color="#CCCCCC"> on the other hand if we as</font>
+
+738
+00:31:45,280 --> 00:31:47,980
+an attacker<font color="#CCCCCC"> managed to</font><font color="#E5E5E5"> upload some</font>
+
+739
+00:31:47,980 --> 00:31:49,630
+malicious JavaScript code to<font color="#CCCCCC"> a remote</font>
+
+740
+00:31:49,630 --> 00:31:51,280
+server and cross-site scripting<font color="#E5E5E5"> is</font>
+
+741
+00:31:51,280 --> 00:31:53,830
+probably the<font color="#E5E5E5"> least of the problem of the</font>
+
+742
+00:31:53,830 --> 00:31:55,780
+owners<font color="#E5E5E5"> of that server right so</font>
+
+743
+00:31:55,780 --> 00:31:57,750
+technically<font color="#E5E5E5"> with content security policy</font>
+
+744
+00:31:57,750 --> 00:32:03,280
+<font color="#CCCCCC">we can beat cross-site scripting</font><font color="#E5E5E5"> I mean</font>
+
+745
+00:32:03,280 --> 00:32:06,480
+it does<font color="#E5E5E5"> can come at a certain cost</font>
+
+746
+00:32:06,480 --> 00:32:09,280
+disabling inline<font color="#CCCCCC"> javascript code for</font>
+
+747
+00:32:09,280 --> 00:32:11,050
+instance might be cumbersome for<font color="#E5E5E5"> some</font>
+
+748
+00:32:11,050 --> 00:32:13,120
+kind<font color="#E5E5E5"> of</font><font color="#CCCCCC"> applications so those of</font><font color="#E5E5E5"> you</font><font color="#CCCCCC"> who</font>
+
+749
+00:32:13,120 --> 00:32:15,760
+have worked<font color="#E5E5E5"> with let's say a few net web</font>
+
+750
+00:32:15,760 --> 00:32:18,490
+forms in the past or<font color="#E5E5E5"> maybe still now you</font>
+
+751
+00:32:18,490 --> 00:32:20,980
+know that the<font color="#E5E5E5"> mechanism behind</font><font color="#CCCCCC"> every</font>
+
+752
+00:32:20,980 --> 00:32:22,840
+<font color="#CCCCCC">unit web forms is injecting some inline</font>
+
+753
+00:32:22,840 --> 00:32:25,630
+<font color="#CCCCCC">javascript code</font><font color="#E5E5E5"> which is needed for for</font>
+
+754
+00:32:25,630 --> 00:32:27,550
+<font color="#E5E5E5">running the page there's very work</font>
+
+755
+00:32:27,550 --> 00:32:31,750
+reforms well this code then doesn't
+
+756
+00:32:31,750 --> 00:32:35,050
+really work<font color="#CCCCCC"> very well well it doesn't</font>
+
+757
+00:32:35,050 --> 00:32:36,670
+<font color="#E5E5E5">actually work when you use content</font>
+
+758
+00:32:36,670 --> 00:32:38,950
+<font color="#E5E5E5">security policy there are ways</font><font color="#CCCCCC"> around</font>
+
+759
+00:32:38,950 --> 00:32:43,240
+that<font color="#E5E5E5"> so we can enable inline JavaScript</font>
+
+760
+00:32:43,240 --> 00:32:45,580
+code again<font color="#E5E5E5"> so what we could do</font><font color="#CCCCCC"> for</font>
+
+761
+00:32:45,580 --> 00:32:47,140
+instance is we could add another
+
+762
+00:32:47,140 --> 00:32:50,290
+constant and I mean you<font color="#E5E5E5"> know if I was to</font>
+
+763
+00:32:50,290 --> 00:32:52,240
+write<font color="#E5E5E5"> a specification</font><font color="#CCCCCC"> I would say</font><font color="#E5E5E5"> okay</font>
+
+764
+00:32:52,240 --> 00:32:54,640
+let's<font color="#E5E5E5"> use the clock let's add a constant</font>
+
+765
+00:32:54,640 --> 00:32:57,360
+<font color="#E5E5E5">called inline which enables inline</font>
+
+766
+00:32:57,360 --> 00:33:00,040
+because a standard is supposed to be
+
+767
+00:33:00,040 --> 00:33:03,340
+neutral this Center is<font color="#E5E5E5"> not</font><font color="#CCCCCC"> neutral the</font>
+
+768
+00:33:03,340 --> 00:33:05,710
+confidence are called inline it's called
+
+769
+00:33:05,710 --> 00:33:09,460
+unsafe - inline so we do know that<font color="#CCCCCC"> it's</font>
+
+770
+00:33:09,460 --> 00:33:11,560
+a bad idea what we<font color="#E5E5E5"> are about to do right</font>
+
+771
+00:33:11,560 --> 00:33:15,070
+<font color="#E5E5E5">so we know by adding this unsafe</font>
+
+772
+00:33:15,070 --> 00:33:17,950
+<font color="#CCCCCC">constant yes inline code</font><font color="#E5E5E5"> is back again</font>
+
+773
+00:33:17,950 --> 00:33:19,570
+<font color="#E5E5E5">but then on</font><font color="#CCCCCC"> the other hand a new</font>
+
+774
+00:33:19,570 --> 00:33:21,130
+cross-site scripting attack vector just
+
+775
+00:33:21,130 --> 00:33:22,419
+<font color="#CCCCCC">opened</font>
+
+776
+00:33:22,419 --> 00:33:26,090
+so yeah<font color="#E5E5E5"> there might</font><font color="#CCCCCC"> be some issues 20</font>
+
+777
+00:33:26,090 --> 00:33:28,580
+security policy version<font color="#CCCCCC"> 2 added new</font>
+
+778
+00:33:28,580 --> 00:33:32,240
+features<font color="#CCCCCC"> that we can say ok</font><font color="#E5E5E5"> you do not</font>
+
+779
+00:33:32,240 --> 00:33:34,029
+want to allow inline<font color="#CCCCCC"> JavaScript code</font>
+
+780
+00:33:34,029 --> 00:33:37,760
+<font color="#CCCCCC">unless the</font><font color="#E5E5E5"> JavaScript code has this</font><font color="#CCCCCC"> sh a</font>
+
+781
+00:33:37,760 --> 00:33:41,120
+hash right<font color="#E5E5E5"> so if you know we</font><font color="#CCCCCC"> always</font><font color="#E5E5E5"> have</font>
+
+782
+00:33:41,120 --> 00:33:42,889
+the<font color="#E5E5E5"> same kind of inline JavaScript code</font>
+
+783
+00:33:42,889 --> 00:33:45,380
+because the framework<font color="#CCCCCC"> just emits it then</font>
+
+784
+00:33:45,380 --> 00:33:47,299
+we calculate the<font color="#E5E5E5"> hash</font><font color="#CCCCCC"> and say ok if the</font>
+
+785
+00:33:47,299 --> 00:33:49,639
+code has<font color="#E5E5E5"> this hash then we can run it</font>
+
+786
+00:33:49,639 --> 00:33:51,200
+and it's really hard<font color="#CCCCCC"> for an attacker to</font>
+
+787
+00:33:51,200 --> 00:33:53,059
+you know write malicious code that
+
+788
+00:33:53,059 --> 00:33:56,539
+<font color="#E5E5E5">happens have exactly the same sha-512</font>
+
+789
+00:33:56,539 --> 00:33:59,630
+hash if not virtually impossible so I
+
+790
+00:33:59,630 --> 00:34:01,190
+<font color="#CCCCCC">think it's almost possible</font><font color="#E5E5E5"> to create a</font>
+
+791
+00:34:01,190 --> 00:34:05,090
+collusion<font color="#E5E5E5"> here</font><font color="#CCCCCC"> so that that</font><font color="#E5E5E5"> is an option</font>
+
+792
+00:34:05,090 --> 00:34:06,679
+<font color="#E5E5E5">only</font><font color="#CCCCCC"> well done content security policy</font>
+
+793
+00:34:06,679 --> 00:34:08,659
+version<font color="#E5E5E5"> 2 so if you still have support</font>
+
+794
+00:34:08,659 --> 00:34:09,949
+all the edge versions or Internet
+
+795
+00:34:09,949 --> 00:34:12,139
+Explorer<font color="#CCCCCC"> that is not an option for</font><font color="#E5E5E5"> you</font>
+
+796
+00:34:12,139 --> 00:34:14,480
+in those cases for<font color="#E5E5E5"> those browsers you</font>
+
+797
+00:34:14,480 --> 00:34:16,730
+have to use<font color="#E5E5E5"> on say</font><font color="#CCCCCC"> Finland right or you</font>
+
+798
+00:34:16,730 --> 00:34:19,599
+refactor<font color="#E5E5E5"> your application - well</font>
+
+799
+00:34:19,599 --> 00:34:23,300
+actually<font color="#E5E5E5"> avoid inline</font><font color="#CCCCCC"> Styles</font><font color="#E5E5E5"> inline</font>
+
+800
+00:34:23,300 --> 00:34:25,250
+<font color="#E5E5E5">JavaScript code</font><font color="#CCCCCC"> which from performance</font>
+
+801
+00:34:25,250 --> 00:34:27,790
+perspective<font color="#CCCCCC"> is a good</font><font color="#E5E5E5"> idea anyway</font>
+
+802
+00:34:27,790 --> 00:34:30,409
+again<font color="#E5E5E5"> I could</font><font color="#CCCCCC"> I</font><font color="#E5E5E5"> could talk for hours</font>
+
+803
+00:34:30,409 --> 00:34:32,839
+<font color="#E5E5E5">about content security policy and I</font>
+
+804
+00:34:32,839 --> 00:34:34,520
+think<font color="#CCCCCC"> you also get the impression</font><font color="#E5E5E5"> that I</font>
+
+805
+00:34:34,520 --> 00:34:37,099
+<font color="#CCCCCC">am a bit overexcited</font><font color="#E5E5E5"> about this</font><font color="#CCCCCC"> but</font>
+
+806
+00:34:37,099 --> 00:34:39,020
+still do consider using that in<font color="#CCCCCC"> your</font>
+
+807
+00:34:39,020 --> 00:34:41,770
+applications<font color="#CCCCCC"> I've migrated so many</font>
+
+808
+00:34:41,770 --> 00:34:44,960
+customer applications<font color="#E5E5E5"> to contribute to</font>
+
+809
+00:34:44,960 --> 00:34:47,960
+policy<font color="#E5E5E5"> and it's always you</font><font color="#CCCCCC"> know it's</font>
+
+810
+00:34:47,960 --> 00:34:49,940
+always a bit of<font color="#E5E5E5"> a struggle it's actually</font>
+
+811
+00:34:49,940 --> 00:34:51,679
+it's a legacy application that<font color="#CCCCCC"> we've</font>
+
+812
+00:34:51,679 --> 00:34:53,989
+<font color="#CCCCCC">funny stuff this</font><font color="#E5E5E5"> you know injecting</font>
+
+813
+00:34:53,989 --> 00:34:56,960
+injecting code in the page<font color="#E5E5E5"> but in the</font>
+
+814
+00:34:56,960 --> 00:34:59,710
+end you know you<font color="#E5E5E5"> have</font><font color="#CCCCCC"> just an additional</font>
+
+815
+00:34:59,710 --> 00:35:02,660
+very very thorough layer of security
+
+816
+00:35:02,660 --> 00:35:05,210
+<font color="#E5E5E5">that helps defend against</font><font color="#CCCCCC"> number 3 on</font>
+
+817
+00:35:05,210 --> 00:35:07,160
+<font color="#E5E5E5">that list so really it's a</font><font color="#CCCCCC"> great thing</font>
+
+818
+00:35:07,160 --> 00:35:09,950
+<font color="#CCCCCC">so please do consider using college</font>
+
+819
+00:35:09,950 --> 00:35:11,240
+security policy<font color="#CCCCCC"> to be</font><font color="#E5E5E5"> cross-site</font>
+
+820
+00:35:11,240 --> 00:35:14,089
+scripting<font color="#CCCCCC"> the next item on the</font><font color="#E5E5E5"> list</font>
+
+821
+00:35:14,089 --> 00:35:17,420
+<font color="#E5E5E5">number</font><font color="#CCCCCC"> four is a bit more on let's</font><font color="#E5E5E5"> say</font>
+
+822
+00:35:17,420 --> 00:35:19,849
+it's a mixture<font color="#E5E5E5"> of two</font><font color="#CCCCCC"> items</font><font color="#E5E5E5"> of the</font>
+
+823
+00:35:19,849 --> 00:35:22,880
+previous list it's called broken access
+
+824
+00:35:22,880 --> 00:35:27,380
+control and 2013<font color="#E5E5E5"> lists made two items</font>
+
+825
+00:35:27,380 --> 00:35:29,180
+out<font color="#CCCCCC"> of that</font><font color="#E5E5E5"> because they made a</font>
+
+826
+00:35:29,180 --> 00:35:31,430
+differentiation<font color="#CCCCCC"> between</font><font color="#E5E5E5"> accessing data</font>
+
+827
+00:35:31,430 --> 00:35:34,730
+and xsm functions<font color="#E5E5E5"> well you know</font><font color="#CCCCCC"> they</font>
+
+828
+00:35:34,730 --> 00:35:35,540
+<font color="#E5E5E5">using an MD</font>
+
+829
+00:35:35,540 --> 00:35:38,030
+framework like ice<font color="#CCCCCC"> to net NBC or ACL</font>
+
+830
+00:35:38,030 --> 00:35:41,630
+core then basically the URL<font color="#E5E5E5"> very often</font>
+
+831
+00:35:41,630 --> 00:35:43,880
+maps to a method or<font color="#E5E5E5"> a function on the</font>
+
+832
+00:35:43,880 --> 00:35:47,390
+server<font color="#E5E5E5"> and you know some applications</font>
+
+833
+00:35:47,390 --> 00:35:49,130
+are very<font color="#CCCCCC"> optimistic so they think</font><font color="#E5E5E5"> well</font>
+
+834
+00:35:49,130 --> 00:35:52,730
+my my URL<font color="#E5E5E5"> so secret right so no one has</font>
+
+835
+00:35:52,730 --> 00:35:55,310
+<font color="#CCCCCC">gotta get the idea to go</font><font color="#E5E5E5"> to my</font><font color="#CCCCCC"> website</font>
+
+836
+00:35:55,310 --> 00:35:58,190
+and then<font color="#E5E5E5"> does slash admin at the end of</font>
+
+837
+00:35:58,190 --> 00:36:00,710
+the<font color="#CCCCCC"> URL or</font><font color="#E5E5E5"> question</font><font color="#CCCCCC"> mark is admin equals</font>
+
+838
+00:36:00,710 --> 00:36:03,260
+true<font color="#E5E5E5"> so while I just do this</font><font color="#CCCCCC"> to create</font><font color="#E5E5E5"> a</font>
+
+839
+00:36:03,260 --> 00:36:06,020
+<font color="#E5E5E5">backdoor in my application</font><font color="#CCCCCC"> yes it it</font>
+
+840
+00:36:06,020 --> 00:36:07,940
+still happens<font color="#CCCCCC"> originally</font><font color="#E5E5E5"> found something</font>
+
+841
+00:36:07,940 --> 00:36:08,990
+<font color="#CCCCCC">like this</font>
+
+842
+00:36:08,990 --> 00:36:11,690
+<font color="#E5E5E5">so access control to all functions must</font>
+
+843
+00:36:11,690 --> 00:36:14,540
+<font color="#E5E5E5">be in place when</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> have a form and</font>
+
+844
+00:36:14,540 --> 00:36:16,550
+<font color="#E5E5E5">that form can only be loaded when you</font>
+
+845
+00:36:16,550 --> 00:36:18,950
+are authorized<font color="#E5E5E5"> but when that form is</font>
+
+846
+00:36:18,950 --> 00:36:20,540
+posted back<font color="#CCCCCC"> to the server you just</font>
+
+847
+00:36:20,540 --> 00:36:22,610
+assume a how should<font color="#E5E5E5"> someone know that</font><font color="#CCCCCC"> I</font>
+
+848
+00:36:22,610 --> 00:36:25,190
+can there's a forum to post back so I do
+
+849
+00:36:25,190 --> 00:36:27,020
+need<font color="#CCCCCC"> to authorize</font><font color="#E5E5E5"> the post request</font><font color="#CCCCCC"> oh</font>
+
+850
+00:36:27,020 --> 00:36:31,400
+yes you do<font color="#E5E5E5"> same thing goes for data so</font>
+
+851
+00:36:31,400 --> 00:36:33,920
+if you have some<font color="#CCCCCC"> secret information</font><font color="#E5E5E5"> if</font>
+
+852
+00:36:33,920 --> 00:36:36,110
+the only thing secret<font color="#CCCCCC"> is</font><font color="#E5E5E5"> LinkedIn or the</font>
+
+853
+00:36:36,110 --> 00:36:39,050
+URL<font color="#CCCCCC"> maybe it's not</font><font color="#E5E5E5"> good</font><font color="#CCCCCC"> enough I mean</font>
+
+854
+00:36:39,050 --> 00:36:40,820
+the over<font color="#E5E5E5"> stop</font><font color="#CCCCCC"> 10 is a list of risks and</font>
+
+855
+00:36:40,820 --> 00:36:42,320
+<font color="#E5E5E5">with all risks you have to risk</font>
+
+856
+00:36:42,320 --> 00:36:44,630
+management<font color="#E5E5E5"> and have to decide</font><font color="#CCCCCC"> ok do</font><font color="#E5E5E5"> I he</font>
+
+857
+00:36:44,630 --> 00:36:47,930
+s to invest<font color="#CCCCCC"> resources to mitigate that</font>
+
+858
+00:36:47,930 --> 00:36:48,560
+<font color="#E5E5E5">risk</font>
+
+859
+00:36:48,560 --> 00:36:50,960
+<font color="#E5E5E5">take take Facebook for</font><font color="#CCCCCC"> instance if you</font>
+
+860
+00:36:50,960 --> 00:36:53,230
+<font color="#CCCCCC">go to Facebook if you</font><font color="#E5E5E5"> upload a picture a</font>
+
+861
+00:36:53,230 --> 00:36:56,540
+photo and the photo is not<font color="#E5E5E5"> public right</font>
+
+862
+00:36:56,540 --> 00:36:57,800
+so only for your friends are you in
+
+863
+00:36:57,800 --> 00:37:01,070
+private still that picture<font color="#E5E5E5"> gets a URL on</font>
+
+864
+00:37:01,070 --> 00:37:03,800
+a different server<font color="#CCCCCC"> and there is no</font>
+
+865
+00:37:03,800 --> 00:37:06,680
+<font color="#E5E5E5">access control so if someone guesses</font>
+
+866
+00:37:06,680 --> 00:37:10,130
+<font color="#CCCCCC">that</font><font color="#E5E5E5"> URL they can just access</font><font color="#CCCCCC"> the</font>
+
+867
+00:37:10,130 --> 00:37:13,310
+picture<font color="#CCCCCC"> without any access</font><font color="#E5E5E5"> control the</font>
+
+868
+00:37:13,310 --> 00:37:15,560
+<font color="#E5E5E5">URLs are so long</font><font color="#CCCCCC"> that it's really really</font>
+
+869
+00:37:15,560 --> 00:37:20,210
+<font color="#CCCCCC">hard to guess</font><font color="#E5E5E5"> that URL</font><font color="#CCCCCC"> but still extra</font>
+
+870
+00:37:20,210 --> 00:37:21,950
+<font color="#CCCCCC">control</font><font color="#E5E5E5"> the data is missing there there</font>
+
+871
+00:37:21,950 --> 00:37:23,780
+are<font color="#E5E5E5"> reasons why it's that</font><font color="#CCCCCC"> way there are</font>
+
+872
+00:37:23,780 --> 00:37:25,670
+also performance reasons<font color="#E5E5E5"> and so you know</font>
+
+873
+00:37:25,670 --> 00:37:28,580
+Facebook<font color="#E5E5E5"> does the trade-off and very</font>
+
+874
+00:37:28,580 --> 00:37:30,890
+often<font color="#E5E5E5"> we do the trade-off as well but so</font>
+
+875
+00:37:30,890 --> 00:37:33,800
+keep that keep<font color="#CCCCCC"> that</font><font color="#E5E5E5"> in mind now when we</font>
+
+876
+00:37:33,800 --> 00:37:36,170
+talk about<font color="#CCCCCC"> access control there's one</font>
+
+877
+00:37:36,170 --> 00:37:39,140
+thing I like<font color="#CCCCCC"> to briefly cover and that's</font>
+
+878
+00:37:39,140 --> 00:37:42,440
+<font color="#E5E5E5">an attack called mass</font><font color="#CCCCCC"> assignments so</font>
+
+879
+00:37:42,440 --> 00:37:44,540
+this was on github a while back<font color="#E5E5E5"> you</font><font color="#CCCCCC"> know</font>
+
+880
+00:37:44,540 --> 00:37:46,160
+and<font color="#E5E5E5"> get have any open issue in the issue</font>
+
+881
+00:37:46,160 --> 00:37:48,650
+<font color="#E5E5E5">tracker it says this issue was opened 20</font>
+
+882
+00:37:48,650 --> 00:37:49,880
+minutes ago
+
+883
+00:37:49,880 --> 00:37:53,830
+issue was opened in<font color="#CCCCCC"> 1001 years right</font><font color="#E5E5E5"> and</font>
+
+884
+00:37:53,830 --> 00:37:56,630
+the<font color="#CCCCCC"> attack here is called</font><font color="#E5E5E5"> mass</font>
+
+885
+00:37:56,630 --> 00:38:00,830
+assignment or over posting now<font color="#E5E5E5"> the idea</font>
+
+886
+00:38:00,830 --> 00:38:04,910
+is<font color="#CCCCCC"> this so this</font><font color="#E5E5E5"> was done in in Ruby on</font>
+
+887
+00:38:04,910 --> 00:38:07,550
+Rails<font color="#CCCCCC"> but</font><font color="#E5E5E5"> it's also possible in asp.net</font>
+
+888
+00:38:07,550 --> 00:38:11,600
+MVC<font color="#CCCCCC"> if you use modal binding</font><font color="#E5E5E5"> so let's</font>
+
+889
+00:38:11,600 --> 00:38:13,040
+<font color="#E5E5E5">talk</font><font color="#CCCCCC"> about modal binding model binding</font>
+
+890
+00:38:13,040 --> 00:38:15,200
+<font color="#CCCCCC">native net MVC means you have an HTTP</font>
+
+891
+00:38:15,200 --> 00:38:18,230
+request<font color="#CCCCCC"> let's say a post request</font><font color="#E5E5E5"> and you</font>
+
+892
+00:38:18,230 --> 00:38:19,760
+know you have some data<font color="#E5E5E5"> in the post</font>
+
+893
+00:38:19,760 --> 00:38:22,250
+<font color="#CCCCCC">let's</font><font color="#E5E5E5"> say how I would this</font><font color="#CCCCCC"> buck</font><font color="#E5E5E5"> and if</font>
+
+894
+00:38:22,250 --> 00:38:24,470
+you look<font color="#E5E5E5"> like a title and the text and</font>
+
+895
+00:38:24,470 --> 00:38:28,220
+an author<font color="#CCCCCC"> maybe</font><font color="#E5E5E5"> and so you have well</font>
+
+896
+00:38:28,220 --> 00:38:29,570
+maybe the<font color="#E5E5E5"> author's part of the session</font>
+
+897
+00:38:29,570 --> 00:38:32,180
+so<font color="#CCCCCC"> let's</font><font color="#E5E5E5"> just</font><font color="#CCCCCC"> say Thailand</font><font color="#E5E5E5"> text so</font><font color="#CCCCCC"> it</font>
+
+898
+00:38:32,180 --> 00:38:35,270
+<font color="#CCCCCC">sent an HTTP POST</font><font color="#E5E5E5"> request to the create</font>
+
+899
+00:38:35,270 --> 00:38:39,830
+new entry<font color="#E5E5E5"> endpoint and you have a field</font>
+
+900
+00:38:39,830 --> 00:38:42,410
+called<font color="#CCCCCC"> title with I'm bender from future</font>
+
+901
+00:38:42,410 --> 00:38:46,310
+and you have a field<font color="#CCCCCC"> called</font><font color="#E5E5E5"> description</font>
+
+902
+00:38:46,310 --> 00:38:48,260
+or text and well you<font color="#E5E5E5"> have the text of</font>
+
+903
+00:38:48,260 --> 00:38:52,340
+the<font color="#CCCCCC"> DB entry now what model binding does</font>
+
+904
+00:38:52,340 --> 00:38:55,280
+is you probably<font color="#E5E5E5"> have a model class a</font>
+
+905
+00:38:55,280 --> 00:38:59,270
+buck entry and the bar entry has public
+
+906
+00:38:59,270 --> 00:39:02,630
+properties like title and text<font color="#E5E5E5"> and</font><font color="#CCCCCC"> model</font>
+
+907
+00:39:02,630 --> 00:39:04,100
+binding looks oh wait there is something
+
+908
+00:39:04,100 --> 00:39:06,680
+<font color="#CCCCCC">in the HDPE</font><font color="#E5E5E5"> post that has the same name</font>
+
+909
+00:39:06,680 --> 00:39:08,660
+as<font color="#CCCCCC"> that property ok let's assign it oh</font>
+
+910
+00:39:08,660 --> 00:39:10,400
+and then there's<font color="#CCCCCC"> another</font><font color="#E5E5E5"> thing</font><font color="#CCCCCC"> that has</font>
+
+911
+00:39:10,400 --> 00:39:11,630
+the same<font color="#E5E5E5"> name</font><font color="#CCCCCC"> as the</font><font color="#E5E5E5"> property let's</font>
+
+912
+00:39:11,630 --> 00:39:14,060
+assign it so model binding automatically
+
+913
+00:39:14,060 --> 00:39:17,780
+turns the<font color="#E5E5E5"> tech space HTTP POST into an</font>
+
+914
+00:39:17,780 --> 00:39:20,150
+instance of our<font color="#E5E5E5"> little bug entry model</font>
+
+915
+00:39:20,150 --> 00:39:22,940
+<font color="#E5E5E5">class now the problem is that that</font><font color="#CCCCCC"> bug</font>
+
+916
+00:39:22,940 --> 00:39:25,190
+entry<font color="#E5E5E5"> model class will</font><font color="#CCCCCC"> also have a</font>
+
+917
+00:39:25,190 --> 00:39:28,850
+property called<font color="#E5E5E5"> creation date the form</font>
+
+918
+00:39:28,850 --> 00:39:32,300
+<font color="#E5E5E5">for setting up such a such an entry does</font>
+
+919
+00:39:32,300 --> 00:39:34,670
+not have a date picker<font color="#CCCCCC"> because in the</font>
+
+920
+00:39:34,670 --> 00:39:37,880
+constructor of that<font color="#E5E5E5"> model class which</font>
+
+921
+00:39:37,880 --> 00:39:40,040
+<font color="#CCCCCC">has set the creation day</font><font color="#E5E5E5"> to the current</font>
+
+922
+00:39:40,040 --> 00:39:43,430
+date but what<font color="#E5E5E5"> if the HTTP POST request</font>
+
+923
+00:39:43,430 --> 00:39:45,380
+<font color="#E5E5E5">would also contain a field called</font>
+
+924
+00:39:45,380 --> 00:39:52,810
+<font color="#E5E5E5">creation date equals June 15th</font><font color="#CCCCCC"> 3,018</font>
+
+925
+00:39:52,810 --> 00:39:55,850
+well first the class<font color="#E5E5E5"> is accentuated and</font>
+
+926
+00:39:55,850 --> 00:39:57,980
+<font color="#E5E5E5">then all the attributes and all the</font>
+
+927
+00:39:57,980 --> 00:40:00,620
+<font color="#E5E5E5">members are set so in the end we have a</font>
+
+928
+00:40:00,620 --> 00:40:03,970
+back entry<font color="#E5E5E5"> opens on 15th of June</font>
+
+929
+00:40:03,970 --> 00:40:07,190
+<font color="#CCCCCC">3,018 which is exactly in 1001 years</font><font color="#E5E5E5"> and</font>
+
+930
+00:40:07,190 --> 00:40:09,740
+that's<font color="#E5E5E5"> what happened here same goes if</font>
+
+931
+00:40:09,740 --> 00:40:11,990
+you if you add a user to<font color="#CCCCCC"> a system</font><font color="#E5E5E5"> and</font>
+
+932
+00:40:11,990 --> 00:40:13,580
+you<font color="#CCCCCC"> have a custom user management and</font>
+
+933
+00:40:13,580 --> 00:40:17,270
+that user has<font color="#E5E5E5"> a property is admin which</font>
+
+934
+00:40:17,270 --> 00:40:19,130
+of course is stupid for<font color="#E5E5E5"> various reasons</font>
+
+935
+00:40:19,130 --> 00:40:21,140
+but<font color="#CCCCCC"> let's</font><font color="#E5E5E5"> just assume it because we all</font>
+
+936
+00:40:21,140 --> 00:40:24,200
+know<font color="#CCCCCC"> it happens</font><font color="#E5E5E5"> well if you send is</font>
+
+937
+00:40:24,200 --> 00:40:27,170
+admin alongside the creation<font color="#CCCCCC"> HT post</font>
+
+938
+00:40:27,170 --> 00:40:32,510
+<font color="#CCCCCC">request</font><font color="#E5E5E5"> you have</font><font color="#CCCCCC"> a new admin user if you</font>
+
+939
+00:40:32,510 --> 00:40:35,420
+are using the<font color="#CCCCCC"> the</font><font color="#E5E5E5"> wizards in current</font>
+
+940
+00:40:35,420 --> 00:40:37,550
+<font color="#CCCCCC">versions of Visual Studio to set up you</font>
+
+941
+00:40:37,550 --> 00:40:41,780
+know<font color="#E5E5E5"> corrupt views and controllers using</font>
+
+942
+00:40:41,780 --> 00:40:44,720
+entity<font color="#E5E5E5"> framework then what these</font>
+
+943
+00:40:44,720 --> 00:40:47,480
+controllers<font color="#E5E5E5"> do is they they set up those</font>
+
+944
+00:40:47,480 --> 00:40:51,140
+methods for adding a new<font color="#CCCCCC"> element in</font><font color="#E5E5E5"> your</font>
+
+945
+00:40:51,140 --> 00:40:54,410
+model class<font color="#E5E5E5"> but</font><font color="#CCCCCC"> they also suggest that</font>
+
+946
+00:40:54,410 --> 00:40:57,070
+<font color="#CCCCCC">you use the exclude or include</font>
+
+947
+00:40:57,070 --> 00:40:59,750
+<font color="#CCCCCC">attributes in order to specifically say</font>
+
+948
+00:40:59,750 --> 00:41:01,670
+<font color="#E5E5E5">okay these are the properties I would</font>
+
+949
+00:41:01,670 --> 00:41:03,859
+like to bind or<font color="#E5E5E5"> these are the properties</font>
+
+950
+00:41:03,859 --> 00:41:06,380
+<font color="#CCCCCC">I would not like to</font><font color="#E5E5E5"> bind via model</font>
+
+951
+00:41:06,380 --> 00:41:09,740
+binding those properties and<font color="#E5E5E5"> those those</font>
+
+952
+00:41:09,740 --> 00:41:11,720
+comments are in there for<font color="#CCCCCC"> a reason</font>
+
+953
+00:41:11,720 --> 00:41:13,310
+<font color="#E5E5E5">so if you have a model where not</font>
+
+954
+00:41:13,310 --> 00:41:14,770
+everything<font color="#CCCCCC"> should be</font><font color="#E5E5E5"> set by the user</font>
+
+955
+00:41:14,770 --> 00:41:16,849
+<font color="#CCCCCC">take care</font><font color="#E5E5E5"> of that when the user is</font>
+
+956
+00:41:16,849 --> 00:41:20,270
+adding one item in your<font color="#CCCCCC"> repository that</font>
+
+957
+00:41:20,270 --> 00:41:23,240
+<font color="#CCCCCC">not all the properties may be bound</font><font color="#E5E5E5"> very</font>
+
+958
+00:41:23,240 --> 00:41:25,430
+very important<font color="#E5E5E5"> so that's why I put</font><font color="#CCCCCC"> it in</font>
+
+959
+00:41:25,430 --> 00:41:26,960
+here there is no actual entry for that
+
+960
+00:41:26,960 --> 00:41:31,130
+<font color="#E5E5E5">in</font><font color="#CCCCCC"> India over</font><font color="#E5E5E5"> September</font><font color="#CCCCCC"> fear</font><font color="#E5E5E5"> number</font><font color="#CCCCCC"> four</font>
+
+961
+00:41:31,130 --> 00:41:33,700
+is kind<font color="#CCCCCC"> of the one that that fits</font><font color="#E5E5E5"> best</font>
+
+962
+00:41:33,700 --> 00:41:36,920
+all right I'm a developer<font color="#E5E5E5"> so when</font>
+
+963
+00:41:36,920 --> 00:41:39,640
+something<font color="#E5E5E5"> goes wrong whose fault is it</font>
+
+964
+00:41:39,640 --> 00:41:44,349
+no not my fault no no no I'm flawless
+
+965
+00:41:44,349 --> 00:41:46,250
+management your management<font color="#CCCCCC"> is</font><font color="#E5E5E5"> super</font>
+
+966
+00:41:46,250 --> 00:41:47,510
+management it's always management's
+
+967
+00:41:47,510 --> 00:41:49,849
+fault<font color="#CCCCCC"> I know in my company I do a little</font>
+
+968
+00:41:49,849 --> 00:41:51,500
+of management so<font color="#CCCCCC"> management</font><font color="#E5E5E5"> is perfect</font>
+
+969
+00:41:51,500 --> 00:41:53,660
+as well who is<font color="#E5E5E5"> it</font><font color="#CCCCCC"> yes</font><font color="#E5E5E5"> of course it's</font><font color="#CCCCCC"> the</font>
+
+970
+00:41:53,660 --> 00:41:56,060
+admin<font color="#E5E5E5"> the admin</font><font color="#CCCCCC"> yeh exactly</font><font color="#E5E5E5"> exactly</font><font color="#CCCCCC"> I'm</font>
+
+971
+00:41:56,060 --> 00:41:57,830
+not an admin so number five security
+
+972
+00:41:57,830 --> 00:41:59,450
+<font color="#CCCCCC">miss configuration no that's not my</font>
+
+973
+00:41:59,450 --> 00:42:01,820
+thing<font color="#CCCCCC"> but wait a minute don't be all the</font>
+
+974
+00:42:01,820 --> 00:42:04,520
+kind of DevOps<font color="#CCCCCC"> e stuff nowadays ok so I</font>
+
+975
+00:42:04,520 --> 00:42:09,320
+<font color="#E5E5E5">am the admin</font><font color="#CCCCCC"> Dennis yeah so of course</font>
+
+976
+00:42:09,320 --> 00:42:11,119
+the server<font color="#E5E5E5"> the operating system they</font>
+
+977
+00:42:11,119 --> 00:42:14,089
+need<font color="#E5E5E5"> to be hardened</font><font color="#CCCCCC"> we have to make</font><font color="#E5E5E5"> sure</font>
+
+978
+00:42:14,089 --> 00:42:16,099
+<font color="#CCCCCC">that error messages are not shown</font><font color="#E5E5E5"> to the</font>
+
+979
+00:42:16,099 --> 00:42:16,630
+user
+
+980
+00:42:16,630 --> 00:42:19,179
+stuff like<font color="#E5E5E5"> that so</font><font color="#CCCCCC"> all of this is</font><font color="#E5E5E5"> kind</font>
+
+981
+00:42:19,179 --> 00:42:22,359
+<font color="#E5E5E5">of put in into number five which</font><font color="#CCCCCC"> kinase</font>
+
+982
+00:42:22,359 --> 00:42:24,640
+obvious and if you're<font color="#E5E5E5"> lucky then there</font>
+
+983
+00:42:24,640 --> 00:42:26,650
+is an admin that<font color="#E5E5E5"> take care of that for</font>
+
+984
+00:42:26,650 --> 00:42:29,439
+us<font color="#E5E5E5"> if not you have to</font><font color="#CCCCCC"> keep</font><font color="#E5E5E5"> that keep</font>
+
+985
+00:42:29,439 --> 00:42:32,079
+<font color="#E5E5E5">that in mind so rather show point number</font>
+
+986
+00:42:32,079 --> 00:42:34,660
+six<font color="#E5E5E5"> is called sensitive data exposure</font>
+
+987
+00:42:34,660 --> 00:42:37,829
+it's basically<font color="#CCCCCC"> means use encryption</font>
+
+988
+00:42:37,829 --> 00:42:40,719
+using corruption everywhere
+
+989
+00:42:40,719 --> 00:42:46,779
+and well use<font color="#E5E5E5"> HTTP let's talk about</font>
+
+990
+00:42:46,779 --> 00:42:49,529
+encryption<font color="#E5E5E5"> so for instance passwords</font>
+
+991
+00:42:49,529 --> 00:42:54,069
+<font color="#E5E5E5">must be encrypted right and we'll see an</font>
+
+992
+00:42:54,069 --> 00:42:56,229
+example for<font color="#E5E5E5"> that in a bit what</font><font color="#CCCCCC"> I also</font>
+
+993
+00:42:56,229 --> 00:42:59,019
+find interesting is use<font color="#CCCCCC"> HTTP why well</font>
+
+994
+00:42:59,019 --> 00:43:01,809
+for<font color="#CCCCCC"> instance think about</font><font color="#E5E5E5"> session</font>
+
+995
+00:43:01,809 --> 00:43:05,579
+hijacking<font color="#CCCCCC"> if you use HTTP</font><font color="#E5E5E5"> throughout</font>
+
+996
+00:43:05,579 --> 00:43:08,979
+then at no<font color="#E5E5E5"> point in time the session ID</font>
+
+997
+00:43:08,979 --> 00:43:13,089
+is sent unencrypted<font color="#CCCCCC"> so even near</font>
+
+998
+00:43:13,089 --> 00:43:15,249
+conference Wi-Fi<font color="#E5E5E5"> we cannot express</font>
+
+999
+00:43:15,249 --> 00:43:18,429
+especially from someone<font color="#E5E5E5"> else but what</font>
+
+1000
+00:43:18,429 --> 00:43:20,799
+happens if let's<font color="#E5E5E5"> say our website entity</font>
+
+1001
+00:43:20,799 --> 00:43:22,239
+<font color="#CCCCCC">auto</font><font color="#E5E5E5"> welcome let's just assume</font><font color="#CCCCCC"> that it's</font>
+
+1002
+00:43:22,239 --> 00:43:24,909
+using<font color="#CCCCCC"> HTTPS but what happens if</font><font color="#E5E5E5"> I enter</font>
+
+1003
+00:43:24,909 --> 00:43:28,630
+<font color="#CCCCCC">NBC Oslo</font><font color="#E5E5E5"> comm in the address bar of my</font>
+
+1004
+00:43:28,630 --> 00:43:30,789
+browser and<font color="#E5E5E5"> hit enter well then the</font>
+
+1005
+00:43:30,789 --> 00:43:33,909
+browser sends an HTTP request<font color="#E5E5E5"> and then</font>
+
+1006
+00:43:33,909 --> 00:43:35,589
+<font color="#E5E5E5">the server may be that some URL</font>
+
+1007
+00:43:35,589 --> 00:43:37,719
+rewriting or redirection<font color="#E5E5E5"> and then goes</font>
+
+1008
+00:43:37,719 --> 00:43:39,759
+<font color="#CCCCCC">to</font><font color="#E5E5E5"> HTTPS but that first request is</font>
+
+1009
+00:43:39,759 --> 00:43:41,319
+unencrypted<font color="#CCCCCC"> so if I happen</font><font color="#E5E5E5"> to have a</font>
+
+1010
+00:43:41,319 --> 00:43:43,319
+session<font color="#E5E5E5"> ID that's also sent via</font>
+
+1011
+00:43:43,319 --> 00:43:46,569
+unencrypted communication channels<font color="#E5E5E5"> and</font>
+
+1012
+00:43:46,569 --> 00:43:49,630
+there<font color="#E5E5E5"> ways to</font><font color="#CCCCCC"> avoid this</font><font color="#E5E5E5"> but still then</font>
+
+1013
+00:43:49,630 --> 00:43:51,640
+well we have one unencrypted connection
+
+1014
+00:43:51,640 --> 00:43:54,159
+<font color="#CCCCCC">but they are good news there's something</font>
+
+1015
+00:43:54,159 --> 00:43:57,400
+called strict HTTP transfer security<font color="#CCCCCC"> and</font>
+
+1016
+00:43:57,400 --> 00:44:00,429
+that's also mechanism supported by
+
+1017
+00:44:00,429 --> 00:44:03,429
+current browsers<font color="#E5E5E5"> that forces the browser</font>
+
+1018
+00:44:03,429 --> 00:44:06,909
+to<font color="#CCCCCC"> remember to</font><font color="#E5E5E5"> only use</font><font color="#CCCCCC"> HTTPS to</font><font color="#E5E5E5"> access</font>
+
+1019
+00:44:06,909 --> 00:44:10,989
+a<font color="#CCCCCC"> certain site even if the user was</font>
+
+1020
+00:44:10,989 --> 00:44:13,869
+entering an HTTP<font color="#E5E5E5"> URL and the amazing</font>
+
+1021
+00:44:13,869 --> 00:44:17,289
+thing<font color="#CCCCCC"> there is</font><font color="#E5E5E5"> that modern browsers come</font>
+
+1022
+00:44:17,289 --> 00:44:22,269
+with a preload list<font color="#CCCCCC"> okay take skubick</font>
+
+1023
+00:44:22,269 --> 00:44:24,429
+<font color="#E5E5E5">from a while to actually display that</font>
+
+1024
+00:44:24,429 --> 00:44:27,099
+<font color="#E5E5E5">okay</font><font color="#CCCCCC"> increase the font size it's a very</font>
+
+1025
+00:44:27,099 --> 00:44:29,380
+<font color="#E5E5E5">long list it's about two nav megabytes</font>
+
+1026
+00:44:29,380 --> 00:44:30,100
+of<font color="#CCCCCC"> je</font>
+
+1027
+00:44:30,100 --> 00:44:33,910
+which<font color="#E5E5E5"> is then formatted here and that's</font>
+
+1028
+00:44:33,910 --> 00:44:38,080
+the that's<font color="#E5E5E5"> the list of for Chrome</font><font color="#CCCCCC"> and if</font>
+
+1029
+00:44:38,080 --> 00:44:39,610
+you scroll down<font color="#E5E5E5"> there a little once the</font>
+
+1030
+00:44:39,610 --> 00:44:42,910
+browser<font color="#E5E5E5"> reacts again</font><font color="#CCCCCC"> we'll see that</font><font color="#E5E5E5"> the</font>
+
+1031
+00:44:42,910 --> 00:44:44,590
+list contains a lot of<font color="#E5E5E5"> domains of course</font>
+
+1032
+00:44:44,590 --> 00:44:46,810
+domains from<font color="#CCCCCC"> Google but</font><font color="#E5E5E5"> also domains</font>
+
+1033
+00:44:46,810 --> 00:44:49,810
+from<font color="#E5E5E5"> private people from from</font>
+
+1034
+00:44:49,810 --> 00:44:53,730
+<font color="#E5E5E5">organizations from almost anyone yeah</font>
+
+1035
+00:44:53,730 --> 00:44:59,640
+once<font color="#CCCCCC"> it's loading loading oh well</font>
+
+1036
+00:44:59,640 --> 00:45:03,280
+actually oh<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so I'm in</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> middle</font>
+
+1037
+00:45:03,280 --> 00:45:06,400
+<font color="#E5E5E5">somewhere</font><font color="#CCCCCC"> so London dot dating I have no</font>
+
+1038
+00:45:06,400 --> 00:45:08,860
+affiliation with that with that<font color="#E5E5E5"> site but</font>
+
+1039
+00:45:08,860 --> 00:45:12,340
+yeah<font color="#E5E5E5"> if you go to lambda dot dating and</font>
+
+1040
+00:45:12,340 --> 00:45:14,890
+your significant others in<font color="#CCCCCC"> the same open</font>
+
+1041
+00:45:14,890 --> 00:45:18,850
+Wi-Fi<font color="#E5E5E5"> then they will do okay maybe maybe</font>
+
+1042
+00:45:18,850 --> 00:45:19,990
+<font color="#E5E5E5">not</font>
+
+1043
+00:45:19,990 --> 00:45:22,870
+yeah but so it's it's a pretty<font color="#E5E5E5"> pretty</font>
+
+1044
+00:45:22,870 --> 00:45:24,970
+fascinating idea and why are there<font color="#E5E5E5"> these</font>
+
+1045
+00:45:24,970 --> 00:45:27,550
+kind<font color="#CCCCCC"> of private or let's say non Google</font>
+
+1046
+00:45:27,550 --> 00:45:29,290
+domains in that<font color="#E5E5E5"> list</font>
+
+1047
+00:45:29,290 --> 00:45:32,650
+well that's<font color="#E5E5E5"> because none of because</font><font color="#CCCCCC"> of</font>
+
+1048
+00:45:32,650 --> 00:45:36,070
+that<font color="#E5E5E5"> because of</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> you can add your</font>
+
+1049
+00:45:36,070 --> 00:45:38,680
+<font color="#E5E5E5">domain to that list</font><font color="#CCCCCC"> so there's a</font>
+
+1050
+00:45:38,680 --> 00:45:40,180
+mechanism<font color="#E5E5E5"> your domain has to send out</font>
+
+1051
+00:45:40,180 --> 00:45:42,070
+certain headers<font color="#E5E5E5"> but basically you</font><font color="#CCCCCC"> can</font>
+
+1052
+00:45:42,070 --> 00:45:43,870
+add yourself to<font color="#E5E5E5"> the list which i think</font>
+
+1053
+00:45:43,870 --> 00:45:47,380
+is is pretty pretty<font color="#E5E5E5"> useful if you use</font>
+
+1054
+00:45:47,380 --> 00:45:50,140
+<font color="#CCCCCC">https</font><font color="#E5E5E5"> throughout there might be reasons</font>
+
+1055
+00:45:50,140 --> 00:45:52,540
+to<font color="#E5E5E5"> avoid using</font><font color="#CCCCCC"> HTTPS throughout so for</font>
+
+1056
+00:45:52,540 --> 00:45:54,250
+instance if you have all the clients
+
+1057
+00:45:54,250 --> 00:45:56,580
+connecting to<font color="#E5E5E5"> your application or if you</font>
+
+1058
+00:45:56,580 --> 00:45:59,080
+afraid of performance<font color="#E5E5E5"> issues but</font>
+
+1059
+00:45:59,080 --> 00:46:01,810
+basically nowadays we should use<font color="#E5E5E5"> HTTPS</font>
+
+1060
+00:46:01,810 --> 00:46:04,870
+<font color="#E5E5E5">throughout and with HTTP</font><font color="#CCCCCC"> to from a</font>
+
+1061
+00:46:04,870 --> 00:46:07,510
+performance point of<font color="#E5E5E5"> view HTTP is not</font>
+
+1062
+00:46:07,510 --> 00:46:11,500
+significantly slower<font color="#CCCCCC"> all</font><font color="#E5E5E5"> right number</font>
+
+1063
+00:46:11,500 --> 00:46:13,480
+seven and number seven pounds of<font color="#E5E5E5"> it we</font>
+
+1064
+00:46:13,480 --> 00:46:17,440
+have insufficient attack protection<font color="#E5E5E5"> okay</font>
+
+1065
+00:46:17,440 --> 00:46:19,900
+well you know if if I have an
+
+1066
+00:46:19,900 --> 00:46:21,250
+<font color="#CCCCCC">application and I have a security</font>
+
+1067
+00:46:21,250 --> 00:46:23,910
+<font color="#CCCCCC">incident yes I did have insufficient</font>
+
+1068
+00:46:23,910 --> 00:46:27,250
+<font color="#E5E5E5">attack protection what sort of this</font>
+
+1069
+00:46:27,250 --> 00:46:29,320
+point all about now according<font color="#CCCCCC"> to</font><font color="#E5E5E5"> the</font>
+
+1070
+00:46:29,320 --> 00:46:31,270
+over geared<font color="#CCCCCC"> years if someone is</font>
+
+1071
+00:46:31,270 --> 00:46:35,260
+attacking us<font color="#E5E5E5"> we should find out so if</font>
+
+1072
+00:46:35,260 --> 00:46:37,030
+there are automated<font color="#E5E5E5"> text if you get a</font>
+
+1073
+00:46:37,030 --> 00:46:39,610
+lot<font color="#CCCCCC"> of requests from</font><font color="#E5E5E5"> maybe in the same</font>
+
+1074
+00:46:39,610 --> 00:46:42,790
+IP address of the same type we should
+
+1075
+00:46:42,790 --> 00:46:43,930
+have software<font color="#E5E5E5"> in place</font>
+
+1076
+00:46:43,930 --> 00:46:45,430
+mechanisms in place that<font color="#CCCCCC"> signs</font><font color="#E5E5E5"> it out</font>
+
+1077
+00:46:45,430 --> 00:46:47,560
+and if you're really<font color="#E5E5E5"> good</font><font color="#CCCCCC"> you should</font>
+
+1078
+00:46:47,560 --> 00:46:49,030
+<font color="#E5E5E5">also have software</font><font color="#CCCCCC"> in place</font><font color="#E5E5E5"> that finds</font>
+
+1079
+00:46:49,030 --> 00:46:50,610
+<font color="#E5E5E5">out if someone does the manual attack</font>
+
+1080
+00:46:50,610 --> 00:46:53,860
+but well I would say at least<font color="#E5E5E5"> the second</font>
+
+1081
+00:46:53,860 --> 00:46:55,780
+part is kind of<font color="#E5E5E5"> wishful thinking but of</font>
+
+1082
+00:46:55,780 --> 00:46:58,540
+course replication firewalls and network
+
+1083
+00:46:58,540 --> 00:47:00,610
+analysis tools<font color="#E5E5E5"> state can help us a</font>
+
+1084
+00:47:00,610 --> 00:47:03,550
+<font color="#E5E5E5">little bit and also then decrease the</font>
+
+1085
+00:47:03,550 --> 00:47:04,500
+attack surface
+
+1086
+00:47:04,500 --> 00:47:07,840
+another thing is quickly<font color="#E5E5E5"> install patches</font>
+
+1087
+00:47:07,840 --> 00:47:11,550
+<font color="#E5E5E5">right</font><font color="#CCCCCC"> yeah I know I</font><font color="#E5E5E5"> know</font>
+
+1088
+00:47:11,550 --> 00:47:14,200
+why why change her running system<font color="#CCCCCC"> I</font>
+
+1089
+00:47:14,200 --> 00:47:17,200
+recently went over to a<font color="#E5E5E5"> dentist and the</font>
+
+1090
+00:47:17,200 --> 00:47:21,670
+dentist<font color="#CCCCCC"> had Windows XP with a list of</font>
+
+1091
+00:47:21,670 --> 00:47:24,040
+patches that<font color="#CCCCCC"> have not been installed</font><font color="#E5E5E5"> yet</font>
+
+1092
+00:47:24,040 --> 00:47:28,060
+so I okay I know what I will do I go to
+
+1093
+00:47:28,060 --> 00:47:29,560
+another dentist<font color="#CCCCCC"> so I went to another</font>
+
+1094
+00:47:29,560 --> 00:47:31,360
+<font color="#CCCCCC">dentist and the other dentists didn't</font>
+
+1095
+00:47:31,360 --> 00:47:33,010
+have a computer<font color="#CCCCCC"> at</font><font color="#E5E5E5"> all so I felt very</font>
+
+1096
+00:47:33,010 --> 00:47:34,080
+comfortable<font color="#CCCCCC"> actually</font>
+
+1097
+00:47:34,080 --> 00:47:36,490
+<font color="#CCCCCC">but seriously quick install patches</font>
+
+1098
+00:47:36,490 --> 00:47:39,070
+<font color="#E5E5E5">important you all heard I guess about</font>
+
+1099
+00:47:39,070 --> 00:47:43,030
+wanna cry which kinda<font color="#E5E5E5"> hit worldwide and</font>
+
+1100
+00:47:43,030 --> 00:47:44,550
+what<font color="#CCCCCC"> water</font><font color="#E5E5E5"> cry was doing they were</font>
+
+1101
+00:47:44,550 --> 00:47:47,740
+<font color="#E5E5E5">abusing a security Valatie in Windows</font>
+
+1102
+00:47:47,740 --> 00:47:50,470
+that<font color="#CCCCCC"> was I think closed in March</font><font color="#E5E5E5"> the</font>
+
+1103
+00:47:50,470 --> 00:47:53,380
+attack<font color="#E5E5E5"> was in May</font><font color="#CCCCCC"> so well two months</font>
+
+1104
+00:47:53,380 --> 00:47:54,880
+<font color="#E5E5E5">passed without any patches being</font>
+
+1105
+00:47:54,880 --> 00:47:58,450
+installed<font color="#E5E5E5"> so I come from</font><font color="#CCCCCC"> Germany and we</font>
+
+1106
+00:47:58,450 --> 00:48:02,830
+have one big<font color="#CCCCCC"> trained provider some small</font>
+
+1107
+00:48:02,830 --> 00:48:04,960
+<font color="#E5E5E5">ones but one big big</font><font color="#CCCCCC"> crime price</font><font color="#E5E5E5"> like</font>
+
+1108
+00:48:04,960 --> 00:48:08,560
+like the NSB here and that this were
+
+1109
+00:48:08,560 --> 00:48:11,350
+there this<font color="#E5E5E5"> place actually so you know</font>
+
+1110
+00:48:11,350 --> 00:48:12,940
+this place on all the stations
+
+1111
+00:48:12,940 --> 00:48:15,520
+nationwide right and I was really<font color="#CCCCCC"> angry</font>
+
+1112
+00:48:15,520 --> 00:48:17,110
+<font color="#CCCCCC">because I couldn't</font><font color="#E5E5E5"> even see where the</font>
+
+1113
+00:48:17,110 --> 00:48:18,610
+<font color="#E5E5E5">trains were going because</font><font color="#CCCCCC"> of the</font>
+
+1114
+00:48:18,610 --> 00:48:21,510
+ransomware<font color="#E5E5E5"> thing being displaced</font>
+
+1115
+00:48:21,510 --> 00:48:24,790
+nationwide<font color="#CCCCCC"> okay so a centralized IT is a</font>
+
+1116
+00:48:24,790 --> 00:48:27,220
+great thing because then attacks are
+
+1117
+00:48:27,220 --> 00:48:31,540
+<font color="#E5E5E5">also system-wide</font><font color="#CCCCCC"> all</font><font color="#E5E5E5"> right</font><font color="#CCCCCC"> so yes</font>
+
+1118
+00:48:31,540 --> 00:48:34,060
+quickly<font color="#E5E5E5"> install patches or tell the</font>
+
+1119
+00:48:34,060 --> 00:48:37,050
+admin to do super important all right
+
+1120
+00:48:37,050 --> 00:48:40,090
+the<font color="#E5E5E5"> next thing is across</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> request</font>
+
+1121
+00:48:40,090 --> 00:48:42,370
+forgery and<font color="#E5E5E5"> cross request fortress is an</font>
+
+1122
+00:48:42,370 --> 00:48:45,850
+interesting<font color="#CCCCCC"> Beast</font><font color="#E5E5E5"> because</font><font color="#CCCCCC"> cross request</font>
+
+1123
+00:48:45,850 --> 00:48:48,130
+forgery is only on number<font color="#CCCCCC"> eight and it's</font>
+
+1124
+00:48:48,130 --> 00:48:51,670
+so so dangerous<font color="#CCCCCC"> so I think most of you</font>
+
+1125
+00:48:51,670 --> 00:48:53,350
+are<font color="#CCCCCC"> aware of</font><font color="#E5E5E5"> cross</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> vest forgery but</font>
+
+1126
+00:48:53,350 --> 00:48:55,330
+just to<font color="#E5E5E5"> quickly reiterate what's</font>
+
+1127
+00:48:55,330 --> 00:48:57,580
+happening there<font color="#E5E5E5"> I kind of prom</font>
+
+1128
+00:48:57,580 --> 00:48:59,410
+one of<font color="#CCCCCC"> victims so let's say end the</font>
+
+1129
+00:48:59,410 --> 00:49:02,860
+attack<font color="#CCCCCC"> and</font><font color="#E5E5E5"> you're the victims I want you</font>
+
+1130
+00:49:02,860 --> 00:49:04,930
+to go to my<font color="#CCCCCC"> website maybe because</font><font color="#E5E5E5"> hey</font>
+
+1131
+00:49:04,930 --> 00:49:09,490
+the<font color="#E5E5E5"> the slides will be will</font><font color="#CCCCCC"> be really</font>
+
+1132
+00:49:09,490 --> 00:49:11,080
+<font color="#CCCCCC">bad</font><font color="#E5E5E5"> be up there on the website</font><font color="#CCCCCC"> I guess</font>
+
+1133
+00:49:11,080 --> 00:49:12,400
+there will<font color="#CCCCCC"> be only on the</font><font color="#E5E5E5"> free</font><font color="#CCCCCC"> website</font>
+
+1134
+00:49:12,400 --> 00:49:14,560
+if not you know<font color="#E5E5E5"> go to Twitter or send me</font>
+
+1135
+00:49:14,560 --> 00:49:16,120
+an email and<font color="#CCCCCC"> I'd be more than happy to</font>
+
+1136
+00:49:16,120 --> 00:49:18,130
+provide<font color="#E5E5E5"> you with the slide and but</font>
+
+1137
+00:49:18,130 --> 00:49:20,410
+<font color="#CCCCCC">anyway so</font><font color="#E5E5E5"> I prompted to go to my website</font>
+
+1138
+00:49:20,410 --> 00:49:24,940
+<font color="#E5E5E5">right and on my website</font><font color="#CCCCCC"> of what you're</font>
+
+1139
+00:49:24,940 --> 00:49:26,950
+<font color="#E5E5E5">getting is some JavaScript</font><font color="#CCCCCC"> code and the</font>
+
+1140
+00:49:26,950 --> 00:49:30,160
+JavaScript code prompts your browser to
+
+1141
+00:49:30,160 --> 00:49:34,030
+send an HTTP<font color="#CCCCCC"> request to</font><font color="#E5E5E5"> another site now</font>
+
+1142
+00:49:34,030 --> 00:49:37,810
+the other side might be your your your
+
+1143
+00:49:37,810 --> 00:49:41,080
+router at home<font color="#E5E5E5"> and the HTTP</font><font color="#CCCCCC"> request</font>
+
+1144
+00:49:41,080 --> 00:49:42,940
+<font color="#CCCCCC">you're</font><font color="#E5E5E5"> sending</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> the router is</font><font color="#CCCCCC"> changed</font>
+
+1145
+00:49:42,940 --> 00:49:47,230
+wpa2 key<font color="#E5E5E5"> because changing</font><font color="#CCCCCC"> wa2 key in a</font>
+
+1146
+00:49:47,230 --> 00:49:49,570
+router<font color="#CCCCCC"> usually</font><font color="#E5E5E5"> just means is that a post</font>
+
+1147
+00:49:49,570 --> 00:49:51,190
+request with the<font color="#E5E5E5"> new key you do not need</font>
+
+1148
+00:49:51,190 --> 00:49:54,880
+<font color="#E5E5E5">the old key right how do I know which</font>
+
+1149
+00:49:54,880 --> 00:49:57,130
+router you have<font color="#E5E5E5"> well I</font><font color="#CCCCCC"> just do the</font><font color="#E5E5E5"> math</font>
+
+1150
+00:49:57,130 --> 00:50:00,820
+<font color="#CCCCCC">and</font><font color="#E5E5E5"> just check</font><font color="#CCCCCC"> ok what's just what's the</font>
+
+1151
+00:50:00,820 --> 00:50:04,900
+most common router<font color="#CCCCCC"> in Norway sold in</font>
+
+1152
+00:50:04,900 --> 00:50:06,640
+<font color="#E5E5E5">Norway and since you're all my victims</font>
+
+1153
+00:50:06,640 --> 00:50:09,480
+<font color="#CCCCCC">and number of you will have</font><font color="#E5E5E5"> that router</font>
+
+1154
+00:50:09,480 --> 00:50:11,740
+<font color="#E5E5E5">next thing how do I know what the</font>
+
+1155
+00:50:11,740 --> 00:50:13,540
+<font color="#E5E5E5">address of your</font><font color="#CCCCCC"> router is</font><font color="#E5E5E5"> well I just</font>
+
+1156
+00:50:13,540 --> 00:50:15,820
+<font color="#E5E5E5">you know go to the store buy the router</font>
+
+1157
+00:50:15,820 --> 00:50:17,200
+and<font color="#E5E5E5"> then see what's the default IP</font>
+
+1158
+00:50:17,200 --> 00:50:19,840
+address then<font color="#E5E5E5"> the only thing missing is I</font>
+
+1159
+00:50:19,840 --> 00:50:21,790
+need<font color="#E5E5E5"> to kind of social engineer you into</font>
+
+1160
+00:50:21,790 --> 00:50:23,890
+logging into that router right before
+
+1161
+00:50:23,890 --> 00:50:26,170
+going<font color="#E5E5E5"> to my website</font><font color="#CCCCCC"> and being in the</font>
+
+1162
+00:50:26,170 --> 00:50:28,810
+same browser<font color="#E5E5E5"> but well you</font><font color="#CCCCCC"> know since I'm</font>
+
+1163
+00:50:28,810 --> 00:50:31,150
+attacking all of you<font color="#E5E5E5"> maybe one</font><font color="#CCCCCC"> or two</font>
+
+1164
+00:50:31,150 --> 00:50:34,390
+will you<font color="#E5E5E5"> know</font><font color="#CCCCCC"> be so a cooperative and</font>
+
+1165
+00:50:34,390 --> 00:50:36,910
+allow me<font color="#E5E5E5"> to change your wpa2 key</font><font color="#CCCCCC"> now the</font>
+
+1166
+00:50:36,910 --> 00:50:38,200
+<font color="#E5E5E5">only thing</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> need to find out is where</font>
+
+1167
+00:50:38,200 --> 00:50:39,580
+you live because then I have free Wi-Fi
+
+1168
+00:50:39,580 --> 00:50:40,990
+because<font color="#E5E5E5"> I'm the only one who knows the</font>
+
+1169
+00:50:40,990 --> 00:50:43,960
+<font color="#CCCCCC">new wpa2 key</font><font color="#E5E5E5"> but that's a problem I</font>
+
+1170
+00:50:43,960 --> 00:50:46,030
+might<font color="#E5E5E5"> be solving as well so that's</font>
+
+1171
+00:50:46,030 --> 00:50:48,100
+basically cross-site request forgery in
+
+1172
+00:50:48,100 --> 00:50:51,340
+short and the<font color="#CCCCCC"> US says well cross request</font>
+
+1173
+00:50:51,340 --> 00:50:53,370
+forgery is so far back<font color="#E5E5E5"> in the list</font>
+
+1174
+00:50:53,370 --> 00:50:58,480
+because frameworks have protection
+
+1175
+00:50:58,480 --> 00:51:00,630
+against cross-site request forgery
+
+1176
+00:51:00,630 --> 00:51:04,840
+<font color="#CCCCCC">ok why do I find cross request forgery</font>
+
+1177
+00:51:04,840 --> 00:51:07,330
+so often<font color="#E5E5E5"> maybe wrong framework</font><font color="#CCCCCC"> no you</font>
+
+1178
+00:51:07,330 --> 00:51:09,220
+have<font color="#E5E5E5"> to activate the</font><font color="#CCCCCC"> feature and still</font>
+
+1179
+00:51:09,220 --> 00:51:10,890
+you<font color="#E5E5E5"> have</font><font color="#CCCCCC"> to do it I</font><font color="#E5E5E5"> mean</font>
+
+1180
+00:51:10,890 --> 00:51:13,410
+<font color="#E5E5E5">a</font><font color="#CCCCCC"> few net</font><font color="#E5E5E5"> MVC is rather simple you have</font>
+
+1181
+00:51:13,410 --> 00:51:16,020
+an HTML<font color="#E5E5E5"> helper that sends out a hidden</font>
+
+1182
+00:51:16,020 --> 00:51:20,430
+form<font color="#E5E5E5"> field with a token sometimes it's</font>
+
+1183
+00:51:20,430 --> 00:51:22,890
+also<font color="#CCCCCC"> called nonce I know in the UK that</font>
+
+1184
+00:51:22,890 --> 00:51:25,020
+<font color="#CCCCCC">word is kind of offensive but it stands</font>
+
+1185
+00:51:25,020 --> 00:51:27,030
+<font color="#CCCCCC">for number</font><font color="#E5E5E5"> used once but let's just say</font>
+
+1186
+00:51:27,030 --> 00:51:30,720
+token<font color="#E5E5E5"> and then you have an attribute</font><font color="#CCCCCC"> in</font>
+
+1187
+00:51:30,720 --> 00:51:32,280
+the controller<font color="#E5E5E5"> that checks whether the</font>
+
+1188
+00:51:32,280 --> 00:51:35,280
+token is there<font color="#E5E5E5"> so everyone here if the</font>
+
+1189
+00:51:35,280 --> 00:51:36,930
+router implemented that everyone there
+
+1190
+00:51:36,930 --> 00:51:38,730
+in<font color="#E5E5E5"> your</font><font color="#CCCCCC"> router's you would have a</font>
+
+1191
+00:51:38,730 --> 00:51:41,460
+different<font color="#CCCCCC"> token so I cannot Forge that</font>
+
+1192
+00:51:41,460 --> 00:51:44,190
+<font color="#E5E5E5">HTTP request to change the wpa2 key</font>
+
+1193
+00:51:44,190 --> 00:51:46,320
+because I do not know<font color="#E5E5E5"> your token I</font>
+
+1194
+00:51:46,320 --> 00:51:47,310
+bought the<font color="#E5E5E5"> same router</font>
+
+1195
+00:51:47,310 --> 00:51:49,740
+I got a specific<font color="#E5E5E5"> token but you get the</font>
+
+1196
+00:51:49,740 --> 00:51:52,230
+different code so<font color="#CCCCCC"> that protects against</font>
+
+1197
+00:51:52,230 --> 00:51:54,060
+<font color="#CCCCCC">Russell</font><font color="#E5E5E5"> request forgery so protection is</font>
+
+1198
+00:51:54,060 --> 00:51:56,910
+easy but you have<font color="#E5E5E5"> to do it still I don't</font>
+
+1199
+00:51:56,910 --> 00:51:58,440
+understand why this is a number<font color="#CCCCCC"> eight</font>
+
+1200
+00:51:58,440 --> 00:52:00,300
+and let's say a<font color="#CCCCCC"> fuel-injection is at</font>
+
+1201
+00:52:00,300 --> 00:52:03,450
+<font color="#E5E5E5">number one so yeah that's I take some</font>
+
+1202
+00:52:03,450 --> 00:52:05,820
+some I have some<font color="#E5E5E5"> issues with</font><font color="#CCCCCC"> that here</font>
+
+1203
+00:52:05,820 --> 00:52:10,770
+there are other<font color="#E5E5E5"> aspect here so for</font>
+
+1204
+00:52:10,770 --> 00:52:12,360
+instance clickjacking which is an
+
+1205
+00:52:12,360 --> 00:52:15,420
+advanced attack where<font color="#CCCCCC"> I do it lure you</font>
+
+1206
+00:52:15,420 --> 00:52:17,400
+to<font color="#CCCCCC"> my website and then do some crazy</font>
+
+1207
+00:52:17,400 --> 00:52:21,360
+redirection<font color="#E5E5E5"> but I hide the whatever</font><font color="#CCCCCC"> shut</font>
+
+1208
+00:52:21,360 --> 00:52:24,360
+<font color="#E5E5E5">down your router page in an iframe on</font><font color="#CCCCCC"> my</font>
+
+1209
+00:52:24,360 --> 00:52:26,670
+page<font color="#CCCCCC"> and</font><font color="#E5E5E5"> when you click on my page on</font>
+
+1210
+00:52:26,670 --> 00:52:28,410
+<font color="#E5E5E5">the link you think that gives you the</font>
+
+1211
+00:52:28,410 --> 00:52:30,420
+<font color="#CCCCCC">download of the slide here</font><font color="#E5E5E5"> you</font><font color="#CCCCCC"> actually</font>
+
+1212
+00:52:30,420 --> 00:52:32,070
+do click on<font color="#E5E5E5"> the shut down</font><font color="#CCCCCC"> the router</font>
+
+1213
+00:52:32,070 --> 00:52:34,440
+button of<font color="#CCCCCC"> your router which is loaded in</font>
+
+1214
+00:52:34,440 --> 00:52:36,830
+Nightrain so really really<font color="#E5E5E5"> crazy</font>
+
+1215
+00:52:36,830 --> 00:52:40,200
+<font color="#CCCCCC">creative version of cross-site request</font>
+
+1216
+00:52:40,200 --> 00:52:42,660
+forgery<font color="#E5E5E5"> and against that</font><font color="#CCCCCC"> you can only</font>
+
+1217
+00:52:42,660 --> 00:52:45,390
+defend if you prevent<font color="#E5E5E5"> your pages being</font>
+
+1218
+00:52:45,390 --> 00:52:48,150
+<font color="#CCCCCC">loaded</font><font color="#E5E5E5"> and in the frame or iframe but</font>
+
+1219
+00:52:48,150 --> 00:52:50,580
+<font color="#E5E5E5">basically number</font><font color="#CCCCCC"> eight</font><font color="#E5E5E5"> should be it</font>
+
+1220
+00:52:50,580 --> 00:52:51,900
+<font color="#CCCCCC">should be</font><font color="#E5E5E5"> it</font><font color="#CCCCCC"> should</font><font color="#E5E5E5"> be much</font><font color="#CCCCCC"> higher on</font>
+
+1221
+00:52:51,900 --> 00:52:55,050
+that<font color="#E5E5E5"> on that list all right number</font><font color="#CCCCCC"> nine</font>
+
+1222
+00:52:55,050 --> 00:52:57,570
+<font color="#E5E5E5">we're almost done using components with</font>
+
+1223
+00:52:57,570 --> 00:53:01,350
+known vulnerabilities<font color="#E5E5E5"> yeah that's the</font>
+
+1224
+00:53:01,350 --> 00:53:02,910
+<font color="#E5E5E5">risk but do you remember the image from</font>
+
+1225
+00:53:02,910 --> 00:53:05,490
+<font color="#CCCCCC">before</font><font color="#E5E5E5"> I mean seriously that's kind of</font>
+
+1226
+00:53:05,490 --> 00:53:09,060
+<font color="#E5E5E5">the same thing</font><font color="#CCCCCC"> so yeah</font>
+
+1227
+00:53:09,060 --> 00:53:10,650
+do check whether the framework you're
+
+1228
+00:53:10,650 --> 00:53:12,750
+using a<font color="#CCCCCC"> security</font><font color="#E5E5E5"> I mean you may see that</font>
+
+1229
+00:53:12,750 --> 00:53:17,460
+<font color="#CCCCCC">NBC had a security</font><font color="#E5E5E5"> issue</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> was fixed</font>
+
+1230
+00:53:17,460 --> 00:53:19,890
+<font color="#E5E5E5">by a patch so follow that and I mean now</font>
+
+1231
+00:53:19,890 --> 00:53:23,190
+<font color="#CCCCCC">safety</font><font color="#E5E5E5"> net core and the the rapid set of</font>
+
+1232
+00:53:23,190 --> 00:53:24,900
+updates<font color="#E5E5E5"> I know it can be</font>
+
+1233
+00:53:24,900 --> 00:53:28,559
+<font color="#CCCCCC">Payne but</font><font color="#E5E5E5"> on the other hand</font><font color="#CCCCCC"> issues gets</font>
+
+1234
+00:53:28,559 --> 00:53:32,430
+<font color="#E5E5E5">get fixed quickly and well finally</font>
+
+1235
+00:53:32,430 --> 00:53:35,279
+number or almost finally number<font color="#CCCCCC"> 10 under</font>
+
+1236
+00:53:35,279 --> 00:53:36,599
+<font color="#E5E5E5">protected</font><font color="#CCCCCC"> 80 ice</font>
+
+1237
+00:53:36,599 --> 00:53:38,700
+I mean<font color="#E5E5E5"> English is not my first</font><font color="#CCCCCC"> language</font>
+
+1238
+00:53:38,700 --> 00:53:41,009
+or<font color="#E5E5E5"> not</font><font color="#CCCCCC"> my second language even</font><font color="#E5E5E5"> but under</font>
+
+1239
+00:53:41,009 --> 00:53:43,319
+protected<font color="#E5E5E5"> I've never heard this but what</font>
+
+1240
+00:53:43,319 --> 00:53:45,539
+what this<font color="#E5E5E5"> is kind of saying is that</font>
+
+1241
+00:53:45,539 --> 00:53:48,150
+nowadays<font color="#E5E5E5"> we</font><font color="#CCCCCC"> have a</font><font color="#E5E5E5"> lot of</font><font color="#CCCCCC"> AP is that</font>
+
+1242
+00:53:48,150 --> 00:53:51,239
+actually provides<font color="#E5E5E5"> the functionality for</font>
+
+1243
+00:53:51,239 --> 00:53:53,099
+<font color="#E5E5E5">applications especially when we do</font>
+
+1244
+00:53:53,099 --> 00:53:55,079
+single page applications<font color="#E5E5E5"> these eight</font>
+
+1245
+00:53:55,079 --> 00:53:57,150
+<font color="#CCCCCC">guys need to be protected as</font><font color="#E5E5E5"> well so if</font>
+
+1246
+00:53:57,150 --> 00:53:59,099
+those API is<font color="#CCCCCC"> write to a database</font><font color="#E5E5E5"> then</font>
+
+1247
+00:53:59,099 --> 00:54:01,950
+yeah CQ injection might still be a<font color="#E5E5E5"> thing</font>
+
+1248
+00:54:01,950 --> 00:54:04,950
+<font color="#CCCCCC">well I told</font><font color="#E5E5E5"> you don't if these API is</font>
+
+1249
+00:54:04,950 --> 00:54:08,009
+returned something<font color="#E5E5E5"> may be data</font><font color="#CCCCCC"> that is</font>
+
+1250
+00:54:08,009 --> 00:54:10,529
+sent<font color="#E5E5E5"> to the API might be cross-site</font>
+
+1251
+00:54:10,529 --> 00:54:12,749
+scripting so if we<font color="#E5E5E5"> just know the API in</font>
+
+1252
+00:54:12,749 --> 00:54:14,190
+a browser we can<font color="#CCCCCC"> err we can execute</font>
+
+1253
+00:54:14,190 --> 00:54:16,979
+<font color="#E5E5E5">JavaScript code so all these protections</font>
+
+1254
+00:54:16,979 --> 00:54:19,799
+<font color="#E5E5E5">we discussed and talked about they also</font>
+
+1255
+00:54:19,799 --> 00:54:24,210
+need to<font color="#CCCCCC"> be used and in place for the API</font>
+
+1256
+00:54:24,210 --> 00:54:27,180
+is our applications have and<font color="#E5E5E5"> that's</font>
+
+1257
+00:54:27,180 --> 00:54:30,660
+basically<font color="#E5E5E5"> the top</font><font color="#CCCCCC"> 10 list and still</font>
+
+1258
+00:54:30,660 --> 00:54:32,940
+since we still<font color="#E5E5E5"> have a few minutes</font><font color="#CCCCCC"> left</font>
+
+1259
+00:54:32,940 --> 00:54:35,789
+<font color="#CCCCCC">I'd like to show</font><font color="#E5E5E5"> you one more thing</font>
+
+1260
+00:54:35,789 --> 00:54:37,859
+one attack that<font color="#E5E5E5"> doesn't really fit here</font>
+
+1261
+00:54:37,859 --> 00:54:42,150
+<font color="#CCCCCC">but shows that even after after 20 years</font>
+
+1262
+00:54:42,150 --> 00:54:46,140
+of JavaScript<font color="#E5E5E5"> and after 25</font><font color="#CCCCCC"> years or even</font>
+
+1263
+00:54:46,140 --> 00:54:48,690
+longer of HTML<font color="#E5E5E5"> they are still kind of</font>
+
+1264
+00:54:48,690 --> 00:54:51,180
+new<font color="#CCCCCC"> attacks that that are possible so I</font>
+
+1265
+00:54:51,180 --> 00:54:55,099
+brought<font color="#CCCCCC"> one of those attacks for you</font><font color="#E5E5E5"> and</font>
+
+1266
+00:54:55,099 --> 00:54:57,599
+what what's<font color="#CCCCCC"> happening is this</font><font color="#E5E5E5"> I have a</font>
+
+1267
+00:54:57,599 --> 00:54:58,440
+page here
+
+1268
+00:54:58,440 --> 00:55:00,960
+it's called<font color="#E5E5E5"> page</font><font color="#CCCCCC"> one yeah I know very</font>
+
+1269
+00:55:00,960 --> 00:55:03,809
+creative<font color="#CCCCCC"> just</font><font color="#E5E5E5"> imagine that would be</font>
+
+1270
+00:55:03,809 --> 00:55:06,150
+let's say Instagram<font color="#E5E5E5"> because I think</font>
+
+1271
+00:55:06,150 --> 00:55:08,309
+Instagram was the first<font color="#E5E5E5"> victim of that</font>
+
+1272
+00:55:08,309 --> 00:55:10,289
+attack<font color="#CCCCCC"> so when you will set up an</font>
+
+1273
+00:55:10,289 --> 00:55:12,299
+<font color="#E5E5E5">account for Instagram on</font><font color="#CCCCCC"> your profile</font>
+
+1274
+00:55:12,299 --> 00:55:15,869
+page you<font color="#E5E5E5"> can also put a link to</font><font color="#CCCCCC"> your</font>
+
+1275
+00:55:15,869 --> 00:55:19,589
+<font color="#CCCCCC">homepage right to a page you</font><font color="#E5E5E5"> control so</font>
+
+1276
+00:55:19,589 --> 00:55:21,180
+I would like to click on that<font color="#E5E5E5"> link now</font>
+
+1277
+00:55:21,180 --> 00:55:23,039
+<font color="#E5E5E5">that link to the home page the</font><font color="#CCCCCC"> title</font>
+
+1278
+00:55:23,039 --> 00:55:25,140
+page<font color="#CCCCCC"> to and if you look at the lower</font>
+
+1279
+00:55:25,140 --> 00:55:26,789
+left<font color="#CCCCCC"> corner</font><font color="#E5E5E5"> maybe you can see that go</font>
+
+1280
+00:55:26,789 --> 00:55:29,579
+its own<font color="#E5E5E5"> to know opener</font><font color="#CCCCCC"> to HTML</font><font color="#E5E5E5"> so it's</font>
+
+1281
+00:55:29,579 --> 00:55:31,559
+opening up<font color="#CCCCCC"> another</font><font color="#E5E5E5"> HTML page and</font>
+
+1282
+00:55:31,559 --> 00:55:34,229
+actually<font color="#CCCCCC"> its</font><font color="#E5E5E5"> opening up that HTML page</font>
+
+1283
+00:55:34,229 --> 00:55:37,450
+in a new browser tab
+
+1284
+00:55:37,450 --> 00:55:38,950
+<font color="#CCCCCC">cause</font><font color="#E5E5E5"> if you have a look at the source</font>
+
+1285
+00:55:38,950 --> 00:55:42,700
+code<font color="#E5E5E5"> using target equals blank</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so</font>
+
+1286
+00:55:42,700 --> 00:55:44,859
+nothing fishy going on<font color="#CCCCCC"> here</font>
+
+1287
+00:55:44,859 --> 00:55:49,180
+I am on page<font color="#CCCCCC"> 1 and I click here on the</font>
+
+1288
+00:55:49,180 --> 00:55:51,940
+<font color="#E5E5E5">link to page 2 now here</font><font color="#CCCCCC"> my setup it's</font>
+
+1289
+00:55:51,940 --> 00:55:53,619
+<font color="#E5E5E5">the same server but</font><font color="#CCCCCC"> it also could be</font><font color="#E5E5E5"> an</font>
+
+1290
+00:55:53,619 --> 00:55:56,520
+<font color="#E5E5E5">external server so in opening up page 2</font>
+
+1291
+00:55:56,520 --> 00:55:58,960
+<font color="#CCCCCC">so I'm here</font><font color="#E5E5E5"> on page 2 I read all the</font>
+
+1292
+00:55:58,960 --> 00:56:01,780
+<font color="#E5E5E5">fascinating</font><font color="#CCCCCC"> information on page 2</font><font color="#E5E5E5"> and</font>
+
+1293
+00:56:01,780 --> 00:56:05,589
+once I'm<font color="#CCCCCC"> done I hit ctrl W to close the</font>
+
+1294
+00:56:05,589 --> 00:56:06,970
+browser tab<font color="#E5E5E5"> that's what I'm always doing</font>
+
+1295
+00:56:06,970 --> 00:56:08,740
+<font color="#CCCCCC">right so I'm opening a new tab do some</font>
+
+1296
+00:56:08,740 --> 00:56:11,650
+reading<font color="#CCCCCC"> and then I go back</font><font color="#E5E5E5"> what happens</font>
+
+1297
+00:56:11,650 --> 00:56:14,800
+if I go back and I won't close<font color="#E5E5E5"> actually</font>
+
+1298
+00:56:14,800 --> 00:56:17,589
+that<font color="#CCCCCC"> that page I will</font><font color="#E5E5E5"> just go</font><font color="#CCCCCC"> back to</font>
+
+1299
+00:56:17,589 --> 00:56:20,290
+<font color="#E5E5E5">that tab here</font><font color="#CCCCCC"> ok</font><font color="#E5E5E5"> what do you expect to</font>
+
+1300
+00:56:20,290 --> 00:56:24,310
+see well you certainly do not expect to
+
+1301
+00:56:24,310 --> 00:56:28,480
+<font color="#CCCCCC">see bogus page one here</font><font color="#E5E5E5"> but why is your</font>
+
+1302
+00:56:28,480 --> 00:56:30,579
+bogus page<font color="#CCCCCC"> one now let's have a look</font><font color="#E5E5E5"> at</font>
+
+1303
+00:56:30,579 --> 00:56:32,829
+the source code<font color="#E5E5E5"> of the</font><font color="#CCCCCC"> other page and</font>
+
+1304
+00:56:32,829 --> 00:56:36,130
+what the other page does is it is
+
+1305
+00:56:36,130 --> 00:56:40,240
+<font color="#CCCCCC">accessing a JavaScript API called window</font>
+
+1306
+00:56:40,240 --> 00:56:43,930
+<font color="#E5E5E5">opener that's around since 1995</font><font color="#CCCCCC"> which</font>
+
+1307
+00:56:43,930 --> 00:56:46,150
+gives us back then you know we still had
+
+1308
+00:56:46,150 --> 00:56:48,400
+<font color="#CCCCCC">pop-ups</font><font color="#E5E5E5"> and with that it allowed the</font>
+
+1309
+00:56:48,400 --> 00:56:52,240
+pop-up<font color="#E5E5E5"> to access the opening window now</font>
+
+1310
+00:56:52,240 --> 00:56:54,069
+thanks for the same origin<font color="#CCCCCC"> policy we</font>
+
+1311
+00:56:54,069 --> 00:56:55,930
+have very limited<font color="#E5E5E5"> access</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> the opening</font>
+
+1312
+00:56:55,930 --> 00:56:57,790
+window<font color="#CCCCCC"> especially if the target page is</font>
+
+1313
+00:56:57,790 --> 00:57:00,400
+on a different<font color="#CCCCCC"> domain but what we can</font>
+
+1314
+00:57:00,400 --> 00:57:03,730
+<font color="#E5E5E5">access is the window object</font><font color="#CCCCCC"> and thanks</font>
+
+1315
+00:57:03,730 --> 00:57:04,810
+to the window object<font color="#CCCCCC"> of</font><font color="#E5E5E5"> course the</font>
+
+1316
+00:57:04,810 --> 00:57:09,220
+location<font color="#E5E5E5"> so we</font><font color="#CCCCCC"> can redirect the original</font>
+
+1317
+00:57:09,220 --> 00:57:14,109
+tab<font color="#E5E5E5"> and what that of course fishing so</font>
+
+1318
+00:57:14,109 --> 00:57:16,930
+<font color="#E5E5E5">you go to Instagram you set up a profile</font>
+
+1319
+00:57:16,930 --> 00:57:19,720
+you link to your<font color="#CCCCCC"> home page and</font><font color="#E5E5E5"> on your</font>
+
+1320
+00:57:19,720 --> 00:57:21,760
+home page<font color="#CCCCCC"> you access the opener</font><font color="#E5E5E5"> and then</font>
+
+1321
+00:57:21,760 --> 00:57:23,470
+you redirect<font color="#E5E5E5"> from Instagram</font><font color="#CCCCCC"> to a page</font>
+
+1322
+00:57:23,470 --> 00:57:25,290
+that looks exactly like Instagram
+
+1323
+00:57:25,290 --> 00:57:27,520
+adjustments to double-check<font color="#E5E5E5"> your</font>
+
+1324
+00:57:27,520 --> 00:57:29,950
+password for Instagram for security
+
+1325
+00:57:29,950 --> 00:57:33,490
+reasons right<font color="#CCCCCC"> typical fishing</font><font color="#E5E5E5"> now why am</font>
+
+1326
+00:57:33,490 --> 00:57:34,210
+I telling you this
+
+1327
+00:57:34,210 --> 00:57:38,140
+<font color="#E5E5E5">because Instagram fix that but well you</font>
+
+1328
+00:57:38,140 --> 00:57:40,030
+have to fix that<font color="#E5E5E5"> as well and</font><font color="#CCCCCC"> actually</font>
+
+1329
+00:57:40,030 --> 00:57:43,770
+fixing<font color="#E5E5E5"> that is it's pretty</font><font color="#CCCCCC"> easy once</font>
+
+1330
+00:57:43,770 --> 00:57:46,450
+once you<font color="#E5E5E5"> know why so whenever you have</font>
+
+1331
+00:57:46,450 --> 00:57:49,270
+an external<font color="#E5E5E5"> link to a page</font><font color="#CCCCCC"> you do not</font>
+
+1332
+00:57:49,270 --> 00:57:51,900
+control
+
+1333
+00:57:51,900 --> 00:58:00,030
+you have to add rel equals no opener<font color="#CCCCCC"> and</font>
+
+1334
+00:58:00,030 --> 00:58:03,099
+that prevents that<font color="#E5E5E5"> the target page has</font>
+
+1335
+00:58:03,099 --> 00:58:06,099
+access to the opener<font color="#E5E5E5"> unless you are</font>
+
+1336
+00:58:06,099 --> 00:58:10,630
+<font color="#E5E5E5">using Firefox prior to version 52</font><font color="#CCCCCC"> we now</font>
+
+1337
+00:58:10,630 --> 00:58:15,010
+have I think<font color="#E5E5E5"> 53 but up to Firefox 51</font><font color="#CCCCCC"> no</font>
+
+1338
+00:58:15,010 --> 00:58:17,349
+opener wasn't implemented<font color="#CCCCCC"> so for Firefox</font>
+
+1339
+00:58:17,349 --> 00:58:21,880
+you<font color="#CCCCCC"> had to add no referrer and then you</font>
+
+1340
+00:58:21,880 --> 00:58:25,869
+are fixing that<font color="#CCCCCC"> for Firefox as well this</font>
+
+1341
+00:58:25,869 --> 00:58:29,140
+<font color="#E5E5E5">kind of attack is hard to put in the</font>
+
+1342
+00:58:29,140 --> 00:58:32,829
+<font color="#CCCCCC">wrist list</font><font color="#E5E5E5"> of the</font><font color="#CCCCCC"> OVA sub 10</font><font color="#E5E5E5"> because</font><font color="#CCCCCC"> I</font>
+
+1343
+00:58:32,829 --> 00:58:35,380
+mean<font color="#CCCCCC"> what's the risk here that there is</font>
+
+1344
+00:58:35,380 --> 00:58:37,780
+<font color="#E5E5E5">a weird browser feature that allows</font>
+
+1345
+00:58:37,780 --> 00:58:41,619
+<font color="#E5E5E5">users to redirect</font><font color="#CCCCCC"> a page if that page</font>
+
+1346
+00:58:41,619 --> 00:58:45,880
+<font color="#CCCCCC">opens your page in a new tab I don't</font>
+
+1347
+00:58:45,880 --> 00:58:47,980
+maybe insert an insufficient attack
+
+1348
+00:58:47,980 --> 00:58:49,630
+protection of something and<font color="#E5E5E5"> you can put</font>
+
+1349
+00:58:49,630 --> 00:58:51,250
+it one of these<font color="#E5E5E5"> very general terms but</font>
+
+1350
+00:58:51,250 --> 00:58:53,680
+<font color="#E5E5E5">yeah you see there are always new</font>
+
+1351
+00:58:53,680 --> 00:58:57,099
+<font color="#E5E5E5">attacks so thinking about web</font>
+
+1352
+00:58:57,099 --> 00:59:00,430
+application security<font color="#E5E5E5"> frequently reading</font>
+
+1353
+00:59:00,430 --> 00:59:02,260
+up on web application security<font color="#E5E5E5"> staying</font>
+
+1354
+00:59:02,260 --> 00:59:03,910
+up to date<font color="#CCCCCC"> with</font><font color="#E5E5E5"> a</font><font color="#CCCCCC"> population's a web</font>
+
+1355
+00:59:03,910 --> 00:59:05,950
+application<font color="#CCCCCC"> security is so paramount</font>
+
+1356
+00:59:05,950 --> 00:59:09,599
+these days<font color="#CCCCCC"> and therefore in my opinion</font>
+
+1357
+00:59:09,599 --> 00:59:13,480
+<font color="#CCCCCC">the OS top 10 list is still relevant</font>
+
+1358
+00:59:13,480 --> 00:59:15,369
+today because<font color="#E5E5E5"> it shows us all the</font><font color="#CCCCCC"> chrome</font>
+
+1359
+00:59:15,369 --> 00:59:18,130
+risks<font color="#E5E5E5"> but of course it's not complete in</font>
+
+1360
+00:59:18,130 --> 00:59:20,770
+a way that all risks and all attacks<font color="#E5E5E5"> are</font>
+
+1361
+00:59:20,770 --> 00:59:23,680
+covered by that and with<font color="#E5E5E5"> that I hope you</font>
+
+1362
+00:59:23,680 --> 00:59:26,170
+stay safe your<font color="#CCCCCC"> website stay safe and I</font>
+
+1363
+00:59:26,170 --> 00:59:27,490
+thank<font color="#E5E5E5"> you for attending</font><font color="#CCCCCC"> thank you very</font>
+
+1364
+00:59:27,490 --> 00:59:29,609
+much
+
+1365
+00:59:30,870 --> 00:00:00,000
+<font color="#CCCCCC">you</font>
+

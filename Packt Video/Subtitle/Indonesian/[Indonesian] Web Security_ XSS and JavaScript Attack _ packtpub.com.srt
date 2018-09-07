@@ -1,0 +1,288 @@
+1
+00:00:07,830 --> 00:00:10,769
+ bagian ini terkait tentang <font color="#E5E5E5">JavaScript </font>
+
+2
+00:00:10,769 --> 00:00:13,020
+ <font color="#E5E5E5">dan mengakses serangan jadi di bagian ini </font>
+
+3
+00:00:13,020 --> 00:00:14,580
+ kita akan <font color="#E5E5E5">melihat berbagai hal </font>
+
+4
+00:00:14,580 --> 00:00:16,290
+ <font color="#E5E5E5">poin seperti pertama-tama yang akan kita pelajari </font>
+
+5
+00:00:16,290 --> 00:00:18,180
+ <font color="#CCCCCC">tentang beberapa akses dan JavaScript </font>
+
+6
+00:00:18,180 --> 00:00:20,040
+ serangan <font color="#E5E5E5">maka kita akan melakukan praktik </font>
+
+7
+00:00:20,040 --> 00:00:22,410
+ pada akses dengan menggunakan <font color="#CCCCCC">efek akses </font>
+
+8
+00:00:22,410 --> 00:00:23,880
+ maka kita akan belajar tentang <font color="#CCCCCC">lagi </font>
+
+9
+00:00:23,880 --> 00:00:26,670
+ <font color="#E5E5E5">perintah menarik dalam serangan XSS yang mana </font>
+
+10
+00:00:26,670 --> 00:00:28,560
+ <font color="#CCCCCC">juga disebut </font><font color="#E5E5E5">chichi dan kemudian aku akan melakukannya </font>
+
+11
+00:00:28,560 --> 00:00:30,570
+ menunjukkan teknik pertahanan 
+
+12
+00:00:30,570 --> 00:00:33,660
+ terhadap akses acara jadi pertama kita 
+
+13
+00:00:33,660 --> 00:00:35,400
+ dimulai <font color="#CCCCCC">dengan video </font><font color="#E5E5E5">bagian pertama </font>
+
+14
+00:00:35,400 --> 00:00:38,340
+ 4 yang <font color="#CCCCCC">merupakan </font><font color="#E5E5E5">serangan </font><font color="#CCCCCC">XSS dan </font><font color="#E5E5E5">JavaScript </font>
+
+15
+00:00:38,340 --> 00:00:39,690
+ dalam video ini kita akan <font color="#E5E5E5">mengambil a </font>
+
+16
+00:00:39,690 --> 00:00:42,120
+ lihat pertama- <font color="#E5E5E5">tama apa </font><font color="#CCCCCC">itu serangan XSS </font>
+
+17
+00:00:42,120 --> 00:00:44,430
+ dan apa <font color="#E5E5E5">proses aksesnya </font>
+
+18
+00:00:44,430 --> 00:00:46,920
+ <font color="#E5E5E5">mulai serangan </font><font color="#CCCCCC">mari </font><font color="#E5E5E5">dengan serangan XSS </font>
+
+19
+00:00:46,920 --> 00:00:49,080
+ pengantar <font color="#E5E5E5">sehingga </font><font color="#CCCCCC">akses juga disebut </font>
+
+20
+00:00:49,080 --> 00:00:51,900
+ CSS dan bentuk penuh <font color="#CCCCCC">X CSS didapatkan </font>
+
+21
+00:00:51,900 --> 00:00:54,030
+ skrip lintas situs sehingga <font color="#E5E5E5">mengakses </font>
+
+22
+00:00:54,030 --> 00:00:56,970
+ pemirsa terlihat mengakses serangan di 
+
+23
+00:00:56,970 --> 00:00:58,799
+ <font color="#E5E5E5">titik kedua Anda dapat melihat serangan </font><font color="#CCCCCC">X. </font>
+
+24
+00:00:58,799 --> 00:01:00,570
+ adalah semacam serangan di mana katako 
+
+25
+00:01:00,570 --> 00:01:02,339
+ memasukkan perintah berbahaya di web 
+
+26
+00:01:02,339 --> 00:01:04,110
+ <font color="#CCCCCC">aplikasi jadi apa jenis jahat </font>
+
+27
+00:01:04,110 --> 00:01:05,939
+ komentar yang bisa mereka gunakan umumnya mereka gunakan 
+
+28
+00:01:05,939 --> 00:01:08,490
+ JavaScript tepat di dalam mengakses serangan 
+
+29
+00:01:08,490 --> 00:01:10,830
+ <font color="#CCCCCC">serangan Saya menggunakan </font><font color="#E5E5E5">JavaScript </font><font color="#CCCCCC">berbahaya </font><font color="#E5E5E5">untuk </font>
+
+30
+00:01:10,830 --> 00:01:13,140
+ masukkan perintah jahat ini <font color="#E5E5E5">di </font>
+
+31
+00:01:13,140 --> 00:01:15,120
+ aplikasi web secara umum <font color="#CCCCCC">bodoh </font>
+
+32
+00:01:15,120 --> 00:01:17,210
+ <font color="#E5E5E5">akses serangan memiliki tiga tipe </font>
+
+33
+00:01:17,210 --> 00:01:20,190
+ serangan terus-menerus tanpa serangan terus-menerus 
+
+34
+00:01:20,190 --> 00:01:22,560
+ dan serangan berbasis Dom serangan terus-menerus 
+
+35
+00:01:22,560 --> 00:01:24,690
+ berarti serangan yang gigih 
+
+36
+00:01:24,690 --> 00:01:26,640
+ yang juga disebut <font color="#E5E5E5">serangan sisi server </font>
+
+37
+00:01:26,640 --> 00:01:29,040
+ sarana tidak persisten yang <font color="#CCCCCC">tidak </font>
+
+38
+00:01:29,040 --> 00:01:31,440
+ permanen <font color="#E5E5E5">yang tidak persisten </font>
+
+39
+00:01:31,440 --> 00:01:33,170
+ <font color="#E5E5E5">yang juga disebut </font><font color="#CCCCCC">serangan berbasis </font><font color="#E5E5E5">klien </font>
+
+40
+00:01:33,170 --> 00:01:36,450
+ dokumen berdasarkan model <font color="#E5E5E5">atau objek dokumen </font>
+
+41
+00:01:36,450 --> 00:01:39,420
+ model adalah yang ketiga <font color="#E5E5E5">sekarang kita akan belajar </font>
+
+42
+00:01:39,420 --> 00:01:41,940
+ apa <font color="#CCCCCC">proses mengakses serangan </font>
+
+43
+00:01:41,940 --> 00:01:44,040
+ <font color="#E5E5E5">jadi di sini Anda bisa melihat di layar </font><font color="#CCCCCC">itu </font>
+
+44
+00:01:44,040 --> 00:01:46,620
+ <font color="#E5E5E5">ini adalah proses serangan XSS dan </font>
+
+45
+00:01:46,620 --> 00:01:48,750
+ Saya akan <font color="#CCCCCC">menjelaskan kepada Anda </font><font color="#E5E5E5">bagaimana itu </font>
+
+46
+00:01:48,750 --> 00:01:50,490
+ bekerja <font color="#CCCCCC">untuk contoh ini adalah penyerang </font>
+
+47
+00:01:50,490 --> 00:01:53,580
+ <font color="#E5E5E5">benar dan penyerang memasukkan beberapa </font>
+
+48
+00:01:53,580 --> 00:01:56,370
+ <font color="#E5E5E5">perintah jahat di dalam server </font>
+
+49
+00:01:56,370 --> 00:01:58,290
+ ini adalah server yang Anda <font color="#E5E5E5">lihat benar </font>
+
+50
+00:01:58,290 --> 00:02:00,060
+ ini adalah web <font color="#CCCCCC">server </font><font color="#E5E5E5">ini adalah </font>
+
+51
+00:02:00,060 --> 00:02:01,860
+ korban atau <font color="#E5E5E5">pengguna biasa situs web </font>
+
+52
+00:02:01,860 --> 00:02:04,290
+ <font color="#CCCCCC">pembaca pod </font><font color="#E5E5E5">dia pada dasarnya mengirim permintaan </font>
+
+53
+00:02:04,290 --> 00:02:06,330
+ jalan dengan menggunakan browser 
+
+54
+00:02:06,330 --> 00:02:08,399
+ <font color="#CCCCCC">dia mengirim permintaan </font><font color="#E5E5E5">permintaan itu </font>
+
+55
+00:02:08,399 --> 00:02:11,489
+ pergi <font color="#E5E5E5">ke server web </font><font color="#CCCCCC">sehingga sebagai </font><font color="#E5E5E5">imbalannya </font>
+
+56
+00:02:11,489 --> 00:02:14,209
+ itu <font color="#E5E5E5">ditampilkan di browser yang benar dan </font>
+
+57
+00:02:14,209 --> 00:02:17,880
+ ini dia <font color="#CCCCCC">akan pergi ke penyerang, </font><font color="#E5E5E5">jadi apa </font>
+
+58
+00:02:17,880 --> 00:02:19,920
+ adalah proses di <font color="#E5E5E5">sini pada dasarnya penyerang </font>
+
+59
+00:02:19,920 --> 00:02:21,870
+ telah <font color="#E5E5E5">memasukkan beberapa skrip jahat </font>
+
+60
+00:02:21,870 --> 00:02:25,110
+ jadi ketika ada pengguna yang mencoba mengakses 
+
+61
+00:02:25,110 --> 00:02:27,599
+ <font color="#E5E5E5">aplikasi web tertentu itu mungkin </font>
+
+62
+00:02:27,599 --> 00:02:30,000
+ <font color="#E5E5E5">pengguna mencerminkan ke beberapa lainnya </font>
+
+63
+00:02:30,000 --> 00:02:31,980
+ <font color="#CCCCCC">situs web </font><font color="#E5E5E5">atau mengalihkan ke yang lain </font>
+
+64
+00:02:31,980 --> 00:02:34,489
+ situs web <font color="#E5E5E5">yang </font><font color="#CCCCCC">dimiliki oleh </font><font color="#E5E5E5">penyerang atau </font>
+
+65
+00:02:34,489 --> 00:02:37,470
+ ada kemungkinan <font color="#CCCCCC">bahwa cookie </font>
+
+66
+00:02:37,470 --> 00:02:39,959
+ korban dapat <font color="#E5E5E5">dikirim </font><font color="#CCCCCC">ke </font>
+
+67
+00:02:39,959 --> 00:02:42,269
+ penyerang <font color="#CCCCCC">penyerang dapat menggunakan cookie itu </font>
+
+68
+00:02:42,269 --> 00:02:45,300
+ <font color="#E5E5E5">untuk mengakses </font><font color="#CCCCCC">situs web jadi ini adalah </font>
+
+69
+00:02:45,300 --> 00:02:48,180
+ <font color="#CCCCCC">proses dasar akses menyerang </font><font color="#E5E5E5">dia </font>
+
+70
+00:02:48,180 --> 00:02:51,090
+ menyisipkan beberapa JavaScript berbahaya <font color="#CCCCCC">di </font>
+
+71
+00:02:51,090 --> 00:02:53,850
+ server web <font color="#E5E5E5">dan mengarahkan korban ke </font>
+
+72
+00:02:53,850 --> 00:00:00,000
+ <font color="#CCCCCC">situs web </font><font color="#E5E5E5">jahat tertentu </font>
+

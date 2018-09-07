@@ -1,0 +1,6416 @@
+1
+00:00:00,000 --> 00:00:00,090
+
+
+2
+00:00:00,090 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,050
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,050 --> 00:00:10,170
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,170 --> 00:00:12,690
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,690 --> 00:00:16,606
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,606 --> 00:00:17,570
+ di ocw.mit.edu. 
+
+9
+00:00:17,570 --> 00:00:27,337
+
+
+10
+00:00:27,337 --> 00:00:28,670
+ ARMANDO SOLAR-LEZAMA: Baiklah. 
+
+11
+00:00:28,670 --> 00:00:29,970
+ Selamat pagi, semuanya. 
+
+12
+00:00:29,970 --> 00:00:32,250
+ Saya Armando Solar-Lezama. 
+
+13
+00:00:32,250 --> 00:00:37,190
+ Saya memberikan kuliah hari ini pada eksekusi simbolis. 
+
+14
+00:00:37,190 --> 00:00:41,740
+ Berapa banyak dari Anda di sini yang akrab dengan apa istilahnya 
+
+15
+00:00:41,740 --> 00:00:45,220
+ atau pernah mendengar tentang itu sebelumnya? 
+
+16
+00:00:45,220 --> 00:00:47,230
+ Kami ingin mendapatkan rasa penonton. 
+
+17
+00:00:47,230 --> 00:00:48,180
+ BAIK. 
+
+18
+00:00:48,180 --> 00:00:51,080
+ Jadi mari kita lihat. 
+
+19
+00:00:51,080 --> 00:00:58,295
+
+
+20
+00:00:58,295 --> 00:01:00,690
+ Saya menjatuhkan mesin ini terlalu sering 
+
+21
+00:01:00,690 --> 00:01:04,480
+ dan butuh beberapa saat untuk boot. 
+
+22
+00:01:04,480 --> 00:01:10,040
+ Jadi eksekusi simbolis benar-benar pekerja keras 
+
+23
+00:01:10,040 --> 00:01:14,420
+ analisis program modern. 
+
+24
+00:01:14,420 --> 00:01:17,580
+ Itu salah satu teknik yang benar-benar pecah 
+
+25
+00:01:17,580 --> 00:01:21,630
+ gelembung penelitian dan benar-benar berhasil 
+
+26
+00:01:21,630 --> 00:01:25,210
+ menjadi sejumlah besar aplikasi dampak tinggi. 
+
+27
+00:01:25,210 --> 00:01:29,400
+ Misalnya, hari ini di Microsoft ada 
+
+28
+00:01:29,400 --> 00:01:35,000
+ sistem yang disebut SAGE yang berjalan pada banyak Microsoft penting 
+
+29
+00:01:35,000 --> 00:01:37,560
+ kode mulai dari PowerPoint ke Windows 
+
+30
+00:01:37,560 --> 00:01:40,520
+ untuk benar-benar menemukan masalah keamanan dan keamanan 
+
+31
+00:01:40,520 --> 00:01:42,610
+ kerentanan. 
+
+32
+00:01:42,610 --> 00:01:44,700
+ Ada banyak proyek akademik itu 
+
+33
+00:01:44,700 --> 00:01:48,160
+ telah membuat banyak dampak dunia nyata 
+
+34
+00:01:48,160 --> 00:01:51,720
+ dengan menemukan bug penting dalam perangkat lunak open source, 
+
+35
+00:01:51,720 --> 00:01:55,870
+ misalnya, dengan mengandalkan eksekusi simbolis. 
+
+36
+00:01:55,870 --> 00:01:59,390
+ Dan keindahan eksekusi simbolik sebagai teknik 
+
+37
+00:01:59,390 --> 00:02:03,410
+ apakah itu dibandingkan dengan pengujian, misalnya, 
+
+38
+00:02:03,410 --> 00:02:04,980
+ itu memberi Anda kemampuan untuk berpikir 
+
+39
+00:02:04,980 --> 00:02:07,420
+ tentang bagaimana program Anda akan berperilaku 
+
+40
+00:02:07,420 --> 00:02:12,260
+ pada set masukan yang kemungkinan tak terbatas. 
+
+41
+00:02:12,260 --> 00:02:15,390
+ Ini memungkinkan Anda menjelajahi ruang input 
+
+42
+00:02:15,390 --> 00:02:18,730
+ itu akan benar-benar tidak layak dan tidak praktis 
+
+43
+00:02:18,730 --> 00:02:21,860
+ untuk menjelajah dengan, katakanlah, pengujian acak, 
+
+44
+00:02:21,860 --> 00:02:25,080
+ atau bahkan dengan memiliki banyak penguji 
+
+45
+00:02:25,080 --> 00:02:27,040
+ membenturkan dan kode. 
+
+46
+00:02:27,040 --> 00:02:29,690
+ Di sisi lain, dibandingkan dengan yang lebih tradisional 
+
+47
+00:02:29,690 --> 00:02:32,580
+ teknik analisis statis itu memiliki keuntungan 
+
+48
+00:02:32,580 --> 00:02:36,180
+ bahwa ketika menemukan masalah sebenarnya bisa 
+
+49
+00:02:36,180 --> 00:02:39,860
+ menghasilkan untuk Anda masukan dan jejak 
+
+50
+00:02:39,860 --> 00:02:42,280
+ yang dapat Anda jalankan di program asli Anda 
+
+51
+00:02:42,280 --> 00:02:44,990
+ dan jalankan program itu pada masukan itu. 
+
+52
+00:02:44,990 --> 00:02:48,100
+ Dan Anda benar-benar dapat mengatakan bahwa itu adalah bug nyata. 
+
+53
+00:02:48,100 --> 00:02:49,980
+ Dan Anda benar-benar dapat pergi dan debug itu 
+
+54
+00:02:49,980 --> 00:02:55,700
+ menggunakan mekanisme debug tradisional. 
+
+55
+00:02:55,700 --> 00:02:58,970
+ Dan ini sangat berharga 
+
+56
+00:02:58,970 --> 00:03:02,100
+ ketika Anda berada di lingkungan pengembangan industri 
+
+57
+00:03:02,100 --> 00:03:04,830
+ di mana kamu mungkin tidak punya waktu 
+
+58
+00:03:04,830 --> 00:03:08,880
+ untuk mencari setiap masalah kecil di kode Anda. 
+
+59
+00:03:08,880 --> 00:03:10,920
+ Anda benar-benar ingin bisa tahu 
+
+60
+00:03:10,920 --> 00:03:12,880
+ perbedaan antara masalah nyata 
+
+61
+00:03:12,880 --> 00:03:16,010
+ versus positif palsu, misalnya. 
+
+62
+00:03:16,010 --> 00:03:21,150
+ Jadi bagaimana cara kerjanya? 
+
+63
+00:03:21,150 --> 00:03:23,510
+ Jadi untuk benar-benar mengerti caranya 
+
+64
+00:03:23,510 --> 00:03:28,260
+ itu bekerja itu berguna untuk memulai dengan hanya melihat 
+
+65
+00:03:28,260 --> 00:03:30,450
+ eksekusi normal, kan? 
+
+66
+00:03:30,450 --> 00:03:32,140
+ Jika kita memikirkan eksekusi simbolik 
+
+67
+00:03:32,140 --> 00:03:36,500
+ sebagai generalisasi eksekusi tradisional, polos, 
+
+68
+00:03:36,500 --> 00:03:40,310
+ masuk akal untuk mengetahui seperti apa bentuknya. 
+
+69
+00:03:40,310 --> 00:03:44,420
+ Jadi saya akan menggunakan program yang sangat sederhana ini 
+
+70
+00:03:44,420 --> 00:03:48,090
+ sebagai ilustrasi untuk banyak hal yang saya lakukan 
+
+71
+00:03:48,090 --> 00:03:49,800
+ untuk dibicarakan hari ini. 
+
+72
+00:03:49,800 --> 00:03:51,510
+ Jadi apa yang kita punya disini? 
+
+73
+00:03:51,510 --> 00:03:54,460
+ Sekali lagi, ini adalah kode yang sangat sederhana, hanya 
+
+74
+00:03:54,460 --> 00:03:57,510
+ beberapa cabang dan di sini kami memiliki pernyataan, 
+
+75
+00:03:57,510 --> 00:03:58,280
+ menyatakan salah. 
+
+76
+00:03:58,280 --> 00:04:01,570
+ Dan kami ingin tahu bahwa pernyataan itu bisa dipicu. 
+
+77
+00:04:01,570 --> 00:04:02,270
+ Apa itu mungkin? 
+
+78
+00:04:02,270 --> 00:04:07,260
+ Apakah ada masukan di mana yang akan membuat pernyataan itu gagal? 
+
+79
+00:04:07,260 --> 00:04:09,510
+ Dan dalam hal ini karena pernyataannya hanya mengatakan, 
+
+80
+00:04:09,510 --> 00:04:11,780
+ menyatakan salah, apa yang sebenarnya saya tanyakan adalah, 
+
+81
+00:04:11,780 --> 00:04:14,960
+ apakah ada input yang dapat mencapai titik itu dalam program? 
+
+82
+00:04:14,960 --> 00:04:19,070
+ Jadi salah satu hal yang dapat saya lakukan adalah saya dapat mencoba hanya menguji. 
+
+83
+00:04:19,070 --> 00:04:24,550
+ Saya bisa masuk dan menjalankan kode ini dengan masukan konkret. 
+
+84
+00:04:24,550 --> 00:04:25,050
+ Kanan? 
+
+85
+00:04:25,050 --> 00:04:29,850
+ Jadi katakanlah saya mulai dengan input di mana x adalah 4 
+
+86
+00:04:29,850 --> 00:04:31,820
+ dan y adalah 4. 
+
+87
+00:04:31,820 --> 00:04:35,110
+ Dan awalnya t akan memiliki nilai 0 
+
+88
+00:04:35,110 --> 00:04:36,310
+ tepat setelah saya menyatakannya. 
+
+89
+00:04:36,310 --> 00:04:38,990
+ Jadi sebelum kita pergi dengan eksekusi normal, 
+
+90
+00:04:38,990 --> 00:04:40,800
+ apa beberapa poin penting di sini? 
+
+91
+00:04:40,800 --> 00:04:44,884
+ Fakta bahwa kita membutuhkan representasi negara 
+
+92
+00:04:44,884 --> 00:04:45,800
+ dari program itu, bukan? 
+
+93
+00:04:45,800 --> 00:04:48,680
+ Apakah kita melakukan eksekusi normal 
+
+94
+00:04:48,680 --> 00:04:52,020
+ atau apakah kita melakukan eksekusi simbolis, 
+
+95
+00:04:52,020 --> 00:04:53,700
+ kita perlu memiliki beberapa cara untuk mengkarakterisasi 
+
+96
+00:04:53,700 --> 00:04:54,710
+ keadaan program. 
+
+97
+00:04:54,710 --> 00:04:56,700
+ Dan dalam hal ini, ini adalah program yang sangat sederhana 
+
+98
+00:04:56,700 --> 00:04:59,850
+ bahwa itu tidak menggunakan heap. 
+
+99
+00:04:59,850 --> 00:05:01,050
+ Itu tidak menggunakan tumpukan. 
+
+100
+00:05:01,050 --> 00:05:03,210
+ Tidak ada panggilan fungsi. 
+
+101
+00:05:03,210 --> 00:05:07,550
+ Jadi negara dapat sepenuhnya dicirikan oleh ketiganya 
+
+102
+00:05:07,550 --> 00:05:10,130
+ variabel bersama dengan pengetahuan tentang di mana 
+
+103
+00:05:10,130 --> 00:05:12,200
+ dalam program aku di, kan? 
+
+104
+00:05:12,200 --> 00:05:15,920
+ Jadi jika saya mulai mengeksekusi dengan 4, 4, 
+
+105
+00:05:15,920 --> 00:05:21,330
+ dan 0, jadi ketika saya sampai ke cabang ini, adalah 4 lebih besar dari 4? 
+
+106
+00:05:21,330 --> 00:05:22,460
+ Jelas tidak. 
+
+107
+00:05:22,460 --> 00:05:26,560
+ Jadi saya akan mengeksekusi t sama dengan y. 
+
+108
+00:05:26,560 --> 00:05:29,850
+ Jadi sekarang setelah saya melakukan itu t tidak lagi 0. 
+
+109
+00:05:29,850 --> 00:05:32,230
+ Sekarang memiliki nilai 4. 
+
+110
+00:05:32,230 --> 00:05:32,730
+ Kanan? 
+
+111
+00:05:32,730 --> 00:05:35,080
+ Jadi itulah sekarang keadaan program saya. 
+
+112
+00:05:35,080 --> 00:05:38,980
+ Dan kemudian saya dapat mengevaluasi cabang ini. 
+
+113
+00:05:38,980 --> 00:05:41,260
+ Apakah kasusnya t lebih kecil dari x? 
+
+114
+00:05:41,260 --> 00:05:43,850
+
+
+115
+00:05:43,850 --> 00:05:44,350
+ Tidak. 
+
+116
+00:05:44,350 --> 00:05:44,849
+ Kanan? 
+
+117
+00:05:44,849 --> 00:05:46,440
+ Jadi kami menghindari peluru itu. 
+
+118
+00:05:46,440 --> 00:05:49,490
+ Kami tidak mendapatkan pernyataan kegagalan. 
+
+119
+00:05:49,490 --> 00:05:52,331
+ Tidak ada masalah dalam eksekusi khusus ini. 
+
+120
+00:05:52,331 --> 00:05:52,830
+ Kanan? 
+
+121
+00:05:52,830 --> 00:05:55,580
+ Tapi itu tidak benar-benar memberi tahu kita apa pun 
+
+122
+00:05:55,580 --> 00:05:57,010
+ tentang eksekusi lainnya. 
+
+123
+00:05:57,010 --> 00:05:59,540
+ Yang kami tahu adalah bahwa di bawah masukan 
+
+124
+00:05:59,540 --> 00:06:03,580
+ x sama dengan 4 dan y sama dengan 4, program tidak akan gagal. 
+
+125
+00:06:03,580 --> 00:06:06,790
+ Tapi itu tidak memberi tahu kita apa yang akan terjadi 
+
+126
+00:06:06,790 --> 00:06:10,390
+ pada input [? 2, 1,?] Misalnya. 
+
+127
+00:06:10,390 --> 00:06:10,890
+ Kanan? 
+
+128
+00:06:10,890 --> 00:06:13,700
+ Dan dalam masukan ini Anda melihat bahwa masukan ini sebenarnya 
+
+129
+00:06:13,700 --> 00:06:17,350
+ akan mengikuti jalan yang berbeda dalam eksekusi. 
+
+130
+00:06:17,350 --> 00:06:22,020
+ Kali ini kita benar-benar akan melihat bahwa t sama dengan x. 
+
+131
+00:06:22,020 --> 00:06:25,750
+ Kami benar-benar akan menetapkan sama dengan 2x. 
+
+132
+00:06:25,750 --> 00:06:29,710
+ Jadi setelah mengeksekusi t ini akan sama dengan 2, 
+
+133
+00:06:29,710 --> 00:06:32,765
+ tapi adakah masalah dalam eksekusi ini? 
+
+134
+00:06:32,765 --> 00:06:36,800
+
+
+135
+00:06:36,800 --> 00:06:39,500
+ Akankah ada kegagalan penegasan atas masukan ini? 
+
+136
+00:06:39,500 --> 00:06:42,920
+
+
+137
+00:06:42,920 --> 00:06:44,050
+ Baiklah, mari kita lihat. 
+
+138
+00:06:44,050 --> 00:06:45,850
+ Jadi jika t adalah 2. 
+
+139
+00:06:45,850 --> 00:06:47,970
+ Dan x adalah 2. 
+
+140
+00:06:47,970 --> 00:06:50,420
+ Apakah t kurang dari x? 
+
+141
+00:06:50,420 --> 00:06:51,160
+ Tidak. 
+
+142
+00:06:51,160 --> 00:06:54,330
+ Jadi sepertinya kita menghindari peluru lagi. 
+
+143
+00:06:54,330 --> 00:06:54,830
+ Kanan? 
+
+144
+00:06:54,830 --> 00:06:57,930
+ Jadi di sini kita memiliki dua input konkrit. 
+
+145
+00:06:57,930 --> 00:07:00,440
+ Dan mereka memberi tahu kami bahwa pada dua input konkret ini 
+
+146
+00:07:00,440 --> 00:07:01,770
+ program tidak gagal. 
+
+147
+00:07:01,770 --> 00:07:06,900
+ Tapi itu tidak memberi tahu kami apa pun tentang masukan lain. 
+
+148
+00:07:06,900 --> 00:07:10,080
+ Dan ide itu dengan eksekusi simbolis 
+
+149
+00:07:10,080 --> 00:07:13,950
+ adalah kita ingin melampaui eksekusi input tunggal ini. 
+
+150
+00:07:13,950 --> 00:07:17,480
+ Dan kami ingin bisa benar-benar bernalar 
+
+151
+00:07:17,480 --> 00:07:20,440
+ tentang perilaku program pada sangat 
+
+152
+00:07:20,440 --> 00:07:21,550
+ set input besar. 
+
+153
+00:07:21,550 --> 00:07:25,680
+ Dalam beberapa kasus, set input yang tidak terbatas. 
+
+154
+00:07:25,680 --> 00:07:28,830
+ Dan ide dasarnya adalah sebagai berikut. 
+
+155
+00:07:28,830 --> 00:07:31,940
+ Jadi untuk program seperti ini, sama seperti 
+
+156
+00:07:31,940 --> 00:07:33,940
+ sebelum keadaan programnya 
+
+157
+00:07:33,940 --> 00:07:36,630
+ ditandai dengan nilai ketiga ini 
+
+158
+00:07:36,630 --> 00:07:37,500
+ variabel yang berbeda. 
+
+159
+00:07:37,500 --> 00:07:41,140
+ Kanan? x, y, dan t bersama dengan mengetahui di mana dalam program 
+
+160
+00:07:41,140 --> 00:07:42,380
+ Saya di. 
+
+161
+00:07:42,380 --> 00:07:48,230
+ Tapi sekarang bukan nilai konkret untuk x dan y 
+
+162
+00:07:48,230 --> 00:07:51,920
+ apa yang akan saya miliki adalah nilai simbolis, adil 
+
+163
+00:07:51,920 --> 00:07:52,530
+ sebuah variabel. 
+
+164
+00:07:52,530 --> 00:07:57,760
+ Variabel yang memungkinkan saya memberi nama untuk nilai ini 
+
+165
+00:07:57,760 --> 00:08:00,450
+ bahwa pengguna akan memberikan pada input. 
+
+166
+00:08:00,450 --> 00:08:03,540
+ Jadi apa artinya itu adalah keadaan program saya 
+
+167
+00:08:03,540 --> 00:08:07,170
+ bukan lagi pemetaan dari nama variabel 
+
+168
+00:08:07,170 --> 00:08:08,630
+ ke nilai-nilai konkret. 
+
+169
+00:08:08,630 --> 00:08:13,542
+ Sekarang ini pemetaan dari nama variabel ke nilai simbolik ini. 
+
+170
+00:08:13,542 --> 00:08:15,250
+ Dan nilai simbolis, pada dasarnya Anda bisa 
+
+171
+00:08:15,250 --> 00:08:18,480
+ Anggap saja sebagai formula. 
+
+172
+00:08:18,480 --> 00:08:23,610
+ Jadi dalam hal ini rumus untuk x hanya x. 
+
+173
+00:08:23,610 --> 00:08:25,440
+ Dan rumus untuk y hanya y. 
+
+174
+00:08:25,440 --> 00:08:27,590
+ Dan untuk t, itu sebenarnya nilai 0. 
+
+175
+00:08:27,590 --> 00:08:31,190
+ Kami tahu bahwa untuk setiap masukan, tidak masalah apa yang Anda lakukan. 
+
+176
+00:08:31,190 --> 00:08:35,400
+ Nilai t setelah pernyataan pertama akan menjadi 0. 
+
+177
+00:08:35,400 --> 00:08:39,510
+ Tapi sekarang inilah yang membuatnya menarik. 
+
+178
+00:08:39,510 --> 00:08:42,179
+ Jadi kita sampai ke cabang ini di sini 
+
+179
+00:08:42,179 --> 00:08:44,912
+ yang mengatakan, jika x lebih besar dari y, 
+
+180
+00:08:44,912 --> 00:08:46,370
+ kita akan pergi ke satu arah. 
+
+181
+00:08:46,370 --> 00:08:48,977
+
+
+182
+00:08:48,977 --> 00:08:50,560
+ Jika kurang dari atau sama dengan y, kita 
+
+183
+00:08:50,560 --> 00:08:52,018
+ akan pergi ke arah lain. 
+
+184
+00:08:52,018 --> 00:08:55,600
+ Sekarang kita tahu tentang x dan y? 
+
+185
+00:08:55,600 --> 00:08:59,476
+
+
+186
+00:08:59,476 --> 00:09:00,600
+ Apa yang kita ketahui tentang mereka? 
+
+187
+00:09:00,600 --> 00:09:05,600
+
+
+188
+00:09:05,600 --> 00:09:07,110
+ Kami tahu tipe mereka, setidaknya. 
+
+189
+00:09:07,110 --> 00:09:08,020
+ Jadi itulah awal. 
+
+190
+00:09:08,020 --> 00:09:11,870
+ Jadi kita tahu bahwa mereka akan mulai dari min int 
+
+191
+00:09:11,870 --> 00:09:16,287
+ ke max int, tapi hanya itu yang kita ketahui tentang mereka. 
+
+192
+00:09:16,287 --> 00:09:17,870
+ Dan ternyata informasi ini 
+
+193
+00:09:17,870 --> 00:09:22,070
+ yang kita ketahui tentang mereka tidak cukup untuk memberi tahu kita yang mana 
+
+194
+00:09:22,070 --> 00:09:23,630
+ arah cabang ini mungkin pergi. 
+
+195
+00:09:23,630 --> 00:09:26,630
+ Cabang ini bisa jalan baik. 
+
+196
+00:09:26,630 --> 00:09:32,360
+ Dan sekarang ada banyak hal dan yang bisa kita lakukan, 
+
+197
+00:09:32,360 --> 00:09:35,870
+ tapi apa yang mungkin kita lakukan pada titik ini? 
+
+198
+00:09:35,870 --> 00:09:44,680
+
+
+199
+00:09:44,680 --> 00:09:46,018
+ Buat tebakan liar. 
+
+200
+00:09:46,018 --> 00:09:46,935
+ AUDIENCE: [TIDAK JELAS]. 
+
+201
+00:09:46,935 --> 00:09:48,059
+ ARMANDO SOLAR-LEZAMA: Ya. 
+
+202
+00:09:48,059 --> 00:09:49,680
+ Kita bisa mengikuti kedua cabang itu. 
+
+203
+00:09:49,680 --> 00:09:54,420
+ Kita bisa melempar koin dan mengambil satu cabang dan mengambilnya. 
+
+204
+00:09:54,420 --> 00:09:56,730
+ Jadi jika kita ingin mengikuti kedua cabang tersebut 
+
+205
+00:09:56,730 --> 00:09:58,990
+ kita harus mengikuti satu dan yang lainnya, kan? 
+
+206
+00:09:58,990 --> 00:10:04,381
+ Jadi katakanlah kita mulai dengan cabang ini. 
+
+207
+00:10:04,381 --> 00:10:04,880
+ Kanan? 
+
+208
+00:10:04,880 --> 00:10:07,250
+ Jadi sekarang kita ada di cabang ini. 
+
+209
+00:10:07,250 --> 00:10:11,240
+ Jadi yang kita tahu adalah jika kita berhasil mencapai cabang ini, 
+
+210
+00:10:11,240 --> 00:10:17,740
+ di cabang ini, sekarang akan memiliki nilai yang sama dengan x. 
+
+211
+00:10:17,740 --> 00:10:20,277
+ Dan kita tidak tahu apa nilai yang akan terjadi, 
+
+212
+00:10:20,277 --> 00:10:21,360
+ tapi kami punya nama untuk itu. 
+
+213
+00:10:21,360 --> 00:10:26,080
+ Ini huruf skrip ini x. 
+
+214
+00:10:26,080 --> 00:10:26,580
+ Kanan? 
+
+215
+00:10:26,580 --> 00:10:31,370
+ Jadi itulah nilai t pada cabang itu. 
+
+216
+00:10:31,370 --> 00:10:36,330
+ Jika kita mengambil cabang yang berlawanan, maka apa yang akan terjadi? 
+
+217
+00:10:36,330 --> 00:10:38,730
+ Nilai t akan menjadi sesuatu yang berbeda, bukan? 
+
+218
+00:10:38,730 --> 00:10:45,790
+ Di cabang itu, nilai t akan menjadi nilai simbolis y. 
+
+219
+00:10:45,790 --> 00:10:50,050
+ Jadi itu berarti bahwa ketika kita sampai ke titik ini dalam program ini, 
+
+220
+00:10:50,050 --> 00:10:51,020
+ berapa nilai t? 
+
+221
+00:10:51,020 --> 00:10:53,040
+ Yah, mungkin itu x. 
+
+222
+00:10:53,040 --> 00:10:54,440
+ Dan mungkin itu y. 
+
+223
+00:10:54,440 --> 00:10:58,460
+ Kami tidak tahu persis yang mana itu, tapi mengapa kita tidak tahu 
+
+224
+00:10:58,460 --> 00:10:59,150
+ berikan nama? 
+
+225
+00:10:59,150 --> 00:11:02,450
+ Sebut saja t0. 
+
+226
+00:11:02,450 --> 00:11:04,970
+ Dan apa yang kita ketahui tentang t0? 
+
+227
+00:11:04,970 --> 00:11:07,570
+
+
+228
+00:11:07,570 --> 00:11:10,855
+ Apa kasus di mana t0 akan sama dengan x? 
+
+229
+00:11:10,855 --> 00:11:14,291
+
+
+230
+00:11:14,291 --> 00:11:15,650
+ AUDIENCE: [TIDAK JELAS]. 
+
+231
+00:11:15,650 --> 00:11:17,108
+ ARMANDO SOLAR-LEZAMA: Benar. 
+
+232
+00:11:17,108 --> 00:11:21,380
+ Jadi pada dasarnya apa yang kita ketahui adalah jika x lebih besar dari y, 
+
+233
+00:11:21,380 --> 00:11:27,280
+ maka ini berarti bahwa itu x. 
+
+234
+00:11:27,280 --> 00:11:37,460
+ Dan jika x kurang dari atau sama dengan y yang menyiratkan bahwa itu y, 
+
+235
+00:11:37,460 --> 00:11:38,350
+ kanan? 
+
+236
+00:11:38,350 --> 00:11:41,960
+ Jadi kami memiliki nilai ini yang telah kami tetapkan. 
+
+237
+00:11:41,960 --> 00:11:43,750
+ Kami akan menyebutnya t0. 
+
+238
+00:11:43,750 --> 00:11:46,470
+ Dan itu memiliki sifat-sifat logis ini. 
+
+239
+00:11:46,470 --> 00:11:53,150
+ Jadi pada titik ini dalam program kita sebenarnya 
+
+240
+00:11:53,150 --> 00:11:56,800
+ memiliki nama untuk nilai t. 
+
+241
+00:11:56,800 --> 00:11:57,700
+ Ini t0. 
+
+242
+00:11:57,700 --> 00:12:00,290
+
+
+243
+00:12:00,290 --> 00:12:00,960
+ Kanan? 
+
+244
+00:12:00,960 --> 00:12:03,200
+ Lalu apa yang kita lakukan di sini? 
+
+245
+00:12:03,200 --> 00:12:06,835
+ Kami mengambil kedua cabang pernyataan if ini. 
+
+246
+00:12:06,835 --> 00:12:09,610
+
+
+247
+00:12:09,610 --> 00:12:12,090
+ Dan kemudian kami menghitung nilai simbolis 
+
+248
+00:12:12,090 --> 00:12:14,220
+ dengan melihat di bawah kondisi apa 
+
+249
+00:12:14,220 --> 00:12:17,170
+ apakah saya akan mengambil satu cabang, dalam kondisi apa saya 
+
+250
+00:12:17,170 --> 00:12:19,360
+ akan mengambil cabang lain? 
+
+251
+00:12:19,360 --> 00:12:22,330
+ Dan kemudian melihat nilai-nilai apa 
+
+252
+00:12:22,330 --> 00:12:26,420
+ Saya akan menugaskan t pada kedua cabang itu? 
+
+253
+00:12:26,420 --> 00:12:31,760
+ Jadi sekarang sampai pada titik di mana kita harus bertanya, 
+
+254
+00:12:31,760 --> 00:12:33,130
+ t lebih kecil dari x? 
+
+255
+00:12:33,130 --> 00:12:33,630
+ Kanan? 
+
+256
+00:12:33,630 --> 00:12:35,510
+ Jadi berapa nilai t? 
+
+257
+00:12:35,510 --> 00:12:37,580
+ Nilai t sekarang t0. 
+
+258
+00:12:37,580 --> 00:12:41,040
+ Jadi apa yang ingin kita ketahui adalah, apakah itu 
+
+259
+00:12:41,040 --> 00:12:47,090
+ mungkin untuk t0 menjadi kurang dari x? 
+
+260
+00:12:47,090 --> 00:12:47,590
+ Kanan? 
+
+261
+00:12:47,590 --> 00:12:51,760
+ Sekarang ingatlah cabang pertama yang kita pukul 
+
+262
+00:12:51,760 --> 00:12:53,930
+ kami mengajukan pertanyaan tentang x dan y. 
+
+263
+00:12:53,930 --> 00:12:56,990
+ Dan kami tidak tahu apa-apa tentang x dan y. 
+
+264
+00:12:56,990 --> 00:12:59,520
+ Satu-satunya hal yang kami ketahui tentang x dan y 
+
+265
+00:12:59,520 --> 00:13:02,100
+ adalah bahwa mereka bertipe int. 
+
+266
+00:13:02,100 --> 00:13:06,620
+ Tetapi sekarang dengan t0 kita benar-benar tahu banyak tentang t0. 
+
+267
+00:13:06,620 --> 00:13:11,930
+ Kita tahu bahwa t0 akan sama dengan x dalam beberapa kasus. 
+
+268
+00:13:11,930 --> 00:13:14,640
+ Dan itu akan sama dengan y dalam beberapa kasus. 
+
+269
+00:13:14,640 --> 00:13:18,300
+ Dan ini sekarang memberi kita satu set persamaan 
+
+270
+00:13:18,300 --> 00:13:20,090
+ yang bisa kita pecahkan. 
+
+271
+00:13:20,090 --> 00:13:26,060
+ Jadi apa yang bisa kita katakan adalah, apakah mungkin untuk memuaskan 
+
+272
+00:13:26,060 --> 00:13:31,110
+ t0 kurang dari x mengetahui bahwa t0 memuaskan 
+
+273
+00:13:31,110 --> 00:13:33,761
+ semua properti ini? 
+
+274
+00:13:33,761 --> 00:13:34,260
+ Kanan? 
+
+275
+00:13:34,260 --> 00:13:38,270
+ Jadi, sebenarnya, kita benar-benar dapat mengekspresikan ini 
+
+276
+00:13:38,270 --> 00:13:44,550
+ sebagai kendala di mana kita katakan, jadi apakah mungkin untuk memiliki t0 
+
+277
+00:13:44,550 --> 00:13:45,990
+ kurang dari x? 
+
+278
+00:13:45,990 --> 00:13:55,720
+ Dan untuk memiliki x lebih besar dari y berarti t0 sama dengan x. 
+
+279
+00:13:55,720 --> 00:14:07,146
+ Dan x kurang dari atau sama dengan y berarti t0 sama dengan y. 
+
+280
+00:14:07,146 --> 00:14:10,010
+
+
+281
+00:14:10,010 --> 00:14:10,510
+ Kanan? 
+
+282
+00:14:10,510 --> 00:14:15,890
+ Jadi apa yang kita miliki di sini adalah persamaan yang jika persamaan itu 
+
+283
+00:14:15,890 --> 00:14:20,200
+ memiliki solusi, jika mungkin menemukan nilai t0, 
+
+284
+00:14:20,200 --> 00:14:24,660
+ dan nilai x, dan nilai y yang memenuhi persamaan itu, 
+
+285
+00:14:24,660 --> 00:14:29,930
+ maka kita tahu nilai-nilai itu, ketika kita pasang mereka 
+
+286
+00:14:29,930 --> 00:14:33,170
+ ke dalam program kami, ketika program dijalankan, 
+
+287
+00:14:33,170 --> 00:14:35,930
+ akan mengambil cabang ini. 
+
+288
+00:14:35,930 --> 00:14:40,090
+ Dan itu akan meledak ketika menyentuh pernyataan palsu. 
+
+289
+00:14:40,090 --> 00:14:42,721
+
+
+290
+00:14:42,721 --> 00:14:43,220
+ Kanan? 
+
+291
+00:14:43,220 --> 00:14:45,080
+ Jadi apa yang kita lakukan disini? 
+
+292
+00:14:45,080 --> 00:14:50,370
+ Jadi kita menjalankan program ini, tetapi sebaliknya 
+
+293
+00:14:50,370 --> 00:14:57,560
+ menjaga negara kita sebagai pemetaan dari nama-nama variabel 
+
+294
+00:14:57,560 --> 00:14:59,970
+ untuk nilai-nilai, yang kami lakukan adalah kami 
+
+295
+00:14:59,970 --> 00:15:03,970
+ menjaga program kami sebagai pemetaan dari nama-nama variabel 
+
+296
+00:15:03,970 --> 00:15:07,310
+ ke nilai-nilai simbolis ini. 
+
+297
+00:15:07,310 --> 00:15:09,230
+ Pada dasarnya, nama variabel lainnya. 
+
+298
+00:15:09,230 --> 00:15:11,830
+ Dan dalam hal ini nama variabel kami yang lain 
+
+299
+00:15:11,830 --> 00:15:17,320
+ adalah skrip x, skrip y, t0, dan di atas itu, 
+
+300
+00:15:17,320 --> 00:15:20,110
+ kami memiliki seperangkat persamaan yang memberi tahu kami 
+
+301
+00:15:20,110 --> 00:15:22,460
+ bagaimana nilai-nilai itu terkait. 
+
+302
+00:15:22,460 --> 00:15:24,510
+ Jadi kita memiliki persamaan yang memberi tahu kita 
+
+303
+00:15:24,510 --> 00:15:29,180
+ bagaimana t0 terkait dengan x dan y dalam kasus ini. 
+
+304
+00:15:29,180 --> 00:15:33,620
+ Dan pemecahan untuk persamaan itu memungkinkan 
+
+305
+00:15:33,620 --> 00:15:37,380
+ kami untuk menjawab pertanyaan apakah cabang ini bisa 
+
+306
+00:15:37,380 --> 00:15:38,310
+ diambil atau tidak. 
+
+307
+00:15:38,310 --> 00:15:41,510
+ Sekarang lihat saja persamaannya, 
+
+308
+00:15:41,510 --> 00:15:42,900
+ dapatkah cabang ini diambil atau tidak? 
+
+309
+00:15:42,900 --> 00:15:45,570
+
+
+310
+00:15:45,570 --> 00:15:46,070
+ Kanan? 
+
+311
+00:15:46,070 --> 00:15:49,450
+ Jadi sepertinya cabang tidak bisa diambil. 
+
+312
+00:15:49,450 --> 00:15:50,170
+ Kenapa tidak? 
+
+313
+00:15:50,170 --> 00:15:56,390
+ Karena kami mencari kasus di mana t0 kurang dari x, 
+
+314
+00:15:56,390 --> 00:15:59,500
+ yang berarti jika Anda dalam kasus ini, maka jelaslah 
+
+315
+00:15:59,500 --> 00:16:01,350
+ itu tidak akan benar. 
+
+316
+00:16:01,350 --> 00:16:01,850
+ Kanan? 
+
+317
+00:16:01,850 --> 00:16:04,480
+ Jadi itu berarti bahwa ketika x lebih besar dari y, 
+
+318
+00:16:04,480 --> 00:16:08,280
+ maka itu tidak dapat terjadi karena t0 akan sama dengan x. 
+
+319
+00:16:08,280 --> 00:16:11,720
+ Dan itu tidak bisa sama dengan x dan kurang dari x pada saat yang sama. 
+
+320
+00:16:11,720 --> 00:16:13,950
+ Dan bagaimana dengan kasus ini? 
+
+321
+00:16:13,950 --> 00:16:15,180
+ Bisakah itu terjadi dalam kasus ini? 
+
+322
+00:16:15,180 --> 00:16:17,200
+ Apakah t0 lebih kecil dari x dalam kasus ini? 
+
+323
+00:16:17,200 --> 00:16:21,150
+
+
+324
+00:16:21,150 --> 00:16:22,590
+ Tidak, itu jelas tidak bisa, kan? 
+
+325
+00:16:22,590 --> 00:16:29,180
+ Karena dalam hal ini kita tahu bahwa x kurang dari y. 
+
+326
+00:16:29,180 --> 00:16:31,790
+ Dan jika t0 akan menjadi kurang dari x, 
+
+327
+00:16:31,790 --> 00:16:34,070
+ maka itu juga kurang dari y. 
+
+328
+00:16:34,070 --> 00:16:37,730
+ Tetapi kita tahu bahwa dalam hal ini t0 persis sama dengan y. 
+
+329
+00:16:37,730 --> 00:16:42,730
+ Dan karena itu, sekali lagi, kasus itu tidak dapat dipenuhi. 
+
+330
+00:16:42,730 --> 00:16:47,080
+ Jadi apa yang kita miliki di sini adalah persamaan yang tidak memiliki solusi. 
+
+331
+00:16:47,080 --> 00:16:49,980
+ Tidak masalah nilai apa yang Anda masukkan ke persamaan ini. 
+
+332
+00:16:49,980 --> 00:16:54,990
+ Anda tidak bisa menyelesaikannya dan itu memberi tahu kita bahwa tidak peduli apa pun 
+
+333
+00:16:54,990 --> 00:17:01,620
+ masukan yang kami berikan kepada kode ini, itu tidak akan turun ke cabang ini. 
+
+334
+00:17:01,620 --> 00:17:07,460
+ Sekarang perhatikan bahwa ketika membuat argumen itu di sini 
+
+335
+00:17:07,460 --> 00:17:10,858
+ Saya pada dasarnya mengacu pada intuisi Anda tentang bilangan bulat, 
+
+336
+00:17:10,858 --> 00:17:13,618
+ tentang bilangan bulat matematika. 
+
+337
+00:17:13,618 --> 00:17:17,588
+ Dalam prakteknya kita tahu bahwa int mesin tidak cukup 
+
+338
+00:17:17,589 --> 00:17:22,108
+ berperilaku persis dengan cara yang sama dengan int matematis. 
+
+339
+00:17:22,108 --> 00:17:25,129
+ Dan ada beberapa kasus di mana hukum 
+
+340
+00:17:25,130 --> 00:17:27,430
+ yang berlaku untuk ints matematika tidak benar-benar 
+
+341
+00:17:27,430 --> 00:17:29,822
+ berlaku untuk ints dalam program. 
+
+342
+00:17:29,822 --> 00:17:31,280
+ Dan ketika menalar tentang ini kita 
+
+343
+00:17:31,280 --> 00:17:33,761
+ harus sangat berhati-hati saat itu 
+
+344
+00:17:33,761 --> 00:17:35,260
+ kami sedang memecahkan persamaan ini, kami 
+
+345
+00:17:35,260 --> 00:17:40,930
+ perlu diingat bahwa ini tidak 
+
+346
+00:17:40,930 --> 00:17:44,830
+ bilangan bulat seperti yang diajarkan kepada kami di sekolah dasar. 
+
+347
+00:17:44,830 --> 00:17:48,550
+ Ini adalah bilangan bulat 32-bit yang digunakan mesin. 
+
+348
+00:17:48,550 --> 00:17:51,090
+ Dan ada banyak kasus dan banyak contoh 
+
+349
+00:17:51,090 --> 00:17:55,000
+ bug yang muncul karena pemrogram berpikir 
+
+350
+00:17:55,000 --> 00:17:58,770
+ tentang kode mereka dalam hal bilangan bulat matematika, 
+
+351
+00:17:58,770 --> 00:18:02,450
+ dan tidak menyadari bahwa ada hal-hal seperti meluap itu 
+
+352
+00:18:02,450 --> 00:18:04,330
+ dapat menyebabkan program berperilaku berbeda 
+
+353
+00:18:04,330 --> 00:18:06,470
+ untuk input matematis. 
+
+354
+00:18:06,470 --> 00:18:10,140
+ Tetapi hal lainnya adalah apa yang saya jelaskan di sini 
+
+355
+00:18:10,140 --> 00:18:16,230
+ adalah argumen yang murni intuitif. 
+
+356
+00:18:16,230 --> 00:18:19,110
+ Saya memandu Anda melalui proses bagaimana melakukan ini dengan tangan, 
+
+357
+00:18:19,110 --> 00:18:21,970
+ tapi itu tidak berarti suatu algoritma. 
+
+358
+00:18:21,970 --> 00:18:23,250
+ Kanan? 
+
+359
+00:18:23,250 --> 00:18:26,070
+ Keindahan gagasan eksekusi simbolis ini, 
+
+360
+00:18:26,070 --> 00:18:28,920
+ Namun, apakah itu dapat dikodekan ke dalam suatu algoritma. 
+
+361
+00:18:28,920 --> 00:18:31,960
+ Dan itu bisa diselesaikan dengan cara mekanis, yang 
+
+362
+00:18:31,960 --> 00:18:36,190
+ memungkinkan Anda melakukan ini bukan hanya untuk sepuluh program baris, 
+
+363
+00:18:36,190 --> 00:18:38,930
+ tetapi sebenarnya untuk jutaan program baris. 
+
+364
+00:18:38,930 --> 00:18:41,281
+ Dan itu memungkinkan Anda untuk benar-benar mengambil 
+
+365
+00:18:41,281 --> 00:18:43,280
+ alasan ini, dan penalaran intuitif yang sama 
+
+366
+00:18:43,280 --> 00:18:48,090
+ yang kami gunakan dalam kasus ini untuk berbicara 
+
+367
+00:18:48,090 --> 00:18:49,820
+ tentang apa yang terjadi ketika kita mengeksekusi 
+
+368
+00:18:49,820 --> 00:18:51,860
+ program ini pada input yang berbeda. 
+
+369
+00:18:51,860 --> 00:18:59,429
+ Dan skala alasan itu untuk program yang sangat besar. 
+
+370
+00:18:59,429 --> 00:19:00,720
+ Apakah ada pertanyaan sejauh ini? 
+
+371
+00:19:00,720 --> 00:19:05,621
+
+
+372
+00:19:05,621 --> 00:19:06,120
+ Iya nih? 
+
+373
+00:19:06,120 --> 00:19:07,745
+ AUDIENCE: Bagaimana jika [tidak terdengar] tidak 
+
+374
+00:19:07,745 --> 00:19:09,620
+ seharusnya mengambil input? 
+
+375
+00:19:09,620 --> 00:19:10,120
+ [TIDAK JELAS] 
+
+376
+00:19:10,120 --> 00:19:15,639
+
+
+377
+00:19:15,639 --> 00:19:16,680
+ ARMANDO SOLAR-LEZAMA: Oh. 
+
+378
+00:19:16,680 --> 00:19:17,920
+ Itu pertanyaan yang sangat bagus. 
+
+379
+00:19:17,920 --> 00:19:26,190
+ Benar, jadi, misalnya, katakanlah 
+
+380
+00:19:26,190 --> 00:19:36,100
+ kami memiliki program yang kami miliki di sini, tetapi sebaliknya 
+
+381
+00:19:36,100 --> 00:19:46,130
+ ini t sama dengan x, di sini kita akan mengatakan t sama dengan x minus 1. 
+
+382
+00:19:46,130 --> 00:19:47,006
+ Kanan? 
+
+383
+00:19:47,006 --> 00:19:48,630
+ Jadi sekarang tiba-tiba, secara intuitif Anda 
+
+384
+00:19:48,630 --> 00:19:52,580
+ dapat melihat bahwa sekarang program ini bisa meledak, bukan? 
+
+385
+00:19:52,580 --> 00:20:00,150
+ Karena ketika program mengambil jalan ini 
+
+386
+00:20:00,150 --> 00:20:02,680
+ t memang kurang dari x. 
+
+387
+00:20:02,680 --> 00:20:06,220
+ Dan Anda memang akan gagal di sini. 
+
+388
+00:20:06,220 --> 00:20:06,720
+ Kanan? 
+
+389
+00:20:06,720 --> 00:20:10,040
+ Jadi apa yang akan terjadi pada program seperti ini? 
+
+390
+00:20:10,040 --> 00:20:15,370
+ Bagaimana keadaan simbolik kita akan terlihat? 
+
+391
+00:20:15,370 --> 00:20:15,870
+ Kanan? 
+
+392
+00:20:15,870 --> 00:20:22,710
+ Jadi dalam hal ini, jadi t0, ketika x lebih besar dari y, 
+
+393
+00:20:22,710 --> 00:20:24,697
+ apa yang sekarang t0 akan sama dengan? 
+
+394
+00:20:24,697 --> 00:20:26,030
+ Ini tidak akan sama dengan x. 
+
+395
+00:20:26,030 --> 00:20:35,060
+ Ini akan sama dengan x minus 1, kan? 
+
+396
+00:20:35,060 --> 00:20:47,290
+ Dan itu berarti itu, jadi, kondisi ini sekarang 
+
+397
+00:20:47,290 --> 00:20:50,060
+ memiliki tugas yang memuaskan. 
+
+398
+00:20:50,060 --> 00:20:50,560
+ Kanan? 
+
+399
+00:20:50,560 --> 00:20:56,600
+ Sekarang ini bisa gagal, tetapi bagaimana jika Anda pergi ke pengembang 
+
+400
+00:20:56,600 --> 00:21:03,320
+ dan katakan, hei, fungsi ini bisa meledak 
+
+401
+00:21:03,320 --> 00:21:06,710
+ setiap kali x lebih besar dari y. 
+
+402
+00:21:06,710 --> 00:21:11,150
+ Dan pengembang melihat ini dan berkata, 
+
+403
+00:21:11,150 --> 00:21:13,340
+ oh, aku lupa memberitahumu. 
+
+404
+00:21:13,340 --> 00:21:16,410
+ Sebenarnya, fungsi ini tidak pernah bisa 
+
+405
+00:21:16,410 --> 00:21:23,090
+ dipanggil dengan parameter di mana x lebih besar dari y. 
+
+406
+00:21:23,090 --> 00:21:23,830
+ Kanan? 
+
+407
+00:21:23,830 --> 00:21:27,110
+ Bahwa klien yang memanggil fungsi ini adalah adil 
+
+408
+00:21:27,110 --> 00:21:29,140
+ fungsi cepat yang saya tulis untuk sesuatu. 
+
+409
+00:21:29,140 --> 00:21:32,060
+ Dan memiliki cabang ini untuk beberapa tujuan sejarah. 
+
+410
+00:21:32,060 --> 00:21:34,140
+ Namun sebenarnya fungsi ini tidak akan pernah ada 
+
+411
+00:21:34,140 --> 00:21:37,240
+ dipanggil dengan x lebih besar dari y. 
+
+412
+00:21:37,240 --> 00:21:39,150
+ Anda seperti, baik, sekarang Anda beritahu saya. 
+
+413
+00:21:39,150 --> 00:21:39,870
+ Kanan? 
+
+414
+00:21:39,870 --> 00:21:43,060
+ Tetapi cara kita bisa memikirkan hal ini 
+
+415
+00:21:43,060 --> 00:21:55,830
+ adalah bahwa ada asumsi bahwa x akan kurang dari 
+
+416
+00:21:55,830 --> 00:21:57,360
+ atau sama dengan y, kan? 
+
+417
+00:21:57,360 --> 00:22:02,020
+ Ini kadang-kadang disebut sebagai prasyarat atau kontrak 
+
+418
+00:22:02,020 --> 00:22:02,890
+ untuk fungsi ini. 
+
+419
+00:22:02,890 --> 00:22:04,639
+ Fungsi ini menjanjikan untuk melakukan sesuatu, 
+
+420
+00:22:04,639 --> 00:22:06,622
+ tetapi hanya jika Anda memenuhi asumsi ini. 
+
+421
+00:22:06,622 --> 00:22:09,080
+ Dan jika Anda tidak memenuhi asumsi, fungsi itu mengatakan, 
+
+422
+00:22:09,080 --> 00:22:11,026
+ Saya tidak peduli apa yang terjadi. 
+
+423
+00:22:11,026 --> 00:22:12,400
+ Saya hanya berjanji bahwa saya tidak pergi 
+
+424
+00:22:12,400 --> 00:22:15,390
+ gagal ketika asumsi ini dipenuhi. 
+
+425
+00:22:15,390 --> 00:22:17,370
+ Dan itu adalah tanggung jawab warnanya 
+
+426
+00:22:17,370 --> 00:22:20,790
+ untuk memastikan bahwa kondisi ini tidak pernah dilanggar, bukan? 
+
+427
+00:22:20,790 --> 00:22:26,340
+ Jadi bagaimana kita mengkodekan kendala itu 
+
+428
+00:22:26,340 --> 00:22:28,040
+ saat kita memecahkan persamaan? 
+
+429
+00:22:28,040 --> 00:22:30,280
+ Yah, pada dasarnya apa yang kita miliki adalah 
+
+430
+00:22:30,280 --> 00:22:31,780
+ kami memiliki batasan ini 
+
+431
+00:22:31,780 --> 00:22:34,040
+ beritahu kami apakah cabang ini layak. 
+
+432
+00:22:34,040 --> 00:22:37,100
+ Dan di atas kendala yang sudah kita miliki 
+
+433
+00:22:37,100 --> 00:22:45,530
+ kita juga harus memastikan bahwa prasyaratnya, 
+
+434
+00:22:45,530 --> 00:22:48,260
+ atau asumsi tersebut dipenuhi. 
+
+435
+00:22:48,260 --> 00:22:48,820
+ Kanan? 
+
+436
+00:22:48,820 --> 00:22:53,210
+ Dan sekarang kami ingin bertanya, oke, begitu juga saya 
+
+437
+00:22:53,210 --> 00:22:56,780
+ temukan x dan ay yang memenuhi semua kendala ini 
+
+438
+00:22:56,780 --> 00:22:59,630
+ bersama-sama dengan kendala yang saya miliki pada input, 
+
+439
+00:22:59,630 --> 00:23:01,540
+ dengan sifat-sifat ini yang saya tahu 
+
+440
+00:23:01,540 --> 00:23:03,500
+ yang harus dipenuhi oleh input? 
+
+441
+00:23:03,500 --> 00:23:06,810
+ Dan sekali lagi Anda dapat melihat bahwa kendala ini 
+
+442
+00:23:06,810 --> 00:23:10,050
+ x kurang dari atau sama dengan y adalah perbedaannya 
+
+443
+00:23:10,050 --> 00:23:13,940
+ antara kendala ini menjadi memuaskan, 
+
+444
+00:23:13,940 --> 00:23:18,780
+ dan kendala ini sekali lagi menjadi tidak memuaskan. 
+
+445
+00:23:18,780 --> 00:23:22,450
+ Itu masalah yang sangat penting ketika berhadapan dengan analisis, 
+
+446
+00:23:22,450 --> 00:23:25,910
+ terutama ketika Anda ingin melakukan ini secara marjinal 
+
+447
+00:23:25,910 --> 00:23:27,990
+ pada tingkat fungsi individu pada suatu waktu. 
+
+448
+00:23:27,990 --> 00:23:32,220
+ Masuk akal untuk mengetahui apa asumsi tersebut 
+
+449
+00:23:32,220 --> 00:23:34,412
+ yang dipikirkan programmer saat itu 
+
+450
+00:23:34,412 --> 00:23:36,620
+ menulis fungsi ini, karena jika Anda tidak tahu apa 
+
+451
+00:23:36,620 --> 00:23:39,760
+ asumsi-asumsi itu bisa Anda katakan, ya, di sini 
+
+452
+00:23:39,760 --> 00:23:42,780
+ adalah beberapa masukan di mana itu akan gagal hanya untuk programmer 
+
+453
+00:23:42,780 --> 00:23:45,530
+ untuk mengabaikan mitos itu dengan mengatakan, oh, tetapi masukan itu tidak 
+
+454
+00:23:45,530 --> 00:23:49,489
+ mungkin, atau masukan itu tidak akan pernah terjadi. 
+
+455
+00:23:49,489 --> 00:23:50,155
+ Pertanyaan Lain? 
+
+456
+00:23:50,155 --> 00:23:57,570
+
+
+457
+00:23:57,570 --> 00:23:58,070
+ Baiklah. 
+
+458
+00:23:58,070 --> 00:24:03,210
+ Jadi bagaimana kita melakukan ini dengan cara yang lebih mekanis? 
+
+459
+00:24:03,210 --> 00:24:07,965
+ Jadi ada dua aspek untuk masalah ini. 
+
+460
+00:24:07,965 --> 00:24:11,390
+ Aspek nomor satu adalah bagaimana Anda sebenarnya 
+
+461
+00:24:11,390 --> 00:24:13,890
+ datang dengan formula ini? 
+
+462
+00:24:13,890 --> 00:24:15,770
+ Jadi dalam hal ini agak intuitif 
+
+463
+00:24:15,770 --> 00:24:17,174
+ bagaimana kami menghasilkan formula. 
+
+464
+00:24:17,174 --> 00:24:19,090
+ di mana kami hanya mengerjakannya dengan tangan, 
+
+465
+00:24:19,090 --> 00:24:21,490
+ tetapi bagaimana Anda menghasilkan formula ini 
+
+466
+00:24:21,490 --> 00:24:23,390
+ secara mekanis? 
+
+467
+00:24:23,390 --> 00:24:27,660
+ Dan aspek nomor dua adalah setelah Anda memiliki rumus, 
+
+468
+00:24:27,660 --> 00:24:30,520
+ bagaimana Anda benar-benar menyelesaikannya? 
+
+469
+00:24:30,520 --> 00:24:34,140
+ Bagaimana Anda benar-benar bisa memecahkan rumus ini 
+
+470
+00:24:34,140 --> 00:24:38,700
+ yang menggambarkan apakah program Anda gagal atau tidak? 
+
+471
+00:24:38,700 --> 00:24:43,970
+ Dan saya sebenarnya akan mulai dengan pertanyaan kedua itu. 
+
+472
+00:24:43,970 --> 00:24:48,350
+ Mengingat bahwa kami dapat mengurangi masalah kami ke rumus ini 
+
+473
+00:24:48,350 --> 00:24:54,280
+ yang melibatkan penalaran integer yang terlibat 
+
+474
+00:24:54,280 --> 00:24:55,910
+ dalam kasus program umumnya 
+
+475
+00:24:55,910 --> 00:24:57,721
+ Anda peduli tentang penalaran bit vektor. 
+
+476
+00:24:57,721 --> 00:25:00,220
+ [INAUDIBLE] program, sering kali, Anda peduli tentang array. 
+
+477
+00:25:00,220 --> 00:25:01,920
+ Anda peduli tentang fungsi. 
+
+478
+00:25:01,920 --> 00:25:04,180
+ Dan Anda berakhir dengan formula raksasa ini. 
+
+479
+00:25:04,180 --> 00:25:08,540
+ Bagaimana cara Anda benar-benar menyelesaikannya dengan cara yang mekanis? 
+
+480
+00:25:08,540 --> 00:25:12,020
+ Dan banyak teknologi yang kita bicarakan hari ini, 
+
+481
+00:25:12,020 --> 00:25:14,870
+ dan alasan mengapa kami benar-benar membicarakannya 
+
+482
+00:25:14,870 --> 00:25:20,280
+ sebagai alat praktis, harus dilakukan dengan kemajuan luar biasa 
+
+483
+00:25:20,280 --> 00:25:23,170
+ di pemecah untuk pertanyaan logis. 
+
+484
+00:25:23,170 --> 00:25:25,390
+ Dan khususnya, ada kelas yang sangat penting 
+
+485
+00:25:25,390 --> 00:25:31,300
+ pemecah yang disebut satisfiability pemecah teori modulo, 
+
+486
+00:25:31,300 --> 00:25:33,730
+ sering disingkat sebagai SMT. 
+
+487
+00:25:33,730 --> 00:25:35,230
+ Tetapi banyak orang di masyarakat 
+
+488
+00:25:35,230 --> 00:25:39,260
+ akan membantah bahwa nama itu bukan nama yang sangat bagus, 
+
+489
+00:25:39,260 --> 00:25:41,820
+ tapi itu yang digunakan semua orang dan itu macet. 
+
+490
+00:25:41,820 --> 00:25:45,220
+ Apa yang perlu Anda ketahui tentang para pemecah SMT ini 
+
+491
+00:25:45,220 --> 00:25:50,840
+ adalah bahwa pemecah SMT adalah suatu algoritma pada dasarnya 
+
+492
+00:25:50,840 --> 00:25:54,670
+ yang diberi rumus logis akan memberi Anda 
+
+493
+00:25:54,670 --> 00:25:56,080
+ satu dari dua hal. 
+
+494
+00:25:56,080 --> 00:25:58,430
+ itu akan memberi Anda tugas yang memuaskan 
+
+495
+00:25:58,430 --> 00:26:01,830
+ ke rumus, atau itu akan memberi tahu Anda 
+
+496
+00:26:01,830 --> 00:26:04,990
+ bahwa formula itu tidak memuaskan. 
+
+497
+00:26:04,990 --> 00:26:09,490
+ Dan tidak ada tugas yang memungkinkan 
+
+498
+00:26:09,490 --> 00:26:11,590
+ ke variabel dalam rumus itu itu 
+
+499
+00:26:11,590 --> 00:26:14,790
+ akan memenuhi batasan-batasan yang Anda tentukan. 
+
+500
+00:26:14,790 --> 00:26:18,820
+ Sekarang dalam prakteknya, jika ini terdengar agak menakutkan 
+
+501
+00:26:18,820 --> 00:26:21,730
+ dan sedikit seperti sulap, itu sedikit menakutkan. 
+
+502
+00:26:21,730 --> 00:26:25,350
+ Banyak masalah yang harus dipecahkan para pemecah SMT ini 
+
+503
+00:26:25,350 --> 00:26:28,310
+ NP-lengkap dalam kasus terbaik. 
+
+504
+00:26:28,310 --> 00:26:30,570
+ Baiklah? yang bagus adalah NP-complete. 
+
+505
+00:26:30,570 --> 00:26:34,310
+ Yang sulit bisa jauh lebih garang daripada itu. 
+
+506
+00:26:34,310 --> 00:26:41,040
+ Jadi bagaimana kita bisa memiliki sistem yang bergantung sebagai bangunan utamanya 
+
+507
+00:26:41,040 --> 00:26:46,950
+ memblokir pemecahan NP lengkap PSPACE-masalah lengkap? 
+
+508
+00:26:46,950 --> 00:26:51,020
+ Dan masih ada sesuatu yang berhasil dalam praktek? 
+
+509
+00:26:51,020 --> 00:26:54,570
+ Dan sebagian jawabannya adalah untuk banyak pemecah masalah ini 
+
+510
+00:26:54,570 --> 00:26:59,590
+ ada hal ketiga yang bisa mereka beri tahukan kepada Anda, 
+
+511
+00:26:59,590 --> 00:27:01,440
+ yang mana, saya tidak tahu. 
+
+512
+00:27:01,440 --> 00:27:09,630
+
+
+513
+00:27:09,630 --> 00:27:14,530
+ Dan begitu bagian dari keindahan para pemecah ini 
+
+514
+00:27:14,530 --> 00:27:16,890
+ adalah bahwa untuk masalah praktis, bahkan 
+
+515
+00:27:16,890 --> 00:27:19,900
+ untuk masalah praktis yang sangat, sangat besar dan rumit, 
+
+516
+00:27:19,900 --> 00:27:22,660
+ mereka masih bisa melakukan lebih baik daripada sekadar memberitahu Anda, 
+
+517
+00:27:22,660 --> 00:27:23,410
+ Aku tidak tahu. 
+
+518
+00:27:23,410 --> 00:27:26,430
+ Mereka masih bisa memberi Anda juga 
+
+519
+00:27:26,430 --> 00:27:30,420
+ jaminan bahwa rangkaian batasan ini 
+
+520
+00:27:30,420 --> 00:27:34,090
+ tidak memuaskan atau tugas memuaskan yang sebenarnya itu 
+
+521
+00:27:34,090 --> 00:27:37,300
+ memberitahu Anda apa tepatnya jawabannya. 
+
+522
+00:27:37,300 --> 00:27:40,770
+
+
+523
+00:27:40,770 --> 00:27:41,750
+ Iya nih? 
+
+524
+00:27:41,750 --> 00:27:48,451
+ AUDIENCE: [TIDAK TERDENGAR] Misalnya, [TIDAK TERDENGAR] 
+
+525
+00:27:48,451 --> 00:27:50,325
+ spesifikasi Saya tidak berpikir Anda mengatakan apa-apa 
+
+526
+00:27:50,325 --> 00:27:54,000
+ tentang berapa banyak bit yang digunakan untuk menyimpan bilangan bulat. [TIDAK JELAS] 
+
+527
+00:27:54,000 --> 00:28:00,907
+
+
+528
+00:28:00,907 --> 00:28:02,990
+ ARMANDO SOLAR-LEZAMA: Itu pertanyaan yang sangat bagus. 
+
+529
+00:28:02,990 --> 00:28:05,430
+ Dan itu benar-benar ada hubungannya dengan Anda 
+
+530
+00:28:05,430 --> 00:28:07,810
+ tentukan batasan Anda, bukan? 
+
+531
+00:28:07,810 --> 00:28:18,940
+ Jadi, jika Anda melihat contoh sederhana kami dari awal, 
+
+532
+00:28:18,940 --> 00:28:25,140
+ dalam hal ini, kami berasumsi bahwa ini adalah bilangan bulat sebagai 
+
+533
+00:28:25,140 --> 00:28:26,640
+ belajar di sekolah dasar. 
+
+534
+00:28:26,640 --> 00:28:34,420
+ Dan kami sepenuhnya memutuskan untuk mengabaikan kesalahan yang berlebihan. 
+
+535
+00:28:34,420 --> 00:28:35,920
+ Jika Anda peduli tentang kesalahan overflow, 
+
+536
+00:28:35,920 --> 00:28:39,510
+ jika kesalahan overflow sebenarnya penting untuk jenis bug 
+
+537
+00:28:39,510 --> 00:28:42,864
+ Anda mencoba untuk menemukan, ini tidak akan menjadi cara yang baik 
+
+538
+00:28:42,864 --> 00:28:43,780
+ untuk mengatur masalah. 
+
+539
+00:28:43,780 --> 00:28:49,780
+ Yang Anda perlukan adalah merepresentasikan bilangan bulat yang tidak begitu cepat ini, 
+
+540
+00:28:49,780 --> 00:28:50,910
+ tetapi sebagai bit-vektor. 
+
+541
+00:28:50,910 --> 00:28:52,940
+ Dan saat Anda mewakili mereka sebagai vektor bit 
+
+542
+00:28:52,940 --> 00:28:55,470
+ Anda harus memiliki sedikit lebar dalam pikiran. 
+
+543
+00:28:55,470 --> 00:29:01,530
+ Dan ini kembali ke teori modular apa ini 
+
+544
+00:29:01,530 --> 00:29:03,670
+ aspek dalam pemecah berarti. 
+
+545
+00:29:03,670 --> 00:29:05,430
+ Apa yang dimaksud dengan aspek teori modular ini 
+
+546
+00:29:05,430 --> 00:29:08,700
+ adalah bahwa si pemecah sebenarnya dapat diperluas 
+
+547
+00:29:08,700 --> 00:29:10,140
+ dengan teori berbeda. 
+
+548
+00:29:10,140 --> 00:29:15,960
+ Teori yang paling populer adalah teori bit-vector yang 
+
+549
+00:29:15,960 --> 00:29:21,450
+ adalah bit-vektor panjang tetap. 
+
+550
+00:29:21,450 --> 00:29:24,150
+ Itu berarti bahwa jika Anda menafsirkan rumus Anda 
+
+551
+00:29:24,150 --> 00:29:26,664
+ dalam teori ini bit-vektor panjang tetap 
+
+552
+00:29:26,664 --> 00:29:28,580
+ Anda harus memperbaiki panjang bit-vektor. 
+
+553
+00:29:28,580 --> 00:29:31,380
+ Dan Anda harus secara eksplisit menentukan 
+
+554
+00:29:31,380 --> 00:29:36,760
+ bahwa ini akan menjadi bit-vektor 32 bit, atau 8 bit 
+
+555
+00:29:36,760 --> 00:29:39,326
+ bit-vektor, atau 64 bit bit-vektor. 
+
+556
+00:29:39,326 --> 00:29:42,284
+ AUDIENCE: Jadi jika Anda ingin membuat bit simbolis 
+
+557
+00:29:42,284 --> 00:29:46,730
+ [TIDAK JELAS], seperti ini adalah x bit, apakah itu-- 
+
+558
+00:29:46,730 --> 00:29:49,140
+ ARMANDO SOLAR-LEZAMA: Jadi ada teori lain yang 
+
+559
+00:29:49,140 --> 00:29:53,690
+ disebut teori array. 
+
+560
+00:29:53,690 --> 00:29:55,740
+ Dan kami akan berbicara sedikit lebih banyak tentang itu, 
+
+561
+00:29:55,740 --> 00:29:59,150
+ dimana tidak seperti teori vektor bit, 
+
+562
+00:29:59,150 --> 00:30:02,410
+ yang dirancang untuk hal-hal tetap 
+
+563
+00:30:02,410 --> 00:30:07,360
+ teori array dimaksudkan untuk koleksi di mana 
+
+564
+00:30:07,360 --> 00:30:10,110
+ Anda sebenarnya tidak tahu ukuran a priori. 
+
+565
+00:30:10,110 --> 00:30:13,040
+ Sekarang dalam praktek tidak ada yang menggunakan teori 
+
+566
+00:30:13,040 --> 00:30:16,010
+ dari array ke model bilangan bulat, misalnya, 
+
+567
+00:30:16,010 --> 00:30:18,100
+ karena terlalu mahal. 
+
+568
+00:30:18,100 --> 00:30:21,250
+ Ini menjadi jauh lebih mahal untuk dibicarakan 
+
+569
+00:30:21,250 --> 00:30:23,070
+ ketika Anda tidak tahu apa yang terikat itu. 
+
+570
+00:30:23,070 --> 00:30:25,840
+ Jadi umumnya orang menggunakan teori panjang tetap 
+
+571
+00:30:25,840 --> 00:30:30,910
+ bit-vektor ketika berpikir tentang bilangan bulat atau karakter 
+
+572
+00:30:30,910 --> 00:30:33,050
+ bahkan. 
+
+573
+00:30:33,050 --> 00:30:41,760
+ Teori lain yang sangat umum adalah teori bilangan bulat yang sebenarnya 
+
+574
+00:30:41,760 --> 00:30:44,520
+ aritmatika, dan khususnya aritmatika bilangan bulat linier. 
+
+575
+00:30:44,520 --> 00:30:47,200
+ Ini adalah teori yang disukai banyak orang karena itu 
+
+576
+00:30:47,200 --> 00:30:50,650
+ dapat beralasan tentang sangat, sangat efisien, 
+
+577
+00:30:50,650 --> 00:30:52,930
+ tapi itu tidak terlalu bagus ketika 
+
+578
+00:30:52,930 --> 00:30:55,960
+ Anda berpikir tentang program, karena pada umumnya Anda benar-benar 
+
+579
+00:30:55,960 --> 00:30:59,040
+ peduli terhadap masalah yang meluap. 
+
+580
+00:30:59,040 --> 00:31:03,680
+ Tapi sebenarnya sangat banyak digunakan untuk banyak hal. 
+
+581
+00:31:03,680 --> 00:31:07,240
+ Teori lain yang Anda cenderung melihat orang menggunakan 
+
+582
+00:31:07,240 --> 00:31:13,535
+ adalah teori fungsi yang tidak ditafsirkan. 
+
+583
+00:31:13,535 --> 00:31:19,240
+
+
+584
+00:31:19,240 --> 00:31:22,060
+ Jadi apa artinya, teori fungsi yang tidak ditafsirkan? 
+
+585
+00:31:22,060 --> 00:31:27,200
+ Itu berarti Anda memiliki formula di mana di suatu tempat dalam rumus Anda 
+
+586
+00:31:27,200 --> 00:31:29,350
+ Anda tahu bahwa Anda memanggil suatu fungsi, 
+
+587
+00:31:29,350 --> 00:31:31,270
+ tetapi Anda tidak tahu apa-apa tentang fungsi itu 
+
+588
+00:31:31,270 --> 00:31:39,200
+ selain fakta bahwa itu adalah fungsi, bahwa jika Anda memberikannya 
+
+589
+00:31:39,200 --> 00:31:42,870
+ input yang sama Anda mendapatkan output yang sama sebagai balasannya. 
+
+590
+00:31:42,870 --> 00:31:45,190
+ Dan ternyata ini sangat, sangat berguna kadang 
+
+591
+00:31:45,190 --> 00:31:47,310
+ ketika mencoba untuk berpikir tentang hal-hal 
+
+592
+00:31:47,310 --> 00:31:53,190
+ seperti jika Anda kode titik mengambang, pemodelan, sinus, cosinus, 
+
+593
+00:31:53,190 --> 00:31:56,025
+ akar kuadrat bisa sangat berantakan dan mahal, 
+
+594
+00:31:56,025 --> 00:31:57,650
+ tetapi Anda bisa mengatakan, lihat, saya tidak benar-benar 
+
+595
+00:31:57,650 --> 00:32:01,030
+ peduli tentang apa fungsi sinus lakukan. 
+
+596
+00:32:01,030 --> 00:32:03,200
+ Saya tidak peduli apa outputnya. 
+
+597
+00:32:03,200 --> 00:32:05,600
+ Yang saya tahu adalah bahwa jika saya memanggil fungsi sinus 
+
+598
+00:32:05,600 --> 00:32:07,390
+ di berbagai tempat dengan masukan 
+
+599
+00:32:07,390 --> 00:32:08,830
+ Saya akan mendapatkan hasil yang sama. 
+
+600
+00:32:08,830 --> 00:32:14,100
+ Dan itu cukup bagi saya untuk berpikir tentang kode saya. 
+
+601
+00:32:14,100 --> 00:32:17,350
+ Dan yang paling umum yang akan Anda lakukan 
+
+602
+00:32:17,350 --> 00:32:21,140
+ lihat ketika menganalisis sistem nyata 
+
+603
+00:32:21,140 --> 00:32:24,510
+ bit-vektor untuk menangani bilangan bulat, dan log, 
+
+604
+00:32:24,510 --> 00:32:26,110
+ dan pointer. 
+
+605
+00:32:26,110 --> 00:32:30,990
+ Sebenarnya, pointer sering diwakili dengan integer 
+
+606
+00:32:30,990 --> 00:32:35,760
+ karena Anda umumnya tidak pergi 
+
+607
+00:32:35,760 --> 00:32:40,500
+ untuk melakukan sedikit rumit meremehkan pada pointer. 
+
+608
+00:32:40,500 --> 00:32:44,650
+ Kadang-kadang Anda akan dan kemudian Anda tidak dapat menggunakan bilangan bulat lagi. 
+
+609
+00:32:44,650 --> 00:32:46,210
+ Jadi ok. 
+
+610
+00:32:46,210 --> 00:32:48,470
+ Jadi itu semua baik dan bagus. 
+
+611
+00:32:48,470 --> 00:32:52,650
+ Itulah yang bisa dilakukan oleh pemecah SMT untuk Anda. 
+
+612
+00:32:52,650 --> 00:32:54,900
+ Bagaimana cara kerjanya? 
+
+613
+00:32:54,900 --> 00:32:56,870
+ Apa yang ada di dalamnya yang membuatnya bekerja? 
+
+614
+00:32:56,870 --> 00:33:01,820
+ Dan pemecah SMT benar-benar bergantung pada kemampuan kita 
+
+615
+00:33:01,820 --> 00:33:04,690
+ untuk memecahkan masalah SAT, pada kemampuan kita 
+
+616
+00:33:04,690 --> 00:33:10,350
+ untuk mengambil masalah yang melibatkan hanya kendala Boolean murni 
+
+617
+00:33:10,350 --> 00:33:13,650
+ dan variabel Boolean, dan memberi tahu kami 
+
+618
+00:33:13,650 --> 00:33:16,680
+ apakah ada penugasan untuk variabel Boolean ini 
+
+619
+00:33:16,680 --> 00:33:20,370
+ itu memuaskan atau tidak. 
+
+620
+00:33:20,370 --> 00:33:24,400
+ Dan ini adalah hal yang selama bertahun-tahun 
+
+621
+00:33:24,400 --> 00:33:27,416
+ orang-orang di undergrad telah diajarkan bahwa ini benar-benar 
+
+622
+00:33:27,416 --> 00:33:28,690
+ adalah masalah NP-lengkap. 
+
+623
+00:33:28,690 --> 00:33:30,680
+ Saat sesuatu berkurang menjadi SAT 
+
+624
+00:33:30,680 --> 00:33:33,220
+ Anda tahu Anda tidak harus melakukannya, tetapi ternyata 
+
+625
+00:33:33,220 --> 00:33:35,960
+ bahwa kita benar-benar memiliki SAT yang sangat, sangat baik 
+
+626
+00:33:35,960 --> 00:33:36,720
+ pemecah di luar sana. 
+
+627
+00:33:36,720 --> 00:33:42,060
+ Mungkin sebagian besar dari Anda bahkan membangunnya sebagai bagian dari 6005. 
+
+628
+00:33:42,060 --> 00:33:43,940
+ Apakah saya benar? 
+
+629
+00:33:43,940 --> 00:33:46,200
+ Atau beberapa dari Anda melakukannya. 
+
+630
+00:33:46,200 --> 00:33:50,780
+ Jadi saya akan memberi tahu Anda ide dasar di balik bagaimana para pemecah SAT bekerja. 
+
+631
+00:33:50,780 --> 00:33:56,140
+ Dan ide dasarnya adalah Anda mengambil semua batasan Anda 
+
+632
+00:33:56,140 --> 00:34:00,440
+ pada variabel Boolean Anda dan Anda menempatkan mereka ke dalam database. 
+
+633
+00:34:00,440 --> 00:34:03,450
+ Dan apa itu kendala? 
+
+634
+00:34:03,450 --> 00:34:06,950
+ Apakah ini terlalu kecil atau dapatkah orang di belakang membaca ini? 
+
+635
+00:34:06,950 --> 00:34:09,661
+
+
+636
+00:34:09,661 --> 00:34:10,569
+ AUDIENCE: Terlalu kecil. 
+
+637
+00:34:10,570 --> 00:34:11,179
+ ARMANDO SOLAR-LEZAMA: Terlalu kecil? 
+
+638
+00:34:11,179 --> 00:34:11,679
+ BAIK. 
+
+639
+00:34:11,679 --> 00:34:15,900
+
+
+640
+00:34:15,900 --> 00:34:19,469
+ Mari kita lihat apakah kita bisa membuat ini lebih besar. 
+
+641
+00:34:19,469 --> 00:34:42,040
+
+
+642
+00:34:42,040 --> 00:34:45,331
+ Apakah ini sedikit lebih baik? 
+
+643
+00:34:45,331 --> 00:34:46,304
+ AUDIENCE: [TIDAK JELAS]. 
+
+644
+00:34:46,304 --> 00:34:47,769
+ ARMANDO SOLAR-LEZAMA: OK. 
+
+645
+00:34:47,770 --> 00:34:51,000
+ Nah, inilah yang akan saya lakukan. 
+
+646
+00:34:51,000 --> 00:34:54,030
+ Saya akan membubuhi keterangan dan saya akan menceritakannya ketika saya pergi. 
+
+647
+00:34:54,030 --> 00:34:55,810
+ Dan saya akan posting slide nanti. 
+
+648
+00:34:55,810 --> 00:34:57,660
+ Jadi orang bisa melihat apa yang dikatakannya. 
+
+649
+00:34:57,660 --> 00:35:01,650
+ Jadi apa yang kita miliki di sini dalam masalah SAT 
+
+650
+00:35:01,650 --> 00:35:06,770
+ adalah bahwa kita memiliki semua variabel yang mewakili ini 
+
+651
+00:35:06,770 --> 00:35:08,460
+ Boolean tidak dikenal, bukan? 
+
+652
+00:35:08,460 --> 00:35:11,620
+ Kami ingin tahu apakah mungkin untuk x 
+
+653
+00:35:11,620 --> 00:35:15,170
+ menjadi kenyataan, dan y menjadi kenyataan, dan z menjadi kenyataan pada saat yang sama, 
+
+654
+00:35:15,170 --> 00:35:15,820
+ sebagai contoh. 
+
+655
+00:35:15,820 --> 00:35:16,320
+ Kanan? 
+
+656
+00:35:16,320 --> 00:35:18,330
+ Dan ini adalah hal yang tidak kami ketahui. 
+
+657
+00:35:18,330 --> 00:35:22,750
+ Dan semua kendala dalam bentuk normal konjungtif. 
+
+658
+00:35:22,750 --> 00:35:24,590
+ Apa itu artinya semua kendala kita 
+
+659
+00:35:24,590 --> 00:35:33,920
+ adalah bentuk baik x1 benar, atau x2 benar, 
+
+660
+00:35:33,920 --> 00:35:37,951
+ atau x3 benar, misalnya. 
+
+661
+00:35:37,951 --> 00:35:38,450
+ Kanan? 
+
+662
+00:35:38,450 --> 00:35:42,200
+ Jadi apa yang kami miliki adalah kami memiliki semua batasan kami dalam formulir ini 
+
+663
+00:35:42,200 --> 00:35:45,130
+ dan beberapa dari mereka mungkin berkata, yah, apakah x1 itu benar, 
+
+664
+00:35:45,130 --> 00:35:48,970
+ atau x2 salah, atau x3 salah. 
+
+665
+00:35:48,970 --> 00:35:49,470
+ Kanan? 
+
+666
+00:35:49,470 --> 00:35:50,880
+ Jadi kita punya kendala. 
+
+667
+00:35:50,880 --> 00:35:53,500
+ Semua batasan kami adalah dari formulir ini. 
+
+668
+00:35:53,500 --> 00:35:55,780
+ Dan Anda mungkin ingat dari matematika diskrit 
+
+669
+00:35:55,780 --> 00:35:59,700
+ bahwa formula Boolean dapat diwakili 
+
+670
+00:35:59,700 --> 00:36:01,264
+ dalam bentuk normal konjungtif. 
+
+671
+00:36:01,264 --> 00:36:03,680
+ Dan itu memiliki manfaat tambahan yang sebenarnya sangat, sangat 
+
+672
+00:36:03,680 --> 00:36:08,370
+ mudah diterjemahkan dari representasi sembarang rumus 
+
+673
+00:36:08,370 --> 00:36:11,970
+ rumus rumus normal konjungtif ini, yang berarti apa pun 
+
+674
+00:36:11,970 --> 00:36:15,180
+ representasi yang Anda gunakan untuk mewakili formula Boolean, 
+
+675
+00:36:15,180 --> 00:36:19,130
+ Anda dapat dengan mudah mengubahnya ke format ini. 
+
+676
+00:36:19,130 --> 00:36:22,730
+ Jadi apa yang kami miliki adalah kami memiliki database 
+
+677
+00:36:22,730 --> 00:36:25,230
+ dengan banyak kendala pada formulir ini. 
+
+678
+00:36:25,230 --> 00:36:27,380
+ Dan apa yang dilakukan SAT solver 
+
+679
+00:36:27,380 --> 00:36:29,540
+ akan memilih salah satu dari variabel ini secara acak. 
+
+680
+00:36:29,540 --> 00:36:31,950
+ Katakanlah itu akan memilih x1. 
+
+681
+00:36:31,950 --> 00:36:36,180
+ Dan itu akan mengatakan, mengapa kita tidak menetapkan x1 ke true? 
+
+682
+00:36:36,180 --> 00:36:38,120
+ Saya tidak tahu apa-apa tentang masalah ini. 
+
+683
+00:36:38,120 --> 00:36:41,130
+ Sebaiknya coba jual ke benar. 
+
+684
+00:36:41,130 --> 00:36:44,050
+ Dan kemudian apa yang akan terjadi adalah Anda akan memiliki beberapa kendala 
+
+685
+00:36:44,050 --> 00:36:48,390
+ yang menyebutkan x1 dan katakanlah Anda memiliki kendala itu 
+
+686
+00:36:48,390 --> 00:36:53,160
+ mengatakan x1 salah atau x7 adalah benar. 
+
+687
+00:36:53,160 --> 00:36:53,660
+ Kanan? 
+
+688
+00:36:53,660 --> 00:36:56,700
+ Jadi jika Anda tahu bahwa x1 itu benar dan Anda 
+
+689
+00:36:56,700 --> 00:37:00,430
+ tahu bahwa baik x1 salah atau x7 adalah benar, 
+
+690
+00:37:00,430 --> 00:37:04,105
+ apa yang kamu ketahui tentang x7? 
+
+691
+00:37:04,105 --> 00:37:05,145
+ AUDIENCE: [TIDAK JELAS]. 
+
+692
+00:37:05,145 --> 00:37:06,270
+ ARMANDO SOLAR-LEZAMA: Ya. 
+
+693
+00:37:06,270 --> 00:37:06,990
+ Itu harus benar. 
+
+694
+00:37:06,990 --> 00:37:07,489
+ Kanan? 
+
+695
+00:37:07,489 --> 00:37:09,000
+ Karena kalau tidak kendala ini 
+
+696
+00:37:09,000 --> 00:37:10,660
+ tidak akan puas. 
+
+697
+00:37:10,660 --> 00:37:16,420
+ Dan sekarang Anda telah menyebarkan tugas ini dari x1 ke x7. 
+
+698
+00:37:16,420 --> 00:37:19,370
+ Dan katakanlah sekarang Anda memilih beberapa variabel acak lainnya. 
+
+699
+00:37:19,370 --> 00:37:22,090
+ Anda berkata, baik, bagaimana dengan x5? 
+
+700
+00:37:22,090 --> 00:37:24,140
+ Mengapa kita tidak mencoba x5 menjadi benar? 
+
+701
+00:37:24,140 --> 00:37:24,640
+ Kanan? 
+
+702
+00:37:24,640 --> 00:37:27,600
+ Dan sekarang katakanlah Anda memiliki kendala yang mengatakan, 
+
+703
+00:37:27,600 --> 00:37:41,850
+ baik, x7 salah, atau x6 benar, atau x5 salah. 
+
+704
+00:37:41,850 --> 00:37:42,350
+ Kanan? 
+
+705
+00:37:42,350 --> 00:37:48,500
+ Jadi saya memiliki x5 yang benar dan saya memiliki x7 yang benar. 
+
+706
+00:37:48,500 --> 00:37:52,640
+ Jadi itu berarti x6 sekarang harus benar. 
+
+707
+00:37:52,640 --> 00:37:53,140
+ Kanan? 
+
+708
+00:37:53,140 --> 00:37:56,760
+ Karena kalau tidak, kendala ini akan dilanggar. 
+
+709
+00:37:56,760 --> 00:37:59,520
+ Maka dari itu sistem menyimpulkan, OK. 
+
+710
+00:37:59,520 --> 00:38:01,500
+ Jadi x6 harus benar. 
+
+711
+00:38:01,500 --> 00:38:04,680
+ Dan itu terus pada proses ini pada dasarnya 
+
+712
+00:38:04,680 --> 00:38:06,820
+ mencoba tugas. 
+
+713
+00:38:06,820 --> 00:38:09,290
+ Dan kemudian melihat semua klausul yang tersedia, 
+
+714
+00:38:09,290 --> 00:38:10,750
+ dan melihat, hei, apakah ada 
+
+715
+00:38:10,750 --> 00:38:14,080
+ hal-hal lain yang tersirat oleh tugas 
+
+716
+00:38:14,080 --> 00:38:16,090
+ yang saya miliki sejauh ini? 
+
+717
+00:38:16,090 --> 00:38:20,190
+ Dan mengikuti implikasi tersebut sampai satu dari dua hal 
+
+718
+00:38:20,190 --> 00:38:20,690
+ terjadi. 
+
+719
+00:38:20,690 --> 00:38:23,480
+ Entah Anda terus mengikuti implikasi dan mencoba 
+
+720
+00:38:23,480 --> 00:38:26,490
+ hal-hal acak dan akhirnya Anda telah menetapkan nilai 
+
+721
+00:38:26,490 --> 00:38:28,460
+ untuk setiap variabel tanpa pernah ada 
+
+722
+00:38:28,460 --> 00:38:30,550
+ berlari ke suatu kontradiksi. 
+
+723
+00:38:30,550 --> 00:38:32,580
+ Dan kemudian Anda selesai. 
+
+724
+00:38:32,580 --> 00:38:33,080
+ Kanan? 
+
+725
+00:38:33,080 --> 00:38:37,240
+ Anda menemukan tugas yang memuaskan, atau apa yang bisa terjadi 
+
+726
+00:38:37,240 --> 00:38:38,580
+ apakah Anda mengalami kontradiksi. 
+
+727
+00:38:38,580 --> 00:38:45,690
+ Anda berlari ke tempat di mana ada klausul yang memaksa x4 
+
+728
+00:38:45,690 --> 00:38:49,900
+ untuk menjadi kenyataan, kecuali ada klausa lain yang memaksa x4 
+
+729
+00:38:49,900 --> 00:38:50,950
+ salah. 
+
+730
+00:38:50,950 --> 00:38:55,080
+ Dan jika ada satu aturan aljabar Boolean yang semua orang 
+
+731
+00:38:55,080 --> 00:38:58,090
+ harus tahu, adalah bahwa Anda tidak dapat memiliki variabel yang benar dan menjadi 
+
+732
+00:38:58,090 --> 00:38:59,860
+ salah pada saat bersamaan. 
+
+733
+00:38:59,860 --> 00:39:00,360
+ Kanan? 
+
+734
+00:39:00,360 --> 00:39:01,859
+ Dan apa yang memberitahu Anda adalah Anda 
+
+735
+00:39:01,859 --> 00:39:03,690
+ mengalami kontradiksi. 
+
+736
+00:39:03,690 --> 00:39:05,840
+ Anda jelas melakukan sesuatu yang salah dalam satu 
+
+737
+00:39:05,840 --> 00:39:08,200
+ dari tugas acak yang Anda coba. 
+
+738
+00:39:08,200 --> 00:39:10,680
+ Jadi sekarang mari kita menganalisis kontradiksi ini. 
+
+739
+00:39:10,680 --> 00:39:12,820
+ Mari kita cari tahu tugas apa itu 
+
+740
+00:39:12,820 --> 00:39:16,790
+ menyebabkan kontradiksi ini. 
+
+741
+00:39:16,790 --> 00:39:20,690
+ Dan berdasarkan penugasan yang mengarah pada kontradiksi itu, 
+
+742
+00:39:20,690 --> 00:39:25,010
+ mari kita buat klausa konflik baru itu 
+
+743
+00:39:25,010 --> 00:39:27,560
+ meringkas kontradiksi itu. 
+
+744
+00:39:27,560 --> 00:39:31,170
+ Jadi dalam hal ini, apa yang akan terjadi 
+
+745
+00:39:31,170 --> 00:39:38,180
+ adalah Anda memiliki x1 salah, dan x5 salah. 
+
+746
+00:39:38,180 --> 00:39:41,130
+ Dan x9 salah, kan? 
+
+747
+00:39:41,130 --> 00:39:44,530
+ Jadi intinya apa yang dikatakan ini berdasarkan apa yang saya 
+
+748
+00:39:44,530 --> 00:39:46,840
+ belajar dari tugas acak ini saya menemukan itu 
+
+749
+00:39:46,840 --> 00:39:49,560
+ salah satu dari hal-hal ini harus benar, 
+
+750
+00:39:49,560 --> 00:39:53,440
+ bahwa itu tidak dapat menjadi kasus bahwa x1 adalah benar, dan x5 adalah benar, 
+
+751
+00:39:53,440 --> 00:39:55,990
+ dan x9 salah. 
+
+752
+00:39:55,990 --> 00:39:57,000
+ Itu tidak bisa terjadi. 
+
+753
+00:39:57,000 --> 00:40:00,240
+ Dan saya tahu itu tidak dapat terjadi karena ketika saya mencobanya 
+
+754
+00:40:00,240 --> 00:40:00,965
+ semuanya meledak. 
+
+755
+00:40:00,965 --> 00:40:03,050
+ Saya berakhir dengan kontradiksi. 
+
+756
+00:40:03,050 --> 00:40:06,330
+ Dan apa yang dilakukan sol sol adalah mencoba tugas acak, 
+
+757
+00:40:06,330 --> 00:40:08,030
+ menyebarkannya. 
+
+758
+00:40:08,030 --> 00:40:09,630
+ Ketika itu menjadi kontradiksi itu 
+
+759
+00:40:09,630 --> 00:40:12,600
+ menganalisis serangkaian implikasi 
+
+760
+00:40:12,600 --> 00:40:14,130
+ yang menyebabkan kontradiksi itu. 
+
+761
+00:40:14,130 --> 00:40:17,690
+ Dan meringkas itu dalam batasan baru itu 
+
+762
+00:40:17,690 --> 00:40:19,650
+ akan memastikan bahwa itu tidak pernah berjalan 
+
+763
+00:40:19,650 --> 00:40:21,980
+ ke dalam kontradiksi ini lagi, bahwa itu tidak pernah terjadi 
+
+764
+00:40:21,980 --> 00:40:25,574
+ mengalami masalah khusus ini lagi. 
+
+765
+00:40:25,574 --> 00:40:26,240
+ Pertanyaan Lain? 
+
+766
+00:40:26,240 --> 00:40:34,960
+
+
+767
+00:40:34,960 --> 00:40:35,460
+ BAIK. 
+
+768
+00:40:35,460 --> 00:40:36,730
+ Sejauh ini begitu bagus. 
+
+769
+00:40:36,730 --> 00:40:40,040
+ Jadi kita tidak bisa memikirkan pemecah SAT 
+
+770
+00:40:40,040 --> 00:40:43,830
+ hanya sebagai kotak hitam yang diberi batasan Boolean 
+
+771
+00:40:43,830 --> 00:40:47,380
+ dapat dikatakan, tidak, batasan Boolean ini 
+
+772
+00:40:47,380 --> 00:40:51,130
+ tidak puas, atau bisa dikatakan, ya, ini dia 
+
+773
+00:40:51,130 --> 00:40:53,270
+ tugas yang memuaskan untuk kendala Boolean. 
+
+774
+00:40:53,270 --> 00:40:57,137
+ Jadi pemecah SMT dibangun di atas pemecah SAT. 
+
+775
+00:40:57,137 --> 00:40:58,720
+ Dan apa yang bisa mereka lakukan adalah mereka 
+
+776
+00:40:58,720 --> 00:41:01,670
+ mampu menggabungkan kekuatan dari SAT solver 
+
+777
+00:41:01,670 --> 00:41:08,130
+ untuk menyelesaikan masalah SAT NP-lengkap dengan domain 
+
+778
+00:41:08,130 --> 00:41:12,190
+ alasan spesifik untuk berpikir tentang berbagai teori 
+
+779
+00:41:12,190 --> 00:41:13,000
+ yang didukung. 
+
+780
+00:41:13,000 --> 00:41:15,460
+ Jadi untuk memberi Anda gambaran tentang cara kerjanya, 
+
+781
+00:41:15,460 --> 00:41:18,226
+ dan ini akan menjadi level yang cukup tinggi, 
+
+782
+00:41:18,226 --> 00:41:19,600
+ tetapi untuk memberi Anda gambaran tentang bagaimana itu 
+
+783
+00:41:19,600 --> 00:41:22,000
+ bekerja katakanlah Anda memiliki rumus seperti ini, kan? 
+
+784
+00:41:22,000 --> 00:41:25,635
+ Jadi Anda mengatakan x lebih besar dari 5 dan y kurang dari 5. 
+
+785
+00:41:25,635 --> 00:41:28,890
+
+
+786
+00:41:28,890 --> 00:41:33,791
+ Dan y lebih besar dari x atau y lebih besar dari 2. 
+
+787
+00:41:33,791 --> 00:41:34,290
+ Kanan? 
+
+788
+00:41:34,290 --> 00:41:37,310
+ Jadi apakah itu memuaskan? 
+
+789
+00:41:37,310 --> 00:41:39,490
+ Bisakah kita menemukan tugas yang memuaskan untuk itu? 
+
+790
+00:41:39,490 --> 00:41:46,940
+ Jadi apa yang dapat dilakukan seorang pemecah SMT adalah memisahkan bagiannya 
+
+791
+00:41:46,940 --> 00:41:50,950
+ rumus ini yang membutuhkan alasan domain, itu 
+
+792
+00:41:50,950 --> 00:41:52,930
+ membutuhkan penalaran dalam teori, dalam hal ini, 
+
+793
+00:41:52,930 --> 00:41:54,150
+ bilangan bulat. 
+
+794
+00:41:54,150 --> 00:41:55,730
+ Dengan bagian dari formula ini itu 
+
+795
+00:41:55,730 --> 00:41:57,770
+ hanyalah struktur Boolean. 
+
+796
+00:41:57,770 --> 00:42:01,616
+ Jadi jika Anda memisahkan struktur Boolean di sini, 
+
+797
+00:42:01,616 --> 00:42:02,990
+ pada dasarnya apa yang Anda katakan adalah 
+
+798
+00:42:02,990 --> 00:42:09,034
+ bahwa ada beberapa rumus, F1, dan beberapa rumus F2, 
+
+799
+00:42:09,034 --> 00:42:11,800
+ dan F3 atau F4. 
+
+800
+00:42:11,800 --> 00:42:12,300
+ Kanan? 
+
+801
+00:42:12,300 --> 00:42:15,740
+ Dan sekarang ini adalah masalah Boolean murni, kan? 
+
+802
+00:42:15,740 --> 00:42:18,060
+ Hanya masalah yang bisa saya temukan memuaskan 
+
+803
+00:42:18,060 --> 00:42:22,110
+ tugas untuk itu? 
+
+804
+00:42:22,110 --> 00:42:24,280
+ Apakah ada tugas yang memuaskan untuk itu? 
+
+805
+00:42:24,280 --> 00:42:26,570
+ Dan, sekali lagi, ini hanyalah formula Boolean. 
+
+806
+00:42:26,570 --> 00:42:30,385
+ Pergi ke SAT solver dan SAT solver bisa berkata, ya. 
+
+807
+00:42:30,385 --> 00:42:33,820
+
+
+808
+00:42:33,820 --> 00:42:36,010
+ Saya dapat menemukan tugas yang memuaskan untuk ini. 
+
+809
+00:42:36,010 --> 00:42:39,220
+ Dan saya dapat menemukan tugas yang memuaskan 
+
+810
+00:42:39,220 --> 00:42:43,740
+ dengan membuat ini benar, dan ini benar, dan ini benar. 
+
+811
+00:42:43,740 --> 00:42:44,240
+ Kanan? 
+
+812
+00:42:44,240 --> 00:42:48,010
+ Ini adalah tugas yang memuaskan untuk rumus Boolean. 
+
+813
+00:42:48,010 --> 00:42:52,670
+ Jadi sekarang kita punya pertanyaan yang bisa kita tanyakan 
+
+814
+00:42:52,670 --> 00:42:54,160
+ pemecah domain khusus. 
+
+815
+00:42:54,160 --> 00:42:59,700
+ Dalam hal ini hanya pemecah aritmetika linear. 
+
+816
+00:42:59,700 --> 00:43:01,130
+ Jadi kita bisa pergi ke pemecah linear 
+
+817
+00:43:01,130 --> 00:43:04,050
+ dan katakan, hei, jadi klaim SAT pemecah 
+
+818
+00:43:04,050 --> 00:43:06,990
+ bahwa ini adalah tugas yang masuk akal, bahwa jika saya 
+
+819
+00:43:06,990 --> 00:43:08,930
+ dapat membuat tugas itu berfungsi, lalu 
+
+820
+00:43:08,930 --> 00:43:10,890
+ formula saya akan puas. 
+
+821
+00:43:10,890 --> 00:43:17,160
+ Jadi saya bisa pergi dan mengatakan, F1 adalah sebenarnya ini, dan F2 adalah ini, 
+
+822
+00:43:17,160 --> 00:43:18,740
+ dan F3 adalah ini. 
+
+823
+00:43:18,740 --> 00:43:22,290
+ Jadi saya bisa bertanya pada pemecah teori, apakah mungkin untuk mendapatkan x dan ay 
+
+824
+00:43:22,290 --> 00:43:26,030
+ sehingga x lebih besar dari 5, y kurang dari 5, 
+
+825
+00:43:26,030 --> 00:43:28,200
+ dan y lebih besar dari x? 
+
+826
+00:43:28,200 --> 00:43:32,410
+ Benar, jadi sekarang ini adalah pertanyaan murni tentang aritmatika linier. 
+
+827
+00:43:32,410 --> 00:43:36,484
+ Tidak ada logika Boolean yang terlibat. 
+
+828
+00:43:36,484 --> 00:43:37,400
+ Dan apa jawabannya? 
+
+829
+00:43:37,400 --> 00:43:39,960
+
+
+830
+00:43:39,960 --> 00:43:40,460
+ Tidak. 
+
+831
+00:43:40,460 --> 00:43:40,960
+ Kanan? 
+
+832
+00:43:40,960 --> 00:43:44,210
+ Dan ada metode tradisional 
+
+833
+00:43:44,210 --> 00:43:47,960
+ untuk mengatasi masalah-masalah seperti ini. 
+
+834
+00:43:47,960 --> 00:43:50,730
+ Anda bisa menggunakan metode simpleks, misalnya, 
+
+835
+00:43:50,730 --> 00:43:53,570
+ untuk memecahkan sistem ketidaksetaraan linear. 
+
+836
+00:43:53,570 --> 00:43:55,070
+ Ada banyak metode yang bisa Anda lakukan 
+
+837
+00:43:55,070 --> 00:43:57,530
+ gunakan untuk memecahkan sistem ketidaksetaraan linear. 
+
+838
+00:43:57,530 --> 00:44:00,770
+ Intinya adalah pemecah teori tahu tentang semua itu. 
+
+839
+00:44:00,770 --> 00:44:03,630
+ Dan pemecah teori dapat berkata, tidak. 
+
+840
+00:44:03,630 --> 00:44:04,670
+ Ini tidak akan berhasil. 
+
+841
+00:44:04,670 --> 00:44:07,640
+ Ini adalah tugas yang tidak akan berhasil. 
+
+842
+00:44:07,640 --> 00:44:13,510
+ Maka pemecah teori sekarang dapat kembali ke pemecah SAT 
+
+843
+00:44:13,510 --> 00:44:15,740
+ dan bukan hanya memberitahu SAT solver, hei, hal itu 
+
+844
+00:44:15,740 --> 00:44:18,300
+ yang Anda lakukan, itu tidak berhasil. 
+
+845
+00:44:18,300 --> 00:44:20,920
+ Tetapi itu juga bisa memberikan lebih banyak penjelasan. 
+
+846
+00:44:20,920 --> 00:44:24,370
+ Jadi dalam hal ini, apa yang bisa Anda simpulkan dari fakta itu 
+
+847
+00:44:24,370 --> 00:44:26,880
+ ini tidak bekerja adalah yang sebenarnya di samping 
+
+848
+00:44:26,880 --> 00:44:31,360
+ untuk memuaskan formula ini, Anda juga ingin memuaskan fakta 
+
+849
+00:44:31,360 --> 00:44:40,500
+ bahwa saya tidak dapat memiliki F1, dan F2, dan F3, kan? 
+
+850
+00:44:40,500 --> 00:44:42,810
+ Pemecah teori saya mengatakan kepada saya bahwa ketiganya 
+
+851
+00:44:42,810 --> 00:44:44,460
+ semuanya saling eksklusif. 
+
+852
+00:44:44,460 --> 00:44:47,890
+ Saya tidak bisa memuaskan mereka bertiga bersama-sama. 
+
+853
+00:44:47,890 --> 00:44:49,660
+ Dan sekarang itu sepotong informasi 
+
+854
+00:44:49,660 --> 00:44:52,230
+ bahwa saya dapat kembali ke pemecah SAT 
+
+855
+00:44:52,230 --> 00:44:54,320
+ dan minta SAT solver, hei, dapatkah Anda 
+
+856
+00:44:54,320 --> 00:44:57,000
+ beri saya solusi yang memuaskan 
+
+857
+00:44:57,000 --> 00:44:59,440
+ bukan hanya kendala yang Anda miliki di awal, 
+
+858
+00:44:59,440 --> 00:45:03,410
+ tetapi juga kendala baru ini bahwa teori 
+
+859
+00:45:03,410 --> 00:45:05,091
+ solver ditemukan? 
+
+860
+00:45:05,091 --> 00:45:05,590
+ Kanan? 
+
+861
+00:45:05,590 --> 00:45:09,587
+ Jadi sekarang ada beberapa tugas lain yang memenuhi sekarang 
+
+862
+00:45:09,587 --> 00:45:10,670
+ kedua kendala ini? 
+
+863
+00:45:10,670 --> 00:45:18,950
+
+
+864
+00:45:18,950 --> 00:45:21,440
+ AUDIENCE: [TIDAK JELAS]. 
+
+865
+00:45:21,440 --> 00:45:23,070
+ ARMANDO SOLAR-LEZAMA: Ya. 
+
+866
+00:45:23,070 --> 00:45:25,870
+ Jadi ada tugas di mana ini menjadi salah. 
+
+867
+00:45:25,870 --> 00:45:27,415
+ Dan ini menjadi kenyataan. 
+
+868
+00:45:27,415 --> 00:45:29,040
+ Dan itu adalah tugas yang memuaskan 
+
+869
+00:45:29,040 --> 00:45:30,160
+ kendala di atas. 
+
+870
+00:45:30,160 --> 00:45:32,250
+ Ini memenuhi kendala di bagian bawah. 
+
+871
+00:45:32,250 --> 00:45:34,480
+ Dan sekali lagi itu adalah tugas 
+
+872
+00:45:34,480 --> 00:45:37,856
+ yang mengarah ke kendala baru. 
+
+873
+00:45:37,856 --> 00:45:39,230
+ Jadi kendala ini sekarang hilang. 
+
+874
+00:45:39,230 --> 00:45:40,900
+ Kami tidak peduli lagi. 
+
+875
+00:45:40,900 --> 00:45:44,790
+ Kami memiliki kendala baru yang dapat kami tanyakan kepada pemecah teori kami, hei, 
+
+876
+00:45:44,790 --> 00:45:46,520
+ apakah ini mungkin? 
+
+877
+00:45:46,520 --> 00:45:48,870
+ Dan dalam hal ini pemecah teori berkata, ya. 
+
+878
+00:45:48,870 --> 00:45:50,310
+ Itu sebenarnya mungkin. 
+
+879
+00:45:50,310 --> 00:45:57,630
+ Anda dapat membuat y sama dengan 3 dan x sama dengan 6. 
+
+880
+00:45:57,630 --> 00:45:59,100
+ Dan itu berhasil. 
+
+881
+00:45:59,100 --> 00:45:59,600
+ Kanan? 
+
+882
+00:45:59,600 --> 00:46:02,820
+ Dan sekarang Anda memiliki tugas 
+
+883
+00:46:02,820 --> 00:46:07,150
+ yang memenuhi rumus dalam teori 
+
+884
+00:46:07,150 --> 00:46:11,127
+ dan itu memenuhi struktur Boolean 
+
+885
+00:46:11,127 --> 00:46:12,085
+ di balik tugas ini. 
+
+886
+00:46:12,085 --> 00:46:15,240
+ Dan dengan itu sistem dapat kembali dan memberi tahu Anda, ya. 
+
+887
+00:46:15,240 --> 00:46:19,660
+ Ini adalah tugas yang memenuhi semua batasan Anda. 
+
+888
+00:46:19,660 --> 00:46:21,870
+ Dan jadi interaksi ini bolak-balik 
+
+889
+00:46:21,870 --> 00:46:25,660
+ antara pemecah teori dan pemecah SAT. 
+
+890
+00:46:25,660 --> 00:46:27,610
+ Dan benar-benar kemampuan untuk bisa bernalar 
+
+891
+00:46:27,610 --> 00:46:31,440
+ tentang formula Boolean yang sangat, sangat besar dan sangat rumit. 
+
+892
+00:46:31,440 --> 00:46:36,990
+ Itulah yang memungkinkan eksekusi simbolik. 
+
+893
+00:46:36,990 --> 00:46:41,910
+ Jadi sekarang kita memiliki pertanyaan berikutnya adalah, 
+
+894
+00:46:41,910 --> 00:46:52,620
+ jadi bagaimana kita beralih dari program ke kendala 
+
+895
+00:46:52,620 --> 00:46:54,090
+ yang bisa kita berikan kepada pemecah SMT? 
+
+896
+00:46:54,090 --> 00:46:54,630
+ Iya nih? 
+
+897
+00:46:54,630 --> 00:46:56,000
+ AUDIENCE: Maaf untuk kembali. 
+
+898
+00:46:56,000 --> 00:46:57,125
+ ARMANDO SOLAR-LEZAMA: Tentu. 
+
+899
+00:46:57,125 --> 00:46:58,622
+ AUDIENCE: [TIDAK JELAS] sebelumnya. 
+
+900
+00:46:58,622 --> 00:47:05,608
+ Tapi bisakah Anda menjalankan saya lagi seluruh masalah membangun 
+
+901
+00:47:05,608 --> 00:47:07,105
+ pernyataan SMT? 
+
+902
+00:47:07,105 --> 00:47:10,620
+ Apakah ini NP-complete atau tidak? [TIDAK JELAS]. 
+
+903
+00:47:10,620 --> 00:47:12,670
+ ARMANDO SOLAR-LEZAMA: Jadi masalahnya 
+
+904
+00:47:12,670 --> 00:47:15,190
+ bahwa pemecah SMT sedang memecahkan, 
+
+905
+00:47:15,190 --> 00:47:20,180
+ itu adalah masalah NP-lengkap dalam kasus-kasus terbaik. 
+
+906
+00:47:20,180 --> 00:47:24,270
+ Jadi SAT itu sendiri adalah masalah kanonik NP-lengkap, 
+
+907
+00:47:24,270 --> 00:47:28,630
+ tetapi banyak pemecah hari ini bahkan termasuk dukungan 
+
+908
+00:47:28,630 --> 00:47:34,590
+ untuk beberapa teori yang tidak bisa dipungkiri. 
+
+909
+00:47:34,590 --> 00:47:35,270
+ Begitu-- 
+
+910
+00:47:35,270 --> 00:47:39,050
+ AUDIENCE: Jadi bagaimana Anda mendekati itu di sistem Anda? 
+
+911
+00:47:39,050 --> 00:47:42,840
+ ARMANDO SOLAR-LEZAMA: Ya, pada akhirnya apa yang Anda dapatkan 
+
+912
+00:47:42,840 --> 00:47:48,590
+ Anda akan membuat kendala dari program ini. 
+
+913
+00:47:48,590 --> 00:47:51,890
+ Anda akan memberikannya kepada pemecah SMT. 
+
+914
+00:47:51,890 --> 00:47:54,120
+ Dan fakta bahwa ini adalah masalah NP-lengkap, 
+
+915
+00:47:54,120 --> 00:47:56,630
+ atau fakta bahwa mereka tidak puas, apa artinya 
+
+916
+00:47:56,630 --> 00:48:03,570
+ adalah jika Anda beruntung, Anda akan mendapat jawaban dalam hitungan detik. 
+
+917
+00:48:03,570 --> 00:48:06,770
+ Dan jika Anda tidak beruntung, maka itu mungkin 
+
+918
+00:48:06,770 --> 00:48:09,670
+ memakan waktu lebih lama dari usia alam semesta untuk benda itu 
+
+919
+00:48:09,670 --> 00:48:11,009
+ untuk memberi Anda jawaban. 
+
+920
+00:48:11,009 --> 00:48:11,550
+ AUDIENCE: OK. 
+
+921
+00:48:11,550 --> 00:48:14,841
+ Seberapa sering Anda mengalami kasus di mana sistem Anda saja 
+
+922
+00:48:14,841 --> 00:48:18,746
+ garis-datar dan berkata, maaf, saya hanya tidak bisa memikirkan ini? 
+
+923
+00:48:18,746 --> 00:48:20,560
+ Apakah itu pernah terjadi atau itu hanya-- 
+
+924
+00:48:20,560 --> 00:48:21,070
+ ARMANDO SOLAR-LEZAMA: Ya. 
+
+925
+00:48:21,070 --> 00:48:22,140
+ Ya, itu memang terjadi. 
+
+926
+00:48:22,140 --> 00:48:24,666
+ Dan sebagian besar rekayasa 
+
+927
+00:48:24,666 --> 00:48:27,340
+ alat semacam ini memastikan 
+
+928
+00:48:27,340 --> 00:48:30,420
+ bahwa ini terjadi sesedikit mungkin. 
+
+929
+00:48:30,420 --> 00:48:35,890
+ Dan bagian apa yang membuat ini bekerja sama sekali 
+
+930
+00:48:35,890 --> 00:48:40,530
+ adalah bahwa kita tidak menyelesaikan masalah SAT secara acak. 
+
+931
+00:48:40,530 --> 00:48:44,450
+ Kami tidak memecahkan masalah bit-vektor acak. 
+
+932
+00:48:44,450 --> 00:48:47,390
+ Kami memecahkan masalah yang memiliki struktur tertentu kepada mereka 
+
+933
+00:48:47,390 --> 00:48:50,760
+ bahwa seseorang dapat melihatnya 
+
+934
+00:48:50,760 --> 00:48:53,750
+ dan setidaknya memiliki keyakinan bahwa ini berhasil, bukan? 
+
+935
+00:48:53,750 --> 00:48:57,070
+ Bangun beberapa argumen di kepala mereka mengapa hal ini berhasil. 
+
+936
+00:48:57,070 --> 00:49:00,260
+ Dan apa yang coba dilakukan oleh para pemecah 
+
+937
+00:49:00,260 --> 00:49:02,640
+ pada dasarnya mengeksploitasi struktur itu. 
+
+938
+00:49:02,640 --> 00:49:05,260
+ Dan mengambil keuntungan, misalnya, uraiannya 
+
+939
+00:49:05,260 --> 00:49:08,194
+ yang saya berikan kepada Anda tentang apa yang dilakukan oleh SAT solver secara internal, 
+
+940
+00:49:08,194 --> 00:49:10,110
+ itu mengambil keuntungan dari fakta itu, ya. 
+
+941
+00:49:10,110 --> 00:49:13,390
+ Masalah Anda mungkin memiliki satu juta variabel Boolean, 
+
+942
+00:49:13,390 --> 00:49:15,280
+ tetapi sebenarnya sebagian besar dari variabel-variabel tersebut 
+
+943
+00:49:15,280 --> 00:49:18,430
+ sangat bergantung pada nilai satu sama lain. 
+
+944
+00:49:18,430 --> 00:49:20,990
+ Jadi banyaknya derajat kebebasan dalam masalah 
+
+945
+00:49:20,990 --> 00:49:23,730
+ sebenarnya jauh lebih kecil dari apa yang juta 
+
+946
+00:49:23,730 --> 00:49:24,848
+ variabel akan menyarankan. 
+
+947
+00:49:24,848 --> 00:49:27,056
+ AUDIENCE: Jadi maksud Anda adalah ini bukan ujian 
+
+948
+00:49:27,056 --> 00:49:27,540
+ pertanyaan. 
+
+949
+00:49:27,540 --> 00:49:28,024
+ Ini adalah kehidupan nyata. 
+
+950
+00:49:28,024 --> 00:49:29,476
+ Dan seseorang membangun sistem ini. 
+
+951
+00:49:29,476 --> 00:49:30,444
+ Itu seharusnya bekerja dan masuk akal. 
+
+952
+00:49:30,444 --> 00:49:32,138
+ Jadi itu mungkin tidak akan menjadi satu 
+
+953
+00:49:32,138 --> 00:49:34,292
+ dari teori-teori aneh yang aneh [TIDAK TERDENGAR]. 
+
+954
+00:49:34,292 --> 00:49:35,750
+ ARMANDO SOLAR-LEZAMA: Benar. 
+
+955
+00:49:35,750 --> 00:49:38,780
+
+
+956
+00:49:38,780 --> 00:49:40,760
+ Dan dalam prakteknya apa yang terjadi dan kapan 
+
+957
+00:49:40,760 --> 00:49:43,020
+ Anda menggunakan alat ini adalah hal yang selalu Anda lakukan 
+
+958
+00:49:43,020 --> 00:49:45,180
+ diatur waktu habis. 
+
+959
+00:49:45,180 --> 00:49:49,864
+ Jadi umumnya, apa yang terjadi adalah karena itu eksponensial, 
+
+960
+00:49:49,864 --> 00:49:51,780
+ eksponensial tidak berarti Anda tidak bisa melakukannya. 
+
+961
+00:49:51,780 --> 00:49:54,820
+ Eksponensial hanya berarti ada dinding bata, 
+
+962
+00:49:54,820 --> 00:49:57,700
+ bahwa sebelum hal-hal dinding bata itu akan berhasil, 
+
+963
+00:49:57,700 --> 00:49:59,620
+ dan faktanya, mereka akan bekerja sangat cepat. 
+
+964
+00:49:59,620 --> 00:50:00,120
+ Kanan? 
+
+965
+00:50:00,120 --> 00:50:01,660
+ Karya eksponensial dalam dua cara. 
+
+966
+00:50:01,660 --> 00:50:04,480
+ Ya, ketika kamu keluar maka hal-hal 
+
+967
+00:50:04,480 --> 00:50:06,520
+ tumbuh sangat cepat, tetapi kapan 
+
+968
+00:50:06,520 --> 00:50:09,980
+ Anda akan menuju masalah yang lebih kecil, atau masalah yang lebih sederhana 
+
+969
+00:50:09,980 --> 00:50:12,490
+ segala sesuatunya juga semakin cepat, sangat cepat. 
+
+970
+00:50:12,490 --> 00:50:17,120
+ Jadi secara umum apa itu artinya banyak masalah 
+
+971
+00:50:17,120 --> 00:50:19,190
+ selesai dengan sangat, sangat cepat. 
+
+972
+00:50:19,190 --> 00:50:21,350
+ Dan kemudian beberapa masalah waktu habis. 
+
+973
+00:50:21,350 --> 00:50:24,630
+ Dan kuncinya adalah untuk merekayasa hal-hal sedemikian rupa 
+
+974
+00:50:24,630 --> 00:50:28,990
+ bahwa di antara masalah yang selesai dengan cepat sebenarnya 
+
+975
+00:50:28,990 --> 00:50:30,960
+ masalah penggunaan praktis. 
+
+976
+00:50:30,960 --> 00:50:33,410
+ Atau masalah yang sebenarnya akan mengarahkan Anda 
+
+977
+00:50:33,410 --> 00:50:35,450
+ untuk kerentanan keamanan di sistem Anda, 
+
+978
+00:50:35,450 --> 00:50:39,560
+ akan mengarahkan Anda ke bug, akan mengarahkan Anda ke jalur 
+
+979
+00:50:39,560 --> 00:50:41,390
+ yang mungkin belum pernah Anda eksplorasi sebelumnya, 
+
+980
+00:50:41,390 --> 00:50:43,560
+ atau masukan yang akan membawa Anda ke jalur yang Anda 
+
+981
+00:50:43,560 --> 00:50:45,432
+ belum dieksplorasi sebelumnya. 
+
+982
+00:50:45,432 --> 00:50:46,207
+ AUDIENCE: Terima kasih. 
+
+983
+00:50:46,207 --> 00:50:47,790
+ ARMANDO SOLAR-LEZAMA: Pertanyaan lain? 
+
+984
+00:50:47,790 --> 00:50:52,550
+
+
+985
+00:50:52,550 --> 00:50:53,460
+ Baiklah. 
+
+986
+00:50:53,460 --> 00:50:57,750
+ Jadi kita tahu cara beralih dari formula, 
+
+987
+00:50:57,750 --> 00:51:01,690
+ dari serangkaian kendala, hingga jawaban yang akan mengatakan, 
+
+988
+00:51:01,690 --> 00:51:03,170
+ ya, formula ini punya solusi. 
+
+989
+00:51:03,170 --> 00:51:08,060
+ Dan inilah solusi, atau tidak, formula ini tidak memuaskan. 
+
+990
+00:51:08,060 --> 00:51:10,950
+ Tidak ada masukan yang memenuhi ini. 
+
+991
+00:51:10,950 --> 00:51:15,310
+ Jadi sekarang bagaimana kita mendapatkan formula dari sebuah program? 
+
+992
+00:51:15,310 --> 00:51:18,970
+ Jadi salah satu hal yang Anda miliki 
+
+993
+00:51:18,970 --> 00:51:20,730
+ ketika Anda melakukan eksekusi simbolis 
+
+994
+00:51:20,730 --> 00:51:23,035
+ adalah ketika Anda sampai ke cabang dan Anda 
+
+995
+00:51:23,035 --> 00:51:26,600
+ tidak tahu ke arah mana cabang akan pergi. 
+
+996
+00:51:26,600 --> 00:51:30,660
+ Sekarang ada dua kemungkinan yang dapat Anda lakukan dalam kasus itu. 
+
+997
+00:51:30,660 --> 00:51:35,040
+ Salah satunya adalah melakukan apa yang kita lakukan pada contoh awal, yaitu adil 
+
+998
+00:51:35,040 --> 00:51:37,960
+ untuk mengatakan, saya akan mengambil kedua cabang pada saat yang bersamaan. 
+
+999
+00:51:37,960 --> 00:51:40,790
+ Saya akan mengumpulkan apa yang terjadi di cabang mode, 
+
+1000
+00:51:40,790 --> 00:51:42,270
+ bergabung di bagian akhir. 
+
+1001
+00:51:42,270 --> 00:51:46,100
+ Itu adalah strategi yang sering digunakan 
+
+1002
+00:51:46,100 --> 00:51:50,710
+ ketika Anda mencoba mendapatkan jaminan yang sangat kuat secara umum. 
+
+1003
+00:51:50,710 --> 00:51:54,080
+ Tapi itu strategi yang tidak berjalan dengan baik 
+
+1004
+00:51:54,080 --> 00:51:56,060
+ dengan pemecah modern dan SMT. 
+
+1005
+00:51:56,060 --> 00:52:02,674
+ Jadi seringkali orang lebih suka melakukan satu jalur pada saat eksplorasi. 
+
+1006
+00:52:02,674 --> 00:52:04,090
+ Dan apa artinya itu adalah kamu 
+
+1007
+00:52:04,090 --> 00:52:06,730
+ akan memilih jalan ke program Anda. 
+
+1008
+00:52:06,730 --> 00:52:10,420
+ Dan kemudian Anda akan membuat rumus untuk jalur itu. 
+
+1009
+00:52:10,420 --> 00:52:13,800
+ Jadi Anda akan bertanya, berikan saya masukan yang turun 
+
+1010
+00:52:13,800 --> 00:52:18,640
+ jalan ini dan itu memenuhi kendala saya, 
+
+1011
+00:52:18,640 --> 00:52:21,880
+ atau yang melanggar hartaku, itu 
+
+1012
+00:52:21,880 --> 00:52:26,370
+ keluar dari batas di buffer saya, atau yang menyebabkan pointer null 
+
+1013
+00:52:26,370 --> 00:52:27,840
+ kesalahan. 
+
+1014
+00:52:27,840 --> 00:52:29,860
+ Dan kemudian jika Anda tidak dapat menemukannya 
+
+1015
+00:52:29,860 --> 00:52:32,020
+ Anda mencoba jalur yang berbeda dan jalur yang berbeda. 
+
+1016
+00:52:32,020 --> 00:52:38,260
+ Dan Anda melakukan penjelajahan jalan ini satu per satu. 
+
+1017
+00:52:38,260 --> 00:52:42,000
+ Jadi itulah strategi yang akan kita bicarakan sekarang. 
+
+1018
+00:52:42,000 --> 00:52:44,900
+ Ini sedikit lebih mudah untuk menggambarkan cara melakukannya. 
+
+1019
+00:52:44,900 --> 00:52:49,440
+ Jadi katakanlah kita memiliki masalah seperti ini. 
+
+1020
+00:52:49,440 --> 00:52:51,690
+ Jadi, omong-omong, saya beralih representasi. 
+
+1021
+00:52:51,690 --> 00:52:54,170
+ Jadi saya tidak mewakili program sebagai blok kode 
+
+1022
+00:52:54,170 --> 00:52:58,220
+ dan mewakilinya sebagai grafik aliran kontrol. 
+
+1023
+00:52:58,220 --> 00:53:00,610
+ Apakah semua orang di sini akrab dengan grafik aliran kontrol? 
+
+1024
+00:53:00,610 --> 00:53:03,930
+ Atau ada orang di sini yang tidak akrab dengan grafik aliran kontrol? 
+
+1025
+00:53:03,930 --> 00:53:05,790
+ Itu hanya representasi dari program itu 
+
+1026
+00:53:05,790 --> 00:53:08,940
+ membuat cabang lebih eksplisit. 
+
+1027
+00:53:08,940 --> 00:53:11,420
+ Jadi mari kita pilih jalan. 
+
+1028
+00:53:11,420 --> 00:53:13,940
+
+
+1029
+00:53:13,940 --> 00:53:17,610
+ Dan katakanlah kita peduli tentang jalan ini, benar, 
+
+1030
+00:53:17,610 --> 00:53:19,790
+ jalur yang dimulai dari awal 
+
+1031
+00:53:19,790 --> 00:53:23,310
+ dan membawa kita sampai ke titik di mana 
+
+1032
+00:53:23,310 --> 00:53:27,090
+ kami menegaskan salah. 
+
+1033
+00:53:27,090 --> 00:53:29,780
+ Dan kami ingin tahu, apakah jalan ini layak? 
+
+1034
+00:53:29,780 --> 00:53:32,990
+ Mungkinkah program ini berjalan di jalur ini? 
+
+1035
+00:53:32,990 --> 00:53:35,800
+ Jadi saat kita turun program ini 
+
+1036
+00:53:35,800 --> 00:53:37,660
+ kita akan menyimpan dua hal. 
+
+1037
+00:53:37,660 --> 00:53:42,070
+
+
+1038
+00:53:42,070 --> 00:53:43,870
+ Kami akan menjaga lingkungan itu 
+
+1039
+00:53:43,870 --> 00:53:46,830
+ melacak nilai-nilai simbolis 
+
+1040
+00:53:46,830 --> 00:53:48,580
+ dari berbagai variabel. 
+
+1041
+00:53:48,580 --> 00:53:52,700
+ Dan selain itu, kita akan tetap di sini 
+
+1042
+00:53:52,700 --> 00:53:54,710
+ lingkungan untuk kendala. 
+
+1043
+00:53:54,710 --> 00:54:04,109
+
+
+1044
+00:54:04,109 --> 00:54:05,650
+ Dan kendala ini pada dasarnya 
+
+1045
+00:54:05,650 --> 00:54:08,150
+ akan melacak semua hubungan 
+
+1046
+00:54:08,150 --> 00:54:12,000
+ antara variabel-variabel ini serta asumsi apa pun, 
+
+1047
+00:54:12,000 --> 00:54:13,480
+ apakah itu asumsi-asumsi itu 
+
+1048
+00:54:13,480 --> 00:54:15,830
+ dibuat di awal, atau asumsi 
+
+1049
+00:54:15,830 --> 00:54:18,320
+ yang berasal dari cabang-cabang yang Anda ambil. 
+
+1050
+00:54:18,320 --> 00:54:21,350
+ Jadi dalam hal ini, ketika kita memulai jalur ini 
+
+1051
+00:54:21,350 --> 00:54:29,490
+ kita harus sama dengan 0, jadi status kita adalah x, y, dan 0. 
+
+1052
+00:54:29,490 --> 00:54:31,090
+ Dan sejauh ini kami tidak memiliki kendala 
+
+1053
+00:54:31,090 --> 00:54:35,290
+ karena kami tidak punya kendala di awal. 
+
+1054
+00:54:35,290 --> 00:54:39,224
+ Jadi sekarang kita akan mengambil cabang ini 
+
+1055
+00:54:39,224 --> 00:54:41,390
+ dan, sekali lagi, karena kami telah membuat keputusan bahwa kami 
+
+1056
+00:54:41,390 --> 00:54:45,950
+ akan pergi ke jalan ke kanan Anda, 
+
+1057
+00:54:45,950 --> 00:54:51,358
+ maka kita tahu bahwa jalan ini hanya akan terjadi kapan? 
+
+1058
+00:54:51,358 --> 00:54:56,506
+
+
+1059
+00:54:56,506 --> 00:54:57,450
+ AUDIENCE: [TIDAK JELAS]. 
+
+1060
+00:54:57,450 --> 00:54:58,908
+ ARMANDO SOLAR-LEZAMA: Benar. 
+
+1061
+00:54:58,908 --> 00:55:04,970
+ Jadi kita mendapatkan kendala pertama kami yang mengatakan, x lebih besar dari y. 
+
+1062
+00:55:04,970 --> 00:55:05,470
+ Kanan? 
+
+1063
+00:55:05,470 --> 00:55:13,410
+ Jadi sekarang di sini kita melihat sama dengan y. 
+
+1064
+00:55:13,410 --> 00:55:16,510
+ Sekarang dalam hal ini karena kita hanya akan berjalan satu jalur pada satu waktu 
+
+1065
+00:55:16,510 --> 00:55:19,850
+ kita sebenarnya tidak perlu memperkenalkan variabel baru untuk t 
+
+1066
+00:55:19,850 --> 00:55:20,520
+ perlu. 
+
+1067
+00:55:20,520 --> 00:55:22,340
+ Kami hanya bisa mengatakan, oke. 
+
+1068
+00:55:22,340 --> 00:55:23,750
+ t sama dengan y. 
+
+1069
+00:55:23,750 --> 00:55:27,640
+ Jadi itu berarti t tidak lagi 0. 
+
+1070
+00:55:27,640 --> 00:55:31,130
+ Sekarang y. 
+
+1071
+00:55:31,130 --> 00:55:31,740
+ Kanan? 
+
+1072
+00:55:31,740 --> 00:55:32,840
+ Dan kemudian lanjutkan. 
+
+1073
+00:55:32,840 --> 00:55:34,860
+ Kami sampai pada titik ini. 
+
+1074
+00:55:34,860 --> 00:55:37,990
+ Sekarang kami menekan cabang lain. 
+
+1075
+00:55:37,990 --> 00:55:39,490
+ Apa asumsi baru yang kita miliki 
+
+1076
+00:55:39,490 --> 00:55:41,740
+ untuk membuat jika kita mengasumsikan bahwa kita turun di jalur ini? 
+
+1077
+00:55:41,740 --> 00:55:49,340
+
+
+1078
+00:55:49,340 --> 00:55:51,410
+ Hanya kurang dari y, kan? 
+
+1079
+00:55:51,410 --> 00:55:52,880
+ Dan apa itu t? 
+
+1080
+00:55:52,880 --> 00:55:56,340
+
+
+1081
+00:55:56,340 --> 00:55:57,120
+ Kanan. 
+
+1082
+00:55:57,120 --> 00:56:00,840
+ Jadi sebenarnya kalau kita mencari t, jadi t punya nilai y. 
+
+1083
+00:56:00,840 --> 00:56:01,916
+ Kami mencari y. 
+
+1084
+00:56:01,916 --> 00:56:03,300
+ y juga memiliki nilai y. 
+
+1085
+00:56:03,300 --> 00:56:09,290
+ Jadi kendala ini sebenarnya diterjemahkan menjadi y kurang dari y. 
+
+1086
+00:56:09,290 --> 00:56:11,320
+ jadi apa maksud dari ini? 
+
+1087
+00:56:11,320 --> 00:56:16,750
+ Ini memberitahu kita bahwa untuk mencapai titik ini, 
+
+1088
+00:56:16,750 --> 00:56:20,280
+ untuk membuatnya menegaskan, semua itu 
+
+1089
+00:56:20,280 --> 00:56:21,340
+ harus memegang. 
+
+1090
+00:56:21,340 --> 00:56:22,730
+ Bisakah mereka memegangnya? 
+
+1091
+00:56:22,730 --> 00:56:23,920
+ Jelas tidak. 
+
+1092
+00:56:23,920 --> 00:56:24,670
+ Kanan? 
+
+1093
+00:56:24,670 --> 00:56:28,350
+ y kurang dari y sendiri sudah cukup untuk hal-hal 
+
+1094
+00:56:28,350 --> 00:56:29,550
+ tidak tahan. 
+
+1095
+00:56:29,550 --> 00:56:35,980
+ Dan itu memberitahu kita segera bahwa ini tidak memuaskan. 
+
+1096
+00:56:35,980 --> 00:56:39,940
+ Dan ini sering dikenal sebagai kondisi jalan. 
+
+1097
+00:56:39,940 --> 00:56:42,030
+ Ini adalah kondisi yang harus terjadi 
+
+1098
+00:56:42,030 --> 00:56:47,020
+ benar agar program turun jalan itu. 
+
+1099
+00:56:47,020 --> 00:56:51,630
+ Jadi kita tahu bahwa kondisi jalan ini tidak dapat dipenuhi. 
+
+1100
+00:56:51,630 --> 00:56:54,650
+ Dan karena itu, itu tidak mungkin untuk program ini 
+
+1101
+00:56:54,650 --> 00:56:55,970
+ untuk mengambil jalan ini. 
+
+1102
+00:56:55,970 --> 00:57:01,480
+ Jadi jalan ini sekarang sepenuhnya dihilangkan. 
+
+1103
+00:57:01,480 --> 00:57:05,680
+ Kami tahu bahwa jalan ini tidak dapat diambil. 
+
+1104
+00:57:05,680 --> 00:57:08,640
+ Dan, faktanya, jadi kendala ini kami 
+
+1105
+00:57:08,640 --> 00:57:13,650
+ sebenarnya hanya akan menjaga mereka sebagai kondisi itu sendiri. 
+
+1106
+00:57:13,650 --> 00:57:14,150
+ Baiklah? 
+
+1107
+00:57:14,150 --> 00:57:17,860
+ Jadi bagaimana dengan jalan yang berbeda? 
+
+1108
+00:57:17,860 --> 00:57:21,840
+ Jadi sekarang kami mencoba jalur ini. 
+
+1109
+00:57:21,840 --> 00:57:24,830
+
+
+1110
+00:57:24,830 --> 00:57:29,140
+ Jadi apa yang akan menjadi kondisi jalan untuk ini? 
+
+1111
+00:57:29,140 --> 00:57:35,920
+ Jadi, sekali lagi, negara simbolik kita dimulai dengan t sama dengan 0, 
+
+1112
+00:57:35,920 --> 00:57:39,270
+ dan x dan y sama dengan hanya variabel x dan y. 
+
+1113
+00:57:39,270 --> 00:57:43,060
+ Dan sekarang bagaimana batasan jalannya 
+
+1114
+00:57:43,060 --> 00:57:44,610
+ terlihat seperti dalam kasus ini? 
+
+1115
+00:57:44,610 --> 00:57:48,115
+ Jadi pada saat kita tiba di sini bagaimana kondisi jalan terlihat 
+
+1116
+00:57:48,115 --> 00:57:48,615
+ seperti? 
+
+1117
+00:57:48,615 --> 00:57:50,984
+
+
+1118
+00:57:50,984 --> 00:57:51,900
+ AUDIENCE: [TIDAK JELAS]. 
+
+1119
+00:57:51,900 --> 00:57:53,818
+
+
+1120
+00:57:53,818 --> 00:57:54,984
+ ARMANDO SOLAR LEZAMA: Benar. 
+
+1121
+00:57:54,984 --> 00:57:59,860
+ Jadi dalam hal ini [TIDAK JELAS] ini benar dan ini salah. 
+
+1122
+00:57:59,860 --> 00:58:02,590
+ Jadi dalam hal ini dikatakan, OK. x lebih besar dari y. 
+
+1123
+00:58:02,590 --> 00:58:06,010
+
+
+1124
+00:58:06,010 --> 00:58:10,900
+ Dan kami menetapkan t sama dengan x. 
+
+1125
+00:58:10,900 --> 00:58:21,290
+ Jadi ketika kita sampai di sini kita memiliki x kurang dari y. 
+
+1126
+00:58:21,290 --> 00:58:21,790
+ Kanan? 
+
+1127
+00:58:21,790 --> 00:58:24,830
+ Dan sekali lagi sangat jelas bahwa kondisi jalan ini 
+
+1128
+00:58:24,830 --> 00:58:26,940
+ tidak memuaskan. 
+
+1129
+00:58:26,940 --> 00:58:27,440
+ Kanan? 
+
+1130
+00:58:27,440 --> 00:58:30,960
+ Kita tidak dapat memiliki x lebih besar dari y dan x kurang dari y pada saat yang sama 
+
+1131
+00:58:30,960 --> 00:58:31,460
+ waktu. 
+
+1132
+00:58:31,460 --> 00:58:33,970
+ Tidak ada tugas untuk x yang akan memuaskan 
+
+1133
+00:58:33,970 --> 00:58:35,360
+ kedua kendala tersebut. 
+
+1134
+00:58:35,360 --> 00:58:38,740
+ Jadi apa yang memberitahu kita adalah, sekali lagi, bahwa jalan yang lain ini juga 
+
+1135
+00:58:38,740 --> 00:58:40,030
+ tidak puas. 
+
+1136
+00:58:40,030 --> 00:58:42,030
+ Dan sekarang pada titik ini kita sudah benar-benar 
+
+1137
+00:58:42,030 --> 00:58:46,280
+ menjelajahi setiap jalur yang mungkin dalam program kami yang dapat membawa kita 
+
+1138
+00:58:46,280 --> 00:58:47,040
+ untuk kondisi ini. 
+
+1139
+00:58:47,040 --> 00:58:50,200
+ Jadi kita benar-benar dapat menetapkan dan mengesahkan 
+
+1140
+00:58:50,200 --> 00:58:56,890
+ bahwa tidak ada jalan yang mungkin yang akan mengarah pada penegasan 
+
+1141
+00:58:56,890 --> 00:58:57,710
+ kegagalan. 
+
+1142
+00:58:57,710 --> 00:58:58,539
+ Iya nih? 
+
+1143
+00:58:58,539 --> 00:59:00,205
+ AUDIENCE: Cara Anda mempresentasikannya, 
+
+1144
+00:59:00,205 --> 00:59:03,995
+ itu membuatnya tampak seolah-olah Anda akan menjelajahi setiap cabang yang mungkin. 
+
+1145
+00:59:03,995 --> 00:59:06,120
+ Maksud saya, salah satu keuntungan dari eksekusi simbolik 
+
+1146
+00:59:06,120 --> 00:59:07,953
+ adalah bahwa Anda mencoba untuk mencegah [tidak terdengar] 
+
+1147
+00:59:07,953 --> 00:59:11,730
+ kebutuhan untuk mengeksplorasi semua kemungkinan [tidak terdengar] eksponensial. 
+
+1148
+00:59:11,730 --> 00:59:13,356
+ Jadi bagaimana Anda menghindari itu di sini? 
+
+1149
+00:59:13,356 --> 00:59:15,730
+ ARMANDO SOLAR-LEZAMA: Itu pertanyaan yang sangat bagus, bukan? 
+
+1150
+00:59:15,730 --> 00:59:18,080
+ Jadi dalam hal ini pada dasarnya apa yang Anda miliki adalah 
+
+1151
+00:59:18,080 --> 00:59:21,160
+ Anda memiliki trade off antara simbolik yang tinggi dan seberapa konkritnya 
+
+1152
+00:59:21,160 --> 00:59:22,101
+ kamu ingin menjadi. 
+
+1153
+00:59:22,101 --> 00:59:22,600
+ Kanan? 
+
+1154
+00:59:22,600 --> 00:59:26,990
+ Jadi dalam hal ini kita tidak simbolis seperti yang pertama kali 
+
+1155
+00:59:26,990 --> 00:59:30,810
+ ketika kami mengunjungi kedua cabang pada saat yang sama, 
+
+1156
+00:59:30,810 --> 00:59:34,460
+ tetapi sebagai gantinya untuk itu kendala kami menjadi sangat, sangat 
+
+1157
+00:59:34,460 --> 00:59:35,221
+ sederhana. 
+
+1158
+00:59:35,221 --> 00:59:35,720
+ Kanan? 
+
+1159
+00:59:35,720 --> 00:59:39,370
+ Jadi jalur individu dengan batasan jalur sangat sederhana, 
+
+1160
+00:59:39,370 --> 00:59:42,050
+ tetapi Anda harus melakukan ini berulang-ulang, dan lebih lagi 
+
+1161
+00:59:42,050 --> 00:59:44,310
+ untuk menjelajahi semua cabang yang berbeda. 
+
+1162
+00:59:44,310 --> 00:59:46,930
+ Dan ada exponentially-- semua jalur yang berbeda. 
+
+1163
+00:59:46,930 --> 00:59:50,580
+ Dan ada banyak jalur secara eksponensial dalam sebuah program. 
+
+1164
+00:59:50,580 --> 00:59:53,110
+ Sekarang ada banyak jalur secara eksponensial, 
+
+1165
+00:59:53,110 --> 00:59:55,540
+ tetapi untuk setiap jalur secara umum, ada 
+
+1166
+00:59:55,540 --> 00:59:58,580
+ juga satu set input besar yang eksponensial 
+
+1167
+00:59:58,580 --> 01:00:00,234
+ yang bisa turun ke jalan itu. 
+
+1168
+01:00:00,234 --> 01:00:02,525
+ Jadi ini sudah memberi Anda keuntungan besar karena sebagai gantinya 
+
+1169
+01:00:02,525 --> 01:00:05,220
+ harus mencoba setiap masukan yang mungkin Anda hanya 
+
+1170
+01:00:05,220 --> 01:00:08,220
+ mencoba setiap jalur yang mungkin. 
+
+1171
+01:00:08,220 --> 01:00:10,430
+ Tapi bisakah kamu melakukan lebih baik? 
+
+1172
+01:00:10,430 --> 01:00:14,370
+ Dan ini adalah salah satu area di mana ada 
+
+1173
+01:00:14,370 --> 01:00:19,040
+ sudah banyak eksperimen di bidang eksekusi simbolik. 
+
+1174
+01:00:19,040 --> 01:00:22,700
+ Ketika Anda melakukan jalan dengan jalan penalaran? 
+
+1175
+01:00:22,700 --> 01:00:26,180
+ Kapan Anda melakukan semua jalur pada saat yang bersamaan? 
+
+1176
+01:00:26,180 --> 01:00:28,550
+ Dan salah satu hal yang Anda lihat, misalnya, 
+
+1177
+01:00:28,550 --> 01:00:31,750
+ dalam [? Clee?] Kertas adalah satu set heuristik, 
+
+1178
+01:00:31,750 --> 01:00:33,550
+ dan satu set strategi yang mereka gunakan 
+
+1179
+01:00:33,550 --> 01:00:35,360
+ untuk membuat pencarian penurut. 
+
+1180
+01:00:35,360 --> 01:00:37,530
+ Misalnya, salah satu hal yang mereka lakukan 
+
+1181
+01:00:37,530 --> 01:00:40,890
+ adalah bahwa mereka menjelajahi jalur demi jalur, 
+
+1182
+01:00:40,890 --> 01:00:43,300
+ tetapi mereka tidak menjelajahi sepenuhnya secara membabi buta. 
+
+1183
+01:00:43,300 --> 01:00:47,960
+ Dan mereka juga memeriksa kondisi jalan 
+
+1184
+01:00:47,960 --> 01:00:49,670
+ setelah setiap langkah. 
+
+1185
+01:00:49,670 --> 01:00:53,480
+ Sehingga, misalnya, jika di sini bukan hanya 
+
+1186
+01:00:53,480 --> 01:01:02,110
+ menyatakan salah, jika ini adalah pohon program yang sangat kompleks, 
+
+1187
+01:01:02,110 --> 01:01:03,440
+ grafik aliran kontrol. 
+
+1188
+01:01:03,440 --> 01:01:07,860
+ Anda tidak menunggu sampai Anda mencapai akhir 
+
+1189
+01:01:07,860 --> 01:01:10,330
+ untuk memeriksa apakah jalannya layak. 
+
+1190
+01:01:10,330 --> 01:01:13,870
+ Saat Anda tiba di sini, Anda tahu bahwa jalan ini tidak memuaskan 
+
+1191
+01:01:13,870 --> 01:01:16,330
+ dan Anda tidak pernah pergi ke arah ini. 
+
+1192
+01:01:16,330 --> 01:01:18,950
+ Anda selalu pergi ke arah lain. 
+
+1193
+01:01:18,950 --> 01:01:24,670
+ Jadi memangkas jalur awal membantu mengurangi banyak hal 
+
+1194
+01:01:24,670 --> 01:01:26,180
+ pada ledakan pengalaman. 
+
+1195
+01:01:26,180 --> 01:01:28,590
+ Dan menjelajahi jalan secara cerdas 
+
+1196
+01:01:28,590 --> 01:01:32,510
+ membantu banyak dalam mencegah meledakkan. 
+
+1197
+01:01:32,510 --> 01:01:35,270
+ Banyak alat praktis yang digunakan saat ini, 
+
+1198
+01:01:35,270 --> 01:01:36,770
+ beberapa hal yang akan mereka lakukan 
+
+1199
+01:01:36,770 --> 01:01:39,710
+ apakah mereka benar-benar akan memulai dengan beberapa pengujian acak 
+
+1200
+01:01:39,710 --> 01:01:42,520
+ untuk mendapatkan serangkaian jalur awal. 
+
+1201
+01:01:42,520 --> 01:01:45,660
+ Dan kemudian mereka akan mulai mencari jalan di lingkungan itu 
+
+1202
+01:01:45,660 --> 01:01:46,900
+ dari jalur itu. 
+
+1203
+01:01:46,900 --> 01:01:50,310
+ Mereka akan mulai mengajukan pertanyaan seperti, hei, eksekusi acak 
+
+1204
+01:01:50,310 --> 01:01:51,430
+ pergi ke cabang ini. 
+
+1205
+01:01:51,430 --> 01:01:52,770
+ Bagaimana jika saya membalik cabang ini? 
+
+1206
+01:01:52,770 --> 01:01:54,130
+ Bagaimana jika saya membalik cabang ini? 
+
+1207
+01:01:54,130 --> 01:01:55,560
+ Bagaimana jika saya membalik cabang ini? 
+
+1208
+01:01:55,560 --> 01:01:57,780
+ Apa yang terjadi di jalur itu? 
+
+1209
+01:01:57,780 --> 01:01:59,750
+ Dapat sangat berguna, misalnya, 
+
+1210
+01:01:59,750 --> 01:02:01,210
+ jika kita memiliki test suite yang bagus. 
+
+1211
+01:02:01,210 --> 01:02:04,220
+ Dan Anda menjalankan rangkaian uji coba dan Anda menemukan, oke, di sana 
+
+1212
+01:02:04,220 --> 01:02:07,200
+ adalah bagian kode ini yang tidak ada di test suite saya 
+
+1213
+01:02:07,200 --> 01:02:08,720
+ dilakukan. 
+
+1214
+01:02:08,720 --> 01:02:12,600
+ Jadi apa yang dapat Anda lakukan adalah Anda dapat mengambil jalur yang paling dekat 
+
+1215
+01:02:12,600 --> 01:02:15,510
+ untuk berolahraga itu, dan kemudian bertanya, hei, 
+
+1216
+01:02:15,510 --> 01:02:19,630
+ dapatkah saya mengubah jalur ini sehingga mengarah ke arah ini 
+
+1217
+01:02:19,630 --> 01:02:20,930
+ sebagai gantinya? 
+
+1218
+01:02:20,930 --> 01:02:25,970
+ Dan secara umum, pada saat Anda 
+
+1219
+01:02:25,970 --> 01:02:28,690
+ coba lakukan semua jalur secara bersamaan 
+
+1220
+01:02:28,690 --> 01:02:31,420
+ kendala mulai menjadi keras kepala. 
+
+1221
+01:02:31,420 --> 01:02:33,910
+ Dan itu adalah hal yang Anda sukai 
+
+1222
+01:02:33,910 --> 01:02:37,250
+ dapat dilakukan jika Anda melakukan satu fungsi dalam satu waktu. 
+
+1223
+01:02:37,250 --> 01:02:39,420
+ Misalnya, jika Anda melakukan satu fungsi dalam satu waktu 
+
+1224
+01:02:39,420 --> 01:02:42,140
+ maka secara umum layak untuk menjelajahi semua jalur 
+
+1225
+01:02:42,140 --> 01:02:43,790
+ dalam fungsi bersama. 
+
+1226
+01:02:43,790 --> 01:02:47,660
+ Jika Anda mencoba melakukan unit yang lebih besar, maka umumnya 
+
+1227
+01:02:47,660 --> 01:02:50,105
+ Anda harus pergi dengan jalan melalui eksplorasi jalan. 
+
+1228
+01:02:50,105 --> 01:02:53,392
+
+
+1229
+01:02:53,392 --> 01:02:54,475
+ Apakah ada pertanyaan lain? 
+
+1230
+01:02:54,475 --> 01:02:56,880
+
+
+1231
+01:02:56,880 --> 01:02:57,380
+ Iya nih? 
+
+1232
+01:02:57,380 --> 01:03:00,302
+ AUDIENCE: Anda mereferensikan bagaimana [TIDAK JELAS]. 
+
+1233
+01:03:00,302 --> 01:03:02,250
+ Bagaimana cara melakukannya lagi? 
+
+1234
+01:03:02,250 --> 01:03:04,920
+ Apa itu [TIDAK JELAS]? 
+
+1235
+01:03:04,920 --> 01:03:08,140
+ ARMANDO SOLAR-LEZAMA: Jadi yang paling penting sebenarnya 
+
+1236
+01:03:08,140 --> 01:03:13,600
+ ide ini untuk setiap cabang, Anda memeriksa kendala Anda 
+
+1237
+01:03:13,600 --> 01:03:17,490
+ untuk memeriksa apakah cabang itu benar-benar dapat berjalan dua arah, 
+
+1238
+01:03:17,490 --> 01:03:23,670
+ karena jika tidak bisa dua arah maka Anda menghemat banyak 
+
+1239
+01:03:23,670 --> 01:03:26,390
+ pergi ke arah ini di mana ia tidak bisa pergi. 
+
+1240
+01:03:26,390 --> 01:03:28,780
+ Di luar itu saya tidak ingat strategi spesifiknya 
+
+1241
+01:03:28,780 --> 01:03:32,220
+ yang mereka gunakan untuk mencari jalan yang lebih banyak 
+
+1242
+01:03:32,220 --> 01:03:34,570
+ cenderung memberikan hasil yang baik. 
+
+1243
+01:03:34,570 --> 01:03:37,760
+
+
+1244
+01:03:37,760 --> 01:03:39,580
+ Tetapi pemangkasan benar-benar penting. 
+
+1245
+01:03:39,580 --> 01:03:43,460
+
+
+1246
+01:03:43,460 --> 01:03:44,930
+ BAIK. 
+
+1247
+01:03:44,930 --> 01:03:48,560
+ Sejauh ini kita banyak berbicara tentang kode mainan 
+
+1248
+01:03:48,560 --> 01:03:53,360
+ dalam arti bahwa itu hanya variabel integer, cabang, 
+
+1249
+01:03:53,360 --> 01:03:54,760
+ hal yang sangat sederhana. 
+
+1250
+01:03:54,760 --> 01:03:55,430
+ Kanan? 
+
+1251
+01:03:55,430 --> 01:03:59,090
+ Apa yang terjadi ketika Anda memiliki program itu 
+
+1252
+01:03:59,090 --> 01:04:01,680
+ lebih rumit? 
+
+1253
+01:04:01,680 --> 01:04:05,790
+ Dan khususnya, apa yang terjadi ketika Anda memiliki program itu 
+
+1254
+01:04:05,790 --> 01:04:08,031
+ melibatkan tumpukan? 
+
+1255
+01:04:08,031 --> 01:04:08,530
+ Kanan? 
+
+1256
+01:04:08,530 --> 01:04:11,580
+ Jadi heap secara historis sudah ada 
+
+1257
+01:04:11,580 --> 01:04:14,080
+ kutukan semua analisis program, analisis 
+
+1258
+01:04:14,080 --> 01:04:18,180
+ yang begitu bersih dan elegan di zaman Fortran, 
+
+1259
+01:04:18,180 --> 01:04:21,230
+ benar-benar meledak ketika Anda mencoba untuk menjalankannya pada program C. 
+
+1260
+01:04:21,230 --> 01:04:23,410
+ di mana Anda mengalokasikan memori kiri dan kanan. 
+
+1261
+01:04:23,410 --> 01:04:25,280
+ Dan Anda memiliki aliasing. 
+
+1262
+01:04:25,280 --> 01:04:28,680
+ Dan Anda memiliki semua kekacauan itu 
+
+1263
+01:04:28,680 --> 01:04:32,410
+ datang dengan berurusan dengan memori yang dialokasikan program. 
+
+1264
+01:04:32,410 --> 01:04:34,660
+ Dan dengan pointer dan pointer aritmatika. 
+
+1265
+01:04:34,660 --> 01:04:37,840
+ Dan ini adalah salah satu bidang di mana eksekusi simbolis benar-benar 
+
+1266
+01:04:37,840 --> 01:04:39,840
+ bersinar dalam kemampuan untuk benar-benar beralasan 
+
+1267
+01:04:39,840 --> 01:04:42,450
+ tentang jenis program ini. 
+
+1268
+01:04:42,450 --> 01:04:44,190
+ jadi bagaimana kita melakukannya? 
+
+1269
+01:04:44,190 --> 01:04:47,640
+ Benar, jadi mari kita lupakan sejenak tentang cabang, 
+
+1270
+01:04:47,640 --> 01:04:48,530
+ dan aliran kontrol. 
+
+1271
+01:04:48,530 --> 01:04:53,080
+ Kami memiliki program sederhana di sini. 
+
+1272
+01:04:53,080 --> 01:04:56,630
+ Yang dilakukannya hanyalah mengalokasikan beberapa memori. 
+
+1273
+01:04:56,630 --> 01:04:58,090
+ Ini memusnahkannya. 
+
+1274
+01:04:58,090 --> 01:05:02,500
+ Ini mendapatkan pointer baru y dari pointer x. 
+
+1275
+01:05:02,500 --> 01:05:04,380
+ Ini menulis sesuatu ke y. 
+
+1276
+01:05:04,380 --> 01:05:08,140
+ Dan kemudian itu memeriksa, hei, adalah nilainya 
+
+1277
+01:05:08,140 --> 01:05:12,070
+ disimpan di pointer y sama dengan nilai yang disimpan di pointer x? 
+
+1278
+01:05:12,070 --> 01:05:14,390
+ Dan hanya dari pengetahuan dasar Anda tentang C 
+
+1279
+01:05:14,390 --> 01:05:16,920
+ Anda bisa melihat itu, tidak. 
+
+1280
+01:05:16,920 --> 01:05:22,081
+ Benar, bahwa pernyataan ini benar-benar dilanggar karena x punya 
+
+1281
+01:05:22,081 --> 01:05:26,570
+ memusatkan perhatian dan y memiliki 25 di sana, 
+
+1282
+01:05:26,570 --> 01:05:30,210
+ tetapi x menunjuk ke lokasi yang berbeda. 
+
+1283
+01:05:30,210 --> 01:05:33,030
+ Kanan? 
+
+1284
+01:05:33,030 --> 01:05:35,000
+ Sejauh ini bagus. 
+
+1285
+01:05:35,000 --> 01:05:37,570
+ Cara kita akan memodelkan tumpukan dan cara 
+
+1286
+01:05:37,570 --> 01:05:41,140
+ heap dimodelkan dalam banyak sistem ini 
+
+1287
+01:05:41,140 --> 01:05:45,070
+ adalah dengan tidak memikirkan heap sebagai heap, 
+
+1288
+01:05:45,070 --> 01:05:48,150
+ tetapi memikirkan panasnya jalan 
+
+1289
+01:05:48,150 --> 01:05:51,840
+ C suka bagi Anda untuk memikirkan tumpukan, yang adil 
+
+1290
+01:05:51,840 --> 01:05:57,500
+ basis alamat raksasa, susunan raksasa tempat Anda dapat meletakkan segala sesuatunya 
+
+1291
+01:05:57,500 --> 01:05:58,640
+ ke. 
+
+1292
+01:05:58,640 --> 01:06:00,800
+ Jadi apa artinya itu? 
+
+1293
+01:06:00,800 --> 01:06:03,340
+ Itu artinya kita bisa memikirkan program kita 
+
+1294
+01:06:03,340 --> 01:06:07,780
+ memiliki array global yang sangat besar ini. 
+
+1295
+01:06:07,780 --> 01:06:10,980
+ Dan kami hanya akan menyebutnya MEM untuk saat ini. 
+
+1296
+01:06:10,980 --> 01:06:11,480
+ Kanan? 
+
+1297
+01:06:11,480 --> 01:06:13,530
+ Dan itu adalah array yang pada dasarnya akan terjadi 
+
+1298
+01:06:13,530 --> 01:06:17,630
+ untuk memetakan alamat ke nilai. 
+
+1299
+01:06:17,630 --> 01:06:18,130
+ Kanan? 
+
+1300
+01:06:18,130 --> 01:06:19,330
+ Dan apa alamatnya? 
+
+1301
+01:06:19,330 --> 01:06:25,710
+ Yah, alamat hanya nilai 64-bit. 
+
+1302
+01:06:25,710 --> 01:06:30,040
+ Dan apa yang terjadi setelah Anda membaca sesuatu dari sebuah alamat? 
+
+1303
+01:06:30,040 --> 01:06:31,750
+ Itu tergantung pada bagaimana Anda memodelkan memori. 
+
+1304
+01:06:31,750 --> 01:06:36,620
+ Jika Anda memodelkannya pada tingkat byte, lalu apa yang keluar 
+
+1305
+01:06:36,620 --> 01:06:37,960
+ adalah sebuah byte. 
+
+1306
+01:06:37,960 --> 01:06:40,460
+ Jika Anda memodelkannya pada tingkat kata itu 
+
+1307
+01:06:40,460 --> 01:06:42,880
+ apa yang keluar dari itu adalah sebuah kata. 
+
+1308
+01:06:42,880 --> 01:06:45,490
+ Dan tergantung pada jenis bug yang Anda minati, 
+
+1309
+01:06:45,490 --> 01:06:47,920
+ dan apakah hal-hal seperti perataan memori 
+
+1310
+01:06:47,920 --> 01:06:49,650
+ masalah bagi Anda tidak, Anda 
+
+1311
+01:06:49,650 --> 01:06:51,441
+ akan memodelkannya sedikit berbeda, 
+
+1312
+01:06:51,441 --> 01:06:53,810
+ tetapi umumnya memori hanya sebuah array 
+
+1313
+01:06:53,810 --> 01:07:00,030
+ dari alamat ke nilai. 
+
+1314
+01:07:00,030 --> 01:07:00,530
+ Kanan? 
+
+1315
+01:07:00,530 --> 01:07:07,260
+ Jadi alamat hanyalah sebuah integer. 
+
+1316
+01:07:07,260 --> 01:07:08,147
+ Kanan? 
+
+1317
+01:07:08,147 --> 01:07:10,230
+ Ini dalam arti tidak berbeda dari jalan 
+
+1318
+01:07:10,230 --> 01:07:11,550
+ C mengira aku alamat. 
+
+1319
+01:07:11,550 --> 01:07:12,870
+ Itu hanya sebuah integer. 
+
+1320
+01:07:12,870 --> 01:07:15,430
+ Itu hanya sebuah nilai. 
+
+1321
+01:07:15,430 --> 01:07:18,740
+ Ini hanya bilangan bulat 64-bit, atau bilangan bulat 32-bit, 
+
+1322
+01:07:18,740 --> 01:07:20,010
+ tergantung pada mesin Anda. 
+
+1323
+01:07:20,010 --> 01:07:22,930
+ Itu hanya nilai yang masuk ke memori itu. 
+
+1324
+01:07:22,930 --> 01:07:24,990
+ Dan Anda bisa memasukkan banyak hal ke dalam memori, 
+
+1325
+01:07:24,990 --> 01:07:27,490
+ baca mereka dari memori. 
+
+1326
+01:07:27,490 --> 01:07:30,860
+ Jadi hal-hal seperti aritmatika pointer 
+
+1327
+01:07:30,860 --> 01:07:33,304
+ hanya menjadi aritmatika bilangan bulat. 
+
+1328
+01:07:33,304 --> 01:07:35,220
+ Dalam prakteknya ada sedikit desugaring 
+
+1329
+01:07:35,220 --> 01:07:43,020
+ itu harus terjadi karena dalam C aritmatika pointer sebenarnya 
+
+1330
+01:07:43,020 --> 01:07:45,290
+ tahu tentang jenis-jenis pointer. 
+
+1331
+01:07:45,290 --> 01:07:50,030
+ Dan hal-hal akan bertambah proporsional dengan ukuran, 
+
+1332
+01:07:50,030 --> 01:07:50,530
+ kanan? 
+
+1333
+01:07:50,530 --> 01:08:00,100
+ Jadi ini sebenarnya adalah x plus 10 kali ukuran int. 
+
+1334
+01:08:00,100 --> 01:08:01,320
+ Kanan? 
+
+1335
+01:08:01,320 --> 01:08:03,440
+ Tapi yang terpenting adalah apa 
+
+1336
+01:08:03,440 --> 01:08:06,610
+ terjadi ketika Anda membaca dan menulis dari memori. 
+
+1337
+01:08:06,610 --> 01:08:11,590
+ Jadi apa yang dulunya hanya referensi penunjuk dari y 
+
+1338
+01:08:11,590 --> 01:08:17,109
+ untuk menulis 25, sekarang hanya aku mengambil array memori saya, 
+
+1339
+01:08:17,109 --> 01:08:19,910
+ dan saya mengindeksnya dengan y. 
+
+1340
+01:08:19,910 --> 01:08:24,590
+ Dan saya menulis 25 ke lokasi memori itu. 
+
+1341
+01:08:24,590 --> 01:08:25,090
+ Kanan? 
+
+1342
+01:08:25,090 --> 01:08:29,020
+ Dan pernyataan ini sekarang menjadi, yah, saya 
+
+1343
+01:08:29,020 --> 01:08:32,430
+ Saya membaca dari lokasi y dalam memori. 
+
+1344
+01:08:32,430 --> 01:08:35,100
+ Dan saya membaca dari lokasi x dalam memori. 
+
+1345
+01:08:35,100 --> 01:08:36,550
+ Dan saya membandingkannya. 
+
+1346
+01:08:36,550 --> 01:08:40,010
+ Dan saya memeriksa apakah mereka sama atau tidak. 
+
+1347
+01:08:40,010 --> 01:08:41,510
+ Ini pengurangan yang sangat, sangat sederhana 
+
+1348
+01:08:41,510 --> 01:08:46,880
+ untuk beralih dari program yang menggunakan heap ke program yang hanya digunakan 
+
+1349
+01:08:46,880 --> 01:08:51,790
+ larik global raksasa ini yang mewakili memori. 
+
+1350
+01:08:51,790 --> 01:08:53,649
+ Dan sekarang apa artinya itu secara berurutan 
+
+1351
+01:08:53,649 --> 01:08:55,764
+ untuk alasan tentang program yang memanipulasi tumpukan 
+
+1352
+01:08:55,764 --> 01:08:57,680
+ Anda tidak harus benar-benar memikirkan tentang program 
+
+1353
+01:08:57,680 --> 01:08:58,720
+ yang memanipulasi tumpukan. 
+
+1354
+01:08:58,720 --> 01:09:01,509
+ Selama Anda memiliki kemampuan untuk berpikir tentang array, 
+
+1355
+01:09:01,510 --> 01:09:02,399
+ kamu baik. 
+
+1356
+01:09:02,399 --> 01:09:04,700
+ Sekarang inilah pertanyaan sederhana. 
+
+1357
+01:09:04,700 --> 01:09:07,430
+ Bagaimana dengan malloc? 
+
+1358
+01:09:07,430 --> 01:09:11,479
+ Jadi satu hal yang dapat Anda lakukan adalah Anda dapat mengatakan, baik, malloc, 
+
+1359
+01:09:11,479 --> 01:09:16,240
+ Saya hanya bisa mengambil implementasi C malloc 
+
+1360
+01:09:16,240 --> 01:09:18,130
+ dan benar-benar menerapkan malloc seperti itu. 
+
+1361
+01:09:18,130 --> 01:09:23,130
+ Dan lacak semua halaman yang telah saya alokasikan 
+
+1362
+01:09:23,130 --> 01:09:26,950
+ dan melacak semua yang telah dibebaskan. 
+
+1363
+01:09:26,950 --> 01:09:29,109
+ Dan simpan daftar gratis, dan semuanya. 
+
+1364
+01:09:29,109 --> 01:09:31,380
+ Ternyata untuk banyak tujuan 
+
+1365
+01:09:31,380 --> 01:09:33,310
+ dan untuk banyak kelas bug, 
+
+1366
+01:09:33,310 --> 01:09:35,185
+ Anda tidak perlu malloc untuk menjadi rumit itu. 
+
+1367
+01:09:35,185 --> 01:09:39,529
+ Bahkan, Anda bisa lolos dengan malloc yang terlihat seperti ini, 
+
+1368
+01:09:39,529 --> 01:09:41,819
+ dengan malloc yang hanya mengatakan, aku 
+
+1369
+01:09:41,819 --> 01:09:49,330
+ akan menyimpan penghitung untuk lokasi memori bebas berikutnya. 
+
+1370
+01:09:49,330 --> 01:09:55,560
+ Dan setiap kali seseorang meminta alamat, 
+
+1371
+01:09:55,560 --> 01:09:57,730
+ alamat itu saya hanya akan memberikan posisi ini 
+
+1372
+01:09:57,730 --> 01:09:59,720
+ dan kemudian menaikkan posisi. 
+
+1373
+01:09:59,720 --> 01:10:00,220
+ Kanan? 
+
+1374
+01:10:00,220 --> 01:10:02,920
+
+
+1375
+01:10:02,920 --> 01:10:04,769
+ Dan kemudian kembali, dalam hal ini. 
+
+1376
+01:10:04,769 --> 01:10:11,626
+
+
+1377
+01:10:11,626 --> 01:10:14,042
+ Jadi salah satu hal yang malloc benar-benar mengabaikan. 
+
+1378
+01:10:14,042 --> 01:10:17,754
+
+
+1379
+01:10:17,754 --> 01:10:18,670
+ AUDIENCE: [TIDAK JELAS]. 
+
+1380
+01:10:18,670 --> 01:10:18,770
+ ARMANDO SOLAR-LEZAMA: Ya. 
+
+1381
+01:10:18,770 --> 01:10:19,670
+ Membebaskan, bukan? 
+
+1382
+01:10:19,670 --> 01:10:21,939
+ Malloc ini mengatakan, ya, lupakan tentang membebaskan. 
+
+1383
+01:10:21,939 --> 01:10:22,730
+ Tidak ada yang membebaskan. 
+
+1384
+01:10:22,730 --> 01:10:26,650
+ Kami hanya akan terus berjalan melalui alokasi memori kami 
+
+1385
+01:10:26,650 --> 01:10:30,880
+ lebih jauh, dan lebih jauh, dan lebih lanjut dan itu saja. 
+
+1386
+01:10:30,880 --> 01:10:34,770
+ Dan kami tidak peduli tentang membebaskan apa pun. 
+
+1387
+01:10:34,770 --> 01:10:36,710
+ Itu juga tidak terlalu peduli dengan fakta 
+
+1388
+01:10:36,710 --> 01:10:39,759
+ dengan baik, sebenarnya, ada wilayah memori di mana 
+
+1389
+01:10:39,759 --> 01:10:40,800
+ Anda seharusnya tidak menulis. 
+
+1390
+01:10:40,800 --> 01:10:42,385
+ Ada alamat khusus yang ada 
+
+1391
+01:10:42,385 --> 01:10:44,960
+ arti khusus yang disediakan untuk operasi 
+
+1392
+01:10:44,960 --> 01:10:45,540
+ sistem. 
+
+1393
+01:10:45,540 --> 01:10:47,560
+ Itu tidak memodelkan apapun 
+
+1394
+01:10:47,560 --> 01:10:50,580
+ yang benar-benar membuat penulisan fungsi malloc yang rumit, 
+
+1395
+01:10:50,580 --> 01:10:54,380
+ tetapi pada tingkat abstraksi tertentu, 
+
+1396
+01:10:54,380 --> 01:10:58,280
+ jika Anda mencoba bernalar tentang beberapa kode rumit itu 
+
+1397
+01:10:58,280 --> 01:10:59,520
+ melakukan manipulasi kursor. 
+
+1398
+01:10:59,520 --> 01:11:02,130
+ Dan Anda tidak peduli tentang membebaskan ingatan, 
+
+1399
+01:11:02,130 --> 01:11:04,600
+ tapi kamu benar-benar peduli, aku 
+
+1400
+01:11:04,600 --> 01:11:08,030
+ akan menulis melewati ujung buffer, misalnya. 
+
+1401
+01:11:08,030 --> 01:11:10,642
+ Maka malloc ini mungkin cukup bagus. 
+
+1402
+01:11:10,642 --> 01:11:12,850
+ Dan ini sebenarnya yang terjadi sangat, sangat umum 
+
+1403
+01:11:12,850 --> 01:11:15,380
+ ketika Anda melakukan eksekusi simbolis kode nyata. 
+
+1404
+01:11:15,380 --> 01:11:19,080
+ Langkah yang sangat penting adalah pemodelan 
+
+1405
+01:11:19,080 --> 01:11:20,750
+ fungsi perpustakaan Anda. 
+
+1406
+01:11:20,750 --> 01:11:22,800
+ Dan bagaimana Anda memodelkan fungsi pustaka Anda 
+
+1407
+01:11:22,800 --> 01:11:25,760
+ akan memiliki dampak besar di satu sisi 
+
+1408
+01:11:25,760 --> 01:11:30,110
+ pada kinerja dan skalabilitas analisis, 
+
+1409
+01:11:30,110 --> 01:11:32,160
+ tetapi di sisi lain, pada ketepatan. 
+
+1410
+01:11:32,160 --> 01:11:35,670
+ Jadi jika Anda memiliki model malloc Mickey Mouse seperti ini, 
+
+1411
+01:11:35,670 --> 01:11:37,930
+ itu akan menjadi sangat, sangat cepat, 
+
+1412
+01:11:37,930 --> 01:11:41,265
+ tetapi akan ada kelas bug tertentu 
+
+1413
+01:11:41,265 --> 01:11:43,060
+ bahwa Anda tidak akan bisa menangkapnya. 
+
+1414
+01:11:43,060 --> 01:11:43,560
+ Kanan? 
+
+1415
+01:11:43,560 --> 01:11:45,630
+ Jadi dan model ini, misalnya, saya sepenuhnya 
+
+1416
+01:11:45,630 --> 01:11:46,840
+ mengabaikan alokasi. 
+
+1417
+01:11:46,840 --> 01:11:48,840
+ Jadi jika saya memiliki bug karena seseorang 
+
+1418
+01:11:48,840 --> 01:11:51,940
+ sedang mengakses ruang yang tidak terisi. 
+
+1419
+01:11:51,940 --> 01:11:56,010
+ Yah, aku tidak akan menemukannya dengan Mickey Mouse ini 
+
+1420
+01:11:56,010 --> 01:11:58,860
+ model malloc. 
+
+1421
+01:11:58,860 --> 01:11:59,660
+ Kanan? 
+
+1422
+01:11:59,660 --> 01:12:04,400
+ Jadi itu selalu keseimbangan antara ketepatan analisis 
+
+1423
+01:12:04,400 --> 01:12:10,400
+ versus efisiensi. 
+
+1424
+01:12:10,400 --> 01:12:14,030
+ Dan semakin rumit model fungsi standar Anda 
+
+1425
+01:12:14,030 --> 01:12:17,010
+ seperti malloc get, yang kurang skalabel 
+
+1426
+01:12:17,010 --> 01:12:20,230
+ analisis akan menjadi, tetapi untuk kelas-kelas tertentu dari bug 
+
+1427
+01:12:20,230 --> 01:12:22,150
+ Anda akan membutuhkan model-model itu. 
+
+1428
+01:12:22,150 --> 01:12:25,510
+ Dan salah satu hal besar di [? Clee?] Kertas 
+
+1429
+01:12:25,510 --> 01:12:27,830
+ benar-benar memiliki model yang masuk akal 
+
+1430
+01:12:27,830 --> 01:12:31,440
+ untuk semua pustaka yang berbeda di C, 
+
+1431
+01:12:31,440 --> 01:12:32,940
+ semua pustaka yang berbeda 
+
+1432
+01:12:32,940 --> 01:12:35,350
+ diperlukan untuk memahami apa program sebenarnya 
+
+1433
+01:12:35,350 --> 01:12:35,850
+ perbuatan. 
+
+1434
+01:12:35,850 --> 01:12:39,090
+
+
+1435
+01:12:39,090 --> 01:12:40,177
+ Jadi ok. 
+
+1436
+01:12:40,177 --> 01:12:42,510
+ Jadi kami mengurangi masalah penalaran tentang heap 
+
+1437
+01:12:42,510 --> 01:12:47,220
+ masalah penalaran tentang program dengan array, 
+
+1438
+01:12:47,220 --> 01:12:50,910
+ tapi aku belum benar-benar memberitahumu bagaimana bernalar 
+
+1439
+01:12:50,910 --> 01:12:52,270
+ tentang program dengan array. 
+
+1440
+01:12:52,270 --> 01:12:55,390
+ Dan ternyata sebagian besar pemecah SMT 
+
+1441
+01:12:55,390 --> 01:12:58,060
+ mendukung teori array. 
+
+1442
+01:12:58,060 --> 01:13:01,826
+ Dan idenya adalah jika sebuah array, 
+
+1443
+01:13:01,826 --> 01:13:03,950
+ ada beberapa notasi untuk dikatakan, yah, ambil array itu 
+
+1444
+01:13:03,950 --> 01:13:07,070
+ dan buat larik baru di lokasi saya 
+
+1445
+01:13:07,070 --> 01:13:10,571
+ telah diperbarui ke nilai e. 
+
+1446
+01:13:10,571 --> 01:13:11,070
+ Baiklah? 
+
+1447
+01:13:11,070 --> 01:13:14,820
+ Jadi jika saya memiliki array dan saya melakukan operasi pembaruan ini, 
+
+1448
+01:13:14,820 --> 01:13:17,340
+ dan kemudian saya mencoba membaca nilai k, 
+
+1449
+01:13:17,340 --> 01:13:20,180
+ maka artinya adalah nilai k 
+
+1450
+01:13:20,180 --> 01:13:22,370
+ akan sama dengan nilai k 
+
+1451
+01:13:22,370 --> 01:13:25,330
+ pada jika k berbeda dari i. 
+
+1452
+01:13:25,330 --> 01:13:29,350
+ Dan itu akan sama dengan e jika k sama dengan saya, kan? 
+
+1453
+01:13:29,350 --> 01:13:31,290
+ Itulah yang memperbarui sarana array. 
+
+1454
+01:13:31,290 --> 01:13:33,890
+ Itulah artinya mengambil array lama 
+
+1455
+01:13:33,890 --> 01:13:35,583
+ dan perbarui untuk menjadi larik baru. 
+
+1456
+01:13:35,583 --> 01:13:40,320
+
+
+1457
+01:13:40,320 --> 01:13:44,780
+ Dan hal yang baik tentang ini adalah jika Anda memiliki formula itu 
+
+1458
+01:13:44,780 --> 01:13:47,780
+ melibatkan teori array, jadi, misalnya, 
+
+1459
+01:13:47,780 --> 01:13:51,850
+ Saya mulai dengan nol array yang hanya nol di mana-mana. 
+
+1460
+01:13:51,850 --> 01:13:59,210
+ Dan kemudian saya menulis 5 ke lokasi i, dan 7 ke lokasi j. 
+
+1461
+01:13:59,210 --> 01:14:00,850
+ Dan kemudian saya membaca dari k. 
+
+1462
+01:14:00,850 --> 01:14:04,680
+ Dan kemudian saya memeriksa apakah itu sama dengan 5 atau tidak. 
+
+1463
+01:14:04,680 --> 01:14:10,110
+ Maka itu dapat diperluas dengan menggunakan definisi ini 
+
+1464
+01:14:10,110 --> 01:14:14,450
+ untuk sesuatu yang mengatakan, baik, jika k sama dengan i 
+
+1465
+01:14:14,450 --> 01:14:19,290
+ maka jika k sama dengan y, dan k berbeda dari j, 
+
+1466
+01:14:19,290 --> 01:14:21,650
+ maka, ya, ini akan sama dengan 5. 
+
+1467
+01:14:21,650 --> 01:14:24,570
+
+
+1468
+01:14:24,570 --> 01:14:30,640
+ Dan jika tidak, ini tidak akan sama dengan 5, kan? 
+
+1469
+01:14:30,640 --> 01:14:33,850
+ Dan dalam prakteknya pemecah SMT tidak hanya memperluas ini 
+
+1470
+01:14:33,850 --> 01:14:36,290
+ menjadi banyak rumus Boolean. 
+
+1471
+01:14:36,290 --> 01:14:37,950
+ Mereka, sekali lagi, menggunakan ini bolak-balik 
+
+1472
+01:14:37,950 --> 01:14:41,200
+ strategi antara pemecah SAT dan mesin 
+
+1473
+01:14:41,200 --> 01:14:45,380
+ yang mampu menjelaskan tentang teori susunan ini secara berurutan 
+
+1474
+01:14:45,380 --> 01:14:46,020
+ untuk melakukannya. 
+
+1475
+01:14:46,020 --> 01:14:48,060
+ Tetapi yang penting adalah dengan mengandalkan 
+
+1476
+01:14:48,060 --> 01:14:51,680
+ pada teori array ini, menggunakan strategi yang sama kita 
+
+1477
+01:14:51,680 --> 01:15:00,050
+ melihat untuk menghasilkan rumus untuk bilangan bulat Anda dapat benar-benar 
+
+1478
+01:15:00,050 --> 01:15:03,990
+ menghasilkan rumus yang melibatkan logika larik, 
+
+1479
+01:15:03,990 --> 01:15:08,720
+ dan melibatkan pembaruan susunan, yang melibatkan sumbu array, 
+
+1480
+01:15:08,720 --> 01:15:16,730
+ melibatkan iterasi melalui array selama Anda memperbaiki jalur Anda, 
+
+1481
+01:15:16,730 --> 01:15:21,000
+ formula ini sangat mudah dibuat. 
+
+1482
+01:15:21,000 --> 01:15:22,440
+ Jika Anda tidak memperbaiki jalur Anda jika Anda 
+
+1483
+01:15:22,440 --> 01:15:24,450
+ ingin menghasilkan formula yang sesuai 
+
+1484
+01:15:24,450 --> 01:15:29,080
+ untuk melewati semua jalur, maka itu juga relatif mudah. 
+
+1485
+01:15:29,080 --> 01:15:32,310
+ Satu-satunya hal adalah Anda harus berurusan dengan loop 
+
+1486
+01:15:32,310 --> 01:15:34,910
+ lebih dari cara khusus. 
+
+1487
+01:15:34,910 --> 01:15:35,479
+ Iya nih? 
+
+1488
+01:15:35,479 --> 01:15:36,395
+ AUDIENCE: [TIDAK JELAS]. 
+
+1489
+01:15:36,395 --> 01:15:43,340
+
+
+1490
+01:15:43,340 --> 01:15:46,530
+ ARMANDO SOLAR-LEZAMA: Saya tidak tahu. 
+
+1491
+01:15:46,530 --> 01:15:48,870
+ Jadi kamus dan peta sebenarnya 
+
+1492
+01:15:48,870 --> 01:15:52,960
+ sangat mudah untuk memodelkan menggunakan fungsi yang tidak ditafsirkan. 
+
+1493
+01:15:52,960 --> 01:15:55,190
+ Dan, faktanya, teori array 
+
+1494
+01:15:55,190 --> 01:16:05,170
+ sendiri, itu hanya kasus khusus dari fungsi yang tidak ditafsirkan. 
+
+1495
+01:16:05,170 --> 01:16:09,630
+ Jadi, hal-hal yang lebih rumit dapat dilakukan 
+
+1496
+01:16:09,630 --> 01:16:11,460
+ dengan fungsi yang tidak ditafsirkan. 
+
+1497
+01:16:11,460 --> 01:16:16,820
+ Di pemecah SMT modern ada dukungan asli 
+
+1498
+01:16:16,820 --> 01:16:20,657
+ untuk alasan tentang set dan mengatur operasi, 
+
+1499
+01:16:20,657 --> 01:16:22,740
+ yang bisa sangat, sangat berguna jika Anda berpikir 
+
+1500
+01:16:22,740 --> 01:16:28,390
+ tentang program yang melibatkan banyak perhitungan yang ditetapkan, 
+
+1501
+01:16:28,390 --> 01:16:30,410
+ sebagai contoh. 
+
+1502
+01:16:30,410 --> 01:16:33,750
+ Saat mendesain salah satu alat ini 
+
+1503
+01:16:33,750 --> 01:16:36,320
+ langkah pemodelan sangat penting. 
+
+1504
+01:16:36,320 --> 01:16:41,040
+ Dan bukan hanya bagaimana Anda memodelkan fitur program yang rumit 
+
+1505
+01:16:41,040 --> 01:16:43,320
+ sampai ke teori Anda. 
+
+1506
+01:16:43,320 --> 01:16:47,850
+ Jadi, misalnya, hal-hal seperti tumpukan ke array. 
+
+1507
+01:16:47,850 --> 01:16:50,837
+ Dan juga pilihan teori dan pemecah apa yang Anda 
+
+1508
+01:16:50,837 --> 01:16:51,630
+ menggunakan. 
+
+1509
+01:16:51,630 --> 01:16:56,470
+ Dan ada banyak teori dan pemecah 
+
+1510
+01:16:56,470 --> 01:17:02,260
+ dengan trade off yang berbeda antara seberapa efisien mereka 
+
+1511
+01:17:02,260 --> 01:17:04,520
+ versus seberapa ekspresifnya mereka. 
+
+1512
+01:17:04,520 --> 01:17:08,870
+ Dan, secara umum, sebagian besar alat produksi 
+
+1513
+01:17:08,870 --> 01:17:13,370
+ tetap berpegang pada teori bit-vektor 
+
+1514
+01:17:13,370 --> 01:17:16,550
+ dan mereka mungkin menggunakan teori array 
+
+1515
+01:17:16,550 --> 01:17:21,820
+ untuk memodelkan heap jika itu diperlukan. 
+
+1516
+01:17:21,820 --> 01:17:24,220
+ Umumnya alat produksi berusaha menghindar 
+
+1517
+01:17:24,220 --> 01:17:27,380
+ dari beberapa teori yang lebih canggih, 
+
+1518
+01:17:27,380 --> 01:17:31,560
+ seperti teori set hanya karena kebajikan 
+
+1519
+01:17:31,560 --> 01:17:36,450
+ menjadi kaya mereka juga cenderung kurang skalabel dalam beberapa kasus, 
+
+1520
+01:17:36,450 --> 01:17:39,620
+ kecuali Anda sedang berurusan dengan program yang benar-benar membutuhkan 
+
+1521
+01:17:39,620 --> 01:17:44,920
+ persis seperti itu alasan untuk bekerja dengan. 
+
+1522
+01:17:44,920 --> 01:17:47,841
+ Apakah ada pertanyaan lain? 
+
+1523
+01:17:47,841 --> 01:17:48,340
+ Iya nih? 
+
+1524
+01:17:48,340 --> 01:17:50,834
+ AUDIENCE: [TIDAK JELAS] penelitian dalam eksekusi simbolis, 
+
+1525
+01:17:50,834 --> 01:17:52,762
+ apa yang menjadi fokus orang dan di mana 
+
+1526
+01:17:52,762 --> 01:17:54,208
+ apakah ada ruang untuk perbaikan? 
+
+1527
+01:17:54,208 --> 01:17:56,620
+ [TIDAK JELAS] aplikasi. 
+
+1528
+01:17:56,620 --> 01:18:00,040
+ ARMANDO SOLAR-LEZAMA: Jadi satu bidang penelitian yang sangat aktif 
+
+1529
+01:18:00,040 --> 01:18:02,880
+ ada di sekitar aplikasi. 
+
+1530
+01:18:02,880 --> 01:18:06,080
+ Dan melihat model yang memungkinkan 
+
+1531
+01:18:06,080 --> 01:18:09,400
+ Anda menemukan kelas bug baru. 
+
+1532
+01:18:09,400 --> 01:18:15,200
+ Jadi, misalnya, Nikolai, dan Franz, dan Xi Wang dan saya 
+
+1533
+01:18:15,200 --> 01:18:19,330
+ memiliki kertas, apa itu, tahun lalu 
+
+1534
+01:18:19,330 --> 01:18:23,810
+ ketika kami melihat menggunakan eksekusi simbolis untuk mengidentifikasi 
+
+1535
+01:18:23,810 --> 01:18:28,770
+ coding program Anda yang kompilator mungkin mengoptimalkan diri. 
+
+1536
+01:18:28,770 --> 01:18:32,410
+ Pemeriksaan keamanan yang mungkin dioptimalkan oleh kompilator. 
+
+1537
+01:18:32,410 --> 01:18:38,510
+ Jadi itu sangat berbeda dari pertanyaan apakah program akan berjalan 
+
+1538
+01:18:38,510 --> 01:18:42,470
+ di jalur ini atau tidak, tetapi ada langkah pemodelan 
+
+1539
+01:18:42,470 --> 01:18:45,300
+ untuk pergi dari pertanyaan konseptual tingkat tinggi ini 
+
+1540
+01:18:45,300 --> 01:18:47,750
+ dari, apakah ada kode di program saya 
+
+1541
+01:18:47,750 --> 01:18:54,780
+ yang dapat dikompilasi menjadi berbasis algoritma 
+
+1542
+01:18:54,780 --> 01:18:56,673
+ pada eksekusi simbolis yang akan bergantung 
+
+1543
+01:18:56,673 --> 01:18:58,530
+ pada kemampuan eksekusi simbolis 
+
+1544
+01:18:58,530 --> 01:19:01,290
+ dengan mudah memberi tahu Anda apakah program bisa turun 
+
+1545
+01:19:01,290 --> 01:19:04,930
+ jalur tertentu, atau apakah jalur tertentu layak. 
+
+1546
+01:19:04,930 --> 01:19:08,380
+ Jadi aplikasi adalah area yang besar, memanjang 
+
+1547
+01:19:08,380 --> 01:19:12,080
+ ke kelas bug yang lebih baru, berkembang 
+
+1548
+01:19:12,080 --> 01:19:15,500
+ ke fitur bahasa baru dan berbeda. 
+
+1549
+01:19:15,500 --> 01:19:19,740
+ Misalnya, salah satu hal yang masih 
+
+1550
+01:19:19,740 --> 01:19:22,840
+ cukup sulit untuk model dari menggunakan eksekusi simbolis 
+
+1551
+01:19:22,840 --> 01:19:28,850
+ adalah bahasa tingkat yang sangat tinggi, seperti JavaScript atau Python di mana 
+
+1552
+01:19:28,850 --> 01:19:31,750
+ Anda memiliki banyak fitur bahasa yang sangat dinamis, 
+
+1553
+01:19:31,750 --> 01:19:37,910
+ tetapi pada saat yang sama mereka-- jika ada teknik yang bisa 
+
+1554
+01:19:37,910 --> 01:19:40,370
+ bekerja untuk eksekusi simbolis, itu pasti sangat bagus. 
+
+1555
+01:19:40,370 --> 01:19:44,640
+ Dan, pada kenyataannya, kami memiliki beberapa pekerjaan beberapa tahun 
+
+1556
+01:19:44,640 --> 01:19:46,780
+ lalu menggunakan eksekusi simbolis untuk alasan 
+
+1557
+01:19:46,780 --> 01:19:50,070
+ tentang kesalahan dalam penugasan pemrograman Python, 
+
+1558
+01:19:50,070 --> 01:19:51,890
+ sebagai contoh. 
+
+1559
+01:19:51,890 --> 01:19:52,623
+ Iya nih? 
+
+1560
+01:19:52,623 --> 01:19:54,102
+ AUDIENCE: Jadi [TIDAK JELAS]. 
+
+1561
+01:19:54,102 --> 01:20:03,962
+
+
+1562
+01:20:03,962 --> 01:20:04,948
+ Bagaimana [TIDAK JELAS]? 
+
+1563
+01:20:04,948 --> 01:20:08,204
+
+
+1564
+01:20:08,204 --> 01:20:09,370
+ ARMANDO SOLAR-LEZAMA: Benar. 
+
+1565
+01:20:09,370 --> 01:20:13,990
+ Jadi dalam kasus eksekusi simbolik bagian dari masalah 
+
+1566
+01:20:13,990 --> 01:20:19,130
+ adalah status simbolis Anda, sangat sulit untuk mengatakannya, 
+
+1567
+01:20:19,130 --> 01:20:21,340
+ OK, saya melaksanakan instruksi ini, dan kemudian 
+
+1568
+01:20:21,340 --> 01:20:23,430
+ instruksi ini, dan kemudian instruksi ini. 
+
+1569
+01:20:23,430 --> 01:20:24,720
+ Urutannya tidak ada. 
+
+1570
+01:20:24,720 --> 01:20:28,180
+ Ada beberapa pekerjaan yang beberapa tahun lalu cari, misalnya, 
+
+1571
+01:20:28,180 --> 01:20:31,970
+ pada potongan kode yang sangat kecil, tetapi sangat penting, 
+
+1572
+01:20:31,970 --> 01:20:35,150
+ seperti struktur data konkuren dalam operasi 
+
+1573
+01:20:35,150 --> 01:20:37,240
+ sistem, atau struktur data bebas-lock 
+
+1574
+01:20:37,240 --> 01:20:43,190
+ dan memodelkan interaksi antar utas 
+
+1575
+01:20:43,190 --> 01:20:47,984
+ dengan intinya mengatakan, setiap kali ada variabel itu 
+
+1576
+01:20:47,984 --> 01:20:49,900
+ bisa ditimpa oleh sesuatu yang lain, 
+
+1577
+01:20:49,900 --> 01:20:54,000
+ Anda mengganti nilai itu hanya dengan nilai simbolis baru itu 
+
+1578
+01:20:54,000 --> 01:20:55,946
+ mengatakan, saya tidak tahu apa ini. 
+
+1579
+01:20:55,946 --> 01:20:57,320
+ Dan Anda menghasilkan kendala itu 
+
+1580
+01:20:57,320 --> 01:21:00,060
+ berhubungan dengan nilai-nilai simbolis ke nilai simbolik 
+
+1581
+01:21:00,060 --> 01:21:01,520
+ di utas lainnya. 
+
+1582
+01:21:01,520 --> 01:21:03,320
+ Dan ini telah digunakan bahkan untuk alasan 
+
+1583
+01:21:03,320 --> 01:21:08,840
+ tentang hal-hal seperti pagar memori yang hilang, misalnya. 
+
+1584
+01:21:08,840 --> 01:21:13,565
+ Dan itu mungkin, tetapi kompleksitasnya tumbuh sedikit. 
+
+1585
+01:21:13,565 --> 01:21:18,100
+ Dan itu menjadi hal yang tidak dapat Anda lakukan lagi 
+
+1586
+01:21:18,100 --> 01:21:22,240
+ pada skala Microsoft Word, tetapi Anda dapat melakukannya pada skala 
+
+1587
+01:21:22,240 --> 01:21:26,087
+ dari, katakanlah, struktur data konkuren, misalnya. 
+
+1588
+01:21:26,087 --> 01:21:28,670
+ Ada pekerjaan lain meskipun dalam konteks konkurensi 
+
+1589
+01:21:28,670 --> 01:21:31,200
+ melihat, misalnya, dapatkah saya menggunakan eksekusi simbolis 
+
+1590
+01:21:31,200 --> 01:21:34,830
+ untuk merekonstruksi interleaving berdasarkan 
+
+1591
+01:21:34,830 --> 01:21:38,290
+ pada pengetahuan tentang bagaimana program berperilaku seperti itu berjalan, 
+
+1592
+01:21:38,290 --> 01:21:40,810
+ sebagai contoh. 
+
+1593
+01:21:40,810 --> 01:21:46,020
+ Dan ini membuka banyak kemungkinan, 
+
+1594
+01:21:46,020 --> 01:21:49,220
+ memiliki kemampuan ini untuk mengajukan pertanyaan yang sangat konkrit 
+
+1595
+01:21:49,220 --> 01:21:52,660
+ tentang dapatkah program saya berjalan di jalur ini. 
+
+1596
+01:21:52,660 --> 01:21:54,440
+ Mampu memiliki nilai simbolis 
+
+1597
+01:21:54,440 --> 01:21:57,600
+ dan bertanya, nilai-nilai apa yang harus dimiliki benda-benda ini 
+
+1598
+01:21:57,600 --> 01:22:00,200
+ agar program bisa melakukan sesuatu, atau berurutan 
+
+1599
+01:22:00,200 --> 01:22:03,215
+ sesuatu yang terjadi adalah kemampuan yang sangat kuat 
+
+1600
+01:22:03,215 --> 01:22:04,590
+ dan ada banyak aplikasi 
+
+1601
+01:22:04,590 --> 01:22:10,660
+ yang telah dicoba, tetapi ini adalah bagian yang cukup baru 
+
+1602
+01:22:10,660 --> 01:22:13,280
+ teknologi sejauh teknologi 
+
+1603
+01:22:13,280 --> 01:22:15,203
+ untuk menganalisa suatu program. 
+
+1604
+01:22:15,203 --> 00:00:00,000
+
+

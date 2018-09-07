@@ -1,0 +1,344 @@
+1
+00:00:00,060 --> 00:00:02,190
+hello everyone<font color="#E5E5E5"> now</font><font color="#CCCCCC"> let's talk about</font>
+
+2
+00:00:02,190 --> 00:00:05,220
+<font color="#E5E5E5">login page SQL injection</font><font color="#CCCCCC"> so in the</font><font color="#E5E5E5"> last</font>
+
+3
+00:00:05,220 --> 00:00:07,560
+video we have<font color="#CCCCCC"> seen that how an attacker</font>
+
+4
+00:00:07,560 --> 00:00:11,219
+can<font color="#E5E5E5"> inject its own SQL</font><font color="#CCCCCC"> queries in order</font>
+
+5
+00:00:11,219 --> 00:00:15,269
+to dump the<font color="#CCCCCC"> entire database</font><font color="#E5E5E5"> so similarly</font>
+
+6
+00:00:15,269 --> 00:00:19,020
+<font color="#E5E5E5">an attacker can also try to inject its</font>
+
+7
+00:00:19,020 --> 00:00:22,529
+own special crafted SQL query<font color="#E5E5E5"> on inside</font>
+
+8
+00:00:22,529 --> 00:00:26,130
+the login pages<font color="#E5E5E5"> in order to bypass the</font>
+
+9
+00:00:26,130 --> 00:00:29,130
+login<font color="#CCCCCC"> pages because what happen is</font><font color="#E5E5E5"> some</font>
+
+10
+00:00:29,130 --> 00:00:31,650
+<font color="#E5E5E5">time login</font><font color="#CCCCCC"> pages are also vulnerable</font><font color="#E5E5E5"> to</font>
+
+11
+00:00:31,650 --> 00:00:34,230
+SQL injection<font color="#E5E5E5"> so if the login page is</font>
+
+12
+00:00:34,230 --> 00:00:36,300
+vulnerable to<font color="#E5E5E5"> SQL injection then an</font>
+
+13
+00:00:36,300 --> 00:00:38,579
+attacker can easily bypass<font color="#CCCCCC"> that</font>
+
+14
+00:00:38,579 --> 00:00:41,250
+authentication mechanism<font color="#E5E5E5"> now let's see</font>
+
+15
+00:00:41,250 --> 00:00:43,910
+how we can do<font color="#E5E5E5"> login page SQL injections</font>
+
+16
+00:00:43,910 --> 00:00:47,489
+now let's try to do sequel injection<font color="#E5E5E5"> on</font>
+
+17
+00:00:47,489 --> 00:00:51,360
+login<font color="#CCCCCC"> pages so here you can see that</font>
+
+18
+00:00:51,360 --> 00:00:53,070
+right<font color="#CCCCCC"> now</font><font color="#E5E5E5"> I am on brick's web</font>
+
+19
+00:00:53,070 --> 00:00:55,620
+application so this is the application
+
+20
+00:00:55,620 --> 00:00:59,190
+<font color="#CCCCCC">which we have</font><font color="#E5E5E5"> used while testing</font><font color="#CCCCCC"> a</font>
+
+21
+00:00:59,190 --> 00:01:02,460
+sequel injection<font color="#E5E5E5"> so if I just go here</font><font color="#CCCCCC"> so</font>
+
+22
+00:01:02,460 --> 00:01:05,159
+you will see<font color="#CCCCCC"> a login</font><font color="#E5E5E5"> pages link so let</font>
+
+23
+00:01:05,159 --> 00:01:10,860
+me open this so here you will<font color="#E5E5E5"> find that</font>
+
+24
+00:01:10,860 --> 00:01:13,049
+there are total<font color="#CCCCCC"> 6 login pages which</font><font color="#E5E5E5"> are</font>
+
+25
+00:01:13,049 --> 00:01:16,049
+vulnerable<font color="#CCCCCC"> to sequel injection so let's</font>
+
+26
+00:01:16,049 --> 00:01:18,180
+open the first<font color="#E5E5E5"> one because it's the</font>
+
+27
+00:01:18,180 --> 00:01:23,939
+<font color="#E5E5E5">basics</font><font color="#CCCCCC"> 1 so it's just like a login page</font>
+
+28
+00:01:23,939 --> 00:01:26,189
+here you<font color="#E5E5E5"> can see that we are</font><font color="#CCCCCC"> not logged</font>
+
+29
+00:01:26,189 --> 00:01:31,350
+in so let's try any random credentials
+
+30
+00:01:31,350 --> 00:01:33,390
+<font color="#CCCCCC">and let's see what whether it works or</font>
+
+31
+00:01:33,390 --> 00:01:41,100
+<font color="#E5E5E5">not so here you can see it has prompted</font>
+
+32
+00:01:41,100 --> 00:01:43,979
+<font color="#CCCCCC">wrong username or a password and at the</font>
+
+33
+00:01:43,979 --> 00:01:48,180
+<font color="#E5E5E5">bottom we</font><font color="#CCCCCC"> can see the Curie so let me</font>
+
+34
+00:01:48,180 --> 00:01:51,210
+copy<font color="#E5E5E5"> this</font><font color="#CCCCCC"> query</font><font color="#E5E5E5"> and paste it in a</font>
+
+35
+00:01:51,210 --> 00:01:56,850
+notepad<font color="#E5E5E5"> file so here</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> can see that</font>
+
+36
+00:01:56,850 --> 00:01:58,829
+this is the Curie which is executing at
+
+37
+00:01:58,829 --> 00:02:00,570
+the<font color="#E5E5E5"> back end select star from users</font>
+
+38
+00:02:00,570 --> 00:02:03,860
+where name is admin<font color="#CCCCCC"> and password is the</font>
+
+39
+00:02:03,860 --> 00:02:06,869
+password<font color="#E5E5E5"> which means it's doing and</font>
+
+40
+00:02:06,869 --> 00:02:10,679
+comparison between the user supplied
+
+41
+00:02:10,679 --> 00:02:13,260
+<font color="#E5E5E5">input or between the data which is</font>
+
+42
+00:02:13,260 --> 00:02:13,800
+<font color="#E5E5E5">present</font>
+
+43
+00:02:13,800 --> 00:02:19,010
+in the database<font color="#CCCCCC"> so now in</font><font color="#E5E5E5"> order to</font>
+
+44
+00:02:19,010 --> 00:02:22,970
+<font color="#E5E5E5">bypass this login page</font><font color="#CCCCCC"> what we can do is</font>
+
+45
+00:02:22,970 --> 00:02:28,020
+we can do a<font color="#E5E5E5"> small trick in order</font><font color="#CCCCCC"> to make</font>
+
+46
+00:02:28,020 --> 00:02:30,510
+this brick<font color="#E5E5E5"> server application confused</font>
+
+47
+00:02:30,510 --> 00:02:33,720
+<font color="#E5E5E5">so what we can do is so what if if we</font>
+
+48
+00:02:33,720 --> 00:02:36,360
+just<font color="#E5E5E5"> right here in the place of username</font>
+
+49
+00:02:36,360 --> 00:02:39,540
+<font color="#CCCCCC">so if I just write here</font><font color="#E5E5E5"> admin single</font>
+
+50
+00:02:39,540 --> 00:02:47,070
+<font color="#E5E5E5">quote or one equals one</font><font color="#CCCCCC"> so now what it</font>
+
+51
+00:02:47,070 --> 00:02:50,880
+<font color="#CCCCCC">means so it means</font><font color="#E5E5E5"> we are closing this</font>
+
+52
+00:02:50,880 --> 00:02:54,030
+field name by just here admin and<font color="#E5E5E5"> I'm</font>
+
+53
+00:02:54,030 --> 00:02:56,970
+adding an another condition that<font color="#E5E5E5"> is</font><font color="#CCCCCC"> one</font>
+
+54
+00:02:56,970 --> 00:02:59,910
+equals<font color="#CCCCCC"> one</font><font color="#E5E5E5"> so as we all know that one is</font>
+
+55
+00:02:59,910 --> 00:03:02,820
+equals one and it's a<font color="#E5E5E5"> universal</font><font color="#CCCCCC"> truth</font><font color="#E5E5E5"> so</font>
+
+56
+00:03:02,820 --> 00:03:05,490
+this will<font color="#CCCCCC"> remain true</font><font color="#E5E5E5"> and by adding</font><font color="#CCCCCC"> the</font>
+
+57
+00:03:05,490 --> 00:03:08,130
+or operator this<font color="#E5E5E5"> will not matter that</font>
+
+58
+00:03:08,130 --> 00:03:10,260
+<font color="#E5E5E5">whether this part should be true or not</font>
+
+59
+00:03:10,260 --> 00:03:12,720
+if this<font color="#E5E5E5"> is true our condition will</font>
+
+60
+00:03:12,720 --> 00:03:16,800
+<font color="#E5E5E5">become true so in the place of password</font>
+
+61
+00:03:16,800 --> 00:03:22,970
+<font color="#E5E5E5">if I just add here same thing</font><font color="#CCCCCC"> admin or</font>
+
+62
+00:03:22,970 --> 00:03:31,290
+<font color="#CCCCCC">one</font><font color="#E5E5E5"> equals</font><font color="#CCCCCC"> one and in the place of name</font>
+
+63
+00:03:31,290 --> 00:03:38,520
+let me just add this har one equals one
+
+64
+00:03:38,520 --> 00:03:40,830
+now let's see this<font color="#CCCCCC"> Curie</font><font color="#E5E5E5"> so it becomes</font>
+
+65
+00:03:40,830 --> 00:03:42,870
+select star from users where name is
+
+66
+00:03:42,870 --> 00:03:47,220
+admin<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> or one equals</font><font color="#CCCCCC"> one so if this</font>
+
+67
+00:03:47,220 --> 00:03:50,430
+will not true<font color="#E5E5E5"> then this will be true</font><font color="#CCCCCC"> and</font>
+
+68
+00:03:50,430 --> 00:03:53,100
+the password<font color="#CCCCCC"> should be admin so this</font>
+
+69
+00:03:53,100 --> 00:03:55,380
+will not true this part<font color="#E5E5E5"> will always true</font>
+
+70
+00:03:55,380 --> 00:03:56,640
+<font color="#E5E5E5">one equals one</font>
+
+71
+00:03:56,640 --> 00:04:01,260
+so none now let's try to add this as our
+
+72
+00:04:01,260 --> 00:04:06,930
+input so admin single quote or<font color="#E5E5E5"> one</font>
+
+73
+00:04:06,930 --> 00:04:10,530
+equals<font color="#CCCCCC"> one and let me copy</font><font color="#E5E5E5"> this</font><font color="#CCCCCC"> Kure</font>
+
+74
+00:04:10,530 --> 00:04:13,860
+and let me paste it<font color="#E5E5E5"> here and now</font><font color="#CCCCCC"> let's</font>
+
+75
+00:04:13,860 --> 00:04:16,680
+<font color="#E5E5E5">click on</font><font color="#CCCCCC"> summit and let's see whether it</font>
+
+76
+00:04:16,680 --> 00:04:20,488
+<font color="#E5E5E5">works or not okay and here you can see</font>
+
+77
+00:04:20,488 --> 00:04:22,680
+that we<font color="#CCCCCC"> are successfully able to logged</font>
+
+78
+00:04:22,680 --> 00:04:24,930
+in and<font color="#CCCCCC"> you can see the</font><font color="#E5E5E5"> Curie which is</font>
+
+79
+00:04:24,930 --> 00:04:27,900
+executed at the<font color="#CCCCCC"> back</font><font color="#E5E5E5"> end</font>
+
+80
+00:04:27,900 --> 00:04:31,449
+so this was a small<font color="#E5E5E5"> example that</font><font color="#CCCCCC"> how we</font>
+
+81
+00:04:31,449 --> 00:04:35,680
+<font color="#E5E5E5">can bypass login</font><font color="#CCCCCC"> pages through sequel</font>
+
+82
+00:04:35,680 --> 00:04:37,449
+injection<font color="#E5E5E5"> so in this video</font><font color="#CCCCCC"> we have</font>
+
+83
+00:04:37,449 --> 00:04:39,460
+covered<font color="#E5E5E5"> that what is</font><font color="#CCCCCC"> login</font><font color="#E5E5E5"> basical</font>
+
+84
+00:04:39,460 --> 00:04:42,070
+injection and how we can bypass the
+
+85
+00:04:42,070 --> 00:04:44,790
+login<font color="#E5E5E5"> pages using sequel injection</font>
+
+86
+00:04:44,790 --> 00:00:00,000
+<font color="#CCCCCC">thanks for</font><font color="#E5E5E5"> watching this video</font>
+

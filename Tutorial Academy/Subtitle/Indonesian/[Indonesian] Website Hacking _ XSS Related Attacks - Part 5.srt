@@ -1,0 +1,1496 @@
+1
+00:00:11,759 --> 00:00:15,419
+ selamat datang di modul 14 <font color="#E5E5E5">dalam modul ini </font>
+
+2
+00:00:15,419 --> 00:00:18,000
+ <font color="#E5E5E5">kita akan </font><font color="#CCCCCC">membahas XSS atau lintas situs </font>
+
+3
+00:00:18,000 --> 00:00:22,400
+ scripting menyerang <font color="#E5E5E5">kerentanan XSS </font>
+
+4
+00:00:22,400 --> 00:00:25,380
+ <font color="#E5E5E5">terjadi ketika data suplai pengguna yang </font>
+
+5
+00:00:25,380 --> 00:00:27,150
+ ditransfer <font color="#E5E5E5">ke aplikasi web melalui </font>
+
+6
+00:00:27,150 --> 00:00:29,550
+ dapatkan atau posting metode tidak memadai 
+
+7
+00:00:29,550 --> 00:00:32,070
+ disaring memungkinkan <font color="#E5E5E5">penyerang untuk </font>
+
+8
+00:00:32,070 --> 00:00:34,830
+ menyuntikkan kode HTML eksternal <font color="#CCCCCC">ke dalam </font>
+
+9
+00:00:34,830 --> 00:00:40,199
+ halaman yang dihasilkan mungkin mengandung HTML 
+
+10
+00:00:40,199 --> 00:00:42,690
+ <font color="#E5E5E5">JavaScript tertanam yang dieksekusi di </font>
+
+11
+00:00:42,690 --> 00:00:47,100
+ <font color="#E5E5E5">data browser web korban seperti </font>
+
+12
+00:00:47,100 --> 00:00:49,079
+ cookie ID sesi <font color="#E5E5E5">dapat disadap </font>
+
+13
+00:00:49,079 --> 00:00:54,539
+ <font color="#CCCCCC">dengan cara ini, peretas juga dapat </font><font color="#E5E5E5">memperoleh akses </font>
+
+14
+00:00:54,539 --> 00:00:57,149
+ ke <font color="#CCCCCC">komputer korban yang disebut </font>
+
+15
+00:00:57,149 --> 00:00:59,280
+ <font color="#CCCCCC">paket </font><font color="#E5E5E5">sploit </font><font color="#CCCCCC">adalah alat yang memfasilitasi </font>
+
+16
+00:00:59,280 --> 00:01:00,570
+ eksploitasi browser 
+
+17
+00:01:00,570 --> 00:01:04,619
+ kerentanan sekali korban potensial 
+
+18
+00:01:04,619 --> 00:01:06,750
+ <font color="#CCCCCC">membuka situs web yang terinfeksi menggunakan </font>
+
+19
+00:01:06,750 --> 00:01:08,940
+ peramban rentan <font color="#E5E5E5">paket terpisah </font>
+
+20
+00:01:08,940 --> 00:01:10,860
+ menginstal malware seperti <font color="#CCCCCC">Trojan </font><font color="#E5E5E5">atau </font>
+
+21
+00:01:10,860 --> 00:01:16,319
+ virus pada sistem serangan XSS 
+
+22
+00:01:16,319 --> 00:01:18,259
+ <font color="#E5E5E5">biasanya dibagi </font><font color="#CCCCCC">menjadi dua </font><font color="#E5E5E5">subkelompok </font>
+
+23
+00:01:18,259 --> 00:01:21,450
+ <font color="#E5E5E5">mencerminkan serangan XSS </font><font color="#CCCCCC">terjadi ketika sebuah </font>
+
+24
+00:01:21,450 --> 00:01:23,610
+ string eksploitasi telah dikirim oleh a 
+
+25
+00:01:23,610 --> 00:01:25,500
+ <font color="#CCCCCC">komputer </font><font color="#E5E5E5">korban </font><font color="#CCCCCC">melalui get atau posting </font>
+
+26
+00:01:25,500 --> 00:01:29,569
+ <font color="#E5E5E5">setiap kali mereka mengunjungi halaman yang rentan </font>
+
+27
+00:01:32,270 --> 00:01:35,099
+ misalnya <font color="#CCCCCC">jika kerentanan terjadi </font>
+
+28
+00:01:35,099 --> 00:01:36,630
+ dalam variabel <font color="#E5E5E5">melewati get </font>
+
+29
+00:01:36,630 --> 00:01:38,910
+ metode <font color="#E5E5E5">korban </font><font color="#CCCCCC">harus dibujuk </font>
+
+30
+00:01:38,910 --> 00:01:40,830
+ kunjungi <font color="#E5E5E5">situs web yang dibuat khusus untuk </font>
+
+31
+00:01:40,830 --> 00:01:41,940
+ <font color="#E5E5E5">serangan </font><font color="#CCCCCC">untuk berhasil </font>
+
+32
+00:01:41,940 --> 00:01:44,789
+ kelas kerentanan XSS kedua <font color="#E5E5E5">adalah </font>
+
+33
+00:01:44,789 --> 00:01:48,239
+ XSS disimpan serangan terjadi ketika sebuah 
+
+34
+00:01:48,239 --> 00:01:50,220
+ penyerang <font color="#CCCCCC">mampu </font><font color="#E5E5E5">menyimpan kode berbahaya </font>
+
+35
+00:01:50,220 --> 00:01:52,770
+ ke server <font color="#E5E5E5">misalnya dalam database atau </font>
+
+36
+00:01:52,770 --> 00:01:55,289
+ sebuah file yang <font color="#CCCCCC">berarti bahwa korban </font><font color="#E5E5E5">tidak </font>
+
+37
+00:01:55,289 --> 00:01:56,789
+ harus dipikat ke yang dibuat khusus 
+
+38
+00:01:56,789 --> 00:01:59,069
+ halaman dan sebaliknya <font color="#CCCCCC">dapat ditargetkan sementara </font>
+
+39
+00:01:59,069 --> 00:02:00,929
+ browsing <font color="#E5E5E5">layanan normal misalnya </font>
+
+40
+00:02:00,929 --> 00:02:02,940
+ <font color="#CCCCCC">saat membaca </font><font color="#E5E5E5">situs web Commons atau </font>
+
+41
+00:02:02,940 --> 00:02:08,459
+ <font color="#E5E5E5">buku tamu sekarang mari kita lihat contoh </font>
+
+42
+00:02:08,459 --> 00:02:12,020
+ cacat XSS yang terpantul 
+
+43
+00:02:14,040 --> 00:02:16,510
+ Anda bisa lihat di sini <font color="#E5E5E5">skrip sederhana yang mana </font>
+
+44
+00:02:16,510 --> 00:02:20,140
+ <font color="#CCCCCC">mensimulasikan </font><font color="#E5E5E5">mesin pencari tindakan browser </font>
+
+45
+00:02:20,140 --> 00:02:22,060
+ tertanam dalam aplikasi web <font color="#E5E5E5">akan sangat </font>
+
+46
+00:02:22,060 --> 00:02:23,980
+ sering menampilkan kembali string yang disediakan oleh 
+
+47
+00:02:23,980 --> 00:02:27,850
+ pengguna <font color="#E5E5E5">mekanisme yang sama digunakan </font>
+
+48
+00:02:27,850 --> 00:02:30,459
+ di sini <font color="#E5E5E5">isi formulir dikirim via </font>
+
+49
+00:02:30,459 --> 00:02:32,800
+ <font color="#CCCCCC">metode get dan hasil pencariannya </font>
+
+50
+00:02:32,800 --> 00:02:37,090
+ <font color="#CCCCCC">ditampilkan, mari kita lihat bagaimana skrip bekerja </font>
+
+51
+00:02:37,090 --> 00:02:46,660
+ <font color="#E5E5E5">dalam praktik karena Anda dapat melihat string </font>
+
+52
+00:02:46,660 --> 00:02:49,330
+ telah ditampilkan kita mungkin memperhatikan <font color="#CCCCCC">itu </font>
+
+53
+00:02:49,330 --> 00:02:51,700
+ <font color="#CCCCCC">data yang disediakan pengguna tidak difilter yang mana </font>
+
+54
+00:02:51,700 --> 00:02:53,530
+ berarti bahwa penyerang memiliki <font color="#CCCCCC">kontrol penuh </font>
+
+55
+00:02:53,530 --> 00:02:55,720
+ atas <font color="#E5E5E5">bentuk kode HTML </font><font color="#CCCCCC">yang </font><font color="#E5E5E5">akan </font>
+
+56
+00:02:55,720 --> 00:02:58,180
+ <font color="#E5E5E5">dicerminkan dan dapat menggunakan ini untuk disuntikkan </font>
+
+57
+00:02:58,180 --> 00:03:00,880
+ sebuah <font color="#CCCCCC">JavaScript </font>
+
+58
+00:03:00,880 --> 00:03:04,030
+ [Musik] 
+
+59
+00:03:08,090 --> 00:03:11,210
+ [Musik] 
+
+60
+00:03:25,819 --> 00:03:28,260
+ semua yang <font color="#E5E5E5">diperlukan sekarang untuk mengeksekusi </font><font color="#CCCCCC">kode </font>
+
+61
+00:03:28,260 --> 00:03:30,390
+ tertanam <font color="#E5E5E5">di tautan adalah </font><font color="#CCCCCC">mengirim URL </font>
+
+62
+00:03:30,390 --> 00:03:32,250
+ kepada korban <font color="#E5E5E5">dan membujuknya </font>
+
+63
+00:03:32,250 --> 00:03:38,069
+ klik ayo sekarang pindah <font color="#CCCCCC">ke jenis lain </font>
+
+64
+00:03:38,069 --> 00:03:45,000
+ XSS kerentanan <font color="#CCCCCC">disimpan XSS yang dapat Anda lihat </font>
+
+65
+00:03:45,000 --> 00:03:50,400
+ di sini komentar skrip buku tamu sederhana 
+
+66
+00:03:50,400 --> 00:03:52,709
+ diteruskan ke skrip melalui pos dan kemudian 
+
+67
+00:03:52,709 --> 00:03:58,709
+ disimpan dalam <font color="#E5E5E5">database semua komentar akan </font>
+
+68
+00:03:58,709 --> 00:04:00,540
+ <font color="#E5E5E5">selanjutnya diambil dari </font><font color="#CCCCCC">database dan </font>
+
+69
+00:04:00,540 --> 00:04:04,560
+ ditampilkan <font color="#CCCCCC">seperti yang Anda lihat sejak </font>
+
+70
+00:04:04,560 --> 00:04:06,780
+ skrip <font color="#CCCCCC">tidak memvalidasi masukan baik kita </font>
+
+71
+00:04:06,780 --> 00:04:08,099
+ dapat mengharapkan <font color="#CCCCCC">bahwa itu </font><font color="#E5E5E5">juga </font><font color="#CCCCCC">akan </font><font color="#E5E5E5">terjadi </font>
+
+72
+00:04:08,099 --> 00:04:12,090
+ rentan terhadap injeksi kode HTML <font color="#E5E5E5">sejak </font>
+
+73
+00:04:12,090 --> 00:04:13,500
+ kode berbahaya akan <font color="#CCCCCC">disimpan dalam file </font>
+
+74
+00:04:13,500 --> 00:04:15,690
+ database <font color="#CCCCCC">ini akan menjadi contoh dari </font>
+
+75
+00:04:15,690 --> 00:04:19,829
+ Serangan XSS yang tersimpan <font color="#E5E5E5">juga bisa Anda lihat di sini </font>
+
+76
+00:04:19,829 --> 00:04:21,199
+ <font color="#E5E5E5">panel kontrol sederhana </font>
+
+77
+00:04:21,199 --> 00:04:24,000
+ jika kredensial pengguna yang valid dikirim 
+
+78
+00:04:24,000 --> 00:04:26,070
+ dan <font color="#E5E5E5">diperiksa di database dan pengguna </font>
+
+79
+00:04:26,070 --> 00:04:28,080
+ login di situs akan menampilkan 
+
+80
+00:04:28,080 --> 00:04:42,630
+ pesan yang sesuai membayangkan bahwa 
+
+81
+00:04:42,630 --> 00:04:43,889
+ browser mewakili buku tamu 
+
+82
+00:04:43,889 --> 00:04:46,669
+ administrator 
+
+83
+00:04:57,120 --> 00:04:59,730
+ [Musik] 
+
+84
+00:04:59,730 --> 00:05:04,380
+ kami sudah berhasil masuk log <font color="#E5E5E5">bayangkan </font>
+
+85
+00:05:04,380 --> 00:05:05,700
+ bahwa browser lain mewakili 
+
+86
+00:05:05,700 --> 00:05:07,560
+ hacker mencoba mengeksploitasi XSS 
+
+87
+00:05:07,560 --> 00:05:17,640
+ kerentanan untuk <font color="#E5E5E5">keperluan </font><font color="#CCCCCC">ini </font>
+
+88
+00:05:17,640 --> 00:05:19,830
+ <font color="#E5E5E5">presentasi </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">membuat skrip yang </font>
+
+89
+00:05:19,830 --> 00:05:21,540
+ membuat tag skrip dan mengatur 
+
+90
+00:05:21,540 --> 00:05:23,670
+ alamat sniffer <font color="#CCCCCC">yang merupakan tipe </font>
+
+91
+00:05:23,670 --> 00:05:25,440
+ <font color="#E5E5E5">perangkat lunak yang dapat menangkap </font><font color="#CCCCCC">pasokan </font><font color="#E5E5E5">pengguna </font>
+
+92
+00:05:25,440 --> 00:05:39,480
+ data <font color="#E5E5E5">melewati metode get dalam hal ini </font>
+
+93
+00:05:39,480 --> 00:05:41,670
+ contoh <font color="#E5E5E5">data yang dikirim adalah isi </font><font color="#CCCCCC">dari </font>
+
+94
+00:05:41,670 --> 00:05:44,910
+ variabel cookie <font color="#E5E5E5">akhirnya tag ditambahkan </font>
+
+95
+00:05:44,910 --> 00:05:47,190
+ <font color="#CCCCCC">ke pohon kubah ini memprovokasi </font>
+
+96
+00:05:47,190 --> 00:05:48,630
+ mencoba <font color="#CCCCCC">memuat skrip </font><font color="#E5E5E5">dan </font>
+
+97
+00:05:48,630 --> 00:05:50,670
+ mengirim <font color="#CCCCCC">permintaan get </font><font color="#E5E5E5">yang akan </font>
+
+98
+00:05:50,670 --> 00:05:57,450
+ berisi cookie file PHP sniffer 
+
+99
+00:05:57,450 --> 00:05:59,430
+ <font color="#E5E5E5">log semua parameter yang diacu ke a </font>
+
+100
+00:05:59,430 --> 00:06:01,920
+ sniffer <font color="#CCCCCC">file </font><font color="#E5E5E5">yang bisa di- </font><font color="#CCCCCC">log </font><font color="#E5E5E5">file bisa </font>
+
+101
+00:06:01,920 --> 00:06:03,600
+ <font color="#E5E5E5">disimpan dalam layanan yang telah </font>
+
+102
+00:06:03,600 --> 00:06:05,730
+ diambil alih <font color="#CCCCCC">oleh penyerang </font><font color="#E5E5E5">dengan cara ini </font>
+
+103
+00:06:05,730 --> 00:06:07,890
+ penyerang dapat <font color="#E5E5E5">memperoleh </font><font color="#CCCCCC">akses ke data </font>
+
+104
+00:06:07,890 --> 00:06:09,750
+ dicuri <font color="#E5E5E5">dari </font><font color="#CCCCCC">situs web yang rentan di </font>
+
+105
+00:06:09,750 --> 00:06:12,780
+ <font color="#E5E5E5">kasus kami data ini adalah ID sesi PHP </font>
+
+106
+00:06:12,780 --> 00:06:15,270
+ <font color="#E5E5E5">mari kita salin script dan mencoba untuk </font><font color="#CCCCCC">menambahkannya </font>
+
+107
+00:06:15,270 --> 00:06:17,780
+ ke <font color="#E5E5E5">buku tamu </font>
+
+108
+00:06:23,810 --> 00:06:28,170
+ seperti yang kita lihat elemen baru telah 
+
+109
+00:06:28,170 --> 00:06:30,300
+ <font color="#E5E5E5">ditambahkan ke halaman kode sumber situs </font>
+
+110
+00:06:30,300 --> 00:06:37,470
+ <font color="#CCCCCC">sekarang berisi script kami </font><font color="#E5E5E5">dalam</font><font color="#CCCCCC"> hal ini </font>
+
+111
+00:06:37,470 --> 00:06:39,210
+ kode telah langsung dieksekusi 
+
+112
+00:06:39,210 --> 00:06:41,850
+ <font color="#CCCCCC">sisi penyerang dan yang pertama </font>
+
+113
+00:06:41,850 --> 00:06:43,860
+ <font color="#E5E5E5">entri di log sniffer berisi </font>
+
+114
+00:06:43,860 --> 00:06:47,070
+ ID sesi penyerang <font color="#E5E5E5">membayangkan bahwa a </font>
+
+115
+00:06:47,070 --> 00:06:48,720
+ login administrator mengunjungi 
+
+116
+00:06:48,720 --> 00:06:51,380
+ <font color="#E5E5E5">halaman </font><font color="#CCCCCC">buku tamu </font>
+
+117
+00:06:53,380 --> 00:06:56,509
+ [Musik] 
+
+118
+00:06:59,050 --> 00:07:03,280
+ karena Anda <font color="#E5E5E5">mungkin bisa menebak skripnya </font>
+
+119
+00:07:03,280 --> 00:07:06,629
+ yang mengirim data <font color="#E5E5E5">ke snipper </font>
+
+120
+00:07:10,500 --> 00:07:13,300
+ juga telah dieksekusi di <font color="#E5E5E5">sisi admin </font>
+
+121
+00:07:13,300 --> 00:07:15,789
+ <font color="#E5E5E5">file log sniffer memegang sesi admin </font>
+
+122
+00:07:15,789 --> 00:07:18,909
+ ID <font color="#E5E5E5">mari coba untuk memanfaatkan ini menggunakan </font>
+
+123
+00:07:18,909 --> 00:07:21,129
+ tinggal <font color="#E5E5E5">add-on HTTP header memodifikasi </font>
+
+124
+00:07:21,129 --> 00:07:23,110
+ <font color="#E5E5E5">permintaan dikirim ke buku tamu dengan pengaturan </font>
+
+125
+00:07:23,110 --> 00:07:26,400
+ ID sesi admin yang dicuri 
+
+126
+00:07:51,510 --> 00:07:54,630
+ [Musik] 
+
+127
+00:07:58,710 --> 00:08:01,830
+ [Musik] 
+
+128
+00:08:22,890 --> 00:08:25,690
+ seperti yang kita lihat, penyerang telah mendapatkan 
+
+129
+00:08:25,690 --> 00:08:29,610
+ kontrol atas <font color="#E5E5E5">sesi administrator </font>
+
+130
+00:08:29,670 --> 00:08:32,530
+ Anda mungkin menyadari sekarang <font color="#E5E5E5">seberapa serius </font>
+
+131
+00:08:32,530 --> 00:08:35,620
+ Serangan XSS bisa <font color="#E5E5E5">jadi bagaimana mereka bisa </font>
+
+132
+00:08:35,620 --> 00:08:38,979
+ dicegah meskipun <font color="#E5E5E5">cara yang paling sederhana untuk dilakukan </font>
+
+133
+00:08:38,979 --> 00:08:43,330
+ itu adalah untuk menyaring <font color="#E5E5E5">semua masukan yang diberikan pengguna </font>
+
+134
+00:08:43,330 --> 00:08:45,070
+ data harus <font color="#E5E5E5">diperlakukan dengan hati-hati sebagai </font>
+
+135
+00:08:45,070 --> 00:08:48,280
+ itu <font color="#CCCCCC">bisa mengandung unsur berbahaya jika </font>
+
+136
+00:08:48,280 --> 00:08:50,080
+ tidak perlu <font color="#CCCCCC">bagi pengguna </font><font color="#E5E5E5">untuk menjadi </font>
+
+137
+00:08:50,080 --> 00:08:52,690
+ dapat <font color="#CCCCCC">menambahkan </font><font color="#E5E5E5">tag </font><font color="#CCCCCC">HTML yang </font><font color="#E5E5E5">bisa kami gunakan </font>
+
+138
+00:08:52,690 --> 00:08:56,140
+ HTML <font color="#CCCCCC">peduli khusus </font><font color="#E5E5E5">berfungsi dengan </font>
+
+139
+00:08:56,140 --> 00:08:58,030
+ fungsi mengkonversi semua karakter khusus 
+
+140
+00:08:58,030 --> 00:09:00,490
+ digunakan oleh penerjemah HTML <font color="#CCCCCC">seperti </font>
+
+141
+00:09:00,490 --> 00:09:02,530
+ <font color="#E5E5E5">membuka dan menutup </font><font color="#CCCCCC">tag atau tanda kutip </font><font color="#E5E5E5">di </font>
+
+142
+00:09:02,530 --> 00:09:07,960
+ Entitas HTML entitas <font color="#E5E5E5">ditampilkan </font>
+
+143
+00:09:07,960 --> 00:09:10,330
+ biasanya tetapi <font color="#E5E5E5">tidak diberikan oleh HTML </font>
+
+144
+00:09:10,330 --> 00:09:12,630
+ penerjemah 
+
+145
+00:09:28,190 --> 00:09:31,340
+ mari kita lihat apakah <font color="#E5E5E5">pengaturan fungsi ini membantu </font>
+
+146
+00:09:31,340 --> 00:09:34,350
+ <font color="#E5E5E5">mari mencoba untuk memanfaatkan XSS yang direfleksikan </font>
+
+147
+00:09:34,350 --> 00:09:37,550
+ kerentanan sekali lagi 
+
+148
+00:09:47,790 --> 00:09:50,890
+ [Musik] 
+
+149
+00:09:51,699 --> 00:09:53,759
+ kamu 
+
+150
+00:09:54,960 --> 00:09:58,080
+ [Musik] 
+
+151
+00:10:08,490 --> 00:10:12,730
+ seperti yang Anda lihat <font color="#E5E5E5">saat ini kode tersebut </font>
+
+152
+00:10:12,730 --> 00:10:15,010
+ <font color="#CCCCCC">telah ditampilkan yang menunjukkan </font><font color="#E5E5E5">itu belum </font>
+
+153
+00:10:15,010 --> 00:10:16,750
+ <font color="#E5E5E5">telah mengeksekusi </font><font color="#CCCCCC">kode situs tersebut </font>
+
+154
+00:10:16,750 --> 00:10:20,550
+ berisi dan <font color="#CCCCCC">LT dan karakter GT </font>
+
+155
+00:10:20,550 --> 00:10:23,200
+ <font color="#E5E5E5">mereka ditampilkan tetapi tidak digunakan oleh </font>
+
+156
+00:10:23,200 --> 00:10:29,110
+ Penerjemah HTML untuk mengidentifikasi tag jika Anda 
+
+157
+00:10:29,110 --> 00:10:31,390
+ ingin mengizinkan <font color="#CCCCCC">pengguna </font><font color="#E5E5E5">untuk memasukkan </font><font color="#CCCCCC">tag HTML </font>
+
+158
+00:10:31,390 --> 00:10:33,760
+ dalam <font color="#E5E5E5">aplikasi Anda menggunakan </font><font color="#CCCCCC">kode BB </font>
+
+159
+00:10:33,760 --> 00:10:36,640
+ mekanisme <font color="#E5E5E5">mungkin </font><font color="#CCCCCC">kode BB ide yang </font><font color="#E5E5E5">baik </font>
+
+160
+00:10:36,640 --> 00:10:38,500
+ membungkus tag <font color="#E5E5E5">dan tanda kurung siku dan </font>
+
+161
+00:10:38,500 --> 00:10:40,360
+ lalu menerjemahkannya <font color="#CCCCCC">menjadi individu </font>
+
+162
+00:10:40,360 --> 00:10:49,120
+ <font color="#E5E5E5">Tag HTML itu semua dalam modul ini </font><font color="#CCCCCC">melihat </font>
+
+163
+00:10:49,120 --> 00:10:52,170
+ Anda di bagian selanjutnya <font color="#CCCCCC">dari kursus </font>
+
+164
+00:10:55,770 --> 00:10:57,830
+ selamat datang ini bagian dari <font color="#E5E5E5">kursus </font><font color="#CCCCCC">di </font>
+
+165
+00:10:57,830 --> 00:11:00,270
+ modul ini <font color="#CCCCCC">akan </font><font color="#E5E5E5">membantu Anda memahami </font>
+
+166
+00:11:00,270 --> 00:11:02,910
+ <font color="#E5E5E5">konsep </font><font color="#CCCCCC">pelacakan xst atau lintas situs </font>
+
+167
+00:11:02,910 --> 00:11:05,220
+ Serangan <font color="#CCCCCC">kami temukan di modul 14 </font><font color="#E5E5E5">itu </font>
+
+168
+00:11:05,220 --> 00:11:07,170
+ Kerentanan XSS bisa mengarah ke 
+
+169
+00:11:07,170 --> 00:11:12,120
+ <font color="#E5E5E5">kerusakan serius </font><font color="#CCCCCC">cookie sessionid pencurian a </font>
+
+170
+00:11:12,120 --> 00:11:13,890
+ Target biasa <font color="#E5E5E5">untuk serangan ini </font><font color="#CCCCCC">memiliki </font>
+
+171
+00:11:13,890 --> 00:11:15,450
+ <font color="#E5E5E5">menjadi begitu umum sehingga menjadi spesial </font>
+
+172
+00:11:15,450 --> 00:11:17,160
+ mekanisme <font color="#CCCCCC">telah diperkenalkan </font><font color="#E5E5E5">untuk mencegah </font>
+
+173
+00:11:17,160 --> 00:11:26,370
+ <font color="#E5E5E5">itu hanya parameter HTTP </font>
+
+174
+00:11:26,370 --> 00:11:28,380
+ ditambahkan <font color="#CCCCCC">ke cookie </font><font color="#E5E5E5">sehingga yang dikirim </font>
+
+175
+00:11:28,380 --> 00:11:30,090
+ cookie untuk <font color="#E5E5E5">disimpan di browser dan </font>
+
+176
+00:11:30,090 --> 00:11:32,610
+ ditransfer ke permintaan HTTP <font color="#E5E5E5">tetapi tidak </font>
+
+177
+00:11:32,610 --> 00:11:39,840
+ diakses oleh <font color="#CCCCCC">JavaScript ini disajikan untuk </font>
+
+178
+00:11:39,840 --> 00:11:43,800
+ <font color="#CCCCCC">menetralisir banyak serangan, mari kita lihat sekarang </font>
+
+179
+00:11:43,800 --> 00:11:47,180
+ bagaimana <font color="#E5E5E5">mekanisme ini bekerja dalam praktik </font>
+
+180
+00:11:48,620 --> 00:11:51,759
+ [Musik] 
+
+181
+00:11:52,950 --> 00:11:55,840
+ Anda bisa lihat di sini <font color="#E5E5E5">skrip </font><font color="#CCCCCC">PHP sederhana </font>
+
+182
+00:11:55,840 --> 00:11:58,390
+ <font color="#E5E5E5">yang menetapkan cookie dan hanya HTTP </font>
+
+183
+00:11:58,390 --> 00:12:02,890
+ parameter yang baru saja <font color="#E5E5E5">kita sebutkan itu </font>
+
+184
+00:12:02,890 --> 00:12:06,970
+ <font color="#E5E5E5">awalnya diset </font><font color="#CCCCCC">false </font><font color="#E5E5E5">kami akan membahas ini </font>
+
+185
+00:12:06,970 --> 00:12:08,860
+ bagian <font color="#E5E5E5">nanti mari sekarang fokus pada garis </font>
+
+186
+00:12:08,860 --> 00:12:10,570
+ yang harus menampilkan <font color="#CCCCCC">konten a </font>
+
+187
+00:12:10,570 --> 00:12:16,330
+ cookie di <font color="#E5E5E5">sisi server menggunakan </font>
+
+188
+00:12:16,330 --> 00:12:18,910
+ <font color="#CCCCCC">tinggal add-on HTTP header yang bisa </font><font color="#E5E5E5">kita </font>
+
+189
+00:12:18,910 --> 00:12:20,170
+ melihat <font color="#E5E5E5">komunikasi antara </font>
+
+190
+00:12:20,170 --> 00:12:31,600
+ <font color="#E5E5E5">browser dan pengguna seperti yang Anda lihat </font>
+
+191
+00:12:31,600 --> 00:12:35,310
+ isi <font color="#CCCCCC">cookie telah ditampilkan </font>
+
+192
+00:12:37,680 --> 00:12:40,180
+ isi dari <font color="#E5E5E5">permintaan termasuk </font>
+
+193
+00:12:40,180 --> 00:12:41,830
+ header set-cookie <font color="#E5E5E5">dengan nama </font>
+
+194
+00:12:41,830 --> 00:12:44,280
+ nilai <font color="#E5E5E5">dan tanggal kedaluwarsa </font><font color="#CCCCCC">cookie </font>
+
+195
+00:12:44,280 --> 00:12:47,260
+ mari kita <font color="#E5E5E5">ubah parameter hanya HTTP menjadi </font>
+
+196
+00:12:47,260 --> 00:12:54,700
+ benar menghapus <font color="#E5E5E5">log header HTTP langsung </font>
+
+197
+00:12:54,700 --> 00:12:57,780
+ <font color="#CCCCCC">dan menyegarkan halaman </font>
+
+198
+00:13:04,050 --> 00:13:06,430
+ <font color="#E5E5E5">kali ini </font><font color="#CCCCCC">kue belum </font>
+
+199
+00:13:06,430 --> 00:13:08,110
+ ditampilkan dan tidak dapat <font color="#E5E5E5">diakses oleh </font>
+
+200
+00:13:08,110 --> 00:13:10,860
+ <font color="#E5E5E5">JavaScript </font>
+
+201
+00:13:16,579 --> 00:13:21,139
+ karena Anda dapat melihat parameter hanya HTTP 
+
+202
+00:13:21,139 --> 00:13:22,670
+ telah ditambahkan ke bagian akhir cookie 
+
+203
+00:13:22,670 --> 00:13:25,189
+ definisi <font color="#E5E5E5">hampir semua browser web </font>
+
+204
+00:13:25,189 --> 00:13:28,100
+ mendukung hanya atribut HTTP <font color="#E5E5E5">jika ya </font>
+
+205
+00:13:28,100 --> 00:13:29,869
+ diatur oleh server <font color="#CCCCCC">kehendak browser </font>
+
+206
+00:13:29,869 --> 00:13:31,759
+ memblokir akses JavaScript ke cookie 
+
+207
+00:13:31,759 --> 00:13:33,829
+ yang membantu <font color="#CCCCCC">meminimalkan dampak dari </font>
+
+208
+00:13:33,829 --> 00:13:39,649
+ Jenis XSS menyerang <font color="#CCCCCC">mekanisme ini </font>
+
+209
+00:13:39,649 --> 00:13:41,149
+ awalnya <font color="#E5E5E5">diyakini </font><font color="#CCCCCC">cukup </font>
+
+210
+00:13:41,149 --> 00:13:43,459
+ <font color="#CCCCCC">ukuran keamanan yang dimiliki teknik baru </font>
+
+211
+00:13:43,459 --> 00:13:44,899
+ telah dikembangkan yang berfungsi untuk 
+
+212
+00:13:44,899 --> 00:13:47,299
+ <font color="#CCCCCC">menghindari ini disebut kelebihan </font>
+
+213
+00:13:47,299 --> 00:14:02,869
+ T atau metode pelacakan lintas situs seperti kita 
+
+214
+00:14:02,869 --> 00:14:05,449
+ tahu protokol HTTP memungkinkan pengiriman 
+
+215
+00:14:05,449 --> 00:14:07,429
+ permintaan <font color="#E5E5E5">dari berbagai jenis yang paling banyak </font>
+
+216
+00:14:07,429 --> 00:14:09,290
+ populer di antara mereka adalah mendapatkan dan memposting 
+
+217
+00:14:09,290 --> 00:14:12,139
+ Permintaan permintaan kepala <font color="#CCCCCC">juga</font><font color="#E5E5E5"> digunakan </font>
+
+218
+00:14:12,139 --> 00:14:17,329
+ untuk meminta server <font color="#CCCCCC">hanya untuk header di sana </font>
+
+219
+00:14:17,329 --> 00:14:20,119
+ juga jenis <font color="#E5E5E5">kueri lain untuk </font>
+
+220
+00:14:20,119 --> 00:14:23,089
+ Misalnya <font color="#E5E5E5">permintaan jejak </font><font color="#CCCCCC">yang </font>
+
+221
+00:14:23,089 --> 00:14:24,949
+ diimplementasikan dan diaktifkan secara <font color="#E5E5E5">default di </font>
+
+222
+00:14:24,949 --> 00:14:31,129
+ sebagian besar server web kueri mencerminkan <font color="#E5E5E5">pengguna </font>
+
+223
+00:14:31,129 --> 00:14:35,419
+ tajuk semua tajuk yang dikirim oleh peramban 
+
+224
+00:14:35,419 --> 00:14:37,489
+ termasuk cookie dikembalikan sebagai 
+
+225
+00:14:37,489 --> 00:14:43,279
+ Server <font color="#E5E5E5">merespons dengan menggunakan XML HTTP </font>
+
+226
+00:14:43,279 --> 00:14:44,329
+ meminta objek 
+
+227
+00:14:44,329 --> 00:14:46,369
+ mengatur jenis permintaan untuk dilacak dan 
+
+228
+00:14:46,369 --> 00:14:48,290
+ mengirimkan alamat yang diserang 
+
+229
+00:14:48,290 --> 00:14:51,230
+ server <font color="#E5E5E5">penyerang bisa membaca </font>
+
+230
+00:14:51,230 --> 00:14:52,970
+ isi cookie tanpa menggunakan 
+
+231
+00:14:52,970 --> 00:14:56,899
+ <font color="#CCCCCC">variabel cookie dokumen sebagai gantinya </font>
+
+232
+00:14:56,899 --> 00:14:58,699
+ serangan mengeksploitasi data yang dikembalikan oleh 
+
+233
+00:14:58,699 --> 00:15:03,169
+ <font color="#E5E5E5">teks merespons dengan meneruskan HTTP saja </font>
+
+234
+00:15:03,169 --> 00:15:06,439
+ mekanisme <font color="#E5E5E5">mari kita lihat perilaku situs </font>
+
+235
+00:15:06,439 --> 00:15:08,739
+ lagi 
+
+236
+00:15:16,100 --> 00:15:20,970
+ karena Anda dapat melihat kesalahan telah <font color="#CCCCCC">terjadi </font>
+
+237
+00:15:20,970 --> 00:15:22,889
+ dilaporkan <font color="#E5E5E5">sebagai pelanggaran keamanan </font>
+
+238
+00:15:22,889 --> 00:15:25,649
+ banyak mekanisme web browser akhir-akhir ini 
+
+239
+00:15:25,649 --> 00:15:27,779
+ mulai <font color="#E5E5E5">memblokir kurang populer dan jarang </font>
+
+240
+00:15:27,779 --> 00:15:29,789
+ <font color="#E5E5E5">digunakan jenis permintaan yang bisa </font>
+
+241
+00:15:29,789 --> 00:15:31,499
+ digunakan sebagai sarana untuk <font color="#E5E5E5">melewati </font>
+
+242
+00:15:31,499 --> 00:15:36,569
+ <font color="#E5E5E5">mekanisme keamanan menonaktifkan </font><font color="#CCCCCC">jejak </font>
+
+243
+00:15:36,569 --> 00:15:38,549
+ permintaan bisa mencegah <font color="#E5E5E5">penyerang dari </font>
+
+244
+00:15:38,549 --> 00:15:43,350
+ <font color="#E5E5E5">menjalankan serangan xst permintaan ini digunakan </font>
+
+245
+00:15:43,350 --> 00:15:45,509
+ kebanyakan <font color="#E5E5E5">oleh pengembang untuk men-debug browser </font>
+
+246
+00:15:45,509 --> 00:15:50,369
+ <font color="#E5E5E5">dan Ajax meminta namun penggunaannya dan </font>
+
+247
+00:15:50,369 --> 00:15:52,350
+ aplikasi normal sangat terbatas itu 
+
+248
+00:15:52,350 --> 00:15:56,059
+ sepertinya <font color="#E5E5E5">ide yang </font><font color="#CCCCCC">bagus untuk </font><font color="#E5E5E5">memblokirnya </font>
+
+249
+00:15:56,239 --> 00:15:59,039
+ sementara serangan xst hari ini hampir 
+
+250
+00:15:59,039 --> 00:16:01,169
+ mustahil <font color="#E5E5E5">untuk meluncurkannya masih berguna </font>
+
+251
+00:16:01,169 --> 00:16:02,789
+ untuk <font color="#E5E5E5">diingat kemungkinan serangan </font>
+
+252
+00:16:02,789 --> 00:16:04,949
+ skenario <font color="#E5E5E5">dan memblokir permintaan jejak di </font>
+
+253
+00:16:04,949 --> 00:16:07,529
+ <font color="#CCCCCC">tingkat server </font><font color="#E5E5E5">baik di firewall </font>
+
+254
+00:16:07,529 --> 00:16:12,559
+ aturan <font color="#E5E5E5">file konfigurasi atau akses HT </font>
+
+255
+00:16:13,429 --> 00:16:16,709
+ itu semua dalam <font color="#CCCCCC">modul ini selanjutnya </font>
+
+256
+00:16:16,709 --> 00:16:18,089
+ <font color="#E5E5E5">modul akan mencakup permintaan lintas-situs </font>
+
+257
+00:16:18,089 --> 00:16:22,489
+ serangan pemalsuan <font color="#CCCCCC">melihat Anda di sana </font>
+
+258
+00:16:26,300 --> 00:16:30,590
+ selamat datang di modul 15 dalam modul ini 
+
+259
+00:16:30,590 --> 00:16:31,970
+ kita akan membicarakan <font color="#E5E5E5">permintaan lintas situs </font>
+
+260
+00:16:31,970 --> 00:16:38,680
+ pemalsuan <font color="#CCCCCC">atau CSR </font><font color="#E5E5E5">atau serangan xsrf a </font>
+
+261
+00:16:38,890 --> 00:16:41,390
+ permintaan pemalsuan permintaan lintas situs terjadi 
+
+262
+00:16:41,390 --> 00:16:43,310
+ ketika seorang pengguna yang dikonfirmasi pada 
+
+263
+00:16:43,310 --> 00:16:45,140
+ aplikasi <font color="#CCCCCC">web </font><font color="#E5E5E5">tertipu </font>
+
+264
+00:16:45,140 --> 00:16:47,150
+ secara tidak sengaja mengeksekusi suatu <font color="#CCCCCC">aksi di </font>
+
+265
+00:16:47,150 --> 00:16:53,060
+ <font color="#E5E5E5">layanan contoh yang baik dari ini </font>
+
+266
+00:16:53,060 --> 00:16:54,980
+ membujuk administrator <font color="#CCCCCC">untuk mengklik a </font>
+
+267
+00:16:54,980 --> 00:16:57,230
+ <font color="#E5E5E5">URL yang menghapus akun orang </font><font color="#CCCCCC">lain </font>
+
+268
+00:16:57,230 --> 00:17:00,770
+ pengguna <font color="#E5E5E5">administrator tentu saja </font>
+
+269
+00:17:00,770 --> 00:17:05,930
+ <font color="#E5E5E5">tidak menyadari hal ini bagaimana bisa para korban mengeksekusi </font>
+
+270
+00:17:05,930 --> 00:17:08,599
+ <font color="#CCCCCC">tindakan tanpa disadari </font><font color="#E5E5E5">ini </font>
+
+271
+00:17:08,599 --> 00:17:10,160
+ apa yang bisa <font color="#CCCCCC">terjadi jika dibuat secara khusus </font>
+
+272
+00:17:10,160 --> 00:17:12,200
+ tautan diklik dan dieksekusi <font color="#E5E5E5">melalui </font>
+
+273
+00:17:12,200 --> 00:17:14,240
+ <font color="#E5E5E5">eksploitasi </font><font color="#CCCCCC">cacat </font><font color="#E5E5E5">XSS </font><font color="#CCCCCC">kami </font>
+
+274
+00:17:14,240 --> 00:17:19,459
+ dibahas sebelumnya mari kita <font color="#CCCCCC">lihat </font>
+
+275
+00:17:19,459 --> 00:17:21,380
+ pada <font color="#CCCCCC">contoh kode situs yang menggambarkan </font>
+
+276
+00:17:21,380 --> 00:17:24,740
+ skenario ini <font color="#E5E5E5">dianggap sebagai titik awal </font>
+
+277
+00:17:24,740 --> 00:17:26,569
+ <font color="#E5E5E5">buku tamu yang telah kita bicarakan di </font>
+
+278
+00:17:26,569 --> 00:17:34,040
+ modul pada XSS menyerang yang tidak terlindungi ini 
+
+279
+00:17:34,040 --> 00:17:35,840
+ versi aplikasi <font color="#CCCCCC">memungkinkan pengguna </font>
+
+280
+00:17:35,840 --> 00:17:47,390
+ untuk <font color="#CCCCCC">mengirimkan </font><font color="#E5E5E5">kode </font><font color="#CCCCCC">HTML apa pun </font><font color="#E5E5E5">ke bagian kedua </font>
+
+281
+00:17:47,390 --> 00:17:49,730
+ <font color="#E5E5E5">adalah skrip admin yang memverifikasi jika suatu </font>
+
+282
+00:17:49,730 --> 00:17:52,240
+ pengguna terotentikasi <font color="#E5E5E5">memiliki hak istimewa admin </font>
+
+283
+00:17:52,240 --> 00:17:55,040
+ <font color="#E5E5E5">jika ini kasus yang memungkinkan skrip </font>
+
+284
+00:17:55,040 --> 00:17:56,900
+ dia untuk menambahkan pengguna memegang 
+
+285
+00:17:56,900 --> 00:17:58,580
+ login <font color="#CCCCCC">dan </font><font color="#E5E5E5">kata sandi diindikasikan dengan </font>
+
+286
+00:17:58,580 --> 00:18:00,190
+ parameter yang dikirim melalui metode get 
+
+287
+00:18:00,190 --> 00:18:04,250
+ <font color="#E5E5E5">jika pengguna yang belum masuk kunjungan </font>
+
+288
+00:18:04,250 --> 00:18:06,620
+ halaman seperti pesan yang sesuai <font color="#E5E5E5">akan </font>
+
+289
+00:18:06,620 --> 00:18:08,860
+ <font color="#CCCCCC">ditampilkan </font>
+
+290
+00:18:08,860 --> 00:18:11,510
+ skrip ketiga memungkinkan login ke a 
+
+291
+00:18:11,510 --> 00:18:13,400
+ layanan dan menggunakan <font color="#E5E5E5">database yang sama </font>
+
+292
+00:18:13,400 --> 00:18:16,950
+ <font color="#E5E5E5">tabel untuk mengautentikasi pengguna </font>
+
+293
+00:18:16,950 --> 00:18:20,069
+ [Musik] 
+
+294
+00:18:20,850 --> 00:18:24,360
+ jika <font color="#E5E5E5">data yang dikirimkan valid adalah admin </font>
+
+295
+00:18:24,360 --> 00:18:39,600
+ sesi akan <font color="#E5E5E5">diaktifkan, Anda dapat melihat </font>
+
+296
+00:18:39,600 --> 00:18:41,730
+ di sini untuk browser web dengan yang tidak terkait 
+
+297
+00:18:41,730 --> 00:18:44,039
+ sesi <font color="#CCCCCC">sedang berlangsung </font><font color="#E5E5E5">yang menunjukkan </font>
+
+298
+00:18:44,039 --> 00:18:47,480
+ <font color="#CCCCCC">bahwa ada dua pengguna berbeda </font>
+
+299
+00:18:47,840 --> 00:18:50,070
+ asumsikan <font color="#E5E5E5">bahwa browser di </font><font color="#CCCCCC">sisi kiri </font>
+
+300
+00:18:50,070 --> 00:18:51,750
+ mewakili administrator dari <font color="#E5E5E5">suatu </font>
+
+301
+00:18:51,750 --> 00:18:54,929
+ <font color="#CCCCCC">menyerang </font><font color="#E5E5E5">layanan saat browser aktif </font>
+
+302
+00:18:54,929 --> 00:18:56,549
+ <font color="#CCCCCC">kanan mewakili peretas siapa </font>
+
+303
+00:18:56,549 --> 00:18:59,120
+ mencoba <font color="#CCCCCC">untuk mendapatkan kendali atas </font><font color="#E5E5E5">layanan </font>
+
+304
+00:18:59,120 --> 00:19:03,659
+ seperti yang Anda lihat, penyerang tidak 
+
+305
+00:19:03,659 --> 00:19:06,480
+ <font color="#E5E5E5">masuk dan tidak memiliki </font><font color="#CCCCCC">a </font>
+
+306
+00:19:06,480 --> 00:19:08,970
+ <font color="#CCCCCC">login atau kata sandi valid yang berarti itu </font>
+
+307
+00:19:08,970 --> 00:19:10,679
+ itu tidak <font color="#E5E5E5">akan bisa </font><font color="#CCCCCC">melakukan </font><font color="#E5E5E5">tindakan apa pun </font>
+
+308
+00:19:10,679 --> 00:19:19,850
+ dalam layanan di sebelah <font color="#CCCCCC">kiri adalah admin kami </font>
+
+309
+00:19:19,850 --> 00:19:22,470
+ <font color="#CCCCCC">diasumsikan dia masuk menggunakan admin sebagai </font>
+
+310
+00:19:22,470 --> 00:19:35,490
+ <font color="#CCCCCC">nama pengguna dan uji sebagai kata sandi seperti Anda </font>
+
+311
+00:19:35,490 --> 00:19:36,990
+ dapat melihat admin <font color="#CCCCCC">masuk </font>
+
+312
+00:19:36,990 --> 00:19:42,210
+ sukses <font color="#E5E5E5">mari kita konfirmasikan ini </font>
+
+313
+00:19:42,210 --> 00:19:45,590
+ penyerang masih <font color="#E5E5E5">belum masuk </font>
+
+314
+00:19:52,350 --> 00:19:54,670
+ mari sekarang lihat apa permintaan lintas situs 
+
+315
+00:19:54,670 --> 00:20:05,770
+ <font color="#E5E5E5">serangan pemalsuan sepertinya bisa Anda </font><font color="#CCCCCC">lihat </font>
+
+316
+00:20:05,770 --> 00:20:09,670
+ di sini <font color="#E5E5E5">skrip buku tamu mari kita tunduk </font>
+
+317
+00:20:09,670 --> 00:20:11,680
+ itu gambar <font color="#E5E5E5">yang pernah diklik </font>
+
+318
+00:20:11,680 --> 00:20:14,440
+ <font color="#CCCCCC">jalankan permintaan HTTP untuk menambahkan </font><font color="#E5E5E5">pengguna ke </font>
+
+319
+00:20:14,440 --> 00:20:17,010
+ <font color="#E5E5E5">layanan </font>
+
+320
+00:20:20,420 --> 00:20:23,529
+ [Musik] 
+
+321
+00:20:23,980 --> 00:20:27,549
+ mari kita lihat <font color="#E5E5E5">skrip yang kita butuhkan </font>
+
+322
+00:20:27,549 --> 00:20:29,500
+ untuk meneruskan variabel tindakan dengan <font color="#CCCCCC">add </font>
+
+323
+00:20:29,500 --> 00:20:38,889
+ nilai <font color="#E5E5E5">pengguna variabel pengguna yang mengandung </font>
+
+324
+00:20:38,889 --> 00:20:41,049
+ <font color="#E5E5E5">nama pengguna dan kata sandi </font><font color="#CCCCCC">dengan </font>
+
+325
+00:20:41,049 --> 00:21:09,880
+ sandi seperti yang Anda lihat gambar <font color="#E5E5E5">memiliki </font>
+
+326
+00:21:09,880 --> 00:21:11,529
+ telah <font color="#CCCCCC">dimasukkan yang menyembunyikan tautan ke </font>
+
+327
+00:21:11,529 --> 00:21:17,169
+ layanan admin di sumbernya sekarang konfirmasi 
+
+328
+00:21:17,169 --> 00:21:18,820
+ bahwa penyerang <font color="#CCCCCC">masih belum masuk </font>
+
+329
+00:21:18,820 --> 00:21:20,350
+ dan bahwa akunnya <font color="#E5E5E5">belum </font>
+
+330
+00:21:20,350 --> 00:21:22,889
+ <font color="#CCCCCC">dibuat </font>
+
+331
+00:21:49,240 --> 00:21:53,570
+ seperti yang Anda lihat, akun <font color="#E5E5E5">tidak </font>
+
+332
+00:21:53,570 --> 00:21:56,210
+ <font color="#E5E5E5">ada di sistem mari kita asumsikan </font><font color="#CCCCCC">sekarang </font>
+
+333
+00:21:56,210 --> 00:21:57,830
+ bahwa <font color="#E5E5E5">administrator </font><font color="#CCCCCC">memutuskan untuk berkunjung </font>
+
+334
+00:21:57,830 --> 00:22:00,370
+ <font color="#E5E5E5">buku tamu </font>
+
+335
+00:22:10,590 --> 00:22:12,659
+ gambar <font color="#E5E5E5">belum ditampilkan karena </font>
+
+336
+00:22:12,659 --> 00:22:15,059
+ <font color="#E5E5E5">URL-nya mengacu pada situs yang </font><font color="#CCCCCC">bukan </font><font color="#E5E5E5">situs web </font>
+
+337
+00:22:15,059 --> 00:22:17,639
+ <font color="#E5E5E5">gambar yang administrator tidak dapat membayar </font>
+
+338
+00:22:17,639 --> 00:22:19,320
+ memperhatikan <font color="#E5E5E5">fakta bahwa gambar </font><font color="#CCCCCC">memiliki </font>
+
+339
+00:22:19,320 --> 00:22:21,960
+ tidak ditampilkan <font color="#E5E5E5">dan tidak akan memperhatikan </font><font color="#CCCCCC">bahwa a </font>
+
+340
+00:22:21,960 --> 00:22:23,999
+ permintaan <font color="#E5E5E5">telah </font><font color="#CCCCCC">dieksekusi yang menambahkan </font>
+
+341
+00:22:23,999 --> 00:22:28,200
+ pengguna ke database <font color="#E5E5E5">mari kita lihat </font>
+
+342
+00:22:28,200 --> 00:22:45,749
+ hasil sekarang sudah <font color="#E5E5E5">ada akun baru </font>
+
+343
+00:22:45,749 --> 00:22:47,730
+ <font color="#E5E5E5">dibuat untuk penyerang dan dia </font>
+
+344
+00:22:47,730 --> 00:22:51,269
+ masuk <font color="#CCCCCC">ke </font><font color="#E5E5E5">layanan mencoba memikirkan </font>
+
+345
+00:22:51,269 --> 00:22:53,070
+ cara-cara di mana <font color="#CCCCCC">kita dapat mencegah pengungkapan </font>
+
+346
+00:22:53,070 --> 00:22:56,340
+ diri kita untuk <font color="#E5E5E5">serangan ini </font><font color="#CCCCCC">yang pertama baik </font>
+
+347
+00:22:56,340 --> 00:22:57,840
+ tindakan balasan adalah mengamankan 
+
+348
+00:22:57,840 --> 00:23:00,600
+ aplikasi terhadap kelemahan XSS 
+
+349
+00:23:00,600 --> 00:23:02,460
+ pengguna masih bisa <font color="#E5E5E5">menjadi mangsa seperti itu </font>
+
+350
+00:23:02,460 --> 00:23:07,320
+ <font color="#E5E5E5">menyerang melalui situs web mereka </font><font color="#CCCCCC">untuk mengamankan </font>
+
+351
+00:23:07,320 --> 00:23:08,700
+ aplikasi dari tampil 
+
+352
+00:23:08,700 --> 00:23:10,499
+ tindakan signifikan di latar belakang di 
+
+353
+00:23:10,499 --> 00:23:13,970
+ sebuah <font color="#E5E5E5">serangan CSRF potensial yang dapat Anda butuhkan </font>
+
+354
+00:23:13,970 --> 00:23:15,629
+ otorisasi ulang atau <font color="#E5E5E5">diperkenalkan </font>
+
+355
+00:23:15,629 --> 00:23:21,119
+ token yang dihasilkan tambahan 
+
+356
+00:23:21,119 --> 00:23:22,889
+ database bisa menyimpan secara acak satu kali 
+
+357
+00:23:22,889 --> 00:23:24,659
+ string <font color="#E5E5E5">yang akan ditambahkan ke semua </font>
+
+358
+00:23:24,659 --> 00:23:26,700
+ formulir yang dibuat di <font color="#E5E5E5">bidang tersembunyi dalam </font>
+
+359
+00:23:26,700 --> 00:23:32,759
+ layanan ini akan <font color="#E5E5E5">memungkinkan Anda untuk memeriksa </font>
+
+360
+00:23:32,759 --> 00:23:34,769
+ sisi server dan <font color="#E5E5E5">token yang dikirimkan </font>
+
+361
+00:23:34,769 --> 00:23:38,999
+ masih aktif berkat metode ini <font color="#CCCCCC">jika </font>
+
+362
+00:23:38,999 --> 00:23:40,440
+ peretas tidak akan tahu yang aktif saat ini 
+
+363
+00:23:40,440 --> 00:23:46,049
+ token <font color="#E5E5E5">serangan mereka akan </font><font color="#CCCCCC">digagalkan </font>
+
+364
+00:23:46,049 --> 00:23:48,389
+ sisi lain hanya menggunakan pos 
+
+365
+00:23:48,389 --> 00:23:50,669
+ metode <font color="#CCCCCC">tanpa menggunakan permintaan dapatkan </font><font color="#E5E5E5">tidak bisa </font>
+
+366
+00:23:50,669 --> 00:23:52,769
+ menjamin keamanan aplikasi <font color="#CCCCCC">sebagai </font>
+
+367
+00:23:52,769 --> 00:23:54,330
+ penyerang dapat menggunakan JavaScript untuk 
+
+368
+00:23:54,330 --> 00:23:57,269
+ buat permintaan pos <font color="#E5E5E5">semuanya </font>
+
+369
+00:23:57,269 --> 00:24:00,600
+ modul ini terima kasih atas <font color="#E5E5E5">perhatian Anda </font>
+
+370
+00:24:00,600 --> 00:24:02,100
+ dan melihat <font color="#CCCCCC">Anda </font><font color="#E5E5E5">di bagian selanjutnya dari ini </font>
+
+371
+00:24:02,100 --> 00:24:04,110
+ Tentu saja <font color="#E5E5E5">yang akan fokus pada penggunaan </font>
+
+372
+00:24:04,110 --> 00:24:05,740
+ browser untuk <font color="#E5E5E5">memata - matai data </font>
+
+373
+00:24:05,740 --> 00:24:08,829
+ [Musik] 
+
+374
+00:24:09,580 --> 00:00:00,000
+ <font color="#E5E5E5">kamu </font>
+

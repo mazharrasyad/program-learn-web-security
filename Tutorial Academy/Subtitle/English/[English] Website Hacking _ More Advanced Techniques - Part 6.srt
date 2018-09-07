@@ -1,0 +1,1124 @@
+1
+00:00:12,560 --> 00:00:15,389
+welcome to module<font color="#E5E5E5"> 16</font><font color="#CCCCCC"> this</font><font color="#E5E5E5"> module focuses</font>
+
+2
+00:00:15,389 --> 00:00:17,550
+on the spying of web application traffic
+
+3
+00:00:17,550 --> 00:00:21,599
+<font color="#CCCCCC">as you've discovered in module 14 which</font>
+
+4
+00:00:21,599 --> 00:00:24,020
+focused<font color="#CCCCCC"> on</font><font color="#E5E5E5"> the XSS vulnerabilities</font>
+
+5
+00:00:24,020 --> 00:00:26,009
+exploiting these<font color="#E5E5E5"> flaws could have</font>
+
+6
+00:00:26,009 --> 00:00:27,689
+serious<font color="#CCCCCC"> consequences for</font><font color="#E5E5E5"> users of</font>
+
+7
+00:00:27,689 --> 00:00:32,910
+vulnerable services user data such as
+
+8
+00:00:32,910 --> 00:00:35,310
+session IDs<font color="#E5E5E5"> could be stolen</font><font color="#CCCCCC"> and malware</font>
+
+9
+00:00:35,310 --> 00:00:36,780
+could be installed<font color="#E5E5E5"> on a victim's</font>
+
+10
+00:00:36,780 --> 00:00:41,670
+<font color="#CCCCCC">computer</font><font color="#E5E5E5"> as you know it's feasible to</font>
+
+11
+00:00:41,670 --> 00:00:45,739
+execute any JavaScript browser side
+
+12
+00:00:46,579 --> 00:00:49,170
+there<font color="#E5E5E5"> are also other means of</font><font color="#CCCCCC"> exploiting</font>
+
+13
+00:00:49,170 --> 00:00:53,010
+these holes using several simple tricks
+
+14
+00:00:53,010 --> 00:00:54,750
+<font color="#CCCCCC">an attack is able to write a script</font>
+
+15
+00:00:54,750 --> 00:00:56,370
+<font color="#E5E5E5">which will monitor all operations</font>
+
+16
+00:00:56,370 --> 00:00:58,410
+<font color="#CCCCCC">executed by a web application user and</font>
+
+17
+00:00:58,410 --> 00:01:00,390
+which will<font color="#E5E5E5"> be active as</font><font color="#CCCCCC"> long as the</font>
+
+18
+00:01:00,390 --> 00:01:09,060
+given browser window is kept open you
+
+19
+00:01:09,060 --> 00:01:10,590
+can see here a<font color="#E5E5E5"> simple code for the</font>
+
+20
+00:01:10,590 --> 00:01:13,500
+sniffer the load sniffer function
+
+21
+00:01:13,500 --> 00:01:17,520
+launches the sniffer first it<font color="#CCCCCC"> creates a</font>
+
+22
+00:01:17,520 --> 00:01:20,520
+secondary<font color="#CCCCCC"> XML HTTP request object used</font>
+
+23
+00:01:20,520 --> 00:01:25,799
+<font color="#E5E5E5">for</font><font color="#CCCCCC"> Ajax requests then loads all links</font>
+
+24
+00:01:25,799 --> 00:01:30,030
+and forms in a<font color="#CCCCCC"> website</font><font color="#E5E5E5"> let's</font><font color="#CCCCCC"> see the</font>
+
+25
+00:01:30,030 --> 00:01:33,200
+<font color="#E5E5E5">sources for these functions</font>
+
+26
+00:01:37,830 --> 00:01:40,270
+the collect links function is used<font color="#E5E5E5"> to</font>
+
+27
+00:01:40,270 --> 00:01:41,830
+load all link tags from<font color="#E5E5E5"> the current</font>
+
+28
+00:01:41,830 --> 00:01:43,810
+document<font color="#CCCCCC"> and replace target addresses</font>
+
+29
+00:01:43,810 --> 00:01:45,760
+with JavaScript function calls<font color="#E5E5E5"> where the</font>
+
+30
+00:01:45,760 --> 00:01:50,980
+links URL is the parameter in the
+
+31
+00:01:50,980 --> 00:01:53,050
+collect forms function<font color="#CCCCCC"> the forms target</font>
+
+32
+00:01:53,050 --> 00:01:54,700
+address is<font color="#E5E5E5"> replaced by a function call</font>
+
+33
+00:01:54,700 --> 00:01:56,380
+which assumes the number of the form<font color="#CCCCCC"> of</font>
+
+34
+00:01:56,380 --> 00:02:01,510
+the parameter let's now take a look<font color="#CCCCCC"> at</font>
+
+35
+00:02:01,510 --> 00:02:04,650
+the load URL function
+
+36
+00:02:09,960 --> 00:02:12,390
+[Music]
+
+37
+00:02:12,390 --> 00:02:14,640
+at first the sent to attacker function
+
+38
+00:02:14,640 --> 00:02:16,470
+is<font color="#E5E5E5"> called which we'll discuss</font><font color="#CCCCCC"> in a</font>
+
+39
+00:02:16,470 --> 00:02:23,730
+<font color="#CCCCCC">minute its source is set to the</font><font color="#E5E5E5"> URL</font>
+
+40
+00:02:23,730 --> 00:02:25,350
+which a user attempted to click and
+
+41
+00:02:25,350 --> 00:02:27,150
+<font color="#E5E5E5">parameters are set to have the frame</font>
+
+42
+00:02:27,150 --> 00:02:42,330
+fill an entire<font color="#E5E5E5"> page the frame is added</font>
+
+43
+00:02:42,330 --> 00:02:44,190
+to<font color="#E5E5E5"> the website's Dom tree and display</font>
+
+44
+00:02:44,190 --> 00:02:47,459
+delay<font color="#E5E5E5"> is set to 400 milliseconds after</font>
+
+45
+00:02:47,459 --> 00:02:53,190
+<font color="#CCCCCC">this time the site should preload the</font>
+
+46
+00:02:53,190 --> 00:02:55,019
+script tag is also<font color="#E5E5E5"> added which loads the</font>
+
+47
+00:02:55,019 --> 00:02:58,170
+code of our sniffer next<font color="#E5E5E5"> the load</font>
+
+48
+00:02:58,170 --> 00:02:59,820
+sniffer function is called to parse the
+
+49
+00:02:59,820 --> 00:03:04,170
+page let's now focus<font color="#E5E5E5"> on the sent to</font>
+
+50
+00:03:04,170 --> 00:03:07,070
+attacker function
+
+51
+00:03:08,090 --> 00:03:11,210
+[Music]
+
+52
+00:03:21,900 --> 00:03:24,280
+we can see that<font color="#CCCCCC"> a</font><font color="#E5E5E5"> referral address is</font>
+
+53
+00:03:24,280 --> 00:03:26,380
+being<font color="#E5E5E5"> prepared which will pass captured</font>
+
+54
+00:03:26,380 --> 00:03:29,350
+data such<font color="#CCCCCC"> as website URL or form content</font>
+
+55
+00:03:29,350 --> 00:03:33,000
+to our sniffer through the get parameter
+
+56
+00:03:36,209 --> 00:03:39,580
+<font color="#CCCCCC">XML HTTP request object references</font><font color="#E5E5E5"> to</font>
+
+57
+00:03:39,580 --> 00:03:41,920
+<font color="#E5E5E5">pages from other domains are disabled in</font>
+
+58
+00:03:41,920 --> 00:03:43,720
+virtually all browsers for security
+
+59
+00:03:43,720 --> 00:03:48,459
+reasons to<font color="#CCCCCC"> circumvent this</font><font color="#E5E5E5"> a script tag</font>
+
+60
+00:03:48,459 --> 00:03:50,290
+is created and the generated sniffer
+
+61
+00:03:50,290 --> 00:03:54,070
+link is submitted as the URL<font color="#E5E5E5"> next the</font>
+
+62
+00:03:54,070 --> 00:03:56,050
+tag is<font color="#CCCCCC"> added to</font><font color="#E5E5E5"> the dome tree so an</font>
+
+63
+00:03:56,050 --> 00:03:57,340
+attempt will<font color="#CCCCCC"> be made to</font><font color="#E5E5E5"> load the script</font>
+
+64
+00:03:57,340 --> 00:03:59,620
+<font color="#CCCCCC">which will execute the get request</font><font color="#E5E5E5"> and</font>
+
+65
+00:03:59,620 --> 00:04:05,470
+send data<font color="#E5E5E5"> to the sniffer let's see the</font>
+
+66
+00:04:05,470 --> 00:04:17,410
+significant ow as you can see all<font color="#CCCCCC"> pass</font>
+
+67
+00:04:17,410 --> 00:04:19,060
+parameters<font color="#E5E5E5"> are logged in the sniffer log</font>
+
+68
+00:04:19,060 --> 00:04:27,479
+file as for now the sniffer log is empty
+
+69
+00:04:27,479 --> 00:04:29,650
+let's take a look at the source code<font color="#E5E5E5"> for</font>
+
+70
+00:04:29,650 --> 00:04:33,130
+<font color="#CCCCCC">our website</font><font color="#E5E5E5"> in this case the sniffer has</font>
+
+71
+00:04:33,130 --> 00:04:35,290
+been injected<font color="#CCCCCC"> directly into the</font><font color="#E5E5E5"> code but</font>
+
+72
+00:04:35,290 --> 00:04:36,940
+it's equally probable that an attacker
+
+73
+00:04:36,940 --> 00:04:38,890
+could have<font color="#E5E5E5"> inserted it into the service</font>
+
+74
+00:04:38,890 --> 00:04:40,660
+<font color="#E5E5E5">using the cross-site scripting</font>
+
+75
+00:04:40,660 --> 00:04:43,120
+vulnerabilities you<font color="#CCCCCC"> can see here several</font>
+
+76
+00:04:43,120 --> 00:04:46,830
+<font color="#CCCCCC">links to</font><font color="#E5E5E5"> sub pages and a</font><font color="#CCCCCC"> forum</font>
+
+77
+00:04:53,039 --> 00:04:55,720
+the sniffer code is not<font color="#E5E5E5"> executed on</font><font color="#CCCCCC"> the</font>
+
+78
+00:04:55,720 --> 00:04:58,270
+<font color="#CCCCCC">subpages let's see now how the site</font>
+
+79
+00:04:58,270 --> 00:05:00,870
+works in practice
+
+80
+00:05:04,340 --> 00:05:07,460
+[Music]
+
+81
+00:05:07,680 --> 00:05:10,860
+you can see here the<font color="#E5E5E5"> main page links</font>
+
+82
+00:05:10,860 --> 00:05:12,320
+have<font color="#CCCCCC"> been replaced with loadurl function</font>
+
+83
+00:05:12,320 --> 00:05:19,979
+calls<font color="#E5E5E5"> let's click on the first link this</font>
+
+84
+00:05:19,979 --> 00:05:22,370
+<font color="#E5E5E5">page has also been parsed by the sniffer</font>
+
+85
+00:05:22,370 --> 00:05:26,840
+let's<font color="#E5E5E5"> open the second and third links</font>
+
+86
+00:05:36,380 --> 00:05:43,590
+now go back to<font color="#CCCCCC"> the main page put a</font>
+
+87
+00:05:43,590 --> 00:05:47,360
+string in the<font color="#E5E5E5"> forum and try to send it</font>
+
+88
+00:05:51,979 --> 00:05:54,300
+let's see the contents of a sniffer dog
+
+89
+00:05:54,300 --> 00:06:01,139
+file as you can see all calls have been
+
+90
+00:06:01,139 --> 00:06:03,419
+<font color="#CCCCCC">captured including the values sent</font>
+
+91
+00:06:03,419 --> 00:06:15,180
+through<font color="#CCCCCC"> the forum</font><font color="#E5E5E5"> a potential attacker</font>
+
+92
+00:06:15,180 --> 00:06:17,250
+may be able<font color="#CCCCCC"> to</font><font color="#E5E5E5"> monitor</font><font color="#CCCCCC"> all operations</font>
+
+93
+00:06:17,250 --> 00:06:21,120
+<font color="#CCCCCC">performed by a victim in this way let's</font>
+
+94
+00:06:21,120 --> 00:06:22,500
+try to<font color="#E5E5E5"> think of ways in which</font><font color="#CCCCCC"> we could</font>
+
+95
+00:06:22,500 --> 00:06:23,940
+protect ourselves against these attacks
+
+96
+00:06:23,940 --> 00:06:28,500
+<font color="#CCCCCC">as web developers we should above all</font>
+
+97
+00:06:28,500 --> 00:06:36,599
+take care<font color="#E5E5E5"> of the XSS vulnerabilities we</font>
+
+98
+00:06:36,599 --> 00:06:38,389
+should also make<font color="#E5E5E5"> use of a frame killer</font>
+
+99
+00:06:38,389 --> 00:06:41,460
+<font color="#E5E5E5">if our page is open in an iframe the</font>
+
+100
+00:06:41,460 --> 00:06:43,080
+code will redirect<font color="#E5E5E5"> an entire browser</font>
+
+101
+00:06:43,080 --> 00:06:48,240
+window to the frames URL causing the
+
+102
+00:06:48,240 --> 00:06:51,330
+page to reload<font color="#E5E5E5"> outside the frame</font><font color="#CCCCCC"> in this</font>
+
+103
+00:06:51,330 --> 00:06:53,580
+way the page outside<font color="#E5E5E5"> the frame with all</font>
+
+104
+00:06:53,580 --> 00:06:57,169
+embedded<font color="#E5E5E5"> scripts will be skipped as</font>
+
+105
+00:06:57,169 --> 00:06:59,550
+users we should be on alert<font color="#CCCCCC"> if the</font>
+
+106
+00:06:59,550 --> 00:07:01,530
+address<font color="#E5E5E5"> in the bar does</font><font color="#CCCCCC"> not change even</font>
+
+107
+00:07:01,530 --> 00:07:04,849
+if we have browsed through<font color="#E5E5E5"> several pages</font>
+
+108
+00:07:04,880 --> 00:07:07,979
+<font color="#E5E5E5">what's more if by hovering over</font><font color="#CCCCCC"> a link</font>
+
+109
+00:07:07,979 --> 00:07:09,840
+we discover that the displayed URL
+
+110
+00:07:09,840 --> 00:07:12,120
+executes JavaScript<font color="#CCCCCC"> we should remain</font>
+
+111
+00:07:12,120 --> 00:07:14,350
+extra cautious
+
+112
+00:07:14,350 --> 00:07:17,140
+some newer browsers disable JavaScript
+
+113
+00:07:17,140 --> 00:07:19,480
+access to frames with URLs and domains
+
+114
+00:07:19,480 --> 00:07:23,250
+different than the URL of<font color="#E5E5E5"> the window</font>
+
+115
+00:07:26,850 --> 00:07:29,950
+that's all in this module<font color="#E5E5E5"> thanks for</font>
+
+116
+00:07:29,950 --> 00:07:31,420
+your<font color="#E5E5E5"> attention and see</font><font color="#CCCCCC"> you in</font><font color="#E5E5E5"> the next</font>
+
+117
+00:07:31,420 --> 00:07:33,310
+module<font color="#CCCCCC"> where</font><font color="#E5E5E5"> we will focus on session</font>
+
+118
+00:07:33,310 --> 00:07:43,000
+<font color="#E5E5E5">hijacking welcome to module 17 in this</font>
+
+119
+00:07:43,000 --> 00:07:44,830
+module<font color="#E5E5E5"> will help you understand session</font>
+
+120
+00:07:44,830 --> 00:07:46,750
+hijacking<font color="#CCCCCC"> which is a type of</font><font color="#E5E5E5"> attack that</font>
+
+121
+00:07:46,750 --> 00:07:49,350
+consists of an interception of<font color="#E5E5E5"> a session</font>
+
+122
+00:07:49,350 --> 00:07:51,880
+session<font color="#E5E5E5"> hijacking attacks allow an</font>
+
+123
+00:07:51,880 --> 00:07:54,040
+attacker to gain<font color="#E5E5E5"> unauthorized access to</font>
+
+124
+00:07:54,040 --> 00:07:56,350
+services<font color="#E5E5E5"> by taking over the active</font>
+
+125
+00:07:56,350 --> 00:08:02,290
+session of an authorized user how can
+
+126
+00:08:02,290 --> 00:08:06,730
+this be carried out<font color="#E5E5E5"> as you know HTTP</font>
+
+127
+00:08:06,730 --> 00:08:09,220
+protocol is stateless to maintain<font color="#E5E5E5"> user</font>
+
+128
+00:08:09,220 --> 00:08:13,110
+state cookies have to be introduced
+
+129
+00:08:18,120 --> 00:08:20,470
+cookies<font color="#E5E5E5"> are stored in web browsers and</font>
+
+130
+00:08:20,470 --> 00:08:22,630
+often contain<font color="#CCCCCC"> unique user identifier</font>
+
+131
+00:08:22,630 --> 00:08:24,790
+which are processed<font color="#CCCCCC"> server-side to set</font>
+
+132
+00:08:24,790 --> 00:08:27,060
+up<font color="#CCCCCC"> sessions containing user information</font>
+
+133
+00:08:27,060 --> 00:08:29,800
+<font color="#E5E5E5">while an ID is assigned to a</font><font color="#CCCCCC"> specific</font>
+
+134
+00:08:29,800 --> 00:08:31,990
+user the exploitation<font color="#E5E5E5"> of</font><font color="#CCCCCC"> the XSS</font>
+
+135
+00:08:31,990 --> 00:08:33,429
+vulnerabilities we've mentioned<font color="#E5E5E5"> in</font>
+
+136
+00:08:33,429 --> 00:08:35,229
+<font color="#CCCCCC">previous modules</font><font color="#E5E5E5"> could allow an attacker</font>
+
+137
+00:08:35,229 --> 00:08:37,690
+to steal a cookie<font color="#E5E5E5"> with user session ID</font>
+
+138
+00:08:37,690 --> 00:08:40,929
+to access<font color="#CCCCCC"> services the same</font><font color="#E5E5E5"> could</font><font color="#CCCCCC"> be</font>
+
+139
+00:08:40,929 --> 00:08:42,909
+achieved by using<font color="#E5E5E5"> scripts which monitor</font>
+
+140
+00:08:42,909 --> 00:08:51,820
+<font color="#E5E5E5">user actions let's see how this works in</font>
+
+141
+00:08:51,820 --> 00:08:54,060
+<font color="#CCCCCC">practice</font>
+
+142
+00:08:55,110 --> 00:08:57,269
+take a look at this<font color="#E5E5E5"> very simple script</font>
+
+143
+00:08:57,269 --> 00:09:01,260
+<font color="#CCCCCC">if you</font><font color="#E5E5E5"> visit the admin log in PHP URL</font>
+
+144
+00:09:01,260 --> 00:09:03,089
+<font color="#E5E5E5">the admin variable is set for the</font>
+
+145
+00:09:03,089 --> 00:09:04,620
+current session<font color="#E5E5E5"> which means that the</font>
+
+146
+00:09:04,620 --> 00:09:10,500
+<font color="#CCCCCC">user will</font><font color="#E5E5E5"> have administrator rights the</font>
+
+147
+00:09:10,500 --> 00:09:13,230
+test.php file is also<font color="#E5E5E5"> available the file</font>
+
+148
+00:09:13,230 --> 00:09:15,690
+utilizes the PHP session mechanism and
+
+149
+00:09:15,690 --> 00:09:17,820
+if the admin variable is<font color="#E5E5E5"> set the message</font>
+
+150
+00:09:17,820 --> 00:09:19,860
+<font color="#CCCCCC">Hecht will be displayed</font><font color="#E5E5E5"> the</font>
+
+151
+00:09:19,860 --> 00:09:21,660
+vulnerabilities<font color="#CCCCCC"> have been successfully</font>
+
+152
+00:09:21,660 --> 00:09:26,910
+<font color="#CCCCCC">exploited if this is not set the message</font>
+
+153
+00:09:26,910 --> 00:09:30,570
+not hacked will be displayed imagine
+
+154
+00:09:30,570 --> 00:09:32,310
+that a normal user is being authorized
+
+155
+00:09:32,310 --> 00:09:35,459
+in a service during<font color="#E5E5E5"> this</font><font color="#CCCCCC"> process a</font>
+
+156
+00:09:35,459 --> 00:09:38,010
+unique session<font color="#E5E5E5"> ID cookie is generated</font>
+
+157
+00:09:38,010 --> 00:09:39,660
+<font color="#E5E5E5">and session</font><font color="#CCCCCC"> information is saved</font>
+
+158
+00:09:39,660 --> 00:09:45,839
+<font color="#E5E5E5">server-side let's use the live HTTP</font>
+
+159
+00:09:45,839 --> 00:09:48,149
+headers add-on to see communications
+
+160
+00:09:48,149 --> 00:09:51,380
+between<font color="#E5E5E5"> the user and server</font>
+
+161
+00:10:28,410 --> 00:10:31,549
+[Music]
+
+162
+00:10:32,870 --> 00:10:35,089
+as you can see once the login.php
+
+163
+00:10:35,089 --> 00:10:38,029
+address is entered<font color="#CCCCCC"> a PHP sess ID cookie</font>
+
+164
+00:10:38,029 --> 00:10:40,279
+<font color="#E5E5E5">is sent to the server</font><font color="#CCCCCC"> the cookie</font><font color="#E5E5E5"> is used</font>
+
+165
+00:10:40,279 --> 00:10:45,529
+by<font color="#E5E5E5"> default to store PHP session IDs if</font>
+
+166
+00:10:45,529 --> 00:10:47,720
+the administrator falls prey to<font color="#E5E5E5"> an XSS</font>
+
+167
+00:10:47,720 --> 00:10:49,490
+attack or data transmission has been
+
+168
+00:10:49,490 --> 00:10:52,220
+intercepted<font color="#E5E5E5"> an attacker can obtain the</font>
+
+169
+00:10:52,220 --> 00:10:57,860
+content of the cookie let's open a
+
+170
+00:10:57,860 --> 00:10:59,600
+private<font color="#E5E5E5"> tab which uses a new set of</font>
+
+171
+00:10:59,600 --> 00:11:02,480
+cookies<font color="#E5E5E5"> rendering the previous session</font>
+
+172
+00:11:02,480 --> 00:11:05,020
+inactive
+
+173
+00:11:26,530 --> 00:11:29,679
+[Music]
+
+174
+00:11:31,040 --> 00:11:33,800
+visiting the test.php URL<font color="#E5E5E5"> doesn't give</font>
+
+175
+00:11:33,800 --> 00:11:36,460
+us<font color="#CCCCCC"> access to the control panel this time</font>
+
+176
+00:11:36,460 --> 00:11:39,590
+<font color="#E5E5E5">let's use the live HTTP headers add-on</font>
+
+177
+00:11:39,590 --> 00:12:06,020
+again as you<font color="#E5E5E5"> can see a different PHP</font>
+
+178
+00:12:06,020 --> 00:12:09,610
+session ID<font color="#E5E5E5"> is sent</font><font color="#CCCCCC"> to the server the</font>
+
+179
+00:12:09,610 --> 00:12:12,230
+<font color="#CCCCCC">add-ons replay function</font><font color="#E5E5E5"> allows you to</font>
+
+180
+00:12:12,230 --> 00:12:18,500
+<font color="#E5E5E5">freely modify the set request will set</font>
+
+181
+00:12:18,500 --> 00:12:20,510
+the admin session ID<font color="#E5E5E5"> using the cookie</font>
+
+182
+00:12:20,510 --> 00:12:25,520
+we've previously<font color="#E5E5E5"> acquired next we send</font>
+
+183
+00:12:25,520 --> 00:12:26,930
+the<font color="#E5E5E5"> request to</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> server using</font><font color="#CCCCCC"> the</font>
+
+184
+00:12:26,930 --> 00:12:31,010
+<font color="#E5E5E5">replay function</font><font color="#CCCCCC"> as you can see the</font>
+
+185
+00:12:31,010 --> 00:12:34,280
+access has been<font color="#CCCCCC"> granted</font><font color="#E5E5E5"> how can we</font>
+
+186
+00:12:34,280 --> 00:12:37,600
+<font color="#CCCCCC">protect ourselves against these attacks</font>
+
+187
+00:12:37,810 --> 00:12:40,430
+<font color="#E5E5E5">the first prevention method is securing</font>
+
+188
+00:12:40,430 --> 00:12:42,110
+the<font color="#E5E5E5"> application against XSS</font>
+
+189
+00:12:42,110 --> 00:12:44,420
+vulnerabilities<font color="#E5E5E5"> as these types of flaws</font>
+
+190
+00:12:44,420 --> 00:12:46,460
+might be used to<font color="#CCCCCC"> leek session ID cookies</font>
+
+191
+00:12:46,460 --> 00:12:49,970
+<font color="#CCCCCC">used in our service using the</font><font color="#E5E5E5"> encrypted</font>
+
+192
+00:12:49,970 --> 00:12:52,250
+<font color="#CCCCCC">HTTP protocol will guarantee that</font>
+
+193
+00:12:52,250 --> 00:12:54,350
+intercepting cookies won't be feasible
+
+194
+00:12:54,350 --> 00:12:57,890
+<font color="#E5E5E5">outside of the users computers you can</font>
+
+195
+00:12:57,890 --> 00:13:00,080
+also add the HTTP only parameter to
+
+196
+00:13:00,080 --> 00:13:02,330
+cookies which should disable<font color="#E5E5E5"> JavaScript</font>
+
+197
+00:13:02,330 --> 00:13:05,870
+access to cookies<font color="#CCCCCC"> a frequent</font>
+
+198
+00:13:05,870 --> 00:13:07,850
+regeneration<font color="#E5E5E5"> of session IDs is also a</font>
+
+199
+00:13:07,850 --> 00:13:09,950
+good<font color="#E5E5E5"> idea</font><font color="#CCCCCC"> especially after a successful</font>
+
+200
+00:13:09,950 --> 00:13:15,410
+<font color="#E5E5E5">login another prevention method is</font>
+
+201
+00:13:15,410 --> 00:13:17,420
+<font color="#E5E5E5">checking the IP address</font><font color="#CCCCCC"> related to the</font>
+
+202
+00:13:17,420 --> 00:13:19,040
+session the address should not be
+
+203
+00:13:19,040 --> 00:13:20,330
+changing while the session is in
+
+204
+00:13:20,330 --> 00:13:22,490
+progress<font color="#CCCCCC"> if it is this could point to a</font>
+
+205
+00:13:22,490 --> 00:13:25,400
+potential session hijacking event many
+
+206
+00:13:25,400 --> 00:13:27,080
+ready-made scripts implement their own
+
+207
+00:13:27,080 --> 00:13:29,210
+session mechanism which checks the IP
+
+208
+00:13:29,210 --> 00:13:33,170
+address used in a session that's all in
+
+209
+00:13:33,170 --> 00:13:36,230
+module 17<font color="#E5E5E5"> thanks for your attention and</font>
+
+210
+00:13:36,230 --> 00:13:37,940
+<font color="#E5E5E5">see</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> in the next module which will</font>
+
+211
+00:13:37,940 --> 00:13:41,650
+<font color="#E5E5E5">talk</font><font color="#CCCCCC"> about session fixation attacks</font>
+
+212
+00:13:47,020 --> 00:13:51,430
+welcome to module 18<font color="#E5E5E5"> in this part of the</font>
+
+213
+00:13:51,430 --> 00:13:52,899
+course<font color="#E5E5E5"> we'll talk about session fixation</font>
+
+214
+00:13:52,899 --> 00:13:56,680
+attacks session fixation is a<font color="#E5E5E5"> subclass</font>
+
+215
+00:13:56,680 --> 00:14:01,390
+<font color="#E5E5E5">of session hijacking session hijacking</font>
+
+216
+00:14:01,390 --> 00:14:03,370
+involves the<font color="#E5E5E5"> interception of a victim's</font>
+
+217
+00:14:03,370 --> 00:14:05,910
+<font color="#E5E5E5">session ID</font>
+
+218
+00:14:07,620 --> 00:14:10,209
+session fixation occurs when an attacker
+
+219
+00:14:10,209 --> 00:14:12,070
+finds a way to make<font color="#CCCCCC"> a victim who has</font>
+
+220
+00:14:12,070 --> 00:14:14,230
+access to<font color="#E5E5E5"> an attack service</font><font color="#CCCCCC"> use a valid</font>
+
+221
+00:14:14,230 --> 00:14:16,450
+session ID supplied by the attacker<font color="#CCCCCC"> if</font>
+
+222
+00:14:16,450 --> 00:14:18,520
+the victim assumes the session ID<font color="#E5E5E5"> and is</font>
+
+223
+00:14:18,520 --> 00:14:19,990
+correctly authorized in the attack
+
+224
+00:14:19,990 --> 00:14:21,820
+<font color="#E5E5E5">service</font><font color="#CCCCCC"> the attacker could</font><font color="#E5E5E5"> take over</font>
+
+225
+00:14:21,820 --> 00:14:25,170
+this session and<font color="#E5E5E5"> gain service access</font>
+
+226
+00:14:27,180 --> 00:14:29,920
+this is possible<font color="#E5E5E5"> in the standard PHP</font>
+
+227
+00:14:29,920 --> 00:14:34,360
+session mechanism<font color="#E5E5E5"> if a user has</font><font color="#CCCCCC"> no</font>
+
+228
+00:14:34,360 --> 00:14:36,220
+session history saved in the cookies and
+
+229
+00:14:36,220 --> 00:14:37,930
+<font color="#E5E5E5">the idea is sent through the get request</font>
+
+230
+00:14:37,930 --> 00:14:42,510
+<font color="#CCCCCC">it will</font><font color="#E5E5E5"> be adopted as the new session ID</font>
+
+231
+00:14:46,970 --> 00:14:50,090
+[Music]
+
+232
+00:14:51,700 --> 00:14:53,690
+let's see a<font color="#E5E5E5"> sample script which</font>
+
+233
+00:14:53,690 --> 00:15:01,760
+illustrates<font color="#CCCCCC"> this scenario you can</font><font color="#E5E5E5"> see</font>
+
+234
+00:15:01,760 --> 00:15:07,130
+here two files admin<font color="#CCCCCC"> login PHP simulates</font>
+
+235
+00:15:07,130 --> 00:15:08,780
+the<font color="#CCCCCC"> behavior of</font><font color="#E5E5E5"> a script which logs</font>
+
+236
+00:15:08,780 --> 00:15:13,910
+users into a control<font color="#E5E5E5"> panel it sets the</font>
+
+237
+00:15:13,910 --> 00:15:16,040
+<font color="#E5E5E5">admin variable used to identify the</font>
+
+238
+00:15:16,040 --> 00:15:21,260
+administrator in a session<font color="#CCCCCC"> variable test</font>
+
+239
+00:15:21,260 --> 00:15:24,230
+<font color="#E5E5E5">PHP is the second script the script</font>
+
+240
+00:15:24,230 --> 00:15:26,210
+checks if the<font color="#E5E5E5"> admin session variable is</font>
+
+241
+00:15:26,210 --> 00:15:31,370
+set if it is the message hacked will be
+
+242
+00:15:31,370 --> 00:15:33,710
+displayed<font color="#CCCCCC"> if it is not not</font><font color="#E5E5E5"> Hecht will be</font>
+
+243
+00:15:33,710 --> 00:15:37,070
+displayed the echo session ID function
+
+244
+00:15:37,070 --> 00:15:39,140
+<font color="#E5E5E5">which shows the current PHP session ID</font>
+
+245
+00:15:39,140 --> 00:15:44,660
+<font color="#E5E5E5">is also set for transparency let's now</font>
+
+246
+00:15:44,660 --> 00:16:08,360
+see how<font color="#CCCCCC"> this vulnerability works as you</font>
+
+247
+00:16:08,360 --> 00:16:10,100
+can see a potential hacker wouldn't be
+
+248
+00:16:10,100 --> 00:16:12,260
+able<font color="#E5E5E5"> to access the service</font><font color="#CCCCCC"> the message</font>
+
+249
+00:16:12,260 --> 00:16:15,920
+not hacked<font color="#E5E5E5"> is displayed session ID is</font>
+
+250
+00:16:15,920 --> 00:16:20,180
+<font color="#E5E5E5">also displayed the ID could also be</font>
+
+251
+00:16:20,180 --> 00:16:22,460
+obtained by<font color="#E5E5E5"> using the live HTTP headers</font>
+
+252
+00:16:22,460 --> 00:16:29,750
+<font color="#E5E5E5">add-on as you can see the same session</font>
+
+253
+00:16:29,750 --> 00:16:33,160
+ID has been set in the<font color="#E5E5E5"> PHP</font><font color="#CCCCCC"> SSID</font><font color="#E5E5E5"> cookie</font>
+
+254
+00:16:33,160 --> 00:16:38,360
+let's<font color="#E5E5E5"> use it now assume that</font><font color="#CCCCCC"> a cracker</font>
+
+255
+00:16:38,360 --> 00:16:40,400
+has<font color="#E5E5E5"> lured an administrator</font><font color="#CCCCCC"> into</font><font color="#E5E5E5"> clicking</font>
+
+256
+00:16:40,400 --> 00:16:43,940
+on a crafted link the link looks like
+
+257
+00:16:43,940 --> 00:16:46,210
+this
+
+258
+00:17:11,000 --> 00:17:13,470
+the administrator has logged<font color="#E5E5E5"> into the</font>
+
+259
+00:17:13,470 --> 00:17:16,949
+service and as you can<font color="#CCCCCC"> see</font><font color="#E5E5E5"> the PHP SSID</font>
+
+260
+00:17:16,949 --> 00:17:18,809
+variable containing the<font color="#CCCCCC"> attacker</font><font color="#E5E5E5"> session</font>
+
+261
+00:17:18,809 --> 00:17:23,490
+ID<font color="#E5E5E5"> has been passed in the URL let's see</font>
+
+262
+00:17:23,490 --> 00:17:24,839
+what the effects of this are on the
+
+263
+00:17:24,839 --> 00:17:34,019
+<font color="#E5E5E5">attackers side as you can see the</font>
+
+264
+00:17:34,019 --> 00:17:37,919
+attacker has gained service access<font color="#E5E5E5"> how</font>
+
+265
+00:17:37,919 --> 00:17:39,450
+can we<font color="#E5E5E5"> protect ourselves against these</font>
+
+266
+00:17:39,450 --> 00:17:43,710
+<font color="#E5E5E5">attacks preventing session fixation uses</font>
+
+267
+00:17:43,710 --> 00:17:45,539
+<font color="#E5E5E5">similar methods to those recommended for</font>
+
+268
+00:17:45,539 --> 00:17:48,360
+session hijacking<font color="#CCCCCC"> above all it is</font>
+
+269
+00:17:48,360 --> 00:17:50,700
+crucial to recheck a user's IP address
+
+270
+00:17:50,700 --> 00:17:55,470
+<font color="#E5E5E5">and other user unique data the frequent</font>
+
+271
+00:17:55,470 --> 00:17:57,750
+regeneration of session IDs or at least
+
+272
+00:17:57,750 --> 00:17:59,519
+the regeneration of session IDs after
+
+273
+00:17:59,519 --> 00:18:03,630
+successful login<font color="#E5E5E5"> is also helpful by</font>
+
+274
+00:18:03,630 --> 00:18:05,370
+doing<font color="#CCCCCC"> this we</font><font color="#E5E5E5"> make sure</font><font color="#CCCCCC"> that once a new</font>
+
+275
+00:18:05,370 --> 00:18:07,590
+idea has<font color="#E5E5E5"> been generated the ID known by</font>
+
+276
+00:18:07,590 --> 00:18:10,820
+the attacker will become invalid
+
+277
+00:18:13,519 --> 00:18:17,610
+that's all in module 18 the<font color="#CCCCCC"> next module</font>
+
+278
+00:18:17,610 --> 00:18:19,549
+we'll discuss<font color="#CCCCCC"> the phishing concept</font>
+
+279
+00:18:19,549 --> 00:18:21,899
+thanks for your<font color="#E5E5E5"> attention and see</font><font color="#CCCCCC"> you</font>
+
+280
+00:18:21,899 --> 00:18:24,049
+later
+
+281
+00:18:26,040 --> 00:00:00,000
+you
+

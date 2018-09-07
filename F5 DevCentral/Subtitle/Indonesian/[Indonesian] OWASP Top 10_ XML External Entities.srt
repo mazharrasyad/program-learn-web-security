@@ -1,0 +1,892 @@
+1
+00:00:08,480 --> 00:00:11,010
+ hey semua orang <font color="#CCCCCC">john wagon di sini dengan dev </font>
+
+2
+00:00:11,010 --> 00:00:12,090
+ pusat kami datang kepada Anda dengan yang <font color="#E5E5E5">lain </font>
+
+3
+00:00:12,090 --> 00:00:14,549
+ <font color="#E5E5E5">pelajaran papan cahaya dan hari ini kita akan </font>
+
+4
+00:00:14,549 --> 00:00:16,320
+ pergi <font color="#CCCCCC">ke Oh mencuci </font><font color="#E5E5E5">sepuluh </font>
+
+5
+00:00:16,320 --> 00:00:18,180
+ kerentanan dan kami kami sudah punya <font color="#CCCCCC">memiliki </font>
+
+6
+00:00:18,180 --> 00:00:20,189
+ beberapa <font color="#CCCCCC">video </font><font color="#E5E5E5">lain </font><font color="#CCCCCC">hari ini </font>
+
+7
+00:00:20,189 --> 00:00:21,900
+ <font color="#CCCCCC">kita sedang berbicara </font><font color="#E5E5E5">tentang </font><font color="#CCCCCC">empat angka itu </font>
+
+8
+00:00:21,900 --> 00:00:24,869
+ empat kerentanan dalam daftar <font color="#CCCCCC">itu dan itu </font>
+
+9
+00:00:24,869 --> 00:00:29,609
+ <font color="#E5E5E5">entitas eksternal XML atau itu </font>
+
+10
+00:00:29,609 --> 00:00:34,110
+ akronim <font color="#CCCCCC">yang mereka gunakan adalah XX yang oleh </font>
+
+11
+00:00:34,110 --> 00:00:35,430
+ cara <font color="#E5E5E5">saya </font><font color="#CCCCCC">tidak </font><font color="#E5E5E5">tahu mengapa mereka menyebutnya </font>
+
+12
+00:00:35,430 --> 00:00:37,770
+ itu XX <font color="#E5E5E5">C karena itu XML eksternal </font>
+
+13
+00:00:37,770 --> 00:00:39,870
+ entitas <font color="#E5E5E5">tetapi tetap seseorang bernama </font>
+
+14
+00:00:39,870 --> 00:00:41,629
+ itu <font color="#E5E5E5">xx melihat bahwa apa </font><font color="#CCCCCC">itu </font>
+
+15
+00:00:41,629 --> 00:00:44,160
+ pada dasarnya apa yang <font color="#CCCCCC">dilakukan oleh kerentanan ini </font>
+
+16
+00:00:44,160 --> 00:00:47,219
+ apakah itu mengambil keuntungan <font color="#CCCCCC">dari prosesor XML </font>
+
+17
+00:00:47,219 --> 00:00:49,410
+ atau parser XML di <font color="#CCCCCC">aplikasi web Anda </font>
+
+18
+00:00:49,410 --> 00:00:53,160
+ yang <font color="#E5E5E5">mungkin memproses atau mengurai beberapa hal buruk </font>
+
+19
+00:00:53,160 --> 00:00:56,280
+ data <font color="#E5E5E5">jadi izinkan saya memberi Anda sejenis </font>
+
+20
+00:00:56,280 --> 00:00:59,010
+ <font color="#CCCCCC">contoh di sini katakanlah Anda memiliki </font>
+
+21
+00:00:59,010 --> 00:01:01,890
+ aplikasi web di sini <font color="#E5E5E5">dan web itu </font>
+
+22
+00:01:01,890 --> 00:01:05,129
+ aplikasi <font color="#CCCCCC">dibangun dengan pondasi </font>
+
+23
+00:01:05,129 --> 00:01:06,990
+ Anda tahu banyak <font color="#CCCCCC">hal yang berbeda tetapi </font>
+
+24
+00:01:06,990 --> 00:01:09,150
+ salah satu <font color="#CCCCCC">hal yang dimilikinya </font>
+
+25
+00:01:09,150 --> 00:01:11,549
+ <font color="#CCCCCC">kemampuan atau yang memungkinkan hal-hal </font>
+
+26
+00:01:11,549 --> 00:01:13,619
+ untuk <font color="#CCCCCC">melakukan atau bahwa itu </font><font color="#E5E5E5">mengambil keuntungan </font><font color="#CCCCCC">dari ini </font>
+
+27
+00:01:13,619 --> 00:01:17,549
+ parser XML <font color="#E5E5E5">dan saya hanya akan meletakkan XML </font>
+
+28
+00:01:17,549 --> 00:01:19,439
+ parser dan dan <font color="#E5E5E5">aplikasi web ini lagi </font>
+
+29
+00:01:19,439 --> 00:01:22,439
+ akan itu akan Anda tahu <font color="#E5E5E5">dibangun dengan </font>
+
+30
+00:01:22,439 --> 00:01:23,820
+ banyak dan <font color="#CCCCCC">banyak hal yang berbeda </font><font color="#E5E5E5">tetapi </font>
+
+31
+00:01:23,820 --> 00:01:25,259
+ salah satu <font color="#E5E5E5">hal itu lagi adalah XML </font>
+
+32
+00:01:25,259 --> 00:01:25,619
+ parser 
+
+33
+00:01:25,619 --> 00:01:27,630
+ <font color="#CCCCCC">baiklah, jadi katakanlah Anda memiliki XML </font>
+
+34
+00:01:27,630 --> 00:01:32,150
+ <font color="#CCCCCC">parser dan Anda juga saya akan mengatakan </font><font color="#E5E5E5">terima </font>
+
+35
+00:01:32,150 --> 00:01:38,610
+ <font color="#E5E5E5">Masukan XML langsung XML langsung atau mungkin </font>
+
+36
+00:01:38,610 --> 00:01:43,229
+ Anda mengambil beberapa <font color="#E5E5E5">masukan dan XML lainnya </font>
+
+37
+00:01:43,229 --> 00:01:45,060
+ lalu Anda membiarkan parser XML mengurai 
+
+38
+00:01:45,060 --> 00:01:47,009
+ melalui <font color="#E5E5E5">masukan itu jadi lagi web </font>
+
+39
+00:01:47,009 --> 00:01:49,259
+ aplikasi itu mungkin langsung menerima <font color="#E5E5E5">XML </font>
+
+40
+00:01:49,259 --> 00:01:51,780
+ dan memprosesnya sendiri atau Anda <font color="#CCCCCC">memiliki XML </font>
+
+41
+00:01:51,780 --> 00:01:53,460
+ parser <font color="#CCCCCC">yang merupakan bagian dari web Anda </font>
+
+42
+00:01:53,460 --> 00:01:56,250
+ aplikasi <font color="#CCCCCC">yang akan mengurai </font><font color="#E5E5E5">masukan XML </font>
+
+43
+00:01:56,250 --> 00:01:59,969
+ atau file XML <font color="#E5E5E5">jadi Anda punya </font>
+
+44
+00:01:59,969 --> 00:02:01,939
+ <font color="#E5E5E5">XML terjadi di aplikasi web Anda </font>
+
+45
+00:02:01,939 --> 00:02:06,840
+ <font color="#CCCCCC">oke kadang-kadang </font><font color="#E5E5E5">dokumen XML </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">akan </font>
+
+46
+00:02:06,840 --> 00:02:10,378
+ mengandung atau <font color="#CCCCCC">referensi ke </font><font color="#E5E5E5">eksternal </font>
+
+47
+00:02:10,378 --> 00:02:13,440
+ entitas <font color="#E5E5E5">sehingga dokumen XML </font>
+
+48
+00:02:13,440 --> 00:02:16,110
+ <font color="#CCCCCC">diri </font><font color="#E5E5E5">dibangun maka Anda tahu Anda mungkin </font>
+
+49
+00:02:16,110 --> 00:02:20,070
+ <font color="#E5E5E5">seperti Anda tahu XML, saya hanya akan mengatakan Anda </font><font color="#CCCCCC">tahu </font>
+
+50
+00:02:20,070 --> 00:02:23,460
+ dok di sini dan itu punya banyak 
+
+51
+00:02:23,460 --> 00:02:24,780
+ <font color="#E5E5E5">hal-hal berbeda yang Anda tahu tentang hal itu </font>
+
+52
+00:02:24,780 --> 00:02:27,210
+ dokumen XML <font color="#CCCCCC">tetapi </font><font color="#E5E5E5">saya akan dan dan ini </font>
+
+53
+00:02:27,210 --> 00:02:28,980
+ <font color="#E5E5E5">sintaks tentu tidak sempurna Anda bisa </font>
+
+54
+00:02:28,980 --> 00:02:31,410
+ <font color="#E5E5E5">masuk ke sintaks XML untuk mencari tahu persis </font>
+
+55
+00:02:31,410 --> 00:02:33,780
+ bagaimana dokumen XML dibangun <font color="#E5E5E5">tetapi mari kita </font>
+
+56
+00:02:33,780 --> 00:02:36,120
+ mengatakan <font color="#E5E5E5">bahwa ada yang ada </font>
+
+57
+00:02:36,120 --> 00:02:42,930
+ <font color="#CCCCCC">referensi di sini untuk eksternal </font><font color="#E5E5E5">seperti </font>
+
+58
+00:02:42,930 --> 00:02:45,900
+ <font color="#E5E5E5">entitas eksternal dan jadi saya akan menempatkan </font><font color="#CCCCCC">itu </font>
+
+59
+00:02:45,900 --> 00:02:48,330
+ <font color="#CCCCCC">di sana atau seperti </font><font color="#E5E5E5">tipe eksternal </font>
+
+60
+00:02:48,330 --> 00:02:51,000
+ dokumen <font color="#E5E5E5">di dalam dokumen XML </font>
+
+61
+00:02:51,000 --> 00:02:53,940
+ <font color="#CCCCCC">baik-baik saja </font><font color="#E5E5E5">apa ini apa yang bisa memungkinkan </font>
+
+62
+00:02:53,940 --> 00:02:57,360
+ <font color="#E5E5E5">penyerang yang harus dilakukan adalah meletakkan semacam a </font>
+
+63
+00:02:57,360 --> 00:03:01,620
+ muatan berbahaya <font color="#CCCCCC">dalam </font><font color="#E5E5E5">eksternal itu </font>
+
+64
+00:03:01,620 --> 00:03:04,620
+ entitas dan kemudian jika <font color="#CCCCCC">XML parser </font><font color="#E5E5E5">atau </font>
+
+65
+00:03:04,620 --> 00:03:08,310
+ <font color="#CCCCCC">Dokumen XML </font><font color="#E5E5E5">itu adalah bahwa itu diurai </font>
+
+66
+00:03:08,310 --> 00:03:10,620
+ atau diproses oleh <font color="#CCCCCC">aplikasi web Anda </font><font color="#E5E5E5">jika </font>
+
+67
+00:03:10,620 --> 00:03:12,510
+ yang <font color="#E5E5E5">tidak memeriksa semuanya dengan benar </font>
+
+68
+00:03:12,510 --> 00:03:15,630
+ <font color="#E5E5E5">referensi entitas eksternal ini kemudian </font>
+
+69
+00:03:15,630 --> 00:03:17,310
+ payload buruk yang ada di <font color="#E5E5E5">benda itu bisa </font>
+
+70
+00:03:17,310 --> 00:03:19,680
+ <font color="#E5E5E5">lari dan kemudian bisa melakukan hal-hal buruk </font>
+
+71
+00:03:19,680 --> 00:03:22,140
+ untuk <font color="#E5E5E5">isi dari apa web Anda </font>
+
+72
+00:03:22,140 --> 00:03:23,989
+ aplikasi akan <font color="#E5E5E5">terus begitu hal-hal seperti </font>
+
+73
+00:03:23,989 --> 00:03:27,000
+ katakanlah <font color="#E5E5E5">misalnya</font><font color="#CCCCCC"> </font><font color="#E5E5E5">bahwa</font><font color="#CCCCCC"> ini </font>
+
+74
+00:03:27,000 --> 00:03:28,739
+ beberapa orang jahat dimasukkan ke dalam beberapa jahat 
+
+75
+00:03:28,739 --> 00:03:31,620
+ referensi di sini <font color="#E5E5E5">untuk mengatakan hei saya ingin </font><font color="#CCCCCC">mencoba </font>
+
+76
+00:03:31,620 --> 00:03:34,290
+ untuk menjalankan <font color="#E5E5E5">perintah sistem di </font><font color="#CCCCCC">web Anda </font>
+
+77
+00:03:34,290 --> 00:03:36,570
+ aplikasi <font color="#E5E5E5">dan saya ingin saya </font><font color="#CCCCCC">ingin </font>
+
+78
+00:03:36,570 --> 00:03:38,850
+ tipu untuk <font color="#E5E5E5">memberi </font><font color="#CCCCCC">saya semua Anda </font>
+
+79
+00:03:38,850 --> 00:03:40,530
+ kata sandi <font color="#E5E5E5">yang disimpan di </font><font color="#CCCCCC">web Anda </font>
+
+80
+00:03:40,530 --> 00:03:43,320
+ aplikasi <font color="#CCCCCC">misalnya </font><font color="#E5E5E5">atau </font><font color="#CCCCCC">mungkin saya ingin </font>
+
+81
+00:03:43,320 --> 00:03:45,989
+ <font color="#CCCCCC">untuk menjalankan beberapa </font><font color="#E5E5E5">perintah sistem lain itu </font>
+
+82
+00:03:45,989 --> 00:03:47,070
+ akan melakukan semacam jahat 
+
+83
+00:03:47,070 --> 00:03:50,310
+ sesuatu atau yang lain <font color="#CCCCCC">jika jika </font><font color="#E5E5E5">XML </font>
+
+84
+00:03:50,310 --> 00:03:53,400
+ parser tidak <font color="#E5E5E5">dikonfigurasi dengan benar </font>
+
+85
+00:03:53,400 --> 00:03:55,890
+ maka itu <font color="#CCCCCC">akan menjalankan </font><font color="#E5E5E5">perintah itu </font><font color="#CCCCCC">dan </font>
+
+86
+00:03:55,890 --> 00:03:57,989
+ itu <font color="#E5E5E5">akan Anda tahu </font><font color="#CCCCCC">menumpahkan semua itu </font>
+
+87
+00:03:57,989 --> 00:03:59,780
+ data <font color="#E5E5E5">dan itu bukan </font><font color="#CCCCCC">hal yang </font><font color="#E5E5E5">baik </font>
+
+88
+00:03:59,780 --> 00:04:03,840
+ <font color="#CCCCCC">ada banyak </font><font color="#E5E5E5">parser XML XML itu </font>
+
+89
+00:04:03,840 --> 00:04:08,160
+ <font color="#CCCCCC">telah xxe diaktifkan secara default itu </font><font color="#E5E5E5">saja </font>
+
+90
+00:04:08,160 --> 00:04:10,320
+ cara mereka <font color="#CCCCCC">dibangun karena xxe </font>
+
+91
+00:04:10,320 --> 00:04:13,350
+ dalam dan dari dirinya sendiri tidak <font color="#E5E5E5">secara inheren </font><font color="#CCCCCC">buruk </font>
+
+92
+00:04:13,350 --> 00:04:14,489
+ hal <font color="#E5E5E5">dan tentu saja dengan beberapa </font>
+
+93
+00:04:14,489 --> 00:04:17,370
+ <font color="#CCCCCC">versi xml yang lebih lama, mereka adalah a </font>
+
+94
+00:04:17,370 --> 00:04:19,260
+ <font color="#CCCCCC">hal yang diperlukan sehingga Anda harus pergi </font>
+
+95
+00:04:19,260 --> 00:04:21,600
+ <font color="#E5E5E5">melalui dan melihat Anda tahu </font><font color="#CCCCCC">bagaimana ini </font>
+
+96
+00:04:21,600 --> 00:04:24,990
+ hal <font color="#CCCCCC">- hal dikonfigurasi </font><font color="#E5E5E5">dan demikian pula demikian </font>
+
+97
+00:04:24,990 --> 00:04:26,750
+ kadang-kadang <font color="#E5E5E5">java akan memilikinya </font>
+
+98
+00:04:26,750 --> 00:04:31,400
+ diaktifkan secara default <font color="#CCCCCC">satu per </font><font color="#E5E5E5">satu </font>
+
+99
+00:04:31,400 --> 00:04:33,770
+ contoh <font color="#E5E5E5">serangan yang bisa terjadi </font>
+
+100
+00:04:33,770 --> 00:04:38,230
+ dengan dengan <font color="#E5E5E5">entitas eksternal XML ini </font>
+
+101
+00:04:38,230 --> 00:04:40,850
+ adalah serangan yang disebut milyaran <font color="#CCCCCC">tawa </font>
+
+102
+00:04:40,850 --> 00:04:43,130
+ jadi saya <font color="#CCCCCC">akan </font><font color="#E5E5E5">menaruh saya akan memasang ini </font>
+
+103
+00:04:43,130 --> 00:04:45,560
+ di sini <font color="#E5E5E5">dan saya terpaksa </font><font color="#CCCCCC">harus </font><font color="#E5E5E5">tertawa </font>
+
+104
+00:04:45,560 --> 00:04:49,580
+ <font color="#E5E5E5">sedikit ketika saya membaca tentang ini dan </font>
+
+105
+00:04:49,580 --> 00:04:51,920
+ <font color="#E5E5E5">jenis semacam melakukan riset kecil </font>
+
+106
+00:04:51,920 --> 00:04:54,440
+ ini <font color="#E5E5E5">pada dasarnya apa yang terjadi di sini apa </font>
+
+107
+00:04:54,440 --> 00:04:56,300
+ apa <font color="#CCCCCC">yang akan </font><font color="#E5E5E5">dilakukan </font><font color="#CCCCCC">oleh penyerang jahat </font>
+
+108
+00:04:56,300 --> 00:04:57,800
+ Saya <font color="#CCCCCC">akan menulis </font><font color="#E5E5E5">file XML </font>
+
+109
+00:04:57,800 --> 00:04:59,900
+ yang <font color="#CCCCCC">akan dikirim ke parser XML ini </font>
+
+110
+00:04:59,900 --> 00:05:01,300
+ itu <font color="#E5E5E5">tidak memvalidasi hal dengan benar </font>
+
+111
+00:05:01,300 --> 00:05:03,470
+ <font color="#CCCCCC">itu tidak akan menjadi sintaks sempurna tetapi </font>
+
+112
+00:05:03,470 --> 00:05:04,310
+ <font color="#E5E5E5">Anda akan mendapatkan ide itu </font>
+
+113
+00:05:04,310 --> 00:05:06,920
+ baiklah katakanlah Anda memiliki <font color="#E5E5E5">XML ini </font>
+
+114
+00:05:06,920 --> 00:05:14,240
+ file <font color="#E5E5E5">dan itu </font><font color="#CCCCCC">XML </font><font color="#E5E5E5">versi 1.0 dan kemudian </font>
+
+115
+00:05:14,240 --> 00:05:19,070
+ Anda punya <font color="#E5E5E5">itu </font><font color="#CCCCCC">ia mendefinisikan dokumen </font>
+
+116
+00:05:19,070 --> 00:05:21,380
+ ketik <font color="#E5E5E5">semua baik-baik saja sehingga akan memilikinya </font>
+
+117
+00:05:21,380 --> 00:05:25,450
+ <font color="#E5E5E5">dan yang ini akan disebut lol </font>
+
+118
+00:05:25,450 --> 00:05:30,050
+ <font color="#CCCCCC">Anda tahu cuz </font><font color="#E5E5E5">Lols </font><font color="#CCCCCC">dan kemudian ada </font>
+
+119
+00:05:30,050 --> 00:05:33,100
+ menjadi beberapa entitas yang didefinisikan di sini 
+
+120
+00:05:33,100 --> 00:05:39,770
+ entitas dan satu <font color="#E5E5E5">entitas akan </font><font color="#CCCCCC">menjadi </font><font color="#E5E5E5">lol </font>
+
+121
+00:05:39,770 --> 00:05:42,920
+ <font color="#E5E5E5">satu maka akan ada entitas lain </font>
+
+122
+00:05:42,920 --> 00:05:47,270
+ <font color="#CCCCCC">dan ini akan menjadi </font><font color="#E5E5E5">lol </font><font color="#CCCCCC">terlalu </font><font color="#E5E5E5">lol </font><font color="#CCCCCC">3 </font><font color="#E5E5E5">semua </font>
+
+123
+00:05:47,270 --> 00:05:51,110
+ jalan <font color="#E5E5E5">ke lol 9 </font><font color="#CCCCCC">baik-baik saja jadi ada semua </font>
+
+124
+00:05:51,110 --> 00:05:52,970
+ entitas-entitas <font color="#E5E5E5">ini juga ada </font><font color="#CCCCCC">elemennya </font>
+
+125
+00:05:52,970 --> 00:05:57,290
+ yang didefinisikan <font color="#E5E5E5">disebut lol </font><font color="#CCCCCC">juga </font>
+
+126
+00:05:57,290 --> 00:06:00,110
+ toh intinya adalah <font color="#CCCCCC">jalannya itu </font>
+
+127
+00:06:00,110 --> 00:06:05,240
+ <font color="#E5E5E5">ini berfungsi adalah entitas </font><font color="#CCCCCC">lol 1 sedang </font><font color="#E5E5E5">berjalan </font>
+
+128
+00:06:05,240 --> 00:06:09,190
+ <font color="#E5E5E5">untuk akan memiliki </font><font color="#CCCCCC">isi- </font><font color="#E5E5E5">nya </font>
+
+129
+00:06:09,190 --> 00:06:11,900
+ memiliki isi <font color="#CCCCCC">yang </font><font color="#E5E5E5">akan menjadi </font>
+
+130
+00:06:11,900 --> 00:06:13,450
+ lol 1 
+
+131
+00:06:13,450 --> 00:06:17,240
+ <font color="#E5E5E5">koma lol 1 sebagainya dan </font><font color="#CCCCCC">sebagainya itu </font>
+
+132
+00:06:17,240 --> 00:06:19,060
+ <font color="#CCCCCC">akan memiliki 10 dari </font><font color="#E5E5E5">ini di luar sana </font>
+
+133
+00:06:19,060 --> 00:06:22,820
+ <font color="#E5E5E5">dan dalam </font><font color="#CCCCCC">lol 2 akan ada lol - </font><font color="#E5E5E5">lol </font>
+
+134
+00:06:22,820 --> 00:06:25,280
+ - Lagi pula entitas-entitas <font color="#E5E5E5">ini akan pergi </font>
+
+135
+00:06:25,280 --> 00:06:28,910
+ untuk memiliki <font color="#E5E5E5">definisi tentang apa ini </font>
+
+136
+00:06:28,910 --> 00:06:31,430
+ entitas mengandung semua lol kecil ini 
+
+137
+00:06:31,430 --> 00:06:33,550
+ s <font color="#E5E5E5">semua jalan sepanjang jalan di </font><font color="#CCCCCC">jadi </font>
+
+138
+00:06:33,550 --> 00:06:37,030
+ <font color="#CCCCCC">setiap kali Anda mengirim </font><font color="#E5E5E5">payload jahat ini </font>
+
+139
+00:06:37,030 --> 00:06:40,510
+ pada dasarnya Anda akan <font color="#E5E5E5">mengirim ello </font>
+
+140
+00:06:40,510 --> 00:06:44,830
+ <font color="#E5E5E5">z lolz itu akan terlihat seperti itu </font>
+
+141
+00:06:44,830 --> 00:06:46,330
+ <font color="#E5E5E5">ini kamu akan memiliki ini sedikit dan </font>
+
+142
+00:06:46,330 --> 00:06:48,460
+ <font color="#E5E5E5">ampersand dan kemudian Anda akan mengirimkannya </font>
+
+143
+00:06:48,460 --> 00:06:53,200
+ <font color="#CCCCCC">LOL ini sembilan alrighty </font><font color="#E5E5E5">lalu kamu akan </font>
+
+144
+00:06:53,200 --> 00:06:58,030
+ memiliki lolz <font color="#E5E5E5">untuk menutupnya </font><font color="#CCCCCC">baik-baik saja saya tahu </font>
+
+145
+00:06:58,030 --> 00:07:00,040
+ <font color="#CCCCCC">itu bukan tulisan tangan yang bagus pada dasarnya </font>
+
+146
+00:07:00,040 --> 00:07:02,290
+ Anda <font color="#E5E5E5">akan mengatakan hei menjalankan lol ini sembilan </font>
+
+147
+00:07:02,290 --> 00:07:03,970
+ baik lol <font color="#CCCCCC">sembilan akan </font><font color="#E5E5E5">terjadi </font>
+
+148
+00:07:03,970 --> 00:07:06,430
+ <font color="#E5E5E5">untuk terdiri dari sekelompok lol delapan dan </font>
+
+149
+00:07:06,430 --> 00:07:08,260
+ maka lol delapan akan terbentuk 
+
+150
+00:07:08,260 --> 00:07:10,120
+ <font color="#E5E5E5">sekelompok lol 7s dan kemudian enam dan </font>
+
+151
+00:07:10,120 --> 00:07:12,040
+ <font color="#CCCCCC">lima dan </font><font color="#E5E5E5">empat dan sepanjang jalan semua </font>
+
+152
+00:07:12,040 --> 00:07:14,110
+ jalan <font color="#CCCCCC">ketika semuanya </font><font color="#E5E5E5">dikatakan dan </font><font color="#CCCCCC">dilakukan Anda </font>
+
+153
+00:07:14,110 --> 00:07:16,420
+ akan <font color="#E5E5E5">mengirim dokumen yang kurang </font>
+
+154
+00:07:16,420 --> 00:07:20,620
+ dari <font color="#E5E5E5">satu kilobyte dalam ukuran dan Anda </font>
+
+155
+00:07:20,620 --> 00:07:22,570
+ akan <font color="#CCCCCC">membuat parse ini atau XML ini </font>
+
+156
+00:07:22,570 --> 00:07:24,190
+ prosesor pada <font color="#CCCCCC">aplikasi web Anda </font>
+
+157
+00:07:24,190 --> 00:07:27,750
+ untuk mengeras hingga <font color="#CCCCCC">kira - kira </font><font color="#E5E5E5">tiga </font>
+
+158
+00:07:27,750 --> 00:07:32,890
+ gigabyte <font color="#E5E5E5">memori </font><font color="#CCCCCC">atau menggunakan tiga </font>
+
+159
+00:07:32,890 --> 00:07:34,720
+ <font color="#E5E5E5">gigabyte memori untuk mengacaukan </font>
+
+160
+00:07:34,720 --> 00:07:37,690
+ seluruh dokumen ini <font color="#E5E5E5">jadi efeknya </font>
+
+161
+00:07:37,690 --> 00:07:39,100
+ seperti serangan denial <font color="#E5E5E5">of service itu </font>
+
+162
+00:07:39,100 --> 00:07:40,780
+ ini benar-benar serangan asimetris Anda 
+
+163
+00:07:40,780 --> 00:07:42,370
+ kirim satu <font color="#E5E5E5">file kecil dan minta </font>
+
+164
+00:07:42,370 --> 00:07:43,510
+ crunch <font color="#E5E5E5">through seperti tiga gigs of memory </font>
+
+165
+00:07:43,510 --> 00:07:45,640
+ <font color="#CCCCCC">Baiklah itu hanya </font><font color="#E5E5E5">satu </font>
+
+166
+00:07:45,640 --> 00:07:49,150
+ contoh apa yang <font color="#E5E5E5">mungkin terjadi di sini </font><font color="#CCCCCC">jika Anda </font>
+
+167
+00:07:49,150 --> 00:07:52,270
+ tidak <font color="#E5E5E5">memiliki parser XML yang dikonfigurasi </font>
+
+168
+00:07:52,270 --> 00:07:54,430
+ benar <font color="#E5E5E5">jadi pertanyaannya adalah apa yang baik </font>
+
+169
+00:07:54,430 --> 00:07:57,730
+ kami <font color="#E5E5E5">lakukan untuk membantu dengan </font><font color="#CCCCCC">satu hal ini adalah Anda </font>
+
+170
+00:07:57,730 --> 00:08:01,840
+ dapat menonaktifkan <font color="#E5E5E5">xxe sepenuhnya di </font><font color="#CCCCCC">web </font><font color="#E5E5E5">Anda </font>
+
+171
+00:08:01,840 --> 00:08:03,670
+ aplikasi <font color="#E5E5E5">dan jika Anda tidak dapat melakukannya </font>
+
+172
+00:08:03,670 --> 00:08:06,040
+ <font color="#CCCCCC">sepenuhnya maka Anda akan </font><font color="#E5E5E5">melihat semuanya </font>
+
+173
+00:08:06,040 --> 00:08:09,220
+ <font color="#CCCCCC">bagian </font><font color="#E5E5E5">dan </font><font color="#CCCCCC">bagian yang berbeda dari Anda </font>
+
+174
+00:08:09,220 --> 00:08:11,530
+ <font color="#E5E5E5">aplikasi web pada dasarnya dan melalui </font>
+
+175
+00:08:11,530 --> 00:08:13,330
+ masing-masing <font color="#CCCCCC">dan mengatakan hei bagaimana saya bisa menonaktifkan </font>
+
+176
+00:08:13,330 --> 00:08:16,920
+ ini <font color="#E5E5E5">Anda tahu per Anda </font><font color="#CCCCCC">tahu per parser </font>
+
+177
+00:08:16,920 --> 00:08:19,930
+ Hal lain yang dapat Anda <font color="#E5E5E5">lakukan adalah menonaktifkan </font>
+
+178
+00:08:19,930 --> 00:08:23,710
+ <font color="#E5E5E5">apa yang disebut pemrosesan DTD dan dan </font>
+
+179
+00:08:23,710 --> 00:08:26,200
+ itu lagi jika <font color="#E5E5E5">Anda bisa melakukannya </font><font color="#CCCCCC">di </font>
+
+180
+00:08:26,200 --> 00:08:28,060
+ seluruh <font color="#E5E5E5">aplikasi web maka itu bagus </font>
+
+181
+00:08:28,060 --> 00:08:30,370
+ jika tidak, Anda akan melalui <font color="#E5E5E5">masing-masing individu </font>
+
+182
+00:08:30,370 --> 00:08:32,860
+ <font color="#E5E5E5">Prosesor XML atau parser untuk mengatakan hei bagaimana </font>
+
+183
+00:08:32,860 --> 00:08:35,460
+ apakah saya menonaktifkan DTD pada masing-masing ini 
+
+184
+00:08:35,460 --> 00:08:37,750
+ <font color="#CCCCCC">hal lain yang dapat Anda lakukan adalah Anda bisa </font>
+
+185
+00:08:37,750 --> 00:08:40,409
+ mengimplementasikan <font color="#E5E5E5">beberapa sisi server yang positif </font>
+
+186
+00:08:40,409 --> 00:08:43,510
+ validasi masukan agar Anda menerima 
+
+187
+00:08:43,510 --> 00:08:45,370
+ masukan XML ini ke <font color="#CCCCCC">web Anda </font>
+
+188
+00:08:45,370 --> 00:08:47,260
+ aplikasi <font color="#E5E5E5">melakukan beberapa validasi masukan </font>
+
+189
+00:08:47,260 --> 00:08:50,770
+ <font color="#E5E5E5">sebelum Anda menjalankan </font><font color="#CCCCCC">perintah lain </font>
+
+190
+00:08:50,770 --> 00:08:52,900
+ hal yang dapat Anda lakukan adalah apa yang <font color="#E5E5E5">disebut sumber </font>
+
+191
+00:08:52,900 --> 00:08:53,950
+ <font color="#E5E5E5">analisis kode </font>
+
+192
+00:08:53,950 --> 00:08:57,370
+ <font color="#E5E5E5">alat </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">atau digosok </font><font color="#CCCCCC">dan Anda bisa berlari </font>
+
+193
+00:08:57,370 --> 00:09:00,040
+ <font color="#E5E5E5">verifikasi kode sumber </font><font color="#CCCCCC">dan pengujian </font>
+
+194
+00:09:00,040 --> 00:09:01,390
+ terhadap kode sumber Anda di <font color="#E5E5E5">web Anda </font>
+
+195
+00:09:01,390 --> 00:09:03,310
+ <font color="#CCCCCC">aplikasi untuk melihat </font><font color="#E5E5E5">apakah ini ada </font>
+
+196
+00:09:03,310 --> 00:09:05,710
+ Rawan <font color="#CCCCCC">hal lain yang bisa Anda lakukan adalah </font>
+
+197
+00:09:05,710 --> 00:09:06,660
+ <font color="#E5E5E5">makan </font><font color="#CCCCCC">itu </font><font color="#E5E5E5">apa yang disebut dinamis </font>
+
+198
+00:09:06,660 --> 00:09:09,910
+ <font color="#E5E5E5">pengujian keamanan aplikasi </font><font color="#CCCCCC">atau DAST dan </font>
+
+199
+00:09:09,910 --> 00:09:11,110
+ Anda dapat menjalankannya di <font color="#E5E5E5">web Anda </font>
+
+200
+00:09:11,110 --> 00:09:13,570
+ aplikasi untuk mengatakan hei <font color="#E5E5E5">saat kami mengirim barang </font>
+
+201
+00:09:13,570 --> 00:09:17,110
+ seperti <font color="#E5E5E5">xxe Anda tahu serangan terhadapnya </font>
+
+202
+00:09:17,110 --> 00:09:19,120
+ itu rentan <font color="#E5E5E5">terhadap hal-hal semacam itu </font>
+
+203
+00:09:19,120 --> 00:09:21,400
+ <font color="#CCCCCC">jadi bagaimanapun </font><font color="#E5E5E5">juga itu adalah beberapa </font><font color="#CCCCCC">hal </font><font color="#E5E5E5">itu </font>
+
+204
+00:09:21,400 --> 00:09:24,570
+ <font color="#CCCCCC">dapat Anda lakukan untuk membantu mengurangi masalah ini </font>
+
+205
+00:09:24,570 --> 00:09:26,980
+ <font color="#E5E5E5">hal </font><font color="#CCCCCC">lain </font><font color="#E5E5E5">yang dapat Anda lakukan adalah Anda bisa </font>
+
+206
+00:09:26,980 --> 00:09:28,420
+ terapkan apa yang disebut <font color="#E5E5E5">web </font>
+
+207
+00:09:28,420 --> 00:09:30,670
+ <font color="#CCCCCC">firewall </font><font color="#E5E5E5">aplikasi </font><font color="#CCCCCC">atau </font><font color="#E5E5E5">tertawa dan itu </font>
+
+208
+00:09:30,670 --> 00:09:32,140
+ membantu <font color="#E5E5E5">dengan banyak hal </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">jadi jika </font>
+
+209
+00:09:32,140 --> 00:09:34,060
+ Anda <font color="#E5E5E5">tidak dapat memperbaiki </font><font color="#CCCCCC">masalah dalam kode </font>
+
+210
+00:09:34,060 --> 00:09:36,010
+ aplikasi web itu sendiri <font color="#CCCCCC">maka Anda bisa </font>
+
+211
+00:09:36,010 --> 00:09:38,140
+ tambahkan pada <font color="#E5E5E5">firewall </font><font color="#CCCCCC">aplikasi web </font><font color="#E5E5E5">yang </font>
+
+212
+00:09:38,140 --> 00:09:40,960
+ benar-benar berguna <font color="#CCCCCC">juga </font><font color="#E5E5E5">jadi pula sehingga </font>
+
+213
+00:09:40,960 --> 00:09:42,340
+ lagi <font color="#E5E5E5">xxe itulah angka </font><font color="#CCCCCC">untuk </font>
+
+214
+00:09:42,340 --> 00:09:46,000
+ kerentanan pada <font color="#CCCCCC">10 teratas OWASP dan kami </font>
+
+215
+00:09:46,000 --> 00:09:47,230
+ hanya ingin <font color="#CCCCCC">memastikan </font><font color="#E5E5E5">Anda mengerti </font>
+
+216
+00:09:47,230 --> 00:09:50,230
+ apa yang terjadi di sini <font color="#CCCCCC">masalah </font><font color="#E5E5E5">itu </font>
+
+217
+00:09:50,230 --> 00:09:52,870
+ bisa timbul <font color="#E5E5E5">dan berharap kalian tetap aman </font>
+
+218
+00:09:52,870 --> 00:09:55,240
+ <font color="#CCCCCC">di luar sana dan terima kasih telah menonton ini </font>
+
+219
+00:09:55,240 --> 00:09:56,920
+ <font color="#CCCCCC">video pelajaran lightboard jika Anda suka </font>
+
+220
+00:09:56,920 --> 00:09:59,260
+ yang ini <font color="#E5E5E5">pastikan </font><font color="#CCCCCC">Anda berlangganan ke </font><font color="#E5E5E5">kami </font>
+
+221
+00:09:59,260 --> 00:10:01,180
+ Saluran YouTube <font color="#E5E5E5">dan kami akan </font><font color="#CCCCCC">melihat kalian </font>
+
+222
+00:10:01,180 --> 00:10:04,110
+ di luar sana <font color="#E5E5E5">di masyarakat </font>
+
+223
+00:10:09,950 --> 00:00:00,000
+ kamu 
+

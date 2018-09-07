@@ -1,0 +1,244 @@
+1
+00:00:00,060 --> 00:00:02,669
+ <font color="#E5E5E5">oke jadi selamat datang </font><font color="#CCCCCC">kembali di </font><font color="#E5E5E5">tutorial </font><font color="#CCCCCC">ini </font>
+
+2
+00:00:02,669 --> 00:00:04,770
+ <font color="#CCCCCC">Saya akan menunjukkan kepada Anda cara </font><font color="#E5E5E5">memotong </font>
+
+3
+00:00:04,770 --> 00:00:08,570
+ layar login menggunakan injeksi sekuel 
+
+4
+00:00:08,570 --> 00:00:10,830
+ <font color="#CCCCCC">injeksi sekuel adalah injeksi kode </font>
+
+5
+00:00:10,830 --> 00:00:14,280
+ <font color="#E5E5E5">teknik yang digunakan untuk meretas aplikasi data </font>
+
+6
+00:00:14,280 --> 00:00:17,340
+ di mana pernyataan sekuel berbahaya 
+
+7
+00:00:17,340 --> 00:00:20,039
+ dimasukkan <font color="#CCCCCC">ke dalam kolom entri untuk </font>
+
+8
+00:00:20,039 --> 00:00:23,340
+ eksekusi <font color="#E5E5E5">jadi mari kita mulai dengan </font><font color="#CCCCCC">pergi </font>
+
+9
+00:00:23,340 --> 00:00:27,570
+ <font color="#E5E5E5">pertama ke info pengguna sekuel dan ekstrak </font>
+
+10
+00:00:27,570 --> 00:00:30,170
+ <font color="#E5E5E5">cerita </font><font color="#CCCCCC">county </font><font color="#E5E5E5">dari database </font>
+
+11
+00:00:30,170 --> 00:00:32,610
+ <font color="#E5E5E5">kadang-kadang lebih baik untuk mengetahui bagaimana </font>
+
+12
+00:00:32,610 --> 00:00:35,700
+ permintaan sekuel terlihat seperti itu Anda bisa 
+
+13
+00:00:35,700 --> 00:00:38,280
+ <font color="#CCCCCC">ketik </font><font color="#E5E5E5">kutip tunggal di bidang nama </font>
+
+14
+00:00:38,280 --> 00:00:41,610
+ dan tekan <font color="#CCCCCC">Enter dan Anda dapat melihat </font>
+
+15
+00:00:41,610 --> 00:00:44,579
+ query <font color="#E5E5E5">di sini yang pilih dari </font>
+
+16
+00:00:44,579 --> 00:00:47,399
+ akun di mana <font color="#CCCCCC">nama pengguna adalah apa yang Anda miliki </font>
+
+17
+00:00:47,399 --> 00:00:50,910
+ lulus dan <font color="#E5E5E5">kata sandi apa pun yang Anda miliki </font>
+
+18
+00:00:50,910 --> 00:00:53,940
+ lulus sekarang <font color="#CCCCCC">untuk melihat </font>
+
+19
+00:00:53,940 --> 00:00:56,059
+ rincian akun yang perlu Anda <font color="#E5E5E5">ketik </font>
+
+20
+00:00:56,059 --> 00:01:00,870
+ <font color="#E5E5E5">satu kutipan atau satu sama dengan yang satu ini </font>
+
+21
+00:01:00,870 --> 00:01:04,619
+ yang sama adalah <font color="#CCCCCC">pernyataan yang benar sehingga Anda </font><font color="#E5E5E5">bisa </font>
+
+22
+00:01:04,619 --> 00:01:08,970
+ ketik pernyataan yang benar <font color="#E5E5E5">seperti </font><font color="#CCCCCC">4 sama dengan </font><font color="#E5E5E5">4 6 </font>
+
+23
+00:01:08,970 --> 00:01:12,869
+ sama dengan 6 <font color="#CCCCCC">dan seterusnya </font><font color="#E5E5E5">dan melarikan diri dari </font>
+
+24
+00:01:12,869 --> 00:01:14,189
+ bidang kata sandi 
+
+25
+00:01:14,189 --> 00:01:17,280
+ <font color="#E5E5E5">gunakan simbol </font><font color="#CCCCCC">komentar </font><font color="#E5E5E5">ini umum </font>
+
+26
+00:01:17,280 --> 00:01:19,680
+ simbol akan mengabaikan bidang kata sandi 
+
+27
+00:01:19,680 --> 00:01:22,970
+ saat kueri dijalankan di <font color="#E5E5E5">server </font>
+
+28
+00:01:22,970 --> 00:01:25,950
+ <font color="#CCCCCC">jadi lanjutkan </font><font color="#E5E5E5">dan tekan lihat akun </font>
+
+29
+00:01:25,950 --> 00:01:28,619
+ rincian <font color="#E5E5E5">dan </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">dapat melihat semua </font>
+
+30
+00:01:28,619 --> 00:01:31,290
+ <font color="#CCCCCC">nama pengguna dan kata sandi dari </font>
+
+31
+00:01:31,290 --> 00:01:34,110
+ database <font color="#E5E5E5">Anda juga bisa menggunakan yang sama </font>
+
+32
+00:01:34,110 --> 00:01:38,130
+ pernyataan <font color="#CCCCCC">satu kutipan 1 sama dengan 1 </font><font color="#E5E5E5">dan </font>
+
+33
+00:01:38,130 --> 00:01:42,240
+ <font color="#E5E5E5">simbol komentar untuk masuk dan Anda dapat melihat </font>
+
+34
+00:01:42,240 --> 00:01:46,049
+ Saya telah <font color="#CCCCCC">berhasil </font><font color="#E5E5E5">masuk sebagai admin ok </font>
+
+35
+00:01:46,049 --> 00:01:48,049
+ sekarang mari kita lihat dan lihat yang lain 
+
+36
+00:01:48,049 --> 00:01:50,939
+ <font color="#CCCCCC">Misalnya, katakanlah Anda tahu </font><font color="#E5E5E5">nama pengguna </font>
+
+37
+00:01:50,939 --> 00:01:53,810
+ adalah <font color="#E5E5E5">John </font><font color="#CCCCCC">tetapi Anda tidak tahu kata sandinya </font>
+
+38
+00:01:53,810 --> 00:01:56,880
+ <font color="#CCCCCC">untuk itu Anda </font><font color="#E5E5E5">perlu </font><font color="#CCCCCC">mengetik single John </font>
+
+39
+00:01:56,880 --> 00:02:00,240
+ kutipan dan simbol komentar untuk diabaikan 
+
+40
+00:02:00,240 --> 00:02:03,000
+ bidang kata sandi untuk John dalam kasus saya 
+
+41
+00:02:03,000 --> 00:02:04,979
+ dan tekan masuk 
+
+42
+00:02:04,979 --> 00:02:08,190
+ dan di sini <font color="#CCCCCC">Anda dapat </font><font color="#E5E5E5">melihat saya masuk sebagai </font>
+
+43
+00:02:08,190 --> 00:02:11,790
+ John <font color="#E5E5E5">sekarang mari kita memahami sekuelnya </font>
+
+44
+00:02:11,790 --> 00:02:13,450
+ permintaan di belakang layar 
+
+45
+00:02:13,450 --> 00:02:16,540
+ dan ini adalah bagaimana permintaan sekuel akan 
+
+46
+00:02:16,540 --> 00:02:19,030
+ terlihat seperti ketika <font color="#E5E5E5">Anda mencoba </font><font color="#CCCCCC">masuk </font>
+
+47
+00:02:19,030 --> 00:02:22,780
+ <font color="#CCCCCC">ke aplikasi web pilih dari tabel </font>
+
+48
+00:02:22,780 --> 00:02:26,080
+ nama ini bisa nama <font color="#E5E5E5">mana pun nama </font><font color="#CCCCCC">pengguna </font>
+
+49
+00:02:26,080 --> 00:02:29,290
+ adalah nama apa pun yang Anda ketikkan <font color="#E5E5E5">jika </font>
+
+50
+00:02:29,290 --> 00:02:31,750
+ <font color="#CCCCCC">nama pengguna ada di database misalnya </font>
+
+51
+00:02:31,750 --> 00:02:35,709
+ <font color="#CCCCCC">John </font><font color="#E5E5E5">maka ini akan menjadi kenyataan </font><font color="#CCCCCC">dan </font>
+
+52
+00:02:35,709 --> 00:02:38,620
+ Trik di <font color="#CCCCCC">sini adalah ketika Anda memasukkan 1 sama dengan 1 atau </font>
+
+53
+00:02:38,620 --> 00:02:42,430
+ 4 sama dengan <font color="#E5E5E5">4 ini juga akan memvalidasi sebagai </font>
+
+54
+00:02:42,430 --> 00:02:46,150
+ benar dan melewati bidang kata sandi <font color="#CCCCCC">I </font>
+
+55
+00:02:46,150 --> 00:02:49,420
+ telah menggunakan <font color="#CCCCCC">simbol komentar </font><font color="#E5E5E5">yang akan </font>
+
+56
+00:02:49,420 --> 00:02:52,720
+ abaikan bagian terakhir dari permintaan <font color="#E5E5E5">itu </font>
+
+57
+00:02:52,720 --> 00:02:55,720
+ <font color="#E5E5E5">mengapa Anda bisa masuk tanpa menggunakan </font>
+
+58
+00:02:55,720 --> 00:02:59,830
+ kata sandi <font color="#CCCCCC">jadi itu untuk </font><font color="#E5E5E5">sekarang terima kasih </font>
+
+59
+00:02:59,830 --> 00:03:02,110
+ untuk <font color="#CCCCCC">menonton dan saya akan melihat Anda selanjutnya </font>
+
+60
+00:03:02,110 --> 00:03:04,319
+ <font color="#E5E5E5">waktu </font>
+
+61
+00:03:11,030 --> 00:00:00,000
+ kamu 
+

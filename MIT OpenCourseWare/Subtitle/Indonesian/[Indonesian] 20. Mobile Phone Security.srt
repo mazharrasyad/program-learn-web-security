@@ -1,0 +1,7748 @@
+1
+00:00:00,000 --> 00:00:00,090
+
+
+2
+00:00:00,090 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,820
+ Lisensi Commons. 
+
+4
+00:00:03,820 --> 00:00:06,050
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,050 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,260
+ di ocw.mit.edu. 
+
+9
+00:00:17,260 --> 00:00:27,280
+
+
+10
+00:00:27,280 --> 00:00:28,940
+ PROFESOR: Baiklah. 
+
+11
+00:00:28,940 --> 00:00:30,760
+ Mari kita mulai. 
+
+12
+00:00:30,760 --> 00:00:33,670
+ Jadi hari ini kita akan berbicara tentang keamanan Android, yang mana 
+
+13
+00:00:33,670 --> 00:00:36,180
+ is-- Anda dapat mengatasinya sebagai kasus yang menarik 
+
+14
+00:00:36,180 --> 00:00:39,170
+ studi tentang sistem yang dirancang 
+
+15
+00:00:39,170 --> 00:00:41,150
+ dengan sedikit perhatian dibayar 
+
+16
+00:00:41,150 --> 00:00:42,720
+ untuk keamanan di tempat pertama. 
+
+17
+00:00:42,720 --> 00:00:45,750
+ Jadi ini mungkin berbeda dengan banyak sistem 
+
+18
+00:00:45,750 --> 00:00:47,930
+ kami telah melihat sejauh ini, seperti Unix, 
+
+19
+00:00:47,930 --> 00:00:51,570
+ atau web, browser, tempat keamanan 
+
+20
+00:00:51,570 --> 00:00:54,260
+ dalam banyak hal melesat setelah fakta 
+
+21
+00:00:54,260 --> 00:00:57,290
+ dan tidak benar-benar dirancang dengan cara yang sama 
+
+22
+00:00:57,290 --> 00:01:00,127
+ seperti yang Anda lihat dalam tulisan ini, di mana orang-orang ini 
+
+23
+00:01:00,127 --> 00:01:01,710
+ mendesain Android sangat khawatir 
+
+24
+00:01:01,710 --> 00:01:03,660
+ tentang kelas serangan tertentu, 
+
+25
+00:01:03,660 --> 00:01:05,500
+ dan mekanisme konstruktif. 
+
+26
+00:01:05,500 --> 00:01:08,765
+ Kemudian menemukan cara yang lebih baik untuk menyusun aplikasi 
+
+27
+00:01:08,765 --> 00:01:12,210
+ yang akan memungkinkan kami untuk menegakkan kebijakan keamanan 
+
+28
+00:01:12,210 --> 00:01:15,790
+ dengan cara yang lebih baik di Android. 
+
+29
+00:01:15,790 --> 00:01:18,355
+ Dan hal kerennya adalah itu sebenarnya 
+
+30
+00:01:18,355 --> 00:01:20,620
+ sistem yang cukup banyak digunakan. 
+
+31
+00:01:20,620 --> 00:01:22,115
+ Jadi tidak seperti beberapa makalah penelitian itu 
+
+32
+00:01:22,115 --> 00:01:24,520
+ mungkin mengusulkan arsitektur baru, 
+
+33
+00:01:24,520 --> 00:01:26,020
+ ini benar-benar digunakan dalam praktek. 
+
+34
+00:01:26,020 --> 00:01:28,311
+ Dan ada banyak sekali perangkat Android di luar sana. 
+
+35
+00:01:28,311 --> 00:01:31,050
+ Dan kita dapat berbicara tentang seberapa baik beberapa hal telah berhasil, 
+
+36
+00:01:31,050 --> 00:01:34,690
+ seberapa baik beberapa hal tidak berjalan dengan baik. 
+
+37
+00:01:34,690 --> 00:01:38,990
+ Tapi kami akan, saya kira, lihat apa 
+
+38
+00:01:38,990 --> 00:01:41,000
+ bagian dari desain yang mereka anggap penting, 
+
+39
+00:01:41,000 --> 00:01:44,140
+ apa yang mereka lewatkan, apa, dalam prakteknya, ternyata 
+
+40
+00:01:44,140 --> 00:01:46,192
+ penting atau tidak. 
+
+41
+00:01:46,192 --> 00:01:47,400
+ Tapi ini agak menarik. 
+
+42
+00:01:47,400 --> 00:01:49,661
+ Dalam beberapa hal, itu juga menggunakan sistem yang ada 
+
+43
+00:01:49,661 --> 00:01:50,660
+ yang telah kita bicarakan. 
+
+44
+00:01:50,660 --> 00:01:53,660
+ Jadi Android dibangun di atas Unix. 
+
+45
+00:01:53,660 --> 00:01:58,010
+ Ini hanya kernel Linux yang berjalan di bawah seluruh telepon. 
+
+46
+00:01:58,010 --> 00:02:01,240
+ Jadi dalam banyak hal, mereka menggunakan beberapa mekanisme yang dikenal 
+
+47
+00:02:01,240 --> 00:02:03,330
+ kalian sudah lihat di Lab 2, 
+
+48
+00:02:03,330 --> 00:02:07,040
+ di mana Anda menggunakan ID dan grup pengguna Unix dan semua hal ini 
+
+49
+00:02:07,040 --> 00:02:09,579
+ untuk memisahkan aplikasi dari satu sama lain. 
+
+50
+00:02:09,579 --> 00:02:12,210
+ Tetapi dalam kasus Android, mereka memiliki cara yang sangat berbeda 
+
+51
+00:02:12,210 --> 00:02:15,960
+ mengatur ID pengguna dan izin file, 
+
+52
+00:02:15,960 --> 00:02:20,540
+ dan sebagainya, daripada di sistem Linux yang khas. 
+
+53
+00:02:20,540 --> 00:02:23,420
+ Jadi saya kira mari kita mulai dengan berbicara 
+
+54
+00:02:23,420 --> 00:02:25,093
+ tentang apa tingkat ancamannya? 
+
+55
+00:02:25,093 --> 00:02:28,820
+ Apa yang mengkhawatirkan orang-orang ini di telepon? 
+
+56
+00:02:28,820 --> 00:02:29,780
+ Apa yang sedang terjadi? 
+
+57
+00:02:29,780 --> 00:02:31,480
+ Apa yang mereka coba lindungi? 
+
+58
+00:02:31,480 --> 00:02:34,344
+ Apa model ancamannya? 
+
+59
+00:02:34,344 --> 00:02:34,844
+ Ya. 
+
+60
+00:02:34,844 --> 00:02:37,326
+ AUDIENCE: Aplikasi yang ingin melakukan hal-hal jahat? 
+
+61
+00:02:37,326 --> 00:02:37,992
+ PROFESOR: Ya. 
+
+62
+00:02:37,992 --> 00:02:39,090
+ Jadi mereka khawatir tentang - saya kira di sana 
+
+63
+00:02:39,090 --> 00:02:41,506
+ adalah aplikasi ini yang akan dijalankan di telepon. 
+
+64
+00:02:41,506 --> 00:02:44,910
+ Dan mereka mungkin jahat. 
+
+65
+00:02:44,910 --> 00:02:48,810
+ Dan saya kira ada - yah, itu benar-benar berbahaya 
+
+66
+00:02:48,810 --> 00:02:51,680
+ aplikasi yang baru saja Anda dapatkan, 
+
+67
+00:02:51,680 --> 00:02:53,540
+ mungkin mencuri data pribadi Anda. 
+
+68
+00:02:53,540 --> 00:02:56,440
+ Jadi hal-hal yang mungkin Anda khawatirkan-- ada data, 
+
+69
+00:02:56,440 --> 00:02:58,290
+ ada hal-hal yang mungkin membutuhkan uang, 
+
+70
+00:02:58,290 --> 00:03:02,030
+ seperti mengirim pesan SMS mungkin, atau membuat panggilan telepon. 
+
+71
+00:03:02,030 --> 00:03:06,461
+ Mungkin ada yang menggunakan internet, dan sebagainya. 
+
+72
+00:03:06,461 --> 00:03:07,960
+ Jadi ini adalah, mungkin, hal-hal 
+
+73
+00:03:07,960 --> 00:03:10,820
+ Anda ingin melindungi atau melindungi ponsel Anda. 
+
+74
+00:03:10,820 --> 00:03:12,544
+ Dan kemudian ada hal-hal yang salah. 
+
+75
+00:03:12,544 --> 00:03:14,460
+ Jadi mungkin, ada aplikasi jahat, 
+
+76
+00:03:14,460 --> 00:03:18,200
+ karena orang-orang ini ingin mengizinkan pengguna memasang aplikasi 
+
+77
+00:03:18,200 --> 00:03:20,620
+ ditulis oleh pengembang yang belum pernah Google 
+
+78
+00:03:20,620 --> 00:03:22,210
+ mendengar tentang diri mereka sendiri. 
+
+79
+00:03:22,210 --> 00:03:26,035
+ Atau mungkin saja aplikasi hanya memiliki bug sendiri, bahwa Anda 
+
+80
+00:03:26,035 --> 00:03:28,570
+ memiliki pengembang yang bermaksud baik, tetapi mereka 
+
+81
+00:03:28,570 --> 00:03:29,550
+ lupa melakukan sesuatu. 
+
+82
+00:03:29,550 --> 00:03:31,270
+ Dan itu akan menyenangkan untuk membantu orang-orang ini 
+
+83
+00:03:31,270 --> 00:03:34,650
+ juga untuk membangun aplikasi yang tetap aman 
+
+84
+00:03:34,650 --> 00:03:37,150
+ Terlepas dari kenyataan bahwa pengembang aplikasi tidak 
+
+85
+00:03:37,150 --> 00:03:40,680
+ seorang ahli dalam setiap jenis kerentanan 
+
+86
+00:03:40,680 --> 00:03:45,580
+ yang mungkin dieksploitasi dalam aplikasi mereka. 
+
+87
+00:03:45,580 --> 00:03:48,350
+ Jadi satu hal yang bisa kami lakukan adalah, sebenarnya, kami 
+
+88
+00:03:48,350 --> 00:03:50,250
+ dapat-- karena Android adalah apa yang kami gunakan, 
+
+89
+00:03:50,250 --> 00:03:53,520
+ kita bisa melihat berbagai laporan kerentanan. 
+
+90
+00:03:53,520 --> 00:03:55,840
+ Jadi ada database yang disebut CVE 
+
+91
+00:03:55,840 --> 00:03:58,330
+ bahwa katalog banyak kerentanan umum 
+
+92
+00:03:58,330 --> 00:04:00,900
+ dalam sistem perangkat lunak. 
+
+93
+00:04:00,900 --> 00:04:02,590
+ Dan sebenarnya agak menarik. 
+
+94
+00:04:02,590 --> 00:04:07,598
+ Ada sejumlah laporan, tentu saja, bug di Android. 
+
+95
+00:04:07,598 --> 00:04:09,960
+ Dan banyak dari mereka adalah rasa yang sudah kalian miliki 
+
+96
+00:04:09,960 --> 00:04:10,900
+ terlihat di kelas. 
+
+97
+00:04:10,900 --> 00:04:12,274
+ Jadi masih ada buffer overflows 
+
+98
+00:04:12,274 --> 00:04:13,610
+ di beberapa bagian Android. 
+
+99
+00:04:13,610 --> 00:04:15,960
+ Ada pilihan default yang buruk untuk sistem crypto. 
+
+100
+00:04:15,960 --> 00:04:18,600
+ Orang lupa untuk menginisialisasi nomor acak 
+
+101
+00:04:18,600 --> 00:04:21,089
+ generator kadang-kadang dan menghasilkan kunci yang dapat diprediksi. 
+
+102
+00:04:21,089 --> 00:04:23,240
+ Jadi semua hal ini masih terjadi. 
+
+103
+00:04:23,240 --> 00:04:23,960
+ Ini perangkat lunak. 
+
+104
+00:04:23,960 --> 00:04:26,370
+ Itu tidak kebal dari masalah lain 
+
+105
+00:04:26,370 --> 00:04:27,613
+ kita sudah melihat sejauh ini. 
+
+106
+00:04:27,613 --> 00:04:30,020
+ Tapi satu hal keren adalah tidak ada 
+
+107
+00:04:30,020 --> 00:04:31,790
+ tampaknya menjadi sejumlah besar masalah ini. 
+
+108
+00:04:31,790 --> 00:04:33,550
+ Jadi mereka muncul dari waktu ke waktu. 
+
+109
+00:04:33,550 --> 00:04:36,780
+ Tetapi secara umum, dapat memperbaiki masalah ini. 
+
+110
+00:04:36,780 --> 00:04:39,360
+ Dan sistemnya tetap aman 
+
+111
+00:04:39,360 --> 00:04:41,290
+ setelah Anda memperbaiki bug ini. 
+
+112
+00:04:41,290 --> 00:04:44,280
+ Jadi dalam banyak hal, ini, saya pikir, desain 
+
+113
+00:04:44,280 --> 00:04:46,620
+ berfungsi dengan baik. 
+
+114
+00:04:46,620 --> 00:04:49,590
+ Jadi kita akan melihatnya, saya kira, dalam detail lebih lanjut nanti sebagai 
+
+115
+00:04:49,590 --> 00:04:52,790
+ ke bagian mana dari desain yang bekerja untuk berbagai derajat. 
+
+116
+00:04:52,790 --> 00:04:58,570
+ Tapi tampaknya desain yang dipikirkan dengan baik. 
+
+117
+00:04:58,570 --> 00:05:03,160
+ Atau paling tidak lebih dari aplikasi desktop Unix 
+
+118
+00:05:03,160 --> 00:05:05,750
+ yang telah Anda lihat sejauh ini. 
+
+119
+00:05:05,750 --> 00:05:06,480
+ Baiklah. 
+
+120
+00:05:06,480 --> 00:05:10,110
+ Jadi mungkin satu cara untuk mendekati ini adalah mencari tahu 
+
+121
+00:05:10,110 --> 00:05:12,880
+ bagaimana kami akan melindungi data dan berbagai layanan 
+
+122
+00:05:12,880 --> 00:05:14,530
+ yang mungkin membebani Anda uang, dan sebagainya, 
+
+123
+00:05:14,530 --> 00:05:17,740
+ dari aplikasi jahat adalah yang pertama untuk dipahami 
+
+124
+00:05:17,740 --> 00:05:21,940
+ apa yang tampak seperti aplikasi dalam sistem Android. 
+
+125
+00:05:21,940 --> 00:05:24,990
+ Lalu kita akan membahas tentang berbagai izin 
+
+126
+00:05:24,990 --> 00:05:30,940
+ atau hak istimewa dikonfigurasi dalam aplikasi itu dan ditegakkan. 
+
+127
+00:05:30,940 --> 00:05:34,860
+ Jadi aplikasi Android sangat berbeda dari apa 
+
+128
+00:05:34,860 --> 00:05:38,050
+ Anda telah melihat sejauh ini dalam hal aplikasi desktop atau web 
+
+129
+00:05:38,050 --> 00:05:39,100
+ aplikasi. 
+
+130
+00:05:39,100 --> 00:05:41,375
+ Jadi alih-alih menjadi karya monolitik 
+
+131
+00:05:41,375 --> 00:05:43,980
+ kode dengan fungsi utama yang Anda jalankan, 
+
+132
+00:05:43,980 --> 00:05:46,160
+ dan kamu terus berjalan selamanya, mereka 
+
+133
+00:05:46,160 --> 00:05:47,640
+ sebenarnya jauh lebih modular. 
+
+134
+00:05:47,640 --> 00:05:52,275
+ Dan aplikasinya, dalam kasus Android, adalah-- sebenarnya, 
+
+135
+00:05:52,275 --> 00:05:55,340
+ Anda dapat menganggapnya sebagai kumpulan komponen. 
+
+136
+00:05:55,340 --> 00:05:59,090
+ Dan makalah ini berbicara tentang empat jenis komponen 
+
+137
+00:05:59,090 --> 00:06:03,440
+ yang disediakan oleh kerangka Android untuk Anda 
+
+138
+00:06:03,440 --> 00:06:05,870
+ atau membuat pengembang berpikir dalam hal. 
+
+139
+00:06:05,870 --> 00:06:08,550
+ Dan komponennya kira-kira-- ada 
+
+140
+00:06:08,550 --> 00:06:10,969
+ sesuatu yang disebut aktivitas. 
+
+141
+00:06:10,969 --> 00:06:12,510
+ Anda mungkin memiliki komponen aktivitas. 
+
+142
+00:06:12,510 --> 00:06:16,350
+ Dan ini hanyalah hal yang memiliki antarmuka pengguna. 
+
+143
+00:06:16,350 --> 00:06:18,790
+ Jadi ini adalah hal-hal yang benar-benar menampilkan sesuatu 
+
+144
+00:06:18,790 --> 00:06:22,450
+ kepada pengguna, atau mengambil input pengguna, menyentuh, 
+
+145
+00:06:22,450 --> 00:06:23,920
+ penekanan tombol, dan sebagainya. 
+
+146
+00:06:23,920 --> 00:06:26,660
+ Dalam hal keamanan, hal Kegiatan 
+
+147
+00:06:26,660 --> 00:06:28,910
+ memiliki properti keamanan yang menarik yang mungkin Anda miliki 
+
+148
+00:06:28,910 --> 00:06:30,920
+ ingin memastikan input pengguna Anda berjalan 
+
+149
+00:06:30,920 --> 00:06:33,260
+ ke satu aktivitas dalam satu waktu. 
+
+150
+00:06:33,260 --> 00:06:36,190
+ Jadi framework-- saya percaya [? an?] Android sebenarnya 
+
+151
+00:06:36,190 --> 00:06:39,137
+ memastikan hanya ada satu aktivitas yang didapat 
+
+152
+00:06:39,137 --> 00:06:40,220
+ masukan pengguna Anda sekaligus. 
+
+153
+00:06:40,220 --> 00:06:43,550
+ Jadi jika Anda menjalankan aplikasi bank Anda, 
+
+154
+00:06:43,550 --> 00:06:45,610
+ Anda bisa cukup yakin bahwa tidak ada 
+
+155
+00:06:45,610 --> 00:06:49,530
+ aplikasi lain di latar belakang meraih layar 
+
+156
+00:06:49,530 --> 00:06:53,390
+ menekan sesuai dengan nomor PIN Anda di aplikasi bank Anda. 
+
+157
+00:06:53,390 --> 00:06:58,410
+ Jadi memiliki kerangka kerja menyadari berbagai kegiatan ini 
+
+158
+00:06:58,410 --> 00:07:01,690
+ membantu menegakkan beberapa properti keamanan dengan hormat 
+
+159
+00:07:01,690 --> 00:07:03,970
+ untuk input pengguna. 
+
+160
+00:07:03,970 --> 00:07:04,650
+ Baiklah. 
+
+161
+00:07:04,650 --> 00:07:07,780
+ Jadi orang-orang ini adalah komponen antarmuka pengguna 
+
+162
+00:07:07,780 --> 00:07:08,790
+ suatu aplikasi. 
+
+163
+00:07:08,790 --> 00:07:11,280
+ Dan kemudian ada tiga tipe lainnya 
+
+164
+00:07:11,280 --> 00:07:14,870
+ komponen yang sebagian besar membantu aplikasi 
+
+165
+00:07:14,870 --> 00:07:19,240
+ struktur semacam itu sendiri logika dan interaksi 
+
+166
+00:07:19,240 --> 00:07:21,180
+ dengan komponen lain. 
+
+167
+00:07:21,180 --> 00:07:25,650
+ Jadi ada sesuatu yang disebut komponen layanan. 
+
+168
+00:07:25,650 --> 00:07:28,220
+ Dan orang ini hanya berjalan di latar belakang. 
+
+169
+00:07:28,220 --> 00:07:29,990
+ Jadi Anda mungkin memiliki komponen layanan 
+
+170
+00:07:29,990 --> 00:07:33,250
+ yang memantau lokasi Anda, seperti dalam aplikasi 
+
+171
+00:07:33,250 --> 00:07:36,089
+ orang-orang ini menjelaskan di koran. 
+
+172
+00:07:36,089 --> 00:07:37,880
+ Atau Anda mungkin memiliki layanan yang menarik banyak hal 
+
+173
+00:07:37,880 --> 00:07:42,020
+ dari jaringan di latar belakang, dan sebagainya. 
+
+174
+00:07:42,020 --> 00:07:44,415
+ Orang-orang ini memiliki komponen penyedia konten. 
+
+175
+00:07:44,415 --> 00:07:47,500
+
+
+176
+00:07:47,500 --> 00:07:52,580
+ Dan Anda dapat menganggap orang-orang ini hanya sebagai SQL 
+
+177
+00:07:52,580 --> 00:07:54,000
+ database Anda dapat menentukan. 
+
+178
+00:07:54,000 --> 00:07:55,880
+ Atau Anda dapat menentukan beberapa tabel 
+
+179
+00:07:55,880 --> 00:07:56,980
+ dengan skema, dan sebagainya. 
+
+180
+00:07:56,980 --> 00:07:59,456
+ Dan Anda dapat menjalankan kueri SQL di seluruh data 
+
+181
+00:07:59,456 --> 00:08:00,580
+ disimpan dalam aplikasi itu. 
+
+182
+00:08:00,580 --> 00:08:03,020
+ Dan setelah itu menjadi komponen sedang berjalan 
+
+183
+00:08:03,020 --> 00:08:05,800
+ untuk memungkinkan kerangka kerja untuk mengontrol akses 
+
+184
+00:08:05,800 --> 00:08:08,070
+ ke database ini untuk mengatakan siapa yang diizinkan menjalankan kueri 
+
+185
+00:08:08,070 --> 00:08:09,700
+ menentangnya. 
+
+186
+00:08:09,700 --> 00:08:14,160
+ Dan kemudian ada sesuatu yang tidak biasa 
+
+187
+00:08:14,160 --> 00:08:16,580
+ yang belum muncul di sistem lain-- sesuatu yang disebut 
+
+188
+00:08:16,580 --> 00:08:18,189
+ penerima siaran. 
+
+189
+00:08:18,189 --> 00:08:22,780
+
+
+190
+00:08:22,780 --> 00:08:26,660
+ Dan orang ini akan digunakan untuk menerima pesan 
+
+191
+00:08:26,660 --> 00:08:28,010
+ dari bagian lain dari sistem. 
+
+192
+00:08:28,010 --> 00:08:30,520
+ Jadi kita akan berbicara tentang bagaimana aplikasi berinteraksi dengan satu aplikasi 
+
+193
+00:08:30,520 --> 00:08:34,039
+ lainnya dalam hal pesan. 
+
+194
+00:08:34,039 --> 00:08:34,538
+ Baiklah. 
+
+195
+00:08:34,539 --> 00:08:38,200
+ Jadi ini adalah beberapa pandangan logis tingkat tinggi 
+
+196
+00:08:38,200 --> 00:08:40,549
+ bagaimana Anda bisa memikirkan aplikasi Android. 
+
+197
+00:08:40,549 --> 00:08:46,550
+ Namun dalam kenyataannya, semua ini hanya kelas Java atau kode Java 
+
+198
+00:08:46,550 --> 00:08:48,920
+ yang ditulis pengembang. 
+
+199
+00:08:48,920 --> 00:08:51,340
+ Dan hanya ada beberapa antarmuka standar untuk suatu kegiatan, 
+
+200
+00:08:51,340 --> 00:08:53,006
+ untuk layanan, untuk penerima siaran, 
+
+201
+00:08:53,006 --> 00:08:55,700
+ untuk penyedia konten yang Anda terapkan. 
+
+202
+00:08:55,700 --> 00:08:57,490
+ Namun yang jelas, ini semua hanyalah kode Java. 
+
+203
+00:08:57,490 --> 00:09:02,870
+ Dan kotak aplikasi ini benar-benar hanya Java runtime 
+
+204
+00:09:02,870 --> 00:09:06,790
+ yang berjalan di atas ponsel Anda. 
+
+205
+00:09:06,790 --> 00:09:10,270
+ Dan itu hanya satu proses di Linux 
+
+206
+00:09:10,270 --> 00:09:12,130
+ kernel berjalan di ponsel Anda. 
+
+207
+00:09:12,130 --> 00:09:13,820
+ Dan semua komponen ini adil 
+
+208
+00:09:13,820 --> 00:09:17,310
+ kelas atau potongan kode yang berbeda berjalan di dalam 
+
+209
+00:09:17,310 --> 00:09:19,375
+ dari proses runtime Java ini. 
+
+210
+00:09:19,375 --> 00:09:20,865
+ Masuk akal? 
+
+211
+00:09:20,865 --> 00:09:24,590
+ Begitulah cara menerjemahkan ke proses tradisional 
+
+212
+00:09:24,590 --> 00:09:27,380
+ yang mungkin Anda pahami sebaliknya. 
+
+213
+00:09:27,380 --> 00:09:31,360
+ Dan hal lain semacam itu bergeser dengan aplikasi 
+
+214
+00:09:31,360 --> 00:09:32,730
+ adalah apa yang disebut manifes. 
+
+215
+00:09:32,730 --> 00:09:36,010
+ Jadi ini adalah kode yang pengembang aplikasi 
+
+216
+00:09:36,010 --> 00:09:37,450
+ menulis atau menyusun. 
+
+217
+00:09:37,450 --> 00:09:39,940
+ Tapi ada juga yang mewujudkan ini 
+
+218
+00:09:39,940 --> 00:09:44,240
+ duduk di samping, yang merupakan teks atau file XML, 
+
+219
+00:09:44,240 --> 00:09:46,540
+ sungguh, itu menggambarkan semua komponen ini 
+
+220
+00:09:46,540 --> 00:09:49,980
+ dan bagaimana bagian lain dari sistem 
+
+221
+00:09:49,980 --> 00:09:51,630
+ harus berinteraksi dengan aplikasi ini. 
+
+222
+00:09:51,630 --> 00:09:53,550
+ Jadi khususnya, manifes ini 
+
+223
+00:09:53,550 --> 00:09:56,280
+ akan berbicara tentang hal-hal yang disebut label 
+
+224
+00:09:56,280 --> 00:09:58,650
+ yang akan kita bicarakan sebentar lagi 
+
+225
+00:09:58,650 --> 00:10:02,820
+ mendefinisikan kedua hak istimewa dari aplikasi ini dalam istilah 
+
+226
+00:10:02,820 --> 00:10:04,580
+ dari apa yang seharusnya diizinkan untuk dilakukan 
+
+227
+00:10:04,580 --> 00:10:08,200
+ serta pembatasan siapa lagi 
+
+228
+00:10:08,200 --> 00:10:10,590
+ harus dapat berinteraksi dengan komponen yang berbeda 
+
+229
+00:10:10,590 --> 00:10:13,210
+ dari aplikasi ini. 
+
+230
+00:10:13,210 --> 00:10:15,456
+ Masuk akal? 
+
+231
+00:10:15,456 --> 00:10:18,100
+ Pertanyaan tentang cara kerjanya? 
+
+232
+00:10:18,100 --> 00:10:20,480
+ AUDIENCE: Apakah labelnya seperti, 
+
+233
+00:10:20,480 --> 00:10:24,194
+ aplikasi ini tidak dapat melakukan panggilan telepon, atau aplikasi ini dapat mengirim-- 
+
+234
+00:10:24,194 --> 00:10:24,860
+ PROFESOR: Ya. 
+
+235
+00:10:24,860 --> 00:10:26,670
+ Jadi label ini akan menjadi sesuatu 
+
+236
+00:10:26,670 --> 00:10:29,560
+ seperti, yah, aplikasi ini dapat menghubungi telepon, 
+
+237
+00:10:29,560 --> 00:10:33,190
+ atau dapat mengirim pesan SMS, atau dapat menggunakan internet. 
+
+238
+00:10:33,190 --> 00:10:35,205
+ Jadi sebenarnya ada dua jenis label. 
+
+239
+00:10:35,205 --> 00:10:36,960
+ Jadi kita bisa menggambarnya di sini. 
+
+240
+00:10:36,960 --> 00:10:41,690
+ Jadi setiap aplikasi memiliki daftar label 
+
+241
+00:10:41,690 --> 00:10:45,560
+ yang menggambarkan hak istimewa yang dimiliki aplikasi. 
+
+242
+00:10:45,560 --> 00:10:48,690
+ Jadi ini adalah sesuatu seperti mungkin PERMISSION DIAL 
+
+243
+00:10:48,690 --> 00:10:54,700
+ untuk panggilan telepon, mungkin INTERNET, dan sebagainya. 
+
+244
+00:10:54,700 --> 00:10:57,710
+ Jadi kita akan berbicara tentang bagaimana mereka digambarkan sedikit. 
+
+245
+00:10:57,710 --> 00:10:59,980
+ Jadi ini adalah hak istimewa yang dimiliki aplikasi. 
+
+246
+00:10:59,980 --> 00:11:01,790
+ Tetapi Anda juga bisa menempel label 
+
+247
+00:11:01,790 --> 00:11:03,670
+ di atas komponen individu. 
+
+248
+00:11:03,670 --> 00:11:06,320
+ Dan di sana, mereka memiliki arti yang berbeda. 
+
+249
+00:11:06,320 --> 00:11:09,294
+ Jadi ini adalah hak istimewa yang dimiliki aplikasi. 
+
+250
+00:11:09,294 --> 00:11:11,030
+ Jika Anda memiliki label [? pada komponen?], 
+
+251
+00:11:11,030 --> 00:11:13,410
+ itu syarat bagi siapa pun itu 
+
+252
+00:11:13,410 --> 00:11:16,420
+ berbicara dengan komponen untuk memiliki label yang sesuai. 
+
+253
+00:11:16,420 --> 00:11:20,220
+ Jadi dalam contoh mereka, mungkin Anda memiliki semacam itu 
+
+254
+00:11:20,220 --> 00:11:25,090
+ dari hak istimewa VIEW TEMAN. 
+
+255
+00:11:25,090 --> 00:11:29,805
+ Jadi Anda dapat melihat lokasi teman-teman Anda. 
+
+256
+00:11:29,805 --> 00:11:33,290
+ Jadi itu seperti hak istimewa yang mungkin Anda miliki dalam aplikasi. 
+
+257
+00:11:33,290 --> 00:11:34,630
+ Jadi Anda diizinkan untuk melakukan ini. 
+
+258
+00:11:34,630 --> 00:11:37,110
+ Tapi kemudian untuk menegakkan hak istimewa ini, 
+
+259
+00:11:37,110 --> 00:11:40,130
+ Anda mungkin benar-benar menempatkan label VIEW TEMAN ini 
+
+260
+00:11:40,130 --> 00:11:41,920
+ ke komponen tertentu. 
+
+261
+00:11:41,920 --> 00:11:45,130
+ Jadi Anda mungkin berkata, baik, penyedia konten saya, database 
+
+262
+00:11:45,130 --> 00:11:47,280
+ menyimpan lokasi semua temanku, 
+
+263
+00:11:47,280 --> 00:11:50,330
+ mungkin memiliki label VIEW FRIEND yang melekat padanya. 
+
+264
+00:11:50,330 --> 00:11:52,630
+ Dan apa artinya ini adalah siapa pun itu 
+
+265
+00:11:52,630 --> 00:11:54,410
+ ingin mengakses database ini dengan lebih baik 
+
+266
+00:11:54,410 --> 00:11:57,400
+ memiliki label ini di set privilese mereka. 
+
+267
+00:11:57,400 --> 00:12:00,470
+ Jadi itulah cara Anda menentukan izin. 
+
+268
+00:12:00,470 --> 00:12:04,440
+ Anda dapat menganggapnya sebagai seperti ID atau grup pengguna umum 
+
+269
+00:12:04,440 --> 00:12:06,160
+ ID dari Unix, kecuali mereka sewenang-wenang 
+
+270
+00:12:06,160 --> 00:12:08,160
+ string, yang membuatnya sedikit lebih fleksibel. 
+
+271
+00:12:08,160 --> 00:12:09,493
+ Anda tidak kehabisan orang-orang ini. 
+
+272
+00:12:09,493 --> 00:12:11,000
+ Anda tidak terlalu khawatir tentang siapa 
+
+273
+00:12:11,000 --> 00:12:14,510
+ mendapat angka 25 atau hal-hal konyol seperti itu. 
+
+274
+00:12:14,510 --> 00:12:15,470
+ AUDIENCE: [TIDAK JELAS]. 
+
+275
+00:12:15,470 --> 00:12:19,594
+
+
+276
+00:12:19,594 --> 00:12:20,260
+ PROFESOR: Ya. 
+
+277
+00:12:20,260 --> 00:12:24,190
+ Jadi ternyata orang-orang ini tidak-- setidaknya dalam desain, 
+
+278
+00:12:24,190 --> 00:12:27,400
+ tidak super hati-hati dalam pelingkupan orang-orang ini. 
+
+279
+00:12:27,400 --> 00:12:29,650
+ Jadi Anda benar-benar dapat memiliki dua aplikasi yang memutuskan 
+
+280
+00:12:29,650 --> 00:12:32,170
+ untuk memperkenalkan label yang sama. 
+
+281
+00:12:32,170 --> 00:12:35,370
+ Jadi label ini ditentukan oleh aplikasi, sebagian. 
+
+282
+00:12:35,370 --> 00:12:37,400
+ Dan Anda bisa memiliki dua aplikasi, 
+
+283
+00:12:37,400 --> 00:12:39,050
+ seperti Facebook dan Google+. 
+
+284
+00:12:39,050 --> 00:12:41,785
+ Mereka berkata, oh, kami ingin menciptakan keduanya 
+
+285
+00:12:41,785 --> 00:12:46,262
+ string izin baru yang Melihat Teman Anda Dalam A Sosial 
+
+286
+00:12:46,262 --> 00:12:47,070
+ Jaringan. 
+
+287
+00:12:47,070 --> 00:12:47,570
+ Baiklah. 
+
+288
+00:12:47,570 --> 00:12:49,110
+ Yah, itu string yang sama. 
+
+289
+00:12:49,110 --> 00:12:51,217
+ Jadi berdasarkan konvensi, apa yang terjadi adalah 
+
+290
+00:12:51,217 --> 00:12:52,800
+ bahwa string ini sebenarnya lebih panjang 
+
+291
+00:12:52,800 --> 00:12:53,924
+ dari apa yang saya gambar. 
+
+292
+00:12:53,924 --> 00:12:56,940
+ Dan mereka memiliki domain dari domain bergaya Java 
+
+293
+00:12:56,940 --> 00:12:59,640
+ dari aplikasi mendefinisikannya dalam string. 
+
+294
+00:12:59,640 --> 00:13:01,944
+ Jadi DIAL PERM, saya pikir, sebenarnya 
+
+295
+00:13:01,944 --> 00:13:03,735
+ sesuatu seperti com.google.android.dialperm. 
+
+296
+00:13:03,735 --> 00:13:10,920
+
+
+297
+00:13:10,920 --> 00:13:13,600
+ Saya mungkin sedikit mengacaukan ini. 
+
+298
+00:13:13,600 --> 00:13:15,460
+ Tapi kira-kira, ini adalah jenis string 
+
+299
+00:13:15,460 --> 00:13:16,626
+ yang muncul dalam izin. 
+
+300
+00:13:16,626 --> 00:13:19,550
+ Jadi jika Anda memiliki aplikasi yang bermaksud baik, 
+
+301
+00:13:19,550 --> 00:13:23,577
+ maka mereka tidak akan bertabrakan dalam hal ini string izin. 
+
+302
+00:13:23,577 --> 00:13:25,160
+ Tapi ternyata tidak ada yang sebenarnya 
+
+303
+00:13:25,160 --> 00:13:27,300
+ memaksakan ini, sayangnya, di Android. 
+
+304
+00:13:27,300 --> 00:13:29,035
+ Jadi Anda punya masalah potensial 
+
+305
+00:13:29,035 --> 00:13:32,940
+ yang timbul sebagai akibat dari ini, itu-- saya tidak 
+
+306
+00:13:32,940 --> 00:13:34,590
+ tahu mengapa mereka tidak diperbaiki. 
+
+307
+00:13:34,590 --> 00:13:36,370
+ Ini sedikit rumit untuk memperbaikinya. 
+
+308
+00:13:36,370 --> 00:13:38,420
+ Mungkin orang-orang ini berpikir, yah, mari 
+
+309
+00:13:38,420 --> 00:13:40,140
+ lakukan sekarang, [? untuk?] mungkin mereka tidak 
+
+310
+00:13:40,140 --> 00:13:40,950
+ memikirkan masalah ini. 
+
+311
+00:13:40,950 --> 00:13:41,450
+ Bagaimanapun. 
+
+312
+00:13:41,450 --> 00:13:43,270
+ Jadi kita akan lihat apa yang terjadi jika Anda memilikinya 
+
+313
+00:13:43,270 --> 00:13:47,889
+ dua aplikasi yang bertentangan dengan nama label yang kita dapatkan. 
+
+314
+00:13:47,889 --> 00:13:48,735
+ Baiklah. 
+
+315
+00:13:48,735 --> 00:13:50,930
+ Masuk akal? 
+
+316
+00:13:50,930 --> 00:13:51,770
+ Baiklah. 
+
+317
+00:13:51,770 --> 00:13:54,900
+ Jadi ini adalah apa yang terlihat seperti aplikasi tunggal. 
+
+318
+00:13:54,900 --> 00:13:57,480
+ Ini adalah sekumpulan kode Java, sebuah manifes yang menggambarkan 
+
+319
+00:13:57,480 --> 00:13:59,930
+ izin untuk aplikasi tersebut, 
+
+320
+00:13:59,930 --> 00:14:03,500
+ dan pembatasan yang diperlukan untuk semua komponen. 
+
+321
+00:14:03,500 --> 00:14:06,590
+ Dan kemudian untuk berkomunikasi antar aplikasi, 
+
+322
+00:14:06,590 --> 00:14:09,730
+ untuk sebagian besar, itu dilakukan melalui apa 
+
+323
+00:14:09,730 --> 00:14:11,950
+ disebut niat, yang merupakan Android 
+
+324
+00:14:11,950 --> 00:14:15,240
+ hal yang para pengembang kerangka kerja ini diperkenalkan. 
+
+325
+00:14:15,240 --> 00:14:21,000
+ Dan niat - Anda dapat menganggapnya sebagai pesan terstruktur 
+
+326
+00:14:21,000 --> 00:14:24,366
+ itu-- kita akan lihat bagaimana komponen ini dari sebuah niat 
+
+327
+00:14:24,366 --> 00:14:25,740
+ akan digunakan dalam hitungan detik. 
+
+328
+00:14:25,740 --> 00:14:28,650
+ Tapi kira-kira, maksud itu memiliki tiga hal penting. 
+
+329
+00:14:28,650 --> 00:14:30,320
+ Ada bidang lain, tentu saja. 
+
+330
+00:14:30,320 --> 00:14:33,910
+ Tetapi yang utama adalah nama komponen yang Anda 
+
+331
+00:14:33,910 --> 00:14:36,020
+ ingin mengirim pesan. 
+
+332
+00:14:36,020 --> 00:14:40,590
+ Ada tindakan yang Anda inginkan untuk diambil komponennya 
+
+333
+00:14:40,590 --> 00:14:45,601
+ dan data, bersama dengan tipe MIME, 
+
+334
+00:14:45,601 --> 00:14:49,310
+ yang ingin Anda kirim ke komponen lain ini. 
+
+335
+00:14:49,310 --> 00:14:51,770
+ Jadi hanya sebagai contoh-- ini adalah abstract-- kecil 
+
+336
+00:14:51,770 --> 00:14:55,140
+ tetapi apa yang dapat Anda bayangkan adalah bahwa komponen ini mungkin-- 
+
+337
+00:14:55,140 --> 00:15:04,670
+ Anda bisa membayangkan com.android.dialer / Dial 
+
+338
+00:15:04,670 --> 00:15:05,660
+ atau sesuatu. 
+
+339
+00:15:05,660 --> 00:15:09,070
+ Jadi ini adalah bagaimana Anda memberi nama komponen di Android. 
+
+340
+00:15:09,070 --> 00:15:12,120
+ Anda tentukan nama aplikasi, 
+
+341
+00:15:12,120 --> 00:15:15,030
+ yang mirip seperti nama domain Java terbalik ini. 
+
+342
+00:15:15,030 --> 00:15:17,343
+ Seperti, com.android.dialer adalah namanya 
+
+343
+00:15:17,343 --> 00:15:18,926
+ dari keseluruhan aplikasi yang Anda gunakan 
+
+344
+00:15:18,926 --> 00:15:20,260
+ ingin mengirim maksud. 
+
+345
+00:15:20,260 --> 00:15:22,570
+ Dan kemudian Anda menulis sesuatu seperti / Dial. 
+
+346
+00:15:22,570 --> 00:15:24,459
+ Dan Dial adalah nama komponen. 
+
+347
+00:15:24,459 --> 00:15:26,500
+ Akankah [? meminjamkan?] aplikasi target itu ke mana 
+
+348
+00:15:26,500 --> 00:15:29,600
+ Anda mengirim pesan ini. 
+
+349
+00:15:29,600 --> 00:15:30,210
+ BAIK. 
+
+350
+00:15:30,210 --> 00:15:33,729
+ Jadi itulah cara Anda memberi nama komponen tertentu 
+
+351
+00:15:33,729 --> 00:15:35,020
+ di mana Anda ingin mengirim orang itu. 
+
+352
+00:15:35,020 --> 00:15:38,815
+ Tindakannya, ada serangkaian tindakan yang telah ditetapkan. 
+
+353
+00:15:38,815 --> 00:15:41,090
+ Anda juga bisa menempelkan barang-barang Anda sendiri. 
+
+354
+00:15:41,090 --> 00:15:44,717
+ Tetapi Anda mungkin memiliki sesuatu seperti, saya pikir, 
+
+355
+00:15:44,717 --> 00:15:45,550
+ android.intent.DIAL. 
+
+356
+00:15:45,550 --> 00:15:50,030
+
+
+357
+00:15:50,030 --> 00:15:54,460
+ Jadi ini adalah string yang telah ditentukan atau, dengan konvensi, string 
+
+358
+00:15:54,460 --> 00:15:57,530
+ aplikasi yang diletakkan di kolom Action 
+
+359
+00:15:57,530 --> 00:16:01,370
+ jika mereka ingin telepon dialer untuk menghubungi nomor telepon untuk mereka. 
+
+360
+00:16:01,370 --> 00:16:03,194
+ Jadi begini caramu menempelkan sesuatu di sini. 
+
+361
+00:16:03,194 --> 00:16:04,110
+ Ada tindakan lain. 
+
+362
+00:16:04,110 --> 00:16:06,320
+ Seperti, jika Anda ingin melihat dokumen, 
+
+363
+00:16:06,320 --> 00:16:10,240
+ Anda akan menempelkan sesuatu. Lihat di kolom Action. 
+
+364
+00:16:10,240 --> 00:16:11,970
+ Ini akan memberi tahu komponen penerima 
+
+365
+00:16:11,970 --> 00:16:13,950
+ Anda hanya ingin melihat objek ini saja 
+
+366
+00:16:13,950 --> 00:16:17,670
+ dari panggilan nomor telepon yang ada di objek, mungkin. 
+
+367
+00:16:17,670 --> 00:16:20,500
+ Dan akhirnya, datanya pada dasarnya 
+
+368
+00:16:20,500 --> 00:16:24,540
+ URI atau URL sembarang untuk data 
+
+369
+00:16:24,540 --> 00:16:28,630
+ yang ingin Anda kirimkan bersama pesan ini. 
+
+370
+00:16:28,630 --> 00:16:32,600
+ Jadi bisa jadi sesuatu seperti telepon, titik dua, beberapa digit 
+
+371
+00:16:32,600 --> 00:16:34,215
+ untuk menghubungi nomor telepon. 
+
+372
+00:16:34,215 --> 00:16:40,245
+ Ini bisa berupa URL HTTP aktual yang ingin Anda lihat atau buka. 
+
+373
+00:16:40,245 --> 00:16:42,070
+ Mungkin ada aplikasi lain 
+
+374
+00:16:42,070 --> 00:16:44,725
+ Anda menemukan URI juga. 
+
+375
+00:16:44,725 --> 00:16:47,080
+ Jadi ini adalah cara Anda mengirim pesan-pesan ini. 
+
+376
+00:16:47,080 --> 00:16:50,150
+ Dan cara pesan-pesan ini sebenarnya 
+
+377
+00:16:50,150 --> 00:16:55,120
+ disalurkan melalui sistem ini dengan bantuan Android 
+
+378
+00:16:55,120 --> 00:16:57,650
+ runtime itu sendiri yang duduk di bawah semua 
+
+379
+00:16:57,650 --> 00:16:59,320
+ aplikasi ini. 
+
+380
+00:16:59,320 --> 00:17:02,070
+ Jadi Anda bisa memikirkan runtime Android 
+
+381
+00:17:02,070 --> 00:17:06,500
+ sebagai suatu tempat di antara aplikasi dan kernel. 
+
+382
+00:17:06,500 --> 00:17:08,069
+ Itu tidak benar, tapi mungkin 
+
+383
+00:17:08,069 --> 00:17:11,220
+ mari coba menggambar beberapa gambar untuk klarifikasi 
+
+384
+00:17:11,220 --> 00:17:14,750
+ seperti apa arsitektur benda ini. 
+
+385
+00:17:14,750 --> 00:17:20,400
+ Jadi Anda memiliki satu aplikasi yang berjalan di Android. 
+
+386
+00:17:20,400 --> 00:17:23,079
+ Mungkin Anda memiliki aplikasi lain. 
+
+387
+00:17:23,079 --> 00:17:24,920
+ Ini semua adalah kotak yang pada dasarnya 
+
+388
+00:17:24,920 --> 00:17:27,800
+ orang-orang ini-- aplikasi terpisah 
+
+389
+00:17:27,800 --> 00:17:29,880
+ dengan banyak komponen secara internal. 
+
+390
+00:17:29,880 --> 00:17:32,720
+ Tentu saja, orang-orang ini semua proses berjalan 
+
+391
+00:17:32,720 --> 00:17:36,352
+ di atas kernel Linux. 
+
+392
+00:17:36,352 --> 00:17:38,185
+ Jadi itu memberikan beberapa tingkat isolasi 
+
+393
+00:17:38,185 --> 00:17:39,840
+ antar aplikasi. 
+
+394
+00:17:39,840 --> 00:17:45,100
+ Dan kemudian ada apa yang disebut kertas monitor referensi. 
+
+395
+00:17:45,100 --> 00:17:47,440
+ Dan orang ini akan memediasi semuanya 
+
+396
+00:17:47,440 --> 00:17:51,650
+ interaksi tingkat niat antara aplikasi yang berbeda 
+
+397
+00:17:51,650 --> 00:17:52,150
+ sini. 
+
+398
+00:17:52,150 --> 00:17:55,920
+ Jadi, jika Aplikasi 1 ingin mengirim pesan ke Aplikasi 2, 
+
+399
+00:17:55,920 --> 00:17:58,600
+ mereka sebenarnya akan mengirim pesan ke referensi 
+
+400
+00:17:58,600 --> 00:17:59,842
+ pantau lebih dulu. 
+
+401
+00:17:59,842 --> 00:18:01,800
+ Jadi ini adalah cara Anda mengirim semua maksud di Android, 
+
+402
+00:18:01,800 --> 00:18:04,440
+ adalah Anda membuat salah satu pesan maksud ini. 
+
+403
+00:18:04,440 --> 00:18:08,400
+ Dan pada dasarnya Anda mengirimkannya melalui beberapa pipa ke referensi ini 
+
+404
+00:18:08,400 --> 00:18:09,335
+ pantau. 
+
+405
+00:18:09,335 --> 00:18:11,590
+ Jadi Android pada dasarnya memiliki implementasi sendiri 
+
+406
+00:18:11,590 --> 00:18:16,010
+ pipa untuk mengirim jenis niat ini, yang disebut binder. 
+
+407
+00:18:16,010 --> 00:18:19,020
+ Dan setiap aplikasi Android, berdasarkan konvensi, 
+
+408
+00:18:19,020 --> 00:18:22,460
+ akan membuka sambungan binder 
+
+409
+00:18:22,460 --> 00:18:24,580
+ ke monitor referensi, jadi monitor referensi 
+
+410
+00:18:24,580 --> 00:18:27,040
+ bisa mendapatkan maksud dari aplikasi ini 
+
+411
+00:18:27,040 --> 00:18:30,050
+ serta mengirim pesan ke aplikasi ini. 
+
+412
+00:18:30,050 --> 00:18:35,110
+ Jadi dalam kasus kami, jika Aplikasi 1 menulis niat untuk Aplikasi 2 
+
+413
+00:18:35,110 --> 00:18:37,120
+ ke monitor referensi, monitor referensi 
+
+414
+00:18:37,120 --> 00:18:40,790
+ akan mencari tahu ke mana maksud ini harus pergi dan menyampaikan 
+
+415
+00:18:40,790 --> 00:18:43,540
+ di sini ke App 2. 
+
+416
+00:18:43,540 --> 00:18:47,320
+ Jadi Aplikasi 2 mungkin bisa memulai suatu kegiatan, 
+
+417
+00:18:47,320 --> 00:18:52,365
+ atau menerima pesan, atau melakukan kueri SQL, dan sebagainya, 
+
+418
+00:18:52,365 --> 00:18:53,727
+ untuk Aplikasi 1. 
+
+419
+00:18:53,727 --> 00:18:56,185
+ Apakah itu masuk akal, kira-kira, dalam hal apa yang terjadi? 
+
+420
+00:18:56,185 --> 00:18:57,155
+ Ya, pertanyaan. 
+
+421
+00:18:57,155 --> 00:18:59,095
+ AUDIENCE: Apakah pemeriksaan label 
+
+422
+00:18:59,095 --> 00:19:00,550
+ terjadi begitu sampai ke itu, atau apakah monitor referensi? 
+
+423
+00:19:00,550 --> 00:19:01,030
+ PROFESOR: Ah, ya, ya, ya. 
+
+424
+00:19:01,030 --> 00:19:03,330
+ Jadi monitor referensi, sangat penting, 
+
+425
+00:19:03,330 --> 00:19:07,650
+ bertanggung jawab untuk memeriksa semua izin yang ada 
+
+426
+00:19:07,650 --> 00:19:09,650
+ diwakili oleh label ini. 
+
+427
+00:19:09,650 --> 00:19:12,310
+ Jadi Anda bisa membayangkan hal-hal yang berbeda 
+
+428
+00:19:12,310 --> 00:19:16,150
+ terjadi dalam hal memeriksa izin 
+
+429
+00:19:16,150 --> 00:19:18,890
+ di aplikasi itu sendiri. 
+
+430
+00:19:18,890 --> 00:19:21,830
+ Jadi mengapa orang-orang ini benar-benar melakukan pengecekan 
+
+431
+00:19:21,830 --> 00:19:26,002
+ di monitor referensi, bukan di aplikasi? 
+
+432
+00:19:26,002 --> 00:19:28,085
+ Apakah masuk akal untuk melakukan pengecekan di aplikasi? 
+
+433
+00:19:28,085 --> 00:19:30,790
+
+
+434
+00:19:30,790 --> 00:19:35,479
+ Misalkan kita menempelkan pemeriksaan label ke App 1. 
+
+435
+00:19:35,479 --> 00:19:36,520
+ Apakah itu masuk akal? 
+
+436
+00:19:36,520 --> 00:19:36,900
+ Ya? 
+
+437
+00:19:36,900 --> 00:19:38,699
+ AUDIENCE: Yah, itu sepertinya ide yang buruk, 
+
+438
+00:19:38,699 --> 00:19:41,537
+ karena jika seseorang berkompromi dengan [TIDAK JELAS] 
+
+439
+00:19:41,537 --> 00:19:45,684
+ dan mampu perilaku dan melewati pemeriksaan. 
+
+440
+00:19:45,684 --> 00:19:46,350
+ PROFESOR: Ya. 
+
+441
+00:19:46,350 --> 00:19:46,620
+ Kanan. 
+
+442
+00:19:46,620 --> 00:19:48,770
+ Jadi Anda mungkin tidak ingin menyimpannya di pengirim, 
+
+443
+00:19:48,770 --> 00:19:50,350
+ karena Anda tidak benar-benar ingin memercayai pengirim. 
+
+444
+00:19:50,350 --> 00:19:52,558
+ Jadi jika Anda menginstal aplikasi jahat tertentu, 
+
+445
+00:19:52,558 --> 00:19:54,320
+ jika Anda ingin dapat menangani, 
+
+446
+00:19:54,320 --> 00:19:55,860
+ aplikasi itu tidak akan menjadi 
+
+447
+00:19:55,860 --> 00:19:58,925
+ dijamin untuk melakukan pemeriksaan yang benar untuk kami. 
+
+448
+00:19:58,925 --> 00:20:00,600
+ Jadi sepertinya agak disayangkan. 
+
+449
+00:20:00,600 --> 00:20:04,740
+ Jadi kami tidak diizinkan untuk melakukan pemeriksaan di situs pengirim. 
+
+450
+00:20:04,740 --> 00:20:09,350
+ Bagaimana dengan melakukan pemeriksaan di sisi penerima di App 2? 
+
+451
+00:20:09,350 --> 00:20:11,220
+ Bagaimana dengan itu? 
+
+452
+00:20:11,220 --> 00:20:12,110
+ Ya? 
+
+453
+00:20:12,110 --> 00:20:14,359
+ AUDIENCE: Anda bisa, tapi itu akan membutuhkan crypto, 
+
+454
+00:20:14,359 --> 00:20:15,400
+ dan Anda akan membutuhkan PKI. 
+
+455
+00:20:15,400 --> 00:20:17,007
+ Jadi itu akan jauh lebih [TIDAK JELAS]. 
+
+456
+00:20:17,007 --> 00:20:17,590
+ PROFESOR: OK. 
+
+457
+00:20:17,590 --> 00:20:19,970
+ Jadi Anda berpikir ini harus crypto dan miliki 
+
+458
+00:20:19,970 --> 00:20:21,510
+ untuk memiliki PKI yang terlibat. 
+
+459
+00:20:21,510 --> 00:20:23,740
+ Jadi saya tidak yakin Anda harus memiliki crypto, 
+
+460
+00:20:23,740 --> 00:20:26,880
+ karena kernel dapat memberi tahu Anda di mana tepatnya 
+
+461
+00:20:26,880 --> 00:20:27,736
+ berasal dari. 
+
+462
+00:20:27,736 --> 00:20:30,670
+ Jadi Anda masih bisa memiliki monitor referensi yang memberi tahu Anda, 
+
+463
+00:20:30,670 --> 00:20:32,260
+ oh, ini berasal dari App 1. 
+
+464
+00:20:32,260 --> 00:20:34,914
+ Jadi Anda tidak benar-benar membutuhkan PKI dalam pengertian itu. 
+
+465
+00:20:34,914 --> 00:20:36,455
+ Itu tidak harus berhubungan dengan kripto. 
+
+466
+00:20:36,455 --> 00:20:37,825
+ Saya pikir Anda perlu crypto umumnya 
+
+467
+00:20:37,825 --> 00:20:40,241
+ ketika Anda berbicara melalui jaringan, ketika tidak ada apa-apa 
+
+468
+00:20:40,241 --> 00:20:41,690
+ umum yang dapat Anda percayai. 
+
+469
+00:20:41,690 --> 00:20:44,736
+ Di sini, saya pikir itu bukan tentang crypto. 
+
+470
+00:20:44,736 --> 00:20:47,299
+ Ada alasan lain mengapa Anda sebenarnya menginginkannya 
+
+471
+00:20:47,299 --> 00:20:47,998
+ di monitor referensi itu? 
+
+472
+00:20:47,998 --> 00:20:48,464
+ Ya? 
+
+473
+00:20:48,464 --> 00:20:49,706
+ AUDIENCE: Anda mungkin ingin mengalihkan beban 
+
+474
+00:20:49,706 --> 00:20:51,289
+ dari pengembang, yang akhirnya membuatnya 
+
+475
+00:20:51,289 --> 00:20:52,772
+ banyak kesalahan [tidak terdengar]. 
+
+476
+00:20:52,772 --> 00:20:53,480
+ PROFESOR: Benar. 
+
+477
+00:20:53,480 --> 00:20:55,650
+ Saya pikir sebagian besar dari itu adalah bug aplikasi. 
+
+478
+00:20:55,650 --> 00:20:57,910
+ Jika Anda tidak benar-benar menginginkan bug konyol 
+
+479
+00:20:57,910 --> 00:20:59,630
+ yang dibuat oleh pengembang aplikasi 
+
+480
+00:20:59,630 --> 00:21:01,070
+ untuk membahayakan keamanan. 
+
+481
+00:21:01,070 --> 00:21:02,610
+ Jadi sejauh mungkin, saya pikir 
+
+482
+00:21:02,610 --> 00:21:05,930
+ Anda ingin memfaktorkan fungsi umum ke dalam kode 
+
+483
+00:21:05,930 --> 00:21:09,260
+ bahwa pengembang tidak perlu terlalu khawatir, 
+
+484
+00:21:09,260 --> 00:21:11,960
+ atau bahkan tidak memiliki kesempatan untuk mengacau. 
+
+485
+00:21:11,960 --> 00:21:14,280
+ Jadi ini sepertinya sebagian alasan yang bagus untuk bertahan 
+
+486
+00:21:14,280 --> 00:21:15,100
+ ke monitor referensi. 
+
+487
+00:21:15,100 --> 00:21:15,520
+ Ya? 
+
+488
+00:21:15,520 --> 00:21:17,103
+ AUDIENCE: Bisa juga karena Anda 
+
+489
+00:21:17,103 --> 00:21:20,400
+ ingin meminimalkan permukaan tepercaya dari keseluruhan sistem. 
+
+490
+00:21:20,400 --> 00:21:22,490
+ Jadi Anda ingin membuat monitor referensi sangat kecil 
+
+491
+00:21:22,490 --> 00:21:24,531
+ bahwa itu sebenarnya bisa [? mengorbit?] dengan sendirinya, 
+
+492
+00:21:24,531 --> 00:21:27,340
+ atau memiliki beberapa komponen yang berhubungan dengan label yang sebenarnya 
+
+493
+00:21:27,340 --> 00:21:29,072
+ pemeriksaan yang bisa diperiksa sendiri. 
+
+494
+00:21:29,072 --> 00:21:29,780
+ PROFESOR: Benar. 
+
+495
+00:21:29,780 --> 00:21:29,796
+ Ya. 
+
+496
+00:21:29,796 --> 00:21:31,680
+ Jadi itu tampak seperti rencana yang masuk akal secara finansial 
+
+497
+00:21:31,680 --> 00:21:33,480
+ juga, karena keamanan sistem peran 
+
+498
+00:21:33,480 --> 00:21:35,100
+ tergantung pada monitor referensi yang benar. 
+
+499
+00:21:35,100 --> 00:21:36,850
+ Nah, Anda bisa melihat ini dengan cara baik. 
+
+500
+00:21:36,850 --> 00:21:39,058
+ Sebenarnya meletakkan logika ke monitor referensi 
+
+501
+00:21:39,058 --> 00:21:40,670
+ membuat monitor referensi lebih besar. 
+
+502
+00:21:40,670 --> 00:21:42,890
+ Jadi Anda bisa membuat RM lebih kecil dengan mendelegasikan 
+
+503
+00:21:42,890 --> 00:21:44,460
+ beberapa berfungsi untuk aplikasi. 
+
+504
+00:21:44,460 --> 00:21:46,751
+ Meskipun, maka ada beberapa perpustakaan yang harus Anda audit. 
+
+505
+00:21:46,751 --> 00:21:48,990
+ Jadi tidak begitu jelas. 
+
+506
+00:21:48,990 --> 00:21:51,489
+ Saya pikir satu lagi contoh saya muncul 
+
+507
+00:21:51,489 --> 00:21:54,030
+ dengan alasan mengapa melakukan ini - baik, saya kira ada dua hal. 
+
+508
+00:21:54,030 --> 00:21:54,790
+ Yang pertama hanyalah kesederhanaan. 
+
+509
+00:21:54,790 --> 00:21:56,290
+ Saya pikir lebih mudah untuk melakukan pemeriksaan 
+
+510
+00:21:56,290 --> 00:21:59,420
+ semua dalam satu tempat dalam banyak cara. 
+
+511
+00:21:59,420 --> 00:22:02,005
+ Jadi Anda dapat mengurutkan-- seperti yang Anda katakan, bahwa Anda benar-benar bisa 
+
+512
+00:22:02,005 --> 00:22:04,380
+ lihat ini dan katakan, oh, ya, pemeriksaan sedang dilakukan. 
+
+513
+00:22:04,380 --> 00:22:06,510
+ Mereka selalu dilakukan di setiap pesan. 
+
+514
+00:22:06,510 --> 00:22:10,090
+ Jadi itu meyakinkan atau bagus dari rekayasa perangkat lunak 
+
+515
+00:22:10,090 --> 00:22:11,480
+ perspektif, mungkin. 
+
+516
+00:22:11,480 --> 00:22:13,620
+ Hal lain adalah niat ini 
+
+517
+00:22:13,620 --> 00:22:17,010
+ memiliki dua mode pengalamatan. 
+
+518
+00:22:17,010 --> 00:22:18,440
+ Khususnya, di koran, mereka 
+
+519
+00:22:18,440 --> 00:22:22,225
+ menggambarkan apa yang disebut maksud implisit dan eksplisit. 
+
+520
+00:22:22,225 --> 00:22:24,980
+ Maksud yang sangat eksplisit adalah yang mana 
+
+521
+00:22:24,980 --> 00:22:26,210
+ Anda tentukan beberapa komponen. 
+
+522
+00:22:26,210 --> 00:22:27,730
+ Dan Anda benar-benar mengatakan itu harus pergi 
+
+523
+00:22:27,730 --> 00:22:29,920
+ ke komponen khusus ini. 
+
+524
+00:22:29,920 --> 00:22:32,994
+ Jadi untuk maksud eksplisit ini, itu benar-benar baik-baik saja 
+
+525
+00:22:32,994 --> 00:22:34,660
+ untuk melakukan pengecekan di sisi penerima, 
+
+526
+00:22:34,660 --> 00:22:36,780
+ karena baik, Anda tahu di mana Anda akan mengirimkannya. 
+
+527
+00:22:36,780 --> 00:22:37,696
+ Anda dapat mengirimnya di sana. 
+
+528
+00:22:37,696 --> 00:22:40,450
+ Dan jika tidak ingin Anda mengirim pesan, 
+
+529
+00:22:40,450 --> 00:22:43,350
+ itu akan menjatuhkannya di lantai atau menolaknya. 
+
+530
+00:22:43,350 --> 00:22:45,770
+ Tapi kemudian ada juga maksud implisit di Android, 
+
+531
+00:22:45,770 --> 00:22:48,590
+ di mana Anda tidak tahu, sebagai pengirim, 
+
+532
+00:22:48,590 --> 00:22:52,420
+ aplikasi mana yang Anda ingin menerima pesan Anda. 
+
+533
+00:22:52,420 --> 00:22:55,140
+ Jadi ini mungkin terjadi jika Anda hanya ingin melihat gambar 
+
+534
+00:22:55,140 --> 00:22:56,985
+ atau Anda ingin menghubungi nomor telepon, 
+
+535
+00:22:56,985 --> 00:22:58,610
+ tetapi Anda sebenarnya tidak tahu telepon yang mana 
+
+536
+00:22:58,610 --> 00:23:00,430
+ dialer yang telah dipasang oleh pengguna. 
+
+537
+00:23:00,430 --> 00:23:03,735
+ Mungkin memiliki Google Voice, voice-over IP dialer, atau Skype, 
+
+538
+00:23:03,735 --> 00:23:05,630
+ atau siapa yang tahu apa. 
+
+539
+00:23:05,630 --> 00:23:07,990
+ Jadi dalam kasus itu, maksud implisit ini sebenarnya 
+
+540
+00:23:07,990 --> 00:23:09,910
+ lewati nama komponen dan katakan saja, 
+
+541
+00:23:09,910 --> 00:23:12,860
+ Saya ingin tindakan ini ditangani dengan data ini 
+
+542
+00:23:12,860 --> 00:23:15,170
+ oleh beberapa aplikasi di luar sana. 
+
+543
+00:23:15,170 --> 00:23:17,870
+ Dan dalam hal ini, ini adalah pekerjaan monitor referensi 
+
+544
+00:23:17,870 --> 00:23:20,450
+ untuk menemukan aplikasi yang sesuai untuk penanganan 
+
+545
+00:23:20,450 --> 00:23:23,040
+ pesan semacam itu-- menghubungi nomor telepon, 
+
+546
+00:23:23,040 --> 00:23:26,556
+ melihat PDF, atau gambar JPEG, atau apa pun yang Anda miliki. 
+
+547
+00:23:26,556 --> 00:23:28,180
+ Dan dalam hal ini, monitor referensi 
+
+548
+00:23:28,180 --> 00:23:30,480
+ benar-benar dapat memperhitungkan perizinan 
+
+549
+00:23:30,480 --> 00:23:33,160
+ ketika memilih aplikasi yang sesuai. 
+
+550
+00:23:33,160 --> 00:23:36,844
+ Jadi mungkin ada beberapa PDF viewer yang sangat sensitif 
+
+551
+00:23:36,844 --> 00:23:38,510
+ aplikasi yang telah Anda instal, dan itu 
+
+552
+00:23:38,510 --> 00:23:40,550
+ mampu melihat PDF, tetapi Anda tidak menginginkannya 
+
+553
+00:23:40,550 --> 00:23:42,180
+ itu dapat diakses oleh sebagian besar aplikasi. 
+
+554
+00:23:42,180 --> 00:23:44,970
+ Jadi mungkin izinnya tidak mengizinkan aplikasi itu 
+
+555
+00:23:44,970 --> 00:23:49,000
+ untuk menerima PDF Lihat pesan dari bagian lain sistem. 
+
+556
+00:23:49,000 --> 00:23:51,580
+ Jadi dalam hal ini, monitor referensi akan melihat ini 
+
+557
+00:23:51,580 --> 00:23:52,390
+ dan berkata, yah, Anda tidak diizinkan 
+
+558
+00:23:52,390 --> 00:23:54,640
+ untuk mengirim permintaan Anda di sana, tetapi mungkin aplikasi lain 
+
+559
+00:23:54,640 --> 00:23:56,080
+ bersedia menangani permintaan Anda. 
+
+560
+00:23:56,080 --> 00:23:59,010
+ Jadi semacam ini menyederhanakan antarmuka pengguna atau pengguna 
+
+561
+00:23:59,010 --> 00:24:03,680
+ interaksi di sini dengan mencocokkan sistem yang tersedia, 
+
+562
+00:24:03,680 --> 00:24:06,420
+ termasuk dan mempertimbangkan izin itu 
+
+563
+00:24:06,420 --> 00:24:08,495
+ tersedia untuk pengirim. 
+
+564
+00:24:08,495 --> 00:24:09,850
+ Masuk akal? 
+
+565
+00:24:09,850 --> 00:24:11,730
+ Apakah itu masuk akal? 
+
+566
+00:24:11,730 --> 00:24:14,047
+ Ada pertanyaan? 
+
+567
+00:24:14,047 --> 00:24:15,045
+ Ya. 
+
+568
+00:24:15,045 --> 00:24:18,039
+ AUDIENCE: Apakah monitor referensi pernah menjadi penghambat? 
+
+569
+00:24:18,039 --> 00:24:19,260
+ PROFESOR: Bisa jadi, ya. 
+
+570
+00:24:19,260 --> 00:24:21,990
+ Jadi banyak pesan-pesan ini dikirim melalui referensi 
+
+571
+00:24:21,990 --> 00:24:22,520
+ pantau. 
+
+572
+00:24:22,520 --> 00:24:25,870
+ Dan saya tidak tahu apakah ini benar-benar multi-thread 
+
+573
+00:24:25,870 --> 00:24:26,450
+ atau tidak. 
+
+574
+00:24:26,450 --> 00:24:28,116
+ Anda mungkin bisa membuatnya multi-benang. 
+
+575
+00:24:28,116 --> 00:24:29,830
+ Saya pikir logika itu menerapkan 
+
+576
+00:24:29,830 --> 00:24:32,880
+ tidak melibatkan mempertahankan banyak keadaan bersama. 
+
+577
+00:24:32,880 --> 00:24:35,260
+ Jadi Anda mungkin bisa memproses banyak pesan maksud 
+
+578
+00:24:35,260 --> 00:24:37,360
+ secara paralel jika perlu. 
+
+579
+00:24:37,360 --> 00:24:38,750
+ Saya menduga bahwa Anda mungkin bisa 
+
+580
+00:24:38,750 --> 00:24:40,050
+ hindari itu menjadi hambatan. 
+
+581
+00:24:40,050 --> 00:24:43,745
+ Untuk hal-hal besar, Android memiliki mekanisme RPC 
+
+582
+00:24:43,745 --> 00:24:45,120
+ bahwa makalah itu berbicara tentang, di mana 
+
+583
+00:24:45,120 --> 00:24:46,990
+ jika Anda ingin mengirim banyak operasi 
+
+584
+00:24:46,990 --> 00:24:48,650
+ ke aplikasi lain, Anda sebenarnya 
+
+585
+00:24:48,650 --> 00:24:52,190
+ kirim apa yang disebut niat mengikat ke monitor referensi, 
+
+586
+00:24:52,190 --> 00:24:54,870
+ katakanlah, saya ingin koneksi langsung ke aplikasi ini. 
+
+587
+00:24:54,870 --> 00:24:57,150
+ Dan jika Anda mengirim niat mengikat ke monitor referensi 
+
+588
+00:24:57,150 --> 00:24:58,900
+ dan itu [? meneruskan aplikasi?] ke aplikasi ini, 
+
+589
+00:24:58,900 --> 00:25:02,291
+ maka Anda akan membangun saluran terikat semacam ini 
+
+590
+00:25:02,291 --> 00:25:03,790
+ antara dua aplikasi ini dan kemudian kirim 
+
+591
+00:25:03,790 --> 00:25:05,950
+ banyak pesan secara langsung [TIDAK JELAS]. 
+
+592
+00:25:05,950 --> 00:25:08,410
+ Jadi jika beberapa aplikasi khawatir 
+
+593
+00:25:08,410 --> 00:25:10,470
+ tentang antarmuka yang sangat penting, 
+
+594
+00:25:10,470 --> 00:25:12,580
+ mereka mungkin akan melakukan ini. 
+
+595
+00:25:12,580 --> 00:25:13,862
+ Ya, pertanyaan? 
+
+596
+00:25:13,862 --> 00:25:15,826
+ AUDIENCE: Mengapa [TIDAK JELAS]? 
+
+597
+00:25:15,826 --> 00:25:20,250
+ Karena setiap label tunggal harus cocok [TIDAK JELAS]. 
+
+598
+00:25:20,250 --> 00:25:21,950
+ PROFESOR: Ah. 
+
+599
+00:25:21,950 --> 00:25:24,890
+ Jadi di sini, bukan itu yang Anda dapatkan 
+
+600
+00:25:24,890 --> 00:25:27,760
+ akses langsung di dalam Aplikasi 2. 
+
+601
+00:25:27,760 --> 00:25:30,240
+ Bukan berarti Anda bisa langsung memanipulasi semua barang 
+
+602
+00:25:30,240 --> 00:25:33,650
+ di ruang alamat atau objek Aplikasi 2. 
+
+603
+00:25:33,650 --> 00:25:36,320
+ Anda cukup mendapatkan saluran yang aplikasi lainnya 
+
+604
+00:25:36,320 --> 00:25:39,670
+ bersedia untuk melihat pesan dari 
+
+605
+00:25:39,670 --> 00:25:43,540
+ dan melakukan sesuatu yang masuk akal dengan pesan-pesan ini. 
+
+606
+00:25:43,540 --> 00:25:47,560
+ Jadi terserah Aplikasi 2 di sini untuk melihat pesan-pesan ini 
+
+607
+00:25:47,560 --> 00:25:49,080
+ dan melakukan sesuatu yang masuk akal dengan mereka, 
+
+608
+00:25:49,080 --> 00:25:52,850
+ tidak mengizinkan eksekusi kode arbitrer atau akses arbitrer. 
+
+609
+00:25:52,850 --> 00:25:56,210
+ Namun dalam aplikasi ini, saya pikir mereka memiliki dua operasi di mana 
+
+610
+00:25:56,210 --> 00:25:59,560
+ Anda dapat menambahkan teman baru atau mengaktifkan atau menonaktifkan pelacakan 
+
+611
+00:25:59,560 --> 00:26:01,140
+ melalui antarmuka ini. 
+
+612
+00:26:01,140 --> 00:26:03,480
+ Jadi ada pesan yang didefinisikan dengan baik yang Anda tetapkan. 
+
+613
+00:26:03,480 --> 00:26:04,660
+ Dan Anda akan mengimplementasikannya mungkin 
+
+614
+00:26:04,660 --> 00:26:06,180
+ salah satu dari ini [? permukaan?] komponen itu 
+
+615
+00:26:06,180 --> 00:26:07,554
+ bertanggung jawab untuk mengambil pesan, 
+
+616
+00:26:07,554 --> 00:26:11,411
+ dan memeriksa bahwa itu masuk akal, dan mengeksekusi operasi itu. 
+
+617
+00:26:11,411 --> 00:26:11,910
+ Pertanyaan? 
+
+618
+00:26:11,910 --> 00:26:14,860
+ AUDIENCE: Yah, jadi saya kira maksudnya adalah 
+
+619
+00:26:14,860 --> 00:26:16,826
+ biasanya diinisiasi oleh manusia, bukan? 
+
+620
+00:26:16,826 --> 00:26:18,326
+ PROFESOR: Sering kali ya. 
+
+621
+00:26:18,326 --> 00:26:18,950
+ AUDIENCE: Ya. 
+
+622
+00:26:18,950 --> 00:26:20,330
+ Dan manusia sangat lambat. 
+
+623
+00:26:20,330 --> 00:26:22,960
+ Jadi tidak mungkin monitor referensi pergi 
+
+624
+00:26:22,960 --> 00:26:24,169
+ menjadi semacam hambatan. 
+
+625
+00:26:24,169 --> 00:26:25,709
+ PROFESOR: Ya, itu mungkin benar. 
+
+626
+00:26:25,709 --> 00:26:26,520
+ Ya. 
+
+627
+00:26:26,520 --> 00:26:29,141
+ Itu tergantung tepatnya, ya, saya kira bagaimana Anda menggunakan maksud. 
+
+628
+00:26:29,141 --> 00:26:30,390
+ Ini sedikit mengecewakan. 
+
+629
+00:26:30,390 --> 00:26:33,130
+ Di koran, mereka mengatakan bahwa izinnya 
+
+630
+00:26:33,130 --> 00:26:35,711
+ tambahkan [? membeli?] waktu diperiksa oleh referensi 
+
+631
+00:26:35,711 --> 00:26:36,210
+ pantau. 
+
+632
+00:26:36,210 --> 00:26:38,001
+ Tetapi izin pada panggilan RPC individu 
+
+633
+00:26:38,001 --> 00:26:39,456
+ antara aplikasi ini tidak 
+
+634
+00:26:39,456 --> 00:26:40,830
+ diperiksa oleh monitor referensi, 
+
+635
+00:26:40,830 --> 00:26:42,829
+ karena Anda memiliki saluran langsung antara dua ini 
+
+636
+00:26:42,829 --> 00:26:44,110
+ aplikasi. 
+
+637
+00:26:44,110 --> 00:26:47,150
+ Jadi mungkin, sebenarnya, saya tidak tahu persis mengapa 
+
+638
+00:26:47,150 --> 00:26:48,530
+ mereka memilih melakukannya dengan cara ini. 
+
+639
+00:26:48,530 --> 00:26:52,300
+ Mungkin untuk menjauh dari memiliki monitor referensi 
+
+640
+00:26:52,300 --> 00:26:55,690
+ segala jenis bottleneck untuk [? berguna?] komunikasi. 
+
+641
+00:26:55,690 --> 00:27:00,050
+ Tetapi itu berarti bahwa izin untuk RPC individual 
+
+642
+00:27:00,050 --> 00:27:02,270
+ operasi antar aplikasi 
+
+643
+00:27:02,270 --> 00:27:04,920
+ harus dilakukan dalam perangkat lunak di dalam aplikasi 
+
+644
+00:27:04,920 --> 00:27:08,805
+ logika, yang sedikit disayangkan jika kita ingin menghindarinya 
+
+645
+00:27:08,805 --> 00:27:11,370
+ pengembang aplikasi membuat kesalahan semacam ini 
+
+646
+00:27:11,370 --> 00:27:14,596
+ dan mungkin lupa untuk memeriksa izin pada beberapa RPC 
+
+647
+00:27:14,596 --> 00:27:16,370
+ panggilan. 
+
+648
+00:27:16,370 --> 00:27:18,835
+ Jadi dalam beberapa hal, jika Anda benar-benar khawatir tentang keamanan, 
+
+649
+00:27:18,835 --> 00:27:21,430
+ mungkin lebih baik untuk meneruskan semua RPC 
+
+650
+00:27:21,430 --> 00:27:23,690
+ melalui monitor referensi juga, 
+
+651
+00:27:23,690 --> 00:27:26,310
+ karena kemudian monitor referensi akan memastikan 
+
+652
+00:27:26,310 --> 00:27:29,040
+ yang memeriksa perizinan pada setiap panggilan RPC 
+
+653
+00:27:29,040 --> 00:27:31,560
+ bukan hanya pada saat Anda membangun 
+
+654
+00:27:31,560 --> 00:27:34,717
+ saluran untuk panggilan RPC di masa mendatang antara dua aplikasi. 
+
+655
+00:27:34,717 --> 00:27:38,629
+ Masuk akal? 
+
+656
+00:27:38,629 --> 00:27:39,840
+ Baiklah. 
+
+657
+00:27:39,840 --> 00:27:40,340
+ BAIK. 
+
+658
+00:27:40,340 --> 00:27:44,025
+ Jadi mari kita coba mencari tahu - satu hal yang menarik [? melakukan ?] 
+
+659
+00:27:44,025 --> 00:27:48,670
+ untuk mencoba kontras adalah, mengapa orang-orang ini - sebelum kita 
+
+660
+00:27:48,670 --> 00:27:50,170
+ selami sedikit lebih banyak detail, 
+
+661
+00:27:50,170 --> 00:27:52,700
+ mengapa orang-orang ini mendesain aplikasi yang sama sekali baru 
+
+662
+00:27:52,700 --> 00:27:57,180
+ model untuk aplikasi Android sebagai lawan dari-- kami sudah 
+
+663
+00:27:57,180 --> 00:27:57,850
+ sudah terlihat. 
+
+664
+00:27:57,850 --> 00:28:00,497
+ Ada aplikasi desktop, ada aplikasi web. 
+
+665
+00:28:00,497 --> 00:28:02,205
+ Mengapa orang-orang ini menciptakan cara yang benar-benar baru 
+
+666
+00:28:02,205 --> 00:28:03,300
+ menulis perangkat lunak? 
+
+667
+00:28:03,300 --> 00:28:05,760
+ Karena dalam beberapa hal, ini membingungkan bagi pengembang, 
+
+668
+00:28:05,760 --> 00:28:08,140
+ karena saya terbiasa menulis C kecil saya yang bagus 
+
+669
+00:28:08,140 --> 00:28:09,727
+ program dengan fungsi utama. 
+
+670
+00:28:09,727 --> 00:28:11,560
+ Saya melihat ini dan berkata, baik, apa-apaan ini? 
+
+671
+00:28:11,560 --> 00:28:13,175
+ Maksud saya, apa yang akan saya lakukan dengan-- saya 
+
+672
+00:28:13,175 --> 00:28:14,790
+ harus mendefinisikan empat jenis komponen, 
+
+673
+00:28:14,790 --> 00:28:16,206
+ dan saya harus mengirimkan niat sebagai gantinya 
+
+674
+00:28:16,206 --> 00:28:18,280
+ hanya memiliki struct C dan menulis 
+
+675
+00:28:18,280 --> 00:28:20,520
+ [? garis lurus?] kode. 
+
+676
+00:28:20,520 --> 00:28:24,390
+ Jadi apa saja pro atau kontra dari model aplikasi yang ada? 
+
+677
+00:28:24,390 --> 00:28:33,140
+ Jadi kami punya, saya kira, aplikasi desktop dan aplikasi web. 
+
+678
+00:28:33,140 --> 00:28:36,647
+ Mengapa kita membutuhkan kolom ketiga, jadi katakanlah? 
+
+679
+00:28:36,647 --> 00:28:38,730
+ Karena apa hal-hal baik tentang orang-orang ini? 
+
+680
+00:28:38,730 --> 00:28:39,229
+ Ya? 
+
+681
+00:28:39,229 --> 00:28:41,940
+ AUDIENCE: Yah, modelnya sudah berubah total sekarang, kan? 
+
+682
+00:28:41,940 --> 00:28:43,677
+ Karena saya pikir di aplikasi desktop, Anda 
+
+683
+00:28:43,677 --> 00:28:45,510
+ jangan menaruh banyak kepercayaan pada pengembang 
+
+684
+00:28:45,510 --> 00:28:48,460
+ saat Anda memasukkan aplikasi seluler. 
+
+685
+00:28:48,460 --> 00:28:51,810
+ Dan Anda memiliki lebih banyak pengguna yang lebih sedikit 
+
+686
+00:28:51,810 --> 00:28:54,902
+ [? tidak berpengalaman?] daripada pengguna desktop yang akhirnya memiliki 
+
+687
+00:28:54,902 --> 00:28:57,360
+ banyak aplikasi yang benar-benar ingin [? mengisolasi?] dari masing-masing 
+
+688
+00:28:57,360 --> 00:28:58,000
+ lain. 
+
+689
+00:28:58,000 --> 00:28:58,960
+ PROFESOR: Bisa jadi. 
+
+690
+00:28:58,960 --> 00:29:00,335
+ Jadi Anda berpikir dalam kasus desktop, 
+
+691
+00:29:00,335 --> 00:29:02,251
+ kita tidak harus terlalu mempercayai para pengembang? 
+
+692
+00:29:02,251 --> 00:29:03,430
+ AUDIENCE: Tentu saja Anda lakukan. 
+
+693
+00:29:03,430 --> 00:29:07,256
+ Tapi sepertinya selalu ada anakmu atau sepupumu 
+
+694
+00:29:07,256 --> 00:29:10,567
+ bahwa Anda merawat desktop mereka jika berjalan buruk. 
+
+695
+00:29:10,567 --> 00:29:11,513
+ PROFESOR: [LAUGHS] 
+
+696
+00:29:11,513 --> 00:29:12,657
+ AUDIENCE: Tetapi dengan telepon Anda, ada 
+
+697
+00:29:12,657 --> 00:29:13,440
+ masalah yang berbeda sama sekali. 
+
+698
+00:29:13,440 --> 00:29:15,280
+ PROFESOR: Saya rasa itu keren bahwa ponsel tidak perlu 
+
+699
+00:29:15,280 --> 00:29:16,560
+ sepupu untuk merawat mereka. 
+
+700
+00:29:16,560 --> 00:29:18,954
+ Jadi itu hebat, kan? 
+
+701
+00:29:18,954 --> 00:29:21,910
+ Namun dalam hal keamanan, satu hal di aplikasi desktop 
+
+702
+00:29:21,910 --> 00:29:24,300
+ adalah bahwa Anda tidak dapat menginstal-- atau itu 
+
+703
+00:29:24,300 --> 00:29:32,390
+ sangat sulit untuk menginstal aplikasi baru atau mungkin-- yah, 
+
+704
+00:29:32,390 --> 00:29:36,360
+ mungkin tidak sepenuhnya benar, karena Anda selalu bisa 
+
+705
+00:29:36,360 --> 00:29:38,830
+ klik yang dapat dieksekusi dan instal aplikasi pada kasus desktop. 
+
+706
+00:29:38,830 --> 00:29:42,200
+ Tapi saya kira orang tidak menginstal aplikasi secara teratur semacam cenderung 
+
+707
+00:29:42,200 --> 00:29:43,840
+ maybe-- karena itu tergantung pada penggunaan 
+
+708
+00:29:43,840 --> 00:29:44,798
+ model aplikasi desktop. 
+
+709
+00:29:44,798 --> 00:29:47,400
+ Tetapi biasanya, Anda memiliki perangkat lunak tetap 
+
+710
+00:29:47,400 --> 00:29:49,780
+ Anda menjalankan yang bertentangan dengan aplikasi web, 
+
+711
+00:29:49,780 --> 00:29:53,910
+ satu hal keren adalah sangat mudah menjalankan aplikasi baru. 
+
+712
+00:29:53,910 --> 00:29:56,880
+
+
+713
+00:29:56,880 --> 00:29:59,405
+ Anda hanya mengunjungi situs web, dan tidak ada yang benar-benar ada 
+
+714
+00:29:59,405 --> 00:30:01,155
+ yang harus Anda lakukan selain mengeklik tautan. 
+
+715
+00:30:01,155 --> 00:30:05,760
+ Dan pergilah Anda di beberapa situs baru yang menjalankan beberapa Aplikasi baru. 
+
+716
+00:30:05,760 --> 00:30:07,705
+ Jadi itu adalah properti aplikasi web yang cukup bagus. 
+
+717
+00:30:07,705 --> 00:30:11,120
+ Salah satu masalah tentang aplikasi desktop adalah sebenarnya ada 
+
+718
+00:30:11,120 --> 00:30:16,170
+ tidak ada isolasi sama sekali di antara aplikasi. 
+
+719
+00:30:16,170 --> 00:30:18,266
+ Itu mungkin agak terkait dengan fakta 
+
+720
+00:30:18,266 --> 00:30:19,640
+ sulit untuk menginstal aplikasi, 
+
+721
+00:30:19,640 --> 00:30:21,990
+ karena Anda benar-benar mempercayainya 
+
+722
+00:30:21,990 --> 00:30:23,820
+ sepenuhnya dengan semua data di komputer Anda 
+
+723
+00:30:23,820 --> 00:30:24,903
+ ketika Anda menginstalnya. 
+
+724
+00:30:24,903 --> 00:30:27,150
+ Tidak ada isolasi antara satu aplikasi 
+
+725
+00:30:27,150 --> 00:30:30,096
+ yang Anda pasang di laptop Anda dan mungkin hal lainnya 
+
+726
+00:30:30,096 --> 00:30:31,470
+ berjalan di sana, atau data apa pun 
+
+727
+00:30:31,470 --> 00:30:33,450
+ yang Anda simpan di komputer itu. 
+
+728
+00:30:33,450 --> 00:30:35,410
+ Padahal dalam kasus aplikasi web, ada 
+
+729
+00:30:35,410 --> 00:30:38,020
+ beberapa isolasi yang masuk akal. 
+
+730
+00:30:38,020 --> 00:30:41,489
+ Selama Anda percaya bahwa kebijakan asal yang sama sudah benar 
+
+731
+00:30:41,489 --> 00:30:44,030
+ [TIDAK JELAS] oleh browser, maka Anda dalam kondisi yang cukup baik. 
+
+732
+00:30:44,030 --> 00:30:47,100
+ Ini cukup aman untuk mungkin pergi ke beberapa situs web yang sewenang-wenang 
+
+733
+00:30:47,100 --> 00:30:49,282
+ dan mulai menggunakan aplikasi mereka. 
+
+734
+00:30:49,282 --> 00:30:51,240
+ Ini tidak akan mengutak-atik situs lain 
+
+735
+00:30:51,240 --> 00:30:53,274
+ yang telah Anda buka di browser Anda, 
+
+736
+00:30:53,274 --> 00:30:55,190
+ dengan asumsi mereka tidak mengeksploitasi beberapa bug browser. 
+
+737
+00:30:55,190 --> 00:30:58,830
+
+
+738
+00:30:58,830 --> 00:31:01,980
+ Sejauh ini, sepertinya aplikasi web adalah rencana pemenang. 
+
+739
+00:31:01,980 --> 00:31:04,410
+ Mereka mudah digunakan, mereka memiliki isolasi. 
+
+740
+00:31:04,410 --> 00:31:07,651
+ Mengapa orang-orang ini tidak menggunakan aplikasi web untuk Android? 
+
+741
+00:31:07,651 --> 00:31:08,150
+ Ya? 
+
+742
+00:31:08,150 --> 00:31:09,820
+ AUDIENCE: Jadi aplikasi web dimulai 
+
+743
+00:31:09,820 --> 00:31:12,280
+ menjadi seperti sistem operasi dalam diri mereka, bukan? 
+
+744
+00:31:12,280 --> 00:31:18,480
+ Jadi Anda memiliki Firefox OX, yang pada dasarnya hanya OS web mobile. 
+
+745
+00:31:18,480 --> 00:31:19,450
+ PROFESOR: Benar. 
+
+746
+00:31:19,450 --> 00:31:19,950
+ BAIK. 
+
+747
+00:31:19,950 --> 00:31:22,324
+ Jadi Anda berdebat bahwa sebenarnya orang-orang ini salah. 
+
+748
+00:31:22,324 --> 00:31:24,840
+ Mereka seharusnya tidak membangun tumpukan Android baru. 
+
+749
+00:31:24,840 --> 00:31:28,100
+ Mereka seharusnya baru saja melakukan peramban web raksasa 
+
+750
+00:31:28,100 --> 00:31:29,750
+ sebagai telepon Anda. 
+
+751
+00:31:29,750 --> 00:31:32,843
+ AUDIENCE: Yah, setidaknya Mozilla telah menunjukkan bahwa itu mungkin. 
+
+752
+00:31:32,843 --> 00:31:33,551
+ PROFESOR: Benar. 
+
+753
+00:31:33,551 --> 00:31:35,443
+ OK cukup adil. 
+
+754
+00:31:35,443 --> 00:31:38,030
+ Jadi setidaknya lebih masuk akal untuk menggunakan aplikasi web 
+
+755
+00:31:38,030 --> 00:31:41,190
+ rute daripada rute desktop, setidaknya untuk telepon. 
+
+756
+00:31:41,190 --> 00:31:41,690
+ Ya? 
+
+757
+00:31:41,690 --> 00:31:45,458
+ AUDIENCE: [INAUDIBLE] panggilan telepon dari aplikasi web, 
+
+758
+00:31:45,458 --> 00:31:48,519
+ Anda membutuhkan [? API baru?] untuk antarmuka aplikasi web 
+
+759
+00:31:48,519 --> 00:31:49,342
+ dengan telepon. 
+
+760
+00:31:49,342 --> 00:31:50,050
+ PROFESOR: Benar. 
+
+761
+00:31:50,050 --> 00:31:53,746
+ Jadi, satu batasan yang mungkin bisa diperbaiki, tentu saja, 
+
+762
+00:31:53,746 --> 00:31:58,922
+ tetapi masih ada mungkin ada 
+
+763
+00:31:58,922 --> 00:32:03,200
+ tidak ada API untuk beberapa perangkat. 
+
+764
+00:32:03,200 --> 00:32:04,970
+ Ini semakin menjadi kurang. 
+
+765
+00:32:04,970 --> 00:32:08,270
+ Seperti, untuk kamera atau untuk GPS, ini lambat 
+
+766
+00:32:08,270 --> 00:32:10,090
+ ditambahkan ke casing web. 
+
+767
+00:32:10,090 --> 00:32:12,170
+ Tapi mungkin tidak ada cukup API 
+
+768
+00:32:12,170 --> 00:32:15,360
+ untuk mengakses ponsel Anda, atau mengirim SMS 
+
+769
+00:32:15,360 --> 00:32:18,450
+ pesan, dan hal-hal seperti itu. 
+
+770
+00:32:18,450 --> 00:32:22,000
+ Gelandangan lain dalam aplikasi web sebenarnya ada terbatas 
+
+771
+00:32:22,000 --> 00:32:24,490
+ berbagi yang dapat Anda lakukan. 
+
+772
+00:32:24,490 --> 00:32:27,029
+ Jadi kami hanya berbicara tentang maksud implisit 
+
+773
+00:32:27,029 --> 00:32:28,820
+ di Android, di mana Anda bisa mengatakan, baik, 
+
+774
+00:32:28,820 --> 00:32:30,197
+ Saya ingin melihat gambar JPEG ini, 
+
+775
+00:32:30,197 --> 00:32:32,280
+ tapi siapa yang tahu aplikasi apa yang akan membukanya? 
+
+776
+00:32:32,280 --> 00:32:34,020
+ Atau saya ingin melihat file PDF ini. 
+
+777
+00:32:34,020 --> 00:32:36,235
+ Atau saya ingin membagikan gambar ini saya hanya 
+
+778
+00:32:36,235 --> 00:32:38,530
+ mengambil dengan kamera saya dengan seorang teman melalui email, 
+
+779
+00:32:38,530 --> 00:32:40,860
+ tapi saya tidak tahu aplikasi email apa yang Anda gunakan. 
+
+780
+00:32:40,860 --> 00:32:43,390
+ Mari kita tanyakan monitor referensi 
+
+781
+00:32:43,390 --> 00:32:45,722
+ untuk menemukan saya beberapa program email itu 
+
+782
+00:32:45,722 --> 00:32:47,460
+ akan mengirim gambar ini. 
+
+783
+00:32:47,460 --> 00:32:49,501
+ Jadi itu adalah sesuatu yang benar-benar dapat Anda lakukan di Android. 
+
+784
+00:32:49,501 --> 00:32:51,697
+ Tapi agak sulit dilakukan dalam kasus aplikasi web, 
+
+785
+00:32:51,697 --> 00:32:53,155
+ karena setiap interaksi, Anda punya 
+
+786
+00:32:53,155 --> 00:32:55,110
+ untuk merujuk ke URL tertentu. 
+
+787
+00:32:55,110 --> 00:32:57,730
+ Jadi jika Anda tidak tahu apa PDF viewer yang digunakan seseorang, 
+
+788
+00:32:57,730 --> 00:33:01,110
+ Anda mungkin tidak tahu apa URL untuk dibuka 
+
+789
+00:33:01,110 --> 00:33:05,583
+ untuk menanyakannya untuk melihat PDF [? berpotensi. ?] Pertanyaan? 
+
+790
+00:33:05,583 --> 00:33:08,068
+ AUDIENCE: [TIDAK JELAS]. 
+
+791
+00:33:08,068 --> 00:33:11,384
+ Tetapi JavaScript sangat sulit dibaca [TIDAK JELAS]. 
+
+792
+00:33:11,384 --> 00:33:12,050
+ PROFESOR: Ya. 
+
+793
+00:33:12,050 --> 00:33:16,160
+ Jadi satu yang mengecewakan adalah ya, ini semua JavaScript. [TERTAWA] 
+
+794
+00:33:16,160 --> 00:33:17,775
+ Jadi itu sangat tidak menguntungkan. 
+
+795
+00:33:17,775 --> 00:33:20,640
+ Tapi itu mungkin tidak bagus dalam hal kinerja. 
+
+796
+00:33:20,640 --> 00:33:24,440
+ Mungkin sulit memahami apa yang dilakukannya. 
+
+797
+00:33:24,440 --> 00:33:29,894
+ Mungkin sulit untuk mengkompilasi secara efisien, dan sebagainya. 
+
+798
+00:33:29,894 --> 00:33:31,286
+ Ya. 
+
+799
+00:33:31,286 --> 00:33:33,610
+ Karena satu hal yang menyenangkan tentang desktop [TIDAK JELAS] 
+
+800
+00:33:33,610 --> 00:33:36,250
+ adalah berbagi itu mudah. 
+
+801
+00:33:36,250 --> 00:33:39,990
+ Jadi satu efek samping dari memiliki semua file Anda dapat diakses 
+
+802
+00:33:39,990 --> 00:33:42,810
+ di setiap aplikasi, Anda hanya berbagi. 
+
+803
+00:33:42,810 --> 00:33:45,330
+ Sangat mudah untuk mengakses data apa pun yang Anda miliki. 
+
+804
+00:33:45,330 --> 00:33:48,525
+ Dan dalam beberapa hal, jika Anda benar-benar ingin banyak berbagi, 
+
+805
+00:33:48,525 --> 00:33:49,390
+ ini bagus. 
+
+806
+00:33:49,390 --> 00:33:52,532
+ Seperti, saya mungkin bisa-- mungkin agak sedikit rumit 
+
+807
+00:33:52,532 --> 00:33:54,365
+ untuk menerapkan beberapa hal di Android yang 
+
+808
+00:33:54,365 --> 00:33:55,830
+ mudah dilakukan di desktop case. 
+
+809
+00:33:55,830 --> 00:33:56,810
+ Jadi dalam kasus desktop, jika saya mau 
+
+810
+00:33:56,810 --> 00:33:59,310
+ untuk mengkompilasi perangkat lunak, saya akan menjalankan [? Membuat. ?] 
+
+811
+00:33:59,310 --> 00:34:04,030
+ Itu akan menjalankan GCC dan mungkin program lain. 
+
+812
+00:34:04,030 --> 00:34:06,520
+ Dan mereka semua berkolaborasi pada sumber C yang sama 
+
+813
+00:34:06,520 --> 00:34:08,090
+ kode dalam direktori tunggal. 
+
+814
+00:34:08,090 --> 00:34:09,746
+ Mereka semua membangunnya. 
+
+815
+00:34:09,746 --> 00:34:11,120
+ Mungkin sedikit lebih rumit 
+
+816
+00:34:11,120 --> 00:34:14,969
+ untuk dilakukan dalam kasus Android, di mana data adalah jenis yang terkait 
+
+817
+00:34:14,969 --> 00:34:17,077
+ dengan aplikasi utama, tetapi menyimpannya 
+
+818
+00:34:17,077 --> 00:34:18,884
+ di sebuah [? kuantum?] penyedia. 
+
+819
+00:34:18,884 --> 00:34:20,300
+ Jadi mungkin agak sedikit rumit 
+
+820
+00:34:20,300 --> 00:34:23,650
+ untuk memiliki dunia Android tempat saya menyimpan kode sumber saya 
+
+821
+00:34:23,650 --> 00:34:25,600
+ suatu tempat, dan kemudian saya menginstal compiler C, 
+
+822
+00:34:25,600 --> 00:34:28,864
+ dan [? a Make?] program, dan assembler, dan lainnya. 
+
+823
+00:34:28,864 --> 00:34:30,379
+ Dan mereka semua bekerja bersama. 
+
+824
+00:34:30,380 --> 00:34:32,110
+ Ini sedikit lebih sulit untuk dilakukan. 
+
+825
+00:34:32,110 --> 00:34:34,034
+ Anda mungkin bisa melakukannya entah bagaimana. 
+
+826
+00:34:34,034 --> 00:34:37,113
+ AUDIENCE: [TIDAK JELAS]. 
+
+827
+00:34:37,114 --> 00:34:37,780
+ PROFESOR: Ya. 
+
+828
+00:34:37,780 --> 00:34:40,159
+ Jadi Anda mungkin bisa mengatasinya dengan beberapa cara. 
+
+829
+00:34:40,159 --> 00:34:42,580
+ Jadi saya pikir Android tentu saja tujuan umum yang cukup 
+
+830
+00:34:42,580 --> 00:34:44,989
+ untuk membiarkan Anda entah bagaimana melakukannya. 
+
+831
+00:34:44,989 --> 00:34:49,150
+ Tapi itu mungkin tidak cukup alami untuk melakukan ini di Android 
+
+832
+00:34:49,150 --> 00:34:51,480
+ seperti yang ada di desktop case. 
+
+833
+00:34:51,480 --> 00:34:53,090
+ Bukannya aku mendebat kasus desktop. 
+
+834
+00:34:53,090 --> 00:34:54,840
+ Tapi itu tidak cukup aman. 
+
+835
+00:34:54,840 --> 00:34:56,168
+ Tapi ya. 
+
+836
+00:34:56,168 --> 00:34:56,959
+ Ada komentar lain? 
+
+837
+00:34:56,960 --> 00:34:57,846
+ Ya? 
+
+838
+00:34:57,846 --> 00:35:00,693
+ AUDIENCE: Hal lain mungkin terjadi 
+
+839
+00:35:00,693 --> 00:35:02,680
+ yang kami optimalkan untuk web berbeda 
+
+840
+00:35:02,680 --> 00:35:05,772
+ aplikasi [tidak terdengar] dibatasi. 
+
+841
+00:35:05,772 --> 00:35:08,718
+ Saya tidak yakin apa [TIDAK JELAS] cenderung dibatasi oleh. 
+
+842
+00:35:08,718 --> 00:35:10,682
+ Tapi [? aplikasi web?] cenderung dibatasi 
+
+843
+00:35:10,682 --> 00:35:13,137
+ oleh RAM dan pemrosesan. 
+
+844
+00:35:13,137 --> 00:35:16,279
+ Dan lebih dari itu baik aplikasi desktop atau web, tentu saja. 
+
+845
+00:35:16,279 --> 00:35:16,945
+ PROFESOR: Ya. 
+
+846
+00:35:16,945 --> 00:35:19,230
+ Jadi mungkin itu keputusan rekayasa yang solid 
+
+847
+00:35:19,230 --> 00:35:21,067
+ sekitar cara mengoptimalkan hal-hal ini 
+
+848
+00:35:21,067 --> 00:35:22,150
+ akan berbeda. 
+
+849
+00:35:22,150 --> 00:35:23,905
+ Saya kira satu hal yang tidak menguntungkan tentang aplikasi web, 
+
+850
+00:35:23,905 --> 00:35:26,196
+ setidaknya pada saat orang-orang ini mendesain Android, 
+
+851
+00:35:26,196 --> 00:35:28,600
+ adalah sulitnya menjalankan offline aplikasi web. 
+
+852
+00:35:28,600 --> 00:35:32,560
+ Jika ponsel Anda tidak memiliki ponsel yang cukup kuat 
+
+853
+00:35:32,560 --> 00:35:35,535
+ penerimaan, maka mungkin sulit bagi Anda untuk menjalankan aplikasi 
+
+854
+00:35:35,535 --> 00:35:37,780
+ jika beberapa bagiannya jatuh dari cache. 
+
+855
+00:35:37,780 --> 00:35:39,935
+ Saya pikir perlahan, seperti yang Anda tunjukkan, 
+
+856
+00:35:39,935 --> 00:35:42,400
+ dunia aplikasi web sedang mengejar Android. 
+
+857
+00:35:42,400 --> 00:35:44,780
+ Tetapi banyak dari keterbatasan ini semakin banyak 
+
+858
+00:35:44,780 --> 00:35:48,620
+ diperbaiki atau diperbaiki. 
+
+859
+00:35:48,620 --> 00:35:50,857
+ Jadi mungkin itu hari ini, web 
+
+860
+00:35:50,857 --> 00:35:53,950
+ aplikasi adalah model yang masuk akal untuk memulai platform telepon baru. 
+
+861
+00:35:53,950 --> 00:35:56,310
+ Namun lima tahun lalu, dunia Android ini 
+
+862
+00:35:56,310 --> 00:35:59,800
+ diperlukan, karena aplikasi web tidak cukup di sana. 
+
+863
+00:35:59,800 --> 00:36:03,230
+ Mungkin belum cukup di sana, tetapi saat ini, 
+
+864
+00:36:03,230 --> 00:36:05,310
+ mungkin lebih mudah untuk mendorong aplikasi web 
+
+865
+00:36:05,310 --> 00:36:10,300
+ semua jalan ke tempat Android bukan mulai dari awal. 
+
+866
+00:36:10,300 --> 00:36:11,240
+ Baiklah. 
+
+867
+00:36:11,240 --> 00:36:17,190
+ Jadi saya kira kita masih bisa berbicara tentang apa itu Android 
+
+868
+00:36:17,190 --> 00:36:19,716
+ bahkan mungkin hari ini Anda tidak akan melakukannya 
+
+869
+00:36:19,716 --> 00:36:21,720
+ telah melakukannya dengan cara yang sama. 
+
+870
+00:36:21,720 --> 00:36:24,275
+ Tapi saya kira dalam hal isolasi, 
+
+871
+00:36:24,275 --> 00:36:28,600
+ kita bisa mulai berbicara tentang keamanan sedikit lebih banyak. 
+
+872
+00:36:28,600 --> 00:36:30,125
+ Android bergantung pada kernel Linux, 
+
+873
+00:36:30,125 --> 00:36:33,540
+ seperti yang saya sebutkan, untuk mengisolasi aplikasi ini dari satu sama lain. 
+
+874
+00:36:33,540 --> 00:36:38,330
+ Jadi yang terjadi adalah bahwa kerangka Android sebenarnya 
+
+875
+00:36:38,330 --> 00:36:45,230
+ menetapkan ID pengguna sehingga aplikasi ini mungkin 
+
+876
+00:36:45,230 --> 00:36:47,270
+ UID 1,001. 
+
+877
+00:36:47,270 --> 00:36:49,930
+ Aplikasi ini berjalan sebagai UID 1,002. 
+
+878
+00:36:49,930 --> 00:36:53,990
+ Dan monitor referensi pada dasarnya [TIDAK JELAS]. 
+
+879
+00:36:53,990 --> 00:36:55,860
+ Jadi saya pikir itu mungkin berjalan sebagai UID 0, 
+
+880
+00:36:55,860 --> 00:36:57,840
+ meskipun saya lupa detailnya. 
+
+881
+00:36:57,840 --> 00:37:01,860
+ Tapi saya pikir itu berjalan sebagai UID 0 di Android. 
+
+882
+00:37:01,860 --> 00:37:04,330
+ Jadi kernel Linux sebagian besar bertanggung jawab untuk menjaga 
+
+883
+00:37:04,330 --> 00:37:08,030
+ aplikasi terpisah satu sama lain. 
+
+884
+00:37:08,030 --> 00:37:10,740
+ Dan kebanyakan, interaksi antara ID pengguna 
+
+885
+00:37:10,740 --> 00:37:13,172
+ terjadi melalui niat ini. 
+
+886
+00:37:13,172 --> 00:37:15,630
+ Dan kemudian ada sedikit detail dalam hal-hal 
+
+887
+00:37:15,630 --> 00:37:17,420
+ bahwa kernel Linux benar-benar memaksa 
+
+888
+00:37:17,420 --> 00:37:22,220
+ dalam hal yang UID diperbolehkan untuk melakukan operasi yang mana juga. 
+
+889
+00:37:22,220 --> 00:37:24,592
+ Jadi kita akan membicarakannya sebentar lagi. 
+
+890
+00:37:24,592 --> 00:37:28,820
+ Satu pertanyaan menarik mengapa orang-orang ini memilih Java? 
+
+891
+00:37:28,820 --> 00:37:32,640
+ Seperti, apa peran Java di Android? 
+
+892
+00:37:32,640 --> 00:37:36,199
+ Mengapa ada Java di sana? 
+
+893
+00:37:36,199 --> 00:37:37,240
+ Apakah ini menegakkan sesuatu? 
+
+894
+00:37:37,240 --> 00:37:37,720
+ Ya. 
+
+895
+00:37:37,720 --> 00:37:39,803
+ AUDIENCE: Saya pikir itu memaksa [? pesan teks ?] 
+
+896
+00:37:39,803 --> 00:37:40,942
+ dan [? hilirisasi. ?] 
+
+897
+00:37:40,942 --> 00:37:41,650
+ PROFESOR: Benar. 
+
+898
+00:37:41,650 --> 00:37:42,150
+ BAIK. 
+
+899
+00:37:42,150 --> 00:37:43,460
+ Jadi apa yang kita dapatkan dari itu? 
+
+900
+00:37:43,460 --> 00:37:45,533
+ Apakah itu seperti keamanan, untuk kemungkinan? 
+
+901
+00:37:45,533 --> 00:37:50,394
+
+
+902
+00:37:50,394 --> 00:37:52,560
+ Satu cara lain untuk memikirkannya adalah, anggaplah kita mengambilnya 
+
+903
+00:37:52,560 --> 00:37:55,446
+ Java dan membuat semua aplikasi yang ditulis dalam C, 
+
+904
+00:37:55,446 --> 00:37:57,320
+ atau, seperti, Majelis, atau tidak memerlukan apa pun 
+
+905
+00:37:57,320 --> 00:37:58,430
+ sama sekali dalam hal ini. 
+
+906
+00:37:58,430 --> 00:37:59,753
+ Apakah ada yang rusak? 
+
+907
+00:37:59,753 --> 00:38:00,253
+ Ya. 
+
+908
+00:38:00,253 --> 00:38:02,185
+ AUDIENCE: Anda memiliki kerentanan [tidak terdengar] 
+
+909
+00:38:02,185 --> 00:38:03,851
+ mengesampingkan nilai-nilai penting ini. 
+
+910
+00:38:03,851 --> 00:38:04,600
+ PROFESOR: Uh-huh. 
+
+911
+00:38:04,600 --> 00:38:05,790
+ Ya, itu mungkin. 
+
+912
+00:38:05,790 --> 00:38:08,880
+ Jadi seperti aplikasi bisa memiliki buffer overflow di dalamnya. 
+
+913
+00:38:08,880 --> 00:38:11,219
+ Jadi seberapa buruk itu? 
+
+914
+00:38:11,219 --> 00:38:13,690
+ AUDIENCE: Ini bisa diganti dengan izin. 
+
+915
+00:38:13,690 --> 00:38:15,700
+ PROFESOR: Izin apa? 
+
+916
+00:38:15,700 --> 00:38:17,694
+ AUDIENCE: Seperti latensi. 
+
+917
+00:38:17,694 --> 00:38:18,360
+ PROFESOR: Ya. 
+
+918
+00:38:18,360 --> 00:38:19,520
+ Yah, sebenarnya, mari kita lihat. 
+
+919
+00:38:19,520 --> 00:38:22,220
+ Jadi seperti yang kita bicarakan, monitor referensi 
+
+920
+00:38:22,220 --> 00:38:25,100
+ adalah hal yang melakukan semua label untuk memeriksa kami. 
+
+921
+00:38:25,100 --> 00:38:26,650
+ Dan monitor referensi sebenarnya, 
+
+922
+00:38:26,650 --> 00:38:31,220
+ di Android, menyimpan daftar semua aplikasi yang diinstal 
+
+923
+00:38:31,220 --> 00:38:33,730
+ bersama dengan label yang sesuai 
+
+924
+00:38:33,730 --> 00:38:35,810
+ untuk semua aplikasi itu. 
+
+925
+00:38:35,810 --> 00:38:37,310
+ Jadi mungkin benar bahwa Anda tidak melakukannya 
+
+926
+00:38:37,310 --> 00:38:40,270
+ ingin segala jenis bug di monitor referensi 
+
+927
+00:38:40,270 --> 00:38:42,549
+ terlepas dari bahasa apa itu ditulis. 
+
+928
+00:38:42,549 --> 00:38:44,090
+ Jadi memiliki monitor referensi 
+
+929
+00:38:44,090 --> 00:38:45,881
+ ditulis dalam bahasa yang aman adalah mungkin 
+
+930
+00:38:45,881 --> 00:38:46,930
+ hal yang baik secara umum. 
+
+931
+00:38:46,930 --> 00:38:48,400
+ Dan saya suka Java. 
+
+932
+00:38:48,400 --> 00:38:50,850
+ Saya bisa merasakan bahwa itu adalah bahasa yang aman 
+
+933
+00:38:50,850 --> 00:38:53,000
+ dan memiliki semua properti yang bagus ini. 
+
+934
+00:38:53,000 --> 00:38:55,320
+ Tetapi jika aplikasi harus ditulis dalam C 
+
+935
+00:38:55,320 --> 00:38:57,170
+ dan memiliki buffer overflow, itu tidak akan terjadi 
+
+936
+00:38:57,170 --> 00:39:00,050
+ dapat merusak secara langsung label yang disimpan dalam referensi 
+
+937
+00:39:00,050 --> 00:39:01,150
+ pantau di sini. 
+
+938
+00:39:01,150 --> 00:39:03,860
+ Jadi itu tidak akan menjadi masalah besar. 
+
+939
+00:39:03,860 --> 00:39:04,360
+ Ya. 
+
+940
+00:39:04,360 --> 00:39:05,296
+ AUDIENCE: [TIDAK JELAS]. 
+
+941
+00:39:05,296 --> 00:39:08,110
+
+
+942
+00:39:08,110 --> 00:39:09,800
+ PROFESOR: Bisa jadi. 
+
+943
+00:39:09,800 --> 00:39:12,190
+ Jadi mengapa itu membantu? 
+
+944
+00:39:12,190 --> 00:39:15,950
+ AUDIENCE: Ada beberapa sistem [tidak terdengar] bahwa itu 
+
+945
+00:39:15,950 --> 00:39:18,574
+ benar-benar dapat menimpa C? 
+
+946
+00:39:18,574 --> 00:39:19,240
+ PROFESOR: Ya. 
+
+947
+00:39:19,240 --> 00:39:21,276
+ Jadi pada prinsipnya, mungkin sebaiknya dihindari 
+
+948
+00:39:21,276 --> 00:39:23,130
+ aplikasi berbicara langsung ke kernel Linux. 
+
+949
+00:39:23,130 --> 00:39:25,004
+ [TIDAK JELAS] di Android, bukan ini masalahnya. 
+
+950
+00:39:25,004 --> 00:39:26,690
+ Jadi sebenarnya, aplikasi Android 
+
+951
+00:39:26,690 --> 00:39:29,890
+ dapat membuat panggilan sistem sewenang-wenang jika mereka mau. 
+
+952
+00:39:29,890 --> 00:39:31,520
+ Dan sebenarnya, aplikasi yang harus saya katakan 
+
+953
+00:39:31,520 --> 00:39:33,480
+ dapat bergeser dengan komponen arbitrary 
+
+954
+00:39:33,480 --> 00:39:35,870
+ ditulis dalam C atau Majelis untuk alasan kinerja. 
+
+955
+00:39:35,870 --> 00:39:39,200
+ Jadi beberapa game [? shift?] dengan komputasi secara intensif 
+
+956
+00:39:39,200 --> 00:39:41,050
+ bagian yang ditulis dalam C. Dan mereka semacam 
+
+957
+00:39:41,050 --> 00:39:44,254
+ berbicara dengannya dari Jawa juga. 
+
+958
+00:39:44,254 --> 00:39:45,844
+ AUDIENCE: Jadi saya kira sebagian dari itu 
+
+959
+00:39:45,844 --> 00:39:47,902
+ bisa menggunakan semua hal itu 
+
+960
+00:39:47,902 --> 00:39:49,710
+ ditulis untuk Java. 
+
+961
+00:39:49,710 --> 00:39:51,895
+ Mereka ingin membuatnya mudah untuk dibangun 
+
+962
+00:39:51,895 --> 00:39:53,350
+ aplikasi untuk pengembang. 
+
+963
+00:39:53,350 --> 00:39:55,290
+ Dan salah satu cara mudah melakukan itu 
+
+964
+00:39:55,290 --> 00:39:57,876
+ sedang dapat memanfaatkan perpustakaan Java yang sangat besar 
+
+965
+00:39:57,876 --> 00:39:58,462
+ di luar sana. 
+
+966
+00:39:58,462 --> 00:39:59,170
+ PROFESOR: Mm-hm. 
+
+967
+00:39:59,170 --> 00:39:59,670
+ Ya. 
+
+968
+00:39:59,670 --> 00:40:02,730
+ Jadi saya pikir satu alasan besar untuk menggunakan Java adalah kegunaannya. 
+
+969
+00:40:02,730 --> 00:40:05,820
+ Mereka ingin ... Saya pikir Java tidak ada hubungannya dengan keamanan 
+
+970
+00:40:05,820 --> 00:40:09,960
+ dan kebanyakan dengan programabilitas, kemudahan pengembangan. 
+
+971
+00:40:09,960 --> 00:40:11,875
+ Satu hal lain yang saya pikir sedang terjadi 
+
+972
+00:40:11,875 --> 00:40:15,190
+ adalah bahwa-- baik, untuk kontras dengan iPhone, misalnya. 
+
+973
+00:40:15,190 --> 00:40:17,510
+ iPhone juga sangat menginginkan kemudahan pengembangan. 
+
+974
+00:40:17,510 --> 00:40:21,450
+ Tetapi mereka menggunakan Objective C, yang memiliki buffer overflows jika Anda 
+
+975
+00:40:21,450 --> 00:40:22,350
+ berusaha cukup keras. 
+
+976
+00:40:22,350 --> 00:40:25,340
+ Dan ini khusus untuk perangkat keras tertentu. 
+
+977
+00:40:25,340 --> 00:40:27,540
+ Itu tidak mungkin memiliki semua pustaka yang sama. 
+
+978
+00:40:27,540 --> 00:40:29,835
+ Saya pikir alasan utama mengapa orang-orang Android 
+
+979
+00:40:29,835 --> 00:40:31,320
+ pergi dengan Java mungkin adalah fakta 
+
+980
+00:40:31,320 --> 00:40:34,290
+ bahwa mereka tidak memproduksi perangkat pada saat yang bersamaan. 
+
+981
+00:40:34,290 --> 00:40:35,735
+ Jadi iPhone tahu persis itu 
+
+982
+00:40:35,735 --> 00:40:37,860
+ akan menjadi prosesor ARM ini menjalankan telepon mereka. 
+
+983
+00:40:37,860 --> 00:40:40,780
+ Jadi mereka bisa mengkompilasi ke ARM dan diselesaikan dengan itu. 
+
+984
+00:40:40,780 --> 00:40:43,460
+ Dan itu lebih efisien, karena baterai 
+
+985
+00:40:43,460 --> 00:40:45,770
+ banyak hal di telepon. 
+
+986
+00:40:45,770 --> 00:40:48,270
+ Dan orang-orang Android menggunakan Java, yang mungkin sedikit 
+
+987
+00:40:48,270 --> 00:40:51,120
+ kurang hemat daya atau hemat CPU, karena itu 
+
+988
+00:40:51,120 --> 00:40:53,056
+ melibatkan JRE ini, dan sebagainya. 
+
+989
+00:40:53,056 --> 00:40:54,430
+ Tetapi hal yang keren tentang itu, itu 
+
+990
+00:40:54,430 --> 00:40:56,200
+ sebenarnya portabel antara arsitektur. 
+
+991
+00:40:56,200 --> 00:40:58,750
+ Jadi jika Anda memiliki ponsel yang memiliki prosesor MIPS, atau ARM 
+
+992
+00:40:58,750 --> 00:41:02,280
+ prosesor, atau prosesor x86, aplikasi Java 
+
+993
+00:41:02,280 --> 00:41:05,280
+ dapat dijalankan pada ketiga jenis perangkat ini. 
+
+994
+00:41:05,280 --> 00:41:07,420
+ Dan para pengguna Android menginginkan platform mereka 
+
+995
+00:41:07,420 --> 00:41:11,550
+ untuk dapat digunakan pada semua jenis perangkat keras atau telepon. 
+
+996
+00:41:11,550 --> 00:41:13,305
+ Jadi itu mungkin satu alasan besar 
+
+997
+00:41:13,305 --> 00:41:15,695
+ mengapa mereka menggunakan Java dalam semua kasus ini, 
+
+998
+00:41:15,695 --> 00:41:18,120
+ dan mungkin kurang begitu dalam hal [? tetap?] 
+
+999
+00:41:18,120 --> 00:41:21,360
+ pertimbangan keamanan untuk Java. 
+
+1000
+00:41:21,360 --> 00:41:24,450
+ Jadi sebenarnya, ternyata Java runtime tidak benar 
+
+1001
+00:41:24,450 --> 00:41:28,190
+ memberikan tujuan keamanan untuk aplikasi dan hanya 
+
+1002
+00:41:28,190 --> 00:41:30,430
+ semacam hal yang menyenangkan, 
+
+1003
+00:41:30,430 --> 00:41:33,532
+ serta menyediakan semua abstraksi yang dilakukan pengembang 
+
+1004
+00:41:33,532 --> 00:41:34,573
+ harus berpikir dalam hal. 
+
+1005
+00:41:34,573 --> 00:41:36,156
+ Tetapi dalam hal isolasi, itu kebanyakan 
+
+1006
+00:41:36,156 --> 00:41:38,090
+ hingga ke kernel dan monitor referensi 
+
+1007
+00:41:38,090 --> 00:41:41,300
+ untuk menjaga orang-orang ini sejalan. 
+
+1008
+00:41:41,300 --> 00:41:43,030
+ Masuk akal? 
+
+1009
+00:41:43,030 --> 00:41:45,938
+ Ada pertanyaan? 
+
+1010
+00:41:45,938 --> 00:41:47,854
+ AUDIENCE: Bukankah kemudahan pengembangan juga 
+
+1011
+00:41:47,854 --> 00:41:49,895
+ jenis diterjemahkan ke dalam beberapa keamanan [tidak terdengar]? 
+
+1012
+00:41:49,895 --> 00:41:52,634
+ Karena jika Anda menulis monitor referensi itu di C, 
+
+1013
+00:41:52,634 --> 00:41:54,800
+ Saya dapat melihat lebih banyak cara untuk membuat kesalahan. 
+
+1014
+00:41:54,800 --> 00:41:55,466
+ PROFESOR: Ya. 
+
+1015
+00:41:55,466 --> 00:41:57,966
+ Jadi Anda memang benar. 
+
+1016
+00:41:57,966 --> 00:42:00,320
+ Sebenarnya, saya seharusnya tidak mengatakan itu kemudahan pengembangan 
+
+1017
+00:42:00,320 --> 00:42:01,520
+ tidak ada hubungannya dengan keamanan. 
+
+1018
+00:42:01,520 --> 00:42:03,061
+ Ini benar-benar konyol, karena kamu 
+
+1019
+00:42:03,061 --> 00:42:07,290
+ ingin membuatnya semudah mungkin untuk menulis kode yang benar. 
+
+1020
+00:42:07,290 --> 00:42:08,870
+ Dan itu semua tentang menutupi kesalahan. 
+
+1021
+00:42:08,870 --> 00:42:12,560
+ Jadi dalam beberapa hal, memiliki sistem di mana 
+
+1022
+00:42:12,560 --> 00:42:15,400
+ mudah untuk menulis kode yang benar adalah keamanan yang paling penting 
+
+1023
+00:42:15,400 --> 00:42:16,680
+ pertimbangan untuk dimiliki. 
+
+1024
+00:42:16,680 --> 00:42:20,240
+ Jadi dalam beberapa hal, Anda benar, bahwa itu menghindari bug. 
+
+1025
+00:42:20,240 --> 00:42:22,840
+ Tetapi Anda tidak ingin aplikasi Anda ditulis dalam C. 
+
+1026
+00:42:22,840 --> 00:42:25,200
+ Atau saya tidak tahu mengapa Apple memiliki Objective C. Itu sebenarnya 
+
+1027
+00:42:25,200 --> 00:42:26,780
+ sedikit masalah dalam hal ini, 
+
+1028
+00:42:26,780 --> 00:42:27,670
+ karena Anda bisa dengan mudah memiliki buffer 
+
+1029
+00:42:27,670 --> 00:42:28,930
+ meluap di aplikasi Anda. 
+
+1030
+00:42:28,930 --> 00:42:31,230
+ Dan jika aplikasi itu sangat berarti, 
+
+1031
+00:42:31,230 --> 00:42:33,540
+ maka itu rentan secara potensial. 
+
+1032
+00:42:33,540 --> 00:42:36,935
+ Bukan berkenaan dengan mengorbankan aplikasi lain, tetapi Anda 
+
+1033
+00:42:36,935 --> 00:42:38,518
+ [? semua suka,?] aplikasi bank, saya tidak mau 
+
+1034
+00:42:38,518 --> 00:42:39,662
+ aplikasi bank yang ditulis dalam C. 
+
+1035
+00:42:39,662 --> 00:42:40,328
+ AUDIENCE: Benar. 
+
+1036
+00:42:40,328 --> 00:42:40,990
+ Ya. 
+
+1037
+00:42:40,990 --> 00:42:44,000
+ AUDIENCE: Apakah monitor referensi ditulis di Java atau C? 
+
+1038
+00:42:44,000 --> 00:42:46,560
+ PROFESOR: Jadi di Android, monitor referensi sebagian besar 
+
+1039
+00:42:46,560 --> 00:42:47,610
+ ditulis di Jawa, ya. 
+
+1040
+00:42:47,610 --> 00:42:50,510
+ Ada beberapa kait asli yang dibutuhkan secara berurutan 
+
+1041
+00:42:50,510 --> 00:42:53,546
+ untuk dapat berbicara dengan pipa intent-- intent ini, 
+
+1042
+00:42:53,546 --> 00:42:54,920
+ pada dasarnya, untuk berbicara dengan pengikat, 
+
+1043
+00:42:54,920 --> 00:42:56,380
+ mereka membutuhkan beberapa kode asli. 
+
+1044
+00:42:56,380 --> 00:42:58,295
+ Mereka membutuhkan beberapa kode asli untuk menelurkan aplikasi ini 
+
+1045
+00:42:58,295 --> 00:42:59,544
+ di tempat pertama, dan sebagainya. 
+
+1046
+00:42:59,544 --> 00:43:02,955
+ Tetapi pada umumnya, sebagian besar logika ditulis di Jawa. 
+
+1047
+00:43:02,955 --> 00:43:06,674
+ Jadi itu sebenarnya rencana yang cukup aman, saya kira. 
+
+1048
+00:43:06,674 --> 00:43:10,090
+ Ada pertanyaan lain tentang ini? 
+
+1049
+00:43:10,090 --> 00:43:11,974
+ Baiklah. 
+
+1050
+00:43:11,974 --> 00:43:16,020
+ Jadi saya rasa mari kita coba mencari tahu apa aplikasi ini 
+
+1051
+00:43:16,020 --> 00:43:19,170
+ UID digunakan untuk selain menyimpan aplikasi 
+
+1052
+00:43:19,170 --> 00:43:22,700
+ terpisah dari yang lain dalam hal prosesnya? 
+
+1053
+00:43:22,700 --> 00:43:24,890
+ Jadi saya kira hal utama aplikasi itu 
+
+1054
+00:43:24,890 --> 00:43:29,240
+ perlu menggunakan UID untuk atau yang perlu kita dukung 
+
+1055
+00:43:29,240 --> 00:43:33,430
+ adalah kemampuan untuk berbagi akses ke sumber daya bersama dan dibagikan 
+
+1056
+00:43:33,430 --> 00:43:35,570
+ data dalam sistem. 
+
+1057
+00:43:35,570 --> 00:43:37,560
+ Dan kita sudah melihat satu mekanisme untuk melakukannya, 
+
+1058
+00:43:37,560 --> 00:43:40,910
+ yang mengirim maksud ke monitor referensi. 
+
+1059
+00:43:40,910 --> 00:43:44,230
+ Tapi ada banyak hal yang, di Android, tidak 
+
+1060
+00:43:44,230 --> 00:43:48,250
+ dilakukan melalui maksud ke monitor referensi. 
+
+1061
+00:43:48,250 --> 00:43:51,780
+ Dan mereka harus melakukannya mungkin dengan kinerja, 
+
+1062
+00:43:51,780 --> 00:43:54,564
+ atau mengapa-- pada dasarnya, mengapa tidak semuanya dikirim melalui maksud 
+
+1063
+00:43:54,564 --> 00:43:56,480
+ mungkin karena ada beberapa kinerja 
+
+1064
+00:43:56,480 --> 00:43:57,860
+ pertimbangan. 
+
+1065
+00:43:57,860 --> 00:43:59,540
+ Anda tidak ingin meminta referensi 
+
+1066
+00:43:59,540 --> 00:44:02,490
+ pantau di setiap hal yang Anda lakukan di sistem. 
+
+1067
+00:44:02,490 --> 00:44:05,200
+ Dan ada beberapa hal yang membuat Android seperti ini. 
+
+1068
+00:44:05,200 --> 00:44:07,200
+ Yang paling sederhana mungkin adalah akses jaringan. 
+
+1069
+00:44:07,200 --> 00:44:10,151
+
+
+1070
+00:44:10,151 --> 00:44:11,775
+ Jadi jika Anda ingin berbicara dengan internet, 
+
+1071
+00:44:11,775 --> 00:44:14,730
+ Anda baru saja membuka soket, sangat banyak 
+
+1072
+00:44:14,730 --> 00:44:17,340
+ seperti yang Anda lakukan pada aplikasi Linux standar saat ini. 
+
+1073
+00:44:17,340 --> 00:44:19,715
+ Aplikasi hanya bisa menanyakan kernel, saya ingin socket, 
+
+1074
+00:44:19,715 --> 00:44:21,310
+ Saya ingin terhubung ke mesin ini. 
+
+1075
+00:44:21,310 --> 00:44:22,806
+ Pergi untuk itu. 
+
+1076
+00:44:22,806 --> 00:44:26,350
+ Jadi akses jaringan bekerja dengan cara ini. 
+
+1077
+00:44:26,350 --> 00:44:28,420
+ Akses ke penyimpanan yang dapat dilepas. 
+
+1078
+00:44:28,420 --> 00:44:30,940
+ Jadi jika Anda memiliki kartu SD di ponsel Anda, 
+
+1079
+00:44:30,940 --> 00:44:33,420
+ yang juga langsung melewati kernel. 
+
+1080
+00:44:33,420 --> 00:44:37,810
+ Atau lebih umum, segala jenis akses sistem file 
+
+1081
+00:44:37,810 --> 00:44:40,116
+ atau akses langsung ke sistem file, setidaknya, 
+
+1082
+00:44:40,116 --> 00:44:41,490
+ langsung melalui kernel, 
+
+1083
+00:44:41,490 --> 00:44:43,020
+ karena sudah ada sistem file di sana. 
+
+1084
+00:44:43,020 --> 00:44:45,430
+ Dan Anda ingin menghindari kemungkinan kinerja [TIDAK JELAS] 
+
+1085
+00:44:45,430 --> 00:44:48,920
+ overhead atas itu. 
+
+1086
+00:44:48,920 --> 00:44:54,610
+ Dan juga, untuk sebagian besar perangkat yang merupakan perangkat keras, 
+
+1087
+00:44:54,610 --> 00:44:58,610
+ Android memungkinkan aplikasi untuk langsung berbicara ke perangkat 
+
+1088
+00:44:58,610 --> 00:45:02,100
+ alih-alih memediasi akses melalui monitor referensi. 
+
+1089
+00:45:02,100 --> 00:45:07,280
+ Jadi ini adalah hal-hal seperti mungkin kamera Anda, perangkat GPS Anda, 
+
+1090
+00:45:07,280 --> 00:45:08,160
+ kompas, dan sebagainya. 
+
+1091
+00:45:08,160 --> 00:45:12,490
+ Dan orang-orang ini muncul di Android di Linux sebagai sesuatu 
+
+1092
+00:45:12,490 --> 00:45:15,526
+ seperti / dev / kamera. 
+
+1093
+00:45:15,526 --> 00:45:18,750
+ Dan ini hanya perangkat Linux Anda 
+
+1094
+00:45:18,750 --> 00:45:21,478
+ dapat membuka, dan mengeluarkan data kamera, dan mengontrol 
+
+1095
+00:45:21,478 --> 00:45:23,970
+ kamera dengan cara apa pun yang Anda inginkan, dan sebagainya. 
+
+1096
+00:45:23,970 --> 00:45:26,870
+ Dan hal yang keren adalah jika Anda ingin melakukan sesuatu yang khusus 
+
+1097
+00:45:26,870 --> 00:45:29,045
+ hal-hal ke perangkat ini, Anda tidak dibatasi 
+
+1098
+00:45:29,045 --> 00:45:31,220
+ untuk apa Java memungkinkan Anda untuk melakukannya. 
+
+1099
+00:45:31,220 --> 00:45:33,750
+ Anda selalu bisa menulis kode C atau bahkan 
+
+1100
+00:45:33,750 --> 00:45:35,780
+ Majelis yang berbicara langsung ke kernel 
+
+1101
+00:45:35,780 --> 00:45:38,810
+ dan melakukan operasi yang diperlukan di Linux ini 
+
+1102
+00:45:38,810 --> 00:45:41,380
+ perangkat, membuat panggilan sistem sewenang-wenang. 
+
+1103
+00:45:41,380 --> 00:45:45,060
+ Dan Anda bisa membungkus ini di antarmuka asli Java 
+
+1104
+00:45:45,060 --> 00:45:49,018
+ untuk memaparkannya ke seluruh aplikasi berbasis Java Anda di sini. 
+
+1105
+00:45:49,018 --> 00:45:49,518
+ Ya. 
+
+1106
+00:45:49,518 --> 00:45:52,101
+ AUDIENCE: Tapi Anda masih memiliki cek dalam panggilan ini, bukan? 
+
+1107
+00:45:52,101 --> 00:45:54,409
+ Jadi ketika Anda membuka soket, seseorang 
+
+1108
+00:45:54,409 --> 00:45:56,950
+ harus memeriksa apakah mereka diizinkan untuk membuka soket [tidak terdengar]. 
+
+1109
+00:45:56,950 --> 00:45:57,160
+ PROFESOR: Ya. 
+
+1110
+00:45:57,160 --> 00:45:58,500
+ Jadi ini hal yang menarik. 
+
+1111
+00:45:58,500 --> 00:46:01,010
+ Sekarang hal-hal ini berada di luar model berdasarkan niat kami. 
+
+1112
+00:46:01,010 --> 00:46:03,740
+ Jadi bagaimana kita akan melindungi orang-orang ini? 
+
+1113
+00:46:03,740 --> 00:46:06,485
+ Jadi ini semacam bermuara melakukan sesuatu 
+
+1114
+00:46:06,485 --> 00:46:07,860
+ sangat mirip dengan apa yang kalian lakukan 
+
+1115
+00:46:07,860 --> 00:46:10,900
+ di Lab 2, yang Anda [TIDAK JELAS] Anda 
+
+1116
+00:46:10,900 --> 00:46:13,940
+ ingin menerapkannya menggunakan UID. 
+
+1117
+00:46:13,940 --> 00:46:15,850
+ Pada dasarnya, kerangka Android 
+
+1118
+00:46:15,850 --> 00:46:19,440
+ bertanggung jawab untuk mengatur dengan hati-hati UID dan GID 
+
+1119
+00:46:19,440 --> 00:46:22,200
+ aplikasi dan hal-hal ini 
+
+1120
+00:46:22,200 --> 00:46:28,340
+ untuk menegakkan kebijakan apa pun yang ditentukan dalam hal label. 
+
+1121
+00:46:28,340 --> 00:46:31,970
+ Jadi cara kerjanya adalah untuk setiap orang 
+
+1122
+00:46:31,970 --> 00:46:35,950
+ sumber daya ini, ada label yang ditentukan sebelumnya 
+
+1123
+00:46:35,950 --> 00:46:39,100
+ string yang mendefinisikan hak istimewa 
+
+1124
+00:46:39,100 --> 00:46:40,515
+ untuk mengakses sumber daya ini. 
+
+1125
+00:46:40,515 --> 00:46:41,890
+ Jadi untuk akses jaringan ini, 
+
+1126
+00:46:41,890 --> 00:46:45,430
+ misalnya, saya pikir ada string, sesuatu 
+
+1127
+00:46:45,430 --> 00:46:47,570
+ seperti android.permissions.INTERNET. 
+
+1128
+00:46:47,570 --> 00:46:55,590
+
+
+1129
+00:46:55,590 --> 00:47:00,410
+ Jadi ini adalah label yang dapat diminta oleh aplikasi. 
+
+1130
+00:47:00,410 --> 00:47:06,405
+ Dan jika aplikasi memiliki label ini dalam rangkaian hak istimewa, 
+
+1131
+00:47:06,405 --> 00:47:08,600
+ maka seharusnya bisa mengakses jaringan. 
+
+1132
+00:47:08,600 --> 00:47:10,930
+ Dan cara ini diberlakukan - jadi labelnya 
+
+1133
+00:47:10,930 --> 00:47:12,714
+ adalah sisi kebijakan ini. 
+
+1134
+00:47:12,714 --> 00:47:14,450
+ Bagaimana Anda menentukan apa yang seharusnya terjadi? 
+
+1135
+00:47:14,450 --> 00:47:17,850
+ Dan mekanisme penegakannya adalah perubahan kecil 
+
+1136
+00:47:17,850 --> 00:47:20,420
+ ke kernel Linux di Android, di mana secara berurutan 
+
+1137
+00:47:20,420 --> 00:47:23,260
+ untuk membuat panggilan sistem terkait jaringan, 
+
+1138
+00:47:23,260 --> 00:47:25,520
+ kamu harus menjadi anggota dari beberapa kelompok sihir. 
+
+1139
+00:47:25,520 --> 00:47:28,540
+ Ini sama sekali bukan cara kerja Linux secara tradisional. 
+
+1140
+00:47:28,540 --> 00:47:31,804
+ Namun di Android, ada beberapa grup sulap [TIDAK TERDENGAR] 
+
+1141
+00:47:31,804 --> 00:47:35,610
+ Saya pikir itu GID 3003. 
+
+1142
+00:47:35,610 --> 00:47:38,530
+ Dan kernel memiliki nomor ini dikodekan keras di dalamnya. 
+
+1143
+00:47:38,530 --> 00:47:45,315
+ Dan jika prosesnya memiliki ID grup ini dalam daftar grupnya, 
+
+1144
+00:47:45,315 --> 00:47:48,059
+ maka diizinkan untuk menggunakan panggilan sistem terkait jaringan. 
+
+1145
+00:47:48,059 --> 00:47:50,350
+ Dan jika tidak memiliki ID grup ini di daftar grupnya, 
+
+1146
+00:47:50,350 --> 00:47:53,030
+ maka tidak diperbolehkan membuat sistem terkait jaringan 
+
+1147
+00:47:53,030 --> 00:47:53,980
+ panggilan sama sekali. 
+
+1148
+00:47:53,980 --> 00:47:58,250
+ Jadi ini adalah bagaimana Android mampu menerjemahkan label ini-- 
+
+1149
+00:47:58,250 --> 00:48:02,480
+ semacam mempertahankan sistem kebijakan tunggal yang koheren itu 
+
+1150
+00:48:02,480 --> 00:48:05,482
+ dalam hal ini layar label, tetapi menegakkannya 
+
+1151
+00:48:05,482 --> 00:48:06,240
+ dengan cara yang berbeda. 
+
+1152
+00:48:06,240 --> 00:48:09,310
+ Jadi terkadang itu diberlakukan oleh monitor referensi. 
+
+1153
+00:48:09,310 --> 00:48:11,150
+ Dan kali lain, itu diberlakukan 
+
+1154
+00:48:11,150 --> 00:48:15,000
+ dengan mengatur GID atau UID dengan tepat. 
+
+1155
+00:48:15,000 --> 00:48:16,990
+ Hal yang sama terjadi dengan kartu SD. 
+
+1156
+00:48:16,990 --> 00:48:20,150
+ Ada GID lain yang sesuai untuk memiliki akses 
+
+1157
+00:48:20,150 --> 00:48:21,120
+ dengan kartu SD. 
+
+1158
+00:48:21,120 --> 00:48:24,220
+ Dan ada string yang diterjemahkan ke GID ini, 
+
+1159
+00:48:24,220 --> 00:48:25,320
+ efektif. 
+
+1160
+00:48:25,320 --> 00:48:27,884
+ Dan sama untuk sistem file. 
+
+1161
+00:48:27,884 --> 00:48:29,300
+ Saya kira dalam sistem file, hal-hal 
+
+1162
+00:48:29,300 --> 00:48:30,460
+ sedikit lebih rumit. 
+
+1163
+00:48:30,460 --> 00:48:32,263
+ Saya kira kartu SD ada di sistem file 
+
+1164
+00:48:32,263 --> 00:48:36,720
+ dan memiliki GID khusus untuk mengakses seluruh kartu SD. 
+
+1165
+00:48:36,720 --> 00:48:42,250
+ Jenis lain dari file lain dalam sistem file telepon-- 
+
+1166
+00:48:42,250 --> 00:48:45,450
+ di sana, kebijakannya tidak terlalu dikendalikan 
+
+1167
+00:48:45,450 --> 00:48:49,340
+ oleh label, tetapi lebih oleh desain Android, 
+
+1168
+00:48:49,340 --> 00:48:52,380
+ yaitu setiap aplikasi memiliki direktori pribadi 
+
+1169
+00:48:52,380 --> 00:48:55,060
+ yang dapat digunakan untuk menyimpan file apa pun yang diinginkan. 
+
+1170
+00:48:55,060 --> 00:48:57,770
+ Dan khususnya, penyedia konten, 
+
+1171
+00:48:57,770 --> 00:49:00,580
+ database SQL yang akan Anda gunakan sebagai aplikasi, 
+
+1172
+00:49:00,580 --> 00:49:03,140
+ disimpan di direktori pribadi Anda. 
+
+1173
+00:49:03,140 --> 00:49:05,660
+ Dan kebijakannya hanya aplikasi yang bisa diakses UID 
+
+1174
+00:49:05,660 --> 00:49:07,650
+ direktori pribadi itu, dan tidak ada orang lain 
+
+1175
+00:49:07,650 --> 00:49:10,216
+ dapat mengaksesnya secara langsung. 
+
+1176
+00:49:10,216 --> 00:49:12,620
+ Lalu untuk perangkat, ada juga 
+
+1177
+00:49:12,620 --> 00:49:15,220
+ rencana yang sangat mirip dengan akses jaringan, di mana 
+
+1178
+00:49:15,220 --> 00:49:19,540
+ ada string izin untuk mengakses GPS, kamera, 
+
+1179
+00:49:19,540 --> 00:49:20,570
+ dan sebagainya. 
+
+1180
+00:49:20,570 --> 00:49:22,345
+ Dan untuk masing-masing ini, ada 
+
+1181
+00:49:22,345 --> 00:49:27,850
+ sebuah GID yang digunakan dalam izin pada perangkat itu. 
+
+1182
+00:49:27,850 --> 00:49:31,970
+ Jadi misalnya, dev / kamera dimiliki oleh beberapa GID ajaib. 
+
+1183
+00:49:31,970 --> 00:49:35,064
+ Dan aplikasi apa pun yang seharusnya memiliki akses ke kamera itu 
+
+1184
+00:49:35,064 --> 00:49:37,450
+ memiliki GID di [tidak terdengar]. 
+
+1185
+00:49:37,450 --> 00:49:38,395
+ Semua masuk akal? 
+
+1186
+00:49:38,395 --> 00:49:44,350
+ Itu semoga cukup mirip dengan apa yang kalian lakukan di Lab 2. 
+
+1187
+00:49:44,350 --> 00:49:47,992
+ Nah, bukan bagian label, tetapi menggunakan UID dan GID 
+
+1188
+00:49:47,992 --> 00:49:50,357
+ untuk mencapai suatu tempat [TIDAK JELAS]. 
+
+1189
+00:49:50,357 --> 00:49:52,249
+ Masuk akal? 
+
+1190
+00:49:52,249 --> 00:49:54,630
+ Baiklah. 
+
+1191
+00:49:54,630 --> 00:49:56,850
+ Jadi satu pertanyaan yang menarik adalah mengapa orang-orang ini 
+
+1192
+00:49:56,850 --> 00:50:01,070
+ memiliki rencana kursus untuk menangani kartu SD? 
+
+1193
+00:50:01,070 --> 00:50:04,455
+ Mengapa mereka tidak memiliki aplikasi yang berbeda 
+
+1194
+00:50:04,455 --> 00:50:06,520
+ bertindak [? dengan?] bagian-bagian berbeda dari kartu SD? 
+
+1195
+00:50:06,520 --> 00:50:08,815
+ Saya mungkin memiliki banyak barang di kartu SD saya 
+
+1196
+00:50:08,815 --> 00:50:11,520
+ bahwa saya tidak ingin aplikasi - Anda tahu, 
+
+1197
+00:50:11,520 --> 00:50:14,012
+ untuk memiliki akses ke semua itu. 
+
+1198
+00:50:14,012 --> 00:50:14,900
+ Masuk akal? 
+
+1199
+00:50:14,900 --> 00:50:15,530
+ Ya. 
+
+1200
+00:50:15,530 --> 00:50:17,821
+ AUDIENCE: Mungkin ada hubungannya dengan [TIDAK JELAS] 
+
+1201
+00:50:17,821 --> 00:50:19,814
+ bahwa pengguna harus menyetujui izin tersebut. 
+
+1202
+00:50:19,814 --> 00:50:22,034
+ Dan semakin sedikit dari mereka yang Anda miliki, semakin besar kemungkinannya 
+
+1203
+00:50:22,034 --> 00:50:25,540
+ itu sebenarnya [TIDAK JELAS]. 
+
+1204
+00:50:25,540 --> 00:50:26,830
+ AUDIENCE: Bisa jadi. 
+
+1205
+00:50:26,830 --> 00:50:30,310
+ Yah, itu pasti masalah secara umum di Android, 
+
+1206
+00:50:30,310 --> 00:50:31,930
+ dan kita akan mendapatkannya dalam satu menit. 
+
+1207
+00:50:31,930 --> 00:50:35,380
+ Tapi saya pikir untuk kartu SD, sebenarnya 
+
+1208
+00:50:35,380 --> 00:50:36,650
+ kekhawatiran yang sedikit berbeda. 
+
+1209
+00:50:36,650 --> 00:50:38,920
+ Itu ada hubungannya dengan fakta bahwa Anda 
+
+1210
+00:50:38,920 --> 00:50:40,421
+ ingin kartu SD ini saling beroperasi 
+
+1211
+00:50:40,421 --> 00:50:41,545
+ dengan seluruh dunia. 
+
+1212
+00:50:41,545 --> 00:50:42,950
+ Jadi ini seperti salah satu tempat 
+
+1213
+00:50:42,950 --> 00:50:45,880
+ di mana Android tidak bebas membuat keputusan yang sewenang-wenang, 
+
+1214
+00:50:45,880 --> 00:50:48,530
+ karena Anda ingin kartu SD ini memiliki file standar 
+
+1215
+00:50:48,530 --> 00:50:51,470
+ sistem, yaitu FAT, karena itu 
+
+1216
+00:50:51,470 --> 00:50:54,300
+ standar de facto untuk menyimpan data pada kartu SD 
+
+1217
+00:50:54,300 --> 00:50:55,320
+ hari ini. 
+
+1218
+00:50:55,320 --> 00:50:58,720
+ Dan sebagai hasilnya, Anda tidak dapat memiliki sistem file yang canggih 
+
+1219
+00:50:58,720 --> 00:51:01,589
+ ada yang menyimpan izin untuk setiap file. 
+
+1220
+00:51:01,589 --> 00:51:03,380
+ Dan sebagai hasilnya, itu akan menjadi sulit 
+
+1221
+00:51:03,380 --> 00:51:06,500
+ bagi Anda untuk memisahkan file-file ini 
+
+1222
+00:51:06,500 --> 00:51:08,310
+ dan beri akses yang berbeda pada aplikasi yang berbeda. 
+
+1223
+00:51:08,310 --> 00:51:08,809
+ Ya? 
+
+1224
+00:51:08,809 --> 00:51:11,664
+ AUDIENCE: Apakah Anda masih memikirkan [INAUDIBLE]? 
+
+1225
+00:51:11,664 --> 00:51:12,330
+ PROFESOR: Ya. 
+
+1226
+00:51:12,330 --> 00:51:14,455
+ Jadi mungkin saja Anda bisa memberikan setiap aplikasi 
+
+1227
+00:51:14,455 --> 00:51:17,870
+ subdirektori yang berbeda pada kartu SD untuk memiliki akses ke. 
+
+1228
+00:51:17,870 --> 00:51:20,035
+ Tapi itu sebagian besar akan menjadi jalan 
+
+1229
+00:51:20,035 --> 00:51:22,930
+ untuk memberi setiap aplikasi penyimpanan tambahan dan tidak 
+
+1230
+00:51:22,930 --> 00:51:25,910
+ kemampuan untuk aplikasi membaca yang sudah ada 
+
+1231
+00:51:25,910 --> 00:51:28,880
+ konten dari kartu SD Anda. 
+
+1232
+00:51:28,880 --> 00:51:30,336
+ Karena konten yang ada mungkin 
+
+1233
+00:51:30,336 --> 00:51:31,460
+ berada di beberapa direktori lain. 
+
+1234
+00:51:31,460 --> 00:51:31,935
+ Jadi kamu benar. 
+
+1235
+00:51:31,935 --> 00:51:34,310
+ Mungkin Anda bisa memiliki hal-hal yang lebih halus, 
+
+1236
+00:51:34,310 --> 00:51:36,730
+ seperti baik, Anda ingin akses ke seluruh kartu SD yang dialamatkan 
+
+1237
+00:51:36,730 --> 00:51:39,715
+ ke direktori per aplikasi di sana. 
+
+1238
+00:51:39,715 --> 00:51:42,770
+ Dan itu mungkin ada hubungannya dengan tidak berlebihan 
+
+1239
+00:51:42,770 --> 00:51:47,420
+ pengguna dengan terlalu banyak pilihan dalam hal izin ini. 
+
+1240
+00:51:47,420 --> 00:51:50,152
+ Tapi ya, kamu benar, kamu mungkin bisa 
+
+1241
+00:51:50,152 --> 00:51:53,400
+ melakukan beberapa kombinasi dari keduanya. 
+
+1242
+00:51:53,400 --> 00:51:54,640
+ Baiklah. 
+
+1243
+00:51:54,640 --> 00:51:59,890
+ Jadi saya kira satu yang menarik [? hal untuk?] 
+
+1244
+00:51:59,890 --> 00:52:10,390
+ bicarakan adalah bagaimana kita memutuskan apakah suatu aplikasi harus 
+
+1245
+00:52:10,390 --> 00:52:14,790
+ memiliki satu set label tertentu yang seharusnya memiliki akses 
+
+1246
+00:52:14,790 --> 00:52:15,901
+ ke dalam set label ini? 
+
+1247
+00:52:15,901 --> 00:52:17,650
+ Jadi dari mana orang-orang ini sebenarnya berasal? 
+
+1248
+00:52:17,650 --> 00:52:20,375
+ Seperti, siapa yang memutuskan bahwa aplikasi ini seharusnya 
+
+1249
+00:52:20,375 --> 00:52:23,470
+ punya DIAL PERM dan INTERNET dan FRIEND VIEW 
+
+1250
+00:52:23,470 --> 00:52:26,310
+ perizinan di Android? 
+
+1251
+00:52:26,310 --> 00:52:27,103
+ Ya. 
+
+1252
+00:52:27,103 --> 00:52:28,603
+ AUDIENCE: Pengembang [TIDAK JELAS]. 
+
+1253
+00:52:28,603 --> 00:52:31,294
+
+
+1254
+00:52:31,294 --> 00:52:32,960
+ PROFESOR: Ya, itu sedikit, 
+
+1255
+00:52:32,960 --> 00:52:36,570
+ Anda tahu, baik, saya kira sistem dimuka, di mana 
+
+1256
+00:52:36,570 --> 00:52:38,111
+ pengembang harus, pertama-tama, 
+
+1257
+00:52:38,111 --> 00:52:40,360
+ menyebutkan semua hal yang dibutuhkan di masa depan 
+
+1258
+00:52:40,360 --> 00:52:42,910
+ atau karena aplikasi mereka akan berjalan. 
+
+1259
+00:52:42,910 --> 00:52:47,030
+ Dan kemudian pengguna bertanggung jawab untuk melihat daftar ini 
+
+1260
+00:52:47,030 --> 00:52:48,870
+ dan memutuskan apakah itu oke, apakah mereka 
+
+1261
+00:52:48,870 --> 00:52:52,295
+ harus memungkinkan aplikasi ini diinstal atau tidak. 
+
+1262
+00:52:52,295 --> 00:52:55,110
+ Dan dengan cara ini, pengguna masih merupakan bagian yang penting 
+
+1263
+00:52:55,110 --> 00:52:58,090
+ sistem dalam hal keamanan, 
+
+1264
+00:52:58,090 --> 00:53:01,480
+ karena pengguna hampir selalu bisa 
+
+1265
+00:53:01,480 --> 00:53:03,105
+ setujui sekumpulan izin yang Anda inginkan 
+
+1266
+00:53:03,105 --> 00:53:06,020
+ atau yang diinginkan pengembang. 
+
+1267
+00:53:06,020 --> 00:53:08,050
+ Jadi dalam banyak hal, itu sebenarnya cukup fleksibel, 
+
+1268
+00:53:08,050 --> 00:53:13,144
+ karena tidak seperti sesuatu seperti iOS-- di mana sebenarnya 
+
+1269
+00:53:13,144 --> 00:53:15,060
+ sulit untuk berbagi di antara aplikasi, atau sulit, 
+
+1270
+00:53:15,060 --> 00:53:17,455
+ misalnya, untuk aplikasi iPhone pihak ketiga, 
+
+1271
+00:53:17,455 --> 00:53:21,090
+ Saya pikir, untuk mengakses komponen telepon lain yang sewenang-wenang, 
+
+1272
+00:53:21,090 --> 00:53:23,870
+ dan menghubungi telepon, atau mengirim pesan SMS, 
+
+1273
+00:53:23,870 --> 00:53:26,720
+ atau menemukan penampil JPEG, dan sebagainya-- di sini, 
+
+1274
+00:53:26,720 --> 00:53:27,880
+ ini cukup fleksibel. 
+
+1275
+00:53:27,880 --> 00:53:31,960
+ Tapi semacam biaya untuk itu adalah Anda 
+
+1276
+00:53:31,960 --> 00:53:34,510
+ harus mendapatkan pengembang atau pengguna 
+
+1277
+00:53:34,510 --> 00:53:36,930
+ untuk memeriksa apakah pengembang bertanya 
+
+1278
+00:53:36,930 --> 00:53:39,160
+ untuk sekumpulan izin yang masuk akal atau pengguna 
+
+1279
+00:53:39,160 --> 00:53:41,686
+ mempercayai pengembang ini dengan hak istimewa ini. 
+
+1280
+00:53:41,686 --> 00:53:43,060
+ Jadi itu sedikit disayangkan. 
+
+1281
+00:53:43,060 --> 00:53:44,851
+ Ini mungkin salah satu yang terbesar, sebenarnya, 
+
+1282
+00:53:44,851 --> 00:53:46,900
+ masalah keamanan dalam praktik dengan Android, 
+
+1283
+00:53:46,900 --> 00:53:49,550
+ yaitu bahwa pengguna cukup bersedia memberikannya 
+
+1284
+00:53:49,550 --> 00:53:52,786
+ izin ini jika mereka benar-benar menginginkan aplikasi. 
+
+1285
+00:53:52,786 --> 00:53:56,010
+ Saya mencari beberapa aplikasi, dan saya klik Instal. 
+
+1286
+00:53:56,010 --> 00:53:58,177
+ Dan jika tidak terlihat seperti daftar yang sangat panjang 
+
+1287
+00:53:58,177 --> 00:54:00,051
+ dan tidak ada yang langsung muncul, 
+
+1288
+00:54:00,051 --> 00:54:01,500
+ Saya mungkin akan mengklik OK. 
+
+1289
+00:54:01,500 --> 00:54:04,720
+ Dan saya mungkin tidak menghabiskan waktu untuk benar-benar mengerti 
+
+1290
+00:54:04,720 --> 00:54:08,062
+ apakah izin ini diperlukan. 
+
+1291
+00:54:08,062 --> 00:54:11,855
+ Gelandangan kecil lainnya adalah [tidak terdengar] waktu makalah ini 
+
+1292
+00:54:11,855 --> 00:54:15,300
+ ditulis, Android memutuskan bahwa pengguna 
+
+1293
+00:54:15,300 --> 00:54:17,310
+ hanya memiliki dua pilihan - instal aplikasi 
+
+1294
+00:54:17,310 --> 00:54:19,300
+ atau tidak menginstal aplikasi, yang sedikit 
+
+1295
+00:54:19,300 --> 00:54:20,136
+ dari pilihan biner. 
+
+1296
+00:54:20,136 --> 00:54:22,510
+ Dan pengguna mungkin hanya akan berkata, yah, ya, 
+
+1297
+00:54:22,510 --> 00:54:23,230
+ Saya menginginkan aplikasinya. 
+
+1298
+00:54:23,230 --> 00:54:25,110
+ Apa lagi yang akan saya lakukan? 
+
+1299
+00:54:25,110 --> 00:54:27,950
+ Saya perlu melakukan hal ini. 
+
+1300
+00:54:27,950 --> 00:54:32,480
+ Dan saya pikir baru-baru ini, saya pikir beberapa versi Android, 
+
+1301
+00:54:32,480 --> 00:54:35,710
+ Saya pikir 4.3, memperkenalkan skema yang lebih halus, 
+
+1302
+00:54:35,710 --> 00:54:40,120
+ di mana pengguna sebenarnya diizinkan untuk memilih 
+
+1303
+00:54:40,120 --> 00:54:43,360
+ dari izin ini di mana-- baik, Anda masih disajikan 
+
+1304
+00:54:43,360 --> 00:54:46,340
+ dengan daftar izin yang diinginkan pengembang 
+
+1305
+00:54:46,340 --> 00:54:47,620
+ untuk aplikasi mereka. 
+
+1306
+00:54:47,620 --> 00:54:51,980
+ Tetapi pengguna sekarang dapat, dengan cara yang lebih halus, 
+
+1307
+00:54:51,980 --> 00:54:54,870
+ hapus beberapa izin ini dari aplikasi. 
+
+1308
+00:54:54,870 --> 00:54:58,440
+ Dan tidak jelas bagaimana seorang pengguna rata-rata seharusnya menggunakan ini, 
+
+1309
+00:54:58,440 --> 00:55:01,263
+ karena mungkin cukup sulit untuk menelusuri daftar ini 
+
+1310
+00:55:01,263 --> 00:55:02,980
+ dan membuat keputusan tentang ini. 
+
+1311
+00:55:02,980 --> 00:55:07,450
+ Namun setidaknya API mulai muncul di sana. 
+
+1312
+00:55:07,450 --> 00:55:10,940
+ Saya belum melihat kegunaan yang signifikan sejauh ini. 
+
+1313
+00:55:10,940 --> 00:55:14,780
+ Tapi itu mungkin bagus. 
+
+1314
+00:55:14,780 --> 00:55:16,220
+ Baiklah. 
+
+1315
+00:55:16,220 --> 00:55:17,160
+ [TIDAK JELAS] 
+
+1316
+00:55:17,160 --> 00:55:17,660
+ Ya? 
+
+1317
+00:55:17,660 --> 00:55:19,180
+ AUDIENCE: [TIDAK JELAS]. 
+
+1318
+00:55:19,180 --> 00:55:21,702
+ itu hanya memungkinkan Anda mengambil. 
+
+1319
+00:55:21,702 --> 00:55:22,410
+ PROFESOR: Maaf? 
+
+1320
+00:55:22,410 --> 00:55:27,178
+ AUDIENCE: The [INAUDIBLE] hanya memungkinkan Anda mengambil [tidak terdengar]. 
+
+1321
+00:55:27,178 --> 00:55:27,844
+ PROFESOR: Ya. 
+
+1322
+00:55:27,844 --> 00:55:30,900
+ Jadi saya pikir itu pada dasarnya apa versi baru Android ini 
+
+1323
+00:55:30,900 --> 00:55:33,730
+ memungkinkan Anda melakukannya, yang Anda bisa - bukannya mengambil - baik, 
+
+1324
+00:55:33,730 --> 00:55:34,990
+ itu bukan string berlabel. 
+
+1325
+00:55:34,990 --> 00:55:36,615
+ Ini deskripsi dari izin ini. 
+
+1326
+00:55:36,615 --> 00:55:38,600
+ Tapi Anda bisa benar-benar sekarang-- sesuatu, saya pikir, 
+
+1327
+00:55:38,600 --> 00:55:41,100
+ disebut Manajer Izin Android memungkinkan Anda, 
+
+1328
+00:55:41,100 --> 00:55:44,416
+ untuk setiap aplikasi, cantumkan semua string berlabel 
+
+1329
+00:55:44,416 --> 00:55:46,430
+ yang diizinkan oleh aplikasi. 
+
+1330
+00:55:46,430 --> 00:55:50,740
+ Dan Anda bisa, saya kira, menghapus hal-hal ini 
+
+1331
+00:55:50,740 --> 00:55:53,740
+ secara individual jika Anda merasa kuat tentang mereka. 
+
+1332
+00:55:53,740 --> 00:55:57,035
+ Saya tidak tahu berapa banyak pengguna [TIDAK JELAS]. 
+
+1333
+00:55:57,035 --> 00:55:57,660
+ Ya, pertanyaan? 
+
+1334
+00:55:57,660 --> 00:56:00,118
+ AUDIENCE: Kapan pun label [? tidak cocok,?] Melakukannya 
+
+1335
+00:56:00,118 --> 00:56:03,540
+ gagal keras, atau hanya itu tidak berfungsi [tidak terdengar]? 
+
+1336
+00:56:03,540 --> 00:56:05,290
+ PROFESOR: Yah, saya pikir itu tergantung 
+
+1337
+00:56:05,290 --> 00:56:08,930
+ tepat seperti apa aplikasinya 
+
+1338
+00:56:08,930 --> 00:56:11,590
+ coba lakukan itu akan membutuhkan label itu. 
+
+1339
+00:56:11,590 --> 00:56:14,920
+ Jadi jika aplikasi itu akan mengirim maksud 
+
+1340
+00:56:14,920 --> 00:56:18,000
+ dan mengirim maksud itu membutuhkan label tertentu seperti DIAL 
+
+1341
+00:56:18,000 --> 00:56:19,459
+ PERM, yah, mungkin itu kamu 
+
+1342
+00:56:19,459 --> 00:56:21,541
+ akan mengirim maksud ke monitor referensi. 
+
+1343
+00:56:21,541 --> 00:56:23,110
+ Dan monitor referensi pergi 
+
+1344
+00:56:23,110 --> 00:56:25,260
+ untuk mengatakan, yah, tidak ada aplikasi itu 
+
+1345
+00:56:25,260 --> 00:56:27,044
+ bersedia menerima pesan Anda. 
+
+1346
+00:56:27,044 --> 00:56:28,710
+ Jadi mungkin itu tergantung pada aplikasinya 
+
+1347
+00:56:28,710 --> 00:56:31,270
+ untuk melakukan sesuatu yang masuk akal sebagai jawaban. 
+
+1348
+00:56:31,270 --> 00:56:34,130
+ Kemungkinan lainnya adalah mungkin itu adalah akses jaringan, 
+
+1349
+00:56:34,130 --> 00:56:35,990
+ dan Anda tidak memiliki akses ke itu, 
+
+1350
+00:56:35,990 --> 00:56:38,550
+ dan Anda akan membuat panggilan sistem soket, 
+
+1351
+00:56:38,550 --> 00:56:40,720
+ atau Anda akan mengatakan, terhubung ke alamat IP ini. 
+
+1352
+00:56:40,720 --> 00:56:43,180
+ Dan kernel mengatakan, E PERM, Anda tidak bisa melakukan itu. 
+
+1353
+00:56:43,180 --> 00:56:44,040
+ Dan siapa yang tahu aplikasinya 
+
+1354
+00:56:44,040 --> 00:56:45,206
+ akan lakukan dalam kasus itu? 
+
+1355
+00:56:45,206 --> 00:56:48,660
+ Mungkin itu akan membuang pengecualian penunjuk null entah bagaimana. 
+
+1356
+00:56:48,660 --> 00:56:52,690
+ Jadi satu argumen menentang hal ini 
+
+1357
+00:56:52,690 --> 00:56:56,830
+ apakah itu aplikasi Android, setidaknya awalnya, 
+
+1358
+00:56:56,830 --> 00:56:59,660
+ tidak ditulis untuk mengharapkan beberapa akses mereka 
+
+1359
+00:56:59,660 --> 00:57:02,450
+ gagal, karena mereka diberitahu, manifes adalah semua atau tidak sama sekali. 
+
+1360
+00:57:02,450 --> 00:57:04,640
+ Baik pengguna menyetujui aplikasi Anda, atau tidak. 
+
+1361
+00:57:04,640 --> 00:57:09,190
+ Jadi, pengembang aplikasi, mungkin memang demikian, 
+
+1362
+00:57:09,190 --> 00:57:12,680
+ menulis kode yang mungkin crash atau tidak 
+
+1363
+00:57:12,680 --> 00:57:18,580
+ sesuatu yang tidak terduga jika beberapa ketentuan akses gagal. 
+
+1364
+00:57:18,580 --> 00:57:20,980
+ Jadi mungkin itu dengan mengambil izin, 
+
+1365
+00:57:20,980 --> 00:57:24,700
+ Anda akan menyebabkan aplikasi mogok jika perlu akses itu. 
+
+1366
+00:57:24,700 --> 00:57:27,075
+ Jadi tidak seperti, Anda tahu, Anda memiliki aplikasi yang bagus ini, 
+
+1367
+00:57:27,075 --> 00:57:28,900
+ dan membutuhkan akses ke kamera. 
+
+1368
+00:57:28,900 --> 00:57:31,480
+ Tetapi jika Anda mematikannya, itu hanya akan memasang gambar dummy 
+
+1369
+00:57:31,480 --> 00:57:31,880
+ sebagai gantinya. 
+
+1370
+00:57:31,880 --> 00:57:33,171
+ Mungkin itu hanya tabrakan saja. 
+
+1371
+00:57:33,171 --> 00:57:34,670
+ Jadi itu tidak bagus. 
+
+1372
+00:57:34,670 --> 00:57:36,750
+ Anda mungkin membayangkan sistem yang jauh lebih canggih 
+
+1373
+00:57:36,750 --> 00:57:39,185
+ yang, jika Anda mengambil sebagian akses ke kamera, 
+
+1374
+00:57:39,185 --> 00:57:41,185
+ akan menyediakan kamera palsu yang baru saja ada 
+
+1375
+00:57:41,185 --> 00:57:42,480
+ layar hitam sepanjang waktu. 
+
+1376
+00:57:42,480 --> 00:57:44,323
+ Jadi ini bukan apa yang dilakukan Android. 
+
+1377
+00:57:44,323 --> 00:57:46,540
+ Tetapi Anda bisa membayangkan [? alternate?] situation 
+
+1378
+00:57:46,540 --> 00:57:49,830
+ dimana ini mungkin terjadi. 
+
+1379
+00:57:49,830 --> 00:57:50,330
+ Baiklah. 
+
+1380
+00:57:50,330 --> 00:57:53,360
+ Ada pertanyaan lain di sini? 
+
+1381
+00:57:53,360 --> 00:57:54,160
+ Baiklah. 
+
+1382
+00:57:54,160 --> 00:57:55,740
+ Jadi kami sudah sedikit mencari tahu 
+
+1383
+00:57:55,740 --> 00:58:00,280
+ dari mana string ini berasal dari label aplikasi Android. 
+
+1384
+00:58:00,280 --> 00:58:02,520
+ Tapi siapa yang mendefinisikan string ini? 
+
+1385
+00:58:02,520 --> 00:58:07,060
+ Seperti, dari mana arti string berasal? 
+
+1386
+00:58:07,060 --> 00:58:10,420
+ Anda dapat mendaftarkan semua jenis string dalam file manifes Anda. 
+
+1387
+00:58:10,420 --> 00:58:15,180
+ Tapi bagaimana Anda memutuskan tali yang penting? 
+
+1388
+00:58:15,180 --> 00:58:17,670
+ Di mana string ini INTERNET atau FRIEND VIEW 
+
+1389
+00:58:17,670 --> 00:58:19,110
+ berasal dari tempat pertama? 
+
+1390
+00:58:19,110 --> 00:58:21,145
+ Siapa yang memberi arti dalam sistem? 
+
+1391
+00:58:21,145 --> 00:58:30,320
+
+
+1392
+00:58:30,320 --> 00:58:32,677
+ Ada ide? 
+
+1393
+00:58:32,677 --> 00:58:34,135
+ Yah, saya pikir itu sebagian besar - jalan 
+
+1394
+00:58:34,135 --> 00:58:38,800
+ untuk memikirkannya adalah bahwa hampir tidak ada dari string ini 
+
+1395
+00:58:38,800 --> 00:58:43,190
+ harus sihir atau ditentukan sebelumnya. 
+
+1396
+00:58:43,190 --> 00:58:45,270
+ Hampir semua string ini pada dasarnya 
+
+1397
+00:58:45,270 --> 00:58:47,430
+ kontrak antara dua aplikasi 
+
+1398
+00:58:47,430 --> 00:58:51,720
+ jadi satu aplikasi mau mengekspor sesuatu 
+
+1399
+00:58:51,720 --> 00:58:55,447
+ di bawah perlindungan beberapa label string. 
+
+1400
+00:58:55,447 --> 00:58:57,780
+ Dan aplikasi lain ingin meminta izin itu 
+
+1401
+00:58:57,780 --> 00:59:01,020
+ untuk berbicara dengan aplikasi yang mendefinisikan komponen ini. 
+
+1402
+00:59:01,020 --> 00:59:03,632
+ Jadi label ini biasanya-- Anda 
+
+1403
+00:59:03,632 --> 00:59:06,010
+ dapat menganggap mereka sebagai yang didefinisikan 
+
+1404
+00:59:06,010 --> 00:59:09,900
+ oleh aplikasi yang menyediakan beberapa layanan yang dilindungi. 
+
+1405
+00:59:09,900 --> 00:59:13,940
+ Jadi jika Anda memiliki izin PERMITELAN DIAL ini, 
+
+1406
+00:59:13,940 --> 00:59:16,040
+ itu mungkin sesuatu yang memiliki 
+
+1407
+00:59:16,040 --> 00:59:19,900
+ ditentukan oleh aplikasi yang mendefinisikannya 
+
+1408
+00:59:19,900 --> 00:59:21,340
+ berarti menghubungi nomor telepon. 
+
+1409
+00:59:21,340 --> 00:59:23,930
+ Jadi mungkin aplikasi dialer di telepon Anda, 
+
+1410
+00:59:23,930 --> 00:59:27,130
+ itulah hal yang mendefinisikan string dan mengatakan itu, ya, 
+
+1411
+00:59:27,130 --> 00:59:30,090
+ hal ini, DIAL PERM, ada, dan komponen saya 
+
+1412
+00:59:30,090 --> 00:59:31,760
+ akan dilindungi olehnya. 
+
+1413
+00:59:31,760 --> 00:59:33,301
+ Dan kemudian aplikasi lain yang diinginkan 
+
+1414
+00:59:33,301 --> 00:59:35,970
+ untuk berinteraksi dengan orang ini, dengan tombol layar, 
+
+1415
+00:59:35,970 --> 00:59:42,210
+ sekarang dapat meminta izin PERMAL DIAL ini untuk diri mereka sendiri. 
+
+1416
+00:59:42,210 --> 00:59:44,094
+ Dan tentu saja, ada beberapa hal bawaan 
+
+1417
+00:59:44,094 --> 00:59:46,760
+ yang kami lihat di sini, seperti izin internet, kamera 
+
+1418
+00:59:46,760 --> 00:59:47,890
+ izin, dan sebagainya. 
+
+1419
+00:59:47,890 --> 00:59:49,295
+ Tapi Anda bisa memikirkan mereka 
+
+1420
+00:59:49,295 --> 00:59:53,520
+ sebagai kerangka kerja Android yang menjadi aplikasi awal itu 
+
+1421
+00:59:53,520 --> 00:59:56,900
+ bertanggung jawab untuk menyediakan akses ke sumber daya ini 
+
+1422
+00:59:56,900 --> 00:59:58,930
+ dan mendefinisikan string yang akan dilindungi 
+
+1423
+00:59:58,930 --> 01:00:01,940
+ sumber daya juga. 
+
+1424
+01:00:01,940 --> 01:00:02,690
+ Apa artinya? 
+
+1425
+01:00:02,690 --> 01:00:08,840
+ Apa yang terkait dengan string label di Android lainnya 
+
+1426
+01:00:08,840 --> 01:00:13,304
+ daripada fakta bahwa string masuk ke dalam aplikasi 
+
+1427
+01:00:13,304 --> 01:00:15,470
+ beri label di sini saat mereka ingin meminta izin ini 
+
+1428
+01:00:15,470 --> 01:00:18,160
+ dan di label komponen juga? 
+
+1429
+01:00:18,160 --> 01:00:21,030
+ Jadi ada beberapa hal yang berhubungan 
+
+1430
+01:00:21,030 --> 01:00:24,260
+ dengan label di Android. 
+
+1431
+01:00:24,260 --> 01:00:27,720
+ Jadi label, selain string, 
+
+1432
+01:00:27,720 --> 01:00:30,870
+ juga memiliki beberapa properti yang menarik. 
+
+1433
+01:00:30,870 --> 01:00:35,420
+ Jadi ada jenis label. 
+
+1434
+01:00:35,420 --> 01:00:39,600
+ Dan ada, setidaknya dalam semacam Android modern, 
+
+1435
+01:00:39,600 --> 01:00:42,290
+ ada tiga jenis yang mungkin Anda sukai. 
+
+1436
+01:00:42,290 --> 01:00:46,460
+ Ada tipe normal label, atau label izin. 
+
+1437
+01:00:46,460 --> 01:00:49,320
+ Ada bahaya dan tanda tangan. 
+
+1438
+01:00:49,320 --> 01:00:55,410
+
+
+1439
+01:00:55,410 --> 01:01:00,290
+ Dan aplikasi yang mendefinisikan izin ini 
+
+1440
+01:01:00,290 --> 01:01:03,270
+ di tempat pertama dapat memilih jenis atau semua 
+
+1441
+01:01:03,270 --> 01:01:05,280
+ bidang lain ini untuk label yang akan kita tuju 
+
+1442
+01:01:05,280 --> 01:01:07,360
+ untuk dibicarakan sebentar lagi. 
+
+1443
+01:01:07,360 --> 01:01:11,360
+ Jadi apa gunanya jenis label? 
+
+1444
+01:01:11,360 --> 01:01:12,860
+ Mengapa label memiliki jenis di Android? 
+
+1445
+01:01:12,860 --> 01:01:17,068
+
+
+1446
+01:01:17,068 --> 01:01:17,568
+ Ya. 
+
+1447
+01:01:17,568 --> 01:01:20,794
+ AUDIENCE: [TIDAK JELAS]. 
+
+1448
+01:01:20,794 --> 01:01:21,960
+ PROFESOR: Ya, saya rasa begitu. 
+
+1449
+01:01:21,960 --> 01:01:22,140
+ Ya. 
+
+1450
+01:01:22,140 --> 01:01:23,950
+ Jadi mengapa tidak membuat semuanya berbahaya, saya kira, 
+
+1451
+01:01:23,950 --> 01:01:24,590
+ pada level itu? 
+
+1452
+01:01:24,590 --> 01:01:27,480
+
+
+1453
+01:01:27,480 --> 01:01:28,330
+ Yah, saya kira, ya. 
+
+1454
+01:01:28,330 --> 01:01:29,360
+ Jadi mungkin yang menarik itu seperti, 
+
+1455
+01:01:29,360 --> 01:01:30,850
+ apa semantik jenis ini? 
+
+1456
+01:01:30,850 --> 01:01:32,510
+ Jadi jika ada sesuatu yang berbahaya, maka Anda benar. 
+
+1457
+01:01:32,510 --> 01:01:34,134
+ Itu benar-benar memperingatkan pengguna saat Anda 
+
+1458
+01:01:34,134 --> 01:01:36,390
+ menginstal aplikasi, dan aplikasi 
+
+1459
+01:01:36,390 --> 01:01:39,910
+ meminta akses ke label tertentu yang bertipe Berbahaya. 
+
+1460
+01:01:39,910 --> 01:01:42,787
+ Maka pengguna harus melihat pesan ini 
+
+1461
+01:01:42,787 --> 01:01:45,245
+ dan berkata, ya, saya bersedia memberikan izin berbahaya ini 
+
+1462
+01:01:45,245 --> 01:01:47,440
+ ke aplikasi baru ini. 
+
+1463
+01:01:47,440 --> 01:01:51,530
+ Untuk label jenis normal, aplikasi dapat memintanya, 
+
+1464
+01:01:51,530 --> 01:01:53,660
+ dan pengguna tidak diminta 
+
+1465
+01:01:53,660 --> 01:01:59,930
+ jika aplikasi meminta jenis izin normal ini. 
+
+1466
+01:01:59,930 --> 01:02:01,880
+ Apakah ini konyol? 
+
+1467
+01:02:01,880 --> 01:02:04,812
+ Apa gunanya izin jika semua orang mendapatkannya? 
+
+1468
+01:02:04,812 --> 01:02:07,090
+ Apakah ada alasan mengapa kita harus memiliki ini? 
+
+1469
+01:02:07,090 --> 01:02:09,590
+ Seperti, satu contoh dari izin normal di Android 
+
+1470
+01:02:09,590 --> 01:02:10,674
+ adalah pengaturan wallpaper Anda. 
+
+1471
+01:02:10,674 --> 01:02:12,173
+ Jadi jika Anda memiliki aplikasi itu 
+
+1472
+01:02:12,173 --> 01:02:14,890
+ akan mengatur wallpaper Anda, saya bisa, sebagai aplikasi 
+
+1473
+01:02:14,890 --> 01:02:16,956
+ pengembang, katakanlah dalam manifest saya bahwa saya 
+
+1474
+01:02:16,956 --> 01:02:18,080
+ ingin mengatur wallpaper Anda. 
+
+1475
+01:02:18,080 --> 01:02:19,810
+ Dan jika Anda mengklik Pasang, itu akan terjadi 
+
+1476
+01:02:19,810 --> 01:02:22,143
+ untuk mengatakan, yah, tidak ada yang menarik terjadi di sini. 
+
+1477
+01:02:22,143 --> 01:02:24,198
+ Anda tidak perlu memberikan izin apa pun. 
+
+1478
+01:02:24,198 --> 01:02:24,698
+ Ya. 
+
+1479
+01:02:24,698 --> 01:02:26,912
+ AUDIENCE: Yah, izin ini biasanya mengharuskan Anda 
+
+1480
+01:02:26,912 --> 01:02:28,634
+ ke [TIDAK JELAS], kan? 
+
+1481
+01:02:28,634 --> 01:02:31,963
+ Jadi jika aplikasi ingin mengubah wallpaper desktop Anda, 
+
+1482
+01:02:31,963 --> 01:02:33,442
+ itu akan bertanya padamu. 
+
+1483
+01:02:33,442 --> 01:02:36,227
+ Sistem akan bertanya kepada Anda, apakah Anda ingin mengubah wallpaper Anda? 
+
+1484
+01:02:36,227 --> 01:02:36,893
+ PROFESOR: Tidak. 
+
+1485
+01:02:36,893 --> 01:02:37,386
+ AUDIENCE: Tidak? 
+
+1486
+01:02:37,386 --> 01:02:39,352
+ PROFESOR: Tidak, itu hanya akan mengubah wallpaper. 
+
+1487
+01:02:39,352 --> 01:02:41,560
+ Ini akses ke panggilan API ini untuk mengubah wallpaper. 
+
+1488
+01:02:41,560 --> 01:02:45,980
+ Jika saya memiliki izin ini, saya dapat membuat panggilan API ini. 
+
+1489
+01:02:45,980 --> 01:02:46,480
+ Ya? 
+
+1490
+01:02:46,480 --> 01:02:49,034
+ AUDIENCE: Mungkin pengembang aplikasi ingin memastikan 
+
+1491
+01:02:49,034 --> 01:02:50,862
+ mereka tidak melakukan ini secara tidak sengaja? 
+
+1492
+01:02:50,862 --> 01:02:53,506
+ PROFESOR: Ya, saya pikir itulah salah satu alasan mengapa Anda mungkin menginginkannya 
+
+1493
+01:02:53,506 --> 01:02:55,960
+ untuk memiliki izin ini, adalah untuk membantu aplikasi 
+
+1494
+01:02:55,960 --> 01:02:57,610
+ pengembang melakukan hal yang benar. 
+
+1495
+01:02:57,610 --> 01:03:01,150
+ Jadi jika Anda khawatir bahwa aplikasi Anda mungkin tidak sengaja 
+
+1496
+01:03:01,150 --> 01:03:02,960
+ melakukan sesuatu atau mungkin ada bug di dalamnya 
+
+1497
+01:03:02,960 --> 01:03:06,230
+ bahwa orang lain akan memanfaatkan, mengetahui 
+
+1498
+01:03:06,230 --> 01:03:08,630
+ bahwa ada beberapa izin 
+
+1499
+01:03:08,630 --> 01:03:11,640
+ yang Anda lakukan atau tidak mencegah aplikasi Anda 
+
+1500
+01:03:11,640 --> 01:03:13,427
+ dari disalahgunakan dengan cara-cara ini. 
+
+1501
+01:03:13,427 --> 01:03:15,540
+ Jadi jika Anda memiliki aplikasi yang jinak itu 
+
+1502
+01:03:15,540 --> 01:03:16,960
+ tidak perlu mengatur wallpaper, 
+
+1503
+01:03:16,960 --> 01:03:19,084
+ Anda mungkin tidak ingin meminta izin ini, 
+
+1504
+01:03:19,084 --> 01:03:21,094
+ karena jika VLAN dikompromikan, 
+
+1505
+01:03:21,094 --> 01:03:23,210
+ maka itu akan lebih baik bagi pengguna, 
+
+1506
+01:03:23,210 --> 01:03:26,440
+ di ponsel mana aplikasi Anda dipasang. 
+
+1507
+01:03:26,440 --> 01:03:29,470
+ Ini semacam properti hak milik paling sedikit. 
+
+1508
+01:03:29,470 --> 01:03:31,710
+ Saya kira hal lain adalah mungkin 
+
+1509
+01:03:31,710 --> 01:03:34,080
+ memungkinkan semacam audit, baik dari pengembang 
+
+1510
+01:03:34,080 --> 01:03:35,756
+ sudut pandang, di mana mereka dapat melihat dan melihat, 
+
+1511
+01:03:35,756 --> 01:03:38,214
+ nah, apa hal-hal yang harus saya perhatikan di sini? 
+
+1512
+01:03:38,214 --> 01:03:40,100
+ Dan juga dari sudut pandang pengguna. 
+
+1513
+01:03:40,100 --> 01:03:43,130
+ Jika ponsel Anda berkedip dengan perubahan wallpaper 
+
+1514
+01:03:43,130 --> 01:03:46,920
+ setiap detik, Anda dapat pergi dan melihat siapa yang memiliki izin ini. 
+
+1515
+01:03:46,920 --> 01:03:49,143
+ Meskipun saya tidak harus menyetujuinya, 
+
+1516
+01:03:49,143 --> 01:03:51,310
+ Setidaknya aku bisa pergi dan memeriksa siapa yang berpotensi 
+
+1517
+01:03:51,310 --> 01:03:54,340
+ melakukan ini sekarang. 
+
+1518
+01:03:54,340 --> 01:03:56,800
+ Jadi, izin normal semacam ini 
+
+1519
+01:03:56,800 --> 01:04:01,220
+ seperti ukuran keamanan yang baik - atau mungkin lebih 
+
+1520
+01:04:01,220 --> 01:04:03,870
+ dari ukuran audit yang baik. 
+
+1521
+01:04:03,870 --> 01:04:06,800
+ Dan [? tidak?] umumnya digunakan untuk hal-hal yang sangat menarik 
+
+1522
+01:04:06,800 --> 01:04:11,880
+ seperti [TIDAK JELAS] data atau mengakses hal-hal seperti kamera 
+
+1523
+01:04:11,880 --> 01:04:14,970
+ atau hal-hal yang membutuhkan uang. 
+
+1524
+01:04:14,970 --> 01:04:17,810
+ Jadi ada juga hal ketiga ini, tanda tangan ini 
+
+1525
+01:04:17,810 --> 01:04:18,430
+ izin. 
+
+1526
+01:04:18,430 --> 01:04:20,775
+ Jadi satu hal yang menarik di Android 
+
+1527
+01:04:20,775 --> 01:04:22,920
+ adalah Anda dapat menentukan izin itu 
+
+1528
+01:04:22,920 --> 01:04:26,110
+ hanya dapat diakses oleh aplikasi yang ditandatangani 
+
+1529
+01:04:26,110 --> 01:04:30,830
+ dengan kunci pengembang yang sama dengan aplikasi itu 
+
+1530
+01:04:30,830 --> 01:04:33,570
+ mendefinisikan izin di tempat pertama. 
+
+1531
+01:04:33,570 --> 01:04:36,850
+ Jadi jika saya punya, saya kira dalam contoh PANDANGAN TEMAN 
+
+1532
+01:04:36,850 --> 01:04:42,060
+ di koran, jika pelacak teman mendefinisikan beberapa izin 
+
+1533
+01:04:42,060 --> 01:04:46,080
+ dengan jenis tanda tangan ini, maka hanya aplikasi lain 
+
+1534
+01:04:46,080 --> 01:04:48,200
+ ditandatangani oleh kunci pengembang yang sama 
+
+1535
+01:04:48,200 --> 01:04:51,190
+ akan bisa mendapatkan izin tanda tangan ini. 
+
+1536
+01:04:51,190 --> 01:04:52,580
+ Apa gunanya benda ini? 
+
+1537
+01:04:52,580 --> 01:04:56,817
+ Mengapa tidak membuat mereka berbahaya atau, saya tidak tahu, 
+
+1538
+01:04:56,817 --> 01:04:57,471
+ sesuatu yang lain? 
+
+1539
+01:04:57,471 --> 01:05:01,030
+ Mengapa kita membutuhkan tipe ketiga? 
+
+1540
+01:05:01,030 --> 01:05:01,893
+ Alasan apapun? 
+
+1541
+01:05:01,893 --> 01:05:02,392
+ Ya? 
+
+1542
+01:05:02,392 --> 01:05:05,224
+ AUDIENCE: Operasi [tidak terdengar] pengembang yang sama? 
+
+1543
+01:05:05,224 --> 01:05:05,890
+ PROFESOR: Ya. 
+
+1544
+01:05:05,890 --> 01:05:08,560
+ Jadi mungkin saja pengembang ini punya 
+
+1545
+01:05:08,560 --> 01:05:11,070
+ beberapa API internal yang sebenarnya tidak mereka maksud 
+
+1546
+01:05:11,070 --> 01:05:13,080
+ untuk mengekspos ke dunia luar. 
+
+1547
+01:05:13,080 --> 01:05:16,380
+ Tetapi mereka hanya ingin memasangkan aplikasi mereka sendiri 
+
+1548
+01:05:16,380 --> 01:05:17,130
+ satu sama lain. 
+
+1549
+01:05:17,130 --> 01:05:20,040
+ Jadi mungkin Facebook, secara hipotetis, 
+
+1550
+01:05:20,040 --> 01:05:22,125
+ bisa menulis beberapa aplikasi. 
+
+1551
+01:05:22,125 --> 01:05:24,930
+ Mereka mungkin memiliki satu aplikasi itu 
+
+1552
+01:05:24,930 --> 01:05:27,160
+ konten pre-fetching dari server Facebook, 
+
+1553
+01:05:27,160 --> 01:05:29,956
+ aplikasi lain yang menyatu, aplikasi lain itu 
+
+1554
+01:05:29,956 --> 01:05:30,830
+ melacak lokasi Anda. 
+
+1555
+01:05:30,830 --> 01:05:32,246
+ Dan mereka menginginkan semua komponen ini 
+
+1556
+01:05:32,246 --> 01:05:33,820
+ untuk berinteraksi satu sama lain. 
+
+1557
+01:05:33,820 --> 01:05:35,920
+ Dan mereka dapat menentukan izin tanda tangan 
+
+1558
+01:05:35,920 --> 01:05:37,220
+ untuk melakukan ini. 
+
+1559
+01:05:37,220 --> 01:05:40,655
+ Dan mungkin, satu alasan mengapa Anda mungkin tidak ingin melakukan ini-- 
+
+1560
+01:05:40,655 --> 01:05:43,110
+ mungkin tidak ingin menandai izin ini 
+
+1561
+01:05:43,110 --> 01:05:46,910
+ sebagai izin berbahaya karena kebanyakan alasannya sama 
+
+1562
+01:05:46,910 --> 01:05:49,230
+ seperti [TIDAK JELAS] sedang berbicara tentang, 
+
+1563
+01:05:49,230 --> 01:05:52,936
+ Itu adalah bahwa jika Anda benar-benar tahu siapa yang harus diizinkan untuk mendapatkannya 
+
+1564
+01:05:52,936 --> 01:05:55,110
+ izin ini, Anda tidak ingin mengizinkan pengguna 
+
+1565
+01:05:55,110 --> 01:05:56,290
+ untuk mengacaukan ini. 
+
+1566
+01:05:56,290 --> 01:05:59,510
+ Jadi, pengguna selalu bisa ditipu oleh seseorang-- 
+
+1567
+01:05:59,510 --> 01:06:02,346
+ atau bisa diakali oleh seseorang untuk menerima 
+
+1568
+01:06:02,346 --> 01:06:07,000
+ aplikasi berbahaya yang meminta izin itu 
+
+1569
+01:06:07,000 --> 01:06:07,770
+ sangat berbahaya. 
+
+1570
+01:06:07,770 --> 01:06:08,970
+ Tapi [? tidak?] harus berbahaya, 
+
+1571
+01:06:08,970 --> 01:06:10,511
+ Anda hanya bisa mendefinisikan tanda tangan ini. 
+
+1572
+01:06:10,511 --> 01:06:12,200
+ Dan pengguna bahkan tidak punya pilihan 
+
+1573
+01:06:12,200 --> 01:06:14,210
+ memberikan beberapa aplikasi 
+
+1574
+01:06:14,210 --> 01:06:15,895
+ hak istimewa internal. 
+
+1575
+01:06:15,895 --> 01:06:20,255
+ Itu satu hal yang bagus tentang tipe izin ini. 
+
+1576
+01:06:20,255 --> 01:06:20,755
+ Masuk akal? 
+
+1577
+01:06:20,755 --> 01:06:23,330
+
+
+1578
+01:06:23,330 --> 01:06:24,747
+ Jadi ada hal-hal lain yang terkait 
+
+1579
+01:06:24,747 --> 01:06:29,020
+ dengan label yang sebagian besar berhubungan dengan mendeskripsikan 
+
+1580
+01:06:29,020 --> 01:06:30,700
+ izin kepada pengguna. 
+
+1581
+01:06:30,700 --> 01:06:34,530
+ Jadi ada semacam deskripsi di sini 
+
+1582
+01:06:34,530 --> 01:06:38,220
+ itu adalah semacam penjelasan tingkat bahasa Inggris 
+
+1583
+01:06:38,220 --> 01:06:40,280
+ dari apa yang diperlukan izin ini. 
+
+1584
+01:06:40,280 --> 01:06:43,310
+ Dan deskripsi inilah yang muncul 
+
+1585
+01:06:43,310 --> 01:06:45,940
+ ketika Anda diminta untuk menginstal aplikasi baru. 
+
+1586
+01:06:45,940 --> 01:06:49,190
+ Jadi kerangka Android akan melihat semua label 
+
+1587
+01:06:49,190 --> 01:06:51,470
+ string dalam manifestasi aplikasi Anda 
+
+1588
+01:06:51,470 --> 01:06:55,060
+ akan menginstal, dan menampilkan kepada pengguna deskripsi 
+
+1589
+01:06:55,060 --> 01:06:57,180
+ untuk semua string berlabel itu, katakan, oke, 
+
+1590
+01:06:57,180 --> 01:07:00,060
+ Anda akan memberikan hak istimewa untuk menghubungi ponsel Anda, 
+
+1591
+01:07:00,060 --> 01:07:02,500
+ atau Anda akan memberikan izin kepada aplikasi ini 
+
+1592
+01:07:02,500 --> 01:07:06,122
+ untuk mengirim pesan SMS atas nama Anda, dan sebagainya. 
+
+1593
+01:07:06,122 --> 01:07:09,600
+ Masuk akal? 
+
+1594
+01:07:09,600 --> 01:07:10,350
+ Baiklah. 
+
+1595
+01:07:10,350 --> 01:07:15,120
+ Jadi satu pertanyaan yang menarik adalah, apa 
+
+1596
+01:07:15,120 --> 01:07:18,590
+ terjadi jika aplikasi jahat mendefinisikan 
+
+1597
+01:07:18,590 --> 01:07:22,200
+ label untuk beberapa aplikasi lain? 
+
+1598
+01:07:22,200 --> 01:07:26,498
+ Label-label ini hanya string bentuk bebas. 
+
+1599
+01:07:26,498 --> 01:07:28,830
+ Jadi apa yang terjadi jika Anda aplikasi jahat 
+
+1600
+01:07:28,830 --> 01:07:31,560
+ dan Anda berkata, oh, saya memiliki izin baru yang besar ini. 
+
+1601
+01:07:31,560 --> 01:07:32,680
+ Ini disebut PERMATA DIAL. 
+
+1602
+01:07:32,680 --> 01:07:33,915
+ Dan [INAUDIBLE] berbahaya. 
+
+1603
+01:07:33,915 --> 01:07:37,406
+ Dan deskripsi tidak melakukan apa-apa. 
+
+1604
+01:07:37,406 --> 01:07:39,676
+ Apakah itu baik atau [TIDAK JELAS]? 
+
+1605
+01:07:39,676 --> 01:07:40,560
+ Ya? 
+
+1606
+01:07:40,560 --> 01:07:45,090
+ AUDIENCE: Jadi [INAUDIBLE] domain [TIDAK JELAS]. 
+
+1607
+01:07:45,090 --> 01:07:47,814
+
+
+1608
+01:07:47,814 --> 01:07:48,480
+ PROFESOR: Ya. 
+
+1609
+01:07:48,480 --> 01:07:50,760
+ Jadi, Anda berharap demikian. 
+
+1610
+01:07:50,760 --> 01:07:52,960
+ Sayangnya, itu tidak benar-benar ditegakkan. 
+
+1611
+01:07:52,960 --> 01:07:56,200
+ Jadi dengan konvensi, semua string izin ini 
+
+1612
+01:07:56,200 --> 01:07:59,410
+ harus memiliki nama domain terbalik ala Java. 
+
+1613
+01:07:59,410 --> 01:08:02,550
+ Tapi tidak ada asosiasi yang ketat 
+
+1614
+01:08:02,550 --> 01:08:06,470
+ antara label yang didefinisikan oleh aplikasi 
+
+1615
+01:08:06,470 --> 01:08:09,353
+ dan nama Java-style aplikasi itu sendiri. 
+
+1616
+01:08:09,353 --> 01:08:10,852
+ Dan dalam hal ini, tidak ada apa-apa 
+
+1617
+01:08:10,852 --> 01:08:13,380
+ yang memberlakukan bahwa nama gaya Java aplikasi 
+
+1618
+01:08:13,380 --> 01:08:16,899
+ terikat pada apa pun, karena kita tidak memiliki cara untuk mengetahui 
+
+1619
+01:08:16,899 --> 01:08:19,700
+ apakah penandatanganan pengembang [tidak terdengar] publik 
+
+1620
+01:08:19,700 --> 01:08:21,200
+ aplikasi tertentu sesuai 
+
+1621
+01:08:21,200 --> 01:08:25,720
+ ke com.google.something atau edu.mit.something. 
+
+1622
+01:08:25,720 --> 01:08:28,830
+ Jadi sebenarnya, ada sedikit kelemahan di Android 
+
+1623
+01:08:28,830 --> 01:08:32,529
+ itu ada di sana setidaknya ketika saya memeriksa beberapa saat yang lalu-- itu 
+
+1624
+01:08:32,529 --> 01:08:36,194
+ mungkin masih ada - adalah bahwa definisi labelnya 
+
+1625
+01:08:36,194 --> 01:08:37,569
+ semacam pertama datang, pertama dilayani. 
+
+1626
+01:08:37,569 --> 01:08:39,684
+ Jadi ketika Anda pertama kali menginstal aplikasi, 
+
+1627
+01:08:39,684 --> 01:08:41,720
+ itu mendefinisikan label tertentu, Anda 
+
+1628
+01:08:41,720 --> 01:08:44,330
+ memutuskan apa jenis string label itu 
+
+1629
+01:08:44,330 --> 01:08:47,100
+ dan apa deskripsi string label ini. 
+
+1630
+01:08:47,100 --> 01:08:51,510
+ Jadi untuk izin sistem, ini mungkin bukan masalah besar, 
+
+1631
+01:08:51,510 --> 01:08:54,109
+ karena perizinan sistem, atau yang 
+
+1632
+01:08:54,109 --> 01:08:56,140
+ untuk aplikasi bawaan seperti [? kompilator,?] 
+
+1633
+01:08:56,140 --> 01:08:58,225
+ ditentukan terlebih dahulu. 
+
+1634
+01:08:58,225 --> 01:09:01,600
+ Tetapi aplikasi yang datang kemudian tidak dapat mendefinisikan ulang mereka. 
+
+1635
+01:09:01,600 --> 01:09:04,410
+ Jadi setidaknya kerangka itu memaksakan itu. 
+
+1636
+01:09:04,410 --> 01:09:07,229
+ Namun yang pasti, satu kesalahan adalah jika Anda menginstal 
+
+1637
+01:09:07,229 --> 01:09:08,870
+ aplikasi jahat terlebih dahulu dan kemudian 
+
+1638
+01:09:08,870 --> 01:09:11,921
+ beberapa aplikasi penting nanti, 
+
+1639
+01:09:11,921 --> 01:09:13,629
+ aplikasi berbahaya dapat berpotensi 
+
+1640
+01:09:13,630 --> 01:09:17,724
+ menumbangkan label yang digunakan oleh aplikasi yang bermaksud baik selanjutnya. 
+
+1641
+01:09:17,724 --> 01:09:20,340
+ Jadi dalam contoh TEMAN PENAMPILAN kertas, 
+
+1642
+01:09:20,340 --> 01:09:23,370
+ Anda bisa benar-benar-- jika Anda pengembang yang jahat, Anda bisa 
+
+1643
+01:09:23,370 --> 01:09:26,015
+ pertama menipu pengguna agar memasang 
+
+1644
+01:09:26,015 --> 01:09:28,069
+ aplikasi ini mendefinisikan FRIEND ini [? LIHAT?] 
+
+1645
+01:09:28,069 --> 01:09:31,729
+ izin untuk menjadi izin normal dengan deskripsi 
+
+1646
+01:09:31,729 --> 01:09:34,580
+ aliran mengatakan, oh, ini tidak menarik sama sekali. 
+
+1647
+01:09:34,580 --> 01:09:37,849
+ Dan kemudian applet FRIEND VIEWER akan diinstal nanti. 
+
+1648
+01:09:37,849 --> 01:09:39,500
+ Tidak dapat mendefinisikan ulang label ini. 
+
+1649
+01:09:39,500 --> 01:09:40,899
+ Sudah didefinisikan. 
+
+1650
+01:09:40,899 --> 01:09:46,319
+ Dan akibatnya mungkin tidak dapat mencegah 
+
+1651
+01:09:46,319 --> 01:09:48,169
+ pengguna dari membagikan PANDANGAN FRIEND ini 
+
+1652
+01:09:48,170 --> 01:09:50,403
+ izin untuk aplikasi lain. 
+
+1653
+01:09:50,403 --> 01:09:52,819
+ AUDIENCE: [TIDAK JELAS]. 
+
+1654
+01:09:52,819 --> 01:09:55,800
+ PROFESOR: Yah, pada prinsipnya, kerangka bisa melakukan ini. 
+
+1655
+01:09:55,800 --> 01:09:57,910
+ Ketika saya mencoba ini, Anda tidak diperingatkan sama sekali. 
+
+1656
+01:09:57,910 --> 01:10:00,980
+ Jadi jika Anda menginstal aplikasi itu 
+
+1657
+01:10:00,980 --> 01:10:04,770
+ mendefinisikan label yang sudah didefinisikan, itu tidak berarti apa-apa. 
+
+1658
+01:10:04,770 --> 01:10:07,360
+ Ini hanya mengabaikan definisi label LIHAT 
+
+1659
+01:10:07,360 --> 01:10:09,401
+ dan menggunakan yang lama. 
+
+1660
+01:10:09,401 --> 01:10:11,650
+ Mungkin itulah masalah di mana itu benar-benar salah. 
+
+1661
+01:10:11,650 --> 01:10:13,275
+ Anda setidaknya harus mengatakan, saya menolak 
+
+1662
+01:10:13,275 --> 01:10:15,358
+ untuk menginstal aplikasi ini, karena itu mendefinisikan 
+
+1663
+01:10:15,358 --> 01:10:16,640
+ label yang sudah ada. 
+
+1664
+01:10:16,640 --> 01:10:18,554
+ AUDIENCE: Dimiliki oleh aplikasi lain ini. 
+
+1665
+01:10:18,554 --> 01:10:19,220
+ PROFESOR: Ya. 
+
+1666
+01:10:19,220 --> 01:10:21,100
+ Dan itu dimiliki oleh kunci yang berbeda. 
+
+1667
+01:10:21,100 --> 01:10:21,600
+ Ya. 
+
+1668
+01:10:21,600 --> 01:10:24,570
+ Jadi setidaknya ada peluang untuk memperbaiki ini secara potensial. 
+
+1669
+01:10:24,570 --> 01:10:27,780
+ Saya belum melihat ini diperbaiki, tapi mungkin saya sudah 
+
+1670
+01:10:27,780 --> 01:10:30,006
+ tidak melacaknya. 
+
+1671
+01:10:30,006 --> 01:10:30,950
+ Bagaimanapun. 
+
+1672
+01:10:30,950 --> 01:10:32,759
+ Jadi itu semacam masalah yang menarik 
+
+1673
+01:10:32,759 --> 01:10:34,800
+ bahwa Anda harus benar-benar melacak nama-nama ini 
+
+1674
+01:10:34,800 --> 01:10:39,320
+ dan mencari tahu siapa yang memiliki nama dan mendapatkan hak itu 
+
+1675
+01:10:39,320 --> 01:10:41,880
+ sebenarnya cukup penting. 
+
+1676
+01:10:41,880 --> 01:10:45,090
+ Jadi satu masalah menarik yang muncul di Android 
+
+1677
+01:10:45,090 --> 01:10:48,470
+ ada hubungannya dengan penerima siaran ini atau semacam pengiriman 
+
+1678
+01:10:48,470 --> 01:10:51,382
+ pesan antar aplikasi. 
+
+1679
+01:10:51,382 --> 01:10:54,529
+ Jadi satu masalah yang menarik adalah ketika Anda mengirim-- baik, 
+
+1680
+01:10:54,529 --> 01:10:56,820
+ Saya kira saya pertama-tama harus menjelaskan bagaimana pesan-pesan ini bekerja 
+
+1681
+01:10:56,820 --> 01:10:58,350
+ dengan penerima siaran. 
+
+1682
+01:10:58,350 --> 01:11:02,860
+ Jadi penerima siaran digunakan untuk satu aplikasi 
+
+1683
+01:11:02,860 --> 01:11:04,970
+ dapat mengumumkan beberapa acara 
+
+1684
+01:11:04,970 --> 01:11:07,370
+ untuk setiap aplikasi lain dalam sistem. 
+
+1685
+01:11:07,370 --> 01:11:09,550
+ Jadi seperti yang kita lihat sebelumnya, maksudnya biasanya 
+
+1686
+01:11:09,550 --> 01:11:12,960
+ pergi ke komponen tertentu, seperti melihat gambar JPEG. 
+
+1687
+01:11:12,960 --> 01:11:16,785
+ Tetapi untuk beberapa acara, seperti, sistem boot. 
+
+1688
+01:11:16,785 --> 01:11:18,990
+ Atau teman-temanku ada di dekat sini. 
+
+1689
+01:11:18,990 --> 01:11:21,440
+ Anda mungkin ingin mengumumkan ini untuk setiap aplikasi itu 
+
+1690
+01:11:21,440 --> 01:11:22,475
+ kekuatiran. 
+
+1691
+01:11:22,475 --> 01:11:25,200
+ Dan inilah tujuan receiver siaran ini. 
+
+1692
+01:11:25,200 --> 01:11:28,470
+ Tapi Anda benar-benar mulai khawatir kapan 
+
+1693
+01:11:28,470 --> 01:11:31,820
+ Anda memiliki pesan-pesan ini dikirim antara dua aplikasi, 
+
+1694
+01:11:31,820 --> 01:11:34,470
+ baik dalam receiver receiver maupun dalam kasus lain, 
+
+1695
+01:11:34,470 --> 01:11:36,230
+ Anda mungkin peduli tentang dua hal. 
+
+1696
+01:11:36,230 --> 01:11:38,120
+ Anda mungkin ingin mengotentikasi di mana 
+
+1697
+01:11:38,120 --> 01:11:39,510
+ pesan itu berasal. 
+
+1698
+01:11:39,510 --> 01:11:41,260
+ Jadi Anda ingin tahu siapa yang mengirim pesan ini. 
+
+1699
+01:11:41,260 --> 01:11:42,300
+ Bisakah saya mempercayai mereka? 
+
+1700
+01:11:42,300 --> 01:11:44,250
+ Dan juga, Anda ingin berpotensi mengendalikan 
+
+1701
+01:11:44,250 --> 01:11:45,710
+ di mana pesan ini pergi ke - siapa 
+
+1702
+01:11:45,710 --> 01:11:48,000
+ dapat menerima pesan ini. 
+
+1703
+01:11:48,000 --> 01:11:51,980
+ Dan awalnya, sepertinya perangkat Android tidak cukup 
+
+1704
+01:11:51,980 --> 01:11:56,750
+ dapatkan hal-hal ini dengan benar dalam beberapa cara. 
+
+1705
+01:11:56,750 --> 01:12:03,020
+ Secara khusus, penerima siaran-- 
+
+1706
+01:12:03,020 --> 01:12:07,010
+ baik, jika Anda mengirim pesan broadcast 
+
+1707
+01:12:07,010 --> 01:12:11,210
+ ke semua komponen lain di sistem Anda, 
+
+1708
+01:12:11,210 --> 01:12:13,320
+ Saya pikir di versi awal Android, 
+
+1709
+01:12:13,320 --> 01:12:14,580
+ Anda baru saja mengirim pesan ini. 
+
+1710
+01:12:14,580 --> 01:12:17,060
+ Dan aplikasi lain dapat berlangganan atau tidak 
+
+1711
+01:12:17,060 --> 01:12:19,450
+ berlangganan pesan-pesan ini. 
+
+1712
+01:12:19,450 --> 01:12:22,100
+ Jadi jika Anda memiliki aplikasi PEMILIK TEMAN bahwa itu akan 
+
+1713
+01:12:22,100 --> 01:12:25,450
+ berlangganan pesan-pesan ini dengan mengatur tindakan yang benar 
+
+1714
+01:12:25,450 --> 01:12:30,290
+ atau tanggal atau waktu data atau tipe MIME dalam filter Intensi mereka, 
+
+1715
+01:12:30,290 --> 01:12:32,910
+ tetapi sebagian besar aplikasi bisa selalu 
+
+1716
+01:12:32,910 --> 01:12:34,970
+ berlangganan semua acara siaran di sistem. 
+
+1717
+01:12:34,970 --> 01:12:36,470
+ Dan Anda bisa menonton semuanya 
+
+1718
+01:12:36,470 --> 01:12:38,632
+ yang terjadi di telepon, atau semuanya 
+
+1719
+01:12:38,632 --> 01:12:40,340
+ yang sedang disiarkan. 
+
+1720
+01:12:40,340 --> 01:12:44,630
+ Jadi kerangka kerja Android menambahkan semacam argumen tambahan 
+
+1721
+01:12:44,630 --> 01:12:46,790
+ agar aplikasi dapat menentukan 
+
+1722
+01:12:46,790 --> 01:12:49,200
+ siapa yang harus dapat melihat pesan siaran. 
+
+1723
+01:12:49,200 --> 01:12:55,070
+ Jadi saat Anda mengirim pesan siaran, 
+
+1724
+01:12:55,070 --> 01:12:58,630
+ ada argumen yang jelas, yang 
+
+1725
+01:12:58,630 --> 01:13:01,570
+ adalah pesan yang ingin Anda kirim, yang pada dasarnya adalah niat. 
+
+1726
+01:13:01,570 --> 01:13:04,540
+ Tetapi Anda juga dapat menentukan label opsional 
+
+1727
+01:13:04,540 --> 01:13:09,130
+ yang menjelaskan siapa yang harus dapat menerima pesan ini. 
+
+1728
+01:13:09,130 --> 01:13:11,540
+ Jadi, bukannya menyiarkan ke semua orang di sistem, 
+
+1729
+01:13:11,540 --> 01:13:13,800
+ Anda bisa mengatakan, yah, hanya aplikasi lain itu saja 
+
+1730
+01:13:13,800 --> 01:13:16,770
+ memiliki izin tertentu harus dapat menerima 
+
+1731
+01:13:16,770 --> 01:13:20,290
+ pesan siaran ini dari saya. 
+
+1732
+01:13:20,290 --> 01:13:23,660
+ Jadi dengan cara ini, Anda bisa mengirimkan informasi sensitif, 
+
+1733
+01:13:23,660 --> 01:13:25,570
+ seperti lokasi teman-temanmu, 
+
+1734
+01:13:25,570 --> 01:13:28,530
+ dalam contoh kertas, dan pastikan 
+
+1735
+01:13:28,530 --> 01:13:31,230
+ itu hanya aplikasi-aplikasi itu saja 
+
+1736
+01:13:31,230 --> 01:13:33,380
+ diizinkan untuk melihat daftar teman-teman Anda 
+
+1737
+01:13:33,380 --> 01:13:35,777
+ akan benar-benar mendapatkan pesan siaran Anda. 
+
+1738
+01:13:35,777 --> 01:13:37,610
+ Jadi begini caranya, di Android, Anda bisa benar-benar 
+
+1739
+01:13:37,610 --> 01:13:42,060
+ kendalikan siapa yang menerima pesan yang Anda kirimkan, 
+
+1740
+01:13:42,060 --> 01:13:44,620
+ setidaknya dalam kotak siaran. 
+
+1741
+01:13:44,620 --> 01:13:45,470
+ Pertanyaan? 
+
+1742
+01:13:45,470 --> 01:13:47,755
+ Tidak. [? Maaf. ?] 
+
+1743
+01:13:47,755 --> 01:13:49,880
+ Bagaimana Anda mengotentikasi di mana pesan sebenarnya 
+
+1744
+01:13:49,880 --> 01:13:50,470
+ berasal dari? 
+
+1745
+01:13:50,470 --> 01:13:55,150
+ Jadi misalkan di Android, Anda mendaftar 
+
+1746
+01:13:55,150 --> 01:13:58,796
+ for-- dalam contoh kertas, Anda memiliki VIEWER FRIEND Anda 
+
+1747
+01:13:58,796 --> 01:14:00,170
+ dan Anda menerima pesan yang mengatakan, 
+
+1748
+01:14:00,170 --> 01:14:02,800
+ ya, teman ini ada di dekat sini. 
+
+1749
+01:14:02,800 --> 01:14:07,830
+ Bagaimana Anda tahu ini sebenarnya berasal dari komponen yang tepat? 
+
+1750
+01:14:07,830 --> 01:14:09,760
+ Dapatkah Anda benar-benar meyakinkan diri sendiri tentang ini? 
+
+1751
+01:14:09,760 --> 01:14:10,260
+ Ya? 
+
+1752
+01:14:10,260 --> 01:14:13,092
+ AUDIENCE: Menggunakan kode kernel? 
+
+1753
+01:14:13,092 --> 01:14:14,892
+ Apakah Anda tidak percaya kernel [tidak terdengar]? 
+
+1754
+01:14:14,892 --> 01:14:16,100
+ PROFESOR: Berpotensi, ya. 
+
+1755
+01:14:16,100 --> 01:14:19,100
+
+
+1756
+01:14:19,100 --> 01:14:21,725
+ Nah, hal pengikat ini akan memberitahu monitor referensi, 
+
+1757
+01:14:21,725 --> 01:14:23,110
+ di sinilah maksudnya berasal. 
+
+1758
+01:14:23,110 --> 01:14:24,485
+ Dan kemudian monitor referensi 
+
+1759
+01:14:24,485 --> 01:14:27,070
+ akan meneruskan niat ini ke aplikasi penerima Anda. 
+
+1760
+01:14:27,070 --> 01:14:28,540
+ Dan di suatu tempat di sana ada namanya 
+
+1761
+01:14:28,540 --> 01:14:30,910
+ dari applet yang mengirim orang ini. 
+
+1762
+01:14:30,910 --> 01:14:32,587
+ Bagaimana seharusnya Anda memeriksa apakah ini 
+
+1763
+01:14:32,587 --> 01:14:38,220
+ adalah aplikasi masuk akal yang seharusnya mengirimkan maksud ini? 
+
+1764
+01:14:38,220 --> 01:14:41,565
+ Apakah ada cara untuk melakukan ini di Android? 
+
+1765
+01:14:41,565 --> 01:14:42,440
+ Saya kira Anda benar. 
+
+1766
+01:14:42,440 --> 01:14:44,940
+ Sebenarnya, ya, sumbernya selalu diautentikasi. 
+
+1767
+01:14:44,940 --> 01:14:47,230
+ Anda tahu persis aplikasi mana yang mengirim pesan. 
+
+1768
+01:14:47,230 --> 01:14:49,050
+ Tapi apa yang Anda lakukan dengan nama sumber? 
+
+1769
+01:14:49,050 --> 01:14:51,190
+ Bagaimana Anda memeriksa apakah itu harus dikirim 
+
+1770
+01:14:51,190 --> 01:14:53,520
+ Teman ini Sudah Dekat pesan? 
+
+1771
+01:14:53,520 --> 01:14:54,430
+ [TIDAK JELAS] 
+
+1772
+01:14:54,430 --> 01:14:54,930
+ Ya? 
+
+1773
+01:14:54,930 --> 01:14:58,024
+ AUDIENCE: [INAUDIBLE] label [TIDAK JELAS]. 
+
+1774
+01:14:58,024 --> 01:14:58,690
+ PROFESOR: Ya. 
+
+1775
+01:14:58,690 --> 01:15:02,240
+ Jadi, salah satu cara untuk melakukannya adalah benar-benar tetap 
+
+1776
+01:15:02,240 --> 01:15:04,310
+ label pada penerima siaran. 
+
+1777
+01:15:04,310 --> 01:15:07,420
+ Jadi satu hal yang bisa Anda katakan, yah, satu-satunya orang itu 
+
+1778
+01:15:07,420 --> 01:15:10,295
+ diperbolehkan mengirim pesan ke penerima siaran 
+
+1779
+01:15:10,295 --> 01:15:20,320
+ orang-orang dengan Pelacak Teman mungkin memberi label. 
+
+1780
+01:15:20,320 --> 01:15:23,430
+ Jadi jika Anda menempelkan label seperti itu pada penerima siaran Anda, 
+
+1781
+01:15:23,430 --> 01:15:27,583
+ maka Anda tahu bahwa hanya pesan yang dikirim dari aplikasi 
+
+1782
+01:15:27,583 --> 01:15:30,880
+ dengan label ini akan mendapatkan Anda melalui siaran Anda 
+
+1783
+01:15:30,880 --> 01:15:31,460
+ penerima. 
+
+1784
+01:15:31,460 --> 01:15:35,700
+ Itu salah satu cara untuk menyaring siapa yang dapat mengirim pesan kepada Anda adalah 
+
+1785
+01:15:35,700 --> 01:15:38,210
+ dengan membatasi mereka dengan label. 
+
+1786
+01:15:38,210 --> 01:15:41,080
+ Jadi ini bekerja dalam banyak kasus. 
+
+1787
+01:15:41,080 --> 01:15:46,020
+ Android juga menyediakan fungsi yang lebih spesifik 
+
+1788
+01:15:46,020 --> 01:15:47,914
+ yang bisa Anda gunakan. 
+
+1789
+01:15:47,914 --> 01:15:49,080
+ Ini disebut Periksa Hak Istimewa. 
+
+1790
+01:15:49,080 --> 01:15:55,810
+
+
+1791
+01:15:55,810 --> 01:15:58,700
+ Dan Anda dapat mengurutkan - atau Periksa Hak Pengirim, 
+
+1792
+01:15:58,700 --> 01:15:59,560
+ Kupikir. 
+
+1793
+01:15:59,560 --> 01:16:04,070
+ Dan Anda bisa menanyakan kerangka apakah pengirim 
+
+1794
+01:16:04,070 --> 01:16:07,450
+ maksud yang Anda cari memiliki label tertentu 
+
+1795
+01:16:07,450 --> 01:16:08,990
+ dalam ketentuannya. 
+
+1796
+01:16:08,990 --> 01:16:12,960
+ Jadi dengan cara ini, Anda juga bisa memikirkan tentang hak istimewa apa 
+
+1797
+01:16:12,960 --> 01:16:15,252
+ apakah pengirim pesan tertentu 
+
+1798
+01:16:15,252 --> 01:16:18,220
+ ada dalam situasi di mana mungkin kerangka tidak menyediakan 
+
+1799
+01:16:18,220 --> 01:16:23,130
+ cukup mekanisme yang tepat dalam manifes untuk melakukan ini. 
+
+1800
+01:16:23,130 --> 01:16:27,070
+ Satu tempat di mana fungsi Periksa Pengirim Hak ini 
+
+1801
+01:16:27,070 --> 01:16:28,880
+ ternyata sangat berguna 
+
+1802
+01:16:28,880 --> 01:16:31,480
+ dalam kasus interaksi RPC antara dua 
+
+1803
+01:16:31,480 --> 01:16:33,630
+ aplikasi, di mana monitor referensi tidak 
+
+1804
+01:16:33,630 --> 01:16:37,640
+ sebenarnya terlibat dalam mediasi aplikasi RPC-looking. 
+
+1805
+01:16:37,640 --> 01:16:40,310
+ Tapi Anda masih ingin bertanya, apakah aplikasi 
+
+1806
+01:16:40,310 --> 01:16:43,910
+ dari [INAUDIBLE] diistimewakan untuk operasi semacam ini? 
+
+1807
+01:16:43,910 --> 01:16:48,120
+ Jadi dengan cara ini, Anda dapat secara manual mengaktifkan - atau memeriksa 
+
+1808
+01:16:48,120 --> 01:16:51,382
+ apa yang ada di manifes aplikasi. 
+
+1809
+01:16:51,382 --> 01:16:51,882
+ Ya. 
+
+1810
+01:16:51,882 --> 01:16:52,864
+ AUDIENCE: [TIDAK JELAS]. 
+
+1811
+01:16:52,864 --> 01:16:56,800
+
+
+1812
+01:16:56,800 --> 01:17:00,009
+ PROFESOR: Yah, jadi saya kira - [tidak terdengar]. 
+
+1813
+01:17:00,009 --> 01:17:02,050
+ AUDIENCE: Anda dapat menggunakan tanda tangan untuk mengaktifkannya. 
+
+1814
+01:17:02,050 --> 01:17:03,716
+ PROFESOR: Ya, jadi satu hal yang berhenti 
+
+1815
+01:17:03,716 --> 01:17:05,376
+ agaknya adalah [TIDAK JELAS]. 
+
+1816
+01:17:05,376 --> 01:17:07,000
+ Jika label adalah label jenis tanda tangan, 
+
+1817
+01:17:07,000 --> 01:17:09,272
+ maka itu akan menghentikannya jika tidak [tidak terdengar]. 
+
+1818
+01:17:09,272 --> 01:17:11,230
+ AUDIENCE: Itu membutuhkan tanda tangan yang sama dengan-- 
+
+1819
+01:17:11,230 --> 01:17:12,170
+ PROFESOR: Benar. 
+
+1820
+01:17:12,170 --> 01:17:12,640
+ Ya, ya. 
+
+1821
+01:17:12,640 --> 01:17:14,690
+ Jadi itu membutuhkan pengembang yang sama dan tepat. 
+
+1822
+01:17:14,690 --> 01:17:18,040
+ Hal lain yang menghentikannya adalah mungkin itu izinnya 
+
+1823
+01:17:18,040 --> 01:17:19,231
+ berlabel Dangerous. 
+
+1824
+01:17:19,231 --> 01:17:21,480
+ Jadi, pengguna akan melihat ini di layar mereka. 
+
+1825
+01:17:21,480 --> 01:17:23,900
+ Ketika Anda menginstal aplikasi, dikatakan, aplikasi ini 
+
+1826
+01:17:23,900 --> 01:17:26,380
+ membutuhkan izin untuk melihat teman-teman Anda, 
+
+1827
+01:17:26,380 --> 01:17:27,600
+ atau lokasi teman Anda. 
+
+1828
+01:17:27,600 --> 01:17:29,016
+ AUDIENCE: Tapi itu diambil dari deskripsi. 
+
+1829
+01:17:29,016 --> 01:17:29,960
+ PROFESOR: Benar. 
+
+1830
+01:17:29,960 --> 01:17:31,959
+ AUDIENCE: Jadi apa [TIDAK JELAS] dari hanya memberi 
+
+1831
+01:17:31,959 --> 01:17:33,270
+ deskripsi yang berbeda? 
+
+1832
+01:17:33,270 --> 01:17:38,410
+ PROFESOR: Jadi saya harus mengatakan, deskripsi ini 
+
+1833
+01:17:38,410 --> 01:17:41,760
+ berasal dari aplikasi yang awalnya mendefinisikan label ini. 
+
+1834
+01:17:41,760 --> 01:17:46,517
+ Jadi labelnya awalnya-- jadi ada dua hal yang terjadi 
+
+1835
+01:17:46,517 --> 01:17:47,312
+ di manifes. 
+
+1836
+01:17:47,312 --> 01:17:51,429
+ Anda dapat meminta akses ke label yang ada. 
+
+1837
+01:17:51,429 --> 01:17:53,220
+ Jadi saya dapat mengatakan, yah, ini adalah aplikasi. 
+
+1838
+01:17:53,220 --> 01:17:56,164
+ Saya ingin akses ke izin LIHAT PANDANGAN. 
+
+1839
+01:17:56,164 --> 01:17:58,550
+ Dan hal terpisah yang dapat Anda lakukan dalam manifes adalah berkata, 
+
+1840
+01:17:58,550 --> 01:18:01,450
+ Saya mendefinisikan jenis label baru. 
+
+1841
+01:18:01,450 --> 01:18:04,054
+ Jadi aplikasi FriendViewer yang pertama-- 
+
+1842
+01:18:04,054 --> 01:18:06,295
+ atau aplikasi Pelacak Teman, mungkin, 
+
+1843
+01:18:06,295 --> 01:18:08,170
+ akan mengatakan, baik, saya punya aplikasi, 
+
+1844
+01:18:08,170 --> 01:18:09,170
+ ini memiliki izin ini. 
+
+1845
+01:18:09,170 --> 01:18:11,770
+ Tetapi juga, saya mendefinisikan jenis label baru. 
+
+1846
+01:18:11,770 --> 01:18:13,520
+ Ini disebut ini. 
+
+1847
+01:18:13,520 --> 01:18:16,750
+ Ini bertipe Dangerous, dan memiliki deskripsi ini. 
+
+1848
+01:18:16,750 --> 01:18:19,774
+ Jadi itu adalah tempat di mana Anda harus benar-benar mendapatkannya 
+
+1849
+01:18:19,774 --> 01:18:22,630
+ the-- ini yang pertama datang, pertama dilayani masalah. 
+
+1850
+01:18:22,630 --> 01:18:25,714
+ Tetapi selama aplikasi itu harus mendefinisikan label 
+
+1851
+01:18:25,714 --> 01:18:27,630
+ diinstal pertama, maka Anda dalam kondisi yang baik. 
+
+1852
+01:18:27,630 --> 01:18:30,810
+ Aplikasi berikutnya akan meminta label 
+
+1853
+01:18:30,810 --> 01:18:32,806
+ hanya dengan nama string-nya. 
+
+1854
+01:18:32,806 --> 01:18:34,750
+ Dan kemudian kerangka Android akan keluar 
+
+1855
+01:18:34,750 --> 01:18:37,260
+ deskripsi dan jenisnya dari aplikasi 
+
+1856
+01:18:37,260 --> 01:18:39,081
+ yang pertama kali mendefinisikannya. 
+
+1857
+01:18:39,081 --> 01:18:42,930
+
+
+1858
+01:18:42,930 --> 01:18:43,605
+ Baiklah. 
+
+1859
+01:18:43,605 --> 01:18:47,370
+ Ada pertanyaan lain di sini? 
+
+1860
+01:18:47,370 --> 01:18:48,430
+ Baiklah. 
+
+1861
+01:18:48,430 --> 01:18:52,790
+ Jadi saya kira ini memberi Anda beberapa perasaan tentang bagaimana Android bekerja. 
+
+1862
+01:18:52,790 --> 01:18:56,700
+ Jadi satu hal keren tentang itu adalah bahwa Anda dapat benar-benar 
+
+1863
+01:18:56,700 --> 01:18:58,960
+ dapatkan manifes ini yang, ke tingkat yang lebih besar, 
+
+1864
+01:18:58,960 --> 01:19:01,800
+ menjelaskan sifat keamanan suatu aplikasi. 
+
+1865
+01:19:01,800 --> 01:19:04,230
+ Jadi ini adalah salah satu hal yang para pengembang Android 
+
+1866
+01:19:04,230 --> 01:19:06,021
+ kerangka akan terjadi - sesuatu yang disebut 
+
+1867
+01:19:06,021 --> 01:19:09,260
+ kontrol akses wajib, di mana Anda benar-benar dapat menentukan 
+
+1868
+01:19:09,260 --> 01:19:12,520
+ kebijakan keamanan suatu aplikasi yang terpisah 
+
+1869
+01:19:12,520 --> 01:19:14,690
+ dari aplikasi itu sendiri, dan faktanya, 
+
+1870
+01:19:14,690 --> 01:19:17,160
+ memiliki kebijakan keamanan yang diberlakukan oleh referensi ini 
+
+1871
+01:19:17,160 --> 01:19:21,190
+ pantau apa pun yang dilakukan aplikasi itu sendiri. 
+
+1872
+01:19:21,190 --> 01:19:23,000
+ Jadi sepertinya properti yang bagus 
+
+1873
+01:19:23,000 --> 01:19:25,140
+ untuk dapat mengaudit aplikasi dengan melihat 
+
+1874
+01:19:25,140 --> 01:19:27,590
+ pada file manifes ini. 
+
+1875
+01:19:27,590 --> 01:19:31,216
+ Anda kebanyakan bisa menganggapnya sebagai pengembangan lebih baik daripada 
+
+1876
+01:19:31,216 --> 01:19:33,590
+ mekanisme penegakan yang ketat, karena jika aplikasi 
+
+1877
+01:19:33,590 --> 01:19:35,740
+ benar-benar ingin mendapatkan manifestasinya sendiri, 
+
+1878
+01:19:35,740 --> 01:19:37,740
+ itu mungkin bisa dilakukan. 
+
+1879
+01:19:37,740 --> 01:19:39,476
+ Tapi sepertinya itu cara yang bagus 
+
+1880
+01:19:39,476 --> 01:19:42,100
+ dapat memahami apa yang terjadi dengan aplikasi dalam istilah 
+
+1881
+01:19:42,100 --> 01:19:45,505
+ keamanan tanpa harus menyelam ke dalam kode Java. 
+
+1882
+01:19:45,505 --> 01:19:47,790
+ Tentu saja, itu penting, tetapi Anda tetap bisa 
+
+1883
+01:19:47,790 --> 01:19:50,660
+ mendapatkan pemahaman tingkat tinggi tentang apa yang terjadi dalam aplikasi 
+
+1884
+01:19:50,660 --> 01:19:52,920
+ dari manifes. 
+
+1885
+01:19:52,920 --> 01:19:55,320
+ Satu gelandangan, saya kira, seperti yang kita bicarakan di sini, 
+
+1886
+01:19:55,320 --> 01:19:58,515
+ ada beberapa situasi di mana kerangka Android berubah 
+
+1887
+01:19:58,515 --> 01:20:01,450
+ menjadi tidak cukup ekspresif dalam manifes. 
+
+1888
+01:20:01,450 --> 01:20:03,540
+ Dan Anda harus tetap menulis kode itu 
+
+1889
+01:20:03,540 --> 01:20:05,260
+ berbicara tentang pemeriksaan keamanan. 
+
+1890
+01:20:05,260 --> 01:20:07,802
+ Itu akan, dalam beberapa hal, bagus jika tidak ada keamanan 
+
+1891
+01:20:07,802 --> 01:20:10,010
+ cek sama sekali dalam kode dan semua pemeriksaan keamanan 
+
+1892
+01:20:10,010 --> 01:20:11,245
+ pergi ke manifes. 
+
+1893
+01:20:11,245 --> 01:20:14,410
+ Tapi itu berarti mengekspos hal-hal seperti semua RPC 
+
+1894
+01:20:14,410 --> 01:20:16,706
+ ke kerangka kerja dan sebagainya. 
+
+1895
+01:20:16,706 --> 01:20:18,330
+ Itu berpotensi sedikit trade-off 
+
+1896
+01:20:18,330 --> 01:20:19,787
+ yang dibuat oleh orang-orang ini. 
+
+1897
+01:20:19,787 --> 01:20:21,620
+ Dan saya rasa satu hal lain adalah sebenarnya 
+
+1898
+01:20:21,620 --> 01:20:23,750
+ agak sulit untuk mengubah file manifes 
+
+1899
+01:20:23,750 --> 01:20:25,890
+ setelah Anda mendesain sistem. 
+
+1900
+01:20:25,890 --> 01:20:28,020
+ Jadi satu hal yang mungkin mengejutkan adalah 
+
+1901
+01:20:28,020 --> 01:20:29,950
+ bahwa kerangka Android tidak berubah 
+
+1902
+01:20:29,950 --> 01:20:32,220
+ dalam hal keamanan sangat sejak dirilis 
+
+1903
+01:20:32,220 --> 01:20:34,470
+ atau sejak tulisan ini ditulis lima tahun yang lalu, atau enam 
+
+1904
+01:20:34,470 --> 01:20:36,090
+ tahun lalu sekarang. 
+
+1905
+01:20:36,090 --> 01:20:38,500
+ Karena setelah aplikasi mulai menggunakan kerangka kerja ini, 
+
+1906
+01:20:38,500 --> 01:20:41,816
+ sulit untuk mengatakan bahwa beberapa aplikasi yang sudah ada akan rusak. 
+
+1907
+01:20:41,816 --> 01:20:43,190
+ Jadi pada dasarnya Anda harus mempertahankan 
+
+1908
+01:20:43,190 --> 01:20:44,940
+ kompatibilitas mundur untuk sebagian besar. 
+
+1909
+01:20:44,940 --> 01:20:49,349
+ Jadi Anda tidak mendapat kesempatan untuk melakukannya lagi. 
+
+1910
+01:20:49,349 --> 01:20:50,765
+ Saya kira satu hal yang menarik itu 
+
+1911
+01:20:50,765 --> 01:20:53,710
+ terjadi pada Android sejak makalah ini keluar 
+
+1912
+01:20:53,710 --> 01:20:59,220
+ adalah bahwa orang-orang Android meminjam ide dari Apple 
+
+1913
+01:20:59,220 --> 01:21:01,410
+ dan sekarang melakukan lebih banyak analisis sisi server 
+
+1914
+01:21:01,410 --> 01:21:02,840
+ aplikasi. 
+
+1915
+01:21:02,840 --> 01:21:06,310
+ Jadi Apple, di sisi iPhone, cukup agresif dalam hal 
+
+1916
+01:21:06,310 --> 01:21:11,600
+ memiliki server Apple memeriksa semua aplikasi 
+
+1917
+01:21:11,600 --> 01:21:13,590
+ dari pengembang untuk berbagai panduan, 
+
+1918
+01:21:13,590 --> 01:21:15,260
+ termasuk properti keamanan. 
+
+1919
+01:21:15,260 --> 01:21:19,460
+ Dan server Android, atau pasar Android ini atau apa pun, 
+
+1920
+01:21:19,460 --> 01:21:21,920
+ sekarang juga melakukan sedikit analisis aplikasi 
+
+1921
+01:21:21,920 --> 01:21:24,540
+ diajukan oleh pengembang untuk memastikan tidak 
+
+1922
+01:21:24,540 --> 01:21:27,010
+ jahat dalam arti tertentu. 
+
+1923
+01:21:27,010 --> 01:21:28,430
+ Jadi itu hal yang keren. 
+
+1924
+01:21:28,430 --> 01:21:30,590
+ Dan itu sebagian besar [? orthogonal?] 
+
+1925
+01:21:30,590 --> 01:21:32,020
+ ke arsitektur keamanan ini. 
+
+1926
+01:21:32,020 --> 01:21:33,560
+ Jadi arsitektur keamanan ini berfungsi di ponsel Anda. 
+
+1927
+01:21:33,560 --> 01:21:35,410
+ Tapi kemudian untuk masalah keamanan lainnya, 
+
+1928
+01:21:35,410 --> 01:21:39,990
+ server dapat mengembangkan pertahanan dari waktu ke waktu sesuai kebutuhan. 
+
+1929
+01:21:39,990 --> 01:21:42,560
+ Dan mereka cenderung lebih pada sisi phishing, di mana 
+
+1930
+01:21:42,560 --> 01:21:44,518
+ manusia ditipu untuk melakukan sesuatu 
+
+1931
+01:21:44,518 --> 01:21:46,910
+ daripada mengeksploitasi beberapa kerentanan tertentu 
+
+1932
+01:21:46,910 --> 01:21:49,290
+ di kernel, mungkin, dan seterusnya. 
+
+1933
+01:21:49,290 --> 01:21:51,320
+ Masuk akal? 
+
+1934
+01:21:51,320 --> 01:21:52,890
+ Ada pertanyaan lain? 
+
+1935
+01:21:52,890 --> 01:21:53,390
+ Baiklah. 
+
+1936
+01:21:53,390 --> 01:21:55,306
+ Jadi kita akan melihat kalian pada hari Rabu, semoga. 
+
+1937
+01:21:55,306 --> 00:00:00,000
+ Kami akan berbicara tentang perpanjangan Android untuk privasi data. 
+

@@ -1,0 +1,760 @@
+1
+00:00:00,030 --> 00:00:01,639
+welcome<font color="#E5E5E5"> ladies and gentlemen</font><font color="#CCCCCC"> to this</font>
+
+2
+00:00:01,639 --> 00:00:04,770
+video today<font color="#E5E5E5"> we're talking about web</font>
+
+3
+00:00:04,770 --> 00:00:08,309
+security<font color="#CCCCCC"> and again</font><font color="#E5E5E5"> we're talking</font><font color="#CCCCCC"> about</font>
+
+4
+00:00:08,309 --> 00:00:12,870
+injections<font color="#E5E5E5"> especially about SQL</font>
+
+5
+00:00:12,870 --> 00:00:15,269
+injections<font color="#E5E5E5"> to follow up with this</font>
+
+6
+00:00:15,269 --> 00:00:17,910
+tutorial<font color="#CCCCCC"> you can with it</font><font color="#E5E5E5"> rule of songs</font>
+
+7
+00:00:17,910 --> 00:00:24,210
+pizza<font color="#CCCCCC"> es y dot yes and</font><font color="#E5E5E5"> heck</font><font color="#CCCCCC"> decide</font><font color="#E5E5E5"> if</font>
+
+8
+00:00:24,210 --> 00:00:29,369
+you want to<font color="#E5E5E5"> yeah so</font><font color="#CCCCCC"> but</font><font color="#E5E5E5"> first everything</font>
+
+9
+00:00:29,369 --> 00:00:31,380
+you learn here is for securing<font color="#E5E5E5"> your own</font>
+
+10
+00:00:31,380 --> 00:00:33,899
+web applications<font color="#CCCCCC"> and not to hack anybody</font>
+
+11
+00:00:33,899 --> 00:00:38,489
+<font color="#E5E5E5">else's so this is legal and it's really</font>
+
+12
+00:00:38,489 --> 00:00:39,090
+evil
+
+13
+00:00:39,090 --> 00:00:42,840
+so<font color="#CCCCCC"> also I'm not</font><font color="#E5E5E5"> liable for any</font><font color="#CCCCCC"> special</font>
+
+14
+00:00:42,840 --> 00:00:45,180
+or direct or indirect<font color="#E5E5E5"> damage for any</font>
+
+15
+00:00:45,180 --> 00:00:47,370
+other damage resulting<font color="#CCCCCC"> from the use of</font>
+
+16
+00:00:47,370 --> 00:00:50,760
+<font color="#CCCCCC">information presented in this video so</font>
+
+17
+00:00:50,760 --> 00:00:54,960
+let's<font color="#CCCCCC"> get started with injections again</font>
+
+18
+00:00:54,960 --> 00:00:56,940
+<font color="#E5E5E5">an injection is used by an attacker</font><font color="#CCCCCC"> to</font>
+
+19
+00:00:56,940 --> 00:00:59,250
+introduce or inject code into a
+
+20
+00:00:59,250 --> 00:01:01,620
+vulnerable<font color="#E5E5E5"> computer program and change</font>
+
+21
+00:01:01,620 --> 00:01:06,000
+the course of execution<font color="#E5E5E5"> so we can use</font>
+
+22
+00:01:06,000 --> 00:01:08,760
+anything that<font color="#E5E5E5"> posts something on</font><font color="#CCCCCC"> the</font>
+
+23
+00:01:08,760 --> 00:01:11,869
+server which uses an SQL statement
+
+24
+00:01:11,869 --> 00:01:15,330
+<font color="#E5E5E5">behind to get data from the database</font><font color="#CCCCCC"> all</font>
+
+25
+00:01:15,330 --> 00:01:27,630
+<font color="#E5E5E5">right so we can even use the order thing</font>
+
+26
+00:01:27,630 --> 00:01:31,799
+<font color="#E5E5E5">we even can use the Select box here if</font>
+
+27
+00:01:31,799 --> 00:01:35,070
+you go to the Select<font color="#E5E5E5"> you see that we</font>
+
+28
+00:01:35,070 --> 00:01:37,829
+have<font color="#E5E5E5"> here different</font><font color="#CCCCCC"> types of values all</font>
+
+29
+00:01:37,829 --> 00:01:42,869
+right<font color="#E5E5E5"> so if you're if you are</font><font color="#CCCCCC"> in hacker</font>
+
+30
+00:01:42,869 --> 00:01:47,490
+<font color="#E5E5E5">you can test out if these values have to</font>
+
+31
+00:01:47,490 --> 00:01:50,630
+have something<font color="#E5E5E5"> have something to do with</font>
+
+32
+00:01:50,630 --> 00:01:54,450
+<font color="#CCCCCC">the SQL</font><font color="#E5E5E5"> statement even simply by</font>
+
+33
+00:01:54,450 --> 00:01:58,380
+<font color="#CCCCCC">changing</font><font color="#E5E5E5"> the value so I change this to</font>
+
+34
+00:01:58,380 --> 00:02:02,030
+<font color="#CCCCCC">two for vegetarian</font><font color="#E5E5E5"> and as you see I</font>
+
+35
+00:02:02,030 --> 00:02:06,420
+thought<font color="#E5E5E5"> the salami pizza</font><font color="#CCCCCC"> and prosciutto</font>
+
+36
+00:02:06,420 --> 00:02:10,330
+pizza<font color="#CCCCCC"> so it has to do something</font>
+
+37
+00:02:10,330 --> 00:02:13,210
+with an SQL statement behind<font color="#CCCCCC"> so this</font>
+
+38
+00:02:13,210 --> 00:02:18,160
+value is<font color="#E5E5E5"> used by an SQL statement</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> we</font>
+
+39
+00:02:18,160 --> 00:02:21,790
+<font color="#E5E5E5">can use this</font><font color="#CCCCCC"> well you feel for injecting</font>
+
+40
+00:02:21,790 --> 00:02:26,800
+our<font color="#E5E5E5"> SQL so what we are going</font><font color="#CCCCCC"> to do today</font>
+
+41
+00:02:26,800 --> 00:02:32,940
+is we're trying to output every<font color="#CCCCCC"> username</font>
+
+42
+00:02:32,940 --> 00:02:39,520
+<font color="#E5E5E5">inside of this menu so we want to output</font>
+
+43
+00:02:39,520 --> 00:02:43,360
+<font color="#CCCCCC">Pizza</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> username here</font><font color="#E5E5E5"> and password</font>
+
+44
+00:02:43,360 --> 00:02:47,410
+<font color="#E5E5E5">inside of the ingredients okay so let's</font>
+
+45
+00:02:47,410 --> 00:02:50,530
+take<font color="#E5E5E5"> a look at the</font><font color="#CCCCCC"> SQL injections</font><font color="#E5E5E5"> so</font>
+
+46
+00:02:50,530 --> 00:02:53,320
+there is<font color="#E5E5E5"> probably a</font><font color="#CCCCCC"> statement in the</font>
+
+47
+00:02:53,320 --> 00:02:56,260
+<font color="#CCCCCC">only server that looks something like</font>
+
+48
+00:02:56,260 --> 00:02:59,890
+this<font color="#E5E5E5"> select</font><font color="#CCCCCC"> star from pizza where type</font>
+
+49
+00:02:59,890 --> 00:03:03,370
+equals type we don't know how this field
+
+50
+00:03:03,370 --> 00:03:06,820
+is called<font color="#CCCCCC"> we don't know how this table</font>
+
+51
+00:03:06,820 --> 00:03:09,070
+is called<font color="#E5E5E5"> and we don't know how many</font>
+
+52
+00:03:09,070 --> 00:03:13,150
+fields are selected<font color="#CCCCCC"> there but as we know</font>
+
+53
+00:03:13,150 --> 00:03:18,790
+<font color="#E5E5E5">a hacker always tries to some sometimes</font>
+
+54
+00:03:18,790 --> 00:03:22,930
+he tries<font color="#E5E5E5"> 500 times and then it works so</font>
+
+55
+00:03:22,930 --> 00:03:26,320
+we have to test out how many fields we
+
+56
+00:03:26,320 --> 00:03:29,739
+have<font color="#CCCCCC"> there and as</font><font color="#E5E5E5"> I know how many fields</font>
+
+57
+00:03:29,739 --> 00:03:35,230
+we<font color="#CCCCCC"> have there are six fields and we can</font>
+
+58
+00:03:35,230 --> 00:03:40,690
+simply try this out by making a<font color="#CCCCCC"> union</font>
+
+59
+00:03:40,690 --> 00:03:45,400
+select so what a<font color="#E5E5E5"> union</font><font color="#CCCCCC"> select</font><font color="#E5E5E5"> does is it</font>
+
+60
+00:03:45,400 --> 00:03:48,550
+combines two tables<font color="#E5E5E5"> or to select</font>
+
+61
+00:03:48,550 --> 00:03:52,510
+statements within<font color="#E5E5E5"> one within one</font>
+
+62
+00:03:52,510 --> 00:03:56,260
+resulting<font color="#CCCCCC"> table</font><font color="#E5E5E5"> okay so it selects</font><font color="#CCCCCC"> T's</font>
+
+63
+00:03:56,260 --> 00:04:01,600
+and combines this table with<font color="#E5E5E5"> this table</font>
+
+64
+00:04:01,600 --> 00:04:09,730
+so we could inject a select<font color="#E5E5E5"> username and</font>
+
+65
+00:04:09,730 --> 00:04:13,000
+use<font color="#CCCCCC"> a</font><font color="#E5E5E5"> password from user and this will</font>
+
+66
+00:04:13,000 --> 00:04:15,580
+probably<font color="#E5E5E5"> look something</font><font color="#CCCCCC"> like this</font>
+
+67
+00:04:15,580 --> 00:04:23,020
+so if we copy this and I try to<font color="#E5E5E5"> work</font>
+
+68
+00:04:23,020 --> 00:04:23,830
+just in
+
+69
+00:04:23,830 --> 00:04:27,039
+my database<font color="#E5E5E5"> you see that it combines</font>
+
+70
+00:04:27,039 --> 00:04:35,069
+these two<font color="#E5E5E5"> tables so if we try to</font><font color="#CCCCCC"> inject</font>
+
+71
+00:04:35,069 --> 00:04:40,569
+these SQL statement<font color="#E5E5E5"> inside of here we</font>
+
+72
+00:04:40,569 --> 00:04:46,240
+<font color="#E5E5E5">simply have to do Union select then</font><font color="#CCCCCC"> 1 2</font>
+
+73
+00:04:46,240 --> 00:04:50,139
+<font color="#CCCCCC">3 4 5 6</font><font color="#E5E5E5"> we</font><font color="#CCCCCC"> have to test</font><font color="#E5E5E5"> it out</font><font color="#CCCCCC"> if you</font>
+
+74
+00:04:50,139 --> 00:04:53,530
+<font color="#E5E5E5">don't know how the table structure works</font>
+
+75
+00:04:53,530 --> 00:05:00,030
+behind so if we do<font color="#E5E5E5"> something like this</font><font color="#CCCCCC"> I</font>
+
+76
+00:05:00,030 --> 00:05:05,259
+copy this can you<font color="#E5E5E5"> see that we will get</font>
+
+77
+00:05:05,259 --> 00:05:05,830
+<font color="#E5E5E5">back</font>
+
+78
+00:05:05,830 --> 00:05:11,620
+<font color="#E5E5E5">Oh copy this of course we have to go to</font>
+
+79
+00:05:11,620 --> 00:05:15,279
+what<font color="#CCCCCC"> Darien</font><font color="#E5E5E5"> if we do this you see</font><font color="#CCCCCC"> that</font>
+
+80
+00:05:15,279 --> 00:05:21,310
+we get back to 4 5<font color="#E5E5E5"> so we know that the</font>
+
+81
+00:05:21,310 --> 00:05:27,370
+second field is<font color="#E5E5E5"> displayed as the as the</font>
+
+82
+00:05:27,370 --> 00:05:31,240
+<font color="#E5E5E5">headline</font><font color="#CCCCCC"> here so we can inject the</font>
+
+83
+00:05:31,240 --> 00:05:33,490
+<font color="#CCCCCC">username inside of the second statement</font>
+
+84
+00:05:33,490 --> 00:05:36,819
+and the fourth statement<font color="#CCCCCC"> are the</font>
+
+85
+00:05:36,819 --> 00:05:39,490
+ingredients<font color="#E5E5E5"> so</font><font color="#CCCCCC"> we</font><font color="#E5E5E5"> could and check the</font>
+
+86
+00:05:39,490 --> 00:05:42,490
+passport<font color="#E5E5E5"> inside</font><font color="#CCCCCC"> of the ingredients</font><font color="#E5E5E5"> so if</font>
+
+87
+00:05:42,490 --> 00:05:45,819
+we copy our statement<font color="#E5E5E5"> and we of</font><font color="#CCCCCC"> course</font>
+
+88
+00:05:45,819 --> 00:05:50,680
+<font color="#E5E5E5">the hacker has to know how the field in</font>
+
+89
+00:05:50,680 --> 00:05:53,560
+the<font color="#CCCCCC"> table is called</font><font color="#E5E5E5"> so if he doesn't</font>
+
+90
+00:05:53,560 --> 00:05:57,370
+know<font color="#E5E5E5"> that in the field is called user</font>
+
+91
+00:05:57,370 --> 00:05:59,740
+<font color="#CCCCCC">underline name or user</font><font color="#E5E5E5"> underline</font>
+
+92
+00:05:59,740 --> 00:06:02,560
+password then he will not<font color="#E5E5E5"> get any</font>
+
+93
+00:06:02,560 --> 00:06:07,539
+results<font color="#E5E5E5"> but as we tested it out 100</font>
+
+94
+00:06:07,539 --> 00:06:11,699
+times<font color="#CCCCCC"> we found out that</font><font color="#E5E5E5"> to use a name</font>
+
+95
+00:06:11,699 --> 00:06:14,319
+inside of the table<font color="#E5E5E5"> is called user</font>
+
+96
+00:06:14,319 --> 00:06:17,229
+<font color="#CCCCCC">underline name and the password is</font>
+
+97
+00:06:17,229 --> 00:06:22,810
+called usual<font color="#CCCCCC"> underline peewee</font><font color="#E5E5E5"> PW so if</font>
+
+98
+00:06:22,810 --> 00:06:29,650
+we again select our vegetarian<font color="#E5E5E5"> here we</font>
+
+99
+00:06:29,650 --> 00:06:31,279
+will get
+
+100
+00:06:31,279 --> 00:06:34,549
+everything from the user<font color="#E5E5E5"> table so we</font>
+
+101
+00:06:34,549 --> 00:06:36,769
+have to use<font color="#E5E5E5"> a name and to use</font><font color="#CCCCCC"> the</font>
+
+102
+00:06:36,769 --> 00:06:41,619
+password<font color="#CCCCCC"> and as you see the</font><font color="#E5E5E5"> password is</font>
+
+103
+00:06:41,619 --> 00:06:45,079
+stored as plain text<font color="#E5E5E5"> inside of the</font>
+
+104
+00:06:45,079 --> 00:06:47,509
+<font color="#CCCCCC">database and this is really</font><font color="#E5E5E5"> really bad</font>
+
+105
+00:06:47,509 --> 00:06:51,259
+<font color="#CCCCCC">it's a real really bad habit okay so we</font>
+
+106
+00:06:51,259 --> 00:06:54,229
+have to employ one with this password<font color="#E5E5E5"> we</font>
+
+107
+00:06:54,229 --> 00:06:56,989
+have to employ two with this password<font color="#CCCCCC"> we</font>
+
+108
+00:06:56,989 --> 00:06:59,989
+have to Peter with this<font color="#CCCCCC"> password</font><font color="#E5E5E5"> and we</font>
+
+109
+00:06:59,989 --> 00:07:01,909
+have the<font color="#CCCCCC"> salmon with the password</font><font color="#E5E5E5"> so we</font>
+
+110
+00:07:01,909 --> 00:07:08,110
+can now simply<font color="#CCCCCC"> login with employee to</font>
+
+111
+00:07:08,110 --> 00:07:13,099
+<font color="#E5E5E5">employ</font><font color="#CCCCCC"> two and put in the password and</font>
+
+112
+00:07:13,099 --> 00:07:16,159
+we're locked in as employed<font color="#CCCCCC"> two and now</font>
+
+113
+00:07:16,159 --> 00:07:18,889
+we can post something evil inside<font color="#E5E5E5"> of the</font>
+
+114
+00:07:18,889 --> 00:07:25,219
+secret<font color="#E5E5E5"> jet okay so this is pretty pretty</font>
+
+115
+00:07:25,219 --> 00:07:31,939
+bad<font color="#E5E5E5"> so why does this work okay</font><font color="#CCCCCC"> so let's</font>
+
+116
+00:07:31,939 --> 00:07:35,199
+have<font color="#E5E5E5"> a look at the Pizza list here</font>
+
+117
+00:07:35,199 --> 00:07:40,729
+so again I'm using the<font color="#E5E5E5"> old MySQL query</font>
+
+118
+00:07:40,729 --> 00:07:43,789
+to get this bad result and this is
+
+119
+00:07:43,789 --> 00:07:46,429
+another way how to do this<font color="#E5E5E5"> because this</font>
+
+120
+00:07:46,429 --> 00:07:48,499
+<font color="#CCCCCC">is</font><font color="#E5E5E5"> really bad we don't</font><font color="#CCCCCC"> have a prepared</font>
+
+121
+00:07:48,499 --> 00:07:51,579
+statement<font color="#CCCCCC"> and we don't have</font><font color="#E5E5E5"> a</font>
+
+122
+00:07:51,579 --> 00:07:57,889
+placeholder<font color="#CCCCCC"> so what we do here</font><font color="#E5E5E5"> is get</font>
+
+123
+00:07:57,889 --> 00:08:00,469
+all<font color="#E5E5E5"> pizza entries select star from</font><font color="#CCCCCC"> pizza</font>
+
+124
+00:08:00,469 --> 00:08:02,929
+there is<font color="#E5E5E5"> nothing to inject because there</font>
+
+125
+00:08:02,929 --> 00:08:05,569
+is no verbal as<font color="#E5E5E5"> you see we</font><font color="#CCCCCC"> have a</font>
+
+126
+00:08:05,569 --> 00:08:09,619
+variable<font color="#E5E5E5"> called</font><font color="#CCCCCC"> type and this is the</font>
+
+127
+00:08:09,619 --> 00:08:11,360
+cookie type so we<font color="#E5E5E5"> save something</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> a</font>
+
+128
+00:08:11,360 --> 00:08:17,719
+cookie and we can look<font color="#E5E5E5"> this up if we set</font>
+
+129
+00:08:17,719 --> 00:08:26,960
+post type which is this then
+
+130
+00:08:26,960 --> 00:08:30,800
+with that new cookie with the<font color="#E5E5E5"> post well</font>
+
+131
+00:08:30,800 --> 00:08:36,320
+you<font color="#CCCCCC"> Pizza type</font><font color="#E5E5E5"> for 30 days</font><font color="#CCCCCC"> so we will</font>
+
+132
+00:08:36,320 --> 00:08:39,559
+<font color="#E5E5E5">have this every time we</font><font color="#CCCCCC"> enter the order</font>
+
+133
+00:08:39,559 --> 00:08:42,020
+page because<font color="#E5E5E5"> we have a cookie here set</font>
+
+134
+00:08:42,020 --> 00:08:50,089
+for this<font color="#CCCCCC"> alright so and inside of these</font>
+
+135
+00:08:50,089 --> 00:08:53,600
+if a cookie is set we set the type to
+
+136
+00:08:53,600 --> 00:08:58,160
+<font color="#CCCCCC">the cookie</font><font color="#E5E5E5"> and our cookie looks like</font>
+
+137
+00:08:58,160 --> 00:09:02,020
+this statement<font color="#E5E5E5"> and this is our cookie</font>
+
+138
+00:09:02,020 --> 00:09:08,630
+<font color="#E5E5E5">okay and we simply say select if we</font>
+
+139
+00:09:08,630 --> 00:09:13,760
+<font color="#E5E5E5">select a vegetarian or meat we have</font>
+
+140
+00:09:13,760 --> 00:09:16,160
+something<font color="#E5E5E5"> to inject because if type</font>
+
+141
+00:09:16,160 --> 00:09:19,880
+equals<font color="#CCCCCC"> one we have something</font><font color="#E5E5E5"> here to</font>
+
+142
+00:09:19,880 --> 00:09:28,850
+<font color="#E5E5E5">inject okay so we can say and check the</font>
+
+143
+00:09:28,850 --> 00:09:36,470
+type and the type<font color="#E5E5E5"> is set to Union select</font>
+
+144
+00:09:36,470 --> 00:09:39,500
+<font color="#CCCCCC">1 2 3 4 5 from user and put the user</font>
+
+145
+00:09:39,500 --> 00:09:44,810
+name<font color="#E5E5E5"> and user password so this will make</font>
+
+146
+00:09:44,810 --> 00:09:48,350
+a query on the database<font color="#E5E5E5"> and for every</font>
+
+147
+00:09:48,350 --> 00:09:55,670
+row we will print<font color="#CCCCCC"> out these data and as</font>
+
+148
+00:09:55,670 --> 00:10:01,459
+we have seen in the database we get back
+
+149
+00:10:01,459 --> 00:10:03,920
+something<font color="#CCCCCC"> like</font><font color="#E5E5E5"> this so it will</font><font color="#CCCCCC"> print out</font>
+
+150
+00:10:03,920 --> 00:10:07,730
+every every<font color="#E5E5E5"> single row until we're done</font>
+
+151
+00:10:07,730 --> 00:10:10,790
+and we<font color="#E5E5E5"> are just playing this for the</font>
+
+152
+00:10:10,790 --> 00:10:17,810
+user<font color="#E5E5E5"> so how can we change</font><font color="#CCCCCC"> this at first</font>
+
+153
+00:10:17,810 --> 00:10:25,130
+<font color="#E5E5E5">get rid of the</font><font color="#CCCCCC"> oh my SQL and we're using</font>
+
+154
+00:10:25,130 --> 00:10:27,850
+the<font color="#E5E5E5"> PDO</font>
+
+155
+00:10:27,850 --> 00:10:32,200
+so what we do<font color="#CCCCCC"> here is we call the PDO</font>
+
+156
+00:10:32,200 --> 00:10:35,670
+object that we create in my handler<font color="#E5E5E5"> and</font>
+
+157
+00:10:35,670 --> 00:10:39,820
+we saved it in the<font color="#CCCCCC"> TB</font><font color="#E5E5E5"> okay and then we</font>
+
+158
+00:10:39,820 --> 00:10:45,420
+create a prepared statement for<font color="#CCCCCC"> that and</font>
+
+159
+00:10:45,420 --> 00:10:49,660
+this simply gets pre passed from<font color="#E5E5E5"> the</font>
+
+160
+00:10:49,660 --> 00:10:51,580
+database<font color="#E5E5E5"> and the database knows how</font>
+
+161
+00:10:51,580 --> 00:10:54,700
+<font color="#E5E5E5">these statement looks like so everything</font>
+
+162
+00:10:54,700 --> 00:10:57,580
+that is inserted in this placeholder
+
+163
+00:10:57,580 --> 00:11:02,380
+<font color="#CCCCCC">with the colon will be ignored</font><font color="#E5E5E5"> if there</font>
+
+164
+00:11:02,380 --> 00:11:06,670
+is another SQL<font color="#E5E5E5"> statement so it executes</font>
+
+165
+00:11:06,670 --> 00:11:13,890
+this with the placeholder<font color="#E5E5E5"> code type and</font>
+
+166
+00:11:13,890 --> 00:11:17,530
+if there is any SQL<font color="#E5E5E5"> in it it will</font><font color="#CCCCCC"> simply</font>
+
+167
+00:11:17,530 --> 00:11:22,260
+parse it as a string<font color="#CCCCCC"> and</font><font color="#E5E5E5"> not as a</font>
+
+168
+00:11:22,260 --> 00:11:25,960
+different<font color="#CCCCCC"> SQL statement so this won't</font>
+
+169
+00:11:25,960 --> 00:11:30,070
+work anymore<font color="#E5E5E5"> so now we get we will fetch</font>
+
+170
+00:11:30,070 --> 00:11:42,040
+all<font color="#E5E5E5"> the all the all</font><font color="#CCCCCC"> our</font><font color="#E5E5E5"> results and we</font>
+
+171
+00:11:42,040 --> 00:11:46,180
+say for<font color="#CCCCCC"> each</font><font color="#E5E5E5"> or while or whatever</font><font color="#CCCCCC"> pizza</font>
+
+172
+00:11:46,180 --> 00:11:50,650
+<font color="#CCCCCC">is row</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> ten we get for every single</font>
+
+173
+00:11:50,650 --> 00:11:53,260
+row we have here we output<font color="#E5E5E5"> our</font>
+
+174
+00:11:53,260 --> 00:11:57,100
+<font color="#E5E5E5">information so if we try this again</font><font color="#CCCCCC"> you</font>
+
+175
+00:11:57,100 --> 00:12:02,230
+see it's not working<font color="#CCCCCC"> anymore so if I</font>
+
+176
+00:12:02,230 --> 00:12:05,200
+type in vegetarian<font color="#E5E5E5"> it will show</font><font color="#CCCCCC"> me what</font>
+
+177
+00:12:05,200 --> 00:12:07,450
+<font color="#CCCCCC">Taran if I</font><font color="#E5E5E5"> type in meat it shows me the</font>
+
+178
+00:12:07,450 --> 00:12:10,150
+meat if I type in<font color="#E5E5E5"> alt it gives me all</font>
+
+179
+00:12:10,150 --> 00:12:15,130
+<font color="#E5E5E5">but what happens if I try</font><font color="#CCCCCC"> to inject my</font>
+
+180
+00:12:15,130 --> 00:12:22,180
+SQL again so we're copying this again
+
+181
+00:12:22,180 --> 00:12:27,670
+<font color="#E5E5E5">and we have our Union</font><font color="#CCCCCC"> Select statement</font>
+
+182
+00:12:27,670 --> 00:12:31,000
+<font color="#CCCCCC">here we click on select</font><font color="#E5E5E5"> and it's not</font>
+
+183
+00:12:31,000 --> 00:12:33,700
+working<font color="#CCCCCC"> so now we have a safe</font>
+
+184
+00:12:33,700 --> 00:12:36,830
+application here<font color="#E5E5E5"> and</font>
+
+185
+00:12:36,830 --> 00:12:39,110
+I hope you enjoyed this video<font color="#E5E5E5"> you</font>
+
+186
+00:12:39,110 --> 00:12:43,550
+<font color="#CCCCCC">learned a lot</font><font color="#E5E5E5"> and of course don't forget</font>
+
+187
+00:12:43,550 --> 00:12:45,290
+to<font color="#E5E5E5"> give</font><font color="#CCCCCC"> me thumbs up to hit the</font>
+
+188
+00:12:45,290 --> 00:12:49,790
+subscribe button<font color="#E5E5E5"> and to share this video</font>
+
+189
+00:12:49,790 --> 00:12:52,850
+everywhere on the Internet<font color="#E5E5E5"> so see you in</font>
+
+190
+00:12:52,850 --> 00:00:00,000
+<font color="#E5E5E5">the next video bye</font>
+

@@ -1,0 +1,988 @@
+1
+00:00:08,510 --> 00:00:10,769
+hey everybody<font color="#E5E5E5"> John</font><font color="#CCCCCC"> wagged</font><font color="#E5E5E5"> on here with</font>
+
+2
+00:00:10,769 --> 00:00:12,120
+<font color="#E5E5E5">dev central and we're coming</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> you</font><font color="#CCCCCC"> with</font>
+
+3
+00:00:12,120 --> 00:00:14,519
+another<font color="#E5E5E5"> light board lesson and today</font>
+
+4
+00:00:14,519 --> 00:00:15,830
+we're<font color="#E5E5E5"> gonna talk about broken</font>
+
+5
+00:00:15,830 --> 00:00:18,240
+<font color="#E5E5E5">authentication this is one of</font><font color="#CCCCCC"> the OS</font>
+
+6
+00:00:18,240 --> 00:00:21,210
+top<font color="#CCCCCC"> 10 vulnerabilities OWASP</font><font color="#E5E5E5"> top</font><font color="#CCCCCC"> 10</font><font color="#E5E5E5"> list</font>
+
+7
+00:00:21,210 --> 00:00:23,220
+<font color="#CCCCCC">just came out brand-new one in 2017 and</font>
+
+8
+00:00:23,220 --> 00:00:25,500
+<font color="#CCCCCC">a broken authentication was actually the</font>
+
+9
+00:00:25,500 --> 00:00:27,359
+number<font color="#CCCCCC"> two vulnerability listed on that</font>
+
+10
+00:00:27,359 --> 00:00:29,580
+on that<font color="#E5E5E5"> new list so what is broken</font>
+
+11
+00:00:29,580 --> 00:00:33,059
+authentication<font color="#CCCCCC"> the the essence of broken</font>
+
+12
+00:00:33,059 --> 00:00:37,320
+authentication<font color="#E5E5E5"> is where you allow your</font>
+
+13
+00:00:37,320 --> 00:00:41,040
+users<font color="#CCCCCC"> or a</font><font color="#E5E5E5"> bad guy</font><font color="#CCCCCC"> user to get</font><font color="#E5E5E5"> into your</font>
+
+14
+00:00:41,040 --> 00:00:43,620
+web application<font color="#E5E5E5"> without the proper</font>
+
+15
+00:00:43,620 --> 00:00:46,050
+credentials<font color="#E5E5E5"> so so I'll draw a couple</font>
+
+16
+00:00:46,050 --> 00:00:47,910
+<font color="#E5E5E5">little or a little scenario up here</font>
+
+17
+00:00:47,910 --> 00:00:51,570
+let's say you have a user out here<font color="#E5E5E5"> in on</font>
+
+18
+00:00:51,570 --> 00:00:53,489
+the internet and he wants<font color="#E5E5E5"> to come in</font><font color="#CCCCCC"> and</font>
+
+19
+00:00:53,489 --> 00:00:56,520
+<font color="#E5E5E5">access your</font><font color="#CCCCCC"> web</font><font color="#E5E5E5"> application so you got</font>
+
+20
+00:00:56,520 --> 00:00:59,789
+<font color="#E5E5E5">your web app here and in your web</font>
+
+21
+00:00:59,789 --> 00:01:02,789
+application<font color="#CCCCCC"> you know you have a you have</font>
+
+22
+00:01:02,789 --> 00:01:06,479
+a<font color="#E5E5E5"> username and a password that</font><font color="#CCCCCC"> you use</font>
+
+23
+00:01:06,479 --> 00:01:09,479
+to<font color="#CCCCCC"> access your web application so the</font>
+
+24
+00:01:09,479 --> 00:01:11,040
+user would<font color="#E5E5E5"> enter his username and his</font>
+
+25
+00:01:11,040 --> 00:01:12,990
+password and if it's good<font color="#CCCCCC"> then it gets</font>
+
+26
+00:01:12,990 --> 00:01:14,820
+in if it's not then he then<font color="#CCCCCC"> he doesn't</font>
+
+27
+00:01:14,820 --> 00:01:17,369
+<font color="#E5E5E5">get in right</font><font color="#CCCCCC"> all right well these</font>
+
+28
+00:01:17,369 --> 00:01:19,049
+<font color="#E5E5E5">username and password are stored back</font>
+
+29
+00:01:19,049 --> 00:01:21,479
+here and some you know some database
+
+30
+00:01:21,479 --> 00:01:24,540
+<font color="#E5E5E5">that's a DB of you know usernames and</font>
+
+31
+00:01:24,540 --> 00:01:28,140
+passwords<font color="#CCCCCC"> back here</font><font color="#E5E5E5"> so as he as he</font>
+
+32
+00:01:28,140 --> 00:01:29,790
+<font color="#CCCCCC">accesses the web</font><font color="#E5E5E5"> application</font>
+
+33
+00:01:29,790 --> 00:01:31,259
+he's going to enter<font color="#E5E5E5"> that that's gonna</font>
+
+34
+00:01:31,259 --> 00:01:32,520
+make<font color="#CCCCCC"> a call</font><font color="#E5E5E5"> back here to this back-end</font>
+
+35
+00:01:32,520 --> 00:01:34,290
+<font color="#CCCCCC">database and if it's good then you get</font>
+
+36
+00:01:34,290 --> 00:01:35,909
+<font color="#CCCCCC">access if it's bad and</font><font color="#E5E5E5"> you don't kind of</font>
+
+37
+00:01:35,909 --> 00:01:39,290
+thing<font color="#CCCCCC"> alright so if if this</font>
+
+38
+00:01:39,290 --> 00:01:42,150
+authentication<font color="#E5E5E5"> is successful then there</font>
+
+39
+00:01:42,150 --> 00:01:45,060
+<font color="#E5E5E5">is there's this idea of a session ID so</font>
+
+40
+00:01:45,060 --> 00:01:46,079
+I'm going<font color="#E5E5E5"> to just put</font><font color="#CCCCCC"> that right out</font>
+
+41
+00:01:46,079 --> 00:01:50,939
+<font color="#E5E5E5">here so session ID that</font><font color="#CCCCCC"> is given to</font><font color="#E5E5E5"> the</font>
+
+42
+00:01:50,939 --> 00:01:53,310
+specific session so again the user tries
+
+43
+00:01:53,310 --> 00:01:55,229
+to<font color="#CCCCCC"> access</font><font color="#E5E5E5"> the web application puts in</font>
+
+44
+00:01:55,229 --> 00:01:57,439
+the proper credentials<font color="#CCCCCC"> those are</font>
+
+45
+00:01:57,439 --> 00:02:00,000
+authentic it's the<font color="#CCCCCC"> users authenticated a</font>
+
+46
+00:02:00,000 --> 00:02:02,250
+session ID is created to allow<font color="#CCCCCC"> that user</font>
+
+47
+00:02:02,250 --> 00:02:04,320
+to<font color="#CCCCCC"> experience this web application for</font>
+
+48
+00:02:04,320 --> 00:02:06,829
+<font color="#E5E5E5">that for the duration of that</font><font color="#CCCCCC"> session</font>
+
+49
+00:02:06,829 --> 00:02:08,669
+<font color="#E5E5E5">okay that's important because that's</font>
+
+50
+00:02:08,669 --> 00:02:10,020
+<font color="#E5E5E5">going to come in in</font><font color="#CCCCCC"> this broken</font>
+
+51
+00:02:10,020 --> 00:02:12,840
+authentication discussion<font color="#CCCCCC"> what could</font>
+
+52
+00:02:12,840 --> 00:02:14,640
+happen here is if<font color="#CCCCCC"> you have not</font><font color="#E5E5E5"> built</font>
+
+53
+00:02:14,640 --> 00:02:17,340
+<font color="#E5E5E5">your web application properly then then</font>
+
+54
+00:02:17,340 --> 00:02:20,459
+a bad guy could come<font color="#CCCCCC"> in and do several</font>
+
+55
+00:02:20,459 --> 00:02:22,440
+nefarious things<font color="#E5E5E5"> to try to get access</font>
+
+56
+00:02:22,440 --> 00:02:26,010
+<font color="#E5E5E5">into this web application</font><font color="#CCCCCC"> a few</font><font color="#E5E5E5"> things</font>
+
+57
+00:02:26,010 --> 00:02:29,430
+<font color="#E5E5E5">that could be tried are what's called</font>
+
+58
+00:02:29,430 --> 00:02:31,379
+credential stuffing<font color="#E5E5E5"> so I'm gonna write</font>
+
+59
+00:02:31,379 --> 00:02:34,920
+this here credential stuffing what
+
+60
+00:02:34,920 --> 00:02:38,060
+credential stuffing is is essentially
+
+61
+00:02:38,060 --> 00:02:41,340
+<font color="#E5E5E5">where a bad guy has a known list of</font>
+
+62
+00:02:41,340 --> 00:02:42,930
+usernames<font color="#CCCCCC"> and passwords that maybe he's</font>
+
+63
+00:02:42,930 --> 00:02:45,660
+stolen<font color="#E5E5E5"> from you know some exploit that</font>
+
+64
+00:02:45,660 --> 00:02:47,640
+<font color="#CCCCCC">happened way back</font><font color="#E5E5E5"> you know</font><font color="#CCCCCC"> at</font><font color="#E5E5E5"> some other</font>
+
+65
+00:02:47,640 --> 00:02:49,709
+place maybe Yahoo or Target or whatever
+
+66
+00:02:49,709 --> 00:02:51,180
+you know when<font color="#E5E5E5"> these companies gets</font><font color="#CCCCCC"> gets</font>
+
+67
+00:02:51,180 --> 00:02:52,590
+hacked<font color="#E5E5E5"> so he's got a bunch of</font>
+
+68
+00:02:52,590 --> 00:02:54,870
+credentials<font color="#E5E5E5"> and he stuffs those into</font>
+
+69
+00:02:54,870 --> 00:02:57,360
+this<font color="#E5E5E5"> username and password field of your</font>
+
+70
+00:02:57,360 --> 00:02:59,879
+web application hoping<font color="#E5E5E5"> to gain access to</font>
+
+71
+00:02:59,879 --> 00:03:03,349
+<font color="#E5E5E5">you know your your web application</font><font color="#CCCCCC"> the</font>
+
+72
+00:03:03,349 --> 00:03:07,230
+the<font color="#E5E5E5"> idea of</font><font color="#CCCCCC"> this is</font><font color="#E5E5E5"> that typically the</font>
+
+73
+00:03:07,230 --> 00:03:09,989
+<font color="#E5E5E5">bad</font><font color="#CCCCCC"> guy's going to</font><font color="#E5E5E5"> use an automated</font><font color="#CCCCCC"> you</font>
+
+74
+00:03:09,989 --> 00:03:11,970
+know system<font color="#E5E5E5"> and automated tool to just</font>
+
+75
+00:03:11,970 --> 00:03:13,590
+stuff a<font color="#E5E5E5"> bunch of these in and just try</font>
+
+76
+00:03:13,590 --> 00:03:15,299
+over and<font color="#E5E5E5"> over with tons and</font><font color="#CCCCCC"> tons of</font>
+
+77
+00:03:15,299 --> 00:03:17,989
+<font color="#CCCCCC">different usernames a password you know</font>
+
+78
+00:03:17,989 --> 00:03:20,970
+<font color="#CCCCCC">you know to</font><font color="#E5E5E5"> try to get in so so anyway</font>
+
+79
+00:03:20,970 --> 00:03:22,500
+<font color="#CCCCCC">so that's credential stuffing there's</font>
+
+80
+00:03:22,500 --> 00:03:25,040
+also automated<font color="#E5E5E5"> attacks</font><font color="#CCCCCC"> so I'll put</font>
+
+81
+00:03:25,040 --> 00:03:27,299
+automated attacks this is kind of more
+
+82
+00:03:27,299 --> 00:03:32,069
+general automated attacks<font color="#E5E5E5"> this is where</font>
+
+83
+00:03:32,069 --> 00:03:34,170
+maybe you would<font color="#E5E5E5"> just use random</font>
+
+84
+00:03:34,170 --> 00:03:36,000
+usernames and passwords not necessarily
+
+85
+00:03:36,000 --> 00:03:37,170
+credential stuffing is where you have
+
+86
+00:03:37,170 --> 00:03:39,180
+known<font color="#E5E5E5"> usernames and passwords</font><font color="#CCCCCC"> this one</font>
+
+87
+00:03:39,180 --> 00:03:40,829
+would<font color="#CCCCCC"> be maybe you just</font><font color="#E5E5E5"> try random</font>
+
+88
+00:03:40,829 --> 00:03:42,510
+usernames and random passwords and you
+
+89
+00:03:42,510 --> 00:03:44,459
+just start stuffing them into<font color="#E5E5E5"> this you</font>
+
+90
+00:03:44,459 --> 00:03:45,750
+know<font color="#E5E5E5"> username password field and you're</font>
+
+91
+00:03:45,750 --> 00:03:47,609
+in the web<font color="#E5E5E5"> application and if one of</font>
+
+92
+00:03:47,609 --> 00:03:49,500
+them takes then then you're<font color="#CCCCCC"> golden</font>
+
+93
+00:03:49,500 --> 00:03:51,500
+you're<font color="#CCCCCC"> in you're good to go</font>
+
+94
+00:03:51,500 --> 00:03:54,750
+there are also things like<font color="#E5E5E5"> default</font>
+
+95
+00:03:54,750 --> 00:03:58,919
+passwords which could be used<font color="#E5E5E5"> default</font>
+
+96
+00:03:58,919 --> 00:04:03,569
+<font color="#E5E5E5">that's an F sorry default passwords and</font>
+
+97
+00:04:03,569 --> 00:04:06,329
+usernames based<font color="#CCCCCC"> in by the way that could</font>
+
+98
+00:04:06,329 --> 00:04:08,669
+<font color="#E5E5E5">be tried in this thing let's</font><font color="#CCCCCC"> say you</font>
+
+99
+00:04:08,669 --> 00:04:10,109
+know you<font color="#E5E5E5"> have a brand new machine and</font>
+
+100
+00:04:10,109 --> 00:04:11,459
+you know<font color="#E5E5E5"> based on the manufacturer that</font>
+
+101
+00:04:11,459 --> 00:04:14,160
+<font color="#E5E5E5">the default usually a password is admin</font>
+
+102
+00:04:14,160 --> 00:04:16,649
+admin<font color="#E5E5E5"> or you know admin password or</font>
+
+103
+00:04:16,649 --> 00:04:18,630
+whatever so the bad guy could try a
+
+104
+00:04:18,630 --> 00:04:21,539
+bunch<font color="#E5E5E5"> of those and try to get in</font><font color="#CCCCCC"> theirs</font>
+
+105
+00:04:21,539 --> 00:04:23,490
+let me let<font color="#E5E5E5"> me give you one scenario this</font>
+
+106
+00:04:23,490 --> 00:04:24,810
+kind<font color="#E5E5E5"> of ties</font><font color="#CCCCCC"> back to the</font><font color="#E5E5E5"> session ID</font>
+
+107
+00:04:24,810 --> 00:04:26,340
+let's say that<font color="#E5E5E5"> you're a user and you</font>
+
+108
+00:04:26,340 --> 00:04:28,560
+at a public<font color="#CCCCCC"> library and</font><font color="#E5E5E5"> or you're at a</font>
+
+109
+00:04:28,560 --> 00:04:31,440
+<font color="#CCCCCC">public</font><font color="#E5E5E5"> place and you you type in you</font>
+
+110
+00:04:31,440 --> 00:04:33,690
+know<font color="#E5E5E5"> you use them a password to your web</font>
+
+111
+00:04:33,690 --> 00:04:35,550
+application<font color="#E5E5E5"> and you gain authentication</font>
+
+112
+00:04:35,550 --> 00:04:36,900
+<font color="#E5E5E5">you're good to go</font>
+
+113
+00:04:36,900 --> 00:04:39,479
+you do your<font color="#E5E5E5"> thing and then</font><font color="#CCCCCC"> you close out</font>
+
+114
+00:04:39,479 --> 00:04:42,330
+your tab<font color="#CCCCCC"> and but</font><font color="#E5E5E5"> maybe you don't close</font>
+
+115
+00:04:42,330 --> 00:04:44,729
+<font color="#E5E5E5">out the browser</font><font color="#CCCCCC"> you know completely just</font>
+
+116
+00:04:44,729 --> 00:04:46,620
+close out the tab and maybe you get<font color="#E5E5E5"> up</font>
+
+117
+00:04:46,620 --> 00:04:47,970
+and<font color="#E5E5E5"> you walk away</font><font color="#CCCCCC"> and you're done and</font>
+
+118
+00:04:47,970 --> 00:04:50,340
+and you move on<font color="#CCCCCC"> about your</font><font color="#E5E5E5"> day</font><font color="#CCCCCC"> well then</font>
+
+119
+00:04:50,340 --> 00:04:52,830
+another<font color="#E5E5E5"> bad guy slips in behind you a</font>
+
+120
+00:04:52,830 --> 00:04:55,320
+few minutes<font color="#CCCCCC"> later</font><font color="#E5E5E5"> notices that even</font>
+
+121
+00:04:55,320 --> 00:04:56,940
+though that<font color="#E5E5E5"> tab was closed</font><font color="#CCCCCC"> the browser</font>
+
+122
+00:04:56,940 --> 00:04:59,280
+is still open<font color="#CCCCCC"> well</font><font color="#E5E5E5"> maybe that session ID</font>
+
+123
+00:04:59,280 --> 00:05:02,190
+<font color="#E5E5E5">has been saved on the browser and</font><font color="#CCCCCC"> that</font>
+
+124
+00:05:02,190 --> 00:05:03,990
+<font color="#CCCCCC">session ID</font><font color="#E5E5E5"> even though it's been let's</font>
+
+125
+00:05:03,990 --> 00:05:05,700
+<font color="#CCCCCC">say 10 minutes or whatever</font><font color="#E5E5E5"> that session</font>
+
+126
+00:05:05,700 --> 00:05:08,250
+ID is still stored<font color="#E5E5E5"> and the bad guy can</font>
+
+127
+00:05:08,250 --> 00:05:10,380
+open<font color="#E5E5E5"> up a new tab</font><font color="#CCCCCC"> go back to that same</font>
+
+128
+00:05:10,380 --> 00:05:12,450
+web application and gain access based on
+
+129
+00:05:12,450 --> 00:05:13,979
+<font color="#E5E5E5">the stored session ID that's still in</font>
+
+130
+00:05:13,979 --> 00:05:16,229
+<font color="#E5E5E5">that browser</font><font color="#CCCCCC"> so that's another another</font>
+
+131
+00:05:16,229 --> 00:05:19,669
+little way<font color="#E5E5E5"> kind of in so all of this</font>
+
+132
+00:05:19,669 --> 00:05:22,289
+falls<font color="#CCCCCC"> under</font><font color="#E5E5E5"> the umbrella</font><font color="#CCCCCC"> of broken</font>
+
+133
+00:05:22,289 --> 00:05:24,930
+<font color="#E5E5E5">authentication because we're allowing</font>
+
+134
+00:05:24,930 --> 00:05:26,520
+<font color="#E5E5E5">and our web application all these</font>
+
+135
+00:05:26,520 --> 00:05:29,250
+different attacks<font color="#E5E5E5"> to allow you know bad</font>
+
+136
+00:05:29,250 --> 00:05:32,010
+guys access into our<font color="#E5E5E5"> web application all</font>
+
+137
+00:05:32,010 --> 00:05:33,450
+right so what do you do how do<font color="#E5E5E5"> you solve</font>
+
+138
+00:05:33,450 --> 00:05:37,650
+this<font color="#E5E5E5"> thing</font><font color="#CCCCCC"> there are a few different I</font>
+
+139
+00:05:37,650 --> 00:05:41,610
+guess<font color="#CCCCCC"> best practices if you will one</font>
+
+140
+00:05:41,610 --> 00:05:43,260
+would<font color="#E5E5E5"> be I'm</font><font color="#CCCCCC"> gonna kind of draw a line</font>
+
+141
+00:05:43,260 --> 00:05:44,910
+right<font color="#CCCCCC"> here</font><font color="#E5E5E5"> so these are like the attack</font>
+
+142
+00:05:44,910 --> 00:05:46,590
+attempts and these are gonna be sort<font color="#CCCCCC"> of</font>
+
+143
+00:05:46,590 --> 00:05:48,389
+the you know<font color="#CCCCCC"> the best practice what we</font>
+
+144
+00:05:48,389 --> 00:05:53,990
+need to do I'm gonna put multi-factor
+
+145
+00:05:53,990 --> 00:05:57,930
+off<font color="#E5E5E5"> short for authentication</font>
+
+146
+00:05:57,930 --> 00:05:59,780
+<font color="#E5E5E5">all right multi-factor authentication</font>
+
+147
+00:05:59,780 --> 00:06:01,860
+<font color="#CCCCCC">this is where you</font><font color="#E5E5E5"> would use maybe a</font>
+
+148
+00:06:01,860 --> 00:06:03,960
+token like a software token or some kind
+
+149
+00:06:03,960 --> 00:06:06,479
+<font color="#CCCCCC">of a you know token on your on your cell</font>
+
+150
+00:06:06,479 --> 00:06:09,570
+<font color="#CCCCCC">phone or whatever</font><font color="#E5E5E5"> maybe use a you know</font><font color="#CCCCCC"> a</font>
+
+151
+00:06:09,570 --> 00:06:12,060
+thumbprint or a you<font color="#E5E5E5"> know I scan or</font>
+
+152
+00:06:12,060 --> 00:06:13,710
+whatever so you've got not<font color="#CCCCCC"> just your</font>
+
+153
+00:06:13,710 --> 00:06:16,650
+<font color="#CCCCCC">user name and password but but it's it's</font>
+
+154
+00:06:16,650 --> 00:06:19,610
+multi-factor<font color="#E5E5E5"> so you could use</font><font color="#CCCCCC"> that also</font>
+
+155
+00:06:19,610 --> 00:06:21,990
+<font color="#E5E5E5">password checking so I'm going to put</font>
+
+156
+00:06:21,990 --> 00:06:26,789
+password checking and what<font color="#E5E5E5"> this is is a</font>
+
+157
+00:06:26,789 --> 00:06:29,820
+sort<font color="#E5E5E5"> of a proactive approach where you</font>
+
+158
+00:06:29,820 --> 00:06:31,740
+as<font color="#CCCCCC"> the owner of</font><font color="#E5E5E5"> the web application</font>
+
+159
+00:06:31,740 --> 00:06:34,169
+could say I'm gonna go in<font color="#E5E5E5"> with like the</font>
+
+160
+00:06:34,169 --> 00:06:38,310
+top<font color="#CCCCCC"> 10,000 best known pass or or</font><font color="#E5E5E5"> you</font>
+
+161
+00:06:38,310 --> 00:06:39,370
+<font color="#E5E5E5">know most commonly used</font>
+
+162
+00:06:39,370 --> 00:06:41,080
+passwords<font color="#E5E5E5"> out there in the</font><font color="#CCCCCC"> internet</font>
+
+163
+00:06:41,080 --> 00:06:43,419
+<font color="#E5E5E5">today</font><font color="#CCCCCC"> and I'm going to proactively check</font>
+
+164
+00:06:43,419 --> 00:06:45,490
+my<font color="#E5E5E5"> database of usernames and passwords</font>
+
+165
+00:06:45,490 --> 00:06:47,830
+and make sure that none of those top
+
+166
+00:06:47,830 --> 00:06:51,100
+<font color="#E5E5E5">10,000 are on my system if they are I'm</font>
+
+167
+00:06:51,100 --> 00:06:52,600
+<font color="#CCCCCC">gonna</font><font color="#E5E5E5"> shoot a little note to that user</font>
+
+168
+00:06:52,600 --> 00:06:54,160
+that<font color="#CCCCCC"> has that password</font><font color="#E5E5E5"> and say hey</font><font color="#CCCCCC"> once</font>
+
+169
+00:06:54,160 --> 00:06:55,570
+you<font color="#E5E5E5"> think about changing</font><font color="#CCCCCC"> your password</font>
+
+170
+00:06:55,570 --> 00:06:56,979
+and oh by the way you use<font color="#CCCCCC"> a</font><font color="#E5E5E5"> better</font>
+
+171
+00:06:56,979 --> 00:06:59,320
+password<font color="#E5E5E5"> next time</font><font color="#CCCCCC"> which brings us to</font>
+
+172
+00:06:59,320 --> 00:07:00,820
+<font color="#E5E5E5">another one and that is password</font>
+
+173
+00:07:00,820 --> 00:07:08,410
+complexity password complexity and this
+
+174
+00:07:08,410 --> 00:07:10,479
+is basically<font color="#E5E5E5"> where you're saying hey</font>
+
+175
+00:07:10,479 --> 00:07:11,949
+users whenever you establish<font color="#E5E5E5"> your</font>
+
+176
+00:07:11,949 --> 00:07:14,710
+password<font color="#E5E5E5"> you</font><font color="#CCCCCC"> have to have you know</font>
+
+177
+00:07:14,710 --> 00:07:17,260
+certain complexity requirements<font color="#CCCCCC"> on your</font>
+
+178
+00:07:17,260 --> 00:07:18,789
+<font color="#E5E5E5">password and</font><font color="#CCCCCC"> that makes it harder for</font>
+
+179
+00:07:18,789 --> 00:07:21,490
+stuff like<font color="#CCCCCC"> this</font><font color="#E5E5E5"> to happen</font><font color="#CCCCCC"> well some of</font>
+
+180
+00:07:21,490 --> 00:07:22,780
+<font color="#CCCCCC">these</font><font color="#E5E5E5"> things that happen like the</font>
+
+181
+00:07:22,780 --> 00:07:25,570
+default password<font color="#CCCCCC"> you know check you can</font>
+
+182
+00:07:25,570 --> 00:07:31,560
+<font color="#E5E5E5">also have limits on on failed logins so</font>
+
+183
+00:07:31,560 --> 00:07:36,850
+limit failed login I'm<font color="#E5E5E5"> writing what this</font>
+
+184
+00:07:36,850 --> 00:07:38,979
+is is if I'm using say some<font color="#E5E5E5"> kind of</font>
+
+185
+00:07:38,979 --> 00:07:40,449
+<font color="#E5E5E5">automated attack or</font><font color="#CCCCCC"> maybe a credential</font>
+
+186
+00:07:40,449 --> 00:07:42,490
+stuffing<font color="#E5E5E5"> and I'm just throwing a ton of</font>
+
+187
+00:07:42,490 --> 00:07:44,050
+<font color="#E5E5E5">different usernames and passwords at</font>
+
+188
+00:07:44,050 --> 00:07:47,020
+this then if I use<font color="#CCCCCC"> the</font><font color="#E5E5E5"> same username and</font>
+
+189
+00:07:47,020 --> 00:07:49,330
+<font color="#E5E5E5">I use a different</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> know I try like</font>
+
+190
+00:07:49,330 --> 00:07:51,130
+<font color="#E5E5E5">save one or</font><font color="#CCCCCC"> two</font><font color="#E5E5E5"> or three passwords or</font>
+
+191
+00:07:51,130 --> 00:07:52,750
+whatever<font color="#E5E5E5"> after a certain</font><font color="#CCCCCC"> number then</font>
+
+192
+00:07:52,750 --> 00:07:54,580
+that<font color="#E5E5E5"> ought to just say hey your account</font>
+
+193
+00:07:54,580 --> 00:07:56,229
+is locked out now and so you can't<font color="#CCCCCC"> even</font>
+
+194
+00:07:56,229 --> 00:07:57,610
+<font color="#E5E5E5">get in until you send a note</font><font color="#CCCCCC"> to the</font>
+
+195
+00:07:57,610 --> 00:07:59,580
+administrator<font color="#E5E5E5"> and all that kind of stuff</font>
+
+196
+00:07:59,580 --> 00:08:03,970
+<font color="#CCCCCC">there's also an idea that's called</font>
+
+197
+00:08:03,970 --> 00:08:07,599
+<font color="#E5E5E5">server-side</font><font color="#CCCCCC"> session management</font><font color="#E5E5E5"> and</font>
+
+198
+00:08:07,599 --> 00:08:09,639
+basically<font color="#CCCCCC"> what that is is on</font><font color="#E5E5E5"> this</font><font color="#CCCCCC"> back</font>
+
+199
+00:08:09,639 --> 00:08:12,400
+<font color="#CCCCCC">side of</font><font color="#E5E5E5"> your</font><font color="#CCCCCC"> web application</font><font color="#E5E5E5"> the the</font>
+
+200
+00:08:12,400 --> 00:08:14,770
+server that controls all this you can
+
+201
+00:08:14,770 --> 00:08:17,800
+you can set up<font color="#E5E5E5"> a server-side session ID</font>
+
+202
+00:08:17,800 --> 00:08:20,620
+manager<font color="#E5E5E5"> that basically says when a user</font>
+
+203
+00:08:20,620 --> 00:08:22,570
+gains access<font color="#CCCCCC"> to</font><font color="#E5E5E5"> my web</font><font color="#CCCCCC"> application and</font>
+
+204
+00:08:22,570 --> 00:08:25,570
+this session<font color="#E5E5E5"> ID is created then what I'm</font>
+
+205
+00:08:25,570 --> 00:08:27,310
+going to do is I'm<font color="#CCCCCC"> going to</font><font color="#E5E5E5"> essentially</font>
+
+206
+00:08:27,310 --> 00:08:29,770
+throw that away<font color="#CCCCCC"> but I'm going to</font><font color="#E5E5E5"> create</font>
+
+207
+00:08:29,770 --> 00:08:34,059
+a new random session ID<font color="#CCCCCC"> that's</font><font color="#E5E5E5"> going to</font>
+
+208
+00:08:34,059 --> 00:08:35,830
+be used to<font color="#E5E5E5"> interface</font><font color="#CCCCCC"> with</font><font color="#E5E5E5"> the web</font>
+
+209
+00:08:35,830 --> 00:08:38,169
+application<font color="#E5E5E5"> and</font><font color="#CCCCCC"> they're there certain</font>
+
+210
+00:08:38,169 --> 00:08:39,909
+criteria that<font color="#CCCCCC"> you need to make sure you</font>
+
+211
+00:08:39,909 --> 00:08:41,469
+have for that<font color="#CCCCCC"> as well but but</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> idea</font>
+
+212
+00:08:41,469 --> 00:08:43,390
+<font color="#CCCCCC">is that</font><font color="#E5E5E5"> this initial session ID is not</font>
+
+213
+00:08:43,390 --> 00:08:45,760
+<font color="#E5E5E5">used it's a</font><font color="#CCCCCC"> brand new random</font><font color="#E5E5E5"> one that</font>
+
+214
+00:08:45,760 --> 00:08:48,640
+the<font color="#E5E5E5"> server-side would create and in that</font>
+
+215
+00:08:48,640 --> 00:08:50,380
+way if another user comes in tries to
+
+216
+00:08:50,380 --> 00:08:52,200
+use that initial session ID<font color="#E5E5E5"> it's</font>
+
+217
+00:08:52,200 --> 00:08:54,540
+<font color="#CCCCCC">using</font><font color="#E5E5E5"> it's not usable because</font><font color="#CCCCCC"> there was</font>
+
+218
+00:08:54,540 --> 00:08:55,589
+a new one<font color="#E5E5E5"> that was</font><font color="#CCCCCC"> created</font><font color="#E5E5E5"> on the</font>
+
+219
+00:08:55,589 --> 00:08:59,010
+backside<font color="#E5E5E5"> so so anyway so this is this is</font>
+
+220
+00:08:59,010 --> 00:09:00,360
+kind of the idea<font color="#CCCCCC"> of broken</font>
+
+221
+00:09:00,360 --> 00:09:01,620
+authentication if<font color="#CCCCCC"> we're your web</font>
+
+222
+00:09:01,620 --> 00:09:04,410
+application allows for a lot<font color="#CCCCCC"> of</font><font color="#E5E5E5"> these</font>
+
+223
+00:09:04,410 --> 00:09:06,959
+attacks<font color="#CCCCCC"> to to come in and if these</font><font color="#E5E5E5"> would</font>
+
+224
+00:09:06,959 --> 00:09:09,120
+<font color="#E5E5E5">be successful then hey you're you're</font>
+
+225
+00:09:09,120 --> 00:09:10,470
+probably<font color="#E5E5E5"> not set up</font><font color="#CCCCCC"> the way that you</font>
+
+226
+00:09:10,470 --> 00:09:12,209
+need<font color="#E5E5E5"> to be and you</font><font color="#CCCCCC"> need to start</font><font color="#E5E5E5"> using</font>
+
+227
+00:09:12,209 --> 00:09:15,120
+<font color="#E5E5E5">some of these other</font><font color="#CCCCCC"> things</font><font color="#E5E5E5"> to take guard</font>
+
+228
+00:09:15,120 --> 00:09:16,980
+against<font color="#E5E5E5"> this I just</font><font color="#CCCCCC"> give me there are</font>
+
+229
+00:09:16,980 --> 00:09:19,139
+there<font color="#E5E5E5"> are some things</font><font color="#CCCCCC"> like a web</font>
+
+230
+00:09:19,139 --> 00:09:20,699
+application<font color="#E5E5E5"> firewall that you could put</font>
+
+231
+00:09:20,699 --> 00:09:22,829
+in line with all this that<font color="#E5E5E5"> would help as</font>
+
+232
+00:09:22,829 --> 00:09:24,899
+well but the<font color="#E5E5E5"> bottom</font><font color="#CCCCCC"> line is whenever</font><font color="#E5E5E5"> you</font>
+
+233
+00:09:24,899 --> 00:09:26,940
+design and<font color="#CCCCCC"> build your</font><font color="#E5E5E5"> web application</font>
+
+234
+00:09:26,940 --> 00:09:28,500
+and all these different<font color="#CCCCCC"> components that</font>
+
+235
+00:09:28,500 --> 00:09:30,540
+<font color="#E5E5E5">are part of it</font><font color="#CCCCCC"> then you</font><font color="#E5E5E5"> need to do it</font>
+
+236
+00:09:30,540 --> 00:09:32,880
+correctly<font color="#CCCCCC"> and</font><font color="#E5E5E5"> you need to put these you</font>
+
+237
+00:09:32,880 --> 00:09:34,260
+know<font color="#E5E5E5"> these controls in place so that</font>
+
+238
+00:09:34,260 --> 00:09:35,910
+<font color="#E5E5E5">you're not susceptible to these</font><font color="#CCCCCC"> attacks</font>
+
+239
+00:09:35,910 --> 00:09:38,070
+<font color="#CCCCCC">so so be careful out there with broken</font>
+
+240
+00:09:38,070 --> 00:09:40,350
+<font color="#E5E5E5">authentication it's a it's a huge attack</font>
+
+241
+00:09:40,350 --> 00:09:42,360
+<font color="#E5E5E5">huge vulnerability that's exploited all</font>
+
+242
+00:09:42,360 --> 00:09:44,970
+the time these<font color="#CCCCCC"> days and</font><font color="#E5E5E5"> and so yeah</font>
+
+243
+00:09:44,970 --> 00:09:46,290
+let's so let's<font color="#E5E5E5"> be safe out there</font><font color="#CCCCCC"> on the</font>
+
+244
+00:09:46,290 --> 00:09:47,639
+<font color="#E5E5E5">Internet thanks for watching this</font>
+
+245
+00:09:47,639 --> 00:09:49,589
+<font color="#CCCCCC">lightboard lesson and we'll see you guys</font>
+
+246
+00:09:49,589 --> 00:09:52,639
+out there<font color="#E5E5E5"> in the community</font>
+
+247
+00:09:58,329 --> 00:00:00,000
+you
+

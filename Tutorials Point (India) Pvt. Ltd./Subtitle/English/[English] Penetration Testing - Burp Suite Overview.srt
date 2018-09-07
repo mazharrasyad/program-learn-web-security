@@ -1,0 +1,736 @@
+1
+00:00:00,089 --> 00:00:03,060
+hello everyone now let's talk about<font color="#E5E5E5"> Bob</font>
+
+2
+00:00:03,060 --> 00:00:05,670
+<font color="#E5E5E5">sweet</font><font color="#CCCCCC"> so Bob sweet is one of the most</font>
+
+3
+00:00:05,670 --> 00:00:08,970
+popular security testing tool<font color="#E5E5E5"> so we</font><font color="#CCCCCC"> can</font>
+
+4
+00:00:08,970 --> 00:00:11,219
+use Bob sweet<font color="#E5E5E5"> in order to intercept our</font>
+
+5
+00:00:11,219 --> 00:00:13,799
+<font color="#E5E5E5">HTTP</font><font color="#CCCCCC"> requests</font><font color="#E5E5E5"> which is going out through</font>
+
+6
+00:00:13,799 --> 00:00:16,170
+<font color="#CCCCCC">our web browser</font><font color="#E5E5E5"> so Bob sweet contains</font>
+
+7
+00:00:16,170 --> 00:00:18,359
+different different tabs<font color="#E5E5E5"> and each and</font>
+
+8
+00:00:18,359 --> 00:00:20,100
+<font color="#E5E5E5">different tab contains different</font>
+
+9
+00:00:20,100 --> 00:00:20,939
+different functions
+
+10
+00:00:20,939 --> 00:00:23,340
+so the Bob suite contains tabs like
+
+11
+00:00:23,340 --> 00:00:26,460
+proxies<font color="#E5E5E5"> intruders scanners so the proxy</font>
+
+12
+00:00:26,460 --> 00:00:28,710
+<font color="#E5E5E5">tab is used for</font><font color="#CCCCCC"> intercepting</font><font color="#E5E5E5"> our</font>
+
+13
+00:00:28,710 --> 00:00:31,109
+<font color="#CCCCCC">requests</font><font color="#E5E5E5"> and it's a proxy function so</font>
+
+14
+00:00:31,109 --> 00:00:33,239
+<font color="#CCCCCC">integral tab contains a different</font>
+
+15
+00:00:33,239 --> 00:00:34,710
+different<font color="#E5E5E5"> attacks which we can perform</font>
+
+16
+00:00:34,710 --> 00:00:37,050
+<font color="#E5E5E5">on a remote website like we want to</font>
+
+17
+00:00:37,050 --> 00:00:39,000
+perform<font color="#CCCCCC"> a dictionary attack brute force</font>
+
+18
+00:00:39,000 --> 00:00:41,640
+attack and the scanner module or scanner
+
+19
+00:00:41,640 --> 00:00:45,649
+tab in Bob suite is used for scanning
+
+20
+00:00:45,649 --> 00:00:48,149
+particular website and<font color="#E5E5E5"> its</font><font color="#CCCCCC"> vulnerability</font>
+
+21
+00:00:48,149 --> 00:00:50,520
+there is one more interesting<font color="#E5E5E5"> tab in Bob</font>
+
+22
+00:00:50,520 --> 00:00:52,890
+suite called<font color="#E5E5E5"> as decoder so the decoder</font>
+
+23
+00:00:52,890 --> 00:00:55,050
+contains different<font color="#E5E5E5"> kind of functions</font>
+
+24
+00:00:55,050 --> 00:00:57,149
+which we can use in<font color="#CCCCCC"> order to decode a</font>
+
+25
+00:00:57,149 --> 00:00:59,460
+particular thing like URL decode basic
+
+26
+00:00:59,460 --> 00:01:02,010
+<font color="#CCCCCC">tifo</font><font color="#E5E5E5"> decode so Bob suite is available in</font>
+
+27
+00:01:02,010 --> 00:01:05,188
+two versions<font color="#CCCCCC"> pro and free so the in</font><font color="#E5E5E5"> kali</font>
+
+28
+00:01:05,188 --> 00:01:07,920
+<font color="#E5E5E5">linux</font><font color="#CCCCCC"> the Bob suite is already install</font>
+
+29
+00:01:07,920 --> 00:01:10,470
+and it's a free version<font color="#E5E5E5"> and if you are a</font>
+
+30
+00:01:10,470 --> 00:01:13,020
+penetration tester<font color="#E5E5E5"> so you can use Bob</font>
+
+31
+00:01:13,020 --> 00:01:15,119
+suite as a pro<font color="#CCCCCC"> version because it</font>
+
+32
+00:01:15,119 --> 00:01:17,580
+contains more<font color="#CCCCCC"> feature than free one</font><font color="#E5E5E5"> so</font>
+
+33
+00:01:17,580 --> 00:01:19,590
+Bob suite is freely available for Linux
+
+34
+00:01:19,590 --> 00:01:22,020
+Mac and Windows<font color="#E5E5E5"> now let's see how we can</font>
+
+35
+00:01:22,020 --> 00:01:25,140
+intercept our HTTP<font color="#E5E5E5"> request by using Bob</font>
+
+36
+00:01:25,140 --> 00:01:27,689
+suite now let's see<font color="#E5E5E5"> that how we can</font><font color="#CCCCCC"> use</font>
+
+37
+00:01:27,689 --> 00:01:30,829
+<font color="#E5E5E5">burp suite inside Kali Linux and windows</font>
+
+38
+00:01:30,829 --> 00:01:33,689
+so by<font color="#E5E5E5"> default the Bob suite is installed</font>
+
+39
+00:01:33,689 --> 00:01:36,810
+in Kali Linux and if we are looking<font color="#CCCCCC"> to</font>
+
+40
+00:01:36,810 --> 00:01:38,850
+use Bob suite in Windows then you can
+
+41
+00:01:38,850 --> 00:01:42,860
+download from<font color="#CCCCCC"> their official website and</font>
+
+42
+00:01:42,860 --> 00:01:45,390
+right now you<font color="#E5E5E5"> can see that</font><font color="#CCCCCC"> I am inside</font>
+
+43
+00:01:45,390 --> 00:01:48,030
+my<font color="#E5E5E5"> Kali Linux instance and on the left</font>
+
+44
+00:01:48,030 --> 00:01:50,579
+<font color="#E5E5E5">hand side you will</font><font color="#CCCCCC"> see this icon</font><font color="#E5E5E5"> so this</font>
+
+45
+00:01:50,579 --> 00:01:53,310
+is the Bob suite so let<font color="#E5E5E5"> me just click</font>
+
+46
+00:01:53,310 --> 00:01:55,439
+<font color="#CCCCCC">over hit and you can see it's a Bob</font>
+
+47
+00:01:55,439 --> 00:01:59,009
+suite free<font color="#E5E5E5"> edition so I'm using Bob</font>
+
+48
+00:01:59,009 --> 00:02:00,899
+suite free edition<font color="#E5E5E5"> so when the first</font>
+
+49
+00:02:00,899 --> 00:02:04,310
+time you will<font color="#E5E5E5"> use the Bob suite</font>
+
+50
+00:02:06,890 --> 00:02:09,110
+so it asked us<font color="#E5E5E5"> for this temporary</font>
+
+51
+00:02:09,110 --> 00:02:11,420
+project<font color="#CCCCCC"> and/or if you want to create a</font>
+
+52
+00:02:11,420 --> 00:02:14,000
+new project<font color="#CCCCCC"> so click on next</font>
+
+53
+00:02:14,000 --> 00:02:26,570
+use<font color="#E5E5E5"> Bob defaults and start Bob so this</font>
+
+54
+00:02:26,570 --> 00:02:28,490
+is how the Bob<font color="#CCCCCC"> Suite</font><font color="#E5E5E5"> menu looks like</font>
+
+55
+00:02:28,490 --> 00:02:30,380
+here you<font color="#CCCCCC"> can</font><font color="#E5E5E5"> see the different</font><font color="#CCCCCC"> different</font>
+
+56
+00:02:30,380 --> 00:02:32,300
+tabs<font color="#E5E5E5"> and they have different different</font>
+
+57
+00:02:32,300 --> 00:02:34,340
+<font color="#E5E5E5">functions like proxy tab is used for</font>
+
+58
+00:02:34,340 --> 00:02:36,320
+<font color="#E5E5E5">intercepting</font><font color="#CCCCCC"> our request then spider</font>
+
+59
+00:02:36,320 --> 00:02:37,970
+<font color="#E5E5E5">used for</font><font color="#CCCCCC"> crawler</font><font color="#E5E5E5"> crawling the website</font>
+
+60
+00:02:37,970 --> 00:02:40,190
+<font color="#E5E5E5">scanning the website intruder is used</font>
+
+61
+00:02:40,190 --> 00:02:42,170
+for<font color="#E5E5E5"> performing</font><font color="#CCCCCC"> different</font><font color="#E5E5E5"> attacks</font><font color="#CCCCCC"> brute</font>
+
+62
+00:02:42,170 --> 00:02:44,330
+<font color="#CCCCCC">force attack</font><font color="#E5E5E5"> can different password</font>
+
+63
+00:02:44,330 --> 00:02:46,190
+guessing attacks<font color="#E5E5E5"> the repeater is used to</font>
+
+64
+00:02:46,190 --> 00:02:48,800
+repeat our<font color="#E5E5E5"> request then decoder is used</font>
+
+65
+00:02:48,800 --> 00:02:50,900
+to decode the strings like<font color="#CCCCCC"> basics T for</font>
+
+66
+00:02:50,900 --> 00:02:53,989
+decode and URL encoding URL decoding
+
+67
+00:02:53,989 --> 00:02:57,860
+<font color="#E5E5E5">then there are some another options so</font>
+
+68
+00:02:57,860 --> 00:02:59,989
+right now we<font color="#CCCCCC"> are just interested</font><font color="#E5E5E5"> on this</font>
+
+69
+00:02:59,989 --> 00:03:01,880
+option proxy because<font color="#E5E5E5"> we want to</font>
+
+70
+00:03:01,880 --> 00:03:04,310
+<font color="#E5E5E5">intercept our request which is going out</font>
+
+71
+00:03:04,310 --> 00:03:09,140
+<font color="#CCCCCC">from our</font><font color="#E5E5E5"> browser</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> once we are here in</font>
+
+72
+00:03:09,140 --> 00:03:12,260
+this tab proxy<font color="#E5E5E5"> click on this options and</font>
+
+73
+00:03:12,260 --> 00:03:14,720
+here you can see that our Bob<font color="#E5E5E5"> suite is</font>
+
+74
+00:03:14,720 --> 00:03:18,280
+up and running on this IP 127.0.0.1
+
+75
+00:03:18,280 --> 00:03:22,940
+that's a local<font color="#E5E5E5"> host and port is 8080 now</font>
+
+76
+00:03:22,940 --> 00:03:24,440
+what we have<font color="#CCCCCC"> to do is we have</font><font color="#E5E5E5"> to</font>
+
+77
+00:03:24,440 --> 00:03:28,730
+configure<font color="#E5E5E5"> our browser now let me open</font>
+
+78
+00:03:28,730 --> 00:03:36,290
+<font color="#E5E5E5">this Firefox browser so in order to</font>
+
+79
+00:03:36,290 --> 00:03:40,120
+<font color="#CCCCCC">configure the browser we have to go here</font>
+
+80
+00:03:40,120 --> 00:03:45,140
+preference then advanced<font color="#E5E5E5"> and here is the</font>
+
+81
+00:03:45,140 --> 00:03:47,330
+network settings<font color="#E5E5E5"> so we</font><font color="#CCCCCC"> have to</font><font color="#E5E5E5"> configure</font>
+
+82
+00:03:47,330 --> 00:03:49,790
+the network<font color="#E5E5E5"> settings and here so by</font>
+
+83
+00:03:49,790 --> 00:03:52,070
+default when you<font color="#E5E5E5"> will just</font><font color="#CCCCCC"> open the</font>
+
+84
+00:03:52,070 --> 00:03:53,810
+settings it will<font color="#CCCCCC"> just like this you</font>
+
+85
+00:03:53,810 --> 00:03:55,880
+system proxy<font color="#CCCCCC"> so we have to click over</font>
+
+86
+00:03:55,880 --> 00:03:58,280
+<font color="#E5E5E5">here</font><font color="#CCCCCC"> manual proxy configuration</font><font color="#E5E5E5"> and we</font>
+
+87
+00:03:58,280 --> 00:03:59,870
+have to fill the IP address of<font color="#E5E5E5"> the Bob</font>
+
+88
+00:03:59,870 --> 00:04:05,630
+<font color="#E5E5E5">suite along with its port number and we</font>
+
+89
+00:04:05,630 --> 00:04:07,549
+<font color="#E5E5E5">have to select this use this proxy</font>
+
+90
+00:04:07,549 --> 00:04:12,110
+server<font color="#CCCCCC"> for all protocols</font><font color="#E5E5E5"> click on</font><font color="#CCCCCC"> OK ok</font>
+
+91
+00:04:12,110 --> 00:04:13,880
+now our<font color="#E5E5E5"> Bob suite has</font><font color="#CCCCCC"> been configured</font>
+
+92
+00:04:13,880 --> 00:04:16,728
+<font color="#CCCCCC">now</font><font color="#E5E5E5"> every request which will go</font><font color="#CCCCCC"> out from</font>
+
+93
+00:04:16,728 --> 00:04:18,560
+<font color="#E5E5E5">our browser</font><font color="#CCCCCC"> will first go to the Bob</font>
+
+94
+00:04:18,560 --> 00:04:19,608
+suite
+
+95
+00:04:19,608 --> 00:04:22,039
+and there we<font color="#E5E5E5"> can intercept our</font><font color="#CCCCCC"> request</font>
+
+96
+00:04:22,039 --> 00:04:24,319
+and if we want<font color="#E5E5E5"> to do some modification</font>
+
+97
+00:04:24,319 --> 00:04:26,810
+<font color="#E5E5E5">we can then we can forward</font><font color="#CCCCCC"> the request</font>
+
+98
+00:04:26,810 --> 00:04:33,740
+to<font color="#CCCCCC"> the server</font><font color="#E5E5E5"> now just for example let</font>
+
+99
+00:04:33,740 --> 00:04:36,400
+me<font color="#E5E5E5"> just intercept this request</font>
+
+100
+00:04:36,400 --> 00:04:38,599
+<font color="#E5E5E5">tutorialspoint.com and here you can see</font>
+
+101
+00:04:38,599 --> 00:04:40,879
+<font color="#CCCCCC">I have requested tutorialspoint.com and</font>
+
+102
+00:04:40,879 --> 00:04:43,099
+it's<font color="#E5E5E5"> waiting now let me open</font><font color="#CCCCCC"> my</font><font color="#E5E5E5"> Bob</font>
+
+103
+00:04:43,099 --> 00:04:47,180
+<font color="#CCCCCC">suite and okay this one is the</font><font color="#E5E5E5"> request</font>
+
+104
+00:04:47,180 --> 00:04:50,300
+of<font color="#E5E5E5"> clients dot Google com let me just</font>
+
+105
+00:04:50,300 --> 00:04:53,270
+<font color="#E5E5E5">forward it up okay</font><font color="#CCCCCC"> and here you can</font><font color="#E5E5E5"> see</font>
+
+106
+00:04:53,270 --> 00:04:56,750
+the entire<font color="#E5E5E5"> request so HTTP method is get</font>
+
+107
+00:04:56,750 --> 00:04:59,389
+<font color="#CCCCCC">it's an HTTP version</font><font color="#E5E5E5"> host is</font>
+
+108
+00:04:59,389 --> 00:05:01,759
+tutorialspoint.com<font color="#CCCCCC"> and here you</font><font color="#E5E5E5"> can also</font>
+
+109
+00:05:01,759 --> 00:05:04,460
+check<font color="#CCCCCC"> the user agent</font><font color="#E5E5E5"> and if you just</font>
+
+110
+00:05:04,460 --> 00:05:06,770
+click<font color="#E5E5E5"> on headers you can see here the</font>
+
+111
+00:05:06,770 --> 00:05:09,169
+header name and its value and if you
+
+112
+00:05:09,169 --> 00:05:10,909
+just want to<font color="#E5E5E5"> see the hex value</font><font color="#CCCCCC"> of this</font>
+
+113
+00:05:10,909 --> 00:05:16,400
+request<font color="#CCCCCC"> so here is the hex value and if</font>
+
+114
+00:05:16,400 --> 00:05:18,860
+you just click<font color="#E5E5E5"> on forward then it</font><font color="#CCCCCC"> will</font>
+
+115
+00:05:18,860 --> 00:05:20,599
+forward<font color="#CCCCCC"> our request</font><font color="#E5E5E5"> otherwise you will</font>
+
+116
+00:05:20,599 --> 00:05:25,969
+just<font color="#CCCCCC"> click</font><font color="#E5E5E5"> on drop then it will here you</font>
+
+117
+00:05:25,969 --> 00:05:28,159
+can see that our request<font color="#E5E5E5"> is dropped by</font>
+
+118
+00:05:28,159 --> 00:05:33,979
+user Bob sweet error now by<font color="#E5E5E5"> default the</font>
+
+119
+00:05:33,979 --> 00:05:36,110
+<font color="#E5E5E5">Bob</font><font color="#CCCCCC"> sweet is configured to intercept the</font>
+
+120
+00:05:36,110 --> 00:05:39,589
+<font color="#CCCCCC">request</font><font color="#E5E5E5"> which is</font><font color="#CCCCCC"> using HTTP protocol now</font>
+
+121
+00:05:39,589 --> 00:05:41,539
+what if if a<font color="#E5E5E5"> particular website</font><font color="#CCCCCC"> is</font>
+
+122
+00:05:41,539 --> 00:05:44,419
+running on<font color="#CCCCCC"> HTTPS then our Bob suite will</font>
+
+123
+00:05:44,419 --> 00:05:47,120
+unable to intercept the request<font color="#E5E5E5"> so to</font>
+
+124
+00:05:47,120 --> 00:05:49,430
+configure the Bob<font color="#E5E5E5"> suite to intercept the</font>
+
+125
+00:05:49,430 --> 00:05:52,639
+HTTP<font color="#E5E5E5"> request so what we can do is we</font>
+
+126
+00:05:52,639 --> 00:05:54,050
+have to<font color="#CCCCCC"> install Bob</font><font color="#E5E5E5"> Suites our</font>
+
+127
+00:05:54,050 --> 00:05:57,409
+certificate<font color="#E5E5E5"> so in the URL</font><font color="#CCCCCC"> bar</font><font color="#E5E5E5"> just write</font>
+
+128
+00:05:57,409 --> 00:06:01,639
+down<font color="#CCCCCC"> HTTP but hit enter and</font><font color="#E5E5E5"> here you can</font>
+
+129
+00:06:01,639 --> 00:06:04,099
+<font color="#E5E5E5">see the Bob sweet menu and on the right</font>
+
+130
+00:06:04,099 --> 00:06:05,930
+hand<font color="#CCCCCC"> side at the top you can</font><font color="#E5E5E5"> see</font><font color="#CCCCCC"> here</font>
+
+131
+00:06:05,930 --> 00:06:08,150
+<font color="#E5E5E5">see a certificate so click on this link</font>
+
+132
+00:06:08,150 --> 00:06:12,289
+<font color="#E5E5E5">and here is the Bob certificate so just</font>
+
+133
+00:06:12,289 --> 00:06:17,689
+save this file and open<font color="#E5E5E5"> this file so</font>
+
+134
+00:06:17,689 --> 00:06:19,370
+this is the Bob sweet certificate you
+
+135
+00:06:19,370 --> 00:06:21,529
+can<font color="#E5E5E5"> see here so and if</font><font color="#CCCCCC"> you just want to</font>
+
+136
+00:06:21,529 --> 00:06:24,020
+<font color="#E5E5E5">look at the detail you can so this</font>
+
+137
+00:06:24,020 --> 00:06:26,180
+certificate is verified<font color="#CCCCCC"> and issued by</font>
+
+138
+00:06:26,180 --> 00:06:28,969
+ports figure which is<font color="#CCCCCC"> the company that</font>
+
+139
+00:06:28,969 --> 00:06:32,229
+<font color="#E5E5E5">maintains the Bob sweet</font>
+
+140
+00:06:32,520 --> 00:06:34,500
+and if I scroll<font color="#CCCCCC"> down you can see the</font>
+
+141
+00:06:34,500 --> 00:06:37,139
+issuer name issuer country then
+
+142
+00:06:37,139 --> 00:06:39,660
+certificate serial number certificate
+
+143
+00:06:39,660 --> 00:06:41,669
+fingerprints<font color="#E5E5E5"> along with it hashes and</font>
+
+144
+00:06:41,669 --> 00:06:44,190
+here you can see the fingerprint of
+
+145
+00:06:44,190 --> 00:06:49,009
+public key<font color="#E5E5E5"> now just click on import and</font>
+
+146
+00:06:49,009 --> 00:06:53,849
+we have<font color="#CCCCCC"> two right here password okay</font>
+
+147
+00:06:53,849 --> 00:06:57,180
+click on<font color="#E5E5E5"> OK and here you can see that</font>
+
+148
+00:06:57,180 --> 00:06:59,930
+our certificate is successfully imported
+
+149
+00:06:59,930 --> 00:07:02,660
+<font color="#E5E5E5">let me just close the certificate now</font>
+
+150
+00:07:02,660 --> 00:07:05,849
+and let<font color="#E5E5E5"> me just write here tutorial</font>
+
+151
+00:07:05,849 --> 00:07:09,419
+<font color="#CCCCCC">smart</font><font color="#E5E5E5"> again let me just forward is</font>
+
+152
+00:07:09,419 --> 00:07:13,490
+forward this request<font color="#CCCCCC"> ok here</font><font color="#E5E5E5"> you can see</font>
+
+153
+00:07:13,490 --> 00:07:18,120
+it still HTTP<font color="#E5E5E5"> request no</font><font color="#CCCCCC"> HTTP here you</font>
+
+154
+00:07:18,120 --> 00:07:20,729
+can see it says TTP<font color="#E5E5E5"> but forward this and</font>
+
+155
+00:07:20,729 --> 00:07:23,759
+it will<font color="#E5E5E5"> be redirected to the</font><font color="#CCCCCC"> HTTPS you</font>
+
+156
+00:07:23,759 --> 00:07:26,870
+have to wait for a time being
+
+157
+00:07:40,099 --> 00:07:43,020
+<font color="#E5E5E5">okay so this will give this error so</font>
+
+158
+00:07:43,020 --> 00:07:47,629
+click<font color="#E5E5E5"> on advanced and add exception</font>
+
+159
+00:07:47,960 --> 00:07:52,159
+click on confirm security exception<font color="#E5E5E5"> and</font>
+
+160
+00:07:52,159 --> 00:07:55,590
+now here you<font color="#CCCCCC"> can</font><font color="#E5E5E5"> see that our Bob</font><font color="#CCCCCC"> suite</font>
+
+161
+00:07:55,590 --> 00:07:57,990
+can<font color="#E5E5E5"> intercept HTTP traffic</font><font color="#CCCCCC"> here you can</font>
+
+162
+00:07:57,990 --> 00:08:00,560
+see the<font color="#CCCCCC"> HTTPS along with</font><font color="#E5E5E5"> this</font><font color="#CCCCCC"> lock sign</font>
+
+163
+00:08:00,560 --> 00:08:03,120
+and if you just want<font color="#CCCCCC"> to look</font><font color="#E5E5E5"> at its</font>
+
+164
+00:08:03,120 --> 00:08:09,360
+header<font color="#E5E5E5"> you can click on forward</font><font color="#CCCCCC"> and here</font>
+
+165
+00:08:09,360 --> 00:08:12,120
+is the HTTP<font color="#CCCCCC"> website so the same thing</font>
+
+166
+00:08:12,120 --> 00:08:13,919
+you can<font color="#CCCCCC"> do in order</font><font color="#E5E5E5"> to intercept the</font>
+
+167
+00:08:13,919 --> 00:08:15,810
+<font color="#CCCCCC">request of Facebook or any other social</font>
+
+168
+00:08:15,810 --> 00:08:18,240
+<font color="#CCCCCC">website or any other website which</font>
+
+169
+00:08:18,240 --> 00:08:23,310
+<font color="#E5E5E5">running on HTTPS and here if you just go</font>
+
+170
+00:08:23,310 --> 00:08:26,630
+to STP history you can see<font color="#CCCCCC"> the our</font>
+
+171
+00:08:26,630 --> 00:08:30,120
+recent<font color="#E5E5E5"> stdp request which</font><font color="#CCCCCC"> was made by</font>
+
+172
+00:08:30,120 --> 00:08:38,279
+<font color="#CCCCCC">the user</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> let</font><font color="#E5E5E5"> me just turn off it</font>
+
+173
+00:08:38,279 --> 00:08:41,370
+intercept and close the<font color="#E5E5E5"> Bob</font><font color="#CCCCCC"> suite so</font>
+
+174
+00:08:41,370 --> 00:08:44,570
+once we close a Bob<font color="#CCCCCC"> suite</font><font color="#E5E5E5"> and if I</font><font color="#CCCCCC"> just</font>
+
+175
+00:08:44,570 --> 00:08:47,220
+open any<font color="#CCCCCC"> web site</font><font color="#E5E5E5"> you will see</font><font color="#CCCCCC"> the proxy</font>
+
+176
+00:08:47,220 --> 00:08:49,410
+service<font color="#E5E5E5"> is refusing the connections so</font>
+
+177
+00:08:49,410 --> 00:08:51,300
+this we will<font color="#E5E5E5"> see this error</font>
+
+178
+00:08:51,300 --> 00:08:54,779
+whenever<font color="#E5E5E5"> Bob speed is not running so we</font>
+
+179
+00:08:54,779 --> 00:08:57,660
+have to change our<font color="#CCCCCC"> settings again</font><font color="#E5E5E5"> back</font>
+
+180
+00:08:57,660 --> 00:09:00,990
+to<font color="#E5E5E5"> use system proxy now this will</font><font color="#CCCCCC"> work</font>
+
+181
+00:09:00,990 --> 00:09:04,310
+<font color="#E5E5E5">here you can see</font>
+
+182
+00:09:08,560 --> 00:09:10,120
+<font color="#CCCCCC">despite the short</font><font color="#E5E5E5"> introduction of Bob</font>
+
+183
+00:09:10,120 --> 00:09:12,210
+sweet
+
+184
+00:09:12,210 --> 00:00:00,000
+so thanks<font color="#E5E5E5"> for watching</font><font color="#CCCCCC"> this video</font>
+

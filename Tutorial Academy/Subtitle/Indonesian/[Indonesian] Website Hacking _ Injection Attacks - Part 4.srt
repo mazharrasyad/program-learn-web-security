@@ -1,0 +1,2000 @@
+1
+00:00:13,139 --> 00:00:16,519
+ selamat datang di <font color="#E5E5E5">modul 12 </font>
+
+2
+00:00:17,590 --> 00:00:19,540
+ dalam modul ini kita akan membahas secara <font color="#CCCCCC">langsung </font>
+
+3
+00:00:19,540 --> 00:00:22,270
+ <font color="#E5E5E5">serangan kode injeksi statis </font><font color="#CCCCCC">langsung </font>
+
+4
+00:00:22,270 --> 00:00:24,250
+ kerentanan injeksi kode statis <font color="#CCCCCC">adalah </font>
+
+5
+00:00:24,250 --> 00:00:26,380
+ contoh khusus dari <font color="#E5E5E5">injeksi PHP </font>
+
+6
+00:00:26,380 --> 00:00:29,560
+ cacat itu terjadi <font color="#E5E5E5">ketika pengguna </font><font color="#CCCCCC">dapat </font>
+
+7
+00:00:29,560 --> 00:00:31,599
+ <font color="#E5E5E5">mempengaruhi kelulusan data ke file yang </font><font color="#CCCCCC">disimpan </font>
+
+8
+00:00:31,599 --> 00:00:33,670
+ sisi server <font color="#E5E5E5">tempat file lebih jauh </font>
+
+9
+00:00:33,670 --> 00:00:41,050
+ diproses <font color="#CCCCCC">oleh </font><font color="#E5E5E5">interpreter mari PHP </font>
+
+10
+00:00:41,050 --> 00:00:42,760
+ lihat contoh yang <font color="#E5E5E5">dirancang untuk </font>
+
+11
+00:00:42,760 --> 00:00:48,340
+ ilustrasikan <font color="#E5E5E5">ini file berisi a </font>
+
+12
+00:00:48,340 --> 00:00:50,140
+ <font color="#E5E5E5">skrip sederhana yang mencatat pengunjung </font>
+
+13
+00:00:50,140 --> 00:00:55,170
+ parameter <font color="#CCCCCC">file </font><font color="#E5E5E5">adalah sisi server terbuka </font>
+
+14
+00:00:55,170 --> 00:00:57,730
+ selanjutnya skrip menulis data ke <font color="#E5E5E5">file </font>
+
+15
+00:00:57,730 --> 00:01:00,399
+ seperti <font color="#E5E5E5">panjang sesi agen </font><font color="#CCCCCC">pengguna </font><font color="#E5E5E5">dan </font>
+
+16
+00:01:00,399 --> 00:01:07,420
+ Tanggal dan waktu alamat IP dihasilkan oleh 
+
+17
+00:01:07,420 --> 00:01:10,720
+ <font color="#E5E5E5">juru bahasa PHP </font><font color="#CCCCCC">alamat </font><font color="#E5E5E5">IP </font>
+
+18
+00:01:10,720 --> 00:01:12,880
+ dirujuk oleh <font color="#E5E5E5">server web yang berarti </font>
+
+19
+00:01:12,880 --> 00:01:14,590
+ bahwa kedua nilai-nilai akan <font color="#CCCCCC">memiliki </font><font color="#E5E5E5">ditentukan </font>
+
+20
+00:01:14,590 --> 00:01:17,110
+ memformat agen pengguna di sisi lain mungkin 
+
+21
+00:01:17,110 --> 00:01:21,700
+ tahan format apa pun <font color="#E5E5E5">karena Anda dapat melihat masukan </font>
+
+22
+00:01:21,700 --> 00:01:24,009
+ <font color="#E5E5E5">tidak difilter </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">dicatat secara langsung </font>
+
+23
+00:01:24,009 --> 00:01:31,179
+ file sekarang mari kita lihat <font color="#CCCCCC">file </font>
+
+24
+00:01:31,179 --> 00:01:34,780
+ <font color="#CCCCCC">digunakan untuk menjelajahi </font><font color="#E5E5E5">log database kami </font>
+
+25
+00:01:34,780 --> 00:01:36,550
+ File yang memegang rekor pengunjung <font color="#CCCCCC">adalah </font>
+
+26
+00:01:36,550 --> 00:01:43,209
+ ditambahkan ke <font color="#E5E5E5">tampilan log PHP yang disertakan </font>
+
+27
+00:01:43,209 --> 00:01:45,099
+ fungsi mem-parsing file dan mengeksekusi 
+
+28
+00:01:45,099 --> 00:01:50,349
+ <font color="#E5E5E5">kode PHP yang disematkan dapat Anda lihat di sini </font>
+
+29
+00:01:50,349 --> 00:01:55,149
+ entri sampel database mari kita lihat sekarang 
+
+30
+00:01:55,149 --> 00:01:58,619
+ bagaimana naskah bekerja dalam praktek 
+
+31
+00:02:02,750 --> 00:02:05,870
+ [Musik] 
+
+32
+00:02:05,960 --> 00:02:08,090
+ Anda dapat melihat file telah login <font color="#E5E5E5">sebuah </font>
+
+33
+00:02:08,090 --> 00:02:09,619
+ entri yang berisi riwayat sesi kami 
+
+34
+00:02:09,619 --> 00:02:12,380
+ <font color="#E5E5E5">panjang sesi </font><font color="#CCCCCC">alamat IP </font><font color="#E5E5E5">dan pengguna </font>
+
+35
+00:02:12,380 --> 00:02:19,490
+ agen sekarang mari gunakan HTTP langsung 
+
+36
+00:02:19,490 --> 00:02:21,470
+ header add-on <font color="#E5E5E5">yang memungkinkan Anda untuk melakukannya </font>
+
+37
+00:02:21,470 --> 00:02:24,620
+ memodifikasi permintaan HTTP <font color="#E5E5E5">dan juga membuatnya </font>
+
+38
+00:02:24,620 --> 00:02:28,600
+ <font color="#E5E5E5">mungkin untuk mengubah string agen pengguna </font>
+
+39
+00:02:28,900 --> 00:02:31,580
+ pertama buka halaman lagi agar tetap hidup 
+
+40
+00:02:31,580 --> 00:02:35,950
+ Header HTTP <font color="#E5E5E5">dapat menangkap </font><font color="#CCCCCC">permintaan </font>
+
+41
+00:02:55,370 --> 00:02:57,349
+ menghasilkan permintaan baru berdasarkan pada 
+
+42
+00:02:57,349 --> 00:03:00,920
+ kueri yang ditangkap <font color="#E5E5E5">karena Anda dapat melihat semua data </font>
+
+43
+00:03:00,920 --> 00:03:02,750
+ <font color="#CCCCCC">dapat </font><font color="#E5E5E5">bebas dirusak dengan sebelum itu </font>
+
+44
+00:03:02,750 --> 00:03:03,739
+ dikirim ke <font color="#CCCCCC">server web </font>
+
+45
+00:03:03,739 --> 00:03:06,019
+ memberi kami kesempatan <font color="#CCCCCC">untuk memanipulasi </font>
+
+46
+00:03:06,019 --> 00:03:13,010
+ header mari kita coba untuk membuat yang <font color="#E5E5E5">berikut ini </font>
+
+47
+00:03:13,010 --> 00:03:15,849
+ mencatat ke dalam basis data kami 
+
+48
+00:03:30,580 --> 00:03:33,709
+ seperti <font color="#E5E5E5">yang Anda lihat tidak ada pesan kesalahan </font><font color="#CCCCCC">telah </font>
+
+49
+00:03:33,709 --> 00:03:36,260
+ ditampilkan <font color="#E5E5E5">mari kita lihat di </font>
+
+50
+00:03:36,260 --> 00:03:42,069
+ database Anda <font color="#E5E5E5">bisa lihat di sini </font><font color="#CCCCCC">string PHP </font><font color="#E5E5E5">kami </font>
+
+51
+00:03:42,069 --> 00:03:44,420
+ mari kita cari tahu bagaimana file akan mempengaruhi 
+
+52
+00:03:44,420 --> 00:03:48,549
+ perilaku <font color="#CCCCCC">skrip PHP tampilan log </font>
+
+53
+00:03:55,020 --> 00:03:57,690
+ kode PHP yang disuntikkan telah <font color="#CCCCCC">dieksekusi </font>
+
+54
+00:03:57,690 --> 00:03:59,010
+ seperti yang diperkirakan 
+
+55
+00:03:59,010 --> 00:04:02,150
+ [Musik] 
+
+56
+00:04:06,220 --> 00:04:09,340
+ [Musik] 
+
+57
+00:04:09,900 --> 00:04:11,730
+ apa yang bisa <font color="#CCCCCC">dilakukan untuk menghindari </font>
+
+58
+00:04:11,730 --> 00:04:13,610
+ <font color="#CCCCCC">eksploitasi kerentanan </font><font color="#E5E5E5">ini </font>
+
+59
+00:04:13,610 --> 00:04:16,290
+ <font color="#E5E5E5">pertama diingat bahwa parameter suka </font>
+
+60
+00:04:16,290 --> 00:04:19,589
+ Agen pengguna HTTP masukan pengguna kami dan 
+
+61
+00:04:19,589 --> 00:04:22,079
+ <font color="#E5E5E5">tidak dapat diandalkan karena dapat disembunyikan </font>
+
+62
+00:04:22,079 --> 00:04:26,970
+ script berbahaya kedua <font color="#E5E5E5">ingat </font><font color="#CCCCCC">itu </font>
+
+63
+00:04:26,970 --> 00:04:28,650
+ fungsi include digunakan untuk 
+
+64
+00:04:28,650 --> 00:04:30,810
+ termasuk file yang berisi kode PHP 
+
+65
+00:04:30,810 --> 00:04:33,000
+ Karena tujuan kami di sini <font color="#CCCCCC">hanyalah untuk </font>
+
+66
+00:04:33,000 --> 00:04:35,100
+ <font color="#E5E5E5">menampilkan isi file tersebut </font>
+
+67
+00:04:35,100 --> 00:04:37,199
+ termasuk fungsi <font color="#CCCCCC">tidak penting Anda </font>
+
+68
+00:04:37,199 --> 00:04:39,030
+ bisa menggantinya <font color="#E5E5E5">dengan file echo </font>
+
+69
+00:04:39,030 --> 00:04:42,960
+ isi panggilan mari kita lihat bagaimana ini mempengaruhi 
+
+70
+00:04:42,960 --> 00:04:46,340
+ <font color="#CCCCCC">fungsi </font><font color="#E5E5E5">dari skrip kita </font>
+
+71
+00:04:55,910 --> 00:04:59,780
+ seperti yang bisa kita lihat kode PHP <font color="#E5E5E5">telah </font>
+
+72
+00:04:59,780 --> 00:05:02,390
+ <font color="#E5E5E5">ditampilkan tetapi belum </font><font color="#CCCCCC">dieksekusi </font>
+
+73
+00:05:02,390 --> 00:05:04,070
+ ini cukup untuk mengamankan diri <font color="#E5E5E5">dari </font>
+
+74
+00:05:04,070 --> 00:05:07,460
+ Serangan sayangnya tidak <font color="#E5E5E5">jika kodenya </font>
+
+75
+00:05:07,460 --> 00:05:09,740
+ ditampilkan hanya <font color="#E5E5E5">peretas yang mungkin menyuntikkan </font>
+
+76
+00:05:09,740 --> 00:05:12,440
+ kode gambar alih-alih PHP yang menghasilkan 
+
+77
+00:05:12,440 --> 00:05:21,770
+ serangan XSS mari kita coba untuk mensimulasikan ini 
+
+78
+00:05:21,770 --> 00:05:24,250
+ skenario 
+
+79
+00:05:42,699 --> 00:05:45,859
+ untuk melakukan ini <font color="#E5E5E5">membuat sedikit </font><font color="#CCCCCC">perubahan dalam </font>
+
+80
+00:05:45,859 --> 00:05:48,219
+ <font color="#E5E5E5">permintaan </font>
+
+81
+00:05:55,280 --> 00:05:58,400
+ [Musik] 
+
+82
+00:06:02,460 --> 00:06:05,589
+ [Musik] 
+
+83
+00:06:06,050 --> 00:06:08,900
+ <font color="#E5E5E5">database kami sekarang berisi </font><font color="#CCCCCC">kode </font><font color="#E5E5E5">HTML </font><font color="#CCCCCC">dengan </font>
+
+84
+00:06:08,900 --> 00:06:11,840
+ <font color="#E5E5E5">JavaScript mari kita lihat apakah ini mempengaruhi </font>
+
+85
+00:06:11,840 --> 00:06:14,440
+ <font color="#CCCCCC">membaca log </font>
+
+86
+00:06:26,169 --> 00:06:28,479
+ seperti yang bisa kita lihat <font color="#CCCCCC">kode </font><font color="#E5E5E5">JavaScript </font>
+
+87
+00:06:28,479 --> 00:06:30,099
+ <font color="#CCCCCC">dieksekusi yang menjadikan ini sebuah </font>
+
+88
+00:06:30,099 --> 00:06:31,840
+ <font color="#E5E5E5">contoh skrip lintas situs </font>
+
+89
+00:06:31,840 --> 00:06:35,379
+ menyerang jenis serangan <font color="#CCCCCC">seperti ini </font>
+
+90
+00:06:35,379 --> 00:06:37,659
+ dibahas secara lebih <font color="#E5E5E5">rinci dalam </font><font color="#CCCCCC">modul 14 </font>
+
+91
+00:06:37,659 --> 00:06:40,449
+ <font color="#E5E5E5">untuk sekarang ingat </font><font color="#CCCCCC">jangan pernah meremehkan </font>
+
+92
+00:06:40,449 --> 00:06:42,699
+ <font color="#E5E5E5">risiko terhubung dengan pengguna yang tidak memadai </font>
+
+93
+00:06:42,699 --> 00:06:46,389
+ masukan parsing kita bisa menggunakan HTML 
+
+94
+00:06:46,389 --> 00:06:48,099
+ <font color="#E5E5E5">mobil khusus </font><font color="#CCCCCC">berfungsi untuk mengkonversi </font>
+
+95
+00:06:48,099 --> 00:06:50,199
+ karakter yang digunakan dalam tag HTML ke dalam 
+
+96
+00:06:50,199 --> 00:06:52,270
+ entitas yang ditampilkan tetapi tidak 
+
+97
+00:06:52,270 --> 00:06:53,370
+ ditafsirkan 
+
+98
+00:06:53,370 --> 00:06:56,509
+ [Musik] 
+
+99
+00:07:19,670 --> 00:07:22,020
+ mari kita lihat bagaimana script akan berperilaku 
+
+100
+00:07:22,020 --> 00:07:25,740
+ <font color="#E5E5E5">situasi ini menghapus data </font><font color="#CCCCCC">edit </font><font color="#E5E5E5">dari </font>
+
+101
+00:07:25,740 --> 00:07:28,110
+ database <font color="#CCCCCC">dan jalankan </font><font color="#E5E5E5">HTML </font><font color="#CCCCCC">lain </font>
+
+102
+00:07:28,110 --> 00:07:30,290
+ permintaan 
+
+103
+00:07:51,510 --> 00:07:54,630
+ [Musik] 
+
+104
+00:07:58,720 --> 00:08:00,740
+ [Musik] 
+
+105
+00:08:00,740 --> 00:08:03,020
+ seperti yang Anda lihat <font color="#E5E5E5">karakter khusus miliki </font>
+
+106
+00:08:03,020 --> 00:08:05,599
+ <font color="#CCCCCC">dikonversi menjadi </font><font color="#E5E5E5">entitas HTML </font>
+
+107
+00:08:05,599 --> 00:08:07,729
+ ditampilkan di <font color="#CCCCCC">halaman tetapi JavaScript </font>
+
+108
+00:08:07,729 --> 00:08:10,970
+ kode belum <font color="#E5E5E5">dieksekusi yang berarti </font>
+
+109
+00:08:10,970 --> 00:08:12,259
+ bahwa kami berhasil <font color="#CCCCCC">berhasil </font>
+
+110
+00:08:12,259 --> 00:08:14,000
+ <font color="#E5E5E5">melindungi diri terhadap kode </font>
+
+111
+00:08:14,000 --> 00:08:16,699
+ <font color="#E5E5E5">kerentanan injeksi itu semua </font>
+
+112
+00:08:16,699 --> 00:08:19,370
+ modul 12 <font color="#E5E5E5">terima kasih </font><font color="#CCCCCC">atas </font><font color="#E5E5E5">perhatian </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">dan </font>
+
+113
+00:08:19,370 --> 00:08:21,319
+ <font color="#CCCCCC">sampai jumpa </font><font color="#E5E5E5">di modul berikutnya yang akan </font>
+
+114
+00:08:21,319 --> 00:08:26,139
+ fokus <font color="#E5E5E5">pada injeksi SQL sampai jumpa di sana </font>
+
+115
+00:08:31,620 --> 00:08:34,380
+ selamat datang di modul <font color="#E5E5E5">13 modul </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">akan </font>
+
+116
+00:08:34,380 --> 00:08:37,500
+ fokus pada <font color="#E5E5E5">banyak web injeksi SQL </font>
+
+117
+00:08:37,500 --> 00:08:39,510
+ aplikasi <font color="#CCCCCC">saat ini menggunakan basis data </font>
+
+118
+00:08:39,510 --> 00:08:43,890
+ untuk <font color="#E5E5E5">menyimpan data jika itu adalah kasus SQL </font>
+
+119
+00:08:43,890 --> 00:08:45,840
+ pertanyaan harus menjadi <font color="#E5E5E5">bagian integral </font><font color="#CCCCCC">dari </font>
+
+120
+00:08:45,840 --> 00:08:48,360
+ aplikasi ini query SQL digunakan 
+
+121
+00:08:48,360 --> 00:08:50,520
+ untuk mengambil <font color="#CCCCCC">dan melakukan pra-proses spesifik </font>
+
+122
+00:08:50,520 --> 00:08:54,150
+ data disimpan dalam database situs <font color="#E5E5E5">ini </font>
+
+123
+00:08:54,150 --> 00:08:56,280
+ kueri sering dibuat secara dinamis 
+
+124
+00:08:56,280 --> 00:08:58,260
+ <font color="#E5E5E5">menggunakan parameter input yang dilewatkan </font>
+
+125
+00:08:58,260 --> 00:09:02,700
+ dapatkan dan posting metode <font color="#E5E5E5">SQL </font>
+
+126
+00:09:02,700 --> 00:09:04,410
+ <font color="#E5E5E5">kerentanan injeksi terjadi saat </font>
+
+127
+00:09:04,410 --> 00:09:06,450
+ pengguna dapat memanipulasi <font color="#E5E5E5">konten akhir </font>
+
+128
+00:09:06,450 --> 00:09:12,960
+ dari kueri SQL yang dijalankan lihatlah 
+
+129
+00:09:12,960 --> 00:09:14,430
+ skrip sampel yang <font color="#E5E5E5">dirancang untuk mengilustrasikan </font>
+
+130
+00:09:14,430 --> 00:09:17,820
+ <font color="#E5E5E5">ini halaman pertama yang akan kita diskusikan adalah a </font>
+
+131
+00:09:17,820 --> 00:09:19,800
+ <font color="#CCCCCC">formulir masuk sederhana yang pertama terhubung </font>
+
+132
+00:09:19,800 --> 00:09:22,460
+ ke <font color="#E5E5E5">database </font>
+
+133
+00:09:23,520 --> 00:09:26,630
+ [Musik] 
+
+134
+00:09:30,880 --> 00:09:34,540
+ <font color="#CCCCCC">formulir ditampilkan jika formulir </font><font color="#E5E5E5">adalah </font>
+
+135
+00:09:34,540 --> 00:09:36,730
+ diteruskan ke <font color="#CCCCCC">skrip </font><font color="#E5E5E5">sebuah query SQL </font>
+
+136
+00:09:36,730 --> 00:09:38,350
+ dihasilkan yang <font color="#E5E5E5">mengambil sesuai </font>
+
+137
+00:09:38,350 --> 00:09:40,270
+ catatan basis data untuk <font color="#E5E5E5">pengguna yang diajukan </font>
+
+138
+00:09:40,270 --> 00:09:44,260
+ kredensial <font color="#E5E5E5">jika operasi </font><font color="#CCCCCC">ini </font>
+
+139
+00:09:44,260 --> 00:09:46,120
+ sukses <font color="#E5E5E5">akan </font><font color="#CCCCCC">pesan yang sesuai </font>
+
+140
+00:09:46,120 --> 00:09:49,420
+ ditampilkan <font color="#CCCCCC">jika gagal </font><font color="#E5E5E5">yang sesuai </font>
+
+141
+00:09:49,420 --> 00:09:52,620
+ pesan <font color="#E5E5E5">akan muncul </font><font color="#CCCCCC">kepada pengguna </font>
+
+142
+00:10:03,670 --> 00:10:07,200
+ mari kita lihat bagaimana naskah bekerja 
+
+143
+00:10:19,880 --> 00:10:21,650
+ ini <font color="#CCCCCC">skrip login </font>
+
+144
+00:10:21,650 --> 00:10:24,750
+ [Musik] 
+
+145
+00:10:27,980 --> 00:10:29,900
+ kami berhasil <font color="#E5E5E5">masuk karena </font>
+
+146
+00:10:29,900 --> 00:10:31,820
+ <font color="#CCCCCC">database </font><font color="#E5E5E5">berisi catatan untuk </font>
+
+147
+00:10:31,820 --> 00:10:34,400
+ <font color="#E5E5E5">pengguna admin memegang kata sandi tes sekarang </font>
+
+148
+00:10:34,400 --> 00:10:45,220
+ masukkan <font color="#E5E5E5">kredensial pengguna yang tidak valid sebagai </font>
+
+149
+00:10:45,220 --> 00:10:50,090
+ mengharapkan info masuk gagal <font color="#E5E5E5">terkirim </font>
+
+150
+00:10:50,090 --> 00:10:52,490
+ <font color="#E5E5E5">bahwa data yang diberikan pengguna tidak difilter </font>
+
+151
+00:10:52,490 --> 00:10:57,140
+ atau divalidasi dengan cara apa pun artinya 
+
+152
+00:10:57,140 --> 00:10:58,910
+ <font color="#E5E5E5">bahwa pengguna memiliki kendali atas hasilnya </font>
+
+153
+00:10:58,910 --> 00:11:02,930
+ Kueri SQL mencoba <font color="#E5E5E5">memikirkan apa yang potensial </font>
+
+154
+00:11:02,930 --> 00:11:06,340
+ <font color="#E5E5E5">penyerang bisa melakukan dalam situasi ini </font>
+
+155
+00:11:06,340 --> 00:11:08,540
+ mari kita lihat apa yang akan <font color="#CCCCCC">terjadi jika </font>
+
+156
+00:11:08,540 --> 00:11:11,590
+ <font color="#E5E5E5">data berikut dikirim </font>
+
+157
+00:11:19,770 --> 00:11:22,890
+ [Musik] 
+
+158
+00:11:27,330 --> 00:11:29,500
+ sementara <font color="#E5E5E5">kredensial ini tentu saja </font>
+
+159
+00:11:29,500 --> 00:11:32,260
+ tidak valid <font color="#E5E5E5">mengubah hasil query SQL </font>
+
+160
+00:11:32,260 --> 00:11:39,340
+ dalam proses <font color="#CCCCCC">masuk yang sukses, lihatlah </font>
+
+161
+00:11:39,340 --> 00:11:41,790
+ <font color="#E5E5E5">contoh lain </font>
+
+162
+00:11:51,280 --> 00:11:53,380
+ kita bisa lihat di sini <font color="#CCCCCC">aplikasi</font><font color="#E5E5E5"> sederhana </font>
+
+163
+00:11:53,380 --> 00:11:55,930
+ <font color="#E5E5E5">yang memuat artikel menggunakan pengenal </font>
+
+164
+00:11:55,930 --> 00:12:00,910
+ <font color="#CCCCCC">melewati mendapatkan ID 1 memegang nilai a </font>
+
+165
+00:12:00,910 --> 00:12:03,130
+ contoh artikel dengan <font color="#E5E5E5">tes konten </font>
+
+166
+00:12:03,130 --> 00:12:12,460
+ artikel mari kita lihat apa yang akan terjadi <font color="#CCCCCC">jika </font><font color="#E5E5E5">kita </font>
+
+167
+00:12:12,460 --> 00:12:15,690
+ ubah kueri sedikit 
+
+168
+00:12:17,900 --> 00:12:21,020
+ [Musik] 
+
+169
+00:12:23,820 --> 00:12:26,070
+ karena tidak ada konten yang ditampilkan 
+
+170
+00:12:26,070 --> 00:12:27,570
+ mungkin berasumsi bahwa <font color="#E5E5E5">aplikasi tersebut </font>
+
+171
+00:12:27,570 --> 00:12:29,870
+ rentan <font color="#CCCCCC">terhadap serangan injeksi SQL </font>
+
+172
+00:12:29,870 --> 00:12:32,540
+ <font color="#E5E5E5">mari coba verifikasi jika ini kasusnya </font>
+
+173
+00:12:32,540 --> 00:12:36,540
+ <font color="#CCCCCC">tambahkan string yang akan membentuk </font>
+
+174
+00:12:36,540 --> 00:12:38,700
+ pengenal tidak valid tetapi yang <font color="#E5E5E5">tidak </font>
+
+175
+00:12:38,700 --> 00:12:41,010
+ <font color="#E5E5E5">mengubah perilaku kueri SQL di </font>
+
+176
+00:12:41,010 --> 00:12:43,880
+ yang ditempatkan 
+
+177
+00:12:53,910 --> 00:12:56,160
+ <font color="#E5E5E5">karena kami dapat melihat pendekatan telah berhasil </font>
+
+178
+00:12:56,160 --> 00:12:58,590
+ <font color="#E5E5E5">ini menegaskan kecurigaan kami, kami mungkin </font>
+
+179
+00:12:58,590 --> 00:13:01,070
+ bebas mengubah akhir dari permintaan SQL 
+
+180
+00:13:01,070 --> 00:13:04,140
+ <font color="#E5E5E5">masih kita perlu mencari tahu tabel mana </font>
+
+181
+00:13:04,140 --> 00:13:06,420
+ <font color="#E5E5E5">kueri berfungsi </font><font color="#CCCCCC">dalam </font><font color="#E5E5E5">berapa banyak kolom </font>
+
+182
+00:13:06,420 --> 00:13:10,350
+ tabel memiliki dengan <font color="#CCCCCC">menggunakan pesanan dengan kata kunci </font>
+
+183
+00:13:10,350 --> 00:13:12,360
+ digunakan <font color="#E5E5E5">untuk mengurutkan catatan </font><font color="#CCCCCC">yang </font><font color="#E5E5E5">mungkin </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">temukan </font>
+
+184
+00:13:12,360 --> 00:13:14,490
+ jumlah <font color="#CCCCCC">kolom yang dikembalikan oleh SQL </font>
+
+185
+00:13:14,490 --> 00:13:17,820
+ urutan kueri oleh mungkin digunakan <font color="#E5E5E5">untuk menentukan </font>
+
+186
+00:13:17,820 --> 00:13:20,070
+ <font color="#E5E5E5">jumlah kolom dengan kolom mana </font>
+
+187
+00:13:20,070 --> 00:13:23,850
+ akan <font color="#E5E5E5">memerintahkan jika </font><font color="#CCCCCC">angkanya </font><font color="#E5E5E5">lebih besar </font>
+
+188
+00:13:23,850 --> 00:13:25,470
+ <font color="#E5E5E5">dari </font><font color="#CCCCCC">jumlah kolom yang dikembalikan oleh </font>
+
+189
+00:13:25,470 --> 00:13:27,720
+ permintaan kueri akan <font color="#CCCCCC">salah </font>
+
+190
+00:13:27,720 --> 00:13:31,430
+ <font color="#CCCCCC">dan tidak akan </font><font color="#E5E5E5">mengembalikan hasil yang diminta jika </font>
+
+191
+00:13:31,430 --> 00:13:34,830
+ kami mengirimkan <font color="#E5E5E5">satu sebagai nilai </font><font color="#CCCCCC">ditentukan </font>
+
+192
+00:13:34,830 --> 00:13:36,270
+ kolom akan <font color="#CCCCCC">diurutkan berdasarkan </font><font color="#E5E5E5">yang pertama </font>
+
+193
+00:13:36,270 --> 00:13:39,480
+ kolom <font color="#E5E5E5">yang harus selalu ada konfirmasi </font>
+
+194
+00:13:39,480 --> 00:13:42,860
+ ini dengan <font color="#CCCCCC">memasukkan alamat berikut </font>
+
+195
+00:13:48,500 --> 00:13:51,570
+ mari sekarang coba <font color="#E5E5E5">tentukan </font><font color="#CCCCCC">sebagai nilai a </font>
+
+196
+00:13:51,570 --> 00:13:53,130
+ nomor yang sangat besar mungkin tidak akan 
+
+197
+00:13:53,130 --> 00:13:54,660
+ sesuai dengan jumlah <font color="#E5E5E5">kolom </font>
+
+198
+00:13:54,660 --> 00:13:59,370
+ dikembalikan oleh kueri dengan cara ini kita akan 
+
+199
+00:13:59,370 --> 00:14:00,720
+ <font color="#E5E5E5">pastikan kueri berfungsi sebagai </font>
+
+200
+00:14:00,720 --> 00:14:03,230
+ diprediksi 
+
+201
+00:14:15,250 --> 00:14:17,650
+ karena kami dapat melihat kueri memang belum 
+
+202
+00:14:17,650 --> 00:14:20,080
+ terkandung 100 kolom ini mengapa tidak 
+
+203
+00:14:20,080 --> 00:14:22,510
+ konten telah <font color="#E5E5E5">ditampilkan database </font>
+
+204
+00:14:22,510 --> 00:14:24,220
+ mesin <font color="#E5E5E5">telah menafsirkan kueri sebagai </font>
+
+205
+00:14:24,220 --> 00:14:25,000
+ salah 
+
+206
+00:14:25,000 --> 00:14:27,460
+ <font color="#E5E5E5">sekarang mari kirimkan beberapa nilai ke </font>
+
+207
+00:14:27,460 --> 00:14:35,940
+ temukan jumlah <font color="#E5E5E5">kolom yang tepat sebagai </font>
+
+208
+00:14:35,940 --> 00:14:38,740
+ kita bisa melihat query gagal dengan 
+
+209
+00:14:38,740 --> 00:14:43,320
+ <font color="#CCCCCC">parameter </font><font color="#E5E5E5">10 tidak bekerja dengan </font><font color="#CCCCCC">5 </font>
+
+210
+00:14:43,740 --> 00:14:46,120
+ operasi berhasil <font color="#CCCCCC">dengan </font>
+
+211
+00:14:46,120 --> 00:14:48,250
+ nomor <font color="#E5E5E5">2 jadi kami tahu bahwa </font><font color="#CCCCCC">ada di </font>
+
+212
+00:14:48,250 --> 00:14:50,440
+ <font color="#CCCCCC">setidaknya </font><font color="#E5E5E5">dua kolom tetapi tidak lebih dari </font><font color="#CCCCCC">5 </font>
+
+213
+00:14:50,440 --> 00:15:01,390
+ <font color="#CCCCCC">mari coba dengan 3 </font><font color="#E5E5E5">permintaan gagal </font>
+
+214
+00:15:01,390 --> 00:15:03,310
+ nilai ini yang berarti mengembalikannya 
+
+215
+00:15:03,310 --> 00:15:08,350
+ tepat <font color="#CCCCCC">dua kolom </font><font color="#E5E5E5">kami akan </font><font color="#CCCCCC">menggunakan Union </font>
+
+216
+00:15:08,350 --> 00:15:10,120
+ fungsi yang memungkinkan <font color="#CCCCCC">Anda untuk </font><font color="#E5E5E5">menggabungkan </font>
+
+217
+00:15:10,120 --> 00:15:12,220
+ set hasil dari pernyataan pilih dari 
+
+218
+00:15:12,220 --> 00:15:14,650
+ <font color="#E5E5E5">kedua belah pihak Union </font><font color="#CCCCCC">membutuhkan pernyataan </font>
+
+219
+00:15:14,650 --> 00:15:17,880
+ <font color="#E5E5E5">untuk memiliki jumlah kolom yang sama </font>
+
+220
+00:15:19,460 --> 00:15:22,570
+ [Musik] 
+
+221
+00:15:24,260 --> 00:15:27,000
+ usaha telah berhasil <font color="#E5E5E5">sekarang kita ketahui </font>
+
+222
+00:15:27,000 --> 00:15:28,560
+ bahwa <font color="#E5E5E5">database mendukung Union </font>
+
+223
+00:15:28,560 --> 00:15:31,620
+ tidak ada fungsi <font color="#E5E5E5">dari nilai yang kami lewati </font>
+
+224
+00:15:31,620 --> 00:15:33,600
+ telah ditampilkan <font color="#E5E5E5">alasannya untuk ini </font>
+
+225
+00:15:33,600 --> 00:15:35,640
+ adalah <font color="#CCCCCC">bahwa halaman </font><font color="#E5E5E5">hanya menampilkan yang pertama </font>
+
+226
+00:15:35,640 --> 00:15:37,620
+ <font color="#E5E5E5">hasil ditetapkan sementara yang kedua diabaikan </font>
+
+227
+00:15:37,620 --> 00:15:39,570
+ Hasilnya <font color="#CCCCCC">adalah yang </font><font color="#E5E5E5">ditambahkan oleh </font>
+
+228
+00:15:39,570 --> 00:15:41,940
+ Union <font color="#E5E5E5">setelah kami memiliki dan yang sederajat </font>
+
+229
+00:15:41,940 --> 00:15:44,130
+ <font color="#E5E5E5">nol string ke permintaan pertama akan </font>
+
+230
+00:15:44,130 --> 00:15:46,560
+ menyebabkannya <font color="#E5E5E5">kembali tidak ada hasil dan jadi kami </font>
+
+231
+00:15:46,560 --> 00:15:48,540
+ permintaan yang <font color="#CCCCCC">dilekatkan oleh Union menjadi </font>
+
+232
+00:15:48,540 --> 00:15:58,860
+ satu-satunya <font color="#E5E5E5">permintaan saat ini </font><font color="#CCCCCC">salah satu dari </font>
+
+233
+00:15:58,860 --> 00:16:00,510
+ angka yang kami berikan dalam pernyataan terpilih 
+
+234
+00:16:00,510 --> 00:16:04,080
+ telah <font color="#E5E5E5">ditampilkan nomor yang ditampilkan </font>
+
+235
+00:16:04,080 --> 00:16:05,820
+ <font color="#CCCCCC">dua </font><font color="#E5E5E5">artinya nilai </font><font color="#CCCCCC">kedua </font>
+
+236
+00:16:05,820 --> 00:16:08,010
+ kolom <font color="#E5E5E5">ditampilkan pada </font><font color="#CCCCCC">halaman dan mungkin </font>
+
+237
+00:16:08,010 --> 00:16:09,930
+ digunakan untuk <font color="#E5E5E5">meneruskan data yang kami inginkan </font>
+
+238
+00:16:09,930 --> 00:16:16,200
+ mengambil dari <font color="#E5E5E5">penggunaan database mari kita </font>
+
+239
+00:16:16,200 --> 00:16:19,170
+ beberapa fungsi standar pengguna 
+
+240
+00:16:19,170 --> 00:16:21,060
+ fungsi mengembalikan <font color="#E5E5E5">nama </font><font color="#CCCCCC">arus </font>
+
+241
+00:16:21,060 --> 00:16:23,750
+ <font color="#E5E5E5">pengguna basis data </font>
+
+242
+00:16:32,970 --> 00:16:36,610
+ dalam hal ini ini <font color="#E5E5E5">adalah </font><font color="#CCCCCC">pengguna uji coba </font>
+
+243
+00:16:36,610 --> 00:16:38,470
+ bekerja <font color="#CCCCCC">di komputer tempat database </font>
+
+244
+00:16:38,470 --> 00:16:40,750
+ server telah <font color="#CCCCCC">meluncurkan </font><font color="#E5E5E5">versi </font>
+
+245
+00:16:40,750 --> 00:16:42,340
+ fungsi mengembalikan <font color="#E5E5E5">versi dari </font>
+
+246
+00:16:42,340 --> 00:16:50,320
+ database apa lagi yang bisa <font color="#CCCCCC">dilakukan dalam hal ini </font>
+
+247
+00:16:50,320 --> 00:16:54,610
+ Situasi <font color="#E5E5E5">dimulai dengan </font><font color="#CCCCCC">MySQL 5 </font><font color="#E5E5E5">yang </font>
+
+248
+00:16:54,610 --> 00:16:56,350
+ <font color="#E5E5E5">perangkat lunak dilengkapi dengan informasi </font>
+
+249
+00:16:56,350 --> 00:16:58,480
+ <font color="#CCCCCC">skema database khusus yang </font><font color="#E5E5E5">digunakan untuk </font>
+
+250
+00:16:58,480 --> 00:17:00,310
+ menyimpan informasi <font color="#E5E5E5">pada </font><font color="#CCCCCC">struktur </font>
+
+251
+00:17:00,310 --> 00:17:02,560
+ semua database <font color="#E5E5E5">dan tabel lain yang bisa </font>
+
+252
+00:17:02,560 --> 00:17:05,109
+ <font color="#E5E5E5">diakses oleh pengguna ini </font><font color="#CCCCCC">adalah bentuk </font><font color="#E5E5E5">a </font>
+
+253
+00:17:05,109 --> 00:17:09,790
+ mekanisme refleksi basis data yang pertama 
+
+254
+00:17:09,790 --> 00:17:12,069
+ cara <font color="#CCCCCC">menggunakannya </font><font color="#E5E5E5">dalam serangan injeksi SQL </font>
+
+255
+00:17:12,069 --> 00:17:15,710
+ memerlukan <font color="#E5E5E5">penemuan nama tabel </font>
+
+256
+00:17:15,710 --> 00:17:18,829
+ [Musik] 
+
+257
+00:17:28,250 --> 00:17:30,780
+ pilih nama tabel dari <font color="#E5E5E5">informasi </font>
+
+258
+00:17:30,780 --> 00:17:32,730
+ skema <font color="#CCCCCC">dalam tabel yang berisi </font>
+
+259
+00:17:32,730 --> 00:17:34,860
+ <font color="#CCCCCC">informasi tentang semua tabel dapat dilihat oleh </font>
+
+260
+00:17:34,860 --> 00:17:46,230
+ <font color="#E5E5E5">pengguna saat ini sebagai kepala </font><font color="#CCCCCC">meja </font>
+
+261
+00:17:46,230 --> 00:17:48,210
+ berisi <font color="#E5E5E5">sistem tabel serta </font>
+
+262
+00:17:48,210 --> 00:17:51,780
+ tabel skema informasi untuk ditemukan 
+
+263
+00:17:51,780 --> 00:17:53,610
+ tabel lain menggunakan fungsi batas 
+
+264
+00:17:53,610 --> 00:17:57,680
+ <font color="#E5E5E5">yang memungkinkan Anda menetapkan rentang hasil </font>
+
+265
+00:18:06,650 --> 00:18:09,749
+ [Musik] 
+
+266
+00:18:13,830 --> 00:18:16,950
+ [Musik] 
+
+267
+00:18:20,020 --> 00:18:29,840
+ <font color="#E5E5E5">100 terlalu besar sedangkan 20 masih </font><font color="#CCCCCC">menunjukkan </font>
+
+268
+00:18:29,840 --> 00:18:32,559
+ tabel sistem 
+
+269
+00:18:40,850 --> 00:18:43,530
+ nilai xxx telah mengembalikan <font color="#E5E5E5">pengguna </font>
+
+270
+00:18:43,530 --> 00:18:48,150
+ <font color="#E5E5E5">tabel nama yang terlihat menjanjikan sekarang </font>
+
+271
+00:18:48,150 --> 00:18:49,530
+ gunakan <font color="#E5E5E5">tabel kolom dari </font>
+
+272
+00:18:49,530 --> 00:18:53,100
+ <font color="#E5E5E5">skema informasi yang </font><font color="#CCCCCC">dapat Anda bayangkan </font>
+
+273
+00:18:53,100 --> 00:18:55,679
+ <font color="#E5E5E5">file tersebut berisi nama kolom yang dapat dilihat </font>
+
+274
+00:18:55,679 --> 00:18:58,429
+ oleh <font color="#E5E5E5">pengguna </font><font color="#CCCCCC">saat ini </font>
+
+275
+00:19:04,780 --> 00:19:07,880
+ [Musik] 
+
+276
+00:19:11,950 --> 00:19:15,079
+ [Musik] 
+
+277
+00:19:16,560 --> 00:19:19,210
+ pada <font color="#E5E5E5">kondisi yang menentukan itu </font>
+
+278
+00:19:19,210 --> 00:19:23,070
+ kami tertarik dengan kolom tabel pengguna 
+
+279
+00:19:31,440 --> 00:19:33,760
+ nama kolom adalah nama dari <font color="#E5E5E5">database </font>
+
+280
+00:19:33,760 --> 00:19:37,800
+ bidang <font color="#E5E5E5">yang berisi nama kolom </font>
+
+281
+00:19:45,789 --> 00:19:48,820
+ seperti yang bisa kita lihat <font color="#CCCCCC">id adalah </font><font color="#E5E5E5">kolom </font><font color="#CCCCCC">pertama </font>
+
+282
+00:19:48,820 --> 00:20:02,529
+ <font color="#E5E5E5">nama yang kedua adalah upaya yang dinonaktifkan </font>
+
+283
+00:20:02,529 --> 00:20:06,389
+ selanjutnya adalah <font color="#CCCCCC">login </font><font color="#E5E5E5">yang terlihat menarik </font>
+
+284
+00:20:07,440 --> 00:20:12,159
+ kolom keempat <font color="#CCCCCC">lewat dengan cara ini kita </font>
+
+285
+00:20:12,159 --> 00:20:14,080
+ telah <font color="#CCCCCC">menetapkan pengguna saat ini </font><font color="#E5E5E5">dan dapat </font>
+
+286
+00:20:14,080 --> 00:20:16,090
+ akses <font color="#E5E5E5">tabel pengguna yang berisi </font>
+
+287
+00:20:16,090 --> 00:20:18,809
+ login <font color="#E5E5E5">dan kata sandi </font>
+
+288
+00:20:34,090 --> 00:20:37,210
+ <font color="#E5E5E5">seperti yang Anda lihat catatan pertama dari </font>
+
+289
+00:20:37,210 --> 00:20:40,179
+ <font color="#E5E5E5">tabel mendefinisikan administrator kita juga bisa </font>
+
+290
+00:20:40,179 --> 00:20:43,380
+ tampilkan <font color="#CCCCCC">kolom yang lalu </font>
+
+291
+00:20:53,130 --> 00:20:57,000
+ untuk melihat kata sandi yang tidak dienkripsi 
+
+292
+00:20:57,000 --> 00:20:58,860
+ mencegah hal ini <font color="#E5E5E5">kita perlu mengingat beberapa </font>
+
+293
+00:20:58,860 --> 00:21:02,280
+ langkah <font color="#E5E5E5">langkah pertama </font><font color="#CCCCCC">adalah untuk menempatkan semua </font>
+
+294
+00:21:02,280 --> 00:21:06,870
+ <font color="#CCCCCC">parameter dalam tanda kutip saat ini </font><font color="#E5E5E5">bukan </font>
+
+295
+00:21:06,870 --> 00:21:09,270
+ ukuran keamanan per se <font color="#E5E5E5">itu adalah dasar </font>
+
+296
+00:21:09,270 --> 00:21:10,860
+ memungkinkan <font color="#E5E5E5">data difilter </font>
+
+297
+00:21:10,860 --> 00:21:14,550
+ lebih lanjut <font color="#E5E5E5">dalam kasus skrip ini </font>
+
+298
+00:21:14,550 --> 00:21:16,410
+ identifier selalu merupakan nilai numerik 
+
+299
+00:21:16,410 --> 00:21:19,140
+ <font color="#E5E5E5">menggunakan </font><font color="#CCCCCC">fungsi info yang </font><font color="#E5E5E5">bisa kami pastikan </font>
+
+300
+00:21:19,140 --> 00:21:21,180
+ <font color="#CCCCCC">bahwa nilai kembalian akan </font><font color="#E5E5E5">selalu </font><font color="#CCCCCC">berupa </font>
+
+301
+00:21:21,180 --> 00:21:23,280
+ <font color="#CCCCCC">nomor jika string </font><font color="#E5E5E5">ditempatkan </font><font color="#CCCCCC">di </font>
+
+302
+00:21:23,280 --> 00:21:25,770
+ mulai <font color="#E5E5E5">dari suatu fungsi nilai nol akan </font>
+
+303
+00:21:25,770 --> 00:21:28,290
+ dikembalikan <font color="#E5E5E5">mari kita lihat bagaimana ini bekerja </font>
+
+304
+00:21:28,290 --> 00:21:30,470
+ <font color="#CCCCCC">praktek </font>
+
+305
+00:21:55,800 --> 00:21:59,610
+ seperti yang kita lihat, serangan itu <font color="#CCCCCC">gagal </font><font color="#E5E5E5">apa </font>
+
+306
+00:21:59,610 --> 00:22:01,380
+ <font color="#E5E5E5">dapat </font><font color="#CCCCCC">dilakukan jika query </font><font color="#E5E5E5">harus dibuat </font>
+
+307
+00:22:01,380 --> 00:22:14,760
+ sampai pemberitahuan string bahwa jika penyerang 
+
+308
+00:22:14,760 --> 00:22:16,830
+ adalah memanipulasi konten dari SQL 
+
+309
+00:22:16,830 --> 00:22:21,750
+ permintaan <font color="#CCCCCC">mereka perlu menggunakan tanda kutip yang Anda </font><font color="#E5E5E5">bisa </font>
+
+310
+00:22:21,750 --> 00:22:23,820
+ sekarang filter data input <font color="#CCCCCC">untuk kutipan menggunakan </font>
+
+311
+00:22:23,820 --> 00:22:25,350
+ pelarian nyata MySQL 
+
+312
+00:22:25,350 --> 00:22:28,590
+ <font color="#E5E5E5">preg ganti tambahkan garis miring atau khusus HTML </font>
+
+313
+00:22:28,590 --> 00:22:34,920
+ mobil berfungsi <font color="#E5E5E5">mobil khusus HTML </font>
+
+314
+00:22:34,920 --> 00:22:36,690
+ fungsi juga dapat membantu Anda melindungi 
+
+315
+00:22:36,690 --> 00:22:39,930
+ diri dari serangan XSS <font color="#E5E5E5">mari kita lihat apakah </font>
+
+316
+00:22:39,930 --> 00:22:42,380
+ ini bekerja 
+
+317
+00:22:57,250 --> 00:23:00,380
+ [Musik] 
+
+318
+00:23:04,460 --> 00:23:07,569
+ [Musik] 
+
+319
+00:23:42,710 --> 00:23:45,080
+ seperti yang Anda lihat saat ini serangan itu 
+
+320
+00:23:45,080 --> 00:23:48,110
+ gagal <font color="#E5E5E5">juga </font><font color="#CCCCCC">mari kita </font><font color="#E5E5E5">lihat apa yang bisa </font>
+
+321
+00:23:48,110 --> 00:23:49,460
+ <font color="#E5E5E5">terjadi </font><font color="#CCCCCC">jika pengguna bekerja </font><font color="#E5E5E5">dengan </font>
+
+322
+00:23:49,460 --> 00:23:53,320
+ database memiliki hak untuk beroperasi <font color="#E5E5E5">pada file </font>
+
+323
+00:23:53,320 --> 00:23:56,000
+ <font color="#E5E5E5">hak ditetapkan saat membuat pengguna </font>
+
+324
+00:23:56,000 --> 00:23:59,929
+ atau diberikan oleh administrator <font color="#CCCCCC">normal </font>
+
+325
+00:23:59,929 --> 00:24:02,029
+ pengguna sangat jarang memiliki operasi file 
+
+326
+00:24:02,029 --> 00:24:04,190
+ tetapi mereka diaktifkan <font color="#E5E5E5">secara default </font>
+
+327
+00:24:04,190 --> 00:24:07,370
+ <font color="#E5E5E5">untuk pengguna root gunakan file load </font>
+
+328
+00:24:07,370 --> 00:24:09,470
+ berfungsi dalam SQL yang memungkinkan Anda untuk 
+
+329
+00:24:09,470 --> 00:24:12,850
+ memuat isi file 
+
+330
+00:24:52,640 --> 00:24:56,900
+ <font color="#E5E5E5">seperti yang Anda lihat isi PHP di </font><font color="#CCCCCC">E </font>
+
+331
+00:24:56,900 --> 00:24:59,210
+ telah ditampilkan fungsi ini memungkinkan 
+
+332
+00:24:59,210 --> 00:25:01,430
+ pengguna <font color="#CCCCCC">untuk mengakses </font><font color="#E5E5E5">semua file </font><font color="#CCCCCC">yang mana </font>
+
+333
+00:25:01,430 --> 00:25:03,440
+ <font color="#E5E5E5">pengguna server database saat ini memiliki akses </font>
+
+334
+00:25:03,440 --> 00:25:08,180
+ hak logging data <font color="#E5E5E5">ke file juga </font>
+
+335
+00:25:08,180 --> 00:25:10,610
+ mungkin <font color="#E5E5E5">pertama mari menyiapkan string </font>
+
+336
+00:25:10,610 --> 00:25:11,990
+ yang akan disimpan <font color="#E5E5E5">di situs web </font>
+
+337
+00:25:11,990 --> 00:25:14,500
+ direktori 
+
+338
+00:25:29,570 --> 00:25:33,950
+ <font color="#E5E5E5">kode </font><font color="#CCCCCC">PHP </font><font color="#E5E5E5">yang memanggil info PHP </font>
+
+339
+00:25:33,950 --> 00:25:36,430
+ fungsi 
+
+340
+00:25:44,930 --> 00:25:49,120
+ direktori <font color="#CCCCCC">hanya berisi dua file </font>
+
+341
+00:25:51,610 --> 00:25:54,760
+ [Musik] 
+
+342
+00:25:57,020 --> 00:25:59,840
+ seperti yang Anda lihat <font color="#E5E5E5">file PHP uji telah </font>
+
+343
+00:25:59,840 --> 00:26:06,590
+ <font color="#E5E5E5">dibuat setelah mengirim permintaan yang Anda bisa </font>
+
+344
+00:26:06,590 --> 00:26:13,670
+ <font color="#CCCCCC">bahkan menjalankannya nilai yang </font><font color="#E5E5E5">berasal dari kami </font>
+
+345
+00:26:13,670 --> 00:26:15,980
+ <font color="#E5E5E5">pilih pernyataan sebagai </font><font color="#CCCCCC">Pilih keluar </font>
+
+346
+00:26:15,980 --> 00:26:18,020
+ <font color="#E5E5E5">fungsi file log semua kolom dikembalikan </font>
+
+347
+00:26:18,020 --> 00:26:21,560
+ oleh query ini <font color="#E5E5E5">tidak akan berbuat banyak untuk </font><font color="#CCCCCC">menghentikan </font>
+
+348
+00:26:21,560 --> 00:26:23,660
+ penyerang dari menyimpan <font color="#CCCCCC">file dengan </font><font color="#E5E5E5">PHP </font>
+
+349
+00:26:23,660 --> 00:26:26,300
+ kode jadi bagaimana kita melindungi <font color="#E5E5E5">diri kita sendiri </font>
+
+350
+00:26:26,300 --> 00:26:30,560
+ terhadap serangan injeksi SQL yang <font color="#E5E5E5">Anda bisa </font>
+
+351
+00:26:30,560 --> 00:26:32,840
+ lihat apakah konfigurasi pengguna database 
+
+352
+00:26:32,840 --> 00:26:36,790
+ pengoperasian file yang buruk menjadi mungkin 
+
+353
+00:26:36,790 --> 00:26:39,050
+ ingat <font color="#E5E5E5">Anda tidak seharusnya bekerja dengan Anda </font>
+
+354
+00:26:39,050 --> 00:26:41,060
+ database <font color="#CCCCCC">menggunakan akun root sebagai </font>
+
+355
+00:26:41,060 --> 00:26:42,740
+ pengguna root <font color="#CCCCCC">memiliki hak file penuh </font>
+
+356
+00:26:42,740 --> 00:26:44,810
+ <font color="#E5E5E5">perizinan untuk beroperasi pada file dan </font>
+
+357
+00:26:44,810 --> 00:26:47,440
+ <font color="#E5E5E5">akses tak terbatas ke semua tabel database </font>
+
+358
+00:26:47,440 --> 00:26:50,090
+ ada baiknya untuk menonaktifkan operasi file 
+
+359
+00:26:50,090 --> 00:26:51,770
+ perizinan saat membuat <font color="#CCCCCC">database baru </font>
+
+360
+00:26:51,770 --> 00:26:57,920
+ pengguna itu semua dalam modul <font color="#E5E5E5">13 terima kasih untuk </font>
+
+361
+00:26:57,920 --> 00:26:59,570
+ <font color="#E5E5E5">perhatian Anda dan melihat </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">di depan </font>
+
+362
+00:26:59,570 --> 00:27:01,520
+ <font color="#CCCCCC">modul yang </font><font color="#E5E5E5">akan fokus pada lintas situs </font>
+
+363
+00:27:01,520 --> 00:27:04,660
+ kerentanan skrip 
+
+364
+00:27:11,669 --> 00:27:16,659
+ selamat datang di modul <font color="#E5E5E5">11 dalam modul ini </font>
+
+365
+00:27:16,659 --> 00:27:18,850
+ kami akan <font color="#CCCCCC">fokus pada injeksi PHP </font>
+
+366
+00:27:18,850 --> 00:27:21,999
+ kerentanan kerentanan ini terjadi 
+
+367
+00:27:21,999 --> 00:27:23,679
+ di mana seorang pengguna memiliki kesempatan <font color="#E5E5E5">untuk </font>
+
+368
+00:27:23,679 --> 00:27:25,899
+ jalankan <font color="#E5E5E5">kode PHP jahat dengan </font>
+
+369
+00:27:25,899 --> 00:27:27,850
+ memodifikasi parameter yang diteruskan <font color="#E5E5E5">ke web </font>
+
+370
+00:27:27,850 --> 00:27:33,039
+ penerapan <font color="#CCCCCC">situasi ini bisa </font><font color="#E5E5E5">terjadi </font>
+
+371
+00:27:33,039 --> 00:27:34,690
+ tempatkan <font color="#E5E5E5">jika parameter input dilewatkan </font>
+
+372
+00:27:34,690 --> 00:27:37,119
+ <font color="#CCCCCC">ke dalam fungsi PHP </font><font color="#E5E5E5">yang</font><font color="#CCCCCC"> memungkinkan </font>
+
+373
+00:27:37,119 --> 00:27:41,730
+ <font color="#E5E5E5">eksekusi kode PHP langsung atau tidak langsung </font>
+
+374
+00:27:42,149 --> 00:27:44,859
+ kelompok fungsi pertama adalah termasuk 
+
+375
+00:27:44,859 --> 00:27:47,619
+ fungsi keluarga termasuk memerlukan dan 
+
+376
+00:27:47,619 --> 00:27:50,139
+ membutuhkan sekali yang berfungsi <font color="#CCCCCC">untuk memasukkan dan </font>
+
+377
+00:27:50,139 --> 00:27:54,249
+ parsing file yang berisi kode PHP 
+
+378
+00:27:54,249 --> 00:27:56,200
+ <font color="#E5E5E5">Fungsi kedua dari tipe ini </font><font color="#CCCCCC">adalah eval </font>
+
+379
+00:27:56,200 --> 00:27:58,269
+ <font color="#E5E5E5">yang mem-parse dan mengeksekusi yang disediakan </font>
+
+380
+00:27:58,269 --> 00:28:03,070
+ string fungsi ketiga <font color="#E5E5E5">adalah pregger </font>
+
+381
+00:28:03,070 --> 00:28:06,899
+ tempat yang digunakan untuk memverifikasi ekspresi reguler 
+
+382
+00:28:06,899 --> 00:28:09,639
+ parameter e dapat <font color="#E5E5E5">diteruskan ke ini </font>
+
+383
+00:28:09,639 --> 00:28:11,559
+ fungsi yang <font color="#E5E5E5">memungkinkan untuk eksekusi </font>
+
+384
+00:28:11,559 --> 00:28:13,749
+ Kode PHP <font color="#E5E5E5">dilewatkan dalam bagian reguler </font>
+
+385
+00:28:13,749 --> 00:28:18,249
+ <font color="#CCCCCC">ekspresi </font><font color="#E5E5E5">sebagai dua </font><font color="#CCCCCC">fungsi terakhir </font>
+
+386
+00:28:18,249 --> 00:28:20,049
+ jarang digunakan dalam web standar 
+
+387
+00:28:20,049 --> 00:28:21,759
+ aplikasi <font color="#E5E5E5">kami akan fokus pada yang pertama </font>
+
+388
+00:28:21,759 --> 00:28:27,789
+ <font color="#E5E5E5">berfungsi sebagai contoh kode sumber ini </font>
+
+389
+00:28:27,789 --> 00:28:31,049
+ membantu Anda memahami konsepnya 
+
+390
+00:28:34,540 --> 00:28:37,700
+ Anda bisa lihat di sini <font color="#E5E5E5">skrip PHP </font><font color="#CCCCCC">sederhana </font>
+
+391
+00:28:37,700 --> 00:28:39,290
+ yang <font color="#E5E5E5">memanfaatkan pengguna yang disediakan </font>
+
+392
+00:28:39,290 --> 00:28:41,750
+ <font color="#CCCCCC">situs variabel </font><font color="#E5E5E5">untuk menentukan halaman mana </font>
+
+393
+00:28:41,750 --> 00:28:45,730
+ <font color="#E5E5E5">harus </font><font color="#CCCCCC">ditambahkan ke </font><font color="#E5E5E5">fungsi termasuk </font>
+
+394
+00:28:51,340 --> 00:28:54,170
+ isi dari <font color="#CCCCCC">situs web </font><font color="#E5E5E5">disediakan </font>
+
+395
+00:28:54,170 --> 00:28:59,720
+ <font color="#CCCCCC">tergantung pada file tertentu yang kami bisa </font>
+
+396
+00:28:59,720 --> 00:29:01,880
+ lihat parameter yang disediakan pengguna tidak 
+
+397
+00:29:01,880 --> 00:29:04,820
+ <font color="#E5E5E5">disaring dengan cara apa pun </font><font color="#CCCCCC">yang dimiliki pengguna </font>
+
+398
+00:29:04,820 --> 00:29:07,010
+ <font color="#E5E5E5">kontrol penuh atas file </font>
+
+399
+00:29:07,010 --> 00:29:10,430
+ nama mari kita lihat bagaimana <font color="#E5E5E5">ini bekerja </font>
+
+400
+00:29:10,430 --> 00:29:20,540
+ berlatih <font color="#E5E5E5">kita dapat menelusuri situs web </font><font color="#CCCCCC">dan </font>
+
+401
+00:29:20,540 --> 00:29:22,400
+ karena kami melakukannya <font color="#E5E5E5">nama file di </font>
+
+402
+00:29:22,400 --> 00:29:26,990
+ address bar berubah menganggap <font color="#CCCCCC">bahwa a </font>
+
+403
+00:29:26,990 --> 00:29:28,970
+ peretas berhasil <font color="#E5E5E5">mengunggah file </font>
+
+404
+00:29:28,970 --> 00:29:32,140
+ <font color="#E5E5E5">yang berisi kode PHP ke server </font>
+
+405
+00:29:32,140 --> 00:29:35,180
+ <font color="#E5E5E5">mungkin Anda sedikit skeptis </font>
+
+406
+00:29:35,180 --> 00:29:37,040
+ mengunggah file PHP tentu saja 
+
+407
+00:29:37,040 --> 00:29:39,020
+ dianulir oleh situs atau <font color="#E5E5E5">layanan </font>
+
+408
+00:29:39,020 --> 00:29:44,990
+ tidak menerima <font color="#E5E5E5">file apa pun dari pengguna itu </font>
+
+409
+00:29:44,990 --> 00:29:46,730
+ umum meskipun situs web itu memungkinkan pengguna 
+
+410
+00:29:46,730 --> 00:29:48,620
+ untuk <font color="#E5E5E5">mengunggah foto avatar dan lainnya </font>
+
+411
+00:29:48,620 --> 00:29:55,460
+ file gambar mari kita lihat apakah penyerang bisa 
+
+412
+00:29:55,460 --> 00:29:58,370
+ masih menyelundupkan kode PHP yang berbahaya jika 
+
+413
+00:29:58,370 --> 00:30:01,990
+ file diperiksa <font color="#CCCCCC">untuk format yang benar </font>
+
+414
+00:30:06,160 --> 00:30:07,960
+ [Musik] 
+
+415
+00:30:07,960 --> 00:30:10,249
+ Anda bisa lihat di sini yang dibuat khusus 
+
+416
+00:30:10,249 --> 00:30:13,210
+ gambar <font color="#E5E5E5">yang terlihat seperti file JPEG normal </font>
+
+417
+00:30:13,210 --> 00:30:16,219
+ <font color="#CCCCCC">kontennya ditampilkan </font><font color="#E5E5E5">semua gambar </font>
+
+418
+00:30:16,219 --> 00:30:17,929
+ fungsi akan menafsirkannya <font color="#E5E5E5">sebagai benar </font>
+
+419
+00:30:17,929 --> 00:30:23,210
+ file gambar tapi mari kita <font color="#E5E5E5">lihat </font>
+
+420
+00:30:23,210 --> 00:30:25,779
+ apa yang tersembunyi di dalam 
+
+421
+00:30:26,169 --> 00:30:32,090
+ seperti yang kita lihat <font color="#E5E5E5">kode PHP telah </font><font color="#CCCCCC">tertanam </font>
+
+422
+00:30:32,090 --> 00:30:34,429
+ dalam gambar <font color="#E5E5E5">mari kita coba untuk </font><font color="#CCCCCC">memasukkannya ke dalam </font>
+
+423
+00:30:34,429 --> 00:30:46,489
+ <font color="#CCCCCC">address bar karena Anda </font><font color="#E5E5E5">dapat melihat skrip </font>
+
+424
+00:30:46,489 --> 00:30:47,899
+ <font color="#E5E5E5">disuntikkan ke dalam gambar telah </font>
+
+425
+00:30:47,899 --> 00:30:52,070
+ <font color="#CCCCCC">dieksekusi </font><font color="#E5E5E5">tetapi bahkan jika aplikasi </font><font color="#CCCCCC">memiliki </font>
+
+426
+00:30:52,070 --> 00:30:54,289
+ menonaktifkan mengunggah gambar <font color="#E5E5E5">yang dapat dilakukan peretas </font>
+
+427
+00:30:54,289 --> 00:30:56,029
+ masih menggunakan kerentanan lain <font color="#CCCCCC">untuk </font>
+
+428
+00:30:56,029 --> 00:30:59,539
+ meluncurkan file serangan injeksi PHP 
+
+429
+00:30:59,539 --> 00:31:02,960
+ operasi <font color="#E5E5E5">dalam PHP seperti termasuk memungkinkan </font>
+
+430
+00:31:02,960 --> 00:31:05,179
+ tidak hanya <font color="#E5E5E5">referensi file langsung tetapi </font><font color="#CCCCCC">juga </font>
+
+431
+00:31:05,179 --> 00:31:08,269
+ aktifkan protokol seperti FTP HTTP dan 
+
+432
+00:31:08,269 --> 00:31:11,559
+ protokol data khusus 
+
+433
+00:31:16,000 --> 00:31:18,490
+ dalam kasus <font color="#E5E5E5">protokol data itu </font>
+
+434
+00:31:18,490 --> 00:31:20,260
+ <font color="#E5E5E5">mungkin untuk meneruskan konten file </font>
+
+435
+00:31:20,260 --> 00:31:22,210
+ parameter referensi protokol <font color="#E5E5E5">sejak </font>
+
+436
+00:31:22,210 --> 00:31:28,480
+ file <font color="#CCCCCC">dihasilkan </font><font color="#E5E5E5">di tempat data </font>
+
+437
+00:31:28,480 --> 00:31:34,120
+ dikodekan <font color="#E5E5E5">dalam base64 mari kita gunakan online </font>
+
+438
+00:31:34,120 --> 00:31:38,370
+ pembuat enkode untuk <font color="#E5E5E5">menghasilkan aliran yang disandikan </font>
+
+439
+00:31:54,600 --> 00:31:56,800
+ cobalah untuk menyandikan string berikut 
+
+440
+00:31:56,800 --> 00:32:00,460
+ mengubahnya menjadi <font color="#CCCCCC">penggunaan string base64 </font>
+
+441
+00:32:00,460 --> 00:32:02,650
+ <font color="#CCCCCC">aliran data khusus sintaks </font><font color="#E5E5E5">dan tempel </font>
+
+442
+00:32:02,650 --> 00:32:25,120
+ kode PHP yang dikodekan seperti yang bisa kita lihat 
+
+443
+00:32:25,120 --> 00:32:28,000
+ kode telah <font color="#CCCCCC">dieksekusi mari kita coba </font>
+
+444
+00:32:28,000 --> 00:32:29,290
+ <font color="#E5E5E5">pikirkan bagaimana </font><font color="#CCCCCC">kita </font><font color="#E5E5E5">bisa melindungi diri kita sendiri </font>
+
+445
+00:32:29,290 --> 00:32:32,680
+ melawan serangan ini <font color="#E5E5E5">solusi pertama </font>
+
+446
+00:32:32,680 --> 00:32:35,050
+ <font color="#CCCCCC">adalah memodifikasi </font><font color="#E5E5E5">konfigurasi PHP </font>
+
+447
+00:32:35,050 --> 00:32:37,290
+ apa saja 
+
+448
+00:32:46,750 --> 00:32:49,690
+ opsi bolehkan menyertakan URL 
+
+449
+00:32:49,690 --> 00:32:51,820
+ <font color="#E5E5E5">digunakan untuk mengaktifkan atau menonaktifkan penyertaan </font>
+
+450
+00:32:51,820 --> 00:32:53,650
+ file khusus yang diakses 
+
+451
+00:32:53,650 --> 00:32:57,210
+ <font color="#E5E5E5">melalui </font><font color="#CCCCCC">protokol yang telah kami sebutkan </font>
+
+452
+00:32:57,360 --> 00:33:00,130
+ setelah menonaktifkan <font color="#E5E5E5">fungsi yang Anda perlukan </font>
+
+453
+00:33:00,130 --> 00:33:01,659
+ restart <font color="#CCCCCC">server untuk perubahan yang harus dilakukan </font>
+
+454
+00:33:01,659 --> 00:33:03,840
+ <font color="#CCCCCC">efek </font>
+
+455
+00:33:16,300 --> 00:33:20,560
+ seperti yang Anda <font color="#E5E5E5">lihat saat ini serangan itu </font>
+
+456
+00:33:20,560 --> 00:33:24,450
+ gagal <font color="#CCCCCC">karena opsi dinonaktifkan </font>
+
+457
+00:33:35,059 --> 00:33:37,859
+ <font color="#CCCCCC">Namun, serangan </font><font color="#E5E5E5">yang memanfaatkan gambar </font>
+
+458
+00:33:37,859 --> 00:33:45,690
+ masih <font color="#CCCCCC">layak karena Anda dapat melihat </font>
+
+459
+00:33:45,690 --> 00:33:47,309
+ <font color="#E5E5E5">penyebab yang mendasari </font><font color="#CCCCCC">masalah adalah </font>
+
+460
+00:33:47,309 --> 00:33:48,929
+ fakta <font color="#CCCCCC">bahwa pengguna </font><font color="#E5E5E5">praktis sudah penuh </font>
+
+461
+00:33:48,929 --> 00:33:50,789
+ kontrol <font color="#E5E5E5">atas </font><font color="#CCCCCC">hama tali - yang </font>
+
+462
+00:33:50,789 --> 00:33:53,639
+ termasuk fungsi yang bisa Anda tangani <font color="#CCCCCC">dengan ini </font>
+
+463
+00:33:53,639 --> 00:33:55,830
+ dengan menambahkan ekstensi statis <font color="#E5E5E5">untuk disertakan </font>
+
+464
+00:33:55,830 --> 00:33:58,070
+ file 
+
+465
+00:33:58,660 --> 00:34:01,769
+ [Musik] 
+
+466
+00:34:11,590 --> 00:34:14,330
+ dengan melakukan <font color="#E5E5E5">ini kita dapat mencegah penyerang </font>
+
+467
+00:34:14,330 --> 00:34:17,890
+ untuk <font color="#E5E5E5">memanipulasi ekstensi </font>
+
+468
+00:34:27,020 --> 00:34:29,030
+ gambar belum <font color="#E5E5E5">termasuk ini </font>
+
+469
+00:34:29,030 --> 00:34:38,540
+ <font color="#CCCCCC">mengatur ekstensi waktu dengan </font><font color="#E5E5E5">cara </font><font color="#CCCCCC">ini </font>
+
+470
+00:34:38,540 --> 00:34:41,000
+ cukup untuk <font color="#CCCCCC">PHP 5.3 </font><font color="#E5E5E5">dan yang lebih baru </font>
+
+471
+00:34:41,000 --> 00:34:43,699
+ <font color="#E5E5E5">tambahan tetapi versi PHP yang lebih lama diizinkan </font>
+
+472
+00:34:43,699 --> 00:34:45,679
+ penggunaan <font color="#E5E5E5">persen karakter khusus </font>
+
+473
+00:34:45,679 --> 00:34:51,409
+ <font color="#CCCCCC">nol nol byte nol </font><font color="#E5E5E5">atau akhir string </font>
+
+474
+00:34:51,409 --> 00:34:53,570
+ spidol ditempatkan <font color="#CCCCCC">di </font><font color="#E5E5E5">string </font><font color="#CCCCCC">target </font>
+
+475
+00:34:53,570 --> 00:34:55,940
+ diteruskan ke fungsi sistem yang <font color="#E5E5E5">menyebabkan </font>
+
+476
+00:34:55,940 --> 00:34:58,040
+ ekstensi yang disertakan oleh pengembang web untuk 
+
+477
+00:34:58,040 --> 00:35:00,430
+ dijatuhkan 
+
+478
+00:35:01,000 --> 00:35:03,320
+ karena <font color="#E5E5E5">kerentanan ini sering terjadi </font>
+
+479
+00:35:03,320 --> 00:35:05,840
+ dieksploitasi <font color="#E5E5E5">untuk serangan sementara kebutuhan untuk </font>
+
+480
+00:35:05,840 --> 00:35:07,700
+ termasuk <font color="#E5E5E5">penanda nol nol persen dan </font>
+
+481
+00:35:07,700 --> 00:35:10,190
+ pengguna disediakan parameter adalah <font color="#E5E5E5">langka </font>
+
+482
+00:35:10,190 --> 00:35:20,210
+ karakter telah <font color="#CCCCCC">dinonaktifkan Anda juga bisa </font>
+
+483
+00:35:20,210 --> 00:35:22,490
+ tentukan folder <font color="#E5E5E5">di mana fungsi tersebut </font>
+
+484
+00:35:22,490 --> 00:35:24,260
+ <font color="#E5E5E5">termasuk akan beroperasi untuk mencegah pengguna </font>
+
+485
+00:35:24,260 --> 00:35:25,820
+ dari merusak awal 
+
+486
+00:35:25,820 --> 00:35:29,740
+ <font color="#CCCCCC">nama file </font><font color="#E5E5E5">dan </font><font color="#CCCCCC">nonaktifkan protokol khusus </font>
+
+487
+00:35:46,060 --> 00:35:48,520
+ langkah selanjutnya adalah <font color="#CCCCCC">menggunakan </font><font color="#E5E5E5">pengganti </font><font color="#CCCCCC">preg </font>
+
+488
+00:35:48,520 --> 00:35:50,230
+ <font color="#E5E5E5">berfungsi untuk menghapus titik dan garis miring </font>
+
+489
+00:35:50,230 --> 00:35:52,690
+ karakter <font color="#E5E5E5">yang membuatnya mustahil untuk </font>
+
+490
+00:35:52,690 --> 00:35:54,370
+ <font color="#E5E5E5">penyerang potensial untuk mengontrol </font>
+
+491
+00:35:54,370 --> 00:35:59,590
+ <font color="#E5E5E5">jalur inklusi membuat daftar file </font>
+
+492
+00:35:59,590 --> 00:36:01,270
+ yang dapat <font color="#E5E5E5">dimasukkan dan memblokir semua </font>
+
+493
+00:36:01,270 --> 00:36:03,220
+ referensi lain <font color="#E5E5E5">sepertinya yang terbaik </font>
+
+494
+00:36:03,220 --> 00:36:06,460
+ solusi jika Anda tidak bisa <font color="#E5E5E5">menerapkan ini </font>
+
+495
+00:36:06,460 --> 00:36:08,650
+ metode <font color="#CCCCCC">mencoba untuk menghalangi penyerang potensial </font>
+
+496
+00:36:08,650 --> 00:36:18,580
+ <font color="#CCCCCC">dengan </font><font color="#E5E5E5">memfilter masukan, itu semua dalam modul </font>
+
+497
+00:36:18,580 --> 00:36:21,340
+ <font color="#CCCCCC">11 terima kasih atas perhatian Anda dan lihat </font>
+
+498
+00:36:21,340 --> 00:36:23,050
+ Anda <font color="#E5E5E5">di modul berikutnya yang akan mencakup </font>
+
+499
+00:36:23,050 --> 00:36:25,030
+ <font color="#CCCCCC">serangan injeksi kode statis langsung </font>
+
+500
+00:36:25,030 --> 00:00:00,000
+ <font color="#E5E5E5">sampai jumpa </font>
+

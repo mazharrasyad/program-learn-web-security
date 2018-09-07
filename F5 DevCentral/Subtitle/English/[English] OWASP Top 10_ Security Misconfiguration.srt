@@ -1,0 +1,1028 @@
+1
+00:00:08,179 --> 00:00:10,469
+hey everybody<font color="#CCCCCC"> john</font><font color="#E5E5E5"> wagon on here with</font>
+
+2
+00:00:10,469 --> 00:00:11,820
+<font color="#CCCCCC">deb</font><font color="#E5E5E5"> central we're coming to you with</font>
+
+3
+00:00:11,820 --> 00:00:13,769
+<font color="#E5E5E5">another</font><font color="#CCCCCC"> light</font><font color="#E5E5E5"> board lesson video and</font>
+
+4
+00:00:13,769 --> 00:00:15,350
+today we're gonna do another<font color="#CCCCCC"> one of</font><font color="#E5E5E5"> the</font>
+
+5
+00:00:15,350 --> 00:00:19,410
+top<font color="#CCCCCC"> ten security risks out there</font><font color="#E5E5E5"> today</font>
+
+6
+00:00:19,410 --> 00:00:22,140
+is risk number six on the<font color="#CCCCCC"> list of the</font>
+
+7
+00:00:22,140 --> 00:00:26,670
+ten and and risk number six<font color="#E5E5E5"> is called</font>
+
+8
+00:00:26,670 --> 00:00:28,830
+security<font color="#E5E5E5"> miss configuration</font>
+
+9
+00:00:28,830 --> 00:00:32,070
+<font color="#E5E5E5">alright so big big words for for the for</font>
+
+10
+00:00:32,070 --> 00:00:34,230
+<font color="#E5E5E5">this latest one</font><font color="#CCCCCC"> all right basically what</font>
+
+11
+00:00:34,230 --> 00:00:36,809
+this<font color="#E5E5E5"> is what this the the</font><font color="#CCCCCC"> the</font>
+
+12
+00:00:36,809 --> 00:00:39,420
+fundamental<font color="#CCCCCC"> problem that exists with</font>
+
+13
+00:00:39,420 --> 00:00:42,120
+security<font color="#E5E5E5"> miss configuration is that you</font>
+
+14
+00:00:42,120 --> 00:00:44,640
+have a web application<font color="#CCCCCC"> and it is</font>
+
+15
+00:00:44,640 --> 00:00:45,840
+comprised of several<font color="#CCCCCC"> different things</font>
+
+16
+00:00:45,840 --> 00:00:49,190
+and there are<font color="#E5E5E5"> default accounts there are</font>
+
+17
+00:00:49,190 --> 00:00:52,020
+you<font color="#E5E5E5"> know standard things that</font><font color="#CCCCCC"> come</font>
+
+18
+00:00:52,020 --> 00:00:54,629
+shipped with various parts<font color="#E5E5E5"> and pieces</font>
+
+19
+00:00:54,629 --> 00:00:57,899
+and you don't reconfigure those or you
+
+20
+00:00:57,899 --> 00:00:59,820
+don't configure your web application
+
+21
+00:00:59,820 --> 00:01:01,590
+properly<font color="#E5E5E5"> so let me just draw a little a</font>
+
+22
+00:01:01,590 --> 00:01:03,629
+<font color="#CCCCCC">little example here so let's say you've</font>
+
+23
+00:01:03,629 --> 00:01:07,140
+got<font color="#CCCCCC"> your</font><font color="#E5E5E5"> world class web application</font>
+
+24
+00:01:07,140 --> 00:01:09,960
+here<font color="#E5E5E5"> and it is comprised of a lot of</font>
+
+25
+00:01:09,960 --> 00:01:11,100
+<font color="#E5E5E5">different stuff</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> i'm</font><font color="#CCCCCC"> just going to</font>
+
+26
+00:01:11,100 --> 00:01:12,990
+draw kind<font color="#E5E5E5"> of this this box that</font>
+
+27
+00:01:12,990 --> 00:01:15,330
+<font color="#E5E5E5">represents</font><font color="#CCCCCC"> your</font><font color="#E5E5E5"> web application let's</font>
+
+28
+00:01:15,330 --> 00:01:19,650
+say you have a web<font color="#E5E5E5"> server</font><font color="#CCCCCC"> that is part</font>
+
+29
+00:01:19,650 --> 00:01:21,930
+of<font color="#E5E5E5"> this of course</font><font color="#CCCCCC"> right</font><font color="#E5E5E5"> let's say you</font>
+
+30
+00:01:21,930 --> 00:01:25,549
+have a<font color="#E5E5E5"> database</font><font color="#CCCCCC"> I'll put DB server</font>
+
+31
+00:01:25,549 --> 00:01:28,020
+<font color="#CCCCCC">alrighty let's say you have</font><font color="#E5E5E5"> maybe some</font>
+
+32
+00:01:28,020 --> 00:01:32,250
+kind<font color="#E5E5E5"> of authentication capabilities</font><font color="#CCCCCC"> so</font>
+
+33
+00:01:32,250 --> 00:01:33,689
+the point<font color="#E5E5E5"> is you've got a web</font>
+
+34
+00:01:33,689 --> 00:01:34,860
+application you've got a lot of
+
+35
+00:01:34,860 --> 00:01:36,390
+<font color="#E5E5E5">different parts and</font><font color="#CCCCCC"> pieces</font><font color="#E5E5E5"> that comprise</font>
+
+36
+00:01:36,390 --> 00:01:38,310
+this web application<font color="#CCCCCC"> alright so let's</font>
+
+37
+00:01:38,310 --> 00:01:40,680
+say on your web server you have<font color="#CCCCCC"> chosen</font>
+
+38
+00:01:40,680 --> 00:01:44,130
+<font color="#E5E5E5">to deploy the Apache web server so</font>
+
+39
+00:01:44,130 --> 00:01:45,210
+Apache here
+
+40
+00:01:45,210 --> 00:01:48,360
+Apache<font color="#CCCCCC"> alrighty which is a very common</font>
+
+41
+00:01:48,360 --> 00:01:50,729
+web server<font color="#CCCCCC"> alright</font>
+
+42
+00:01:50,729 --> 00:01:54,630
+the Apache web servers<font color="#CCCCCC"> and granted there</font>
+
+43
+00:01:54,630 --> 00:01:56,189
+are<font color="#E5E5E5"> many versions and all that kind of</font>
+
+44
+00:01:56,189 --> 00:01:56,610
+<font color="#E5E5E5">stuff</font>
+
+45
+00:01:56,610 --> 00:01:59,399
+Apache I went looked<font color="#CCCCCC"> earlier today and</font>
+
+46
+00:01:59,399 --> 00:02:02,460
+it<font color="#CCCCCC"> has</font><font color="#E5E5E5"> over 200 known vulnerabilities</font>
+
+47
+00:02:02,460 --> 00:02:03,570
+depending on the version<font color="#E5E5E5"> and</font><font color="#CCCCCC"> all that</font>
+
+48
+00:02:03,570 --> 00:02:04,770
+but if you look<font color="#CCCCCC"> at the patch is in</font>
+
+49
+00:02:04,770 --> 00:02:06,540
+general<font color="#E5E5E5"> there are over 200 known</font>
+
+50
+00:02:06,540 --> 00:02:08,699
+vulnerabilities with Apache web servers
+
+51
+00:02:08,699 --> 00:02:11,610
+<font color="#E5E5E5">let's</font><font color="#CCCCCC"> say you have Oracle for example</font>
+
+52
+00:02:11,610 --> 00:02:13,030
+for your data
+
+53
+00:02:13,030 --> 00:02:16,660
+server<font color="#CCCCCC"> alrighty there are like 50 some</font>
+
+54
+00:02:16,660 --> 00:02:20,130
+some odd<font color="#E5E5E5"> Oracle known vulnerabilities</font>
+
+55
+00:02:20,130 --> 00:02:23,280
+<font color="#CCCCCC">authentication</font><font color="#E5E5E5"> may be used in sam'l or</font>
+
+56
+00:02:23,280 --> 00:02:25,120
+authorities with all of those<font color="#E5E5E5"> things so</font>
+
+57
+00:02:25,120 --> 00:02:27,490
+<font color="#E5E5E5">the point is that whenever you</font><font color="#CCCCCC"> build</font>
+
+58
+00:02:27,490 --> 00:02:29,560
+your web application<font color="#E5E5E5"> and you build it</font>
+
+59
+00:02:29,560 --> 00:02:31,630
+<font color="#CCCCCC">with</font><font color="#E5E5E5"> these parts and pieces then</font>
+
+60
+00:02:31,630 --> 00:02:35,410
+<font color="#CCCCCC">whatever you have chosen to use to build</font>
+
+61
+00:02:35,410 --> 00:02:37,450
+<font color="#E5E5E5">this whole thing you need to understand</font>
+
+62
+00:02:37,450 --> 00:02:39,370
+there<font color="#CCCCCC"> are there are vulnerabilities</font>
+
+63
+00:02:39,370 --> 00:02:41,560
+right out of<font color="#E5E5E5"> the box with these with</font>
+
+64
+00:02:41,560 --> 00:02:43,750
+<font color="#E5E5E5">these different you know features or</font>
+
+65
+00:02:43,750 --> 00:02:45,510
+with this with this different software
+
+66
+00:02:45,510 --> 00:02:47,890
+<font color="#CCCCCC">okay some of the things that could</font>
+
+67
+00:02:47,890 --> 00:02:50,320
+happen<font color="#E5E5E5"> in terms of security</font><font color="#CCCCCC"> miss</font>
+
+68
+00:02:50,320 --> 00:02:52,690
+configuration is maybe you have some
+
+69
+00:02:52,690 --> 00:02:55,630
+unnecessary<font color="#E5E5E5"> features enabled on your web</font>
+
+70
+00:02:55,630 --> 00:02:57,550
+application<font color="#E5E5E5"> so again let's go</font><font color="#CCCCCC"> back to</font>
+
+71
+00:02:57,550 --> 00:02:59,170
+the web server for<font color="#E5E5E5"> example Apache you</font>
+
+72
+00:02:59,170 --> 00:03:01,239
+deploy it<font color="#E5E5E5"> right out of the box</font><font color="#CCCCCC"> maybe</font>
+
+73
+00:03:01,239 --> 00:03:02,950
+<font color="#E5E5E5">it's got some features</font><font color="#CCCCCC"> that just</font><font color="#E5E5E5"> it</font>
+
+74
+00:03:02,950 --> 00:03:05,830
+<font color="#E5E5E5">comes you know</font><font color="#CCCCCC"> defaults configured but</font>
+
+75
+00:03:05,830 --> 00:03:06,970
+you<font color="#E5E5E5"> don't need</font><font color="#CCCCCC"> that for your web</font>
+
+76
+00:03:06,970 --> 00:03:09,400
+application so it is a good<font color="#CCCCCC"> idea</font><font color="#E5E5E5"> to go</font>
+
+77
+00:03:09,400 --> 00:03:11,080
+through<font color="#E5E5E5"> and say hey what do I actually</font>
+
+78
+00:03:11,080 --> 00:03:13,209
+<font color="#E5E5E5">need and what do I not need and if you</font>
+
+79
+00:03:13,209 --> 00:03:15,580
+don't<font color="#E5E5E5"> need</font><font color="#CCCCCC"> it then it is a good idea to</font>
+
+80
+00:03:15,580 --> 00:03:17,530
+turn it off<font color="#E5E5E5"> to delete it whatever it is</font>
+
+81
+00:03:17,530 --> 00:03:20,350
+so don't use what you don't need<font color="#CCCCCC"> because</font>
+
+82
+00:03:20,350 --> 00:03:23,049
+think of<font color="#E5E5E5"> it as hey if I have something</font>
+
+83
+00:03:23,049 --> 00:03:27,100
+enabled then that is a potential<font color="#E5E5E5"> risk</font>
+
+84
+00:03:27,100 --> 00:03:28,870
+<font color="#CCCCCC">that is a potential door to allow the</font>
+
+85
+00:03:28,870 --> 00:03:30,760
+bad guys to get<font color="#E5E5E5"> in so if I don't</font><font color="#CCCCCC"> need it</font>
+
+86
+00:03:30,760 --> 00:03:33,220
+<font color="#CCCCCC">then I need</font><font color="#E5E5E5"> to turn it</font><font color="#CCCCCC"> off default</font>
+
+87
+00:03:33,220 --> 00:03:34,750
+accounts would<font color="#E5E5E5"> fall underneath that so</font>
+
+88
+00:03:34,750 --> 00:03:37,360
+like an admin account let's say with you
+
+89
+00:03:37,360 --> 00:03:39,910
+know with a certain server that it comes
+
+90
+00:03:39,910 --> 00:03:42,070
+with<font color="#E5E5E5"> you know admin and the password is</font>
+
+91
+00:03:42,070 --> 00:03:44,290
+admin and<font color="#E5E5E5"> everybody on the internet</font>
+
+92
+00:03:44,290 --> 00:03:46,780
+knows that so<font color="#E5E5E5"> if you don't change that</font>
+
+93
+00:03:46,780 --> 00:03:49,630
+<font color="#E5E5E5">admin account and certainly the password</font>
+
+94
+00:03:49,630 --> 00:03:53,200
+then you<font color="#E5E5E5"> open yourself up there are some</font>
+
+95
+00:03:53,200 --> 00:03:54,940
+<font color="#E5E5E5">error handling things that may happen</font>
+
+96
+00:03:54,940 --> 00:03:57,400
+<font color="#E5E5E5">where let's say that a user comes to</font>
+
+97
+00:03:57,400 --> 00:03:59,799
+access<font color="#E5E5E5"> your web application and they get</font>
+
+98
+00:03:59,799 --> 00:04:01,690
+some<font color="#CCCCCC"> kind of an error page and the way</font>
+
+99
+00:04:01,690 --> 00:04:04,090
+that you handle those errors let's say
+
+100
+00:04:04,090 --> 00:04:06,220
+that you give them<font color="#CCCCCC"> back a page that says</font>
+
+101
+00:04:06,220 --> 00:04:07,900
+<font color="#E5E5E5">hey I'm</font><font color="#CCCCCC"> sorry</font><font color="#E5E5E5"> you have reached the page</font>
+
+102
+00:04:07,900 --> 00:04:11,019
+that<font color="#CCCCCC"> doesn't exist or whatever</font><font color="#E5E5E5"> but as a</font>
+
+103
+00:04:11,019 --> 00:04:13,090
+as a part<font color="#E5E5E5"> of that error page that you</font>
+
+104
+00:04:13,090 --> 00:04:14,910
+<font color="#CCCCCC">present back to the user</font>
+
+105
+00:04:14,910 --> 00:04:17,200
+<font color="#E5E5E5">maybe you list hey by</font><font color="#CCCCCC"> the way I'm using</font>
+
+106
+00:04:17,200 --> 00:04:19,390
+<font color="#E5E5E5">Apache version blah blah blah or I'm</font>
+
+107
+00:04:19,390 --> 00:04:20,950
+using<font color="#CCCCCC"> Oracle you know this came from</font><font color="#E5E5E5"> a</font>
+
+108
+00:04:20,950 --> 00:04:23,110
+database<font color="#E5E5E5"> Oracle database it's</font><font color="#CCCCCC"> version</font>
+
+109
+00:04:23,110 --> 00:04:25,510
+this and then that gives<font color="#E5E5E5"> an attacker</font><font color="#CCCCCC"> it</font>
+
+110
+00:04:25,510 --> 00:04:26,650
+would be attacker
+
+111
+00:04:26,650 --> 00:04:29,800
+the exact<font color="#E5E5E5"> you know type of software</font><font color="#CCCCCC"> that</font>
+
+112
+00:04:29,800 --> 00:04:31,030
+<font color="#CCCCCC">you have</font><font color="#E5E5E5"> used to build this web</font>
+
+113
+00:04:31,030 --> 00:04:32,710
+<font color="#CCCCCC">application and then they don't</font><font color="#E5E5E5"> even</font>
+
+114
+00:04:32,710 --> 00:04:34,150
+have<font color="#E5E5E5"> to guess anymore what kind of web</font>
+
+115
+00:04:34,150 --> 00:04:35,740
+server you have<font color="#E5E5E5"> now they know the type</font>
+
+116
+00:04:35,740 --> 00:04:37,180
+and the<font color="#CCCCCC"> version and</font><font color="#E5E5E5"> all that stuff and</font>
+
+117
+00:04:37,180 --> 00:04:38,650
+then<font color="#E5E5E5"> they can say hey tell me the</font>
+
+118
+00:04:38,650 --> 00:04:40,750
+vulnerabilities on that specific<font color="#E5E5E5"> one</font><font color="#CCCCCC"> all</font>
+
+119
+00:04:40,750 --> 00:04:43,630
+<font color="#E5E5E5">right</font><font color="#CCCCCC"> so so as you handle errors or</font>
+
+120
+00:04:43,630 --> 00:04:45,550
+error pages<font color="#E5E5E5"> in</font><font color="#CCCCCC"> your web application you</font>
+
+121
+00:04:45,550 --> 00:04:46,780
+need<font color="#E5E5E5"> to make sure</font><font color="#CCCCCC"> that you</font><font color="#E5E5E5"> don't over</font>
+
+122
+00:04:46,780 --> 00:04:49,900
+share information<font color="#CCCCCC"> there are security</font>
+
+123
+00:04:49,900 --> 00:04:52,900
+features that<font color="#CCCCCC"> come you know naturally</font>
+
+124
+00:04:52,900 --> 00:04:55,780
+with these different<font color="#E5E5E5"> servers or code</font><font color="#CCCCCC"> or</font>
+
+125
+00:04:55,780 --> 00:04:58,810
+<font color="#CCCCCC">whatever and let's say Apache</font><font color="#E5E5E5"> releases</font>
+
+126
+00:04:58,810 --> 00:05:00,400
+an update then you need to make<font color="#CCCCCC"> sure</font>
+
+127
+00:05:00,400 --> 00:05:02,169
+<font color="#E5E5E5">that you put that update on</font><font color="#CCCCCC"> your web</font>
+
+128
+00:05:02,169 --> 00:05:04,120
+application so all the<font color="#CCCCCC"> latest security</font>
+
+129
+00:05:04,120 --> 00:05:06,490
+<font color="#E5E5E5">patches and features need to</font><font color="#CCCCCC"> be</font><font color="#E5E5E5"> enabled</font>
+
+130
+00:05:06,490 --> 00:05:07,990
+<font color="#E5E5E5">so again don't don't</font><font color="#CCCCCC"> just use the</font>
+
+131
+00:05:07,990 --> 00:05:11,830
+default<font color="#CCCCCC"> another one that that is</font>
+
+132
+00:05:11,830 --> 00:05:15,870
+problematic<font color="#CCCCCC"> is whenever your web server</font>
+
+133
+00:05:15,870 --> 00:05:19,389
+responds back to a client<font color="#CCCCCC"> maybe it does</font>
+
+134
+00:05:19,389 --> 00:05:22,889
+not send<font color="#E5E5E5"> any kind of a security header</font>
+
+135
+00:05:22,889 --> 00:05:25,750
+<font color="#CCCCCC">you know on the HTTP response back to</font>
+
+136
+00:05:25,750 --> 00:05:28,389
+the client<font color="#CCCCCC"> so there are these security</font>
+
+137
+00:05:28,389 --> 00:05:30,370
+headers<font color="#CCCCCC"> that you can use in an HTTP</font>
+
+138
+00:05:30,370 --> 00:05:33,190
+response<font color="#E5E5E5"> and you should use those so</font>
+
+139
+00:05:33,190 --> 00:05:34,930
+those are those are some<font color="#E5E5E5"> things that in</font>
+
+140
+00:05:34,930 --> 00:05:37,050
+terms of configuration<font color="#CCCCCC"> of the web</font>
+
+141
+00:05:37,050 --> 00:05:39,310
+application itself<font color="#E5E5E5"> those are things that</font>
+
+142
+00:05:39,310 --> 00:05:42,280
+you<font color="#E5E5E5"> need to to</font><font color="#CCCCCC"> keep in mind</font><font color="#E5E5E5"> one thing</font>
+
+143
+00:05:42,280 --> 00:05:44,320
+<font color="#CCCCCC">that can help with this</font><font color="#E5E5E5"> is an automated</font>
+
+144
+00:05:44,320 --> 00:05:47,050
+scanning<font color="#E5E5E5"> capability so like a like a</font>
+
+145
+00:05:47,050 --> 00:05:47,740
+<font color="#CCCCCC">dashed</font>
+
+146
+00:05:47,740 --> 00:05:50,020
+tool<font color="#E5E5E5"> I could come in</font><font color="#CCCCCC"> and check in ahead</font>
+
+147
+00:05:50,020 --> 00:05:51,639
+you have default account<font color="#E5E5E5"> set</font><font color="#CCCCCC"> up do you</font>
+
+148
+00:05:51,639 --> 00:05:54,820
+have<font color="#E5E5E5"> the latest patches on your</font><font color="#CCCCCC"> on your</font>
+
+149
+00:05:54,820 --> 00:05:56,139
+different<font color="#E5E5E5"> servers or your web</font>
+
+150
+00:05:56,139 --> 00:05:59,680
+application in general<font color="#E5E5E5"> so a you know an</font>
+
+151
+00:05:59,680 --> 00:06:02,289
+automated testing tool is a good<font color="#E5E5E5"> thing</font>
+
+152
+00:06:02,289 --> 00:06:06,370
+to use<font color="#CCCCCC"> alrighty</font><font color="#E5E5E5"> so those are some of the</font>
+
+153
+00:06:06,370 --> 00:06:08,050
+<font color="#E5E5E5">problem areas</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> could happen with</font>
+
+154
+00:06:08,050 --> 00:06:10,510
+security<font color="#CCCCCC"> mists configuration some things</font>
+
+155
+00:06:10,510 --> 00:06:12,430
+that that I'll list in terms<font color="#E5E5E5"> of how to</font>
+
+156
+00:06:12,430 --> 00:06:15,000
+<font color="#E5E5E5">help with</font><font color="#CCCCCC"> this</font><font color="#E5E5E5"> is I'm gonna say</font>
+
+157
+00:06:15,000 --> 00:06:20,250
+repeatable repeatable processes
+
+158
+00:06:20,250 --> 00:06:22,690
+repeatable process and I'll just put
+
+159
+00:06:22,690 --> 00:06:25,570
+<font color="#CCCCCC">that all right and</font><font color="#E5E5E5"> what I mean</font><font color="#CCCCCC"> by that</font>
+
+160
+00:06:25,570 --> 00:06:29,440
+<font color="#E5E5E5">is you need</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> a hardening process I</font>
+
+161
+00:06:29,440 --> 00:06:30,789
+don't<font color="#CCCCCC"> want to write</font><font color="#E5E5E5"> that all up there</font>
+
+162
+00:06:30,789 --> 00:06:32,560
+but you<font color="#E5E5E5"> need a repeatable hardening</font>
+
+163
+00:06:32,560 --> 00:06:34,780
+process that will say<font color="#E5E5E5"> hey how do i</font>
+
+164
+00:06:34,780 --> 00:06:37,900
+hardened my web application<font color="#CCCCCC"> from all the</font>
+
+165
+00:06:37,900 --> 00:06:38,830
+things that<font color="#E5E5E5"> we've already talked about</font>
+
+166
+00:06:38,830 --> 00:06:40,600
+<font color="#E5E5E5">you</font><font color="#CCCCCC"> know</font><font color="#E5E5E5"> the default password</font>
+
+167
+00:06:40,600 --> 00:06:42,880
+the security or the the<font color="#E5E5E5"> error handling</font>
+
+168
+00:06:42,880 --> 00:06:45,820
+all those different things<font color="#CCCCCC"> I need to I</font>
+
+169
+00:06:45,820 --> 00:06:47,320
+need<font color="#CCCCCC"> to figure out a process</font><font color="#E5E5E5"> that will</font>
+
+170
+00:06:47,320 --> 00:06:48,700
+harden<font color="#E5E5E5"> this down and it needs to be</font>
+
+171
+00:06:48,700 --> 00:06:52,330
+repeatable<font color="#CCCCCC"> it needs to be easy to to to</font>
+
+172
+00:06:52,330 --> 00:06:54,220
+do<font color="#CCCCCC"> to automate</font><font color="#E5E5E5"> that kind of our</font>
+
+173
+00:06:54,220 --> 00:06:55,990
+automation<font color="#E5E5E5"> would be nice to be</font><font color="#CCCCCC"> able</font><font color="#E5E5E5"> to</font>
+
+174
+00:06:55,990 --> 00:06:58,480
+do<font color="#E5E5E5"> so you need to be able to run this</font>
+
+175
+00:06:58,480 --> 00:07:01,120
+process<font color="#E5E5E5"> against your web application</font><font color="#CCCCCC"> and</font>
+
+176
+00:07:01,120 --> 00:07:04,000
+do it<font color="#E5E5E5"> repeatedly all righty</font>
+
+177
+00:07:04,000 --> 00:07:09,450
+another one is all servers I'll say<font color="#E5E5E5"> all</font>
+
+178
+00:07:09,450 --> 00:07:17,310
+<font color="#E5E5E5">servers</font><font color="#CCCCCC"> need</font><font color="#E5E5E5"> to have let's say same</font>
+
+179
+00:07:17,310 --> 00:07:22,060
+config<font color="#CCCCCC"> alright and what what I mean by</font>
+
+180
+00:07:22,060 --> 00:07:24,910
+that<font color="#E5E5E5"> is you have your maybe you have</font>
+
+181
+00:07:24,910 --> 00:07:27,640
+your development server that<font color="#E5E5E5"> you're</font>
+
+182
+00:07:27,640 --> 00:07:28,960
+developing all this stuff in then you
+
+183
+00:07:28,960 --> 00:07:30,550
+have<font color="#CCCCCC"> like a QA or like a test server</font>
+
+184
+00:07:30,550 --> 00:07:32,200
+that you want<font color="#CCCCCC"> to test</font><font color="#E5E5E5"> everything in and</font>
+
+185
+00:07:32,200 --> 00:07:33,550
+you have your production<font color="#CCCCCC"> server</font><font color="#E5E5E5"> that</font>
+
+186
+00:07:33,550 --> 00:07:35,800
+that's<font color="#CCCCCC"> facing</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> internet all of these</font>
+
+187
+00:07:35,800 --> 00:07:37,630
+<font color="#E5E5E5">servers from from a security</font>
+
+188
+00:07:37,630 --> 00:07:39,790
+configuration perspective<font color="#E5E5E5"> need to have</font>
+
+189
+00:07:39,790 --> 00:07:41,500
+the exact same<font color="#CCCCCC"> configuration that way</font>
+
+190
+00:07:41,500 --> 00:07:43,420
+when you run these repeatable processes
+
+191
+00:07:43,420 --> 00:07:45,430
+these these hardening actions against
+
+192
+00:07:45,430 --> 00:07:47,320
+them<font color="#E5E5E5"> then all</font><font color="#CCCCCC"> of these</font><font color="#E5E5E5"> servers need to</font>
+
+193
+00:07:47,320 --> 00:07:49,650
+look exactly<font color="#E5E5E5"> the same from a confirm a</font>
+
+194
+00:07:49,650 --> 00:07:53,020
+configuration perspective<font color="#CCCCCC"> alrighty I'll</font>
+
+195
+00:07:53,020 --> 00:08:01,180
+say minimal minimal platform and I'll
+
+196
+00:08:01,180 --> 00:08:02,800
+just I'll<font color="#CCCCCC"> just say minimal platform for</font>
+
+197
+00:08:02,800 --> 00:08:04,510
+now<font color="#CCCCCC"> this</font><font color="#E5E5E5"> goes back</font><font color="#CCCCCC"> to what I talked</font>
+
+198
+00:08:04,510 --> 00:08:07,030
+<font color="#CCCCCC">about a second ago if you don't need the</font>
+
+199
+00:08:07,030 --> 00:08:09,700
+feature or the<font color="#CCCCCC"> capability that is</font>
+
+200
+00:08:09,700 --> 00:08:11,230
+shipped out of<font color="#CCCCCC"> the</font><font color="#E5E5E5"> box with</font><font color="#CCCCCC"> this thing</font>
+
+201
+00:08:11,230 --> 00:08:13,600
+then<font color="#CCCCCC"> you need to turn it off</font><font color="#E5E5E5"> so your web</font>
+
+202
+00:08:13,600 --> 00:08:15,340
+application needs to<font color="#E5E5E5"> do exactly</font><font color="#CCCCCC"> what</font><font color="#E5E5E5"> it</font>
+
+203
+00:08:15,340 --> 00:08:17,440
+<font color="#E5E5E5">needs to</font><font color="#CCCCCC"> do but it doesn't need</font><font color="#E5E5E5"> to do</font>
+
+204
+00:08:17,440 --> 00:08:20,410
+any<font color="#E5E5E5"> more than</font><font color="#CCCCCC"> that so have a minimal</font>
+
+205
+00:08:20,410 --> 00:08:23,500
+platform<font color="#CCCCCC"> you know footprint as it were</font>
+
+206
+00:08:23,500 --> 00:08:26,500
+as you build out your<font color="#CCCCCC"> web application</font>
+
+207
+00:08:26,500 --> 00:08:31,960
+I'm gonna<font color="#E5E5E5"> say security security headers</font>
+
+208
+00:08:31,960 --> 00:08:34,919
+or security directives<font color="#E5E5E5"> is what</font><font color="#CCCCCC"> output</font>
+
+209
+00:08:34,919 --> 00:08:37,690
+directives<font color="#CCCCCC"> alrighty</font>
+
+210
+00:08:37,690 --> 00:08:39,190
+security directives<font color="#E5E5E5"> and this goes</font><font color="#CCCCCC"> back</font>
+
+211
+00:08:39,190 --> 00:08:41,409
+to what I<font color="#E5E5E5"> was said earlier</font><font color="#CCCCCC"> that if a</font>
+
+212
+00:08:41,409 --> 00:08:42,969
+client accesses<font color="#E5E5E5"> your web application</font>
+
+213
+00:08:42,969 --> 00:08:45,640
+then<font color="#E5E5E5"> you can go back</font><font color="#CCCCCC"> and use</font><font color="#E5E5E5"> different</font>
+
+214
+00:08:45,640 --> 00:08:47,860
+security headers for example<font color="#E5E5E5"> I'll put a</font>
+
+215
+00:08:47,860 --> 00:08:50,650
+<font color="#E5E5E5">couple of them up here HSTs is one so</font>
+
+216
+00:08:50,650 --> 00:08:53,240
+you<font color="#E5E5E5"> can include</font><font color="#CCCCCC"> H</font>
+
+217
+00:08:53,240 --> 00:09:00,580
+ekp is one<font color="#CCCCCC"> let's see there's a X</font><font color="#E5E5E5"> frame</font>
+
+218
+00:09:00,580 --> 00:09:03,320
+options<font color="#CCCCCC"> one</font><font color="#E5E5E5"> there's a bunch of these</font>
+
+219
+00:09:03,320 --> 00:09:05,720
+bunch of security headers that<font color="#CCCCCC"> you could</font>
+
+220
+00:09:05,720 --> 00:09:08,480
+use<font color="#E5E5E5"> but those are a few examples</font><font color="#CCCCCC"> but you</font>
+
+221
+00:09:08,480 --> 00:09:10,190
+need<font color="#E5E5E5"> to take</font><font color="#CCCCCC"> advantage of those that hey</font>
+
+222
+00:09:10,190 --> 00:09:11,930
+when you when you send the response back
+
+223
+00:09:11,930 --> 00:09:13,339
+then you're using those security
+
+224
+00:09:13,339 --> 00:09:16,220
+directives<font color="#CCCCCC"> okay so those are just a few</font>
+
+225
+00:09:16,220 --> 00:09:18,560
+<font color="#E5E5E5">of</font><font color="#CCCCCC"> the ways that you can</font><font color="#E5E5E5"> harden or</font>
+
+226
+00:09:18,560 --> 00:09:21,980
+configure your security on<font color="#CCCCCC"> your web</font>
+
+227
+00:09:21,980 --> 00:09:24,500
+application and<font color="#E5E5E5"> not have security</font><font color="#CCCCCC"> miss</font>
+
+228
+00:09:24,500 --> 00:09:27,770
+configuration<font color="#CCCCCC"> alright so again the</font>
+
+229
+00:09:27,770 --> 00:09:29,959
+overall<font color="#CCCCCC"> idea here is that</font><font color="#E5E5E5"> you</font><font color="#CCCCCC"> are going</font>
+
+230
+00:09:29,959 --> 00:09:31,310
+<font color="#E5E5E5">to use</font><font color="#CCCCCC"> different parts</font><font color="#E5E5E5"> and pieces</font>
+
+231
+00:09:31,310 --> 00:09:33,200
+<font color="#CCCCCC">different</font><font color="#E5E5E5"> code to build out your</font><font color="#CCCCCC"> web</font>
+
+232
+00:09:33,200 --> 00:09:35,390
+application and you need to understand
+
+233
+00:09:35,390 --> 00:09:36,640
+<font color="#E5E5E5">that there are vulnerabilities</font>
+
+234
+00:09:36,640 --> 00:09:40,880
+<font color="#E5E5E5">inherently</font><font color="#CCCCCC"> you know</font><font color="#E5E5E5"> tied to those parts</font>
+
+235
+00:09:40,880 --> 00:09:43,160
+and<font color="#E5E5E5"> pieces of code and even if you write</font>
+
+236
+00:09:43,160 --> 00:09:44,420
+<font color="#CCCCCC">it yourself I</font><font color="#E5E5E5"> mean there's there's</font><font color="#CCCCCC"> going</font>
+
+237
+00:09:44,420 --> 00:09:47,390
+to be some<font color="#CCCCCC"> security issues alright so</font>
+
+238
+00:09:47,390 --> 00:09:48,740
+you<font color="#E5E5E5"> can do some of</font><font color="#CCCCCC"> these things there</font>
+
+239
+00:09:48,740 --> 00:09:50,899
+are<font color="#E5E5E5"> other other other ways to help</font>
+
+240
+00:09:50,899 --> 00:09:53,450
+<font color="#E5E5E5">harden or or help</font><font color="#CCCCCC"> with the security</font>
+
+241
+00:09:53,450 --> 00:09:54,860
+<font color="#CCCCCC">every web application like with the Web</font>
+
+242
+00:09:54,860 --> 00:09:56,660
+Application Firewall<font color="#E5E5E5"> that's that's</font>
+
+243
+00:09:56,660 --> 00:09:57,860
+another<font color="#E5E5E5"> thing</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> you could implement</font>
+
+244
+00:09:57,860 --> 00:10:00,770
+to<font color="#CCCCCC"> help with some of these things but</font>
+
+245
+00:10:00,770 --> 00:10:03,529
+nonetheless it's a it can be<font color="#CCCCCC"> a</font><font color="#E5E5E5"> dangerous</font>
+
+246
+00:10:03,529 --> 00:10:05,870
+world out there<font color="#CCCCCC"> in the in the</font><font color="#E5E5E5"> internet</font>
+
+247
+00:10:05,870 --> 00:10:07,970
+with<font color="#CCCCCC"> your web</font><font color="#E5E5E5"> application so so make</font>
+
+248
+00:10:07,970 --> 00:10:10,190
+<font color="#CCCCCC">sure</font><font color="#E5E5E5"> that you configure your web</font>
+
+249
+00:10:10,190 --> 00:10:13,339
+<font color="#CCCCCC">application securely repeatedly check</font>
+
+250
+00:10:13,339 --> 00:10:15,890
+<font color="#E5E5E5">that harden it as much as you can and</font>
+
+251
+00:10:15,890 --> 00:10:17,959
+<font color="#CCCCCC">only use exactly what you need to use</font>
+
+252
+00:10:17,959 --> 00:10:19,459
+<font color="#CCCCCC">and nothing</font><font color="#E5E5E5"> more so thanks for watching</font>
+
+253
+00:10:19,459 --> 00:10:22,339
+<font color="#CCCCCC">this lightboard lesson video today make</font>
+
+254
+00:10:22,339 --> 00:10:24,020
+sure<font color="#CCCCCC"> you subscribe</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> our YouTube</font>
+
+255
+00:10:24,020 --> 00:10:25,850
+channel<font color="#E5E5E5"> and we will see you guys out</font>
+
+256
+00:10:25,850 --> 00:10:28,510
+<font color="#E5E5E5">there in the community</font>
+
+257
+00:10:34,350 --> 00:00:00,000
+you
+

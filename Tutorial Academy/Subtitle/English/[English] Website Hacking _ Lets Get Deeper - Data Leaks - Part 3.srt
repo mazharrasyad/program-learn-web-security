@@ -1,0 +1,2192 @@
+1
+00:00:06,630 --> 00:00:08,690
+you
+
+2
+00:00:13,289 --> 00:00:15,730
+welcome to module<font color="#CCCCCC"> five</font><font color="#E5E5E5"> of our course in</font>
+
+3
+00:00:15,730 --> 00:00:18,009
+this<font color="#CCCCCC"> module we'll discuss web parameter</font>
+
+4
+00:00:18,009 --> 00:00:21,579
+tampering attacks these types of hacking
+
+5
+00:00:21,579 --> 00:00:23,650
+events occur when manipulated parameters
+
+6
+00:00:23,650 --> 00:00:25,930
+are passed a script<font color="#E5E5E5"> for example through</font>
+
+7
+00:00:25,930 --> 00:00:28,570
+get or<font color="#E5E5E5"> post and affect the functioning</font>
+
+8
+00:00:28,570 --> 00:00:30,250
+of a service<font color="#E5E5E5"> and lead to unpredicted</font>
+
+9
+00:00:30,250 --> 00:00:36,280
+script reactions critical information<font color="#E5E5E5"> is</font>
+
+10
+00:00:36,280 --> 00:00:38,079
+commonly referred<font color="#E5E5E5"> through hidden form</font>
+
+11
+00:00:38,079 --> 00:00:42,100
+fields this<font color="#CCCCCC"> is especially true</font><font color="#E5E5E5"> of web</font>
+
+12
+00:00:42,100 --> 00:00:43,840
+applications integrated with external
+
+13
+00:00:43,840 --> 00:00:47,140
+payment gateways<font color="#CCCCCC"> a malicious user may</font>
+
+14
+00:00:47,140 --> 00:00:49,120
+exploit<font color="#E5E5E5"> this occurrence by intentionally</font>
+
+15
+00:00:49,120 --> 00:00:51,999
+modifying transferred data if the
+
+16
+00:00:51,999 --> 00:00:54,039
+information is<font color="#E5E5E5"> not verified server-side</font>
+
+17
+00:00:54,039 --> 00:00:56,379
+<font color="#E5E5E5">the functioning of an application could</font>
+
+18
+00:00:56,379 --> 00:00:59,350
+<font color="#E5E5E5">be</font><font color="#CCCCCC"> affected let's take a look at a</font>
+
+19
+00:00:59,350 --> 00:01:00,640
+sample<font color="#E5E5E5"> script designed to illustrate</font>
+
+20
+00:01:00,640 --> 00:01:07,510
+<font color="#E5E5E5">this problem you can see here a page</font>
+
+21
+00:01:07,510 --> 00:01:09,250
+confirming<font color="#E5E5E5"> the</font><font color="#CCCCCC"> purchase of item numbered</font>
+
+22
+00:01:09,250 --> 00:01:11,840
+<font color="#E5E5E5">one two three four</font>
+
+23
+00:01:11,840 --> 00:01:14,670
+[Music]
+
+24
+00:01:14,670 --> 00:01:17,410
+after<font color="#E5E5E5"> clicking confirm the purchase</font><font color="#CCCCCC"> will</font>
+
+25
+00:01:17,410 --> 00:01:19,240
+<font color="#CCCCCC">be executed and</font><font color="#E5E5E5"> a confirmation message</font>
+
+26
+00:01:19,240 --> 00:01:21,160
+<font color="#CCCCCC">will be displayed with the</font><font color="#E5E5E5"> transaction</font>
+
+27
+00:01:21,160 --> 00:01:24,160
+price<font color="#E5E5E5"> let's now see</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> HTML source code</font>
+
+28
+00:01:24,160 --> 00:01:34,000
+<font color="#E5E5E5">used here as you can</font><font color="#CCCCCC"> see a form is</font>
+
+29
+00:01:34,000 --> 00:01:35,650
+generated<font color="#E5E5E5"> which contains an item</font>
+
+30
+00:01:35,650 --> 00:01:39,630
+identifier and surprisingly item price
+
+31
+00:01:39,630 --> 00:01:42,190
+let's try to change<font color="#E5E5E5"> the values passed in</font>
+
+32
+00:01:42,190 --> 00:01:46,120
+the form<font color="#E5E5E5"> for this purpose we'll use the</font>
+
+33
+00:01:46,120 --> 00:01:52,000
+live HTTP headers<font color="#E5E5E5"> add-on first we need</font>
+
+34
+00:01:52,000 --> 00:01:54,160
+to intercept an HTTP request<font color="#CCCCCC"> to the</font>
+
+35
+00:01:54,160 --> 00:01:56,590
+service<font color="#CCCCCC"> and use the replay function</font><font color="#E5E5E5"> to</font>
+
+36
+00:01:56,590 --> 00:01:58,570
+<font color="#E5E5E5">change</font><font color="#CCCCCC"> the query</font><font color="#E5E5E5"> and alter the values of</font>
+
+37
+00:01:58,570 --> 00:02:01,620
+the referred parameters
+
+38
+00:02:02,750 --> 00:02:05,870
+[Music]
+
+39
+00:02:05,990 --> 00:02:08,699
+you can see here the content<font color="#E5E5E5"> of the</font><font color="#CCCCCC"> form</font>
+
+40
+00:02:08,699 --> 00:02:10,590
+referred by<font color="#E5E5E5"> post</font><font color="#CCCCCC"> along with the price</font>
+
+41
+00:02:10,590 --> 00:02:22,880
+field<font color="#E5E5E5"> let's try to change the value as</font>
+
+42
+00:02:22,880 --> 00:02:25,800
+we can see the price displayed<font color="#E5E5E5"> by the</font>
+
+43
+00:02:25,800 --> 00:02:28,440
+script has<font color="#CCCCCC"> been changed</font><font color="#E5E5E5"> if this</font>
+
+44
+00:02:28,440 --> 00:02:30,660
+information<font color="#E5E5E5"> was not only displayed but</font>
+
+45
+00:02:30,660 --> 00:02:32,850
+also used for<font color="#E5E5E5"> other</font><font color="#CCCCCC"> purposes for</font><font color="#E5E5E5"> example</font>
+
+46
+00:02:32,850 --> 00:02:35,640
+<font color="#CCCCCC">transferred to a payment gateway or used</font>
+
+47
+00:02:35,640 --> 00:02:38,340
+to charge<font color="#E5E5E5"> an account a user could try to</font>
+
+48
+00:02:38,340 --> 00:02:40,260
+deceive the application<font color="#E5E5E5"> and</font><font color="#CCCCCC"> modified</font><font color="#E5E5E5"> the</font>
+
+49
+00:02:40,260 --> 00:02:46,319
+<font color="#E5E5E5">amount paid remember that critical</font>
+
+50
+00:02:46,319 --> 00:02:48,000
+information<font color="#E5E5E5"> shouldn't be made available</font>
+
+51
+00:02:48,000 --> 00:02:52,700
+to<font color="#E5E5E5"> users it has to be stored server-side</font>
+
+52
+00:02:52,700 --> 00:02:55,620
+all information<font color="#E5E5E5"> referred to users may be</font>
+
+53
+00:02:55,620 --> 00:02:58,080
+tampered with<font color="#E5E5E5"> and modified by them this</font>
+
+54
+00:02:58,080 --> 00:03:00,880
+<font color="#E5E5E5">is why it cannot</font><font color="#CCCCCC"> be relied upon</font>
+
+55
+00:03:00,880 --> 00:03:03,140
+[Music]
+
+56
+00:03:03,140 --> 00:03:05,819
+<font color="#E5E5E5">unfortunately many websites still use</font>
+
+57
+00:03:05,819 --> 00:03:07,860
+<font color="#E5E5E5">hidden form fields to refer data to</font>
+
+58
+00:03:07,860 --> 00:03:11,730
+payment gateways after a transaction is
+
+59
+00:03:11,730 --> 00:03:13,620
+completed<font color="#CCCCCC"> they don't check if the actual</font>
+
+60
+00:03:13,620 --> 00:03:15,390
+<font color="#E5E5E5">transaction price equals the expected</font>
+
+61
+00:03:15,390 --> 00:03:20,790
+sum if critical transaction data is
+
+62
+00:03:20,790 --> 00:03:23,220
+<font color="#CCCCCC">passed client-side its integrity</font><font color="#E5E5E5"> should</font>
+
+63
+00:03:23,220 --> 00:03:25,859
+<font color="#E5E5E5">be verified</font><font color="#CCCCCC"> by hash functions</font><font color="#E5E5E5"> or other</font>
+
+64
+00:03:25,859 --> 00:03:33,750
+cryptographic<font color="#E5E5E5"> mechanisms that's all in</font>
+
+65
+00:03:33,750 --> 00:03:36,510
+module<font color="#CCCCCC"> 5 thanks for your attention</font>
+
+66
+00:03:36,510 --> 00:03:39,510
+in the next<font color="#CCCCCC"> module we'll focus on the</font>
+
+67
+00:03:39,510 --> 00:03:40,890
+<font color="#E5E5E5">path and information disclosure</font>
+
+68
+00:03:40,890 --> 00:03:45,049
+vulnerabilities<font color="#E5E5E5"> see you there</font>
+
+69
+00:03:50,940 --> 00:03:54,120
+welcome to module<font color="#CCCCCC"> six</font><font color="#E5E5E5"> in this module</font>
+
+70
+00:03:54,120 --> 00:03:55,620
+we'll talk about<font color="#E5E5E5"> the path and</font>
+
+71
+00:03:55,620 --> 00:03:57,500
+information disclosure vulnerabilities
+
+72
+00:03:57,500 --> 00:04:00,420
+the vulnerability occurs when an
+
+73
+00:04:00,420 --> 00:04:02,460
+incorrect script execution returns an
+
+74
+00:04:02,460 --> 00:04:04,920
+error<font color="#E5E5E5"> on a website which reveals too</font>
+
+75
+00:04:04,920 --> 00:04:11,880
+much<font color="#CCCCCC"> information to visitors while</font><font color="#E5E5E5"> this</font>
+
+76
+00:04:11,880 --> 00:04:13,440
+<font color="#E5E5E5">feature is helpful in developing</font><font color="#CCCCCC"> an</font>
+
+77
+00:04:13,440 --> 00:04:15,690
+application<font color="#CCCCCC"> or searching websites for</font>
+
+78
+00:04:15,690 --> 00:04:18,060
+errors it may at times lead to an
+
+79
+00:04:18,060 --> 00:04:19,798
+information disclosure that enables a
+
+80
+00:04:19,798 --> 00:04:21,480
+hacker to see the full service<font color="#CCCCCC"> structure</font>
+
+81
+00:04:21,480 --> 00:04:25,250
+and search it for potential weaknesses
+
+82
+00:04:29,630 --> 00:04:31,740
+let's see a<font color="#E5E5E5"> sample script which</font>
+
+83
+00:04:31,740 --> 00:04:38,610
+illustrates the problem<font color="#E5E5E5"> this simple</font>
+
+84
+00:04:38,610 --> 00:04:40,170
+script first connects to the<font color="#CCCCCC"> database we</font>
+
+85
+00:04:40,170 --> 00:04:41,370
+<font color="#CCCCCC">have earlier created</font><font color="#E5E5E5"> for this</font>
+
+86
+00:04:41,370 --> 00:04:43,590
+<font color="#CCCCCC">presentation</font><font color="#E5E5E5"> and then includes a second</font>
+
+87
+00:04:43,590 --> 00:04:47,060
+file<font color="#E5E5E5"> main PHP</font>
+
+88
+00:04:50,640 --> 00:04:53,570
+[Music]
+
+89
+00:04:53,570 --> 00:04:56,000
+<font color="#E5E5E5">user input entered into the file is used</font>
+
+90
+00:04:56,000 --> 00:04:58,730
+<font color="#E5E5E5">to generate an SQL query</font><font color="#CCCCCC"> that loads</font>
+
+91
+00:04:58,730 --> 00:05:03,410
+articles from the database<font color="#E5E5E5"> if the query</font>
+
+92
+00:05:03,410 --> 00:05:05,450
+is successful<font color="#E5E5E5"> the site will display the</font>
+
+93
+00:05:05,450 --> 00:05:08,510
+article if it<font color="#E5E5E5"> fails the site displays an</font>
+
+94
+00:05:08,510 --> 00:05:10,790
+error message<font color="#CCCCCC"> containing</font><font color="#E5E5E5"> the SQL query</font>
+
+95
+00:05:10,790 --> 00:05:17,420
+<font color="#CCCCCC">which provoked the air this</font><font color="#E5E5E5"> might be</font>
+
+96
+00:05:17,420 --> 00:05:20,230
+helpful<font color="#E5E5E5"> while building web</font><font color="#CCCCCC"> applications</font>
+
+97
+00:05:20,230 --> 00:05:22,640
+when visitors find errors they can
+
+98
+00:05:22,640 --> 00:05:24,950
+report<font color="#E5E5E5"> it to administrators making</font>
+
+99
+00:05:24,950 --> 00:05:28,540
+website building easier and faster
+
+100
+00:05:28,540 --> 00:05:31,100
+<font color="#E5E5E5">unfortunately a potential attacker may</font>
+
+101
+00:05:31,100 --> 00:05:33,200
+use the disclosed information<font color="#CCCCCC"> to exploit</font>
+
+102
+00:05:33,200 --> 00:05:37,370
+other application vulnerabilities let's
+
+103
+00:05:37,370 --> 00:05:41,170
+now see in practice<font color="#CCCCCC"> how the script works</font>
+
+104
+00:05:42,490 --> 00:05:45,770
+the database identifier<font color="#E5E5E5"> 1 holds an empty</font>
+
+105
+00:05:45,770 --> 00:05:48,440
+article so<font color="#E5E5E5"> entering this path won't</font>
+
+106
+00:05:48,440 --> 00:05:52,700
+cause errors what will happen though<font color="#E5E5E5"> if</font>
+
+107
+00:05:52,700 --> 00:05:55,430
+we pass an invalid identifier which will
+
+108
+00:05:55,430 --> 00:05:57,950
+cause the<font color="#E5E5E5"> SQL query to be syntactically</font>
+
+109
+00:05:57,950 --> 00:06:04,430
+<font color="#CCCCCC">and grammatically ill formed as we can</font>
+
+110
+00:06:04,430 --> 00:06:07,730
+see the generated<font color="#E5E5E5"> query is incorrect</font><font color="#CCCCCC"> 1/8</font>
+
+111
+00:06:07,730 --> 00:06:09,950
+is not a numerical value<font color="#CCCCCC"> and should be</font>
+
+112
+00:06:09,950 --> 00:06:13,130
+placed<font color="#CCCCCC"> in quotes</font><font color="#E5E5E5"> if this error occurs</font>
+
+113
+00:06:13,130 --> 00:06:16,300
+<font color="#CCCCCC">the content of the query is displayed</font>
+
+114
+00:06:16,300 --> 00:06:18,860
+this dangerous revelation allows an
+
+115
+00:06:18,860 --> 00:06:20,930
+<font color="#CCCCCC">attacker to</font><font color="#E5E5E5"> realize that the service may</font>
+
+116
+00:06:20,930 --> 00:06:22,730
+be exploited through<font color="#E5E5E5"> the SQL injection</font>
+
+117
+00:06:22,730 --> 00:06:24,740
+vulnerability<font color="#CCCCCC"> a type of vulnerability</font>
+
+118
+00:06:24,740 --> 00:06:28,360
+<font color="#CCCCCC">which will be discussed later</font>
+
+119
+00:06:29,170 --> 00:06:31,610
+moreover the names of the fields<font color="#CCCCCC"> and</font>
+
+120
+00:06:31,610 --> 00:06:33,650
+tables<font color="#CCCCCC"> used in the database are also</font>
+
+121
+00:06:33,650 --> 00:06:35,690
+revealed to the hacker<font color="#E5E5E5"> which makes the</font>
+
+122
+00:06:35,690 --> 00:06:39,590
+potential attack even<font color="#E5E5E5"> easier let's go</font>
+
+123
+00:06:39,590 --> 00:06:44,150
+back to<font color="#E5E5E5"> our script for a moment as you</font>
+
+124
+00:06:44,150 --> 00:06:45,650
+can see we don't check if the ID
+
+125
+00:06:45,650 --> 00:06:49,430
+parameter<font color="#E5E5E5"> has been given at all what</font>
+
+126
+00:06:49,430 --> 00:06:53,080
+could happen if<font color="#E5E5E5"> this is not</font><font color="#CCCCCC"> specified</font>
+
+127
+00:06:57,699 --> 00:07:00,440
+it turns out<font color="#CCCCCC"> that the PHP interpreter</font>
+
+128
+00:07:00,440 --> 00:07:03,710
+has returned more error notices the
+
+129
+00:07:03,710 --> 00:07:05,539
+<font color="#CCCCCC">messages disclose the</font><font color="#E5E5E5"> number of the line</font>
+
+130
+00:07:05,539 --> 00:07:07,669
+which<font color="#E5E5E5"> contains the error and file name</font>
+
+131
+00:07:07,669 --> 00:07:18,379
+in the<font color="#E5E5E5"> full path if the</font><font color="#CCCCCC"> filename is</font>
+
+132
+00:07:18,379 --> 00:07:20,530
+<font color="#E5E5E5">hidden through for example</font><font color="#CCCCCC"> mod rewrite</font>
+
+133
+00:07:20,530 --> 00:07:22,909
+the message will display<font color="#CCCCCC"> the original</font>
+
+134
+00:07:22,909 --> 00:07:27,229
+name of a<font color="#E5E5E5"> PHP file this exploit may also</font>
+
+135
+00:07:27,229 --> 00:07:28,789
+reveal<font color="#CCCCCC"> the service structure</font><font color="#E5E5E5"> with</font>
+
+136
+00:07:28,789 --> 00:07:31,759
+directories<font color="#E5E5E5"> and above all disclose the</font>
+
+137
+00:07:31,759 --> 00:07:33,620
+path to the directory<font color="#E5E5E5"> containing our web</font>
+
+138
+00:07:33,620 --> 00:07:37,280
+application<font color="#E5E5E5"> this could be exploited</font>
+
+139
+00:07:37,280 --> 00:07:39,199
+through<font color="#CCCCCC"> a path traversal</font><font color="#E5E5E5"> or PHP</font>
+
+140
+00:07:39,199 --> 00:07:44,870
+injection attack as these types<font color="#E5E5E5"> of data</font>
+
+141
+00:07:44,870 --> 00:07:46,849
+could<font color="#E5E5E5"> be very</font><font color="#CCCCCC"> useful for a potential</font>
+
+142
+00:07:46,849 --> 00:07:48,620
+hacker<font color="#E5E5E5"> it's essential to avoid</font>
+
+143
+00:07:48,620 --> 00:07:58,279
+information disclosure notice that the
+
+144
+00:07:58,279 --> 00:08:00,229
+connection to the database<font color="#E5E5E5"> is executed</font>
+
+145
+00:08:00,229 --> 00:08:03,409
+in index.php<font color="#E5E5E5"> while main PHP assumes that</font>
+
+146
+00:08:03,409 --> 00:08:06,949
+the connection has already been set<font color="#E5E5E5"> what</font>
+
+147
+00:08:06,949 --> 00:08:09,259
+happens if the main PHP file is launched
+
+148
+00:08:09,259 --> 00:08:13,940
+in isolation<font color="#CCCCCC"> both main PHP and index.php</font>
+
+149
+00:08:13,940 --> 00:08:16,099
+<font color="#CCCCCC">are stored in the same directory which</font>
+
+150
+00:08:16,099 --> 00:08:19,300
+is<font color="#E5E5E5"> accessible by the user</font>
+
+151
+00:08:29,750 --> 00:08:32,520
+as we can see the<font color="#CCCCCC"> execution of the</font>
+
+152
+00:08:32,520 --> 00:08:34,620
+script<font color="#CCCCCC"> is not successful here as the</font>
+
+153
+00:08:34,620 --> 00:08:36,150
+connection to the database<font color="#E5E5E5"> has not been</font>
+
+154
+00:08:36,150 --> 00:08:39,059
+set<font color="#E5E5E5"> this results in more error notices</font>
+
+155
+00:08:39,059 --> 00:08:40,979
+<font color="#E5E5E5">let's think of how</font><font color="#CCCCCC"> we may</font><font color="#E5E5E5"> protect</font>
+
+156
+00:08:40,979 --> 00:08:42,150
+ourselves from<font color="#E5E5E5"> these types of</font>
+
+157
+00:08:42,150 --> 00:08:44,010
+<font color="#E5E5E5">vulnerabilities and reduce the amount of</font>
+
+158
+00:08:44,010 --> 00:08:50,550
+<font color="#CCCCCC">output data</font><font color="#E5E5E5"> when an error</font><font color="#CCCCCC"> occurs we may</font>
+
+159
+00:08:50,550 --> 00:08:52,380
+go<font color="#E5E5E5"> back to</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> incorrect query discussed</font>
+
+160
+00:08:52,380 --> 00:09:01,500
+earlier in that case we could simply
+
+161
+00:09:01,500 --> 00:09:04,710
+disable displaying SQL queries<font color="#E5E5E5"> while</font>
+
+162
+00:09:04,710 --> 00:09:06,510
+<font color="#CCCCCC">displaying them is a helpful</font><font color="#E5E5E5"> feature for</font>
+
+163
+00:09:06,510 --> 00:09:08,610
+developers<font color="#E5E5E5"> the information</font><font color="#CCCCCC"> should not be</font>
+
+164
+00:09:08,610 --> 00:09:12,390
+disclosed<font color="#CCCCCC"> to all visitors it's better</font><font color="#E5E5E5"> to</font>
+
+165
+00:09:12,390 --> 00:09:14,880
+log the information<font color="#E5E5E5"> into a file or only</font>
+
+166
+00:09:14,880 --> 00:09:16,560
+display the<font color="#E5E5E5"> query</font><font color="#CCCCCC"> after checking</font><font color="#E5E5E5"> whether</font>
+
+167
+00:09:16,560 --> 00:09:18,630
+<font color="#CCCCCC">the current</font><font color="#E5E5E5"> user has administrator or</font>
+
+168
+00:09:18,630 --> 00:09:27,180
+developer privileges as you can see the
+
+169
+00:09:27,180 --> 00:09:30,620
+message<font color="#CCCCCC"> has not been displayed now</font>
+
+170
+00:09:34,220 --> 00:09:37,050
+unfortunately<font color="#E5E5E5"> this</font><font color="#CCCCCC"> does not solve the</font>
+
+171
+00:09:37,050 --> 00:09:38,880
+<font color="#E5E5E5">problem with returning error messages</font>
+
+172
+00:09:38,880 --> 00:09:42,150
+where no parameters are passed at all<font color="#E5E5E5"> it</font>
+
+173
+00:09:42,150 --> 00:09:43,890
+may be worthwhile to<font color="#E5E5E5"> prepare yourself</font>
+
+174
+00:09:43,890 --> 00:09:46,980
+<font color="#E5E5E5">for all possible error scenarios errors</font>
+
+175
+00:09:46,980 --> 00:09:48,720
+may<font color="#CCCCCC"> occur as a</font><font color="#E5E5E5"> result of a user</font><font color="#CCCCCC"> or</font>
+
+176
+00:09:48,720 --> 00:09:51,840
+service mistake they may also happen as
+
+177
+00:09:51,840 --> 00:09:54,030
+a result<font color="#CCCCCC"> of a potential attacker</font><font color="#E5E5E5"> testing</font>
+
+178
+00:09:54,030 --> 00:09:56,270
+the<font color="#CCCCCC"> application for vulnerabilities</font><font color="#E5E5E5"> in</font>
+
+179
+00:09:56,270 --> 00:09:58,980
+such cases<font color="#E5E5E5"> our script could be called in</font>
+
+180
+00:09:58,980 --> 00:10:00,570
+a way which is<font color="#E5E5E5"> not originally provided</font>
+
+181
+00:10:00,570 --> 00:10:02,760
+<font color="#E5E5E5">for this is why it's useful</font><font color="#CCCCCC"> to protect</font>
+
+182
+00:10:02,760 --> 00:10:04,620
+the application against at least<font color="#E5E5E5"> several</font>
+
+183
+00:10:04,620 --> 00:10:07,950
+<font color="#CCCCCC">obvious problems in this case we could</font>
+
+184
+00:10:07,950 --> 00:10:09,480
+<font color="#E5E5E5">configure the script to check if a</font>
+
+185
+00:10:09,480 --> 00:10:12,330
+parameter has actually been given the is
+
+186
+00:10:12,330 --> 00:10:14,100
+set function audits whether a<font color="#E5E5E5"> given</font>
+
+187
+00:10:14,100 --> 00:10:16,320
+variable<font color="#E5E5E5"> or identifier has been set if</font>
+
+188
+00:10:16,320 --> 00:10:18,360
+it has not<font color="#E5E5E5"> been</font><font color="#CCCCCC"> set an error is not</font>
+
+189
+00:10:18,360 --> 00:10:20,910
+returned instead<font color="#CCCCCC"> the value false</font><font color="#E5E5E5"> is</font>
+
+190
+00:10:20,910 --> 00:10:23,420
+returned
+
+191
+00:10:32,180 --> 00:10:35,330
+[Music]
+
+192
+00:10:36,110 --> 00:10:38,170
+you
+
+193
+00:10:49,860 --> 00:10:54,550
+as we can see the error message has not
+
+194
+00:10:54,550 --> 00:10:57,970
+been displayed let's now look into
+
+195
+00:10:57,970 --> 00:11:00,640
+<font color="#E5E5E5">another scenario</font><font color="#CCCCCC"> launching mein PHP</font><font color="#E5E5E5"> in</font>
+
+196
+00:11:00,640 --> 00:11:04,480
+isolation<font color="#CCCCCC"> to</font><font color="#E5E5E5"> demonstrate the process</font><font color="#CCCCCC"> we</font>
+
+197
+00:11:04,480 --> 00:11:06,010
+first need to get<font color="#CCCCCC"> rid of the protection</font>
+
+198
+00:11:06,010 --> 00:11:16,330
+mechanism we've just implemented as we
+
+199
+00:11:16,330 --> 00:11:17,920
+can see error messages are being
+
+200
+00:11:17,920 --> 00:11:21,310
+<font color="#E5E5E5">displayed we need to make sure</font><font color="#CCCCCC"> that main</font>
+
+201
+00:11:21,310 --> 00:11:26,440
+PHP won't be launched in isolation here
+
+202
+00:11:26,440 --> 00:11:28,300
+you may enter a constant that signifies
+
+203
+00:11:28,300 --> 00:11:29,830
+that<font color="#E5E5E5"> the code needed for the script to</font>
+
+204
+00:11:29,830 --> 00:11:33,790
+run<font color="#E5E5E5"> has been launched for example set</font>
+
+205
+00:11:33,790 --> 00:11:36,430
+the constant<font color="#E5E5E5"> header run which signifies</font>
+
+206
+00:11:36,430 --> 00:11:39,010
+that<font color="#E5E5E5"> the code from index.php</font><font color="#CCCCCC"> has been</font>
+
+207
+00:11:39,010 --> 00:11:42,270
+executed<font color="#CCCCCC"> and may be utilized</font>
+
+208
+00:12:01,980 --> 00:12:04,720
+the constant will be<font color="#E5E5E5"> set in</font><font color="#CCCCCC"> Maine PHP</font>
+
+209
+00:12:04,720 --> 00:12:06,850
+only if the file is<font color="#E5E5E5"> included</font><font color="#CCCCCC"> from within</font>
+
+210
+00:12:06,850 --> 00:12:21,580
+index.php let's see if this produces a
+
+211
+00:12:21,580 --> 00:12:22,770
+change
+
+212
+00:12:22,770 --> 00:12:28,240
+as you can see<font color="#CCCCCC"> main PHP has not been</font>
+
+213
+00:12:28,240 --> 00:12:30,820
+executed<font color="#CCCCCC"> at all in this case we could</font>
+
+214
+00:12:30,820 --> 00:12:34,410
+also prevent<font color="#E5E5E5"> the attack in another way</font>
+
+215
+00:12:35,650 --> 00:12:38,760
+[Music]
+
+216
+00:12:43,440 --> 00:12:46,330
+if the costume<font color="#CCCCCC"> is not defined</font><font color="#E5E5E5"> the</font>
+
+217
+00:12:46,330 --> 00:12:49,740
+execution of<font color="#E5E5E5"> script is blocked</font>
+
+218
+00:12:50,130 --> 00:12:52,240
+if scripts are stored in another
+
+219
+00:12:52,240 --> 00:12:55,149
+directory<font color="#E5E5E5"> you may try to use</font><font color="#CCCCCC"> HT</font><font color="#E5E5E5"> access</font>
+
+220
+00:12:55,149 --> 00:12:57,370
+to quickly deny users access<font color="#CCCCCC"> to these</font>
+
+221
+00:12:57,370 --> 00:13:11,440
+files reporting errors is also managed
+
+222
+00:13:11,440 --> 00:13:15,870
+by the PHP<font color="#CCCCCC"> any configuration file</font>
+
+223
+00:13:26,590 --> 00:13:29,690
+[Music]
+
+224
+00:13:33,760 --> 00:13:36,880
+[Music]
+
+225
+00:13:37,340 --> 00:13:39,410
+this is achieved through two variables
+
+226
+00:13:39,410 --> 00:13:43,550
+<font color="#E5E5E5">error reporting and display errors error</font>
+
+227
+00:13:43,550 --> 00:13:45,680
+reporting<font color="#E5E5E5"> defines the types of</font><font color="#CCCCCC"> errors</font>
+
+228
+00:13:45,680 --> 00:13:46,820
+which will be reported
+
+229
+00:13:46,820 --> 00:13:49,280
+while display error disables or enables
+
+230
+00:13:49,280 --> 00:13:52,600
+displaying errors if it is set<font color="#CCCCCC"> to OFF</font>
+
+231
+00:13:52,600 --> 00:13:55,430
+errors will not be reported let's switch
+
+232
+00:13:55,430 --> 00:14:02,930
+it<font color="#E5E5E5"> off the Apache server needs to be</font>
+
+233
+00:14:02,930 --> 00:14:06,550
+restarted for the changes<font color="#CCCCCC"> to take effect</font>
+
+234
+00:14:20,920 --> 00:14:24,080
+<font color="#CCCCCC">okay as we can see the code does not</font>
+
+235
+00:14:24,080 --> 00:14:28,360
+<font color="#E5E5E5">display errors that's all in module 6</font>
+
+236
+00:14:28,360 --> 00:14:30,620
+thanks for your<font color="#E5E5E5"> attention and see</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> in</font>
+
+237
+00:14:30,620 --> 00:14:32,840
+module<font color="#E5E5E5"> 7 which will focus on forced</font>
+
+238
+00:14:32,840 --> 00:14:36,700
+browsing see you there
+
+239
+00:14:42,810 --> 00:14:46,110
+welcome to module<font color="#CCCCCC"> seven in this part of</font>
+
+240
+00:14:46,110 --> 00:14:47,430
+<font color="#CCCCCC">the</font><font color="#E5E5E5"> course we'll introduce you</font><font color="#CCCCCC"> to the</font>
+
+241
+00:14:47,430 --> 00:14:54,540
+<font color="#E5E5E5">concept of forced browsing forced</font>
+
+242
+00:14:54,540 --> 00:14:55,860
+browsing is not technically a
+
+243
+00:14:55,860 --> 00:14:59,460
+vulnerability<font color="#CCCCCC"> nor an attack the term is</font>
+
+244
+00:14:59,460 --> 00:15:01,470
+<font color="#E5E5E5">simply descriptive of a</font><font color="#CCCCCC"> situation where</font>
+
+245
+00:15:01,470 --> 00:15:03,060
+a<font color="#E5E5E5"> user doesn't browse through web</font>
+
+246
+00:15:03,060 --> 00:15:05,520
+application<font color="#E5E5E5"> resources by clicking URLs</font>
+
+247
+00:15:05,520 --> 00:15:07,980
+but<font color="#E5E5E5"> accesses content by manual</font>
+
+248
+00:15:07,980 --> 00:15:10,200
+identification of resources and<font color="#E5E5E5"> may gain</font>
+
+249
+00:15:10,200 --> 00:15:14,150
+access<font color="#E5E5E5"> to restricted parts of a service</font>
+
+250
+00:15:14,150 --> 00:15:16,500
+<font color="#E5E5E5">imagine the company that sends client</font>
+
+251
+00:15:16,500 --> 00:15:18,330
+emails linking to a page containing
+
+252
+00:15:18,330 --> 00:15:20,070
+<font color="#CCCCCC">sensitive data like the client's</font>
+
+253
+00:15:20,070 --> 00:15:22,080
+personal<font color="#E5E5E5"> information account balance and</font>
+
+254
+00:15:22,080 --> 00:15:29,790
+<font color="#E5E5E5">so on this could look something</font><font color="#CCCCCC"> like</font>
+
+255
+00:15:29,790 --> 00:15:34,470
+this what's immediately striking is the
+
+256
+00:15:34,470 --> 00:15:36,090
+<font color="#E5E5E5">identifier contained in the past</font>
+
+257
+00:15:36,090 --> 00:15:38,130
+it's a numerical value<font color="#CCCCCC"> and</font><font color="#E5E5E5"> could easily</font>
+
+258
+00:15:38,130 --> 00:15:46,490
+<font color="#E5E5E5">be substituted for</font><font color="#CCCCCC"> another parameter</font><font color="#E5E5E5"> as</font>
+
+259
+00:15:46,490 --> 00:15:49,110
+you can see changing<font color="#E5E5E5"> this parameter will</font>
+
+260
+00:15:49,110 --> 00:15:51,150
+<font color="#E5E5E5">display private information of another</font>
+
+261
+00:15:51,150 --> 00:15:54,210
+client<font color="#E5E5E5"> this could constitute a breach</font><font color="#CCCCCC"> of</font>
+
+262
+00:15:54,210 --> 00:15:56,370
+<font color="#E5E5E5">the personal data</font><font color="#CCCCCC"> protection act or lead</font>
+
+263
+00:15:56,370 --> 00:15:58,110
+<font color="#CCCCCC">to the leaking of valuable personal</font><font color="#E5E5E5"> data</font>
+
+264
+00:15:58,110 --> 00:16:01,890
+of<font color="#E5E5E5"> the company's clients another</font>
+
+265
+00:16:01,890 --> 00:16:03,720
+<font color="#E5E5E5">instance of forced browsing is the</font>
+
+266
+00:16:03,720 --> 00:16:05,160
+identification<font color="#E5E5E5"> of vital service</font>
+
+267
+00:16:05,160 --> 00:16:06,950
+directories which store libraries
+
+268
+00:16:06,950 --> 00:16:09,240
+configuration files<font color="#E5E5E5"> and other files</font><font color="#CCCCCC"> use</font>
+
+269
+00:16:09,240 --> 00:16:12,800
+<font color="#E5E5E5">to dynamically generate</font><font color="#CCCCCC"> content</font>
+
+270
+00:16:16,040 --> 00:16:18,139
+these files should<font color="#E5E5E5"> be restricted from</font>
+
+271
+00:16:18,139 --> 00:16:20,810
+<font color="#E5E5E5">final users as accessing them could</font><font color="#CCCCCC"> lead</font>
+
+272
+00:16:20,810 --> 00:16:22,279
+to<font color="#E5E5E5"> errors that result</font><font color="#CCCCCC"> in leaking</font>
+
+273
+00:16:22,279 --> 00:16:24,529
+sensitive data<font color="#E5E5E5"> or the script acting</font>
+
+274
+00:16:24,529 --> 00:16:26,149
+autonomously in ways that were<font color="#CCCCCC"> not</font>
+
+275
+00:16:26,149 --> 00:16:27,410
+provided<font color="#CCCCCC"> for by the application</font>
+
+276
+00:16:27,410 --> 00:16:35,329
+<font color="#E5E5E5">developer if access to these files is</font>
+
+277
+00:16:35,329 --> 00:16:37,250
+not<font color="#E5E5E5"> authorized in any way forced</font>
+
+278
+00:16:37,250 --> 00:16:39,410
+browsing may also<font color="#E5E5E5"> constitute an example</font>
+
+279
+00:16:39,410 --> 00:16:41,990
+of data hiding<font color="#E5E5E5"> web developers want to</font>
+
+280
+00:16:41,990 --> 00:16:44,480
+<font color="#E5E5E5">restrict users from accessing files but</font>
+
+281
+00:16:44,480 --> 00:16:45,769
+don't use any other methods<font color="#E5E5E5"> of</font>
+
+282
+00:16:45,769 --> 00:16:48,709
+preventing<font color="#E5E5E5"> this in the case of web</font>
+
+283
+00:16:48,709 --> 00:16:51,259
+applications developers<font color="#CCCCCC"> often use common</font>
+
+284
+00:16:51,259 --> 00:16:53,889
+directory<font color="#E5E5E5"> names to store service files</font>
+
+285
+00:16:53,889 --> 00:16:58,430
+<font color="#E5E5E5">an example of such a directory is Lib</font>
+
+286
+00:16:58,430 --> 00:17:01,130
+which could contain library classes or
+
+287
+00:17:01,130 --> 00:17:04,930
+<font color="#E5E5E5">full libraries used by a web application</font>
+
+288
+00:17:13,869 --> 00:17:18,919
+<font color="#E5E5E5">another directory is classes you can</font>
+
+289
+00:17:18,919 --> 00:17:21,230
+also see here unsecured files<font color="#E5E5E5"> which in</font>
+
+290
+00:17:21,230 --> 00:17:23,089
+<font color="#E5E5E5">isolation could lead</font><font color="#CCCCCC"> to displaying</font>
+
+291
+00:17:23,089 --> 00:17:27,589
+errors other examples are include and
+
+292
+00:17:27,589 --> 00:17:35,480
+includes<font color="#CCCCCC"> the include directory doesn't</font>
+
+293
+00:17:35,480 --> 00:17:37,400
+exist in the service<font color="#E5E5E5"> but</font><font color="#CCCCCC"> you can access</font>
+
+294
+00:17:37,400 --> 00:17:40,460
+<font color="#CCCCCC">the includes</font><font color="#E5E5E5"> directory which often</font>
+
+295
+00:17:40,460 --> 00:17:46,190
+contains<font color="#CCCCCC"> configuration files if the data</font>
+
+296
+00:17:46,190 --> 00:17:48,020
+is stored in<font color="#E5E5E5"> a file whose extension is</font>
+
+297
+00:17:48,020 --> 00:17:50,360
+not linked to<font color="#E5E5E5"> any interpreter or the</font>
+
+298
+00:17:50,360 --> 00:17:53,110
+data is contained<font color="#E5E5E5"> in any or XML files</font><font color="#CCCCCC"> a</font>
+
+299
+00:17:53,110 --> 00:17:55,700
+user may be able<font color="#E5E5E5"> to see the contents of</font>
+
+300
+00:17:55,700 --> 00:17:57,770
+<font color="#E5E5E5">the file and for example discover</font>
+
+301
+00:17:57,770 --> 00:18:00,429
+database credentials
+
+302
+00:18:00,429 --> 00:18:02,929
+since the consequences of<font color="#E5E5E5"> forced</font>
+
+303
+00:18:02,929 --> 00:18:05,059
+browsing could be very serious<font color="#E5E5E5"> you need</font>
+
+304
+00:18:05,059 --> 00:18:06,530
+to remember that<font color="#E5E5E5"> while building a web</font>
+
+305
+00:18:06,530 --> 00:18:08,390
+<font color="#CCCCCC">application</font><font color="#E5E5E5"> you should</font><font color="#CCCCCC"> never simply</font>
+
+306
+00:18:08,390 --> 00:18:10,549
+assume a visitor won't be<font color="#E5E5E5"> able to</font><font color="#CCCCCC"> access</font>
+
+307
+00:18:10,549 --> 00:18:13,220
+certain<font color="#E5E5E5"> parts of the service all</font>
+
+308
+00:18:13,220 --> 00:18:16,870
+directories have to be secured
+
+309
+00:18:17,940 --> 00:18:19,980
+and directories containing data which
+
+310
+00:18:19,980 --> 00:18:22,110
+<font color="#E5E5E5">has only used server-side should be</font>
+
+311
+00:18:22,110 --> 00:18:23,909
+located<font color="#E5E5E5"> outside the web server or</font>
+
+312
+00:18:23,909 --> 00:18:32,070
+blocked<font color="#E5E5E5"> in an HT access file you also</font>
+
+313
+00:18:32,070 --> 00:18:33,990
+need to<font color="#E5E5E5"> remember that incorrect file</font>
+
+314
+00:18:33,990 --> 00:18:36,179
+extensions<font color="#E5E5E5"> could lead to the leaking of</font>
+
+315
+00:18:36,179 --> 00:18:39,120
+crucial data like configurations or
+
+316
+00:18:39,120 --> 00:18:43,049
+service source code finally while
+
+317
+00:18:43,049 --> 00:18:44,879
+displaying<font color="#E5E5E5"> data to restricted groups of</font>
+
+318
+00:18:44,879 --> 00:18:48,029
+users<font color="#E5E5E5"> don't solely rely</font><font color="#CCCCCC"> online generated</font>
+
+319
+00:18:48,029 --> 00:18:52,950
+identification numbers it might<font color="#CCCCCC"> be a</font>
+
+320
+00:18:52,950 --> 00:18:54,870
+better<font color="#E5E5E5"> idea to use hash functions to</font>
+
+321
+00:18:54,870 --> 00:18:56,779
+generate less predictable identifiers
+
+322
+00:18:56,779 --> 00:18:59,340
+<font color="#E5E5E5">better yet be sure</font><font color="#CCCCCC"> to implement</font>
+
+323
+00:18:59,340 --> 00:19:01,559
+cutting-edge authorization mechanisms in
+
+324
+00:19:01,559 --> 00:19:04,460
+your<font color="#E5E5E5"> application</font>
+
+325
+00:19:04,549 --> 00:19:09,720
+that's all in module<font color="#CCCCCC"> seven thanks for</font>
+
+326
+00:19:09,720 --> 00:19:11,100
+your<font color="#E5E5E5"> attention and see</font><font color="#CCCCCC"> you in</font><font color="#E5E5E5"> the next</font>
+
+327
+00:19:11,100 --> 00:19:13,110
+<font color="#CCCCCC">module which will focus on path</font>
+
+328
+00:19:13,110 --> 00:19:16,039
+traversal attacks
+
+329
+00:19:20,400 --> 00:19:24,190
+welcome to module<font color="#E5E5E5"> eight of our course in</font>
+
+330
+00:19:24,190 --> 00:19:25,780
+this<font color="#E5E5E5"> module we'll</font><font color="#CCCCCC"> focus on path</font>
+
+331
+00:19:25,780 --> 00:19:28,750
+traversal<font color="#CCCCCC"> a path traversal vulnerability</font>
+
+332
+00:19:28,750 --> 00:19:30,430
+occurs where a user may alter the
+
+333
+00:19:30,430 --> 00:19:32,140
+<font color="#E5E5E5">parameters referred to a web application</font>
+
+334
+00:19:32,140 --> 00:19:34,330
+<font color="#CCCCCC">to determine which files could be</font><font color="#E5E5E5"> loaded</font>
+
+335
+00:19:34,330 --> 00:19:42,280
+<font color="#E5E5E5">by</font><font color="#CCCCCC"> the application let's take a look at</font>
+
+336
+00:19:42,280 --> 00:19:44,110
+a sample source code illustrating the
+
+337
+00:19:44,110 --> 00:19:50,380
+vulnerability<font color="#CCCCCC"> you can see here a</font><font color="#E5E5E5"> simple</font>
+
+338
+00:19:50,380 --> 00:19:53,950
+<font color="#CCCCCC">website</font><font color="#E5E5E5"> created in PHP the</font><font color="#CCCCCC"> contents</font><font color="#E5E5E5"> of</font>
+
+339
+00:19:53,950 --> 00:19:55,660
+the sub page are loaded from<font color="#E5E5E5"> a file</font>
+
+340
+00:19:55,660 --> 00:19:58,230
+<font color="#CCCCCC">stored outside</font><font color="#E5E5E5"> the web root directory</font><font color="#CCCCCC"> as</font>
+
+341
+00:19:58,230 --> 00:20:01,720
+we can see get is used to pass<font color="#E5E5E5"> the name</font>
+
+342
+00:20:01,720 --> 00:20:05,860
+of the file<font color="#E5E5E5"> which will be displayed the</font>
+
+343
+00:20:05,860 --> 00:20:08,170
+file get contents function retrieves the
+
+344
+00:20:08,170 --> 00:20:12,210
+content of the file but doesn't parse it
+
+345
+00:20:12,270 --> 00:20:14,830
+notice that an attacker is able<font color="#CCCCCC"> to</font>
+
+346
+00:20:14,830 --> 00:20:17,140
+freely<font color="#CCCCCC"> manipulate the name of the file</font>
+
+347
+00:20:17,140 --> 00:20:18,490
+which will be<font color="#E5E5E5"> displayed by the</font>
+
+348
+00:20:18,490 --> 00:20:23,680
+application we<font color="#CCCCCC"> can</font><font color="#E5E5E5"> see here a website</font>
+
+349
+00:20:23,680 --> 00:20:26,320
+which is working<font color="#E5E5E5"> normally the address</font>
+
+350
+00:20:26,320 --> 00:20:28,690
+bar contains the variable site which is
+
+351
+00:20:28,690 --> 00:20:33,910
+used to<font color="#E5E5E5"> specify a loaded file let's see</font>
+
+352
+00:20:33,910 --> 00:20:35,320
+what will<font color="#CCCCCC"> happen if we submit the</font>
+
+353
+00:20:35,320 --> 00:20:43,210
+index.php file as a parameter take a
+
+354
+00:20:43,210 --> 00:20:49,150
+look at the source code<font color="#E5E5E5"> of the page we</font>
+
+355
+00:20:49,150 --> 00:20:50,500
+<font color="#CCCCCC">can</font><font color="#E5E5E5"> see here the source code of</font>
+
+356
+00:20:50,500 --> 00:20:54,250
+index.php<font color="#E5E5E5"> this is extremely dangerous</font>
+
+357
+00:20:54,250 --> 00:20:56,350
+<font color="#CCCCCC">since an intruder may use the</font>
+
+358
+00:20:56,350 --> 00:20:57,790
+information<font color="#E5E5E5"> to</font><font color="#CCCCCC"> find other code</font>
+
+359
+00:20:57,790 --> 00:21:00,220
+vulnerabilities or<font color="#E5E5E5"> display</font><font color="#CCCCCC"> configuration</font>
+
+360
+00:21:00,220 --> 00:21:02,110
+files<font color="#E5E5E5"> that contain critical data like</font>
+
+361
+00:21:02,110 --> 00:21:04,300
+passwords<font color="#E5E5E5"> to databases mail servers or</font>
+
+362
+00:21:04,300 --> 00:21:09,460
+FTP let's try to<font color="#CCCCCC"> think of other ways</font><font color="#E5E5E5"> in</font>
+
+363
+00:21:09,460 --> 00:21:11,110
+<font color="#E5E5E5">which an attacker could exploit this</font>
+
+364
+00:21:11,110 --> 00:21:13,170
+vulnerability
+
+365
+00:21:17,460 --> 00:21:21,020
+insert the name of<font color="#E5E5E5"> a non-existing file</font>
+
+366
+00:21:21,020 --> 00:21:23,820
+the returned error information<font color="#E5E5E5"> contains</font>
+
+367
+00:21:23,820 --> 00:21:27,210
+the full path to<font color="#E5E5E5"> the page file this is</font>
+
+368
+00:21:27,210 --> 00:21:28,740
+an example<font color="#E5E5E5"> of a path disclosure</font>
+
+369
+00:21:28,740 --> 00:21:30,570
+vulnerability<font color="#E5E5E5"> which was discussed</font>
+
+370
+00:21:30,570 --> 00:21:38,190
+earlier we also<font color="#E5E5E5"> know</font><font color="#CCCCCC"> that the</font><font color="#E5E5E5"> web server</font>
+
+371
+00:21:38,190 --> 00:21:40,200
+of<font color="#E5E5E5"> the site is Apache in the exam</font>
+
+372
+00:21:40,200 --> 00:21:41,010
+framework
+
+373
+00:21:41,010 --> 00:21:42,900
+this helps us guess the<font color="#CCCCCC"> location of the</font>
+
+374
+00:21:42,900 --> 00:21:53,910
+<font color="#E5E5E5">PHP in</font><font color="#CCCCCC"> E the string</font><font color="#E5E5E5"> dot slash</font><font color="#CCCCCC"> pest at</font>
+
+375
+00:21:53,910 --> 00:21:55,170
+the beginning to the file get contents
+
+376
+00:21:55,170 --> 00:21:57,960
+function<font color="#E5E5E5"> in theory restricts the access</font>
+
+377
+00:21:57,960 --> 00:22:00,300
+to the<font color="#E5E5E5"> current directory</font><font color="#CCCCCC"> in practice</font><font color="#E5E5E5"> by</font>
+
+378
+00:22:00,300 --> 00:22:02,370
+using<font color="#E5E5E5"> standard special directories dot</font>
+
+379
+00:22:02,370 --> 00:22:04,560
+dot<font color="#E5E5E5"> you may be able to navigate to</font>
+
+380
+00:22:04,560 --> 00:22:09,120
+parent directories<font color="#E5E5E5"> in this case we'll</font>
+
+381
+00:22:09,120 --> 00:22:13,080
+climb five directories up<font color="#E5E5E5"> as you can</font><font color="#CCCCCC"> see</font>
+
+382
+00:22:13,080 --> 00:22:15,780
+<font color="#CCCCCC">the contents</font><font color="#E5E5E5"> of PHP in</font><font color="#CCCCCC"> E have been</font>
+
+383
+00:22:15,780 --> 00:22:20,040
+displayed<font color="#E5E5E5"> using this method you</font><font color="#CCCCCC"> can</font>
+
+384
+00:22:20,040 --> 00:22:22,350
+<font color="#E5E5E5">access virtually all files stored in the</font>
+
+385
+00:22:22,350 --> 00:22:24,780
+<font color="#CCCCCC">webserver provided that their location</font>
+
+386
+00:22:24,780 --> 00:22:26,550
+is known and they may be<font color="#E5E5E5"> accessed by a</font>
+
+387
+00:22:26,550 --> 00:22:30,840
+<font color="#E5E5E5">PHP interpreter this is an extremely</font>
+
+388
+00:22:30,840 --> 00:22:32,880
+serious attack<font color="#E5E5E5"> which could lead to the</font>
+
+389
+00:22:32,880 --> 00:22:34,590
+disclosure<font color="#CCCCCC"> and leaking of critical</font>
+
+390
+00:22:34,590 --> 00:22:36,660
+information<font color="#E5E5E5"> concerning the server or</font><font color="#CCCCCC"> the</font>
+
+391
+00:22:36,660 --> 00:22:41,580
+web application itself let's see how we
+
+392
+00:22:41,580 --> 00:22:45,390
+can<font color="#CCCCCC"> protect ourselves</font><font color="#E5E5E5"> whitelisting</font>
+
+393
+00:22:45,390 --> 00:22:47,130
+consists of<font color="#CCCCCC"> creating a list of files</font>
+
+394
+00:22:47,130 --> 00:22:49,260
+which can<font color="#E5E5E5"> be accessed by a script</font><font color="#CCCCCC"> and</font>
+
+395
+00:22:49,260 --> 00:22:51,390
+comparing the files selected by a user
+
+396
+00:22:51,390 --> 00:22:54,260
+against the list
+
+397
+00:22:57,530 --> 00:22:59,570
+another form of<font color="#E5E5E5"> whitelisting is</font>
+
+398
+00:22:59,570 --> 00:23:01,460
+specifying the<font color="#CCCCCC"> characters expected to be</font>
+
+399
+00:23:01,460 --> 00:23:04,340
+<font color="#CCCCCC">present</font><font color="#E5E5E5"> in the inputted</font><font color="#CCCCCC"> file name if</font><font color="#E5E5E5"> the</font>
+
+400
+00:23:04,340 --> 00:23:06,350
+user provided parameter doesn't conform
+
+401
+00:23:06,350 --> 00:23:08,000
+to the specifications of the<font color="#CCCCCC"> whitelist</font>
+
+402
+00:23:08,000 --> 00:23:10,060
+<font color="#CCCCCC">the file will</font><font color="#E5E5E5"> not</font><font color="#CCCCCC"> be read</font>
+
+403
+00:23:10,060 --> 00:23:12,140
+unfortunately this solution<font color="#E5E5E5"> is either</font>
+
+404
+00:23:12,140 --> 00:23:14,420
+<font color="#CCCCCC">impossible to implement or simply</font>
+
+405
+00:23:14,420 --> 00:23:22,940
+impractical as you can see in this<font color="#E5E5E5"> case</font>
+
+406
+00:23:22,940 --> 00:23:24,770
+an attacker<font color="#E5E5E5"> even has control over</font><font color="#CCCCCC"> the</font>
+
+407
+00:23:24,770 --> 00:23:25,780
+<font color="#E5E5E5">file extension</font>
+
+408
+00:23:25,780 --> 00:23:29,770
+let's try to<font color="#E5E5E5"> predefine the extension</font>
+
+409
+00:23:29,770 --> 00:23:50,510
+will<font color="#E5E5E5"> modify the existing instances after</font>
+
+410
+00:23:50,510 --> 00:23:52,700
+<font color="#CCCCCC">a</font><font color="#E5E5E5"> restart</font><font color="#CCCCCC"> we can see that</font><font color="#E5E5E5"> the extension</font>
+
+411
+00:23:52,700 --> 00:23:54,350
+has<font color="#CCCCCC"> been added permanently to the</font><font color="#E5E5E5"> end of</font>
+
+412
+00:23:54,350 --> 00:23:56,060
+the string<font color="#E5E5E5"> passed to the file get</font>
+
+413
+00:23:56,060 --> 00:23:58,070
+contents function and may not be
+
+414
+00:23:58,070 --> 00:24:07,030
+<font color="#CCCCCC">manipulated by potential attackers in</font>
+
+415
+00:24:07,030 --> 00:24:09,620
+PHP<font color="#CCCCCC"> additions older than five point five</font>
+
+416
+00:24:09,620 --> 00:24:11,750
+point<font color="#E5E5E5"> three it was possible to pass the</font>
+
+417
+00:24:11,750 --> 00:24:13,880
+end of string marker percent zero zero
+
+418
+00:24:13,880 --> 00:24:16,190
+which was included<font color="#CCCCCC"> without</font><font color="#E5E5E5"> validation in</font>
+
+419
+00:24:16,190 --> 00:24:18,430
+the string<font color="#E5E5E5"> past two filed gets contents</font>
+
+420
+00:24:18,430 --> 00:24:21,050
+this enabled an attacker to<font color="#E5E5E5"> delete the</font>
+
+421
+00:24:21,050 --> 00:24:23,570
+added extension<font color="#E5E5E5"> the problem has been</font>
+
+422
+00:24:23,570 --> 00:24:28,430
+<font color="#E5E5E5">solved in newer versions</font><font color="#CCCCCC"> of PHP in a</font>
+
+423
+00:24:28,430 --> 00:24:30,470
+word<font color="#E5E5E5"> it's important to employ protection</font>
+
+424
+00:24:30,470 --> 00:24:32,150
+mechanisms to prevent hackers<font color="#E5E5E5"> from</font>
+
+425
+00:24:32,150 --> 00:24:34,910
+reading<font color="#E5E5E5"> restricted directories even if</font>
+
+426
+00:24:34,910 --> 00:24:36,320
+we assume<font color="#CCCCCC"> that the files with allowed</font>
+
+427
+00:24:36,320 --> 00:24:40,360
+extensions<font color="#E5E5E5"> won't contain critical data</font>
+
+428
+00:25:03,050 --> 00:25:05,340
+filtering out the<font color="#E5E5E5"> dot and dot</font><font color="#CCCCCC"> slash</font>
+
+429
+00:25:05,340 --> 00:25:09,240
+characters may also be useful<font color="#E5E5E5"> let's now</font>
+
+430
+00:25:09,240 --> 00:25:28,140
+try to<font color="#E5E5E5"> implement this mechanism the</font>
+
+431
+00:25:28,140 --> 00:25:29,850
+function will delete the dot<font color="#E5E5E5"> and slash</font>
+
+432
+00:25:29,850 --> 00:25:46,200
+characters let's see if this is<font color="#E5E5E5"> enough</font>
+
+433
+00:25:46,200 --> 00:25:51,660
+<font color="#CCCCCC">as a security measure</font><font color="#E5E5E5"> as you can see all</font>
+
+434
+00:25:51,660 --> 00:25:53,250
+dot and slash characters have<font color="#CCCCCC"> been</font>
+
+435
+00:25:53,250 --> 00:25:58,500
+deleted which certainly<font color="#CCCCCC"> makes</font><font color="#E5E5E5"> it harder</font>
+
+436
+00:25:58,500 --> 00:26:00,090
+for potential hackers to attack our
+
+437
+00:26:00,090 --> 00:26:01,200
+<font color="#E5E5E5">application</font>
+
+438
+00:26:01,200 --> 00:26:04,359
+[Music]
+
+439
+00:26:10,750 --> 00:26:12,610
+remember that there's always<font color="#E5E5E5"> a risk</font>
+
+440
+00:26:12,610 --> 00:26:14,320
+present if users<font color="#E5E5E5"> are able to modify</font>
+
+441
+00:26:14,320 --> 00:26:16,419
+application parameters<font color="#E5E5E5"> to change the</font>
+
+442
+00:26:16,419 --> 00:26:20,860
+<font color="#E5E5E5">name of</font><font color="#CCCCCC"> the processed file that's why</font>
+
+443
+00:26:20,860 --> 00:26:22,659
+all input parameters<font color="#E5E5E5"> must be treated</font>
+
+444
+00:26:22,659 --> 00:26:24,850
+with extra<font color="#E5E5E5"> caution and be</font><font color="#CCCCCC"> properly</font>
+
+445
+00:26:24,850 --> 00:26:30,070
+filtered that's all for module<font color="#CCCCCC"> 8</font><font color="#E5E5E5"> thanks</font>
+
+446
+00:26:30,070 --> 00:26:31,900
+for your<font color="#E5E5E5"> attention and</font><font color="#CCCCCC"> see you</font><font color="#E5E5E5"> in the</font>
+
+447
+00:26:31,900 --> 00:26:34,620
+next part<font color="#CCCCCC"> of the course</font>
+
+448
+00:26:39,850 --> 00:26:43,720
+welcome to<font color="#CCCCCC"> module 10 and this part will</font>
+
+449
+00:26:43,720 --> 00:26:45,550
+<font color="#E5E5E5">talk about the web parameter delimiter</font>
+
+450
+00:26:45,550 --> 00:26:49,990
+vulnerability this vulnerability occurs
+
+451
+00:26:49,990 --> 00:26:51,940
+<font color="#E5E5E5">where a website utilizes a simple text</font>
+
+452
+00:26:51,940 --> 00:26:53,830
+<font color="#E5E5E5">file instead of</font><font color="#CCCCCC"> a database for storing</font>
+
+453
+00:26:53,830 --> 00:26:56,350
+<font color="#CCCCCC">data</font><font color="#E5E5E5"> server-side and where the text file</font>
+
+454
+00:26:56,350 --> 00:26:57,790
+separates data with a specified
+
+455
+00:26:57,790 --> 00:27:06,100
+<font color="#CCCCCC">delimiter if the user provided</font><font color="#E5E5E5"> data blog</font>
+
+456
+00:27:06,100 --> 00:27:07,990
+to<font color="#E5E5E5"> the file is not properly filtered an</font>
+
+457
+00:27:07,990 --> 00:27:09,880
+attacker may be able<font color="#CCCCCC"> to tamper with the</font>
+
+458
+00:27:09,880 --> 00:27:11,590
+structure<font color="#E5E5E5"> of the database</font><font color="#CCCCCC"> and as a</font>
+
+459
+00:27:11,590 --> 00:27:13,390
+result change the<font color="#E5E5E5"> interpretation of the</font>
+
+460
+00:27:13,390 --> 00:27:21,280
+stored<font color="#CCCCCC"> data take a look at this sample</font>
+
+461
+00:27:21,280 --> 00:27:22,810
+code of a website<font color="#E5E5E5"> designed to illustrate</font>
+
+462
+00:27:22,810 --> 00:27:31,900
+<font color="#E5E5E5">the problem you can see here an example</font>
+
+463
+00:27:31,900 --> 00:27:34,570
+<font color="#CCCCCC">of a database file</font><font color="#E5E5E5"> the first field in</font>
+
+464
+00:27:34,570 --> 00:27:40,840
+the database represents<font color="#E5E5E5"> user name the</font>
+
+465
+00:27:40,840 --> 00:27:44,500
+second field represents password the
+
+466
+00:27:44,500 --> 00:27:47,170
+third email address and the fourth field
+
+467
+00:27:47,170 --> 00:27:49,450
+<font color="#CCCCCC">specifies a user type a user with</font>
+
+468
+00:27:49,450 --> 00:27:53,160
+administrator privileges or normal user
+
+469
+00:27:53,160 --> 00:27:55,990
+now let's take a look<font color="#E5E5E5"> at a file used for</font>
+
+470
+00:27:55,990 --> 00:27:59,170
+<font color="#CCCCCC">registration in the service as we can</font>
+
+471
+00:27:59,170 --> 00:28:01,180
+see a simple form is<font color="#E5E5E5"> displayed</font><font color="#CCCCCC"> for user</font>
+
+472
+00:28:01,180 --> 00:28:04,600
+provided<font color="#E5E5E5"> data next</font><font color="#CCCCCC"> a file is open and</font>
+
+473
+00:28:04,600 --> 00:28:14,830
+the input<font color="#E5E5E5"> is written to it the data is</font>
+
+474
+00:28:14,830 --> 00:28:16,570
+separated<font color="#E5E5E5"> with</font><font color="#CCCCCC"> the same delimiter we've</font>
+
+475
+00:28:16,570 --> 00:28:19,500
+previously seen<font color="#CCCCCC"> in</font><font color="#E5E5E5"> our database</font>
+
+476
+00:28:19,500 --> 00:28:22,240
+finally the field normal is added which
+
+477
+00:28:22,240 --> 00:28:24,280
+specifies<font color="#CCCCCC"> the user has normal privileges</font>
+
+478
+00:28:24,280 --> 00:28:26,830
+<font color="#E5E5E5">you</font><font color="#CCCCCC"> can also see here a login script</font>
+
+479
+00:28:26,830 --> 00:28:28,750
+<font color="#E5E5E5">which loads the entered login and</font>
+
+480
+00:28:28,750 --> 00:28:31,900
+password you can<font color="#E5E5E5"> also see here a login</font>
+
+481
+00:28:31,900 --> 00:28:33,610
+script<font color="#E5E5E5"> which loads the entered login and</font>
+
+482
+00:28:33,610 --> 00:28:35,320
+password<font color="#E5E5E5"> if the following login and</font>
+
+483
+00:28:35,320 --> 00:28:37,090
+passwords<font color="#E5E5E5"> are entered a database file</font>
+
+484
+00:28:37,090 --> 00:28:38,860
+will open<font color="#CCCCCC"> the file will be</font><font color="#E5E5E5"> separated</font>
+
+485
+00:28:38,860 --> 00:28:41,080
+into more lines<font color="#CCCCCC"> via the file function</font>
+
+486
+00:28:41,080 --> 00:28:43,450
+the function<font color="#E5E5E5"> explode separates each file</font>
+
+487
+00:28:43,450 --> 00:28:46,590
+line into different fields
+
+488
+00:28:46,730 --> 00:28:49,100
+the login and<font color="#CCCCCC"> password</font><font color="#E5E5E5"> provided by a</font>
+
+489
+00:28:49,100 --> 00:28:50,690
+user are compared against<font color="#E5E5E5"> the stored</font>
+
+490
+00:28:50,690 --> 00:28:52,820
+credentials<font color="#CCCCCC"> and if matching</font><font color="#E5E5E5"> data is</font>
+
+491
+00:28:52,820 --> 00:28:54,770
+found<font color="#E5E5E5"> in a line an appropriate message</font>
+
+492
+00:28:54,770 --> 00:29:00,410
+<font color="#E5E5E5">will be displayed</font><font color="#CCCCCC"> next user type is</font>
+
+493
+00:29:00,410 --> 00:29:06,710
+verified<font color="#E5E5E5"> and reported let's see how this</font>
+
+494
+00:29:06,710 --> 00:29:13,040
+works in<font color="#CCCCCC"> practice you can see here a</font>
+
+495
+00:29:13,040 --> 00:29:15,860
+login form enter the login<font color="#CCCCCC"> and password</font>
+
+496
+00:29:15,860 --> 00:29:28,550
+<font color="#E5E5E5">of an existing user as we can see the</font>
+
+497
+00:29:28,550 --> 00:29:31,070
+user administrator is logged in and
+
+498
+00:29:31,070 --> 00:29:32,210
+recognized as a user with administrator
+
+499
+00:29:32,210 --> 00:29:37,750
+rights<font color="#E5E5E5"> let's try to</font><font color="#CCCCCC"> register a new user</font>
+
+500
+00:29:41,440 --> 00:29:44,420
+use regular for<font color="#E5E5E5"> the</font><font color="#CCCCCC"> username and user</font>
+
+501
+00:29:44,420 --> 00:29:58,610
+for the password the registration<font color="#CCCCCC"> has</font>
+
+502
+00:29:58,610 --> 00:30:00,830
+been completed<font color="#CCCCCC"> successfully</font><font color="#E5E5E5"> let's take a</font>
+
+503
+00:30:00,830 --> 00:30:06,260
+look at our<font color="#CCCCCC"> database now as we can</font><font color="#E5E5E5"> see</font>
+
+504
+00:30:06,260 --> 00:30:08,210
+here the information<font color="#CCCCCC"> we entered</font><font color="#E5E5E5"> into the</font>
+
+505
+00:30:08,210 --> 00:30:11,740
+browser has been added to the database
+
+506
+00:30:12,190 --> 00:30:28,340
+let's<font color="#E5E5E5"> try to</font><font color="#CCCCCC"> login now as we can see the</font>
+
+507
+00:30:28,340 --> 00:30:31,460
+<font color="#E5E5E5">login is successful</font><font color="#CCCCCC"> now let's go back to</font>
+
+508
+00:30:31,460 --> 00:30:41,450
+<font color="#CCCCCC">the</font><font color="#E5E5E5"> registration form and</font><font color="#CCCCCC"> try to make</font>
+
+509
+00:30:41,450 --> 00:30:42,800
+use of our knowledge about<font color="#E5E5E5"> the</font><font color="#CCCCCC"> used</font>
+
+510
+00:30:42,800 --> 00:30:46,030
+delimiter<font color="#E5E5E5"> and the database structure</font>
+
+511
+00:30:46,030 --> 00:30:48,350
+register<font color="#E5E5E5"> the user hacker with the</font>
+
+512
+00:30:48,350 --> 00:31:04,610
+password hack and<font color="#E5E5E5"> the following email</font>
+
+513
+00:31:04,610 --> 00:31:09,320
+<font color="#CCCCCC">address</font><font color="#E5E5E5"> add the delimiter</font><font color="#CCCCCC"> character and</font>
+
+514
+00:31:09,320 --> 00:31:10,880
+type in next to it the marker which
+
+515
+00:31:10,880 --> 00:31:14,560
+specifies administrator account
+
+516
+00:31:24,160 --> 00:31:25,419
+[Music]
+
+517
+00:31:25,419 --> 00:31:27,909
+the<font color="#E5E5E5"> registration is successful</font><font color="#CCCCCC"> let's see</font>
+
+518
+00:31:27,909 --> 00:31:31,089
+what our<font color="#E5E5E5"> database looks like now as we</font>
+
+519
+00:31:31,089 --> 00:31:33,219
+can<font color="#CCCCCC"> see the data in the first fields has</font>
+
+520
+00:31:33,219 --> 00:31:39,009
+been logged normally but other fields
+
+521
+00:31:39,009 --> 00:31:40,989
+contain the added delimiter<font color="#CCCCCC"> and injected</font>
+
+522
+00:31:40,989 --> 00:31:49,329
+administrator<font color="#CCCCCC"> identifier as we see that</font>
+
+523
+00:31:49,329 --> 00:31:51,669
+index.php<font color="#CCCCCC"> only loads the first</font><font color="#E5E5E5"> four</font>
+
+524
+00:31:51,669 --> 00:31:53,469
+fields<font color="#E5E5E5"> this probably means that the</font>
+
+525
+00:31:53,469 --> 00:31:54,999
+record will represent a user with
+
+526
+00:31:54,999 --> 00:32:00,219
+administrator privileges<font color="#E5E5E5"> let's try to</font>
+
+527
+00:32:00,219 --> 00:32:12,099
+see if<font color="#CCCCCC"> this</font><font color="#E5E5E5"> is</font><font color="#CCCCCC"> true as we can see the</font>
+
+528
+00:32:12,099 --> 00:32:14,049
+user is logged in and has administrator
+
+529
+00:32:14,049 --> 00:32:17,229
+privileges<font color="#E5E5E5"> how can we protect ourselves</font>
+
+530
+00:32:17,229 --> 00:32:25,570
+against this attack the core of the
+
+531
+00:32:25,570 --> 00:32:27,489
+<font color="#E5E5E5">problem lies in</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> fact that input may</font>
+
+532
+00:32:27,489 --> 00:32:29,589
+contain an injected delimiter<font color="#E5E5E5"> which is</font>
+
+533
+00:32:29,589 --> 00:32:33,849
+used in our database this could be
+
+534
+00:32:33,849 --> 00:32:35,679
+solved by<font color="#CCCCCC"> adding the STR replaced</font>
+
+535
+00:32:35,679 --> 00:32:37,659
+<font color="#E5E5E5">function which serves to delete all</font><font color="#CCCCCC"> DES</font>
+
+536
+00:32:37,659 --> 00:32:40,829
+limiters from user input
+
+537
+00:33:10,250 --> 00:33:14,600
+let's register<font color="#E5E5E5"> a second user now</font>
+
+538
+00:33:20,410 --> 00:33:23,559
+[Music]
+
+539
+00:33:27,630 --> 00:33:30,739
+[Music]
+
+540
+00:33:33,760 --> 00:33:44,840
+use the prepared string let's take a
+
+541
+00:33:44,840 --> 00:33:53,630
+look at the<font color="#E5E5E5"> database now as we can</font><font color="#CCCCCC"> see</font>
+
+542
+00:33:53,630 --> 00:33:55,700
+<font color="#CCCCCC">the delimiter has been cut out and the</font>
+
+543
+00:33:55,700 --> 00:33:57,020
+structure<font color="#CCCCCC"> of</font><font color="#E5E5E5"> the database has not</font>
+
+544
+00:33:57,020 --> 00:34:00,080
+changed<font color="#E5E5E5"> in order to confirm this</font><font color="#CCCCCC"> login</font>
+
+545
+00:34:00,080 --> 00:34:19,219
+<font color="#E5E5E5">to the service as we can see the attack</font>
+
+546
+00:34:19,219 --> 00:34:21,980
+has<font color="#CCCCCC"> failed this time that's all in</font>
+
+547
+00:34:21,980 --> 00:34:25,668
+module<font color="#E5E5E5"> 10 in the next module we'll</font><font color="#CCCCCC"> focus</font>
+
+548
+00:34:25,668 --> 00:00:00,000
+on PHP injection see you there
+

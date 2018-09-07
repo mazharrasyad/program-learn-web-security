@@ -1,0 +1,408 @@
+1
+00:00:00,060 --> 00:00:02,090
+hello everyone<font color="#CCCCCC"> now let's talk about</font>
+
+2
+00:00:02,090 --> 00:00:05,160
+<font color="#E5E5E5">buffer overflow so buffer overflow is</font><font color="#CCCCCC"> a</font>
+
+3
+00:00:05,160 --> 00:00:07,680
+condition when user supplied input<font color="#E5E5E5"> is</font>
+
+4
+00:00:07,680 --> 00:00:10,710
+more than the<font color="#E5E5E5"> memory allocated to that</font>
+
+5
+00:00:10,710 --> 00:00:13,799
+<font color="#CCCCCC">user so that extra input</font><font color="#E5E5E5"> which is</font>
+
+6
+00:00:13,799 --> 00:00:16,680
+<font color="#E5E5E5">provided by user</font><font color="#CCCCCC"> actually overwrite some</font>
+
+7
+00:00:16,680 --> 00:00:19,560
+memory fragments<font color="#CCCCCC"> so which results in</font>
+
+8
+00:00:19,560 --> 00:00:22,439
+unexpected errors and unexpected working
+
+9
+00:00:22,439 --> 00:00:25,800
+of that web application<font color="#CCCCCC"> so the different</font>
+
+10
+00:00:25,800 --> 00:00:28,289
+<font color="#CCCCCC">types of buffer overflows are stack</font>
+
+11
+00:00:28,289 --> 00:00:31,019
+overflow<font color="#CCCCCC"> and heap overflow now let's see</font>
+
+12
+00:00:31,019 --> 00:00:33,510
+how buffer overflow works then web
+
+13
+00:00:33,510 --> 00:00:36,540
+application<font color="#E5E5E5"> now let's see how buffer</font>
+
+14
+00:00:36,540 --> 00:00:40,620
+overflow attack occurs so as I told<font color="#CCCCCC"> you</font>
+
+15
+00:00:40,620 --> 00:00:44,040
+<font color="#CCCCCC">earlier that</font><font color="#E5E5E5"> if the user input is</font><font color="#CCCCCC"> given</font>
+
+16
+00:00:44,040 --> 00:00:46,440
+more<font color="#E5E5E5"> than the memory</font><font color="#CCCCCC"> allocated to the</font>
+
+17
+00:00:46,440 --> 00:00:48,719
+web application<font color="#CCCCCC"> then</font><font color="#E5E5E5"> the web application</font>
+
+18
+00:00:48,719 --> 00:00:51,149
+will throw an error<font color="#E5E5E5"> and through that</font>
+
+19
+00:00:51,149 --> 00:00:53,879
+<font color="#E5E5E5">error</font><font color="#CCCCCC"> sometime the web application might</font>
+
+20
+00:00:53,879 --> 00:00:55,890
+reveals some<font color="#CCCCCC"> interesting information</font>
+
+21
+00:00:55,890 --> 00:00:59,070
+<font color="#E5E5E5">which user can use so in order to test</font>
+
+22
+00:00:59,070 --> 00:01:01,710
+buffer overflow vulnerability<font color="#CCCCCC"> we have to</font>
+
+23
+00:01:01,710 --> 00:01:04,530
+start<font color="#E5E5E5"> our OS broken web application and</font>
+
+24
+00:01:04,530 --> 00:01:07,320
+here you<font color="#E5E5E5"> can see it's up and running now</font>
+
+25
+00:01:07,320 --> 00:01:10,830
+let<font color="#E5E5E5"> me</font><font color="#CCCCCC"> open</font><font color="#E5E5E5"> my</font><font color="#CCCCCC"> Firefox so the one more</font>
+
+26
+00:01:10,830 --> 00:01:12,689
+<font color="#E5E5E5">thing</font><font color="#CCCCCC"> you have</font><font color="#E5E5E5"> to do is you have</font><font color="#CCCCCC"> to</font>
+
+27
+00:01:12,689 --> 00:01:14,400
+install<font color="#E5E5E5"> this</font><font color="#CCCCCC"> add-on called</font><font color="#E5E5E5"> as web</font>
+
+28
+00:01:14,400 --> 00:01:17,610
+developer<font color="#E5E5E5"> so once you install this</font>
+
+29
+00:01:17,610 --> 00:01:19,860
+<font color="#CCCCCC">add-on this</font><font color="#E5E5E5"> add-on will comes like this</font>
+
+30
+00:01:19,860 --> 00:01:21,979
+<font color="#E5E5E5">bar</font><font color="#CCCCCC"> so once you install this</font><font color="#E5E5E5"> add-on</font>
+
+31
+00:01:21,979 --> 00:01:27,650
+let's open our OS broken web application
+
+32
+00:01:27,650 --> 00:01:32,369
+so<font color="#E5E5E5"> let's go here</font><font color="#CCCCCC"> over</font><font color="#E5E5E5"> ASP</font><font color="#CCCCCC"> web good so</font>
+
+33
+00:01:32,369 --> 00:01:35,549
+once you<font color="#CCCCCC"> click over here it asks us</font><font color="#E5E5E5"> for</font>
+
+34
+00:01:35,549 --> 00:01:38,280
+<font color="#E5E5E5">the username and</font><font color="#CCCCCC"> password which is guest</font>
+
+35
+00:01:38,280 --> 00:01:40,770
+guest<font color="#E5E5E5"> but now I am already authenticated</font>
+
+36
+00:01:40,770 --> 00:01:44,670
+<font color="#E5E5E5">and I'm logged in you</font><font color="#CCCCCC"> can see here so in</font>
+
+37
+00:01:44,670 --> 00:01:46,680
+order to test buffer overflow<font color="#CCCCCC"> just click</font>
+
+38
+00:01:46,680 --> 00:01:48,270
+over<font color="#CCCCCC"> here</font><font color="#E5E5E5"> at buffer overflow and this</font>
+
+39
+00:01:48,270 --> 00:01:52,470
+<font color="#E5E5E5">challenge off-by-one overflow so if we</font>
+
+40
+00:01:52,470 --> 00:01:55,200
+just<font color="#E5E5E5"> look at this page it asks</font><font color="#CCCCCC"> us for</font>
+
+41
+00:01:55,200 --> 00:01:57,570
+<font color="#E5E5E5">the registration for a membership</font>
+
+42
+00:01:57,570 --> 00:01:59,820
+<font color="#E5E5E5">registration here you can see so the</font>
+
+43
+00:01:59,820 --> 00:02:03,630
+first name<font color="#E5E5E5"> let's test it for the first</font>
+
+44
+00:02:03,630 --> 00:02:06,360
+time<font color="#CCCCCC"> Sharat Kumar and the room number</font>
+
+45
+00:02:06,360 --> 00:02:09,840
+should be anything<font color="#E5E5E5"> so now if I just</font>
+
+46
+00:02:09,840 --> 00:02:12,679
+<font color="#E5E5E5">click on submit</font>
+
+47
+00:02:12,730 --> 00:02:15,620
+here you will<font color="#CCCCCC"> see that it's giving us</font>
+
+48
+00:02:15,620 --> 00:02:18,530
+the available price plan list so let's
+
+49
+00:02:18,530 --> 00:02:22,070
+accept anything<font color="#E5E5E5"> and now let's click on</font>
+
+50
+00:02:22,070 --> 00:02:27,430
+accept terms and here you will<font color="#E5E5E5"> see</font>
+
+51
+00:02:27,430 --> 00:02:31,700
+nothing so<font color="#CCCCCC"> here</font><font color="#E5E5E5"> just it's saying we</font>
+
+52
+00:02:31,700 --> 00:02:33,380
+would<font color="#CCCCCC"> like to</font><font color="#E5E5E5"> thank you for</font><font color="#CCCCCC"> the payment</font>
+
+53
+00:02:33,380 --> 00:02:37,610
+but what we have<font color="#E5E5E5"> to do is we have</font><font color="#CCCCCC"> to try</font>
+
+54
+00:02:37,610 --> 00:02:41,840
+<font color="#E5E5E5">to exploit this</font><font color="#CCCCCC"> webpage by giving input</font>
+
+55
+00:02:41,840 --> 00:02:44,780
+in a very<font color="#E5E5E5"> large number</font><font color="#CCCCCC"> so the one more</font>
+
+56
+00:02:44,780 --> 00:02:47,360
+<font color="#CCCCCC">thing we</font><font color="#E5E5E5"> we have to do is let's go here</font>
+
+57
+00:02:47,360 --> 00:02:49,820
+forms and now let's click<font color="#CCCCCC"> over here</font>
+
+58
+00:02:49,820 --> 00:02:53,180
+<font color="#E5E5E5">display forms details and here you will</font>
+
+59
+00:02:53,180 --> 00:02:56,060
+<font color="#E5E5E5">see</font><font color="#CCCCCC"> that this contains a hidden input</font>
+
+60
+00:02:56,060 --> 00:02:58,910
+field<font color="#E5E5E5"> you can see the hidden input field</font>
+
+61
+00:02:58,910 --> 00:03:02,480
+<font color="#E5E5E5">so it's a form hidden input field now if</font>
+
+62
+00:03:02,480 --> 00:03:05,180
+I just<font color="#E5E5E5"> go</font><font color="#CCCCCC"> back</font><font color="#E5E5E5"> here and uncheck</font><font color="#CCCCCC"> this you</font>
+
+63
+00:03:05,180 --> 00:03:09,640
+will see nothing<font color="#CCCCCC"> so</font><font color="#E5E5E5"> let's go back</font><font color="#CCCCCC"> here</font>
+
+64
+00:03:09,640 --> 00:03:13,550
+now as a pen tester what we can do is so
+
+65
+00:03:13,550 --> 00:03:18,470
+we<font color="#E5E5E5"> can just give any name and here in a</font>
+
+66
+00:03:18,470 --> 00:03:19,880
+room number<font color="#E5E5E5"> because the</font><font color="#CCCCCC"> rule number</font>
+
+67
+00:03:19,880 --> 00:03:23,300
+<font color="#E5E5E5">might be</font><font color="#CCCCCC"> an integer</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> what we can</font><font color="#E5E5E5"> do is</font>
+
+68
+00:03:23,300 --> 00:03:26,150
+we<font color="#E5E5E5"> can give a random room number a long</font>
+
+69
+00:03:26,150 --> 00:03:28,820
+room number list<font color="#E5E5E5"> which might cause and</font>
+
+70
+00:03:28,820 --> 00:03:32,360
+buffer overflow so let me go<font color="#E5E5E5"> back so on</font>
+
+71
+00:03:32,360 --> 00:03:34,940
+my desktop<font color="#CCCCCC"> you can see this file which</font>
+
+72
+00:03:34,940 --> 00:03:37,790
+is<font color="#E5E5E5"> six</font><font color="#CCCCCC"> thousand numbers so this file</font>
+
+73
+00:03:37,790 --> 00:03:40,459
+<font color="#CCCCCC">contains six thousand digits so let me</font>
+
+74
+00:03:40,459 --> 00:03:44,480
+copy<font color="#E5E5E5"> this file so I have copied all the</font>
+
+75
+00:03:44,480 --> 00:03:47,660
+<font color="#E5E5E5">digits let me just go back here</font><font color="#CCCCCC"> and let</font>
+
+76
+00:03:47,660 --> 00:03:50,840
+<font color="#CCCCCC">me paste it</font><font color="#E5E5E5"> and now let me click on</font>
+
+77
+00:03:50,840 --> 00:03:55,100
+<font color="#E5E5E5">submit</font><font color="#CCCCCC"> and now let's see that what kind</font>
+
+78
+00:03:55,100 --> 00:03:59,090
+<font color="#CCCCCC">of</font><font color="#E5E5E5"> hidden fields this page contains so</font>
+
+79
+00:03:59,090 --> 00:04:02,150
+here you will see<font color="#E5E5E5"> that this is the input</font>
+
+80
+00:04:02,150 --> 00:04:05,660
+field which<font color="#E5E5E5"> you can see and these threes</font>
+
+81
+00:04:05,660 --> 00:04:08,330
+are hidden fields<font color="#E5E5E5"> now if I</font><font color="#CCCCCC"> just click on</font>
+
+82
+00:04:08,330 --> 00:04:12,590
+accept terms so here you<font color="#E5E5E5"> will see that</font>
+
+83
+00:04:12,590 --> 00:04:14,209
+congratulations<font color="#E5E5E5"> you have successfully</font>
+
+84
+00:04:14,209 --> 00:04:16,700
+completed<font color="#CCCCCC"> installation which means we</font>
+
+85
+00:04:16,700 --> 00:04:19,040
+<font color="#E5E5E5">are successfully able to hit the memory</font>
+
+86
+00:04:19,040 --> 00:04:21,950
+fragment which was outside<font color="#CCCCCC"> the</font><font color="#E5E5E5"> allocated</font>
+
+87
+00:04:21,950 --> 00:04:24,800
+<font color="#CCCCCC">memory now if you just go here forms and</font>
+
+88
+00:04:24,800 --> 00:04:26,270
+now if I you<font color="#E5E5E5"> just</font>
+
+89
+00:04:26,270 --> 00:04:28,520
+here display<font color="#CCCCCC"> formfields here you will</font>
+
+90
+00:04:28,520 --> 00:04:31,460
+see that<font color="#CCCCCC"> we are successfully able to</font>
+
+91
+00:04:31,460 --> 00:04:35,509
+find the<font color="#E5E5E5"> information of</font><font color="#CCCCCC"> different users</font>
+
+92
+00:04:35,509 --> 00:04:38,900
+<font color="#E5E5E5">which have already registered</font><font color="#CCCCCC"> to this</font>
+
+93
+00:04:38,900 --> 00:04:40,400
+web application here you<font color="#E5E5E5"> can see the</font>
+
+94
+00:04:40,400 --> 00:04:43,909
+user details<font color="#E5E5E5"> like Lewis Hamilton Anna</font>
+
+95
+00:04:43,909 --> 00:04:49,159
+Smith<font color="#E5E5E5"> and</font><font color="#CCCCCC"> Ravan</font><font color="#E5E5E5"> and so on so this was</font>
+
+96
+00:04:49,159 --> 00:04:53,030
+the basic<font color="#CCCCCC"> example that how buffer</font>
+
+97
+00:04:53,030 --> 00:04:55,759
+overflow attack works<font color="#E5E5E5"> so in this</font><font color="#CCCCCC"> video</font>
+
+98
+00:04:55,759 --> 00:04:57,289
+we<font color="#E5E5E5"> have covered that what's a buffer</font>
+
+99
+00:04:57,289 --> 00:04:59,449
+overflow<font color="#E5E5E5"> attack and in the last we have</font>
+
+100
+00:04:59,449 --> 00:05:01,729
+seen that how we<font color="#E5E5E5"> can exploit buffer</font>
+
+101
+00:05:01,729 --> 00:05:04,479
+overflow vulnerability and<font color="#E5E5E5"> webgoat</font>
+
+102
+00:05:04,479 --> 00:00:00,000
+<font color="#E5E5E5">thanks for watching this video</font>
+

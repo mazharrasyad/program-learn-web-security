@@ -1,0 +1,7392 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,690
+ Untuk membuat sumbangan, atau untuk melihat materi tambahan 
+
+7
+00:00:12,690 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,260
+ di ocw.mit.edu. 
+
+9
+00:00:17,260 --> 00:00:31,680
+
+
+10
+00:00:31,680 --> 00:00:36,210
+ PROFESOR: Jadi, sambut semua orang, dan saya sebenarnya 
+
+11
+00:00:36,210 --> 00:00:38,830
+ dulu berada di MIT pada tahun 90-an, jadi senang bisa kembali. 
+
+12
+00:00:38,830 --> 00:00:41,540
+ Jadi kita akan berbicara hari ini tentang jenis yang berbeda 
+
+13
+00:00:41,540 --> 00:00:42,170
+ keamanan. 
+
+14
+00:00:42,170 --> 00:00:44,550
+ Ini akan kurang pada sisi mekanisme teknis, 
+
+15
+00:00:44,550 --> 00:00:46,200
+ dan lebih banyak lagi, yah, apa yang terjadi 
+
+16
+00:00:46,200 --> 00:00:48,492
+ ketika semua teknologi ini diberlakukan pada sesuatu 
+
+17
+00:00:48,492 --> 00:00:49,824
+ di mana ada konsekuensi tinggi? 
+
+18
+00:00:49,824 --> 00:00:52,060
+ Konsekuensi yang tidak terlalu tinggi seperti, katakanlah, pesawat terbang masuk 
+
+19
+00:00:52,060 --> 00:00:55,290
+ langit, tetapi semakin dekat. 
+
+20
+00:00:55,290 --> 00:00:57,470
+ Hanya untuk memberi tahu Anda dari mana saya berasal. 
+
+21
+00:00:57,470 --> 00:00:59,680
+ Jadi saya pernah menjadi bagian dari klub kedai kopi tengah malam 
+
+22
+00:00:59,680 --> 00:01:02,299
+ saya sendiri, tetapi ini adalah Michigan, sebenarnya. 
+
+23
+00:01:02,299 --> 00:01:04,090
+ Kami tidak sebesar kampus Anda di sini. 
+
+24
+00:01:04,090 --> 00:01:06,895
+ Namun beberapa saat yang lalu seseorang memutuskan 
+
+25
+00:01:06,895 --> 00:01:09,700
+ untuk menempatkan bak mandi panas di gedung ilmu komputer kami, 
+
+26
+00:01:09,700 --> 00:01:11,364
+ jadi mereka melakukan penelitian di dalam sana. 
+
+27
+00:01:11,364 --> 00:01:13,030
+ Tapi apa yang akan kita bicarakan hari ini 
+
+28
+00:01:13,030 --> 00:01:16,016
+ adalah beberapa penelitian yang menggelembung dari itu. 
+
+29
+00:01:16,016 --> 00:01:17,640
+ Jadi kita akan membicarakan semuanya 
+
+30
+00:01:17,640 --> 00:01:23,010
+ dari defibrillator meledak ke masalah privasi lainnya 
+
+31
+00:01:23,010 --> 00:01:24,667
+ di perangkat medis. 
+
+32
+00:01:24,667 --> 00:01:26,250
+ Dan ini terutama akan berhubungan 
+
+33
+00:01:26,250 --> 00:01:29,460
+ hanya satu utas penelitian dari salah satu lulusan saya sebelumnya 
+
+34
+00:01:29,460 --> 00:01:32,880
+ siswa di sini, yang sebenarnya pada titik ini 
+
+35
+00:01:32,880 --> 00:01:36,020
+ membersihkan alat pacu jantung yang meledak. 
+
+36
+00:01:36,020 --> 00:01:38,540
+ Tapi kita akan banyak bicara tentang keamanan 
+
+37
+00:01:38,540 --> 00:01:41,210
+ peralatan medis hari ini. 
+
+38
+00:01:41,210 --> 00:01:43,670
+ Punya banyak ucapan terima kasih. 
+
+39
+00:01:43,670 --> 00:01:44,510
+ Itu ada di tape. 
+
+40
+00:01:44,510 --> 00:01:47,030
+
+
+41
+00:01:47,030 --> 00:01:49,370
+ Pekerjaan ini dilakukan oleh banyak orang, dan saya 
+
+42
+00:01:49,370 --> 00:01:51,480
+ akan mencoba meringkas untuk Anda 
+
+43
+00:01:51,480 --> 00:01:54,400
+ bit modern tentang keamanan perangkat medis 
+
+44
+00:01:54,400 --> 00:01:56,530
+ melalui segala macam tempat. 
+
+45
+00:01:56,530 --> 00:01:58,620
+ Saya juga diminta untuk memasang boiler ini 
+
+46
+00:01:58,620 --> 00:02:01,580
+ slide dari potensi konflik kepentingan saya, 
+
+47
+00:02:01,580 --> 00:02:03,860
+ jadi sekarang Anda bisa tahu tentang potensi bias 
+
+48
+00:02:03,860 --> 00:02:05,080
+ dalam pemikiran saya. 
+
+49
+00:02:05,080 --> 00:02:06,740
+ Tapi saya ingin berpikir bahwa saya kurang 
+
+50
+00:02:06,740 --> 00:02:08,820
+ bias dari rata-rata orang. 
+
+51
+00:02:08,820 --> 00:02:11,360
+ BAIK. 
+
+52
+00:02:11,360 --> 00:02:12,580
+ Jadi lanjutkan. 
+
+53
+00:02:12,580 --> 00:02:15,256
+ Jadi hal yang menarik terjadi sekitar setahun yang lalu, 
+
+54
+00:02:15,256 --> 00:02:17,130
+ ketika FDA-- Administrasi Makanan dan Obat-- 
+
+55
+00:02:17,130 --> 00:02:19,540
+ merilis rancangan dokumen yang mengatakan mereka sekarang 
+
+56
+00:02:19,540 --> 00:02:22,580
+ akan mengharapkan produsen mempertimbangkan cyber 
+
+57
+00:02:22,580 --> 00:02:24,814
+ security-- atau seperti yang kami sebut, keamanan dan privacy-- 
+
+58
+00:02:24,814 --> 00:02:27,480
+ tidak hanya dalam penerapan perangkat lunak perangkat medis mereka, 
+
+59
+00:02:27,480 --> 00:02:29,560
+ tetapi dalam desain perangkat lunak mereka. 
+
+60
+00:02:29,560 --> 00:02:31,970
+ Sebelum satu baris kode telah ditulis. 
+
+61
+00:02:31,970 --> 00:02:33,744
+ Jadi kita akan berbicara tentang bagaimana 
+
+62
+00:02:33,744 --> 00:02:35,910
+ ini telah mempengaruhi pemikiran di perangkat medis 
+
+63
+00:02:35,910 --> 00:02:37,340
+ komunitas manufaktur. 
+
+64
+00:02:37,340 --> 00:02:40,040
+ Panduan terakhir mereka keluar hanya beberapa minggu yang lalu, 
+
+65
+00:02:40,040 --> 00:02:42,330
+ dan kami hanya mengadakan panggilan konferensi. 
+
+66
+00:02:42,330 --> 00:02:44,730
+ FDA mengadakan panggilan konferensi, dan lebih dari 650 orang 
+
+67
+00:02:44,730 --> 00:02:46,922
+ memutuskan untuk bergabung dengan teleconference. 
+
+68
+00:02:46,922 --> 00:02:49,380
+ Jadi ada banyak minat dalam komunitas manufaktur 
+
+69
+00:02:49,380 --> 00:02:51,838
+ tentang cara mengambil beberapa konsep yang Anda pelajari di sini 
+
+70
+00:02:51,838 --> 00:02:54,760
+ di kelas Anda dan benar-benar menerapkannya ke komunitas medis. 
+
+71
+00:02:54,760 --> 00:02:55,640
+ Tapi ini sangat sulit. 
+
+72
+00:02:55,640 --> 00:02:58,864
+ Dan saya melihat salah satu pertanyaan di situs web 
+
+73
+00:02:58,864 --> 00:03:01,530
+ adalah tentang bagaimana mengubah budaya di komunitas medis 
+
+74
+00:03:01,530 --> 00:03:03,080
+ untuk memahami keamanan. 
+
+75
+00:03:03,080 --> 00:03:05,260
+ Dan slide ini menggambarkan hal itu. 
+
+76
+00:03:05,260 --> 00:03:08,010
+ Jadi, siapa yang mencuci tangan mereka pagi ini? 
+
+77
+00:03:08,010 --> 00:03:08,635
+ BAIK. 
+
+78
+00:03:08,635 --> 00:03:11,250
+ Oh, ini bukan MIT, semuanya. 
+
+79
+00:03:11,250 --> 00:03:15,520
+ Jadi sebenarnya sekitar 164, 165 tahun yang lalu, 
+
+80
+00:03:15,520 --> 00:03:18,670
+ ada seorang dokter terkenal, Ignaz Semmelweis, 
+
+81
+00:03:18,670 --> 00:03:21,130
+ yang sedang mencari sesuatu yang disebut demam nifas. 
+
+82
+00:03:21,130 --> 00:03:23,650
+ Dan dia menemukan bahwa mahasiswa kedokterannya 
+
+83
+00:03:23,650 --> 00:03:26,150
+ yang bekerja di kamar mayat di pagi hari yang kemudian pergi 
+
+84
+00:03:26,150 --> 00:03:27,941
+ untuk bekerja dengan pasien, baik, pasien itu 
+
+85
+00:03:27,941 --> 00:03:29,320
+ cenderung lebih sering mati. 
+
+86
+00:03:29,320 --> 00:03:32,260
+ Dan dia menemukan jika Anda mencuci tangan, lalu secara statistik 
+
+87
+00:03:32,260 --> 00:03:35,740
+ Anda cenderung untuk lulus pada beberapa jenis kemungkinan 
+
+88
+00:03:35,740 --> 00:03:38,220
+ tidak hidup lebih lama. 
+
+89
+00:03:38,220 --> 00:03:41,435
+ Jadi dia merekomendasikan agar para dokter mencuci tangan mereka. 
+
+90
+00:03:41,435 --> 00:03:43,310
+ Dan reaksi dari komunitas dokter 
+
+91
+00:03:43,310 --> 00:03:45,290
+ adalah, dokter adalah pria, dan oleh karena itu 
+
+92
+00:03:45,290 --> 00:03:48,190
+ tangan mereka selalu bersih. 
+
+93
+00:03:48,190 --> 00:03:50,487
+ Dan sampai taraf tertentu kita melihat beberapa 
+
+94
+00:03:50,487 --> 00:03:52,570
+ dari jenis-jenis sikap terhadap keamanan hari ini, 
+
+95
+00:03:52,570 --> 00:03:53,780
+ jadi tidak terlalu mengejutkan. 
+
+96
+00:03:53,780 --> 00:03:55,490
+ Tetapi saya akan mencoba menarik beberapa kesejajaran 
+
+97
+00:03:55,490 --> 00:03:56,960
+ dengan itu sepanjang pembicaraan. 
+
+98
+00:03:56,960 --> 00:03:59,452
+
+
+99
+00:03:59,452 --> 00:04:00,910
+ Saya punya banyak bahan untuk dibahas 
+
+100
+00:04:00,910 --> 00:04:02,618
+ jadi saya akan mencambuk beberapa hal. 
+
+101
+00:04:02,618 --> 00:04:04,930
+ Tetapi hal pertama yang akan saya lakukan - siapa pun seorang dokter? 
+
+102
+00:04:04,930 --> 00:04:05,430
+ Tidak? 
+
+103
+00:04:05,430 --> 00:04:07,040
+ OK, baik Anda semua akan dapat memilikinya 
+
+104
+00:04:07,040 --> 00:04:08,740
+ beberapa bahan bagus untuk pesta koktail 
+
+105
+00:04:08,740 --> 00:04:10,320
+ dengan teman-teman dokter Anda. 
+
+106
+00:04:10,320 --> 00:04:11,210
+ Kami akan berbicara sedikit tentang 
+
+107
+00:04:11,210 --> 00:04:12,500
+ perangkat medis implan. 
+
+108
+00:04:12,500 --> 00:04:14,221
+ Sebenarnya saya akan melewati orang ini. 
+
+109
+00:04:14,221 --> 00:04:15,470
+ Anda dapat merasa bebas untuk menyentuhnya. 
+
+110
+00:04:15,470 --> 00:04:16,386
+ Sudah tidak aktif. 
+
+111
+00:04:16,386 --> 00:04:17,779
+ Hanya jangan menjilatnya. 
+
+112
+00:04:17,779 --> 00:04:21,790
+ Ini adalah defibrillator dari mantan pasien. 
+
+113
+00:04:21,790 --> 00:04:25,241
+ Dan sebenarnya ini adalah perangkat di sini - sekitar 50 tahun yang lalu, 
+
+114
+00:04:25,241 --> 00:04:27,740
+ beberapa alat pacu jantung pertama mulai muncul di tempat kejadian. 
+
+115
+00:04:27,740 --> 00:04:28,531
+ Mereka eksternal. 
+
+116
+00:04:28,531 --> 00:04:31,420
+ Anda harus memiliki perawat yang kekar untuk membawanya berkeliling. 
+
+117
+00:04:31,420 --> 00:04:34,440
+ Dan kemudian setelah beberapa dekade berlalu, mereka 
+
+118
+00:04:34,440 --> 00:04:36,160
+ menjadi cukup kecil untuk ditanamkan, 
+
+119
+00:04:36,160 --> 00:04:37,790
+ sepenuhnya ditanam di dalam tubuh. 
+
+120
+00:04:37,790 --> 00:04:39,290
+ Dan di sini Anda melihat gambar tentang apa 
+
+121
+00:04:39,290 --> 00:04:42,060
+ disebut tongkat yang menggunakan kopling induktif. 
+
+122
+00:04:42,060 --> 00:04:43,300
+ Secara teknis nirkabel. 
+
+123
+00:04:43,300 --> 00:04:44,091
+ Tidak ada kabel. 
+
+124
+00:04:44,091 --> 00:04:47,634
+ Untuk secara nirkabel memprogram perangkat menjadi 60 denyut per menit. 
+
+125
+00:04:47,634 --> 00:04:49,550
+ Tapi menarik bagi saya sebagai peneliti keamanan 
+
+126
+00:04:49,550 --> 00:04:51,720
+ adalah sekitar tahun 2003, kami 
+
+127
+00:04:51,720 --> 00:04:53,870
+ mulai melihat defibrillator, seperti yang saya 
+
+128
+00:04:53,870 --> 00:04:58,890
+ berkeliling, yang mulai merangkul teknologi nirkabel 
+
+129
+00:04:58,890 --> 00:05:00,950
+ dan jaringan yang Anda akan lebih terbiasa 
+
+130
+00:05:00,950 --> 00:05:03,440
+ sebagai semacam perhitungan umum. 
+
+131
+00:05:03,440 --> 00:05:06,470
+ Dan saya berpikir apa yang mungkin salah? 
+
+132
+00:05:06,470 --> 00:05:08,650
+ Untungnya ada banyak insinyur yang juga berpikir 
+
+133
+00:05:08,650 --> 00:05:12,480
+ pertanyaan yang sama di perusahaan, tetapi keamanan, itu 
+
+134
+00:05:12,480 --> 00:05:13,564
+ mengambil pola pikir yang berbeda. 
+
+135
+00:05:13,564 --> 00:05:15,563
+ Dan saya akan memberi tahu Anda sedikit tentang caranya 
+
+136
+00:05:15,563 --> 00:05:16,774
+ pola pikir itu berubah. 
+
+137
+00:05:16,774 --> 00:05:18,940
+ Jadi jika Anda membuka salah satu perangkat itu, apa 
+
+138
+00:05:18,940 --> 00:05:21,716
+ Anda menemukan di dalam adalah kendala sumber daya yang besar. 
+
+139
+00:05:21,716 --> 00:05:23,340
+ Jika Anda menginginkan masalah rekayasa yang sulit, 
+
+140
+00:05:23,340 --> 00:05:25,630
+ pop terbuka salah satu perangkat ini. 
+
+141
+00:05:25,630 --> 00:05:28,070
+ Jadi sekitar setengah dari perangkat hanyalah baterai. 
+
+142
+00:05:28,070 --> 00:05:29,500
+ Baterai berkualitas sangat tinggi. 
+
+143
+00:05:29,500 --> 00:05:33,330
+ Ini biaya sekitar $ 40.000 pop di pasar. 
+
+144
+00:05:33,330 --> 00:05:34,530
+ Perak vanadium oksida. 
+
+145
+00:05:34,530 --> 00:05:36,613
+ Dan Anda punya mikrokontroler kecil di bagian atas. 
+
+146
+00:05:36,613 --> 00:05:38,270
+ Biasanya Anda memiliki beberapa antena di mana 
+
+147
+00:05:38,270 --> 00:05:40,769
+ Anda dapat melakukan komunikasi Anda untuk mengontrol perangkat Anda 
+
+148
+00:05:40,769 --> 00:05:41,760
+ demikian juga. 
+
+149
+00:05:41,760 --> 00:05:44,917
+ Ini semua tertutup rapat, ditanamkan di tubuh Anda. 
+
+150
+00:05:44,917 --> 00:05:47,250
+ Kami berbicara salah satu lingkungan paling keras yang mungkin. 
+
+151
+00:05:47,250 --> 00:05:49,541
+ Anda ingin mengisi ulang baterai di tubuh Anda, semoga berhasil. 
+
+152
+00:05:49,541 --> 00:05:52,230
+ Tahukah Anda bahwa baterai mengeluarkan panas dan gas? 
+
+153
+00:05:52,230 --> 00:05:54,745
+ Jadi ada kendala yang sangat menantang 
+
+154
+00:05:54,745 --> 00:05:56,330
+ untuk merancang perangkat. 
+
+155
+00:05:56,330 --> 00:06:00,000
+ Ketika Anda ingin menambahkan keamanan, itu menjadi sedikit sulit. 
+
+156
+00:06:00,000 --> 00:06:02,260
+ Jadi, ada alasan yang sangat bagus 
+
+157
+00:06:02,260 --> 00:06:06,000
+ untuk memiliki perangkat medis yang dikontrol secara nirkabel. 
+
+158
+00:06:06,000 --> 00:06:08,390
+ Ada alasan bagus, tetapi ada risiko-risiko halus ini. 
+
+159
+00:06:08,390 --> 00:06:10,600
+ Jadi untuk menggambarkan itu, aku menginginkanmu 
+
+160
+00:06:10,600 --> 00:06:13,440
+ untuk melihat alat pacu jantung seperti apa. 
+
+161
+00:06:13,440 --> 00:06:15,630
+ Jadi ini alat pacu jantung dari Medtronic Museum 
+
+162
+00:06:15,630 --> 00:06:17,000
+ di Minneapolis. 
+
+163
+00:06:17,000 --> 00:06:19,590
+ Dan ada yang bisa menebak apa potongan logam itu 
+
+164
+00:06:19,590 --> 00:06:21,760
+ ada di sebelah kanan? 
+
+165
+00:06:21,760 --> 00:06:24,630
+ Apa fungsinya? 
+
+166
+00:06:24,630 --> 00:06:25,300
+ Antena? 
+
+167
+00:06:25,300 --> 00:06:26,870
+ Kontrol? 
+
+168
+00:06:26,870 --> 00:06:27,936
+ Kontrol sangat dekat. 
+
+169
+00:06:27,936 --> 00:06:28,685
+ Tebakan lainnya? 
+
+170
+00:06:28,685 --> 00:06:31,650
+
+
+171
+00:06:31,650 --> 00:06:34,730
+ Jadi ini adalah alat sebelum ada komunikasi nirkabel 
+
+172
+00:06:34,730 --> 00:06:35,772
+ untuk mengendalikan alat pacu jantung. 
+
+173
+00:06:35,772 --> 00:06:37,980
+ Di masa lalu, ketika Anda ingin mengubah pengaturan 
+
+174
+00:06:37,980 --> 00:06:40,320
+ di perangkat Anda, dokter berkata, "Pasien, 
+
+175
+00:06:40,320 --> 00:06:41,470
+ tolong angkat lenganmu. 
+
+176
+00:06:41,470 --> 00:06:43,720
+ Aku akan menusukkan jarum ke ketiakmu untuk berputar 
+
+177
+00:06:43,720 --> 00:06:45,890
+ dial untuk mengubah detak jantung Anda. " 
+
+178
+00:06:45,890 --> 00:06:48,300
+ Jadi salah satu alasan utama untuk nirkabel 
+
+179
+00:06:48,300 --> 00:06:50,260
+ adalah bahwa itu benar-benar mengurangi tingkat infeksi, 
+
+180
+00:06:50,260 --> 00:06:53,350
+ karena semakin Anda menaruh benda asing di tubuh Anda, 
+
+181
+00:06:53,350 --> 00:06:56,040
+ semakin besar kemungkinan Anda untuk tertular infeksi. 
+
+182
+00:06:56,040 --> 00:06:57,350
+ Ini risiko serius. 
+
+183
+00:06:57,350 --> 00:07:01,840
+ Sebenarnya, 1% implantasi memiliki komplikasi besar, 
+
+184
+00:07:01,840 --> 00:07:03,870
+ dan dari mereka, sekitar 1% berakibat fatal. 
+
+185
+00:07:03,870 --> 00:07:06,370
+ Jadi mengendalikan infeksi adalah salah satu hal yang paling penting 
+
+186
+00:07:06,370 --> 00:07:10,440
+ dapat Anda lakukan dalam implantasi dan penggantian perangkat. 
+
+187
+00:07:10,440 --> 00:07:13,140
+ Tentu saja, jika Anda pergi ke ekstrem yang lain dan katakan saja, 
+
+188
+00:07:13,140 --> 00:07:14,740
+ Saya ingin menempatkan nirkabel di mana saja, 
+
+189
+00:07:14,740 --> 00:07:16,601
+ Anda akan mendapatkan berbagai jenis risiko. 
+
+190
+00:07:16,601 --> 00:07:18,975
+ Jadi saya sudah menyebutnya teori bacon nirkabel. 
+
+191
+00:07:18,975 --> 00:07:21,725
+
+
+192
+00:07:21,725 --> 00:07:23,100
+ Sekarang ibu saya dari Midwest, 
+
+193
+00:07:23,100 --> 00:07:25,920
+ jadi dia biasa mengatakan bacon membuat semuanya lebih baik. 
+
+194
+00:07:25,920 --> 00:07:28,390
+ Dan saya perhatikan ada beberapa produsen perangkat yang 
+
+195
+00:07:28,390 --> 00:07:30,460
+ tampaknya menempatkan nirkabel di mana-mana tanpa harus 
+
+196
+00:07:30,460 --> 00:07:31,751
+ memikirkan semua risiko. 
+
+197
+00:07:31,751 --> 00:07:33,970
+ Itu memang memiliki manfaatnya, tetapi Anda 
+
+198
+00:07:33,970 --> 00:07:36,290
+ perlu berpikir sangat strategis sebelum Anda menambahkan ini 
+
+199
+00:07:36,290 --> 00:07:37,732
+ ke perangkat penting yang aman. 
+
+200
+00:07:37,732 --> 00:07:39,606
+ Apa risiko keamanan misalnya itu 
+
+201
+00:07:39,606 --> 00:07:41,580
+ akan terbuka? 
+
+202
+00:07:41,580 --> 00:07:43,820
+ Ups, saya punya satu slide yang salah tempat, tetapi saya 
+
+203
+00:07:43,820 --> 00:07:45,410
+ Saya kira saya akan mengatakannya saja. 
+
+204
+00:07:45,410 --> 00:07:47,534
+ Saya tidak akan berbicara banyak tentang jaringan, 
+
+205
+00:07:47,534 --> 00:07:50,740
+ tapi saya pikir kutipan ini terlalu bagus untuk tidak disebutkan. 
+
+206
+00:07:50,740 --> 00:07:53,230
+ Apakah ada yang ingat kapal di lepas pantai Italia? 
+
+207
+00:07:53,230 --> 00:07:55,020
+ Kapten berkata, "Hari-hari ini, segalanya 
+
+208
+00:07:55,020 --> 00:07:58,980
+ jauh lebih aman, berkat instrumen modern dan internet. " 
+
+209
+00:07:58,980 --> 00:08:02,830
+ Dan ada kapalnya yang membelok ke sana. 
+
+210
+00:08:02,830 --> 00:08:04,887
+ Jadi Anda menambahkan konektivitas internet dan nirkabel 
+
+211
+00:08:04,887 --> 00:08:07,220
+ ke perangkat medis Anda, akan ada risiko baru. 
+
+212
+00:08:07,220 --> 00:08:08,720
+ Dan Anda tidak perlu takut pada mereka, 
+
+213
+00:08:08,720 --> 00:08:10,770
+ tetapi Anda hanya perlu memiliki mitigasi yang tepat 
+
+214
+00:08:10,770 --> 00:08:12,796
+ kontrol. 
+
+215
+00:08:12,796 --> 00:08:13,920
+ Jadi saya terbang melalui ini. 
+
+216
+00:08:13,920 --> 00:08:15,730
+ Tapi yang ingin saya berikan adalah cat 
+
+217
+00:08:15,730 --> 00:08:19,920
+ gambar tentang apa hari-hari biasa di perangkat medis, 
+
+218
+00:08:19,920 --> 00:08:22,140
+ dan bagaimana itu digunakan dalam perawatan klinis, 
+
+219
+00:08:22,140 --> 00:08:23,740
+ dan bagaimana itu bisa mengubah pola pikir Anda 
+
+220
+00:08:23,740 --> 00:08:25,420
+ jika Anda berasal dari latar belakang keamanan, 
+
+221
+00:08:25,420 --> 00:08:27,360
+ dan bagaimana Anda memikirkan risiko. 
+
+222
+00:08:27,360 --> 00:08:29,620
+ Jadi pertama-tama akan berbicara tentang dunia 
+
+223
+00:08:29,620 --> 00:08:34,000
+ di mana tidak ada ancaman nyata, hanya praktik yang tidak aman dan beberapa lainnya 
+
+224
+00:08:34,000 --> 00:08:35,490
+ kecerobohan. 
+
+225
+00:08:35,490 --> 00:08:39,470
+ Jadi FDA memelihara database nyaris celaka, malfungsi, 
+
+226
+00:08:39,470 --> 00:08:40,539
+ cedera, dan kematian. 
+
+227
+00:08:40,539 --> 00:08:41,330
+ Ini semua publik. 
+
+228
+00:08:41,330 --> 00:08:42,705
+ Anda bisa melihat ini sendiri. 
+
+229
+00:08:42,705 --> 00:08:43,820
+ Ini disebut MAUDE. 
+
+230
+00:08:43,820 --> 00:08:47,630
+ Dan salah satu alat itu disebut infus volumetrik ini 
+
+231
+00:08:47,630 --> 00:08:48,130
+ pompa. 
+
+232
+00:08:48,130 --> 00:08:51,660
+ Ini adalah alat yang memasukkan obat ke dalam tubuh Anda 
+
+233
+00:08:51,660 --> 00:08:53,970
+ melalui IV secara mekanis. 
+
+234
+00:08:53,970 --> 00:08:55,900
+ Dan pasien ini meninggal. 
+
+235
+00:08:55,900 --> 00:08:59,030
+ Dan jika Anda perhatikan dengan teliti, ia mengatakan salah satu penyebabnya 
+
+236
+00:08:59,030 --> 00:09:01,356
+ adalah buffer overflow. 
+
+237
+00:09:01,356 --> 00:09:03,105
+ Saya pikir Anda belajar tentang buffer overflows 
+
+238
+00:09:03,105 --> 00:09:04,490
+ di kuliah pertama Anda. 
+
+239
+00:09:04,490 --> 00:09:07,950
+ Jadi mereka sangat nyata dan mereka terjadi dan di setiap sektor. 
+
+240
+00:09:07,950 --> 00:09:11,270
+ Jadi dalam kasus khusus ini ketika buffer overflow terjadi, 
+
+241
+00:09:11,270 --> 00:09:14,880
+ itu benar-benar tertangkap dalam pengecekan kesalahan mereka dalam perangkat lunak, 
+
+242
+00:09:14,880 --> 00:09:17,450
+ tetapi tindakan yang diperlukan adalah mematikan pompa. 
+
+243
+00:09:17,450 --> 00:09:19,630
+ Untuk membawanya ke mode aman. 
+
+244
+00:09:19,630 --> 00:09:22,080
+ Apa yang tidak mereka sadari adalah untuk beberapa pasien, 
+
+245
+00:09:22,080 --> 00:09:24,440
+ mematikan pompa pada dasarnya adalah hukuman mati. 
+
+246
+00:09:24,440 --> 00:09:28,030
+ Jadi pasien ini meninggal setelah peningkatan 
+
+247
+00:09:28,030 --> 00:09:32,740
+ dalam tekanan intrakranial, diikuti oleh kematian otak karena 
+
+248
+00:09:32,740 --> 00:09:35,750
+ dari buffer overflow. 
+
+249
+00:09:35,750 --> 00:09:38,730
+ Jadi tidak ada yang benar-benar rumit di sini, kan? 
+
+250
+00:09:38,730 --> 00:09:40,595
+ Anda semua tahu Anda tidak ingin memiliki buffer 
+
+251
+00:09:40,595 --> 00:09:41,720
+ meluap di perangkat lunak Anda. 
+
+252
+00:09:41,720 --> 00:09:43,670
+ Tidak ada musuh pada saat ini. 
+
+253
+00:09:43,670 --> 00:09:47,600
+ Jadi ini menggambarkan status perangkat lunak, setidaknya 
+
+254
+00:09:47,600 --> 00:09:49,195
+ untuk perangkat khusus ini. 
+
+255
+00:09:49,195 --> 00:09:51,700
+ Ini sangat menantang. 
+
+256
+00:09:51,700 --> 00:09:53,940
+ Bagian menantang lainnya yang tidak muncul 
+
+257
+00:09:53,940 --> 00:09:56,520
+ banyak hal dalam kursus keamanan adalah sisi manusia. 
+
+258
+00:09:56,520 --> 00:09:59,150
+ Jadi ada beberapa universitas itu 
+
+259
+00:09:59,150 --> 00:10:02,600
+ fokus pada elemen manusia, tetapi saya pikir seharusnya ada lebih banyak. 
+
+260
+00:10:02,600 --> 00:10:05,240
+ Jadi saya memulai beberapa pengalaman hidup saya sendiri. 
+
+261
+00:10:05,240 --> 00:10:07,290
+ Istri saya diminta untuk tetap anonim, 
+
+262
+00:10:07,290 --> 00:10:10,460
+ jadi dia mengatakan selama aku tidak mengungkapkan namanya. 
+
+263
+00:10:10,460 --> 00:10:13,530
+ Jadi itu aku, itu pompa infus kami di belakang, 
+
+264
+00:10:13,530 --> 00:10:15,600
+ dan itu bayi kami di sana. 
+
+265
+00:10:15,600 --> 00:10:18,920
+ Dan bagi kami untungnya pompa bekerja dengan baik. 
+
+266
+00:10:18,920 --> 00:10:23,080
+ Tapi pompa sangat bagus untuk memberikan perawatan medis, 
+
+267
+00:10:23,080 --> 00:10:28,250
+ tetapi mereka telah menyebabkan lebih dari 500 kematian karena berbagai bentuk 
+
+268
+00:10:28,250 --> 00:10:29,930
+ malfungsi. 
+
+269
+00:10:29,930 --> 00:10:34,010
+ Jadi saya akan memberi tahu Anda tentang satu malfungsi lagi. 
+
+270
+00:10:34,010 --> 00:10:35,990
+ Ada juga jenis pompa implan. 
+
+271
+00:10:35,990 --> 00:10:37,770
+ Mereka bukan hanya pompa di samping tempat tidur, semacam itu 
+
+272
+00:10:37,770 --> 00:10:41,090
+ Anda lihat di drama rumah sakit siang hari. 
+
+273
+00:10:41,090 --> 00:10:43,330
+ Tapi inilah pompa implan, dan itu 
+
+274
+00:10:43,330 --> 00:10:45,080
+ punya membran semipermeabel ini di mana 
+
+275
+00:10:45,080 --> 00:10:46,890
+ Anda dapat mengisi kembali obat-obatan. 
+
+276
+00:10:46,890 --> 00:10:49,610
+ Dan ini adalah antarmuka pengguna yang perawat atau dokter 
+
+277
+00:10:49,610 --> 00:10:52,070
+ menggunakan untuk mengubah tingkat dosis. 
+
+278
+00:10:52,070 --> 00:10:55,670
+ Jadi apakah ada yang melihat di mana Anda mengetikkan jumlah obat? 
+
+279
+00:10:55,670 --> 00:10:58,660
+
+
+280
+00:10:58,660 --> 00:11:00,246
+ Anda harus semacam juling, kan? 
+
+281
+00:11:00,246 --> 00:11:02,310
+ Jadi Anda juling sangat erat. 
+
+282
+00:11:02,310 --> 00:11:04,600
+ Dan satu hal yang akan Anda perhatikan ada di sini dengan nomor enam 
+
+283
+00:11:04,600 --> 00:11:07,060
+ dikatakan kita akan memberi dosis bolus-- bolus ini 
+
+284
+00:11:07,060 --> 00:11:11,061
+ adalah kuantum obat - lebih dari 20 menit dan 12 detik. 
+
+285
+00:11:11,061 --> 00:11:12,810
+ Kami akan memberi dosis ini ke pasien. 
+
+286
+00:11:12,810 --> 00:11:14,643
+ Dan ini ditanam, jadi Anda tidak merasakannya. 
+
+287
+00:11:14,643 --> 00:11:16,450
+ Tidak ada saraf. 
+
+288
+00:11:16,450 --> 00:11:18,860
+ Dan antarmuka pengguna ini sebenarnya 
+
+289
+00:11:18,860 --> 00:11:21,830
+ setelah penarikan FDA mulai berlaku 
+
+290
+00:11:21,830 --> 00:11:23,720
+ untuk kualitas perangkat lunak. 
+
+291
+00:11:23,720 --> 00:11:28,960
+ Jadi apa yang hilang sebelum recall adalah delapan elemen kunci. 
+
+292
+00:11:28,960 --> 00:11:34,442
+ Khususnya HH: MM: SS. 
+
+293
+00:11:34,442 --> 00:11:38,650
+ Jadi menurut Anda apa yang terjadi, atau apa yang Anda pikir bisa terjadi, 
+
+294
+00:11:38,650 --> 00:11:41,690
+ jika label itu hilang? 
+
+295
+00:11:41,690 --> 00:11:46,120
+ Sangat mudah untuk membuat unit salah. 
+
+296
+00:11:46,120 --> 00:11:48,410
+ Buat urutan kesalahan besarnya. 
+
+297
+00:11:48,410 --> 00:11:52,390
+ Jadi sayangnya untuk pasien ini, yang kemudian kedaluwarsa, 
+
+298
+00:11:52,390 --> 00:11:56,654
+ dia memiliki pompa yang diprogram ulang, 
+
+299
+00:11:56,654 --> 00:11:58,320
+ dan ahli kesehatan memperhatikan 
+
+300
+00:11:58,320 --> 00:12:01,370
+ bahwa bolus diberikan lebih dari 20 menit, bukan 20 jam 
+
+301
+00:12:01,370 --> 00:12:02,670
+ setelah fakta. 
+
+302
+00:12:02,670 --> 00:12:05,710
+ Sayangnya, pasien meninggalkan fasilitas, 
+
+303
+00:12:05,710 --> 00:12:07,650
+ mengalami kecelakaan kendaraan bermotor, 
+
+304
+00:12:07,650 --> 00:12:10,870
+ dan kemudian meninggal setelah keluarga itu mencabut dukungan hidup. 
+
+305
+00:12:10,870 --> 00:12:14,920
+ Tetapi jika Anda melihat ini dari sudut pandang teknis, 
+
+306
+00:12:14,920 --> 00:12:16,810
+ masalahnya cukup sederhana, kan? 
+
+307
+00:12:16,810 --> 00:12:19,050
+ Dalam hal Anda tidak memiliki label di sana. 
+
+308
+00:12:19,050 --> 00:12:21,670
+ Tetapi faktor manusia sangat mudah diabaikan. 
+
+309
+00:12:21,670 --> 00:12:23,590
+ Tidak selalu di sana, depan dan tengah, 
+
+310
+00:12:23,590 --> 00:12:24,395
+ dalam proses rekayasa. 
+
+311
+00:12:24,395 --> 00:12:26,580
+ Apakah Anda memiliki bagian faktor manusia dalam kuliah ini? 
+
+312
+00:12:26,580 --> 00:12:27,480
+ Lihat apa yang saya maksudkan? 
+
+313
+00:12:27,480 --> 00:12:29,730
+ Salahkan Nickolai. 
+
+314
+00:12:29,730 --> 00:12:30,940
+ Tidak, Nickolai hebat. 
+
+315
+00:12:30,940 --> 00:12:33,620
+ Tapi itu elemen yang sangat penting 
+
+316
+00:12:33,620 --> 00:12:36,350
+ meningkatkan kepercayaan perangkat 
+
+317
+00:12:36,350 --> 00:12:38,330
+ yang bergantung pada perangkat lunak. 
+
+318
+00:12:38,330 --> 00:12:41,170
+ Jadi saya mendorong Anda untuk berpikir tentang elemen manusia yang lebih baik 
+
+319
+00:12:41,170 --> 00:12:43,440
+ dan faktor manusia untuk perangkat lunak Anda, 
+
+320
+00:12:43,440 --> 00:12:46,760
+ bahkan jika itu pada sesuatu yang tidak kritis. 
+
+321
+00:12:46,760 --> 00:12:49,260
+ Jadi itu harus mulai melukis gambar 
+
+322
+00:12:49,260 --> 00:12:53,710
+ masalah khas dalam kegagalan perangkat medis 
+
+323
+00:12:53,710 --> 00:12:55,710
+ posting [TIDAK TERDENGAR] 25. 
+
+324
+00:12:55,710 --> 00:12:57,640
+ Dan hal lain yang ingin saya bicarakan 
+
+325
+00:12:57,640 --> 00:12:59,840
+ adalah dunia manajemen yang mengasyikkan. 
+
+326
+00:12:59,840 --> 00:13:02,320
+ Manajemen, menarik. 
+
+327
+00:13:02,320 --> 00:13:05,634
+ Saya biasa mengumpulkan semua kotak dialog kecil ini kapan saja 
+
+328
+00:13:05,634 --> 00:13:07,300
+ komputer saya akan mendapatkan pembaruan perangkat lunak, 
+
+329
+00:13:07,300 --> 00:13:09,520
+ tetapi ini semua terjadi di latar belakang sekarang. 
+
+330
+00:13:09,520 --> 00:13:11,390
+ Seperti iPhone saya yang terus mendapatkan pembaruan 
+
+331
+00:13:11,390 --> 00:13:13,530
+ dan menarik lebih banyak kekuatan. 
+
+332
+00:13:13,530 --> 00:13:15,990
+ Tapi sekarang itu semacam terjadi. 
+
+333
+00:13:15,990 --> 00:13:20,160
+ Tetapi perangkat medis juga mengambil pembaruan perangkat lunak. 
+
+334
+00:13:20,160 --> 00:13:23,540
+ Mereka tidak benar-benar berbeda dari dasarnya 
+
+335
+00:13:23,540 --> 00:13:25,430
+ perangkat komputasi tradisional. 
+
+336
+00:13:25,430 --> 00:13:28,869
+ Mereka hanya kebetulan mengontrol fungsi vital tubuh Anda. 
+
+337
+00:13:28,869 --> 00:13:30,160
+ Jadi ada kasus yang menarik. 
+
+338
+00:13:30,160 --> 00:13:31,920
+ Sekarang sudah sekitar empat tahun. 
+
+339
+00:13:31,920 --> 00:13:35,010
+ Jadi McAfee-- ada sejumlah perusahaan antivirus 
+
+340
+00:13:35,010 --> 00:13:37,210
+ yang menghasilkan produk yang digunakan rumah sakit-- 
+
+341
+00:13:37,210 --> 00:13:40,040
+ dan dalam kasus khusus ini, McAfee memiliki perangkat lunak ini 
+
+342
+00:13:40,040 --> 00:13:42,350
+ perbarui yang benar-benar salah diklasifikasikan 
+
+343
+00:13:42,350 --> 00:13:44,266
+ Windows DL yang kritis sebagai berbahaya, 
+
+344
+00:13:44,266 --> 00:13:46,015
+ dan kemudian memutuskan untuk mengkarantina sistem. 
+
+345
+00:13:46,015 --> 00:13:49,280
+
+
+346
+00:13:49,280 --> 00:13:52,947
+ Jadi ketika dikarantina, mari kita lihat. 
+
+347
+00:13:52,947 --> 00:13:56,617
+
+
+348
+00:13:56,617 --> 00:14:00,370
+ [SUARA KOMPUTER] 
+
+349
+00:14:00,370 --> 00:14:01,980
+ Itu selalu terjadi, kan? 
+
+350
+00:14:01,980 --> 00:14:02,480
+ BAIK. 
+
+351
+00:14:02,480 --> 00:14:05,650
+ Jadi, ha ha ha. 
+
+352
+00:14:05,650 --> 00:14:08,030
+ Dalam kasus khusus ini dengan McAfee, 
+
+353
+00:14:08,030 --> 00:14:10,770
+ ketika mereka mengkarantina Windows DL yang kritis ini 
+
+354
+00:14:10,770 --> 00:14:14,690
+ sebagai jahat, mesin baru saja mulai me-reboot. 
+
+355
+00:14:14,690 --> 00:14:16,430
+ Blue Screen of Death dan bersepeda. 
+
+356
+00:14:16,430 --> 00:14:17,969
+ Dan di Rhode Island, mereka pada dasarnya 
+
+357
+00:14:17,969 --> 00:14:19,760
+ berhenti mengakui pasien di satu rumah sakit, 
+
+358
+00:14:19,760 --> 00:14:22,200
+ kecuali untuk kasus yang parah seperti luka tembak, 
+
+359
+00:14:22,200 --> 00:14:24,800
+ karena sistem penerimaan mereka tidak berfungsi sebagaimana mestinya. 
+
+360
+00:14:24,800 --> 00:14:30,270
+ Jadi perawatan klinis sangat bergantung pada fungsi perangkat lunak, 
+
+361
+00:14:30,270 --> 00:14:34,650
+ dan terkadang kita lupa tentang peran keamanan. 
+
+362
+00:14:34,650 --> 00:14:38,990
+ Pada topik tergantung pada perangkat lunak orang lain, 
+
+363
+00:14:38,990 --> 00:14:42,275
+ Microsoft memiliki salah satu jejak terbesar sistem operasi. 
+
+364
+00:14:42,275 --> 00:14:44,650
+ Dan percaya atau tidak, ada banyak alat medis 
+
+365
+00:14:44,650 --> 00:14:46,730
+ yang berjalan di Windows XP. 
+
+366
+00:14:46,730 --> 00:14:48,230
+ Windows XP, jika Anda tidak mendengar, 
+
+367
+00:14:48,230 --> 00:14:51,694
+ keluar dari layanan setengah tahun yang lalu. 
+
+368
+00:14:51,694 --> 00:14:53,610
+ Jadi Anda seharusnya tidak menggunakan ini, karena ada 
+
+369
+00:14:53,610 --> 00:14:56,680
+ tidak ada pembaruan lagi, pembaruan keamanan, pembaruan fungsi. 
+
+370
+00:14:56,680 --> 00:14:58,340
+ Ini perangkat lunak kuno. 
+
+371
+00:14:58,340 --> 00:15:00,660
+ Namun masih ada perangkat medis yang dikapalkan hari ini 
+
+372
+00:15:00,660 --> 00:15:03,140
+ baru dengan Windows XP. 
+
+373
+00:15:03,140 --> 00:15:06,424
+ Siklus hidup perangkat lunak sedikit tidak sejajar. 
+
+374
+00:15:06,424 --> 00:15:08,840
+ Jika Anda terbiasa mengunduh pembaruan untuk open source Anda 
+
+375
+00:15:08,840 --> 00:15:12,100
+ perangkat lunak setiap hari, baik, pikirkan tentang perangkat medis. 
+
+376
+00:15:12,100 --> 00:15:14,760
+ Anda mungkin tidak bisa mendapatkannya, katakanlah, selama satu tahun. 
+
+377
+00:15:14,760 --> 00:15:16,860
+ Mungkin di lapangan selama 20 tahun. 
+
+378
+00:15:16,860 --> 00:15:18,970
+ Jadi sangat sulit untuk mencari perangkat lunak 
+
+379
+00:15:18,970 --> 00:15:21,420
+ yang sesuai untuk siklus kehidupan 20 tahun. 
+
+380
+00:15:21,420 --> 00:15:24,280
+ Pada dasarnya terbang di angkasa. 
+
+381
+00:15:24,280 --> 00:15:26,210
+ Jadi Administrasi Makanan dan Obat-obatan 
+
+382
+00:15:26,210 --> 00:15:29,190
+ kini telah merilis beberapa panduan-- sebenarnya, 
+
+383
+00:15:29,190 --> 00:15:33,120
+ ini tepat sebulan yang lalu-- 
+
+384
+00:15:33,120 --> 00:15:35,666
+ pada apa yang mereka harapkan untuk dilihat dari produsen. 
+
+385
+00:15:35,666 --> 00:15:39,060
+
+
+386
+00:15:39,060 --> 00:15:40,590
+ Anggap saja sebagai proyek desain. 
+
+387
+00:15:40,590 --> 00:15:43,100
+ Saat Anda menuliskan semua persyaratan 
+
+388
+00:15:43,100 --> 00:15:45,640
+ perangkat medis Anda, mereka meminta produsen 
+
+389
+00:15:45,640 --> 00:15:48,082
+ bagaimana mereka memikirkan masalah keamanan. 
+
+390
+00:15:48,082 --> 00:15:50,290
+ Bagaimana mereka memikirkan semua risiko keamanan? 
+
+391
+00:15:50,290 --> 00:15:51,760
+ Bagaimana mereka memitigasinya? 
+
+392
+00:15:51,760 --> 00:15:53,850
+ Risiko apa yang mereka terima sebagai apa 
+
+393
+00:15:53,850 --> 00:15:56,630
+ mereka menyebut risiko residual, hal-hal yang tidak mereka pecahkan? 
+
+394
+00:15:56,630 --> 00:15:59,590
+ Tetapi mereka mengharapkan mereka untuk tidak menyadari semua risiko 
+
+395
+00:15:59,590 --> 00:16:02,080
+ dan idealnya mengurangi mereka. 
+
+396
+00:16:02,080 --> 00:16:04,230
+ Jadi dengan pengelolaan perangkat lunak, 
+
+397
+00:16:04,230 --> 00:16:06,430
+ ketika tidak ada orang yang bertanggung jawab, 
+
+398
+00:16:06,430 --> 00:16:08,400
+ segala macam hal gila terjadi. 
+
+399
+00:16:08,400 --> 00:16:11,280
+ Tetapi ada beberapa panduan sekarang itu 
+
+400
+00:16:11,280 --> 00:16:14,570
+ mulai muncul untuk membantu komunitas manufaktur 
+
+401
+00:16:14,570 --> 00:16:18,740
+ untuk lebih mengintegrasikan keamanan ke dalam produk mereka. 
+
+402
+00:16:18,740 --> 00:16:21,480
+ Jadi saya pikir kami membuat waktu yang cukup baik. 
+
+403
+00:16:21,480 --> 00:16:22,170
+ Baiklah. 
+
+404
+00:16:22,170 --> 00:16:25,050
+ Jadi sekarang kita akan bisa masuk ke sisi keamanan. 
+
+405
+00:16:25,050 --> 00:16:26,840
+ Saya ingin mengeluarkan barang-barang non-keamanan 
+
+406
+00:16:26,840 --> 00:16:29,040
+ jalan untuk konteksnya. 
+
+407
+00:16:29,040 --> 00:16:33,770
+ Jadi mari memakai topi abu-abu dan topi hitam kami. 
+
+408
+00:16:33,770 --> 00:16:36,200
+ Sebelum saya memulai ini, saya kira 
+
+409
+00:16:36,200 --> 00:16:39,280
+ apa yang ingin saya katakan adalah ini adalah area yang sangat menantang 
+
+410
+00:16:39,280 --> 00:16:42,240
+ melakukan penelitian, karena ada pasien. 
+
+411
+00:16:42,240 --> 00:16:48,140
+ Dan jika saya diberi alat medis, misalnya, hari ini, 
+
+412
+00:16:48,140 --> 00:16:50,480
+ Saya masih akan menerimanya bahkan jika masalah keamanan tidak 
+
+413
+00:16:50,480 --> 00:16:52,560
+ semua berhasil, karena saya tahu saya jauh lebih baik 
+
+414
+00:16:52,560 --> 00:16:54,690
+ off dengan perangkat medis itu. 
+
+415
+00:16:54,690 --> 00:16:56,500
+ Tapi itu kata, tentu saja, saya lebih suka 
+
+416
+00:16:56,500 --> 00:16:58,920
+ untuk memiliki perangkat medis yang lebih aman. 
+
+417
+00:16:58,920 --> 00:17:02,610
+ Jadi ada kemunculan perangkat yang lebih dan lebih aman, 
+
+418
+00:17:02,610 --> 00:17:05,750
+ tetapi hari ini, jika Anda harus memilih antara perangkat dan tidak ada perangkat, 
+
+419
+00:17:05,750 --> 00:17:07,500
+ Saya sangat menyarankan untuk mengambilnya, 
+
+420
+00:17:07,500 --> 00:17:10,069
+ karena Anda akan berada dalam posisi yang jauh lebih baik. 
+
+421
+00:17:10,069 --> 00:17:12,460
+ Tapi itu tadi, mari kita lihat sekarang. 
+
+422
+00:17:12,460 --> 00:17:15,220
+ Jika kita mempertimbangkan musuh, dan jika musuh 
+
+423
+00:17:15,220 --> 00:17:17,790
+ ingin menyebabkan masalah ke perangkat medis. 
+
+424
+00:17:17,790 --> 00:17:21,578
+ Jadi siapa yang punya defibrillator saat ini? 
+
+425
+00:17:21,578 --> 00:17:22,618
+ Oh, ada di sini. 
+
+426
+00:17:22,618 --> 00:17:24,412
+ Baik. 
+
+427
+00:17:24,413 --> 00:17:26,329
+ Jadi saya ingin memberi tahu Anda sedikit tentang caranya 
+
+428
+00:17:26,329 --> 00:17:28,380
+ defibrillator ini ditanamkan. 
+
+429
+00:17:28,380 --> 00:17:31,130
+ Ini adalah perangkat yang sangat istimewa karena, baik, nomor satu, 
+
+430
+00:17:31,130 --> 00:17:33,930
+ itu ditanam, oleh karena itu risiko sangat tinggi. 
+
+431
+00:17:33,930 --> 00:17:36,310
+ Ini mempertahankan hidup. 
+
+432
+00:17:36,310 --> 00:17:38,660
+ Jika itu mondar-mandir di hati Anda, misalnya, dan gagal, 
+
+433
+00:17:38,660 --> 00:17:40,110
+ hasilnya bisa menjadi bencana. 
+
+434
+00:17:40,110 --> 00:17:42,485
+ Jadi sangat menarik dari sudut pandang teknik. 
+
+435
+00:17:42,485 --> 00:17:45,680
+ Perlu bekerja 24/7 selama bertahun-tahun. 
+
+436
+00:17:45,680 --> 00:17:48,635
+ Jadi ini adalah seorang programmer. 
+
+437
+00:17:48,635 --> 00:17:49,780
+ Bukan orang, tapi alat. 
+
+438
+00:17:49,780 --> 00:17:52,230
+ Ini pada dasarnya komputer ruggedized, dan melekat padanya 
+
+439
+00:17:52,230 --> 00:17:53,320
+ adalah tongkat kecil. 
+
+440
+00:17:53,320 --> 00:17:54,340
+ Itu bukan tikus. 
+
+441
+00:17:54,340 --> 00:18:00,040
+ Itu pemancar / penerima berbicara nirkabel proprietary 
+
+442
+00:18:00,040 --> 00:18:02,210
+ sinyal melalui spektrum berlisensi. 
+
+443
+00:18:02,210 --> 00:18:04,220
+ Kami tidak berbicara 802.11, kita bicara 
+
+444
+00:18:04,220 --> 00:18:06,640
+ spektrum berlisensi khusus di sana. 
+
+445
+00:18:06,640 --> 00:18:09,630
+ Dan yang terjadi membutuhkan waktu sekitar 90 menit. 
+
+446
+00:18:09,630 --> 00:18:11,510
+ Pasien terjaga, hanya sedikit 
+
+447
+00:18:11,510 --> 00:18:14,540
+ dibius untuk tetap tenang, dan ada anestesi lokal. 
+
+448
+00:18:14,540 --> 00:18:17,640
+ Insisi kecil dibuat di bawah klavikula. 
+
+449
+00:18:17,640 --> 00:18:19,560
+ Dan kemudian tim-- biasanya itu 
+
+450
+00:18:19,560 --> 00:18:24,930
+ tim sekitar enam orang-- akan menenun elektroda 
+
+451
+00:18:24,930 --> 00:18:27,420
+ melalui pembuluh darah yang dikorbankan itu 
+
+452
+00:18:27,420 --> 00:18:28,760
+ berakhir di dalam hati. 
+
+453
+00:18:28,760 --> 00:18:31,150
+ Dan sebenarnya saya punya salah satunya di sini. 
+
+454
+00:18:31,150 --> 00:18:34,550
+ Ini sebelumnya tidak digunakan. 
+
+455
+00:18:34,550 --> 00:18:35,750
+ Anda bisa melewatkan ini. 
+
+456
+00:18:35,750 --> 00:18:37,960
+ Anda melihat tines kecil di ujungnya. 
+
+457
+00:18:37,960 --> 00:18:41,650
+ Dan pada beberapa perangkat ada kedua sensor, 
+
+458
+00:18:41,650 --> 00:18:43,215
+ sehingga bisa merasakan ritme jantung Anda, 
+
+459
+00:18:43,215 --> 00:18:44,340
+ dan ada juga aktuasi. 
+
+460
+00:18:44,340 --> 00:18:47,410
+ Anda dapat mengirim guncangan, baik kecil maupun besar, 
+
+461
+00:18:47,410 --> 00:18:51,430
+ untuk menggerakkan jantung atau pada dasarnya mem-boot ulang jantung 
+
+462
+00:18:51,430 --> 00:18:53,100
+ jika ada ritme yang kacau balau. 
+
+463
+00:18:53,100 --> 00:18:54,740
+ Ini adalah perangkat yang sangat canggih. 
+
+464
+00:18:54,740 --> 00:18:57,100
+ Ini adalah potongan logam berujung steroid di ujungnya, 
+
+465
+00:18:57,100 --> 00:18:59,200
+ jadi itu tidak mengikat ke jaringan. 
+
+466
+00:18:59,200 --> 00:19:02,390
+ Anda bisa melewatkannya. 
+
+467
+00:19:02,390 --> 00:19:05,870
+ Pada dasarnya ini adalah kabel USB, bukan? 
+
+468
+00:19:05,870 --> 00:19:10,090
+ Jadi setelah itu ditanam ke dalam tubuh, 
+
+469
+00:19:10,090 --> 00:19:11,660
+ pasien dijahit. 
+
+470
+00:19:11,660 --> 00:19:12,617
+ Mereka melakukan beberapa pengujian. 
+
+471
+00:19:12,617 --> 00:19:14,200
+ Dan biasanya pasien akan menerima 
+
+472
+00:19:14,200 --> 00:19:16,710
+ apa yang tampak seperti stasiun pangkalan kecil. 
+
+473
+00:19:16,710 --> 00:19:18,380
+ Seperti titik akses kecil. 
+
+474
+00:19:18,380 --> 00:19:20,410
+ Itu sangat eksklusif. 
+
+475
+00:19:20,410 --> 00:19:23,725
+ Biasanya mereka berbicara RF proprietary ke implan 
+
+476
+00:19:23,725 --> 00:19:25,700
+ sehingga bisa mengumpulkan semua telemetri, 
+
+477
+00:19:25,700 --> 00:19:29,320
+ sehingga dapat mengirimnya kembali melalui cloud-- biasanya 
+
+478
+00:19:29,320 --> 00:19:31,825
+ melalui cloud pribadi, untuk sarana pribadi apa pun-- 
+
+479
+00:19:31,825 --> 00:19:34,182
+ sehingga para profesional perawatan kesehatan dapat mengawasi 
+
+480
+00:19:34,182 --> 00:19:34,890
+ pada pasien mereka. 
+
+481
+00:19:34,890 --> 00:19:36,830
+ Jadi misalnya, jika Anda memperhatikan bahwa ada 
+
+482
+00:19:36,830 --> 00:19:40,060
+ beberapa pengukuran aneh datang dari pasien Mary, 
+
+483
+00:19:40,060 --> 00:19:41,620
+ Anda mungkin memanggil Mary dan berkata, "Kamu 
+
+484
+00:19:41,620 --> 00:19:42,540
+ harus benar-benar membuat janji 
+
+485
+00:19:42,540 --> 00:19:44,706
+ dan masuk, karena saya ingin melihat apa yang terjadi 
+
+486
+00:19:44,706 --> 00:19:45,770
+ dengan defibrillator Anda. " 
+
+487
+00:19:45,770 --> 00:19:47,603
+ Jadi salah satu hal yang menyenangkan tentang nirkabel 
+
+488
+00:19:47,603 --> 00:19:49,670
+ apakah mereka dapat memiliki perawatan yang lebih berkelanjutan 
+
+489
+00:19:49,670 --> 00:19:51,580
+ daripada kembali dalam setahun. 
+
+490
+00:19:51,580 --> 00:19:54,280
+
+
+491
+00:19:54,280 --> 00:19:56,440
+ Kami memiliki tim mahasiswa di beberapa universitas 
+
+492
+00:19:56,440 --> 00:19:59,490
+ berkumpul bersama, dan saya memberi mereka salah satu defibrillator ini 
+
+493
+00:19:59,490 --> 00:20:01,080
+ dan osiloskop, dan mereka pergi 
+
+494
+00:20:01,080 --> 00:20:02,895
+ ke dalam gua selama sekitar sembilan bulan. 
+
+495
+00:20:02,895 --> 00:20:06,390
+ Dan mereka kembali dan berkata, "Lihat apa yang kami temukan!" 
+
+496
+00:20:06,390 --> 00:20:11,640
+ Jadi ini adalah screenshot dari komunikasi antar perangkat 
+
+497
+00:20:11,640 --> 00:20:12,860
+ dan programmernya. 
+
+498
+00:20:12,860 --> 00:20:15,890
+ Dan apa yang Anda lihat adalah pertama-tama, jelas. 
+
+499
+00:20:15,890 --> 00:20:18,500
+ Tidak ada kriptografi, setidaknya tidak ada yang bisa kami temukan. 
+
+500
+00:20:18,500 --> 00:20:21,190
+ Anda akan menemukan di dalam sini nama dokter implant, 
+
+501
+00:20:21,190 --> 00:20:23,210
+ diagnosa, rumah sakit. 
+
+502
+00:20:23,210 --> 00:20:25,380
+ Pada dasarnya catatan kesehatan elektronik lengkap. 
+
+503
+00:20:25,380 --> 00:20:28,585
+ Ini adalah perangkat yang lebih tua, dari sekitar 10 tahun yang lalu. 
+
+504
+00:20:28,585 --> 00:20:31,080
+ Tapi itu adalah keadaan seni sekitar 10 tahun yang lalu. 
+
+505
+00:20:31,080 --> 00:20:33,170
+ Sepertinya tidak ada penggunaan enkripsi, 
+
+506
+00:20:33,170 --> 00:20:36,550
+ setidaknya untuk privasi informasi kesehatan. 
+
+507
+00:20:36,550 --> 00:20:38,430
+ Jadi ketika kami menyadari hal ini, kami berpikir, 
+
+508
+00:20:38,430 --> 00:20:41,110
+ Kalau begitu, kita pasti perlu melihat sisi keamanan 
+
+509
+00:20:41,110 --> 00:20:42,670
+ tentang bagaimana perangkat dikendalikan. 
+
+510
+00:20:42,670 --> 00:20:44,980
+ Bagaimana mereka memastikan keaslian kontrol? 
+
+511
+00:20:44,980 --> 00:20:46,780
+ Integritas? 
+
+512
+00:20:46,780 --> 00:20:50,180
+ Dan saat itulah kami memutuskan untuk melakukan eksperimen berikut. 
+
+513
+00:20:50,180 --> 00:20:53,060
+ Jadi kami mulai belajar cara menggunakan sesuatu yang disebut perangkat lunak 
+
+514
+00:20:53,060 --> 00:20:53,610
+ radio. 
+
+515
+00:20:53,610 --> 00:20:55,735
+ Mungkin beberapa dari Anda telah bermain-main dengan ini. 
+
+516
+00:20:55,735 --> 00:20:57,130
+ Ada banyak dari mereka sekarang. 
+
+517
+00:20:57,130 --> 00:20:59,330
+ Sekitar 10 tahun yang lalu, yang paling populer 
+
+518
+00:20:59,330 --> 00:21:02,740
+ adalah perangkat lunak radio USRP dan GNU. 
+
+519
+00:21:02,740 --> 00:21:08,050
+ Jadi kami mengambil antena dari alat pacu jantung yang tidak kami butuhkan, 
+
+520
+00:21:08,050 --> 00:21:12,150
+ menciptakan antena kecil, dan kami mencatat komunikasi RF 
+
+521
+00:21:12,150 --> 00:21:14,700
+ menginduksi ritme jantung yang fatal. 
+
+522
+00:21:14,700 --> 00:21:17,640
+ Dan kemudian kami memutar kembali komunikasi itu. 
+
+523
+00:21:17,640 --> 00:21:19,810
+ Dan kemudian perangkat itu dengan senang hati memancarkan 
+
+524
+00:21:19,810 --> 00:21:23,160
+ sesuatu yang besar - pada urutan kejutan 500 volt. 
+
+525
+00:21:23,160 --> 00:21:27,270
+ Pada urutan sekitar 32 joule dalam satu milidetik, yang 
+
+526
+00:21:27,270 --> 00:21:30,062
+ Saya diberitahu jika Anda mendapatkan itu pada Anda, 
+
+527
+00:21:30,062 --> 00:21:32,020
+ itu seperti ditendang di dada oleh kuda. 
+
+528
+00:21:32,020 --> 00:21:36,090
+ Jadi itu guncangan yang cukup kuat. 
+
+529
+00:21:36,090 --> 00:21:38,840
+ Dan yang menarik adalah bagaimana kami menemukan ini. 
+
+530
+00:21:38,840 --> 00:21:41,500
+ Jadi saya berada di ruang operasi, dan mengingat kembali, 
+
+531
+00:21:41,500 --> 00:21:43,880
+ Saya mengatakan itu ketika Anda seorang pasien 
+
+532
+00:21:43,880 --> 00:21:47,240
+ dan prosedurnya sudah selesai, perawatan kesehatan 
+
+533
+00:21:47,240 --> 00:21:51,030
+ tes tim jika defibrillator berfungsi dengan benar. 
+
+534
+00:21:51,030 --> 00:21:55,830
+ Jadi bagaimana Anda tes end-to-end jika defibrillator 
+
+535
+00:21:55,830 --> 00:21:59,860
+ bekerja dengan baik jika jantung berdetak dengan normal? 
+
+536
+00:21:59,860 --> 00:22:00,590
+ Kanan? 
+
+537
+00:22:00,590 --> 00:22:03,580
+ Jadi apa yang dibangun ke dalam defibrillator 
+
+538
+00:22:03,580 --> 00:22:06,160
+ adalah perintah untuk menginduksi hati yang sangat fatal 
+
+539
+00:22:06,160 --> 00:22:10,200
+ irama yang defibrillator dirancang untuk mengembalikan Anda dari. 
+
+540
+00:22:10,200 --> 00:22:12,890
+ Ini disebut kejutan perintah. 
+
+541
+00:22:12,890 --> 00:22:15,130
+ Jadi ketika saya bertanya kepada dokter tentang itu, 
+
+542
+00:22:15,130 --> 00:22:18,047
+ mereka tampaknya tidak memahami konsep otentikasi. 
+
+543
+00:22:18,047 --> 00:22:19,630
+ Dan saat itulah kami memutuskan kami akan benar-benar 
+
+544
+00:22:19,630 --> 00:22:22,672
+ perlu melihat lebih dalam bagaimana memecahkan masalah ini. 
+
+545
+00:22:22,672 --> 00:22:24,130
+ Jadi dalam kasus khusus ini, kami 
+
+546
+00:22:24,130 --> 00:22:25,980
+ dapat mengirim perintah ke perangkat, 
+
+547
+00:22:25,980 --> 00:22:32,130
+ dan kami tidak diautentikasi, dan kami dapat menyebabkan guncangan itu. 
+
+548
+00:22:32,130 --> 00:22:35,810
+ Kabar baiknya adalah perangkat ini memiliki 
+
+549
+00:22:35,810 --> 00:22:38,450
+ mampu memecahkan masalah ini melalui beberapa perangkat lunak 
+
+550
+00:22:38,450 --> 00:22:39,010
+ pembaruan. 
+
+551
+00:22:39,010 --> 00:22:40,968
+ Dan mereka sudah menyadarinya cukup lama, 
+
+552
+00:22:40,968 --> 00:22:42,660
+ jadi mereka bisa mengeluarkan perangkat 
+
+553
+00:22:42,660 --> 00:22:44,600
+ yang sekarang memperhitungkan beberapa ini lebih banyak 
+
+554
+00:22:44,600 --> 00:22:47,010
+ kondisi permusuhan. 
+
+555
+00:22:47,010 --> 00:22:48,510
+ Di mana tines-tines itu beredar? 
+
+556
+00:22:48,510 --> 00:22:49,300
+ Di sana? 
+
+557
+00:22:49,300 --> 00:22:52,000
+ OK bagus. 
+
+558
+00:22:52,000 --> 00:22:53,357
+ Jadi itulah sisi implan. 
+
+559
+00:22:53,357 --> 00:22:55,190
+ Ada banyak inovasi yang terjadi 
+
+560
+00:22:55,190 --> 00:22:56,680
+ dengan implan. 
+
+561
+00:22:56,680 --> 00:22:59,070
+ Ini bukan lagi fiksi ilmiah, 
+
+562
+00:22:59,070 --> 00:23:01,660
+ tetapi ada orang dan pasien nyata di baliknya. 
+
+563
+00:23:01,660 --> 00:23:05,340
+ Dan kebanyakan orang sangat peduli tentang memberikan kesehatan yang berkualitas 
+
+564
+00:23:05,340 --> 00:23:07,080
+ peduli. 
+
+565
+00:23:07,080 --> 00:23:11,030
+ Tetapi kadang-kadang mereka tidak menyadari bagaimana menyesuaikan keamanan 
+
+566
+00:23:11,030 --> 00:23:13,060
+ ke dalam proses desain mereka. 
+
+567
+00:23:13,060 --> 00:23:16,760
+ Jadi itu tantangan budaya. 
+
+568
+00:23:16,760 --> 00:23:18,540
+ Pemangku kepentingan lainnya adalah orang-orang 
+
+569
+00:23:18,540 --> 00:23:20,380
+ yang memberikan perawatan kesehatan di tempat pertama. 
+
+570
+00:23:20,380 --> 00:23:22,560
+ Rumah sakit, terutama, atau klinik kecil. 
+
+571
+00:23:22,560 --> 00:23:24,620
+ Jika Anda ingin menemukan malware, pergi ke rumah sakit. 
+
+572
+00:23:24,620 --> 00:23:27,090
+ Anda akan menemukan beberapa malware yang menarik. 
+
+573
+00:23:27,090 --> 00:23:28,350
+ Dan inilah alasannya. 
+
+574
+00:23:28,350 --> 00:23:32,550
+ Jadi ini screenshot dari kolega yang 
+
+575
+00:23:32,550 --> 00:23:34,850
+ dulu bekerja di Beth Israel Deaconess Medical Centre 
+
+576
+00:23:34,850 --> 00:23:36,040
+ di sini di Boston. 
+
+577
+00:23:36,040 --> 00:23:38,440
+ Dan dia memberikan peta arsitektur jaringannya. 
+
+578
+00:23:38,440 --> 00:23:40,610
+ Tidak ada yang sangat mengguncang bumi 
+
+579
+00:23:40,610 --> 00:23:41,770
+ tentang arsitektur. 
+
+580
+00:23:41,770 --> 00:23:43,490
+ Apa yang menarik, bagaimanapun, adalah 
+
+581
+00:23:43,490 --> 00:23:46,030
+ dia mencatat jumlah operasi 
+
+582
+00:23:46,030 --> 00:23:48,530
+ sistem di rumah sakitnya tentang apa yang ada 
+
+583
+00:23:48,530 --> 00:23:50,710
+ dianggap perangkat medis. 
+
+584
+00:23:50,710 --> 00:23:53,490
+ Dan saya melihat dia-- Saya suka menambahkan angka dan kegilaan 
+
+585
+00:23:53,490 --> 00:23:55,880
+ periksa semuanya-- dan aku berkata, "Yah, kamu sudah 
+
+586
+00:23:55,880 --> 00:23:58,720
+ mendapat Service Pack satu, dua, tiga Windows XP, nol 
+
+587
+00:23:58,720 --> 00:24:00,310
+ 15 tambah satu. 
+
+588
+00:24:00,310 --> 00:24:01,460
+ Itu sama dengan 16. 
+
+589
+00:24:01,460 --> 00:24:02,630
+ Itu tidak sama dengan 600. 
+
+590
+00:24:02,630 --> 00:24:04,580
+ Penambahan Anda salah. " 
+
+591
+00:24:04,580 --> 00:24:06,910
+ Dan dia menatap saya dan dia berkata, "Tidak, Kevin, itu 
+
+592
+00:24:06,910 --> 00:24:11,020
+ 600 Paket Layanan nol mesin di rumah sakit. " 
+
+593
+00:24:11,020 --> 00:24:12,580
+ Jadi ini adalah alat medis di mana 
+
+594
+00:24:12,580 --> 00:24:14,880
+ mereka tidak bisa mendapatkan pabrikan 
+
+595
+00:24:14,880 --> 00:24:17,910
+ untuk menyediakan tambalan dan memperbaruinya ke perangkat lunak modern. 
+
+596
+00:24:17,910 --> 00:24:20,202
+ Yang berarti itu perangkat lunak lama itu, 
+
+597
+00:24:20,202 --> 00:24:22,410
+ rentan terhadap semua malware lama yang telah dipukul 
+
+598
+00:24:22,410 --> 00:24:26,140
+ Windows XP selama 15 tahun. 
+
+599
+00:24:26,140 --> 00:24:29,260
+ Jadi sangat sulit dalam pengaturan klinis 
+
+600
+00:24:29,260 --> 00:24:32,197
+ untuk menjaga diri terlindungi, karena siklus hidup produk 
+
+601
+00:24:32,197 --> 00:24:33,530
+ benar-benar tidak sinkron. 
+
+602
+00:24:33,530 --> 00:24:36,350
+ Mereka berpikir dalam beberapa dekade dalam perawatan kesehatan, 
+
+603
+00:24:36,350 --> 00:24:39,350
+ tapi di dunia tongkat hoki cepat di Silicon Valley, 
+
+604
+00:24:39,350 --> 00:24:43,110
+ kita berpikir tentang hari, minggu, atau bulan untuk pembaruan perangkat lunak. 
+
+605
+00:24:43,110 --> 00:24:45,700
+ Anda bisa lihat di sini di sistem klinis mereka, 
+
+606
+00:24:45,700 --> 00:24:47,830
+ waktu rata-rata untuk infeksi adalah sekitar 12 hari 
+
+607
+00:24:47,830 --> 00:24:51,020
+ ketika mereka tidak memiliki perlindungan apa pun terhadap malware. 
+
+608
+00:24:51,020 --> 00:24:52,762
+ Dan mereka bisa mendapat hampir satu tahun 
+
+609
+00:24:52,762 --> 00:24:54,970
+ jika mereka bisa mendapatkan produk antivirus di sana. 
+
+610
+00:24:54,970 --> 00:24:56,510
+ Tetapi bahkan itu tidak sempurna. 
+
+611
+00:24:56,510 --> 00:24:59,422
+
+
+612
+00:24:59,422 --> 00:25:01,380
+ Dan jangan ragu untuk bertanya juga, ngomong-ngomong, 
+
+613
+00:25:01,380 --> 00:25:02,421
+ jika kamu ingin tahu lebih banyak. 
+
+614
+00:25:02,421 --> 00:25:04,180
+ Pergilah lebih dalam tentang salah satu insiden ini. 
+
+615
+00:25:04,180 --> 00:25:06,900
+ Tetapi salah satu hal menarik yang saya temukan 
+
+616
+00:25:06,900 --> 00:25:11,030
+ adalah salah satu sumber infeksi yang relatif umum 
+
+617
+00:25:11,030 --> 00:25:12,209
+ adalah vendor itu sendiri. 
+
+618
+00:25:12,209 --> 00:25:13,750
+ Terkadang mereka bahkan tidak menyadarinya. 
+
+619
+00:25:13,750 --> 00:25:15,208
+ Jadi saya akan membahas beberapa kasus 
+
+620
+00:25:15,208 --> 00:25:18,240
+ di mana vendor memiliki semacam tidak sengaja 
+
+621
+00:25:18,240 --> 00:25:20,145
+ menjadi pembawa malware. 
+
+622
+00:25:20,145 --> 00:25:23,420
+ Saya berbicara dengan keamanan lapangan kepala 
+
+623
+00:25:23,420 --> 00:25:26,330
+ petugas untuk Administrasi Veteran, VA. 
+
+624
+00:25:26,330 --> 00:25:29,790
+ Mereka memiliki sekitar 153 klinik di Amerika Serikat. 
+
+625
+00:25:29,790 --> 00:25:32,750
+ Dan suatu hari ada vendor muncul 
+
+626
+00:25:32,750 --> 00:25:35,540
+ untuk melakukan pembaruan perangkat lunak pada beberapa medis klinis mereka 
+
+627
+00:25:35,540 --> 00:25:36,660
+ perangkat. 
+
+628
+00:25:36,660 --> 00:25:38,390
+ Dan perangkat lunak deteksi gangguannya 
+
+629
+00:25:38,390 --> 00:25:39,870
+ hanya berkicau kemana-mana-- 
+
+630
+00:25:39,870 --> 00:25:41,411
+ Saya pikir namanya adalah Bob - di mana-mana 
+
+631
+00:25:41,411 --> 00:25:43,790
+ Bob berjalan dan memasukkan drive USB-nya 
+
+632
+00:25:43,790 --> 00:25:45,050
+ untuk memperbarui perangkat lunak. 
+
+633
+00:25:45,050 --> 00:25:47,410
+ Dia menginfeksi mesin dengan malware secara tidak sengaja, 
+
+634
+00:25:47,410 --> 00:25:50,380
+ karena entah bagaimana malware masuk ke drive USB-nya. 
+
+635
+00:25:50,380 --> 00:25:52,660
+ Jadi ada persepsi di luar sana 
+
+636
+00:25:52,660 --> 00:25:54,619
+ bahwa jika Anda tidak jaringan, Anda aman. 
+
+637
+00:25:54,619 --> 00:25:56,160
+ Tetapi jika Anda memikirkannya sejenak, 
+
+638
+00:25:56,160 --> 00:25:58,220
+ sangat sedikit orang menggunakan internet 20 tahun yang lalu 
+
+639
+00:25:58,220 --> 00:25:59,940
+ dan masih ada virus komputer. 
+
+640
+00:25:59,940 --> 00:26:02,520
+ Jadi di rumah sakit, vektor infeksi umum 
+
+641
+00:26:02,520 --> 00:26:04,290
+ adalah drive USB. 
+
+642
+00:26:04,290 --> 00:26:06,410
+ Aku bahkan tahu dua produsen-- 
+
+643
+00:26:06,410 --> 00:26:11,360
+ Saya tidak bisa memberi tahu Anda nama mereka - tetapi mereka hampir 
+
+644
+00:26:11,360 --> 00:26:13,480
+ mengirim perangkat medis yang terinfeksi malware. 
+
+645
+00:26:13,480 --> 00:26:15,900
+ Dan mereka menangkapnya secara kebetulan, dengan keberuntungan, 
+
+646
+00:26:15,900 --> 00:26:18,440
+ sebelum keluar ke lini produk. 
+
+647
+00:26:18,440 --> 00:26:21,440
+
+
+648
+00:26:21,440 --> 00:26:23,730
+ Siapa yang melakukan pekerjaan apa pun dalam pemrograman 
+
+649
+00:26:23,730 --> 00:26:26,980
+ dengan cloud atau distribusi perangkat lunak? 
+
+650
+00:26:26,980 --> 00:26:28,180
+ Beberapa dari Anda. 
+
+651
+00:26:28,180 --> 00:26:33,050
+ Jadi komunitas medis juga merangkul cloud. 
+
+652
+00:26:33,050 --> 00:26:35,420
+ Ini memberi mereka kontrol yang lebih distributif. 
+
+653
+00:26:35,420 --> 00:26:37,020
+ Tetapi itu juga dilengkapi dengan risiko itu 
+
+654
+00:26:37,020 --> 00:26:40,300
+ secara kualitatif berbeda dari perangkat lunak khas Anda. 
+
+655
+00:26:40,300 --> 00:26:44,100
+ Jika Anda ingin mendapatkan pengolah kata terbaru, 
+
+656
+00:26:44,100 --> 00:26:45,450
+ itu satu hal. 
+
+657
+00:26:45,450 --> 00:26:47,680
+ Tetapi jika Anda ingin mendapatkan pembaruan untuk ventilator Anda, 
+
+658
+00:26:47,680 --> 00:26:49,070
+ benar-benar berbeda. 
+
+659
+00:26:49,070 --> 00:26:51,560
+ Jadi saya perhatikan ada penarikan kembali pada firmware 
+
+660
+00:26:51,560 --> 00:26:52,600
+ untuk ventilator. 
+
+661
+00:26:52,600 --> 00:26:56,410
+ Dan manufaktur mengirimkan situs web pesolek yang berguna di mana 
+
+662
+00:26:56,410 --> 00:26:58,729
+ Anda dapat mengunduh pembaruan. 
+
+663
+00:26:58,729 --> 00:27:00,770
+ Sekarang saya akan memeriksa tanda tangan PGP mereka. 
+
+664
+00:27:00,770 --> 00:27:02,670
+ Tidak dapat menemukan itu, tetapi apa yang saya temukan 
+
+665
+00:27:02,670 --> 00:27:04,000
+ ada tautan kecil di sini. 
+
+666
+00:27:04,000 --> 00:27:06,180
+ Ia mengatakan, "Klik di sini untuk pembaruan perangkat lunak Anda." 
+
+667
+00:27:06,180 --> 00:27:09,590
+ Saya pikir, oh, baiklah, ayo lakukan itu. 
+
+668
+00:27:09,590 --> 00:27:13,050
+ Jadi saya melakukan itu dan membuka kotak dialog ini. 
+
+669
+00:27:13,050 --> 00:27:14,960
+ Ia mengatakan, "Peringatan - Mengunjungi situs ini mungkin 
+
+670
+00:27:14,960 --> 00:27:16,130
+ membahayakan komputer Anda. 
+
+671
+00:27:16,130 --> 00:27:20,710
+ Situs web yang Anda kunjungi ini tampaknya berisi malware. " 
+
+672
+00:27:20,710 --> 00:27:24,290
+ Apakah ada yang melihat ini sebelumnya? 
+
+673
+00:27:24,290 --> 00:27:26,390
+ Apakah kamu tahu apa itu apa itu? 
+
+674
+00:27:26,390 --> 00:27:27,478
+ Apa yang sedang terjadi? 
+
+675
+00:27:27,478 --> 00:27:30,894
+ AUDIENCE: Jadi itu mungkin perangkat lunak antivirus Anda, 
+
+676
+00:27:30,894 --> 00:27:31,870
+ benar? 
+
+677
+00:27:31,870 --> 00:27:32,980
+ PROFESOR: Tutup. 
+
+678
+00:27:32,980 --> 00:27:35,140
+ Ini bukan perangkat lunak antivirus saya, tetapi itu 
+
+679
+00:27:35,140 --> 00:27:36,755
+ semacam konsep serupa. 
+
+680
+00:27:36,755 --> 00:27:37,630
+ Di belakang, saya dengar. 
+
+681
+00:27:37,630 --> 00:27:39,270
+ AUDIENCE: Saya berani bertaruh ini adalah Chrome. 
+
+682
+00:27:39,270 --> 00:27:41,020
+ PROFESOR: Chrome. 
+
+683
+00:27:41,020 --> 00:27:43,500
+ Ya, jadi dalam hal ini saya yakin saya menggunakan Chrome. 
+
+684
+00:27:43,500 --> 00:27:45,690
+ Tetapi secara efektif apa yang sedang terjadi 
+
+685
+00:27:45,690 --> 00:27:50,640
+ Google memiliki sesuatu yang mereka sebut layanan Safe Web Browsing. 
+
+686
+00:27:50,640 --> 00:27:53,440
+ Jadi sebenarnya, orang yang melakukan ini adalah Neil [TIDAK JELAS]. 
+
+687
+00:27:53,440 --> 00:27:56,100
+ Dia adalah salah satu pemrogram utama, saya percaya, OpenSSH. 
+
+688
+00:27:56,100 --> 00:27:58,060
+ Dia sebenarnya dari Michigan. 
+
+689
+00:27:58,060 --> 00:27:59,820
+ Namun dia menciptakan layanan ini di Google 
+
+690
+00:27:59,820 --> 00:28:01,380
+ yang terjadi di internet saja 
+
+691
+00:28:01,380 --> 00:28:05,400
+ mengunduh eksekutabel acak dan kemudian menjalankannya. 
+
+692
+00:28:05,400 --> 00:28:07,550
+ Dan yang menarik adalah mereka membuat sejumlah besar 
+
+693
+00:28:07,550 --> 00:28:08,540
+ mesin virtual. 
+
+694
+00:28:08,540 --> 00:28:09,609
+ Ini adalah pemahaman saya. 
+
+695
+00:28:09,609 --> 00:28:11,650
+ Saya mungkin salah mengartikannya, tetapi pemahaman saya 
+
+696
+00:28:11,650 --> 00:28:13,691
+ apakah mereka membuat sejumlah besar mesin virtual, 
+
+697
+00:28:13,691 --> 00:28:15,540
+ unduh berkas yang dapat dieksekusi itu, dan jalankan saja 
+
+698
+00:28:15,540 --> 00:28:17,680
+ dan kemudian lihat apakah mesin virtual terinfeksi. 
+
+699
+00:28:17,680 --> 00:28:19,470
+ Dan jika mesin virtual terinfeksi, 
+
+700
+00:28:19,470 --> 00:28:22,509
+ Anda menandai situs web itu sebagai mendistribusikan malware. 
+
+701
+00:28:22,509 --> 00:28:24,300
+ Mereka tidak tahu niatnya, 
+
+702
+00:28:24,300 --> 00:28:26,535
+ tapi itu peserta dalam distribusi malware. 
+
+703
+00:28:26,535 --> 00:28:29,552
+
+
+704
+00:28:29,552 --> 00:28:31,510
+ Ini adalah apa yang Anda sebut unduhan drive-by. 
+
+705
+00:28:31,510 --> 00:28:33,860
+ Ini cara yang sangat umum untuk mendapatkan malware 
+
+706
+00:28:33,860 --> 00:28:37,190
+ kepada Anda di internet, terutama dengan para spammer, 
+
+707
+00:28:37,190 --> 00:28:40,164
+ dan beberapa kejahatan terorganisasi. 
+
+708
+00:28:40,164 --> 00:28:42,705
+ Tetapi dalam kasus ini situs web mereka tampaknya telah disusupi, 
+
+709
+00:28:42,705 --> 00:28:45,195
+ dan bukannya mengirim saya pembaruan perangkat lunak ventilator, 
+
+710
+00:28:45,195 --> 00:28:46,850
+ mereka memberi saya malware. 
+
+711
+00:28:46,850 --> 00:28:50,270
+ Dan setidaknya menurut situs web Google, 
+
+712
+00:28:50,270 --> 00:28:54,310
+ dikatakan bahwa selama 90 hari terakhir, 
+
+713
+00:28:54,310 --> 00:28:56,570
+ itulah yang dihasilkan situs web. 
+
+714
+00:28:56,570 --> 00:28:58,610
+ Jadi yang bisa saya pikirkan adalah, baiklah, 
+
+715
+00:28:58,610 --> 00:29:00,365
+ jadi jika ada ingatan FDA, dan Anda 
+
+716
+00:29:00,365 --> 00:29:02,920
+ seorang insinyur biomedis yang bekerja di rumah sakit, 
+
+717
+00:29:02,920 --> 00:29:04,820
+ dan tugasmu adalah menjaga rumah sakitmu 
+
+718
+00:29:04,820 --> 00:29:06,760
+ peralatan medis yang aman dan efektif. 
+
+719
+00:29:06,760 --> 00:29:08,510
+ Anda akan mengunduh perangkat lunak itu. 
+
+720
+00:29:08,510 --> 00:29:11,770
+ Jadi kotak mana yang menurut Anda mereka klik? 
+
+721
+00:29:11,770 --> 00:29:17,680
+ Apakah Anda pikir mereka mengklik dekat atau mengabaikan? 
+
+722
+00:29:17,680 --> 00:29:18,180
+ Kanan? 
+
+723
+00:29:18,180 --> 00:29:22,770
+ Saya yakin, saya berani mempertaruhkan dolar untuk donat, 99% dari mereka 
+
+724
+00:29:22,770 --> 00:29:23,820
+ mengabaikan klik. 
+
+725
+00:29:23,820 --> 00:29:24,320
+ Kanan? 
+
+726
+00:29:24,320 --> 00:29:26,200
+ Dan semua yang saya bayangkan sekarang adalah kami 
+
+727
+00:29:26,200 --> 00:29:28,074
+ mendapat ribuan insinyur klinis 
+
+728
+00:29:28,074 --> 00:29:30,240
+ dan insinyur biomedis berkeliling dengan malware 
+
+729
+00:29:30,240 --> 00:29:32,710
+ di laptop mereka di rumah sakit. 
+
+730
+00:29:32,710 --> 00:29:35,320
+ Semoga tidak menggunakan ventilator, tetapi kemungkinan besar 
+
+731
+00:29:35,320 --> 00:29:36,490
+ di komputer lokal mereka. 
+
+732
+00:29:36,490 --> 00:29:39,490
+
+
+733
+00:29:39,490 --> 00:29:42,310
+ Jadi hal menyenangkan lainnya yang bisa Anda lakukan adalah 
+
+734
+00:29:42,310 --> 00:29:45,330
+ Anda dapat pergi mencari database MAUDE untuk kata kunci 
+
+735
+00:29:45,330 --> 00:29:48,010
+ seperti virus komputer dan melihat apa yang ada di sana. 
+
+736
+00:29:48,010 --> 00:29:49,990
+ Dan ini semua adalah narasi yang dikirimkan 
+
+737
+00:29:49,990 --> 00:29:51,350
+ oleh rumah sakit dan pabrik. 
+
+738
+00:29:51,350 --> 00:29:53,440
+ Salah satu yang lebih menarik adalah 
+
+739
+00:29:53,440 --> 00:29:55,670
+ sesuatu yang disebut compounder. 
+
+740
+00:29:55,670 --> 00:29:57,210
+ Jadi saya punya salah satu di lab saya. 
+
+741
+00:29:57,210 --> 00:29:58,920
+ Agak sulit untuk mendapatkannya. 
+
+742
+00:29:58,920 --> 00:30:00,550
+ Tapi itu membuat obat cair. 
+
+743
+00:30:00,550 --> 00:30:04,560
+ Jadi saya pikir pada urutan 16 port di bagian atas, 
+
+744
+00:30:04,560 --> 00:30:06,450
+ di mana Anda dapat memiliki serum kecil, 
+
+745
+00:30:06,450 --> 00:30:09,689
+ dan kemudian menyimpannya ke dalam kantong garam. 
+
+746
+00:30:09,689 --> 00:30:11,980
+ Dan kemudian Anda dapat menggunakan pengiriman IV untuk mengirimkannya secara langsung 
+
+747
+00:30:11,980 --> 00:30:13,210
+ ke pembuluh darahmu. 
+
+748
+00:30:13,210 --> 00:30:16,750
+ Begitu banyak rumah sakit akan memiliki ini untuk custom, adil 
+
+749
+00:30:16,750 --> 00:30:19,290
+ dalam pengiriman obat waktu, koktail obat-obatan khusus 
+
+750
+00:30:19,290 --> 00:30:20,660
+ untuk pasien. 
+
+751
+00:30:20,660 --> 00:30:22,200
+ Dan apa yang menarik ada di sini, 
+
+752
+00:30:22,200 --> 00:30:23,783
+ ada laporan bahwa compounder 
+
+753
+00:30:23,783 --> 00:30:25,440
+ terinfeksi virus. 
+
+754
+00:30:25,440 --> 00:30:26,140
+ BAIK? 
+
+755
+00:30:26,140 --> 00:30:28,650
+ Jadi kami membeli compound itu, dan kami menemukan 
+
+756
+00:30:28,650 --> 00:30:30,640
+ itu menjalankan Windows XP tertanam. 
+
+757
+00:30:30,640 --> 00:30:31,880
+ Mengherankan. 
+
+758
+00:30:31,880 --> 00:30:34,282
+ Dan itu rentan terhadap malware, 
+
+759
+00:30:34,282 --> 00:30:35,990
+ semua malware yang ada di Windows XP lainnya 
+
+760
+00:30:35,990 --> 00:30:37,700
+ kotak akan rentan. 
+
+761
+00:30:37,700 --> 00:30:39,450
+ Tapi apa yang sedikit mengejutkan bagiku 
+
+762
+00:30:39,450 --> 00:30:41,522
+ adalah respons pabrikan pada saat itu. 
+
+763
+00:30:41,522 --> 00:30:43,480
+ Saya harap mereka mengubah nada mereka, tetapi pada saat itu 
+
+764
+00:30:43,480 --> 00:30:45,810
+ mereka berkata, "Yah, kami tidak rutin 
+
+765
+00:30:45,810 --> 00:30:49,100
+ menginstal pembaruan atau patch sistem operasi. " 
+
+766
+00:30:49,100 --> 00:30:51,320
+ Ini menurut saya sebagai whoa, apa? 
+
+767
+00:30:51,320 --> 00:30:52,720
+ Apa maksudmu? 
+
+768
+00:30:52,720 --> 00:30:55,260
+ Saya katakan mungkin mereka memiliki sedikit sandal. 
+
+769
+00:30:55,260 --> 00:30:58,850
+ Tapi ada kesalahpahaman besar 
+
+770
+00:30:58,850 --> 00:31:01,474
+ tentang harapan pembaruan perangkat lunak. 
+
+771
+00:31:01,474 --> 00:31:02,140
+ Biarkan saya jelas. 
+
+772
+00:31:02,140 --> 00:31:07,240
+ FDA mengharapkan produsen untuk terus memperbarui perangkat lunak. 
+
+773
+00:31:07,240 --> 00:31:09,990
+ Tetapi banyak produsen akan mengklaim 
+
+774
+00:31:09,990 --> 00:31:13,090
+ bahwa mereka tidak dapat melakukan pembaruan karena beberapa FDA 
+
+775
+00:31:13,090 --> 00:31:14,680
+ aturan tidak ada. 
+
+776
+00:31:14,680 --> 00:31:16,930
+ Jadi jika Anda pernah bertemu dengan produsen alat medis, 
+
+777
+00:31:16,930 --> 00:31:19,260
+ dan mereka mengklaim bahwa aturan FDA mencegahnya 
+
+778
+00:31:19,260 --> 00:31:20,860
+ dari melakukan pembaruan perangkat lunak, hanya 
+
+779
+00:31:20,860 --> 00:31:23,180
+ katakan pada mereka, tidak, sebenarnya itu tidak benar. 
+
+780
+00:31:23,180 --> 00:31:26,360
+ Dan Profesor Freeman membuat poster untuk ini. 
+
+781
+00:31:26,360 --> 00:31:27,370
+ Jadi di sini kita pergi. 
+
+782
+00:31:27,370 --> 00:31:29,560
+ "Pekerjaan rumah mencegah saya melewati kelas, 
+
+783
+00:31:29,560 --> 00:31:31,490
+ eHarmony mencegah saya mendapatkan tanggal, 
+
+784
+00:31:31,490 --> 00:31:33,760
+ dan ya, peraturan FDA mencegah pembaruan perangkat lunak. 
+
+785
+00:31:33,760 --> 00:31:34,550
+ Ya benar. 
+
+786
+00:31:34,550 --> 00:31:36,260
+ Banteng." 
+
+787
+00:31:36,260 --> 00:31:40,310
+ Jadi benar bahwa mengeluarkan pembaruan perangkat lunak membutuhkan usaha. 
+
+788
+00:31:40,310 --> 00:31:41,670
+ Butuh waktu rekayasa. 
+
+789
+00:31:41,670 --> 00:31:43,090
+ Ini bukan proses yang sederhana. 
+
+790
+00:31:43,090 --> 00:31:45,790
+ Ini tidak seperti - Saya tidak tahu apa yang disebutnya 
+
+791
+00:31:45,790 --> 00:31:49,300
+ hari, 6.170, apa yang terjadi ... tapi itu tidak sesederhana itu 
+
+792
+00:31:49,300 --> 00:31:52,540
+ sebagai mengetik "make" dan kemudian kirim ke auto-grader. 
+
+793
+00:31:52,540 --> 00:31:54,940
+ Ada banyak verifikasi dan validasi 
+
+794
+00:31:54,940 --> 00:31:55,890
+ itu berlangsung. 
+
+795
+00:31:55,890 --> 00:31:57,660
+ Tapi itulah yang Anda harapkan 
+
+796
+00:31:57,660 --> 00:31:59,800
+ jika Anda berada di permainan pembuatan perangkat medis. 
+
+797
+00:31:59,800 --> 00:32:01,925
+ Jika Anda berada di industri itu, itulah harapannya. 
+
+798
+00:32:01,925 --> 00:32:05,240
+
+
+799
+00:32:05,240 --> 00:32:07,890
+ Jadi pertanyaan yang sering muncul 
+
+800
+00:32:07,890 --> 00:32:10,160
+ adalah, apakah kita perlu khawatir tentang ini? 
+
+801
+00:32:10,160 --> 00:32:12,750
+ Dan apakah ada malfungsi jahat yang disengaja? 
+
+802
+00:32:12,750 --> 00:32:14,720
+ Seberapa signifikan ini? 
+
+803
+00:32:14,720 --> 00:32:18,020
+ Dan kabar baiknya adalah, saya tidak mengetahui contoh spesifik apa pun 
+
+804
+00:32:18,020 --> 00:32:19,970
+ dimana ada serangan yang ditargetkan, 
+
+805
+00:32:19,970 --> 00:32:21,940
+ dan saya harap tidak ada yang terjadi. 
+
+806
+00:32:21,940 --> 00:32:23,500
+ Tapi saya pikir itu bodoh untuk berasumsi 
+
+807
+00:32:23,500 --> 00:32:26,040
+ bahwa orang jahat tidak ada. 
+
+808
+00:32:26,040 --> 00:32:29,070
+ Jadi jika Anda melihat kembali sejarah, pada tahun 1982, sebenarnya, 
+
+809
+00:32:29,070 --> 00:32:31,730
+ ada insiden di Chicago di mana seseorang 
+
+810
+00:32:31,730 --> 00:32:34,020
+ sengaja dirusak dengan kekuatan ekstra Tylenol 
+
+811
+00:32:34,020 --> 00:32:38,020
+ di rak apotek dan dimasukkan sianida. 
+
+812
+00:32:38,020 --> 00:32:41,340
+ Sejumlah orang menelannya dan mati. 
+
+813
+00:32:41,340 --> 00:32:42,902
+ Beberapa saat kemudian, di pemakaman, 
+
+814
+00:32:42,902 --> 00:32:44,985
+ anggota keluarga tambahan menggunakan botol yang sama. 
+
+815
+00:32:44,985 --> 00:32:46,560
+ Mereka juga mati. 
+
+816
+00:32:46,560 --> 00:32:50,710
+ Dalam beberapa hari, AS telah menarik Tylenol 
+
+817
+00:32:50,710 --> 00:32:52,460
+ dari semua rak di Amerika Serikat. 
+
+818
+00:32:52,460 --> 00:32:55,650
+ Anda tidak dapat menemukan Tylenol di Amerika Serikat. 
+
+819
+00:32:55,650 --> 00:32:58,270
+ Dan dalam satu tahun, Kongres telah meloloskan undang-undang baru 
+
+820
+00:32:58,270 --> 00:33:01,295
+ membutuhkan kemasan yang jelas-jelas dan keamanan fisik 
+
+821
+00:33:01,295 --> 00:33:03,020
+ obat over-the-counter. 
+
+822
+00:33:03,020 --> 00:33:05,530
+ Kejadian ini adalah alasan ketika kamu membuka obatmu, 
+
+823
+00:33:05,530 --> 00:33:07,610
+ Anda melihat kertas logam kecil. 
+
+824
+00:33:07,610 --> 00:33:10,790
+ Jadi kita tahu ada orang jahat. 
+
+825
+00:33:10,790 --> 00:33:14,620
+ Kasus-kasus yang kami sadari lebih tentang tomfoolery, 
+
+826
+00:33:14,620 --> 00:33:15,950
+ tapi masih berbahaya. 
+
+827
+00:33:15,950 --> 00:33:18,590
+ Jadi wanita ini mengatakan dia memiliki salah satu kejang terburuknya 
+
+828
+00:33:18,590 --> 00:33:20,210
+ pernah mengalami ketika seseorang memutuskan 
+
+829
+00:33:20,210 --> 00:33:22,900
+ untuk memposting animasi yang berkedip pada grup pendukung epilepsi 
+
+830
+00:33:22,900 --> 00:33:24,090
+ situs web. 
+
+831
+00:33:24,090 --> 00:33:25,497
+ Sangat jahat. 
+
+832
+00:33:25,497 --> 00:33:27,955
+ Itu mungkin seseorang yang tidak menyadari percabangannya 
+
+833
+00:33:27,955 --> 00:33:30,410
+ tindakan mereka, karena Anda dapat benar-benar 
+
+834
+00:33:30,410 --> 00:33:34,140
+ sangat membahayakan pasien yang sensitif terhadap hal semacam itu 
+
+835
+00:33:34,140 --> 00:33:35,180
+ hal-hal. 
+
+836
+00:33:35,180 --> 00:33:37,900
+ Tetapi sekali lagi, orang jahat memang ada. 
+
+837
+00:33:37,900 --> 00:33:41,150
+ Jadi salah satu masalah dengan kesenjangan budaya 
+
+838
+00:33:41,150 --> 00:33:43,600
+ adalah bahwa banyak manufaktur perangkat medis 
+
+839
+00:33:43,600 --> 00:33:46,150
+ berpikir secara statistik, dan mereka berpikir 
+
+840
+00:33:46,150 --> 00:33:48,960
+ tentang kinerja masa lalu dari perangkat yang memprediksi 
+
+841
+00:33:48,960 --> 00:33:50,430
+ kinerja masa depan. 
+
+842
+00:33:50,430 --> 00:33:52,610
+ Jadi di dunia keamanan, kita tahu itu sebenarnya, 
+
+843
+00:33:52,610 --> 00:33:55,110
+ jika Anda tidak melihat masalah keamanan, itu mungkin karena di sana 
+
+844
+00:33:55,110 --> 00:33:56,780
+ banyak lagi yang akan segera datang. 
+
+845
+00:33:56,780 --> 00:33:59,030
+ Jadi jika Anda melihat Mac, misalnya, bukan? 
+
+846
+00:33:59,030 --> 00:34:03,030
+ Sebelum dua tahun lalu, pada dasarnya tidak ada malware di Mac. 
+
+847
+00:34:03,030 --> 00:34:05,400
+ Tapi kemudian satu malam lebih dari setengah juta Mac 
+
+848
+00:34:05,400 --> 00:34:07,840
+ terinfeksi oleh Flashback. 
+
+849
+00:34:07,840 --> 00:34:10,840
+ Jadi salah satu masalah adalah menjembatani kesenjangan budaya itu. 
+
+850
+00:34:10,840 --> 00:34:12,299
+ Untuk berpindah dari, yah, belum 
+
+851
+00:34:12,299 --> 00:34:13,840
+ sudah ada masalah yang dilaporkan, jadi kami 
+
+852
+00:34:13,840 --> 00:34:17,010
+ tidak perlu khawatir tentang itu, untuk menjelaskan lebih lanjut tentang bagaimana 
+
+853
+00:34:17,010 --> 00:34:19,170
+ untuk menyesuaikan keamanan ke dalam manajemen risiko 
+
+854
+00:34:19,170 --> 00:34:22,380
+ memikirkan manufaktur perangkat medis. 
+
+855
+00:34:22,380 --> 00:34:24,520
+ Jadi semoga kita bisa menghindari ini, dan terus 
+
+856
+00:34:24,520 --> 00:34:29,980
+ yang ada di Weekly World News, tetapi itu bisa terjadi. 
+
+857
+00:34:29,980 --> 00:34:32,620
+ Jadi mencoba membawa pulang analogi itu sekarang. 
+
+858
+00:34:32,620 --> 00:34:35,909
+ Sebelum kita membahas solusi di sini, 
+
+859
+00:34:35,909 --> 00:34:39,060
+ seperti itu saat itu, ada banyak penyangkalan 
+
+860
+00:34:39,060 --> 00:34:40,690
+ bahwa mencuci tangan adalah masalah. 
+
+861
+00:34:40,690 --> 00:34:42,840
+ Tapi ada alasan sebenarnya untuk itu. 
+
+862
+00:34:42,840 --> 00:34:45,699
+ Pada 1800-an, air yang mengalir tidak persis 
+
+863
+00:34:45,699 --> 00:34:47,710
+ umum di rumah sakit. 
+
+864
+00:34:47,710 --> 00:34:49,449
+ Sarung tangan lateks belum ada. 
+
+865
+00:34:49,449 --> 00:34:53,110
+ Jadi meminta seseorang untuk hanya mencuci tangan mereka untuk setiap prosedur 
+
+866
+00:34:53,110 --> 00:34:55,389
+ sebenarnya adalah urutan yang cukup tinggi. 
+
+867
+00:34:55,389 --> 00:34:57,990
+ Dan hal yang sama dapat dikatakan tentang keamanan hari ini, 
+
+868
+00:34:57,990 --> 00:34:59,290
+ di hampir semua konteks. 
+
+869
+00:34:59,290 --> 00:35:01,970
+ Tidak ada debu peri sihir yang bisa Anda taburkan. 
+
+870
+00:35:01,970 --> 00:35:05,150
+ Tidak ada sarung tangan karet yang bisa Anda pakai 
+
+871
+00:35:05,150 --> 00:35:06,870
+ secara ajaib menambah keamanan. 
+
+872
+00:35:06,870 --> 00:35:09,710
+ Jadi ketika Anda bertanya kepada produsen atau dokter 
+
+873
+00:35:09,710 --> 00:35:11,580
+ untuk, katakanlah, menjaga perangkat Anda tetap aman, 
+
+874
+00:35:11,580 --> 00:35:12,700
+ ini urutan yang cukup tinggi. 
+
+875
+00:35:12,700 --> 00:35:14,534
+ Jadi ini akan memakan waktu, saya pikir. 
+
+876
+00:35:14,534 --> 00:35:15,950
+ Tetapi jika mereka hidup hari ini, mereka 
+
+877
+00:35:15,950 --> 00:35:17,840
+ mungkin mengatakan peralatan medis harus aman, 
+
+878
+00:35:17,840 --> 00:35:20,131
+ dan dokter adalah pria dan oleh karena itu komputer mereka 
+
+879
+00:35:20,131 --> 00:35:21,550
+ aman. 
+
+880
+00:35:21,550 --> 00:35:24,810
+ Tapi saya optimis kita akan sampai di sana, 
+
+881
+00:35:24,810 --> 00:35:27,430
+ karena kebanyakan pabrikan yang saya ajak bicara sekarang menyadarinya 
+
+882
+00:35:27,430 --> 00:35:28,772
+ masalah nyata. 
+
+883
+00:35:28,772 --> 00:35:30,980
+ Mereka belum tentu yakin apa yang harus dilakukan selanjutnya. 
+
+884
+00:35:30,980 --> 00:35:33,730
+ Jadi mungkin mereka akan merekrut Anda untuk masa depan, 
+
+885
+00:35:33,730 --> 00:35:36,250
+ untuk membantu mereka mengatasi masalah keamanan ini. 
+
+886
+00:35:36,250 --> 00:35:38,340
+ Tapi apa semua itu bermuara pada itu 
+
+887
+00:35:38,340 --> 00:35:40,460
+ sangat sulit untuk menambah keamanan setelah fakta. 
+
+888
+00:35:40,460 --> 00:35:42,330
+ Mengikatnya sangat menantang. 
+
+889
+00:35:42,330 --> 00:35:45,070
+ Mungkin dalam beberapa kasus, tetapi sangat sulit, 
+
+890
+00:35:45,070 --> 00:35:46,620
+ dan seringkali sangat mahal. 
+
+891
+00:35:46,620 --> 00:35:48,953
+ Dan Anda benar-benar harus merancangnya dari awal 
+
+892
+00:35:48,953 --> 00:35:49,760
+ untuk melakukannya dengan benar. 
+
+893
+00:35:49,760 --> 00:35:51,774
+ Jadi FDA mengharapkan produsen 
+
+894
+00:35:51,774 --> 00:35:53,190
+ untuk melakukannya dengan benar ketika mereka masih ada 
+
+895
+00:35:53,190 --> 00:35:55,160
+ bekerja dengan pena dan kertas, di papan tulis, 
+
+896
+00:35:55,160 --> 00:35:56,660
+ sebelum mereka benar-benar diproduksi 
+
+897
+00:35:56,660 --> 00:35:59,950
+ perangkat medis. 
+
+898
+00:35:59,950 --> 00:36:04,570
+ Jadi bagaimana kita melakukannya tepat waktu? 
+
+899
+00:36:04,570 --> 00:36:06,400
+ Oh, lumayan? 
+
+900
+00:36:06,400 --> 00:36:07,690
+ 40 menit, luar biasa. 
+
+901
+00:36:07,690 --> 00:36:09,187
+ BAIK. 
+
+902
+00:36:09,187 --> 00:36:10,520
+ Saya akan lebih cepat dari yang saya pikir. 
+
+903
+00:36:10,520 --> 00:36:12,871
+ Maaf jika Anda mencatat. 
+
+904
+00:36:12,871 --> 00:36:16,211
+ Saya akan berbicara lebih lambat sekarang. 
+
+905
+00:36:16,211 --> 00:36:18,730
+ Saya ingin berbicara sedikit tentang teknologi 
+
+906
+00:36:18,730 --> 00:36:22,010
+ membuat alat medis lebih bisa dipercaya. 
+
+907
+00:36:22,010 --> 00:36:25,380
+ Jadi saya akan mencoba untuk meniup pikiran Anda, oke? 
+
+908
+00:36:25,380 --> 00:36:32,450
+ Jadi mengapa Anda mempercayai sensor, katakanlah, smartphone Anda? 
+
+909
+00:36:32,450 --> 00:36:33,782
+ Anda punya smartphone di sana. 
+
+910
+00:36:33,782 --> 00:36:35,781
+ Apakah Anda tahu sensor apa yang ada di smartphone itu? 
+
+911
+00:36:35,781 --> 00:36:38,547
+
+
+912
+00:36:38,547 --> 00:36:39,340
+ AUDIENCE: GPS. 
+
+913
+00:36:39,340 --> 00:36:40,298
+ PROFESOR: Ada GPS? 
+
+914
+00:36:40,298 --> 00:36:42,510
+
+
+915
+00:36:42,510 --> 00:36:44,339
+ Accelerometer, saya dengar. 
+
+916
+00:36:44,339 --> 00:36:45,130
+ Ada pemikiran lain? 
+
+917
+00:36:45,130 --> 00:36:47,380
+ Apa lagi yang kita temukan di telepon? 
+
+918
+00:36:47,380 --> 00:36:48,350
+ AUDIENCE: Kompas. 
+
+919
+00:36:48,350 --> 00:36:49,280
+ PROFESOR: Kompas? 
+
+920
+00:36:49,280 --> 00:36:50,111
+ Cahaya? 
+
+921
+00:36:50,111 --> 00:36:51,955
+ AUDIENCE: [TIDAK JELAS]. 
+
+922
+00:36:51,955 --> 00:36:54,737
+ PROFESOR: Medan elektromagnetik? 
+
+923
+00:36:54,737 --> 00:36:56,195
+ Semuanya sensitif terhadap suhu. 
+
+924
+00:36:56,195 --> 00:36:59,000
+
+
+925
+00:36:59,000 --> 00:37:01,197
+ Kamera secara teknis mendapat sensor CCD. 
+
+926
+00:37:01,197 --> 00:37:02,780
+ Jadi ada sensor di semua tempat. 
+
+927
+00:37:02,780 --> 00:37:04,380
+ Alat medis juga memiliki sensor. 
+
+928
+00:37:04,380 --> 00:37:06,170
+ Sekarang, mengapa Anda mempercayai apa sensor itu 
+
+929
+00:37:06,170 --> 00:37:07,140
+ memberitahu prosesor Anda? 
+
+930
+00:37:07,140 --> 00:37:10,180
+ Jika Anda menulis perangkat lunak dan sensor Anda 
+
+931
+00:37:10,180 --> 00:37:15,210
+ memberitahu Anda itu 77 derajat hari ini, atau 25 Celcius, 
+
+932
+00:37:15,210 --> 00:37:17,960
+ kenapa kamu percaya itu? 
+
+933
+00:37:17,960 --> 00:37:20,650
+ Jadi setidaknya di lab saya, kami melakukan banyak pekerjaan pada sensor. 
+
+934
+00:37:20,650 --> 00:37:22,580
+ Jadi saya mencoba untuk melewati yang satu ini. 
+
+935
+00:37:22,580 --> 00:37:25,980
+ Ini adalah sensor tanpa baterai. 
+
+936
+00:37:25,980 --> 00:37:29,482
+ Ini punya mikrokontroler MSP430. 
+
+937
+00:37:29,482 --> 00:37:30,440
+ Tetapi tidak ada baterai. 
+
+938
+00:37:30,440 --> 00:37:32,700
+ Ini benar-benar berjalan dari kapasitor 10 mikrofarad, 
+
+939
+00:37:32,700 --> 00:37:35,876
+ dan ia memanen energi RF untuk menghidupkan mikroprosesor itu. 
+
+940
+00:37:35,876 --> 00:37:39,300
+ Saya akan melewatkannya di sisi ini, saya kira. 
+
+941
+00:37:39,300 --> 00:37:41,030
+ Dan ada hal-hal kecil yang menyenangkan 
+
+942
+00:37:41,030 --> 00:37:43,870
+ seperti akselerometer 3D, sensor suhu, cahaya, 
+
+943
+00:37:43,870 --> 00:37:45,470
+ semua hal menyenangkan itu. 
+
+944
+00:37:45,470 --> 00:37:48,029
+ Tapi sangat sulit untuk berkuasa. 
+
+945
+00:37:48,029 --> 00:37:49,820
+ Tetapi sekali lagi, bagaimana Anda mempercayai apa yang sebenarnya 
+
+946
+00:37:49,820 --> 00:37:51,110
+ masuk ke sensor itu? 
+
+947
+00:37:51,110 --> 00:37:54,530
+ Ada yang menerjemahkannya dari semua fenomena fisik ini 
+
+948
+00:37:54,530 --> 00:37:56,390
+ untuk pulsa listrik kecil. 
+
+949
+00:37:56,390 --> 00:38:00,534
+ Jadi satu hal yang ingin saya soroti adalah 
+
+950
+00:38:00,534 --> 00:38:02,117
+ kenapa kamu tidak mau percaya apa 
+
+951
+00:38:02,117 --> 00:38:03,460
+ keluar dari sensor itu. 
+
+952
+00:38:03,460 --> 00:38:05,890
+ Jadi ini bekerja dari salah satu post-docs saya, Denis Foo Kune 
+
+953
+00:38:05,890 --> 00:38:08,369
+ di sini, siapa yang bermain di Danau Michigan. 
+
+954
+00:38:08,369 --> 00:38:09,910
+ Tapi di waktu luangnya yang lain, dia suka 
+
+955
+00:38:09,910 --> 00:38:11,700
+ untuk mengganggu sensor. 
+
+956
+00:38:11,700 --> 00:38:14,370
+ Jadi biarkan aku memberitahumu tentang - lupakan keamanan untuk sesaat, 
+
+957
+00:38:14,370 --> 00:38:17,295
+ untuk keselamatan-- ada seorang pria di tahun 2009 yang melaporkan 
+
+958
+00:38:17,295 --> 00:38:19,420
+ bahwa setiap kali ponselnya berdering di dapurnya, 
+
+959
+00:38:19,420 --> 00:38:21,214
+ ovennya dinyalakan. 
+
+960
+00:38:21,214 --> 00:38:23,130
+ Jadi Anda bisa menemukan ini di New York Times. 
+
+961
+00:38:23,130 --> 00:38:26,460
+ Itu hanya kebetulan bahwa frekuensi resonansi itu adil 
+
+962
+00:38:26,460 --> 00:38:30,100
+ sempurna untuk mendapatkan pengapian yang menyala di atas. 
+
+963
+00:38:30,100 --> 00:38:32,360
+ Jadi ada gangguan di semua tempat. 
+
+964
+00:38:32,360 --> 00:38:35,950
+ Ini pertempuran terus-menerus, karena kami memiliki perangkat yang berbeda 
+
+965
+00:38:35,950 --> 00:38:37,720
+ berbicara dalam spektrum yang sama. 
+
+966
+00:38:37,720 --> 00:38:41,090
+ Tetapi ada teknologi untuk mengurangi gangguan itu. 
+
+967
+00:38:41,090 --> 00:38:44,260
+ Masalahnya adalah, apa yang terjadi ketika interferensi terjadi 
+
+968
+00:38:44,260 --> 00:38:45,740
+ di baseband? 
+
+969
+00:38:45,740 --> 00:38:47,990
+ Aku akan sedikit analog padamu. 
+
+970
+00:38:47,990 --> 00:38:51,110
+ Jadi apakah 6.003 masih ada? 
+
+971
+00:38:51,110 --> 00:38:51,610
+ Itu benar? 
+
+972
+00:38:51,610 --> 00:38:52,370
+ Oke bagus. 
+
+973
+00:38:52,370 --> 00:38:54,411
+ Jadi saya mendorong Anda semua untuk mengambilnya jika Anda belum. 
+
+974
+00:38:54,411 --> 00:38:56,850
+ Ini adalah salah satu program paling mengagumkan untuk orang CS, 
+
+975
+00:38:56,850 --> 00:39:00,250
+ karena Anda tidak harus terlalu jauh ke dalam sirkus. 
+
+976
+00:39:00,250 --> 00:39:02,112
+ Jadi yang menarik bagi saya adalah, 
+
+977
+00:39:02,112 --> 00:39:04,070
+ Saya mencoba memahami mengapa saya harus percaya 
+
+978
+00:39:04,070 --> 00:39:05,510
+ apa yang dikatakan seorang sensor padaku. 
+
+979
+00:39:05,510 --> 00:39:07,740
+ Jadi saya mulai melihat diagram blok. 
+
+980
+00:39:07,740 --> 00:39:11,154
+ Dan misalnya, jika Anda memiliki headset Bluetooth, 
+
+981
+00:39:11,154 --> 00:39:13,570
+ apa yang akan Anda temukan di dalam headset Bluetooth 
+
+982
+00:39:13,570 --> 00:39:18,260
+ sebuah mikrofon, sepotong kawat, amplifier-- kanan, 003-- 
+
+983
+00:39:18,260 --> 00:39:21,335
+ beberapa kawat lagi, atau beberapa jejak pada PCB. 
+
+984
+00:39:21,335 --> 00:39:22,960
+ Ini pergi ke konverter analog / digital. 
+
+985
+00:39:22,960 --> 00:39:24,750
+ Mungkin ada beberapa penyaringan. 
+
+986
+00:39:24,750 --> 00:39:27,000
+ Dan kemudian pergi ke mikroprosesor Anda. 
+
+987
+00:39:27,000 --> 00:39:29,590
+ Tapi ada semua hal lain yang menghalangi 
+
+988
+00:39:29,590 --> 00:39:31,320
+ sebelum sampai ke perangkat lunak Anda. 
+
+989
+00:39:31,320 --> 00:39:33,160
+ Dan untuk beberapa alasan, perangkat lunak Anda 
+
+990
+00:39:33,160 --> 00:39:36,820
+ hanya percaya apa pun yang dikatakan kawat ini. 
+
+991
+00:39:36,820 --> 00:39:39,247
+ Jadi apa yang menarik bagi saya adalah, yah, Anda tahu apa? 
+
+992
+00:39:39,247 --> 00:39:41,580
+ Sepotong kawat dari mikrofon ke amplifier, 
+
+993
+00:39:41,580 --> 00:39:42,350
+ itu memiliki panjang. 
+
+994
+00:39:42,350 --> 00:39:44,750
+ Ini juga memiliki frekuensi resonan. 
+
+995
+00:39:44,750 --> 00:39:48,650
+ Jadi apa yang akan terjadi jika seseorang menghasilkan elektromagnet kustom 
+
+996
+00:39:48,650 --> 00:39:51,580
+ interferensi yang dioptimalkan untuk mengunci 
+
+997
+00:39:51,580 --> 00:39:53,820
+ ke frekuensi resonansi dari kawat itu? 
+
+998
+00:39:53,820 --> 00:39:55,319
+ Yah, itu akan masuk ke amplifier 
+
+999
+00:39:55,319 --> 00:39:57,140
+ dan itu akan diperkuat. 
+
+1000
+00:39:57,140 --> 00:39:59,670
+ Dan kemudian itu akan masuk ke konverter analog / digital itu, 
+
+1001
+00:39:59,670 --> 00:40:02,140
+ dan Anda akan beralih ke mikroprosesor. 
+
+1002
+00:40:02,140 --> 00:40:05,280
+ Salah satu pertanyaan yang kami miliki adalah, apakah ini mungkin sama sekali? 
+
+1003
+00:40:05,280 --> 00:40:07,560
+ Dan jika demikian, seberapa sulitkah itu? 
+
+1004
+00:40:07,560 --> 00:40:10,050
+ Kekuatan apa yang Anda butuhkan untuk melakukannya? 
+
+1005
+00:40:10,050 --> 00:40:12,840
+ Dan apa sebenarnya kualitas sinyal itu 
+
+1006
+00:40:12,840 --> 00:40:15,020
+ mencapai mikroprosesor? 
+
+1007
+00:40:15,020 --> 00:40:18,460
+ Jadi alasan mendasar mengapa hal ini mungkin terjadi 
+
+1008
+00:40:18,460 --> 00:40:21,780
+ karena kita berbicara tentang kesengajaan, sebagai lawan 
+
+1009
+00:40:21,780 --> 00:40:23,520
+ gangguan tidak disengaja, kami 
+
+1010
+00:40:23,520 --> 00:40:24,770
+ melemparkannya ke baseband. 
+
+1011
+00:40:24,770 --> 00:40:27,320
+ Jadi inilah contohnya. 
+
+1012
+00:40:27,320 --> 00:40:29,040
+ Bayangkan bahwa perangkat medis Anda 
+
+1013
+00:40:29,040 --> 00:40:32,140
+ dirancang untuk menerima sinyal fisiologis dalam hertz rendah. 
+
+1014
+00:40:32,140 --> 00:40:34,330
+ Seperti hatimu tidak berdetak secepat itu. 
+
+1015
+00:40:34,330 --> 00:40:37,180
+ Kami sedang berbicara beberapa hertz atau kurang. 
+
+1016
+00:40:37,180 --> 00:40:39,712
+ Jadi jika elektroda Anda mengambil beberapa frekuensi tinggi 
+
+1017
+00:40:39,712 --> 00:40:41,670
+ sinyal, Anda baru saja memasukkan beberapa filter analog. 
+
+1018
+00:40:41,670 --> 00:40:43,566
+ Anda akan mengatakan, itu tidak bisa menjadi nyata, kan? 
+
+1019
+00:40:43,566 --> 00:40:44,982
+ Jika detak jantungmu cepat sekali, 
+
+1020
+00:40:44,982 --> 00:40:48,370
+ Anda mungkin hanya mengambil sesuatu 
+
+1021
+00:40:48,370 --> 00:40:52,630
+ seperti mixer listrik saat Anda membuat makan siang Anda. 
+
+1022
+00:40:52,630 --> 00:40:55,630
+ Begitu juga Anda dapat menyaring pulsa dalam frekuensi tinggi. 
+
+1023
+00:40:55,630 --> 00:40:58,450
+ Tetapi jika Anda mengirim gangguan yang ada di baseband, 
+
+1024
+00:40:58,450 --> 00:41:00,520
+ filter itu akan menjadi tidak berarti. 
+
+1025
+00:41:00,520 --> 00:41:02,730
+ Karena filter analog itu tidak bisa disingkirkan 
+
+1026
+00:41:02,730 --> 00:41:08,750
+ dari jika berada di area frekuensi yang sama dengan yang Anda harapkan. 
+
+1027
+00:41:08,750 --> 00:41:11,970
+ Jadi sulit untuk menyaring di analog. 
+
+1028
+00:41:11,970 --> 00:41:13,890
+ Jadi saya akan membahas beberapa contoh. 
+
+1029
+00:41:13,890 --> 00:41:15,806
+ Kita akan mulai dengan headset Bluetooth, 
+
+1030
+00:41:15,806 --> 00:41:18,440
+ dan kemudian bekerja dengan cara kami ke perangkat medis. 
+
+1031
+00:41:18,440 --> 00:41:21,750
+ Jadi Denis, dia membangun sekelompok antena dipol homebrew 
+
+1032
+00:41:21,750 --> 00:41:23,770
+ dan pemancar dan amplifier. 
+
+1033
+00:41:23,770 --> 00:41:28,282
+ Sekarang apa yang dia dapatkan di sini adalah Anda dapat melihat dia punya webcam. 
+
+1034
+00:41:28,282 --> 00:41:30,490
+ Saya kira tidak terlalu banyak dari kita perlu membeli ini lagi, 
+
+1035
+00:41:30,490 --> 00:41:31,820
+ karena mereka sudah ada di dalamnya. 
+
+1036
+00:41:31,820 --> 00:41:36,100
+ Tapi webcam itu memiliki mikrofon, 
+
+1037
+00:41:36,100 --> 00:41:38,060
+ dan kemudian ada kabel USB kecil 
+
+1038
+00:41:38,060 --> 00:41:40,445
+ untuk mengirimkan audio ke komputer. 
+
+1039
+00:41:40,445 --> 00:41:42,320
+ Jadi yang dia lakukan adalah mengatur komputer 
+
+1040
+00:41:42,320 --> 00:41:45,790
+ untuk merekam video dan audio dan kemudian memutarnya kembali. 
+
+1041
+00:41:45,790 --> 00:41:51,230
+ Jadi yang menarik adalah - Anda akan melihat ini sekarang. 
+
+1042
+00:41:51,230 --> 00:41:52,750
+ Dia berada di ruangan yang sunyi senyap. 
+
+1043
+00:41:52,750 --> 00:41:53,958
+ Itu terdengar seperti ini. 
+
+1044
+00:41:53,958 --> 00:41:57,260
+ Yang bisa Anda dengar hanyalah sistem ventilasi. 
+
+1045
+00:41:57,260 --> 00:41:58,230
+ Dia punya kamera. 
+
+1046
+00:41:58,230 --> 00:42:00,021
+ Dia menghapus perumahan, supaya lebih mudah 
+
+1047
+00:42:00,021 --> 00:42:03,630
+ untuk mengetuk dan mengukur interferensi. 
+
+1048
+00:42:03,630 --> 00:42:06,045
+ Dan kemudian dia mendapat perangkat lunak radio sekitar satu meter 
+
+1049
+00:42:06,045 --> 00:42:09,110
+ pergi, menghasilkan gangguan elektromagnetik kustom. 
+
+1050
+00:42:09,110 --> 00:42:13,950
+ Dia menulisnya dengan Python, dan kemudian mengirimkan sinyal-nya. 
+
+1051
+00:42:13,950 --> 00:42:17,210
+ Jadi inilah yang komputer di sebelah kiri 
+
+1052
+00:42:17,210 --> 00:42:20,259
+ pikir itu terdengar, bahkan di ruangan yang sunyi ini. 
+
+1053
+00:42:20,259 --> 00:42:21,257
+ [PEMUTARAN AUDIO] 
+
+1054
+00:42:21,257 --> 00:42:22,756
+ [MUSIK WEEZER, "ISLAND IN THE SUN"] 
+
+1055
+00:42:22,756 --> 00:42:30,310
+
+
+1056
+00:42:30,310 --> 00:42:31,230
+ [AKHIR PUTAR ULANG] 
+
+1057
+00:42:31,230 --> 00:42:32,370
+ PROFESOR: Jadi ya. 
+
+1058
+00:42:32,370 --> 00:42:34,286
+ Terakhir kali saya melakukan itu, seseorang di belakang 
+
+1059
+00:42:34,286 --> 00:42:37,000
+ sebenarnya mulai menari. 
+
+1060
+00:42:37,000 --> 00:42:39,765
+ Jadi itu sebenarnya kesetiaan yang relatif tinggi. 
+
+1061
+00:42:39,765 --> 00:42:43,020
+ Dan ternyata di komunitas manufaktur, 
+
+1062
+00:42:43,020 --> 00:42:43,990
+ mereka sangat murah. 
+
+1063
+00:42:43,990 --> 00:42:46,880
+ Mereka menggunakan mikrofon yang sangat murah 
+
+1064
+00:42:46,880 --> 00:42:48,240
+ dengan tanggapan frekuensi buruk. 
+
+1065
+00:42:48,240 --> 00:42:50,010
+ Jadi kami benar-benar mendapat kualitas audio yang lebih tinggi 
+
+1066
+00:42:50,010 --> 00:42:53,520
+ melalui gangguan daripada pergi ke mikrofon. 
+
+1067
+00:42:53,520 --> 00:42:55,520
+ Jadi jika Anda tidak suka headset Bluetooth Anda 
+
+1068
+00:42:55,520 --> 00:42:57,150
+ dan Anda ingin memainkan musik klasik, 
+
+1069
+00:42:57,150 --> 00:42:58,500
+ lakukan saja dengan gangguan. 
+
+1070
+00:42:58,500 --> 00:43:02,010
+ Tapi jangan bilang pada FCC aku sudah bilang padamu untuk melakukan itu, 
+
+1071
+00:43:02,010 --> 00:43:03,370
+ karena kamu tidak seharusnya. 
+
+1072
+00:43:03,370 --> 00:43:06,820
+ Tetapi intinya adalah jika Anda berbicara 
+
+1073
+00:43:06,820 --> 00:43:08,950
+ gangguan magnetik yang disengaja, 
+
+1074
+00:43:08,950 --> 00:43:11,330
+ itu semacam di luar model keamanan. 
+
+1075
+00:43:11,330 --> 00:43:13,840
+ Dan prosesor Anda hanya mempercayainya. 
+
+1076
+00:43:13,840 --> 00:43:16,160
+ Jadi beberapa hal menarik yang bisa Anda lakukan. 
+
+1077
+00:43:16,160 --> 00:43:18,510
+ Katakanlah teman kantor Anda memutuskan untuk menelepon 
+
+1078
+00:43:18,510 --> 00:43:21,135
+ banknya untuk melakukan setoran. 
+
+1079
+00:43:21,135 --> 00:43:23,170
+ Anda dapat menyisipkan nada DTMF. 
+
+1080
+00:43:23,170 --> 00:43:24,900
+ Itu menyenangkan. 
+
+1081
+00:43:24,900 --> 00:43:26,849
+ Jadi kami hanya bermain-main. 
+
+1082
+00:43:26,849 --> 00:43:28,640
+ Anda dapat mengubah bahasa sebagai orang tersebut 
+
+1083
+00:43:28,640 --> 00:43:31,274
+ mencoba membuat simpanan dari akun ke akun. 
+
+1084
+00:43:31,274 --> 00:43:32,690
+ Tapi hanya ada gangguan. 
+
+1085
+00:43:32,690 --> 00:43:35,310
+ Dan sebenarnya orang di headset Bluetooth 
+
+1086
+00:43:35,310 --> 00:43:36,220
+ tidak mendengarnya. 
+
+1087
+00:43:36,220 --> 00:43:42,124
+ Karena ingat itu berasal dari orang itu, 
+
+1088
+00:43:42,124 --> 00:43:44,290
+ sehingga tidak benar-benar diulang kembali kepada mereka. 
+
+1089
+00:43:44,290 --> 00:43:48,250
+ Tetapi bank mendengarnya dan melakukan semua transaksi. 
+
+1090
+00:43:48,250 --> 00:43:51,020
+ Jadi ada cara untuk melakukan ini. 
+
+1091
+00:43:51,020 --> 00:43:54,070
+ Tidak perlu banyak keahlian analog. 
+
+1092
+00:43:54,070 --> 00:43:55,800
+ Kami sebagian besar ilmuwan komputer. 
+
+1093
+00:43:55,800 --> 00:43:59,140
+ Tetapi Anda perlu mengubah entah bagaimana 
+
+1094
+00:43:59,140 --> 00:44:01,505
+ sinyal yang Anda inginkan muncul di mikroprosesor 
+
+1095
+00:44:01,505 --> 00:44:04,980
+ menjadi sesuatu yang lebih mudah ditransmisikan. 
+
+1096
+00:44:04,980 --> 00:44:08,240
+ Jadi, hal pertama yang dapat Anda lakukan adalah berpikir 
+
+1097
+00:44:08,240 --> 00:44:09,727
+ tentang melimpahi hal itu 
+
+1098
+00:44:09,727 --> 00:44:10,810
+ dengan sinyal yang sangat kuat. 
+
+1099
+00:44:10,810 --> 00:44:12,150
+ Itulah pendekatan brute force. 
+
+1100
+00:44:12,150 --> 00:44:14,922
+ Ini tidak bekerja dengan baik, tetapi bekerja sedikit. 
+
+1101
+00:44:14,922 --> 00:44:16,630
+ Jadi jika Anda mengirim sesuatu yang cocok 
+
+1102
+00:44:16,630 --> 00:44:18,950
+ frekuensi resonansi dari sepotong kawat kecil itu, 
+
+1103
+00:44:18,950 --> 00:44:22,110
+ ya, itu akan menyelesaikan pekerjaan sampai batas tertentu. 
+
+1104
+00:44:22,110 --> 00:44:26,010
+ Masalahnya adalah banyak sinyal-sinyal ini frekuensi rendah, 
+
+1105
+00:44:26,010 --> 00:44:28,880
+ dan itu lebih sulit untuk ditransmisikan. 
+
+1106
+00:44:28,880 --> 00:44:30,172
+ Itu memiliki kekuatan yang lebih kecil, pada dasarnya. 
+
+1107
+00:44:30,172 --> 00:44:32,088
+ Jadi akan lebih sulit mengirim sinyal. 
+
+1108
+00:44:32,088 --> 00:44:35,170
+ Jadi apa yang Anda benar-benar ingin lakukan adalah mengirim sinyal frekuensi yang lebih tinggi, 
+
+1109
+00:44:35,170 --> 00:44:37,620
+ dan itu akan lebih mudah untuk memberikan kekuatan. 
+
+1110
+00:44:37,620 --> 00:44:40,280
+ Tetapi jika Anda mengirim sinyal frekuensi yang sangat tinggi, itu 
+
+1111
+00:44:40,280 --> 00:44:42,065
+ akan berada di luar baseband, 
+
+1112
+00:44:42,065 --> 00:44:44,270
+ jadi semua filter akan melakukannya. 
+
+1113
+00:44:44,270 --> 00:44:47,130
+ Jadi, inilah yang Anda lakukan. 
+
+1114
+00:44:47,130 --> 00:44:51,840
+ Anda memperlakukan rangkaian ini sebagai demodulator yang tidak disengaja. 
+
+1115
+00:44:51,840 --> 00:44:54,554
+ Jadi apa yang Anda lakukan adalah, kami memiliki gelombang sinus asli 
+
+1116
+00:44:54,554 --> 00:44:55,470
+ kami ingin mengirimkan. 
+
+1117
+00:44:55,470 --> 00:44:58,995
+ Sebaliknya kita memodifikasinya ke gelombang sinus frekuensi yang lebih tinggi. 
+
+1118
+00:44:58,995 --> 00:45:02,160
+ Dan kami mengirimkannya ke amplifier, 
+
+1119
+00:45:02,160 --> 00:45:04,520
+ dan akhirnya itu akan berhasil karena 
+
+1120
+00:45:04,520 --> 00:45:05,530
+ teori sampling. 
+
+1121
+00:45:05,530 --> 00:45:07,960
+ Anda bisa memikirkan Nyquist dan semua itu. 
+
+1122
+00:45:07,960 --> 00:45:12,370
+ Jadi di atas adalah sinyal yang mengganggu 
+
+1123
+00:45:12,370 --> 00:45:14,580
+ kami benar-benar mengirim, dan kemudian di bagian bawah 
+
+1124
+00:45:14,580 --> 00:45:16,240
+ adalah apa yang dilihat mikroprosesor. 
+
+1125
+00:45:16,240 --> 00:45:18,370
+ Karena mengingat konverter analog-ke-digital 
+
+1126
+00:45:18,370 --> 00:45:20,390
+ tidak terus pengambilan sampel. 
+
+1127
+00:45:20,390 --> 00:45:22,020
+ Ada interupsi di prosesor. 
+
+1128
+00:45:22,020 --> 00:45:24,560
+ Bangun, baca, bangun, baca. 
+
+1129
+00:45:24,560 --> 00:45:25,935
+ Jadi sebenarnya akan mengambil sampel, 
+
+1130
+00:45:25,935 --> 00:45:27,812
+ dan kemudian mencoba untuk menyimpulkan sinyal. 
+
+1131
+00:45:27,812 --> 00:45:29,770
+ Jadi saat kami mengirimkan sinyal kami yang sangat cepat, 
+
+1132
+00:45:29,770 --> 00:45:32,170
+ dibutuhkan sampel, dibutuhkan sampel, 
+
+1133
+00:45:32,170 --> 00:45:35,180
+ dibutuhkan sampel, dan sebagainya, dan sebagainya. 
+
+1134
+00:45:35,180 --> 00:45:37,750
+ Mikroprosesor Anda menganggapnya mendapat frekuensi rendah yang bagus ini 
+
+1135
+00:45:37,750 --> 00:45:40,180
+ gelombang sinus, tetapi kami benar-benar menggunakan frekuensi tinggi, 
+
+1136
+00:45:40,180 --> 00:45:44,151
+ karena itu memungkinkan kami untuk mengirim lebih mudah. 
+
+1137
+00:45:44,151 --> 00:45:46,400
+ Jadi saya tidak akan membahas semua intisari, 
+
+1138
+00:45:46,400 --> 00:45:49,250
+ tetapi satu lagi jenis cara keren untuk dilakukan 
+
+1139
+00:45:49,250 --> 00:45:54,320
+ ini untuk mengacak-acak komponen non-linear 
+
+1140
+00:45:54,320 --> 00:45:55,590
+ dari sirkuit. 
+
+1141
+00:45:55,590 --> 00:45:58,160
+ Tapi ini semua tentang melanggar model keamanan, kan? 
+
+1142
+00:45:58,160 --> 00:46:00,860
+ Jadi kami benar-benar melanggar apa yang disebut perancang sirkuit 
+
+1143
+00:46:00,860 --> 00:46:02,760
+ berniat. 
+
+1144
+00:46:02,760 --> 00:46:06,650
+ Ternyata jika Anda mengirim, katakan, 
+
+1145
+00:46:06,650 --> 00:46:09,440
+ dalam hal ini Anda mengirim dalam 826 megahertz 
+
+1146
+00:46:09,440 --> 00:46:12,540
+ adalah frekuensi resonan dari kawat kami. 
+
+1147
+00:46:12,540 --> 00:46:15,780
+ Tapi aku tidak bisa berbicara secepat itu. 
+
+1148
+00:46:15,780 --> 00:46:21,220
+ Jadi yang kami lakukan adalah memodulasi suara kami pada 826 megahertz 
+
+1149
+00:46:21,220 --> 00:46:22,130
+ pembawa. 
+
+1150
+00:46:22,130 --> 00:46:24,690
+ Masalahnya adalah akan mendapatkan, misalnya, semua 
+
+1151
+00:46:24,690 --> 00:46:27,294
+ replikasi sinyal ini. 
+
+1152
+00:46:27,294 --> 00:46:28,710
+ Anda akan melihat frekuensinya. 
+
+1153
+00:46:28,710 --> 00:46:30,334
+ Di sini kita melihat domain frekuensi. 
+
+1154
+00:46:30,334 --> 00:46:31,590
+ Itu berulang. 
+
+1155
+00:46:31,590 --> 00:46:33,490
+ Tapi ternyata karena filternya dibangun 
+
+1156
+00:46:33,490 --> 00:46:35,240
+ ke sebagian besar perangkat ini, sebenarnya 
+
+1157
+00:46:35,240 --> 00:46:37,531
+ akan memotong salinan berulang. 
+
+1158
+00:46:37,531 --> 00:46:39,655
+ Jadi pada akhirnya, apa yang dilihat mikroprosesor 
+
+1159
+00:46:39,655 --> 00:46:41,900
+ adalah sinyal 1 kilohertz asli kami 
+
+1160
+00:46:41,900 --> 00:46:43,070
+ kami mencoba mengirim. 
+
+1161
+00:46:43,070 --> 00:46:47,800
+ Sudah secara tidak sengaja didemodulasi. 
+
+1162
+00:46:47,800 --> 00:46:49,530
+ Jadi itulah contoh paling mudah yang saya miliki 
+
+1163
+00:46:49,530 --> 00:46:51,030
+ telah mampu menjelaskannya 
+
+1164
+00:46:51,030 --> 00:46:54,370
+ gagasan gangguan yang disengaja ini. 
+
+1165
+00:46:54,370 --> 00:46:56,950
+ Dan sekarang kita akan mencoba menerapkannya pada defibrillator 
+
+1166
+00:46:56,950 --> 00:46:58,680
+ dan peralatan medis. 
+
+1167
+00:46:58,680 --> 00:47:02,090
+ Jadi sekali lagi, defibrillator ditanamkan ke klavikula. 
+
+1168
+00:47:02,090 --> 00:47:05,520
+ Dan ini memiliki elektrodanya-- Anda dapat melihatnya di sini-- 
+
+1169
+00:47:05,520 --> 00:47:07,640
+ yang masuk ke bilik jantung, 
+
+1170
+00:47:07,640 --> 00:47:11,190
+ dan ini digunakan untuk penginderaan dan aktuasi. 
+
+1171
+00:47:11,190 --> 00:47:13,190
+ Jadi itu hanya sebuah sinyal. 
+
+1172
+00:47:13,190 --> 00:47:18,310
+ Jadi ini adalah domain waktu, dan ini adalah transformasi Fourier, 
+
+1173
+00:47:18,310 --> 00:47:19,750
+ efektif. 
+
+1174
+00:47:19,750 --> 00:47:23,780
+ Jadi ini satu detak jantung, dan detak jantung 
+
+1175
+00:47:23,780 --> 00:47:26,110
+ sebenarnya cukup rumit. 
+
+1176
+00:47:26,110 --> 00:47:27,860
+ Para dokter benar-benar diberi label 
+
+1177
+00:47:27,860 --> 00:47:29,660
+ komponen yang berbeda dari denyut jantung. 
+
+1178
+00:47:29,660 --> 00:47:31,560
+ Anda punya kompleks QRS, yang 
+
+1179
+00:47:31,560 --> 00:47:33,990
+ biasanya apa yang Anda anggap sebagai detak jantung. 
+
+1180
+00:47:33,990 --> 00:47:36,970
+ Ketukan yang sebenarnya adalah R raksasa ini di sini. 
+
+1181
+00:47:36,970 --> 00:47:38,890
+ Itu yang akan kamu rasakan. 
+
+1182
+00:47:38,890 --> 00:47:41,370
+ Tetapi ada juga gelombang kecil lainnya, 
+
+1183
+00:47:41,370 --> 00:47:46,110
+ sebagai jaringan Anda energi dan santai. 
+
+1184
+00:47:46,110 --> 00:47:49,030
+ Jadi jika melakukan transformasi Fourier pada ritme jantung Anda, 
+
+1185
+00:47:49,030 --> 00:47:51,060
+ Anda akan berakhir dengan sebagian besar sinyal 
+
+1186
+00:47:51,060 --> 00:47:53,890
+ dalam puluhan hertz. 
+
+1187
+00:47:53,890 --> 00:47:55,680
+ Anda tidak akan melihat banyak hal 
+
+1188
+00:47:55,680 --> 00:47:59,120
+ melampaui 100 hertz dalam sinyal jantung yang khas. 
+
+1189
+00:47:59,120 --> 00:48:01,531
+ Jadi sebagian besar perangkat ini dirancang 
+
+1190
+00:48:01,531 --> 00:48:04,030
+ untuk menyaring hal-hal yang benar-benar frekuensi rendah atau benar-benar 
+
+1191
+00:48:04,030 --> 00:48:05,340
+ frekuensi tinggi. 
+
+1192
+00:48:05,340 --> 00:48:07,865
+ Tetapi jika Anda memilih untuk memasukkan elektromagnetik yang disengaja 
+
+1193
+00:48:07,865 --> 00:48:09,940
+ gangguan pada baseband, lalu itu 
+
+1194
+00:48:09,940 --> 00:48:12,840
+ melewati semua filter sirkuit analog. 
+
+1195
+00:48:12,840 --> 00:48:14,580
+ Dan sekarang satu-satunya pendekatan ke [TIDAK JELAS] 
+
+1196
+00:48:14,580 --> 00:48:18,010
+ itu akan menjadi hal yang lebih di sisi ilmu komputer. 
+
+1197
+00:48:18,010 --> 00:48:20,270
+ Jadi di sinilah murid-murid saya mulai 
+
+1198
+00:48:20,270 --> 00:48:22,890
+ untuk bersenang-senang sedikit. 
+
+1199
+00:48:22,890 --> 00:48:27,075
+ Jadi kami ingin menguji ini dalam situasi yang realistis 
+
+1200
+00:48:27,075 --> 00:48:27,790
+ seperti yang kita bisa. 
+
+1201
+00:48:27,790 --> 00:48:30,290
+ Kami tidak bisa mendapatkan sukarelawan. 
+
+1202
+00:48:30,290 --> 00:48:34,030
+ Jadi alih-alih kami menemukan bahwa sebenarnya ada standar nasional. 
+
+1203
+00:48:34,030 --> 00:48:34,850
+ Ini adalah tubuh. 
+
+1204
+00:48:34,850 --> 00:48:35,835
+ Ini adalah Anda. 
+
+1205
+00:48:35,835 --> 00:48:38,279
+ Ternyata kita semua hanya kantong larutan garam. 
+
+1206
+00:48:38,279 --> 00:48:40,570
+ Dan jika Anda memiliki larutan salin yang sangat terkalibrasi, 
+
+1207
+00:48:40,570 --> 00:48:44,740
+ itulah cara terbaik untuk mensimulasikan jaringan manusia. 
+
+1208
+00:48:44,740 --> 00:48:48,360
+ Hal lain yang kami lakukan adalah kami menggunakan kadal sintetis. 
+
+1209
+00:48:48,360 --> 00:48:50,900
+ Dia sebenarnya benar secara anatomi. 
+
+1210
+00:48:50,900 --> 00:48:52,400
+ Dia punya semua organ vital yang sama 
+
+1211
+00:48:52,400 --> 00:48:53,930
+ seperti yang orang lain miliki di dalam, 
+
+1212
+00:48:53,930 --> 00:48:55,630
+ dan sistem peredaran darah yang berfungsi. 
+
+1213
+00:48:55,630 --> 00:48:57,880
+ Jadi ini memiliki semua sifat permukaan RF. 
+
+1214
+00:48:57,880 --> 00:49:01,730
+ Jadi di sini kita melakukan fluoroskopi radiasi 
+
+1215
+00:49:01,730 --> 00:49:04,890
+ untuk melakukan pencitraan 3D - 4D. 
+
+1216
+00:49:04,890 --> 00:49:07,716
+ Kami melihat pencitraan cahaya saat kami menanamkan elektroda 
+
+1217
+00:49:07,716 --> 00:49:08,840
+ ke dalam mayat sintetis kami. 
+
+1218
+00:49:08,840 --> 00:49:12,062
+
+
+1219
+00:49:12,062 --> 00:49:13,770
+ Jadi apa yang akan kita lakukan sekarang adalah menghasilkan 
+
+1220
+00:49:13,770 --> 00:49:15,145
+ beberapa gangguan elektromagnetik 
+
+1221
+00:49:15,145 --> 00:49:17,520
+ dan kemudian mencoba untuk melihat apa yang perangkat rasakan 
+
+1222
+00:49:17,520 --> 00:49:19,610
+ sebagai sinyal yang dapat dipercaya. 
+
+1223
+00:49:19,610 --> 00:49:21,010
+ Jadi beberapa cara kami melakukan ini. 
+
+1224
+00:49:21,010 --> 00:49:25,710
+ Dalam larutan garam, kami hanya menggunakan kumparan kawat magnet. 
+
+1225
+00:49:25,710 --> 00:49:28,815
+ Di sini kita memiliki tongkat yang membaca telemetri 
+
+1226
+00:49:28,815 --> 00:49:30,565
+ untuk melihat apa yang menurut perangkat itu dilihatnya, 
+
+1227
+00:49:30,565 --> 00:49:32,240
+ dan kemudian kasus eksperimental lainnya. 
+
+1228
+00:49:32,240 --> 00:49:34,660
+ Jadi saya punya beberapa pipa sisa dari pipa, 
+
+1229
+00:49:34,660 --> 00:49:36,760
+ jadi kami membuat antena dipol. 
+
+1230
+00:49:36,760 --> 00:49:39,080
+ Dan di belakang sana di papan poster itu, 
+
+1231
+00:49:39,080 --> 00:49:41,190
+ kami membuat versi 2D dari seorang pasien. 
+
+1232
+00:49:41,190 --> 00:49:43,890
+ Anda dapat melihat itu adalah kelengkungan elektroda, itu 
+
+1233
+00:49:43,890 --> 00:49:46,000
+ elektroda, dan kemudian alat pacu jantung 
+
+1234
+00:49:46,000 --> 00:49:48,300
+ tepat di bawah rekaman itu. 
+
+1235
+00:49:48,300 --> 00:49:50,700
+ Dan kami mentransfernya. 
+
+1236
+00:49:50,700 --> 00:49:52,457
+ Jadi inilah yang menurut perangkat itu dilihatnya, 
+
+1237
+00:49:52,457 --> 00:49:53,790
+ meskipun itu tidak terjadi. 
+
+1238
+00:49:53,790 --> 00:49:56,460
+ Jadi perlu diingat ini seharusnya menjadi garis datar, karena di sana 
+
+1239
+00:49:56,460 --> 00:49:57,100
+ tidak ada pasien. 
+
+1240
+00:49:57,100 --> 00:49:58,600
+ Tidak ada detak jantung. 
+
+1241
+00:49:58,600 --> 00:50:01,970
+ Jadi kami mencoba beberapa sinyal yang berbeda yang menarik adalah kami 
+
+1242
+00:50:01,970 --> 00:50:03,680
+ berdenyut sinusoid. 
+
+1243
+00:50:03,680 --> 00:50:06,020
+ Jadi itu benar-benar gelombang sinus, tapi itu 
+
+1244
+00:50:06,020 --> 00:50:07,295
+ sangat cepat Anda tidak bisa mengatakannya. 
+
+1245
+00:50:07,295 --> 00:50:09,670
+ Tapi kami menggetarkannya seperti detak jantung. 
+
+1246
+00:50:09,670 --> 00:50:12,470
+ Jadi setiap detik kami mengirimkan pulsa. 
+
+1247
+00:50:12,470 --> 00:50:15,380
+ Dan kemudian kami juga melakukan salah satu yang dimodulasi. 
+
+1248
+00:50:15,380 --> 00:50:17,430
+ Itu sedikit ribut. 
+
+1249
+00:50:17,430 --> 00:50:21,020
+ Jadi ini adalah screenshot dari programmer alat pacu jantung 
+
+1250
+00:50:21,020 --> 00:50:24,100
+ yang memberitahu kita hidup apa telemetri akan keluar. 
+
+1251
+00:50:24,100 --> 00:50:27,220
+ Dan sulit untuk dibaca, tetapi hijau kecil di sana, 
+
+1252
+00:50:27,220 --> 00:50:30,870
+ VP, mengatakan bahwa perangkat mengirimkan kecepatan ventrikel. 
+
+1253
+00:50:30,870 --> 00:50:33,520
+ Ini adalah alat pacu jantung yang mengirimkan detak jantung buatan, 
+
+1254
+00:50:33,520 --> 00:50:36,449
+ pada dasarnya, untuk membuat kontrak jaringan. 
+
+1255
+00:50:36,449 --> 00:50:37,990
+ Yang menarik adalah ketika kita mulai 
+
+1256
+00:50:37,990 --> 00:50:40,320
+ mengirimkan gangguan kami, itu mendapat apa 
+
+1257
+00:50:40,320 --> 00:50:42,330
+ disebut VS, rasa ventrikel. 
+
+1258
+00:50:42,330 --> 00:50:44,520
+ VS ungu kecil, ada tiga dari mereka. 
+
+1259
+00:50:44,520 --> 00:50:46,400
+ Jadi alat pacu jantung mengira bahwa hati itu 
+
+1260
+00:50:46,400 --> 00:50:48,710
+ mengalahkan dengan sendirinya, sehingga memilih untuk menghambat mondar-mandir 
+
+1261
+00:50:48,710 --> 00:50:50,446
+ untuk menghemat daya. 
+
+1262
+00:50:50,446 --> 00:50:52,320
+ Dan kemudian ketika kami mematikan interferensi, 
+
+1263
+00:50:52,320 --> 00:50:54,240
+ mondar-mandir mulai lagi. 
+
+1264
+00:50:54,240 --> 00:50:57,840
+ Demikian pula di sini Anda melihat di mana gangguan dimulai, 
+
+1265
+00:50:57,840 --> 00:51:00,130
+ dan itu merasakan perasaan ventrikel. 
+
+1266
+00:51:00,130 --> 00:51:03,140
+ Dikatakan, oh, tubuh mondar-mandir dengan sendirinya. 
+
+1267
+00:51:03,140 --> 00:51:05,840
+ Saya tidak perlu membuang energi saya mondar-mandir di hati. 
+
+1268
+00:51:05,840 --> 00:51:08,070
+ Jadi kami dapat menginduksi gangguan itu, 
+
+1269
+00:51:08,070 --> 00:51:09,910
+ dan kemudian mengelabui mikroprosesor 
+
+1270
+00:51:09,910 --> 00:51:13,560
+ untuk mempercayai keadaan panjang. 
+
+1271
+00:51:13,560 --> 00:51:15,030
+ Ada lapisan perak. 
+
+1272
+00:51:15,030 --> 00:51:18,900
+ Kabar baiknya adalah, itu hanya bekerja secara in vitro. 
+
+1273
+00:51:18,900 --> 00:51:21,800
+ Kapanpun kita akan melakukan ini dalam larutan garam 
+
+1274
+00:51:21,800 --> 00:51:23,920
+ atau dalam apa pun yang mendekati tubuh, 
+
+1275
+00:51:23,920 --> 00:51:25,400
+ pada dasarnya tidak berhasil. 
+
+1276
+00:51:25,400 --> 00:51:26,900
+ Dan itu karena tubuh Anda menyerap 
+
+1277
+00:51:26,900 --> 00:51:30,800
+ banyak energi RF, dan itu tidak benar-benar 
+
+1278
+00:51:30,800 --> 00:51:31,750
+ sampai ke sensor. 
+
+1279
+00:51:31,750 --> 00:51:34,010
+ Jadi, paling dekat kita bisa membuat ini berfungsi 
+
+1280
+00:51:34,010 --> 00:51:39,180
+ adalah, dengan saline, seperti tiga sentimeter. 
+
+1281
+00:51:39,180 --> 00:51:41,540
+ Jadi pada dasarnya itu berarti tidak perlu khawatir 
+
+1282
+00:51:41,540 --> 00:51:44,370
+ untuk gangguan khusus semacam ini dari implan. 
+
+1283
+00:51:44,370 --> 00:51:47,610
+ Namun, perangkat yang dipakai secara eksternal, kita tidak tahu. 
+
+1284
+00:51:47,610 --> 00:51:50,600
+ Kami belum melakukan tes pada pompa insulin. 
+
+1285
+00:51:50,600 --> 00:51:52,100
+ Ada banyak jenis yang berbeda. 
+
+1286
+00:51:52,100 --> 00:51:53,683
+ Ada sensor glukosa, misalnya, 
+
+1287
+00:51:53,683 --> 00:51:57,970
+ yang perkutan. 
+
+1288
+00:51:57,970 --> 00:52:00,010
+ Saya tidak akan terkejut jika seseorang di sini memiliki satu. 
+
+1289
+00:52:00,010 --> 00:52:01,610
+ Mereka cukup umum. 
+
+1290
+00:52:01,610 --> 00:52:04,540
+ Tapi kita belum tahu. 
+
+1291
+00:52:04,540 --> 00:52:10,210
+ Tapi salah satu pendekatan yang kami ambil untuk menyelesaikan ini 
+
+1292
+00:52:10,210 --> 00:52:12,630
+ mengikuti prinsip end-to-end sampai batas tertentu. 
+
+1293
+00:52:12,630 --> 00:52:14,607
+ Banyak ini, saya hanya tidak berpikir 
+
+1294
+00:52:14,607 --> 00:52:16,190
+ analog ini mampu membedakan yang baik 
+
+1295
+00:52:16,190 --> 00:52:17,520
+ dari sinyal buruk. 
+
+1296
+00:52:17,520 --> 00:52:20,340
+ Jadi Anda harus melakukannya lebih dekat ke lapisan aplikasi. 
+
+1297
+00:52:20,340 --> 00:52:27,440
+ Jadi salah satu pertahanan yang kami coba adalah sebagai berikut. 
+
+1298
+00:52:27,440 --> 00:52:30,694
+ Ia memiliki keterbatasannya sendiri, tetapi inilah ide dasarnya. 
+
+1299
+00:52:30,694 --> 00:52:32,860
+ Jadi bayangkan Anda adalah alat pacu jantung, dan Anda ingin tahu, 
+
+1300
+00:52:32,860 --> 00:52:35,000
+ apakah Anda mendapatkan sinyal yang dapat dipercaya? 
+
+1301
+00:52:35,000 --> 00:52:37,370
+ Jadi apa yang Anda lakukan adalah Anda selektif 
+
+1302
+00:52:37,370 --> 00:52:41,930
+ memilih untuk mengirim pulsa tes setiap sekarang dan kemudian, pada dasarnya tetap 
+
+1303
+00:52:41,930 --> 00:52:43,100
+ musuh di cek. 
+
+1304
+00:52:43,100 --> 00:52:45,890
+ Jadi, inilah hal menarik yang kami temukan ketika kami bekerja 
+
+1305
+00:52:45,890 --> 00:52:47,440
+ dengan elektrofisiolog. 
+
+1306
+00:52:47,440 --> 00:52:49,340
+ Kami belajar bahwa jika Anda mengirim pulsa mondar-mandir 
+
+1307
+00:52:49,340 --> 00:52:52,830
+ ke jantung yang baru-baru ini berdetak, sekitar 200 
+
+1308
+00:52:52,830 --> 00:52:55,750
+ milidetik, jaringan jantung itu secara fisik 
+
+1309
+00:52:55,750 --> 00:52:57,360
+ tidak mampu berdetak lagi. 
+
+1310
+00:52:57,360 --> 00:53:00,110
+ Ini juga secara fisik tidak mampu mengirim 
+
+1311
+00:53:00,110 --> 00:53:01,800
+ tanggapan listrik, hanya karena 
+
+1312
+00:53:01,800 --> 00:53:05,300
+ dari polarisasi-- cara kerja jaringan jantung. 
+
+1313
+00:53:05,300 --> 00:53:08,360
+ Jadi kami berkata, jadi apa yang akan terjadi jika kami mengirim mondar-mandir ekstra 
+
+1314
+00:53:08,360 --> 00:53:11,230
+ denyut nadi tepat setelah perasaan ventrikel? 
+
+1315
+00:53:11,230 --> 00:53:14,700
+ Dia berkata, oh, yah, jika hati sebenarnya 
+
+1316
+00:53:14,700 --> 00:53:17,310
+ telah mengalahkan, seperti yang dikatakan sensor Anda, 
+
+1317
+00:53:17,310 --> 00:53:18,950
+ Maka Anda tidak akan mendapat jawaban. 
+
+1318
+00:53:18,950 --> 00:53:21,400
+ Karena itu tidak akan mampu mengirim respons. 
+
+1319
+00:53:21,400 --> 00:53:23,860
+ Maka dari itu, jika kita melihat hati mengirim kita 
+
+1320
+00:53:23,860 --> 00:53:26,160
+ sinyal listrik kembali, kami tahu-- lalu 
+
+1321
+00:53:26,160 --> 00:53:28,190
+ yang membuktikan kepada kita bahwa kita tertipu 
+
+1322
+00:53:28,190 --> 00:53:29,720
+ pada detak jantung sebelumnya. 
+
+1323
+00:53:29,720 --> 00:53:32,910
+ Dan di sana kami mengangkat tanda peringatan kami 
+
+1324
+00:53:32,910 --> 00:53:34,450
+ yang tampaknya kita dapatkan 
+
+1325
+00:53:34,450 --> 00:53:36,550
+ interferensi elektromagnetik yang disengaja. 
+
+1326
+00:53:36,550 --> 00:53:38,760
+ Jadi ide dasarnya adalah, sekali lagi, kami menyelidikinya, 
+
+1327
+00:53:38,760 --> 00:53:40,450
+ dan kami memanfaatkan sebagian dari apa yang kami miliki 
+
+1328
+00:53:40,450 --> 00:53:42,740
+ tahu tentang fisiologi tubuh 
+
+1329
+00:53:42,740 --> 00:53:45,020
+ untuk memiliki kepercayaan yang lebih baik. 
+
+1330
+00:53:45,020 --> 00:53:48,170
+ Pendekatan lain yang tidak kami teliti terlalu dalam 
+
+1331
+00:53:48,170 --> 00:53:50,223
+ sedang melihat penundaan propagasi. 
+
+1332
+00:53:50,223 --> 00:53:52,440
+ Karena jika Anda memiliki gangguan elektromagnetik 
+
+1333
+00:53:52,440 --> 00:53:54,620
+ datang kepadamu, itu pada dasarnya ringan, kan? 
+
+1334
+00:53:54,620 --> 00:53:55,810
+ Kecepatan cahaya. 
+
+1335
+00:53:55,810 --> 00:53:59,370
+ Dan jika itu memukul Anda sekaligus, jika Anda memiliki dua sensor, 
+
+1336
+00:53:59,370 --> 00:54:02,240
+ dan Anda secara bersamaan melihat sinyal jantung yang sama 
+
+1337
+00:54:02,240 --> 00:54:04,890
+ pada saat yang sama, ada yang salah. 
+
+1338
+00:54:04,890 --> 00:54:07,480
+ Karena ada propagasi elektrokimia 
+
+1339
+00:54:07,480 --> 00:54:10,115
+ tunda dari saraf vagus Anda sebagai sinyal listrik 
+
+1340
+00:54:10,115 --> 00:54:12,390
+ bepergian melalui hatimu. 
+
+1341
+00:54:12,390 --> 00:54:14,430
+ Jadi ada cara lain untuk mencoba menggoda 
+
+1342
+00:54:14,430 --> 00:54:18,050
+ apakah sinyal fisiologis dapat dipercaya, 
+
+1343
+00:54:18,050 --> 00:54:19,960
+ tapi ini tanah baru. 
+
+1344
+00:54:19,960 --> 00:54:22,610
+ Tidak banyak yang terjadi di ruang ini. 
+
+1345
+00:54:22,610 --> 00:54:25,191
+ Banyak proyek yang menyenangkan untuk sarjana dan sarjana 
+
+1346
+00:54:25,191 --> 00:54:25,690
+ penelitian. 
+
+1347
+00:54:25,690 --> 00:54:29,300
+
+
+1348
+00:54:29,300 --> 00:54:33,070
+ Kita akhiri at-- oh, 25? 
+
+1349
+00:54:33,070 --> 00:54:33,830
+ Oh 
+
+1350
+00:54:33,830 --> 00:54:38,095
+ Jadi saya ingin memberi tahu Anda tentang proyek lain, 
+
+1351
+00:54:38,095 --> 00:54:41,350
+ dan itu mendeteksi malware di outlet listrik. 
+
+1352
+00:54:41,350 --> 00:54:47,030
+ Beberapa tahun yang lalu, salah satu murid saya, Shane, katanya, 
+
+1353
+00:54:47,030 --> 00:54:50,160
+ hei, saya membangun power outlet ini, dan saya bisa tahu 
+
+1354
+00:54:50,160 --> 00:54:52,630
+ situs web apa yang Anda jelajahi. 
+
+1355
+00:54:52,630 --> 00:54:57,530
+ Jadi dia menaruh penghambat rasa sedikit di sini, 
+
+1356
+00:54:57,530 --> 00:54:59,810
+ dan dia mengukur apa yang disebut fase 
+
+1357
+00:54:59,810 --> 00:55:01,850
+ bergeser dalam kekuatan reaktif. 
+
+1358
+00:55:01,850 --> 00:55:05,980
+ Ini pada dasarnya adalah proxy untuk beban di komputer Anda. 
+
+1359
+00:55:05,980 --> 00:55:08,980
+ Dan pada dasarnya dia bisa menceritakan bagaimana komputer Anda-- bagaimana caranya 
+
+1360
+00:55:08,980 --> 00:55:11,670
+ prosesor Anda mengubah beban seperti itu 
+
+1361
+00:55:11,670 --> 00:55:14,570
+ pergi ke sistem listrik AC. 
+
+1362
+00:55:14,570 --> 00:55:15,560
+ Ini bukan hal baru. 
+
+1363
+00:55:15,560 --> 00:55:17,539
+ Adakah yang pernah mendengar tentang Tempest? 
+
+1364
+00:55:17,539 --> 00:55:18,330
+ Perlindungan tempest? 
+
+1365
+00:55:18,330 --> 00:55:19,130
+ Beberapa dari Anda. 
+
+1366
+00:55:19,130 --> 00:55:22,230
+ Jadi Tempest sudah ada selama bertahun-tahun. 
+
+1367
+00:55:22,230 --> 00:55:25,620
+ Pada dasarnya sinyal bocor ke semua tempat, 
+
+1368
+00:55:25,620 --> 00:55:27,750
+ dan ada seluruh seni untuk menghentikan sinyal 
+
+1369
+00:55:27,750 --> 00:55:29,730
+ dari bocor. 
+
+1370
+00:55:29,730 --> 00:55:31,310
+ Yang menarik bagi saya adalah, saya 
+
+1371
+00:55:31,310 --> 00:55:33,143
+ ingin menyimpan semua komputer lama saya-- sebenarnya 
+
+1372
+00:55:33,143 --> 00:55:35,670
+ Saya memiliki mesin exokernel. 
+
+1373
+00:55:35,670 --> 00:55:39,307
+ Dan itu lama - saya pikir ini adalah Pentium 4. 
+
+1374
+00:55:39,307 --> 00:55:41,640
+ Dan ini sebelum ada manajemen daya maju. 
+
+1375
+00:55:41,640 --> 00:55:44,139
+ Jadi jika Anda mengukur kekuatan yang keluar dari Pentium lama ini, 
+
+1376
+00:55:44,139 --> 00:55:44,942
+ itu konstan. 
+
+1377
+00:55:44,942 --> 00:55:46,900
+ Tidak masalah jika Anda melakukan sesuatu. 
+
+1378
+00:55:46,900 --> 00:55:49,950
+ Jika Anda memiliki putaran berputar, tidak masalah. 
+
+1379
+00:55:49,950 --> 00:55:53,600
+ Ini sama dengan melakukan pemrosesan. 
+
+1380
+00:55:53,600 --> 00:55:56,440
+ Tetapi jika Anda membeli komputer modern, apakah itu desktop 
+
+1381
+00:55:56,440 --> 00:56:00,150
+ atau telepon, beban kerja Anda terungkap di atas kekuatan 
+
+1382
+00:56:00,150 --> 00:56:02,240
+ garis dengan cara halus. 
+
+1383
+00:56:02,240 --> 00:56:08,789
+ Dan apa yang dia temukan adalah apa yang terjadi di sini. 
+
+1384
+00:56:08,789 --> 00:56:10,330
+ Jika Anda memiliki sistem tertanam itu 
+
+1385
+00:56:10,330 --> 00:56:13,740
+ sangat sulit untuk berubah, dan Anda ingin retrofit keamanan 
+
+1386
+00:56:13,740 --> 00:56:19,560
+ ke dalamnya, apa yang bisa Anda lakukan adalah meletakkan pada dasarnya strip daya. 
+
+1387
+00:56:19,560 --> 00:56:21,400
+ Strip daya cerdas. 
+
+1388
+00:56:21,400 --> 00:56:25,581
+ Dan menggunakan klasifikasi pembelajaran mesin frekuensi 
+
+1389
+00:56:25,581 --> 00:56:26,080
+ domain. 
+
+1390
+00:56:26,080 --> 00:56:27,650
+ Sebenarnya melihat komponen frekuensi 
+
+1391
+00:56:27,650 --> 00:56:28,733
+ konsumsi daya Anda. 
+
+1392
+00:56:28,733 --> 00:56:31,010
+ Itu tidak melihat berapa banyak kekuatan yang Anda konsumsi. 
+
+1393
+00:56:31,010 --> 00:56:34,530
+ Sebaliknya itu melihat seberapa sering Anda mengkonsumsinya. 
+
+1394
+00:56:34,530 --> 00:56:36,960
+ Jadi biarkan saya memberi Anda beberapa intuisi di sini. 
+
+1395
+00:56:36,960 --> 00:56:38,870
+ Jadi bayangkan Anda memiliki alat medis itu 
+
+1396
+00:56:38,870 --> 00:56:41,020
+ terinfeksi oleh malware. 
+
+1397
+00:56:41,020 --> 00:56:44,960
+ Katakanlah malware ini akan bangun setiap beberapa menit 
+
+1398
+00:56:44,960 --> 00:56:46,060
+ untuk mengirim spam. 
+
+1399
+00:56:46,060 --> 00:56:49,058
+ Bagaimana itu bisa mengubah konsumsi daya? 
+
+1400
+00:56:49,058 --> 00:56:54,220
+
+
+1401
+00:56:54,220 --> 00:56:55,108
+ Ya. 
+
+1402
+00:56:55,108 --> 00:56:56,024
+ AUDIENCE: [TIDAK JELAS]. 
+
+1403
+00:56:56,024 --> 00:56:58,535
+
+
+1404
+00:56:58,535 --> 00:57:00,660
+ PROFESOR: Ya, setiap beberapa menit yang mengganggu itu 
+
+1405
+00:57:00,660 --> 00:57:02,910
+ akan pergi, dan prosesor akan bangun. 
+
+1406
+00:57:02,910 --> 00:57:05,850
+ Itu mungkin akan meningkatkan daya ingatnya. 
+
+1407
+00:57:05,850 --> 00:57:09,400
+ Ini akan melakukan bersepeda, atau mungkin sebenarnya 
+
+1408
+00:57:09,400 --> 00:57:11,490
+ masukkan beberapa siklus ekstra dalam apa 
+
+1409
+00:57:11,490 --> 00:57:14,540
+ digunakan untuk menjadi set instruksi yang sangat konstan. 
+
+1410
+00:57:14,540 --> 00:57:17,527
+ Alat medis umumnya melakukan sekumpulan kecil benda, 
+
+1411
+00:57:17,527 --> 00:57:19,235
+ dibandingkan dengan komputer tujuan umum. 
+
+1412
+00:57:19,235 --> 00:57:21,290
+ Jadi itu pola yang sangat teratur. 
+
+1413
+00:57:21,290 --> 00:57:23,610
+ Jadi ketika Anda tiba-tiba memiliki malware masuk, 
+
+1414
+00:57:23,610 --> 00:57:27,510
+ itu hanya mengubah perilaku pola konsumsi daya. 
+
+1415
+00:57:27,510 --> 00:57:28,510
+ Jadi Anda bisa mengambilnya. 
+
+1416
+00:57:28,510 --> 00:57:29,635
+ Anda melakukan transformasi Fourier. 
+
+1417
+00:57:29,635 --> 00:57:32,640
+ Anda melakukan beberapa sihir lain yang melibatkan pembelajaran mesin. 
+
+1418
+00:57:32,640 --> 00:57:34,080
+ Iblis ada dalam detailnya. 
+
+1419
+00:57:34,080 --> 00:57:36,820
+ Tetapi pada dasarnya Anda dapat menggunakan pembelajaran mesin 
+
+1420
+00:57:36,820 --> 00:57:40,670
+ untuk mengidentifikasi dengan ketepatan yang sangat tinggi, akurasi yang sangat tinggi, 
+
+1421
+00:57:40,670 --> 00:57:42,850
+ rendah positif palsu, negatif salah rendah, 
+
+1422
+00:57:42,850 --> 00:57:45,840
+ kehadiran malware dan anomali lainnya. 
+
+1423
+00:57:45,840 --> 00:57:47,880
+ Dan itulah proyek yang dia kerjakan 
+
+1424
+00:57:47,880 --> 00:57:49,870
+ selama beberapa tahun. 
+
+1425
+00:57:49,870 --> 00:57:52,130
+ Dia awalnya menciptakan proyek ini, meskipun, 
+
+1426
+00:57:52,130 --> 00:57:54,819
+ untuk mengidentifikasi situs web apa yang sedang Anda jelajahi. 
+
+1427
+00:57:54,819 --> 00:57:57,360
+ Dan sayangnya, dia menyerahkannya ke sekelompok konferensi, 
+
+1428
+00:57:57,360 --> 00:58:01,860
+ dan mereka semua berkata, mengapa Anda ingin melakukan itu? 
+
+1429
+00:58:01,860 --> 00:58:04,410
+ Tapi itu agak menarik, karena dia memilih 50 teratas 
+
+1430
+00:58:04,410 --> 00:58:05,870
+ Situs Alexa. 
+
+1431
+00:58:05,870 --> 00:58:07,890
+ Dan kemudian dia memetakan komputernya, 
+
+1432
+00:58:07,890 --> 00:58:10,700
+ menggunakannya sebagai perangkat pelatihan untuk pembelajaran mesin, 
+
+1433
+00:58:10,700 --> 00:58:13,520
+ dan sekali lagi, dengan akurasi yang sangat tinggi, presisi yang sangat tinggi, 
+
+1434
+00:58:13,520 --> 00:58:16,350
+ dapat mengidentifikasi situs web mana yang akan Anda tuju. 
+
+1435
+00:58:16,350 --> 00:58:19,060
+ Dan kami benar-benar bingung mengapa itu berhasil sama sekali. 
+
+1436
+00:58:19,060 --> 00:58:21,370
+ Dan kita masih tidak tahu persis mengapa, 
+
+1437
+00:58:21,370 --> 00:58:22,703
+ tapi kami punya firasat kuat. 
+
+1438
+00:58:22,703 --> 00:58:26,540
+ Dan [TIDAK JELAS] Drupal. 
+
+1439
+00:58:26,540 --> 00:58:29,020
+ Jadi sudah ada gerakan selama 10 tahun terakhir 
+
+1440
+00:58:29,020 --> 00:58:33,396
+ di situs web untuk berpindah dari-- yang masih menulis dalam Emacs HTML? 
+
+1441
+00:58:33,396 --> 00:58:35,045
+ Baiklah, aku juga. 
+
+1442
+00:58:35,045 --> 00:58:37,170
+ Itu sebabnya saya memiliki semua kesalahan ini di situs web saya. 
+
+1443
+00:58:37,170 --> 00:58:40,190
+ Tetapi ada gerakan besar, khususnya 
+
+1444
+00:58:40,190 --> 00:58:43,025
+ dalam institusi, untuk memiliki kode yang dihasilkan secara otomatis 
+
+1445
+00:58:43,025 --> 00:58:47,340
+ file konten web yang mengikuti struktur yang sangat teratur. 
+
+1446
+00:58:47,340 --> 00:58:49,525
+ Jadi dapatkah Anda bayangkan jika Anda pergi ke CNN.com, 
+
+1447
+00:58:49,525 --> 00:58:52,290
+ dan mereka selalu memiliki iklan di sudut kanan atas, 
+
+1448
+00:58:52,290 --> 00:58:55,860
+ dengan animasi flash yang berlangsung tepat 22 detik? 
+
+1449
+00:58:55,860 --> 00:58:59,500
+ Jadi GPU Anda mungkin menendang pada tingkat yang sangat teratur. 
+
+1450
+00:58:59,500 --> 00:59:01,740
+ Jadi beberapa hal yang sangat menarik mengalami pendarahan 
+
+1451
+00:59:01,740 --> 00:59:04,790
+ ke dalam pola konsumsi daya dari browser web, 
+
+1452
+00:59:04,790 --> 00:59:06,820
+ dan dari hal lain di sistem operasi Anda, 
+
+1453
+00:59:06,820 --> 00:59:09,670
+ sebagai hasil dari aktivitas Anda. 
+
+1454
+00:59:09,670 --> 00:59:12,726
+ Satu-satunya situs web yang tidak bisa kami klasifikasikan dengan baik adalah GoDaddy. 
+
+1455
+00:59:12,726 --> 00:59:16,230
+ Kami masih tidak tahu mengapa, tapi kami tidak peduli. 
+
+1456
+00:59:16,230 --> 00:59:21,406
+
+
+1457
+00:59:21,406 --> 00:59:23,530
+ Jadi ini akan bercabang sedikit lebih jauh 
+
+1458
+00:59:23,530 --> 00:59:26,156
+ dari sisi keamanan. 
+
+1459
+00:59:26,156 --> 00:59:27,530
+ Tetapi salah satu hal yang Anda temukan adalah 
+
+1460
+00:59:27,530 --> 00:59:31,500
+ bahwa ketika Anda membantu kolega Anda di rumah sakit 
+
+1461
+00:59:31,500 --> 00:59:34,002
+ sistem, mereka sering meminta bantuan Anda. 
+
+1462
+00:59:34,002 --> 00:59:35,460
+ Dan salah satu proyek yang menarik 
+
+1463
+00:59:35,460 --> 00:59:37,376
+ bahwa kita terlibat dengan, murni secara tidak sengaja, 
+
+1464
+00:59:37,376 --> 00:59:40,640
+ dari beberapa pekerjaan keamanan alat pacu jantung 
+
+1465
+00:59:40,640 --> 00:59:43,800
+ dalam beberapa bantuan kemanusiaan di negara berkembang, 
+
+1466
+00:59:43,800 --> 00:59:47,010
+ terutama Ghana, untuk memberi pasien kehidupan baru. 
+
+1467
+00:59:47,010 --> 00:59:48,955
+ Secara harfiah kehidupan baru, karena ternyata 
+
+1468
+00:59:48,955 --> 00:59:50,580
+ jika Anda tidak memiliki sistem perawatan kesehatan, 
+
+1469
+00:59:50,580 --> 00:59:52,730
+ sangat sulit untuk, katakanlah, dapatkan $ 40.000 
+
+1470
+00:59:52,730 --> 00:59:54,910
+ alat pacu jantung ditambah tim bedah. 
+
+1471
+00:59:54,910 --> 00:59:56,499
+ Sangat menantang. 
+
+1472
+00:59:56,499 --> 00:59:58,040
+ Jadi apa yang mereka lakukan adalah mereka 
+
+1473
+00:59:58,040 --> 01:00:01,690
+ telah memulihkan alat pacu jantung dan defibrillator yang dibuang, 
+
+1474
+01:00:01,690 --> 01:00:02,835
+ dan kemudian mensterilkan mereka. 
+
+1475
+01:00:02,835 --> 01:00:04,210
+ Sebenarnya sangat menarik. 
+
+1476
+01:00:04,210 --> 01:00:06,001
+ Anda harus menggunakan-- baik, Anda tidak perlu-- 
+
+1477
+01:00:06,001 --> 01:00:10,260
+ tetapi yang biasanya digunakan adalah etilena oksida. 
+
+1478
+01:00:10,260 --> 01:00:12,685
+ Ini ruang gas untuk mensterilkan dan menghapus 
+
+1479
+01:00:12,685 --> 01:00:15,680
+ semua pirogen, hal-hal yang menyebabkan demam. 
+
+1480
+01:00:15,680 --> 01:00:17,130
+ Tetapi perangkat ini disterilkan, 
+
+1481
+01:00:17,130 --> 01:00:18,650
+ dan kemudian ditanam kembali pada pasien. 
+
+1482
+01:00:18,650 --> 01:00:19,810
+ Jadi, inilah seorang pria. 
+
+1483
+01:00:19,810 --> 01:00:22,010
+ Saya percaya dia menderita hati yang lambat 
+
+1484
+01:00:22,010 --> 01:00:25,050
+ tingkat, yang pada dasarnya adalah hukuman mati baginya. 
+
+1485
+01:00:25,050 --> 01:00:27,200
+ Tetapi karena dia bisa mendapatkan alat pacu jantung, 
+
+1486
+01:00:27,200 --> 01:00:29,670
+ itu memberinya tambahan usia hidup. 
+
+1487
+01:00:29,670 --> 01:00:32,470
+ Jadi masalah yang mereka hadapi adalah, 
+
+1488
+01:00:32,470 --> 01:00:35,100
+ bagaimana mereka tahu jika perangkatnya masih aman? 
+
+1489
+01:00:35,100 --> 01:00:36,990
+ Mereka bahkan tidak digunakan. 
+
+1490
+01:00:36,990 --> 01:00:39,370
+ Jadi jelas Anda bisa melihat daya tahan baterai. 
+
+1491
+01:00:39,370 --> 01:00:40,620
+ Jadi itu satu hal yang kamu lakukan. 
+
+1492
+01:00:40,620 --> 01:00:42,430
+ Dan jika baterainya terlalu rendah, Anda 
+
+1493
+01:00:42,430 --> 01:00:46,276
+ tidak akan reimplant itu, karena itu tidak akan bertahan terlalu lama. 
+
+1494
+01:00:46,276 --> 01:00:48,150
+ Tapi bagaimana dengan beberapa hal lainnya? 
+
+1495
+01:00:48,150 --> 01:00:49,887
+ Apakah beberapa logam berkarat? 
+
+1496
+01:00:49,887 --> 01:00:52,220
+ Bagaimana kami melakukan pengecekan end-to-end untuk melihat apakah Anda masih bisa 
+
+1497
+01:00:52,220 --> 01:00:54,200
+ mendeteksi aritmia dengan benar? 
+
+1498
+01:00:54,200 --> 01:00:58,360
+ Jadi para siswa di lab saya membuat penguji khusus 
+
+1499
+01:00:58,360 --> 01:01:02,770
+ yang mengirimkan apa yang Anda lihat 
+
+1500
+01:01:02,770 --> 01:01:08,860
+ dari komponen listrik aritmia jantung. 
+
+1501
+01:01:08,860 --> 01:01:10,220
+ Hal-hal selain sinusoid. 
+
+1502
+01:01:10,220 --> 01:01:12,470
+ Irama jantung yang tidak ingin Anda miliki, bukan? 
+
+1503
+01:01:12,470 --> 01:01:13,640
+ Jadi, anomali. 
+
+1504
+01:01:13,640 --> 01:01:16,000
+ Dan itu mengulang ini melawan lead alat pacu jantung. 
+
+1505
+01:01:16,000 --> 01:01:18,590
+ Alat pacu jantung berpikir itu terhubung ke pasien, 
+
+1506
+01:01:18,590 --> 01:01:19,530
+ dan kemudian ia merespons. 
+
+1507
+01:01:19,530 --> 01:01:21,030
+ Jadi kami memeriksa respons itu untuk melihat 
+
+1508
+01:01:21,030 --> 01:01:23,960
+ jika itu benar-benar mendiagnosis aritmia jantung, 
+
+1509
+01:01:23,960 --> 01:01:26,350
+ dan apakah itu benar-benar mengirimkan penyelamat 
+
+1510
+01:01:26,350 --> 01:01:28,080
+ guncangan dengan benar. 
+
+1511
+01:01:28,080 --> 01:01:33,280
+ Jadi mereka sekarang mulai menguji ini melalui seluruh FDA 
+
+1512
+01:01:33,280 --> 01:01:35,760
+ proses untuk mendapatkan berkah mereka. 
+
+1513
+01:01:35,760 --> 01:01:37,220
+ Dan itu adalah pekerjaan yang sedang berlangsung. 
+
+1514
+01:01:37,220 --> 01:01:39,660
+ Tapi itu disebut program My Heart Your Heart. 
+
+1515
+01:01:39,660 --> 01:01:42,110
+ Anda bisa mencarinya jika Anda ingin tahu tentang itu. 
+
+1516
+01:01:42,110 --> 01:01:45,000
+ Dan kemudian kami juga sedikit berinteraksi 
+
+1517
+01:01:45,000 --> 01:01:47,060
+ dengan komunitas manufaktur perangkat medis. 
+
+1518
+01:01:47,060 --> 01:01:50,720
+ Kami membawa mereka di setiap musim panas ke Ann Arbor, 
+
+1519
+01:01:50,720 --> 01:01:54,930
+ dan ada produsen yang duduk, 
+
+1520
+01:01:54,930 --> 01:01:58,230
+ sementara beberapa orang yang bertugas berlari 
+
+1521
+01:01:58,230 --> 01:01:59,980
+ rumah sakit duduk di sebelah mereka, dan mereka 
+
+1522
+01:01:59,980 --> 01:02:05,740
+ mulai berbagi keluhan dan masalah mereka dengan perangkat medis. 
+
+1523
+01:02:05,740 --> 01:02:09,270
+ Kami memiliki satu perusahaan yang masuk dan hanya mengungkapkan semua masalah 
+
+1524
+01:02:09,270 --> 01:02:11,507
+ yang tidak akan ditanggapi oleh siapa pun 
+
+1525
+01:02:11,507 --> 01:02:12,965
+ di pabrikan perangkat medis. 
+
+1526
+01:02:12,965 --> 01:02:16,550
+ Dan satu orang di sudut itu seperti, itu tim saya. 
+
+1527
+01:02:16,550 --> 01:02:18,899
+ Jadi mereka memutuskan untuk pergi makan siang, minum bir, 
+
+1528
+01:02:18,899 --> 01:02:20,190
+ dan hanya menyelesaikan masalah. 
+
+1529
+01:02:20,190 --> 01:02:21,950
+ Jadi banyak itu budaya. 
+
+1530
+01:02:21,950 --> 01:02:26,070
+ Jadi saya tidak tahu apakah ada orang di sini yang telah melakukan analisis keamanan apa pun 
+
+1531
+01:02:26,070 --> 01:02:27,890
+ bekerja, atau rekayasa balik. 
+
+1532
+01:02:27,890 --> 01:02:29,618
+ Seseorang di sini? 
+
+1533
+01:02:29,618 --> 01:02:30,710
+ Pasangan orang. 
+
+1534
+01:02:30,710 --> 01:02:32,610
+ Jadi itu sangat halus. 
+
+1535
+01:02:32,610 --> 01:02:34,710
+ Ini hampir sebuah seni, karena kamu 
+
+1536
+01:02:34,710 --> 01:02:37,430
+ berurusan dengan elemen sosial dari sisi manufaktur. 
+
+1537
+01:02:37,430 --> 01:02:39,680
+ Dan itu bahkan lebih dalam manufaktur perangkat medis, 
+
+1538
+01:02:39,680 --> 01:02:41,940
+ karena hidup dipertaruhkan. 
+
+1539
+01:02:41,940 --> 01:02:43,900
+ Dan itu bisa sangat, sangat rumit 
+
+1540
+01:02:43,900 --> 01:02:46,740
+ untuk berbagi masalah semacam ini dengan orang-orang yang 
+
+1541
+01:02:46,740 --> 01:02:48,630
+ paling bisa memperbaikinya. 
+
+1542
+01:02:48,630 --> 01:02:51,450
+ Sehingga sering menghasilkan pertemuan langsung 
+
+1543
+01:02:51,450 --> 01:02:55,810
+ dan benar-benar pergi ke fasilitas mereka. 
+
+1544
+01:02:55,810 --> 01:02:58,010
+ Jadi saya ingin menghemat lebih banyak waktu di sini. 
+
+1545
+01:02:58,010 --> 01:02:59,510
+ Semoga kita memiliki beberapa pertanyaan, 
+
+1546
+01:02:59,510 --> 01:03:02,930
+ karena saya pikir kami memiliki lima atau 10 menit. 
+
+1547
+01:03:02,930 --> 01:03:07,020
+ Tapi saya ingin menghilangkan beberapa mitos. 
+
+1548
+01:03:07,020 --> 01:03:10,630
+ Anda akan mendengar banyak berita utama surat kabar dan acara TV 
+
+1549
+01:03:10,630 --> 01:03:14,290
+ berbicara tentang peretas yang membobol perangkat medis. 
+
+1550
+01:03:14,290 --> 01:03:18,037
+ Biar saya katakan itu masalah, tapi bukan itu masalahnya. 
+
+1551
+01:03:18,037 --> 01:03:19,870
+ Ini bukan satu-satunya masalah, dan itu mungkin 
+
+1552
+01:03:19,870 --> 01:03:22,124
+ bukan masalah yang paling signifikan. 
+
+1553
+01:03:22,124 --> 01:03:24,040
+ Dan sulit untuk mengatakannya, terutama ketika Anda 
+
+1554
+01:03:24,040 --> 01:03:25,952
+ menikmati melakukan analisis keamanan. 
+
+1555
+01:03:25,952 --> 01:03:27,910
+ Sulit mengatakan itu, karena sebenarnya ada 
+
+1556
+01:03:27,910 --> 01:03:29,900
+ dua masalah yang saya pikir lebih penting. 
+
+1557
+01:03:29,900 --> 01:03:34,200
+ Salah satunya adalah mencegah tidak tersedianya skala perawatan pasien. 
+
+1558
+01:03:34,200 --> 01:03:36,080
+ Karena melupakan musuh - bagaimana jika Anda hanya 
+
+1559
+01:03:36,080 --> 01:03:37,990
+ memiliki malware yang tidak sengaja rusak 
+
+1560
+01:03:37,990 --> 01:03:40,254
+ menjadi perangkat medis dalam monokultur 
+
+1561
+01:03:40,254 --> 01:03:42,420
+ di mana mereka semua menjalankan sistem operasi yang sama? 
+
+1562
+01:03:42,420 --> 01:03:44,860
+ Apa yang terjadi ketika Anda kehilangan 50.000 infus 
+
+1563
+01:03:44,860 --> 01:03:46,470
+ pompa sekaligus? 
+
+1564
+01:03:46,470 --> 01:03:49,970
+ Sangat sulit untuk memberikan perawatan pasien. 
+
+1565
+01:03:49,970 --> 01:03:55,120
+ Salah satu kolega saya menulis kepada saya mengatakan bahwa laboratorium cath-nya berada 
+
+1566
+01:03:55,120 --> 01:03:55,780
+ matikan. 
+
+1567
+01:03:55,780 --> 01:03:58,949
+ Lab kateterisasi adalah spesialisasi yang relatif baru. 
+
+1568
+01:03:58,949 --> 01:04:00,490
+ Ini ruang operasi khusus 
+
+1569
+01:04:00,490 --> 01:04:02,600
+ untuk operasi minimal invasif. 
+
+1570
+01:04:02,600 --> 01:04:05,620
+ Dan di rumah sakitnya, mereka harus tutup 
+
+1571
+01:04:05,620 --> 01:04:08,060
+ lab kateter, karena ternyata seorang perawat 
+
+1572
+01:04:08,060 --> 01:04:10,480
+ secara tidak sengaja membawa USB stick. 
+
+1573
+01:04:10,480 --> 01:04:12,960
+ Sesuatu tentang mentransfer foto keluarga ke Yahoo. 
+
+1574
+01:04:12,960 --> 01:04:14,770
+ Dan entah bagaimana malware masuk 
+
+1575
+01:04:14,770 --> 01:04:17,300
+ dan menginfeksi laboratorium cath mereka. 
+
+1576
+01:04:17,300 --> 01:04:20,360
+ Jadi mereka harus menutupnya. 
+
+1577
+01:04:20,360 --> 01:04:22,190
+ Jadi jika Anda menunggu untuk mendapatkan angioplasty, 
+
+1578
+01:04:22,190 --> 01:04:24,106
+ pusat khusus itu tidak tersedia untuk Anda. 
+
+1579
+01:04:24,106 --> 01:04:26,520
+ Anda harus menggunakan salah satu pusat cadangan. 
+
+1580
+01:04:26,520 --> 01:04:29,940
+ Jadi ketersediaan adalah, saya pikir, salah satu hal utama yang sering terjadi 
+
+1581
+01:04:29,940 --> 01:04:32,640
+ lupa tentang keamanan. 
+
+1582
+01:04:32,640 --> 01:04:35,820
+ Yang kedua adalah integritas sensor. 
+
+1583
+01:04:35,820 --> 01:04:38,340
+ Jadi jika perangkat medis Anda terinfeksi 
+
+1584
+01:04:38,340 --> 01:04:43,240
+ oleh malware, atau segala jenis perangkat lunak berbahaya, 
+
+1585
+01:04:43,240 --> 01:04:44,490
+ hal-hal akan berubah. 
+
+1586
+01:04:44,490 --> 01:04:45,948
+ Hal-hal akan berubah dengan cara 
+
+1587
+01:04:45,948 --> 01:04:47,980
+ bahwa para perancang tidak mengantisipasi. 
+
+1588
+01:04:47,980 --> 01:04:50,240
+ Jadi contoh yang sangat sederhana. 
+
+1589
+01:04:50,240 --> 01:04:53,670
+ Katakanlah beberapa malware masuk, dan tambahkan pengatur waktu 
+
+1590
+01:04:53,670 --> 01:04:58,440
+ untuk setiap sekarang dan kemudian bangun, mengirim beberapa paket jaringan, 
+
+1591
+01:04:58,440 --> 01:05:00,630
+ dan mengirimkan beberapa spam. 
+
+1592
+01:05:00,630 --> 01:05:01,980
+ Ini butuh waktu. 
+
+1593
+01:05:01,980 --> 01:05:04,697
+ Nah, apa yang terjadi jika perangkat medis Anda diasumsikan 
+
+1594
+01:05:04,697 --> 01:05:07,030
+ bahwa ia memiliki kendali penuh atas pengendali interupsi, 
+
+1595
+01:05:07,030 --> 01:05:09,700
+ dan tiba-tiba sekarang hilang interupsi? 
+
+1596
+01:05:09,700 --> 01:05:12,720
+ Mungkin sensor memiliki beberapa data untuk disuplai 
+
+1597
+01:05:12,720 --> 01:05:14,940
+ ke perangkat medis, tetapi karena malware, 
+
+1598
+01:05:14,940 --> 01:05:16,990
+ itu melewatkan interupsi. 
+
+1599
+01:05:16,990 --> 01:05:19,420
+ Anda mungkin benar-benar memulai misdiagnosing pasien sekarang, 
+
+1600
+01:05:19,420 --> 01:05:22,977
+ karena perangkat itu akan mendapatkan data yang buruk. 
+
+1601
+01:05:22,977 --> 01:05:24,685
+ Jadi saya sangat prihatin dengan integritas 
+
+1602
+01:05:24,685 --> 01:05:25,780
+ dari sensor medis. 
+
+1603
+01:05:25,780 --> 01:05:29,210
+ Sebenarnya ada kasus kehamilan berisiko tinggi yang dilaporkan 
+
+1604
+01:05:29,210 --> 01:05:30,900
+ pantau terinfeksi malware 
+
+1605
+01:05:30,900 --> 01:05:33,400
+ dan memberikan bacaan yang salah. 
+
+1606
+01:05:33,400 --> 01:05:36,770
+ Kabar baiknya adalah seorang dokter yang sangat terlatih 
+
+1607
+01:05:36,770 --> 01:05:40,800
+ dapat melihat perangkat dan berkata, itu tidak masuk akal. 
+
+1608
+01:05:40,800 --> 01:05:44,300
+ Itu bukan nomor waras yang keluar dari perangkat medis saya. 
+
+1609
+01:05:44,300 --> 01:05:47,990
+ Tapi pada dasarnya kami mengurangi margin keamanan 
+
+1610
+01:05:47,990 --> 01:05:52,859
+ ketika kita tidak dapat memiliki integritas sensor medis kita. 
+
+1611
+01:05:52,859 --> 01:05:54,775
+ Seperti yang saya sebutkan, sangat sulit untuk mengatasi ini 
+
+1612
+01:05:54,775 --> 01:05:57,570
+ hal-hal setelah fakta. 
+
+1613
+01:05:57,570 --> 01:06:00,100
+ Anda pikir mengubah perangkat lunak sulit pada skala internet? 
+
+1614
+01:06:00,100 --> 01:06:01,690
+ Cobalah di perangkat medis. 
+
+1615
+01:06:01,690 --> 01:06:06,070
+ Jadi saya bertemu dengan seorang pria dari satu rumah sakit di mana MRI-nya masih 
+
+1616
+01:06:06,070 --> 01:06:08,840
+ berjalan di Windows 95. 
+
+1617
+01:06:08,840 --> 01:06:14,040
+ Saya memiliki programmer pacemaker yang berjalan di OS / 2. 
+
+1618
+01:06:14,040 --> 01:06:17,440
+ Dan mereka baru saja meng-upgrade ke Windows XP. 
+
+1619
+01:06:17,440 --> 01:06:21,100
+ Jadi mereka memiliki barang-barang lama di luar sana, jadi berubah 
+
+1620
+01:06:21,100 --> 01:06:25,410
+ hal-hal untuk keamanan setelah fakta itu akan menjadi sulit. 
+
+1621
+01:06:25,410 --> 01:06:28,700
+ Bukan tidak mungkin, tetapi sulit. Dan alasan lainnya 
+
+1622
+01:06:28,700 --> 01:06:31,380
+ adalah gangguan alur kerja klinis. 
+
+1623
+01:06:31,380 --> 01:06:32,880
+ Jika Anda pernah pergi dan ingin memulai 
+
+1624
+01:06:32,880 --> 01:06:35,585
+ mengimplementasikan perangkat medis atau melakukan sesuatu 
+
+1625
+01:06:35,585 --> 01:06:36,960
+ keamanan terkait untuk perawatan kesehatan, 
+
+1626
+01:06:36,960 --> 01:06:39,050
+ Saya mendorong Anda untuk pergi dan memanggil beberapa orang, 
+
+1627
+01:06:39,050 --> 01:06:41,050
+ dan berkata, hei, bisakah saya masuk ke ruang operasi Anda? 
+
+1628
+01:06:41,050 --> 01:06:43,630
+ Itu yang kami lakukan. 
+
+1629
+01:06:43,630 --> 01:06:45,850
+ Karena Anda akan melihat beberapa hal aneh terjadi. 
+
+1630
+01:06:45,850 --> 01:06:49,360
+ Saya mengambil semua murid saya untuk menjalani operasi, bedah pediatrik. 
+
+1631
+01:06:49,360 --> 01:06:52,040
+ Dan saat mereka mengawasi operasi, 
+
+1632
+01:06:52,040 --> 01:06:55,626
+ mereka mengawasi satu dokter yang memeriksa Gmail 
+
+1633
+01:06:55,626 --> 01:06:57,385
+ di salah satu perangkat medis. 
+
+1634
+01:06:57,385 --> 01:07:01,780
+ Dan mereka seperti, oh OK, jadi, unduhan drive-by, periksa. 
+
+1635
+01:07:01,780 --> 01:07:04,940
+ Pada saat yang sama, mereka ingin menenangkan pasien, 
+
+1636
+01:07:04,940 --> 01:07:10,290
+ jadi mereka masuk ke Pandora untuk memutar musik. 
+
+1637
+01:07:10,290 --> 01:07:12,290
+ Sebenarnya saya baru saja ke dokter gigi saya hari itu, 
+
+1638
+01:07:12,290 --> 01:07:13,900
+ dan dia sedang bermain Pandora. 
+
+1639
+01:07:13,900 --> 01:07:18,290
+ Dan iklan-iklan ini untuk berbagai bir mulai muncul di layar 
+
+1640
+01:07:18,290 --> 01:07:19,915
+ saat dia melihat dental x-rays saya. 
+
+1641
+01:07:19,915 --> 01:07:22,825
+ Dan saya mencoba mencari tahu mengapa Dos Equis ada di ... Saya 
+
+1642
+01:07:22,825 --> 01:07:26,191
+ seperti, apakah saya minum sebanyak itu? 
+
+1643
+01:07:26,191 --> 01:07:27,940
+ Dia seperti, tidak, kami hanya memainkan Pandora di sini. 
+
+1644
+01:07:27,940 --> 01:07:31,080
+ Ini adalah browser web yang sama, dan klik saja di sini. 
+
+1645
+01:07:31,080 --> 01:07:34,440
+ Jadi ada banyak pencampuran yang terjadi. 
+
+1646
+01:07:34,440 --> 01:07:37,730
+ Mungkin itu tidak berbahaya, tetapi membuka celah. 
+
+1647
+01:07:37,730 --> 01:07:39,450
+ Ini tidak terlihat, jauh dari pikiran. 
+
+1648
+01:07:39,450 --> 01:07:41,870
+ Teknik mencuci tangan steril 
+
+1649
+01:07:41,870 --> 01:07:44,630
+ didorong ke dalam pola pikir siapa pun yang seorang dokter. 
+
+1650
+01:07:44,630 --> 01:07:45,560
+ Cuci tanganmu. 
+
+1651
+01:07:45,560 --> 01:07:47,470
+ Jangan sentuh sarung tangan setelah Anda memakainya. 
+
+1652
+01:07:47,470 --> 01:07:49,170
+ Tetapi ketika datang ke kebersihan keamanan, 
+
+1653
+01:07:49,170 --> 01:07:51,000
+ itu benar-benar keluar dari pikiran, keluar dari pikiran. 
+
+1654
+01:07:51,000 --> 01:07:52,602
+ Ini bukan bagian dari budaya. 
+
+1655
+01:07:52,602 --> 01:07:54,060
+ Mereka bahkan tidak menyadari mereka seharusnya 
+
+1656
+01:07:54,060 --> 01:07:55,260
+ menanyakan pertanyaan-pertanyaan ini. 
+
+1657
+01:07:55,260 --> 01:07:57,680
+ Haruskah saya menjalankan Pandora di perangkat yang sama 
+
+1658
+01:07:57,680 --> 01:08:00,657
+ mengendalikan x-rays saya? 
+
+1659
+01:08:00,657 --> 01:08:02,740
+ Jadi tapi yang penting ada di sisi desainer 
+
+1660
+01:08:02,740 --> 01:08:04,480
+ bukan untuk mengganggu alur kerja klinis. 
+
+1661
+01:08:04,480 --> 01:08:05,920
+ Karena saat itulah kesalahan terjadi. 
+
+1662
+01:08:05,920 --> 01:08:07,540
+ Anda ingin menjaga alur kerja klinis 
+
+1663
+01:08:07,540 --> 01:08:11,960
+ teratur, dapat diprediksi, mudah bagi mereka untuk membuat keputusan. 
+
+1664
+01:08:11,960 --> 01:08:16,202
+ Dan jika Anda menambahkan kotak dialog baru untuk memasukkan kata sandi, apa 
+
+1665
+01:08:16,202 --> 01:08:18,410
+ apakah Anda pikir masalah bisa berada di ruang operasi 
+
+1666
+01:08:18,410 --> 01:08:20,620
+ jika Anda meminta dokter untuk memasukkan kata sandi, katakan, 
+
+1667
+01:08:20,620 --> 01:08:21,640
+ setiap sepuluh menit? 
+
+1668
+01:08:21,640 --> 01:08:28,540
+
+
+1669
+01:08:28,540 --> 01:08:29,689
+ Gangguan? 
+
+1670
+01:08:29,689 --> 01:08:31,640
+ Anda duduk di sana, melakukan ini, bukan? 
+
+1671
+01:08:31,640 --> 01:08:32,700
+ Pisau bedah. 
+
+1672
+01:08:32,700 --> 01:08:34,694
+ Oh, ya, biarkan aku berjalan kesini dan mengetikkan namaku 
+
+1673
+01:08:34,694 --> 01:08:36,249
+ pass-- oh, tidak, aku memakai sarung tanganku. 
+
+1674
+01:08:36,250 --> 01:08:37,580
+ Biarkan saya melepasnya. 
+
+1675
+01:08:37,580 --> 01:08:39,390
+ Oh, aku harus ganti rugi sekarang. 
+
+1676
+01:08:39,390 --> 01:08:40,630
+ Perawat! 
+
+1677
+01:08:40,630 --> 01:08:43,050
+ Jadi jika Anda seorang insinyur keamanan, 
+
+1678
+01:08:43,050 --> 01:08:45,020
+ Anda harus mempertimbangkan semuanya 
+
+1679
+01:08:45,020 --> 01:08:48,380
+ kondisi khusus dari pengaturan klinis dengan infeksi 
+
+1680
+01:08:48,380 --> 01:08:49,170
+ kontrol. 
+
+1681
+01:08:49,170 --> 01:08:51,361
+ Yang, anehnya, tidak semua orang tahu. 
+
+1682
+01:08:51,361 --> 01:08:53,569
+ Pasti ada beberapa insinyur yang sangat berbakat 
+
+1683
+01:08:53,569 --> 01:08:57,826
+ tahu tentang itu, tetapi tidak cukup. 
+
+1684
+01:08:57,826 --> 01:08:59,670
+ Masalah besar lainnya adalah saya perhatikan 
+
+1685
+01:08:59,670 --> 01:09:06,689
+ bahwa orang-orang keamanan cenderung berspesialisasi dalam mekanisme 
+
+1686
+01:09:06,689 --> 01:09:08,130
+ untuk mengontrol keamanan. 
+
+1687
+01:09:08,130 --> 01:09:09,330
+ Anda dapat menggunakan crypto. 
+
+1688
+01:09:09,330 --> 01:09:12,790
+ Saya tahu CBC mode ini, dan saya tahu kunci publik crypto ini. 
+
+1689
+01:09:12,790 --> 01:09:14,370
+ Itu hebat. 
+
+1690
+01:09:14,370 --> 01:09:16,330
+ Dan Anda tahu cara mencegah masalah. 
+
+1691
+01:09:16,330 --> 01:09:18,609
+ Anda tahu cara mendeteksi masalah. 
+
+1692
+01:09:18,609 --> 01:09:20,240
+ Masalahnya adalah dari dunia medis. 
+
+1693
+01:09:20,240 --> 01:09:21,740
+ Kebanyakan orang di dunia medis 
+
+1694
+01:09:21,740 --> 01:09:23,510
+ berasal dari pola pikir yang sangat berbeda, satu 
+
+1695
+01:09:23,510 --> 01:09:25,720
+ itu disebut manajemen risiko. 
+
+1696
+01:09:25,720 --> 01:09:27,580
+ Biarkan saya mencoba menjelaskannya. 
+
+1697
+01:09:27,580 --> 01:09:29,960
+ Dalam manajemen risiko, Anda melihat risiko dan manfaat, 
+
+1698
+01:09:29,960 --> 01:09:31,910
+ dan Anda bertanya pada diri sendiri, apakah mereka seimbang? 
+
+1699
+01:09:31,910 --> 01:09:35,609
+ Jika saya mengambil tindakan, apakah itu meningkatkan manajemen risiko saya 
+
+1700
+01:09:35,609 --> 01:09:36,318
+ pandangan? 
+
+1701
+01:09:36,318 --> 01:09:38,109
+ Jadi jika Anda akan memutuskan, misalnya, 
+
+1702
+01:09:38,109 --> 01:09:41,920
+ saya akan menyebarkan sistem kata sandi 
+
+1703
+01:09:41,920 --> 01:09:43,765
+ di semua perangkat medis saya. 
+
+1704
+01:09:43,765 --> 01:09:46,259
+ Seorang petugas keamanan mungkin berkata, ya, 
+
+1705
+01:09:46,259 --> 01:09:48,050
+ tentu saja Anda akan menggunakan kata sandi, 
+
+1706
+01:09:48,050 --> 01:09:49,819
+ karena Anda perlu mengotentikasi. 
+
+1707
+01:09:49,819 --> 01:09:52,500
+ Petugas keamanan mungkin berkata, baik, tunggu sebentar. 
+
+1708
+01:09:52,500 --> 01:09:56,310
+ Jika saya mengharuskan kami memiliki kata sandi di setiap sistem, 
+
+1709
+01:09:56,310 --> 01:09:58,910
+ kita akan khawatir tentang sterilisasi. 
+
+1710
+01:09:58,910 --> 01:10:00,900
+ Bagaimana kita tahu seberapa sering waktu berakhir? 
+
+1711
+01:10:00,900 --> 01:10:02,710
+ Dan bagaimana dengan akses darurat? 
+
+1712
+01:10:02,710 --> 01:10:04,300
+ Bagaimana jika kita lupa kata sandinya? 
+
+1713
+01:10:04,300 --> 01:10:07,459
+ Kami ingin memastikan kami bisa mendapatkan waktu respon dalam 30 detik. 
+
+1714
+01:10:07,459 --> 01:10:09,500
+ Jadi mereka mungkin benar-benar membuat keputusan yang berbeda. 
+
+1715
+01:10:09,500 --> 01:10:12,280
+ Mereka mungkin benar-benar memutuskan untuk tidak memiliki kata sandi sama sekali. 
+
+1716
+01:10:12,280 --> 01:10:14,930
+ Sebenarnya banyak rumah sakit tidak memiliki kata sandi. 
+
+1717
+01:10:14,930 --> 01:10:18,190
+ Maaf, banyak rumah sakit tidak memiliki kontrol akses 
+
+1718
+01:10:18,190 --> 01:10:19,030
+ pada catatan medis. 
+
+1719
+01:10:19,030 --> 01:10:21,610
+ Sebaliknya mereka memiliki apa yang disebut kontrol akses berbasis audit. 
+
+1720
+01:10:21,610 --> 01:10:23,860
+ Sesudah itu, jika Anda melihat sesuatu yang tidak seharusnya Anda lakukan 
+
+1721
+01:10:23,860 --> 01:10:25,860
+ lihat, mereka datang menangkapmu. 
+
+1722
+01:10:25,860 --> 01:10:28,540
+ Karena mereka tahu bahwa sangat sulit memprediksi apa 
+
+1723
+01:10:28,540 --> 01:10:30,040
+ Anda akan membutuhkannya dalam rutinitas Anda 
+
+1724
+01:10:30,040 --> 01:10:32,390
+ alur kerja klinis Anda. 
+
+1725
+01:10:32,390 --> 01:10:35,560
+ Jadi cara manajemen risiko seperti itu 
+
+1726
+01:10:35,560 --> 01:10:39,120
+ akan bergantung pada penggelaran kontrol keamanan 
+
+1727
+01:10:39,120 --> 01:10:40,822
+ dan semua teknologi belajar tentang. 
+
+1728
+01:10:40,822 --> 01:10:42,280
+ Tetapi dalam gambar manajemen risiko, 
+
+1729
+01:10:42,280 --> 01:10:44,530
+ Anda mungkin benar-benar memutuskan untuk tidak menyebarkan sesuatu, 
+
+1730
+01:10:44,530 --> 01:10:48,120
+ karena bisa menyebabkan bahaya di tempat lain. 
+
+1731
+01:10:48,120 --> 01:10:49,770
+ Tetapi perangkat lunak perangkat medis yang dapat dipercaya 
+
+1732
+01:10:49,770 --> 01:10:52,880
+ akan membutuhkan keduanya. 
+
+1733
+01:10:52,880 --> 01:10:54,857
+ Jadi saya akan menyelesaikannya di sini. 
+
+1734
+01:10:54,857 --> 01:10:56,940
+ Saya pikir ada banyak hal yang menarik untuk dilakukan. 
+
+1735
+01:10:56,940 --> 01:10:59,104
+ Jadi Anda mengambil kursus keamanan yang keren ini. 
+
+1736
+01:10:59,104 --> 01:11:01,020
+ Saya mendorong Anda untuk keluar dan menggunakan alat-alat itu. 
+
+1737
+01:11:01,020 --> 01:11:03,280
+ Tapi saat Anda memikirkan ke mana harus pergi setelah itu, 
+
+1738
+01:11:03,280 --> 01:11:05,060
+ apakah itu sekolah industri atau pascasarjana, 
+
+1739
+01:11:05,060 --> 01:11:07,435
+ pikirkan tentang perangkat medis, karena mereka membutuhkan bantuan Anda. 
+
+1740
+01:11:07,435 --> 01:11:09,430
+ Mereka membutuhkan banyak orang pintar di sana. 
+
+1741
+01:11:09,430 --> 01:11:12,080
+ Dan hanya ada satu hal yang hilang - Anda. 
+
+1742
+01:11:12,080 --> 01:11:14,410
+ Dan saya pikir ada banyak hal yang menarik 
+
+1743
+01:11:14,410 --> 01:11:15,590
+ masih harus dilakukan. 
+
+1744
+01:11:15,590 --> 01:11:17,932
+ Jadi saya pikir kami memiliki lima atau 10 menit atau lebih. 
+
+1745
+01:11:17,932 --> 01:11:19,390
+ Saya akan senang mengambil beberapa pertanyaan. 
+
+1746
+01:11:19,390 --> 01:11:20,640
+ Atau saya bisa lebih mendalam. 
+
+1747
+01:11:20,640 --> 01:11:22,730
+ Saya mendapat beberapa video lucu yang bisa saya tunjukkan. 
+
+1748
+01:11:22,730 --> 01:11:25,810
+ Tapi saya pikir saya setidaknya akan beristirahat sejenak 
+
+1749
+01:11:25,810 --> 01:11:28,628
+ untuk melihat apakah Anda memiliki pertanyaan. 
+
+1750
+01:11:28,628 --> 01:11:29,128
+ Iya nih? 
+
+1751
+01:11:29,128 --> 01:11:31,096
+ AUDIENCE: Jadi alat pacu jantung itu atau apalah 
+
+1752
+01:11:31,096 --> 01:11:35,086
+ itu adalah bahwa Anda berkeliling, apakah itu [tidak terdengar]. 
+
+1753
+01:11:35,086 --> 01:11:36,460
+ PROFESOR: Oh, defibrillator. 
+
+1754
+01:11:36,460 --> 01:11:37,085
+ AUDIENCE: Ya. 
+
+1755
+01:11:37,085 --> 01:11:41,448
+ Bagaimana itu berinteraksi dengan fakta 
+
+1756
+01:11:41,448 --> 01:11:44,370
+ bahwa mereka [TIDAK JELAS] hal-hal semacam ini. 
+
+1757
+01:11:44,370 --> 01:11:46,132
+ PROFESOR: OK jadi beberapa hal. 
+
+1758
+01:11:46,132 --> 01:11:48,340
+ Jadi ada defibrillator dan ada alat pacu jantung. 
+
+1759
+01:11:48,340 --> 01:11:50,650
+ Mereka sangat terkait. 
+
+1760
+01:11:50,650 --> 01:11:51,850
+ Ini adalah defibrillator. 
+
+1761
+01:11:51,850 --> 01:11:53,320
+ Ini mengirimkan guncangan besar. 
+
+1762
+01:11:53,320 --> 01:11:55,570
+ Alat pacu jantung mengirimkan guncangan kecil. 
+
+1763
+01:11:55,570 --> 01:11:59,020
+ Tetapi di AS, itu ilegal untuk menerapkan kembali ini. 
+
+1764
+01:11:59,020 --> 01:12:01,110
+ Jadi tidak masalah jika kamu bisa. 
+
+1765
+01:12:01,110 --> 01:12:02,670
+ Itu ilegal. 
+
+1766
+01:12:02,670 --> 01:12:05,720
+ Tetapi di banyak negara berkembang, itu tidak ilegal. 
+
+1767
+01:12:05,720 --> 01:12:08,150
+ Dan jika Anda melihat dari-- biarkan saya membuat cadangan slide. 
+
+1768
+01:12:08,150 --> 01:12:10,730
+
+
+1769
+01:12:10,730 --> 01:12:14,110
+ Jika Anda melihat dari bukan mekanisme kontrol, tetapi risikonya 
+
+1770
+01:12:14,110 --> 01:12:16,840
+ sisi manajemen persamaan, mungkin sebenarnya 
+
+1771
+01:12:16,840 --> 01:12:19,750
+ mengarah ke hasil kesehatan masyarakat yang lebih baik 
+
+1772
+01:12:19,750 --> 01:12:22,750
+ untuk memungkinkan reimplantasi dan penggunaan kembali di negara berkembang 
+
+1773
+01:12:22,750 --> 01:12:25,646
+ di mana mereka tidak punya pilihan lain. 
+
+1774
+01:12:25,646 --> 01:12:26,890
+ Dan ini bukan proyek saya. 
+
+1775
+01:12:26,890 --> 01:12:29,600
+ Ini hanya proyek yang kami bantu. 
+
+1776
+01:12:29,600 --> 01:12:32,280
+ Tetapi dalam kasus itu, pasien benar-benar tidak punya pilihan. 
+
+1777
+01:12:32,280 --> 01:12:34,670
+ Pada dasarnya ini adalah hukuman mati. 
+
+1778
+01:12:34,670 --> 01:12:36,804
+ Untuk mensterilkannya itu cukup rumit. 
+
+1779
+01:12:36,804 --> 01:12:38,720
+ Ada banyak sains dan teknik 
+
+1780
+01:12:38,720 --> 01:12:40,970
+ yang masuk ke cara mensterilkan dengan benar 
+
+1781
+01:12:40,970 --> 01:12:44,020
+ untuk menyingkirkan patogen. 
+
+1782
+01:12:44,020 --> 01:12:48,560
+ Karena ini dalam darah, jadi pembersih abrasif pertama, 
+
+1783
+01:12:48,560 --> 01:12:50,710
+ tetapi etilena oksida adalah salah satu cara 
+
+1784
+01:12:50,710 --> 01:12:52,974
+ untuk menghancurkan sebagian besar, jika tidak semua, dari patogen. 
+
+1785
+01:12:52,974 --> 01:12:54,390
+ Ada prosedur pengujian keseluruhan. 
+
+1786
+01:12:54,390 --> 01:12:58,155
+ Anda benar-benar menempatkan little-- kecil saya 
+
+1787
+01:12:58,155 --> 01:12:59,280
+ lupa apa yang mereka sebut. 
+
+1788
+01:12:59,280 --> 01:13:02,610
+ Mereka wafers-- kecil dengan jumlah patogen yang diketahui. 
+
+1789
+01:13:02,610 --> 01:13:05,120
+ Dan Anda taruh di samping beberapa perangkat 
+
+1790
+01:13:05,120 --> 01:13:08,200
+ saat masuk ke ruangan, dan ketika Anda menariknya keluar, 
+
+1791
+01:13:08,200 --> 01:13:12,710
+ Anda menguji untuk melihat apakah semua organisme itu telah terbunuh. 
+
+1792
+01:13:12,710 --> 01:13:14,220
+ Apakah itu menjawab semua pertanyaan Anda? 
+
+1793
+01:13:14,220 --> 01:13:16,610
+ Anda memiliki tindak lanjut. 
+
+1794
+01:13:16,610 --> 01:13:17,180
+ BAIK. 
+
+1795
+01:13:17,180 --> 01:13:17,680
+ Iya nih? 
+
+1796
+01:13:17,680 --> 01:13:20,224
+ AUDIENCE: Jadi apa yang Anda katakan, integritas sensor 
+
+1797
+01:13:20,224 --> 01:13:22,190
+ adalah risiko lebih besar untuk serangan peretas, 
+
+1798
+01:13:22,190 --> 01:13:26,776
+ karena sebagian besar contoh gangguan sensorik yang Anda tunjukkan 
+
+1799
+01:13:26,776 --> 01:13:28,240
+ adalah gangguan yang disengaja. 
+
+1800
+01:13:28,240 --> 01:13:29,916
+ Jadi itu semacam [INAUDIBLE]. 
+
+1801
+01:13:29,916 --> 01:13:31,290
+ PROFESOR: Oh, jadi pertanyaannya adalah 
+
+1802
+01:13:31,290 --> 01:13:36,070
+ mengapa fokus pada integritas sensor daripada peretasan, 
+
+1803
+01:13:36,070 --> 01:13:38,220
+ karena semua yang saya tunjukkan adalah tentang peretasan? 
+
+1804
+01:13:38,220 --> 01:13:40,340
+ Itu bias seleksi. 
+
+1805
+01:13:40,340 --> 01:13:42,460
+ Saya memilih kasus-kasus itu, tetapi itu tidak berarti 
+
+1806
+01:13:42,460 --> 01:13:45,300
+ itu relevan secara statistik. 
+
+1807
+01:13:45,300 --> 01:13:48,850
+ Saya dibagi menjadi dua kasus - mungkin tiga. 
+
+1808
+01:13:48,850 --> 01:13:50,890
+ Masa lalu, masa sekarang, dan masa depan. 
+
+1809
+01:13:50,890 --> 01:13:54,805
+ Jadi pada saat ini, sebagian besar masalah 
+
+1810
+01:13:54,805 --> 01:13:58,145
+ kami melihat dari malware dalam pengawasan sangat mendasar kami 
+
+1811
+01:13:58,145 --> 01:14:01,090
+ perangkat medis ada hubungannya dengan malware yang secara tidak sengaja 
+
+1812
+01:14:01,090 --> 01:14:05,280
+ masuk, dan kemudian menyebabkan nyaris mati dan malfungsi. 
+
+1813
+01:14:05,280 --> 01:14:06,470
+ Tapi kita bukan boneka. 
+
+1814
+01:14:06,470 --> 01:14:08,830
+ Kami tahu bahwa mungkin ada musuh yang disengaja 
+
+1815
+01:14:08,830 --> 01:14:09,800
+ di masa depan. 
+
+1816
+01:14:09,800 --> 01:14:11,570
+ Mereka belum terwujud. 
+
+1817
+01:14:11,570 --> 01:14:15,480
+ Contoh terdekatnya adalah - ini 
+
+1818
+01:14:15,480 --> 01:14:16,750
+ hanya dari laporan berita. 
+
+1819
+01:14:16,750 --> 01:14:18,125
+ Saya tidak tahu apakah itu benar, tetapi itu 
+
+1820
+01:14:18,125 --> 01:14:20,720
+ adalah dari saya percaya New York Times-- 
+
+1821
+01:14:20,720 --> 01:14:23,150
+ bahwa ada rumah sakit. 
+
+1822
+01:14:23,150 --> 01:14:25,586
+ CHS, saya pikir, adalah rumah sakit, Di mana 
+
+1823
+01:14:25,586 --> 01:14:27,460
+ mereka membawa perusahaan keamanan, Mandiant. 
+
+1824
+01:14:27,460 --> 01:14:32,000
+ Dan mereka percaya bahwa sebuah negara telah benar-benar datang 
+
+1825
+01:14:32,000 --> 01:14:33,540
+ untuk mencuri catatan medis. 
+
+1826
+01:14:33,540 --> 01:14:36,710
+ Mereka tidak tahu persis mengapa, tetapi negara bangsa. 
+
+1827
+01:14:36,710 --> 01:14:38,900
+ Dan negara bangsa adalah musuh yang kuat, bukan? 
+
+1828
+01:14:38,900 --> 01:14:40,441
+ Jika Anda berlari melawan negara bangsa, 
+
+1829
+01:14:40,441 --> 01:14:43,995
+ Anda mungkin juga menyerah, karena tidak ada kontrol ini 
+
+1830
+01:14:43,995 --> 01:14:45,490
+ akan membantu Anda. 
+
+1831
+01:14:45,490 --> 01:14:47,024
+ Tapi inilah kekhawatiran saya. 
+
+1832
+01:14:47,024 --> 01:14:48,440
+ Jika negara bangsa, misalnya, 
+
+1833
+01:14:48,440 --> 01:14:51,350
+ sangat berdedikasi untuk mendapatkan satu informasi, 
+
+1834
+01:14:51,350 --> 01:14:53,897
+ bagaimana jika mereka membuat-- mereka juga manusia, kan? 
+
+1835
+01:14:53,897 --> 01:14:55,605
+ Bagaimana jika mereka membuat kesalahan di sepanjang jalan 
+
+1836
+01:14:55,605 --> 01:14:57,146
+ dan secara tidak sengaja menabrak alat medis 
+
+1837
+01:14:57,146 --> 01:15:00,340
+ saat mereka mencoba mengekstrak informasi apa pun 
+
+1838
+01:15:00,340 --> 01:15:02,210
+ mereka mencoba untuk mendapatkan? 
+
+1839
+01:15:02,210 --> 01:15:05,890
+ Dan itu bisa mempengaruhi integritas. 
+
+1840
+01:15:05,890 --> 01:15:09,440
+ Di masa mendatang, mungkin ada beberapa contoh malware khusus, 
+
+1841
+01:15:09,440 --> 01:15:16,050
+ tapi saya pikir itu membutuhkan satu langkah lebih dari seseorang 
+
+1842
+01:15:16,050 --> 01:15:19,952
+ benar-benar ingin menyebabkan kerusakan. 
+
+1843
+01:15:19,952 --> 01:15:21,660
+ Dan saya berharap tidak terlalu banyak 
+
+1844
+01:15:21,660 --> 01:15:23,030
+ dari orang macam itu. 
+
+1845
+01:15:23,030 --> 01:15:24,960
+ Tetapi ada orang yang menulis malware 
+
+1846
+01:15:24,960 --> 01:15:26,600
+ yang tidak menyadari bahwa malware itu ada 
+
+1847
+01:15:26,600 --> 01:15:28,216
+ ke perangkat medis di rumah sakit, 
+
+1848
+01:15:28,216 --> 00:00:00,000
+ dan itu masih menyebabkan masalah. 
+

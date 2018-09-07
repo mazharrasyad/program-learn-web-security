@@ -1,0 +1,960 @@
+1
+00:00:08,540 --> 00:00:10,800
+ hey semua orang <font color="#E5E5E5">John bergoyang-goyang di sini dengan </font>
+
+2
+00:00:10,800 --> 00:00:12,030
+ <font color="#CCCCCC">Pusat deb kami datang kepada Anda </font><font color="#E5E5E5">dengan </font>
+
+3
+00:00:12,030 --> 00:00:14,070
+ <font color="#E5E5E5">video pelajaran papan cahaya lain dan </font>
+
+4
+00:00:14,070 --> 00:00:15,990
+ hari ini kita akan <font color="#E5E5E5">membahas </font><font color="#CCCCCC">satu lagi </font>
+
+5
+00:00:15,990 --> 00:00:18,840
+ <font color="#CCCCCC">sepuluh keamanan OWASP berisiko keluar </font>
+
+6
+00:00:18,840 --> 00:00:20,789
+ <font color="#CCCCCC">di sana dan versi baru baru saja keluar </font>
+
+7
+00:00:20,789 --> 00:00:24,029
+ baru <font color="#E5E5E5">- baru ini dan kembali pada 2017 </font><font color="#CCCCCC">hari ini kami </font>
+
+8
+00:00:24,029 --> 00:00:26,060
+ akan <font color="#E5E5E5">berbicara tentang nomor lima </font>
+
+9
+00:00:26,060 --> 00:00:28,050
+ <font color="#E5E5E5">kerentanan di luar sana nomor lima </font>
+
+10
+00:00:28,050 --> 00:00:29,580
+ <font color="#E5E5E5">risiko keamanan dan itu disebut rusak </font>
+
+11
+00:00:29,580 --> 00:00:32,700
+ akses <font color="#E5E5E5">kontrol yang sangat cepat ini </font>
+
+12
+00:00:32,700 --> 00:00:34,320
+ <font color="#E5E5E5">tidak menjadi bingung </font>
+
+13
+00:00:34,320 --> 00:00:36,360
+ otentikasi beberapa orang membingungkan 
+
+14
+00:00:36,360 --> 00:00:39,000
+ otentikasi dan <font color="#CCCCCC">otentikasi akses </font>
+
+15
+00:00:39,000 --> 00:00:42,120
+ sedang memverifikasi identitas Anda seperti hei <font color="#E5E5E5">jika </font>
+
+16
+00:00:42,120 --> 00:00:44,579
+ Saya akan mengakses sesuatu yang <font color="#E5E5E5">dibutuhkan seseorang </font>
+
+17
+00:00:44,579 --> 00:00:46,440
+ untuk <font color="#E5E5E5">memastikan</font><font color="#CCCCCC"> hey kau John atau tidak </font>
+
+18
+00:00:46,440 --> 00:00:49,260
+ <font color="#E5E5E5">itu </font><font color="#CCCCCC">kontrol akses </font><font color="#E5E5E5">otentikasi </font>
+
+19
+00:00:49,260 --> 00:00:52,469
+ sebagai tentang memberi saya <font color="#CCCCCC">akses </font><font color="#E5E5E5">ke </font>
+
+20
+00:00:52,469 --> 00:00:54,570
+ <font color="#CCCCCC">sumber daya berbeda </font><font color="#E5E5E5">yang </font><font color="#CCCCCC">harus saya peroleh </font>
+
+21
+00:00:54,570 --> 00:00:56,699
+ akses <font color="#E5E5E5">atau terus terang menjauhkan saya </font>
+
+22
+00:00:56,699 --> 00:00:59,010
+ <font color="#CCCCCC">dari sumber yang </font><font color="#E5E5E5">saya tidak </font><font color="#CCCCCC">perlu </font>
+
+23
+00:00:59,010 --> 00:01:01,710
+ <font color="#E5E5E5">menjadi sangat menyentuh sehingga ketika kita berbicara tentang </font>
+
+24
+00:01:01,710 --> 00:01:06,210
+ <font color="#CCCCCC">kontrol akses itu adalah itu adalah </font><font color="#E5E5E5">mengambil </font>
+
+25
+00:01:06,210 --> 00:01:09,740
+ <font color="#CCCCCC">akses yang Anda </font><font color="#E5E5E5">butuhkan untuk memberi beberapa pengguna </font>
+
+26
+00:01:09,740 --> 00:01:12,090
+ memungkinkan mereka mengakses <font color="#CCCCCC">fungsi dan </font>
+
+27
+00:01:12,090 --> 00:01:13,650
+ fitur dan kemudian menjaga orang lain 
+
+28
+00:01:13,650 --> 00:01:16,140
+ <font color="#E5E5E5">begitu baik-baik saja dengan yang mengatakan mari </font>
+
+29
+00:01:16,140 --> 00:01:20,340
+ katakanlah Anda memiliki <font color="#E5E5E5">web kelas dunia Anda </font>
+
+30
+00:01:20,340 --> 00:01:24,540
+ aplikasi di sini <font color="#E5E5E5">dan itu terdiri dari </font>
+
+31
+00:01:24,540 --> 00:01:26,490
+ banyak <font color="#E5E5E5">hal yang berbeda tetapi dibangun </font>
+
+32
+00:01:26,490 --> 00:01:28,470
+ dalam hal ini <font color="#CCCCCC">Anda memiliki perbedaan </font>
+
+33
+00:01:28,470 --> 00:01:31,290
+ fungsi dan <font color="#E5E5E5">fitur berbeda dan dan </font>
+
+34
+00:01:31,290 --> 00:01:33,720
+ <font color="#E5E5E5">hal-hal semacam itu jadi mari kita katakan </font><font color="#CCCCCC">untuk </font>
+
+35
+00:01:33,720 --> 00:01:36,570
+ Misalnya Anda memiliki seperti admin 
+
+36
+00:01:36,570 --> 00:01:39,479
+ fungsi <font color="#CCCCCC">jadi inilah sedikit admin </font>
+
+37
+00:01:39,479 --> 00:01:42,030
+ potongan di sini <font color="#E5E5E5">katakanlah Anda memiliki saya </font>
+
+38
+00:01:42,030 --> 00:01:45,079
+ <font color="#E5E5E5">akan menyebutnya seperti Anda tahu normal </font>
+
+39
+00:01:45,079 --> 00:01:50,130
+ <font color="#E5E5E5">fungsi pengguna normal yang Anda inginkan </font>
+
+40
+00:01:50,130 --> 00:01:51,720
+ <font color="#E5E5E5">ingin ada orang yang memiliki ini seperti </font>
+
+41
+00:01:51,720 --> 00:01:53,939
+ <font color="#CCCCCC">bahwa </font><font color="#E5E5E5">hal menghadapi publik katakanlah Anda </font>
+
+42
+00:01:53,939 --> 00:01:56,460
+ memiliki beberapa fitur pengauditan <font color="#CCCCCC">dengan suka </font>
+
+43
+00:01:56,460 --> 00:01:58,380
+ log <font color="#E5E5E5">dan Anda tahu semua jenis </font><font color="#CCCCCC">berbeda </font>
+
+44
+00:01:58,380 --> 00:02:00,180
+ hal <font color="#E5E5E5">- hal baik-baik saja sehingga Anda mungkin Anda </font><font color="#CCCCCC">miliki </font>
+
+45
+00:02:00,180 --> 00:02:01,619
+ <font color="#E5E5E5">bagian dan </font><font color="#CCCCCC">potongan berbeda atau berbeda </font>
+
+46
+00:02:01,619 --> 00:02:03,590
+ fitur <font color="#CCCCCC">aplikasi web Anda itu </font>
+
+47
+00:02:03,590 --> 00:02:05,880
+ <font color="#CCCCCC">Anda </font><font color="#E5E5E5">ingin memberi orang-orang tertentu akses </font>
+
+48
+00:02:05,880 --> 00:02:06,540
+ <font color="#CCCCCC">ke atau tidak </font>
+
+49
+00:02:06,540 --> 00:02:08,489
+ baik jadi di sini orang-orang yang <font color="#E5E5E5">pergi </font>
+
+50
+00:02:08,489 --> 00:02:09,810
+ untuk <font color="#E5E5E5">mengakses aplikasi web ini </font>
+
+51
+00:02:09,810 --> 00:02:11,790
+ <font color="#CCCCCC">ada banyak jenis yang berbeda </font>
+
+52
+00:02:11,790 --> 00:02:12,580
+ <font color="#E5E5E5">pengguna jadi Anda </font>
+
+53
+00:02:12,580 --> 00:02:15,670
+ Saya hanya akan menempatkan <font color="#CCCCCC">saya akan mengeluarkan pengguna normal </font>
+
+54
+00:02:15,670 --> 00:02:19,480
+ di sini <font color="#CCCCCC">ini </font><font color="#E5E5E5">adalah hari-hari Anda, Anda tahu </font>
+
+55
+00:02:19,480 --> 00:02:21,910
+ katakanlah aplikasi web <font color="#E5E5E5">Anda I Anda </font>
+
+56
+00:02:21,910 --> 00:02:23,170
+ tidak <font color="#E5E5E5">tahu kamu menjual </font><font color="#CCCCCC">sesuatu </font>
+
+57
+00:02:23,170 --> 00:02:24,520
+ <font color="#E5E5E5">itulah yang Anda lakukan itulah yang </font>
+
+58
+00:02:24,520 --> 00:02:26,350
+ aplikasi web Anda dan Anda inginkan 
+
+59
+00:02:26,350 --> 00:02:28,150
+ semua jenis <font color="#E5E5E5">orang di publik </font>
+
+60
+00:02:28,150 --> 00:02:29,950
+ keluar <font color="#E5E5E5">dan akses </font><font color="#CCCCCC">web Anda </font>
+
+61
+00:02:29,950 --> 00:02:31,900
+ aplikasi dan beli semua barang Anda 
+
+62
+00:02:31,900 --> 00:02:33,490
+ tahu sehingga Anda <font color="#E5E5E5">memiliki semua yang khas ini </font>
+
+63
+00:02:33,490 --> 00:02:35,950
+ <font color="#E5E5E5">pengguna normal dan Anda ingin mereka melakukannya </font>
+
+64
+00:02:35,950 --> 00:02:38,890
+ <font color="#E5E5E5">fitur dan fungsi pengguna normal ini </font>
+
+65
+00:02:38,890 --> 00:02:41,080
+ <font color="#E5E5E5">tentu saja tetapi katakanlah Anda juga punya </font>
+
+66
+00:02:41,080 --> 00:02:44,890
+ beberapa admin <font color="#CCCCCC">katakanlah Anda memiliki seperti beberapa </font>
+
+67
+00:02:44,890 --> 00:02:49,450
+ pengguna super pengguna super <font color="#CCCCCC">katakanlah Anda </font>
+
+68
+00:02:49,450 --> 00:02:53,200
+ memiliki mungkin seperti grup audit <font color="#E5E5E5">atau </font>
+
+69
+00:02:53,200 --> 00:02:54,910
+ mengaudit <font color="#CCCCCC">Anda mengetahui jenis </font><font color="#E5E5E5">pengguna yang diinginkan </font>
+
+70
+00:02:54,910 --> 00:02:57,670
+ <font color="#CCCCCC">Anda tahu melakukan beberapa analisis log atau </font>
+
+71
+00:02:57,670 --> 00:02:59,110
+ apa pun yang <font color="#E5E5E5">Anda tahu Anda punya semuanya </font>
+
+72
+00:02:59,110 --> 00:03:02,080
+ <font color="#E5E5E5">berbagai jenis pengguna yang berbeda ini </font>
+
+73
+00:03:02,080 --> 00:03:04,000
+ di luar sana <font color="#CCCCCC">juga untuk fungsi admin </font>
+
+74
+00:03:04,000 --> 00:03:06,430
+ <font color="#E5E5E5">Anda mungkin hanya </font><font color="#CCCCCC">ingin orang-orang admin </font>
+
+75
+00:03:06,430 --> 00:03:08,770
+ akses yang hanya <font color="#CCCCCC">dibutuhkan oleh pengguna biasa </font>
+
+76
+00:03:08,770 --> 00:03:10,870
+ untuk memiliki akses <font color="#CCCCCC">ke bagian </font><font color="#E5E5E5">web Anda ini </font>
+
+77
+00:03:10,870 --> 00:03:13,870
+ aplikasi <font color="#CCCCCC">dan </font><font color="#E5E5E5">sebenarnya admin bisa </font>
+
+78
+00:03:13,870 --> 00:03:15,400
+ <font color="#E5E5E5">melakukan fungsi pengguna normal dan </font>
+
+79
+00:03:15,400 --> 00:03:17,560
+ mereka bisa melakukan <font color="#E5E5E5">itu semampu Anda </font>
+
+80
+00:03:17,560 --> 00:03:19,450
+ mengakses hal-hal audit mungkin audit 
+
+81
+00:03:19,450 --> 00:03:21,250
+ orang <font color="#E5E5E5">hanya bisa </font><font color="#CCCCCC">mengakses </font><font color="#E5E5E5">barang audit </font><font color="#CCCCCC">Anda </font>
+
+82
+00:03:21,250 --> 00:03:22,450
+ dapatkan intinya di sini <font color="#CCCCCC">jadi ada yang berbeda </font>
+
+83
+00:03:22,450 --> 00:03:24,640
+ <font color="#E5E5E5">jenis pengguna yang dapat </font><font color="#CCCCCC">mengakses </font>
+
+84
+00:03:24,640 --> 00:03:26,320
+ <font color="#E5E5E5">bagian </font><font color="#CCCCCC">dan potongan dan fitur yang berbeda </font>
+
+85
+00:03:26,320 --> 00:03:30,100
+ <font color="#CCCCCC">aplikasi</font><font color="#E5E5E5"> web Anda salah satu </font>
+
+86
+00:03:30,100 --> 00:03:32,620
+ <font color="#CCCCCC">dari </font><font color="#E5E5E5">hal-hal untuk memeriksa ini rusak </font>
+
+87
+00:03:32,620 --> 00:03:34,420
+ Akses kontrol masalah <font color="#CCCCCC">yang kita hadapi </font>
+
+88
+00:03:34,420 --> 00:03:36,760
+ berbicara <font color="#E5E5E5">tentang hari ini dan lagi yang rusak </font>
+
+89
+00:03:36,760 --> 00:03:39,700
+ kontrol akses adalah di mana katakanlah <font color="#E5E5E5">untuk </font>
+
+90
+00:03:39,700 --> 00:03:41,650
+ Misalnya <font color="#CCCCCC">pengguna</font><font color="#E5E5E5"> biasa atau apa yang akan </font>
+
+91
+00:03:41,650 --> 00:03:43,780
+ tampak <font color="#CCCCCC">sebagai </font><font color="#E5E5E5">akses keuntungan pengguna biasa </font>
+
+92
+00:03:43,780 --> 00:03:45,910
+ ke <font color="#E5E5E5">fungsi admin di </font><font color="#CCCCCC">web </font><font color="#E5E5E5">Anda </font>
+
+93
+00:03:45,910 --> 00:03:48,040
+ aplikasi atau <font color="#E5E5E5">mereka mendapat akses ke beberapa </font>
+
+94
+00:03:48,040 --> 00:03:50,410
+ file log audit atau hal semacam itu 
+
+95
+00:03:50,410 --> 00:03:52,959
+ tempat-tempat yang mereka tidak perlu <font color="#CCCCCC">begitu </font>
+
+96
+00:03:52,959 --> 00:03:54,610
+ akses kontrol <font color="#E5E5E5">yang Anda masukkan </font>
+
+97
+00:03:54,610 --> 00:03:58,570
+ tempat <font color="#CCCCCC">itu kemudian akan dipatahkan tentu saja </font><font color="#E5E5E5">satu </font>
+
+98
+00:03:58,570 --> 00:04:00,310
+ dari <font color="#E5E5E5">salah </font><font color="#CCCCCC">satu </font><font color="#E5E5E5">hal itu </font>
+
+99
+00:04:00,310 --> 00:04:01,780
+ <font color="#E5E5E5">menarik tentang ini </font><font color="#CCCCCC">karena beberapa orang </font>
+
+100
+00:04:01,780 --> 00:04:04,600
+ <font color="#E5E5E5">katakanlah </font><font color="#CCCCCC">kami akan menggunakan ini </font><font color="#E5E5E5">menggunakan ini berbeda </font>
+
+101
+00:04:04,600 --> 00:04:06,220
+ <font color="#E5E5E5">alat seperti </font><font color="#CCCCCC">DAST </font>
+
+102
+00:04:06,220 --> 00:04:10,450
+ <font color="#CCCCCC">alat DAST adalah aplikasi dinamis </font>
+
+103
+00:04:10,450 --> 00:04:15,160
+ <font color="#CCCCCC">alat uji keamanan </font><font color="#E5E5E5">atau </font><font color="#CCCCCC">sass adalah hal lain </font>
+
+104
+00:04:15,160 --> 00:04:17,738
+ satu dan sass adalah aplikasi statis 
+
+105
+00:04:17,738 --> 00:04:20,200
+ <font color="#CCCCCC">alat uji keamanan beberapa orang memanggil </font>
+
+106
+00:04:20,200 --> 00:04:23,860
+ bahwa <font color="#E5E5E5">alat analisis kode sumber tetapi </font>
+
+107
+00:04:23,860 --> 00:04:26,080
+ anyway - dan menurunkan <font color="#E5E5E5">salah satu masalah </font>
+
+108
+00:04:26,080 --> 00:04:26,590
+ <font color="#E5E5E5">akan bertanya </font>
+
+109
+00:04:26,590 --> 00:04:29,110
+ Sass adalah bahwa mereka dapat melakukan pekerjaan dengan baik 
+
+110
+00:04:29,110 --> 00:04:32,199
+ <font color="#CCCCCC">mengidentifikasi apakah kontrol </font><font color="#E5E5E5">akses </font>
+
+111
+00:04:32,199 --> 00:04:34,330
+ ada di tempat atau <font color="#E5E5E5">tidak, apakah ada </font>
+
+112
+00:04:34,330 --> 00:04:36,550
+ atau tidak ada <font color="#CCCCCC">dan mereka akan membiarkan </font><font color="#E5E5E5">Anda </font><font color="#CCCCCC">tahu </font><font color="#E5E5E5">itu </font>
+
+113
+00:04:36,550 --> 00:04:39,940
+ <font color="#E5E5E5">tetapi jika </font><font color="#CCCCCC">ada, katakan saja mereka </font>
+
+114
+00:04:39,940 --> 00:04:42,729
+ tidak melakukan pekerjaan yang baik tentu 
+
+115
+00:04:42,729 --> 00:04:44,889
+ memberi tahu Anda seberapa fungsional <font color="#CCCCCC">atau bagaimana </font>
+
+116
+00:04:44,889 --> 00:04:48,070
+ <font color="#CCCCCC">efektif itu </font><font color="#E5E5E5">sangat jadi salah satu hal </font>
+
+117
+00:04:48,070 --> 00:04:49,180
+ yang benar <font color="#E5E5E5">- benar perlu Anda </font><font color="#CCCCCC">lakukan dengan </font><font color="#E5E5E5">rusak </font>
+
+118
+00:04:49,180 --> 00:04:51,669
+ kontrol akses adalah melakukan banyak <font color="#CCCCCC">manual </font>
+
+119
+00:04:51,669 --> 00:04:53,740
+ pengujian <font color="#CCCCCC">dan banyak </font><font color="#E5E5E5">pemeriksaan manual </font>
+
+120
+00:04:53,740 --> 00:04:54,820
+ <font color="#CCCCCC">pastikan Anda memiliki benda ini </font>
+
+121
+00:04:54,820 --> 00:04:56,710
+ <font color="#E5E5E5">di bawah </font><font color="#CCCCCC">kendali </font><font color="#E5E5E5">saya akan </font><font color="#CCCCCC">memberi cepat </font>
+
+122
+00:04:56,710 --> 00:04:59,410
+ contoh <font color="#E5E5E5">aplikasi web ini </font>
+
+123
+00:04:59,410 --> 00:05:01,600
+ seseorang <font color="#E5E5E5">yang mungkin datang ke sana </font><font color="#CCCCCC">dan menjadi </font>
+
+124
+00:05:01,600 --> 00:05:03,280
+ bisa <font color="#E5E5E5">mengakses tempat atau hal itu </font>
+
+125
+00:05:03,280 --> 00:05:05,620
+ <font color="#CCCCCC">mereka tidak </font><font color="#E5E5E5">perlu mendapatkan akses untuk itu </font>
+
+126
+00:05:05,620 --> 00:05:07,990
+ inilah contoh <font color="#CCCCCC">seorang hacker jahat datang </font>
+
+127
+00:05:07,990 --> 00:05:14,200
+ untuk <font color="#CCCCCC">Anda, Anda tahu </font><font color="#E5E5E5">aplikasi web dot-com web </font>
+
+128
+00:05:14,200 --> 00:05:16,419
+ <font color="#CCCCCC">baiklah </font><font color="#E5E5E5">dan itu mari kita </font><font color="#CCCCCC">katakan itu </font>
+
+129
+00:05:16,419 --> 00:05:18,760
+ <font color="#E5E5E5">itulah URL untuk aplikasi web Anda </font>
+
+130
+00:05:18,760 --> 00:05:20,919
+ dan Anda <font color="#E5E5E5">ingin semua pengguna normal Anda menjadi </font>
+
+131
+00:05:20,919 --> 00:05:22,270
+ <font color="#CCCCCC">dapat </font><font color="#E5E5E5">mengakses </font><font color="#CCCCCC">dan membeli sekelompok </font>
+
+132
+00:05:22,270 --> 00:05:25,000
+ <font color="#E5E5E5">hal-hal dan melakukan </font><font color="#CCCCCC">hal </font><font color="#E5E5E5">- </font><font color="#CCCCCC">hal </font><font color="#E5E5E5">hebat </font><font color="#CCCCCC">tetapi katakanlah </font>
+
+133
+00:05:25,000 --> 00:05:27,580
+ orang jahat datang dan dia menempatkan ini 
+
+134
+00:05:27,580 --> 00:05:32,560
+ tebas <font color="#CCCCCC">dan dia mengubah URL dan </font><font color="#E5E5E5">dia menempatkan </font>
+
+135
+00:05:32,560 --> 00:05:36,610
+ info admin semua benar <font color="#E5E5E5">jadi mari kita katakan </font><font color="#CCCCCC">itu </font>
+
+136
+00:05:36,610 --> 00:05:39,729
+ Info admin adalah tempat <font color="#E5E5E5">di web Anda </font>
+
+137
+00:05:39,729 --> 00:05:42,370
+ aplikasi yang tidak <font color="#CCCCCC">dimiliki pengguna biasa </font>
+
+138
+00:05:42,370 --> 00:05:44,650
+ <font color="#CCCCCC">harus </font><font color="#E5E5E5">mendapatkan dengan baik jika pengguna normal bisa </font>
+
+139
+00:05:44,650 --> 00:05:47,440
+ <font color="#CCCCCC">akses </font><font color="#E5E5E5">URL itu di sana, </font><font color="#CCCCCC">maka itu </font>
+
+140
+00:05:47,440 --> 00:05:49,270
+ <font color="#CCCCCC">masalah yang </font><font color="#E5E5E5">berarti mungkin Anda miliki </font>
+
+141
+00:05:49,270 --> 00:05:51,729
+ beberapa akses yang rusak mengontrol yang lain 
+
+142
+00:05:51,729 --> 00:05:55,360
+ Misalnya, mari kita <font color="#E5E5E5">lakukan ini lagi </font>
+
+143
+00:05:55,360 --> 00:05:59,919
+ <font color="#E5E5E5">bagaimana </font><font color="#CCCCCC">dengan dot-com dan katakanlah seseorang </font>
+
+144
+00:05:59,919 --> 00:06:04,240
+ mencoba untuk <font color="#E5E5E5">mengubah beberapa parameter permintaan </font><font color="#CCCCCC">jadi </font>
+
+145
+00:06:04,240 --> 00:06:06,190
+ katakanlah mereka <font color="#E5E5E5">ingin beberapa yang mereka coba </font>
+
+146
+00:06:06,190 --> 00:06:07,389
+ untuk mendapatkan <font color="#E5E5E5">informasi akun seseorang </font>
+
+147
+00:06:07,389 --> 00:06:11,979
+ jadi mari kita <font color="#E5E5E5">katakan info akun baik-baik saja </font>
+
+148
+00:06:11,979 --> 00:06:14,530
+ mereka akan mencoba <font color="#CCCCCC">ke </font><font color="#E5E5E5">sana </font><font color="#CCCCCC">dan kemudian </font>
+
+149
+00:06:14,530 --> 00:06:16,960
+ mereka akan melakukan sedikit parameter dan 
+
+150
+00:06:16,960 --> 00:06:20,229
+ maka <font color="#E5E5E5">mereka akan mengatakan akun sama dan saya akan </font>
+
+151
+00:06:20,229 --> 00:06:22,690
+ cukup taruh <font color="#E5E5E5">seperti satu dua </font><font color="#CCCCCC">tiga empat </font><font color="#E5E5E5">semua </font>
+
+152
+00:06:22,690 --> 00:06:25,900
+ <font color="#E5E5E5">benar jadi jika saya pengguna dan saya tidak sendiri </font>
+
+153
+00:06:25,900 --> 00:06:27,820
+ akun satu <font color="#E5E5E5">dua tiga empat dan saya ketik </font>
+
+154
+00:06:27,820 --> 00:06:29,680
+ bahwa <font color="#E5E5E5">dalam </font><font color="#CCCCCC">dan saya bisa mendapatkan </font><font color="#E5E5E5">itu kemudian </font>
+
+155
+00:06:29,680 --> 00:06:30,970
+ <font color="#E5E5E5">itu </font><font color="#CCCCCC">masalah yang </font><font color="#E5E5E5">berarti Anda mendapat beberapa </font>
+
+156
+00:06:30,970 --> 00:06:33,340
+ kontrol akses yang rusak sehingga mereka adalah 
+
+157
+00:06:33,340 --> 00:06:35,800
+ beberapa <font color="#CCCCCC">hal yang </font><font color="#E5E5E5">berbeda </font><font color="#CCCCCC">yang </font><font color="#E5E5E5">mungkin </font>
+
+158
+00:06:35,800 --> 00:06:37,910
+ beberapa cek <font color="#CCCCCC">atau beberapa cara itu </font>
+
+159
+00:06:37,910 --> 00:06:39,950
+ bahwa <font color="#E5E5E5">kontrol akses yang rusak ini </font>
+
+160
+00:06:39,950 --> 00:06:42,050
+ akan memanifestasikan dirinya baik-baik <font color="#CCCCCC">saja jadi apa </font>
+
+161
+00:06:42,050 --> 00:06:44,210
+ <font color="#CCCCCC">adalah beberapa </font><font color="#E5E5E5">cara </font><font color="#CCCCCC">untuk mengatasi ini atau </font>
+
+162
+00:06:44,210 --> 00:06:47,780
+ untuk membantu dengan ini <font color="#CCCCCC">beberapa adalah bahwa Anda </font>
+
+163
+00:06:47,780 --> 00:06:50,360
+ perlu <font color="#E5E5E5">menegakkan semua ini dalam apa yang saya akan </font>
+
+164
+00:06:50,360 --> 00:06:53,510
+ sebut dipercaya kode sisi server <font color="#E5E5E5">baik- </font>
+
+165
+00:06:53,510 --> 00:06:56,450
+ jadi jangan melakukan <font color="#CCCCCC">semua </font><font color="#E5E5E5">pemeriksaan ini atau </font>
+
+166
+00:06:56,450 --> 00:06:58,940
+ mengakses fitur kontrol di tepercaya 
+
+167
+00:06:58,940 --> 00:07:01,430
+ kode sisi server <font color="#E5E5E5">pertama-tama saya berbicara </font>
+
+168
+00:07:01,430 --> 00:07:03,440
+ <font color="#E5E5E5">tentang </font><font color="#CCCCCC">alat Dass dan SAS di mana mereka </font>
+
+169
+00:07:03,440 --> 00:07:05,780
+ itu <font color="#CCCCCC">adalah alat yang efektif untuk digunakan, tetapi </font>
+
+170
+00:07:05,780 --> 00:07:07,640
+ jangan <font color="#E5E5E5">mengandalkan mereka secara eksklusif </font>
+
+171
+00:07:07,640 --> 00:07:11,800
+ <font color="#E5E5E5">kontrol akses yang rusak </font><font color="#CCCCCC">Anda tahu cek atau </font>
+
+172
+00:07:11,800 --> 00:07:15,590
+ fungsionalitas <font color="#CCCCCC">hal lain </font><font color="#E5E5E5">yang Anda bisa </font>
+
+173
+00:07:15,590 --> 00:07:18,890
+ lakukan ditolak secara default <font color="#E5E5E5">sehingga </font><font color="#CCCCCC">selain ini </font>
+
+174
+00:07:18,890 --> 00:07:20,780
+ seperti <font color="#CCCCCC">barang-barang pengguna biasa yang Anda inginkan </font>
+
+175
+00:07:20,780 --> 00:07:23,330
+ <font color="#E5E5E5">seluruh publik </font><font color="#CCCCCC">untuk melihat kemudian </font><font color="#E5E5E5">menyangkal </font>
+
+176
+00:07:23,330 --> 00:07:25,550
+ segala sesuatu <font color="#E5E5E5">lainnya secara default dan kemudian saja </font>
+
+177
+00:07:25,550 --> 00:07:27,110
+ berikan <font color="#CCCCCC">pada siapa yang membutuhkan siapa yang perlu </font>
+
+178
+00:07:27,110 --> 00:07:31,010
+ gunakan <font color="#CCCCCC">itu menerapkan kontrol akses ini </font>
+
+179
+00:07:31,010 --> 00:07:33,500
+ <font color="#E5E5E5">satu kali dan kemudian menggunakannya kembali lebih tepatnya </font>
+
+180
+00:07:33,500 --> 00:07:36,050
+ dari membangun <font color="#E5E5E5">fitur akses kontrol </font>
+
+181
+00:07:36,050 --> 00:07:37,760
+ dan fungsi di sekitar <font color="#E5E5E5">menyimpan bagian ini </font>
+
+182
+00:07:37,760 --> 00:07:39,140
+ aplikasi web Anda dan yang lainnya 
+
+183
+00:07:39,140 --> 00:07:41,030
+ <font color="#E5E5E5">sekitar ini dan orang lain di sekitar bangunan ini </font>
+
+184
+00:07:41,030 --> 00:07:43,160
+ mereka satu kali memastikan <font color="#CCCCCC">bahwa mereka membuatnya </font>
+
+185
+00:07:43,160 --> 00:07:44,660
+ <font color="#E5E5E5">akal dan mereka aman di sana </font>
+
+186
+00:07:44,660 --> 00:07:47,510
+ <font color="#E5E5E5">mereka kuat </font><font color="#CCCCCC">dan kemudian menggunakan kembali </font><font color="#E5E5E5">mereka </font>
+
+187
+00:07:47,510 --> 00:07:49,850
+ di seluruh <font color="#CCCCCC">aplikasi web jadi itu </font>
+
+188
+00:07:49,850 --> 00:07:53,710
+ itu <font color="#E5E5E5">cara lain yang bagus untuk Anda ketahui </font>
+
+189
+00:07:53,710 --> 00:07:55,970
+ <font color="#E5E5E5">amankan diri Anda terhadap akses yang rusak </font>
+
+190
+00:07:55,970 --> 00:07:59,630
+ kontrol yang <font color="#CCCCCC">lain adalah log Anda Anda </font>
+
+191
+00:07:59,630 --> 00:08:01,730
+ kegagalan dan beri tahu admin Anda kapan saja 
+
+192
+00:08:01,730 --> 00:08:03,560
+ itu terjadi sehingga <font color="#CCCCCC">Anda dapat menembak </font><font color="#E5E5E5">Anda </font>
+
+193
+00:08:03,560 --> 00:08:05,419
+ tahu <font color="#E5E5E5">email atau Anda tahu berbeda </font>
+
+194
+00:08:05,419 --> 00:08:07,190
+ peringatan pemberitahuan ke admin Anda 
+
+195
+00:08:07,190 --> 00:08:11,360
+ setiap kali kegagalan dicatat <font color="#CCCCCC">Anda bisa </font>
+
+196
+00:08:11,360 --> 00:08:14,600
+ juga menilai <font color="#CCCCCC">akses batas ke beberapa ini </font>
+
+197
+00:08:14,600 --> 00:08:16,669
+ fitur yang berbeda <font color="#E5E5E5">jadi katakanlah </font>
+
+198
+00:08:16,669 --> 00:08:19,070
+ admin mencoba masuk dan katakan saja mari 
+
+199
+00:08:19,070 --> 00:08:20,960
+ <font color="#CCCCCC">katakanlah orang jahat sedang mencoba </font><font color="#E5E5E5">masuk ke dalam </font>
+
+200
+00:08:20,960 --> 00:08:22,220
+ tempat <font color="#CCCCCC">yang tidak mereka coba </font><font color="#E5E5E5">masuki </font>
+
+201
+00:08:22,220 --> 00:08:23,560
+ dan itu semacam alat otomatis 
+
+202
+00:08:23,560 --> 00:08:26,210
+ <font color="#CCCCCC">baik jika Anda menilai membatasi akses ke </font>
+
+203
+00:08:26,210 --> 00:08:28,160
+ itu <font color="#CCCCCC">maka Anda akan meminimalkan Anda </font>
+
+204
+00:08:28,160 --> 00:08:31,070
+ eksposur <font color="#CCCCCC">dan area masalah Anda dan </font>
+
+205
+00:08:31,070 --> 00:08:33,110
+ <font color="#E5E5E5">maka hal terakhir yang akan saya katakan adalah </font>
+
+206
+00:08:33,110 --> 00:08:35,450
+ Konsep ini <font color="#E5E5E5">paling istimewa </font><font color="#CCCCCC">setidaknya </font>
+
+207
+00:08:35,450 --> 00:08:38,090
+ hak istimewa adalah <font color="#E5E5E5">gagasan </font><font color="#CCCCCC">bahwa Anda </font>
+
+208
+00:08:38,090 --> 00:08:41,870
+ hanya <font color="#CCCCCC">akan </font><font color="#E5E5E5">memberikan </font><font color="#CCCCCC">akses </font><font color="#E5E5E5">seseorang </font><font color="#CCCCCC">ke </font>
+
+209
+00:08:41,870 --> 00:08:43,849
+ batas minimum <font color="#E5E5E5">yang mereka butuhkan </font><font color="#CCCCCC">untuk dilakukan </font>
+
+210
+00:08:43,849 --> 00:08:45,890
+ pekerjaan mereka <font color="#CCCCCC">atau untuk melakukan fungsi itu </font><font color="#E5E5E5">dan </font>
+
+211
+00:08:45,890 --> 00:08:47,720
+ <font color="#E5E5E5">di luar </font><font color="#CCCCCC">itu Anda hanya akan </font><font color="#E5E5E5">memberi </font>
+
+212
+00:08:47,720 --> 00:08:49,910
+ mereka <font color="#E5E5E5">yang mengakses untuk jumlah minimum </font>
+
+213
+00:08:49,910 --> 00:08:51,860
+ <font color="#E5E5E5">waktu yang mereka </font><font color="#CCCCCC">butuhkan untuk </font><font color="#E5E5E5">melakukan pekerjaan itu </font>
+
+214
+00:08:51,860 --> 00:08:54,500
+ sehingga benar-benar <font color="#E5E5E5">membatasi eksposur dan </font>
+
+215
+00:08:54,500 --> 00:08:56,270
+ <font color="#E5E5E5">masalah dan </font><font color="#CCCCCC">semua </font><font color="#E5E5E5">itu sehingga Anda tahu </font>
+
+216
+00:08:56,270 --> 00:08:59,030
+ lagi jika admin <font color="#E5E5E5">hanya perlu melakukan ini </font>
+
+217
+00:08:59,030 --> 00:09:01,190
+ satu hal <font color="#CCCCCC">atau </font><font color="#E5E5E5">mungkin pengguna super apa pun </font>
+
+218
+00:09:01,190 --> 00:09:03,050
+ <font color="#CCCCCC">hanya perlu melakukan satu hal ini </font>
+
+219
+00:09:03,050 --> 00:09:05,240
+ maka hanya <font color="#E5E5E5">memberi mereka </font><font color="#CCCCCC">akses </font><font color="#E5E5E5">minimal </font>
+
+220
+00:09:05,240 --> 00:09:06,770
+ itu satu hal untuk <font color="#E5E5E5">jumlah minimum </font>
+
+221
+00:09:06,770 --> 00:09:08,780
+ <font color="#E5E5E5">waktu yang tidak perlu </font>
+
+222
+00:09:08,780 --> 00:09:10,940
+ jadi kontrol akses lagi rusak 
+
+223
+00:09:10,940 --> 00:09:13,760
+ nomor <font color="#E5E5E5">lima risiko keamanan di luar sana </font>
+
+224
+00:09:13,760 --> 00:09:15,770
+ <font color="#CCCCCC">Internet saat ini </font><font color="#E5E5E5">berdasarkan OWASP </font>
+
+225
+00:09:15,770 --> 00:09:17,990
+ daftar 10 teratas <font color="#CCCCCC">ini adalah jenis apa itu </font>
+
+226
+00:09:17,990 --> 00:09:19,640
+ <font color="#E5E5E5">ada juga beberapa hal lain </font>
+
+227
+00:09:19,640 --> 00:09:22,760
+ <font color="#CCCCCC">seperti firewall aplikasi web </font><font color="#E5E5E5">yang bisa </font>
+
+228
+00:09:22,760 --> 00:09:24,290
+ membantu <font color="#E5E5E5">dengan </font><font color="#CCCCCC">beberapa </font><font color="#E5E5E5">hal ini saya tidak akan mengatakannya </font>
+
+229
+00:09:24,290 --> 00:09:25,700
+ akhir semua, tetapi ada beberapa 
+
+230
+00:09:25,700 --> 00:09:27,050
+ ada <font color="#E5E5E5">beberapa hal yang bisa mereka lakukan </font>
+
+231
+00:09:27,050 --> 00:09:29,870
+ membantu <font color="#E5E5E5">dengan baik berkaitan </font><font color="#CCCCCC">dengan </font>
+
+232
+00:09:29,870 --> 00:09:31,640
+ kontrol akses yang rusak jadi terima kasih 
+
+233
+00:09:31,640 --> 00:09:33,710
+ <font color="#E5E5E5">Bertahan di sana hari ini dengan kami belajar </font>
+
+234
+00:09:33,710 --> 00:09:35,690
+ <font color="#CCCCCC">tentang </font><font color="#E5E5E5">akses rusak akses yang rusak </font>
+
+235
+00:09:35,690 --> 00:09:38,570
+ kontrol <font color="#E5E5E5">tetap aman di luar sana </font><font color="#CCCCCC">di </font>
+
+236
+00:09:38,570 --> 00:09:41,150
+ internet jika Anda menikmati pembuatan video ini 
+
+237
+00:09:41,150 --> 00:09:43,220
+ <font color="#CCCCCC">Pastikan Anda berlangganan ke </font><font color="#E5E5E5">pusat </font><font color="#CCCCCC">dev </font><font color="#E5E5E5">kami </font>
+
+238
+00:09:43,220 --> 00:09:45,440
+ <font color="#E5E5E5">Saluran YouTube dan kami akan melihat </font><font color="#CCCCCC">kalian </font>
+
+239
+00:09:45,440 --> 00:09:48,400
+ di luar sana di <font color="#CCCCCC">masyarakat </font>
+
+240
+00:09:54,440 --> 00:00:00,000
+ kamu 
+

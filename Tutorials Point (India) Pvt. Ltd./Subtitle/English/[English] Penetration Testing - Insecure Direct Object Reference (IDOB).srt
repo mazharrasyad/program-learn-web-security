@@ -1,0 +1,668 @@
+1
+00:00:00,089 --> 00:00:02,330
+hello everyone<font color="#E5E5E5"> now let</font><font color="#CCCCCC"> us</font><font color="#E5E5E5"> talk about</font>
+
+2
+00:00:02,330 --> 00:00:04,710
+<font color="#CCCCCC">insecure direct object reference</font>
+
+3
+00:00:04,710 --> 00:00:08,220
+vulnerability<font color="#E5E5E5"> so this vulnerability</font><font color="#CCCCCC"> also</font>
+
+4
+00:00:08,220 --> 00:00:10,620
+referred as<font color="#E5E5E5"> I do be so before going</font>
+
+5
+00:00:10,620 --> 00:00:12,540
+further<font color="#E5E5E5"> let me</font><font color="#CCCCCC"> give you an example that</font>
+
+6
+00:00:12,540 --> 00:00:15,450
+<font color="#CCCCCC">there are five objects</font><font color="#E5E5E5"> or a five files</font>
+
+7
+00:00:15,450 --> 00:00:17,910
+<font color="#E5E5E5">and there is one another file called as</font>
+
+8
+00:00:17,910 --> 00:00:20,550
+demo<font color="#CCCCCC"> so we can access</font><font color="#E5E5E5"> all that five</font>
+
+9
+00:00:20,550 --> 00:00:23,279
+objects<font color="#CCCCCC"> if our request contains</font>
+
+10
+00:00:23,279 --> 00:00:27,060
+reference of that<font color="#CCCCCC"> demo file</font><font color="#E5E5E5"> and if we</font>
+
+11
+00:00:27,060 --> 00:00:29,939
+want<font color="#E5E5E5"> to try to</font><font color="#CCCCCC"> access that fife object</font>
+
+12
+00:00:29,939 --> 00:00:32,488
+<font color="#E5E5E5">without the reference of the demo file</font>
+
+13
+00:00:32,488 --> 00:00:35,760
+<font color="#E5E5E5">we are not able to access that objects</font>
+
+14
+00:00:35,760 --> 00:00:38,340
+<font color="#E5E5E5">now what happen is an insecure direct</font>
+
+15
+00:00:38,340 --> 00:00:40,739
+object reference the user supplied input
+
+16
+00:00:40,739 --> 00:00:43,230
+<font color="#E5E5E5">is used to access</font><font color="#CCCCCC"> a particular</font><font color="#E5E5E5"> object</font>
+
+17
+00:00:43,230 --> 00:00:47,250
+<font color="#CCCCCC">and if the</font><font color="#E5E5E5"> user adds something</font><font color="#CCCCCC"> malicious</font>
+
+18
+00:00:47,250 --> 00:00:49,620
+so that it can point to<font color="#E5E5E5"> something</font>
+
+19
+00:00:49,620 --> 00:00:52,980
+different object and so which means a
+
+20
+00:00:52,980 --> 00:00:56,520
+user<font color="#E5E5E5"> tries to access a</font><font color="#CCCCCC"> particular object</font>
+
+21
+00:00:56,520 --> 00:00:59,280
+<font color="#E5E5E5">which he is not authorized to access to</font>
+
+22
+00:00:59,280 --> 00:01:02,219
+so if the user<font color="#E5E5E5"> is successfully</font><font color="#CCCCCC"> able to</font>
+
+23
+00:01:02,219 --> 00:01:05,850
+access that object<font color="#E5E5E5"> which means that will</font>
+
+24
+00:01:05,850 --> 00:01:08,430
+replication is insecure<font color="#E5E5E5"> direct object</font>
+
+25
+00:01:08,430 --> 00:01:11,549
+reference vulnerable so here is one HTTP
+
+26
+00:01:11,549 --> 00:01:13,979
+request you can<font color="#E5E5E5"> see here and this</font>
+
+27
+00:01:13,979 --> 00:01:15,600
+request is accepting one parameter
+
+28
+00:01:15,600 --> 00:01:18,509
+<font color="#E5E5E5">called as page and here is the page name</font>
+
+29
+00:01:18,509 --> 00:01:21,659
+<font color="#E5E5E5">source viewer dot PHP</font><font color="#CCCCCC"> so this is this</font><font color="#E5E5E5"> is</font>
+
+30
+00:01:21,659 --> 00:01:24,360
+our<font color="#CCCCCC"> reference page and here you</font><font color="#E5E5E5"> can see</font>
+
+31
+00:01:24,360 --> 00:01:25,979
+the another<font color="#CCCCCC"> argument or the</font><font color="#E5E5E5"> another</font>
+
+32
+00:01:25,979 --> 00:01:29,490
+<font color="#E5E5E5">parameter called as PHP file and the PHP</font>
+
+33
+00:01:29,490 --> 00:01:31,590
+file which we are try to<font color="#CCCCCC"> access is</font>
+
+34
+00:01:31,590 --> 00:01:35,070
+called as user<font color="#E5E5E5"> Paul dot PHP so</font><font color="#CCCCCC"> we can</font>
+
+35
+00:01:35,070 --> 00:01:38,729
+try<font color="#CCCCCC"> this user Paul dot PHP if we are</font>
+
+36
+00:01:38,729 --> 00:01:41,189
+making HTTP<font color="#E5E5E5"> request with the reference</font>
+
+37
+00:01:41,189 --> 00:01:44,369
+of this<font color="#E5E5E5"> file source via dot PHP now</font>
+
+38
+00:01:44,369 --> 00:01:46,590
+let's see<font color="#E5E5E5"> how insecure direct object</font>
+
+39
+00:01:46,590 --> 00:01:49,619
+reference works<font color="#E5E5E5"> now let's see that how</font>
+
+40
+00:01:49,619 --> 00:01:52,409
+direct object reference works<font color="#E5E5E5"> then we</font>
+
+41
+00:01:52,409 --> 00:01:55,229
+will<font color="#E5E5E5"> able to exploit</font><font color="#CCCCCC"> insecure direct</font>
+
+42
+00:01:55,229 --> 00:01:57,689
+object reference vulnerability<font color="#E5E5E5"> so in</font>
+
+43
+00:01:57,689 --> 00:01:59,369
+order<font color="#E5E5E5"> to test</font><font color="#CCCCCC"> that vulnerability and to</font>
+
+44
+00:01:59,369 --> 00:02:02,219
+<font color="#CCCCCC">see that how it</font><font color="#E5E5E5"> works we have</font><font color="#CCCCCC"> to start</font>
+
+45
+00:02:02,219 --> 00:02:04,829
+our<font color="#CCCCCC"> OS broken web application and we</font>
+
+46
+00:02:04,829 --> 00:02:08,240
+have to<font color="#E5E5E5"> open</font><font color="#CCCCCC"> mutilate a</font>
+
+47
+00:02:15,230 --> 00:02:19,770
+and here you can see the<font color="#CCCCCC"> ovis mutilate</font><font color="#E5E5E5"> a</font>
+
+48
+00:02:19,770 --> 00:02:26,790
+link<font color="#E5E5E5"> let me open this up so let's go</font>
+
+49
+00:02:26,790 --> 00:02:27,120
+here
+
+50
+00:02:27,120 --> 00:02:33,240
+<font color="#CCCCCC">os 2013 and here you will</font><font color="#E5E5E5"> found the</font>
+
+51
+00:02:33,240 --> 00:02:36,950
+insecure direct object reference so
+
+52
+00:02:36,950 --> 00:02:39,780
+let's open the second<font color="#CCCCCC"> challenge that</font><font color="#E5E5E5"> is</font>
+
+53
+00:02:39,780 --> 00:02:46,560
+source viewer now let's<font color="#E5E5E5"> have a look at</font>
+
+54
+00:02:46,560 --> 00:02:50,460
+the functionality<font color="#E5E5E5"> of this page that what</font>
+
+55
+00:02:50,460 --> 00:02:53,250
+it's doing<font color="#E5E5E5"> so to see the source of the</font>
+
+56
+00:02:53,250 --> 00:02:56,010
+file choose and<font color="#E5E5E5"> click a view file so if</font>
+
+57
+00:02:56,010 --> 00:02:58,260
+I if<font color="#CCCCCC"> we just go here you can see that</font>
+
+58
+00:02:58,260 --> 00:03:01,200
+there<font color="#CCCCCC"> are a lot of PHP files here so if</font>
+
+59
+00:03:01,200 --> 00:03:02,670
+we want<font color="#E5E5E5"> to look at the source code of</font>
+
+60
+00:03:02,670 --> 00:03:05,460
+<font color="#E5E5E5">any of them just</font><font color="#CCCCCC"> select any of</font><font color="#E5E5E5"> the file</font>
+
+61
+00:03:05,460 --> 00:03:13,080
+and click<font color="#E5E5E5"> on</font><font color="#CCCCCC"> view</font><font color="#E5E5E5"> file and here at the</font>
+
+62
+00:03:13,080 --> 00:03:14,700
+<font color="#CCCCCC">bottom you can see</font><font color="#E5E5E5"> the source</font><font color="#CCCCCC"> code of</font>
+
+63
+00:03:14,700 --> 00:03:18,780
+<font color="#CCCCCC">this</font><font color="#E5E5E5"> file now</font><font color="#CCCCCC"> let's try to</font><font color="#E5E5E5"> analyze this</font>
+
+64
+00:03:18,780 --> 00:03:21,510
+request through Bob<font color="#E5E5E5"> sweet and let's see</font>
+
+65
+00:03:21,510 --> 00:03:25,440
+that<font color="#CCCCCC"> how this request is going</font><font color="#E5E5E5"> on so I'm</font>
+
+66
+00:03:25,440 --> 00:03:30,600
+starting my<font color="#E5E5E5"> Bob</font><font color="#CCCCCC"> sweet here and let me</font>
+
+67
+00:03:30,600 --> 00:03:33,780
+<font color="#CCCCCC">also configure my proxy settings on my</font>
+
+68
+00:03:33,780 --> 00:03:36,380
+<font color="#E5E5E5">browser</font>
+
+69
+00:03:42,599 --> 00:03:44,730
+so manual proxy configuration is the
+
+70
+00:03:44,730 --> 00:03:47,849
+<font color="#E5E5E5">localhost</font><font color="#CCCCCC"> IP and the port is 8080</font><font color="#E5E5E5"> let me</font>
+
+71
+00:03:47,849 --> 00:03:51,239
+<font color="#E5E5E5">click</font><font color="#CCCCCC"> on</font><font color="#E5E5E5"> okay let me go back</font><font color="#CCCCCC"> just go</font>
+
+72
+00:03:51,239 --> 00:03:56,150
+here and<font color="#CCCCCC"> start prop</font>
+
+73
+00:04:06,680 --> 00:04:09,079
+so let's select any file<font color="#CCCCCC"> in order</font><font color="#E5E5E5"> to</font>
+
+74
+00:04:09,079 --> 00:04:11,299
+read<font color="#CCCCCC"> it source</font><font color="#E5E5E5"> code click on</font><font color="#CCCCCC"> view file</font>
+
+75
+00:04:11,299 --> 00:04:13,129
+and you will<font color="#E5E5E5"> see that Bob</font><font color="#CCCCCC"> suite will</font>
+
+76
+00:04:13,129 --> 00:04:15,709
+start blinking<font color="#E5E5E5"> let's go here</font><font color="#CCCCCC"> to the</font>
+
+77
+00:04:15,709 --> 00:04:18,380
+proxy tab and here is the full<font color="#E5E5E5"> request</font>
+
+78
+00:04:18,380 --> 00:04:22,039
+<font color="#E5E5E5">which is going through our browser so</font>
+
+79
+00:04:22,039 --> 00:04:24,770
+it's a post request<font color="#CCCCCC"> and you can see that</font>
+
+80
+00:04:24,770 --> 00:04:28,370
+<font color="#E5E5E5">the request is going to this link</font><font color="#CCCCCC"> so</font>
+
+81
+00:04:28,370 --> 00:04:31,160
+here is the page<font color="#E5E5E5"> source for dot PHP it's</font>
+
+82
+00:04:31,160 --> 00:04:33,080
+the page where we<font color="#E5E5E5"> are</font><font color="#CCCCCC"> writen</font><font color="#E5E5E5"> you can see</font>
+
+83
+00:04:33,080 --> 00:04:38,449
+here<font color="#E5E5E5"> now let's go back so here is the</font>
+
+84
+00:04:38,449 --> 00:04:39,289
+HTTP header
+
+85
+00:04:39,289 --> 00:04:42,560
+it's a host<font color="#CCCCCC"> information user agent then</font>
+
+86
+00:04:42,560 --> 00:04:47,030
+content<font color="#E5E5E5"> length then referrer and at the</font>
+
+87
+00:04:47,030 --> 00:04:49,220
+bottom<font color="#CCCCCC"> here you</font><font color="#E5E5E5"> will find the</font>
+
+88
+00:04:49,220 --> 00:04:51,520
+interesting information<font color="#CCCCCC"> which give us an</font>
+
+89
+00:04:51,520 --> 00:04:55,130
+idea<font color="#E5E5E5"> of how direct object reference</font>
+
+90
+00:04:55,130 --> 00:04:58,160
+works so if we just<font color="#E5E5E5"> look at here at the</font>
+
+91
+00:04:58,160 --> 00:05:00,680
+first here it is<font color="#CCCCCC"> written page and the</font>
+
+92
+00:05:00,680 --> 00:05:03,710
+value<font color="#CCCCCC"> of the pages source viewer dot PHP</font>
+
+93
+00:05:03,710 --> 00:05:08,090
+which is this one<font color="#E5E5E5"> and then it's an</font>
+
+94
+00:05:08,090 --> 00:05:10,789
+additional parameter<font color="#E5E5E5"> PHP file which you</font>
+
+95
+00:05:10,789 --> 00:05:13,400
+<font color="#CCCCCC">can see here</font><font color="#E5E5E5"> and the PHP file name is</font>
+
+96
+00:05:13,400 --> 00:05:15,530
+<font color="#E5E5E5">the file name which we want to see here</font>
+
+97
+00:05:15,530 --> 00:05:17,000
+you<font color="#CCCCCC"> can</font><font color="#E5E5E5"> see that we have</font><font color="#CCCCCC"> selected user</font>
+
+98
+00:05:17,000 --> 00:05:19,849
+<font color="#CCCCCC">pol dot PHP and here it is</font><font color="#E5E5E5"> that present</font>
+
+99
+00:05:19,849 --> 00:05:23,570
+<font color="#E5E5E5">so which means this page source</font><font color="#CCCCCC"> for dot</font>
+
+100
+00:05:23,570 --> 00:05:26,810
+PHP<font color="#E5E5E5"> this one is actually acting as a</font>
+
+101
+00:05:26,810 --> 00:05:31,340
+reference or<font color="#CCCCCC"> ephra in order to view the</font>
+
+102
+00:05:31,340 --> 00:05:33,400
+content of this<font color="#E5E5E5"> page means if we want to</font>
+
+103
+00:05:33,400 --> 00:05:36,289
+look at the page<font color="#E5E5E5"> source of any of these</font>
+
+104
+00:05:36,289 --> 00:05:38,900
+files<font color="#CCCCCC"> then we can only able</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> look at</font>
+
+105
+00:05:38,900 --> 00:05:41,510
+the page<font color="#E5E5E5"> source if our reference is</font>
+
+106
+00:05:41,510 --> 00:05:44,720
+given by this<font color="#E5E5E5"> file source for your</font><font color="#CCCCCC"> dis</font>
+
+107
+00:05:44,720 --> 00:05:46,190
+file<font color="#CCCCCC"> if this file is given</font><font color="#E5E5E5"> as a</font>
+
+108
+00:05:46,190 --> 00:05:49,849
+reference then<font color="#E5E5E5"> we can able to look at</font>
+
+109
+00:05:49,849 --> 00:05:52,490
+the source code<font color="#E5E5E5"> of these files</font><font color="#CCCCCC"> now let</font>
+
+110
+00:05:52,490 --> 00:05:54,500
+<font color="#E5E5E5">me just click on forward and let's see</font>
+
+111
+00:05:54,500 --> 00:05:56,990
+<font color="#E5E5E5">that whether we are able to see the</font>
+
+112
+00:05:56,990 --> 00:06:01,370
+source code<font color="#CCCCCC"> and here you can see that</font>
+
+113
+00:06:01,370 --> 00:06:03,949
+here is<font color="#E5E5E5"> the source code</font><font color="#CCCCCC"> of</font><font color="#E5E5E5"> the file now</font>
+
+114
+00:06:03,949 --> 00:06:06,620
+<font color="#E5E5E5">as I told</font><font color="#CCCCCC"> you earlier that</font><font color="#E5E5E5"> what is</font>
+
+115
+00:06:06,620 --> 00:06:08,750
+<font color="#CCCCCC">insecure</font><font color="#E5E5E5"> direct object reference so</font>
+
+116
+00:06:08,750 --> 00:06:11,060
+which means there are<font color="#CCCCCC"> some files which</font>
+
+117
+00:06:11,060 --> 00:06:15,169
+are not be authorized<font color="#CCCCCC"> to view</font><font color="#E5E5E5"> by some</font>
+
+118
+00:06:15,169 --> 00:06:16,849
+another person means we are not
+
+119
+00:06:16,849 --> 00:06:19,279
+authorized<font color="#CCCCCC"> to have a look at the source</font>
+
+120
+00:06:19,279 --> 00:06:20,420
+code of<font color="#E5E5E5"> that files</font>
+
+121
+00:06:20,420 --> 00:06:23,270
+so what we can<font color="#E5E5E5"> do in order</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> test that</font>
+
+122
+00:06:23,270 --> 00:06:25,070
+whether this application is vulnerable
+
+123
+00:06:25,070 --> 00:06:27,140
+to<font color="#CCCCCC"> unsecure</font><font color="#E5E5E5"> direct object reference we</font>
+
+124
+00:06:27,140 --> 00:06:30,890
+can<font color="#E5E5E5"> try to view the page</font><font color="#CCCCCC"> source of</font>
+
+125
+00:06:30,890 --> 00:06:33,170
+different pages<font color="#E5E5E5"> which are not listed</font>
+
+126
+00:06:33,170 --> 00:06:38,390
+<font color="#CCCCCC">here you can see the list</font><font color="#E5E5E5"> but the index</font>
+
+127
+00:06:38,390 --> 00:06:41,300
+<font color="#E5E5E5">dot</font><font color="#CCCCCC"> PHP page is not here so now let's</font>
+
+128
+00:06:41,300 --> 00:06:44,870
+try<font color="#E5E5E5"> to look at the page source of index</font>
+
+129
+00:06:44,870 --> 00:06:48,320
+dot PHP<font color="#CCCCCC"> and let's see</font><font color="#E5E5E5"> that whether we</font>
+
+130
+00:06:48,320 --> 00:06:50,420
+are<font color="#CCCCCC"> able</font><font color="#E5E5E5"> to view the source code of</font>
+
+131
+00:06:50,420 --> 00:06:52,880
+index dot PHP<font color="#CCCCCC"> and if we are able</font><font color="#E5E5E5"> to view</font>
+
+132
+00:06:52,880 --> 00:06:55,250
+the page source<font color="#E5E5E5"> which</font><font color="#CCCCCC"> means</font><font color="#E5E5E5"> this link or</font>
+
+133
+00:06:55,250 --> 00:06:57,710
+this<font color="#CCCCCC"> web page</font><font color="#E5E5E5"> is insecure direct object</font>
+
+134
+00:06:57,710 --> 00:07:00,110
+reference burnable<font color="#E5E5E5"> so let me click on</font>
+
+135
+00:07:00,110 --> 00:07:02,090
+view profile again<font color="#E5E5E5"> if you file and you</font>
+
+136
+00:07:02,090 --> 00:07:05,530
+can<font color="#CCCCCC"> see my</font><font color="#E5E5E5"> buffs would start blinking</font>
+
+137
+00:07:08,650 --> 00:07:13,400
+<font color="#E5E5E5">and here is that request again</font>
+
+138
+00:07:13,400 --> 00:07:16,910
+now instead of upload file dot PHP<font color="#E5E5E5"> let's</font>
+
+139
+00:07:16,910 --> 00:07:22,660
+try to write index dot<font color="#CCCCCC"> PHP and let's see</font>
+
+140
+00:07:22,660 --> 00:07:27,290
+what<font color="#E5E5E5"> happened click on forward forward</font>
+
+141
+00:07:27,290 --> 00:07:34,220
+<font color="#E5E5E5">again let me</font><font color="#CCCCCC"> go back here and here you</font>
+
+142
+00:07:34,220 --> 00:07:37,430
+<font color="#CCCCCC">can</font><font color="#E5E5E5"> see that we are successfully able to</font>
+
+143
+00:07:37,430 --> 00:07:39,440
+view the page<font color="#CCCCCC"> source of index dot PHP</font>
+
+144
+00:07:39,440 --> 00:07:44,300
+<font color="#CCCCCC">file so we are not authorized to view</font>
+
+145
+00:07:44,300 --> 00:07:47,450
+the page source<font color="#E5E5E5"> but still we</font><font color="#CCCCCC"> can able</font><font color="#E5E5E5"> to</font>
+
+146
+00:07:47,450 --> 00:07:50,980
+<font color="#E5E5E5">view the page source</font><font color="#CCCCCC"> due</font><font color="#E5E5E5"> to insecure</font>
+
+147
+00:07:50,980 --> 00:07:55,340
+object reference so now let's try<font color="#E5E5E5"> to</font>
+
+148
+00:07:55,340 --> 00:07:57,980
+view<font color="#E5E5E5"> the page</font><font color="#CCCCCC"> source of this page</font><font color="#E5E5E5"> itself</font>
+
+149
+00:07:57,980 --> 00:07:59,990
+<font color="#E5E5E5">where we are right</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> so right now we</font>
+
+150
+00:07:59,990 --> 00:08:02,240
+<font color="#E5E5E5">are</font><font color="#CCCCCC"> on this page source via</font><font color="#E5E5E5"> dot PHP</font>
+
+151
+00:08:02,240 --> 00:08:04,070
+which actually letting<font color="#E5E5E5"> us to view the</font>
+
+152
+00:08:04,070 --> 00:08:06,050
+page<font color="#CCCCCC"> source</font><font color="#E5E5E5"> of different file so why not</font>
+
+153
+00:08:06,050 --> 00:08:09,020
+we find the page source of this<font color="#E5E5E5"> file</font>
+
+154
+00:08:09,020 --> 00:08:13,040
+itself<font color="#E5E5E5"> now</font><font color="#CCCCCC"> let us try to do so let's go</font>
+
+155
+00:08:13,040 --> 00:08:17,810
+here<font color="#CCCCCC"> so let me</font><font color="#E5E5E5"> just try it in the PHP</font>
+
+156
+00:08:17,810 --> 00:08:23,830
+file parameter<font color="#E5E5E5"> source viewer dot PHP</font>
+
+157
+00:08:30,950 --> 00:08:34,610
+and if I just<font color="#CCCCCC"> click</font><font color="#E5E5E5"> on forward</font><font color="#CCCCCC"> if I</font><font color="#E5E5E5"> just</font>
+
+158
+00:08:34,610 --> 00:08:39,169
+go<font color="#E5E5E5"> back and here you can see the file</font><font color="#CCCCCC"> is</font>
+
+159
+00:08:39,169 --> 00:08:43,240
+source<font color="#CCCCCC"> viewer dot PHP</font><font color="#E5E5E5"> and we can able</font><font color="#CCCCCC"> to</font>
+
+160
+00:08:43,240 --> 00:08:46,250
+look<font color="#E5E5E5"> at the</font><font color="#CCCCCC"> paid source of this page</font>
+
+161
+00:08:46,250 --> 00:08:50,900
+itself so this<font color="#E5E5E5"> was how the insecure</font>
+
+162
+00:08:50,900 --> 00:08:54,020
+direct object reference works<font color="#E5E5E5"> so in this</font>
+
+163
+00:08:54,020 --> 00:08:55,610
+<font color="#CCCCCC">video we have covered that what is</font>
+
+164
+00:08:55,610 --> 00:08:57,860
+<font color="#CCCCCC">insecure</font><font color="#E5E5E5"> direct object reference and how</font>
+
+165
+00:08:57,860 --> 00:09:00,260
+we can exploit that<font color="#E5E5E5"> thanks for watching</font>
+
+166
+00:09:00,260 --> 00:09:02,560
+this video
+
+167
+00:09:08,450 --> 00:00:00,000
+you
+

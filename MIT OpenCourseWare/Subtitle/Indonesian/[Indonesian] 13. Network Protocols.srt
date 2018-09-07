@@ -1,0 +1,8012 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,820
+ Lisensi Commons. 
+
+4
+00:00:03,820 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,690
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,690 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,260
+ di ocw.mit.edu. 
+
+9
+00:00:17,260 --> 00:00:26,340
+
+
+10
+00:00:26,340 --> 00:00:29,150
+ PROFESOR: Jadi hari ini, kita akan berbicara tentang Kerberos, yang mana 
+
+11
+00:00:29,150 --> 00:00:32,750
+ secara kriptografi aman, dalam beberapa hal, 
+
+12
+00:00:32,750 --> 00:00:36,210
+ protokol untuk mengautentikasi komputer 
+
+13
+00:00:36,210 --> 00:00:38,671
+ dan aplikasi satu sama lain melalui jaringan. 
+
+14
+00:00:38,671 --> 00:00:40,670
+ Jadi ini sekarang akhirnya akan menggunakan kriptografi 
+
+15
+00:00:40,670 --> 00:00:42,490
+ sedangkan kuliah terakhir, kami melihat saja 
+
+16
+00:00:42,490 --> 00:00:46,242
+ menggunakan nomor urut TCP ini untuk memberikan keamanan. 
+
+17
+00:00:46,242 --> 00:00:47,700
+ Jadi sebelum kita menyelidiki detailnya, 
+
+18
+00:00:47,700 --> 00:00:49,825
+ Saya ingin menyebutkan ada dua bit administrivia 
+
+19
+00:00:49,825 --> 00:00:51,970
+ yang mungkin ingin Anda ketahui. 
+
+20
+00:00:51,970 --> 00:00:55,020
+ Ada ulasan kuis hari ini 7 hingga 9 di beberapa ruangan, 
+
+21
+00:00:55,020 --> 00:00:56,570
+ Saya pikir 32 atau 23. 
+
+22
+00:00:56,570 --> 00:00:59,910
+ Ini ada di halaman jadwal dan kuisnya adalah Rabu depan. 
+
+23
+00:00:59,910 --> 00:01:01,760
+ Dan juga, kami ingin kalian memposting 
+
+24
+00:01:01,760 --> 00:01:03,900
+ beberapa ide untuk proyek akhir Anda di Piazza 
+
+25
+00:01:03,900 --> 00:01:07,800
+ besok hanya supaya teman sekelasmu bisa 
+
+26
+00:01:07,800 --> 00:01:12,435
+ tahu apa yang Anda pikirkan dan membantu Anda membentuk kelompok. 
+
+27
+00:01:12,435 --> 00:01:14,560
+ Baiklah, jadi mari kita bicara tentang Kerberos, oke? 
+
+28
+00:01:14,560 --> 00:01:16,580
+ Jadi apa pengaturannya Kerberos 
+
+29
+00:01:16,580 --> 00:01:19,360
+ sedang mencoba mendukung, di sini? 
+
+30
+00:01:19,360 --> 00:01:21,900
+ Jadi model untuk Kerberos, apa yang orang-orang ini 
+
+31
+00:01:21,900 --> 00:01:23,680
+ ada dalam pikiran ketika mereka sedang merancang 
+
+32
+00:01:23,680 --> 00:01:26,600
+ Athena menebak 25 atau 30 tahun lalu sekarang, 
+
+33
+00:01:26,600 --> 00:01:28,360
+ adalah mereka membayangkan mereka 
+
+34
+00:01:28,360 --> 00:01:30,680
+ akan memiliki jaringan dengan banyak mesin server 
+
+35
+00:01:30,680 --> 00:01:33,790
+ dan banyak mesin klien berinteraksi satu sama lain. 
+
+36
+00:01:33,790 --> 00:01:36,290
+ Jadi Anda bisa membayangkan, Anda memiliki server file di suatu tempat 
+
+37
+00:01:36,290 --> 00:01:37,150
+ di luar sana. 
+
+38
+00:01:37,150 --> 00:01:41,140
+ Anda mungkin memiliki server email yang terhubung ke jaringan, mungkin 
+
+39
+00:01:41,140 --> 00:01:45,130
+ printer services-- lainnya. 
+
+40
+00:01:45,130 --> 00:01:50,510
+ Dan semua ini hanya terhubung ke semacam jaringan 
+
+41
+00:01:50,510 --> 00:01:54,500
+ daripada menjadi proses pada satu mesin. 
+
+42
+00:01:54,500 --> 00:01:57,497
+ Jadi pendahuluan untuk Athena dan Kerberos 
+
+43
+00:01:57,497 --> 00:01:59,580
+ adalah bahwa Anda hanya memiliki mesin berbagi waktu di mana 
+
+44
+00:01:59,580 --> 00:02:02,050
+ semuanya merupakan proses tunggal dan semua orang akan melakukannya 
+
+45
+00:02:02,050 --> 00:02:05,760
+ masuk ke sistem yang sama dan simpan file mereka di sana. 
+
+46
+00:02:05,760 --> 00:02:08,830
+ Jadi orang-orang ini menginginkan sistem yang lebih terdistribusi. 
+
+47
+00:02:08,830 --> 00:02:12,360
+ Jadi ini berarti Anda memiliki server di satu sisi 
+
+48
+00:02:12,360 --> 00:02:14,730
+ dan Anda juga akan memiliki banyak workstation 
+
+49
+00:02:14,730 --> 00:02:18,207
+ bahwa pengguna akan menggunakan diri mereka sendiri yang mana 
+
+50
+00:02:18,207 --> 00:02:19,790
+ akan menjalankan aplikasi dan berpotensi 
+
+51
+00:02:19,790 --> 00:02:22,360
+ terhubung ke server ini dan menyimpan file pengguna, 
+
+52
+00:02:22,360 --> 00:02:24,560
+ dapatkan surat mereka dan sebagainya. 
+
+53
+00:02:24,560 --> 00:02:26,800
+ Dan masalah yang ingin mereka pecahkan 
+
+54
+00:02:26,800 --> 00:02:28,520
+ adalah cara mengotentikasi pengguna itu 
+
+55
+00:02:28,520 --> 00:02:31,590
+ menggunakan workstation ini ke semua server yang berbeda ini 
+
+56
+00:02:31,590 --> 00:02:34,270
+ di bagian belakang tanpa harus mempercayai jaringan 
+
+57
+00:02:34,270 --> 00:02:36,890
+ untuk menjadi benar, yang tampak seperti desain yang masuk akal 
+
+58
+00:02:36,890 --> 00:02:40,010
+ persyaratan dalam banyak cara. 
+
+59
+00:02:40,010 --> 00:02:42,890
+ Dan saya harus menyebutkan bahwa saya kira 
+
+60
+00:02:42,890 --> 00:02:44,580
+ alternatif untuk Kerberos pada saat itu 
+
+61
+00:02:44,580 --> 00:02:46,187
+ apakah ini perintah R login yang kami 
+
+62
+00:02:46,187 --> 00:02:48,520
+ melihat di kuliah terakhir, yang tampak seperti rencana yang buruk. 
+
+63
+00:02:48,520 --> 00:02:51,860
+ Mereka hanya menggunakan alamat IP untuk mengotentikasi pengguna. 
+
+64
+00:02:51,860 --> 00:02:54,330
+ Dan Kerberos cukup berhasil. 
+
+65
+00:02:54,330 --> 00:02:56,160
+ Sebenarnya masih digunakan di MIT. 
+
+66
+00:02:56,160 --> 00:02:59,280
+ Dan sebenarnya, ini adalah dasar dari Active Directory Microsoft 
+
+67
+00:02:59,280 --> 00:02:59,780
+ server 
+
+68
+00:02:59,780 --> 00:03:03,450
+ Jadi hampir semua Microsoft berbasis semacam Windows Server 
+
+69
+00:03:03,450 --> 00:03:05,921
+ menggunakan Kerberos dalam beberapa bentuk atau lainnya. 
+
+70
+00:03:05,921 --> 00:03:07,420
+ Namun tentu saja, karena protokol ini 
+
+71
+00:03:07,420 --> 00:03:11,720
+ dirancang 25 atau 30 tahun yang lalu, persyaratan berubah. 
+
+72
+00:03:11,720 --> 00:03:14,352
+ Apa yang diasumsikan orang berubah. 
+
+73
+00:03:14,352 --> 00:03:16,310
+ Orang-orang sekarang lebih mengerti tentang keamanan. 
+
+74
+00:03:16,310 --> 00:03:19,050
+ Jadi versi Kerberos mereka yang digunakan saat ini 
+
+75
+00:03:19,050 --> 00:03:21,770
+ terasa berbeda dalam banyak hal 
+
+76
+00:03:21,770 --> 00:03:23,860
+ dari versi di koran. 
+
+77
+00:03:23,860 --> 00:03:27,520
+ Dan kita akan melihat dengan tepat asumsi apa yang tidak cukup baik 
+
+78
+00:03:27,520 --> 00:03:30,432
+ lagi hari ini dan apa yang mereka salah. 
+
+79
+00:03:30,432 --> 00:03:32,390
+ Ini semacam tak terelakkan untuk protokol apa pun itu 
+
+80
+00:03:32,390 --> 00:03:34,650
+ adalah protokol pertama yang benar-benar menggunakan kriptografi 
+
+81
+00:03:34,650 --> 00:03:37,460
+ untuk mengotentikasi pihak melalui jaringan dalam jenis ini 
+
+82
+00:03:37,460 --> 00:03:40,810
+ skala sistem penuh. 
+
+83
+00:03:40,810 --> 00:03:43,422
+ Bagaimanapun, jadi itu semacam pengaturan untuk Kerberos. 
+
+84
+00:03:43,422 --> 00:03:45,130
+ Dan itu mungkin menarik untuk diketahui 
+
+85
+00:03:45,130 --> 00:03:46,379
+ apa model kepercayaannya, kan? 
+
+86
+00:03:46,379 --> 00:03:49,910
+ Jadi Kerberos akan memperkenalkan Kerberos ekstra ini 
+
+87
+00:03:49,910 --> 00:03:51,450
+ server duduk di samping. 
+
+88
+00:03:51,450 --> 00:03:55,240
+
+
+89
+00:03:55,240 --> 00:03:58,040
+ Jadi model ketiga kami di beberapa level adalah 
+
+90
+00:03:58,040 --> 00:04:00,710
+ bahwa jaringan tidak dipercaya seperti kita 
+
+91
+00:04:00,710 --> 00:04:03,420
+ berpikir tentang di kuliah terakhir. 
+
+92
+00:04:03,420 --> 00:04:06,745
+ Tapi siapa yang harus kita percayai dalam pengaturan Kerberos ini? 
+
+93
+00:04:06,745 --> 00:04:09,700
+
+
+94
+00:04:09,700 --> 00:04:14,650
+ Jadi tentu saja, satu hal adalah semua orang-- semua pihak punya 
+
+95
+00:04:14,650 --> 00:04:16,230
+ untuk mempercayai server Kerberos. 
+
+96
+00:04:16,230 --> 00:04:18,574
+
+
+97
+00:04:18,574 --> 00:04:20,199
+ Jadi itulah anggapan orang-orang ini 
+
+98
+00:04:20,199 --> 00:04:22,657
+ bersedia membuat pada saat itu server Kerberos ini akan 
+
+99
+00:04:22,657 --> 00:04:24,915
+ bertanggung jawab atas semua otentikasi jaringan 
+
+100
+00:04:24,915 --> 00:04:27,435
+ dalam beberapa bentuk atau lainnya. 
+
+101
+00:04:27,435 --> 00:04:29,930
+ Apakah kita memiliki orang lain yang harus mempercayai apa pun 
+
+102
+00:04:29,930 --> 00:04:30,670
+ dalam pengaturan? 
+
+103
+00:04:30,670 --> 00:04:33,210
+
+
+104
+00:04:33,210 --> 00:04:33,960
+ Misalnya, ya. 
+
+105
+00:04:33,960 --> 00:04:36,304
+ SISWA: Pengguna baik harus mempercayai mesin mereka sendiri. 
+
+106
+00:04:36,304 --> 00:04:38,220
+ PROFESOR: Ya, jadi itu poin yang bagus, kan? 
+
+107
+00:04:38,220 --> 00:04:41,030
+ Ada pengguna yang tidak saya gambar di sini. 
+
+108
+00:04:41,030 --> 00:04:43,780
+ Tetapi orang-orang ini menggunakan beberapa workstation. 
+
+109
+00:04:43,780 --> 00:04:46,150
+ Dan itu sebenarnya sangat penting di Kerberos 
+
+110
+00:04:46,150 --> 00:04:50,199
+ bahwa pengguna mempercayai workstation mereka. 
+
+111
+00:04:50,199 --> 00:04:52,490
+ Jadi apa yang salah jika Anda tidak mempercayai workstation Anda? 
+
+112
+00:04:52,490 --> 00:04:54,406
+ Atau mungkin, itu hanya bisa mengendus kata sandi Anda 
+
+113
+00:04:54,406 --> 00:04:59,405
+ dan lakukan apa pun yang Anda ketikkan-- Anda tahu, LS, itu mencoba-- menjalankan RMX. 
+
+114
+00:04:59,405 --> 00:05:01,950
+ Sepertinya itu tidak menguntungkan. 
+
+115
+00:05:01,950 --> 00:05:02,664
+ Ya. 
+
+116
+00:05:02,664 --> 00:05:04,330
+ SISWA: Tapi itu lebih dari itu, 
+
+117
+00:05:04,330 --> 00:05:07,020
+ karena mereka bahkan bisa, seperti, mengendus tiket Kerberos Anda. 
+
+118
+00:05:07,020 --> 00:05:07,590
+ PROFESOR: Ya, tepatnya. 
+
+119
+00:05:07,590 --> 00:05:09,710
+ Atau ketika Anda masuk, Anda mengetikkan kata sandi Anda, yang 
+
+120
+00:05:09,710 --> 00:05:10,960
+ bahkan lebih buruk dari tiketnya. 
+
+121
+00:05:10,960 --> 00:05:12,240
+ Ya, tentu saja, ya. 
+
+122
+00:05:12,240 --> 00:05:15,490
+ Jadi ini sebenarnya sedikit masalah dengan Kerberos 
+
+123
+00:05:15,490 --> 00:05:19,050
+ dalam arti jika Anda tidak mempercayai workstation, maka 
+
+124
+00:05:19,050 --> 00:05:21,050
+ Anda sedang dalam masalah. 
+
+125
+00:05:21,050 --> 00:05:23,200
+ Jadi jika Anda memiliki laptop Anda sendiri, ini 
+
+126
+00:05:23,200 --> 00:05:25,030
+ tampaknya seperti asumsi yang masuk akal. 
+
+127
+00:05:25,030 --> 00:05:27,140
+ Jika Anda menggunakan komputer publik, 
+
+128
+00:05:27,140 --> 00:05:28,485
+ ini sedikit lebih dipertanyakan. 
+
+129
+00:05:28,485 --> 00:05:30,860
+ Dan kita akan melihat apa yang bisa salah. 
+
+130
+00:05:30,860 --> 00:05:31,683
+ Ya. 
+
+131
+00:05:31,683 --> 00:05:34,641
+ SISWA: Anda harus percaya bahwa orang yang mengadministrasikan tidak 
+
+132
+00:05:34,641 --> 00:05:37,106
+ melakukan sesuatu yang buruk dengan server [TIDAK JELAS] 
+
+133
+00:05:37,106 --> 00:05:39,972
+ dan memberi mereka akses istimewa ke satu sama lain. 
+
+134
+00:05:39,972 --> 00:05:41,180
+ SISWA: Jadi apa maksudmu? 
+
+135
+00:05:41,180 --> 00:05:43,220
+ Jadi tentu saja, seperti, ISNT akan hadir 
+
+136
+00:05:43,220 --> 00:05:46,010
+ untuk menjalankan mesin-mesin ini di sini. 
+
+137
+00:05:46,010 --> 00:05:48,300
+ Tapi saya pikir mesin itu sendiri belum tentu 
+
+138
+00:05:48,300 --> 00:05:49,850
+ harus saling percaya satu sama lain. 
+
+139
+00:05:49,850 --> 00:05:53,010
+ Jadi server email tidak mempercayai server cetak atau file 
+
+140
+00:05:53,010 --> 00:05:54,908
+ server tentu saja. 
+
+141
+00:05:54,908 --> 00:05:56,366
+ SISWA: Tidak percaya, tapi dia mungkin 
+
+142
+00:05:56,366 --> 00:05:58,294
+ dapat mengakses server Anda tidak 
+
+143
+00:05:58,294 --> 00:06:01,497
+ seharusnya memiliki akses dengan melalui server lain. 
+
+144
+00:06:01,497 --> 00:06:03,080
+ PROFESOR: Ya, itu benar, saya kira. 
+
+145
+00:06:03,080 --> 00:06:05,040
+ Ya, jadi jika Anda mengatur hubungan kepercayaan 
+
+146
+00:06:05,040 --> 00:06:07,360
+ antara orang-orang ini - seperti, jika Anda memberikan server email 
+
+147
+00:06:07,360 --> 00:06:11,530
+ beberapa back end untuk mengakses file Anda hanya demi kenyamanan, 
+
+148
+00:06:11,530 --> 00:06:13,140
+ maka ini bisa disalahgunakan, ya. 
+
+149
+00:06:13,140 --> 00:06:16,400
+ Jadi Anda harus berhati-hati untuk tidak memperkenalkan 
+
+150
+00:06:16,400 --> 00:06:20,990
+ semacam tambahan tingkat kepercayaan atau hubungan kepercayaan di sini. 
+
+151
+00:06:20,990 --> 00:06:25,100
+ Baiklah, ada hal lain yang penting di sini? 
+
+152
+00:06:25,100 --> 00:06:27,090
+ Apakah server harus mempercayai para pengguna 
+
+153
+00:06:27,090 --> 00:06:29,210
+ dengan cara apa pun atau workstation? 
+
+154
+00:06:29,210 --> 00:06:31,776
+
+
+155
+00:06:31,776 --> 00:06:32,900
+ Tidak, saya kira mungkin tidak. 
+
+156
+00:06:32,900 --> 00:06:35,920
+ Jadi inilah seluruh tujuan server itu 
+
+157
+00:06:35,920 --> 00:06:38,160
+ tidak harus a priori bahkan tahu tentu 
+
+158
+00:06:38,160 --> 00:06:40,320
+ apa semua pengguna ini atau cara mengautentikasi mereka 
+
+159
+00:06:40,320 --> 00:06:43,220
+ atau apa yang dilakukan workstation ini hingga bisa 
+
+160
+00:06:43,220 --> 00:06:47,100
+ cryptographically membuktikan bahwa ini adalah pengguna yang sah 
+
+161
+00:06:47,100 --> 00:06:51,460
+ dan mereka harus memiliki akses ke data mereka atau yang lainnya. 
+
+162
+00:06:51,460 --> 00:06:53,600
+ Baiklah, jadi mari kita lihat bagaimana cara kerja Kerberos 
+
+163
+00:06:53,600 --> 00:06:57,340
+ atau apa arsitektur keseluruhannya, setidaknya. 
+
+164
+00:06:57,340 --> 00:07:01,200
+ Jadi rencana yang ada dalam pikiran orang-orang ini 
+
+165
+00:07:01,200 --> 00:07:03,500
+ adalah bahwa akan ada server Kerberos ini. 
+
+166
+00:07:03,500 --> 00:07:05,470
+ Kami telah menggambarnya di sana tetapi mari menggambarnya 
+
+167
+00:07:05,470 --> 00:07:07,300
+ dalam skala yang sedikit lebih besar. 
+
+168
+00:07:07,300 --> 00:07:10,540
+ Jadi ini adalah server Kerberos. 
+
+169
+00:07:10,540 --> 00:07:16,650
+ Dan hari ini, itu biasanya disebut KDC-- Pusat Distribusi Kunci. 
+
+170
+00:07:16,650 --> 00:07:22,430
+ Dan ada semua pengguna di sini di suatu tempat dan juga 
+
+171
+00:07:22,430 --> 00:07:26,840
+ layanan yang mungkin ingin Anda sambungkan. 
+
+172
+00:07:26,840 --> 00:07:30,860
+ Dan rencananya adalah server Kerberos 
+
+173
+00:07:30,860 --> 00:07:34,650
+ akan bertanggung jawab untuk menyimpan yang dibagikan 
+
+174
+00:07:34,650 --> 00:07:39,070
+ kunci antara server Kerberos dan setiap entitas di dunia, 
+
+175
+00:07:39,070 --> 00:07:41,080
+ atau di dunia ini setidaknya. 
+
+176
+00:07:41,080 --> 00:07:45,885
+ Jadi, jika pengguna memiliki semacam kunci KC untuk klien, 
+
+177
+00:07:45,885 --> 00:07:47,260
+ dari server Kerberos pergi 
+
+178
+00:07:47,260 --> 00:07:49,720
+ untuk mengingat kunci ini di suatu tempat di sini. 
+
+179
+00:07:49,720 --> 00:07:53,680
+ Dan juga untuk server, KS kunci 
+
+180
+00:07:53,680 --> 00:07:56,080
+ akan diketahui oleh layanan itu sendiri 
+
+181
+00:07:56,080 --> 00:07:59,300
+ dan ke server Kerberos tapi semoga tidak ada orang lain. 
+
+182
+00:07:59,300 --> 00:08:02,020
+ Jadi Anda dapat menganggapnya sebagai seperti generalisasi kata sandi, 
+
+183
+00:08:02,020 --> 00:08:02,520
+ kanan? 
+
+184
+00:08:02,520 --> 00:08:04,440
+ Jadi Anda tahu kata sandi dan server Kerberos 
+
+185
+00:08:04,440 --> 00:08:05,940
+ tahu kata sandi Anda tetapi tidak ada orang lain. 
+
+186
+00:08:05,940 --> 00:08:08,790
+ Dan ini adalah bagaimana kalian akan membuktikan satu sama lain, 
+
+187
+00:08:08,790 --> 00:08:10,130
+ ya, aku pria yang tepat. 
+
+188
+00:08:10,130 --> 00:08:13,000
+ Saya tahu kata sandi ini dan tidak ada yang tahu. 
+
+189
+00:08:13,000 --> 00:08:14,150
+ Masuk akal? 
+
+190
+00:08:14,150 --> 00:08:17,982
+ Dan hal lain yang harus dilakukan oleh server Kerberos 
+
+191
+00:08:17,982 --> 00:08:20,070
+ tentu saja, melacak siapa 
+
+192
+00:08:20,070 --> 00:08:22,370
+ itu yang memiliki kunci ini, kan? 
+
+193
+00:08:22,370 --> 00:08:27,080
+ Jadi itu akan memiliki tabel ini memetakan semacam nama. 
+
+194
+00:08:27,080 --> 00:08:29,080
+ Jadi ini semacam pengguna. 
+
+195
+00:08:29,080 --> 00:08:35,630
+ Ini mungkin layanan mungkin AFS atau sesuatu seperti ini. 
+
+196
+00:08:35,630 --> 00:08:38,530
+ Dan KDC bertanggung jawab untuk menyimpan tabel raksasa-- 
+
+197
+00:08:38,530 --> 00:08:41,659
+ baik, tidak terlalu besar dalam hal jumlah byte, 
+
+198
+00:08:41,659 --> 00:08:45,640
+ tentu saja, tetapi satu entri per entitas 
+
+199
+00:08:45,640 --> 00:08:50,310
+ di MIT yang diketahui oleh server Kerberos. 
+
+200
+00:08:50,310 --> 00:08:52,510
+ Masuk akal? 
+
+201
+00:08:52,510 --> 00:08:56,634
+ Baiklah, dan kemudian kita akan menyediakan semacam itu 
+
+202
+00:08:56,634 --> 00:08:57,550
+ dua antarmuka, kan? 
+
+203
+00:08:57,550 --> 00:09:00,200
+ Kertas sedikit kabur di atas ini 
+
+204
+00:09:00,200 --> 00:09:02,200
+ atau berpura-pura seperti benar-benar ada dua layanan. 
+
+205
+00:09:02,200 --> 00:09:05,260
+ Tapi sungguh, yang terjadi adalah ada dua antarmuka 
+
+206
+00:09:05,260 --> 00:09:06,660
+ ke mesin yang sama. 
+
+207
+00:09:06,660 --> 00:09:11,560
+ Salah satunya disebut Kerberos di koran dan salah satunya 
+
+208
+00:09:11,560 --> 00:09:15,460
+ disebut TGS untuk Layanan Pemberian Tiket. 
+
+209
+00:09:15,460 --> 00:09:16,980
+ Dan sungguh, ini hanya dua cara 
+
+210
+00:09:16,980 --> 00:09:20,130
+ berbicara dengan hal yang sama di bagian belakang. 
+
+211
+00:09:20,130 --> 00:09:24,340
+ Dan protokolnya sedikit berbeda untuk hal-hal ini. 
+
+212
+00:09:24,340 --> 00:09:26,570
+ Jadi awalnya, ketika pengguna masuk, 
+
+213
+00:09:26,570 --> 00:09:28,680
+ mereka akan berbicara dengan orang ini di sini. 
+
+214
+00:09:28,680 --> 00:09:32,110
+ Dan mereka akan mengirim nama klien mereka, 
+
+215
+00:09:32,110 --> 00:09:35,160
+ C. Jadi ini mungkin nama pengguna Athena Anda. 
+
+216
+00:09:35,160 --> 00:09:36,810
+ Dan server akan merespons 
+
+217
+00:09:36,810 --> 00:09:43,804
+ untuk kembali dengan tiket, TGS atau-- yah, 
+
+218
+00:09:43,804 --> 00:09:44,720
+ semacam tiket. 
+
+219
+00:09:44,720 --> 00:09:46,540
+ Kita akan melihat detailnya sedikit. 
+
+220
+00:09:46,540 --> 00:09:51,130
+ Dan kemudian ketika Anda ingin berbicara dengan beberapa server di sini, 
+
+221
+00:09:51,130 --> 00:09:54,040
+ KS, maka kamu akan berbicara dengan TGS ini dulu 
+
+222
+00:09:54,040 --> 00:09:56,530
+ dan berkata, oh, hei, saya sudah masuk 
+
+223
+00:09:56,530 --> 00:09:58,560
+ melalui antarmuka Kerberos. 
+
+224
+00:09:58,560 --> 00:10:00,770
+ Sekarang, saya ingin berbicara dengan server S. 
+
+225
+00:10:00,770 --> 00:10:03,560
+ Jadi, Anda akan memberi tahu TGS tentang server yang ingin Anda ajak bicara. 
+
+226
+00:10:03,560 --> 00:10:08,330
+ Dan kemudian mengembalikan Anda kembali semacam tiket 
+
+227
+00:10:08,330 --> 00:10:12,780
+ untuk berbicara dengan server S. Dan kemudian Anda akhirnya bisa 
+
+228
+00:10:12,780 --> 00:10:15,600
+ mulai berbicara dengan server di sini 
+
+229
+00:10:15,600 --> 00:10:22,230
+ dengan awalnya memberikannya tiket ini untuk S. 
+
+230
+00:10:22,230 --> 00:10:23,902
+ Apakah ini semua masuk akal? 
+
+231
+00:10:23,902 --> 00:10:27,270
+ Ini adalah semacam rencana tingkat tinggi. 
+
+232
+00:10:27,270 --> 00:10:30,335
+ Jadi mengapa orang-orang ini memiliki dua antarmuka? 
+
+233
+00:10:30,335 --> 00:10:32,967
+
+
+234
+00:10:32,967 --> 00:10:34,550
+ Yah, saya kira saya sebenarnya ingin bertanya 
+
+235
+00:10:34,550 --> 00:10:35,425
+ banyak pertanyaan. 
+
+236
+00:10:35,425 --> 00:10:38,080
+ Seperti, dalam hal layanan, layanan ini 
+
+237
+00:10:38,080 --> 00:10:39,770
+ mungkin akan disimpan di disk. 
+
+238
+00:10:39,770 --> 00:10:42,330
+ Apa yang terjadi dengan KC ini di sisi pengguna? 
+
+239
+00:10:42,330 --> 00:10:46,240
+ Dari mana KC berasal dari Kerberos? 
+
+240
+00:10:46,240 --> 00:10:47,574
+ Ya. 
+
+241
+00:10:47,574 --> 00:10:50,740
+ SISWA: KDMS [tidak terdengar] database. 
+
+242
+00:10:50,740 --> 00:10:52,736
+ PROFESOR: Ya, kunci C duduk di sini. 
+
+243
+00:10:52,736 --> 00:10:53,860
+ Dan itu benar sekali. 
+
+244
+00:10:53,860 --> 00:10:55,420
+ Itu ada di database raksasa ini. 
+
+245
+00:10:55,420 --> 00:10:57,280
+ Tetapi itu juga harus diketahui oleh pengguna 
+
+246
+00:10:57,280 --> 00:10:59,610
+ karena pengguna harus membuktikan bahwa mereka adalah pengguna. 
+
+247
+00:10:59,610 --> 00:11:00,326
+ Ya. 
+
+248
+00:11:00,326 --> 00:11:02,030
+ SISWA: Apakah itu fungsi satu arah dan kemudian kata sandi? 
+
+249
+00:11:02,030 --> 00:11:03,405
+ PROFESOR: Ya, jadi mereka sebenarnya 
+
+250
+00:11:03,405 --> 00:11:05,930
+ memiliki rencana lucu seperti ini di mana KC sebenarnya 
+
+251
+00:11:05,930 --> 00:11:09,100
+ akan diturunkan dengan hashing kata sandi pengguna 
+
+252
+00:11:09,100 --> 00:11:11,320
+ atau semacam fungsi durasi kunci. 
+
+253
+00:11:11,320 --> 00:11:14,444
+ Dan ada beberapa penggunaan yang berbeda. 
+
+254
+00:11:14,444 --> 00:11:16,360
+ Tapi pada dasarnya Anda akan mengambil kata sandi, 
+
+255
+00:11:16,360 --> 00:11:20,676
+ mengubahnya dalam beberapa cara, dan dapatkan KC kunci ini. 
+
+256
+00:11:20,676 --> 00:11:25,180
+ Baiklah, sepertinya itu bagus. 
+
+257
+00:11:25,180 --> 00:11:27,010
+ Mengapa kita membutuhkan dua protokol, bukan? 
+
+258
+00:11:27,010 --> 00:11:32,020
+ Anda bisa membayangkan bahwa Anda hanya selalu meminta server Kerberos 
+
+259
+00:11:32,020 --> 00:11:33,292
+ untuk tiket langsung dengan cara ini. 
+
+260
+00:11:33,292 --> 00:11:34,750
+ Anda berkata, yah, hei, saya ingin tiket 
+
+261
+00:11:34,750 --> 00:11:36,730
+ untuk nama prinsip khusus ini. 
+
+262
+00:11:36,730 --> 00:11:39,070
+ Dan itu akan mengirim Anda kembali tiket dan Anda dapat mendekripsi itu 
+
+263
+00:11:39,070 --> 00:11:41,440
+ dengan KC Anda sesudahnya. 
+
+264
+00:11:41,440 --> 00:11:41,940
+ Ya. 
+
+265
+00:11:41,940 --> 00:11:44,861
+ SISWA: Dapatkah Anda [TIDAK JELAS] atau bertanya kepada pengguna 
+
+266
+00:11:44,861 --> 00:11:46,527
+ untuk memasukkan kembali kata sandi mereka setiap kali mereka 
+
+267
+00:11:46,527 --> 00:11:47,740
+ ingin layanan [TIDAK JELAS]? 
+
+268
+00:11:47,740 --> 00:11:49,823
+ PROFESOR: Benar, jadi alasan perbedaannya 
+
+269
+00:11:49,823 --> 00:11:52,440
+ antara dua antarmuka ini adalah bahwa pada antarmuka ini, 
+
+270
+00:11:52,440 --> 00:11:56,170
+ semua tanggapan kembali dienkripsi dengan KC kunci Anda. 
+
+271
+00:11:56,170 --> 00:11:59,500
+ Dan para desainer Kerberos sedikit khawatir 
+
+272
+00:11:59,500 --> 00:12:03,070
+ tentang menjaga KC ini untuk waktu yang lama. 
+
+273
+00:12:03,070 --> 00:12:05,260
+ Karena entah Anda harus meminta pengguna untuk memasukkannya, 
+
+274
+00:12:05,260 --> 00:12:07,730
+ yang hanya menjengkelkan bagi pengguna, 
+
+275
+00:12:07,730 --> 00:12:09,330
+ atau ada di dalam memori. 
+
+276
+00:12:09,330 --> 00:12:12,400
+ Dan ini pada dasarnya sama baiknya dengan kata sandi pengguna. 
+
+277
+00:12:12,400 --> 00:12:17,730
+ Jadi jika ini diungkapkan, maka seseorang dengan akses ke KC 
+
+278
+00:12:17,730 --> 00:12:20,675
+ dapat terus mengakses file pengguna sampai pengguna mungkin 
+
+279
+00:12:20,675 --> 00:12:22,800
+ mengubah kata sandi mereka dan berpotensi lebih lama lagi. 
+
+280
+00:12:22,800 --> 00:12:25,300
+ Kita lihat saja nanti. 
+
+281
+00:12:25,300 --> 00:12:28,570
+ Jadi KC ini adalah hal yang sangat berbahaya untuk bocor. 
+
+282
+00:12:28,570 --> 00:12:31,580
+ Jadi seluruh titik menggunakan antarmuka ini terlebih dahulu dan menggunakan 
+
+283
+00:12:31,580 --> 00:12:34,270
+ antarmuka ini nantinya untuk semua permintaan berikutnya 
+
+284
+00:12:34,270 --> 00:12:36,790
+ adalah Anda benar-benar dapat melupakan KC 
+
+285
+00:12:36,790 --> 00:12:40,430
+ segera setelah Anda mendekripsi respon TGS ini dari Kerberos 
+
+286
+00:12:40,430 --> 00:12:41,980
+ antarmuka. 
+
+287
+00:12:41,980 --> 00:12:44,600
+ Dan sejak saat itu, bahkan jika Anda membocorkannya, 
+
+288
+00:12:44,600 --> 00:12:46,994
+ ada seumur hidup yang terkait dengan tiket ini. 
+
+289
+00:12:46,994 --> 00:12:48,410
+ Jadi kasus terburuk, seseorang mendapat akses 
+
+290
+00:12:48,410 --> 00:12:50,160
+ ke akun Anda selama beberapa jam, 
+
+291
+00:12:50,160 --> 00:12:53,359
+ bukan untuk waktu yang tidak terbatas. 
+
+292
+00:12:53,359 --> 00:12:54,900
+ Jadi itulah perbedaan utamanya 
+
+293
+00:12:54,900 --> 00:12:59,020
+ mengapa kalian memiliki gambar yang sedikit lebih rumit ini 
+
+294
+00:12:59,020 --> 00:13:03,190
+ dengan dua cara mengakses hal yang sama. 
+
+295
+00:13:03,190 --> 00:13:06,360
+ Baiklah, jadi sebelum kita menyelami mekanisme bagaimana caranya 
+
+296
+00:13:06,360 --> 00:13:08,900
+ protokol ini benar-benar terlihat seperti pada kabel, 
+
+297
+00:13:08,900 --> 00:13:13,060
+ mari kita bicara sedikit tentang aspek penamaan ini di Kerberos, 
+
+298
+00:13:13,060 --> 00:13:13,560
+ kanan? 
+
+299
+00:13:13,560 --> 00:13:16,100
+ Jadi pada tingkat tertentu, Anda bisa memikirkan Kerberos 
+
+300
+00:13:16,100 --> 00:13:18,530
+ sebagai registrasi nama, bukan? 
+
+301
+00:13:18,530 --> 00:13:20,680
+ Jadi itu benar-benar bertanggung jawab untuk memetakan 
+
+302
+00:13:20,680 --> 00:13:24,090
+ kunci kriptografi ini ke nama string. 
+
+303
+00:13:24,090 --> 00:13:27,459
+ Dan ini adalah jenis operasi yang mendasar 
+
+304
+00:13:27,459 --> 00:13:28,750
+ yang perlu disediakan oleh Kerberos. 
+
+305
+00:13:28,750 --> 00:13:31,467
+ Bahkan, Anda akan melihat di kuliah berikutnya bahkan di web, 
+
+306
+00:13:31,467 --> 00:13:32,800
+ kami membutuhkan beberapa fungsi seperti ini. 
+
+307
+00:13:32,800 --> 00:13:34,550
+ Ini diterapkan secara berbeda dari Kerberos 
+
+308
+00:13:34,550 --> 00:13:36,570
+ tetapi ini adalah hal yang sangat penting 
+
+309
+00:13:36,570 --> 00:13:39,060
+ untuk memiliki hampir semua sistem terdistribusi 
+
+310
+00:13:39,060 --> 00:13:40,510
+ untuk keamanan. 
+
+311
+00:13:40,510 --> 00:13:45,080
+ Jadi mari kita lihat bagaimana Kerberos sebenarnya berurusan dengan nama. 
+
+312
+00:13:45,080 --> 00:13:49,440
+ Jadi di Kerberos, semacam sistem 
+
+313
+00:13:49,440 --> 00:13:53,560
+ memanggil setiap entitas dalam basis data ini sebagai prinsipal 
+
+314
+00:13:53,560 --> 00:13:56,920
+ Dan seorang kepala sekolah di Kerberos sebenarnya hanyalah sebuah string, bukan? 
+
+315
+00:13:56,920 --> 00:13:59,780
+ Jadi Anda benar-benar dapat memiliki beberapa prinsip seperti, saya tidak tahu, 
+
+316
+00:13:59,780 --> 00:14:00,885
+ nickolei. 
+
+317
+00:14:00,885 --> 00:14:01,720
+ Jadi itu sebuah string. 
+
+318
+00:14:01,720 --> 00:14:05,170
+ Dan itu bisa menjadi pokok di beberapa bidang Kerberos. 
+
+319
+00:14:05,170 --> 00:14:06,850
+ Jadi itu benar-benar menjadi sesuatu 
+
+320
+00:14:06,850 --> 00:14:12,000
+ yang berada di kolom kiri tabel KDC ini. 
+
+321
+00:14:12,000 --> 00:14:16,007
+ Dan ada juga beberapa contoh ekstra 
+
+322
+00:14:16,007 --> 00:14:17,090
+ bahwa protocl mendukung. 
+
+323
+00:14:17,090 --> 00:14:20,200
+ Saya bisa mengatakan, Anda tahu, nikolai.extra aman 
+
+324
+00:14:20,200 --> 00:14:22,740
+ atau sesuatu. 
+
+325
+00:14:22,740 --> 00:14:25,930
+ Dan saya mungkin menggunakan ini sebagai entitas yang berbeda 
+
+326
+00:14:25,930 --> 00:14:27,960
+ untuk mesin yang sangat saya pedulikan. 
+
+327
+00:14:27,960 --> 00:14:29,810
+ Jadi mungkin saya akan memiliki kata sandi yang berbeda 
+
+328
+00:14:29,810 --> 00:14:31,940
+ untuk hal-hal yang benar-benar aman dan kata sandi yang berbeda 
+
+329
+00:14:31,940 --> 00:14:34,120
+ untuk akun reguler saya. 
+
+330
+00:14:34,120 --> 00:14:37,110
+ Jadi ini hanya semacam bagaimana Kerberos-- 
+
+331
+00:14:37,110 --> 00:14:40,690
+ ini adalah apa yang dibicarakan makalah dengan contoh-contoh. 
+
+332
+00:14:40,690 --> 00:14:42,190
+ Jadi orang mungkin bertanya-tanya - di mana 
+
+333
+00:14:42,190 --> 00:14:43,440
+ apakah Anda benar-benar melihat contoh? 
+
+334
+00:14:43,440 --> 00:14:45,440
+ Darimana pengaruh datang? 
+
+335
+00:14:45,440 --> 00:14:49,930
+ Jadi, layanan Kerberos memetakan nama menjadi kunci untuk Anda, 
+
+336
+00:14:49,930 --> 00:14:51,940
+ tapi bagaimana Anda tahu nama yang ditanyakan 
+
+337
+00:14:51,940 --> 00:14:56,600
+ atau nama mana yang diharapkan ketika Anda berbicara dengan beberapa mesin? 
+
+338
+00:14:56,600 --> 00:15:00,720
+ Jadi saya kira apa yang saya tanyakan adalah, nama apa yang muncul di luar 
+
+339
+00:15:00,720 --> 00:15:03,050
+ dari mesin Kerberos. 
+
+340
+00:15:03,050 --> 00:15:06,256
+ Jadi saya kira kita bisa bertanya, OK, di mana nama-nama pengguna muncul? 
+
+341
+00:15:06,256 --> 00:15:07,701
+ Ada ide? 
+
+342
+00:15:07,701 --> 00:15:08,200
+ Ya. 
+
+343
+00:15:08,200 --> 00:15:10,525
+ SISWA: Anda dapat meminta server MIT untuk nama pengguna 
+
+344
+00:15:10,525 --> 00:15:11,812
+ agaknya. 
+
+345
+00:15:11,812 --> 00:15:12,770
+ PROFESOR: Benar, ya. 
+
+346
+00:15:12,770 --> 00:15:13,900
+ Jadi Anda bisa menyebutkan hal-hal ini. 
+
+347
+00:15:13,900 --> 00:15:15,350
+ Juga, pengguna cukup mengetikkan mereka kapan 
+
+348
+00:15:15,350 --> 00:15:16,349
+ mereka masuk ke mesin. 
+
+349
+00:15:16,349 --> 00:15:18,480
+ Jadi dari sanalah awalnya berasal. 
+
+350
+00:15:18,480 --> 00:15:21,020
+ Apakah nama pengguna muncul di tempat lain? 
+
+351
+00:15:21,020 --> 00:15:23,652
+ Haruskah mereka muncul di tempat lain? 
+
+352
+00:15:23,652 --> 00:15:24,152
+ Ya. 
+
+353
+00:15:24,152 --> 00:15:26,084
+ SISWA: Mungkin mengakses [tidak terdengar] 
+
+354
+00:15:26,084 --> 00:15:27,494
+ daftar di berbagai layanan. 
+
+355
+00:15:27,494 --> 00:15:29,910
+ PROFESOR: Ya, itu sebenarnya poin penting, kan? 
+
+356
+00:15:29,910 --> 00:15:33,850
+ Tujuan Kerberos hanya untuk memetakan kunci ke nama. 
+
+357
+00:15:33,850 --> 00:15:36,440
+ Tapi itu tidak memberi tahu Anda apa nama yang seharusnya memiliki akses 
+
+358
+00:15:36,440 --> 00:15:37,020
+ untuk. 
+
+359
+00:15:37,020 --> 00:15:38,950
+ Padahal, cara aplikasi biasanya 
+
+360
+00:15:38,950 --> 00:15:42,900
+ gunakan Kerberos adalah salah satu server ini 
+
+361
+00:15:42,900 --> 00:15:45,730
+ menggunakan Kerberos untuk mencari tahu, OK, nama string apa saya 
+
+362
+00:15:45,730 --> 00:15:46,290
+ berbicara kepada? 
+
+363
+00:15:46,290 --> 00:15:48,290
+ Jadi ketika server surat mendapat koneksi 
+
+364
+00:15:48,290 --> 00:15:50,920
+ dari beberapa workstation dan mendapatkan tiket Kerberos itu 
+
+365
+00:15:50,920 --> 00:15:54,220
+ buktikan bahwa mungkin pengguna ini disebut Nikolai, 
+
+366
+00:15:54,220 --> 00:15:56,110
+ kemudian server email secara internal sekarang 
+
+367
+00:15:56,110 --> 00:15:57,630
+ harus mencari tahu, OK, baik, apa 
+
+368
+00:15:57,630 --> 00:15:59,280
+ Haruskah orang itu memiliki akses ke? 
+
+369
+00:15:59,280 --> 00:16:00,960
+ Dan sama untuk server file. 
+
+370
+00:16:00,960 --> 00:16:03,150
+ Jadi di dalam semua server ini, ada 
+
+371
+00:16:03,150 --> 00:16:07,900
+ mungkin hal-hal seperti daftar kontrol akses, mungkin grup, 
+
+372
+00:16:07,900 --> 00:16:11,770
+ mungkin hal lain yang benar-benar melakukan langkah otorisasi. 
+
+373
+00:16:11,770 --> 00:16:14,770
+ Jadi Kerberos menyediakan otentikasi 
+
+374
+00:16:14,770 --> 00:16:17,690
+ yang memberi tahu Anda siapa orang yang saya ajak bicara ini. 
+
+375
+00:16:17,690 --> 00:16:20,580
+ Dan layanan itu sendiri bertanggung jawab untuk mengimplementasikan 
+
+376
+00:16:20,580 --> 00:16:23,870
+ bagian otorisasi di mana mereka memutuskan akses apa 
+
+377
+00:16:23,870 --> 00:16:28,180
+ Anda harus berdasarkan nama pengguna Anda di sini. 
+
+378
+00:16:28,180 --> 00:16:30,440
+ Masuk akal? 
+
+379
+00:16:30,440 --> 00:16:33,500
+ Baiklah, di situlah nama-nama pengguna muncul. 
+
+380
+00:16:33,500 --> 00:16:35,100
+ Ada juga nama-nama utama lainnya 
+
+381
+00:16:35,100 --> 00:16:37,400
+ dukungan Kerberos untuk layanan, bukan? 
+
+382
+00:16:37,400 --> 00:16:39,890
+ Jadi layanan, saya kira makalahnya menyarankan, 
+
+383
+00:16:39,890 --> 00:16:41,380
+ terlihat seperti ini. 
+
+384
+00:16:41,380 --> 00:16:42,270
+ Itu rcmd.hostname. 
+
+385
+00:16:42,270 --> 00:16:47,910
+
+
+386
+00:16:47,910 --> 00:16:53,589
+ Dan alasan bahwa Anda memerlukan nama untuk salah satu layanan ini 
+
+387
+00:16:53,589 --> 00:16:55,380
+ adalah Anda ingin tahu, misalnya, kapan 
+
+388
+00:16:55,380 --> 00:16:58,980
+ Saya terhubung ke file server, saya sebenarnya 
+
+389
+00:16:58,980 --> 00:17:01,500
+ ingin saling otentikasi. 
+
+390
+00:17:01,500 --> 00:17:04,160
+ Bukan hanya server terakhir yang mengetahui siapa saya, 
+
+391
+00:17:04,160 --> 00:17:06,288
+ tapi saya, pengguna atau stasiun kerja, 
+
+392
+00:17:06,288 --> 00:17:08,579
+ ingin diyakinkan bahwa saya sedang berbicara dengan file yang tepat 
+
+393
+00:17:08,579 --> 00:17:10,598
+ server dan bukan beberapa file server palsu itu 
+
+394
+00:17:10,598 --> 00:17:11,879
+ meniru identitas file saya. 
+
+395
+00:17:11,880 --> 00:17:14,108
+ Karena mungkin saya akan melihat nilainya 
+
+396
+00:17:14,108 --> 00:17:15,689
+ file dan kirimkan ke registrar. 
+
+397
+00:17:15,690 --> 00:17:17,964
+ Akan terlalu buruk jika beberapa file server 
+
+398
+00:17:17,964 --> 00:17:21,319
+ dapat meniru tanggapan dan memberi saya file nilai yang salah 
+
+399
+00:17:21,319 --> 00:17:23,020
+ tiba-tiba. 
+
+400
+00:17:23,020 --> 00:17:25,500
+ Jadi inilah mengapa prinsip layanan juga 
+
+401
+00:17:25,500 --> 00:17:29,770
+ perlu nama mereka sendiri dan workstation perlu mencari tahu 
+
+402
+00:17:29,770 --> 00:17:34,120
+ nama apa yang harus saya harapkan ketika saya terhubung ke layanan. 
+
+403
+00:17:34,120 --> 00:17:36,500
+ Dan biasanya, ini berasal dari pengguna pada tingkat tertentu. 
+
+404
+00:17:36,500 --> 00:17:41,010
+ Jadi misalnya, jika saya ketik SSH beberapa mesin foo, 
+
+405
+00:17:41,010 --> 00:17:44,150
+ maka ini berarti saya harus menunggu 
+
+406
+00:17:44,150 --> 00:17:47,100
+ kepala sekolah Kerberos disebut rcmd.foo 
+
+407
+00:17:47,100 --> 00:17:49,000
+ di ujung lain dari koneksi ini. 
+
+408
+00:17:49,000 --> 00:17:51,210
+ Dan jika ternyata orang lain, 
+
+409
+00:17:51,210 --> 00:17:53,240
+ klien SSH ini harus batalkan dan tidak 
+
+410
+00:17:53,240 --> 00:17:56,040
+ biarkan saya terhubung karena saya akan disesatkan untuk berbicara 
+
+411
+00:17:56,040 --> 00:17:57,936
+ ke beberapa mesin lain. 
+
+412
+00:17:57,936 --> 00:18:00,392
+ Masuk akal? 
+
+413
+00:18:00,392 --> 00:18:01,850
+ Jadi, inilah satu pertanyaan yang menarik. 
+
+414
+00:18:01,850 --> 00:18:04,365
+ Kapan kita dapat menggunakan kembali nama-nama di Kerberos? 
+
+415
+00:18:04,365 --> 00:18:06,940
+ Ini seperti, kalian semua memiliki akun Athena. 
+
+416
+00:18:06,940 --> 00:18:08,960
+ Dan ketika Anda lulus, bisa MIT, 
+
+417
+00:18:08,960 --> 00:18:11,480
+ seperti, hapus entri basis data Anda 
+
+418
+00:18:11,480 --> 00:18:14,130
+ dan memungkinkan orang lain untuk mendaftarkan nama pengguna yang sama itu? 
+
+419
+00:18:14,130 --> 00:18:16,600
+ Apakah itu ide yang bagus? 
+
+420
+00:18:16,600 --> 00:18:19,290
+ Nah, selain dari fakta bahwa kalian menginginkan akun. 
+
+421
+00:18:19,290 --> 00:18:19,790
+ Ya. 
+
+422
+00:18:19,790 --> 00:18:23,205
+ SISWA: Layanan yang diperbarui juga sehingga mereka mau, 
+
+423
+00:18:23,205 --> 00:18:25,593
+ seperti petakan ke username itu [INAUDIBLE] izin 
+
+424
+00:18:25,593 --> 00:18:26,176
+ secara teoretis? 
+
+425
+00:18:26,176 --> 00:18:28,470
+ PROFESOR: Ya, karena orang-orang ini sebenarnya 
+
+426
+00:18:28,470 --> 00:18:32,580
+ hanya entri string di suatu tempat di beberapa ACL pada file 
+
+427
+00:18:32,580 --> 00:18:33,950
+ server di server email. 
+
+428
+00:18:33,950 --> 00:18:37,340
+ Dan hanya karena Anda menghapus entri ini di Kerberos 
+
+429
+00:18:37,340 --> 00:18:40,075
+ basis data tidak berarti bahwa entri ini hilang. 
+
+430
+00:18:40,075 --> 00:18:41,950
+ Dan mereka tidak berversi dengan cara apa pun, kan? 
+
+431
+00:18:41,950 --> 00:18:43,658
+ Entri ini benar-benar bisa mengatakan, Anda tahu, 
+
+432
+00:18:43,658 --> 00:18:47,270
+ Alice memiliki akses ke beberapa loker Athena. 
+
+433
+00:18:47,270 --> 00:18:50,999
+ Dan jika Alice ini lulus dan entrinya dihapus, 
+
+434
+00:18:50,999 --> 00:18:52,790
+ lalu beberapa Alice baru datang, mendaftar, 
+
+435
+00:18:52,790 --> 00:18:54,770
+ dalam database Kerberos. 
+
+436
+00:18:54,770 --> 00:18:56,570
+ Tapi dia mendapat prinsip yang terlihat 
+
+437
+00:18:56,570 --> 00:18:57,895
+ identik dengan Alice yang dulu. 
+
+438
+00:18:57,895 --> 00:18:58,770
+ Ini string yang sama. 
+
+439
+00:18:58,770 --> 00:19:00,370
+ Jadi tiba-tiba, file server 
+
+440
+00:19:00,370 --> 00:19:04,740
+ akan memberikan akses ke data Alice yang baru ke data lama Alice. 
+
+441
+00:19:04,740 --> 00:19:06,620
+ Jadi ada sedikit proses yang rumit 
+
+442
+00:19:06,620 --> 00:19:09,650
+ untuk merebut kembali nama-nama utama di Kerberos 
+
+443
+00:19:09,650 --> 00:19:11,160
+ karena tidak ada hubungan nyata 
+
+444
+00:19:11,160 --> 00:19:12,869
+ atau versi di antara orang-orang ini. 
+
+445
+00:19:12,869 --> 00:19:14,410
+ Jadi sebagai hasilnya, itu benar-benar baik 
+
+446
+00:19:14,410 --> 00:19:16,749
+ susah untuk menggunakan kembali nama utama. 
+
+447
+00:19:16,749 --> 00:19:18,540
+ Setelah Anda mendaftar kepala sekolah, Anda mungkin 
+
+448
+00:19:18,540 --> 00:19:22,160
+ tidak ingin sering menggunakannya kembali. 
+
+449
+00:19:22,160 --> 00:19:25,930
+ Dan sama untuk, dalam beberapa hal, nama-nama utama ini 
+
+450
+00:19:25,930 --> 00:19:27,020
+ untuk layanan juga. 
+
+451
+00:19:27,020 --> 00:19:30,910
+ Asalkan nama inang ini tetap merupakan layanan terkenal 
+
+452
+00:19:30,910 --> 00:19:33,040
+ yang orang harapkan berfungsi dengan cara tertentu, 
+
+453
+00:19:33,040 --> 00:19:34,920
+ Anda mungkin tidak ingin menyingkirkan kuncinya 
+
+454
+00:19:34,920 --> 00:19:35,940
+ meskipun layanan terus berjalan. 
+
+455
+00:19:35,940 --> 00:19:38,398
+ Karena mungkin setahun kemudian, seorang pria mencoba untuk terhubung dengannya 
+
+456
+00:19:38,398 --> 00:19:39,581
+ dan mengharapkan hal-hal tertentu. 
+
+457
+00:19:39,581 --> 00:19:41,580
+ Dan jika itu digunakan kembali untuk layanan yang berbeda, 
+
+458
+00:19:41,580 --> 00:19:44,130
+ pria itu bisa meniru hal-hal. 
+
+459
+00:19:44,130 --> 00:19:47,620
+ Mungkin tidak sedramatis atau buruk, tapi tetap saja, 
+
+460
+00:19:47,620 --> 00:19:50,420
+ Anda harus berhati-hati dengan menggunakan kembali nama-nama utama 
+
+461
+00:19:50,420 --> 00:19:52,910
+ dalam protokol semacam ini. 
+
+462
+00:19:52,910 --> 00:19:53,940
+ Masuk akal? 
+
+463
+00:19:53,940 --> 00:19:56,140
+ Ada pertanyaan? 
+
+464
+00:19:56,140 --> 00:19:59,590
+ Baiklah, mari kita lihat bagaimana protokol itu sendiri sekarang bekerja. 
+
+465
+00:19:59,590 --> 00:20:02,780
+ Jadi kita akan melihat terlebih dahulu dan langkah ini dari protokol 
+
+466
+00:20:02,780 --> 00:20:06,160
+ di mana Anda awalnya mendapatkan tiket Anda dengan kata sandi Anda. 
+
+467
+00:20:06,160 --> 00:20:09,170
+ Dan kemudian kita akan melihat bagaimana antarmuka TGS ini bekerja 
+
+468
+00:20:09,170 --> 00:20:12,660
+ dan bagaimana hal itu sedikit berbeda. 
+
+469
+00:20:12,660 --> 00:20:15,280
+ Baiklah, jadi saya kira ada data utama ini 
+
+470
+00:20:15,280 --> 00:20:17,790
+ struktur yang digunakan Kerberos disebut tiket. 
+
+471
+00:20:17,790 --> 00:20:21,660
+ Dan tiket ini terlihat seperti ini. 
+
+472
+00:20:21,660 --> 00:20:25,270
+ Jadi ada tiket ke antara klien dan server. 
+
+473
+00:20:25,270 --> 00:20:28,510
+ Dan orang ini pada dasarnya adalah nama 
+
+474
+00:20:28,510 --> 00:20:30,550
+ dari server dan klien yang kami 
+
+475
+00:20:30,550 --> 00:20:36,190
+ berbicara tentang-- alamat IP klien, 
+
+476
+00:20:36,190 --> 00:20:43,050
+ semacam cap waktu, dan waktu kedaluwarsa untuk berapa lama 
+
+477
+00:20:43,050 --> 00:20:44,260
+ tongkat itu valid. 
+
+478
+00:20:44,260 --> 00:20:48,400
+ Dan ada juga kunci, KCS, itu 
+
+479
+00:20:48,400 --> 00:20:51,860
+ akan dibagikan antara klien dan server. 
+
+480
+00:20:51,860 --> 00:20:53,790
+ Jadi itulah yang ada di tiket. 
+
+481
+00:20:53,790 --> 00:20:56,610
+ Dan ada juga struktur data aneh lainnya 
+
+482
+00:20:56,610 --> 00:20:59,380
+ yang diperkenalkan oleh Kerberos disebut sebagai authenticator. 
+
+483
+00:20:59,380 --> 00:21:03,590
+ Dan seorang autentikator berjalan dengan klien tertentu C. 
+
+484
+00:21:03,590 --> 00:21:06,530
+ Dan ini hanya nama kliennya, 
+
+485
+00:21:06,530 --> 00:21:11,640
+ alamat IP klien, dan stempel waktu 
+
+486
+00:21:11,640 --> 00:21:15,210
+ ketika klien menghasilkan authenticator ini. 
+
+487
+00:21:15,210 --> 00:21:18,270
+ Dan biasanya, kedua hal ini dienkripsi. 
+
+488
+00:21:18,270 --> 00:21:20,520
+ Dan authenticator biasanya ditulis 
+
+489
+00:21:20,520 --> 00:21:23,760
+ dengan kunci antara klien di server. 
+
+490
+00:21:23,760 --> 00:21:25,670
+ Jadi semacam authenticator harus dilakukan 
+
+491
+00:21:25,670 --> 00:21:29,110
+ dengan koneksi tertentu antara klien dan server. 
+
+492
+00:21:29,110 --> 00:21:31,550
+ Dan tiket Kerberos itu sendiri di sini 
+
+493
+00:21:31,550 --> 00:21:38,140
+ biasanya dienkripsi dengan kunci untuk layanan KS. 
+
+494
+00:21:38,140 --> 00:21:41,010
+ Jadi notasi subskrip menunjukkan di sini 
+
+495
+00:21:41,010 --> 00:21:45,050
+ enkripsi dengan kunci tertentu. 
+
+496
+00:21:45,050 --> 00:21:48,470
+ Baiklah, jadi apa ini-- jadi gunakan notasi semacam ini 
+
+497
+00:21:48,470 --> 00:21:50,670
+ di sini, mari kita coba mencari tahu apa protokolnya. 
+
+498
+00:21:50,670 --> 00:21:53,650
+ Dengan mana pengguna awalnya masuk ke Kerberos ini 
+
+499
+00:21:53,650 --> 00:21:56,010
+ dan mendapat tiket TGS mereka. 
+
+500
+00:21:56,010 --> 00:21:59,240
+ Jadi seperti yang kita lihat di sini sebelumnya, benar, rencananya 
+
+501
+00:21:59,240 --> 00:22:06,030
+ adalah klien akan mengirim nama pengguna mereka 
+
+502
+00:22:06,030 --> 00:22:10,130
+ ke server Kerberos atau antarmuka itu. 
+
+503
+00:22:10,130 --> 00:22:12,140
+ Dan responnya akan menjadi tiket. 
+
+504
+00:22:12,140 --> 00:22:13,760
+ Dan sebenarnya apa sebenarnya klien itu 
+
+505
+00:22:13,760 --> 00:22:17,710
+ mengirim over-- baik nama pengguna C dari klien itu 
+
+506
+00:22:17,710 --> 00:22:22,150
+ mengeluarkan permintaan serta nama utama-- baik, 
+
+507
+00:22:22,150 --> 00:22:23,760
+ klien juga merupakan nama utama. 
+
+508
+00:22:23,760 --> 00:22:25,840
+ Tetapi klien juga mengirimkan nama utama 
+
+509
+00:22:25,840 --> 00:22:29,720
+ dari layanan yang ingin mendapatkan tiket. 
+
+510
+00:22:29,720 --> 00:22:32,880
+ Dan biasanya, nama layanan sebenarnya adalah nama layanan 
+
+511
+00:22:32,880 --> 00:22:34,700
+ dari pria TGS ini di sini. 
+
+512
+00:22:34,700 --> 00:22:36,150
+ Jadi, Anda mendapatkan tiket untuk mereka. 
+
+513
+00:22:36,150 --> 00:22:38,191
+ Tetapi Anda bisa mendapatkan tiket untuk hampir semua layanan 
+
+514
+00:22:38,191 --> 00:22:39,700
+ Anda inginkan dengan cara ini. 
+
+515
+00:22:39,700 --> 00:22:42,430
+ Dan tanggapan mereka akan terjadi 
+
+516
+00:22:42,430 --> 00:22:44,380
+ semacam tuple yang menarik ini. 
+
+517
+00:22:44,380 --> 00:22:47,030
+ Ini akan menjadi tiket Anda di antara klien 
+
+518
+00:22:47,030 --> 00:22:50,930
+ dan server dienkripsi hanya dengan KS kunci itu 
+
+519
+00:22:50,930 --> 00:22:53,560
+ seperti yang ditunjukkan di atas. 
+
+520
+00:22:53,560 --> 00:22:56,170
+ Saya kira kita harus menulis itu dengan KS 
+
+521
+00:22:56,170 --> 00:23:01,140
+ Dan juga, Anda mendapatkan kunci CS kunci bersama ini. 
+
+522
+00:23:01,140 --> 00:23:06,180
+ Dan semua ini dienkripsi dengan KC. 
+
+523
+00:23:06,180 --> 00:23:08,690
+ Jadi itulah protokol kawat. 
+
+524
+00:23:08,690 --> 00:23:11,190
+ Jadi saya kira mari kita coba mencari tahu beberapa hal. 
+
+525
+00:23:11,190 --> 00:23:17,770
+ Jadi pertama-tama, bagaimana server Kerberos 
+
+526
+00:23:17,770 --> 00:23:19,020
+ mengotentikasi klien di sini? 
+
+527
+00:23:19,020 --> 00:23:20,910
+ Bagaimana cara mengetahui bahwa ini adalah pengguna yang tepat 
+
+528
+00:23:20,910 --> 00:23:21,451
+ permintaan ini? 
+
+529
+00:23:21,451 --> 00:23:24,395
+
+
+530
+00:23:24,395 --> 00:23:24,895
+ Ya. 
+
+531
+00:23:24,895 --> 00:23:27,128
+ SISWA: Dapat memastikan bahwa tiket 
+
+532
+00:23:27,128 --> 00:23:29,100
+ yang dikirim karena memiliki KC. 
+
+533
+00:23:29,100 --> 00:23:31,020
+ PROFESOR: Ya, saya pikir itulah yang terjadi 
+
+534
+00:23:31,020 --> 00:23:32,960
+ adalah bahwa server Kerberos lagi pada tingkat tertentu sebenarnya 
+
+535
+00:23:32,960 --> 00:23:35,540
+ tidak tahu apakah ini klien yang tepat atau tidak. 
+
+536
+00:23:35,540 --> 00:23:37,500
+ Tapi itu berpikir oh, yah, tentu, itu tidak masalah 
+
+537
+00:23:37,500 --> 00:23:38,930
+ siapa yang membuat permintaan ini. 
+
+538
+00:23:38,930 --> 00:23:41,780
+ Saya hanya akan mengirim gumpalan ini keluar dan satu-satunya orang 
+
+539
+00:23:41,780 --> 00:23:44,010
+ siapa yang harus bisa memanfaatkan gumpalan ini 
+
+540
+00:23:44,010 --> 00:23:48,170
+ adalah orang yang tahu kunci KC ini di sini. 
+
+541
+00:23:48,170 --> 00:23:50,432
+ Jadi itu agak keren karena klien 
+
+542
+00:23:50,432 --> 00:23:51,890
+ tidak perlu mengirim kata sandi mereka 
+
+543
+00:23:51,890 --> 00:23:53,790
+ melalui jaringan sama sekali. 
+
+544
+00:23:53,790 --> 00:23:56,650
+ Jadi dalam beberapa hal, ini sebenarnya lebih baik daripada klien 
+
+545
+00:23:56,650 --> 00:23:58,800
+ mengirim kata sandi ke server Kerberos 
+
+546
+00:23:58,800 --> 00:24:01,710
+ karena bahkan jika server Kerberos di sini 
+
+547
+00:24:01,710 --> 00:24:03,960
+ sedang mendengarkan kata sandi ini 
+
+548
+00:24:03,960 --> 00:24:06,710
+ dan mencoba merekamnya, itu tidak akan pernah mendapatkan kata sandi Anda. 
+
+549
+00:24:06,710 --> 00:24:08,900
+ Atau mungkin jika seseorang meniru Kerberos 
+
+550
+00:24:08,900 --> 00:24:13,000
+ server, mereka tidak akan mendapatkan salinan kata sandi Anda. 
+
+551
+00:24:13,000 --> 00:24:14,090
+ Baiklah, ya. 
+
+552
+00:24:14,090 --> 00:24:17,380
+ SISWA: [TIDAK JELAS] musuh ingin [TIDAK JELAS] 
+
+553
+00:24:17,380 --> 00:24:20,200
+ kata sandi Anda offline tanpa-- 
+
+554
+00:24:20,200 --> 00:24:23,020
+ PROFESOR: Ya, jadi ini sebenarnya bukan aspek yang bagus 
+
+555
+00:24:23,020 --> 00:24:24,322
+ Kerberos, sebenarnya, kan? 
+
+556
+00:24:24,322 --> 00:24:26,030
+ Jadi apakah setiap orang melihat apa masalahnya? 
+
+557
+00:24:26,030 --> 00:24:28,430
+ Masalahnya adalah cara klien bisa 
+
+558
+00:24:28,430 --> 00:24:30,180
+ katakan apakah mereka mendapatkan kata sandi yang benar atau tidak 
+
+559
+00:24:30,180 --> 00:24:32,520
+ atau workstation memberitahu jika klien disediakan 
+
+560
+00:24:32,520 --> 00:24:35,320
+ kata sandi yang benar adalah mereka mencoba mendekripsi tiket ini 
+
+561
+00:24:35,320 --> 00:24:37,760
+ dan mereka melihat apakah berhasil atau tidak. 
+
+562
+00:24:37,760 --> 00:24:41,080
+ Dan dekripsi cukup murah. 
+
+563
+00:24:41,080 --> 00:24:42,700
+ Ini adalah enkripsi simetris dan Anda 
+
+564
+00:24:42,700 --> 00:24:45,060
+ dapat melakukan mungkin jutaan dekripsi 
+
+565
+00:24:45,060 --> 00:24:49,460
+ satu detik jika Anda berusaha keras pada mesin modern. 
+
+566
+00:24:49,460 --> 00:24:52,300
+ Dan ini berarti Anda dapat mencoba jutaan 
+
+567
+00:24:52,300 --> 00:24:54,020
+ kata sandi potensial per detik 
+
+568
+00:24:54,020 --> 00:24:56,497
+ untuk menebak apa kata sandi orang itu. 
+
+569
+00:24:56,497 --> 00:24:58,330
+ Dan Anda bisa melakukan ini untuk semua orang. 
+
+570
+00:24:58,330 --> 00:25:00,372
+ Anda hanya bisa mengirim kepala sekolah mereka 
+
+571
+00:25:00,372 --> 00:25:01,330
+ ke server Kerberos. 
+
+572
+00:25:01,330 --> 00:25:03,999
+ Ini akan dengan senang hati memberi Anda kembali respons ini dienkripsi 
+
+573
+00:25:03,999 --> 00:25:05,040
+ dengan kata sandi pengguna. 
+
+574
+00:25:05,040 --> 00:25:07,590
+ Maka Anda dapat mencoba kata sandi yang berbeda dan hanya melihat apa 
+
+575
+00:25:07,590 --> 00:25:08,740
+ bekerja atau tidak. 
+
+576
+00:25:08,740 --> 00:25:09,798
+ Ya. 
+
+577
+00:25:09,798 --> 00:25:12,786
+ SISWA: Tetapi tidak akan konten [tidak terdengar] 
+
+578
+00:25:12,786 --> 00:25:14,778
+ didekripsi [TIDAK JELAS] keunggulan? 
+
+579
+00:25:14,778 --> 00:25:16,752
+ Bagaimana kami bisa yakin bahwa Anda secara langsung-- 
+
+580
+00:25:16,752 --> 00:25:19,210
+ PROFESOR: Ya, ini sebenarnya aspek lain yang menarik 
+
+581
+00:25:19,210 --> 00:25:21,360
+ di mana para pengembang Kerberos 4 tidak cukup 
+
+582
+00:25:21,360 --> 00:25:24,300
+ Sadarilah bahwa saat mereka membangun ini bahwa mereka benar-benar 
+
+583
+00:25:24,300 --> 00:25:27,270
+ seharusnya sangat berhati-hati memisahkan enkripsi 
+
+584
+00:25:27,270 --> 00:25:29,110
+ dari otentikasi. 
+
+585
+00:25:29,110 --> 00:25:33,150
+ Jadi di koran, ada asumsi implisit ini 
+
+586
+00:25:33,150 --> 00:25:37,442
+ itu-- semoga, itu bukan kita. 
+
+587
+00:25:37,442 --> 00:25:38,150
+ Baiklah, maaf. 
+
+588
+00:25:38,150 --> 00:25:40,191
+ Jadi di koran, ada asumsi implisit ini 
+
+589
+00:25:40,191 --> 00:25:43,220
+ bahwa setiap kali Anda mengenkripsi sepotong data 
+
+590
+00:25:43,220 --> 00:25:46,210
+ dan Anda mengirimkannya kepada orang lain, jika orang itu dapat mendekripsi 
+
+591
+00:25:46,210 --> 00:25:48,350
+ data dan itu terlihat baik, 
+
+592
+00:25:48,350 --> 00:25:50,210
+ maka tidak, mereka harus mendapatkan kunci yang tepat 
+
+593
+00:25:50,210 --> 00:25:52,520
+ dan data tidak dirusak dalam penerbangan. 
+
+594
+00:25:52,520 --> 00:25:54,430
+ Tapi sepertinya itu rencana yang sangat buruk sekarang 
+
+595
+00:25:54,430 --> 00:25:56,590
+ yang kita pikirkan 30 tahun kemudian. 
+
+596
+00:25:56,590 --> 00:25:58,230
+ Tetapi pada saat itu, tidak begitu jelas. 
+
+597
+00:25:58,230 --> 00:25:59,610
+ Jadi untuk melakukan Kerberos dengan benar, 
+
+598
+00:25:59,610 --> 00:26:01,730
+ dan faktanya, apa yang Kerberos 5 lakukan sekarang, 
+
+599
+00:26:01,730 --> 00:26:04,277
+ apakah keduanya mengenkripsi semua bagian data 
+
+600
+00:26:04,277 --> 00:26:05,860
+ dan mereka juga mengotentikasi pesan itu 
+
+601
+00:26:05,860 --> 00:26:09,350
+ pada dasarnya menghitung hash dengan kunci. 
+
+602
+00:26:09,350 --> 00:26:11,320
+ Dan kemudian hasilnya benar-benar memberi tahu Anda 
+
+603
+00:26:11,320 --> 00:26:13,960
+ itu, oh, data itu tidak dirusak. 
+
+604
+00:26:13,960 --> 00:26:16,389
+ Itu ditandatangani dengan benar dengan kunci ini, dan sebagainya. 
+
+605
+00:26:16,389 --> 00:26:17,930
+ Dan apa yang sebenarnya terjadi di Kerberos 
+
+606
+00:26:17,930 --> 00:26:20,030
+ versi 4 ada beberapa bit tambahan 
+
+607
+00:26:20,030 --> 00:26:23,110
+ dalam hal ini yang dienkripsi yang seharusnya semua 
+
+608
+00:26:23,110 --> 00:26:25,350
+ ada beberapa pola seperti nol. 
+
+609
+00:26:25,350 --> 00:26:28,150
+ Dan biasanya, jika Anda salah kunci, 
+
+610
+00:26:28,150 --> 00:26:31,510
+ pola itu tidak akan terlihat seperti nol hanya secara kebetulan. 
+
+611
+00:26:31,510 --> 00:26:34,210
+ Ini tidak dijamin secara kriptografi. 
+
+612
+00:26:34,210 --> 00:26:36,690
+ Tetapi sering kali, itu tidak akan terlihat seperti nol 
+
+613
+00:26:36,690 --> 00:26:40,030
+ dan Anda akan dapat memutuskan apakah Anda mendapatkan kunci yang benar 
+
+614
+00:26:40,030 --> 00:26:42,490
+ atau tidak. 
+
+615
+00:26:42,490 --> 00:26:45,400
+ Baiklah, jadi itu semacam rencananya 
+
+616
+00:26:45,400 --> 00:26:47,744
+ untuk bagaimana klien memberi tahu, saya kira, 
+
+617
+00:26:47,744 --> 00:26:48,910
+ apakah tiket itu valid. 
+
+618
+00:26:48,910 --> 00:26:52,384
+ Mereka hanya mencoba mendekripsi dan melihat cara kerjanya. 
+
+619
+00:26:52,384 --> 00:26:53,800
+ Jadi pertanyaan menarik lainnya adalah 
+
+620
+00:26:53,800 --> 00:26:57,214
+ mengapa kunci KCS ini termasuk dua kali 
+
+621
+00:26:57,214 --> 00:26:58,630
+ di tiket dalam beberapa bentuk, kan? 
+
+622
+00:26:58,630 --> 00:27:02,520
+ Jadi itu termasuk sekali di sini dan lain waktu sebenarnya semacam 
+
+623
+00:27:02,520 --> 00:27:06,060
+ secara implisit dalam tiket ini T. Mengapa 
+
+624
+00:27:06,060 --> 00:27:10,274
+ Apakah kita memiliki dua salinan kunci KCS yang sama? 
+
+625
+00:27:10,274 --> 00:27:10,774
+ Ya. 
+
+626
+00:27:10,774 --> 00:27:12,658
+ SISWA: Klien tidak dapat mendekripsi tiket itu 
+
+627
+00:27:12,658 --> 00:27:14,681
+ karena dienkripsi dengan kunci layanan. 
+
+628
+00:27:14,681 --> 00:27:16,930
+ PROFESOR: Ya, jadi itu benar-benar lucu, kan? 
+
+629
+00:27:16,930 --> 00:27:19,067
+ Seperti, ada kunci yang bisa diterima oleh klien. 
+
+630
+00:27:19,067 --> 00:27:20,900
+ Tapi kemudian ada salinan lain di sini. 
+
+631
+00:27:20,900 --> 00:27:23,300
+ Ini dienkripsi dengan KS. 
+
+632
+00:27:23,300 --> 00:27:27,400
+ Dan alasan untuk ini adalah bahwa server Kerberos sebenarnya 
+
+633
+00:27:27,400 --> 00:27:29,670
+ mencoba mengatur klien dan orang lain ini 
+
+634
+00:27:29,670 --> 00:27:31,350
+ untuk berbicara satu sama lain dengan aman. 
+
+635
+00:27:31,350 --> 00:27:35,650
+ Jadi Kerberos menghasilkan KCS kunci yang mudah-mudahan ini acak 
+
+636
+00:27:35,650 --> 00:27:38,180
+ dan ingin memberikan satu salinan ke klien dan satu salinan 
+
+637
+00:27:38,180 --> 00:27:40,640
+ untuk menulis server lain yang ingin Anda ajak bicara. 
+
+638
+00:27:40,640 --> 00:27:42,840
+ Dan satu hal yang bisa Anda bayangkan melakukan dengan naif 
+
+639
+00:27:42,840 --> 00:27:45,600
+ mungkin Kerberos akan pergi dan berkata, hei layanan, 
+
+640
+00:27:45,600 --> 00:27:46,850
+ pria ini ingin berbicara denganmu. 
+
+641
+00:27:46,850 --> 00:27:47,767
+ Inilah kuncinya. 
+
+642
+00:27:47,767 --> 00:27:49,349
+ Tapi itu agak disayangkan. 
+
+643
+00:27:49,349 --> 00:27:52,380
+ Anda harus memiliki panggilan server Kerberos kembali ke layanan 
+
+644
+00:27:52,380 --> 00:27:53,380
+ dan seterusnya. 
+
+645
+00:27:53,380 --> 00:27:56,610
+ Jadi sebagai gantinya, orang-orang ini memiliki trik yang bagus di mana mereka saja 
+
+646
+00:27:56,610 --> 00:27:58,899
+ untuk memberikan klien tidak gumpalan bahwa klien 
+
+647
+00:27:58,899 --> 00:28:00,440
+ tidak bisa benar-benar melakukan apa pun dengan yang lain 
+
+648
+00:28:00,440 --> 00:28:02,290
+ daripada memberi ke layanan yang tepat. 
+
+649
+00:28:02,290 --> 00:28:04,470
+ Dan jika layanan memiliki kunci KS yang tepat, 
+
+650
+00:28:04,470 --> 00:28:06,260
+ mereka akan mendekripsi dan berkata, aha. 
+
+651
+00:28:06,260 --> 00:28:10,420
+ Nah, inilah kunci yang harus saya gunakan untuk berbicara dengan klien ini. 
+
+652
+00:28:10,420 --> 00:28:13,970
+ Dan itulah bagaimana kedua orang ini, klien dan layanannya, 
+
+653
+00:28:13,970 --> 00:28:16,320
+ akan membuat kunci bersama untuk melindungi 
+
+654
+00:28:16,320 --> 00:28:17,200
+ komunikasi mereka. 
+
+655
+00:28:17,200 --> 00:28:17,700
+ Ya. 
+
+656
+00:28:17,700 --> 00:28:19,670
+ SISWA: Jadi apa sebenarnya TGS? 
+
+657
+00:28:19,670 --> 00:28:24,160
+ PROFESOR: Jadi TGS ... OK, jadi ada 
+
+658
+00:28:24,160 --> 00:28:25,820
+ semacam dua sisi untuk itu. 
+
+659
+00:28:25,820 --> 00:28:28,620
+ Dari sudut pandang klien, itu hanya layanan lain 
+
+660
+00:28:28,620 --> 00:28:30,290
+ Anda bisa mendapatkan tiket. 
+
+661
+00:28:30,290 --> 00:28:32,540
+ Dan jenis operasi yang didukungnya 
+
+662
+00:28:32,540 --> 00:28:33,690
+ semakin banyak tiket. 
+
+663
+00:28:33,690 --> 00:28:35,010
+ Ini adalah Layanan Pemberian Tiket. 
+
+664
+00:28:35,010 --> 00:28:37,310
+ SISWA: Maaf, maksud saya adalah tiket yang disebut TGS. 
+
+665
+00:28:37,310 --> 00:28:38,520
+ PROFESOR: Oh, ya, maaf. 
+
+666
+00:28:38,520 --> 00:28:41,760
+ TGS ini hanya singkatan untuk seluruh gumpalan ini 
+
+667
+00:28:41,760 --> 00:28:45,565
+ kecuali di mana S sebenarnya adalah nama utama dari TGS ini 
+
+668
+00:28:45,565 --> 00:28:46,065
+ layanan. 
+
+669
+00:28:46,065 --> 00:28:48,527
+
+
+670
+00:28:48,527 --> 00:28:50,860
+ Jadi Anda bisa menganggapnya seperti, yah, ada Kerberos 
+
+671
+00:28:50,860 --> 00:28:52,770
+ server, ada layanan TGS ini di luar sana, 
+
+672
+00:28:52,770 --> 00:28:54,230
+ dan kemudian ada hal nyata yang ingin saya dapatkan. 
+
+673
+00:28:54,230 --> 00:28:56,170
+ Jadi, pertama-tama Anda meminta orang ini memberi saya 
+
+674
+00:28:56,170 --> 00:28:57,950
+ tiket untuk beberapa layanan. 
+
+675
+00:28:57,950 --> 00:29:00,530
+ Anda dapat meminta untuk memberi Anda tiket langsung untuk file tersebut 
+
+676
+00:29:00,530 --> 00:29:01,550
+ server 
+
+677
+00:29:01,550 --> 00:29:02,400
+ Dan ini akan berhasil. 
+
+678
+00:29:02,400 --> 00:29:04,040
+ Tetapi Anda perlu KC Anda untuk mendekripsikannya 
+
+679
+00:29:04,040 --> 00:29:06,044
+ dan kemudian Anda membutuhkan KC Anda sepanjang waktu. 
+
+680
+00:29:06,044 --> 00:29:07,460
+ Jadi sebagai gantinya, apa yang Anda lakukan adalah Anda dapatkan 
+
+681
+00:29:07,460 --> 00:29:10,595
+ tiket untuk layanan khusus ini di sini. 
+
+682
+00:29:10,595 --> 00:29:12,720
+ Ini terlihat seperti layanan, kecuali itu terjadi 
+
+683
+00:29:12,720 --> 00:29:15,630
+ disediakan oleh kotak yang sama. 
+
+684
+00:29:15,630 --> 00:29:18,310
+ Dan kemudian orang ini dengan senang hati akan memberimu tiket lebih banyak 
+
+685
+00:29:18,310 --> 00:29:23,210
+ nanti tanpa harus menyajikan KC awal Anda lagi. 
+
+686
+00:29:23,210 --> 00:29:24,143
+ Masuk akal? 
+
+687
+00:29:24,143 --> 00:29:26,830
+ Baiklah, pertanyaan lain? 
+
+688
+00:29:26,830 --> 00:29:27,662
+ Ya. 
+
+689
+00:29:27,662 --> 00:29:32,482
+ SISWA: Jadi [TIDAK JELAS] idenya adalah setelah Anda mendapatkan tiket TGS, 
+
+690
+00:29:32,482 --> 00:29:33,940
+ Anda bisa menyingkirkan KC Anda? 
+
+691
+00:29:33,940 --> 00:29:34,840
+ PROFESOR: Ya, jadi itu sebenarnya 
+
+692
+00:29:34,840 --> 00:29:36,660
+ hal keren tentang itu adalah sekali itu 
+
+693
+00:29:36,660 --> 00:29:40,250
+ Anda mendapatkan tiket ini - baik, tiket ini dengan S menjadi TGS, 
+
+694
+00:29:40,250 --> 00:29:43,450
+ maka Anda akan menyingkirkan kata sandi dan KC. 
+
+695
+00:29:43,450 --> 00:29:46,836
+ Jadi Anda login ke workstation Athena dan pasangan 
+
+696
+00:29:46,836 --> 00:29:48,210
+ detik ke dalam proses boot, 
+
+697
+00:29:48,210 --> 00:29:49,584
+ Anda sudah mendapatkan tiket Anda di sini. 
+
+698
+00:29:49,584 --> 00:29:51,280
+ Ini menghapus kata sandi dari memori. 
+
+699
+00:29:51,280 --> 00:29:54,240
+ Jadi bahkan jika seseorang, seperti, mengambilmu dan mengambil mesin 
+
+700
+00:29:54,240 --> 00:29:56,870
+ dan kabur, yang mereka dapatkan hanyalah tiketmu. 
+
+701
+00:29:56,870 --> 00:29:59,830
+ Dan OK, yah, mungkin mereka dapat mengakses barang Anda selama 10 jam 
+
+702
+00:29:59,830 --> 00:30:01,410
+ atau apa pun umur tiketnya, 
+
+703
+00:30:01,410 --> 00:30:02,760
+ tetapi tidak lebih lama dari itu. 
+
+704
+00:30:02,760 --> 00:30:05,580
+ Kata sandi hilang. 
+
+705
+00:30:05,580 --> 00:30:06,080
+ Ya. 
+
+706
+00:30:06,080 --> 00:30:08,912
+ Jadi jika kata sandi hilang, maka di foto itu 
+
+707
+00:30:08,912 --> 00:30:11,000
+ di sana ketika Kerberos mengirim balasan 
+
+708
+00:30:11,000 --> 00:30:14,220
+ dienkripsi dengan KC, bagaimana klien-- 
+
+709
+00:30:14,220 --> 00:30:16,680
+ Oh ya, jadi ini adalah satu-satunya tempat Anda perlu kata sandi Anda. 
+
+710
+00:30:16,680 --> 00:30:19,650
+ Jadi Anda mengirim pesan ini, Anda mendapat balasan ini, 
+
+711
+00:30:19,650 --> 00:30:22,603
+ Anda mendekripsi ini, dan kemudian Anda lupa kata sandinya. 
+
+712
+00:30:22,603 --> 00:30:24,186
+ Jadi Anda tidak bisa melupakan kata sandi 
+
+713
+00:30:24,186 --> 00:30:26,220
+ sebelum Anda menggunakannya untuk dekripsi tentu saja. 
+
+714
+00:30:26,220 --> 00:30:28,150
+ SISWA: [TIDAK TERDENGAR] 
+
+715
+00:30:28,150 --> 00:30:30,590
+ PROFESOR: Ah, tidak, jadi ini hanya antarmuka ini, kan? 
+
+716
+00:30:30,590 --> 00:30:33,470
+ Jadi ini adalah hal yang Anda lakukan pada awalnya. 
+
+717
+00:30:33,470 --> 00:30:36,220
+ Dan kita akan bicara sebentar tentang bagaimana Anda pada dasarnya juga 
+
+718
+00:30:36,220 --> 00:30:38,840
+ dapat memperoleh tiket yang Anda inginkan dari antarmuka kedua 
+
+719
+00:30:38,840 --> 00:30:43,924
+ tanpa perlu kunci awal KC. 
+
+720
+00:30:43,924 --> 00:30:46,760
+ Benar, masuk akal? 
+
+721
+00:30:46,760 --> 00:30:49,530
+ Baiklah, jadi saya kira kita sudah bicara 
+
+722
+00:30:49,530 --> 00:30:53,920
+ tentang dua masalah khusus yang dimiliki protokol Kerberos 
+
+723
+00:30:53,920 --> 00:30:56,830
+ semacam dipanggang ke dalamnya, yang sedikit disayangkan. 
+
+724
+00:30:56,830 --> 00:30:59,520
+ Salah satunya adalah mereka mengasumsikan enkripsi itu juga 
+
+725
+00:30:59,520 --> 00:31:02,440
+ menyediakan otentikasi atau integritas pesan. 
+
+726
+00:31:02,440 --> 00:31:03,270
+ Jadi jangan lakukan itu. 
+
+727
+00:31:03,270 --> 00:31:05,040
+ Dan Kerberos versi 5 memperbaiki ini 
+
+728
+00:31:05,040 --> 00:31:07,770
+ dengan mengautentikasi pesan secara eksplisit. 
+
+729
+00:31:07,770 --> 00:31:11,940
+ Hal lain yang mereka punya masalah 
+
+730
+00:31:11,940 --> 00:31:14,820
+ adalah kemampuan untuk klien yang sewenang-wenang 
+
+731
+00:31:14,820 --> 00:31:17,220
+ untuk menebak kata sandi orang. 
+
+732
+00:31:17,220 --> 00:31:21,102
+ Jadi ada saran bagaimana kami bisa memperbaiki ini? 
+
+733
+00:31:21,102 --> 00:31:22,560
+ Bagaimana Anda mencegah serangan menebak 
+
+734
+00:31:22,560 --> 00:31:24,826
+ dalam protokol seperti ini? 
+
+735
+00:31:24,826 --> 00:31:26,242
+ Apa yang bisa kita coba? 
+
+736
+00:31:26,242 --> 00:31:26,775
+ Ya. 
+
+737
+00:31:26,775 --> 00:31:28,024
+ SISWA: Semacam pengasinan? 
+
+738
+00:31:28,024 --> 00:31:29,400
+ Aku tidak yakin. 
+
+739
+00:31:29,400 --> 00:31:31,540
+ PROFESOR: Yah, jadi penggaraman saja 
+
+740
+00:31:31,540 --> 00:31:33,900
+ berarti bahwa klien harus memiliki kata sandi 
+
+741
+00:31:33,900 --> 00:31:35,066
+ dengan cara yang berbeda, mungkin. 
+
+742
+00:31:35,066 --> 00:31:36,440
+ Tapi itu tetap tidak menghalangi mereka 
+
+743
+00:31:36,440 --> 00:31:37,659
+ dari mencoba banyak hal. 
+
+744
+00:31:37,659 --> 00:31:39,950
+ Jadi mungkin akan lebih mahal untuk membuat kamus. 
+
+745
+00:31:39,950 --> 00:31:40,449
+ Ya. 
+
+746
+00:31:40,449 --> 00:31:43,109
+ SISWA: Anda bisa [tidak terdengar] fungsi derivasi? 
+
+747
+00:31:43,109 --> 00:31:44,650
+ PROFESOR: Ya, jadi ide bagus lainnya 
+
+748
+00:31:44,650 --> 00:31:47,949
+ adalah membuat proses hashing ini sangat mahal. 
+
+749
+00:31:47,949 --> 00:31:49,490
+ Jadi itu mungkin baik, bukan? 
+
+750
+00:31:49,490 --> 00:31:52,650
+ Jadi, jika fungsi hash ini butuh waktu satu detik untuk menghitung seperti Anda 
+
+751
+00:31:52,650 --> 00:31:54,404
+ Orang-orang melakukan di lab dua, lalu OK, wow, ini 
+
+752
+00:31:54,404 --> 00:31:55,820
+ akan benar-benar sangat mahal 
+
+753
+00:31:55,820 --> 00:31:56,810
+ untuk mencoba kata sandi yang berbeda. 
+
+754
+00:31:56,810 --> 00:31:58,351
+ Jadi sepertinya itu rencana yang masuk akal. 
+
+755
+00:31:58,351 --> 00:32:00,500
+ Jadi dalam kombinasi dengan pengasinan, itu 
+
+756
+00:32:00,500 --> 00:32:02,880
+ akan membuatnya cukup mahal untuk melakukan kata sandi 
+
+757
+00:32:02,880 --> 00:32:03,987
+ menebak serangan. 
+
+758
+00:32:03,987 --> 00:32:04,570
+ Ada yang lain? 
+
+759
+00:32:04,570 --> 00:32:07,035
+
+
+760
+00:32:07,035 --> 00:32:08,910
+ Jadi, hal lain adalah, ya, tantangan merespon. 
+
+761
+00:32:08,910 --> 00:32:11,620
+ Jadi Anda benar-benar bisa mendengar di protokol awal, 
+
+762
+00:32:11,620 --> 00:32:13,790
+ server Kerberos tidak punya ide 
+
+763
+00:32:13,790 --> 00:32:15,720
+ apakah ini klien yang tepat atau tidak. 
+
+764
+00:32:15,720 --> 00:32:18,202
+ Namun pada kenyataannya, apa yang bisa Anda lakukan adalah mungkin 
+
+765
+00:32:18,202 --> 00:32:20,160
+ berikan sedikit bukti bahwa, yah, kamu 
+
+766
+00:32:20,160 --> 00:32:22,010
+ mungkin klien yang tepat. 
+
+767
+00:32:22,010 --> 00:32:24,980
+ Jadi mungkin Anda bisa mengenkripsi cap waktu saat ini 
+
+768
+00:32:24,980 --> 00:32:27,890
+ dengan kata sandi hash Anda atau sesuatu 
+
+769
+00:32:27,890 --> 00:32:29,455
+ seperti ini-- memiliki mereka bersama. 
+
+770
+00:32:29,455 --> 00:32:31,080
+ Dan kemudian server Kerberos bisa saja 
+
+771
+00:32:31,080 --> 00:32:34,250
+ periksa apakah itu benar-- jika cocok, dan jika ya, kembalilah 
+
+772
+00:32:34,250 --> 00:32:35,330
+ kamu kembalikan tiket. 
+
+773
+00:32:35,330 --> 00:32:37,580
+ Anda mungkin tidak ingin menambahkan lebih banyak putaran 
+
+774
+00:32:37,580 --> 00:32:38,450
+ tetapi ini bisa berhasil. 
+
+775
+00:32:38,450 --> 00:32:40,760
+ Jadi hanya dengan tepat tentang apa yang saya sarankan. 
+
+776
+00:32:40,760 --> 00:32:44,460
+ OK, baik, mungkin Anda mengambil stempel waktu saat ini 
+
+777
+00:32:44,460 --> 00:32:51,550
+ dan mungkin Anda memiliki cap waktu saat ini dan KC bersama. 
+
+778
+00:32:51,550 --> 00:32:53,570
+ Dan mungkin Anda juga menyertakan stempel waktu. 
+
+779
+00:32:53,570 --> 00:32:55,957
+ Dan kemudian server bisa melihat, baik, ia memiliki KC Anda. 
+
+780
+00:32:55,957 --> 00:32:57,790
+ Itu bisa memiliki cap waktu saat ini juga. 
+
+781
+00:32:57,790 --> 00:32:59,490
+ Jika mendapat nilai yang sama, maka ya, 
+
+782
+00:32:59,490 --> 00:33:01,281
+ mungkin itu adalah pengguna yang tepat yang memintanya. 
+
+783
+00:33:01,281 --> 00:33:02,870
+ Dan saya dapat mengirim kembali tiket. 
+
+784
+00:33:02,870 --> 00:33:06,420
+ Jika tidak, maka itu bukan kata sandi yang benar sama sekali. 
+
+785
+00:33:06,420 --> 00:33:06,970
+ Pertanyaan? 
+
+786
+00:33:06,970 --> 00:33:13,041
+ SISWA: [TIDAK JELAS] Anda hanya melakukan [TIDAK JELAS] jika server melihat 
+
+787
+00:33:13,041 --> 00:33:14,545
+ terlalu banyak permintaan [TIDAK TERDENGAR] 
+
+788
+00:33:14,545 --> 00:33:15,545
+ PROFESOR: Benar. 
+
+789
+00:33:15,545 --> 00:33:17,570
+ Jadi masalahnya adalah kita bisa menulis batas. 
+
+790
+00:33:17,570 --> 00:33:19,070
+ Tetapi tidak ada alasan bagi peretas 
+
+791
+00:33:19,070 --> 00:33:21,120
+ untuk meminta ini lebih dari satu kali. 
+
+792
+00:33:21,120 --> 00:33:23,980
+ Peretas itu meminta pengguna tertentu lebih dari satu kali 
+
+793
+00:33:23,980 --> 00:33:26,240
+ dan kemudian mendapat gumpalan terenkripsi ini. 
+
+794
+00:33:26,240 --> 00:33:28,980
+ Dan kemudian dapat mencoba mendekripnya secara offline berkali-kali 
+
+795
+00:33:28,980 --> 00:33:31,000
+ seperti yang diinginkan dengan kata sandi berbeda 
+
+796
+00:33:31,000 --> 00:33:33,080
+ tanpa harus memintanya kembali. 
+
+797
+00:33:33,080 --> 00:33:34,950
+ Jadi saya pikir seluruh titik termasuk 
+
+798
+00:33:34,950 --> 00:33:36,840
+ semacam hal respon tantangan 
+
+799
+00:33:36,840 --> 00:33:41,057
+ seperti ini dalam partikel adalah agar server akan-- 
+
+800
+00:33:41,057 --> 00:33:42,890
+ Anda harus benar-benar bertanya ke server lagi 
+
+801
+00:33:42,890 --> 00:33:46,809
+ dan lagi untuk mencoba masuk dengan kata sandi yang berbeda. 
+
+802
+00:33:46,809 --> 00:33:48,600
+ Dan kemudian Anda dapat menilai batas server 
+
+803
+00:33:48,600 --> 00:33:50,700
+ dan mendapatkan pertahanan yang jauh lebih baik. 
+
+804
+00:33:50,700 --> 00:33:51,640
+ Ya. 
+
+805
+00:33:51,640 --> 00:33:54,930
+ SISWA: [TIDAK TERDENGAR] Kerberos? 
+
+806
+00:33:54,930 --> 00:34:00,210
+ PROFESOR: Jadi saya pikir Anda pasti dapat memutar ulang pesan ini 
+
+807
+00:34:00,210 --> 00:34:03,330
+ jadi jika saya mengirim pesan ini sekarang, Anda mungkin bisa 
+
+808
+00:34:03,330 --> 00:34:05,420
+ lihat pesan itu dan kirimkan juga 
+
+809
+00:34:05,420 --> 00:34:07,535
+ dan dapatkan respon balik dari server Kerberos. 
+
+810
+00:34:07,535 --> 00:34:09,159
+ Saya kira jika Anda menonton jaringan, 
+
+811
+00:34:09,159 --> 00:34:12,429
+ Anda bisa mengamati benda ini di kabel juga. 
+
+812
+00:34:12,429 --> 00:34:16,780
+ Jadi saya pikir ini adalah semacam langkah sementara-- meningkatkan 
+
+813
+00:34:16,780 --> 00:34:17,420
+ keamanan sedikit. 
+
+814
+00:34:17,420 --> 00:34:21,002
+ Tapi yang pasti jika Anda menonton jaringan orang lain, 
+
+815
+00:34:21,002 --> 00:34:23,460
+ maka Anda akan melihat paket ini kembali terlepas 
+
+816
+00:34:23,460 --> 00:34:25,545
+ tentang apa yang terjadi dalam langkah ini. 
+
+817
+00:34:25,545 --> 00:34:27,003
+ Jadi kembalilah, Anda akan melihat orang ini 
+
+818
+00:34:27,004 --> 00:34:28,817
+ dan Anda kemudian dapat mencoba menyerangnya. 
+
+819
+00:34:28,817 --> 00:34:30,650
+ Mungkin ada beberapa skema yang lebih rumit 
+
+820
+00:34:30,650 --> 00:34:32,500
+ Anda bisa mendesain tapi saya tidak berpikir 
+
+821
+00:34:32,500 --> 00:34:34,469
+ Kerberos 5 bahkan mengimplementasikan apa pun lagi 
+
+822
+00:34:34,469 --> 00:34:37,590
+ rumit daripada kira-kira rencana ini, yang tampaknya cukup baik 
+
+823
+00:34:37,590 --> 00:34:39,460
+ untuk mencegah orang sewenang-wenang mencoba 
+
+824
+00:34:39,460 --> 00:34:43,130
+ untuk mematahkan kata sandi siapa pun atau kasar kata sandi seseorang. 
+
+825
+00:34:43,130 --> 00:34:44,326
+ Masuk akal? 
+
+826
+00:34:44,326 --> 00:34:44,826
+ Ya. 
+
+827
+00:34:44,826 --> 00:34:46,513
+ SISWA: Jadi anggaplah Anda bisa 
+
+828
+00:34:46,513 --> 00:34:50,527
+ lakukan diautentikasi [tidak terdengar] atau sesuatu di sini 
+
+829
+00:34:50,527 --> 00:34:51,693
+ untuk membuat kunci yang dibagikan. 
+
+830
+00:34:51,694 --> 00:34:53,235
+ Dan kemudian Anda bisa mengenkripsi hal ini 
+
+831
+00:34:53,235 --> 00:34:54,474
+ dengan KC dan kunci yang dibagikan. 
+
+832
+00:34:54,474 --> 00:34:55,300
+ PROFESOR: Itu benar, ya. 
+
+833
+00:34:55,300 --> 00:34:56,841
+ Jadi jika Anda benar-benar melakukan ini dengan benar, 
+
+834
+00:34:56,841 --> 00:34:59,630
+ ada semua partikel bagus di luar sana 
+
+835
+00:34:59,630 --> 00:35:02,080
+ yang pada dasarnya disebut kunci sandi yang diautentikasi 
+
+836
+00:35:02,080 --> 00:35:04,170
+ bertukar partikel, yang persis apa yang terjadi di sini. 
+
+837
+00:35:04,170 --> 00:35:05,836
+ Jadi jika Anda benar-benar membuat sistem, 
+
+838
+00:35:05,836 --> 00:35:08,800
+ Anda harus pada dasarnya Google untuk SRP atau PAKE. 
+
+839
+00:35:08,800 --> 00:35:12,680
+ Dan protokol ini dan partikel terkait 
+
+840
+00:35:12,680 --> 00:35:15,480
+ akan benar-benar melakukan ini dengan cara yang jauh lebih baik 
+
+841
+00:35:15,480 --> 00:35:18,760
+ Anda dapat membuktikan kepada kedua pihak yang Anda tetapkan 
+
+842
+00:35:18,760 --> 00:35:20,850
+ kunci baru dan kedua pihak yakin itu 
+
+843
+00:35:20,850 --> 00:35:23,610
+ pihak lain yang tepat dan tidak ada jalan 
+
+844
+00:35:23,610 --> 00:35:26,240
+ untuk memasang serangan menebak kata sandi offline ini 
+
+845
+00:35:26,240 --> 00:35:29,682
+ pada set paket jaringan yang Anda amati dan sebagainya. 
+
+846
+00:35:29,682 --> 00:35:31,140
+ Jadi ini adalah semacam protokol. 
+
+847
+00:35:31,140 --> 00:35:33,220
+ Dan mereka jauh lebih terperinci dalam hal 
+
+848
+00:35:33,220 --> 00:35:34,310
+ crypto yang mereka andalkan. 
+
+849
+00:35:34,310 --> 00:35:36,690
+ Jadi sulit untuk dijelaskan di papan persis mengapa mereka bekerja. 
+
+850
+00:35:36,690 --> 00:35:37,190
+ Ya. 
+
+851
+00:35:37,190 --> 00:35:39,050
+ SISWA: [TIDAK TERDENGAR] bagian dari alasannya 
+
+852
+00:35:39,050 --> 00:35:40,938
+ mereka melakukannya dengan cara ini karena mereka 
+
+853
+00:35:40,938 --> 00:35:44,714
+ ingin mempertahankan kemampuan mengirim kata sandi. 
+
+854
+00:35:44,714 --> 00:35:48,365
+ Dan protokol hanya memungkinkan Anda mengirim satu hal 
+
+855
+00:35:48,365 --> 00:35:50,840
+ sebagai otentikasi Anda [tidak terdengar]. 
+
+856
+00:35:50,840 --> 00:35:52,820
+ PROFESOR: Yah, ya, ada banyak 
+
+857
+00:35:52,820 --> 00:35:56,950
+ semacam persyaratan aneh yang ada dalam pikiran orang-orang ini. 
+
+858
+00:35:56,950 --> 00:36:01,540
+ Saya pikir mereka - baik, tentu dalam prakteknya, 
+
+859
+00:36:01,540 --> 00:36:06,340
+ server ini dapat menerima Kerberos dan non Kerberos 
+
+860
+00:36:06,340 --> 00:36:06,866
+ koneksi. 
+
+861
+00:36:06,866 --> 00:36:08,240
+ Dan untuk koneksi non Kerberos, 
+
+862
+00:36:08,240 --> 00:36:10,030
+ Anda mendapatkan-- seperti seseorang terhubung ke server email 
+
+863
+00:36:10,030 --> 00:36:11,520
+ tetapi mereka tidak menggunakan workstation Athena. 
+
+864
+00:36:11,520 --> 00:36:13,180
+ Mereka hanya ingin mengirim kata sandi mereka. 
+
+865
+00:36:13,180 --> 00:36:14,889
+ Dan kemudian klien email di sini, katakanlah, 
+
+866
+00:36:14,889 --> 00:36:16,430
+ akan mengambil kata sandi Anda dan itu 
+
+867
+00:36:16,430 --> 00:36:18,770
+ akan mendapatkan tiket atas nama Anda hanya untuk memeriksanya. 
+
+868
+00:36:18,770 --> 00:36:19,990
+ Dan kemudian itu akan memungkinkan Anda untuk menggunakannya. 
+
+869
+00:36:19,990 --> 00:36:22,531
+ Jadi Anda pasti ingin konversi dari Kerberos dari kata sandi 
+
+870
+00:36:22,531 --> 00:36:25,119
+ untuk mengecek Kerberos. 
+
+871
+00:36:25,119 --> 00:36:27,160
+ Saya tidak berpikir ini menghalangi karena pasti 
+
+872
+00:36:27,160 --> 00:36:30,833
+ Kerberos 5 menyebarkan meskipun hash cap waktu ini, 
+
+873
+00:36:30,833 --> 00:36:31,332
+ dan sebagainya. 
+
+874
+00:36:31,332 --> 00:36:33,165
+ SISWA: Ya, tetapi itu karena mereka tidak mau 
+
+875
+00:36:33,165 --> 00:36:35,028
+ ingin beberapa [tidak terdengar]. 
+
+876
+00:36:35,028 --> 00:36:37,620
+ PROFESOR: Ya, saya pikir itu mungkin 
+
+877
+00:36:37,620 --> 00:36:38,967
+ tidak terlalu penting. 
+
+878
+00:36:38,967 --> 00:36:41,300
+ Anda pasti bisa melakukan beberapa putaran di bagian belakang 
+
+879
+00:36:41,300 --> 00:36:43,380
+ di belakang perpustakaan Anda. 
+
+880
+00:36:43,380 --> 00:36:46,670
+ Tapi ada beberapa kerugian pada partikel-partikel ini-- 
+
+881
+00:36:46,670 --> 00:36:50,180
+ mungkin tidak cukup signifikan untuk menghentikan Anda menggunakannya. 
+
+882
+00:36:50,180 --> 00:36:53,040
+ Pertanyaan Lain? 
+
+883
+00:36:53,040 --> 00:36:54,880
+ Baiklah, saya kira hal lain 
+
+884
+00:36:54,880 --> 00:36:57,040
+ Saya ingin menyebutkan bahwa Anda harus berhati-hati 
+
+885
+00:36:57,040 --> 00:37:01,080
+ untuk di koran adalah bahwa orang-orang ini, dalam mendesain Kerberos 4, 
+
+886
+00:37:01,080 --> 00:37:03,550
+ mereka memilih skema enkripsi tunggal. 
+
+887
+00:37:03,550 --> 00:37:05,740
+ Dan pada saat itu, mereka pada dasarnya memilih 
+
+888
+00:37:05,740 --> 00:37:09,260
+ DES, yang merupakan skema enkripsi populer pada saat itu. 
+
+889
+00:37:09,260 --> 00:37:11,590
+ Ini adalah cipher blok simetris. 
+
+890
+00:37:11,590 --> 00:37:12,820
+ Ini berjalan cukup cepat. 
+
+891
+00:37:12,820 --> 00:37:16,090
+ Itu cukup aman, belum tentu yang terbaik, 
+
+892
+00:37:16,090 --> 00:37:18,392
+ tetapi tentu saja cukup baik pada saat itu. 
+
+893
+00:37:18,392 --> 00:37:20,100
+ Dan mereka hanya memanggangnya ke dalam protokol. 
+
+894
+00:37:20,100 --> 00:37:22,880
+ Segala sesuatu di Kerberos harus menggunakan DES tunggal atau setidaknya 
+
+895
+00:37:22,880 --> 00:37:24,890
+ semuanya dalam versi Kerberos 4. 
+
+896
+00:37:24,890 --> 00:37:27,935
+ Dan ini agak bermasalah karena 25 tahun kemudian, 
+
+897
+00:37:27,935 --> 00:37:29,310
+ 30 tahun kemudian sekarang, sebenarnya 
+
+898
+00:37:29,310 --> 00:37:32,820
+ sangat murah untuk enkripsi DES gaya kasar 
+
+899
+00:37:32,820 --> 00:37:34,690
+ karena kuncinya sebenarnya sangat kecil. 
+
+900
+00:37:34,690 --> 00:37:36,570
+ Mereka 56 bit. 
+
+901
+00:37:36,570 --> 00:37:39,140
+ Jadi Anda hanya bisa mencari membangun beberapa perangkat keras kustom itu 
+
+902
+00:37:39,140 --> 00:37:42,090
+ iterasi atas semua kemungkinan 2 hingga 56 kombinasi 
+
+903
+00:37:42,090 --> 00:37:46,379
+ dan mencoba semuanya dan mencari tahu kata sandi seseorang. 
+
+904
+00:37:46,379 --> 00:37:48,170
+ Jadi ini adalah sesuatu yang juga ingin Anda hindari 
+
+905
+00:37:48,170 --> 00:37:49,710
+ dalam protokol apa pun yang Anda desain sekarang. 
+
+906
+00:37:49,710 --> 00:37:51,550
+ Kerberos versi 5 benar-benar mendukung 
+
+907
+00:37:51,550 --> 00:37:54,730
+ beberapa skema enkripsi yang berbeda termasuk 
+
+908
+00:37:54,730 --> 00:37:56,885
+ AES dan hal-hal lain juga. 
+
+909
+00:37:56,885 --> 00:37:59,350
+ Jadi sepertinya itu cara yang jauh lebih baik untuk melakukannya. 
+
+910
+00:37:59,350 --> 00:38:02,320
+ Di sisi lain, MIT benar-benar terus mendukung DES 
+
+911
+00:38:02,320 --> 00:38:06,540
+ sampai dua tahun lalu, yang sedikit disayangkan. 
+
+912
+00:38:06,540 --> 00:38:07,560
+ Tapi sekarang tidak. 
+
+913
+00:38:07,560 --> 00:38:08,530
+ Jadi itu bagus. 
+
+914
+00:38:08,530 --> 00:38:12,860
+ Kepala sekolah Anda aman setidaknya dari serangan semacam ini. 
+
+915
+00:38:12,860 --> 00:38:14,680
+ Baiklah, jadi apakah itu masuk akal? 
+
+916
+00:38:14,680 --> 00:38:16,350
+ Ini adalah cara awal yang Anda dapatkan 
+
+917
+00:38:16,350 --> 00:38:18,210
+ tiket apa saja di Kerberos. 
+
+918
+00:38:18,210 --> 00:38:20,810
+ Dan biasanya, Anda akan mendapatkan tiket ini dari layanan TGS ini. 
+
+919
+00:38:20,810 --> 00:38:24,090
+ Jadi sekarang mari kita lihat apa yang terjadi di layanan TGS ini. 
+
+920
+00:38:24,090 --> 00:38:27,700
+ Jadi di sini, interaksi dengan layanan TGS 
+
+921
+00:38:27,700 --> 00:38:29,350
+ akan sedikit berbeda. 
+
+922
+00:38:29,350 --> 00:38:32,150
+ Di satu sisi, Anda akan ... sebagai klien, 
+
+923
+00:38:32,150 --> 00:38:33,900
+ Anda harus berbicara seperti itu 
+
+924
+00:38:33,900 --> 00:38:37,910
+ jika Anda berbicara dengan layanan lain yang diaktifkan Kerberos. 
+
+925
+00:38:37,910 --> 00:38:39,660
+ Jadi kita akan melihat bagaimana Anda mengotentikasi diri Anda 
+
+926
+00:38:39,660 --> 00:38:41,714
+ dengan tiket ke beberapa mesin. 
+
+927
+00:38:41,714 --> 00:38:43,630
+ Tapi kemudian respon Anda akan kembali 
+
+928
+00:38:43,630 --> 00:38:46,071
+ hanya tiket untuk beberapa prinsip lain 
+
+929
+00:38:46,071 --> 00:38:48,570
+ yang ingin Anda komunikasikan seperti file Anda 
+
+930
+00:38:48,570 --> 00:38:50,230
+ server 
+
+931
+00:38:50,230 --> 00:38:54,210
+ Jadi pesan level protokol yang muncul di sini semacam 
+
+932
+00:38:54,210 --> 00:38:54,910
+ terlihat seperti ini. 
+
+933
+00:38:54,910 --> 00:38:57,050
+ Jadi, inilah layanan TGS Anda. 
+
+934
+00:38:57,050 --> 00:38:59,230
+ Dan inilah kliennya. 
+
+935
+00:38:59,230 --> 00:39:02,750
+ Klien sudah mendapat tiket untuk TGS 
+
+936
+00:39:02,750 --> 00:39:04,090
+ menggunakan protokol ini di atas. 
+
+937
+00:39:04,090 --> 00:39:06,580
+ Jadi apa yang sebenarnya klien akan kirimkan 
+
+938
+00:39:06,580 --> 00:39:10,190
+ adalah beberapa kombinasi dari pesan itu 
+
+939
+00:39:10,190 --> 00:39:12,690
+ buktikan bahwa ini adalah klien yang tepat 
+
+940
+00:39:12,690 --> 00:39:16,900
+ dan mereka mengeluarkan permintaan untuk beberapa prinsip tertentu 
+
+941
+00:39:16,900 --> 00:39:17,490
+ melalui TGS. 
+
+942
+00:39:17,490 --> 00:39:20,414
+ Jadi apa yang klien akan kirim ke TGS adalah tuple ini. 
+
+943
+00:39:20,414 --> 00:39:21,830
+ Jadi pertama, itu akan berkata, baik, 
+
+944
+00:39:21,830 --> 00:39:24,000
+ inilah layanan yang ingin saya bicarakan selanjutnya. 
+
+945
+00:39:24,000 --> 00:39:27,130
+ Jadi ini mungkin server email Anda atau server file Anda. 
+
+946
+00:39:27,130 --> 00:39:29,440
+ Kemudian akan memasukkan tiket. 
+
+947
+00:39:29,440 --> 00:39:30,970
+ Sudah mendapat 4TGS. 
+
+948
+00:39:30,970 --> 00:39:38,100
+ Jadi ini akan menjadi TC dari TGS dienkripsi dengan KTGS. 
+
+949
+00:39:38,100 --> 00:39:41,430
+ Jadi ini hanya hal ini di mana S adalah TGS. 
+
+950
+00:39:41,430 --> 00:39:43,890
+ Dan kemudian Anda harus menyertakan authenticator ini 
+
+951
+00:39:43,890 --> 00:39:44,890
+ gumpal. 
+
+952
+00:39:44,890 --> 00:39:48,155
+ Ini adalah alat AC dari atas sana. 
+
+953
+00:39:48,155 --> 00:39:49,780
+ Dan hal ini akan dienkripsi 
+
+954
+00:39:49,780 --> 00:39:54,892
+ dengan kunci bersama antara klien dan layanan TGS. 
+
+955
+00:39:54,892 --> 00:39:58,360
+ Jadi ini adalah pesan yang akan Anda kirim ke TGS. 
+
+956
+00:39:58,360 --> 00:40:00,399
+ Ini akan melihat pesan ini, 
+
+957
+00:40:00,399 --> 00:40:02,690
+ melakukan sesuatu dengan itu yang akan kita bicarakan dalam satu detik, 
+
+958
+00:40:02,690 --> 00:40:07,770
+ dan membalas kembali dengan tiket untuk layanan baru ini S. 
+
+959
+00:40:07,770 --> 00:40:10,700
+ Jadi respon di sini terlihat hampir persis seperti di sini. 
+
+960
+00:40:10,700 --> 00:40:12,490
+ Sebenarnya, itu persis sama. 
+
+961
+00:40:12,490 --> 00:40:14,610
+ Ini akan menjadi tiket antara klien 
+
+962
+00:40:14,610 --> 00:40:18,310
+ dan layanan baru ini dienkripsi dengan KS 
+
+963
+00:40:18,310 --> 00:40:21,320
+ dan kunci yang dibagikan antara klien dan layanan baru ini 
+
+964
+00:40:21,320 --> 00:40:25,040
+ S dienkripsi - baik, sekarang, ini sedikit berbeda. 
+
+965
+00:40:25,040 --> 00:40:27,550
+ Alih-alih mengenkripsi dengan KC, yang mungkin dimiliki klien 
+
+966
+00:40:27,550 --> 00:40:29,280
+ lupa sejak saat itu, sekarang kita akan pergi 
+
+967
+00:40:29,280 --> 00:40:31,800
+ untuk mengenkripsi dengan kunci yang dibagikan ini antara klien 
+
+968
+00:40:31,800 --> 00:40:35,510
+ dan layanan TGS. 
+
+969
+00:40:35,510 --> 00:40:38,030
+ Masuk akal? 
+
+970
+00:40:38,030 --> 00:40:44,850
+ Baiklah, jadi dalam hal ini-- bagaimana sebenarnya server mencari tahu 
+
+971
+00:40:44,850 --> 00:40:46,590
+ apa yang ingin klien lakukan? 
+
+972
+00:40:46,590 --> 00:40:49,120
+ Atau, bagaimana server mengotentikasi klien? 
+
+973
+00:40:49,120 --> 00:40:52,650
+ Nah, dalam hal ini, itu akan-- sebenarnya server TGS 
+
+974
+00:40:52,650 --> 00:40:54,840
+ tahu kunci sendiri, KTGS. 
+
+975
+00:40:54,840 --> 00:40:57,390
+ Jadi pertama-tama akan mendekripsi gumpalan ini 
+
+976
+00:40:57,390 --> 00:41:00,090
+ dan lihat ke dalam tiket dan cari tahu apa yang terjadi. 
+
+977
+00:41:00,090 --> 00:41:03,190
+ Dan ada semua bidang bagus di tiket. 
+
+978
+00:41:03,190 --> 00:41:04,400
+ Jadi mari kita periksa lagi. 
+
+979
+00:41:04,400 --> 00:41:07,100
+ Mengapa kita membutuhkan semua bidang di dalam tiket? 
+
+980
+00:41:07,100 --> 00:41:12,687
+ Jadi, apakah penting untuk memiliki nama server S di tiket? 
+
+981
+00:41:12,687 --> 00:41:14,770
+ Apa yang salah jika Anda tidak memiliki S di sana? 
+
+982
+00:41:14,770 --> 00:41:17,722
+
+
+983
+00:41:17,722 --> 00:41:19,682
+ Apa pun? 
+
+984
+00:41:19,682 --> 00:41:20,182
+ Ya. 
+
+985
+00:41:20,182 --> 00:41:21,640
+ SISWA: Mereka berpotensi mendapat 
+
+986
+00:41:21,640 --> 00:41:24,610
+ berwenang untuk menggunakan server apa pun. 
+
+987
+00:41:24,610 --> 00:41:27,370
+ PROFESOR: Ya, jadi pada umumnya itu ide yang bagus 
+
+988
+00:41:27,370 --> 00:41:29,300
+ menjadi sangat eksplisit dalam protokol jaringan 
+
+989
+00:41:29,300 --> 00:41:31,580
+ dan mengatakan apa arti pesan itu. 
+
+990
+00:41:31,580 --> 00:41:33,910
+ Jadi dalam hal ini, jika Anda menghilangkan S, 
+
+991
+00:41:33,910 --> 00:41:37,189
+ Anda mungkin mengandalkan fakta bahwa, yah, 
+
+992
+00:41:37,189 --> 00:41:39,730
+ jika S salah yang Anda coba gunakan tiketnya, 
+
+993
+00:41:39,730 --> 00:41:42,320
+ maka mungkin Anda akan memiliki kunci yang berbeda di sini 
+
+994
+00:41:42,320 --> 00:41:44,490
+ dan kemudian itu tidak akan mendekripsi atau sesuatu seperti ini. 
+
+995
+00:41:44,490 --> 00:41:46,823
+ Tapi sepertinya ide yang bagus untuk memasukkannya untuk memastikan 
+
+996
+00:41:46,823 --> 00:41:48,630
+ bahwa server yang menerima tiket ini 
+
+997
+00:41:48,630 --> 00:41:49,960
+ mendekripsi dan memeriksa. 
+
+998
+00:41:49,960 --> 00:41:52,470
+ Apakah itu tiket untuk saya atau untuk orang lain? 
+
+999
+00:41:52,470 --> 00:41:52,970
+ Ya. 
+
+1000
+00:41:52,970 --> 00:41:55,522
+ SISWA: Apa yang klien dapatkan di KTGS? 
+
+1001
+00:41:55,522 --> 00:41:56,730
+ PROFESOR: Ah, pertanyaan bagus. 
+
+1002
+00:41:56,730 --> 00:41:58,230
+ Klien tidak tahu apa ini. 
+
+1003
+00:41:58,230 --> 00:42:00,060
+ Karena ini seperti kunci super rahasia. 
+
+1004
+00:42:00,060 --> 00:42:01,770
+ Jika Anda tahu ini, Anda mungkin akan 
+
+1005
+00:42:01,770 --> 00:42:03,480
+ mampu menghancurkan semua Kerberos. 
+
+1006
+00:42:03,480 --> 00:42:06,461
+ Jadi klien tidak tahu apa itu KTGS. 
+
+1007
+00:42:06,461 --> 00:42:07,294
+ SISWA: [TIDAK TERDENGAR] 
+
+1008
+00:42:07,294 --> 00:42:08,110
+ PROFESOR: Ah, ya, ya. 
+
+1009
+00:42:08,110 --> 00:42:09,335
+ Lalu dari mana Anda mendapatkannya 
+
+1010
+00:42:09,335 --> 00:42:11,209
+ sebenarnya adalah server Kerberos itu sendiri 
+
+1011
+00:42:11,209 --> 00:42:14,830
+ yang menghasilkan seluruh gumpalan ini untuk Anda di mana ini sebenarnya 
+
+1012
+00:42:14,830 --> 00:42:18,780
+ TGS dan ini KTGS di sini. 
+
+1013
+00:42:18,780 --> 00:42:20,450
+ Jadi Anda tidak membangun ini sendiri. 
+
+1014
+00:42:20,450 --> 00:42:22,830
+ Anda hanya menyalinnya. 
+
+1015
+00:42:22,830 --> 00:42:23,660
+ baik 
+
+1016
+00:42:23,660 --> 00:42:27,154
+ Jadi untuk apa nama klien itu penting? 
+
+1017
+00:42:27,154 --> 00:42:28,570
+ Itu seharusnya cukup mudah, bukan? 
+
+1018
+00:42:28,570 --> 00:42:30,020
+ Jika Anda tidak memasukkan nama klien di tiket, 
+
+1019
+00:42:30,020 --> 00:42:31,830
+ kemudian server mendapat gumpalan yang bagus ini 
+
+1020
+00:42:31,830 --> 00:42:34,382
+ tetapi tidak tahu siapa yang mencoba untuk diajak bicara. 
+
+1021
+00:42:34,382 --> 00:42:35,840
+ Jadi tidak tahu apa yang seharusnya 
+
+1022
+00:42:35,840 --> 00:42:38,890
+ mengeluarkan tiket untuk kepala sekolah saya atau untuk orang lain 
+
+1023
+00:42:38,890 --> 00:42:41,250
+ prinsip, dan sebagainya. 
+
+1024
+00:42:41,250 --> 00:42:44,470
+ Jadi apa masalahnya dengan bidang lain? 
+
+1025
+00:42:44,470 --> 00:42:46,625
+ Kenapa orang-orang ini menempel alamat di tiket? 
+
+1026
+00:42:46,625 --> 00:42:49,190
+
+
+1027
+00:42:49,190 --> 00:42:51,475
+ Ini adalah alamat IP klien. 
+
+1028
+00:42:51,475 --> 00:42:53,741
+ Apakah itu penting? 
+
+1029
+00:42:53,741 --> 00:42:54,240
+ Ya. 
+
+1030
+00:42:54,240 --> 00:42:56,632
+ SISWA: Bisakah mereka menggunakan alamat itu 
+
+1031
+00:42:56,632 --> 00:42:59,899
+ dengan tiket untuk memverifikasi terhadap [tidak terdengar]? 
+
+1032
+00:42:59,899 --> 00:43:00,690
+ PROFESOR: Semacam. 
+
+1033
+00:43:00,690 --> 00:43:02,322
+ Nah, jadi saya pikir rencana umum 
+
+1034
+00:43:02,322 --> 00:43:03,780
+ mengapa ada alamat yang muncul 
+
+1035
+00:43:03,780 --> 00:43:05,290
+ di mana-mana di sini, alamat IP ini, 
+
+1036
+00:43:05,290 --> 00:43:08,220
+ adalah bahwa orang-orang pada saat itu masih sedikit 
+
+1037
+00:43:08,220 --> 00:43:11,402
+ bingung dan-- yah, dalam beberapa cara-- 
+
+1038
+00:43:11,402 --> 00:43:12,860
+ mereka masih berpikir, oke, yah, 
+
+1039
+00:43:12,860 --> 00:43:14,318
+ kita akan mengandalkan alamat IP 
+
+1040
+00:43:14,318 --> 00:43:15,800
+ untuk sedikit keamanan. 
+
+1041
+00:43:15,800 --> 00:43:19,350
+ Jadi mereka ingin memastikan bahwa jika klien masuk 
+
+1042
+00:43:19,350 --> 00:43:21,830
+ dari beberapa alamat IP, lalu semua yang terjadi 
+
+1043
+00:43:21,830 --> 00:43:24,300
+ dengan tiket itu terjadi dari alamat IP yang sama. 
+
+1044
+00:43:24,300 --> 00:43:27,070
+ Jadi jika Anda masuk dari beberapa alamat IP 
+
+1045
+00:43:27,070 --> 00:43:31,066
+ pada 18.26.4.9 atau sesuatu, lalu setiap sambungan 
+
+1046
+00:43:31,066 --> 00:43:32,940
+ Anda membuat ke server file atau ke server email 
+
+1047
+00:43:32,940 --> 00:43:34,280
+ harus dari alamat IP yang sama. 
+
+1048
+00:43:34,280 --> 00:43:36,405
+ Jika tidak, server harus menolak koneksi Anda 
+
+1049
+00:43:36,405 --> 00:43:39,570
+ dicuri oleh-- atau seseorang mencuri tiketmu. 
+
+1050
+00:43:39,570 --> 00:43:41,500
+ Jadi kami berpikir, oke, baik, mungkin kita akan 
+
+1051
+00:43:41,500 --> 00:43:43,350
+ membela terhadap pencurian tiket dengan cara ini. 
+
+1052
+00:43:43,350 --> 00:43:45,010
+ Jika Anda masih memiliki tiket, yah, tapi Anda 
+
+1053
+00:43:45,010 --> 00:43:46,260
+ tidak menggunakan alamat IP yang sama. 
+
+1054
+00:43:46,260 --> 00:43:47,685
+ Jadi itu tidak akan berhasil. 
+
+1055
+00:43:47,685 --> 00:43:49,830
+ Ini mungkin sedikit salah arah pada saat ini 
+
+1056
+00:43:49,830 --> 00:43:52,980
+ tapi-- semacam itu menghalangi jalannya Dan Kerberos 5 masih memilikinya 
+
+1057
+00:43:52,980 --> 00:43:54,350
+ tapi itu sebagian besar opsional. 
+
+1058
+00:43:54,350 --> 00:43:58,410
+ Sungguh, Anda hanya harus mengandalkan kriptografi, bukan IP 
+
+1059
+00:43:58,410 --> 00:44:00,430
+ alamat keamanan. 
+
+1060
+00:44:00,430 --> 00:44:02,890
+ Jadi apa gunanya cap waktu dan hal-hal seumur hidup 
+
+1061
+00:44:02,890 --> 00:44:04,760
+ di tiket di sana? 
+
+1062
+00:44:04,760 --> 00:44:06,445
+ Salah satunya adalah orang-orang baik untuk? 
+
+1063
+00:44:06,445 --> 00:44:08,595
+ Apakah itu berguna? 
+
+1064
+00:44:08,595 --> 00:44:09,095
+ Ya. 
+
+1065
+00:44:09,095 --> 00:44:11,270
+ SISWA: Mencegah serangan replay. 
+
+1066
+00:44:11,270 --> 00:44:12,687
+ PROFESOR: Ya, jadi sindikator 
+
+1067
+00:44:12,687 --> 00:44:14,520
+ adalah hal yang akan membantu kami mencegah 
+
+1068
+00:44:14,520 --> 00:44:16,080
+ replay serangan dalam hitungan detik. 
+
+1069
+00:44:16,080 --> 00:44:18,470
+ Karena benda itu dihasilkan setiap saat 
+
+1070
+00:44:18,470 --> 00:44:20,370
+ Anda melakukan permintaan baru. 
+
+1071
+00:44:20,370 --> 00:44:22,490
+ Di sisi lain, tiketnya tetap sama. 
+
+1072
+00:44:22,490 --> 00:44:24,739
+ Jadi tentu saja tidak mencegah serangan replay di sana. 
+
+1073
+00:44:24,739 --> 00:44:25,304
+ Ya. 
+
+1074
+00:44:25,304 --> 00:44:27,804
+ SISWA: Ini mencegah seseorang mencuri tiket Anda 
+
+1075
+00:44:27,804 --> 00:44:28,638
+ menggunakannya [tidak terdengar] 
+
+1076
+00:44:28,638 --> 00:44:29,720
+ PROFESOR: Oh, maaf, ya. 
+
+1077
+00:44:29,720 --> 00:44:32,050
+ Ini hanya membatasi waktu di mana tiket berlaku, 
+
+1078
+00:44:32,050 --> 00:44:34,630
+ artinya kerusakan dari pengungkapan itu 
+
+1079
+00:44:34,630 --> 00:44:37,110
+ mudah-mudahan berkurang. 
+
+1080
+00:44:37,110 --> 00:44:39,900
+ Jadi rencananya adalah timestamp kira-kira waktu kapan 
+
+1081
+00:44:39,900 --> 00:44:41,370
+ Anda awalnya mendapat tiket. 
+
+1082
+00:44:41,370 --> 00:44:44,070
+ Dan seumur hidup di tiket mewakili 
+
+1083
+00:44:44,070 --> 00:44:47,030
+ berapa jam, katakanlah, itu valid 
+
+1084
+00:44:47,030 --> 00:44:48,900
+ dari stempel waktu awal itu. 
+
+1085
+00:44:48,900 --> 00:44:51,050
+ Jadi jika Anda mencoba menggunakannya terlalu dini atau terlalu terlambat, 
+
+1086
+00:44:51,050 --> 00:44:54,100
+ maka setiap server harus menolak tiket tersebut 
+
+1087
+00:44:54,100 --> 00:44:56,040
+ dalam protokol Kerberos. 
+
+1088
+00:44:56,040 --> 00:44:58,180
+ Jadi ini berarti bahwa setiap server 
+
+1089
+00:44:58,180 --> 00:45:02,859
+ harus disinkronisasi, jam yang longgar 
+
+1090
+00:45:02,859 --> 00:45:04,900
+ adalah sedikit ... yah, mungkin kamu sudah mengalami ini. 
+
+1091
+00:45:04,900 --> 00:45:07,483
+ Seperti, jam laptop Anda tidak aktif dan Anda tidak dapat masuk ke Kerberos 
+
+1092
+00:45:07,483 --> 00:45:08,121
+ lagi. 
+
+1093
+00:45:08,121 --> 00:45:08,620
+ Pertanyaan? 
+
+1094
+00:45:08,620 --> 00:45:09,190
+ Ya. 
+
+1095
+00:45:09,190 --> 00:45:11,980
+ SISWA: Anda mengatakan sebelumnya bahwa klien membuang KC 
+
+1096
+00:45:11,980 --> 00:45:14,780
+ tetapi mereka masih menyimpan KCS [TIDAK BISA DIANGGAP] 
+
+1097
+00:45:14,780 --> 00:45:16,305
+ TGS. [TIDAK JELAS] 
+
+1098
+00:45:16,305 --> 00:45:17,555
+ PROFESOR: Itu benar, ya. 
+
+1099
+00:45:17,555 --> 00:45:20,310
+ Jadi klien membuang KC setelah login. 
+
+1100
+00:45:20,310 --> 00:45:21,600
+ Tapi itu masih membuat KCS. 
+
+1101
+00:45:21,600 --> 00:45:22,997
+ Kamu benar sekali. 
+
+1102
+00:45:22,997 --> 00:45:24,580
+ SISWA: Jadi, jika seseorang mencuri KCS, 
+
+1103
+00:45:24,580 --> 00:45:27,487
+ maka mereka memiliki akses ke [TIDAK JELAS]. 
+
+1104
+00:45:27,487 --> 00:45:28,320
+ PROFESOR: Ya, oke. 
+
+1105
+00:45:28,320 --> 00:45:29,111
+ Jadi seberapa buruk itu? 
+
+1106
+00:45:29,111 --> 00:45:32,892
+ Seperti, mengapa lebih baik untuk mengungkapkan KCS ini 
+
+1107
+00:45:32,892 --> 00:45:34,600
+ fof-- sebenarnya, yah, ini TGS, kan? 
+
+1108
+00:45:34,600 --> 00:45:37,235
+ Mengapa lebih baik mengungkapkan KCTGS daripada KC? 
+
+1109
+00:45:37,235 --> 00:45:39,980
+
+
+1110
+00:45:39,980 --> 00:45:40,918
+ Ya. 
+
+1111
+00:45:40,918 --> 00:45:43,205
+ SISWA: Seseorang [tidak terdengar] di suatu tempat [tidak terdengar]. 
+
+1112
+00:45:43,205 --> 00:45:44,580
+ PROFESOR: Ini semacam itu 
+
+1113
+00:45:44,580 --> 00:45:45,390
+ bahwa mereka berdua kunci. 
+
+1114
+00:45:45,390 --> 00:45:47,181
+ Jadi tak satu pun dari mereka benar-benar hash, ya. 
+
+1115
+00:45:47,181 --> 00:45:49,533
+ SISWA: Anda akan mengambil KCS dan Anda baru saja mencuri 
+
+1116
+00:45:49,533 --> 00:45:51,238
+ sesi itu di antara keduanya. 
+
+1117
+00:45:51,238 --> 00:45:53,740
+ Tetapi jika Anda mencuri KC, Anda dapat meniru klien. 
+
+1118
+00:45:53,740 --> 00:45:54,740
+ PROFESOR: Benar. 
+
+1119
+00:45:54,740 --> 00:45:55,240
+ Ya. 
+
+1120
+00:45:55,240 --> 00:45:56,730
+ Jadi saya kira salah satu cara untuk menjawab ini 
+
+1121
+00:45:56,730 --> 00:46:00,820
+ adalah bahwa KCTGS, ini sebenarnya adalah kunci baru yang dihasilkan setiap waktu 
+
+1122
+00:46:00,820 --> 00:46:02,820
+ Anda masuk awalnya. 
+
+1123
+00:46:02,820 --> 00:46:06,550
+ Dan barang ini hanya bagus karena Anda memiliki tiket ini 
+
+1124
+00:46:06,550 --> 00:46:08,620
+ yang sejalan dengan itu. 
+
+1125
+00:46:08,620 --> 00:46:11,550
+ Jika Anda kehilangan tiket ini atau jika tiket ini tidak berlaku lagi, 
+
+1126
+00:46:11,550 --> 00:46:14,500
+ maka ya, Anda memiliki 56 bit dalam kunci ini. 
+
+1127
+00:46:14,500 --> 00:46:18,880
+ Tapi tidak ada yang akan berasumsi apa pun dari bit-bit itu. 
+
+1128
+00:46:18,880 --> 00:46:20,760
+ Satu-satunya alasan bit ini menarik 
+
+1129
+00:46:20,760 --> 00:46:24,200
+ karena tiket ini berbicara tentang KCS ini berlaku 
+
+1130
+00:46:24,200 --> 00:46:25,160
+ sekarang juga. 
+
+1131
+00:46:25,160 --> 00:46:26,886
+ Dan ada batasnya. 
+
+1132
+00:46:26,886 --> 00:46:28,790
+ SISWA: Ya, jadi jika mereka mencuri keduanya 
+
+1133
+00:46:28,790 --> 00:46:30,579
+ [TIDAK JELAS] dibatasi. 
+
+1134
+00:46:30,579 --> 00:46:32,870
+ PROFESOR: Ya, jika seseorang mencuri kedua blog ini, 
+
+1135
+00:46:32,870 --> 00:46:36,040
+ daripada yang bisa mereka tiru atau, seperti, masuk ke file Anda 
+
+1136
+00:46:36,040 --> 00:46:39,450
+ server, server email untuk seumur hidup tiket itu, yang 
+
+1137
+00:46:39,450 --> 00:46:41,990
+ adalah beberapa jam atau 10 jam. 
+
+1138
+00:46:41,990 --> 00:46:44,760
+ Mencuri ini, tidak ada batasan waktu sampai Anda berubah 
+
+1139
+00:46:44,760 --> 00:46:47,355
+ kata sandi Anda dan mungkin lebih buruk. 
+
+1140
+00:46:47,355 --> 00:46:49,720
+ Masuk akal? 
+
+1141
+00:46:49,720 --> 00:46:53,050
+ Baiklah, jadi sepertinya, ya, 
+
+1142
+00:46:53,050 --> 00:46:54,840
+ semua bidang itu penting, 
+
+1143
+00:46:54,840 --> 00:46:57,810
+ Alamat IP mungkin kurang begitu. 
+
+1144
+00:46:57,810 --> 00:47:02,220
+ Dan sekarang sebagai tanggapan, benar, kita bisa mendapatkan tiket ini akhirnya. 
+
+1145
+00:47:02,220 --> 00:47:05,950
+ Dan karena kami tahu KCTGS, kami dapat mendekripsi respons 
+
+1146
+00:47:05,950 --> 00:47:07,120
+ dari server TGS ini. 
+
+1147
+00:47:07,120 --> 00:47:09,790
+ Dan sekarang kami memiliki tiket untuk server apa pun 
+
+1148
+00:47:09,790 --> 00:47:12,350
+ kami ingin-- server file, server email, apa pun 
+
+1149
+00:47:12,350 --> 00:47:15,840
+ itu adalah bahwa kita akhirnya peduli tentang koneksi ke. 
+
+1150
+00:47:15,840 --> 00:47:18,470
+ Masuk akal? 
+
+1151
+00:47:18,470 --> 00:47:23,050
+ Baiklah, mari kita lihat bagaimana akhirnya Anda bisa 
+
+1152
+00:47:23,050 --> 00:47:26,510
+ gunakan ini dalam beberapa protokol level aplikasi. 
+
+1153
+00:47:26,510 --> 00:47:30,090
+ Jadi misalkan mungkin saya sedang berbicara dengan server email 
+
+1154
+00:47:30,090 --> 00:47:31,610
+ untuk mengambil pesan saya. 
+
+1155
+00:47:31,610 --> 00:47:34,850
+ Jadi mungkin, apa yang akan dilakukan oleh workstation klien saya 
+
+1156
+00:47:34,850 --> 00:47:37,245
+ akan mengirim tiket yang diminta, saya tidak tahu, 
+
+1157
+00:47:37,245 --> 00:47:39,770
+ mail.po12. 
+
+1158
+00:47:39,770 --> 00:47:43,380
+ Dan itu akan mendapatkan tiket untuk email utama.po12 
+
+1159
+00:47:43,380 --> 00:47:44,850
+ atau sesuatu seperti ini. 
+
+1160
+00:47:44,850 --> 00:47:49,340
+ Dan kemudian di dalam tiket ini atau di dalam tanggapan ini, 
+
+1161
+00:47:49,340 --> 00:47:51,930
+ sekarang saya memiliki kunci yang dibagikan di antara saya 
+
+1162
+00:47:51,930 --> 00:47:55,080
+ dan server surat - S adalah server laki-laki di sini-- 
+
+1163
+00:47:55,080 --> 00:47:57,720
+ dan tiket ini gumpalan yang saya bisa ke pos 
+
+1164
+00:47:57,720 --> 00:47:59,870
+ server untuk meyakinkan bahwa aku orang yang tepat 
+
+1165
+00:47:59,870 --> 00:48:04,679
+ atau siapa pun dengan kunci ini adalah prinsip yang tepat. 
+
+1166
+00:48:04,679 --> 00:48:06,970
+ Dan kemudian kita dapat benar-benar memiliki percakapan terenkripsi 
+
+1167
+00:48:06,970 --> 00:48:12,220
+ dengan server email menggunakan kunci KCS baru ini. 
+
+1168
+00:48:12,220 --> 00:48:16,990
+ Jadi apa yang mungkin saya lakukan sebagai klien adalah-- baik, 
+
+1169
+00:48:16,990 --> 00:48:20,200
+ awalnya, saya mengirim beberapa pesan ke server email 
+
+1170
+00:48:20,200 --> 00:48:25,980
+ itu termasuk email tiket TC ini dienkripsi 
+
+1171
+00:48:25,980 --> 00:48:28,880
+ dengan kunci server email. 
+
+1172
+00:48:28,880 --> 00:48:31,510
+ Dan kemudian saya benar-benar dapat mengirim beberapa pesan bersama 
+
+1173
+00:48:31,510 --> 00:48:36,180
+ dengan permintaan ini yang mungkin mengatakan sesuatu seperti, yah, 
+
+1174
+00:48:36,180 --> 00:48:40,640
+ hapus beberapa pesan-- hapus 5. 
+
+1175
+00:48:40,640 --> 00:48:46,360
+ Dan saya bisa mengenkripsi ini dengan surat KC. 
+
+1176
+00:48:46,360 --> 00:48:49,049
+ Apakah itu masuk akal? 
+
+1177
+00:48:49,049 --> 00:48:51,340
+ OK, jadi apa yang terjadi dalam protokol ini di server email 
+
+1178
+00:48:51,340 --> 00:48:52,060
+ sisi? 
+
+1179
+00:48:52,060 --> 00:48:55,540
+ Server email akan menggunakan kunci K kunci rahasianya 
+
+1180
+00:48:55,540 --> 00:48:57,474
+ untuk mendekripsi tiket ini terlebih dahulu. 
+
+1181
+00:48:57,474 --> 00:48:59,140
+ Dan kemudian terlihat di dalam sana dan menemukan 
+
+1182
+00:48:59,140 --> 00:49:02,800
+ dua hal penting-- nama utama C siapa 
+
+1183
+00:49:02,800 --> 00:49:07,014
+ apakah itu yang berbicara dengan itu di tempat pertama dan kunci KCS 
+
+1184
+00:49:07,014 --> 00:49:08,430
+ yang seharusnya digunakan untuk mendekripsi 
+
+1185
+00:49:08,430 --> 00:49:11,155
+ semua lalu lintas berikutnya dan mengotentikasi idealnya 
+
+1186
+00:49:11,155 --> 00:49:12,609
+ di Kerberos 5, setidaknya. 
+
+1187
+00:49:12,609 --> 00:49:15,150
+ Dan kemudian Anda dapat mendekripsi pesan ini dan berkata oh, baiklah, ya. 
+
+1188
+00:49:15,150 --> 00:49:17,370
+ Pengguna C mencoba menghapus pesan lima. 
+
+1189
+00:49:17,370 --> 00:49:19,485
+ Jadi saya akan menjalankan perintah ini. 
+
+1190
+00:49:19,485 --> 00:49:19,985
+ Masuk akal? 
+
+1191
+00:49:19,985 --> 00:49:21,316
+ Anda punya pertanyaan? 
+
+1192
+00:49:21,316 --> 00:49:24,500
+ SISWA: Ya, jadi Kerberos awalnya 
+
+1193
+00:49:24,500 --> 00:49:30,370
+ mengirimkan tiket TGS di KCTGS. 
+
+1194
+00:49:30,370 --> 00:49:32,620
+ Di mana [TIDAK JELAS]? 
+
+1195
+00:49:32,620 --> 00:49:35,500
+ PROFESOR: Jadi AC, sebenarnya para autentikator itu 
+
+1196
+00:49:35,500 --> 00:49:37,110
+ dihasilkan oleh klien. 
+
+1197
+00:49:37,110 --> 00:49:40,280
+ Perhatikan bahwa klien hanya membutuhkan KCS 
+
+1198
+00:49:40,280 --> 00:49:42,390
+ untuk menghasilkan seorang authenticator. 
+
+1199
+00:49:42,390 --> 00:49:45,340
+ Jadi klien dapat membuatnya kapan saja diinginkan. 
+
+1200
+00:49:45,340 --> 00:49:48,250
+ Jadi rencana umum untuk indikator atau alasannya 
+
+1201
+00:49:48,250 --> 00:49:51,970
+ untuk menggunakan authenticators secara kasar untuk mencegah serangan replay. 
+
+1202
+00:49:51,970 --> 00:49:55,470
+ Jadi klien, atau setidaknya dalam cara Kerberos 4 
+
+1203
+00:49:55,470 --> 00:49:57,840
+ pengembang berniat itu, klien, 
+
+1204
+00:49:57,840 --> 00:49:59,920
+ setiap kali mengirim permintaan baru, 
+
+1205
+00:49:59,920 --> 00:50:02,980
+ itu akan menghasilkan authenticator baru untuk mengatakan OK, baiklah, 
+
+1206
+00:50:02,980 --> 00:50:03,999
+ ini adalah permintaan baru. 
+
+1207
+00:50:03,999 --> 00:50:04,790
+ Saya mengeluarkannya sekarang. 
+
+1208
+00:50:04,790 --> 00:50:06,706
+ Ini berbeda dari semua permintaan sebelumnya. 
+
+1209
+00:50:06,706 --> 00:50:07,740
+ Lakukan itu. 
+
+1210
+00:50:07,740 --> 00:50:11,110
+ Dan rencana umumnya adalah server itu 
+
+1211
+00:50:11,110 --> 00:50:15,550
+ akan menyimpan cache authenticators ini itu 
+
+1212
+00:50:15,550 --> 00:50:18,830
+ dikirim dalam lima menit terakhir atau lebih. 
+
+1213
+00:50:18,830 --> 00:50:20,710
+ Jadi jika melihat autentikator duplikat, 
+
+1214
+00:50:20,710 --> 00:50:22,310
+ dikatakan oh, itu permintaan replay. 
+
+1215
+00:50:22,310 --> 00:50:24,130
+ Saya akan menolaknya. 
+
+1216
+00:50:24,130 --> 00:50:26,350
+ Dan jika melihat autentikator itu 
+
+1217
+00:50:26,350 --> 00:50:28,380
+ di luar batas lima menit, 
+
+1218
+00:50:28,380 --> 00:50:29,970
+ tidak ada dalam cache. 
+
+1219
+00:50:29,970 --> 00:50:33,220
+ Tapi itu akan melihat cap waktu di authenticator 
+
+1220
+00:50:33,220 --> 00:50:35,220
+ dan berkata, yah, ini adalah autentikator yang sangat tua. 
+
+1221
+00:50:35,220 --> 00:50:37,700
+ Saya hanya akan menolak permintaan Anda karena terlalu lama. 
+
+1222
+00:50:37,700 --> 00:50:39,700
+ Kirim lagi jika Anda benar-benar peduli. 
+
+1223
+00:50:39,700 --> 00:50:42,170
+ Jadi itulah rencana umum untuk indikator. 
+
+1224
+00:50:42,170 --> 00:50:44,410
+ Seperti banyak hal di Kerberos, mereka 
+
+1225
+00:50:44,410 --> 00:50:47,160
+ sedikit rusak-- di Kerberos 4, setidaknya. 
+
+1226
+00:50:47,160 --> 00:50:48,890
+ Karena sebenarnya authenticator ini 
+
+1227
+00:50:48,890 --> 00:50:51,098
+ tidak mengatakan apa pun tentang pesan yang Anda kirim, bukan? 
+
+1228
+00:50:51,098 --> 00:50:52,022
+ Ini beberapa gumpalan. 
+
+1229
+00:50:52,022 --> 00:50:53,730
+ Jadi cara Anda akan menggunakannya, misalnya, 
+
+1230
+00:50:53,730 --> 00:50:57,610
+ dalam protokol server email ini - atau setidaknya di Kerberos 
+
+1231
+00:50:57,610 --> 00:51:00,050
+ 4-- baik, Anda akan menghasilkan beberapa authenticator 
+
+1232
+00:51:00,050 --> 00:51:02,380
+ dan Anda akan mengambil authenticator 
+
+1233
+00:51:02,380 --> 00:51:06,572
+ dan Anda akan mengenkripsinya dengan surat KC juga. 
+
+1234
+00:51:06,572 --> 00:51:09,190
+ Dan server email akan terus melacak, yah, ya, 
+
+1235
+00:51:09,190 --> 00:51:11,106
+ Anda telah mengirim ini [TIDAK JELAS] indikator sebelumnya. 
+
+1236
+00:51:11,106 --> 00:51:12,007
+ Tidak, kamu belum. 
+
+1237
+00:51:12,007 --> 00:51:14,340
+ Tetapi tidak ada apa pun di sini yang menghubungkan authenticator 
+
+1238
+00:51:14,340 --> 00:51:15,770
+ ke pesan yang Anda kirim. 
+
+1239
+00:51:15,770 --> 00:51:17,912
+ Jadi untuk pesan pertama, ini luar biasa. 
+
+1240
+00:51:17,912 --> 00:51:19,370
+ Tetapi ketika Anda mengirim pesan kedua, 
+
+1241
+00:51:19,370 --> 00:51:21,440
+ Anda akan menghasilkan autentikator kedua. 
+
+1242
+00:51:21,440 --> 00:51:22,980
+ Dan seseorang di jaringan dapat berkata, oh, ya, 
+
+1243
+00:51:22,980 --> 00:51:24,310
+ Saya mendapatkan authenticator baru Anda. 
+
+1244
+00:51:24,310 --> 00:51:25,740
+ Saya dapat mengambil authenticator baru Anda 
+
+1245
+00:51:25,740 --> 00:51:28,130
+ dan sambung di pesan hapus lama. 
+
+1246
+00:51:28,130 --> 00:51:31,180
+ Jadi saya akan memaksa Anda untuk menghapus pesan kelima dua kali, 
+
+1247
+00:51:31,180 --> 00:51:32,950
+ meskipun perintah kedua berarti 
+
+1248
+00:51:32,950 --> 00:51:35,960
+ untuk mengirim beberapa operasi lainnya. 
+
+1249
+00:51:35,960 --> 00:51:40,819
+ Jadi Kerberos 5 benar di mana Anda sebenarnya 
+
+1250
+00:51:40,819 --> 00:51:42,860
+ masukkan sesuatu ke dalam authenticator yang berhubungan 
+
+1251
+00:51:42,860 --> 00:51:45,100
+ ke perintah yang Anda berikan. 
+
+1252
+00:51:45,100 --> 00:51:47,724
+ Anda bisa melakukan ini, tentu saja, tetapi semacam butuh waktu beberapa saat 
+
+1253
+00:51:47,724 --> 00:51:49,390
+ agar orang-orang menyadari itu, yah, inilah 
+
+1254
+00:51:49,390 --> 00:51:52,800
+ bagaimana Anda harus mendesain protokol dengan benar. 
+
+1255
+00:51:52,800 --> 00:51:53,540
+ Masuk akal? 
+
+1256
+00:51:53,540 --> 00:51:54,714
+ Ya, pertanyaan lain. 
+
+1257
+00:51:54,714 --> 00:51:55,547
+ SISWA: [TIDAK TERDENGAR] 
+
+1258
+00:51:55,547 --> 00:51:58,158
+
+
+1259
+00:51:58,158 --> 00:52:01,050
+ PROFESOR: Ah, jadi klien mendapat email kasus 
+
+1260
+00:52:01,050 --> 00:52:02,340
+ dari tanggapan ini. 
+
+1261
+00:52:02,340 --> 00:52:05,180
+ Jadi klien, ketika ingin berbicara dengan server email, 
+
+1262
+00:52:05,180 --> 00:52:08,240
+ itu akan meminta TGS untuk tiket untuk server email. 
+
+1263
+00:52:08,240 --> 00:52:12,500
+ Dan di sini, S pada dasarnya adalah nama utama server email ini. 
+
+1264
+00:52:12,500 --> 00:52:16,370
+ Jadi ketika kembali, ini mengatakan S sama dengan email 
+
+1265
+00:52:16,370 --> 00:52:19,660
+ dan kunci server S ini sama dengan email. 
+
+1266
+00:52:19,660 --> 00:52:22,470
+ Dan KCS ini sebenarnya adalah KC mail. 
+
+1267
+00:52:22,470 --> 00:52:25,920
+
+
+1268
+00:52:25,920 --> 00:52:28,830
+ Jadi ini adalah bagaimana klien belajar tentang kunci yang dibagikan 
+
+1269
+00:52:28,830 --> 00:52:32,870
+ yang ada di antaranya dan file dan server email di sini. 
+
+1270
+00:52:32,870 --> 00:52:34,850
+ Dan ada salinannya di dalam tiket. 
+
+1271
+00:52:34,850 --> 00:52:35,690
+ Pertanyaan di sana? 
+
+1272
+00:52:35,690 --> 00:52:38,059
+ SISWA: Bagaimana server surat mendapatkan surat KC? 
+
+1273
+00:52:38,059 --> 00:52:38,850
+ PROFESOR: Ah, ya. 
+
+1274
+00:52:38,850 --> 00:52:40,980
+ Jadi bagaimana server email mendapatkan kunci yang dibagikan ini? 
+
+1275
+00:52:40,980 --> 00:52:43,010
+ Seperti, server email mungkin belum pernah mendengar 
+
+1276
+00:52:43,010 --> 00:52:44,926
+ koneksi Anda sebelumnya, tidak pernah mendengar tentang Anda. 
+
+1277
+00:52:44,926 --> 00:52:47,760
+ Di mana KC mail berasal dari pada sisi server email? 
+
+1278
+00:52:47,760 --> 00:52:48,889
+ Ya. 
+
+1279
+00:52:48,889 --> 00:52:50,430
+ SISWA: Bukankah itu bagian dari tiket? 
+
+1280
+00:52:50,430 --> 00:52:51,440
+ PROFESOR: Ya, ya, jadi ini adalah hal yang keren. 
+
+1281
+00:52:51,440 --> 00:52:54,106
+ Anda mengirim tiket ini ke server email dan server email 
+
+1282
+00:52:54,106 --> 00:52:56,180
+ tahu K mail kunci rahasianya sendiri. 
+
+1283
+00:52:56,180 --> 00:53:00,980
+ Dan itu menggunakan itu untuk mendekripsi tiket TC mail dan yang dibagikan 
+
+1284
+00:53:00,980 --> 00:53:03,430
+ kuncinya ada di sana bersama dengan nama siapa pun 
+
+1285
+00:53:03,430 --> 00:53:05,656
+ itu adalah bahwa Anda berbagi kunci ini dengan. 
+
+1286
+00:53:05,656 --> 00:53:07,780
+ Begitulah cara mengetahui, oh, saya berbicara dengan orang itu 
+
+1287
+00:53:07,780 --> 00:53:11,010
+ dan itulah kunci bersama yang harus kita gunakan. 
+
+1288
+00:53:11,010 --> 00:53:12,930
+ Masuk akal? 
+
+1289
+00:53:12,930 --> 00:53:15,970
+ Baiklah, jadi itu semacam rencana dasar 
+
+1290
+00:53:15,970 --> 00:53:20,950
+ untuk bagaimana Anda menggunakan protokol ini dalam beberapa aplikasi yang sebenarnya. 
+
+1291
+00:53:20,950 --> 00:53:27,490
+ Ada - baik, ada banyak masalah dengan ini. 
+
+1292
+00:53:27,490 --> 00:53:30,350
+ Jadi Kerberos adalah - itu kertas yang bagus untuk dibaca 
+
+1293
+00:53:30,350 --> 00:53:32,570
+ tetapi kemudian ada semua masalah ini yang tidak dilakukan oleh orang-orang ini 
+
+1294
+00:53:32,570 --> 00:53:33,620
+ tahu sekitar 30 tahun yang lalu. 
+
+1295
+00:53:33,620 --> 00:53:36,810
+ Jadi tidak dapat dipungkiri bahwa ada masalah 
+
+1296
+00:53:36,810 --> 00:53:38,240
+ Anda harus melalui. 
+
+1297
+00:53:38,240 --> 00:53:41,180
+ Jadi satu masalah menarik di jalan 
+
+1298
+00:53:41,180 --> 00:53:45,820
+ Pesan yang dienkripsi dan diautentikasi Kerberos 4 
+
+1299
+00:53:45,820 --> 00:53:49,140
+ untuk aplikasi adalah mereka menggunakan kunci yang sama 
+
+1300
+00:53:49,140 --> 00:53:52,960
+ untuk mengenkripsi pesan dari klien ke server 
+
+1301
+00:53:52,960 --> 00:53:56,580
+ serta pesan dari server kembali ke klien. 
+
+1302
+00:53:56,580 --> 00:54:01,300
+ Jadi misalkan masalah klien, saya tidak tahu, 
+
+1303
+00:54:01,300 --> 00:54:04,110
+ permintaan untuk mengambil pesan tertentu. 
+
+1304
+00:54:04,110 --> 00:54:08,720
+ Jadi saya katakan, Anda tahu, mengambil pesan 7. 
+
+1305
+00:54:08,720 --> 00:54:13,720
+ Dan saya mengenkripsi hal ini dengan surat KC. 
+
+1306
+00:54:13,720 --> 00:54:15,170
+ Kelihatannya luar biasa. 
+
+1307
+00:54:15,170 --> 00:54:17,590
+ Server email memiliki kunci yang dibagikan itu 
+
+1308
+00:54:17,590 --> 00:54:19,040
+ akan mendekripsi pesan ini. 
+
+1309
+00:54:19,040 --> 00:54:23,690
+ Dan itu akan mengirim saya kembali ke badan pesan email ini 
+
+1310
+00:54:23,690 --> 00:54:26,910
+ juga dienkripsi dengan surat KC. 
+
+1311
+00:54:26,910 --> 00:54:29,500
+ Apakah ada yang melihat masalah dengan ini? 
+
+1312
+00:54:29,500 --> 00:54:33,180
+ Mengapa ini berpotensi buruk untuk dilakukan? 
+
+1313
+00:54:33,180 --> 00:54:34,870
+ Ada yang lain? 
+
+1314
+00:54:34,870 --> 00:54:36,421
+ Yakin. 
+
+1315
+00:54:36,421 --> 00:54:39,530
+ SISWA: Jadi ada satu bab [TIDAK TERDENGAR] 
+
+1316
+00:54:39,530 --> 00:54:42,104
+ mereka dapat membuat [INAUDIBLE] terlihat seperti beberapa hal lain 
+
+1317
+00:54:42,104 --> 00:54:42,806
+ ingin [tidak terdengar] 
+
+1318
+00:54:42,806 --> 00:54:43,750
+ PROFESOR: Ya, jadi itu sebenarnya 
+
+1319
+00:54:43,750 --> 00:54:46,444
+ mengkhawatirkan karena saya dapat mengirimi Anda pesan email apa pun yang saya inginkan. 
+
+1320
+00:54:46,444 --> 00:54:48,610
+ Jadi misalkan saya benar-benar ingin menghapus beberapa pesan itu 
+
+1321
+00:54:48,610 --> 00:54:50,068
+ sedang duduk di sini di kotak masuk Anda dan saya 
+
+1322
+00:54:50,068 --> 00:54:51,250
+ tidak ingin kamu membacanya. 
+
+1323
+00:54:51,250 --> 00:54:53,640
+ Saya tahu itu mungkin pesan, saya tidak tahu, 23. 
+
+1324
+00:54:53,640 --> 00:54:55,932
+ Jadi saya akan mengirimi Anda email yang mengatakan, hapus 23. 
+
+1325
+00:54:55,932 --> 00:54:56,931
+ Anda akan membacanya. 
+
+1326
+00:54:56,931 --> 00:54:58,800
+ Anda akan mengambilnya dan tanggapan 
+
+1327
+00:54:58,800 --> 00:55:00,675
+ akan datang dari server email yang mengatakan, 
+
+1328
+00:55:00,675 --> 00:55:03,086
+ hapus 23 terenkripsi dengan kunci ini. 
+
+1329
+00:55:03,086 --> 00:55:05,210
+ Dan sejauh ini, itu tidak dikirim ke server email. 
+
+1330
+00:55:05,210 --> 00:55:07,126
+ Tetapi jika saya melihat jaringan pada waktu yang tepat 
+
+1331
+00:55:07,126 --> 00:55:09,540
+ dan menangkap paket ini, saya dapat mengirim paket kembali 
+
+1332
+00:55:09,540 --> 00:55:10,690
+ ke server email. 
+
+1333
+00:55:10,690 --> 00:55:13,900
+ Ini akan terlihat seperti pesan yang mengatakan penghapusan 23 terenkripsi 
+
+1334
+00:55:13,900 --> 00:55:15,067
+ dengan kunci yang tepat. 
+
+1335
+00:55:15,067 --> 00:55:16,900
+ Dan server email akan berkata, oh ya, tentu. 
+
+1336
+00:55:16,900 --> 00:55:18,441
+ Anda mencoba menghapus pesan ini. 
+
+1337
+00:55:18,441 --> 00:55:19,190
+ Aku akan melakukannya. 
+
+1338
+00:55:19,190 --> 00:55:21,970
+ Jadi ini sedikit masalah karena kita 
+
+1339
+00:55:21,970 --> 00:55:25,070
+ memungkinkan musuh untuk mengacaukan surat 
+
+1340
+00:55:25,070 --> 00:55:27,860
+ server ke dalam apakah pesan kami dihasilkan olehnya 
+
+1341
+00:55:27,860 --> 00:55:30,592
+ atau dikirim ke sana di tempat pertama. 
+
+1342
+00:55:30,592 --> 00:55:32,021
+ Jadi ini cukup merepotkan. 
+
+1343
+00:55:32,021 --> 00:55:33,520
+ Jadi ini adalah apa yang biasanya disebut 
+
+1344
+00:55:33,520 --> 00:55:35,144
+ dalam literatur kriptografi dan protokol 
+
+1345
+00:55:35,144 --> 00:55:37,677
+ sebagai serangan refleksi. 
+
+1346
+00:55:37,677 --> 00:55:40,260
+ Jadi Anda punya saran bagaimana kami bisa menghindari masalah ini? 
+
+1347
+00:55:40,260 --> 00:55:40,660
+ Ya. 
+
+1348
+00:55:40,660 --> 00:55:42,985
+ SISWA: Tidak bisakah Anda memasukkan header yang mengatakan asal-usulnya? 
+
+1349
+00:55:42,985 --> 00:55:44,440
+ PROFESOR: Ya, jadi biasanya, Anda 
+
+1350
+00:55:44,440 --> 00:55:46,950
+ ingin memiliki cara yang sangat jelas untuk menyatakan apa 
+
+1351
+00:55:46,950 --> 00:55:47,900
+ sedang terjadi. 
+
+1352
+00:55:47,900 --> 00:55:50,364
+ Salah satu caranya adalah memiliki header di setiap pesan yang berbunyi, 
+
+1353
+00:55:50,364 --> 00:55:52,780
+ ini terjadi dari klien ke server atau dari server 
+
+1354
+00:55:52,780 --> 00:55:53,720
+ kepada klien. 
+
+1355
+00:55:53,720 --> 00:55:55,860
+ Dan bahkan rencana yang lebih baik dalam latihan ternyata 
+
+1356
+00:55:55,860 --> 00:55:57,520
+ hanya menggunakan dua kunci terpisah. 
+
+1357
+00:55:57,520 --> 00:56:00,170
+ Karena Anda mungkin ingin memiliki aliran data yang panjang 
+
+1358
+00:56:00,170 --> 00:56:02,860
+ di mana Anda tidak benar-benar memiliki ruang untuk bit header ini. 
+
+1359
+00:56:02,860 --> 00:56:06,380
+ Jadi sebaliknya, apa yang dilakukan Kerberos 5 adalah setiap kali Anda menetapkan 
+
+1360
+00:56:06,380 --> 00:56:09,230
+ koneksi dengan beberapa layanan, Anda sebenarnya menegosiasikan dua kunci 
+
+1361
+00:56:09,230 --> 00:56:10,690
+ bukan hanya satu kunci. 
+
+1362
+00:56:10,690 --> 00:56:13,530
+ Dan kunci pertama akan digunakan untuk mengenkripsi barang 
+
+1363
+00:56:13,530 --> 00:56:16,780
+ dari klien ke server dan lainnya dari server kembali ke klien. 
+
+1364
+00:56:16,780 --> 00:56:21,010
+ Jadi sepertinya itu cara yang jauh lebih baik untuk melakukannya dalam praktek. 
+
+1365
+00:56:21,010 --> 00:56:24,220
+ Masuk akal? 
+
+1366
+00:56:24,220 --> 00:56:30,750
+ Baiklah, jadi kurasa sekarang mari kita bicara sedikit 
+
+1367
+00:56:30,750 --> 00:56:33,780
+ tentang apa yang terjadi dengan KDC. 
+
+1368
+00:56:33,780 --> 00:56:38,870
+ Jadi server Kerberos sangat penting bagi sistem. 
+
+1369
+00:56:38,870 --> 00:56:42,000
+ Tetapi apa yang terjadi jika KDC ini turun? 
+
+1370
+00:56:42,000 --> 00:56:44,360
+ Jadi betapa buruknya sistem kami. 
+
+1371
+00:56:44,360 --> 00:56:47,730
+ Seperti, di Athena, misalkan jika KDC lumpuh, 
+
+1372
+00:56:47,730 --> 00:56:49,330
+ apakah ini mempengaruhi hidupmu? 
+
+1373
+00:56:49,330 --> 00:56:50,514
+ Nah, jika kamu menggunakan Athena. 
+
+1374
+00:56:50,514 --> 00:56:52,097
+ SISWA: Apakah itu sebabnya Anda tidak bisa masuk? 
+
+1375
+00:56:52,097 --> 00:56:53,822
+ PROFESOR: Ya, jadi Anda tidak bisa masuk. 
+
+1376
+00:56:53,822 --> 00:56:56,030
+ Saya kira hal lain adalah Anda juga tidak bisa mendapatkan tiket 
+
+1377
+00:56:56,030 --> 00:56:58,010
+ untuk hal-hal baru juga. 
+
+1378
+00:56:58,010 --> 00:57:00,780
+ Tapi yang paling keren adalah KDC sebagian besar 
+
+1379
+00:57:00,780 --> 00:57:02,820
+ dari jalur kritis untuk koneksi yang ada. 
+
+1380
+00:57:02,820 --> 00:57:04,312
+ Jadi tidak ada data yang melewati KDC. 
+
+1381
+00:57:04,312 --> 00:57:06,270
+ Dan jika Anda sudah memiliki tiket untuk sesuatu, 
+
+1382
+00:57:06,270 --> 00:57:07,853
+ Anda dapat terus menggunakannya dan terus masuk 
+
+1383
+00:57:07,853 --> 00:57:10,220
+ ke beberapa layanan melalui jaringan. 
+
+1384
+00:57:10,220 --> 00:57:13,056
+ Jadi dengan cara itu, sebenarnya cacheable cukup baik. 
+
+1385
+00:57:13,056 --> 00:57:14,680
+ Saya kira hal baik lainnya dari orang-orang ini 
+
+1386
+00:57:14,680 --> 00:57:17,430
+ lakukan adalah mereka benar-benar memiliki cara mereplikasi 
+
+1387
+00:57:17,430 --> 00:57:18,880
+ KDC berpotensi. 
+
+1388
+00:57:18,880 --> 00:57:21,140
+ Jadi mereka memiliki satu server master Kerberos 
+
+1389
+00:57:21,140 --> 00:57:25,800
+ yang menyimpan jenis salinan utama dari keseluruhan basis data ini. 
+
+1390
+00:57:25,800 --> 00:57:29,220
+ Dan kemudian mereka hanya bisa membaca replika itu 
+
+1391
+00:57:29,220 --> 00:57:30,560
+ pegang salinan database ini. 
+
+1392
+00:57:30,560 --> 00:57:32,080
+ Mereka tidak mengizinkan pembaruan apa pun untuk ini 
+
+1393
+00:57:32,080 --> 00:57:35,270
+ seperti mendaftarkan pengguna atau memperbarui kunci. 
+
+1394
+00:57:35,270 --> 00:57:39,600
+ Tetapi mereka mengizinkan menanggapi permintaan masuk dan TJS. 
+
+1395
+00:57:39,600 --> 00:57:43,030
+ Jadi dengan cara ini, klon cadangan dari basis data Kerberos ini 
+
+1396
+00:57:43,030 --> 00:57:45,860
+ memungkinkan Anda tetap masuk dan terus berbicara dengan layanan 
+
+1397
+00:57:45,860 --> 00:57:49,850
+ bahkan jika tuannya jatuh dan mudah-mudahan 
+
+1398
+00:57:49,850 --> 00:57:53,590
+ memungkinkan untuk meng-upgrade ke master tanpa melanggar 
+
+1399
+00:57:53,590 --> 00:57:56,060
+ semuanya pada saat bersamaan. 
+
+1400
+00:57:56,060 --> 00:57:56,640
+ Masuk akal? 
+
+1401
+00:57:56,640 --> 00:57:56,900
+ Ada pertanyaan? 
+
+1402
+00:57:56,900 --> 00:57:57,200
+ Ya. 
+
+1403
+00:57:57,200 --> 00:57:58,741
+ SISWA: Seberapa sulit untuk berkompromi 
+
+1404
+00:57:58,741 --> 00:58:01,292
+ server KDC dan [TIDAK JELAS]? 
+
+1405
+00:58:01,292 --> 00:58:03,560
+ PROFESOR: Ya, ini adalah hal yang sangat besar 
+
+1406
+00:58:03,560 --> 00:58:05,852
+ target untuk sistem apa pun yang menjalankan Kerberos. 
+
+1407
+00:58:05,852 --> 00:58:07,310
+ Karena jika Anda berkompromi dengan pria ini, 
+
+1408
+00:58:07,310 --> 00:58:09,350
+ Anda sepenuhnya mengendalikan sistem. 
+
+1409
+00:58:09,350 --> 00:58:12,620
+ Anda dapat membeli tiket untuk layanan apa pun yang Anda inginkan, 
+
+1410
+00:58:12,620 --> 00:58:15,100
+ berpura-pura menjadi klien yang Anda inginkan. 
+
+1411
+00:58:15,100 --> 00:58:16,600
+ Jadi ini sangat buruk. 
+
+1412
+00:58:16,600 --> 00:58:18,654
+ Jadi Anda benar-benar ingin menjaga orang ini tetap aman. 
+
+1413
+00:58:18,654 --> 00:58:20,070
+ Sekarang, seberapa sulit untuk berkompromi? 
+
+1414
+00:58:20,070 --> 00:58:21,600
+ Yah, idealnya, itu sulit. 
+
+1415
+00:58:21,600 --> 00:58:25,450
+ Dan saya tidak tahu ada contoh 
+
+1416
+00:58:25,450 --> 00:58:29,890
+ dimana MIT KDC sebenarnya telah dikompromikan, saya kira, 
+
+1417
+00:58:29,890 --> 00:58:31,700
+ 20 tahun atau lebih. 
+
+1418
+00:58:31,700 --> 00:58:34,910
+ Jadi, saya pikir, mungkin untuk menjalankan keamanan yang wajar ini. 
+
+1419
+00:58:34,910 --> 00:58:37,070
+ Tetapi mungkin, hal-hal yang Anda khawatirkan 
+
+1420
+00:58:37,070 --> 00:58:40,440
+ hanya keamanan implementasi perangkat lunak 
+
+1421
+00:58:40,440 --> 00:58:43,010
+ dari hal-hal yang mendengarkan pada dua layanan ini, bukan? 
+
+1422
+00:58:43,010 --> 00:58:44,990
+ Jadi jika ada buffer overflows pada orang-orang ini 
+
+1423
+00:58:44,990 --> 00:58:48,850
+ atau beberapa kerentanan lain seperti itu, itu sangat buruk. 
+
+1424
+00:58:48,850 --> 00:58:52,270
+ Atau jika ada server SSH yang berjalan di KDC Kerberos 
+
+1425
+00:58:52,270 --> 00:58:55,430
+ dan seseorang menebak kata sandi root pada server SSH itu, 
+
+1426
+00:58:55,430 --> 00:58:57,860
+ mereka hanya akan masuk dan menyalin database. 
+
+1427
+00:58:57,860 --> 00:59:00,110
+ Jadi saya pikir Anda benar-benar ingin berhati-hati dalam meminimalkan 
+
+1428
+00:59:00,110 --> 00:59:01,151
+ permukaan serangan di sana. 
+
+1429
+00:59:01,151 --> 00:59:04,040
+ Mungkin sangat berhati-hati menulis kode KDC. 
+
+1430
+00:59:04,040 --> 00:59:06,300
+ Jangan biarkan Anda masuk ke dalamnya secara langsung. 
+
+1431
+00:59:06,300 --> 00:59:11,060
+ Mungkin Anda bahkan khawatir tentang keamanan fisik, dan sebagainya. 
+
+1432
+00:59:11,060 --> 00:59:11,690
+ Benar. 
+
+1433
+00:59:11,690 --> 00:59:14,180
+ Untungnya, ini sebenarnya adalah salah satu dari sedikit tempat 
+
+1434
+00:59:14,180 --> 00:59:16,210
+ di mana Anda harus menjadi super paranoid. 
+
+1435
+00:59:16,210 --> 00:59:19,020
+ Benar, jadi server, tidak seperti di beberapa sistem lain 
+
+1436
+00:59:19,020 --> 00:59:20,940
+ yang mempercayai semua mesin, server 
+
+1437
+00:59:20,940 --> 00:59:22,770
+ sebenarnya tidak begitu penting. 
+
+1438
+00:59:22,770 --> 00:59:24,410
+ Mereka tentu saja menyimpan beberapa data. 
+
+1439
+00:59:24,410 --> 00:59:28,540
+ Tetapi jika seseorang berkompromi dengan server email atau server cetak, 
+
+1440
+00:59:28,540 --> 00:59:30,337
+ Anda mungkin bisa pulih dengan cukup baik. 
+
+1441
+00:59:30,337 --> 00:59:32,170
+ Jadi sebenarnya, inilah pertanyaan yang menarik. 
+
+1442
+00:59:32,170 --> 00:59:34,253
+ Misalnya, seseorang menganggu mail server. 
+
+1443
+00:59:34,253 --> 00:59:37,156
+ Apa yang harus Anda lakukan untuk pulih dari serangan ini? 
+
+1444
+00:59:37,156 --> 00:59:38,530
+ Seperti, jika seseorang mencuri surat Anda, 
+
+1445
+00:59:38,530 --> 00:59:39,988
+ Saya kira itu agak disayangkan. 
+
+1446
+00:59:39,988 --> 00:59:42,710
+ Tetapi apa yang Anda lakukan agar penyerang tidak terus mengakses 
+
+1447
+00:59:42,710 --> 00:59:44,150
+ surat Anda di masa depan? 
+
+1448
+00:59:44,150 --> 00:59:44,660
+ Ya. 
+
+1449
+00:59:44,660 --> 00:59:45,844
+ SISWA: [TIDAK TERDENGAR] 
+
+1450
+00:59:45,844 --> 00:59:47,510
+ PROFESOR: Ya, jadi di Kerberos, ada 
+
+1451
+00:59:47,510 --> 00:59:49,830
+ tidak ada semacam operasi pencabutan. 
+
+1452
+00:59:49,830 --> 00:59:51,350
+ Tapi yang bisa Anda lakukan adalah Anda bisa 
+
+1453
+00:59:51,350 --> 00:59:53,690
+ mengubah menghasilkan kunci baru untuk server email 
+
+1454
+00:59:53,690 --> 00:59:56,000
+ dan tempelkan di database ini di sini. 
+
+1455
+00:59:56,000 --> 00:59:59,490
+ Lalu Anda menginstal server email baru, berikan kunci baru, 
+
+1456
+00:59:59,490 --> 01:00:02,880
+ dan kemudian beberapa penyerang yang memiliki kunci lama server email 
+
+1457
+01:00:02,880 --> 01:00:06,200
+ tidak memiliki cara-- seperti, tidak ada pengaruh sama sekali pada surat ini 
+
+1458
+01:00:06,200 --> 01:00:08,167
+ server sekarang, kan? 
+
+1459
+01:00:08,167 --> 01:00:10,750
+ Di sisi lain, misalkan Anda tidak mengubah server mail 
+
+1460
+01:00:10,750 --> 01:00:13,220
+ kunci, K mail. 
+
+1461
+01:00:13,220 --> 01:00:14,726
+ Bagaimana itu? 
+
+1462
+01:00:14,726 --> 01:00:17,292
+ SISWA: [TIDAK JELAS] baik. 
+
+1463
+01:00:17,292 --> 01:00:19,500
+ PROFESOR: OK, jadi misalkan Anda tidak mengubah surat. 
+
+1464
+01:00:19,500 --> 01:00:21,125
+ Anda, seperti, menginstal server email baru. 
+
+1465
+01:00:21,125 --> 01:00:23,200
+ Anda menambal bug apa pun yang dimanfaatkan peretas itu. 
+
+1466
+01:00:23,200 --> 01:00:25,130
+ Tetapi masih memiliki kunci K mail yang sama. 
+
+1467
+01:00:25,130 --> 01:00:28,172
+ Dan mungkin butuh satu hari jadi semua tiket kadaluwarsa. 
+
+1468
+01:00:28,172 --> 01:00:30,380
+ Bisakah peretas itu melakukan sesuatu yang menarik dalam sistem 
+
+1469
+01:00:30,380 --> 01:00:30,610
+ lagi? 
+
+1470
+01:00:30,610 --> 01:00:31,110
+ Ya. 
+
+1471
+01:00:31,110 --> 01:00:33,662
+ SISWA: [TIDAK TERDENGAR] 
+
+1472
+01:00:33,662 --> 01:00:36,245
+ PROFESOR: Ya, oke, jadi Anda memberi server email baru pada K lama 
+
+1473
+01:00:36,245 --> 01:00:37,960
+ surat. 
+
+1474
+01:00:37,960 --> 01:00:39,711
+ Apakah itu buruk? 
+
+1475
+01:00:39,711 --> 01:00:40,210
+ Ya. 
+
+1476
+01:00:40,210 --> 01:00:41,536
+ SISWA: Ini adalah-- 
+
+1477
+01:00:41,536 --> 01:00:43,594
+
+
+1478
+01:00:43,594 --> 01:00:44,260
+ PROFESOR: Tentu. 
+
+1479
+01:00:44,260 --> 01:00:48,571
+ SISWA: [tidak terdengar] server email. 
+
+1480
+01:00:48,571 --> 01:00:51,566
+ Dan [tidak terdengar] server email karena Anda bisa 
+
+1481
+01:00:51,566 --> 01:00:52,840
+ mengenkripsi tiket awal itu. 
+
+1482
+01:00:52,840 --> 01:00:53,130
+ PROFESOR: Benar. 
+
+1483
+01:00:53,130 --> 01:00:54,780
+ Jadi K mail sebenarnya sangat penting. 
+
+1484
+01:00:54,780 --> 01:00:57,240
+ Dan, oke, jadi Anda mengatakan Anda dapat mendekripsi semua hal 
+
+1485
+01:00:57,240 --> 01:00:58,462
+ masuk ke server email. 
+
+1486
+01:00:58,462 --> 01:01:00,670
+ Jadi misalkan klien sekarang terhubung ke server email 
+
+1487
+01:01:00,670 --> 01:01:02,060
+ setelah diperbaiki. 
+
+1488
+01:01:02,060 --> 01:01:03,890
+ Namun penyerang masih tahu K mail 
+
+1489
+01:01:03,890 --> 01:01:05,850
+ dari terakhir kali mereka mengganggu sistem. 
+
+1490
+01:01:05,850 --> 01:01:08,070
+ Mereka sekarang dapat mendekripsi k mail tiket ini 
+
+1491
+01:01:08,070 --> 01:01:11,382
+ dan mereka sekarang dapat melihat ke dalam tiket untuk mendapatkan kunci sesi 
+
+1492
+01:01:11,382 --> 01:01:13,590
+ dan mereka dapat menggunakannya untuk mendekripsi semua pesan Anda 
+
+1493
+01:01:13,590 --> 01:01:15,930
+ kirim, semua tanggapan yang Anda dapatkan kembali, dan seterusnya. 
+
+1494
+01:01:15,930 --> 01:01:18,950
+ Jadi sangat penting untuk mengubah surat K kunci ini. 
+
+1495
+01:01:18,950 --> 01:01:21,170
+ Dan dalam banyak hal, itu sebenarnya lebih buruk 
+
+1496
+01:01:21,170 --> 01:01:22,700
+ daripada hanya melihat lalu lintas. 
+
+1497
+01:01:22,700 --> 01:01:26,440
+ Karena jika penyerang tahu K mail kunci ini, 
+
+1498
+01:01:26,440 --> 01:01:29,180
+ mereka dapat mensintesis tiket baru untuk server email 
+
+1499
+01:01:29,180 --> 01:01:31,100
+ tanpa berbicara dengan tombol DC. 
+
+1500
+01:01:31,100 --> 01:01:32,710
+ Jadi misalkan saya tahu K mail dan saya 
+
+1501
+01:01:32,710 --> 01:01:35,100
+ ingin membaca surat Anda dari server email. 
+
+1502
+01:01:35,100 --> 01:01:36,430
+ Saya hanya akan membuat tiket ini. 
+
+1503
+01:01:36,430 --> 01:01:39,030
+ Saya akan menurunkan kelima bidang tersebut dalam urutan yang benar. 
+
+1504
+01:01:39,030 --> 01:01:40,950
+ Saya akan menghasilkan kunci baru. 
+
+1505
+01:01:40,950 --> 01:01:42,280
+ Saya akan mengenkripsi dengan K mail. 
+
+1506
+01:01:42,280 --> 01:01:45,072
+ Ini akan terlihat seperti hal nyata yang dihasilkan oleh KDC. 
+
+1507
+01:01:45,072 --> 01:01:46,780
+ Dan saya hanya akan terhubung ke server email. 
+
+1508
+01:01:46,780 --> 01:01:47,450
+ Dan itu akan mendekripsi. 
+
+1509
+01:01:47,450 --> 01:01:49,890
+ Ini akan mendekripsi dengan benar dan kemudian akan berpikir, oh, ya, 
+
+1510
+01:01:49,890 --> 01:01:52,980
+ ini adalah beberapa pengguna tertentu. 
+
+1511
+01:01:52,980 --> 01:01:55,480
+ Dan Anda dapat membaca semua email mereka dan Anda tahu kunci yang dibagikan 
+
+1512
+01:01:55,480 --> 01:01:56,590
+ dan seterusnya. 
+
+1513
+01:01:56,590 --> 01:01:59,870
+ Jadi sangat penting juga bahwa tidak ada yang tahu 
+
+1514
+01:01:59,870 --> 01:02:01,770
+ kunci rahasia layanan. 
+
+1515
+01:02:01,770 --> 01:02:04,120
+ Karena jika tidak, tidak hanya lalu lintas 
+
+1516
+01:02:04,120 --> 01:02:06,330
+ ke layanan yang dapat didekripsi dan dapat diamati, 
+
+1517
+01:02:06,330 --> 01:02:10,410
+ tetapi juga Anda bisa meniru siapa pun untuk layanan itu. 
+
+1518
+01:02:10,410 --> 01:02:13,730
+ Jadi ini sebenarnya sangat penting di Kerberos. 
+
+1519
+01:02:13,730 --> 01:02:15,320
+ Masuk akal? 
+
+1520
+01:02:15,320 --> 01:02:17,146
+ Ada pertanyaan? 
+
+1521
+01:02:17,146 --> 01:02:18,118
+ Ya. 
+
+1522
+01:02:18,118 --> 01:02:20,548
+ SISWA: Jadi jika penyerang harus [TIDAK JELAS], 
+
+1523
+01:02:20,548 --> 01:02:24,436
+ apa yang menghentikannya dari mengubah kunci [TIDAK JELAS] 
+
+1524
+01:02:24,436 --> 01:02:25,785
+ [TIDAK JELAS]? 
+
+1525
+01:02:25,785 --> 01:02:28,160
+ PROFESOR: Ya, jadi mungkin, bagaimana Anda akan pulih - seperti, 
+
+1526
+01:02:28,160 --> 01:02:30,380
+ ISNT akan, seperti, memanggil orang yang menjalankan KDC ini 
+
+1527
+01:02:30,380 --> 01:02:32,570
+ dan berkata, oh man, server email kami dikompromikan. 
+
+1528
+01:02:32,570 --> 01:02:34,820
+ Mengapa Anda tidak pergi dan, seperti, hapus kunci ini dari sana 
+
+1529
+01:02:34,820 --> 01:02:36,289
+ dan memasukkan kunci baru ini? 
+
+1530
+01:02:36,289 --> 01:02:38,330
+ Jadi Anda mungkin ingin memiliki beberapa batasan 
+
+1531
+01:02:38,330 --> 01:02:41,570
+ mekanisme untuk membuktikan bahwa Anda benar-benar server email. 
+
+1532
+01:02:41,570 --> 01:02:43,434
+ Karena kita akan melihat kedua bagaimana caranya 
+
+1533
+01:02:43,434 --> 01:02:45,600
+ Anda mengubah kunci-- seperti protokol pengubahan kata sandi, 
+
+1534
+01:02:45,600 --> 01:02:46,410
+ sebagai contoh. 
+
+1535
+01:02:46,410 --> 01:02:49,410
+ Dan Anda dapat secara umum mengubah kata sandi di Kerberos. 
+
+1536
+01:02:49,410 --> 01:02:51,020
+ Jadi jika Anda tahu kata sandi lama, Anda 
+
+1537
+01:02:51,020 --> 01:02:53,920
+ dapat mengubah kata sandi pengguna menjadi kata sandi baru di sini. 
+
+1538
+01:02:53,920 --> 01:02:56,702
+ Jadi untuk memulihkan, kamu mungkin-- seperti penyerang, 
+
+1539
+01:02:56,702 --> 01:02:58,910
+ mungkin mendapatkan surat kunci Anda, mengubahnya menjadi sesuatu yang lain. 
+
+1540
+01:02:58,910 --> 01:03:01,750
+ Seseorang dengan ISNT pada dasarnya harus pergi ke kantor Akun 
+
+1541
+01:03:01,750 --> 01:03:04,129
+ dan katakan, hei, kami mendengar di ISNT. 
+
+1542
+01:03:04,129 --> 01:03:06,420
+ Bisakah Anda mengubah kata sandi server surat 
+
+1543
+01:03:06,420 --> 01:03:06,920
+ untuk kita? 
+
+1544
+01:03:06,920 --> 01:03:08,878
+ Dan mereka akan menghasilkan beberapa kata sandi baru 
+
+1545
+01:03:08,878 --> 01:03:10,320
+ penyerang tidak tahu. 
+
+1546
+01:03:10,320 --> 01:03:14,230
+ Jadi ya, jika tidak, jika penyerang tahu surat K kunci ini, 
+
+1547
+01:03:14,230 --> 01:03:16,480
+ tidak ada yang membedakan penyerang darimu, 
+
+1548
+01:03:16,480 --> 01:03:18,240
+ dari operator server surat nyata. 
+
+1549
+01:03:18,240 --> 01:03:20,976
+ Bahkan, penyerang mungkin mengubah kunci jadi sekarang mereka 
+
+1550
+01:03:20,976 --> 01:03:22,350
+ tahu hal baru dan Anda tidak. 
+
+1551
+01:03:22,350 --> 01:03:24,440
+ Ini seperti Anda tidak lagi berada di server email. 
+
+1552
+01:03:24,440 --> 01:03:27,210
+ Jadi benar-benar, Anda perlu beberapa protokol band 
+
+1553
+01:03:27,210 --> 01:03:31,460
+ untuk awalnya mendaftarkan prinsip dalam database 
+
+1554
+01:03:31,460 --> 01:03:34,360
+ dan untuk mengganti kunci jika Anda lupa kata sandi atau seseorang 
+
+1555
+01:03:34,360 --> 01:03:37,400
+ perubahan untuk Anda dan Anda kehilangan itu juga. 
+
+1556
+01:03:37,400 --> 01:03:40,020
+ Jadi ada seseorang di MIT atau di sana 
+
+1557
+01:03:40,020 --> 01:03:42,950
+ sekelompok orang di MIT yang membantu pengguna 
+
+1558
+01:03:42,950 --> 01:03:45,000
+ daftar akun dan ubah kata sandinya 
+
+1559
+01:03:45,000 --> 01:03:48,440
+ oleh, Anda tahu, Anda menunjukkan ID MIT Anda dan berkata, oh, baiklah, oke. 
+
+1560
+01:03:48,440 --> 01:03:49,840
+ Yah, apapun yang terjadi, kita akan seperti itu 
+
+1561
+01:03:49,840 --> 01:03:51,740
+ dapat mengubah kunci Anda untuk Anda kemudian. 
+
+1562
+01:03:51,740 --> 01:03:53,890
+ Masuk akal? 
+
+1563
+01:03:53,890 --> 01:03:55,390
+ Jadi itu sangat penting, tentu saja, 
+
+1564
+01:03:55,390 --> 01:03:57,990
+ untuk melakukan itu dengan benar jadi jika orang itu 
+
+1565
+01:03:57,990 --> 01:04:01,310
+ memungkinkan penyetelan ulang kata sandi melakukan hal yang salah saat memeriksa 
+
+1566
+01:04:01,310 --> 01:04:04,140
+ ID MIT Anda, Anda akan dapat berkompromi dengan sistem juga, 
+
+1567
+01:04:04,140 --> 01:04:04,280
+ kanan? 
+
+1568
+01:04:04,280 --> 01:04:06,321
+ Jadi mereka semacam bagian dari komputasi tepercaya 
+
+1569
+01:04:06,321 --> 01:04:07,405
+ basis di Kerberos, kan? 
+
+1570
+01:04:07,405 --> 01:04:09,530
+ Seperti, siapa saja yang bisa pergi dan berurusan dengan database 
+
+1571
+01:04:09,530 --> 01:04:13,990
+ sangat penting untuk keamanan di sini. 
+
+1572
+01:04:13,990 --> 01:04:17,149
+ Baiklah, mari kita lihat jenis lain dari penggunaan yang menarik 
+
+1573
+01:04:17,149 --> 01:04:17,940
+ dari Kerberos, kan? 
+
+1574
+01:04:17,940 --> 01:04:22,750
+ Jadi Anda bisa menggunakan Kerberos untuk mencoba masuk ke beberapa mesin jarak jauh 
+
+1575
+01:04:22,750 --> 01:04:24,329
+ melalui SSH. 
+
+1576
+01:04:24,329 --> 01:04:26,620
+ Dan cara kerja ini, tentu saja, sangat mirip 
+
+1577
+01:04:26,620 --> 01:04:27,340
+ ke server email. 
+
+1578
+01:04:27,340 --> 01:04:28,881
+ Anda akan mendapatkan tiket untuk server SSH 
+
+1579
+01:04:28,881 --> 01:04:32,080
+ dan Anda akan mengirim tiket bersama dengan koneksi SSH Anda. 
+
+1580
+01:04:32,080 --> 01:04:34,860
+ Tetapi bagaimana jika Anda SSHing ke Athena dot dial-up 
+
+1581
+01:04:34,860 --> 01:04:37,210
+ dan Anda tidak memiliki klien Kerberos di komputer Anda? 
+
+1582
+01:04:37,210 --> 01:04:39,270
+ Anda hanya ingin masuk ke Athena dot dial-up 
+
+1583
+01:04:39,270 --> 01:04:42,360
+ dengan kata sandi biasa Anda. 
+
+1584
+01:04:42,360 --> 01:04:44,840
+ Jadi bagaimana Athena dial-up mengautentikasi Anda, maka, 
+
+1585
+01:04:44,840 --> 01:04:48,060
+ jika Anda hanya memasukkan ke mesin ini dengan kata sandi? 
+
+1586
+01:04:48,060 --> 01:04:50,120
+ Tetapi Anda tidak memiliki kata sandi untuk Athena dot dial-up. 
+
+1587
+01:04:50,120 --> 01:04:51,772
+ Ada di server Kerberos. 
+
+1588
+01:04:51,772 --> 01:04:53,230
+ Jadi mana yang harus mesin dial-up 
+
+1589
+01:04:53,230 --> 01:04:54,880
+ lakukan ketika Anda masuk ke dalamnya dengan kata sandi? 
+
+1590
+01:04:54,880 --> 01:04:55,250
+ Ya. 
+
+1591
+01:04:55,250 --> 01:04:56,990
+ SISWA: Anda dapat mengakses [tidak terdengar]. 
+
+1592
+01:04:56,990 --> 01:04:58,770
+ PROFESOR: Ya, jadi dial-up kemudian 
+
+1593
+01:04:58,770 --> 01:05:01,200
+ pada dasarnya akan memainkan protokol yang sama dengan Anda. 
+
+1594
+01:05:01,200 --> 01:05:03,850
+ Jadi itu akan mengirim permintaan. 
+
+1595
+01:05:03,850 --> 01:05:04,600
+ Hal ini, kan? 
+
+1596
+01:05:04,600 --> 01:05:07,960
+ Ini akan mengirim permintaan ke layanan Kerberos bertanya, 
+
+1597
+01:05:07,960 --> 01:05:11,550
+ beri saya tiket, saya tidak tahu, pengguna ini Alice. 
+
+1598
+01:05:11,550 --> 01:05:15,050
+ Dan sebagai tanggapan, itu akan membalas balasan ini dienkripsi 
+
+1599
+01:05:15,050 --> 01:05:16,280
+ dengan kata sandi Alice. 
+
+1600
+01:05:16,280 --> 01:05:19,250
+ Dan kemudian akan mencoba kata sandi yang baru saja Anda terapkan 
+
+1601
+01:05:19,250 --> 01:05:21,050
+ dan lihat apakah itu mendekripsi dengan benar. 
+
+1602
+01:05:21,050 --> 01:05:22,650
+ Dan jika itu mendekripsi dengan benar, itu 
+
+1603
+01:05:22,650 --> 01:05:25,270
+ akan membiarkan Anda masuk, kan? 
+
+1604
+01:05:25,270 --> 01:05:25,770
+ Ya. 
+
+1605
+01:05:25,770 --> 01:05:27,228
+ SISWA: Anda bahkan tidak punya 
+
+1606
+01:05:27,228 --> 01:05:30,370
+ untuk mengirim kunci Anda ke server SSH. 
+
+1607
+01:05:30,370 --> 01:05:32,840
+ Karena itu bisa menyampaikan kembali ini-- 
+
+1608
+01:05:32,840 --> 01:05:35,230
+ dot terenkripsi dengan KC. 
+
+1609
+01:05:35,230 --> 01:05:38,948
+ Itu bisa menyampaikan itu kembali ke pengguna melalui koneksi SSH. 
+
+1610
+01:05:38,948 --> 01:05:40,380
+ PROFESOR: Berpotensi, ya. 
+
+1611
+01:05:40,380 --> 01:05:42,560
+ Benar, jadi ini membutuhkan beberapa klien SSH yang mewah 
+
+1612
+01:05:42,560 --> 01:05:43,810
+ yang mungkin tidak Anda miliki. 
+
+1613
+01:05:43,810 --> 01:05:45,400
+ Tapi-- jadi ya, benar sekali. 
+
+1614
+01:05:45,400 --> 01:05:46,790
+ Jika Anda ingin melakukan ini dengan benar, Anda 
+
+1615
+01:05:46,790 --> 01:05:49,081
+ mungkin ingin memiliki klien Kerberos di komputer Anda 
+
+1616
+01:05:49,081 --> 01:05:51,370
+ dan dapatkan tiket sendiri atau mungkin 
+
+1617
+01:05:51,370 --> 01:05:53,460
+ proksi itu entah bagaimana melalui server SSH 
+
+1618
+01:05:53,460 --> 01:05:56,104
+ tetapi tidak memungkinkan server SSH untuk memiliki kunci Anda. 
+
+1619
+01:05:56,104 --> 01:05:57,270
+ Itu mungkin rencana yang bagus. 
+
+1620
+01:05:57,270 --> 01:06:01,518
+ SISWA: [TIDAK TERDENGAR] hanya, server bisa 
+
+1621
+01:06:01,518 --> 01:06:02,940
+ melalui dinding ini [tidak terdengar] 
+
+1622
+01:06:02,940 --> 01:06:03,108
+ PROFESOR: Benar. 
+
+1623
+01:06:03,108 --> 01:06:05,165
+ Maka Anda mungkin mendekripsi dan mengirim kembali. 
+
+1624
+01:06:05,165 --> 01:06:07,290
+ OK, tapi dalam kasus lain, benar, semua yang kami lakukan di sini 
+
+1625
+01:06:07,290 --> 01:06:11,279
+ seseorang akan mencoba mendekripsi gumpalan ini dengan KC. 
+
+1626
+01:06:11,279 --> 01:06:13,320
+ Dan kemudian server akan menyelesaikan masalah ini 
+
+1627
+01:06:13,320 --> 01:06:14,403
+ dan lihat apakah itu terlihat benar. 
+
+1628
+01:06:14,403 --> 01:06:16,476
+ Ini akan memungkinkan Anda masuk 
+
+1629
+01:06:16,476 --> 01:06:19,219
+ Tampak seperti rencana yang bagus? 
+
+1630
+01:06:19,219 --> 01:06:21,760
+ Jadi, ternyata ini sebenarnya hal yang cukup berbahaya untuk dilakukan 
+
+1631
+01:06:21,760 --> 01:06:24,315
+ dan memungkinkan Anda untuk berpotensi masuk ke server SSH 
+
+1632
+01:06:24,315 --> 01:06:26,020
+ sebagai siapa pun. 
+
+1633
+01:06:26,020 --> 01:06:28,650
+ Dan alasannya adalah bahwa sebelumnya, 
+
+1634
+01:06:28,650 --> 01:06:31,930
+ ketika kami berbicara tentang klien yang mencoba masuk, 
+
+1635
+01:06:31,930 --> 01:06:33,549
+ klien pada dasarnya tahu itu 
+
+1636
+01:06:33,549 --> 01:06:35,340
+ sedang mencoba untuk memberikan kata sandi yang sah, 
+
+1637
+01:06:35,340 --> 01:06:37,780
+ itu mendapat balasan dari server Kerberos yang tepat, 
+
+1638
+01:06:37,780 --> 01:06:40,870
+ dan jika bisa didekripsi, maka mungkin kata sandi berhasil 
+
+1639
+01:06:40,870 --> 01:06:42,010
+ benar. 
+
+1640
+01:06:42,010 --> 01:06:44,650
+ Namun, tidak ada apa pun di protokol ini 
+
+1641
+01:06:44,650 --> 01:06:47,500
+ mengotentikasi fakta bahwa balasan ini akan datang 
+
+1642
+01:06:47,500 --> 01:06:50,670
+ dari server Kerberos yang tepat. 
+
+1643
+01:06:50,670 --> 01:06:57,470
+ Jadi jika saya mencoba masuk ke mesin dengan mengetikkan kata sandi 
+
+1644
+01:06:57,470 --> 01:07:00,080
+ dan mesin mengirimkan permintaan ini 
+
+1645
+01:07:00,080 --> 01:07:02,700
+ dan beberapa tanggapan muncul kembali 
+
+1646
+01:07:02,700 --> 01:07:06,170
+ untuk dienkripsi dengan kata sandi yang saya ketikkan, 
+
+1647
+01:07:06,170 --> 01:07:09,750
+ respons ini mungkin tidak berasal dari server Kerberos. 
+
+1648
+01:07:09,750 --> 01:07:12,090
+ Jadi misalkan saya memiliki beberapa mesin yang ingin saya masuki. 
+
+1649
+01:07:12,090 --> 01:07:14,510
+ Saya mengetikkan kata sandi X ke dalamnya. 
+
+1650
+01:07:14,510 --> 01:07:16,960
+ Dan kemudian mesin mengirimkan respons ini. 
+
+1651
+01:07:16,960 --> 01:07:19,280
+ Dan sebelum server Kerberos dapat merespon kembali 
+
+1652
+01:07:19,280 --> 01:07:23,210
+ dengan balasan yang nyata, saya akan mengirimkan balasan saya sendiri itu 
+
+1653
+01:07:23,210 --> 01:07:27,640
+ Sepertinya respons nyata ini dienkripsi dengan kata sandi X. 
+
+1654
+01:07:27,640 --> 01:07:31,540
+ Dan workstation yang saya coba masuk atau server SSH 
+
+1655
+01:07:31,540 --> 01:07:33,780
+ akan mendekripsi dengan kata sandi palsu saya. 
+
+1656
+01:07:33,780 --> 01:07:36,180
+ Ini akan terlihat OK karena respons ini 
+
+1657
+01:07:36,180 --> 01:07:39,880
+ dihasilkan oleh saya daripada server Kerberos asli. 
+
+1658
+01:07:39,880 --> 01:07:45,395
+ Dan Anda akan dapat masuk Ini masuk akal? 
+
+1659
+01:07:45,395 --> 01:07:46,270
+ Mengapa ini terjadi? 
+
+1660
+01:07:46,270 --> 01:07:51,704
+
+
+1661
+01:07:51,704 --> 01:07:52,692
+ Ya. 
+
+1662
+01:07:52,692 --> 01:07:54,668
+ SISWA: [TIDAK TERDENGAR] tidak ada otentikasi 
+
+1663
+01:07:54,668 --> 01:07:56,660
+ dari server Kerberos [TIDAK TERDENGAR] 
+
+1664
+01:07:56,660 --> 01:07:57,550
+ PROFESOR: Benar, ya, jadi ada 
+
+1665
+01:07:57,550 --> 01:07:59,940
+ tidak ada yang benar-benar di sini yang mengikat ini ke Kerberos asli 
+
+1666
+01:07:59,940 --> 01:08:00,440
+ server 
+
+1667
+01:08:00,440 --> 01:08:04,850
+ Jadi cara Kerberos memperbaiki ini 
+
+1668
+01:08:04,850 --> 01:08:08,300
+ untuk mesin yang dapat diakses dari jarak jauh seperti Athena 
+
+1669
+01:08:08,300 --> 01:08:11,100
+ dot dial-up adalah dial-up itu sendiri 
+
+1670
+01:08:11,100 --> 01:08:14,700
+ memiliki semacam kunci rahasia yang mereka bagikan dengan KDC. 
+
+1671
+01:08:14,700 --> 01:08:16,720
+ Jadi untuk memasukkan Anda ke dalam dial-up 
+
+1672
+01:08:16,720 --> 01:08:19,210
+ atau ke workstation yang benar-benar peduli tentang pengecekan 
+
+1673
+01:08:19,210 --> 01:08:21,158
+ apakah Anda benar-benar pengguna yang tepat, 
+
+1674
+01:08:21,158 --> 01:08:22,699
+ sebenarnya akan melakukan dua hal. 
+
+1675
+01:08:22,700 --> 01:08:26,229
+ Ini pertama-tama akan memasukkan Anda ke Kerberos seperti ini. 
+
+1676
+01:08:26,229 --> 01:08:28,880
+ Tapi kemudian hanya karena jawaban ini mendekripsi dengan benar, 
+
+1677
+01:08:28,880 --> 01:08:30,439
+ itu tidak akan mempercayai itu. 
+
+1678
+01:08:30,439 --> 01:08:33,090
+ Ini akan mencoba mendapatkan layanan 
+
+1679
+01:08:33,090 --> 01:08:35,910
+ tiket untuk dirinya sendiri menggunakan TGS. 
+
+1680
+01:08:35,910 --> 01:08:39,899
+ Jadi mesin dial-up di sini memiliki kunci rahasianya sendiri. 
+
+1681
+01:08:39,899 --> 01:08:42,229
+ Dan itu membuat Anda masuk dengan putaran ini. 
+
+1682
+01:08:42,229 --> 01:08:45,569
+ Kemudian berbicara kepada TGS, oh, tolong beri saya 
+
+1683
+01:08:45,569 --> 01:08:48,740
+ tiket layanan untuk prinsip saya sendiri, 
+
+1684
+01:08:48,740 --> 01:08:51,359
+ dari prinsip dial-up, untuk klien ini. 
+
+1685
+01:08:51,359 --> 01:08:52,880
+ Maka mendapat tanggapan kembali. 
+
+1686
+01:08:52,880 --> 01:08:55,479
+ Dan kemudian memeriksa apakah itu dapat mendekripsi respons dengan benar. 
+
+1687
+01:08:55,479 --> 01:08:59,220
+ Karena tahu kunci dial-up untuk KS ini. 
+
+1688
+01:08:59,220 --> 01:09:01,390
+ Dan jika decrpyts ini, yang tahu, oh ya, 
+
+1689
+01:09:01,390 --> 01:09:03,390
+ Saya harus berbicara dengan server Kerberos yang tepat. 
+
+1690
+01:09:03,390 --> 01:09:04,973
+ Karena hanya server Kerberos yang tepat 
+
+1691
+01:09:04,973 --> 01:09:07,200
+ akan mengirim saya tiket putaran kedua ini dienkripsi 
+
+1692
+01:09:07,200 --> 01:09:10,665
+ dengan tombol rahasia saya, K dial-up. 
+
+1693
+01:09:10,665 --> 01:09:12,779
+ Jadi ini sebenarnya sangat penting. 
+
+1694
+01:09:12,779 --> 01:09:14,743
+ Dan biasanya, workstation Athena 
+
+1695
+01:09:14,743 --> 01:09:17,159
+ jangan lakukan langkah tambahan ini karena workstation Athena tidak 
+
+1696
+01:09:17,160 --> 01:09:19,100
+ memiliki kunci rahasia yang tersimpan di dalamnya 
+
+1697
+01:09:19,100 --> 01:09:21,493
+ yang dibagikan dengan KDC. 
+
+1698
+01:09:21,493 --> 01:09:23,534
+ Mengapa ini OK untuk workstation Athena untuk membiarkan Anda 
+
+1699
+01:09:23,535 --> 01:09:26,535
+ masuk dalam perjalanan satu kali ini dan bukan untuk dial-up? 
+
+1700
+01:09:26,535 --> 01:09:27,035
+ Ya. 
+
+1701
+01:09:27,035 --> 01:09:29,076
+ SISWA: Jika Anda tidak memiliki akses ke layanan apa pun 
+
+1702
+01:09:29,076 --> 01:09:31,035
+ karena penyerang tidak bisa memalsukan tiket. 
+
+1703
+01:09:31,035 --> 01:09:32,283
+ PROFESOR: Itu benar, ya. 
+
+1704
+01:09:32,283 --> 01:09:35,059
+ Jadi tidak ada yang menarik pada mesin dial-up itu sendiri-- 
+
+1705
+01:09:35,060 --> 01:09:36,510
+ maaf, di workstation itu sendiri. 
+
+1706
+01:09:36,510 --> 01:09:39,660
+ Jadi workstation, kapan pun-- Anda memiliki akses root di sana. 
+
+1707
+01:09:39,660 --> 01:09:42,930
+ Jadi jika Anda masuk ke dalamnya dengan kata sandi palsu, siapa yang peduli? 
+
+1708
+01:09:42,930 --> 01:09:45,010
+ Ini tidak seperti Anda akan dapat melakukan hal lain 
+
+1709
+01:09:45,010 --> 01:09:46,519
+ di luar ruang kerja Anda. 
+
+1710
+01:09:46,519 --> 01:09:48,810
+ Sedangkan pada dial-up, hal-hal jauh lebih menarik. 
+
+1711
+01:09:48,810 --> 01:09:50,850
+ Mungkin Anda memiliki proses lain yang sedang berjalan 
+
+1712
+01:09:50,850 --> 01:09:52,919
+ pada dial-up dari sesi login lainnya. 
+
+1713
+01:09:52,920 --> 01:09:56,440
+ Dan di sana, fakta bahwa Anda masuk dengan UID Unix tertentu 
+
+1714
+01:09:56,440 --> 01:09:58,070
+ sebenarnya sangat penting. 
+
+1715
+01:09:58,070 --> 01:10:00,230
+ Dan di sana, mereka benar-benar ingin mengautentikasi 
+
+1716
+01:10:00,230 --> 01:10:02,360
+ bahwa Anda adalah entitas yang benar. 
+
+1717
+01:10:02,360 --> 01:10:05,780
+ Jadi itulah mengapa mereka melakukan proses 2 langkah untuk logging 
+
+1718
+01:10:05,780 --> 01:10:09,140
+ ke dalam beberapa mesin berbagi waktu bersama. 
+
+1719
+01:10:09,140 --> 01:10:12,020
+ Masuk akal? 
+
+1720
+01:10:12,020 --> 01:10:15,230
+ Baiklah, jadi hal terakhir yang ingin saya bicarakan 
+
+1721
+01:10:15,230 --> 01:10:16,840
+ adalah bagaimana kita mengubah kunci. 
+
+1722
+01:10:16,840 --> 01:10:19,230
+ Jadi kami membicarakannya sebentar di sini dengan ide itu 
+
+1723
+01:10:19,230 --> 01:10:22,029
+ bahwa kunci server email mungkin dikompromikan. 
+
+1724
+01:10:22,029 --> 01:10:23,570
+ Tetapi sebagai pengguna, Anda mungkin juga menginginkannya 
+
+1725
+01:10:23,570 --> 01:10:26,080
+ untuk mengubah kata sandi juga. 
+
+1726
+01:10:26,080 --> 01:10:28,861
+ Seperti, mungkin Anda berpikir, oh, kata sandi itu tidak begitu bagus 
+
+1727
+01:10:28,861 --> 01:10:29,360
+ lagi. 
+
+1728
+01:10:29,360 --> 01:10:31,390
+ Mungkin saya secara tidak sengaja menulisnya di selembar kertas dan seseorang 
+
+1729
+01:10:31,390 --> 01:10:32,280
+ melihatnya. 
+
+1730
+01:10:32,280 --> 01:10:34,100
+ Jadi Anda mungkin ingin mengubahnya. 
+
+1731
+01:10:34,100 --> 01:10:36,120
+ Jadi cara kerjanya sebenarnya 
+
+1732
+01:10:36,120 --> 01:10:38,150
+ pada tingkat tertentu cukup mudah. 
+
+1733
+01:10:38,150 --> 01:10:41,440
+ Jadi ada antarmuka ekstra ke server Kerberos ini. 
+
+1734
+01:10:41,440 --> 01:10:43,570
+ Selain Kerberos dan TGS, ada 
+
+1735
+01:10:43,570 --> 01:10:45,280
+ layanan ekstra ini disebut kpassword. 
+
+1736
+01:10:45,280 --> 01:10:48,720
+
+
+1737
+01:10:48,720 --> 01:10:52,690
+ Dan layanan ini memungkinkan Anda mengubah kata sandi Anda. 
+
+1738
+01:10:52,690 --> 01:10:55,744
+ Dan cara kerjanya adalah Anda mendapatkan tiket untuk layanan ini 
+
+1739
+01:10:55,744 --> 01:10:57,660
+ sangat seperti Anda akan mendapatkan tiket untuk surat 
+
+1740
+01:10:57,660 --> 01:10:59,750
+ server atau layanan lainnya. 
+
+1741
+01:10:59,750 --> 01:11:01,592
+ Lalu Anda mengirim kata sandi baru Anda 
+
+1742
+01:11:01,592 --> 01:11:03,800
+ ke layanan kpassword ini dienkripsi dengan sesi Anda 
+
+1743
+01:11:03,800 --> 01:11:04,910
+ kunci. 
+
+1744
+01:11:04,910 --> 01:11:08,900
+ Dan kemudian jika semuanya selesai, kunci Anda dalam database 
+
+1745
+01:11:08,900 --> 01:11:12,330
+ akan diperbarui ke kunci baru. 
+
+1746
+01:11:12,330 --> 01:11:13,070
+ Pertanyaan. 
+
+1747
+01:11:13,070 --> 01:11:14,736
+ SISWA: [TIDAK JELAS] jika ada, seperti, 
+
+1748
+01:11:14,736 --> 01:11:17,339
+ tidak [tidak terdengar] mereka ingin mereka menggunakan [tidak terdengar] 
+
+1749
+01:11:17,339 --> 01:11:18,130
+ untuk melewati ini. 
+
+1750
+01:11:18,130 --> 01:11:18,590
+ PROFESOR: Benar. 
+
+1751
+01:11:18,590 --> 01:11:19,170
+ OK, ya, oke. 
+
+1752
+01:11:19,170 --> 01:11:20,169
+ Jadi ini poin yang bagus. 
+
+1753
+01:11:20,169 --> 01:11:22,595
+ Jadi untuk mengubah kata sandi Anda, ingatlah 
+
+1754
+01:11:22,595 --> 01:11:24,720
+ bahwa kita memiliki seluruh tujuan ini jika seseorang mencuri 
+
+1755
+01:11:24,720 --> 01:11:28,270
+ tiket Anda, seharusnya tidak cukup baik untuk sepenuhnya diambil 
+
+1756
+01:11:28,270 --> 01:11:29,750
+ di atas akun Anda. 
+
+1757
+01:11:29,750 --> 01:11:32,849
+ Jadi untuk alasan ini, layanan kata sandi kunci sebenarnya 
+
+1758
+01:11:32,849 --> 01:11:34,140
+ tidak menerima sembarang tiket. 
+
+1759
+01:11:34,140 --> 01:11:36,900
+ Ini menerima tiket yang awalnya Anda dapatkan dari Kerberos 
+
+1760
+01:11:36,900 --> 01:11:39,740
+ layanan dengan KC Anda. 
+
+1761
+01:11:39,740 --> 01:11:42,430
+ Jadi cara ini benar-benar berfungsi adalah di dalam setiap tiket, 
+
+1762
+01:11:42,430 --> 01:11:44,763
+ selain semua hal yang saya tunjukkan di sana, ada 
+
+1763
+01:11:44,763 --> 01:11:47,550
+ sedikit tambahan yang memberi tahu Anda mana dari dua hal ini 
+
+1764
+01:11:47,550 --> 01:11:48,836
+ memberi Anda tiket. 
+
+1765
+01:11:48,836 --> 01:11:50,960
+ Jadi, jika Anda mendapatkan tiket dari server Kerberos ini, 
+
+1766
+01:11:50,960 --> 01:11:52,082
+ sedikit memiliki satu. 
+
+1767
+01:11:52,082 --> 01:11:54,540
+ Jika Anda mendapatkan tiket dari server TGS, bitnya nol, 
+
+1768
+01:11:54,540 --> 01:11:55,500
+ Katakanlah. 
+
+1769
+01:11:55,500 --> 01:11:58,160
+ Dan kemudian layanan kpassword, selain semuanya 
+
+1770
+01:11:58,160 --> 01:12:00,037
+ yang bisa dilakukan oleh server email atau server file apa pun, 
+
+1771
+01:12:00,037 --> 01:12:01,620
+ itu juga terlihat pada sedikit di tiket 
+
+1772
+01:12:01,620 --> 01:12:04,210
+ dan berkata, yah, jika kamu mendapatkannya dari Kerberos, itu bagus. 
+
+1773
+01:12:04,210 --> 01:12:05,700
+ Jika Anda mendapatkannya dari TGS, itu artinya 
+
+1774
+01:12:05,700 --> 01:12:08,020
+ mungkin kamu mencuri tiket seseorang 
+
+1775
+01:12:08,020 --> 01:12:10,000
+ dan Anda tidak langsung tahu kata sandinya. 
+
+1776
+01:12:10,000 --> 01:12:11,880
+ Jadi saya tidak akan menerima ini. 
+
+1777
+01:12:11,880 --> 01:12:14,540
+ Jadi ini adalah bagaimana kata sandi kunci memastikan bahwa Anda hanya bisa 
+
+1778
+01:12:14,540 --> 01:12:17,637
+ ubah kata sandi jika Anda langsung tahu kata sandinya 
+
+1779
+01:12:17,637 --> 01:12:18,220
+ sebelum ini. 
+
+1780
+01:12:18,220 --> 01:12:21,980
+ Jadi Anda tidak pernah benar-benar menyediakan kata sandi lama untuk kpassword. 
+
+1781
+01:12:21,980 --> 01:12:24,172
+ Anda menyediakan itu untuk - yah, Anda menyediakan itu secara berurutan 
+
+1782
+01:12:24,172 --> 01:12:25,880
+ untuk mendekripsi respon dari Kerberos 
+
+1783
+01:12:25,880 --> 01:12:28,940
+ server untuk pokok sandi kpassword. 
+
+1784
+01:12:28,940 --> 01:12:31,390
+ Masuk akal? 
+
+1785
+01:12:31,390 --> 01:12:36,670
+ Baiklah, jadi mari kita benar-benar mengeja 
+
+1786
+01:12:36,670 --> 01:12:40,350
+ interaksi dengan layanan kata sandi kunci 
+
+1787
+01:12:40,350 --> 01:12:43,320
+ karena akan ada sesuatu yang sedikit menarik di sana. 
+
+1788
+01:12:43,320 --> 01:12:48,480
+ Jadi ketika Anda akan mengubah kata sandi Anda, apa 
+
+1789
+01:12:48,480 --> 01:12:51,400
+ klien akan lakukan adalah, tentu saja, 
+
+1790
+01:12:51,400 --> 01:12:54,990
+ dapatkan tiket awal ini dari Kerberos. 
+
+1791
+01:12:54,990 --> 01:12:58,890
+ Jadi itu mengirim pesan ke layanan Kerberos katakan di sini 
+
+1792
+01:12:58,890 --> 01:13:03,760
+ adalah ID klien saya dan saya ingin berbicara dengan layanan kpassword. 
+
+1793
+01:13:03,760 --> 01:13:07,220
+ Dan server Kerberos akan mengirim balasan kembali 
+
+1794
+01:13:07,220 --> 01:13:09,690
+ termasuk tiket antar klien 
+
+1795
+01:13:09,690 --> 01:13:16,370
+ dan layanan kpassword dienkripsi dengan kunci kpass 
+
+1796
+01:13:16,370 --> 01:13:21,801
+ dan kunci bersama antara KC dan kpass. 
+
+1797
+01:13:21,801 --> 01:13:22,300
+ Masuk akal? 
+
+1798
+01:13:22,300 --> 01:13:25,995
+ Ini persis hal ini di sini dienkripsi dengan KC. 
+
+1799
+01:13:25,995 --> 01:13:26,560
+ Masuk akal? 
+
+1800
+01:13:26,560 --> 01:13:28,050
+ Semua orang bekerja di kapal? 
+
+1801
+01:13:28,050 --> 01:13:30,962
+ Dan sangat mirip dengan Anda berbicara dengan server email, Anda mengambil ini 
+
+1802
+01:13:30,962 --> 01:13:32,170
+ dan Anda mengirimkannya ke kpassword. 
+
+1803
+01:13:32,170 --> 01:13:37,420
+ Anda berkata, yah, inilah tiket saya - tckpass terenkripsi 
+
+1804
+01:13:37,420 --> 01:13:39,500
+ dengan kpass. 
+
+1805
+01:13:39,500 --> 01:13:45,370
+ Dan sebagai tambahan, Anda mengirim kata sandi baru Anda 
+
+1806
+01:13:45,370 --> 01:13:50,240
+ dan Anda mengenkripsi ini dengan kunci kcpass 
+
+1807
+01:13:50,240 --> 01:13:52,340
+ dengan kunci bersama untuk interaksi Anda. 
+
+1808
+01:13:52,340 --> 01:13:55,561
+ Saya baru saja memisahkan dua hal ini di sini. 
+
+1809
+01:13:55,561 --> 01:13:56,060
+ Masuk akal? 
+
+1810
+01:13:56,060 --> 01:13:57,650
+ Jadi ini adalah hal yang Anda kirim ke layanan kpassword 
+
+1811
+01:13:57,650 --> 01:14:00,140
+ dengan kata sandi baru yang dienkripsi dengan kunci sesi. 
+
+1812
+01:14:00,140 --> 01:14:00,640
+ Ya. 
+
+1813
+01:14:00,640 --> 01:14:02,116
+ SISWA: Tetapi di [tidak terdengar] 
+
+1814
+01:14:02,116 --> 01:14:06,367
+
+
+1815
+01:14:06,367 --> 01:14:08,450
+ PROFESOR: Jadi jika penyerang tahu kata sandi Anda, 
+
+1816
+01:14:08,450 --> 01:14:11,420
+ mereka dapat mengubah kata sandi Anda - benar-benar. 
+
+1817
+01:14:11,420 --> 01:14:12,670
+ Jadi sepertinya masuk akal, kan? 
+
+1818
+01:14:12,670 --> 01:14:15,110
+ Seperti, tidak ada cara lain untuk mengetahui apakah itu Anda atau bukan. 
+
+1819
+01:14:15,110 --> 01:14:17,060
+ Jika seseorang berjalan ke workstation Athena, ketik 
+
+1820
+01:14:17,060 --> 01:14:19,047
+ dalam nama pengguna dan kata sandi Anda, jalankan kata sandi, 
+
+1821
+01:14:19,047 --> 01:14:21,630
+ mengubah kata sandi saya ke hal baru ini, mereka tahu kata sandi Anda? 
+
+1822
+01:14:21,630 --> 01:14:23,340
+ Mereka akan bisa mengubahnya. 
+
+1823
+01:14:23,340 --> 01:14:25,010
+ Jadi itu benar-benar sama di hampir semua sistem 
+
+1824
+01:14:25,010 --> 01:14:25,760
+ Anda bisa bayangkan. 
+
+1825
+01:14:25,760 --> 01:14:27,150
+ Ini benar untuk Gmail mungkin. 
+
+1826
+01:14:27,150 --> 01:14:31,240
+ Ini berlaku untuk sistem apa pun yang menggunakan kata sandi secara umum. 
+
+1827
+01:14:31,240 --> 01:14:33,840
+ Alasan mengapa kami harus berbicara dengan server Kerberos sebagai gantinya 
+
+1828
+01:14:33,840 --> 01:14:39,610
+ dari server TGS di sini adalah bahwa jika seseorang mencuri tiket Anda, 
+
+1829
+01:14:39,610 --> 01:14:42,700
+ maka kami tidak ingin mereka dapat mengubah kata sandi Anda. 
+
+1830
+01:14:42,700 --> 01:14:46,170
+ Jadi jika seseorang merusak workstation Athena setelah Anda masuk, 
+
+1831
+01:14:46,170 --> 01:14:49,420
+ kata sandi Anda hilang dari memori, tiket tetap. 
+
+1832
+01:14:49,420 --> 01:14:51,370
+ Anda dapat, pada prinsipnya, menggunakan tiket 
+
+1833
+01:14:51,370 --> 01:14:54,916
+ untuk mendapatkan lebih banyak tiket untuk layanan pengubahan kata sandi. 
+
+1834
+01:14:54,916 --> 01:14:56,290
+ Namun layanan pengubahan kata sandi 
+
+1835
+01:14:56,290 --> 01:14:57,270
+ mengatakan itu tidak akan cukup baik. 
+
+1836
+01:14:57,270 --> 01:14:58,645
+ Ini akan melihat tiket ini 
+
+1837
+01:14:58,645 --> 01:15:01,950
+ di sini - tiket antara klien dan layanan kata sandi. 
+
+1838
+01:15:01,950 --> 01:15:04,764
+ Dan jika itu diperbarui melalui TGS, 
+
+1839
+01:15:04,764 --> 01:15:06,180
+ itu akan menolak permintaanmu. 
+
+1840
+01:15:06,180 --> 01:15:08,513
+ Itu hanya akan menerimanya jika diperoleh secara langsung 
+
+1841
+01:15:08,513 --> 01:15:11,260
+ dari layanan Kerberos menggunakan KC. 
+
+1842
+01:15:11,260 --> 01:15:11,761
+ Masuk akal? 
+
+1843
+01:15:11,761 --> 01:15:12,260
+ Pertanyaan. 
+
+1844
+01:15:12,260 --> 01:15:14,794
+ SISWA: Jadi jika Anda [TIDAK JELAS] kata sandi dengan [TIDAK JELAS] 
+
+1845
+01:15:14,794 --> 01:15:15,454
+ Athena, kan? 
+
+1846
+01:15:15,454 --> 01:15:16,120
+ PROFESOR: Ya. 
+
+1847
+01:15:16,120 --> 01:15:18,375
+ SISWA: Jadi jika saya mencuri kunci pribadi Anda-- 
+
+1848
+01:15:18,375 --> 01:15:20,590
+ PROFESOR: Ya, jadi sebenarnya, KC adalah 
+
+1849
+01:15:20,590 --> 01:15:22,896
+ pada dasarnya setara dengan kata sandi Anda di sini. 
+
+1850
+01:15:22,896 --> 01:15:24,770
+ Sejauh protokol Kerberos yang bersangkutan, 
+
+1851
+01:15:24,770 --> 01:15:26,728
+ yang bahkan tidak berpikir bahwa Anda memiliki kata sandi. 
+
+1852
+01:15:26,728 --> 01:15:28,510
+ Itu berpikir Anda memiliki kunci KC pribadi. 
+
+1853
+01:15:28,510 --> 01:15:31,000
+ Jika ada yang tahu KC, pada dasarnya itu adalah kata sandi Anda. 
+
+1854
+01:15:31,000 --> 01:15:32,678
+ Jadi Anda dapat mengubah kunci Anda dari KC 
+
+1855
+01:15:32,678 --> 01:15:34,886
+ untuk sesuatu yang lain sehingga Anda tidak kehilangan hal ini, ya. 
+
+1856
+01:15:34,886 --> 01:15:36,690
+ Uh, ya, pertanyaan? 
+
+1857
+01:15:36,690 --> 01:15:41,926
+ SISWA: [INAUDIBLE] pesan awal [TIDAK TERDENGAR] 
+
+1858
+01:15:41,926 --> 01:15:44,410
+ dari mengubah [tidak terdengar] 
+
+1859
+01:15:44,410 --> 01:15:45,910
+ PROFESOR: Oh, Anda pasti bisa 
+
+1860
+01:15:45,910 --> 01:15:48,725
+ tiket untuk beberapa layanan lain atau penyerang 
+
+1861
+01:15:48,725 --> 01:15:50,600
+ bisa menjatuhkan pesan ini sama sekali atau korup 
+
+1862
+01:15:50,600 --> 01:15:51,480
+ pertukaran ini. 
+
+1863
+01:15:51,480 --> 01:15:52,790
+ Dan kemudian Anda tidak akan berhasil berubah 
+
+1864
+01:15:52,790 --> 01:15:53,255
+ kata sandi Anda. 
+
+1865
+01:15:53,255 --> 01:15:54,088
+ SISWA: [TIDAK TERDENGAR] 
+
+1866
+01:15:54,088 --> 01:15:56,456
+
+
+1867
+01:15:56,456 --> 01:15:58,080
+ PROFESOR: Ya, jadi klien sebenarnya 
+
+1868
+01:15:58,080 --> 01:16:00,350
+ tahu persis layanan apa yang ingin diajak bicara. 
+
+1869
+01:16:00,350 --> 01:16:07,120
+ Jadi jika itu-- itu akan memastikan, baiklah, 
+
+1870
+01:16:07,120 --> 01:16:09,620
+ ada beberapa pesan, beberapa bagian dari protokol ini saya tidak 
+
+1871
+01:16:09,620 --> 01:16:11,810
+ menunjukkan yang memungkinkan klien untuk memastikan 
+
+1872
+01:16:11,810 --> 01:16:14,330
+ mereka benar-benar mendapat tiket untuk hal yang benar. 
+
+1873
+01:16:14,330 --> 01:16:17,200
+ Tapi ya, jadi ... maaf. 
+
+1874
+01:16:17,200 --> 01:16:17,700
+ Pertanyaan? 
+
+1875
+01:16:17,700 --> 01:16:20,941
+ SISWA: [TIDAK JELAS] sangat mudah menolak serangan layanan 
+
+1876
+01:16:20,941 --> 01:16:25,207
+ ketika seorang penyerang [tidak terdengar] memodifikasi versi terenkripsi 
+
+1877
+01:16:25,207 --> 01:16:26,926
+ kata sandi baru. 
+
+1878
+01:16:26,926 --> 01:16:29,340
+ PROFESOR: Ya, jadi sebenarnya ada banyak hal. 
+
+1879
+01:16:29,340 --> 01:16:34,392
+ Karena, misalnya, Kerberos tidak melakukan otentikasi 
+
+1880
+01:16:34,392 --> 01:16:35,850
+ benar pesan-- hanya saja 
+
+1881
+01:16:35,850 --> 01:16:38,270
+ encryption-- Anda benar-benar dapat merusak gumpalan ini. 
+
+1882
+01:16:38,270 --> 01:16:38,770
+ Dan-- 
+
+1883
+01:16:38,770 --> 01:16:39,870
+ SISWA: [TIDAK TERDENGAR] 
+
+1884
+01:16:39,870 --> 01:16:40,924
+ PROFESOR: Ya, Anda bisa membalikkannya 
+
+1885
+01:16:40,924 --> 01:16:42,770
+ dan itu akan mendekripsi ke sesuatu yang lain. 
+
+1886
+01:16:42,770 --> 01:16:44,260
+ Layanan itu seperti, oh ya, itu kata sandi baru, 
+
+1887
+01:16:44,260 --> 01:16:44,882
+ dan mengaturnya. 
+
+1888
+01:16:44,882 --> 01:16:46,340
+ Dan kemudian Anda semacam terkunci. 
+
+1889
+01:16:46,340 --> 01:16:47,631
+ Jadi sepertinya sangat disayangkan. 
+
+1890
+01:16:47,631 --> 01:16:49,130
+ Dan ini adalah alasan lain mengapa 
+
+1891
+01:16:49,130 --> 01:16:52,325
+ Anda ingin memisahkan enkripsi dan otentikasi dalam protokol. 
+
+1892
+01:16:52,325 --> 01:16:54,200
+ Sebenarnya ada masalah yang lebih besar di sini. 
+
+1893
+01:16:54,200 --> 01:16:55,080
+ Tetapi sebenarnya, ya, pertanyaan? 
+
+1894
+01:16:55,080 --> 01:16:56,947
+ SISWA: Apa gunanya memiliki satu cara 
+
+1895
+01:16:56,947 --> 01:16:59,196
+ berfungsi untuk [INAUDIBLE] kata sandi Anda di KC jika mereka 
+
+1896
+01:16:59,196 --> 01:17:01,350
+ pada dasarnya [TIDAK JELAS]? 
+
+1897
+01:17:01,350 --> 01:17:05,060
+ PROFESOR: Pada dasarnya karena KC adalah kunci ds 56-bit 
+
+1898
+01:17:05,060 --> 01:17:07,060
+ dan kata sandi Anda mungkin memiliki panjang yang berbeda. 
+
+1899
+01:17:07,060 --> 01:17:09,430
+ Dan bahkan jika itu lebih panjang dari 56 bit, yang 
+
+1900
+01:17:09,430 --> 01:17:11,360
+ tujuh gigitan atau tujuh karakter, 
+
+1901
+01:17:11,360 --> 01:17:13,630
+ Anda juga ingin menggunakan semua byte ekstra itu. 
+
+1902
+01:17:13,630 --> 01:17:17,900
+ Jadi itu sebagian besar hanya untuk memadatkannya ke gumpalan lebar tetap, 
+
+1903
+01:17:17,900 --> 01:17:18,996
+ ya. 
+
+1904
+01:17:18,996 --> 01:17:21,412
+ Tapi sebenarnya ada masalah yang jauh lebih menarik di sini, 
+
+1905
+01:17:21,412 --> 01:17:23,990
+ yang menganggap bahwa saya mengubah kata sandi saya 
+
+1906
+01:17:23,990 --> 01:17:27,820
+ lalu saya putuskan, oke, saya mengubah kata sandi saya. 
+
+1907
+01:17:27,820 --> 01:17:29,930
+ Sehari berlalu dan aku berpikir, oh ya, tentu. 
+
+1908
+01:17:29,930 --> 01:17:32,370
+ Saya akan memberitahu semua orang apa kata sandi lama saya yang bodoh itu. 
+
+1909
+01:17:32,370 --> 01:17:35,200
+ Apakah ini ide yang bagus di Kerberos? 
+
+1910
+01:17:35,200 --> 01:17:35,700
+ Ya. 
+
+1911
+01:17:35,700 --> 01:17:38,346
+ SISWA: [TIDAK TERDENGAR] segera kedaluwarsa sampai ... 
+
+1912
+01:17:38,346 --> 01:17:39,230
+ PROFESOR: Ya, oke. 
+
+1913
+01:17:39,230 --> 01:17:40,470
+ Tetapi seseorang harus menunggu semua tiket saya berakhir. 
+
+1914
+01:17:40,470 --> 01:17:42,380
+ Saya menunggu, seperti, seminggu. 
+
+1915
+01:17:42,380 --> 01:17:44,020
+ Dan kemudian tidak ada tiket lagi yang bagus. 
+
+1916
+01:17:44,020 --> 01:17:45,611
+ Bisakah saya memberikan kata sandi lama saya sekarang? 
+
+1917
+01:17:45,611 --> 01:17:46,110
+ Ya. 
+
+1918
+01:17:46,110 --> 01:17:48,389
+ SISWA: Mungkin perlu waktu beberapa saat untuk mereplikasi. 
+
+1919
+01:17:48,389 --> 01:17:49,930
+ PROFESOR: Ya, misalkan replikanya 
+
+1920
+01:17:49,930 --> 01:17:51,661
+ semuanya diperbarui, ya, semua barang. 
+
+1921
+01:17:51,661 --> 01:17:52,160
+ Ya. 
+
+1922
+01:17:52,160 --> 01:17:54,701
+ SISWA: [TIDAK JELAS] jika seseorang menyimpan transaksi awal 
+
+1923
+01:17:54,701 --> 01:17:56,579
+ [INAUDIBLE] untuk mendapatkan, seperti, kata sandi lama Anda 
+
+1924
+01:17:56,579 --> 01:17:57,570
+ sekarang mereka memiliki kata sandi baru Anda. 
+
+1925
+01:17:57,570 --> 01:17:58,310
+ PROFESOR: Ya, jadi ini sebenarnya 
+
+1926
+01:17:58,310 --> 01:17:59,850
+ sangat mencemaskan di Kerberos, yang 
+
+1927
+01:17:59,850 --> 01:18:01,560
+ Apakah itu-- misalkan beberapa penyerang itu 
+
+1928
+01:18:01,560 --> 01:18:04,240
+ mengawasi semua perubahan kata sandi saya sebelumnya. 
+
+1929
+01:18:04,240 --> 01:18:07,690
+ Mereka tidak tahu apa kata sandi saya atau apa atau apa. 
+
+1930
+01:18:07,690 --> 01:18:10,460
+ Tapi mereka hanya menyimpan paket-paket ini dengan sangat tekun. 
+
+1931
+01:18:10,460 --> 01:18:13,360
+ Dan kemudian sebulan kemudian, saya pergi dan berkata, oh, kata sandi saya 
+
+1932
+01:18:13,360 --> 01:18:15,820
+ adalah pudel atau sesuatu yang konyol seperti ini. 
+
+1933
+01:18:15,820 --> 01:18:17,520
+ Dan kemudian mereka mengatakan ah, ha, ha. 
+
+1934
+01:18:17,520 --> 01:18:19,630
+ Sekarang saya bisa mendekripsi hal awal ini 
+
+1935
+01:18:19,630 --> 01:18:21,550
+ karena dienkripsi dengan KC lama Anda. 
+
+1936
+01:18:21,550 --> 01:18:25,230
+ Dan saya bisa mendapatkan KC ini dengan pass yang Anda bagikan. 
+
+1937
+01:18:25,230 --> 01:18:27,270
+ Lalu saya bisa menggunakan ini untuk mendekripsi kata sandi baru 
+
+1938
+01:18:27,270 --> 01:18:28,160
+ Anda mengirim ke KDC. 
+
+1939
+01:18:28,160 --> 01:18:29,910
+ Dan bahkan jika Anda mengubah kata sandi lagi, 
+
+1940
+01:18:29,910 --> 01:18:31,500
+ Saya dapat mendekripsi putaran berikutnya juga. 
+
+1941
+01:18:31,500 --> 01:18:33,833
+ Dan Anda bisa terus melanjutkan dan mendapatkan kata sandi terbaru. 
+
+1942
+01:18:33,833 --> 01:18:38,000
+ Jadi dalam kata sandi khusus ini, ubah protokol, jika Anda pernah 
+
+1943
+01:18:38,000 --> 01:18:40,040
+ mengungkapkan kata sandi lama, lalu seseorang 
+
+1944
+01:18:40,040 --> 01:18:43,330
+ dapat mengurutkan seluruh rangkaian pesan terenkripsi ini 
+
+1945
+01:18:43,330 --> 01:18:45,860
+ dan dapatkan kata sandi terbaru Anda juga. 
+
+1946
+01:18:45,860 --> 01:18:47,860
+ Ini sebenarnya sangat merepotkan dalam desain. 
+
+1947
+01:18:47,860 --> 01:18:48,360
+ Ya. 
+
+1948
+01:18:48,360 --> 01:18:51,115
+ SISWA: Bukan versi terbaru Kerberos [TIDAK TERDENGAR] 
+
+1949
+01:18:51,115 --> 01:18:52,240
+ PROFESOR: Tentu saja, ya. 
+
+1950
+01:18:52,240 --> 01:18:53,380
+ Jadi sebenarnya ada solusi untuk ini 
+
+1951
+01:18:53,380 --> 01:18:54,490
+ itu bukan semacam fundamental. 
+
+1952
+01:18:54,490 --> 01:18:55,865
+ Dan ini adalah sesuatu yang tidak mereka lakukan 
+
+1953
+01:18:55,865 --> 01:18:57,160
+ sadari di Kerberos versi 4. 
+
+1954
+01:18:57,160 --> 01:19:00,610
+ Sebenarnya ada mekanisme bagus yang disebut Diffie-Hellman 
+
+1955
+01:19:00,610 --> 01:19:03,800
+ bahwa saya hanya akan membuat sketsa dalam satu menit 
+
+1956
+01:19:03,800 --> 01:19:06,420
+ supaya kalian tahu kapan menggunakannya atau lain sebagainya. 
+
+1957
+01:19:06,420 --> 01:19:08,920
+ Tapi pada dasarnya ini adalah solusi untuk masalah semacam ini 
+
+1958
+01:19:08,920 --> 01:19:11,630
+ di mana Anda ingin menghentikan unzip ini terjadi. 
+
+1959
+01:19:11,630 --> 01:19:13,730
+ Jadi apa yang terjadi dalam versi Kerberos 
+
+1960
+01:19:13,730 --> 01:19:16,910
+ 5 protokol pengubahan kata sandi adalah sebenarnya Anda 
+
+1961
+01:19:16,910 --> 01:19:20,370
+ ingin membangun rahasia baru yang tidak akan terlihat 
+
+1962
+01:19:20,370 --> 01:19:23,360
+ jika Anda kebetulan mendekripsi semua pesan di kawat. 
+
+1963
+01:19:23,360 --> 01:19:25,620
+ Dan cara kerjanya adalah-- ini seperti matematika 
+
+1964
+01:19:25,620 --> 01:19:27,286
+ bahwa Anda tidak harus sepenuhnya memahami. 
+
+1965
+01:19:27,286 --> 01:19:33,590
+ Tetapi klien beberapa nilai acak X. Dan server kpassword adalah 
+
+1966
+01:19:33,590 --> 01:19:35,630
+ akan memilih beberapa nilai acak lainnya Y. 
+
+1967
+01:19:35,630 --> 01:19:37,820
+ Dan apa yang mereka kirim ke satu sama lain adalah eksponensial 
+
+1968
+01:19:37,820 --> 01:19:39,050
+ nilai-nilai ini. 
+
+1969
+01:19:39,050 --> 01:19:41,500
+ Jadi klien mengirim G ke daya X 
+
+1970
+01:19:41,500 --> 01:19:45,810
+ ke server dan server mengirim G ke daya Y 
+
+1971
+01:19:45,810 --> 01:19:47,260
+ kembali ke klien. 
+
+1972
+01:19:47,260 --> 01:19:48,890
+ Dan ternyata secara matematis, 
+
+1973
+01:19:48,890 --> 01:19:52,110
+ apa yang bisa kita lakukan sekarang adalah klien dapat membawa G ke Y, 
+
+1974
+01:19:52,110 --> 01:19:55,270
+ naikkan ke X, dan dapatkan nilai ini G ke XY. 
+
+1975
+01:19:55,270 --> 01:19:58,680
+ Server dapat membawa G ke X, naikkan ke listrik Y, 
+
+1976
+01:19:58,680 --> 01:20:00,650
+ dan dapatkan G ke XY juga. 
+
+1977
+01:20:00,650 --> 01:20:03,670
+ Mereka sekarang dapat menggunakan nilai rahasia ini G ke XY 
+
+1978
+01:20:03,670 --> 01:20:05,440
+ untuk mengenkripsi pesan berikutnya, 
+
+1979
+01:20:05,440 --> 01:20:07,710
+ termasuk kata sandi baru. 
+
+1980
+01:20:07,710 --> 01:20:11,263
+ Jadi Anda mengirim kata sandi baru yang dienkripsi dengan nilai ini G 
+
+1981
+01:20:11,263 --> 01:20:13,400
+ ke XY, berbicara kasar. 
+
+1982
+01:20:13,400 --> 01:20:14,830
+ Tetapi untuk beberapa alasan matematika 
+
+1983
+01:20:14,830 --> 01:20:16,600
+ yang tidak akan kita bahas sekarang, 
+
+1984
+01:20:16,600 --> 01:20:19,350
+ ternyata sangat sulit bagi seseorang yang adil 
+
+1985
+01:20:19,350 --> 01:20:23,350
+ mendapat G ke X dan G ke Y dengan memeriksa paket Anda nanti 
+
+1986
+01:20:23,350 --> 01:20:26,200
+ dari mencari tahu apa itu G ke XY. 
+
+1987
+01:20:26,200 --> 01:20:28,560
+ Jadi ini adalah sesuatu yang disebut masalah log diskrit. 
+
+1988
+01:20:28,560 --> 01:20:29,350
+ Ya, pertanyaan? 
+
+1989
+01:20:29,350 --> 01:20:31,140
+ SISWA: Tetapi mereka harus [TIDAK JELAS] G pada titik tertentu. 
+
+1990
+01:20:31,140 --> 01:20:31,570
+ PROFESOR: Ya, ya. 
+
+1991
+01:20:31,570 --> 01:20:33,535
+ Jadi G adalah beberapa parameter yang dapat Anda kirim 
+
+1992
+01:20:33,535 --> 01:20:35,910
+ pada awal protokol atau hanya bisa dimasak 
+
+1993
+01:20:35,910 --> 01:20:36,640
+ ke dalam Kerberos. 
+
+1994
+01:20:36,640 --> 01:20:42,030
+ Ternyata relatif kurang penting. 
+
+1995
+01:20:42,030 --> 01:20:44,410
+ Baiklah, jadi, gunakan Diffie-Hellman karena ini 
+
+1996
+01:20:44,410 --> 01:20:46,660
+ dipanggil-- baik, apa yang seharusnya Anda Google lakukan jika Anda 
+
+1997
+01:20:46,660 --> 01:20:50,920
+ membangun protokol seperti ini adalah kunci Diffie-Hellman ini 
+
+1998
+01:20:50,920 --> 01:20:51,950
+ protokol pertukaran. 
+
+1999
+01:20:51,950 --> 01:20:54,302
+ Dan Kerberos 5 benar-benar melakukan ini dengan benar. 
+
+2000
+01:20:54,302 --> 01:20:56,010
+ Tapi ini adalah sesuatu yang harus diwaspadai 
+
+2001
+01:20:56,010 --> 01:20:59,169
+ karena jika Anda merancang segala jenis protokol baru sendiri. 
+
+2002
+01:20:59,169 --> 01:21:00,710
+ Baiklah, jadi itu untuk Kerberos. 
+
+2003
+01:21:00,710 --> 00:00:00,000
+ Mari kita bicara tentang SSL pada hari Senin. 
+

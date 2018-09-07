@@ -1,0 +1,9015 @@
+1
+00:00:00,000 --> 00:00:00,090
+
+
+2
+00:00:00,090 --> 00:00:02,830
+The following content is
+proved under a Creative Commons
+
+3
+00:00:02,830 --> 00:00:03,820
+license.
+
+4
+00:00:03,820 --> 00:00:06,060
+Your support will help
+MIT OpenCourseWare
+
+5
+00:00:06,060 --> 00:00:10,150
+continue to offer high quality
+educational resources for free.
+
+6
+00:00:10,150 --> 00:00:12,700
+To make a donation or to
+view additional materials
+
+7
+00:00:12,700 --> 00:00:16,600
+from hundreds of MIT courses,
+visit MIT OpenCourseWare
+
+8
+00:00:16,600 --> 00:00:17,690
+at ocw.mit.edu.
+
+9
+00:00:17,690 --> 00:00:26,044
+
+
+10
+00:00:26,044 --> 00:00:28,210
+PROFESSOR: Today we're going
+to talk about privilege
+
+11
+00:00:28,210 --> 00:00:32,409
+separation, so we're done with
+buffer overflows at some level,
+
+12
+00:00:32,409 --> 00:00:34,871
+but will keep
+coming back as being
+
+13
+00:00:34,871 --> 00:00:36,370
+a problem that we
+want to deal with,
+
+14
+00:00:36,370 --> 00:00:39,510
+so we'll not talk about the
+details of how to exploit them,
+
+15
+00:00:39,510 --> 00:00:42,210
+now we'll switch more into
+mitigation, if you will,
+
+16
+00:00:42,210 --> 00:00:45,860
+or prevention techniques of how
+do you design a system where
+
+17
+00:00:45,860 --> 00:00:49,780
+buffer overflows aren't such a
+huge problem for you, perhaps,
+
+18
+00:00:49,780 --> 00:00:52,730
+as well as other
+security vulnerabilities.
+
+19
+00:00:52,730 --> 00:00:56,610
+So for today we're going to
+talk about privilege separation
+
+20
+00:00:56,610 --> 00:00:58,550
+as a general purpose
+technique for how
+
+21
+00:00:58,550 --> 00:01:02,860
+to build a more secure system,
+and the particular paper
+
+22
+00:01:02,860 --> 00:01:05,489
+we assigned for you today is
+this web server called OKWS.
+
+23
+00:01:05,489 --> 00:01:10,040
+It's not necessarily the biggest
+example of privilege separation
+
+24
+00:01:10,040 --> 00:01:14,072
+on there, but it's a reasonably
+well described system
+
+25
+00:01:14,072 --> 00:01:16,030
+that we can actually read
+and really understand
+
+26
+00:01:16,030 --> 00:01:18,280
+how all the pieces work,
+and you should really
+
+27
+00:01:18,280 --> 00:01:20,450
+think of it more as a
+case study of how to do
+
+28
+00:01:20,450 --> 00:01:22,120
+privilege separation right.
+
+29
+00:01:22,120 --> 00:01:24,650
+Not necessarily you should
+go and download OKWS
+
+30
+00:01:24,650 --> 00:01:27,260
+to run your website right now.
+
+31
+00:01:27,260 --> 00:01:29,690
+So before we dive into
+the details of OKWS
+
+32
+00:01:29,690 --> 00:01:33,010
+and Unix permissions,
+let's just see
+
+33
+00:01:33,010 --> 00:01:37,180
+what is privilege separation,
+why is it such a good idea?
+
+34
+00:01:37,180 --> 00:01:39,330
+And then, last
+week's lecture, James
+
+35
+00:01:39,330 --> 00:01:41,400
+showed you that if you
+write a program in C,
+
+36
+00:01:41,400 --> 00:01:44,480
+then it's almost inevitable
+you'll have something bad
+
+37
+00:01:44,480 --> 00:01:47,510
+go wrong in that
+program, and the problem,
+
+38
+00:01:47,510 --> 00:01:51,710
+at some level is that if
+you have a large application
+
+39
+00:01:51,710 --> 00:01:53,725
+and there's any kind
+of all vulnerability
+
+40
+00:01:53,725 --> 00:01:57,200
+in this application, then
+adversaries can connect
+
+41
+00:01:57,200 --> 00:01:59,270
+and send requests
+for this application,
+
+42
+00:01:59,270 --> 00:02:01,520
+might be able to trick
+it into doing bad things.
+
+43
+00:02:01,520 --> 00:02:04,170
+And the application is
+presumably privileged,
+
+44
+00:02:04,170 --> 00:02:07,200
+meaning there is probably
+lots of data sitting
+
+45
+00:02:07,200 --> 00:02:11,110
+behind the application that
+it can access and maybe delete
+
+46
+00:02:11,110 --> 00:02:13,850
+files, like you guys
+are going in Lab I now,
+
+47
+00:02:13,850 --> 00:02:18,280
+read sensitive data,
+install back doors.
+
+48
+00:02:18,280 --> 00:02:20,650
+And the problem is
+that a vulnerability
+
+49
+00:02:20,650 --> 00:02:23,210
+in this large
+application can allow
+
+50
+00:02:23,210 --> 00:02:26,520
+it to modify any of
+this data, or basically
+
+51
+00:02:26,520 --> 00:02:29,340
+exercise all of the privileges
+this application has,
+
+52
+00:02:29,340 --> 00:02:31,330
+and it probably has
+lots of privileges,
+
+53
+00:02:31,330 --> 00:02:33,850
+unless you're careful about it.
+
+54
+00:02:33,850 --> 00:02:36,610
+And what privilege
+separation tries to do,
+
+55
+00:02:36,610 --> 00:02:38,620
+and what we'll look
+at in this lecture,
+
+56
+00:02:38,620 --> 00:02:40,540
+is to take the
+application and chop it up
+
+57
+00:02:40,540 --> 00:02:43,300
+into different
+pieces and make sure
+
+58
+00:02:43,300 --> 00:02:47,780
+that each piece has only
+the necessary privileges
+
+59
+00:02:47,780 --> 00:02:50,170
+to do its job correctly.
+
+60
+00:02:50,170 --> 00:02:52,470
+So you could imagine
+maybe all the privileges
+
+61
+00:02:52,470 --> 00:02:55,160
+you care about are access
+to data in the back end,
+
+62
+00:02:55,160 --> 00:02:58,980
+then all of this data, maybe
+you can slice it up in some way,
+
+63
+00:02:58,980 --> 00:03:01,814
+give this access to
+this piece of data,
+
+64
+00:03:01,814 --> 00:03:06,580
+this piece access to this
+piece of data, and so on.
+
+65
+00:03:06,580 --> 00:03:09,511
+So then, if you find a bug
+here, then maybe this data
+
+66
+00:03:09,511 --> 00:03:11,260
+is kind of compromised,
+but hopefully
+
+67
+00:03:11,260 --> 00:03:13,245
+whatever slicing
+you've done is going
+
+68
+00:03:13,245 --> 00:03:16,830
+to enforce the separation
+so that a vulnerability here
+
+69
+00:03:16,830 --> 00:03:19,540
+doesn't allow the
+attacker to go and access
+
+70
+00:03:19,540 --> 00:03:22,950
+these other pieces of
+data, or, more generally,
+
+71
+00:03:22,950 --> 00:03:26,719
+other privileges of the
+application has access to.
+
+72
+00:03:26,719 --> 00:03:28,885
+So this is the big idea
+behind privilege separation,
+
+73
+00:03:28,885 --> 00:03:31,590
+and it's hugely powerful.
+
+74
+00:03:31,590 --> 00:03:34,540
+It actually doesn't really
+rely on buffer overflows
+
+75
+00:03:34,540 --> 00:03:36,990
+or other kinds of
+vulnerabilities being present.
+
+76
+00:03:36,990 --> 00:03:39,940
+It's just a general
+architecture for making sure
+
+77
+00:03:39,940 --> 00:03:41,810
+that vulnerabilities
+in one place
+
+78
+00:03:41,810 --> 00:03:48,140
+don't affect as much as
+possible your system.
+
+79
+00:03:48,140 --> 00:03:50,880
+This turns out to be
+used pretty widely.
+
+80
+00:03:50,880 --> 00:03:54,165
+Virtual machines often are
+used for enforcing isolation
+
+81
+00:03:54,165 --> 00:03:55,012
+within components.
+
+82
+00:03:55,012 --> 00:03:56,470
+Maybe you'll take
+your large system
+
+83
+00:03:56,470 --> 00:03:59,245
+and break it up into a
+bunch of DMs for isolation,
+
+84
+00:03:59,245 --> 00:04:03,590
+but you could also use
+Unix to actually perform
+
+85
+00:04:03,590 --> 00:04:06,170
+this isolation with slicing.
+
+86
+00:04:06,170 --> 00:04:07,950
+And as we'll talk
+about in a second,
+
+87
+00:04:07,950 --> 00:04:10,250
+Unix does provide you quite
+a number of mechanisms
+
+88
+00:04:10,250 --> 00:04:14,492
+that OKWS does actually use to
+achieve privilege separation.
+
+89
+00:04:14,492 --> 00:04:15,950
+And then many
+applications actually
+
+90
+00:04:15,950 --> 00:04:17,366
+use privilege
+separation practice.
+
+91
+00:04:17,366 --> 00:04:20,630
+You guys are probably
+using SSH quite often.
+
+92
+00:04:20,630 --> 00:04:23,360
+That uses privilege separation
+in many of its components
+
+93
+00:04:23,360 --> 00:04:25,510
+to make sure its
+keys are not leaked
+
+94
+00:04:25,510 --> 00:04:28,190
+and the server doesn't
+get compromised
+
+95
+00:04:28,190 --> 00:04:32,090
+or the effect of our server
+compromise is reduced.
+
+96
+00:04:32,090 --> 00:04:36,484
+And perhaps more relevant to you
+guys, Chrome, the web browser,
+
+97
+00:04:36,484 --> 00:04:37,900
+actually does
+privilege separation
+
+98
+00:04:37,900 --> 00:04:39,380
+quite extensively as well.
+
+99
+00:04:39,380 --> 00:04:42,340
+So that if there's a bug
+in Chrome's implementation,
+
+100
+00:04:42,340 --> 00:04:45,560
+the adversary doesn't get full
+control of your computer, which
+
+101
+00:04:45,560 --> 00:04:49,480
+is a great property to have.
+
+102
+00:04:49,480 --> 00:04:51,520
+So that's just a
+very quick summary
+
+103
+00:04:51,520 --> 00:04:53,610
+of what privilege
+separation is about
+
+104
+00:04:53,610 --> 00:04:55,760
+and why maybe OKWS is an
+interesting case study.
+
+105
+00:04:55,760 --> 00:04:57,970
+I guess we can add
+it to this list,
+
+106
+00:04:57,970 --> 00:05:01,390
+but it is more of an
+illustrative example
+
+107
+00:05:01,390 --> 00:05:04,960
+rather than an important piece
+of software in its own right.
+
+108
+00:05:04,960 --> 00:05:06,380
+Make sense?
+
+109
+00:05:06,380 --> 00:05:08,710
+Any questions before we dive in?
+
+110
+00:05:08,710 --> 00:05:13,220
+
+
+111
+00:05:13,220 --> 00:05:13,720
+All right.
+
+112
+00:05:13,720 --> 00:05:16,130
+So OKWS, as I
+mentioned, it's going
+
+113
+00:05:16,130 --> 00:05:20,830
+to use Unix permissions
+and sort of Unix mechanisms
+
+114
+00:05:20,830 --> 00:05:23,169
+to achieve the
+separation between
+
+115
+00:05:23,169 --> 00:05:24,210
+its different components.
+
+116
+00:05:24,210 --> 00:05:26,280
+So as a result, it's
+going to be important
+
+117
+00:05:26,280 --> 00:05:31,700
+for us to understand how Unix
+protection mechanisms work.
+
+118
+00:05:31,700 --> 00:05:35,740
+And Unix isn't in some
+way crucial to OKWS
+
+119
+00:05:35,740 --> 00:05:38,330
+at some level for
+privilege separation,
+
+120
+00:05:38,330 --> 00:05:41,590
+but for any isolation
+mechanism you're
+
+121
+00:05:41,590 --> 00:05:45,190
+going to use, whether it's Unix,
+uid, these other mechanisms,
+
+122
+00:05:45,190 --> 00:05:48,050
+or virtual machines
+or containers
+
+123
+00:05:48,050 --> 00:05:50,660
+or any other technology, it's
+really important to understand
+
+124
+00:05:50,660 --> 00:05:54,430
+the details of how the
+isolation mechanism works,
+
+125
+00:05:54,430 --> 00:05:56,597
+because there's a lot of
+tricky pieces to get right,
+
+126
+00:05:56,597 --> 00:05:58,513
+because you're dealing
+with some attacker that
+
+127
+00:05:58,513 --> 00:06:00,444
+can exploit any [INAUDIBLE].
+
+128
+00:06:00,444 --> 00:06:01,860
+So as a result,
+we'll look at Unix
+
+129
+00:06:01,860 --> 00:06:04,270
+in a fair amount of
+detail just to see
+
+130
+00:06:04,270 --> 00:06:06,560
+what it's like, how
+should we approach
+
+131
+00:06:06,560 --> 00:06:10,950
+thinking about a particular
+security mechanism.
+
+132
+00:06:10,950 --> 00:06:12,120
+Let's look at Unix.
+
+133
+00:06:12,120 --> 00:06:17,900
+So Unix historically-- well,
+it's not necessarily the best
+
+134
+00:06:17,900 --> 00:06:20,550
+example of how to build
+a security mechanism,
+
+135
+00:06:20,550 --> 00:06:22,880
+because its security
+mechanism came about
+
+136
+00:06:22,880 --> 00:06:25,740
+from a fairly utilitarian
+need of needing
+
+137
+00:06:25,740 --> 00:06:28,496
+to separate different users on
+a single Unix system from one
+
+138
+00:06:28,496 --> 00:06:29,870
+another, so they
+weren't thinking
+
+139
+00:06:29,870 --> 00:06:31,395
+of it as a general
+purpose mechanism
+
+140
+00:06:31,395 --> 00:06:33,530
+that applications
+like OKWS are going
+
+141
+00:06:33,530 --> 00:06:35,477
+to use to implement
+privilege separation.
+
+142
+00:06:35,477 --> 00:06:37,060
+They're just thinking,
+we have a bunch
+
+143
+00:06:37,060 --> 00:06:38,810
+of users that are using
+the same computer,
+
+144
+00:06:38,810 --> 00:06:40,630
+we need to keep them
+from each other.
+
+145
+00:06:40,630 --> 00:06:43,160
+So it's not necessarily a
+general purpose mechanism
+
+146
+00:06:43,160 --> 00:06:48,170
+but still one that is fairly
+prevalent and, as a result,
+
+147
+00:06:48,170 --> 00:06:49,460
+widely used.
+
+148
+00:06:49,460 --> 00:06:53,512
+Chrome tries to use many
+if these Unix mechanisms.
+
+149
+00:06:53,512 --> 00:06:54,470
+So what does Unix have?
+
+150
+00:06:54,470 --> 00:06:56,678
+So, in general, when you're
+thinking about protection
+
+151
+00:06:56,678 --> 00:06:58,470
+mechanism, you should
+be thinking, well,
+
+152
+00:06:58,470 --> 00:07:02,810
+what are the principals, meaning
+what are the entities that
+
+153
+00:07:02,810 --> 00:07:07,720
+have privileges or rights,
+and in Unix these principals
+
+154
+00:07:07,720 --> 00:07:13,410
+are typically invoked, or
+sort of held, by a process.
+
+155
+00:07:13,410 --> 00:07:21,250
+So I guess the subject, if you
+will, in Unix is a process, so
+
+156
+00:07:21,250 --> 00:07:24,740
+every operation or request that
+we can think about in terms
+
+157
+00:07:24,740 --> 00:07:27,170
+of security, whether something
+should be allowed or not,
+
+158
+00:07:27,170 --> 00:07:28,670
+is probably going
+to be an operation
+
+159
+00:07:28,670 --> 00:07:32,080
+that a process invokes
+by making a system call.
+
+160
+00:07:32,080 --> 00:07:35,870
+And the principal is
+how we describe what
+
+161
+00:07:35,870 --> 00:07:38,430
+privileges that process has.
+
+162
+00:07:38,430 --> 00:07:42,670
+Conversely, there's also what
+we can think about as objects,
+
+163
+00:07:42,670 --> 00:07:44,690
+and these are the
+things that a process
+
+164
+00:07:44,690 --> 00:07:48,620
+might act on that try to modify,
+read, observe in some way.
+
+165
+00:07:48,620 --> 00:07:51,440
+There are actually a
+lot of different kinds
+
+166
+00:07:51,440 --> 00:07:54,130
+of objects you might worry
+about protecting in an operating
+
+167
+00:07:54,130 --> 00:07:54,630
+system.
+
+168
+00:07:54,630 --> 00:07:56,350
+What do you guys think?
+
+169
+00:07:56,350 --> 00:07:58,786
+What should we worry
+about protecting?
+
+170
+00:07:58,786 --> 00:07:59,530
+AUDIENCE: Files.
+
+171
+00:07:59,530 --> 00:07:59,790
+PROFESSOR: Files.
+
+172
+00:07:59,790 --> 00:08:00,340
+Yeah, great.
+
+173
+00:08:00,340 --> 00:08:01,115
+That's a big one.
+
+174
+00:08:01,115 --> 00:08:03,724
+That's where all of
+our data lives, right?
+
+175
+00:08:03,724 --> 00:08:05,140
+There's a closely
+related thing we
+
+176
+00:08:05,140 --> 00:08:06,740
+might worry about-- directories.
+
+177
+00:08:06,740 --> 00:08:10,100
+
+
+178
+00:08:10,100 --> 00:08:11,730
+Turns out to be
+pretty important also
+
+179
+00:08:11,730 --> 00:08:13,870
+from a security standpoint.
+
+180
+00:08:13,870 --> 00:08:14,630
+Anything else?
+
+181
+00:08:14,630 --> 00:08:15,880
+AUDIENCE: Networking sockets.
+
+182
+00:08:15,880 --> 00:08:16,838
+PROFESSOR: Yeah, great.
+
+183
+00:08:16,838 --> 00:08:17,775
+Networking sockets.
+
+184
+00:08:17,775 --> 00:08:23,425
+
+
+185
+00:08:23,425 --> 00:08:25,170
+Anything else going on?
+
+186
+00:08:25,170 --> 00:08:26,590
+AUDIENCE: Other processes.
+
+187
+00:08:26,590 --> 00:08:27,700
+PROFESSOR: Oh, yeah.
+
+188
+00:08:27,700 --> 00:08:29,820
+Actually, this is like
+stuff that the application
+
+189
+00:08:29,820 --> 00:08:31,620
+or the user might care
+about, but then there's
+
+190
+00:08:31,620 --> 00:08:34,160
+all kinds of internal stuff that
+you have to protect as well,
+
+191
+00:08:34,160 --> 00:08:37,509
+so a process is not just the
+subject that's making a system
+
+192
+00:08:37,510 --> 00:08:39,280
+call, but a process
+is also something
+
+193
+00:08:39,280 --> 00:08:41,445
+that another process
+can act upon.
+
+194
+00:08:41,445 --> 00:08:44,280
+It can kill it or
+create a new one.
+
+195
+00:08:44,280 --> 00:08:47,390
+You have to figure out, what
+are the rules for thinking
+
+196
+00:08:47,390 --> 00:08:50,715
+about process as an
+object you can manipulate.
+
+197
+00:08:50,715 --> 00:08:52,090
+Other things we
+might care about?
+
+198
+00:08:52,090 --> 00:08:54,036
+AUDIENCE: Environment variables.
+
+199
+00:08:54,036 --> 00:08:56,160
+PROFESSOR: I guess
+they're probably
+
+200
+00:08:56,160 --> 00:08:59,380
+not an entity you can
+modify, in the sense
+
+201
+00:08:59,380 --> 00:09:02,650
+of being managed by an iOS and
+having some sort of a security
+
+202
+00:09:02,650 --> 00:09:03,460
+policy.
+
+203
+00:09:03,460 --> 00:09:05,530
+I guess I sort of think
+of environment variables
+
+204
+00:09:05,530 --> 00:09:10,560
+as just being some state a
+process maintains in memory.
+
+205
+00:09:10,560 --> 00:09:12,090
+But, I guess more
+generally, we do
+
+206
+00:09:12,090 --> 00:09:14,060
+care about maybe
+part of a process
+
+207
+00:09:14,060 --> 00:09:15,955
+is all this stuff in memory.
+
+208
+00:09:15,955 --> 00:09:18,080
+So there's going to be
+environment variables there,
+
+209
+00:09:18,080 --> 00:09:21,090
+there's a stack,
+there's arguments,
+
+210
+00:09:21,090 --> 00:09:23,030
+and this also turns out
+to be quite important.
+
+211
+00:09:23,030 --> 00:09:24,405
+Presumably lots
+of sensitive data
+
+212
+00:09:24,405 --> 00:09:25,571
+lives in processor's memory.
+
+213
+00:09:25,571 --> 00:09:27,150
+Other things?
+
+214
+00:09:27,150 --> 00:09:28,740
+AUDIENCE: File
+descriptors in general.
+
+215
+00:09:28,740 --> 00:09:31,480
+PROFESSOR: There's like
+another sort of internal detail
+
+216
+00:09:31,480 --> 00:09:32,460
+that matters a lot.
+
+217
+00:09:32,460 --> 00:09:35,740
+So files are the stuff we
+might care about on disk,
+
+218
+00:09:35,740 --> 00:09:41,600
+and there's this operational
+thing, the file descriptor,
+
+219
+00:09:41,600 --> 00:09:44,460
+that OKWS makes quite
+extensive use of,
+
+220
+00:09:44,460 --> 00:09:46,810
+and we'll see what
+file descriptors are
+
+221
+00:09:46,810 --> 00:09:48,806
+in a little bit.
+
+222
+00:09:48,806 --> 00:09:52,964
+Any other stuff you guys want to
+protect in an operating system?
+
+223
+00:09:52,964 --> 00:09:53,755
+AUDIENCE: Hardware.
+
+224
+00:09:53,755 --> 00:09:54,588
+PROFESSOR: Hardware?
+
+225
+00:09:54,588 --> 00:09:57,980
+Yeah, I guess in many
+ways hardware is-- well,
+
+226
+00:09:57,980 --> 00:10:02,700
+hardware is, in some ways,
+not really an abstraction
+
+227
+00:10:02,700 --> 00:10:04,236
+that the iOS provides to you.
+
+228
+00:10:04,236 --> 00:10:05,610
+I guess you run
+a process, so you
+
+229
+00:10:05,610 --> 00:10:08,464
+might want to make sure
+the CPU doesn't get stuck.
+
+230
+00:10:08,464 --> 00:10:09,380
+AUDIENCE: [INAUDIBLE].
+
+231
+00:10:09,380 --> 00:10:11,610
+PROFESSOR: Oh, yeah, yeah.
+
+232
+00:10:11,610 --> 00:10:13,720
+So, like, extra
+devices, Yeah, you're
+
+233
+00:10:13,720 --> 00:10:15,384
+right, especially on
+a desktop machine,
+
+234
+00:10:15,384 --> 00:10:16,550
+there's lots of extra stuff.
+
+235
+00:10:16,550 --> 00:10:19,107
+So there's your USB drive you
+plug in, your webcam, probably
+
+236
+00:10:19,107 --> 00:10:21,440
+your display itself is something
+you'll want to protect,
+
+237
+00:10:21,440 --> 00:10:24,100
+like an application shouldn't
+draw all over your screen
+
+238
+00:10:24,100 --> 00:10:25,719
+anywhere.
+
+239
+00:10:25,719 --> 00:10:27,510
+So, yes, actually I
+guess this isn't really
+
+240
+00:10:27,510 --> 00:10:30,630
+on a server side view of
+things, where there's just
+
+241
+00:10:30,630 --> 00:10:34,260
+a server somewhere in a
+closet, but on your phone,
+
+242
+00:10:34,260 --> 00:10:38,200
+your microphone probably,
+is a hugely important object
+
+243
+00:10:38,200 --> 00:10:40,770
+that you want to protect,
+yeah, but I will also leave it
+
+244
+00:10:40,770 --> 00:10:41,600
+off this list,
+because we're going
+
+245
+00:10:41,600 --> 00:10:43,590
+to talk much more about
+server applications for now,
+
+246
+00:10:43,590 --> 00:10:44,756
+but you're absolutely right.
+
+247
+00:10:44,756 --> 00:10:46,600
+
+
+248
+00:10:46,600 --> 00:10:48,495
+I think for OKWS,
+this is probably
+
+249
+00:10:48,495 --> 00:10:50,580
+a more or less
+exhaustive list of things
+
+250
+00:10:50,580 --> 00:10:55,270
+we might care about protecting,
+or, at least that OKWS uses.
+
+251
+00:10:55,270 --> 00:10:58,660
+So let's talk about
+how does the OS kernel
+
+252
+00:10:58,660 --> 00:11:02,440
+decide when a process
+can do something
+
+253
+00:11:02,440 --> 00:11:05,660
+to any of these objects?
+
+254
+00:11:05,660 --> 00:11:10,010
+So the [INAUDIBLE], I guess is,
+we mostly think of a process
+
+255
+00:11:10,010 --> 00:11:13,350
+as having the privileges
+represented by this principal,
+
+256
+00:11:13,350 --> 00:11:16,020
+and the principal
+in a Unix system
+
+257
+00:11:16,020 --> 00:11:18,870
+is this slightly
+complicated thing.
+
+258
+00:11:18,870 --> 00:11:22,050
+There is something
+called a userid,
+
+259
+00:11:22,050 --> 00:11:23,800
+which is just a 32-bit integer.
+
+260
+00:11:23,800 --> 00:11:27,440
+
+
+261
+00:11:27,440 --> 00:11:34,700
+There's also a group ID, which
+is also a 32-bit integer.
+
+262
+00:11:34,700 --> 00:11:39,205
+And there's not really a great
+reason why they're different.
+
+263
+00:11:39,205 --> 00:11:40,830
+It would've been nice
+if they were just
+
+264
+00:11:40,830 --> 00:11:44,200
+a uniform set of 32-bit
+integer principal numbers,
+
+265
+00:11:44,200 --> 00:11:45,985
+but unfortunately Unix
+sort of splits them
+
+266
+00:11:45,985 --> 00:11:47,130
+into two categories.
+
+267
+00:11:47,130 --> 00:11:49,900
+There's userid integers and then
+there are group ID integers.
+
+268
+00:11:49,900 --> 00:11:53,129
+
+
+269
+00:11:53,129 --> 00:11:55,420
+When we talk about a process
+having certain privileges,
+
+270
+00:11:55,420 --> 00:11:59,040
+we typically think of a
+process being associated
+
+271
+00:11:59,040 --> 00:12:01,290
+with a particular uid value.
+
+272
+00:12:01,290 --> 00:12:06,446
+The process, for the most
+part, has a single uid.
+
+273
+00:12:06,446 --> 00:12:08,070
+As with almost
+everything else, there's
+
+274
+00:12:08,070 --> 00:12:09,690
+complications
+everywhere in Unix,
+
+275
+00:12:09,690 --> 00:12:11,410
+but I'll simplify it for now.
+
+276
+00:12:11,410 --> 00:12:14,360
+A process has one
+uid, and there's
+
+277
+00:12:14,360 --> 00:12:20,320
+also a list of group
+IDs that a process has.
+
+278
+00:12:20,320 --> 00:12:22,950
+For historical
+reasons, the group IDs
+
+279
+00:12:22,950 --> 00:12:27,620
+are split into one and
+then a list of others.
+
+280
+00:12:27,620 --> 00:12:30,030
+Roughly, a process
+can then exercise
+
+281
+00:12:30,030 --> 00:12:34,020
+the privileges represented
+by all of these identifiers.
+
+282
+00:12:34,020 --> 00:12:36,315
+So if there's something
+accessible to this userid
+
+283
+00:12:36,315 --> 00:12:39,510
+a process can do stuff with it.
+
+284
+00:12:39,510 --> 00:12:42,310
+That's how we think about
+what privileges a process
+
+285
+00:12:42,310 --> 00:12:45,050
+has, so now let's talk
+about files, directories
+
+286
+00:12:45,050 --> 00:12:46,630
+and other kinds of objects.
+
+287
+00:12:46,630 --> 00:12:52,370
+So what happens with files,
+or how do Unix permissions
+
+288
+00:12:52,370 --> 00:12:53,780
+for files work?
+
+289
+00:12:53,780 --> 00:12:58,520
+Well, in Unix, every
+file has-- actually,
+
+290
+00:12:58,520 --> 00:13:00,490
+maybe a better way to
+start is to think of what
+
+291
+00:13:00,490 --> 00:13:01,820
+operations do we care about?
+
+292
+00:13:01,820 --> 00:13:04,970
+For files, things are
+relatively straightforward.
+
+293
+00:13:04,970 --> 00:13:11,450
+For files, you probably
+care about read, write,
+
+294
+00:13:11,450 --> 00:13:13,890
+maybe things like
+execute as well,
+
+295
+00:13:13,890 --> 00:13:21,395
+change permissions, maybe change
+other security properties.
+
+296
+00:13:21,395 --> 00:13:22,126
+AUDIENCE: Unlink.
+
+297
+00:13:22,126 --> 00:13:22,960
+PROFESSOR: Unlink.
+
+298
+00:13:22,960 --> 00:13:26,820
+Well, so is unlink a
+property of a file itself
+
+299
+00:13:26,820 --> 00:13:29,410
+or is it a directory thing?
+
+300
+00:13:29,410 --> 00:13:32,460
+Actually a little not clear.
+
+301
+00:13:32,460 --> 00:13:34,985
+At least, the way Unix
+thinks of deleting a file,
+
+302
+00:13:34,985 --> 00:13:40,530
+is that it's really a
+directory kind of thing,
+
+303
+00:13:40,530 --> 00:13:44,720
+because in Unix you can have--
+a file is really an inode,
+
+304
+00:13:44,720 --> 00:13:47,540
+and in Unix you could have
+multiple hard links to an inode
+
+305
+00:13:47,540 --> 00:13:51,900
+and when you unlink a particular
+name of a Unix file, what
+
+306
+00:13:51,900 --> 00:13:54,880
+you're really doing is killing
+one of the names for that file,
+
+307
+00:13:54,880 --> 00:13:58,310
+but it might have other
+names, other links to it.
+
+308
+00:13:58,310 --> 00:14:01,910
+So what actually
+matters is whether you
+
+309
+00:14:01,910 --> 00:14:04,740
+are allowed to modify the
+directory pointing at the file
+
+310
+00:14:04,740 --> 00:14:08,850
+and not do something to
+the file's inode itself.
+
+311
+00:14:08,850 --> 00:14:13,490
+So typically, unlink
+and link and rename,
+
+312
+00:14:13,490 --> 00:14:20,370
+create, are operations
+that we sort of think
+
+313
+00:14:20,370 --> 00:14:22,120
+of as being associated
+with the directory,
+
+314
+00:14:22,120 --> 00:14:25,150
+although, they are actually
+related, so "create" affects
+
+315
+00:14:25,150 --> 00:14:27,190
+both the directory and
+a new file as well,
+
+316
+00:14:27,190 --> 00:14:30,820
+so we have to figure out
+what are the rules there.
+
+317
+00:14:30,820 --> 00:14:32,410
+OK, so what are the rules?
+
+318
+00:14:32,410 --> 00:14:35,410
+In order to help us decide
+when someone can read or write
+
+319
+00:14:35,410 --> 00:14:38,960
+a file, we're going to stick
+some permission stuff, or bits,
+
+320
+00:14:38,960 --> 00:14:41,260
+in the file inode.
+
+321
+00:14:41,260 --> 00:14:45,460
+In Unix, every inode,
+meaning something
+
+322
+00:14:45,460 --> 00:14:49,790
+that ends up being
+the file or directory,
+
+323
+00:14:49,790 --> 00:14:53,500
+has a couple of interesting
+fields for security purposes.
+
+324
+00:14:53,500 --> 00:14:58,910
+There's a userid and a group
+that we say owns the file
+
+325
+00:14:58,910 --> 00:15:01,020
+or owns the directory.
+
+326
+00:15:01,020 --> 00:15:03,450
+So you might have all the
+files in your home directory
+
+327
+00:15:03,450 --> 00:15:07,980
+are probably owned by
+your on your Unix system.
+
+328
+00:15:07,980 --> 00:15:13,091
+There's also a set of
+permission bits in Unix
+
+329
+00:15:13,091 --> 00:15:16,520
+that you can sort of think
+of as a bit of a matrix,
+
+330
+00:15:16,520 --> 00:15:20,780
+so we want to have-- well
+in Unix there's basically
+
+331
+00:15:20,780 --> 00:15:23,430
+the basic design,
+there's read, write
+
+332
+00:15:23,430 --> 00:15:26,280
+and x for execute permissions.
+
+333
+00:15:26,280 --> 00:15:30,630
+We can specify these permissions
+for different entities,
+
+334
+00:15:30,630 --> 00:15:33,940
+and in Unix these are
+specified for the owner,
+
+335
+00:15:33,940 --> 00:15:35,930
+meaning for the
+uid of the inode,
+
+336
+00:15:35,930 --> 00:15:41,250
+for the group that owns the
+file, this gid and everyone
+
+337
+00:15:41,250 --> 00:15:42,600
+else, other.
+
+338
+00:15:42,600 --> 00:15:46,380
+You can sort of fill in
+this 3 by 3 binary matrix.
+
+339
+00:15:46,380 --> 00:15:49,430
+You might say, well, I can read
+and write and maybe not execute
+
+340
+00:15:49,430 --> 00:15:50,400
+this file.
+
+341
+00:15:50,400 --> 00:15:53,020
+People in that gid might
+be able to read but not
+
+342
+00:15:53,020 --> 00:15:56,040
+write this file, and
+everyone else-- or maybe they
+
+343
+00:15:56,040 --> 00:15:59,250
+can also read it-- but not
+do anything else with it.
+
+344
+00:15:59,250 --> 00:16:02,300
+So this is the way Unix
+stores permissions.
+
+345
+00:16:02,300 --> 00:16:05,310
+There's some baroque way
+of encoding these things
+
+346
+00:16:05,310 --> 00:16:08,860
+that you'll see often that's
+probably worth mentioning.
+
+347
+00:16:08,860 --> 00:16:12,390
+In Unix, you encode this
+matrix as an octal number,
+
+348
+00:16:12,390 --> 00:16:19,300
+so you treat each row here as
+a base 8 number, so r is bit 4,
+
+349
+00:16:19,300 --> 00:16:22,620
+w is bit 2, x is bit
+1, so this ends up
+
+350
+00:16:22,620 --> 00:16:27,570
+being 6, 4, 4, so you'll
+sort of say-- well,
+
+351
+00:16:27,570 --> 00:16:30,100
+you'll often see this
+notation, even in this paper.
+
+352
+00:16:30,100 --> 00:16:32,263
+You'll say, well, this
+file has permission 6, 4,
+
+353
+00:16:32,263 --> 00:16:34,880
+4, meaning the owner can
+read and write this file,
+
+354
+00:16:34,880 --> 00:16:38,260
+the group owner can read it and
+everyone else can also read it.
+
+355
+00:16:38,260 --> 00:16:39,375
+Does that make sense?
+
+356
+00:16:39,375 --> 00:16:45,690
+
+
+357
+00:16:45,690 --> 00:16:48,845
+This tells us when you can
+read, write and execute a file.
+
+358
+00:16:48,845 --> 00:16:50,765
+What about changing
+permissions on a file?
+
+359
+00:16:50,765 --> 00:16:53,475
+
+
+360
+00:16:53,475 --> 00:16:55,890
+This is not entirely a fair
+question, but what do you
+
+361
+00:16:55,890 --> 00:16:56,390
+guys think?
+
+362
+00:16:56,390 --> 00:16:57,810
+How should we
+decide when someone
+
+363
+00:16:57,810 --> 00:16:59,601
+should be able to change
+these permissions,
+
+364
+00:16:59,601 --> 00:17:04,191
+because that's also something
+to try to do, at least.
+
+365
+00:17:04,191 --> 00:17:04,690
+Any guesses?
+
+366
+00:17:04,690 --> 00:17:05,189
+Yeah.
+
+367
+00:17:05,189 --> 00:17:08,319
+AUDIENCE: If they
+have [INAUDIBLE].
+
+368
+00:17:08,319 --> 00:17:10,199
+PROFESSOR: Maybe, yeah.
+
+369
+00:17:10,200 --> 00:17:10,710
+It depends.
+
+370
+00:17:10,710 --> 00:17:15,134
+On the other hand, you might
+create a overwritable file
+
+371
+00:17:15,134 --> 00:17:17,092
+that I just want to share
+with anyone, that you
+
+372
+00:17:17,092 --> 00:17:18,824
+can read and write
+and modify my file,
+
+373
+00:17:18,824 --> 00:17:20,990
+but then this also means
+that you'll all of a sudden
+
+374
+00:17:20,990 --> 00:17:22,656
+be able to change
+permissions, so you'll
+
+375
+00:17:22,656 --> 00:17:25,010
+be able to take my file and
+make it not overwritable
+
+376
+00:17:25,010 --> 00:17:26,230
+or take it over.
+
+377
+00:17:26,230 --> 00:17:29,370
+That seems not
+necessarily great, so
+
+378
+00:17:29,370 --> 00:17:31,970
+in Unix, what are
+the designers chose,
+
+379
+00:17:31,970 --> 00:17:34,430
+is that, well, if
+you own the file,
+
+380
+00:17:34,430 --> 00:17:38,180
+meaning if you have the
+same uid as the file,
+
+381
+00:17:38,180 --> 00:17:40,040
+then you can change permissions.
+
+382
+00:17:40,040 --> 00:17:41,190
+Otherwise, you cannot.
+
+383
+00:17:41,190 --> 00:17:44,572
+So even if you're in the gid
+here and that group has all
+
+384
+00:17:44,572 --> 00:17:47,030
+the permissions in the file,
+you still cannot really change
+
+385
+00:17:47,030 --> 00:17:48,790
+the permissions on that file.
+
+386
+00:17:48,790 --> 00:17:50,240
+You can just read,
+write, execute,
+
+387
+00:17:50,240 --> 00:17:52,170
+whatever to get that solved.
+
+388
+00:17:52,170 --> 00:17:54,660
+Make sense?
+
+389
+00:17:54,660 --> 00:17:56,047
+Then directories
+actually in Unix
+
+390
+00:17:56,047 --> 00:17:58,320
+follow a pretty similar story.
+
+391
+00:17:58,320 --> 00:18:05,180
+So unlinking and linking
+entries in a directory
+
+392
+00:18:05,180 --> 00:18:08,820
+means having write
+permission on that directory,
+
+393
+00:18:08,820 --> 00:18:11,230
+and if you want
+to rename a file,
+
+394
+00:18:11,230 --> 00:18:13,370
+then you probably need
+to have write permissions
+
+395
+00:18:13,370 --> 00:18:15,600
+on both the directory
+you're moving it from
+
+396
+00:18:15,600 --> 00:18:17,760
+and the directory
+you're moving it to.
+
+397
+00:18:17,760 --> 00:18:20,300
+A fairly natural plan.
+
+398
+00:18:20,300 --> 00:18:23,470
+There are some corner cases with
+hard links, as it turns out.
+
+399
+00:18:23,470 --> 00:18:25,870
+Lecture notes have some
+details but, more or less,
+
+400
+00:18:25,870 --> 00:18:27,420
+that's how it works.
+
+401
+00:18:27,420 --> 00:18:29,390
+There's actually another
+interesting operation
+
+402
+00:18:29,390 --> 00:18:31,770
+on directory that you might
+care about, which is lookup.
+
+403
+00:18:31,770 --> 00:18:35,430
+So you might want to just
+look up a file in a directory.
+
+404
+00:18:35,430 --> 00:18:38,300
+And Unix sort of encodes
+execute permissions
+
+405
+00:18:38,300 --> 00:18:41,752
+as implementing lookup
+for directories,
+
+406
+00:18:41,752 --> 00:18:44,210
+so what it means to have execute
+permissions on a directory
+
+407
+00:18:44,210 --> 00:18:46,535
+is just being able to look
+up a certain name there.
+
+408
+00:18:46,535 --> 00:18:48,540
+Might be that you don't actually
+have to execute permission
+
+409
+00:18:48,540 --> 00:18:49,240
+on a directory so you
+can look up a name,
+
+410
+00:18:49,240 --> 00:18:51,600
+but you don't don't
+have read permission,
+
+411
+00:18:51,600 --> 00:18:54,990
+so you can't list the
+contents of a directory.
+
+412
+00:18:54,990 --> 00:18:57,030
+It turns out to be
+useful in some situations
+
+413
+00:18:57,030 --> 00:18:59,360
+if you really want to
+restrict what someone
+
+414
+00:18:59,360 --> 00:19:03,690
+could do with those
+files, or sort of hide
+
+415
+00:19:03,690 --> 00:19:06,030
+the files from a user.
+
+416
+00:19:06,030 --> 00:19:07,790
+Let's just work
+through an example.
+
+417
+00:19:07,790 --> 00:19:11,468
+What happens on Unix if I
+call open("/etc/password")?
+
+418
+00:19:11,468 --> 00:19:16,840
+
+
+419
+00:19:16,840 --> 00:19:21,370
+What checks is the kernel
+going to perform on my behalf
+
+420
+00:19:21,370 --> 00:19:22,700
+when I issue this system call?
+
+421
+00:19:22,700 --> 00:19:26,374
+
+
+422
+00:19:26,374 --> 00:19:29,490
+AUDIENCE: It checks whether
+you have execute permissions
+
+423
+00:19:29,490 --> 00:19:30,017
+on etc?
+
+424
+00:19:30,017 --> 00:19:31,850
+PROFESSOR: Yeah, that
+will happen somewhere.
+
+425
+00:19:31,850 --> 00:19:34,025
+I need to execute on etc.
+
+426
+00:19:34,025 --> 00:19:35,870
+AUDIENCE: And then
+execute on slash.
+
+427
+00:19:35,870 --> 00:19:38,820
+PROFESSOR: Yes, actually, I need
+to look up what does /etc even
+
+428
+00:19:38,820 --> 00:19:39,340
+point to?
+
+429
+00:19:39,340 --> 00:19:41,540
+So if I don't have look
+up permissions on root,
+
+430
+00:19:41,540 --> 00:19:43,487
+then that's not going to work.
+
+431
+00:19:43,487 --> 00:19:47,220
+AUDIENCE: Then you need
+read on /etc/password.
+
+432
+00:19:47,220 --> 00:19:51,975
+
+
+433
+00:19:51,975 --> 00:19:55,230
+PROFESSOR: Make sense, roughly?
+
+434
+00:19:55,230 --> 00:19:57,660
+Here's a small puzzle.
+
+435
+00:19:57,660 --> 00:20:03,630
+Suppose that MIT sets up a group
+for all the people associated
+
+436
+00:20:03,630 --> 00:20:07,960
+with 6.858 and another group
+in the Unix sets of gids
+
+437
+00:20:07,960 --> 00:20:13,695
+for all the TAs at MIT, but they
+don't have a group four 6.858
+
+438
+00:20:13,695 --> 00:20:15,980
+TAs for some silly reason.
+
+439
+00:20:15,980 --> 00:20:22,010
+Could I create a file that's
+only accessible to 6.858 TAs?
+
+440
+00:20:22,010 --> 00:20:29,260
+If I have a 6.858 group,
+or some gid, and a TAs gid.
+
+441
+00:20:29,260 --> 00:20:32,182
+
+
+442
+00:20:32,182 --> 00:20:36,920
+So there's only one gid
+that I can stick in a file.
+
+443
+00:20:36,920 --> 00:20:39,822
+Any guesses?
+
+444
+00:20:39,822 --> 00:20:42,030
+AUDIENCE: Well, you couldn't
+anyway because you might
+
+445
+00:20:42,030 --> 00:20:45,686
+have TAs that and not 858 TAs.
+
+446
+00:20:45,686 --> 00:20:47,534
+PROFESSOR: That's true, yeah.
+
+447
+00:20:47,534 --> 00:20:49,283
+Suppose they want to--
+you're right, yeah,
+
+448
+00:20:49,283 --> 00:20:52,717
+so there are students in 858
+that are TAs of other classes,
+
+449
+00:20:52,717 --> 00:20:53,800
+so that's maybe not great.
+
+450
+00:20:53,800 --> 00:20:56,209
+But, still, lets try to
+do intersections somehow.
+
+451
+00:20:56,209 --> 00:20:57,125
+AUDIENCE: [INAUDIBLE].
+
+452
+00:20:57,125 --> 00:21:00,520
+
+
+453
+00:21:00,520 --> 00:21:03,437
+PROFESSOR: Yes, so you
+can actually play tricks
+
+454
+00:21:03,437 --> 00:21:04,270
+with this mechanism.
+
+455
+00:21:04,270 --> 00:21:05,770
+It's not perfect,
+but you can sort of
+
+456
+00:21:05,770 --> 00:21:07,478
+use it to encode more
+interesting things.
+
+457
+00:21:07,478 --> 00:21:12,940
+You could actually do something
+like create /foo/bar/grades
+
+458
+00:21:12,940 --> 00:21:17,070
+file, and what I'll do is
+I'll actually make foo owned
+
+459
+00:21:17,070 --> 00:21:23,260
+by-- or set the gid to 6.858
+and only make it executable
+
+460
+00:21:23,260 --> 00:21:25,070
+for the group.
+
+461
+00:21:25,070 --> 00:21:28,030
+So unless you're in this group,
+you can't even look things up
+
+462
+00:21:28,030 --> 00:21:32,080
+in /foo, and then I could
+set the permissions on bar
+
+463
+00:21:32,080 --> 00:21:37,250
+so the gid is for TAs and
+then it's executable for group
+
+464
+00:21:37,250 --> 00:21:40,390
+as well and not others.
+
+465
+00:21:40,390 --> 00:21:42,579
+So unless you can actually
+traverse this path,
+
+466
+00:21:42,579 --> 00:21:43,995
+you can't get to
+this grades file.
+
+467
+00:21:43,995 --> 00:21:47,950
+It's kind of, you know,
+a cute hack, if you will,
+
+468
+00:21:47,950 --> 00:21:49,680
+but these kinds of
+tricks are things
+
+469
+00:21:49,680 --> 00:21:53,230
+you end up doing with whatever
+the base primitives are,
+
+470
+00:21:53,230 --> 00:21:56,400
+the isolation mechanism
+provides to you.
+
+471
+00:21:56,400 --> 00:22:02,320
+And even OKWS plays all these
+tricks as well in their design.
+
+472
+00:22:02,320 --> 00:22:02,891
+Make sense?
+
+473
+00:22:02,891 --> 00:22:03,390
+Questions?
+
+474
+00:22:03,390 --> 00:22:04,237
+Yeah.
+
+475
+00:22:04,237 --> 00:22:07,690
+AUDIENCE: If, like, the
+permissions on the grades
+
+476
+00:22:07,690 --> 00:22:09,910
+file itself, were let's
+say-- the QID was 6.858,
+
+477
+00:22:09,910 --> 00:22:12,725
+could a TA, like, link it
+to some other directory
+
+478
+00:22:12,725 --> 00:22:15,290
+and allow anybody in
+6.858 to access it?
+
+479
+00:22:15,290 --> 00:22:16,790
+PROFESSOR: Yeah,
+potentially, right?
+
+480
+00:22:16,790 --> 00:22:19,490
+So you might worry about
+other things like leakage now,
+
+481
+00:22:19,490 --> 00:22:24,320
+so Unix in general
+doesn't try to enforce
+
+482
+00:22:24,320 --> 00:22:27,000
+these kinds of transitive
+security properties,
+
+483
+00:22:27,000 --> 00:22:30,540
+meaning that once a process
+has access to some data,
+
+484
+00:22:30,540 --> 00:22:34,520
+or has some privileges,
+it can basically delegate
+
+485
+00:22:34,520 --> 00:22:37,090
+those privileges
+to anyone it wants.
+
+486
+00:22:37,090 --> 00:22:39,880
+There are other kinds of systems
+called mandatory access control
+
+487
+00:22:39,880 --> 00:22:40,750
+systems.
+
+488
+00:22:40,750 --> 00:22:42,495
+We'll perhaps talk
+about them later,
+
+489
+00:22:42,495 --> 00:22:43,870
+but those try to
+actually enforce
+
+490
+00:22:43,870 --> 00:22:47,589
+this transitive property that,
+if I give it to you, then
+
+491
+00:22:47,589 --> 00:22:48,880
+you can't give to other people.
+
+492
+00:22:48,880 --> 00:22:49,838
+You're basically stuck.
+
+493
+00:22:49,838 --> 00:22:53,450
+It sort of taints you and
+you can't go anywhere else.
+
+494
+00:22:53,450 --> 00:22:55,410
+In Unix, this is
+generally not the case,
+
+495
+00:22:55,410 --> 00:23:02,090
+and a TA probably could not
+hard link this file because
+
+496
+00:23:02,090 --> 00:23:05,040
+of another silly rule that Unix
+enforces for hard links, which
+
+497
+00:23:05,040 --> 00:23:08,075
+is that only the owner
+of a file can hard
+
+498
+00:23:08,075 --> 00:23:10,420
+link it somewhere else.
+
+499
+00:23:10,420 --> 00:23:12,970
+And this is partly
+because of the way
+
+500
+00:23:12,970 --> 00:23:15,790
+Unix does quotas,
+because in Unix quotas
+
+501
+00:23:15,790 --> 00:23:18,520
+are by who owns the file.
+
+502
+00:23:18,520 --> 00:23:20,900
+So if you create
+some giant file,
+
+503
+00:23:20,900 --> 00:23:23,330
+I can hard link a copy
+over to my directory,
+
+504
+00:23:23,330 --> 00:23:25,760
+then you maybe delete the
+file, but I still have it,
+
+505
+00:23:25,760 --> 00:23:27,860
+and the file system thinks,
+yep, that's the owner,
+
+506
+00:23:27,860 --> 00:23:29,484
+but you can't even
+delete it, because I
+
+507
+00:23:29,484 --> 00:23:31,160
+have the reference to it.
+
+508
+00:23:31,160 --> 00:23:34,200
+So that would be a bit of
+an unfortunate combination
+
+509
+00:23:34,200 --> 00:23:36,970
+of Unix mechanisms there.
+
+510
+00:23:36,970 --> 00:23:39,530
+But in general, you should
+worry about such things
+
+511
+00:23:39,530 --> 00:23:41,660
+like transitivity,
+like could someone--
+
+512
+00:23:41,660 --> 00:23:45,040
+or maybe a better problem
+is, maybe someone was a TA
+
+513
+00:23:45,040 --> 00:23:46,289
+and then we remove him.
+
+514
+00:23:46,289 --> 00:23:48,580
+But maybe they can still sort
+of stash away a reference
+
+515
+00:23:48,580 --> 00:23:52,590
+somewhere, so this is maybe
+not a perfect solution
+
+516
+00:23:52,590 --> 00:23:54,410
+for this problem
+for many reasons,
+
+517
+00:23:54,410 --> 00:23:59,240
+including the fact that
+there's non-858 TAs taking 858.
+
+518
+00:23:59,240 --> 00:24:00,470
+Are there questions?
+
+519
+00:24:00,470 --> 00:24:03,050
+
+
+520
+00:24:03,050 --> 00:24:06,140
+OK, so that's files and
+directories in Unix,
+
+521
+00:24:06,140 --> 00:24:09,535
+so how security works for them.
+
+522
+00:24:09,535 --> 00:24:13,060
+A closely related thing in
+Unix are file descriptors.
+
+523
+00:24:13,060 --> 00:24:18,800
+
+
+524
+00:24:18,800 --> 00:24:22,920
+The file descriptors are used
+fairly pretty widely in OKWS
+
+525
+00:24:22,920 --> 00:24:25,990
+and what a file descriptor
+represents in Unix
+
+526
+00:24:25,990 --> 00:24:27,600
+is basically an open file.
+
+527
+00:24:27,600 --> 00:24:30,200
+So in Unix in
+particular, it turns out
+
+528
+00:24:30,200 --> 00:24:36,142
+that the security checks on
+opening a file are performed--
+
+529
+00:24:36,142 --> 00:24:37,850
+or security checks
+for accessing a file--
+
+530
+00:24:37,850 --> 00:24:41,310
+are performed when you open
+the file in the first place.
+
+531
+00:24:41,310 --> 00:24:43,880
+And from there on, you
+have basically a handle
+
+532
+00:24:43,880 --> 00:24:46,400
+on the file, where
+anyone with that handle
+
+533
+00:24:46,400 --> 00:24:48,540
+can now perform
+operations on that file.
+
+534
+00:24:48,540 --> 00:24:51,220
+So the rules for basically
+accessing a file descriptor
+
+535
+00:24:51,220 --> 00:24:54,230
+are, if you have an open file
+descriptor in your process,
+
+536
+00:24:54,230 --> 00:24:56,060
+then you can access it.
+
+537
+00:24:56,060 --> 00:24:58,820
+And security checks
+don't apply in the sense
+
+538
+00:24:58,820 --> 00:25:00,277
+that, to get that
+file descriptor,
+
+539
+00:25:00,277 --> 00:25:02,360
+you could have just opened
+the file, in which case
+
+540
+00:25:02,360 --> 00:25:04,180
+these regular checks
+would have applied,
+
+541
+00:25:04,180 --> 00:25:07,020
+or some other process
+might have passed the file
+
+542
+00:25:07,020 --> 00:25:10,500
+descriptor to you, so you
+can pass file descriptors
+
+543
+00:25:10,500 --> 00:25:13,260
+by inheriting from a
+parent, so a parent
+
+544
+00:25:13,260 --> 00:25:15,260
+can pass a file descriptor
+to a child process
+
+545
+00:25:15,260 --> 00:25:18,510
+or you can pass file descriptors
+through sockets in Unix,
+
+546
+00:25:18,510 --> 00:25:20,580
+but however you manage
+to get a file descriptor,
+
+547
+00:25:20,580 --> 00:25:22,914
+you can read and write the
+file descriptor all you want,
+
+548
+00:25:22,914 --> 00:25:24,580
+because the security
+checks have already
+
+549
+00:25:24,580 --> 00:25:26,650
+been done when the file
+descriptor was initially
+
+550
+00:25:26,650 --> 00:25:27,629
+created.
+
+551
+00:25:27,629 --> 00:25:29,170
+So that's actually
+a nice way in Unix
+
+552
+00:25:29,170 --> 00:25:33,360
+to give someone privileges
+that they don't otherwise have.
+
+553
+00:25:33,360 --> 00:25:36,940
+So in OKWS there's probably
+many components that
+
+554
+00:25:36,940 --> 00:25:39,890
+need to act as a
+certain socket or file,
+
+555
+00:25:39,890 --> 00:25:42,440
+or whatever you
+have it, and one way
+
+556
+00:25:42,440 --> 00:25:45,450
+to implement this without
+giving them direct access
+
+557
+00:25:45,450 --> 00:25:48,280
+to read and write the
+file in the file system,
+
+558
+00:25:48,280 --> 00:25:51,600
+is to have someone else open the
+file, create a file descriptor
+
+559
+00:25:51,600 --> 00:25:53,585
+and then pass it to
+this extra component.
+
+560
+00:25:53,585 --> 00:25:55,210
+This way, you can
+really precisely say,
+
+561
+00:25:55,210 --> 00:25:58,080
+that's the only file
+descriptor you'll ever have.
+
+562
+00:25:58,080 --> 00:25:59,482
+And there's nothing
+else they can
+
+563
+00:25:59,482 --> 00:26:02,910
+try to do in the file
+system that might be funny.
+
+564
+00:26:02,910 --> 00:26:04,942
+Make sense?
+
+565
+00:26:04,942 --> 00:26:06,942
+So in fact, it has fairly
+simple rules, I guess.
+
+566
+00:26:06,942 --> 00:26:08,358
+If you have a file
+descriptor, you
+
+567
+00:26:08,358 --> 00:26:09,830
+can do whatever
+you want with It.
+
+568
+00:26:09,830 --> 00:26:11,760
+OK, so what about processes?
+
+569
+00:26:11,760 --> 00:26:13,190
+What are the rules there?
+
+570
+00:26:13,190 --> 00:26:15,470
+I guess, what can
+you do to a process?
+
+571
+00:26:15,470 --> 00:26:17,360
+In Unix it's fairly simple.
+
+572
+00:26:17,360 --> 00:26:19,270
+You could, I guess,
+create a process.
+
+573
+00:26:19,270 --> 00:26:21,130
+You could kill it.
+
+574
+00:26:21,130 --> 00:26:23,410
+You could debug it.
+
+575
+00:26:23,410 --> 00:26:26,660
+There's this mechanism
+called ptrace in Unix,
+
+576
+00:26:26,660 --> 00:26:29,470
+and probably a couple
+of other things.
+
+577
+00:26:29,470 --> 00:26:33,940
+And the rules are
+relatively straightforward.
+
+578
+00:26:33,940 --> 00:26:37,280
+So you can always create
+a process, more or less,
+
+579
+00:26:37,280 --> 00:26:39,177
+except that the child
+process is going
+
+580
+00:26:39,177 --> 00:26:41,260
+to get the same userid as
+you, so you can't create
+
+581
+00:26:41,260 --> 00:26:45,700
+a process with some other userid
+by default. So you can't say,
+
+582
+00:26:45,700 --> 00:26:47,780
+well, I'd like to
+create a process running
+
+583
+00:26:47,780 --> 00:26:50,070
+as "web," one of my TAs.
+
+584
+00:26:50,070 --> 00:26:52,279
+The operating system kernel
+will not let you do that.
+
+585
+00:26:52,279 --> 00:26:54,111
+If you want to kill a
+process, you basically
+
+586
+00:26:54,111 --> 00:26:56,580
+have to have the same userid
+as that process as well.
+
+587
+00:26:56,580 --> 00:26:57,860
+It's kind of nice.
+
+588
+00:26:57,860 --> 00:27:00,040
+All the things with
+a single userid
+
+589
+00:27:00,040 --> 00:27:03,290
+are isolated from things
+with other userids.
+
+590
+00:27:03,290 --> 00:27:08,050
+And more or less, the same
+rule applies to ptrace as well.
+
+591
+00:27:08,050 --> 00:27:10,250
+The process with the same
+uid can debug processes
+
+592
+00:27:10,250 --> 00:27:15,220
+with the same uid.
+
+593
+00:27:15,220 --> 00:27:18,496
+As with everything, it turns out
+race conditions show up often
+
+594
+00:27:18,496 --> 00:27:19,870
+and can cause
+problems, but there
+
+595
+00:27:19,870 --> 00:27:21,540
+have been actually
+some interesting bugs
+
+596
+00:27:21,540 --> 00:27:27,040
+in the ptrace mechanism in Linux
+where, if you debug a process
+
+597
+00:27:27,040 --> 00:27:30,000
+and then it switches and gets
+more privileges, then maybe you
+
+598
+00:27:30,000 --> 00:27:32,770
+could somehow trick the
+kernel into letting you retain
+
+599
+00:27:32,770 --> 00:27:34,630
+this debug privilege
+on this process,
+
+600
+00:27:34,630 --> 00:27:36,455
+even after it becomes
+more privileged.
+
+601
+00:27:36,455 --> 00:27:40,520
+Then you can monkey with
+its memory and take it over.
+
+602
+00:27:40,520 --> 00:27:43,060
+But at least the basic
+design that you probably
+
+603
+00:27:43,060 --> 00:27:45,610
+want to enforce is roughly
+a process with the same uid
+
+604
+00:27:45,610 --> 00:27:48,126
+can act on each
+other, otherwise not.
+
+605
+00:27:48,126 --> 00:27:50,458
+
+
+606
+00:27:50,458 --> 00:27:53,112
+And I guess, OK, so what else
+did we have on this list?
+
+607
+00:27:53,112 --> 00:27:54,160
+Processes.
+
+608
+00:27:54,160 --> 00:27:56,250
+Memory sort of goes
+along with the process.
+
+609
+00:27:56,250 --> 00:27:57,750
+So, unless you're
+in that process
+
+610
+00:27:57,750 --> 00:27:59,250
+you can't access
+the process memory.
+
+611
+00:27:59,250 --> 00:28:02,780
+Virtual memory nicely enforces
+this isolation for us.
+
+612
+00:28:02,780 --> 00:28:04,596
+Except this debug
+mechanism lets you
+
+613
+00:28:04,596 --> 00:28:06,220
+poke in another
+process's memory if you
+
+614
+00:28:06,220 --> 00:28:07,511
+happen to have the same userid.
+
+615
+00:28:07,511 --> 00:28:10,420
+
+
+616
+00:28:10,420 --> 00:28:12,850
+And then, I guess the
+other remaining thing
+
+617
+00:28:12,850 --> 00:28:18,530
+for us is networking,
+and networking in Unix
+
+618
+00:28:18,530 --> 00:28:20,770
+doesn't really fall
+in the same model,
+
+619
+00:28:20,770 --> 00:28:22,780
+partly because of
+it came about later.
+
+620
+00:28:22,780 --> 00:28:25,260
+You know, the Unix operating
+system was designed first
+
+621
+00:28:25,260 --> 00:28:27,475
+and then networking came
+along and became popular.
+
+622
+00:28:27,475 --> 00:28:30,120
+
+
+623
+00:28:30,120 --> 00:28:33,060
+It has a slightly
+different set of rules.
+
+624
+00:28:33,060 --> 00:28:35,470
+So I guess the operations
+we really care about
+
+625
+00:28:35,470 --> 00:28:41,850
+on the network is, presumably,
+connecting somewhere or maybe
+
+626
+00:28:41,850 --> 00:28:44,160
+listening actually for
+connections as well.
+
+627
+00:28:44,160 --> 00:28:46,535
+So you might want to
+connect to some web server
+
+628
+00:28:46,535 --> 00:28:48,910
+or you might want to run a
+web server yourself and listen
+
+629
+00:28:48,910 --> 00:28:51,080
+on a particular port.
+
+630
+00:28:51,080 --> 00:28:54,080
+Maybe you want to actually
+read data from a connection,
+
+631
+00:28:54,080 --> 00:28:58,830
+or read/write data on
+some existing connection,
+
+632
+00:28:58,830 --> 00:29:01,445
+or you want to send the
+raw packets or receive.
+
+633
+00:29:01,445 --> 00:29:07,440
+
+
+634
+00:29:07,440 --> 00:29:11,800
+So in Unix the network
+stuff basically has
+
+635
+00:29:11,800 --> 00:29:16,450
+no relation to userids,
+the first approximation.
+
+636
+00:29:16,450 --> 00:29:20,990
+The rule is anyone
+can always connect
+
+637
+00:29:20,990 --> 00:29:23,770
+to any machine or
+any IP address,
+
+638
+00:29:23,770 --> 00:29:26,080
+can always open a connection.
+
+639
+00:29:26,080 --> 00:29:28,165
+If you want to listen
+on a port, that's
+
+640
+00:29:28,165 --> 00:29:30,100
+where one difference
+shows up, which
+
+641
+00:29:30,100 --> 00:29:33,140
+is that most users
+are prohibited
+
+642
+00:29:33,140 --> 00:29:38,050
+from listening on ports
+below a magic value of 1024.
+
+643
+00:29:38,050 --> 00:29:43,750
+Basically, if you listen and
+the port is less than 1024,
+
+644
+00:29:43,750 --> 00:29:46,290
+then you have to be
+a special user called
+
+645
+00:29:46,290 --> 00:29:50,800
+"super user" with a uid of 0.
+
+646
+00:29:50,800 --> 00:29:54,870
+And in general, Unix has this
+notion of an administrator,
+
+647
+00:29:54,870 --> 00:29:57,710
+or super user, which is
+represented by having uid of 0,
+
+648
+00:29:57,710 --> 00:30:00,780
+which can bypass pretty
+much all these checks,
+
+649
+00:30:00,780 --> 00:30:03,930
+so if you're running as root,
+then none of this applies.
+
+650
+00:30:03,930 --> 00:30:06,610
+You can read/write files,
+you can change permissions
+
+651
+00:30:06,610 --> 00:30:08,910
+on anyone's files and
+the operating system
+
+652
+00:30:08,910 --> 00:30:10,790
+will let you do that
+because it thinks you
+
+653
+00:30:10,790 --> 00:30:13,380
+should have all the privileges.
+
+654
+00:30:13,380 --> 00:30:14,900
+And one thing you
+really need it for
+
+655
+00:30:14,900 --> 00:30:19,060
+is for listening on
+ports below 1024.
+
+656
+00:30:19,060 --> 00:30:22,880
+Any idea why this
+weird restriction?
+
+657
+00:30:22,880 --> 00:30:25,272
+Who cares about
+your port number?
+
+658
+00:30:25,272 --> 00:30:28,150
+AUDIENCE: Would they define
+specific port numbers
+
+659
+00:30:28,150 --> 00:30:29,955
+to be certain things,
+like HTTP is like 80.
+
+660
+00:30:29,955 --> 00:30:30,455
+
+
+661
+00:30:30,455 --> 00:30:33,600
+PROFESSOR: Yeah, it's
+like HTTP is 80 here.
+
+662
+00:30:33,600 --> 00:30:37,930
+On the other hand, other
+services might be above 1024,
+
+663
+00:30:37,930 --> 00:30:39,840
+so why this restriction?
+
+664
+00:30:39,840 --> 00:30:40,925
+Why is this useful?
+
+665
+00:30:40,925 --> 00:30:44,280
+Seems to complicate my
+life more, after you.
+
+666
+00:30:44,280 --> 00:30:49,545
+AUDIENCE: Since you don't want
+random searches just listening
+
+667
+00:30:49,545 --> 00:30:50,765
+on your HTTP.
+
+668
+00:30:50,765 --> 00:30:51,390
+PROFESSOR: Yes.
+
+669
+00:30:51,390 --> 00:30:53,822
+I think the reason
+for this is that it
+
+670
+00:30:53,822 --> 00:30:55,530
+used to be the case,
+at least, that you'd
+
+671
+00:30:55,530 --> 00:30:57,930
+have these machines where
+there's lots of things running,
+
+672
+00:30:57,930 --> 00:31:00,930
+there's users logging in,
+there's services running,
+
+673
+00:31:00,930 --> 00:31:03,130
+and you want to make sure
+that some random user
+
+674
+00:31:03,130 --> 00:31:06,445
+logging into our machine doesn't
+all of sudden take over the web
+
+675
+00:31:06,445 --> 00:31:08,820
+server running on that machine,
+because people connecting
+
+676
+00:31:08,820 --> 00:31:11,590
+from outside don't really know
+who is running on that port.
+
+677
+00:31:11,590 --> 00:31:13,200
+They just connect to port 80.
+
+678
+00:31:13,200 --> 00:31:14,823
+And if I want to log
+into that machine
+
+679
+00:31:14,823 --> 00:31:16,390
+and start my own
+web server, then I
+
+680
+00:31:16,390 --> 00:31:19,056
+would just take over all the web
+server traffic to that machine.
+
+681
+00:31:19,056 --> 00:31:21,180
+That is probably
+not a great plan.
+
+682
+00:31:21,180 --> 00:31:25,020
+So this is one way that the
+networking subsystem in Unix
+
+683
+00:31:25,020 --> 00:31:27,886
+prevents arbitrary
+users from impersonating
+
+684
+00:31:27,886 --> 00:31:30,320
+what are called well-known
+services running
+
+685
+00:31:30,320 --> 00:31:32,510
+on these low port numbers.
+
+686
+00:31:32,510 --> 00:31:36,664
+So that's sort of one
+rationale for this restriction.
+
+687
+00:31:36,664 --> 00:31:38,580
+And then, in terms of
+reading and writing data
+
+688
+00:31:38,580 --> 00:31:40,930
+on a connection, well, if
+you have a file descriptor
+
+689
+00:31:40,930 --> 00:31:43,930
+for a particular socket, then
+Unix lets you read and write
+
+690
+00:31:43,930 --> 00:31:46,986
+any data you want on that
+TCP or uTP connection.
+
+691
+00:31:46,986 --> 00:31:48,360
+And then for
+sending raw packets,
+
+692
+00:31:48,360 --> 00:31:50,280
+Unix is actually pretty
+paranoid about this,
+
+693
+00:31:50,280 --> 00:31:52,314
+so it actually will not
+let you send arbitrary
+
+694
+00:31:52,314 --> 00:31:53,355
+packets over the network.
+
+695
+00:31:53,355 --> 00:31:56,820
+It has to be in the context
+of a particular connection,
+
+696
+00:31:56,820 --> 00:31:58,320
+except if you're
+root, of course,
+
+697
+00:31:58,320 --> 00:32:01,870
+then you can do
+whatever you want.
+
+698
+00:32:01,870 --> 00:32:02,550
+That make sense?
+
+699
+00:32:02,550 --> 00:32:03,050
+Somewhat?
+
+700
+00:32:03,050 --> 00:32:09,424
+Any other questions about
+all this Unix machinery?
+
+701
+00:32:09,424 --> 00:32:11,590
+OK, so one interesting
+question we could try to ask,
+
+702
+00:32:11,590 --> 00:32:15,160
+is where do these
+userids come from?
+
+703
+00:32:15,160 --> 00:32:17,550
+So, when we talk about
+processes having a userid
+
+704
+00:32:17,550 --> 00:32:20,552
+or having a groupid, and if
+you run PS on your machine,
+
+705
+00:32:20,552 --> 00:32:22,760
+you probably see lots of
+processes with different uid
+
+706
+00:32:22,760 --> 00:32:23,480
+values.
+
+707
+00:32:23,480 --> 00:32:24,730
+Where do these guys come from?
+
+708
+00:32:24,730 --> 00:32:27,770
+We need some sort of
+a mechanism really
+
+709
+00:32:27,770 --> 00:32:31,550
+to bootstrap all of
+these userid values,
+
+710
+00:32:31,550 --> 00:32:34,850
+and the way it works in Unix,
+at least at the mechanism level,
+
+711
+00:32:34,850 --> 00:32:38,940
+is that there's several
+system calls for doing this.
+
+712
+00:32:38,940 --> 00:32:43,800
+
+
+713
+00:32:43,800 --> 00:32:46,270
+So initially to bootstrap
+these uid values,
+
+714
+00:32:46,270 --> 00:32:50,840
+there's a system called setuid()
+that you that you can pass some
+
+715
+00:32:50,840 --> 00:32:55,150
+sort of a uid number to,
+and it'll set the userid
+
+716
+00:32:55,150 --> 00:32:58,400
+of the current
+process to this value.
+
+717
+00:32:58,400 --> 00:33:00,660
+This is actually a dangerous
+operation, of course,
+
+718
+00:33:00,660 --> 00:33:04,220
+so in sort of Unix tradition,
+you can only do this
+
+719
+00:33:04,220 --> 00:33:07,080
+if you're uid is equal to 0.
+
+720
+00:33:07,080 --> 00:33:08,690
+Well, must have.
+
+721
+00:33:08,690 --> 00:33:11,660
+
+
+722
+00:33:11,660 --> 00:33:15,150
+So if you are this
+root user with uid 0,
+
+723
+00:33:15,150 --> 00:33:17,650
+then you can call setuid() and
+switch your user to anything
+
+724
+00:33:17,650 --> 00:33:18,720
+else.
+
+725
+00:33:18,720 --> 00:33:20,500
+There's a couple
+other similar system
+
+726
+00:33:20,500 --> 00:33:24,730
+calls for initializing the gids
+associated with the process.
+
+727
+00:33:24,730 --> 00:33:27,930
+It's setgid and setgroups.
+
+728
+00:33:27,930 --> 00:33:32,330
+
+
+729
+00:33:32,330 --> 00:33:34,670
+So these system
+calls together let
+
+730
+00:33:34,670 --> 00:33:38,870
+you configure the privileges
+that a process has.
+
+731
+00:33:38,870 --> 00:33:42,720
+So typically, when you go
+and log into a Unix machine,
+
+732
+00:33:42,720 --> 00:33:46,430
+the way that your processes
+get the right privileges,
+
+733
+00:33:46,430 --> 00:33:48,800
+is that you're
+initially actually
+
+734
+00:33:48,800 --> 00:33:51,520
+not talking to a process
+running as your uid,
+
+735
+00:33:51,520 --> 00:33:54,240
+partly because the system
+doesn't know who you are yet.
+
+736
+00:33:54,240 --> 00:33:56,610
+Instead, what you
+initially talk to in Unix
+
+737
+00:33:56,610 --> 00:33:59,450
+is some sort of a login
+process, so maybe SSH
+
+738
+00:33:59,450 --> 00:34:04,200
+runs a process for anyone
+that connects to it
+
+739
+00:34:04,200 --> 00:34:06,340
+and tries to
+authenticate the user.
+
+740
+00:34:06,340 --> 00:34:16,060
+So this login process runs with
+uid=0 as root and then when
+
+741
+00:34:16,060 --> 00:34:19,719
+the supply username
+and password,
+
+742
+00:34:19,719 --> 00:34:24,469
+it's actually going to check
+it against its own database
+
+743
+00:34:24,469 --> 00:34:27,110
+of accounts and,
+typically in Unix,
+
+744
+00:34:27,110 --> 00:34:32,650
+this get stored in two
+files, /etc/password, which,
+
+745
+00:34:32,650 --> 00:34:36,739
+for historical reasons, no
+longer stores the password.
+
+746
+00:34:36,739 --> 00:34:39,409
+And there's another
+file, /etc/shadow,
+
+747
+00:34:39,409 --> 00:34:42,610
+which does store the password,
+but in /etc/password,
+
+748
+00:34:42,610 --> 00:34:46,300
+there is actually a table
+mapping every username
+
+749
+00:34:46,300 --> 00:34:49,070
+in the system to
+these integer values.
+
+750
+00:34:49,070 --> 00:34:51,739
+So your username gets mapped
+to a particular integer number
+
+751
+00:34:51,739 --> 00:34:55,330
+in this /etc/password file, and
+then login will check whether
+
+752
+00:34:55,330 --> 00:34:57,830
+your password is correct,
+according to this file,
+
+753
+00:34:57,830 --> 00:35:01,060
+and if it is, it'll find your
+integer uid and then call
+
+754
+00:35:01,060 --> 00:35:07,440
+setuid on your uid value
+and then execute your shell.
+
+755
+00:35:07,440 --> 00:35:12,050
+Whatever, (den/sh) And now
+you can actually interact with
+
+756
+00:35:12,050 --> 00:35:15,840
+the shell, but it's running as
+your uid so you cannot do any
+
+757
+00:35:15,840 --> 00:35:18,336
+arbitrary damage
+to this machine.
+
+758
+00:35:18,336 --> 00:35:18,835
+Question?
+
+759
+00:35:18,835 --> 00:35:21,980
+AUDIENCE: Is it possible to
+start a new process with uid 0
+
+760
+00:35:21,980 --> 00:35:24,502
+if you have some non-0 uid?
+
+761
+00:35:24,502 --> 00:35:27,180
+For example, if you
+want [INAUDIBLE].
+
+762
+00:35:27,180 --> 00:35:30,089
+PROFESSOR: Yeah, so this sort of
+lets you go down, if you will,
+
+763
+00:35:30,089 --> 00:35:32,130
+so with your root, you
+can restrict yourself down
+
+764
+00:35:32,130 --> 00:35:34,050
+to a different uid, but
+the rule we set so far
+
+765
+00:35:34,050 --> 00:35:36,675
+is you can only create a process
+with the same uid as yourself.
+
+766
+00:35:36,675 --> 00:35:38,760
+But, of course, you want
+to elevate your privileges
+
+767
+00:35:38,760 --> 00:35:39,593
+for various reasons.
+
+768
+00:35:39,593 --> 00:35:41,820
+You want to, I don't know,
+install a package now
+
+769
+00:35:41,820 --> 00:35:43,670
+and you need root privileges.
+
+770
+00:35:43,670 --> 00:35:47,410
+So, Unix has
+basically two ways you
+
+771
+00:35:47,410 --> 00:35:49,380
+could think about doing this.
+
+772
+00:35:49,380 --> 00:35:51,240
+One way we already
+mentioned, this file
+
+773
+00:35:51,240 --> 00:35:52,680
+descriptor passing thing.
+
+774
+00:35:52,680 --> 00:35:54,730
+So if you really want to
+elevate your privileges,
+
+775
+00:35:54,730 --> 00:35:56,480
+maybe you can talk
+to some helper,
+
+776
+00:35:56,480 --> 00:35:58,150
+and the helper is
+running as root.
+
+777
+00:35:58,150 --> 00:36:00,370
+You can ask it, hey, can
+you open this file for me?
+
+778
+00:36:00,370 --> 00:36:03,139
+And maybe you like define
+some new interface,
+
+779
+00:36:03,139 --> 00:36:05,180
+and that helper opens the
+file and gives you back
+
+780
+00:36:05,180 --> 00:36:07,493
+the file descriptor
+through fd passing.
+
+781
+00:36:07,493 --> 00:36:10,070
+That's one way you could
+elevate your privileges,
+
+782
+00:36:10,070 --> 00:36:12,450
+but it's kind of awkward,
+because what you really
+
+783
+00:36:12,450 --> 00:36:16,510
+want in some cases is a process
+running with more privileges.
+
+784
+00:36:16,510 --> 00:36:20,170
+So in order to do this, Unix
+has this sort of clever,
+
+785
+00:36:20,170 --> 00:36:24,040
+sort of problematic mechanism
+called setuid binaries.
+
+786
+00:36:24,040 --> 00:36:30,560
+
+
+787
+00:36:30,560 --> 00:36:35,980
+So setuid binaries are just
+regular executables in a Unix
+
+788
+00:36:35,980 --> 00:36:40,330
+file system, except
+that when you run them,
+
+789
+00:36:40,330 --> 00:36:44,610
+when you sort of co-exec on a
+setuid binary-- one example is,
+
+790
+00:36:44,610 --> 00:36:50,114
+for example, is /bin/su on
+most machines, or sudo as well.
+
+791
+00:36:50,114 --> 00:36:52,280
+There's a bunch of setuid
+binaries on a typical Unix
+
+792
+00:36:52,280 --> 00:36:53,610
+system.
+
+793
+00:36:53,610 --> 00:36:56,950
+The difference is that when you
+execute one of these binaries,
+
+794
+00:36:56,950 --> 00:37:01,250
+it actually switches the
+userid of the process
+
+795
+00:37:01,250 --> 00:37:04,890
+to the owner of this binary.
+
+796
+00:37:04,890 --> 00:37:07,360
+It's a little bit of a weird
+mechanism when you first
+
+797
+00:37:07,360 --> 00:37:08,200
+see it.
+
+798
+00:37:08,200 --> 00:37:11,520
+Typically the way it is used
+is that this binary probably
+
+799
+00:37:11,520 --> 00:37:16,490
+has an owner uid of
+0, because you really
+
+800
+00:37:16,490 --> 00:37:18,950
+want to regain lots of
+privileges-- you want to regain
+
+801
+00:37:18,950 --> 00:37:22,410
+root privileges-- so you
+can run this su command,
+
+802
+00:37:22,410 --> 00:37:24,280
+and the kernel, when
+you exec this binary,
+
+803
+00:37:24,280 --> 00:37:27,010
+will switch the uid
+of the process to 0,
+
+804
+00:37:27,010 --> 00:37:32,470
+so this program will now
+do some privileged stuff.
+
+805
+00:37:32,470 --> 00:37:34,510
+That make sense?
+
+806
+00:37:34,510 --> 00:37:36,570
+AUDIENCE: If you
+have uid 0 and you
+
+807
+00:37:36,570 --> 00:37:38,710
+change the uid of all
+of those setuid binaries
+
+808
+00:37:38,710 --> 00:37:43,710
+to something non-0 and then
+you could start [INAUDIBLE].
+
+809
+00:37:43,710 --> 00:37:46,160
+PROFESSOR: Well, many
+processes will not
+
+810
+00:37:46,160 --> 00:37:48,330
+be able to regain
+privileges later.
+
+811
+00:37:48,330 --> 00:37:50,420
+You might be kind of stuck.
+
+812
+00:37:50,420 --> 00:37:53,135
+It'll still boot probably,
+but maybe some things
+
+813
+00:37:53,135 --> 00:37:55,130
+will not work.
+
+814
+00:37:55,130 --> 00:37:57,455
+This mechanism is
+not tied to uid 0.
+
+815
+00:37:57,455 --> 00:38:01,290
+In fact, "I" as a user on a Unix
+system can create any binary.
+
+816
+00:38:01,290 --> 00:38:04,770
+I can build some
+program, compile it,
+
+817
+00:38:04,770 --> 00:38:09,560
+and I can set this setuid
+bit on that program itself.
+
+818
+00:38:09,560 --> 00:38:12,370
+It's owned by me,
+the user, my userid.
+
+819
+00:38:12,370 --> 00:38:15,310
+And what this means is,
+anyone executing my program
+
+820
+00:38:15,310 --> 00:38:18,815
+will run that code
+with my userid.
+
+821
+00:38:18,815 --> 00:38:20,130
+Is that problematic?
+
+822
+00:38:20,130 --> 00:38:23,020
+Should I do this?
+
+823
+00:38:23,020 --> 00:38:25,690
+AUDIENCE:So, if there was
+a bug in your application
+
+824
+00:38:25,690 --> 00:38:27,784
+and suddenly someone
+could do anything as you,
+
+825
+00:38:27,784 --> 00:38:29,825
+not just with the program
+that's assigned to you.
+
+826
+00:38:29,825 --> 00:38:30,220
+PROFESSOR: Right.
+
+827
+00:38:30,220 --> 00:38:31,261
+But yes, so that's right.
+
+828
+00:38:31,261 --> 00:38:34,590
+If my application
+is buggy, or if it
+
+829
+00:38:34,590 --> 00:38:36,090
+allows you to run
+anything you want,
+
+830
+00:38:36,090 --> 00:38:37,680
+well, I could copy
+the system shell
+
+831
+00:38:37,680 --> 00:38:39,550
+and make its setuid
+to me, then anyone
+
+832
+00:38:39,550 --> 00:38:41,140
+can run a shell
+under my account.
+
+833
+00:38:41,140 --> 00:38:44,300
+That would probably not
+be a best plan of action.
+
+834
+00:38:44,300 --> 00:38:48,680
+But a system mechanism,
+well, this is not necessarily
+
+835
+00:38:48,680 --> 00:38:52,585
+problematic, because the only
+person that can set the setuid
+
+836
+00:38:52,585 --> 00:38:56,680
+bit on a binary is
+the owner of the file,
+
+837
+00:38:56,680 --> 00:38:59,230
+and owner of the file
+has that uid privilege,
+
+838
+00:38:59,230 --> 00:39:02,060
+so I can basically give away
+my account to other people if I
+
+839
+00:39:02,060 --> 00:39:06,620
+want, but someone else cannot
+create a setuid binary with
+
+840
+00:39:06,620 --> 00:39:07,330
+my userid.
+
+841
+00:39:07,330 --> 00:39:09,500
+That make sense?
+
+842
+00:39:09,500 --> 00:39:12,050
+And the setuid bit
+is sort of stored
+
+843
+00:39:12,050 --> 00:39:13,940
+alongside these permission bits.
+
+844
+00:39:13,940 --> 00:39:17,710
+So somewhere there
+is also a setuid bit
+
+845
+00:39:17,710 --> 00:39:22,420
+in every inode that says whether
+this executable or this program
+
+846
+00:39:22,420 --> 00:39:26,124
+should be switched to the
+owner's uid on execution.
+
+847
+00:39:26,124 --> 00:39:29,030
+Does that make sense as sort
+of a privilege estimation
+
+848
+00:39:29,030 --> 00:39:30,580
+mechanism?
+
+849
+00:39:30,580 --> 00:39:33,740
+It turns out that this is
+a very tricky mechanism
+
+850
+00:39:33,740 --> 00:39:34,997
+to use correctly.
+
+851
+00:39:34,997 --> 00:39:36,580
+So the kernel
+implements it correctly.
+
+852
+00:39:36,580 --> 00:39:37,980
+It's actually a fairly
+easy thing to do.
+
+853
+00:39:37,980 --> 00:39:38,813
+It's just one check.
+
+854
+00:39:38,813 --> 00:39:40,530
+If there is [INAUDIBLE],
+switch the uid.
+
+855
+00:39:40,530 --> 00:39:41,410
+Easy enough.
+
+856
+00:39:41,410 --> 00:39:44,700
+But using it safely turns out
+to be very tricky because,
+
+857
+00:39:44,700 --> 00:39:49,280
+as was just pointed out, if
+this program has bugs in it
+
+858
+00:39:49,280 --> 00:39:52,410
+or does something
+unexpected, then
+
+859
+00:39:52,410 --> 00:39:55,110
+you might be able to do
+arbitrary things uid 0
+
+860
+00:39:55,110 --> 00:39:57,080
+or whatever the other uid is.
+
+861
+00:39:57,080 --> 00:40:00,290
+And it turns out in Unix, the
+way you execute a program,
+
+862
+00:40:00,290 --> 00:40:04,260
+you inherit a lot of stuff
+from your parent process.
+
+863
+00:40:04,260 --> 00:40:06,650
+For example, you can pass
+environment variables
+
+864
+00:40:06,650 --> 00:40:09,890
+to the setuid binaries, and
+it used to be the case that--
+
+865
+00:40:09,890 --> 00:40:13,960
+well, in Unix, you can specify
+what shared library should be
+
+866
+00:40:13,960 --> 00:40:17,284
+used for a process by setting
+an environment variable,
+
+867
+00:40:17,284 --> 00:40:19,700
+and it used to be that the
+setuid binaries weren't careful
+
+868
+00:40:19,700 --> 00:40:21,700
+about filtering out these
+environment variables,
+
+869
+00:40:21,700 --> 00:40:23,770
+so you could run
+bin/su, but say, well,
+
+870
+00:40:23,770 --> 00:40:26,290
+use my shared library
+for things like printf(),
+
+871
+00:40:26,290 --> 00:40:30,100
+so your printf() is going to
+run when bin/su prints something
+
+872
+00:40:30,100 --> 00:40:33,590
+out, and you can get it to run
+a shell instead of printing
+
+873
+00:40:33,590 --> 00:40:35,030
+stuff.
+
+874
+00:40:35,030 --> 00:40:37,170
+So there's many
+other subtle things
+
+875
+00:40:37,170 --> 00:40:40,130
+that you have to get right
+in terms of this program
+
+876
+00:40:40,130 --> 00:40:42,254
+not trusting the user
+input, and this is actually
+
+877
+00:40:42,254 --> 00:40:43,670
+quite different
+from how you think
+
+878
+00:40:43,670 --> 00:40:45,030
+of writing most Unix programs.
+
+879
+00:40:45,030 --> 00:40:47,900
+You generally do trust
+the user input a lot,
+
+880
+00:40:47,900 --> 00:40:51,840
+so for this reason,
+the setuid mechanism
+
+881
+00:40:51,840 --> 00:40:55,940
+hasn't been the most
+secure part, in some sense,
+
+882
+00:40:55,940 --> 00:40:59,290
+of the overall Unix system.
+
+883
+00:40:59,290 --> 00:40:59,790
+All right.
+
+884
+00:40:59,790 --> 00:41:01,591
+Any questions about this stuff?
+
+885
+00:41:01,591 --> 00:41:02,090
+Yeah.
+
+886
+00:41:02,090 --> 00:41:04,072
+AUDIENCE: Does setuid
+apply to groups as well,
+
+887
+00:41:04,072 --> 00:41:04,780
+or just the user?
+
+888
+00:41:04,780 --> 00:41:08,580
+PROFESSOR: There is actually
+a symmetric setgid bit
+
+889
+00:41:08,580 --> 00:41:10,970
+you could set.
+
+890
+00:41:10,970 --> 00:41:12,640
+Why not.
+
+891
+00:41:12,640 --> 00:41:16,660
+And you could-- well, the
+same thing happens, right?
+
+892
+00:41:16,660 --> 00:41:19,500
+If the file has a particular
+gid and that setgid bit
+
+893
+00:41:19,500 --> 00:41:22,610
+is set when you run the
+program, you get that group.
+
+894
+00:41:22,610 --> 00:41:25,930
+It's not used a lot, but
+it is useful in cases
+
+895
+00:41:25,930 --> 00:41:28,120
+where you want to give
+very specific privileges.
+
+896
+00:41:28,120 --> 00:41:30,490
+So here, like bin/su probably
+needs a lot of privileges,
+
+897
+00:41:30,490 --> 00:41:32,200
+but it might be that
+there's some program that
+
+898
+00:41:32,200 --> 00:41:33,824
+needs a little bit
+of extra privileges,
+
+899
+00:41:33,824 --> 00:41:35,991
+like maybe to write something
+to a special log file.
+
+900
+00:41:35,991 --> 00:41:37,740
+So you probably want
+to give it some group
+
+901
+00:41:37,740 --> 00:41:39,734
+and make that log file
+writable by that group.
+
+902
+00:41:39,734 --> 00:41:42,150
+So even if the program is
+buggy, which is likely the case,
+
+903
+00:41:42,150 --> 00:41:44,530
+then, well, you lose
+that group, sort of,
+
+904
+00:41:44,530 --> 00:41:46,510
+privileges but not much else.
+
+905
+00:41:46,510 --> 00:41:48,710
+It is sort of useful
+as a mechanism,
+
+906
+00:41:48,710 --> 00:41:52,660
+but it doesn't show up often,
+because it's-- I don't why.
+
+907
+00:41:52,660 --> 00:41:56,390
+People should use root more.
+
+908
+00:41:56,390 --> 00:41:56,890
+Yeah.
+
+909
+00:41:56,890 --> 00:41:58,640
+AUDIENCE: What are the
+restrictions on who
+
+910
+00:41:58,640 --> 00:41:59,870
+can change the [INAUDIBLE]?
+
+911
+00:41:59,870 --> 00:42:00,453
+AUDIENCE: Yes.
+
+912
+00:42:00,453 --> 00:42:05,290
+
+
+913
+00:42:05,290 --> 00:42:08,940
+Different Unix implementations
+have slightly different checks
+
+914
+00:42:08,940 --> 00:42:09,670
+for this.
+
+915
+00:42:09,670 --> 00:42:13,120
+The general rule of thumb
+is, only root can change
+
+916
+00:42:13,120 --> 00:42:15,000
+the owner of a file,
+because you don't
+
+917
+00:42:15,000 --> 00:42:18,002
+want to create files
+owned by someone else,
+
+918
+00:42:18,002 --> 00:42:20,210
+and you don't want to take
+over other people's files,
+
+919
+00:42:20,210 --> 00:42:21,590
+of course, either.
+
+920
+00:42:21,590 --> 00:42:24,750
+So, in general, if you're
+a particular non-0 uid,
+
+921
+00:42:24,750 --> 00:42:25,570
+then you're stuck.
+
+922
+00:42:25,570 --> 00:42:28,870
+You can't change
+owner of any file.
+
+923
+00:42:28,870 --> 00:42:31,950
+If you're a root, you can
+change it to anything you want.
+
+924
+00:42:31,950 --> 00:42:34,860
+There are some complications
+if you're a setuid binary
+
+925
+00:42:34,860 --> 00:42:36,620
+and you switch from
+one uid to another--
+
+926
+00:42:36,620 --> 00:42:39,820
+it's a little bit tricky--
+but for the most part
+
+927
+00:42:39,820 --> 00:42:41,805
+you basically can't
+change the owner of a file
+
+928
+00:42:41,805 --> 00:42:45,230
+unless you're a root.
+
+929
+00:42:45,230 --> 00:42:46,280
+Make sense?
+
+930
+00:42:46,280 --> 00:42:50,425
+Other questions
+about this machinery?
+
+931
+00:42:50,425 --> 00:42:52,300
+It is, admittedly, a
+slightly baroque system.
+
+932
+00:42:52,300 --> 00:42:54,716
+You could probably imagine
+lots of ways in which you could
+
+933
+00:42:54,716 --> 00:42:57,240
+simplify this but, in fact,
+most successful systems sort of
+
+934
+00:42:57,240 --> 00:42:59,230
+look like this as
+they evolve over time.
+
+935
+00:42:59,230 --> 00:43:02,120
+As it turns out, you
+can make some good use
+
+936
+00:43:02,120 --> 00:43:04,800
+of these sandboxing mechanisms.
+
+937
+00:43:04,800 --> 00:43:07,960
+These are just sort of the basic
+Unix primitives that show up
+
+938
+00:43:07,960 --> 00:43:10,190
+in pretty much every
+Unix-like operating systems,
+
+939
+00:43:10,190 --> 00:43:13,900
+so Mac OS X has this, Linux
+has this, FreeBSD has this,
+
+940
+00:43:13,900 --> 00:43:17,585
+Solaris-- if anyone's
+still runs this, et cetera.
+
+941
+00:43:17,585 --> 00:43:20,820
+But in every one of these, there
+is actually more sophisticated
+
+942
+00:43:20,820 --> 00:43:22,730
+mechanisms that you
+might use, so Linux
+
+943
+00:43:22,730 --> 00:43:26,090
+has something called set COMP
+for sandboxing processes,
+
+944
+00:43:26,090 --> 00:43:29,170
+Mac OS X has its own
+thing called Seatbelt,
+
+945
+00:43:29,170 --> 00:43:31,420
+and there's all
+kinds of extensions.
+
+946
+00:43:31,420 --> 00:43:33,740
+We'll at one extension actually
+next week, just to see,
+
+947
+00:43:33,740 --> 00:43:36,330
+but this is just to get you
+familiar with the basics
+
+948
+00:43:36,330 --> 00:43:38,208
+that every Unix system has.
+
+949
+00:43:38,208 --> 00:43:41,210
+
+
+950
+00:43:41,210 --> 00:43:44,020
+So one sort of last
+bit of machinery
+
+951
+00:43:44,020 --> 00:43:46,870
+we want to look at
+before diving into OKWS,
+
+952
+00:43:46,870 --> 00:43:48,730
+is how do you deal
+with setuid binaries?
+
+953
+00:43:48,730 --> 00:43:52,950
+How do you protect yourself
+from these security holes,
+
+954
+00:43:52,950 --> 00:43:53,770
+if you will.
+
+955
+00:43:53,770 --> 00:43:56,970
+So the problem is that
+inevitably you'll have some
+
+956
+00:43:56,970 --> 00:44:00,060
+setuid binaries in your
+system like /bin/su, or sudo,
+
+957
+00:44:00,060 --> 00:44:03,890
+or what have you, and there's
+probably bugs in these
+
+958
+00:44:03,890 --> 00:44:07,300
+programs, so if someone can
+execute the setuid binary,
+
+959
+00:44:07,300 --> 00:44:11,522
+then that process
+might get root access,
+
+960
+00:44:11,522 --> 00:44:13,980
+so you don't want to do that--
+or don't want to allow that.
+
+961
+00:44:13,980 --> 00:44:17,640
+
+
+962
+00:44:17,640 --> 00:44:19,130
+The mechanism in
+Unix that is often
+
+963
+00:44:19,130 --> 00:44:22,980
+used to prevent a
+potentially malicious process
+
+964
+00:44:22,980 --> 00:44:26,430
+from exploiting
+setuid binaries is
+
+965
+00:44:26,430 --> 00:44:29,470
+to use the file system
+namespace to modify it,
+
+966
+00:44:29,470 --> 00:44:31,980
+using the chroot system call.
+
+967
+00:44:31,980 --> 00:44:34,280
+OKWS uses this
+pretty extensively.
+
+968
+00:44:34,280 --> 00:44:38,820
+So in Unix, what you can
+do is you can call chroot
+
+969
+00:44:38,820 --> 00:44:40,540
+on a particular directory.
+
+970
+00:44:40,540 --> 00:44:46,920
+So maybe you can chroot("/foo")
+and there's actually two
+
+971
+00:44:46,920 --> 00:44:49,010
+explanations I want to
+give to what chroot does.
+
+972
+00:44:49,010 --> 00:44:50,800
+The first one is just intuitive.
+
+973
+00:44:50,800 --> 00:44:53,960
+What it does is it means
+that after you run chroot,
+
+974
+00:44:53,960 --> 00:44:58,130
+the root directory or slash
+basically is equal to what /foo
+
+975
+00:44:58,130 --> 00:45:01,280
+used to be before
+you called chroot.
+
+976
+00:45:01,280 --> 00:45:04,690
+So it kind restricts your
+namespace down /foo so it looks
+
+977
+00:45:04,690 --> 00:45:06,150
+like that's all
+the stuff you have.
+
+978
+00:45:06,150 --> 00:45:11,610
+So if you have a file that
+used to be called /foo/x,
+
+979
+00:45:11,610 --> 00:45:15,390
+after calling chroot, you
+can get at that file by just
+
+980
+00:45:15,390 --> 00:45:17,230
+opening /x.
+
+981
+00:45:17,230 --> 00:45:20,930
+So just restrict your namespace
+down to a subdirectory.
+
+982
+00:45:20,930 --> 00:45:22,600
+So this is the
+intuitive version.
+
+983
+00:45:22,600 --> 00:45:24,110
+Of course, in
+security, what matters
+
+984
+00:45:24,110 --> 00:45:26,610
+is not the intuitive version,
+but what is the kernel exactly
+
+985
+00:45:26,610 --> 00:45:28,750
+doing with this system call?
+
+986
+00:45:28,750 --> 00:45:32,240
+What the kernel does is
+basically two things.
+
+987
+00:45:32,240 --> 00:45:34,810
+So when you call chroot
+a particular directory,
+
+988
+00:45:34,810 --> 00:45:36,000
+it does two things.
+
+989
+00:45:36,000 --> 00:45:39,300
+One, it changes
+what slash means,
+
+990
+00:45:39,300 --> 00:45:42,330
+so whenever you access--
+whenever you start a path
+
+991
+00:45:42,330 --> 00:45:46,910
+name with slash, the kernel will
+now plug in whatever the file
+
+992
+00:45:46,910 --> 00:45:47,890
+you gave to chroot.
+
+993
+00:45:47,890 --> 00:45:53,250
+It's roughly the /foo file
+from before you called chroot.
+
+994
+00:45:53,250 --> 00:45:56,800
+The other thing the kernel does,
+is it tries to prevent you from
+
+995
+00:45:56,800 --> 00:46:01,840
+escaping out of your / by doing
+/../ because you could imagine
+
+996
+00:46:01,840 --> 00:46:04,339
+in Unix, I could ask for, you
+know, give me /../etcpassword.
+
+997
+00:46:04,339 --> 00:46:07,552
+
+
+998
+00:46:07,552 --> 00:46:12,070
+So if I just prepended /foo,
+then this would not be good,
+
+999
+00:46:12,070 --> 00:46:14,605
+because I can just sort of
+walk out of /foo and go get
+
+1000
+00:46:14,605 --> 00:46:16,330
+/etc/password.
+
+1001
+00:46:16,330 --> 00:46:18,380
+So the other thing
+the Unix kernel does,
+
+1002
+00:46:18,380 --> 00:46:22,730
+when you call chroot, is
+for that particular process,
+
+1003
+00:46:22,730 --> 00:46:27,455
+it changes how it evaluates
+/../ in this directory,
+
+1004
+00:46:27,455 --> 00:46:33,860
+so it basically changes /../
+in /foo to point to itself,
+
+1005
+00:46:33,860 --> 00:46:36,780
+so it doesn't let you do
+this kind of escaping,
+
+1006
+00:46:36,780 --> 00:46:40,790
+and this change only applies to
+this process and not everyone
+
+1007
+00:46:40,790 --> 00:46:41,576
+else.
+
+1008
+00:46:41,576 --> 00:46:44,896
+Does that roughly make sense?
+
+1009
+00:46:44,896 --> 00:46:48,570
+So do you guys have
+any ideas about how
+
+1010
+00:46:48,570 --> 00:46:52,830
+you could escape a chroot
+environment because of the way
+
+1011
+00:46:52,830 --> 00:46:53,671
+it's implemented?
+
+1012
+00:46:53,671 --> 00:46:54,170
+Yeah.
+
+1013
+00:46:54,170 --> 00:46:55,628
+AUDIENCE: So if
+you're [INAUDIBLE],
+
+1014
+00:46:55,628 --> 00:46:57,920
+you can make a directory and
+then bring that directory,
+
+1015
+00:46:57,920 --> 00:47:00,044
+and then go back to your
+directory and [INAUDIBLE].
+
+1016
+00:47:00,044 --> 00:47:00,830
+PROFESSOR: Yeah.
+
+1017
+00:47:00,830 --> 00:47:03,750
+So, the interesting
+thing-- so the kernel
+
+1018
+00:47:03,750 --> 00:47:07,030
+only keeps track of
+one chroot directory.
+
+1019
+00:47:07,030 --> 00:47:09,800
+And I'll explain sort of the
+answer that I gave in a second.
+
+1020
+00:47:09,800 --> 00:47:15,970
+So what you could do is,
+maybe your chroot'd into /foo.
+
+1021
+00:47:15,970 --> 00:47:19,220
+
+
+1022
+00:47:19,220 --> 00:47:20,095
+You're sort of stuck.
+
+1023
+00:47:20,095 --> 00:47:21,140
+You want to get
+at /etc/password,
+
+1024
+00:47:21,140 --> 00:47:22,190
+but how do you do it?
+
+1025
+00:47:22,190 --> 00:47:24,540
+Well, what you could
+do is you can actually
+
+1026
+00:47:24,540 --> 00:47:29,110
+open the root directory now.
+
+1027
+00:47:29,110 --> 00:47:33,180
+That will give you a file
+descriptor for effectively what
+
+1028
+00:47:33,180 --> 00:47:35,350
+is /foo.
+
+1029
+00:47:35,350 --> 00:47:37,940
+Then you could
+call chroot again.
+
+1030
+00:47:37,940 --> 00:47:43,110
+Maybe you can chroot into /bar.
+
+1031
+00:47:43,110 --> 00:47:46,440
+So now the kernel changes plan.
+
+1032
+00:47:46,440 --> 00:47:50,840
+Root is no longer /foo but
+it's /foo/bar and this /../
+
+1033
+00:47:50,840 --> 00:47:53,060
+redirection only
+applies to /foo/bar/..
+
+1034
+00:47:53,060 --> 00:47:56,950
+
+
+1035
+00:47:56,950 --> 00:48:00,530
+But know that you still have
+the file descriptor for /foo.
+
+1036
+00:48:00,530 --> 00:48:04,320
+So now what you could do is
+you could change directories
+
+1037
+00:48:04,320 --> 00:48:11,140
+into that file descriptor,
+fchdir(fd) from this open call,
+
+1038
+00:48:11,140 --> 00:48:20,820
+and now you chdir(..) And at
+this point, you were in /foo,
+
+1039
+00:48:20,820 --> 00:48:22,910
+you go to /../ from foo.
+
+1040
+00:48:22,910 --> 00:48:25,230
+It's no longer looped
+back to /foo itself,
+
+1041
+00:48:25,230 --> 00:48:28,730
+because you now have a different
+route and now you can escape,
+
+1042
+00:48:28,730 --> 00:48:33,170
+so this is perhaps a good
+illustration for why the exact
+
+1043
+00:48:33,170 --> 00:48:34,170
+mechanism matters a lot.
+
+1044
+00:48:34,170 --> 00:48:36,720
+It's not, sort of, the intuitive
+explanation that matters.
+
+1045
+00:48:36,720 --> 00:48:41,730
+And partly as a result,
+in Unix only the root user
+
+1046
+00:48:41,730 --> 00:48:45,230
+can invoke chroot,
+because otherwise chroot
+
+1047
+00:48:45,230 --> 00:48:50,210
+would be fairly
+pointless, in some ways.
+
+1048
+00:48:50,210 --> 00:48:52,570
+So in Unix, you basically
+have to have uid 0 in order
+
+1049
+00:48:52,570 --> 00:48:54,830
+to chroot a process.
+
+1050
+00:48:54,830 --> 00:48:57,980
+It's a little bit of a
+disappointment in some ways,
+
+1051
+00:48:57,980 --> 00:49:00,700
+because if you wanted to
+build a really privileged
+
+1052
+00:49:00,700 --> 00:49:02,810
+separated system
+where everyone had
+
+1053
+00:49:02,810 --> 00:49:05,047
+just the minimum set of
+privileges necessary,
+
+1054
+00:49:05,047 --> 00:49:06,630
+you would probably
+need to use chroot,
+
+1055
+00:49:06,630 --> 00:49:08,740
+you would need to create
+new userids, et cetera,
+
+1056
+00:49:08,740 --> 00:49:10,090
+but in order to do
+that in Unix, you
+
+1057
+00:49:10,090 --> 00:49:11,715
+have to have a process
+running as root,
+
+1058
+00:49:11,715 --> 00:49:12,930
+which has lots of privileges.
+
+1059
+00:49:12,930 --> 00:49:16,050
+So it's a little bit of
+an unfortunate trade off,
+
+1060
+00:49:16,050 --> 00:49:19,080
+but it's probably one you could
+make some reasonable design
+
+1061
+00:49:19,080 --> 00:49:20,370
+decisions on.
+
+1062
+00:49:20,370 --> 00:49:21,080
+Question.
+
+1063
+00:49:21,080 --> 00:49:24,840
+AUDIENCE: If in the [INAUDIBLE]
+directory, so [INAUDIBLE]
+
+1064
+00:49:24,840 --> 00:49:28,200
+to a file that's in [INAUDIBLE].
+
+1065
+00:49:28,200 --> 00:49:31,420
+PROFESSOR: No, actually,
+unless you do this trick,
+
+1066
+00:49:31,420 --> 00:49:36,800
+the kernel evaluates symlinks in
+your root context, if you will.
+
+1067
+00:49:36,800 --> 00:49:39,187
+So if you have a symlink
+to /etc/password,
+
+1068
+00:49:39,187 --> 00:49:41,520
+it'll evaluate as if it is
+similar to /foo/etc/password.
+
+1069
+00:49:41,520 --> 00:49:43,012
+AUDIENCE: [INAUDIBLE].
+
+1070
+00:49:43,012 --> 00:49:45,970
+PROFESSOR: A hard link
+would not be protected.
+
+1071
+00:49:45,970 --> 00:49:46,650
+Yeah.
+
+1072
+00:49:46,650 --> 00:49:49,700
+So one way to set up a chroot
+environment without creating
+
+1073
+00:49:49,700 --> 00:49:51,790
+lots of copies of
+files is to, in fact,
+
+1074
+00:49:51,790 --> 00:49:54,420
+create a directory and hard
+link all these things back.
+
+1075
+00:49:54,420 --> 00:49:58,050
+That's fairly cheap
+and then use it.
+
+1076
+00:49:58,050 --> 00:50:00,550
+AUDIENCE: If a program gradually
+generates inodes and, like,
+
+1077
+00:50:00,550 --> 00:50:03,182
+actually not to give you
+the file descriptor--
+
+1078
+00:50:03,182 --> 00:50:03,890
+PROFESSOR: Right.
+
+1079
+00:50:03,890 --> 00:50:07,570
+So it's like a huge
+important detail here, is you
+
+1080
+00:50:07,570 --> 00:50:11,150
+can only access a file by
+path name, not by saying,
+
+1081
+00:50:11,150 --> 00:50:13,340
+I want to open inode number 23.
+
+1082
+00:50:13,340 --> 00:50:16,290
+This might be some weird file
+out there outside of my chroot.
+
+1083
+00:50:16,290 --> 00:50:20,820
+So in Unix you cannot open an
+inode by inode number unless
+
+1084
+00:50:20,820 --> 00:50:24,590
+you're root, of course.
+
+1085
+00:50:24,590 --> 00:50:27,060
+Other questions?
+
+1086
+00:50:27,060 --> 00:50:27,560
+All right.
+
+1087
+00:50:27,560 --> 00:50:29,351
+So I think we have sort
+of enough machinery
+
+1088
+00:50:29,351 --> 00:50:34,170
+now to see what these
+OKWS guys do, and probably
+
+1089
+00:50:34,170 --> 00:50:38,500
+a useful, quick
+introduction is by contrast
+
+1090
+00:50:38,500 --> 00:50:40,100
+to what everyone else does.
+
+1091
+00:50:40,100 --> 00:50:44,540
+So what is it that everyone else
+is doing that the OKWS guys are
+
+1092
+00:50:44,540 --> 00:50:45,540
+afraid of?
+
+1093
+00:50:45,540 --> 00:50:48,270
+So the alternative design
+that pretty much every web
+
+1094
+00:50:48,270 --> 00:50:51,180
+server follows, is like the
+unprivileged separating picture
+
+1095
+00:50:51,180 --> 00:50:54,900
+above there, so you might
+have web browsers out there
+
+1096
+00:50:54,900 --> 00:50:59,020
+on the internet, these guys are
+going to connect to your server
+
+1097
+00:50:59,020 --> 00:51:02,750
+and, inside of your server,
+you're basically going to have,
+
+1098
+00:51:02,750 --> 00:51:09,050
+basically one process, httpd,
+well, Apache, let's say.
+
+1099
+00:51:09,050 --> 00:51:13,473
+And this is one process running
+as a single userid called www
+
+1100
+00:51:13,473 --> 00:51:14,940
+in /etc/password.
+
+1101
+00:51:14,940 --> 00:51:17,850
+It takes all your
+connections, does everything
+
+1102
+00:51:17,850 --> 00:51:21,420
+with your process, including
+doing SSL processing maybe,
+
+1103
+00:51:21,420 --> 00:51:24,160
+including running
+application code and PHP,
+
+1104
+00:51:24,160 --> 00:51:27,760
+et cetera, all part
+of the same process.
+
+1105
+00:51:27,760 --> 00:51:31,380
+And if need be, this process
+will typically connect back
+
+1106
+00:51:31,380 --> 00:51:35,329
+to some database
+server, maybe MySQL
+
+1107
+00:51:35,329 --> 00:51:36,870
+could be running on
+the same machine,
+
+1108
+00:51:36,870 --> 00:51:38,640
+could be running elsewhere.
+
+1109
+00:51:38,640 --> 00:51:43,240
+And this MySQL process
+actually writes data to disk.
+
+1110
+00:51:43,240 --> 00:51:45,426
+But to connect to this
+MySQL, you probably
+
+1111
+00:51:45,426 --> 00:51:47,050
+have to provide a
+username and password
+
+1112
+00:51:47,050 --> 00:51:51,600
+but, typically, the way
+applications are written
+
+1113
+00:51:51,600 --> 00:51:54,600
+or, at least, not very security
+conscious applications are
+
+1114
+00:51:54,600 --> 00:51:57,280
+written, is that there's a
+single account on the MySQL
+
+1115
+00:51:57,280 --> 00:52:00,187
+server that the application
+knows the username and password
+
+1116
+00:52:00,187 --> 00:52:02,020
+for, so you just connect
+and you have access
+
+1117
+00:52:02,020 --> 00:52:02,853
+to all of your data.
+
+1118
+00:52:02,853 --> 00:52:04,670
+So it's super
+convenient to write,
+
+1119
+00:52:04,670 --> 00:52:07,291
+because you just write
+whatever code you want.
+
+1120
+00:52:07,291 --> 00:52:09,540
+You can access whatever data
+in the database you want.
+
+1121
+00:52:09,540 --> 00:52:11,870
+There's no real
+isolation, but it
+
+1122
+00:52:11,870 --> 00:52:14,410
+has security problems that
+these guys worry about,
+
+1123
+00:52:14,410 --> 00:52:18,450
+namely if there's bugs in
+Apache, maybe in SSL, maybe
+
+1124
+00:52:18,450 --> 00:52:21,010
+in the application code
+or in the PHP interpreter,
+
+1125
+00:52:21,010 --> 00:52:24,860
+then inevitably the answer
+is, if there's a bug
+
+1126
+00:52:24,860 --> 00:52:26,550
+and you can exploit
+it, then, yep,
+
+1127
+00:52:26,550 --> 00:52:30,470
+you get the whole
+application data contents.
+
+1128
+00:52:30,470 --> 00:52:31,700
+Does that make sense?
+
+1129
+00:52:31,700 --> 00:52:34,845
+You had some questions before.
+
+1130
+00:52:34,845 --> 00:52:35,499
+No?
+
+1131
+00:52:35,499 --> 00:52:36,040
+AUDIENCE: Oh.
+
+1132
+00:52:36,040 --> 00:52:36,936
+Uh, yeah, it's fine.
+
+1133
+00:52:36,936 --> 00:52:37,270
+Thank you.
+
+1134
+00:52:37,270 --> 00:52:38,145
+PROFESSOR: All right.
+
+1135
+00:52:38,145 --> 00:52:39,140
+No worries.
+
+1136
+00:52:39,140 --> 00:52:39,830
+OK.
+
+1137
+00:52:39,830 --> 00:52:42,387
+So this is sort of state of
+art what these guys really
+
+1138
+00:52:42,387 --> 00:52:43,470
+wanted to protect against.
+
+1139
+00:52:43,470 --> 00:52:48,340
+And in their case, I guess they
+worried a lot because they were
+
+1140
+00:52:48,340 --> 00:52:50,840
+thinking, well, they're building
+basically a dating website,
+
+1141
+00:52:50,840 --> 00:52:53,020
+okcupid.com and
+they really wanted
+
+1142
+00:52:53,020 --> 00:52:55,450
+to make sure their,
+I guess reputation,
+
+1143
+00:52:55,450 --> 00:52:58,520
+wouldn't be damaged by
+these data disclosures.
+
+1144
+00:52:58,520 --> 00:53:03,200
+So in fact, I
+guess-- from talking
+
+1145
+00:53:03,200 --> 00:53:04,890
+to the guy that
+wrote this paper,
+
+1146
+00:53:04,890 --> 00:53:07,350
+it seems like they actually
+haven't been compromised--
+
+1147
+00:53:07,350 --> 00:53:10,570
+or, at least, not
+that they know of--
+
+1148
+00:53:10,570 --> 00:53:13,610
+or their data wasn't leaked.
+
+1149
+00:53:13,610 --> 00:53:17,125
+And it seems to be partly
+as a result of running OKWS,
+
+1150
+00:53:17,125 --> 00:53:19,750
+partly as a result of maybe more
+proactive monitoring that they
+
+1151
+00:53:19,750 --> 00:53:22,870
+do, et cetera, but it seems
+to have worked out reasonably
+
+1152
+00:53:22,870 --> 00:53:25,740
+well for them, to
+some extent, I guess,
+
+1153
+00:53:25,740 --> 00:53:28,720
+because of this
+architecture that we have.
+
+1154
+00:53:28,720 --> 00:53:29,220
+OK.
+
+1155
+00:53:29,220 --> 00:53:33,190
+So the reason that
+people, I guess,
+
+1156
+00:53:33,190 --> 00:53:36,356
+don't break up their
+applications into smaller
+
+1157
+00:53:36,356 --> 00:53:37,730
+components is
+because it actually
+
+1158
+00:53:37,730 --> 00:53:40,820
+takes quite a bit of effort to
+separate out all their pieces
+
+1159
+00:53:40,820 --> 00:53:43,540
+of code and define clean
+interfaces between them,
+
+1160
+00:53:43,540 --> 00:53:45,215
+decide which data
+every component
+
+1161
+00:53:45,215 --> 00:53:47,505
+should have access to, or
+if you decide to implement
+
+1162
+00:53:47,505 --> 00:53:48,880
+new feature, you're
+going to have
+
+1163
+00:53:48,880 --> 00:53:52,620
+to change the data that every
+component has access to give it
+
+1164
+00:53:52,620 --> 00:53:54,940
+new privileges or take
+some away, et cetera.
+
+1165
+00:53:54,940 --> 00:54:00,350
+So it's a bit of some overhead
+for separating application,
+
+1166
+00:54:00,350 --> 00:54:02,480
+but in their case I
+guess they decided
+
+1167
+00:54:02,480 --> 00:54:05,890
+it was worth the effort.
+
+1168
+00:54:05,890 --> 00:54:10,540
+Let's try to understand how
+their web server design works,
+
+1169
+00:54:10,540 --> 00:54:14,980
+and perhaps one way to do
+it is to trace out roughly
+
+1170
+00:54:14,980 --> 00:54:22,700
+how http request gets
+processed by an OKWS server.
+
+1171
+00:54:22,700 --> 00:54:24,400
+So, similarly to
+that picture, there's
+
+1172
+00:54:24,400 --> 00:54:26,290
+probably a web browser
+out there somewhere
+
+1173
+00:54:26,290 --> 00:54:30,992
+that wants to go to
+okcupid.com, and in their design
+
+1174
+00:54:30,992 --> 00:54:32,450
+they sort of imagined
+they're going
+
+1175
+00:54:32,450 --> 00:54:34,949
+to have a bunch of machines,
+but we'll just look at probably
+
+1176
+00:54:34,949 --> 00:54:37,340
+just one front-end
+machine that is
+
+1177
+00:54:37,340 --> 00:54:41,310
+going to be running OKWS
+here and then another machine
+
+1178
+00:54:41,310 --> 00:54:43,180
+behind the scenes
+that's going to be
+
+1179
+00:54:43,180 --> 00:54:45,200
+storing the database somewhere.
+
+1180
+00:54:45,200 --> 00:54:48,410
+And I sort of imagine they're
+probably also using MySQL,
+
+1181
+00:54:48,410 --> 00:54:51,960
+because it's a nice piece
+of software in many ways.
+
+1182
+00:54:51,960 --> 00:54:54,210
+They don't want to re-implement
+this functionality,
+
+1183
+00:54:54,210 --> 00:54:56,780
+but they want to really
+protect this data, so
+
+1184
+00:54:56,780 --> 00:54:59,040
+that it's really hard
+to get to the raw disk
+
+1185
+00:54:59,040 --> 00:55:01,174
+or the raw database.
+
+1186
+00:55:01,174 --> 00:55:02,590
+So how does a
+request work, or how
+
+1187
+00:55:02,590 --> 00:55:05,400
+does a request get
+handled by OKWS?
+
+1188
+00:55:05,400 --> 00:55:07,960
+Well, the request
+first comes in and gets
+
+1189
+00:55:07,960 --> 00:55:10,570
+handled by this
+process they call
+
+1190
+00:55:10,570 --> 00:55:14,870
+okd for the OKWS dispatcher.
+
+1191
+00:55:14,870 --> 00:55:19,120
+So those guys look at what
+the request is asking for
+
+1192
+00:55:19,120 --> 00:55:21,690
+and then actually
+does a couple things.
+
+1193
+00:55:21,690 --> 00:55:25,380
+So first it might need
+to log the request,
+
+1194
+00:55:25,380 --> 00:55:30,680
+so it forwards it to this
+component called oklogd,
+
+1195
+00:55:30,680 --> 00:55:34,590
+then it might need to
+generate some templates,
+
+1196
+00:55:34,590 --> 00:55:37,020
+maybe before the
+request came in even.
+
+1197
+00:55:37,020 --> 00:55:42,670
+And this is handled by
+another component called pubd.
+
+1198
+00:55:42,670 --> 00:55:45,390
+And finally, there's
+a particular service
+
+1199
+00:55:45,390 --> 00:55:48,580
+that this request
+is being sent to,
+
+1200
+00:55:48,580 --> 00:55:51,740
+so okd has a table of a bunch
+of services it supports.
+
+1201
+00:55:51,740 --> 00:55:54,110
+This request is presumably
+going to one of them,
+
+1202
+00:55:54,110 --> 00:55:58,260
+and, as a result, okd
+will forward this request
+
+1203
+00:55:58,260 --> 00:56:01,890
+to a particular service process.
+
+1204
+00:56:01,890 --> 00:56:04,300
+And the job of the service
+is to actually do something
+
+1205
+00:56:04,300 --> 00:56:05,910
+with this request,
+like subscribe
+
+1206
+00:56:05,910 --> 00:56:08,910
+the guy to a newsletter
+or to match him
+
+1207
+00:56:08,910 --> 00:56:14,430
+to whoever else is using
+OkCupid, using the database.
+
+1208
+00:56:14,430 --> 00:56:17,830
+And in order to do this,
+the service presumably
+
+1209
+00:56:17,830 --> 00:56:21,120
+might need to log some
+information about the request
+
+1210
+00:56:21,120 --> 00:56:24,350
+as well by talking to
+this oklogd component.
+
+1211
+00:56:24,350 --> 00:56:28,282
+And at the end of the day it's
+got to talk to this database.
+
+1212
+00:56:28,282 --> 00:56:29,740
+So the way these
+this guys actually
+
+1213
+00:56:29,740 --> 00:56:31,770
+implement talking
+to the database
+
+1214
+00:56:31,770 --> 00:56:34,850
+is that, unlike that Apache
+picture where you just
+
+1215
+00:56:34,850 --> 00:56:37,890
+talk to the database and
+issue arbitrary SQL queries,
+
+1216
+00:56:37,890 --> 00:56:45,480
+these guys come up with this
+notion of a database proxy that
+
+1217
+00:56:45,480 --> 00:56:48,120
+sits in front of
+the MySQL database
+
+1218
+00:56:48,120 --> 00:56:54,220
+and accepts requests from the
+service to do some queries,
+
+1219
+00:56:54,220 --> 00:57:00,220
+and I think that's most
+of the picture for OKWS.
+
+1220
+00:57:00,220 --> 00:57:06,040
+There's another component
+in this whole picture that
+
+1221
+00:57:06,040 --> 00:57:09,520
+sparks this whole mess, so
+they have another component
+
+1222
+00:57:09,520 --> 00:57:13,800
+called okld, for the
+ok launcher demon,
+
+1223
+00:57:13,800 --> 00:57:17,720
+and this guy is responsible for
+starting all these processes
+
+1224
+00:57:17,720 --> 00:57:21,075
+on this front end
+web server machine.
+
+1225
+00:57:21,075 --> 00:57:22,700
+Hopefully some of
+these things actually
+
+1226
+00:57:22,700 --> 00:57:24,283
+look familiar, because
+this is exactly
+
+1227
+00:57:24,283 --> 00:57:27,062
+the architecture of [INAUDIBLE]
+for your lab assignment,
+
+1228
+00:57:27,062 --> 00:57:30,905
+so this is basically what
+our design is all based on.
+
+1229
+00:57:30,905 --> 00:57:33,410
+It seems like a nice
+design, actually.
+
+1230
+00:57:33,410 --> 00:57:35,740
+Well, we don't
+have pubd or logd,
+
+1231
+00:57:35,740 --> 00:57:39,530
+but we have these two
+guys and a service.
+
+1232
+00:57:39,530 --> 00:57:41,450
+No database proxy either.
+
+1233
+00:57:41,450 --> 00:57:45,590
+All right, so any
+questions about OKWS?
+
+1234
+00:57:45,590 --> 00:57:46,090
+Yes.
+
+1235
+00:57:46,090 --> 00:57:47,030
+
+
+1236
+00:57:47,030 --> 00:57:51,095
+AUDIENCE: Dbproxy does
+not accept SQL queries,
+
+1237
+00:57:51,095 --> 00:57:51,931
+it accepts some sort
+
+1238
+00:57:51,931 --> 00:57:52,255
+
+
+1239
+00:57:52,255 --> 00:57:52,880
+PROFESSOR: Yes.
+
+1240
+00:57:52,880 --> 00:57:54,338
+What does this
+interface look like?
+
+1241
+00:57:54,338 --> 00:57:56,450
+They don't really describe
+it in a lot of detail,
+
+1242
+00:57:56,450 --> 00:58:00,190
+but one thing I sort of imagine
+you could do in this database
+
+1243
+00:58:00,190 --> 00:58:02,650
+proxy is basically
+have this supply
+
+1244
+00:58:02,650 --> 00:58:05,840
+a bunch of arguments
+for SQL query templates.
+
+1245
+00:58:05,840 --> 00:58:08,120
+So it might be
+that this dbproxy,
+
+1246
+00:58:08,120 --> 00:58:11,710
+this one in particular,
+maybe is for finding,
+
+1247
+00:58:11,710 --> 00:58:13,530
+I don't know, your
+friends or something,
+
+1248
+00:58:13,530 --> 00:58:16,190
+so inside of the
+dbproxy maybe there's
+
+1249
+00:58:16,190 --> 00:58:31,634
+a template query like select
+ID from friends, where user-- I
+
+1250
+00:58:31,634 --> 00:58:33,300
+guess this is like
+the ID of the friend,
+
+1251
+00:58:33,300 --> 00:58:36,290
+and this is the ID of the
+person who is the friend of.
+
+1252
+00:58:36,290 --> 00:58:39,260
+The user equals, I don't
+know, person D here,
+
+1253
+00:58:39,260 --> 00:58:42,020
+or something, or
+person S here, right?
+
+1254
+00:58:42,020 --> 00:58:43,810
+And they sort of
+sanitize this string,
+
+1255
+00:58:43,810 --> 00:58:46,850
+and I imagine this RPC
+request here sort of looks
+
+1256
+00:58:46,850 --> 00:58:53,970
+like do query one, and the
+argument is, I don't know,
+
+1257
+00:58:53,970 --> 00:58:55,020
+"Alice."
+
+1258
+00:58:55,020 --> 00:58:57,930
+I sort of imagine this
+RPC interface looks
+
+1259
+00:58:57,930 --> 00:59:00,410
+like this, where the
+application knows ahead of time
+
+1260
+00:59:00,410 --> 00:59:02,720
+that this database
+proxy is willing to run
+
+1261
+00:59:02,720 --> 00:59:04,740
+three kinds of
+queries on its behalf,
+
+1262
+00:59:04,740 --> 00:59:07,270
+and now I want to
+run query number one
+
+1263
+00:59:07,270 --> 00:59:09,010
+and the argument is Alice.
+
+1264
+00:59:09,010 --> 00:59:10,960
+And that's sort of
+the way I get access
+
+1265
+00:59:10,960 --> 00:59:13,170
+to any data in the database.
+
+1266
+00:59:13,170 --> 00:59:16,580
+Does this make sense?
+
+1267
+00:59:16,580 --> 00:59:19,661
+AUDIENCE: Could an external
+user at the web browser level
+
+1268
+00:59:19,661 --> 00:59:21,410
+send the request like
+that to the database
+
+1269
+00:59:21,410 --> 00:59:23,104
+or is that all internal?
+
+1270
+00:59:23,104 --> 00:59:24,020
+PROFESSOR: Well, yeah.
+
+1271
+00:59:24,020 --> 00:59:25,140
+So, how does this work?
+
+1272
+00:59:25,140 --> 00:59:26,723
+It's actually kind
+of weird, that this
+
+1273
+00:59:26,723 --> 00:59:28,764
+is a separate machine,
+because now it seems like,
+
+1274
+00:59:28,764 --> 00:59:31,350
+why don't just connect to
+the database proxy yourself,
+
+1275
+00:59:31,350 --> 00:59:33,850
+or to the MySQL server, right?
+
+1276
+00:59:33,850 --> 00:59:35,760
+So what prevents
+this in their design?
+
+1277
+00:59:35,760 --> 00:59:36,830
+AUDIENCE: Fire wall?
+
+1278
+00:59:36,830 --> 00:59:38,060
+PROFESSOR: Yeah,
+probably at some level.
+
+1279
+00:59:38,060 --> 00:59:40,185
+They don't really describe
+this in too much detail,
+
+1280
+00:59:40,185 --> 00:59:43,460
+but probably this is some
+internal network, where there's
+
+1281
+00:59:43,460 --> 00:59:45,424
+like a switch here,
+and this machine
+
+1282
+00:59:45,424 --> 00:59:47,090
+is connected to the
+switch, this machine
+
+1283
+00:59:47,090 --> 00:59:48,850
+is connected to the
+switch, but the switch
+
+1284
+00:59:48,850 --> 00:59:50,516
+is not reachable from
+the outside world.
+
+1285
+00:59:50,516 --> 00:59:52,610
+It's like there is an
+internet connection here
+
+1286
+00:59:52,610 --> 00:59:54,319
+and those guys are
+some back-end network.
+
+1287
+00:59:54,319 --> 00:59:56,234
+Or maybe they're actually
+on the same network,
+
+1288
+00:59:56,234 --> 00:59:59,110
+but there's a firewall here that
+has rules that say, well, you
+
+1289
+00:59:59,110 --> 01:00:01,570
+can only connect to this
+front-end machine on port 80.
+
+1290
+01:00:01,570 --> 01:00:05,240
+You cannot talk to
+the back-end server.
+
+1291
+01:00:05,240 --> 01:00:06,504
+So that's one plan.
+
+1292
+01:00:06,504 --> 01:00:08,170
+I guess the other
+plan they have in mind
+
+1293
+01:00:08,170 --> 01:00:11,530
+is that actually when you
+connect to this database proxy,
+
+1294
+01:00:11,530 --> 01:00:15,580
+you have to supply this
+20 byte token thing,
+
+1295
+01:00:15,580 --> 01:00:18,920
+and unless you supply
+it, the dbproxy
+
+1296
+01:00:18,920 --> 01:00:20,499
+will reject your connection.
+
+1297
+01:00:20,499 --> 01:00:22,290
+So the rule is you open
+the TCP connection,
+
+1298
+01:00:22,290 --> 01:00:23,320
+you send your 20 bytes.
+
+1299
+01:00:23,320 --> 01:00:24,736
+If they're not the
+right 20 bytes,
+
+1300
+01:00:24,736 --> 01:00:27,820
+your connection gets
+closed, and hopefully this
+
+1301
+01:00:27,820 --> 01:00:30,440
+is something that's relatively
+easy for the database proxy
+
+1302
+01:00:30,440 --> 01:00:34,690
+to implement, so
+that there's probably
+
+1303
+01:00:34,690 --> 01:00:38,420
+low probability of a bug in
+that token checking logic that's
+
+1304
+01:00:38,420 --> 01:00:39,590
+right up front.
+
+1305
+01:00:39,590 --> 01:00:41,900
+And unless you
+have the token, you
+
+1306
+01:00:41,900 --> 01:00:44,360
+will not be able to do
+anything else of interest
+
+1307
+01:00:44,360 --> 01:00:45,856
+to the database server.
+
+1308
+01:00:45,856 --> 01:00:50,300
+That's, I think, their
+sort of design goal here.
+
+1309
+01:00:50,300 --> 01:00:53,180
+Make sense?
+
+1310
+01:00:53,180 --> 01:00:54,000
+All right.
+
+1311
+01:00:54,000 --> 01:00:55,900
+So, let's try to
+figure out, I guess,
+
+1312
+01:00:55,900 --> 01:01:00,740
+how these guys isolate
+these different processes.
+
+1313
+01:01:00,740 --> 01:01:03,850
+So how do they make sure
+that all these components
+
+1314
+01:01:03,850 --> 01:01:08,690
+don't trample on each other?
+
+1315
+01:01:08,690 --> 01:01:09,680
+What's the plan?
+
+1316
+01:01:09,680 --> 01:01:12,488
+
+
+1317
+01:01:12,488 --> 01:01:14,859
+AUDIENCE: Different roots
+and different userids?
+
+1318
+01:01:14,859 --> 01:01:17,400
+PROFESSOR: Yeah, so pretty much
+every one of these components
+
+1319
+01:01:17,400 --> 01:01:20,410
+runs as a difference uid, so
+they have this whole table
+
+1320
+01:01:20,410 --> 01:01:23,620
+in the paper that describes,
+for every component,
+
+1321
+01:01:23,620 --> 01:01:25,250
+where is it running
+and what's the uid.
+
+1322
+01:01:25,250 --> 01:01:29,830
+So we can write this out,
+so okd has its own uid,
+
+1323
+01:01:29,830 --> 01:01:34,850
+pubd has its own uid, the
+logger has its own uid.
+
+1324
+01:01:34,850 --> 01:01:37,850
+okld runs as root, which
+is kind of unfortunate,
+
+1325
+01:01:37,850 --> 01:01:40,380
+but may be all right.
+
+1326
+01:01:40,380 --> 01:01:43,200
+Then, there's a whole bunch of
+dynamically assigned userids
+
+1327
+01:01:43,200 --> 01:01:43,960
+for every service.
+
+1328
+01:01:43,960 --> 01:01:48,880
+I sort of imagine
+he has ID 51001.
+
+1329
+01:01:48,880 --> 01:01:52,260
+So this makes sure that
+every service cannot poke
+
+1330
+01:01:52,260 --> 01:01:55,980
+at the processes
+of other services,
+
+1331
+01:01:55,980 --> 01:02:00,120
+and they also use chroot
+pretty extensively,
+
+1332
+01:02:00,120 --> 01:02:03,560
+so every one of these guys is
+chroot-ed into some directory.
+
+1333
+01:02:03,560 --> 01:02:05,290
+They sort of initially
+say, well, you
+
+1334
+01:02:05,290 --> 01:02:08,350
+should really chroot everyone
+into a separate directory.
+
+1335
+01:02:08,350 --> 01:02:11,730
+As it turns out,
+in that table, it
+
+1336
+01:02:11,730 --> 01:02:15,190
+turns out that okd
+and all the services
+
+1337
+01:02:15,190 --> 01:02:19,060
+basically share a
+chroot directory.
+
+1338
+01:02:19,060 --> 01:02:21,111
+It's kind of weird.
+
+1339
+01:02:21,111 --> 01:02:25,370
+Why do you guys think they
+put okd and the services
+
+1340
+01:02:25,370 --> 01:02:29,880
+into a single chroot and not
+give them their own chroots?
+
+1341
+01:02:29,880 --> 01:02:30,380
+Weird.
+
+1342
+01:02:30,380 --> 01:02:31,335
+Yeah.
+
+1343
+01:02:31,335 --> 01:02:33,095
+AUDIENCE: okd is not root.
+
+1344
+01:02:33,095 --> 01:02:35,250
+PROFESSOR: Well, yeah,
+but like why don't they
+
+1345
+01:02:35,250 --> 01:02:37,860
+put pubd and oklogd and
+everyone else in the same
+
+1346
+01:02:37,860 --> 01:02:38,770
+chroot as well?
+
+1347
+01:02:38,770 --> 01:02:41,494
+
+
+1348
+01:02:41,494 --> 01:02:42,856
+AUDIENCE: Okld [INAUDIBLE].
+
+1349
+01:02:42,856 --> 01:02:44,770
+PROFESSOR: okld is
+actually sitting out here
+
+1350
+01:02:44,770 --> 01:02:46,030
+in a separate chroot.
+
+1351
+01:02:46,030 --> 01:02:46,970
+This guy, this guy.
+
+1352
+01:02:46,970 --> 01:02:49,620
+
+
+1353
+01:02:49,620 --> 01:02:51,000
+Actually okld is not chroot.
+
+1354
+01:02:51,000 --> 01:02:52,250
+I'm sorry about that.
+
+1355
+01:02:52,250 --> 01:02:53,516
+These guys are chroot.
+
+1356
+01:02:53,516 --> 01:02:55,309
+Does it matter?
+
+1357
+01:02:55,309 --> 01:02:57,225
+AUDIENCE: I was thinking,
+if the services have
+
+1358
+01:02:57,225 --> 01:03:00,982
+to share a lot of data, where's
+the [INAUDIBLE] isolate them?
+
+1359
+01:03:00,982 --> 01:03:01,690
+PROFESSOR: Maybe.
+
+1360
+01:03:01,690 --> 01:03:03,190
+Actually, I think
+what's going on
+
+1361
+01:03:03,190 --> 01:03:06,660
+is they have to share some
+data, but none of this data
+
+1362
+01:03:06,660 --> 01:03:08,910
+actually lives in the file,
+so they pass a lot of data
+
+1363
+01:03:08,910 --> 01:03:11,920
+through sockets from
+okd to the services.
+
+1364
+01:03:11,920 --> 01:03:14,650
+But in fact, none of these
+guys store anything of interest
+
+1365
+01:03:14,650 --> 01:03:16,860
+at all in the file system.
+
+1366
+01:03:16,860 --> 01:03:21,150
+So as a result, there's pretty
+much nothing interesting
+
+1367
+01:03:21,150 --> 01:03:24,510
+in the chroot directory, so
+I imagine the OKWS guys just
+
+1368
+01:03:24,510 --> 01:03:27,442
+decided, well, there's
+probably some overhead
+
+1369
+01:03:27,442 --> 01:03:28,900
+to creating a
+chroot, like you have
+
+1370
+01:03:28,900 --> 01:03:30,316
+to create a copy
+of the directory,
+
+1371
+01:03:30,316 --> 01:03:33,470
+there is maybe some management
+overhead for every chroot.
+
+1372
+01:03:33,470 --> 01:03:36,330
+Whereas, for this, there's
+no real files here,
+
+1373
+01:03:36,330 --> 01:03:37,920
+so maybe that's all right.
+
+1374
+01:03:37,920 --> 01:03:39,480
+I mean, there's not
+a clear, sort of,
+
+1375
+01:03:39,480 --> 01:03:42,280
+cut trade off here, or
+not a clear-cut argument
+
+1376
+01:03:42,280 --> 01:03:44,930
+which way you should go,
+but certainly prevents
+
+1377
+01:03:44,930 --> 01:03:46,760
+from setuid binaries.
+
+1378
+01:03:46,760 --> 01:03:49,260
+The reason that these guys are
+probably in different chroots
+
+1379
+01:03:49,260 --> 01:03:50,940
+is because there is actually
+some interesting stuff there.
+
+1380
+01:03:50,940 --> 01:03:52,560
+There's maybe the
+templates here,
+
+1381
+01:03:52,560 --> 01:03:54,300
+maybe there's a log
+file here, so you
+
+1382
+01:03:54,300 --> 01:03:56,260
+don't want these guys
+accidentally reading
+
+1383
+01:03:56,260 --> 01:03:59,940
+the log file for some
+reason, but there's
+
+1384
+01:03:59,940 --> 01:04:02,510
+no real mutable state
+inside of the chroot shared
+
+1385
+01:04:02,510 --> 01:04:05,050
+by all okd and the services.
+
+1386
+01:04:05,050 --> 01:04:07,770
+AUDIENCE: Don't the services
+have, like, two files
+
+1387
+01:04:07,770 --> 01:04:11,032
+or, I don't know, aspx files.
+
+1388
+01:04:11,032 --> 01:04:13,170
+PROFESSOR: Well, at least
+the way they describe it
+
+1389
+01:04:13,170 --> 01:04:18,480
+in the paper, the service is
+a single C++ compiled binary,
+
+1390
+01:04:18,480 --> 01:04:23,477
+so there's actually no extra
+files, and there are templates,
+
+1391
+01:04:23,477 --> 01:04:26,060
+but those actually get passed
+in through this weird mechanism,
+
+1392
+01:04:26,060 --> 01:04:28,280
+where pubd has the
+templates in its directory,
+
+1393
+01:04:28,280 --> 01:04:31,560
+it renders them-- or sort
+of pre-computes them--
+
+1394
+01:04:31,560 --> 01:04:34,500
+sends them to okd and okd
+gives the templates to all
+
+1395
+01:04:34,500 --> 01:04:35,960
+the services through RPC calls.
+
+1396
+01:04:35,960 --> 01:04:38,020
+So they sit in memory,
+but they're actually not
+
+1397
+01:04:38,020 --> 01:04:40,590
+directly accessible
+through the file system.
+
+1398
+01:04:40,590 --> 01:04:43,170
+It's a somewhat
+paranoid design here.
+
+1399
+01:04:43,170 --> 01:04:44,700
+Can't even read the templates.
+
+1400
+01:04:44,700 --> 01:04:49,860
+
+
+1401
+01:04:49,860 --> 01:04:52,712
+So what's the point of having
+all these components split up?
+
+1402
+01:04:52,712 --> 01:04:54,420
+So I guess let's talk
+about maybe oklogd,
+
+1403
+01:04:54,420 --> 01:04:56,530
+so why do you have
+a separate oklogd?
+
+1404
+01:04:56,530 --> 01:04:59,970
+
+
+1405
+01:04:59,970 --> 01:05:00,795
+Yeah.
+
+1406
+01:05:00,795 --> 01:05:02,503
+AUDIENCE: Because if
+you had [INAUDIBLE],
+
+1407
+01:05:02,503 --> 01:05:04,245
+you could overwrite
+logs, or truncate log.
+
+1408
+01:05:04,245 --> 01:05:05,230
+PROFESSOR: Yeah,
+so we really want
+
+1409
+01:05:05,230 --> 01:05:08,025
+to make sure that if something
+goes wrong, the log, at least,
+
+1410
+01:05:08,025 --> 01:05:09,180
+is intact.
+
+1411
+01:05:09,180 --> 01:05:10,920
+So there's a separate
+log file that
+
+1412
+01:05:10,920 --> 01:05:15,570
+is only writable by this
+uid, and all the log messages
+
+1413
+01:05:15,570 --> 01:05:19,770
+are sent as RPCs to
+this log service,
+
+1414
+01:05:19,770 --> 01:05:23,360
+and even if everything else
+gets compromised-- well,
+
+1415
+01:05:23,360 --> 01:05:26,940
+except for okld-- then
+the log is still intact,
+
+1416
+01:05:26,940 --> 01:05:30,140
+because they talk about the
+process of appending noise
+
+1417
+01:05:30,140 --> 01:05:30,644
+to this log.
+
+1418
+01:05:30,644 --> 01:05:31,560
+So what is this about?
+
+1419
+01:05:31,560 --> 01:05:32,390
+Does this matter?
+
+1420
+01:05:32,390 --> 01:05:35,061
+Should we worry
+about this noise?
+
+1421
+01:05:35,061 --> 01:05:36,384
+Yeah.
+
+1422
+01:05:36,384 --> 01:05:38,560
+AUDIENCE: If somehow
+you accidentally find
+
+1423
+01:05:38,560 --> 01:05:41,290
+a way to read the log
+and you can't see what
+
+1424
+01:05:41,290 --> 01:05:42,866
+everyone else has been doing?
+
+1425
+01:05:42,866 --> 01:05:45,240
+PROFESSOR: No, I think this
+noise thing they are actually
+
+1426
+01:05:45,240 --> 01:05:48,970
+worried about is that,
+suppose you compromise
+
+1427
+01:05:48,970 --> 01:05:52,394
+a service or you compromise
+pubd or something,
+
+1428
+01:05:52,394 --> 01:05:54,310
+you all of a sudden might
+be able to write log
+
+1429
+01:05:54,310 --> 01:05:56,018
+messages to the log,
+and you can actually
+
+1430
+01:05:56,018 --> 01:05:59,220
+write whatever you want
+to the log at that point.
+
+1431
+01:05:59,220 --> 01:06:02,049
+So the only guarantee they claim
+to provide is that, I guess,
+
+1432
+01:06:02,049 --> 01:06:04,340
+before the point of the
+compromise, all the log entries
+
+1433
+01:06:04,340 --> 01:06:07,370
+are intact, and afterwards
+there is sort of legitimate log
+
+1434
+01:06:07,370 --> 01:06:09,170
+entries interspersed
+with whatever
+
+1435
+01:06:09,170 --> 01:06:12,400
+else the attacker wants to log.
+
+1436
+01:06:12,400 --> 01:06:15,750
+One actually cool thing about
+having oklogd be a separate
+
+1437
+01:06:15,750 --> 01:06:19,220
+process instead of it just
+being an append-only file,
+
+1438
+01:06:19,220 --> 01:06:22,770
+is that oklogd cannot add some
+extra information to each log
+
+1439
+01:06:22,770 --> 01:06:26,080
+entry, because you could imagine
+maybe the operating system
+
+1440
+01:06:26,080 --> 01:06:30,230
+supports an append-only file,
+but then you don't actually
+
+1441
+01:06:30,230 --> 01:06:33,220
+know who wrote anything
+to a file, when that was,
+
+1442
+01:06:33,220 --> 01:06:35,010
+whereas oklogd,
+for every message,
+
+1443
+01:06:35,010 --> 01:06:37,260
+it can actually maybe time
+stamp it and say, actually,
+
+1444
+01:06:37,260 --> 01:06:40,250
+I know this came from this
+service, or this came from okd,
+
+1445
+01:06:40,250 --> 01:06:43,560
+so you actually get extra
+information in that log file
+
+1446
+01:06:43,560 --> 01:06:46,270
+because it's a
+separate service here.
+
+1447
+01:06:46,270 --> 01:06:49,110
+Make sense?
+
+1448
+01:06:49,110 --> 01:06:52,420
+So what's the point
+of this okld guy?
+
+1449
+01:06:52,420 --> 01:06:56,795
+Why do we need this guy
+to be running as root?
+
+1450
+01:06:56,795 --> 01:06:58,540
+I guess a couple reasons.
+
+1451
+01:06:58,540 --> 01:07:02,252
+AUDIENCE: If you want no
+one else to run as root,
+
+1452
+01:07:02,252 --> 01:07:04,100
+then you need okld to
+delegate who it is.
+
+1453
+01:07:04,100 --> 01:07:04,725
+PROFESSOR: Yes.
+
+1454
+01:07:04,725 --> 01:07:07,250
+So someone needs to set up
+this whole uid chroot thing,
+
+1455
+01:07:07,250 --> 01:07:11,110
+and you need root for this
+in Unix, so okld is it.
+
+1456
+01:07:11,110 --> 01:07:12,505
+That's one reason.
+
+1457
+01:07:12,505 --> 01:07:13,240
+Anything else?
+
+1458
+01:07:13,240 --> 01:07:14,220
+AUDIENCE: To define 80?
+
+1459
+01:07:14,220 --> 01:07:14,940
+PROFESSOR: Oh, yeah, yeah.
+
+1460
+01:07:14,940 --> 01:07:17,080
+This like whole listening
+on a port business,
+
+1461
+01:07:17,080 --> 01:07:23,400
+you have to bind on port 80, so
+okld does that as well for us.
+
+1462
+01:07:23,400 --> 01:07:26,385
+Anything else?
+
+1463
+01:07:26,385 --> 01:07:28,860
+AUDIENCE: Complete to
+open the log file oklogd.
+
+1464
+01:07:28,860 --> 01:07:32,660
+You don't want to open oklogd
+to have access to open the file.
+
+1465
+01:07:32,660 --> 01:07:34,961
+You want to open
+it for [INAUDIBLE].
+
+1466
+01:07:34,961 --> 01:07:35,669
+PROFESSOR: Maybe.
+
+1467
+01:07:35,669 --> 01:07:37,028
+Actually, yeah.
+
+1468
+01:07:37,028 --> 01:07:38,740
+I don't know.
+
+1469
+01:07:38,740 --> 01:07:40,610
+I forget this from
+the source code
+
+1470
+01:07:40,610 --> 01:07:42,460
+whether they actually
+do this or not.
+
+1471
+01:07:42,460 --> 01:07:43,380
+You could imagine absolutley--
+
+1472
+01:07:43,380 --> 01:07:45,040
+AUDIENCE: I think they write
+it in the paper as well.
+
+1473
+01:07:45,040 --> 01:07:45,748
+PROFESSOR: I see.
+
+1474
+01:07:45,748 --> 01:07:48,381
+So okld opens the log
+file and passes it in?
+
+1475
+01:07:48,381 --> 01:07:48,880
+Could be.
+
+1476
+01:07:48,880 --> 01:07:50,505
+AUDIENCE: Because
+otherwise an attacker
+
+1477
+01:07:50,505 --> 01:07:53,100
+that compromised oklogd would
+be able to erase the entire log.
+
+1478
+01:07:53,100 --> 01:07:54,350
+PROFESSOR: That's right, yeah.
+
+1479
+01:07:54,350 --> 01:07:56,840
+So maybe you want to
+open in append-only mode
+
+1480
+01:07:56,840 --> 01:07:59,616
+and then pass it
+to oklogd and then
+
+1481
+01:07:59,616 --> 01:08:02,300
+you have more security
+guarantees for the log.
+
+1482
+01:08:02,300 --> 01:08:03,840
+Yeah, that's
+actually pretty cool.
+
+1483
+01:08:03,840 --> 01:08:09,650
+I missed that on the paper,
+but makes a lot of sense, yeah.
+
+1484
+01:08:09,650 --> 01:08:12,200
+Any other things
+okld is doing for us?
+
+1485
+01:08:12,200 --> 01:08:14,174
+
+
+1486
+01:08:14,174 --> 01:08:15,340
+I think that's basically it.
+
+1487
+01:08:15,340 --> 01:08:16,756
+These are the main
+things that you
+
+1488
+01:08:16,756 --> 01:08:18,910
+can't do unless
+you're root, and okld
+
+1489
+01:08:18,910 --> 01:08:21,890
+is sort of the component
+that ends up having
+
+1490
+01:08:21,890 --> 01:08:25,479
+to do all these operations.
+
+1491
+01:08:25,479 --> 01:08:29,439
+So I guess we had
+this homework question
+
+1492
+01:08:29,439 --> 01:08:31,470
+about what happens
+if you leak this 20
+
+1493
+01:08:31,470 --> 01:08:33,279
+byte database token thing.
+
+1494
+01:08:33,279 --> 01:08:34,720
+So what do you guys think?
+
+1495
+01:08:34,720 --> 01:08:36,740
+What's the damage?
+
+1496
+01:08:36,740 --> 01:08:38,180
+Should we leak these guys?
+
+1497
+01:08:38,180 --> 01:08:39,290
+Should we worry about it?
+
+1498
+01:08:39,290 --> 01:08:42,060
+
+
+1499
+01:08:42,060 --> 01:08:42,643
+Anything else?
+
+1500
+01:08:42,644 --> 01:08:45,404
+
+
+1501
+01:08:45,404 --> 01:08:47,728
+AUDIENCE: The
+attacker can pretend
+
+1502
+01:08:47,729 --> 01:08:49,640
+to be that specific
+service [INAUDIBLE].
+
+1503
+01:08:49,640 --> 01:08:50,889
+PROFESSOR: That's right, yeah.
+
+1504
+01:08:50,890 --> 01:08:52,790
+So, you might be able to
+now connect and issue,
+
+1505
+01:08:52,790 --> 01:08:53,890
+of course, all these
+template queries.
+
+1506
+01:08:53,890 --> 01:08:56,055
+That actually seems fairly
+straightforward, I guess,
+
+1507
+01:08:56,055 --> 01:08:57,308
+from this picture.
+
+1508
+01:08:57,309 --> 01:08:59,600
+You probably need to compromise
+one of these components
+
+1509
+01:08:59,600 --> 01:09:01,109
+to be able to connect
+to the database
+
+1510
+01:09:01,109 --> 01:09:02,192
+server in the first place.
+
+1511
+01:09:02,192 --> 01:09:04,680
+So I guess if you
+have this token
+
+1512
+01:09:04,680 --> 01:09:08,550
+and you manage to compromise one
+of these pieces in the picture,
+
+1513
+01:09:08,550 --> 01:09:11,631
+then you could run all
+these queries as well.
+
+1514
+01:09:11,631 --> 01:09:13,619
+Make sense?
+
+1515
+01:09:13,620 --> 01:09:16,845
+Fairly straightforward stuff.
+
+1516
+01:09:16,845 --> 01:09:21,600
+OK, I guess let's look
+at, could you do better?
+
+1517
+01:09:21,600 --> 01:09:24,310
+Could you do better
+than this OKWS design?
+
+1518
+01:09:24,310 --> 01:09:26,700
+Except for make this
+whole argument about,
+
+1519
+01:09:26,700 --> 01:09:30,319
+well, we might be able to do
+even better, like allocating
+
+1520
+01:09:30,319 --> 01:09:34,279
+a separate unit uid
+per user in this design
+
+1521
+01:09:34,279 --> 01:09:36,340
+instead of per service.
+
+1522
+01:09:36,340 --> 01:09:39,689
+But here, every service, like
+newsletters or friend matching
+
+1523
+01:09:39,689 --> 01:09:43,240
+or account sign up
+is a separate userid,
+
+1524
+01:09:43,240 --> 01:09:49,979
+but every OKWS user isn't really
+represented by a Unix uid.
+
+1525
+01:09:49,979 --> 01:09:53,960
+There's not really userids,
+they're service IDs.
+
+1526
+01:09:53,960 --> 01:10:00,040
+So, would it make sense to have
+different uids for every OKWS
+
+1527
+01:10:00,040 --> 01:10:00,986
+customer?
+
+1528
+01:10:00,986 --> 01:10:03,350
+Is there a reason for that?
+
+1529
+01:10:03,350 --> 01:10:03,850
+Yeah.
+
+1530
+01:10:03,850 --> 01:10:06,260
+AUDIENCE: So at the moment,
+if one user compromises
+
+1531
+01:10:06,260 --> 01:10:09,450
+the service, then they can get
+access to all the other user's
+
+1532
+01:10:09,450 --> 01:10:10,910
+data for that same server.
+
+1533
+01:10:10,910 --> 01:10:12,340
+PROFESSOR: That's right, yeah.
+
+1534
+01:10:12,340 --> 01:10:14,589
+AUDIENCE: Whereas, if you
+had a separate-- essentially
+
+1535
+01:10:14,589 --> 01:10:16,440
+a separate service
+and a separate dbproxy
+
+1536
+01:10:16,440 --> 01:10:18,996
+for every user,
+there's no way you
+
+1537
+01:10:18,996 --> 01:10:20,620
+could access anyone
+else's data either.
+
+1538
+01:10:20,620 --> 01:10:23,720
+PROFESSOR: Right, but could it
+be actually a stronger model?
+
+1539
+01:10:23,720 --> 01:10:26,000
+So especially
+for-- well, I guess
+
+1540
+01:10:26,000 --> 01:10:28,930
+there's really two reasons why
+I think the OKWS guys don't
+
+1541
+01:10:28,930 --> 01:10:31,542
+go to that extreme model.
+
+1542
+01:10:31,542 --> 01:10:33,750
+One of them is-- they make
+a big deal in this paper--
+
+1543
+01:10:33,750 --> 01:10:34,730
+is performance, right?
+
+1544
+01:10:34,730 --> 01:10:37,150
+So if you have, I
+don't know, a couple
+
+1545
+01:10:37,150 --> 01:10:39,990
+million users on OkCupid,
+then all of a sudden you
+
+1546
+01:10:39,990 --> 01:10:42,790
+have a couple of million
+processes running here,
+
+1547
+01:10:42,790 --> 01:10:44,830
+or maybe a couple
+million dbproxies,
+
+1548
+01:10:44,830 --> 01:10:47,536
+or maybe you can optimize
+something on the dbproxy side,
+
+1549
+01:10:47,536 --> 01:10:50,660
+but here, yeah, you have
+a couple million userids
+
+1550
+01:10:50,660 --> 01:10:54,030
+and either you have a lot of
+processes running all the time
+
+1551
+01:10:54,030 --> 01:10:56,890
+or you're starting these
+processes on demand.
+
+1552
+01:10:56,890 --> 01:10:59,900
+And starting a process
+involves some nontrivial amount
+
+1553
+01:10:59,900 --> 01:11:02,440
+of overhead, so you
+probably wouldn't
+
+1554
+01:11:02,440 --> 01:11:04,680
+be able to get as good
+of performance numbers
+
+1555
+01:11:04,680 --> 01:11:07,319
+as these guys are able
+to show with OKWS.
+
+1556
+01:11:07,319 --> 01:11:08,610
+There's a performance argument.
+
+1557
+01:11:08,610 --> 01:11:09,189
+Question.
+
+1558
+01:11:09,189 --> 01:11:10,127
+AUDIENCE: Yeah, I
+was just reading
+
+1559
+01:11:10,127 --> 01:11:12,452
+in the paper that said the
+performance of the system
+
+1560
+01:11:12,452 --> 01:11:13,410
+was better than others?
+
+1561
+01:11:13,410 --> 01:11:14,076
+PROFESSOR: Yeah.
+
+1562
+01:11:14,076 --> 01:11:15,345
+AUDIENCE: How come?
+
+1563
+01:11:15,345 --> 01:11:19,580
+PROFESSOR: Well, I think it's
+partly because they fine tuned
+
+1564
+01:11:19,580 --> 01:11:23,330
+their design to their particular
+workload and it's also they
+
+1565
+01:11:23,330 --> 01:11:25,050
+write their whole thing in C++.
+
+1566
+01:11:25,050 --> 01:11:27,510
+The alternative is you're
+writing some stuff in PHP,
+
+1567
+01:11:27,510 --> 01:11:30,320
+then you're probably going
+to win on that front.
+
+1568
+01:11:30,320 --> 01:11:33,250
+It's also the case
+that they don't
+
+1569
+01:11:33,250 --> 01:11:36,900
+have nearly as many features
+as, let's say, Apache has.
+
+1570
+01:11:36,900 --> 01:11:40,930
+Apache has a very
+general purpose design,
+
+1571
+01:11:40,930 --> 01:11:42,780
+so it has lots of
+processes running,
+
+1572
+01:11:42,780 --> 01:11:44,840
+it restarts them
+every once in awhile.
+
+1573
+01:11:44,840 --> 01:11:47,349
+It actually has
+every ttp connection
+
+1574
+01:11:47,349 --> 01:11:49,640
+tying up a process for the
+duration of that connection.
+
+1575
+01:11:49,640 --> 01:11:50,962
+They do keep-alives.
+
+1576
+01:11:50,962 --> 01:11:52,920
+That also increases the
+number of processes you
+
+1577
+01:11:52,920 --> 01:11:55,100
+have to run for their design.
+
+1578
+01:11:55,100 --> 01:11:57,110
+So all those things
+just add up in terms
+
+1579
+01:11:57,110 --> 01:11:58,540
+of overhead for
+Apache, because it
+
+1580
+01:11:58,540 --> 01:11:59,914
+wants to handle
+anything possibly
+
+1581
+01:11:59,914 --> 01:12:01,206
+you could do with a web server.
+
+1582
+01:12:01,206 --> 01:12:03,164
+Whereas these guys, I
+think, are very specific.
+
+1583
+01:12:03,164 --> 01:12:05,770
+We're just going to run these
+services, very quick requests,
+
+1584
+01:12:05,770 --> 01:12:10,077
+and no even static file
+serving, if they can help it.
+
+1585
+01:12:10,077 --> 01:12:12,410
+But I think there's actually
+other web servers out there
+
+1586
+01:12:12,410 --> 01:12:14,980
+these days that probably can
+match the performance of OKWS
+
+1587
+01:12:14,980 --> 01:12:15,979
+if you really wanted to.
+
+1588
+01:12:15,979 --> 01:12:18,660
+So, for example, Nginx is
+a very optimized web server
+
+1589
+01:12:18,660 --> 01:12:19,860
+you can run these days.
+
+1590
+01:12:19,860 --> 01:12:22,590
+If you want fast application
+performance on the server side,
+
+1591
+01:12:22,590 --> 01:12:25,450
+you probably want to keep a
+long running process very much
+
+1592
+01:12:25,450 --> 01:12:28,680
+like the OKWS service
+thing, and the fast cgi
+
+1593
+01:12:28,680 --> 01:12:31,610
+is a common mechanism,
+or sort of protocol,
+
+1594
+01:12:31,610 --> 01:12:33,240
+that you could use
+on the server side
+
+1595
+01:12:33,240 --> 01:12:36,460
+to implement this even in
+Apache or Nginx as well.
+
+1596
+01:12:36,460 --> 01:12:39,110
+So I think many of
+these performance ideas
+
+1597
+01:12:39,110 --> 01:12:40,540
+aren't exclusive to OKWS.
+
+1598
+01:12:40,540 --> 01:12:43,250
+You couldn't perform the
+same performance tricks
+
+1599
+01:12:43,250 --> 01:12:45,040
+in other services as well.
+
+1600
+01:12:45,040 --> 01:12:48,040
+They just show that
+better security
+
+1601
+01:12:48,040 --> 01:12:49,660
+doesn't preclude these tricks.
+
+1602
+01:12:49,660 --> 01:12:51,810
+You could still get
+the performance.
+
+1603
+01:12:51,810 --> 01:12:54,410
+I guess for them, they were
+just initially starting out
+
+1604
+01:12:54,410 --> 01:12:57,400
+with an Apache-like
+design, where
+
+1605
+01:12:57,400 --> 01:12:59,900
+they were willing to pay the
+price if it was easy to program
+
+1606
+01:12:59,900 --> 01:13:02,066
+and secure, but it just
+wasn't secure, so they said,
+
+1607
+01:13:02,066 --> 01:13:03,600
+OK, well we'll do
+this, and I don't
+
+1608
+01:13:03,600 --> 01:13:06,540
+think the performance
+was as necessarily
+
+1609
+01:13:06,540 --> 01:13:07,780
+a big of a goal for them.
+
+1610
+01:13:07,780 --> 01:13:10,240
+I guess they wanted to--
+well, at the time they
+
+1611
+01:13:10,240 --> 01:13:11,530
+had some problems in terms
+of performance as well,
+
+1612
+01:13:11,530 --> 01:13:13,488
+so I think they really
+wanted good performance.
+
+1613
+01:13:13,488 --> 01:13:17,464
+
+
+1614
+01:13:17,464 --> 01:13:21,240
+Any other questions
+about this stuff?
+
+1615
+01:13:21,240 --> 01:13:22,250
+OK.
+
+1616
+01:13:22,250 --> 01:13:25,620
+So I guess it was
+saying, one reason
+
+1617
+01:13:25,620 --> 01:13:28,560
+why these guys don't want to
+run a separate service per user
+
+1618
+01:13:28,560 --> 01:13:31,710
+is the fact that there's
+performance overheads
+
+1619
+01:13:31,710 --> 01:13:32,630
+in doing that.
+
+1620
+01:13:32,630 --> 01:13:35,175
+The other reason is that
+their full application model
+
+1621
+01:13:35,175 --> 01:13:39,170
+sort of hinges around a
+service having to get access
+
+1622
+01:13:39,170 --> 01:13:42,650
+to every user's data, like
+finding your friends on OkCupid
+
+1623
+01:13:42,650 --> 01:13:45,460
+or someone to go
+out on a date with.
+
+1624
+01:13:45,460 --> 01:13:49,659
+And as a result, this
+per user isolation model
+
+1625
+01:13:49,659 --> 01:13:51,950
+might not make a lot of sense,
+because ultimately there
+
+1626
+01:13:51,950 --> 01:13:55,780
+has to be a service that you're
+going to send a request to,
+
+1627
+01:13:55,780 --> 01:13:57,900
+and it's going to look
+at everyone else's data
+
+1628
+01:13:57,900 --> 01:13:59,970
+to find your match.
+
+1629
+01:13:59,970 --> 01:14:04,600
+So that's probably, as a result,
+not really amenable, like,
+
+1630
+01:14:04,600 --> 01:14:08,004
+even if you had user IDs or
+some sort of per user isolation
+
+1631
+01:14:08,004 --> 01:14:09,920
+mechanism, you would
+have to give that service
+
+1632
+01:14:09,920 --> 01:14:12,730
+access to every userid anyway.
+
+1633
+01:14:12,730 --> 01:14:15,700
+So for other services like
+maybe Gmail or Dropbox,
+
+1634
+01:14:15,700 --> 01:14:17,390
+where it's much
+more user focused
+
+1635
+01:14:17,390 --> 01:14:20,380
+and no sharing, then
+a per user isolation
+
+1636
+01:14:20,380 --> 01:14:22,610
+might make more sense
+in terms of the benefits
+
+1637
+01:14:22,610 --> 01:14:25,410
+you could get out of
+it, because if there's
+
+1638
+01:14:25,410 --> 01:14:29,790
+a userid on the Dropbox server
+for every Dropbox customer,
+
+1639
+01:14:29,790 --> 01:14:32,782
+then, well, there's a
+process running for you
+
+1640
+01:14:32,782 --> 01:14:34,740
+and there's a process
+running for someone else,
+
+1641
+01:14:34,740 --> 01:14:36,310
+and if you exploit
+a bug, then you
+
+1642
+01:14:36,310 --> 01:14:37,920
+can't touch other people's data.
+
+1643
+01:14:37,920 --> 01:14:39,676
+But could be cool, I don't know.
+
+1644
+01:14:39,676 --> 01:14:42,050
+Dropbox probably doesn't do
+this for performance reasons,
+
+1645
+01:14:42,050 --> 01:14:43,716
+but you could get
+some security benefit.
+
+1646
+01:14:43,716 --> 01:14:46,890
+Whereas, for OKWS guys, and
+even functionality-wise,
+
+1647
+01:14:46,890 --> 01:14:48,800
+they wouldn't be able
+to take advantage
+
+1648
+01:14:48,800 --> 01:14:50,830
+as much of this model.
+
+1649
+01:14:50,830 --> 01:14:52,860
+So maybe for your
+profile editing service,
+
+1650
+01:14:52,860 --> 01:14:54,730
+maybe that could
+be run per user,
+
+1651
+01:14:54,730 --> 01:14:57,192
+but the matching thing
+would still be shared.
+
+1652
+01:14:57,192 --> 01:14:59,760
+Make sense?
+
+1653
+01:14:59,760 --> 01:15:00,260
+All right.
+
+1654
+01:15:00,260 --> 01:15:03,290
+So let's look at whether
+OKWS actually manages
+
+1655
+01:15:03,290 --> 01:15:05,190
+to improve security here.
+
+1656
+01:15:05,190 --> 01:15:08,269
+So when we do think of whether
+a system is secure or not
+
+1657
+01:15:08,269 --> 01:15:10,810
+is to look at all the components
+and see, well, first of all,
+
+1658
+01:15:10,810 --> 01:15:11,893
+what's the attack surface?
+
+1659
+01:15:11,893 --> 01:15:13,780
+Meaning, how would
+you try to compromise
+
+1660
+01:15:13,780 --> 01:15:15,770
+that component,
+or how hard is it,
+
+1661
+01:15:15,770 --> 01:15:17,330
+and second what's the damage?
+
+1662
+01:15:17,330 --> 01:15:19,390
+So let's go through this list.
+
+1663
+01:15:19,390 --> 01:15:23,770
+Let's start with okd, so
+what's the attack surface?
+
+1664
+01:15:23,770 --> 01:15:30,020
+What kinds of things could
+you use to attack it?
+
+1665
+01:15:30,020 --> 01:15:31,835
+[INAUDIBLE], like
+all these requests
+
+1666
+01:15:31,835 --> 01:15:32,882
+coming from the browser.
+
+1667
+01:15:32,882 --> 01:15:33,840
+That seems pretty good.
+
+1668
+01:15:33,840 --> 01:15:35,510
+You can control it
+probably in lots of ways,
+
+1669
+01:15:35,510 --> 01:15:36,993
+you can send lots
+of strange input.
+
+1670
+01:15:36,993 --> 01:15:37,960
+AUDIENCE: [INAUDIBLE].
+
+1671
+01:15:37,960 --> 01:15:39,459
+PROFESSOR: Yeah,
+so maybe there is--
+
+1672
+01:15:39,459 --> 01:15:42,210
+this thing is written in C++,
+so probably these guys were
+
+1673
+01:15:42,210 --> 01:15:42,710
+sloppy.
+
+1674
+01:15:42,710 --> 01:15:44,251
+I think this guy's
+a good programmer,
+
+1675
+01:15:44,251 --> 01:15:47,440
+but if he was not very
+careful somewhere,
+
+1676
+01:15:47,440 --> 01:15:49,235
+could be easily exploitable.
+
+1677
+01:15:49,235 --> 01:15:50,110
+So what's the damage?
+
+1678
+01:15:50,110 --> 01:15:52,335
+Suppose you find a buffer
+overflow or some other bug
+
+1679
+01:15:52,335 --> 01:15:53,070
+in okd?
+
+1680
+01:15:53,070 --> 01:15:54,690
+How bad is this?
+
+1681
+01:15:54,690 --> 01:16:03,139
+
+
+1682
+01:16:03,139 --> 01:16:04,079
+Yeah.
+
+1683
+01:16:04,079 --> 01:16:06,620
+AUDIENCE: You can call basically
+any service on that machine?
+
+1684
+01:16:06,620 --> 01:16:09,010
+PROFESSOR: Yeah, OK, so
+you could call any service.
+
+1685
+01:16:09,010 --> 01:16:09,870
+Is that bad?
+
+1686
+01:16:09,870 --> 01:16:12,159
+How should we think of this?
+
+1687
+01:16:12,159 --> 01:16:14,242
+AUDIENCE: You can call it
+whatever input you want.
+
+1688
+01:16:14,242 --> 01:16:15,720
+PROFESSOR: That's true, yeah.
+
+1689
+01:16:15,720 --> 01:16:18,742
+But you could probably have done
+that even without compromising,
+
+1690
+01:16:18,742 --> 01:16:20,700
+because you can send any
+http request you want,
+
+1691
+01:16:20,700 --> 01:16:23,340
+which is basically what these
+service requests end up being.
+
+1692
+01:16:23,340 --> 01:16:25,020
+Maybe that's
+actually not so bad.
+
+1693
+01:16:25,020 --> 01:16:26,178
+Yeah.
+
+1694
+01:16:26,178 --> 01:16:30,360
+AUDIENCE: Could it route all the
+traffic for maybe OK website?
+
+1695
+01:16:30,360 --> 01:16:31,230
+PROFESSOR: Yes.
+
+1696
+01:16:31,230 --> 01:16:32,910
+That actually seems a
+little more damaging, right?
+
+1697
+01:16:32,910 --> 01:16:35,034
+You can all of a sudden
+take over the whole website
+
+1698
+01:16:35,034 --> 01:16:36,957
+and serve your pages
+instead of sending
+
+1699
+01:16:36,957 --> 01:16:38,040
+a request to the services.
+
+1700
+01:16:38,040 --> 01:16:39,956
+You could redirect all
+the people to match.com
+
+1701
+01:16:39,956 --> 01:16:42,250
+or whoever else you
+want to, I don't know.
+
+1702
+01:16:42,250 --> 01:16:47,430
+I guess now they bought out
+OkCupid but, before, who knows.
+
+1703
+01:16:47,430 --> 01:16:49,180
+OK, anything else?
+
+1704
+01:16:49,180 --> 01:16:52,190
+Could you leak data in any way?
+
+1705
+01:16:52,190 --> 01:16:52,690
+Yeah.
+
+1706
+01:16:52,690 --> 01:16:54,906
+AUDIENCE: Well, it
+depends on, like if you
+
+1707
+01:16:54,906 --> 01:16:56,965
+use any authentication in okd.
+
+1708
+01:16:56,965 --> 01:16:59,815
+Instead of any SVC,
+you could potentially
+
+1709
+01:16:59,815 --> 01:17:02,082
+just do unauthorized requests,
+like in the database?
+
+1710
+01:17:02,082 --> 01:17:02,790
+PROFESSOR: Right.
+
+1711
+01:17:02,790 --> 01:17:04,700
+In their case, this guy just
+parses and forwards the request
+
+1712
+01:17:04,700 --> 01:17:05,402
+on.
+
+1713
+01:17:05,402 --> 01:17:07,924
+AUDIENCE: Could it [INAUDIBLE]?
+
+1714
+01:17:07,924 --> 01:17:08,590
+PROFESSOR: Yeah.
+
+1715
+01:17:08,590 --> 01:17:09,850
+Not only can you
+redirect it first,
+
+1716
+01:17:09,850 --> 01:17:12,433
+you could actually look for all
+the subsequent requests, which
+
+1717
+01:17:12,433 --> 01:17:15,030
+probably includes passwords
+of other users connecting
+
+1718
+01:17:15,030 --> 01:17:18,870
+to the site, and you
+could save their passwords
+
+1719
+01:17:18,870 --> 01:17:21,400
+or modify their requests
+or see what they're doing
+
+1720
+01:17:21,400 --> 01:17:23,007
+or fetch things on their behalf.
+
+1721
+01:17:23,007 --> 01:17:24,340
+That seems damaging potentially.
+
+1722
+01:17:24,340 --> 01:17:25,714
+That's probably
+the biggest leak.
+
+1723
+01:17:25,714 --> 01:17:28,445
+If you compromise okd, you can
+probably watch other requests
+
+1724
+01:17:28,445 --> 01:17:31,820
+and steal people's credential
+passwords, steal their data
+
+1725
+01:17:31,820 --> 01:17:33,268
+as it flows by.
+
+1726
+01:17:33,268 --> 01:17:34,762
+Make sense?
+
+1727
+01:17:34,762 --> 01:17:37,760
+AUDIENCE: Could you do some sort
+of denial of service with just
+
+1728
+01:17:37,760 --> 01:17:38,676
+with sending a whole--
+
+1729
+01:17:38,676 --> 01:17:39,120
+
+
+1730
+01:17:39,120 --> 01:17:41,370
+PROFESSOR: Yeah, so you could
+probably chew up the CPU
+
+1731
+01:17:41,370 --> 01:17:43,634
+or send lots of requests
+to this, fill up database
+
+1732
+01:17:43,634 --> 01:17:45,550
+with lots of data, but
+that you could probably
+
+1733
+01:17:45,550 --> 01:17:48,050
+do even by just sending lots
+of requests in the first place.
+
+1734
+01:17:48,050 --> 01:17:51,820
+So now [INAUDIBLE] are somewhat
+complicated-- well, different.
+
+1735
+01:17:51,820 --> 01:17:52,320
+Yeah.
+
+1736
+01:17:52,320 --> 01:17:54,362
+AUDIENCE: So, the goal
+here is not to leak data--
+
+1737
+01:17:54,362 --> 01:17:55,028
+PROFESSOR: Yeah.
+
+1738
+01:17:55,028 --> 01:17:56,810
+AUDIENCE: --from
+different services.
+
+1739
+01:17:56,810 --> 01:17:58,519
+If you have access to
+okd, presumably you
+
+1740
+01:17:58,519 --> 01:18:00,434
+could read the responses
+that are being sent--
+
+1741
+01:18:00,434 --> 01:18:00,630
+
+
+1742
+01:18:00,630 --> 01:18:01,671
+PROFESSOR: Yeah, exactly.
+
+1743
+01:18:01,671 --> 01:18:05,270
+So in fact, okd is has
+to be pretty trustworthy,
+
+1744
+01:18:05,270 --> 01:18:10,073
+because the responses don't
+go directly back through okd
+
+1745
+01:18:10,073 --> 01:18:13,240
+in the normal operation, because
+you just pass off the fd,
+
+1746
+01:18:13,240 --> 01:18:15,134
+and the service directly
+writes to the fd.
+
+1747
+01:18:15,134 --> 01:18:17,550
+But you could totally fake it
+and create your own fd here.
+
+1748
+01:18:17,550 --> 01:18:19,466
+So if you compromise
+this, you could basically
+
+1749
+01:18:19,466 --> 01:18:23,405
+watch all the traffic and
+steal people's passwords there.
+
+1750
+01:18:23,405 --> 01:18:24,710
+AUDIENCE: But, the other way--
+
+1751
+01:18:24,710 --> 01:18:26,043
+PROFESSOR: And the response is--
+
+1752
+01:18:26,043 --> 01:18:26,314
+
+
+1753
+01:18:26,314 --> 01:18:27,162
+AUDIENCE: --to the output, which
+means that essentially you get
+
+1754
+01:18:27,162 --> 01:18:27,240
+access--
+
+1755
+01:18:27,240 --> 01:18:27,590
+
+
+1756
+01:18:27,590 --> 01:18:28,590
+PROFESSOR: That's right.
+
+1757
+01:18:28,590 --> 01:18:31,240
+Yeah, so you could--
+If okd was compromised
+
+1758
+01:18:31,240 --> 01:18:33,510
+and I happened to
+log into that site,
+
+1759
+01:18:33,510 --> 01:18:35,135
+you could probably
+look at my responses
+
+1760
+01:18:35,135 --> 01:18:37,150
+and you could probably
+even take my password
+
+1761
+01:18:37,150 --> 01:18:39,200
+and send other requests
+with my credentials
+
+1762
+01:18:39,200 --> 01:18:40,571
+and get data from there as well.
+
+1763
+01:18:40,571 --> 01:18:41,070
+Yeah.
+
+1764
+01:18:41,070 --> 01:18:42,410
+AUDIENCE:And then essentially
+reconstruct the entire
+
+1765
+01:18:42,410 --> 01:18:42,852
+database.
+
+1766
+01:18:42,852 --> 01:18:43,294
+PROFESSOR: Exactly.
+
+1767
+01:18:43,294 --> 01:18:44,572
+Yeah, or at least
+for users who were
+
+1768
+01:18:44,572 --> 01:18:46,900
+logged in at the time and
+things you could reconstruct.
+
+1769
+01:18:46,900 --> 01:18:48,410
+This is pretty damaging, right?
+
+1770
+01:18:48,410 --> 01:18:52,710
+So this component is actually
+a bit troublesome here.
+
+1771
+01:18:52,710 --> 01:18:54,906
+What happens if we
+compromise, let's say, oklogd?
+
+1772
+01:18:54,906 --> 01:18:56,270
+How bad is that?
+
+1773
+01:18:56,270 --> 01:18:59,735
+
+
+1774
+01:18:59,735 --> 01:19:00,725
+Yeah.
+
+1775
+01:19:00,725 --> 01:19:03,302
+AUDIENCE: [INAUDIBLE]
+pretty bad.
+
+1776
+01:19:03,302 --> 01:19:05,760
+PROFESSOR: Yeah, so there's
+like all this confidential data
+
+1777
+01:19:05,760 --> 01:19:07,843
+in the log entries, then
+that's probably not good,
+
+1778
+01:19:07,843 --> 01:19:11,560
+but otherwise you can't probably
+access the database directly,
+
+1779
+01:19:11,560 --> 01:19:12,420
+right?
+
+1780
+01:19:12,420 --> 01:19:15,220
+Pubd, I guess you might
+corrupt templates, or something
+
+1781
+01:19:15,220 --> 01:19:18,510
+like this, send out different
+requests and responses, I mean.
+
+1782
+01:19:18,510 --> 01:19:19,010
+Yeah.
+
+1783
+01:19:19,010 --> 01:19:20,510
+AUDIENCE: So this
+is about the logd.
+
+1784
+01:19:20,510 --> 01:19:23,836
+Presumably okdlogd doesn't
+have access to read the log.
+
+1785
+01:19:23,836 --> 01:19:24,661
+It just needs--
+
+1786
+01:19:24,661 --> 01:19:24,833
+
+
+1787
+01:19:24,833 --> 01:19:25,916
+PROFESSOR: Ah, yeah, yeah.
+
+1788
+01:19:25,916 --> 01:19:26,090
+Good point.
+
+1789
+01:19:26,090 --> 01:19:27,340
+Well, it depends on
+how they do it, right?
+
+1790
+01:19:27,340 --> 01:19:29,090
+If they really have
+this append-only file,
+
+1791
+01:19:29,090 --> 01:19:31,695
+then it might be that you
+can't even read the log, so--
+
+1792
+01:19:31,695 --> 01:19:33,570
+AUDIENCE: All you could
+do is append garbage.
+
+1793
+01:19:33,570 --> 01:19:34,050
+PROFESSOR:That's right, yeah.
+
+1794
+01:19:34,050 --> 01:19:35,780
+So you could write
+a lot of garbage,
+
+1795
+01:19:35,780 --> 01:19:38,400
+but if they were using the OS
+to enforce the append-only log,
+
+1796
+01:19:38,400 --> 01:19:40,470
+and no reading, then
+you might be actually
+
+1797
+01:19:40,470 --> 01:19:42,065
+in good shape for
+the log contents.
+
+1798
+01:19:42,065 --> 01:19:42,564
+Yeah.
+
+1799
+01:19:42,564 --> 01:19:45,102
+AUDIENCE: Well, I guess
+also, you can not append.
+
+1800
+01:19:45,102 --> 01:19:46,352
+So when a valid log comes in--
+
+1801
+01:19:46,352 --> 01:19:46,452
+
+
+1802
+01:19:46,452 --> 01:19:48,910
+PROFESSOR: Right, so you could
+probably block real entries,
+
+1803
+01:19:48,910 --> 01:19:49,909
+fill it up with garbage.
+
+1804
+01:19:49,909 --> 01:19:53,130
+You could also watch new entries
+and at least compromise them.
+
+1805
+01:19:53,130 --> 01:19:54,796
+AUDIENCE: Or if you're
+relying on a rate
+
+1806
+01:19:54,796 --> 01:19:56,248
+limit for number of logins.
+
+1807
+01:19:56,248 --> 01:19:56,748
+
+
+1808
+01:19:56,748 --> 01:19:58,063
+PROFESSOR: That's right, yeah.
+
+1809
+01:19:58,063 --> 01:19:59,188
+You could probably do that.
+
+1810
+01:19:59,188 --> 01:19:59,688
+OK.
+
+1811
+01:19:59,688 --> 01:20:01,560
+So what about the services?
+
+1812
+01:20:01,560 --> 01:20:03,310
+That's, I think, their
+main attack factor,
+
+1813
+01:20:03,310 --> 01:20:06,040
+because-- actually, in most
+of these systems, what you're
+
+1814
+01:20:06,040 --> 01:20:09,120
+really worried about is
+the one-off components,
+
+1815
+01:20:09,120 --> 01:20:12,960
+because even in Apache,
+the Apache code is probably
+
+1816
+01:20:12,960 --> 01:20:14,000
+pretty good.
+
+1817
+01:20:14,000 --> 01:20:15,980
+Like millions people
+are running it,
+
+1818
+01:20:15,980 --> 01:20:17,890
+everyone's looking
+for bugs in it.
+
+1819
+01:20:17,890 --> 01:20:21,390
+Probably [INAUDIBLE] not that
+many bugs in Apache itself
+
+1820
+01:20:21,390 --> 01:20:26,370
+or, well, even in SSL, for all
+the hoopla we've heard recently
+
+1821
+01:20:26,370 --> 01:20:29,370
+about [INAUDIBLE] and still
+bugs probably not as bad
+
+1822
+01:20:29,370 --> 01:20:32,420
+as the application code that
+you write for a particular site,
+
+1823
+01:20:32,420 --> 01:20:34,569
+because no one else
+has reviewed that code.
+
+1824
+01:20:34,569 --> 01:20:36,110
+You just wrote it,
+you haven't really
+
+1825
+01:20:36,110 --> 01:20:37,193
+tested it very thoroughly.
+
+1826
+01:20:37,193 --> 01:20:40,370
+That's probably where most of
+the bugs in a complex system
+
+1827
+01:20:40,370 --> 01:20:41,380
+actually lie.
+
+1828
+01:20:41,380 --> 01:20:44,800
+So the service code is probably
+the equivalent for OKWS.
+
+1829
+01:20:44,800 --> 01:20:46,820
+These components are
+written by Max Krohn.
+
+1830
+01:20:46,820 --> 01:20:50,000
+He was careful to make sure
+there's no buffer overflows.
+
+1831
+01:20:50,000 --> 01:20:52,160
+This component is written
+by some web developer who
+
+1832
+01:20:52,160 --> 01:20:54,710
+wants to deploy the next
+feature as fast as possible,
+
+1833
+01:20:54,710 --> 01:20:56,840
+so this is the part
+where I think they really
+
+1834
+01:20:56,840 --> 01:21:00,710
+worry about bugs being sort
+of exploitable and potentially
+
+1835
+01:21:00,710 --> 01:21:02,010
+damaging.
+
+1836
+01:21:02,010 --> 01:21:04,570
+But hopefully the damage here
+is not too big, in the sense
+
+1837
+01:21:04,570 --> 01:21:08,960
+that you can only issue
+whatever queries you are allowed
+
+1838
+01:21:08,960 --> 01:21:11,980
+to do by the database proxy.
+
+1839
+01:21:11,980 --> 01:21:13,450
+Make sense?
+
+1840
+01:21:13,450 --> 01:21:14,690
+So what about okld?
+
+1841
+01:21:14,690 --> 01:21:16,890
+This is a bit of
+a sore thumb here.
+
+1842
+01:21:16,890 --> 01:21:18,804
+It's, like, running as root.
+
+1843
+01:21:18,804 --> 01:21:20,220
+How much should
+we worry about it?
+
+1844
+01:21:20,220 --> 01:21:22,553
+Of course, the damage is
+pretty big if we compromise it.
+
+1845
+01:21:22,553 --> 01:21:24,700
+You get access to everything
+on the machine and all
+
+1846
+01:21:24,700 --> 01:21:26,640
+the database proxy tokens.
+
+1847
+01:21:26,640 --> 01:21:29,770
+How hard is it to
+compromise okld?
+
+1848
+01:21:29,770 --> 01:21:32,350
+What signals-- what
+could you poke it with?
+
+1849
+01:21:32,350 --> 01:21:36,770
+
+
+1850
+01:21:36,770 --> 01:21:40,375
+Does it take input?
+
+1851
+01:21:40,375 --> 01:21:44,239
+AUDIENCE: [INAUDIBLE] in
+a very specific pattern.
+
+1852
+01:21:44,239 --> 01:21:47,800
+PROFESSOR: Yeah, so pretty
+much the only input it takes
+
+1853
+01:21:47,800 --> 01:21:50,170
+is when a child exits and
+it gets a notification
+
+1854
+01:21:50,170 --> 01:21:52,780
+that a child process
+exited and then maybe it
+
+1855
+01:21:52,780 --> 01:21:55,650
+responds it, or not,
+if it is rate limited.
+
+1856
+01:21:55,650 --> 01:21:57,789
+So if there's some
+sort of erase condition
+
+1857
+01:21:57,789 --> 01:21:59,330
+or a bug with handling
+exactly-- it's
+
+1858
+01:21:59,330 --> 01:22:01,329
+interesting-- lots of
+exits at the same time,
+
+1859
+01:22:01,329 --> 01:22:03,120
+then maybe you could
+trigger something bad,
+
+1860
+01:22:03,120 --> 01:22:04,920
+but even then it
+seems hard to imagine
+
+1861
+01:22:04,920 --> 01:22:09,505
+injecting some sort of shell
+code through the exit pattern.
+
+1862
+01:22:09,505 --> 01:22:13,930
+So it's probably a reasonable
+thing to have to run as root,
+
+1863
+01:22:13,930 --> 01:22:17,520
+because it doesn't take
+a whole lot of input.
+
+1864
+01:22:17,520 --> 01:22:18,550
+Make sense?
+
+1865
+01:22:18,550 --> 01:22:20,149
+Other questions?
+
+1866
+01:22:20,149 --> 01:22:21,690
+AUDIENCE: So presumably
+a big concern
+
+1867
+01:22:21,690 --> 01:22:24,496
+would be if you managed to
+somehow exploit the dbproxy.
+
+1868
+01:22:24,496 --> 01:22:25,246
+PROFESSOR: Uh-huh.
+
+1869
+01:22:25,246 --> 01:22:28,730
+AUDIENCE: If it turns out
+that it doesn't, like,
+
+1870
+01:22:28,730 --> 01:22:30,950
+it provides an RPC
+that's limited in scope,
+
+1871
+01:22:30,950 --> 01:22:33,695
+but if there is some input you
+can give that, that turns out
+
+1872
+01:22:33,695 --> 01:22:35,070
+to run in different
+query than it
+
+1873
+01:22:35,070 --> 01:22:37,635
+was expecting to run,
+presumably that could
+
+1874
+01:22:37,635 --> 01:22:38,610
+be a big [INAUDIBLE].
+
+1875
+01:22:38,610 --> 01:22:40,443
+PROFESSOR: That could
+be a bit of a problem.
+
+1876
+01:22:40,443 --> 01:22:42,860
+So what's the attack vector
+though on this database proxy?
+
+1877
+01:22:42,860 --> 01:22:44,442
+I think you have to
+have access to one
+
+1878
+01:22:44,442 --> 01:22:46,340
+of these other components
+in the first place.
+
+1879
+01:22:46,340 --> 01:22:49,320
+So at least you have to
+now compromise both--
+
+1880
+01:22:49,320 --> 01:22:52,260
+you have to find a bug both in
+the dbproxy and somewhere else,
+
+1881
+01:22:52,260 --> 01:22:52,760
+so--
+
+1882
+01:22:52,760 --> 01:22:55,730
+AUDIENCE: So not necessarily,
+because the SVC is already
+
+1883
+01:22:55,730 --> 01:22:56,230
+forwarding--
+
+1884
+01:22:56,230 --> 01:22:56,938
+PROFESSOR: Right.
+
+1885
+01:22:56,938 --> 01:22:59,479
+So as the SVC passes
+through great query
+
+1886
+01:22:59,479 --> 01:23:00,395
+is largely unchecked--
+
+1887
+01:23:00,395 --> 01:23:01,842
+AUDIENCE: Well, so,
+I mean, let's say
+
+1888
+01:23:01,842 --> 01:23:03,133
+you're trying to log in, right?
+
+1889
+01:23:03,133 --> 01:23:03,830
+It will pass.
+
+1890
+01:23:03,830 --> 01:23:05,840
+PROFESSOR: Yeah, like your
+Alice name goes in the template,
+
+1891
+01:23:05,840 --> 01:23:06,361
+and yeah.
+
+1892
+01:23:06,361 --> 01:23:06,860
+
+
+1893
+01:23:06,860 --> 01:23:09,124
+AUDIENCE: Alice is straight
+to the dbproxy, in theory.
+
+1894
+01:23:09,124 --> 01:23:10,040
+PROFESSOR: Absolutely.
+
+1895
+01:23:10,040 --> 01:23:12,670
+So, there might be
+some dbproxy bugs here
+
+1896
+01:23:12,670 --> 01:23:14,819
+that are also exploitable.
+
+1897
+01:23:14,819 --> 01:23:16,360
+Anyway, this hopefully
+gives you guys
+
+1898
+01:23:16,360 --> 01:23:18,651
+some sense of how do you
+think of privileged separating
+
+1899
+01:23:18,651 --> 01:23:19,217
+application.
+
+1900
+01:23:19,217 --> 01:23:20,550
+And as we see, it's not perfect.
+
+1901
+01:23:20,550 --> 01:23:22,920
+There are still many
+things that could go wrong.
+
+1902
+01:23:22,920 --> 01:23:26,290
+But it seems much better than
+the nonprivileged separated
+
+1903
+01:23:26,290 --> 00:00:00,000
+design that we started out with.
+

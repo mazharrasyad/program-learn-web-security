@@ -1,0 +1,496 @@
+1
+00:00:00,089 --> 00:00:02,939
+hello everyone<font color="#CCCCCC"> now let's talk about</font><font color="#E5E5E5"> path</font>
+
+2
+00:00:02,939 --> 00:00:05,940
+traversal attacks<font color="#E5E5E5"> so path diversity tags</font>
+
+3
+00:00:05,940 --> 00:00:08,280
+are<font color="#E5E5E5"> also called as directory traversal</font>
+
+4
+00:00:08,280 --> 00:00:11,130
+attacks<font color="#E5E5E5"> so in these</font><font color="#CCCCCC"> kinds</font><font color="#E5E5E5"> of attacks</font>
+
+5
+00:00:11,130 --> 00:00:13,769
+the directory browsing<font color="#E5E5E5"> is allowed on a</font>
+
+6
+00:00:13,769 --> 00:00:16,680
+remote web server and if the directory
+
+7
+00:00:16,680 --> 00:00:19,109
+browsing is allowed on a server<font color="#E5E5E5"> then</font>
+
+8
+00:00:19,109 --> 00:00:21,270
+what the attacker can do<font color="#CCCCCC"> the attacker</font>
+
+9
+00:00:21,270 --> 00:00:24,600
+can try to access<font color="#E5E5E5"> files from</font><font color="#CCCCCC"> different</font>
+
+10
+00:00:24,600 --> 00:00:27,480
+folders<font color="#CCCCCC"> or from a different directories</font>
+
+11
+00:00:27,480 --> 00:00:30,269
+so the main<font color="#E5E5E5"> goal of the attacker can</font>
+
+12
+00:00:30,269 --> 00:00:32,460
+tries to access the<font color="#E5E5E5"> files which are</font>
+
+13
+00:00:32,460 --> 00:00:35,219
+present outside<font color="#E5E5E5"> the root directory or</font>
+
+14
+00:00:35,219 --> 00:00:37,710
+outside the home directory<font color="#CCCCCC"> of that web</font>
+
+15
+00:00:37,710 --> 00:00:40,140
+servers<font color="#E5E5E5"> so these files are server</font>
+
+16
+00:00:40,140 --> 00:00:42,780
+internal files which are not accessible
+
+17
+00:00:42,780 --> 00:00:45,809
+by the users<font color="#E5E5E5"> so by using these kind of</font>
+
+18
+00:00:45,809 --> 00:00:48,000
+attacks<font color="#E5E5E5"> path terror cell attacks the</font>
+
+19
+00:00:48,000 --> 00:00:50,190
+attacker can access these files<font color="#E5E5E5"> which</font>
+
+20
+00:00:50,190 --> 00:00:52,710
+results in full<font color="#E5E5E5"> compromise of system now</font>
+
+21
+00:00:52,710 --> 00:00:54,449
+let's see how path traversal attack
+
+22
+00:00:54,449 --> 00:00:57,809
+works now let's see how path traversal
+
+23
+00:00:57,809 --> 00:01:03,300
+<font color="#E5E5E5">or directory browsing attack works so</font>
+
+24
+00:01:03,300 --> 00:01:04,830
+here you can see that right now<font color="#CCCCCC"> I'm</font>
+
+25
+00:01:04,830 --> 00:01:07,229
+<font color="#E5E5E5">unmuted a web application</font><font color="#CCCCCC"> so let's</font><font color="#E5E5E5"> go</font>
+
+26
+00:01:07,229 --> 00:01:09,570
+here<font color="#CCCCCC"> OS twenty thirteen and here you</font>
+
+27
+00:01:09,570 --> 00:01:11,340
+will<font color="#CCCCCC"> find a category</font><font color="#E5E5E5"> of security</font><font color="#CCCCCC"> Miss</font>
+
+28
+00:01:11,340 --> 00:01:13,890
+configuration<font color="#E5E5E5"> and inside it</font><font color="#CCCCCC"> there is one</font>
+
+29
+00:01:13,890 --> 00:01:16,259
+challenge<font color="#E5E5E5"> directory browsing</font><font color="#CCCCCC"> let me just</font>
+
+30
+00:01:16,259 --> 00:01:21,420
+open<font color="#E5E5E5"> it up and here you will</font><font color="#CCCCCC"> see what's</font>
+
+31
+00:01:21,420 --> 00:01:23,580
+it saying so saying that some<font color="#E5E5E5"> of the web</font>
+
+32
+00:01:23,580 --> 00:01:26,070
+servers are actually misconfigured which
+
+33
+00:01:26,070 --> 00:01:28,409
+allows directory browsing<font color="#E5E5E5"> which means</font>
+
+34
+00:01:28,409 --> 00:01:30,420
+and most of the web application of the
+
+35
+00:01:30,420 --> 00:01:32,430
+servers are actually misconfigured which
+
+36
+00:01:32,430 --> 00:01:34,890
+actually allows users to<font color="#CCCCCC"> access its</font>
+
+37
+00:01:34,890 --> 00:01:37,740
+directories and to<font color="#CCCCCC"> seize that what's</font>
+
+38
+00:01:37,740 --> 00:01:39,270
+<font color="#E5E5E5">inside the directories and what are</font>
+
+39
+00:01:39,270 --> 00:01:41,159
+their files<font color="#E5E5E5"> so most of the web</font>
+
+40
+00:01:41,159 --> 00:01:43,740
+application has disabled<font color="#E5E5E5"> the directory</font>
+
+41
+00:01:43,740 --> 00:01:45,540
+browsing<font color="#E5E5E5"> whereas the most of the web</font>
+
+42
+00:01:45,540 --> 00:01:48,090
+application has enabled the directory
+
+43
+00:01:48,090 --> 00:01:50,759
+browsing<font color="#E5E5E5"> now let's see that</font><font color="#CCCCCC"> whether this</font>
+
+44
+00:01:50,759 --> 00:01:53,009
+<font color="#CCCCCC">mutilate a web application has enabled</font>
+
+45
+00:01:53,009 --> 00:01:55,530
+<font color="#E5E5E5">the directory browsing or disabled the</font>
+
+46
+00:01:55,530 --> 00:01:58,920
+directory browsing<font color="#CCCCCC"> so as a pentester</font>
+
+47
+00:01:58,920 --> 00:02:00,329
+<font color="#E5E5E5">what one can do there are different</font>
+
+48
+00:02:00,329 --> 00:02:02,310
+<font color="#E5E5E5">different techniques in order</font><font color="#CCCCCC"> to find</font>
+
+49
+00:02:02,310 --> 00:02:03,899
+whether the directory browsing or the
+
+50
+00:02:03,899 --> 00:02:05,549
+path traversal attack is<font color="#CCCCCC"> actually</font>
+
+51
+00:02:05,549 --> 00:02:08,399
+enabled or not<font color="#CCCCCC"> so the</font><font color="#E5E5E5"> first technique is</font>
+
+52
+00:02:08,399 --> 00:02:10,889
+to<font color="#E5E5E5"> using a</font><font color="#CCCCCC"> burp</font><font color="#E5E5E5"> suite because in the</font>
+
+53
+00:02:10,889 --> 00:02:12,970
+last video I showed<font color="#CCCCCC"> you that</font>
+
+54
+00:02:12,970 --> 00:02:15,730
+the<font color="#E5E5E5"> Kali Linux</font><font color="#CCCCCC"> contained a lot</font><font color="#E5E5E5"> of word</font>
+
+55
+00:02:15,730 --> 00:02:17,380
+list file which contains<font color="#E5E5E5"> lot</font><font color="#CCCCCC"> of decay</font>
+
+56
+00:02:17,380 --> 00:02:19,750
+which contains<font color="#CCCCCC"> a lot of</font><font color="#E5E5E5"> words dictionary</font>
+
+57
+00:02:19,750 --> 00:02:22,240
+words<font color="#E5E5E5"> so a one can configure</font><font color="#CCCCCC"> it's Bob</font>
+
+58
+00:02:22,240 --> 00:02:25,000
+<font color="#CCCCCC">suite</font><font color="#E5E5E5"> intruder module to attack the</font>
+
+59
+00:02:25,000 --> 00:02:26,740
+<font color="#E5E5E5">server application and tries to</font><font color="#CCCCCC"> finds</font>
+
+60
+00:02:26,740 --> 00:02:29,620
+<font color="#CCCCCC">the important directories and then we</font>
+
+61
+00:02:29,620 --> 00:02:31,000
+will see<font color="#E5E5E5"> that whether that directories</font>
+
+62
+00:02:31,000 --> 00:02:32,710
+are present or not<font color="#CCCCCC"> the second thing is</font>
+
+63
+00:02:32,710 --> 00:02:35,730
+that<font color="#E5E5E5"> we can just commonly guess the</font>
+
+64
+00:02:35,730 --> 00:02:38,080
+directory name and we<font color="#E5E5E5"> will see that</font>
+
+65
+00:02:38,080 --> 00:02:40,240
+<font color="#E5E5E5">whether that directory lists out</font><font color="#CCCCCC"> all</font><font color="#E5E5E5"> the</font>
+
+66
+00:02:40,240 --> 00:02:42,400
+file for us or<font color="#E5E5E5"> not and if that directory</font>
+
+67
+00:02:42,400 --> 00:02:44,470
+is present and<font color="#E5E5E5"> it's listing all the</font>
+
+68
+00:02:44,470 --> 00:02:46,690
+files for<font color="#E5E5E5"> us which means this web</font>
+
+69
+00:02:46,690 --> 00:02:48,540
+application<font color="#CCCCCC"> is a directory browsing</font>
+
+70
+00:02:48,540 --> 00:02:51,610
+<font color="#CCCCCC">runnable</font><font color="#E5E5E5"> so if I just erase this thing</font>
+
+71
+00:02:51,610 --> 00:02:54,040
+so here you<font color="#E5E5E5"> will see that here is one</font>
+
+72
+00:02:54,040 --> 00:02:56,380
+directory<font color="#CCCCCC"> mutated</font><font color="#E5E5E5"> a and if I just hit</font>
+
+73
+00:02:56,380 --> 00:02:59,710
+enter<font color="#E5E5E5"> we'll just get prompted inside</font>
+
+74
+00:02:59,710 --> 00:03:03,430
+<font color="#E5E5E5">this index dot PHP file now make a fake</font>
+
+75
+00:03:03,430 --> 00:03:05,830
+guess that there must be an images
+
+76
+00:03:05,830 --> 00:03:07,840
+directory inside this<font color="#E5E5E5"> mutilate a web</font>
+
+77
+00:03:07,840 --> 00:03:09,520
+application<font color="#CCCCCC"> from</font><font color="#E5E5E5"> where these images</font>
+
+78
+00:03:09,520 --> 00:03:12,610
+<font color="#CCCCCC">these</font><font color="#E5E5E5"> icons are coming from so now let</font>
+
+79
+00:03:12,610 --> 00:03:14,140
+me<font color="#CCCCCC"> just write</font><font color="#E5E5E5"> down here images and let's</font>
+
+80
+00:03:14,140 --> 00:03:15,790
+see whether that directories are is
+
+81
+00:03:15,790 --> 00:03:18,489
+present or not<font color="#E5E5E5"> images</font><font color="#CCCCCC"> and if I</font><font color="#E5E5E5"> just hit</font>
+
+82
+00:03:18,489 --> 00:03:21,280
+enter<font color="#CCCCCC"> here you</font><font color="#E5E5E5"> will see that</font><font color="#CCCCCC"> we</font><font color="#E5E5E5"> are able</font>
+
+83
+00:03:21,280 --> 00:03:24,220
+to access this images directory and<font color="#CCCCCC"> here</font>
+
+84
+00:03:24,220 --> 00:03:27,040
+you<font color="#CCCCCC"> will</font><font color="#E5E5E5"> see it's all the files so if I</font>
+
+85
+00:03:27,040 --> 00:03:29,800
+just open<font color="#E5E5E5"> any file here you will see</font>
+
+86
+00:03:29,800 --> 00:03:33,489
+<font color="#E5E5E5">that file you can just go back so here</font>
+
+87
+00:03:33,489 --> 00:03:34,630
+you can see that<font color="#E5E5E5"> this</font><font color="#CCCCCC"> mutative</font>
+
+88
+00:03:34,630 --> 00:03:36,250
+<font color="#E5E5E5">application is actually whenever</font><font color="#CCCCCC"> of</font>
+
+89
+00:03:36,250 --> 00:03:39,610
+directory browsing<font color="#E5E5E5"> so instead of images</font>
+
+90
+00:03:39,610 --> 00:03:44,440
+<font color="#E5E5E5">let's just try to guess one more</font>
+
+91
+00:03:44,440 --> 00:03:46,989
+directory called<font color="#E5E5E5"> as includes and if I</font>
+
+92
+00:03:46,989 --> 00:03:49,950
+<font color="#E5E5E5">just hit enter</font><font color="#CCCCCC"> here</font><font color="#E5E5E5"> you will see that</font>
+
+93
+00:03:49,950 --> 00:03:52,450
+<font color="#CCCCCC">the files which are present inside the</font>
+
+94
+00:03:52,450 --> 00:03:55,209
+includes directory<font color="#CCCCCC"> some</font><font color="#E5E5E5"> PHP files some</font>
+
+95
+00:03:55,209 --> 00:03:59,590
+configuration files so what one can<font color="#CCCCCC"> do</font>
+
+96
+00:03:59,590 --> 00:04:01,630
+<font color="#CCCCCC">is one</font><font color="#E5E5E5"> can configure its Bob suite to</font>
+
+97
+00:04:01,630 --> 00:04:04,420
+attack<font color="#E5E5E5"> this web application by using</font><font color="#CCCCCC"> the</font>
+
+98
+00:04:04,420 --> 00:04:07,750
+<font color="#E5E5E5">word list now let</font><font color="#CCCCCC"> me going to show you</font>
+
+99
+00:04:07,750 --> 00:04:10,780
+some word<font color="#E5E5E5"> list in Kali Linux which one</font>
+
+100
+00:04:10,780 --> 00:04:15,370
+can<font color="#CCCCCC"> use so the word list is present</font>
+
+101
+00:04:15,370 --> 00:04:18,030
+<font color="#E5E5E5">inside this directory</font>
+
+102
+00:04:21,700 --> 00:04:24,680
+here you can see<font color="#E5E5E5"> hey so here you can see</font>
+
+103
+00:04:24,680 --> 00:04:27,220
+there are two directories<font color="#CCCCCC"> dir and dir</font>
+
+104
+00:04:27,220 --> 00:04:30,080
+<font color="#CCCCCC">buster</font><font color="#E5E5E5"> it's a directory buster let me</font>
+
+105
+00:04:30,080 --> 00:04:35,690
+just go<font color="#CCCCCC"> here and</font><font color="#E5E5E5"> here</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> will see there</font>
+
+106
+00:04:35,690 --> 00:04:38,840
+<font color="#CCCCCC">are a lot of files</font><font color="#E5E5E5"> now let me</font><font color="#CCCCCC"> just add</font>
+
+107
+00:04:38,840 --> 00:04:42,320
+it this big dot txt file<font color="#E5E5E5"> and let's see</font>
+
+108
+00:04:42,320 --> 00:04:45,170
+what kind of directories<font color="#E5E5E5"> or the file</font>
+
+109
+00:04:45,170 --> 00:04:47,210
+names<font color="#CCCCCC"> that have here you will see lot of</font>
+
+110
+00:04:47,210 --> 00:04:50,300
+file names or a directory names which
+
+111
+00:04:50,300 --> 00:04:55,340
+one can<font color="#E5E5E5"> use so let me just search it</font>
+
+112
+00:04:55,340 --> 00:04:58,340
+like admin here<font color="#E5E5E5"> you will see the</font>
+
+113
+00:04:58,340 --> 00:05:01,070
+directory name<font color="#CCCCCC"> is install admin and so</font>
+
+114
+00:05:01,070 --> 00:05:03,670
+on so<font color="#E5E5E5"> forth</font>
+
+115
+00:05:05,080 --> 00:05:08,680
+so this was all about<font color="#E5E5E5"> path traversal or</font>
+
+116
+00:05:08,680 --> 00:05:11,120
+directory browsing attack<font color="#E5E5E5"> so as a</font>
+
+117
+00:05:11,120 --> 00:05:15,470
+penetration tester or as a secure web
+
+118
+00:05:15,470 --> 00:05:17,930
+developer I recommend you to please
+
+119
+00:05:17,930 --> 00:05:20,450
+disable directory browsing<font color="#CCCCCC"> in your web</font>
+
+120
+00:05:20,450 --> 00:05:22,640
+application<font color="#CCCCCC"> so in this video</font><font color="#E5E5E5"> we have</font>
+
+121
+00:05:22,640 --> 00:05:25,220
+covered<font color="#E5E5E5"> that what is path traversal</font>
+
+122
+00:05:25,220 --> 00:05:28,670
+attack and the<font color="#CCCCCC"> Reg diction and directory</font>
+
+123
+00:05:28,670 --> 00:05:31,970
+browsing<font color="#E5E5E5"> issues so thanks for</font><font color="#CCCCCC"> watching</font>
+
+124
+00:05:31,970 --> 00:00:00,000
+this video
+

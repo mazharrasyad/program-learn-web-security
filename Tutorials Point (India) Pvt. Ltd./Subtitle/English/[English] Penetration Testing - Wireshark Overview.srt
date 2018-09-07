@@ -1,0 +1,392 @@
+1
+00:00:00,089 --> 00:00:02,959
+hello everyone<font color="#E5E5E5"> now let's talk about</font>
+
+2
+00:00:02,959 --> 00:00:06,270
+<font color="#E5E5E5">Wireshark so Wireshark is most popularly</font>
+
+3
+00:00:06,270 --> 00:00:09,300
+used<font color="#E5E5E5"> a network protocol analyzer so with</font>
+
+4
+00:00:09,300 --> 00:00:11,820
+the<font color="#E5E5E5"> help of Wireshark we can capture the</font>
+
+5
+00:00:11,820 --> 00:00:13,980
+internet packets which is<font color="#E5E5E5"> going in and</font>
+
+6
+00:00:13,980 --> 00:00:16,379
+going out from our system so<font color="#CCCCCC"> it's the</font>
+
+7
+00:00:16,379 --> 00:00:19,470
+most popularly used software used for
+
+8
+00:00:19,470 --> 00:00:21,539
+<font color="#E5E5E5">capturing</font><font color="#CCCCCC"> the internet packets</font><font color="#E5E5E5"> mainly</font>
+
+9
+00:00:21,539 --> 00:00:23,939
+tcp/ip internet packets<font color="#E5E5E5"> now</font><font color="#CCCCCC"> let's see</font>
+
+10
+00:00:23,939 --> 00:00:26,430
+how we can<font color="#E5E5E5"> capture some packets by using</font>
+
+11
+00:00:26,430 --> 00:00:30,269
+wireshark<font color="#CCCCCC"> now let's see how Wireshark</font>
+
+12
+00:00:30,269 --> 00:00:35,460
+works in order<font color="#E5E5E5"> to start Wireshark we</font>
+
+13
+00:00:35,460 --> 00:00:37,800
+have to sort<font color="#E5E5E5"> our</font><font color="#CCCCCC"> kali linux</font><font color="#E5E5E5"> and even if</font>
+
+14
+00:00:37,800 --> 00:00:40,770
+you want to<font color="#E5E5E5"> use Wireshark in</font><font color="#CCCCCC"> Windows</font><font color="#E5E5E5"> you</font>
+
+15
+00:00:40,770 --> 00:00:42,329
+<font color="#CCCCCC">can download Wireshark from their</font>
+
+16
+00:00:42,329 --> 00:00:44,850
+official<font color="#CCCCCC"> website but in the Kali Linux</font>
+
+17
+00:00:44,850 --> 00:00:47,610
+<font color="#E5E5E5">it's already installed</font><font color="#CCCCCC"> you know so in</font>
+
+18
+00:00:47,610 --> 00:00:50,520
+<font color="#CCCCCC">order</font><font color="#E5E5E5"> to run Wireshark open the terminal</font>
+
+19
+00:00:50,520 --> 00:00:54,539
+<font color="#E5E5E5">and right</font><font color="#CCCCCC"> down here Wireshark</font><font color="#E5E5E5"> and hit</font>
+
+20
+00:00:54,539 --> 00:00:59,190
+enter so<font color="#CCCCCC"> every</font><font color="#E5E5E5"> time</font><font color="#CCCCCC"> he runs</font><font color="#E5E5E5"> the</font>
+
+21
+00:00:59,190 --> 00:01:01,440
+Wireshark this error will come<font color="#E5E5E5"> so you</font>
+
+22
+00:01:01,440 --> 00:01:06,540
+have to<font color="#E5E5E5"> ignore this</font><font color="#CCCCCC"> okay so well I told</font>
+
+23
+00:01:06,540 --> 00:01:09,090
+you earlier<font color="#CCCCCC"> that via shot can capture</font>
+
+24
+00:01:09,090 --> 00:01:12,030
+the packet<font color="#E5E5E5"> on a particular interface but</font>
+
+25
+00:01:12,030 --> 00:01:13,710
+what's the interface<font color="#E5E5E5"> what is the</font>
+
+26
+00:01:13,710 --> 00:01:16,409
+<font color="#E5E5E5">interface so interface is nothing but</font>
+
+27
+00:01:16,409 --> 00:01:20,100
+just your internet connection<font color="#CCCCCC"> so if</font><font color="#E5E5E5"> your</font>
+
+28
+00:01:20,100 --> 00:01:22,920
+<font color="#CCCCCC">Kali Linux is installed in</font><font color="#E5E5E5"> VirtualBox</font>
+
+29
+00:01:22,920 --> 00:01:26,310
+then your interface<font color="#E5E5E5"> should be</font><font color="#CCCCCC"> eats</font><font color="#E5E5E5"> 0</font><font color="#CCCCCC"> ETH</font>
+
+30
+00:01:26,310 --> 00:01:29,520
+<font color="#CCCCCC">0</font><font color="#E5E5E5"> and if you are if you have connected</font>
+
+31
+00:01:29,520 --> 00:01:33,270
+your Kali Linux through your Wi-Fi then
+
+32
+00:01:33,270 --> 00:01:36,329
+your interface should be<font color="#E5E5E5"> WN 0</font><font color="#CCCCCC"> and if you</font>
+
+33
+00:01:36,329 --> 00:01:39,689
+want to sniff the packets to<font color="#CCCCCC"> the</font>
+
+34
+00:01:39,689 --> 00:01:41,579
+<font color="#CCCCCC">localhost then you have to select this</font>
+
+35
+00:01:41,579 --> 00:01:44,460
+interface loopback interface but right
+
+36
+00:01:44,460 --> 00:01:48,930
+now<font color="#E5E5E5"> my Kali Linux is actually connected</font>
+
+37
+00:01:48,930 --> 00:01:50,939
+with<font color="#E5E5E5"> the each 0 interface so here you</font>
+
+38
+00:01:50,939 --> 00:01:53,130
+can see the activity<font color="#CCCCCC"> that the packets</font>
+
+39
+00:01:53,130 --> 00:01:55,439
+<font color="#E5E5E5">are coming going in going out so you can</font>
+
+40
+00:01:55,439 --> 00:01:57,990
+<font color="#E5E5E5">see a little bit activity here at each</font><font color="#CCCCCC"> 0</font>
+
+41
+00:01:57,990 --> 00:02:01,020
+now in order to sniff the packets or to
+
+42
+00:02:01,020 --> 00:02:03,680
+capture<font color="#CCCCCC"> the packets</font><font color="#E5E5E5"> on this interface</font>
+
+43
+00:02:03,680 --> 00:02:06,869
+<font color="#CCCCCC">you have</font><font color="#E5E5E5"> to select this you can just</font>
+
+44
+00:02:06,869 --> 00:02:09,869
+<font color="#CCCCCC">click over here this icon otherwise you</font>
+
+45
+00:02:09,869 --> 00:02:13,760
+can<font color="#CCCCCC"> just</font><font color="#E5E5E5"> double click on this interface</font>
+
+46
+00:02:13,790 --> 00:02:17,130
+so as soon<font color="#E5E5E5"> I'd double-click here you can</font>
+
+47
+00:02:17,130 --> 00:02:19,110
+see the list<font color="#E5E5E5"> of packets</font><font color="#CCCCCC"> which is going</font>
+
+48
+00:02:19,110 --> 00:02:21,450
+in and going out<font color="#E5E5E5"> the result you can see</font>
+
+49
+00:02:21,450 --> 00:02:23,460
+<font color="#CCCCCC">is actually divided into different</font>
+
+50
+00:02:23,460 --> 00:02:25,410
+columns<font color="#CCCCCC"> here</font><font color="#E5E5E5"> you can see the number</font><font color="#CCCCCC"> of</font>
+
+51
+00:02:25,410 --> 00:02:28,320
+packets<font color="#E5E5E5"> their time and destination that</font>
+
+52
+00:02:28,320 --> 00:02:30,210
+way they are<font color="#CCCCCC"> going and the protocol</font>
+
+53
+00:02:30,210 --> 00:02:32,160
+which they are<font color="#E5E5E5"> using and information</font>
+
+54
+00:02:32,160 --> 00:02:35,070
+<font color="#CCCCCC">regarding a particular packet now</font><font color="#E5E5E5"> in</font>
+
+55
+00:02:35,070 --> 00:02:38,700
+<font color="#E5E5E5">just for example let's ping google.com</font>
+
+56
+00:02:38,700 --> 00:02:44,520
+<font color="#E5E5E5">and we'll see the packets which is</font>
+
+57
+00:02:44,520 --> 00:02:46,980
+<font color="#E5E5E5">coming in and out and these packets are</font>
+
+58
+00:02:46,980 --> 00:02:51,750
+being captured<font color="#CCCCCC"> by Wireshark</font><font color="#E5E5E5"> and if I</font>
+
+59
+00:02:51,750 --> 00:02:54,300
+scroll down<font color="#E5E5E5"> you</font><font color="#CCCCCC"> can see the packet Eco</font>
+
+60
+00:02:54,300 --> 00:02:57,960
+ping ping request<font color="#E5E5E5"> and ping reply so this</font>
+
+61
+00:02:57,960 --> 00:03:00,840
+source<font color="#E5E5E5"> you can see a source here this is</font>
+
+62
+00:03:00,840 --> 00:03:03,510
+my car<font color="#CCCCCC"> Linux IP address and this</font><font color="#E5E5E5"> is the</font>
+
+63
+00:03:03,510 --> 00:03:05,280
+destination<font color="#E5E5E5"> IP so this is the IP of</font>
+
+64
+00:03:05,280 --> 00:03:08,750
+google.com<font color="#E5E5E5"> and the protocol is ICMP and</font>
+
+65
+00:03:08,750 --> 00:03:12,540
+in order<font color="#E5E5E5"> to find or</font><font color="#CCCCCC"> to in order to read</font>
+
+66
+00:03:12,540 --> 00:03:15,030
+a<font color="#E5E5E5"> detailed information about each and</font>
+
+67
+00:03:15,030 --> 00:03:17,160
+<font color="#E5E5E5">every packet just</font><font color="#CCCCCC"> select that packet and</font>
+
+68
+00:03:17,160 --> 00:03:19,160
+here are some packet header information
+
+69
+00:03:19,160 --> 00:03:23,520
+<font color="#E5E5E5">so</font><font color="#CCCCCC"> it's frame Ethernet header</font><font color="#E5E5E5"> Internet</font>
+
+70
+00:03:23,520 --> 00:03:30,600
+Protocol<font color="#E5E5E5"> so let's read this in the</font>
+
+71
+00:03:30,600 --> 00:03:33,270
+Internet Protocol header you can<font color="#CCCCCC"> just</font>
+
+72
+00:03:33,270 --> 00:03:35,250
+check the source address<font color="#E5E5E5"> and the</font>
+
+73
+00:03:35,250 --> 00:03:37,470
+destination address<font color="#E5E5E5"> and the destination</font>
+
+74
+00:03:37,470 --> 00:03:40,470
+<font color="#E5E5E5">geo IP location also the location of</font>
+
+75
+00:03:40,470 --> 00:03:42,980
+google.com<font color="#E5E5E5"> or the location of this IP</font>
+
+76
+00:03:42,980 --> 00:03:47,820
+<font color="#E5E5E5">United States and in the last there is</font><font color="#CCCCCC"> a</font>
+
+77
+00:03:47,820 --> 00:03:52,050
+header of ICMP also you can check the
+
+78
+00:03:52,050 --> 00:03:55,050
+ICMP protocol header<font color="#E5E5E5"> so it's a type 8</font>
+
+79
+00:03:55,050 --> 00:03:57,600
+header<font color="#E5E5E5"> and here you can see a coping</font>
+
+80
+00:03:57,600 --> 00:04:00,870
+request and if I scroll<font color="#E5E5E5"> down</font><font color="#CCCCCC"> you can</font>
+
+81
+00:04:00,870 --> 00:04:03,720
+just<font color="#CCCCCC"> also check the timestamp and also</font>
+
+82
+00:04:03,720 --> 00:04:06,780
+data which is coming in and out<font color="#E5E5E5"> and the</font>
+
+83
+00:04:06,780 --> 00:04:11,160
+size also 48 bytes here you can see the
+
+84
+00:04:11,160 --> 00:04:14,930
+data and its length<font color="#E5E5E5"> and at the</font><font color="#CCCCCC"> bottom</font>
+
+85
+00:04:14,930 --> 00:04:18,029
+<font color="#E5E5E5">here</font><font color="#CCCCCC"> is some hex values you can see</font><font color="#E5E5E5"> so</font>
+
+86
+00:04:18,029 --> 00:04:21,358
+actually this data is<font color="#E5E5E5"> present in the hex</font>
+
+87
+00:04:21,358 --> 00:04:24,090
+values so the work of Wireshark<font color="#E5E5E5"> is to</font>
+
+88
+00:04:24,090 --> 00:04:25,990
+<font color="#CCCCCC">parse this data</font>
+
+89
+00:04:25,990 --> 00:04:28,509
+and of<font color="#E5E5E5"> hex data to parse the hex data</font>
+
+90
+00:04:28,509 --> 00:04:31,930
+into this<font color="#E5E5E5"> text</font><font color="#CCCCCC"> one so even if you just</font>
+
+91
+00:04:31,930 --> 00:04:34,449
+<font color="#CCCCCC">select</font><font color="#E5E5E5"> any part of hex data you can see</font>
+
+92
+00:04:34,449 --> 00:04:36,130
+that that part<font color="#E5E5E5"> of text will</font>
+
+93
+00:04:36,130 --> 00:04:37,780
+automatically<font color="#E5E5E5"> select it if I just click</font>
+
+94
+00:04:37,780 --> 00:04:44,800
+<font color="#E5E5E5">over here you</font><font color="#CCCCCC"> can see so this</font><font color="#E5E5E5"> is how you</font>
+
+95
+00:04:44,800 --> 00:04:49,509
+can<font color="#CCCCCC"> use Wireshark to capture the packets</font>
+
+96
+00:04:49,509 --> 00:04:51,910
+which is coming<font color="#E5E5E5"> in and going</font><font color="#CCCCCC"> out</font><font color="#E5E5E5"> from</font>
+
+97
+00:04:51,910 --> 00:04:55,750
+your<font color="#CCCCCC"> network thanks for watching this</font>
+
+98
+00:04:55,750 --> 00:00:00,000
+video
+

@@ -1,0 +1,544 @@
+1
+00:00:07,860 --> 00:00:09,690
+hello and welcome students to<font color="#E5E5E5"> the</font>
+
+2
+00:00:09,690 --> 00:00:11,580
+section 2<font color="#CCCCCC"> of the course</font><font color="#E5E5E5"> information</font>
+
+3
+00:00:11,580 --> 00:00:13,350
+gathering<font color="#E5E5E5"> so what we are going to learn</font>
+
+4
+00:00:13,350 --> 00:00:15,180
+<font color="#E5E5E5">in this section first of all we will</font>
+
+5
+00:00:15,180 --> 00:00:16,259
+learn<font color="#CCCCCC"> that how you can gather</font>
+
+6
+00:00:16,259 --> 00:00:18,029
+information<font color="#E5E5E5"> about web application all</font>
+
+7
+00:00:18,029 --> 00:00:20,340
+<font color="#E5E5E5">the basic concepts then we will learn</font>
+
+8
+00:00:20,340 --> 00:00:22,470
+<font color="#CCCCCC">about</font><font color="#E5E5E5"> how</font><font color="#CCCCCC"> you can identify</font><font color="#E5E5E5"> the machines</font>
+
+9
+00:00:22,470 --> 00:00:25,590
+and<font color="#CCCCCC"> the OS of the web server then</font><font color="#E5E5E5"> later</font>
+
+10
+00:00:25,590 --> 00:00:27,210
+we will learn<font color="#CCCCCC"> how you</font><font color="#E5E5E5"> can find out the</font>
+
+11
+00:00:27,210 --> 00:00:28,800
+port numbers and the<font color="#E5E5E5"> services available</font>
+
+12
+00:00:28,800 --> 00:00:31,050
+<font color="#E5E5E5">in the web applications and some more</font>
+
+13
+00:00:31,050 --> 00:00:33,690
+<font color="#E5E5E5">spidering tools regarding websites so</font>
+
+14
+00:00:33,690 --> 00:00:35,160
+first of<font color="#E5E5E5"> all we</font><font color="#CCCCCC"> are starting with the</font>
+
+15
+00:00:35,160 --> 00:00:36,600
+discovering the infra off web
+
+16
+00:00:36,600 --> 00:00:38,370
+application in the first video of
+
+17
+00:00:38,370 --> 00:00:40,440
+section 2 we are going<font color="#CCCCCC"> to learn</font><font color="#E5E5E5"> that how</font>
+
+18
+00:00:40,440 --> 00:00:43,290
+you can<font color="#E5E5E5"> gather information about the web</font>
+
+19
+00:00:43,290 --> 00:00:46,559
+application<font color="#E5E5E5"> and then the techniques to</font>
+
+20
+00:00:46,559 --> 00:00:48,479
+discover and gathering this information
+
+21
+00:00:48,479 --> 00:00:52,320
+<font color="#CCCCCC">so</font><font color="#E5E5E5"> to do that we need to open the</font>
+
+22
+00:00:52,320 --> 00:00:54,720
+browser<font color="#E5E5E5"> of the operating system you can</font>
+
+23
+00:00:54,720 --> 00:00:56,580
+use<font color="#CCCCCC"> Windows or Kali Linux</font><font color="#E5E5E5"> doesn't matter</font>
+
+24
+00:00:56,580 --> 00:00:59,309
+so I'm using Kali Linux here and open
+
+25
+00:00:59,309 --> 00:01:01,890
+the<font color="#E5E5E5"> browser of Kali Linux and then we</font>
+
+26
+00:01:01,890 --> 00:01:04,379
+will open<font color="#E5E5E5"> a particular</font><font color="#CCCCCC"> website</font><font color="#E5E5E5"> to gather</font>
+
+27
+00:01:04,379 --> 00:01:06,979
+<font color="#CCCCCC">information about the web applications</font>
+
+28
+00:01:06,979 --> 00:01:09,570
+<font color="#E5E5E5">so here I am at Kali Linux operating</font>
+
+29
+00:01:09,570 --> 00:01:12,060
+system<font color="#E5E5E5"> and first of all you need to open</font>
+
+30
+00:01:12,060 --> 00:01:15,030
+<font color="#E5E5E5">the browser of Kali Linux so and open</font>
+
+31
+00:01:15,030 --> 00:01:17,010
+google.com inside it<font color="#CCCCCC"> hallee you can see</font>
+
+32
+00:01:17,010 --> 00:01:19,500
+here<font color="#E5E5E5"> that I have opened</font><font color="#CCCCCC"> the Google</font>
+
+33
+00:01:19,500 --> 00:01:25,650
+inside<font color="#E5E5E5"> the Firefox now the website we</font>
+
+34
+00:01:25,650 --> 00:01:29,220
+are<font color="#E5E5E5"> going to visit is who is and hit</font>
+
+35
+00:01:29,220 --> 00:01:33,150
+enter so<font color="#CCCCCC"> you can see here</font><font color="#E5E5E5"> that you</font><font color="#CCCCCC"> can</font>
+
+36
+00:01:33,150 --> 00:01:34,890
+see<font color="#E5E5E5"> there are so many results available</font>
+
+37
+00:01:34,890 --> 00:01:36,810
+regarding who is so which one<font color="#CCCCCC"> is</font><font color="#E5E5E5"> the</font>
+
+38
+00:01:36,810 --> 00:01:39,630
+right<font color="#CCCCCC"> one</font><font color="#E5E5E5"> right</font><font color="#CCCCCC"> because</font><font color="#E5E5E5"> we cannot use</font>
+
+39
+00:01:39,630 --> 00:01:41,880
+all<font color="#E5E5E5"> these websites you can see in the</font>
+
+40
+00:01:41,880 --> 00:01:43,560
+second<font color="#E5E5E5"> page as well all these websites</font>
+
+41
+00:01:43,560 --> 00:01:46,080
+<font color="#CCCCCC">are available</font><font color="#E5E5E5"> but let me tell you which</font>
+
+42
+00:01:46,080 --> 00:01:48,630
+<font color="#CCCCCC">many is useful for us so you can type</font>
+
+43
+00:01:48,630 --> 00:01:54,000
+who dot is right and hit enter<font color="#E5E5E5"> now</font><font color="#CCCCCC"> you</font>
+
+44
+00:01:54,000 --> 00:01:58,229
+can find out the real URL regarding who
+
+45
+00:01:58,229 --> 00:02:01,290
+is which is this one who dot is is the
+
+46
+00:02:01,290 --> 00:02:04,170
+right<font color="#CCCCCC"> URL of who is Right who is search</font>
+
+47
+00:02:04,170 --> 00:02:06,330
+domain<font color="#CCCCCC"> name web site and IP tools are</font>
+
+48
+00:02:06,330 --> 00:02:08,310
+available<font color="#CCCCCC"> so click on that and</font><font color="#E5E5E5"> open the</font>
+
+49
+00:02:08,310 --> 00:02:09,860
+<font color="#CCCCCC">website</font>
+
+50
+00:02:09,860 --> 00:02:12,440
+<font color="#CCCCCC">here-take so this is the search box</font>
+
+51
+00:02:12,440 --> 00:02:14,480
+available<font color="#E5E5E5"> inside the who eats website</font>
+
+52
+00:02:14,480 --> 00:02:16,610
+<font color="#CCCCCC">here you can</font><font color="#E5E5E5"> type the</font><font color="#CCCCCC"> domain name as</font>
+
+53
+00:02:16,610 --> 00:02:19,280
+well as<font color="#E5E5E5"> the</font><font color="#CCCCCC"> IP address right</font><font color="#E5E5E5"> IP address</font>
+
+54
+00:02:19,280 --> 00:02:22,220
+of web server or<font color="#E5E5E5"> the website name you</font>
+
+55
+00:02:22,220 --> 00:02:25,760
+can put<font color="#E5E5E5"> here so for example I'm</font><font color="#CCCCCC"> trying</font>
+
+56
+00:02:25,760 --> 00:02:28,010
+<font color="#E5E5E5">to search</font><font color="#CCCCCC"> information about the sample</font>
+
+57
+00:02:28,010 --> 00:02:31,160
+<font color="#E5E5E5">website</font><font color="#CCCCCC"> valve web comm right</font><font color="#E5E5E5"> you guys</font>
+
+58
+00:02:31,160 --> 00:02:32,960
+can<font color="#E5E5E5"> also search it because it's a sample</font>
+
+59
+00:02:32,960 --> 00:02:35,060
+<font color="#CCCCCC">website so anyone can use it</font><font color="#E5E5E5"> so you can</font>
+
+60
+00:02:35,060 --> 00:02:37,790
+type here<font color="#E5E5E5"> one the web.com</font><font color="#CCCCCC"> I want to</font>
+
+61
+00:02:37,790 --> 00:02:39,740
+<font color="#E5E5E5">gather</font><font color="#CCCCCC"> information about this</font><font color="#E5E5E5"> website</font>
+
+62
+00:02:39,740 --> 00:02:42,650
+the basic information<font color="#CCCCCC"> right and you can</font>
+
+63
+00:02:42,650 --> 00:02:46,010
+hit enter<font color="#CCCCCC"> so now it is</font><font color="#E5E5E5"> gathering</font>
+
+64
+00:02:46,010 --> 00:02:48,980
+<font color="#E5E5E5">information from</font><font color="#CCCCCC"> Internet and from the</font>
+
+65
+00:02:48,980 --> 00:02:51,110
+<font color="#CCCCCC">destroyed directories and providing</font>
+
+66
+00:02:51,110 --> 00:02:53,170
+information right here<font color="#CCCCCC"> on one platform</font>
+
+67
+00:02:53,170 --> 00:02:55,670
+<font color="#E5E5E5">now when you come</font><font color="#CCCCCC"> down</font><font color="#E5E5E5"> so you can see</font>
+
+68
+00:02:55,670 --> 00:02:57,440
+here<font color="#E5E5E5"> that this</font><font color="#CCCCCC"> is the</font><font color="#E5E5E5"> Registrar info</font>
+
+69
+00:02:57,440 --> 00:03:00,440
+<font color="#E5E5E5">right</font><font color="#CCCCCC"> the name you know</font><font color="#E5E5E5"> DNS si the</font>
+
+70
+00:03:00,440 --> 00:03:04,130
+server is this one right<font color="#E5E5E5"> come down and</font>
+
+71
+00:03:04,130 --> 00:03:06,410
+you can see here<font color="#E5E5E5"> that these</font><font color="#CCCCCC"> are the some</font>
+
+72
+00:03:06,410 --> 00:03:08,150
+important<font color="#E5E5E5"> dates</font><font color="#CCCCCC"> available for example</font>
+
+73
+00:03:08,150 --> 00:03:10,940
+<font color="#E5E5E5">when the domain will expire when it was</font>
+
+74
+00:03:10,940 --> 00:03:13,730
+<font color="#CCCCCC">registered and when it was updated now</font>
+
+75
+00:03:13,730 --> 00:03:15,560
+these are name servers IP address are
+
+76
+00:03:15,560 --> 00:03:17,450
+available this information is really
+
+77
+00:03:17,450 --> 00:03:20,600
+<font color="#CCCCCC">useful in pen testing process</font><font color="#E5E5E5"> now come</font>
+
+78
+00:03:20,600 --> 00:03:22,910
+down<font color="#CCCCCC"> and you can see here that the name</font>
+
+79
+00:03:22,910 --> 00:03:25,730
+of<font color="#CCCCCC"> the company a</font><font color="#E5E5E5"> kinetics limited this</font>
+
+80
+00:03:25,730 --> 00:03:27,650
+<font color="#CCCCCC">is</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> address of</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> company this is</font>
+
+81
+00:03:27,650 --> 00:03:30,320
+<font color="#CCCCCC">the city</font><font color="#E5E5E5"> Tortola this is the postal code</font>
+
+82
+00:03:30,320 --> 00:03:32,959
+available<font color="#E5E5E5"> right country and phone number</font>
+
+83
+00:03:32,959 --> 00:03:34,430
+is<font color="#CCCCCC"> also available so if you want to</font>
+
+84
+00:03:34,430 --> 00:03:37,280
+<font color="#E5E5E5">contact to the company then you can use</font>
+
+85
+00:03:37,280 --> 00:03:39,080
+this phone<font color="#CCCCCC"> number if you want to send a</font>
+
+86
+00:03:39,080 --> 00:03:40,670
+mail<font color="#E5E5E5"> to</font><font color="#CCCCCC"> the company then you</font><font color="#E5E5E5"> can</font><font color="#CCCCCC"> use</font>
+
+87
+00:03:40,670 --> 00:03:42,440
+this<font color="#E5E5E5"> administrator at</font><font color="#CCCCCC"> the rate a</font>
+
+88
+00:03:42,440 --> 00:03:44,480
+<font color="#E5E5E5">kinetics dot-com as</font><font color="#CCCCCC"> I</font><font color="#E5E5E5"> already told you</font>
+
+89
+00:03:44,480 --> 00:03:46,519
+<font color="#CCCCCC">that this website</font><font color="#E5E5E5"> is a sample website</font>
+
+90
+00:03:46,519 --> 00:03:49,310
+provided by<font color="#E5E5E5"> a kinetics company</font><font color="#CCCCCC"> alright</font>
+
+91
+00:03:49,310 --> 00:03:52,450
+so this<font color="#E5E5E5"> information is actually useful</font>
+
+92
+00:03:52,450 --> 00:03:53,980
+and you are gathering information<font color="#CCCCCC"> about</font>
+
+93
+00:03:53,980 --> 00:03:56,440
+any<font color="#CCCCCC"> web site</font><font color="#E5E5E5"> or web application all</font>
+
+94
+00:03:56,440 --> 00:03:59,830
+right let<font color="#E5E5E5"> me come up</font><font color="#CCCCCC"> and if you can</font>
+
+95
+00:03:59,830 --> 00:04:02,170
+<font color="#CCCCCC">click on history</font>
+
+96
+00:04:02,170 --> 00:04:06,220
+so it is loading history for us<font color="#E5E5E5"> that you</font>
+
+97
+00:04:06,220 --> 00:04:08,740
+can see here there are<font color="#E5E5E5"> 285 historical</font>
+
+98
+00:04:08,740 --> 00:04:10,810
+who is it<font color="#E5E5E5"> records now</font>
+
+99
+00:04:10,810 --> 00:04:14,069
+<font color="#CCCCCC">Indiana's records</font>
+
+100
+00:04:14,120 --> 00:04:16,130
+about the<font color="#CCCCCC"> DNS</font><font color="#E5E5E5"> domain name server is</font>
+
+101
+00:04:16,130 --> 00:04:18,410
+<font color="#E5E5E5">really important</font><font color="#CCCCCC"> you can</font><font color="#E5E5E5"> see here that</font>
+
+102
+00:04:18,410 --> 00:04:20,269
+<font color="#E5E5E5">all</font><font color="#CCCCCC"> the information about</font><font color="#E5E5E5"> DNS is</font>
+
+103
+00:04:20,269 --> 00:04:24,139
+available here now
+
+104
+00:04:24,139 --> 00:04:27,210
+diagnostics<font color="#E5E5E5"> you can see here that there</font>
+
+105
+00:04:27,210 --> 00:04:29,220
+are two<font color="#E5E5E5"> entities available here one is</font>
+
+106
+00:04:29,220 --> 00:04:30,990
+<font color="#E5E5E5">ping and one is traces so what is ping</font>
+
+107
+00:04:30,990 --> 00:04:33,240
+ping is basically a process<font color="#E5E5E5"> to check</font>
+
+108
+00:04:33,240 --> 00:04:35,190
+that the web server<font color="#CCCCCC"> is live or not</font><font color="#E5E5E5"> so</font>
+
+109
+00:04:35,190 --> 00:04:37,380
+you<font color="#E5E5E5"> can see here that</font><font color="#CCCCCC"> they showing us</font>
+
+110
+00:04:37,380 --> 00:04:40,110
+the<font color="#CCCCCC"> requests coming from the server</font><font color="#E5E5E5"> it</font>
+
+111
+00:04:40,110 --> 00:04:41,970
+means<font color="#E5E5E5"> that server is life this website</font>
+
+112
+00:04:41,970 --> 00:04:44,790
+is actually<font color="#E5E5E5"> running and this is the IP</font>
+
+113
+00:04:44,790 --> 00:04:47,580
+<font color="#CCCCCC">address of web server now if you come</font>
+
+114
+00:04:47,580 --> 00:04:49,110
+down<font color="#E5E5E5"> then you can see this is the trace</font>
+
+115
+00:04:49,110 --> 00:04:52,160
+<font color="#E5E5E5">trace route means the number of hopes in</font>
+
+116
+00:04:52,160 --> 00:04:55,230
+between two machines<font color="#E5E5E5"> for example my</font>
+
+117
+00:04:55,230 --> 00:04:57,540
+system is running one<font color="#E5E5E5"> live webcam</font>
+
+118
+00:04:57,540 --> 00:04:59,430
+website<font color="#E5E5E5"> right so I'm connected with the</font>
+
+119
+00:04:59,430 --> 00:05:01,860
+server of<font color="#CCCCCC"> Walda web dot-com so how many</font>
+
+120
+00:05:01,860 --> 00:05:06,270
+hopes are between<font color="#E5E5E5"> me it means my system</font>
+
+121
+00:05:06,270 --> 00:05:09,060
+and the server of<font color="#E5E5E5"> Walla web.com which is</font>
+
+122
+00:05:09,060 --> 00:05:11,970
+<font color="#E5E5E5">listed here right</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> you can see here it</font>
+
+123
+00:05:11,970 --> 00:05:13,979
+<font color="#E5E5E5">is showing us 22 hopes are available</font>
+
+124
+00:05:13,979 --> 00:05:17,340
+between<font color="#E5E5E5"> me and the server of</font><font color="#CCCCCC"> the babcom</font>
+
+125
+00:05:17,340 --> 00:05:18,900
+so these all information is actually
+
+126
+00:05:18,900 --> 00:05:20,610
+<font color="#E5E5E5">available on this website</font>
+
+127
+00:05:20,610 --> 00:05:23,340
+<font color="#CCCCCC">right you can also try other</font><font color="#E5E5E5"> websites</font>
+
+128
+00:05:23,340 --> 00:05:25,050
+regarding who is but<font color="#E5E5E5"> this website is</font>
+
+129
+00:05:25,050 --> 00:05:27,570
+actually the right one<font color="#E5E5E5"> so remember who</font>
+
+130
+00:05:27,570 --> 00:05:29,940
+dot is is the<font color="#E5E5E5"> website which can provide</font>
+
+131
+00:05:29,940 --> 00:05:31,979
+you all<font color="#E5E5E5"> the basic</font><font color="#CCCCCC"> information and you</font>
+
+132
+00:05:31,979 --> 00:05:33,900
+can<font color="#E5E5E5"> gather all the information right</font>
+
+133
+00:05:33,900 --> 00:05:36,900
+<font color="#E5E5E5">here</font><font color="#CCCCCC"> on one</font><font color="#E5E5E5"> platform so this is all</font>
+
+134
+00:05:36,900 --> 00:05:38,610
+<font color="#E5E5E5">about discovering</font><font color="#CCCCCC"> information about a</font>
+
+135
+00:05:38,610 --> 00:05:40,820
+<font color="#E5E5E5">website</font>
+
+136
+00:05:40,820 --> 00:00:00,000
+<font color="#E5E5E5">you</font>
+

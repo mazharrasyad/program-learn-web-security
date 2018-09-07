@@ -1,0 +1,216 @@
+1
+00:00:00,000 --> 00:00:03,360
+ hi dan selamat datang di <font color="#E5E5E5">pelajaran ini </font><font color="#CCCCCC">saya akan pergi </font>
+
+2
+00:00:03,360 --> 00:00:05,609
+ untuk mengajari <font color="#CCCCCC">Anda semua web berfungsi sebagai </font>
+
+3
+00:00:05,609 --> 00:00:08,820
+ Proses keseluruhan <font color="#CCCCCC">web adalah </font><font color="#E5E5E5">cara </font>
+
+4
+00:00:08,820 --> 00:00:10,559
+ mentransmisikan data melalui <font color="#CCCCCC">Internet </font>
+
+5
+00:00:10,559 --> 00:00:16,109
+ <font color="#CCCCCC">menggunakan protokol HTTP dan HTML ke </font>
+
+6
+00:00:16,109 --> 00:00:18,150
+ akses informasi dari web yang Anda butuhkan 
+
+7
+00:00:18,150 --> 00:00:21,180
+ <font color="#E5E5E5">browser web seperti Firefox Chrome </font>
+
+8
+00:00:21,180 --> 00:00:26,130
+ Internet <font color="#E5E5E5">Explorer Safari </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">seterusnya </font>
+
+9
+00:00:26,130 --> 00:00:28,310
+ web dapat <font color="#CCCCCC">diringkas sebagai rangkaian </font>
+
+10
+00:00:28,310 --> 00:00:32,030
+ <font color="#E5E5E5">interaksi </font><font color="#CCCCCC">antara klien dan server </font>
+
+11
+00:00:32,030 --> 00:00:34,649
+ <font color="#E5E5E5">di slide ini </font><font color="#CCCCCC">Anda bisa melihat bagaimana web </font>
+
+12
+00:00:34,649 --> 00:00:36,390
+ bekerja <font color="#CCCCCC">secara singkat </font>
+
+13
+00:00:36,390 --> 00:00:39,180
+ pertama Anda meminta halaman web di web 
+
+14
+00:00:39,180 --> 00:00:42,420
+ browser <font color="#CCCCCC">dan DNS memeriksa </font><font color="#E5E5E5">nama </font><font color="#CCCCCC">domain </font>
+
+15
+00:00:42,420 --> 00:00:46,079
+ <font color="#E5E5E5">website</font><font color="#CCCCCC"> Anda </font><font color="#E5E5E5">masukkan dan kemudian web </font>
+
+16
+00:00:46,079 --> 00:00:48,270
+ Server mengirim <font color="#E5E5E5">kembali </font><font color="#CCCCCC">data untuk </font>
+
+17
+00:00:48,270 --> 00:00:51,930
+ meminta <font color="#E5E5E5">halaman </font><font color="#CCCCCC">web </font><font color="#E5E5E5">server </font><font color="#CCCCCC">web </font><font color="#E5E5E5">saja </font>
+
+18
+00:00:51,930 --> 00:00:54,149
+ <font color="#CCCCCC">sebuah </font><font color="#E5E5E5">software yang berjalan pada </font>
+
+19
+00:00:54,149 --> 00:00:57,180
+ sistem operasi <font color="#CCCCCC">server yang memungkinkan </font>
+
+20
+00:00:57,180 --> 00:00:59,930
+ koneksi untuk mengakses aplikasi web 
+
+21
+00:00:59,930 --> 00:01:03,210
+ <font color="#CCCCCC">server web yang paling umum adalah Apache </font>
+
+22
+00:01:03,210 --> 00:01:06,720
+ <font color="#E5E5E5">dan Tomcat </font><font color="#CCCCCC">server-server ini normal </font>
+
+23
+00:01:06,720 --> 00:01:09,420
+ direktori dan struktur seperti yang lain 
+
+24
+00:01:09,420 --> 00:01:12,750
+ <font color="#E5E5E5">komputer sekarang mari kita lihat apa yang Anda butuhkan </font>
+
+25
+00:01:12,750 --> 00:01:16,380
+ tahu tentang <font color="#E5E5E5">HTTP HTTP adalah teks biasa </font>
+
+26
+00:01:16,380 --> 00:01:19,229
+ <font color="#E5E5E5">protokol sehingga tidak ada </font><font color="#CCCCCC">keamanan atau </font>
+
+27
+00:01:19,229 --> 00:01:24,060
+ privasi saat menggunakan HTTP HTTP adalah 
+
+28
+00:01:24,060 --> 00:01:26,460
+ landasan komunikasi untuk <font color="#E5E5E5">web </font>
+
+29
+00:01:26,460 --> 00:01:30,689
+ <font color="#CCCCCC">halaman </font><font color="#E5E5E5">dan memiliki berbagai permintaan paling banyak </font>
+
+30
+00:01:30,689 --> 00:01:34,220
+ pencarian penting didapat dan <font color="#CCCCCC">dijeda </font>
+
+31
+00:01:34,220 --> 00:01:38,430
+ <font color="#E5E5E5">dapatkan </font><font color="#CCCCCC">permintaan retweet </font><font color="#E5E5E5">data jadi setiap waktu </font>
+
+32
+00:01:38,430 --> 00:01:40,770
+ <font color="#E5E5E5">Anda menjelajah ke halaman </font><font color="#CCCCCC">yang sedang Anda lakukan </font>
+
+33
+00:01:40,770 --> 00:01:44,759
+ permintaan permintaan <font color="#E5E5E5">posting permintaan </font><font color="#CCCCCC">itu digunakan </font>
+
+34
+00:01:44,759 --> 00:01:47,840
+ untuk pengiriman <font color="#E5E5E5">formulir web misalnya </font>
+
+35
+00:01:47,840 --> 00:01:51,390
+ <font color="#CCCCCC">login </font><font color="#E5E5E5">merupakan hal yang penting untuk </font>
+
+36
+00:01:51,390 --> 00:01:53,700
+ <font color="#CCCCCC">ingat adalah </font><font color="#E5E5E5">HTTP itu </font>
+
+37
+00:01:53,700 --> 00:01:55,950
+ tidak dibuat <font color="#CCCCCC">untuk menangani web </font>
+
+38
+00:01:55,950 --> 00:01:58,590
+ transaksi <font color="#E5E5E5">yang membutuhkan gelar tinggi </font>
+
+39
+00:01:58,590 --> 00:02:03,030
+ <font color="#CCCCCC">keamanan dan privasi </font><font color="#E5E5E5">Anda dapat </font><font color="#CCCCCC">memeriksa </font>
+
+40
+00:02:03,030 --> 00:02:06,450
+ semua <font color="#E5E5E5">informasi tentang bagaimana HTTP beroperasi </font>
+
+41
+00:02:06,450 --> 00:02:10,530
+ dengan alat seperti Wireshark <font color="#E5E5E5">yang </font>
+
+42
+00:02:10,530 --> 00:02:13,410
+ solusi <font color="#E5E5E5">untuk </font><font color="#CCCCCC">masalah </font><font color="#E5E5E5">ini adalah HTTP </font>
+
+43
+00:02:13,410 --> 00:02:16,380
+ ya karena menggunakan <font color="#E5E5E5">protokol terenkripsi </font>
+
+44
+00:02:16,380 --> 00:02:19,620
+ disebut Secure Sockets Layer umumnya 
+
+45
+00:02:19,620 --> 00:02:23,400
+ dikenal sebagai <font color="#CCCCCC">SSL </font><font color="#E5E5E5">S berarti aman </font>
+
+46
+00:02:23,400 --> 00:02:26,070
+ <font color="#E5E5E5">yang berarti Anda </font><font color="#CCCCCC">akan berkomunikasi </font>
+
+47
+00:02:26,070 --> 00:02:28,550
+ <font color="#E5E5E5">dengan situs web yang dienkripsi </font>
+
+48
+00:02:28,550 --> 00:02:32,640
+ <font color="#CCCCCC">Saluran </font><font color="#E5E5E5">HTTP paling cocok untuk </font>
+
+49
+00:02:32,640 --> 00:02:35,370
+ mencegah serangan man-in-the-middle dan 
+
+50
+00:02:35,370 --> 00:02:38,790
+ menurun dari analisis paket dan 
+
+51
+00:02:38,790 --> 00:02:43,470
+ <font color="#E5E5E5">selalu lebih baik </font><font color="#CCCCCC">digunakan jadi itu </font><font color="#E5E5E5">saja </font>
+
+52
+00:02:43,470 --> 00:02:46,680
+ untuk <font color="#CCCCCC">sekarang </font><font color="#E5E5E5">terima kasih sudah </font><font color="#CCCCCC">menonton dan aku akan </font>
+
+53
+00:02:46,680 --> 00:02:49,460
+ sampai jumpa di <font color="#E5E5E5">lain waktu </font>
+
+54
+00:02:55,780 --> 00:00:00,000
+ kamu 
+

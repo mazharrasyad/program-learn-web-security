@@ -1,0 +1,520 @@
+1
+00:00:00,089 --> 00:00:02,790
+hello everyone in this video we will
+
+2
+00:00:02,790 --> 00:00:05,069
+talk about<font color="#E5E5E5"> cross-site request forgery</font>
+
+3
+00:00:05,069 --> 00:00:07,589
+so cross-site request forgery<font color="#CCCCCC"> also</font>
+
+4
+00:00:07,589 --> 00:00:12,000
+referred as<font color="#E5E5E5"> CSRF or</font><font color="#CCCCCC"> C Cerf</font><font color="#E5E5E5"> so before</font>
+
+5
+00:00:12,000 --> 00:00:13,590
+<font color="#E5E5E5">going further</font><font color="#CCCCCC"> let me give you one</font>
+
+6
+00:00:13,590 --> 00:00:16,260
+example<font color="#CCCCCC"> that there is one user who is</font>
+
+7
+00:00:16,260 --> 00:00:18,770
+logged in<font color="#E5E5E5"> on a particular</font><font color="#CCCCCC"> web site and</font>
+
+8
+00:00:18,770 --> 00:00:21,930
+attacker sends<font color="#E5E5E5"> a malicious link to that</font>
+
+9
+00:00:21,930 --> 00:00:24,750
+<font color="#E5E5E5">user of a malicious website</font><font color="#CCCCCC"> and if that</font>
+
+10
+00:00:24,750 --> 00:00:27,570
+user clicks on that<font color="#CCCCCC"> link and open that</font>
+
+11
+00:00:27,570 --> 00:00:30,029
+malicious<font color="#CCCCCC"> web</font><font color="#E5E5E5"> site then that malicious</font>
+
+12
+00:00:30,029 --> 00:00:33,180
+<font color="#CCCCCC">web</font><font color="#E5E5E5"> site will make a request</font><font color="#CCCCCC"> to that web</font>
+
+13
+00:00:33,180 --> 00:00:35,280
+<font color="#CCCCCC">site on which</font><font color="#E5E5E5"> the user is logged in on</font>
+
+14
+00:00:35,280 --> 00:00:39,120
+the behalf of user<font color="#E5E5E5"> so here you can see</font>
+
+15
+00:00:39,120 --> 00:00:41,940
+that that malicious<font color="#E5E5E5"> web site will make a</font>
+
+16
+00:00:41,940 --> 00:00:44,550
+<font color="#E5E5E5">legitimate request to that legitimate</font>
+
+17
+00:00:44,550 --> 00:00:46,640
+<font color="#E5E5E5">web site on which the user is</font>
+
+18
+00:00:46,640 --> 00:00:49,590
+<font color="#E5E5E5">authenticated and the request is</font>
+
+19
+00:00:49,590 --> 00:00:52,500
+<font color="#E5E5E5">triggered as soon as user click on that</font>
+
+20
+00:00:52,500 --> 00:00:55,260
+malicious<font color="#E5E5E5"> link so the session IDs</font>
+
+21
+00:00:55,260 --> 00:00:59,579
+cookies tokens<font color="#E5E5E5"> are all sent by users</font>
+
+22
+00:00:59,579 --> 00:01:02,789
+browser<font color="#E5E5E5"> to that legitimate</font><font color="#CCCCCC"> website if</font>
+
+23
+00:01:02,789 --> 00:01:05,880
+the malicious web site make a request
+
+24
+00:01:05,880 --> 00:01:09,630
+now let's see how<font color="#E5E5E5"> CSRF attack works now</font>
+
+25
+00:01:09,630 --> 00:01:12,119
+let's have a look at<font color="#CCCCCC"> basic C's</font><font color="#E5E5E5"> of attack</font>
+
+26
+00:01:12,119 --> 00:01:14,460
+the first thing we have<font color="#CCCCCC"> to do is we have</font>
+
+27
+00:01:14,460 --> 00:01:16,740
+<font color="#E5E5E5">to start our OS broken web application</font>
+
+28
+00:01:16,740 --> 00:01:18,659
+which we usually<font color="#E5E5E5"> do all the times and</font>
+
+29
+00:01:18,659 --> 00:01:21,509
+here you<font color="#E5E5E5"> will see that</font><font color="#CCCCCC"> my OS broken web</font>
+
+30
+00:01:21,509 --> 00:01:26,360
+application is up and running so let<font color="#E5E5E5"> me</font>
+
+31
+00:01:26,360 --> 00:01:30,930
+open the OS<font color="#E5E5E5"> broken</font><font color="#CCCCCC"> replication of</font>
+
+32
+00:01:30,930 --> 00:01:33,500
+Firefox
+
+33
+00:01:36,830 --> 00:01:41,360
+now this time we have to use<font color="#E5E5E5"> this web</font>
+
+34
+00:01:41,360 --> 00:01:44,330
+application<font color="#CCCCCC"> over ass</font><font color="#E5E5E5"> with</font><font color="#CCCCCC"> app</font><font color="#E5E5E5"> goat so if</font>
+
+35
+00:01:44,330 --> 00:01:46,760
+I just<font color="#E5E5E5"> click over</font><font color="#CCCCCC"> here it asks us for</font>
+
+36
+00:01:46,760 --> 00:01:48,380
+<font color="#E5E5E5">the username and the</font><font color="#CCCCCC"> password</font>
+
+37
+00:01:48,380 --> 00:01:51,470
+so the<font color="#CCCCCC"> username is</font><font color="#E5E5E5"> guest and the</font>
+
+38
+00:01:51,470 --> 00:01:55,750
+password is guest<font color="#E5E5E5"> click on</font><font color="#CCCCCC"> OK</font>
+
+39
+00:01:55,750 --> 00:01:58,250
+so here you will see the<font color="#CCCCCC"> ovis web code</font>
+
+40
+00:01:58,250 --> 00:02:00,200
+<font color="#E5E5E5">web application so let's click over here</font>
+
+41
+00:02:00,200 --> 00:02:03,980
+<font color="#E5E5E5">start web good and on the left hand side</font>
+
+42
+00:02:03,980 --> 00:02:07,370
+you will<font color="#CCCCCC"> see lot</font><font color="#E5E5E5"> of challenges let's go</font>
+
+43
+00:02:07,370 --> 00:02:10,520
+here cross-site scripting<font color="#E5E5E5"> and here you</font>
+
+44
+00:02:10,520 --> 00:02:12,160
+<font color="#E5E5E5">will</font><font color="#CCCCCC"> find one challenge called as</font>
+
+45
+00:02:12,160 --> 00:02:15,260
+cross-site request forgery<font color="#E5E5E5"> or cease off</font>
+
+46
+00:02:15,260 --> 00:02:17,870
+let me<font color="#CCCCCC"> open this challenge so what we</font>
+
+47
+00:02:17,870 --> 00:02:20,420
+have to do is we<font color="#CCCCCC"> just</font><font color="#E5E5E5"> have to assume</font>
+
+48
+00:02:20,420 --> 00:02:23,470
+<font color="#CCCCCC">that we are a</font><font color="#E5E5E5"> normal user</font><font color="#CCCCCC"> we are a</font>
+
+49
+00:02:23,470 --> 00:02:26,170
+authenticated user and we are logged in
+
+50
+00:02:26,170 --> 00:02:30,140
+so now what we have<font color="#E5E5E5"> to</font><font color="#CCCCCC"> do is we actually</font>
+
+51
+00:02:30,140 --> 00:02:34,970
+<font color="#CCCCCC">have to create</font><font color="#E5E5E5"> HTML page or</font><font color="#CCCCCC"> we have</font>
+
+52
+00:02:34,970 --> 00:02:37,700
+actually have to<font color="#E5E5E5"> create HTML page</font><font color="#CCCCCC"> and</font>
+
+53
+00:02:37,700 --> 00:02:40,430
+inside it we have to<font color="#E5E5E5"> create an image tag</font>
+
+54
+00:02:40,430 --> 00:02:43,489
+which will<font color="#E5E5E5"> be hidden so</font><font color="#CCCCCC"> that image tag</font>
+
+55
+00:02:43,489 --> 00:02:48,980
+will actually points to<font color="#E5E5E5"> this URL</font><font color="#CCCCCC"> and in</font>
+
+56
+00:02:48,980 --> 00:02:52,310
+that image tag<font color="#E5E5E5"> we have to pass</font>
+
+57
+00:02:52,310 --> 00:02:55,010
+additional<font color="#E5E5E5"> parameter called as transfer</font>
+
+58
+00:02:55,010 --> 00:03:00,590
+funds so<font color="#E5E5E5"> if I if I</font><font color="#CCCCCC"> if</font><font color="#E5E5E5"> any user like me I</font>
+
+59
+00:03:00,590 --> 00:03:03,620
+am authenticated user here as<font color="#E5E5E5"> web</font><font color="#CCCCCC"> God</font><font color="#E5E5E5"> so</font>
+
+60
+00:03:03,620 --> 00:03:07,280
+if an attacker will send me<font color="#E5E5E5"> the link of</font>
+
+61
+00:03:07,280 --> 00:03:10,430
+its<font color="#E5E5E5"> web page so if I just open its web</font>
+
+62
+00:03:10,430 --> 00:03:15,670
+page then<font color="#E5E5E5"> a transfer of</font><font color="#CCCCCC"> 4,000 rupees</font>
+
+63
+00:03:15,670 --> 00:03:19,820
+<font color="#E5E5E5">will be done from my web</font><font color="#CCCCCC"> goat account so</font>
+
+64
+00:03:19,820 --> 00:03:21,230
+this<font color="#CCCCCC"> is the challenge</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> here you can</font>
+
+65
+00:03:21,230 --> 00:03:23,330
+see your goal is<font color="#E5E5E5"> to send an email to a</font>
+
+66
+00:03:23,330 --> 00:03:26,360
+newsgroup<font color="#E5E5E5"> that</font><font color="#CCCCCC"> contain edge that contain</font>
+
+67
+00:03:26,360 --> 00:03:29,570
+an image whose URL is pointing to
+
+68
+00:03:29,570 --> 00:03:33,709
+malicious request<font color="#E5E5E5"> so try</font><font color="#CCCCCC"> to include 1x1</font>
+
+69
+00:03:33,709 --> 00:03:36,980
+pixel<font color="#E5E5E5"> image the URL should point to CSRF</font>
+
+70
+00:03:36,980 --> 00:03:39,500
+lesson with an extra parameter<font color="#E5E5E5"> called as</font>
+
+71
+00:03:39,500 --> 00:03:43,820
+transfer funds and here you<font color="#E5E5E5"> will see</font>
+
+72
+00:03:43,820 --> 00:03:47,210
+that<font color="#CCCCCC"> they have given us something to</font>
+
+73
+00:03:47,210 --> 00:03:49,610
+<font color="#E5E5E5">store the value like if I just</font><font color="#CCCCCC"> write</font>
+
+74
+00:03:49,610 --> 00:03:50,540
+here
+
+75
+00:03:50,540 --> 00:03:58,730
+<font color="#CCCCCC">text hello</font><font color="#E5E5E5"> this is sample text and now</font>
+
+76
+00:03:58,730 --> 00:04:02,450
+if<font color="#E5E5E5"> I click on submit you will</font><font color="#CCCCCC"> see that</font>
+
+77
+00:04:02,450 --> 00:04:06,950
+this text has<font color="#CCCCCC"> been submitted</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> we can</font>
+
+78
+00:04:06,950 --> 00:04:11,349
+just read it<font color="#CCCCCC"> content now let's create</font>
+
+79
+00:04:11,349 --> 00:04:16,220
+<font color="#E5E5E5">HTML file which will point to that CSRF</font>
+
+80
+00:04:16,220 --> 00:04:18,880
+URL
+
+81
+00:04:26,480 --> 00:04:30,980
+so height should be<font color="#E5E5E5"> one and it should be</font>
+
+82
+00:04:30,980 --> 00:04:38,090
+<font color="#E5E5E5">one and</font><font color="#CCCCCC"> the source let me just copy this</font>
+
+83
+00:04:38,090 --> 00:04:42,230
+URL<font color="#CCCCCC"> let me paste it over here and what</font>
+
+84
+00:04:42,230 --> 00:04:43,970
+they want<font color="#E5E5E5"> is they want an additional</font>
+
+85
+00:04:43,970 --> 00:04:51,970
+parameter<font color="#E5E5E5"> called as transfer funds</font>
+
+86
+00:04:51,970 --> 00:04:56,410
+equals<font color="#E5E5E5"> 4,000</font>
+
+87
+00:05:03,130 --> 00:05:05,800
+so here<font color="#CCCCCC"> you</font><font color="#E5E5E5"> will see that</font><font color="#CCCCCC"> our HTML</font>
+
+88
+00:05:05,800 --> 00:05:10,720
+<font color="#CCCCCC">webpage is ready</font><font color="#E5E5E5"> now</font><font color="#CCCCCC"> one thing more</font><font color="#E5E5E5"> so</font>
+
+89
+00:05:10,720 --> 00:05:12,490
+there<font color="#E5E5E5"> are different different tags in</font>
+
+90
+00:05:12,490 --> 00:05:15,430
+the HTML which we can use<font color="#E5E5E5"> to trigger the</font>
+
+91
+00:05:15,430 --> 00:05:19,000
+<font color="#E5E5E5">CSRF attack so the one is image because</font>
+
+92
+00:05:19,000 --> 00:05:20,920
+the image tag contain a source and we
+
+93
+00:05:20,920 --> 00:05:24,340
+can point the source to our<font color="#E5E5E5"> CSRF web</font>
+
+94
+00:05:24,340 --> 00:05:26,890
+<font color="#E5E5E5">application so we can also use iframe</font>
+
+95
+00:05:26,890 --> 00:05:29,950
+tag because iframe tag also<font color="#CCCCCC"> consists of</font>
+
+96
+00:05:29,950 --> 00:05:32,020
+<font color="#E5E5E5">this attribute</font><font color="#CCCCCC"> source then</font><font color="#E5E5E5"> we can also</font>
+
+97
+00:05:32,020 --> 00:05:37,360
+<font color="#E5E5E5">use script tag and few more so let me</font>
+
+98
+00:05:37,360 --> 00:05:40,810
+just paste it<font color="#CCCCCC"> we</font><font color="#E5E5E5"> just create a file</font>
+
+99
+00:05:40,810 --> 00:05:50,200
+<font color="#CCCCCC">called as attack</font><font color="#E5E5E5"> dot HTML and let me</font>
+
+100
+00:05:50,200 --> 00:05:52,930
+<font color="#CCCCCC">just close this so now as an assumption</font>
+
+101
+00:05:52,930 --> 00:05:55,120
+so what we have to do is we have to
+
+102
+00:05:55,120 --> 00:05:57,640
+<font color="#CCCCCC">layout our</font><font color="#E5E5E5"> victim as a pen tester we</font>
+
+103
+00:05:57,640 --> 00:05:59,740
+have to lower our<font color="#E5E5E5"> victim to open this</font>
+
+104
+00:05:59,740 --> 00:06:03,760
+file so if we if our victim<font color="#CCCCCC"> open this</font>
+
+105
+00:06:03,760 --> 00:06:06,940
+file then<font color="#E5E5E5"> the transfer of</font><font color="#CCCCCC"> 4,000 rupees</font>
+
+106
+00:06:06,940 --> 00:06:10,660
+will be done from his account<font color="#E5E5E5"> so if I</font>
+
+107
+00:06:10,660 --> 00:06:16,240
+just open<font color="#CCCCCC"> this file ok now let's go here</font>
+
+108
+00:06:16,240 --> 00:06:19,200
+<font color="#E5E5E5">and I'll refresh this page but before</font>
+
+109
+00:06:19,200 --> 00:06:23,410
+<font color="#E5E5E5">refresh this page let's do one thing</font>
+
+110
+00:06:23,410 --> 00:06:30,550
+let's<font color="#CCCCCC"> go here to the developer</font><font color="#E5E5E5"> and click</font>
+
+111
+00:06:30,550 --> 00:06:33,250
+<font color="#E5E5E5">over here</font><font color="#CCCCCC"> Network and</font><font color="#E5E5E5"> I'll let now let's</font>
+
+112
+00:06:33,250 --> 00:06:34,300
+see that<font color="#CCCCCC"> what's the network traffic</font>
+
+113
+00:06:34,300 --> 00:06:36,700
+<font color="#E5E5E5">comes in and goes out now if I just</font>
+
+114
+00:06:36,700 --> 00:06:44,320
+<font color="#E5E5E5">reload the page you will see at top this</font>
+
+115
+00:06:44,320 --> 00:06:46,600
+get<font color="#CCCCCC"> request and</font><font color="#E5E5E5"> if I</font><font color="#CCCCCC"> just click</font><font color="#E5E5E5"> over</font>
+
+116
+00:06:46,600 --> 00:06:54,220
+<font color="#E5E5E5">here you</font><font color="#CCCCCC"> will see our</font><font color="#E5E5E5"> request</font><font color="#CCCCCC"> and here</font>
+
+117
+00:06:54,220 --> 00:06:57,130
+you<font color="#E5E5E5"> will see a small green tick means</font>
+
+118
+00:06:57,130 --> 00:07:00,760
+the transfer funds<font color="#E5E5E5"> of</font><font color="#CCCCCC"> 4000 has been</font>
+
+119
+00:07:00,760 --> 00:07:03,280
+successfully done from the victim
+
+120
+00:07:03,280 --> 00:07:07,000
+account so<font color="#CCCCCC"> you will see a green tick so</font>
+
+121
+00:07:07,000 --> 00:07:08,470
+if you want<font color="#E5E5E5"> to just restart this lesson</font>
+
+122
+00:07:08,470 --> 00:07:10,930
+<font color="#E5E5E5">just click on restart this lesson so</font>
+
+123
+00:07:10,930 --> 00:07:14,550
+this was the very<font color="#E5E5E5"> very basic</font>
+
+124
+00:07:15,110 --> 00:07:17,810
+attack of<font color="#CCCCCC"> sea surf</font><font color="#E5E5E5"> but in the advanced</font>
+
+125
+00:07:17,810 --> 00:07:20,720
+courses<font color="#CCCCCC"> we'll cover this topic in much</font>
+
+126
+00:07:20,720 --> 00:07:24,169
+<font color="#E5E5E5">more detail so in this video we</font><font color="#CCCCCC"> have</font>
+
+127
+00:07:24,169 --> 00:07:25,610
+covered<font color="#CCCCCC"> that what's</font><font color="#E5E5E5"> a cease of attack</font>
+
+128
+00:07:25,610 --> 00:07:28,099
+and how we can<font color="#E5E5E5"> do cease of attack and</font>
+
+129
+00:07:28,099 --> 00:07:31,400
+<font color="#E5E5E5">with good web application so thanks for</font>
+
+130
+00:07:31,400 --> 00:00:00,000
+<font color="#CCCCCC">watching this video</font>
+

@@ -1,0 +1,360 @@
+1
+00:00:00,089 --> 00:00:03,030
+ Halo semuanya, mari kita lihat bagaimana kita bisa 
+
+2
+00:00:03,030 --> 00:00:07,890
+ <font color="#CCCCCC">ambil target kami atau situs web offline jadi </font>
+
+3
+00:00:07,890 --> 00:00:09,900
+ <font color="#CCCCCC">untuk mengambil target kami atau situs web </font>
+
+4
+00:00:09,900 --> 00:00:12,690
+ <font color="#E5E5E5">ke </font><font color="#CCCCCC">dalam sistem </font><font color="#E5E5E5">kami, kami akan menggunakan ini </font>
+
+5
+00:00:12,690 --> 00:00:15,330
+ software <font color="#CCCCCC">lagu st </font><font color="#E5E5E5">sehingga st lagu </font><font color="#CCCCCC">adalah </font>
+
+6
+00:00:15,330 --> 00:00:18,240
+ <font color="#E5E5E5">mesin fotokopi situs web yang digunakan untuk menyalin </font>
+
+7
+00:00:18,240 --> 00:00:20,220
+ seluruh isi <font color="#E5E5E5">situs web termasuk </font>
+
+8
+00:00:20,220 --> 00:00:24,119
+ <font color="#CCCCCC">Halaman JavaScript CSS dan halaman HTML jadi </font>
+
+9
+00:00:24,119 --> 00:00:26,220
+ sebagai penguji penetrasi <font color="#CCCCCC">terkadang kita </font>
+
+10
+00:00:26,220 --> 00:00:28,320
+ menghadapi <font color="#E5E5E5">kondisi </font><font color="#CCCCCC">kita di </font><font color="#E5E5E5">mana </font><font color="#CCCCCC">kita harus melakukannya </font>
+
+11
+00:00:28,320 --> 00:00:30,599
+ menguji <font color="#E5E5E5">situs web tetapi tidak </font><font color="#CCCCCC">pada produksi </font>
+
+12
+00:00:30,599 --> 00:00:33,630
+ <font color="#E5E5E5">server jadi sebagai penguji penetrasi kami </font>
+
+13
+00:00:33,630 --> 00:00:35,760
+ akan menggunakan alat ini untuk menyalin 
+
+14
+00:00:35,760 --> 00:00:37,950
+ target atau <font color="#CCCCCC">situs web </font><font color="#E5E5E5">ke </font><font color="#CCCCCC">lokal </font><font color="#E5E5E5">kami </font>
+
+15
+00:00:37,950 --> 00:00:40,140
+ sistem <font color="#CCCCCC">jadi setelah kami menyalin situs web </font><font color="#E5E5E5">kami </font>
+
+16
+00:00:40,140 --> 00:00:42,329
+ <font color="#CCCCCC">dapat meng-host file tersebut </font><font color="#E5E5E5">ke host </font><font color="#CCCCCC">lokal </font><font color="#E5E5E5">kami </font>
+
+17
+00:00:42,329 --> 00:00:45,930
+ server dan kami akan menguji <font color="#E5E5E5">situs web itu sekarang </font>
+
+18
+00:00:45,930 --> 00:00:48,210
+ mari kita lihat <font color="#E5E5E5">bagaimana kita bisa menggunakan track </font><font color="#CCCCCC">HT </font>
+
+19
+00:00:48,210 --> 00:00:52,320
+ di Kali Linux kami <font color="#CCCCCC">sekarang mari kita lihat </font><font color="#E5E5E5">bagaimana caranya </font>
+
+20
+00:00:52,320 --> 00:00:55,469
+ kita <font color="#CCCCCC">bisa menggunakan jalurnya </font><font color="#E5E5E5">seperti yang </font><font color="#CCCCCC">saya katakan </font>
+
+21
+00:00:55,469 --> 00:00:57,989
+ <font color="#E5E5E5">sebelumnya bahwa st track tersedia </font><font color="#CCCCCC">untuk </font>
+
+22
+00:00:57,989 --> 00:01:01,770
+ linux <font color="#E5E5E5">serta windows jadi st track </font>
+
+23
+00:01:01,770 --> 00:01:03,870
+ secara <font color="#CCCCCC">default atau </font><font color="#E5E5E5">prebuilt </font>
+
+24
+00:01:03,870 --> 00:01:06,270
+ dipasang di <font color="#E5E5E5">linux kali jadi kita harus </font>
+
+25
+00:01:06,270 --> 00:01:09,180
+ memulainya jadi di <font color="#CCCCCC">sini Anda </font><font color="#E5E5E5">dapat melihat itu benar </font>
+
+26
+00:01:09,180 --> 00:01:11,670
+ <font color="#CCCCCC">sekarang saya berada di dalam instance Kali Linux saya </font>
+
+27
+00:01:11,670 --> 00:01:14,939
+ <font color="#E5E5E5">jadi </font><font color="#CCCCCC">untuk memulai </font><font color="#E5E5E5">jalur kita harus </font>
+
+28
+00:01:14,939 --> 00:01:17,820
+ buka <font color="#E5E5E5">terminal</font><font color="#CCCCCC"> jadi hanya klik lebih </font>
+
+29
+00:01:17,820 --> 00:01:21,360
+ <font color="#E5E5E5">di sini dan </font><font color="#CCCCCC">Anda dapat melihat terminal </font><font color="#E5E5E5">sekarang </font>
+
+30
+00:01:21,360 --> 00:01:25,110
+ <font color="#E5E5E5">cukup ketikkan di sini sebagai T track dan tekan </font>
+
+31
+00:01:25,110 --> 00:01:28,439
+ masukkan <font color="#CCCCCC">begitu setelah kita menekan enter di sini Anda </font><font color="#E5E5E5">bisa </font>
+
+32
+00:01:28,439 --> 00:01:32,100
+ lihat itu <font color="#CCCCCC">sekarang kita di dalam st </font>
+
+33
+00:01:32,100 --> 00:01:34,500
+ melacak <font color="#E5E5E5">mesin fotokopi </font><font color="#CCCCCC">situs web </font><font color="#E5E5E5">jadi yang pertama-tama </font>
+
+34
+00:01:34,500 --> 00:01:37,799
+ ia <font color="#CCCCCC">meminta </font><font color="#E5E5E5">nama proyek jadi mari </font><font color="#CCCCCC">kita </font>
+
+35
+00:01:37,799 --> 00:01:42,329
+ berikan <font color="#CCCCCC">nama proyek yang disebut demo ok </font>
+
+36
+00:01:42,329 --> 00:01:45,390
+ <font color="#E5E5E5">sekarang meminta direktori di mana </font>
+
+37
+00:01:45,390 --> 00:01:49,110
+ itu akan menyimpan situs web <font color="#E5E5E5">jadi jika Anda mau </font>
+
+38
+00:01:49,110 --> 00:01:51,180
+ untuk <font color="#E5E5E5">memberikan </font><font color="#CCCCCC">direktori tertentu </font><font color="#E5E5E5">di mana </font>
+
+39
+00:01:51,180 --> 00:01:53,610
+ Anda ingin <font color="#CCCCCC">menyimpan </font><font color="#E5E5E5">situs web yang disalin dan </font>
+
+40
+00:01:53,610 --> 00:01:55,530
+ maka Anda bisa <font color="#E5E5E5">sebaliknya Anda bisa </font><font color="#CCCCCC">saja </font>
+
+41
+00:01:55,530 --> 00:01:59,040
+ biarkan kosong <font color="#E5E5E5">dan tekan enter jadi </font><font color="#CCCCCC">jika Anda hanya </font>
+
+42
+00:01:59,040 --> 00:02:01,799
+ biarkan <font color="#E5E5E5">ini kosong maka secara default akan </font>
+
+43
+00:02:01,799 --> 00:02:06,180
+ simpan <font color="#E5E5E5">semua file situs web dalam ini </font>
+
+44
+00:02:06,180 --> 00:02:09,149
+ <font color="#CCCCCC">situs web </font><font color="#E5E5E5">slash </font><font color="#CCCCCC">root slash direktori sekarang </font>
+
+45
+00:02:09,149 --> 00:02:13,200
+ <font color="#CCCCCC">di sini kita harus </font><font color="#E5E5E5">menambahkan URL jadi biarkan aku </font>
+
+46
+00:02:13,200 --> 00:02:15,590
+ tambahkan sebuah URL 
+
+47
+00:02:16,270 --> 00:02:21,830
+ dan mari tekan <font color="#E5E5E5">enter </font><font color="#CCCCCC">oke </font>
+
+48
+00:02:21,830 --> 00:02:26,060
+ jadi sekarang ini <font color="#E5E5E5">memberi kami </font><font color="#CCCCCC">Daftar Aksi, </font><font color="#E5E5E5">jadi </font>
+
+49
+00:02:26,060 --> 00:02:28,430
+ Yang pertama adalah <font color="#CCCCCC">situs web Mirror </font><font color="#E5E5E5">kemudian </font>
+
+50
+00:02:28,430 --> 00:02:30,590
+ yang kedua <font color="#E5E5E5">adalah situs web cermin dengan Vizard </font>
+
+51
+00:02:30,590 --> 00:02:33,140
+ <font color="#E5E5E5">maka jika Anda ingin mengambil semua </font>
+
+52
+00:02:33,140 --> 00:02:35,660
+ <font color="#CCCCCC">URL </font><font color="#E5E5E5">dan jika Anda hanya ingin </font><font color="#CCCCCC">mengambil </font>
+
+53
+00:02:35,660 --> 00:02:38,480
+ keluar <font color="#E5E5E5">link tes tapi di sini </font><font color="#CCCCCC">kita </font>
+
+54
+00:02:38,480 --> 00:02:41,060
+ <font color="#CCCCCC">tertarik </font><font color="#E5E5E5">dan mencerminkan situs web jadi </font>
+
+55
+00:02:41,060 --> 00:02:43,970
+ Saya akan <font color="#E5E5E5">memilih yang pertama dan mari tekan </font>
+
+56
+00:02:43,970 --> 00:02:47,239
+ <font color="#CCCCCC">masukkan jadi jika Anda ingin memberikan URL proxy </font>
+
+57
+00:02:47,239 --> 00:02:49,250
+ <font color="#CCCCCC">dan kemudian Anda bisa </font><font color="#E5E5E5">meninggalkannya </font>
+
+58
+00:02:49,250 --> 00:02:52,310
+ <font color="#E5E5E5">biarkan kosong itu juga kosong </font><font color="#CCCCCC">tekan </font><font color="#E5E5E5">enter </font>
+
+59
+00:02:52,310 --> 00:02:55,580
+ tekan enter <font color="#CCCCCC">lagi oke </font><font color="#E5E5E5">jadi sekarang siap </font>
+
+60
+00:02:55,580 --> 00:02:57,709
+ <font color="#E5E5E5">luncurkan cermin sekarang jika Anda siap </font>
+
+61
+00:02:57,709 --> 00:03:01,069
+ <font color="#CCCCCC">untuk meluncurkan </font><font color="#E5E5E5">mesin fotokopi </font><font color="#CCCCCC">situs web kemudian </font>
+
+62
+00:03:01,069 --> 00:03:04,850
+ <font color="#E5E5E5">tulis </font><font color="#CCCCCC">di sini </font><font color="#E5E5E5">mengapa dan tekan enter </font><font color="#CCCCCC">jadi Anda </font>
+
+63
+00:03:04,850 --> 00:03:07,069
+ hanya bisa melihat di sini <font color="#E5E5E5">bahwa Anda sedang berlari </font>
+
+64
+00:03:07,069 --> 00:03:09,739
+ <font color="#E5E5E5">program ini sebagai </font><font color="#CCCCCC">root </font><font color="#E5E5E5">oke terima kasih untuk </font>
+
+65
+00:03:09,739 --> 00:03:10,970
+ <font color="#CCCCCC">menggunakan trek s3 </font>
+
+66
+00:03:10,970 --> 00:03:14,630
+ jadi sekarang <font color="#E5E5E5">st track telah menyalin situs web ini </font>
+
+67
+00:03:14,630 --> 00:03:18,019
+ <font color="#CCCCCC">nama-nama bayi India modern tenang sekarang </font>
+
+68
+00:03:18,019 --> 00:03:20,000
+ mari kita pergi ke <font color="#E5E5E5">direktori slash </font><font color="#CCCCCC">root itu </font>
+
+69
+00:03:20,000 --> 00:03:22,970
+ situs web slash untuk memeriksa <font color="#E5E5E5">apakah </font><font color="#CCCCCC">situs web </font>
+
+70
+00:03:22,970 --> 00:03:25,730
+ telah <font color="#CCCCCC">disalin atau tidak </font><font color="#E5E5E5">jadi biarkan aku pergi saja </font>
+
+71
+00:03:25,730 --> 00:03:28,340
+ pertama <font color="#E5E5E5">-tama mari kita lihat di mana </font>
+
+72
+00:03:28,340 --> 00:03:31,310
+ kita <font color="#E5E5E5">jadi kita di dalam root mari lakukan LS </font>
+
+73
+00:03:31,310 --> 00:03:34,790
+ jadi di sini adalah <font color="#E5E5E5">direktori situs web itu </font>
+
+74
+00:03:34,790 --> 00:03:38,690
+ tekan <font color="#E5E5E5">enter do LS jadi di sini adalah </font><font color="#CCCCCC">proyek </font>
+
+75
+00:03:38,690 --> 00:03:42,549
+ nama demo <font color="#E5E5E5">jadi mari kita pergi ke direktori demo </font>
+
+76
+00:03:42,549 --> 00:03:47,540
+ <font color="#CCCCCC">tekan </font><font color="#E5E5E5">enter lagi LS jadi di sini Anda bisa melihat </font>
+
+77
+00:03:47,540 --> 00:03:51,410
+ beberapa <font color="#E5E5E5">detail seperti </font><font color="#CCCCCC">cache log log dot txt </font>
+
+78
+00:03:51,410 --> 00:03:55,180
+ <font color="#E5E5E5">dan ini adalah salah satu direktori yang disebut sebagai </font>
+
+79
+00:03:55,180 --> 00:03:58,280
+ bayi India modern <font color="#E5E5E5">bernama </font><font color="#CCCCCC">comm </font><font color="#E5E5E5">yang </font>
+
+80
+00:03:58,280 --> 00:04:02,600
+ adalah <font color="#E5E5E5">target kami jadi mari kita pergi ke sana </font>
+
+81
+00:04:02,600 --> 00:04:06,650
+ <font color="#E5E5E5">masuk dan di sini Anda dapat melihat apa yang dimilikinya </font>
+
+82
+00:04:06,650 --> 00:04:10,730
+ diambil <font color="#CCCCCC">dan disalin </font><font color="#E5E5E5">halaman indeksnya jadi </font>
+
+83
+00:04:10,730 --> 00:04:13,850
+ mari buka halaman ini di Firefox <font color="#E5E5E5">dan </font>
+
+84
+00:04:13,850 --> 00:04:20,120
+ <font color="#E5E5E5">mari kita lihat bagaimana tampilannya oke jadi di sini </font>
+
+85
+00:04:20,120 --> 00:04:24,080
+ <font color="#E5E5E5">Anda dapat melihat bahwa itu telah menyalin halaman ini </font>
+
+86
+00:04:24,080 --> 00:04:27,870
+ bersama dengan <font color="#CCCCCC">file JavaScript dan CSS </font>
+
+87
+00:04:27,870 --> 00:04:29,940
+ jadi di sini Anda dapat <font color="#CCCCCC">melihat dan Anda juga bisa </font>
+
+88
+00:04:29,940 --> 00:04:38,610
+ periksa <font color="#E5E5E5">bagian jadi ini semua </font><font color="#CCCCCC">tentang </font><font color="#E5E5E5">a </font>
+
+89
+00:04:38,610 --> 00:04:41,040
+ Rak kuda <font color="#E5E5E5">jadi terima kasih sudah menonton </font><font color="#CCCCCC">ini </font>
+
+90
+00:04:41,040 --> 00:00:00,000
+ video 
+

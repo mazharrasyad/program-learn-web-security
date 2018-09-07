@@ -1,0 +1,1044 @@
+1
+00:00:08,840 --> 00:00:11,130
+ hei semua orang John <font color="#CCCCCC">bergoyang-goyang di sini dengan </font>
+
+2
+00:00:11,130 --> 00:00:12,360
+ <font color="#E5E5E5">pusat </font><font color="#CCCCCC">dev </font><font color="#E5E5E5">kami datang kepada Anda dengan </font>
+
+3
+00:00:12,360 --> 00:00:14,549
+ <font color="#E5E5E5">video pelajaran papan cahaya lain dan </font>
+
+4
+00:00:14,549 --> 00:00:16,109
+ hari ini kita <font color="#E5E5E5">akan berbicara tentang yang </font><font color="#CCCCCC">lain </font>
+
+5
+00:00:16,109 --> 00:00:18,750
+ dari <font color="#CCCCCC">10 </font><font color="#E5E5E5">risiko keamanan OWASP keluar </font>
+
+6
+00:00:18,750 --> 00:00:21,630
+ ada <font color="#CCCCCC">di dunia saat ini dan yang ini </font>
+
+7
+00:00:21,630 --> 00:00:24,180
+ <font color="#E5E5E5">risiko nomor </font><font color="#CCCCCC">tujuh </font><font color="#E5E5E5">dalam daftar </font>
+
+8
+00:00:24,180 --> 00:00:26,699
+ lezat keluar pada <font color="#E5E5E5">2017 akhir 2017 jadi </font>
+
+9
+00:00:26,699 --> 00:00:29,699
+ ini yang terbaru <font color="#E5E5E5">dan </font><font color="#CCCCCC">terhebat dan ini </font>
+
+10
+00:00:29,699 --> 00:00:33,090
+ risiko keamanan diberi judul lintas situs 
+
+11
+00:00:33,090 --> 00:00:35,969
+ scripting atau terkadang <font color="#E5E5E5">ditulis sebagai </font><font color="#CCCCCC">X </font>
+
+12
+00:00:35,969 --> 00:00:39,090
+ <font color="#CCCCCC">SS tapi bagaimanapun juga cross-site scripting-nya </font>
+
+13
+00:00:39,090 --> 00:00:40,739
+ menarik bahwa ini <font color="#CCCCCC">adalah nomor </font><font color="#E5E5E5">tujuh </font>
+
+14
+00:00:40,739 --> 00:00:42,930
+ <font color="#CCCCCC">daftar karena </font><font color="#E5E5E5">terakhir kali OWASP </font>
+
+15
+00:00:42,930 --> 00:00:46,050
+ <font color="#E5E5E5">daftar keluar pada tahun </font><font color="#CCCCCC">2013 </font><font color="#E5E5E5">itu </font><font color="#CCCCCC">nomornya </font>
+
+16
+00:00:46,050 --> 00:00:49,410
+ <font color="#E5E5E5">tiga </font><font color="#CCCCCC">risiko keamanan di </font><font color="#E5E5E5">luar sana dan di </font>
+
+17
+00:00:49,410 --> 00:00:51,449
+ waktu sebelum itu <font color="#E5E5E5">versi 2010 itu </font>
+
+18
+00:00:51,449 --> 00:00:53,879
+ <font color="#CCCCCC">nomor</font><font color="#E5E5E5"> dua sehingga jadi sebenarnya itu jenis </font>
+
+19
+00:00:53,879 --> 00:00:55,110
+ pindah ke bawah <font color="#E5E5E5">daftar </font><font color="#CCCCCC">sedikit </font>
+
+20
+00:00:55,110 --> 00:00:57,149
+ yang saya kira dalam arti <font color="#CCCCCC">baik </font>
+
+21
+00:00:57,149 --> 00:00:58,649
+ berarti <font color="#E5E5E5">kita </font><font color="#CCCCCC">semakin baik dalam </font><font color="#E5E5E5">bertahan </font>
+
+22
+00:00:58,649 --> 00:01:00,570
+ <font color="#CCCCCC">skrip lintas situs tetapi tetap hari ini </font>
+
+23
+00:01:00,570 --> 00:01:02,190
+ <font color="#CCCCCC">kita akan berbicara tentang </font><font color="#E5E5E5">apa itu dan </font>
+
+24
+00:01:02,190 --> 00:01:04,199
+ bagaimana <font color="#E5E5E5">Anda dapat mempertahankan diri </font><font color="#CCCCCC">begitu </font>
+
+25
+00:01:04,199 --> 00:01:06,920
+ <font color="#E5E5E5">akhirnya skrip lintas situs adalah </font>
+
+26
+00:01:06,920 --> 00:01:09,869
+ injeksi sisi klien-kode <font color="#CCCCCC">adalah jenis </font>
+
+27
+00:01:09,869 --> 00:01:13,110
+ <font color="#E5E5E5">ide menyeluruh tentang apa itu </font>
+
+28
+00:01:13,110 --> 00:01:16,380
+ <font color="#CCCCCC">dan pada dasarnya seorang penyerang </font><font color="#E5E5E5">sedang mencoba </font>
+
+29
+00:01:16,380 --> 00:01:18,509
+ mencuri <font color="#CCCCCC">barang-barangmu dan penyerangnya </font>
+
+30
+00:01:18,509 --> 00:01:22,380
+ akan mengirim kode ini <font color="#E5E5E5">yang dia inginkan </font>
+
+31
+00:01:22,380 --> 00:01:25,710
+ browser untuk dieksekusi <font color="#E5E5E5">untuk mengirimnya </font>
+
+32
+00:01:25,710 --> 00:01:28,259
+ semua <font color="#E5E5E5">barang rahasia Anda </font><font color="#CCCCCC">jadi lagi </font>
+
+33
+00:01:28,259 --> 00:01:29,700
+ <font color="#CCCCCC">Pertanyaannya </font><font color="#E5E5E5">adalah bagaimana semua itu </font><font color="#CCCCCC">bekerja </font><font color="#E5E5E5">dan </font>
+
+34
+00:01:29,700 --> 00:01:32,400
+ <font color="#E5E5E5">semua </font><font color="#CCCCCC">itu </font><font color="#E5E5E5">jadi mari mari jenis menulis </font>
+
+35
+00:01:32,400 --> 00:01:35,430
+ atau <font color="#E5E5E5">saya akan menggambar semacam contoh bagaimana caranya </font>
+
+36
+00:01:35,430 --> 00:01:37,049
+ ini mungkin <font color="#E5E5E5">bekerja ada banyak yang </font><font color="#CCCCCC">berbeda </font>
+
+37
+00:01:37,049 --> 00:01:39,630
+ jenis skrip lintas situs tetapi saya 
+
+38
+00:01:39,630 --> 00:01:42,180
+ akan memberimu <font color="#E5E5E5">skenario tentang itu </font>
+
+39
+00:01:42,180 --> 00:01:45,240
+ <font color="#E5E5E5">cukup lazim dan dan satu lagi di mana </font>
+
+40
+00:01:45,240 --> 00:01:48,180
+ penyerang sedang mencoba mencuri <font color="#E5E5E5">sesi Anda </font>
+
+41
+00:01:48,180 --> 00:01:50,399
+ Cookie sehingga penyerang <font color="#CCCCCC">kemudian bisa </font>
+
+42
+00:01:50,399 --> 00:01:52,649
+ tiru Anda ke <font color="#E5E5E5">situs web </font><font color="#CCCCCC">itu </font>
+
+43
+00:01:52,649 --> 00:01:55,829
+ Anda akan <font color="#E5E5E5">dan kemudian dia bisa melakukannya </font>
+
+44
+00:01:55,829 --> 00:01:57,810
+ semua jenis barang yang <font color="#CCCCCC">Anda tahu ketika dia </font><font color="#E5E5E5">punya </font>
+
+45
+00:01:57,810 --> 00:02:00,270
+ rahasia Anda <font color="#E5E5E5">sehingga </font><font color="#CCCCCC">baik-baik saja sehingga </font><font color="#E5E5E5">para </font>
+
+46
+00:02:00,270 --> 00:02:01,740
+ kerentanan skrip lintas situs 
+
+47
+00:02:01,740 --> 00:02:04,740
+ <font color="#E5E5E5">benar-benar membutuhkan tiga hal </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">terjadi </font>
+
+48
+00:02:04,740 --> 00:02:06,299
+ Dibutuhkan <font color="#E5E5E5">penyerang jadi saya akan meletakkannya </font>
+
+49
+00:02:06,299 --> 00:02:11,450
+ penyerang di sini jadi penyerang 
+
+50
+00:02:11,450 --> 00:02:15,260
+ dan kemudian dibutuhkan <font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">web </font><font color="#CCCCCC">jadi </font>
+
+51
+00:02:15,260 --> 00:02:19,970
+ inilah aplikasi web di <font color="#CCCCCC">sini baik </font><font color="#E5E5E5">- </font><font color="#CCCCCC">baik saja </font><font color="#E5E5E5">dan </font>
+
+52
+00:02:19,970 --> 00:02:22,010
+ dan <font color="#CCCCCC">kemudian dan dalam hal ini web </font>
+
+53
+00:02:22,010 --> 00:02:24,170
+ aplikasi rentan <font color="#E5E5E5">dan kemudian itu </font>
+
+54
+00:02:24,170 --> 00:02:25,700
+ juga <font color="#CCCCCC">mengambil korban jadi aku akan </font><font color="#E5E5E5">meletakkannya </font>
+
+55
+00:02:25,700 --> 00:02:27,950
+ korban di sini ini <font color="#CCCCCC">adalah </font><font color="#E5E5E5">ini adalah </font>
+
+56
+00:02:27,950 --> 00:02:30,200
+ <font color="#CCCCCC">orang </font><font color="#E5E5E5">yang </font><font color="#CCCCCC">tidak curiga </font><font color="#E5E5E5">yang akan mendapatkan </font>
+
+57
+00:02:30,200 --> 00:02:32,150
+ <font color="#CCCCCC">diserang dan bahkan tidak </font><font color="#E5E5E5">tahu </font><font color="#CCCCCC">semuanya </font>
+
+58
+00:02:32,150 --> 00:02:33,800
+ <font color="#E5E5E5">benar jadi penyerang apa si penyerang </font>
+
+59
+00:02:33,800 --> 00:02:35,780
+ Yang akan dilakukannya adalah dia akan <font color="#E5E5E5">menemukan web </font>
+
+60
+00:02:35,780 --> 00:02:37,880
+ aplikasi <font color="#CCCCCC">yang rentan </font>
+
+61
+00:02:37,880 --> 00:02:41,090
+ skrip lintas situs <font color="#CCCCCC">dan dia akan mengirim </font>
+
+62
+00:02:41,090 --> 00:02:43,760
+ <font color="#E5E5E5">itu beberapa kode jadi aplikasi web ini </font><font color="#CCCCCC">saya </font>
+
+63
+00:02:43,760 --> 00:02:45,380
+ Maksud saya <font color="#E5E5E5">hanya </font><font color="#CCCCCC">jenis menariknya </font><font color="#E5E5E5">keluar </font>
+
+64
+00:02:45,380 --> 00:02:47,030
+ di sini <font color="#E5E5E5">sedikit </font><font color="#CCCCCC">itu </font><font color="#E5E5E5">terdiri dari beberapa </font>
+
+65
+00:02:47,030 --> 00:02:48,860
+ <font color="#E5E5E5">bagian dan potongan yang </font><font color="#CCCCCC">berbeda </font><font color="#E5E5E5">dan semua itu </font>
+
+66
+00:02:48,860 --> 00:02:50,120
+ tetapi <font color="#E5E5E5">salah satu hal yang </font><font color="#CCCCCC">dimilikinya adalah a </font>
+
+67
+00:02:50,120 --> 00:02:52,310
+ database <font color="#E5E5E5">jadi saya akan menempatkan DB yang benar </font>
+
+68
+00:02:52,310 --> 00:02:55,310
+ di sini itu database <font color="#E5E5E5">dan kemudian juga </font>
+
+69
+00:02:55,310 --> 00:03:00,560
+ telah katakanlah beberapa <font color="#E5E5E5">kode HTML yang tepat </font><font color="#CCCCCC">semua </font>
+
+70
+00:03:00,560 --> 00:03:02,510
+ yang sangat <font color="#CCCCCC">umum </font><font color="#E5E5E5">di web </font>
+
+71
+00:03:02,510 --> 00:03:05,000
+ aplikasi baik-baik <font color="#CCCCCC">saja dan mari kita katakan itu </font>
+
+72
+00:03:05,000 --> 00:03:10,599
+ <font color="#E5E5E5">ini yang </font><font color="#CCCCCC">memungkinkan kode HTML ini </font>
+
+73
+00:03:10,599 --> 00:03:14,030
+ skrip untuk dijalankan di dalamnya <font color="#E5E5E5">yang merupakan salah satu </font>
+
+74
+00:03:14,030 --> 00:03:15,709
+ hal <font color="#CCCCCC">yang mungkin tidak </font><font color="#E5E5E5">ingin Anda </font><font color="#CCCCCC">lakukan </font>
+
+75
+00:03:15,709 --> 00:03:17,690
+ <font color="#E5E5E5">kasus ini tapi tapi </font><font color="#CCCCCC">bagaimanapun aku akan melakukannya </font>
+
+76
+00:03:17,690 --> 00:03:19,160
+ jalankan melalui <font color="#CCCCCC">skenario bagaimana ini </font>
+
+77
+00:03:19,160 --> 00:03:20,660
+ penyerang akan mendapatkan korban 
+
+78
+00:03:20,660 --> 00:03:22,700
+ <font color="#E5E5E5">rahasia dan itu akan menyelesaikannya </font>
+
+79
+00:03:22,700 --> 00:03:25,100
+ <font color="#E5E5E5">aplikasi web yang rentan ini </font><font color="#CCCCCC">semua </font>
+
+80
+00:03:25,100 --> 00:03:26,870
+ hal pertama yang benar itu akan lakukan adalah <font color="#E5E5E5">itu </font>
+
+81
+00:03:26,870 --> 00:03:30,290
+ akan mengirim posting ke web ini 
+
+82
+00:03:30,290 --> 00:03:32,540
+ aplikasi <font color="#CCCCCC">dan posting </font><font color="#E5E5E5">akan </font>
+
+83
+00:03:32,540 --> 00:03:35,000
+ termasuk <font color="#E5E5E5">saya akan meletakkan skrip sedikit yang benar </font>
+
+84
+00:03:35,000 --> 00:03:38,840
+ <font color="#CCCCCC">di sini jadi itu akan memiliki skrip yang </font><font color="#E5E5E5">Anda tahu </font>
+
+85
+00:03:38,840 --> 00:03:40,880
+ dot dot dot <font color="#E5E5E5">apapun dan kemudian itu akan </font>
+
+86
+00:03:40,880 --> 00:03:43,910
+ Anda tahu <font color="#E5E5E5">akhir skrip skrip </font>
+
+87
+00:03:43,910 --> 00:03:47,840
+ <font color="#E5E5E5">seperti itu </font><font color="#CCCCCC">baik </font><font color="#E5E5E5">- </font><font color="#CCCCCC">baik saja jadi apa skrip ini </font>
+
+88
+00:03:47,840 --> 00:03:49,910
+ coba <font color="#E5E5E5">lakukan adalah mencoba mengatakan hei saya </font>
+
+89
+00:03:49,910 --> 00:03:52,130
+ <font color="#CCCCCC">ingin </font><font color="#E5E5E5">mendapatkan cookie dari korban </font>
+
+90
+00:03:52,130 --> 00:03:54,200
+ dan aku ingin korban itu mengirimnya 
+
+91
+00:03:54,200 --> 00:03:56,420
+ cookie kepada saya <font color="#CCCCCC">dan itu akan </font><font color="#E5E5E5">memposting </font>
+
+92
+00:03:56,420 --> 00:03:59,239
+ <font color="#E5E5E5">itu ke </font><font color="#CCCCCC">database web ini </font>
+
+93
+00:03:59,239 --> 00:04:05,060
+ aplikasi <font color="#CCCCCC">dan ok itu itu melakukan itu </font>
+
+94
+00:04:05,060 --> 00:04:07,340
+ jadi di situlah <font color="#E5E5E5">database bisa mengatakan </font>
+
+95
+00:04:07,340 --> 00:04:09,230
+ hey <font color="#E5E5E5">aku </font><font color="#CCCCCC">tidak akan memungkinkan </font><font color="#E5E5E5">Anda untuk Anda </font>
+
+96
+00:04:09,230 --> 00:04:11,959
+ <font color="#CCCCCC">tahu posting </font><font color="#E5E5E5">skrip ke dalam database dan </font>
+
+97
+00:04:11,959 --> 00:04:13,370
+ katakanlah <font color="#CCCCCC">aplikasi web ini </font><font color="#E5E5E5">untuk </font>
+
+98
+00:04:13,370 --> 00:04:16,190
+ <font color="#CCCCCC">Misalnya memungkinkan pengguna mengomentari </font><font color="#E5E5E5">hal-hal </font>
+
+99
+00:04:16,190 --> 00:04:18,709
+ atau mungkin <font color="#E5E5E5">memposting pertanyaan </font><font color="#CCCCCC">atau posting Anda </font>
+
+100
+00:04:18,709 --> 00:04:19,880
+ tahu hei aku sangat <font color="#CCCCCC">menyukai </font><font color="#E5E5E5">foto itu </font>
+
+101
+00:04:19,880 --> 00:04:22,640
+ <font color="#CCCCCC">bahwa Anda </font><font color="#E5E5E5">mendapat atau apapun </font><font color="#CCCCCC">itu yang </font>
+
+102
+00:04:22,640 --> 00:04:25,220
+ <font color="#CCCCCC">sangat umum hari ini tapi bagaimanapun juga </font>
+
+103
+00:04:25,220 --> 00:04:26,810
+ Meskipun demikian <font color="#E5E5E5">para penyerang akan </font>
+
+104
+00:04:26,810 --> 00:04:29,420
+ posting <font color="#CCCCCC">skrip </font><font color="#E5E5E5">dan kemudian </font><font color="#CCCCCC">basis datanya </font>
+
+105
+00:04:29,420 --> 00:04:32,960
+ <font color="#E5E5E5">akan memiliki posting komentar terbaru </font>
+
+106
+00:04:32,960 --> 00:04:34,520
+ atau <font color="#E5E5E5">posting terbaru dalam </font><font color="#CCCCCC">database itu </font>
+
+107
+00:04:34,520 --> 00:04:36,890
+ <font color="#E5E5E5">akan menjadi skrip ini </font><font color="#CCCCCC">dan kemudian di </font><font color="#E5E5E5">mana </font>
+
+108
+00:04:36,890 --> 00:04:39,560
+ kode HTML yang masuk adalah katakanlah <font color="#E5E5E5">itu </font>
+
+109
+00:04:39,560 --> 00:04:43,490
+ <font color="#E5E5E5">kode HTML memungkinkan untuk </font><font color="#CCCCCC">pencetakan </font>
+
+110
+00:04:43,490 --> 00:04:46,310
+ <font color="#CCCCCC">komentar</font><font color="#E5E5E5"> terbaru dalam database ini </font><font color="#CCCCCC">sehingga </font>
+
+111
+00:04:46,310 --> 00:04:49,370
+ <font color="#CCCCCC">sebagai </font><font color="#E5E5E5">kode </font><font color="#CCCCCC">HTML </font><font color="#E5E5E5">berjalan jika seseorang melakukannya </font>
+
+112
+00:04:49,370 --> 00:04:51,560
+ akses <font color="#CCCCCC">aplikasi web ini dan </font><font color="#E5E5E5">katakan hei </font>
+
+113
+00:04:51,560 --> 00:04:53,090
+ Saya ingin <font color="#E5E5E5">melihat </font><font color="#CCCCCC">komentar terbaru tentang </font>
+
+114
+00:04:53,090 --> 00:04:54,380
+ bahwa <font color="#E5E5E5">gambar mengagumkan bahwa </font><font color="#CCCCCC">kita baru </font><font color="#E5E5E5">saja </font>
+
+115
+00:04:54,380 --> 00:04:57,890
+ diposting <font color="#E5E5E5">kemudian </font><font color="#CCCCCC">kode HTML </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">yang </font><font color="#E5E5E5">menjalankan </font>
+
+116
+00:04:57,890 --> 00:05:01,670
+ komentar <font color="#E5E5E5">dari database memungkinkan </font>
+
+117
+00:05:01,670 --> 00:05:04,550
+ komentar basis data yang <font color="#E5E5E5">akan Anda ketahui diposting </font>
+
+118
+00:05:04,550 --> 00:05:07,070
+ semacam itu <font color="#E5E5E5">lagi jenis yang cukup umum </font>
+
+119
+00:05:07,070 --> 00:05:10,730
+ Skenario <font color="#CCCCCC">semua </font><font color="#E5E5E5">hak baik apa korban </font>
+
+120
+00:05:10,730 --> 00:05:12,350
+ <font color="#CCCCCC">akan melakukan Aku akan </font><font color="#E5E5E5">meletakkan beberapa </font>
+
+121
+00:05:12,350 --> 00:05:14,750
+ <font color="#CCCCCC">kotak kecil di sekitar penyerang dan </font>
+
+122
+00:05:14,750 --> 00:05:18,130
+ <font color="#E5E5E5">korban apa yang korban akan </font><font color="#CCCCCC">lakukan adalah </font>
+
+123
+00:05:18,130 --> 00:05:24,080
+ dia akan <font color="#E5E5E5">mengirim permintaan get belum </font>
+
+124
+00:05:24,080 --> 00:05:26,840
+ aplikasi web ini <font color="#CCCCCC">dan itu akan </font>
+
+125
+00:05:26,840 --> 00:05:35,830
+ apakah Anda <font color="#CCCCCC">tahu </font><font color="#E5E5E5">mungkin HTTP example.com </font>
+
+126
+00:05:35,830 --> 00:05:40,940
+ <font color="#CCCCCC">apapun dan kemudian dan mungkin </font><font color="#E5E5E5">juga </font>
+
+127
+00:05:40,940 --> 00:05:42,380
+ pada akhir <font color="#CCCCCC">ini akan </font><font color="#E5E5E5">mengatakan </font><font color="#CCCCCC">Anda </font>
+
+128
+00:05:42,380 --> 00:05:48,129
+ tahu mungkin komentar DB DB 
+
+129
+00:05:48,129 --> 00:05:51,389
+ <font color="#E5E5E5">baiklah jadi semoga bisa membaca semua itu </font>
+
+130
+00:05:51,389 --> 00:05:52,809
+ <font color="#CCCCCC">tulisan tangan di sana </font>
+
+131
+00:05:52,809 --> 00:05:55,330
+ <font color="#E5E5E5">Baiklah, jadi misalnya, komentar example.com / DB </font>
+
+132
+00:05:55,330 --> 00:05:57,459
+ <font color="#E5E5E5">dan itu akan mengirimkannya ke web ini </font>
+
+133
+00:05:57,459 --> 00:06:00,039
+ aplikasi <font color="#CCCCCC">dan pada dasarnya apa itu </font>
+
+134
+00:06:00,039 --> 00:06:01,389
+ coba <font color="#E5E5E5">lakukan adalah itu akan mengatakan hei saya </font>
+
+135
+00:06:01,389 --> 00:06:03,219
+ ingin <font color="#E5E5E5">komentar terbaru dari </font>
+
+136
+00:06:03,219 --> 00:06:05,860
+ database dan <font color="#E5E5E5">kemudian kode </font><font color="#CCCCCC">HTML </font><font color="#E5E5E5">ini </font>
+
+137
+00:06:05,860 --> 00:06:10,389
+ akan akan memungkinkan untuk mencetak <font color="#CCCCCC">Anda </font>
+
+138
+00:06:10,389 --> 00:06:15,610
+ tahu <font color="#E5E5E5">komentar DB dan itu akan </font>
+
+139
+00:06:15,610 --> 00:06:18,399
+ kirim <font color="#E5E5E5">itu </font><font color="#CCCCCC">kembali dengan aku akan mengatakan </font>
+
+140
+00:06:18,399 --> 00:06:21,909
+ 200 <font color="#CCCCCC">oke karena </font><font color="#E5E5E5">itu seperti hei kamu </font>
+
+141
+00:06:21,909 --> 00:06:24,429
+ Anda telah meminta halaman yang valid dari saya 
+
+142
+00:06:24,429 --> 00:06:26,949
+ dan ketika dikatakan <font color="#E5E5E5">200 oke itu juga </font>
+
+143
+00:06:26,949 --> 00:06:29,019
+ <font color="#E5E5E5">akan mengirim konten HTML ini </font>
+
+144
+00:06:29,019 --> 00:06:31,919
+ <font color="#CCCCCC">kode dan itu </font><font color="#E5E5E5">akan mengatakan Anda tahu </font><font color="#CCCCCC">HTML </font>
+
+145
+00:06:31,919 --> 00:06:35,319
+ <font color="#CCCCCC">Anda tahu header </font><font color="#E5E5E5">1 ini adalah DV terbaru </font>
+
+146
+00:06:35,319 --> 00:06:38,050
+ komentar dan kemudian baris HTML berikutnya 
+
+147
+00:06:38,050 --> 00:06:41,050
+ <font color="#E5E5E5">akan </font><font color="#CCCCCC">mencetak komentar DB terbaru </font>
+
+148
+00:06:41,050 --> 00:06:42,550
+ yang <font color="#E5E5E5">komentar DB terbaru adalah </font>
+
+149
+00:06:42,550 --> 00:06:44,169
+ skrip <font color="#CCCCCC">yang diserang oleh penyerang ini </font>
+
+150
+00:06:44,169 --> 00:06:47,050
+ <font color="#E5E5E5">database dan sehingga </font><font color="#CCCCCC">akhirnya itu </font><font color="#E5E5E5">akan </font>
+
+151
+00:06:47,050 --> 00:06:49,689
+ <font color="#E5E5E5">di browser korban ini akan ada </font>
+
+152
+00:06:49,689 --> 00:06:54,129
+ <font color="#CCCCCC">kode HTML ini yang </font><font color="#E5E5E5">memiliki script itu </font>
+
+153
+00:06:54,129 --> 00:06:56,469
+ <font color="#E5E5E5">penyerang mengirimnya pada akhirnya </font>
+
+154
+00:06:56,469 --> 00:07:00,490
+ <font color="#E5E5E5">ingin korban yang Anda tahu untuk mengeksekusi </font>
+
+155
+00:07:00,490 --> 00:07:04,349
+ di <font color="#E5E5E5">browser </font><font color="#CCCCCC">jadi sekali skrip itu </font>
+
+156
+00:07:04,349 --> 00:07:06,879
+ mengeksekusi sehingga skrip <font color="#E5E5E5">akan menjadi </font>
+
+157
+00:07:06,879 --> 00:07:09,779
+ akan ada <font color="#E5E5E5">sejak itu skrip </font>
+
+158
+00:07:09,779 --> 00:07:12,009
+ <font color="#E5E5E5">itu akan dikirim sebagai bagian </font><font color="#CCCCCC">dari ini </font>
+
+159
+00:07:12,009 --> 00:07:14,379
+ <font color="#E5E5E5">pesan oke di kode HTML </font><font color="#CCCCCC">itu sekarang </font>
+
+160
+00:07:14,379 --> 00:07:17,379
+ <font color="#E5E5E5">dieksekusi di </font><font color="#CCCCCC">browser korban begitu </font>
+
+161
+00:07:17,379 --> 00:07:19,990
+ script yang di sana akan <font color="#E5E5E5">menjadi </font>
+
+162
+00:07:19,990 --> 00:07:22,479
+ <font color="#CCCCCC">jalankan di </font><font color="#E5E5E5">browser korban dan lalu apa </font>
+
+163
+00:07:22,479 --> 00:07:23,979
+ salah satu pertanyaannya adalah baik 
+
+164
+00:07:23,979 --> 00:07:24,909
+ apa yang ada di <font color="#E5E5E5">naskah </font>
+
+165
+00:07:24,909 --> 00:07:26,379
+ baik skrip <font color="#E5E5E5">mari kita katakan bahwa </font>
+
+166
+00:07:26,379 --> 00:07:28,749
+ skrip ditulis untuk mengatakan bahwa itu yang diinginkan 
+
+167
+00:07:28,749 --> 00:07:33,099
+ ia menginginkan <font color="#CCCCCC">kue dari </font><font color="#E5E5E5">korban </font>
+
+168
+00:07:33,099 --> 00:07:35,860
+ dan ingin itu <font color="#E5E5E5">dikirim ke sini </font><font color="#CCCCCC">juga </font>
+
+169
+00:07:35,860 --> 00:07:39,159
+ itu <font color="#E5E5E5">akan </font><font color="#CCCCCC">mengirim </font><font color="#E5E5E5">permintaan dapatkan, </font><font color="#CCCCCC">mari </font>
+
+170
+00:07:39,159 --> 00:07:42,369
+ katakan kepada penyerang <font color="#E5E5E5">dan itu akan </font>
+
+171
+00:07:42,369 --> 00:07:44,649
+ kirimkan kepada <font color="#E5E5E5">Anda untuk mengetahui situs web </font>
+
+172
+00:07:44,649 --> 00:07:51,029
+ itu <font color="#E5E5E5">akan menjadi Anda </font><font color="#CCCCCC">tahu HTTP evil.com </font>
+
+173
+00:07:51,029 --> 00:07:55,370
+ <font color="#CCCCCC">tebang </font><font color="#E5E5E5">Anda tahu cookie </font>
+
+174
+00:07:55,370 --> 00:07:58,550
+ sama dengan <font color="#CCCCCC">nilai cookie jadi mari </font>
+
+175
+00:07:58,550 --> 00:08:00,530
+ katakanlah <font color="#E5E5E5">dalam satu-dua-tiga-empat </font><font color="#CCCCCC">Anda tahu </font>
+
+176
+00:08:00,530 --> 00:08:03,380
+ apa pun <font color="#E5E5E5">itu benar, jadi saya tahu itu </font>
+
+177
+00:08:03,380 --> 00:08:05,060
+ <font color="#E5E5E5">itu banyak terjadi di sini lagi </font>
+
+178
+00:08:05,060 --> 00:08:08,540
+ penyerang <font color="#E5E5E5">mengirim atau mengirim skrip ke dalamnya </font>
+
+179
+00:08:08,540 --> 00:08:10,040
+ <font color="#E5E5E5">database web rentan ini </font>
+
+180
+00:08:10,040 --> 00:08:13,820
+ aplikasi <font color="#E5E5E5">kode HTML memungkinkan untuk </font>
+
+181
+00:08:13,820 --> 00:08:17,120
+ input pengguna <font color="#CCCCCC">untuk </font><font color="#E5E5E5">dieksekusi kapan saja </font>
+
+182
+00:08:17,120 --> 00:08:20,360
+ mengirimkannya ke <font color="#E5E5E5">korban yang tidak curiga </font><font color="#CCCCCC">sekali </font>
+
+183
+00:08:20,360 --> 00:08:21,889
+ <font color="#E5E5E5">naskah itu ada di sini untuk </font><font color="#CCCCCC">para </font><font color="#E5E5E5">korban </font>
+
+184
+00:08:21,889 --> 00:08:23,750
+ browser browser <font color="#CCCCCC">korban kemudian berjalan </font>
+
+185
+00:08:23,750 --> 00:08:26,720
+ <font color="#E5E5E5">dan mengeksekusi kode HTML yang dikirim </font>
+
+186
+00:08:26,720 --> 00:08:29,650
+ <font color="#CCCCCC">untuk itu </font><font color="#E5E5E5">kode HTML menyertakan skrip itu </font>
+
+187
+00:08:29,650 --> 00:08:32,450
+ <font color="#CCCCCC">dan kemudian skrip itu secara otomatis ditendang </font>
+
+188
+00:08:32,450 --> 00:08:34,909
+ permintaan dapatkan <font color="#CCCCCC">dari para penyerang </font>
+
+189
+00:08:34,909 --> 00:08:36,830
+ <font color="#CCCCCC">situs web yang dia miliki di sini sudah </font><font color="#E5E5E5">ditetapkan </font>
+
+190
+00:08:36,830 --> 00:08:40,940
+ <font color="#E5E5E5">dan mengirimkan bersama dengan gits Anda </font>
+
+191
+00:08:40,940 --> 00:08:42,559
+ tahu untuk penyerang itu termasuk 
+
+192
+00:08:42,559 --> 00:08:44,990
+ cookie dari <font color="#CCCCCC">korban dari </font><font color="#E5E5E5">para </font><font color="#CCCCCC">korban </font>
+
+193
+00:08:44,990 --> 00:08:46,670
+ mesin <font color="#CCCCCC">beberapa</font><font color="#E5E5E5"> hal </font><font color="#CCCCCC">yang Anda </font>
+
+194
+00:08:46,670 --> 00:08:48,650
+ bisa <font color="#E5E5E5">meminta baik hey </font><font color="#CCCCCC">bagaimana cara </font>
+
+195
+00:08:48,650 --> 00:08:50,810
+ korban <font color="#E5E5E5">tahu untuk bahkan mengirim permintaan get </font>
+
+196
+00:08:50,810 --> 00:08:53,240
+ <font color="#E5E5E5">di sini ke aplikasi web ini </font><font color="#CCCCCC">itu </font>
+
+197
+00:08:53,240 --> 00:08:56,360
+ penyerang telah terinfeksi <font color="#CCCCCC">yang masuk </font>
+
+198
+00:08:56,360 --> 00:08:58,730
+ Anda tahu <font color="#CCCCCC">tombak rekayasa sosial </font>
+
+199
+00:08:58,730 --> 00:09:00,589
+ memancing <font color="#E5E5E5">ikan apa pun yang Anda tahu </font>
+
+200
+00:09:00,589 --> 00:09:01,970
+ kalian <font color="#E5E5E5">telah melihat itu sepanjang waktu, hei </font>
+
+201
+00:09:01,970 --> 00:09:03,380
+ jangan klik tautan apa pun yang tidak Anda lakukan 
+
+202
+00:09:03,380 --> 00:09:06,230
+ percaya <font color="#E5E5E5">atau Anda tahu sejumlah cara </font>
+
+203
+00:09:06,230 --> 00:09:08,570
+ bahwa <font color="#E5E5E5">penyerang bisa memaksa </font>
+
+204
+00:09:08,570 --> 00:09:10,640
+ korban untuk mengklik tautan ini yang akan 
+
+205
+00:09:10,640 --> 00:09:12,860
+ <font color="#E5E5E5">kemudian memulai </font><font color="#CCCCCC">semua </font><font color="#E5E5E5">ini lagi </font>
+
+206
+00:09:12,860 --> 00:09:15,770
+ <font color="#E5E5E5">masalah adalah </font><font color="#CCCCCC">browser korban harus </font>
+
+207
+00:09:15,770 --> 00:09:19,670
+ <font color="#E5E5E5">bersedia </font><font color="#CCCCCC">menjalankan skrip ini </font><font color="#E5E5E5">di HTML </font>
+
+208
+00:09:19,670 --> 00:09:22,490
+ <font color="#CCCCCC">yang datang </font><font color="#E5E5E5">jika untuk beberapa alasan </font>
+
+209
+00:09:22,490 --> 00:09:24,170
+ Browser korban seperti hey HTML ini 
+
+210
+00:09:24,170 --> 00:09:26,750
+ kode memiliki ini memiliki hal-hal skrip ini di 
+
+211
+00:09:26,750 --> 00:09:27,620
+ <font color="#CCCCCC">bahwa saya tidak merasa nyaman </font>
+
+212
+00:09:27,620 --> 00:09:30,500
+ <font color="#E5E5E5">dengan dan itu tidak berjalan </font><font color="#CCCCCC">itu maka </font><font color="#E5E5E5">Anda </font>
+
+213
+00:09:30,500 --> 00:09:31,700
+ <font color="#E5E5E5">oke dan saya pikir itu bagian dari </font>
+
+214
+00:09:31,700 --> 00:09:33,230
+ alasan bahwa skrip lintas situs memiliki 
+
+215
+00:09:33,230 --> 00:09:35,570
+ turun <font color="#E5E5E5">daftar itu begitu banyak dari dulu </font>
+
+216
+00:09:35,570 --> 00:09:36,950
+ menjadi nomor <font color="#E5E5E5">dua nomor tiga sekarang sekarang </font>
+
+217
+00:09:36,950 --> 00:09:38,270
+ <font color="#E5E5E5">itu nomor tujuh yang dimiliki browser kami </font>
+
+218
+00:09:38,270 --> 00:09:41,930
+ mendapat jauh lebih baik <font color="#E5E5E5">di </font><font color="#CCCCCC">masa lalu atau </font>
+
+219
+00:09:41,930 --> 00:09:44,180
+ <font color="#E5E5E5">dalam sejarah terbaru apa pun </font><font color="#CCCCCC">juga web </font>
+
+220
+00:09:44,180 --> 00:09:48,530
+ aplikasi <font color="#CCCCCC">jadi itu salah satu </font><font color="#E5E5E5">cara untuk mempertahankan </font>
+
+221
+00:09:48,530 --> 00:09:49,700
+ terhadap ini <font color="#E5E5E5">adalah memastikan </font><font color="#CCCCCC">bahwa Anda menggunakan </font>
+
+222
+00:09:49,700 --> 00:09:52,130
+ <font color="#E5E5E5">browser modern semacam itu secara inheren </font>
+
+223
+00:09:52,130 --> 00:09:54,170
+ <font color="#E5E5E5">melindungi terhadap scripting lintas situs </font>
+
+224
+00:09:54,170 --> 00:09:56,120
+ yang lain adalah jika Anda sedang <font color="#CCCCCC">membangun ini </font>
+
+225
+00:09:56,120 --> 00:09:59,150
+ aplikasi web yang <font color="#CCCCCC">Anda butuhkan untuk Anda </font><font color="#E5E5E5">butuhkan </font>
+
+226
+00:09:59,150 --> 00:10:02,210
+ memisahkan data tidak tepercaya dari aktif 
+
+227
+00:10:02,210 --> 00:10:04,459
+ konten peramban dan jenis pengguna apa pun 
+
+228
+00:10:04,459 --> 00:10:07,010
+ <font color="#CCCCCC">input data perlu </font><font color="#E5E5E5">dipertimbangkan </font>
+
+229
+00:10:07,010 --> 00:10:08,660
+ data tidak tepercaya <font color="#E5E5E5">sehingga Anda </font>
+
+230
+00:10:08,660 --> 00:10:11,180
+ <font color="#CCCCCC">dua konten browser aktif yang terpisah dari </font>
+
+231
+00:10:11,180 --> 00:10:13,579
+ <font color="#E5E5E5">data yang tidak dipercaya </font><font color="#CCCCCC">jadi itu semacam yang sangat </font>
+
+232
+00:10:13,579 --> 00:10:15,920
+ <font color="#E5E5E5">cara menyeluruh untuk mendekati keseluruhan ini </font>
+
+233
+00:10:15,920 --> 00:10:19,430
+ cross-site scripting <font color="#E5E5E5">masalah </font><font color="#CCCCCC">semua </font><font color="#E5E5E5">yang tepat sehingga </font>
+
+234
+00:10:19,430 --> 00:10:22,339
+ Anda perlu <font color="#E5E5E5">Anda perlu memastikan itu </font>
+
+235
+00:10:22,339 --> 00:10:24,980
+ aplikasi web Anda aman dan kemudian 
+
+236
+00:10:24,980 --> 00:10:26,839
+ di sisi korban jika Anda <font color="#E5E5E5">hanya seorang </font>
+
+237
+00:10:26,839 --> 00:10:28,519
+ <font color="#CCCCCC">pengguna biasa di luar sana dan Anda </font><font color="#E5E5E5">tidak </font>
+
+238
+00:10:28,519 --> 00:10:29,990
+ <font color="#CCCCCC">Ide semua hal ini </font><font color="#E5E5E5">terjadi </font>
+
+239
+00:10:29,990 --> 00:10:32,930
+ pastikan <font color="#E5E5E5">Anda menggunakan browser itu itu </font>
+
+240
+00:10:32,930 --> 00:10:34,610
+ secara inheren <font color="#E5E5E5">mencoba untuk mempertahankan diri </font>
+
+241
+00:10:34,610 --> 00:10:36,860
+ cross-site scripting <font color="#E5E5E5">baiklah jadi itu </font>
+
+242
+00:10:36,860 --> 00:10:39,379
+ <font color="#E5E5E5">jenis itu itu salah satu semacam itu </font>
+
+243
+00:10:39,379 --> 00:10:43,040
+ contoh menyeluruh secara singkat di <font color="#CCCCCC">sana </font>
+
+244
+00:10:43,040 --> 00:10:44,990
+ adalah cara lain <font color="#CCCCCC">untuk bertahan melawan ini </font>
+
+245
+00:10:44,990 --> 00:10:47,180
+ Anda dapat memasang <font color="#CCCCCC">firewall aplikasi web </font>
+
+246
+00:10:47,180 --> 00:10:49,250
+ di depan aplikasi web Anda dan di 
+
+247
+00:10:49,250 --> 00:10:51,410
+ segala jenis potensi lintas situs 
+
+248
+00:10:51,410 --> 00:10:53,480
+ scripting serangan yang datang dalam <font color="#CCCCCC">dari </font>
+
+249
+00:10:53,480 --> 00:10:55,490
+ penyerang <font color="#CCCCCC">bahwa firewall </font><font color="#E5E5E5">aplikasi web </font>
+
+250
+00:10:55,490 --> 00:10:56,720
+ akan membunuhnya <font color="#CCCCCC">sebelum </font><font color="#E5E5E5">bahkan mendapat </font>
+
+251
+00:10:56,720 --> 00:10:58,550
+ ke <font color="#E5E5E5">aplikasi web Anda jadi ada a </font>
+
+252
+00:10:58,550 --> 00:11:00,199
+ jumlah <font color="#E5E5E5">hal yang </font><font color="#CCCCCC">dapat </font><font color="#E5E5E5">Anda </font><font color="#CCCCCC">lakukan tetapi </font>
+
+253
+00:11:00,199 --> 00:11:01,639
+ <font color="#E5E5E5">Namun demikian, masih ada skrip lintas situs </font>
+
+254
+00:11:01,639 --> 00:11:04,519
+ di luar sana bisa <font color="#CCCCCC">sangat berbahaya </font><font color="#E5E5E5">jika itu </font>
+
+255
+00:11:04,519 --> 00:11:06,980
+ jika itu <font color="#E5E5E5">diizinkan untuk </font><font color="#CCCCCC">menjalankan saja begitu </font><font color="#E5E5E5">begitu </font>
+
+256
+00:11:06,980 --> 00:11:08,509
+ terima kasih <font color="#E5E5E5">telah </font><font color="#CCCCCC">menonton papan ini </font>
+
+257
+00:11:08,509 --> 00:11:11,089
+ video pelajaran dan jika Anda suka membuat ini 
+
+258
+00:11:11,089 --> 00:11:12,410
+ <font color="#CCCCCC">Pastikan Anda </font><font color="#E5E5E5">berlangganan </font><font color="#CCCCCC">ke youtube </font><font color="#E5E5E5">kami </font>
+
+259
+00:11:12,410 --> 00:11:14,899
+ saluran di <font color="#E5E5E5">sini di pusat dev dan kami akan </font>
+
+260
+00:11:14,899 --> 00:11:18,220
+ lihat <font color="#CCCCCC">kalian di luar </font><font color="#E5E5E5">sana di </font><font color="#CCCCCC">komunitas </font>
+
+261
+00:11:23,960 --> 00:00:00,000
+ kamu 
+

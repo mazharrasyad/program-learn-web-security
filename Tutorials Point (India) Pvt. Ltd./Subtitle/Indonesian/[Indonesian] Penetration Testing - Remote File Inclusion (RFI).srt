@@ -1,0 +1,496 @@
+1
+00:00:00,089 --> 00:00:02,179
+ Halo semuanya, <font color="#E5E5E5">mari kita bicarakan </font>
+
+2
+00:00:02,179 --> 00:00:05,160
+ kerentanan file jauh inklusi <font color="#E5E5E5">jadi </font>
+
+3
+00:00:05,160 --> 00:00:07,290
+ file jarak jauh inklusi <font color="#CCCCCC">atas bangsawan juga </font>
+
+4
+00:00:07,290 --> 00:00:09,870
+ disebut sebagai <font color="#CCCCCC">RFI </font><font color="#E5E5E5">sehingga dalam file remote </font>
+
+5
+00:00:09,870 --> 00:00:11,940
+ inklusi atas penyerang bangsawan atau 
+
+6
+00:00:11,940 --> 00:00:14,610
+ <font color="#E5E5E5">penguji penetrasi mencoba memasukkan </font>
+
+7
+00:00:14,610 --> 00:00:17,160
+ file jauh yang di <font color="#E5E5E5">-host pada file </font>
+
+8
+00:00:17,160 --> 00:00:19,830
+ <font color="#CCCCCC">server </font><font color="#E5E5E5">web yang berbeda sehingga file-file ini </font>
+
+9
+00:00:19,830 --> 00:00:22,080
+ shell web khusus <font color="#E5E5E5">dan jika Anda tidak </font>
+
+10
+00:00:22,080 --> 00:00:24,359
+ tahu apa itu web shell jadi web 
+
+11
+00:00:24,359 --> 00:00:26,849
+ shell adalah bagian kecil <font color="#CCCCCC">dari </font><font color="#E5E5E5">kode yang </font>
+
+12
+00:00:26,849 --> 00:00:27,779
+ ditulis <font color="#E5E5E5">dalam berbagai berbeda </font>
+
+13
+00:00:27,779 --> 00:00:29,939
+ bahasa pemrograman tergantung <font color="#CCCCCC">pada </font>
+
+14
+00:00:29,939 --> 00:00:32,668
+ aplikasi web jadi melalui web shell <font color="#E5E5E5">satu </font>
+
+15
+00:00:32,668 --> 00:00:35,820
+ dapat mengakses <font color="#CCCCCC">server jauh sehingga semua kita </font>
+
+16
+00:00:35,820 --> 00:00:38,219
+ harus <font color="#E5E5E5">lakukan adalah kita </font><font color="#CCCCCC">hanya </font><font color="#E5E5E5">perlu memasukkan </font>
+
+17
+00:00:38,219 --> 00:00:40,379
+ cangkang web jarak jauh di dalam web 
+
+18
+00:00:40,379 --> 00:00:42,450
+ aplikasi yang merupakan file jarak jauh 
+
+19
+00:00:42,450 --> 00:00:44,640
+ inklusi dapat <font color="#CCCCCC">dibakar dan setelah web kami </font>
+
+20
+00:00:44,640 --> 00:00:46,410
+ shell termasuk <font color="#CCCCCC">dan web mati </font>
+
+21
+00:00:46,410 --> 00:00:48,329
+ aplikasi <font color="#E5E5E5">maka kita </font><font color="#CCCCCC">dapat mengakses </font><font color="#E5E5E5">nya </font>
+
+22
+00:00:48,329 --> 00:00:51,300
+ server jarak jauh <font color="#E5E5E5">sekarang mari kita lihat bagaimana kita bisa </font>
+
+23
+00:00:51,300 --> 00:00:53,149
+ mengeksploitasi <font color="#E5E5E5">file</font><font color="#CCCCCC"> inklusi mod </font>
+
+24
+00:00:53,149 --> 00:00:56,039
+ kerentanan <font color="#E5E5E5">sekarang mari kita lihat </font>
+
+25
+00:00:56,039 --> 00:00:58,320
+ kerentanan file jauh inklusi <font color="#E5E5E5">itu </font>
+
+26
+00:00:58,320 --> 00:01:02,609
+ <font color="#E5E5E5">bagaimana cara kerjanya jadi di sini Anda dapat melihat saya </font>
+
+27
+00:01:02,609 --> 00:01:05,309
+ file notepad <font color="#E5E5E5">yang telah kami buat </font>
+
+28
+00:01:05,309 --> 00:01:06,960
+ <font color="#E5E5E5">video terakhir saat melakukan file lokal </font>
+
+29
+00:01:06,960 --> 00:01:09,720
+ <font color="#CCCCCC">uji kerentanan inklusi di sini </font><font color="#E5E5E5">jadi </font>
+
+30
+00:01:09,720 --> 00:01:13,140
+ berikut adalah <font color="#E5E5E5">beberapa URL, jadi mari kita menganalisisnya </font>
+
+31
+00:01:13,140 --> 00:01:16,680
+ jadi di sini Anda akan melihat <font color="#CCCCCC">halaman itu </font>
+
+32
+00:01:16,680 --> 00:01:19,140
+ parameter sebenarnya menerima <font color="#E5E5E5">satu file </font>
+
+33
+00:01:19,140 --> 00:01:23,159
+ <font color="#E5E5E5">yang termasuk dalam indeks dot PHP jadi </font>
+
+34
+00:01:23,159 --> 00:01:25,140
+ perbedaan <font color="#CCCCCC">antara </font><font color="#E5E5E5">file </font><font color="#CCCCCC">lokal </font>
+
+35
+00:01:25,140 --> 00:01:29,159
+ inklusi dan RFI adalah <font color="#CCCCCC">yang ada di file jarak jauh </font>
+
+36
+00:01:29,159 --> 00:01:31,890
+ penyertaan <font color="#CCCCCC">apa yang bisa kita lakukan adalah kita bisa </font>
+
+37
+00:01:31,890 --> 00:01:34,590
+ <font color="#CCCCCC">termasuk file yang di-hosting </font><font color="#E5E5E5">di </font>
+
+38
+00:01:34,590 --> 00:01:37,079
+ server berbeda yang berarti file tersebut 
+
+39
+00:01:37,079 --> 00:01:38,369
+ yang tidak hadir <font color="#CCCCCC">pada aktual kami </font>
+
+40
+00:01:38,369 --> 00:01:40,890
+ server tetapi host pada beberapa yang lain 
+
+41
+00:01:40,890 --> 00:01:41,340
+ server 
+
+42
+00:01:41,340 --> 00:01:44,579
+ jadi <font color="#CCCCCC">sekarang owatta pentester apa itu seorang hacker </font>
+
+43
+00:01:44,579 --> 00:01:49,290
+ dapat melakukannya sehingga mereka dapat <font color="#E5E5E5">mencoba memasukkan beberapa </font>
+
+44
+00:01:49,290 --> 00:01:52,740
+ <font color="#CCCCCC">jenis </font><font color="#E5E5E5">web shell ke web </font>
+
+45
+00:01:52,740 --> 00:01:54,810
+ aplikasi dan jika aplikasi web 
+
+46
+00:01:54,810 --> 00:01:58,920
+ <font color="#E5E5E5">dapat menyertakan web shell di dalamnya </font>
+
+47
+00:01:58,920 --> 00:02:02,869
+ maka apa yang <font color="#CCCCCC">bisa dilakukan pentester dapat dia lakukan </font>
+
+48
+00:02:02,869 --> 00:02:05,280
+ <font color="#E5E5E5">dapatkan akses jarak jauh dari </font><font color="#CCCCCC">web itu </font>
+
+49
+00:02:05,280 --> 00:02:09,449
+ aplikasi <font color="#CCCCCC">sekarang untuk menguji jarak jauh </font>
+
+50
+00:02:09,449 --> 00:02:11,400
+ kerentanan inklusi file adalah 
+
+51
+00:02:11,400 --> 00:02:13,810
+ Hal pertama adalah kita harus <font color="#CCCCCC">memulai OS kita </font>
+
+52
+00:02:13,810 --> 00:02:15,489
+ <font color="#CCCCCC">aplikasi web touken di mana Anda dapat melihat </font>
+
+53
+00:02:15,489 --> 00:02:18,550
+ <font color="#E5E5E5">terserah dan </font><font color="#CCCCCC">menjalankan hal berikutnya adalah kita </font>
+
+54
+00:02:18,550 --> 00:02:20,920
+ harus <font color="#E5E5E5">memulai </font><font color="#CCCCCC">linux kali </font><font color="#E5E5E5">kami di </font><font color="#CCCCCC">sini Anda </font>
+
+55
+00:02:20,920 --> 00:02:24,780
+ dapat melihat Kali Linux saya mulai berjalan 
+
+56
+00:02:24,780 --> 00:02:28,750
+ <font color="#E5E5E5">sekarang mari kita lakukan satu hal terlebih dahulu </font>
+
+57
+00:02:28,750 --> 00:02:30,580
+ mari kita buka <font color="#E5E5E5">web yang </font><font color="#CCCCCC">diredam </font>
+
+58
+00:02:30,580 --> 00:02:33,209
+ <font color="#CCCCCC">aplikasi </font>
+
+59
+00:02:44,210 --> 00:02:52,860
+ <font color="#CCCCCC">biarkan </font><font color="#E5E5E5">aku </font><font color="#CCCCCC">membuka halaman </font><font color="#E5E5E5">apa saja sekarang </font>
+
+60
+00:02:52,860 --> 00:02:55,380
+ <font color="#E5E5E5">Kali Linux ada satu direktori yang mana </font>
+
+61
+00:02:55,380 --> 00:03:00,720
+ menyimpan cangkang web <font color="#CCCCCC">sekarang mari kita pergi ke </font><font color="#E5E5E5">itu </font>
+
+62
+00:03:00,720 --> 00:03:04,110
+ <font color="#E5E5E5">direktori </font><font color="#CCCCCC">itu di dalam kita kemudian berbagi </font>
+
+63
+00:03:04,110 --> 00:03:09,150
+ dan web shell <font color="#E5E5E5">jadi di </font><font color="#CCCCCC">sini Anda </font><font color="#E5E5E5">bisa melihatnya </font>
+
+64
+00:03:09,150 --> 00:03:11,070
+ di sini ada <font color="#E5E5E5">kerang web yang berbeda </font>
+
+65
+00:03:11,070 --> 00:03:13,380
+ <font color="#CCCCCC">tersedia dalam berbagai </font><font color="#E5E5E5">bahasa seperti </font>
+
+66
+00:03:13,380 --> 00:03:16,050
+ <font color="#E5E5E5">kerang web yang ditulis dalam PHP hadir </font>
+
+67
+00:03:16,050 --> 00:03:18,210
+ di direktori PHP <font color="#CCCCCC">situs web yang ditulis dalam </font>
+
+68
+00:03:18,210 --> 00:03:20,880
+ Perl hadir di direktori Perl <font color="#E5E5E5">tetapi </font>
+
+69
+00:03:20,880 --> 00:03:22,500
+ untuk saat <font color="#CCCCCC">ini kami tertarik </font>
+
+70
+00:03:22,500 --> 00:03:25,920
+ PHP <font color="#E5E5E5">jadi mari kita pergi ke hit direktori PHP </font>
+
+71
+00:03:25,920 --> 00:03:28,380
+ beritahu kami dan <font color="#E5E5E5">Anda akan menemukan banyak </font><font color="#CCCCCC">web </font>
+
+72
+00:03:28,380 --> 00:03:31,590
+ kerang ditulis dan tersedia dalam PHP 
+
+73
+00:03:31,590 --> 00:03:33,780
+ <font color="#E5E5E5">jadi yang paling umum adalah sederhana </font>
+
+74
+00:03:33,780 --> 00:03:35,430
+ <font color="#CCCCCC">backdoor dot PHP itu adalah sebuah command-line </font>
+
+75
+00:03:35,430 --> 00:03:38,550
+ <font color="#CCCCCC">shell </font><font color="#E5E5E5">dan PHP </font><font color="#CCCCCC">kembali dot dot PHP itu a </font>
+
+76
+00:03:38,550 --> 00:03:41,280
+ GUI shell sekarang apa yang <font color="#E5E5E5">akan saya lakukan di sini </font>
+
+77
+00:03:41,280 --> 00:03:46,770
+ <font color="#E5E5E5">adalah saya akan menjalankan HTTP sederhana </font><font color="#CCCCCC">Python </font>
+
+78
+00:03:46,770 --> 00:03:54,270
+ server dan port akan <font color="#CCCCCC">menjadi 5.000 sekarang </font>
+
+79
+00:03:54,270 --> 00:03:56,430
+ apa <font color="#CCCCCC">artinya sebenarnya di </font><font color="#E5E5E5">Python sana </font>
+
+80
+00:03:56,430 --> 00:03:58,890
+ adalah <font color="#E5E5E5">server pre-built atau skrip jadi saya </font>
+
+81
+00:03:58,890 --> 00:04:00,420
+ menggunakan skrip ini <font color="#E5E5E5">Python </font>
+
+82
+00:04:00,420 --> 00:04:03,570
+ - <font color="#CCCCCC">sedang HTTP server sederhana </font><font color="#E5E5E5">dan aku akan </font><font color="#CCCCCC">menjalankan </font>
+
+83
+00:04:03,570 --> 00:04:06,000
+ server pada port <font color="#CCCCCC">5.000 </font><font color="#E5E5E5">jadi apa yang akan dilakukan </font>
+
+84
+00:04:06,000 --> 00:04:10,610
+ itu <font color="#E5E5E5">benar - benar akan membuat server di ini </font>
+
+85
+00:04:10,610 --> 00:04:14,510
+ direktori PHP dan kemudian <font color="#CCCCCC">saya dapat mengakses </font><font color="#E5E5E5">ini </font>
+
+86
+00:04:14,510 --> 00:04:18,839
+ file dan coba <font color="#E5E5E5">sertakan </font><font color="#CCCCCC">dalam netral a </font>
+
+87
+00:04:18,839 --> 00:04:20,640
+ <font color="#CCCCCC">aplikasi web tetapi </font><font color="#E5E5E5">untuk itu kami juga </font>
+
+88
+00:04:20,640 --> 00:04:22,830
+ harus <font color="#E5E5E5">tahu bahwa apa itu IP Kali </font>
+
+89
+00:04:22,830 --> 00:04:30,540
+ Jadi Linux IP 192.168.0.1 35 sekarang mari 
+
+90
+00:04:30,540 --> 00:04:32,370
+ jangan satu hal saya <font color="#E5E5E5">hanya </font><font color="#CCCCCC">tekan enter </font><font color="#E5E5E5">dan </font>
+
+91
+00:04:32,370 --> 00:04:34,200
+ di sini <font color="#E5E5E5">Anda akan melihat </font><font color="#CCCCCC">bahwa </font><font color="#E5E5E5">astir DP </font><font color="#CCCCCC">saya </font>
+
+92
+00:04:34,200 --> 00:04:36,480
+ <font color="#E5E5E5">server dan berjalan mari kita kembali </font>
+
+93
+00:04:36,480 --> 00:04:40,190
+ di sini <font color="#E5E5E5">dan ini setelah halaman ini </font>
+
+94
+00:04:40,190 --> 00:04:45,540
+ parameter sekarang mari kita coba untuk memasukkan web 
+
+95
+00:04:45,540 --> 00:04:49,260
+ shell jarak jauh dengan hanya <font color="#CCCCCC">memasukkan </font><font color="#E5E5E5">IP </font>
+
+96
+00:04:49,260 --> 00:04:52,640
+ alamat <font color="#E5E5E5">Kali Linux </font>
+
+97
+00:04:54,730 --> 00:05:01,600
+ dan port <font color="#E5E5E5">adalah </font><font color="#CCCCCC">5.000 dan nama shell </font>
+
+98
+00:05:01,600 --> 00:05:10,660
+ backdoor sederhana dot <font color="#CCCCCC">php 'tekan </font><font color="#E5E5E5">enter </font>
+
+99
+00:05:10,660 --> 00:05:13,540
+ dan di sini <font color="#E5E5E5">Anda akan melihat </font><font color="#CCCCCC">bahwa </font><font color="#E5E5E5">shell rep kami </font>
+
+100
+00:05:13,540 --> 00:05:15,730
+ sudah aktif dan berjalan <font color="#E5E5E5">sehingga web shell ini </font>
+
+101
+00:05:15,730 --> 00:05:17,980
+ <font color="#E5E5E5">PHP backdoored sederhana juga mengambil satu </font>
+
+102
+00:05:17,980 --> 00:05:20,140
+ parameter yang disebut <font color="#CCCCCC">CMD </font>
+
+103
+00:05:20,140 --> 00:05:23,920
+ sekarang mari kita lewati parameter ini di URL 
+
+104
+00:05:23,920 --> 00:05:27,730
+ string tetapi di <font color="#E5E5E5">sini hal yang menjadi pemberitahuan </font>
+
+105
+00:05:27,730 --> 00:05:30,340
+ bahwa kami telah <font color="#E5E5E5">memberikan satu parameter </font>
+
+106
+00:05:30,340 --> 00:05:35,520
+ <font color="#E5E5E5">itu halaman jadi sekarang di sini kita </font><font color="#CCCCCC">tidak bisa menambahkan </font>
+
+107
+00:05:35,520 --> 00:05:39,370
+ tanda seru <font color="#E5E5E5">kita harus </font><font color="#CCCCCC">menambahkan dan kemudian </font>
+
+108
+00:05:39,370 --> 00:05:40,930
+ nama parameter karena itu yang kedua 
+
+109
+00:05:40,930 --> 00:05:44,110
+ parameter CMD sama dengan <font color="#E5E5E5">LS dan di sini Anda </font>
+
+110
+00:05:44,110 --> 00:05:48,700
+ <font color="#E5E5E5">akan melihat </font><font color="#CCCCCC">bahwa kami </font><font color="#E5E5E5">dapat mengakses </font>
+
+111
+00:05:48,700 --> 00:05:51,190
+ server jauh dengan menggunakan <font color="#CCCCCC">rev-share ini </font>
+
+112
+00:05:51,190 --> 00:05:54,670
+ <font color="#CCCCCC">sekarang kita bisa menjalankan perintah apa pun </font><font color="#E5E5E5">seperti jika </font>
+
+113
+00:05:54,670 --> 00:05:55,990
+ Anda ingin memeriksa saat ini bekerja 
+
+114
+00:05:55,990 --> 00:05:59,430
+ direktori <font color="#E5E5E5">jadi di sini Anda bisa lihat </font><font color="#CCCCCC">pergi </font><font color="#E5E5E5">ASP </font>
+
+115
+00:05:59,430 --> 00:06:03,400
+ <font color="#CCCCCC">hari </font><font color="#E5E5E5">pemberontakan </font><font color="#CCCCCC">jadi ini </font><font color="#E5E5E5">adalah perbedaan </font>
+
+116
+00:06:03,400 --> 00:06:06,160
+ <font color="#CCCCCC">antara </font><font color="#E5E5E5">inklusi file lokal dan remote </font>
+
+117
+00:06:06,160 --> 00:06:08,170
+ file kerentanan inklusi <font color="#E5E5E5">yang masuk </font>
+
+118
+00:06:08,170 --> 00:06:10,690
+ <font color="#E5E5E5">inklusi file mode kita dapat dari jarak jauh </font>
+
+119
+00:06:10,690 --> 00:06:13,930
+ termasuk web shell atau skrip apa pun 
+
+120
+00:06:13,930 --> 00:06:18,730
+ di dalam <font color="#CCCCCC">aplikasi web sehingga dalam hal ini </font>
+
+121
+00:06:18,730 --> 00:06:22,720
+ <font color="#E5E5E5">video yang </font><font color="#CCCCCC">telah </font><font color="#E5E5E5">kami </font><font color="#CCCCCC">bahas </font><font color="#E5E5E5">yaitu apa itu </font><font color="#CCCCCC">RFI </font>
+
+122
+00:06:22,720 --> 00:06:25,030
+ <font color="#E5E5E5">kerentanan dan bagaimana memanfaatkan RFI </font>
+
+123
+00:06:25,030 --> 00:06:27,220
+ kerentanan <font color="#E5E5E5">terima kasih untuk menonton ini </font>
+
+124
+00:06:27,220 --> 00:00:00,000
+ video 
+

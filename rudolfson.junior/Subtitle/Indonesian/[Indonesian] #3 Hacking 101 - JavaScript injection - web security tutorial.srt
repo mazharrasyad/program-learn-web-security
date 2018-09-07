@@ -1,0 +1,480 @@
+1
+00:00:00,030 --> 00:00:01,469
+ Selamat datang wanita <font color="#CCCCCC">dan pria </font><font color="#E5E5E5">dengan </font>
+
+2
+00:00:01,469 --> 00:00:05,299
+ <font color="#E5E5E5">video ketiga keamanan web dan peretasan </font>
+
+3
+00:00:05,299 --> 00:00:07,560
+ <font color="#E5E5E5">hari ini </font><font color="#CCCCCC">kita berbicara tentang JavaScript </font>
+
+4
+00:00:07,560 --> 00:00:10,920
+ suntikan <font color="#E5E5E5">dan pertama dari semua yang Anda miliki </font>
+
+5
+00:00:10,920 --> 00:00:13,230
+ <font color="#E5E5E5">pelajari di sini adalah untuk mengamankan </font><font color="#CCCCCC">web </font><font color="#E5E5E5">Anda </font><font color="#CCCCCC">sendiri </font>
+
+6
+00:00:13,230 --> 00:00:15,870
+ aplikasi <font color="#E5E5E5">untuk tidak meretas milik orang lain </font>
+
+7
+00:00:15,870 --> 00:00:19,680
+ karena <font color="#CCCCCC">itu ilegal dan itu sangat jahat </font>
+
+8
+00:00:19,680 --> 00:00:23,130
+ jadi gunakan saja informasi ini untuk <font color="#E5E5E5">membuatnya </font>
+
+9
+00:00:23,130 --> 00:00:25,439
+ aplikasi web Anda lebih aman <font color="#CCCCCC">dan aman </font>
+
+10
+00:00:25,439 --> 00:00:28,140
+ tentu saja <font color="#E5E5E5">tidak dapat diandalkan untuk direct khusus </font>
+
+11
+00:00:28,140 --> 00:00:30,420
+ atau kerusakan tidak langsung <font color="#E5E5E5">untuk kerusakan lainnya </font>
+
+12
+00:00:30,420 --> 00:00:32,668
+ dihasilkan dari <font color="#CCCCCC">penggunaan informasi </font>
+
+13
+00:00:32,668 --> 00:00:35,790
+ disajikan dalam <font color="#E5E5E5">video ini jadi apa </font>
+
+14
+00:00:35,790 --> 00:00:38,070
+ injeksi <font color="#CCCCCC">Saya mendapat kutipan dari </font>
+
+15
+00:00:38,070 --> 00:00:41,930
+ Wikipedia yang langsung pada titik <font color="#CCCCCC">dan </font>
+
+16
+00:00:41,930 --> 00:00:44,430
+ injeksi digunakan oleh penyerang atau 
+
+17
+00:00:44,430 --> 00:00:47,309
+ peretas untuk memperkenalkan atau menyuntikkan kode ke dalamnya 
+
+18
+00:00:47,309 --> 00:00:49,710
+ <font color="#CCCCCC">program komputer yang rentan </font><font color="#E5E5E5">dan berubah </font>
+
+19
+00:00:49,710 --> 00:00:52,739
+ jalannya <font color="#E5E5E5">eksekusi jadi apa ini </font>
+
+20
+00:00:52,739 --> 00:00:55,500
+ <font color="#E5E5E5">berarti kita </font><font color="#CCCCCC">membutuhkan </font><font color="#E5E5E5">sesuatu bidang input a </font>
+
+21
+00:00:55,500 --> 00:01:00,289
+ <font color="#CCCCCC">bidang teks formulir tempat kami </font><font color="#E5E5E5">dapat memposting </font>
+
+22
+00:01:00,289 --> 00:01:05,069
+ kode ke server dan kode ini <font color="#CCCCCC">harus </font>
+
+23
+00:01:05,069 --> 00:01:09,780
+ <font color="#E5E5E5">disimpan dalam database dan kode ini </font>
+
+24
+00:01:09,780 --> 00:01:13,430
+ <font color="#CCCCCC">yang kita simpan ke dalam database harus </font>
+
+25
+00:01:13,430 --> 00:01:18,540
+ ditampilkan pada <font color="#CCCCCC">situs web </font><font color="#E5E5E5">yang</font><font color="#CCCCCC"> akan dieksekusi sehingga </font>
+
+26
+00:01:18,540 --> 00:01:21,030
+ kami <font color="#CCCCCC">menyimpan sesuatu </font><font color="#E5E5E5">di database yang </font>
+
+27
+00:01:21,030 --> 00:01:24,060
+ nanti <font color="#CCCCCC">digunakan untuk menampilkan pada </font>
+
+28
+00:01:24,060 --> 00:01:28,439
+ <font color="#CCCCCC">halaman web dan jalankan kode kami karena </font>
+
+29
+00:01:28,439 --> 00:01:33,799
+ setiap browser mengeksekusi JavaScript <font color="#E5E5E5">jadi </font>
+
+30
+00:01:33,799 --> 00:01:35,880
+ hari ini kita <font color="#E5E5E5">belajar </font><font color="#CCCCCC">tentang itu </font>
+
+31
+00:01:35,880 --> 00:01:38,729
+ <font color="#CCCCCC">suntikan jadi kita perlu menyimpan string </font>
+
+32
+00:01:38,729 --> 00:01:40,979
+ <font color="#E5E5E5">ke </font><font color="#CCCCCC">dalam database yang mungkin </font>
+
+33
+00:01:40,979 --> 00:01:43,649
+ sesuatu <font color="#CCCCCC">seperti skrip </font><font color="#E5E5E5">memuat skrip saya </font>
+
+34
+00:01:43,649 --> 00:01:47,790
+ dimuat dan <font color="#E5E5E5">string ini ditampilkan </font><font color="#CCCCCC">pada </font>
+
+35
+00:01:47,790 --> 00:01:50,040
+ situs web dan browser <font color="#E5E5E5">mengeksekusi </font>
+
+36
+00:01:50,040 --> 00:01:53,939
+ Kode JavaScript jadi ini <font color="#E5E5E5">akan </font><font color="#CCCCCC">menghasilkan </font>
+
+37
+00:01:53,939 --> 00:01:58,549
+ <font color="#E5E5E5">sesuatu seperti ini dan Anda dapat </font><font color="#CCCCCC">menggunakan </font>
+
+38
+00:01:58,549 --> 00:02:05,750
+ <font color="#CCCCCC">akar halaman web dari jumlah </font><font color="#E5E5E5">Pizza es y untuk </font>
+
+39
+00:02:05,750 --> 00:02:09,360
+ mempelajari video ini dan saya menggunakan saya 
+
+40
+00:02:09,360 --> 00:02:12,420
+ <font color="#E5E5E5">bagian host lokal dan saya akan </font><font color="#CCCCCC">ke </font>
+
+41
+00:02:12,420 --> 00:02:13,140
+ <font color="#CCCCCC">buku tamu </font>
+
+42
+00:02:13,140 --> 00:02:16,380
+ seperti yang Anda lihat kami <font color="#CCCCCC">memiliki sesuatu untuk </font><font color="#E5E5E5">disuntikkan </font>
+
+43
+00:02:16,380 --> 00:02:22,819
+ di sini dan <font color="#E5E5E5">saya mencoba </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">menulis skrip </font>
+
+44
+00:02:22,819 --> 00:02:28,490
+ skrip <font color="#E5E5E5">kami </font><font color="#CCCCCC">menutup </font><font color="#E5E5E5">tag skrip dan </font>
+
+45
+00:02:28,490 --> 00:02:34,350
+ <font color="#CCCCCC">dalam </font><font color="#E5E5E5">sini </font><font color="#CCCCCC">kita </font><font color="#E5E5E5">hanya menggunakan peringatan Anda </font>
+
+46
+00:02:34,350 --> 00:02:36,240
+ diretas 
+
+47
+00:02:36,240 --> 00:02:40,410
+ misalnya <font color="#CCCCCC">oke dan apa yang terjadi jika </font><font color="#E5E5E5">kita </font>
+
+48
+00:02:40,410 --> 00:02:43,230
+ posting ini baik-baik <font color="#CCCCCC">saja setiap saat </font>
+
+49
+00:02:43,230 --> 00:02:48,030
+ <font color="#E5E5E5">sisi buku tamu dimuat ke </font>
+
+50
+00:02:48,030 --> 00:02:51,380
+ browser <font color="#CCCCCC">memeriksa ada tag skrip dan </font>
+
+51
+00:02:51,380 --> 00:02:54,300
+ kemudian jalankan <font color="#CCCCCC">skrip di dalam </font>
+
+52
+00:02:54,300 --> 00:02:57,360
+ <font color="#CCCCCC">tag skrip </font><font color="#E5E5E5">sehingga menampilkan yang </font><font color="#CCCCCC">Anda miliki </font>
+
+53
+00:02:57,360 --> 00:03:01,380
+ diretas di kotak peringatan jadi jika kita lihat 
+
+54
+00:03:01,380 --> 00:03:09,480
+ <font color="#CCCCCC">di sumber halaman kami memiliki </font><font color="#E5E5E5">skrip kami </font>
+
+55
+00:03:09,480 --> 00:03:13,050
+ di sini Anda melihat hanya <font color="#E5E5E5">menempatkan tag skrip </font>
+
+56
+00:03:13,050 --> 00:03:16,350
+ dan jalankan kode <font color="#E5E5E5">di </font><font color="#CCCCCC">sini dan </font>
+
+57
+00:03:16,350 --> 00:03:20,820
+ <font color="#CCCCCC">jika </font><font color="#E5E5E5">kita melihat </font><font color="#CCCCCC">sumber adair h </font>
+
+58
+00:03:20,820 --> 00:03:23,700
+ <font color="#E5E5E5">kami melihat kami bisa melakukan apa saja </font>
+
+59
+00:03:23,700 --> 00:03:27,329
+ dengan <font color="#E5E5E5">JavaScript jadi kita lihat </font><font color="#CCCCCC">oke ada </font>
+
+60
+00:03:27,329 --> 00:03:31,350
+ ID kami menyalin ini dan kami ingin bersembunyi 
+
+61
+00:03:31,350 --> 00:03:33,930
+ buku tamu buku gas lengkap 
+
+62
+00:03:33,930 --> 00:03:42,019
+ oke jadi saya <font color="#E5E5E5">menulis skrip skrip </font><font color="#CCCCCC">dan </font>
+
+63
+00:03:42,019 --> 00:03:43,590
+ <font color="#CCCCCC">dalam </font><font color="#E5E5E5">sini </font>
+
+64
+00:03:43,590 --> 00:03:52,790
+ Saya mengatakan dokumen dot mendapatkan elemen berdasarkan ID 
+
+65
+00:03:53,510 --> 00:03:57,239
+ posting <font color="#E5E5E5">ID saya di sini maka kita katakan </font>
+
+66
+00:03:57,239 --> 00:04:03,510
+ gaya dengan visibilitas gaya zip bility 
+
+67
+00:04:03,510 --> 00:04:08,329
+ dan <font color="#E5E5E5">kami mengatur visibilitas agar tersembunyi, oke </font>
+
+68
+00:04:08,329 --> 00:04:11,850
+ jadi jika kita memposting ini ke <font color="#CCCCCC">server </font>
+
+69
+00:04:11,850 --> 00:04:15,470
+ Anda melihat <font color="#E5E5E5">buku tamu kami disembunyikan sekarang </font>
+
+70
+00:04:15,470 --> 00:04:22,039
+ <font color="#E5E5E5">karena kami menambahkan dengan skrip </font><font color="#CCCCCC">kami, kami menambahkan a </font>
+
+71
+00:04:24,080 --> 00:04:25,230
+ bintang 
+
+72
+00:04:25,230 --> 00:04:28,230
+ di buku tamu kami yang mengatakan 
+
+73
+00:04:28,230 --> 00:04:30,690
+ <font color="#E5E5E5">visibilitas: tersembunyi tentu saja Anda bisa </font>
+
+74
+00:04:30,690 --> 00:04:35,790
+ menyuntikkan apa pun <font color="#E5E5E5">di dalam </font><font color="#CCCCCC">ini jika </font>
+
+75
+00:04:35,790 --> 00:04:38,880
+ pencipta <font color="#E5E5E5">aplikasi web ini tidak </font>
+
+76
+00:04:38,880 --> 00:04:42,210
+ <font color="#E5E5E5">mengamankan aplikasi web agar kami bisa </font>
+
+77
+00:04:42,210 --> 00:04:49,950
+ buka <font color="#E5E5E5">google google </font><font color="#CCCCCC">jquery dan masuk ke </font>
+
+78
+00:04:49,950 --> 00:04:54,410
+ perpustakaan yang di-host dan kami bisa menyuntikkan 
+
+79
+00:04:54,410 --> 00:04:58,890
+ <font color="#E5E5E5">jquery misalnya yang </font><font color="#CCCCCC">saya maksud ada </font>
+
+80
+00:04:58,890 --> 00:05:01,320
+ <font color="#E5E5E5">sudah jquery di </font><font color="#CCCCCC">halaman web </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">jadi itu </font>
+
+81
+00:05:01,320 --> 00:05:02,730
+ <font color="#E5E5E5">tidak masuk </font><font color="#CCCCCC">akal </font>
+
+82
+00:05:02,730 --> 00:05:09,510
+ <font color="#CCCCCC">tetapi jika saya akan saya </font><font color="#E5E5E5">dapat memposting </font><font color="#CCCCCC">jquery </font>
+
+83
+00:05:09,510 --> 00:05:12,120
+ perpustakaan <font color="#E5E5E5">di sini kemudian membuat </font>
+
+84
+00:05:12,120 --> 00:05:21,660
+ skrip dan gunakan jQuery <font color="#E5E5E5">untuk membuat </font>
+
+85
+00:05:21,660 --> 00:05:23,990
+ <font color="#E5E5E5">buku tamu dengan </font><font color="#CCCCCC">mangkuk lagi misalnya </font>
+
+86
+00:05:23,990 --> 00:05:29,280
+ <font color="#E5E5E5">jadi </font><font color="#CCCCCC">saya akan memposting sesuatu </font><font color="#E5E5E5">seperti get </font><font color="#CCCCCC">ini </font>
+
+87
+00:05:29,280 --> 00:05:40,700
+ ID saya dan mengatakan CSS dan dengan <font color="#E5E5E5">tagihan itu </font><font color="#CCCCCC">t </font>
+
+88
+00:05:41,600 --> 00:05:51,000
+ terlihat dengan <font color="#E5E5E5">banteng jadi cobalah ini dan seperti Anda </font>
+
+89
+00:05:51,000 --> 00:05:57,600
+ lihat <font color="#CCCCCC">buku gas </font><font color="#E5E5E5">D </font><font color="#CCCCCC">terlihat lagi dan kami </font>
+
+90
+00:05:57,600 --> 00:06:01,740
+ telah menyuntikkan <font color="#E5E5E5">jQuery di dalam </font><font color="#CCCCCC">kami </font>
+
+91
+00:06:01,740 --> 00:06:06,480
+ <font color="#CCCCCC">buku tamu </font><font color="#E5E5E5">jadi ini cukup jahat yang </font><font color="#CCCCCC">Anda lihat </font>
+
+92
+00:06:06,480 --> 00:06:10,650
+ <font color="#CCCCCC">visibilitas terlihat dan di dalam sini kita </font>
+
+93
+00:06:10,650 --> 00:06:15,570
+ <font color="#CCCCCC">memiliki </font><font color="#E5E5E5">perpustakaan jQuery </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">dan di sini kami gunakan </font>
+
+94
+00:06:15,570 --> 00:06:20,160
+ <font color="#E5E5E5">jQuery </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">jadi apa yang bisa </font><font color="#CCCCCC">kami lakukan untuk membuatnya </font>
+
+95
+00:06:20,160 --> 00:06:27,060
+ yang tidak berfungsi jadi kami belajar tentang 
+
+96
+00:06:27,060 --> 00:06:30,990
+ fungsi pajak yang ketat dalam PHP sebelum jadi saya 
+
+97
+00:06:30,990 --> 00:06:33,550
+ gunakan ini <font color="#CCCCCC">untuk saya </font>
+
+98
+00:06:33,550 --> 00:06:38,169
+ untuk <font color="#E5E5E5">formulir umpan balik dosa saya </font><font color="#CCCCCC">dan kami perlu </font>
+
+99
+00:06:38,169 --> 00:06:44,860
+ <font color="#CCCCCC">pastikan </font><font color="#E5E5E5">tidak ada yang bisa </font><font color="#CCCCCC">menyisipkan skrip </font>
+
+100
+00:06:44,860 --> 00:06:48,099
+ X <font color="#E5E5E5">lagi karena tag skrip adalah sederhana </font>
+
+101
+00:06:48,099 --> 00:06:51,699
+ <font color="#E5E5E5">tag HTML yang bisa disuntikkan </font><font color="#CCCCCC">jadi jika </font>
+
+102
+00:06:51,699 --> 00:06:56,470
+ kami melakukan <font color="#E5E5E5">sesuatu </font><font color="#CCCCCC">seperti </font><font color="#E5E5E5">ini pada sisipan kami </font>
+
+103
+00:06:56,470 --> 00:06:59,860
+ buku tamu setiap <font color="#E5E5E5">tag HTML </font><font color="#CCCCCC">akan </font>
+
+104
+00:06:59,860 --> 00:07:04,569
+ dilucuti <font color="#E5E5E5">juga tag </font><font color="#CCCCCC">skrip </font><font color="#E5E5E5">jadi jika </font>
+
+105
+00:07:04,569 --> 00:07:11,280
+ kami menyimpan ini dan <font color="#CCCCCC">kembali ke </font><font color="#E5E5E5">halaman kami </font><font color="#CCCCCC">dan </font>
+
+106
+00:07:11,280 --> 00:07:15,280
+ <font color="#E5E5E5">kami memposting sesuatu seperti ini dan kami </font>
+
+107
+00:07:15,280 --> 00:07:21,099
+ posting <font color="#E5E5E5">script lagi dan kami katakan </font><font color="#CCCCCC">untuk </font>
+
+108
+00:07:21,099 --> 00:07:29,500
+ contoh waspada lagi untuk <font color="#E5E5E5">contoh ini </font>
+
+109
+00:07:29,500 --> 00:07:31,810
+ tidak akan <font color="#CCCCCC">berfungsi lagi </font><font color="#E5E5E5">karena jika saya kirim </font>
+
+110
+00:07:31,810 --> 00:07:37,060
+ <font color="#CCCCCC">umpan balik yang Anda lihat menghapus skrip </font>
+
+111
+00:07:37,060 --> 00:07:39,610
+ taruh tag dan kami tidak diizinkan lagi 
+
+112
+00:07:39,610 --> 00:07:46,599
+ apakah <font color="#E5E5E5">Anda menyuntikkan JavaScript </font><font color="#CCCCCC">jadi ini adalah salah satunya </font>
+
+113
+00:07:46,599 --> 00:07:49,270
+ cara <font color="#CCCCCC">untuk </font><font color="#E5E5E5">memastikan </font><font color="#CCCCCC">bahwa </font><font color="#E5E5E5">Anda tidak bisa masuk </font>
+
+114
+00:07:49,270 --> 00:07:52,360
+ periksa <font color="#CCCCCC">JavaScript </font><font color="#E5E5E5">ke aplikasi web Anda </font>
+
+115
+00:07:52,360 --> 00:07:56,580
+ <font color="#E5E5E5">jadi kami cukup aman sekarang oke </font>
+
+116
+00:07:56,580 --> 00:08:01,270
+ jadi itu untuk video ini jangan <font color="#E5E5E5">lupa </font>
+
+117
+00:08:01,270 --> 00:08:03,430
+ <font color="#CCCCCC">untuk memberi saya </font><font color="#E5E5E5">jempol untuk berlangganan </font>
+
+118
+00:08:03,430 --> 00:08:05,469
+ <font color="#CCCCCC">saluran saya dan membagikan </font><font color="#E5E5E5">video </font><font color="#CCCCCC">ini </font>
+
+119
+00:08:05,469 --> 00:08:07,509
+ di mana-mana dan kami melihat <font color="#CCCCCC">kami di depan </font>
+
+120
+00:08:07,509 --> 00:00:00,000
+ <font color="#CCCCCC">selamat tinggal video </font>
+

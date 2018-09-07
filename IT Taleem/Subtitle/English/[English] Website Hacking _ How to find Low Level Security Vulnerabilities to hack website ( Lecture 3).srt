@@ -1,0 +1,1180 @@
+1
+00:00:08,780 --> 00:00:12,360
+in this video<font color="#E5E5E5"> we will look at open</font>
+
+2
+00:00:12,360 --> 00:00:14,940
+redirect or unvalidated<font color="#E5E5E5"> redirect or</font>
+
+3
+00:00:14,940 --> 00:00:15,530
+forward
+
+4
+00:00:15,530 --> 00:00:28,000
+[Music]
+
+5
+00:00:28,000 --> 00:00:31,129
+[Applause]
+
+6
+00:00:31,590 --> 00:00:34,449
+so the outline of the video is what is
+
+7
+00:00:34,449 --> 00:00:37,270
+unvalidated redirect<font color="#E5E5E5"> of forward second</font>
+
+8
+00:00:37,270 --> 00:00:39,760
+demo of the unvalidated redirect<font color="#E5E5E5"> of</font>
+
+9
+00:00:39,760 --> 00:00:42,309
+forward<font color="#E5E5E5"> and in last real-life reports</font>
+
+10
+00:00:42,309 --> 00:00:45,670
+and bounty<font color="#CCCCCC"> slash rewards so first what</font>
+
+11
+00:00:45,670 --> 00:00:48,760
+is<font color="#E5E5E5"> unvalidated redirect of forward in</font>
+
+12
+00:00:48,760 --> 00:00:51,399
+<font color="#CCCCCC">this security bug website redirects or</font>
+
+13
+00:00:51,399 --> 00:00:53,739
+<font color="#E5E5E5">send the user to another malicious web</font>
+
+14
+00:00:53,739 --> 00:00:56,530
+page which is crafted by<font color="#E5E5E5"> an attacker</font><font color="#CCCCCC"> so</font>
+
+15
+00:00:56,530 --> 00:00:58,449
+that user get trapped into a phishing
+
+16
+00:00:58,449 --> 00:01:01,180
+type attack let's see the demo<font color="#E5E5E5"> which</font>
+
+17
+00:01:01,180 --> 00:01:03,159
+will give you<font color="#E5E5E5"> more clarity on the topic</font>
+
+18
+00:01:03,159 --> 00:01:07,030
+<font color="#E5E5E5">so here I design a scenario of</font><font color="#CCCCCC"> T</font>
+
+19
+00:01:07,030 --> 00:01:09,280
+unvalidated redirect and forward as you
+
+20
+00:01:09,280 --> 00:01:11,500
+can<font color="#E5E5E5"> see here is a</font><font color="#CCCCCC"> web site and this is</font>
+
+21
+00:01:11,500 --> 00:01:13,360
+the IP<font color="#E5E5E5"> address of the</font><font color="#CCCCCC"> web site so</font><font color="#E5E5E5"> this</font>
+
+22
+00:01:13,360 --> 00:01:15,250
+website<font color="#E5E5E5"> is nothing but it is a localhost</font>
+
+23
+00:01:15,250 --> 00:01:17,829
+which<font color="#CCCCCC"> is running</font><font color="#E5E5E5"> on my computer</font><font color="#CCCCCC"> and this</font>
+
+24
+00:01:17,829 --> 00:01:19,689
+IP address<font color="#CCCCCC"> of this website</font><font color="#E5E5E5"> has nothing</font>
+
+25
+00:01:19,689 --> 00:01:22,150
+to do<font color="#E5E5E5"> with the unvalidated redirect or</font>
+
+26
+00:01:22,150 --> 00:01:24,340
+forward just let us assume<font color="#CCCCCC"> that is our</font>
+
+27
+00:01:24,340 --> 00:01:26,380
+<font color="#CCCCCC">trusted website and we use this</font><font color="#E5E5E5"> website</font>
+
+28
+00:01:26,380 --> 00:01:29,170
+<font color="#E5E5E5">on regular basis so here is a web page</font>
+
+29
+00:01:29,170 --> 00:01:32,890
+of this<font color="#CCCCCC"> website and you can</font><font color="#E5E5E5"> see this web</font>
+
+30
+00:01:32,890 --> 00:01:34,990
+<font color="#E5E5E5">page saying this is my awesome page and</font>
+
+31
+00:01:34,990 --> 00:01:37,210
+here is a link which<font color="#CCCCCC"> says</font><font color="#E5E5E5"> click here</font><font color="#CCCCCC"> to</font>
+
+32
+00:01:37,210 --> 00:01:39,550
+go to whom<font color="#CCCCCC"> pants I click on this link I</font>
+
+33
+00:01:39,550 --> 00:01:46,990
+redirected to the home page let's<font color="#E5E5E5"> go</font>
+
+34
+00:01:46,990 --> 00:01:50,049
+back to the<font color="#CCCCCC"> home page now</font><font color="#E5E5E5"> if I right</font>
+
+35
+00:01:50,049 --> 00:01:52,420
+<font color="#CCCCCC">click on</font><font color="#E5E5E5"> the browser and go to view page</font>
+
+36
+00:01:52,420 --> 00:01:54,790
+source<font color="#E5E5E5"> I can</font><font color="#CCCCCC"> see there</font><font color="#E5E5E5"> is a dedicated</font>
+
+37
+00:01:54,790 --> 00:01:57,280
+<font color="#E5E5E5">web page to redirect the user from one</font>
+
+38
+00:01:57,280 --> 00:01:59,560
+page to<font color="#CCCCCC"> another page of the website</font><font color="#E5E5E5"> and</font>
+
+39
+00:01:59,560 --> 00:02:02,440
+this link is vulnerable<font color="#E5E5E5"> to the</font>
+
+40
+00:02:02,440 --> 00:02:07,420
+unvalidated redirect of forward let's
+
+41
+00:02:07,420 --> 00:02:09,399
+copy this link<font color="#E5E5E5"> and paste it on the</font>
+
+42
+00:02:09,399 --> 00:02:12,280
+<font color="#E5E5E5">browser this parameter redirect is</font>
+
+43
+00:02:12,280 --> 00:02:14,830
+taking the input<font color="#E5E5E5"> and redirect the user</font>
+
+44
+00:02:14,830 --> 00:02:19,599
+from current page to the input<font color="#E5E5E5"> page now</font>
+
+45
+00:02:19,599 --> 00:02:22,030
+<font color="#E5E5E5">in this web</font><font color="#CCCCCC"> application if this redirect</font>
+
+46
+00:02:22,030 --> 00:02:24,849
+parameter is not<font color="#E5E5E5"> check properly then it</font>
+
+47
+00:02:24,849 --> 00:02:26,680
+is<font color="#CCCCCC"> vulnerable to</font><font color="#E5E5E5"> the open redirect and</font>
+
+48
+00:02:26,680 --> 00:02:30,129
+forward so I'm typing here another
+
+49
+00:02:30,129 --> 00:02:35,049
+<font color="#E5E5E5">website for say www</font><font color="#CCCCCC"> if this page</font>
+
+50
+00:02:35,049 --> 00:02:38,139
+redirects<font color="#E5E5E5"> you</font><font color="#CCCCCC"> to the wwe.com that means</font>
+
+51
+00:02:38,139 --> 00:02:40,870
+it can also redirect a user to some
+
+52
+00:02:40,870 --> 00:02:41,980
+malicious<font color="#CCCCCC"> web site</font>
+
+53
+00:02:41,980 --> 00:02:44,739
+which could be official page let's click
+
+54
+00:02:44,739 --> 00:02:48,610
+enter as you<font color="#E5E5E5"> can see it redirect me to</font>
+
+55
+00:02:48,610 --> 00:02:50,560
+<font color="#E5E5E5">the google.com that means it is</font>
+
+56
+00:02:50,560 --> 00:02:52,780
+<font color="#E5E5E5">vulnerable</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> invalidate redirect</font><font color="#E5E5E5"> of</font>
+
+57
+00:02:52,780 --> 00:02:54,730
+forward<font color="#E5E5E5"> this is not only the parameter</font>
+
+58
+00:02:54,730 --> 00:02:56,769
+which is<font color="#E5E5E5"> vulnerable</font><font color="#CCCCCC"> to redirect</font><font color="#E5E5E5"> there</font>
+
+59
+00:02:56,769 --> 00:02:59,080
+could be a scenario where we<font color="#E5E5E5"> enter</font>
+
+60
+00:02:59,080 --> 00:03:01,299
+<font color="#E5E5E5">username</font><font color="#CCCCCC"> and password as soon as we</font>
+
+61
+00:03:01,299 --> 00:03:03,660
+click on login<font color="#E5E5E5"> the web application</font>
+
+62
+00:03:03,660 --> 00:03:05,890
+redirecting us to the home page
+
+63
+00:03:05,890 --> 00:03:08,620
+that means the page after<font color="#CCCCCC"> the login</font><font color="#E5E5E5"> so</font>
+
+64
+00:03:08,620 --> 00:03:10,569
+there could be a parameter which is
+
+65
+00:03:10,569 --> 00:03:12,819
+redirecting us after giving<font color="#E5E5E5"> our username</font>
+
+66
+00:03:12,819 --> 00:03:14,829
+and password<font color="#E5E5E5"> so if we can find</font><font color="#CCCCCC"> that</font>
+
+67
+00:03:14,829 --> 00:03:17,319
+parameter<font color="#E5E5E5"> and we enter some malicious</font>
+
+68
+00:03:17,319 --> 00:03:20,470
+link<font color="#E5E5E5"> then after user logged in it can go</font>
+
+69
+00:03:20,470 --> 00:03:23,140
+to<font color="#CCCCCC"> another</font><font color="#E5E5E5"> website which is malicious</font>
+
+70
+00:03:23,140 --> 00:03:27,160
+<font color="#CCCCCC">web server so now let's see some real</font>
+
+71
+00:03:27,160 --> 00:03:29,590
+life<font color="#E5E5E5"> reports which would be helpful for</font>
+
+72
+00:03:29,590 --> 00:03:32,950
+<font color="#CCCCCC">us</font><font color="#E5E5E5"> now as you can see this is a hacker</font>
+
+73
+00:03:32,950 --> 00:03:35,290
+and<font color="#CCCCCC"> dot-com and this</font><font color="#E5E5E5"> is an open report</font>
+
+74
+00:03:35,290 --> 00:03:39,370
+so anyone<font color="#E5E5E5"> can view this report now let</font>
+
+75
+00:03:39,370 --> 00:03:42,670
+me show<font color="#CCCCCC"> you this link it is a vulnerable</font>
+
+76
+00:03:42,670 --> 00:03:44,620
+link it was reported<font color="#E5E5E5"> and now it is</font>
+
+77
+00:03:44,620 --> 00:03:46,120
+resolved<font color="#E5E5E5"> so it is no more reproducible</font>
+
+78
+00:03:46,120 --> 00:03:49,599
+<font color="#CCCCCC">as you can see this is a Mavenlink app</font>
+
+79
+00:03:49,599 --> 00:03:53,139
+dot Mavenlink calm<font color="#E5E5E5"> and slash logout from</font>
+
+80
+00:03:53,139 --> 00:03:55,690
+mobile parameter is true and written
+
+81
+00:03:55,690 --> 00:03:58,359
+path<font color="#E5E5E5"> so this written path parameter was</font>
+
+82
+00:03:58,359 --> 00:04:01,389
+vulnerable to open redirect as you can
+
+83
+00:04:01,389 --> 00:04:04,359
+see this person<font color="#E5E5E5"> gives google.com and it</font>
+
+84
+00:04:04,359 --> 00:04:07,299
+<font color="#E5E5E5">direct the user to the google.com so it</font>
+
+85
+00:04:07,299 --> 00:04:09,459
+was vulnerable<font color="#CCCCCC"> to open redirect and</font>
+
+86
+00:04:09,459 --> 00:04:12,400
+Mavenlink<font color="#CCCCCC"> solved it now here you</font><font color="#E5E5E5"> can see</font>
+
+87
+00:04:12,400 --> 00:04:16,029
+the report<font color="#E5E5E5"> and now it is resolved now</font>
+
+88
+00:04:16,029 --> 00:04:19,089
+the<font color="#E5E5E5"> about bounty so this person gets</font><font color="#CCCCCC"> $25</font>
+
+89
+00:04:19,089 --> 00:04:21,959
+from Mavenlink<font color="#E5E5E5"> for reporting this bug</font>
+
+90
+00:04:21,959 --> 00:04:25,300
+<font color="#E5E5E5">now let's see another kind of redirect</font>
+
+91
+00:04:25,300 --> 00:04:28,840
+<font color="#E5E5E5">here you can see this person reports to</font>
+
+92
+00:04:28,840 --> 00:04:32,229
+key base<font color="#CCCCCC"> if I type key base dot IO</font><font color="#E5E5E5"> and</font>
+
+93
+00:04:32,229 --> 00:04:35,320
+after<font color="#E5E5E5"> slash I'll enter some another</font>
+
+94
+00:04:35,320 --> 00:04:37,750
+website<font color="#E5E5E5"> it redirects</font><font color="#CCCCCC"> to me</font><font color="#E5E5E5"> the another</font>
+
+95
+00:04:37,750 --> 00:04:39,849
+website<font color="#CCCCCC"> that means this was another</font>
+
+96
+00:04:39,849 --> 00:04:42,910
+<font color="#E5E5E5">scenario of the open redirect now let's</font>
+
+97
+00:04:42,910 --> 00:04:44,650
+see very popular<font color="#E5E5E5"> website which is</font>
+
+98
+00:04:44,650 --> 00:04:47,410
+twitter.com<font color="#CCCCCC"> which was also</font><font color="#E5E5E5"> vulnerable to</font>
+
+99
+00:04:47,410 --> 00:04:51,810
+<font color="#E5E5E5">open redirect</font><font color="#CCCCCC"> as you can see this link</font>
+
+100
+00:04:51,810 --> 00:04:53,370
+<font color="#E5E5E5">HTTP</font><font color="#CCCCCC"> def</font>
+
+101
+00:04:53,370 --> 00:04:56,020
+twitter.com<font color="#CCCCCC"> was also</font>
+
+102
+00:04:56,020 --> 00:04:58,390
+vulnerable to cope in<font color="#CCCCCC"> redirect</font><font color="#E5E5E5"> and as</font>
+
+103
+00:04:58,390 --> 00:05:00,460
+you<font color="#E5E5E5"> can</font><font color="#CCCCCC"> see it is resolved now and the</font>
+
+104
+00:05:00,460 --> 00:05:04,570
+bounty<font color="#CCCCCC"> was of $1,120 open redirect bug</font>
+
+105
+00:05:04,570 --> 00:05:07,450
+for big companies could be<font color="#CCCCCC"> very harmful</font>
+
+106
+00:05:07,450 --> 00:05:09,880
+there are also some program which do<font color="#CCCCCC"> not</font>
+
+107
+00:05:09,880 --> 00:05:12,430
+consider<font color="#CCCCCC"> it as</font><font color="#E5E5E5"> a harmful bug that's all</font>
+
+108
+00:05:12,430 --> 00:05:14,080
+for this<font color="#E5E5E5"> video thank you and have a nice</font>
+
+109
+00:05:14,080 --> 00:05:16,090
+day<font color="#E5E5E5"> in this video we are going to look</font>
+
+110
+00:05:16,090 --> 00:05:18,070
+at clickjacking<font color="#E5E5E5"> security</font><font color="#CCCCCC"> will the</font>
+
+111
+00:05:18,070 --> 00:05:20,230
+outline of the video is first what is
+
+112
+00:05:20,230 --> 00:05:20,980
+clickjacking
+
+113
+00:05:20,980 --> 00:05:24,670
+second demo using dvwa and at last
+
+114
+00:05:24,670 --> 00:05:28,240
+<font color="#CCCCCC">hacker one support this is our OWA SP</font>
+
+115
+00:05:28,240 --> 00:05:29,890
+page about<font color="#CCCCCC"> clickjacking</font>
+
+116
+00:05:29,890 --> 00:05:32,470
+so it says click<font color="#E5E5E5"> jacking also known as</font>
+
+117
+00:05:32,470 --> 00:05:35,620
+<font color="#E5E5E5">UI redress attack is</font><font color="#CCCCCC"> when an attack uses</font>
+
+118
+00:05:35,620 --> 00:05:37,900
+multiple transparent or<font color="#E5E5E5"> opaque layers to</font>
+
+119
+00:05:37,900 --> 00:05:39,910
+trick<font color="#E5E5E5"> a</font><font color="#CCCCCC"> user into clicking on a button</font>
+
+120
+00:05:39,910 --> 00:05:42,570
+or<font color="#CCCCCC"> a link on another</font><font color="#E5E5E5"> page when they were</font>
+
+121
+00:05:42,570 --> 00:05:45,220
+intending to click on the top level<font color="#E5E5E5"> page</font>
+
+122
+00:05:45,220 --> 00:05:47,620
+so explanation of this line will be
+
+123
+00:05:47,620 --> 00:05:51,610
+<font color="#CCCCCC">clear</font><font color="#E5E5E5"> when I give you a demo on dvwa so</font>
+
+124
+00:05:51,610 --> 00:05:54,370
+for the<font color="#CCCCCC"> explanation of what this OVAs</font>
+
+125
+00:05:54,370 --> 00:05:58,000
+page says<font color="#CCCCCC"> i will show you through</font><font color="#E5E5E5"> dvw it</font>
+
+126
+00:05:58,000 --> 00:05:59,620
+<font color="#E5E5E5">although there is no model for</font>
+
+127
+00:05:59,620 --> 00:06:02,290
+clickjacking<font color="#E5E5E5"> but when you see this</font><font color="#CCCCCC"> setup</font>
+
+128
+00:06:02,290 --> 00:06:04,770
+<font color="#CCCCCC">and reset database there is a button</font><font color="#E5E5E5"> for</font>
+
+129
+00:06:04,770 --> 00:06:07,870
+<font color="#CCCCCC">creating and reset database</font><font color="#E5E5E5"> so suppose</font>
+
+130
+00:06:07,870 --> 00:06:10,450
+this button is very crucial<font color="#CCCCCC"> for us if I</font>
+
+131
+00:06:10,450 --> 00:06:13,510
+click<font color="#E5E5E5"> on this button then our whole</font>
+
+132
+00:06:13,510 --> 00:06:15,970
+database<font color="#E5E5E5"> will be reset</font><font color="#CCCCCC"> so whatever</font><font color="#E5E5E5"> be</font>
+
+133
+00:06:15,970 --> 00:06:18,280
+the changes that we<font color="#CCCCCC"> date will be</font><font color="#E5E5E5"> cleared</font>
+
+134
+00:06:18,280 --> 00:06:21,100
+out so this<font color="#E5E5E5"> is very crucial button for</font>
+
+135
+00:06:21,100 --> 00:06:23,320
+us<font color="#E5E5E5"> and we</font><font color="#CCCCCC"> really do not want to click</font>
+
+136
+00:06:23,320 --> 00:06:26,290
+this button so here I create<font color="#CCCCCC"> the HTML</font>
+
+137
+00:06:26,290 --> 00:06:30,040
+<font color="#E5E5E5">page and in HTML page you</font><font color="#CCCCCC"> can see I have</font>
+
+138
+00:06:30,040 --> 00:06:34,600
+<font color="#E5E5E5">used an iframe tag and in that iframe</font>
+
+139
+00:06:34,600 --> 00:06:39,460
+<font color="#CCCCCC">pad</font><font color="#E5E5E5"> I used an attribute source and the</font>
+
+140
+00:06:39,460 --> 00:06:43,060
+value is our<font color="#E5E5E5"> setup page so if I open</font>
+
+141
+00:06:43,060 --> 00:06:45,540
+this page
+
+142
+00:06:46,070 --> 00:06:50,780
+<font color="#E5E5E5">you can see you can see this chance to</font>
+
+143
+00:06:50,780 --> 00:06:55,190
+<font color="#E5E5E5">win an iPod this part so there are two</font>
+
+144
+00:06:55,190 --> 00:06:59,110
+pages<font color="#CCCCCC"> the first page the inner page is</font>
+
+145
+00:06:59,110 --> 00:07:03,380
+<font color="#E5E5E5">dvwa page and the outer page is my own</font>
+
+146
+00:07:03,380 --> 00:07:05,840
+crafted page<font color="#E5E5E5"> you can see here the</font>
+
+147
+00:07:05,840 --> 00:07:08,660
+another<font color="#E5E5E5"> button which is click here so</font>
+
+148
+00:07:08,660 --> 00:07:11,510
+now go back<font color="#CCCCCC"> to OS page and read it</font><font color="#E5E5E5"> again</font>
+
+149
+00:07:11,510 --> 00:07:14,360
+click<font color="#CCCCCC"> tracking also known as UID a gas</font>
+
+150
+00:07:14,360 --> 00:07:16,910
+attack<font color="#CCCCCC"> so what we did we did receive</font>
+
+151
+00:07:16,910 --> 00:07:19,790
+user interface<font color="#E5E5E5"> when an attacker uses</font>
+
+152
+00:07:19,790 --> 00:07:22,310
+multiple transparent or<font color="#E5E5E5"> opaque layers</font><font color="#CCCCCC"> as</font>
+
+153
+00:07:22,310 --> 00:07:24,200
+<font color="#E5E5E5">you can see there are two layers the</font>
+
+154
+00:07:24,200 --> 00:07:26,510
+first layer is<font color="#CCCCCC"> of dvw and the another</font>
+
+155
+00:07:26,510 --> 00:07:29,710
+layer is crafted specially crafted<font color="#E5E5E5"> layer</font>
+
+156
+00:07:29,710 --> 00:07:32,360
+there now read it again<font color="#E5E5E5"> click</font><font color="#CCCCCC"> tracking</font>
+
+157
+00:07:32,360 --> 00:07:33,710
+also<font color="#E5E5E5"> known as you are you dress</font><font color="#CCCCCC"> attack</font>
+
+158
+00:07:33,710 --> 00:07:35,900
+<font color="#E5E5E5">when an attacker uses multiple</font>
+
+159
+00:07:35,900 --> 00:07:38,300
+transparent or opaque layer to trick a
+
+160
+00:07:38,300 --> 00:07:40,580
+user<font color="#E5E5E5"> into clicking on a button or link</font>
+
+161
+00:07:40,580 --> 00:07:42,590
+on another<font color="#CCCCCC"> page when they were intending</font>
+
+162
+00:07:42,590 --> 00:07:46,220
+to click on the top<font color="#E5E5E5"> level page so this</font>
+
+163
+00:07:46,220 --> 00:07:48,640
+crafted page chances to win an iPod and
+
+164
+00:07:48,640 --> 00:07:52,250
+<font color="#CCCCCC">the button</font><font color="#E5E5E5"> here this click</font><font color="#CCCCCC"> here button</font>
+
+165
+00:07:52,250 --> 00:07:55,970
+so this<font color="#E5E5E5"> is our upper layer the user</font>
+
+166
+00:07:55,970 --> 00:07:58,400
+intended to click on upper layer<font color="#E5E5E5"> button</font>
+
+167
+00:07:58,400 --> 00:08:01,490
+but he will be fooled<font color="#E5E5E5"> to click the lower</font>
+
+168
+00:08:01,490 --> 00:08:04,070
+layer button and and this way<font color="#E5E5E5"> he will</font><font color="#CCCCCC"> be</font>
+
+169
+00:08:04,070 --> 00:08:06,020
+<font color="#E5E5E5">harmed so this is the clickjacking</font>
+
+170
+00:08:06,020 --> 00:08:09,890
+<font color="#CCCCCC">attack you can read on or WSP more about</font>
+
+171
+00:08:09,890 --> 00:08:12,320
+it<font color="#CCCCCC"> if you are application developer and</font>
+
+172
+00:08:12,320 --> 00:08:14,570
+you<font color="#CCCCCC"> want to know how to defend</font><font color="#E5E5E5"> against</font>
+
+173
+00:08:14,570 --> 00:08:16,550
+<font color="#CCCCCC">attacking</font><font color="#E5E5E5"> here it is you can read about</font>
+
+174
+00:08:16,550 --> 00:08:21,800
+it here<font color="#E5E5E5"> now let's see Adam so this is</font>
+
+175
+00:08:21,800 --> 00:08:23,900
+our<font color="#E5E5E5"> D bit of</font><font color="#CCCCCC"> low page in this page we</font>
+
+176
+00:08:23,900 --> 00:08:26,960
+<font color="#E5E5E5">have a setup button as I told you so</font>
+
+177
+00:08:26,960 --> 00:08:29,330
+<font color="#E5E5E5">this button can be very harmful for</font><font color="#CCCCCC"> us</font>
+
+178
+00:08:29,330 --> 00:08:31,400
+because<font color="#E5E5E5"> whatever with the changes we did</font>
+
+179
+00:08:31,400 --> 00:08:33,950
+<font color="#CCCCCC">in database will be cleared out</font><font color="#E5E5E5"> if I</font>
+
+180
+00:08:33,950 --> 00:08:36,620
+click this<font color="#E5E5E5"> button so what attacker did</font>
+
+181
+00:08:36,620 --> 00:08:39,469
+he create his own page<font color="#E5E5E5"> and in that page</font>
+
+182
+00:08:39,469 --> 00:08:42,679
+he uses iframe and in that iframe he
+
+183
+00:08:42,679 --> 00:08:44,980
+loaded<font color="#CCCCCC"> the setup page and he also</font>
+
+184
+00:08:44,980 --> 00:08:48,610
+<font color="#E5E5E5">created a</font><font color="#CCCCCC"> button which says</font><font color="#E5E5E5"> click here</font>
+
+185
+00:08:48,610 --> 00:08:51,710
+using some<font color="#E5E5E5"> CSS what he will do he</font><font color="#CCCCCC"> will</font>
+
+186
+00:08:51,710 --> 00:08:53,930
+hide the upper layer button<font color="#E5E5E5"> by changing</font>
+
+187
+00:08:53,930 --> 00:08:56,750
+the opacity<font color="#E5E5E5"> so this is CSS property</font>
+
+188
+00:08:56,750 --> 00:08:59,750
+<font color="#E5E5E5">opacity and what it is doing it will</font>
+
+189
+00:08:59,750 --> 00:09:02,630
+change the opacity<font color="#E5E5E5"> it will make the</font>
+
+190
+00:09:02,630 --> 00:09:04,760
+lower layer transparent<font color="#E5E5E5"> let's make</font><font color="#CCCCCC"> it</font>
+
+191
+00:09:04,760 --> 00:09:09,650
+<font color="#E5E5E5">for 0.5 and see what our defects let's</font>
+
+192
+00:09:09,650 --> 00:09:13,130
+refresh this page and<font color="#E5E5E5"> you can</font><font color="#CCCCCC"> see it</font>
+
+193
+00:09:13,130 --> 00:09:15,740
+will get little transparent not fully
+
+194
+00:09:15,740 --> 00:09:18,260
+transparent<font color="#CCCCCC"> if we change opacity to zero</font>
+
+195
+00:09:18,260 --> 00:09:20,330
+you will see there<font color="#E5E5E5"> will be no lower</font>
+
+196
+00:09:20,330 --> 00:09:24,260
+layer<font color="#E5E5E5"> if I go up and I see chance to win</font>
+
+197
+00:09:24,260 --> 00:09:26,450
+an iPod<font color="#CCCCCC"> if I go down</font><font color="#E5E5E5"> there will be a</font>
+
+198
+00:09:26,450 --> 00:09:29,540
+button<font color="#CCCCCC"> as a user I will think that</font><font color="#E5E5E5"> it is</font>
+
+199
+00:09:29,540 --> 00:09:31,460
+a chance to<font color="#CCCCCC"> win an iPod and</font><font color="#E5E5E5"> I'll click</font>
+
+200
+00:09:31,460 --> 00:09:35,120
+the button but I am getting fooled by
+
+201
+00:09:35,120 --> 00:09:38,150
+the attacker<font color="#E5E5E5"> and the reset button will</font>
+
+202
+00:09:38,150 --> 00:09:40,550
+be<font color="#CCCCCC"> clicked</font><font color="#E5E5E5"> this way</font><font color="#CCCCCC"> our click get</font>
+
+203
+00:09:40,550 --> 00:09:43,460
+<font color="#E5E5E5">hijacked the name comes click jacking</font>
+
+204
+00:09:43,460 --> 00:09:46,430
+this means our click get hijacked<font color="#CCCCCC"> so it</font>
+
+205
+00:09:46,430 --> 00:09:49,700
+is click hijacking and that<font color="#CCCCCC"> may click</font>
+
+206
+00:09:49,700 --> 00:10:00,410
+<font color="#CCCCCC">gently</font><font color="#E5E5E5"> so let's try</font><font color="#CCCCCC"> return so as</font><font color="#E5E5E5"> you can</font>
+
+207
+00:10:00,410 --> 00:10:04,190
+see now I change it to<font color="#E5E5E5"> 0.1 this is for</font>
+
+208
+00:10:04,190 --> 00:10:06,680
+showing purpose<font color="#E5E5E5"> in real attacks</font><font color="#CCCCCC"> they</font>
+
+209
+00:10:06,680 --> 00:10:09,740
+make it<font color="#CCCCCC"> 2-0 only so that the lower layer</font>
+
+210
+00:10:09,740 --> 00:10:13,370
+does<font color="#CCCCCC"> not show but here for seeing the</font>
+
+211
+00:10:13,370 --> 00:10:16,820
+demo<font color="#E5E5E5"> what I did is I make it to 0.1 so</font>
+
+212
+00:10:16,820 --> 00:10:19,670
+as soon<font color="#E5E5E5"> as</font><font color="#CCCCCC"> I click on this</font><font color="#E5E5E5"> button</font><font color="#CCCCCC"> the</font>
+
+213
+00:10:19,670 --> 00:10:23,210
+setup will be reset<font color="#E5E5E5"> so I clicked on</font><font color="#CCCCCC"> it</font>
+
+214
+00:10:23,210 --> 00:10:25,820
+<font color="#E5E5E5">and you can see the database has been</font>
+
+215
+00:10:25,820 --> 00:10:28,820
+<font color="#E5E5E5">created</font><font color="#CCCCCC"> I don't know whether you are</font>
+
+216
+00:10:28,820 --> 00:10:31,430
+able to see<font color="#E5E5E5"> it or not because if I</font>
+
+217
+00:10:31,430 --> 00:10:33,740
+change the opacity<font color="#E5E5E5"> again then this will</font>
+
+218
+00:10:33,740 --> 00:10:36,740
+be vanished<font color="#E5E5E5"> let's let's do it let's do</font>
+
+219
+00:10:36,740 --> 00:10:39,380
+<font color="#CCCCCC">it again one more time</font><font color="#E5E5E5"> by changing</font>
+
+220
+00:10:39,380 --> 00:10:43,040
+<font color="#CCCCCC">opposite to 0.5 and i refresh the page</font>
+
+221
+00:10:43,040 --> 00:10:46,310
+<font color="#CCCCCC">now if I click here</font><font color="#E5E5E5"> you can see the</font>
+
+222
+00:10:46,310 --> 00:10:48,650
+<font color="#CCCCCC">Brittain if</font><font color="#E5E5E5"> I click</font><font color="#CCCCCC"> here you can see the</font>
+
+223
+00:10:48,650 --> 00:10:51,740
+lower layer<font color="#E5E5E5"> button click and changes has</font>
+
+224
+00:10:51,740 --> 00:10:54,530
+<font color="#CCCCCC">been made so this</font><font color="#E5E5E5"> is clickjacking now we</font>
+
+225
+00:10:54,530 --> 00:10:57,050
+will see the real life report so this
+
+226
+00:10:57,050 --> 00:11:00,410
+<font color="#E5E5E5">was the clickjacking report reported to</font>
+
+227
+00:11:00,410 --> 00:11:02,480
+<font color="#CCCCCC">Yale</font><font color="#E5E5E5"> and the report number is two</font><font color="#CCCCCC"> one</font>
+
+228
+00:11:02,480 --> 00:11:04,490
+four zero<font color="#CCCCCC"> eight seven so this person</font>
+
+229
+00:11:04,490 --> 00:11:07,010
+reported to<font color="#E5E5E5"> Yelp and it was resolved and</font>
+
+230
+00:11:07,010 --> 00:11:09,220
+the<font color="#CCCCCC"> mounting</font><font color="#E5E5E5"> was of $100</font>
+
+231
+00:11:09,220 --> 00:11:11,089
+so here
+
+232
+00:11:11,089 --> 00:11:14,139
+it is tricking a user into unknowingly
+
+233
+00:11:14,139 --> 00:11:16,970
+bookmarking unwanted business adding
+
+234
+00:11:16,970 --> 00:11:18,379
+events<font color="#E5E5E5"> through their profile they are</font>
+
+235
+00:11:18,379 --> 00:11:20,389
+interested in<font color="#CCCCCC"> editing their star rating</font>
+
+236
+00:11:20,389 --> 00:11:23,329
+<font color="#E5E5E5">on divorce so this - shows the Yelp</font><font color="#CCCCCC"> and</font>
+
+237
+00:11:23,329 --> 00:11:25,759
+attacker can<font color="#E5E5E5"> click a user into</font>
+
+238
+00:11:25,759 --> 00:11:28,040
+unknowingly click on this click on<font color="#E5E5E5"> the</font>
+
+239
+00:11:28,040 --> 00:11:31,009
+<font color="#E5E5E5">button and can be fooled</font><font color="#CCCCCC"> to do these</font>
+
+240
+00:11:31,009 --> 00:11:34,249
+<font color="#E5E5E5">three</font><font color="#CCCCCC"> things and he was</font><font color="#E5E5E5"> awarded with</font>
+
+241
+00:11:34,249 --> 00:11:35,870
+<font color="#CCCCCC">hundred</font><font color="#E5E5E5"> dollar bounty</font><font color="#CCCCCC"> the another</font>
+
+242
+00:11:35,870 --> 00:11:37,459
+important<font color="#E5E5E5"> thing that I want</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> tell you</font>
+
+243
+00:11:37,459 --> 00:11:39,889
+is the click<font color="#CCCCCC"> taking</font><font color="#E5E5E5"> work is not</font>
+
+244
+00:11:39,889 --> 00:11:42,230
+acceptable<font color="#E5E5E5"> by every bug bounty program</font>
+
+245
+00:11:42,230 --> 00:11:44,779
+<font color="#E5E5E5">before reporting them clickjacking</font><font color="#CCCCCC"> you</font>
+
+246
+00:11:44,779 --> 00:11:47,029
+must read their policy what are in the
+
+247
+00:11:47,029 --> 00:11:49,040
+scope and what are not<font color="#CCCCCC"> in the scope as</font>
+
+248
+00:11:49,040 --> 00:11:51,920
+you can see in this report<font color="#E5E5E5"> one four six</font>
+
+249
+00:11:51,920 --> 00:11:55,730
+<font color="#E5E5E5">nine four eight Zomato disclosed</font><font color="#CCCCCC"> zuma</font>
+
+250
+00:11:55,730 --> 00:11:59,720
+took closed it as informative<font color="#CCCCCC"> you can</font>
+
+251
+00:11:59,720 --> 00:12:03,050
+see here<font color="#CCCCCC"> zametov</font><font color="#E5E5E5"> reply thank</font><font color="#CCCCCC"> you for</font>
+
+252
+00:12:03,050 --> 00:12:04,579
+detailed report according<font color="#E5E5E5"> to</font><font color="#CCCCCC"> our</font>
+
+253
+00:12:04,579 --> 00:12:06,649
+security<font color="#E5E5E5"> policy click</font><font color="#CCCCCC"> check-ins</font><font color="#E5E5E5"> won't be</font>
+
+254
+00:12:06,649 --> 00:12:09,139
+<font color="#E5E5E5">considered as a security issue</font><font color="#CCCCCC"> we will</font>
+
+255
+00:12:09,139 --> 00:12:10,970
+try avoid this issue<font color="#E5E5E5"> in feature we</font><font color="#CCCCCC"> are</font>
+
+256
+00:12:10,970 --> 00:12:13,249
+closing this report as informative<font color="#E5E5E5"> so</font>
+
+257
+00:12:13,249 --> 00:12:16,879
+some programs<font color="#E5E5E5"> accept this bug and gives</font>
+
+258
+00:12:16,879 --> 00:12:19,309
+bounty and some<font color="#E5E5E5"> programs are considered</font>
+
+259
+00:12:19,309 --> 00:12:22,339
+<font color="#E5E5E5">who do not consider this as a security</font>
+
+260
+00:12:22,339 --> 00:12:24,800
+<font color="#E5E5E5">issue</font><font color="#CCCCCC"> so this is it</font><font color="#E5E5E5"> for this video</font>
+
+261
+00:12:24,800 --> 00:12:28,040
+thanks and have a nice day<font color="#CCCCCC"> in this</font><font color="#E5E5E5"> video</font>
+
+262
+00:12:28,040 --> 00:12:30,170
+we are going to<font color="#CCCCCC"> look at</font><font color="#E5E5E5"> a POC video</font>
+
+263
+00:12:30,170 --> 00:12:32,629
+which was reported to Khan Academy<font color="#CCCCCC"> and</font>
+
+264
+00:12:32,629 --> 00:12:35,660
+in this POC video we will see a little
+
+265
+00:12:35,660 --> 00:12:38,209
+<font color="#E5E5E5">bug which leads to click</font><font color="#CCCCCC"> jacking attack</font>
+
+266
+00:12:38,209 --> 00:12:40,339
+the click<font color="#CCCCCC"> dating video in this course</font>
+
+267
+00:12:40,339 --> 00:12:43,939
+then first go and understand the concept
+
+268
+00:12:43,939 --> 00:12:46,670
+of clickjacking<font color="#CCCCCC"> and then continue</font><font color="#E5E5E5"> with</font>
+
+269
+00:12:46,670 --> 00:12:50,329
+this video<font color="#E5E5E5"> as</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> can see here it is</font><font color="#CCCCCC"> a</font>
+
+270
+00:12:50,329 --> 00:12:53,420
+<font color="#CCCCCC">ver data on khanacademy.org where</font>
+
+271
+00:12:53,420 --> 00:12:57,379
+students learn HTML so as you<font color="#E5E5E5"> can</font><font color="#CCCCCC"> see</font>
+
+272
+00:12:57,379 --> 00:13:00,829
+the<font color="#E5E5E5"> eye film is restricted in this</font>
+
+273
+00:13:00,829 --> 00:13:04,249
+editor because<font color="#CCCCCC"> of clickjacking attack so</font>
+
+274
+00:13:04,249 --> 00:13:06,379
+it says sorry but security restriction
+
+275
+00:13:06,379 --> 00:13:07,819
+on this side prevent you from using
+
+276
+00:13:07,819 --> 00:13:10,339
+iframe text<font color="#E5E5E5"> as you can see that to</font>
+
+277
+00:13:10,339 --> 00:13:12,499
+prevent<font color="#CCCCCC"> click dating attack developer</font>
+
+278
+00:13:12,499 --> 00:13:14,689
+restricted the<font color="#CCCCCC"> album death as well</font><font color="#E5E5E5"> as</font>
+
+279
+00:13:14,689 --> 00:13:18,319
+embed<font color="#E5E5E5"> tag and object</font><font color="#CCCCCC"> tab you</font><font color="#E5E5E5"> can see</font>
+
+280
+00:13:18,319 --> 00:13:22,730
+here then object<font color="#E5E5E5"> that is used</font><font color="#CCCCCC"> there</font>
+
+281
+00:13:22,730 --> 00:13:24,579
+shows the restriction and
+
+282
+00:13:24,579 --> 00:13:28,959
+<font color="#CCCCCC">sellout DTAC and same with embed tag</font><font color="#E5E5E5"> but</font>
+
+283
+00:13:28,959 --> 00:13:32,170
+now the frameset tag and<font color="#CCCCCC"> friend tag is</font>
+
+284
+00:13:32,170 --> 00:13:34,660
+allowed<font color="#E5E5E5"> so develop will forget to</font>
+
+285
+00:13:34,660 --> 00:13:36,850
+restrict those<font color="#E5E5E5"> thoughts and those that</font>
+
+286
+00:13:36,850 --> 00:13:39,189
+can<font color="#E5E5E5"> be used for click jetting attack</font>
+
+287
+00:13:39,189 --> 00:13:42,819
+so when<font color="#CCCCCC"> films and film</font><font color="#E5E5E5"> tag used as you</font>
+
+288
+00:13:42,819 --> 00:13:45,299
+can see the<font color="#CCCCCC"> Canada</font><font color="#E5E5E5"> admit web page is</font>
+
+289
+00:13:45,299 --> 00:13:49,540
+inserted in frame so this was a very
+
+290
+00:13:49,540 --> 00:13:51,999
+<font color="#CCCCCC">little bug</font><font color="#E5E5E5"> which leads to click</font><font color="#CCCCCC"> jacking</font>
+
+291
+00:13:51,999 --> 00:13:54,579
+attack and it was<font color="#E5E5E5"> reported to</font><font color="#CCCCCC"> can attack</font>
+
+292
+00:13:54,579 --> 00:13:57,639
+me now<font color="#CCCCCC"> it is no longer reproducible</font><font color="#E5E5E5"> so</font>
+
+293
+00:13:57,639 --> 00:14:00,339
+this could<font color="#CCCCCC"> be an example</font><font color="#E5E5E5"> of weak</font><font color="#CCCCCC"> web</font>
+
+294
+00:14:00,339 --> 00:14:04,350
+application security<font color="#E5E5E5"> thank you</font>
+
+295
+00:14:09,930 --> 00:00:00,000
+[Music]
+

@@ -1,0 +1,404 @@
+1
+00:00:00,089 --> 00:00:02,419
+hello everyone<font color="#E5E5E5"> now let us talk about</font>
+
+2
+00:00:02,419 --> 00:00:05,640
+<font color="#E5E5E5">curve so</font><font color="#CCCCCC"> curly the</font><font color="#E5E5E5"> small computer</font>
+
+3
+00:00:05,640 --> 00:00:08,250
+utility which<font color="#E5E5E5"> is used for</font><font color="#CCCCCC"> transferring</font>
+
+4
+00:00:08,250 --> 00:00:11,370
+data<font color="#E5E5E5"> from</font><font color="#CCCCCC"> various protocols so with the</font>
+
+5
+00:00:11,370 --> 00:00:13,769
+help<font color="#E5E5E5"> of</font><font color="#CCCCCC"> curl we can send a request</font><font color="#E5E5E5"> and</font>
+
+6
+00:00:13,769 --> 00:00:16,289
+we can see its response<font color="#CCCCCC"> it's just like a</font>
+
+7
+00:00:16,289 --> 00:00:19,830
+<font color="#CCCCCC">command-line</font><font color="#E5E5E5"> browser so inside the curl</font>
+
+8
+00:00:19,830 --> 00:00:21,810
+<font color="#CCCCCC">there is one library called as lip</font>
+
+9
+00:00:21,810 --> 00:00:24,090
+seeker<font color="#E5E5E5"> which is</font><font color="#CCCCCC"> responsible for</font>
+
+10
+00:00:24,090 --> 00:00:26,279
+requesting<font color="#E5E5E5"> a resource and retrieving the</font>
+
+11
+00:00:26,279 --> 00:00:28,710
+<font color="#E5E5E5">data and with the help of curl we can</font>
+
+12
+00:00:28,710 --> 00:00:31,800
+also do SSL certification<font color="#E5E5E5"> verification</font>
+
+13
+00:00:31,800 --> 00:00:35,730
+<font color="#E5E5E5">and the curl also supports cookies HTTP</font>
+
+14
+00:00:35,730 --> 00:00:39,239
+<font color="#CCCCCC">HTTP protocol Gopher protocol and so on</font>
+
+15
+00:00:39,239 --> 00:00:41,579
+<font color="#E5E5E5">so if you don't know what is go</font><font color="#CCCCCC"> fur</font><font color="#E5E5E5"> so</font>
+
+16
+00:00:41,579 --> 00:00:43,680
+gopher<font color="#E5E5E5"> is a protocol which</font><font color="#CCCCCC"> is being used</font>
+
+17
+00:00:43,680 --> 00:00:46,379
+before<font color="#E5E5E5"> HTTP protocol for requesting a</font>
+
+18
+00:00:46,379 --> 00:00:49,739
+resource but nowadays<font color="#E5E5E5"> it's not used</font><font color="#CCCCCC"> so</font>
+
+19
+00:00:49,739 --> 00:00:52,100
+with the help<font color="#E5E5E5"> of</font><font color="#CCCCCC"> curl</font><font color="#E5E5E5"> we can also send</font>
+
+20
+00:00:52,100 --> 00:00:55,079
+HTTP<font color="#E5E5E5"> request by using different HTTP</font>
+
+21
+00:00:55,079 --> 00:00:57,949
+methods<font color="#E5E5E5"> now let's see how current works</font>
+
+22
+00:00:57,949 --> 00:01:02,309
+<font color="#E5E5E5">now let's see how we can</font><font color="#CCCCCC"> use curl so in</font>
+
+23
+00:01:02,309 --> 00:01:04,110
+order<font color="#E5E5E5"> to start curl we have to start our</font>
+
+24
+00:01:04,110 --> 00:01:07,979
+Kali Linux because<font color="#E5E5E5"> curl is rebuilt</font>
+
+25
+00:01:07,979 --> 00:01:10,320
+<font color="#E5E5E5">installed in Kali Linux so in order to</font>
+
+26
+00:01:10,320 --> 00:01:12,299
+<font color="#E5E5E5">start curl we have to start our terminal</font>
+
+27
+00:01:12,299 --> 00:01:14,610
+<font color="#E5E5E5">and here you can see that right</font><font color="#CCCCCC"> now I am</font>
+
+28
+00:01:14,610 --> 00:01:18,540
+inside<font color="#CCCCCC"> my Kali Linux instance</font><font color="#E5E5E5"> and just</font>
+
+29
+00:01:18,540 --> 00:01:20,909
+<font color="#CCCCCC">right</font><font color="#E5E5E5"> down here curl followed by the</font>
+
+30
+00:01:20,909 --> 00:01:28,020
+<font color="#E5E5E5">website name of which um</font><font color="#CCCCCC"> you want to</font>
+
+31
+00:01:28,020 --> 00:01:31,140
+<font color="#E5E5E5">connect and transfer the data or you</font>
+
+32
+00:01:31,140 --> 00:01:34,049
+<font color="#CCCCCC">want to fetch some data and if I hit</font>
+
+33
+00:01:34,049 --> 00:01:39,810
+<font color="#E5E5E5">enter you can see here that it has</font>
+
+34
+00:01:39,810 --> 00:01:42,240
+<font color="#E5E5E5">fetched all that</font><font color="#CCCCCC"> tml content of this</font>
+
+35
+00:01:42,240 --> 00:01:46,280
+<font color="#E5E5E5">website so by default if we make</font><font color="#CCCCCC"> any</font>
+
+36
+00:01:46,280 --> 00:01:49,890
+<font color="#CCCCCC">requests</font><font color="#E5E5E5"> to any of the website the by</font>
+
+37
+00:01:49,890 --> 00:01:52,020
+default HTTP method used by curtilage
+
+38
+00:01:52,020 --> 00:01:56,369
+<font color="#CCCCCC">you get now what if if we want</font><font color="#E5E5E5"> to send a</font>
+
+39
+00:01:56,369 --> 00:01:58,079
+particular request<font color="#E5E5E5"> by using different</font>
+
+40
+00:01:58,079 --> 00:02:00,960
+<font color="#E5E5E5">HTTP</font><font color="#CCCCCC"> methods is there any way to do that</font>
+
+41
+00:02:00,960 --> 00:02:04,530
+yes<font color="#E5E5E5"> so how we can</font><font color="#CCCCCC"> do that</font><font color="#E5E5E5"> just</font><font color="#CCCCCC"> right</font>
+
+42
+00:02:04,530 --> 00:02:08,429
+down here curl<font color="#E5E5E5"> -</font><font color="#CCCCCC"> V so - V is for verbose</font>
+
+43
+00:02:08,429 --> 00:02:10,530
+mode means for detailed information<font color="#CCCCCC"> and</font>
+
+44
+00:02:10,530 --> 00:02:13,500
+here we have to<font color="#E5E5E5"> write down</font><font color="#CCCCCC"> -</font>
+
+45
+00:02:13,500 --> 00:02:16,170
+capital X and followed<font color="#CCCCCC"> by the HTTP</font>
+
+46
+00:02:16,170 --> 00:02:18,630
+method<font color="#CCCCCC"> we</font><font color="#E5E5E5"> want to use in this request</font><font color="#CCCCCC"> so</font>
+
+47
+00:02:18,630 --> 00:02:23,360
+<font color="#CCCCCC">let's request that modern</font><font color="#E5E5E5"> Indian babies</font>
+
+48
+00:02:23,360 --> 00:02:28,560
+dot-com<font color="#E5E5E5"> by</font><font color="#CCCCCC"> using</font><font color="#E5E5E5"> head</font><font color="#CCCCCC"> requests so - X</font>
+
+49
+00:02:28,560 --> 00:02:31,860
+had had<font color="#CCCCCC"> his HTTP methods</font><font color="#E5E5E5"> which is used</font>
+
+50
+00:02:31,860 --> 00:02:35,370
+to<font color="#CCCCCC"> fetch the</font><font color="#E5E5E5"> data but only the header</font>
+
+51
+00:02:35,370 --> 00:02:43,140
+<font color="#E5E5E5">information and he fight</font><font color="#CCCCCC"> and here you</font>
+
+52
+00:02:43,140 --> 00:02:45,120
+<font color="#E5E5E5">can see the header information the head</font>
+
+53
+00:02:45,120 --> 00:02:48,630
+request with HTTP 1.1<font color="#E5E5E5"> and user agent is</font>
+
+54
+00:02:48,630 --> 00:02:51,420
+curl and here you can<font color="#E5E5E5"> see the server</font>
+
+55
+00:02:51,420 --> 00:02:54,239
+<font color="#CCCCCC">information along with the PHP version</font>
+
+56
+00:02:54,239 --> 00:03:02,370
+<font color="#E5E5E5">number and SSL information</font><font color="#CCCCCC"> okay now let</font>
+
+57
+00:03:02,370 --> 00:03:04,380
+<font color="#CCCCCC">me give you one scenario</font><font color="#E5E5E5"> just for</font>
+
+58
+00:03:04,380 --> 00:03:07,020
+example we want to<font color="#E5E5E5"> make a</font><font color="#CCCCCC"> curl</font><font color="#E5E5E5"> request</font>
+
+59
+00:03:07,020 --> 00:03:10,440
+<font color="#E5E5E5">to a particular</font><font color="#CCCCCC"> website but there is a</font>
+
+60
+00:03:10,440 --> 00:03:13,590
+redirection<font color="#E5E5E5"> on that domain just for</font>
+
+61
+00:03:13,590 --> 00:03:16,010
+<font color="#E5E5E5">example if I</font><font color="#CCCCCC"> just write here curl</font>
+
+62
+00:03:16,010 --> 00:03:18,959
+<font color="#E5E5E5">google.com and hit enter you can</font><font color="#CCCCCC"> see</font>
+
+63
+00:03:18,959 --> 00:03:24,420
+<font color="#CCCCCC">here</font><font color="#E5E5E5"> that it's same</font><font color="#CCCCCC"> 3:02</font><font color="#E5E5E5"> moved and we</font>
+
+64
+00:03:24,420 --> 00:03:26,549
+all know that<font color="#CCCCCC"> 3 0 2 response code is</font>
+
+65
+00:03:26,549 --> 00:03:29,430
+actually<font color="#CCCCCC"> for the redirection</font><font color="#E5E5E5"> now what if</font>
+
+66
+00:03:29,430 --> 00:03:32,970
+if any of the<font color="#E5E5E5"> website contains this kind</font>
+
+67
+00:03:32,970 --> 00:03:35,880
+of<font color="#CCCCCC"> a redirection</font><font color="#E5E5E5"> that how we</font><font color="#CCCCCC"> can</font>
+
+68
+00:03:35,880 --> 00:03:38,940
+actually fetch some data by using curl
+
+69
+00:03:38,940 --> 00:03:42,630
+so just write down curl and write -<font color="#CCCCCC"> L</font>
+
+70
+00:03:42,630 --> 00:03:46,590
+capital L and any website name now what
+
+71
+00:03:46,590 --> 00:03:49,500
+will happen<font color="#E5E5E5"> is if the curl</font><font color="#CCCCCC"> will see that</font>
+
+72
+00:03:49,500 --> 00:03:52,140
+there is<font color="#CCCCCC"> a</font><font color="#E5E5E5"> redirection then curl will</font>
+
+73
+00:03:52,140 --> 00:03:55,440
+actually redirect<font color="#E5E5E5"> to that redirection or</font>
+
+74
+00:03:55,440 --> 00:03:57,959
+the curl will<font color="#E5E5E5"> follow the redirection and</font>
+
+75
+00:03:57,959 --> 00:04:02,450
+if I it<font color="#CCCCCC"> enter now you can see the actual</font>
+
+76
+00:04:02,450 --> 00:04:05,790
+<font color="#E5E5E5">content or the</font><font color="#CCCCCC"> HTML data including some</font>
+
+77
+00:04:05,790 --> 00:04:08,340
+JavaScript<font color="#CCCCCC"> and some scrap data of the</font>
+
+78
+00:04:08,340 --> 00:04:15,720
+google.com so now as a pen tester<font color="#CCCCCC"> there</font>
+
+79
+00:04:15,720 --> 00:04:17,608
+<font color="#E5E5E5">mind me some situation in which we want</font>
+
+80
+00:04:17,608 --> 00:04:20,010
+<font color="#E5E5E5">to store all that ste ml content in a</font>
+
+81
+00:04:20,010 --> 00:04:21,510
+particular file in a particular text
+
+82
+00:04:21,510 --> 00:04:23,880
+<font color="#E5E5E5">file for our future use and for our</font>
+
+83
+00:04:23,880 --> 00:04:26,370
+future reference<font color="#E5E5E5"> then in order</font><font color="#CCCCCC"> to save</font>
+
+84
+00:04:26,370 --> 00:04:27,060
+the
+
+85
+00:04:27,060 --> 00:04:31,230
+data in an any of<font color="#E5E5E5"> the text file we can</font>
+
+86
+00:04:31,230 --> 00:04:35,190
+specify<font color="#E5E5E5"> -</font><font color="#CCCCCC"> Oh method - no parameter</font><font color="#E5E5E5"> here</font>
+
+87
+00:04:35,190 --> 00:04:38,940
+you can see<font color="#CCCCCC"> Cal</font><font color="#E5E5E5"> -</font><font color="#CCCCCC"> o - o is for</font><font color="#E5E5E5"> the</font>
+
+88
+00:04:38,940 --> 00:04:42,450
+<font color="#CCCCCC">output file</font><font color="#E5E5E5"> space</font><font color="#CCCCCC"> the file</font><font color="#E5E5E5"> name like I</font>
+
+89
+00:04:42,450 --> 00:04:44,580
+want<font color="#CCCCCC"> to store the data inside</font><font color="#E5E5E5"> curl dot</font>
+
+90
+00:04:44,580 --> 00:04:52,080
+txt followed<font color="#E5E5E5"> by the website</font><font color="#CCCCCC"> name and if</font>
+
+91
+00:04:52,080 --> 00:04:56,220
+I hit<font color="#E5E5E5"> enter here</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> can see that it has</font>
+
+92
+00:04:56,220 --> 00:04:59,040
+<font color="#CCCCCC">stored and received the data</font><font color="#E5E5E5"> and now if</font>
+
+93
+00:04:59,040 --> 00:05:02,010
+I do LS<font color="#E5E5E5"> here you can see the file named</font>
+
+94
+00:05:02,010 --> 00:05:04,290
+as curl dot txt has been created<font color="#E5E5E5"> now</font>
+
+95
+00:05:04,290 --> 00:05:06,390
+<font color="#CCCCCC">let's see that what's</font><font color="#E5E5E5"> inside this file</font>
+
+96
+00:05:06,390 --> 00:05:09,900
+<font color="#E5E5E5">and here you can see the entire HTML</font>
+
+97
+00:05:09,900 --> 00:05:17,280
+content so this was the quick short
+
+98
+00:05:17,280 --> 00:05:19,440
+introduction of curl<font color="#E5E5E5"> that how we</font><font color="#CCCCCC"> can</font><font color="#E5E5E5"> use</font>
+
+99
+00:05:19,440 --> 00:05:22,229
+curl<font color="#E5E5E5"> how we can send a different</font>
+
+100
+00:05:22,229 --> 00:05:24,540
+<font color="#E5E5E5">different HTTP method request by using</font>
+
+101
+00:05:24,540 --> 00:00:00,000
+curl so thanks<font color="#E5E5E5"> for</font><font color="#CCCCCC"> watching this video</font>
+

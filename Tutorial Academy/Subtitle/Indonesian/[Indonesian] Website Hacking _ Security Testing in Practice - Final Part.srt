@@ -1,0 +1,764 @@
+1
+00:00:12,009 --> 00:00:17,710
+ selamat datang di modul 20 kursus kita ini 
+
+2
+00:00:17,710 --> 00:00:19,480
+ <font color="#E5E5E5">modul akan fokus pada web otomatis </font>
+
+3
+00:00:19,480 --> 00:00:24,250
+ <font color="#CCCCCC">keamanan aplikasi menguji ketiganya </font>
+
+4
+00:00:24,250 --> 00:00:25,509
+ pendekatan yang digunakan di <font color="#E5E5E5">otomatis </font>
+
+5
+00:00:25,509 --> 00:00:27,550
+ <font color="#E5E5E5">pengujian </font><font color="#CCCCCC">keamanan perangkat lunak </font><font color="#E5E5E5">atau kotak putih </font>
+
+6
+00:00:27,550 --> 00:00:33,339
+ <font color="#CCCCCC">kotak abu-abu dan kotak hitam kotak putih pengujian </font>
+
+7
+00:00:33,339 --> 00:00:34,510
+ pengujian <font color="#CCCCCC">adalah teknik </font><font color="#E5E5E5">yang </font>
+
+8
+00:00:34,510 --> 00:00:36,370
+ membutuhkan <font color="#E5E5E5">pengetahuan penuh tentang suatu </font>
+
+9
+00:00:36,370 --> 00:00:38,829
+ kode aplikasi dan dapat <font color="#E5E5E5">memanfaatkan statis </font>
+
+10
+00:00:38,829 --> 00:00:43,720
+ alat analisis kode <font color="#E5E5E5">dengan kontras hitam </font>
+
+11
+00:00:43,720 --> 00:00:45,610
+ <font color="#E5E5E5">penguji kotak tidak mengetahui </font><font color="#CCCCCC">sumbernya </font>
+
+12
+00:00:45,610 --> 00:00:47,379
+ kode dan memperlakukan aplikasi seperti 
+
+13
+00:00:47,379 --> 00:00:49,300
+ kotak hitam literal di mana pengguna 
+
+14
+00:00:49,300 --> 00:00:50,920
+ parameter adalah input dan 
+
+15
+00:00:50,920 --> 00:00:54,840
+ halaman yang dihasilkan adalah <font color="#CCCCCC">output yang dianalisis </font>
+
+16
+00:01:00,719 --> 00:01:03,039
+ pengujian kotak abu-abu menggabungkan keduanya 
+
+17
+00:01:03,039 --> 00:01:07,539
+ penguji metode dapat mengetahui kode sumber 
+
+18
+00:01:07,539 --> 00:01:09,100
+ <font color="#E5E5E5">tapi </font><font color="#CCCCCC">jangan menggali cukup </font><font color="#E5E5E5">dalam </font>
+
+19
+00:01:09,100 --> 00:01:11,289
+ menganalisis <font color="#E5E5E5">itu </font><font color="#CCCCCC">penguji juga bisa menjadi </font>
+
+20
+00:01:11,289 --> 00:01:12,729
+ <font color="#E5E5E5">tidak menyadari kode tetapi memiliki yang lain </font>
+
+21
+00:01:12,729 --> 00:01:14,560
+ informasi <font color="#CCCCCC">tentang fungsi internal </font>
+
+22
+00:01:14,560 --> 00:01:20,679
+ aplikasi jika itu yang terjadi 
+
+23
+00:01:20,679 --> 00:01:22,270
+ <font color="#E5E5E5">tester kotak </font><font color="#CCCCCC">abu-abu </font><font color="#E5E5E5">bisa datang dengan </font>
+
+24
+00:01:22,270 --> 00:01:24,310
+ skenario serangan yang lebih baik saat <font color="#CCCCCC">memanfaatkan </font>
+
+25
+00:01:24,310 --> 00:01:25,869
+ <font color="#E5E5E5">alat dan teknik kotak hitam </font>
+
+26
+00:01:25,869 --> 00:01:30,340
+ <font color="#E5E5E5">pengujian modul ini akan dibicarakan </font>
+
+27
+00:01:30,340 --> 00:01:32,440
+ <font color="#CCCCCC">pengujian kotak hitam dan putih </font><font color="#E5E5E5">sejak </font><font color="#CCCCCC">abu-abu </font>
+
+28
+00:01:32,440 --> 00:01:34,479
+ <font color="#E5E5E5">pengujian kotak adalah subkelas jenis </font>
+
+29
+00:01:34,479 --> 00:01:36,729
+ <font color="#CCCCCC">pengujian kotak hitam dan tidak </font><font color="#E5E5E5">secara langsung </font>
+
+30
+00:01:36,729 --> 00:01:38,920
+ didukung oleh <font color="#E5E5E5">alat khusus , </font><font color="#CCCCCC">itu tidak akan terjadi </font>
+
+31
+00:01:38,920 --> 00:01:42,670
+ tercakup di <font color="#E5E5E5">sini Anda bisa lihat di sini hobi </font>
+
+32
+00:01:42,670 --> 00:01:44,679
+ <font color="#E5E5E5">aplikasi alat injeksi SQL tingkat lanjut </font>
+
+33
+00:01:44,679 --> 00:01:48,390
+ <font color="#CCCCCC">yang dapat </font><font color="#E5E5E5">digunakan untuk </font><font color="#CCCCCC">pengujian blackbox </font>
+
+34
+00:01:48,390 --> 00:01:51,250
+ <font color="#E5E5E5">berfungsi untuk mendeteksi dan mengeksploitasi SQL </font>
+
+35
+00:01:51,250 --> 00:01:55,959
+ <font color="#E5E5E5">kerentanan injeksi mari masukkan sebagai </font>
+
+36
+00:01:55,959 --> 00:01:57,879
+ target URL dari contoh <font color="#CCCCCC">kita </font>
+
+37
+00:01:57,879 --> 00:01:59,590
+ dibicarakan <font color="#E5E5E5">dalam modul </font><font color="#CCCCCC">tentang SQL </font>
+
+38
+00:01:59,590 --> 00:02:02,489
+ <font color="#E5E5E5">serangan injeksi </font>
+
+39
+00:02:02,750 --> 00:02:05,870
+ [Musik] 
+
+40
+00:02:09,960 --> 00:02:13,080
+ [Musik] 
+
+41
+00:02:22,909 --> 00:02:25,769
+ URL yang dimasukkan sudah benar <font color="#E5E5E5">dan ditampilkan </font>
+
+42
+00:02:25,769 --> 00:02:32,519
+ situs web normal karena <font color="#E5E5E5">Anda dapat melihat alat tersebut </font>
+
+43
+00:02:32,519 --> 00:02:34,079
+ pencarian pertama <font color="#E5E5E5">untuk kata kunci yang </font>
+
+44
+00:02:34,079 --> 00:02:36,000
+ <font color="#E5E5E5">kemudian digunakan untuk </font><font color="#CCCCCC">menentukan </font><font color="#E5E5E5">apakah permintaan memiliki </font>
+
+45
+00:02:36,000 --> 00:02:38,750
+ telah berhasil 
+
+46
+00:02:41,209 --> 00:02:44,099
+ selanjutnya <font color="#E5E5E5">mengidentifikasi injeksi SQL </font>
+
+47
+00:02:44,099 --> 00:02:45,900
+ menyerang sebagai serangan terhadap <font color="#E5E5E5">yang </font><font color="#CCCCCC">tidak terlindungi </font>
+
+48
+00:02:45,900 --> 00:02:49,920
+ variabel numerik yang terdeteksi alat 
+
+49
+00:02:49,920 --> 00:02:52,500
+ bahwa <font color="#E5E5E5">server menggunakan </font><font color="#CCCCCC">database MySQL v atau </font>
+
+50
+00:02:52,500 --> 00:02:55,290
+ versi yang lebih baru jumlah kolom 
+
+51
+00:02:55,290 --> 00:02:57,239
+ digunakan oleh query <font color="#E5E5E5">juga telah ditemukan sebagai </font>
+
+52
+00:02:57,239 --> 00:02:58,530
+ baik <font color="#CCCCCC">sebagai kolom yang akan </font>
+
+53
+00:02:58,530 --> 00:03:00,870
+ <font color="#E5E5E5">ditampilkan di </font><font color="#CCCCCC">situs web </font>
+
+54
+00:03:00,870 --> 00:03:04,020
+ [Musik] 
+
+55
+00:03:08,090 --> 00:03:10,410
+ [Musik] 
+
+56
+00:03:10,410 --> 00:03:12,360
+ nama dari <font color="#E5E5E5">database yang digunakan juga </font>
+
+57
+00:03:12,360 --> 00:03:15,990
+ telah ditemukan sekarang kami sepenuhnya 
+
+58
+00:03:15,990 --> 00:03:18,060
+ <font color="#E5E5E5">yakin bahwa </font><font color="#CCCCCC">halaman yang diuji rentan </font>
+
+59
+00:03:18,060 --> 00:03:22,440
+ <font color="#CCCCCC">untuk serangan injeksi SQL mari kita gunakan lainnya </font>
+
+60
+00:03:22,440 --> 00:03:23,880
+ <font color="#E5E5E5">fitur alat ini untuk diambil </font>
+
+61
+00:03:23,880 --> 00:03:27,500
+ <font color="#E5E5E5">informasi tambahan tentang database </font>
+
+62
+00:03:30,110 --> 00:03:34,800
+ <font color="#E5E5E5">seperti yang Anda lihat pengguna saat ini telah </font>
+
+63
+00:03:34,800 --> 00:03:36,840
+ <font color="#E5E5E5">ditampilkan serta versi database </font>
+
+64
+00:03:36,840 --> 00:03:40,530
+ <font color="#E5E5E5">instalasi hostname database saat ini </font>
+
+65
+00:03:40,530 --> 00:03:42,420
+ direktori <font color="#E5E5E5">dan kata sandi untuk </font><font color="#CCCCCC">root dan </font>
+
+66
+00:03:42,420 --> 00:03:51,810
+ menguji pengguna, kata sandi di-hash <font color="#E5E5E5">tetapi </font>
+
+67
+00:03:51,810 --> 00:03:53,430
+ seorang penyerang potensial bisa mengambil tembakan 
+
+68
+00:03:53,430 --> 00:03:59,190
+ <font color="#E5E5E5">saat memecahkannya Anda juga bisa melihatnya </font>
+
+69
+00:03:59,190 --> 00:04:01,340
+ <font color="#CCCCCC">pengguna saat ini memiliki akses ke </font><font color="#E5E5E5">tes </font>
+
+70
+00:04:01,340 --> 00:04:05,180
+ <font color="#CCCCCC">MySQL dan </font><font color="#E5E5E5">database </font><font color="#CCCCCC">skema informasi </font>
+
+71
+00:04:05,180 --> 00:04:07,620
+ menggunakan fungsi tabel <font color="#E5E5E5">yang dapat Anda muat </font>
+
+72
+00:04:07,620 --> 00:04:09,690
+ database diakses oleh pengguna dan <font color="#E5E5E5">kemudian </font>
+
+73
+00:04:09,690 --> 00:04:11,130
+ memuat satu set tabel yang <font color="#CCCCCC">digunakan oleh </font>
+
+74
+00:04:11,130 --> 00:04:30,270
+ <font color="#E5E5E5">database Anda juga dapat memuat kolom tabel </font>
+
+75
+00:04:30,270 --> 00:04:33,710
+ <font color="#E5E5E5">dan data yang disimpan dalam tabel </font>
+
+76
+00:04:46,930 --> 00:04:50,510
+ seperti yang Anda <font color="#E5E5E5">lihat alat ini </font>
+
+77
+00:04:50,510 --> 00:04:52,880
+ secara otomatis mendeteksi <font color="#CCCCCC">injeksi SQL </font>
+
+78
+00:04:52,880 --> 00:04:54,770
+ kerentanan dan <font color="#E5E5E5">dieksploitasi tanpa </font>
+
+79
+00:04:54,770 --> 00:04:57,290
+ <font color="#E5E5E5">mengetahui kode sumber </font><font color="#CCCCCC">ada </font>
+
+80
+00:04:57,290 --> 00:04:59,450
+ <font color="#E5E5E5">alat pengujian kotak hitam serupa yang digunakan untuk </font>
+
+81
+00:04:59,450 --> 00:05:02,180
+ <font color="#E5E5E5">mencari </font><font color="#CCCCCC">traversal jalur XSS </font><font color="#E5E5E5">dan </font>
+
+82
+00:05:02,180 --> 00:05:05,440
+ Kerentanan injeksi PHP 
+
+83
+00:05:05,440 --> 00:05:07,760
+ ingat bahwa <font color="#E5E5E5">alat pengujian blackbox </font>
+
+84
+00:05:07,760 --> 00:05:09,680
+ memanfaatkan skenario serangan yang ada dan 
+
+85
+00:05:09,680 --> 00:05:11,060
+ <font color="#E5E5E5">mungkin tidak dapat mengatasi </font><font color="#CCCCCC">lebih banyak </font>
+
+86
+00:05:11,060 --> 00:05:16,910
+ <font color="#CCCCCC">kasus rumit dalam kasus ini </font>
+
+87
+00:05:16,910 --> 00:05:18,170
+ analisis manual dari aplikasi web 
+
+88
+00:05:18,170 --> 00:05:20,840
+ <font color="#E5E5E5">perilaku dan menyiapkan serangan unik </font>
+
+89
+00:05:20,840 --> 00:05:22,910
+ Skenario metode yang digunakan <font color="#E5E5E5">dalam kotak abu-abu </font>
+
+90
+00:05:22,910 --> 00:05:28,940
+ pengujian mungkin <font color="#E5E5E5">bermanfaat jika Anda memilikinya </font>
+
+91
+00:05:28,940 --> 00:05:30,710
+ akses <font color="#E5E5E5">ke </font><font color="#CCCCCC">kode situs web yang </font><font color="#E5E5E5">Anda bisa </font>
+
+92
+00:05:30,710 --> 00:05:37,610
+ <font color="#E5E5E5">juga menggunakan alat pengujian kotak putih Anda </font>
+
+93
+00:05:37,610 --> 00:05:39,920
+ bisa lihat di <font color="#E5E5E5">sini </font><font color="#CCCCCC">rips framework </font><font color="#E5E5E5">PHP </font>
+
+94
+00:05:39,920 --> 00:05:41,840
+ scanner yang digunakan untuk menguji aplikasi 
+
+95
+00:05:41,840 --> 00:05:48,200
+ ditulis <font color="#E5E5E5">dalam PHP beberapa file yang digunakan dalam </font>
+
+96
+00:05:48,200 --> 00:05:49,820
+ <font color="#CCCCCC">serangan sebelumnya telah </font><font color="#E5E5E5">ditempatkan di </font>
+
+97
+00:05:49,820 --> 00:05:52,360
+ direktori skrip 
+
+98
+00:05:55,250 --> 00:05:58,399
+ [Musik] 
+
+99
+00:05:59,630 --> 00:06:01,800
+ masing-masing mengandung <font color="#CCCCCC">jenis yang berbeda </font>
+
+100
+00:06:01,800 --> 00:06:04,380
+ <font color="#E5E5E5">kerentanan </font><font color="#CCCCCC">seperti injeksi SQL </font>
+
+101
+00:06:04,380 --> 00:06:07,710
+ Kerentanan injeksi XSS dan PHP 
+
+102
+00:06:07,710 --> 00:06:10,050
+ <font color="#E5E5E5">mari sekarang periksa hasil analisa </font>
+
+103
+00:06:10,050 --> 00:06:23,070
+ kode dalam pemindaian kerangka ini 
+
+104
+00:06:23,070 --> 00:06:26,910
+ dimulai <font color="#E5E5E5">karena Anda </font><font color="#CCCCCC">dapat melihat dua injeksi SQL </font>
+
+105
+00:06:26,910 --> 00:06:28,830
+ kerentanan <font color="#E5E5E5">dan satu file inklusi </font>
+
+106
+00:06:28,830 --> 00:06:32,580
+ kerentanan <font color="#E5E5E5">telah ditemukan </font><font color="#CCCCCC">laporan </font>
+
+107
+00:06:32,580 --> 00:06:34,230
+ <font color="#E5E5E5">juga telah dihasilkan yang berisi </font>
+
+108
+00:06:34,230 --> 00:06:35,700
+ jumlah file yang dipindai dan 
+
+109
+00:06:35,700 --> 00:06:40,730
+ statistik termasuk sub halaman dalam 
+
+110
+00:06:40,730 --> 00:06:43,950
+ kasus ini <font color="#E5E5E5">skripnya </font><font color="#CCCCCC">otonom tapi </font>
+
+111
+00:06:43,950 --> 00:06:45,630
+ <font color="#E5E5E5">jika mereka termasuk file lain </font>
+
+112
+00:06:45,630 --> 00:06:49,200
+ kerangka kerja <font color="#E5E5E5">juga akan memindai mereka, Anda bisa </font>
+
+113
+00:06:49,200 --> 00:06:50,940
+ lihat di sini <font color="#E5E5E5">jumlah potensi tenggelam </font>
+
+114
+00:06:50,940 --> 00:06:52,860
+ yang merupakan <font color="#CCCCCC">lokasi sebenarnya di mana a </font>
+
+115
+00:06:52,860 --> 00:06:55,980
+ kerentanan <font color="#E5E5E5">dimanfaatkan ini bisa </font>
+
+116
+00:06:55,980 --> 00:06:57,450
+ misalnya menjadi fungsi yang mana 
+
+117
+00:06:57,450 --> 00:06:59,310
+ berkomunikasi dengan database <font color="#E5E5E5">atau yang mana </font>
+
+118
+00:06:59,310 --> 00:07:05,250
+ termasuk fungsi file yang dideklarasikan <font color="#E5E5E5">adalah </font>
+
+119
+00:07:05,250 --> 00:07:07,140
+ <font color="#CCCCCC">cukup jelas </font><font color="#E5E5E5">dan menunjukkan </font>
+
+120
+00:07:07,140 --> 00:07:08,970
+ <font color="#E5E5E5">jumlah fungsi yang dinyatakan dalam analisis </font>
+
+121
+00:07:08,970 --> 00:07:12,270
+ file sumber unik menunjukkan 
+
+122
+00:07:12,270 --> 00:07:16,490
+ <font color="#E5E5E5">jumlah </font><font color="#CCCCCC">parameter input sumber pengguna </font>
+
+123
+00:07:16,490 --> 00:07:18,990
+ <font color="#E5E5E5">sink sensitif menentukan jumlah </font>
+
+124
+00:07:18,990 --> 00:07:20,550
+ sink <font color="#CCCCCC">yang rentan yang dicapai oleh </font>
+
+125
+00:07:20,550 --> 00:07:29,760
+ masukan pengguna tanpa filter <font color="#E5E5E5">injeksi SQL </font>
+
+126
+00:07:29,760 --> 00:07:32,010
+ kerentanan adalah lubang yang terdeteksi pertama 
+
+127
+00:07:32,010 --> 00:07:34,290
+ <font color="#E5E5E5">Anda bisa lihat di sini berbaris yang rentan </font>
+
+128
+00:07:34,290 --> 00:07:39,180
+ kode <font color="#E5E5E5">parameter yang digunakan setelah Anda mengklik </font>
+
+129
+00:07:39,180 --> 00:07:40,919
+ pada <font color="#E5E5E5">informasi tanda tanya pada </font>
+
+130
+00:07:40,919 --> 00:07:42,930
+ kelas kerentanan dan yang terdeteksi 
+
+131
+00:07:42,930 --> 00:07:45,980
+ case akan ditampilkan 
+
+132
+00:07:50,320 --> 00:07:52,520
+ sumbernya di sini <font color="#CCCCCC">adalah variabel get </font>
+
+133
+00:07:52,520 --> 00:07:55,700
+ <font color="#E5E5E5">yang berisi </font><font color="#CCCCCC">parameter wastafel </font>
+
+134
+00:07:55,700 --> 00:07:57,800
+ <font color="#E5E5E5">adalah </font><font color="#CCCCCC">fungsi query MySQL yang </font>
+
+135
+00:07:57,800 --> 00:08:01,640
+ jalankan query SQL <font color="#E5E5E5">jika sumber tanpa filter </font>
+
+136
+00:08:01,640 --> 00:08:04,130
+ data mencapai wastafel <font color="#E5E5E5">ini secara potensial </font>
+
+137
+00:08:04,130 --> 00:08:05,240
+ <font color="#E5E5E5">bisa memicu kerentanan </font>
+
+138
+00:08:05,240 --> 00:08:09,110
+ eksploitasi kerentanan di sini adalah 
+
+139
+00:08:09,110 --> 00:08:12,470
+ <font color="#CCCCCC">cacat injeksi SQL yang ditampilkan </font>
+
+140
+00:08:12,470 --> 00:08:14,150
+ informasi <font color="#CCCCCC">juga termasuk deskripsi </font>
+
+141
+00:08:14,150 --> 00:08:16,820
+ <font color="#E5E5E5">dari contoh kasus kerentanan yang diberikan </font>
+
+142
+00:08:16,820 --> 00:08:18,410
+ <font color="#CCCCCC">kode rentan dan eksploitasi </font>
+
+143
+00:08:18,410 --> 00:08:20,660
+ skenario <font color="#E5E5E5">teknik untuk </font><font color="#CCCCCC">menghilangkan </font>
+
+144
+00:08:20,660 --> 00:08:35,210
+ cacat dan <font color="#E5E5E5">topik terkait lainnya yang Anda </font><font color="#CCCCCC">bisa </font>
+
+145
+00:08:35,210 --> 00:08:36,950
+ melihat alat ini <font color="#CCCCCC">bisa membantu </font><font color="#E5E5E5">dalam </font>
+
+146
+00:08:36,950 --> 00:08:38,510
+ deteksi cepat dan efisien 
+
+147
+00:08:38,510 --> 00:08:41,450
+ <font color="#E5E5E5">potensi kerentanan kode secara alami </font>
+
+148
+00:08:41,450 --> 00:08:42,650
+ kerangka kerja <font color="#E5E5E5">juga bisa kembali </font>
+
+149
+00:08:42,650 --> 00:08:45,140
+ <font color="#E5E5E5">apa yang disebut positif atau </font><font color="#CCCCCC">skrip </font><font color="#E5E5E5">palsu </font>
+
+150
+00:08:45,140 --> 00:08:46,400
+ garis yang <font color="#E5E5E5">tidak benar-benar rentan </font>
+
+151
+00:08:46,400 --> 00:08:52,070
+ <font color="#CCCCCC">dalam penggunaan khusus mereka ini bisa </font>
+
+152
+00:08:52,070 --> 00:08:53,810
+ terjadi <font color="#CCCCCC">karena analisis </font><font color="#E5E5E5">rinci </font>
+
+153
+00:08:53,810 --> 00:08:55,880
+ <font color="#E5E5E5">setiap kasus mungkin tidak layak atau </font>
+
+154
+00:08:55,880 --> 00:08:58,160
+ karena analisisnya tergantung <font color="#E5E5E5">terlalu banyak </font>
+
+155
+00:08:58,160 --> 00:09:00,170
+ <font color="#E5E5E5">faktor eksternal </font><font color="#CCCCCC">atau </font><font color="#E5E5E5">juga </font>
+
+156
+00:09:00,170 --> 00:09:03,440
+ rumit tetap <font color="#CCCCCC">semua informasi </font>
+
+157
+00:09:03,440 --> 00:09:05,210
+ <font color="#E5E5E5">di lokasi yang berpotensi berbahaya </font>
+
+158
+00:09:05,210 --> 00:09:07,810
+ berharga 
+
+159
+00:09:08,770 --> 00:09:11,420
+ Anda dapat <font color="#E5E5E5">melihat di sini laporan </font><font color="#CCCCCC">pada yang kedua </font>
+
+160
+00:09:11,420 --> 00:09:12,500
+ <font color="#E5E5E5">terjadinya injeksi SQL </font>
+
+161
+00:09:12,500 --> 00:09:15,170
+ <font color="#E5E5E5">kerentanan dalam file PHP buku tamu </font>
+
+162
+00:09:15,170 --> 00:09:18,910
+ bersama dengan <font color="#CCCCCC">informasi </font><font color="#E5E5E5">serupa </font>
+
+163
+00:09:22,000 --> 00:09:24,650
+ akhirnya <font color="#CCCCCC">Anda bisa lihat di sini sebuah instance dari </font>
+
+164
+00:09:24,650 --> 00:09:26,810
+ Kerentanan injeksi PHP <font color="#E5E5E5">Anda </font><font color="#CCCCCC">juga bisa </font>
+
+165
+00:09:26,810 --> 00:09:28,310
+ cari tahu <font color="#CCCCCC">lebih lanjut tentang hal ini </font>
+
+166
+00:09:28,310 --> 00:09:30,110
+ kejadian <font color="#E5E5E5">dan kelas kerentanan </font>
+
+167
+00:09:30,110 --> 00:09:34,970
+ secara umum untuk memindai aplikasi untuk 
+
+168
+00:09:34,970 --> 00:09:37,700
+ Kerentanan XSS mengganti kerangka kerja 
+
+169
+00:09:37,700 --> 00:09:47,660
+ ke mode yang berbeda seperti yang Anda <font color="#CCCCCC">lihat </font>
+
+170
+00:09:47,660 --> 00:09:52,520
+ Kelemahan XSS telah terdeteksi <font color="#CCCCCC">dalam kasus ini </font>
+
+171
+00:09:52,520 --> 00:09:54,920
+ <font color="#E5E5E5">kerentanan injeksi SQL bisa </font>
+
+172
+00:09:54,920 --> 00:09:57,800
+ mengarah ke <font color="#E5E5E5">suntikan </font><font color="#CCCCCC">kode HTML jika kita </font>
+
+173
+00:09:57,800 --> 00:09:59,360
+ alihkan <font color="#CCCCCC">jenis sumber ke data yang akan datang </font>
+
+174
+00:09:59,360 --> 00:10:01,760
+ dari <font color="#E5E5E5">database atau file yang akan alat </font>
+
+175
+00:10:01,760 --> 00:10:03,980
+ <font color="#CCCCCC">juga mendeteksi kerentanan XSS yang tersimpan </font>
+
+176
+00:10:03,980 --> 00:10:26,210
+ seperti skrip buku tamu kami yang Anda bisa 
+
+177
+00:10:26,210 --> 00:10:27,920
+ lihat alat yang digunakan <font color="#E5E5E5">untuk pengujian kotak hitam </font>
+
+178
+00:10:27,920 --> 00:10:30,050
+ <font color="#E5E5E5">dan pengujian kotak putih mungkin benar-benar </font>
+
+179
+00:10:30,050 --> 00:10:32,570
+ membantu mengingat <font color="#CCCCCC">meskipun audit itu </font>
+
+180
+00:10:32,570 --> 00:10:34,400
+ keamanan membutuhkan pengalaman <font color="#CCCCCC">dan otak </font>
+
+181
+00:10:34,400 --> 00:10:36,680
+ <font color="#CCCCCC">kekuatan </font><font color="#E5E5E5">manusia yang sebenarnya jadi tidak sepenuhnya </font>
+
+182
+00:10:36,680 --> 00:10:39,440
+ bergantung pada <font color="#E5E5E5">perangkat lunak melainkan menggunakannya sebagai </font>
+
+183
+00:10:39,440 --> 00:10:46,430
+ bantuan tambahan dan berharga itu saja 
+
+184
+00:10:46,430 --> 00:10:48,380
+ di modul <font color="#CCCCCC">20 </font><font color="#E5E5E5">dan itu juga akhir </font>
+
+185
+00:10:48,380 --> 00:10:52,550
+ kursus ini <font color="#E5E5E5">saya berharap sumber daya itu </font>
+
+186
+00:10:52,550 --> 00:10:54,200
+ <font color="#E5E5E5">dan </font><font color="#CCCCCC">saran yang kami berikan kepada Anda telah terbukti </font>
+
+187
+00:10:54,200 --> 00:10:56,750
+ <font color="#E5E5E5">terima kasih yang </font><font color="#CCCCCC">berguna dan sangat menarik </font><font color="#E5E5E5">untuk </font>
+
+188
+00:10:56,750 --> 00:10:58,820
+ <font color="#E5E5E5">perhatian Anda </font><font color="#CCCCCC">jangan ragu untuk memeriksanya </font>
+
+189
+00:10:58,820 --> 00:11:00,200
+ kursus pelatihan lain yang Anda bisa 
+
+190
+00:11:00,200 --> 00:11:04,000
+ <font color="#E5E5E5">temukan di situs web kami melihat Anda </font>
+
+191
+00:11:05,320 --> 00:00:00,000
+ <font color="#E5E5E5">kamu </font>
+

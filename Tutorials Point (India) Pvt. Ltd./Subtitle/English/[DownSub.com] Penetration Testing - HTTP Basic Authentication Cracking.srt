@@ -1,0 +1,884 @@
+1
+00:00:00,089 --> 00:00:02,730
+hello everyone<font color="#CCCCCC"> now let's talk about HTTP</font>
+
+2
+00:00:02,730 --> 00:00:04,799
+basic authentication<font color="#E5E5E5"> so HTTP</font>
+
+3
+00:00:04,799 --> 00:00:06,899
+authentication<font color="#E5E5E5"> is a way in order to</font>
+
+4
+00:00:06,899 --> 00:00:09,599
+protect<font color="#E5E5E5"> resources on a server so HTTP</font>
+
+5
+00:00:09,599 --> 00:00:11,490
+protocol supports<font color="#E5E5E5"> two authentication</font>
+
+6
+00:00:11,490 --> 00:00:15,269
+HTTP<font color="#CCCCCC"> basic HTTP digest authentication</font><font color="#E5E5E5"> so</font>
+
+7
+00:00:15,269 --> 00:00:16,920
+now let's see how HTTP basic
+
+8
+00:00:16,920 --> 00:00:19,320
+authentication works<font color="#E5E5E5"> so here you can see</font>
+
+9
+00:00:19,320 --> 00:00:21,779
+that here is our<font color="#E5E5E5"> client and here is our</font>
+
+10
+00:00:21,779 --> 00:00:23,939
+<font color="#E5E5E5">server</font><font color="#CCCCCC"> so first of all the client will</font>
+
+11
+00:00:23,939 --> 00:00:26,609
+send a request<font color="#E5E5E5"> of a particular resource</font>
+
+12
+00:00:26,609 --> 00:00:29,189
+to the server then if that resource is
+
+13
+00:00:29,189 --> 00:00:31,859
+protected then that server<font color="#E5E5E5"> will request</font>
+
+14
+00:00:31,859 --> 00:00:34,020
+client to add a username and<font color="#CCCCCC"> password</font>
+
+15
+00:00:34,020 --> 00:00:36,809
+<font color="#E5E5E5">then client gives the username and</font>
+
+16
+00:00:36,809 --> 00:00:39,300
+<font color="#E5E5E5">password</font><font color="#CCCCCC"> to the server</font><font color="#E5E5E5"> and then after</font>
+
+17
+00:00:39,300 --> 00:00:41,579
+receiving the username and<font color="#E5E5E5"> password the</font>
+
+18
+00:00:41,579 --> 00:00:44,250
+server<font color="#E5E5E5"> gives the requested resource to</font>
+
+19
+00:00:44,250 --> 00:00:46,530
+the client<font color="#E5E5E5"> so this is how HTTP basic</font>
+
+20
+00:00:46,530 --> 00:00:49,230
+authentication works but there is one
+
+21
+00:00:49,230 --> 00:00:51,960
+<font color="#CCCCCC">limitation</font><font color="#E5E5E5"> or weakness in HTTP basic</font>
+
+22
+00:00:51,960 --> 00:00:54,570
+authentication<font color="#CCCCCC"> that</font><font color="#E5E5E5"> is it never blocks</font>
+
+23
+00:00:54,570 --> 00:00:57,000
+multiple retries which means if we<font color="#CCCCCC"> don't</font>
+
+24
+00:00:57,000 --> 00:00:58,800
+know the password<font color="#CCCCCC"> then we can go on</font>
+
+25
+00:00:58,800 --> 00:01:00,930
+<font color="#E5E5E5">adding wrong username and password and</font>
+
+26
+00:01:00,930 --> 00:01:03,510
+it will<font color="#E5E5E5"> never block us because it's the</font>
+
+27
+00:01:03,510 --> 00:01:06,150
+<font color="#E5E5E5">weakness and the another weaknesses that</font>
+
+28
+00:01:06,150 --> 00:01:08,400
+<font color="#CCCCCC">it transmits</font><font color="#E5E5E5"> our username and password</font>
+
+29
+00:01:08,400 --> 00:01:11,250
+in packets in<font color="#CCCCCC"> the in the form of plain</font>
+
+30
+00:01:11,250 --> 00:01:14,130
+<font color="#CCCCCC">text</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> the attacker takes advantage</font><font color="#E5E5E5"> of</font>
+
+31
+00:01:14,130 --> 00:01:16,770
+this<font color="#E5E5E5"> limitation in order to do some kind</font>
+
+32
+00:01:16,770 --> 00:01:18,299
+<font color="#E5E5E5">of attacks like brute-force attacks</font>
+
+33
+00:01:18,299 --> 00:01:20,759
+dictionary attacks<font color="#CCCCCC"> to find</font><font color="#E5E5E5"> the username</font>
+
+34
+00:01:20,759 --> 00:01:22,950
+<font color="#E5E5E5">and password now</font><font color="#CCCCCC"> let's see how we can</font>
+
+35
+00:01:22,950 --> 00:01:25,860
+crack this HTTP basic authentication<font color="#CCCCCC"> now</font>
+
+36
+00:01:25,860 --> 00:01:28,140
+let's see how we can crack basic
+
+37
+00:01:28,140 --> 00:01:32,040
+authentication<font color="#E5E5E5"> so in order to test basic</font>
+
+38
+00:01:32,040 --> 00:01:35,490
+authentication<font color="#E5E5E5"> we will use the web for</font>
+
+39
+00:01:35,490 --> 00:01:39,840
+<font color="#CCCCCC">pentester -</font><font color="#E5E5E5"> ISO which we have used while</font>
+
+40
+00:01:39,840 --> 00:01:43,229
+testing captures so here you can see
+
+41
+00:01:43,229 --> 00:01:47,250
+that<font color="#E5E5E5"> my web for pen</font><font color="#CCCCCC"> tested to</font><font color="#E5E5E5"> ISO file</font>
+
+42
+00:01:47,250 --> 00:01:51,560
+is up and running<font color="#E5E5E5"> and its IP addresses</font>
+
+43
+00:01:51,590 --> 00:01:54,899
+192.168.0.1 for<font color="#CCCCCC"> one</font><font color="#E5E5E5"> so we will also need</font>
+
+44
+00:01:54,899 --> 00:01:57,630
+<font color="#CCCCCC">kali linux for</font><font color="#E5E5E5"> it so here you can see my</font>
+
+45
+00:01:57,630 --> 00:02:02,009
+Kali Linux<font color="#E5E5E5"> so let's open</font><font color="#CCCCCC"> web for pen</font>
+
+46
+00:02:02,009 --> 00:02:04,430
+<font color="#CCCCCC">tester</font>
+
+47
+00:02:13,850 --> 00:02:16,130
+and make<font color="#CCCCCC"> sure that you have downloaded</font>
+
+48
+00:02:16,130 --> 00:02:18,920
+<font color="#E5E5E5">and you are using web for pentester</font><font color="#CCCCCC"> too</font>
+
+49
+00:02:18,920 --> 00:02:21,170
+because the older version of effort
+
+50
+00:02:21,170 --> 00:02:23,330
+<font color="#CCCCCC">Pentastar</font><font color="#E5E5E5"> not contains authentication</font>
+
+51
+00:02:23,330 --> 00:02:25,970
+challenge<font color="#E5E5E5"> it's it's only present</font><font color="#CCCCCC"> in the</font>
+
+52
+00:02:25,970 --> 00:02:38,420
+latest version of web for<font color="#CCCCCC"> pentester so</font>
+
+53
+00:02:38,420 --> 00:02:41,060
+here you can see my<font color="#CCCCCC"> work for pentester</font>
+
+54
+00:02:41,060 --> 00:02:43,430
+and here is an authentication<font color="#E5E5E5"> category</font>
+
+55
+00:02:43,430 --> 00:02:45,860
+so just<font color="#E5E5E5"> for the time</font><font color="#CCCCCC"> being let me</font><font color="#E5E5E5"> click</font>
+
+56
+00:02:45,860 --> 00:02:51,020
+<font color="#E5E5E5">on this example</font><font color="#CCCCCC"> one so as I click on</font>
+
+57
+00:02:51,020 --> 00:02:53,600
+this you<font color="#CCCCCC"> will</font><font color="#E5E5E5"> see</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> it asks</font><font color="#CCCCCC"> us</font><font color="#E5E5E5"> for</font>
+
+58
+00:02:53,600 --> 00:02:55,190
+<font color="#E5E5E5">the username and</font><font color="#CCCCCC"> the password</font>
+
+59
+00:02:55,190 --> 00:02:58,040
+<font color="#E5E5E5">so here the</font><font color="#CCCCCC"> thing to be notice</font><font color="#E5E5E5"> that</font>
+
+60
+00:02:58,040 --> 00:03:00,860
+there is<font color="#CCCCCC"> no form through which</font><font color="#E5E5E5"> we can</font>
+
+61
+00:03:00,860 --> 00:03:03,710
+enter<font color="#E5E5E5"> our credentials so this kind of</font>
+
+62
+00:03:03,710 --> 00:03:06,590
+authentication<font color="#E5E5E5"> this this box is actually</font>
+
+63
+00:03:06,590 --> 00:03:09,620
+<font color="#CCCCCC">a basic authentication</font><font color="#E5E5E5"> used for</font>
+
+64
+00:03:09,620 --> 00:03:12,470
+protecting<font color="#E5E5E5"> HTTP resources so if I just</font>
+
+65
+00:03:12,470 --> 00:03:16,850
+enter here admin and password<font color="#CCCCCC"> now let's</font>
+
+66
+00:03:16,850 --> 00:03:18,940
+see what happens
+
+67
+00:03:18,940 --> 00:03:21,620
+it again asks us<font color="#CCCCCC"> for the password</font>
+
+68
+00:03:21,620 --> 00:03:31,040
+<font color="#CCCCCC">because we are entering a wrong one so</font>
+
+69
+00:03:31,040 --> 00:03:32,840
+as I<font color="#E5E5E5"> told you earlier</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> the main</font>
+
+70
+00:03:32,840 --> 00:03:35,300
+weakness<font color="#CCCCCC"> behind this basic</font>
+
+71
+00:03:35,300 --> 00:03:37,610
+authentication is that it never blocks
+
+72
+00:03:37,610 --> 00:03:40,160
+<font color="#E5E5E5">multiple retries which means we can</font>
+
+73
+00:03:40,160 --> 00:03:43,520
+retry multiple times by using<font color="#E5E5E5"> wrong</font>
+
+74
+00:03:43,520 --> 00:03:46,160
+credentials<font color="#E5E5E5"> in order</font><font color="#CCCCCC"> to find the right</font>
+
+75
+00:03:46,160 --> 00:03:50,090
+one so let<font color="#E5E5E5"> me click on cancel and you</font>
+
+76
+00:03:50,090 --> 00:03:53,650
+<font color="#E5E5E5">will get a message here not authorized</font>
+
+77
+00:03:53,650 --> 00:03:56,330
+so in order to<font color="#E5E5E5"> crack basic</font>
+
+78
+00:03:56,330 --> 00:03:58,160
+authentication<font color="#CCCCCC"> there are different ways</font>
+
+79
+00:03:58,160 --> 00:04:01,190
+<font color="#E5E5E5">there are different tools</font><font color="#CCCCCC"> but in this</font>
+
+80
+00:04:01,190 --> 00:04:04,850
+<font color="#E5E5E5">video I will</font><font color="#CCCCCC"> cover</font><font color="#E5E5E5"> a tool called as</font>
+
+81
+00:04:04,850 --> 00:04:08,420
+Hydra which is present in Kali<font color="#E5E5E5"> Linux</font><font color="#CCCCCC"> so</font>
+
+82
+00:04:08,420 --> 00:04:10,580
+with the help<font color="#E5E5E5"> of this tool Hydra we can</font>
+
+83
+00:04:10,580 --> 00:04:12,440
+crack the password<font color="#E5E5E5"> of different devices</font>
+
+84
+00:04:12,440 --> 00:04:15,920
+<font color="#E5E5E5">and like HTTP passwords</font><font color="#CCCCCC"> ftv passwords</font>
+
+85
+00:04:15,920 --> 00:04:21,350
+routers passwords everything so<font color="#E5E5E5"> let</font><font color="#CCCCCC"> us</font>
+
+86
+00:04:21,350 --> 00:04:22,850
+go to the<font color="#CCCCCC"> main page of Hydra here you</font>
+
+87
+00:04:22,850 --> 00:04:25,130
+can see a very fast<font color="#CCCCCC"> Network logon</font>
+
+88
+00:04:25,130 --> 00:04:26,540
+<font color="#CCCCCC">cracker</font><font color="#E5E5E5"> which</font><font color="#CCCCCC"> support many different</font>
+
+89
+00:04:26,540 --> 00:04:27,690
+<font color="#CCCCCC">services</font>
+
+90
+00:04:27,690 --> 00:04:33,600
+so usage of<font color="#CCCCCC"> Hydra is very simple so</font>
+
+91
+00:04:33,600 --> 00:04:36,960
+before<font color="#E5E5E5"> going further let's try to</font>
+
+92
+00:04:36,960 --> 00:04:40,320
+analyze the HTTP basic<font color="#CCCCCC"> request</font><font color="#E5E5E5"> that how</font>
+
+93
+00:04:40,320 --> 00:04:43,590
+the request<font color="#CCCCCC"> looks like so let</font><font color="#E5E5E5"> me start</font>
+
+94
+00:04:43,590 --> 00:04:46,640
+<font color="#E5E5E5">Bob sweet</font>
+
+95
+00:04:55,510 --> 00:04:58,639
+and let us<font color="#CCCCCC"> also configure our browser</font>
+
+96
+00:04:58,639 --> 00:05:01,479
+proxy settings
+
+97
+00:05:33,110 --> 00:05:40,290
+so my<font color="#E5E5E5"> BOB suite is starting and let's</font>
+
+98
+00:05:40,290 --> 00:05:41,760
+configure it to<font color="#E5E5E5"> the manual proxy</font>
+
+99
+00:05:41,760 --> 00:05:44,130
+configuration<font color="#CCCCCC"> so it's a Bob suite IP</font>
+
+100
+00:05:44,130 --> 00:05:47,690
+<font color="#E5E5E5">along with the port 8080 click on ok</font>
+
+101
+00:05:47,690 --> 00:05:52,440
+let's go back and let's<font color="#E5E5E5"> see that whether</font>
+
+102
+00:05:52,440 --> 00:05:55,850
+<font color="#E5E5E5">a</font><font color="#CCCCCC"> Bob</font><font color="#E5E5E5"> sweater is running or not</font>
+
+103
+00:06:07,830 --> 00:06:10,560
+so this kind<font color="#E5E5E5"> of</font><font color="#CCCCCC"> basic authentication</font>
+
+104
+00:06:10,560 --> 00:06:13,300
+<font color="#E5E5E5">will not found in today's web</font>
+
+105
+00:06:13,300 --> 00:06:16,150
+applications<font color="#E5E5E5"> but this is just a demo</font>
+
+106
+00:06:16,150 --> 00:06:19,870
+<font color="#CCCCCC">that how we</font><font color="#E5E5E5"> can track the different</font>
+
+107
+00:06:19,870 --> 00:06:23,320
+authentication<font color="#CCCCCC"> types so let's go here</font><font color="#E5E5E5"> to</font>
+
+108
+00:06:23,320 --> 00:06:33,810
+<font color="#E5E5E5">the proxy and let's open this link</font><font color="#CCCCCC"> so</font>
+
+109
+00:06:34,020 --> 00:06:36,310
+<font color="#CCCCCC">here you can see the box will start</font>
+
+110
+00:06:36,310 --> 00:06:46,240
+blinking and here is the request<font color="#E5E5E5"> so I'll</font>
+
+111
+00:06:46,240 --> 00:06:53,860
+forward this request and here you will
+
+112
+00:06:53,860 --> 00:06:57,340
+<font color="#E5E5E5">see a authentication required pop-up</font>
+
+113
+00:06:57,340 --> 00:07:02,820
+so let me write<font color="#CCCCCC"> here</font><font color="#E5E5E5"> admin password and</font>
+
+114
+00:07:02,820 --> 00:07:07,210
+click on<font color="#E5E5E5"> OK now</font><font color="#CCCCCC"> let's go</font><font color="#E5E5E5"> back to</font><font color="#CCCCCC"> our Bob</font>
+
+115
+00:07:07,210 --> 00:07:09,510
+<font color="#CCCCCC">suite</font>
+
+116
+00:07:19,320 --> 00:07:23,910
+and here you can see<font color="#E5E5E5"> our HTTP basic</font>
+
+117
+00:07:23,910 --> 00:07:26,250
+authentication request<font color="#E5E5E5"> so it's a get</font>
+
+118
+00:07:26,250 --> 00:07:29,580
+request<font color="#CCCCCC"> you</font><font color="#E5E5E5"> can see here and this is the</font>
+
+119
+00:07:29,580 --> 00:07:31,290
+resource which is<font color="#E5E5E5"> actually protected</font>
+
+120
+00:07:31,290 --> 00:07:34,380
+<font color="#E5E5E5">this directory</font><font color="#CCCCCC"> is protected by HTTP</font>
+
+121
+00:07:34,380 --> 00:07:37,410
+basic authentication<font color="#E5E5E5"> and in the last you</font>
+
+122
+00:07:37,410 --> 00:07:39,330
+<font color="#CCCCCC">will find additional header fields of</font>
+
+123
+00:07:39,330 --> 00:07:42,060
+authorization<font color="#E5E5E5"> and it's some basic</font>
+
+124
+00:07:42,060 --> 00:07:44,510
+authentication<font color="#E5E5E5"> and here you will find a</font>
+
+125
+00:07:44,510 --> 00:07:48,240
+base64 encoded value<font color="#E5E5E5"> so what did value</font>
+
+126
+00:07:48,240 --> 00:07:50,040
+<font color="#E5E5E5">contains it actually contains our</font>
+
+127
+00:07:50,040 --> 00:07:52,020
+<font color="#CCCCCC">username and a password which we have</font>
+
+128
+00:07:52,020 --> 00:07:54,330
+<font color="#E5E5E5">given admin password now in order</font><font color="#CCCCCC"> to</font>
+
+129
+00:07:54,330 --> 00:07:56,430
+verify that<font color="#E5E5E5"> what we have given</font><font color="#CCCCCC"> just</font>
+
+130
+00:07:56,430 --> 00:08:01,890
+<font color="#E5E5E5">right click over</font><font color="#CCCCCC"> here go here</font><font color="#E5E5E5"> to convert</font>
+
+131
+00:08:01,890 --> 00:08:05,670
+<font color="#E5E5E5">selection then basics t4 and click on</font>
+
+132
+00:08:05,670 --> 00:08:08,310
+basic<font color="#CCCCCC"> Steef or decode and here you</font><font color="#E5E5E5"> will</font>
+
+133
+00:08:08,310 --> 00:08:12,840
+<font color="#E5E5E5">find the user input which we have given</font>
+
+134
+00:08:12,840 --> 00:08:16,620
+admin and password<font color="#CCCCCC"> now let's just make</font>
+
+135
+00:08:16,620 --> 00:08:18,930
+the intercept off and now<font color="#E5E5E5"> let us try to</font>
+
+136
+00:08:18,930 --> 00:08:21,710
+crack this as<font color="#CCCCCC"> TDP basic authentication</font>
+
+137
+00:08:21,710 --> 00:08:25,820
+using Hydra
+
+138
+00:08:36,240 --> 00:08:39,640
+so let me<font color="#CCCCCC"> just type here Hydra</font><font color="#E5E5E5"> so here</font>
+
+139
+00:08:39,640 --> 00:08:42,640
+you<font color="#E5E5E5"> will find a demo command which we</font>
+
+140
+00:08:42,640 --> 00:08:45,280
+can use to<font color="#CCCCCC"> use Hydra so we have to type</font>
+
+141
+00:08:45,280 --> 00:08:49,060
+<font color="#E5E5E5">Hydra -</font><font color="#CCCCCC"> L and the username which</font><font color="#E5E5E5"> you</font>
+
+142
+00:08:49,060 --> 00:08:51,880
+want<font color="#E5E5E5"> to give like admin so that admin</font>
+
+143
+00:08:51,880 --> 00:08:54,550
+<font color="#E5E5E5">name should be remain common and then we</font>
+
+144
+00:08:54,550 --> 00:08:56,110
+will give<font color="#E5E5E5"> additional parameter called as</font>
+
+145
+00:08:56,110 --> 00:08:59,410
+-<font color="#E5E5E5"> capital P and</font><font color="#CCCCCC"> here will give the list</font>
+
+146
+00:08:59,410 --> 00:09:01,900
+<font color="#E5E5E5">of our password file which contains</font>
+
+147
+00:09:01,900 --> 00:09:06,730
+passwords<font color="#CCCCCC"> and then we will give the IP</font>
+
+148
+00:09:06,730 --> 00:09:11,170
+address of<font color="#E5E5E5"> our web for pentester - along</font>
+
+149
+00:09:11,170 --> 00:09:16,000
+with<font color="#CCCCCC"> the</font><font color="#E5E5E5"> protected resource now in last</font>
+
+150
+00:09:16,000 --> 00:09:19,210
+videos<font color="#E5E5E5"> I have showed you that in</font><font color="#CCCCCC"> kali</font>
+
+151
+00:09:19,210 --> 00:09:22,450
+<font color="#CCCCCC">linux there is one directory which</font>
+
+152
+00:09:22,450 --> 00:09:26,350
+contains<font color="#CCCCCC"> our word lists which we can use</font>
+
+153
+00:09:26,350 --> 00:09:28,180
+<font color="#E5E5E5">for different attacks like dictionary</font>
+
+154
+00:09:28,180 --> 00:09:38,050
+attacks<font color="#E5E5E5"> brute-force attacks so here is</font>
+
+155
+00:09:38,050 --> 00:09:39,640
+that directory which<font color="#CCCCCC"> contains the word</font>
+
+156
+00:09:39,640 --> 00:09:44,110
+list user share and word<font color="#E5E5E5"> lists and here</font>
+
+157
+00:09:44,110 --> 00:09:46,900
+is one file called as fast-track dot txt
+
+158
+00:09:46,900 --> 00:09:51,390
+<font color="#CCCCCC">now let's see what's inside this file</font>
+
+159
+00:09:51,390 --> 00:09:56,160
+you will<font color="#CCCCCC"> find a lot of passwords here</font>
+
+160
+00:09:56,340 --> 00:10:01,510
+now let's try<font color="#E5E5E5"> to use hi Hydra and we</font>
+
+161
+00:10:01,510 --> 00:10:04,210
+will give the reference<font color="#E5E5E5"> of this file</font>
+
+162
+00:10:04,210 --> 00:10:07,000
+<font color="#CCCCCC">fast act dot txt</font><font color="#E5E5E5"> so I have just</font><font color="#CCCCCC"> written</font>
+
+163
+00:10:07,000 --> 00:10:10,360
+here Hydra<font color="#E5E5E5"> - L and the</font><font color="#CCCCCC"> username should</font>
+
+164
+00:10:10,360 --> 00:10:15,220
+<font color="#CCCCCC">be admin then - capital</font><font color="#E5E5E5"> P and</font><font color="#CCCCCC"> here we</font>
+
+165
+00:10:15,220 --> 00:10:19,360
+will give the location of this file
+
+166
+00:10:19,360 --> 00:10:25,200
+<font color="#CCCCCC">first act dot txt which is inside user</font>
+
+167
+00:10:25,200 --> 00:10:31,570
+share word<font color="#CCCCCC"> let's and</font><font color="#E5E5E5"> fast act dot txt so</font>
+
+168
+00:10:31,570 --> 00:10:35,620
+now we have to write here the IP address
+
+169
+00:10:35,620 --> 00:10:38,050
+along with<font color="#CCCCCC"> the protocol so</font><font color="#E5E5E5"> we know that</font>
+
+170
+00:10:38,050 --> 00:10:42,040
+the HTTP protocol we will use but here's
+
+171
+00:10:42,040 --> 00:10:45,130
+the thing<font color="#E5E5E5"> so let me just first send this</font>
+
+172
+00:10:45,130 --> 00:10:48,570
+request<font color="#E5E5E5"> using HTTP</font>
+
+173
+00:10:51,110 --> 00:10:59,420
+and the resource<font color="#E5E5E5"> which is protected</font><font color="#CCCCCC"> is</font>
+
+174
+00:11:00,559 --> 00:11:05,489
+authentication<font color="#E5E5E5"> /</font><font color="#CCCCCC"> example1 so it's the</font>
+
+175
+00:11:05,489 --> 00:11:08,989
+URL of<font color="#CCCCCC"> that directory</font><font color="#E5E5E5"> which</font><font color="#CCCCCC"> is protected</font>
+
+176
+00:11:08,989 --> 00:11:13,559
+by HTTP basic authentication<font color="#E5E5E5"> now if I</font>
+
+177
+00:11:13,559 --> 00:11:16,649
+just<font color="#CCCCCC"> hit enter</font><font color="#E5E5E5"> you will see that it asks</font>
+
+178
+00:11:16,649 --> 00:11:20,449
+us that what kind<font color="#E5E5E5"> of request we want to</font>
+
+179
+00:11:20,449 --> 00:11:23,100
+send whether you want to send get
+
+180
+00:11:23,100 --> 00:11:25,889
+<font color="#CCCCCC">request</font><font color="#E5E5E5"> or post request</font><font color="#CCCCCC"> so while time of</font>
+
+181
+00:11:25,889 --> 00:11:28,230
+analyzing this request in<font color="#E5E5E5"> Bob suite we</font>
+
+182
+00:11:28,230 --> 00:11:30,089
+<font color="#E5E5E5">have seen that this HTTP basic</font>
+
+183
+00:11:30,089 --> 00:11:32,189
+authentication request is<font color="#E5E5E5"> actually a get</font>
+
+184
+00:11:32,189 --> 00:11:35,670
+request<font color="#CCCCCC"> so what we have to do is we just</font>
+
+185
+00:11:35,670 --> 00:11:38,449
+<font color="#CCCCCC">have to do a</font><font color="#E5E5E5"> little modification in our</font>
+
+186
+00:11:38,449 --> 00:11:41,549
+Hydra payload<font color="#E5E5E5"> so all we have to do is we</font>
+
+187
+00:11:41,549 --> 00:11:46,259
+just<font color="#CCCCCC"> have to write HTTP - get then :</font>
+
+188
+00:11:46,259 --> 00:11:49,619
+<font color="#E5E5E5">two slashes and the IP address of effort</font>
+
+189
+00:11:49,619 --> 00:11:51,929
+<font color="#CCCCCC">web for</font><font color="#E5E5E5"> pentester along with the</font>
+
+190
+00:11:51,929 --> 00:11:54,929
+protected<font color="#E5E5E5"> resource now if I</font><font color="#CCCCCC"> just</font><font color="#E5E5E5"> hit</font>
+
+191
+00:11:54,929 --> 00:12:00,360
+enter<font color="#E5E5E5"> here</font><font color="#CCCCCC"> you will see</font><font color="#E5E5E5"> that this tool</font>
+
+192
+00:12:00,360 --> 00:12:03,629
+Hydra is successfully<font color="#CCCCCC"> able to find the</font>
+
+193
+00:12:03,629 --> 00:12:06,299
+correct username and<font color="#CCCCCC"> a password so here</font>
+
+194
+00:12:06,299 --> 00:12:09,239
+you<font color="#E5E5E5"> will see Mac 16 tasks per one server</font>
+
+195
+00:12:09,239 --> 00:12:12,509
+<font color="#E5E5E5">attacking service port 80</font><font color="#CCCCCC"> so the</font>
+
+196
+00:12:12,509 --> 00:12:15,419
+<font color="#CCCCCC">hostname is</font><font color="#E5E5E5"> this login is admin and the</font>
+
+197
+00:12:15,419 --> 00:12:18,419
+password is admin<font color="#CCCCCC"> and in the last</font><font color="#E5E5E5"> you</font>
+
+198
+00:12:18,419 --> 00:12:20,639
+can see at the statistics<font color="#E5E5E5"> one of one</font>
+
+199
+00:12:20,639 --> 00:12:23,009
+target successfully completed one valid
+
+200
+00:12:23,009 --> 00:12:27,269
+password<font color="#E5E5E5"> found so now let's go here and</font>
+
+201
+00:12:27,269 --> 00:12:31,290
+let's try to enter admin as a login name
+
+202
+00:12:31,290 --> 00:12:34,110
+<font color="#E5E5E5">and the</font><font color="#CCCCCC"> password is also admin now let's</font>
+
+203
+00:12:34,110 --> 00:12:37,790
+see whether it's<font color="#E5E5E5"> true or false</font>
+
+204
+00:12:50,660 --> 00:12:55,580
+<font color="#E5E5E5">okay so I forgot to remove my proxy</font>
+
+205
+00:12:55,580 --> 00:12:57,940
+settings
+
+206
+00:13:15,600 --> 00:13:25,860
+so it's<font color="#E5E5E5"> one for one so let's go to this</font>
+
+207
+00:13:25,860 --> 00:13:28,170
+<font color="#CCCCCC">challenge again authentication example 1</font>
+
+208
+00:13:28,170 --> 00:13:32,310
+and let's write here admin as a username
+
+209
+00:13:32,310 --> 00:13:34,680
+<font color="#E5E5E5">and a password should also be admin</font>
+
+210
+00:13:34,680 --> 00:13:40,050
+click on<font color="#CCCCCC"> ok</font><font color="#E5E5E5"> and here you will see</font><font color="#CCCCCC"> a</font>
+
+211
+00:13:40,050 --> 00:13:43,160
+success<font color="#CCCCCC"> message which means</font><font color="#E5E5E5"> we are</font>
+
+212
+00:13:43,160 --> 00:13:46,560
+successfully<font color="#CCCCCC"> able to find the password</font>
+
+213
+00:13:46,560 --> 00:13:49,850
+of HTTP basic authentication using<font color="#E5E5E5"> Hydra</font>
+
+214
+00:13:49,850 --> 00:13:53,190
+so if you are interested<font color="#CCCCCC"> to</font><font color="#E5E5E5"> protect your</font>
+
+215
+00:13:53,190 --> 00:13:55,920
+SDP resource so you<font color="#E5E5E5"> can apply or</font>
+
+216
+00:13:55,920 --> 00:13:58,370
+implement HTTP digest authentication
+
+217
+00:13:58,370 --> 00:14:00,620
+<font color="#CCCCCC">that is</font><font color="#E5E5E5"> secure</font>
+
+218
+00:14:00,620 --> 00:14:03,870
+so in this<font color="#CCCCCC"> video we have</font><font color="#E5E5E5"> covered</font><font color="#CCCCCC"> words</font>
+
+219
+00:14:03,870 --> 00:14:05,730
+HTTP basic authentication<font color="#E5E5E5"> and how to</font>
+
+220
+00:14:05,730 --> 00:14:08,310
+crack that now<font color="#E5E5E5"> thanks for watching</font><font color="#CCCCCC"> this</font>
+
+221
+00:14:08,310 --> 00:00:00,000
+video
+

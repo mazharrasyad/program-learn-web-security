@@ -1,0 +1,6420 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,820
+ Lisensi Commons. 
+
+4
+00:00:03,820 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,255
+ di ocw.mit.edu. 
+
+9
+00:00:17,255 --> 00:00:27,595
+
+
+10
+00:00:27,595 --> 00:00:28,720
+ PROFESOR: Baiklah, teman-teman. 
+
+11
+00:00:28,720 --> 00:00:29,470
+ Mari kita mulai. 
+
+12
+00:00:29,470 --> 00:00:31,137
+ Jadi hari ini, kita akan berbicara tentang Tor. 
+
+13
+00:00:31,137 --> 00:00:32,761
+ Dan kami benar-benar memiliki salah satu penulis 
+
+14
+00:00:32,761 --> 00:00:35,090
+ dari makalah yang kalian baca hari ini, Nick Mathewson. 
+
+15
+00:00:35,090 --> 00:00:37,080
+ Dia juga salah satu pengembang utama Tor. 
+
+16
+00:00:37,080 --> 00:00:38,065
+ Dia akan memberitahumu lebih banyak tentang itu. 
+
+17
+00:00:38,065 --> 00:00:39,148
+ NICK MATHEWSON: Terima kasih. 
+
+18
+00:00:39,148 --> 00:00:42,315
+ Jadi pada titik ini, saya bisa mulai 
+
+19
+00:00:42,315 --> 00:00:44,420
+ dengan mengatakan, tolong angkat tangan 
+
+20
+00:00:44,420 --> 00:00:48,490
+ jika Anda tidak membaca koran, tetapi itu tidak akan berhasil. 
+
+21
+00:00:48,490 --> 00:00:50,920
+ Karena itu memalukan untuk tidak membaca koran 
+
+22
+00:00:50,920 --> 00:00:52,940
+ Anda seharusnya telah membaca. 
+
+23
+00:00:52,940 --> 00:00:56,020
+ Jadi sebagai gantinya, yang akan saya tanyakan adalah, pikirkan ulang tahun Anda. 
+
+24
+00:00:56,020 --> 00:00:57,610
+ Pikirkan tanggal kelahiran Anda. 
+
+25
+00:00:57,610 --> 00:01:01,000
+ Jika digit terakhir dari tanggal lahir Anda aneh, 
+
+26
+00:01:01,000 --> 00:01:06,080
+ atau Anda tidak membaca koran, tolong angkat tangan. 
+
+27
+00:01:06,080 --> 00:01:09,000
+ OK, itu tidak jauh dari setengah. 
+
+28
+00:01:09,000 --> 00:01:11,810
+ Jadi saya menduga kebanyakan orang membaca koran. 
+
+29
+00:01:11,810 --> 00:01:14,720
+
+
+30
+00:01:14,720 --> 00:01:19,190
+ Sarana komunikasi yang menjaga privasi kita memungkinkan 
+
+31
+00:01:19,190 --> 00:01:23,620
+ kita berkomunikasi lebih jujur ​​untuk mengumpulkan lebih baik 
+
+32
+00:01:23,620 --> 00:01:26,570
+ informasi tentang dunia saat kita kurang 
+
+33
+00:01:26,570 --> 00:01:32,210
+ tidak bisa berbicara karena mungkin dibenarkan 
+
+34
+00:01:32,210 --> 00:01:37,540
+ konsekuensi sosial dan lainnya mungkin tidak adil. 
+
+35
+00:01:37,540 --> 00:01:41,570
+ Jadi ini membawa kita ke Tor, yang merupakan anonimitas 
+
+36
+00:01:41,570 --> 00:01:44,210
+ jaringan yang telah saya kerjakan selama 10 tahun terakhir 
+
+37
+00:01:44,210 --> 00:01:48,080
+ dengan beberapa teman dan kolega dan seterusnya. 
+
+38
+00:01:48,080 --> 00:01:51,170
+ [TIDAK JELAS] ada satu set server operasi relawan, 
+
+39
+00:01:51,170 --> 00:01:52,930
+ sekitar 6.000 dari mereka. 
+
+40
+00:01:52,930 --> 00:01:55,290
+ Pada awalnya, itu hanya teman kita 
+
+41
+00:01:55,290 --> 00:01:58,310
+ bahwa Roger Dingledine dan saya tahu dari MIT. 
+
+42
+00:01:58,310 --> 00:02:01,660
+ Setelah itu, kami membangun lebih banyak publisitas. 
+
+43
+00:02:01,660 --> 00:02:04,810
+ Lebih banyak orang mulai menjalankan server. 
+
+44
+00:02:04,810 --> 00:02:08,360
+ Sekarang dijalankan oleh lembaga nonprofit, individu pribadi, 
+
+45
+00:02:08,360 --> 00:02:12,370
+ beberapa tim universitas, mungkin sebagian dari Anda di sini hari ini, 
+
+46
+00:02:12,370 --> 00:02:17,820
+ dan tidak diragukan lagi beberapa orang yang sangat samar. 
+
+47
+00:02:17,820 --> 00:02:19,140
+ Kami punya sekitar 6.000 node. 
+
+48
+00:02:19,140 --> 00:02:21,540
+ Kami melayani dengan pesanan ratusan ribu 
+
+49
+00:02:21,540 --> 00:02:24,060
+ hingga jutaan pengguna bergantung pada cara Anda menghitung. 
+
+50
+00:02:24,060 --> 00:02:26,310
+ Agak sulit untuk dihitung, karena mereka anonim. 
+
+51
+00:02:26,310 --> 00:02:29,142
+ Jadi Anda harus menggunakan teknik statistik untuk memperkirakan. 
+
+52
+00:02:29,142 --> 00:02:30,850
+ Dan kami melakukan pada urutan terabyte 
+
+53
+00:02:30,850 --> 00:02:34,500
+ per detik senilai lalu lintas. 
+
+54
+00:02:34,500 --> 00:02:39,190
+ Banyak orang membutuhkan anonimitas untuk pekerjaan rutin mereka. 
+
+55
+00:02:39,190 --> 00:02:40,670
+ Tidak semua orang yang membutuhkan anonimitas, 
+
+56
+00:02:40,670 --> 00:02:43,980
+ meskipun, menganggapnya sebagai anonimitas. 
+
+57
+00:02:43,980 --> 00:02:46,380
+ Beberapa orang berkata, saya tidak butuh anonimitas. 
+
+58
+00:02:46,380 --> 00:02:48,520
+ Saya sangat baik mengidentifikasi diri saya sendiri. 
+
+59
+00:02:48,520 --> 00:02:52,590
+ Namun ada persepsi luas bahwa privasi 
+
+60
+00:02:52,590 --> 00:02:55,330
+ diperlukan atau berguna. 
+
+61
+00:02:55,330 --> 00:02:57,982
+ Dan ketika warga negara biasa menggunakan hal-hal anonimitas, 
+
+62
+00:02:57,982 --> 00:03:00,750
+ mereka cenderung melakukannya karena mereka menginginkan privasi 
+
+63
+00:03:00,750 --> 00:03:04,455
+ dalam hasil pencarian, privasi dalam melakukan penelitian di internet. 
+
+64
+00:03:04,455 --> 00:03:07,900
+ Mereka ingin dapat terlibat dalam politik lokal 
+
+65
+00:03:07,900 --> 00:03:12,180
+ sementara tidak menyinggung politisi lokal, dan seterusnya. 
+
+66
+00:03:12,180 --> 00:03:15,210
+ Peneliti sering menggunakan alat anonim 
+
+67
+00:03:15,210 --> 00:03:21,800
+ untuk menghindari pengumpulan data yang bias, bias berdasarkan geolokasi 
+
+68
+00:03:21,800 --> 00:03:23,685
+ layanan yang mungkin melayani mereka 
+
+69
+00:03:23,685 --> 00:03:26,500
+ dalam berbagai versi tertentu. 
+
+70
+00:03:26,500 --> 00:03:29,700
+ Perusahaan menggunakan teknologi anonimitas 
+
+71
+00:03:29,700 --> 00:03:32,620
+ untuk perlindungan data sensitif. 
+
+72
+00:03:32,620 --> 00:03:38,730
+ Misalnya, jika saya bisa melacak semua gerakan 
+
+73
+00:03:38,730 --> 00:03:42,600
+ tim hukum untuk beberapa perusahaan internet besar, 
+
+74
+00:03:42,600 --> 00:03:49,360
+ Saya mungkin bisa, hanya dengan melacak ketika mereka mengunjungi web mereka 
+
+75
+00:03:49,360 --> 00:03:52,085
+ server dari berbagai tempat di seluruh dunia, 
+
+76
+00:03:52,085 --> 00:03:54,126
+ atau di mana mereka mengunjungi perusahaan [TIDAK TERDENGAR] 
+
+77
+00:03:54,126 --> 00:03:56,000
+ tempat berbeda di seluruh dunia, 
+
+78
+00:03:56,000 --> 00:03:58,996
+ belajar banyak tentang tim mana yang berkolaborasi. 
+
+79
+00:03:58,996 --> 00:04:00,370
+ Dan ini adalah perusahaan informasi 
+
+80
+00:04:00,370 --> 00:04:02,370
+ ingin tetap pribadi. 
+
+81
+00:04:02,370 --> 00:04:07,540
+ Perusahaan juga menggunakan teknologi anonimitas untuk melakukan penelitian. 
+
+82
+00:04:07,540 --> 00:04:12,130
+ Jadi produsen router besar untuk sementara waktu - 
+
+83
+00:04:12,130 --> 00:04:13,800
+ Saya tidak tahu apakah ini masih terjadi - 
+
+84
+00:04:13,800 --> 00:04:17,200
+ secara teratur akan melayani versi berbeda dari lembaran produknya 
+
+85
+00:04:17,200 --> 00:04:20,200
+ ke alamat IP yang terkait dengan pesaingnya 
+
+86
+00:04:20,200 --> 00:04:23,851
+ untuk membuat reverse engineering lebih rumit. 
+
+87
+00:04:23,851 --> 00:04:26,142
+ Dan mereka menemukan ini dengan menggunakan perangkat lunak kami dan berkata, 
+
+88
+00:04:26,142 --> 00:04:28,308
+ hei, tunggu sebentar, kami mendapat lembaran produk yang berbeda 
+
+89
+00:04:28,308 --> 00:04:32,407
+ ketika kami masuk dari Tor daripada datang langsung. 
+
+90
+00:04:32,407 --> 00:04:34,365
+ Dan itu juga normal untuk beberapa perusahaan 
+
+91
+00:04:34,365 --> 00:04:36,679
+ untuk melayani versi perusahaan lain dari situs web mereka 
+
+92
+00:04:36,679 --> 00:04:38,720
+ untuk menekankan bagian peluang kerja. 
+
+93
+00:04:38,720 --> 00:04:41,660
+
+
+94
+00:04:41,660 --> 00:04:46,910
+ Penegak hukum biasa membutuhkan teknologi anonimitas juga 
+
+95
+00:04:46,910 --> 00:04:49,900
+ untuk menghindari pemberian informasi kepada orang-orang selama penyelidikan. 
+
+96
+00:04:49,900 --> 00:04:51,955
+ Anda tidak ingin kantor polisi setempat 
+
+97
+00:04:51,955 --> 00:04:57,290
+ muncul di log web seseorang yang sedang Anda selidiki. 
+
+98
+00:04:57,290 --> 00:05:00,960
+ Dan orang biasa membutuhkannya, seperti yang saya katakan, 
+
+99
+00:05:00,960 --> 00:05:04,640
+ untuk menghindari pelecehan karena aktivitas online, 
+
+100
+00:05:04,640 --> 00:05:07,600
+ untuk meneliti hal-hal yang mungkin memalukan. 
+
+101
+00:05:07,600 --> 00:05:13,390
+ Jika Anda tinggal di negara dengan undang-undang perawatan kesehatan yang tidak pasti, 
+
+102
+00:05:13,390 --> 00:05:16,420
+ Anda mungkin ingin menghindari membuat terlalu banyak catatan publik 
+
+103
+00:05:16,420 --> 00:05:19,070
+ penyakit apa yang Anda pikir mungkin Anda miliki dan seterusnya, 
+
+104
+00:05:19,070 --> 00:05:21,920
+ atau apa hobi berbahaya yang mungkin Anda miliki. 
+
+105
+00:05:21,920 --> 00:05:27,400
+ Dan juga banyak orang jahat atau jahat menggunakan teknologi anonimitas. 
+
+106
+00:05:27,400 --> 00:05:28,710
+ Itu bukan satu-satunya pilihan mereka. 
+
+107
+00:05:28,710 --> 00:05:33,650
+ Tetapi jika Anda bersedia untuk membeli waktu di net bot, 
+
+108
+00:05:33,650 --> 00:05:35,360
+ Anda dapat membeli beberapa privasi yang cukup bagus 
+
+109
+00:05:35,360 --> 00:05:38,329
+ itu tidak tersedia untuk orang yang 
+
+110
+00:05:38,329 --> 00:05:39,620
+ berpikir bahwa jaring bot bersifat amoral. 
+
+111
+00:05:39,620 --> 00:05:43,890
+ Dan Tor, dan hal-hal anonimitas secara umum, 
+
+112
+00:05:43,890 --> 00:05:49,482
+ bukan satu-satunya teknologi multi guna di luar sana. 
+
+113
+00:05:49,482 --> 00:05:51,690
+ Mari kita lihat, usia rata-rata lulusan adalah sekitar 20. 
+
+114
+00:05:51,690 --> 00:05:56,706
+ Jadi sekitar saat kamu dilahirkan ... sudahkah kamu bicara 
+
+115
+00:05:56,706 --> 00:05:58,327
+ tentang perang crypto sama sekali? 
+
+116
+00:05:58,327 --> 00:05:59,181
+ PROFESOR: Tidak. 
+
+117
+00:05:59,181 --> 00:06:00,270
+ NICK MATHEWSON: Tidak. 
+
+118
+00:06:00,270 --> 00:06:02,700
+ Selama 1990-an, itu semacam pertanyaan di udara 
+
+119
+00:06:02,700 --> 00:06:06,590
+ di Amerika Serikat tentang sejauh mana penggunaan sipil 
+
+120
+00:06:06,590 --> 00:06:09,120
+ kriptografi non-backdoor harus legal, 
+
+121
+00:06:09,120 --> 00:06:11,320
+ dan sejauh mana itu harus diekspor. 
+
+122
+00:06:11,320 --> 00:06:13,200
+ Semacam itu turun cukup meyakinkan 
+
+123
+00:06:13,200 --> 00:06:17,090
+ di sisi kriptografi harus legal dan dapat diekspor 
+
+124
+00:06:17,090 --> 00:06:20,310
+ selama tahun 90-an dan awal 2000-an. 
+
+125
+00:06:20,310 --> 00:06:24,350
+ Dan meskipun ada beberapa perdebatan tentang teknologi anonimitas, 
+
+126
+00:06:24,350 --> 00:06:27,100
+ itu kurang lebih perdebatan yang sama. 
+
+127
+00:06:27,100 --> 00:06:30,750
+ Dan saya pikir itu akan berakhir dengan cara yang kurang lebih sama. 
+
+128
+00:06:30,750 --> 00:06:33,264
+ Jadi inilah garis besar ceramah saya. 
+
+129
+00:06:33,264 --> 00:06:35,680
+ Aku akan memberimu perkenalan kecil yang kuberikan padamu, 
+
+130
+00:06:35,680 --> 00:06:37,721
+ berbicara sedikit tentang apa yang kami maksud dengan anonimitas 
+
+131
+00:06:37,721 --> 00:06:40,235
+ dalam pengertian teknis, berbicara sedikit tentang motivasi kami 
+
+132
+00:06:40,235 --> 00:06:41,068
+ untuk masuk ke dalamnya. 
+
+133
+00:06:41,068 --> 00:06:44,970
+ Lalu aku akan memandu Anda melalui langkah 
+
+134
+00:06:44,970 --> 00:06:47,450
+ dengan langkah bagaimana Anda mulai dengan ide, 
+
+135
+00:06:47,450 --> 00:06:50,445
+ kita harus memiliki anonimitas, dan bagaimana caranya 
+
+136
+00:06:50,445 --> 00:06:52,902
+ apakah Anda berakhir dengan desain Tor dari titik itu. 
+
+137
+00:06:52,902 --> 00:06:54,660
+ Dan saya akan menyebutkan beberapa percabangan 
+
+138
+00:06:54,660 --> 00:06:56,990
+ poin di mana Anda mungkin berakhir dengan desain lain. 
+
+139
+00:06:56,990 --> 00:06:59,780
+ Saya akan berhenti untuk menjawab beberapa pertanyaan keren 
+
+140
+00:06:59,780 --> 00:07:04,220
+ bahwa semua orang telah dikirim untuk tugas kelas mereka. 
+
+141
+00:07:04,220 --> 00:07:06,710
+ Saya akan berbicara sedikit tentang cara kerja penemuan node, 
+
+142
+00:07:06,710 --> 00:07:08,394
+ yang merupakan topik penting. 
+
+143
+00:07:08,394 --> 00:07:10,150
+ Dan kemudian saya akan memilah dengan tangan 
+
+144
+00:07:10,150 --> 00:07:12,856
+ pilih yang mana dari topik lanjutan ini untuk dibahas. 
+
+145
+00:07:12,856 --> 00:07:15,230
+ Saya kira kita memanggil mereka maju karena mereka nanti 
+
+146
+00:07:15,230 --> 00:07:16,360
+ di kuliah. 
+
+147
+00:07:16,360 --> 00:07:19,750
+ Dan saya tidak bisa membaca semuanya, tetapi semuanya sangat keren. 
+
+148
+00:07:19,750 --> 00:07:21,655
+ Saya akan menyebutkan beberapa sistem terkait 
+
+149
+00:07:21,655 --> 00:07:23,905
+ desain siapa yang harus Anda periksa 
+
+150
+00:07:23,905 --> 00:07:26,370
+ jika ini adalah topik yang menarik minat Anda dan Anda ingin 
+
+151
+00:07:26,370 --> 00:07:27,286
+ untuk mengetahui lebih banyak tentang itu. 
+
+152
+00:07:27,286 --> 00:07:30,340
+ Saya akan berbicara tentang pekerjaan masa depan yang ingin kita lakukan di Tor 
+
+153
+00:07:30,340 --> 00:07:32,860
+ dan saya berharap kita punya waktu untuk melakukan suatu hari nanti. 
+
+154
+00:07:32,860 --> 00:07:35,870
+ Dan jika ada waktu untuk pertanyaan, maka saya akan mengambilnya. 
+
+155
+00:07:35,870 --> 00:07:38,930
+ Dan saya tidak punya tempat yang saya perlukan untuk jam berikutnya atau lebih. 
+
+156
+00:07:38,930 --> 00:07:43,307
+ Jadi saya dan rekan saya David di sana - dapatkah Anda melambaikan tangan Anda, 
+
+157
+00:07:43,307 --> 00:07:47,340
+ David-- akan berkeliaran di suatu tempat dan berbicara 
+
+158
+00:07:47,340 --> 00:07:48,613
+ kepada siapa saja yang ingin bicara. 
+
+159
+00:07:48,613 --> 00:07:52,750
+ Jadi benar, anonimitas-- apa yang kami maksud 
+
+160
+00:07:52,750 --> 00:07:54,183
+ ketika kita berbicara tentang anonimitas? 
+
+161
+00:07:54,183 --> 00:07:57,210
+ Ada banyak pengertian informal 
+
+162
+00:07:57,210 --> 00:08:03,390
+ yang terbiasa dalam diskusi informal, secara online, dan sebagainya 
+
+163
+00:08:03,390 --> 00:08:03,890
+ di. 
+
+164
+00:08:03,890 --> 00:08:05,390
+ Beberapa orang menggunakan anonim berarti, 
+
+165
+00:08:05,390 --> 00:08:06,598
+ Saya tidak menulis nama saya di atasnya. 
+
+166
+00:08:06,598 --> 00:08:10,900
+ Beberapa orang menggunakan anonim berarti, baik, 
+
+167
+00:08:10,900 --> 00:08:12,290
+ tidak ada yang benar-benar bisa membuktikan itu aku 
+
+168
+00:08:12,290 --> 00:08:15,230
+ bahkan jika Anda mencurigai kuat. 
+
+169
+00:08:15,230 --> 00:08:18,200
+ Yang kami maksud adalah sejumlah gagasan yang diungkapkan 
+
+170
+00:08:18,200 --> 00:08:25,560
+ dalam hal kemampuan seorang pengamat 
+
+171
+00:08:25,560 --> 00:08:32,590
+ atau penyerang di jaringan untuk menghubungkan peserta dengan tindakan. 
+
+172
+00:08:32,590 --> 00:08:35,870
+ Gagasan-gagasan ini berasal dari makalah terminologi 
+
+173
+00:08:35,870 --> 00:08:38,659
+ oleh [TIDAK JELAS] bahwa Anda menemukan tautan 
+
+174
+00:08:38,659 --> 00:08:43,929
+ untuk di freehaven.net/anonbib/, bibliografi anonimitas itu 
+
+175
+00:08:43,929 --> 00:08:46,790
+ Saya membantu memelihara. 
+
+176
+00:08:46,790 --> 00:08:49,423
+ Ini harus mencantumkan sebagian besar makalah bagus di lapangan. 
+
+177
+00:08:49,423 --> 00:08:51,550
+ Kami harus membawanya hingga saat ini hingga 2014, 
+
+178
+00:08:51,550 --> 00:08:53,390
+ tapi itu sangat berguna. 
+
+179
+00:08:53,390 --> 00:08:55,840
+ Jadi ketika saya mengatakan anonimitas, biasanya apa yang saya maksud 
+
+180
+00:08:55,840 --> 00:09:01,080
+ apakah Alice melakukan beberapa aktivitas. 
+
+181
+00:09:01,080 --> 00:09:05,132
+ Dia-- apa yang seharusnya dilakukan Alice? 
+
+182
+00:09:05,132 --> 00:09:06,215
+ Alice membeli kaos kaki baru. 
+
+183
+00:09:06,215 --> 00:09:10,270
+
+
+184
+00:09:10,270 --> 00:09:11,820
+ Dan ada beberapa penyerang di sini. 
+
+185
+00:09:11,820 --> 00:09:14,770
+ Mari kita memanggilnya Eve untuk saat ini. 
+
+186
+00:09:14,770 --> 00:09:18,999
+ Eve dapat mengatakan bahwa Alice melakukan sesuatu. 
+
+187
+00:09:18,999 --> 00:09:21,040
+ Mencegah itu bukan apa yang kami maksud dengan anonimitas. 
+
+188
+00:09:21,040 --> 00:09:22,890
+ Itu disebut unobservability. 
+
+189
+00:09:22,890 --> 00:09:26,550
+ Hawa bisa tahu mungkin bahwa seseorang membeli kaus kaki. 
+
+190
+00:09:26,550 --> 00:09:28,850
+ Sekali lagi, bukan itu yang kami maksud dengan anonimitas. 
+
+191
+00:09:28,850 --> 00:09:33,480
+ Tetapi apa yang kami harapkan adalah bahwa Hawa tidak dapat mengatakan itu pada Alice 
+
+192
+00:09:33,480 --> 00:09:36,310
+ khususnya adalah membeli kaos kaki. 
+
+193
+00:09:36,310 --> 00:09:40,190
+ Dan kami maksudkan bahwa keduanya pada level kategorikal-- 
+
+194
+00:09:40,190 --> 00:09:42,935
+ Hawa seharusnya tidak bisa menyimpulkan 
+
+195
+00:09:42,935 --> 00:09:45,060
+ melalui bukti matematis yang teliti, ini adalah Alice, 
+
+196
+00:09:45,060 --> 00:09:48,430
+ dia membeli kaus kaki-- tetapi juga, Hawa seharusnya tidak 
+
+197
+00:09:48,430 --> 00:09:52,180
+ dapat menyimpulkan probabilistically itu lebih mungkin 
+
+198
+00:09:52,180 --> 00:09:56,030
+ bahwa Alice membeli kaos kaki daripada beberapa orang yang dipilih secara acak. 
+
+199
+00:09:56,030 --> 00:09:59,080
+ Dan juga, kami ingin Hawa tidak 
+
+200
+00:09:59,080 --> 00:10:02,250
+ dapat menyimpulkan setelah mengamati banyak kegiatan Alice, 
+
+201
+00:10:02,250 --> 00:10:05,280
+ Alice terkadang membeli kaos kaki, bahkan jika saya 
+
+202
+00:10:05,280 --> 00:10:08,260
+ tidak tahu beberapa aktivitas tertentu dari Alice 
+
+203
+00:10:08,260 --> 00:10:09,045
+ pembelian kaus kaki. 
+
+204
+00:10:09,045 --> 00:10:12,650
+
+
+205
+00:10:12,650 --> 00:10:14,560
+ Ada ide lain yang terkait. 
+
+206
+00:10:14,560 --> 00:10:17,030
+ Salah satunya adalah pada unlinkability. 
+
+207
+00:10:17,030 --> 00:10:23,876
+ Keterhubungan itu seperti profil jangka panjang Alice. 
+
+208
+00:10:23,876 --> 00:10:26,210
+ Jadi misalnya, Alice telah memposting 
+
+209
+00:10:26,210 --> 00:10:33,050
+ as-- Saya tidak pernah pandai memilih nama untuk contoh saya. 
+
+210
+00:10:33,050 --> 00:10:39,060
+ Alice telah memposting sebagai Bob dan menulis blog politik 
+
+211
+00:10:39,060 --> 00:10:43,315
+ yang akan mengganggu karirnya, itu 
+
+212
+00:10:43,315 --> 00:10:45,490
+ akan menyinggung kepala departemennya dan mengganggu 
+
+213
+00:10:45,490 --> 00:10:49,820
+ karirnya sebagai keamanan komputer [TIDAK JELAS]. 
+
+214
+00:10:49,820 --> 00:10:53,280
+ Jadi dia sudah menulis sebagai Bob. 
+
+215
+00:10:53,280 --> 00:10:59,650
+ Keterhubungan adalah ketidakmampuan Eve untuk menghubungkan Alice 
+
+216
+00:10:59,650 --> 00:11:01,950
+ ke profil tertentu. 
+
+217
+00:11:01,950 --> 00:11:05,910
+ Final notion-- unobservability, beberapa sistem 
+
+218
+00:11:05,910 --> 00:11:12,540
+ mencoba untuk membuatnya tidak mungkin untuk mengatakan bahwa Alice sedang online, 
+
+219
+00:11:12,540 --> 00:11:15,620
+ bahwa Alice terhubung dengan siapa saja, bahwa Alice 
+
+220
+00:11:15,620 --> 00:11:17,190
+ sedang aktif melakukan apa pun. 
+
+221
+00:11:17,190 --> 00:11:20,660
+ Ini agak sulit untuk dibangun. 
+
+222
+00:11:20,660 --> 00:11:22,660
+ Saya akan berbicara sedikit tentang sejauh mana 
+
+223
+00:11:22,660 --> 00:11:25,650
+ bahwa mereka berguna nantinya. 
+
+224
+00:11:25,650 --> 00:11:27,610
+ Sesuatu yang berguna di area itu 
+
+225
+00:11:27,610 --> 00:11:29,745
+ Anda mungkin ingin menyembunyikan itu, Alice 
+
+226
+00:11:29,745 --> 00:11:32,240
+ menggunakan sistem anonimitas, tetapi tidak 
+
+227
+00:11:32,240 --> 00:11:33,630
+ bahwa dia ada di internet. 
+
+228
+00:11:33,630 --> 00:11:35,910
+ Itu lebih bisa dicapai daripada menyembunyikan fakta 
+
+229
+00:11:35,910 --> 00:11:39,070
+ bahwa Alice ada di internet sepenuhnya. 
+
+230
+00:11:39,070 --> 00:11:42,710
+ Jadi mengapa saya mulai mengerjakan ini di tempat pertama? 
+
+231
+00:11:42,710 --> 00:11:45,177
+ Yah, sebagian karena gatal insinyur. 
+
+232
+00:11:45,177 --> 00:11:46,010
+ Ini masalah keren. 
+
+233
+00:11:46,010 --> 00:11:47,870
+ Ini masalah yang menarik. 
+
+234
+00:11:47,870 --> 00:11:50,805
+ Tidak ada orang lain yang benar-benar mengerjakannya. 
+
+235
+00:11:50,805 --> 00:11:52,480
+ Dan teman saya Roger mendapat kontrak 
+
+236
+00:11:52,480 --> 00:11:56,940
+ untuk menyelesaikan proyek penelitian yang macet 
+
+237
+00:11:56,940 --> 00:11:58,490
+ sebelum hibah berakhir. 
+
+238
+00:11:58,490 --> 00:12:03,585
+ Dan dia melakukannya dengan cukup baik sehingga aku berkata, hei, aku akan bergabung. 
+
+239
+00:12:03,585 --> 00:12:05,200
+ Dan [TIDAK JELAS]. 
+
+240
+00:12:05,200 --> 00:12:06,720
+ Saya akan bergabung. 
+
+241
+00:12:06,720 --> 00:12:09,740
+ Setelah beberapa saat, kami membentuk lembaga nonprofit 
+
+242
+00:12:09,740 --> 00:12:13,310
+ dan merilis semuanya sebagai sumber terbuka. 
+
+243
+00:12:13,310 --> 00:12:14,870
+ Jadi itu bagian dari itu. 
+
+244
+00:12:14,870 --> 00:12:18,810
+ Tetapi untuk motivasi yang lebih dalam, saya pikir 
+
+245
+00:12:18,810 --> 00:12:21,800
+ manusia punya banyak masalah yang hanya bisa 
+
+246
+00:12:21,800 --> 00:12:25,760
+ dipecahkan dengan lebih baik dan lebih berdedikasi 
+
+247
+00:12:25,760 --> 00:12:30,530
+ komunikasi, ekspresi yang lebih bebas, dan lebih banyak kebebasan berpikir. 
+
+248
+00:12:30,530 --> 00:12:33,890
+ Dan saya tidak tahu bagaimana menyelesaikan masalah ini. 
+
+249
+00:12:33,890 --> 00:12:37,360
+ Yang saya pikir bisa saya lakukan adalah mencoba memastikan 
+
+250
+00:12:37,360 --> 00:12:40,880
+ bahwa apa yang saya lihat sebagai diskusi yang menghambat, 
+
+251
+00:12:40,880 --> 00:12:44,780
+ pikiran, ucapan, menjadi lebih sulit untuk dilakukan. 
+
+252
+00:12:44,780 --> 00:12:46,275
+ Jadi itu [TIDAK JELAS]. 
+
+253
+00:12:46,275 --> 00:12:47,188
+ Ya. 
+
+254
+00:12:47,188 --> 00:12:49,604
+ SISWA: Jadi saya tahu ada banyak alasan bagus untuk menggunakan Tor. 
+
+255
+00:12:49,604 --> 00:12:51,062
+ Tolong jangan anggap ini sebagai kritik. 
+
+256
+00:12:51,062 --> 00:12:53,036
+ Saya hanya ingin tahu, apa pendapat Anda 
+
+257
+00:12:53,036 --> 00:12:55,297
+ sejauh aktivitas kriminal? 
+
+258
+00:12:55,297 --> 00:12:57,630
+ NICK MATHEWSON: Apa pendapat saya tentang aktivitas kriminal? 
+
+259
+00:12:57,630 --> 00:12:58,430
+ Beberapa hukum baik. 
+
+260
+00:12:58,430 --> 00:12:59,532
+ Beberapa hukum buruk. 
+
+261
+00:12:59,532 --> 00:13:01,490
+ Pengacara saya akan memberi tahu saya untuk tidak menyarankan siapa pun 
+
+262
+00:13:01,490 --> 00:13:02,860
+ untuk melanggar hukum. 
+
+263
+00:13:02,860 --> 00:13:05,750
+
+
+264
+00:13:05,750 --> 00:13:08,253
+ Tujuan saya adalah untuk tidak memungkinkan kegiatan kriminal terhadap sebagian besar 
+
+265
+00:13:08,253 --> 00:13:10,550
+ hukum yang saya setujui. 
+
+266
+00:13:10,550 --> 00:13:13,140
+ Di tempat-tempat di mana mengkritik pemerintah adalah ilegal, 
+
+267
+00:13:13,140 --> 00:13:17,399
+ maka saya mendukung kegiatan kriminal semacam itu. 
+
+268
+00:13:17,399 --> 00:13:19,190
+ Jadi dalam hal ini, saya kira saya mendukung 
+
+269
+00:13:19,190 --> 00:13:21,330
+ kegiatan kriminal semacam itu. 
+
+270
+00:13:21,330 --> 00:13:24,946
+ Sikap saya pada apakah itu masalah anonimitas 
+
+271
+00:13:24,946 --> 00:13:26,570
+ jaringan digunakan untuk aktivitas kriminal 
+
+272
+00:13:26,570 --> 00:13:29,215
+ secara umum, sejauh ada hukum yang baik, 
+
+273
+00:13:29,215 --> 00:13:31,660
+ Saya lebih suka orang-orang tidak melanggarnya. 
+
+274
+00:13:31,660 --> 00:13:36,980
+ Saya akan, bagaimanapun, berpikir bahwa setiap sistem keamanan komputer itu 
+
+275
+00:13:36,980 --> 00:13:40,830
+ tidak terbiasa oleh penjahat mungkin komputer yang sangat buruk 
+
+276
+00:13:40,830 --> 00:13:43,720
+ sistem keamanan jika para penjahat itu 
+
+277
+00:13:43,720 --> 00:13:46,770
+ membuat kebijakan pengambilan keputusan yang baik. 
+
+278
+00:13:46,770 --> 00:13:49,820
+ Saya berpikir bahwa jika kita pergi sekitar melarang keamanan 
+
+279
+00:13:49,820 --> 00:13:54,619
+ yang berfungsi untuk kriminal, kita berakhir dengan sistem tidak aman. 
+
+280
+00:13:54,619 --> 00:13:56,410
+ Jadi itu kurang lebih di mana saya berdiri di atasnya. 
+
+281
+00:13:56,410 --> 00:13:58,284
+ Saya sebenarnya bukan filsufnya. 
+
+282
+00:13:58,284 --> 00:13:59,620
+ Saya lebih dari programmer. 
+
+283
+00:13:59,620 --> 00:14:01,760
+ Jadi saya akan memberikan jawaban yang benar-benar usang 
+
+284
+00:14:01,760 --> 00:14:03,362
+ pertanyaan filosofis dan hukum. 
+
+285
+00:14:03,362 --> 00:14:05,570
+ Juga, saya bukan seorang pengacara dan tidak dapat menawarkan nasihat hukum. 
+
+286
+00:14:05,570 --> 00:14:08,510
+ Jangan mengambil apapun yang saya katakan sebagai nasihat hukum. 
+
+287
+00:14:08,510 --> 00:14:14,464
+ Yang mengatakan, [TIDAK JELAS], banyak masalah penelitian ini 
+
+288
+00:14:14,464 --> 00:14:15,880
+ yang akan saya bicarakan 
+
+289
+00:14:15,880 --> 00:14:17,484
+ bahkan tidak hampir dipecahkan. 
+
+290
+00:14:17,484 --> 00:14:19,650
+ Jadi whey kita mulai saja, bukannya lurus 
+
+291
+00:14:19,650 --> 00:14:21,099
+ ke dalam penelitian? 
+
+292
+00:14:21,099 --> 00:14:23,140
+ Salah satu alasannya, kami berpikir bahwa banyak dari mereka 
+
+293
+00:14:23,140 --> 00:14:27,300
+ tidak akan terpecahkan kecuali ada test bed untuk dikerjakan. 
+
+294
+00:14:27,300 --> 00:14:29,250
+ Dan itu sudah dibuktikan. 
+
+295
+00:14:29,250 --> 00:14:33,590
+ Karena Tor telah menjadi semacam platform penelitian pilihan 
+
+296
+00:14:33,590 --> 00:14:36,530
+ untuk banyak pekerjaan pada sistem anonimitas latensi rendah. 
+
+297
+00:14:36,530 --> 00:14:38,580
+ Dan itu sangat membantu lapangan dengan cara itu. 
+
+298
+00:14:38,580 --> 00:14:41,120
+ Tetapi juga, 10 tahun kemudian, banyak masalah besar 
+
+299
+00:14:41,120 --> 00:14:42,650
+ masih belum terpecahkan. 
+
+300
+00:14:42,650 --> 00:14:45,740
+ Jadi, jika kita menunggu 10 tahun agar semuanya diperbaiki, 
+
+301
+00:14:45,740 --> 00:14:48,290
+ kita akan menunggu dengan sia-sia. 
+
+302
+00:14:48,290 --> 00:14:51,760
+ Lalu mengapa begitu? 
+
+303
+00:14:51,760 --> 00:14:58,740
+ Sebagian karena kami berpikir memiliki sistem di luar sana 
+
+304
+00:14:58,740 --> 00:15:03,041
+ akan meningkatkan hasil jangka panjang bagi dunia. 
+
+305
+00:15:03,041 --> 00:15:05,290
+ Yaitu, sangat mudah untuk mengatakan sesuatu itu 
+
+306
+00:15:05,290 --> 00:15:08,250
+ tidak ada harus dilarang. 
+
+307
+00:15:08,250 --> 00:15:10,440
+ Argumen terhadap penggunaan kriptografi sipil 
+
+308
+00:15:10,440 --> 00:15:13,230
+ jauh lebih mudah dibuat di depan umum pada tahun 1990 
+
+309
+00:15:13,230 --> 00:15:14,361
+ daripada hari ini. 
+
+310
+00:15:14,361 --> 00:15:15,860
+ Karena hampir tidak ada warga sipil 
+
+311
+00:15:15,860 --> 00:15:18,240
+ penggunaan kriptografi yang kuat. 
+
+312
+00:15:18,240 --> 00:15:23,050
+ Dan Anda bisa berpendapat bahwa jika ada yang lebih kuat dari DES 
+
+313
+00:15:23,050 --> 00:15:28,010
+ legal, maka peradaban akan runtuh. 
+
+314
+00:15:28,010 --> 00:15:34,900
+ Penjahat tidak akan pernah tertangkap, dan kejahatan terorganisir 
+
+315
+00:15:34,900 --> 00:15:36,525
+ akan mengambil alih segalanya. 
+
+316
+00:15:36,525 --> 00:15:38,150
+ Tetapi Anda tidak bisa benar-benar membantah hal itu 
+
+317
+00:15:38,150 --> 00:15:41,410
+ adalah konsekuensi tak terelakkan dari kriptografi pada tahun 2000. 
+
+318
+00:15:41,410 --> 00:15:43,440
+ Karena kriptografi sudah ada di luar sana, 
+
+319
+00:15:43,440 --> 00:15:46,160
+ dan ternyata tidak mengakhiri dunia. 
+
+320
+00:15:46,160 --> 00:15:49,420
+ Lebih jauh, lebih sulit untuk memperdebatkan larangan kriptografi pada tahun 2000 
+
+321
+00:15:49,420 --> 00:15:54,270
+ karena ada konstituensi besar yang mendukung 
+
+322
+00:15:54,270 --> 00:15:56,090
+ penggunaan kriptografi. 
+
+323
+00:15:56,090 --> 00:15:59,150
+ Artinya, jika seseorang pada tahun 1985 mengatakan, 
+
+324
+00:15:59,150 --> 00:16:01,630
+ mari kita melarang kriptografi yang kuat, yah, bank 
+
+325
+00:16:01,630 --> 00:16:02,880
+ menggunakan kriptografi yang kuat. 
+
+326
+00:16:02,880 --> 00:16:04,860
+ Jadi mereka akan meminta pengecualian. 
+
+327
+00:16:04,860 --> 00:16:05,580
+ Tapi selain itu, tidak ada 
+
+328
+00:16:05,580 --> 00:16:07,121
+ banyak pengguna kriptografi yang kuat 
+
+329
+00:16:07,121 --> 00:16:08,384
+ di ruang sipil. 
+
+330
+00:16:08,384 --> 00:16:09,800
+ Tetapi jika seseorang pada tahun 2000 berkata, mari 
+
+331
+00:16:09,800 --> 00:16:12,180
+ melarang kriptografi yang kuat, itu akan 
+
+332
+00:16:12,180 --> 00:16:14,900
+ menjadi setiap perusahaan internet. 
+
+333
+00:16:14,900 --> 00:16:18,885
+ Semua orang yang menjalankan halaman HTTPS akan mulai melambaikan tangan mereka 
+
+334
+00:16:18,885 --> 00:16:20,050
+ dan berteriak tentang itu. 
+
+335
+00:16:20,050 --> 00:16:21,690
+ Dan saat ini, larangan kriptografi yang kuat 
+
+336
+00:16:21,690 --> 00:16:24,610
+ mungkin tidak layak, meskipun orang 
+
+337
+00:16:24,610 --> 00:16:26,000
+ tetap membawa kembali ide itu. 
+
+338
+00:16:26,000 --> 00:16:27,470
+ Dan lagi, saya bukan filsuf 
+
+339
+00:16:27,470 --> 00:16:29,980
+ atau ilmuwan politik gerakan. 
+
+340
+00:16:29,980 --> 00:16:34,860
+ Jadi beberapa orang bertanya kepada saya, apa model ancaman Anda? 
+
+341
+00:16:34,860 --> 00:16:37,390
+ Adalah baik untuk berpikir dalam kerangka model ancaman. 
+
+342
+00:16:37,390 --> 00:16:40,280
+ Sayangnya, model ancaman kami agak aneh. 
+
+343
+00:16:40,280 --> 00:16:43,570
+ Kami mulai tidak dengan persyaratan musuh. 
+
+344
+00:16:43,570 --> 00:16:46,202
+ Tapi kami mulai dengan persyaratan kegunaan. 
+
+345
+00:16:46,202 --> 00:16:48,700
+ Persyaratan kegunaan yang kami berikan untuk memulai 
+
+346
+00:16:48,700 --> 00:16:52,395
+ ini, ini harus berguna untuk browsing web. 
+
+347
+00:16:52,395 --> 00:16:58,910
+ Ini harus berguna untuk protokol interaktif. 
+
+348
+00:16:58,910 --> 00:17:01,110
+ Dan itu sebenarnya perlu digunakan. 
+
+349
+00:17:01,110 --> 00:17:04,800
+ Tunduk pada itu, kami ingin memaksimalkan keamanan. 
+
+350
+00:17:04,800 --> 00:17:07,368
+ Jadi model ancaman kami memiliki banyak sudut aneh 
+
+351
+00:17:07,368 --> 00:17:10,049
+ di dalamnya jika Anda benar-benar menulisnya seperti, 
+
+352
+00:17:10,050 --> 00:17:13,410
+ apa yang bisa dilakukan penyerang, dalam situasi apa, dan bagaimana? 
+
+353
+00:17:13,410 --> 00:17:15,780
+ Dan itu karena kami telah menetapkan tujuan kami sendiri, 
+
+354
+00:17:15,780 --> 00:17:17,810
+ itu harus berfungsi untuk web. 
+
+355
+00:17:17,810 --> 00:17:20,443
+ Dan saya akan kembali ke itu dalam satu atau dua menit. 
+
+356
+00:17:20,443 --> 00:17:23,180
+ Tapi mari kita bicarakan sekarang bagaimana caranya 
+
+357
+00:17:23,180 --> 00:17:29,810
+ kita dapat menggunakan anonimitas ke depan, bagaimana kita membangun anonimitas. 
+
+358
+00:17:29,810 --> 00:17:32,580
+ Jadi, inilah Alice. 
+
+359
+00:17:32,580 --> 00:17:35,890
+ Dia ingin membeli kaus kaki. 
+
+360
+00:17:35,890 --> 00:17:42,170
+ Jadi OK, katakanlah bahwa Alice menjalankan komputer. 
+
+361
+00:17:42,170 --> 00:17:43,820
+ Sebut saja R untuk relay. 
+
+362
+00:17:43,820 --> 00:17:47,670
+ Dan komputer ini mengirimkan trafiknya ke-- I 
+
+363
+00:17:47,670 --> 00:17:50,600
+ ingin mengatakan socks.com, tapi aku takut itu akan 
+
+364
+00:17:50,600 --> 00:17:53,690
+ berubah menjadi sesuatu yang mengerikan, jadi zappos.com. 
+
+365
+00:17:53,690 --> 00:17:55,000
+ Ya, mereka juga menjual kaus kaki. 
+
+366
+00:17:55,000 --> 00:17:58,470
+ Baiklah, jadi Alice ingin membeli beberapa kaus kaki dari zappos.com. 
+
+367
+00:17:58,470 --> 00:18:00,930
+ Dan dia melalui relay. 
+
+368
+00:18:00,930 --> 00:18:04,530
+ Yah, aku berkata Alice menjalankan relay. 
+
+369
+00:18:04,530 --> 00:18:07,910
+ Setiap penguping siapa yang melihat ini akan berkata, 
+
+370
+00:18:07,910 --> 00:18:09,240
+ itu komputer Alice. 
+
+371
+00:18:09,240 --> 00:18:11,097
+ Itu mungkin Alice. 
+
+372
+00:18:11,097 --> 00:18:13,180
+ Baiklah, jadi biarkan orang lain menjalankan relai 
+
+373
+00:18:13,180 --> 00:18:17,340
+ dan memiliki banyak pengguna lain yang mengunjunginya. 
+
+374
+00:18:17,340 --> 00:18:20,200
+ Saya akan memanggil mereka A2 dan A3, karena di sana 
+
+375
+00:18:20,200 --> 00:18:26,720
+ tidak cukup nama orang kriptografi standar-- beli 
+
+376
+00:18:26,720 --> 00:18:34,332
+ buku, gambar kucing tweet. 
+
+377
+00:18:34,332 --> 00:18:37,600
+
+
+378
+00:18:37,600 --> 00:18:42,670
+ Ini seperti 80% dari apa yang dilakukan orang di internet, bukan? 
+
+379
+00:18:42,670 --> 00:18:46,650
+ Jadi sekarang kami memiliki tiga orang yang semuanya masuk ke dalam relai ini, tiga 
+
+380
+00:18:46,650 --> 00:18:47,600
+ aliran keluar. 
+
+381
+00:18:47,600 --> 00:18:51,090
+ Seseorang yang menonton relay tidak bisa dengan mudah berkorelasi-- 
+
+382
+00:18:51,090 --> 00:18:54,290
+ seharusnya tidak, kami berharap, tapi kami kembali ke itu nanti-- 
+
+383
+00:18:54,290 --> 00:18:58,300
+ bahwa Alice ini membeli kaos kaki, Alice ini, membeli buku, 
+
+384
+00:18:58,300 --> 00:19:00,860
+ Alice ini sedang men-tweet kucing pix. 
+
+385
+00:19:00,860 --> 00:19:06,090
+ Yah, kecuali jika mereka mengawasi sisi koneksi ini, 
+
+386
+00:19:06,090 --> 00:19:08,530
+ mereka bisa melihat Alice menceritakan estafet, 
+
+387
+00:19:08,530 --> 00:19:10,554
+ tolong hubungkan saya ke zappos.com. 
+
+388
+00:19:10,554 --> 00:19:12,220
+ Baiklah, jadi kami akan menambahkan beberapa enkripsi. 
+
+389
+00:19:12,220 --> 00:19:15,200
+ Kami mungkin akan melakukan TLS di semua tautan ini. 
+
+390
+00:19:15,200 --> 00:19:18,015
+ Jadi sejauh Anda tidak dapat membatalkan TLS, sampai taraf tertentu 
+
+391
+00:19:18,015 --> 00:19:20,200
+ Anda tidak dapat menghubungkan ini dengan ini, 
+
+392
+00:19:20,200 --> 00:19:22,630
+ lalu mereka mendapatkan privasi. 
+
+393
+00:19:22,630 --> 00:19:25,830
+ Yah, itu masih belum cukup bagus. 
+
+394
+00:19:25,830 --> 00:19:31,040
+ Karena off pertama, kami mengasumsikan bahwa relay ini 
+
+395
+00:19:31,040 --> 00:19:32,619
+ sepenuhnya dipercaya. 
+
+396
+00:19:32,619 --> 00:19:34,410
+ Saya berasumsi Anda tahu definisi tepercaya 
+
+397
+00:19:34,410 --> 00:19:36,460
+ dan mengapa itu tidak berarti dipercaya. 
+
+398
+00:19:36,460 --> 00:19:37,940
+ Oke bagus. 
+
+399
+00:19:37,940 --> 00:19:39,440
+ Ini dipercaya dalam arti bahwa itu 
+
+400
+00:19:39,440 --> 00:19:41,720
+ dapat merusak seluruh sistem, dipercaya dalam arti 
+
+401
+00:19:41,720 --> 00:19:44,845
+ bahwa Anda tidak bisa tidak mempercayainya, tidak dipercaya dalam arti 
+
+402
+00:19:44,845 --> 00:19:46,620
+ bahwa itu sebenarnya dapat dipercaya. 
+
+403
+00:19:46,620 --> 00:19:49,720
+ Jadi baiklah, kita bisa memperkenalkan beberapa relay. 
+
+404
+00:19:49,720 --> 00:19:53,410
+ Kami dapat memiliki relay yang berbeda yang dijalankan oleh orang yang berbeda. 
+
+405
+00:19:53,410 --> 00:20:00,120
+ Kita dapat memiliki - ini sebenarnya bukan topologi yang kita gunakan. 
+
+406
+00:20:00,120 --> 00:20:01,885
+ Tapi teknik papan tulis saya sangat buruk, 
+
+407
+00:20:01,885 --> 00:20:04,225
+ dan saya tidak ingin menggambar ulang apa pun. 
+
+408
+00:20:04,225 --> 00:20:07,190
+
+
+409
+00:20:07,190 --> 00:20:09,720
+ Kita bisa membayangkan jatuh hubungan ini 
+
+410
+00:20:09,720 --> 00:20:11,680
+ melalui beberapa relay, masing-masing 
+
+411
+00:20:11,680 --> 00:20:14,170
+ menghapus satu lapisan enkripsi. 
+
+412
+00:20:14,170 --> 00:20:19,770
+ Jadi, semua yang dilihat relay ini adalah Alice melakukan sesuatu. 
+
+413
+00:20:19,770 --> 00:20:23,610
+ Semua estafet ini melihat seseorang membeli kaos kaki. 
+
+414
+00:20:23,610 --> 00:20:26,240
+ Tapi yang ini hanya melihat seseorang membeli kaos kaki. 
+
+415
+00:20:26,240 --> 00:20:28,562
+ Koneksi berasal dari relay ini. 
+
+416
+00:20:28,562 --> 00:20:30,395
+ Yang ini hanya melihat Alice melakukan sesuatu, 
+
+417
+00:20:30,395 --> 00:20:32,320
+ dan meneruskannya ke relai ini. 
+
+418
+00:20:32,320 --> 00:20:35,505
+ Dan tidak ada satu pihak pun yang harus bisa berkorelasi 
+
+419
+00:20:35,505 --> 00:20:37,450
+ secara garis besar. 
+
+420
+00:20:37,450 --> 00:20:42,780
+ Sekarang kita sampai pada titik desain utama. 
+
+421
+00:20:42,780 --> 00:20:50,090
+ Anggaplah bahwa Hawa sedang menonton di sini dan di sini. 
+
+422
+00:20:50,090 --> 00:20:52,250
+ Tidak ada yang saya katakan sejauh ini melakukan apa pun 
+
+423
+00:20:52,250 --> 00:20:57,860
+ untuk mengaburkan waktu dan volume paket Alice. 
+
+424
+00:20:57,860 --> 00:21:01,140
+ Oh tentu, akan ada suara sepele 
+
+425
+00:21:01,140 --> 00:21:03,690
+ ditambahkan dari semua perhitungan dan dekripsi 
+
+426
+00:21:03,690 --> 00:21:06,220
+ hal-hal ini dilakukan dari latensi jaringan dan sebagainya. 
+
+427
+00:21:06,220 --> 00:21:11,600
+ Tapi akhirnya, jika Alice mengirim kilobyte ke dalamnya, 
+
+428
+00:21:11,600 --> 00:21:13,500
+ maka desain yang telah saya sketsa sejauh ini, 
+
+429
+00:21:13,500 --> 00:21:16,315
+ satu kilobyte keluar. 
+
+430
+00:21:16,315 --> 00:21:21,650
+ Dan jika halaman web kaus kaki panjangnya 64k, 
+
+431
+00:21:21,650 --> 00:21:26,340
+ dan dilayani oleh server web ini pada 11:26, 
+
+432
+00:21:26,340 --> 00:21:27,870
+ maka Alice akan mendapatkan sesuatu 
+
+433
+00:21:27,870 --> 00:21:33,460
+ sekitar 64k panjang pada 11:26 atau 11:27 atau lebih. 
+
+434
+00:21:33,460 --> 00:21:38,400
+ Sekarang, dengan beberapa statistik, Hawa bisa 
+
+435
+00:21:38,400 --> 00:21:42,540
+ menghubungkan beberapa aliran ini jika kita tidak mengaburkan 
+
+436
+00:21:42,540 --> 00:21:44,726
+ informasi volume dan waktu. 
+
+437
+00:21:44,726 --> 00:21:46,850
+ Ada desain yang tidak mengaburkan volume dan waktu 
+
+438
+00:21:46,850 --> 00:21:48,190
+ informasi. 
+
+439
+00:21:48,190 --> 00:21:52,230
+ Yang bagus biasanya keluar dari [TIDAK JELAS], 
+
+440
+00:21:52,230 --> 00:21:55,140
+ meskipun ada beberapa pekerjaan di DC-jaring. 
+
+441
+00:21:55,140 --> 00:21:58,040
+ Anda bisa memiliki sesuatu di mana masing-masing node ini 
+
+442
+00:21:58,040 --> 00:22:00,600
+ menerima banyak permintaan, cukup [tidak terdengar] 
+
+443
+00:22:00,600 --> 00:22:03,030
+ semua permintaan yang mereka dapatkan selama satu jam, 
+
+444
+00:22:03,030 --> 00:22:06,970
+ mengatur ulang mereka, dan mengirimkannya sekaligus. 
+
+445
+00:22:06,970 --> 00:22:10,260
+ Dan Anda juga bisa mengatakan semua permintaan harus berukuran sama. 
+
+446
+00:22:10,260 --> 00:22:13,670
+ Permintaan adalah 1k, responsnya 1 megabyte. 
+
+447
+00:22:13,670 --> 00:22:15,680
+ Dan dengan lebih banyak lagi bekerja untuk itu, kami 
+
+448
+00:22:15,680 --> 00:22:22,440
+ dapatkan sesuatu yang akan membiarkan Anda mengirim email yang akan tiba 
+
+449
+00:22:22,440 --> 00:22:29,220
+ dalam urutan jam, atau mendapatkan halaman web untuk mengakhiri waktu, 
+
+450
+00:22:29,220 --> 00:22:32,610
+ dengan asumsi bahwa Anda mengoptimalkannya ke satu putaran perjalanan. 
+
+451
+00:22:32,610 --> 00:22:36,500
+ Sistem ini ada, dan ada ketika kita mulai melakukan Tor. 
+
+452
+00:22:36,500 --> 00:22:38,675
+ Mereka tidak banyak berguna. 
+
+453
+00:22:38,675 --> 00:22:40,740
+ Saya sebenarnya menulis satu yang disebut Mixminion 
+
+454
+00:22:40,740 --> 00:22:44,010
+ itu adalah pengganti remailer Mixmaster. 
+
+455
+00:22:44,010 --> 00:22:46,510
+ Saya belum mendapatkan pesan remailer dalam tiga terakhir 
+
+456
+00:22:46,510 --> 00:22:47,010
+ tahun. 
+
+457
+00:22:47,010 --> 00:22:49,620
+
+
+458
+00:22:49,620 --> 00:22:51,350
+ Tor memiliki miliaran pengguna. 
+
+459
+00:22:51,350 --> 00:22:54,293
+ Remailers, tidak jelas apakah mereka punya lebih dari itu 
+
+460
+00:22:54,293 --> 00:22:55,477
+ di urutan ratusan. 
+
+461
+00:22:55,477 --> 00:22:57,310
+ Jadi Anda mungkin berpikir, baik, meski masih, itu 
+
+462
+00:22:57,310 --> 00:22:59,830
+ anonimitas yang lebih baik untuk orang-orang yang sangat membutuhkannya. 
+
+463
+00:22:59,830 --> 00:23:03,120
+ Kecuali jika Anda hanya memesan ratusan pengguna, 
+
+464
+00:23:03,120 --> 00:23:05,655
+ maka Anda tidak benar-benar menyediakannya 
+
+465
+00:23:05,655 --> 00:23:08,630
+ begitu banyak yang tidak disebutkan identitasnya terhadap musuh semacam ini. 
+
+466
+00:23:08,630 --> 00:23:10,260
+ Karena musuh ini bisa pergi begitu saja, 
+
+467
+00:23:10,260 --> 00:23:12,250
+ Oke, ada 100 orang. 
+
+468
+00:23:12,250 --> 00:23:14,080
+ Pesan yang ingin saya selidiki 
+
+469
+00:23:14,080 --> 00:23:15,630
+ sedang melihat situs web Bulgaria. 
+
+470
+00:23:15,630 --> 00:23:17,040
+ Berapa banyak dari mereka yang berbicara bahasa Bulgaria? 
+
+471
+00:23:17,040 --> 00:23:20,170
+ OK, itu lima. 
+
+472
+00:23:20,170 --> 00:23:22,950
+ Pepatahnya, anonimitas mencintai perusahaan. 
+
+473
+00:23:22,950 --> 00:23:25,615
+ Kecuali Anda memiliki basis pengguna yang besar, 
+
+474
+00:23:25,615 --> 00:23:28,230
+ tidak ada sistem yang benar-benar dapat memberikan anonimitas. 
+
+475
+00:23:28,230 --> 00:23:31,970
+ Dan itulah mengapa juga dalam desain ini, jika semua Alices ini 
+
+476
+00:23:31,970 --> 00:23:33,770
+ milik organisasi, mereka seharusnya 
+
+477
+00:23:33,770 --> 00:23:38,830
+ untuk memiliki sistem publik bersama daripada sistem privat. 
+
+478
+00:23:38,830 --> 00:23:45,130
+ Jika mereka semua bekerja untuk MIT legal, dan mereka 
+
+479
+00:23:45,130 --> 00:23:50,120
+ menyelidiki beberapa situs web MIT palsu itu 
+
+480
+00:23:50,120 --> 00:23:54,663
+ menawarkan ijazah palsu, kemudian jika mereka adil 
+
+481
+00:23:54,663 --> 00:23:58,800
+ menggunakan anonimis hukum MIT, maka itu tidak benar 
+
+482
+00:23:58,800 --> 00:24:00,370
+ menyembunyikan siapa mereka. 
+
+483
+00:24:00,370 --> 00:24:02,495
+ Tetapi jika Anda memiliki sejumlah besar pihak yang berbeda 
+
+484
+00:24:02,495 --> 00:24:06,590
+ semua menggunakan ini, maka sebenarnya bisa memberikan privasi. 
+
+485
+00:24:06,590 --> 00:24:13,830
+ Jadi kita akan kembali sekali lagi untuk menolak korelasi ini 
+
+486
+00:24:13,830 --> 00:24:14,330
+ serangan. 
+
+487
+00:24:14,330 --> 00:24:16,996
+ Tetapi untuk sekarang mari kita katakan bahwa kita tidak melawan korelasi ini 
+
+488
+00:24:16,996 --> 00:24:17,720
+ serangan. 
+
+489
+00:24:17,720 --> 00:24:23,070
+ Dan sebagai gantinya, kami berasumsi bahwa seorang penyerang yang melihat kedua ujungnya 
+
+490
+00:24:23,070 --> 00:24:25,850
+ menang, dan kami mencoba meminimalkan kemungkinan 
+
+491
+00:24:25,850 --> 00:24:28,220
+ bahwa itu terjadi seiring waktu. 
+
+492
+00:24:28,220 --> 00:24:31,150
+ Baiklah, jadi saya baru saja membicarakan tentang pengiriman pesan. 
+
+493
+00:24:31,150 --> 00:24:35,464
+
+
+494
+00:24:35,464 --> 00:24:37,880
+ Cara Anda membangunnya dengan sesuatu seperti jaring campuran 
+
+495
+00:24:37,880 --> 00:24:45,630
+ adalah Anda memberikan masing-masing relay ini kunci publik - K3, K2, K1. 
+
+496
+00:24:45,630 --> 00:24:48,480
+ Dan ketika Alice ingin mengirim sesuatu lewat sini, 
+
+497
+00:24:48,480 --> 00:24:55,110
+ dia akan mengatakan, mengenkripsi dengan K3, kaus kaki, 
+
+498
+00:24:55,110 --> 00:24:59,350
+ dan kemudian mengenkripsi itu dengan K2-- aku 
+
+499
+00:24:59,350 --> 00:25:01,430
+ meninggalkan menulis informasi untuk sekarang-- 
+
+500
+00:25:01,430 --> 00:25:04,320
+ dan kemudian mengenkripsi dengan K1. 
+
+501
+00:25:04,320 --> 00:25:05,894
+ Tetapi kunci publik, seperti yang Anda tahu, baik 
+
+502
+00:25:05,894 --> 00:25:08,310
+ cukup mahal sehingga Anda tidak ingin menggunakannya untuk massal 
+
+503
+00:25:08,310 --> 00:25:10,000
+ lalu lintas. 
+
+504
+00:25:10,000 --> 00:25:17,610
+ Jadi, sebaliknya yang Anda lakukan adalah bernegosiasi 
+
+505
+00:25:17,610 --> 00:25:20,110
+ satu set kunci dengan masing-masing server. 
+
+506
+00:25:20,110 --> 00:25:23,350
+ Jadi Alice berbagi kunci simetrik dengan relay ini, 
+
+507
+00:25:23,350 --> 00:25:25,100
+ kunci simetrik yang berbeda dengan relai ini, 
+
+508
+00:25:25,100 --> 00:25:28,395
+ dan kunci simetrik yang berbeda dengan relai ini terkait 
+
+509
+00:25:28,395 --> 00:25:32,110
+ dalam apa yang kita sebut sirkuit, yang merupakan jalur melalui jaringan. 
+
+510
+00:25:32,110 --> 00:25:38,677
+ Dan setelah kunci publik awal disiapkan untuk membuat kunci tersebut, 
+
+511
+00:25:38,677 --> 00:25:40,135
+ Alice kemudian dapat menggunakan crypto simetris 
+
+512
+00:25:40,135 --> 00:25:41,551
+ untuk mengirim barang melalui jaringan. 
+
+513
+00:25:41,551 --> 00:25:43,920
+ Jika Anda berhenti pada titik itu, maka Anda 
+
+514
+00:25:43,920 --> 00:25:47,250
+ memiliki routing bawang seperti yang dirancang pada 1990-an 
+
+515
+00:25:47,250 --> 00:25:51,955
+ oleh Syverson, Goldschlag, dan Reed. 
+
+516
+00:25:51,955 --> 00:25:54,811
+ Dan saya harap saya mendapatkan nama yang tepat. 
+
+517
+00:25:54,811 --> 00:25:56,060
+ Paul Syverson masih aktif. 
+
+518
+00:25:56,060 --> 00:25:59,210
+ Dua lainnya sedang mengerjakan hal-hal lain. 
+
+519
+00:25:59,210 --> 00:26:03,390
+ Juga, setelah Anda menambahkan sirkuit seperti itu, jalur jangka menengah 
+
+520
+00:26:03,390 --> 00:26:06,910
+ melalui jaringan, Anda dapat memiliki saluran balasan yang mudah 
+
+521
+00:26:06,910 --> 00:26:09,310
+ di mana hal-hal dikirim kembali dengan cara ini 
+
+522
+00:26:09,310 --> 00:26:13,155
+ untuk Alice yang dienkripsi pada setiap langkah, bukannya didekripsi 
+
+523
+00:26:13,155 --> 00:26:15,770
+ di setiap langkah. 
+
+524
+00:26:15,770 --> 00:26:21,660
+ Dan tentu saja Anda membutuhkan semacam pengecekan integritas, 
+
+525
+00:26:21,660 --> 00:26:24,430
+ node baik dengan node atau ujung ke ujung. 
+
+526
+00:26:24,430 --> 00:26:26,280
+ Karena jika Anda tidak melakukan pengecekan integritas, 
+
+527
+00:26:26,280 --> 00:26:31,855
+ then-- baik, katakanlah Anda menggunakan aliran berbasis XOR 
+
+528
+00:26:31,855 --> 00:26:33,622
+ nol untuk enkripsi Anda. 
+
+529
+00:26:33,622 --> 00:26:35,080
+ Jika Anda tidak melakukan pengecekan integritas, 
+
+530
+00:26:35,080 --> 00:26:39,230
+ maka simpul ini dapat XOR di Alice, Alice, Alice, Alice, 
+
+531
+00:26:39,230 --> 00:26:42,410
+ Alice ke pesan terenkripsi. 
+
+532
+00:26:42,410 --> 00:26:44,970
+ Dan kemudian ketika akhirnya didekripsi di sini, 
+
+533
+00:26:44,970 --> 00:26:47,310
+ karena itu crypto lunak 
+
+534
+00:26:47,310 --> 00:26:56,410
+ skema, jika penyerang yang sama mengendalikan node ini juga, 
+
+535
+00:26:56,410 --> 00:26:58,970
+ atau jika penyerang memperhatikannya di sini, 
+
+536
+00:26:58,970 --> 00:27:01,870
+ penyerang akan melihat Alice, Alice, Alice, Alice, Alice 
+
+537
+00:27:01,870 --> 00:27:03,820
+ Di-XOR dengan teks biasa yang masuk akal 
+
+538
+00:27:03,820 --> 00:27:05,320
+ dan dapat menggunakannya untuk mengidentifikasi, 
+
+539
+00:27:05,320 --> 00:27:08,580
+ ah, ini adalah aliran yang berasal dari Alice. 
+
+540
+00:27:08,580 --> 00:27:12,370
+ Jadi mari kita lakukan sedikit lebih banyak tentang bagaimana protokol bekerja. 
+
+541
+00:27:12,370 --> 00:27:14,870
+ Karena itu akan memalukan jika semua orang membaca koran 
+
+542
+00:27:14,870 --> 00:27:16,245
+ dan kemudian tidak berbicara tentang hal-hal itu 
+
+543
+00:27:16,245 --> 00:27:17,680
+ bahwa makalah difokuskan. 
+
+544
+00:27:17,680 --> 00:27:24,011
+
+
+545
+00:27:24,011 --> 00:27:26,840
+ Sekali lagi, saya minta maaf untuk teknik papan tulis saya. 
+
+546
+00:27:26,840 --> 00:27:32,120
+ Sebagian besar waktu, saya duduk di rumah di desktop. 
+
+547
+00:27:32,120 --> 00:27:35,385
+ Ini adalah teknologi alien. 
+
+548
+00:27:35,385 --> 00:27:38,315
+ Jadi, inilah estafet. 
+
+549
+00:27:38,315 --> 00:27:41,580
+ Ini Alice. 
+
+550
+00:27:41,580 --> 00:27:43,610
+ Inilah estafet lain. 
+
+551
+00:27:43,610 --> 00:27:44,270
+ Ini Bob. 
+
+552
+00:27:44,270 --> 00:27:45,843
+ Sekarang Alice ingin berbicara dengan Bob. 
+
+553
+00:27:45,843 --> 00:27:48,460
+
+
+554
+00:27:48,460 --> 00:27:52,720
+ Jadi hal pertama yang Alice harus lakukan adalah membangun sirkuit 
+
+555
+00:27:52,720 --> 00:27:55,210
+ melalui relai ini ke Bob. 
+
+556
+00:27:55,210 --> 00:27:57,130
+ Katakanlah dia memilih keduanya, R1 dan R2. 
+
+557
+00:27:57,130 --> 00:27:59,900
+
+
+558
+00:27:59,900 --> 00:28:08,050
+ Jadi Alice pertama membuat tautan TLS ke R1. 
+
+559
+00:28:08,050 --> 00:28:10,660
+ R1, katakanlah, sudah memiliki tautan TLS ke R2. 
+
+560
+00:28:10,660 --> 00:28:13,550
+
+
+561
+00:28:13,550 --> 00:28:16,335
+ Hal pertama yang Alice lakukan adalah dia melakukannya 
+
+562
+00:28:16,335 --> 00:28:25,250
+ satu arah negosiasi kunci anonim satu arah yang dikonfirmasi. 
+
+563
+00:28:25,250 --> 00:28:28,340
+ Yang lama di Tor disebut TAP. 
+
+564
+00:28:28,340 --> 00:28:30,280
+ Yang baru disebut NTor. 
+
+565
+00:28:30,280 --> 00:28:31,980
+ Mereka berdua punya bukti. 
+
+566
+00:28:31,980 --> 00:28:35,032
+
+
+567
+00:28:35,032 --> 00:28:36,490
+ Mereka berdua bahkan memiliki bukti yang benar, 
+
+568
+00:28:36,490 --> 00:28:41,540
+ meskipun bukti asli di koran memiliki cacat di dalamnya. 
+
+569
+00:28:41,540 --> 00:28:45,780
+ Tapi ketika itu selesai, dia mengirim sel buat. 
+
+570
+00:28:45,780 --> 00:28:47,690
+ Dan dia memilih ID sirkuit. 
+
+571
+00:28:47,690 --> 00:28:52,023
+ Katakanlah dia memilih 3, dan berkata, buat 3. 
+
+572
+00:28:52,023 --> 00:28:54,650
+
+
+573
+00:28:54,650 --> 00:28:55,650
+ Kata relay, dibuat. 
+
+574
+00:28:55,650 --> 00:29:00,010
+
+
+575
+00:29:00,010 --> 00:29:05,575
+ Dan sekarang R1 dan Alice berbagi kunci rahasia, kunci simetrik, 
+
+576
+00:29:05,575 --> 00:29:06,866
+ yang akan mereka sebut S1. 
+
+577
+00:29:06,866 --> 00:29:10,280
+
+
+578
+00:29:10,280 --> 00:29:16,234
+ Dan mereka berdua memiliki ini disimpan sebagai 3 sehubungan dengan tautan ini. 
+
+579
+00:29:16,234 --> 00:29:19,020
+
+
+580
+00:29:19,020 --> 00:29:23,810
+ Sekarang Alice dapat menggunakan kunci itu untuk mengirim pesan ke R1. 
+
+581
+00:29:23,810 --> 00:29:27,265
+ Jadi katanya, pada 3-- itulah ID sirkuit yang semuanya 
+
+582
+00:29:27,265 --> 00:29:38,760
+ sedang berbicara tentang di koran-- mengirim relay memperpanjang 
+
+583
+00:29:38,760 --> 00:29:41,210
+ dengan beberapa konten. 
+
+584
+00:29:41,210 --> 00:29:44,326
+ Sel memperpanjang pada dasarnya berisi paruh pertama 
+
+585
+00:29:44,326 --> 00:29:47,130
+ dari jabat tangan buat. 
+
+586
+00:29:47,130 --> 00:29:50,965
+ Tapi kali ini, itu tidak dienkripsi dengan kunci publik R1. 
+
+587
+00:29:50,965 --> 00:29:53,070
+ Ini dienkripsi dengan kunci publik R2. 
+
+588
+00:29:53,070 --> 00:29:56,130
+ Dan itu juga mengatakan, dan ini pergi ke R2. 
+
+589
+00:29:56,130 --> 00:30:01,941
+ Jadi R1 tahu untuk membuka rangkaian baru ke R2, dan berkata, 
+
+590
+00:30:01,941 --> 00:30:02,440
+ membuat. 
+
+591
+00:30:02,440 --> 00:30:05,770
+
+
+592
+00:30:05,770 --> 00:30:09,480
+ Dan melewati bagian awal jabat tangan 
+
+593
+00:30:09,480 --> 00:30:12,120
+ karena berasal dari Alice bersama. 
+
+594
+00:30:12,120 --> 00:30:14,550
+ Dan itu mengambil ID sirkuitnya sendiri. 
+
+595
+00:30:14,550 --> 00:30:17,185
+ Karena ID sirkuit mengidentifikasi sirkuit yang berbeda 
+
+596
+00:30:17,185 --> 00:30:19,122
+ pada koneksi TLS ini. 
+
+597
+00:30:19,122 --> 00:30:20,830
+ Dan Alice tidak tahu sirkuit apa lagi 
+
+598
+00:30:20,830 --> 00:30:22,120
+ ID sedang digunakan untuk yang satu ini. 
+
+599
+00:30:22,120 --> 00:30:24,390
+ Karena yang satu ini bersifat pribadi ke R1 dan R2. 
+
+600
+00:30:24,390 --> 00:30:28,270
+ Jadi mungkin memilih 95. 
+
+601
+00:30:28,270 --> 00:30:30,020
+ Sebenarnya sangat tidak mungkin untuk memilih itu, 
+
+602
+00:30:30,020 --> 00:30:36,270
+ karena mereka dipilih secara acak dari ruang 4 byte. 
+
+603
+00:30:36,270 --> 00:30:40,780
+ Tapi saya tidak ingin menulis nomor 32-bit hari ini. 
+
+604
+00:30:40,780 --> 00:30:43,975
+ Dan ini mengatakan, diciptakan sebagai tanggapan. 
+
+605
+00:30:43,975 --> 00:30:48,590
+ Jadi yang satu ini mengirim kembali terenkripsi diperpanjang dengan S1. 
+
+606
+00:30:48,590 --> 00:30:58,480
+ Dan sekarang Alice dan relay berbagi S2. 
+
+607
+00:30:58,480 --> 00:31:01,050
+ Jadi sekarang Alice dapat mengirim pesan yang dienkripsi 
+
+608
+00:31:01,050 --> 00:31:06,480
+ pertama dengan S2, dan kemudian dengan S1 sebagai sel relai. 
+
+609
+00:31:06,480 --> 00:31:08,000
+ Jadi dia mengirim pesan seperti itu. 
+
+610
+00:31:08,000 --> 00:31:12,960
+ R1 menghapus enkripsi S1 dan meneruskannya. 
+
+611
+00:31:12,960 --> 00:31:17,750
+ Ia mengatakan, OK, itu masuk di sirkuit 3. 
+
+612
+00:31:17,750 --> 00:31:20,370
+ Saya tahu bahwa 3 sampai 95 untuk yang satu ini. 
+
+613
+00:31:20,370 --> 00:31:23,075
+ Jadi saya mengirimkannya pada 95. 
+
+614
+00:31:23,075 --> 00:31:25,852
+ Dan saya mengatakan apa pun yang saya dapatkan setelah mendekripsi. 
+
+615
+00:31:25,852 --> 00:31:28,980
+ Oke, dan yang ini bilang, ah, saya datang di 95. 
+
+616
+00:31:28,980 --> 00:31:33,290
+ 95 sesuai dengan kunci bersama S2. 
+
+617
+00:31:33,290 --> 00:31:34,740
+ Jadi saya akan mendekripsi dengan itu. 
+
+618
+00:31:34,740 --> 00:31:38,340
+ Oh, itu artinya, buka koneksi ke Bob. 
+
+619
+00:31:38,340 --> 00:31:41,650
+ Dan relay 2 membuka koneksi TCP ke Bob 
+
+620
+00:31:41,650 --> 00:31:45,270
+ dan memberi tahu Alice bahwa itu berhasil melalui proses yang sama. 
+
+621
+00:31:45,270 --> 00:31:47,150
+ Dan Alice berkata, bagus. 
+
+622
+00:31:47,150 --> 00:31:58,440
+ Beri tahu Bob http 10, dapatkan / index.html, dan dunia terus berjalan. 
+
+623
+00:31:58,440 --> 00:32:00,120
+ Mari kita lihat, apa yang saya tinggalkan? 
+
+624
+00:32:00,120 --> 00:32:03,040
+ Saya akan lewati itu, lewati itu, lewati itu. 
+
+625
+00:32:03,040 --> 00:32:04,930
+ Jadi apa yang sebenarnya kita sampaikan? 
+
+626
+00:32:04,930 --> 00:32:07,210
+ Beberapa desain di bidang ini mengatakan, Anda seharusnya 
+
+627
+00:32:07,210 --> 00:32:08,980
+ kirim paket IP bolak-balik. 
+
+628
+00:32:08,980 --> 00:32:12,006
+ Ini seharusnya hanya menjadi cara untuk mengirimkan paket IP. 
+
+629
+00:32:12,006 --> 00:32:15,980
+ Salah satu masalah dengan itu adalah kita 
+
+630
+00:32:15,980 --> 00:32:19,070
+ ingin mendukung sebanyak mungkin pengguna, yang 
+
+631
+00:32:19,070 --> 00:32:21,580
+ berarti kita harus menjalankan semua jenis sistem operasi. 
+
+632
+00:32:21,580 --> 00:32:23,920
+ Dan sistem operasi tumpukan TCP tidak 
+
+633
+00:32:23,920 --> 00:32:26,020
+ bertindak seperti satu sama lain. 
+
+634
+00:32:26,020 --> 00:32:27,960
+ Jika Anda pernah menggunakan Nmap, atau jika Anda pernah melakukannya 
+
+635
+00:32:27,960 --> 00:32:30,610
+ menggunakan segala jenis alat analisis lalu lintas jaringan, 
+
+636
+00:32:30,610 --> 00:32:34,635
+ Anda dapat dengan mudah mengatakan Windows TCP dari FreeBSD 
+
+637
+00:32:34,635 --> 00:32:36,880
+ dari Linux TCP. 
+
+638
+00:32:36,880 --> 00:32:38,990
+ Dan Anda bahkan dapat membedakan versi yang berbeda. 
+
+639
+00:32:38,990 --> 00:32:41,870
+ Dan terlebih lagi, jika Anda dapat mengirim paket IP mentah 
+
+640
+00:32:41,870 --> 00:32:45,560
+ ke host yang dipilih, Anda dapat memprovokasi 
+
+641
+00:32:45,560 --> 00:32:49,810
+ tanggapan berbeda berdasarkan bagian 
+
+642
+00:32:49,810 --> 00:32:51,637
+ tentang apa yang dilakukan tuan rumah. 
+
+643
+00:32:51,637 --> 00:32:53,458
+ Jadi jika Anda melakukan IP, Anda akan benar-benar 
+
+644
+00:32:53,458 --> 00:32:55,900
+ membutuhkan lapisan normalisasi IP jika IP adalah apa 
+
+645
+00:32:55,900 --> 00:32:58,630
+ Anda mengangkut bolak-balik. 
+
+646
+00:32:58,630 --> 00:33:03,730
+ Dan tampaknya apa pun yang kurang dari tumpukan IP penuh tidak 
+
+647
+00:33:03,730 --> 00:33:07,017
+ benar-benar akan bekerja untuk normalisasi IP. 
+
+648
+00:33:07,017 --> 00:33:08,350
+ Jadi Anda tidak ingin melakukan itu. 
+
+649
+00:33:08,350 --> 00:33:10,880
+
+
+650
+00:33:10,880 --> 00:33:13,560
+ Sebaliknya, apa yang kami pilih adalah-- dan ini sebagian besar 
+
+651
+00:33:13,560 --> 00:33:15,960
+ karena ini adalah cara termudah-- yang Anda ambil 
+
+652
+00:33:15,960 --> 00:33:18,230
+ isi dari aliran TCP. 
+
+653
+00:33:18,230 --> 00:33:25,390
+ Jadi Anda hanya menganggap masing-masing hal ini 
+
+654
+00:33:25,390 --> 00:33:27,610
+ dapat diandalkan dan teratur. 
+
+655
+00:33:27,610 --> 00:33:31,430
+ Anda memiliki analisis komputer, analisis program 
+
+656
+00:33:31,430 --> 00:33:35,400
+ berlari untuk melakukan semua hal ini untuknya, 
+
+657
+00:33:35,400 --> 00:33:38,120
+ menerima koneksi TCP dari aplikasi Alice, 
+
+658
+00:33:38,120 --> 00:33:40,720
+ dan kemudian hanya menyampaikan isinya 
+
+659
+00:33:40,720 --> 00:33:44,229
+ dan jangan melakukan sesuatu yang rumit di tingkat jaringan. 
+
+660
+00:33:44,229 --> 00:33:46,020
+ Anda mungkin bisa mendapatkan kinerja yang lebih baik 
+
+661
+00:33:46,020 --> 00:33:46,970
+ dengan mencoba beberapa cara lain. 
+
+662
+00:33:46,970 --> 00:33:48,428
+ Dan ada beberapa dokumen yang diperiksa 
+
+663
+00:33:48,428 --> 00:33:49,880
+ bagaimana kamu akan melakukan itu. 
+
+664
+00:33:49,880 --> 00:33:52,820
+ Tapi ini adalah salah satu yang benar-benar bisa kami terapkan. 
+
+665
+00:33:52,820 --> 00:33:54,392
+ Karena kami membayar lebih banyak perhatian 
+
+666
+00:33:54,392 --> 00:33:56,100
+ dalam kelas keamanan dan kompiler dari kami 
+
+667
+00:33:56,100 --> 00:33:58,860
+ lakukan di kelas jaringan. 
+
+668
+00:33:58,860 --> 00:34:00,760
+ Sekarang kami memiliki orang-orang networking. 
+
+669
+00:34:00,760 --> 00:34:04,285
+ Namun pada tahun 2003, 2004, kami tidak memiliki ahli jaringan. 
+
+670
+00:34:04,285 --> 00:34:07,250
+
+
+671
+00:34:07,250 --> 00:34:09,030
+ TCP juga tampak seperti level yang tepat. 
+
+672
+00:34:09,030 --> 00:34:11,594
+ Protokol tingkat yang lebih tinggi-- seperti di beberapa 
+
+673
+00:34:11,594 --> 00:34:13,210
+ dari desain [tidak terdengar] asli, 
+
+674
+00:34:13,210 --> 00:34:16,389
+ ada proksi terpisah di bagian ini untuk HTTP, 
+
+675
+00:34:16,389 --> 00:34:19,000
+ untuk FTP, dan seterusnya. 
+
+676
+00:34:19,000 --> 00:34:21,889
+ Itu sepertinya merupakan ide yang buruk. 
+
+677
+00:34:21,889 --> 00:34:24,060
+ Karena ada protokol yang menarik 
+
+678
+00:34:24,060 --> 00:34:26,880
+ akan memiliki ujung ke ujung enkripsi dari Alice 
+
+679
+00:34:26,880 --> 00:34:28,650
+ sampai ke Bob. 
+
+680
+00:34:28,650 --> 00:34:32,800
+ Itu jika kita beruntung, Alice melakukan koneksi TLS 
+
+681
+00:34:32,800 --> 00:34:40,800
+ atas ini untuk Bob agar properti TLS mendapatkan integritasnya 
+
+682
+00:34:40,800 --> 00:34:44,110
+ dan kerahasiaan. 
+
+683
+00:34:44,110 --> 00:34:46,909
+ Tetapi jika itu yang terjadi, maka apa pun yang namanya anonim 
+
+684
+00:34:46,909 --> 00:34:50,840
+ transformasi yang ingin Anda terapkan pada data terenkripsi 
+
+685
+00:34:50,840 --> 00:34:53,139
+ perlu terjadi dalam aplikasi 
+
+686
+00:34:53,139 --> 00:34:56,710
+ Alice menggunakan sebelum TLS terjadi sepenuhnya. 
+
+687
+00:34:56,710 --> 00:34:58,637
+ Jadi Anda tidak bisa benar-benar melakukannya di proxy. 
+
+688
+00:34:58,637 --> 00:35:00,220
+ Dan itulah mengapa kami keluar, 
+
+689
+00:35:00,220 --> 00:35:03,370
+ OK, sweet spot adalah isi TCP. 
+
+690
+00:35:03,370 --> 00:35:08,070
+ Seseorang bertanya kepada saya, oke, tetapi di mana bukti keamanan Anda? 
+
+691
+00:35:08,070 --> 00:35:11,530
+ Kami memiliki bukti keamanan untuk banyak kriptografi yang kami 
+
+692
+00:35:11,530 --> 00:35:15,760
+ gunakan, pengurangan standar. 
+
+693
+00:35:15,760 --> 00:35:19,510
+ Untuk protokol secara keseluruhan, di sana 
+
+694
+00:35:19,510 --> 00:35:23,069
+ adalah bukti di lapangan tentang aspek tertentu dari bawang 
+
+695
+00:35:23,069 --> 00:35:23,710
+ rute. 
+
+696
+00:35:23,710 --> 00:35:27,310
+ Tetapi model yang harus mereka gunakan dalam rangka 
+
+697
+00:35:27,310 --> 00:35:31,170
+ untuk membuktikan bahwa ini memberikan anonimitas 
+
+698
+00:35:31,170 --> 00:35:36,890
+ membuat asumsi tentang alam semesta, jaringan, 
+
+699
+00:35:36,890 --> 00:35:41,930
+ atau kemampuan penyerang yang sangat aneh 
+
+700
+00:35:41,930 --> 00:35:45,710
+ untuk memuaskan siapa pun kecuali komite program tertentu lainnya 
+
+701
+00:35:45,710 --> 00:35:49,070
+ konferensi teoretis. 
+
+702
+00:35:49,070 --> 00:35:54,580
+ Hal-hal yang dapat Anda buktikan adalah seorang penyerang yang melihat 
+
+703
+00:35:54,580 --> 00:36:02,890
+ ini, yang melihat sejumlah string di sini semuanya sama 
+
+704
+00:36:02,890 --> 00:36:07,140
+ volume dan waktu yang sama, tidak bisa membedakan mana yang pergi 
+
+705
+00:36:07,140 --> 00:36:11,650
+ Bob hanya dengan melihat byte yang keluar. 
+
+706
+00:36:11,650 --> 00:36:14,630
+ Tapi itu bukan hasil yang bermanfaat. 
+
+707
+00:36:14,630 --> 00:36:17,880
+ Juga, jaminan yang bisa Anda dapatkan dari sistem anonimitas 
+
+708
+00:36:17,880 --> 00:36:20,319
+ yang kita tahu cara membangun hari ini-- OK, 
+
+709
+00:36:20,319 --> 00:36:21,360
+ Saya harus berhati-hati di sini. 
+
+710
+00:36:21,360 --> 00:36:24,780
+ Ada beberapa tempat di mana Anda memiliki jaminan yang sangat kuat 
+
+711
+00:36:24,780 --> 00:36:26,930
+ bahwa kita tahu cara membangun yang tidak akan pernah Anda lakukan 
+
+712
+00:36:26,930 --> 00:36:28,010
+ sebenarnya ingin digunakan. 
+
+713
+00:36:28,010 --> 00:36:32,490
+ Seperti klasik [tidak terdengar] DC-jaring, 
+
+714
+00:36:32,490 --> 00:36:35,200
+ misalnya, memberikan anonimitas terjamin. 
+
+715
+00:36:35,200 --> 00:36:37,450
+ Kecuali setiap peserta dapat mematikan seluruh jaringan 
+
+716
+00:36:37,450 --> 00:36:39,550
+ dengan tidak berpartisipasi. 
+
+717
+00:36:39,550 --> 00:36:41,400
+ Itu tidak skala. 
+
+718
+00:36:41,400 --> 00:36:42,820
+ Tetapi untuk hal-hal yang kita inginkan 
+
+719
+00:36:42,820 --> 00:36:46,880
+ untuk membangun hari-hari ini, untuk sebagian besar, 
+
+720
+00:36:46,880 --> 00:36:49,960
+ sifat anonimitas lebih bersifat probabilistik 
+
+721
+00:36:49,960 --> 00:36:52,670
+ dari dijamin secara tersurat. 
+
+722
+00:36:52,670 --> 00:36:56,070
+ Jadi alih-alih bertanya, apakah ini melindungi 
+
+723
+00:36:56,070 --> 00:36:58,650
+ Alice, pertanyaan yang bisa kau tanyakan 
+
+724
+00:36:58,650 --> 00:37:02,600
+ adalah, di bawah asumsi ini tentang kemampuan peretas, bagaimana 
+
+725
+00:37:02,600 --> 00:37:04,260
+ banyak lalu lintas yang dapat dikirimkan Alice dengan aman 
+
+726
+00:37:04,260 --> 00:37:10,370
+ jika dia ingin 99% kemungkinan tidak terkait dengan aktivitasnya? 
+
+727
+00:37:10,370 --> 00:37:13,070
+ Jadi, adakah yang benar-benar menjalankan hal-hal ini? 
+
+728
+00:37:13,070 --> 00:37:15,430
+ Itu adalah pertanyaan pembuka ketika kita mulai. 
+
+729
+00:37:15,430 --> 00:37:17,430
+ Kami tidak tahu apakah sistem akan benar-benar 
+
+730
+00:37:17,430 --> 00:37:18,320
+ lepas landas atau tidak. 
+
+731
+00:37:18,320 --> 00:37:25,450
+ Jadi satu-satunya [INAUDIBLE] mencoba untuk melihat apa yang terjadi. 
+
+732
+00:37:25,450 --> 00:37:28,920
+ Kami mendapat cukup banyak operator sukarelawan. 
+
+733
+00:37:28,920 --> 00:37:33,410
+ Sejumlah nirlaba yang adil telah terbentuk dengan satu tujuan 
+
+734
+00:37:33,410 --> 00:37:36,440
+ hanya untuk mengambil donasi dan menggunakannya untuk membeli bandwidth dan lari 
+
+735
+00:37:36,440 --> 00:37:38,890
+ Simpul Tor. 
+
+736
+00:37:38,890 --> 00:37:40,450
+ Dan ada juga universitas. 
+
+737
+00:37:40,450 --> 00:37:42,609
+ Ada juga perusahaan swasta. 
+
+738
+00:37:42,609 --> 00:37:44,650
+ Untuk sementara, [TIDAK JELAS] menjalankan server Tor 
+
+739
+00:37:44,650 --> 00:37:47,689
+ keluar dari tim keamanan mereka karena mereka 
+
+740
+00:37:47,689 --> 00:37:48,480
+ pikir itu menyenangkan. 
+
+741
+00:37:48,480 --> 00:37:52,360
+
+
+742
+00:37:52,360 --> 00:37:54,760
+ Masalah hukum di sana - lagi, saya bukan pengacara. 
+
+743
+00:37:54,760 --> 00:37:55,910
+ Saya tidak bisa menawarkan nasihat hukum. 
+
+744
+00:37:55,910 --> 00:37:58,035
+ Tetapi lima orang yang berbeda bertanya tentang masalah hukum. 
+
+745
+00:37:58,035 --> 00:38:00,192
+
+
+746
+00:38:00,192 --> 00:38:01,900
+ Sejauh yang saya tahu, di AS setidaknya, 
+
+747
+00:38:01,900 --> 00:38:04,800
+ tidak ada hambatan hukum untuk menjalankan server Tor. 
+
+748
+00:38:04,800 --> 00:38:07,690
+ Dan itu tampaknya menjadi kasus di sebagian besar Eropa 
+
+749
+00:38:07,690 --> 00:38:09,580
+ sejauh yang aku tahu. 
+
+750
+00:38:09,580 --> 00:38:12,970
+ Di tempat-tempat yang umumnya kurang memiliki kebebasan internet, 
+
+751
+00:38:12,970 --> 00:38:14,670
+ itu adalah proposisi yang lebih giat. 
+
+752
+00:38:14,670 --> 00:38:16,670
+ Masalah yang harus dikhawatirkan tidak, 
+
+753
+00:38:16,670 --> 00:38:19,180
+ apakah itu ilegal menjalankan server Tor, 
+
+754
+00:38:19,180 --> 00:38:24,635
+ tetapi jika seseorang melakukan sesuatu yang ilegal atau tidak diinginkan 
+
+755
+00:38:24,635 --> 00:38:28,180
+ dengan server Tor saya, apakah ISP saya akan mematikan saya, 
+
+756
+00:38:28,180 --> 00:38:32,846
+ dan penegak hukum akan percaya, oh, 
+
+757
+00:38:32,846 --> 00:38:34,220
+ Anda hanya menjalankan server Tor, 
+
+758
+00:38:34,220 --> 00:38:37,336
+ atau apakah mereka akan menggunakan komputer untuk memastikan? 
+
+759
+00:38:37,336 --> 00:38:39,710
+ Bagi mereka, saya sarankan tidak menjalankan server Tor 
+
+760
+00:38:39,710 --> 00:38:42,720
+ kamar asrama Anda. 
+
+761
+00:38:42,720 --> 00:38:45,670
+ Maaf, jangan keluar dari kamar asrama Anda, 
+
+762
+00:38:45,670 --> 00:38:48,460
+ atau benar-benar keluar dari kamar asrama Anda, dengan asumsi kebijakan jaringan 
+
+763
+00:38:48,460 --> 00:38:49,460
+ memungkinkan itu. 
+
+764
+00:38:49,460 --> 00:38:50,650
+ Saya tidak punya ide. 
+
+765
+00:38:50,650 --> 00:38:52,400
+ Mereka sudah banyak berubah sejak aku masih kecil. 
+
+766
+00:38:52,400 --> 00:38:55,266
+
+
+767
+00:38:55,266 --> 00:38:57,890
+ Menjalankan keluar dari kamar asrama Anda bisa membuat Anda dalam kesulitan. 
+
+768
+00:38:57,890 --> 00:39:01,620
+ Tetapi menjalankan relai non-keluar yang tidak menghasilkan lalu lintas 
+
+769
+00:39:01,620 --> 00:39:05,282
+ ke internet cenderung tidak menciptakan masalah tersebut 
+
+770
+00:39:05,282 --> 00:39:05,865
+ khususnya. 
+
+771
+00:39:05,865 --> 00:39:10,140
+
+
+772
+00:39:10,140 --> 00:39:12,010
+ Tetapi jika Anda melakukannya di situs co-lo yang bagus, 
+
+773
+00:39:12,010 --> 00:39:14,730
+ dan Anda mendapatkan izin ISP Anda, 
+
+774
+00:39:14,730 --> 00:39:19,840
+ maka itu hal yang cukup masuk akal untuk dilakukan. 
+
+775
+00:39:19,840 --> 00:39:23,311
+ Mari kita lihat, seseorang bertanya, bagaimana jika pengguna 
+
+776
+00:39:23,311 --> 00:39:24,560
+ tidak mempercayai node tertentu? 
+
+777
+00:39:24,560 --> 00:39:29,670
+ Dan ini membawa saya ke topik berikutnya. 
+
+778
+00:39:29,670 --> 00:39:32,750
+ Jadi perangkat lunak yang digunakan klien, Anda tidak bisa mengatakannya, 
+
+779
+00:39:32,750 --> 00:39:35,780
+ jangan gunakan yang ini, jangan gunakan yang ini, hanya gunakan yang ini. 
+
+780
+00:39:35,780 --> 00:39:39,130
+ Tetapi ingat bahwa anonimitas mencintai prinsip perusahaan. 
+
+781
+00:39:39,130 --> 00:39:43,631
+ Jika saya hanya menggunakan tiga node, dan Anda 
+
+782
+00:39:43,631 --> 00:39:45,256
+ menggunakan tiga simpul berbeda, dan Anda 
+
+783
+00:39:45,256 --> 00:39:49,550
+ menggunakan tiga simpul berbeda, lalu lintas kami tidak akan tercampur sama sekali. 
+
+784
+00:39:49,550 --> 00:39:52,280
+ Sampai-sampai kita mempartisi bagian mana dari jaringan 
+
+785
+00:39:52,280 --> 00:39:55,740
+ kami menggunakan, kami dapat dibedakan dari satu sama lain. 
+
+786
+00:39:55,740 --> 00:39:57,800
+ Sekarang, jika saya hanya mengecualikan satu atau dua node, 
+
+787
+00:39:57,800 --> 00:40:00,040
+ dan Anda hanya mengecualikan satu atau dua node, 
+
+788
+00:40:00,040 --> 00:40:03,120
+ itu bukan partisi besar, dan itu tidak membantu 
+
+789
+00:40:03,120 --> 00:40:05,270
+ membedakan kemampuan yang banyak. 
+
+790
+00:40:05,270 --> 00:40:08,700
+ Tapi itu akan baik sejauh mungkin untuk dimiliki 
+
+791
+00:40:08,700 --> 00:40:12,290
+ semua orang menggunakan node yang sama. 
+
+792
+00:40:12,290 --> 00:40:14,880
+ Jadi baiklah, bagaimana kita mencapai itu? 
+
+793
+00:40:14,880 --> 00:40:16,780
+ Jadi versi satu, dalam versi Tor pertama, 
+
+794
+00:40:16,780 --> 00:40:18,730
+ kami baru saja membuat daftar semua node. 
+
+795
+00:40:18,730 --> 00:40:21,525
+ Saya pikir ada tiga dari mereka, atau lima, atau sesuatu. 
+
+796
+00:40:21,525 --> 00:40:22,900
+ Tidak, saya pikir ada sekitar enam, 
+
+797
+00:40:22,900 --> 00:40:25,910
+ yang tiga semuanya berjalan di komputer yang sama 
+
+798
+00:40:25,910 --> 00:40:30,142
+ di lemari di LCS di Tech Square. 
+
+799
+00:40:30,142 --> 00:40:32,560
+ Baiklah, itu bukan ide yang bagus. 
+
+800
+00:40:32,560 --> 00:40:34,090
+ Karena node bisa naik dan turun. 
+
+801
+00:40:34,090 --> 00:40:35,067
+ Node berubah. 
+
+802
+00:40:35,067 --> 00:40:36,442
+ Anda tidak ingin harus memadamkannya 
+
+803
+00:40:36,442 --> 00:40:39,005
+ rilis baru dari perangkat lunak Anda setiap kali seseorang 
+
+804
+00:40:39,005 --> 00:40:41,160
+ bergabung untuk melepaskan jaringan. 
+
+805
+00:40:41,160 --> 00:40:44,260
+ Jadi, Anda bisa memiliki setiap node tetap 
+
+806
+00:40:44,260 --> 00:40:46,677
+ daftar semua node lain yang terhubung dengannya 
+
+807
+00:40:46,677 --> 00:40:48,010
+ dan semua beriklan satu sama lain. 
+
+808
+00:40:48,010 --> 00:40:50,193
+ Dan kemudian ketika klien menghubungkan, klien saja 
+
+809
+00:40:50,193 --> 00:40:51,790
+ harus tahu satu simpul dan kemudian berkata, 
+
+810
+00:40:51,790 --> 00:40:53,189
+ hei, siapa yang ada di jaringan? 
+
+811
+00:40:53,189 --> 00:40:54,730
+ Dan sebenarnya, banyak orang mendesain 
+
+812
+00:40:54,730 --> 00:40:57,320
+ telah membangun kerja dengan cara ini. 
+
+813
+00:40:57,320 --> 00:40:59,500
+ Banyak desain kerja awal untuk rekan anonimitas bekerja 
+
+814
+00:40:59,500 --> 00:41:00,360
+ cara ini. 
+
+815
+00:41:00,360 --> 00:41:01,771
+ Tapi itu ide yang buruk. 
+
+816
+00:41:01,771 --> 00:41:04,270
+ Karena jika Anda pergi ke satu simpul dan berkata, siapa yang ada di jaringan, 
+
+817
+00:41:04,270 --> 00:41:07,240
+ dan Anda mempercayai mereka, yah, jika saya simpul itu, saya dapat mengatakan, 
+
+818
+00:41:07,240 --> 00:41:11,070
+ ya, saya ada di jaringan, dan teman saya di sini 
+
+819
+00:41:11,070 --> 00:41:14,130
+ ada di jaringan, dan teman saya di sini ada di jaringan, 
+
+820
+00:41:14,130 --> 00:41:15,920
+ dan tidak ada orang lain di jaringan. 
+
+821
+00:41:15,920 --> 00:41:18,895
+ Dan saya dapat memberi tahu Anda sejumlah simpul palsu 
+
+822
+00:41:18,895 --> 00:41:22,790
+ yang semuanya dioperasikan oleh saya dan menangkap semua lalu lintas Anda 
+
+823
+00:41:22,790 --> 00:41:25,160
+ seperti itu dengan apa yang disebut serangan tangkap baris. 
+
+824
+00:41:25,160 --> 00:41:28,480
+ OK, jadi mungkin kami hanya memiliki satu direktori 
+
+825
+00:41:28,480 --> 00:41:30,470
+ dioperasikan oleh pihak tepercaya. 
+
+826
+00:41:30,470 --> 00:41:33,730
+ Itu tidak sebagus satu titik kegagalan. 
+
+827
+00:41:33,730 --> 00:41:38,210
+ Jadi OK, mari kita memiliki beberapa pihak yang dipercaya. 
+
+828
+00:41:38,210 --> 00:41:41,750
+ Dan klien pergi ke beberapa pihak tepercaya ini 
+
+829
+00:41:41,750 --> 00:41:43,990
+ dan dapatkan daftar semua node dari semuanya 
+
+830
+00:41:43,990 --> 00:41:47,010
+ dan gabungkan daftar itu. 
+
+831
+00:41:47,010 --> 00:41:49,813
+ Maka Anda sebenarnya-- pertama, 
+
+832
+00:41:49,813 --> 00:41:51,560
+ Anda dipartisi dalam kasus itu. 
+
+833
+00:41:51,560 --> 00:41:54,060
+ Jika saya memilih ketiga ini, dan Anda memilih ketiga itu, 
+
+834
+00:41:54,060 --> 00:41:55,975
+ dan mereka mengatakan sesuatu yang berbeda, maka kita akan 
+
+835
+00:41:55,975 --> 00:41:57,350
+ menggunakan set node yang berbeda. 
+
+836
+00:41:57,350 --> 00:41:58,820
+ Jadi itu masih belum bagus. 
+
+837
+00:41:58,820 --> 00:42:01,800
+ Juga, masih ada [TIDAK JELAS] 
+
+838
+00:42:01,800 --> 00:42:08,820
+ di mana jika saya menggunakan persimpangan set yang mereka beri tahu, 
+
+839
+00:42:08,820 --> 00:42:11,520
+ maka salah satu dari mereka dapat mencegah saya menggunakan simpul mereka 
+
+840
+00:42:11,520 --> 00:42:13,360
+ tidak suka dengan tidak mencantumkannya. 
+
+841
+00:42:13,360 --> 00:42:16,700
+ Jika saya menggunakan serikat pekerja, siapa pun dapat membanjiri saya 
+
+842
+00:42:16,700 --> 00:42:21,630
+ dengan membuat 20.000 server palsu yang semuanya ada dalam daftar. 
+
+843
+00:42:21,630 --> 00:42:24,545
+ Saya mungkin menghitung hasil dari beberapa jenis suara 
+
+844
+00:42:24,545 --> 00:42:26,930
+ pada mereka, yang akan menyelesaikan dua masalah tersebut. 
+
+845
+00:42:26,930 --> 00:42:28,890
+ Tapi aku masih dipartisi dari semua orang 
+
+846
+00:42:28,890 --> 00:42:32,580
+ siapa yang menggunakan pihak tepercaya yang berbeda. 
+
+847
+00:42:32,580 --> 00:42:35,270
+ Kita bisa melakukan DHT ajaib. 
+
+848
+00:42:35,270 --> 00:42:36,859
+ Sudahkah kita melakukan tabel hash [INAUDIBLE]? 
+
+849
+00:42:36,859 --> 00:42:39,150
+ Baiklah, kita bisa melakukan semacam penyebaran sihir 
+
+850
+00:42:39,150 --> 00:42:43,930
+ struktur dijalankan di semua node. 
+
+851
+00:42:43,930 --> 00:42:50,140
+ Saya katakan ajaib, karena meskipun ada desain di area ini, 
+
+852
+00:42:50,140 --> 00:42:54,320
+ dan beberapa lebih baik dari yang lain, tidak satupun dari mereka 
+
+853
+00:42:54,320 --> 00:42:58,624
+ tampaknya benar-benar memiliki bukti keamanan yang kuat untuk itu 
+
+854
+00:42:58,624 --> 00:43:00,040
+ pada titik ini ke titik di mana saya 
+
+855
+00:43:00,040 --> 00:43:04,260
+ akan nyaman mengatakan, ya, ini sebenarnya aman. 
+
+856
+00:43:04,260 --> 00:43:06,900
+ Jadi solusi yang kami gunakan adalah 
+
+857
+00:43:06,900 --> 00:43:10,610
+ memiliki beberapa otoritas tepercaya yang dikeraskan dijalankan 
+
+858
+00:43:10,610 --> 00:43:14,040
+ oleh pihak tepercaya yang mengumpulkan daftar node 
+
+859
+00:43:14,040 --> 00:43:17,690
+ bahwa suara setiap jam di mana node sedang berjalan 
+
+860
+00:43:17,690 --> 00:43:21,870
+ yang dapat memilih untuk mengecualikan node yang tampaknya berperilaku buruk 
+
+861
+00:43:21,870 --> 00:43:25,920
+ yang semuanya berjalan pada garis miring 16 yang sama 
+
+862
+00:43:25,920 --> 00:43:29,120
+ hal-hal aneh untuk lalu lintas, dan miliki 
+
+863
+00:43:29,120 --> 00:43:34,190
+ mereka membentuk konsensus yang merupakan hasil dari suara mereka. 
+
+864
+00:43:34,190 --> 00:43:36,017
+ Dan semua orang menandatangani konsensus. 
+
+865
+00:43:36,017 --> 00:43:37,517
+ Dan klien tidak menggunakannya kecuali 
+
+866
+00:43:37,517 --> 00:43:39,490
+ ditandatangani oleh otoritas yang cukup. 
+
+867
+00:43:39,490 --> 00:43:40,940
+ Ini bukan desain final. 
+
+868
+00:43:40,940 --> 00:43:44,670
+ Tapi itu yang terbaik yang berhasil kami dapatkan sejauh ini. 
+
+869
+00:43:44,670 --> 00:43:46,630
+ Dan dengan cara ini, semua yang Anda perlu distribusikan 
+
+870
+00:43:46,630 --> 00:43:51,880
+ dengan klien adalah daftar semua kunci publik otoritas 
+
+871
+00:43:51,880 --> 00:43:54,210
+ dan beberapa tempat untuk mendapatkan direktori. 
+
+872
+00:43:54,210 --> 00:43:58,120
+ Anda ingin memiliki semua node cache hal-hal direktori ini. 
+
+873
+00:43:58,120 --> 00:44:00,604
+ Karena jika tidak, beban bandwidth pada otoritas 
+
+874
+00:44:00,604 --> 00:44:01,270
+ adalah malapetaka. 
+
+875
+00:44:01,270 --> 00:44:04,320
+
+
+876
+00:44:04,320 --> 00:44:06,050
+ Jadi saya akan melewatkan itu. 
+
+877
+00:44:06,050 --> 00:44:11,260
+ Karena saya ingin berbicara tentang bagaimana 
+
+878
+00:44:11,260 --> 00:44:13,295
+ klien harus memilih jalur mana 
+
+879
+00:44:13,295 --> 00:44:14,800
+ untuk membangun melalui jaringan. 
+
+880
+00:44:14,800 --> 00:44:17,560
+ Saya ingin berbicara tentang masalah aplikasi 
+
+881
+00:44:17,560 --> 00:44:20,382
+ dan membuat aplikasi tidak deanonimisasi sendiri. 
+
+882
+00:44:20,382 --> 00:44:21,590
+ Saya ingin berbicara tentang pelecehan. 
+
+883
+00:44:21,590 --> 00:44:24,470
+ Saya ingin berbicara tentang layanan tersembunyi dan cara kerjanya. 
+
+884
+00:44:24,470 --> 00:44:27,210
+ Saya ingin berbicara tentang resistensi sensor. 
+
+885
+00:44:27,210 --> 00:44:30,540
+ Dan saya ingin berbicara tentang serangan dan pertahanan. 
+
+886
+00:44:30,540 --> 00:44:34,230
+ Tapi saya hanya punya 35 menit. 
+
+887
+00:44:34,230 --> 00:44:36,280
+ Dan saya tidak mungkin bisa menutupi semua ini. 
+
+888
+00:44:36,280 --> 00:44:38,490
+ Jadi angkat tangan untuk berapa orang 
+
+889
+00:44:38,490 --> 00:44:42,500
+ pikir yang paling penting-- pikirkan apa yang kamu pikirkan 
+
+890
+00:44:42,500 --> 00:44:45,584
+ adalah dua topik paling penting dalam daftar ini. 
+
+891
+00:44:45,584 --> 00:44:47,250
+ Jika salah satu dari dua topik terpenting Anda 
+
+892
+00:44:47,250 --> 00:44:49,041
+ adalah pemilihan jalur dan bagaimana Anda memilih simpul, 
+
+893
+00:44:49,041 --> 00:44:51,500
+ tolong angkat tanganmu. 
+
+894
+00:44:51,500 --> 00:44:53,550
+ Jika salah satu dari dua topik terpenting Anda 
+
+895
+00:44:53,550 --> 00:44:57,370
+ masalah aplikasi dan cara membuat aplikasi tidak 
+
+896
+00:44:57,370 --> 00:45:00,044
+ tangkap anonimitasmu, tolong angkat tanganmu. 
+
+897
+00:45:00,044 --> 00:45:02,020
+ Jika salah satu masalah paling penting Anda 
+
+898
+00:45:02,020 --> 00:45:05,700
+ adalah penyalahgunaan dan penyalahgunaan jenis apa yang kami lihat, bagaimana Anda dapat mencegahnya, 
+
+899
+00:45:05,700 --> 00:45:08,294
+ dan bagaimana cara kerjanya, tolong angkat tangan. 
+
+900
+00:45:08,294 --> 00:45:11,651
+ Oke, yang populer itu. 
+
+901
+00:45:11,651 --> 00:45:13,150
+ Jika salah satu topik Anda yang paling penting 
+
+902
+00:45:13,150 --> 00:45:14,566
+ adalah bagaimana layanan ini berfungsi dan bagaimana 
+
+903
+00:45:14,566 --> 00:45:17,280
+ mereka dapat dibuat bekerja lebih baik, tolong angkat tangan. 
+
+904
+00:45:17,280 --> 00:45:19,530
+ Wow, itu jauh lebih populer di sisi ruangan ini 
+
+905
+00:45:19,530 --> 00:45:20,654
+ dari sisi ruangan itu. 
+
+906
+00:45:20,654 --> 00:45:23,162
+ Apa yang sedang terjadi? 
+
+907
+00:45:23,162 --> 00:45:24,820
+ Kalian ada di klub? 
+
+908
+00:45:24,820 --> 00:45:26,926
+ Apakah kamu merencanakan sesuatu? 
+
+909
+00:45:26,926 --> 00:45:29,610
+ Sensor, siapa yang tertarik dengan sensor? 
+
+910
+00:45:29,610 --> 00:45:32,880
+ OK, itu cukup populer. 
+
+911
+00:45:32,880 --> 00:45:36,170
+ Serangan dan pertahanan? 
+
+912
+00:45:36,170 --> 00:45:39,530
+ Oke, jadi kami tidak melakukan jalur dan kami tidak melakukan aplikasi. 
+
+913
+00:45:39,530 --> 00:45:44,600
+ Jadi apps-- guard node, guard nodes, C guard node designs, 
+
+914
+00:45:44,600 --> 00:45:46,240
+ pilih berdasarkan bandwidth. 
+
+915
+00:45:46,240 --> 00:45:48,230
+ Anda harus benar-benar berat menurut bandwidth, 
+
+916
+00:45:48,230 --> 00:45:51,200
+ tetapi Anda juga membutuhkan cara tepercaya untuk mengukur bandwidth. 
+
+917
+00:45:51,200 --> 00:45:55,025
+ Dan itu terlalu lama, tidak memberi kuliah tentang apa 
+
+918
+00:45:55,025 --> 00:45:56,150
+ akan berada di jalur seleksi. 
+
+919
+00:45:56,150 --> 00:45:59,555
+ Untuk masalah aplikasi, hampir tidak ada protokol 
+
+920
+00:45:59,555 --> 00:46:03,630
+ sebenarnya dirancang untuk memberikan anonimitas. 
+
+921
+00:46:03,630 --> 00:46:06,530
+ Karena hampir setiap protokol itu banyak digunakan 
+
+922
+00:46:06,530 --> 00:46:08,324
+ memiliki asumsi di dalamnya, yah, Anda 
+
+923
+00:46:08,324 --> 00:46:09,740
+ tahu, siapa saja yang ingin bisa 
+
+924
+00:46:09,740 --> 00:46:12,500
+ lihat IP pada lalu lintas ini. 
+
+925
+00:46:12,500 --> 00:46:16,030
+ Jadi tidak ada gunanya mencoba menyembunyikan identitas. 
+
+926
+00:46:16,030 --> 00:46:18,900
+ Jadi dalam protokol yang sangat rumit, 
+
+927
+00:46:18,900 --> 00:46:22,320
+ seperti seluruh tumpukan protokol yang digunakan browser web, 
+
+928
+00:46:22,320 --> 00:46:24,020
+ tidak ada cara nyata untuk menganonimkannya 
+
+929
+00:46:24,020 --> 00:46:27,400
+ hanya dengan menganonimkan lalu lintas dengan sesuatu seperti Tor. 
+
+930
+00:46:27,400 --> 00:46:30,150
+ Anda perlu meretas peramban web cukup sulit 
+
+931
+00:46:30,150 --> 00:46:32,810
+ untuk membuatnya berhenti melakukan hal-hal seperti membocorkan daftar font 
+
+932
+00:46:32,810 --> 00:46:34,830
+ yang diidentifikasi pada sistem Anda, 
+
+933
+00:46:34,830 --> 00:46:38,540
+ membocorkan ukuran jendela Anda yang sebenarnya, memungkinkan 
+
+934
+00:46:38,540 --> 00:46:41,780
+ semua jenis struktur seperti kue permanen, 
+
+935
+00:46:41,780 --> 00:46:44,740
+ bocor apa yang ada di cache dan apa yang tidak ada di cache, 
+
+936
+00:46:44,740 --> 00:46:46,250
+ dan seterusnya. 
+
+937
+00:46:46,250 --> 00:46:48,680
+ Jadi pilihan Anda pada dasarnya ada 
+
+938
+00:46:48,680 --> 00:46:52,180
+ mengisolasi semuanya dan memulai kembali dari VM baru setiap saat, 
+
+939
+00:46:52,180 --> 00:46:53,514
+ atau rutekan ulang browser, atau keduanya. 
+
+940
+00:46:53,514 --> 00:46:55,513
+ Hal-hal lain jauh lebih mudah daripada browser web, 
+
+941
+00:46:55,513 --> 00:46:56,460
+ tapi masih bermasalah. 
+
+942
+00:46:56,460 --> 00:47:00,780
+ Itu saja yang akan saya katakan tentang masalah aplikasi. 
+
+943
+00:47:00,780 --> 00:47:02,850
+ Mari kita lihat, saya pikir saya mendapatkan yang terbaik 
+
+944
+00:47:02,850 --> 00:47:05,142
+ tangan-- apakah Anda melihat apa yang paling saya dapatkan tangan, 
+
+945
+00:47:05,142 --> 00:47:06,624
+ ada pendapat? 
+
+946
+00:47:06,624 --> 00:47:08,083
+ SISWA: Pelecehan dan layanan tersembunyi? 
+
+947
+00:47:08,083 --> 00:47:09,832
+ NICK MATHEWSON: Pelecehan dan layanan tersembunyi. 
+
+948
+00:47:09,832 --> 00:47:12,277
+ Baiklah, saya akan berbicara tentang penyalahgunaan dan layanan tersembunyi. 
+
+949
+00:47:12,277 --> 00:47:15,200
+ Dan jika saya masih punya waktu, saya akan melakukan penyensoran dan serangan. 
+
+950
+00:47:15,200 --> 00:47:19,185
+ Jadi mari kita ke penyalahgunaan-- penyalahgunaan, penyalahgunaan, penyalahgunaan. 
+
+951
+00:47:19,185 --> 00:47:22,420
+
+
+952
+00:47:22,420 --> 00:47:26,960
+ Jadi satu masalah yang untungnya tidak 
+
+953
+00:47:26,960 --> 00:47:30,707
+ memiliki semua itu banyak - jadi ketika kami mengerjakan hal ini, 
+
+954
+00:47:30,707 --> 00:47:32,490
+ masalah yang ditakuti semua orang 
+
+955
+00:47:32,490 --> 00:47:34,698
+ adalah hal mengerikan yang akan membuatmu ditendang 
+
+956
+00:47:34,698 --> 00:47:37,580
+ ISP apa pun, dan itu akan menciptakan masalah hukum yang luar biasa 
+
+957
+00:47:37,580 --> 00:47:38,750
+ dan menghancurkan hidupmu. 
+
+958
+00:47:38,750 --> 00:47:41,360
+ Saya berbicara tentang proses berbagi file. 
+
+959
+00:47:41,360 --> 00:47:43,540
+ Kami sangat takut bahwa orang-orang akan 
+
+960
+00:47:43,540 --> 00:47:48,200
+ coba BitTorrent atau Gnutella atau apa pun atas hal ini. 
+
+961
+00:47:48,200 --> 00:47:49,760
+ Ya, itu sudah lama sekali. 
+
+962
+00:47:49,760 --> 00:47:52,990
+ Dan kami berpikir tentang bagaimana kami melakukannya. 
+
+963
+00:47:52,990 --> 00:47:55,470
+ Nah, Anda akan melihat di koran bahwa kita banyak berbicara tentang keluar 
+
+964
+00:47:55,470 --> 00:47:58,140
+ kebijakan, tentang membiarkan node keluar berkata, 
+
+965
+00:47:58,140 --> 00:48:03,040
+ Saya hanya mengizinkan koneksi ke port 80 dan port 443. 
+
+966
+00:48:03,040 --> 00:48:05,850
+ Ini tidak benar-benar membantu dengan penyalahgunaan sama sekali. 
+
+967
+00:48:05,850 --> 00:48:15,800
+ Karena Anda dapat mencoba menyebarkan cacing ke port 80. 
+
+968
+00:48:15,800 --> 00:48:21,897
+ Anda dapat memposting hal yang kasar ke saluran IRC melalui web 
+
+969
+00:48:21,897 --> 00:48:23,710
+ ke antarmuka IRC. 
+
+970
+00:48:23,710 --> 00:48:26,140
+ Semuanya punya antarmuka web hari ini. 
+
+971
+00:48:26,140 --> 00:48:29,340
+ Jadi Anda tidak bisa benar-benar mengatakannya, itu hanya web. 
+
+972
+00:48:29,340 --> 00:48:30,400
+ Itu aman. 
+
+973
+00:48:30,400 --> 00:48:33,040
+ Jika itu berguna, itu bisa disalahgunakan. 
+
+974
+00:48:33,040 --> 00:48:35,450
+ Konon, ada orang-orang yang 
+
+975
+00:48:35,450 --> 00:48:39,000
+ bersedia menjalankan jalan keluar yang mengantarkan 80 dan 443 
+
+976
+00:48:39,000 --> 00:48:42,547
+ siapa yang tidak mau menjalankan jalan keluar mengirimkan semua port. 
+
+977
+00:48:42,547 --> 00:48:43,880
+ Jadi itu ternyata berguna. 
+
+978
+00:48:43,880 --> 00:48:45,588
+ Itu tidak berubah menjadi solusi. 
+
+979
+00:48:45,588 --> 00:48:49,010
+
+
+980
+00:48:49,010 --> 00:48:54,699
+ Hal lain yang menciptakan masalah adalah aktivitas kriminal 
+
+981
+00:48:54,699 --> 00:48:56,740
+ umumnya tidak menimbulkan masalah untuk jaringan 
+
+982
+00:48:56,740 --> 00:48:58,560
+ operator begitu banyak. 
+
+983
+00:48:58,560 --> 00:49:01,750
+ Dari waktu ke waktu, server seseorang disita dan dikembalikan 
+
+984
+00:49:01,750 --> 00:49:04,550
+ enam bulan kemudian, dan mereka harus membersihkannya. 
+
+985
+00:49:04,550 --> 00:49:07,430
+ Itu masih jarang terjadi 
+
+986
+00:49:07,430 --> 00:49:12,950
+ bahwa itu agak mengejutkan ketika itu terjadi. 
+
+987
+00:49:12,950 --> 00:49:16,050
+ Dan ya, jangan jalankan node keluar di server 
+
+988
+00:49:16,050 --> 00:49:19,185
+ Anda harus lulus. 
+
+989
+00:49:19,185 --> 00:49:23,165
+
+
+990
+00:49:23,165 --> 00:49:23,665
+ Apa lagi? 
+
+991
+00:49:23,665 --> 00:49:27,670
+
+
+992
+00:49:27,670 --> 00:49:31,210
+ Masalah terbesar yang kita miliki karena penyalahgunaan barang 
+
+993
+00:49:31,210 --> 00:49:34,260
+ adalah banyak situs web di seluruh dunia, 
+
+994
+00:49:34,260 --> 00:49:36,200
+ dan banyak layanan IRC dan sebagainya, 
+
+995
+00:49:36,200 --> 00:49:42,210
+ menggunakan pemblokiran berbasis-IP untuk mencegah dan mengurangi 
+
+996
+00:49:42,210 --> 00:49:50,680
+ orang-orang yang berperilaku kasar - orang-orang memposting gambar-gambar pembantaian di jalan 
+
+997
+00:49:50,680 --> 00:49:56,160
+ di situs My Little Pony saya, orang-orang berkobar-kobar semua orang 
+
+998
+00:49:56,160 --> 00:49:59,690
+ di saluran IRC, orang-orang bercinta, 
+
+999
+00:49:59,690 --> 00:50:05,300
+ pergi, bergabung dengan permintaan, orang-orang mengganti seluruh Wikipedia 
+
+1000
+00:50:05,300 --> 00:50:08,896
+ halaman dengan penghinaan rasial. 
+
+1001
+00:50:08,896 --> 00:50:09,770
+ Benda ini nyata. 
+
+1002
+00:50:09,770 --> 00:50:10,478
+ Itu bermasalah. 
+
+1003
+00:50:10,478 --> 00:50:13,560
+ Ini tidak dapat diterima untuk situs web dan layanan 
+
+1004
+00:50:13,560 --> 00:50:15,580
+ yang menggunakan pemblokiran berbasis IP. 
+
+1005
+00:50:15,580 --> 00:50:18,140
+ Mereka membutuhkan cara untuk mencegah hal ini terjadi. 
+
+1006
+00:50:18,140 --> 00:50:21,950
+ Dan pemblokiran berbasis IP adalah cara murah bagi mereka untuk melakukan itu. 
+
+1007
+00:50:21,950 --> 00:50:27,230
+ Jadi, cukup sering pengguna Tor mendapatkan banned sepenuhnya 
+
+1008
+00:50:27,230 --> 00:50:30,340
+ dari beberapa situs. 
+
+1009
+00:50:30,340 --> 00:50:36,370
+ Ada beberapa upaya untuk mencoba mengatakan, baik, mengapa berbasis IP 
+
+1010
+00:50:36,370 --> 00:50:37,330
+ pemblokiran benar-benar berfungsi? 
+
+1011
+00:50:37,330 --> 00:50:40,690
+ Apakah karena IP adalah orang? 
+
+1012
+00:50:40,690 --> 00:50:41,310
+ Tidak. 
+
+1013
+00:50:41,310 --> 00:50:44,295
+ Semua orang di ruangan ini tahu cara mendapatkan IP yang berbeda 
+
+1014
+00:50:44,295 --> 00:50:45,710
+ jika mereka membutuhkannya. 
+
+1015
+00:50:45,710 --> 00:50:49,540
+ Semua orang di ruangan ini tahu bagaimana mendapatkan puluhan ribu 
+
+1016
+00:50:49,540 --> 00:50:51,550
+ IP yang berbeda jika mereka memerlukannya, 
+
+1017
+00:50:51,550 --> 00:50:53,180
+ jika mereka membutuhkan puluhan ribu. 
+
+1018
+00:50:53,180 --> 00:50:56,680
+ Tetapi bagi kebanyakan orang, mendapatkan lebih banyak IP 
+
+1019
+00:50:56,680 --> 00:50:59,720
+ setidaknya memakan waktu sedikit dan setidaknya 
+
+1020
+00:50:59,720 --> 00:51:03,265
+ sedikit menantang sejauh itu membebankan tarif 
+
+1021
+00:51:03,265 --> 00:51:05,660
+ membatasi dan biaya sumber daya pada penyalahgunaan 
+
+1022
+00:51:05,660 --> 00:51:08,940
+ jika Anda tidak ingin bot bersih dan jika mereka sudah diblokir 
+
+1023
+00:51:08,940 --> 00:51:12,110
+ Tor dan semua layanan proxy lainnya. 
+
+1024
+00:51:12,110 --> 00:51:16,850
+ Jadi untuk itu, Anda perlu melihat berbagai cara 
+
+1025
+00:51:16,850 --> 00:51:20,380
+ untuk menyediakan biaya sumber daya lainnya. 
+
+1026
+00:51:20,380 --> 00:51:24,970
+ Anda bisa mengatakan, yah - sudahkah Anda melakukan tandatangan buta? 
+
+1027
+00:51:24,970 --> 00:51:28,740
+ Oh, kamu bisa membangun sesuatu sehingga kamu 
+
+1028
+00:51:28,740 --> 00:51:31,210
+ membutuhkan IP untuk membuat akun. 
+
+1029
+00:51:31,210 --> 00:51:33,620
+ Tapi akun apa yang Anda buat dengan IP 
+
+1030
+00:51:33,620 --> 00:51:37,250
+ tidak dapat ditautkan ke IP Anda. 
+
+1031
+00:51:37,250 --> 00:51:39,277
+ Dan kemudian jika akunnya diblokir, 
+
+1032
+00:51:39,277 --> 00:51:41,670
+ Anda perlu membuat akun baru dari IP yang berbeda. 
+
+1033
+00:51:41,670 --> 00:51:44,211
+ Itu sesuatu yang bisa Anda bangun, dan kami bekerja dengan orang-orang 
+
+1034
+00:51:44,211 --> 00:51:47,890
+ untuk mengatasinya, meskipun membutuhkan lebih banyak peretasan pada integrasi 
+
+1035
+00:51:47,890 --> 00:51:48,630
+ sisi. 
+
+1036
+00:51:48,630 --> 00:51:51,213
+ Hal lain yang membutuhkan lebih banyak peretasan di sisi integrasi 
+
+1037
+00:51:51,213 --> 00:51:54,387
+ adalah kredensial listable hitam anonim. 
+
+1038
+00:51:54,387 --> 00:51:55,470
+ Mereka sedikit esoterik. 
+
+1039
+00:51:55,470 --> 00:52:02,220
+ Tapi idenya adalah Anda mendapatkan sesuatu 
+
+1040
+00:52:02,220 --> 00:52:05,780
+ yang memungkinkan Anda berpartisipasi di server IRC, misalnya. 
+
+1041
+00:52:05,780 --> 00:52:08,080
+ Anda dapat menggunakan ini sebanyak yang Anda mau. 
+
+1042
+00:52:08,080 --> 00:52:12,380
+ Penggunaan Anda tidak dapat ditautkan sampai Anda dilarang. 
+
+1043
+00:52:12,380 --> 00:52:14,580
+ Setelah Anda dilarang, upaya masa depan 
+
+1044
+00:52:14,580 --> 00:52:18,000
+ dari orang yang sama dengan kredensial yang sama tidak berfungsi. 
+
+1045
+00:52:18,000 --> 00:52:21,840
+ Tetapi aktivitas di masa lalu tidak dapat saling dihubungkan satu sama lain. 
+
+1046
+00:52:21,840 --> 00:52:24,090
+ Ini dapat dibangun dengan mudah. 
+
+1047
+00:52:24,090 --> 00:52:26,730
+ Masalahnya adalah meyakinkan orang-orang yang lebih atau kurang puas 
+
+1048
+00:52:26,730 --> 00:52:29,300
+ dengan pemblokiran IP untuk benar-benar menggunakannya 
+
+1049
+00:52:29,300 --> 00:52:32,965
+ dan benar-benar mengintegrasikannya dengan layanan. 
+
+1050
+00:52:32,965 --> 00:52:36,170
+ Seseorang pasti bertanya padaku - itu agak rapi. 
+
+1051
+00:52:36,170 --> 00:52:43,310
+ Jadi saya memulai catatan kuliah ini berdasarkan ceramah saya dari 2013. 
+
+1052
+00:52:43,310 --> 00:52:46,110
+ Dan ada sesuatu tentang pertanyaan yang tak terelakkan 
+
+1053
+00:52:46,110 --> 00:52:48,660
+ tentang Silk Road 1 semakin rusak. 
+
+1054
+00:52:48,660 --> 00:52:50,885
+ Ada pertanyaan yang tak terelakkan tentang Silk Road 2 
+
+1055
+00:52:50,885 --> 00:52:51,510
+ semakin rusak. 
+
+1056
+00:52:51,510 --> 00:52:55,880
+ Silk Road 2 adalah layanan tersembunyi yang beroperasi di jaringan Tor 
+
+1057
+00:52:55,880 --> 00:52:58,650
+ di mana orang akan bersama-sama membeli dan menjual 
+
+1058
+00:52:58,650 --> 00:53:03,480
+ hal-hal ilegal, kebanyakan obat-obatan terlarang. 
+
+1059
+00:53:03,480 --> 00:53:06,360
+ Jadi sejauh yang kami tahu, sejauh yang kami ketahui, 
+
+1060
+00:53:06,360 --> 00:53:10,050
+ orang itu rusak karena OPSEC yang buruk. 
+
+1061
+00:53:10,050 --> 00:53:13,810
+ Seperti dia membuat posting publik dengan nama aslinya, 
+
+1062
+00:53:13,810 --> 00:53:17,430
+ dan kemudian pergi dan menghapusnya dan memasukkan nama samarannya di atasnya. 
+
+1063
+00:53:17,430 --> 00:53:20,363
+ Tor tidak bisa membantu orang melawan hal semacam itu. 
+
+1064
+00:53:20,363 --> 00:53:23,520
+ Di sisi lain, jika Anda telah melihat kebocoran NSA, 
+
+1065
+00:53:23,520 --> 00:53:26,640
+ Anda tahu bahwa penegak hukum telah mendapatkan informasi 
+
+1066
+00:53:26,640 --> 00:53:29,620
+ dari kecerdasan dan kemudian membersihkannya 
+
+1067
+00:53:29,620 --> 00:53:33,495
+ melalui proses yang disebut konstruksi ganda di mana 
+
+1068
+00:53:33,495 --> 00:53:36,120
+ agen intelijen akan mengatakan kepada agen penegak hukum, 
+
+1069
+00:53:36,120 --> 00:53:38,390
+ OK, lihat, itu Fred di sana. 
+
+1070
+00:53:38,390 --> 00:53:39,480
+ Dia melakukannya. 
+
+1071
+00:53:39,480 --> 00:53:41,482
+ Tapi itu tidak diterima di pengadilan, 
+
+1072
+00:53:41,482 --> 00:53:43,190
+ dan Anda tidak akan pernah mengakui bahwa kami memberi tahu Anda. 
+
+1073
+00:53:43,190 --> 00:53:46,125
+ Temukan saja cara lain untuk mengetahui bahwa Fred yang melakukannya, 
+
+1074
+00:53:46,125 --> 00:53:48,120
+ tetapi Fred yang melakukannya. 
+
+1075
+00:53:48,120 --> 00:53:50,210
+ Menurut beberapa kebocoran Snowden 
+
+1076
+00:53:50,210 --> 00:53:52,380
+ dan beberapa kebocoran dari orang lain, siapa 
+
+1077
+00:53:52,380 --> 00:53:59,910
+ masih belum tertangkap, itu dilakukan kadang-kadang. 
+
+1078
+00:53:59,910 --> 00:54:05,960
+ Jadi OK, pada titik ini, Anda menggunakan penalaran dasar Bayesian Anda 
+
+1079
+00:54:05,960 --> 00:54:08,850
+ keterampilan, dan Anda berkata, baiklah, saya akan 
+
+1080
+00:54:08,850 --> 00:54:11,090
+ lihat bukti ini jika orang itu benar-benar 
+
+1081
+00:54:11,090 --> 00:54:13,040
+ tertangkap oleh karena OPSEC? 
+
+1082
+00:54:13,040 --> 00:54:14,490
+ Ya saya akan. 
+
+1083
+00:54:14,490 --> 00:54:15,720
+ Saya akan melihat OPSEC yang buruk. 
+
+1084
+00:54:15,720 --> 00:54:19,880
+ Saya akan melihat laporan bahwa dia tertangkap karena OPSEC yang buruk. 
+
+1085
+00:54:19,880 --> 00:54:24,410
+ Tapi apa yang akan saya lihat jika itu adalah kasus konstruksi ganda? 
+
+1086
+00:54:24,410 --> 00:54:27,100
+ Saya juga akan melihat laporan bahwa pria itu 
+
+1087
+00:54:27,100 --> 00:54:29,450
+ tertangkap oleh OPSEC yang buruk. 
+
+1088
+00:54:29,450 --> 00:54:32,100
+ Karena bukti itu akan tersedia untuk 
+
+1089
+00:54:32,100 --> 00:54:33,970
+ kita sama dalam kedua kasus itu. 
+
+1090
+00:54:33,970 --> 00:54:38,185
+ Kami benar-benar tidak dapat menyimpulkan banyak dari laporan publik 
+
+1091
+00:54:38,185 --> 00:54:39,940
+ dari itu. 
+
+1092
+00:54:39,940 --> 00:54:44,521
+ Yang mengatakan, itu memang terlihat seperti orang itu rusak oleh OPSEC yang buruk. 
+
+1093
+00:54:44,521 --> 00:54:46,145
+ Itu memang terlihat seperti OPSEC yang buruk 
+
+1094
+00:54:46,145 --> 00:54:48,000
+ yang akan Anda cari jika Anda 
+
+1095
+00:54:48,000 --> 00:54:51,210
+ mencoba menangkap seseorang yang menjalankan sesuatu seperti ini. 
+
+1096
+00:54:51,210 --> 00:54:54,620
+ Namun demikian, sebelumnya saya menyarankan agar tidak melakukannya 
+
+1097
+00:54:54,620 --> 00:54:58,130
+ gunakan diri saya untuk melanggar hukum apa pun. 
+
+1098
+00:54:58,130 --> 00:55:05,380
+ Juga jika Anda hidup atau kebebasan dipertaruhkan dari menggunakan 
+
+1099
+00:55:05,380 --> 00:55:09,665
+ Tor atau produk keamanan apa pun, tidak 
+
+1100
+00:55:09,665 --> 00:55:11,180
+ gunakan produk itu dalam isolasi. 
+
+1101
+00:55:11,180 --> 00:55:14,810
+ Pikirkan cara-cara menggunakannya untuk membangun 
+
+1102
+00:55:14,810 --> 00:55:21,330
+ serangkaian pertahanan berlebihan untuk diri sendiri 
+
+1103
+00:55:21,330 --> 00:55:23,830
+ jika hidupmu atau kebebasan dipertaruhkan, 
+
+1104
+00:55:23,830 --> 00:55:27,050
+ atau jika sistem rusak 
+
+1105
+00:55:27,050 --> 00:55:28,780
+ benar-benar tidak dapat diterima untuk Anda. 
+
+1106
+00:55:28,780 --> 00:55:30,024
+ Dan saya akan mengatakan itu tentang Tor. 
+
+1107
+00:55:30,024 --> 00:55:31,190
+ Dan saya akan mengatakan itu tentang TLS. 
+
+1108
+00:55:31,190 --> 00:55:33,590
+ Dan saya akan mengatakan itu tentang PGP. 
+
+1109
+00:55:33,590 --> 00:55:38,620
+ Perangkat lunak adalah pekerjaan yang sedang berjalan. 
+
+1110
+00:55:38,620 --> 00:55:41,065
+ Jadi itu bagian pelecehan. 
+
+1111
+00:55:41,065 --> 00:55:44,870
+ Saya punya 25 menit-- layanan tersembunyi. 
+
+1112
+00:55:44,870 --> 00:55:47,750
+
+
+1113
+00:55:47,750 --> 00:55:50,490
+ Di mana layanan tersembunyi? 
+
+1114
+00:55:50,490 --> 00:55:53,620
+ Jadi, anonimitas responden adalah masalah yang jauh lebih sulit 
+
+1115
+00:55:53,620 --> 00:55:55,640
+ dari inisiasi anonimitas. 
+
+1116
+00:55:55,640 --> 00:55:57,300
+ Anonimitas pemrakarsa adalah apa yang Anda dapatkan 
+
+1117
+00:55:57,300 --> 00:56:00,210
+ ketika Alice ingin membeli kaus kaki, dan Alice 
+
+1118
+00:56:00,210 --> 00:56:02,580
+ ingin tetap anonim dari vendor kaus kaki. 
+
+1119
+00:56:02,580 --> 00:56:05,200
+ Anonimitas responden adalah ketika Alice 
+
+1120
+00:56:05,200 --> 00:56:09,300
+ ingin mempublikasikan puisinya secara online dan menjalankan web 
+
+1121
+00:56:09,300 --> 00:56:11,190
+ server yang memiliki puisinya, 
+
+1122
+00:56:11,190 --> 00:56:14,150
+ tetapi tidak membiarkan siapa pun tahu di mana server web itu berada 
+
+1123
+00:56:14,150 --> 00:56:16,680
+ karena puisi itu sangat memalukan. 
+
+1124
+00:56:16,680 --> 00:56:19,360
+ Dan ya sebenarnya ada layanan tersembunyi 
+
+1125
+00:56:19,360 --> 00:56:21,710
+ di luar sana saya dengan puisi buruk di atasnya. 
+
+1126
+00:56:21,710 --> 00:56:24,070
+ Tidak, saya tidak berpikir ada yang benar-benar menerbitkannya. 
+
+1127
+00:56:24,070 --> 00:56:26,490
+ Tidak, saya tidak akan memberi tahu siapa pun di mana itu. 
+
+1128
+00:56:26,490 --> 00:56:27,990
+ Saya sedang menunggu untuk go public. 
+
+1129
+00:56:27,990 --> 00:56:31,390
+
+
+1130
+00:56:31,390 --> 00:56:37,920
+ Jadi baiklah, satu hal yang bisa Anda lakukan adalah - mari 
+
+1131
+00:56:37,920 --> 00:56:39,351
+ lihat, berapa lama? 
+
+1132
+00:56:39,351 --> 00:56:43,650
+ Oke, saya bisa melakukan ini. 
+
+1133
+00:56:43,650 --> 00:56:46,622
+ Jadi sekarang Alice ingin mempublikasikan puisinya. 
+
+1134
+00:56:46,622 --> 00:56:48,205
+ Jadi saya akan menempatkan Alice di sini, 
+
+1135
+00:56:48,205 --> 00:56:49,450
+ karena dia adalah respondennya. 
+
+1136
+00:56:49,450 --> 00:56:54,080
+ Alice bisa membangun jalur-- ini mewakili banyak relai-- 
+
+1137
+00:56:54,080 --> 00:56:59,052
+ melalui jaringan Tor, dan kemudian hanya mengatakan kepada relay ini, 
+
+1138
+00:56:59,052 --> 00:57:00,135
+ tolong terima koneksi. 
+
+1139
+00:57:00,135 --> 00:57:02,660
+
+
+1140
+00:57:02,660 --> 00:57:05,600
+ Jadi sekarang siapa saja yang pergi ke relai ini bisa berkata, 
+
+1141
+00:57:05,600 --> 00:57:07,770
+ hei, aku ingin berbicara dengan Alice. 
+
+1142
+00:57:07,770 --> 00:57:10,180
+ Dan ada desain yang bekerja dengan cara ini. 
+
+1143
+00:57:10,180 --> 00:57:12,620
+ Namun, ada beberapa tantangan. 
+
+1144
+00:57:12,620 --> 00:57:15,185
+ Salah satu tantangannya adalah relai ini bisa man in the middle 
+
+1145
+00:57:15,185 --> 00:57:19,920
+ semua lalu lintas kecuali ada kunci TLS yang terkenal. 
+
+1146
+00:57:19,920 --> 00:57:22,400
+ Hal lainnya adalah mungkin relay ini 
+
+1147
+00:57:22,400 --> 00:57:24,396
+ juga dipermalukan oleh puisi 
+
+1148
+00:57:24,396 --> 00:57:26,020
+ dan tidak ingin menjadi kontak publik 
+
+1149
+00:57:26,020 --> 00:57:31,160
+ titik untuk puisi sangat mengerikan. 
+
+1150
+00:57:31,160 --> 00:57:35,280
+ Jadi estafet ini juga bisa ditekan oleh orang lain yang 
+
+1151
+00:57:35,280 --> 00:57:37,760
+ benci puisi untuk menyensornya. 
+
+1152
+00:57:37,760 --> 00:57:41,940
+ Relai ini juga bisa menjadi target serangan. 
+
+1153
+00:57:41,940 --> 00:57:45,130
+ Jadi Anda ingin beberapa cara di mana Alice bisa pergi ke relay yang berbeda 
+
+1154
+00:57:45,130 --> 00:57:51,170
+ waktu dan tidak ada relai tunggal yang menyentuh lalu lintas yang tidak terenkripsi 
+
+1155
+00:57:51,170 --> 00:57:52,480
+ milik Alice. 
+
+1156
+00:57:52,480 --> 00:57:56,620
+ Baiklah, itu bisa dilakukan. 
+
+1157
+00:57:56,620 --> 00:57:58,510
+ Tetapi setelah Anda memiliki banyak relay yang berbeda, 
+
+1158
+00:57:58,510 --> 00:58:01,790
+ Apa yang sebenarnya Alice katakan pada orang lain? 
+
+1159
+00:58:01,790 --> 00:58:04,490
+ Ini semacam menjadi kunci publik. 
+
+1160
+00:58:04,490 --> 00:58:08,250
+ Karena jika dia hanya mengatakan, relay x, relay y, relay z, tapi x, y, 
+
+1161
+00:58:08,250 --> 00:58:11,530
+ dan z berubah setiap lima menit, 
+
+1162
+00:58:11,530 --> 00:58:13,920
+ itu agak sulit untuk mengetahui Anda sebenarnya 
+
+1163
+00:58:13,920 --> 00:58:15,570
+ mendapat relay yang tepat. 
+
+1164
+00:58:15,570 --> 00:58:17,590
+ Jadi katakanlah dia memberi tahu semua orang kunci publik, 
+
+1165
+00:58:17,590 --> 00:58:22,550
+ dan begitu dia tiba di sini, dia berkata, hei, ini Alice. 
+
+1166
+00:58:22,550 --> 00:58:24,090
+ Saya akan membuktikannya dengan kunci publik saya. 
+
+1167
+00:58:24,090 --> 00:58:33,960
+ Jadi relay ini tahu bahwa kunci publik adalah z 
+
+1168
+00:58:33,960 --> 00:58:35,380
+ menjalankan layanan tersembunyi di sini. 
+
+1169
+00:58:35,380 --> 00:58:38,330
+ Dan jika ada orang lain yang mengatakan, hai, hubungkan saya ke kunci publik z, 
+
+1170
+00:58:38,330 --> 00:58:41,130
+ mereka bisa melakukan jabat tangan dan berakhir 
+
+1171
+00:58:41,130 --> 00:58:43,170
+ dengan kunci yang dibagikan dengan Alice. 
+
+1172
+00:58:43,170 --> 00:58:46,260
+ Dan itu adalah jabat tangan yang sama dengan yang digunakan ekstensi sirkuit Tor. 
+
+1173
+00:58:46,260 --> 00:58:48,590
+ Dan sekarang Bob bisa membaca puisi Alice 
+
+1174
+00:58:48,590 --> 00:58:52,190
+ dengan pergi melalui jalur lain di jaringan Tor di sini. 
+
+1175
+00:58:52,190 --> 00:58:57,045
+ Bob harus tahu PKz, dan Bob bisa berkata, hei, hubungkan saya dengan PKz. 
+
+1176
+00:58:57,045 --> 00:58:59,170
+ Kirim benda ini yang seperti sel buat-- 
+
+1177
+00:58:59,170 --> 00:59:01,380
+ sebenarnya ini adalah sel perkenalan, tapi mari 
+
+1178
+00:59:01,380 --> 00:59:03,380
+ lupakan itu-- atas Alice. 
+
+1179
+00:59:03,380 --> 00:59:05,820
+ Mereka melakukan jabat tangan yang sama dengan relay. 
+
+1180
+00:59:05,820 --> 00:59:07,913
+ Dan sekarang mereka memiliki kunci bersama yang mereka bisa 
+
+1181
+00:59:07,913 --> 00:59:10,100
+ gunakan untuk enkripsi ujung ke ujung. 
+
+1182
+00:59:10,100 --> 00:59:11,915
+ Yah, ada sesuatu yang saya tinggalkan, meskipun, 
+
+1183
+00:59:11,915 --> 00:59:15,120
+ Yaitu, bagaimana cara Bob tahu cara pergi ke sini? 
+
+1184
+00:59:15,120 --> 00:59:17,082
+ Dan kita bisa melakukan apa saja tentang fakta itu 
+
+1185
+00:59:17,082 --> 00:59:22,480
+ bahwa relai ini harus belajar ke kunci publik ini? 
+
+1186
+00:59:22,480 --> 00:59:23,070
+ Yah, kami bisa. 
+
+1187
+00:59:23,070 --> 00:59:27,730
+ Kita dapat menambahkan beberapa sistem direktori [TIDAK JELAS] 
+
+1188
+00:59:27,730 --> 00:59:32,745
+ di mana Alice mengunggah pernyataan yang ditandatangani secara anonim di atas Tor 
+
+1189
+00:59:32,745 --> 00:59:38,725
+ mengatakan PKz pada relay x. 
+
+1190
+00:59:38,725 --> 00:59:41,590
+
+
+1191
+00:59:41,590 --> 00:59:44,620
+ Dan kemudian Bob berkata, hei, beri saya pernyataan yang ditandatangani 
+
+1192
+00:59:44,620 --> 00:59:46,520
+ untuk menanyakan sistem direktori, hei, beri aku 
+
+1193
+00:59:46,520 --> 00:59:49,940
+ pernyataan yang ditandatangani tentang PKz. 
+
+1194
+00:59:49,940 --> 00:59:52,376
+ Dan Bob mencari tahu ke mana harus pergi. 
+
+1195
+00:59:52,376 --> 00:59:56,740
+ Dan kita bahkan bisa melakukan yang lebih baik dan memberikan Alice 
+
+1196
+00:59:56,740 --> 00:59:59,250
+ kunci publik yang berbeda di sini. 
+
+1197
+00:59:59,250 --> 01:00:00,890
+ Jadi ini bisa jadi PKw. 
+
+1198
+01:00:00,890 --> 01:00:04,660
+
+
+1199
+01:00:04,660 --> 01:00:09,840
+ Dan pernyataan yang dia unggah ke direktori bisa mengatakan, 
+
+1200
+01:00:09,840 --> 01:00:12,730
+ jika Anda ingin berbicara dengan layanan dengan kunci publik z, 
+
+1201
+01:00:12,730 --> 01:00:16,560
+ lalu buka x dan gunakan kunci publik w. 
+
+1202
+01:00:16,560 --> 01:00:21,820
+ Dan sekarang kunci publik z tidak dipublikasikan di sini. 
+
+1203
+01:00:21,820 --> 01:00:26,590
+ Anda bahkan bisa melangkah lebih jauh dan mengenkripsi ini 
+
+1204
+01:00:26,590 --> 01:00:29,480
+ dengan beberapa rahasia bersama yang diketahui oleh Alice dan Bob. 
+
+1205
+01:00:29,480 --> 01:00:32,330
+ Dan jika Anda melakukan itu, maka layanan direktori 
+
+1206
+01:00:32,330 --> 01:00:34,990
+ dan orang-orang yang dapat menghubungi layanan direktori 
+
+1207
+01:00:34,990 --> 01:00:39,530
+ tidak bisa belajar bagaimana terhubung dengan Alice dengan itu. 
+
+1208
+01:00:39,530 --> 01:00:40,030
+ Ya. 
+
+1209
+01:00:40,030 --> 01:00:42,190
+ SISWA: Hanya pertanyaan singkat di sana. 
+
+1210
+01:00:42,190 --> 01:00:44,850
+ Jika itu tidak dienkripsi, maka Rx masih bisa 
+
+1211
+01:00:44,850 --> 01:00:48,010
+ mengetahui bahwa itu menjalankan layanan untuk Alice, kan? 
+
+1212
+01:00:48,010 --> 01:00:48,890
+ NICK MATHEWSON: Yap. 
+
+1213
+01:00:48,890 --> 01:00:49,934
+ Yah, bukan untuk Alice. 
+
+1214
+01:00:49,934 --> 01:00:51,475
+ Dapat diketahui bahwa itu menjalankan PKz 
+
+1215
+01:00:51,475 --> 01:00:53,060
+ jika ini tidak dienkripsi. 
+
+1216
+01:00:53,060 --> 01:00:55,680
+ Kami memiliki desain untuk itu bahwa saya benar-benar pergi 
+
+1217
+01:00:55,680 --> 01:00:56,950
+ untuk sampai ke akhir ini. 
+
+1218
+01:00:56,950 --> 01:00:58,740
+ Tapi itu belum dibangun. 
+
+1219
+01:00:58,740 --> 01:01:01,040
+ Tapi itu lumayan keren. 
+
+1220
+01:01:01,040 --> 01:01:03,535
+ Jadi OK, dan Anda tidak ingin menggunakan direktori terpusat 
+
+1221
+01:01:03,535 --> 01:01:04,460
+ untuk ini. 
+
+1222
+01:01:04,460 --> 01:01:12,280
+ Jadi kita benar-benar menggunakan DHT, yang, sekali lagi, tidak sempurna, 
+
+1223
+01:01:12,280 --> 01:01:14,370
+ dan memiliki beberapa peluang penyensoran. 
+
+1224
+01:01:14,370 --> 01:01:16,966
+ Tetapi kami mencoba untuk membuat yang kurang dan kurang. 
+
+1225
+01:01:16,966 --> 01:01:19,700
+ Dan saya mungkin akan membahas lebih banyak lagi, jadi saya tidak bisa melakukan seluruh detailnya. 
+
+1226
+01:01:19,700 --> 01:01:22,510
+
+
+1227
+01:01:22,510 --> 01:01:24,860
+ Jadi salah satu masalah di sana 
+
+1228
+01:01:24,860 --> 01:01:28,090
+ adalah jika Anda menjalankan salah satu layanan direktori ini, 
+
+1229
+01:01:28,090 --> 01:01:35,960
+ Anda punya daftar lengkap kunci ini, dari waktu ke waktu, 
+
+1230
+01:01:35,960 --> 01:01:37,800
+ Anda menjalankan layanan direktori [INAUDIBLE]. 
+
+1231
+01:01:37,800 --> 01:01:39,551
+ Anda mendapatkan daftar lengkap dari semua kunci ini, 
+
+1232
+01:01:39,551 --> 01:01:41,300
+ dan Anda dapat mencoba menghubungkan ke semua yang 
+
+1233
+01:01:41,300 --> 01:01:43,830
+ yang tidak memiliki barang terenkripsi untuk mencari tahu apa yang ada di sana. 
+
+1234
+01:01:43,830 --> 01:01:45,509
+ Itu disebut serangan enumerasi. 
+
+1235
+01:01:45,509 --> 01:01:47,050
+ Dan kami tidak menyebutkannya di surat kabar kami, 
+
+1236
+01:01:47,050 --> 01:01:49,690
+ karena kami tidak memikirkan itu. 
+
+1237
+01:01:49,690 --> 01:01:51,270
+ Kami tidak. 
+
+1238
+01:01:51,270 --> 01:01:53,630
+ Tetapi itu adalah sesuatu yang ingin kita tolak. 
+
+1239
+01:01:53,630 --> 01:01:57,680
+ Jadi dalam desain saya berharap bisa meretas bersama 
+
+1240
+01:01:57,680 --> 01:02:02,020
+ kadang-kadang pada tahun 2014, kita akan bergerak menuju membutakan kunci 
+
+1241
+01:02:02,020 --> 01:02:18,770
+ pendekatan di mana Alice dan Bob berbagi PKz, 
+
+1242
+01:02:18,770 --> 01:02:22,190
+ tetapi pernyataan ini tidak ditandatangani dengan PKz. 
+
+1243
+01:02:22,190 --> 01:02:24,780
+ Pernyataan ini ditandatangani dengan perdana PKz 
+
+1244
+01:02:24,780 --> 01:02:33,380
+ di mana PKz prime berasal dari PKz 
+
+1245
+01:02:33,380 --> 01:02:44,490
+ dan, katakanlah, tanggal seperti itu jika Anda tahu PKz dan tanggalnya, 
+
+1246
+01:02:44,490 --> 01:02:47,240
+ Anda dapat memperoleh perdana PKz. 
+
+1247
+01:02:47,240 --> 01:02:51,810
+ Jika seperti Alice kamu tahu rahasia Kz, 
+
+1248
+01:02:51,810 --> 01:02:56,550
+ Anda dapat menghasilkan pesan yang ditandatangani oleh perdana PKz. 
+
+1249
+01:02:56,550 --> 01:03:01,410
+ Tetapi jika Anda hanya melihat PKz prima, bahkan mengetahui tanggalnya, 
+
+1250
+01:03:01,410 --> 01:03:04,440
+ Anda tidak dapat memperoleh kembali PKz. 
+
+1251
+01:03:04,440 --> 01:03:06,170
+ Kami punya bukti. 
+
+1252
+01:03:06,170 --> 01:03:10,495
+ Dan jika Anda ingin mengetahui cara kerjanya, maka ping saya 
+
+1253
+01:03:10,495 --> 01:03:11,960
+ dan saya akan mengirimkan makalahnya. 
+
+1254
+01:03:11,960 --> 01:03:15,700
+ Ini trik yang keren. 
+
+1255
+01:03:15,700 --> 01:03:18,590
+ Kami bukan yang pertama menciptakan ide ini. 
+
+1256
+01:03:18,590 --> 01:03:22,900
+ Tapi itulah bagaimana kita akan menyelesaikan serangan enumerasi 
+
+1257
+01:03:22,900 --> 01:03:26,790
+ kadang-kadang tahun mendatang ini dengan asumsi bahwa saya dapat benar-benar 
+
+1258
+01:03:26,790 --> 01:03:29,253
+ dapatkan waktu untuk membangunnya. 
+
+1259
+01:03:29,253 --> 01:03:30,336
+ Jadi itu layanan tersembunyi. 
+
+1260
+01:03:30,336 --> 01:03:34,730
+
+
+1261
+01:03:34,730 --> 01:03:41,630
+ Serangan dan pertahanan-- sejauh ini, 
+
+1262
+01:03:41,630 --> 01:03:44,600
+ kategori serangan terbesar yang pernah kami lihat 
+
+1263
+01:03:44,600 --> 01:03:47,370
+ adalah serangan di tingkat aplikasi. 
+
+1264
+01:03:47,370 --> 01:03:50,810
+ Jadi jika Anda menjalankan aplikasi di atas Tor, 
+
+1265
+01:03:50,810 --> 01:03:56,146
+ dan itu mengirim lalu lintas yang tidak terenkripsi, seperti HTTP biasa, 
+
+1266
+01:03:56,146 --> 01:03:59,450
+ maka simpul keluar yang bermusuhan, sama seperti siapa pun 
+
+1267
+01:03:59,450 --> 01:04:02,470
+ lain yang menyentuh lalu lintas HTTP, dapat mengamati dan memodifikasi 
+
+1268
+01:04:02,470 --> 01:04:04,830
+ lalu lintas. 
+
+1269
+01:04:04,830 --> 01:04:08,240
+ Ini adalah serangan nomor satu di seluruh sistem. 
+
+1270
+01:04:08,240 --> 01:04:10,120
+ Solusinya adalah traffic yang dienkripsi. 
+
+1271
+01:04:10,120 --> 01:04:13,060
+ Untungnya, kami semacam dalam renaissance enkripsi 
+
+1272
+01:04:13,060 --> 01:04:14,520
+ Dalam beberapa tahun terakhir. 
+
+1273
+01:04:14,520 --> 01:04:16,650
+ Dan semakin banyak lalu lintas semakin banyak 
+
+1274
+01:04:16,650 --> 01:04:21,520
+ dienkripsi dengan otoritas sertifikat gratis yang bagus 
+
+1275
+01:04:21,520 --> 01:04:25,550
+ bahwa EFF dan Mozilla dan Cisco dan saya lupa siapa lagi yang mengumumkan 
+
+1276
+01:04:25,550 --> 01:04:26,740
+ satu atau dua hari yang lalu. 
+
+1277
+01:04:26,740 --> 01:04:29,632
+ Akan ada lebih sedikit alasan untuk lalu lintas yang tidak terenkripsi pada tahun 2015 
+
+1278
+01:04:29,632 --> 01:04:31,420
+ daripada tahun ini. 
+
+1279
+01:04:31,420 --> 01:04:33,210
+ Sehingga memecahkan itu. 
+
+1280
+01:04:33,210 --> 01:04:37,580
+ Serangan yang lebih menarik termasuk hal-hal seperti penandaan lalu lintas. 
+
+1281
+01:04:37,580 --> 01:04:44,090
+ Jadi kami membuat kesalahan dalam pemeriksaan integritas awal kami 
+
+1282
+01:04:44,090 --> 01:04:44,870
+ pelaksanaan. 
+
+1283
+01:04:44,870 --> 01:04:47,870
+ Pelaksanaan pemeriksaan integritas awal kami 
+
+1284
+01:04:47,870 --> 01:04:55,098
+ melakukan ujung ke ujung memeriksa antara program Alice dan pintu keluar 
+
+1285
+01:04:55,098 --> 01:04:56,410
+ simpul. 
+
+1286
+01:04:56,410 --> 01:04:58,900
+ Tapi ternyata itu tidak cukup. 
+
+1287
+01:04:58,900 --> 01:05:02,410
+ Karena jika relay pertama berantakan 
+
+1288
+01:05:02,410 --> 01:05:07,290
+ dengan lalu lintas dengan cara yang menciptakan pola yang keluar 
+
+1289
+01:05:07,290 --> 01:05:10,330
+ node dapat mendeteksi, maka itu cara mudah 
+
+1290
+01:05:10,330 --> 01:05:12,800
+ untuk relay pertama dan relai terakhir 
+
+1291
+01:05:12,800 --> 01:05:17,860
+ untuk mengetahui bahwa mereka berada di jalur yang sama dan mengidentifikasi Alice. 
+
+1292
+01:05:17,860 --> 01:05:20,220
+ Tentu saja, jika relay pertama dan relai terakhir 
+
+1293
+01:05:20,220 --> 01:05:23,390
+ kebetulan berada di jalan yang sama, terjadi 
+
+1294
+01:05:23,390 --> 01:05:25,950
+ untuk berkolaborasi, maka mereka sudah bisa 
+
+1295
+01:05:25,950 --> 01:05:30,000
+ identifikasi Alice melalui korelasi lalu lintas, kami percaya. 
+
+1296
+01:05:30,000 --> 01:05:34,944
+ Tapi mungkin tidak semudah itu bagi mereka. 
+
+1297
+01:05:34,944 --> 01:05:36,610
+ Mungkin korelasi lalu lintas suatu hari nanti 
+
+1298
+01:05:36,610 --> 01:05:38,330
+ Lebih sulit dari yang kita pikirkan. 
+
+1299
+01:05:38,330 --> 01:05:41,460
+ Akan lebih baik untuk benar-benar menyelesaikan serangan itu nyata. 
+
+1300
+01:05:41,460 --> 01:05:43,700
+ Kami punya dua solusi untuk itu. 
+
+1301
+01:05:43,700 --> 01:05:46,220
+ Salah satunya adalah hasil yang diharapkan dari serangan ini 
+
+1302
+01:05:46,220 --> 01:05:48,350
+ adalah bahwa sirkuit berkala akan gagal. 
+
+1303
+01:05:48,350 --> 01:05:50,750
+ Karena penyerang di hop pertama 
+
+1304
+01:05:50,750 --> 01:05:53,570
+ menebak salah tentang mengendalikan hop terakhir. 
+
+1305
+01:05:53,570 --> 01:05:59,130
+ Jadi, setiap klien Tor memeriksa tingkat kegagalan yang aneh. 
+
+1306
+01:05:59,130 --> 01:06:00,910
+ Perbaikan jangka panjang yang sebenarnya adalah membuatnya 
+
+1307
+01:06:00,910 --> 01:06:04,570
+ sehingga mengacaukan pola pada hop pertama 
+
+1308
+01:06:04,570 --> 01:06:07,890
+ tidak membuat lebih dari 1 bit informasi pada hop terakhir. 
+
+1309
+01:06:07,890 --> 01:06:10,790
+ Anda tidak dapat menghindari pengiriman 1 bit informasi, 
+
+1310
+01:06:10,790 --> 01:06:13,830
+ karena hop pertama selalu bisa menutup koneksi. 
+
+1311
+01:06:13,830 --> 01:06:17,097
+ Tetapi Anda dapat membatasi ke 1 bit-- OK, 2 bit. 
+
+1312
+01:06:17,097 --> 01:06:19,430
+ Karena dengan begitu mereka akan memiliki pilihan untuk merusak data 
+
+1313
+01:06:19,430 --> 01:06:20,740
+ atau matikan koneksi. 
+
+1314
+01:06:20,740 --> 01:06:23,700
+
+
+1315
+01:06:23,700 --> 01:06:25,716
+ Oh, saya punya ide bagaimana membuat itu lebih baik. 
+
+1316
+01:06:25,716 --> 01:06:28,980
+ Saya harus memikirkannya. 
+
+1317
+01:06:28,980 --> 01:06:32,610
+ Mari kita lihat, DOS sebenarnya sangat penting. 
+
+1318
+01:06:32,610 --> 01:06:34,610
+ Ada sebuah makalah tahun itu tentang sesuatu 
+
+1319
+01:06:34,610 --> 01:06:36,640
+ bahwa penulis menyebut serangan penembak jitu 
+
+1320
+01:06:36,640 --> 01:06:39,986
+ di mana Anda melihat lalu lintas yang berasal dari node Tor 
+
+1321
+01:06:39,986 --> 01:06:41,850
+ yang tidak Anda kendalikan. 
+
+1322
+01:06:41,850 --> 01:06:44,230
+ Anda ingin mengusir semua orang dari simpul Tor itu. 
+
+1323
+01:06:44,230 --> 01:06:45,490
+ Jadi Anda terhubung dengannya. 
+
+1324
+01:06:45,490 --> 01:06:50,217
+ Anda mengisi semua buffer memori, dan macet. 
+
+1325
+01:06:50,217 --> 01:06:52,050
+ Kemudian Anda melihat apakah lalu lintas tersebut 
+
+1326
+01:06:52,050 --> 01:06:54,055
+ akan dialihkan ke node yang Anda kontrol atau tidak, 
+
+1327
+01:06:54,055 --> 01:06:55,235
+ dan Anda mengulanginya seperlunya. 
+
+1328
+01:06:55,235 --> 01:06:59,020
+
+
+1329
+01:06:59,020 --> 01:07:02,575
+ Untuk itu, pilihan terbaik kami adalah yang pertama, 
+
+1330
+01:07:02,575 --> 01:07:05,310
+ tidak lagi memiliki DOS memori. 
+
+1331
+01:07:05,310 --> 01:07:10,550
+ Saya pikir kita memiliki semua memori yang baik yang diperbaiki oleh DOS sekarang. 
+
+1332
+01:07:10,550 --> 01:07:13,080
+ Ada beberapa yang buruk yang masih perlu ditangani. 
+
+1333
+01:07:13,080 --> 01:07:16,430
+ Tapi mereka tidak efisien. 
+
+1334
+01:07:16,430 --> 01:07:19,770
+ Pilihan lain untuk menyelesaikan hal semacam ini 
+
+1335
+01:07:19,770 --> 01:07:23,020
+ pastikan relai berkapasitas tinggi. 
+
+1336
+01:07:23,020 --> 01:07:25,720
+ Jangan menerima relay kapasitas rendah pada jaringan. 
+
+1337
+01:07:25,720 --> 01:07:26,700
+ Kami melakukan itu juga. 
+
+1338
+01:07:26,700 --> 01:07:30,130
+ Jika Anda mencoba menjalankan relai di ponsel Anda, 
+
+1339
+01:07:30,130 --> 01:07:31,570
+ pihak berwenang tidak akan mencantumkannya. 
+
+1340
+01:07:31,570 --> 01:07:35,950
+
+
+1341
+01:07:35,950 --> 01:07:39,350
+ Dan hal lain adalah mencoba memilih penjadwalan sirkuit kami 
+
+1342
+01:07:39,350 --> 01:07:45,710
+ algoritma sehingga sulit untuk mematikan sirkuit 
+
+1343
+01:07:45,710 --> 01:07:46,820
+ yang tidak Anda kendalikan. 
+
+1344
+01:07:46,820 --> 01:07:50,605
+ Itu sangat sulit, meskipun, dan itu belum 
+
+1345
+01:07:50,605 --> 01:07:52,830
+ masalah yang belum terpecahkan. 
+
+1346
+01:07:52,830 --> 01:07:55,660
+ Mari kita lihat, haruskah saya melakukan serangan yang menarik 
+
+1347
+01:07:55,660 --> 01:07:58,342
+ atau serangan penting? 
+
+1348
+01:07:58,342 --> 01:07:59,216
+ SISWA: Menarik. 
+
+1349
+01:07:59,216 --> 01:08:01,600
+ NICK MATHEWSON: Menarik, oke. 
+
+1350
+01:08:01,600 --> 01:08:03,094
+ Jadi angkat tangan, berapa banyak orang 
+
+1351
+01:08:03,094 --> 01:08:04,510
+ mungkin suka menulis program itu 
+
+1352
+01:08:04,510 --> 01:08:07,130
+ menggunakan kriptografi suatu hari nanti? 
+
+1353
+01:08:07,130 --> 01:08:08,770
+ Keren, inilah yang harus Anda pelajari. 
+
+1354
+01:08:08,770 --> 01:08:12,540
+ Jangan pernah percaya penerapan kriptografi Anda. 
+
+1355
+01:08:12,540 --> 01:08:15,670
+ Jadi meskipun itu benar, itu salah. 
+
+1356
+01:08:15,670 --> 01:08:21,825
+ Dulu, saya pikir ini mungkin salah satu keamanan yang lebih buruk 
+
+1357
+01:08:21,825 --> 01:08:24,430
+ bug yang kami miliki. 
+
+1358
+01:08:24,430 --> 01:08:25,805
+ Relai apa pun bisa man in the middle 
+
+1359
+01:08:25,805 --> 01:08:32,420
+ sirkuit apa pun karena kami berasumsi bahwa Diffie-Hellman benar 
+
+1360
+01:08:32,420 --> 01:08:38,120
+ implementasi akan memverifikasi bahwa itu tidak dilewati 0 
+
+1361
+01:08:38,120 --> 01:08:40,600
+ sebagai salah satu masukan. 
+
+1362
+01:08:40,600 --> 01:08:42,770
+ Penulis implementasi Diffie-Hellman kami 
+
+1363
+01:08:42,770 --> 01:08:44,758
+ diasumsikan aplikasi yang tepat tidak akan pernah 
+
+1364
+01:08:44,758 --> 01:08:49,470
+ lewat nol ke implementasi Diffie-Hellman. 
+
+1365
+01:08:49,470 --> 01:08:56,229
+ Jadi Diffie-Hellman, ketika saya mengatakan g ke x, Anda mengatakan g ke y. 
+
+1366
+01:08:56,229 --> 01:08:57,340
+ Saya tahu x. 
+
+1367
+01:08:57,340 --> 01:08:58,310
+ Kamu tahu y. 
+
+1368
+01:08:58,310 --> 01:09:01,332
+ Dan kita bisa menghitung g ke xy sekarang. 
+
+1369
+01:09:01,332 --> 01:09:02,540
+ Anda cenderung merasakan saya? 
+
+1370
+01:09:02,540 --> 01:09:03,100
+ Baik. 
+
+1371
+01:09:03,100 --> 01:09:06,640
+ Nah, jika sebaliknya pria di tengah 
+
+1372
+01:09:06,640 --> 01:09:10,990
+ menggantikan g saya ke x dengan 0 dan g Anda ke x dengan 0, 
+
+1373
+01:09:10,990 --> 01:09:13,100
+ dan kemudian saya dengan senang hati menghitung 0 ke x, 
+
+1374
+01:09:13,100 --> 01:09:16,890
+ dan Anda menghitung 0 hingga y, kita akan memiliki kunci yang sama. 
+
+1375
+01:09:16,890 --> 01:09:18,719
+ Kami dengan senang hati akan berbicara satu sama lain. 
+
+1376
+01:09:18,719 --> 01:09:22,740
+ Tapi ini akan menjadi kunci yang penyerang tahu, karena itu 0. 
+
+1377
+01:09:22,740 --> 01:09:25,149
+ 1 juga berfungsi. 
+
+1378
+01:09:25,149 --> 01:09:27,290
+ p juga berfungsi. 
+
+1379
+01:09:27,290 --> 01:09:29,729
+ p plus 1 juga berfungsi. 
+
+1380
+01:09:29,729 --> 01:09:33,109
+ Jadi pada dasarnya Anda hanya perlu memastikan bahwa nilai Anda di sini 
+
+1381
+01:09:33,109 --> 01:09:37,119
+ berada dalam jangkauan 2 dan p minus 1 jika Anda melakukan Diffie-Hellman 
+
+1382
+01:09:37,120 --> 01:09:38,439
+ dalam z sub p. 
+
+1383
+01:09:38,439 --> 01:09:41,010
+
+
+1384
+01:09:41,010 --> 01:09:47,090
+ OK, mari kita lihat, saya ingin berbicara lebih banyak tentang penyensoran. 
+
+1385
+01:09:47,090 --> 01:09:49,609
+ Karena sebenarnya, itu salah satu area 
+
+1386
+01:09:49,609 --> 01:09:51,460
+ di mana kita bisa melakukan yang terbaik. 
+
+1387
+01:09:51,460 --> 01:09:55,260
+ Umumnya, versi ringkasannya 
+
+1388
+01:09:55,260 --> 01:09:57,240
+ adalah, di kertas paling awal yang Anda baca, 
+
+1389
+01:09:57,240 --> 01:09:59,880
+ dan di beberapa pembaruan, kami masih memikirkannya 
+
+1390
+01:09:59,880 --> 01:10:01,880
+ bahwa kami akan mencoba membuat Tor terlihat adil 
+
+1391
+01:10:01,880 --> 01:10:05,275
+ seperti klien web yang berbicara dengan server web melalui HTTPS 
+
+1392
+01:10:05,275 --> 01:10:06,869
+ dan membuatnya sulit untuk diblokir. 
+
+1393
+01:10:06,869 --> 01:10:08,660
+ Ternyata itu sangat sulit 
+
+1394
+01:10:08,660 --> 01:10:10,820
+ dan mungkin tidak layak dilakukan. 
+
+1395
+01:10:10,820 --> 01:10:12,250
+ Sebaliknya, pendekatan yang kita ambil sekarang 
+
+1396
+01:10:12,250 --> 01:10:15,190
+ menggunakan program plug-in yang berbeda 
+
+1397
+01:10:15,190 --> 01:10:21,030
+ bahwa relai yang tidak terdaftar yang disebut jembatan dapat digunakan, 
+
+1398
+01:10:21,030 --> 01:10:23,930
+ dan klien dapat menggunakan untuk melakukan lalu lintas yang berbeda 
+
+1399
+01:10:23,930 --> 01:10:25,440
+ transformasi. 
+
+1400
+01:10:25,440 --> 01:10:28,675
+ Dan kami berhasil terus menambahkan yang baru 
+
+1401
+01:10:28,675 --> 01:10:30,800
+ lebih cepat daripada yang bisa diimplementasikan oleh sensor 
+
+1402
+01:10:30,800 --> 01:10:32,380
+ memblokir untuk mereka. 
+
+1403
+01:10:32,380 --> 01:10:38,560
+ Dan itu sebenarnya adalah kasus di mana tidak ada solusi 
+
+1404
+01:10:38,560 --> 01:10:42,320
+ bisa dikategorikan bisa diterapkan. 
+
+1405
+01:10:42,320 --> 01:10:44,030
+ Itu bukan kalimat yang matang. 
+
+1406
+01:10:44,030 --> 01:10:47,170
+ Tak satu pun dari plug-in ini secara inheren 
+
+1407
+01:10:47,170 --> 01:10:50,651
+ unblockable oleh teknik yang bisa dibayangkan sejauh ini. 
+
+1408
+01:10:50,651 --> 01:10:53,150
+ Tapi mereka cukup bagus untuk menjaga traffic tidak terhalang selama setahun 
+
+1409
+01:10:53,150 --> 01:10:56,390
+ atau dua di sebagian besar tempat, dan enam atau tujuh 
+
+1410
+01:10:56,390 --> 01:10:59,460
+ berbulan-bulan pada suatu waktu di Cina. 
+
+1411
+01:10:59,460 --> 01:11:02,760
+ Cina saat ini memiliki sensor paling kompeten di dunia, 
+
+1412
+01:11:02,760 --> 01:11:04,580
+ sebagian besar karena Cina tidak melakukan outsourcing. 
+
+1413
+01:11:04,580 --> 01:11:08,330
+ Sebagian besar negara sensor lain mengalihdayakan sensor mereka 
+
+1414
+01:11:08,330 --> 01:11:12,680
+ untuk perusahaan Eropa, Amerika, dan Asia yang tidak jujur ​​yang 
+
+1415
+01:11:12,680 --> 01:11:15,410
+ insentif tidak benar-benar untuk menjual mereka sensor yang baik, 
+
+1416
+01:11:15,410 --> 01:11:17,820
+ tetapi untuk menjaga mereka di treadmill upgrade. 
+
+1417
+01:11:17,820 --> 01:11:21,130
+ Jadi jika Anda membeli perangkat lunak sensor Anda 
+
+1418
+01:11:21,130 --> 01:11:24,470
+ dari Amerika Serikat-- yang secara teknis berbicara 
+
+1419
+01:11:24,470 --> 01:11:27,220
+ Perusahaan AS tidak diizinkan untuk membuat perangkat lunak penyensoran 
+
+1420
+01:11:27,220 --> 01:11:29,140
+ untuk bangsa-bangsa. 
+
+1421
+01:11:29,140 --> 01:11:32,620
+ Tetapi mereka hanya membuat perangkat lunak firewall perusahaan 
+
+1422
+01:11:32,620 --> 01:11:34,650
+ yang terjadi pada skala hingga 10 juta orang. 
+
+1423
+01:11:34,650 --> 01:11:37,240
+
+
+1424
+01:11:37,240 --> 01:11:39,116
+ Ya, saya pikir itu tidak etis. 
+
+1425
+01:11:39,116 --> 01:11:41,900
+ Tetapi sekali lagi, saya bukan ilmuwan politik organisasi, 
+
+1426
+01:11:41,900 --> 01:11:43,729
+ atau filsuf. 
+
+1427
+01:11:43,729 --> 01:11:46,020
+ Paul Syverson, salah satu penulis asli [INAUDIBLE], 
+
+1428
+01:11:46,020 --> 01:11:47,790
+ memang memiliki gelar dalam filsafat, 
+
+1429
+01:11:47,790 --> 01:11:50,090
+ untuk apa yang layak, yang berarti dia tidak bisa 
+
+1430
+01:11:50,090 --> 01:11:50,886
+ jawab pertanyaan-pertanyaan ini juga. 
+
+1431
+01:11:50,886 --> 01:11:52,761
+ Tapi dia butuh waktu lebih lama untuk tidak menjawabnya. 
+
+1432
+01:11:52,761 --> 01:11:56,720
+
+
+1433
+01:11:56,720 --> 01:11:58,550
+ Benar, dimana aku? 
+
+1434
+01:11:58,550 --> 01:12:01,380
+ 90 menit adalah waktu yang lama. 
+
+1435
+01:12:01,380 --> 01:12:05,200
+ Penyensoran - benar, jadi apa penyedia censorware 
+
+1436
+01:12:05,200 --> 01:12:10,020
+ lakukan adalah sekali Tor mendapat sekitar sensor mereka, 
+
+1437
+01:12:10,020 --> 01:12:13,510
+ mereka akan memblokir versi Tor yang paling baru. 
+
+1438
+01:12:13,510 --> 01:12:17,480
+ Tetapi mereka melakukannya dengan cara yang merupakan blok terlemah yang mungkin. 
+
+1439
+01:12:17,480 --> 01:12:20,470
+ Jadi jika kita mengubah 1 bit di satu pengenal di suatu tempat, 
+
+1440
+01:12:20,470 --> 01:12:22,150
+ kita bisa mengatasinya. 
+
+1441
+01:12:22,150 --> 01:12:25,050
+ Kami tidak dapat membuktikan bahwa mereka melakukan ini dengan sengaja 
+
+1442
+01:12:25,050 --> 01:12:30,890
+ untuk memastikan Tor akan menghindar dari versinya sehingga mereka bisa 
+
+1443
+01:12:30,890 --> 01:12:34,370
+ menjual pemblokiran Tor dan membuatnya tidak berfungsi sehingga bisa dijual 
+
+1444
+01:12:34,370 --> 01:12:36,360
+ upgrade, dan kemudian menjual peningkatan selanjutnya, 
+
+1445
+01:12:36,360 --> 01:12:37,640
+ dan menjual peningkatan selanjutnya. 
+
+1446
+01:12:37,640 --> 01:12:39,480
+ Tapi memang terlihat seperti itu. 
+
+1447
+01:12:39,480 --> 01:12:42,614
+ Jadi itulah alasan lain untuk tidak bekerja untuk penyedia penyensoran. 
+
+1448
+01:12:42,614 --> 01:12:44,530
+ Mereka sangat tidak etis, dan mereka tidak 
+
+1449
+01:12:44,530 --> 01:12:45,654
+ menyediakan perangkat lunak yang sangat bagus. 
+
+1450
+01:12:45,654 --> 01:12:48,180
+
+
+1451
+01:12:48,180 --> 01:12:50,920
+ Jika Anda tertarik untuk menulis apa pun 
+
+1452
+01:12:50,920 --> 01:12:52,584
+ dari hal-hal transportasi plug-dapat ini, 
+
+1453
+01:12:52,584 --> 01:12:54,000
+ itu adalah hal yang sangat baik 
+
+1454
+01:12:54,000 --> 01:12:56,877
+ untuk dilakukan sebagai proyek siswa-- banyak kesenangan, 
+
+1455
+01:12:56,877 --> 01:12:58,460
+ belajar sedikit tentang crypto, pelajari 
+
+1456
+01:12:58,460 --> 01:13:00,076
+ sedikit tentang jaringan. 
+
+1457
+01:13:00,076 --> 01:13:02,200
+ Dan selama Anda melakukannya dalam bahasa yang aman dari memori, 
+
+1458
+01:13:02,200 --> 01:13:04,240
+ Anda tidak bisa mengacaukannya. 
+
+1459
+01:13:04,240 --> 01:13:06,350
+ Hal terburuk yang terjadi adalah itu 
+
+1460
+01:13:06,350 --> 01:13:10,496
+ disensor setelah sebulan, bukan setelah satu tahun. 
+
+1461
+01:13:10,496 --> 01:13:17,600
+ Dan itulah yang saya inginkan-- oh, tambahan yang terkait dengan pekerjaan. 
+
+1462
+01:13:17,600 --> 01:13:21,680
+ Tor adalah sistem paling populer dari jenisnya, 
+
+1463
+01:13:21,680 --> 01:13:23,110
+ tapi itu bukan satu-satunya. 
+
+1464
+01:13:23,110 --> 01:13:24,740
+ Banyak orang lain memiliki ide yang sangat bagus, 
+
+1465
+01:13:24,740 --> 01:13:26,820
+ dan Anda harus memeriksanya juga 
+
+1466
+01:13:26,820 --> 01:13:29,822
+ jika Anda tertarik untuk mempelajari semuanya 
+
+1467
+01:13:29,822 --> 01:13:31,280
+ tentang hal-hal yang tidak saya pikirkan 
+
+1468
+01:13:31,280 --> 01:13:33,770
+ dan semua alasan saya salah. 
+
+1469
+01:13:33,770 --> 01:13:37,330
+ freehaven.net/anonbib/ daftar penelitian akademik 
+
+1470
+01:13:37,330 --> 01:13:39,290
+ dan publikasi di bidang ini. 
+
+1471
+01:13:39,290 --> 01:13:42,240
+ Namun tidak semua penelitian di bidang ini bersifat akademik. 
+
+1472
+01:13:42,240 --> 01:13:48,680
+ Anda juga harus melihat I2P; Gnunet; 
+
+1473
+01:13:48,680 --> 01:13:52,090
+ Kebebasan, yang saat ini sudah tidak berfungsi lagi, 
+
+1474
+01:13:52,090 --> 01:14:09,640
+ tidak ada pun yang dimaksudkan; Mixmaster; Mixminion; Sphynx dengan Y, 
+
+1475
+01:14:09,640 --> 01:14:17,280
+ Sphinx dengan saya adalah sesuatu yang berbeda; Jaring DC, 
+
+1476
+01:14:17,280 --> 01:14:25,950
+ khususnya karya Brian Ford, dan juga tim 
+
+1477
+01:14:25,950 --> 01:14:28,645
+ di Universitas Teknik Dresden, dalam mencoba 
+
+1478
+01:14:28,645 --> 01:14:30,240
+ untuk membuat jaring-DC praktis. 
+
+1479
+01:14:30,240 --> 01:14:32,770
+ Mereka sangat kuat [TIDAK TERDENGAR], tidak benar-benar dapat digunakan 
+
+1480
+01:14:32,770 --> 01:14:35,245
+ yet-- dan banyak lainnya. 
+
+1481
+01:14:35,245 --> 01:14:41,040
+
+
+1482
+01:14:41,040 --> 01:14:44,230
+ Mengapa ini kurang digunakan atau diperhatikan daripada Tor 
+
+1483
+01:14:44,230 --> 01:14:48,270
+ adalah topik terbuka yang menarik 
+
+1484
+01:14:48,270 --> 01:14:50,910
+ bahwa saya tidak memiliki jawaban yang solid untuk. 
+
+1485
+01:14:50,910 --> 01:14:55,120
+ Pekerjaan di masa depan-- jadi salah satu alasannya 
+
+1486
+01:14:55,120 --> 01:14:58,940
+ Saya melakukan ini bukan hanya karena saya ingin semua orang 
+
+1487
+01:14:58,940 --> 01:15:00,700
+ untuk mengetahui tentang perangkat lunak keren yang saya kerjakan. 
+
+1488
+01:15:00,700 --> 01:15:02,820
+ Tetapi juga karena saya tahu siswa 
+
+1489
+01:15:02,820 --> 01:15:05,090
+ banyak waktu luang. 
+
+1490
+01:15:05,090 --> 01:15:07,360
+ Dan saya agak ingin merekrut. 
+
+1491
+01:15:07,360 --> 01:15:09,180
+ Oke, Anda mungkin berpikir saya bercanda. 
+
+1492
+01:15:09,180 --> 01:15:12,730
+ Tetapi ketika saya baru saja mulai di bidang ini, 
+
+1493
+01:15:12,730 --> 01:15:16,790
+ Saya mengeluh tentang bagaimana saya begitu sibuk membaca makalah 
+
+1494
+01:15:16,790 --> 01:15:19,254
+ untuk satu konferensi, menulis perangkat lunak, memperbaiki bug, 
+
+1495
+01:15:19,254 --> 01:15:19,920
+ menjawab email. 
+
+1496
+01:15:19,920 --> 01:15:21,920
+ Saya mengeluh kepada beberapa staf pengajar senior. 
+
+1497
+01:15:21,920 --> 01:15:27,060
+ Dan dia mengatakan kepada saya, Anda tidak akan pernah memiliki banyak waktu luang 
+
+1498
+01:15:27,060 --> 01:15:27,850
+ seperti yang Anda lakukan hari ini. 
+
+1499
+01:15:27,850 --> 01:15:29,955
+
+
+1500
+01:15:29,955 --> 01:15:31,330
+ Anda benar-benar memiliki lebih banyak gratis 
+
+1501
+01:15:31,330 --> 01:15:33,050
+ waktu sekarang daripada dalam 10 tahun. 
+
+1502
+01:15:33,050 --> 01:15:37,580
+ Jadi ini adalah waktu yang tepat untuk mengerjakan proyek perangkat lunak gila. 
+
+1503
+01:15:37,580 --> 01:15:39,680
+ Jadi biarkan saya memberi tahu Anda tentang pekerjaan masa depan di Tor. 
+
+1504
+01:15:39,680 --> 01:15:43,710
+ Ada hal yang membutakan kunci dan perubahan total 
+
+1505
+01:15:43,710 --> 01:15:45,670
+ sistem layanan tersembunyi kami, yang 
+
+1506
+01:15:45,670 --> 01:15:47,900
+ adalah yang terbaik yang bisa kami desain ketika kami memunculkannya. 
+
+1507
+01:15:47,900 --> 01:15:49,816
+ Tapi sudah ada banyak penelitian sejak itu. 
+
+1508
+01:15:49,816 --> 01:15:52,710
+ Mungkin sebagian akan menjadi ide yang bagus. 
+
+1509
+01:15:52,710 --> 01:15:54,480
+ Kami juga membenahi sebagian besar crypto kami. 
+
+1510
+01:15:54,480 --> 01:15:58,320
+ Kami memilih skema yang tampak seperti keamanan yang baik 
+
+1511
+01:15:58,320 --> 01:16:03,140
+ kinerja trade-off pada tahun 2003, seperti RSA-1024. 
+
+1512
+01:16:03,140 --> 01:16:05,720
+ Kami telah menggantikan penggunaan yang sangat penting 
+
+1513
+01:16:05,720 --> 01:16:09,580
+ RSA-1024 dengan hal-hal yang lebih kuat, saat ini [TIDAK TERDENGAR] 25519. 
+
+1514
+01:16:09,580 --> 01:16:11,080
+ Namun masih ada beberapa kasus yang kami 
+
+1515
+01:16:11,080 --> 01:16:14,797
+ ingin mengganti dalam protokol yang kita butuhkan untuk dikerjakan. 
+
+1516
+01:16:14,797 --> 01:16:16,630
+ Saya tidak terlalu banyak bicara tentang pemilihan jalur, 
+
+1517
+01:16:16,630 --> 01:16:19,910
+ jadi saya tidak bisa bicara terlalu banyak tentang peningkatan dalam pemilihan itu. 
+
+1518
+01:16:19,910 --> 01:16:24,410
+ Namun algoritma seleksi jalan kami adalah [TIDAK JELAS]. 
+
+1519
+01:16:24,410 --> 01:16:26,140
+ Dan sudah ada beberapa penelitian yang luar biasa 
+
+1520
+01:16:26,140 --> 01:16:31,750
+ dalam lima atau enam tahun terakhir yang perlu kita integrasikan. 
+
+1521
+01:16:31,750 --> 01:16:33,900
+ Ada sedikit pekerjaan yang sudah ada 
+
+1522
+01:16:33,900 --> 01:16:38,500
+ dilakukan untuk mencampur latensi tinggi dan lalu lintas latensi rendah 
+
+1523
+01:16:38,500 --> 01:16:41,345
+ bahwa lalu lintas latensi rendah dapat memberikan perlindungan 
+
+1524
+01:16:41,345 --> 01:16:44,270
+ untuk lalu lintas latensi tinggi dalam hal menyediakan banyak 
+
+1525
+01:16:44,270 --> 01:16:47,960
+ pengguna sementara lalu lintas latensi tinggi masih sangat baik 
+
+1526
+01:16:47,960 --> 01:16:50,500
+ dianonimkan. 
+
+1527
+01:16:50,500 --> 01:16:53,970
+ Tidak jelas apakah ini akan berhasil atau tidak. 
+
+1528
+01:16:53,970 --> 01:16:57,600
+ Tidak jelas apakah ada yang akan menggunakan ini atau tidak. 
+
+1529
+01:16:57,600 --> 01:17:01,080
+ Dan jelas bahwa kecuali ada sesuatu yang berubah, 
+
+1530
+01:17:01,080 --> 01:17:03,879
+ atau kecuali beberapa pendanaan utama untuk itu terutama muncul, 
+
+1531
+01:17:03,879 --> 01:17:05,920
+ Saya tidak akan punya waktu untuk mengerjakannya di tahun 2015. 
+
+1532
+01:17:05,920 --> 01:17:08,045
+ Tetapi jika orang lain ingin meretas itu, tuhan saya, 
+
+1533
+01:17:08,045 --> 01:17:08,860
+ itu akan menyenangkan. 
+
+1534
+01:17:08,860 --> 01:17:10,920
+ Algoritma kontrol kemacetan kami 
+
+1535
+01:17:10,920 --> 01:17:15,030
+ dipilih secara dipertanyakan berdasarkan apa yang bisa kita rangkai bersama 
+
+1536
+01:17:15,030 --> 01:17:17,050
+ dalam seminggu. 
+
+1537
+01:17:17,050 --> 01:17:20,360
+ Kami telah memperbaikinya, tetapi mereka bisa menggunakan perubahan yang lebih besar. 
+
+1538
+01:17:20,360 --> 01:17:23,070
+ Ada beberapa penelitian tentang penskalaan hingga ratusan ribu 
+
+1539
+01:17:23,070 --> 01:17:24,170
+ dari node. 
+
+1540
+01:17:24,170 --> 01:17:26,800
+ Jadi dalam desain saat ini, kita mungkin bisa 
+
+1541
+01:17:26,800 --> 01:17:29,630
+ dapatkan hingga 10.000 atau 20.000 tanpa masalah. 
+
+1542
+01:17:29,630 --> 01:17:33,330
+ Tetapi karena kami berasumsi bahwa setiap klien tahu tentang setiap node, 
+
+1543
+01:17:33,330 --> 01:17:35,670
+ dan setiap node dapat terhubung ke setiap node lainnya, 
+
+1544
+01:17:35,670 --> 01:17:38,350
+ itu akan berhenti scaling sebelum 100.000. 
+
+1545
+01:17:38,350 --> 01:17:41,250
+ Dan kita perlu melakukan sesuatu tentang itu. 
+
+1546
+01:17:41,250 --> 01:17:43,070
+ Itu membuka beberapa kelas serangan 
+
+1547
+01:17:43,070 --> 01:17:47,680
+ berdasarkan penyerang belajar yang klien tahu mana node 
+
+1548
+01:17:47,680 --> 01:17:50,574
+ dan menggunakan itu untuk membedakan klien. 
+
+1549
+01:17:50,574 --> 01:17:52,740
+ Jadi sebagian besar pendekatan naif adalah ide yang buruk di sini. 
+
+1550
+01:17:52,740 --> 01:17:56,960
+ Tetapi mungkin pendekatan yang kurang naif mungkin berhasil. 
+
+1551
+01:17:56,960 --> 01:17:59,585
+ Hal lain yang mungkin ingin Anda lakukan jika Anda meningkatkan 100.000 
+
+1552
+01:17:59,585 --> 01:18:02,230
+ node adalah menyingkirkan direktori yang terpusat 
+
+1553
+01:18:02,230 --> 01:18:05,840
+ berwenang dan pergi ke beberapa jenis desain peer to peer. 
+
+1554
+01:18:05,840 --> 01:18:10,010
+ Saya tidak memiliki kepercayaan diri yang sangat tinggi 
+
+1555
+01:18:10,010 --> 01:18:12,530
+ dalam desain peer to peer yang saya tahu sejauh ini. 
+
+1556
+01:18:12,530 --> 01:18:16,940
+ Tapi bisa jadi seseorang itu akan maju 
+
+1557
+01:18:16,940 --> 01:18:17,690
+ yang bagus selanjutnya. 
+
+1558
+01:18:17,690 --> 01:18:20,230
+
+
+1559
+01:18:20,230 --> 01:18:23,400
+ Mari kita lihat, saya tidak tahu apa artinya itu. 
+
+1560
+01:18:23,400 --> 01:18:26,566
+ Oh, seseorang mengajukan pertanyaan tentang penambahan 
+
+1561
+01:18:26,566 --> 01:18:33,013
+ lalu lintas padding atau lalu lintas palsu untuk mencoba menipu akhir 
+
+1562
+01:18:33,013 --> 01:18:34,360
+ untuk mengakhiri korelasi lalu lintas. 
+
+1563
+01:18:34,360 --> 01:18:36,150
+ Ini adalah bidang penelitian yang menarik 
+
+1564
+01:18:36,150 --> 01:18:40,422
+ yang membutuhkan seseorang yang lebih cerdas untuk mengerjakannya atau seseorang 
+
+1565
+01:18:40,422 --> 01:18:42,630
+ dengan sikap yang lebih praktis untuk mengerjakannya daripada 
+
+1566
+01:18:42,630 --> 01:18:44,230
+ sebelumnya bekerja di dalamnya. 
+
+1567
+01:18:44,230 --> 01:18:47,260
+ Terlalu banyak hasil dalam literatur penelitian 
+
+1568
+01:18:47,260 --> 01:18:51,345
+ hanya ada yang membedakan lalu lintas 
+
+1569
+01:18:51,345 --> 01:18:55,229
+ dari dua pengguna pada nomor yang berisi satu relay, 
+
+1570
+01:18:55,229 --> 01:18:57,020
+ karena itulah cara matematika itu mudah dilakukan. 
+
+1571
+01:18:57,020 --> 01:19:00,230
+
+
+1572
+01:19:00,230 --> 01:19:02,230
+ Jadi karena hal semacam ini, 
+
+1573
+01:19:02,230 --> 01:19:04,240
+ semua pertahanan analisis lalu lintas 
+
+1574
+01:19:04,240 --> 01:19:06,200
+ yang kita ketahui di daerah ini yang masih 
+
+1575
+01:19:06,200 --> 01:19:10,109
+ kompatibel dengan penjelajahan yang luas, mereka terdengar bagus 
+
+1576
+01:19:10,109 --> 01:19:11,150
+ jika kamu membaca abstraknya. 
+
+1577
+01:19:11,150 --> 01:19:14,790
+ Anda akan mengatakan, hore, yang satu ini memaksa penyerang 
+
+1578
+01:19:14,790 --> 01:19:17,510
+ untuk mengumpulkan tiga kali lebih banyak lalu lintas sebelum mereka 
+
+1579
+01:19:17,510 --> 01:19:19,020
+ dapat menghubungkan pengguna. 
+
+1580
+01:19:19,020 --> 01:19:20,950
+ Kecuali ketika Anda benar-benar membaca koran, 
+
+1581
+01:19:20,950 --> 01:19:23,510
+ sebelumnya penyerang membutuhkan trafik dua detik, 
+
+1582
+01:19:23,510 --> 01:19:24,485
+ dan kemudian mereka menang. 
+
+1583
+01:19:24,485 --> 01:19:26,940
+ Sekarang mereka butuh enam detik. 
+
+1584
+01:19:26,940 --> 01:19:29,430
+ Itu tidak benar-benar pembelaan dalam model ini, 
+
+1585
+01:19:29,430 --> 01:19:33,699
+ meskipun mungkin melawan jaringan nyata, 
+
+1586
+01:19:33,699 --> 01:19:35,740
+ jumlahnya akan berbeda dan mungkin berhasil. 
+
+1587
+01:19:35,740 --> 01:19:38,930
+ Jadi kami benar-benar ingin melihat beberapa hal selesai 
+
+1588
+01:19:38,930 --> 01:19:40,470
+ dengan padding dan traffic palsu. 
+
+1589
+01:19:40,470 --> 01:19:43,645
+ Tapi kami tidak suka menambahkan pertahanan voodoo 
+
+1590
+01:19:43,645 --> 01:19:45,580
+ yang kita duga untuk melakukan sesuatu yang baik, 
+
+1591
+01:19:45,580 --> 01:19:47,340
+ meskipun kita tidak bisa melakukan itu. 
+
+1592
+01:19:47,340 --> 01:19:48,715
+ Kami sebenarnya ingin memiliki bukti 
+
+1593
+01:19:48,715 --> 01:19:50,590
+ bahwa setiap perubahan akan kita buat 
+
+1594
+01:19:50,590 --> 01:19:51,790
+ akan membantu sesuatu. 
+
+1595
+01:19:51,790 --> 01:19:53,240
+ Saya pikir saya kehabisan waktu. 
+
+1596
+01:19:53,240 --> 01:19:55,439
+ Dan mungkin ada kelas di sini setelah kita? 
+
+1597
+01:19:55,439 --> 01:19:55,980
+ Tidak ada? 
+
+1598
+01:19:55,980 --> 01:19:58,104
+ Baiklah, jadi aku akan berkeliaran sebentar. 
+
+1599
+01:19:58,104 --> 01:20:00,140
+ Dan terima kasih sudah datang untuk mendengarkan. 
+
+1600
+01:20:00,140 --> 01:20:02,290
+ Saya akan mengambil pertanyaan sekarang. 
+
+1601
+01:20:02,290 --> 01:20:06,089
+ Tapi jam 12:25, dan orang-orang mungkin memiliki kelas lain. 
+
+1602
+01:20:06,089 --> 01:20:07,380
+ Tapi aku akan ada di sekitar [tidak terdengar]. 
+
+1603
+01:20:07,380 --> 01:20:08,880
+ Terima kasih banyak sudah datang. 
+
+1604
+01:20:08,880 --> 01:20:11,952
+ [TEPUK TANGAN] 
+
+1605
+01:20:11,952 --> 00:00:00,000
+
+

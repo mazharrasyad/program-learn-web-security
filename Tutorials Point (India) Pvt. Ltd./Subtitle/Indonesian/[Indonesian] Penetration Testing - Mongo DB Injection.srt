@@ -1,0 +1,260 @@
+1
+00:00:00,060 --> 00:00:02,419
+ Halo semuanya, <font color="#E5E5E5">mari kita bicarakan </font>
+
+2
+00:00:02,419 --> 00:00:06,569
+ <font color="#E5E5E5">Suntikan MongoDB jadi MongoDB adalah salah satunya </font>
+
+3
+00:00:06,569 --> 00:00:08,760
+ database non relasional yang paling populer 
+
+4
+00:00:08,760 --> 00:00:11,730
+ jadi itu adalah database non relasional yang 
+
+5
+00:00:11,730 --> 00:00:14,009
+ berarti <font color="#E5E5E5">tidak menyimpan data dalam bentuk </font>
+
+6
+00:00:14,009 --> 00:00:16,920
+ baris dan <font color="#E5E5E5">kolom </font><font color="#CCCCCC">tetapi yang menarik </font>
+
+7
+00:00:16,920 --> 00:00:19,890
+ sebenarnya adalah bahwa database MongoDB <font color="#CCCCCC">bisa </font>
+
+8
+00:00:19,890 --> 00:00:22,609
+ dieksploitasi <font color="#E5E5E5">mirip dengan injeksi SQL dan </font>
+
+9
+00:00:22,609 --> 00:00:26,160
+ XPath suntikan <font color="#E5E5E5">tetapi untuk mengeksploitasi </font>
+
+10
+00:00:26,160 --> 00:00:29,640
+ <font color="#E5E5E5">Database MongoDB kita harus melakukan sedikit </font>
+
+11
+00:00:29,640 --> 00:00:32,700
+ <font color="#E5E5E5">modifikasi dan karakter khusus sekarang </font>
+
+12
+00:00:32,700 --> 00:00:34,620
+ mari kita lihat bagaimana kita <font color="#E5E5E5">bisa melakukan MongoDB </font>
+
+13
+00:00:34,620 --> 00:00:37,579
+ suntikan sekarang mari kita lihat bagaimana kita bisa 
+
+14
+00:00:37,579 --> 00:00:41,219
+ mengeksploitasi database MongoDB <font color="#CCCCCC">jadi untuk </font>
+
+15
+00:00:41,219 --> 00:00:44,550
+ uji suntikan MongoDB yang <font color="#E5E5E5">harus kita gunakan </font>
+
+16
+00:00:44,550 --> 00:00:46,559
+ <font color="#CCCCCC">Web yang sama </font><font color="#E5E5E5">untuk </font><font color="#CCCCCC">pena tester </font><font color="#E5E5E5">untuk </font>
+
+17
+00:00:46,559 --> 00:00:49,050
+ <font color="#E5E5E5">aplikasi web yang rentan yang kita </font>
+
+18
+00:00:49,050 --> 00:00:52,050
+ menggunakan dari beberapa video terakhir <font color="#E5E5E5">dan di sini Anda </font>
+
+19
+00:00:52,050 --> 00:00:54,570
+ dapat melihat web untuk pen tester <font color="#E5E5E5">dan </font>
+
+20
+00:00:54,570 --> 00:00:57,719
+ berjalan <font color="#CCCCCC">dan di </font><font color="#E5E5E5">sini adalah dua contoh </font>
+
+21
+00:00:57,719 --> 00:01:01,050
+ Suntikan MongoDB jadi mari kita buka 
+
+22
+00:01:01,050 --> 00:01:04,530
+ pertama <font color="#E5E5E5">satu contoh satu dan di sini Anda bisa </font>
+
+23
+00:01:04,530 --> 00:01:07,260
+ lihat bahwa itu <font color="#E5E5E5">meminta kita </font><font color="#CCCCCC">untuk nama pengguna </font><font color="#E5E5E5">dan </font>
+
+24
+00:01:07,260 --> 00:01:08,159
+ <font color="#CCCCCC">kata sandinya </font>
+
+25
+00:01:08,159 --> 00:01:11,880
+ dan jika Anda melihat URL <font color="#CCCCCC">ini sepertinya </font>
+
+26
+00:01:11,880 --> 00:01:16,409
+ sama seperti suntikan LDAP <font color="#E5E5E5">tapi seperti saya </font>
+
+27
+00:01:16,409 --> 00:01:18,570
+ mengatakan kepada <font color="#E5E5E5">Anda </font><font color="#CCCCCC">sebelumnya bahwa </font><font color="#E5E5E5">MongoDB </font>
+
+28
+00:01:18,570 --> 00:01:20,850
+ <font color="#E5E5E5">database </font><font color="#CCCCCC">adalah </font><font color="#E5E5E5">database relasional </font><font color="#CCCCCC">yang dikenal </font>
+
+29
+00:01:20,850 --> 00:01:24,420
+ dan itu tidak berisi <font color="#E5E5E5">baris tabel dan </font>
+
+30
+00:01:24,420 --> 00:01:28,729
+ kolom <font color="#E5E5E5">sekarang bagaimana kita bisa melewati ini </font>
+
+31
+00:01:28,729 --> 00:01:33,840
+ mekanisme <font color="#E5E5E5">jadi jika Anda ingat saat itu </font>
+
+32
+00:01:33,840 --> 00:01:37,470
+ melakukan injeksi halaman login sekuel <font color="#E5E5E5">kami </font>
+
+33
+00:01:37,470 --> 00:01:40,560
+ telah <font color="#E5E5E5">memberikan masukan kami yang logis </font>
+
+34
+00:01:40,560 --> 00:01:48,979
+ <font color="#E5E5E5">benar sehingga input </font><font color="#CCCCCC">itu admin atau 1 sama </font>
+
+35
+00:01:50,390 --> 00:01:55,290
+ 1 yang <font color="#E5E5E5">berarti admin ini dan atau 1 sama </font>
+
+36
+00:01:55,290 --> 00:01:58,340
+ <font color="#CCCCCC">1 jadi pertanyaan sebelumnya dan ini </font>
+
+37
+00:01:58,340 --> 00:02:02,399
+ Pernyataan akan dibandingkan <font color="#E5E5E5">dan seperti kita </font>
+
+38
+00:02:02,399 --> 00:02:04,439
+ tahu <font color="#E5E5E5">bahwa </font><font color="#CCCCCC">satu sama dengan 1 itu a </font>
+
+39
+00:02:04,439 --> 00:02:05,369
+ <font color="#CCCCCC">kebenaran universal </font>
+
+40
+00:02:05,369 --> 00:02:08,128
+ jadi <font color="#CCCCCC">Curie ini akan dieksekusi dan </font><font color="#E5E5E5">akan </font>
+
+41
+00:02:08,128 --> 00:02:12,660
+ berhasil <font color="#CCCCCC">login </font><font color="#E5E5E5">tetapi karena ini </font>
+
+42
+00:02:12,660 --> 00:02:13,950
+ MongoDB <font color="#E5E5E5">adalah </font><font color="#CCCCCC">non </font>
+
+43
+00:02:13,950 --> 00:02:16,080
+ database relasional <font color="#E5E5E5">jadi harus kita lakukan </font>
+
+44
+00:02:16,080 --> 00:02:18,060
+ beberapa modifikasi kecil <font color="#E5E5E5">di diberikan kami </font>
+
+45
+00:02:18,060 --> 00:02:22,800
+ masukan jadi kami hanya akan memberi admin 
+
+46
+00:02:22,800 --> 00:02:27,959
+ alih-alih menulis atau kita akan menulis 
+
+47
+00:02:27,959 --> 00:02:31,670
+ atau operator yang merupakan dua tanda pipa <font color="#E5E5E5">dan </font>
+
+48
+00:02:31,670 --> 00:02:37,950
+ kami akan memberikannya dan bukannya mengetik 
+
+49
+00:02:37,950 --> 00:02:40,830
+ <font color="#E5E5E5">ini sama </font><font color="#CCCCCC">dengan tanda kita harus </font><font color="#E5E5E5">menulis dua </font>
+
+50
+00:02:40,830 --> 00:02:44,390
+ sama dengan tanda sehingga <font color="#CCCCCC">bisa menjadi </font>
+
+51
+00:02:44,390 --> 00:02:47,250
+ sama dengan operator <font color="#CCCCCC">jadi jika kita hanya memberi </font>
+
+52
+00:02:47,250 --> 00:02:49,440
+ satu sama dengan tanda <font color="#E5E5E5">yang akan </font><font color="#CCCCCC">bertindak kemudian </font>
+
+53
+00:02:49,440 --> 00:02:51,900
+ itu bertindak seperti <font color="#E5E5E5">operator penugasan </font><font color="#CCCCCC">sehingga </font>
+
+54
+00:02:51,900 --> 00:02:55,890
+ Anda harus memberinya <font color="#E5E5E5">dua dan satu </font><font color="#CCCCCC">jadi sekarang </font>
+
+55
+00:02:55,890 --> 00:03:01,890
+ mari kita <font color="#E5E5E5">salin masukan ini dan biarkan saya </font>
+
+56
+00:03:01,890 --> 00:03:06,329
+ <font color="#E5E5E5">tempelkan saja di sini dan </font><font color="#CCCCCC">mari kita lihat apakah </font>
+
+57
+00:03:06,329 --> 00:03:10,680
+ kami <font color="#E5E5E5">dapat masuk atau tidak </font><font color="#CCCCCC">dan di sini </font>
+
+58
+00:03:10,680 --> 00:03:13,440
+ Anda dapat melihat bahwa kami berhasil 
+
+59
+00:03:13,440 --> 00:03:19,980
+ dapat <font color="#CCCCCC">masuk </font><font color="#E5E5E5">jadi ini adalah demo kecil </font>
+
+60
+00:03:19,980 --> 00:03:23,310
+ suntikan MongoDB yang bisa 
+
+61
+00:03:23,310 --> 00:03:27,510
+ diterapkan ke <font color="#CCCCCC">non-relasional lainnya </font>
+
+62
+00:03:27,510 --> 00:03:30,359
+ database <font color="#E5E5E5">jadi dalam </font><font color="#CCCCCC">video </font><font color="#E5E5E5">ini yang </font><font color="#CCCCCC">kita </font><font color="#E5E5E5">miliki </font>
+
+63
+00:03:30,359 --> 00:03:31,889
+ ditutupi <font color="#E5E5E5">bahwa apa yang </font><font color="#CCCCCC">non-relasional kami </font>
+
+64
+00:03:31,889 --> 00:03:35,730
+ database dan bagaimana kita dapat memanfaatkan MongoDB 
+
+65
+00:03:35,730 --> 00:00:00,000
+ basis data <font color="#E5E5E5">terima kasih untuk menonton video ini </font>
+

@@ -1,0 +1,176 @@
+1
+00:00:00,089 --> 00:00:03,000
+hello everyone in<font color="#CCCCCC"> this video we'll talk</font>
+
+2
+00:00:03,000 --> 00:00:06,450
+about VirtualBox<font color="#E5E5E5"> so what is VirtualBox</font>
+
+3
+00:00:06,450 --> 00:00:08,309
+so VirtualBox<font color="#E5E5E5"> is one of the best</font>
+
+4
+00:00:08,309 --> 00:00:11,010
+virtualization software used in a small
+
+5
+00:00:11,010 --> 00:00:13,200
+computers so VirtualBox is made by
+
+6
+00:00:13,200 --> 00:00:15,839
+<font color="#E5E5E5">Oracle so it's freely available for</font>
+
+7
+00:00:15,839 --> 00:00:19,740
+<font color="#E5E5E5">Linux Mac and Windows</font><font color="#CCCCCC"> so it's the</font><font color="#E5E5E5"> first</font>
+
+8
+00:00:19,740 --> 00:00:21,689
+<font color="#E5E5E5">thing we need in order to</font><font color="#CCCCCC"> setup</font><font color="#E5E5E5"> our</font>
+
+9
+00:00:21,689 --> 00:00:24,840
+testing lab so for<font color="#E5E5E5"> more details you can</font>
+
+10
+00:00:24,840 --> 00:00:26,519
+check<font color="#CCCCCC"> their official websites and you</font>
+
+11
+00:00:26,519 --> 00:00:28,470
+<font color="#CCCCCC">can download</font><font color="#E5E5E5"> the VirtualBox from here</font>
+
+12
+00:00:28,470 --> 00:00:31,679
+from this link<font color="#E5E5E5"> and now let's see</font><font color="#CCCCCC"> that</font>
+
+13
+00:00:31,679 --> 00:00:33,600
+how<font color="#E5E5E5"> we can install VirtualBox in our</font>
+
+14
+00:00:33,600 --> 00:00:36,480
+system<font color="#CCCCCC"> now let's see that how</font><font color="#E5E5E5"> we can</font>
+
+15
+00:00:36,480 --> 00:00:38,430
+install VirtualBox<font color="#E5E5E5"> in our operating</font>
+
+16
+00:00:38,430 --> 00:00:42,540
+system so here you<font color="#CCCCCC"> can see that</font><font color="#E5E5E5"> right</font>
+
+17
+00:00:42,540 --> 00:00:46,379
+<font color="#CCCCCC">now I am at VirtualBox dot R and here</font>
+
+18
+00:00:46,379 --> 00:00:48,690
+are different download links so
+
+19
+00:00:48,690 --> 00:00:50,700
+depending<font color="#E5E5E5"> upon your pairing system you</font>
+
+20
+00:00:50,700 --> 00:00:53,399
+can download<font color="#E5E5E5"> one</font><font color="#CCCCCC"> of them so I have</font>
+
+21
+00:00:53,399 --> 00:00:55,440
+already<font color="#E5E5E5"> downloaded the VirtualBox setup</font>
+
+22
+00:00:55,440 --> 00:00:58,440
+which you can see on<font color="#E5E5E5"> my desktop</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> I'm</font>
+
+23
+00:00:58,440 --> 00:01:02,879
+let's double<font color="#E5E5E5"> click</font><font color="#CCCCCC"> on it</font><font color="#E5E5E5"> ok click on</font>
+
+24
+00:01:02,879 --> 00:01:07,650
+next next<font color="#CCCCCC"> ok so now it</font><font color="#E5E5E5"> asked for the</font>
+
+25
+00:01:07,650 --> 00:01:09,600
+various things like<font color="#E5E5E5"> you want to create a</font>
+
+26
+00:01:09,600 --> 00:01:11,760
+shortcut<font color="#CCCCCC"> in a quick launch bar you</font><font color="#E5E5E5"> want</font>
+
+27
+00:01:11,760 --> 00:01:14,600
+to create<font color="#E5E5E5"> a shortcut on desktop so</font>
+
+28
+00:01:14,600 --> 00:01:19,040
+uncheck these<font color="#E5E5E5"> two click on next</font>
+
+29
+00:01:19,040 --> 00:01:24,320
+<font color="#E5E5E5">ok yes and install</font>
+
+30
+00:01:25,940 --> 00:01:30,090
+<font color="#E5E5E5">okay now click on</font><font color="#CCCCCC"> finish' and it will</font>
+
+31
+00:01:30,090 --> 00:01:33,390
+start<font color="#E5E5E5"> VirtualBox for us</font><font color="#CCCCCC"> ok so here you</font>
+
+32
+00:01:33,390 --> 00:01:36,420
+<font color="#E5E5E5">can see that the system first menu of</font>
+
+33
+00:01:36,420 --> 00:01:39,660
+the Oracle VM VirtualBox<font color="#CCCCCC"> so here are</font>
+
+34
+00:01:39,660 --> 00:01:42,990
+<font color="#E5E5E5">some few options like file machine help</font>
+
+35
+00:01:42,990 --> 00:01:46,650
+<font color="#E5E5E5">so by clicking on</font><font color="#CCCCCC"> new we</font><font color="#E5E5E5"> can create a</font>
+
+36
+00:01:46,650 --> 00:01:49,740
+new virtual<font color="#CCCCCC"> machine and</font><font color="#E5E5E5"> by clicking on</font>
+
+37
+00:01:49,740 --> 00:01:52,200
+file<font color="#E5E5E5"> we can import our appliance and we</font>
+
+38
+00:01:52,200 --> 00:01:54,930
+can export an appliance<font color="#CCCCCC"> so here you</font><font color="#E5E5E5"> can</font>
+
+39
+00:01:54,930 --> 00:01:57,840
+<font color="#E5E5E5">also change some network settings so</font>
+
+40
+00:01:57,840 --> 00:02:00,060
+this was all<font color="#E5E5E5"> about this video so in the</font>
+
+41
+00:02:00,060 --> 00:02:02,310
+next<font color="#CCCCCC"> video</font><font color="#E5E5E5"> I will show you that how we</font>
+
+42
+00:02:02,310 --> 00:02:04,530
+<font color="#E5E5E5">can install Kali Linux inside the</font>
+
+43
+00:02:04,530 --> 00:02:06,960
+VirtualBox<font color="#CCCCCC"> thanks for</font><font color="#E5E5E5"> watching this</font>
+
+44
+00:02:06,960 --> 00:00:00,000
+video
+

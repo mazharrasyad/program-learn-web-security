@@ -1,0 +1,7672 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,690
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,690 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,260
+ di ocw.mit.edu. 
+
+9
+00:00:17,260 --> 00:00:26,640
+
+
+10
+00:00:26,640 --> 00:00:29,142
+ PROFESOR: Baiklah, teman-teman, mari kita mulai. 
+
+11
+00:00:29,142 --> 00:00:31,350
+ Jadi hari ini, kita akan berbicara tentang keamanan jaringan. 
+
+12
+00:00:31,350 --> 00:00:32,933
+ Dan khususnya, kita akan berbicara 
+
+13
+00:00:32,933 --> 00:00:35,550
+ tentang makalah ini tentang keamanan TCP / IP oleh orang ini 
+
+14
+00:00:35,550 --> 00:00:40,027
+ Steve Bellovin, yang dulunya berada di AT & T dan sekarang berada di Columbia. 
+
+15
+00:00:40,027 --> 00:00:41,610
+ Satu hal menarik tentang makalah ini 
+
+16
+00:00:41,610 --> 00:00:43,276
+ itu sebenarnya adalah kertas yang relatif lama. 
+
+17
+00:00:43,276 --> 00:00:44,584
+ Sudah lebih dari 10 tahun. 
+
+18
+00:00:44,584 --> 00:00:46,209
+ Dan sebenarnya, itu adalah komentar di atas kertas 
+
+19
+00:00:46,209 --> 00:00:48,520
+ itu 10 tahun sebelum itu. 
+
+20
+00:00:48,520 --> 00:00:51,840
+ Dan banyak dari kalian yang benar-benar bertanya, mengapa kami membaca ini 
+
+21
+00:00:51,840 --> 00:00:54,500
+ jika banyak dari masalah ini telah dipecahkan dalam TCP hari ini 
+
+22
+00:00:54,500 --> 00:00:55,980
+ tumpukan protokol? 
+
+23
+00:00:55,980 --> 00:00:57,429
+ Jadi satu hal yang menarik-- jadi itu 
+
+24
+00:00:57,429 --> 00:00:59,220
+ benar bahwa beberapa masalah inilah yang Steve 
+
+25
+00:00:59,220 --> 00:01:02,061
+ menjelaskan dalam makalah ini telah dipecahkan sejak saat itu. 
+
+26
+00:01:02,061 --> 00:01:04,019
+ Beberapa dari mereka sebenarnya masih bermasalah saat ini. 
+
+27
+00:01:04,019 --> 00:01:07,145
+ Kita akan melihat itu dan melihat apa yang terjadi. 
+
+28
+00:01:07,145 --> 00:01:09,925
+ Tapi Anda mungkin bertanya-tanya, mengapa tidak ada orang 
+
+29
+00:01:09,925 --> 00:01:11,970
+ menyelesaikan semua masalah ini di tempat pertama 
+
+30
+00:01:11,970 --> 00:01:13,730
+ ketika mereka merancang TCP? 
+
+31
+00:01:13,730 --> 00:01:15,480
+ Apa yang mereka pikirkan? 
+
+32
+00:01:15,480 --> 00:01:17,507
+ Dan sebenarnya tidak jelas. 
+
+33
+00:01:17,507 --> 00:01:18,590
+ Jadi apa yang kalian pikirkan? 
+
+34
+00:01:18,590 --> 00:01:21,440
+ Mengapa TCP tidak dirancang aman dengan semua 
+
+35
+00:01:21,440 --> 00:01:23,916
+ pertimbangan ini di depan? 
+
+36
+00:01:23,916 --> 00:01:26,596
+ Ya, tebakan? 
+
+37
+00:01:26,596 --> 00:01:27,760
+ Baiklah, ada yang lain? 
+
+38
+00:01:27,760 --> 00:01:28,260
+ Ya. 
+
+39
+00:01:28,260 --> 00:01:30,052
+ AUDIENCE: Internet adalah tempat yang jauh lebih bisa dipercaya 
+
+40
+00:01:30,052 --> 00:01:30,500
+ saat itu. 
+
+41
+00:01:30,500 --> 00:01:32,250
+ PROFESOR: Ya, ini hampir secara harfiah 
+
+42
+00:01:32,250 --> 00:01:33,515
+ kutipan dari makalah pria ini. 
+
+43
+00:01:33,515 --> 00:01:36,445
+ Ya, pada saat itu - seluruh rangkaian protokol internet 
+
+44
+00:01:36,445 --> 00:01:39,700
+ dirancang saya kira sekitar 40 tahun yang lalu sekarang. 
+
+45
+00:01:39,700 --> 00:01:41,366
+ Persyaratannya sangat berbeda. 
+
+46
+00:01:41,366 --> 00:01:44,450
+ Itu untuk menghubungkan banyak situs yang relatif terpercaya 
+
+47
+00:01:44,450 --> 00:01:47,070
+ bahwa semua tahu satu sama lain dengan nama. 
+
+48
+00:01:47,070 --> 00:01:50,510
+ Dan saya rasa ini sering terjadi di sistem apa pun itu 
+
+49
+00:01:50,510 --> 00:01:51,420
+ menjadi sukses. 
+
+50
+00:01:51,420 --> 00:01:52,600
+ Persyaratan berubah. 
+
+51
+00:01:52,600 --> 00:01:54,864
+ Jadi dulu ini adalah protokol 
+
+52
+00:01:54,864 --> 00:01:56,030
+ untuk sejumlah kecil situs. 
+
+53
+00:01:56,030 --> 00:01:57,530
+ Sekarang ini seluruh dunia. 
+
+54
+00:01:57,530 --> 00:01:58,990
+ Dan Anda tidak mengenal semua orang 
+
+55
+00:01:58,990 --> 00:02:00,175
+ terhubung ke internet dengan nama lagi. 
+
+56
+00:02:00,175 --> 00:02:01,633
+ Anda tidak dapat memanggil mereka di telepon 
+
+57
+00:02:01,633 --> 00:02:03,470
+ jika mereka melakukan sesuatu yang buruk, dan sebagainya. 
+
+58
+00:02:03,470 --> 00:02:05,650
+ Jadi saya pikir ini adalah cerita untuk banyak protokol 
+
+59
+00:02:05,650 --> 00:02:06,170
+ kami melihat. 
+
+60
+00:02:06,170 --> 00:02:08,520
+ Dan banyak dari kalian yang punya pertanyaan, seperti, apa-apaan ini 
+
+61
+00:02:08,520 --> 00:02:09,561
+ apakah orang-orang ini berpikir? 
+
+62
+00:02:09,561 --> 00:02:10,312
+ Ini sangat rusak. 
+
+63
+00:02:10,312 --> 00:02:12,811
+ Namun faktanya, mereka merancang sistem yang sama sekali berbeda. 
+
+64
+00:02:12,811 --> 00:02:13,660
+ Itu diadopsi. 
+
+65
+00:02:13,660 --> 00:02:15,243
+ Sama untuk web, seperti yang kami cari 
+
+66
+00:02:15,243 --> 00:02:17,060
+ di dalam beberapa minggu terakhir. 
+
+67
+00:02:17,060 --> 00:02:18,950
+ Ini dirancang untuk tujuan yang sangat berbeda. 
+
+68
+00:02:18,950 --> 00:02:19,944
+ Dan itu meluas. 
+
+69
+00:02:19,944 --> 00:02:21,610
+ Dan Anda memiliki semacam sakit yang terus tumbuh ini 
+
+70
+00:02:21,610 --> 00:02:24,760
+ Anda harus mencari tahu bagaimana membuat protokol beradaptasi 
+
+71
+00:02:24,760 --> 00:02:26,750
+ untuk persyaratan baru. 
+
+72
+00:02:26,750 --> 00:02:29,370
+ Dan hal lain yang agak mendadak terjadi 
+
+73
+00:02:29,370 --> 00:02:31,370
+ Saya pikir orang juga sedang dalam proses 
+
+74
+00:02:31,370 --> 00:02:32,814
+ mendapat apresiasi yang jauh lebih besar 
+
+75
+00:02:32,814 --> 00:02:34,230
+ untuk jenis masalah yang Anda miliki 
+
+76
+00:02:34,230 --> 00:02:35,970
+ khawatir tentang keamanan. 
+
+77
+00:02:35,970 --> 00:02:38,520
+ Dan dulu itu adalah kasus yang sebenarnya tidak Anda lakukan 
+
+78
+00:02:38,520 --> 00:02:39,960
+ mengerti semua hal yang kamu 
+
+79
+00:02:39,960 --> 00:02:42,870
+ harus khawatir tentang penyerang yang melakukan sistem Anda. 
+
+80
+00:02:42,870 --> 00:02:44,520
+ Dan saya pikir itu sebagian karena alasan ini 
+
+81
+00:02:44,520 --> 00:02:46,400
+ itu agak menarik untuk dilihat 
+
+82
+00:02:46,400 --> 00:02:48,960
+ pada apa yang terjadi pada keamanan TCP, apa yang salah, 
+
+83
+00:02:48,960 --> 00:02:51,639
+ bagaimana kita bisa memperbaikinya, dan sebagainya, untuk mencari tahu 
+
+84
+00:02:51,639 --> 00:02:54,180
+ masalah apa yang mungkin ingin Anda hindari saat merancang 
+
+85
+00:02:54,180 --> 00:02:56,980
+ protokol Anda sendiri, dan juga apa 
+
+86
+00:02:56,980 --> 00:02:59,765
+ pola pikir yang benar untuk berpikir tentang jenis-jenis serangan ini. 
+
+87
+00:02:59,765 --> 00:03:02,410
+ Bagaimana Anda mencari tahu apa yang mungkin seorang penyerang 
+
+88
+00:03:02,410 --> 00:03:03,840
+ dapat dilakukan dalam protokol Anda sendiri 
+
+89
+00:03:03,840 --> 00:03:08,290
+ ketika Anda mendesainnya sehingga Anda dapat menghindari jebakan yang sama? 
+
+90
+00:03:08,290 --> 00:03:10,152
+ Baiklah, jadi dengan kata pengantar itu disisihkan, 
+
+91
+00:03:10,152 --> 00:03:12,610
+ mari kita mulai membicarakan tentang apa makalah ini. 
+
+92
+00:03:12,610 --> 00:03:15,770
+ Jadi bagaimana seharusnya kita berpikir tentang keamanan dalam jaringan? 
+
+93
+00:03:15,770 --> 00:03:18,620
+ Jadi saya kira kita bisa mencoba memulai dari prinsip pertama 
+
+94
+00:03:18,620 --> 00:03:22,350
+ dan coba cari tahu, apa model ancaman kita? 
+
+95
+00:03:22,350 --> 00:03:24,220
+ Jadi apa yang kita pikir penyerangnya 
+
+96
+00:03:24,220 --> 00:03:28,210
+ akan dapat dilakukan di jaringan kami? 
+
+97
+00:03:28,210 --> 00:03:29,980
+ Yah, relatif lugas, 
+
+98
+00:03:29,980 --> 00:03:36,340
+ ada mungkin bisa mencegat paket, 
+
+99
+00:03:36,340 --> 00:03:38,110
+ dan mungkin bisa memodifikasinya. 
+
+100
+00:03:38,110 --> 00:03:41,000
+
+
+101
+00:03:41,000 --> 00:03:42,960
+ Jadi jika Anda mengirim paket melalui jaringan, 
+
+102
+00:03:42,960 --> 00:03:45,800
+ mungkin lebih bijaksana untuk berasumsi bahwa ada orang jahat di luar sana 
+
+103
+00:03:45,800 --> 00:03:48,540
+ akan melihat paket Anda dan mungkin bisa mengubahnya 
+
+104
+00:03:48,540 --> 00:03:49,980
+ sebelum mencapai tujuan, 
+
+105
+00:03:49,980 --> 00:03:52,440
+ mungkin bisa menjatuhkannya, dan mungkin sebenarnya 
+
+106
+00:03:52,440 --> 00:03:54,740
+ dapat menyuntikkan paket mereka sendiri 
+
+107
+00:03:54,740 --> 00:03:59,170
+ bahwa Anda tidak pernah dikirim dengan konten sewenang-wenang. 
+
+108
+00:03:59,170 --> 00:04:02,605
+ Dan mungkin-- jadi ini Anda bisa mengurutkan 
+
+109
+00:04:02,605 --> 00:04:04,480
+ datang dengan cukup sederhana hanya dengan adil 
+
+110
+00:04:04,480 --> 00:04:07,010
+ berpikir, jika Anda tidak mempercayai jaringan, 
+
+111
+00:04:07,010 --> 00:04:09,490
+ beberapa orang jahat akan mengirim paket yang sewenang-wenang, 
+
+112
+00:04:09,490 --> 00:04:11,470
+ lihat milik Anda, ubah, dan sebagainya. 
+
+113
+00:04:11,470 --> 00:04:15,240
+ Agak lebih mengkhawatirkan, karena makalah ini berbicara tentang, 
+
+114
+00:04:15,240 --> 00:04:17,720
+ orang jahat juga dapat berpartisipasi dalam protokol Anda. 
+
+115
+00:04:17,720 --> 00:04:19,178
+ Mereka punya mesin sendiri, kan? 
+
+116
+00:04:19,178 --> 00:04:22,490
+ Jadi penyerang memiliki komputernya sendiri 
+
+117
+00:04:22,490 --> 00:04:23,990
+ bahwa mereka memiliki kontrol penuh atas. 
+
+118
+00:04:23,990 --> 00:04:29,450
+ Jadi, bahkan jika semua komputer yang Anda percaya 
+
+119
+00:04:29,450 --> 00:04:32,187
+ cukup terpelihara, mereka semua berperilaku dengan benar, 
+
+120
+00:04:32,187 --> 00:04:34,020
+ orang jahat memiliki komputernya sendiri yang dia bisa 
+
+121
+00:04:34,020 --> 00:04:35,700
+ membuatnya melakukan apapun yang dia mau. 
+
+122
+00:04:35,700 --> 00:04:37,840
+ Dan sebenarnya, dia bisa berpartisipasi dalam protokol 
+
+123
+00:04:37,840 --> 00:04:39,743
+ atau mendistribusikan suatu sistem. 
+
+124
+00:04:39,743 --> 00:04:45,150
+
+
+125
+00:04:45,150 --> 00:04:47,000
+ Jadi jika Anda memiliki protokol routing, yang mana 
+
+126
+00:04:47,000 --> 00:04:49,835
+ melibatkan banyak orang yang berbicara satu sama lain, dalam skala tertentu, 
+
+127
+00:04:49,835 --> 00:04:51,710
+ itu mungkin akan menjadi tidak praktis untuk dijaga 
+
+128
+00:04:51,710 --> 00:04:52,484
+ orang-orang jahat keluar. 
+
+129
+00:04:52,484 --> 00:04:54,900
+ Jika Anda menjalankan protokol routing dengan 10 peserta, 
+
+130
+00:04:54,900 --> 00:04:57,170
+ maka mungkin Anda bisa memanggil mereka semua dan berkata, yah, ya, 
+
+131
+00:04:57,170 --> 00:04:58,380
+ ya, saya tahu semua kalian. 
+
+132
+00:04:58,380 --> 00:05:00,720
+ Tetapi pada skala internet saat ini, itu 
+
+133
+00:05:00,720 --> 00:05:04,300
+ tidak layak untuk memiliki semacam pengetahuan langsung tentang apa 
+
+134
+00:05:04,300 --> 00:05:07,236
+ orang lain atau siapa orang lain dalam protokol ini. 
+
+135
+00:05:07,236 --> 00:05:08,610
+ Jadi mungkin beberapa orang jahat akan pergi 
+
+136
+00:05:08,610 --> 00:05:11,160
+ untuk berpartisipasi dalam protokol Anda atau didistribusikan 
+
+137
+00:05:11,160 --> 00:05:11,660
+ sistem. 
+
+138
+00:05:11,660 --> 00:05:13,868
+ Dan penting untuk mendesain sistem terdistribusi itu 
+
+139
+00:05:13,868 --> 00:05:17,955
+ tetap bisa melakukan sesuatu yang wajar dengan itu. 
+
+140
+00:05:17,955 --> 00:05:19,580
+ Baiklah, jadi apa implikasinya 
+
+141
+00:05:19,580 --> 00:05:20,280
+ dari semua ini? 
+
+142
+00:05:20,280 --> 00:05:21,680
+ Saya kira kita akan turun daftar. 
+
+143
+00:05:21,680 --> 00:05:26,570
+ Jadi mencegat adalah - semuanya mudah dimengerti. 
+
+144
+00:05:26,570 --> 00:05:29,170
+ Anda tidak seharusnya mengirim data penting 
+
+145
+00:05:29,170 --> 00:05:32,380
+ melalui jaringan jika Anda mengharapkan orang jahat mencegat mereka, 
+
+146
+00:05:32,380 --> 00:05:33,680
+ atau setidaknya tidak dalam teks yang jelas. 
+
+147
+00:05:33,680 --> 00:05:35,480
+ Mungkin Anda harus mengenkripsi data Anda. 
+
+148
+00:05:35,480 --> 00:05:37,785
+ Jadi sepertinya relatif mudah untuk mengurutkan 
+
+149
+00:05:37,785 --> 00:05:38,565
+ mencari tahu. 
+
+150
+00:05:38,565 --> 00:05:41,106
+ Meskipun Anda masih harus mengingatnya, tentu saja, 
+
+151
+00:05:41,106 --> 00:05:43,070
+ saat mendesain protokol. 
+
+152
+00:05:43,070 --> 00:05:46,770
+ Sekarang, paket suntikan ternyata mengarah 
+
+153
+00:05:46,770 --> 00:05:50,380
+ untuk berbagai masalah menarik yang lebih luas 
+
+154
+00:05:50,380 --> 00:05:51,970
+ bahwa makalah ini berbicara tentang. 
+
+155
+00:05:51,970 --> 00:05:55,160
+ Dan khususnya, penyerang dapat menyuntikkan 
+
+156
+00:05:55,160 --> 00:05:58,860
+ paket yang dapat berpura-pura berasal dari pengirim lain. 
+
+157
+00:05:58,860 --> 00:06:02,295
+ Karena cara kerjanya di IP adalah paket IP itu sendiri 
+
+158
+00:06:02,295 --> 00:06:04,420
+ memiliki header yang berisi sumber paket 
+
+159
+00:06:04,420 --> 00:06:06,080
+ dan tujuan. 
+
+160
+00:06:06,080 --> 00:06:08,830
+ Dan terserah kepada siapa pun yang membuat paket 
+
+161
+00:06:08,830 --> 00:06:11,750
+ untuk mengisi nilai yang tepat untuk sumber dan tujuan. 
+
+162
+00:06:11,750 --> 00:06:14,100
+ Dan tidak ada yang memeriksa sumbernya 
+
+163
+00:06:14,100 --> 00:06:16,100
+ yang benar. 
+
+164
+00:06:16,100 --> 00:06:18,050
+ Ada beberapa penyaringan yang terjadi hari ini. 
+
+165
+00:06:18,050 --> 00:06:21,430
+ Tapi itu agak agak jerawatan, dan sulit untuk diandalkan. 
+
+166
+00:06:21,430 --> 00:06:23,115
+ Jadi untuk pendekatan pertama, penyerang 
+
+167
+00:06:23,115 --> 00:06:25,340
+ dapat mengisi alamat IP apa pun sebagai sumber, 
+
+168
+00:06:25,340 --> 00:06:29,180
+ dan itu akan sampai ke tujuan dengan benar. 
+
+169
+00:06:29,180 --> 00:06:32,070
+ Dan itu menarik untuk mencoba mencari tahu 
+
+170
+00:06:32,070 --> 00:06:35,540
+ apa yang bisa dilakukan penyerang dengan kemampuan mengirim seperti itu 
+
+171
+00:06:35,540 --> 00:06:37,670
+ paket acak. 
+
+172
+00:06:37,670 --> 00:06:41,771
+ Sekarang, dalam beberapa minggu hingga ini, 
+
+173
+00:06:41,771 --> 00:06:43,520
+ seperti di buffer overflows dan keamanan web, 
+
+174
+00:06:43,520 --> 00:06:46,110
+ kami melihat, untuk sebagian besar, bug implementasi, seperti, 
+
+175
+00:06:46,110 --> 00:06:48,440
+ bagaimana Anda bisa mengeksploitasi buffer overflow? 
+
+176
+00:06:48,440 --> 00:06:50,420
+ Dan menariknya, penulis makalah ini 
+
+177
+00:06:50,420 --> 00:06:53,010
+ sebenarnya sama sekali tidak tertarik dalam implementasi 
+
+178
+00:06:53,010 --> 00:06:53,510
+ bug. 
+
+179
+00:06:53,510 --> 00:06:56,770
+ Dia benar-benar tertarik pada kesalahan protokol atau protokol 
+
+180
+00:06:56,770 --> 00:06:57,562
+ kesalahan. 
+
+181
+00:06:57,562 --> 00:06:58,520
+ Jadi apa masalahnya? 
+
+182
+00:06:58,520 --> 00:07:00,580
+ Mengapa dia menggunakan bug implementasi, 
+
+183
+00:07:00,580 --> 00:07:02,705
+ meskipun kita menghabiskan beberapa minggu melihat mereka? 
+
+184
+00:07:02,705 --> 00:07:03,510
+ Mengapa itu penting? 
+
+185
+00:07:03,510 --> 00:07:04,010
+ Ya. 
+
+186
+00:07:04,010 --> 00:07:06,828
+ AUDIENCE: Karena kita harus menjaga bug tersebut [TIDAK JELAS]. 
+
+187
+00:07:06,828 --> 00:07:09,800
+ PROFESOR: Ya, jadi ini adalah kesalahan besar tentang bug 
+
+188
+00:07:09,800 --> 00:07:11,550
+ dalam desain protokol Anda. 
+
+189
+00:07:11,550 --> 00:07:13,589
+ Karena itu sulit diubah. 
+
+190
+00:07:13,589 --> 00:07:15,130
+ Jadi jika Anda memiliki bug implementasi, 
+
+191
+00:07:15,130 --> 00:07:17,350
+ baik, Anda memiliki memcpy atau print-out 
+
+192
+00:07:17,350 --> 00:07:19,254
+ keluar dari beberapa jenis yang tidak memeriksa jangkauan. 
+
+193
+00:07:19,254 --> 00:07:21,420
+ OK, baik, Anda memiliki rentang pemeriksaan, dan masih berfungsi, 
+
+194
+00:07:21,420 --> 00:07:22,461
+ dan sekarang juga aman. 
+
+195
+00:07:22,461 --> 00:07:23,510
+ Jadi itu hebat. 
+
+196
+00:07:23,510 --> 00:07:25,995
+ Tetapi jika Anda memiliki beberapa bug dalam spesifikasi protokol, 
+
+197
+00:07:25,995 --> 00:07:29,140
+ bagaimana protokol harus berfungsi, kemudian memperbaiki bug 
+
+198
+00:07:29,140 --> 00:07:31,190
+ akan membutuhkan memperbaiki protokol, yang 
+
+199
+00:07:31,190 --> 00:07:33,820
+ berarti berpotensi mempengaruhi semua sistem itu 
+
+200
+00:07:33,820 --> 00:07:35,460
+ di luar sana berbicara protokol ini. 
+
+201
+00:07:35,460 --> 00:07:37,340
+ Jadi jika kita menemukan masalah dalam TCP, 
+
+202
+00:07:37,340 --> 00:07:38,910
+ itu berpotensi cukup merusak. 
+
+203
+00:07:38,910 --> 00:07:42,229
+ Karena setiap mesin yang menggunakan TCP akan harus berubah. 
+
+204
+00:07:42,229 --> 00:07:43,770
+ Karena itu akan sulit dibuat 
+
+205
+00:07:43,770 --> 00:07:45,790
+ itu berpotensi mundur kompatibel. 
+
+206
+00:07:45,790 --> 00:07:48,530
+ Kita akan melihat apa sebenarnya bug ini. 
+
+207
+00:07:48,530 --> 00:07:51,640
+ Tapi ini alasan sebenarnya dia sangat bersemangat mencari 
+
+208
+00:07:51,640 --> 00:07:52,460
+ di bug protokol. 
+
+209
+00:07:52,460 --> 00:07:56,555
+ Karena mereka cukup mendasar untuk protokol TCP 
+
+210
+00:07:56,555 --> 00:07:58,982
+ bahwa semua orang setuju untuk berbicara. 
+
+211
+00:07:58,982 --> 00:08:00,440
+ Jadi mari kita lihat salah satu dari mereka. 
+
+212
+00:08:00,440 --> 00:08:03,950
+ Jadi contoh pertama yang dia tunjukkan 
+
+213
+00:08:03,950 --> 00:08:07,140
+ ada hubungannya dengan bagaimana nomor urut TCP bekerja. 
+
+214
+00:08:07,140 --> 00:08:09,720
+
+
+215
+00:08:09,720 --> 00:08:13,169
+ Jadi hanya untuk menjelaskan kembali-- ya, pertanyaan. 
+
+216
+00:08:13,169 --> 00:08:14,294
+ AUDIENCE: Saya hanya ingin tahu. 
+
+217
+00:08:14,294 --> 00:08:15,502
+ Ini adalah topik kecil. 
+
+218
+00:08:15,502 --> 00:08:17,606
+ Tetapi katakanlah Anda menemukan bug di TCP. 
+
+219
+00:08:17,606 --> 00:08:19,976
+ Bagaimana Anda membuat perubahan itu? 
+
+220
+00:08:19,976 --> 00:08:21,398
+ Bagaimana Anda memberi tahu semua komputer 
+
+221
+00:08:21,398 --> 00:08:23,736
+ di dunia untuk mengubah itu? 
+
+222
+00:08:23,736 --> 00:08:25,610
+ PROFESOR: Ya, saya pikir itu masalah besar. 
+
+223
+00:08:25,610 --> 00:08:26,900
+ Bagaimana jika Anda menemukan bug di TCP? 
+
+224
+00:08:26,900 --> 00:08:29,280
+ Yah, tidak jelas apa yang harus dilakukan. 
+
+225
+00:08:29,280 --> 00:08:32,530
+ Dan saya pikir para penulis di sini banyak berjuang dengan itu. 
+
+226
+00:08:32,530 --> 00:08:36,164
+ Dan dalam banyak hal, jika Anda dapat mendesain ulang TCP, 
+
+227
+00:08:36,164 --> 00:08:37,538
+ banyak bug ini relatif 
+
+228
+00:08:37,539 --> 00:08:41,620
+ mudah diperbaiki jika Anda tahu apa yang harus dicari sebelumnya. 
+
+229
+00:08:41,620 --> 00:08:46,410
+ Tetapi karena TCP agak sulit 
+
+230
+00:08:46,410 --> 00:08:51,350
+ untuk memperbaiki atau mengubah, apa yang akhirnya terjadi 
+
+231
+00:08:51,350 --> 00:08:54,457
+ adalah orang atau perancang mencoba untuk melihat 
+
+232
+00:08:54,457 --> 00:08:58,135
+ untuk tweak kompatibel yang memungkinkan 
+
+233
+00:08:58,135 --> 00:09:01,170
+ implementasi lama untuk hidup berdampingan dengan implementasi baru 
+
+234
+00:09:01,170 --> 00:09:04,970
+ atau menambahkan beberapa bidang opsional yang jika ada, lalu 
+
+235
+00:09:04,970 --> 00:09:08,590
+ komunikasi lebih aman dalam beberapa hal. 
+
+236
+00:09:08,590 --> 00:09:10,370
+ Tapi itu masalah besar. 
+
+237
+00:09:10,370 --> 00:09:14,030
+ Jika ada masalah keamanan yang tertanam dalam TCP, 
+
+238
+00:09:14,030 --> 00:09:17,750
+ maka itu akan menjadi masalah yang cukup besar untuk semua orang 
+
+239
+00:09:17,750 --> 00:09:23,930
+ untuk hanya berkemas dan pindah ke versi TCP apa pun, n plus 1. 
+
+240
+00:09:23,930 --> 00:09:27,296
+ Dan Anda dapat melihat IPv6 sebagai salah satu contoh hal ini tidak terjadi. 
+
+241
+00:09:27,296 --> 00:09:29,170
+ Kami sudah tahu masalah ini akan muncul 
+
+242
+00:09:29,170 --> 00:09:31,025
+ selama 15 tahun atau 20 tahun. 
+
+243
+00:09:31,025 --> 00:09:34,759
+ IPv6 telah ada selama lebih dari 10 tahun sekarang. 
+
+244
+00:09:34,759 --> 00:09:37,300
+ Dan itu sulit untuk meyakinkan orang untuk menjauh dari IPv4. 
+
+245
+00:09:37,300 --> 00:09:38,060
+ Sudah cukup bagus. 
+
+246
+00:09:38,060 --> 00:09:39,040
+ Ini semacam berhasil. 
+
+247
+00:09:39,040 --> 00:09:41,465
+ Banyak overhead untuk pindah. 
+
+248
+00:09:41,465 --> 00:09:43,019
+ Dan tidak ada orang lain yang berbicara IPv6, jadi 
+
+249
+00:09:43,019 --> 00:09:45,060
+ mengapa saya harus mulai berbicara protokol aneh ini 
+
+250
+00:09:45,060 --> 00:09:47,220
+ bahwa tidak ada orang lain yang akan berbicara dengan saya? 
+
+251
+00:09:47,220 --> 00:09:48,520
+ Jadi itu semacam bergerak bersama. 
+
+252
+00:09:48,520 --> 00:09:49,895
+ Tapi saya pikir itu membutuhkan waktu lama. 
+
+253
+00:09:49,895 --> 00:09:53,290
+ Dan akan benar-benar ada motivasi untuk bermigrasi. 
+
+254
+00:09:53,290 --> 00:09:56,940
+ Dan kompatibilitas mundur sangat membantu. 
+
+255
+00:09:56,940 --> 00:09:58,700
+ Tidak cukup bagus untuk, saya kira, IPv6-- IPv6 
+
+256
+00:09:58,700 --> 00:10:01,205
+ memiliki banyak rencana kompatibilitas mundur di dalamnya. 
+
+257
+00:10:01,205 --> 00:10:04,720
+ Anda dapat berbicara dengan host IPv4 dari IPv6. 
+
+258
+00:10:04,720 --> 00:10:07,770
+ Jadi mereka mencoba untuk merekayasa semua dukungan ini. 
+
+259
+00:10:07,770 --> 00:10:11,840
+ Tapi tetap saja, sulit untuk meyakinkan orang untuk meningkatkan. 
+
+260
+00:10:11,840 --> 00:10:15,194
+ Baiklah, tapi ya, lihat kembali urutan TCP 
+
+261
+00:10:15,194 --> 00:10:17,610
+ angka, kita akan melihat sebenarnya dua masalah itu 
+
+262
+00:10:17,610 --> 00:10:20,990
+ harus dilakukan dengan cara kerja handshake TCP. 
+
+263
+00:10:20,990 --> 00:10:24,260
+ Jadi, mari kita menghabiskan sedikit waktu untuk berolahraga 
+
+264
+00:10:24,260 --> 00:10:27,060
+ apa rincian tentang bagaimana koneksi TCP mendapat awalnya 
+
+265
+00:10:27,060 --> 00:10:28,510
+ mapan. 
+
+266
+00:10:28,510 --> 00:10:30,650
+ Jadi sebenarnya ada tiga paket 
+
+267
+00:10:30,650 --> 00:10:33,900
+ yang harus dikirim agar koneksi TCP baru 
+
+268
+00:10:33,900 --> 00:10:34,690
+ untuk didirikan. 
+
+269
+00:10:34,690 --> 00:10:37,960
+ Jadi klien kami menghasilkan paket untuk terhubung ke server. 
+
+270
+00:10:37,960 --> 00:10:41,140
+ Dan dikatakan, nah, inilah alamat IP saya, C, klien. 
+
+271
+00:10:41,140 --> 00:10:42,940
+ Saya mengirim ini ke server. 
+
+272
+00:10:42,940 --> 00:10:44,534
+ Dan ada berbagai bidang. 
+
+273
+00:10:44,534 --> 00:10:46,575
+ Tetapi yang menarik untuk tujuan itu 
+
+274
+00:10:46,575 --> 00:10:49,590
+ diskusi ini akan menjadi nomor urut. 
+
+275
+00:10:49,590 --> 00:10:51,610
+ Jadi akan ada pepatah sin bendera, 
+
+276
+00:10:51,610 --> 00:10:54,350
+ Saya ingin menyinkronkan keadaan dan membangun koneksi baru. 
+
+277
+00:10:54,350 --> 00:10:57,480
+ Dan Anda menyertakan nomor urut klien 
+
+278
+00:10:57,480 --> 00:11:00,680
+ di paket syn awal. 
+
+279
+00:11:00,680 --> 00:11:02,370
+ Lalu ketika server menerima ini, 
+
+280
+00:11:02,370 --> 00:11:04,167
+ server akan melihat dan berkata, 
+
+281
+00:11:04,167 --> 00:11:05,750
+ baik, klien ingin terhubung dengan saya, 
+
+282
+00:11:05,750 --> 00:11:07,459
+ jadi saya akan mengirim paket kembali ke apa pun 
+
+283
+00:11:07,459 --> 00:11:09,000
+ alamat ini, siapa pun yang mengatakan mereka 
+
+284
+00:11:09,000 --> 00:11:10,060
+ mencoba untuk terhubung dengan saya. 
+
+285
+00:11:10,060 --> 00:11:13,740
+ Jadi itu akan mengirim paket dari server ke klien 
+
+286
+00:11:13,740 --> 00:11:17,170
+ dan menyertakan nomor sinkronisasi sendiri, SN 
+
+287
+00:11:17,170 --> 00:11:18,080
+ server 
+
+288
+00:11:18,080 --> 00:11:19,910
+ Dan itu akan mengakui nomor klien. 
+
+289
+00:11:19,910 --> 00:11:23,750
+
+
+290
+00:11:23,750 --> 00:11:28,040
+ Dan akhirnya, klien membalas, 
+
+291
+00:11:28,040 --> 00:11:30,260
+ mengakui sinkronisasi server 
+
+292
+00:11:30,260 --> 00:11:37,070
+ number-- mengakui SNS. 
+
+293
+00:11:37,070 --> 00:11:40,110
+ Dan sekarang klien benar-benar dapat mulai mengirim data. 
+
+294
+00:11:40,110 --> 00:11:42,290
+ Jadi untuk mengirim data, klien 
+
+295
+00:11:42,290 --> 00:11:46,770
+ harus memasukkan beberapa data dalam paket, 
+
+296
+00:11:46,770 --> 00:11:51,780
+ dan juga memasukkan nomor urut klien 
+
+297
+00:11:51,780 --> 00:11:53,275
+ untuk menunjukkan bahwa ini sebenarnya 
+
+298
+00:11:53,275 --> 00:11:55,858
+ semacam data klien yang sah pada awal koneksi. 
+
+299
+00:11:55,858 --> 00:11:57,650
+ Ini bukan data dari nanti, 
+
+300
+00:11:57,650 --> 00:12:00,168
+ misalnya, yang kebetulan tiba sekarang 
+
+301
+00:12:00,168 --> 00:12:02,542
+ karena server melewatkan beberapa bagian awal data. 
+
+302
+00:12:02,542 --> 00:12:04,735
+ Jadi umumnya, semua nomor urut ini 
+
+303
+00:12:04,735 --> 00:12:08,240
+ dimaksudkan untuk memastikan agar pengiriman paket. 
+
+304
+00:12:08,240 --> 00:12:11,225
+ Jadi jika klien mengirim dua paket, yang satu itu 
+
+305
+00:12:11,225 --> 00:12:14,370
+ memiliki nomor urut awal, itu adalah bagian pertama dari data. 
+
+306
+00:12:14,370 --> 00:12:16,078
+ Dan yang dengan nomor urut berikutnya 
+
+307
+00:12:16,078 --> 00:12:17,410
+ adalah bongkahan data berikutnya. 
+
+308
+00:12:17,410 --> 00:12:20,790
+ Namun ternyata juga berguna untuk menyediakan 
+
+309
+00:12:20,790 --> 00:12:22,424
+ beberapa properti keamanan. 
+
+310
+00:12:22,424 --> 00:12:24,465
+ Berikut contoh perubahan persyaratan ini. 
+
+311
+00:12:24,465 --> 00:12:25,840
+ Jadi awalnya, tidak ada yang berpikir 
+
+312
+00:12:25,840 --> 00:12:27,465
+ TCP menyediakan properti keamanan apa pun. 
+
+313
+00:12:27,465 --> 00:12:29,940
+ Tapi kemudian aplikasi mulai menggunakan TCP dan sortir 
+
+314
+00:12:29,940 --> 00:12:32,470
+ mengandalkan koneksi TCP ini 
+
+315
+00:12:32,470 --> 00:12:35,800
+ tidak bisa dipatahkan oleh penyerang yang sewenang-wenang, 
+
+316
+00:12:35,800 --> 00:12:39,150
+ atau penyerang tidak dapat menyuntikkan data ke akun Anda yang sudah ada 
+
+317
+00:12:39,150 --> 00:12:40,360
+ Koneksi TCP. 
+
+318
+00:12:40,360 --> 00:12:43,060
+ Dan tiba-tiba, mekanisme ini yang awalnya 
+
+319
+00:12:43,060 --> 00:12:46,240
+ dimaksudkan hanya untuk memesan paket sekarang 
+
+320
+00:12:46,240 --> 00:12:49,160
+ terbiasa menjamin beberapa kemiripan keamanan 
+
+321
+00:12:49,160 --> 00:12:52,110
+ untuk koneksi ini. 
+
+322
+00:12:52,110 --> 00:12:59,810
+ Jadi dalam hal ini, saya kira masalahnya 
+
+323
+00:12:59,810 --> 00:13:03,710
+ berasal dari apa yang bisa diasumsikan server tentang TCP ini 
+
+324
+00:13:03,710 --> 00:13:04,520
+ koneksi. 
+
+325
+00:13:04,520 --> 00:13:08,180
+ Jadi biasanya, server mengasumsikan-- secara implisit, 
+
+326
+00:13:08,180 --> 00:13:12,480
+ Anda mungkin membayangkan-- bahwa hubungan ini terjalin 
+
+327
+00:13:12,480 --> 00:13:17,195
+ dengan klien yang tepat di alamat IP C. Sepertinya 
+
+328
+00:13:17,195 --> 00:13:18,650
+ seperti hal yang wajar untuk diasumsikan. 
+
+329
+00:13:18,650 --> 00:13:20,990
+ Apakah ada dasar untuk membuat asumsi ini? 
+
+330
+00:13:20,990 --> 00:13:24,780
+ Jika server menerima pesan ini, ini dia 
+
+331
+00:13:24,780 --> 00:13:27,500
+ beberapa data pada koneksi ini dari klien ke server, 
+
+332
+00:13:27,500 --> 00:13:32,950
+ dan memiliki nomor urut C, mengapa mungkin server 
+
+333
+00:13:32,950 --> 00:13:35,759
+ menyimpulkan bahwa ini sebenarnya adalah klien sebenarnya yang mengirim ini? 
+
+334
+00:13:35,759 --> 00:13:38,050
+ AUDIENCE: Karena nomor urut sulit untuk ditebak. 
+
+335
+00:13:38,050 --> 00:13:39,940
+ PROFESOR: Benar, jadi itu semacam hal implisit yang terjadi, 
+
+336
+00:13:39,940 --> 00:13:42,640
+ bahwa itu harus memiliki nomor urut C yang tepat di sini. 
+
+337
+00:13:42,640 --> 00:13:46,430
+ Dan agar hubungan ini terbentuk, 
+
+338
+00:13:46,430 --> 00:13:49,870
+ klien pasti sudah mengenali server 
+
+339
+00:13:49,870 --> 00:13:51,570
+ nomor urut S sini. 
+
+340
+00:13:51,570 --> 00:13:55,520
+ Dan nomor urut server S hanya dikirim oleh server 
+
+341
+00:13:55,520 --> 00:13:59,386
+ ke alamat IP klien yang dimaksud. 
+
+342
+00:13:59,386 --> 00:13:59,886
+ Ya. 
+
+343
+00:13:59,886 --> 00:14:01,362
+ AUDIENCE: Berapa banyak bit yang tersedia untuk urutan 
+
+344
+00:14:01,362 --> 00:14:01,862
+ jumlah? 
+
+345
+00:14:01,862 --> 00:14:05,831
+ PROFESOR: Jadi nomor urut dalam TCP adalah 32 bit panjang. 
+
+346
+00:14:05,831 --> 00:14:10,359
+ Itu tidak sepenuhnya mudah ditebak. 
+
+347
+00:14:10,359 --> 00:14:12,025
+ Jika itu benar-benar nomor acak 32 bit, 
+
+348
+00:14:12,025 --> 00:14:14,040
+ itu akan sulit untuk ditebak. 
+
+349
+00:14:14,040 --> 00:14:16,699
+ Dan Anda mungkin akan menghabiskan banyak bandwidth 
+
+350
+00:14:16,699 --> 00:14:17,637
+ mencoba menerka ini. 
+
+351
+00:14:17,637 --> 00:14:19,044
+ Ya, pertanyaan. 
+
+352
+00:14:19,044 --> 00:14:20,607
+ AUDIENCE: Nomor frekuensi data 
+
+353
+00:14:20,607 --> 00:14:23,150
+ lebih tinggi dari nomor urut awal? 
+
+354
+00:14:23,150 --> 00:14:25,650
+ PROFESOR: Ya, jadi pada dasarnya, hal-hal ini bertambah. 
+
+355
+00:14:25,650 --> 00:14:27,500
+ Jadi setiap kali Anda mengirim syn, itu 
+
+356
+00:14:27,500 --> 00:14:29,660
+ dihitung sebagai satu byte terhadap nomor urut Anda. 
+
+357
+00:14:29,660 --> 00:14:31,010
+ Jadi ini SNC. 
+
+358
+00:14:31,010 --> 00:14:34,670
+ Saya pikir sebenarnya yang terjadi adalah ini SNC plus 1. 
+
+359
+00:14:34,670 --> 00:14:36,140
+ Dan kemudian berlanjut dari sana. 
+
+360
+00:14:36,140 --> 00:14:40,117
+ Jadi jika Anda mengirim 5 byte, maka yang berikutnya adalah SNC initial plus 6. 
+
+361
+00:14:40,117 --> 00:14:42,200
+ Jadi ini hanya menghitung byte yang Anda kirim. 
+
+362
+00:14:42,200 --> 00:14:44,920
+ SYN dihitung sebagai 1 byte masing-masing. 
+
+363
+00:14:44,920 --> 00:14:45,720
+ Masuk akal? 
+
+364
+00:14:45,720 --> 00:14:48,050
+ Pertanyaan lain tentang ini? 
+
+365
+00:14:48,050 --> 00:14:54,650
+ Baiklah, biasanya, atau setidaknya jalan 
+
+366
+00:14:54,650 --> 00:14:56,370
+ spesifikasi TCP yang direkomendasikan 
+
+367
+00:14:56,370 --> 00:14:58,550
+ bahwa orang memilih nomor urut ini, 
+
+368
+00:14:58,550 --> 00:15:02,750
+ adalah untuk menaikkannya pada tingkat kasar. 
+
+369
+00:15:02,750 --> 00:15:06,300
+ Jadi RFC awal menyarankan agar Anda meningkatkan hal-hal ini 
+
+370
+00:15:06,300 --> 00:15:12,350
+ pada sesuatu seperti 250.000 unit, ditambah 250.000, per detik. 
+
+371
+00:15:12,350 --> 00:15:14,920
+ Dan alasannya itu tidak sepenuhnya acak 
+
+372
+00:15:14,920 --> 00:15:17,060
+ adalah bahwa nomor urut ini sebenarnya 
+
+373
+00:15:17,060 --> 00:15:20,690
+ digunakan untuk mencegah paket rusak, atau paket 
+
+374
+00:15:20,690 --> 00:15:22,534
+ dari koneksi sebelumnya, dari mencampuri 
+
+375
+00:15:22,534 --> 00:15:23,917
+ dengan koneksi baru. 
+
+376
+00:15:23,917 --> 00:15:26,870
+ Jadi jika setiap kali Anda membuat koneksi baru 
+
+377
+00:15:26,870 --> 00:15:29,740
+ Anda memilih nomor urut acak sepenuhnya, 
+
+378
+00:15:29,740 --> 00:15:32,590
+ maka ada beberapa peluang jika Anda membuat banyak koneksi 
+
+379
+00:15:32,590 --> 00:15:35,510
+ berulang-ulang bahwa beberapa paket dari koneksi sebelumnya 
+
+380
+00:15:35,510 --> 00:15:37,290
+ akan memiliki urutan yang cukup serupa 
+
+381
+00:15:37,290 --> 00:15:38,790
+ nomor ke koneksi baru Anda dan 
+
+382
+00:15:38,790 --> 00:15:41,490
+ akan diterima sebagai bagian data yang valid 
+
+383
+00:15:41,490 --> 00:15:42,602
+ pada koneksi baru itu. 
+
+384
+00:15:42,602 --> 00:15:45,000
+ Jadi ini adalah sesuatu yang sangat diresahkan oleh perancang TCP 
+
+385
+00:15:45,000 --> 00:15:48,916
+ about-- ini dari paket pesanan atau paket tertunda. 
+
+386
+00:15:48,916 --> 00:15:51,290
+ Jadi sebagai hasilnya, mereka benar-benar menginginkan nomor urut ini 
+
+387
+00:15:51,290 --> 00:15:55,210
+ untuk maju dalam masalah yang secara kasar bersifat monoton seiring waktu, 
+
+388
+00:15:55,210 --> 00:15:56,900
+ bahkan di seluruh koneksi. 
+
+389
+00:15:56,900 --> 00:15:58,580
+ Jika saya membuka satu koneksi, itu mungkin 
+
+390
+00:15:58,580 --> 00:16:01,060
+ memiliki sumber dan tujuan yang sama, nomor port, 
+
+391
+00:16:01,060 --> 00:16:02,610
+ Alamat IP, dan sebagainya. 
+
+392
+00:16:02,610 --> 00:16:04,920
+ Tetapi karena saya menetapkan hubungan ini sekarang sebagai gantinya 
+
+393
+00:16:04,920 --> 00:16:07,640
+ dari sebelumnya, paket-paket dari semula mudah-mudahan 
+
+394
+00:16:07,640 --> 00:16:10,030
+ tidak akan cocok dengan nomor urut 
+
+395
+00:16:10,030 --> 00:16:12,310
+ Saya memiliki koneksi baru saya. 
+
+396
+00:16:12,310 --> 00:16:14,280
+ Jadi ini adalah mekanisme untuk mencegah kebingungan 
+
+397
+00:16:14,280 --> 00:16:18,431
+ di seluruh pendirian koneksi berulang. 
+
+398
+00:16:18,431 --> 00:16:18,930
+ Ya. 
+
+399
+00:16:18,930 --> 00:16:22,983
+ AUDIENCE: Jadi jika Anda tidak tahu persis berapa banyak yang lain 
+
+400
+00:16:22,983 --> 00:16:25,566
+ grid yang Anda ajak bicara akan meningkatkan urutan 
+
+401
+00:16:25,566 --> 00:16:26,845
+ pak, bagaimana Anda tahu bahwa paket yang Anda dapatkan adalah 
+
+402
+00:16:26,845 --> 00:16:29,120
+ paket berikutnya jika tidak ada paket langsung [TIDAK TERDENGAR] 
+
+403
+00:16:29,120 --> 00:16:29,530
+ bahwa Anda-- 
+
+404
+00:16:29,530 --> 00:16:31,870
+ PROFESOR: Jadi biasanya Anda akan mengingat paket terakhir 
+
+405
+00:16:31,870 --> 00:16:33,260
+ yang kamu terima. 
+
+406
+00:16:33,260 --> 00:16:35,680
+ Dan jika nomor urut berikutnya persis seperti itu, 
+
+407
+00:16:35,680 --> 00:16:38,267
+ maka ini adalah paket berikutnya secara berurutan. 
+
+408
+00:16:38,267 --> 00:16:39,850
+ Jadi misalnya, di sini, server tahu 
+
+409
+00:16:39,850 --> 00:16:43,937
+ bahwa saya telah melihat SNC plus 1 senilai data. 
+
+410
+00:16:43,937 --> 00:16:46,020
+ Jika paket berikutnya memiliki nomor urut SNC plus 1, 
+
+411
+00:16:46,020 --> 00:16:47,618
+ itu yang berikutnya. 
+
+412
+00:16:47,618 --> 00:16:49,117
+ AUDIENCE: Jadi Anda mengatakan itu kapan 
+
+413
+00:16:49,117 --> 00:16:51,790
+ Anda membuat nomor urut, kemudian bahkan setelah itu Anda 
+
+414
+00:16:51,790 --> 00:16:52,762
+ melakukan itu-- 
+
+415
+00:16:52,762 --> 00:16:54,428
+ PROFESOR: Ya, tentu saja, ya, ya. 
+
+416
+00:16:54,428 --> 00:16:56,611
+ Jadi nomor urut ini, awalnya saat 
+
+417
+00:16:56,611 --> 00:16:58,986
+ Anda membuatnya, mereka dipilih berdasarkan beberapa rencana. 
+
+418
+00:16:58,986 --> 00:17:00,135
+ Kami akan membicarakan tentang rencana itu. 
+
+419
+00:17:00,135 --> 00:17:01,940
+ Anda bisa mengira mereka mungkin acak. 
+
+420
+00:17:01,940 --> 00:17:05,310
+ Namun seiring waktu, mereka harus memiliki beberapa aliran untuk urutan awal 
+
+421
+00:17:05,310 --> 00:17:07,034
+ angka untuk koneksi. 
+
+422
+00:17:07,034 --> 00:17:09,575
+ Tetapi dalam suatu koneksi, begitu mereka terbentuk, itu saja. 
+
+423
+00:17:09,575 --> 00:17:10,280
+ Mereka sudah diperbaiki. 
+
+424
+00:17:10,280 --> 00:17:11,890
+ Dan mereka hanya mencentang sebagai datanya 
+
+425
+00:17:11,890 --> 00:17:15,630
+ akan dikirim pada koneksi, tepatnya. 
+
+426
+00:17:15,630 --> 00:17:17,270
+ Masuk akal? 
+
+427
+00:17:17,270 --> 00:17:19,618
+ Baiklah, jadi ada beberapa rencana 
+
+428
+00:17:19,618 --> 00:17:22,019
+ disarankan untuk bagaimana mengelola nomor urut ini. 
+
+429
+00:17:22,020 --> 00:17:23,650
+ Dan itu sebenarnya adalah rencana yang masuk akal 
+
+430
+00:17:23,650 --> 00:17:27,970
+ untuk menghindari duplikasi paket di jaringan menyebabkan masalah. 
+
+431
+00:17:27,970 --> 00:17:31,730
+ Tapi masalahnya, tentu saja, muncul 
+
+432
+00:17:31,730 --> 00:17:37,511
+ penyerang itu bisa menebak urutan ini 
+
+433
+00:17:37,511 --> 00:17:38,010
+ angka. 
+
+434
+00:17:38,010 --> 00:17:42,090
+ Karena tidak ada banyak keacakan yang dipilih. 
+
+435
+00:17:42,090 --> 00:17:44,750
+ Jadi cara mesin host akan memilih urutan ini 
+
+436
+00:17:44,750 --> 00:17:47,290
+ angka-angka itu mereka hanya menjalankan counter di memori. 
+
+437
+00:17:47,290 --> 00:17:50,080
+ Setiap detik mereka menabraknya dengan 250.000. 
+
+438
+00:17:50,080 --> 00:17:51,790
+ Dan setiap kali koneksi baru datang 
+
+439
+00:17:51,790 --> 00:17:55,530
+ di, mereka juga benjolan oleh beberapa konstan seperti 64k atau 128k. 
+
+440
+00:17:55,530 --> 00:17:57,930
+ Saya lupa angka pastinya. 
+
+441
+00:17:57,930 --> 00:18:00,180
+ Jadi ini relatif mudah ditebak, seperti yang Anda tahu. 
+
+442
+00:18:00,180 --> 00:18:02,030
+ Anda mengirimi mereka permintaan koneksi mereka, 
+
+443
+00:18:02,030 --> 00:18:04,116
+ dan Anda melihat nomor urut apa yang datang kembali. 
+
+444
+00:18:04,116 --> 00:18:05,741
+ Dan kemudian Anda tahu yang berikutnya akan pergi 
+
+445
+00:18:05,741 --> 00:18:07,950
+ menjadi 64k lebih tinggi dari itu. 
+
+446
+00:18:07,950 --> 00:18:12,352
+ Jadi tidak ada keacakan dalam protokol ini. 
+
+447
+00:18:12,352 --> 00:18:14,310
+ Jadi kita bisa membuat sketsa seperti apa bentuknya. 
+
+448
+00:18:14,310 --> 00:18:17,190
+ Jadi jika saya seorang penyerang yang ingin terhubung ke server 
+
+449
+00:18:17,190 --> 00:18:20,690
+ tapi pura-pura berasal dari alamat IP tertentu, 
+
+450
+00:18:20,690 --> 00:18:23,920
+ lalu apa yang mungkin saya lakukan adalah mengirim permintaan ke server, 
+
+451
+00:18:23,920 --> 00:18:26,490
+ sangat mirip langkah pertama di sana, 
+
+452
+00:18:26,490 --> 00:18:30,470
+ termasuk beberapa nomor urut awal yang saya pilih. 
+
+453
+00:18:30,470 --> 00:18:31,995
+ Pada titik ini, setiap nomor urut 
+
+454
+00:18:31,995 --> 00:18:33,660
+ sama baiknya, karena server tidak seharusnya 
+
+455
+00:18:33,660 --> 00:18:35,970
+ memiliki asumsi tentang apa urutan klien 
+
+456
+00:18:35,970 --> 00:18:37,042
+ angka itu. 
+
+457
+00:18:37,042 --> 00:18:38,250
+ Sekarang, apa yang dilakukan server? 
+
+458
+00:18:38,250 --> 00:18:40,760
+ Server mendapatkan paket yang sama seperti sebelumnya. 
+
+459
+00:18:40,760 --> 00:18:42,550
+ Jadi itu melakukan hal yang sama seperti sebelumnya. 
+
+460
+00:18:42,550 --> 00:18:47,500
+ Ini mengirimkan paket kembali ke klien dengan beberapa server 
+
+461
+00:18:47,500 --> 00:18:53,000
+ nomor urut dan mengakui SNC. 
+
+462
+00:18:53,000 --> 00:18:55,800
+ Dan sekarang penyerang, jika penyerang 
+
+463
+00:18:55,800 --> 00:18:58,620
+ ingin membangun koneksi, perlu entah bagaimana mensintesis 
+
+464
+00:18:58,620 --> 00:19:01,540
+ sebuah paket yang terlihat persis seperti paket ketiga di sana. 
+
+465
+00:19:01,540 --> 00:19:04,779
+ Jadi perlu mengirim paket dari klien ke server. 
+
+466
+00:19:04,779 --> 00:19:05,570
+ Itu cukup mudah. 
+
+467
+00:19:05,570 --> 00:19:07,403
+ Anda cukup mengisi nilai-nilai ini di header. 
+
+468
+00:19:07,403 --> 00:19:12,820
+ Tetapi Anda harus mengakui nomor urut server ini SNS. 
+
+469
+00:19:12,820 --> 00:19:15,090
+ Dan disinilah masalah dimulai. 
+
+470
+00:19:15,090 --> 00:19:18,950
+ Jika nilai SNS relatif mudah ditebak, 
+
+471
+00:19:18,950 --> 00:19:21,050
+ maka penyerang itu baik untuk pergi. 
+
+472
+00:19:21,050 --> 00:19:22,910
+ Dan sekarang server berpikir mereka punya 
+
+473
+00:19:22,910 --> 00:19:26,400
+ koneksi yang mapan dengan klien yang berasal dari IP ini 
+
+474
+00:19:26,400 --> 00:19:27,990
+ alamat. 
+
+475
+00:19:27,990 --> 00:19:31,920
+ Dan sekarang penyerang bisa menyuntikkan data ke koneksi ini 
+
+476
+00:19:31,920 --> 00:19:33,174
+ sama seperti sebelumnya. 
+
+477
+00:19:33,174 --> 00:19:34,590
+ Mereka hanya mensintesis paket itu 
+
+478
+00:19:34,590 --> 00:19:37,680
+ terlihat seperti ini, memiliki data, dan itu 
+
+479
+00:19:37,680 --> 00:19:41,030
+ memiliki nomor urut klien yang notabene musuh 
+
+480
+00:19:41,030 --> 00:19:41,540
+ pilih. 
+
+481
+00:19:41,540 --> 00:19:43,870
+ Mungkin itu ditambah 1 di sini. 
+
+482
+00:19:43,870 --> 00:19:48,170
+ Tapi itu semua bergantung pada kemampuan untuk menebak server khusus ini 
+
+483
+00:19:48,170 --> 00:19:51,400
+ menyediakan nomor urut. 
+
+484
+00:19:51,400 --> 00:19:52,820
+ Baiklah, apakah ini masuk akal? 
+
+485
+00:19:52,820 --> 00:19:53,320
+ Ya. 
+
+486
+00:19:53,320 --> 00:19:54,280
+ AUDIENCE: Apa alasannya urutan server 
+
+487
+00:19:54,280 --> 00:19:56,374
+ nomor tidak sepenuhnya acak? 
+
+488
+00:19:56,374 --> 00:19:57,790
+ PROFESOR: Jadi ada dua alasan. 
+
+489
+00:19:57,790 --> 00:20:00,940
+ Satu, seperti yang saya gambarkan sebelumnya, 
+
+490
+00:20:00,940 --> 00:20:05,330
+ server ingin memastikan paket itu 
+
+491
+00:20:05,330 --> 00:20:07,720
+ dari koneksi yang berbeda dari waktu ke waktu 
+
+492
+00:20:07,720 --> 00:20:09,315
+ jangan bingung satu sama lain. 
+
+493
+00:20:09,315 --> 00:20:12,280
+ Jadi jika Anda membuat koneksi dari satu port sumber 
+
+494
+00:20:12,280 --> 00:20:14,864
+ ke port tujuan lain, dan kemudian Anda menutup koneksi 
+
+495
+00:20:14,864 --> 00:20:17,363
+ dan membuat satu lagi dari sumber dan tujuan yang sama 
+
+496
+00:20:17,363 --> 00:20:20,000
+ port, Anda ingin memastikan paket-paket dari satu koneksi 
+
+497
+00:20:20,000 --> 00:20:24,121
+ tampaknya tidak valid di koneksi lain. 
+
+498
+00:20:24,121 --> 00:20:26,109
+ AUDIENCE: Jadi nomor urut server 
+
+499
+00:20:26,109 --> 00:20:28,525
+ bertambah untuk setiap paket mereka? 
+
+500
+00:20:28,525 --> 00:20:33,397
+ PROFESOR: Nah, jadi nomor urut dalam koneksi, 
+
+501
+00:20:33,397 --> 00:20:35,550
+ seperti yang saya jelaskan, terbentur dengan semua data 
+
+502
+00:20:35,550 --> 00:20:36,217
+ dalam sebuah koneksi. 
+
+503
+00:20:36,217 --> 00:20:37,591
+ Tapi ada juga pertanyaannya, 
+
+504
+00:20:37,591 --> 00:20:39,820
+ bagaimana Anda memilih nomor urut awal di sini? 
+
+505
+00:20:39,820 --> 00:20:42,530
+ Dan itu terbentur setiap kali ada koneksi baru 
+
+506
+00:20:42,530 --> 00:20:43,440
+ mapan. 
+
+507
+00:20:43,440 --> 00:20:47,190
+ Jadi harapannya adalah bahwa pada saat itu membungkus sekitar 2 hingga 32 
+
+508
+00:20:47,190 --> 00:20:50,600
+ dan kembali, sudah cukup waktu 
+
+509
+00:20:50,600 --> 00:20:52,270
+ sehingga paket lama di jaringan 
+
+510
+00:20:52,270 --> 00:20:54,283
+ sebenarnya telah dijatuhkan dan tidak akan 
+
+511
+00:20:54,283 --> 00:20:56,006
+ muncul sebagai duplikat lagi. 
+
+512
+00:20:56,006 --> 00:20:57,630
+ Jadi itulah alasan mengapa Anda tidak adil 
+
+513
+00:20:57,630 --> 00:20:59,920
+ pilih titik acak, atau awalnya tidak 
+
+514
+00:20:59,920 --> 00:21:01,374
+ pilih titik acak. 
+
+515
+00:21:01,374 --> 00:21:01,874
+ Ya. 
+
+516
+00:21:01,874 --> 00:21:04,309
+ AUDIENCE: Jadi ini adalah masalah antara koneksi, 
+
+517
+00:21:04,309 --> 00:21:06,910
+ untuk koneksi antara pemandu yang sama, klien yang sama, 
+
+518
+00:21:06,910 --> 00:21:09,410
+ server yang sama, port sumber yang sama, tujuan yang sama. 
+
+519
+00:21:09,410 --> 00:21:11,012
+ Dan kami khawatir tentang paket lama-- 
+
+520
+00:21:11,012 --> 00:21:13,565
+ PROFESOR: Jadi ini adalah apa yang asli, ya, perancang TCP 
+
+521
+00:21:13,565 --> 00:21:14,810
+ khawatir tentang, itulah sebabnya mereka 
+
+522
+00:21:14,810 --> 00:21:16,696
+ diresepkan cara ini memilih nomor urut awal ini. 
+
+523
+00:21:16,696 --> 00:21:18,094
+ AUDIENCE: Jika Anda memiliki koneksi baru yang berbeda, 
+
+524
+00:21:18,094 --> 00:21:19,135
+ Anda bisa membedakan. 
+
+525
+00:21:19,135 --> 00:21:19,900
+ PROFESOR: Itu benar, ya. 
+
+526
+00:21:19,900 --> 00:21:22,375
+ AUDIENCE: Jadi saya tidak mengerti mengapa hal-hal yang bertambah 
+
+527
+00:21:22,375 --> 00:21:24,355
+ dan tidak hanya mengambil secara acak. 
+
+528
+00:21:24,355 --> 00:21:26,850
+ PROFESOR: Jadi saya pikir alasan mereka tidak memilih secara acak 
+
+529
+00:21:26,850 --> 00:21:29,100
+ adalah jika Anda memilih secara acak, dan Anda menetapkan, 
+
+530
+00:21:29,100 --> 00:21:31,320
+ Saya tidak tahu, 1.000 koneksi dalam jumlah singkat 
+
+531
+00:21:31,320 --> 00:21:34,040
+ waktu dari sumber yang sama ke tujuan yang sama, 
+
+532
+00:21:34,040 --> 00:21:37,780
+ kemudian, baik, setiap dari mereka adalah nilai acak dari modul 2 
+
+533
+00:21:37,780 --> 00:21:38,990
+ ke 32. 
+
+534
+00:21:38,990 --> 00:21:40,920
+ Dan sekarang ada kesempatan yang sepele 
+
+535
+00:21:40,920 --> 00:21:42,420
+ bahwa beberapa paket dari satu koneksi 
+
+536
+00:21:42,420 --> 00:21:45,600
+ akan tertunda di jaringan, dan akhirnya muncul lagi, 
+
+537
+00:21:45,600 --> 00:21:48,760
+ dan akan bingung untuk paket dari koneksi lain. 
+
+538
+00:21:48,760 --> 00:21:50,840
+ Ini tidak ada hubungannya dengan keamanan. 
+
+539
+00:21:50,840 --> 00:21:52,465
+ Ini hanya pertimbangan desain mereka 
+
+540
+00:21:52,465 --> 00:21:55,290
+ awalnya untuk pengiriman yang dapat diandalkan. 
+
+541
+00:21:55,290 --> 00:21:58,720
+ AUDIENCE: [INAUDIBLE] beberapa klien lain ke server, bukan? 
+
+542
+00:21:58,720 --> 00:21:59,595
+ PROFESOR: Maaf? 
+
+543
+00:21:59,595 --> 00:22:01,830
+ AUDIENCE: Ini [TIDAK JELAS] beberapa klien lain? 
+
+544
+00:22:01,830 --> 00:22:03,080
+ PROFESOR: Itu benar, ya. 
+
+545
+00:22:03,080 --> 00:22:04,830
+ Jadi kami belum benar-benar mengatakan mengapa ini menarik sama sekali 
+
+546
+00:22:04,830 --> 00:22:06,190
+ untuk penyerang yang harus dilakukan. 
+
+547
+00:22:06,190 --> 00:22:06,880
+ Kenapa mengganggu? 
+
+548
+00:22:06,880 --> 00:22:09,055
+ Anda hanya bisa pergi dari alamat IP lamanya, kan? 
+
+549
+00:22:09,055 --> 00:22:12,855
+ AUDIENCE: Jadi apa yang terjadi pada server [TIDAK JELAS]? 
+
+550
+00:22:12,855 --> 00:22:17,346
+
+
+551
+00:22:17,346 --> 00:22:19,720
+ PROFESOR: Ya, ini sebenarnya pertanyaan yang menarik. 
+
+552
+00:22:19,720 --> 00:22:20,440
+ Apa yang terjadi di sini? 
+
+553
+00:22:20,440 --> 00:22:22,106
+ Jadi paket ini tidak hanya dijatuhkan. 
+
+554
+00:22:22,106 --> 00:22:24,430
+ Ini benar-benar masuk ke komputer ini. 
+
+555
+00:22:24,430 --> 00:22:26,426
+ Dan apa yang terjadi? 
+
+556
+00:22:26,426 --> 00:22:28,926
+ AUDIENCE: [TIDAK JELAS], mereka hanya menyebutkan Anda mencoba dan melakukannya 
+
+557
+00:22:28,926 --> 00:22:31,116
+ seperti mereka akan mencoba dan melakukannya kapan saja 
+
+558
+00:22:31,116 --> 00:22:34,019
+ komputer lain sedang memperbarui atau me-reboot atau mematikan, 
+
+559
+00:22:34,019 --> 00:22:34,560
+ atau sesuatu. 
+
+560
+00:22:34,560 --> 00:22:35,682
+ PROFESOR: Benar, tentu saja mereka merasa, oh, 
+
+561
+00:22:35,682 --> 00:22:36,192
+ komputer itu sedang offline. 
+
+562
+00:22:36,192 --> 00:22:37,670
+ Paket itu hanya akan jatuh, 
+
+563
+00:22:37,670 --> 00:22:39,720
+ dan Anda tidak perlu terlalu khawatir tentang itu. 
+
+564
+00:22:39,720 --> 00:22:43,010
+ Jika komputer benar-benar mendengarkan alamat IP itu, 
+
+565
+00:22:43,010 --> 00:22:45,065
+ maka dalam protokol TCP, Anda seharusnya 
+
+566
+00:22:45,065 --> 00:22:47,790
+ untuk mengirim paket ulang yang mengatur ulang koneksi. 
+
+567
+00:22:47,790 --> 00:22:51,630
+ Karena ini bukan koneksi yang diketahui oleh komputer C. 
+
+568
+00:22:51,630 --> 00:22:54,730
+ Dan dalam TCP, ini dianggap karena, oh, ini 
+
+569
+00:22:54,730 --> 00:22:57,640
+ adalah paket lama yang saya minta sejak lama, 
+
+570
+00:22:57,640 --> 00:22:59,320
+ tapi saya sudah lupa tentang itu. 
+
+571
+00:22:59,320 --> 00:23:04,850
+ Jadi mesin C di sini mungkin mengirim paket ke server yang mengatakan, 
+
+572
+00:23:04,850 --> 00:23:07,710
+ Saya ingin reset. 
+
+573
+00:23:07,710 --> 00:23:10,503
+ Saya sebenarnya lupa persis nomor urut yang masuk ke sana. 
+
+574
+00:23:10,503 --> 00:23:13,582
+ Tetapi klien C di sini tahu semua nomor urut 
+
+575
+00:23:13,582 --> 00:23:15,290
+ dan kirim nomor urut apa pun seperlunya 
+
+576
+00:23:15,290 --> 00:23:17,580
+ dan setel ulang koneksi ini. 
+
+577
+00:23:17,580 --> 00:23:20,229
+ Jadi jika komputer C ini akan melakukan ini, 
+
+578
+00:23:20,229 --> 00:23:21,812
+ maka itu mungkin mengganggu rencanamu 
+
+579
+00:23:21,812 --> 00:23:22,948
+ untuk membuat koneksi. 
+
+580
+00:23:22,948 --> 00:23:24,406
+ Karena ketika S mendapat paket ini, itu 
+
+581
+00:23:24,406 --> 00:23:25,993
+ berkata, oh, tentu, jika Anda tidak menginginkannya, 
+
+582
+00:23:25,993 --> 00:23:27,840
+ Saya akan mengatur ulang koneksi Anda. 
+
+583
+00:23:27,840 --> 00:23:30,610
+ Ada beberapa bug implementasi-ish 
+
+584
+00:23:30,610 --> 00:23:34,075
+ yang mungkin Anda manfaatkan, atau setidaknya penulis berbicara tentang, 
+
+585
+00:23:34,075 --> 00:23:38,215
+ dan berpotensi mengeksploitasi, yang akan mencegah 
+
+586
+00:23:38,215 --> 00:23:39,990
+ klien C dari menanggapi. 
+
+587
+00:23:39,990 --> 00:23:42,758
+ Jadi misalnya, jika Anda membanjiri C dengan banyak paket, 
+
+588
+00:23:42,758 --> 00:23:44,633
+ itu cara mudah untuk membuatnya menjatuhkan yang satu ini. 
+
+589
+00:23:44,633 --> 00:23:46,924
+ Ternyata ada bug lain yang lebih menarik itu 
+
+590
+00:23:46,924 --> 00:23:49,520
+ tidak memerlukan flooding C dengan banyak paket yang masih ada 
+
+591
+00:23:49,520 --> 00:23:51,200
+ C untuk menjatuhkan paket ini, atau setidaknya itu 
+
+592
+00:23:51,200 --> 00:23:53,436
+ digunakan untuk beberapa implementasi pada tumpukan TCP. 
+
+593
+00:23:53,436 --> 00:23:53,936
+ Ya. 
+
+594
+00:23:53,936 --> 00:23:55,436
+ AUDIENCE: Agaknya, sebagian besar firewall 
+
+595
+00:23:55,436 --> 00:23:57,888
+ akan juga [tidak terdengar]. 
+
+596
+00:23:57,888 --> 00:23:59,370
+ PROFESOR: Yang ini? 
+
+597
+00:23:59,370 --> 00:24:00,852
+ AUDIENCE: Tidak, SYN. 
+
+598
+00:24:00,852 --> 00:24:01,840
+ PROFESOR: Yang ini. 
+
+599
+00:24:01,840 --> 00:24:02,828
+ AUDIENCE: Itu datang ke klien, 
+
+600
+00:24:02,828 --> 00:24:05,203
+ dan klien awalnya tidak mengirim SYN ke server itu. 
+
+601
+00:24:05,203 --> 00:24:07,188
+ Dan firewall akan menjatuhkannya. 
+
+602
+00:24:07,188 --> 00:24:08,980
+ PROFESOR: Itu tergantung, ya. 
+
+603
+00:24:08,980 --> 00:24:12,590
+ Jadi tentu saja jika Anda memiliki firewall stateful yang sangat canggih 
+
+604
+00:24:12,590 --> 00:24:15,150
+ yang melacak semua koneksi yang ada, atau misalnya 
+
+605
+00:24:15,150 --> 00:24:17,110
+ jika Anda memiliki NAT, maka ini mungkin terjadi. 
+
+606
+00:24:17,110 --> 00:24:20,640
+ Di sisi lain, NAT mungkin benar-benar mengirim RST 
+
+607
+00:24:20,640 --> 00:24:22,810
+ atas nama klien. 
+
+608
+00:24:22,810 --> 00:24:23,720
+ Jadi tidak jelas. 
+
+609
+00:24:23,720 --> 00:24:26,450
+ Saya pikir ini tidak biasa. 
+
+610
+00:24:26,450 --> 00:24:29,730
+ Jadi misalnya, di jaringan Comcast, 
+
+611
+00:24:29,730 --> 00:24:32,500
+ Saya pasti tidak memiliki siapa pun yang mencegat paket-paket ini 
+
+612
+00:24:32,500 --> 00:24:34,916
+ dan menjaga negara untuk saya dan mengirim RST atas nama saya 
+
+613
+00:24:34,916 --> 00:24:35,750
+ atau semacamnya. 
+
+614
+00:24:35,750 --> 00:24:36,250
+ Ya. 
+
+615
+00:24:36,250 --> 00:24:38,250
+ AUDIENCE: Jadi mengapa tidak bisa server 
+
+616
+00:24:38,250 --> 00:24:40,206
+ memiliki nomor urut independen 
+
+617
+00:24:40,206 --> 00:24:42,380
+ untuk setiap sumber yang mungkin? 
+
+618
+00:24:42,380 --> 00:24:46,260
+ PROFESOR: Benar, jadi ini sebenarnya apa tumpukan TCP lakukan hari ini. 
+
+619
+00:24:46,260 --> 00:24:49,910
+ Ini adalah salah satu contoh bagaimana Anda memperbaiki masalah ini secara terbalik 
+
+620
+00:24:49,910 --> 00:24:50,660
+ cara yang kompatibel. 
+
+621
+00:24:50,660 --> 00:24:52,285
+ Jadi kita akan sampai pada formulasi persisnya 
+
+622
+00:24:52,285 --> 00:24:53,330
+ bagaimana Anda mengatur ini. 
+
+623
+00:24:53,330 --> 00:24:55,910
+ Tapi ya, ternyata jika Anda melihat ini dengan hati-hati, 
+
+624
+00:24:55,910 --> 00:24:59,630
+ seperti yang Anda lakukan, Anda tidak perlu memiliki urutan awal ini 
+
+625
+00:24:59,630 --> 00:25:00,950
+ nomor menjadi global. 
+
+626
+00:25:00,950 --> 00:25:04,626
+ Anda hanya memperluasnya ke setiap pasangan sumber / tujuan. 
+
+627
+00:25:04,626 --> 00:25:06,500
+ Dan kemudian Anda memiliki semua penghindaran duplikat 
+
+628
+00:25:06,500 --> 00:25:11,560
+ properti yang kita miliki sebelumnya, dan Anda memiliki beberapa keamanan juga. 
+
+629
+00:25:11,560 --> 00:25:15,590
+ Jadi hanya untuk menuliskan ini 
+
+630
+00:25:15,590 --> 00:25:18,550
+ di papan tentang bagaimana penyerang mendapatkan 
+
+631
+00:25:18,550 --> 00:25:21,425
+ nomor urut awal ini, penyerang mungkin 
+
+632
+00:25:21,425 --> 00:25:23,770
+ kirimkan saja koneksi dari alamat IP-nya sendiri 
+
+633
+00:25:23,770 --> 00:25:27,400
+ ke server yang mengatakan, saya ingin membuat koneksi baru, 
+
+634
+00:25:27,400 --> 00:25:30,506
+ dan server akan mengirim tanggapan 
+
+635
+00:25:30,506 --> 00:25:33,920
+ kembali ke penyerang yang berisi nomor urutnya sendiri S. 
+
+636
+00:25:33,920 --> 00:25:36,590
+ Dan jika SNS untuk koneksi ini 
+
+637
+00:25:36,590 --> 00:25:39,492
+ dan SNS untuk koneksi ini terkait, 
+
+638
+00:25:39,492 --> 00:25:40,450
+ maka ini masalah. 
+
+639
+00:25:40,450 --> 00:25:42,540
+ Tapi maksudmu, mari kita buat mereka tidak berhubungan. 
+
+640
+00:25:42,540 --> 00:25:44,310
+ Karena ini dari alamat yang berbeda. 
+
+641
+00:25:44,310 --> 00:25:45,960
+ Maka ini bukan masalah lagi. 
+
+642
+00:25:45,960 --> 00:25:47,630
+ Anda tidak bisa menebak apa yang sedang terjadi SNS ini 
+
+643
+00:25:47,630 --> 00:25:52,298
+ didasarkan pada SNS ini untuk koneksi yang berbeda. 
+
+644
+00:25:52,298 --> 00:25:52,798
+ Ya. 
+
+645
+00:25:52,798 --> 00:25:54,797
+ AUDIENCE: Jadi Anda masih memiliki masalah tabrakan, 
+
+646
+00:25:54,797 --> 00:25:56,533
+ karena Anda bisa menggunakan 32 bit 
+
+647
+00:25:56,533 --> 00:25:58,774
+ oleh alamat teman-temanmu. 
+
+648
+00:25:58,774 --> 00:26:01,264
+ Jadi Anda memiliki banyak port untuk masing-masing ini. 
+
+649
+00:26:01,264 --> 00:26:04,252
+ Jadi Anda masih memiliki nomor urut yang saling bertentangan 
+
+650
+00:26:04,252 --> 00:26:06,660
+ untuk semua koneksi yang Anda dapatkan, bukan? 
+
+651
+00:26:06,660 --> 00:26:08,160
+ PROFESOR: Jadi nomor urut ini 
+
+652
+00:26:08,160 --> 00:26:11,156
+ spesifik, ternyata, ke IP 
+
+653
+00:26:11,156 --> 00:26:14,530
+ alamat dan sumber port / tujuan duple. 
+
+654
+00:26:14,530 --> 00:26:16,360
+ Jadi kalau itu port yang berbeda, maka mereka 
+
+655
+00:26:16,360 --> 00:26:17,372
+ jangan saling mengganggu sama sekali. 
+
+656
+00:26:17,372 --> 00:26:19,130
+ AUDIENCE: Oh, karena Anda menggunakan port-- 
+
+657
+00:26:19,130 --> 00:26:20,205
+ PROFESOR: Itu benar, ya, Anda juga menggunakan 
+
+658
+00:26:20,205 --> 00:26:21,504
+ port di ini juga. 
+
+659
+00:26:21,504 --> 00:26:22,746
+ AUDIENCE: Karena saya pikir mereka ports-- 
+
+660
+00:26:22,746 --> 00:26:25,246
+ PROFESOR: Ya, jadi port-portnya agak di bawah urutan 
+
+661
+00:26:25,246 --> 00:26:27,987
+ angka dalam beberapa cara memikirkannya. 
+
+662
+00:26:27,987 --> 00:26:28,486
+ Pertanyaan? 
+
+663
+00:26:28,486 --> 00:26:31,060
+ AUDIENCE: Jika nomor urut bersifat global, 
+
+664
+00:26:31,060 --> 00:26:33,910
+ maka bukankah si penyerang [tidak terdengar]? 
+
+665
+00:26:33,910 --> 00:26:36,774
+
+
+666
+00:26:36,774 --> 00:26:37,940
+ PROFESOR: Ya, bagus. 
+
+667
+00:26:37,940 --> 00:26:40,780
+ Jadi sebenarnya, jika server menambahkan nomor urut 
+
+668
+00:26:40,780 --> 00:26:43,180
+ oleh, saya tidak tahu, 64k saya pikir itu, 
+
+669
+00:26:43,180 --> 00:26:46,885
+ atau itu, untuk setiap koneksi, lalu, yah, Anda terhubung. 
+
+670
+00:26:46,885 --> 00:26:49,090
+ Dan kemudian mungkin lima orang lain terhubung. 
+
+671
+00:26:49,090 --> 00:26:51,120
+ Dan kemudian Anda harus melakukan serangan ini. 
+
+672
+00:26:51,120 --> 00:26:54,790
+ Jadi sampai taraf tertentu, Anda benar, ini sedikit merepotkan. 
+
+673
+00:26:54,790 --> 00:26:56,420
+ Di sisi lain, Anda mungkin bisa 
+
+674
+00:26:56,420 --> 00:27:01,860
+ mengaturnya untuk paket Anda di sini untuk dikirimkan saja 
+
+675
+00:27:01,860 --> 00:27:02,740
+ sebelum paket ini. 
+
+676
+00:27:02,740 --> 00:27:05,870
+ Jadi jika Anda mengirim orang-orang ini kembali ke belakang, 
+
+677
+00:27:05,870 --> 00:27:08,200
+ maka ada kemungkinan mereka akan tiba di server 
+
+678
+00:27:08,200 --> 00:27:08,920
+ kembali ke belakang. 
+
+679
+00:27:08,920 --> 00:27:10,710
+ Server akan mendapatkan yang satu ini, merespons 
+
+680
+00:27:10,710 --> 00:27:12,180
+ dengan nomor urut ini. 
+
+681
+00:27:12,180 --> 00:27:13,580
+ Ini akan mendapatkan yang berikutnya, yang ini, 
+
+682
+00:27:13,580 --> 00:27:16,754
+ tanggapi dengan nomor urut setelahnya. 
+
+683
+00:27:16,754 --> 00:27:19,170
+ Dan kemudian Anda tahu persis apa yang harus dimasukkan ke dalam paket ketiga ini 
+
+684
+00:27:19,170 --> 00:27:21,450
+ dalam urutan Anda. 
+
+685
+00:27:21,450 --> 00:27:24,620
+ Jadi saya pikir ini bukan metode yang sangat mudah 
+
+686
+00:27:24,620 --> 00:27:25,790
+ menghubungkan ke server. 
+
+687
+00:27:25,790 --> 00:27:27,260
+ Ada beberapa dugaan yang terlibat. 
+
+688
+00:27:27,260 --> 00:27:29,720
+ Tetapi jika Anda dengan hati-hati mengatur paket Anda dengan benar, 
+
+689
+00:27:29,720 --> 00:27:32,230
+ maka cukup mudah untuk menebak dengan benar. 
+
+690
+00:27:32,230 --> 00:27:34,720
+ Atau mungkin Anda mencoba beberapa kali, dan Anda akan beruntung. 
+
+691
+00:27:34,720 --> 00:27:35,480
+ Ya. 
+
+692
+00:27:35,480 --> 00:27:38,246
+ AUDIENCE: Jadi bahkan jika itu benar-benar acak, 
+
+693
+00:27:38,246 --> 00:27:39,912
+ dan Anda harus menebaknya, hanya ada 
+
+694
+00:27:39,912 --> 00:27:40,998
+ seperti 4 miliar kemungkinan. 
+
+695
+00:27:40,998 --> 00:27:42,248
+ Ini bukan angka yang besar, kan? 
+
+696
+00:27:42,248 --> 00:27:44,372
+ Saya merasa seperti dalam setahun, 
+
+697
+00:27:44,372 --> 00:27:46,300
+ Anda seharusnya bisa melewati. 
+
+698
+00:27:46,300 --> 00:27:48,660
+ PROFESOR: Benar, ya, jadi Anda memang benar. 
+
+699
+00:27:48,660 --> 00:27:53,500
+ Anda tidak harus benar-benar mengandalkan TCP untuk memberikan keamanan 
+
+700
+00:27:53,500 --> 00:27:54,817
+ sangat kuat. 
+
+701
+00:27:54,817 --> 00:27:56,900
+ Karena Anda benar, itu hanya 4 miliar tebakan. 
+
+702
+00:27:56,900 --> 00:27:59,370
+ Dan Anda mungkin bisa mengirim banyak paket 
+
+703
+00:27:59,370 --> 00:28:02,780
+ tentu dalam sehari jika Anda memiliki koneksi yang cukup cepat. 
+
+704
+00:28:02,780 --> 00:28:05,510
+
+
+705
+00:28:05,510 --> 00:28:07,562
+ Jadi ini semacam argumen yang menarik 
+
+706
+00:28:07,562 --> 00:28:09,645
+ kita mengalami di sini dalam arti bahwa pada tingkat tertentu, 
+
+707
+00:28:09,645 --> 00:28:11,120
+ TCP semoga tidak aman. 
+
+708
+00:28:11,120 --> 00:28:12,270
+ Karena hanya 32 bit. 
+
+709
+00:28:12,270 --> 00:28:14,090
+ Tidak mungkin kita bisa membuatnya aman. 
+
+710
+00:28:14,090 --> 00:28:15,631
+ Tapi saya pikir banyak aplikasi bergantung pada 
+
+711
+00:28:15,631 --> 00:28:18,740
+ cukup tidak memberikan keamanan sama sekali 
+
+712
+00:28:18,740 --> 00:28:22,368
+ begitu banyak gangguan sehingga benar-benar menjadi masalah. 
+
+713
+00:28:22,368 --> 00:28:24,060
+ Tapi Anda memang benar. 
+
+714
+00:28:24,060 --> 00:28:26,790
+ Dalam praktiknya, Anda memang ingin melakukan semacam enkripsi 
+
+715
+00:28:26,790 --> 00:28:29,350
+ di atas ini yang akan memberikan lebih kuat 
+
+716
+00:28:29,350 --> 00:28:31,610
+ menjamin tidak ada yang merusak data Anda, 
+
+717
+00:28:31,610 --> 00:28:33,710
+ tetapi tombolnya lebih dari 32 bit. 
+
+718
+00:28:33,710 --> 00:28:39,120
+
+
+719
+00:28:39,120 --> 00:28:41,242
+ Masih ternyata berguna untuk mencegah orang 
+
+720
+00:28:41,242 --> 00:28:45,812
+ dari gangguan dengan koneksi TCP dalam banyak kasus. 
+
+721
+00:28:45,812 --> 00:28:48,140
+ Baiklah, pertanyaan lain? 
+
+722
+00:28:48,140 --> 00:28:50,435
+ Baiklah, mari kita lihat apa yang sebenarnya salah. 
+
+723
+00:28:50,435 --> 00:28:53,360
+ Kenapa itu hal yang buruk jika orang-orang 
+
+724
+00:28:53,360 --> 00:28:56,990
+ dapat melakukan spoof koneksi TCP dari alamat acak? 
+
+725
+00:28:56,990 --> 00:29:00,335
+ Jadi satu alasan mengapa ini buruk adalah jika ada 
+
+726
+00:29:00,335 --> 00:29:03,460
+ adalah segala bentuk otorisasi berbasis IP. 
+
+727
+00:29:03,460 --> 00:29:08,240
+
+
+728
+00:29:08,240 --> 00:29:11,600
+ Jadi, jika beberapa server memutuskan apakah operasi akan berjalan 
+
+729
+00:29:11,600 --> 00:29:14,170
+ diizinkan atau tidak berdasarkan alamat IP asalnya, 
+
+730
+00:29:14,170 --> 00:29:16,000
+ maka ini berpotensi terjadi 
+
+731
+00:29:16,000 --> 00:29:18,950
+ masalah bagi penyerang yang memalsukan koneksi 
+
+732
+00:29:18,950 --> 00:29:21,440
+ dari alamat sumber yang sewenang-wenang. 
+
+733
+00:29:21,440 --> 00:29:24,040
+ Jadi satu contoh di mana ini masalah-- 
+
+734
+00:29:24,040 --> 00:29:26,350
+ dan itu sebagian besar tidak lagi-- adalah 
+
+735
+00:29:26,350 --> 00:29:30,910
+ keluarga ini dari perintah r, hal-hal seperti rlogin. 
+
+736
+00:29:30,910 --> 00:29:33,160
+ Jadi dulu kasusnya kamu bisa menjalankan sesuatu 
+
+737
+00:29:33,160 --> 00:29:34,984
+ seperti rlogin ke mesin, katakanlah 
+
+738
+00:29:34,984 --> 00:29:35,900
+ athena.dialup.mit.edu. 
+
+739
+00:29:35,900 --> 00:29:41,360
+
+
+740
+00:29:41,360 --> 00:29:45,600
+ Dan jika koneksi Anda berasal dari host di MIT, 
+
+741
+00:29:45,600 --> 00:29:49,000
+ maka perintah rlogin ini akan berhasil jika Anda berkata, oh ya, 
+
+742
+00:29:49,000 --> 00:29:51,174
+ Saya pengguna Alice di mesin ini. 
+
+743
+00:29:51,174 --> 00:29:53,340
+ Biarkan saya login sebagai pengguna Alice ke mesin lain ini. 
+
+744
+00:29:53,340 --> 00:29:55,548
+ Dan itu hanya akan mempercayai bahwa semua mesin di mit.edu 
+
+745
+00:29:55,548 --> 00:29:58,410
+ dapat dipercaya untuk membuat pernyataan ini. 
+
+746
+00:29:58,410 --> 00:30:00,700
+ Saya harus mengatakan saya pikir dial-up tidak pernah benar-benar 
+
+747
+00:30:00,700 --> 00:30:01,500
+ punya masalah ini. 
+
+748
+00:30:01,500 --> 00:30:03,416
+ Itu menggunakan Cerberus sejak awal. 
+
+749
+00:30:03,416 --> 00:30:07,360
+ Tetapi sistem lain memang memiliki masalah seperti itu. 
+
+750
+00:30:07,360 --> 00:30:10,610
+ Dan ini adalah contoh penggunaan alamat IP di mana 
+
+751
+00:30:10,610 --> 00:30:15,170
+ koneksi tersebut berasal dari semacam otentikasi 
+
+752
+00:30:15,170 --> 00:30:19,190
+ mekanisme untuk apakah pemanggil atau klien 
+
+753
+00:30:19,190 --> 00:30:20,470
+ dapat dipercaya atau tidak. 
+
+754
+00:30:20,470 --> 00:30:22,650
+ Jadi ini pasti menjadi masalah, 
+
+755
+00:30:22,650 --> 00:30:23,730
+ bukan masalah lagi. 
+
+756
+00:30:23,730 --> 00:30:27,120
+ Jadi mengandalkan IP tampaknya seperti rencana yang jelas buruk. 
+
+757
+00:30:27,120 --> 00:30:28,980
+ Namun, ini sebenarnya masih terjadi. 
+
+758
+00:30:28,980 --> 00:30:30,160
+ Jadi rlogin hilang. 
+
+759
+00:30:30,160 --> 00:30:33,574
+ Baru-baru ini digantikan oleh SSH sekarang, yang bagus. 
+
+760
+00:30:33,574 --> 00:30:34,990
+ Di sisi lain, masih ada 
+
+761
+00:30:34,990 --> 00:30:38,470
+ banyak contoh protokol lain yang bergantung 
+
+762
+00:30:38,470 --> 00:30:40,530
+ pada otentikasi berbasis IP. 
+
+763
+00:30:40,530 --> 00:30:41,890
+ Salah satunya adalah SMTP. 
+
+764
+00:30:41,890 --> 00:30:45,555
+ Jadi ketika Anda mengirim email, Anda menggunakan SMTP untuk berbicara dengan beberapa email 
+
+765
+00:30:45,555 --> 00:30:47,650
+ server untuk mengirim pesan. 
+
+766
+00:30:47,650 --> 00:30:51,120
+ Dan untuk mencegah spam, banyak server SMTP 
+
+767
+00:30:51,120 --> 00:30:53,470
+ hanya akan menerima pesan masuk 
+
+768
+00:30:53,470 --> 00:30:55,710
+ dari alamat IP sumber tertentu. 
+
+769
+00:30:55,710 --> 00:30:57,460
+ Jadi misalnya, server surat Comcast 
+
+770
+00:30:57,460 --> 00:31:00,280
+ hanya akan menerima email dari alamat IP Comcast. 
+
+771
+00:31:00,280 --> 00:31:02,570
+ Sama untuk server surat MIT - hanya akan menerima email 
+
+772
+00:31:02,570 --> 00:31:03,500
+ dari alamat IP MIT. 
+
+773
+00:31:03,500 --> 00:31:06,260
+ Atau setidaknya ada satu server yang ISNT 
+
+774
+00:31:06,260 --> 00:31:08,910
+ menjalankan yang memiliki properti ini. 
+
+775
+00:31:08,910 --> 00:31:11,090
+ Jadi ini kasusnya masih 
+
+776
+00:31:11,090 --> 00:31:13,026
+ menggunakan otentikasi berbasis IP. 
+
+777
+00:31:13,026 --> 00:31:14,905
+ Di sini tidak terlalu buruk. 
+
+778
+00:31:14,905 --> 00:31:16,775
+ Kasus terburuk, Anda akan mengirim sebagian spam 
+
+779
+00:31:16,775 --> 00:31:17,775
+ melalui server email. 
+
+780
+00:31:17,775 --> 00:31:19,890
+ Jadi itu mungkin mengapa mereka masih menggunakannya, 
+
+781
+00:31:19,890 --> 00:31:23,710
+ sedangkan hal-hal yang memungkinkan Anda untuk login ke akun arbitrary 
+
+782
+00:31:23,710 --> 00:31:27,280
+ berhenti menggunakan otentikasi berbasis IP. 
+
+783
+00:31:27,280 --> 00:31:29,820
+ Jadi apakah ini masuk akal, mengapa ini adalah rencana yang buruk? 
+
+784
+00:31:29,820 --> 00:31:33,500
+ Dan hanya untuk memeriksa ulang, misalkan beberapa server 
+
+785
+00:31:33,500 --> 00:31:34,554
+ menggunakan rlogin. 
+
+786
+00:31:34,554 --> 00:31:35,845
+ Apa yang akan Anda lakukan untuk menyerangnya? 
+
+787
+00:31:35,845 --> 00:31:39,640
+ Hal buruk apa yang akan terjadi? 
+
+788
+00:31:39,640 --> 00:31:41,590
+ Saran? 
+
+789
+00:31:41,590 --> 00:31:42,090
+ Ya. 
+
+790
+00:31:42,090 --> 00:31:44,026
+ AUDIENCE: Cukup masuk ke komputer Anda, 
+
+791
+00:31:44,026 --> 00:31:46,482
+ lalu buat pengguna yang ingin Anda masuki, 
+
+792
+00:31:46,482 --> 00:31:47,898
+ lalu Anda masuk ke jaringan. 
+
+793
+00:31:47,898 --> 00:31:50,450
+ PROFESOR: Ya, jadi pada dasarnya Anda mendapatkan komputer Anda. 
+
+794
+00:31:50,450 --> 00:31:53,955
+ Anda mensintesis data ini agar terlihat seperti kumpulan rlogin yang sah 
+
+795
+00:31:53,955 --> 00:31:56,170
+ perintah yang mengatakan, masuk sebagai pengguna ini 
+
+796
+00:31:56,170 --> 00:31:58,980
+ dan jalankan perintah ini di shell Unix saya di sana. 
+
+797
+00:31:58,980 --> 00:32:01,780
+ Anda semacam mensintesis data ini dan Anda me-mount seluruh serangan ini 
+
+798
+00:32:01,780 --> 00:32:04,295
+ dan mengirim data ini seolah-olah pengguna yang sah sedang berinteraksi 
+
+799
+00:32:04,295 --> 00:32:09,275
+ dengan klien rlogin, dan kemudian Anda siap untuk pergi. 
+
+800
+00:32:09,275 --> 00:32:11,280
+ Oke, jadi ini adalah salah satu alasan mengapa Anda mungkin 
+
+801
+00:32:11,280 --> 00:32:15,560
+ tidak ingin nomor urut TCP Anda dapat ditebak. 
+
+802
+00:32:15,560 --> 00:32:17,340
+ Masalah lainnya adalah serangan ulang ini. 
+
+803
+00:32:17,340 --> 00:32:23,120
+ Sama seperti kami dapat mengirim paket SYN, 
+
+804
+00:32:23,120 --> 00:32:25,222
+ jika Anda tahu nomor urut seseorang, 
+
+805
+00:32:25,222 --> 00:32:26,680
+ Anda juga bisa mengirim paket reset. 
+
+806
+00:32:26,680 --> 00:32:27,810
+ Kami semacam membicarakannya secara singkat 
+
+807
+00:32:27,810 --> 00:32:29,750
+ di sini sebagai klien yang sah berpotensi 
+
+808
+00:32:29,750 --> 00:32:32,975
+ mengirim ulang untuk mereset koneksi palsu 
+
+809
+00:32:32,975 --> 00:32:35,200
+ bahwa penyerang sedang membangun. 
+
+810
+00:32:35,200 --> 00:32:36,960
+ Tetapi dalam hal yang sama sia-sia, musuh 
+
+811
+00:32:36,960 --> 00:32:40,180
+ dapat mencoba mengirim paket ulang untuk koneksi yang ada 
+
+812
+00:32:40,180 --> 00:32:42,400
+ jika ada beberapa cara yang diketahui musuh 
+
+813
+00:32:42,400 --> 00:32:46,060
+ apa nomor urut Anda pada koneksi itu. 
+
+814
+00:32:46,060 --> 00:32:48,850
+ Jadi ini sebenarnya tidak jelas apakah ini masalah besar 
+
+815
+00:32:48,850 --> 00:32:49,750
+ atau atau. 
+
+816
+00:32:49,750 --> 00:32:51,240
+ Pada tingkat tertentu, mungkin Anda seharusnya 
+
+817
+00:32:51,240 --> 00:32:52,490
+ dengan asumsi bahwa semua koneksi TCP Anda bisa 
+
+818
+00:32:52,490 --> 00:32:53,450
+ rusak kapan saja. 
+
+819
+00:32:53,450 --> 00:32:55,210
+ Tidak seperti jaringan yang dapat diandalkan. 
+
+820
+00:32:55,210 --> 00:32:57,920
+ Jadi mungkin Anda harus menunggu koneksi Anda terjatuh. 
+
+821
+00:32:57,920 --> 00:32:59,710
+ Tapi satu tempat di mana ini ternyata 
+
+822
+00:32:59,710 --> 00:33:03,000
+ menjadi sangat tidak baik untuk dibuat 
+
+823
+00:33:03,000 --> 00:33:06,060
+ dalam hal router berbicara satu sama lain. 
+
+824
+00:33:06,060 --> 00:33:08,340
+ Jadi jika Anda memiliki beberapa router itu 
+
+825
+00:33:08,340 --> 00:33:10,505
+ berbicara beberapa protokol routing, lalu mereka 
+
+826
+00:33:10,505 --> 00:33:13,590
+ terhubung, tentu saja, oleh beberapa tautan fisik. 
+
+827
+00:33:13,590 --> 00:33:16,480
+ Tetapi di atas beberapa tautan fisik, sebenarnya 
+
+828
+00:33:16,480 --> 00:33:18,000
+ berbicara beberapa protokol jaringan. 
+
+829
+00:33:18,000 --> 00:33:19,671
+ Dan protokol jaringan itu berjalan melalui TCP. 
+
+830
+00:33:19,671 --> 00:33:21,170
+ Jadi sebenarnya ada beberapa sesi TCP 
+
+831
+00:33:21,170 --> 00:33:22,878
+ menjalankan setiap tautan fisik ini 
+
+832
+00:33:22,878 --> 00:33:26,672
+ yang digunakan router untuk bertukar informasi routing. 
+
+833
+00:33:26,672 --> 00:33:28,630
+ Jadi ini pasti kasus untuk protokol ini 
+
+834
+00:33:28,630 --> 00:33:32,250
+ disebut BGP kita akan berbicara tentang sedikit lebih dalam satu detik. 
+
+835
+00:33:32,250 --> 00:33:36,050
+ Dan BGP menggunakan fakta bahwa koneksi TCP 
+
+836
+00:33:36,050 --> 00:33:39,580
+ masih hidup untuk juga menyimpulkan bahwa tautan itu hidup. 
+
+837
+00:33:39,580 --> 00:33:41,750
+ Jadi jika koneksi TCP putus, maka router 
+
+838
+00:33:41,750 --> 00:33:43,090
+ berasumsi link rusak. 
+
+839
+00:33:43,090 --> 00:33:46,350
+ Dan mereka menghitung ulang semua tabel routing mereka. 
+
+840
+00:33:46,350 --> 00:33:47,875
+ Jadi jika musuh ingin me-mount 
+
+841
+00:33:47,875 --> 00:33:49,819
+ semacam serangan denial of service di sini, 
+
+842
+00:33:49,819 --> 00:33:51,319
+ mereka bisa mencoba menebak urutannya 
+
+843
+00:33:51,319 --> 00:33:54,520
+ jumlah router ini dan mengatur ulang sesi ini. 
+
+844
+00:33:54,520 --> 00:33:57,876
+ Jadi jika sesi TCP antara dua router turun, 
+
+845
+00:33:57,876 --> 00:33:59,750
+ kedua router seperti, oh, tautan ini mati. 
+
+846
+00:33:59,750 --> 00:34:01,583
+ Kami harus menghitung ulang semua tabel routing, 
+
+847
+00:34:01,583 --> 00:34:02,510
+ dan rute berubah. 
+
+848
+00:34:02,510 --> 00:34:05,235
+ Dan kemudian Anda mungkin menembaki tautan lain, dan seterusnya. 
+
+849
+00:34:05,235 --> 00:34:07,300
+ Jadi ini adalah sedikit serangan yang mengkhawatirkan, 
+
+850
+00:34:07,300 --> 00:34:12,489
+ bukan karena melanggar kerahasiaan seseorang, dan sebagainya, 
+
+851
+00:34:12,489 --> 00:34:15,510
+ atau setidaknya tidak secara langsung, tetapi lebih karena itu benar-benar 
+
+852
+00:34:15,510 --> 00:34:19,310
+ menyebabkan banyak masalah ketersediaan 
+
+853
+00:34:19,310 --> 00:34:21,079
+ untuk pengguna lain dalam sistem. 
+
+854
+00:34:21,079 --> 00:34:21,734
+ Ya. 
+
+855
+00:34:21,734 --> 00:34:23,960
+ AUDIENCE: Jadi jika Anda seorang penyerang, 
+
+856
+00:34:23,960 --> 00:34:26,170
+ dan Anda ingin menargetkan satu pengguna tertentu, 
+
+857
+00:34:26,170 --> 00:34:29,739
+ bisakah Anda terus mengirim permintaan koneksi 
+
+858
+00:34:29,739 --> 00:34:32,593
+ ke server atas nama IP-nya dan membuatnya 
+
+859
+00:34:32,594 --> 00:34:33,969
+ dia terus menjatuhkan koneksinya 
+
+860
+00:34:33,969 --> 00:34:38,679
+ ke server dan jadi Anda hanya [TIDAK JELAS]? 
+
+861
+00:34:38,679 --> 00:34:41,540
+ PROFESOR: Yah, jadi itu membutuhkan Anda menebak. 
+
+862
+00:34:41,540 --> 00:34:43,460
+ Jadi Anda katakan, misalkan saya menggunakan Gmail, 
+
+863
+00:34:43,460 --> 00:34:45,835
+ dan Anda ingin menghentikan saya dari mempelajari sesuatu di Gmail, 
+
+864
+00:34:45,835 --> 00:34:48,292
+ jadi kirimkan saja paket ke mesin saya 
+
+865
+00:34:48,292 --> 00:34:49,530
+ berpura-pura berasal dari Gmail. 
+
+866
+00:34:49,530 --> 00:34:51,980
+ Nah, Anda harus menebak sumber dan tujuan yang tepat 
+
+867
+00:34:51,980 --> 00:34:52,786
+ nomor port. 
+
+868
+00:34:52,786 --> 00:34:54,619
+ Nomor port tujuan mungkin 443, 
+
+869
+00:34:54,620 --> 00:34:55,911
+ karena saya menggunakan HTTPS. 
+
+870
+00:34:55,911 --> 00:34:57,370
+ Tetapi nomor port sumber sedang berjalan 
+
+871
+00:34:57,370 --> 00:34:59,390
+ menjadi beberapa hal 16-bit acak. 
+
+872
+00:34:59,390 --> 00:35:02,040
+ Dan itu juga akan menjadi kasus yang mungkin urutannya 
+
+873
+00:35:02,040 --> 00:35:03,070
+ angka akan berbeda. 
+
+874
+00:35:03,070 --> 00:35:04,903
+ Jadi kecuali Anda menebak nomor urut itu 
+
+875
+00:35:04,903 --> 00:35:09,650
+ dalam jendela TCP saya, yang mungkin berurutan 
+
+876
+00:35:09,650 --> 00:35:11,400
+ puluhan kilobyte, Anda juga akan pergi 
+
+877
+00:35:11,400 --> 00:35:13,280
+ menjadi tidak sukses dalam hal itu. 
+
+878
+00:35:13,280 --> 00:35:17,350
+ Jadi Anda harus menebak banyak hal. 
+
+879
+00:35:17,350 --> 00:35:19,168
+ Tidak ada akses oracle. 
+
+880
+00:35:19,168 --> 00:35:21,293
+ Anda tidak bisa hanya menanyakan server dan berkata, baik, apa 
+
+881
+00:35:21,293 --> 00:35:23,130
+ adalah nomor urut orang itu? 
+
+882
+00:35:23,130 --> 00:35:27,890
+ Jadi itulah alasan mengapa itu tidak berhasil juga. 
+
+883
+00:35:27,890 --> 00:35:30,040
+ Jadi sekali lagi, banyak dari masalah ini 
+
+884
+00:35:30,040 --> 00:35:31,880
+ tetap, termasuk hal berbasis RST ini, 
+
+885
+00:35:31,880 --> 00:35:33,065
+ terutama untuk router BGP. 
+
+886
+00:35:33,065 --> 00:35:35,890
+
+
+887
+00:35:35,890 --> 00:35:38,460
+ Sebenarnya ada dua jenis perbaikan yang lucu. 
+
+888
+00:35:38,460 --> 00:35:41,389
+ Satu benar-benar menunjukkan Anda bagaimana Anda bisa hati-hati 
+
+889
+00:35:41,389 --> 00:35:43,430
+ mengeksploitasi hal-hal yang ada atau memanfaatkannya 
+
+890
+00:35:43,430 --> 00:35:45,670
+ untuk memperbaiki masalah tertentu. 
+
+891
+00:35:45,670 --> 00:35:47,747
+ Di sini, wawasannya adalah bahwa router ini saja 
+
+892
+00:35:47,747 --> 00:35:49,497
+ ingin berbicara satu sama lain, bukan dengan seseorang 
+
+893
+00:35:49,497 --> 00:35:50,980
+ lain melalui jaringan. 
+
+894
+00:35:50,980 --> 00:35:52,990
+ Dan sebagai hasilnya, jika paket itu 
+
+895
+00:35:52,990 --> 00:35:55,817
+ datang bukan dari router langsung di seberang tautan, 
+
+896
+00:35:55,817 --> 00:35:58,442
+ tetapi dari orang lain, saya ingin menjatuhkan paket ini bersama-sama. 
+
+897
+00:35:58,442 --> 00:36:01,730
+ Dan apa yang disadari oleh para desainer protokol penulisan ini 
+
+898
+00:36:01,730 --> 00:36:04,370
+ adalah bahwa ada bidang yang luar biasa ini dalam sebuah paket bernama waktu 
+
+899
+00:36:04,370 --> 00:36:05,390
+ untuk hidup. 
+
+900
+00:36:05,390 --> 00:36:08,665
+ Ini adalah bidang 8-bit yang dikurangi oleh setiap router 
+
+901
+00:36:08,665 --> 00:36:11,840
+ untuk memastikan bahwa paket tidak masuk ke loop tak terbatas. 
+
+902
+00:36:11,840 --> 00:36:15,180
+ Jadi nilai TTL tertinggi yang pernah ada adalah 255. 
+
+903
+00:36:15,180 --> 00:36:17,630
+ Dan kemudian itu akan dikurangi dari sana. 
+
+904
+00:36:17,630 --> 00:36:19,165
+ Jadi apa yang dilakukan protokol menulis ini-- 
+
+905
+00:36:19,165 --> 00:36:23,000
+ itu semacam hack pintar - mereka 
+
+906
+00:36:23,000 --> 00:36:27,220
+ tolak paket apa pun dengan nilai TTL yang bukan 255. 
+
+907
+00:36:27,220 --> 00:36:29,660
+ Karena jika sebuah paket memiliki nilai 255, 
+
+908
+00:36:29,660 --> 00:36:31,430
+ itu pasti berasal dari router 
+
+909
+00:36:31,430 --> 00:36:33,530
+ hanya di sisi lain dari tautan ini. 
+
+910
+00:36:33,530 --> 00:36:35,630
+ Dan jika musuh mencoba menyuntikkan paket apa pun 
+
+911
+00:36:35,630 --> 00:36:37,900
+ untuk mengutak-atik koneksi BGP yang sudah ada ini, 
+
+912
+00:36:37,900 --> 00:36:39,852
+ itu akan memiliki nilai TTL kurang dari 255, 
+
+913
+00:36:39,852 --> 00:36:41,935
+ karena itu akan dikurangi oleh beberapa router lain 
+
+914
+00:36:41,935 --> 00:36:44,520
+ sepanjang jalan, termasuk yang ini. 
+
+915
+00:36:44,520 --> 00:36:47,766
+ Dan kemudian itu akan ditolak oleh penerima. 
+
+916
+00:36:47,766 --> 00:36:50,762
+ Jadi ini adalah salah satu contoh kombinasi yang cerdas 
+
+917
+00:36:50,762 --> 00:36:52,470
+ teknik yang kompatibel ke belakang 
+
+918
+00:36:52,470 --> 00:36:54,658
+ dan memecahkan masalah yang sangat spesifik ini. 
+
+919
+00:36:54,658 --> 00:36:55,158
+ Ya. 
+
+920
+00:36:55,158 --> 00:36:56,866
+ AUDIENCE: Bukankah router kanan bawah 
+
+921
+00:36:56,866 --> 00:36:58,616
+ juga mengirim sesuatu dengan TTL 255? 
+
+922
+00:36:58,616 --> 00:37:00,670
+ PROFESOR: Ya, jadi router ini sebenarnya-- 
+
+923
+00:37:00,670 --> 00:37:01,830
+ ini adalah router fisik. 
+
+924
+00:37:01,830 --> 00:37:03,780
+ Dan ia tahu ini adalah tautan terpisah. 
+
+925
+00:37:03,780 --> 00:37:07,130
+ Jadi ini terlihat di TTL dan tautan mana yang muncul. 
+
+926
+00:37:07,130 --> 00:37:09,150
+ Jadi, jika sebuah paket masuk ke tautan ini, 
+
+927
+00:37:09,150 --> 00:37:12,840
+ itu tidak akan menerimanya untuk koneksi TCP ini. 
+
+928
+00:37:12,840 --> 00:37:13,896
+ Tapi kamu benar. 
+
+929
+00:37:13,896 --> 00:37:17,630
+ Untuk sebagian besar, router ini percaya 
+
+930
+00:37:17,630 --> 00:37:19,450
+ tetangga terdekat mereka. 
+
+931
+00:37:19,450 --> 00:37:20,950
+ Tidak perlu demikian. 
+
+932
+00:37:20,950 --> 00:37:22,016
+ Tetapi jika Anda terus melihat masalah ini, 
+
+933
+00:37:22,016 --> 00:37:23,740
+ dan Anda tahu telah menerapkan peretasan ini, 
+
+934
+00:37:23,740 --> 00:37:24,720
+ maka itu pasti salah satu tetangga Anda. 
+
+935
+00:37:24,720 --> 00:37:25,594
+ Anda akan melihat. 
+
+936
+00:37:25,594 --> 00:37:27,162
+ TCP membuang antarmuka ini. 
+
+937
+00:37:27,162 --> 00:37:29,210
+ Mengapa Anda mengirim saya paket-paket reset ini? 
+
+938
+00:37:29,210 --> 00:37:31,120
+ Masalah ini tidak sebesar itu. 
+
+939
+00:37:31,120 --> 00:37:34,736
+ Anda dapat mengelolanya dengan beberapa mekanisme Pan Otomatis. 
+
+940
+00:37:34,736 --> 00:37:36,005
+ Masuk akal? 
+
+941
+00:37:36,005 --> 00:37:38,450
+ Baiklah, ada perbaikan lain untuk BGP 
+
+942
+00:37:38,450 --> 00:37:41,550
+ di mana mereka mengimplementasikan beberapa bentuk otentikasi tajuk, 
+
+943
+00:37:41,550 --> 00:37:43,480
+ Otentikasi header MD5 juga. 
+
+944
+00:37:43,480 --> 00:37:46,220
+ Tapi mereka benar-benar menargetkan aplikasi khusus ini 
+
+945
+00:37:46,220 --> 00:37:48,340
+ di mana serangan ulang ini sangat buruk. 
+
+946
+00:37:48,340 --> 00:37:49,975
+ Ini masih menjadi masalah saat ini. 
+
+947
+00:37:49,975 --> 00:37:51,975
+ Jika ada koneksi yang berumur panjang 
+
+948
+00:37:51,975 --> 00:37:53,766
+ di luar sana bahwa saya benar-benar ingin menembak jatuh, 
+
+949
+00:37:53,766 --> 00:37:58,480
+ Saya hanya perlu mengirim beberapa paket RST dalam jumlah besar, 
+
+950
+00:37:58,480 --> 00:38:00,730
+ mungkin di urutan ratusan ribu 
+
+951
+00:38:00,730 --> 00:38:04,770
+ atau lebih, tetapi mungkin tidak tepat 4 miliar. 
+
+952
+00:38:04,770 --> 00:38:07,930
+ Karena server sebenarnya agak 
+
+953
+00:38:07,930 --> 00:38:10,520
+ lalai dalam hal nomor urut yang mereka terima untuk reset. 
+
+954
+00:38:10,520 --> 00:38:13,360
+ Bisa berupa paket apa saja dalam jendela tertentu. 
+
+955
+00:38:13,360 --> 00:38:16,730
+ Dan dalam hal ini, saya mungkin bisa, atau penyerang apa pun, 
+
+956
+00:38:16,730 --> 00:38:19,500
+ reset koneksi yang ada dengan yang sederhana 
+
+957
+00:38:19,500 --> 00:38:21,262
+ tetapi tidak banyak usaha. 
+
+958
+00:38:21,262 --> 00:38:22,738
+ Itu masih masalah. 
+
+959
+00:38:22,738 --> 00:38:25,460
+ Dan orang-orang belum menemukan solusi yang bagus untuk itu. 
+
+960
+00:38:25,460 --> 00:38:28,640
+
+
+961
+00:38:28,640 --> 00:38:31,576
+ Baiklah, dan kurasa hal buruk yang terakhir itu 
+
+962
+00:38:31,576 --> 00:38:33,700
+ terjadi karena nomor urut ini agak 
+
+963
+00:38:33,700 --> 00:38:36,331
+ dapat diprediksi hanyalah injeksi data 
+
+964
+00:38:36,331 --> 00:38:39,280
+ ke koneksi yang ada. 
+
+965
+00:38:39,280 --> 00:38:43,550
+ Jadi misalkan ada beberapa protokol seperti rlogin, 
+
+966
+00:38:43,550 --> 00:38:47,650
+ tapi mungkin rlogin tidak - kira kita punya 
+
+967
+00:38:47,650 --> 00:38:49,710
+ protokol hipotetis yang agak seperti rlogin, 
+
+968
+00:38:49,710 --> 00:38:51,990
+ tetapi sebenarnya tidak melakukan otentikasi berbasis IP. 
+
+969
+00:38:51,990 --> 00:38:53,364
+ Anda harus mengetikkan kata sandi Anda 
+
+970
+00:38:53,364 --> 00:38:55,392
+ untuk masuk, semua hal hebat ini. 
+
+971
+00:38:55,392 --> 00:38:57,350
+ Masalahnya adalah setelah Anda mengetik kata sandi Anda, 
+
+972
+00:38:57,350 --> 00:38:59,225
+ mungkin koneksi TCP Anda baru saja didirikan 
+
+973
+00:38:59,225 --> 00:39:01,060
+ dan dapat menerima data arbitrer. 
+
+974
+00:39:01,060 --> 00:39:03,392
+ Jadi tunggu salah satu dari kalian masuk ke mesin, ketik 
+
+975
+00:39:03,392 --> 00:39:04,100
+ dalam kata sandi Anda. 
+
+976
+00:39:04,100 --> 00:39:05,235
+ Saya tidak tahu apa kata sandi itu. 
+
+977
+00:39:05,235 --> 00:39:07,026
+ Tetapi setelah Anda membuat koneksi TCP, 
+
+978
+00:39:07,026 --> 00:39:09,120
+ Saya hanya akan mencoba menebak nomor urut Anda 
+
+979
+00:39:09,120 --> 00:39:11,332
+ dan menyuntikkan beberapa data ke koneksi Anda yang ada. 
+
+980
+00:39:11,332 --> 00:39:13,415
+ Jadi jika saya bisa menebak nomor urut Anda dengan benar, 
+
+981
+00:39:13,415 --> 00:39:16,005
+ maka ini memungkinkan saya untuk membuatnya berpura-pura 
+
+982
+00:39:16,005 --> 00:39:18,255
+ seperti Anda telah mengetikkan beberapa perintah setelah Anda mengautentikasi 
+
+983
+00:39:18,255 --> 00:39:19,977
+ benar dengan kata sandi Anda. 
+
+984
+00:39:19,977 --> 00:39:21,810
+ Jadi ini semua menunjukkan bahwa Anda benar-benar 
+
+985
+00:39:21,810 --> 00:39:28,260
+ tidak ingin bergantung pada nomor urut 32-bit ini 
+
+986
+00:39:28,260 --> 00:39:30,430
+ untuk memberikan keamanan. 
+
+987
+00:39:30,430 --> 00:39:33,660
+ Tapi mari kita benar-benar melihat apa tumpukan TCP yang sebenarnya 
+
+988
+00:39:33,660 --> 00:39:35,650
+ lakukan untuk mencoba mengurangi masalah ini. 
+
+989
+00:39:35,650 --> 00:39:37,650
+ Jadi saat kami berdiskusi, 
+
+990
+00:39:37,650 --> 00:39:41,170
+ Saya kira satu pendekatan yang akan kita bahas di dua berikutnya 
+
+991
+00:39:41,170 --> 00:39:44,780
+ kuliah adalah bagaimana menerapkan beberapa keamanan 
+
+992
+00:39:44,780 --> 00:39:45,910
+ di tingkat aplikasi. 
+
+993
+00:39:45,910 --> 00:39:50,160
+ Jadi kita akan menggunakan kriptografi untuk mengotentikasi dan mengenkripsi 
+
+994
+00:39:50,160 --> 00:39:54,460
+ dan menandatangani dan memverifikasi pesan di tingkat aplikasi 
+
+995
+00:39:54,460 --> 00:39:57,420
+ tanpa benar-benar melibatkan TCP begitu banyak. 
+
+996
+00:39:57,420 --> 00:39:59,606
+ Tetapi ada beberapa aplikasi yang ada 
+
+997
+00:39:59,606 --> 00:40:03,950
+ yang akan mendapat manfaat dari membuat ini sedikit lebih baik, 
+
+998
+00:40:03,950 --> 00:40:07,160
+ setidaknya tidak membuatnya mudah mengeksploitasi masalah ini. 
+
+999
+00:40:07,160 --> 00:40:09,360
+ Dan cara yang kurasa orang lakukan 
+
+1000
+00:40:09,360 --> 00:40:13,200
+ ini dalam praktek hari ini - misalnya Linux dan Windows-- 
+
+1001
+00:40:13,200 --> 00:40:17,360
+ apakah mereka menerapkan saran yang John berikan sebelumnya, 
+
+1002
+00:40:17,360 --> 00:40:20,920
+ bahwa kita mempertahankan urutan awal yang berbeda 
+
+1003
+00:40:20,920 --> 00:40:22,820
+ angka untuk setiap pasangan tujuan sumber. 
+
+1004
+00:40:22,820 --> 00:40:29,110
+ Jadi apa implementasi TCP SYN yang paling 
+
+1005
+00:40:29,110 --> 00:40:33,200
+ apakah mereka masih menghitung nomor urut awal ini 
+
+1006
+00:40:33,200 --> 00:40:34,590
+ saat kami berkomputer sebelumnya. 
+
+1007
+00:40:34,590 --> 00:40:39,600
+ Jadi ini adalah ISN gaya lama, katakanlah. 
+
+1008
+00:40:39,600 --> 00:40:42,000
+ Dan agar benar-benar menghasilkan 
+
+1009
+00:40:42,000 --> 00:40:44,650
+ ISN sebenarnya untuk koneksi tertentu, 
+
+1010
+00:40:44,650 --> 00:40:48,130
+ kita akan menambahkan offset 32-bit acak. 
+
+1011
+00:40:48,130 --> 00:40:51,005
+ Jadi kita akan memasukkan semacam fungsi. 
+
+1012
+00:40:51,005 --> 00:40:54,010
+ Anggap saja seperti fungsi hash seperti SHA-1 
+
+1013
+00:40:54,010 --> 00:40:56,295
+ atau sesuatu yang mungkin lebih baik. 
+
+1014
+00:40:56,295 --> 00:40:59,190
+ Dan ini akan menjadi fungsi dari sumbernya 
+
+1015
+00:40:59,190 --> 00:41:05,140
+ IP, nomor port sumber, IP tujuan 
+
+1016
+00:41:05,140 --> 00:41:10,820
+ alamat, port tujuan, dan semacam kunci rahasia 
+
+1017
+00:41:10,820 --> 00:41:14,900
+ yang hanya diketahui oleh server dalam kasus ini. 
+
+1018
+00:41:14,900 --> 00:41:17,290
+ Jadi ini memiliki properti yang bagus itu 
+
+1019
+00:41:17,290 --> 00:41:19,350
+ dalam koneksi tertentu, 
+
+1020
+00:41:19,350 --> 00:41:24,147
+ seperti yang diidentifikasi oleh pasangan port IP sumber dan tujuan, 
+
+1021
+00:41:24,147 --> 00:41:25,980
+ itu masih mempertahankan semua properti yang bagus ini 
+
+1022
+00:41:25,980 --> 00:41:30,000
+ dari algoritma nomor urut gaya lama ini. 
+
+1023
+00:41:30,000 --> 00:41:34,780
+ Tetapi jika Anda memiliki koneksi dari berbagai sumber / tujuan 
+
+1024
+00:41:34,780 --> 00:41:37,230
+ tupel, maka tidak ada yang Anda bisa 
+
+1025
+00:41:37,230 --> 00:41:41,600
+ pelajari tentang nilai pasti tuple koneksi lain 
+
+1026
+00:41:41,600 --> 00:41:42,780
+ nomor urut. 
+
+1027
+00:41:42,780 --> 00:41:45,450
+ Dan sebenarnya, Anda harus menebak kunci ini secara berurutan 
+
+1028
+00:41:45,450 --> 00:41:47,680
+ untuk menyimpulkan nilai itu. 
+
+1029
+00:41:47,680 --> 00:41:50,580
+ Dan semoga server, mungkin kernel OS, 
+
+1030
+00:41:50,580 --> 00:41:52,290
+ menyimpan kunci ini di suatu tempat di memorinya 
+
+1031
+00:41:52,290 --> 00:41:54,670
+ dan tidak memberikannya kepada orang lain. 
+
+1032
+00:41:54,670 --> 00:41:56,420
+ Jadi ini adalah berapa banyak tumpukan TCP 
+
+1033
+00:41:56,420 --> 00:41:58,365
+ berurusan dengan masalah khusus ini 
+
+1034
+00:41:58,365 --> 00:42:02,896
+ hari ini sejauh yang diizinkan oleh total urutan 32-bit 
+
+1035
+00:42:02,896 --> 00:42:03,395
+ jumlah. 
+
+1036
+00:42:03,395 --> 00:42:04,050
+ Ini tidak bagus, tetapi semacam karya. 
+
+1037
+00:42:04,050 --> 00:42:04,543
+ Ya. 
+
+1038
+00:42:04,543 --> 00:42:06,126
+ AUDIENCE: Bisakah Anda mengulanginya lagi? 
+
+1039
+00:42:06,126 --> 00:42:09,480
+ Apakah to-- unik kunci 
+
+1040
+00:42:09,480 --> 00:42:11,380
+ PROFESOR: Jadi ketika mesin saya boot, 
+
+1041
+00:42:11,380 --> 00:42:13,780
+ atau ketika mesin apa pun boot, itu menghasilkan kunci acak. 
+
+1042
+00:42:13,780 --> 00:42:16,530
+ Setiap kali Anda reboot, itu menghasilkan kunci baru. 
+
+1043
+00:42:16,530 --> 00:42:20,565
+ Dan ini artinya setiap kali itu 
+
+1044
+00:42:20,565 --> 00:42:24,680
+ untuk pasangan sumber / tujuan tertentu, 
+
+1045
+00:42:24,680 --> 00:42:26,830
+ nomor urut naik pada kecepatan yang sama dengan 
+
+1046
+00:42:26,830 --> 00:42:27,820
+ dikendalikan oleh ini. 
+
+1047
+00:42:27,820 --> 00:42:29,444
+ Jadi untuk pasangan sumber / tujuan tertentu, 
+
+1048
+00:42:29,444 --> 00:42:30,850
+ benda ini diperbaiki. 
+
+1049
+00:42:30,850 --> 00:42:32,889
+ Jadi Anda mengamati nomor urut Anda 
+
+1050
+00:42:32,889 --> 00:42:34,680
+ berkembang sesuai dengan urutan awal Anda 
+
+1051
+00:42:34,680 --> 00:42:36,596
+ angka untuk koneksi baru berkembang sesuai 
+
+1052
+00:42:36,596 --> 00:42:39,480
+ ke algoritme tertentu. 
+
+1053
+00:42:39,480 --> 00:42:43,915
+ Sehingga masih menyediakan semua pertahanan ini terhadap paket lama 
+
+1054
+00:42:43,915 --> 00:42:47,120
+ dari koneksi sebelumnya disuntikkan ke koneksi baru, 
+
+1055
+00:42:47,120 --> 00:42:50,430
+ sama seperti masalah pengaturan paket. 
+
+1056
+00:42:50,430 --> 00:42:51,630
+ Jadi itu masih berfungsi. 
+
+1057
+00:42:51,630 --> 00:42:53,490
+ Dan itulah satu-satunya hal yang nyata 
+
+1058
+00:42:53,490 --> 00:42:56,030
+ kami membutuhkan nomor urut ini memilih algoritme 
+
+1059
+00:42:56,030 --> 00:42:58,800
+ untuk mencegah duplikat paket ini menyebabkan masalah. 
+
+1060
+00:42:58,800 --> 00:43:01,660
+ Namun, hal yang kami eksploitasi sebelumnya, 
+
+1061
+00:43:01,660 --> 00:43:04,095
+ yaitu jika Anda mendapatkan urutannya 
+
+1062
+00:43:04,095 --> 00:43:08,130
+ nomor untuk satu koneksi dari A ke S, lalu 
+
+1063
+00:43:08,130 --> 00:43:10,715
+ dari situ Anda dapat menyimpulkan nomor urut 
+
+1064
+00:43:10,715 --> 00:43:12,360
+ untuk koneksi yang berbeda. 
+
+1065
+00:43:12,360 --> 00:43:13,080
+ Itu sekarang hilang. 
+
+1066
+00:43:13,080 --> 00:43:14,750
+ Karena setiap koneksi memiliki perbedaan 
+
+1067
+00:43:14,750 --> 00:43:19,790
+ offset dalam ruang 32-bit ini sebagaimana diimplementasikan oleh fungsi F-nya. 
+
+1068
+00:43:19,790 --> 00:43:25,085
+ Jadi ini benar-benar memisahkan nomor urut awal 
+
+1069
+00:43:25,085 --> 00:43:27,611
+ dilihat oleh setiap koneksi. 
+
+1070
+00:43:27,611 --> 00:43:28,110
+ Ya. 
+
+1071
+00:43:28,110 --> 00:43:31,300
+ AUDIENCE: Apa gunanya memasukkan kunci? 
+
+1072
+00:43:31,300 --> 00:43:33,300
+ PROFESOR: Yah, jika Anda tidak menyertakan kunci, 
+
+1073
+00:43:33,300 --> 00:43:35,050
+ maka saya dapat terhubung dengan Anda. 
+
+1074
+00:43:35,050 --> 00:43:37,487
+ Saya akan menghitung fungsi yang sama F. Saya akan menguranginya. 
+
+1075
+00:43:37,487 --> 00:43:38,070
+ Saya akan mendapatkan ini. 
+
+1076
+00:43:38,070 --> 00:43:40,170
+ Saya akan menghitung fungsi ini F untuk koneksi saya sebenarnya 
+
+1077
+00:43:40,170 --> 00:43:40,910
+ ingin berpura-pura. 
+
+1078
+00:43:40,910 --> 00:43:42,615
+ Dan saya akan menebak berapa nomor urut awal untuk yang satu itu 
+
+1079
+00:43:42,615 --> 00:43:43,360
+ akan menjadi. 
+
+1080
+00:43:43,360 --> 00:43:46,230
+ AUDIENCE: Jadi dapat Anda - karena mesin sekarang restart 
+
+1081
+00:43:46,230 --> 00:43:50,630
+ jarang, bisakah kamu tetap [tidak terdengar] dengan membalik-- 
+
+1082
+00:43:50,630 --> 00:43:53,569
+ PROFESOR: Saya pikir biasanya fungsi ini F 
+
+1083
+00:43:53,569 --> 00:43:55,610
+ adalah sesuatu seperti hash cryptographically aman 
+
+1084
+00:43:55,610 --> 00:44:01,557
+ fungsi, yang memiliki properti semi-terbukti itu 
+
+1085
+00:44:01,557 --> 00:44:03,140
+ sangat sulit. Ini secara kriptografi 
+
+1086
+00:44:03,140 --> 00:44:04,480
+ sulit untuk membalikkannya. 
+
+1087
+00:44:04,480 --> 00:44:07,160
+ Jadi bahkan jika Anda diberi input dan output literal 
+
+1088
+00:44:07,160 --> 00:44:14,059
+ fungsi hash ini kecuali untuk bagian kunci ini, 
+
+1089
+00:44:14,059 --> 00:44:15,517
+ itu akan sangat sulit untuk Anda tebak 
+
+1090
+00:44:15,517 --> 00:44:17,490
+ apa kunci ini secara kriptografi, 
+
+1091
+00:44:17,490 --> 00:44:19,324
+ bahkan dalam pengaturan yang terpisah. 
+
+1092
+00:44:19,324 --> 00:44:21,740
+ Jadi semoga ini akan setidaknya sama sulitnya dalam pengaturan ini 
+
+1093
+00:44:21,740 --> 00:44:24,324
+ demikian juga. 
+
+1094
+00:44:24,324 --> 00:44:26,615
+ Kami akan berbicara sedikit lebih banyak tentang apa fungsi-fungsi ini 
+
+1095
+00:44:26,615 --> 00:44:30,460
+ F sedikit terlambat dan bagaimana Anda menggunakannya dengan benar. 
+
+1096
+00:44:30,460 --> 00:44:31,650
+ Masuk akal? 
+
+1097
+00:44:31,650 --> 00:44:37,140
+ Pertanyaan lain tentang masalah dan solusi ini? 
+
+1098
+00:44:37,140 --> 00:44:41,252
+ Baiklah, jadi sebenarnya, ini kebanyakan 
+
+1099
+00:44:41,252 --> 00:44:44,255
+ semacam contoh dari serangan nomor urut TCP ini 
+
+1100
+00:44:44,255 --> 00:44:46,790
+ yang tidak relevan lagi. 
+
+1101
+00:44:46,790 --> 00:44:49,440
+ Karena setiap sistem operasi pada dasarnya menerapkan rencana ini 
+
+1102
+00:44:49,440 --> 00:44:50,080
+ hari ini. 
+
+1103
+00:44:50,080 --> 00:44:52,425
+ Jadi sulit untuk menyimpulkan urutan seseorang 
+
+1104
+00:44:52,425 --> 00:44:53,577
+ jumlah akan menjadi. 
+
+1105
+00:44:53,577 --> 00:44:55,910
+ Di sisi lain, orang terus melakukan kesalahan yang sama. 
+
+1106
+00:44:55,910 --> 00:44:59,755
+ Jadi bahkan setelah ini diterapkan untuk TCP, 
+
+1107
+00:44:59,755 --> 00:45:01,490
+ ada protokol lain yang disebut ini 
+
+1108
+00:45:01,490 --> 00:45:05,830
+ DNS yang sangat rentan terhadap serangan serupa. 
+
+1109
+00:45:05,830 --> 00:45:10,060
+ Dan alasannya adalah bahwa DNS benar-benar berjalan di atas UDP. 
+
+1110
+00:45:10,060 --> 00:45:13,100
+ Jadi UDP adalah protokol tanpa negara di mana Anda sebenarnya 
+
+1111
+00:45:13,100 --> 00:45:16,340
+ jangan melakukan pendirian koneksi mana 
+
+1112
+00:45:16,340 --> 00:45:18,140
+ Anda bertukar nomor urut. 
+
+1113
+00:45:18,140 --> 00:45:20,040
+ Di UDP, Anda cukup mengirim permintaan 
+
+1114
+00:45:20,040 --> 00:45:22,140
+ dari alamat sumber Anda ke server. 
+
+1115
+00:45:22,140 --> 00:45:24,950
+ Dan server mencari tahu apa jawaban yang seharusnya dan mengirim 
+
+1116
+00:45:24,950 --> 00:45:28,780
+ kembali ke alamat sumber apa pun yang muncul di paket. 
+
+1117
+00:45:28,780 --> 00:45:32,850
+ Jadi ini perjalanan satu putaran, jadi ada 
+
+1118
+00:45:32,850 --> 00:45:34,350
+ tidak ada waktu untuk bertukar nomor urut 
+
+1119
+00:45:34,350 --> 00:45:36,349
+ dan menetapkan itu, oh, ya, kamu sebenarnya 
+
+1120
+00:45:36,349 --> 00:45:38,140
+ berbicara dengan pria yang tepat. 
+
+1121
+00:45:38,140 --> 00:45:44,330
+ Jadi dengan DNS, sebagai hasilnya, untuk sementara waktu, 
+
+1122
+00:45:44,330 --> 00:45:48,840
+ itu cukup mudah untuk memalsukan respons dari server DNS. 
+
+1123
+00:45:48,840 --> 00:45:51,464
+ Jadi bagaimana tampilan seperti DNS, biasanya? 
+
+1124
+00:45:51,464 --> 00:45:53,130
+ Nah, Anda mengirim beberapa pertanyaan - jadi anggaplah 
+
+1125
+00:45:53,130 --> 00:45:57,230
+ klien mengirim paket dari klien ke beberapa server DNS 
+
+1126
+00:45:57,230 --> 00:46:00,210
+ yang mengetahui alamat IP server DNS sebelumnya, 
+
+1127
+00:46:00,210 --> 00:46:04,260
+ mungkin sudah dikonfigurasikan di suatu tempat, katakan, nah, inilah pertanyaan saya. 
+
+1128
+00:46:04,260 --> 00:46:07,336
+ Mungkin saya mencari mit.edu. 
+
+1129
+00:46:07,336 --> 00:46:09,860
+ Dan itu pada dasarnya. 
+
+1130
+00:46:09,860 --> 00:46:12,420
+ Dan nomor port tujuan server 
+
+1131
+00:46:12,420 --> 00:46:14,600
+ selalu 53 untuk DNS. 
+
+1132
+00:46:14,600 --> 00:46:17,380
+ Dan klien biasanya juga menggunakan nomor port yang sama 
+
+1133
+00:46:17,380 --> 00:46:20,720
+ untuk kemudahan penggunaan atau sesuatu. 
+
+1134
+00:46:20,720 --> 00:46:23,003
+ Jadi Anda mengirim paket ini dari klien di port ini 
+
+1135
+00:46:23,003 --> 00:46:24,320
+ ke server di port ini. 
+
+1136
+00:46:24,320 --> 00:46:25,200
+ Inilah pertanyaannya. 
+
+1137
+00:46:25,200 --> 00:46:30,460
+ Dan server akhirnya mengirim balasan balasan, 
+
+1138
+00:46:30,460 --> 00:46:38,580
+ mit.edu memiliki alamat IP tertentu, 18,9 titik sesuatu. 
+
+1139
+00:46:38,580 --> 00:46:41,860
+ Masalahnya adalah beberapa musuh bisa dengan mudah 
+
+1140
+00:46:41,860 --> 00:46:43,615
+ kirim paket respons serupa yang berpura-pura 
+
+1141
+00:46:43,615 --> 00:46:45,408
+ dari server. 
+
+1142
+00:46:45,408 --> 00:46:47,366
+ Dan tidak ada banyak keacakan di sini. 
+
+1143
+00:46:47,366 --> 00:46:50,180
+ Jadi jika saya tahu bahwa Anda mencoba terhubung ke mit.edu, 
+
+1144
+00:46:50,180 --> 00:46:53,126
+ Saya hanya akan mengirim banyak paket seperti ini ke komputer Anda. 
+
+1145
+00:46:53,126 --> 00:46:55,334
+ Saya tahu persis apa yang akan diminta oleh server DNS Anda. 
+
+1146
+00:46:55,334 --> 00:46:57,400
+ Saya tahu persis alamat IP Anda. 
+
+1147
+00:46:57,400 --> 00:46:58,703
+ Saya tahu nomor port. 
+
+1148
+00:46:58,703 --> 00:47:00,036
+ Saya tahu apa yang Anda cari. 
+
+1149
+00:47:00,036 --> 00:47:02,530
+ Saya hanya dapat memberikan alamat IP saya sendiri di sini. 
+
+1150
+00:47:02,530 --> 00:47:06,310
+ Dan jika paket saya tiba di sana setelah Anda mengirim ini 
+
+1151
+00:47:06,310 --> 00:47:08,630
+ tetapi sebelum Anda mendapatkan respons yang nyata, 
+
+1152
+00:47:08,630 --> 00:47:11,930
+ mesin klien Anda akan menggunakan paket saya. 
+
+1153
+00:47:11,930 --> 00:47:14,585
+ Jadi ini adalah contoh lain di mana tidak cukup keacakan 
+
+1154
+00:47:14,585 --> 00:47:17,470
+ dalam protokol ini membuatnya sangat mudah untuk menyuntikkan respons 
+
+1155
+00:47:17,470 --> 00:47:20,027
+ atau menyuntikkan paket secara umum. 
+
+1156
+00:47:20,027 --> 00:47:21,860
+ Dan ini sebenarnya dalam beberapa hal lebih buruk 
+
+1157
+00:47:21,860 --> 00:47:23,113
+ dari serangan sebelumnya. 
+
+1158
+00:47:23,113 --> 00:47:25,220
+ Karena di sini Anda bisa meyakinkan klien 
+
+1159
+00:47:25,220 --> 00:47:28,150
+ untuk terhubung ke alamat IP lain secara bersamaan. 
+
+1160
+00:47:28,150 --> 00:47:29,865
+ Dan mungkin cache hasil ini, 
+
+1161
+00:47:29,865 --> 00:47:31,246
+ karena DNS melibatkan caching. 
+
+1162
+00:47:31,246 --> 00:47:32,787
+ Mungkin Anda bisa menyediakan waktu yang sangat lama 
+
+1163
+00:47:32,787 --> 00:47:36,550
+ untuk hidup dalam tanggapan ini mengatakan, ini berlaku selama bertahun-tahun. 
+
+1164
+00:47:36,550 --> 00:47:38,620
+ Dan kemudian klien Anda, lagi-lagi sampai reboot, 
+
+1165
+00:47:38,620 --> 00:47:41,740
+ akan tetap menggunakan alamat IP ini untuk mit.edu. 
+
+1166
+00:47:41,740 --> 00:47:42,240
+ Ya. 
+
+1167
+00:47:42,240 --> 00:47:44,980
+ AUDIENCE: Bisakah Anda memperbaiki ini dengan memasukkan klien 
+
+1168
+00:47:44,980 --> 00:47:48,130
+ beberapa nilai acak dalam kueri, dan pelanggan server 
+
+1169
+00:47:48,130 --> 00:47:48,630
+ persis? 
+
+1170
+00:47:48,630 --> 00:47:50,755
+ PROFESOR: Itu benar, ya, jadi ini biasanya 
+
+1171
+00:47:50,755 --> 00:47:52,050
+ apa yang telah dilakukan orang sekarang. 
+
+1172
+00:47:52,050 --> 00:47:55,167
+ Masalahnya, seperti yang kita bicarakan sebelumnya, 
+
+1173
+00:47:55,167 --> 00:47:56,250
+ adalah kompatibilitas ke belakang. 
+
+1174
+00:47:56,250 --> 00:47:58,870
+ Sangat sulit untuk mengubah perangkat lunak server DNS 
+
+1175
+00:47:58,870 --> 00:47:59,760
+ semua orang berlari. 
+
+1176
+00:47:59,760 --> 00:48:01,260
+ Jadi pada dasarnya Anda harus mencari tahu, 
+
+1177
+00:48:01,260 --> 00:48:02,700
+ di mana Anda bisa memasukkan keacakan? 
+
+1178
+00:48:02,700 --> 00:48:04,450
+ Dan orang-orang sudah menemukan dua tempat. 
+
+1179
+00:48:04,450 --> 00:48:05,860
+ Tidak bagus. 
+
+1180
+00:48:05,860 --> 00:48:08,340
+ Tetapi pada dasarnya ada nomor port sumber, 
+
+1181
+00:48:08,340 --> 00:48:11,050
+ yang merupakan 16 bit keacakan. 
+
+1182
+00:48:11,050 --> 00:48:13,700
+ Jadi, jika Anda dapat memilih nomor port sumber secara acak, 
+
+1183
+00:48:13,700 --> 00:48:15,140
+ maka Anda mendapat 16 bit. 
+
+1184
+00:48:15,140 --> 00:48:19,470
+ Dan ada juga ID permintaan di dalamnya 
+
+1185
+00:48:19,470 --> 00:48:22,460
+ dari paket, yang juga 16 bit. 
+
+1186
+00:48:22,460 --> 00:48:25,030
+ Dan server tidak menggemakan kembali ID permintaan. 
+
+1187
+00:48:25,030 --> 00:48:27,040
+ Jadi menggabungkan dua hal ini bersama-sama, 
+
+1188
+00:48:27,040 --> 00:48:30,570
+ kebanyakan resolver hari ini mendapatkan 32 bit keacakan 
+
+1189
+00:48:30,570 --> 00:48:31,940
+ keluar dari protokol ini. 
+
+1190
+00:48:31,940 --> 00:48:36,620
+ Dan itu, sekali lagi, membuatnya terasa lebih keras, tapi tetap saja 
+
+1191
+00:48:36,620 --> 00:48:40,854
+ tidak sempurna secara kriptografi, untuk memalsukan respons semacam ini 
+
+1192
+00:48:40,854 --> 00:48:44,340
+ dan sudah diterima oleh klien. 
+
+1193
+00:48:44,340 --> 00:48:47,450
+ Namun masalah ini terus muncul, sayangnya. 
+
+1194
+00:48:47,450 --> 00:48:51,990
+ Jadi meskipun itu dipahami dengan baik untuk TCP, 
+
+1195
+00:48:51,990 --> 00:48:55,200
+ beberapa orang yang saya duga menyarankan bahwa ini mungkin menjadi masalah. 
+
+1196
+00:48:55,200 --> 00:48:59,350
+ Tapi itu tidak benar-benar diperbaiki sampai beberapa tahun yang lalu. 
+
+1197
+00:48:59,350 --> 00:49:01,970
+
+
+1198
+00:49:01,970 --> 00:49:04,220
+ Masuk akal? 
+
+1199
+00:49:04,220 --> 00:49:06,080
+ Baiklah, jadi saya kira mungkin sebagai samping, 
+
+1200
+00:49:06,080 --> 00:49:08,910
+ ada solusi untuk masalah DNS ini 
+
+1201
+00:49:08,910 --> 00:49:11,890
+ juga dengan menegakkan keamanan untuk DNS 
+
+1202
+00:49:11,890 --> 00:49:13,270
+ di tingkat aplikasi. 
+
+1203
+00:49:13,270 --> 00:49:16,750
+ Jadi alih-alih mengandalkan sifat-sifat keacakan ini 
+
+1204
+00:49:16,750 --> 00:49:19,611
+ sejumlah kecil bit dalam paket, 
+
+1205
+00:49:19,611 --> 00:49:23,680
+ Anda bisa mencoba menggunakan enkripsi dalam protokol DNS. 
+
+1206
+00:49:23,680 --> 00:49:26,040
+ Jadi protokol seperti DNS SEC yang ringkas makalahnya 
+
+1207
+00:49:26,040 --> 00:49:28,070
+ berbicara tentang mencoba melakukan ini. 
+
+1208
+00:49:28,070 --> 00:49:30,770
+ Jadi daripada mengandalkan keamanan tingkat jaringan apa pun 
+
+1209
+00:49:30,770 --> 00:49:34,590
+ properti, mereka mengharuskan semua nama DNS memiliki tanda tangan 
+
+1210
+00:49:34,590 --> 00:49:36,290
+ melekat pada mereka. 
+
+1211
+00:49:36,290 --> 00:49:37,820
+ Itu sepertinya rencana yang masuk akal. 
+
+1212
+00:49:37,820 --> 00:49:39,695
+ Tapi ternyata itu berhasil detailnya 
+
+1213
+00:49:39,695 --> 00:49:42,300
+ sebenarnya cukup sulit. Jadi satu contoh 
+
+1214
+00:49:42,300 --> 00:49:47,100
+ masalah yang muncul adalah nama dan asal. 
+
+1215
+00:49:47,100 --> 00:49:51,130
+ Karena dalam DNS, Anda ingin mendapatkan tanggapan. 
+
+1216
+00:49:51,130 --> 00:49:52,680
+ Nah, nama ini memiliki alamat IP itu. 
+
+1217
+00:49:52,680 --> 00:49:54,721
+ Atau Anda bisa mendapatkan jawaban yang mengatakan, tidak, sangat menyesal, 
+
+1218
+00:49:54,721 --> 00:49:56,310
+ nama ini tidak ada. 
+
+1219
+00:49:56,310 --> 00:50:00,186
+ Jadi Anda ingin menandatanganinya tidak ada respon juga. 
+
+1220
+00:50:00,186 --> 00:50:01,560
+ Karena sebaliknya, musuh itu 
+
+1221
+00:50:01,560 --> 00:50:04,760
+ dapat mengirim kembali tidak ada respons dan berpura-pura 
+
+1222
+00:50:04,760 --> 00:50:07,420
+ bahwa nama itu tidak ada, meskipun tidak. 
+
+1223
+00:50:07,420 --> 00:50:09,930
+ Jadi, bagaimana Anda menandatangani tanggapan bahwa nama-nama tertentu 
+
+1224
+00:50:09,930 --> 00:50:11,951
+ tidak ada di depan waktu? 
+
+1225
+00:50:11,951 --> 00:50:13,450
+ Saya kira satu kemungkinan adalah Anda bisa 
+
+1226
+00:50:13,450 --> 00:50:17,950
+ berikan server DNS Anda kunci yang menandatangani semua catatan Anda. 
+
+1227
+00:50:17,950 --> 00:50:19,082
+ Itu sepertinya rencana yang buruk. 
+
+1228
+00:50:19,082 --> 00:50:21,248
+ Karena dengan demikian seseorang yang berkompromi dengan server DNS Anda 
+
+1229
+00:50:21,248 --> 00:50:22,680
+ bisa pergi dengan kunci ini. 
+
+1230
+00:50:22,680 --> 00:50:25,700
+ Jadi sebagai gantinya, model DNS SEC beroperasi di bawah 
+
+1231
+00:50:25,700 --> 00:50:29,440
+ adalah bahwa Anda menandatangani semua nama Anda di domain Anda sebelumnya, 
+
+1232
+00:50:29,440 --> 00:50:32,315
+ dan Anda memberikan gumpalan yang ditandatangani ke server DNS Anda. 
+
+1233
+00:50:32,315 --> 00:50:34,866
+ Dan server DNS kemudian dapat menanggapi pertanyaan apa pun. 
+
+1234
+00:50:34,866 --> 00:50:36,990
+ Tetapi bahkan jika itu terganggu, tidak ada banyak lagi 
+
+1235
+00:50:36,990 --> 00:50:37,480
+ yang dapat dilakukan penyerang itu. 
+
+1236
+00:50:37,480 --> 00:50:39,600
+ Semua hal ini ditandatangani, dan kuncinya 
+
+1237
+00:50:39,600 --> 00:50:43,340
+ tidak dapat ditemukan di server DNS itu sendiri. 
+
+1238
+00:50:43,340 --> 00:50:49,150
+ Jadi protokol DNS SEC memiliki mekanisme pintar yang disebut NSEC 
+
+1239
+00:50:49,150 --> 00:50:52,230
+ untuk menandatangani catatan yang tidak ada. 
+
+1240
+00:50:52,230 --> 00:50:55,390
+ Dan cara Anda melakukan ini adalah dengan menandatangani celah 
+
+1241
+00:50:55,390 --> 00:50:56,650
+ di ruang nama. 
+
+1242
+00:50:56,650 --> 00:51:00,490
+ Jadi catatan NSEC mungkin mengatakan, yah, ada 
+
+1243
+00:51:00,490 --> 00:51:06,550
+ nama yang disebut foo.mit.edu, dan nama berikutnya menurut abjad 
+
+1244
+00:51:06,550 --> 00:51:10,492
+ mungkin goo.mit.edu. 
+
+1245
+00:51:10,492 --> 00:51:13,680
+ Dan tidak ada abjad di antara kedua nama ini. 
+
+1246
+00:51:13,680 --> 00:51:16,380
+ Jadi jika Anda mencari nama di antara keduanya 
+
+1247
+00:51:16,380 --> 00:51:17,921
+ nama disusun menurut abjad, lalu 
+
+1248
+00:51:17,921 --> 00:51:20,170
+ server dapat mengirim kembali pesan bertanda tangan ini, 
+
+1249
+00:51:20,170 --> 00:51:22,050
+ oh, tidak ada apa-apa di antara dua nama ini. 
+
+1250
+00:51:22,050 --> 00:51:24,460
+ Anda dapat dengan aman kembali, tidak ada. 
+
+1251
+00:51:24,460 --> 00:51:26,060
+ Tapi kemudian ini memungkinkan beberapa penyerang 
+
+1252
+00:51:26,060 --> 00:51:27,768
+ untuk benar-benar menyebutkan nama domain Anda. 
+
+1253
+00:51:27,768 --> 00:51:31,410
+ Anda hanya dapat meminta beberapa nama domain dan menemukan catatan ini 
+
+1254
+00:51:31,410 --> 00:51:32,710
+ dan berkata, oh, ya, hebat. 
+
+1255
+00:51:32,710 --> 00:51:34,330
+ Jadi dua hal ini ada. 
+
+1256
+00:51:34,330 --> 00:51:36,520
+ Biarkan saya mencari gooa.mit.edu. 
+
+1257
+00:51:36,520 --> 00:51:38,200
+ Itu akan memberi saya tanggapan yang mengatakan, 
+
+1258
+00:51:38,200 --> 00:51:40,820
+ apa nama selanjutnya di domain Anda, dan sebagainya. 
+
+1259
+00:51:40,820 --> 00:51:42,290
+ Jadi sebenarnya agak sulit 
+
+1260
+00:51:42,290 --> 00:51:43,950
+ untuk datang dengan protokol yang benar 
+
+1261
+00:51:43,950 --> 00:51:46,790
+ yang keduanya mempertahankan semua properti DNS yang bagus 
+
+1262
+00:51:46,790 --> 00:51:50,420
+ dan mencegah enumerasi nama dan masalah lainnya. 
+
+1263
+00:51:50,420 --> 00:51:52,020
+ Sebenarnya ada hal yang menyenangkan sekarang 
+
+1264
+00:51:52,020 --> 00:51:55,950
+ disebut NSEC3 yang mencoba memecahkan masalah ini sebagian - semacam 
+
+1265
+00:51:55,950 --> 00:51:56,875
+ karya, semacam tidak. 
+
+1266
+00:51:56,875 --> 00:51:59,110
+ Kita lihat saja, saya kira, apa yang mendapatkannya [tidak terdengar]. 
+
+1267
+00:51:59,110 --> 00:51:59,880
+ Ya. 
+
+1268
+00:51:59,880 --> 00:52:01,550
+ AUDIENCE: Apakah ada penandatanganan 
+
+1269
+00:52:01,550 --> 00:52:03,915
+ dari domain level teratas yang tidak ada? 
+
+1270
+00:52:03,915 --> 00:52:05,540
+ PROFESOR: Ya, saya pikir sebenarnya ya. 
+
+1271
+00:52:05,540 --> 00:52:07,600
+ Domain dot hanyalah domain lain. 
+
+1272
+00:52:07,600 --> 00:52:10,250
+ Dan mereka juga menerapkan mekanisme ini. 
+
+1273
+00:52:10,250 --> 00:52:13,120
+ Jadi sebenarnya dot dan dot com sekarang menerapkan DNS SEC, 
+
+1274
+00:52:13,120 --> 00:52:15,842
+ dan ada semua catatan di sana yang mengatakan, baik, 
+
+1275
+00:52:15,842 --> 00:52:18,540
+ .in adalah nama domain yang ada, 
+
+1276
+00:52:18,540 --> 00:52:21,915
+ dan dot sesuatu yang lain ada, dan tidak ada di antaranya. 
+
+1277
+00:52:21,915 --> 00:52:23,186
+ Jadi ada semua hal ini. 
+
+1278
+00:52:23,186 --> 00:52:25,118
+ AUDIENCE: Jadi selain penolakan layanan, 
+
+1279
+00:52:25,118 --> 00:52:27,533
+ mengapa kita begitu peduli tentang pengulangan 
+
+1280
+00:52:27,533 --> 00:52:29,442
+ nama domain dalam mit.edu? 
+
+1281
+00:52:29,442 --> 00:52:30,900
+ PROFESOR: Yah, mungkin kita tidak. 
+
+1282
+00:52:30,900 --> 00:52:33,200
+ Sebenarnya, ada file teks di AFS 
+
+1283
+00:52:33,200 --> 00:52:35,210
+ yang mencantumkan semua nama domain ini di MIT. 
+
+1284
+00:52:35,210 --> 00:52:36,930
+ Tapi saya pikir secara umum, beberapa perusahaan 
+
+1285
+00:52:36,930 --> 00:52:39,530
+ merasa sedikit gelisah mengungkapkan ini. 
+
+1286
+00:52:39,530 --> 00:52:41,735
+ Mereka sering memiliki nama internal itu 
+
+1287
+00:52:41,735 --> 00:52:46,245
+ duduk di DNS yang seharusnya tidak pernah terpapar ke luar. 
+
+1288
+00:52:46,245 --> 00:52:49,730
+ Saya pikir sebenarnya ini adalah area fuzzy yang tidak pernah ada 
+
+1289
+00:52:49,730 --> 00:52:51,910
+ benar-benar diformalkan apa jaminan yang disediakan oleh DNS 
+
+1290
+00:52:51,910 --> 00:52:52,774
+ kepada Anda atau tidak. 
+
+1291
+00:52:52,774 --> 00:52:54,690
+ Dan orang mulai mengasumsikan hal-hal seperti, yah, 
+
+1292
+00:52:54,690 --> 00:52:57,390
+ jika kami menempelkan nama, dan itu tidak benar-benar dipublikasikan di mana saja, 
+
+1293
+00:52:57,390 --> 00:52:59,760
+ maka mungkin aman di sini. 
+
+1294
+00:52:59,760 --> 00:53:02,740
+ Saya pikir ini adalah tempat lain di mana sistem ini tidak ada 
+
+1295
+00:53:02,740 --> 00:53:04,740
+ spesifikasi yang jelas dalam hal apa yang dimiliki dan tidak 
+
+1296
+00:53:04,740 --> 00:53:05,930
+ harus menyediakan. 
+
+1297
+00:53:05,930 --> 00:53:08,224
+ Dan ketika Anda membuat beberapa perubahan seperti ini, maka orang 
+
+1298
+00:53:08,224 --> 00:53:11,214
+ katakan, oh, ya, saya agak mengandalkan itu. 
+
+1299
+00:53:11,214 --> 00:53:12,116
+ Ya. 
+
+1300
+00:53:12,116 --> 00:53:13,574
+ AUDIENCE: [INAUDIBLE] replay attack 
+
+1301
+00:53:13,574 --> 00:53:16,595
+ di mana Anda bisa mengirim tanda tangan tebal? 
+
+1302
+00:53:16,595 --> 00:53:17,970
+ PROFESOR: Ya, sebenarnya ada 
+
+1303
+00:53:17,970 --> 00:53:19,053
+ waktu menyendiri untuk hal-hal ini. 
+
+1304
+00:53:19,053 --> 00:53:22,480
+ Jadi ketika Anda menandatangani ini, Anda benar-benar menandatangani dan berkata, 
+
+1305
+00:53:22,480 --> 00:53:25,370
+ Saya menandatangani bahwa ini set nama 
+
+1306
+00:53:25,370 --> 00:53:27,710
+ berlaku untuk, saya tidak tahu, seminggu. 
+
+1307
+00:53:27,710 --> 00:53:30,790
+ Dan kemudian klien, jika mereka memiliki jam tersinkronisasi, 
+
+1308
+00:53:30,790 --> 00:53:33,436
+ mereka dapat menolak pesan bertanda lama. 
+
+1309
+00:53:33,436 --> 00:53:36,770
+ Masuk akal? 
+
+1310
+00:53:36,770 --> 00:53:43,290
+ Baiklah, ini adalah serangan menebak TCP SYN. 
+
+1311
+00:53:43,290 --> 00:53:47,850
+ Masalah menarik lainnya yang juga muncul dalam kasus TCP 
+
+1312
+00:53:47,850 --> 00:53:50,490
+ adalah penolakan serangan layanan itu 
+
+1313
+00:53:50,490 --> 00:53:54,160
+ mengeksploitasi fakta bahwa server harus menyimpan beberapa keadaan. 
+
+1314
+00:53:54,160 --> 00:53:57,460
+ Jadi jika Anda melihat jabat tangan ini kita 
+
+1315
+00:53:57,460 --> 00:54:00,450
+ ada di papan sebelumnya, kita akan lihat 
+
+1316
+00:54:00,450 --> 00:54:04,230
+ bahwa ketika klien membuat koneksi ke server, 
+
+1317
+00:54:04,230 --> 00:54:08,720
+ server harus benar-benar mengingat nomor urut 
+
+1318
+00:54:08,720 --> 00:54:10,440
+ SNC. 
+
+1319
+00:54:10,440 --> 00:54:13,060
+ Jadi server harus mempertahankan beberapa struktur data 
+
+1320
+00:54:13,060 --> 00:54:16,960
+ di sisi yang mengatakan, untuk koneksi ini, 
+
+1321
+00:54:16,960 --> 00:54:18,850
+ inilah nomor urut. 
+
+1322
+00:54:18,850 --> 00:54:21,140
+ Dan itu akan mengatakan, koneksi saya dari C ke S 
+
+1323
+00:54:21,140 --> 00:54:23,740
+ memiliki nomor urut SNC. 
+
+1324
+00:54:23,740 --> 00:54:26,250
+
+
+1325
+00:54:26,250 --> 00:54:28,510
+ Dan alasan server harus menyimpan tabel ini 
+
+1326
+00:54:28,510 --> 00:54:33,545
+ adalah karena server perlu mencari tahu apa 
+
+1327
+00:54:33,545 --> 00:54:37,340
+ Nilai SNC untuk diterima di sini nanti. 
+
+1328
+00:54:37,340 --> 00:54:38,660
+ Apakah ini masuk akal? 
+
+1329
+00:54:38,660 --> 00:54:41,562
+ AUDIENCE: [INAUDIBLE] SNS? 
+
+1330
+00:54:41,562 --> 00:54:43,936
+ PROFESOR: Ya, server juga membutuhkan SNS Saya rasa, ya. 
+
+1331
+00:54:43,936 --> 00:54:48,120
+
+
+1332
+00:54:48,120 --> 00:54:51,770
+ Tapi ternyata itu ... yah, ya, kamu benar. 
+
+1333
+00:54:51,770 --> 00:54:57,445
+ Dan masalahnya adalah ... sebenarnya, ya, kamu benar. 
+
+1334
+00:54:57,445 --> 00:54:58,945
+ SNS sebenarnya jauh lebih penting. 
+
+1335
+00:54:58,945 --> 00:55:00,235
+ Maaf, ya. 
+
+1336
+00:55:00,235 --> 00:55:02,746
+ [TIDAK JELAS] SNS sebenarnya jauh lebih penting. 
+
+1337
+00:55:02,746 --> 00:55:04,371
+ Karena SNS adalah bagaimana Anda tahu bahwa Anda 
+
+1338
+00:55:04,371 --> 00:55:05,412
+ berbicara dengan pria yang tepat. 
+
+1339
+00:55:05,412 --> 00:55:08,790
+
+
+1340
+00:55:08,790 --> 00:55:12,075
+ Masalahnya adalah tidak ada ikatan nyata 
+
+1341
+00:55:12,075 --> 00:55:13,710
+ seukuran meja ini. 
+
+1342
+00:55:13,710 --> 00:55:16,317
+ Jadi Anda mungkin mendapatkan paket dari beberapa mesin. 
+
+1343
+00:55:16,317 --> 00:55:17,650
+ Anda bahkan tidak tahu siapa yang mengirimnya. 
+
+1344
+00:55:17,650 --> 00:55:19,983
+ Anda hanya mendapatkan paket yang terlihat seperti ini dengan sebuah sumber 
+
+1345
+00:55:19,983 --> 00:55:21,610
+ alamat yang mengklaim sebagai C. 
+
+1346
+00:55:21,610 --> 00:55:24,730
+ Dan agar berpotensi menerima koneksi nantinya 
+
+1347
+00:55:24,730 --> 00:55:28,435
+ dari alamat IP ini, Anda harus membuat entri tabel ini. 
+
+1348
+00:55:28,435 --> 00:55:31,012
+ Dan entri tabel ini agak berumur panjang. 
+
+1349
+00:55:31,012 --> 00:55:33,345
+ Karena mungkin seseorang menghubungkan Anda dari yang sebenarnya 
+
+1350
+00:55:33,345 --> 00:55:34,346
+ tempat yang jauh. 
+
+1351
+00:55:34,346 --> 00:55:35,690
+ Ada banyak paket yang hilang. 
+
+1352
+00:55:35,690 --> 00:55:40,090
+ Mungkin tidak sebentar sampai seseorang 
+
+1353
+00:55:40,090 --> 00:55:42,730
+ menyelesaikan handshake TCP ini dalam kasus terburuk. 
+
+1354
+00:55:42,730 --> 00:55:45,710
+ Jadi Anda harus menyimpan status ini di stack TCP Anda 
+
+1355
+00:55:45,710 --> 00:55:47,980
+ untuk waktu yang relatif lama. 
+
+1356
+00:55:47,980 --> 00:55:50,230
+ Dan tidak ada cara untuk menebak apakah ini 
+
+1357
+00:55:50,230 --> 00:55:52,640
+ adalah koneksi yang valid atau tidak. 
+
+1358
+00:55:52,640 --> 00:55:55,710
+ Jadi satu serangan denial of service yang ditemukan orang 
+
+1359
+00:55:55,710 --> 00:55:58,690
+ terhadap sebagian besar tumpukan TCP adalah dengan mudah mengirim 
+
+1360
+00:55:58,690 --> 00:56:01,670
+ banyak paket seperti ini. 
+
+1361
+00:56:01,670 --> 00:56:04,980
+ Jadi jika saya seorang penyerang, maka saya hanya akan mengirim banyak paket SYN 
+
+1362
+00:56:04,980 --> 00:56:08,930
+ ke server tertentu dan mendapatkannya untuk mengisi mejanya. 
+
+1363
+00:56:08,930 --> 00:56:12,810
+ Dan masalahnya adalah dalam kasus terbaik, 
+
+1364
+00:56:12,810 --> 00:56:15,410
+ mungkin penyerang hanya selalu menggunakan IP sumber yang sama 
+
+1365
+00:56:15,410 --> 00:56:16,720
+ alamat. 
+
+1366
+00:56:16,720 --> 00:56:18,800
+ Dalam hal ini, Anda bisa mengatakan, baik, 
+
+1367
+00:56:18,800 --> 00:56:21,710
+ setiap mesin klien diperbolehkan dua entri di meja saya, 
+
+1368
+00:56:21,710 --> 00:56:23,340
+ atau sesuatu seperti ini. 
+
+1369
+00:56:23,340 --> 00:56:25,870
+ Dan kemudian penyerang dapat menggunakan dua entri tabel tetapi tidak 
+
+1370
+00:56:25,870 --> 00:56:26,745
+ lebih banyak. 
+
+1371
+00:56:26,745 --> 00:56:28,667
+ Masalahnya, tentu saja, adalah si penyerang 
+
+1372
+00:56:28,667 --> 00:56:30,125
+ dapat memalsukan alamat IP klien ini, 
+
+1373
+00:56:30,125 --> 00:56:31,832
+ membuat mereka terlihat acak. 
+
+1374
+00:56:31,832 --> 00:56:33,290
+ Dan kemudian untuk server, itu terjadi 
+
+1375
+00:56:33,290 --> 00:56:34,885
+ sangat sulit untuk membedakan apakah ini 
+
+1376
+00:56:34,885 --> 00:56:37,385
+ adalah penyerang yang mencoba terhubung dengan saya atau beberapa klien 
+
+1377
+00:56:37,385 --> 00:56:38,510
+ Saya belum pernah dengar sebelumnya. 
+
+1378
+00:56:38,510 --> 00:56:41,320
+ Jadi jika Anda beberapa situs web yang seharusnya menerima koneksi 
+
+1379
+00:56:41,320 --> 00:56:44,275
+ dari mana saja di dunia, ini akan menjadi masalah besar. 
+
+1380
+00:56:44,275 --> 00:56:46,870
+ Karena Anda menolak akses ke semua orang, 
+
+1381
+00:56:46,870 --> 00:56:51,080
+ atau Anda memiliki negara toko untuk semua ini sebagian besar palsu 
+
+1382
+00:56:51,080 --> 00:56:52,716
+ upaya koneksi. 
+
+1383
+00:56:52,716 --> 00:56:55,020
+ Apakah itu masuk akal? 
+
+1384
+00:56:55,020 --> 00:56:57,480
+ Jadi ini sedikit masalah bagi TCP, dan faktanya 
+
+1385
+00:56:57,480 --> 00:57:01,990
+ untuk sebagian besar protokol yang memungkinkan koneksi 
+
+1386
+00:57:01,990 --> 00:57:04,970
+ inisiasi, dan server harus menyimpan status. 
+
+1387
+00:57:04,970 --> 00:57:05,890
+ Jadi ada beberapa perbaikan. 
+
+1388
+00:57:05,890 --> 00:57:07,490
+ Kita akan bicara sebentar lagi apa 
+
+1389
+00:57:07,490 --> 00:57:10,285
+ workaround alat TCP untuk mencoba menangani masalah ini. 
+
+1390
+00:57:10,285 --> 00:57:13,788
+ Ini disebut SYN flooding dalam TCP. 
+
+1391
+00:57:13,788 --> 00:57:15,162
+ Tetapi secara umum, ini adalah masalah 
+
+1392
+00:57:15,162 --> 00:57:17,030
+ yang perlu diketahui dan dicoba 
+
+1393
+00:57:17,030 --> 00:57:19,975
+ untuk menghindari dalam protokol yang Anda desain di atas juga. 
+
+1394
+00:57:19,975 --> 00:57:22,120
+ Jadi Anda ingin memastikan bahwa server tidak 
+
+1395
+00:57:22,120 --> 00:57:24,830
+ harus menjaga keadaan sampai benar-benar bisa 
+
+1396
+00:57:24,830 --> 00:57:27,204
+ mengotentikasi dan mengidentifikasi, siapa kliennya? 
+
+1397
+00:57:27,204 --> 00:57:29,745
+ Karena pada saat itu, jika Anda mengidentifikasi siapa kliennya, 
+
+1398
+00:57:29,745 --> 00:57:31,340
+ Anda telah mengautentikasi mereka, entah bagaimana, 
+
+1399
+00:57:31,340 --> 00:57:32,290
+ maka Anda benar-benar bisa membuat keputusan, 
+
+1400
+00:57:32,290 --> 00:57:34,515
+ baik, setiap klien diperbolehkan untuk hanya terhubung 
+
+1401
+00:57:34,515 --> 00:57:35,920
+ sekali, atau sesuatu. 
+
+1402
+00:57:35,920 --> 00:57:37,780
+ Dan kemudian saya tidak akan mempertahankan lebih banyak negara. 
+
+1403
+00:57:37,780 --> 00:57:40,240
+ Di sini, masalahnya adalah Anda menjamin 
+
+1404
+00:57:40,240 --> 00:57:42,938
+ bahwa Anda menyimpan negara sebelum Anda tahu siapa itu 
+
+1405
+00:57:42,938 --> 00:57:44,146
+ apakah itu terhubung dengan Anda. 
+
+1406
+00:57:44,146 --> 00:57:46,670
+
+
+1407
+00:57:46,670 --> 00:57:48,330
+ Jadi mari kita lihat bagaimana Anda bisa benar-benar 
+
+1408
+00:57:48,330 --> 00:57:53,070
+ memecahkan serangan flooding SYN ini di mana server terakumulasi 
+
+1409
+00:57:53,070 --> 00:57:54,850
+ banyak negara. 
+
+1410
+00:57:54,850 --> 00:57:57,530
+ Jadi tentu saja, jika Anda bisa mengubah TCP lagi, 
+
+1411
+00:57:57,530 --> 00:58:00,810
+ Anda bisa memperbaiki ini dengan mudah dengan menggunakan kriptografi 
+
+1412
+00:58:00,810 --> 00:58:04,490
+ atau sesuatu atau mengubah siapa yang bertanggung jawab untuk menyimpan 
+
+1413
+00:58:04,490 --> 00:58:05,130
+ negara apa. 
+
+1414
+00:58:05,130 --> 00:58:07,100
+ Masalahnya adalah kita memiliki TCP apa adanya. 
+
+1415
+00:58:07,100 --> 00:58:11,310
+ Dan bisakah kita memperbaiki masalah ini tanpa mengubah kabel TCP 
+
+1416
+00:58:11,310 --> 00:58:12,860
+ protokol? 
+
+1417
+00:58:12,860 --> 00:58:15,657
+ Jadi ini, sekali lagi, latihan untuk mencari tahu, yah, 
+
+1418
+00:58:15,657 --> 00:58:17,930
+ apa sebenarnya trik yang bisa kita mainkan 
+
+1419
+00:58:17,930 --> 00:58:21,470
+ atau tepatnya asumsi apa yang bisa kita rileks dan tenang 
+
+1420
+00:58:21,470 --> 00:58:24,715
+ tetap pada format tajuk TCP dan hal-hal lain. 
+
+1421
+00:58:24,715 --> 00:58:28,900
+ Dan triknya adalah dengan mengetahui cara yang cerdas 
+
+1422
+00:58:28,900 --> 00:58:31,500
+ untuk membuat server tanpa stateless 
+
+1423
+00:58:31,500 --> 00:58:33,842
+ to-- sehingga server tidak perlu menyimpannya 
+
+1424
+00:58:33,842 --> 00:58:36,424
+ tabel ini di dalam memori. 
+
+1425
+00:58:36,424 --> 00:58:37,840
+ Dan cara kita akan melakukan ini 
+
+1426
+00:58:37,840 --> 00:58:42,140
+ adalah dengan hati-hati memilih SMS. 
+
+1427
+00:58:42,140 --> 00:58:44,840
+ Alih-alih menggunakan rumus ini kami melihat sebelumnya, di mana 
+
+1428
+00:58:44,840 --> 00:58:47,650
+ kami menambahkan fungsi ini, kami 
+
+1429
+00:58:47,650 --> 00:58:51,170
+ bukannya akan memilih urutan ini 
+
+1430
+00:58:51,170 --> 00:58:52,710
+ nomor dengan cara yang berbeda. 
+
+1431
+00:58:52,710 --> 00:58:55,094
+ Dan saya akan memberi Anda persis rumusnya. 
+
+1432
+00:58:55,094 --> 00:58:57,510
+ Dan kemudian kita akan berbicara tentang mengapa ini sebenarnya menarik 
+
+1433
+00:58:57,510 --> 00:58:59,530
+ dan sifat bagus apa yang dimilikinya. 
+
+1434
+00:58:59,530 --> 00:59:02,192
+ Jadi jika server mendeteksi bahwa itu di bawah serangan semacam ini, 
+
+1435
+00:59:02,192 --> 00:59:03,650
+ itu akan beralih ke mode ini 
+
+1436
+00:59:03,650 --> 00:59:12,510
+ di mana ia memilih SNS menggunakan rumus penerapan ini 
+
+1437
+00:59:12,510 --> 00:59:14,900
+ pada dasarnya jenis yang sama atau serupa fungsi F 
+
+1438
+00:59:14,900 --> 00:59:15,490
+ kami melihat sebelumnya. 
+
+1439
+00:59:15,490 --> 00:59:18,470
+
+
+1440
+00:59:18,470 --> 00:59:20,100
+ Dan apa yang akan diterapkan 
+
+1441
+00:59:20,100 --> 00:59:25,652
+ adalah sumber IP, IP tujuan, hal yang sama seperti sebelumnya, 
+
+1442
+00:59:25,652 --> 00:59:35,920
+ port sumber, port tujuan, dan juga timestamp, 
+
+1443
+00:59:35,920 --> 00:59:39,420
+ dan juga kunci di sini juga. 
+
+1444
+00:59:39,420 --> 00:59:45,374
+ Dan kita akan menggabungkannya dengan stempel waktu juga. 
+
+1445
+00:59:45,374 --> 00:59:47,665
+ Jadi cap waktu ini akan menjadi butiran kasar. 
+
+1446
+00:59:47,665 --> 00:59:49,206
+ Ini akan terjadi dalam beberapa menit. 
+
+1447
+00:59:49,206 --> 00:59:52,290
+ Jadi setiap menit, stempel waktu dimulai oleh satu. 
+
+1448
+00:59:52,290 --> 00:59:54,560
+ Ini waktu yang sangat kasar. 
+
+1449
+00:59:54,560 --> 00:59:59,920
+ Dan mungkin ada beberapa pembagian antara bagian header ini 
+
+1450
+00:59:59,920 --> 01:00:01,270
+ dan ini bagian dari tajuk. 
+
+1451
+01:00:01,270 --> 01:00:03,270
+ Stempel waktu ini tidak membutuhkan banyak sekali bit. 
+
+1452
+01:00:03,270 --> 01:00:07,000
+ Jadi saya lupa persis apa yang dilakukan protokol ini di mesin sungguhan. 
+
+1453
+01:00:07,000 --> 01:00:09,730
+ Tapi Anda bisa dengan mudah membayangkan mungkin menggunakan 8 bit. 
+
+1454
+01:00:09,730 --> 01:00:11,158
+ Untuk stempel waktu, saya akan menjadi 
+
+1455
+01:00:11,158 --> 01:00:15,920
+ menggunakan 24 bit untuk potongan nomor urut ini. 
+
+1456
+01:00:15,920 --> 01:00:18,830
+ Baiklah, mengapa ini rencana yang bagus? 
+
+1457
+01:00:18,830 --> 01:00:19,850
+ Apa yang terjadi di sini? 
+
+1458
+01:00:19,850 --> 01:00:21,990
+ Mengapa formula aneh ini? 
+
+1459
+01:00:21,990 --> 01:00:24,210
+ Jadi saya pikir Anda harus ingat, salah satunya adalah properti 
+
+1460
+01:00:24,210 --> 01:00:26,920
+ yang kami coba capai dari nomor urut. 
+
+1461
+01:00:26,920 --> 01:00:28,580
+ Jadi ada dua hal yang terjadi. 
+
+1462
+01:00:28,580 --> 01:00:31,844
+ Salah satunya adalah pertahanan terhadap paket-paket duplikat 
+
+1463
+01:00:31,844 --> 01:00:35,041
+ yang kami coba raih - mungkin rumusnya masih 
+
+1464
+01:00:35,041 --> 01:00:35,541
+ sini. 
+
+1465
+01:00:35,541 --> 01:00:37,030
+ Tidak ... oh, ya, ya, di sini. 
+
+1466
+01:00:37,030 --> 01:00:39,210
+ Benar, jadi hanya untuk membandingkan orang-orang ini-- jadi 
+
+1467
+01:00:39,210 --> 01:00:42,100
+ saat kami tidak diserang, kami sebelumnya 
+
+1468
+01:00:42,100 --> 01:00:45,148
+ mempertahankan skema nomor urut gaya lama ini 
+
+1469
+01:00:45,148 --> 01:00:47,606
+ untuk mencegah duplikasi paket dari koneksi sebelumnya, semua 
+
+1470
+01:00:47,606 --> 01:00:49,495
+ barang bagus ini. 
+
+1471
+01:00:49,495 --> 01:00:51,120
+ Ternyata orang tidak tahu 
+
+1472
+01:00:51,120 --> 01:00:53,800
+ cara untuk bertahan melawan serangan-serangan semacam SYN flooding ini 
+
+1473
+01:00:53,800 --> 01:00:55,990
+ tanpa menyerah pada properti ini, 
+
+1474
+01:00:55,990 --> 01:00:57,370
+ jadi pada dasarnya mengatakan, yah, ini dia 
+
+1475
+01:00:57,370 --> 01:00:59,670
+ satu rencana yang berfungsi dengan baik dalam beberapa situasi. 
+
+1476
+01:00:59,670 --> 01:01:02,330
+ Ini adalah rencana berbeda di mana kami akan menyerah pada ISN itu 
+
+1477
+01:01:02,330 --> 01:01:03,760
+ komponen gaya lama. 
+
+1478
+01:01:03,760 --> 01:01:06,890
+ Dan sebaliknya, kami akan fokus hanya untuk memastikan 
+
+1479
+01:01:06,890 --> 01:01:12,305
+ bahwa jika seseorang memberi kita nomor urut S ini sebagai jawaban 
+
+1480
+01:01:12,305 --> 01:01:15,900
+ ke paket, seperti di sini, maka kita mengetahuinya 
+
+1481
+01:01:15,900 --> 01:01:18,150
+ pasti klien yang tepat. 
+
+1482
+01:01:18,150 --> 01:01:22,434
+ Jadi ingat bahwa untuk mencegah serangan spoofing IP, 
+
+1483
+01:01:22,434 --> 01:01:23,850
+ kami semacam bergantung pada nilai SNS ini. 
+
+1484
+01:01:23,850 --> 01:01:28,310
+ Jadi, jika server mengirim nilai SNS ini ke beberapa klien, lalu 
+
+1485
+01:01:28,310 --> 01:01:30,800
+ semoga hanya klien yang dapat mengirim kami kembali SNS yang benar 
+
+1486
+01:01:30,800 --> 01:01:32,985
+ nilai, selesaikan membangun koneksi. 
+
+1487
+01:01:32,985 --> 01:01:36,220
+ Dan inilah mengapa Anda harus menyimpannya di tabel ini di sini. 
+
+1488
+01:01:36,220 --> 01:01:37,730
+ Karena kalau tidak, bagaimana Anda tahu 
+
+1489
+01:01:37,730 --> 01:01:40,610
+ apakah ini respon nyata atau tanggapan palsu? 
+
+1490
+01:01:40,610 --> 01:01:42,660
+ Dan alasan untuk menggunakan fungsi ini F di sini 
+
+1491
+01:01:42,660 --> 01:01:47,670
+ adalah sekarang kita mungkin tidak dapat menyimpan tabel ini di memori. 
+
+1492
+01:01:47,670 --> 01:01:51,760
+ Dan sebaliknya, ketika upaya koneksi tiba di sini, 
+
+1493
+01:01:51,760 --> 01:01:53,480
+ kita akan menghitung SNS sesuai 
+
+1494
+01:01:53,480 --> 01:01:55,440
+ untuk formula ini di sini dan adil 
+
+1495
+01:01:55,440 --> 01:01:58,058
+ kirim kembali ke klien apa pun yang berpura-pura terhubung 
+
+1496
+01:01:58,058 --> 01:01:59,250
+ untuk kita. 
+
+1497
+01:01:59,250 --> 01:02:01,960
+ Dan kemudian kita akan melupakan semua tentang hubungan ini. 
+
+1498
+01:02:01,960 --> 01:02:05,040
+ Dan kemudian jika paket ketiga ini akhirnya datang, 
+
+1499
+01:02:05,040 --> 01:02:09,230
+ dan nilai SNS di sini cocok dengan apa yang kami harapkan, 
+
+1500
+01:02:09,230 --> 01:02:11,040
+ maka kita akan mengatakan, oh ya, ini pasti 
+
+1501
+01:02:11,040 --> 01:02:13,310
+ seseorang telah mendapat tanggapan kami dari langkah kedua 
+
+1502
+01:02:13,310 --> 01:02:15,745
+ dan akhirnya mengirimnya kembali kepada kami. 
+
+1503
+01:02:15,745 --> 01:02:17,495
+ Dan sekarang kami akhirnya berkomitmen setelah langkah ketiga 
+
+1504
+01:02:17,495 --> 01:02:21,846
+ untuk menyimpan entri nyata untuk koneksi TCP ini dalam memori. 
+
+1505
+01:02:21,846 --> 01:02:25,350
+ Jadi ini adalah cara untuk menangguhkan penyimpanan negara ini 
+
+1506
+01:02:25,350 --> 01:02:28,820
+ di server dengan meminta server, klien, 
+
+1507
+01:02:28,820 --> 01:02:30,420
+ untuk menggemakan kembali nilai yang tepat ini. 
+
+1508
+01:02:30,420 --> 01:02:32,716
+ Dan dengan membangunnya dengan cara yang hati-hati ini, 
+
+1509
+01:02:32,716 --> 01:02:34,590
+ kita benar-benar dapat memeriksa apakah klien itu adil 
+
+1510
+01:02:34,590 --> 01:02:38,598
+ membuat nilai ini, atau jika itu adalah hal nyata yang kami harapkan. 
+
+1511
+01:02:38,598 --> 01:02:40,486
+ Apakah itu masuk akal? 
+
+1512
+01:02:40,486 --> 01:02:43,320
+ AUDIENCE: [TIDAK TERDENGAR] SNC [TIDAK JELAS]? 
+
+1513
+01:02:43,320 --> 01:02:46,620
+ PROFESOR: Ya, jadi SNC sekarang, kita pada dasarnya tidak menyimpannya. 
+
+1514
+01:02:46,620 --> 01:02:48,570
+ Ini mungkin tidak bagus. 
+
+1515
+01:02:48,570 --> 01:02:52,134
+ Tapi begitulah. 
+
+1516
+01:02:52,134 --> 01:02:54,470
+ Jadi sebenarnya, saya kira apa yang sebenarnya terjadi 
+
+1517
+01:02:54,470 --> 01:02:59,650
+ in-- saya tidak menunjukkannya di sini. 
+
+1518
+01:02:59,650 --> 01:03:05,435
+ Tapi mungkin akan ada semacam bidang data null di sini 
+
+1519
+01:03:05,435 --> 01:03:07,560
+ yang mengatakan paket ini tidak memiliki data. 
+
+1520
+01:03:07,560 --> 01:03:10,680
+ Tapi itu masih termasuk nomor urut SNC saja 
+
+1521
+01:03:10,680 --> 01:03:12,790
+ karena ada lapangan untuk itu. 
+
+1522
+01:03:12,790 --> 01:03:14,554
+ Jadi ini adalah bagaimana server dapat merekonstruksi 
+
+1523
+01:03:14,554 --> 01:03:15,857
+ apa nilai SNC ini. 
+
+1524
+01:03:15,857 --> 01:03:18,190
+ Karena klien akan memasukkannya ke dalam paket ini 
+
+1525
+01:03:18,190 --> 01:03:18,727
+ bagaimanapun. 
+
+1526
+01:03:18,727 --> 01:03:19,810
+ Itu tidak relevan sebelumnya. 
+
+1527
+01:03:19,810 --> 01:03:22,050
+ Tapi itu agak relevan sekarang. 
+
+1528
+01:03:22,050 --> 01:03:24,820
+ Dan kami tidak akan memeriksanya dengan apa pun. 
+
+1529
+01:03:24,820 --> 01:03:28,210
+ Tapi ternyata cukup cukup baik. 
+
+1530
+01:03:28,210 --> 01:03:29,770
+ Ini memiliki beberapa konsekuensi yang tidak menguntungkan. 
+
+1531
+01:03:29,770 --> 01:03:33,785
+ Seperti jika ini ... yah, ada beberapa hal rumit 
+
+1532
+01:03:33,785 --> 01:03:35,100
+ Anda mungkin menyalahgunakan di sini. 
+
+1533
+01:03:35,100 --> 01:03:37,330
+ Tapi sepertinya tidak seburuk itu. 
+
+1534
+01:03:37,330 --> 01:03:39,370
+ Tampaknya lebih baik daripada server 
+
+1535
+01:03:39,370 --> 01:03:41,495
+ mengisi memori dan permintaan melayani swapping 
+
+1536
+01:03:41,495 --> 01:03:43,370
+ bersama. 
+
+1537
+01:03:43,370 --> 01:03:45,630
+ Dan kemudian kami tidak memasukkannya dalam perhitungan ini. 
+
+1538
+01:03:45,630 --> 01:03:48,110
+ Karena satu-satunya hal yang kami pedulikan di sini 
+
+1539
+01:03:48,110 --> 01:03:50,099
+ diturunkan penyimpanan meja ini 
+
+1540
+01:03:50,099 --> 01:03:52,640
+ dan memastikan bahwa hanya koneksi yang pada akhirnya Anda 
+
+1541
+01:03:52,640 --> 01:03:56,075
+ memang didirikan adalah klien yang sah. 
+
+1542
+01:03:56,075 --> 01:03:58,110
+ Karena itu, kita dapat mengatakan, baik, 
+
+1543
+01:03:58,110 --> 01:04:00,990
+ jika klien ini membuat jutaan koneksi dengan saya, 
+
+1544
+01:04:00,990 --> 01:04:02,698
+ Saya akan berhenti menerima koneksi dari dia. 
+
+1545
+01:04:02,698 --> 01:04:04,150
+ Itu cukup mudah, akhirnya. 
+
+1546
+01:04:04,150 --> 01:04:06,710
+ Masalahnya adalah semua alamat sumber ini, 
+
+1547
+01:04:06,710 --> 01:04:09,180
+ jika mereka palsu, sulit dibedakan 
+
+1548
+01:04:09,180 --> 01:04:11,630
+ dari klien yang sah. 
+
+1549
+01:04:11,630 --> 01:04:12,580
+ Masuk akal? 
+
+1550
+01:04:12,580 --> 01:04:13,530
+ Ya. 
+
+1551
+01:04:13,530 --> 01:04:15,612
+ AUDIENCE: Apakah Anda perlu menyimpan stempel waktu? 
+
+1552
+01:04:15,612 --> 01:04:17,570
+ PROFESOR: Ahh, jadi hal yang pintar, alasannya 
+
+1553
+01:04:17,570 --> 01:04:20,280
+ cap waktu ini adalah semacam slide di sini, 
+
+1554
+01:04:20,280 --> 01:04:23,920
+ adalah ketika kami menerima nilai SNS ini di langkah ketiga, 
+
+1555
+01:04:23,920 --> 01:04:26,190
+ kita perlu mencari tahu, bagaimana Anda 
+
+1556
+01:04:26,190 --> 01:04:27,690
+ hitung input ke fungsi ini F 
+
+1557
+01:04:27,690 --> 01:04:28,951
+ untuk memeriksa apakah itu benar? 
+
+1558
+01:04:28,951 --> 01:04:30,367
+ Jadi sebenarnya, kami mengambil stempel waktu 
+
+1559
+01:04:30,367 --> 01:04:33,510
+ dari ujung paket, dan kami menggunakan itu di dalam 
+
+1560
+01:04:33,510 --> 01:04:35,512
+ perhitungan ini. 
+
+1561
+01:04:35,512 --> 01:04:36,970
+ Segala sesuatu yang lain bisa kita rekonstruksi. 
+
+1562
+01:04:36,970 --> 01:04:39,330
+ Kami tahu siapa yang mengirimi kami langkah ketiga dan paket. 
+
+1563
+01:04:39,330 --> 01:04:41,230
+ Dan kami memiliki semua bidang ini. 
+
+1564
+01:04:41,230 --> 01:04:43,542
+ Dan kita memiliki kunci kita, yang lagi-lagi masih rahasia. 
+
+1565
+01:04:43,542 --> 01:04:46,000
+ Dan stempel waktu ini hanya berasal dari akhir urutan, 
+
+1566
+01:04:46,000 --> 01:04:47,810
+ dari 8 bit terakhir. 
+
+1567
+01:04:47,810 --> 01:04:51,040
+ Dan mungkin itu yang akan kami tolak 
+
+1568
+01:04:51,040 --> 01:04:55,780
+ cap waktu yang terlalu tua, hanya melarang koneksi lama. 
+
+1569
+01:04:55,780 --> 01:04:56,280
+ Ya. 
+
+1570
+01:04:56,280 --> 01:04:57,492
+ AUDIENCE: Jadi saya menebak alasan Anda hanya 
+
+1571
+01:04:57,492 --> 01:04:58,867
+ gunakan ini saat kamu diserang 
+
+1572
+01:04:58,867 --> 01:05:01,160
+ karena Anda kehilangan 8 bit keamanan, atau apa pun? 
+
+1573
+01:05:01,160 --> 01:05:02,630
+ PROFESOR: Ya, itu tidak bagus. 
+
+1574
+01:05:02,630 --> 01:05:04,120
+ Ia memiliki banyak sifat buruk. 
+
+1575
+01:05:04,120 --> 01:05:07,668
+ Salah satunya adalah Anda semacam kehilangan 8 bit keamanan dalam arti tertentu. 
+
+1576
+01:05:07,668 --> 01:05:09,880
+ Karena sekarang bagian yang tak dapat diatur itu adil 
+
+1577
+01:05:09,880 --> 01:05:13,250
+ 24 bit, bukan 32 bit. 
+
+1578
+01:05:13,250 --> 01:05:18,750
+ Masalah lain adalah apa yang terjadi jika Anda kehilangan paket tertentu? 
+
+1579
+01:05:18,750 --> 01:05:26,163
+ Jadi jika paket ini hilang-- jadi biasanya, di TCP, 
+
+1580
+01:05:26,163 --> 01:05:28,580
+ ada seseorang yang bertanggung jawab untuk mentransmisikan ulang sesuatu 
+
+1581
+01:05:28,580 --> 01:05:30,540
+ jika paket tertentu hilang. 
+
+1582
+01:05:30,540 --> 01:05:33,870
+ Dan di TCP, jika paket ketiga hilang, 
+
+1583
+01:05:33,870 --> 01:05:36,490
+ maka klien mungkin tidak menunggu apa pun. 
+
+1584
+01:05:36,490 --> 01:05:39,040
+ Atau maaf, mungkin protokolnya kami 
+
+1585
+01:05:39,040 --> 01:05:40,850
+ berjalan di atas koneksi TCP ini 
+
+1586
+01:05:40,850 --> 01:05:42,308
+ adalah salah satu tempat server seharusnya 
+
+1587
+01:05:42,308 --> 01:05:43,900
+ untuk mengatakan sesuatu pada awalnya. 
+
+1588
+01:05:43,900 --> 01:05:45,290
+ Jadi saya terhubung. 
+
+1589
+01:05:45,290 --> 01:05:46,470
+ Saya hanya mendengarkan. 
+
+1590
+01:05:46,470 --> 01:05:48,869
+ Dan di SMTP, misalnya, server 
+
+1591
+01:05:48,869 --> 01:05:51,160
+ seharusnya mengirim saya semacam ucapan awal 
+
+1592
+01:05:51,160 --> 01:05:53,370
+ dalam protokol. 
+
+1593
+01:05:53,370 --> 01:05:55,446
+ Jadi OK, anggap saya sedang terhubung ke server SMTP. 
+
+1594
+01:05:55,446 --> 01:05:57,160
+ Saya mengirim paket ketiga saya. 
+
+1595
+01:05:57,160 --> 01:05:58,120
+ Saya pikir saya sudah selesai. 
+
+1596
+01:05:58,120 --> 01:06:00,795
+ Saya hanya menunggu server untuk memberi tahu saya, 
+
+1597
+01:06:00,795 --> 01:06:02,190
+ salam sebagai server SMTP. 
+
+1598
+01:06:02,190 --> 01:06:04,316
+ Silakan kirim surat. 
+
+1599
+01:06:04,316 --> 01:06:05,440
+ Paket ini bisa hilang. 
+
+1600
+01:06:05,440 --> 01:06:08,340
+ Dan dalam TCP nyata, cara ini ditangani 
+
+1601
+01:06:08,340 --> 01:06:12,540
+ adalah bahwa server dari langkah kedua mengingat itu, hei, saya 
+
+1602
+01:06:12,540 --> 01:06:13,860
+ mengirim tanggapan ini. 
+
+1603
+01:06:13,860 --> 01:06:15,867
+ Saya tidak pernah mendengar kembali, hal ketiga ini. 
+
+1604
+01:06:15,867 --> 01:06:17,283
+ Jadi itu server yang seharusnya 
+
+1605
+01:06:17,283 --> 01:06:19,829
+ untuk mengirim ulang paket ini untuk memicu klien 
+
+1606
+01:06:19,829 --> 01:06:22,489
+ untuk mengirim ulang paket ketiga ini. 
+
+1607
+01:06:22,489 --> 01:06:24,530
+ Tentu saja, jika server tidak menyimpan status apa pun, 
+
+1608
+01:06:24,530 --> 01:06:26,660
+ tidak tahu apa yang harus dikirim ulang. 
+
+1609
+01:06:26,660 --> 01:06:28,720
+ Jadi ini benar-benar membuat pembentukan koneksi 
+
+1610
+01:06:28,720 --> 01:06:31,669
+ berpotensi terprogram di mana Anda 
+
+1611
+01:06:31,669 --> 01:06:33,710
+ bisa memasuki keadaan aneh ini di mana kedua belah pihak berada 
+
+1612
+01:06:33,710 --> 01:06:34,714
+ menunggu satu sama lain. 
+
+1613
+01:06:34,714 --> 01:06:36,130
+ Yah, servernya bahkan tidak tahu 
+
+1614
+01:06:36,130 --> 01:06:37,421
+ bahwa itu menunggu apa pun. 
+
+1615
+01:06:37,421 --> 01:06:39,180
+ Dan klien sedang menunggu server. 
+
+1616
+01:06:39,180 --> 01:06:41,138
+ Dan server pada dasarnya menjatuhkan tanggung jawab 
+
+1617
+01:06:41,138 --> 01:06:42,250
+ dengan tidak menyimpan negara. 
+
+1618
+01:06:42,250 --> 01:06:44,512
+ Jadi ini alasan lain kenapa kamu 
+
+1619
+01:06:44,512 --> 01:06:46,470
+ jangan jalankan ini dalam mode produksi setiap saat. 
+
+1620
+01:06:46,470 --> 01:06:47,216
+ Ya. 
+
+1621
+01:06:47,216 --> 01:06:49,950
+ AUDIENCE: Mungkin juga Anda bisa memiliki komisi data 
+
+1622
+01:06:49,950 --> 01:06:53,530
+ jika Anda membuat dua koneksi yang sangat berumur pendek dengan benar 
+
+1623
+01:06:53,530 --> 01:06:55,600
+ setelah satu sama lain dari host yang sama. 
+
+1624
+01:06:55,600 --> 01:06:56,105
+ PROFESOR: Tentu saja, ya, ya. 
+
+1625
+01:06:56,105 --> 01:06:58,370
+ Jadi, hal lain, tentu saja, karena kita menyerah 
+
+1626
+01:06:58,370 --> 01:07:01,340
+ untuk menggunakan bagian gaya lama ISN ini, 
+
+1627
+01:07:01,340 --> 01:07:03,080
+ sekarang kita melepaskan perlindungan terhadap 
+
+1628
+01:07:03,080 --> 01:07:05,400
+ beberapa koneksi ini dalam waktu yang singkat 
+
+1629
+01:07:05,400 --> 01:07:07,400
+ independen satu sama lain. 
+
+1630
+01:07:07,400 --> 01:07:09,322
+ Jadi saya pikir ada sejumlah trade-off. 
+
+1631
+01:07:09,322 --> 01:07:10,770
+ Kami baru saja membicarakan tiga. 
+
+1632
+01:07:10,770 --> 01:07:12,830
+ Ada beberapa hal yang Anda khawatirkan. 
+
+1633
+01:07:12,830 --> 01:07:15,790
+ Tapi itu tidak bagus. 
+
+1634
+01:07:15,790 --> 01:07:18,150
+ Jika kita bisa mendesain protokol dari awal menjadi lebih baik, 
+
+1635
+01:07:18,150 --> 01:07:21,390
+ kita bisa saja memiliki header 64-bit yang bagus untuk ini 
+
+1636
+01:07:21,390 --> 01:07:23,001
+ dan nilai 64-bit untuk ini. 
+
+1637
+01:07:23,001 --> 01:07:24,750
+ Dan kemudian kita dapat mengaktifkan ini sepanjang waktu 
+
+1638
+01:07:24,750 --> 01:07:26,458
+ tanpa menyerah barang-barang lainnya dan semua 
+
+1639
+01:07:26,458 --> 01:07:28,148
+ hal-hal baik ini. 
+
+1640
+01:07:28,148 --> 01:07:28,648
+ Ya. 
+
+1641
+01:07:28,648 --> 01:07:31,133
+ AUDIENCE: Saya hanya punya satu pertanyaan cepat di SNS. 
+
+1642
+01:07:31,133 --> 01:07:36,432
+ Pada langkah kedua, [TIDAK JELAS], apakah mereka harus sama? 
+
+1643
+01:07:36,432 --> 01:07:37,821
+ PROFESOR: SNS dan SNS ini? 
+
+1644
+01:07:37,821 --> 01:07:38,750
+ AUDIENCE: Mhm. 
+
+1645
+01:07:38,750 --> 01:07:41,400
+ PROFESOR: Ya, karena jika tidak, 
+
+1646
+01:07:41,400 --> 01:07:45,685
+ server tidak memiliki cara untuk menyimpulkan bahwa klien ini 
+
+1647
+01:07:45,685 --> 01:07:47,330
+ paket kami. 
+
+1648
+01:07:47,330 --> 01:07:51,020
+ Jika server tidak memeriksa apakah SNS ini memiliki nilai yang sama 
+
+1649
+01:07:51,020 --> 01:07:54,197
+ sebelumnya, maka ini sebenarnya akan lebih buruk. 
+
+1650
+01:07:54,197 --> 01:07:56,405
+ Karena saya bisa memalsukan koneksi dari beberapa sewenang-wenang 
+
+1651
+01:07:56,405 --> 01:07:58,810
+ Alamat IP, kemudian dapatkan respons ini. 
+
+1652
+01:07:58,810 --> 01:08:00,362
+ Mungkin saya bahkan tidak mengerti, karena itu 
+
+1653
+01:08:00,362 --> 01:08:01,320
+ pergi ke IP yang berbeda. 
+
+1654
+01:08:01,320 --> 01:08:04,114
+ Lalu saya membuat koneksi dari beberapa alamat IP lainnya. 
+
+1655
+01:08:04,114 --> 01:08:05,530
+ Dan kemudian server dipertahankan 
+
+1656
+01:08:05,530 --> 01:08:06,812
+ seluruh koneksi langsung. 
+
+1657
+01:08:06,812 --> 01:08:09,020
+ Mungkin server melintasi sisi lain menungguku 
+
+1658
+01:08:09,020 --> 01:08:10,800
+ untuk mengirim data dan sebagainya. 
+
+1659
+01:08:10,800 --> 01:08:13,660
+ AUDIENCE: Tapi stempel waktu akan berbeda, bukan? 
+
+1660
+01:08:13,660 --> 01:08:15,288
+ Jadi bagaimana server menghitung ulang 
+
+1661
+01:08:15,288 --> 01:08:17,707
+ itu dengan cap waktu baru dan null yang sebelumnya 
+
+1662
+01:08:17,707 --> 01:08:19,442
+ jika tidak menyimpan negara apa pun? 
+
+1663
+01:08:19,443 --> 01:08:21,859
+ PROFESOR: Jadi cara kerjanya adalah cap waktu ini, seperti saya 
+
+1664
+01:08:21,859 --> 01:08:23,149
+ berkata, tentu saja berbutir. 
+
+1665
+01:08:23,149 --> 01:08:24,898
+ Jadi mereka dalam skala menit. 
+
+1666
+01:08:24,899 --> 01:08:26,631
+ Jadi jika Anda terhubung dalam menit yang sama, 
+
+1667
+01:08:26,631 --> 01:08:30,540
+ maka Anda dalam kondisi yang baik. 
+
+1668
+01:08:30,540 --> 01:08:33,819
+ Dan jika Anda terhubung pada batas menit, baik, terlalu buruk. 
+
+1669
+01:08:33,819 --> 01:08:35,568
+ Namun masalah lain dengan skema itu 
+
+1670
+01:08:35,569 --> 01:08:37,154
+ tidak sempurna dalam banyak hal. 
+
+1671
+01:08:37,154 --> 01:08:39,179
+ Tetapi kebanyakan sistem operasi, termasuk Linux, 
+
+1672
+01:08:39,180 --> 01:08:42,439
+ sebenarnya memiliki cara mendeteksi jika ada terlalu banyak entri 
+
+1673
+01:08:42,439 --> 01:08:44,688
+ membangun di meja ini yang tidak selesai. 
+
+1674
+01:08:44,689 --> 01:08:46,750
+ Ini beralih ke skema lain sebagai gantinya 
+
+1675
+01:08:46,750 --> 01:08:48,590
+ untuk memastikan tidak meluap tabel ini. 
+
+1676
+01:08:48,590 --> 01:08:49,071
+ Ya. 
+
+1677
+01:08:49,071 --> 01:08:50,737
+ AUDIENCE: Jadi jika penyerang memiliki kontrol 
+
+1678
+01:08:50,737 --> 01:08:53,399
+ dari banyak alamat IP, dan mereka melakukan ini, 
+
+1679
+01:08:53,399 --> 01:08:55,323
+ dan bahkan jika Anda mengubahnya sama-- 
+
+1680
+01:08:55,323 --> 01:08:57,031
+ PROFESOR: Ya, jadi benar-benar ada 
+
+1681
+01:08:57,032 --> 01:08:58,644
+ tidak banyak yang bisa Anda lakukan. 
+
+1682
+01:08:58,644 --> 01:09:00,060
+ Alasan kami sangat khawatir 
+
+1683
+01:09:00,060 --> 01:09:01,560
+ tentang skema ini di tempat pertama 
+
+1684
+01:09:01,560 --> 01:09:04,484
+ adalah karena kami ingin memfilter atau entah bagaimana 
+
+1685
+01:09:04,484 --> 01:09:06,827
+ membedakan antara penyerang dan orang-orang baik. 
+
+1686
+01:09:06,828 --> 01:09:09,290
+ Dan jika penyerang memiliki lebih banyak alamat IP 
+
+1687
+01:09:09,290 --> 01:09:11,420
+ dan hanya mengontrol lebih banyak mesin daripada orang baik, 
+
+1688
+01:09:11,420 --> 01:09:14,002
+ maka dia dapat terhubung ke server kami dan meminta banyak web 
+
+1689
+01:09:14,002 --> 01:09:16,209
+ halaman atau mempertahankan koneksi. 
+
+1690
+01:09:16,210 --> 01:09:18,100
+ Dan sangat sulit bagi server 
+
+1691
+01:09:18,100 --> 01:09:21,060
+ untuk membedakan apakah ini klien yang sah atau adil 
+
+1692
+01:09:21,060 --> 01:09:23,350
+ penyerang mengikat sumber daya server. 
+
+1693
+01:09:23,350 --> 01:09:24,880
+ Jadi Anda memang benar. 
+
+1694
+01:09:24,880 --> 01:09:27,170
+ Ini hanya membahas kasus di mana penyerang 
+
+1695
+01:09:27,170 --> 01:09:29,060
+ memiliki sejumlah kecil alamat IP 
+
+1696
+01:09:29,060 --> 01:09:32,130
+ dan ingin memperkuat pengaruhnya. 
+
+1697
+01:09:32,130 --> 01:09:34,109
+ Tetapi ini adalah kekhawatiran. 
+
+1698
+01:09:34,109 --> 01:09:38,819
+ Dan faktanya, hari ini mungkin ada beberapa penyerang yang mengontrol 
+
+1699
+01:09:38,819 --> 01:09:40,488
+ sejumlah besar mesin yang disusupi, 
+
+1700
+01:09:40,488 --> 01:09:42,529
+ seperti hanya mesin desktop dari seseorang yang tidak 
+
+1701
+01:09:42,529 --> 01:09:44,331
+ tempelkan mesin mereka dengan benar. 
+
+1702
+01:09:44,331 --> 01:09:46,580
+ Dan kemudian mereka bisa melakukan serangan denial of service 
+
+1703
+01:09:46,580 --> 01:09:48,960
+ dari set mesin terdistribusi ini di seluruh dunia. 
+
+1704
+01:09:48,960 --> 01:09:53,680
+ Dan itu cukup sulit untuk dipertahankan. 
+
+1705
+01:09:53,680 --> 01:09:56,030
+ Jadi hal menarik lainnya yang ingin saya sebutkan 
+
+1706
+01:09:56,030 --> 01:10:02,200
+ adalah penolakan serangan layanan, tetapi dengan cara tertentu 
+
+1707
+01:10:02,200 --> 01:10:05,049
+ bahwa protokol lain membuat mereka lebih buruk. 
+
+1708
+01:10:05,049 --> 01:10:07,340
+ Saya kira protokol lain memungkinkan penolakan serangan layanan 
+
+1709
+01:10:07,340 --> 01:10:08,131
+ di tempat pertama. 
+
+1710
+01:10:08,131 --> 01:10:08,692
+ Maafkan saya. 
+
+1711
+01:10:08,692 --> 01:10:11,150
+ Tetapi ada beberapa yang merupakan protokol yang sangat khusus 
+
+1712
+01:10:11,150 --> 01:10:13,370
+ rentan terhadap pelecehan. 
+
+1713
+01:10:13,370 --> 01:10:16,510
+ Dan mungkin contoh yang bagus tentang itu 
+
+1714
+01:10:16,510 --> 01:10:19,150
+ adalah, sekali lagi, protokol DNS ini yang kami lihat sebelumnya. 
+
+1715
+01:10:19,150 --> 01:10:21,890
+ Jadi protokol DNS-- kami masih memilikinya 
+
+1716
+01:10:21,890 --> 01:10:24,990
+ di sini - melibatkan klien yang mengirim permintaan 
+
+1717
+01:10:24,990 --> 01:10:27,540
+ ke server dan server mengirim balasan kembali 
+
+1718
+01:10:27,540 --> 01:10:29,300
+ kepada klien. 
+
+1719
+01:10:29,300 --> 01:10:34,310
+ Dan dalam banyak kasus, responsnya lebih besar dari permintaan. 
+
+1720
+01:10:34,310 --> 01:10:36,890
+ Permintaannya bisa saja, ceritakan tentang mit.edu. 
+
+1721
+01:10:36,890 --> 01:10:38,710
+ Dan jawabannya mungkin semua catatan 
+
+1722
+01:10:38,710 --> 01:10:41,290
+ server tentang mit.edu-- alamat email, 
+
+1723
+01:10:41,290 --> 01:10:44,660
+ server mail untuk mit.edu, catatan yang ditetapkan jika itu 
+
+1724
+01:10:44,660 --> 01:10:46,030
+ menggunakan DNS SEC, dan seterusnya. 
+
+1725
+01:10:46,030 --> 01:10:47,630
+ Jadi, kueri mungkin 100 byte. 
+
+1726
+01:10:47,630 --> 01:10:50,946
+ Tanggapannya bisa lebih dari 1.000 byte. 
+
+1727
+01:10:50,946 --> 01:10:53,120
+ Jadi misalkan Anda ingin banjir 
+
+1728
+01:10:53,120 --> 01:10:57,510
+ beberapa pria dengan banyak paket atau banyak bandwidth. 
+
+1729
+01:10:57,510 --> 01:10:59,074
+ Yah, Anda mungkin hanya bisa mengirim 
+
+1730
+01:10:59,074 --> 01:11:00,240
+ sejumlah kecil bandwidth. 
+
+1731
+01:11:00,240 --> 01:11:03,030
+ Tapi apa yang bisa Anda lakukan adalah Anda bisa memalsukan pertanyaan ke DNS 
+
+1732
+01:11:03,030 --> 01:11:04,725
+ server atas nama orang itu. 
+
+1733
+01:11:04,725 --> 01:11:06,170
+ Jadi Anda hanya perlu mengirim 100 byte 
+
+1734
+01:11:06,170 --> 01:11:10,360
+ ke beberapa server DNS yang berpura-pura menjadi pertanyaan dari pria malang itu. 
+
+1735
+01:11:10,360 --> 01:11:12,880
+ Dan server DNS akan mengirim 1.000 byte kepadanya 
+
+1736
+01:11:12,880 --> 01:11:14,260
+ atas nama Anda. 
+
+1737
+01:11:14,260 --> 01:11:17,920
+ Jadi ini adalah fitur yang bermasalah dari protokol ini. 
+
+1738
+01:11:17,920 --> 01:11:21,510
+ Karena itu memungkinkan Anda untuk memperbesar serangan bandwidth. 
+
+1739
+01:11:21,510 --> 01:11:23,285
+ Dan sebagian lagi untuk alasan yang sama kami 
+
+1740
+01:11:23,285 --> 01:11:26,250
+ berbicara tentang dengan serangan banjir SYN TCP, 
+
+1741
+01:11:26,250 --> 01:11:28,740
+ sangat sulit untuk server, untuk server DNS, 
+
+1742
+01:11:28,740 --> 01:11:32,110
+ dalam hal ini, untuk mengetahui apakah permintaan ini valid atau tidak. 
+
+1743
+01:11:32,110 --> 01:11:34,439
+ Karena tidak ada otentikasi atau tidak 
+
+1744
+01:11:34,439 --> 01:11:35,980
+ pertukaran nomor urut terjadi 
+
+1745
+01:11:35,980 --> 01:11:38,188
+ untuk mengatakan bahwa ini adalah pria yang tepat yang terhubung dengan Anda, 
+
+1746
+01:11:38,188 --> 01:11:39,520
+ dan sebagainya. 
+
+1747
+01:11:39,520 --> 01:11:42,450
+ Jadi sebenarnya ini masih menjadi masalah dalam DNS saat ini. 
+
+1748
+01:11:42,450 --> 01:11:45,180
+ Dan itu cukup sering digunakan 
+
+1749
+01:11:45,180 --> 01:11:47,730
+ untuk menyerang orang dengan serangan bandwidth. 
+
+1750
+01:11:47,730 --> 01:11:50,184
+ Jadi, jika Anda memiliki jumlah bandwidth tertentu, 
+
+1751
+01:11:50,184 --> 01:11:51,600
+ Anda akan jauh lebih efektif 
+
+1752
+01:11:51,600 --> 01:11:54,380
+ jika Anda mencerminkan serangan Anda dari server DNS. 
+
+1753
+01:11:54,380 --> 01:11:57,400
+ Dan server DNS ini sangat terisi dengan baik. 
+
+1754
+01:11:57,400 --> 01:11:59,460
+ Dan pada dasarnya mereka harus menanggapi setiap pertanyaan 
+
+1755
+01:11:59,460 --> 01:12:00,127
+ di luar sana. 
+
+1756
+01:12:00,127 --> 01:12:01,960
+ Karena jika mereka berhenti menanggapi permintaan, 
+
+1757
+01:12:01,960 --> 01:12:03,530
+ maka mungkin beberapa permintaan yang sah akan didapat 
+
+1758
+01:12:03,530 --> 01:12:04,030
+ menjatuhkan. 
+
+1759
+01:12:04,030 --> 01:12:05,846
+ Jadi ini adalah masalah besar dalam praktiknya. 
+
+1760
+01:12:05,846 --> 01:12:06,346
+ Ya. 
+
+1761
+01:12:06,346 --> 01:12:08,786
+ AUDIENCE: Jadi jika Anda masih bisa melihatnya di server DNS, 
+
+1762
+01:12:08,786 --> 01:12:15,140
+ [INAUDIBLE] meminta dan tidak pernah membalas to-- 
+
+1763
+01:12:15,140 --> 01:12:17,820
+ PROFESOR: Benar, ya, jadi mungkin untuk memodifikasi 
+
+1764
+01:12:17,820 --> 01:12:20,757
+ server DNS untuk menyimpan semacam negara seperti ini. 
+
+1765
+01:12:20,757 --> 01:12:22,965
+ AUDIENCE: Itulah alasan mengapa ini masih berfungsi sekarang, 
+
+1766
+01:12:22,965 --> 01:12:24,170
+ karena mereka tidak menyimpan negara? 
+
+1767
+01:12:24,170 --> 01:12:25,878
+ PROFESOR: Ya, saya pikir beberapa orang 
+
+1768
+01:12:25,878 --> 01:12:29,015
+ mulai memodifikasi server DNS untuk mencoba menyimpan status. 
+
+1769
+01:12:29,015 --> 01:12:32,020
+ Seringkali, ada banyak server DNS di luar sana 
+
+1770
+01:12:32,020 --> 01:12:33,520
+ itu tidak masalah. 
+
+1771
+01:12:33,520 --> 01:12:37,498
+ Bahkan jika Anda tampak melakukan 10 pertanyaan terhadap setiap DNS 
+
+1772
+01:12:37,498 --> 01:12:38,900
+ server, itu masih setiap paket 
+
+1773
+01:12:38,900 --> 01:12:42,060
+ diperkuat oleh beberapa faktor penting. 
+
+1774
+01:12:42,060 --> 01:12:43,450
+ Dan mereka harus merespons. 
+
+1775
+01:12:43,450 --> 01:12:46,125
+ Karena mungkin klien itu benar-benar mencoba mengeluarkan kueri ini. 
+
+1776
+01:12:46,125 --> 01:12:47,000
+ Jadi ini masalah. 
+
+1777
+01:12:47,000 --> 01:12:49,190
+ Ya, jadi Anda benar, jika ini adalah salah satu server DNS, 
+
+1778
+01:12:49,190 --> 01:12:51,170
+ maka ini mungkin bukan masalah besar. 
+
+1779
+01:12:51,170 --> 01:12:53,870
+ Masalahnya juga adalah server root untuk DNS, 
+
+1780
+01:12:53,870 --> 01:12:55,430
+ misalnya, bukan mesin tunggal. 
+
+1781
+01:12:55,430 --> 01:12:57,360
+ Ini sebenarnya rak dan rak server. 
+
+1782
+01:12:57,360 --> 01:12:59,120
+ Karena mereka sangat banyak digunakan. 
+
+1783
+01:12:59,120 --> 01:13:02,085
+ Dan mencoba mempertahankan keadaan di semua mesin ini 
+
+1784
+01:13:02,085 --> 01:13:03,430
+ mungkin tidak trivial. 
+
+1785
+01:13:03,430 --> 01:13:05,850
+ Jadi karena itu disalahgunakan lebih banyak, mungkin itu 
+
+1786
+01:13:05,850 --> 01:13:09,582
+ akan lebih berharga untuk mempertahankan negara ini. 
+
+1787
+01:13:09,582 --> 01:13:11,082
+ Saya kira prinsip umum yang Anda inginkan 
+
+1788
+01:13:11,082 --> 01:13:15,120
+ untuk mengikuti protokol apa pun-- baik, 
+
+1789
+01:13:15,120 --> 01:13:17,340
+ mungkin prinsip yang baik-- adalah membuatnya 
+
+1790
+01:13:17,340 --> 01:13:19,855
+ klien melakukan setidaknya pekerjaan sebanyak yang dilakukan server. 
+
+1791
+01:13:19,855 --> 01:13:22,450
+ Jadi di sini, masalahnya adalah klien tidak melakukan banyak pekerjaan 
+
+1792
+01:13:22,450 --> 01:13:23,310
+ sebagai server. 
+
+1793
+01:13:23,310 --> 01:13:27,280
+ Itulah sebabnya server dapat membantu klien memperkuat efek ini. 
+
+1794
+01:13:27,280 --> 01:13:29,120
+ Jika Anda mendesain ulang DNS dari awal, 
+
+1795
+01:13:29,120 --> 01:13:30,970
+ dan ini benar-benar perhatian besar Anda, 
+
+1796
+01:13:30,970 --> 01:13:33,510
+ maka itu mungkin cukup mudah untuk memperbaiki ini. 
+
+1797
+01:13:33,510 --> 01:13:36,200
+ Klien harus mengirim permintaan itu 
+
+1798
+01:13:36,200 --> 01:13:40,090
+ memiliki tambahan padding byte hanya di sana hanya membuang-buang bandwidth. 
+
+1799
+01:13:40,090 --> 01:13:42,610
+ Dan kemudian server akan merespon kembali 
+
+1800
+01:13:42,610 --> 01:13:44,880
+ dengan respon yang paling besar sebesar itu. 
+
+1801
+01:13:44,880 --> 01:13:46,400
+ Dan jika Anda menginginkan respons yang lebih besar, mungkin 
+
+1802
+01:13:46,400 --> 01:13:48,858
+ server akan mengatakan, maaf, padding Anda tidak cukup besar. 
+
+1803
+01:13:48,858 --> 01:13:49,780
+ Kirimkan saya lebih banyak padding. 
+
+1804
+01:13:49,780 --> 01:13:53,300
+ Dan dengan cara ini, Anda menjamin bahwa server DNS tidak dapat digunakan 
+
+1805
+01:13:53,300 --> 01:13:58,676
+ pernah untuk memperkuat jenis serangan bandwidth ini. 
+
+1806
+01:13:58,676 --> 01:14:00,050
+ Sebenarnya, masalah semacam ini 
+
+1807
+01:14:00,050 --> 01:14:02,390
+ terjadi juga pada tingkat yang lebih tinggi juga. 
+
+1808
+01:14:02,390 --> 01:14:04,660
+ Jadi dalam aplikasi web, Anda sering 
+
+1809
+01:14:04,660 --> 01:14:07,505
+ memiliki layanan web yang melakukan banyak dan banyak perhitungan 
+
+1810
+01:14:07,505 --> 01:14:08,825
+ atas nama satu permintaan. 
+
+1811
+01:14:08,825 --> 01:14:11,200
+ Dan sering ada penolakan serangan layanan di tingkat itu 
+
+1812
+01:14:11,200 --> 01:14:15,200
+ di mana musuh tahu bahwa operasi tertentu sangat penting 
+
+1813
+01:14:15,200 --> 01:14:17,290
+ mahal, dan mereka hanya akan meminta operasi itu 
+
+1814
+01:14:17,290 --> 01:14:18,940
+ harus dilakukan berulang kali. 
+
+1815
+01:14:18,940 --> 01:14:22,520
+ Dan kecuali Anda hati-hati merancang protokol dan aplikasi Anda 
+
+1816
+01:14:22,520 --> 01:14:24,610
+ untuk memungkinkan klien membuktikan itu, oh, aku 
+
+1817
+01:14:24,610 --> 01:14:28,670
+ membakar setidaknya sebanyak pekerjaan yang Anda lakukan, atau sesuatu seperti ini, 
+
+1818
+01:14:28,670 --> 01:14:32,803
+ maka sulit untuk bertahan melawan hal-hal ini juga. 
+
+1819
+01:14:32,803 --> 01:14:34,760
+ Masuk akal? 
+
+1820
+01:14:34,760 --> 01:14:36,950
+ Baiklah, jadi saya kira yang terakhir 
+
+1821
+01:14:36,950 --> 01:14:38,990
+ Saya ingin secara singkat menyentuh tentang kertas itu 
+
+1822
+01:14:38,990 --> 01:14:41,150
+ yang kita bicarakan juga adalah serangan routing ini. 
+
+1823
+01:14:41,150 --> 01:14:43,120
+ Dan alasan serangan ini menarik 
+
+1824
+01:14:43,120 --> 01:14:46,740
+ adalah mereka mungkin bermunculan tingkat di atas protokol ini 
+
+1825
+01:14:46,740 --> 01:14:48,200
+ masalah tingkat transportasi. 
+
+1826
+01:14:48,200 --> 01:14:50,710
+ Dan lihat apa yang salah dalam aplikasi. 
+
+1827
+01:14:50,710 --> 01:14:52,960
+ Dan protokol routing sangat menarik 
+
+1828
+01:14:52,960 --> 01:14:53,460
+ contoh. 
+
+1829
+01:14:53,460 --> 01:14:56,360
+ Karena sering tempat di mana 
+
+1830
+01:14:56,360 --> 01:14:58,670
+ kepercayaan dan semacam konfigurasi awal 
+
+1831
+01:14:58,670 --> 01:15:01,230
+ bootstrap di tempat pertama. 
+
+1832
+01:15:01,230 --> 01:15:04,200
+ Dan mudah untuk mendapatkan kesalahan itu. 
+
+1833
+01:15:04,200 --> 01:15:07,800
+ Dan bahkan hari ini, tidak ada mekanisme otentikasi yang bagus 
+
+1834
+01:15:07,800 --> 01:15:08,790
+ untuk itu. 
+
+1835
+01:15:08,790 --> 01:15:11,560
+ Mungkin contoh yang paling jelas adalah protokol DHCP 
+
+1836
+01:15:11,560 --> 01:15:13,660
+ yang kalian gunakan saat membuka komputer 
+
+1837
+01:15:13,660 --> 01:15:16,017
+ atau terhubung ke jaringan nirkabel atau kabel. 
+
+1838
+01:15:16,017 --> 01:15:17,850
+ Komputer hanya mengirimkan sebuah paket yang mengatakan, 
+
+1839
+01:15:17,850 --> 01:15:20,370
+ Saya ingin alamat IP dan hal-hal lain. 
+
+1840
+01:15:20,370 --> 01:15:23,900
+ Dan beberapa server DHCP di MIT biasanya menerima paket itu 
+
+1841
+01:15:23,900 --> 01:15:27,957
+ dan mengirim Anda kembali, inilah alamat IP yang harus Anda gunakan. 
+
+1842
+01:15:27,957 --> 01:15:29,790
+ Dan inilah server DNS yang harus Anda gunakan, 
+
+1843
+01:15:29,790 --> 01:15:33,030
+ dan data konfigurasi menarik lainnya. 
+
+1844
+01:15:33,030 --> 01:15:35,980
+ Dan masalahnya adalah paket permintaan DHCP hanya 
+
+1845
+01:15:35,980 --> 01:15:37,990
+ penyiaran di jaringan lokal mencoba 
+
+1846
+01:15:37,990 --> 01:15:39,040
+ untuk mencapai server DHCP. 
+
+1847
+01:15:39,040 --> 01:15:40,350
+ Karena kamu sebenarnya tidak tahu apa 
+
+1848
+01:15:40,350 --> 01:15:41,934
+ DHCP akan lebih cepat. 
+
+1849
+01:15:41,934 --> 01:15:44,433
+ Anda hanya mencolokkan ke jaringan, pertama kali Anda 
+
+1850
+01:15:44,433 --> 01:15:45,310
+ di sini, katakanlah. 
+
+1851
+01:15:45,310 --> 01:15:47,970
+ Dan klien Anda tidak tahu harus berbuat apa lagi 
+
+1852
+01:15:47,970 --> 01:15:49,770
+ atau siapa yang harus dipercaya. 
+
+1853
+01:15:49,770 --> 01:15:52,890
+ Dan akibatnya, semua mesin di jaringan lokal 
+
+1854
+01:15:52,890 --> 01:15:54,660
+ dapat mencegat permintaan DHCP ini 
+
+1855
+01:15:54,660 --> 01:15:56,734
+ dan membalas kembali dengan alamat IP apa pun 
+
+1856
+01:15:56,734 --> 01:15:59,150
+ yang bisa digunakan klien, dan mungkin juga memberi tahu klien, 
+
+1857
+01:15:59,150 --> 01:16:01,525
+ hei Anda harus menggunakan server DNS saya bukan yang asli. 
+
+1858
+01:16:01,525 --> 01:16:03,774
+ Dan kemudian Anda dapat mencegat permintaan DNS di masa mendatang 
+
+1859
+01:16:03,774 --> 01:16:04,890
+ dari klien dan seterusnya. 
+
+1860
+01:16:04,890 --> 01:16:06,900
+ Masuk akal? 
+
+1861
+01:16:06,900 --> 01:16:09,640
+ Jadi saya pikir protokol ini cukup sulit untuk diperbaiki. 
+
+1862
+01:16:09,640 --> 01:16:12,300
+ Dan dalam skala global, protokol seperti BGP 
+
+1863
+01:16:12,300 --> 01:16:14,940
+ izinkan setiap peserta untuk mengumumkan IP tertentu 
+
+1864
+01:16:14,940 --> 01:16:18,505
+ alamat awalan untuk dunia untuk mengetahuinya 
+
+1865
+01:16:18,505 --> 01:16:21,200
+ dan rute paket ke arah penyerang. 
+
+1866
+01:16:21,200 --> 01:16:25,053
+ Sudah pasti ada serangan di mana beberapa router berpartisipasi 
+
+1867
+01:16:25,053 --> 01:16:29,546
+ di BGP mengatakan, oh, saya adalah cara yang sangat cepat 
+
+1868
+01:16:29,546 --> 01:16:31,409
+ untuk mencapai rentang alamat IP khusus ini. 
+
+1869
+01:16:31,409 --> 01:16:32,950
+ Dan kemudian semua router di dunia 
+
+1870
+01:16:32,950 --> 01:16:36,090
+ katakan, OK, tentu saja, kami akan mengirimkan paket itu kepada Anda. 
+
+1871
+01:16:36,090 --> 01:16:40,330
+ Dan mungkin yang paling sering menyalahgunakan ini 
+
+1872
+01:16:40,330 --> 01:16:42,432
+ oleh spammer yang ingin mengirim spam, 
+
+1873
+01:16:42,432 --> 01:16:44,720
+ tetapi alamat IP lama mereka masuk daftar hitam di mana-mana, 
+
+1874
+01:16:44,720 --> 01:16:46,000
+ karena mereka mengirim spam. 
+
+1875
+01:16:46,000 --> 01:16:47,910
+ Jadi mereka hanya memilih beberapa alamat IP acak. 
+
+1876
+01:16:47,910 --> 01:16:50,332
+ Mereka mengumumkan itu, oh ya, alamat IP ini sekarang di sini. 
+
+1877
+01:16:50,332 --> 01:16:52,290
+ Dan kemudian mereka mengumumkan alamat IP ini, 
+
+1878
+01:16:52,290 --> 01:16:54,080
+ kirim spam dari situ, lalu putuskan sambungannya. 
+
+1879
+01:16:54,080 --> 01:16:57,935
+ Dan itu disalahgunakan dengan jumlah yang adil dengan cara ini. 
+
+1880
+01:16:57,935 --> 01:17:00,382
+ Ini semakin kurang sekarang. 
+
+1881
+01:17:00,382 --> 01:17:01,590
+ Tapi agak sulit diperbaiki. 
+
+1882
+01:17:01,590 --> 01:17:04,560
+ Karena untuk memperbaikinya, Anda punya 
+
+1883
+01:17:04,560 --> 01:17:07,434
+ untuk mengetahui apakah seseorang benar-benar memiliki alamat IP itu atau tidak. 
+
+1884
+01:17:07,434 --> 01:17:09,100
+ Dan sulit untuk melakukannya tanpa membangun 
+
+1885
+01:17:09,100 --> 01:17:12,100
+ beberapa database global, mungkin, kunci kriptografi 
+
+1886
+01:17:12,100 --> 01:17:13,890
+ untuk setiap ISP di dunia. 
+
+1887
+01:17:13,890 --> 01:17:16,510
+ Dan dibutuhkan sedikit usaha oleh seseorang 
+
+1888
+01:17:16,510 --> 01:17:18,080
+ untuk membangun basis data ini. 
+
+1889
+01:17:18,080 --> 01:17:20,640
+ Hal yang sama sebenarnya berlaku untuk DNS SEC juga. 
+
+1890
+01:17:20,640 --> 01:17:23,350
+ Untuk mengetahui tanda tangan mana yang harus dicari dalam DNS, 
+
+1891
+01:17:23,350 --> 01:17:25,690
+ Anda harus memiliki kunci kriptografi yang terkait 
+
+1892
+01:17:25,690 --> 01:17:27,420
+ dengan setiap entitas di dunia. 
+
+1893
+01:17:27,420 --> 01:17:28,677
+ Dan itu tidak ada di sana sekarang. 
+
+1894
+01:17:28,677 --> 01:17:30,010
+ Mungkin itu akan dibangun perlahan. 
+
+1895
+01:17:30,010 --> 01:17:34,910
+ Tapi itu pasti masalah besar untuk mengadopsi DNS SEC. 
+
+1896
+01:17:34,910 --> 01:17:37,542
+ Baiklah, jadi kurasa ada yang harus diambil dari ini 
+
+1897
+01:17:37,542 --> 01:17:39,500
+ mungkin hanya sekumpulan pelajaran tentang apa yang tidak 
+
+1898
+01:17:39,500 --> 01:17:41,200
+ lakukan secara umum dalam protokol. 
+
+1899
+01:17:41,200 --> 01:17:43,074
+ Tetapi sebenarnya juga satu hal yang ingin saya sebutkan 
+
+1900
+01:17:43,074 --> 01:17:46,307
+ adalah bahwa meskipun mungkin kerahasiaan dan integritas 
+
+1901
+01:17:46,307 --> 01:17:48,390
+ sifat baik dan kekuatan pendorong tingkat yang lebih tinggi 
+
+1902
+01:17:48,390 --> 01:17:50,637
+ abstraksi, seperti dalam protokol kriptografi 
+
+1903
+01:17:50,637 --> 01:17:53,220
+ di aplikasi-- dan kita akan melihat itu di kuliah berikutnya-- 
+
+1904
+01:17:53,220 --> 01:17:55,303
+ satu hal yang benar-benar Anda inginkan dari jaringan 
+
+1905
+01:17:55,303 --> 01:17:57,384
+ adalah semacam ketersediaan dan ketahanan DOS. 
+
+1906
+01:17:57,384 --> 01:17:59,050
+ Karena sifat-sifat ini jauh lebih sulit 
+
+1907
+01:17:59,050 --> 01:18:00,850
+ untuk mencapai level yang lebih tinggi dalam tumpukan. 
+
+1908
+01:18:00,850 --> 01:18:02,266
+ Jadi Anda benar-benar ingin menghindari hal-hal 
+
+1909
+01:18:02,266 --> 01:18:04,710
+ seperti mungkin serangan amplifikasi ini, mungkin 
+
+1910
+01:18:04,710 --> 01:18:09,250
+ serangan flooding SYN ini, mungkin serangan RST ini 
+
+1911
+01:18:09,250 --> 01:18:11,680
+ di mana Anda dapat menembak koneksi orang yang sewenang-wenang. 
+
+1912
+01:18:11,680 --> 01:18:14,096
+ Ini adalah hal-hal yang benar-benar merusak pada level rendah 
+
+1913
+01:18:14,096 --> 01:18:16,190
+ dan itu sulit diperbaiki lebih tinggi. 
+
+1914
+01:18:16,190 --> 01:18:19,155
+ Tetapi integritas dan kerahasiaan Anda 
+
+1915
+01:18:19,155 --> 01:18:20,780
+ bisa lebih atau kurang memecahkan dengan enkripsi. 
+
+1916
+01:18:20,780 --> 01:18:23,310
+ Dan kita akan berbicara tentang bagaimana kita melakukannya di kuliah berikutnya 
+
+1917
+01:18:23,310 --> 01:18:23,910
+ di Cerberus. 
+
+1918
+01:18:23,910 --> 00:00:00,000
+ Sampai ketemu lagi. 
+

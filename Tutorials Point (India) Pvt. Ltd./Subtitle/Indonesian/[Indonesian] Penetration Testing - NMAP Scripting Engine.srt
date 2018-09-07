@@ -1,0 +1,556 @@
+1
+00:00:00,089 --> 00:00:02,610
+ Halo semuanya, <font color="#E5E5E5">mari kita bicara tentang sebuah </font>
+
+2
+00:00:02,610 --> 00:00:05,640
+ mesin scripting web <font color="#E5E5E5">jadi </font><font color="#CCCCCC">nmf scripting </font>
+
+3
+00:00:05,640 --> 00:00:07,770
+ mesin <font color="#E5E5E5">sebenarnya </font><font color="#CCCCCC">merupakan </font><font color="#E5E5E5">bagian dari nmap dan </font>
+
+4
+00:00:07,770 --> 00:00:09,660
+ itu salah <font color="#E5E5E5">satu fitur yang paling kuat </font>
+
+5
+00:00:09,660 --> 00:00:11,849
+ <font color="#CCCCCC">nmap </font><font color="#E5E5E5">jadi melalui animal scripting </font>
+
+6
+00:00:11,849 --> 00:00:13,620
+ mesin kita <font color="#E5E5E5">bisa menulis skrip kita sendiri </font>
+
+7
+00:00:13,620 --> 00:00:16,049
+ <font color="#E5E5E5">yang bisa kita gunakan dalam melakukan yang berbeda </font>
+
+8
+00:00:16,049 --> 00:00:18,710
+ <font color="#E5E5E5">tugas jaringan sehingga kami juga dapat menggunakan </font>
+
+9
+00:00:18,710 --> 00:00:20,850
+ skrip pra-tertulis dari berbagai keamanan 
+
+10
+00:00:20,850 --> 00:00:23,430
+ <font color="#E5E5E5">peneliti </font><font color="#CCCCCC">sudah </font><font color="#E5E5E5">hadir pada hewan </font>
+
+11
+00:00:23,430 --> 00:00:25,470
+ mesin scripting <font color="#E5E5E5">jadi salah satu yang paling banyak </font>
+
+12
+00:00:25,470 --> 00:00:27,720
+ <font color="#CCCCCC">fitur yang kuat dari alat ini </font><font color="#E5E5E5">adalah itu </font>
+
+13
+00:00:27,720 --> 00:00:30,029
+ <font color="#E5E5E5">kita bisa menggunakan alat ini untuk </font><font color="#CCCCCC">berdiri </font>
+
+14
+00:00:30,029 --> 00:00:32,279
+ target dan setelah kami memindai target <font color="#E5E5E5">kami </font>
+
+15
+00:00:32,279 --> 00:00:34,860
+ <font color="#E5E5E5">dapat memanfaatkan target kami jadi alat ini </font>
+
+16
+00:00:34,860 --> 00:00:37,739
+ <font color="#E5E5E5">juga hadir dalam kategori alat V apt </font>
+
+17
+00:00:37,739 --> 00:00:39,600
+ yaitu <font color="#E5E5E5">penilaian kerentanan dan </font>
+
+18
+00:00:39,600 --> 00:00:42,629
+ <font color="#E5E5E5">alat uji penetrasi jadi di sini Anda bisa </font>
+
+19
+00:00:42,629 --> 00:00:45,899
+ lihat kategori skrip NSE <font color="#E5E5E5">jadi di </font><font color="#CCCCCC">NSE </font>
+
+20
+00:00:45,899 --> 00:00:48,120
+ <font color="#CCCCCC">di bawah scripting engine skripnya </font>
+
+21
+00:00:48,120 --> 00:00:49,649
+ dibagi ke dalam <font color="#CCCCCC">kategori yang berbeda sebagai </font>
+
+22
+00:00:49,649 --> 00:00:52,260
+ mengikuti sehingga yang pertama adalah <font color="#CCCCCC">auth </font><font color="#E5E5E5">jadi </font>
+
+23
+00:00:52,260 --> 00:00:53,820
+ skrip yang ada di <font color="#CCCCCC">dalam </font>
+
+24
+00:00:53,820 --> 00:00:55,739
+ kategori bumi sebenarnya digunakan <font color="#CCCCCC">untuk </font>
+
+25
+00:00:55,739 --> 00:00:57,750
+ menemukan <font color="#E5E5E5">halaman otentikasi atau untuk </font>
+
+26
+00:00:57,750 --> 00:00:59,699
+ tujuan otentikasi <font color="#CCCCCC">maka skrip </font>
+
+27
+00:00:59,699 --> 00:01:00,989
+ yang ada di <font color="#E5E5E5">dalam </font><font color="#CCCCCC">Brut </font>
+
+28
+00:01:00,989 --> 00:01:02,430
+ kategori sebenarnya digunakan untuk 
+
+29
+00:01:02,430 --> 00:01:04,680
+ <font color="#CCCCCC">brute-forcing target </font><font color="#E5E5E5">seperti untuk </font>
+
+30
+00:01:04,680 --> 00:01:06,030
+ melakukan <font color="#E5E5E5">serangan kekuatan baik yang berbeda </font>
+
+31
+00:01:06,030 --> 00:01:08,490
+ serangan kamus <font color="#E5E5E5">ke login FTP </font><font color="#CCCCCC">astir </font>
+
+32
+00:01:08,490 --> 00:01:10,650
+ <font color="#E5E5E5">Login DP dan seterusnya jadi scriptnya </font>
+
+33
+00:01:10,650 --> 00:01:12,570
+ hadir dalam kategori penemuan 
+
+34
+00:01:12,570 --> 00:01:15,930
+ sebenarnya digunakan untuk <font color="#E5E5E5">mencari target </font><font color="#CCCCCC">atau </font>
+
+35
+00:01:15,930 --> 00:01:18,479
+ <font color="#CCCCCC">digunakan untuk memindai target lalu di sana </font>
+
+36
+00:01:18,479 --> 00:01:21,030
+ adalah kategori lain <font color="#CCCCCC">seperti eksploitasi dos </font>
+
+37
+00:01:21,030 --> 00:01:23,340
+ lebih lanjut digunakan untuk mengaburkan target dan 
+
+38
+00:01:23,340 --> 00:01:25,409
+ malware <font color="#E5E5E5">jadi jika Anda ingin tahu lebih banyak </font>
+
+39
+00:01:25,409 --> 00:01:28,049
+ tentang kategori skrip NSE maka Anda 
+
+40
+00:01:28,049 --> 00:01:29,850
+ dapat mengunjungi situs <font color="#CCCCCC">web resmi mereka di sini </font>
+
+41
+00:01:29,850 --> 00:01:32,340
+ tautan yang diberikan di bawah ini <font color="#CCCCCC">jadi sekarang mari kita lihat </font>
+
+42
+00:01:32,340 --> 00:01:34,530
+ <font color="#E5E5E5">bagaimana kita bisa </font><font color="#CCCCCC">menggunakan scripting hewan </font>
+
+43
+00:01:34,530 --> 00:01:36,540
+ mesin <font color="#CCCCCC">untuk mengeksploitasi target kami </font>
+
+44
+00:01:36,540 --> 00:01:39,930
+ sekarang <font color="#CCCCCC">mari kita lihat bagaimana </font><font color="#E5E5E5">kita bisa menggunakan </font><font color="#CCCCCC">dan </font>
+
+45
+00:01:39,930 --> 00:01:42,899
+ <font color="#E5E5E5">mesin scripting peta jadi yang terakhir </font>
+
+46
+00:01:42,899 --> 00:01:45,720
+ video saya menunjukkan kepada <font color="#CCCCCC">Anda </font><font color="#E5E5E5">bahwa bagaimana kita dapat </font><font color="#CCCCCC">menggunakan </font>
+
+47
+00:01:45,720 --> 00:01:48,930
+ dan memetakan dan kita semua tahu <font color="#E5E5E5">bahwa </font><font color="#CCCCCC">sebuah peta </font>
+
+48
+00:01:48,930 --> 00:01:53,520
+ mesin scripting adalah bagian dari <font color="#E5E5E5">peta jadi </font>
+
+49
+00:01:53,520 --> 00:01:55,530
+ NSE mengandung perbedaan yang berbeda 
+
+50
+00:01:55,530 --> 00:01:57,930
+ <font color="#E5E5E5">skrip dibagi menjadi berbeda </font>
+
+51
+00:01:57,930 --> 00:01:59,759
+ kategori <font color="#E5E5E5">seperti skrip untuk </font>
+
+52
+00:01:59,759 --> 00:02:02,070
+ <font color="#E5E5E5">skrip otentikasi untuk </font><font color="#CCCCCC">penemuan host </font>
+
+53
+00:02:02,070 --> 00:02:03,540
+ naskah untuk <font color="#CCCCCC">perhitungan </font>
+
+54
+00:02:03,540 --> 00:02:07,500
+ dan seterusnya <font color="#E5E5E5">seterusnya jadi mari kita mulai dan </font>
+
+55
+00:02:07,500 --> 00:02:11,790
+ peta dulu <font color="#E5E5E5">jadi sekarang saya di dalam </font>
+
+56
+00:02:11,790 --> 00:02:13,650
+ Kali Linux <font color="#E5E5E5">misalnya </font>
+
+57
+00:02:13,650 --> 00:02:16,230
+ dan ini terminal <font color="#CCCCCC">terminal terminal </font>
+
+58
+00:02:16,230 --> 00:02:19,310
+ Anda bisa <font color="#E5E5E5">melihatnya untuk menggunakan apa pun </font>
+
+59
+00:02:19,310 --> 00:02:22,409
+ skrip <font color="#CCCCCC">salah satu </font><font color="#E5E5E5">mesin scripting nmap </font>
+
+60
+00:02:22,409 --> 00:02:25,680
+ skrip di dalam <font color="#E5E5E5">dan </font><font color="#CCCCCC">peta kami mencari apa yang kami </font>
+
+61
+00:02:25,680 --> 00:02:27,870
+ harus lakukan adalah pertama kita harus <font color="#E5E5E5">menulis </font>
+
+62
+00:02:27,870 --> 00:02:30,840
+ peta <font color="#E5E5E5">maka kita harus memberikan </font><font color="#CCCCCC">tambahan </font>
+
+63
+00:02:30,840 --> 00:02:35,450
+ parameter yang <font color="#E5E5E5">disebut skrip - - skrip </font>
+
+64
+00:02:35,450 --> 00:02:38,700
+ <font color="#E5E5E5">diikuti </font><font color="#CCCCCC">dengan nama skrip </font><font color="#E5E5E5">jadi ini </font>
+
+65
+00:02:38,700 --> 00:02:41,340
+ pencarian pertama <font color="#CCCCCC">saya menggunakan </font><font color="#E5E5E5">skrip </font><font color="#CCCCCC">sederhana </font>
+
+66
+00:02:41,340 --> 00:02:43,680
+ disebut sebagai spanduk <font color="#E5E5E5">jadi apa </font><font color="#CCCCCC">skrip ini </font>
+
+67
+00:02:43,680 --> 00:02:45,900
+ akan melakukan skrip akan membuat 
+
+68
+00:02:45,900 --> 00:02:48,450
+ koneksi <font color="#CCCCCC">dengan </font><font color="#E5E5E5">port terbuka apa pun pada </font>
+
+69
+00:02:48,450 --> 00:02:51,090
+ server <font color="#E5E5E5">jika port terbuka itu mengirim sesuatu </font>
+
+70
+00:02:51,090 --> 00:02:54,870
+ <font color="#E5E5E5">untuk naskah kami atau apapun untuk permintaan kami </font>
+
+71
+00:02:54,870 --> 00:02:57,629
+ <font color="#E5E5E5">maka naskah itu akan mencetak itu </font>
+
+72
+00:02:57,629 --> 00:03:01,769
+ <font color="#E5E5E5">Data di sini hasilnya jadi saya </font><font color="#CCCCCC">menggunakan </font>
+
+73
+00:03:01,769 --> 00:03:04,680
+ <font color="#E5E5E5">skrip dan peta - - nama skrip skrip adalah </font>
+
+74
+00:03:04,680 --> 00:03:09,319
+ spanduk <font color="#E5E5E5">diikuti oleh nama situs web </font>
+
+75
+00:03:18,660 --> 00:03:22,780
+ <font color="#E5E5E5">oke jadi di sini Anda </font><font color="#CCCCCC">dapat melihat apa yang dimilikinya </font>
+
+76
+00:03:22,780 --> 00:03:26,530
+ dicetak spanduk <font color="#E5E5E5">port 22 dan </font>
+
+77
+00:03:26,530 --> 00:03:30,910
+ Detail spanduk adalah <font color="#CCCCCC">versi ssh dan sama </font>
+
+78
+00:03:30,910 --> 00:03:33,910
+ seperti port 3306 <font color="#CCCCCC">itu mencetak spanduknya </font>
+
+79
+00:03:33,910 --> 00:03:38,530
+ <font color="#E5E5E5">dan sama untuk port </font><font color="#CCCCCC">lima </font><font color="#E5E5E5">sembilan ganda </font>
+
+80
+00:03:38,530 --> 00:03:42,220
+ nol <font color="#E5E5E5">jadi ini adalah skrip sederhana yang </font>
+
+81
+00:03:42,220 --> 00:03:43,930
+ cukup cetak spanduk dan beberapa lainnya 
+
+82
+00:03:43,930 --> 00:03:46,090
+ <font color="#E5E5E5">data acak yang dikirim oleh port tertentu </font>
+
+83
+00:03:46,090 --> 00:03:49,000
+ <font color="#E5E5E5">sekarang mari kita gunakan beberapa skrip lain dari </font><font color="#CCCCCC">NS </font>
+
+84
+00:03:49,000 --> 00:03:55,300
+ <font color="#CCCCCC">e jadi n map - - skrip sekarang </font><font color="#E5E5E5">saya menggunakan satu </font>
+
+85
+00:03:55,300 --> 00:04:01,720
+ skrip disebut sebagai header HTTP jadi pertama 
+
+86
+00:04:01,720 --> 00:04:04,720
+ dari semua apa itu header HTTP HTTP header 
+
+87
+00:04:04,720 --> 00:04:07,240
+ tidak lain <font color="#E5E5E5">hanya permintaan HTTP kami </font>
+
+88
+00:04:07,240 --> 00:04:10,680
+ dan respons berarti bagaimana permintaan kami dan 
+
+89
+00:04:10,680 --> 00:04:14,110
+ respon terlihat seperti begitu ada satu 
+
+90
+00:04:14,110 --> 00:04:16,570
+ skrip dalam mesin scripting web yang disebut 
+
+91
+00:04:16,570 --> 00:04:19,779
+ sebagai header HTTP jadi <font color="#E5E5E5">saya menggunakan ini </font>
+
+92
+00:04:19,779 --> 00:04:23,920
+ skrip jadi <font color="#CCCCCC">nmap </font><font color="#E5E5E5">- - skrip HTTP header </font>
+
+93
+00:04:23,920 --> 00:04:28,080
+ <font color="#E5E5E5">diikuti oleh </font><font color="#CCCCCC">nama </font><font color="#E5E5E5">situs web </font>
+
+94
+00:04:43,950 --> 00:04:48,540
+ <font color="#E5E5E5">oke sekarang mari kita menganalisis hasilnya jadi </font>
+
+95
+00:04:48,540 --> 00:04:50,580
+ kita <font color="#CCCCCC">semua tahu bahwa nomor port untuk </font>
+
+96
+00:04:50,580 --> 00:04:54,510
+ <font color="#E5E5E5">HTTP </font><font color="#CCCCCC">80 </font><font color="#E5E5E5">dan di sini Anda dapat melihat daftar </font>
+
+97
+00:04:54,510 --> 00:04:58,110
+ dari header HTTP <font color="#E5E5E5">jadi sekarang apa HTTP kami </font>
+
+98
+00:04:58,110 --> 00:05:00,180
+ permintaan mengandung <font color="#E5E5E5">atau apa </font><font color="#CCCCCC">yang</font><font color="#E5E5E5"> ada di dalam </font>
+
+99
+00:05:00,180 --> 00:05:03,120
+ Header HTTP <font color="#E5E5E5">jadi di sini adalah daftar sehingga </font>
+
+100
+00:05:03,120 --> 00:05:05,580
+ juga <font color="#CCCCCC">mengandung tanggal </font><font color="#E5E5E5">server </font>
+
+101
+00:05:05,580 --> 00:05:07,740
+ <font color="#CCCCCC">informasi </font><font color="#E5E5E5">kepada siapa yang dimintanya atau </font>
+
+102
+00:05:07,740 --> 00:05:10,460
+ <font color="#E5E5E5">menerima respon permintaan kemudian </font>
+
+103
+00:05:10,460 --> 00:05:13,920
+ akses <font color="#E5E5E5">kontrol daya X kemudian koneksi </font>
+
+104
+00:05:13,920 --> 00:05:17,340
+ tutup jenis koneksi teks HTML sekarang 
+
+105
+00:05:17,340 --> 00:05:19,830
+ mari gulir <font color="#CCCCCC">ke bawah dan </font><font color="#E5E5E5">mari kita baca </font>
+
+106
+00:05:19,830 --> 00:05:25,230
+ Header HTTP <font color="#E5E5E5">itu sama dan permintaan </font>
+
+107
+00:05:25,230 --> 00:05:33,720
+ ketik <font color="#E5E5E5">adalah kepala jadi ini semua tentang </font><font color="#CCCCCC">HTTP </font>
+
+108
+00:05:33,720 --> 00:05:37,080
+ header sekarang biarkan menggunakan satu skrip yang 
+
+109
+00:05:37,080 --> 00:05:39,060
+ akan <font color="#E5E5E5">menyebutkan semua </font><font color="#CCCCCC">yang penting </font>
+
+110
+00:05:39,060 --> 00:05:41,640
+ direktori <font color="#CCCCCC">pada pemilik server jarak jauh </font><font color="#E5E5E5">atau </font>
+
+111
+00:05:41,640 --> 00:05:44,610
+ di <font color="#CCCCCC">situs web jarak jauh </font><font color="#E5E5E5">sehingga nama skrip mereka </font>
+
+112
+00:05:44,610 --> 00:05:48,120
+ adalah HTTP <font color="#CCCCCC">ennum jadi biar hanya </font><font color="#E5E5E5">menuliskan </font>
+
+113
+00:05:48,120 --> 00:05:51,480
+ dan map <font color="#E5E5E5">- - skrip diikuti oleh </font>
+
+114
+00:05:51,480 --> 00:05:57,230
+ nama skrip yang merupakan HTTP <font color="#CCCCCC">ennum dan </font>
+
+115
+00:05:57,860 --> 00:06:02,300
+ diikuti <font color="#CCCCCC">oleh </font><font color="#E5E5E5">nama </font><font color="#CCCCCC">situs web </font>
+
+116
+00:06:14,770 --> 00:06:20,050
+ <font color="#E5E5E5">oke sekarang mari kita </font><font color="#CCCCCC">menganalisis hasilnya jadi pada </font>
+
+117
+00:06:20,050 --> 00:06:22,840
+ <font color="#CCCCCC">nomor port 80 </font><font color="#E5E5E5">itu memiliki nilai M dari </font>
+
+118
+00:06:22,840 --> 00:06:25,569
+ file dan beberapa <font color="#E5E5E5">direktori di sini </font>
+
+119
+00:06:25,569 --> 00:06:28,449
+ Anda dapat melihat dan sama <font color="#CCCCCC">untuk </font><font color="#E5E5E5">port 443 </font>
+
+120
+00:06:28,449 --> 00:06:37,810
+ slash icon slash slash membantu gambar jadi 
+
+121
+00:06:37,810 --> 00:06:41,740
+ sekarang jika Anda <font color="#CCCCCC">ingat </font><font color="#E5E5E5">video </font><font color="#CCCCCC">terakhir kami </font><font color="#E5E5E5">tentang </font>
+
+122
+00:06:41,740 --> 00:06:43,870
+ <font color="#E5E5E5">memindai target yang saya tunjukkan </font>
+
+123
+00:06:43,870 --> 00:06:46,449
+ <font color="#CCCCCC">Anda yang bagaimana kita dapat memindai </font><font color="#E5E5E5">yang berbeda </font>
+
+124
+00:06:46,449 --> 00:06:48,400
+ <font color="#E5E5E5">subdomain yang berbeda dari yang khusus </font>
+
+125
+00:06:48,400 --> 00:06:51,940
+ situs web <font color="#E5E5E5">dengan menggunakan </font><font color="#CCCCCC">pemindaian PI nach sehingga ada </font>
+
+126
+00:06:51,940 --> 00:06:54,759
+ adalah satu skrip dalam <font color="#CCCCCC">nmap yang disebut sebagai DNS </font>
+
+127
+00:06:54,759 --> 00:06:57,520
+ <font color="#E5E5E5">kasar yang akan melakukan tugas yang sama dengan </font>
+
+128
+00:06:57,520 --> 00:07:01,180
+ <font color="#E5E5E5">tidak, aku melakukannya sekarang mari kita gunakan skrip itu </font>
+
+129
+00:07:01,180 --> 00:07:04,960
+ <font color="#E5E5E5">untuk menghitung sub domain jadi </font>
+
+130
+00:07:04,960 --> 00:07:12,130
+ nama skrip adalah <font color="#CCCCCC">root DNS sekarang mari kita periksa </font>
+
+131
+00:07:12,130 --> 00:07:18,659
+ <font color="#E5E5E5">subdomain </font><font color="#CCCCCC">untuk google.com tekan </font><font color="#E5E5E5">enter </font>
+
+132
+00:07:24,100 --> 00:07:27,740
+ oke <font color="#E5E5E5">jadi di sini Anda dapat melihat apa yang dimilikinya </font>
+
+133
+00:07:27,740 --> 00:07:30,350
+ mencantumkan semua <font color="#E5E5E5">subdomain dari </font>
+
+134
+00:07:30,350 --> 00:07:35,120
+ google.com <font color="#E5E5E5">bersama dengan alamat IP-nya </font>
+
+135
+00:07:35,120 --> 00:07:38,300
+ Anda <font color="#E5E5E5">dapat melihat daftar panjang detail dari a </font>
+
+136
+00:07:38,300 --> 00:07:44,240
+ nama domain dari <font color="#E5E5E5">Qualcomm jadi ini adalah a </font>
+
+137
+00:07:44,240 --> 00:07:47,330
+ pengantar singkat cepat <font color="#CCCCCC">tentang </font><font color="#E5E5E5">nmap </font>
+
+138
+00:07:47,330 --> 00:07:50,750
+ mesin scripting jadi terima kasih sudah <font color="#CCCCCC">menonton </font>
+
+139
+00:07:50,750 --> 00:00:00,000
+ video ini 
+

@@ -1,0 +1,280 @@
+1
+00:00:00,089 --> 00:00:02,330
+ Halo semuanya, <font color="#CCCCCC">mari kita </font><font color="#E5E5E5">bicarakan </font>
+
+2
+00:00:02,330 --> 00:00:05,540
+ <font color="#E5E5E5">netcat jadi netcat juga disebut sebagai </font>
+
+3
+00:00:05,540 --> 00:00:09,059
+ tcp / ip pisau Swiss Army <font color="#E5E5E5">dan </font><font color="#CCCCCC">netcat adalah </font>
+
+4
+00:00:09,059 --> 00:00:12,500
+ digunakan untuk mentransfer <font color="#E5E5E5">data dengan menggunakan </font>
+
+5
+00:00:12,500 --> 00:00:16,020
+ <font color="#E5E5E5">protokol tcp / ip agar kami dapat membaca dan menulis </font>
+
+6
+00:00:16,020 --> 00:00:19,350
+ <font color="#CCCCCC">data dengan menggunakan protokol tcp / ip dan </font><font color="#E5E5E5">netcat </font>
+
+7
+00:00:19,350 --> 00:00:21,510
+ <font color="#E5E5E5">jadi dengan menggunakan netcat </font><font color="#CCCCCC">kita bisa membuat </font>
+
+8
+00:00:21,510 --> 00:00:24,660
+ koneksi dengan <font color="#CCCCCC">situs web </font><font color="#E5E5E5">server </font><font color="#CCCCCC">atau </font>
+
+9
+00:00:24,660 --> 00:00:27,689
+ <font color="#E5E5E5">perangkat jaringan apa pun sehingga netcat juga </font>
+
+10
+00:00:27,689 --> 00:00:30,570
+ <font color="#E5E5E5">memiliki kemampuan untuk terhubung pada </font>
+
+11
+00:00:30,570 --> 00:00:33,000
+ port tertentu <font color="#E5E5E5">yang berarti dengan </font><font color="#CCCCCC">menggunakan </font>
+
+12
+00:00:33,000 --> 00:00:34,950
+ netcat <font color="#E5E5E5">kita bahkan dapat terhubung pada </font>
+
+13
+00:00:34,950 --> 00:00:37,170
+ port tertentu <font color="#CCCCCC">pada server jauh </font><font color="#E5E5E5">dan </font>
+
+14
+00:00:37,170 --> 00:00:39,750
+ fitur utama netcat adalah kita 
+
+15
+00:00:39,750 --> 00:00:43,230
+ juga dapat mendengarkan <font color="#E5E5E5">pada port tertentu dan </font>
+
+16
+00:00:43,230 --> 00:00:45,780
+ kita dapat mendengarkan <font color="#E5E5E5">koneksi jarak jauh </font>
+
+17
+00:00:45,780 --> 00:00:48,090
+ dan jika pengguna ingin <font color="#CCCCCC">terhubung dengan </font><font color="#E5E5E5">kami </font>
+
+18
+00:00:48,090 --> 00:00:51,059
+ <font color="#E5E5E5">port yang ditentukan, maka kita dapat melakukannya </font><font color="#CCCCCC">untuk </font>
+
+19
+00:00:51,059 --> 00:00:54,750
+ gunakan pendengar di netcat <font color="#E5E5E5">sekarang mari kita lihat caranya </font>
+
+20
+00:00:54,750 --> 00:00:57,600
+ kita bisa <font color="#CCCCCC">menggunakan gerbang net di Kali Linux sekarang </font>
+
+21
+00:00:57,600 --> 00:00:59,789
+ mari kita lihat bagaimana kita bisa menggunakan <font color="#CCCCCC">netcat </font><font color="#E5E5E5">secara berurutan </font>
+
+22
+00:00:59,789 --> 00:01:02,969
+ untuk <font color="#E5E5E5">mengambil beberapa data HTML dengan menggunakan HTTP </font>
+
+23
+00:01:02,969 --> 00:01:07,979
+ 1.0 <font color="#E5E5E5">dan HTTP 1.1 permintaan sehingga </font><font color="#CCCCCC">untuk </font>
+
+24
+00:01:07,979 --> 00:01:09,840
+ mulai netcat kita harus memulai <font color="#E5E5E5">Kali kita </font>
+
+25
+00:01:09,840 --> 00:01:12,240
+ Linux <font color="#E5E5E5">dan di sini Anda dapat melihatnya dengan benar </font>
+
+26
+00:01:12,240 --> 00:01:14,340
+ <font color="#CCCCCC">sekarang saya berada </font><font color="#E5E5E5">di dalam instance Kali Linux saya </font>
+
+27
+00:01:14,340 --> 00:01:19,140
+ dan ini <font color="#E5E5E5">adalah terminal Kali jadi di </font>
+
+28
+00:01:19,140 --> 00:01:20,759
+ <font color="#CCCCCC">untuk memulai netcat pertama-tama kita harus </font>
+
+29
+00:01:20,759 --> 00:01:23,400
+ <font color="#E5E5E5">tulis </font><font color="#CCCCCC">NC untuk </font><font color="#E5E5E5">netcat diikuti oleh </font>
+
+30
+00:01:23,400 --> 00:01:25,380
+ <font color="#E5E5E5">nama situs web atau alamat IP server </font>
+
+31
+00:01:25,380 --> 00:01:27,990
+ dengan siapa Anda <font color="#E5E5E5">ingin </font><font color="#CCCCCC">terhubung diikuti </font>
+
+32
+00:01:27,990 --> 00:01:31,020
+ oleh nomor port jadi <font color="#CCCCCC">saya menghubungkan </font>
+
+33
+00:01:31,020 --> 00:01:37,250
+ <font color="#CCCCCC">dengan </font><font color="#E5E5E5">situs web </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">dengan </font><font color="#CCCCCC">menggunakan port 80 </font><font color="#E5E5E5">dan </font>
+
+34
+00:01:37,250 --> 00:01:40,200
+ jika saya menekan <font color="#CCCCCC">enter jadi di sini kita harus </font>
+
+35
+00:01:40,200 --> 00:01:43,890
+ tentukan <font color="#CCCCCC">metode HTTP lalu HTTP </font>
+
+36
+00:01:43,890 --> 00:01:46,140
+ versi dan kemudian kita harus menulis 
+
+37
+00:01:46,140 --> 00:01:48,500
+ <font color="#CCCCCC">nama host </font>
+
+38
+00:01:53,130 --> 00:01:57,219
+ tekan enter <font color="#CCCCCC">dan di </font><font color="#E5E5E5">sini </font><font color="#CCCCCC">Anda dapat melihatnya </font>
+
+39
+00:01:57,219 --> 00:01:59,560
+ telah <font color="#CCCCCC">mengambil </font><font color="#E5E5E5">semua konten atau ml </font>
+
+40
+00:01:59,560 --> 00:02:04,570
+ <font color="#E5E5E5">data dari indeks dot HTML menggunakan bus </font><font color="#CCCCCC">pH </font>
+
+41
+00:02:04,570 --> 00:02:08,110
+ HTTP satu titik atau permintaan dan jika kita membaca 
+
+42
+00:02:08,110 --> 00:02:12,880
+ ini <font color="#E5E5E5">bisa Anda lihat di sini 200 </font><font color="#CCCCCC">oke dan di sini </font>
+
+43
+00:02:12,880 --> 00:02:16,630
+ adalah <font color="#E5E5E5">nomor versi PHP dan </font><font color="#CCCCCC">jika saya </font>
+
+44
+00:02:16,630 --> 00:02:20,170
+ gulir <font color="#CCCCCC">ke bawah Anda dapat </font><font color="#E5E5E5">melihat </font><font color="#CCCCCC">seluruh HTML </font>
+
+45
+00:02:20,170 --> 00:02:27,190
+ <font color="#E5E5E5">data sekarang mari kita membuat beberapa permintaan lain </font>
+
+46
+00:02:27,190 --> 00:02:31,390
+ <font color="#E5E5E5">dengan menggunakan versi STP 1.0 </font><font color="#CCCCCC">dan kita akan lihat </font>
+
+47
+00:02:31,390 --> 00:02:33,819
+ perbedaan antara HTTP 1.0 dan HTTP 
+
+48
+00:02:33,819 --> 00:02:37,120
+ 1.1 <font color="#CCCCCC">karena </font><font color="#E5E5E5">saya katakan sebelumnya </font><font color="#CCCCCC">bahwa jika </font>
+
+49
+00:02:37,120 --> 00:02:41,019
+ Anda meminta <font color="#E5E5E5">satu sumber daya dengan menggunakan HTTP </font>
+
+50
+00:02:41,019 --> 00:02:45,069
+ <font color="#E5E5E5">Versi 1.0 sehingga server kami dapat menangani </font>
+
+51
+00:02:45,069 --> 00:02:48,670
+ <font color="#CCCCCC">hanya satu permintaan </font><font color="#E5E5E5">tetapi jika kami menggunakan </font><font color="#CCCCCC">strip 1 </font>
+
+52
+00:02:48,670 --> 00:02:52,599
+ point <font color="#CCCCCC">1 maka server kami </font><font color="#E5E5E5">dapat merespon </font>
+
+53
+00:02:52,599 --> 00:02:55,269
+ beberapa <font color="#CCCCCC">permintaan sumber daya dalam </font>
+
+54
+00:02:55,269 --> 00:02:57,910
+ koneksi tunggal <font color="#E5E5E5">sekarang mari terhubung dengan </font>
+
+55
+00:02:57,910 --> 00:03:01,329
+ google.com <font color="#E5E5E5">melalui port 80 dan </font><font color="#CCCCCC">sekarang ini </font>
+
+56
+00:03:01,329 --> 00:03:06,010
+ waktu kita akan menggunakan HTTP 1.1 <font color="#E5E5E5">jadi adil </font>
+
+57
+00:03:06,010 --> 00:03:11,260
+ tentukan di sini <font color="#E5E5E5">versi 1.1 dan kami juga </font>
+
+58
+00:03:11,260 --> 00:03:14,650
+ harus menulis nama host di sini lagi <font color="#E5E5E5">dan jika </font>
+
+59
+00:03:14,650 --> 00:03:17,920
+ Saya tekan <font color="#E5E5E5">enter di </font><font color="#CCCCCC">sini Anda </font><font color="#E5E5E5">dapat melihat </font><font color="#CCCCCC">HTTP </font><font color="#E5E5E5">kami </font>
+
+60
+00:03:17,920 --> 00:03:20,260
+ tajuk <font color="#CCCCCC">bersama dengan beberapa </font><font color="#E5E5E5">konten </font><font color="#CCCCCC">HTML </font>
+
+61
+00:03:20,260 --> 00:03:23,650
+ <font color="#E5E5E5">dan di sini Anda dapat melihat bahwa kita </font><font color="#CCCCCC">masih hidup </font>
+
+62
+00:03:23,650 --> 00:03:26,530
+ terhubung <font color="#CCCCCC">dan kami juga dapat menentukan </font><font color="#E5E5E5">beberapa </font>
+
+63
+00:03:26,530 --> 00:03:28,690
+ <font color="#E5E5E5">permintaan lain jadi ini adalah </font>
+
+64
+00:03:28,690 --> 00:03:31,150
+ <font color="#CCCCCC">perbedaan antara HTTP 1.0 dan HTTP 1.1 </font>
+
+65
+00:03:31,150 --> 00:03:34,299
+ <font color="#E5E5E5">bahwa kita dapat meminta hanya satu sumber daya </font><font color="#CCCCCC">di </font>
+
+66
+00:03:34,299 --> 00:03:37,180
+ <font color="#E5E5E5">1</font><font color="#CCCCCC"> koneksi di HTTP 1.0 tapi di HTTP </font>
+
+67
+00:03:37,180 --> 00:03:40,900
+ 1.1 <font color="#E5E5E5">kami dapat meminta beberapa sumber daya jadi </font>
+
+68
+00:03:40,900 --> 00:03:42,849
+ ini adalah pengenalan singkat 
+
+69
+00:03:42,849 --> 00:03:45,329
+ netcat yang bagaimana kita dapat <font color="#CCCCCC">menggunakan </font><font color="#E5E5E5">kucing dan tidak </font>
+
+70
+00:03:45,329 --> 00:00:00,000
+ terima kasih <font color="#E5E5E5">telah </font><font color="#CCCCCC">menonton video ini </font>
+

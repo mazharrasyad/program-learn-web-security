@@ -1,0 +1,504 @@
+1
+00:00:00,060 --> 00:00:02,899
+hello everyone<font color="#E5E5E5"> now let's talk about and</font>
+
+2
+00:00:02,899 --> 00:00:04,259
+<font color="#E5E5E5">map</font>
+
+3
+00:00:04,259 --> 00:00:07,350
+so<font color="#CCCCCC"> nmf stands</font><font color="#E5E5E5"> for network mapper and</font>
+
+4
+00:00:07,350 --> 00:00:09,750
+it's one of<font color="#CCCCCC"> the best open-source tool</font>
+
+5
+00:00:09,750 --> 00:00:12,090
+used for<font color="#E5E5E5"> scanning the network with the</font>
+
+6
+00:00:12,090 --> 00:00:14,820
+<font color="#CCCCCC">help</font><font color="#E5E5E5"> of</font><font color="#CCCCCC"> an map</font><font color="#E5E5E5"> we can scan open ports</font>
+
+7
+00:00:14,820 --> 00:00:17,160
+<font color="#E5E5E5">and the</font><font color="#CCCCCC"> services</font><font color="#E5E5E5"> running on them</font>
+
+8
+00:00:17,160 --> 00:00:20,670
+<font color="#CCCCCC">including</font><font color="#E5E5E5"> their version number so the</font>
+
+9
+00:00:20,670 --> 00:00:22,949
+<font color="#E5E5E5">and map is also used</font><font color="#CCCCCC"> for searching the</font>
+
+10
+00:00:22,949 --> 00:00:24,689
+<font color="#E5E5E5">operating system that is</font><font color="#CCCCCC"> running</font><font color="#E5E5E5"> on the</font>
+
+11
+00:00:24,689 --> 00:00:27,180
+remote host<font color="#CCCCCC"> and with the help of</font><font color="#E5E5E5"> n map</font>
+
+12
+00:00:27,180 --> 00:00:30,210
+we<font color="#E5E5E5"> can perform various</font><font color="#CCCCCC"> scans</font><font color="#E5E5E5"> including</font>
+
+13
+00:00:30,210 --> 00:00:32,910
+service can aggressive scan<font color="#E5E5E5"> and with the</font>
+
+14
+00:00:32,910 --> 00:00:35,070
+help of aggressive scan we<font color="#E5E5E5"> can fetch a</font>
+
+15
+00:00:35,070 --> 00:00:37,200
+much more<font color="#E5E5E5"> detailed information</font><font color="#CCCCCC"> including</font>
+
+16
+00:00:37,200 --> 00:00:39,750
+our target operating system and the
+
+17
+00:00:39,750 --> 00:00:41,730
+metadata<font color="#E5E5E5"> and some additional</font><font color="#CCCCCC"> information</font>
+
+18
+00:00:41,730 --> 00:00:44,610
+<font color="#CCCCCC">like internal files now let's see how we</font>
+
+19
+00:00:44,610 --> 00:00:46,410
+can<font color="#E5E5E5"> use</font><font color="#CCCCCC"> M map in</font><font color="#E5E5E5"> order to perform</font>
+
+20
+00:00:46,410 --> 00:00:50,100
+<font color="#E5E5E5">various scans now let's see</font><font color="#CCCCCC"> that how we</font>
+
+21
+00:00:50,100 --> 00:00:52,949
+<font color="#CCCCCC">can find open ports and their</font><font color="#E5E5E5"> version</font>
+
+22
+00:00:52,949 --> 00:00:57,690
+number by<font color="#CCCCCC"> using n map</font><font color="#E5E5E5"> so in order</font><font color="#CCCCCC"> to use</font>
+
+23
+00:00:57,690 --> 00:00:59,910
+n map<font color="#E5E5E5"> we have to start our Kali Linux</font>
+
+24
+00:00:59,910 --> 00:01:03,570
+<font color="#E5E5E5">and here you can see that right</font><font color="#CCCCCC"> now</font><font color="#E5E5E5"> I am</font>
+
+25
+00:01:03,570 --> 00:01:06,689
+inside my Kali Linux instance so in
+
+26
+00:01:06,689 --> 00:01:08,580
+order<font color="#CCCCCC"> to start n map we first have to</font>
+
+27
+00:01:08,580 --> 00:01:09,630
+<font color="#CCCCCC">open the terminal</font>
+
+28
+00:01:09,630 --> 00:01:14,580
+let me open<font color="#E5E5E5"> it up so in</font><font color="#CCCCCC"> order to start a</font>
+
+29
+00:01:14,580 --> 00:01:17,090
+n map we<font color="#E5E5E5"> just have to write and map</font>
+
+30
+00:01:17,090 --> 00:01:20,580
+followed by the website<font color="#E5E5E5"> name or the IP</font>
+
+31
+00:01:20,580 --> 00:01:26,750
+address so let<font color="#CCCCCC"> me just</font><font color="#E5E5E5"> write down here</font>
+
+32
+00:01:29,060 --> 00:01:33,810
+<font color="#CCCCCC">ok so once you write the website name</font>
+
+33
+00:01:33,810 --> 00:01:36,659
+<font color="#E5E5E5">you can also</font><font color="#CCCCCC"> write a particular port</font><font color="#E5E5E5"> and</font>
+
+34
+00:01:36,659 --> 00:01:39,180
+let's scan<font color="#E5E5E5"> all the ports which are</font>
+
+35
+00:01:39,180 --> 00:01:42,479
+opened on this website<font color="#E5E5E5"> along with</font><font color="#CCCCCC"> their</font>
+
+36
+00:01:42,479 --> 00:01:47,100
+services now let<font color="#E5E5E5"> me hit enter and here</font>
+
+37
+00:01:47,100 --> 00:01:49,560
+you can see that<font color="#E5E5E5"> our nmap scan has been</font>
+
+38
+00:01:49,560 --> 00:01:53,549
+started and it's my n map<font color="#E5E5E5"> version 7.40</font>
+
+39
+00:01:53,549 --> 00:01:55,890
+it's a it's a newer version<font color="#E5E5E5"> because I'm</font>
+
+40
+00:01:55,890 --> 00:02:01,710
+using Kali Linux<font color="#E5E5E5"> 2 and it shows us the</font>
+
+41
+00:02:01,710 --> 00:02:05,969
+detail of port<font color="#E5E5E5"> its</font><font color="#CCCCCC"> State</font><font color="#E5E5E5"> and along with</font>
+
+42
+00:02:05,969 --> 00:02:09,149
+<font color="#E5E5E5">its services so you can look at here</font>
+
+43
+00:02:09,149 --> 00:02:12,700
+that<font color="#E5E5E5"> on port 22 this</font>
+
+44
+00:02:12,700 --> 00:02:15,099
+<font color="#E5E5E5">state is open the port 22 is open and</font>
+
+45
+00:02:15,099 --> 00:02:18,340
+the service running<font color="#E5E5E5"> on port 22 is</font><font color="#CCCCCC"> SSH</font>
+
+46
+00:02:18,340 --> 00:02:21,959
+so same you can see HTTP service<font color="#CCCCCC"> carbo's</font>
+
+47
+00:02:21,959 --> 00:02:26,920
+<font color="#CCCCCC">https</font><font color="#E5E5E5"> and some my sequel service and few</font>
+
+48
+00:02:26,920 --> 00:02:29,650
+other services<font color="#E5E5E5"> so this was the basic</font>
+
+49
+00:02:29,650 --> 00:02:34,000
+<font color="#E5E5E5">usage of nmap now what if if we want</font><font color="#CCCCCC"> to</font>
+
+50
+00:02:34,000 --> 00:02:37,360
+scan the version number or you want to
+
+51
+00:02:37,360 --> 00:02:39,550
+enumerate the version number of a
+
+52
+00:02:39,550 --> 00:02:42,849
+<font color="#E5E5E5">particular service</font><font color="#CCCCCC"> so why in a meeting</font>
+
+53
+00:02:42,849 --> 00:02:45,310
+<font color="#E5E5E5">the version number is important so as a</font>
+
+54
+00:02:45,310 --> 00:02:48,340
+penetration tester<font color="#E5E5E5"> your main goal is to</font>
+
+55
+00:02:48,340 --> 00:02:51,310
+<font color="#CCCCCC">find</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> version number because once you</font>
+
+56
+00:02:51,310 --> 00:02:53,410
+get<font color="#CCCCCC"> the version number</font><font color="#E5E5E5"> a penetration</font>
+
+57
+00:02:53,410 --> 00:02:57,610
+tester can use some tools or can search
+
+58
+00:02:57,610 --> 00:03:00,370
+the particular exploit corresponds to
+
+59
+00:03:00,370 --> 00:03:02,709
+that<font color="#E5E5E5"> version number so that's why</font>
+
+60
+00:03:02,709 --> 00:03:06,069
+scanning the version number<font color="#E5E5E5"> is must so</font>
+
+61
+00:03:06,069 --> 00:03:09,459
+there is one scan in<font color="#CCCCCC"> nmap called as</font>
+
+62
+00:03:09,459 --> 00:03:12,400
+<font color="#E5E5E5">version scan so let's see how we can</font><font color="#CCCCCC"> use</font>
+
+63
+00:03:12,400 --> 00:03:17,019
+it so we<font color="#CCCCCC"> have to write</font><font color="#E5E5E5"> and map - s</font><font color="#CCCCCC"> and</font>
+
+64
+00:03:17,019 --> 00:03:21,250
+capital<font color="#E5E5E5"> V so s is</font><font color="#CCCCCC"> for</font><font color="#E5E5E5"> steel and this V</font>
+
+65
+00:03:21,250 --> 00:03:23,220
+is for<font color="#E5E5E5"> version number followed by the</font>
+
+66
+00:03:23,220 --> 00:03:26,829
+<font color="#E5E5E5">website name so you can</font><font color="#CCCCCC"> even write the</font>
+
+67
+00:03:26,829 --> 00:03:28,750
+IP address<font color="#E5E5E5"> instead of writing the</font>
+
+68
+00:03:28,750 --> 00:03:36,540
+website name hit enter<font color="#CCCCCC"> so these kind of</font>
+
+69
+00:03:36,540 --> 00:03:47,970
+scans<font color="#CCCCCC"> take little bit time ok so let's</font>
+
+70
+00:03:47,970 --> 00:03:49,630
+see the result
+
+71
+00:03:49,630 --> 00:03:52,570
+so<font color="#E5E5E5"> it's here is a port then the next</font>
+
+72
+00:03:52,570 --> 00:03:56,109
+column<font color="#CCCCCC"> is of state then services and</font>
+
+73
+00:03:56,109 --> 00:03:58,390
+here you can see<font color="#E5E5E5"> additional column of</font>
+
+74
+00:03:58,390 --> 00:04:01,989
+version so this output<font color="#E5E5E5"> is</font><font color="#CCCCCC"> same but here</font>
+
+75
+00:04:01,989 --> 00:04:04,269
+is the thing<font color="#CCCCCC"> so here is a service as a</font>
+
+76
+00:04:04,269 --> 00:04:07,450
+chest and you can just read<font color="#E5E5E5"> its version</font>
+
+77
+00:04:07,450 --> 00:04:12,459
+<font color="#CCCCCC">OpenSSL 6.2 then HTTP version then my</font>
+
+78
+00:04:12,459 --> 00:04:16,630
+sequel and a path<font color="#CCCCCC"> applied so now it's</font>
+
+79
+00:04:16,630 --> 00:04:18,970
+giving us an additional information<font color="#CCCCCC"> that</font>
+
+80
+00:04:18,970 --> 00:04:22,750
+this website<font color="#E5E5E5"> is hosted on Mac here you</font>
+
+81
+00:04:22,750 --> 00:04:24,730
+can see Mac OS
+
+82
+00:04:24,730 --> 00:04:28,450
+so this was all<font color="#E5E5E5"> about the service</font><font color="#CCCCCC"> scan</font>
+
+83
+00:04:28,450 --> 00:04:31,340
+so the best<font color="#E5E5E5"> practice of a system</font>
+
+84
+00:04:31,340 --> 00:04:34,730
+administrator here is to hide<font color="#CCCCCC"> the</font>
+
+85
+00:04:34,730 --> 00:04:38,470
+version number<font color="#E5E5E5"> of the running services</font>
+
+86
+00:04:40,630 --> 00:04:43,669
+so now let's talk<font color="#CCCCCC"> about aggressive scan</font>
+
+87
+00:04:43,669 --> 00:04:47,000
+in<font color="#E5E5E5"> nmap so aggressive scan is one of the</font>
+
+88
+00:04:47,000 --> 00:04:49,880
+most powerful<font color="#E5E5E5"> scan of an nmap because</font>
+
+89
+00:04:49,880 --> 00:04:53,690
+aggressive scan contains all the
+
+90
+00:04:53,690 --> 00:04:56,120
+features<font color="#CCCCCC"> of different different scan or</font>
+
+91
+00:04:56,120 --> 00:04:57,950
+you can say<font color="#E5E5E5"> that aggressive scan is a</font>
+
+92
+00:04:57,950 --> 00:05:00,860
+combination of<font color="#E5E5E5"> different scan so by</font>
+
+93
+00:05:00,860 --> 00:05:02,810
+aggressive scan one can find the
+
+94
+00:05:02,810 --> 00:05:05,710
+services version<font color="#E5E5E5"> number metadata</font>
+
+95
+00:05:05,710 --> 00:05:09,919
+<font color="#CCCCCC">disallowed directories</font><font color="#E5E5E5"> and even the</font>
+
+96
+00:05:09,919 --> 00:05:12,740
+routing also DNS servers names also<font color="#CCCCCC"> and</font>
+
+97
+00:05:12,740 --> 00:05:15,500
+some<font color="#CCCCCC"> additional stuff</font><font color="#E5E5E5"> so now let's see</font>
+
+98
+00:05:15,500 --> 00:05:18,380
+how we can use<font color="#E5E5E5"> aggressive scan an nmap</font>
+
+99
+00:05:18,380 --> 00:05:21,350
+<font color="#E5E5E5">so in</font><font color="#CCCCCC"> order to use it we again</font><font color="#E5E5E5"> have to</font>
+
+100
+00:05:21,350 --> 00:05:25,880
+write and map<font color="#E5E5E5"> - capital a followed by</font>
+
+101
+00:05:25,880 --> 00:05:29,290
+the website<font color="#CCCCCC"> name</font>
+
+102
+00:05:33,230 --> 00:05:35,870
+so<font color="#E5E5E5"> this can</font><font color="#CCCCCC"> aggressive scan take a</font>
+
+103
+00:05:35,870 --> 00:05:39,230
+<font color="#E5E5E5">little bit time so we have to be patient</font>
+
+104
+00:05:39,230 --> 00:05:41,650
+<font color="#CCCCCC">okay</font>
+
+105
+00:05:45,890 --> 00:05:48,830
+now scan has been<font color="#E5E5E5"> completed</font><font color="#CCCCCC"> now let's</font>
+
+106
+00:05:48,830 --> 00:05:54,500
+analyze<font color="#E5E5E5"> it result okay so here you</font><font color="#CCCCCC"> can</font>
+
+107
+00:05:54,500 --> 00:05:58,100
+<font color="#E5E5E5">see that first</font><font color="#CCCCCC"> of all it has enumerated</font>
+
+108
+00:05:58,100 --> 00:06:04,550
+<font color="#E5E5E5">the ssh public host keys then the PHP</font>
+
+109
+00:06:04,550 --> 00:06:08,840
+<font color="#CCCCCC">version also</font><font color="#E5E5E5"> of port 80 HTTP and here</font>
+
+110
+00:06:08,840 --> 00:06:10,460
+you can<font color="#E5E5E5"> see the additional information</font>
+
+111
+00:06:10,460 --> 00:06:14,120
+<font color="#CCCCCC">like HTTP title</font><font color="#E5E5E5"> the website</font><font color="#CCCCCC"> title along</font>
+
+112
+00:06:14,120 --> 00:06:17,390
+<font color="#E5E5E5">with</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> SSL server detail so if I</font>
+
+113
+00:06:17,390 --> 00:06:20,090
+scroll<font color="#CCCCCC"> down</font><font color="#E5E5E5"> you can see</font><font color="#CCCCCC"> lot of juicy</font>
+
+114
+00:06:20,090 --> 00:06:22,640
+details<font color="#E5E5E5"> along with</font><font color="#CCCCCC"> the name server</font>
+
+115
+00:06:22,640 --> 00:06:33,560
+domain<font color="#E5E5E5"> name server</font><font color="#CCCCCC"> and it has</font><font color="#E5E5E5"> also find</font>
+
+116
+00:06:33,560 --> 00:06:36,740
+that the operating<font color="#CCCCCC"> system on which this</font>
+
+117
+00:06:36,740 --> 00:06:37,940
+website is hosted
+
+118
+00:06:37,940 --> 00:06:42,350
+so it's hosted on<font color="#CCCCCC"> apple OS</font><font color="#E5E5E5"> X and if I</font>
+
+119
+00:06:42,350 --> 00:06:45,200
+scroll down<font color="#E5E5E5"> here</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> will see or find</font>
+
+120
+00:06:45,200 --> 00:06:47,720
+the<font color="#E5E5E5"> traceroute detail so here you can</font>
+
+121
+00:06:47,720 --> 00:06:51,070
+see the<font color="#CCCCCC"> traceroute</font>
+
+122
+00:06:55,100 --> 00:06:58,640
+so this can can perform a best
+
+123
+00:06:58,640 --> 00:07:05,450
+<font color="#CCCCCC">information</font><font color="#E5E5E5"> gathering for our target so</font>
+
+124
+00:07:05,450 --> 00:07:08,810
+this was all<font color="#E5E5E5"> about</font><font color="#CCCCCC"> and map and the basic</font>
+
+125
+00:07:08,810 --> 00:07:12,380
+usage of<font color="#CCCCCC"> an</font><font color="#E5E5E5"> map now thanks for</font><font color="#CCCCCC"> watching</font>
+
+126
+00:07:12,380 --> 00:00:00,000
+<font color="#CCCCCC">this video</font>
+

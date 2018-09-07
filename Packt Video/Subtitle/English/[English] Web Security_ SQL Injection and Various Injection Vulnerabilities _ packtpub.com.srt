@@ -1,0 +1,388 @@
+1
+00:00:07,910 --> 00:00:10,070
+hello and welcome students to various
+
+2
+00:00:10,070 --> 00:00:12,170
+injection attacks so in this section we
+
+3
+00:00:12,170 --> 00:00:13,790
+are going<font color="#E5E5E5"> to take a look at various</font>
+
+4
+00:00:13,790 --> 00:00:15,590
+points<font color="#E5E5E5"> like first of all we will learn</font>
+
+5
+00:00:15,590 --> 00:00:18,080
+<font color="#CCCCCC">about</font><font color="#E5E5E5"> what is SQL injection and their</font>
+
+6
+00:00:18,080 --> 00:00:19,910
+various injection vulnerabilities<font color="#E5E5E5"> what</font>
+
+7
+00:00:19,910 --> 00:00:21,439
+is the<font color="#E5E5E5"> effect of SQL injection on</font>
+
+8
+00:00:21,439 --> 00:00:23,270
+<font color="#E5E5E5">applications and then we will learn</font>
+
+9
+00:00:23,270 --> 00:00:25,220
+<font color="#CCCCCC">about</font><font color="#E5E5E5"> various kinds of</font><font color="#CCCCCC"> spill injection</font>
+
+10
+00:00:25,220 --> 00:00:27,230
+commands<font color="#CCCCCC"> using SQL injection gici and</font>
+
+11
+00:00:27,230 --> 00:00:29,029
+then the prevention techniques from SQL
+
+12
+00:00:29,029 --> 00:00:31,250
+injection<font color="#E5E5E5"> the last</font><font color="#CCCCCC"> rap</font><font color="#E5E5E5"> so let's start</font>
+
+13
+00:00:31,250 --> 00:00:34,220
+<font color="#E5E5E5">with the first video</font><font color="#CCCCCC"> of section</font><font color="#E5E5E5"> 3 SQL</font>
+
+14
+00:00:34,220 --> 00:00:35,930
+<font color="#E5E5E5">injection and various injection</font>
+
+15
+00:00:35,930 --> 00:00:38,270
+<font color="#CCCCCC">vulnerabilities</font><font color="#E5E5E5"> so in this video we are</font>
+
+16
+00:00:38,270 --> 00:00:39,829
+going<font color="#E5E5E5"> to take a look at couple of points</font>
+
+17
+00:00:39,829 --> 00:00:41,930
+first of<font color="#E5E5E5"> all we will learn about what</font><font color="#CCCCCC"> is</font>
+
+18
+00:00:41,930 --> 00:00:44,420
+SQL injection and then we will learn<font color="#E5E5E5"> the</font>
+
+19
+00:00:44,420 --> 00:00:47,120
+process of SQL injection in web
+
+20
+00:00:47,120 --> 00:00:49,820
+applications<font color="#E5E5E5"> so first of all what</font><font color="#CCCCCC"> is SQL</font>
+
+21
+00:00:49,820 --> 00:00:52,250
+<font color="#E5E5E5">injection attack</font><font color="#CCCCCC"> so as we already know</font>
+
+22
+00:00:52,250 --> 00:00:54,560
+<font color="#E5E5E5">that</font><font color="#CCCCCC"> SQL injection attack is basically</font>
+
+23
+00:00:54,560 --> 00:00:56,390
+the<font color="#E5E5E5"> number one attack on web</font>
+
+24
+00:00:56,390 --> 00:00:59,810
+<font color="#CCCCCC">applications</font><font color="#E5E5E5"> and if it is available</font><font color="#CCCCCC"> in</font>
+
+25
+00:00:59,810 --> 00:01:01,460
+<font color="#CCCCCC">your web application then you should</font>
+
+26
+00:01:01,460 --> 00:01:03,260
+remove it immediately<font color="#E5E5E5"> so let's learn</font>
+
+27
+00:01:03,260 --> 00:01:06,020
+about<font color="#CCCCCC"> SQL and SQL injection so</font><font color="#E5E5E5"> SQL is</font>
+
+28
+00:01:06,020 --> 00:01:07,820
+called structured query language<font color="#CCCCCC"> as you</font>
+
+29
+00:01:07,820 --> 00:01:09,530
+can see in the first<font color="#E5E5E5"> point</font><font color="#CCCCCC"> right</font><font color="#E5E5E5"> this is</font>
+
+30
+00:01:09,530 --> 00:01:12,229
+the full form<font color="#E5E5E5"> of SQL and what is the</font>
+
+31
+00:01:12,229 --> 00:01:14,299
+<font color="#CCCCCC">skew logician so SQL</font><font color="#E5E5E5"> injection is an</font>
+
+32
+00:01:14,299 --> 00:01:16,069
+<font color="#E5E5E5">injection attack you can see here it is</font>
+
+33
+00:01:16,069 --> 00:01:17,840
+<font color="#E5E5E5">injection attack and where attacker</font>
+
+34
+00:01:17,840 --> 00:01:19,880
+<font color="#E5E5E5">inserts malicious scripts</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> database</font>
+
+35
+00:01:19,880 --> 00:01:21,950
+to get<font color="#E5E5E5"> sensitive information</font><font color="#CCCCCC"> so it's a</font>
+
+36
+00:01:21,950 --> 00:01:24,380
+quite simple concept<font color="#CCCCCC"> that</font><font color="#E5E5E5"> it is also a</font>
+
+37
+00:01:24,380 --> 00:01:26,420
+command based attack right<font color="#E5E5E5"> and attacker</font>
+
+38
+00:01:26,420 --> 00:01:28,939
+<font color="#E5E5E5">needs to insert some malicious command</font>
+
+39
+00:01:28,939 --> 00:01:31,249
+right<font color="#E5E5E5"> and by using that script or that</font>
+
+40
+00:01:31,249 --> 00:01:32,810
+command database provides you
+
+41
+00:01:32,810 --> 00:01:35,030
+information<font color="#E5E5E5"> so that kind of attack is</font>
+
+42
+00:01:35,030 --> 00:01:36,649
+called<font color="#E5E5E5"> SQL injection attack in which</font>
+
+43
+00:01:36,649 --> 00:01:39,259
+attacker tries to insert scripts<font color="#E5E5E5"> in the</font>
+
+44
+00:01:39,259 --> 00:01:42,709
+<font color="#CCCCCC">database and getting the valuable</font>
+
+45
+00:01:42,709 --> 00:01:44,929
+information<font color="#CCCCCC"> in</font><font color="#E5E5E5"> return what kind of</font>
+
+46
+00:01:44,929 --> 00:01:47,329
+information<font color="#CCCCCC"> attack again get from</font><font color="#E5E5E5"> SQL</font>
+
+47
+00:01:47,329 --> 00:01:49,100
+injection<font color="#E5E5E5"> that is in the third point so</font>
+
+48
+00:01:49,100 --> 00:01:51,139
+<font color="#E5E5E5">SQL injection attack can provide sense</font>
+
+49
+00:01:51,139 --> 00:01:53,149
+it will<font color="#E5E5E5"> function like username the</font>
+
+50
+00:01:53,149 --> 00:01:54,889
+unpassed word so what kind of<font color="#E5E5E5"> user name</font>
+
+51
+00:01:54,889 --> 00:01:57,619
+and password for<font color="#CCCCCC"> example</font><font color="#E5E5E5"> admin username</font>
+
+52
+00:01:57,619 --> 00:01:59,950
+the admin panel of the website and
+
+53
+00:01:59,950 --> 00:02:02,149
+attacker can get the<font color="#E5E5E5"> username and the</font>
+
+54
+00:02:02,149 --> 00:02:04,130
+password of<font color="#E5E5E5"> the admin panel and attacker</font>
+
+55
+00:02:04,130 --> 00:02:05,929
+can wipe out the complete data from a
+
+56
+00:02:05,929 --> 00:02:08,449
+database<font color="#E5E5E5"> what else and attacker can get</font>
+
+57
+00:02:08,449 --> 00:02:10,758
+phone<font color="#CCCCCC"> numbers of customers right</font><font color="#E5E5E5"> fax</font>
+
+58
+00:02:10,758 --> 00:02:13,220
+numbers addresses of customers so this
+
+59
+00:02:13,220 --> 00:02:15,740
+kind of sensitive<font color="#CCCCCC"> information and attack</font>
+
+60
+00:02:15,740 --> 00:02:18,530
+it can get from SQL injection attacks
+
+61
+00:02:18,530 --> 00:02:21,380
+<font color="#E5E5E5">process let's talk about SQL injection</font>
+
+62
+00:02:21,380 --> 00:02:21,900
+process
+
+63
+00:02:21,900 --> 00:02:23,879
+it's quite simple<font color="#CCCCCC"> so here you</font><font color="#E5E5E5"> can see</font>
+
+64
+00:02:23,879 --> 00:02:26,040
+this is a very<font color="#E5E5E5"> simple scenario in which</font>
+
+65
+00:02:26,040 --> 00:02:27,750
+you<font color="#E5E5E5"> can see this is the attacker and</font>
+
+66
+00:02:27,750 --> 00:02:29,610
+this is your database<font color="#CCCCCC"> or</font><font color="#E5E5E5"> you</font><font color="#CCCCCC"> can say web</font>
+
+67
+00:02:29,610 --> 00:02:31,680
+server<font color="#E5E5E5"> and attacker tries to attack on</font>
+
+68
+00:02:31,680 --> 00:02:33,090
+the web<font color="#E5E5E5"> server</font><font color="#CCCCCC"> so what is the process</font>
+
+69
+00:02:33,090 --> 00:02:34,920
+<font color="#CCCCCC">processes for</font><font color="#E5E5E5"> it simple right and</font>
+
+70
+00:02:34,920 --> 00:02:37,080
+because attacker<font color="#E5E5E5"> needs to use Internet</font>
+
+71
+00:02:37,080 --> 00:02:41,040
+<font color="#E5E5E5">to access the web server of that</font>
+
+72
+00:02:41,040 --> 00:02:44,099
+particular website<font color="#E5E5E5"> right and it's quite</font>
+
+73
+00:02:44,099 --> 00:02:45,959
+simple<font color="#E5E5E5"> attacker needs to insert some</font>
+
+74
+00:02:45,959 --> 00:02:48,739
+commands which is SQL<font color="#E5E5E5"> in comments and</font>
+
+75
+00:02:48,739 --> 00:02:51,269
+this<font color="#E5E5E5"> database will provide you all the</font>
+
+76
+00:02:51,269 --> 00:02:54,000
+information<font color="#CCCCCC"> to attack a browser so this</font>
+
+77
+00:02:54,000 --> 00:02:56,129
+is called basically SQL<font color="#CCCCCC"> Lucien</font><font color="#E5E5E5"> process</font>
+
+78
+00:02:56,129 --> 00:02:58,650
+what kind of commands we<font color="#CCCCCC"> can use in SQL</font>
+
+79
+00:02:58,650 --> 00:03:00,150
+injection that<font color="#E5E5E5"> I am going to cover in</font>
+
+80
+00:03:00,150 --> 00:03:02,280
+the next video<font color="#E5E5E5"> and this</font><font color="#CCCCCC"> is just a</font>
+
+81
+00:03:02,280 --> 00:03:04,650
+process<font color="#E5E5E5"> that</font><font color="#CCCCCC"> I'm</font><font color="#E5E5E5"> going</font><font color="#CCCCCC"> to provide you</font>
+
+82
+00:03:04,650 --> 00:03:07,290
+<font color="#CCCCCC">some information about it right and this</font>
+
+83
+00:03:07,290 --> 00:03:09,200
+is a quite<font color="#CCCCCC"> simple scenario alright</font>
+
+84
+00:03:09,200 --> 00:03:12,359
+because<font color="#E5E5E5"> anyone can</font><font color="#CCCCCC"> access</font><font color="#E5E5E5"> websites and</font>
+
+85
+00:03:12,359 --> 00:03:14,340
+web site has web server and<font color="#CCCCCC"> that server</font>
+
+86
+00:03:14,340 --> 00:03:16,260
+contains database<font color="#E5E5E5"> so the attacker</font>
+
+87
+00:03:16,260 --> 00:03:18,180
+needs to attack on this database<font color="#E5E5E5"> to</font>
+
+88
+00:03:18,180 --> 00:03:20,159
+gather information<font color="#E5E5E5"> about tables columns</font>
+
+89
+00:03:20,159 --> 00:03:23,250
+<font color="#E5E5E5">as the data which</font><font color="#CCCCCC"> is valuable to</font>
+
+90
+00:03:23,250 --> 00:03:25,500
+attacker to the<font color="#CCCCCC"> our target</font><font color="#E5E5E5"> means if you</font>
+
+91
+00:03:25,500 --> 00:03:27,510
+consider<font color="#E5E5E5"> as an attacker then your target</font>
+
+92
+00:03:27,510 --> 00:03:29,220
+is<font color="#E5E5E5"> to gather</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> information from the</font>
+
+93
+00:03:29,220 --> 00:03:30,810
+database of<font color="#CCCCCC"> the</font><font color="#E5E5E5"> website that we are</font>
+
+94
+00:03:30,810 --> 00:03:32,730
+<font color="#E5E5E5">going to learn in this section</font><font color="#CCCCCC"> so this</font>
+
+95
+00:03:32,730 --> 00:03:35,430
+is all<font color="#CCCCCC"> about this video about</font><font color="#E5E5E5"> SQL</font>
+
+96
+00:03:35,430 --> 00:03:38,980
+injection introduction and process
+
+97
+00:03:38,980 --> 00:00:00,000
+<font color="#CCCCCC">you</font>
+

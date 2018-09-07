@@ -1,0 +1,7536 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan, atau untuk melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,305
+ di ocw.mit.edu. 
+
+9
+00:00:17,305 --> 00:00:26,520
+
+
+10
+00:00:26,520 --> 00:00:29,520
+ PROFESOR: Sekarang lihat bagaimana web menggunakan 
+
+11
+00:00:29,520 --> 00:00:32,770
+ protokol kriptografi untuk melindungi komunikasi jaringan 
+
+12
+00:00:32,770 --> 00:00:36,142
+ dan berhubungan dengan faktor jaringan secara umum. 
+
+13
+00:00:36,142 --> 00:00:37,600
+ Jadi sebelum kita menyelidiki detailnya, 
+
+14
+00:00:37,600 --> 00:00:39,641
+ Saya ingin mengingatkan Anda ada kuis pada hari Rabu. 
+
+15
+00:00:39,641 --> 00:00:41,350
+ Dan itu tidak ada di ruangan ini. 
+
+16
+00:00:41,350 --> 00:00:42,730
+ Ada di Walker. 
+
+17
+00:00:42,730 --> 00:00:45,559
+ Tapi itu pada waktu kuliah biasa. 
+
+18
+00:00:45,559 --> 00:00:46,600
+ Ada pertanyaan tentang itu? 
+
+19
+00:00:46,600 --> 00:00:49,002
+ Semoga mudah. 
+
+20
+00:00:49,002 --> 00:00:50,460
+ Lantai tiga, saya pikir itu biasanya. 
+
+21
+00:00:50,460 --> 00:00:53,340
+
+
+22
+00:00:53,340 --> 00:00:54,220
+ Baiklah. 
+
+23
+00:00:54,220 --> 00:00:58,654
+ Jadi hari ini kita akan membahas tentang bagaimana penggunaan web 
+
+24
+00:00:58,654 --> 00:01:00,570
+ kriptografi untuk melindungi komunikasi jaringan. 
+
+25
+00:01:00,570 --> 00:01:03,800
+ Dan kita akan melihat dua jenis topik yang terkait erat. 
+
+26
+00:01:03,800 --> 00:01:07,090
+ Salah satunya adalah, bagaimana Anda hanya melindungi cryptographically tidak pernah 
+
+27
+00:01:07,090 --> 00:01:09,890
+ komunikasi dalam skala yang lebih besar daripada sistem Kerberos 
+
+28
+00:01:09,890 --> 00:01:11,956
+ kami melihat di kuliah terakhir? 
+
+29
+00:01:11,956 --> 00:01:14,330
+ Dan kemudian juga, kita akan melihat bagaimana Anda sebenarnya 
+
+30
+00:01:14,330 --> 00:01:16,970
+ mengintegrasikan perlindungan kriptografi ini kepada Anda 
+
+31
+00:01:16,970 --> 00:01:19,940
+ di tingkat jaringan ke seluruh aplikasi. 
+
+32
+00:01:19,940 --> 00:01:22,190
+ Jadi bagaimana browser web masuk akal 
+
+33
+00:01:22,190 --> 00:01:25,090
+ dari apa pun yang menjamin protokol kriptografi 
+
+34
+00:01:25,090 --> 00:01:26,600
+ menyediakannya? 
+
+35
+00:01:26,600 --> 00:01:29,990
+ Dan ini terkait erat, dan ternyata 
+
+36
+00:01:29,990 --> 00:01:32,730
+ bahwa melindungi komunikasi jaringan agak mudah. 
+
+37
+00:01:32,730 --> 00:01:34,880
+ Kriptografi kebanyakan hanya berfungsi. 
+
+38
+00:01:34,880 --> 00:01:37,960
+ Dan mengintegrasikannya, dan saat ini menggunakannya 
+
+39
+00:01:37,960 --> 00:01:40,020
+ pada level yang lebih tinggi di browser, 
+
+40
+00:01:40,020 --> 00:01:41,790
+ sebenarnya adalah bagian yang jauh lebih sulit, 
+
+41
+00:01:41,790 --> 00:01:44,260
+ bagaimana cara membangun sistem di sekitar kriptografi. 
+
+42
+00:01:44,260 --> 00:01:46,290
+
+
+43
+00:01:46,290 --> 00:01:48,700
+ Sebelum kita menyelami seluruh diskusi ini, 
+
+44
+00:01:48,700 --> 00:01:52,900
+ Saya ingin mengingatkan Anda tentang jenisnya 
+
+45
+00:01:52,900 --> 00:01:55,670
+ dari primitif kriptografi yang akan kita gunakan di sini. 
+
+46
+00:01:55,670 --> 00:01:59,580
+ Jadi dalam kuliah terakhir tentang Kerberos, kita pada dasarnya 
+
+47
+00:01:59,580 --> 00:02:04,320
+ menggunakan sesuatu yang disebut kripto simetris, atau enkripsi 
+
+48
+00:02:04,320 --> 00:02:05,630
+ dan dekripsi. 
+
+49
+00:02:05,630 --> 00:02:09,910
+ Dan rencananya ada Anda memiliki kunci rahasia k, 
+
+50
+00:02:09,910 --> 00:02:11,340
+ dan Anda memiliki dua fungsi. 
+
+51
+00:02:11,340 --> 00:02:14,070
+ Jadi Anda dapat mengambil sebagian data, 
+
+52
+00:02:14,070 --> 00:02:16,220
+ sebut saja p untuk teks biasa, dan Anda 
+
+53
+00:02:16,220 --> 00:02:18,170
+ dapat menerapkan fungsi enkripsi, itu 
+
+54
+00:02:18,170 --> 00:02:20,210
+ fungsi dari beberapa kunci k. 
+
+55
+00:02:20,210 --> 00:02:24,150
+ Dan jika Anda mengenkripsikan teks biasa ini, Anda mendapatkan teks Cypher c. 
+
+56
+00:02:24,150 --> 00:02:26,380
+ Dan juga, ada fungsi deskripsi yang disebut 
+
+57
+00:02:26,380 --> 00:02:28,930
+ d, yang diberi kunci yang sama k. 
+
+58
+00:02:28,930 --> 00:02:31,860
+ Dan teks sandi akan mengembalikan teks biasa Anda. 
+
+59
+00:02:31,860 --> 00:02:35,880
+ Jadi ini adalah primitif yang dibangun oleh Kerberos. 
+
+60
+00:02:35,880 --> 00:02:38,240
+ Tapi ternyata ada primitif lain, juga, 
+
+61
+00:02:38,240 --> 00:02:40,360
+ yang akan berguna untuk diskusi hari ini. 
+
+62
+00:02:40,360 --> 00:02:46,350
+ Dan ini disebut enkripsi dan dekripsi asimetris. 
+
+63
+00:02:46,350 --> 00:02:49,520
+ Dan di sini idenya adalah memiliki kunci enkripsi yang berbeda 
+
+64
+00:02:49,520 --> 00:02:50,260
+ dan dekripsi. 
+
+65
+00:02:50,260 --> 00:02:52,505
+ Kita akan melihat mengapa ini sangat berguna. 
+
+66
+00:02:52,505 --> 00:02:54,380
+ Dan khususnya, fungsi-fungsi yang Anda dapatkan 
+
+67
+00:02:54,380 --> 00:02:58,300
+ adalah, Anda dapat mengenkripsi ke kunci publik tertentu 
+
+68
+00:02:58,300 --> 00:03:00,990
+ dengan pesan penjumlahan dan dapatkan teks teks rahasia. 
+
+69
+00:03:00,990 --> 00:03:02,550
+ Dan untuk mendekripsi, Anda hanya 
+
+70
+00:03:02,550 --> 00:03:07,380
+ masukkan kunci rahasia yang sesuai untuk mendapatkan teks biasa kembali. 
+
+71
+00:03:07,380 --> 00:03:10,400
+ Dan hal yang keren sekarang karena Anda dapat mempublikasikan kunci publik ini 
+
+72
+00:03:10,400 --> 00:03:12,320
+ di mana saja di internet, dan orang-orang 
+
+73
+00:03:12,320 --> 00:03:15,180
+ dapat mengenkripsi pesan untuk Anda, tetapi Anda membutuhkan kunci rahasia 
+
+74
+00:03:15,180 --> 00:03:16,790
+ untuk mendekripsi pesan. 
+
+75
+00:03:16,790 --> 00:03:19,910
+ Dan kita akan melihat bagaimana ini digunakan dalam protokol. 
+
+76
+00:03:19,910 --> 00:03:26,200
+ Dan dalam prakteknya Anda sering menggunakan crypto kunci publik 
+
+77
+00:03:26,200 --> 00:03:27,960
+ dengan cara yang sedikit berbeda. 
+
+78
+00:03:27,960 --> 00:03:30,050
+ Jadi, bukannya mengenkripsi dan mendekripsi pesan, 
+
+79
+00:03:30,050 --> 00:03:34,510
+ Anda mungkin benar-benar ingin menandatangani atau memverifikasi pesan. 
+
+80
+00:03:34,510 --> 00:03:36,390
+ Ternyata pada tingkat implementasi 
+
+81
+00:03:36,390 --> 00:03:41,162
+ ini adalah operasi terkait, tetapi pada tingkat API 
+
+82
+00:03:41,162 --> 00:03:42,870
+ mereka mungkin terlihat sedikit berbeda. 
+
+83
+00:03:42,870 --> 00:03:47,350
+ Jadi Anda mungkin menemukan pesan dengan kunci rahasia Anda, 
+
+84
+00:03:47,350 --> 00:03:50,160
+ dan Anda mendapatkan semacam tanda tangan. 
+
+85
+00:03:50,160 --> 00:03:53,930
+ Dan kemudian Anda juga dapat memverifikasi pesan ini menggunakan 
+
+86
+00:03:53,930 --> 00:03:55,340
+ kunci publik terkait. 
+
+87
+00:03:55,340 --> 00:04:00,040
+ Dan Anda mendapatkan pesan, dan tanda tangan, dan hasilnya, 
+
+88
+00:04:00,040 --> 00:04:02,590
+ dan beberapa bendera Boolean mengatakan apakah ini 
+
+89
+00:04:02,590 --> 00:04:06,040
+ adalah tanda tangan yang benar bukan pada pesan itu. 
+
+90
+00:04:06,040 --> 00:04:08,460
+ Dan ada beberapa jaminan yang relatif intuitif 
+
+91
+00:04:08,460 --> 00:04:11,630
+ bahwa fungsi-fungsi ini menyediakan jika Anda, misalnya, dapatkan 
+
+92
+00:04:11,630 --> 00:04:13,520
+ tanda tangan ini dan ini memverifikasi dengan benar, 
+
+93
+00:04:13,520 --> 00:04:15,710
+ maka itu pasti dihasilkan oleh seseorang 
+
+94
+00:04:15,710 --> 00:04:16,930
+ dengan kunci rahasia yang benar. 
+
+95
+00:04:16,930 --> 00:04:18,990
+
+
+96
+00:04:18,990 --> 00:04:21,740
+ Masuk akal, dalam hal primitif yang kita miliki? 
+
+97
+00:04:21,740 --> 00:04:22,790
+ Baiklah. 
+
+98
+00:04:22,790 --> 00:04:24,690
+ Jadi sekarang mari kita coba mencari tahu-- 
+
+99
+00:04:24,690 --> 00:04:26,636
+
+
+100
+00:04:26,636 --> 00:04:28,385
+ Bagaimana kita melindungi komunikasi jaringan 
+
+101
+00:04:28,385 --> 00:04:30,520
+ pada skala yang lebih besar di Kerberos. 
+
+102
+00:04:30,520 --> 00:04:33,650
+ Di Kerberos, kami memiliki model yang cukup sederhana 
+
+103
+00:04:33,650 --> 00:04:37,810
+ di mana kami memiliki semua pengguna dan server 
+
+104
+00:04:37,810 --> 00:04:41,330
+ memiliki semacam hubungan dengan entitas KDC ini. 
+
+105
+00:04:41,330 --> 00:04:43,790
+ Dan entitas KDC ini memiliki meja raksasa ini 
+
+106
+00:04:43,790 --> 00:04:46,695
+ prinsip dan kunci mereka. 
+
+107
+00:04:46,695 --> 00:04:49,260
+
+
+108
+00:04:49,260 --> 00:04:51,940
+ Dan kapan pun pengguna ingin berbicara dengan beberapa server, 
+
+109
+00:04:51,940 --> 00:04:55,010
+ mereka harus meminta KDC untuk membuat tiket berdasarkan 
+
+110
+00:04:55,010 --> 00:04:58,340
+ di meja raksasa yang dimiliki KDC. 
+
+111
+00:04:58,340 --> 00:05:00,890
+ Jadi ini sepertinya model yang cukup sederhana. 
+
+112
+00:05:00,890 --> 00:05:02,320
+ Jadi mengapa kita membutuhkan sesuatu yang lebih? 
+
+113
+00:05:02,320 --> 00:05:06,180
+ Mengapa Kerberos tidak cukup untuk web? 
+
+114
+00:05:06,180 --> 00:05:08,599
+ Mengapa web tidak menggunakan hanya Kerberos untuk mengamankan 
+
+115
+00:05:08,599 --> 00:05:09,390
+ semua komunikasi? 
+
+116
+00:05:09,390 --> 00:05:13,059
+
+
+117
+00:05:13,059 --> 00:05:14,927
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+118
+00:05:14,927 --> 00:05:16,224
+
+
+119
+00:05:16,224 --> 00:05:16,890
+ PROFESOR: Ya. 
+
+120
+00:05:16,890 --> 00:05:24,730
+ Jadi ada semacam KDC tunggal, harus dipercaya oleh semua. 
+
+121
+00:05:24,730 --> 00:05:27,340
+ Jadi ini mungkin tidak bagus. 
+
+122
+00:05:27,340 --> 00:05:29,100
+ Jadi, Anda mungkin kesulitan benar-benar percaya 
+
+123
+00:05:29,100 --> 00:05:31,420
+ bahwa beberapa mesin di luar sana aman untuk semua orang 
+
+124
+00:05:31,420 --> 00:05:32,792
+ di dunia untuk digunakan. 
+
+125
+00:05:32,792 --> 00:05:34,250
+ Seperti, ya, mungkin orang-orang di MIT 
+
+126
+00:05:34,250 --> 00:05:36,240
+ bersedia mempercayai seseorang di [? ISNT?] 
+
+127
+00:05:36,240 --> 00:05:38,640
+ untuk menjalankan KDC di sana. 
+
+128
+00:05:38,640 --> 00:05:39,140
+ Baiklah. 
+
+129
+00:05:39,140 --> 00:05:42,134
+ Jadi itu masuk akal, ya. 
+
+130
+00:05:42,134 --> 00:05:43,195
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+131
+00:05:43,195 --> 00:05:43,820
+ PROFESOR: Ya. 
+
+132
+00:05:43,820 --> 00:05:45,520
+ Manajemen kunci sulit, saya kira, ya. 
+
+133
+00:05:45,520 --> 00:05:49,778
+ Jadi apa yang saya maksud khususnya oleh manajemen kunci-- 
+
+134
+00:05:49,778 --> 00:05:51,236
+
+
+135
+00:05:51,236 --> 00:05:53,666
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+136
+00:05:53,666 --> 00:06:02,715
+
+
+137
+00:06:02,715 --> 00:06:03,340
+ PROFESOR: Ya. 
+
+138
+00:06:03,340 --> 00:06:06,570
+ Ini mungkin benar-benar pekerjaan yang sulit untuk membangun KDC yang kami 
+
+139
+00:06:06,570 --> 00:06:09,990
+ dapat mengelola satu miliar kunci, atau sepuluh miliar kunci, untuk semua 
+
+140
+00:06:09,990 --> 00:06:11,340
+ orang-orang di dunia. 
+
+141
+00:06:11,340 --> 00:06:13,840
+ Jadi itu mungkin proposisi yang rumit. 
+
+142
+00:06:13,840 --> 00:06:15,340
+ Jika bukan itu masalahnya, maka saya rasa 
+
+143
+00:06:15,340 --> 00:06:18,920
+ satu lagi sampah dengan Kerberos adalah semua pengguna sebenarnya 
+
+144
+00:06:18,920 --> 00:06:23,415
+ harus memiliki kunci, atau harus diketahui oleh KDC. 
+
+145
+00:06:23,415 --> 00:06:26,010
+
+
+146
+00:06:26,010 --> 00:06:28,467
+ Jadi, Anda bahkan tidak dapat menggunakan Kerberos di MIT 
+
+147
+00:06:28,467 --> 00:06:30,425
+ untuk terhubung ke beberapa server, kecuali Anda sendiri 
+
+148
+00:06:30,425 --> 00:06:33,520
+ memiliki akun di database Kerberos. 
+
+149
+00:06:33,520 --> 00:06:36,400
+ Padahal di web, itu benar-benar masuk akal 
+
+150
+00:06:36,400 --> 00:06:38,192
+ untuk mengharapkan Anda berjalan ke beberapa komputer, 
+
+151
+00:06:38,192 --> 00:06:39,733
+ komputer tidak tahu siapa Anda, 
+
+152
+00:06:39,733 --> 00:06:41,890
+ tetapi Anda tetap dapat membuka situs web Amazon 
+
+153
+00:06:41,890 --> 00:06:43,730
+ dengan kriptografi. 
+
+154
+00:06:43,730 --> 00:06:44,612
+ Ya? 
+
+155
+00:06:44,612 --> 00:06:46,058
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+156
+00:06:46,058 --> 00:06:50,775
+
+
+157
+00:06:50,775 --> 00:06:51,900
+ PROFESOR: Itu ide kami. 
+
+158
+00:06:51,900 --> 00:06:53,530
+ Jadi ada pertimbangan semacam ini. 
+
+159
+00:06:53,530 --> 00:06:55,130
+ Jadi ada rahasia kedepan pribadi. 
+
+160
+00:06:55,130 --> 00:06:56,546
+ Ada beberapa hal lain 
+
+161
+00:06:56,546 --> 00:06:58,260
+ yang Anda inginkan dari protokol kriptografi, 
+
+162
+00:06:58,260 --> 00:07:00,472
+ dan kita akan melihat mereka dan bagaimana mereka muncul 
+
+163
+00:07:00,472 --> 00:07:01,407
+ di SSL juga. 
+
+164
+00:07:01,407 --> 00:07:03,490
+ Tapi kuncinya ada solusinya sebenarnya 
+
+165
+00:07:03,490 --> 00:07:06,170
+ persis sama dengan apa yang akan kamu lakukan Kerberos, 
+
+166
+00:07:06,170 --> 00:07:09,514
+ dan apa yang akan Anda lakukan di SSL atau TLS untuk mengatasi orang-orang itu. 
+
+167
+00:07:09,514 --> 00:07:10,680
+ Tapi Anda memang benar. 
+
+168
+00:07:10,680 --> 00:07:12,840
+ Ada protokol dalam Kerberos yang kita baca 
+
+169
+00:07:12,840 --> 00:07:16,150
+ di koran cukup tanggal. 
+
+170
+00:07:16,150 --> 00:07:18,250
+ Jadi, bahkan jika Anda menggunakannya untuk web, 
+
+171
+00:07:18,250 --> 00:07:21,860
+ Anda ingin menerapkan beberapa perubahan padanya. 
+
+172
+00:07:21,860 --> 00:07:26,190
+ Namun itu tidak besar, pada level [tidak terdengar]. 
+
+173
+00:07:26,190 --> 00:07:28,280
+ Pikiran lain tentang mengapa kita harus menggunakan Kerberos? 
+
+174
+00:07:28,280 --> 00:07:29,095
+ Ya? 
+
+175
+00:07:29,095 --> 00:07:30,580
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+176
+00:07:30,580 --> 00:07:36,277
+
+
+177
+00:07:36,277 --> 00:07:38,110
+ PROFESOR: Ini sebenarnya tidak begitu scalable. 
+
+178
+00:07:38,110 --> 00:07:40,815
+
+
+179
+00:07:40,815 --> 00:07:41,440
+ Ya, pemulihan. 
+
+180
+00:07:41,440 --> 00:07:44,240
+
+
+181
+00:07:44,240 --> 00:07:45,790
+ Mungkin pendaftaran juga, juga, 
+
+182
+00:07:45,790 --> 00:07:48,100
+ seperti Anda harus pergi ke beberapa kantor akuntan 
+
+183
+00:07:48,100 --> 00:07:49,050
+ dan dapatkan akun. 
+
+184
+00:07:49,050 --> 00:07:50,406
+ Ya? 
+
+185
+00:07:50,406 --> 00:07:52,160
+ AUDIENCE: [TIDAK JELAS] harus online. 
+
+186
+00:07:52,160 --> 00:07:54,120
+ PROFESOR: Ya, jadi itu masalah lain. 
+
+187
+00:07:54,120 --> 00:07:55,620
+ Ini adalah masalah manajemen, 
+
+188
+00:07:55,620 --> 00:07:59,794
+ tetapi pada level protokol, KDC 
+
+189
+00:07:59,794 --> 00:08:01,460
+ harus online karena itu sebenarnya 
+
+190
+00:08:01,460 --> 00:08:03,635
+ memediasi setiap interaksi yang Anda miliki dengan layanan. 
+
+191
+00:08:03,635 --> 00:08:05,289
+
+
+192
+00:08:05,289 --> 00:08:07,830
+ Artinya di web, setiap kali Anda membuka situs web baru, 
+
+193
+00:08:07,830 --> 00:08:10,130
+ Anda harus berbicara dengan KDC dulu, yang mana 
+
+194
+00:08:10,130 --> 00:08:11,940
+ akan sedikit bottleneck kinerja. 
+
+195
+00:08:11,940 --> 00:08:13,520
+ Jadi seperti skalabilitas jenis lain, 
+
+196
+00:08:13,520 --> 00:08:15,680
+ ini seperti skalabilitas kinerja. 
+
+197
+00:08:15,680 --> 00:08:18,900
+ Ini adalah jenis skalabilitas manajemen yang lebih baik. 
+
+198
+00:08:18,900 --> 00:08:19,470
+ Masuk akal? 
+
+199
+00:08:19,470 --> 00:08:22,030
+
+
+200
+00:08:22,030 --> 00:08:24,040
+ Jadi, bagaimana kita bisa mengatasi masalah ini 
+
+201
+00:08:24,040 --> 00:08:27,160
+ dengan primitif yang lebih baik ini? 
+
+202
+00:08:27,160 --> 00:08:31,330
+ Nah, idenya adalah menggunakan kriptografi kunci publik untuk memberi 
+
+203
+00:08:31,330 --> 00:08:33,980
+ KDC ini keluar dari loop. 
+
+204
+00:08:33,980 --> 00:08:35,880
+ Jadi pertama mari kita cari tahu apakah kita 
+
+205
+00:08:35,880 --> 00:08:40,419
+ dapat membangun komunikasi yang aman jika Anda tahu 
+
+206
+00:08:40,419 --> 00:08:41,669
+ kunci publik pihak lain. 
+
+207
+00:08:41,669 --> 00:08:43,710
+ Dan kemudian kita akan melihat bagaimana kami plug-in 
+
+208
+00:08:43,710 --> 00:08:46,840
+ versi kunci publik dari KDC untuk mengotentikasi pihak 
+
+209
+00:08:46,840 --> 00:08:50,080
+ dalam protokol ini. 
+
+210
+00:08:50,080 --> 00:08:54,194
+ Jika Anda tidak ingin menggunakan KDC, apa 
+
+211
+00:08:54,194 --> 00:08:55,652
+ Anda bisa melakukannya dengan crypto kunci publik 
+
+212
+00:08:55,652 --> 00:08:58,190
+ mungkin Anda bisa mempelajari kunci publik 
+
+213
+00:08:58,190 --> 00:08:59,440
+ kunci publik dari nilai lain pada konektor. 
+
+214
+00:08:59,440 --> 00:09:01,690
+ Jadi di Kerberos, jika saya ingin terhubung ke server file, 
+
+215
+00:09:01,690 --> 00:09:04,330
+ mungkin saya hanya tahu kunci publik file server 
+
+216
+00:09:04,330 --> 00:09:05,190
+ dari suatu tempat. 
+
+217
+00:09:05,190 --> 00:09:07,510
+ Seperti saya sebagai mahasiswa baru saya mendapatkan cetakan yang mengatakan file itu 
+
+218
+00:09:07,510 --> 00:09:09,260
+ kunci publik server adalah ini. 
+
+219
+00:09:09,260 --> 00:09:12,450
+ Dan kemudian Anda dapat melanjutkan dan menghubungkannya. 
+
+220
+00:09:12,450 --> 00:09:14,760
+ Dan cara Anda benar-benar melakukan ini adalah Anda 
+
+221
+00:09:14,760 --> 00:09:18,552
+ hanya bisa mengenkripsi pesan untuk kunci publik file 
+
+222
+00:09:18,552 --> 00:09:20,010
+ server yang ingin Anda sambungkan. 
+
+223
+00:09:20,010 --> 00:09:22,460
+ Tetapi ternyata dalam prakteknya, 
+
+224
+00:09:22,460 --> 00:09:24,541
+ operasi kunci publik ini sangat lambat. 
+
+225
+00:09:24,541 --> 00:09:26,040
+ Mereka beberapa kali lipat 
+
+226
+00:09:26,040 --> 00:09:29,260
+ lebih lambat dari kriptografi kunci simetris. 
+
+227
+00:09:29,260 --> 00:09:33,520
+ Jadi hampir selalu Anda ingin keluar dari penggunaan crypto publik 
+
+228
+00:09:33,520 --> 00:09:35,440
+ sesegera praktis. 
+
+229
+00:09:35,440 --> 00:09:37,320
+ Jadi protokol yang khas mungkin terlihat seperti ini 
+
+230
+00:09:37,320 --> 00:09:40,020
+ di mana Anda memiliki dan b, dan mereka ingin berkomunikasi. 
+
+231
+00:09:40,020 --> 00:09:41,990
+ Dan kunci publik yang tahu b. 
+
+232
+00:09:41,990 --> 00:09:44,480
+ Jadi apa yang mungkin terjadi adalah yang mungkin dihasilkan 
+
+233
+00:09:44,480 --> 00:09:46,445
+ semacam sesi s. 
+
+234
+00:09:46,445 --> 00:09:49,840
+
+
+235
+00:09:49,840 --> 00:09:51,380
+ Pilih saja nomor acak. 
+
+236
+00:09:51,380 --> 00:09:56,210
+ Dan kemudian itu akan mengirim ke b kunci sesi s. 
+
+237
+00:09:56,210 --> 00:09:58,550
+ Jadi ini terlihat seperti Kerberos. 
+
+238
+00:09:58,550 --> 00:10:01,840
+ Dan kita akan mengenkripsi sesi untuk kunci b. 
+
+239
+00:10:01,840 --> 00:10:03,860
+ Dan ingat di Kerberos, untuk melakukan ini, 
+
+240
+00:10:03,860 --> 00:10:05,590
+ kita harus membuat KDC melakukan ini untuk kita 
+
+241
+00:10:05,590 --> 00:10:08,095
+ karena tidak tahu kunci b, 
+
+242
+00:10:08,095 --> 00:10:10,720
+ atau tidak diizinkan untuk tahu karena itu adalah rahasia. 
+
+243
+00:10:10,720 --> 00:10:12,197
+ Tetapi hanya b yang seharusnya diketahui. 
+
+244
+00:10:12,197 --> 00:10:14,280
+ Dengan cyrptor kunci publik Anda dapat benar-benar ini sekarang. 
+
+245
+00:10:14,280 --> 00:10:21,730
+ Kita hanya bisa mengenkripsi rahasia menggunakan kunci publik ini. 
+
+246
+00:10:21,730 --> 00:10:23,555
+ Dan kami mengirim pesan ini ke b. 
+
+247
+00:10:23,555 --> 00:10:25,500
+ B sekarang dapat mendekripsi pesan ini, dan mengatakan saya 
+
+248
+00:10:25,500 --> 00:10:27,500
+ harus menggunakan kunci rahasia ini. 
+
+249
+00:10:27,500 --> 00:10:30,930
+ Dan sekarang kita dapat memiliki saluran komunikasi di mana 
+
+250
+00:10:30,930 --> 00:10:32,890
+ semua pesan hanya dienkripsi 
+
+251
+00:10:32,890 --> 00:10:37,560
+ di bawah kunci rahasia ini. 
+
+252
+00:10:37,560 --> 00:10:38,971
+ Apakah ini masuk akal? 
+
+253
+00:10:38,971 --> 00:10:41,220
+ Jadi ada beberapa properti bagus tentang protokol ini. 
+
+254
+00:10:41,220 --> 00:10:43,280
+ Salah satunya adalah kita harus menyingkirkan keharusan untuk memilikinya 
+
+255
+00:10:43,280 --> 00:10:47,339
+ KDC menjadi online dan menghasilkan kunci sesi kami untuk kami. 
+
+256
+00:10:47,339 --> 00:10:48,880
+ Kami hanya bisa memiliki salah satu pihak 
+
+257
+00:10:48,880 --> 00:10:51,670
+ hasilkan dan kemudian mengenkripsinya untuk pihak lain 
+
+258
+00:10:51,670 --> 00:10:54,040
+ tanpa menggunakan KDC. 
+
+259
+00:10:54,040 --> 00:10:56,070
+ Hal lain yang menyenangkan adalah kita mungkin 
+
+260
+00:10:56,070 --> 00:10:59,480
+ cukup yakin bahwa pesan yang dikirim oleh a ke b 
+
+261
+00:10:59,480 --> 00:11:01,190
+ hanya akan dibaca oleh b. 
+
+262
+00:11:01,190 --> 00:11:04,670
+ Karena hanya b yang bisa mendekripsi pesan ini. 
+
+263
+00:11:04,670 --> 00:11:06,565
+ Dan karenanya, hanya b yang seharusnya 
+
+264
+00:11:06,565 --> 00:11:09,640
+ kunci rahasia yang sesuai s. 
+
+265
+00:11:09,640 --> 00:11:11,030
+ Tapi ini cukup bagus. 
+
+266
+00:11:11,030 --> 00:11:12,700
+ Ada pertanyaan tentang protokol ini? 
+
+267
+00:11:12,700 --> 00:11:13,260
+ Ya? 
+
+268
+00:11:13,260 --> 00:11:16,146
+ AUDIENCE: Apakah penting apakah pengguna atau server 
+
+269
+00:11:16,146 --> 00:11:18,560
+ menghasilkan kode pass? 
+
+270
+00:11:18,560 --> 00:11:20,150
+ PROFESOR: Yah, mungkin. 
+
+271
+00:11:20,150 --> 00:11:25,760
+ Saya pikir itu tergantung pada pertimbangannya, 
+
+272
+00:11:25,760 --> 00:11:28,080
+ atau properti yang Anda inginkan dari protokol ini. 
+
+273
+00:11:28,080 --> 00:11:35,320
+ Jadi di sini, tentu saja jika buggy atau mengambil keacakan yang buruk, 
+
+274
+00:11:35,320 --> 00:11:38,420
+ server kemudian mengirim beberapa data kembali ke, berpikir, 
+
+275
+00:11:38,420 --> 00:11:40,970
+ oh, ini sekarang satu-satunya data yang akan dilihat oleh. 
+
+276
+00:11:40,970 --> 00:11:43,320
+ Yah, mungkin itu tidak akan benar. 
+
+277
+00:11:43,320 --> 00:11:45,020
+ Jadi Anda mungkin sedikit peduli. 
+
+278
+00:11:45,020 --> 00:11:47,270
+ Ada beberapa masalah lain dengan protokol ini, 
+
+279
+00:11:47,270 --> 00:11:48,030
+ demikian juga. 
+
+280
+00:11:48,030 --> 00:11:49,226
+ Pertanyaan? 
+
+281
+00:11:49,226 --> 00:11:52,810
+ AUDIENCE: Saya akan mengatakan bahwa dalam protokol ini, 
+
+282
+00:11:52,810 --> 00:11:55,060
+ kamu hanya bisa melakukan [TIDAK JELAS]. 
+
+283
+00:11:55,060 --> 00:11:58,021
+
+
+284
+00:11:58,021 --> 00:11:59,770
+ PROFESOR: Ya, itu sebenarnya tidak bagus. 
+
+285
+00:11:59,770 --> 00:12:01,728
+ Jadi sebenarnya ada beberapa masalah dengan ini. 
+
+286
+00:12:01,728 --> 00:12:05,660
+ Salah satunya adalah replay. 
+
+287
+00:12:05,660 --> 00:12:09,436
+ Jadi masalahnya di sini adalah saya bisa 
+
+288
+00:12:09,436 --> 00:12:10,810
+ kirim pesan-pesan ini lagi, dan itu 
+
+289
+00:12:10,810 --> 00:12:14,060
+ terlihat seperti mengirim pesan-pesan ini ke b, dan seterusnya. 
+
+290
+00:12:14,060 --> 00:12:16,160
+ Jadi biasanya solusi untuk ini 
+
+291
+00:12:16,160 --> 00:12:18,640
+ adalah untuk memiliki kedua belah pihak berpartisipasi 
+
+292
+00:12:18,640 --> 00:12:22,470
+ dalam generasi s, dan itu memastikan 
+
+293
+00:12:22,470 --> 00:12:25,230
+ bahwa kunci yang kami gunakan sekarang segar. 
+
+294
+00:12:25,230 --> 00:12:27,840
+ Karena di sini, karena b tidak benar-benar menghasilkan apa pun, 
+
+295
+00:12:27,840 --> 00:12:30,310
+ pesan protokol ini terlihat sama setiap waktu. 
+
+296
+00:12:30,310 --> 00:12:33,410
+ Jadi biasanya, yang terjadi adalah, salah satu pihak memilih 
+
+297
+00:12:33,410 --> 00:12:36,630
+ nomor acak seperti s, dan kemudian pihak lain b juga 
+
+298
+00:12:36,630 --> 00:12:39,417
+ mengambil beberapa nomor acak, biasanya disebut non. 
+
+299
+00:12:39,417 --> 00:12:40,000
+ Tapi apa pun. 
+
+300
+00:12:40,000 --> 00:12:41,630
+ Ada dua angka. 
+
+301
+00:12:41,630 --> 00:12:43,877
+ Dan kemudian kunci yang mereka setujui untuk digunakan dalam benda itu 
+
+302
+00:12:43,877 --> 00:12:45,460
+ bahwa salah satu pihak memilih, tetapi sebenarnya 
+
+303
+00:12:45,460 --> 00:12:48,610
+ hash dari hal-hal yang mereka pilih. 
+
+304
+00:12:48,610 --> 00:12:49,890
+ Jadi kamu bisa melakukan itu. 
+
+305
+00:12:49,890 --> 00:12:52,509
+ Anda juga bisa melakukan [? DP Helmond?] Semacam barang 
+
+306
+00:12:52,509 --> 00:12:54,050
+ seperti yang kita lihat di kuliah terakhir 
+
+307
+00:12:54,050 --> 00:12:55,650
+ di mana Anda meneruskan kerahasiaan. 
+
+308
+00:12:55,650 --> 00:12:58,220
+ Itu sedikit lebih rumit daripada matematika 
+
+309
+00:12:58,220 --> 00:13:01,117
+ hanya hashing dua nomor acak yang dua pihak memilih. 
+
+310
+00:13:01,117 --> 00:13:02,700
+ Tetapi kemudian Anda mendapatkan beberapa properti yang bagus, 
+
+311
+00:13:02,700 --> 00:13:05,610
+ seperti kerahasiaan ke depan. 
+
+312
+00:13:05,610 --> 00:13:07,600
+ Jadi, replay serangan yang biasanya Anda perbaiki 
+
+313
+00:13:07,600 --> 00:13:14,350
+ dengan memiliki b menghasilkan beberapa nons. 
+
+314
+00:13:14,350 --> 00:13:16,850
+ Dan kemudian Anda mengatur kunci rahasia yang sebenarnya 
+
+315
+00:13:16,850 --> 00:13:19,900
+ yang akan Anda gunakan untuk hash kunci rahasia 
+
+316
+00:13:19,900 --> 00:13:24,267
+ dari satu orang yang bersatu dengan non ini. 
+
+317
+00:13:24,267 --> 00:13:26,350
+ Dan, tentu saja, b harus mengirim nons kembali 
+
+318
+00:13:26,350 --> 00:13:29,220
+ ke dalam untuk mencari tahu apa 
+
+319
+00:13:29,220 --> 00:13:32,850
+ berlangsung bagi keduanya untuk menyetujui kunci. 
+
+320
+00:13:32,850 --> 00:13:33,670
+ Baiklah. 
+
+321
+00:13:33,670 --> 00:13:40,060
+ Jadi masalah lain di sini adalah tidak ada otentikasi nyata 
+
+322
+00:13:40,060 --> 00:13:40,990
+ dari sini, oke? 
+
+323
+00:13:40,990 --> 00:13:43,610
+ Jadi yang tahu siapa b, atau setidaknya a 
+
+324
+00:13:43,610 --> 00:13:46,700
+ tahu siapa yang akan bisa mendekripsi data. 
+
+325
+00:13:46,700 --> 00:13:50,390
+ Tapi b tidak tahu siapa yang ada di sisi lain, 
+
+326
+00:13:50,390 --> 00:13:54,630
+ apakah itu atau beberapa peniruan identitas, dan sebagainya. 
+
+327
+00:13:54,630 --> 00:13:58,741
+ Jadi bagaimana kita memperbaikinya di dunia kunci publiknya? 
+
+328
+00:13:58,741 --> 00:13:59,240
+ Ya? 
+
+329
+00:13:59,240 --> 00:14:01,854
+ AUDIENCE: Anda telah diberi sesuatu dan [TIDAK JELAS]. 
+
+330
+00:14:01,854 --> 00:14:02,520
+ PROFESOR: Ya. 
+
+331
+00:14:02,520 --> 00:14:05,390
+ Ada beberapa cara yang bisa Anda lakukan tentang hal ini. 
+
+332
+00:14:05,390 --> 00:14:07,510
+ Satu kemungkinan adalah mungkin seharusnya 
+
+333
+00:14:07,510 --> 00:14:09,630
+ tanda pesan ini awalnya, karena kita 
+
+334
+00:14:09,630 --> 00:14:11,160
+ memiliki tanda primitif yang bagus ini. 
+
+335
+00:14:11,160 --> 00:14:19,040
+ Jadi kita mungkin bisa memiliki tanda ini dengan kunci rahasia. 
+
+336
+00:14:19,040 --> 00:14:20,829
+ Dan tanda itu hanya memberikan tanda tangan, 
+
+337
+00:14:20,829 --> 00:14:22,370
+ tetapi mungkin Anda menetapkan itu dan juga 
+
+338
+00:14:22,370 --> 00:14:24,400
+ berikan pesan juga. 
+
+339
+00:14:24,400 --> 00:14:27,750
+ Dan kemudian b harus tahu kunci publik dalam urutan 
+
+340
+00:14:27,750 --> 00:14:29,370
+ untuk memverifikasi tanda tangan. 
+
+341
+00:14:29,370 --> 00:14:32,229
+ Tetapi jika b tahu adalah kunci publik, maka b's 
+
+342
+00:14:32,229 --> 00:14:34,520
+ akan cukup yakin bahwa itu adalah salah satu yang 
+
+343
+00:14:34,520 --> 00:14:36,430
+ mengirim pesan ini. 
+
+344
+00:14:36,430 --> 00:14:37,470
+ Masuk akal? 
+
+345
+00:14:37,470 --> 00:14:40,050
+ Hal lain yang bisa Anda lakukan adalah mengandalkan enkripsi. 
+
+346
+00:14:40,050 --> 00:14:44,120
+ Jadi mungkin b bisa mengirim nons kembali ke yang dienkripsi 
+
+347
+00:14:44,120 --> 00:14:46,029
+ di bawah kunci publik a. 
+
+348
+00:14:46,029 --> 00:14:48,070
+ Dan kemudian hanya akan bisa mendekripsi para nons 
+
+349
+00:14:48,070 --> 00:14:50,366
+ dan menghasilkan kunci sesi sesi terakhir. 
+
+350
+00:14:50,366 --> 00:14:52,240
+ Jadi ada beberapa trik yang bisa Anda lakukan. 
+
+351
+00:14:52,240 --> 00:14:55,110
+ Ini kira-kira bagaimana sertifikat klien 
+
+352
+00:14:55,110 --> 00:14:57,640
+ bekerja di browser web hari ini. 
+
+353
+00:14:57,640 --> 00:15:00,005
+ Jadi a memiliki kunci rahasia, jadi ketika mendapatkannya 
+
+354
+00:15:00,005 --> 00:15:03,550
+ sertifikat pribadi MIT, yang terjadi adalah browser Anda 
+
+355
+00:15:03,550 --> 00:15:05,300
+ menghasilkan kunci rahasia yang berumur panjang 
+
+356
+00:15:05,300 --> 00:15:07,410
+ dan mendapat sertifikat untuk itu. 
+
+357
+00:15:07,410 --> 00:15:10,636
+ Dan setiap kali Anda mengirim untuk meminta server web, 
+
+358
+00:15:10,636 --> 00:15:12,260
+ Anda akan membuktikan fakta bahwa Anda 
+
+359
+00:15:12,260 --> 00:15:15,970
+ tahu kunci rahasia dalam sertifikat pengguna Anda, 
+
+360
+00:15:15,970 --> 00:15:18,540
+ dan kemudian membuat kunci rahasia untuk sisanya 
+
+361
+00:15:18,540 --> 00:15:19,972
+ komunikasi. 
+
+362
+00:15:19,972 --> 00:15:22,640
+ Masuk akal? 
+
+363
+00:15:22,640 --> 00:15:23,180
+ Baiklah. 
+
+364
+00:15:23,180 --> 00:15:26,820
+
+
+365
+00:15:26,820 --> 00:15:29,760
+ Ini adalah semua masalah yang bisa diperbaiki di level protokol 
+
+366
+00:15:29,760 --> 00:15:31,820
+ yang cukup mudah untuk alamat V 
+
+367
+00:15:31,820 --> 00:15:33,390
+ dengan menambahkan pesan tambahan. 
+
+368
+00:15:33,390 --> 00:15:36,810
+ Asumsi besar di sini, tentu saja, kita akan kalah 
+
+369
+00:15:36,810 --> 00:15:41,090
+ adalah bahwa semua pihak tahu kunci publik masing-masing. 
+
+370
+00:15:41,090 --> 00:15:47,500
+ Jadi, apakah Anda benar-benar menemukan kunci publik seseorang? 
+
+371
+00:15:47,500 --> 00:15:50,910
+ karena, Anda tahu, itu adalah keinginan untuk menghubungkan situs web, 
+
+372
+00:15:50,910 --> 00:15:53,882
+ Saya memiliki URL yang ingin saya hubungi, atau nama host, 
+
+373
+00:15:53,882 --> 00:15:55,840
+ bagaimana saya tahu kunci pub apa yang sesuai? 
+
+374
+00:15:55,840 --> 00:15:59,660
+ Atau juga, jika saya terhubung ke websis untuk melihat nilai saya, 
+
+375
+00:15:59,660 --> 00:16:04,070
+ bagaimana server tahu apa kunci publik saya seharusnya, 
+
+376
+00:16:04,070 --> 00:16:08,550
+ dibandingkan dengan kunci publik dari beberapa orang lain MIT? 
+
+377
+00:16:08,550 --> 00:16:13,889
+ Jadi ini adalah masalah utama yang ditangani KDC. 
+
+378
+00:16:13,889 --> 00:16:16,180
+ Saya kira KDC menyelesaikan dua masalah bagi kami sebelumnya. 
+
+379
+00:16:16,180 --> 00:16:19,081
+ Salah satunya adalah yang menghasilkan pesan ini. 
+
+380
+00:16:19,081 --> 00:16:20,455
+ Itu menghasilkan kunci sesi 
+
+381
+00:16:20,455 --> 00:16:22,490
+ dan mengenkripsi untuk server. 
+
+382
+00:16:22,490 --> 00:16:25,480
+ Kami memperbaikinya dengan melakukan crypto kunci publik sekarang. 
+
+383
+00:16:25,480 --> 00:16:29,350
+ Tetapi kita juga perlu mendapatkan pemetaan ini dari string principal 
+
+384
+00:16:29,350 --> 00:16:32,340
+ nama kunci kriptografi Kerberos sebelumnya 
+
+385
+00:16:32,340 --> 00:16:33,512
+ diberikan kepada kami. 
+
+386
+00:16:33,512 --> 00:16:34,970
+ Dan cara itu akan terjadi 
+
+387
+00:16:34,970 --> 00:16:42,200
+ dalam hal ini dunia https, protokol ini disebut TLC, 
+
+388
+00:16:42,200 --> 00:16:45,200
+ adalah bahwa kita akan tetap mengandalkan beberapa pihak 
+
+389
+00:16:45,200 --> 00:16:47,740
+ untuk mempertahankan, dari yang paling tidak logis 
+
+390
+00:16:47,740 --> 00:16:50,920
+ menjaga tabel raksasa tersebut memetakan nama-nama utama 
+
+391
+00:16:50,920 --> 00:16:53,420
+ ke kunci kriptografi. 
+
+392
+00:16:53,420 --> 00:16:56,174
+ Dan rencananya adalah, kita akan memiliki sesuatu 
+
+393
+00:16:56,174 --> 00:16:57,465
+ disebut otoritas sertifikat. 
+
+394
+00:16:57,465 --> 00:17:02,470
+
+
+395
+00:17:02,470 --> 00:17:05,380
+ Ini sering disingkat sebagai CA dalam semua jenis 
+
+396
+00:17:05,380 --> 00:17:07,608
+ literatur keamanan. 
+
+397
+00:17:07,608 --> 00:17:10,399
+ Hal ini juga akan dipertahankan secara logis 
+
+398
+00:17:10,400 --> 00:17:13,380
+ kestabilan, inilah nama asas, 
+
+399
+00:17:13,380 --> 00:17:19,319
+ dan inilah kunci publik untuk prinsip itu. 
+
+400
+00:17:19,319 --> 00:17:22,300
+ Dan perbedaan utama dari cara Kerberos bekerja, 
+
+401
+00:17:22,300 --> 00:17:24,280
+ adalah bahwa otoritas sertifikat ini 
+
+402
+00:17:24,280 --> 00:17:28,450
+ Hal ini tidak harus online untuk semua transaksi. 
+
+403
+00:17:28,450 --> 00:17:30,450
+ Jadi di Kerberos Anda harus berbicara dengan KDC tersebut 
+
+404
+00:17:30,450 --> 00:17:33,800
+ untuk mendapatkan koneksi atau mencari kunci seseorang. 
+
+405
+00:17:33,800 --> 00:17:36,790
+ Sebaliknya, apa yang akan terjadi di dunia CA ini, 
+
+406
+00:17:36,790 --> 00:17:43,210
+ adalah jika Anda memiliki beberapa nama di sini, dan kunci publik, 
+
+407
+00:17:43,210 --> 00:17:44,800
+ otoritas sertifikat akan hadir 
+
+408
+00:17:44,800 --> 00:17:51,020
+ untuk hanya menandatangani pesan yang menyatakan bahwa ada baris tertentu 
+
+409
+00:17:51,020 --> 00:17:52,940
+ di meja ini. 
+
+410
+00:17:52,940 --> 00:17:54,540
+ Jadi otoritas sertifikat akan berjalan 
+
+411
+00:17:54,540 --> 00:17:59,540
+ untuk memiliki kunci rahasia dan publiknya sendiri di sini. 
+
+412
+00:17:59,540 --> 00:18:01,700
+
+
+413
+00:18:01,700 --> 00:18:03,520
+ Dan itu akan menggunakan kunci rahasia 
+
+414
+00:18:03,520 --> 00:18:09,080
+ untuk menemukan pesan untuk pengguna lain di sistem untuk mengandalkan. 
+
+415
+00:18:09,080 --> 00:18:11,870
+ Jadi jika Anda memiliki entri tertentu seperti ini, 
+
+416
+00:18:11,870 --> 00:18:15,410
+ dalam database CA ini, maka CA 
+
+417
+00:18:15,410 --> 00:18:19,510
+ akan menemukan pesan yang menyebutkan nama ini 
+
+418
+00:18:19,510 --> 00:18:22,750
+ sesuai dengan kunci publik ini. 
+
+419
+00:18:22,750 --> 00:18:26,040
+ Dan itu akan menandatangani seluruh pesan ini 
+
+420
+00:18:26,040 --> 00:18:31,225
+ dengan kunci rahasia CA. 
+
+421
+00:18:31,225 --> 00:18:31,725
+ Masuk akal? 
+
+422
+00:18:31,725 --> 00:18:34,430
+
+
+423
+00:18:34,430 --> 00:18:37,790
+ Jadi ini akan memungkinkan kita melakukan hal yang sangat mirip dengan apa 
+
+424
+00:18:37,790 --> 00:18:40,020
+ Kerberos sedang melakukan, tetapi kita sekarang 
+
+425
+00:18:40,020 --> 00:18:42,830
+ akan menyingkirkan CA harus 
+
+426
+00:18:42,830 --> 00:18:45,192
+ online untuk semua transaksi. 
+
+427
+00:18:45,192 --> 00:18:47,400
+ Dan faktanya, sekarang akan jauh lebih terukur. 
+
+428
+00:18:47,400 --> 00:18:49,358
+ Jadi ini yang biasa disebut sertifikat. 
+
+429
+00:18:49,358 --> 00:18:51,690
+
+
+430
+00:18:51,690 --> 00:18:54,080
+ Dan alasannya ini akan jauh lebih terukur 
+
+431
+00:18:54,080 --> 00:19:00,027
+ adalah bahwa, pada kenyataannya, untuk klien, atau siapa pun yang menggunakan sistem ini, 
+
+432
+00:19:00,027 --> 00:19:01,610
+ sertifikat yang diberikan dari satu sumber 
+
+433
+00:19:01,610 --> 00:19:04,240
+ sebagus sertifikat yang diberikan dari sumber lain. 
+
+434
+00:19:04,240 --> 00:19:06,120
+ Ini ditandatangani oleh kunci rahasia CA. 
+
+435
+00:19:06,120 --> 00:19:08,700
+ Jadi Anda dapat memverifikasi validitasnya tanpa 
+
+436
+00:19:08,700 --> 00:19:10,830
+ untuk benar-benar menghubungi sertifikat 
+
+437
+00:19:10,830 --> 00:19:13,867
+ otoritas, atau pihak lain yang ditunjuk di sini. 
+
+438
+00:19:13,867 --> 00:19:15,950
+ Dan biasanya, cara kerjanya adalah server 
+
+439
+00:19:15,950 --> 00:19:19,880
+ yang ingin Anda ajak bicara menyimpan sertifikat itu 
+
+440
+00:19:19,880 --> 00:19:21,980
+ awalnya berasal dari otoritas sertifikat. 
+
+441
+00:19:21,980 --> 00:19:24,339
+ Dan kapan pun Anda terhubung dengannya, server 
+
+442
+00:19:24,339 --> 00:19:26,130
+ akan memberitahu Anda, nah, inilah sertifikat saya. 
+
+443
+00:19:26,130 --> 00:19:27,350
+ Itu ditandatangani oleh CA. 
+
+444
+00:19:27,350 --> 00:19:29,520
+ Anda dapat memeriksa tanda tangan dan hanya memverifikasi 
+
+445
+00:19:29,520 --> 00:19:33,020
+ bahwa ini adalah, pada kenyataannya, kunci publik saya dan itulah nama saya. 
+
+446
+00:19:33,020 --> 00:19:34,700
+ Dan di sisi lain, hal yang sama 
+
+447
+00:19:34,700 --> 00:19:36,060
+ terjadi pada sertifikat klien. 
+
+448
+00:19:36,060 --> 00:19:39,790
+ Jadi ketika Anda pengguna terhubung ke server web, apa yang sebenarnya 
+
+449
+00:19:39,790 --> 00:19:42,590
+ terjadi adalah sertifikat klien Anda sebenarnya 
+
+450
+00:19:42,590 --> 00:19:45,780
+ berbicara tentang kunci publik yang terkait dengan kunci rahasia 
+
+451
+00:19:45,780 --> 00:19:48,221
+ yang Anda buat di browser Anda. 
+
+452
+00:19:48,221 --> 00:19:49,970
+ Dan dengan cara ini ketika Anda terhubung ke server, 
+
+453
+00:19:49,970 --> 00:19:52,350
+ Anda akan menyerahkan sertifikat yang ditandatangani 
+
+454
+00:19:52,350 --> 00:19:55,780
+ oleh otoritas sertifikat MIT yang menyebutkan nama pengguna Anda 
+
+455
+00:19:55,780 --> 00:19:57,680
+ sesuai dengan kunci publik ini. 
+
+456
+00:19:57,680 --> 00:20:00,430
+ Dan ini adalah bagaimana server akan diyakinkan 
+
+457
+00:20:00,430 --> 00:20:03,430
+ bahwa pesan ditandatangani dengan kunci rahasia Anda 
+
+458
+00:20:03,430 --> 00:20:09,695
+ adalah bukti bahwa ini adalah pengguna Athena yang tepat yang terhubung dengan saya. 
+
+459
+00:20:09,695 --> 00:20:10,570
+ Apakah itu masuk akal? 
+
+460
+00:20:10,570 --> 00:20:11,206
+ Ya. 
+
+461
+00:20:11,206 --> 00:20:12,956
+ AUDIENCE: Di mana [? proyek?] dapatkan 
+
+462
+00:20:12,956 --> 00:20:15,470
+ sertifikat [TIDAK JELAS]? 
+
+463
+00:20:15,470 --> 00:20:16,819
+ PROFESOR: Ah, ya. 
+
+464
+00:20:16,819 --> 00:20:18,360
+ Seperti ayam dan masalah telur. 
+
+465
+00:20:18,360 --> 00:20:19,330
+ Itu terus turun. 
+
+466
+00:20:19,330 --> 00:20:20,788
+ Di mana Anda mendapatkan kunci publik ini? 
+
+467
+00:20:20,788 --> 00:20:22,840
+ Pada titik tertentu Anda harus mem-hard kode ini, 
+
+468
+00:20:22,840 --> 00:20:25,310
+ atau itu biasanya apa yang kebanyakan sistem lakukan. 
+
+469
+00:20:25,310 --> 00:20:27,074
+ Jadi hari ini yang sebenarnya terjadi adalah 
+
+470
+00:20:27,074 --> 00:20:28,615
+ bahwa ketika Anda mengunduh browser web, 
+
+471
+00:20:28,615 --> 00:20:30,950
+ atau Anda mendapatkan komputer untuk pertama kalinya, 
+
+472
+00:20:30,950 --> 00:20:33,930
+ itu sebenarnya datang dengan kunci publik ratusan 
+
+473
+00:20:33,930 --> 00:20:35,730
+ otoritas sertifikat ini. 
+
+474
+00:20:35,730 --> 00:20:37,440
+ Dan ada banyak dari mereka. 
+
+475
+00:20:37,440 --> 00:20:41,660
+ Beberapa dijalankan oleh perusahaan keamanan seperti VeriSign. 
+
+476
+00:20:41,660 --> 00:20:43,880
+ Layanan Pos AS memiliki otoritas sertifikat, 
+
+477
+00:20:43,880 --> 00:20:44,860
+ untuk beberapa alasan. 
+
+478
+00:20:44,860 --> 00:20:47,640
+ Ada banyak entitas di sana yang bisa, pada pokoknya, masalah 
+
+479
+00:20:47,640 --> 00:20:50,770
+ sertifikat ini dan sepenuhnya dipercaya oleh sistem. 
+
+480
+00:20:50,770 --> 00:20:53,510
+
+
+481
+00:20:53,510 --> 00:20:55,740
+ Otoritas sertifikat mini ini 
+
+482
+00:20:55,740 --> 00:20:59,674
+ sekarang menggantikan kepercayaan yang kami miliki di KDC ini. 
+
+483
+00:20:59,674 --> 00:21:01,090
+ Dan terkadang, kita sebenarnya belum 
+
+484
+00:21:01,090 --> 00:21:03,910
+ mengatasi semua masalah yang kami cantumkan dengan Kerberos. 
+
+485
+00:21:03,910 --> 00:21:06,930
+ Jadi sebelumnya khawatir bahwa, oh man, bagaimana 
+
+486
+00:21:06,930 --> 00:21:08,180
+ kita akan percaya? 
+
+487
+00:21:08,180 --> 00:21:09,570
+ Bagaimana kabar semua orang? 
+
+488
+00:21:09,570 --> 00:21:11,820
+ mempercayai satu mesin KDC? 
+
+489
+00:21:11,820 --> 00:21:13,850
+ Tapi sekarang, sebenarnya lebih buruk. 
+
+490
+00:21:13,850 --> 00:21:16,400
+ Ini sebenarnya lebih buruk dalam beberapa hal, karena sebaliknya 
+
+491
+00:21:16,400 --> 00:21:18,320
+ mempercayai satu mesin KDC, 
+
+492
+00:21:18,320 --> 00:21:20,960
+ semua orang sekarang mempercayai ratusan atau sertifikat ini 
+
+493
+00:21:20,960 --> 00:21:23,380
+ otoritas karena semuanya sama-sama kuat. 
+
+494
+00:21:23,380 --> 00:21:25,390
+ Salah satu dari mereka dapat menandatangani pesan seperti ini 
+
+495
+00:21:25,390 --> 00:21:28,720
+ dan itu akan diterima oleh klien 
+
+496
+00:21:28,720 --> 00:21:31,650
+ sebagai pernyataan yang benar yang mengatakan prinsip ini 
+
+497
+00:21:31,650 --> 00:21:33,530
+ memiliki kunci publik ini. 
+
+498
+00:21:33,530 --> 00:21:35,890
+ Jadi Anda hanya harus masuk ke salah satu dari orang-orang ini sebagai gantinya 
+
+499
+00:21:35,890 --> 00:21:37,830
+ dari satu KDSC. 
+
+500
+00:21:37,830 --> 00:21:40,500
+
+
+501
+00:21:40,500 --> 00:21:41,235
+ Ya? 
+
+502
+00:21:41,235 --> 00:21:43,304
+ AUDIENCE: Apakah ada mekanisme untuk membuka kunci? 
+
+503
+00:21:43,304 --> 00:21:43,970
+ PROFESOR: Ya. 
+
+504
+00:21:43,970 --> 00:21:45,550
+ Itu masalah sulit lainnya. 
+
+505
+00:21:45,550 --> 00:21:47,889
+ Ternyata itu sebelum kita berbicara dengan KDC, 
+
+506
+00:21:47,889 --> 00:21:49,430
+ dan jika Anda gagal, Anda bisa tahu 
+
+507
+00:21:49,430 --> 00:21:52,500
+ KDC untuk berhenti memberikan kunci saya, atau mengubahnya. 
+
+508
+00:21:52,500 --> 00:21:55,410
+ Sekarang sertifikat itu benar-benar berpotensi valid 
+
+509
+00:21:55,410 --> 00:21:56,110
+ selama-lamanya. 
+
+510
+00:21:56,110 --> 00:21:58,400
+ Jadi solusi tipikal ada dua. 
+
+511
+00:21:58,400 --> 00:22:01,410
+ Salah satunya adalah, semacam yang diharapkan, sertifikat ini 
+
+512
+00:22:01,410 --> 00:22:05,054
+ termasuk waktu kedaluwarsa. 
+
+513
+00:22:05,054 --> 00:22:06,970
+ Jadi dengan cara ini Anda setidaknya bisa mengikat kerusakan. 
+
+514
+00:22:06,970 --> 00:22:09,178
+ Apakah ini seperti masa hidup tiket Kerberos, 
+
+515
+00:22:09,178 --> 00:22:11,917
+ kecuali dalam prakteknya, ini cenderung untuk beberapa pesanan 
+
+516
+00:22:11,917 --> 00:22:12,750
+ besarnya lebih tinggi. 
+
+517
+00:22:12,750 --> 00:22:14,740
+ Jadi di Kerberos, seumur hidup tiket Anda 
+
+518
+00:22:14,740 --> 00:22:16,720
+ bisa jadi beberapa jam. 
+
+519
+00:22:16,720 --> 00:22:20,720
+ Di sini biasanya setahun atau sesuatu seperti ini. 
+
+520
+00:22:20,720 --> 00:22:24,470
+ Jadi CA benar-benar tidak ingin sering diajak bicara. 
+
+521
+00:22:24,470 --> 00:22:26,240
+ Jadi, Anda ingin mendapatkan uang Anda sekali 
+
+522
+00:22:26,240 --> 00:22:27,750
+ setahun untuk sertifikat, dan kemudian 
+
+523
+00:22:27,750 --> 00:22:29,795
+ memberikan Anda keluar dari gumpalan byte yang ditandai ini, 
+
+524
+00:22:29,795 --> 00:22:31,170
+ dan kamu baik untuk pergi selama satu tahun. 
+
+525
+00:22:31,170 --> 00:22:32,930
+ Anda tidak perlu melakukannya lagi. 
+
+526
+00:22:32,930 --> 00:22:35,690
+ Jadi ini bagus untuk skalabilitas, tetapi tidak begitu bagus untuk keamanan. 
+
+527
+00:22:35,690 --> 00:22:39,620
+ Dan ada dua masalah yang mungkin Anda khawatirkan 
+
+528
+00:22:39,620 --> 00:22:40,860
+ dengan sertifikat. 
+
+529
+00:22:40,860 --> 00:22:44,030
+ Salah satunya adalah bahwa Mungkin CA's kacau. 
+
+530
+00:22:44,030 --> 00:22:47,710
+ Jadi mungkin CA mengeluarkan sertifikat untuk nama yang salah. 
+
+531
+00:22:47,710 --> 00:22:49,190
+ Seperti, mereka tidak terlalu berhati-hati. 
+
+532
+00:22:49,190 --> 00:22:50,856
+ Dan tanpa sengaja, saya minta mereka memberi Anda 
+
+533
+00:22:50,856 --> 00:22:53,297
+ sertifikat untuk amazon.com, dan mereka baru saja tergelincir 
+
+534
+00:22:53,297 --> 00:22:54,380
+ dan berkata, baiklah, tentu saja. 
+
+535
+00:22:54,380 --> 00:22:54,975
+ Itu amazon.com. 
+
+536
+00:22:54,975 --> 00:22:56,599
+ Saya akan memberikan Anda sertifikat untuk itu. 
+
+537
+00:22:56,599 --> 00:22:58,860
+ Jadi sepertinya itu masalah di sisi CA. 
+
+538
+00:22:58,860 --> 00:23:00,412
+ Jadi mereka kehilangan sertifikat. 
+
+539
+00:23:00,412 --> 00:23:02,870
+ Dan itu salah satu cara agar Anda bisa mendapatkan sertifikat 
+
+540
+00:23:02,870 --> 00:23:05,550
+ yang Anda harap tidak ada lagi, karena Anda 
+
+541
+00:23:05,550 --> 00:23:07,180
+ menandatangani hal yang salah. 
+
+542
+00:23:07,180 --> 00:23:09,375
+ Kemungkinan lain adalah bahwa mereka CA 
+
+543
+00:23:09,375 --> 00:23:11,440
+ melakukan hal yang benar, tetapi kemudian orang yang 
+
+544
+00:23:11,440 --> 00:23:14,110
+ memiliki sertifikat yang secara tidak sengaja saya ungkapkan 
+
+545
+00:23:14,110 --> 00:23:17,220
+ kunci rahasia, atau seseorang mencuri kunci rahasia yang sesuai 
+
+546
+00:23:17,220 --> 00:23:19,130
+ ke kunci publik dalam sertifikat. 
+
+547
+00:23:19,130 --> 00:23:21,780
+ Jadi ini berarti sertifikat tidak lagi mengatakan 
+
+548
+00:23:21,780 --> 00:23:23,380
+ apa yang Anda pikirkan itu mungkin berarti. 
+
+549
+00:23:23,380 --> 00:23:27,730
+ Meskipun ini mengatakan kunci amazon.com adalah ini, 
+
+550
+00:23:27,730 --> 00:23:29,285
+ sebenarnya setiap orang di dunia memiliki 
+
+551
+00:23:29,285 --> 00:23:31,201
+ kunci rahasia yang sesuai karena mempostingnya 
+
+552
+00:23:31,201 --> 00:23:31,910
+ di internet. 
+
+553
+00:23:31,910 --> 00:23:34,425
+ Jadi Anda tidak bisa belajar banyak dari seseorang 
+
+554
+00:23:34,425 --> 00:23:36,966
+ mengirimi Anda pesan yang ditandatangani oleh kunci rahasia yang sesuai, 
+
+555
+00:23:36,966 --> 00:23:40,187
+ karena bisa saja siapa saja yang mencuri kunci rahasia. 
+
+556
+00:23:40,187 --> 00:23:41,770
+ Jadi itulah alasan lain mengapa Anda mungkin 
+
+557
+00:23:41,770 --> 00:23:44,250
+ ingin mencabut sertifikat. 
+
+558
+00:23:44,250 --> 00:23:47,220
+ Dan mencabut sertifikat sangat berantakan. 
+
+559
+00:23:47,220 --> 00:23:51,100
+ Tidak ada rencana yang bagus untuk itu. 
+
+560
+00:23:51,100 --> 00:23:56,340
+ Dua alternatif yang telah dicoba orang 
+
+561
+00:23:56,340 --> 00:24:00,690
+ pada dasarnya menerbitkan daftar semua dicabut 
+
+562
+00:24:00,690 --> 00:24:01,800
+ sertifikat di dunia. 
+
+563
+00:24:01,800 --> 00:24:04,630
+ Ini adalah sesuatu yang disebut pencabutan sertifikat 
+
+564
+00:24:04,630 --> 00:24:06,550
+ daftar, atau CRL. 
+
+565
+00:24:06,550 --> 00:24:09,800
+ Dan cara kerjanya adalah setiap sertifikat 
+
+566
+00:24:09,800 --> 00:24:11,830
+ otoritas mengeluarkan sertifikat ini, 
+
+567
+00:24:11,830 --> 00:24:15,040
+ tetapi kemudian di samping, ia menyimpan daftar kesalahan. 
+
+568
+00:24:15,040 --> 00:24:16,460
+ Ini adalah hal-hal yang disadari 
+
+569
+00:24:16,460 --> 00:24:18,126
+ mereka mengacau dan mengeluarkan sertifikat 
+
+570
+00:24:18,126 --> 00:24:20,320
+ dengan nama yang salah, atau pelanggan kami datang kepada mereka 
+
+571
+00:24:20,320 --> 00:24:22,070
+ dan berkata, hei, Anda memberikan saya sertifikat. 
+
+572
+00:24:22,070 --> 00:24:23,380
+ Semuanya berjalan baik. 
+
+573
+00:24:23,380 --> 00:24:25,020
+ Tapi seseorang kemudian kasar di mesin saya 
+
+574
+00:24:25,020 --> 00:24:26,370
+ dan mencuri kunci privat. 
+
+575
+00:24:26,370 --> 00:24:29,570
+ Tolong beritahu dunia bahwa sertifikat saya sudah tidak bagus lagi. 
+
+576
+00:24:29,570 --> 00:24:31,570
+ Jadi otoritas sertifikat ini, pada prinsipnya, 
+
+577
+00:24:31,570 --> 00:24:36,260
+ dapat menambahkan barang ke CRL ini, dan kemudian klien menyukai peramban web 
+
+578
+00:24:36,260 --> 00:24:39,309
+ seharusnya mengunduh CRL ini secara berkala. 
+
+579
+00:24:39,309 --> 00:24:41,600
+ Dan kapan pun mereka diberi sertifikat, 
+
+580
+00:24:41,600 --> 00:24:43,100
+ mereka harus memeriksa apakah sertifikat 
+
+581
+00:24:43,100 --> 00:24:45,689
+ muncul di daftar dicabut ini. 
+
+582
+00:24:45,689 --> 00:24:47,105
+ Dan itu muncul di sana, maka seharusnya 
+
+583
+00:24:47,105 --> 00:24:49,850
+ katakan bahwa sertifikat itu tidak bagus. 
+
+584
+00:24:49,850 --> 00:24:51,384
+ Anda lebih baik memberi saya yang baru. 
+
+585
+00:24:51,384 --> 00:24:53,200
+ Saya tidak akan mempercayai tanda khusus ini 
+
+586
+00:24:53,200 --> 00:24:54,990
+ pesan lagi. 
+
+587
+00:24:54,990 --> 00:24:56,770
+ Jadi itulah satu rencana. 
+
+588
+00:24:56,770 --> 00:24:57,620
+ Tidak bagus. 
+
+589
+00:24:57,620 --> 00:25:00,600
+
+
+590
+00:25:00,600 --> 00:25:02,754
+ Jika Anda benar-benar digunakan, itu akan menjadi daftar raksasa. 
+
+591
+00:25:02,754 --> 00:25:04,920
+ Dan itu akan menjadi banyak overhead untuk semua orang 
+
+592
+00:25:04,920 --> 00:25:06,772
+ di dunia untuk mengunduh ini. 
+
+593
+00:25:06,772 --> 00:25:08,480
+ Masalah lainnya adalah tidak ada yang benar-benar 
+
+594
+00:25:08,480 --> 00:25:11,370
+ mengganggu melakukan hal ini. sehingga daftar dalam praktiknya kosong. 
+
+595
+00:25:11,370 --> 00:25:13,600
+ Jika Anda benar-benar meminta semua CA ini, kebanyakan dari mereka 
+
+596
+00:25:13,600 --> 00:25:16,210
+ akan mengembalikan CRL kosong karena tidak ada yang peduli 
+
+597
+00:25:16,210 --> 00:25:17,418
+ untuk menambahkan sesuatu ke daftar ini. 
+
+598
+00:25:17,418 --> 00:25:18,610
+ Karena, kenapa kamu? 
+
+599
+00:25:18,610 --> 00:25:20,330
+ Itu hanya akan merusak segalanya karena itu 
+
+600
+00:25:20,330 --> 00:25:23,210
+ akan mengurangi jumlah koneksi yang akan berhasil. 
+
+601
+00:25:23,210 --> 00:25:26,210
+ Jadi tidak jelas apakah ada motivasi besar untuk CA 
+
+602
+00:25:26,210 --> 00:25:29,530
+ untuk mempertahankan CRL ini. 
+
+603
+00:25:29,530 --> 00:25:31,460
+ Hal lain yang telah dicoba orang 
+
+604
+00:25:31,460 --> 00:25:34,190
+ adalah untuk menanyakan secara online CA. 
+
+605
+00:25:34,190 --> 00:25:39,200
+ Seperti di dunia Kerberos, kami menghubungi KDC sepanjang waktu. 
+
+606
+00:25:39,200 --> 00:25:41,590
+ Dan di dunia CA kami mencoba keluar dari bisnis ini 
+
+607
+00:25:41,590 --> 00:25:43,090
+ dan berkata, yah, CA hanya pergi 
+
+608
+00:25:43,090 --> 00:25:45,280
+ untuk menandatangani pesan-pesan ini setahun sekali. 
+
+609
+00:25:45,280 --> 00:25:46,280
+ Itu agak menyedihkan. 
+
+610
+00:25:46,280 --> 00:25:47,750
+ Jadi ada protokol alternatif 
+
+611
+00:25:47,750 --> 00:25:52,970
+ disebut protokol status sertifikat online, atau OCSP. 
+
+612
+00:25:52,970 --> 00:25:57,050
+ Dan protokol ini mendorong kita kembali dari dunia CA 
+
+613
+00:25:57,050 --> 00:25:58,110
+ ke dunia KDC. 
+
+614
+00:25:58,110 --> 00:26:00,840
+ Jadi kapan pun klien mendapat sertifikat 
+
+615
+00:26:00,840 --> 00:26:03,300
+ dan mereka penasaran, apakah ini benar-benar sertifikat yang valid? 
+
+616
+00:26:03,300 --> 00:26:05,160
+ Meskipun sebelum waktu kedaluwarsa, 
+
+617
+00:26:05,160 --> 00:26:06,660
+ mungkin ada yang salah. 
+
+618
+00:26:06,660 --> 00:26:10,670
+ Jadi menggunakan protokol OCSP ini, Anda dapat menghubungi beberapa server 
+
+619
+00:26:10,670 --> 00:26:12,760
+ dan katakan saja, hei, saya mendapat sertifikat ini. 
+
+620
+00:26:12,760 --> 00:26:14,330
+ Apakah Anda pikir itu masih berlaku? 
+
+621
+00:26:14,330 --> 00:26:18,220
+ Jadi pada dasarnya, membongkar tugas mempertahankan CRL ini 
+
+622
+00:26:18,220 --> 00:26:19,520
+ ke server tertentu. 
+
+623
+00:26:19,520 --> 00:26:21,710
+ Jadi, alih-alih mengunduh seluruh daftar sendiri, 
+
+624
+00:26:21,710 --> 00:26:23,334
+ Anda akan bertanya pada server, hei, itu 
+
+625
+00:26:23,334 --> 00:26:24,950
+ hal ini dalam daftar itu? 
+
+626
+00:26:24,950 --> 00:26:27,710
+ Jadi itu rencana lain yang sudah dicoba orang. 
+
+627
+00:26:27,710 --> 00:26:33,710
+ Ini juga tidak digunakan secara luas karena dua faktor. 
+
+628
+00:26:33,710 --> 00:26:38,990
+ Salah satunya adalah bahwa ia menambahkan latensi ke setiap permintaan yang Anda buat. 
+
+629
+00:26:38,990 --> 00:26:41,450
+ Jadi setiap kali Anda ingin terhubung ke server, 
+
+630
+00:26:41,450 --> 00:26:44,060
+ sekarang Anda harus terlebih dahulu terhubung, dapatkan sertifikat 
+
+631
+00:26:44,060 --> 00:26:45,370
+ dari server. 
+
+632
+00:26:45,370 --> 00:26:46,950
+ Sekarang Anda harus berbicara dengan pria OCSP ini 
+
+633
+00:26:46,950 --> 00:26:50,950
+ dan kemudian menunggunya untuk menanggapi dan kemudian melakukan sesuatu yang lain. 
+
+634
+00:26:50,950 --> 00:26:52,980
+ Jadi untuk alasan latensi, ini sebenarnya 
+
+635
+00:26:52,980 --> 00:26:54,970
+ bukan rencana yang sangat populer. 
+
+636
+00:26:54,970 --> 00:26:56,980
+ Masalah lainnya adalah Anda tidak melakukannya 
+
+637
+00:26:56,980 --> 00:27:01,800
+ ingin hal OCSP ini turun dari memengaruhi kemampuan Anda 
+
+638
+00:27:01,800 --> 00:27:02,880
+ untuk menjelajah web. 
+
+639
+00:27:02,880 --> 00:27:04,369
+ Misalkan server OSCP ini turun. 
+
+640
+00:27:04,369 --> 00:27:06,160
+ Anda bisa, seperti, menonaktifkan seluruh internet 
+
+641
+00:27:06,160 --> 00:27:08,090
+ karena Anda tidak dapat memeriksa sertifikat siapa pun. 
+
+642
+00:27:08,090 --> 00:27:09,600
+ Seperti, itu bisa jadi semuanya buruk. 
+
+643
+00:27:09,600 --> 00:27:12,230
+ Dan kemudian semua koneksi Anda berhenti berfungsi. 
+
+644
+00:27:12,230 --> 00:27:13,590
+ Jadi tidak ada yang menginginkan itu. 
+
+645
+00:27:13,590 --> 00:27:17,030
+ Jadi sebagian besar klien memperlakukan server OCSP 
+
+646
+00:27:17,030 --> 00:27:21,194
+ menjadi semacam kejadian OK. 
+
+647
+00:27:21,194 --> 00:27:23,110
+ Ini benar-benar buruk dari perspektif keamanan 
+
+648
+00:27:23,110 --> 00:27:24,790
+ karena jika Anda seorang penyerang dan Anda 
+
+649
+00:27:24,790 --> 00:27:27,040
+ ingin meyakinkan seseorang yang kamu miliki 
+
+650
+00:27:27,040 --> 00:27:30,000
+ sertifikat yang sah, tetapi sebenarnya telah dicabut, 
+
+651
+00:27:30,000 --> 00:27:32,740
+ yang harus Anda lakukan adalah mencegahnya 
+
+652
+00:27:32,740 --> 00:27:36,090
+ klien itu dari berbicara dengan server OCSP. 
+
+653
+00:27:36,090 --> 00:27:39,080
+ Dan kemudian klien akan berkata, yah, saya lakukan sertifikat. 
+
+654
+00:27:39,080 --> 00:27:40,510
+ Saya akan coba memeriksanya, tapi orang ini 
+
+655
+00:27:40,510 --> 00:27:42,770
+ sepertinya tidak ada, jadi aku akan melakukannya. 
+
+656
+00:27:42,770 --> 00:27:46,554
+ Jadi itu pada dasarnya adalah semacam lay dari tanah 
+
+657
+00:27:46,554 --> 00:27:47,720
+ sejauh verifikasi berjalan. 
+
+658
+00:27:47,720 --> 00:27:50,150
+ Jadi tidak ada jawaban yang sangat bagus. 
+
+659
+00:27:50,150 --> 00:27:52,210
+ Hal yang dilakukan orang dalam praktik 
+
+660
+00:27:52,210 --> 00:27:54,710
+ sebagai alternatif untuk ini adalah bahwa klien hanya sulit 
+
+661
+00:27:54,710 --> 00:27:58,500
+ kode dalam kesalahan yang sangat buruk. 
+
+662
+00:27:58,500 --> 00:28:01,220
+ Jadi misalnya, browser web Chrome sebenarnya 
+
+663
+00:28:01,220 --> 00:28:04,080
+ kapal di dalamnya dengan daftar sertifikat 
+
+664
+00:28:04,080 --> 00:28:06,400
+ bahwa Google benar-benar ingin mencabut. 
+
+665
+00:28:06,400 --> 00:28:08,570
+ Jadi jika seseorang salah mengeluarkan sertifikat 
+
+666
+00:28:08,570 --> 00:28:11,790
+ untuk Gmail atau untuk beberapa situs penting lainnya-- seperti Facebook, 
+
+667
+00:28:11,790 --> 00:28:15,780
+ Amazon, atau apalah-- maka rilis Chrome berikutnya 
+
+668
+00:28:15,780 --> 00:28:19,950
+ akan berisi hal itu dalam daftar verifikasinya yang dipanggang 
+
+669
+00:28:19,950 --> 00:28:21,300
+ ke Chrome. 
+
+670
+00:28:21,300 --> 00:28:23,884
+ Jadi dengan cara ini, Anda tidak perlu menghubungi server CRL. 
+
+671
+00:28:23,884 --> 00:28:25,550
+ Anda tidak perlu berbicara dengan pria OCSP ini. 
+
+672
+00:28:25,550 --> 00:28:26,160
+ Ini baru saja dipanggang. 
+
+673
+00:28:26,160 --> 00:28:27,910
+ Seperti, sertifikat ini tidak berlaku lagi. 
+
+674
+00:28:27,910 --> 00:28:29,016
+ Klien menolaknya. 
+
+675
+00:28:29,016 --> 00:28:29,988
+ Ya. 
+
+676
+00:28:29,988 --> 00:28:30,474
+ AUDIENCE: Maaf, satu hal lagi. 
+
+677
+00:28:30,474 --> 00:28:30,960
+ PROFESOR: Ya. 
+
+678
+00:28:30,960 --> 00:28:32,418
+ AUDIENCE: Jadi katakanlah saya telah mencuri kunci rahasia 
+
+679
+00:28:32,418 --> 00:28:33,876
+ pada sertifikat [TIDAK JELAS]. 
+
+680
+00:28:33,876 --> 00:28:35,140
+ Semua kunci publik adalah [? hard coded--?] 
+
+681
+00:28:35,140 --> 00:28:35,973
+ PROFESOR: Oh ya. 
+
+682
+00:28:35,973 --> 00:28:38,730
+ Itu [TIDAK JELAS] sangat buruk. 
+
+683
+00:28:38,730 --> 00:28:42,280
+ Saya tidak berpikir ada solusi yang dipanggang ke dalam sistem 
+
+684
+00:28:42,280 --> 00:28:45,690
+ sekarang untuk ini. 
+
+685
+00:28:45,690 --> 00:28:47,290
+ Sudah pasti ada situasi 
+
+686
+00:28:47,290 --> 00:28:49,810
+ di mana otoritas sertifikat muncul 
+
+687
+00:28:49,810 --> 00:28:51,400
+ telah dikompromikan. 
+
+688
+00:28:51,400 --> 00:28:54,870
+ Jadi pada tahun 2011, ada dua CA yang itu 
+
+689
+00:28:54,870 --> 00:28:58,200
+ dikompromikan dalam masalah ini, atau mereka entah bagaimana 
+
+690
+00:28:58,200 --> 00:29:00,090
+ diakali dengan menerbitkan sertifikat untuk Gmail, 
+
+691
+00:29:00,090 --> 00:29:01,790
+ untuk Facebook, dan sebagainya. 
+
+692
+00:29:01,790 --> 00:29:03,290
+ Dan itu tidak jelas. 
+
+693
+00:29:03,290 --> 00:29:05,010
+ Mungkin seseorang mencuri kunci rahasia mereka. 
+
+694
+00:29:05,010 --> 00:29:09,150
+ Jadi yang terjadi adalah saya pikir CA itu sebenarnya 
+
+695
+00:29:09,150 --> 00:29:12,010
+ telah dihapus dari satu set CA tepercaya 
+
+696
+00:29:12,010 --> 00:29:13,469
+ oleh browser sejak saat itu. 
+
+697
+00:29:13,469 --> 00:29:15,760
+ Jadi rilis Chrome berikutnya sama seperti, hei, Anda 
+
+698
+00:29:15,760 --> 00:29:16,390
+ benar-benar kacau. 
+
+699
+00:29:16,390 --> 00:29:18,515
+ Kami akan menendang Anda keluar dari semacam CA itu 
+
+700
+00:29:18,515 --> 00:29:19,195
+ dipercaya. 
+
+701
+00:29:19,195 --> 00:29:20,420
+ Dan itu sebenarnya agak mengecewakan 
+
+702
+00:29:20,420 --> 00:29:21,875
+ karena semua orang yang sah itu 
+
+703
+00:29:21,875 --> 00:29:23,875
+ memiliki sertifikat dari otoritas sertifikat itu 
+
+704
+00:29:23,875 --> 00:29:25,030
+ sekarang kurang beruntung. 
+
+705
+00:29:25,030 --> 00:29:26,680
+ Mereka harus mendapatkan sertifikat baru. 
+
+706
+00:29:26,680 --> 00:29:28,440
+ Jadi ini adalah sistem yang agak berantakan, 
+
+707
+00:29:28,440 --> 00:29:33,190
+ tapi itulah yang terjadi dalam praktek dengan sertifikat. 
+
+708
+00:29:33,190 --> 00:29:34,540
+ Masuk akal? 
+
+709
+00:29:34,540 --> 00:29:38,330
+ Pertanyaan lain tentang bagaimana ini bekerja? 
+
+710
+00:29:38,330 --> 00:29:39,612
+ Baiklah. 
+
+711
+00:29:39,612 --> 00:29:43,530
+ Jadi ini adalah semacam rencana umum untuk cara kerja sertifikat. 
+
+712
+00:29:43,530 --> 00:29:46,800
+ Dan seperti yang kita bicarakan, mereka 
+
+713
+00:29:46,800 --> 00:29:48,510
+ semacam lebih baik dari Kerberos dalam arti 
+
+714
+00:29:48,510 --> 00:29:51,610
+ Anda tidak harus memiliki orang ini online. 
+
+715
+00:29:51,610 --> 00:29:53,580
+ Mungkin sedikit lebih terukur 
+
+716
+00:29:53,580 --> 00:29:55,560
+ karena Anda dapat memiliki beberapa KDC, 
+
+717
+00:29:55,560 --> 00:29:57,200
+ dan Anda tidak perlu berbicara dengan mereka. 
+
+718
+00:29:57,200 --> 00:29:58,783
+ Hal keren lainnya tentang protokol ini 
+
+719
+00:29:58,783 --> 00:30:01,220
+ tidak seperti Kerberos, kamu tidak dipaksa 
+
+720
+00:30:01,220 --> 00:30:02,980
+ untuk mengotentikasi kedua pihak. 
+
+721
+00:30:02,980 --> 00:30:06,010
+ Jadi Anda benar-benar dapat terhubung ke server web 
+
+722
+00:30:06,010 --> 00:30:08,157
+ tanpa memiliki sertifikat untuk diri sendiri. 
+
+723
+00:30:08,157 --> 00:30:09,240
+ Ini terjadi setiap saat. 
+
+724
+00:30:09,240 --> 00:30:10,930
+ Jika Anda hanya pergi ke amazon.com, Anda 
+
+725
+00:30:10,930 --> 00:30:13,380
+ akan memeriksa bahwa Amazon adalah entitas yang tepat, 
+
+726
+00:30:13,380 --> 00:30:16,220
+ tetapi Amazon tidak tahu siapa Anda, atau setidaknya 
+
+727
+00:30:16,220 --> 00:30:17,790
+ tidak sampai Anda masuk nanti. 
+
+728
+00:30:17,790 --> 00:30:20,040
+ Jadi tingkat protokol crypto, Anda tidak memiliki sertifikat. 
+
+729
+00:30:20,040 --> 00:30:20,720
+ Amazon memiliki sertifikat. 
+
+730
+00:30:20,720 --> 00:30:22,260
+ Jadi itu sebenarnya jauh lebih baik daripada Kerberos 
+
+731
+00:30:22,260 --> 00:30:24,380
+ di mana untuk terhubung ke layanan Kerberos, 
+
+732
+00:30:24,380 --> 00:30:28,030
+ Anda harus menjadi entri dalam basis data Kerberos. 
+
+733
+00:30:28,030 --> 00:30:30,690
+ Satu hal yang sedikit mengecewakan dengan protokol ini 
+
+734
+00:30:30,690 --> 00:30:33,640
+ seperti yang telah kami jelaskan bahwa sebenarnya, server melakukannya 
+
+735
+00:30:33,640 --> 00:30:35,359
+ harus memiliki sertifikat. 
+
+736
+00:30:35,359 --> 00:30:36,900
+ Jadi Anda tidak bisa hanya terhubung ke server 
+
+737
+00:30:36,900 --> 00:30:39,080
+ dan katakan, hei, mari kita mengenkripsi barang-barang kita. 
+
+738
+00:30:39,080 --> 00:30:41,920
+ Saya tidak tahu siapa Anda, atau tidak benar-benar, 
+
+739
+00:30:41,920 --> 00:30:43,540
+ dan Anda tidak tahu siapa saya, 
+
+740
+00:30:43,540 --> 00:30:44,940
+ tapi mari kita mengenkripsinya. 
+
+741
+00:30:44,940 --> 00:30:46,870
+ Jadi ini disebut enkripsi oportunistik, 
+
+742
+00:30:46,870 --> 00:30:50,020
+ dan tentu saja rentan terhadap manusia dalam serangan tengah 
+
+743
+00:30:50,020 --> 00:30:52,170
+ karena Anda terhubung dengan seseorang dan berkata, 
+
+744
+00:30:52,170 --> 00:30:53,120
+ baik, mari kita mengenkripsi barang-barang kami, tetapi Anda 
+
+745
+00:30:53,120 --> 00:30:55,536
+ tidak tahu siapa yang sebenarnya adalah bahwa Anda mengenkripsi barang 
+
+746
+00:30:55,536 --> 00:30:56,290
+ dengan. 
+
+747
+00:30:56,290 --> 00:30:57,664
+ Keduanya mungkin ide yang baik pula. 
+
+748
+00:30:57,664 --> 00:31:00,309
+ Jika seseorang tidak secara aktif memasang serangan terhadap Anda, 
+
+749
+00:31:00,309 --> 00:31:02,850
+ setidaknya paket-paket di kemudian hari akan dienkripsi dan dilindungi 
+
+750
+00:31:02,850 --> 00:31:04,520
+ dari mengintip. 
+
+751
+00:31:04,520 --> 00:31:07,590
+ Jadi ini sedikit memalukan 
+
+752
+00:31:07,590 --> 00:31:12,220
+ protokol yang kami cari di sini-- SSL, TLS, whatever-- 
+
+753
+00:31:12,220 --> 00:31:15,180
+ tidak menawarkan semacam ini hal enkripsi oportunistik. 
+
+754
+00:31:15,180 --> 00:31:16,910
+ Tapi begitulah hidup. 
+
+755
+00:31:16,910 --> 00:31:19,380
+ Jadi saya kira server [TIDAK JELAS] dalam protokol ini. 
+
+756
+00:31:19,380 --> 00:31:24,100
+ Klien terkadang bisa dan terkadang tidak perlu. 
+
+757
+00:31:24,100 --> 00:31:24,600
+ Masuk akal? 
+
+758
+00:31:24,600 --> 00:31:24,870
+ Ya. 
+
+759
+00:31:24,870 --> 00:31:25,995
+ AUDIENCE: Saya hanya ingin tahu. 
+
+760
+00:31:25,995 --> 00:31:27,852
+ Apa yang menghentikan seseorang dari-- Maksudku, 
+
+761
+00:31:27,852 --> 00:31:30,487
+ katakan saja sekali setahun, mereka 
+
+762
+00:31:30,487 --> 00:31:32,850
+ buat menggunakan pasangan kunci nama baru. 
+
+763
+00:31:32,850 --> 00:31:37,476
+ Jadi mengapa Anda tidak bisa mencoba menghabiskan sepanjang tahun itu 
+
+764
+00:31:37,476 --> 00:31:39,000
+ untuk kunci spesifik itu? 
+
+765
+00:31:39,000 --> 00:31:39,809
+ PROFESOR: Hah? 
+
+766
+00:31:39,809 --> 00:31:41,600
+ AUDIENCE: Mengapa itu tidak bekerja dengan ini? 
+
+767
+00:31:41,600 --> 00:31:42,840
+ PROFESOR: Saya pikir itu berhasil. 
+
+768
+00:31:42,840 --> 00:31:45,048
+ Jadi OK, jadi seperti apa yang salah dengan skema ini. 
+
+769
+00:31:45,048 --> 00:31:46,990
+ Seperti, salah satu hal yang kita miliki 
+
+770
+00:31:46,990 --> 00:31:49,440
+ hubungannya dengan topografi baik di sini, 
+
+771
+00:31:49,440 --> 00:31:53,230
+ dan seperti halnya Kerberos, orang mulai menggunakan crypto yang bagus, 
+
+772
+00:31:53,230 --> 00:31:55,226
+ tetapi semakin memburuk seiring waktu. 
+
+773
+00:31:55,226 --> 00:31:56,100
+ Komputer menjadi lebih cepat. 
+
+774
+00:31:56,100 --> 00:31:58,010
+ Ada algoritme yang lebih baik yang melanggar hal ini. 
+
+775
+00:31:58,010 --> 00:32:00,180
+ Dan jika orang tidak rajin meningkat 
+
+776
+00:32:00,180 --> 00:32:02,869
+ standar mereka, maka masalah ini merayap naik. 
+
+777
+00:32:02,869 --> 00:32:05,410
+ Jadi misalnya, dulu banyak sertifikat 
+
+778
+00:32:05,410 --> 00:32:06,274
+ ditandatangani. 
+
+779
+00:32:06,274 --> 00:32:07,690
+ Ada dua hal yang terjadi. 
+
+780
+00:32:07,690 --> 00:32:09,420
+ Ada skema tanda tangan kunci publik. 
+
+781
+00:32:09,420 --> 00:32:13,080
+ Dan kemudian karena crypto kunci publik memiliki beberapa keterbatasan, 
+
+782
+00:32:13,080 --> 00:32:15,510
+ Anda biasanya-- sebenarnya, ketika Anda menandatangani pesan, 
+
+783
+00:32:15,510 --> 00:32:17,360
+ Anda benar-benar mengambil hash dari pesan tersebut 
+
+784
+00:32:17,360 --> 00:32:19,710
+ dan kemudian Anda menandatangani hash itu sendiri karena itu 
+
+785
+00:32:19,710 --> 00:32:21,860
+ sulit untuk menandatangani pesan raksasa, tapi itu 
+
+786
+00:32:21,860 --> 00:32:24,347
+ mudah untuk menandatangani hash kompak 
+
+787
+00:32:24,347 --> 00:32:25,930
+ Dan satu hal yang sebenarnya salah 
+
+788
+00:32:25,930 --> 00:32:29,390
+ adalah orang-orang terbiasa menggunakan MD5 sebagai fungsi hash 
+
+789
+00:32:29,390 --> 00:32:34,844
+ untuk meruntuhkan pesan besar di sini masuk ke 128 bit 
+
+790
+00:32:34,844 --> 00:32:36,510
+ hal yang Anda akan benar-benar menandatanganinya 
+
+791
+00:32:36,510 --> 00:32:38,400
+ dengan sistem crypto. 
+
+792
+00:32:38,400 --> 00:32:40,930
+ MD5 baik, mungkin 20 tahun lalu, dan kemudian seiring waktu, 
+
+793
+00:32:40,930 --> 00:32:43,770
+ orang menemukan kelemahan pada MD5 yang dapat dieksploitasi. 
+
+794
+00:32:43,770 --> 00:32:46,340
+ Jadi sebenarnya, pada titik tertentu, seseorang benar-benar melakukannya 
+
+795
+00:32:46,340 --> 00:32:49,560
+ meminta sertifikat dengan hashtas MD5 tertentu, 
+
+796
+00:32:49,560 --> 00:32:51,880
+ dan kemudian mereka dengan hati-hati tahu 
+
+797
+00:32:51,880 --> 00:32:56,610
+ pesan lain yang hash ke nilai MD5 yang sama. 
+
+798
+00:32:56,610 --> 00:33:02,090
+ Dan sebagai hasilnya, sekarang Anda memiliki tanda tangan oleh CA pada beberapa hash, 
+
+799
+00:33:02,090 --> 00:33:04,964
+ lalu Anda memiliki pesan yang berbeda, kunci yang berbeda, 
+
+800
+00:33:04,964 --> 00:33:06,380
+ atau nama yang berbeda yang Anda bisa 
+
+801
+00:33:06,380 --> 00:33:08,870
+ meyakinkan seseorang telah ditandatangani. 
+
+802
+00:33:08,870 --> 00:33:10,697
+ Dan ini memang terjadi. 
+
+803
+00:33:10,697 --> 00:33:13,280
+ Seperti, jika Anda menghabiskan banyak waktu untuk mencoba memecahkan kunci tunggal, 
+
+804
+00:33:13,280 --> 00:33:15,430
+ daripada Anda akan berhasil pada akhirnya. 
+
+805
+00:33:15,430 --> 00:33:18,750
+ Jika sertifikat itu menggunakan crypto, 
+
+806
+00:33:18,750 --> 00:33:20,456
+ itu bisa menjadi kekuatan brute. 
+
+807
+00:33:20,456 --> 00:33:22,830
+ Contoh lain dari sesuatu yang mungkin tidak begitu hebat 
+
+808
+00:33:22,830 --> 00:33:24,067
+ sekarang adalah jika Anda menggunakan RSA. 
+
+809
+00:33:24,067 --> 00:33:25,525
+ Kami belum benar-benar berbicara tentang RSA, 
+
+810
+00:33:25,525 --> 00:33:27,465
+ tetapi RSA adalah salah satu dari crypto kunci publik ini 
+
+811
+00:33:27,465 --> 00:33:30,370
+ sistem yang memungkinkan kita untuk mengenkripsi pesan atau menandatangani 
+
+812
+00:33:30,370 --> 00:33:31,610
+ pesan. 
+
+813
+00:33:31,610 --> 00:33:34,560
+ Dengan RSA, hari-hari ini, mungkin 
+
+814
+00:33:34,560 --> 00:33:38,965
+ layak untuk menghabiskan banyak uang dan memecahkan 1.000 bit kunci RSA. 
+
+815
+00:33:38,965 --> 00:33:41,090
+ Anda mungkin harus menghabiskan cukup banyak pekerjaan, 
+
+816
+00:33:41,090 --> 00:33:44,850
+ tapi itu bisa dilakukan, mungkin dalam setahun dengan mudah. 
+
+817
+00:33:44,850 --> 00:33:46,140
+ Dari sana, tentu saja. 
+
+818
+00:33:46,140 --> 00:33:49,720
+ Anda dapat meminta otoritas sertifikat untuk menandatangani beberapa pesan, 
+
+819
+00:33:49,720 --> 00:33:52,850
+ atau Anda bahkan dapat mengambil kunci publik seseorang yang ada 
+
+820
+00:33:52,850 --> 00:33:55,680
+ dan coba brute memaksa kunci rahasia yang sesuai, atau 
+
+821
+00:33:55,680 --> 00:33:56,430
+ [? peretasan manual. ?] 
+
+822
+00:33:56,430 --> 00:34:01,630
+ Jadi Anda harus bersaing dengan para penyerang dalam arti tertentu. 
+
+823
+00:34:01,630 --> 00:34:03,745
+ Anda harus menggunakan kunci yang lebih besar dengan RSA. 
+
+824
+00:34:03,745 --> 00:34:05,870
+ Atau mungkin Anda harus menggunakan skema crypto yang berbeda. 
+
+825
+00:34:05,870 --> 00:34:08,031
+ Misalnya, sekarang orang tidak menggunakan hash MD5 
+
+826
+00:34:08,031 --> 00:34:08,739
+ dan sertifikat. 
+
+827
+00:34:08,739 --> 00:34:11,167
+ Mereka menggunakan SHA-1, tapi itu bagus untuk sementara waktu. 
+
+828
+00:34:11,167 --> 00:34:13,250
+ Sekarang SHA-1 juga lemah, dan Google sebenarnya sekarang 
+
+829
+00:34:13,250 --> 00:34:17,010
+ aktif mencoba untuk mendorong pengembang web dan vendor browser 
+
+830
+00:34:17,010 --> 00:34:19,712
+ dan lain-lain untuk menghentikan penggunaan SHA-1 
+
+831
+00:34:19,712 --> 00:34:21,920
+ dan menggunakan fungsi hash yang berbeda karena itu cantik 
+
+832
+00:34:21,920 --> 00:34:24,489
+ jelas bahwa mungkin dalam waktu 5 atau 10 tahun, 
+
+833
+00:34:24,489 --> 00:34:27,070
+ akan ada serangan yang relatif mudah pada SHA-1. 
+
+834
+00:34:27,070 --> 00:34:29,000
+ Itu sudah terbukti lebih lemah. 
+
+835
+00:34:29,000 --> 00:34:31,931
+ Jadi saya kira tidak ada peluru ajaib, per se. 
+
+836
+00:34:31,931 --> 00:34:33,389
+ Anda hanya perlu memastikan bahwa Anda 
+
+837
+00:34:33,389 --> 00:34:36,650
+ terus berkembang dengan para peretas. 
+
+838
+00:34:36,650 --> 00:34:37,908
+ Ya. 
+
+839
+00:34:37,908 --> 00:34:39,199
+ Ada masalah, tentu saja. 
+
+840
+00:34:39,199 --> 00:34:41,199
+ Seperti, semua hal ini yang sedang kita bicarakan 
+
+841
+00:34:41,199 --> 00:34:44,330
+ bergantung pada crypto yang benar, atau semacam s untuk istirahat. 
+
+842
+00:34:44,330 --> 00:34:47,166
+ Jadi Anda harus memilih parameter yang sesuai. 
+
+843
+00:34:47,166 --> 00:34:49,179
+ Setidaknya di sini, ada waktu kedaluwarsa. 
+
+844
+00:34:49,179 --> 00:34:51,800
+ Jadi, mari kita pilih beberapa parameter 
+
+845
+00:34:51,800 --> 00:34:53,980
+ yang baik untuk satu tahun dibandingkan selama 10 tahun. 
+
+846
+00:34:53,980 --> 00:34:55,820
+ CA memiliki masalah yang jauh lebih besar. 
+
+847
+00:34:55,820 --> 00:34:59,570
+ Kunci ini, tidak ada kedaluwarsa pada itu, tentu saja. 
+
+848
+00:34:59,570 --> 00:35:02,770
+ Jadi itu kurang jelas apa yang terjadi. 
+
+849
+00:35:02,770 --> 00:35:05,360
+ Jadi mungkin, Anda akan memilih yang benar-benar agresif 
+
+850
+00:35:05,360 --> 00:35:07,400
+ parameter aman. 
+
+851
+00:35:07,400 --> 00:35:11,160
+ Jadi RSA 4.000 atau 6.000 bit atau sesuatu. 
+
+852
+00:35:11,160 --> 00:35:12,570
+ Atau skema lain bersama-sama. 
+
+853
+00:35:12,570 --> 00:35:13,920
+ Jangan gunakan SHA-1 sama sekali di sini. 
+
+854
+00:35:13,920 --> 00:35:16,710
+
+
+855
+00:35:16,710 --> 00:35:17,380
+ Ya. 
+
+856
+00:35:17,380 --> 00:35:19,500
+ Tidak ada jawaban yang jelas. 
+
+857
+00:35:19,500 --> 00:35:21,490
+ Anda hanya perlu melakukannya. 
+
+858
+00:35:21,490 --> 00:35:21,990
+ Baiklah. 
+
+859
+00:35:21,990 --> 00:35:24,320
+ Ada pertanyaan lain? 
+
+860
+00:35:24,320 --> 00:35:24,960
+ Baiklah. 
+
+861
+00:35:24,960 --> 00:35:27,740
+ Jadi sekarang mari kita lihat-- jadi ini seperti protokolnya 
+
+862
+00:35:27,740 --> 00:35:28,370
+ sisi hal. 
+
+863
+00:35:28,370 --> 00:35:30,240
+ Sekarang mari kita lihat bagaimana kita mengintegrasikan ini 
+
+864
+00:35:30,240 --> 00:35:34,420
+ ke dalam aplikasi tertentu, yaitu browser web? 
+
+865
+00:35:34,420 --> 00:35:38,640
+ Jadi saya kira jika Anda ingin mengamankan komunikasi jaringan, atau urutkan 
+
+866
+00:35:38,640 --> 00:35:41,490
+ situs web, dengan kriptografi, ada 
+
+867
+00:35:41,490 --> 00:35:44,650
+ sungguh ada tiga hal yang harus kita lindungi di browser. 
+
+868
+00:35:44,650 --> 00:35:48,220
+ Jadi hal pertama yang harus kita lindungi adalah data di jaringan. 
+
+869
+00:35:48,220 --> 00:35:51,922
+
+
+870
+00:35:51,922 --> 00:35:55,421
+ Dan ini hampir menjadi bagian yang mudah karena baik, kita 
+
+871
+00:35:55,421 --> 00:35:57,420
+ hanya akan menjalankan protokol sangat mirip seperti apa 
+
+872
+00:35:57,420 --> 00:35:58,810
+ Saya telah menjelaskan sejauh ini. 
+
+873
+00:35:58,810 --> 00:36:00,920
+ Kami akan mengenkripsi semua pesan, menandatanganinya, 
+
+874
+00:36:00,920 --> 00:36:02,670
+ pastikan mereka belum dirusak, 
+
+875
+00:36:02,670 --> 00:36:04,410
+ semua hal hebat ini. 
+
+876
+00:36:04,410 --> 00:36:06,620
+ Jadi itulah bagaimana kami akan melindungi data. 
+
+877
+00:36:06,620 --> 00:36:08,850
+ Tetapi kemudian ada dua hal lain di browser web 
+
+878
+00:36:08,850 --> 00:36:11,315
+ yang harus kita khawatirkan. 
+
+879
+00:36:11,315 --> 00:36:13,970
+ Jadi yang pertama dari mereka adalah segalanya 
+
+880
+00:36:13,970 --> 00:36:15,340
+ sebenarnya berjalan di browser. 
+
+881
+00:36:15,340 --> 00:36:16,960
+ Jadi kode yang berjalan di browser, 
+
+882
+00:36:16,960 --> 00:36:19,510
+ seperti JavaScript atau data penting itu 
+
+883
+00:36:19,510 --> 00:36:21,340
+ disimpan di browser. 
+
+884
+00:36:21,340 --> 00:36:24,950
+ Mungkin cookie Anda, atau penyimpanan lokal, atau banyak hal lainnya 
+
+885
+00:36:24,950 --> 00:36:27,005
+ yang berlangsung di browser modern semua 
+
+886
+00:36:27,005 --> 00:36:29,795
+ harus dilindungi entah dari jaringan [? peretas. ?] 
+
+887
+00:36:29,795 --> 00:36:31,170
+ Dan kita akan melihat berbagai hal 
+
+888
+00:36:31,170 --> 00:36:33,390
+ kita harus khawatir tentang ini sebentar lagi. 
+
+889
+00:36:33,390 --> 00:36:36,920
+ Dan kemudian hal terakhir yang mungkin tidak Anda pikirkan terlalu banyak 
+
+890
+00:36:36,920 --> 00:36:40,060
+ tetapi ternyata menjadi masalah nyata dalam praktik 
+
+891
+00:36:40,060 --> 00:36:43,950
+ melindungi antarmuka pengguna. 
+
+892
+00:36:43,950 --> 00:36:47,472
+ Dan alasannya adalah bahwa pada akhirnya, 
+
+893
+00:36:47,472 --> 00:36:49,930
+ banyak data rahasia yang ingin kita lindungi 
+
+894
+00:36:49,930 --> 00:36:50,763
+ berasal dari pengguna. 
+
+895
+00:36:50,763 --> 00:36:53,829
+ Dan pengguna mengetikkan hal ini ke beberapa situs web, 
+
+896
+00:36:53,829 --> 00:36:55,620
+ dan pengguna mungkin memiliki banyak situs web 
+
+897
+00:36:55,620 --> 00:36:57,411
+ buka di komputer mereka sehingga pengguna memiliki 
+
+898
+00:36:57,411 --> 00:36:59,760
+ untuk dapat membedakan situs mana yang sebenarnya 
+
+899
+00:36:59,760 --> 00:37:01,980
+ berinteraksi dengan kapan saja pada waktunya. 
+
+900
+00:37:01,980 --> 00:37:04,690
+ Jika mereka secara tidak sengaja mengetikkan kata sandi Amazon mereka ke dalam beberapa web 
+
+901
+00:37:04,690 --> 00:37:06,674
+ forum diskusi, itu akan menjadi bencana 
+
+902
+00:37:06,674 --> 00:37:09,090
+ tergantung pada seberapa banyak Anda peduli dengan kata sandi Amazon Anda, 
+
+903
+00:37:09,090 --> 00:37:10,680
+ tetapi tetap saja. 
+
+904
+00:37:10,680 --> 00:37:14,550
+ Jadi Anda benar-benar ingin memiliki antarmuka pengguna yang baik 
+
+905
+00:37:14,550 --> 00:37:17,077
+ semacam elemen yang membantu pengguna mencari tahu 
+
+906
+00:37:17,077 --> 00:37:17,910
+ apa yang mereka lakukan? 
+
+907
+00:37:17,910 --> 00:37:20,500
+ Apakah saya mengetik data rahasia ini ke situs web yang tepat, 
+
+908
+00:37:20,500 --> 00:37:23,590
+ atau apa yang akan terjadi pada data ini ketika saya mengirimkannya? 
+
+909
+00:37:23,590 --> 00:37:30,360
+ Jadi ini ternyata menjadi masalah yang sangat penting untuk dilindungi 
+
+910
+00:37:30,360 --> 00:37:33,380
+ aplikasi web. 
+
+911
+00:37:33,380 --> 00:37:34,170
+ Baiklah. 
+
+912
+00:37:34,170 --> 00:37:35,080
+ Masuk akal? 
+
+913
+00:37:35,080 --> 00:37:37,760
+ Jadi mari kita bicara apa sebenarnya web saat ini 
+
+914
+00:37:37,760 --> 00:37:39,890
+ browser lakukan di bagian depan ini. 
+
+915
+00:37:39,890 --> 00:37:42,510
+ Jadi seperti yang saya sebutkan, di sini untuk melindungi [TIDAK JELAS], 
+
+916
+00:37:42,510 --> 00:37:47,290
+ kami hanya akan menggunakan protokol ini yang disebut SSL atau TLS sekarang 
+
+917
+00:37:47,290 --> 00:37:49,000
+ yang mengenkripsi dan mengautentikasi data. 
+
+918
+00:37:49,000 --> 00:37:51,670
+ Ini terlihat sangat mirip dengan jenis diskusi yang kami miliki 
+
+919
+00:37:51,670 --> 00:37:53,110
+ sejauh ini. 
+
+920
+00:37:53,110 --> 00:37:56,180
+ Ini termasuk otoritas sertifikat, dan sebagainya. 
+
+921
+00:37:56,180 --> 00:37:58,710
+ Dan tentu saja, banyak detail lainnya. 
+
+922
+00:37:58,710 --> 00:38:02,080
+ Seperti, TLS sangat rumit, tetapi tidak 
+
+923
+00:38:02,080 --> 00:38:06,064
+ sangat menarik dari sudut [tidak terdengar] ini. 
+
+924
+00:38:06,064 --> 00:38:08,230
+ Baiklah, jadi melindungi, [? berhenti?] browser 
+
+925
+00:38:08,230 --> 00:38:10,670
+ ternyata jauh lebih menarik. 
+
+926
+00:38:10,670 --> 00:38:13,950
+ Dan alasannya adalah kita harus memastikannya 
+
+927
+00:38:13,950 --> 00:38:19,520
+ bahwa setiap kode atau data yang dikirim melalui koneksi yang tidak terenkripsi 
+
+928
+00:38:19,520 --> 00:38:22,090
+ tidak dapat merusak kode dan data itu 
+
+929
+00:38:22,090 --> 00:38:24,121
+ berasal dari koneksi terenkripsi 
+
+930
+00:38:24,121 --> 00:38:26,620
+ karena model ancaman kami adalah apa pun yang tidak dienkripsi 
+
+931
+00:38:26,620 --> 00:38:30,970
+ berpotensi dirusak oleh jaringan [? penyokong. ?] 
+
+932
+00:38:30,970 --> 00:38:33,730
+ Jadi kita harus memastikan kalau kita 
+
+933
+00:38:33,730 --> 00:38:38,250
+ memiliki kode JavaScript yang tidak terenkripsi yang berjalan di browser kami, 
+
+934
+00:38:38,250 --> 00:38:40,220
+ maka kita harus berasumsi bahwa itu bisa saja 
+
+935
+00:38:40,220 --> 00:38:41,750
+ dirusak oleh penyerang karena tidak dienkripsi. 
+
+936
+00:38:41,750 --> 00:38:44,077
+ Itu tidak dikonfirmasi melalui jaringan. 
+
+937
+00:38:44,077 --> 00:38:45,660
+ Dan akibatnya, kita harus mencegahnya 
+
+938
+00:38:45,660 --> 00:38:48,790
+ dari merusak halaman yang dikirim 
+
+939
+00:38:48,790 --> 00:38:50,749
+ melalui koneksi terenkripsi. 
+
+940
+00:38:50,749 --> 00:38:52,540
+ Jadi rencana umum untuk ini adalah kita akan pergi 
+
+941
+00:38:52,540 --> 00:38:56,620
+ untuk memperkenalkan skema URL baru. 
+
+942
+00:38:56,620 --> 00:38:57,950
+ Mari kita panggil HTTPS. 
+
+943
+00:38:57,950 --> 00:39:02,710
+ Jadi Anda sering melihat ini di URL, mungkin dalam kehidupan Anda sendiri. 
+
+944
+00:39:02,710 --> 00:39:07,640
+ Dan akan ada dua hal yang - baik, pertama 
+
+945
+00:39:07,640 --> 00:39:10,190
+ dari semua, hal keren tentang memperkenalkan skema URL baru 
+
+946
+00:39:10,190 --> 00:39:13,440
+ adalah sekarang, URL ini hanya berbeda dari URL HTTP. 
+
+947
+00:39:13,440 --> 00:39:16,560
+ Jadi, jika Anda memiliki URL yang HTTPS berikan sesuatu 
+
+948
+00:39:16,560 --> 00:39:19,290
+ sesuatu, itu asal yang berbeda 
+
+949
+00:39:19,290 --> 00:39:23,420
+ sejauh kebijakan asal yang sama terkait dari HTTP biasa 
+
+950
+00:39:23,420 --> 00:39:24,350
+ URL. 
+
+951
+00:39:24,350 --> 00:39:26,680
+ Jadi HTTP URL melampaui koreksi yang tidak terenkripsi. 
+
+952
+00:39:26,680 --> 00:39:29,430
+ Hal-hal ini melampaui SSL / TLS. 
+
+953
+00:39:29,430 --> 00:39:31,770
+ Jadi Anda tidak akan pernah membingungkan keduanya jika asal yang sama 
+
+954
+00:39:31,770 --> 00:39:35,130
+ kebijakan melakukan tugasnya dengan benar. 
+
+955
+00:39:35,130 --> 00:39:37,320
+ Jadi itu sedikit teka-teki. 
+
+956
+00:39:37,320 --> 00:39:39,180
+ Tetapi Anda juga harus memastikan 
+
+957
+00:39:39,180 --> 00:39:44,040
+ bahwa Anda benar membedakan situs terenkripsi yang berbeda 
+
+958
+00:39:44,040 --> 00:39:44,940
+ dari satu sama lain. 
+
+959
+00:39:44,940 --> 00:39:47,420
+ Kemudian ternyata cookies memiliki kebijakan yang berbeda 
+
+960
+00:39:47,420 --> 00:39:49,072
+ karena alasan historis. 
+
+961
+00:39:49,072 --> 00:39:50,530
+ Jadi mari kita bicara dulu tentang bagaimana kita 
+
+962
+00:39:50,530 --> 00:39:52,740
+ akan membedakan situs terenkripsi yang berbeda 
+
+963
+00:39:52,740 --> 00:39:53,980
+ dari satu sama lain. 
+
+964
+00:39:53,980 --> 00:39:56,010
+ Jadi rencananya adalah itu sebenarnya, 
+
+965
+00:39:56,010 --> 00:40:02,965
+ nama host melalui URL harus menjadi nama dalam sertifikat. 
+
+966
+00:40:02,965 --> 00:40:05,730
+
+
+967
+00:40:05,730 --> 00:40:07,627
+ Jadi itulah yang sebenarnya ternyata 
+
+968
+00:40:07,627 --> 00:40:09,126
+ bahwa otoritas sertifikat 
+
+969
+00:40:09,126 --> 00:40:10,600
+ akan mendaftar di penghujung hari 
+
+970
+00:40:10,600 --> 00:40:14,150
+ Jadi kita akan secara harfiah menandatangani nama host yang muncul 
+
+971
+00:40:14,150 --> 00:40:18,510
+ di URL Anda sebagai nama untuk kunci publik server web Anda. 
+
+972
+00:40:18,510 --> 00:40:22,684
+ Jadi Amazon mungkin memiliki sertifikat untuk www.amazon.com. 
+
+973
+00:40:22,684 --> 00:40:24,100
+ Itu namanya, lalu apa pun 
+
+974
+00:40:24,100 --> 00:40:27,000
+ kunci publik yang terkait dengan kunci rahasia mereka. 
+
+975
+00:40:27,000 --> 00:40:29,050
+ Dan inilah yang akan dicari browser. 
+
+976
+00:40:29,050 --> 00:40:31,970
+ Jadi jika mendapat sertifikat-- baiklah, 
+
+977
+00:40:31,970 --> 00:40:38,016
+ jika mencoba menghubungkan atau mendapatkan URL yang https://foo.com, 
+
+978
+00:40:38,016 --> 00:40:40,620
+ akan lebih baik jika server menyajikan sertifikat 
+
+979
+00:40:40,620 --> 00:40:42,570
+ untuk foo.com tepatnya. 
+
+980
+00:40:42,570 --> 00:40:45,560
+ Jika tidak, kami akan mengatakan, baik, kami mencoba menyambung ke satu orang, 
+
+981
+00:40:45,560 --> 00:40:47,500
+ tapi sebenarnya kita punya pria lain. 
+
+982
+00:40:47,500 --> 00:40:49,680
+ Itu nama yang berbeda di sertifikat 
+
+983
+00:40:49,680 --> 00:40:50,890
+ yang kami terhubung. 
+
+984
+00:40:50,890 --> 00:40:54,690
+ Dan itu akan menjadi sertifikat yang tidak cocok. 
+
+985
+00:40:54,690 --> 00:40:57,230
+ Jadi itulah bagaimana kita akan membedakan situs yang berbeda 
+
+986
+00:40:57,230 --> 00:40:57,730
+ dari satu sama lain. 
+
+987
+00:40:57,730 --> 00:40:59,229
+ Kami pada dasarnya akan mendapatkan CA 
+
+988
+00:40:59,229 --> 00:41:01,370
+ untuk membantu kami membedakan situs-situs ini, 
+
+989
+00:41:01,370 --> 00:41:03,630
+ dan CA akan berjanji untuk menerbitkan sertifikat 
+
+990
+00:41:03,630 --> 00:41:05,872
+ hanya kepada entitas yang tepat. 
+
+991
+00:41:05,872 --> 00:41:07,330
+ Jadi itu pada kebijakan margin yang sama 
+
+992
+00:41:07,330 --> 00:41:11,300
+ samping, bagaimana kita akan memisahkan kode terpisah. 
+
+993
+00:41:11,300 --> 00:41:15,050
+ Dan kemudian ternyata - baik, seperti yang Anda ingat, 
+
+994
+00:41:15,050 --> 00:41:17,475
+ cookie memiliki kebijakan yang sedikit berbeda. 
+
+995
+00:41:17,475 --> 00:41:20,800
+ Seperti, itu hampir asal yang sama, tetapi tidak cukup. 
+
+996
+00:41:20,800 --> 00:41:23,980
+ Jadi cookie memiliki rencana yang sedikit berbeda. 
+
+997
+00:41:23,980 --> 00:41:30,610
+ Jadi cookie memiliki bendera aman ini yang dapat Anda atur pada cookie. 
+
+998
+00:41:30,610 --> 00:41:34,220
+ Jadi aturannya adalah, jika cookie memiliki bendera aman, 
+
+999
+00:41:34,220 --> 00:41:39,940
+ maka itu hanya akan dikirim ke permintaan HTTPS, 
+
+1000
+00:41:39,940 --> 00:41:42,330
+ atau bersama dengan permintaan HTTPS. 
+
+1001
+00:41:42,330 --> 00:41:45,700
+ Dan jika cookie tidak memiliki bendera yang aman, 
+
+1002
+00:41:45,700 --> 00:41:49,590
+ maka itu berlaku untuk permintaan HTTP dan HTTPS. 
+
+1003
+00:41:49,590 --> 00:41:51,600
+ Yah, itu sedikit rumit, benar. 
+
+1004
+00:41:51,600 --> 00:41:53,640
+ Akan lebih bersih jika cookie hanya berkata, 
+
+1005
+00:41:53,640 --> 00:41:57,080
+ baik, ini adalah cookie untuk pos HTTPS, 
+
+1006
+00:41:57,080 --> 00:41:58,700
+ dan ini adalah cookie untuk host HTTP. 
+
+1007
+00:41:58,700 --> 00:42:00,470
+ Dan mereka sangat berbeda. 
+
+1008
+00:42:00,470 --> 00:42:03,410
+ Itu akan sangat jelas dalam hal mengisolasi situs aman 
+
+1009
+00:42:03,410 --> 00:42:05,007
+ dari situs tidak aman. 
+
+1010
+00:42:05,007 --> 00:42:06,590
+ Sayangnya, karena alasan historis, 
+
+1011
+00:42:06,590 --> 00:42:09,370
+ cookie memiliki jenis interaksi yang aneh ini. 
+
+1012
+00:42:09,370 --> 00:42:12,250
+ Jadi jika cookie ditandai aman, maka itu saja 
+
+1013
+00:42:12,250 --> 00:42:14,660
+ berlaku untuk situs HTTPS. 
+
+1014
+00:42:14,660 --> 00:42:16,830
+ Nah, ada tuan rumah juga, kan. 
+
+1015
+00:42:16,830 --> 00:42:20,920
+ Cookie yang sangat aman hanya berlaku untuk URL host HTTPS, 
+
+1016
+00:42:20,920 --> 00:42:22,740
+ dan cookie yang tidak aman berlaku untuk keduanya. 
+
+1017
+00:42:22,740 --> 00:42:27,310
+ Jadi itu akan menjadi sumber masalah bagi kita dalam hitungan detik. 
+
+1018
+00:42:27,310 --> 00:42:29,450
+ Masuk akal? 
+
+1019
+00:42:29,450 --> 00:42:30,080
+ Baiklah. 
+
+1020
+00:42:30,080 --> 00:42:32,490
+ Dan yang terakhir adalah browser web 
+
+1021
+00:42:32,490 --> 00:42:38,870
+ jangan mencoba untuk membantu kami dalam rencana ini untuk aspek UI, 
+
+1022
+00:42:38,870 --> 00:42:43,540
+ mereka akan memperkenalkan semacam ikon kunci 
+
+1023
+00:42:43,540 --> 00:42:45,660
+ yang seharusnya dilihat pengguna. 
+
+1024
+00:42:45,660 --> 00:42:48,220
+ Jadi ada ikon kunci di browser Anda, 
+
+1025
+00:42:48,220 --> 00:42:51,150
+ ditambah Anda seharusnya melihat URL untuk mencari tahu 
+
+1026
+00:42:51,150 --> 00:42:52,150
+ di situs mana Anda berada. 
+
+1027
+00:42:52,150 --> 00:42:55,860
+ Sekarang itulah yang diharapkan pengembang browser web 
+
+1028
+00:42:55,860 --> 00:42:57,030
+ kamu memikirkan dunia. 
+
+1029
+00:42:57,030 --> 00:43:00,100
+ Seperti, jika Anda pernah memasukkan hal-hal rahasia 
+
+1030
+00:43:00,100 --> 00:43:02,850
+ ke beberapa situs web, maka Anda harus melihat URL, 
+
+1031
+00:43:02,850 --> 00:43:04,816
+ pastikan itu nama host yang sebenarnya 
+
+1032
+00:43:04,816 --> 00:43:06,690
+ yang ingin Anda ajak bicara, lalu lihat 
+
+1033
+00:43:06,690 --> 00:43:08,980
+ untuk semacam ikon kunci, dan kemudian Anda 
+
+1034
+00:43:08,980 --> 00:43:10,755
+ harus menganggap hal-hal baik untuk dilakukan. 
+
+1035
+00:43:10,755 --> 00:43:12,735
+ Jadi itulah aspek UI-nya. 
+
+1036
+00:43:12,735 --> 00:43:13,360
+ Tidak bagus. 
+
+1037
+00:43:13,360 --> 00:43:17,880
+ Ternyata hanya banyak situs phishing 
+
+1038
+00:43:17,880 --> 00:43:20,800
+ sertakan gambar ikon kunci di situs itu sendiri 
+
+1039
+00:43:20,800 --> 00:43:21,960
+ dan memiliki URL yang berbeda. 
+
+1040
+00:43:21,960 --> 00:43:24,030
+ Dan jika Anda tidak tahu persis apa yang harus dicari 
+
+1041
+00:43:24,030 --> 00:43:29,210
+ atau apa yang terjadi, pengguna mungkin tertipu oleh ini. 
+
+1042
+00:43:29,210 --> 00:43:31,960
+ Jadi sisi UI ini sedikit berantakan, 
+
+1043
+00:43:31,960 --> 00:43:34,790
+ sebagian karena pengguna berantakan, seperti manusia. 
+
+1044
+00:43:34,790 --> 00:43:36,515
+ Dan sangat sulit untuk mengatakan apa 
+
+1045
+00:43:36,515 --> 00:43:37,640
+ hal yang tepat untuk dilakukan di sini. 
+
+1046
+00:43:37,640 --> 00:43:40,110
+ Jadi kita akan fokus pada aspek ini, 
+
+1047
+00:43:40,110 --> 00:43:43,652
+ yang jauh lebih mudah untuk dibicarakan secara tepat. 
+
+1048
+00:43:43,652 --> 00:43:45,290
+ Masuk akal? 
+
+1049
+00:43:45,290 --> 00:43:47,665
+ Ada pertanyaan tentang hal ini sejauh ini? 
+
+1050
+00:43:47,665 --> 00:43:48,164
+ Ya. 
+
+1051
+00:43:48,164 --> 00:43:49,538
+ AUDIENCE: Saya melihat beberapa situs web 
+
+1052
+00:43:49,538 --> 00:43:51,624
+ bahwa HTTPS kami [TIDAK JELAS]. 
+
+1053
+00:43:51,624 --> 00:43:52,290
+ PROFESOR: Ya. 
+
+1054
+00:43:52,290 --> 00:43:57,030
+ Jadi ternyata peramban berevolusi seiring waktu apa 
+
+1055
+00:43:57,030 --> 00:43:59,820
+ itu artinya mendapatkan ikon kunci. 
+
+1056
+00:43:59,820 --> 00:44:03,370
+ Jadi satu hal yang dilakukan beberapa browser 
+
+1057
+00:44:03,370 --> 00:44:06,390
+ apakah mereka memberi Anda ikon kunci saja 
+
+1058
+00:44:06,390 --> 00:44:09,850
+ jika semua konten atau sumber daya dalam halaman Anda 
+
+1059
+00:44:09,850 --> 00:44:11,462
+ juga dilayani melalui HTTPS. 
+
+1060
+00:44:11,462 --> 00:44:12,920
+ Jadi ini adalah salah satu masalah itu 
+
+1061
+00:44:12,920 --> 00:44:15,680
+ HTTPS yang dipaksa mencoba mengalaminya adalah campuran ini 
+
+1062
+00:44:15,680 --> 00:44:19,910
+ konten atau tidak aman embedding macam masalah. 
+
+1063
+00:44:19,910 --> 00:44:22,290
+ Jadi kadang-kadang, Anda akan gagal mendapatkan ikon kunci karena 
+
+1064
+00:44:22,290 --> 00:44:23,950
+ cek itu. 
+
+1065
+00:44:23,950 --> 00:44:25,820
+ Lain kali, mungkin sertifikat Anda 
+
+1066
+00:44:25,820 --> 00:44:26,820
+ tidak cukup bagus. 
+
+1067
+00:44:26,820 --> 00:44:29,700
+ Jadi misalnya, Chrome tidak akan memberi Anda ikon kunci 
+
+1068
+00:44:29,700 --> 00:44:34,430
+ jika menurut Anda sertifikat Anda menggunakan kriptografi yang lemah. 
+
+1069
+00:44:34,430 --> 00:44:35,990
+ Tetapi juga, itu bervariasi dengan browser. 
+
+1070
+00:44:35,990 --> 00:44:38,280
+ Jadi mungkin Chrome tidak akan memberi Anda ikon kunci, 
+
+1071
+00:44:38,280 --> 00:44:39,470
+ tetapi Firefox akan. 
+
+1072
+00:44:39,470 --> 00:44:43,000
+ Jadi, sekali lagi, tidak ada spesifikasi yang jelas 
+
+1073
+00:44:43,000 --> 00:44:44,920
+ tentang arti ikon gembok ini. 
+
+1074
+00:44:44,920 --> 00:44:51,060
+ Hanya orang yang menyapu barang di bawah ikon kunci ini. 
+
+1075
+00:44:51,060 --> 00:44:54,114
+ Pertanyaan Lain? 
+
+1076
+00:44:54,114 --> 00:44:55,090
+ Baiklah. 
+
+1077
+00:44:55,090 --> 00:44:58,830
+ Jadi mari kita lihat apa jenis masalah 
+
+1078
+00:44:58,830 --> 00:45:01,082
+ kita bertemu dengan rencana ini. 
+
+1079
+00:45:01,082 --> 00:45:03,290
+ Jadi satu hal yang saya kira kita harus bicarakan dulu 
+
+1080
+00:45:03,290 --> 00:45:07,540
+ is, OK, jadi dalam HTTP biasa, kami menggunakan 
+
+1081
+00:45:07,540 --> 00:45:11,010
+ mengandalkan DNS untuk memberi kami IP yang benar 
+
+1082
+00:45:11,010 --> 00:45:13,100
+ alamat di server. 
+
+1083
+00:45:13,100 --> 00:45:17,595
+ Jadi seberapa banyak kita harus mempercayai DNS untuk URL HTTPS ini? 
+
+1084
+00:45:17,595 --> 00:45:20,960
+
+
+1085
+00:45:20,960 --> 00:45:24,049
+ Apakah server DNS tepercaya, atau apakah pemetaan DNS ini 
+
+1086
+00:45:24,049 --> 00:45:25,090
+ penting bagi kita lagi? 
+
+1087
+00:45:25,090 --> 00:45:28,360
+
+
+1088
+00:45:28,360 --> 00:45:28,860
+ Ya. 
+
+1089
+00:45:28,860 --> 00:45:30,860
+ AUDIENCE: Mereka karena sertifikat 
+
+1090
+00:45:30,860 --> 00:45:32,819
+ adalah menandatangani nama domain. 
+
+1091
+00:45:32,819 --> 00:45:34,860
+ Saya tidak berpikir Anda menandatangani alamat IP [tidak terdengar]. 
+
+1092
+00:45:34,860 --> 00:45:35,170
+ PROFESOR: Benar. 
+
+1093
+00:45:35,170 --> 00:45:35,390
+ Ya. 
+
+1094
+00:45:35,390 --> 00:45:37,098
+ Jadi sertifikat menandatangani nama domain. 
+
+1095
+00:45:37,098 --> 00:45:38,430
+ Jadi ini seperti amazon.com. 
+
+1096
+00:45:38,430 --> 00:45:42,040
+
+
+1097
+00:45:42,040 --> 00:45:43,840
+ Jadi [TIDAK JELAS]. 
+
+1098
+00:45:43,840 --> 00:45:47,776
+ AUDIENCE: Katakan seseorang mencuri kunci pribadi amazon.com 
+
+1099
+00:45:47,776 --> 00:45:51,220
+ dan [TIDAK JELAS] server lain dengan alamat IP lain, 
+
+1100
+00:45:51,220 --> 00:45:54,849
+ dan menggabungkan [INAUDIBLE] alamat IP [tidak terdengar]. 
+
+1101
+00:45:54,849 --> 00:45:56,640
+ Tapi kemudian Anda sudah mencuri kunci privat. 
+
+1102
+00:45:56,640 --> 00:45:57,030
+ PROFESOR: Benar. 
+
+1103
+00:45:57,030 --> 00:45:57,530
+ Ya. 
+
+1104
+00:45:57,530 --> 00:45:59,220
+ Jadi sebenarnya, Anda menjelaskannya setelah keduanya 
+
+1105
+00:45:59,220 --> 00:46:02,880
+ mencuri kunci pribadi dan mengalihkan DNS ke diri Anda. 
+
+1106
+00:46:02,880 --> 00:46:07,852
+ Jadi apakah DNS itu sendiri cukup sensitif untuk kita pedulikan? 
+
+1107
+00:46:07,852 --> 00:46:09,310
+ Saya kira dalam arti Anda benar, 
+
+1108
+00:46:09,310 --> 00:46:11,130
+ bahwa kita perlu DNS untuk menemukan ide itu, 
+
+1109
+00:46:11,130 --> 00:46:13,615
+ atau kami akan kalah karena ini hanya tuan rumah 
+
+1110
+00:46:13,615 --> 00:46:15,990
+ nama, dan kami masih perlu mencari alamat IP untuk berbicara dengannya. 
+
+1111
+00:46:15,990 --> 00:46:17,830
+ Bagaimana jika seseorang membahayakan server DNS 
+
+1112
+00:46:17,830 --> 00:46:19,814
+ dan mengarahkan kami ke alamat IP yang berbeda? 
+
+1113
+00:46:19,814 --> 00:46:20,730
+ Apakah itu akan menjadi buruk? 
+
+1114
+00:46:20,730 --> 00:46:21,230
+ Ya. 
+
+1115
+00:46:21,230 --> 00:46:25,019
+ AUDIENCE: Yah, mungkin hanya [tidak terdengar] HTTPS. 
+
+1116
+00:46:25,019 --> 00:46:26,810
+ PROFESOR: Sangat berpotensi mengkhawatirkan, benar. 
+
+1117
+00:46:26,810 --> 00:46:28,763
+ Jadi mereka mungkin hanya menolak koneksi sama sekali. 
+
+1118
+00:46:28,763 --> 00:46:29,709
+ AUDIENCE: Yah, tidak. 
+
+1119
+00:46:29,709 --> 00:46:31,810
+ Mereka hanya mengarahkan Anda ke URL HTTP. 
+
+1120
+00:46:31,810 --> 00:46:33,351
+ PROFESOR: Yah, tentu saja, jika Anda 
+
+1121
+00:46:33,351 --> 00:46:37,290
+ sambungkan ke sana melalui HTTPS, lalu mereka tidak bisa mengalihkan. 
+
+1122
+00:46:37,290 --> 00:46:39,660
+ Tapi ya. 
+
+1123
+00:46:39,660 --> 00:46:40,160
+ Ya. 
+
+1124
+00:46:40,160 --> 00:46:44,660
+ AUDIENCE: Anda dapat [TIDAK JELAS] dan mencoba untuk menipu pengguna. 
+
+1125
+00:46:44,660 --> 00:46:46,520
+ Itu [TIDAK JELAS]. 
+
+1126
+00:46:46,520 --> 00:46:47,770
+ PROFESOR: Itu benar, ya. 
+
+1127
+00:46:47,770 --> 00:46:49,960
+ Jadi hal yang Anda sebutkan adalah 
+
+1128
+00:46:49,960 --> 00:46:53,190
+ Anda dapat mencoba untuk menyajikan sertifikat yang berbeda. 
+
+1129
+00:46:53,190 --> 00:46:56,097
+ Jadi mungkin Anda - yah, satu kemungkinan adalah Anda, entah bagaimana 
+
+1130
+00:46:56,097 --> 00:46:57,930
+ berkompromi dengan CA, dalam hal ini baiklah, 
+
+1131
+00:46:57,930 --> 00:46:59,470
+ Anda dalam bisnis. 
+
+1132
+00:46:59,470 --> 00:47:01,434
+ Kemungkinan lain adalah mungkin Anda hanya akan menandatangani 
+
+1133
+00:47:01,434 --> 00:47:02,600
+ sertifikat sendiri. 
+
+1134
+00:47:02,600 --> 00:47:04,725
+ Atau mungkin Anda memiliki sertifikat lama untuk orang ini 
+
+1135
+00:47:04,725 --> 00:47:08,240
+ yang Anda dapatkan kunci privasinya. 
+
+1136
+00:47:08,240 --> 00:47:11,070
+ Dan ternyata browser web itu, 
+
+1137
+00:47:11,070 --> 00:47:14,300
+ seperti kertas HTTPS paksa yang kami baca ini, 
+
+1138
+00:47:14,300 --> 00:47:18,570
+ kebanyakan browser web benar-benar bertanya kepada pengguna jika sesuatu tidak 
+
+1139
+00:47:18,570 --> 00:47:20,205
+ terlihat benar dengan sertifikat, yang 
+
+1140
+00:47:20,205 --> 00:47:21,580
+ sepertinya hal yang cukup aneh 
+
+1141
+00:47:21,580 --> 00:47:23,850
+ lakukan karena inilah aturannya. 
+
+1142
+00:47:23,850 --> 00:47:26,300
+ Nama host harus sesuai dengan nama sertifikat, 
+
+1143
+00:47:26,300 --> 00:47:27,400
+ dan itu harus valid. 
+
+1144
+00:47:27,400 --> 00:47:30,450
+ Itu harus tidak kadaluwarsa, semua aturan yang sangat jelas ini. 
+
+1145
+00:47:30,450 --> 00:47:34,640
+ Tetapi karena secara historis cara HTTPS telah digunakan, 
+
+1146
+00:47:34,640 --> 00:47:38,030
+ sering terjadi pada operator server web 
+
+1147
+00:47:38,030 --> 00:47:40,270
+ salah konfigurasi HTTPS. 
+
+1148
+00:47:40,270 --> 00:47:43,330
+ Jadi mungkin mereka lupa untuk memperbarui sertifikat mereka. 
+
+1149
+00:47:43,330 --> 00:47:45,380
+ Semua berjalan lancar dan Anda 
+
+1150
+00:47:45,380 --> 00:47:47,697
+ tidak menyadari bahwa sertifikat Anda telah kedaluwarsa 
+
+1151
+00:47:47,697 --> 00:47:49,030
+ dan Anda hanya lupa memperbaruinya. 
+
+1152
+00:47:49,030 --> 00:47:51,368
+ Jadi sepertinya para pengembang web browser, itu 
+
+1153
+00:47:51,368 --> 00:47:52,576
+ sepertinya sedikit mengecewakan. 
+
+1154
+00:47:52,576 --> 00:47:53,076
+ Oh man. 
+
+1155
+00:47:53,076 --> 00:47:54,020
+ Ini sudah kadaluwarsa. 
+
+1156
+00:47:54,020 --> 00:47:55,510
+ Biarkan saja pengguna melanjutkan. 
+
+1157
+00:47:55,510 --> 00:47:57,880
+ Jadi mereka menawarkan kotak dialog untuk pengguna yang mengatakan, 
+
+1158
+00:47:57,880 --> 00:47:59,610
+ baik, saya mendapat sertifikat, tapi itu 
+
+1159
+00:47:59,610 --> 00:48:01,050
+ tidak terlihat benar dalam beberapa cara. 
+
+1160
+00:48:01,050 --> 00:48:04,220
+ [TIDAK JELAS] lanjutkan saja dan lanjutkan. 
+
+1161
+00:48:04,220 --> 00:48:07,880
+ Jadi browser web akan memungkinkan pengguna untuk mengesampingkan 
+
+1162
+00:48:07,880 --> 00:48:10,785
+ keputusan ini tentang hal-hal seperti berakhirnya sertifikat. 
+
+1163
+00:48:10,785 --> 00:48:13,287
+ Juga untuk nama host, mungkin itu masalahnya 
+
+1164
+00:48:13,287 --> 00:48:14,620
+ bahwa situs web Anda memiliki banyak nama. 
+
+1165
+00:48:14,620 --> 00:48:16,440
+ Seperti untuk Amazon, Anda mungkin terhubung 
+
+1166
+00:48:16,440 --> 00:48:21,430
+ ke amazon.com, atau mungkin www.amazon.com, atau mungkin 
+
+1167
+00:48:21,430 --> 00:48:23,220
+ nama host lain. 
+
+1168
+00:48:23,220 --> 00:48:26,007
+ Dan jika Anda tidak berhati-hati dengan operator situs web, 
+
+1169
+00:48:26,007 --> 00:48:27,590
+ Anda mungkin tidak tahu untuk mendapatkan sertifikat 
+
+1170
+00:48:27,590 --> 00:48:30,910
+ untuk setiap kemungkinan nama yang dimiliki situs web Anda. 
+
+1171
+00:48:30,910 --> 00:48:33,615
+ Dan kemudian seorang pengguna berkata seperti itu, ya, 
+
+1172
+00:48:33,615 --> 00:48:35,240
+ nama host tidak terlihat benar, 
+
+1173
+00:48:35,240 --> 00:48:37,020
+ tapi mungkin ayo kita pergi. 
+
+1174
+00:48:37,020 --> 00:48:39,070
+ Jadi ini adalah alasan mengapa browser web memungkinkan 
+
+1175
+00:48:39,070 --> 00:48:44,560
+ pengguna untuk menerima lebih luas, atau rentang yang lebih luas 
+
+1176
+00:48:44,560 --> 00:48:47,291
+ sertifikat, dari aturan ini sebaliknya mungkin mendikte. 
+
+1177
+00:48:47,291 --> 00:48:48,540
+ Jadi itu masalah [INAUDIBLE]. 
+
+1178
+00:48:48,540 --> 00:48:51,484
+ Dan kemudian jika Anda membajak DNS, maka Anda 
+
+1179
+00:48:51,484 --> 00:48:52,900
+ mungkin bisa mengarahkan pengguna 
+
+1180
+00:48:52,900 --> 00:48:54,695
+ ke salah satu situs ini yang berfungsi 
+
+1181
+00:48:54,695 --> 00:48:56,830
+ sertifikat yang salah. 
+
+1182
+00:48:56,830 --> 00:48:59,270
+ Dan jika pengguna tidak hati-hati, mereka 
+
+1183
+00:48:59,270 --> 00:49:03,230
+ akan berpotensi menyetujui browser menerima 
+
+1184
+00:49:03,230 --> 00:49:07,102
+ sertifikat Anda, dan kemudian Anda berada dalam masalah itu. 
+
+1185
+00:49:07,102 --> 00:49:12,354
+ Itu sedikit area abu-abu sehubungan dengan seberapa banyak 
+
+1186
+00:49:12,354 --> 00:49:13,520
+ Anda harus benar-benar mempercayai DNS. 
+
+1187
+00:49:13,520 --> 00:49:15,978
+ Jadi Anda tentu tidak ingin memberikan kontrol pengguna sewenang-wenang 
+
+1188
+00:49:15,978 --> 00:49:17,890
+ nama DNS Anda [TIDAK JELAS]. 
+
+1189
+00:49:17,890 --> 00:49:21,900
+ Namun yang pasti, tujuan dari SSL / TLS dan HTTPS, 
+
+1190
+00:49:21,900 --> 00:49:25,290
+ semua hal ini, adalah semoga tidak mempercayai DNS sama sekali. 
+
+1191
+00:49:25,290 --> 00:49:27,940
+ Jika semuanya bekerja di sini dengan benar, 
+
+1192
+00:49:27,940 --> 00:49:30,150
+ Maka DNS tidak boleh dipercaya. 
+
+1193
+00:49:30,150 --> 00:49:31,794
+ Anda dapat [TIDAK JELAS]. 
+
+1194
+00:49:31,794 --> 00:49:33,710
+ Anda seharusnya tidak dapat mencegat data apa pun 
+
+1195
+00:49:33,710 --> 00:49:36,612
+ atau data yang korup, dan sebagainya. 
+
+1196
+00:49:36,612 --> 00:49:37,847
+ Masuk akal? 
+
+1197
+00:49:37,847 --> 00:49:39,430
+ Itu kalau semuanya bekerja, tentu saja. 
+
+1198
+00:49:39,430 --> 00:49:42,280
+ Ini sedikit lebih berantakan dari itu. 
+
+1199
+00:49:42,280 --> 00:49:43,990
+ Baiklah. 
+
+1200
+00:49:43,990 --> 00:49:49,230
+ Jadi saya kira satu pertanyaan yang menarik untuk dibicarakan 
+
+1201
+00:49:49,230 --> 00:49:52,880
+ Kurasa seberapa buruk serangan itu 
+
+1202
+00:49:52,880 --> 00:49:57,290
+ jika pengguna salah menyetujui sertifikat? 
+
+1203
+00:49:57,290 --> 00:49:59,150
+ Jadi seperti yang kami katakan, jika pengguna menerima 
+
+1204
+00:49:59,150 --> 00:50:02,110
+ sertifikat untuk host yang salah atau menerima kadaluarsa 
+
+1205
+00:50:02,110 --> 00:50:05,300
+ sertifikat, apa yang bisa salah? 
+
+1206
+00:50:05,300 --> 00:50:09,870
+ Berapa banyak yang harus kita khawatirkan tentang kesalahan ini dari pengguna? 
+
+1207
+00:50:09,870 --> 00:50:10,428
+ Ya. 
+
+1208
+00:50:10,428 --> 00:50:11,594
+ AUDIENCE: Yah, [tidak terdengar]. 
+
+1209
+00:50:11,594 --> 00:50:14,870
+
+
+1210
+00:50:14,870 --> 00:50:17,671
+ Tapi bisa jadi, [? dalam contoh?], bukan situs 
+
+1211
+00:50:17,671 --> 00:50:19,490
+ yang ingin dikunjungi pengguna. 
+
+1212
+00:50:19,490 --> 00:50:24,252
+ Jadi mereka bisa melakukan hal-hal seperti berpura-pura menjadi nama pengguna. 
+
+1213
+00:50:24,252 --> 00:50:24,960
+ PROFESOR: Benar. 
+
+1214
+00:50:24,960 --> 00:50:27,515
+ Jadi tentu saja, pengguna mungkin saya kira 
+
+1215
+00:50:27,515 --> 00:50:29,640
+ tertipu untuk berpikir, oh, saya punya semua uang ini, 
+
+1216
+00:50:29,640 --> 00:50:32,230
+ atau Anda tidak punya uang sama sekali karena halaman hasil datang 
+
+1217
+00:50:32,230 --> 00:50:34,010
+ kembali mengatakan inilah saldo Anda. 
+
+1218
+00:50:34,010 --> 00:50:35,940
+ Jadi mungkin pengguna akan menganggap sesuatu 
+
+1219
+00:50:35,940 --> 00:50:39,070
+ tentang apa yang bank itu miliki atau tidak miliki berdasarkan 
+
+1220
+00:50:39,070 --> 00:50:41,830
+ pada hasilnya. Yah, sepertinya masih buruk, 
+
+1221
+00:50:41,830 --> 00:50:43,520
+ tetapi tidak harus begitu buruk. 
+
+1222
+00:50:43,520 --> 00:50:44,460
+ Ya. 
+
+1223
+00:50:44,460 --> 00:50:46,810
+ AUDIENCE: Saya pikir bahwa [tidak terdengar] 
+
+1224
+00:50:46,810 --> 00:50:51,162
+ dapatkan semua cookie pengguna dan [TIDAK JELAS]. 
+
+1225
+00:50:51,162 --> 00:50:51,870
+ PROFESOR: Benar. 
+
+1226
+00:50:51,870 --> 00:50:53,367
+ Jadi ini adalah rasa takut Anda, ya. 
+
+1227
+00:50:53,367 --> 00:50:54,950
+ Ini jauh lebih mengkhawatirkan, sebenarnya, 
+
+1228
+00:50:54,950 --> 00:50:58,000
+ atau memiliki dampak jangka panjang yang lebih lama pada Anda. 
+
+1229
+00:50:58,000 --> 00:51:01,536
+ Dan alasan ini berhasil adalah karena browser, kapan 
+
+1230
+00:51:01,536 --> 00:51:04,060
+ itu angka [tidak terdengar] membuat keputusan 
+
+1231
+00:51:04,060 --> 00:51:06,610
+ siapa yang diizinkan untuk mendapatkan kumpulan cookie tertentu 
+
+1232
+00:51:06,610 --> 00:51:09,640
+ atau tidak hanya melihat nama host di URL 
+
+1233
+00:51:09,640 --> 00:51:11,390
+ bahwa Anda seharusnya terhubung. 
+
+1234
+00:51:11,390 --> 00:51:14,305
+ Jadi jika Anda terhubung ke beberapa server web penyerang, 
+
+1235
+00:51:14,305 --> 00:51:18,130
+ dan kemudian Anda hanya menerima sertifikat mereka untuk amazon.com 
+
+1236
+00:51:18,130 --> 00:51:20,175
+ sebagai hal yang nyata, lalu browser 
+
+1237
+00:51:20,175 --> 00:51:22,785
+ akan berpikir, ya, entitas yang saya ajak bicara adalah amazon.com, 
+
+1238
+00:51:22,785 --> 00:51:25,810
+ jadi saya akan memperlakukan mereka seperti biasa amazon.com biasa 
+
+1239
+00:51:25,810 --> 00:51:28,345
+ server, yang berarti bahwa mereka harus mendapatkan akses 
+
+1240
+00:51:28,345 --> 00:51:31,120
+ untuk semua cookie yang Anda miliki untuk host itu. 
+
+1241
+00:51:31,120 --> 00:51:33,770
+ Dan mungkin mereka bisa menjalankan kode JavaScript 
+
+1242
+00:51:33,770 --> 00:51:37,880
+ di browser Anda dengan prinsip asal yang sama. 
+
+1243
+00:51:37,880 --> 00:51:40,780
+ Jadi jika Anda memiliki situs lain, buka itu 
+
+1244
+00:51:40,780 --> 00:51:45,080
+ sedang terhubung ke situs web yang sebenarnya-- seperti mungkin 
+
+1245
+00:51:45,080 --> 00:51:46,650
+ Anda memiliki tab yang terbuka di browser Anda. 
+
+1246
+00:51:46,650 --> 00:51:48,400
+ Anda menutup laptop Anda, lalu membukanya 
+
+1247
+00:51:48,400 --> 00:51:51,190
+ di jaringan yang berbeda, tiba-tiba, seseorang dicegat 
+
+1248
+00:51:51,190 --> 00:51:53,480
+ koneksi Anda ke amazon.com dan disuntikkan 
+
+1249
+00:51:53,480 --> 00:51:54,614
+ tanggapan mereka sendiri. 
+
+1250
+00:51:54,614 --> 00:51:56,030
+ Jika Anda menyetujuinya, maka mereka akan 
+
+1251
+00:51:56,030 --> 00:51:58,975
+ dapat mengakses amazon.com lama 
+
+1252
+00:51:58,975 --> 00:52:01,100
+ halaman yang Anda buka karena sejauh browser 
+
+1253
+00:52:01,100 --> 00:52:02,599
+ khawatir, ini adalah asal yang sama 
+
+1254
+00:52:02,599 --> 00:52:04,656
+ karena mereka memiliki nama host yang sama. 
+
+1255
+00:52:04,656 --> 00:52:06,150
+ Itu akan merepotkan. 
+
+1256
+00:52:06,150 --> 00:52:09,670
+ Jadi ini berpotensi cukup disayangkan 
+
+1257
+00:52:09,670 --> 00:52:11,720
+ jika pengguna membuat pilihan yang salah 
+
+1258
+00:52:11,720 --> 00:52:13,560
+ untuk menyetujui sertifikat itu. 
+
+1259
+00:52:13,560 --> 00:52:15,430
+ Masuk akal? 
+
+1260
+00:52:15,430 --> 00:52:18,430
+ Ada pertanyaan tentang itu? 
+
+1261
+00:52:18,430 --> 00:52:19,780
+ Baiklah. 
+
+1262
+00:52:19,780 --> 00:52:22,480
+ Jadi itu semacam, saya kira, masalah bahwa ini memaksa HTTPS 
+
+1263
+00:52:22,480 --> 00:52:25,190
+ kertas khawatir tentang apakah pengguna membuat 
+
+1264
+00:52:25,190 --> 00:52:28,870
+ kesalahan dalam keputusan, pengguna memiliki terlalu banyak kelonggaran 
+
+1265
+00:52:28,870 --> 00:52:31,850
+ dalam menerima sertifikat. 
+
+1266
+00:52:31,850 --> 00:52:35,910
+ Masalah lain yang muncul dalam praktik 
+
+1267
+00:52:35,910 --> 00:52:39,010
+ Apakah itu-- kita membicarakan secara singkat tentang ini-- 
+
+1268
+00:52:39,010 --> 00:52:41,690
+ tetapi ini adalah salah satu hal yang juga dipaksakan 
+
+1269
+00:52:41,690 --> 00:52:43,890
+ HTTPS, saya pikir, agak mengkhawatirkan 
+
+1270
+00:52:43,890 --> 00:52:50,760
+ adalah gagasan penyematan tidak aman, atau konten campuran. 
+
+1271
+00:52:50,760 --> 00:52:54,940
+ Dan masalah yang mengacu pada istilah ini 
+
+1272
+00:52:54,940 --> 00:53:00,880
+ apakah itu situs aman, atau situs web apa pun dalam hal ini, 
+
+1273
+00:53:00,880 --> 00:53:04,390
+ dapat menyematkan potongan konten lain ke dalam halaman web. 
+
+1274
+00:53:04,390 --> 00:53:14,020
+ Jadi, jika Anda memiliki semacam situs, foo.com/index.html, 
+
+1275
+00:53:14,020 --> 00:53:17,870
+ situs ini dapat dilayani dari HTTPS, 
+
+1276
+00:53:17,870 --> 00:53:21,420
+ tetapi di dalam halaman HTML ini, Anda bisa memiliki banyak tag itu 
+
+1277
+00:53:21,420 --> 00:53:24,860
+ menginstruksikan browser untuk pergi dan mengambil barang-barang lain sebagai bagian 
+
+1278
+00:53:24,860 --> 00:53:25,700
+ halaman ini. 
+
+1279
+00:53:25,700 --> 00:53:27,820
+ Jadi hal termudah untuk dipikirkan 
+
+1280
+00:53:27,820 --> 00:53:29,772
+ mungkin adalah tag skrip tempat Anda 
+
+1281
+00:53:29,772 --> 00:53:36,230
+ dapat mengatakan sumber skrip sama dengan http jquery.com. 
+
+1282
+00:53:36,230 --> 00:53:38,620
+ Jadi ini adalah pustaka JavaScript populer 
+
+1283
+00:53:38,620 --> 00:53:41,330
+ yang membuatnya lebih mudah untuk berinteraksi dengan banyak hal 
+
+1284
+00:53:41,330 --> 00:53:42,250
+ di browser Anda. 
+
+1285
+00:53:42,250 --> 00:53:47,150
+ Tetapi banyak pengembang web hanya mereferensikan URL 
+
+1286
+00:53:47,150 --> 00:53:49,385
+ di situs lain seperti ini. 
+
+1287
+00:53:49,385 --> 00:53:51,010
+ Jadi kita harus cukup berterus terang, 
+
+1288
+00:53:51,010 --> 00:53:53,790
+ tapi apa masalahnya dengan pengaturan semacam ini? 
+
+1289
+00:53:53,790 --> 00:53:58,170
+ Misalkan Anda memiliki situs yang aman dan Anda hanya memuat jQuery. 
+
+1290
+00:53:58,170 --> 00:53:58,896
+ Ya. 
+
+1291
+00:53:58,896 --> 00:54:00,624
+ AUDIENCE: Ini bisa menjadi jQuery palsu. 
+
+1292
+00:54:00,624 --> 00:54:01,290
+ PROFESOR: Ya. 
+
+1293
+00:54:01,290 --> 00:54:03,300
+ Jadi sebenarnya ada dua cara yang Anda 
+
+1294
+00:54:03,300 --> 00:54:06,380
+ bisa mendapatkan hal yang salah yang tidak kamu harapkan. 
+
+1295
+00:54:06,380 --> 00:54:09,630
+ Salah satu kemungkinan adalah bahwa jQuery sendiri dikompromikan. 
+
+1296
+00:54:09,630 --> 00:54:12,470
+ Jadi sepertinya, Anda mendapatkan apa yang Anda minta. 
+
+1297
+00:54:12,470 --> 00:54:14,830
+ Anda meminta situs ini dari jquery.com 
+
+1298
+00:54:14,830 --> 00:54:16,140
+ dan itulah yang kamu dapatkan. 
+
+1299
+00:54:16,140 --> 00:54:19,070
+ Jika jQuery dikompromikan, itu terlalu buruk. 
+
+1300
+00:54:19,070 --> 00:54:21,220
+ Masalah lainnya adalah permintaan ini 
+
+1301
+00:54:21,220 --> 00:54:23,960
+ akan dikirim tanpa enkripsi atau otentikasi apa pun 
+
+1302
+00:54:23,960 --> 00:54:24,980
+ melalui jaringan. 
+
+1303
+00:54:24,980 --> 00:54:29,150
+ Jadi jika musuh mengendalikan koneksi jaringan Anda, 
+
+1304
+00:54:29,150 --> 00:54:30,890
+ maka mereka bisa mencegat permintaan ini 
+
+1305
+00:54:30,890 --> 00:54:34,404
+ dan melayani kembali beberapa kode JavaScript lainnya sebagai jawaban. 
+
+1306
+00:54:34,404 --> 00:54:35,820
+ Sekarang, kode JavaScript ini sedang berjalan 
+
+1307
+00:54:35,820 --> 00:54:38,480
+ untuk dijalankan sebagai bagian dari halaman ini. 
+
+1308
+00:54:38,480 --> 00:54:42,560
+ Dan sekarang, karena ini berjalan di domain foo.com HTTPS ini, 
+
+1309
+00:54:42,560 --> 00:54:45,630
+ ia memiliki akses ke cookie Anda yang aman untuk foo.com 
+
+1310
+00:54:45,630 --> 00:54:48,740
+ dan hal-hal lain yang Anda miliki di halaman itu, dan sebagainya. 
+
+1311
+00:54:48,740 --> 00:54:50,920
+ Jadi sepertinya itu hal yang sangat buruk. 
+
+1312
+00:54:50,920 --> 00:54:52,482
+ Jadi Anda harus berhati-hati untuk tidak melakukannya. 
+
+1313
+00:54:52,482 --> 00:54:53,940
+ Atau seorang pengembang web tentu harus 
+
+1314
+00:54:53,940 --> 00:54:57,470
+ hati-hati jangan membuat kesalahan seperti ini. 
+
+1315
+00:54:57,470 --> 00:55:02,180
+ Jadi satu solusi adalah memastikan bahwa semua konten tertanam 
+
+1316
+00:55:02,180 --> 00:55:04,340
+ di halaman aman juga aman. 
+
+1317
+00:55:04,340 --> 00:55:07,055
+ Jadi ini sepertinya pedoman yang bagus untuk banyak web 
+
+1318
+00:55:07,055 --> 00:55:07,930
+ pengembang untuk diikuti. 
+
+1319
+00:55:07,930 --> 00:55:12,435
+ Jadi mungkin Anda harus melakukan https colon jquery.com. 
+
+1320
+00:55:12,435 --> 00:55:17,410
+ Atau ternyata URL mendukung asal relatif ini 
+
+1321
+00:55:17,410 --> 00:55:21,345
+ URL, yang berarti Anda dapat menghilangkan bagian HTTPS dan hanya mengatakan, 
+
+1322
+00:55:21,345 --> 00:55:29,550
+ [TIDAK JELAS] sumber skrip sama dengan //jquery.com/ sesuatu. 
+
+1323
+00:55:29,550 --> 00:55:33,900
+ Dan apa artinya ini adalah menggunakan skema URL apa pun 
+
+1324
+00:55:33,900 --> 00:55:35,890
+ berasal dari URL Anda sendiri. 
+
+1325
+00:55:35,890 --> 00:55:39,300
+ Jadi, tag ini akan diterjemahkan ke https jquery.com 
+
+1326
+00:55:39,300 --> 00:55:42,870
+ jika ada di halaman HTTPS, dan ke http jquery.com reguler 
+
+1327
+00:55:42,870 --> 00:55:46,940
+ jika berada di non-HTTPS, hanya HTTP URL biasa. 
+
+1328
+00:55:46,940 --> 00:55:50,660
+ Jadi itulah salah satu cara untuk menghindari masalah ini. 
+
+1329
+00:55:50,660 --> 00:55:54,210
+ Hal lain yang baru-baru ini diperkenalkan. 
+
+1330
+00:55:54,210 --> 00:55:57,280
+ Jadi bidang ini agak aktif. 
+
+1331
+00:55:57,280 --> 00:56:00,280
+ Orang-orang berusaha membuat semuanya menjadi lebih baik. 
+
+1332
+00:56:00,280 --> 00:56:04,340
+ Salah satu cara alternatif untuk mengatasi masalah ini 
+
+1333
+00:56:04,340 --> 00:56:07,560
+ mungkin menyertakan hash atau semacam [? indikator ?] 
+
+1334
+00:56:07,560 --> 00:56:10,720
+ di sini di tag, karena jika Anda tahu persis apa 
+
+1335
+00:56:10,720 --> 00:56:13,260
+ konten yang ingin Anda muat, mungkin Anda tidak benar-benar 
+
+1336
+00:56:13,260 --> 00:56:14,890
+ harus memuatnya ke seluruh HTTPS. 
+
+1337
+00:56:14,890 --> 00:56:17,740
+ Anda sebenarnya tidak peduli siapa yang melayani untuk Anda, selama itu 
+
+1338
+00:56:17,740 --> 00:56:19,560
+ cocok dengan hash tertentu. 
+
+1339
+00:56:19,560 --> 00:56:22,890
+ Jadi sebenarnya ada spesifikasi baru di luar sana 
+
+1340
+00:56:22,890 --> 00:56:26,430
+ untuk dapat menentukan pada dasarnya 
+
+1341
+00:56:26,430 --> 00:56:30,310
+ hash dalam jenis-jenis tag ini. 
+
+1342
+00:56:30,310 --> 00:56:34,305
+ Jadi daripada harus merujuk ke jquery.com dengan URL HTTPS, 
+
+1343
+00:56:34,305 --> 00:56:35,800
+ mungkin apa yang bisa Anda lakukan hanyalah mengatakan 
+
+1344
+00:56:35,800 --> 00:56:41,020
+ sumber skrip sama dengan jquery.com, mungkin bahkan HTTP. 
+
+1345
+00:56:41,020 --> 00:56:43,890
+ Tapi di sini, Anda akan menyertakan semacam tag 
+
+1346
+00:56:43,890 --> 00:56:47,752
+ atribut, seperti hash sama di sini, 
+
+1347
+00:56:47,752 --> 00:56:49,960
+ Anda akan memasukkan a-- katakanlah cangkang satu hash 
+
+1348
+00:56:49,960 --> 00:56:52,800
+ atau cangkang dua hash konten 
+
+1349
+00:56:52,800 --> 00:56:55,020
+ bahwa Anda mengharapkan untuk kembali dari server. 
+
+1350
+00:56:55,020 --> 00:56:55,475
+ AUDIENCE: [TIDAK JELAS]. 
+
+1351
+00:56:55,475 --> 00:56:56,308
+ PROFESOR: Pertanyaan? 
+
+1352
+00:56:56,308 --> 00:56:57,920
+ AUDIENCE: [TIDAK JELAS]. 
+
+1353
+00:56:57,920 --> 00:56:59,220
+ PROFESOR: Ah, bung. 
+
+1354
+00:56:59,220 --> 00:57:01,160
+ Ada beberapa nama rumit untuk itu. 
+
+1355
+00:57:01,160 --> 00:57:04,070
+ Saya memiliki URL, sebenarnya, dalam catatan kuliah, jadi [TIDAK JELAS]. 
+
+1356
+00:57:04,070 --> 00:57:07,480
+
+
+1357
+00:57:07,480 --> 00:57:11,590
+ Integritas sub-sumber atau sesuatu seperti ini. 
+
+1358
+00:57:11,590 --> 00:57:14,280
+ Aku benar-benar bisa pelan-pelan ... yah, semoga 
+
+1359
+00:57:14,280 --> 00:57:18,380
+ akan digunakan mungkin segera di berbagai browser. 
+
+1360
+00:57:18,380 --> 00:57:21,840
+ Terasa seperti cara lain untuk benar-benar mengautentikasi konten 
+
+1361
+00:57:21,840 --> 00:57:26,980
+ tanpa mengandalkan data, atau enkripsi data dari [tidak terdengar]. 
+
+1362
+00:57:26,980 --> 00:57:29,170
+ Jadi di sini, kami memiliki rencana yang sangat umum ini 
+
+1363
+00:57:29,170 --> 00:57:31,970
+ menggunakan SSL dan TLS untuk mengautentikasi koneksi 
+
+1364
+00:57:31,970 --> 00:57:33,317
+ ke server tertentu. 
+
+1365
+00:57:33,317 --> 00:57:34,900
+ Ini hampir seperti cara alternatif 
+
+1366
+00:57:34,900 --> 00:57:39,160
+ memikirkan semacam mengamankan komunikasi jaringan Anda. 
+
+1367
+00:57:39,160 --> 00:57:41,530
+ Jika yang Anda pedulikan hanyalah integritas, 
+
+1368
+00:57:41,530 --> 00:57:43,890
+ maka mungkin Anda tidak memerlukan saluran terenkripsi yang aman 
+
+1369
+00:57:43,890 --> 00:57:44,630
+ melalui jaringan. 
+
+1370
+00:57:44,630 --> 00:57:47,048
+ Yang Anda butuhkan hanyalah menentukan apa yang Anda miliki 
+
+1371
+00:57:47,048 --> 00:57:48,173
+ inginkan di penghujung hari. 
+
+1372
+00:57:48,173 --> 00:57:48,672
+ Ya. 
+
+1373
+00:57:48,672 --> 00:57:51,280
+ AUDIENCE: Jadi bukankah ini [TIDAK JELAS]? 
+
+1374
+00:57:51,280 --> 00:57:53,620
+ PROFESOR: Bukankah kode ini duduk di klien? 
+
+1375
+00:57:53,620 --> 00:57:57,030
+ Yah, itu berjalan di klien, tetapi klien menjemput kode ini 
+
+1376
+00:57:57,030 --> 00:57:58,450
+ dari beberapa server. 
+
+1377
+00:57:58,450 --> 00:57:59,390
+ AUDIENCE: [TIDAK JELAS]. 
+
+1378
+00:57:59,390 --> 00:58:02,384
+ Tidak bisakah seseorang hanya [TIDAK JELAS]? 
+
+1379
+00:58:02,384 --> 00:58:03,050
+ PROFESOR: Ya. 
+
+1380
+00:58:03,050 --> 00:58:06,280
+ Jadi saya pikir inti dari hash adalah 
+
+1381
+00:58:06,280 --> 00:58:13,060
+ untuk melindungi halaman yang mengandung dari penyerang yang disuntikkan 
+
+1382
+00:58:13,060 --> 00:58:14,930
+ kode JavaScript yang berbeda di sini. 
+
+1383
+00:58:14,930 --> 00:58:16,690
+ Jadi untuk jQuery, ini sangat masuk akal 
+
+1384
+00:58:16,690 --> 00:58:18,310
+ karena jQuery terkenal. 
+
+1385
+00:58:18,310 --> 00:58:20,819
+ Anda tidak mencoba menyembunyikan apa kode sumber jQuery. 
+
+1386
+00:58:20,819 --> 00:58:23,110
+ Nah, yang ingin Anda pastikan adalah jaringan itu 
+
+1387
+00:58:23,110 --> 00:58:25,880
+ penyerang tidak dapat mencegat koneksi dan suplai Anda 
+
+1388
+00:58:25,880 --> 00:58:28,244
+ versi jahat jQuery yang akan bocor 
+
+1389
+00:58:28,244 --> 00:58:28,785
+ cookie Anda. 
+
+1390
+00:58:28,785 --> 00:58:30,690
+ AUDIENCE: [? Oh oke. 
+
+1391
+00:58:30,690 --> 00:58:32,150
+ PROFESOR: Itu masuk akal? 
+
+1392
+00:58:32,150 --> 00:58:33,820
+ Benar-benar benar bahwa siapa pun dapat menghitung hash 
+
+1393
+00:58:33,820 --> 00:58:35,111
+ dari hal-hal ini untuk diri mereka sendiri. 
+
+1394
+00:58:35,111 --> 00:58:38,240
+
+
+1395
+00:58:38,240 --> 00:58:41,026
+ Jadi ini adalah solusi untuk masalah integritas, 
+
+1396
+00:58:41,026 --> 00:58:42,025
+ bukan untuk kerahasiaan. 
+
+1397
+00:58:42,025 --> 00:58:45,340
+
+
+1398
+00:58:45,340 --> 00:58:46,770
+ Baiklah. 
+
+1399
+00:58:46,770 --> 00:58:51,450
+ Jadi ini semacam yang menurut saya harus diperhatikan oleh para pengembang 
+
+1400
+00:58:51,450 --> 00:58:58,680
+ untuk saat menulis halaman, atau termasuk konten dalam HTML mereka 
+
+1401
+00:58:58,680 --> 00:59:01,330
+ halaman di URL HTTPS. 
+
+1402
+00:59:01,330 --> 00:59:05,230
+ Masalah lain yang mengkhawatirkan adalah berurusan dengan cookie. 
+
+1403
+00:59:05,230 --> 00:59:12,130
+ Dan di sinilah perbedaan antara bendera aman dan adil 
+
+1404
+00:59:12,130 --> 00:59:15,410
+ asal-muasal ikut bermain. 
+
+1405
+00:59:15,410 --> 00:59:17,860
+ Jadi satu hal, tentu saja, pengembang bisa mengacaukan 
+
+1406
+00:59:17,860 --> 00:59:20,430
+ mungkin mereka lupa untuk mengatur bendera aman 
+
+1407
+00:59:20,430 --> 00:59:23,150
+ pada cookie di tempat pertama. 
+
+1408
+00:59:23,150 --> 00:59:24,170
+ Ini terjadi. 
+
+1409
+00:59:24,170 --> 00:59:29,950
+ Mungkin Anda berpikir pengguna saya hanya pergi ke URL HTTPS. 
+
+1410
+00:59:29,950 --> 00:59:31,350
+ Cookie saya tidak pernah [TIDAK TERDENGAR]. 
+
+1411
+00:59:31,350 --> 00:59:32,950
+ Mengapa saya harus mengatur bendera aman pada cookie? 
+
+1412
+00:59:32,950 --> 00:59:33,880
+ Dan mereka mungkin [? juga punya?] 
+
+1413
+00:59:33,880 --> 00:59:35,970
+ bendera aman, atau mungkin mereka melupakannya. 
+
+1414
+00:59:35,970 --> 00:59:38,837
+ Apakah ini masalah? 
+
+1415
+00:59:38,837 --> 00:59:40,420
+ Bagaimana jika pengguna Anda super rajin? 
+
+1416
+00:59:40,420 --> 00:59:43,260
+ Mereka selalu mengunjungi URL HTTPS, dan Anda tidak 
+
+1417
+00:59:43,260 --> 00:59:44,655
+ punya masalah seperti ini. 
+
+1418
+00:59:44,655 --> 00:59:47,540
+ Apakah Anda masih meninggalkan bendera aman di cookie Anda? 
+
+1419
+00:59:47,540 --> 00:59:48,040
+ [TIDAK JELAS] 
+
+1420
+00:59:48,040 --> 00:59:51,180
+
+
+1421
+00:59:51,180 --> 00:59:52,140
+ Ya. 
+
+1422
+00:59:52,140 --> 00:59:53,580
+ AUDIENCE: Mungkinkan penyerang terhubung ke URL Anda 
+
+1423
+00:59:53,580 --> 00:59:55,020
+ dan mengarahkan Anda ke [TIDAK JELAS]? 
+
+1424
+00:59:55,020 --> 00:59:55,686
+ PROFESOR: Ya. 
+
+1425
+00:59:55,686 --> 00:59:59,110
+ Jadi bahkan jika pengguna tidak secara eksplisit, secara manual 
+
+1426
+00:59:59,110 --> 01:00:02,620
+ pergi ke beberapa URL teks biasa, penyerang dapat memberi Anda tautan, 
+
+1427
+01:00:02,620 --> 01:00:06,834
+ atau mungkin meminta Anda memuat gambar dari URL non-HTTPS. 
+
+1428
+01:00:06,834 --> 01:00:08,250
+ Dan cookie tidak aman adalah adil 
+
+1429
+01:00:08,250 --> 01:00:10,250
+ akan dikirim bersama dengan permintaan jaringan. 
+
+1430
+01:00:10,250 --> 01:00:11,833
+ Jadi sepertinya itu sedikit masalah. 
+
+1431
+01:00:11,833 --> 01:00:13,560
+ Jadi Anda benar-benar membutuhkan bendera yang aman, 
+
+1432
+01:00:13,560 --> 01:00:15,934
+ meskipun pengguna dan aplikasi Anda sangat berhati-hati. 
+
+1433
+01:00:15,934 --> 01:00:17,967
+ AUDIENCE: Tapi saya mengasumsikan ada 
+
+1434
+01:00:17,967 --> 01:00:19,668
+ URL HTTP [TIDAK TERDENGAR]. 
+
+1435
+01:00:19,668 --> 01:00:23,070
+
+
+1436
+01:00:23,070 --> 01:00:24,320
+ PROFESOR: Itu benar, ya. 
+
+1437
+01:00:24,320 --> 01:00:26,319
+ Jadi sekali lagi, jadi bagaimana bisa ini [? istirahat? ?] Seharusnya 
+
+1438
+01:00:26,319 --> 01:00:27,150
+ Saya punya situs. 
+
+1439
+01:00:27,150 --> 01:00:28,810
+ Ia bahkan tidak mendengarkan pada port 80. 
+
+1440
+01:00:28,810 --> 01:00:31,560
+ Tidak ada cara untuk terhubung dengan saya di port 80, 
+
+1441
+01:00:31,560 --> 01:00:34,218
+ jadi mengapa itu menjadi masalah jika saya memiliki cookie yang tidak aman? 
+
+1442
+01:00:34,218 --> 01:00:36,009
+ AUDIENCE: Karena browser tidak akan memiliki 
+
+1443
+01:00:36,009 --> 01:00:38,000
+ cookie untuk domain lain. 
+
+1444
+01:00:38,000 --> 01:00:39,000
+ PROFESOR: Benar. 
+
+1445
+01:00:39,000 --> 01:00:40,666
+ Jadi browser tidak akan mengirim cookie Anda 
+
+1446
+01:00:40,666 --> 01:00:43,660
+ ke domain yang berbeda, tetapi masih 
+
+1447
+01:00:43,660 --> 01:00:46,740
+ tampaknya mengkhawatirkan bahwa penyerang mungkin memuat URL. 
+
+1448
+01:00:46,740 --> 01:00:50,842
+ Jadi misalkan amazon.com hanya pernah melayani barang-barang di atas SSL. 
+
+1449
+01:00:50,842 --> 01:00:52,300
+ Bahkan tidak mendengarkan pada port 80. 
+
+1450
+01:00:52,300 --> 01:00:54,060
+ Tidak ada cara untuk menghubungkannya. 
+
+1451
+01:00:54,060 --> 01:00:57,080
+ Jadi dalam hal ini, dan sebagai hasilnya, 
+
+1452
+01:00:57,080 --> 01:00:59,666
+ mereka tidak mengatur bendera aman mereka pada cookie. 
+
+1453
+01:00:59,666 --> 01:01:01,540
+ Jadi bagaimana mungkin seorang hacker kemudian mencuri kue mereka 
+
+1454
+01:01:01,540 --> 01:01:04,546
+ jika Amazon bahkan tidak mendengarkan di port 80? 
+
+1455
+01:01:04,546 --> 01:01:05,426
+ Ya. 
+
+1456
+01:01:05,426 --> 01:01:07,050
+ AUDIENCE: Tidak dapatkah browser masih berpikir 
+
+1457
+01:01:07,050 --> 01:01:09,340
+ ini koneksi HTTP? 
+
+1458
+01:01:09,340 --> 01:01:11,100
+ PROFESOR: Yah, jadi jika Anda terhubung ke port 
+
+1459
+01:01:11,100 --> 01:01:14,424
+ 443 dan Anda berbicara SSL atau GLS, maka itu selalu 
+
+1460
+01:01:14,424 --> 01:01:15,340
+ akan dienkripsi. 
+
+1461
+01:01:15,340 --> 01:01:16,697
+ Jadi itu bukan masalah. 
+
+1462
+01:01:16,697 --> 01:01:17,671
+ Ya. 
+
+1463
+01:01:17,671 --> 01:01:20,964
+ AUDIENCE: Penyerang dapat [TIDAK JELAS] jaringan mereka. 
+
+1464
+01:01:20,964 --> 01:01:21,630
+ PROFESOR: Ya. 
+
+1465
+01:01:21,630 --> 01:01:24,350
+ Jadi penyerang dapat benar-benar mencegat paket Anda 
+
+1466
+01:01:24,350 --> 01:01:26,960
+ yang mencoba terhubung ke Amazon pada port 80 
+
+1467
+01:01:26,960 --> 01:01:28,960
+ lalu muncul, dan membuatnya tampak, seperti Anda 
+
+1468
+01:01:28,960 --> 01:01:30,720
+ terhubung dengan sukses. 
+
+1469
+01:01:30,720 --> 01:01:33,510
+ Jadi jika penyerang memiliki kendali atas jaringan Anda, 
+
+1470
+01:01:33,510 --> 01:01:35,760
+ mereka bisa mengarahkan paket Anda mencoba 
+
+1471
+01:01:35,760 --> 01:01:37,970
+ untuk sampai ke Amazon ke mesin mereka sendiri di port 80. 
+
+1472
+01:01:37,970 --> 01:01:39,290
+ Mereka akan menerima koneksi, 
+
+1473
+01:01:39,290 --> 01:01:41,831
+ dan klien tidak akan bisa mengetahui perbedaannya. 
+
+1474
+01:01:41,831 --> 01:01:44,030
+ Akan seperti Amazon mendengarkan di port 80, 
+
+1475
+01:01:44,030 --> 01:01:46,931
+ dan kemudian cookie Anda akan dikirim ke web musuh ini 
+
+1476
+01:01:46,931 --> 01:01:47,430
+ server 
+
+1477
+01:01:47,430 --> 01:01:49,246
+ AUDIENCE: Karena klien tidak diketahui. 
+
+1478
+01:01:49,246 --> 01:01:49,810
+ PROFESOR: Benar. 
+
+1479
+01:01:49,810 --> 01:01:51,380
+ Ya, jadi untuk HTTP, tidak ada jalan 
+
+1480
+01:01:51,380 --> 01:01:53,420
+ untuk mengautentikasi host yang Anda sambungkan. 
+
+1481
+01:01:53,420 --> 01:01:54,950
+ Ini persis apa yang terjadi. 
+
+1482
+01:01:54,950 --> 01:01:57,980
+ HTTP tidak memiliki autentikasi, dan sebagai hasilnya, 
+
+1483
+01:01:57,980 --> 01:01:59,950
+ Anda harus mencegah cookie menjadi ada 
+
+1484
+01:01:59,950 --> 01:02:01,730
+ dikirim melalui HTTP di tempat pertama 
+
+1485
+01:02:01,730 --> 01:02:05,320
+ karena Anda tidak tahu siapa koneksi HTTP itu 
+
+1486
+01:02:05,320 --> 01:02:08,066
+ akan pergi ke jika Anda mengasumsikan musuh jaringan. 
+
+1487
+01:02:08,066 --> 01:02:10,624
+ AUDIENCE: Jadi Anda perlu kontrol jaringan untuk melakukan ini. 
+
+1488
+01:02:10,624 --> 01:02:11,540
+ PROFESOR: Ya, ya. 
+
+1489
+01:02:11,540 --> 01:02:13,560
+ Jadi apakah Anda memiliki kontrol penuh atas jaringan Anda 
+
+1490
+01:02:13,560 --> 01:02:15,518
+ sehingga Anda tahu bahwa musuh tidak akan menjadi 
+
+1491
+01:02:15,518 --> 01:02:16,860
+ mampu mencegat paket Anda. 
+
+1492
+01:02:16,860 --> 01:02:18,610
+ Tetapi bahkan kemudian, itu sebenarnya tidak begitu hebat. 
+
+1493
+01:02:18,610 --> 01:02:20,580
+ Seperti melihat kuliah TCP. 
+
+1494
+01:02:20,580 --> 01:02:23,716
+ Anda dapat melakukan semua jenis urutan jumlah serangan dan seterusnya. 
+
+1495
+01:02:23,716 --> 01:02:25,700
+ [? Itu akan menjadi?] Merepotkan. 
+
+1496
+01:02:25,700 --> 01:02:26,450
+ Baiklah. 
+
+1497
+01:02:26,450 --> 01:02:28,233
+ Ada pertanyaan lagi tentang itu? 
+
+1498
+01:02:28,233 --> 01:02:28,732
+ Ya. 
+
+1499
+01:02:28,732 --> 01:02:30,130
+ AUDIENCE: Maafkan saya, tetapi bukankah serangan itu disadap 
+
+1500
+01:02:30,130 --> 01:02:30,671
+ dalam hal itu? 
+
+1501
+01:02:30,671 --> 01:02:31,917
+ Apakah ada pengalihan? 
+
+1502
+01:02:31,917 --> 01:02:33,750
+ PROFESOR: Nah, apa hacker itu mungkin 
+
+1503
+01:02:33,750 --> 01:02:36,860
+ akan mencegat adalah permintaan HTTP dari klien pergi 
+
+1504
+01:02:36,860 --> 01:02:40,939
+ ke http amazon.com, dan permintaan itu termasuk 
+
+1505
+01:02:40,939 --> 01:02:43,397
+ semua cookie amazon.com Anda, atau cookie untuk domain apa pun 
+
+1506
+01:02:43,397 --> 01:02:45,210
+ itu adalah bahwa Anda mengirim permintaan Anda. 
+
+1507
+01:02:45,210 --> 01:02:47,084
+ Jadi jika Anda tidak menandai cookie tersebut sebagai aman, 
+
+1508
+01:02:47,084 --> 01:02:49,240
+ akan ada set yang terenkripsi dan tidak terenkripsi 
+
+1509
+01:02:49,240 --> 01:02:49,740
+ koneksi. 
+
+1510
+01:02:49,740 --> 01:02:51,810
+ AUDIENCE: Jadi bagaimana permintaan itu diinisiasi? 
+
+1511
+01:02:51,810 --> 01:02:52,600
+ PROFESOR: Ah, oke. 
+
+1512
+01:02:52,600 --> 01:02:53,100
+ Ya. 
+
+1513
+01:02:53,100 --> 01:02:55,360
+ Jadi mungkin Anda mendapatkan pengguna untuk mengunjungi newyorktimes.com 
+
+1514
+01:02:55,360 --> 01:02:58,260
+ dan Anda membayar untuk iklan yang memuat gambar 
+
+1515
+01:02:58,260 --> 01:03:01,194
+ dari http colon amazon.com. 
+
+1516
+01:03:01,194 --> 01:03:02,980
+ Dan tidak ada yang menghalangi Anda 
+
+1517
+01:03:02,980 --> 01:03:05,120
+ dari mengatakan, silakan muat gambar dari URL ini. 
+
+1518
+01:03:05,120 --> 01:03:06,950
+ Tetapi ketika browser mencoba terhubung di sana, 
+
+1519
+01:03:06,950 --> 01:03:09,858
+ itu akan mengirim cookie jika koneksi berhasil. 
+
+1520
+01:03:09,858 --> 01:03:10,854
+ Pertanyaan kembali di sana. 
+
+1521
+01:03:10,854 --> 01:03:14,174
+ AUDIENCE: Apakah akan meminta perubahan [tidak terdengar]? 
+
+1522
+01:03:14,174 --> 01:03:14,840
+ PROFESOR: Ya. 
+
+1523
+01:03:14,840 --> 01:03:16,890
+ Jadi HTTPS di mana pun merupakan ekstensi 
+
+1524
+01:03:16,890 --> 01:03:20,040
+ yang sangat mirip dengan HTTPS yang dipaksa dalam beberapa cara, 
+
+1525
+01:03:20,040 --> 01:03:24,720
+ dan mencoba untuk mencegah kesalahan semacam ini. 
+
+1526
+01:03:24,720 --> 01:03:28,380
+ Jadi saya kira satu hal yang memaksa HTTP 
+
+1527
+01:03:28,380 --> 01:03:31,760
+ apakah mereka khawatir tentang kesalahan semacam itu. 
+
+1528
+01:03:31,760 --> 01:03:36,410
+ Dan ketika Anda memilih untuk memilih situs ke HTTPS yang dipaksakan ini 
+
+1529
+01:03:36,410 --> 01:03:39,560
+ merencanakan, satu hal yang browser akan lakukan untuk Anda 
+
+1530
+01:03:39,560 --> 01:03:43,270
+ adalah mencegah koneksi HTTPS ke host tersebut 
+
+1531
+01:03:43,270 --> 01:03:44,560
+ di tempat pertama. 
+
+1532
+01:03:44,560 --> 01:03:47,250
+ Jadi tidak ada cara untuk membuat kesalahan semacam ini 
+
+1533
+01:03:47,250 --> 01:03:50,580
+ tidak menandai cookie Anda sebagai aman, 
+
+1534
+01:03:50,580 --> 01:03:54,340
+ atau memiliki jenis lain masalah cookie juga. 
+
+1535
+01:03:54,340 --> 01:03:57,430
+ Masalah lain yang lebih halus-- jadi ini, 
+
+1536
+01:03:57,430 --> 01:03:58,930
+ masalah yang kita bicarakan sekarang 
+
+1537
+01:03:58,930 --> 01:04:00,430
+ adalah pengembang lupa untuk mengatur 
+
+1538
+01:04:00,430 --> 01:04:01,974
+ bendera aman pada cookie. 
+
+1539
+01:04:01,974 --> 01:04:02,890
+ Jadi sepertinya bisa diperbaiki. 
+
+1540
+01:04:02,890 --> 01:04:04,639
+ OK, mungkin pengembang seharusnya melakukannya. 
+
+1541
+01:04:04,639 --> 01:04:05,690
+ Oke, perbaiki masalah itu. 
+
+1542
+01:04:05,690 --> 01:04:07,270
+ Hal yang jauh lebih halus 
+
+1543
+01:04:07,270 --> 01:04:11,030
+ adalah ketika server web aman mendapatkan cookie kembali 
+
+1544
+01:04:11,030 --> 01:04:13,990
+ dari klien, sebenarnya tidak tahu apakah cookie ini 
+
+1545
+01:04:13,990 --> 01:04:17,020
+ dikirim melalui koneksi terenkripsi atau teks biasa 
+
+1546
+01:04:17,020 --> 01:04:19,819
+ koneksi karena ketika server mendapat 
+
+1547
+01:04:19,819 --> 01:04:21,360
+ cookie dari klien, semua yang didapatnya 
+
+1548
+01:04:21,360 --> 01:04:24,200
+ adalah pasangan nilai kunci untuk cookie. 
+
+1549
+01:04:24,200 --> 01:04:28,650
+ Dan seperti yang kita lihat di sini, rencana untuk [TIDAK JELAS] 
+
+1550
+01:04:28,650 --> 01:04:31,530
+ berikut ini akan mencakup keamanan dan ketidakamanan 
+
+1551
+01:04:31,530 --> 01:04:35,050
+ cookie saat mengirim permintaan ke server yang aman, 
+
+1552
+01:04:35,050 --> 01:04:36,850
+ karena browser di sini hanya 
+
+1553
+01:04:36,850 --> 01:04:39,650
+ prihatin dengan kerahasiaan cookie. 
+
+1554
+01:04:39,650 --> 01:04:42,030
+ Tetapi di sisi server, Anda sekarang tidak 
+
+1555
+01:04:42,030 --> 01:04:43,280
+ memiliki jaminan integritas. 
+
+1556
+01:04:43,280 --> 01:04:44,762
+ Saat Anda mendapatkan cookie dari seorang pengguna, 
+
+1557
+01:04:44,762 --> 01:04:46,970
+ mungkin telah dikirim melalui koneksi terenkripsi, 
+
+1558
+01:04:46,970 --> 01:04:50,370
+ tetapi juga mungkin telah dikirim melalui koneksi teks biasa. 
+
+1559
+01:04:50,370 --> 01:04:53,390
+ Jadi ini mengarah ke serangan yang lebih halus, 
+
+1560
+01:04:53,390 --> 01:04:55,670
+ tetapi rasa serangan ini cenderung 
+
+1561
+01:04:55,670 --> 01:04:57,370
+ menjadi hal-hal seperti fiksasi sesi. 
+
+1562
+01:04:57,370 --> 01:05:01,840
+ Maksudnya adalah bahwa saya ingin melihat email apa Anda 
+
+1563
+01:05:01,840 --> 01:05:02,490
+ mengirim. 
+
+1564
+01:05:02,490 --> 01:05:05,130
+ Atau mungkin saya akan mengatur cookie untuk Anda itu 
+
+1565
+01:05:05,130 --> 01:05:06,850
+ adalah salinan cookie Gmail saya. 
+
+1566
+01:05:06,850 --> 01:05:08,760
+ Jadi ketika Anda menulis pesan di Gmail, 
+
+1567
+01:05:08,760 --> 01:05:11,700
+ itu sebenarnya akan disimpan di folder yang saya kirim di dalam Anda 
+
+1568
+01:05:11,700 --> 01:05:12,531
+ folder terkirim. 
+
+1569
+01:05:12,531 --> 01:05:14,155
+ Itu seolah-olah Anda menggunakan akun saya, 
+
+1570
+01:05:14,155 --> 01:05:16,280
+ dan kemudian saya akan dapat mengekstrak sesuatu dari sana. 
+
+1571
+01:05:16,280 --> 01:05:20,610
+ Jadi jika saya dapat memaksa cookie sesi ke browser Anda 
+
+1572
+01:05:20,610 --> 01:05:22,260
+ dan semacam membuat Anda menggunakan akun saya, 
+
+1573
+01:05:22,260 --> 01:05:24,340
+ mungkin saya bisa mengekstrak beberapa informasi seperti itu 
+
+1574
+01:05:24,340 --> 01:05:27,170
+ dari korban. 
+
+1575
+01:05:27,170 --> 01:05:32,290
+ Jadi itu masalah lain yang muncul karena abu-abu ini 
+
+1576
+01:05:32,290 --> 01:05:36,060
+ area [INAUDIBLE] pemisahan tidak lengkap antara HTTP 
+
+1577
+01:05:36,060 --> 01:05:37,523
+ dan cookie HTTPS. 
+
+1578
+01:05:37,523 --> 01:05:38,022
+ Pertanyaan. 
+
+1579
+01:05:38,022 --> 01:05:40,313
+ AUDIENCE: Jadi Anda akan membutuhkan kerentanan [TIDAK JELAS] 
+
+1580
+01:05:40,313 --> 01:05:41,670
+ untuk mengatur cookie itu [TIDAK JELAS]. 
+
+1581
+01:05:41,670 --> 01:05:43,419
+ PROFESOR: Tidak. [TIDAK JELAS] kerentanan 
+
+1582
+01:05:43,419 --> 01:05:44,210
+ untuk mengatur cookie ini. 
+
+1583
+01:05:44,210 --> 01:05:46,210
+ Anda hanya akan menipu browser untuk terhubung 
+
+1584
+01:05:46,210 --> 01:05:49,460
+ ke URL host HTTP biasa. 
+
+1585
+01:05:49,460 --> 01:05:53,440
+ Dan tanpa ekstensi seperti HTTPS paksa atau HTTPS 
+
+1586
+01:05:53,440 --> 01:05:56,730
+ di mana-mana, Anda bisa, sebagai musuh, 
+
+1587
+01:05:56,730 --> 01:05:59,680
+ mengatur kunci di browser pengguna. 
+
+1588
+01:05:59,680 --> 01:06:01,470
+ Ini adalah cookie yang tidak aman, tapi itu 
+
+1589
+01:06:01,470 --> 01:06:03,555
+ akan dikirim kembali, bahkan pada permintaan aman. 
+
+1590
+01:06:03,555 --> 01:06:06,013
+ AUDIENCE: Jadi, Anda harus mengelabui browser agar berpikir 
+
+1591
+01:06:06,013 --> 01:06:07,650
+ domain adalah domain yang sama? 
+
+1592
+01:06:07,650 --> 01:06:08,070
+ PROFESOR: Benar. 
+
+1593
+01:06:08,070 --> 01:06:08,240
+ Ya. 
+
+1594
+01:06:08,240 --> 01:06:09,910
+ Jadi Anda harus mencegat koneksi jaringan mereka 
+
+1595
+01:06:09,910 --> 01:06:11,280
+ dan mungkin melakukan serangan yang sama 
+
+1596
+01:06:11,280 --> 01:06:13,446
+ Anda berbicara tentang hanya beberapa menit yang lalu. 
+
+1597
+01:06:13,446 --> 01:06:14,090
+ Ya. 
+
+1598
+01:06:14,090 --> 01:06:15,970
+ Masuk akal? 
+
+1599
+01:06:15,970 --> 01:06:17,390
+ Baiklah. 
+
+1600
+01:06:17,390 --> 01:06:20,390
+ Jadi saya kira mungkin ada [TIDAK JELAS]. 
+
+1601
+01:06:20,390 --> 01:06:23,130
+ Jadi apa yang HTTPS paksa lakukan bagi kita sekarang? 
+
+1602
+01:06:23,130 --> 01:06:27,100
+ Ini mencoba untuk mencegah beberapa bagian dari masalah ini. 
+
+1603
+01:06:27,100 --> 01:06:29,680
+ Jadi saya kira saya harus mengatakan, jadi HTTPS paksa, kertas yang kita baca 
+
+1604
+01:06:29,680 --> 01:06:31,930
+ adalah semacam proposal penelitian itu 
+
+1605
+01:06:31,930 --> 01:06:35,539
+ diterbitkan saya kira lima atau enam tahun yang lalu sekarang. 
+
+1606
+01:06:35,539 --> 01:06:37,330
+ Sejak itu, standarnya sudah standar 
+
+1607
+01:06:37,330 --> 01:06:38,560
+ dan benar-benar diadopsi. 
+
+1608
+01:06:38,560 --> 01:06:42,410
+ Jadi ini seperti plug-in yang agak samar 
+
+1609
+01:06:42,410 --> 01:06:43,665
+ barang yang disimpan dan beberapa cookie. 
+
+1610
+01:06:43,665 --> 01:06:46,620
+ Apakah mereka khawatir digusur dan sebagainya? 
+
+1611
+01:06:46,620 --> 01:06:48,770
+ Sekarang sebenarnya, sebagian besar browser melihat tulisan ini 
+
+1612
+01:06:48,770 --> 01:06:49,710
+ dan berkata, OK, ini ide yang bagus. 
+
+1613
+01:06:49,710 --> 01:06:51,126
+ Kami akan menerapkannya dengan lebih baik 
+
+1614
+01:06:51,126 --> 01:06:52,350
+ dalam browser itu sendiri. 
+
+1615
+01:06:52,350 --> 01:06:55,970
+ Jadi ada sesuatu yang disebut keamanan transportasi ketat HTTP itu 
+
+1616
+01:06:55,970 --> 01:06:58,199
+ mengimplementasikan sebagian besar ide dari HTTPS yang dipaksakan 
+
+1617
+01:06:58,199 --> 01:06:59,490
+ dan benar-benar membuat cerita yang bagus. 
+
+1618
+01:06:59,490 --> 01:07:03,565
+ Seperti, inilah bagaimana penelitian benar-benar berdampak pada saya 
+
+1619
+01:07:03,565 --> 01:07:07,100
+ tebak keamanan aplikasi web dan browser. 
+
+1620
+01:07:07,100 --> 01:07:08,970
+ Tapi bagaimanapun, mari kita lihat apa yang memaksa HTTPS 
+
+1621
+01:07:08,970 --> 01:07:10,980
+ tidak untuk situs web. 
+
+1622
+01:07:10,980 --> 01:07:15,220
+ Jadi HTTPS yang dipaksa memungkinkan situs web untuk menyetel bit ini 
+
+1623
+01:07:15,220 --> 01:07:17,380
+ untuk nama host tertentu. 
+
+1624
+01:07:17,380 --> 01:07:21,005
+ Dan cara yang memaksa HTTPS mengubah perilaku 
+
+1625
+01:07:21,005 --> 01:07:24,242
+ dari browser ada tiga. 
+
+1626
+01:07:24,242 --> 01:07:28,760
+ Jadi, jika beberapa set situs web memaksa HTTPS, 
+
+1627
+01:07:28,760 --> 01:07:32,300
+ lalu ada tiga hal yang terjadi berbeda. 
+
+1628
+01:07:32,300 --> 01:07:39,110
+ Jadi kesalahan sertifikat selalu fatal. 
+
+1629
+01:07:39,110 --> 01:07:41,405
+ Jadi, pengguna tidak memiliki peluang 
+
+1630
+01:07:41,405 --> 01:07:45,780
+ untuk menerima sertifikat yang salah itu 
+
+1631
+01:07:45,780 --> 01:07:49,530
+ memiliki nama host yang salah, atau waktu kedaluwarsa yang berlalu, 
+
+1632
+01:07:49,530 --> 01:07:50,480
+ dan sebagainya. 
+
+1633
+01:07:50,480 --> 01:07:52,810
+ Jadi, satu hal yang browser sekarang berubah. 
+
+1634
+01:07:52,810 --> 01:08:01,130
+ Yang lain adalah bahwa ia mengalihkan semua permintaan HTTP ke HTTPS. 
+
+1635
+01:08:01,130 --> 01:08:02,840
+ Jadi ini ide yang bagus. 
+
+1636
+01:08:02,840 --> 01:08:08,590
+ Jika Anda tahu situs selalu menggunakan HTTPS secara sah, 
+
+1637
+01:08:08,590 --> 01:08:10,852
+ maka Anda mungkin harus melarang HTTP biasa 
+
+1638
+01:08:10,852 --> 01:08:12,810
+ permintaan [? situs web?], karena itu mungkin 
+
+1639
+01:08:12,810 --> 01:08:15,110
+ tanda kesalahan atau penyerang mencoba 
+
+1640
+01:08:15,110 --> 01:08:17,830
+ untuk menipu Anda agar terhubung ke situs tanpa enkripsi. 
+
+1641
+01:08:17,830 --> 01:08:20,080
+ Anda ingin memastikan ini benar-benar terjadi sebelum Anda 
+
+1642
+01:08:20,080 --> 01:08:22,080
+ masalah permintaan HTTP. 
+
+1643
+01:08:22,080 --> 01:08:24,740
+ Jika tidak, permintaan HTTP sudah semacam berlayar 
+
+1644
+01:08:24,740 --> 01:08:26,630
+ ke jaringan. 
+
+1645
+01:08:26,630 --> 01:08:32,140
+ Dan hal terakhir yang memaksa perubahan pengaturan HTTPS ini 
+
+1646
+01:08:32,140 --> 01:08:37,740
+ bahwa itu sebenarnya melarang penyematan tidak aman ini 
+
+1647
+01:08:37,740 --> 01:08:43,910
+ rencana yang kami lihat di bawah sini 
+
+1648
+01:08:43,910 --> 01:08:50,149
+ saat Anda memasukkan URL HTTP di situs HTTPS. 
+
+1649
+01:08:50,149 --> 01:08:51,069
+ Masuk akal? 
+
+1650
+01:08:51,069 --> 01:08:55,318
+ Jadi ini adalah ekstensi HTTPS yang dipaksakan. 
+
+1651
+01:08:55,319 --> 01:08:57,620
+ Dalam hal apa yang terjadi sekarang adalah 
+
+1652
+01:08:57,620 --> 01:09:03,180
+ itu baik, jadi HTTPS ini keamanan transportasi ketat HSTS 
+
+1653
+01:09:03,180 --> 01:09:06,870
+ protokol pada dasarnya melakukan hal yang sama. 
+
+1654
+01:09:06,870 --> 01:09:09,969
+ Sebagian besar browser sekarang melarang penyematan tidak aman secara default. 
+
+1655
+01:09:09,969 --> 01:09:12,109
+ Jadi ini dulu sedikit kontroversial 
+
+1656
+01:09:12,109 --> 01:09:14,970
+ karena banyak pengembang mengalami masalah dengan ini. 
+
+1657
+01:09:14,970 --> 01:09:20,590
+ Tapi saya pikir Firefox dan Chrome dan IE semuanya sekarang secara default 
+
+1658
+01:09:20,590 --> 01:09:23,529
+ akan menolak memuat komponen tidak aman, 
+
+1659
+01:09:23,529 --> 01:09:27,649
+ atau setidaknya aman JavaScript dan CSS, ke halaman kami 
+
+1660
+01:09:27,649 --> 01:09:29,051
+ kecuali kamu melakukan sesuatu. 
+
+1661
+01:09:29,051 --> 01:09:29,550
+ Pertanyaan. 
+
+1662
+01:09:29,550 --> 01:09:31,283
+ AUDIENCE: Apakah mereka tidak meminta pengguna? 
+
+1663
+01:09:31,283 --> 01:09:33,699
+ PROFESOR: Mereka dulu, dan pengguna hanya akan berkata, ya. 
+
+1664
+01:09:33,700 --> 01:09:36,261
+ Jadi IE, misalnya, digunakan untuk memunculkan kotak dialog ini, 
+
+1665
+01:09:36,261 --> 01:09:37,719
+ dan makalah ini berbicara tentang, berkata, 
+
+1666
+01:09:37,720 --> 01:09:40,560
+ apakah Anda ingin memuat beberapa konten tambahan, 
+
+1667
+01:09:40,560 --> 01:09:42,517
+ atau semacam itu. 
+
+1668
+01:09:42,517 --> 01:09:44,412
+ AUDIENCE: [TIDAK TERDENGAR] karena [TIDAK JELAS]. 
+
+1669
+01:09:44,412 --> 01:09:45,078
+ PROFESOR: Ya. 
+
+1670
+01:09:45,078 --> 01:09:47,499
+ Saya pikir jika Anda mencoba berpura-pura menjadi pintar, 
+
+1671
+01:09:47,500 --> 01:09:50,520
+ maka Anda dapat melewati semua mekanisme keamanan ini. 
+
+1672
+01:09:50,520 --> 01:09:53,220
+ Tetapi jangan mencoba untuk menjadi pintar dengan cara ini. 
+
+1673
+01:09:53,220 --> 01:09:55,770
+ Jadi ini kebanyakan bukan masalah di browser modern, 
+
+1674
+01:09:55,770 --> 01:09:58,140
+ tetapi dua hal ini masih hal-hal 
+
+1675
+01:09:58,140 --> 01:10:01,510
+ yang memaksa HTTPS dan keamanan transportasi ketat HTTP 
+
+1676
+01:10:01,510 --> 01:10:02,993
+ sediakan dan berguna. 
+
+1677
+01:10:02,993 --> 01:10:03,493
+ Ya. 
+
+1678
+01:10:03,493 --> 01:10:05,284
+ AUDIENCE: Apa yang terjadi ketika sebuah situs web tidak bisa 
+
+1679
+01:10:05,284 --> 01:10:08,895
+ mendukung HTTPS? [TIDAK TERDENGAR] mengubah [TIDAK JELAS]? 
+
+1680
+01:10:08,895 --> 01:10:11,020
+ PROFESOR: Jadi apa maksud Anda tidak dapat mendukung HTTPS? 
+
+1681
+01:10:11,020 --> 01:10:12,457
+ AUDIENCE: [TIDAK JELAS]. 
+
+1682
+01:10:12,457 --> 01:10:13,290
+ PROFESOR: Baiklah, oke. 
+
+1683
+01:10:13,290 --> 01:10:16,330
+ Jadi jika Anda memiliki situs web yang tidak mendukung HTTPS 
+
+1684
+01:10:16,330 --> 01:10:19,116
+ tetapi menetapkan cookie ini, apa yang terjadi? 
+
+1685
+01:10:19,116 --> 01:10:20,068
+ AUDIENCE: [TIDAK JELAS]. 
+
+1686
+01:10:20,068 --> 01:10:21,020
+ PROFESOR: Ya. 
+
+1687
+01:10:21,020 --> 01:10:22,790
+ Jadi ini adalah alasan mengapa ini menjadi pilihan. 
+
+1688
+01:10:22,790 --> 01:10:25,640
+ Jadi jika Anda memilih semua orang, maka Anda berada di perahu ini. 
+
+1689
+01:10:25,640 --> 01:10:28,140
+ Seperti, oh, tiba-tiba, Anda tidak dapat berbicara dengan sebagian besar web 
+
+1690
+01:10:28,140 --> 01:10:29,775
+ karena mereka tidak menggunakan HTTPS. 
+
+1691
+01:10:29,775 --> 01:10:31,900
+ Jadi Anda benar-benar ingin ini diaktifkan secara selektif 
+
+1692
+01:10:31,900 --> 01:10:34,974
+ untuk situs yang benar-benar menginginkan perlindungan semacam ini. 
+
+1693
+01:10:34,974 --> 01:10:35,474
+ Ya. 
+
+1694
+01:10:35,474 --> 01:10:36,950
+ AUDIENCE: Tetapi juga, jika saya ingat dengan benar, 
+
+1695
+01:10:36,950 --> 01:10:39,270
+ Anda tidak dapat mengatur cookie kecuali situs [TIDAK JELAS]. 
+
+1696
+01:10:39,270 --> 01:10:39,650
+ PROFESOR: Itu benar, ya. 
+
+1697
+01:10:39,650 --> 01:10:41,441
+ Jadi orang-orang ini juga khawatir tentang penyangkalan 
+
+1698
+01:10:41,441 --> 01:10:44,050
+ serangan layanan, di mana plug in ini 
+
+1699
+01:10:44,050 --> 01:10:47,300
+ dapat digunakan untuk menimbulkan masalah bagi situs lain. 
+
+1700
+01:10:47,300 --> 01:10:49,980
+ Jadi jika Anda, misalnya, tetapkan HTTPS yang dipaksakan ini 
+
+1701
+01:10:49,980 --> 01:10:55,400
+ bit untuk beberapa situs web yang tidak curiga, lalu tiba-tiba, 
+
+1702
+01:10:55,400 --> 01:10:57,920
+ situs web berhenti berfungsi karena semua orang sekarang 
+
+1703
+01:10:57,920 --> 01:10:59,570
+ mencoba untuk terhubung ke mereka melalui HTTPS, 
+
+1704
+01:10:59,570 --> 01:11:00,890
+ dan mereka tidak mendukung HTTPS. 
+
+1705
+01:11:00,890 --> 01:11:04,779
+ Jadi ini adalah salah satu contoh mengkhawatirkan penolakan 
+
+1706
+01:11:04,779 --> 01:11:05,570
+ serangan layanan. 
+
+1707
+01:11:05,570 --> 01:11:07,810
+ Hal lain adalah bahwa mereka sebenarnya 
+
+1708
+01:11:07,810 --> 01:11:12,120
+ jangan mendukung pengaturan HTTPS paksa untuk seluruh domain. 
+
+1709
+01:11:12,120 --> 01:11:15,900
+ Jadi mereka khawatir itu, misalnya, di mit.edu, saya 
+
+1710
+01:11:15,900 --> 01:11:17,430
+ seorang pengguna di mit.edu. 
+
+1711
+01:11:17,430 --> 01:11:20,150
+ Mungkin saya akan menetapkan cookie HTTPS yang dipaksakan untuk start.mit.edu 
+
+1712
+01:11:20,150 --> 01:11:21,770
+ di semua browser. 
+
+1713
+01:11:21,770 --> 01:11:25,330
+ Dan sekarang, hanya HTTPS yang berfungsi di MIT. 
+
+1714
+01:11:25,330 --> 01:11:27,510
+ Itu sepertinya juga sedikit malapetaka, 
+
+1715
+01:11:27,510 --> 01:11:29,592
+ jadi Anda mungkin ingin menghindari itu. 
+
+1716
+01:11:29,592 --> 01:11:32,730
+ Di sisi lain, sebenarnya, keamanan transfer HTTPS ketat 
+
+1717
+01:11:32,730 --> 01:11:34,580
+ kembali pada ini dan berkata, baik, kita akan 
+
+1718
+01:11:34,580 --> 01:11:38,930
+ izinkan gagasan ini memaksa HTTPS untuk seluruh subdomain 
+
+1719
+01:11:38,930 --> 01:11:42,120
+ karena ternyata bermanfaat karena 
+
+1720
+01:11:42,120 --> 01:11:44,595
+ cookie tidak aman ini dikirim bersama dengan permintaan 
+
+1721
+01:11:44,595 --> 01:11:48,250
+ bahwa Anda tidak bisa mengetahui di mana mereka dikirim dari awalnya. 
+
+1722
+01:11:48,250 --> 01:11:50,850
+ Bagaimanapun, ada semua jenis interaksi yang halus 
+
+1723
+01:11:50,850 --> 01:11:52,280
+ dengan guru di level terendah, 
+
+1724
+01:11:52,280 --> 01:11:57,320
+ tetapi tidak jelas apa pilihan yang benar. 
+
+1725
+01:11:57,320 --> 01:11:59,570
+ Oke, jadi satu pertanyaan menarik yang mungkin Anda tanyakan 
+
+1726
+01:11:59,570 --> 01:12:05,040
+ apakah ini fundamental bagi sistem kita 
+
+1727
+01:12:05,040 --> 01:12:07,850
+ miliki, atau ini sebagian besar hanya membantu pengembang menghindari 
+
+1728
+01:12:07,850 --> 01:12:09,040
+ kesalahan? 
+
+1729
+01:12:09,040 --> 01:12:12,000
+ Jadi misalkan Anda memiliki pengembang yang sangat tekun 
+
+1730
+01:12:12,000 --> 01:12:14,820
+ dan tidak melakukan insecure [INAUDIBLE] embedding, 
+
+1731
+01:12:14,820 --> 01:12:16,230
+ tidak menyelesaikan masalah lain, 
+
+1732
+01:12:16,230 --> 01:12:18,640
+ selalu mendapatkan sertifikat mereka diperbarui, 
+
+1733
+01:12:18,640 --> 01:12:22,511
+ apakah mereka harus repot-repot dengan HTTPS paksa atau tidak? 
+
+1734
+01:12:22,511 --> 01:12:23,010
+ Ya. 
+
+1735
+01:12:23,010 --> 01:12:23,885
+ AUDIENCE: Yah, ya. 
+
+1736
+01:12:23,885 --> 01:12:27,920
+ Anda masih memiliki masalah dengan seseorang yang memaksa protokol HTTP. 
+
+1737
+01:12:27,920 --> 01:12:30,502
+ Tidak ada yang menghentikan peretas melakukan hal itu 
+
+1738
+01:12:30,502 --> 01:12:32,294
+ [? berlebihan?] [INAUDIBLE] memaksa pengguna 
+
+1739
+01:12:32,294 --> 01:12:33,793
+ untuk memuat sesuatu melalui HTTP dan kemudian 
+
+1740
+01:12:33,793 --> 01:12:35,140
+ untuk mencegat koneksi. 
+
+1741
+01:12:35,140 --> 01:12:38,130
+ PROFESOR: Itu benar, tetapi jika Anda merasa mereka sangat rajin 
+
+1742
+01:12:38,130 --> 01:12:40,140
+ dan semua cookie mereka ditandai aman, 
+
+1743
+01:12:40,140 --> 01:12:43,542
+ kemudian setelah seseorang mengunjungi versi HTTP situs Anda, 
+
+1744
+01:12:43,542 --> 01:12:44,500
+ seharusnya tidak menjadi masalah. 
+
+1745
+01:12:44,500 --> 01:12:46,364
+ AUDIENCE: [TIDAK JELAS]. 
+
+1746
+01:12:46,364 --> 01:12:47,030
+ PROFESOR: Ya. 
+
+1747
+01:12:47,030 --> 01:12:49,530
+ Jadi Anda mungkin harus mempertahankan diri terhadap cookie yang ditimpa 
+
+1748
+01:12:49,530 --> 01:12:51,860
+ atau serangan injeksi, dan itu semacam bisa dilakukan. 
+
+1749
+01:12:51,860 --> 01:12:55,089
+ Ini agak membosankan, tetapi Anda mungkin bisa melakukan sesuatu. 
+
+1750
+01:12:55,089 --> 01:12:55,714
+ AUDIENCE: Ya. 
+
+1751
+01:12:55,714 --> 01:12:58,488
+ Saya pikir maksudnya adalah itu juga, itu tidak-- keamanan 
+
+1752
+01:12:58,488 --> 01:13:00,474
+ tidak memeriksa sertifikatnya, bukan? 
+
+1753
+01:13:00,474 --> 01:13:01,140
+ PROFESOR: Ya. 
+
+1754
+01:13:01,140 --> 01:13:01,723
+ Jadi itu satu. 
+
+1755
+01:13:01,723 --> 01:13:03,830
+ Saya pikir ini adalah hal terbesar 
+
+1756
+01:13:03,830 --> 01:13:06,290
+ adalah titik pertama ini, yaitu semua yang lain, 
+
+1757
+01:13:06,290 --> 01:13:08,970
+ Anda dapat mengatasinya dengan mengkodekan dengan cerdik 
+
+1758
+01:13:08,970 --> 01:13:10,780
+ atau berhati-hati dalam aplikasi Anda. 
+
+1759
+01:13:10,780 --> 01:13:12,740
+ Hal pertama adalah sesuatu yang dilakukan pengguna 
+
+1760
+01:13:12,740 --> 01:13:14,742
+ has-- atau pengembang-- tidak memiliki kontrol 
+
+1761
+01:13:14,742 --> 01:13:17,200
+ karena pengembang ingin memastikan, misalnya, 
+
+1762
+01:13:17,200 --> 01:13:20,375
+ bahwa cookie mereka hanya akan dikirim ke server mereka sebagai 
+
+1763
+01:13:20,375 --> 01:13:22,180
+ ditandatangani oleh CA. 
+
+1764
+01:13:22,180 --> 01:13:25,227
+ Dan jika pengguna diizinkan untuk secara acak katakan, oh, 
+
+1765
+01:13:25,227 --> 01:13:26,810
+ itu cukup bagus, maka pengembang 
+
+1766
+01:13:26,810 --> 01:13:28,393
+ tidak tahu ke mana arah masakan mereka 
+
+1767
+01:13:28,393 --> 01:13:30,970
+ berakhir karena beberapa pengguna akan membocorkannya 
+
+1768
+01:13:30,970 --> 01:13:33,420
+ ke beberapa server yang salah. 
+
+1769
+01:13:33,420 --> 01:13:35,737
+ Jadi ini, saya pikir, manfaat utama dari protokol ini. 
+
+1770
+01:13:35,737 --> 01:13:36,570
+ Pertanyaan kembali di sana. 
+
+1771
+01:13:36,570 --> 01:13:38,001
+ AUDIENCE: [INAUDIBLE] poin kedua 
+
+1772
+01:13:38,001 --> 01:13:40,863
+ juga penting karena pengguna mungkin tidak [TIDAK JELAS]. 
+
+1773
+01:13:40,863 --> 01:13:43,407
+ Anda mungkin [TIDAK JELAS] dari situs, yang 
+
+1774
+01:13:43,407 --> 01:13:44,679
+ akan tepat di tengah. 
+
+1775
+01:13:44,679 --> 01:13:45,156
+ PROFESOR: Saya melihat. 
+
+1776
+01:13:45,156 --> 01:13:45,656
+ BAIK. 
+
+1777
+01:13:45,656 --> 01:13:47,970
+ Jadi saya setuju dalam pengertian ini 
+
+1778
+01:13:47,970 --> 01:13:52,060
+ sangat berguna dari sudut pandang keamanan UI 
+
+1779
+01:13:52,060 --> 01:13:55,349
+ karena sejauh menyangkut cookie, 
+
+1780
+01:13:55,349 --> 01:13:57,140
+ pengembang mungkin cukup pintar 
+
+1781
+01:13:57,140 --> 01:13:58,570
+ untuk melakukan sesuatu yang masuk akal. 
+
+1782
+01:13:58,570 --> 01:14:01,510
+ Tetapi pengguna mungkin tidak rajin mencari 
+
+1783
+01:14:01,510 --> 01:14:04,650
+ di ikon kunci dan URL setiap saat. 
+
+1784
+01:14:04,650 --> 01:14:09,790
+ Jadi jika Anda memuat amazon.com dan itu meminta Anda 
+
+1785
+01:14:09,790 --> 01:14:12,090
+ untuk nomor kartu kredit, Anda cukup mengetikkannya. 
+
+1786
+01:14:12,090 --> 01:14:14,630
+ Anda hanya lupa mencari ikon kunci, 
+
+1787
+01:14:14,630 --> 01:14:18,790
+ sedangkan jika Anda menetapkan HTTPS paksa untuk amazon.com, lalu 
+
+1788
+01:14:18,790 --> 01:14:20,510
+ tidak ada kesempatan bahwa Anda akan 
+
+1789
+01:14:20,510 --> 01:14:24,305
+ memiliki URL HTTP untuk situs itu. 
+
+1790
+01:14:24,305 --> 01:14:26,430
+ Masih [? menyebabkan masalah?] yang mungkin pengguna 
+
+1791
+01:14:26,430 --> 01:14:27,740
+ tidak membaca URL dengan benar. 
+
+1792
+01:14:27,740 --> 01:14:32,350
+ Seperti yang dikatakan Ammazon dengan dua Ms dot com. 
+
+1793
+01:14:32,350 --> 01:14:33,670
+ Mungkin masih menipu banyak pengguna. 
+
+1794
+01:14:33,670 --> 01:14:39,756
+ Tapi bagaimanapun, itu adalah keuntungan lain untuk HTTPS paksa. 
+
+1795
+01:14:39,756 --> 01:14:41,510
+ Masuk akal? 
+
+1796
+01:14:41,510 --> 01:14:43,020
+ Pertanyaan lain tentang skema ini? 
+
+1797
+01:14:43,020 --> 01:14:46,480
+
+
+1798
+01:14:46,480 --> 01:14:47,740
+ Baiklah. 
+
+1799
+01:14:47,740 --> 01:14:50,230
+ Jadi saya kira satu hal yang menarik adalah 
+
+1800
+01:14:50,230 --> 01:14:52,740
+ bagaimana Anda mendapatkan HTTPS yang dipaksakan ini 
+
+1801
+01:14:52,740 --> 01:14:55,470
+ untuk situs di tempat pertama? 
+
+1802
+01:14:55,470 --> 01:14:57,460
+ Bisakah Anda menyadap itu sebagai penyerang 
+
+1803
+01:14:57,460 --> 01:14:59,780
+ dan mencegah sedikit dari yang ditetapkan 
+
+1804
+01:14:59,780 --> 01:15:04,310
+ jika kamu [? ingin memasang faks? ?] 
+
+1805
+01:15:04,310 --> 01:15:05,210
+ Ya. 
+
+1806
+01:15:05,210 --> 01:15:06,653
+ AUDIENCE: [TIDAK TERDENGAR] HTTPS. 
+
+1807
+01:15:06,653 --> 01:15:09,058
+ Maksud saya, HTTPS, kami [? dengan asumsi?] [TIDAK JELAS] 
+
+1808
+01:15:09,058 --> 01:15:12,010
+ protokol [TIDAK JELAS]. 
+
+1809
+01:15:12,010 --> 01:15:13,010
+ PROFESOR: Benar. 
+
+1810
+01:15:13,010 --> 01:15:14,900
+ Jadi di satu sisi, ini bisa bagus. 
+
+1811
+01:15:14,900 --> 01:15:16,430
+ Tapi ini terpaksa https yang hanya bisa 
+
+1812
+01:15:16,430 --> 01:15:21,900
+ dikirim melalui koneksi HTTPS ke host yang dimaksud. 
+
+1813
+01:15:21,900 --> 01:15:26,160
+ Di sisi lain, pengguna mungkin tertipu pada saat itu. 
+
+1814
+01:15:26,160 --> 01:15:28,810
+ Seperti, dia tidak memiliki HTTPS yang dipaksakan. 
+
+1815
+01:15:28,810 --> 01:15:33,670
+ Jadi mungkin pengguna akan mengizinkan beberapa sertifikat yang salah, 
+
+1816
+01:15:33,670 --> 01:15:38,400
+ atau bahkan tidak akan tahu bahwa ini adalah HTTP dan bukan HTTPS. 
+
+1817
+01:15:38,400 --> 01:15:41,800
+ Jadi sepertinya berpotensi untuk penyerang 
+
+1818
+01:15:41,800 --> 01:15:44,220
+ untuk mencegah HTTPS yang dipaksakan menjadi ada 
+
+1819
+01:15:44,220 --> 01:15:45,220
+ dikirim di tempat pertama. 
+
+1820
+01:15:45,220 --> 01:15:49,610
+ Jika Anda belum pernah mengunjungi sebuah situs dan Anda mencoba mengunjungi situs itu, 
+
+1821
+01:15:49,610 --> 01:15:52,780
+ Anda mungkin tidak pernah tahu apakah HTTPS harus dipaksakan atau tidak 
+
+1822
+01:15:52,780 --> 01:15:54,080
+ di tempat pertama. 
+
+1823
+01:15:54,080 --> 01:15:54,580
+ Ya. 
+
+1824
+01:15:54,580 --> 01:15:58,000
+ AUDIENCE: Akankah sertifikat roaming [TIDAK TERDENGAR] di sana. 
+
+1825
+01:15:58,000 --> 01:15:59,380
+ PROFESOR: Itu benar, ya. 
+
+1826
+01:15:59,380 --> 01:16:02,830
+ Jadi saya kira cara untuk memikirkannya adalah jika mereka melakukan satu set, 
+
+1827
+01:16:02,830 --> 01:16:05,370
+ maka Anda tahu Anda berbicara dengan server yang tepat di beberapa titik, 
+
+1828
+01:16:05,370 --> 01:16:07,942
+ dan kemudian Anda dapat terus menggunakan bit itu dengan benar. 
+
+1829
+01:16:07,942 --> 01:16:10,400
+ Di sisi lain, jika Anda tidak memiliki set bit, atau mungkin 
+
+1830
+01:16:10,400 --> 01:16:12,300
+ jika Anda belum pernah berbicara dengan server, 
+
+1831
+01:16:12,300 --> 01:16:14,930
+ tidak ada protokol yang jelas yang akan selalu ada 
+
+1832
+01:16:14,930 --> 01:16:18,510
+ memberi Anda apakah HTTPS yang dipaksakan itu harus disetel atau tidak. 
+
+1833
+01:16:18,510 --> 01:16:21,686
+ Mungkin amazon.com selalu ingin mengeset bit HTTPS yang dipaksakan. 
+
+1834
+01:16:21,686 --> 01:16:23,560
+ Tetapi pertama kali Anda menarik laptop Anda, 
+
+1835
+01:16:23,560 --> 01:16:25,406
+ Anda sudah berada di jaringan penyerang, 
+
+1836
+01:16:25,406 --> 01:16:27,780
+ dan tidak ada cara bagi Anda untuk terhubung ke amazon.com. 
+
+1837
+01:16:27,780 --> 01:16:30,280
+ Semuanya disadap, atau sesuatu seperti ini. 
+
+1838
+01:16:30,280 --> 01:16:32,120
+ Jadi ini masalah yang sangat sulit untuk dipecahkan. 
+
+1839
+01:16:32,120 --> 01:16:35,850
+ Bootstrap pengaturan keamanan ini 
+
+1840
+01:16:35,850 --> 01:16:36,840
+ sangat rumit. 
+
+1841
+01:16:36,840 --> 01:16:38,381
+ Saya kira satu hal yang dapat Anda coba lakukan 
+
+1842
+01:16:38,381 --> 01:16:40,720
+ mungkin menanamkan bit ini di DNSSEC. 
+
+1843
+01:16:40,720 --> 01:16:42,530
+ Jadi jika Anda memiliki DNSSEC, sudah digunakan, 
+
+1844
+01:16:42,530 --> 01:16:46,070
+ maka mungkin Anda bisa mendaftar apakah Anda harus menggunakan HTTPS 
+
+1845
+01:16:46,070 --> 01:16:50,960
+ atau tidak, atau HTTPS paksa atau tidak, sebagai bagian dari nama DNS Anda. 
+
+1846
+01:16:50,960 --> 01:16:53,709
+ Tetapi sekali lagi, itu hanya bermuara pada masalah ke DNSSEC 
+
+1847
+01:16:53,709 --> 01:16:54,250
+ menjadi aman. 
+
+1848
+01:16:54,250 --> 01:16:56,083
+ Jadi selalu ada aturan kepercayaan semacam ini 
+
+1849
+01:16:56,083 --> 01:16:58,551
+ di mana Anda harus benar-benar menganggap itu benar. 
+
+1850
+01:16:58,551 --> 01:16:59,453
+ Pertanyaan. 
+
+1851
+01:16:59,453 --> 01:17:00,369
+ AUDIENCE: [TIDAK JELAS]. 
+
+1852
+01:17:00,369 --> 01:17:04,544
+
+
+1853
+01:17:04,544 --> 01:17:05,210
+ PROFESOR: Ya. 
+
+1854
+01:17:05,210 --> 01:17:07,540
+ Jadi saya kira Google terus berusaha memperbaiki berbagai hal 
+
+1855
+01:17:07,540 --> 01:17:08,520
+ dengan mengodekannya dengan keras. 
+
+1856
+01:17:08,520 --> 01:17:12,490
+ Jadi, satu hal yang ditawarkan Chrome 
+
+1857
+01:17:12,490 --> 01:17:15,840
+ yang sebetulnya, browser mengirim dengan daftar situs itu 
+
+1858
+01:17:15,840 --> 01:17:19,220
+ seharusnya memaksa HTTPS diaktifkan-- atau sekarang, yah, ini 
+
+1859
+01:17:19,220 --> 01:17:22,720
+ Hal HSTS, yang [TIDAK JELAS] diaktifkan. 
+
+1860
+01:17:22,720 --> 01:17:24,510
+ Jadi saat Anda benar-benar mengunduh Chrome, 
+
+1861
+01:17:24,510 --> 01:17:26,220
+ Anda mendapatkan banyak hal yang benar-benar berguna, 
+
+1862
+01:17:26,220 --> 01:17:30,650
+ seperti CRL yang agak baru dan daftar HTTPS yang dipaksakan 
+
+1863
+01:17:30,650 --> 01:17:33,220
+ situs yang sangat penting. 
+
+1864
+01:17:33,220 --> 01:17:35,779
+ Jadi ini seperti mengakui kekalahan. 
+
+1865
+01:17:35,779 --> 01:17:37,070
+ Seperti protokol tidak berfungsi. 
+
+1866
+01:17:37,070 --> 01:17:40,130
+ Kami hanya harus mendistribusikan ini a priori kepada semua orang. 
+
+1867
+01:17:40,130 --> 01:17:42,360
+ Dan itu membuat dikotomi malang ini 
+
+1868
+01:17:42,360 --> 01:17:44,565
+ antara situs yang cukup penting 
+
+1869
+01:17:44,565 --> 01:17:46,530
+ agar Google mengirim dengan browser, 
+
+1870
+01:17:46,530 --> 01:17:49,132
+ dan situs yang tidak melakukan ini. 
+
+1871
+01:17:49,132 --> 01:17:50,840
+ Sekarang tentu saja, Google sekarang memberitahu Anda 
+
+1872
+01:17:50,840 --> 01:17:52,540
+ bahwa siapa pun dapat memasukkan situs mereka 
+
+1873
+01:17:52,540 --> 01:17:54,030
+ karena daftarnya sangat kecil. 
+
+1874
+01:17:54,030 --> 01:17:55,740
+ Tetapi jika ini berkembang menjadi jutaan entri, 
+
+1875
+01:17:55,740 --> 01:17:57,660
+ Saya yakin Google akan berhenti memasukkan 
+
+1876
+01:17:57,660 --> 01:17:58,850
+ situs semua orang di sana. 
+
+1877
+01:17:58,850 --> 01:18:00,570
+ Tapi ya, Anda benar-benar dapat menambahkan domain. 
+
+1878
+01:18:00,570 --> 01:18:02,320
+ Dan Anda dapat mengirim email kepada pengembang Chrome 
+
+1879
+01:18:02,320 --> 01:18:07,150
+ dan masukkan barang Anda di daftar URL HTTPS yang dipaksakan. 
+
+1880
+01:18:07,150 --> 01:18:11,816
+ Pokoknya, ada pertanyaan lain tentang HTTPS paksa dan SSL? 
+
+1881
+01:18:11,816 --> 01:18:12,390
+ Baiklah. 
+
+1882
+01:18:12,390 --> 01:18:12,890
+ Baik. 
+
+1883
+01:18:12,890 --> 01:18:16,502
+ Jadi saya akan melihat kalian pada hari Rabu di [tidak terdengar]. 
+
+1884
+01:18:16,502 --> 00:00:00,000
+
+

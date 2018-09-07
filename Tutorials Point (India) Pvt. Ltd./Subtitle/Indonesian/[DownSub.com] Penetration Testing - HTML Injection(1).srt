@@ -1,0 +1,324 @@
+1
+00:00:00,089 --> 00:00:02,040
+ Halo semuanya, <font color="#E5E5E5">mari </font><font color="#CCCCCC">kita </font><font color="#E5E5E5">bicarakan </font>
+
+2
+00:00:02,040 --> 00:00:04,170
+ Injeksi HTML adalah kemuliaan 
+
+3
+00:00:04,170 --> 00:00:06,509
+ jadi injeksi HTML juga disebut sebagai 
+
+4
+00:00:06,509 --> 00:00:08,990
+ <font color="#E5E5E5">render serangan karena bukan </font>
+
+5
+00:00:08,990 --> 00:00:11,160
+ <font color="#E5E5E5">menyuntikkan JavaScript </font><font color="#CCCCCC">ke dalam web </font>
+
+6
+00:00:11,160 --> 00:00:14,040
+ <font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">kami mencoba untuk menyuntikkan </font><font color="#CCCCCC">kode HTML </font>
+
+7
+00:00:14,040 --> 00:00:16,619
+ <font color="#E5E5E5">dan jika </font><font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">web </font><font color="#CCCCCC">itu sedang </font>
+
+8
+00:00:16,619 --> 00:00:18,630
+ diberikan <font color="#E5E5E5">sesuai dengan </font><font color="#CCCCCC">kode </font><font color="#E5E5E5">HTML kami </font>
+
+9
+00:00:18,630 --> 00:00:21,930
+ <font color="#CCCCCC">yang artinya </font><font color="#E5E5E5">aplikasi web </font><font color="#CCCCCC">adalah HTML </font>
+
+10
+00:00:21,930 --> 00:00:24,840
+ injeksi bisa dibakar sangat mirip <font color="#CCCCCC">dengan </font>
+
+11
+00:00:24,840 --> 00:00:26,760
+ suntingan HTML cross-site scripting adalah 
+
+12
+00:00:26,760 --> 00:00:29,340
+ juga dari <font color="#CCCCCC">dua jenis yang </font><font color="#E5E5E5">disimpan di mana </font>
+
+13
+00:00:29,340 --> 00:00:31,439
+ input pengguna disimpan dalam basis data 
+
+14
+00:00:31,439 --> 00:00:34,079
+ selanjutnya tercermin di mana pengguna 
+
+15
+00:00:34,079 --> 00:00:36,030
+ masukan itu <font color="#CCCCCC">tidak akan disimpan </font><font color="#E5E5E5">dalam </font>
+
+16
+00:00:36,030 --> 00:00:38,790
+ database <font color="#E5E5E5">dan respon dari HTML itu </font>
+
+17
+00:00:38,790 --> 00:00:40,770
+ injeksi <font color="#E5E5E5">hanya dapat ditampilkan kepada </font><font color="#CCCCCC">pengguna </font>
+
+18
+00:00:40,770 --> 00:00:43,320
+ siapa <font color="#CCCCCC">yang sebenarnya </font><font color="#E5E5E5">menyuntikkan </font><font color="#CCCCCC">kode HTML itu </font>
+
+19
+00:00:43,320 --> 00:00:46,320
+ <font color="#E5E5E5">sekarang mari kita lihat cara kerja injeksi HTML </font>
+
+20
+00:00:46,320 --> 00:00:49,440
+ <font color="#E5E5E5">sekarang mari kita lihat bagaimana kita bisa memanfaatkan HTML </font>
+
+21
+00:00:49,440 --> 00:00:51,840
+ Kerentanan injeksi di <font color="#E5E5E5">Anda hari ini jadi </font>
+
+22
+00:00:51,840 --> 00:00:54,329
+ dalam <font color="#CCCCCC">video </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">saya </font><font color="#E5E5E5">mengambil yang sebelumnya </font>
+
+23
+00:00:54,329 --> 00:00:56,640
+ <font color="#E5E5E5">halaman tantangan scripting lintas situs </font>
+
+24
+00:00:56,640 --> 00:00:59,039
+ yang telah kami bahas <font color="#CCCCCC">di video terakhir </font>
+
+25
+00:00:59,039 --> 00:01:01,800
+ <font color="#CCCCCC">tetapi bukannya menambahkan Java Script </font>
+
+26
+00:01:01,800 --> 00:01:05,010
+ di dalamnya kami akan mencoba menyuntikkan <font color="#CCCCCC">kode HTML </font>
+
+27
+00:01:05,010 --> 00:01:07,470
+ <font color="#E5E5E5">dan kita akan melihat apakah web utilitas </font>
+
+28
+00:01:07,470 --> 00:01:09,270
+ aplikasi sedang diterjemahkan 
+
+29
+00:01:09,270 --> 00:01:12,900
+ menurut lebih dari <font color="#E5E5E5">kode HTML di </font><font color="#CCCCCC">sini Anda bisa </font>
+
+30
+00:01:12,900 --> 00:01:14,670
+ lihat itu <font color="#CCCCCC">sekarang saya sedang memutilasi </font>
+
+31
+00:01:14,670 --> 00:01:16,740
+ aplikasi web <font color="#CCCCCC">jadi </font><font color="#E5E5E5">mari kita </font><font color="#CCCCCC">kembali ke </font>
+
+32
+00:01:16,740 --> 00:01:18,810
+ tantangan sebelumnya dari situs lintas 
+
+33
+00:01:18,810 --> 00:01:21,229
+ scripting 
+
+34
+00:01:26,070 --> 00:01:29,850
+ dan di sini Anda dapat melihat bahwa <font color="#CCCCCC">sekarang </font><font color="#E5E5E5">kita </font>
+
+35
+00:01:29,850 --> 00:01:31,620
+ adalah tantangan ini <font color="#CCCCCC">di </font><font color="#E5E5E5">latar belakang warna </font>
+
+36
+00:01:31,620 --> 00:01:33,600
+ <font color="#E5E5E5">jadi tantangan </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">terlihat mirip dengan </font>
+
+37
+00:01:33,600 --> 00:01:36,420
+ crosshair scripting tetapi sekarang di sini gantinya 
+
+38
+00:01:36,420 --> 00:01:38,430
+ <font color="#CCCCCC">dari </font><font color="#E5E5E5">menambahkan </font><font color="#CCCCCC">JavaScript </font><font color="#E5E5E5">kami akan mencoba untuk </font>
+
+39
+00:01:38,430 --> 00:01:41,610
+ tambahkan <font color="#E5E5E5">kode HTML </font><font color="#CCCCCC">oke biarkan saya menutup </font><font color="#E5E5E5">tag ini </font>
+
+40
+00:01:41,610 --> 00:01:48,600
+ <font color="#E5E5E5">sekarang mari kita tambahkan tag h1 di sini dan mari kita lihat </font>
+
+41
+00:01:48,600 --> 00:01:51,030
+ apakah <font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">web </font><font color="#CCCCCC">ini atau ini </font>
+
+42
+00:01:51,030 --> 00:01:54,510
+ halaman sedang ditampilkan <font color="#CCCCCC">menurut ini </font>
+
+43
+00:01:54,510 --> 00:01:58,940
+ <font color="#CCCCCC">Tag HTML </font><font color="#E5E5E5">jadi biarkan saya tulis di sini </font>
+
+44
+00:01:58,940 --> 00:02:04,740
+ <font color="#CCCCCC">Injeksi DML dan biarkan saya menutup h1 ini </font>
+
+45
+00:02:04,740 --> 00:02:06,990
+ tag mari klik di <font color="#CCCCCC">sini mengatur latar belakang </font>
+
+46
+00:02:06,990 --> 00:02:11,540
+ <font color="#E5E5E5">warna dan di sini Anda dapat melihat bahwa kami </font>
+
+47
+00:02:11,540 --> 00:02:15,450
+ berhasil dapat <font color="#E5E5E5">mengeksekusi kode HTML </font>
+
+48
+00:02:15,450 --> 00:02:17,760
+ di sini <font color="#CCCCCC">dan di sini </font><font color="#E5E5E5">Anda dapat melihat bahwa web ini </font>
+
+49
+00:02:17,760 --> 00:02:21,780
+ aplikasi <font color="#CCCCCC">halaman web ini diberikan </font>
+
+50
+00:02:21,780 --> 00:02:24,959
+ menurut <font color="#CCCCCC">kode </font><font color="#E5E5E5">HTML kami di </font><font color="#CCCCCC">sini Anda bisa </font>
+
+51
+00:02:24,959 --> 00:02:31,230
+ lihat <font color="#E5E5E5">tag HTML h1 kami dijalankan jadi ini </font>
+
+52
+00:02:31,230 --> 00:02:33,540
+ adalah tercermin pada <font color="#E5E5E5">injeksi uap sekarang </font>
+
+53
+00:02:33,540 --> 00:02:36,180
+ mari kita <font color="#E5E5E5">lihat </font><font color="#CCCCCC">tml ATS yang tersimpan </font>
+
+54
+00:02:36,180 --> 00:02:39,180
+ injeksi tetapi sebelum <font color="#E5E5E5">pergi mari ulang </font>
+
+55
+00:02:39,180 --> 00:02:46,560
+ database sehingga <font color="#CCCCCC">Jawa </font><font color="#E5E5E5">kami sebelumnya </font>
+
+56
+00:02:46,560 --> 00:02:48,450
+ <font color="#CCCCCC">Script Curie yang disimpan </font><font color="#E5E5E5">di </font><font color="#CCCCCC">dalamnya </font>
+
+57
+00:02:48,450 --> 00:02:55,500
+ <font color="#E5E5E5">database baru saja dihapus sekarang mari </font>
+
+58
+00:02:55,500 --> 00:02:59,310
+ pergi di sini <font color="#CCCCCC">lintas situs scripting kedua </font>
+
+59
+00:02:59,310 --> 00:03:04,260
+ memesan dan menambahkan ke <font color="#E5E5E5">blok Anda sekarang di </font>
+
+60
+00:03:04,260 --> 00:03:06,480
+ video terakhir <font color="#E5E5E5">jika Anda ingat saat itu kami baru saja </font>
+
+61
+00:03:06,480 --> 00:03:08,760
+ datang untuk mengetahui <font color="#E5E5E5">bahwa </font><font color="#CCCCCC">tag PV </font>
+
+62
+00:03:08,760 --> 00:03:12,320
+ bertanggung jawab untuk melampirkan input kami sekarang 
+
+63
+00:03:12,320 --> 00:03:16,140
+ mari kita beri kami <font color="#E5E5E5">sekarang mari kita menulis halo </font>
+
+64
+00:03:16,140 --> 00:03:19,530
+ dan mari kita tutup tag TD di sini <font color="#CCCCCC">dan </font>
+
+65
+00:03:19,530 --> 00:03:23,340
+ mari kita <font color="#E5E5E5">coba menambahkan kode JavaScript apa pun </font>
+
+66
+00:03:23,340 --> 00:03:27,019
+ Saya menambahkan <font color="#CCCCCC">tag pasar di sini </font>
+
+67
+00:03:34,800 --> 00:03:37,590
+ dan biarkan aku <font color="#E5E5E5">mengklik 'save blog entry </font><font color="#CCCCCC">dan </font>
+
+68
+00:03:37,590 --> 00:03:42,180
+ mari kita lihat apakah kita <font color="#E5E5E5">bisa mengeksploitasi </font>
+
+69
+00:03:42,180 --> 00:03:43,890
+ Halaman ini atau apakah kita <font color="#CCCCCC">mampu </font>
+
+70
+00:03:43,890 --> 00:03:46,320
+ mengeksekusi <font color="#CCCCCC">bahwa </font><font color="#E5E5E5">injeksi uap di sini atau tidak </font>
+
+71
+00:03:46,320 --> 00:03:49,800
+ <font color="#CCCCCC">oke </font><font color="#E5E5E5">jadi di </font><font color="#CCCCCC">sini Anda dapat melihat bahwa HTML kami </font>
+
+72
+00:03:49,800 --> 00:03:51,960
+ kode <font color="#CCCCCC">market </font><font color="#E5E5E5">tag sedang dieksekusi dan </font>
+
+73
+00:03:51,960 --> 00:03:56,700
+ ini berjalan di <font color="#E5E5E5">sini Anda dapat melihat dan masuk </font>
+
+74
+00:03:56,700 --> 00:03:58,560
+ video ini <font color="#E5E5E5">kita bahas </font><font color="#CCCCCC">apa itu </font>
+
+75
+00:03:58,560 --> 00:04:01,020
+ di injeksi uap <font color="#E5E5E5">ada yang berbeda </font>
+
+76
+00:04:01,020 --> 00:04:03,540
+ jenis dan di sini kita akan <font color="#E5E5E5">melihat </font><font color="#CCCCCC">bagaimana kita </font>
+
+77
+00:04:03,540 --> 00:04:07,560
+ dapat <font color="#E5E5E5">memanfaatkan injeksi HTML </font>
+
+78
+00:04:07,560 --> 00:04:11,790
+ kerentanan jadi saya menyarankan <font color="#E5E5E5">Anda untuk </font>
+
+79
+00:04:11,790 --> 00:04:14,310
+ praktekkan <font color="#E5E5E5">semua tantangan ini di </font><font color="#CCCCCC">OS </font><font color="#E5E5E5">Anda </font>
+
+80
+00:04:14,310 --> 00:04:16,890
+ aplikasi web yang rusak <font color="#CCCCCC">dan terima kasih untuk </font>
+
+81
+00:04:16,890 --> 00:00:00,000
+ <font color="#E5E5E5">menonton </font><font color="#CCCCCC">video ini </font>
+

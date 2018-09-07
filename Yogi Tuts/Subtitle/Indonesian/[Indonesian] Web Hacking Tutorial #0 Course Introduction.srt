@@ -1,0 +1,224 @@
+1
+00:00:00,000 --> 00:00:03,090
+ hi dan selamat datang <font color="#E5E5E5">di kursus nama </font><font color="#CCCCCC">saya </font>
+
+2
+00:00:03,090 --> 00:00:05,130
+ Nikolai <font color="#E5E5E5">dan aku akan </font><font color="#CCCCCC">mengajarimu </font><font color="#E5E5E5">bagaimana caranya </font>
+
+3
+00:00:05,130 --> 00:00:07,820
+ meretas situs web <font color="#E5E5E5">menggunakan beberapa teknik </font>
+
+4
+00:00:07,820 --> 00:00:10,440
+ <font color="#E5E5E5">sekarang kursus dirancang untuk membawa Anda </font>
+
+5
+00:00:10,440 --> 00:00:12,300
+ <font color="#E5E5E5">dari awal tanpa </font><font color="#CCCCCC">pengetahuan </font><font color="#E5E5E5">sebelumnya </font>
+
+6
+00:00:12,300 --> 00:00:16,230
+ tentang <font color="#CCCCCC">keamanan web atau peretasan jadi mari </font>
+
+7
+00:00:16,230 --> 00:00:18,270
+ melihat apa yang saya <font color="#CCCCCC">akan </font><font color="#E5E5E5">menutupi selama </font>
+
+8
+00:00:18,270 --> 00:00:20,910
+ Tentu saja <font color="#E5E5E5">Anda akan mulai dengan menjelajah terlebih dahulu </font>
+
+9
+00:00:20,910 --> 00:00:24,210
+ dasar-dasar <font color="#E5E5E5">web dan bagaimana caranya </font>
+
+10
+00:00:24,210 --> 00:00:27,539
+ Protokol HTTP <font color="#E5E5E5">bekerja menggunakan Wireshark </font>
+
+11
+00:00:27,539 --> 00:00:30,230
+ <font color="#E5E5E5">yang merupakan penganalisis protokol jaringan </font>
+
+12
+00:00:30,230 --> 00:00:32,549
+ <font color="#E5E5E5">maka saya akan mengajari </font><font color="#CCCCCC">Anda bagaimana caranya </font>
+
+13
+00:00:32,549 --> 00:00:34,800
+ <font color="#CCCCCC">siapkan lab pengujian web Anda </font>
+
+14
+00:00:34,800 --> 00:00:37,020
+ menginstal <font color="#CCCCCC">selalu peretasan web </font>
+
+15
+00:00:37,020 --> 00:00:40,110
+ lingkungan <font color="#E5E5E5">dan kemudian bagaimana menggunakan </font><font color="#CCCCCC">Vega </font>
+
+16
+00:00:40,110 --> 00:00:42,500
+ platform <font color="#E5E5E5">untuk menguji </font><font color="#CCCCCC">keamanan web </font>
+
+17
+00:00:42,500 --> 00:00:45,930
+ aplikasi yang <font color="#E5E5E5">pernah dilakukan dengan itu akan saya lakukan </font>
+
+18
+00:00:45,930 --> 00:00:48,750
+ <font color="#E5E5E5">pindah ke injeksi lanjutan di bagian ini </font>
+
+19
+00:00:48,750 --> 00:00:51,149
+ <font color="#E5E5E5">Anda akan belajar cara </font><font color="#CCCCCC">melewati formulir masuk </font>
+
+20
+00:00:51,149 --> 00:00:53,969
+ dan cara menulis kueri sekuel <font color="#E5E5E5">untuk menemukan </font>
+
+21
+00:00:53,969 --> 00:00:57,120
+ tabel database <font color="#CCCCCC">dan sensitif </font>
+
+22
+00:00:57,120 --> 00:01:00,120
+ informasi <font color="#CCCCCC">seperti </font><font color="#E5E5E5">nama pengguna dan </font>
+
+23
+00:01:00,120 --> 00:01:03,570
+ kata sandi <font color="#CCCCCC">saya </font><font color="#E5E5E5">juga akan menunjukkan caranya </font>
+
+24
+00:01:03,570 --> 00:01:05,729
+ <font color="#E5E5E5">untuk menggunakan peta sekuel dan cara mencegahnya </font>
+
+25
+00:01:05,729 --> 00:01:09,000
+ <font color="#E5E5E5">situs Anda dari injeksi sekuel maka saya </font>
+
+26
+00:01:09,000 --> 00:01:10,740
+ akan menunjukkan kepada Anda cara meretas <font color="#E5E5E5">WordPress </font>
+
+27
+00:01:10,740 --> 00:01:13,950
+ situs menggunakan pemindaian WP yang <font color="#E5E5E5">merupakan </font>
+
+28
+00:01:13,950 --> 00:01:16,049
+ <font color="#E5E5E5">scanner keamanan yang membantu Anda </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">menemukan </font>
+
+29
+00:01:16,049 --> 00:01:18,530
+ <font color="#E5E5E5">kelemahan keamanan dalam </font><font color="#CCCCCC">WordPress </font>
+
+30
+00:01:18,530 --> 00:01:21,720
+ instalasi jadi setelah menyelesaikan <font color="#E5E5E5">ini </font>
+
+31
+00:01:21,720 --> 00:01:23,939
+ bagian <font color="#E5E5E5">saya akan pindah </font><font color="#CCCCCC">ke scripting lintas situs </font>
+
+32
+00:01:23,939 --> 00:01:26,130
+ serangan di mana Anda akan belajar disimpan 
+
+33
+00:01:26,130 --> 00:01:28,979
+ dan mencerminkan serangan <font color="#CCCCCC">Anda juga </font>
+
+34
+00:01:28,979 --> 00:01:31,140
+ <font color="#E5E5E5">belajar bagaimana untuk mengambil kontrol penuh </font><font color="#CCCCCC">atas </font>
+
+35
+00:01:31,140 --> 00:01:33,930
+ <font color="#CCCCCC">mesin korban </font><font color="#E5E5E5">menggunakan kerangka kerja dan </font>
+
+36
+00:01:33,930 --> 00:01:37,439
+ <font color="#E5E5E5">menenun </font><font color="#CCCCCC">Lee dan terakhir saya </font><font color="#E5E5E5">akan meliput </font>
+
+37
+00:01:37,439 --> 00:01:40,350
+ <font color="#E5E5E5">beberapa serangan rekayasa sosial seperti </font>
+
+38
+00:01:40,350 --> 00:01:42,930
+ pemalsuan dan phishing permintaan lintas situs 
+
+39
+00:01:42,930 --> 00:01:45,329
+ setelah menyelesaikan kursus ini, <font color="#E5E5E5">Anda </font><font color="#CCCCCC">akan melakukannya </font>
+
+40
+00:01:45,329 --> 00:01:48,360
+ memahami <font color="#E5E5E5">teknik peretasan web umum </font>
+
+41
+00:01:48,360 --> 00:01:51,119
+ digunakan <font color="#E5E5E5">oleh peretas </font><font color="#CCCCCC">dan Anda akan memiliki </font>
+
+42
+00:01:51,119 --> 00:01:52,439
+ pengetahuan praktis <font color="#E5E5E5">tentang </font>
+
+43
+00:01:52,439 --> 00:01:54,439
+ kerentanan <font color="#CCCCCC">yang memengaruhi web </font>
+
+44
+00:01:54,439 --> 00:01:57,750
+ aplikasi <font color="#CCCCCC">sekarang </font><font color="#E5E5E5">tolong ingat itu </font>
+
+45
+00:01:57,750 --> 00:02:00,450
+ <font color="#E5E5E5">semua informasi terungkap dalam kursus ini </font>
+
+46
+00:02:00,450 --> 00:02:03,689
+ adalah untuk tujuan pendidikan dan harus 
+
+47
+00:02:03,689 --> 00:02:06,060
+ hanya <font color="#CCCCCC">digunakan </font><font color="#E5E5E5">untuk memperluas </font><font color="#CCCCCC">pengetahuan dan tidak </font>
+
+48
+00:02:06,060 --> 00:02:08,160
+ untuk menyebabkan berbahaya atau <font color="#CCCCCC">merusak </font>
+
+49
+00:02:08,160 --> 00:02:09,340
+ jenis 
+
+50
+00:02:09,340 --> 00:02:12,170
+ <font color="#E5E5E5">oke jadi sekarang mari kita lihat siapa kursus ini </font>
+
+51
+00:02:12,170 --> 00:02:15,170
+ untuk <font color="#E5E5E5">kursus ini adalah untuk </font><font color="#CCCCCC">pemula atau </font>
+
+52
+00:02:15,170 --> 00:02:17,569
+ siapa saja yang <font color="#E5E5E5">ingin </font><font color="#CCCCCC">belajar </font><font color="#E5E5E5">tentang web </font>
+
+53
+00:02:17,569 --> 00:02:21,260
+ peretasan aplikasi <font color="#E5E5E5">jadi itu untuk saat ini </font>
+
+54
+00:02:21,260 --> 00:02:24,319
+ <font color="#E5E5E5">terima kasih </font><font color="#CCCCCC">telah menonton dan saya akan melihat </font><font color="#E5E5E5">Anda </font>
+
+55
+00:02:24,319 --> 00:02:26,530
+ dalam 
+
+56
+00:02:33,780 --> 00:00:00,000
+ kamu 
+

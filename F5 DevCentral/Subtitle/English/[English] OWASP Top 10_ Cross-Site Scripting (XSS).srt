@@ -1,0 +1,1044 @@
+1
+00:00:08,840 --> 00:00:11,130
+hey everybody John<font color="#CCCCCC"> wagged on here with</font>
+
+2
+00:00:11,130 --> 00:00:12,360
+<font color="#CCCCCC">dev</font><font color="#E5E5E5"> central we're coming to you with</font>
+
+3
+00:00:12,360 --> 00:00:14,549
+<font color="#E5E5E5">another light board lesson video and</font>
+
+4
+00:00:14,549 --> 00:00:16,109
+today we're<font color="#E5E5E5"> gonna talk about</font><font color="#CCCCCC"> another one</font>
+
+5
+00:00:16,109 --> 00:00:18,750
+of the OWASP top<font color="#CCCCCC"> 10</font><font color="#E5E5E5"> security risks out</font>
+
+6
+00:00:18,750 --> 00:00:21,630
+there<font color="#CCCCCC"> in the world today and this one is</font>
+
+7
+00:00:21,630 --> 00:00:24,180
+the<font color="#E5E5E5"> number</font><font color="#CCCCCC"> seven</font><font color="#E5E5E5"> risk on the list</font>
+
+8
+00:00:24,180 --> 00:00:26,699
+delicious came out in<font color="#E5E5E5"> 2017 late 2017 so</font>
+
+9
+00:00:26,699 --> 00:00:29,699
+it's the latest<font color="#E5E5E5"> and</font><font color="#CCCCCC"> greatest and this</font>
+
+10
+00:00:29,699 --> 00:00:33,090
+security risk is titled cross-site
+
+11
+00:00:33,090 --> 00:00:35,969
+scripting or sometimes it's<font color="#E5E5E5"> written as</font><font color="#CCCCCC"> X</font>
+
+12
+00:00:35,969 --> 00:00:39,090
+<font color="#CCCCCC">SS but anyway cross-site scripting it's</font>
+
+13
+00:00:39,090 --> 00:00:40,739
+interesting that this<font color="#CCCCCC"> is number</font><font color="#E5E5E5"> seven on</font>
+
+14
+00:00:40,739 --> 00:00:42,930
+the<font color="#CCCCCC"> list because</font><font color="#E5E5E5"> the last time the OWASP</font>
+
+15
+00:00:42,930 --> 00:00:46,050
+<font color="#E5E5E5">list came out in</font><font color="#CCCCCC"> 2013</font><font color="#E5E5E5"> it was the</font><font color="#CCCCCC"> number</font>
+
+16
+00:00:46,050 --> 00:00:49,410
+<font color="#E5E5E5">three</font><font color="#CCCCCC"> security risk</font><font color="#E5E5E5"> out there and in the</font>
+
+17
+00:00:49,410 --> 00:00:51,449
+time before that<font color="#E5E5E5"> the 2010 version it was</font>
+
+18
+00:00:51,449 --> 00:00:53,879
+<font color="#CCCCCC">the</font><font color="#E5E5E5"> number two so so actually it's kind</font>
+
+19
+00:00:53,879 --> 00:00:55,110
+of moved down the<font color="#E5E5E5"> list a little</font><font color="#CCCCCC"> bit</font>
+
+20
+00:00:55,110 --> 00:00:57,149
+which I guess in a sense<font color="#CCCCCC"> is good it</font>
+
+21
+00:00:57,149 --> 00:00:58,649
+means<font color="#E5E5E5"> we're</font><font color="#CCCCCC"> getting better at</font><font color="#E5E5E5"> defending</font>
+
+22
+00:00:58,649 --> 00:01:00,570
+<font color="#CCCCCC">cross-site scripting but anyway today</font>
+
+23
+00:01:00,570 --> 00:01:02,190
+<font color="#CCCCCC">we're gonna talk about</font><font color="#E5E5E5"> what it is and</font>
+
+24
+00:01:02,190 --> 00:01:04,199
+how<font color="#E5E5E5"> you can defend against it</font><font color="#CCCCCC"> so</font>
+
+25
+00:01:04,199 --> 00:01:06,920
+<font color="#E5E5E5">ultimately cross-site scripting is</font>
+
+26
+00:01:06,920 --> 00:01:09,869
+client-side code injection<font color="#CCCCCC"> is kind of</font>
+
+27
+00:01:09,869 --> 00:01:13,110
+<font color="#E5E5E5">the the overarching idea of what it is</font>
+
+28
+00:01:13,110 --> 00:01:16,380
+<font color="#CCCCCC">and essentially an attacker</font><font color="#E5E5E5"> is trying to</font>
+
+29
+00:01:16,380 --> 00:01:18,509
+steal<font color="#CCCCCC"> your stuff and the attacker is</font>
+
+30
+00:01:18,509 --> 00:01:22,380
+gonna send this code<font color="#E5E5E5"> that he wants your</font>
+
+31
+00:01:22,380 --> 00:01:25,710
+browser to execute in<font color="#E5E5E5"> order to send him</font>
+
+32
+00:01:25,710 --> 00:01:28,259
+all of your<font color="#E5E5E5"> secret stuff</font><font color="#CCCCCC"> so again the</font>
+
+33
+00:01:28,259 --> 00:01:29,700
+<font color="#CCCCCC">question</font><font color="#E5E5E5"> is how does all that</font><font color="#CCCCCC"> work</font><font color="#E5E5E5"> and</font>
+
+34
+00:01:29,700 --> 00:01:32,400
+<font color="#E5E5E5">all</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> so let's let's kind of write a</font>
+
+35
+00:01:32,400 --> 00:01:35,430
+or<font color="#E5E5E5"> I'll draw kind of a an example of how</font>
+
+36
+00:01:35,430 --> 00:01:37,049
+this may<font color="#E5E5E5"> work there's a lot</font><font color="#CCCCCC"> of different</font>
+
+37
+00:01:37,049 --> 00:01:39,630
+types of cross-site scripting but I'm
+
+38
+00:01:39,630 --> 00:01:42,180
+gonna give you a<font color="#E5E5E5"> scenario of one that's</font>
+
+39
+00:01:42,180 --> 00:01:45,240
+<font color="#E5E5E5">pretty prevalent and and one where the</font>
+
+40
+00:01:45,240 --> 00:01:48,180
+attacker is trying to steal<font color="#E5E5E5"> your session</font>
+
+41
+00:01:48,180 --> 00:01:50,399
+cookie so that the attacker can<font color="#CCCCCC"> then</font>
+
+42
+00:01:50,399 --> 00:01:52,649
+impersonate you to the<font color="#E5E5E5"> website</font><font color="#CCCCCC"> that</font>
+
+43
+00:01:52,649 --> 00:01:55,829
+you're going to<font color="#E5E5E5"> and and then he can do</font>
+
+44
+00:01:55,829 --> 00:01:57,810
+all kinds of stuff<font color="#CCCCCC"> you know when he</font><font color="#E5E5E5"> has</font>
+
+45
+00:01:57,810 --> 00:02:00,270
+your secrets<font color="#E5E5E5"> so</font><font color="#CCCCCC"> alright so the</font><font color="#E5E5E5"> the</font>
+
+46
+00:02:00,270 --> 00:02:01,740
+cross-site scripting vulnerability
+
+47
+00:02:01,740 --> 00:02:04,740
+<font color="#E5E5E5">really takes three things</font><font color="#CCCCCC"> to to</font><font color="#E5E5E5"> happen</font>
+
+48
+00:02:04,740 --> 00:02:06,299
+it takes<font color="#E5E5E5"> an attacker so I'm going to put</font>
+
+49
+00:02:06,299 --> 00:02:11,450
+the attacker right here so attacker
+
+50
+00:02:11,450 --> 00:02:15,260
+and then it takes<font color="#E5E5E5"> a web</font><font color="#CCCCCC"> application so</font>
+
+51
+00:02:15,260 --> 00:02:19,970
+here's a web app over<font color="#CCCCCC"> here alright</font><font color="#E5E5E5"> and</font>
+
+52
+00:02:19,970 --> 00:02:22,010
+and<font color="#CCCCCC"> then and in this case the web</font>
+
+53
+00:02:22,010 --> 00:02:24,170
+application is vulnerable<font color="#E5E5E5"> and then it</font>
+
+54
+00:02:24,170 --> 00:02:25,700
+also<font color="#CCCCCC"> takes a victim so I'm gonna</font><font color="#E5E5E5"> put the</font>
+
+55
+00:02:25,700 --> 00:02:27,950
+victim over here this<font color="#E5E5E5"> is</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> this is the</font>
+
+56
+00:02:27,950 --> 00:02:30,200
+<font color="#CCCCCC">unsuspecting person</font><font color="#E5E5E5"> that is about to get</font>
+
+57
+00:02:30,200 --> 00:02:32,150
+<font color="#CCCCCC">attacked and doesn't even</font><font color="#E5E5E5"> know it</font><font color="#CCCCCC"> all</font>
+
+58
+00:02:32,150 --> 00:02:33,800
+<font color="#E5E5E5">right so the attacker what the attacker</font>
+
+59
+00:02:33,800 --> 00:02:35,780
+is gonna do is he's gonna<font color="#E5E5E5"> find a web</font>
+
+60
+00:02:35,780 --> 00:02:37,880
+application<font color="#CCCCCC"> that is vulnerable to</font>
+
+61
+00:02:37,880 --> 00:02:41,090
+cross-site scripting<font color="#CCCCCC"> and he's gonna send</font>
+
+62
+00:02:41,090 --> 00:02:43,760
+<font color="#E5E5E5">it some code so this web application</font><font color="#CCCCCC"> I</font>
+
+63
+00:02:43,760 --> 00:02:45,380
+mean let me<font color="#E5E5E5"> just</font><font color="#CCCCCC"> kind of draw it</font><font color="#E5E5E5"> out</font>
+
+64
+00:02:45,380 --> 00:02:47,030
+here a little<font color="#E5E5E5"> bit</font><font color="#CCCCCC"> it</font><font color="#E5E5E5"> consists of several</font>
+
+65
+00:02:47,030 --> 00:02:48,860
+<font color="#CCCCCC">different</font><font color="#E5E5E5"> parts and pieces and all that</font>
+
+66
+00:02:48,860 --> 00:02:50,120
+but<font color="#E5E5E5"> one of the things it</font><font color="#CCCCCC"> has is a</font>
+
+67
+00:02:50,120 --> 00:02:52,310
+database<font color="#E5E5E5"> so I'm gonna put a DB right</font>
+
+68
+00:02:52,310 --> 00:02:55,310
+here it's a database<font color="#E5E5E5"> and then it also</font>
+
+69
+00:02:55,310 --> 00:03:00,560
+has let's say some HTML<font color="#E5E5E5"> code</font><font color="#CCCCCC"> all</font><font color="#E5E5E5"> right</font>
+
+70
+00:03:00,560 --> 00:03:02,510
+which is very<font color="#CCCCCC"> common</font><font color="#E5E5E5"> in a web</font>
+
+71
+00:03:02,510 --> 00:03:05,000
+application<font color="#CCCCCC"> all right and let's say that</font>
+
+72
+00:03:05,000 --> 00:03:10,599
+<font color="#E5E5E5">this that</font><font color="#CCCCCC"> this HTML code allows for</font>
+
+73
+00:03:10,599 --> 00:03:14,030
+scripts to be run in it<font color="#E5E5E5"> which is one</font>
+
+74
+00:03:14,030 --> 00:03:15,709
+thing<font color="#CCCCCC"> that you may not</font><font color="#E5E5E5"> want</font><font color="#CCCCCC"> to do in</font>
+
+75
+00:03:15,709 --> 00:03:17,690
+<font color="#E5E5E5">this case but but</font><font color="#CCCCCC"> anyway I'll kind of</font>
+
+76
+00:03:17,690 --> 00:03:19,160
+run through<font color="#CCCCCC"> a scenario of how this</font>
+
+77
+00:03:19,160 --> 00:03:20,660
+attacker is gonna get the victims
+
+78
+00:03:20,660 --> 00:03:22,700
+<font color="#E5E5E5">secrets and it's gonna get it through</font>
+
+79
+00:03:22,700 --> 00:03:25,100
+<font color="#E5E5E5">this vulnerable web application</font><font color="#CCCCCC"> all</font>
+
+80
+00:03:25,100 --> 00:03:26,870
+right first thing it's gonna do is<font color="#E5E5E5"> it's</font>
+
+81
+00:03:26,870 --> 00:03:30,290
+gonna send a post to this web
+
+82
+00:03:30,290 --> 00:03:32,540
+application<font color="#CCCCCC"> and the post is going</font><font color="#E5E5E5"> to</font>
+
+83
+00:03:32,540 --> 00:03:35,000
+include<font color="#E5E5E5"> I'll put a little script right</font>
+
+84
+00:03:35,000 --> 00:03:38,840
+<font color="#CCCCCC">here so it's gonna have script</font><font color="#E5E5E5"> you know</font>
+
+85
+00:03:38,840 --> 00:03:40,880
+dot dot dot<font color="#E5E5E5"> whatever and then it's gonna</font>
+
+86
+00:03:40,880 --> 00:03:43,910
+you know<font color="#E5E5E5"> the end of the script script</font>
+
+87
+00:03:43,910 --> 00:03:47,840
+<font color="#E5E5E5">like that</font><font color="#CCCCCC"> alright so what this script is</font>
+
+88
+00:03:47,840 --> 00:03:49,910
+is trying<font color="#E5E5E5"> to do is trying to say hey I</font>
+
+89
+00:03:49,910 --> 00:03:52,130
+want<font color="#CCCCCC"> to</font><font color="#E5E5E5"> get the cookie from the victim</font>
+
+90
+00:03:52,130 --> 00:03:54,200
+and I want that victim to send its
+
+91
+00:03:54,200 --> 00:03:56,420
+cookie up to me<font color="#CCCCCC"> and it's going to</font><font color="#E5E5E5"> post</font>
+
+92
+00:03:56,420 --> 00:03:59,239
+<font color="#E5E5E5">that to</font><font color="#CCCCCC"> the database of this web</font>
+
+93
+00:03:59,239 --> 00:04:05,060
+application<font color="#CCCCCC"> and so ok it's it does that</font>
+
+94
+00:04:05,060 --> 00:04:07,340
+so that's where the<font color="#E5E5E5"> database could say</font>
+
+95
+00:04:07,340 --> 00:04:09,230
+hey<font color="#E5E5E5"> I'm</font><font color="#CCCCCC"> not going to allow</font><font color="#E5E5E5"> you to you</font>
+
+96
+00:04:09,230 --> 00:04:11,959
+<font color="#CCCCCC">know post</font><font color="#E5E5E5"> scripts into the database and</font>
+
+97
+00:04:11,959 --> 00:04:13,370
+let's say this<font color="#CCCCCC"> web application</font><font color="#E5E5E5"> for</font>
+
+98
+00:04:13,370 --> 00:04:16,190
+<font color="#CCCCCC">example allows users to comment</font><font color="#E5E5E5"> on stuff</font>
+
+99
+00:04:16,190 --> 00:04:18,709
+or maybe<font color="#E5E5E5"> post a question</font><font color="#CCCCCC"> or post of you</font>
+
+100
+00:04:18,709 --> 00:04:19,880
+know hey I really<font color="#CCCCCC"> loved that</font><font color="#E5E5E5"> picture</font>
+
+101
+00:04:19,880 --> 00:04:22,640
+<font color="#CCCCCC">that you</font><font color="#E5E5E5"> got or whatever it</font><font color="#CCCCCC"> is which is</font>
+
+102
+00:04:22,640 --> 00:04:25,220
+<font color="#CCCCCC">very common today but anyway</font>
+
+103
+00:04:25,220 --> 00:04:26,810
+nonetheless<font color="#E5E5E5"> it's the attackers gonna</font>
+
+104
+00:04:26,810 --> 00:04:29,420
+post<font color="#CCCCCC"> the script</font><font color="#E5E5E5"> and then</font><font color="#CCCCCC"> the database is</font>
+
+105
+00:04:29,420 --> 00:04:32,960
+<font color="#E5E5E5">gonna have that post the latest comment</font>
+
+106
+00:04:32,960 --> 00:04:34,520
+or the latest<font color="#E5E5E5"> posts in</font><font color="#CCCCCC"> that database is</font>
+
+107
+00:04:34,520 --> 00:04:36,890
+<font color="#E5E5E5">going to be this script</font><font color="#CCCCCC"> and then</font><font color="#E5E5E5"> where</font>
+
+108
+00:04:36,890 --> 00:04:39,560
+the HTML code comes in is let's say<font color="#E5E5E5"> that</font>
+
+109
+00:04:39,560 --> 00:04:43,490
+the<font color="#E5E5E5"> HTML code allows for the printing</font><font color="#CCCCCC"> of</font>
+
+110
+00:04:43,490 --> 00:04:46,310
+<font color="#CCCCCC">the</font><font color="#E5E5E5"> latest comment in this database</font><font color="#CCCCCC"> so</font>
+
+111
+00:04:46,310 --> 00:04:49,370
+<font color="#CCCCCC">as the HTML</font><font color="#E5E5E5"> code runs if someone were to</font>
+
+112
+00:04:49,370 --> 00:04:51,560
+access this web<font color="#CCCCCC"> application and</font><font color="#E5E5E5"> say hey</font>
+
+113
+00:04:51,560 --> 00:04:53,090
+I'd love<font color="#E5E5E5"> to see the</font><font color="#CCCCCC"> latest comment on</font>
+
+114
+00:04:53,090 --> 00:04:54,380
+that<font color="#E5E5E5"> awesome picture that</font><font color="#CCCCCC"> we've</font><font color="#E5E5E5"> just</font>
+
+115
+00:04:54,380 --> 00:04:57,890
+posted<font color="#E5E5E5"> then this</font><font color="#CCCCCC"> HTML code that</font><font color="#E5E5E5"> runs the</font>
+
+116
+00:04:57,890 --> 00:05:01,670
+comment<font color="#E5E5E5"> from the database allows the</font>
+
+117
+00:05:01,670 --> 00:05:04,550
+database comment<font color="#E5E5E5"> to be you know posted</font>
+
+118
+00:05:04,550 --> 00:05:07,070
+kind of thing<font color="#E5E5E5"> again a fairly common type</font>
+
+119
+00:05:07,070 --> 00:05:10,730
+scenario<font color="#CCCCCC"> all</font><font color="#E5E5E5"> right well what the victim</font>
+
+120
+00:05:10,730 --> 00:05:12,350
+is<font color="#CCCCCC"> going to do I'm gonna</font><font color="#E5E5E5"> put</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> couple</font>
+
+121
+00:05:12,350 --> 00:05:14,750
+<font color="#CCCCCC">little boxes around the attacker and the</font>
+
+122
+00:05:14,750 --> 00:05:18,130
+<font color="#E5E5E5">victim what the victim is going</font><font color="#CCCCCC"> to do is</font>
+
+123
+00:05:18,130 --> 00:05:24,080
+he is going<font color="#E5E5E5"> to send a get request yet to</font>
+
+124
+00:05:24,080 --> 00:05:26,840
+this web application<font color="#CCCCCC"> and so it's gonna</font>
+
+125
+00:05:26,840 --> 00:05:35,830
+be you<font color="#CCCCCC"> know</font><font color="#E5E5E5"> maybe HTTP example.com</font>
+
+126
+00:05:35,830 --> 00:05:40,940
+<font color="#CCCCCC">whatever and then and maybe maybe</font><font color="#E5E5E5"> also</font>
+
+127
+00:05:40,940 --> 00:05:42,380
+at the end<font color="#CCCCCC"> of this it's going to</font><font color="#E5E5E5"> say</font><font color="#CCCCCC"> you</font>
+
+128
+00:05:42,380 --> 00:05:48,129
+know maybe DB DB comment
+
+129
+00:05:48,129 --> 00:05:51,389
+<font color="#E5E5E5">all right so hopefully can read all that</font>
+
+130
+00:05:51,389 --> 00:05:52,809
+<font color="#CCCCCC">penmanship there</font>
+
+131
+00:05:52,809 --> 00:05:55,330
+<font color="#E5E5E5">all right so example.com / DB comment</font>
+
+132
+00:05:55,330 --> 00:05:57,459
+<font color="#E5E5E5">and it's gonna send that to this web</font>
+
+133
+00:05:57,459 --> 00:06:00,039
+application<font color="#CCCCCC"> and essentially what that is</font>
+
+134
+00:06:00,039 --> 00:06:01,389
+trying to<font color="#E5E5E5"> do is it's going to say hey I</font>
+
+135
+00:06:01,389 --> 00:06:03,219
+want the latest<font color="#E5E5E5"> comment from the</font>
+
+136
+00:06:03,219 --> 00:06:05,860
+database and<font color="#E5E5E5"> then</font><font color="#CCCCCC"> this HTML</font><font color="#E5E5E5"> code is</font>
+
+137
+00:06:05,860 --> 00:06:10,389
+gonna is going to allow to print<font color="#CCCCCC"> you</font>
+
+138
+00:06:10,389 --> 00:06:15,610
+know<font color="#E5E5E5"> the DB comment and it's going to</font>
+
+139
+00:06:15,610 --> 00:06:18,399
+send<font color="#E5E5E5"> that</font><font color="#CCCCCC"> back with a I'm gonna say a</font>
+
+140
+00:06:18,399 --> 00:06:21,909
+200<font color="#CCCCCC"> okay because</font><font color="#E5E5E5"> it's like hey you</font>
+
+141
+00:06:21,909 --> 00:06:24,429
+you've requested a valid page from me
+
+142
+00:06:24,429 --> 00:06:26,949
+and when it says that<font color="#E5E5E5"> 200 okay it's also</font>
+
+143
+00:06:26,949 --> 00:06:29,019
+<font color="#E5E5E5">gonna send the contents of this HTML</font>
+
+144
+00:06:29,019 --> 00:06:31,919
+<font color="#CCCCCC">code and it's</font><font color="#E5E5E5"> gonna say you know</font><font color="#CCCCCC"> HTML</font>
+
+145
+00:06:31,919 --> 00:06:35,319
+<font color="#CCCCCC">you know header</font><font color="#E5E5E5"> 1 this is the latest DV</font>
+
+146
+00:06:35,319 --> 00:06:38,050
+comment and then the next HTML line it's
+
+147
+00:06:38,050 --> 00:06:41,050
+<font color="#E5E5E5">going</font><font color="#CCCCCC"> to print the latest DB comment</font>
+
+148
+00:06:41,050 --> 00:06:42,550
+which the<font color="#E5E5E5"> latest DB comment is the</font>
+
+149
+00:06:42,550 --> 00:06:44,169
+script<font color="#CCCCCC"> that this attacker put in the</font>
+
+150
+00:06:44,169 --> 00:06:47,050
+<font color="#E5E5E5">database and so</font><font color="#CCCCCC"> ultimately it's going</font><font color="#E5E5E5"> to</font>
+
+151
+00:06:47,050 --> 00:06:49,689
+<font color="#E5E5E5">on this victim's browser it's gonna have</font>
+
+152
+00:06:49,689 --> 00:06:54,129
+this HTML<font color="#CCCCCC"> code that</font><font color="#E5E5E5"> has the script that</font>
+
+153
+00:06:54,129 --> 00:06:56,469
+<font color="#E5E5E5">the attacker sent that he ultimately</font>
+
+154
+00:06:56,469 --> 00:07:00,490
+<font color="#E5E5E5">wanted the victim to you know to execute</font>
+
+155
+00:07:00,490 --> 00:07:04,349
+in the<font color="#E5E5E5"> browser</font><font color="#CCCCCC"> so once that script</font>
+
+156
+00:07:04,349 --> 00:07:06,879
+executes so the script is<font color="#E5E5E5"> going to be</font>
+
+157
+00:07:06,879 --> 00:07:09,779
+there's gonna be<font color="#E5E5E5"> since that's script</font>
+
+158
+00:07:09,779 --> 00:07:12,009
+<font color="#E5E5E5">it's going to be sent as part</font><font color="#CCCCCC"> of this</font>
+
+159
+00:07:12,009 --> 00:07:14,379
+<font color="#E5E5E5">okay message in the HTML code</font><font color="#CCCCCC"> that now</font>
+
+160
+00:07:14,379 --> 00:07:17,379
+gets<font color="#E5E5E5"> executed on the</font><font color="#CCCCCC"> victims browser so</font>
+
+161
+00:07:17,379 --> 00:07:19,990
+that script right there is going<font color="#CCCCCC"> to</font><font color="#E5E5E5"> be</font>
+
+162
+00:07:19,990 --> 00:07:22,479
+<font color="#CCCCCC">run on the</font><font color="#E5E5E5"> victims browser and then what</font>
+
+163
+00:07:22,479 --> 00:07:23,979
+the the one of the questions is well
+
+164
+00:07:23,979 --> 00:07:24,909
+what's in the<font color="#E5E5E5"> script</font>
+
+165
+00:07:24,909 --> 00:07:26,379
+well the script<font color="#E5E5E5"> let's say that the</font>
+
+166
+00:07:26,379 --> 00:07:28,749
+script is written to say that it wants
+
+167
+00:07:28,749 --> 00:07:33,099
+the it wants<font color="#CCCCCC"> the cookie from the</font><font color="#E5E5E5"> victim</font>
+
+168
+00:07:33,099 --> 00:07:35,860
+and it wants it to be<font color="#E5E5E5"> sent up here</font><font color="#CCCCCC"> so</font>
+
+169
+00:07:35,860 --> 00:07:39,159
+it's<font color="#E5E5E5"> going</font><font color="#CCCCCC"> to send</font><font color="#E5E5E5"> a get request</font><font color="#CCCCCC"> let's</font>
+
+170
+00:07:39,159 --> 00:07:42,369
+say to the attacker<font color="#E5E5E5"> and it's going to</font>
+
+171
+00:07:42,369 --> 00:07:44,649
+send it to<font color="#E5E5E5"> you know to the website so</font>
+
+172
+00:07:44,649 --> 00:07:51,029
+it's<font color="#E5E5E5"> going to be you</font><font color="#CCCCCC"> know HTTP evil.com</font>
+
+173
+00:07:51,029 --> 00:07:55,370
+<font color="#CCCCCC">slash</font><font color="#E5E5E5"> you know cookie</font>
+
+174
+00:07:55,370 --> 00:07:58,550
+equals the<font color="#CCCCCC"> value of the cookie so let's</font>
+
+175
+00:07:58,550 --> 00:08:00,530
+say<font color="#E5E5E5"> in a one-two-three-four</font><font color="#CCCCCC"> you know</font>
+
+176
+00:08:00,530 --> 00:08:03,380
+whatever<font color="#E5E5E5"> it is all right so I know that</font>
+
+177
+00:08:03,380 --> 00:08:05,060
+<font color="#E5E5E5">that's a lot going on here again the</font>
+
+178
+00:08:05,060 --> 00:08:08,540
+attacker<font color="#E5E5E5"> sends a or posts a script into</font>
+
+179
+00:08:08,540 --> 00:08:10,040
+<font color="#E5E5E5">the database of this vulnerable web</font>
+
+180
+00:08:10,040 --> 00:08:13,820
+application<font color="#E5E5E5"> the HTML code allows for the</font>
+
+181
+00:08:13,820 --> 00:08:17,120
+user input<font color="#CCCCCC"> to</font><font color="#E5E5E5"> be executed whenever it</font>
+
+182
+00:08:17,120 --> 00:08:20,360
+sends it to the<font color="#E5E5E5"> unsuspecting victim</font><font color="#CCCCCC"> once</font>
+
+183
+00:08:20,360 --> 00:08:21,889
+<font color="#E5E5E5">that script is over here on</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> victims</font>
+
+184
+00:08:21,889 --> 00:08:23,750
+browser the<font color="#CCCCCC"> victim's browser then runs</font>
+
+185
+00:08:23,750 --> 00:08:26,720
+<font color="#E5E5E5">and executes the HTML code that was sent</font>
+
+186
+00:08:26,720 --> 00:08:29,650
+<font color="#CCCCCC">to it</font><font color="#E5E5E5"> the HTML code includes that script</font>
+
+187
+00:08:29,650 --> 00:08:32,450
+<font color="#CCCCCC">and then that script automatically kicks</font>
+
+188
+00:08:32,450 --> 00:08:34,909
+off a get request<font color="#CCCCCC"> to the attackers</font>
+
+189
+00:08:34,909 --> 00:08:36,830
+<font color="#CCCCCC">website that he has up here already</font><font color="#E5E5E5"> set</font>
+
+190
+00:08:36,830 --> 00:08:40,940
+up<font color="#E5E5E5"> and it sends along with the gits you</font>
+
+191
+00:08:40,940 --> 00:08:42,559
+know to the attacker it includes the
+
+192
+00:08:42,559 --> 00:08:44,990
+cookie from<font color="#CCCCCC"> the victim from</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> victims</font>
+
+193
+00:08:44,990 --> 00:08:46,670
+machine<font color="#CCCCCC"> a</font><font color="#E5E5E5"> couple of things</font><font color="#CCCCCC"> that you</font>
+
+194
+00:08:46,670 --> 00:08:48,650
+could<font color="#E5E5E5"> ask is well hey how</font><font color="#CCCCCC"> does the</font>
+
+195
+00:08:48,650 --> 00:08:50,810
+victim<font color="#E5E5E5"> know to even send the get request</font>
+
+196
+00:08:50,810 --> 00:08:53,240
+<font color="#E5E5E5">over here to this web application</font><font color="#CCCCCC"> that</font>
+
+197
+00:08:53,240 --> 00:08:56,360
+the attacker has infected<font color="#CCCCCC"> that gets in</font>
+
+198
+00:08:56,360 --> 00:08:58,730
+the you know social engineering<font color="#CCCCCC"> spear</font>
+
+199
+00:08:58,730 --> 00:09:00,589
+fishing<font color="#E5E5E5"> fishing whatever it is you know</font>
+
+200
+00:09:00,589 --> 00:09:01,970
+you guys<font color="#E5E5E5"> have seen that all the time hey</font>
+
+201
+00:09:01,970 --> 00:09:03,380
+don't click on any link that you don't
+
+202
+00:09:03,380 --> 00:09:06,230
+trust<font color="#E5E5E5"> or you know any number of ways</font>
+
+203
+00:09:06,230 --> 00:09:08,570
+that<font color="#E5E5E5"> the attacker could coerce the</font>
+
+204
+00:09:08,570 --> 00:09:10,640
+victim to click on this link which would
+
+205
+00:09:10,640 --> 00:09:12,860
+<font color="#E5E5E5">then kick off this</font><font color="#CCCCCC"> entire thing</font><font color="#E5E5E5"> another</font>
+
+206
+00:09:12,860 --> 00:09:15,770
+<font color="#E5E5E5">issue is the</font><font color="#CCCCCC"> victim's browser has to be</font>
+
+207
+00:09:15,770 --> 00:09:19,670
+<font color="#E5E5E5">willing to</font><font color="#CCCCCC"> run this script</font><font color="#E5E5E5"> in the HTML</font>
+
+208
+00:09:19,670 --> 00:09:22,490
+<font color="#CCCCCC">that comes</font><font color="#E5E5E5"> over if for some reason the</font>
+
+209
+00:09:22,490 --> 00:09:24,170
+victims browser is like hey this HTML
+
+210
+00:09:24,170 --> 00:09:26,750
+code has this has this script stuff in
+
+211
+00:09:26,750 --> 00:09:27,620
+it<font color="#CCCCCC"> that I don't really feel comfortable</font>
+
+212
+00:09:27,620 --> 00:09:30,500
+<font color="#E5E5E5">with and it doesn't run</font><font color="#CCCCCC"> that then</font><font color="#E5E5E5"> you're</font>
+
+213
+00:09:30,500 --> 00:09:31,700
+<font color="#E5E5E5">okay and I think that's part of the</font>
+
+214
+00:09:31,700 --> 00:09:33,230
+reason that cross-site scripting has
+
+215
+00:09:33,230 --> 00:09:35,570
+come down<font color="#E5E5E5"> that list so much from used to</font>
+
+216
+00:09:35,570 --> 00:09:36,950
+be number<font color="#E5E5E5"> two number three now it's now</font>
+
+217
+00:09:36,950 --> 00:09:38,270
+<font color="#E5E5E5">it's number seven our browsers have</font>
+
+218
+00:09:38,270 --> 00:09:41,930
+gotten a lot better<font color="#E5E5E5"> in in recent</font><font color="#CCCCCC"> past or</font>
+
+219
+00:09:41,930 --> 00:09:44,180
+<font color="#E5E5E5">in recent history whatever</font><font color="#CCCCCC"> also the web</font>
+
+220
+00:09:44,180 --> 00:09:48,530
+application<font color="#CCCCCC"> so that's one</font><font color="#E5E5E5"> way to defend</font>
+
+221
+00:09:48,530 --> 00:09:49,700
+against this<font color="#E5E5E5"> is make</font><font color="#CCCCCC"> sure you use a</font>
+
+222
+00:09:49,700 --> 00:09:52,130
+modern<font color="#E5E5E5"> browser that kind of inherently</font>
+
+223
+00:09:52,130 --> 00:09:54,170
+<font color="#E5E5E5">protects against cross-site scripting</font>
+
+224
+00:09:54,170 --> 00:09:56,120
+another one is if you're<font color="#CCCCCC"> building this</font>
+
+225
+00:09:56,120 --> 00:09:59,150
+web application<font color="#CCCCCC"> you need to you</font><font color="#E5E5E5"> need to</font>
+
+226
+00:09:59,150 --> 00:10:02,210
+separate untrusted data from active
+
+227
+00:10:02,210 --> 00:10:04,459
+browser content and any kind of user
+
+228
+00:10:04,459 --> 00:10:07,010
+<font color="#CCCCCC">input data needs</font><font color="#E5E5E5"> to be considered</font>
+
+229
+00:10:07,010 --> 00:10:08,660
+untrusted data<font color="#E5E5E5"> so you</font>
+
+230
+00:10:08,660 --> 00:10:11,180
+<font color="#CCCCCC">two separate active browser content from</font>
+
+231
+00:10:11,180 --> 00:10:13,579
+untrusted<font color="#E5E5E5"> data</font><font color="#CCCCCC"> so that's kind of a very</font>
+
+232
+00:10:13,579 --> 00:10:15,920
+overarching<font color="#E5E5E5"> way to approach this whole</font>
+
+233
+00:10:15,920 --> 00:10:19,430
+cross-site scripting<font color="#E5E5E5"> issue</font><font color="#CCCCCC"> all</font><font color="#E5E5E5"> right so</font>
+
+234
+00:10:19,430 --> 00:10:22,339
+you need<font color="#E5E5E5"> to you need to make sure that</font>
+
+235
+00:10:22,339 --> 00:10:24,980
+your web application is secure and then
+
+236
+00:10:24,980 --> 00:10:26,839
+on the victims side if you're<font color="#E5E5E5"> just a</font>
+
+237
+00:10:26,839 --> 00:10:28,519
+<font color="#CCCCCC">typical user out there and you have</font><font color="#E5E5E5"> no</font>
+
+238
+00:10:28,519 --> 00:10:29,990
+<font color="#CCCCCC">idea all this stuff's</font><font color="#E5E5E5"> kind of going on</font>
+
+239
+00:10:29,990 --> 00:10:32,930
+make sure<font color="#E5E5E5"> you use a browser that's that</font>
+
+240
+00:10:32,930 --> 00:10:34,610
+inherently<font color="#E5E5E5"> tries to defend against</font>
+
+241
+00:10:34,610 --> 00:10:36,860
+cross-site scripting<font color="#E5E5E5"> all right so that's</font>
+
+242
+00:10:36,860 --> 00:10:39,379
+<font color="#E5E5E5">kind of that's that's one one sort of</font>
+
+243
+00:10:39,379 --> 00:10:43,040
+overarching example in a nutshell<font color="#CCCCCC"> there</font>
+
+244
+00:10:43,040 --> 00:10:44,990
+are other ways<font color="#CCCCCC"> to defend against this</font>
+
+245
+00:10:44,990 --> 00:10:47,180
+you can put a web<font color="#CCCCCC"> application firewall</font>
+
+246
+00:10:47,180 --> 00:10:49,250
+in front of your web application and in
+
+247
+00:10:49,250 --> 00:10:51,410
+any kind of potential cross-site
+
+248
+00:10:51,410 --> 00:10:53,480
+scripting attack that comes in from<font color="#CCCCCC"> the</font>
+
+249
+00:10:53,480 --> 00:10:55,490
+attacker<font color="#CCCCCC"> that</font><font color="#E5E5E5"> web application</font><font color="#CCCCCC"> firewall</font>
+
+250
+00:10:55,490 --> 00:10:56,720
+is going to kill it<font color="#CCCCCC"> before it</font><font color="#E5E5E5"> even gets</font>
+
+251
+00:10:56,720 --> 00:10:58,550
+to<font color="#E5E5E5"> your web application so there's a</font>
+
+252
+00:10:58,550 --> 00:11:00,199
+number<font color="#E5E5E5"> of things you</font><font color="#CCCCCC"> can do but</font>
+
+253
+00:11:00,199 --> 00:11:01,639
+<font color="#E5E5E5">nonetheless cross-site scripting still</font>
+
+254
+00:11:01,639 --> 00:11:04,519
+out there can<font color="#CCCCCC"> be very dangerous</font><font color="#E5E5E5"> if it's</font>
+
+255
+00:11:04,519 --> 00:11:06,980
+if it's<font color="#E5E5E5"> allowed to run</font><font color="#CCCCCC"> its course so</font><font color="#E5E5E5"> so</font>
+
+256
+00:11:06,980 --> 00:11:08,509
+thanks<font color="#E5E5E5"> for</font><font color="#CCCCCC"> watching this lightboard</font>
+
+257
+00:11:08,509 --> 00:11:11,089
+lesson video and if you like this make
+
+258
+00:11:11,089 --> 00:11:12,410
+<font color="#CCCCCC">sure you</font><font color="#E5E5E5"> subscribe</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> our</font><font color="#CCCCCC"> youtube</font>
+
+259
+00:11:12,410 --> 00:11:14,899
+channel<font color="#E5E5E5"> here at dev central and we'll</font>
+
+260
+00:11:14,899 --> 00:11:18,220
+see you<font color="#CCCCCC"> guys out</font><font color="#E5E5E5"> there in</font><font color="#CCCCCC"> the community</font>
+
+261
+00:11:23,960 --> 00:00:00,000
+you
+

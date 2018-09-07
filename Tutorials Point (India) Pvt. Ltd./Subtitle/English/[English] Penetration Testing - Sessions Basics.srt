@@ -1,0 +1,420 @@
+1
+00:00:00,060 --> 00:00:02,190
+hello everyone<font color="#E5E5E5"> now let us</font><font color="#CCCCCC"> talk</font><font color="#E5E5E5"> about</font>
+
+2
+00:00:02,190 --> 00:00:05,130
+sessions<font color="#CCCCCC"> so what are sessions so</font>
+
+3
+00:00:05,130 --> 00:00:07,140
+sessions are<font color="#E5E5E5"> server-side storage</font>
+
+4
+00:00:07,140 --> 00:00:10,320
+information which is present<font color="#E5E5E5"> till a user</font>
+
+5
+00:00:10,320 --> 00:00:12,599
+is interacting with<font color="#E5E5E5"> that web application</font>
+
+6
+00:00:12,599 --> 00:00:16,650
+<font color="#CCCCCC">or with</font><font color="#E5E5E5"> that server now how</font><font color="#CCCCCC"> that</font>
+
+7
+00:00:16,650 --> 00:00:18,420
+information<font color="#E5E5E5"> is stored on</font><font color="#CCCCCC"> that server</font>
+
+8
+00:00:18,420 --> 00:00:20,850
+<font color="#CCCCCC">what kind of information</font><font color="#E5E5E5"> it is so the</font>
+
+9
+00:00:20,850 --> 00:00:22,590
+<font color="#E5E5E5">information which is</font><font color="#CCCCCC"> stored on a server</font>
+
+10
+00:00:22,590 --> 00:00:24,689
+<font color="#CCCCCC">till the user is</font><font color="#E5E5E5"> interacting with that</font>
+
+11
+00:00:24,689 --> 00:00:26,930
+web application<font color="#CCCCCC"> is in</font><font color="#E5E5E5"> the form of</font>
+
+12
+00:00:26,930 --> 00:00:30,240
+session IDs<font color="#CCCCCC"> so what are session IDs a</font>
+
+13
+00:00:30,240 --> 00:00:34,140
+session ID<font color="#E5E5E5"> is a long random alphanumeric</font>
+
+14
+00:00:34,140 --> 00:00:36,750
+string which uniquely identifies<font color="#CCCCCC"> users</font>
+
+15
+00:00:36,750 --> 00:00:39,960
+on that<font color="#CCCCCC"> website means</font><font color="#E5E5E5"> every single user</font>
+
+16
+00:00:39,960 --> 00:00:42,360
+contains different different session IDs
+
+17
+00:00:42,360 --> 00:00:45,149
+and how<font color="#E5E5E5"> that session</font><font color="#CCCCCC"> IDs are derived</font><font color="#E5E5E5"> are</font>
+
+18
+00:00:45,149 --> 00:00:49,020
+depend upon the web application logic<font color="#E5E5E5"> so</font>
+
+19
+00:00:49,020 --> 00:00:51,899
+sometimes what happen is the<font color="#E5E5E5"> session IDs</font>
+
+20
+00:00:51,899 --> 00:00:54,360
+are also stored inside cookies<font color="#E5E5E5"> so the</font>
+
+21
+00:00:54,360 --> 00:00:56,640
+important characteristics<font color="#E5E5E5"> of every good</font>
+
+22
+00:00:56,640 --> 00:00:58,800
+session ID<font color="#E5E5E5"> should be it should</font><font color="#CCCCCC"> be</font><font color="#E5E5E5"> random</font>
+
+23
+00:00:58,800 --> 00:01:01,199
+<font color="#E5E5E5">the second one is it</font><font color="#CCCCCC"> should be long and</font>
+
+24
+00:01:01,199 --> 00:01:04,470
+it should be alphanumeric now<font color="#E5E5E5"> what are</font>
+
+25
+00:01:04,470 --> 00:01:06,420
+the difference between<font color="#E5E5E5"> session ID and</font>
+
+26
+00:01:06,420 --> 00:01:09,630
+<font color="#E5E5E5">cookies so cookie is stored on a client</font>
+
+27
+00:01:09,630 --> 00:01:12,750
+site through browser and the sessions
+
+28
+00:01:12,750 --> 00:01:15,060
+are stored<font color="#E5E5E5"> on server sites so in cookie</font>
+
+29
+00:01:15,060 --> 00:01:17,729
+we can see the data which is inside the
+
+30
+00:01:17,729 --> 00:01:19,650
+<font color="#E5E5E5">cookie in the form of name and</font><font color="#CCCCCC"> value</font>
+
+31
+00:01:19,650 --> 00:01:22,890
+<font color="#E5E5E5">pairs whereas in session IDs we can see</font>
+
+32
+00:01:22,890 --> 00:01:25,409
+our data<font color="#CCCCCC"> so that</font><font color="#E5E5E5"> the session IDs are</font>
+
+33
+00:01:25,409 --> 00:01:27,720
+<font color="#CCCCCC">secure</font><font color="#E5E5E5"> whereas the cookies are not</font>
+
+34
+00:01:27,720 --> 00:01:30,829
+<font color="#E5E5E5">secure and it can be stolen by using</font>
+
+35
+00:01:30,829 --> 00:01:32,040
+<font color="#CCCCCC">JavaScript</font>
+
+36
+00:01:32,040 --> 00:01:35,100
+now let's see how we can<font color="#E5E5E5"> use</font><font color="#CCCCCC"> Bob suite</font>
+
+37
+00:01:35,100 --> 00:01:38,850
+<font color="#CCCCCC">in order</font><font color="#E5E5E5"> to find the session IDs now</font>
+
+38
+00:01:38,850 --> 00:01:41,700
+let's do some session ID analysis so in
+
+39
+00:01:41,700 --> 00:01:44,180
+order to<font color="#E5E5E5"> see</font><font color="#CCCCCC"> how session ID looks like</font>
+
+40
+00:01:44,180 --> 00:01:46,740
+what we have to do is we<font color="#E5E5E5"> first have to</font>
+
+41
+00:01:46,740 --> 00:01:49,200
+<font color="#E5E5E5">set</font><font color="#CCCCCC"> up our Bob</font><font color="#E5E5E5"> suite</font><font color="#CCCCCC"> and here you can</font>
+
+42
+00:01:49,200 --> 00:01:51,149
+see that right<font color="#E5E5E5"> now</font><font color="#CCCCCC"> I</font><font color="#E5E5E5"> am inside my Kali</font>
+
+43
+00:01:51,149 --> 00:01:54,119
+Linux<font color="#E5E5E5"> instance let me configure my Bob</font>
+
+44
+00:01:54,119 --> 00:01:55,799
+suite<font color="#E5E5E5"> so that</font><font color="#CCCCCC"> we can intercept the</font>
+
+45
+00:01:55,799 --> 00:01:58,590
+request<font color="#E5E5E5"> because most of the times the</font>
+
+46
+00:01:58,590 --> 00:02:03,060
+session ID<font color="#E5E5E5"> is present in our HTTP</font>
+
+47
+00:02:03,060 --> 00:02:05,520
+<font color="#E5E5E5">request but some of the application may</font>
+
+48
+00:02:05,520 --> 00:02:07,380
+store session IDs in<font color="#E5E5E5"> the form of cookies</font>
+
+49
+00:02:07,380 --> 00:02:13,220
+<font color="#CCCCCC">in our browser so here is</font><font color="#E5E5E5"> my Bob suite</font>
+
+50
+00:02:26,620 --> 00:02:38,290
+and let me also<font color="#E5E5E5"> open my</font><font color="#CCCCCC"> Firefox and we</font>
+
+51
+00:02:38,290 --> 00:02:40,780
+know<font color="#E5E5E5"> that the</font><font color="#CCCCCC"> buff</font><font color="#E5E5E5"> suite runs on this IP</font>
+
+52
+00:02:40,780 --> 00:02:43,629
+<font color="#E5E5E5">localhost IP and the port is 8080 and</font>
+
+53
+00:02:43,629 --> 00:02:45,910
+let me configure<font color="#E5E5E5"> my firefox browser</font>
+
+54
+00:02:45,910 --> 00:02:48,430
+proxy settings by<font color="#CCCCCC"> gluing going here</font>
+
+55
+00:02:48,430 --> 00:02:51,310
+<font color="#E5E5E5">preferences advanced network and network</font>
+
+56
+00:02:51,310 --> 00:02:53,560
+<font color="#E5E5E5">settings so manual proxy configuration</font>
+
+57
+00:02:53,560 --> 00:02:57,150
+<font color="#CCCCCC">so this is the Bob suite proxy IP</font><font color="#E5E5E5"> and</font>
+
+58
+00:02:57,150 --> 00:03:00,220
+here's the port number<font color="#E5E5E5"> let me click on</font>
+
+59
+00:03:00,220 --> 00:03:04,660
+<font color="#CCCCCC">ok and here let's open</font>
+
+60
+00:03:04,660 --> 00:03:10,510
+tutorialspoint.com<font color="#CCCCCC"> ok so the first one</font>
+
+61
+00:03:10,510 --> 00:03:12,910
+request is a simple HTTP request it's
+
+62
+00:03:12,910 --> 00:03:21,790
+not<font color="#E5E5E5"> send HTTP so let me forward this</font><font color="#CCCCCC"> ok</font>
+
+63
+00:03:21,790 --> 00:03:26,560
+let's go here<font color="#CCCCCC"> to tell connect advanced</font>
+
+64
+00:03:26,560 --> 00:03:31,569
+let's accept this exception<font color="#E5E5E5"> and now you</font>
+
+65
+00:03:31,569 --> 00:03:33,970
+can see that our Bob suit will intercept
+
+66
+00:03:33,970 --> 00:03:37,359
+HTTP<font color="#E5E5E5"> request off tutorialspoint.com here</font>
+
+67
+00:03:37,359 --> 00:03:39,760
+you can see now<font color="#CCCCCC"> the request is HTTP</font>
+
+68
+00:03:39,760 --> 00:03:43,389
+request<font color="#CCCCCC"> and here you can</font><font color="#E5E5E5"> see the cookie</font>
+
+69
+00:03:43,389 --> 00:03:46,540
+some different kind of cookies<font color="#E5E5E5"> okay let</font>
+
+70
+00:03:46,540 --> 00:03:53,290
+<font color="#E5E5E5">me forward this</font><font color="#CCCCCC"> ok and if you read</font><font color="#E5E5E5"> this</font>
+
+71
+00:03:53,290 --> 00:03:55,950
+request<font color="#E5E5E5"> here is an additional</font>
+
+72
+00:03:55,950 --> 00:04:00,340
+information called as PHP<font color="#E5E5E5"> session ID so</font>
+
+73
+00:04:00,340 --> 00:04:02,590
+by<font color="#CCCCCC"> just looking at this at the first</font>
+
+74
+00:04:02,590 --> 00:04:05,319
+<font color="#E5E5E5">glance we can say that this is a</font><font color="#CCCCCC"> session</font>
+
+75
+00:04:05,319 --> 00:04:08,470
+ID because<font color="#CCCCCC"> Harrah's written this PHP</font>
+
+76
+00:04:08,470 --> 00:04:10,989
+<font color="#E5E5E5">session ID so</font><font color="#CCCCCC"> this is how the</font><font color="#E5E5E5"> session ID</font>
+
+77
+00:04:10,989 --> 00:04:13,540
+looks like a long random string and
+
+78
+00:04:13,540 --> 00:04:16,720
+alphanumeric string so in the most of
+
+79
+00:04:16,720 --> 00:04:18,339
+<font color="#E5E5E5">the web application</font><font color="#CCCCCC"> if I</font><font color="#E5E5E5"> talk about</font>
+
+80
+00:04:18,339 --> 00:04:21,220
+Google Facebook if<font color="#E5E5E5"> you intercept the</font>
+
+81
+00:04:21,220 --> 00:04:23,380
+request<font color="#E5E5E5"> you will found a hell of a</font>
+
+82
+00:04:23,380 --> 00:04:25,810
+detail<font color="#CCCCCC"> a lot</font><font color="#E5E5E5"> of details containing these</font>
+
+83
+00:04:25,810 --> 00:04:27,940
+kind of<font color="#E5E5E5"> IDs differen different IDs</font><font color="#CCCCCC"> so</font>
+
+84
+00:04:27,940 --> 00:04:30,700
+<font color="#CCCCCC">then</font><font color="#E5E5E5"> that time it will be very very</font>
+
+85
+00:04:30,700 --> 00:04:32,950
+<font color="#E5E5E5">difficult to distinguish that</font><font color="#CCCCCC"> what</font><font color="#E5E5E5"> us</font>
+
+86
+00:04:32,950 --> 00:04:34,990
+<font color="#E5E5E5">what are the session IDs and what are</font>
+
+87
+00:04:34,990 --> 00:04:37,780
+the different<font color="#E5E5E5"> and other IDs but here at</font>
+
+88
+00:04:37,780 --> 00:04:40,060
+the first glance we<font color="#CCCCCC"> can say that</font>
+
+89
+00:04:40,060 --> 00:04:43,630
+this is<font color="#E5E5E5"> session ID</font><font color="#CCCCCC"> because most of the</font>
+
+90
+00:04:43,630 --> 00:04:47,290
+times the word developer do so what they
+
+91
+00:04:47,290 --> 00:04:49,419
+do is they actually change this
+
+92
+00:04:49,419 --> 00:04:52,510
+parameter name to any<font color="#E5E5E5"> different name</font><font color="#CCCCCC"> so</font>
+
+93
+00:04:52,510 --> 00:04:56,669
+just for example<font color="#E5E5E5"> if there is</font><font color="#CCCCCC"> written</font>
+
+94
+00:04:56,669 --> 00:05:00,100
+UTMC<font color="#CCCCCC"> and another if there is written</font><font color="#E5E5E5"> XYZ</font>
+
+95
+00:05:00,100 --> 00:05:02,770
+instead of PHP session ID<font color="#E5E5E5"> then you can</font>
+
+96
+00:05:02,770 --> 00:05:04,480
+just<font color="#CCCCCC"> think of</font><font color="#E5E5E5"> that how difficult it is</font>
+
+97
+00:05:04,480 --> 00:05:06,970
+<font color="#CCCCCC">to analyze</font><font color="#E5E5E5"> that what our session IDs</font>
+
+98
+00:05:06,970 --> 00:05:12,040
+among these all of them so finding a
+
+99
+00:05:12,040 --> 00:05:14,080
+<font color="#CCCCCC">right</font><font color="#E5E5E5"> PHP session ID or any different</font>
+
+100
+00:05:14,080 --> 00:05:16,540
+any<font color="#E5E5E5"> other session ID is also</font><font color="#CCCCCC"> very tricky</font>
+
+101
+00:05:16,540 --> 00:05:20,889
+task<font color="#E5E5E5"> so in this video we</font><font color="#CCCCCC"> have covered</font>
+
+102
+00:05:20,889 --> 00:05:23,380
+<font color="#E5E5E5">that what a session ID how session</font><font color="#CCCCCC"> arey</font>
+
+103
+00:05:23,380 --> 00:05:25,090
+<font color="#E5E5E5">looks like characteristics</font><font color="#CCCCCC"> of a good</font>
+
+104
+00:05:25,090 --> 00:05:28,270
+session<font color="#E5E5E5"> ID and thanks for</font><font color="#CCCCCC"> watching this</font>
+
+105
+00:05:28,270 --> 00:00:00,000
+video
+

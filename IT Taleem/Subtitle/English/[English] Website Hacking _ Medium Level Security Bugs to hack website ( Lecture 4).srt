@@ -1,0 +1,996 @@
+1
+00:00:08,870 --> 00:00:12,719
+in this<font color="#E5E5E5"> video we are going to look at</font>
+
+2
+00:00:12,719 --> 00:00:15,120
+<font color="#E5E5E5">tab napping security issue</font><font color="#CCCCCC"> the outline</font>
+
+3
+00:00:15,120 --> 00:00:17,430
+of the video is first understanding tab
+
+4
+00:00:17,430 --> 00:00:19,410
+<font color="#E5E5E5">napping using hacker</font><font color="#CCCCCC"> once publicly</font>
+
+5
+00:00:19,410 --> 00:00:20,010
+disclosed
+
+6
+00:00:20,010 --> 00:00:22,980
+<font color="#E5E5E5">report and second POC video of</font><font color="#CCCCCC"> hack</font>
+
+7
+00:00:22,980 --> 00:00:24,119
+<font color="#CCCCCC">event report first</font>
+
+8
+00:00:24,119 --> 00:00:27,000
+<font color="#E5E5E5">what is tab napping tab napping is a</font>
+
+9
+00:00:27,000 --> 00:00:29,609
+phishing attack in which a new tab
+
+10
+00:00:29,609 --> 00:00:32,460
+replaces the parent tab and instead<font color="#E5E5E5"> of</font>
+
+11
+00:00:32,460 --> 00:00:35,280
+<font color="#E5E5E5">parent tab it opens a phishing page</font>
+
+12
+00:00:35,280 --> 00:00:37,829
+<font color="#E5E5E5">let's see a report</font><font color="#CCCCCC"> it will give you more</font>
+
+13
+00:00:37,829 --> 00:00:40,350
+<font color="#E5E5E5">clarity on the topic</font><font color="#CCCCCC"> so this is our</font>
+
+14
+00:00:40,350 --> 00:00:42,450
+hacker<font color="#CCCCCC"> one report and the report</font><font color="#E5E5E5"> number</font>
+
+15
+00:00:42,450 --> 00:00:44,910
+is<font color="#CCCCCC"> two eight zero five double</font><font color="#E5E5E5"> zero this</font>
+
+16
+00:00:44,910 --> 00:00:47,340
+<font color="#E5E5E5">is the tab napping report and it was</font>
+
+17
+00:00:47,340 --> 00:00:50,010
+reported<font color="#CCCCCC"> to info</font><font color="#E5E5E5"> Graham by this person</font>
+
+18
+00:00:50,010 --> 00:00:52,530
+<font color="#CCCCCC">Suresh so the</font><font color="#E5E5E5"> credit of this report goes</font>
+
+19
+00:00:52,530 --> 00:00:56,670
+<font color="#CCCCCC">to this person now let's see what is in</font>
+
+20
+00:00:56,670 --> 00:00:58,739
+the report<font color="#CCCCCC"> so details of the report is</font>
+
+21
+00:00:58,739 --> 00:01:00,949
+when you<font color="#E5E5E5"> open a link in a new tab the</font>
+
+22
+00:01:00,949 --> 00:01:03,840
+<font color="#CCCCCC">page</font><font color="#E5E5E5"> that opens in a new</font><font color="#CCCCCC"> tab can access</font>
+
+23
+00:01:03,840 --> 00:01:05,610
+the initial tab and change its location
+
+24
+00:01:05,610 --> 00:01:09,439
+using<font color="#CCCCCC"> the window dot of my property so</font>
+
+25
+00:01:09,439 --> 00:01:13,320
+<font color="#CCCCCC">if there is a link see this this is</font><font color="#E5E5E5"> the</font>
+
+26
+00:01:13,320 --> 00:01:15,630
+anchor tag of the HTML and<font color="#E5E5E5"> we are using</font>
+
+27
+00:01:15,630 --> 00:01:18,960
+<font color="#E5E5E5">here this target attribute</font><font color="#CCCCCC"> and the value</font>
+
+28
+00:01:18,960 --> 00:01:21,060
+<font color="#CCCCCC">of the target</font><font color="#E5E5E5"> attribute is</font><font color="#CCCCCC"> underscored</font>
+
+29
+00:01:21,060 --> 00:01:24,000
+blank it means it opened the<font color="#E5E5E5"> link</font>
+
+30
+00:01:24,000 --> 00:01:27,840
+document in a new<font color="#CCCCCC"> window or tab if it is</font>
+
+31
+00:01:27,840 --> 00:01:30,450
+<font color="#CCCCCC">present here then there</font><font color="#E5E5E5"> are the chances</font>
+
+32
+00:01:30,450 --> 00:01:33,150
+of tab napping<font color="#E5E5E5"> so the point of this</font>
+
+33
+00:01:33,150 --> 00:01:35,970
+issue is whenever<font color="#E5E5E5"> a person click a link</font>
+
+34
+00:01:35,970 --> 00:01:38,700
+<font color="#E5E5E5">and in that link if our</font><font color="#CCCCCC"> target attribute</font>
+
+35
+00:01:38,700 --> 00:01:40,920
+<font color="#E5E5E5">is used with</font><font color="#CCCCCC"> the value underscored</font>
+
+36
+00:01:40,920 --> 00:01:43,040
+<font color="#CCCCCC">length then this</font><font color="#E5E5E5"> vulnerability can</font>
+
+37
+00:01:43,040 --> 00:01:47,490
+arises let's see a POC video of this
+
+38
+00:01:47,490 --> 00:01:50,250
+that will<font color="#E5E5E5"> give more clarity there is a</font>
+
+39
+00:01:50,250 --> 00:01:53,700
+POC video also<font color="#E5E5E5"> in this report let's</font>
+
+40
+00:01:53,700 --> 00:01:56,700
+download<font color="#E5E5E5"> it this is the video as you</font><font color="#CCCCCC"> can</font>
+
+41
+00:01:56,700 --> 00:01:59,100
+see this is the<font color="#E5E5E5"> website of info Graham</font>
+
+42
+00:01:59,100 --> 00:02:01,530
+<font color="#E5E5E5">calm in that</font><font color="#CCCCCC"> left</font><font color="#E5E5E5"> side we can</font><font color="#CCCCCC"> create</font><font color="#E5E5E5"> our</font>
+
+43
+00:02:01,530 --> 00:02:03,930
+<font color="#CCCCCC">own project as you can see this project</font>
+
+44
+00:02:03,930 --> 00:02:07,890
+<font color="#E5E5E5">has some video and we can create a link</font>
+
+45
+00:02:07,890 --> 00:02:11,610
+of that video so this person added the
+
+46
+00:02:11,610 --> 00:02:13,390
+<font color="#E5E5E5">text edit the text and create</font>
+
+47
+00:02:13,390 --> 00:02:15,550
+the link on this video<font color="#E5E5E5"> so the link of</font>
+
+48
+00:02:15,550 --> 00:02:18,730
+this<font color="#E5E5E5"> video is</font><font color="#CCCCCC"> added to its own server</font>
+
+49
+00:02:18,730 --> 00:02:21,370
+<font color="#E5E5E5">this</font><font color="#CCCCCC"> is the local server that he is</font>
+
+50
+00:02:21,370 --> 00:02:22,900
+running<font color="#E5E5E5"> and this is the IP</font><font color="#CCCCCC"> address of</font>
+
+51
+00:02:22,900 --> 00:02:25,870
+<font color="#E5E5E5">that server</font><font color="#CCCCCC"> so he pissed that IP address</font>
+
+52
+00:02:25,870 --> 00:02:28,540
+off his server and and the index dot
+
+53
+00:02:28,540 --> 00:02:31,510
+HTML file contains this<font color="#CCCCCC"> school</font><font color="#E5E5E5"> let me</font>
+
+54
+00:02:31,510 --> 00:02:35,500
+show you the code<font color="#E5E5E5"> so this code so the</font>
+
+55
+00:02:35,500 --> 00:02:37,630
+index file contained<font color="#E5E5E5"> this code what this</font>
+
+56
+00:02:37,630 --> 00:02:40,510
+code is doing it is replacing<font color="#CCCCCC"> the parent</font>
+
+57
+00:02:40,510 --> 00:02:45,910
+tab by this website which is HTTP
+
+58
+00:02:45,910 --> 00:02:48,370
+attacker.com<font color="#CCCCCC"> it could be any site it</font>
+
+59
+00:02:48,370 --> 00:02:51,760
+could be a<font color="#CCCCCC"> phishing web page of the same</font>
+
+60
+00:02:51,760 --> 00:02:55,060
+website<font color="#E5E5E5"> let's go back to video and play</font>
+
+61
+00:02:55,060 --> 00:02:58,360
+it<font color="#E5E5E5"> again so he added the link of his own</font>
+
+62
+00:02:58,360 --> 00:03:01,660
+web server which has index.html<font color="#E5E5E5"> and in</font>
+
+63
+00:03:01,660 --> 00:03:06,090
+that index<font color="#E5E5E5"> dot HTML the code was there</font>
+
+64
+00:03:06,090 --> 00:03:09,880
+he shows<font color="#CCCCCC"> what this link</font><font color="#E5E5E5"> looked like as</font>
+
+65
+00:03:09,880 --> 00:03:12,640
+you can see here this target attribute
+
+66
+00:03:12,640 --> 00:03:15,519
+<font color="#E5E5E5">is used with the value underscore blank</font>
+
+67
+00:03:15,519 --> 00:03:19,000
+<font color="#E5E5E5">so it opens a new tab</font><font color="#CCCCCC"> whenever a person</font>
+
+68
+00:03:19,000 --> 00:03:22,360
+click on this link<font color="#E5E5E5"> now as he clicked on</font>
+
+69
+00:03:22,360 --> 00:03:25,090
+the link<font color="#E5E5E5"> you</font><font color="#CCCCCC"> can see you can see this</font>
+
+70
+00:03:25,090 --> 00:03:29,160
+parent tab is replaced by<font color="#CCCCCC"> attacker com</font>
+
+71
+00:03:29,160 --> 00:03:32,950
+so this was<font color="#E5E5E5"> from this report</font><font color="#CCCCCC"> and he</font>
+
+72
+00:03:32,950 --> 00:03:34,870
+reported to<font color="#E5E5E5"> Instagram and this is</font>
+
+73
+00:03:34,870 --> 00:03:36,880
+resolved now<font color="#E5E5E5"> another report is reported</font>
+
+74
+00:03:36,880 --> 00:03:39,070
+<font color="#CCCCCC">to open exchange</font><font color="#E5E5E5"> and it is</font><font color="#CCCCCC"> also resolved</font>
+
+75
+00:03:39,070 --> 00:03:42,120
+now and the bounty of this report is
+
+76
+00:03:42,120 --> 00:03:46,540
+$666<font color="#E5E5E5"> now let's try it by ourselves</font><font color="#CCCCCC"> so I</font>
+
+77
+00:03:46,540 --> 00:03:49,269
+so I have localhost and I copied this
+
+78
+00:03:49,269 --> 00:03:53,140
+into a file and<font color="#E5E5E5"> save it on our htdocs</font>
+
+79
+00:03:53,140 --> 00:03:56,230
+folder<font color="#E5E5E5"> by the name tab dot</font><font color="#CCCCCC"> festival</font><font color="#E5E5E5"> now</font>
+
+80
+00:03:56,230 --> 00:03:58,660
+in my download<font color="#CCCCCC"> folder I created</font><font color="#E5E5E5"> a web</font>
+
+81
+00:03:58,660 --> 00:04:01,570
+page tab<font color="#CCCCCC"> knapping dot HTML let's see and</font>
+
+82
+00:04:01,570 --> 00:04:04,090
+in this<font color="#E5E5E5"> file</font><font color="#CCCCCC"> we have a same condition</font>
+
+83
+00:04:04,090 --> 00:04:06,880
+<font color="#CCCCCC">that has showed on you POC video</font><font color="#E5E5E5"> so</font>
+
+84
+00:04:06,880 --> 00:04:09,190
+let's open it with browser and see
+
+85
+00:04:09,190 --> 00:04:12,630
+whether the tab mapping works or not
+
+86
+00:04:13,459 --> 00:04:16,339
+so this is our webpage which<font color="#CCCCCC"> contains a</font>
+
+87
+00:04:16,339 --> 00:04:19,430
+link that<font color="#CCCCCC"> says</font><font color="#E5E5E5"> click me I click on this</font>
+
+88
+00:04:19,430 --> 00:04:22,610
+link and this<font color="#E5E5E5"> page open and see you can</font>
+
+89
+00:04:22,610 --> 00:04:25,250
+see and<font color="#E5E5E5"> you can</font><font color="#CCCCCC"> see our original</font><font color="#E5E5E5"> web</font>
+
+90
+00:04:25,250 --> 00:04:27,949
+page is replaced by<font color="#E5E5E5"> attacker.com</font>
+
+91
+00:04:27,949 --> 00:04:30,169
+<font color="#E5E5E5">so this could be</font><font color="#CCCCCC"> a some phishing page of</font>
+
+92
+00:04:30,169 --> 00:04:33,350
+the same<font color="#E5E5E5"> website</font><font color="#CCCCCC"> and a person can scrap</font>
+
+93
+00:04:33,350 --> 00:04:36,050
+into the phishing attack<font color="#E5E5E5"> this is it for</font>
+
+94
+00:04:36,050 --> 00:04:38,300
+<font color="#E5E5E5">this video thank you</font><font color="#CCCCCC"> and have a nice</font><font color="#E5E5E5"> day</font>
+
+95
+00:04:38,300 --> 00:04:40,370
+in this<font color="#E5E5E5"> video we are going to look at</font>
+
+96
+00:04:40,370 --> 00:04:42,500
+cross-site scripting vulnerability<font color="#E5E5E5"> the</font>
+
+97
+00:04:42,500 --> 00:04:44,840
+outline of the video is first what is
+
+98
+00:04:44,840 --> 00:04:48,410
+XSS then demo using dvwa<font color="#E5E5E5"> and in last</font>
+
+99
+00:04:48,410 --> 00:04:51,350
+<font color="#E5E5E5">real-life reports first what is</font>
+
+100
+00:04:51,350 --> 00:04:53,780
+cross-site scripting<font color="#CCCCCC"> I'll</font><font color="#E5E5E5"> explain you</font>
+
+101
+00:04:53,780 --> 00:04:57,470
+<font color="#E5E5E5">while giving demo using dvwa so here is</font>
+
+102
+00:04:57,470 --> 00:05:01,280
+dvwa<font color="#CCCCCC"> and let's login using our default</font>
+
+103
+00:05:01,280 --> 00:05:03,650
+<font color="#E5E5E5">username and password</font><font color="#CCCCCC"> that is admin and</font>
+
+104
+00:05:03,650 --> 00:05:07,430
+<font color="#E5E5E5">the password password now go to your dvw</font>
+
+105
+00:05:07,430 --> 00:05:14,630
+security<font color="#E5E5E5"> and change it to</font><font color="#CCCCCC"> lu</font><font color="#E5E5E5"> and now go</font>
+
+106
+00:05:14,630 --> 00:05:17,720
+to<font color="#CCCCCC"> your exercise</font><font color="#E5E5E5"> reflected now before</font>
+
+107
+00:05:17,720 --> 00:05:19,849
+<font color="#E5E5E5">starting what</font><font color="#CCCCCC"> is exercise</font><font color="#E5E5E5"> I want to tell</font>
+
+108
+00:05:19,849 --> 00:05:21,380
+you there are<font color="#E5E5E5"> many types of accesses</font>
+
+109
+00:05:21,380 --> 00:05:23,530
+access this is a very wide topic<font color="#E5E5E5"> and</font>
+
+110
+00:05:23,530 --> 00:05:27,320
+there are many<font color="#E5E5E5"> types of accesses</font><font color="#CCCCCC"> so in</font>
+
+111
+00:05:27,320 --> 00:05:28,789
+this<font color="#CCCCCC"> video I will show you only</font>
+
+112
+00:05:28,789 --> 00:05:31,159
+reflected<font color="#CCCCCC"> accesses and I will also</font><font color="#E5E5E5"> tell</font>
+
+113
+00:05:31,159 --> 00:05:33,050
+you<font color="#E5E5E5"> about stored excesses</font><font color="#CCCCCC"> but you can</font>
+
+114
+00:05:33,050 --> 00:05:36,310
+read more up on<font color="#E5E5E5"> OWS P so let's go to</font>
+
+115
+00:05:36,310 --> 00:05:38,990
+reflected exercise and see what is
+
+116
+00:05:38,990 --> 00:05:42,260
+<font color="#E5E5E5">exercise so this is a website in this</font>
+
+117
+00:05:42,260 --> 00:05:44,720
+website<font color="#CCCCCC"> a user can enter some data if</font>
+
+118
+00:05:44,720 --> 00:05:48,860
+this data is<font color="#CCCCCC"> not sanitized properly then</font>
+
+119
+00:05:48,860 --> 00:05:52,370
+user can enter HTML tags and because
+
+120
+00:05:52,370 --> 00:05:54,650
+there<font color="#CCCCCC"> is</font><font color="#E5E5E5"> no check on the input user</font>
+
+121
+00:05:54,650 --> 00:05:58,580
+provide website allows HTML tags that
+
+122
+00:05:58,580 --> 00:06:01,280
+<font color="#E5E5E5">user provided if I use</font><font color="#CCCCCC"> BTech this is</font>
+
+123
+00:06:01,280 --> 00:06:06,020
+<font color="#CCCCCC">bowl tag which make a word board</font><font color="#E5E5E5"> if I</font>
+
+124
+00:06:06,020 --> 00:06:10,010
+say<font color="#E5E5E5"> hello h ee</font><font color="#CCCCCC"> l hello and i use this</font>
+
+125
+00:06:10,010 --> 00:06:13,789
+bolt head and<font color="#CCCCCC"> i as I enter submit you</font>
+
+126
+00:06:13,789 --> 00:06:16,669
+<font color="#E5E5E5">can see this is default hello and this</font>
+
+127
+00:06:16,669 --> 00:06:19,729
+<font color="#E5E5E5">is hello that we entered and you can see</font>
+
+128
+00:06:19,729 --> 00:06:23,120
+it becomes<font color="#CCCCCC"> board so what happen have</font>
+
+129
+00:06:23,120 --> 00:06:26,630
+<font color="#CCCCCC">side allowed HTML tag</font><font color="#E5E5E5"> also and if some</font>
+
+130
+00:06:26,630 --> 00:06:27,120
+<font color="#E5E5E5">web side</font>
+
+131
+00:06:27,120 --> 00:06:30,600
+<font color="#E5E5E5">allows HTML text to be executed then</font>
+
+132
+00:06:30,600 --> 00:06:33,540
+there are the chances of cross-site
+
+133
+00:06:33,540 --> 00:06:35,550
+scripting<font color="#E5E5E5"> and why we call this reflected</font>
+
+134
+00:06:35,550 --> 00:06:37,710
+cross-site scripting<font color="#E5E5E5"> because in whatever</font>
+
+135
+00:06:37,710 --> 00:06:41,610
+<font color="#E5E5E5">user input it gets reflected let's see</font>
+
+136
+00:06:41,610 --> 00:06:44,639
+what would<font color="#E5E5E5"> have</font><font color="#CCCCCC"> new species</font><font color="#E5E5E5"> so it is</font>
+
+137
+00:06:44,639 --> 00:06:47,190
+type<font color="#CCCCCC"> of injection because at</font><font color="#E5E5E5"> I can</font>
+
+138
+00:06:47,190 --> 00:06:50,729
+inject some spirit in which malicious is
+
+139
+00:06:50,729 --> 00:06:53,720
+<font color="#CCCCCC">cripple okay so I</font><font color="#E5E5E5"> slipped that Tom's</font>
+
+140
+00:06:53,720 --> 00:06:56,880
+user in some way that is malicious
+
+141
+00:06:56,880 --> 00:06:59,220
+<font color="#CCCCCC">escape are injected into otherwise</font>
+
+142
+00:06:59,220 --> 00:07:01,740
+banning and trusted websites accesses
+
+143
+00:07:01,740 --> 00:07:03,570
+attack occur when<font color="#E5E5E5"> an attacker uses a web</font>
+
+144
+00:07:03,570 --> 00:07:05,100
+application<font color="#CCCCCC"> to send malicious code</font>
+
+145
+00:07:05,100 --> 00:07:06,900
+generally in the form of browser side
+
+146
+00:07:06,900 --> 00:07:09,600
+script<font color="#CCCCCC"> okay we will enter</font><font color="#E5E5E5"> JavaScript</font>
+
+147
+00:07:09,600 --> 00:07:11,699
+<font color="#E5E5E5">also and that is browser side script</font>
+
+148
+00:07:11,699 --> 00:07:14,520
+<font color="#E5E5E5">okay let's see the page source so I</font>
+
+149
+00:07:14,520 --> 00:07:16,130
+entered hello
+
+150
+00:07:16,130 --> 00:07:20,550
+<font color="#CCCCCC">let's entered</font><font color="#E5E5E5"> something else say dvwa</font>
+
+151
+00:07:20,550 --> 00:07:24,180
+and I submit<font color="#E5E5E5"> if I go to their page</font>
+
+152
+00:07:24,180 --> 00:07:31,260
+source<font color="#E5E5E5"> and search for dvwa here so this</font>
+
+153
+00:07:31,260 --> 00:07:34,740
+<font color="#E5E5E5">is reflected</font><font color="#CCCCCC"> here hello dvwa</font><font color="#E5E5E5"> so if I</font>
+
+154
+00:07:34,740 --> 00:07:41,729
+enter<font color="#CCCCCC"> some thing in bold</font><font color="#E5E5E5"> that that is</font>
+
+155
+00:07:41,729 --> 00:07:45,060
+hello and if I go for<font color="#E5E5E5"> hello hello here</font>
+
+156
+00:07:45,060 --> 00:07:48,780
+you can see I entered this this is as a
+
+157
+00:07:48,780 --> 00:07:51,750
+whole and<font color="#E5E5E5"> website allows allows me to</font>
+
+158
+00:07:51,750 --> 00:07:55,260
+enter HTML<font color="#CCCCCC"> tags there could be a chances</font>
+
+159
+00:07:55,260 --> 00:08:04,889
+of<font color="#E5E5E5"> XSS now let's try to enter script and</font>
+
+160
+00:08:04,889 --> 00:08:07,380
+think<font color="#E5E5E5"> that I want to say if a</font><font color="#CCCCCC"> website</font>
+
+161
+00:08:07,380 --> 00:08:10,289
+allows any HTML<font color="#E5E5E5"> tag to be executed then</font>
+
+162
+00:08:10,289 --> 00:08:11,940
+there could be a chances of accesses
+
+163
+00:08:11,940 --> 00:08:14,160
+<font color="#E5E5E5">that</font><font color="#CCCCCC"> is</font><font color="#E5E5E5"> also known as HTML injection</font>
+
+164
+00:08:14,160 --> 00:08:16,410
+which is a<font color="#E5E5E5"> different vulnerability so</font>
+
+165
+00:08:16,410 --> 00:08:19,020
+let's try with<font color="#CCCCCC"> script now a script tag</font>
+
+166
+00:08:19,020 --> 00:08:24,180
+is<font color="#CCCCCC"> used in HTML to run</font><font color="#E5E5E5"> JavaScript so if</font>
+
+167
+00:08:24,180 --> 00:08:28,139
+<font color="#E5E5E5">I call a function which says alert hello</font>
+
+168
+00:08:28,139 --> 00:08:31,949
+<font color="#CCCCCC">and this will this will inject</font><font color="#E5E5E5"> this</font>
+
+169
+00:08:31,949 --> 00:08:35,070
+<font color="#E5E5E5">script and you can see our alert box</font>
+
+170
+00:08:35,070 --> 00:08:37,708
+popped up<font color="#CCCCCC"> and this</font><font color="#E5E5E5"> is</font><font color="#CCCCCC"> how</font><font color="#E5E5E5"> reflected</font>
+
+171
+00:08:37,708 --> 00:08:39,479
+cross-site script<font color="#CCCCCC"> Forks let's recall</font>
+
+172
+00:08:39,479 --> 00:08:40,440
+<font color="#CCCCCC">what I am trying to say</font>
+
+173
+00:08:40,440 --> 00:08:43,650
+so if any website is<font color="#E5E5E5"> reflecting some</font>
+
+174
+00:08:43,650 --> 00:08:47,100
+user input<font color="#CCCCCC"> in their view page source</font><font color="#E5E5E5"> and</font>
+
+175
+00:08:47,100 --> 00:08:51,690
+in that input<font color="#E5E5E5"> of HTML tag is allowed or</font>
+
+176
+00:08:51,690 --> 00:08:54,150
+script tag is allowed then there is a
+
+177
+00:08:54,150 --> 00:08:57,390
+chance of cross-site scripting<font color="#E5E5E5"> and how</font>
+
+178
+00:08:57,390 --> 00:09:00,210
+is<font color="#E5E5E5"> it stored different to them</font><font color="#CCCCCC"> here if i</font>
+
+179
+00:09:00,210 --> 00:09:03,090
+refresh<font color="#E5E5E5"> the</font><font color="#CCCCCC"> page then the data input is</font>
+
+180
+00:09:03,090 --> 00:09:06,030
+vanished<font color="#E5E5E5"> but in stored it that is told</font>
+
+181
+00:09:06,030 --> 00:09:09,260
+told<font color="#CCCCCC"> excesses</font><font color="#E5E5E5"> can be found in some block</font>
+
+182
+00:09:09,260 --> 00:09:12,930
+type of<font color="#E5E5E5"> web application like this name</font>
+
+183
+00:09:12,930 --> 00:09:15,660
+message sign<font color="#E5E5E5"> gas book you can explore it</font>
+
+184
+00:09:15,660 --> 00:09:20,640
+by yourself<font color="#E5E5E5"> let's see some reports so</font>
+
+185
+00:09:20,640 --> 00:09:22,980
+this is the report that<font color="#E5E5E5"> was reported</font><font color="#CCCCCC"> to</font>
+
+186
+00:09:22,980 --> 00:09:26,160
+blockchain<font color="#E5E5E5"> and bounties rewarded was of</font>
+
+187
+00:09:26,160 --> 00:09:31,350
+$400<font color="#E5E5E5"> now let's see the application at</font>
+
+188
+00:09:31,350 --> 00:09:34,080
+this is vulnerable to reflected XSS
+
+189
+00:09:34,080 --> 00:09:36,960
+slash HTML injection through<font color="#E5E5E5"> the URL</font><font color="#CCCCCC"> at</font>
+
+190
+00:09:36,960 --> 00:09:41,310
+the block index page<font color="#E5E5E5"> so here what is</font>
+
+191
+00:09:41,310 --> 00:09:43,950
+<font color="#CCCCCC">happening here</font><font color="#E5E5E5"> so whenever this person</font>
+
+192
+00:09:43,950 --> 00:09:47,760
+is<font color="#CCCCCC"> typing something</font><font color="#E5E5E5"> here after this</font><font color="#CCCCCC"> 1 1</font>
+
+193
+00:09:47,760 --> 00:09:51,300
+6<font color="#E5E5E5"> 0 4 5 7 it is reflected on the web</font>
+
+194
+00:09:51,300 --> 00:09:55,590
+<font color="#E5E5E5">page so now we go</font><font color="#CCCCCC"> to the page</font><font color="#E5E5E5"> source and</font>
+
+195
+00:09:55,590 --> 00:09:58,650
+see how he can break<font color="#CCCCCC"> the HTML tag and</font>
+
+196
+00:09:58,650 --> 00:10:02,910
+<font color="#CCCCCC">can start the new HTML tag and he was</font>
+
+197
+00:10:02,910 --> 00:10:07,140
+able<font color="#E5E5E5"> to do that and he entered the HTML</font>
+
+198
+00:10:07,140 --> 00:10:11,070
+tags<font color="#E5E5E5"> the another report is reported to</font>
+
+199
+00:10:11,070 --> 00:10:14,700
+<font color="#E5E5E5">grata P and you can see the image file</font>
+
+200
+00:10:14,700 --> 00:10:18,240
+with an alert<font color="#E5E5E5"> box so this was reported</font>
+
+201
+00:10:18,240 --> 00:10:21,270
+<font color="#E5E5E5">to create EP the another report another</font>
+
+202
+00:10:21,270 --> 00:10:24,150
+<font color="#E5E5E5">reflected excesses report is on</font><font color="#CCCCCC"> v-mail</font>
+
+203
+00:10:24,150 --> 00:10:27,060
+and this is reported<font color="#CCCCCC"> to V mu and the</font>
+
+204
+00:10:27,060 --> 00:10:30,870
+<font color="#E5E5E5">bounty was of $100 you can see he</font>
+
+205
+00:10:30,870 --> 00:10:35,220
+alerted domain of the website<font color="#CCCCCC"> so this is</font>
+
+206
+00:10:35,220 --> 00:10:39,060
+all reflected<font color="#CCCCCC"> accesses there are various</font>
+
+207
+00:10:39,060 --> 00:10:40,860
+type of<font color="#E5E5E5"> exercise you</font><font color="#CCCCCC"> can read about</font><font color="#E5E5E5"> them</font>
+
+208
+00:10:40,860 --> 00:10:43,920
+<font color="#E5E5E5">and this is it for this video hello</font>
+
+209
+00:10:43,920 --> 00:10:45,960
+everyone<font color="#E5E5E5"> this video</font><font color="#CCCCCC"> is the continuation</font>
+
+210
+00:10:45,960 --> 00:10:49,710
+of XSS video<font color="#E5E5E5"> accesses video then go back</font>
+
+211
+00:10:49,710 --> 00:10:52,080
+<font color="#CCCCCC">to exercise video</font><font color="#E5E5E5"> and watch it</font><font color="#CCCCCC"> and</font>
+
+212
+00:10:52,080 --> 00:10:52,649
+underst
+
+213
+00:10:52,649 --> 00:10:55,529
+the concept so in this video<font color="#E5E5E5"> the main</font>
+
+214
+00:10:55,529 --> 00:10:58,680
+goal is to<font color="#E5E5E5"> understand that</font><font color="#CCCCCC"> the excessive</font>
+
+215
+00:10:58,680 --> 00:11:02,040
+bug is not<font color="#CCCCCC"> only found at such bar</font><font color="#E5E5E5"> only</font>
+
+216
+00:11:02,040 --> 00:11:04,589
+there<font color="#CCCCCC"> can be many parameter in our</font>
+
+217
+00:11:04,589 --> 00:11:06,899
+website<font color="#E5E5E5"> which could be vulnerable to</font>
+
+218
+00:11:06,899 --> 00:11:07,829
+<font color="#CCCCCC">excesses</font>
+
+219
+00:11:07,829 --> 00:11:10,319
+so here I'm going<font color="#E5E5E5"> to introduce you with</font>
+
+220
+00:11:10,319 --> 00:11:12,689
+open bug bounty which<font color="#E5E5E5"> help us to</font>
+
+221
+00:11:12,689 --> 00:11:14,970
+<font color="#E5E5E5">understand what</font><font color="#CCCCCC"> could be the parameters</font>
+
+222
+00:11:14,970 --> 00:11:18,600
+<font color="#E5E5E5">that could be vulnerable to exercise by</font>
+
+223
+00:11:18,600 --> 00:11:20,730
+<font color="#E5E5E5">understanding the reports on this</font>
+
+224
+00:11:20,730 --> 00:11:22,800
+<font color="#CCCCCC">website</font><font color="#E5E5E5"> so the web address of this</font>
+
+225
+00:11:22,800 --> 00:11:39,540
+<font color="#E5E5E5">website is www.antakungfu.com - as you</font>
+
+226
+00:11:39,540 --> 00:11:42,269
+can<font color="#CCCCCC"> see</font><font color="#E5E5E5"> here it is that their security</font>
+
+227
+00:11:42,269 --> 00:11:44,490
+community<font color="#E5E5E5"> helped more than 1 lakh</font>
+
+228
+00:11:44,490 --> 00:11:47,819
+<font color="#E5E5E5">websites to be</font><font color="#CCCCCC"> secure</font><font color="#E5E5E5"> now if we go to</font>
+
+229
+00:11:47,819 --> 00:11:50,670
+the quickest patched<font color="#E5E5E5"> section and click</font>
+
+230
+00:11:50,670 --> 00:11:54,389
+on<font color="#E5E5E5"> this report this is already patched</font>
+
+231
+00:11:54,389 --> 00:11:57,449
+report so it is no<font color="#E5E5E5"> longer reproducible</font>
+
+232
+00:11:57,449 --> 00:11:59,819
+but we are<font color="#E5E5E5"> learning what are</font><font color="#CCCCCC"> the</font>
+
+233
+00:11:59,819 --> 00:12:01,559
+parameters<font color="#E5E5E5"> that can be</font><font color="#CCCCCC"> excessive</font>
+
+234
+00:12:01,559 --> 00:12:04,319
+vulnerable so we are<font color="#E5E5E5"> going to look at</font>
+
+235
+00:12:04,319 --> 00:12:08,069
+the vulnerable URL and you<font color="#E5E5E5"> can see this</font>
+
+236
+00:12:08,069 --> 00:12:10,709
+is not<font color="#E5E5E5"> a link of a</font><font color="#CCCCCC"> some such bar</font><font color="#E5E5E5"> you can</font>
+
+237
+00:12:10,709 --> 00:12:14,160
+<font color="#CCCCCC">see after this</font><font color="#E5E5E5"> id id is</font><font color="#CCCCCC"> equal</font><font color="#E5E5E5"> to 13</font>
+
+238
+00:12:14,160 --> 00:12:17,040
+whenever a user input<font color="#CCCCCC"> something then it</font>
+
+239
+00:12:17,040 --> 00:12:19,079
+<font color="#E5E5E5">is getting reflected and because of</font>
+
+240
+00:12:19,079 --> 00:12:23,009
+reflection of the input<font color="#CCCCCC"> accesses can be</font>
+
+241
+00:12:23,009 --> 00:12:24,959
+triggered<font color="#CCCCCC"> and</font><font color="#E5E5E5"> you can see here</font><font color="#CCCCCC"> a</font>
+
+242
+00:12:24,959 --> 00:12:27,120
+<font color="#E5E5E5">screenshot also which says open bug</font>
+
+243
+00:12:27,120 --> 00:12:29,550
+bounty<font color="#E5E5E5"> dark you can explore this website</font>
+
+244
+00:12:29,550 --> 00:12:32,100
+<font color="#E5E5E5">by yourself</font><font color="#CCCCCC"> and this will be</font><font color="#E5E5E5"> very</font>
+
+245
+00:12:32,100 --> 00:12:34,949
+helpful<font color="#E5E5E5"> for your exercise bugs</font>
+
+246
+00:12:34,949 --> 00:12:37,120
+thank you and have a nice day
+
+247
+00:12:37,120 --> 00:12:49,590
+[Music]
+
+248
+00:12:49,590 --> 00:12:50,340
+[Applause]
+
+249
+00:12:50,340 --> 00:00:00,000
+[Music]
+

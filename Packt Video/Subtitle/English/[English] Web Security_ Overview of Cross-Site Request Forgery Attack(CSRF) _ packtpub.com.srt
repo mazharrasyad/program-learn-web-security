@@ -1,0 +1,260 @@
+1
+00:00:01,580 --> 00:00:03,640
+<font color="#E5E5E5">you</font>
+
+2
+00:00:07,900 --> 00:00:11,410
+this section is<font color="#E5E5E5"> wilted about CSRF and</font>
+
+3
+00:00:11,410 --> 00:00:15,070
+logic flops<font color="#E5E5E5"> now in this section what we</font>
+
+4
+00:00:15,070 --> 00:00:17,110
+are going<font color="#CCCCCC"> to</font><font color="#E5E5E5"> learn first of all we will</font>
+
+5
+00:00:17,110 --> 00:00:20,650
+learn<font color="#CCCCCC"> about what is</font><font color="#E5E5E5"> CSRF and then we</font>
+
+6
+00:00:20,650 --> 00:00:23,140
+will learn<font color="#CCCCCC"> about</font><font color="#E5E5E5"> the effects CSRF</font><font color="#CCCCCC"> for</font>
+
+7
+00:00:23,140 --> 00:00:25,090
+applications<font color="#E5E5E5"> we will perform some</font>
+
+8
+00:00:25,090 --> 00:00:27,759
+practicals<font color="#E5E5E5"> the form of few treats in the</font>
+
+9
+00:00:27,759 --> 00:00:29,380
+last video we will learn<font color="#CCCCCC"> about all the</font>
+
+10
+00:00:29,380 --> 00:00:31,720
+<font color="#CCCCCC">different techniques about CSI refer the</font>
+
+11
+00:00:31,720 --> 00:00:34,020
+overview<font color="#E5E5E5"> of cross-site request forgery</font>
+
+12
+00:00:34,020 --> 00:00:37,000
+<font color="#CCCCCC">attack in</font><font color="#E5E5E5"> this video we are going to</font>
+
+13
+00:00:37,000 --> 00:00:38,890
+take a look at couple<font color="#E5E5E5"> of points we will</font>
+
+14
+00:00:38,890 --> 00:00:41,140
+learn<font color="#CCCCCC"> about</font><font color="#E5E5E5"> what is</font><font color="#CCCCCC"> CSRF attack and then</font>
+
+15
+00:00:41,140 --> 00:00:43,929
+we will explain about<font color="#E5E5E5"> the process of</font>
+
+16
+00:00:43,929 --> 00:00:47,739
+<font color="#E5E5E5">CSRF attack on the button</font><font color="#CCCCCC"> equations so</font>
+
+17
+00:00:47,739 --> 00:00:52,030
+let's talk about<font color="#E5E5E5"> CSRF</font><font color="#CCCCCC"> or</font><font color="#E5E5E5"> CSRF or xsrf it</font>
+
+18
+00:00:52,030 --> 00:00:54,399
+is<font color="#E5E5E5"> also called xsrf what is the full</font>
+
+19
+00:00:54,399 --> 00:00:56,710
+<font color="#E5E5E5">form of CSRF cross-site request forgery</font>
+
+20
+00:00:56,710 --> 00:00:59,409
+is the full<font color="#E5E5E5"> form of CSRF it is also</font>
+
+21
+00:00:59,409 --> 00:01:01,390
+called<font color="#CCCCCC"> accessorize</font><font color="#E5E5E5"> what is the meaning</font>
+
+22
+00:01:01,390 --> 00:01:04,989
+<font color="#E5E5E5">of CSRF and how it works so CSRF attack</font>
+
+23
+00:01:04,989 --> 00:01:07,510
+is a major attack<font color="#E5E5E5"> on web application</font><font color="#CCCCCC"> I</font>
+
+24
+00:01:07,510 --> 00:01:08,500
+<font color="#E5E5E5">already told you that</font>
+
+25
+00:01:08,500 --> 00:01:11,650
+SQL injection<font color="#E5E5E5"> exercise and CS</font><font color="#CCCCCC"> atom</font><font color="#E5E5E5"> these</font>
+
+26
+00:01:11,650 --> 00:01:13,210
+three attacks are<font color="#E5E5E5"> the most important</font>
+
+27
+00:01:13,210 --> 00:01:16,240
+attacks available on web<font color="#CCCCCC"> applications in</font>
+
+28
+00:01:16,240 --> 00:01:18,580
+which attacker<font color="#E5E5E5"> executes unwanted action</font>
+
+29
+00:01:18,580 --> 00:01:20,460
+in web applications to<font color="#E5E5E5"> trick the user</font>
+
+30
+00:01:20,460 --> 00:01:23,740
+<font color="#E5E5E5">absolutely correct</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> basically if this</font>
+
+31
+00:01:23,740 --> 00:01:25,660
+<font color="#E5E5E5">is the browser and if this is the user</font>
+
+32
+00:01:25,660 --> 00:01:27,490
+who is using<font color="#E5E5E5"> the browser so what can</font>
+
+33
+00:01:27,490 --> 00:01:30,400
+<font color="#E5E5E5">happen for</font><font color="#CCCCCC"> example if user is trying to</font>
+
+34
+00:01:30,400 --> 00:01:32,950
+send or transfer money<font color="#CCCCCC"> from his bank</font>
+
+35
+00:01:32,950 --> 00:01:35,800
+account to his<font color="#E5E5E5"> friend's bank account so</font>
+
+36
+00:01:35,800 --> 00:01:36,580
+what<font color="#E5E5E5"> can happen</font>
+
+37
+00:01:36,580 --> 00:01:39,640
+<font color="#CCCCCC">the attacker can trick the user</font><font color="#E5E5E5"> so what</font>
+
+38
+00:01:39,640 --> 00:01:41,770
+will happen<font color="#CCCCCC"> it will basically change</font><font color="#E5E5E5"> the</font>
+
+39
+00:01:41,770 --> 00:01:45,520
+query<font color="#CCCCCC"> of the user and it will transfer</font>
+
+40
+00:01:45,520 --> 00:01:48,400
+the<font color="#E5E5E5"> fund from his account to somebody</font>
+
+41
+00:01:48,400 --> 00:01:50,020
+else<font color="#CCCCCC"> account</font><font color="#E5E5E5"> so this is the kind of</font>
+
+42
+00:01:50,020 --> 00:01:55,390
+scenario<font color="#E5E5E5"> inside CSS and this is a simple</font>
+
+43
+00:01:55,390 --> 00:01:58,210
+scenario<font color="#E5E5E5"> but they are multiple scenarios</font>
+
+44
+00:01:58,210 --> 00:02:00,660
+are available in<font color="#E5E5E5"> CSRF that we will talk</font>
+
+45
+00:02:00,660 --> 00:02:03,880
+<font color="#E5E5E5">later</font><font color="#CCCCCC"> in the videos</font><font color="#E5E5E5"> so here's the</font>
+
+46
+00:02:03,880 --> 00:02:06,310
+scenario<font color="#CCCCCC"> right so he is the victim who</font>
+
+47
+00:02:06,310 --> 00:02:07,780
+is<font color="#E5E5E5"> trying to</font><font color="#CCCCCC"> use web site who is trying</font>
+
+48
+00:02:07,780 --> 00:02:10,628
+<font color="#CCCCCC">to</font><font color="#E5E5E5"> use a web server</font><font color="#CCCCCC"> right and he has his</font>
+
+49
+00:02:10,628 --> 00:02:13,060
+cookies right so what is the use of<font color="#E5E5E5"> this</font>
+
+50
+00:02:13,060 --> 00:02:15,280
+attack<font color="#CCCCCC"> in terms of attacker</font>
+
+51
+00:02:15,280 --> 00:02:19,299
+so<font color="#E5E5E5"> attacker will trick the user and user</font>
+
+52
+00:02:19,299 --> 00:02:21,489
+will automatically<font color="#E5E5E5"> redirect you some of</font>
+
+53
+00:02:21,489 --> 00:02:21,700
+the
+
+54
+00:02:21,700 --> 00:02:23,920
+malicious website<font color="#CCCCCC"> he will not</font><font color="#E5E5E5"> be direct</font>
+
+55
+00:02:23,920 --> 00:02:25,660
+to<font color="#E5E5E5"> the genuine website he will redirect</font>
+
+56
+00:02:25,660 --> 00:02:27,430
+to some malicious<font color="#E5E5E5"> websites what can</font>
+
+57
+00:02:27,430 --> 00:02:29,769
+happen now attacker can<font color="#CCCCCC"> basically steal</font>
+
+58
+00:02:29,769 --> 00:02:32,470
+the cookie<font color="#E5E5E5"> or session of this victim and</font>
+
+59
+00:02:32,470 --> 00:02:34,660
+can take<font color="#E5E5E5"> over the complete session and</font>
+
+60
+00:02:34,660 --> 00:02:37,450
+can manipulate his personal accounts as
+
+61
+00:02:37,450 --> 00:02:39,640
+<font color="#CCCCCC">well so</font><font color="#E5E5E5"> this is the kind of CSRF attacks</font>
+
+62
+00:02:39,640 --> 00:02:41,890
+when attacker manipulates the query
+
+63
+00:02:41,890 --> 00:02:44,230
+<font color="#E5E5E5">generated by the victim</font><font color="#CCCCCC"> all</font><font color="#E5E5E5"> right</font>
+
+64
+00:02:44,230 --> 00:02:46,690
+this is all<font color="#E5E5E5"> about CSRF and the process</font>
+
+65
+00:02:46,690 --> 00:00:00,000
+of<font color="#CCCCCC"> csr</font>
+

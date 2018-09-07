@@ -1,0 +1,7352 @@
+1
+00:00:00,000 --> 00:00:00,070
+
+
+2
+00:00:00,070 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan, atau untuk melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,266
+ di ocw.mit.edu. 
+
+9
+00:00:17,266 --> 00:00:26,290
+
+
+10
+00:00:26,290 --> 00:00:28,000
+ PROFESOR: Ini sangat menarik. 
+
+11
+00:00:28,000 --> 00:00:29,830
+ Dalam kuliah sebelumnya, kami belajar 
+
+12
+00:00:29,830 --> 00:00:32,600
+ semua tentang serangan buffer overflow, 
+
+13
+00:00:32,600 --> 00:00:34,080
+ dan hari ini kita akan melanjutkan 
+
+14
+00:00:34,080 --> 00:00:37,430
+ untuk mendiskusikan beberapa teknik untuk meluncurkan serangan ini. 
+
+15
+00:00:37,430 --> 00:00:41,210
+ Jadi, ide dasar dari semua serangan buffer overflow ini 
+
+16
+00:00:41,210 --> 00:00:42,460
+ adalah sebagai berikut. 
+
+17
+00:00:42,460 --> 00:00:46,360
+ Jadi, pertama-tama, mereka memanfaatkan beberapa fakta berbeda. 
+
+18
+00:00:46,360 --> 00:00:54,080
+
+
+19
+00:00:54,080 --> 00:00:58,170
+ Jadi, satu hal yang mereka manfaatkan adalah perangkat lunak sistem itu 
+
+20
+00:00:58,170 --> 00:01:00,191
+ sering ditulis dalam C. 
+
+21
+00:01:00,191 --> 00:01:07,990
+
+
+22
+00:01:07,990 --> 00:01:10,248
+ Dan oleh perangkat lunak sistem, maksud saya hal-hal 
+
+23
+00:01:10,248 --> 00:01:12,346
+ seperti basis data, kompiler, server jaringan, 
+
+24
+00:01:12,346 --> 00:01:15,212
+ hal-hal seperti itu. 
+
+25
+00:01:15,212 --> 00:01:17,670
+ Dan Anda juga dapat memikirkan hal-hal seperti perintah favorit Anda 
+
+26
+00:01:17,670 --> 00:01:18,680
+ kulit. 
+
+27
+00:01:18,680 --> 00:01:21,302
+ Semua jenis hal tersebut biasanya ditulis dalam C. Jadi, 
+
+28
+00:01:21,302 --> 00:01:23,135
+ mengapa hal-hal ini biasanya ditulis dalam C? 
+
+29
+00:01:23,135 --> 00:01:25,610
+ Ya, mereka ditulis di C karena komunitas kami, 
+
+30
+00:01:25,610 --> 00:01:28,085
+ tentu saja terobsesi dengan kecepatan. 
+
+31
+00:01:28,085 --> 00:01:31,070
+ Jadi C seharusnya seperti perakitan tingkat tinggi, 
+
+32
+00:01:31,070 --> 00:01:34,010
+ kami sangat dekat dengan perangkat keras, sehingga sebagai hasilnya, 
+
+33
+00:01:34,010 --> 00:01:36,410
+ semua sistem kritis misi ini 
+
+34
+00:01:36,410 --> 00:01:38,690
+ ditulis dalam bahasa tingkat yang sangat rendah ini. 
+
+35
+00:01:38,690 --> 00:01:42,260
+ Sekarang, masalah dengan hal-hal yang ditulis dalam C 
+
+36
+00:01:42,260 --> 00:01:48,705
+ adalah bahwa C sebenarnya memaparkan Alamat memori mentah. 
+
+37
+00:01:48,705 --> 00:01:57,360
+
+
+38
+00:01:57,360 --> 00:01:57,860
+ Kanan? 
+
+39
+00:01:57,860 --> 00:02:00,880
+ Jadi tidak hanya mengekspos alamat memori mentah, 
+
+40
+00:02:00,880 --> 00:02:04,750
+ tetapi juga tidak melakukan pemeriksaan batas saat program 
+
+41
+00:02:04,750 --> 00:02:06,500
+ memanipulasi alamat mentah itu. 
+
+42
+00:02:06,500 --> 00:02:07,000
+ Kanan? 
+
+43
+00:02:07,000 --> 00:02:09,820
+ Dan seperti yang Anda bayangkan, ini adalah resep untuk bencana. 
+
+44
+00:02:09,820 --> 00:02:10,490
+ BAIK? 
+
+45
+00:02:10,490 --> 00:02:13,260
+ Jadi, sekali lagi, mengapa C tidak memeriksa batasan ini? 
+
+46
+00:02:13,260 --> 00:02:15,830
+ Salah satu alasannya adalah karena perangkat keras tidak melakukan itu. 
+
+47
+00:02:15,830 --> 00:02:17,670
+ Dan orang yang menulis di C biasanya 
+
+48
+00:02:17,670 --> 00:02:20,870
+ ingin jumlah maksimum kecepatan mungkin. 
+
+49
+00:02:20,870 --> 00:02:23,510
+ Alasan lainnya adalah di C, seperti yang akan kita diskusikan nanti, 
+
+50
+00:02:23,510 --> 00:02:25,520
+ sebenarnya bisa sangat sulit untuk ditentukan 
+
+51
+00:02:25,520 --> 00:02:28,050
+ semantik apa artinya memiliki pointer itu 
+
+52
+00:02:28,050 --> 00:02:29,270
+ sebenarnya dalam batas. 
+
+53
+00:02:29,270 --> 00:02:31,720
+ Jadi, dalam beberapa kasus, akan sangat sulit bagi C 
+
+54
+00:02:31,720 --> 00:02:33,490
+ runtime untuk melakukannya secara otomatis. 
+
+55
+00:02:33,490 --> 00:02:35,366
+ Sekarang kita akan membahas beberapa teknik 
+
+56
+00:02:35,366 --> 00:02:36,990
+ yang akan benar-benar mencoba melakukan hal itu 
+
+57
+00:02:36,990 --> 00:02:37,950
+ inferensi otomatis. 
+
+58
+00:02:37,950 --> 00:02:39,700
+ Tapi seperti yang akan kita lihat, tidak ada teknik ini 
+
+59
+00:02:39,700 --> 00:02:42,310
+ sepenuhnya antipeluru. 
+
+60
+00:02:42,310 --> 00:02:48,130
+ Dan serangan ini juga memanfaatkan pengetahuan 
+
+61
+00:02:48,130 --> 00:02:51,025
+ arsitektur x86. 
+
+62
+00:02:51,025 --> 00:02:56,884
+
+
+63
+00:02:56,884 --> 00:02:58,425
+ Dan dengan pengetahuan tentang arsitektur itu 
+
+64
+00:02:58,425 --> 00:03:01,350
+ Maksud saya hal-hal seperti apa arah tumpukan itu tumbuh, 
+
+65
+00:03:01,350 --> 00:03:02,260
+ kanan? 
+
+66
+00:03:02,260 --> 00:03:04,632
+ Apa konvensi pemanggilan untuk fungsi? 
+
+67
+00:03:04,632 --> 00:03:06,590
+ Saat Anda menjalankan fungsi C, apa tumpukannya 
+
+68
+00:03:06,590 --> 00:03:07,407
+ akan terlihat seperti? 
+
+69
+00:03:07,407 --> 00:03:09,240
+ Dan ketika Anda mengalokasikan objek di heap, 
+
+70
+00:03:09,240 --> 00:03:12,380
+ apa struktur alokasi kepala akan terlihat seperti? 
+
+71
+00:03:12,380 --> 00:03:15,040
+ Jadi mari kita lihat contoh sederhana. 
+
+72
+00:03:15,040 --> 00:03:18,850
+ Ini sangat mirip dengan sesuatu yang kamu 
+
+73
+00:03:18,850 --> 00:03:21,250
+ lihat di kuliah terakhir. 
+
+74
+00:03:21,250 --> 00:03:25,240
+ Jadi, kami punya permintaan baca standar di sini. 
+
+75
+00:03:25,240 --> 00:03:28,610
+
+
+76
+00:03:28,610 --> 00:03:30,845
+ Dan kemudian Anda punya buffer. 
+
+77
+00:03:30,845 --> 00:03:31,760
+ Itu disini 
+
+78
+00:03:31,760 --> 00:03:34,980
+
+
+79
+00:03:34,980 --> 00:03:37,382
+ Dan sekarang Anda mungkin sudah melatih otak kadal Anda 
+
+80
+00:03:37,382 --> 00:03:39,590
+ naluri-- kapan pun Anda melihat penyangga, Anda mungkin 
+
+81
+00:03:39,590 --> 00:03:41,506
+ penuh dengan ketakutan-- itu adalah sikap yang benar. 
+
+82
+00:03:41,506 --> 00:03:43,380
+ Jadi kita punya buffer di sini, 
+
+83
+00:03:43,380 --> 00:03:48,000
+ dan kemudian kami mendapat kanonik int i. 
+
+84
+00:03:48,000 --> 00:03:51,540
+ Dan kemudian kita mendapat perintah "mendapat" yang terkenal. 
+
+85
+00:03:51,540 --> 00:03:56,780
+
+
+86
+00:03:56,780 --> 00:03:58,530
+ Dan kemudian Anda punya beberapa barang lain di sini. 
+
+87
+00:03:58,530 --> 00:03:59,029
+ Kanan? 
+
+88
+00:03:59,029 --> 00:04:01,996
+ Jadi seperti yang kita diskusikan dalam kuliah minggu lalu, 
+
+89
+00:04:01,996 --> 00:04:03,120
+ ini bermasalah, kan? 
+
+90
+00:04:03,120 --> 00:04:05,210
+ Karena ini beroperasi di sini sebenarnya tidak 
+
+91
+00:04:05,210 --> 00:04:06,990
+ periksa batas pada buffer. 
+
+92
+00:04:06,990 --> 00:04:11,680
+ Jadi, apa yang bisa terjadi adalah jika pengguna benar-benar memasok 
+
+93
+00:04:11,680 --> 00:04:17,000
+ buffer-- dan benar-benar menempatkan orang itu di sini, misalnya-- 
+
+94
+00:04:17,000 --> 00:04:19,660
+ jika buffer itu berasal dari pengguna 
+
+95
+00:04:19,660 --> 00:04:21,579
+ dan kami menggunakan fungsi tidak aman ini di sini, 
+
+96
+00:04:21,579 --> 00:04:23,910
+ kita sebenarnya dapat melimpahi buffer ini. 
+
+97
+00:04:23,910 --> 00:04:26,800
+ Kami benar-benar dapat menulis ulang hal-hal yang ada di tumpukan. 
+
+98
+00:04:26,800 --> 00:04:29,160
+ Jadi, hanya pengingat apa yang terlihat 
+
+99
+00:04:29,160 --> 00:04:36,960
+ like-- mari kita lihat diagram stack di sini-- jadi 
+
+100
+00:04:36,960 --> 00:04:55,680
+ katakanlah di sini kita punya I. Katakanlah di sini kita punya buf 
+
+101
+00:04:55,680 --> 00:04:56,180
+ Kanan? 
+
+102
+00:04:56,180 --> 00:04:58,250
+ Jadi, kami punya alamat penyangga pertama di sini. 
+
+103
+00:04:58,250 --> 00:04:59,862
+ Kami punya yang terakhir di sini. 
+
+104
+00:04:59,862 --> 00:05:01,320
+ Saya minta maaf atas tulisan tangan saya, saya 
+
+105
+00:05:01,320 --> 00:05:02,610
+ dulu menulis di papan penanda. 
+
+106
+00:05:02,610 --> 00:05:03,568
+ Anda harus berdoa untuk saya. 
+
+107
+00:05:03,568 --> 00:05:11,235
+ Jadi, bagaimanapun, lalu di sini, kita punya nilai yang disimpan 
+
+108
+00:05:11,235 --> 00:05:14,870
+ dari pointer istirahat. 
+
+109
+00:05:14,870 --> 00:05:18,120
+
+
+110
+00:05:18,120 --> 00:05:26,770
+ Kami punya alamat pengirim untuk fungsi di sana. 
+
+111
+00:05:26,770 --> 00:05:32,089
+ Dan kemudian kami punya beberapa barang lain dari frame sebelumnya. 
+
+112
+00:05:32,089 --> 00:05:36,220
+
+
+113
+00:05:36,220 --> 00:05:41,180
+ Jadi, jangan lupa, kami punya penunjuk tumpukan, 
+
+114
+00:05:41,180 --> 00:05:42,020
+ yang pergi ke sana. 
+
+115
+00:05:42,020 --> 00:05:45,150
+
+
+116
+00:05:45,150 --> 00:05:52,540
+ Dan kemudian kita mendapat penunjuk istirahat baru, yang ada di sini. 
+
+117
+00:05:52,540 --> 00:06:02,960
+
+
+118
+00:06:02,960 --> 00:06:04,780
+ Penunjuk tumpukan entri ada di sana, 
+
+119
+00:06:04,780 --> 00:06:06,290
+ dan kemudian di suatu tempat di sini, kami sudah 
+
+120
+00:06:06,290 --> 00:06:09,216
+ mendapat entry entry point. 
+
+121
+00:06:09,216 --> 00:06:14,430
+
+
+122
+00:06:14,430 --> 00:06:14,930
+ Kanan? 
+
+123
+00:06:14,930 --> 00:06:17,790
+ Jadi, hanya sebagai pengingat, cara kerja Stack Overflow 
+
+124
+00:06:17,790 --> 00:06:22,031
+ adalah bahwa pada dasarnya, begini. 
+
+125
+00:06:22,031 --> 00:06:22,530
+ Kanan? 
+
+126
+00:06:22,530 --> 00:06:24,670
+ Jadi, ketika operasi itu dipanggil, 
+
+127
+00:06:24,670 --> 00:06:27,370
+ kita mulai menulis byte ke buf, dan akhirnya 
+
+128
+00:06:27,370 --> 00:06:31,604
+ akan mulai menimpa hal-hal ini yang ada di tumpukan. 
+
+129
+00:06:31,604 --> 00:06:33,145
+ Dan ini pada dasarnya - harus semua 
+
+130
+00:06:33,145 --> 00:06:34,710
+ terlihat sangat akrab bagi Anda. 
+
+131
+00:06:34,710 --> 00:06:36,190
+ Begitu. 
+
+132
+00:06:36,190 --> 00:06:38,830
+ Apa yang dilakukan penyerang untuk mengambil keuntungan dari itu? 
+
+133
+00:06:38,830 --> 00:06:40,720
+ Pada dasarnya persediaan masukan yang panjang. 
+
+134
+00:06:40,720 --> 00:06:45,452
+ Jadi ide utamanya di sini adalah bahwa ini dapat disediakan oleh penyerang. 
+
+135
+00:06:45,452 --> 00:06:48,690
+ Maka, jika alamat kembali ini disediakan penyerang, maka 
+
+136
+00:06:48,690 --> 00:06:50,590
+ pada dasarnya penyerang dapat menentukan 
+
+137
+00:06:50,590 --> 00:06:52,200
+ di mana fungsi ini akan melompat ke 
+
+138
+00:06:52,200 --> 00:06:53,780
+ setelah eksekusi [TIDAK JELAS]. 
+
+139
+00:06:53,780 --> 00:06:57,410
+ Jadi, apa yang bisa dilakukan penyerang setelah benar-benar terjadi 
+
+140
+00:06:57,410 --> 00:06:59,506
+ dapat membajak alamat pengirim itu, 
+
+141
+00:06:59,506 --> 00:07:00,630
+ dan melompat ke mana pun yang diinginkan. 
+
+142
+00:07:00,630 --> 00:07:02,635
+ Yah, pada dasarnya penyerangnya sekarang 
+
+143
+00:07:02,635 --> 00:07:05,495
+ menjalankan kode dengan hak istimewa dari proses tersebut 
+
+144
+00:07:05,495 --> 00:07:07,360
+ itu hanya dibajak, misalnya. 
+
+145
+00:07:07,360 --> 00:07:10,438
+ Jadi, jika proses itu adalah proses prioritas tinggi, 
+
+146
+00:07:10,438 --> 00:07:12,662
+ katakanlah itu menjalankan root, atau admin, apa pun 
+
+147
+00:07:12,662 --> 00:07:15,120
+ mereka menyebut super-user dari sistem operasi favorit Anda, 
+
+148
+00:07:15,120 --> 00:07:18,420
+ lalu sekarang, program itu, yang dikendalikan oleh penyerang, 
+
+149
+00:07:18,420 --> 00:07:22,370
+ dapat melakukan apapun yang diinginkannya dengan menggunakan otoritas 
+
+150
+00:07:22,370 --> 00:07:24,110
+ dari program prioritas tinggi itu. 
+
+151
+00:07:24,110 --> 00:07:26,420
+ Jadi, dapat melakukan berbagai hal, seperti itu mungkin bisa membaca file, 
+
+152
+00:07:26,420 --> 00:07:29,490
+ dapat mengirim spam, katakanlah jika Anda merusak server email. 
+
+153
+00:07:29,490 --> 00:07:33,245
+ Ia bahkan dapat melakukan hal-hal seperti benar-benar mengalahkan firewall, 
+
+154
+00:07:33,245 --> 00:07:35,250
+ benar, karena ide firewall 
+
+155
+00:07:35,250 --> 00:07:36,610
+ adalah bahwa akan ada perbedaan ini 
+
+156
+00:07:36,610 --> 00:07:38,693
+ antara mesin bagus yang berada di belakang firewall 
+
+157
+00:07:38,693 --> 00:07:40,880
+ dan mesin yang buruk di luar firewall. 
+
+158
+00:07:40,880 --> 00:07:43,460
+ Jadi, biasanya mesin berada di dalam firewall, 
+
+159
+00:07:43,460 --> 00:07:45,424
+ mereka memiliki banyak kepercayaan satu sama lain. 
+
+160
+00:07:45,424 --> 00:07:46,965
+ Tetapi jika Anda bisa menumbangkan mesin itu 
+
+161
+00:07:46,965 --> 00:07:50,080
+ sebenarnya di dalam firewall, benar, itu hebat. 
+
+162
+00:07:50,080 --> 00:07:52,880
+ Karena sekarang Anda bisa langsung melewati banyak pemeriksaan itu 
+
+163
+00:07:52,880 --> 00:07:55,590
+ bahwa mesin-mesin itu tidak ada karena mereka berpikir bahwa Anda 
+
+164
+00:07:55,590 --> 00:07:57,420
+ orang yang dipercaya. 
+
+165
+00:07:57,420 --> 00:07:59,239
+ Jadi, satu hal yang mungkin Anda pikirkan, 
+
+166
+00:07:59,239 --> 00:08:01,530
+ atau aku ingat aku memikirkan ini ketika aku masih pelajar, 
+
+167
+00:08:01,530 --> 00:08:02,960
+ adalah, "Oke, baiklah, jadi saya telah menunjukkannya kepada Anda 
+
+168
+00:08:02,960 --> 00:08:05,100
+ bagaimana cara melakukan buffer overflow ini, tetapi mengapa 
+
+169
+00:08:05,100 --> 00:08:06,990
+ bukankah OS menghentikan ini? 
+
+170
+00:08:06,990 --> 00:08:07,490
+ Kanan? 
+
+171
+00:08:07,490 --> 00:08:09,365
+ Bukankah OS seharusnya seperti itu 
+
+172
+00:08:09,365 --> 00:08:11,489
+ semacam duduk-duduk seperti Guardians of the Galaxy 
+
+173
+00:08:11,489 --> 00:08:13,950
+ dan membela semua jenis kejahatan ini terjadi? " 
+
+174
+00:08:13,950 --> 00:08:18,310
+ Hal yang perlu diperhatikan adalah bahwa OS sebenarnya tidak memperhatikan Anda 
+
+175
+00:08:18,310 --> 00:08:19,411
+ sepanjang waktu. 
+
+176
+00:08:19,411 --> 00:08:19,910
+ Kanan? 
+
+177
+00:08:19,910 --> 00:08:21,817
+ Perangkat keras selalu mengawasi. 
+
+178
+00:08:21,817 --> 00:08:24,025
+ Itu adalah hal yang sebenarnya mengambil instruksi, 
+
+179
+00:08:24,025 --> 00:08:26,180
+ dan menguraikannya, dan melakukan hal-hal seperti itu. 
+
+180
+00:08:26,180 --> 00:08:29,430
+ Tetapi untuk pendekatan pertama, apa yang OS lakukan? 
+
+181
+00:08:29,430 --> 00:08:31,790
+ Ini pada dasarnya menyiapkan beberapa hal tabel halaman, 
+
+182
+00:08:31,790 --> 00:08:33,789
+ dan kemudian pada dasarnya memungkinkan Anda, aplikasi, 
+
+183
+00:08:33,789 --> 00:08:36,679
+ jalankan, dan jika Anda meminta sistem operasi untuk layanan-- 
+
+184
+00:08:36,679 --> 00:08:38,840
+ jadi misalnya, Anda ingin mengirim paket jaringan, 
+
+185
+00:08:38,840 --> 00:08:41,634
+ atau Anda ingin melakukan IPC, atau hal-hal seperti itu, 
+
+186
+00:08:41,634 --> 00:08:43,360
+ maka Anda akan memanggil panggilan sistem, 
+
+187
+00:08:43,360 --> 00:08:45,280
+ dan Anda akan benar-benar menjebak ke dalam OS. 
+
+188
+00:08:45,280 --> 00:08:47,020
+ Tapi selain itu, sistem operasi 
+
+189
+00:08:47,020 --> 00:08:49,780
+ tidak melihat setiap instruksi 
+
+190
+00:08:49,780 --> 00:08:52,510
+ bahwa aplikasi Anda sedang dieksekusi. 
+
+191
+00:08:52,510 --> 00:08:56,070
+ Jadi, dengan kata lain, ketika buffer ini meluap, 
+
+192
+00:08:56,070 --> 00:08:57,490
+ tidak seperti sistem operasi 
+
+193
+00:08:57,490 --> 00:09:00,000
+ sedang melihat masing-masing sumbu memori ini untuk tanda-tanda 
+
+194
+00:09:00,000 --> 00:09:00,730
+ itu [TIDAK JELAS]. 
+
+195
+00:09:00,730 --> 00:09:01,230
+ Kanan? 
+
+196
+00:09:01,230 --> 00:09:02,604
+ Semua ruang alamat ini milik 
+
+197
+00:09:02,604 --> 00:09:04,570
+ untuk Anda, ini [tidak terdengar] proses yang benar, 
+
+198
+00:09:04,570 --> 00:09:06,430
+ jadi Anda harus melakukannya dengan apa yang ingin Anda lakukan dengannya, bukan? 
+
+199
+00:09:06,430 --> 00:09:08,971
+ Atau setidaknya ini seluruh sikap C terhadap kehidupan, bukan? 
+
+200
+00:09:08,971 --> 00:09:10,080
+ Hidup cepat mati muda. 
+
+201
+00:09:10,080 --> 00:09:10,600
+ Begitu. 
+
+202
+00:09:10,600 --> 00:09:14,090
+ Itulah mengapa sistem operasi tidak dapat membantu Anda di sana. 
+
+203
+00:09:14,090 --> 00:09:17,590
+ Jadi, nanti di kuliah, kita akan membahas beberapa hal 
+
+204
+00:09:17,590 --> 00:09:21,000
+ yang dapat dilakukan sistem operasi terhadap perangkat keras 
+
+205
+00:09:21,000 --> 00:09:23,560
+ sehingga dapat membantu melindungi terhadap jenis serangan ini. 
+
+206
+00:09:23,560 --> 00:09:25,690
+ Sekali lagi, itu sebenarnya hanya perangkat kerasnya 
+
+207
+00:09:25,690 --> 00:09:27,980
+ itu adalah perantaraan pada setiap hal kecil yang Anda lakukan. 
+
+208
+00:09:27,980 --> 00:09:29,130
+ Jadi, Anda benar-benar dapat memanfaatkannya 
+
+209
+00:09:29,130 --> 00:09:30,650
+ dari beberapa hal itu, misalnya, 
+
+210
+00:09:30,650 --> 00:09:31,730
+ menggunakan tipe-tipe khusus dari proteksi [INAUDIBLE] 
+
+211
+00:09:31,730 --> 00:09:34,229
+ dan hal-hal seperti itu, yang akan kita diskusikan sedikit nanti. 
+
+212
+00:09:34,229 --> 00:09:35,070
+
+
+213
+00:09:35,070 --> 00:09:37,710
+ Itu pada dasarnya gambaran tentang apa 
+
+214
+00:09:37,710 --> 00:09:39,500
+ buffer overflow terlihat seperti. 
+
+215
+00:09:39,500 --> 00:09:41,820
+ Jadi, bagaimana kita akan memperbaiki hal-hal ini? 
+
+216
+00:09:41,820 --> 00:09:49,010
+ Jadi, satu perbaikan untuk menghindari buffer overflow 
+
+217
+00:09:49,010 --> 00:09:54,180
+ adalah dengan hanya menghindari bug dalam kode C Anda. 
+
+218
+00:09:54,180 --> 00:09:59,620
+
+
+219
+00:09:59,620 --> 00:10:02,360
+ Ini memiliki keuntungan bagus karena konstruksi, 
+
+220
+00:10:02,360 --> 00:10:02,580
+ kanan. 
+
+221
+00:10:02,580 --> 00:10:04,371
+ Jika Anda tidak memiliki bug di program Anda, 
+
+222
+00:10:04,371 --> 00:10:06,950
+ ipso facto penyerang tidak dapat mengambil keuntungan dari bug. 
+
+223
+00:10:06,950 --> 00:10:08,490
+ Itu ada di profesor, saya dibayar 
+
+224
+00:10:08,490 --> 00:10:10,240
+ untuk memikirkan sesuatu secara mendalam seperti itu. 
+
+225
+00:10:10,240 --> 00:10:13,180
+ Sekarang, ini tentu saja lebih mudah diucapkan daripada dilakukan. 
+
+226
+00:10:13,180 --> 00:10:13,680
+ Kanan? 
+
+227
+00:10:13,680 --> 00:10:15,220
+ Ada beberapa hal yang sangat sederhana 
+
+228
+00:10:15,220 --> 00:10:17,980
+ yang dapat dilakukan oleh para programmer untuk mempraktekkan kebersihan keamanan yang baik. 
+
+229
+00:10:17,980 --> 00:10:21,300
+ Jadi, misalnya, fungsi seperti ini berfungsi, kan? 
+
+230
+00:10:21,300 --> 00:10:22,800
+ Ini seperti go-tos, ini 
+
+231
+00:10:22,800 --> 00:10:24,381
+ sekarang dikenal sebagai ide buruk. 
+
+232
+00:10:24,381 --> 00:10:24,880
+ Kanan? 
+
+233
+00:10:24,880 --> 00:10:27,350
+ Jadi, ketika Anda mengkompilasi kode Anda, dan Anda termasuk fungsi 
+
+234
+00:10:27,350 --> 00:10:30,290
+ seperti ini-- jika Anda menggunakan kompiler modern, GCC, 
+
+235
+00:10:30,290 --> 00:10:33,050
+ Visual Studio, apa pun, itu benar-benar akan mengeluh tentang itu. 
+
+236
+00:10:33,050 --> 00:10:35,510
+ Itu akan mengatakan, hei, Anda salah satu dari fungsi tidak aman ini. 
+
+237
+00:10:35,510 --> 00:10:37,526
+ Pertimbangkan untuk menggunakan [? FGADS?], Atau menggunakan 
+
+238
+00:10:37,526 --> 00:10:39,590
+ sebuah versi [INAUDIBLE] yang sebenarnya 
+
+239
+00:10:39,590 --> 00:10:41,270
+ dapat melacak batas-batas benda. 
+
+240
+00:10:41,270 --> 00:10:43,800
+ Jadi, itulah satu hal sederhana yang dapat dilakukan oleh para programmer. 
+
+241
+00:10:43,800 --> 00:10:45,640
+ Tetapi perhatikan bahwa banyak aplikasi 
+
+242
+00:10:45,640 --> 00:10:48,319
+ sebenarnya memanipulasi buffer tanpa perlu 
+
+243
+00:10:48,319 --> 00:10:49,610
+ memanggil salah satu fungsi ini. 
+
+244
+00:10:49,610 --> 00:10:50,110
+ Kanan? 
+
+245
+00:10:50,110 --> 00:10:52,540
+ Ini sangat umum di server jaringan, hal-hal seperti itu. 
+
+246
+00:10:52,540 --> 00:10:54,360
+ Mereka akan mendefinisikan rutinitas parsing kustom mereka sendiri, 
+
+247
+00:10:54,360 --> 00:10:55,565
+ kemudian pastikan bahwa benda-benda tersebut diekstraksi 
+
+248
+00:10:55,565 --> 00:10:57,110
+ dari buffer dengan cara yang mereka inginkan. 
+
+249
+00:10:57,110 --> 00:10:59,480
+ Jadi, hanya membatasi diri pada hal-hal semacam ini 
+
+250
+00:10:59,480 --> 00:11:03,350
+ tidak akan menyelesaikan masalah sepenuhnya. 
+
+251
+00:11:03,350 --> 00:11:07,340
+ Jadi, hal lain yang membuat pendekatan ini menjadi sulit 
+
+252
+00:11:07,340 --> 00:11:12,114
+ adalah bahwa tidak selalu jelas apa bug dalam program C. 
+
+253
+00:11:12,114 --> 00:11:14,655
+ Jadi, jika Anda pernah bekerja pada sistem skala yang sangat besar itu 
+
+254
+00:11:14,655 --> 00:11:17,030
+ ditulis dalam bahasa C, Anda akan tahu bahwa itu bisa rumit 
+
+255
+00:11:17,030 --> 00:11:20,060
+ jika Anda punya beberapa definisi fungsi yang dibutuhkan saat itu 
+
+256
+00:11:20,060 --> 00:11:22,080
+ 18 membatalkan pointer bintang. 
+
+257
+00:11:22,080 --> 00:11:24,620
+ Maksud saya, hanya Zeus yang tahu apa arti semua itu, bukan? 
+
+258
+00:11:24,620 --> 00:11:27,490
+ Dan itu jauh lebih sulit dalam bahasa seperti C, 
+
+259
+00:11:27,490 --> 00:11:30,097
+ yang memiliki ketikan lemah dan hal-hal seperti itu, 
+
+260
+00:11:30,097 --> 00:11:31,680
+ untuk benar-benar mengerti sebagai programmer 
+
+261
+00:11:31,680 --> 00:11:33,006
+ apa artinya memiliki bug, dan apa 
+
+262
+00:11:33,006 --> 00:11:34,320
+ itu berarti tidak memiliki bug. 
+
+263
+00:11:34,320 --> 00:11:34,819
+ BAIK? 
+
+264
+00:11:34,819 --> 00:11:36,990
+ Jadi, secara umum, salah satu tema utama 
+
+265
+00:11:36,990 --> 00:11:39,920
+ yang akan Anda lihat di kelas ini adalah bahwa C mungkin 
+
+266
+00:11:39,920 --> 00:11:42,498
+ menelurkan iblis, kan? 
+
+267
+00:11:42,498 --> 00:11:44,710
+ Dan kami menggunakannya karena, sekali lagi, 
+
+268
+00:11:44,710 --> 00:11:46,630
+ kita biasanya ingin menjadi cepat, bukan? 
+
+269
+00:11:46,630 --> 00:11:48,430
+ Tetapi karena perangkat keras menjadi lebih cepat dan seperti kita 
+
+270
+00:11:48,430 --> 00:11:51,780
+ dapatkan bahasa yang lebih banyak dan lebih baik untuk menulis kode sistem berskala besar, 
+
+271
+00:11:51,780 --> 00:11:54,090
+ kita akan melihat bahwa mungkin itu tidak selalu 
+
+272
+00:11:54,090 --> 00:11:56,670
+ masuk akal untuk menulis barang-barang Anda di C. Bahkan 
+
+273
+00:11:56,670 --> 00:11:58,300
+ jika Anda pikir itu harus cepat. 
+
+274
+00:11:58,300 --> 00:12:01,400
+ Jadi, kita akan membahas beberapa hal nanti dan nanti kuliah. 
+
+275
+00:12:01,400 --> 00:12:03,549
+ Jadi, itulah salah satu pendekatan, menghindari bug 
+
+276
+00:12:03,549 --> 00:12:04,340
+ di tempat pertama. 
+
+277
+00:12:04,340 --> 00:12:15,170
+ Jadi, pendekatan lain - adalah membangun alat itu 
+
+278
+00:12:15,170 --> 00:12:18,090
+ izinkan programmer untuk menemukan bug. 
+
+279
+00:12:18,090 --> 00:12:26,670
+
+
+280
+00:12:26,670 --> 00:12:29,530
+ Dan contoh ini adalah sesuatu 
+
+281
+00:12:29,530 --> 00:12:30,926
+ itu disebut analisis statis. 
+
+282
+00:12:30,926 --> 00:12:33,175
+ Sekarang kita akan berbicara sedikit lebih banyak tentang analisis statis 
+
+283
+00:12:33,175 --> 00:12:34,805
+ di kuliah nanti, tapi cukuplah 
+
+284
+00:12:34,805 --> 00:12:38,400
+ untuk mengatakan bahwa analisis statis adalah cara menganalisis sumber 
+
+285
+00:12:38,400 --> 00:12:40,640
+ kode program Anda bahkan sebelum berjalan 
+
+286
+00:12:40,640 --> 00:12:42,530
+ dan mencari masalah potensial. 
+
+287
+00:12:42,530 --> 00:12:46,550
+ Jadi, bayangkan Anda memiliki fungsi seperti ini. 
+
+288
+00:12:46,550 --> 00:12:50,342
+ Jadi, fungsi foo [tidak terdengar], 
+
+289
+00:12:50,342 --> 00:12:52,640
+ dibutuhkan dalam penunjuk. 
+
+290
+00:12:52,640 --> 00:12:56,420
+
+
+291
+00:12:56,420 --> 00:12:59,570
+ Katakanlah ini mendeklarasikan nilai offset integer. 
+
+292
+00:12:59,570 --> 00:13:02,810
+
+
+293
+00:13:02,810 --> 00:13:10,110
+ Ini menyatakan pointer lain dan menambahkan offset 
+
+294
+00:13:10,110 --> 00:13:11,540
+ ke pointer itu. 
+
+295
+00:13:11,540 --> 00:13:13,620
+ Sekarang, bahkan pada saat ini dalam kode, 
+
+296
+00:13:13,620 --> 00:13:15,650
+ benar, analisis statis dapat memberi tahu Anda 
+
+297
+00:13:15,650 --> 00:13:18,110
+ bahwa variabel offset ini tidak diinisialisasi. 
+
+298
+00:13:18,110 --> 00:13:18,610
+ Kanan? 
+
+299
+00:13:18,610 --> 00:13:20,700
+ Jadi, pada dasarnya Anda dapat melakukan hal-hal seperti mengatakan, 
+
+300
+00:13:20,700 --> 00:13:22,375
+ apakah ada cara, apakah ada kontrol 
+
+301
+00:13:22,375 --> 00:13:26,150
+ mengambang melalui program ini yang dapat mengimbangi offset 
+
+302
+00:13:26,150 --> 00:13:28,410
+ diinisialisasi sebelum benar-benar digunakan 
+
+303
+00:13:28,410 --> 00:13:29,660
+ ini dalam perhitungan ini di sini. 
+
+304
+00:13:29,660 --> 00:13:32,540
+ Sekarang, dalam contoh ini sangat mudah untuk melihat jawabannya tidak. 
+
+305
+00:13:32,540 --> 00:13:32,770
+ Kanan? 
+
+306
+00:13:32,770 --> 00:13:34,960
+ Anda dapat membayangkan bahwa jika ada lebih banyak cabang, atau benda 
+
+307
+00:13:34,960 --> 00:13:36,630
+ seperti ini, akan lebih sulit untuk diceritakan. 
+
+308
+00:13:36,630 --> 00:13:39,130
+ Tapi satu hal yang dapat dikatakan alat analisis statis, 
+
+309
+00:13:39,130 --> 00:13:41,090
+ dan sebenarnya, satu hal yang [? popular?] compiler akan 
+
+310
+00:13:41,090 --> 00:13:43,610
+ memberitahu Anda, apakah Anda akan mengkompilasi ini, dan itu akan mengatakan, hei sobat, 
+
+311
+00:13:43,610 --> 00:13:45,190
+ ini belum diinisialisasi. 
+
+312
+00:13:45,190 --> 00:13:46,940
+ Apakah Anda yakin, apakah ini yang ingin Anda lakukan? 
+
+313
+00:13:46,940 --> 00:13:49,330
+ Jadi, itu adalah contoh analisis statis yang sangat sederhana. 
+
+314
+00:13:49,330 --> 00:13:53,330
+ Contoh lain dari apa yang dapat Anda lakukan adalah, katakanlah setelah ini, 
+
+315
+00:13:53,330 --> 00:13:54,960
+ kami memiliki kondisi cabang di sini. 
+
+316
+00:13:54,960 --> 00:14:02,260
+
+
+317
+00:14:02,260 --> 00:14:02,760
+ Kanan? 
+
+318
+00:14:02,760 --> 00:14:06,240
+ Jadi, Anda katakan, jika offset lebih besar dari delapan, lalu 
+
+319
+00:14:06,240 --> 00:14:12,470
+ kami akan memanggil beberapa bilah fungsi, dan melewati offset. 
+
+320
+00:14:12,470 --> 00:14:14,090
+ Sekarang, satu hal yang dapat Anda perhatikan tentang ini 
+
+321
+00:14:14,090 --> 00:14:17,620
+ adalah bahwa kondisi cabang ini benar-benar memberi tahu kita 
+
+322
+00:14:17,620 --> 00:14:20,160
+ sesuatu tentang apa nilai offset. 
+
+323
+00:14:20,160 --> 00:14:20,730
+ Kanan? 
+
+324
+00:14:20,730 --> 00:14:22,646
+ Mengabaikan fakta bahwa itu tidak diinisialisasi, 
+
+325
+00:14:22,646 --> 00:14:24,496
+ kita tahu bahwa begitu kita sampai di sini, 
+
+326
+00:14:24,496 --> 00:14:26,870
+ kita tahu offset sebenarnya harus lebih besar dari delapan. 
+
+327
+00:14:26,870 --> 00:14:28,430
+ Jadi, dalam beberapa kasus, apa yang bisa kita lakukan 
+
+328
+00:14:28,430 --> 00:14:31,840
+ sebenarnya menyebarkan kendala itu, gagasan itu 
+
+329
+00:14:31,840 --> 00:14:33,830
+ bahwa offset harus lebih besar dari delapan, 
+
+330
+00:14:33,830 --> 00:14:35,340
+ ke dalam analisis bar kami. 
+
+331
+00:14:35,340 --> 00:14:35,840
+ Kanan? 
+
+332
+00:14:35,840 --> 00:14:37,760
+ Jadi, ketika kita mulai menganalisis bar statis, 
+
+333
+00:14:37,760 --> 00:14:40,260
+ kami tahu bahwa penyeimbangan hanya dapat mengambil nilai tertentu. 
+
+334
+00:14:40,260 --> 00:14:42,510
+ Jadi, sekali lagi, ini adalah pengenalan tingkat tinggi 
+
+335
+00:14:42,510 --> 00:14:44,051
+ ke analisis statis, dan kami akan diskusikan 
+
+336
+00:14:44,051 --> 00:14:45,190
+ lebih banyak di kuliah nanti. 
+
+337
+00:14:45,190 --> 00:14:46,860
+ Tetapi ini adalah intuisi dasar bagaimana caranya 
+
+338
+00:14:46,860 --> 00:14:49,420
+ kami mungkin bisa mendeteksi beberapa jenis bug 
+
+339
+00:14:49,420 --> 00:14:51,180
+ tanpa mengeksekusi kode Anda. 
+
+340
+00:14:51,180 --> 00:14:52,430
+ Jadi, apakah itu semua masuk akal? 
+
+341
+00:14:52,430 --> 00:14:55,184
+
+
+342
+00:14:55,184 --> 00:14:57,560
+ Jadi, hal lain yang dapat Anda pikirkan juga 
+
+343
+00:14:57,560 --> 00:15:02,250
+ adalah apa yang mereka sebut program fuzzing. 
+
+344
+00:15:02,250 --> 00:15:04,380
+ Jadi, ide di balik program fuzzing 
+
+345
+00:15:04,380 --> 00:15:07,660
+ adalah bahwa pada dasarnya Anda mengambil semua fungsi dalam kode Anda, 
+
+346
+00:15:07,660 --> 00:15:10,630
+ dan kemudian pada dasarnya membuang nilai acak untuk input 
+
+347
+00:15:10,630 --> 00:15:12,175
+ untuk fungsi-fungsi itu. 
+
+348
+00:15:12,175 --> 00:15:15,010
+ Jadi idenya adalah Anda ingin memiliki kode yang tinggi 
+
+349
+00:15:15,010 --> 00:15:17,450
+ cakupan untuk semua tes Anda. 
+
+350
+00:15:17,450 --> 00:15:19,480
+ Jadi, jika Anda keluar di dunia nyata, 
+
+351
+00:15:19,480 --> 00:15:21,160
+ biasanya ketika Anda memeriksa tes unit, 
+
+352
+00:15:21,160 --> 00:15:24,486
+ Anda tidak bisa hanya melakukan hal-hal seperti, saya mencoba nilai dua, empat, delapan, 
+
+353
+00:15:24,486 --> 00:15:26,170
+ dan 15, karena 15 adalah angka ganjil, 
+
+354
+00:15:26,170 --> 00:15:28,150
+ jadi saya mungkin menguji semua cabang dengan benar. 
+
+355
+00:15:28,150 --> 00:15:29,251
+ Apa yang sebenarnya harus Anda lakukan adalah Anda 
+
+356
+00:15:29,251 --> 00:15:31,720
+ harus melihat hal-hal seperti, seperti saya katakan berapa banyak cabang 
+
+357
+00:15:31,720 --> 00:15:35,238
+ dalam keseluruhan program benar-benar tersentuh oleh tes Anda 
+
+358
+00:15:35,238 --> 00:15:36,125
+ kode, kan? 
+
+359
+00:15:36,125 --> 00:15:38,000
+ Karena itu biasanya tempat bug bersembunyi. 
+
+360
+00:15:38,000 --> 00:15:39,870
+ Para programmer tidak memikirkan tentang kasus-kasus pojok, 
+
+361
+00:15:39,870 --> 00:15:42,430
+ dan sebagai hasilnya, mereka memiliki beberapa tes unit yang lulus. 
+
+362
+00:15:42,430 --> 00:15:44,310
+ Mereka bahkan memiliki tes lebih besar yang lolos. 
+
+363
+00:15:44,310 --> 00:15:46,268
+ Tapi mereka sebenarnya tidak menyematkan semua sudut 
+
+364
+00:15:46,268 --> 00:15:47,170
+ kasus dalam program. 
+
+365
+00:15:47,170 --> 00:15:50,200
+ Jadi, analisis statis benar-benar dapat membantu dengan fuzzing ini di sini. 
+
+366
+00:15:50,200 --> 00:15:52,960
+ Sekali lagi, menggunakan hal-hal seperti gagasan kendala ini. 
+
+367
+00:15:52,960 --> 00:15:55,120
+ Jadi, misalnya, dalam program ini di sini, kami 
+
+368
+00:15:55,120 --> 00:15:58,260
+ memiliki kondisi cabang ini di sini yang ditentukan offset 
+
+369
+00:15:58,260 --> 00:15:59,400
+ menjadi lebih besar dari delapan. 
+
+370
+00:15:59,400 --> 00:16:01,402
+ Jadi, kita bisa tahu apa yang diimbangi secara statis. 
+
+371
+00:16:01,402 --> 00:16:03,860
+ Jadi, kami dapat memastikan bahwa jika kami secara otomatis menghasilkan 
+
+372
+00:16:03,860 --> 00:16:08,194
+ input fuzzed, kita dapat memastikan bahwa salah satu dari input tersebut 
+
+373
+00:16:08,194 --> 00:16:10,110
+ mudah-mudahan akan memastikan bahwa, entah bagaimana, mengimbangi 
+
+374
+00:16:10,110 --> 00:16:12,693
+ kurang dari delapan, satu akan memastikan bahwa offset sama dengan delapan, 
+
+375
+00:16:12,693 --> 00:16:15,290
+ satu akan memastikan itu lebih besar dari delapan. 
+
+376
+00:16:15,290 --> 00:16:18,500
+ Jadi, apakah itu semua masuk akal? 
+
+377
+00:16:18,500 --> 00:16:19,000
+ Keren. 
+
+378
+00:16:19,000 --> 00:16:22,280
+ Jadi, itulah ide dasar di balik gagasan alat-alat bangunan 
+
+379
+00:16:22,280 --> 00:16:24,100
+ untuk membantu pemrogram menemukan bug. 
+
+380
+00:16:24,100 --> 00:16:29,030
+ Jadi, hal yang menyenangkan adalah bahwa analisis parsial pun bisa 
+
+381
+00:16:29,030 --> 00:16:31,073
+ menjadi sangat, sangat berguna, terutama saat 
+
+382
+00:16:31,073 --> 00:16:32,975
+ Anda berurusan dengan C. Banyak alat-alat ini 
+
+383
+00:16:32,975 --> 00:16:35,350
+ yang akan kita diskusikan, untuk mencegah hal-hal seperti penyangga 
+
+384
+00:16:35,350 --> 00:16:37,210
+ variabel meluap atau diinisialisasi, 
+
+385
+00:16:37,210 --> 00:16:38,910
+ mereka tidak bisa menangkap semua masalah. 
+
+386
+00:16:38,910 --> 00:16:39,410
+ Kanan? 
+
+387
+00:16:39,410 --> 00:16:42,040
+ Tetapi mereka benar-benar dapat memberi kita kemajuan ke depan menuju pembuatan 
+
+388
+00:16:42,040 --> 00:16:44,065
+ program-program ini lebih aman. 
+
+389
+00:16:44,065 --> 00:16:46,120
+ Sekarang, tentu saja, kerugian dari hal-hal ini 
+
+390
+00:16:46,120 --> 00:16:48,510
+ adalah mereka tidak lengkap. 
+
+391
+00:16:48,510 --> 00:16:50,280
+ Kemajuan maju bukanlah kemajuan yang lengkap. 
+
+392
+00:16:50,280 --> 00:16:52,443
+ Dan itu masih merupakan area yang sangat aktif 
+
+393
+00:16:52,443 --> 00:16:56,147
+ penelitian tentang bagaimana Anda mempertahankan diri dari eksploitasi keamanan di C 
+
+394
+00:16:56,147 --> 00:16:57,480
+ dan hanya dalam program pada umumnya. 
+
+395
+00:16:57,480 --> 00:17:00,440
+
+
+396
+00:17:00,440 --> 00:17:03,649
+ Jadi, itu adalah dua pendekatan untuk menangani pertahanan 
+
+397
+00:17:03,649 --> 00:17:05,210
+ terhadap buffer overflow. 
+
+398
+00:17:05,210 --> 00:17:07,810
+ Sebenarnya ada beberapa pendekatan lain. 
+
+399
+00:17:07,810 --> 00:17:13,410
+ Jadi, pendekatan ketiga yang mungkin Anda pikirkan untuk digunakan 
+
+400
+00:17:13,410 --> 00:17:14,606
+ adalah penggunaan [TIDAK JELAS]. 
+
+401
+00:17:14,606 --> 00:17:21,672
+
+
+402
+00:17:21,672 --> 00:17:36,524
+ Dan contoh-contoh ini adalah hal-hal seperti Python, Java, C # - 
+
+403
+00:17:36,524 --> 00:17:38,940
+ Saya tidak akan memasang Pearl di sana karena orang yang menggunakan 
+
+404
+00:17:38,940 --> 00:17:39,815
+ Mutiara adalah orang jahat. 
+
+405
+00:17:39,815 --> 00:17:43,700
+ Jadi Anda bisa menggunakan bahasa yang aman dari memori seperti itu. 
+
+406
+00:17:43,700 --> 00:17:46,755
+ Dan ini sampai taraf tertentu sepertinya yang paling jelas 
+
+407
+00:17:46,755 --> 00:17:48,300
+ hal yang bisa kamu lakukan. 
+
+408
+00:17:48,300 --> 00:17:51,060
+ Saya baru saja memberi tahu Anda di sana bahwa pada dasarnya C 
+
+409
+00:17:51,060 --> 00:17:54,090
+ adalah kode assembly tingkat tinggi, dan mengekspos pointer mentah 
+
+410
+00:17:54,090 --> 00:17:56,690
+ dan melakukan semua hal yang tidak Anda inginkan, 
+
+411
+00:17:56,690 --> 00:17:57,590
+ dan itu tidak melakukan hal-hal yang Anda inginkan 
+
+412
+00:17:57,590 --> 00:17:58,729
+ untuk dilakukan, seperti [TIDAK JELAS]. 
+
+413
+00:17:58,729 --> 00:18:01,020
+ Jadi, mengapa tidak menggunakan salah satu bahasa tingkat tinggi ini? 
+
+414
+00:18:01,020 --> 00:18:03,340
+ Ada beberapa alasan untuk itu. 
+
+415
+00:18:03,340 --> 00:18:09,890
+ Jadi, pertama-tama, sebenarnya ada banyak kode warisan 
+
+416
+00:18:09,890 --> 00:18:11,360
+ itu di luar sana. 
+
+417
+00:18:11,360 --> 00:18:14,581
+
+
+418
+00:18:14,581 --> 00:18:15,080
+ Kanan? 
+
+419
+00:18:15,080 --> 00:18:17,310
+ Jadi, semuanya baik-baik saja dan keren jika Anda ingin keluar dan mulai 
+
+420
+00:18:17,310 --> 00:18:18,905
+ proyek baru Anda dan Anda ingin menulisnya 
+
+421
+00:18:18,905 --> 00:18:20,488
+ dalam salah satu bahasa yang benar-benar aman ini. 
+
+422
+00:18:20,488 --> 00:18:22,781
+ Tetapi bagaimana jika Anda telah diberi biner besar ini 
+
+423
+00:18:22,781 --> 00:18:24,572
+ atau distribusi kode sumber besar ini 
+
+424
+00:18:24,572 --> 00:18:27,415
+ ditulis dalam bahasa C, telah dipertahankan selama 10, 15 tahun, 
+
+425
+00:18:27,415 --> 00:18:28,915
+ sudah proyek generasi ini, 
+
+426
+00:18:28,915 --> 00:18:31,240
+ Maksud saya anak-anak anak-anak kita akan mengerjakannya. 
+
+427
+00:18:31,240 --> 00:18:33,100
+ Anda tidak bisa hanya mengatakan, saya hanya akan menulis semuanya di C # 
+
+428
+00:18:33,100 --> 00:18:34,431
+ dan mengubah dunia. 
+
+429
+00:18:34,431 --> 00:18:34,930
+ Kanan? 
+
+430
+00:18:34,930 --> 00:18:37,160
+ Dan ini bukan hanya masalah di C, misalnya. 
+
+431
+00:18:37,160 --> 00:18:38,662
+ Sebenarnya ada sistem yang Anda 
+
+432
+00:18:38,662 --> 00:18:41,110
+ gunakan itu Anda harus takut, karena mereka sebenarnya 
+
+433
+00:18:41,110 --> 00:18:43,570
+ gunakan kode Fortran dan COBOL. 
+
+434
+00:18:43,570 --> 00:18:44,170
+ Apa? 
+
+435
+00:18:44,170 --> 00:18:46,260
+ Itu barang dari Perang Sipil. 
+
+436
+00:18:46,260 --> 00:18:48,169
+ Jadi, mengapa itu terjadi? 
+
+437
+00:18:48,169 --> 00:18:49,710
+ Sekali lagi, alasan mengapa itu terjadi 
+
+438
+00:18:49,710 --> 00:18:52,024
+ adalah karena sebagai insinyur, kami agak ingin berpikir, 
+
+439
+00:18:52,024 --> 00:18:54,565
+ oh, kita bisa membangun semuanya sendiri, itu akan luar biasa, 
+
+440
+00:18:54,565 --> 00:18:55,714
+ itu akan menjadi seperti yang aku inginkan, 
+
+441
+00:18:55,714 --> 00:18:57,740
+ Saya akan memanggil variabel-variabel saya hal-hal yang saya inginkan. 
+
+442
+00:18:57,740 --> 00:18:59,020
+ Ketika di dunia, itu tidak terjadi. 
+
+443
+00:18:59,020 --> 00:18:59,520
+ Kanan? 
+
+444
+00:18:59,520 --> 00:19:02,195
+ Anda muncul di pekerjaan Anda, dan Anda memiliki hal ini yang ada, 
+
+445
+00:19:02,195 --> 00:19:04,712
+ dan Anda melihat basis kode, dan Anda berkata, baik, 
+
+446
+00:19:04,712 --> 00:19:05,670
+ kenapa tidak melakukan ini? 
+
+447
+00:19:05,670 --> 00:19:07,280
+ Dan kemudian Anda berkata, dengarkan. 
+
+448
+00:19:07,280 --> 00:19:08,942
+ Kami akan berurusan dengan itu di V2. 
+
+449
+00:19:08,942 --> 00:19:10,490
+ Tapi untuk sekarang, kamu harus membuat sesuatu 
+
+450
+00:19:10,490 --> 00:19:13,266
+ bekerja karena pelanggan mengambil uang mereka. 
+
+451
+00:19:13,266 --> 00:19:15,782
+ Jadi, pada dasarnya ada masalah besar ini kode warisan di sini, 
+
+452
+00:19:15,782 --> 00:19:17,140
+ dan bagaimana kita menghadapinya? 
+
+453
+00:19:17,140 --> 00:19:20,382
+ Dan seperti yang akan Anda lihat dengan sistem batas longgar, 
+
+454
+00:19:20,382 --> 00:19:22,340
+ Salah satu kelebihannya adalah itu sebenarnya 
+
+455
+00:19:22,340 --> 00:19:25,484
+ antar-beroperasi dengan baik dengan kode warisan ini. 
+
+456
+00:19:25,484 --> 00:19:27,525
+ Jadi, bagaimanapun, ini adalah salah satu alasan mengapa Anda tidak bisa begitu saja 
+
+457
+00:19:27,525 --> 00:19:29,775
+ selalu membuat semua masalah buffer overflow ini pergi 
+
+458
+00:19:29,775 --> 00:19:33,360
+ pergi dengan menggunakan salah satu bahasa yang aman dari memori ini. 
+
+459
+00:19:33,360 --> 00:19:39,420
+ Jadi, tantangan lain adalah bagaimana jika Anda membutuhkannya 
+
+460
+00:19:39,420 --> 00:19:42,794
+ akses tingkat rendah ke perangkat keras? 
+
+461
+00:19:42,794 --> 00:19:48,832
+
+
+462
+00:19:48,832 --> 00:19:51,290
+ Ini mungkin terjadi jika Anda menulis sesuatu seperti perangkat 
+
+463
+00:19:51,290 --> 00:19:53,060
+ driver atau sesuatu seperti itu. 
+
+464
+00:19:53,060 --> 00:19:56,420
+ Jadi, dalam hal ini, Anda benar-benar membutuhkan 
+
+465
+00:19:56,420 --> 00:19:58,146
+ bahwa manfaat yang diberikan C Anda 
+
+466
+00:19:58,146 --> 00:19:59,520
+ dalam hal bisa melihat 
+
+467
+00:19:59,520 --> 00:20:01,240
+ mendaftar dan benar-benar mengerti 
+
+468
+00:20:01,240 --> 00:20:04,350
+ sedikit [tidak terdengar] dan hal-hal seperti itu. 
+
+469
+00:20:04,350 --> 00:20:07,840
+ Ada hal lain juga, yang selalu dibicarakan orang 
+
+470
+00:20:07,840 --> 00:20:12,390
+ dan yang sudah saya singgung sebelumnya, tapi ini kinerja. 
+
+471
+00:20:12,390 --> 00:20:12,890
+ Kanan? 
+
+472
+00:20:12,890 --> 00:20:14,560
+ Jadi, jika Anda peduli dengan kinerja, 
+
+473
+00:20:14,560 --> 00:20:16,060
+ biasanya hal yang Anda diberitahu 
+
+474
+00:20:16,060 --> 00:20:17,644
+ Anda harus menulis di C, jika tidak 
+
+475
+00:20:17,644 --> 00:20:19,268
+ Anda hanya akan menjadi sangat lambat, Anda 
+
+476
+00:20:19,268 --> 00:20:21,480
+ akan ditertawakan dari akademi kode atau apa pun. 
+
+477
+00:20:21,480 --> 00:20:24,930
+ Sekarang, ini semakin sedikit masalah. 
+
+478
+00:20:24,930 --> 00:20:26,110
+ Seperti barang yang sempurna. 
+
+479
+00:20:26,110 --> 00:20:28,320
+ Karena orang benar-benar menjadi sangat baik 
+
+480
+00:20:28,320 --> 00:20:30,390
+ dengan melakukan hal-hal seperti membuat kompiler yang lebih baik 
+
+481
+00:20:30,390 --> 00:20:32,530
+ yang memiliki semua jenis pengoptimalan yang kuat. 
+
+482
+00:20:32,530 --> 00:20:34,180
+ Dan juga, ada hal-hal yang disebut ini 
+
+483
+00:20:34,180 --> 00:20:36,440
+ Gits yang sebenarnya sangat berkurang 
+
+484
+00:20:36,440 --> 00:20:38,960
+ biaya menggunakan bahasa yang aman dari memori ini. 
+
+485
+00:20:38,960 --> 00:20:41,110
+ Jadi, sudahkah kalian mendengar tentang Gits sebelumnya? 
+
+486
+00:20:41,110 --> 00:20:43,526
+ Jadi, saya akan memberi Anda pengantar yang sangat singkat tentang apa itu. 
+
+487
+00:20:43,526 --> 00:20:46,740
+ Idenya adalah bahwa, pikirkan tentang bahasa seperti Java, 
+
+488
+00:20:46,740 --> 00:20:47,760
+ atau JavaScript. 
+
+489
+00:20:47,760 --> 00:20:50,360
+ Ini tingkat yang sangat tinggi, sangat dinamis, 
+
+490
+00:20:50,360 --> 00:20:54,740
+ Benar, ini memiliki manajemen panas otomatis, hal-hal seperti itu. 
+
+491
+00:20:54,740 --> 00:20:58,270
+ Jadi, biasanya, ketika bahasa-bahasa ini pertama kali keluar, 
+
+492
+00:20:58,270 --> 00:20:59,780
+ mereka selalu ditafsirkan. 
+
+493
+00:20:59,780 --> 00:21:00,280
+ Kanan? 
+
+494
+00:21:00,280 --> 00:21:02,196
+ Dan dengan menafsirkan saya maksud mereka sebenarnya tidak 
+
+495
+00:21:02,196 --> 00:21:04,310
+ jalankan instruksi x86 mentah. 
+
+496
+00:21:04,310 --> 00:21:06,410
+ Sebaliknya, bahasa-bahasa ini dikompilasi 
+
+497
+00:21:06,410 --> 00:21:07,890
+ untuk beberapa jenis bentuk peralihan. 
+
+498
+00:21:07,890 --> 00:21:11,370
+ Anda mungkin pernah mendengar hal-hal seperti JVM, Java Virtual 
+
+499
+00:21:11,370 --> 00:21:13,370
+ Kode byte mesin, hal-hal seperti itu. 
+
+500
+00:21:13,370 --> 00:21:13,870
+ Kanan? 
+
+501
+00:21:13,870 --> 00:21:16,230
+ Anda pada dasarnya memiliki program yang ada dalam satu lingkaran 
+
+502
+00:21:16,230 --> 00:21:18,450
+ dan mengambil kode byte ini, dan pada dasarnya 
+
+503
+00:21:18,450 --> 00:21:21,132
+ melaksanakan instruksi tingkat tinggi itu 
+
+504
+00:21:21,132 --> 00:21:22,750
+ dikodekan dalam kode byte itu. 
+
+505
+00:21:22,750 --> 00:21:24,971
+ Jadi, misalnya, beberapa kode byte JVM 
+
+506
+00:21:24,971 --> 00:21:26,720
+ berurusan dengan hal-hal seperti mendorong dan muncul 
+
+507
+00:21:26,720 --> 00:21:28,070
+ hal-hal di atas tumpukan. 
+
+508
+00:21:28,070 --> 00:21:31,150
+ Jadi, Anda memiliki program yang akan melalui satu lingkaran, 
+
+509
+00:21:31,150 --> 00:21:34,350
+ mengoperasikan tumpukan itu, dan menyimulasikan operasi tersebut. 
+
+510
+00:21:34,350 --> 00:21:34,850
+ BAIK. 
+
+511
+00:21:34,850 --> 00:21:36,786
+ Jadi, semua itu tampak bagus dan keren, tapi sekali 
+
+512
+00:21:36,786 --> 00:21:38,910
+ lagi, semua kecepatan aneh di luar sana seperti, 
+
+513
+00:21:38,910 --> 00:21:39,950
+ bagaimana dengan perf? 
+
+514
+00:21:39,950 --> 00:21:40,870
+ Ini terlalu lambat. 
+
+515
+00:21:40,870 --> 00:21:42,490
+ Anda punya semacam interpreter itu 
+
+516
+00:21:42,490 --> 00:21:44,190
+ duduk di lingkaran itu, dan mendapatkan 
+
+517
+00:21:44,190 --> 00:21:46,090
+ di jalan kinerja logam telanjang kami. 
+
+518
+00:21:46,090 --> 00:21:50,120
+ Jadi, apa yang orang mulai lakukan sebenarnya adalah mengambil level tinggi ini 
+
+519
+00:21:50,120 --> 00:21:52,210
+ bahasa penafsir dan dinamis 
+
+520
+00:21:52,210 --> 00:21:55,140
+ menghasilkan kode X86 untuk mereka dengan cepat. 
+
+521
+00:21:55,140 --> 00:21:55,800
+ Kanan? 
+
+522
+00:21:55,800 --> 00:21:59,230
+ Jadi, dalam hal kompilasi tepat waktu, itu 
+
+523
+00:21:59,230 --> 00:22:00,910
+ berarti saya mengambil cuplikan JavaScript Anda, 
+
+524
+00:22:00,910 --> 00:22:03,570
+ Saya mengambil potongan Java Anda apa pun, 
+
+525
+00:22:03,570 --> 00:22:06,270
+ dan saya benar-benar menghabiskan sedikit waktu di muka 
+
+526
+00:22:06,270 --> 00:22:08,650
+ untuk membuat instruksi mesin mentah yang sebenarnya. 
+
+527
+00:22:08,650 --> 00:22:12,020
+ Raw x86 yang akan berjalan langsung pada bare metal. 
+
+528
+00:22:12,020 --> 00:22:14,890
+ Jadi, saya mengambil pukulan kinerja awal untuk Git 
+
+529
+00:22:14,890 --> 00:22:17,570
+ kompilasi, tetapi kemudian setelah itu, program saya benar-benar 
+
+530
+00:22:17,570 --> 00:22:19,450
+ berjalan di hard drive mentah. 
+
+531
+00:22:19,450 --> 00:22:19,970
+ Kanan? 
+
+532
+00:22:19,970 --> 00:22:22,260
+ Jadi, hal-hal seperti argumen perf 
+
+533
+00:22:22,260 --> 00:22:23,842
+ tidak selalu menarik 
+
+534
+00:22:23,842 --> 00:22:25,800
+ seperti dulu, karena hal-hal seperti ini. 
+
+535
+00:22:25,800 --> 00:22:29,620
+ Ada juga beberapa hal gila di luar sana, seperti ASN.js. 
+
+536
+00:22:29,620 --> 00:22:31,320
+ Jadi, kita bisa bicara lebih banyak tentang offline ini 
+
+537
+00:22:31,320 --> 00:22:33,050
+ jika Anda adalah pengupas JavaScript. 
+
+538
+00:22:33,050 --> 00:22:34,674
+ Namun sebenarnya ada beberapa trik yang rapi 
+
+539
+00:22:34,674 --> 00:22:36,470
+ yang dapat Anda lakukan, seperti kompilasi 
+
+540
+00:22:36,470 --> 00:22:39,750
+ JavaScript untuk subset yang sangat terbatas dari bahasa itu 
+
+541
+00:22:39,750 --> 00:22:42,093
+ hanya beroperasi pada array. 
+
+542
+00:22:42,093 --> 00:22:44,426
+ Benar, jadi apa ini memungkinkan Anda untuk melakukan adalah benar-benar menyingkirkan 
+
+543
+00:22:44,426 --> 00:22:46,950
+ dari banyak overhead pengetikan dinamis dalam standar 
+
+544
+00:22:46,950 --> 00:22:50,030
+ JavaScript, dan Anda benar-benar bisa mendapatkan kode JavaScript sekarang untuk menjalankannya 
+
+545
+00:22:50,030 --> 00:22:54,220
+ dalam 2x dari kinerja baku C atau C ++. 
+
+546
+00:22:54,220 --> 00:22:56,860
+ 2x mungkin terdengar seperti banyak, tetapi digunakan 
+
+547
+00:22:56,860 --> 00:22:58,729
+ menjadi hal-hal seperti 10x atau 20z. 
+
+548
+00:22:58,729 --> 00:23:01,145
+ Jadi, kami benar-benar membuat banyak kemajuan di depan itu. 
+
+549
+00:23:01,145 --> 00:23:04,003
+
+
+550
+00:23:04,003 --> 00:23:06,336
+ Dan hal lain yang perlu diingat dengan kinerja, 
+
+551
+00:23:06,336 --> 00:23:08,820
+ juga, adalah bahwa banyak kali, Anda tidak perlu banyak kinerja 
+
+552
+00:23:08,820 --> 00:23:10,001
+ Anda mungkin berpikir bahwa Anda melakukannya. 
+
+553
+00:23:10,001 --> 00:23:10,500
+ Kanan? 
+
+554
+00:23:10,500 --> 00:23:12,340
+ Jadi, pikirkanlah seperti ini. 
+
+555
+00:23:12,340 --> 00:23:15,200
+ Katakanlah bahwa program Anda sebenarnya IO terikat. 
+
+556
+00:23:15,200 --> 00:23:16,330
+ Jadi, bukan CPU terikat. 
+
+557
+00:23:16,330 --> 00:23:18,300
+ Dengan kata lain, katakanlah bahwa program Anda 
+
+558
+00:23:18,300 --> 00:23:20,720
+ menghabiskan sebagian besar waktunya menunggu masukan jaringan, 
+
+559
+00:23:20,720 --> 00:23:23,120
+ menunggu input disk, menunggu input pengguna, 
+
+560
+00:23:23,120 --> 00:23:24,550
+ hal-hal seperti itu. 
+
+561
+00:23:24,550 --> 00:23:26,650
+ Dalam kasus semacam itu, Anda tidak benar-benar 
+
+562
+00:23:26,650 --> 00:23:29,490
+ harus memiliki kecepatan komputasi mentah yang cepat. 
+
+563
+00:23:29,490 --> 00:23:29,990
+ Kanan? 
+
+564
+00:23:29,990 --> 00:23:31,448
+ Karena sebenarnya program Anda tidak 
+
+565
+00:23:31,448 --> 00:23:34,174
+ menghabiskan banyak waktu untuk melakukan hal semacam itu. 
+
+566
+00:23:34,174 --> 00:23:35,840
+ Jadi, sekali lagi, argumen sempurna ini di sini, 
+
+567
+00:23:35,840 --> 00:23:37,195
+ Anda harus mengambil barang ini dengan butiran garam. 
+
+568
+00:23:37,195 --> 00:23:38,732
+ Dan saya benar-benar melihat banyak siswa 
+
+569
+00:23:38,732 --> 00:23:39,690
+ yang berjuang dengan ini. 
+
+570
+00:23:39,690 --> 00:23:41,702
+ Jadi, misalnya, saya akan bertanya pada seseorang 
+
+571
+00:23:41,702 --> 00:23:43,810
+ untuk keluar dan menulis saya program yang sangat sederhana 
+
+572
+00:23:43,810 --> 00:23:44,860
+ untuk mem-parsing file teks. 
+
+573
+00:23:44,860 --> 00:23:47,360
+ Jadi, mereka menghabiskan semua waktu ini mencoba untuk membuatnya bekerja di C 
+
+574
+00:23:47,360 --> 00:23:49,987
+ atau C ++ dan itu super cepat dan menggunakan templat dan semua itu 
+
+575
+00:23:49,987 --> 00:23:50,570
+ jenis barang. 
+
+576
+00:23:50,570 --> 00:23:53,680
+ Tapi itu seperti solusi satu baris dengan Python. 
+
+577
+00:23:53,680 --> 00:23:55,335
+ Dan pada dasarnya berjalan sama cepatnya. 
+
+578
+00:23:55,335 --> 00:23:57,384
+ Dan Anda bisa mengembangkannya jauh lebih mudah. 
+
+579
+00:23:57,384 --> 00:23:59,300
+ Jadi, Anda hanya perlu mengambil argumen-argumen perf 
+
+580
+00:23:59,300 --> 00:24:01,760
+ dengan sebutir garam. 
+
+581
+00:24:01,760 --> 00:24:06,290
+ Jadi, bagaimanapun, kami telah mendiskusikan tiga cara yang mungkin bisa Anda lakukan 
+
+582
+00:24:06,290 --> 00:24:07,445
+ hindari buffer overflow. 
+
+583
+00:24:07,445 --> 00:24:09,070
+ Jadi, hindari bug di tempat pertama. 
+
+584
+00:24:09,070 --> 00:24:11,162
+ LOL, itu sulit dilakukan. 
+
+585
+00:24:11,162 --> 00:24:13,730
+ Lakukan pendekatan dua, Anda dapat membangun alat untuk membantu 
+
+586
+00:24:13,730 --> 00:24:15,218
+ Anda menemukan bug-bug itu. 
+
+587
+00:24:15,218 --> 00:24:17,230
+ Kemudian mendekati tiga adalah, dalam arti tertentu, 
+
+588
+00:24:17,230 --> 00:24:19,205
+ Anda dapat mendorong alat tersebut ke dalam runtime. 
+
+589
+00:24:19,205 --> 00:24:22,060
+ Anda benar-benar dapat berharap mengandalkan beberapa bahasa mereka 
+
+590
+00:24:22,060 --> 00:24:24,741
+ fitur runtime untuk mencegah Anda melihat memori mentah 
+
+591
+00:24:24,741 --> 00:24:25,240
+ alamat. 
+
+592
+00:24:25,240 --> 00:24:27,073
+ Dan Anda dapat melakukan hal-hal seperti pemeriksaan saldo, 
+
+593
+00:24:27,073 --> 00:24:29,370
+ dan seterusnya dan seterusnya. 
+
+594
+00:24:29,370 --> 00:24:32,320
+ Sekali lagi, seperti yang kita diskusikan sebelumnya, 
+
+595
+00:24:32,320 --> 00:24:35,800
+ ada banyak kode C dan C ++ di luar sana. 
+
+596
+00:24:35,800 --> 00:24:38,437
+ Jadi, sulit menerapkan beberapa teknik ini, 
+
+597
+00:24:38,437 --> 00:24:40,145
+ khususnya nomor dua dan nomor tiga, 
+
+598
+00:24:40,145 --> 00:24:43,220
+ jika Anda harus berurusan dengan kode warisan itu. 
+
+599
+00:24:43,220 --> 00:24:47,000
+ Jadi, bagaimana kita bisa melakukan mitigasi buffer overflow 
+
+600
+00:24:47,000 --> 00:24:49,512
+ Terlepas dari semua tantangan ini? 
+
+601
+00:24:49,512 --> 00:24:53,090
+ Selain itu, Anda tahu, keluar dari kelas ilmu komputer 
+
+602
+00:24:53,090 --> 00:24:55,070
+ dan menjadi pelukis, atau sesuatu seperti itu. 
+
+603
+00:24:55,070 --> 00:24:59,260
+ Jadi, apa yang sebenarnya terjadi di buffer overflow? 
+
+604
+00:24:59,260 --> 00:25:04,812
+ Jadi, dalam buffer overflow, penyerang mengeksploitasi dua hal. 
+
+605
+00:25:04,812 --> 00:25:11,020
+
+
+606
+00:25:11,020 --> 00:25:15,840
+ Jadi, hal pertama yang akan dieksploitasi oleh serangan itu 
+
+607
+00:25:15,840 --> 00:25:23,060
+ mendapatkan kontrol atas penunjuk instruksi. 
+
+608
+00:25:23,060 --> 00:25:29,910
+
+
+609
+00:25:29,910 --> 00:25:30,410
+ Kanan? 
+
+610
+00:25:30,410 --> 00:25:33,470
+ Dan dengan ini, maksud saya entah bagaimana, penyerang 
+
+611
+00:25:33,470 --> 00:25:36,710
+ angka di suatu tempat di kode 
+
+612
+00:25:36,710 --> 00:25:39,980
+ bahwa itu dapat membuat program melompat melawan programnya 
+
+613
+00:25:39,980 --> 00:25:40,680
+ akan. 
+
+614
+00:25:40,680 --> 00:25:43,880
+ Sekarang, ini perlu tetapi tidak cukup untuk sebuah serangan 
+
+615
+00:25:43,880 --> 00:25:46,500
+ biasanya terjadi. 
+
+616
+00:25:46,500 --> 00:25:48,990
+ Karena hal lain yang perlu dilakukan penyerang 
+
+617
+00:25:48,990 --> 00:25:57,729
+ pada dasarnya membuat pointer menunjuk ke kode berbahaya. 
+
+618
+00:25:57,729 --> 00:26:08,440
+
+
+619
+00:26:08,440 --> 00:26:08,940
+ Kanan? 
+
+620
+00:26:08,940 --> 00:26:12,530
+ Jadi, bagaimana kita akan membuat dasarnya dibajak 
+
+621
+00:26:12,530 --> 00:26:14,930
+ IP, penunjuk instruksi, arahkan ke sesuatu 
+
+622
+00:26:14,930 --> 00:26:18,230
+ itu melakukan sesuatu yang berguna untuk penyerang. 
+
+623
+00:26:18,230 --> 00:26:20,730
+ Jadi, yang menarik adalah bahwa dalam banyak kasus, 
+
+624
+00:26:20,730 --> 00:26:24,070
+ sering kali cukup mudah 
+
+625
+00:26:24,070 --> 00:26:26,660
+ bagi penyerang untuk menaruh beberapa kode yang menarik dalam memori. 
+
+626
+00:26:26,660 --> 00:26:28,660
+ Jadi kami melihat beberapa serangan kode shell tersebut 
+
+627
+00:26:28,660 --> 00:26:31,530
+ di kuliah terakhir, di mana Anda benar-benar dapat menanamkan serangan itu 
+
+628
+00:26:31,530 --> 00:26:32,530
+ kode dalam string. 
+
+629
+00:26:32,530 --> 00:26:35,029
+ Seperti yang akan kita bahas sedikit hari ini dan banyak lagi 
+
+630
+00:26:35,029 --> 00:26:36,570
+ di kuliah berikutnya, Anda bisa benar-benar 
+
+631
+00:26:36,570 --> 00:26:38,700
+ Manfaatkan beberapa kode yang sudah ada sebelumnya 
+
+632
+00:26:38,700 --> 00:26:41,745
+ aplikasi memiliki dan melompat ke dalam cara yang tidak terduga 
+
+633
+00:26:41,745 --> 00:26:43,850
+ untuk membuat beberapa hal jahat terjadi. 
+
+634
+00:26:43,850 --> 00:26:48,119
+ Jadi, biasanya, mencari tahu kode apa yang ingin diserang oleh penyerang, 
+
+635
+00:26:48,119 --> 00:26:49,910
+ mungkin itu tidak sesulit sebenarnya 
+
+636
+00:26:49,910 --> 00:26:52,820
+ mampu memaksa program untuk melompat 
+
+637
+00:26:52,820 --> 00:26:56,692
+ ke lokasi itu di memori. 
+
+638
+00:26:56,692 --> 00:26:58,150
+ Dan alasan mengapa itu rumit 
+
+639
+00:26:58,150 --> 00:27:03,210
+ karena pada dasarnya, penyerang harus tahu dalam beberapa hal 
+
+640
+00:27:03,210 --> 00:27:04,800
+ di mana ia harus melompat. 
+
+641
+00:27:04,800 --> 00:27:05,300
+ Kanan? 
+
+642
+00:27:05,300 --> 00:27:07,275
+ Jadi, seperti yang akan kita lihat dalam sekejap, dan sebagaimana Anda sebenarnya 
+
+643
+00:27:07,275 --> 00:27:09,691
+ lihat di kuliah terakhir, banyak serangan kode shell ini 
+
+644
+00:27:09,691 --> 00:27:13,650
+ benar-benar memanfaatkan lokasi-lokasi hard-coded ini dalam memori 
+
+645
+00:27:13,650 --> 00:27:16,004
+ di mana pointer instruksi perlu dikirim ke. 
+
+646
+00:27:16,004 --> 00:27:18,170
+ Jadi, beberapa pertahanan yang akan kita lihat 
+
+647
+00:27:18,170 --> 00:27:21,960
+ benar-benar dapat mengacak hal-hal dalam hal tata letak kode, heap 
+
+648
+00:27:21,960 --> 00:27:24,710
+ tata letak, dan membuatnya agak sulit untuk penyerang 
+
+649
+00:27:24,710 --> 00:27:27,590
+ untuk mencari tahu di mana benda-benda itu berada. 
+
+650
+00:27:27,590 --> 00:27:33,820
+ Jadi, mari kita lihat satu pendekatan mitigasi sederhana dulu. 
+
+651
+00:27:33,820 --> 00:27:37,280
+ Jadi, ini adalah ide dari canary stack. 
+
+652
+00:27:37,280 --> 00:27:42,920
+
+
+653
+00:27:42,920 --> 00:27:45,650
+ Jadi, ide dasar di balik kenari stack 
+
+654
+00:27:45,650 --> 00:27:48,400
+ adalah bahwa, selama buffer overflow, 
+
+655
+00:27:48,400 --> 00:27:53,060
+ sebenarnya tidak masalah jika kita membiarkan penyerang menimpanya 
+
+656
+00:27:53,060 --> 00:27:56,080
+ alamat pengirim jika kita bisa benar-benar 
+
+657
+00:27:56,080 --> 00:27:59,840
+ tangkap yang ditimpa sebelum kita benar-benar melompat ke tempat itu 
+
+658
+00:27:59,840 --> 00:28:02,860
+ bahwa penyerang ingin kita pergi. 
+
+659
+00:28:02,860 --> 00:28:05,230
+ Jadi, pada dasarnya, inilah cara kerjanya. 
+
+660
+00:28:05,230 --> 00:28:11,810
+ Mari kembali ke Neal stack diagram. 
+
+661
+00:28:11,810 --> 00:28:15,150
+ Pada dasarnya kita harus menganggapnya sebagai nilai ajaib. 
+
+662
+00:28:15,150 --> 00:28:20,060
+ Pada dasarnya, di depan alamat pengirim. 
+
+663
+00:28:20,060 --> 00:28:22,060
+ Seperti yang terjadi setiap overflow 
+
+664
+00:28:22,060 --> 00:28:25,804
+ untuk memukul kenari pertama, dan kemudian tekan kembali alamat. 
+
+665
+00:28:25,804 --> 00:28:27,915
+ Dan jika kita bisa memeriksa kenari itu sebelum kita 
+
+666
+00:28:27,915 --> 00:28:30,190
+ kembali dari fungsinya, lalu kita bisa mendeteksi kejahatan. 
+
+667
+00:28:30,190 --> 00:28:35,600
+ Jadi, katakanlah, sekali lagi, kita punya buffer di sini. 
+
+668
+00:28:35,600 --> 00:28:44,760
+
+
+669
+00:28:44,760 --> 00:28:46,875
+ Lalu kita akan meletakkan kenari di sini. 
+
+670
+00:28:46,875 --> 00:28:53,960
+
+
+671
+00:28:53,960 --> 00:28:59,514
+ Dan ini akan menjadi nilai simpanan dari pointer break. 
+
+672
+00:28:59,514 --> 00:29:02,746
+
+
+673
+00:29:02,746 --> 00:29:04,454
+ Dan ini akan menjadi alamat pengirim. 
+
+674
+00:29:04,454 --> 00:29:09,900
+
+
+675
+00:29:09,900 --> 00:29:12,470
+ Jadi, sekali lagi, ingat luapan mengalir ke arah ini. 
+
+676
+00:29:12,470 --> 00:29:16,650
+ Jadi idenya adalah jika keinginan meluap 
+
+677
+00:29:16,650 --> 00:29:18,870
+ untuk sampai ke alamat pengirim itu, itu lebih dulu 
+
+678
+00:29:18,870 --> 00:29:22,770
+ harus menginjak-injak hal kenari ini di sini, kan? 
+
+679
+00:29:22,770 --> 00:29:24,085
+ Anda punya pertanyaan? 
+
+680
+00:29:24,085 --> 00:29:27,000
+ AUDIENCE: Mengapa harus menyentuh kenari? 
+
+681
+00:29:27,000 --> 00:29:29,018
+ PROFESOR: Yah, karena - asumsi 
+
+682
+00:29:29,018 --> 00:29:31,130
+ bahwa penyerang tidak tahu caranya 
+
+683
+00:29:31,130 --> 00:29:34,795
+ melompat-lompat dalam memori secara sewenang-wenang-- jalan 
+
+684
+00:29:34,795 --> 00:29:36,940
+ bahwa serangan melimpah secara tradisional [TIDAK JELAS] bekerja 
+
+685
+00:29:36,940 --> 00:29:42,190
+ Anda mencari di GB, cari tahu di mana semua barang ini. 
+
+686
+00:29:42,190 --> 00:29:44,300
+ Dan kemudian, Anda pada dasarnya memiliki string ini, 
+
+687
+00:29:44,300 --> 00:29:46,810
+ [INAUDIBLE] radius tumbuh dengan cara ini. 
+
+688
+00:29:46,810 --> 00:29:49,050
+ Sekarang, Anda benar bahwa jika si penyerang bisa saja 
+
+689
+00:29:49,050 --> 00:29:52,135
+ langsung ke sini, maka semua taruhan dibatalkan. 
+
+690
+00:29:52,135 --> 00:29:54,200
+ Namun dalam pendekatan overflow yang sangat sederhana, 
+
+691
+00:29:54,200 --> 00:29:57,690
+ semuanya hanya harus tumbuh ketat seperti itu. 
+
+692
+00:29:57,690 --> 00:30:00,260
+ Jadi ide dasar di balik kenari 
+
+693
+00:30:00,260 --> 00:30:03,970
+ adalah bahwa kami mengizinkan eksploitasi buffer overflow untuk dilakukan. 
+
+694
+00:30:03,970 --> 00:30:06,436
+ Tapi kemudian kami telah menjalankan kode waktu itu, 
+
+695
+00:30:06,436 --> 00:30:08,850
+ pada saat kembalinya dari fungsi, 
+
+696
+00:30:08,850 --> 00:30:11,350
+ akan memeriksa kenari ini dan pastikan 
+
+697
+00:30:11,350 --> 00:30:12,800
+ bahwa itu memiliki nilai yang tepat. 
+
+698
+00:30:12,800 --> 00:30:13,300
+ Kanan? 
+
+699
+00:30:13,300 --> 00:30:15,900
+ Jadi itu disebut kenari karena kembali pada hari-hari, kapan 
+
+700
+00:30:15,900 --> 00:30:17,395
+ PETA tidak ada, Anda bisa menggunakannya 
+
+701
+00:30:17,395 --> 00:30:18,880
+ burung untuk menguji hal-hal jahat. 
+
+702
+00:30:18,880 --> 00:30:20,860
+ Jadi itulah mengapa disebut kenari. 
+
+703
+00:30:20,860 --> 00:30:24,077
+ AUDIENCE: Pertanyaan saya adalah jika penyerangnya 
+
+704
+00:30:24,077 --> 00:30:31,750
+ dapat menimpa alamat pengirim, dan memodifikasi canary, 
+
+705
+00:30:31,750 --> 00:30:34,225
+ bagaimana dia memeriksa bahwa kenari itu tidak dimodifikasi, 
+
+706
+00:30:34,225 --> 00:30:37,690
+ tetapi akan dilakukan? 
+
+707
+00:30:37,690 --> 00:30:41,670
+ Jadi penyerang menimpa alamat pengirim, bukan? 
+
+708
+00:30:41,670 --> 00:30:47,444
+ Jadi bagaimana pemeriksaan kenari itu dimodifikasi-- 
+
+709
+00:30:47,444 --> 00:30:48,110
+ PROFESOR: Ya. 
+
+710
+00:30:48,110 --> 00:30:50,640
+ Jadi pada dasarnya, Anda harus memiliki beberapa kode 
+
+711
+00:30:50,640 --> 00:30:54,505
+ yang akan benar-benar memeriksa ini sebelum kembalinya terjadi. 
+
+712
+00:30:54,505 --> 00:30:55,838
+ Jadi dengan kata lain, Anda benar. 
+
+713
+00:30:55,838 --> 00:30:58,200
+ Harus ada pesanan itu di sana. 
+
+714
+00:30:58,200 --> 00:31:00,530
+ Jadi intinya, apa yang harus Anda lakukan 
+
+715
+00:31:00,530 --> 00:31:03,750
+ Anda harus memiliki dukungan dari compiler di sini 
+
+716
+00:31:03,750 --> 00:31:07,090
+ yang benar-benar akan memperpanjang konvensi pemanggilan, 
+
+717
+00:31:07,090 --> 00:31:08,150
+ jika kamu mau. 
+
+718
+00:31:08,150 --> 00:31:10,610
+ Seperti itu bagian dari urutan kembali 
+
+719
+00:31:10,610 --> 00:31:13,700
+ adalah sebelum kita benar-benar memperlakukan nilai ini sebagai valid, 
+
+720
+00:31:13,700 --> 00:31:16,140
+ pastikan orang ini belum diinjak-injak. 
+
+721
+00:31:16,140 --> 00:31:18,557
+ Kemudian, dan hanya kemudian, kita bisa berpikir untuk pergi ke tempat lain. 
+
+722
+00:31:18,557 --> 00:31:20,640
+ AUDIENCE: Saya pikir saya mungkin akan lompat pistol di sini, 
+
+723
+00:31:20,640 --> 00:31:22,390
+ tetapi tidak ini mengasumsikan bahwa penyerang 
+
+724
+00:31:22,390 --> 00:31:25,365
+ tidak dapat menemukan atau menebak berapa nilai canary? 
+
+725
+00:31:25,365 --> 00:31:27,990
+ PROFESOR: Kenyataannya, itulah yang paling dekat dengan kuliah saya. 
+
+726
+00:31:27,990 --> 00:31:29,281
+ Jika saya memiliki hadiah, Anda akan mendapatkannya. 
+
+727
+00:31:29,281 --> 00:31:30,162
+ Saya tidak punya. 
+
+728
+00:31:30,162 --> 00:31:30,870
+ Tapi bagus untukmu. 
+
+729
+00:31:30,870 --> 00:31:31,370
+ Bintang emas. 
+
+730
+00:31:31,370 --> 00:31:32,970
+ Itu benar sekali. 
+
+731
+00:31:32,970 --> 00:31:35,250
+ Jadi salah satu hal berikutnya yang ingin saya katakan 
+
+732
+00:31:35,250 --> 00:31:37,280
+ apa masalahnya dengan skema ini? 
+
+733
+00:31:37,280 --> 00:31:39,910
+ Bagaimana jika, misalnya, di setiap program, 
+
+734
+00:31:39,910 --> 00:31:41,890
+ kami selalu menempatkan nilainya? 
+
+735
+00:31:41,890 --> 00:31:44,164
+ Sama seperti empat nilai a. 
+
+736
+00:31:44,164 --> 00:31:46,330
+ Jadi ini seperti satu [TIDAK JELAS] di tempat kerja, kan? 
+
+737
+00:31:46,330 --> 00:31:47,790
+ Maka Anda akan memiliki masalah yang tepat 
+
+738
+00:31:47,790 --> 00:31:48,789
+ yang baru saja Anda sebutkan. 
+
+739
+00:31:48,789 --> 00:31:50,742
+ Karena itu, penyerang-- ini 
+
+740
+00:31:50,742 --> 00:31:54,990
+ kembali ke pertanyaan Anda - dia tahu seberapa besar ini. 
+
+741
+00:31:54,990 --> 00:31:57,035
+ Ini bersifat deterministik pada setiap sistem. 
+
+742
+00:31:57,035 --> 00:31:58,993
+ Jadi, Anda hanya memastikan bahwa buffer overflow Anda 
+
+743
+00:31:58,993 --> 00:32:01,440
+ memiliki banyak di sini, dan kemudian Anda menimpa sisi ini. 
+
+744
+00:32:01,440 --> 00:32:02,898
+ Jadi Anda benar tentang itu. 
+
+745
+00:32:02,898 --> 00:32:05,033
+ Dan pada dasarnya ada berbagai jenis nilai yang berbeda 
+
+746
+00:32:05,033 --> 00:32:08,760
+ Anda bisa meletakkan di antara kenari ini untuk mencoba mencegahnya. 
+
+747
+00:32:08,760 --> 00:32:10,330
+ Satu hal yang dapat Anda lakukan di sini adalah 
+
+748
+00:32:10,330 --> 00:32:18,760
+ Anda dapat menggunakan-- ini adalah jenis kenari yang sangat lucu, 
+
+749
+00:32:18,760 --> 00:32:21,020
+ tetapi pada dasarnya mengeksploitasi cara 
+
+750
+00:32:21,020 --> 00:32:27,700
+ bahwa banyak progam C dan fungsi C 
+
+751
+00:32:27,700 --> 00:32:29,310
+ menangani karakter khusus. 
+
+752
+00:32:29,310 --> 00:32:32,180
+ Jadi bayangkan Anda menggunakan nilai ini untuk canary. 
+
+753
+00:32:32,180 --> 00:32:34,990
+ Jadi nilai binernya adalah 0, yang seperti bita nol, 
+
+754
+00:32:34,990 --> 00:32:36,900
+ karakter null di ASCII. 
+
+755
+00:32:36,900 --> 00:32:41,000
+ Pakan kembali, dan negatif 1. 
+
+756
+00:32:41,000 --> 00:32:43,770
+ Apa yang lucu tentang ini adalah banyak sekali fungsi yang Anda 
+
+757
+00:32:43,770 --> 00:32:47,090
+ dapat memanfaatkan - yang memanipulasi string, misalnya-- 
+
+758
+00:32:47,090 --> 00:32:50,260
+ mereka akan berhenti ketika mereka menemukan salah satu dari kata-kata ini, 
+
+759
+00:32:50,260 --> 00:32:51,610
+ atau salah satu dari nilai-nilai ini. 
+
+760
+00:32:51,610 --> 00:32:54,780
+ Jadi Anda bisa membayangkan bahwa Anda menggunakan beberapa manipulasi string 
+
+761
+00:32:54,780 --> 00:32:56,020
+ berfungsi untuk naik dengan cara ini. 
+
+762
+00:32:56,020 --> 00:32:57,603
+ Ini akan memukul karakter nol itu. 
+
+763
+00:32:57,603 --> 00:32:59,310
+ Ups-- ini akan berhenti diproses. 
+
+764
+00:32:59,310 --> 00:32:59,810
+ Kanan? 
+
+765
+00:32:59,810 --> 00:33:02,962
+ Atau mungkin jika Anda menggunakan function-- berorientasi garis 
+
+766
+00:33:02,962 --> 00:33:04,670
+ carriage return, line feed-- itu sering 
+
+767
+00:33:04,670 --> 00:33:05,836
+ digunakan sebagai terminator garis. 
+
+768
+00:33:05,836 --> 00:33:08,060
+ Jadi sekali lagi, Anda menggunakan fungsi berbahaya itu 
+
+769
+00:33:08,060 --> 00:33:09,335
+ itu mencoba untuk pergi dengan cara ini. 
+
+770
+00:33:09,335 --> 00:33:10,300
+ Itu mengenai itu. 
+
+771
+00:33:10,300 --> 00:33:11,870
+ Ups, ini akan berhenti. 
+
+772
+00:33:11,870 --> 00:33:14,650
+ Dan negatif 1 adalah token sihir serupa lainnya. 
+
+773
+00:33:14,650 --> 00:33:16,400
+ Jadi itulah salah satu cara Anda bisa melakukannya. 
+
+774
+00:33:16,400 --> 00:33:17,500
+ Satu detik. 
+
+775
+00:33:17,500 --> 00:33:19,050
+ Dan kemudian hal lain yang dapat Anda lakukan 
+
+776
+00:33:19,050 --> 00:33:22,628
+ apakah Anda bisa menggunakan nilai acak. 
+
+777
+00:33:22,628 --> 00:33:27,140
+
+
+778
+00:33:27,140 --> 00:33:29,662
+ Jadi di sini, Anda hanya [TIDAK JELAS] dari seluruh ide ini 
+
+779
+00:33:29,662 --> 00:33:31,620
+ mencoba untuk mencari tahu apa sebenarnya itu 
+
+780
+00:33:31,620 --> 00:33:33,385
+ mungkin menyebabkan serangan itu berakhir. 
+
+781
+00:33:33,385 --> 00:33:35,700
+ Dan Anda hanya menarik beberapa nomor acak 
+
+782
+00:33:35,700 --> 00:33:37,795
+ dan menyulitkan penyerang 
+
+783
+00:33:37,795 --> 00:33:39,550
+ untuk menebak apa itu. 
+
+784
+00:33:39,550 --> 00:33:42,282
+ Sekarang, tentu saja, nilai acak ini-- kekuatannya 
+
+785
+00:33:42,282 --> 00:33:43,990
+ pada dasarnya didasarkan pada seberapa sulitnya itu 
+
+786
+00:33:43,990 --> 00:33:46,150
+ untuk penyerang menebak itu. 
+
+787
+00:33:46,150 --> 00:33:48,970
+ Jadi penyerang, misalnya, bisa 
+
+788
+00:33:48,970 --> 00:33:51,250
+ mengerti bahwa jika hanya ada, katakanlah, 
+
+789
+00:33:51,250 --> 00:33:54,320
+ tiga bit entropi di sistem Anda, maka mungkin penyerang 
+
+790
+00:33:54,320 --> 00:33:57,357
+ bisa menggunakan beberapa jenis serangan paksa, seterusnya dan seterusnya. 
+
+791
+00:33:57,357 --> 00:33:59,065
+ Jadi satu hal yang perlu diingat, secara umum, 
+
+792
+00:33:59,065 --> 00:34:00,523
+ adalah bahwa setiap kali seseorang memberitahu Anda, 
+
+793
+00:34:00,523 --> 00:34:03,699
+ inilah serangan acak terhadap serangan foo, 
+
+794
+00:34:03,699 --> 00:34:05,240
+ jika tidak ada banyak bit acak 
+
+795
+00:34:05,240 --> 00:34:07,800
+ di sana, serangan itu mungkin tidak memberi Anda banyak pertahanan 
+
+796
+00:34:07,800 --> 00:34:09,748
+ seperti yang kamu pikirkan. 
+
+797
+00:34:09,748 --> 00:34:12,602
+ Anda punya pertanyaan? 
+
+798
+00:34:12,603 --> 00:34:14,186
+ AUDIENCE: Biasanya apa yang cenderung terjadi 
+
+799
+00:34:14,186 --> 00:34:16,650
+ apakah Anda membaca dari buffer lain dan Anda menulis 
+
+800
+00:34:16,650 --> 00:34:18,129
+ ke dalam buffer di tumpukan itu. 
+
+801
+00:34:18,130 --> 00:34:22,074
+ Jadi dalam situasi itu, tampaknya seperti kenari promiscuous 
+
+802
+00:34:22,074 --> 00:34:23,060
+ itu tidak berguna. 
+
+803
+00:34:23,060 --> 00:34:25,032
+ Karena jika saya membaca dari [TIDAK JELAS], 
+
+804
+00:34:25,032 --> 00:34:26,511
+ Aku tahu apa itu kenari. 
+
+805
+00:34:26,511 --> 00:34:28,980
+ Dan saya memiliki buffer lain yang saya kontrol. 
+
+806
+00:34:28,980 --> 00:34:30,414
+ Dan saya tidak pernah memeriksanya. 
+
+807
+00:34:30,414 --> 00:34:32,866
+ Dan di dalam buffer itu, saya dapat menaruh sebanyak yang saya inginkan. 
+
+808
+00:34:32,866 --> 00:34:34,366
+ Saya tidak ingin kenari promiscuous, 
+
+809
+00:34:34,366 --> 00:34:36,342
+ jadi saya bisa menimpanya dengan sangat aman. 
+
+810
+00:34:36,342 --> 00:34:39,489
+ Jadi saya tidak melihat bagaimana ini bekerja, 
+
+811
+00:34:39,489 --> 00:34:42,159
+ dan dalam skenario apa itu-- Anda berasumsi sedang membaca 
+
+812
+00:34:42,159 --> 00:34:44,010
+ dari buffer di tumpukan ini dan Anda akan berhenti-- 
+
+813
+00:34:44,010 --> 00:34:45,384
+ PROFESOR: Yah, kita mengasumsikan-- 
+
+814
+00:34:45,384 --> 00:34:47,239
+ kami sedang menulis ke buffer. 
+
+815
+00:34:47,239 --> 00:34:51,226
+ Jadi pada dasarnya, idenya adalah Anda menulis beberapa [? dua-panjang?] 
+
+816
+00:34:51,226 --> 00:34:52,719
+ string dengan cara ini. 
+
+817
+00:34:52,719 --> 00:34:56,749
+ Dan kemudian idenya adalah bahwa jika Anda tidak dapat menebak apa ini, maka 
+
+818
+00:34:56,750 --> 00:35:02,303
+ Anda tidak bisa, pada dasarnya, menempatkan nilai ini di dalam overflow Anda 
+
+819
+00:35:02,303 --> 00:35:03,209
+ tali. 
+
+820
+00:35:03,209 --> 00:35:05,560
+ AUDIENCE: Tapi Anda mengatakan itu deterministik, kan? 
+
+821
+00:35:05,560 --> 00:35:06,490
+ 0, CR, LF, negatif 1. 
+
+822
+00:35:06,490 --> 00:35:07,950
+ PROFESOR: Oh ya. 
+
+823
+00:35:07,950 --> 00:35:08,560
+ Kanan. 
+
+824
+00:35:08,560 --> 00:35:09,060
+ BAIK. 
+
+825
+00:35:09,060 --> 00:35:10,230
+ Jadi saya pikir saya mengerti pertanyaan Anda sekarang. 
+
+826
+00:35:10,230 --> 00:35:10,975
+ Iya nih. 
+
+827
+00:35:10,975 --> 00:35:16,660
+ Jika Anda menggunakan sistem ini di sini, dengan kenari deterministik, 
+
+828
+00:35:16,660 --> 00:35:19,754
+ dan Anda pada dasarnya tidak menggunakan 
+
+829
+00:35:19,754 --> 00:35:21,910
+ salah satu fungsi ini dari, katakanlah, 
+
+830
+00:35:21,910 --> 00:35:25,422
+ perpustakaan standar yang akan dibodohi oleh ini, 
+
+831
+00:35:25,422 --> 00:35:27,380
+ kemudian, ya, Anda dapat mengalahkan sistem dengan cara itu. 
+
+832
+00:35:27,380 --> 00:35:30,576
+ AUDIENCE: Tapi saya bisa menggunakan string CPI 
+
+833
+00:35:30,576 --> 00:35:32,076
+ dan tujuan dapat di-buffer. 
+
+834
+00:35:32,076 --> 00:35:35,631
+ Dan sumbernya bisa [TIDAK JELAS]. 
+
+835
+00:35:35,631 --> 00:35:37,422
+ Dan itu tidak akan melindungi saya dari itu. 
+
+836
+00:35:37,422 --> 00:35:40,972
+
+
+837
+00:35:40,972 --> 00:35:43,948
+ PROFESOR: Saya tidak yakin saya mengerti serangannya, jadi. 
+
+838
+00:35:43,948 --> 00:35:45,932
+ AUDIENCE: Jadi string CPI akan dibawa pulang 
+
+839
+00:35:45,932 --> 00:35:50,075
+ input pengguna untuk data saya, akan menimpa canary-- oh, 
+
+840
+00:35:50,075 --> 00:35:51,710
+ dan kamu berkata - hmm, sebenarnya, aku 
+
+841
+00:35:51,710 --> 00:35:52,570
+ mengerti apa yang kamu katakan. 
+
+842
+00:35:52,570 --> 00:35:53,278
+ PROFESOR: Benar? 
+
+843
+00:35:53,278 --> 00:35:56,665
+ Karena idenya adalah Anda dapat mengisi buffer ini dengan byte 
+
+844
+00:35:56,665 --> 00:35:58,140
+ dari mana saja, kan? 
+
+845
+00:35:58,140 --> 00:36:00,098
+ Tapi idenya adalah bahwa kecuali Anda bisa menebak ini, 
+
+846
+00:36:00,098 --> 00:36:02,590
+ maka itu tidak masalah. 
+
+847
+00:36:02,590 --> 00:36:03,700
+ Tapi kamu benar. 
+
+848
+00:36:03,700 --> 00:36:07,300
+ Secara umum, apa pun yang memungkinkan Anda menebak ini atau secara acak 
+
+849
+00:36:07,300 --> 00:36:11,939
+ mendapatkan nilai yang benar akan mengarah pada feed sistem. 
+
+850
+00:36:11,939 --> 00:36:13,807
+ AUDIENCE: Dalam hal [TIDAK JELAS], 
+
+851
+00:36:13,807 --> 00:36:16,677
+ dapatkah Anda mengambil sesuatu seperti jumlah detik 
+
+852
+00:36:16,677 --> 00:36:19,820
+ atau milidetik sejak zaman dan penggunaan 
+
+853
+00:36:19,820 --> 00:36:23,600
+ bahwa di [TIDAK JELAS]? 
+
+854
+00:36:23,600 --> 00:36:24,974
+ PROFESOR: Yah, ternyata, 
+
+855
+00:36:24,974 --> 00:36:27,554
+ berkali-kali, panggilan yang membuat [TIDAK JELAS] 
+
+856
+00:36:27,554 --> 00:36:30,000
+ tidak mengandung banyak keacakan seperti yang Anda bayangkan. 
+
+857
+00:36:30,000 --> 00:36:33,121
+ Karena program itu sendiri mungkin entah bagaimana-- 
+
+858
+00:36:33,121 --> 00:36:36,795
+ misalkan, misalnya, memiliki pernyataan log atau berfungsi Anda 
+
+859
+00:36:36,795 --> 00:36:38,962
+ dapat menelepon untuk mendapatkan waktu dari program itu 
+
+860
+00:36:38,962 --> 00:36:40,170
+ diluncurkan atau hal-hal seperti itu. 
+
+861
+00:36:40,170 --> 00:36:40,615
+ Tapi kamu benar. 
+
+862
+00:36:40,615 --> 00:36:42,406
+ Dalam prakteknya, jika Anda dapat menggunakan sesuatu seperti, 
+
+863
+00:36:42,406 --> 00:36:46,020
+ katakanlah, plot sistem perangkat keras, yang sering kali paling rendah 
+
+864
+00:36:46,020 --> 00:36:49,250
+ tingkat, sistem yang lebih baik dari waktu itu-- ya, hal semacam itu 
+
+865
+00:36:49,250 --> 00:36:49,750
+ mungkin berhasil. 
+
+866
+00:36:49,750 --> 00:36:53,282
+ AUDIENCE: Tetapi bahkan jika Anda dapat menarik log, 
+
+867
+00:36:53,282 --> 00:36:56,276
+ itu masih tergantung pada kapan tepatnya Anda menolak permintaan. 
+
+868
+00:36:56,276 --> 00:37:00,180
+ Dan jika Anda tidak memiliki kontrol atas berapa lama waktu yang dibutuhkan 
+
+869
+00:37:00,180 --> 00:37:03,596
+ untuk permintaan Anda dari komputer ke server, 
+
+870
+00:37:03,596 --> 00:37:06,036
+ maka saya tidak berpikir Anda bisa secara deterministik 
+
+871
+00:37:06,036 --> 00:37:07,476
+ tebak waktu yang tepat. 
+
+872
+00:37:07,476 --> 00:37:08,476
+ PROFESOR: Benar. 
+
+873
+00:37:08,476 --> 00:37:09,017
+ Betul. 
+
+874
+00:37:09,017 --> 00:37:11,884
+ Iblis memiliki detail dengan semua hal semacam ini. 
+
+875
+00:37:11,884 --> 00:37:14,300
+ Dengan kata lain, jika ada beberapa cara bagi Anda untuk mencari tahu, 
+
+876
+00:37:14,300 --> 00:37:16,424
+ misalnya, jenis saluran waktu tersebut, 
+
+877
+00:37:16,424 --> 00:37:18,840
+ Anda mungkin mengetahui bahwa jumlah entropy-- jumlahnya 
+
+878
+00:37:18,840 --> 00:37:20,359
+ dari randomness-- tidak, katakanlah, 
+
+879
+00:37:20,359 --> 00:37:22,400
+ ukuran penuh cap waktu, tapi mungkin sesuatu 
+
+880
+00:37:22,400 --> 00:37:23,433
+ itu jauh lebih kecil. 
+
+881
+00:37:23,433 --> 00:37:25,141
+ Karena mungkin penyerang bisa mengetahuinya 
+
+882
+00:37:25,141 --> 00:37:26,880
+ jam dan menit di mana kamu 
+
+883
+00:37:26,880 --> 00:37:30,608
+ melakukan ini, tetapi tidak yang kedua, misalnya. 
+
+884
+00:37:30,608 --> 00:37:33,326
+ Kami akan mengajukan satu pertanyaan lagi, lalu kita lanjutkan. 
+
+885
+00:37:33,326 --> 00:37:35,826
+ AUDIENCE: Sebagai catatan, cobalah untuk menggulirkan keacakan Anda sendiri 
+
+886
+00:37:35,826 --> 00:37:37,477
+ biasanya ide yang buruk, kan? 
+
+887
+00:37:37,477 --> 00:37:38,560
+ PROFESOR: Itu benar. 
+
+888
+00:37:38,560 --> 00:37:38,870
+ AUDIENCE: Biasanya, Anda seharusnya 
+
+889
+00:37:38,870 --> 00:37:40,547
+ menggunakan apa pun yang disediakan oleh sistem Anda. 
+
+890
+00:37:40,547 --> 00:37:41,338
+ PROFESOR: Oh ya. 
+
+891
+00:37:41,338 --> 00:37:42,832
+ Itu sangat benar. 
+
+892
+00:37:42,832 --> 00:37:44,990
+ Ini seperti menciptakan cryptosystem Anda sendiri, yang 
+
+893
+00:37:44,990 --> 00:37:46,865
+ adalah hal lain yang populer kadang-kadang undergrads 
+
+894
+00:37:46,865 --> 00:37:47,473
+ ingin lakukan. 
+
+895
+00:37:47,473 --> 00:37:49,306
+ Kami bukan NSA, kami bukan matematikawan. 
+
+896
+00:37:49,306 --> 00:37:50,302
+ Itu biasanya gagal. 
+
+897
+00:37:50,302 --> 00:37:51,800
+ Jadi Anda benar tentang itu. 
+
+898
+00:37:51,800 --> 00:37:54,630
+ Tetapi bahkan jika Anda menggunakan keacakan yang disediakan sistem, 
+
+899
+00:37:54,630 --> 00:37:57,310
+ Anda masih mungkin berakhir dengan sedikit entropi 
+
+900
+00:37:57,310 --> 00:37:58,150
+ dari yang kamu harapkan. 
+
+901
+00:37:58,150 --> 00:38:00,441
+ Dan saya akan memberi Anda contoh tentang itu ketika kita berbicara tentang 
+
+902
+00:38:00,441 --> 00:38:01,640
+ pengacakan fase alamat. 
+
+903
+00:38:01,640 --> 00:38:07,150
+ Jadi itulah dasarnya bagaimana cara kerja stack canary approach. 
+
+904
+00:38:07,150 --> 00:38:12,040
+ Dan karena kita berada di kelas keamanan, Anda mungkin bertanya-tanya, 
+
+905
+00:38:12,040 --> 00:38:17,692
+ jadi apa jenis hal yang akan membuat burung kenari tidak menangkap? 
+
+906
+00:38:17,692 --> 00:38:20,762
+ Jadi kapan burung kenari gagal? 
+
+907
+00:38:20,762 --> 00:38:28,310
+
+
+908
+00:38:28,310 --> 00:38:35,540
+ Salah satu cara mereka bisa gagal adalah jika penyerang 
+
+909
+00:38:35,540 --> 00:38:38,187
+ hal-hal, seperti pointer fungsi. 
+
+910
+00:38:38,187 --> 00:38:45,430
+
+
+911
+00:38:45,430 --> 00:38:47,780
+ Karena jika penunjuk fungsi mendapatkan [TIDAK JELAS], 
+
+912
+00:38:47,780 --> 00:38:49,807
+ tidak ada yang bisa dilakukan oleh kenari 
+
+913
+00:38:49,807 --> 00:38:52,120
+ lakukan untuk mencegah jenis mengeksploitasi dari terjadi. 
+
+914
+00:38:52,120 --> 00:38:57,890
+ Sebagai contoh, katakanlah Anda memiliki kode yang menyatakan pointer. 
+
+915
+00:38:57,890 --> 00:39:00,890
+
+
+916
+00:39:00,890 --> 00:39:05,312
+ Itu diinisialisasi dalam beberapa cara, itu tidak terlalu penting. 
+
+917
+00:39:05,312 --> 00:39:08,648
+ Maka Anda memiliki penyangga di sini. 
+
+918
+00:39:08,648 --> 00:39:11,930
+
+
+919
+00:39:11,930 --> 00:39:15,010
+ Sekali lagi, fungsi yang didapatnya membanjiri kepalanya yang buruk. 
+
+920
+00:39:15,010 --> 00:39:17,710
+
+
+921
+00:39:17,710 --> 00:39:25,090
+ Dan kemudian, katakanlah, di sini, kami memberikan beberapa nilai 5 
+
+922
+00:39:25,090 --> 00:39:27,160
+ untuk penunjuk. 
+
+923
+00:39:27,160 --> 00:39:29,230
+ Sekarang perhatikan bahwa kita sebenarnya belum 
+
+924
+00:39:29,230 --> 00:39:32,780
+ mencoba menyerang alamat pengirim dari fungsi itu 
+
+925
+00:39:32,780 --> 00:39:34,845
+ mengandung kode ini. 
+
+926
+00:39:34,845 --> 00:39:37,130
+ Saat kami melihat buffer overflow, 
+
+927
+00:39:37,130 --> 00:39:40,710
+ alamat pointer ini di sini akan rusak. 
+
+928
+00:39:40,710 --> 00:39:43,955
+ Dan apa yang akhirnya terjadi adalah jika penyerang bisa 
+
+929
+00:39:43,955 --> 00:39:46,180
+ korup pointer itu, maka penyerang 
+
+930
+00:39:46,180 --> 00:39:50,930
+ dapat menulis 5 ke beberapa alamat yang dikontrol penyerang. 
+
+931
+00:39:50,930 --> 00:39:53,170
+ Apakah setiap orang melihat bagaimana kenari tidak membantu di sini? 
+
+932
+00:39:53,170 --> 00:39:54,711
+ Karena pada dasarnya kami tidak menyerang 
+
+933
+00:39:54,711 --> 00:39:57,650
+ cara mengembalikan fungsi. 
+
+934
+00:39:57,650 --> 00:40:01,026
+ AUDIENCE: Tetapi tidakkah penunjuk berada di bawah buffer? 
+
+935
+00:40:01,026 --> 00:40:03,840
+
+
+936
+00:40:03,840 --> 00:40:06,035
+ PROFESOR: Jadi, ya. 
+
+937
+00:40:06,035 --> 00:40:07,160
+ AUDIENCE: Belum tentu-- 
+
+938
+00:40:07,160 --> 00:40:08,440
+ PROFESOR: Jadi Anda khawatir tentang, apakah itu akan berada di sini, 
+
+939
+00:40:08,440 --> 00:40:09,730
+ atau apakah akan berada di sini? 
+
+940
+00:40:09,730 --> 00:40:11,715
+ AUDIENCE: Saya khawatir tentang kapan Anda-- 
+
+941
+00:40:11,715 --> 00:40:14,048
+ apakah Anda benar-benar dapat mengakses di mana penunjuk berada 
+
+942
+00:40:14,048 --> 00:40:14,960
+ ketika kamu menjungkirbalikkan-- 
+
+943
+00:40:14,960 --> 00:40:15,877
+ PROFESOR: Ah, ya. 
+
+944
+00:40:15,877 --> 00:40:17,960
+ Jadi Anda tidak dapat selalu-- itu pertanyaan yang bagus. 
+
+945
+00:40:17,960 --> 00:40:20,982
+ Jadi saya pikir, dalam banyak contoh sebelumnya, 
+
+946
+00:40:20,982 --> 00:40:23,610
+ Anda telah mengasumsikan bahwa orang ini akan berada di sini. 
+
+947
+00:40:23,610 --> 00:40:24,690
+ Seperti, di [INAUDIBLE]. 
+
+948
+00:40:24,690 --> 00:40:27,102
+ Jika tumpukan berjalan seperti ini, maka pointer 
+
+949
+00:40:27,102 --> 00:40:28,490
+ akan ada di sini. 
+
+950
+00:40:28,490 --> 00:40:30,282
+ Tetapi urutan variabel tertentu-- 
+
+951
+00:40:30,282 --> 00:40:32,031
+ itu tergantung pada banyak hal yang berbeda. 
+
+952
+00:40:32,031 --> 00:40:34,400
+ Itu tergantung pada cara compiler meletakkan barang keluar. 
+
+953
+00:40:34,400 --> 00:40:36,730
+ Itu tergantung pada dimensi kolom perangkat keras, 
+
+954
+00:40:36,730 --> 00:40:38,350
+ seterusnya dan seterusnya. 
+
+955
+00:40:38,350 --> 00:40:41,820
+ Tapi Anda benar bahwa jika-- pada dasarnya, 
+
+956
+00:40:41,820 --> 00:40:43,740
+ jika buffer overflow mengalir ke arah ini, 
+
+957
+00:40:43,740 --> 00:40:45,780
+ tetapi penunjuk berada di depan buffer, 
+
+958
+00:40:45,780 --> 00:40:48,140
+ maka itu akan berhasil. 
+
+959
+00:40:48,140 --> 00:40:50,028
+ AUDIENCE: Mengapa Anda tidak bisa mengaitkan burung kenari 
+
+960
+00:40:50,028 --> 00:40:51,798
+ dengan kenari fungsi, sama seperti Anda 
+
+961
+00:40:51,798 --> 00:40:53,587
+ lakukan dengan alamat pengirim? 
+
+962
+00:40:53,587 --> 00:40:54,170
+ PROFESOR: Ah. 
+
+963
+00:40:54,170 --> 00:40:55,685
+ Itu poin yang menarik. 
+
+964
+00:40:55,685 --> 00:40:57,274
+ Anda bisa melakukan hal-hal itu. 
+
+965
+00:40:57,274 --> 00:40:59,860
+ Bahkan, Anda bisa mencoba membayangkan kompilator 
+
+966
+00:40:59,860 --> 00:41:02,590
+ itu, setiap kali ada penunjuk apa pun, 
+
+967
+00:41:02,590 --> 00:41:05,451
+ itu akan selalu mencoba menambahkan padding untuk berbagai hal. 
+
+968
+00:41:05,451 --> 00:41:05,950
+ Kanan? 
+
+969
+00:41:05,950 --> 00:41:08,910
+ Ternyata, sepertinya itu akan cepat 
+
+970
+00:41:08,910 --> 00:41:12,766
+ menjadi mahal, dalam hal semua kode itu 
+
+971
+00:41:12,766 --> 00:41:15,250
+ ditambahkan, harus memeriksa semua hal semacam itu. 
+
+972
+00:41:15,250 --> 00:41:18,630
+ Karena dengan begitu Anda bisa membayangkan bahwa setiap kali Anda 
+
+973
+00:41:18,630 --> 00:41:21,048
+ ingin memanggil penunjuk apa pun, atau memanggil fungsi apa pun, 
+
+974
+00:41:21,048 --> 00:41:22,506
+ Anda harus memiliki kode ini 
+
+975
+00:41:22,506 --> 00:41:24,690
+ akan memeriksa apakah kenari itu benar. 
+
+976
+00:41:24,690 --> 00:41:27,064
+ Tapi ya, pada prinsipnya, Anda bisa melakukan hal seperti itu. 
+
+977
+00:41:27,064 --> 00:41:29,380
+
+
+978
+00:41:29,380 --> 00:41:30,510
+ Jadi ini masuk akal? 
+
+979
+00:41:30,510 --> 00:41:33,012
+ Jadi kita melihat bahwa kenari tidak membantu Anda dalam persamaan ini. 
+
+980
+00:41:33,012 --> 00:41:36,490
+
+
+981
+00:41:36,490 --> 00:41:39,160
+ Dan hal lain, seperti yang telah kita diskusikan sebelumnya, 
+
+982
+00:41:39,160 --> 00:41:46,112
+ adalah bahwa jika Anda bisa menebak keacakan, maka, pada dasarnya, 
+
+983
+00:41:46,112 --> 00:41:48,080
+ kenari acak tidak berfungsi. 
+
+984
+00:41:48,080 --> 00:41:57,440
+
+
+985
+00:41:57,440 --> 00:42:01,560
+ Menghasilkan sumber keacakan yang aman 
+
+986
+00:42:01,560 --> 00:42:03,234
+ sebenarnya adalah topik dalam dirinya sendiri. 
+
+987
+00:42:03,234 --> 00:42:05,025
+ Itu sangat, sangat rumit, jadi kami tidak 
+
+988
+00:42:05,025 --> 00:42:06,710
+ akan membahas secara mendalam tentang itu di sini. 
+
+989
+00:42:06,710 --> 00:42:08,380
+ Tetapi cukuplah untuk mengatakan, jika Anda bisa menebak keacakannya, 
+
+990
+00:42:08,380 --> 00:42:09,420
+ semuanya berantakan. 
+
+991
+00:42:09,420 --> 00:42:11,915
+ AUDIENCE: Jadi, canary biasanya memiliki lebih sedikit bit daripada return 
+
+992
+00:42:11,915 --> 00:42:12,414
+ alamat? 
+
+993
+00:42:12,414 --> 00:42:13,914
+ Karena kalau tidak, tidak bisa Anda hanya 
+
+994
+00:42:13,914 --> 00:42:17,706
+ menghafal alamat pengirim dan memeriksa alamatnya berubah? 
+
+995
+00:42:17,706 --> 00:42:18,580
+ PROFESOR: Mari kita lihat. 
+
+996
+00:42:18,580 --> 00:42:23,310
+ Jadi Anda mengatakan jika kenari di sini adalah, katakanlah, 
+
+997
+00:42:23,310 --> 00:42:25,568
+ lebih kecil dari-- 
+
+998
+00:42:25,568 --> 00:42:28,459
+ AUDIENCE: Saya katakan untuk canary adalah bahwa Anda tahu 
+
+999
+00:42:28,459 --> 00:42:32,051
+ apa nilai itu [TIDAK JELAS]. 
+
+1000
+00:42:32,051 --> 00:42:34,051
+ Tidak bisakah Anda juga menghafal nilai alamat pengirim 
+
+1001
+00:42:34,051 --> 00:42:37,550
+ dan periksa apakah itu sudah diubah? 
+
+1002
+00:42:37,550 --> 00:42:40,505
+ PROFESOR: Oh, jadi Anda mengatakan tidak bisa sistem yang aman-- 
+
+1003
+00:42:40,505 --> 00:42:42,373
+ tidak bisa melihat alamat pengirim 
+
+1004
+00:42:42,373 --> 00:42:45,320
+ dan cari tahu apakah itu sudah diubah. 
+
+1005
+00:42:45,320 --> 00:42:46,270
+ Ya. 
+
+1006
+00:42:46,270 --> 00:42:50,329
+ Dengan kata lain, jika ada - baik, ya dan tidak. 
+
+1007
+00:42:50,329 --> 00:42:51,787
+ Perhatikan bahwa masih ada ini 
+
+1008
+00:42:51,787 --> 00:42:53,953
+ akan ditimpa dalam serangan buffer overflow. 
+
+1009
+00:42:53,953 --> 00:42:56,350
+ Jadi ini masih bisa menimbulkan masalah. 
+
+1010
+00:42:56,350 --> 00:42:59,720
+ Tetapi pada prinsipnya, jika entah bagaimana hal-hal ini 
+
+1011
+00:42:59,720 --> 00:43:04,620
+ entah bagaimana invariant, maka Anda bisa melakukan sesuatu seperti itu. 
+
+1012
+00:43:04,620 --> 00:43:07,640
+ Tapi masalahnya adalah, dalam banyak kasus, 
+
+1013
+00:43:07,640 --> 00:43:09,750
+ kembali ini - overhead pembukuan untuk itu 
+
+1014
+00:43:09,750 --> 00:43:10,968
+ akan sedikit rumit. 
+
+1015
+00:43:10,968 --> 00:43:13,060
+ Karena Anda bisa membayangkan fungsi itu 
+
+1016
+00:43:13,060 --> 00:43:16,147
+ dapat dipanggil dari tempat, dan seterusnya dan sebagainya. 
+
+1017
+00:43:16,147 --> 00:43:17,605
+ Hanya demi waktu, kita 
+
+1018
+00:43:17,605 --> 00:43:19,253
+ akan tampilannya sedikit maju. 
+
+1019
+00:43:19,253 --> 00:43:20,794
+ Tetapi jika kita memiliki waktu di akhir, kita akan 
+
+1020
+00:43:20,794 --> 00:43:22,335
+ kembali ke beberapa pertanyaan ini. 
+
+1021
+00:43:22,335 --> 00:43:25,308
+
+
+1022
+00:43:25,308 --> 00:43:29,330
+ Jadi itu adalah beberapa situasi di mana kenari bisa gagal. 
+
+1023
+00:43:29,330 --> 00:43:32,800
+ Ada beberapa tempat lain yang juga bisa gagal. 
+
+1024
+00:43:32,800 --> 00:43:35,220
+ Misalnya, salah satu cara yang mungkin gagal 
+
+1025
+00:43:35,220 --> 00:43:38,650
+ adalah dengan malloc dan serangan gratis. 
+
+1026
+00:43:38,650 --> 00:43:44,446
+ Ini adalah serangan C-style yang unik. 
+
+1027
+00:43:44,446 --> 00:43:45,750
+ Mari kita lihat apa yang terjadi di sini. 
+
+1028
+00:43:45,750 --> 00:43:49,860
+
+
+1029
+00:43:49,860 --> 00:43:59,012
+ Bayangkan Anda memiliki dua pointer di sini, p dan q. 
+
+1030
+00:43:59,012 --> 00:44:08,110
+ Dan kemudian bayangkan bahwa kami mengeluarkan malloc untuk kedua hal ini. 
+
+1031
+00:44:08,110 --> 00:44:11,310
+ Kami memberikan p 1.024 byte memori. 
+
+1032
+00:44:11,310 --> 00:44:15,080
+ Kami juga memberikan q 1.024 byte memori. 
+
+1033
+00:44:15,080 --> 00:44:17,880
+
+
+1034
+00:44:17,880 --> 00:44:29,478
+ Dan kemudian, katakanlah kita melakukan strcpy pada hal 
+
+1035
+00:44:29,478 --> 00:44:31,898
+ dari beberapa bug yang dikendalikan oleh penyerang. 
+
+1036
+00:44:31,898 --> 00:44:35,300
+ Jadi di sinilah terjadi limpahan. 
+
+1037
+00:44:35,300 --> 00:44:43,770
+ Dan kemudian katakanlah itu akan q gratis 
+
+1038
+00:44:43,770 --> 00:44:48,010
+ dan kemudian katakanlah itu akan gratis p. 
+
+1039
+00:44:48,010 --> 00:44:48,510
+ BAIK. 
+
+1040
+00:44:48,510 --> 00:44:50,360
+ Jadi itu kode yang cukup sederhana, kan? 
+
+1041
+00:44:50,360 --> 00:44:54,321
+ Dua point-- malloc adalah ingatan untuk masing-masing dari mereka. 
+
+1042
+00:44:54,321 --> 00:44:55,945
+ Anda menggunakan salah satu dari ini di fungsi situs, 
+
+1043
+00:44:55,945 --> 00:45:03,380
+ buffer overflow terjadi, dan kami membebaskan q dan kami membebaskan p. 
+
+1044
+00:45:03,380 --> 00:45:12,540
+ Mari kita berasumsi bahwa p dan q-- memori itu 
+
+1045
+00:45:12,540 --> 00:45:22,142
+ ditugaskan kepada mereka-- dekat, dalam hal tata letak dalam hal 
+
+1046
+00:45:22,142 --> 00:45:23,190
+ dari [TIDAK JELAS]. 
+
+1047
+00:45:23,190 --> 00:45:27,520
+ Jadi kedua benda ini saling bersebelahan 
+
+1048
+00:45:27,520 --> 00:45:30,320
+ di ruang memori. 
+
+1049
+00:45:30,320 --> 00:45:34,460
+ Ada beberapa hal halus dan jahat yang bisa terjadi, kan? 
+
+1050
+00:45:34,460 --> 00:45:39,860
+ Karena salinan ketiga ini mungkin benar-benar over-- 
+
+1051
+00:45:39,860 --> 00:45:41,830
+ itu akan mengisi p dengan banyak barang, 
+
+1052
+00:45:41,830 --> 00:45:47,510
+ tetapi mungkin juga merusak beberapa negara yang dimiliki q. 
+
+1053
+00:45:47,510 --> 00:45:48,010
+ BAIK? 
+
+1054
+00:45:48,010 --> 00:45:49,020
+ Dan ini bisa menimbulkan masalah. 
+
+1055
+00:45:49,020 --> 00:45:50,519
+ Dan beberapa dari Anda mungkin telah melakukan banyak hal 
+
+1056
+00:45:50,519 --> 00:45:52,635
+ secara tidak sengaja ini dalam kode Anda sendiri, kapan 
+
+1057
+00:45:52,635 --> 00:45:55,110
+ Anda memiliki beberapa jenis penggunaan pointer yang aneh. 
+
+1058
+00:45:55,110 --> 00:45:56,890
+ Dan kemudian hal-hal tampaknya bekerja, tetapi kapan 
+
+1059
+00:45:56,890 --> 00:45:58,778
+ Anda menelepon gratis nanti, itu segfaults 
+
+1060
+00:45:58,778 --> 00:45:59,880
+ atau semacam itu. 
+
+1061
+00:45:59,880 --> 00:46:00,500
+ Kanan? 
+
+1062
+00:46:00,500 --> 00:46:01,660
+ Apa yang akan saya bicarakan di sini 
+
+1063
+00:46:01,660 --> 00:46:03,201
+ adalah cara yang dapat dilakukan penyerang 
+
+1064
+00:46:03,201 --> 00:46:04,550
+ keuntungan dari perilaku itu. 
+
+1065
+00:46:04,550 --> 00:46:06,591
+ Kami sebenarnya akan menjelaskan mengapa itu terjadi. 
+
+1066
+00:46:06,591 --> 00:46:12,520
+ Jadi bayangkan bahwa di dalam implementasi 
+
+1067
+00:46:12,520 --> 00:46:17,380
+ gratis dan malloc, blok yang dialokasikan terlihat seperti ini. 
+
+1068
+00:46:17,380 --> 00:46:21,040
+
+
+1069
+00:46:21,040 --> 00:46:29,320
+ Jadi, katakanlah bahwa ada data yang terlihat oleh aplikasi yang hidup 
+
+1070
+00:46:29,320 --> 00:46:29,820
+ sini. 
+
+1071
+00:46:29,820 --> 00:46:35,250
+ Dan kemudian katakanlah Anda memiliki variabel ukuran di sini. 
+
+1072
+00:46:35,250 --> 00:46:38,310
+ Ini bukan sesuatu yang aplikasi lihat secara langsung. 
+
+1073
+00:46:38,310 --> 00:46:40,200
+ Ini seperti info pembukuan 
+
+1074
+00:46:40,200 --> 00:46:43,110
+ yang gratis atau sistem malloc 
+
+1075
+00:46:43,110 --> 00:46:45,390
+ menarik sehingga Anda tahu ukuran buffer 
+
+1076
+00:46:45,390 --> 00:46:47,990
+ yang dialokasikan. 
+
+1077
+00:46:47,990 --> 00:46:55,480
+ Katakanlah bahwa blok bebas memiliki beberapa metadata itu 
+
+1078
+00:46:55,480 --> 00:46:56,350
+ terlihat seperti ini. 
+
+1079
+00:46:56,350 --> 00:47:03,092
+
+
+1080
+00:47:03,092 --> 00:47:06,126
+ Anda punya ukuran blok gratis di sini. 
+
+1081
+00:47:06,126 --> 00:47:09,070
+ Dan kemudian Anda punya banyak ruang kosong di sini. 
+
+1082
+00:47:09,070 --> 00:47:11,320
+ Kalau begitu, katakanlah - ini adalah tempat yang menarik. 
+
+1083
+00:47:11,320 --> 00:47:17,230
+ Anda punya pointer mundur dan kemudian 
+
+1084
+00:47:17,230 --> 00:47:19,770
+ Anda punya pointer ke depan. 
+
+1085
+00:47:19,770 --> 00:47:25,352
+
+
+1086
+00:47:25,352 --> 00:47:27,060
+ Dan mungkin Anda punya data ukuran di sini. 
+
+1087
+00:47:27,060 --> 00:47:28,976
+ Sekarang mengapa kita memiliki dua petunjuk ini di sini? 
+
+1088
+00:47:28,976 --> 00:47:30,415
+ Itu karena alokasi memori 
+
+1089
+00:47:30,415 --> 00:47:33,800
+ sistem, dalam hal ini, menggunakan daftar terkait ganda 
+
+1090
+00:47:33,800 --> 00:47:37,950
+ untuk melacak bagaimana blok gratis terkait satu sama lain. 
+
+1091
+00:47:37,950 --> 00:47:39,605
+ Jadi ketika Anda mengalokasikan blok gratis, 
+
+1092
+00:47:39,605 --> 00:47:41,520
+ Anda melepaskannya dari daftar yang terkait ganda ini. 
+
+1093
+00:47:41,520 --> 00:47:45,070
+ Dan kemudian ketika Anda menanggalkannya, Anda melakukan beberapa aritmatika penunjuk, 
+
+1094
+00:47:45,070 --> 00:47:46,480
+ dan kemudian Anda memperbaiki hal-hal ini. 
+
+1095
+00:47:46,480 --> 00:47:48,690
+ Kemudian Anda menambahkannya kembali ke daftar yang terhubung itu, bukan? 
+
+1096
+00:47:48,690 --> 00:47:51,100
+ Jadi seperti biasa, setiap kali Anda mendengar aritmatika penunjuk, 
+
+1097
+00:47:51,100 --> 00:47:52,667
+ Anda harus berpikir itu kenari Anda. 
+
+1098
+00:47:52,667 --> 00:47:55,000
+ Karena di situlah banyak masalah ini muncul. 
+
+1099
+00:47:55,000 --> 00:48:01,230
+ Dan hal yang perlu diperhatikan adalah bahwa kami memiliki buffer overflow ini 
+
+1100
+00:48:01,230 --> 00:48:03,007
+ di sini, p. 
+
+1101
+00:48:03,007 --> 00:48:05,930
+ Jika kita berasumsi bahwa p dan q bersebelahan, 
+
+1102
+00:48:05,930 --> 00:48:08,795
+ atau sangat dekat dalam memori, lalu apa yang akhirnya bisa terjadi 
+
+1103
+00:48:08,795 --> 00:48:12,080
+ adalah bahwa buffer overflow ini dapat ditimpa 
+
+1104
+00:48:12,080 --> 00:48:19,050
+ beberapa data ukuran ini untuk pointer yang dialokasikan, q. 
+
+1105
+00:48:19,050 --> 00:48:20,470
+ Apakah semua orang dengan saya sejauh ini? 
+
+1106
+00:48:20,470 --> 00:48:22,860
+ Karena jika Anda bersama saya sejauh ini, maka pada dasarnya, 
+
+1107
+00:48:22,860 --> 00:48:24,720
+ Anda dapat menggunakan imajinasi Anda pada saat ini 
+
+1108
+00:48:24,720 --> 00:48:26,230
+ dan melihat di mana ada yang salah. 
+
+1109
+00:48:26,230 --> 00:48:27,605
+ Karena pada dasarnya, apa yang terjadi 
+
+1110
+00:48:27,605 --> 00:48:31,840
+ untuk akhirnya terjadi adalah bahwa operasi gratis ini-- mereka 
+
+1111
+00:48:31,840 --> 00:48:35,978
+ lihat metadata ini untuk melakukan semua jenis manipulasi penunjuk 
+
+1112
+00:48:35,978 --> 00:48:37,226
+ dengan barang semacam ini. 
+
+1113
+00:48:37,226 --> 00:48:53,220
+
+
+1114
+00:48:53,220 --> 00:48:56,790
+ Di suatu tempat dalam penerapan gratis, 
+
+1115
+00:48:56,790 --> 00:49:05,480
+ itu akan mendapatkan beberapa penunjuk berdasarkan 
+
+1116
+00:49:05,480 --> 00:49:11,100
+ pada nilai ukuran, di mana ukuran adalah sesuatu 
+
+1117
+00:49:11,100 --> 00:49:12,236
+ penyerang mengontrol. 
+
+1118
+00:49:12,236 --> 00:49:14,110
+ Karena penyerang melakukan buffer overflow. 
+
+1119
+00:49:14,110 --> 00:49:14,609
+ Kanan? 
+
+1120
+00:49:14,609 --> 00:49:18,610
+ Jadi, Anda dapat membayangkan bahwa hal itu terjadi 
+
+1121
+00:49:18,610 --> 00:49:20,090
+ sekelompok aritmatika penunjuk. 
+
+1122
+00:49:20,090 --> 00:49:25,030
+
+
+1123
+00:49:25,030 --> 00:49:28,950
+ Jadi itu akan melihat ke belakang di empat 
+
+1124
+00:49:28,950 --> 00:49:33,110
+ pointer dari blok ini. 
+
+1125
+00:49:33,110 --> 00:49:35,910
+ Dan kemudian itu akan melakukan sesuatu 
+
+1126
+00:49:35,910 --> 00:49:37,880
+ seperti memperbarui pointer kembali. 
+
+1127
+00:49:37,880 --> 00:49:41,660
+
+
+1128
+00:49:41,660 --> 00:49:44,760
+ Dan juga memperbarui pointer ke depan. 
+
+1129
+00:49:44,760 --> 00:49:49,807
+
+
+1130
+00:49:49,807 --> 00:49:51,348
+ Dan spesifik persis dari ini-- Anda 
+
+1131
+00:49:51,348 --> 00:49:52,867
+ tidak perlu khawatir. 
+
+1132
+00:49:52,867 --> 00:49:55,450
+ Ini hanyalah contoh kode yang terjadi di sana. 
+
+1133
+00:49:55,450 --> 00:49:58,520
+ Tapi intinya adalah catatan itu karena si penyerang 
+
+1134
+00:49:58,520 --> 00:50:00,570
+ ukuran yang ditimpa, penyerang sekarang 
+
+1135
+00:50:00,570 --> 00:50:03,860
+ mengontrol penunjuk ini yang diteruskan ke kode gratis. 
+
+1136
+00:50:03,860 --> 00:50:06,040
+ Dan karena itu, dua pernyataan ini 
+
+1137
+00:50:06,040 --> 00:50:08,830
+ di sini, ini benar-benar pembaruan pointer. 
+
+1138
+00:50:08,830 --> 00:50:09,330
+ Kanan? 
+
+1139
+00:50:09,330 --> 00:50:10,870
+ Ini adalah penunjuk tempat. 
+
+1140
+00:50:10,870 --> 00:50:15,080
+ Dan karena penyerang telah mampu mengendalikan p ini, 
+
+1141
+00:50:15,080 --> 00:50:17,690
+ dia sebenarnya mengendalikan semua hal ini juga. 
+
+1142
+00:50:17,690 --> 00:50:20,680
+ Di sinilah serangan itu benar-benar terjadi. 
+
+1143
+00:50:20,680 --> 00:50:22,862
+ Jadi ketika kode gratis beroperasi dan itu 
+
+1144
+00:50:22,862 --> 00:50:25,370
+ mencoba melakukan hal-hal seperti, misalnya, menggabungkan keduanya 
+
+1145
+00:50:25,370 --> 00:50:27,289
+ blok, itu biasanya mengapa Anda punya 
+
+1146
+00:50:27,289 --> 00:50:28,580
+ [TIDAK TERDENGAR] daftar ganda terkait. 
+
+1147
+00:50:28,580 --> 00:50:30,791
+ Karena jika Anda memiliki dua blok yang saling berhadapan 
+
+1148
+00:50:30,791 --> 00:50:33,650
+ dan keduanya gratis, Anda ingin menggabungkannya ke satu blok besar. 
+
+1149
+00:50:33,650 --> 00:50:36,180
+ Kami mengontrol ukuran. 
+
+1150
+00:50:36,180 --> 00:50:38,154
+ Itu artinya kita mengendalikan seluruh proses ini di sini. 
+
+1151
+00:50:38,154 --> 00:50:41,235
+ Itu berarti jika kita sudah pintar dalam bagaimana luapan ini 
+
+1152
+00:50:41,235 --> 00:50:44,474
+ bekerja, pada titik-titik ini, kita bisa menulis ke memori di jalan 
+
+1153
+00:50:44,474 --> 00:50:46,840
+ yang kita pilih. 
+
+1154
+00:50:46,840 --> 00:50:49,065
+ Apakah itu masuk akal? 
+
+1155
+00:50:49,065 --> 00:50:50,550
+ Dan seperti yang saya katakan, hal semacam ini 
+
+1156
+00:50:50,550 --> 00:50:52,974
+ sering terjadi di kode Anda sendiri saat Anda tidak mendapatkannya 
+
+1157
+00:50:52,974 --> 00:50:54,015
+ sangat pintar dengan pointer. 
+
+1158
+00:50:54,015 --> 00:50:56,985
+ Ketika Anda membuat kesalahan dengan kebebasan ganda atau apa pun, 
+
+1159
+00:50:56,985 --> 00:50:59,507
+ Inilah sebabnya mengapa barang-barang akan segfault kadang-kadang. 
+
+1160
+00:50:59,507 --> 00:51:01,090
+ Karena Anda telah mengacaukan metadata ini 
+
+1161
+00:51:01,090 --> 00:51:03,690
+ yang hidup dengan masing-masing blok yang dialokasikan ini. 
+
+1162
+00:51:03,690 --> 00:51:05,950
+ Dan kemudian pada titik tertentu, perhitungan ini 
+
+1163
+00:51:05,950 --> 00:51:08,465
+ akan menunjuk ke beberapa nilai sampah, dan kemudian Anda mati. 
+
+1164
+00:51:08,465 --> 00:51:11,048
+ Tetapi jika Anda penyerang, Anda benar-benar dapat memilih nilai itu 
+
+1165
+00:51:11,048 --> 00:51:12,482
+ dan gunakan untuk keuntunganmu sendiri. 
+
+1166
+00:51:12,482 --> 00:51:17,280
+
+
+1167
+00:51:17,280 --> 00:51:17,790
+ BAIK. 
+
+1168
+00:51:17,790 --> 00:51:22,345
+ Jadi sekarang mari kita ke pendekatan lain 
+
+1169
+00:51:22,345 --> 00:51:27,070
+ untuk menyingkirkan beberapa serangan buffer overflow ini. 
+
+1170
+00:51:27,070 --> 00:51:30,742
+ Dan pendekatan itu adalah batas pengecekan. 
+
+1171
+00:51:30,742 --> 00:51:38,480
+
+
+1172
+00:51:38,480 --> 00:51:45,090
+ Tujuan pemeriksaan batas adalah untuk memastikan 
+
+1173
+00:51:45,090 --> 00:51:48,768
+ bahwa ketika Anda menggunakan pointer tertentu, 
+
+1174
+00:51:48,768 --> 00:51:54,380
+ itu hanya mengacu pada sesuatu yang merupakan objek memori. 
+
+1175
+00:51:54,380 --> 00:51:58,380
+ Dan pointer itu di batas yang valid dari objek memori itu. 
+
+1176
+00:51:58,380 --> 00:52:00,760
+ Jadi itulah ide dasar di balik ide itu. 
+
+1177
+00:52:00,760 --> 00:52:03,180
+ Ini sebenarnya cukup sederhana-- pada level yang tinggi. 
+
+1178
+00:52:03,180 --> 00:52:05,610
+ Sekali lagi, di C, itu sangat sulit 
+
+1179
+00:52:05,610 --> 00:52:07,010
+ untuk benar-benar memahami sesuatu. 
+
+1180
+00:52:07,010 --> 00:52:08,926
+ Seperti, apa arti sebenarnya dari sebuah penunjuk 
+
+1181
+00:52:08,926 --> 00:52:11,260
+ berada di batas atau di luar batas, atau valid atau tidak valid? 
+
+1182
+00:52:11,260 --> 00:52:13,920
+ Jadi misalnya, katakanlah Anda punya 
+
+1183
+00:52:13,920 --> 00:52:16,620
+ dua potong kode seperti ini. 
+
+1184
+00:52:16,620 --> 00:52:24,580
+ Jadi Anda mendeklarasikan array karakter dari 1.024 byte. 
+
+1185
+00:52:24,580 --> 00:52:29,570
+ Dan kemudian katakanlah Anda menggunakan sesuatu seperti ini. 
+
+1186
+00:52:29,570 --> 00:52:32,920
+ Anda menyatakan penunjuk, dan kemudian Anda 
+
+1187
+00:52:32,920 --> 00:52:38,686
+ dapatkan alamat salah satu elemen di x. 
+
+1188
+00:52:38,686 --> 00:52:41,620
+
+
+1189
+00:52:41,620 --> 00:52:43,070
+ Apakah ini masuk akal? 
+
+1190
+00:52:43,070 --> 00:52:45,240
+ Apakah ini ide yang bagus untuk melakukan itu? 
+
+1191
+00:52:45,240 --> 00:52:46,900
+ Sulit mengatakannya. 
+
+1192
+00:52:46,900 --> 00:52:50,182
+ Jika Anda memperlakukan x ini di sini sebagai string, 
+
+1193
+00:52:50,182 --> 00:52:52,556
+ mungkin masuk akal bagi Jim untuk mengambil penunjuk seperti ini. 
+
+1194
+00:52:52,556 --> 00:52:54,871
+ Maka Anda bisa menambah dan mengurangi, karena mungkin Anda 
+
+1195
+00:52:54,871 --> 00:52:57,287
+ mencari beberapa nilai khusus dari karakter Anda di sana. 
+
+1196
+00:52:57,287 --> 00:53:00,545
+ Tetapi jika ini adalah pesan jaringan atau sesuatu seperti itu, 
+
+1197
+00:53:00,545 --> 00:53:04,120
+ mungkin sebenarnya ada beberapa struct yang tertanam di sini. 
+
+1198
+00:53:04,120 --> 00:53:05,670
+ Jadi itu tidak masuk akal 
+
+1199
+00:53:05,670 --> 00:53:07,661
+ untuk berjalan karakter ini dengan karakter, kan? 
+
+1200
+00:53:07,661 --> 00:53:09,535
+ Jadi tantangannya di sini adalah, sekali lagi, kita 
+
+1201
+00:53:09,535 --> 00:53:12,110
+ dapat melihatnya memungkinkan Anda melakukan apa pun yang Anda inginkan. 
+
+1202
+00:53:12,110 --> 00:53:15,510
+ Sulit untuk menentukan apa yang sebenarnya ingin Anda lakukan. 
+
+1203
+00:53:15,510 --> 00:53:18,280
+ Jadi, hasilnya, itu sedikit 
+
+1204
+00:53:18,280 --> 00:53:19,960
+ halus dengan cara Anda mendefinisikan sesuatu 
+
+1205
+00:53:19,960 --> 00:53:23,440
+ seperti penunjuk keamanan di C. 
+
+1206
+00:53:23,440 --> 00:53:26,470
+ Anda juga bisa membayangkan bahwa hidup menjadi lebih rumit 
+
+1207
+00:53:26,470 --> 00:53:30,600
+ jika Anda menggunakan struct dan serikat pekerja. 
+
+1208
+00:53:30,600 --> 00:53:32,075
+ Bayangkan Anda memiliki serikat pekerja. 
+
+1209
+00:53:32,075 --> 00:53:35,462
+ Akan terlihat seperti ini. 
+
+1210
+00:53:35,462 --> 00:53:38,941
+ Ada beberapa nilai integer di sana. 
+
+1211
+00:53:38,941 --> 00:53:43,414
+ Dan kemudian Anda punya beberapa struct. 
+
+1212
+00:53:43,414 --> 00:53:46,396
+ Dan kemudian, ia memiliki dua bilangan bulat di dalamnya. 
+
+1213
+00:53:46,396 --> 00:53:59,600
+
+
+1214
+00:53:59,600 --> 00:54:02,510
+ Jangan lupa cara kerja serikat pekerja itu, pada dasarnya, 
+
+1215
+00:54:02,510 --> 00:54:04,910
+ serikat pekerja akan mengalokasikan ukuran maksimum 
+
+1216
+00:54:04,910 --> 00:54:07,184
+ untuk elemen terbesar. 
+
+1217
+00:54:07,184 --> 00:54:08,600
+ Pada saat tertentu, Anda biasanya 
+
+1218
+00:54:08,600 --> 00:54:11,320
+ berharap bahwa ni ini akan berlaku 
+
+1219
+00:54:11,320 --> 00:54:14,810
+ atau struct ini akan valid, tetapi tidak keduanya. 
+
+1220
+00:54:14,810 --> 00:54:18,694
+ Jadi bayangkan Anda memiliki kode yang melakukan hal seperti ini. 
+
+1221
+00:54:18,694 --> 00:54:21,540
+
+
+1222
+00:54:21,540 --> 00:54:26,414
+ Anda mendapatkan pointer untuk mengatasi orang ini. 
+
+1223
+00:54:26,414 --> 00:54:33,218
+
+
+1224
+00:54:33,218 --> 00:54:37,990
+ Jadi saya mendapatkan pointer integer ke alamat, di serikat, 
+
+1225
+00:54:37,990 --> 00:54:40,800
+ struct ini, dan kemudian k. 
+
+1226
+00:54:40,800 --> 00:54:45,920
+ Nah, referensi ini secara tegas dalam batas. 
+
+1227
+00:54:45,920 --> 00:54:47,910
+ Ada ingatan yang telah dialokasikan untuk ini. 
+
+1228
+00:54:47,910 --> 00:54:49,280
+ Itu tidak salah. 
+
+1229
+00:54:49,280 --> 00:54:51,960
+ Tapi apakah Anda benar-benar, saat ini dalam program eksekusi, 
+
+1230
+00:54:51,960 --> 00:54:54,700
+ memperlakukan persatuan ini sebagai salah satu dari orang-orang ini 
+
+1231
+00:54:54,700 --> 00:54:56,470
+ atau salah satu dari orang-orang ini? 
+
+1232
+00:54:56,470 --> 00:54:58,200
+ Sulit mengatakannya. 
+
+1233
+00:54:58,200 --> 00:55:01,720
+ Jadi sebagai hasil dari semantik pointer rancu ini 
+
+1234
+00:55:01,720 --> 00:55:05,730
+ yang dapat muncul dalam program C ini, biasanya, 
+
+1235
+00:55:05,730 --> 00:55:09,300
+ pendekatan pengecekan terikat ini hanya bisa 
+
+1236
+00:55:09,300 --> 00:55:12,540
+ menawarkan gagasan yang lebih lemah tentang kebenaran penunjuk. 
+
+1237
+00:55:12,540 --> 00:55:16,840
+ Dan itulah gagasannya sebagai berikut. 
+
+1238
+00:55:16,840 --> 00:55:23,995
+
+
+1239
+00:55:23,995 --> 00:55:32,860
+ Jika Anda memiliki pointer p prime itu 
+
+1240
+00:55:32,860 --> 00:55:50,530
+ berasal dari p p pointer dasar, lalu p prima 
+
+1241
+00:55:50,530 --> 00:56:07,604
+ seharusnya hanya digunakan untuk menghormati memori yang dimiliki 
+
+1242
+00:56:07,604 --> 00:56:08,812
+ ke penunjuk dasar asli. 
+
+1243
+00:56:08,812 --> 00:56:17,620
+
+
+1244
+00:56:17,620 --> 00:56:20,850
+ Jadi untuk pointer p utama itu 
+
+1245
+00:56:20,850 --> 00:56:23,200
+ berasal dari beberapa p asli, lalu 
+
+1246
+00:56:23,200 --> 00:56:25,850
+ p prime seharusnya hanya digunakan untuk menghormati memori itu 
+
+1247
+00:56:25,850 --> 00:56:27,680
+ milik p. 
+
+1248
+00:56:27,680 --> 00:56:31,880
+ Ketahuilah bahwa ini adalah tujuan yang lebih lemah daripada menegakkan sepenuhnya 
+
+1249
+00:56:31,880 --> 00:56:34,380
+ semantik penunjuk yang benar. 
+
+1250
+00:56:34,380 --> 00:56:36,380
+ Karena misalnya, Anda masih bisa 
+
+1251
+00:56:36,380 --> 00:56:41,244
+ memiliki masalah aneh seperti dengan persatuan ini di sini, misalnya. 
+
+1252
+00:56:41,244 --> 00:56:43,160
+ Mungkin pada titik tertentu dalam program ini, 
+
+1253
+00:56:43,160 --> 00:56:45,380
+ itu tidak benar untuk programnya 
+
+1254
+00:56:45,380 --> 00:56:49,150
+ untuk dapat mereferensikan nilai tertentu dalam serikat. 
+
+1255
+00:56:49,150 --> 00:56:53,500
+ Tetapi setidaknya referensi pointer ini tidak seimbang. 
+
+1256
+00:56:53,500 --> 00:56:59,490
+ Jadi mungkin-- seperti contoh ini di sini-- mungkin kreasi ini 
+
+1257
+00:56:59,490 --> 00:57:02,660
+ penunjuk ini di sini melanggar semantik 
+
+1258
+00:57:02,660 --> 00:57:04,600
+ pesan jaringan tertanam di x. 
+
+1259
+00:57:04,600 --> 00:57:07,710
+ Tapi setidaknya Anda tidak menginjak-injak memori sewenang-wenang. 
+
+1260
+00:57:07,710 --> 00:57:11,221
+ Anda hanya menginjak-injak memori yang menjadi milik Anda. 
+
+1261
+00:57:11,221 --> 00:57:13,470
+ Maka, di dunia C, ini dianggap sukses. 
+
+1262
+00:57:13,470 --> 00:57:16,949
+
+
+1263
+00:57:16,949 --> 00:57:17,990
+ Jadi itulah ide dasarnya. 
+
+1264
+00:57:17,990 --> 00:57:20,750
+ Sekarang, tantangan dengan menegakkan 
+
+1265
+00:57:20,750 --> 00:57:24,103
+ jenis semantik di sini adalah bahwa, dalam banyak kasus, 
+
+1266
+00:57:24,103 --> 00:57:26,132
+ Anda butuh bantuan dari compiler. 
+
+1267
+00:57:26,132 --> 00:57:27,590
+ Jadi, Anda perlu bantuan dari compiler. 
+
+1268
+00:57:27,590 --> 00:57:30,640
+ Anda biasanya perlu mengkompilasi ulang program 
+
+1269
+00:57:30,640 --> 00:57:32,346
+ untuk menegakkan semantik ini. 
+
+1270
+00:57:32,346 --> 00:57:34,836
+ Itu bisa menjadi hambatan untuk kompatibilitas mundur. 
+
+1271
+00:57:34,836 --> 00:57:38,520
+ Tapi ini adalah gagasan dasar pemeriksaan batas. 
+
+1272
+00:57:38,520 --> 00:57:41,230
+ Apa sajakah cara yang dapat Anda terapkan untuk memeriksa batas? 
+
+1273
+00:57:41,230 --> 00:57:49,000
+
+
+1274
+00:57:49,000 --> 00:57:55,498
+ Salah satu cara yang sangat sederhana adalah gagasan yang disebut pagar listrik. 
+
+1275
+00:57:55,498 --> 00:58:01,870
+
+
+1276
+00:58:01,870 --> 00:58:06,410
+ Gagasan di sini adalah bahwa, untuk setiap objek yang Anda alokasikan 
+
+1277
+00:58:06,410 --> 00:58:13,930
+ di heap, Anda mengalokasikan halaman penjaga itu 
+
+1278
+00:58:13,930 --> 00:58:15,440
+ segera di sebelahnya. 
+
+1279
+00:58:15,440 --> 00:58:18,820
+ Dan Anda mengatur perlindungan halaman di halaman itu, seperti itu 
+
+1280
+00:58:18,820 --> 00:58:22,104
+ bahwa jika ada yang mencoba menyentuh itu, Anda mendapatkan kesalahan yang keras. 
+
+1281
+00:58:22,104 --> 00:58:23,770
+ Aturan keras mengatakan itu di luar batas, 
+
+1282
+00:58:23,770 --> 00:58:26,205
+ dan kemudian program akan berhenti di sana. 
+
+1283
+00:58:26,205 --> 00:58:29,195
+ Dan ini adalah hal yang sangat sederhana yang dapat Anda lakukan. 
+
+1284
+00:58:29,195 --> 00:58:31,316
+ Dan apa yang baik tentang pendekatan ini sebenarnya, 
+
+1285
+00:58:31,316 --> 00:58:34,560
+ adalah bahwa setiap kali Anda memiliki referensi memori yang tidak valid, 
+
+1286
+00:58:34,560 --> 00:58:37,140
+ ini menyebabkan kesalahan dengan segera, benar. 
+
+1287
+00:58:37,140 --> 00:58:39,230
+ Jika Anda pernah men-debug program Base C atau C ++, 
+
+1288
+00:58:39,230 --> 00:58:41,854
+ salah satu masalah besar adalah sering kali Anda korup 
+
+1289
+00:58:41,854 --> 00:58:46,300
+ memori, memori itu rusak secara diam-diam, dan untuk sementara waktu, 
+
+1290
+00:58:46,300 --> 00:58:49,130
+ dan tidak sampai nanti bahwa sesuatu crash dan kemudian hanya 
+
+1291
+00:58:49,130 --> 00:58:50,870
+ maka Anda menyadari sesuatu telah terjadi. 
+
+1292
+00:58:50,870 --> 00:58:52,380
+ Tapi kamu tidak tahu apa itu sesuatu. 
+
+1293
+00:58:52,380 --> 00:58:54,390
+ Anda cukup melakukan apa yang mereka sebut heisenbugs, benar. 
+
+1294
+00:58:54,390 --> 00:58:56,030
+ Hal-hal yang memiliki gagasan ketidakpastian di dalamnya. 
+
+1295
+00:58:56,030 --> 00:58:58,150
+ Jadi apa yang baik tentang ini adalah secepat itu 
+
+1296
+00:58:58,150 --> 00:59:00,760
+ sebagai penunjuk hits di sini, boom, itu adalah halaman penjaga, 
+
+1297
+00:59:00,760 --> 00:59:03,060
+ semuanya meledak. 
+
+1298
+00:59:03,060 --> 00:59:05,130
+ Sekarang dapatkah Anda memikirkan suatu kerugian 
+
+1299
+00:59:05,130 --> 00:59:06,937
+ dengan pendekatan ini? 
+
+1300
+00:59:06,937 --> 00:59:08,520
+ AUDIENCE: Dibutuhkan lebih lama [tidak terdengar]. 
+
+1301
+00:59:08,520 --> 00:59:10,049
+ PROFESOR: Ya persis. 
+
+1302
+00:59:10,049 --> 00:59:12,090
+ Jadi bayangkan bahwa hal kecil ini - kunci ini di sini 
+
+1303
+00:59:12,090 --> 00:59:15,120
+ super, super kecil, maka saya telah mengalokasikan seluruh halaman 
+
+1304
+00:59:15,120 --> 00:59:19,240
+ hanya untuk memastikan bahwa hal kecil kecilku di sini tidak ... 
+
+1305
+00:59:19,240 --> 00:59:21,133
+ tidak memiliki salah satu dari serangan pointer ini. 
+
+1306
+00:59:21,133 --> 00:59:23,864
+ Jadi ini sangat ruang intensif. 
+
+1307
+00:59:23,864 --> 00:59:25,905
+ Dan begitu-- tetapi orang-orang tidak benar-benar menyebarkan sesuatu 
+
+1308
+00:59:25,905 --> 00:59:28,000
+ seperti ini dalam produksi. 
+
+1309
+00:59:28,000 --> 00:59:29,890
+ Ini bisa berguna untuk hal yang mengganggu, 
+
+1310
+00:59:29,890 --> 00:59:32,859
+ tetapi Anda tidak akan pernah melakukan ini untuk program nyata. 
+
+1311
+00:59:32,859 --> 00:59:33,650
+ Jadi itu masuk akal? 
+
+1312
+00:59:33,650 --> 00:59:36,600
+ Jadi pagar listrik ini sebenarnya cukup cantik 
+
+1313
+00:59:36,600 --> 00:59:39,222
+ mudah dimengerti. 
+
+1314
+00:59:39,222 --> 00:59:42,340
+ AUDIENCE: Mengapa harus begitu besar? 
+
+1315
+00:59:42,340 --> 00:59:46,930
+ PROFESOR: Ah, jadi alasannya adalah karena halaman penjaga ini di sini, 
+
+1316
+00:59:46,930 --> 00:59:50,142
+ Anda biasanya mengandalkan perangkat keras, seperti tingkat halaman 
+
+1317
+00:59:50,142 --> 00:59:52,100
+ perlindungan untuk menangani hal-hal semacam itu. 
+
+1318
+00:59:52,100 --> 00:59:54,230
+ Jadi ada ukuran memori tertentu 
+
+1319
+00:59:54,230 --> 00:59:56,359
+ Anda dapat mengatur ke ukuran halaman, menurut 
+
+1320
+00:59:56,359 --> 00:59:56,900
+ [? Hollis?]. 
+
+1321
+00:59:56,900 --> 00:59:58,886
+ Tetapi biasanya halaman itu adalah 4k, misalnya. 
+
+1322
+00:59:58,886 --> 01:00:00,260
+ Jadi, kembalilah ke pertanyaan Anda, 
+
+1323
+01:00:00,260 --> 01:00:02,910
+ ini adalah nilai kecil yang sangat kecil di sini, 
+
+1324
+01:00:02,910 --> 01:00:05,100
+ lalu ya [tidak terdengar] 2 byte di mana 
+
+1325
+01:00:05,100 --> 01:00:08,292
+ Anda mendapat 4k di sini melindunginya. 
+
+1326
+01:00:08,292 --> 01:00:11,638
+ AUDIENCE: Dalam melindungi individu [tidak terdengar] 
+
+1327
+01:00:11,638 --> 01:00:13,027
+ [TIDAK JELAS]. 
+
+1328
+01:00:13,027 --> 01:00:14,818
+ PROFESOR: Oh maaf ya, ya begitu dengan heap saya 
+
+1329
+01:00:14,818 --> 01:00:16,044
+ berarti seperti objek tumpukan. 
+
+1330
+01:00:16,044 --> 01:00:16,960
+ AUDIENCE: [TIDAK JELAS]. 
+
+1331
+01:00:16,960 --> 01:00:18,834
+ PROFESOR: Ya terima kasih untuk-- ya persis. 
+
+1332
+01:00:18,834 --> 01:00:20,504
+ Jadi bayangkan seperti untuk setiap malloc yang Anda lakukan, 
+
+1333
+01:00:20,504 --> 01:00:22,920
+ Anda dapat memiliki salah satu dari ini-- dan mengatur halaman penjaga untuk itu. 
+
+1334
+01:00:22,920 --> 01:00:25,110
+ AUDIENCE: Dan Anda melakukannya untuk login dan di atas? 
+
+1335
+01:00:25,110 --> 01:00:25,990
+ Atau tepat di atas? 
+
+1336
+01:00:25,990 --> 01:00:27,234
+ PROFESOR: Anda dapat melakukan keduanya. 
+
+1337
+01:00:27,234 --> 01:00:28,210
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+1338
+01:00:28,210 --> 01:00:30,260
+
+
+1339
+01:00:30,260 --> 01:00:31,260
+ PROFESOR: Benar. 
+
+1340
+01:00:31,260 --> 01:00:31,740
+ AUDIENCE: [TIDAK JELAS]. 
+
+1341
+01:00:31,740 --> 01:00:33,480
+ PROFESOR: Itu benar, Anda juga bisa melakukannya. 
+
+1342
+01:00:33,480 --> 01:00:34,979
+ Yang kita miliki tergantung pada ini-- 
+
+1343
+01:00:34,979 --> 01:00:37,030
+ pada ukuran objek. 
+
+1344
+01:00:37,030 --> 01:00:40,010
+ Maksud saya sekarang Anda harus menyatakan dua pagar penjaga, benar. 
+
+1345
+01:00:40,010 --> 01:00:42,610
+ Jadi sekarang ini dengan cepat menjadi tidak terkendali. 
+
+1346
+01:00:42,610 --> 01:00:46,615
+ Yang ya, Anda bisa memiliki pemesanan [tidak terdengar]. 
+
+1347
+01:00:46,615 --> 01:00:48,571
+ Jadi itulah ide dasar di balik itu. 
+
+1348
+01:00:48,571 --> 01:00:58,351
+
+
+1349
+01:00:58,351 --> 01:01:02,280
+ Dan kemudian pendekatan lain yang bisa Anda lihat 
+
+1350
+01:01:02,280 --> 01:01:07,028
+ adalah apa yang mereka sebut pointer lemak. 
+
+1351
+01:01:07,028 --> 01:01:11,990
+
+
+1352
+01:01:11,990 --> 01:01:13,490
+ Dan gagasannya di sini adalah kita sebenarnya 
+
+1353
+01:01:13,490 --> 01:01:16,280
+ ingin memodifikasi representasi penunjuk itu sendiri 
+
+1354
+01:01:16,280 --> 01:01:18,390
+ untuk memasukkan batasan informasi di dalamnya. 
+
+1355
+01:01:18,390 --> 01:01:27,290
+ Jadi jika Anda melihat pointer 32-bit biasa Anda apa itu 
+
+1356
+01:01:27,290 --> 01:01:28,430
+ terlihat seperti? 
+
+1357
+01:01:28,430 --> 01:01:30,128
+ Jawabannya adalah, 32-bit. 
+
+1358
+01:01:30,128 --> 01:01:32,842
+ Dan kemudian Anda mendapatkan [TIDAK JELAS]. 
+
+1359
+01:01:32,842 --> 01:01:33,341
+ Kanan? 
+
+1360
+01:01:33,341 --> 01:01:41,116
+ Jika Anda melihat penunjuk lemak maka satu 
+
+1361
+01:01:41,116 --> 01:01:42,740
+ cara Anda dapat berpikir tentang melihat ini 
+
+1362
+01:01:42,740 --> 01:01:46,710
+ apakah Anda mendapat basis 4 byte. 
+
+1363
+01:01:46,710 --> 01:01:50,580
+
+
+1364
+01:01:50,580 --> 01:01:57,143
+ Dan kemudian Anda memiliki ujung 4 byte. 
+
+1365
+01:01:57,143 --> 01:01:59,393
+ Jadi dengan kata lain, ini adalah tempat yang akan dialokasikan 
+
+1366
+01:01:59,393 --> 01:02:02,000
+ yang dimulai, di situlah berakhir 
+
+1367
+01:02:02,000 --> 01:02:09,125
+ dan kemudian Anda mendapat alamat cur 4 byte. 
+
+1368
+01:02:09,125 --> 01:02:12,660
+
+
+1369
+01:02:12,660 --> 01:02:14,220
+ Jadi di sinilah penunjuk sebenarnya 
+
+1370
+01:02:14,220 --> 01:02:16,500
+ adalah, dalam batasan itu, benar. 
+
+1371
+01:02:16,500 --> 01:02:20,550
+ Jadi pada dasarnya apa yang terjadi adalah kompilator akan menghasilkan 
+
+1372
+01:02:20,550 --> 01:02:24,530
+ kode, sehingga ketika Anda mengakses pointer lemak ini mendapat ini 
+
+1373
+01:02:24,530 --> 01:02:26,655
+ diperbarui, tetapi kemudian itu juga akan memeriksa dua hal ini 
+
+1374
+01:02:26,655 --> 01:02:28,109
+ untuk memastikan tidak ada yang buruk 
+
+1375
+01:02:28,109 --> 01:02:30,220
+ terjadi selama peningkatan itu. 
+
+1376
+01:02:30,220 --> 01:02:33,740
+ Jadi misalnya Anda dapat membayangkan bahwa jika saya memiliki kode seperti ini. 
+
+1377
+01:02:33,740 --> 01:02:42,240
+
+
+1378
+01:02:42,240 --> 01:02:47,780
+ Jadi saya memiliki pointer akhir dan kemudian saya mengalokasikan 8 byte. 
+
+1379
+01:02:47,780 --> 01:02:49,880
+ Jadi dengan asumsi bahwa kita berada pada arsitektur 32-bit 
+
+1380
+01:02:49,880 --> 01:02:53,480
+ untuk menunjuk ke 2 [TIDAK JELAS]. 
+
+1381
+01:02:53,480 --> 01:02:59,277
+ Dan kemudian saya memiliki beberapa saat loop itu 
+
+1382
+01:02:59,277 --> 01:03:05,138
+ akan memberikan nilai pada pointer dan kemudian 
+
+1383
+01:03:05,138 --> 01:03:11,520
+ menaikkan penunjuk - apa yang akan Anda lihat 
+
+1384
+01:03:11,520 --> 01:03:13,830
+ adalah alamat saat ini untuk pointer ini, 
+
+1385
+01:03:13,830 --> 01:03:18,700
+ seperti pada titik ini dalam kode, akan menunjuk ke basis, benar. 
+
+1386
+01:03:18,700 --> 01:03:21,930
+ Dan kemudian setiap kali kita beralih ke sini, 
+
+1387
+01:03:21,930 --> 01:03:24,067
+ kita dapat melihat bahwa kita sedang memeriksa batas, 
+
+1388
+01:03:24,067 --> 01:03:26,700
+ atau menambah batas. 
+
+1389
+01:03:26,700 --> 01:03:29,100
+ Jadi pada titik ini kami ingin mempertimbangkannya. 
+
+1390
+01:03:29,100 --> 01:03:32,425
+ Kami benar-benar dapat memeriksa dan melihat, adalah alamat saat ini 
+
+1391
+01:03:32,425 --> 01:03:34,748
+ di pointer itu, di ring ini. 
+
+1392
+01:03:34,748 --> 01:03:36,456
+ Dan jika itu tidak Anda masukkan pengecualian 
+
+1393
+01:03:36,456 --> 01:03:39,180
+ di sini dan seterusnya dan sebagainya. 
+
+1394
+01:03:39,180 --> 01:03:41,765
+ Jadi sekali lagi, di mana ini terjadi? 
+
+1395
+01:03:41,765 --> 01:03:45,230
+ Ini terjadi dalam kode baru yang dihasilkan oleh compiler. 
+
+1396
+01:03:45,230 --> 01:03:48,019
+ Jadi satu pertanyaan yang muncul di grup diskusi online, 
+
+1397
+01:03:48,019 --> 01:03:49,435
+ beberapa orang berkata, baik apa 
+
+1398
+01:03:49,435 --> 01:03:52,100
+ jika itu kode yang diinstrumentasi, apa artinya itu, kan? 
+
+1399
+01:03:52,100 --> 01:03:54,359
+ Jadi ketika saya mengatakan bahwa ... bahwa kompiler menghasilkan 
+
+1400
+01:03:54,359 --> 01:03:56,442
+ kode baru, bayangkan ada ... ini 
+
+1401
+01:03:56,442 --> 01:03:58,530
+ apa yang Anda lihat sebagai seorang programmer. 
+
+1402
+01:03:58,530 --> 01:04:02,010
+ Tetapi sebelum operasi ini benar-benar terjadi, 
+
+1403
+01:04:02,010 --> 01:04:05,250
+ bayangkan kompilator memasukkan beberapa kode C baru di sini 
+
+1404
+01:04:05,250 --> 01:04:07,835
+ yang pada dasarnya terlihat pada batas-batas dasar ini di sini. 
+
+1405
+01:04:07,835 --> 01:04:09,815
+ Dan kemudian jika ada sesuatu di luar batas 
+
+1406
+01:04:09,815 --> 01:04:12,785
+ itu kemudian akan melakukan jalan keluar, atau batalkan, atau sesuatu seperti itu. 
+
+1407
+01:04:12,785 --> 01:04:14,493
+ Jadi itulah artinya mengatakan itu di sana 
+
+1408
+01:04:14,493 --> 01:04:15,440
+ adalah kode yang diinstrumentasi. 
+
+1409
+01:04:15,440 --> 01:04:17,960
+ Itu karena Anda mengambil kode sumber, gunakan program C, 
+
+1410
+01:04:17,960 --> 01:04:20,424
+ tambahkan beberapa kode sumber C baru lalu kompilasi 
+
+1411
+01:04:20,424 --> 01:04:22,690
+ program video itu. 
+
+1412
+01:04:22,690 --> 01:04:24,823
+ Jadi ide dasar saya pikir di balik penunjuk lemak 
+
+1413
+01:04:24,823 --> 01:04:26,860
+ sangat sederhana. 
+
+1414
+01:04:26,860 --> 01:04:29,520
+ Ada beberapa kerugian untuk ini. 
+
+1415
+01:04:29,520 --> 01:04:32,465
+ Kerugian terbesar adalah, oh 
+
+1416
+01:04:32,465 --> 01:04:34,870
+ Astaga, lihat seberapa besar petunjuknya sekarang, benar. 
+
+1417
+01:04:34,870 --> 01:04:37,370
+ Dan apa artinya ini adalah bahwa Anda tidak bisa begitu saja 
+
+1418
+01:04:37,370 --> 01:04:40,140
+ ambil penunjuk lemak dan berikan ke yang tidak dimodifikasi, 
+
+1419
+01:04:40,140 --> 01:04:41,849
+ dari perpustakaan shell. 
+
+1420
+01:04:41,849 --> 01:04:43,515
+ Karena itu mungkin memiliki harapan tertentu 
+
+1421
+01:04:43,515 --> 01:04:46,220
+ bahwa pointer adalah ukuran tertentu dan kami memberi Anda hal ini, 
+
+1422
+01:04:46,220 --> 01:04:48,674
+ itu hanya akan-- itu akan meledak. 
+
+1423
+01:04:48,674 --> 01:04:50,465
+ Kami juga memiliki masalah jika Anda ingin memasukkannya 
+
+1424
+01:04:50,465 --> 01:04:52,840
+ jenis pointer dan struct, atau hal-hal seperti itu. 
+
+1425
+01:04:52,840 --> 01:04:56,180
+ Karena itu benar-benar dapat mengubah ukuran struct, benar. 
+
+1426
+01:04:56,180 --> 01:04:58,110
+ Jadi hal yang sangat populer dalam kode C harus dilakukan 
+
+1427
+01:04:58,110 --> 01:05:00,016
+ adalah untuk mengambil seperti ukuran dari struct 
+
+1428
+01:05:00,016 --> 01:05:01,974
+ dan kemudian suka melakukan sesuatu sebagai akibat dari itu. 
+
+1429
+01:05:01,974 --> 01:05:04,557
+ Seperti memesan beberapa ruang disk untuk sebuah struct dengan ukuran itu, 
+
+1430
+01:05:04,557 --> 01:05:05,515
+ dan seterusnya dan seterusnya. 
+
+1431
+01:05:05,515 --> 01:05:07,837
+ Jadi ini menyebabkan semua hal itu meledak, benar. 
+
+1432
+01:05:07,837 --> 01:05:11,740
+ Karena sekali lagi, petunjuknya menjadi sangat, sangat besar. 
+
+1433
+01:05:11,740 --> 01:05:13,780
+ Dan hal lain yang agak halus, 
+
+1434
+01:05:13,780 --> 01:05:17,810
+ tapi itu adalah penunjuk lemak ini biasanya 
+
+1435
+01:05:17,810 --> 01:05:21,500
+ tidak akan dapat diperbarui secara atomik, benar. 
+
+1436
+01:05:21,500 --> 01:05:24,630
+ Jadi, pada arsitektur 32-bit biasanya, 
+
+1437
+01:05:24,630 --> 01:05:27,310
+ jika Anda suka menulis ke variabel 32-bit, 
+
+1438
+01:05:27,310 --> 01:05:29,180
+ Tulisan itu atom, benar. 
+
+1439
+01:05:29,180 --> 01:05:33,270
+ Tapi sekarang, pointer ini adalah tiga ukuran integer 
+
+1440
+01:05:33,270 --> 01:05:34,590
+ hal-hal, benar. 
+
+1441
+01:05:34,590 --> 01:05:37,270
+ Jadi jika Anda memiliki kode yang memanfaatkan fakta 
+
+1442
+01:05:37,270 --> 01:05:39,780
+ yang mengharapkan pointer menulis menjadi atom, 
+
+1443
+01:05:39,780 --> 01:05:41,830
+ maka Anda mungkin mendapat masalah, benar. 
+
+1444
+01:05:41,830 --> 01:05:45,460
+ Karena Anda dapat membayangkan bahwa untuk melakukan beberapa pemeriksaan ini, 
+
+1445
+01:05:45,460 --> 01:05:48,460
+ Anda harus melihat alamat saat ini dan kemudian melihat ini 
+
+1446
+01:05:48,460 --> 01:05:49,960
+ dan kemudian Anda mungkin harus menaikkan 
+
+1447
+01:05:49,960 --> 01:05:51,570
+ itu, dan seterusnya dan seterusnya. 
+
+1448
+01:05:51,570 --> 01:05:53,520
+ Jadi ini dapat menyebabkan bug konkurensi yang sangat halus 
+
+1449
+01:05:53,520 --> 01:05:55,728
+ jika Anda memiliki kode yang bergantung pada atomasi gagal itu 
+
+1450
+01:05:55,728 --> 01:05:58,180
+ [TIDAK JELAS]. 
+
+1451
+01:05:58,180 --> 01:05:59,770
+ Jadi apakah itu semua masuk akal? 
+
+1452
+01:05:59,770 --> 01:06:01,340
+ Jadi itulah satu pendekatan yang bisa Anda lakukan. 
+
+1453
+01:06:01,340 --> 01:06:05,506
+ Tapi seperti pagar listrik, ini 
+
+1454
+01:06:05,506 --> 01:06:09,190
+ memiliki beberapa efek samping yang buruk yang berarti orang-orang tidak 
+
+1455
+01:06:09,190 --> 01:06:10,980
+ biasanya menggunakannya dalam praktek. 
+
+1456
+01:06:10,980 --> 01:06:14,660
+
+
+1457
+01:06:14,660 --> 01:06:19,470
+ Jadi sekarang kita bisa mulai berbicara tentang batas pengecekan, 
+
+1458
+01:06:19,470 --> 01:06:22,165
+ sehubungan dengan bayangan infrastruktur 
+
+1459
+01:06:22,165 --> 01:06:25,890
+ yang saya sebutkan di kertas batas longgar. 
+
+1460
+01:06:25,890 --> 01:06:37,200
+ Jadi ide dasar untuk struktur dasar bayangan 
+
+1461
+01:06:37,200 --> 01:06:43,670
+ adalah untuk setiap objek yang Anda alokasikan, 
+
+1462
+01:06:43,670 --> 01:06:46,830
+ Anda ingin menyimpan seberapa besar objeknya. 
+
+1463
+01:06:46,830 --> 01:06:53,650
+
+
+1464
+01:06:53,650 --> 01:06:58,860
+ Benar, jadi misalnya, jika Anda memiliki beberapa penunjuk 
+
+1465
+01:06:58,860 --> 01:07:03,763
+ yang Anda sebut malloc di kanan, Anda 
+
+1466
+01:07:03,763 --> 01:07:07,460
+ perlu menyimpan ukuran objek itu di sana, 
+
+1467
+01:07:07,460 --> 01:07:09,460
+ dan kemudian perhatikan bahwa jika Anda memiliki sesuatu itu 
+
+1468
+01:07:09,460 --> 01:07:15,984
+ seperti variabel statis seperti ini, benar, 
+
+1469
+01:07:15,984 --> 01:07:18,109
+ kompilator dapat secara otomatis mencari tahu 
+
+1470
+01:07:18,109 --> 01:07:19,525
+ apa batasannya untuk hal itu 
+
+1471
+01:07:19,525 --> 01:07:21,840
+ di sana, berbicara secara statis. 
+
+1472
+01:07:21,840 --> 01:07:23,635
+ Jadi untuk masing-masing dari pointer ini 
+
+1473
+01:07:23,635 --> 01:07:31,415
+ Anda perlu menempatkan entah bagaimana pada dua operasi. 
+
+1474
+01:07:31,415 --> 01:07:34,600
+
+
+1475
+01:07:34,600 --> 01:07:36,635
+ Pada dasarnya Anda melakukan aritmatika. 
+
+1476
+01:07:36,635 --> 01:07:41,290
+
+
+1477
+01:07:41,290 --> 01:07:49,930
+ Jadi ini adalah hal-hal seperti q sama dengan p plus 7, atau apa pun. 
+
+1478
+01:07:49,930 --> 01:07:55,550
+ Dan kemudian Anda ingin menempatkan di dereferencing. 
+
+1479
+01:07:55,550 --> 01:08:02,399
+ Jadi ini adalah sesuatu seperti q sama 
+
+1480
+01:08:02,399 --> 01:08:03,440
+ atau sesuatu seperti itu. 
+
+1481
+01:08:03,440 --> 01:08:06,200
+
+
+1482
+01:08:06,200 --> 01:08:09,730
+ Jadi yang menarik adalah Anda mungkin berpikir, 
+
+1483
+01:08:09,730 --> 01:08:13,690
+ nah mengapa kita tidak bisa hanya mengandalkan referensi 
+
+1484
+01:08:13,690 --> 01:08:16,090
+ ketika saling bertukar barang? 
+
+1485
+01:08:16,090 --> 01:08:20,205
+ Mengapa kita harus melihat aritmatika titik ini di sini? 
+
+1486
+01:08:20,205 --> 01:08:22,170
+ Namun demikian Anda mungkin bertanya-tanya hal lainnya. 
+
+1487
+01:08:22,170 --> 01:08:23,711
+ Seperti mengapa kamu tidak bisa hanya berurusan dengan satu 
+
+1488
+01:08:23,711 --> 01:08:26,040
+ dari pesan non [tidak terdengar] ini [TIDAK JELAS]? 
+
+1489
+01:08:26,040 --> 01:08:29,684
+ Jadi Anda tidak bisa hanya memberi sinyal kesalahan 
+
+1490
+01:08:29,684 --> 01:08:34,120
+ jika Anda melihat aritmatika akan keluar dari batas karena di c 
+
+1491
+01:08:34,120 --> 01:08:37,040
+ yang mungkin atau mungkin tidak ada di sana. 
+
+1492
+01:08:37,040 --> 01:08:40,939
+ Jadi dengan kata lain, media yang sangat umum adalah C dan C ++ adalah Anda 
+
+1493
+01:08:40,939 --> 01:08:44,694
+ mungkin memiliki pointer yang menunjuk ke salah satu lulus ujung yang valid 
+
+1494
+01:08:44,694 --> 01:08:47,568
+ dari sebuah objek yang benar, dan kemudian Anda menggunakannya sebagai kondisi berhenti, 
+
+1495
+01:08:47,569 --> 01:08:48,068
+ kanan. 
+
+1496
+01:08:48,068 --> 01:08:49,910
+ Jadi Anda beralih ke objek dan sekali Anda 
+
+1497
+01:08:49,910 --> 01:08:52,895
+ tekan pointer akhir, saat itulah Anda benar-benar menghentikan loop 
+
+1498
+01:08:52,895 --> 01:08:54,075
+ atau terserah. 
+
+1499
+01:08:54,076 --> 01:08:56,908
+ Jadi jika kita hanya melakukan aritmatika 
+
+1500
+01:08:56,908 --> 01:08:58,890
+ dan kami selalu menyebabkan kesalahan yang keras, 
+
+1501
+01:08:58,890 --> 01:09:00,990
+ ketika kita melihat pointer keluar dari batas, 
+
+1502
+01:09:00,990 --> 01:09:04,060
+ yang sebenarnya dapat merusak banyak aplikasi yang sah, benar. 
+
+1503
+01:09:04,060 --> 01:09:06,520
+ Jadi kita tidak bisa hanya melakukan itu. 
+
+1504
+01:09:06,520 --> 01:09:09,466
+ Jadi Anda mungkin berkata, mengapa tidak bisa Anda hanya mengintervensi 
+
+1505
+01:09:09,466 --> 01:09:12,442
+ pada hal referensi, dan Anda hanya-- ketika kami perhatikan 
+
+1506
+01:09:12,442 --> 01:09:14,430
+ bahwa Anda telah memotong sesuatu di luar batas, 
+
+1507
+01:09:14,430 --> 01:09:15,845
+ kami hanya akan membaca di sana dan di sana. 
+
+1508
+01:09:15,845 --> 01:09:17,470
+ Nah tantangannya ada yang bagaimana caranya 
+
+1509
+01:09:17,470 --> 01:09:18,636
+ Anda tahu itu di luar batas? 
+
+1510
+01:09:18,636 --> 01:09:21,279
+ Benar, ini adalah ... itu aritmatika di posisi kita 
+
+1511
+01:09:21,279 --> 01:09:24,089
+ yang secara resmi memungkinkan kita untuk mengetahui apakah atau tidak 
+
+1512
+01:09:24,089 --> 01:09:25,880
+ benda ini akan menjadi legal di sini, benar. 
+
+1513
+01:09:25,880 --> 01:09:27,340
+ Karena itu interposisi 
+
+1514
+01:09:27,340 --> 01:09:29,960
+ pada aritmatika yang memungkinkan kita untuk melacak 
+
+1515
+01:09:29,960 --> 01:09:31,517
+ dimana pointer itu dengan hormat 
+
+1516
+01:09:31,517 --> 01:09:34,120
+ ke baseline asli. 
+
+1517
+01:09:34,120 --> 01:09:36,145
+ Jadi itulah ide dasar di sana. 
+
+1518
+01:09:36,145 --> 01:09:41,739
+
+
+1519
+01:09:41,740 --> 01:09:45,479
+ Jadi pertanyaan selanjutnya adalah bagaimana kita sebenarnya 
+
+1520
+01:09:45,479 --> 01:09:46,729
+ menerapkan pengecekan batas? 
+
+1521
+01:09:46,729 --> 01:09:49,549
+
+
+1522
+01:09:49,550 --> 01:09:55,720
+ Karena pada dasarnya kita membutuhkan beberapa cara untuk memetakan suatu pointer tertentu 
+
+1523
+01:09:55,720 --> 01:10:00,640
+ alamat ke beberapa jenis informasi batas untuk penunjuk itu. 
+
+1524
+01:10:00,640 --> 01:10:02,420
+ Dan begitu banyak solusi Anda sebelumnya 
+
+1525
+01:10:02,420 --> 01:10:05,274
+ gunakan hal-hal seperti, misalnya, seperti tabel hash, atau pohon, 
+
+1526
+01:10:05,274 --> 01:10:07,190
+ benar yang akan memungkinkan Anda melakukan pencarian dengan benar, 
+
+1527
+01:10:07,190 --> 01:10:08,620
+ dan tetap abu-abu. 
+
+1528
+01:10:08,620 --> 01:10:11,899
+ Jadi diberi alamat pointer, saya melakukan beberapa pencarian 
+
+1529
+01:10:11,899 --> 01:10:14,190
+ dalam struktur data ini, cari tahu apa batasannya. 
+
+1530
+01:10:14,190 --> 01:10:16,050
+ Mengingat batas-batas itu saya kemudian bisa mencari tahu 
+
+1531
+01:10:16,050 --> 01:10:18,790
+ jika saya ingin membiarkan aksi itu terjadi atau tidak. 
+
+1532
+01:10:18,790 --> 01:10:21,917
+ Sekarang masalahnya dengan itu adalah pencarian yang lambat, 
+
+1533
+01:10:21,917 --> 01:10:24,250
+ benar karena struktur data yang Anda pikirkan itu 
+
+1534
+01:10:24,250 --> 01:10:26,733
+ sebuah pohon, atau Anda akan melalui banyak cabang 
+
+1535
+01:10:26,733 --> 01:10:29,409
+ sebelum Anda benar-benar dapat mencapai nilai potensial. 
+
+1536
+01:10:29,409 --> 01:10:31,200
+ Dan bahkan jika itu adalah tabel hash di mana ada 
+
+1537
+01:10:31,200 --> 01:10:33,880
+ meluap di ember Anda harus mengikuti rantai, 
+
+1538
+01:10:33,880 --> 01:10:36,740
+ atau apakah Anda kode, atau hal-hal seperti itu. 
+
+1539
+01:10:36,740 --> 01:10:40,160
+ Jadi baggy bounds paper itu kami 
+
+1540
+01:10:40,160 --> 01:10:42,585
+ akan terlihat benar-benar tahu 
+
+1541
+01:10:42,585 --> 01:10:45,800
+ struktur data yang sangat efisien yang dilacak ke batas-batas ini, 
+
+1542
+01:10:45,800 --> 01:10:49,480
+ untuk membuat cek terikat itu sangat gemuk. 
+
+1543
+01:10:49,480 --> 01:10:51,170
+ Jadi mari kita melangkah ke sana sekarang. 
+
+1544
+01:10:51,170 --> 01:10:53,340
+ Tapi sebelum kita masuk ke itu, biarkan saya sangat singkat 
+
+1545
+01:10:53,340 --> 01:10:55,110
+ berbicara tentang cara kerja alokasi teman. 
+
+1546
+01:10:55,110 --> 01:10:56,985
+ Karena itulah salah satu hal yang muncul 
+
+1547
+01:10:56,985 --> 01:10:58,480
+ dalam banyak pertanyaan. 
+
+1548
+01:10:58,480 --> 01:11:00,830
+ Jadi satu hal yang akan Anda lihat untuk makalah ini adalah sangat banyak 
+
+1549
+01:11:00,830 --> 01:11:02,663
+ kali mereka tidak mandiri, benar. 
+
+1550
+01:11:02,663 --> 01:11:05,580
+ Jadi mereka akan menyebutkan hal-hal yang akan mereka anggap Anda ketahui, 
+
+1551
+01:11:05,580 --> 01:11:07,135
+ tetapi Anda mungkin tidak mengenal mereka. 
+
+1552
+01:11:07,135 --> 01:11:08,385
+ Jangan berkecil hati dengan itu. 
+
+1553
+01:11:08,385 --> 01:11:10,076
+ Itu terjadi pada saya juga kadang-kadang. 
+
+1554
+01:11:10,076 --> 01:11:11,450
+ Makalah ini ditulis dengan cara 
+
+1555
+01:11:11,450 --> 01:11:12,991
+ mereka menganggap banyak pengetahuan sebelumnya, 
+
+1556
+01:11:12,991 --> 01:11:14,500
+ jadi jangan berkecil hati dengan itu. 
+
+1557
+01:11:14,500 --> 01:11:16,616
+ Untungnya kami benar-benar mengakses internet 
+
+1558
+01:11:16,616 --> 01:11:17,572
+ kita dapat mencari beberapa hal itu. 
+
+1559
+01:11:17,572 --> 01:11:18,990
+ Dapatkah Anda membayangkan apa yang terjadi pada waktu orang tua kita? 
+
+1560
+01:11:18,990 --> 01:11:19,534
+ Mereka hanya tidak mengerti hal-hal yang baru saja mereka lakukan 
+
+1561
+01:11:19,534 --> 01:11:21,182
+ harus pulang, kan. 
+
+1562
+01:11:21,182 --> 01:11:25,915
+ Jadi jangan takut untuk mencari barang untuk sampai ke Wikipedia 
+
+1563
+01:11:25,915 --> 01:11:27,335
+ sebagian besar benar. 
+
+1564
+01:11:27,335 --> 01:11:30,210
+
+
+1565
+01:11:30,210 --> 01:11:37,600
+ Jadi bagaimana caranya-- bagaimana sistem alokasi teman berfungsi? 
+
+1566
+01:11:37,600 --> 01:11:40,390
+ Jadi pada dasarnya apa yang dilakukannya pada awalnya 
+
+1567
+01:11:40,390 --> 01:11:44,196
+ itu memperlakukan memori yang tidak teralokasikan sebagai satu blok besar. 
+
+1568
+01:11:44,196 --> 01:11:44,870
+ BAIK. 
+
+1569
+01:11:44,870 --> 01:11:47,810
+ Dan kemudian ketika Anda meminta blok yang lebih kecil 
+
+1570
+01:11:47,810 --> 01:11:51,662
+ untuk alokasi dinamis, ia mencoba membagi alamat itu 
+
+1571
+01:11:51,662 --> 01:11:56,060
+ basis menggunakan kekuatan 2 sampai menemukan blok itu 
+
+1572
+01:11:56,060 --> 01:11:57,603
+ cukup besar untuk bekerja. 
+
+1573
+01:11:57,603 --> 01:12:00,860
+ Jadi katakanlah permintaan datang dan katakan A 
+
+1574
+01:12:00,860 --> 01:12:06,835
+ akan sama dengan malloc 28. 
+
+1575
+01:12:06,835 --> 01:12:07,440
+ 28 byte. 
+
+1576
+01:12:07,440 --> 01:12:09,023
+ Dan katakan saja contoh mainan ini 
+
+1577
+01:12:09,023 --> 01:12:11,590
+ hanya 128 byte dari total memori. 
+
+1578
+01:12:11,590 --> 01:12:13,603
+ Jadi pengalokasi teman akan melihat ini 
+
+1579
+01:12:13,603 --> 01:12:14,820
+ dan berkata, saya memiliki 128 byte memori, 
+
+1580
+01:12:14,820 --> 01:12:17,320
+ tapi terlalu boros untuk mengalokasikan semua ini 
+
+1581
+01:12:17,320 --> 01:12:18,710
+ ke permintaan 28 byte ini. 
+
+1582
+01:12:18,710 --> 01:12:20,780
+ Jadi saya akan membagi permintaan ini menjadi dua 
+
+1583
+01:12:20,780 --> 01:12:24,870
+ dan kemudian melihat apakah saya memiliki blok yang lebih kecil yang cukup besar. 
+
+1584
+01:12:24,870 --> 01:12:29,290
+ Jadi itu akan mengatakan, OK menempatkan ini ke 0 hingga 64 dan 64 hingga 128. 
+
+1585
+01:12:29,290 --> 01:12:31,932
+ Ah OK, tapi blok ini di sini masih terlalu besar, kan. 
+
+1586
+01:12:31,932 --> 01:12:33,970
+ Pada dasarnya apa yang ingin dilakukan oleh algoritma teman 
+
+1587
+01:12:33,970 --> 01:12:36,660
+ adalah menemukan blok sedemikian rupa sehingga dialokasikan 
+
+1588
+01:12:36,660 --> 01:12:38,996
+ data dalam objek nyata, 28 byte, 
+
+1589
+01:12:38,996 --> 01:12:42,000
+ setidaknya setengah ukuran blok itu. 
+
+1590
+01:12:42,000 --> 01:12:44,470
+ Jadi, algojo teman berkata, OK hal ini di sini 
+
+1591
+01:12:44,470 --> 01:12:45,224
+ masih terlalu besar. 
+
+1592
+01:12:45,224 --> 01:12:47,640
+ Jadi apa yang akan dilakukan adalah memecah memori 
+
+1593
+01:12:47,640 --> 01:12:51,940
+ ruang lagi, benar. 
+
+1594
+01:12:51,940 --> 01:12:58,050
+ Jadi dari 0 hingga 32 dan kemudian itu akan berkata, 
+
+1595
+01:12:58,050 --> 01:13:02,160
+ ah OK 28 byte yang lebih dari setengah ukuran blok ini 
+
+1596
+01:13:02,160 --> 01:13:02,830
+ sini. 
+
+1597
+01:13:02,830 --> 01:13:08,726
+ Jadi sekarang blok ini akan dialokasikan ke A. OK, 
+
+1598
+01:13:08,726 --> 01:13:10,940
+ dan itu mendapat alamat ini di sini. 
+
+1599
+01:13:10,940 --> 01:13:17,910
+ Sekarang katakanlah kita memiliki pertanyaan lain untuk B 
+
+1600
+01:13:17,910 --> 01:13:23,030
+ dan katakanlah kita ingin malloc 50 tepat. 
+
+1601
+01:13:23,030 --> 01:13:26,485
+ Jadi apa yang akan terjadi adalah bahwa algojo teman akan 
+
+1602
+01:13:26,485 --> 01:13:29,410
+ katakan, ah OK saya benar-benar memiliki blok di sini 
+
+1603
+01:13:29,410 --> 01:13:31,015
+ itu cukup besar, kan. 
+
+1604
+01:13:31,015 --> 01:13:33,270
+ 50 Lebih dari setengah ukuran benda ini 
+
+1605
+01:13:33,270 --> 01:13:35,240
+ jadi saya hanya akan mengalokasikannya di sana. 
+
+1606
+01:13:35,240 --> 01:13:41,740
+ Jadi kita memiliki sistem ini, atau pengaturan, di mana kita punya A di sini, 
+
+1607
+01:13:41,740 --> 01:13:44,990
+ dan kemudian kita punya B di sini, dan kemudian 
+
+1608
+01:13:44,990 --> 01:13:51,635
+ katakanlah kami memiliki permintaan lain yang datang untuk 20 byte. 
+
+1609
+01:13:51,635 --> 01:13:53,955
+
+
+1610
+01:13:53,955 --> 01:13:55,580
+ Ini sebenarnya cukup mudah 
+
+1611
+01:13:55,580 --> 01:13:57,910
+ karena kita bisa meletakkannya di sini, benar. 
+
+1612
+01:13:57,910 --> 01:14:03,496
+ Jadi Anda memiliki sesuatu yang terlihat seperti ini. 
+
+1613
+01:14:03,496 --> 01:14:07,280
+ Lalu yang menarik adalah ketika Anda menanggalkan memori, 
+
+1614
+01:14:07,280 --> 01:14:09,776
+ jika Anda harus membatalkan blok itu 
+
+1615
+01:14:09,776 --> 01:14:11,650
+ bersebelahan satu sama lain dan memiliki ukuran yang sama, 
+
+1616
+01:14:11,650 --> 01:14:13,310
+ pengalokasi teman akan menggabungkannya 
+
+1617
+01:14:13,310 --> 01:14:15,700
+ ke dalam blok yang dua kali lebih besar, kan. 
+
+1618
+01:14:15,700 --> 01:14:29,720
+ Jadi jika kita punya kebebasan, katakanlah C, maka kita pergi ke situasi ini, 
+
+1619
+01:14:29,720 --> 01:14:33,361
+ kita tidak bisa melakukan penggabungan, karena ini adalah satu-satunya blok yang mungkin 
+
+1620
+01:14:33,361 --> 01:14:35,110
+ yang satu ini bisa digabungkan. 
+
+1621
+01:14:35,110 --> 01:14:37,330
+ Ukurannya sama, tapi benda ini masih terisi. 
+
+1622
+01:14:37,330 --> 01:14:49,830
+ Jadi kalau kita melakukan gratis di A, maka kita 
+
+1623
+01:14:49,830 --> 01:14:52,480
+ memiliki situasi ini di sini. 
+
+1624
+01:14:52,480 --> 01:14:56,120
+ Benar, di mana dua blok 32 byte ini 
+
+1625
+01:14:56,120 --> 01:14:59,850
+ digabung menjadi satu ukuran 64, dan yang ini, ukuran 64 
+
+1626
+01:14:59,850 --> 01:15:01,405
+ masih di luar sana. 
+
+1627
+01:15:01,405 --> 01:15:03,840
+ Benar, jadi ini disebut sistem teman karena sekali lagi, 
+
+1628
+01:15:03,840 --> 01:15:06,560
+ setiap kali Anda memiliki dua blok yang berdekatan itu 
+
+1629
+01:15:06,560 --> 01:15:08,995
+ memiliki ukuran yang sama dan itu bisa 
+
+1630
+01:15:08,995 --> 01:15:11,960
+ digabungkan untuk membentuk blok yang sejajar, 
+
+1631
+01:15:11,960 --> 01:15:14,840
+ maka sistem akan menggabungkan teman itu dengan teman lainnya ini 
+
+1632
+01:15:14,840 --> 01:15:18,253
+ lalu buat blok baru itu dua kali lebih besar. 
+
+1633
+01:15:18,253 --> 01:15:20,510
+ Jadi hal yang bagus tentang sistem ini 
+
+1634
+01:15:20,510 --> 01:15:26,322
+ adalah sangat mudah untuk mencari tahu di mana sobat berada. 
+
+1635
+01:15:26,322 --> 01:15:28,314
+ Karena Anda dapat melakukan aritmatika yang sangat imut, 
+
+1636
+01:15:28,314 --> 01:15:31,287
+ seperti sobat batas sistem-- sistem batas longgar bekerja. 
+
+1637
+01:15:31,287 --> 01:15:32,870
+ Tapi bagaimanapun saya tidak akan membahasnya secara detail. 
+
+1638
+01:15:32,870 --> 01:15:34,744
+ Ini pada dasarnya adalah cara kerja alokasi teman. 
+
+1639
+01:15:34,744 --> 01:15:37,710
+ Apakah itu masuk akal? 
+
+1640
+01:15:37,710 --> 01:15:39,210
+ Benar, dan satu pertanyaan yang muncul 
+
+1641
+01:15:39,210 --> 01:15:43,560
+ banyak dalam semua diskusi saya, bukankah ini sia-sia? 
+
+1642
+01:15:43,560 --> 01:15:47,510
+ Benar, jadi misalnya, bayangkan di sini di awal 
+
+1643
+01:15:47,510 --> 01:15:52,484
+ Saya memiliki permintaan untuk ukuran 65 byte, kan. 
+
+1644
+01:15:52,484 --> 01:15:54,890
+ Jadi, jika saya memiliki permintaan untuk 65 byte, 
+
+1645
+01:15:54,890 --> 01:15:57,368
+ Saya akan mengalokasikan seluruh struktur ini di sini dan kemudian 
+
+1646
+01:15:57,368 --> 01:16:00,034
+ there-- sebenarnya Anda kehabisan memori dinamis dan tidak bisa melakukan apapun 
+
+1647
+01:16:00,034 --> 01:16:00,742
+ lebih banyak alokasi. 
+
+1648
+01:16:00,742 --> 01:16:02,894
+ Dan jawabannya adalah ya, itu sia-sia. 
+
+1649
+01:16:02,894 --> 01:16:04,560
+ Tapi sekali lagi, ini adalah trade off, benar. 
+
+1650
+01:16:04,560 --> 01:16:07,060
+ Karena sangat mudah melakukan perhitungan ini tentang cara melakukannya 
+
+1651
+01:16:07,060 --> 01:16:08,530
+ menggabungkan dan hal-hal seperti itu. 
+
+1652
+01:16:08,530 --> 01:16:10,520
+ Jadi jika Anda ingin alokasi gandum yang lebih halus, 
+
+1653
+01:16:10,520 --> 01:16:12,021
+ ada yang valid untuk itu. 
+
+1654
+01:16:12,021 --> 01:16:13,728
+ Ini di luar ruang lingkup kuliah jadi, 
+
+1655
+01:16:13,728 --> 01:16:15,420
+ kita bisa menyangga offline itu jika Anda mau. 
+
+1656
+01:16:15,420 --> 01:16:19,190
+ Itu pada dasarnya bagaimana buddy-- maaf, algojo teman 
+
+1657
+01:16:19,190 --> 01:16:21,300
+ bekerja. 
+
+1658
+01:16:21,300 --> 01:16:26,126
+ Jadi apa sistem batas longgar yang akan dilakukan? 
+
+1659
+01:16:26,126 --> 01:16:29,078
+ Yah, itu akan melalui ay, pada beberapa trik. 
+
+1660
+01:16:29,078 --> 01:16:41,400
+
+
+1661
+01:16:41,400 --> 01:16:52,830
+ Jadi ide pertama adalah Anda mengumpulkan setiap alokasi 
+
+1662
+01:16:52,830 --> 01:17:06,245
+ ke kekuatan 2, dan Anda menyelaraskan permintaan ke kekuatan 2 itu. 
+
+1663
+01:17:06,245 --> 01:17:13,129
+
+
+1664
+01:17:13,129 --> 01:17:15,295
+ Benar, jadi pada dasarnya pengalokasi teman sangat bagus 
+
+1665
+01:17:15,295 --> 01:17:17,205
+ karena menangani banyak hal untukmu, benar. 
+
+1666
+01:17:17,205 --> 01:17:18,880
+ Itu secara alami akan melakukan hal semacam itu. 
+
+1667
+01:17:18,880 --> 01:17:21,970
+ Karena itu hanya cara yang mengalokasikan dan deallocates 
+
+1668
+01:17:21,970 --> 01:17:23,930
+ ke memori. 
+
+1669
+01:17:23,930 --> 01:17:27,880
+ Dan hal kedua yang akan terjadi, 
+
+1670
+01:17:27,880 --> 01:17:41,530
+ sistem batas longgar, apakah Anda menyatakan setiap terikat sebagai basis log 
+
+1671
+01:17:41,530 --> 01:17:44,260
+ 2 dari ukuran alokasi. 
+
+1672
+01:17:44,260 --> 01:17:48,290
+
+
+1673
+01:17:48,290 --> 01:17:51,710
+ Benar, dan apa artinya ini-- dan mengapa kita bisa melakukan ini? 
+
+1674
+01:17:51,710 --> 01:17:53,950
+ Nah sekali lagi semua ukuran alokasi kami 
+
+1675
+01:17:53,950 --> 01:17:56,070
+ adalah kekuatan 2, benar. 
+
+1676
+01:17:56,070 --> 01:17:59,512
+ Jadi kita tidak perlu banyak bit untuk diwakilkan 
+
+1677
+01:17:59,512 --> 01:18:01,470
+ seberapa besar ukuran alokasi tertentu. 
+
+1678
+01:18:01,470 --> 01:18:10,602
+ Jadi misalnya, jika ukuran alokasi Anda 16, 
+
+1679
+01:18:10,602 --> 01:18:14,110
+ maka Anda hanya perlu empat-- ritme log 
+
+1680
+01:18:14,110 --> 01:18:17,420
+ itu, 4 bit ukuran alokasi, benar. 
+
+1681
+01:18:17,420 --> 01:18:19,340
+ Apakah itu masuk akal? 
+
+1682
+01:18:19,340 --> 01:18:21,350
+ Benar, ini pertanyaan populer lainnya di sini. 
+
+1683
+01:18:21,350 --> 01:18:23,770
+ Inilah sebabnya mengapa Anda hanya perlu sejumlah kecil bit 
+
+1684
+01:18:23,770 --> 01:18:25,570
+ di sini, karena kami pada dasarnya memaksa 
+
+1685
+01:18:25,570 --> 01:18:30,043
+ ukuran alokasi mencapai cara terkuantisasi ini yang Anda kembangkan. 
+
+1686
+01:18:30,043 --> 01:18:31,626
+ Seperti jika Anda hanya dapat memiliki sesuatu, 
+
+1687
+01:18:31,626 --> 01:18:33,987
+ katakanlah 16 byte atau 32 byte. 
+
+1688
+01:18:33,987 --> 01:18:36,136
+ Anda tidak dapat memiliki misalnya, 33 byte. 
+
+1689
+01:18:36,136 --> 01:18:38,930
+
+
+1690
+01:18:38,930 --> 01:18:41,730
+ Dan kemudian hal ketiga yang batasan longgar akan lakukan 
+
+1691
+01:18:41,730 --> 01:19:04,818
+ adalah menyimpan info batas dalam array linier 1 byte per entri 
+
+1692
+01:19:04,818 --> 01:19:12,258
+ tapi kami akan mengalokasikan memori 
+
+1693
+01:19:12,258 --> 01:19:13,780
+ pada perincian slot. 
+
+1694
+01:19:13,780 --> 01:19:17,240
+
+
+1695
+01:19:17,240 --> 01:19:24,530
+ Yang di kertas mereka menggunakan 16 byte sebagai lebar slot. 
+
+1696
+01:19:24,530 --> 01:19:26,170
+ Jadi misalnya, sekarang ini yang berikutnya, 
+
+1697
+01:19:26,170 --> 01:19:28,336
+ ini adalah 1 bit yang tidak benar-benar dikatakan secara khusus 
+
+1698
+01:19:28,336 --> 01:19:31,030
+ di kertas yang jika Anda tidak pegang 
+
+1699
+01:19:31,030 --> 01:19:33,380
+ itu akan membuat makalah sangat sulit dimengerti, benar. 
+
+1700
+01:19:33,380 --> 01:19:40,190
+ Jadi sekarang Anda dapat memiliki ukuran slot yang sama dengan 16, 
+
+1701
+01:19:40,190 --> 01:19:48,350
+ jadi jika Anda melakukan p sama dengan malloc 16 jadi apa yang akan terjadi? 
+
+1702
+01:19:48,350 --> 01:19:51,495
+ Jadi dalam tabel batas ini Anda akan pergi 
+
+1703
+01:19:51,495 --> 01:20:02,600
+ untuk mengatakan mengambil pointer itu plot dengan ukuran plot itu 
+
+1704
+01:20:02,600 --> 01:20:04,240
+ akan sama dengan 4, benar. 
+
+1705
+01:20:04,240 --> 01:20:05,926
+ Jadi dalam tabel batas itu kita akan pergi 
+
+1706
+01:20:05,926 --> 01:20:11,830
+ untuk menempatkan logaritma ukuran alokasi dalam tabel. 
+
+1707
+01:20:11,830 --> 01:20:12,976
+ Apakah itu masuk akal? 
+
+1708
+01:20:12,976 --> 01:20:14,350
+ Oke, sekarang yang paling rumit adalah, 
+
+1709
+01:20:14,350 --> 01:20:16,372
+ katakanlah Anda memiliki sesuatu seperti ini. 
+
+1710
+01:20:16,372 --> 01:20:22,570
+
+
+1711
+01:20:22,570 --> 01:20:26,280
+ Benar, jadi katakanlah Anda keluar 32 byte. 
+
+1712
+01:20:26,280 --> 01:20:29,050
+ Apakah tabel batas akan terlihat seperti di sana? 
+
+1713
+01:20:29,050 --> 01:20:31,640
+ Jadi di sini kita benar-benar harus memperbarui batas 
+
+1714
+01:20:31,640 --> 01:20:37,920
+ tabel untuk menyingkat p Anda, atau maaf t untuk ukuran yang Anda butuhkan. 
+
+1715
+01:20:37,920 --> 01:20:39,545
+ Tapi itu sesuai dengan batas meja dua kali. 
+
+1716
+01:20:39,545 --> 01:20:44,970
+
+
+1717
+01:20:44,970 --> 01:20:47,706
+ Benar, sekali untuk memori slot pertama 
+
+1718
+01:20:47,706 --> 01:20:49,085
+ bahwa alokasi ini membutuhkan. 
+
+1719
+01:20:49,085 --> 01:20:56,645
+ Dan kemudian kedua kalinya untuk slot kedua yang dibutuhkan. 
+
+1720
+01:20:56,645 --> 01:21:00,740
+
+
+1721
+01:21:00,740 --> 01:21:03,740
+ Benar, jadi sekali lagi 32 adalah ukuran alokasi. 
+
+1722
+01:21:03,740 --> 01:21:06,404
+ Ini adalah log ukuran alokasi itu. 
+
+1723
+01:21:06,404 --> 01:21:09,250
+ Jadi untuk dua slot yang diperlukan memori ini, 
+
+1724
+01:21:09,250 --> 01:21:11,482
+ kita akan memperbarui tabel batas dua kali. 
+
+1725
+01:21:11,482 --> 01:21:13,815
+ Apakah itu masuk akal? 
+
+1726
+01:21:13,815 --> 01:21:15,190
+ Benar, dan ini benar-benar kuncinya 
+
+1727
+01:21:15,190 --> 01:21:16,150
+ yang saya pikir untuk banyak orang itu 
+
+1728
+01:21:16,150 --> 01:21:18,650
+ akan membuat makalah itu masuk akal atau tidak masuk akal, benar. 
+
+1729
+01:21:18,650 --> 01:21:21,667
+ Karena itu membatasi tabel beberapa kali jika ada 
+
+1730
+01:21:21,667 --> 01:21:22,625
+ di luar alokasi. 
+
+1731
+01:21:22,625 --> 01:21:22,970
+ AUDIENCE: Bisakah Anda mengulangi itu untuk saya lagi? 
+
+1732
+01:21:22,970 --> 01:21:23,880
+ PROFESOR: Permisi? 
+
+1733
+01:21:23,880 --> 01:21:25,380
+ AUDIENCE: Bisakah Anda mengulanginya lagi? 
+
+1734
+01:21:25,380 --> 01:21:26,326
+ PROFESOR: Oh ya, ya, tentu, tentu. 
+
+1735
+01:21:26,326 --> 01:21:27,826
+ Jadi pada dasarnya apa gagasannya adalah saya 
+
+1736
+01:21:27,826 --> 01:21:32,290
+ berarti Anda punya tabel batas ini di sini 
+
+1737
+01:21:32,290 --> 01:21:34,230
+ dan ada banyak entri. 
+
+1738
+01:21:34,230 --> 01:21:38,360
+ Tetapi pada dasarnya membutuhkan entri untuk menutupi 
+
+1739
+01:21:38,360 --> 01:21:41,167
+ semua ukuran p, semua ukuran alokasi. 
+
+1740
+01:21:41,167 --> 01:21:44,900
+ OK, jadi dalam hal ini sangat sederhana karena pada dasarnya ini 
+
+1741
+01:21:44,900 --> 01:21:46,744
+ hanya satu slot, karena ukurannya. 
+
+1742
+01:21:46,744 --> 01:21:48,447
+ Ini beberapa ukuran slot, benar. 
+
+1743
+01:21:48,447 --> 01:21:50,363
+ Jadi apa yang akan terjadi adalah membayangkan itu 
+
+1744
+01:21:50,363 --> 01:21:53,570
+ bahwa kami memiliki pointer yang bergerak dalam kisaran p. 
+
+1745
+01:21:53,570 --> 01:21:55,700
+ Anda harus memiliki beberapa tabel back end 
+
+1746
+01:21:55,700 --> 01:21:58,910
+ slot untuk masing-masing tempat-tempat di mana p [tidak terdengar], 
+
+1747
+01:21:58,910 --> 01:21:59,410
+ kanan. 
+
+1748
+01:21:59,410 --> 01:22:01,792
+ Dan inilah bagian kedua ini 
+
+1749
+01:22:01,792 --> 01:22:03,750
+ membuat kertas sedikit membingungkan saya pikir. 
+
+1750
+01:22:03,750 --> 01:22:06,140
+ Tapi itu tidak benar-benar mendalam tentang itu, 
+
+1751
+01:22:06,140 --> 01:22:07,568
+ tapi beginilah cara kerjanya. 
+
+1752
+01:22:07,568 --> 01:22:10,430
+
+
+1753
+01:22:10,430 --> 01:22:20,357
+ OK begitu bersenjata dengan meja batas 
+
+1754
+01:22:20,357 --> 01:22:30,806
+ barang apa yang terjadi jika kita memiliki kode C yang terlihat seperti ini? 
+
+1755
+01:22:30,806 --> 01:22:36,870
+ Jadi Anda memiliki pointer, p-prime, Anda memperolehnya dari p, 
+
+1756
+01:22:36,870 --> 01:22:40,210
+ kami akan menambahkan beberapa variabel i. 
+
+1757
+01:22:40,210 --> 01:22:47,340
+ Jadi bagaimana Anda mendapatkan ukuran alokasi milik p? 
+
+1758
+01:22:47,340 --> 01:22:56,620
+ Nah Anda lihat di tabel menggunakan pencarian ini di sini. 
+
+1759
+01:22:56,620 --> 01:23:05,910
+
+
+1760
+01:23:05,910 --> 01:23:09,890
+ Benar, jadi ukuran data yang telah dialokasikan ke p 
+
+1761
+01:23:09,890 --> 01:23:11,910
+ akan sama dengan 1 dan kemudian ketika Anda Kiri 
+
+1762
+01:23:11,910 --> 01:23:14,420
+ Pergeseran itu dengan melihat ke meja, 
+
+1763
+01:23:14,420 --> 01:23:17,475
+ mengambil nilai pointer itu, lalu Right Shifting itu 
+
+1764
+01:23:17,475 --> 01:23:19,360
+ oleh log ukuran tabel. 
+
+1765
+01:23:19,360 --> 01:23:21,600
+ Benar, jika aritmatika berhasil 
+
+1766
+01:23:21,600 --> 01:23:24,385
+ karena cara kami mengikat 
+
+1767
+01:23:24,385 --> 01:23:27,730
+ pointer ke batas meja, benar. 
+
+1768
+01:23:27,730 --> 01:23:32,620
+ Jadi ini akan membuat kita-- hal ini di sini, akan membuat kita 
+
+1769
+01:23:32,620 --> 01:23:33,765
+ log dari sisi. 
+
+1770
+01:23:33,765 --> 01:23:36,130
+ Dan kemudian hal ini di sini pada dasarnya 
+
+1771
+01:23:36,130 --> 01:23:39,280
+ memperluas itu menjadi seperti nilai reguler, benar. 
+
+1772
+01:23:39,280 --> 01:23:42,120
+ Jadi misalnya, jika ukuran penunjuk ini 
+
+1773
+01:23:42,120 --> 01:23:46,890
+ 32, dalam hal byte yang telah kami alokasikan, benar. 
+
+1774
+01:23:46,890 --> 01:23:50,295
+ Ini akan memberi kita lima saat kita melihat ke meja, 
+
+1775
+01:23:50,295 --> 01:23:52,660
+ kemudian ketika kita Left Shift dengan cara ini, Left 
+
+1776
+01:23:52,660 --> 01:23:54,076
+ Geser yang satu ini, lalu kita 
+
+1777
+01:23:54,076 --> 01:23:57,810
+ akan mendapatkan 32 kembali lagi dari sini. 
+
+1778
+01:23:57,810 --> 01:23:58,680
+ BAIK. 
+
+1779
+01:23:58,680 --> 01:24:06,738
+ Dan kemudian kami ingin menemukan basis dari pointer itu. 
+
+1780
+01:24:06,738 --> 01:24:14,930
+ Ambil penunjuk sendiri dan kemudian kita 
+
+1781
+01:24:14,930 --> 01:24:24,549
+ akan dan dengan sisi minus 1. 
+
+1782
+01:24:24,549 --> 01:24:26,590
+ Sekarang apa yang akan dilakukan adalah, ini sebenarnya 
+
+1783
+01:24:26,590 --> 01:24:29,700
+ akan memberi kita massa, bahwa Anda dapat memikirkannya. 
+
+1784
+01:24:29,700 --> 01:24:34,280
+ Dan massa itu akan memungkinkan kita untuk memulihkan basis di sini. 
+
+1785
+01:24:34,280 --> 01:24:40,100
+ Jadi bayangkan bahwa ukuran Anda sama dengan 16. 
+
+1786
+01:24:40,100 --> 01:24:49,768
+ Jadi 16 sama dengan ini dalam biner. 
+
+1787
+01:24:49,768 --> 01:24:51,642
+ Benar, ada banyak angka nol dari sini. 
+
+1788
+01:24:51,642 --> 01:24:55,300
+ Jadi kita punya 1 di sini, kita punya beberapa nol di sini. 
+
+1789
+01:24:55,300 --> 01:25:07,394
+ Jadi jika kita melihat kebalikan dari 16 minus 1, 
+
+1790
+01:25:07,394 --> 01:25:09,070
+ then-- sebenarnya maaf. 
+
+1791
+01:25:09,070 --> 01:25:12,450
+ Jadi jika kita melihat pada 16 minus 1, jadi seperti apa tampilannya nanti? 
+
+1792
+01:25:12,450 --> 01:25:19,620
+ 60 minus 1 kita akan terlihat seperti benar, sesuatu 
+
+1793
+01:25:19,620 --> 01:25:20,270
+ seperti ini. 
+
+1794
+01:25:20,270 --> 01:25:21,040
+ BAIK. 
+
+1795
+01:25:21,040 --> 01:25:26,193
+ Dan jika kita mengambil kebalikannya 
+
+1796
+01:25:26,193 --> 01:25:27,443
+ apa yang akan memberi kita? 
+
+1797
+01:25:27,443 --> 01:25:32,536
+
+
+1798
+01:25:32,536 --> 01:25:33,530
+ Benar, dalam biner. 
+
+1799
+01:25:33,530 --> 01:25:37,290
+ Jadi pada dasarnya hal ini di sini memungkinkan kita pada dasarnya jelas 
+
+1800
+01:25:37,290 --> 01:25:40,860
+ bit yang pada dasarnya akan diimbangi 
+
+1801
+01:25:40,860 --> 01:25:43,230
+ dari penunjuk yang valid dan hanya memberi kami 
+
+1802
+01:25:43,230 --> 01:25:44,556
+ dasar dari pointer itu. 
+
+1803
+01:25:44,556 --> 01:25:46,260
+ BAIK. 
+
+1804
+01:25:46,260 --> 01:25:48,560
+ Dan begitu kita punya ini, maka itu 
+
+1805
+01:25:48,560 --> 01:25:50,810
+ sangat sederhana untuk memeriksa apakah pointer ini dalam batasan, 
+
+1806
+01:25:50,810 --> 01:25:51,310
+ kanan. 
+
+1807
+01:25:51,310 --> 01:25:55,360
+ Jadi pada dasarnya kita dapat memeriksa apakah p-prime 
+
+1808
+01:25:55,360 --> 01:26:04,990
+ lebih besar dari atau sama dengan pangkalan dan apakah p-prime 
+
+1809
+01:26:04,990 --> 01:26:13,422
+ minus basis kurang dari ukuran. 
+
+1810
+01:26:13,422 --> 01:26:15,640
+ Ini hanya hal yang sederhana yang Anda lakukan, benar. 
+
+1811
+01:26:15,640 --> 01:26:17,672
+ Hanya melihat apakah itu berasal pointer 
+
+1812
+01:26:17,672 --> 01:26:19,664
+ ada dalam batas-batas ini [tidak terdengar]. 
+
+1813
+01:26:19,664 --> 01:26:22,080
+ Benar, jadi pada titik ini semuanya cukup mudah. 
+
+1814
+01:26:22,080 --> 01:26:24,300
+ Sekarang mereka memiliki seperti pemeriksaan yang dioptimalkan di kertas, 
+
+1815
+01:26:24,300 --> 01:26:25,690
+ Saya tidak akan membahas detail itu. 
+
+1816
+01:26:25,690 --> 01:26:27,898
+ Tapi cukuplah untuk mengatakan bahwa semua aritmatika biner, 
+
+1817
+01:26:27,898 --> 01:26:29,839
+ ia memutuskan ke hal yang sama. 
+
+1818
+01:26:29,839 --> 01:26:31,380
+ Ada beberapa trik pintar di sana 
+
+1819
+01:26:31,380 --> 01:26:35,700
+ untuk menghindari beberapa perhitungan eksplisit yang kami lakukan di sini. 
+
+1820
+01:26:35,700 --> 01:26:36,690
+ Itu ide dasarnya. 
+
+1821
+01:26:36,690 --> 01:26:49,140
+ Dan trik kelima yang digunakan sistem baggy bounds 
+
+1822
+01:26:49,140 --> 01:26:59,915
+ adalah bahwa ia menggunakan sistem memori virtual untuk mencegahnya 
+
+1823
+01:26:59,915 --> 01:27:04,710
+ batas [tidak terdengar] benar. 
+
+1824
+01:27:04,710 --> 01:27:07,266
+ Jadi idenya di sini adalah ... berapa banyak waktu 
+
+1825
+01:27:07,266 --> 01:27:08,182
+ apa yang kita miliki? 
+
+1826
+01:27:08,182 --> 01:27:09,174
+ Mungkin seperti nol? 
+
+1827
+01:27:09,174 --> 01:27:12,490
+ Jadi ide dasarnya di sini adalah jika kita 
+
+1828
+01:27:12,490 --> 01:27:15,990
+ memiliki pointer [tidak terdengar] di sini, yang kami deteksi 
+
+1829
+01:27:15,990 --> 01:27:19,145
+ di luar batas, apa yang bisa kita lakukan sebenarnya adalah mengatur tatanan tinggi 
+
+1830
+01:27:19,145 --> 01:27:21,820
+ menggigit penunjuk, kan. 
+
+1831
+01:27:21,820 --> 01:27:26,350
+ Dan dengan melakukan itu kami menjamin bahwa pointer adalah dereferenced, 
+
+1832
+01:27:26,350 --> 01:27:28,502
+ maka perangkat keras caging akan menjadi [TIDAK JELAS], 
+
+1833
+01:27:28,502 --> 01:27:30,210
+ kita akan melemparkan kesalahan yang sulit, benar. 
+
+1834
+01:27:30,210 --> 01:27:31,626
+ Sekarang dengan sendirinya, hanya pengaturan 
+
+1835
+01:27:31,626 --> 01:27:33,940
+ bit itu tidak menyebabkan masalah. 
+
+1836
+01:27:33,940 --> 01:27:35,740
+ Hanya ketika Anda memperhatikan pointer itu 
+
+1837
+01:27:35,740 --> 01:27:37,540
+ bahwa Anda mendapat masalah. 
+
+1838
+01:27:37,540 --> 00:00:00,000
+ BAIK? 
+

@@ -1,0 +1,344 @@
+1
+00:00:00,060 --> 00:00:02,190
+ Halo semua <font color="#E5E5E5">sekarang </font><font color="#CCCCCC">mari kita bicara tentang </font>
+
+2
+00:00:02,190 --> 00:00:05,220
+ <font color="#E5E5E5">halaman login injeksi SQL </font><font color="#CCCCCC">jadi yang </font><font color="#E5E5E5">terakhir </font>
+
+3
+00:00:05,220 --> 00:00:07,560
+ video kita telah <font color="#CCCCCC">melihat bagaimana seorang penyerang </font>
+
+4
+00:00:07,560 --> 00:00:11,219
+ dapat <font color="#E5E5E5">menyuntikkan </font><font color="#CCCCCC">query </font><font color="#E5E5E5">SQL-nya sendiri </font><font color="#CCCCCC">secara berurutan </font>
+
+5
+00:00:11,219 --> 00:00:15,269
+ untuk membuang <font color="#CCCCCC">seluruh database </font><font color="#E5E5E5">jadi sama </font>
+
+6
+00:00:15,269 --> 00:00:19,020
+ <font color="#E5E5E5">penyerang juga dapat mencoba menyuntikkannya </font>
+
+7
+00:00:19,020 --> 00:00:22,529
+ memiliki kueri SQL khusus yang dibuat <font color="#E5E5E5">di dalam </font>
+
+8
+00:00:22,529 --> 00:00:26,130
+ halaman login <font color="#E5E5E5">untuk melewati </font>
+
+9
+00:00:26,130 --> 00:00:29,130
+ <font color="#CCCCCC">halaman login karena apa yang terjadi adalah </font><font color="#E5E5E5">beberapa </font>
+
+10
+00:00:29,130 --> 00:00:31,650
+ <font color="#E5E5E5">waktu </font><font color="#CCCCCC">halaman </font><font color="#E5E5E5">login </font><font color="#CCCCCC">juga rentan </font><font color="#E5E5E5">terhadap </font>
+
+11
+00:00:31,650 --> 00:00:34,230
+ Injeksi SQL <font color="#E5E5E5">jadi jika halaman login </font>
+
+12
+00:00:34,230 --> 00:00:36,300
+ rentan terhadap <font color="#E5E5E5">injeksi SQL maka suatu </font>
+
+13
+00:00:36,300 --> 00:00:38,579
+ penyerang dapat dengan mudah melewati <font color="#CCCCCC">itu </font>
+
+14
+00:00:38,579 --> 00:00:41,250
+ mekanisme otentikasi <font color="#E5E5E5">sekarang mari kita lihat </font>
+
+15
+00:00:41,250 --> 00:00:43,910
+ bagaimana kita bisa melakukan <font color="#E5E5E5">injeksi halaman login SQL </font>
+
+16
+00:00:43,910 --> 00:00:47,489
+ sekarang mari kita coba untuk melakukan sekuel injeksi <font color="#E5E5E5">pada </font>
+
+17
+00:00:47,489 --> 00:00:51,360
+ <font color="#CCCCCC">halaman login jadi di sini Anda dapat melihat itu </font>
+
+18
+00:00:51,360 --> 00:00:53,070
+ <font color="#CCCCCC">sekarang </font><font color="#E5E5E5">saya di web bata </font>
+
+19
+00:00:53,070 --> 00:00:55,620
+ aplikasi jadi ini aplikasi 
+
+20
+00:00:55,620 --> 00:00:59,190
+ <font color="#CCCCCC">yang telah kami </font><font color="#E5E5E5">gunakan saat menguji </font><font color="#CCCCCC">a </font>
+
+21
+00:00:59,190 --> 00:01:02,460
+ sekuel injeksi <font color="#E5E5E5">jadi jika saya hanya pergi di sini </font><font color="#CCCCCC">jadi </font>
+
+22
+00:01:02,460 --> 00:01:05,159
+ Anda akan melihat <font color="#E5E5E5">tautan laman </font><font color="#CCCCCC">masuk, </font><font color="#E5E5E5">jadi biarkan </font>
+
+23
+00:01:05,159 --> 00:01:10,860
+ saya buka ini jadi di sini Anda akan <font color="#E5E5E5">menemukan itu </font>
+
+24
+00:01:10,860 --> 00:01:13,049
+ Ada total <font color="#CCCCCC">halaman 6 masuk </font><font color="#E5E5E5">yang </font>
+
+25
+00:01:13,049 --> 00:01:16,049
+ rentan <font color="#CCCCCC">terhadap injeksi sekuel jadi mari </font>
+
+26
+00:01:16,049 --> 00:01:18,180
+ buka yang pertama <font color="#E5E5E5">karena itu </font>
+
+27
+00:01:18,180 --> 00:01:23,939
+ <font color="#E5E5E5">dasar-dasar </font><font color="#CCCCCC">1 jadi seperti halaman login </font>
+
+28
+00:01:23,939 --> 00:01:26,189
+ di sini Anda <font color="#E5E5E5">dapat melihat bahwa kami </font><font color="#CCCCCC">tidak login </font>
+
+29
+00:01:26,189 --> 00:01:31,350
+ jadi mari coba kredensial acak apa pun 
+
+30
+00:01:31,350 --> 00:01:33,390
+ <font color="#CCCCCC">dan mari kita lihat apa fungsinya atau </font>
+
+31
+00:01:33,390 --> 00:01:41,100
+ <font color="#E5E5E5">tidak jadi di sini Anda dapat melihatnya telah diminta </font>
+
+32
+00:01:41,100 --> 00:01:43,979
+ <font color="#CCCCCC">nama pengguna atau kata sandi salah dan pada </font>
+
+33
+00:01:43,979 --> 00:01:48,180
+ <font color="#E5E5E5">bawah kita </font><font color="#CCCCCC">bisa melihat Curie jadi biarkan aku </font>
+
+34
+00:01:48,180 --> 00:01:51,210
+ salin <font color="#CCCCCC">kueri </font><font color="#E5E5E5">ini dan tempelkan di a </font>
+
+35
+00:01:51,210 --> 00:01:56,850
+ <font color="#E5E5E5">file notepad jadi di sini </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">dapat melihat itu </font>
+
+36
+00:01:56,850 --> 00:01:58,829
+ ini adalah Curie yang sedang dieksekusi 
+
+37
+00:01:58,829 --> 00:02:00,570
+ bagian <font color="#E5E5E5">belakang memilih bintang dari pengguna </font>
+
+38
+00:02:00,570 --> 00:02:03,860
+ dimana nama admin <font color="#CCCCCC">dan kata sandi adalah </font>
+
+39
+00:02:03,860 --> 00:02:06,869
+ kata sandi <font color="#E5E5E5">yang berarti itu dilakukan dan </font>
+
+40
+00:02:06,869 --> 00:02:10,679
+ perbandingan antara pengguna yang disediakan 
+
+41
+00:02:10,679 --> 00:02:13,260
+ <font color="#E5E5E5">masukan atau antara data yang ada </font>
+
+42
+00:02:13,260 --> 00:02:13,800
+ <font color="#E5E5E5">menyajikan </font>
+
+43
+00:02:13,800 --> 00:02:19,010
+ dalam database <font color="#CCCCCC">jadi sekarang </font><font color="#E5E5E5">untuk </font>
+
+44
+00:02:19,010 --> 00:02:22,970
+ <font color="#E5E5E5">bypass halaman login ini </font><font color="#CCCCCC">apa yang bisa kita lakukan adalah </font>
+
+45
+00:02:22,970 --> 00:02:28,020
+ kita bisa melakukan <font color="#E5E5E5">trik kecil </font><font color="#CCCCCC">untuk membuatnya </font>
+
+46
+00:02:28,020 --> 00:02:30,510
+ <font color="#E5E5E5">aplikasi server bata ini bingung </font>
+
+47
+00:02:30,510 --> 00:02:33,720
+ <font color="#E5E5E5">jadi apa yang bisa kita lakukan adalah bagaimana jika jika kita </font>
+
+48
+00:02:33,720 --> 00:02:36,360
+ <font color="#E5E5E5">tepat di sini di tempat nama pengguna </font>
+
+49
+00:02:36,360 --> 00:02:39,540
+ <font color="#CCCCCC">jadi jika saya hanya menulis di sini </font><font color="#E5E5E5">admin tunggal </font>
+
+50
+00:02:39,540 --> 00:02:47,070
+ <font color="#E5E5E5">kutipan atau satu sama dengan satu </font><font color="#CCCCCC">jadi sekarang apa itu </font>
+
+51
+00:02:47,070 --> 00:02:50,880
+ <font color="#CCCCCC">berarti jadi itu berarti </font><font color="#E5E5E5">kita menutup ini </font>
+
+52
+00:02:50,880 --> 00:02:54,030
+ nama bidang dengan hanya di sini admin dan <font color="#E5E5E5">saya </font>
+
+53
+00:02:54,030 --> 00:02:56,970
+ menambahkan kondisi lain yang <font color="#E5E5E5">merupakan </font><font color="#CCCCCC">salah satu </font>
+
+54
+00:02:56,970 --> 00:02:59,910
+ sama dengan <font color="#CCCCCC">satu </font><font color="#E5E5E5">sehingga kita semua tahu yang satu ini </font>
+
+55
+00:02:59,910 --> 00:03:02,820
+ sama dengan satu dan itu adalah <font color="#CCCCCC">kebenaran </font><font color="#E5E5E5">universal sehingga </font>
+
+56
+00:03:02,820 --> 00:03:05,490
+ ini akan <font color="#CCCCCC">tetap benar </font><font color="#E5E5E5">dan dengan </font><font color="#CCCCCC">menambahkan </font>
+
+57
+00:03:05,490 --> 00:03:08,130
+ atau operator ini <font color="#E5E5E5">tidak akan masalah </font>
+
+58
+00:03:08,130 --> 00:03:10,260
+ <font color="#E5E5E5">apakah bagian ini harus benar atau tidak </font>
+
+59
+00:03:10,260 --> 00:03:12,720
+ jika ini <font color="#E5E5E5">benar, kondisi kita akan demikian </font>
+
+60
+00:03:12,720 --> 00:03:16,800
+ <font color="#E5E5E5">menjadi benar sehingga di tempat kata sandi </font>
+
+61
+00:03:16,800 --> 00:03:22,970
+ <font color="#E5E5E5">jika saya hanya menambahkan di sini </font><font color="#CCCCCC">admin atau </font><font color="#E5E5E5">hal yang sama </font>
+
+62
+00:03:22,970 --> 00:03:31,290
+ <font color="#CCCCCC">satu </font><font color="#E5E5E5">sama dengan </font><font color="#CCCCCC">satu dan di tempat nama </font>
+
+63
+00:03:31,290 --> 00:03:38,520
+ biarkan aku hanya menambahkan ini satu har sama dengan satu 
+
+64
+00:03:38,520 --> 00:03:40,830
+ sekarang mari kita lihat <font color="#CCCCCC">Curie ini </font><font color="#E5E5E5">sehingga menjadi </font>
+
+65
+00:03:40,830 --> 00:03:42,870
+ pilih bintang dari pengguna di mana namanya 
+
+66
+00:03:42,870 --> 00:03:47,220
+ admin <font color="#CCCCCC">oke </font><font color="#E5E5E5">atau satu sama dengan </font><font color="#CCCCCC">satu jadi jika ini </font>
+
+67
+00:03:47,220 --> 00:03:50,430
+ tidak akan benar <font color="#E5E5E5">maka ini akan menjadi kenyataan </font><font color="#CCCCCC">dan </font>
+
+68
+00:03:50,430 --> 00:03:53,100
+ kata sandi <font color="#CCCCCC">seharusnya admin jadi ini </font>
+
+69
+00:03:53,100 --> 00:03:55,380
+ tidak akan benar bagian ini <font color="#E5E5E5">akan selalu benar </font>
+
+70
+00:03:55,380 --> 00:03:56,640
+ <font color="#E5E5E5">satu sama dengan satu </font>
+
+71
+00:03:56,640 --> 00:04:01,260
+ jadi sekarang tidak ada yang mencoba menambahkan ini sebagai milik kami 
+
+72
+00:04:01,260 --> 00:04:06,930
+ masukan jadi admin satu kutipan atau <font color="#E5E5E5">satu </font>
+
+73
+00:04:06,930 --> 00:04:10,530
+ sama dengan <font color="#CCCCCC">satu dan biarkan saya menyalin Kure </font><font color="#E5E5E5">ini </font>
+
+74
+00:04:10,530 --> 00:04:13,860
+ dan biarkan aku tempelkan di <font color="#E5E5E5">sini dan sekarang </font><font color="#CCCCCC">mari </font>
+
+75
+00:04:13,860 --> 00:04:16,680
+ <font color="#E5E5E5">klik di </font><font color="#CCCCCC">puncak dan mari kita lihat apakah itu </font>
+
+76
+00:04:16,680 --> 00:04:20,488
+ <font color="#E5E5E5">bekerja atau tidak oke dan di sini Anda bisa melihat </font>
+
+77
+00:04:20,488 --> 00:04:22,680
+ bahwa kami <font color="#CCCCCC">berhasil dapat masuk </font>
+
+78
+00:04:22,680 --> 00:04:24,930
+ dan <font color="#CCCCCC">kamu bisa melihat </font><font color="#E5E5E5">Curie yang mana </font>
+
+79
+00:04:24,930 --> 00:04:27,900
+ dieksekusi pada <font color="#E5E5E5">akhir </font><font color="#CCCCCC">kembali </font>
+
+80
+00:04:27,900 --> 00:04:31,449
+ jadi ini adalah <font color="#E5E5E5">contoh kecil </font><font color="#CCCCCC">bagaimana kita </font>
+
+81
+00:04:31,449 --> 00:04:35,680
+ <font color="#E5E5E5">dapat melewati </font><font color="#CCCCCC">halaman </font><font color="#E5E5E5">login </font><font color="#CCCCCC">melalui sekuel </font>
+
+82
+00:04:35,680 --> 00:04:37,449
+ injeksi <font color="#E5E5E5">jadi dalam video ini yang </font><font color="#CCCCCC">kita miliki </font>
+
+83
+00:04:37,449 --> 00:04:39,460
+ tertutup <font color="#E5E5E5">bahwa apa yang </font><font color="#CCCCCC">masuk </font><font color="#E5E5E5">adalah dasar </font>
+
+84
+00:04:39,460 --> 00:04:42,070
+ injeksi dan bagaimana kita bisa melewati 
+
+85
+00:04:42,070 --> 00:04:44,790
+ <font color="#E5E5E5">halaman login menggunakan injeksi sekuel </font>
+
+86
+00:04:44,790 --> 00:00:00,000
+ <font color="#CCCCCC">terima kasih telah </font><font color="#E5E5E5">menonton video ini </font>
+

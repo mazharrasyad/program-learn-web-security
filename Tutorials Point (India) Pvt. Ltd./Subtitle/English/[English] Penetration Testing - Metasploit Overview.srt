@@ -1,0 +1,940 @@
+1
+00:00:00,089 --> 00:00:02,040
+hello everyone now let<font color="#CCCCCC"> us talk about</font>
+
+2
+00:00:02,040 --> 00:00:04,620
+<font color="#CCCCCC">Metasploit framework</font><font color="#E5E5E5"> so a</font><font color="#CCCCCC"> Metasploit</font>
+
+3
+00:00:04,620 --> 00:00:06,810
+framework is a tool used for<font color="#E5E5E5"> penetration</font>
+
+4
+00:00:06,810 --> 00:00:10,200
+<font color="#E5E5E5">testing exploit research and exploiting</font>
+
+5
+00:00:10,200 --> 00:00:11,870
+<font color="#E5E5E5">the systems and vulnerabilities and</font>
+
+6
+00:00:11,870 --> 00:00:14,610
+network so<font color="#CCCCCC"> Metasploit framework is an</font>
+
+7
+00:00:14,610 --> 00:00:16,410
+<font color="#CCCCCC">open-source tool and it's written</font><font color="#E5E5E5"> in</font>
+
+8
+00:00:16,410 --> 00:00:18,720
+<font color="#CCCCCC">ruby which means if you know</font><font color="#E5E5E5"> the Ruby</font>
+
+9
+00:00:18,720 --> 00:00:20,430
+language and you know how you can write
+
+10
+00:00:20,430 --> 00:00:22,619
+codes<font color="#E5E5E5"> in Ruby then you can contribute</font>
+
+11
+00:00:22,619 --> 00:00:26,310
+<font color="#CCCCCC">the</font><font color="#E5E5E5"> Metasploit framework and</font><font color="#CCCCCC"> meta spread</font>
+
+12
+00:00:26,310 --> 00:00:28,109
+framework contains more than<font color="#CCCCCC"> 1,200</font>
+
+13
+00:00:28,109 --> 00:00:31,309
+<font color="#E5E5E5">exploits 330 plus payloads and 30 plus</font>
+
+14
+00:00:31,309 --> 00:00:34,380
+encoders so before<font color="#CCCCCC"> going further</font><font color="#E5E5E5"> let us</font>
+
+15
+00:00:34,380 --> 00:00:36,450
+talk about<font color="#E5E5E5"> some important terms which we</font>
+
+16
+00:00:36,450 --> 00:00:39,059
+will<font color="#CCCCCC"> use in this entire video so these</font>
+
+17
+00:00:39,059 --> 00:00:40,920
+important<font color="#E5E5E5"> terms are vulnerability</font>
+
+18
+00:00:40,920 --> 00:00:44,010
+exploit and payload<font color="#E5E5E5"> so what is</font>
+
+19
+00:00:44,010 --> 00:00:46,170
+vulnerability<font color="#E5E5E5"> so as I</font><font color="#CCCCCC"> told you earlier</font>
+
+20
+00:00:46,170 --> 00:00:48,120
+<font color="#E5E5E5">that vulnerability is a flow or a</font>
+
+21
+00:00:48,120 --> 00:00:50,370
+weakness<font color="#CCCCCC"> in the</font><font color="#E5E5E5"> system which let an</font>
+
+22
+00:00:50,370 --> 00:00:52,590
+attacker<font color="#E5E5E5"> to compromise the</font><font color="#CCCCCC"> system and</font>
+
+23
+00:00:52,590 --> 00:00:55,620
+what's the expert so exploit is the code
+
+24
+00:00:55,620 --> 00:00:58,109
+which an attacker use in<font color="#E5E5E5"> order to</font>
+
+25
+00:00:58,109 --> 00:01:00,539
+exploit that vulnerability<font color="#E5E5E5"> and gets into</font>
+
+26
+00:01:00,539 --> 00:01:03,840
+<font color="#E5E5E5">the system</font><font color="#CCCCCC"> now what's the payload so</font>
+
+27
+00:01:03,840 --> 00:01:07,049
+payload is defined as the activities
+
+28
+00:01:07,049 --> 00:01:09,479
+which one can perform once we are<font color="#E5E5E5"> inside</font>
+
+29
+00:01:09,479 --> 00:01:10,260
+<font color="#CCCCCC">a system</font>
+
+30
+00:01:10,260 --> 00:01:12,330
+just for<font color="#CCCCCC"> example we found</font><font color="#E5E5E5"> one</font>
+
+31
+00:01:12,330 --> 00:01:15,090
+vulnerability<font color="#E5E5E5"> and we also found one code</font>
+
+32
+00:01:15,090 --> 00:01:16,950
+<font color="#E5E5E5">which we will</font><font color="#CCCCCC"> use</font><font color="#E5E5E5"> in order to exploit</font>
+
+33
+00:01:16,950 --> 00:01:19,290
+that vulnerability<font color="#E5E5E5"> then once we are</font>
+
+34
+00:01:19,290 --> 00:01:21,810
+inside<font color="#CCCCCC"> the system</font><font color="#E5E5E5"> then what kind of</font>
+
+35
+00:01:21,810 --> 00:01:24,689
+activities we can<font color="#E5E5E5"> perform can be defined</font>
+
+36
+00:01:24,689 --> 00:01:27,570
+as<font color="#CCCCCC"> the payload</font><font color="#E5E5E5"> which we will use while</font>
+
+37
+00:01:27,570 --> 00:01:30,930
+exploiting<font color="#E5E5E5"> the target so now let us go</font>
+
+38
+00:01:30,930 --> 00:01:33,090
+further<font color="#E5E5E5"> so now let's discuss about</font>
+
+39
+00:01:33,090 --> 00:01:35,250
+<font color="#CCCCCC">Metasploit architecture that how</font>
+
+40
+00:01:35,250 --> 00:01:36,900
+<font color="#CCCCCC">Metasploit framework is organized</font>
+
+41
+00:01:36,900 --> 00:01:39,150
+internally<font color="#CCCCCC"> so here you can see that</font>
+
+42
+00:01:39,150 --> 00:01:40,770
+matters here are the Metasploit
+
+43
+00:01:40,770 --> 00:01:43,619
+framework modules<font color="#E5E5E5"> and here on</font><font color="#CCCCCC"> Metasploit</font>
+
+44
+00:01:43,619 --> 00:01:45,930
+interfaces and here are some libraries
+
+45
+00:01:45,930 --> 00:01:48,890
+so modules<font color="#CCCCCC"> contains different kind of</font>
+
+46
+00:01:48,890 --> 00:01:51,420
+directories which contains<font color="#E5E5E5"> payloads</font>
+
+47
+00:01:51,420 --> 00:01:54,780
+<font color="#E5E5E5">exploits auxilary modules encoders and</font>
+
+48
+00:01:54,780 --> 00:01:57,780
+so on<font color="#E5E5E5"> so what</font><font color="#CCCCCC"> I</font><font color="#E5E5E5"> am</font><font color="#CCCCCC"> Metasploit interfaces</font>
+
+49
+00:01:57,780 --> 00:02:00,329
+<font color="#CCCCCC">I will discuss in upcoming slide and</font>
+
+50
+00:02:00,329 --> 00:02:02,130
+here you can see the Metasploit
+
+51
+00:02:02,130 --> 00:02:04,020
+libraries which<font color="#CCCCCC"> contains different</font>
+
+52
+00:02:04,020 --> 00:02:06,450
+<font color="#CCCCCC">Metasploit framework functions like MSF</font>
+
+53
+00:02:06,450 --> 00:02:08,818
+<font color="#CCCCCC">base library</font><font color="#E5E5E5"> MSF core libraries plugins</font>
+
+54
+00:02:08,818 --> 00:02:12,340
+<font color="#E5E5E5">and so on so now let's discuss</font>
+
+55
+00:02:12,340 --> 00:02:15,099
+about<font color="#CCCCCC"> Metasploit real-life scenario</font><font color="#E5E5E5"> so</font>
+
+56
+00:02:15,099 --> 00:02:17,200
+what is<font color="#CCCCCC"> Metasploit real-life scenario</font>
+
+57
+00:02:17,200 --> 00:02:19,900
+what it means<font color="#CCCCCC"> so it means that how</font>
+
+58
+00:02:19,900 --> 00:02:23,019
+penetration testers<font color="#E5E5E5"> use</font><font color="#CCCCCC"> Metasploit in</font>
+
+59
+00:02:23,019 --> 00:02:25,540
+<font color="#CCCCCC">real-life scenario or in real in real</font>
+
+60
+00:02:25,540 --> 00:02:28,150
+<font color="#E5E5E5">time in order</font><font color="#CCCCCC"> to penetrate</font><font color="#E5E5E5"> into the</font>
+
+61
+00:02:28,150 --> 00:02:30,700
+systems<font color="#CCCCCC"> so in order</font><font color="#E5E5E5"> to use</font><font color="#CCCCCC"> Metasploit</font>
+
+62
+00:02:30,700 --> 00:02:33,129
+<font color="#E5E5E5">there are three steps so the first step</font>
+
+63
+00:02:33,129 --> 00:02:36,730
+is we will find open ports services and
+
+64
+00:02:36,730 --> 00:02:38,680
+their version<font color="#CCCCCC"> numbers running</font><font color="#E5E5E5"> on a</font>
+
+65
+00:02:38,680 --> 00:02:40,780
+remote<font color="#CCCCCC"> system</font><font color="#E5E5E5"> so once we found open</font>
+
+66
+00:02:40,780 --> 00:02:42,879
+<font color="#E5E5E5">ports and services running on them</font>
+
+67
+00:02:42,879 --> 00:02:45,700
+then we'll try<font color="#CCCCCC"> to find the</font><font color="#E5E5E5"> version</font>
+
+68
+00:02:45,700 --> 00:02:48,130
+numbers of that<font color="#E5E5E5"> services and once we got</font>
+
+69
+00:02:48,130 --> 00:02:49,930
+the version number what we'll do
+
+70
+00:02:49,930 --> 00:02:53,049
+we'll try<font color="#E5E5E5"> to find exploit in</font><font color="#CCCCCC"> Metasploit</font>
+
+71
+00:02:53,049 --> 00:02:55,840
+framework<font color="#E5E5E5"> database correspond to that</font>
+
+72
+00:02:55,840 --> 00:02:58,450
+<font color="#E5E5E5">version number which we found and if</font>
+
+73
+00:02:58,450 --> 00:03:01,180
+that exploit is present inside<font color="#CCCCCC"> the</font>
+
+74
+00:03:01,180 --> 00:03:03,069
+Metasploit framework database<font color="#E5E5E5"> then we</font>
+
+75
+00:03:03,069 --> 00:03:05,230
+<font color="#CCCCCC">will use</font><font color="#E5E5E5"> that exploit in order to</font>
+
+76
+00:03:05,230 --> 00:03:07,690
+exploit that system so this<font color="#E5E5E5"> is a</font>
+
+77
+00:03:07,690 --> 00:03:09,700
+<font color="#CCCCCC">Metasploit real life scenario which</font>
+
+78
+00:03:09,700 --> 00:03:12,730
+every penetration tester follows now let
+
+79
+00:03:12,730 --> 00:03:15,340
+us discuss<font color="#E5E5E5"> about</font><font color="#CCCCCC"> Metasploit interfaces</font>
+
+80
+00:03:15,340 --> 00:03:18,160
+so<font color="#CCCCCC"> Metasploit interfaces are nothing but</font>
+
+81
+00:03:18,160 --> 00:03:20,200
+just a different different<font color="#CCCCCC"> ways</font><font color="#E5E5E5"> in order</font>
+
+82
+00:03:20,200 --> 00:03:22,209
+<font color="#E5E5E5">to use</font><font color="#CCCCCC"> Metasploit</font><font color="#E5E5E5"> so the first two</font>
+
+83
+00:03:22,209 --> 00:03:25,180
+interfaces<font color="#CCCCCC"> Metasploit</font><font color="#E5E5E5"> web so by using</font>
+
+84
+00:03:25,180 --> 00:03:27,790
+<font color="#CCCCCC">Metasploit web we can access Metasploit</font>
+
+85
+00:03:27,790 --> 00:03:29,980
+<font color="#E5E5E5">by using browsers like Google Chrome</font>
+
+86
+00:03:29,980 --> 00:03:32,319
+<font color="#CCCCCC">Mozilla Firefox and there is one another</font>
+
+87
+00:03:32,319 --> 00:03:35,260
+interface<font color="#E5E5E5"> called as Armitage so Armitage</font>
+
+88
+00:03:35,260 --> 00:03:37,690
+<font color="#E5E5E5">is an</font><font color="#CCCCCC"> Metasploit framework</font><font color="#E5E5E5"> GUI</font>
+
+89
+00:03:37,690 --> 00:03:39,910
+application which provides GUI features
+
+90
+00:03:39,910 --> 00:03:42,700
+whereas the last<font color="#CCCCCC"> Metasploit</font><font color="#E5E5E5"> interfaces</font>
+
+91
+00:03:42,700 --> 00:03:44,980
+<font color="#E5E5E5">command line so by using command line</font>
+
+92
+00:03:44,980 --> 00:03:47,349
+<font color="#CCCCCC">interface we can access Metasploit</font>
+
+93
+00:03:47,349 --> 00:03:49,150
+framework<font color="#E5E5E5"> through our Kali Linux</font>
+
+94
+00:03:49,150 --> 00:03:51,609
+terminal<font color="#E5E5E5"> and in order to</font><font color="#CCCCCC"> use Metasploit</font>
+
+95
+00:03:51,609 --> 00:03:53,500
+framework command line<font color="#E5E5E5"> we have to write</font>
+
+96
+00:03:53,500 --> 00:03:57,790
+MSF console in our<font color="#E5E5E5"> Kali Linux terminal</font>
+
+97
+00:03:57,790 --> 00:04:00,280
+<font color="#E5E5E5">now let's see how we can use</font><font color="#CCCCCC"> Metasploit</font>
+
+98
+00:04:00,280 --> 00:04:04,959
+by using<font color="#E5E5E5"> MSF console now let's see that</font>
+
+99
+00:04:04,959 --> 00:04:07,019
+how<font color="#E5E5E5"> we</font><font color="#CCCCCC"> can use Metasploit framework</font>
+
+100
+00:04:07,019 --> 00:04:10,840
+through MSF console so to do that we
+
+101
+00:04:10,840 --> 00:04:13,540
+have to start our Kali Linux and I have
+
+102
+00:04:13,540 --> 00:04:15,609
+already<font color="#E5E5E5"> started my Colin Linux and here</font>
+
+103
+00:04:15,609 --> 00:04:17,410
+you can<font color="#E5E5E5"> see my Kali Linux instance and</font>
+
+104
+00:04:17,410 --> 00:04:20,529
+here is the Kali terminal so in<font color="#CCCCCC"> order</font><font color="#E5E5E5"> to</font>
+
+105
+00:04:20,529 --> 00:04:22,300
+start<font color="#CCCCCC"> Metasploit framework we have to</font>
+
+106
+00:04:22,300 --> 00:04:23,340
+write here
+
+107
+00:04:23,340 --> 00:04:26,820
+MSF console
+
+108
+00:04:30,120 --> 00:04:34,900
+and here you can see that right<font color="#CCCCCC"> now we</font>
+
+109
+00:04:34,900 --> 00:04:37,979
+are inside<font color="#CCCCCC"> Metasploit framework shell</font>
+
+110
+00:04:37,979 --> 00:04:40,750
+well<font color="#E5E5E5"> I told you earlier</font><font color="#CCCCCC"> that what will</font>
+
+111
+00:04:40,750 --> 00:04:42,669
+<font color="#CCCCCC">be our scenario our scenario will be</font>
+
+112
+00:04:42,669 --> 00:04:45,370
+that as a penetration tester<font color="#E5E5E5"> we will</font>
+
+113
+00:04:45,370 --> 00:04:47,949
+first<font color="#E5E5E5"> find open ports along with the</font>
+
+114
+00:04:47,949 --> 00:04:50,770
+version number<font color="#E5E5E5"> and services then once we</font>
+
+115
+00:04:50,770 --> 00:04:53,949
+find<font color="#CCCCCC"> the open ports we have to find a</font>
+
+116
+00:04:53,949 --> 00:04:57,939
+particular exploit correspond to<font color="#E5E5E5"> that</font>
+
+117
+00:04:57,939 --> 00:05:01,210
+version<font color="#E5E5E5"> number and if that exploit exist</font>
+
+118
+00:05:01,210 --> 00:05:03,729
+in<font color="#CCCCCC"> Metasploit framework database</font><font color="#E5E5E5"> then</font>
+
+119
+00:05:03,729 --> 00:05:05,909
+we'll<font color="#E5E5E5"> use</font><font color="#CCCCCC"> that exploit and try to</font>
+
+120
+00:05:05,909 --> 00:05:11,139
+exploit the system<font color="#E5E5E5"> so here you can see</font>
+
+121
+00:05:11,139 --> 00:05:13,719
+that my<font color="#CCCCCC"> Metasploit</font><font color="#E5E5E5"> level</font><font color="#CCCCCC"> linux is up</font><font color="#E5E5E5"> and</font>
+
+122
+00:05:13,719 --> 00:05:18,779
+<font color="#CCCCCC">running and</font><font color="#E5E5E5"> it's IP is 192.168.1.1</font><font color="#CCCCCC"> o6</font>
+
+123
+00:05:18,779 --> 00:05:22,270
+now what I'm<font color="#E5E5E5"> going to do is</font><font color="#CCCCCC"> I'm scanning</font>
+
+124
+00:05:22,270 --> 00:05:25,860
+the<font color="#E5E5E5"> open ports of</font><font color="#CCCCCC"> Metasploit table Linux</font>
+
+125
+00:05:25,860 --> 00:05:29,610
+<font color="#E5E5E5">through and map and I am performing</font>
+
+126
+00:05:29,610 --> 00:05:33,069
+service scan you<font color="#E5E5E5"> can see here and let</font><font color="#CCCCCC"> me</font>
+
+127
+00:05:33,069 --> 00:05:35,669
+<font color="#CCCCCC">just write down the IP address of my</font>
+
+128
+00:05:35,669 --> 00:05:44,770
+<font color="#CCCCCC">display table Linux hit</font><font color="#E5E5E5"> enter this will</font>
+
+129
+00:05:44,770 --> 00:05:46,500
+take a little bit time because
+
+130
+00:05:46,500 --> 00:05:49,240
+<font color="#CCCCCC">Metasploit a linux contains lot of</font>
+
+131
+00:05:49,240 --> 00:05:52,089
+vulnerabilities so<font color="#E5E5E5"> that's why more than</font>
+
+132
+00:05:52,089 --> 00:05:54,729
+<font color="#E5E5E5">10 or 15 ports will be open so that's</font>
+
+133
+00:05:54,729 --> 00:05:57,250
+why<font color="#CCCCCC"> on map will scan entire ports and</font>
+
+134
+00:05:57,250 --> 00:06:00,279
+<font color="#CCCCCC">will try</font><font color="#E5E5E5"> to fetch all their services and</font>
+
+135
+00:06:00,279 --> 00:06:02,740
+their<font color="#CCCCCC"> version number so we have to wait</font>
+
+136
+00:06:02,740 --> 00:06:10,229
+<font color="#CCCCCC">for a time being and here you can see</font>
+
+137
+00:06:10,229 --> 00:06:13,599
+the<font color="#E5E5E5"> list of open ports their services</font>
+
+138
+00:06:13,599 --> 00:06:16,779
+<font color="#E5E5E5">and their version number so for the time</font>
+
+139
+00:06:16,779 --> 00:06:19,509
+being<font color="#CCCCCC"> let's focus on this port port 21</font>
+
+140
+00:06:19,509 --> 00:06:23,139
+<font color="#E5E5E5">and service you can just see here FTP</font>
+
+141
+00:06:23,139 --> 00:06:30,969
+and their<font color="#E5E5E5"> version is</font><font color="#CCCCCC"> vs FTP</font><font color="#E5E5E5"> D 2.3.4</font><font color="#CCCCCC"> okay</font>
+
+142
+00:06:30,969 --> 00:06:34,509
+<font color="#E5E5E5">now we got the service services and the</font>
+
+143
+00:06:34,509 --> 00:06:36,520
+version<font color="#E5E5E5"> number now let's search a</font>
+
+144
+00:06:36,520 --> 00:06:39,520
+particular exploit in<font color="#E5E5E5"> the Metasploit</font>
+
+145
+00:06:39,520 --> 00:06:44,020
+framework database of with this name<font color="#E5E5E5"> vs</font>
+
+146
+00:06:44,020 --> 00:06:48,340
+<font color="#E5E5E5">FTP D 2.3.4 and in order to</font><font color="#CCCCCC"> search any</font>
+
+147
+00:06:48,340 --> 00:06:50,530
+exploit<font color="#E5E5E5"> and</font><font color="#CCCCCC"> Metasploit framework</font>
+
+148
+00:06:50,530 --> 00:06:52,569
+database we have<font color="#E5E5E5"> to just</font><font color="#CCCCCC"> right here</font>
+
+149
+00:06:52,569 --> 00:06:55,090
+<font color="#E5E5E5">search followed by the exploit name or</font>
+
+150
+00:06:55,090 --> 00:07:02,530
+the version<font color="#E5E5E5"> name so</font><font color="#CCCCCC"> vs FTP D and the</font>
+
+151
+00:07:02,530 --> 00:07:06,009
+version name which is<font color="#CCCCCC"> 2.3.4</font><font color="#E5E5E5"> and hit</font>
+
+152
+00:07:06,009 --> 00:07:16,060
+enter so<font color="#CCCCCC"> if the exploit exist in the</font>
+
+153
+00:07:16,060 --> 00:07:18,250
+Metasploit framework directory or the
+
+154
+00:07:18,250 --> 00:07:20,680
+<font color="#E5E5E5">database then we can exploit the system</font>
+
+155
+00:07:20,680 --> 00:07:24,240
+<font color="#E5E5E5">otherwise we cannot exploit the system</font>
+
+156
+00:07:24,240 --> 00:07:27,159
+but as a<font color="#CCCCCC"> pentester</font><font color="#E5E5E5"> if you know how you</font>
+
+157
+00:07:27,159 --> 00:07:29,289
+can<font color="#E5E5E5"> make exploit then you can make a</font>
+
+158
+00:07:29,289 --> 00:07:31,539
+particular<font color="#E5E5E5"> exploit and can use that</font>
+
+159
+00:07:31,539 --> 00:07:34,780
+exploit<font color="#CCCCCC"> okay and but here is the already</font>
+
+160
+00:07:34,780 --> 00:07:37,840
+<font color="#CCCCCC">n exploit which is present in the</font>
+
+161
+00:07:37,840 --> 00:07:39,729
+Metasploit<font color="#E5E5E5"> framework database</font><font color="#CCCCCC"> you can</font>
+
+162
+00:07:39,729 --> 00:07:42,520
+check its name so in order<font color="#CCCCCC"> to use this</font>
+
+163
+00:07:42,520 --> 00:07:44,820
+exploit<font color="#E5E5E5"> just</font><font color="#CCCCCC"> right down here use and</font>
+
+164
+00:07:44,820 --> 00:07:51,039
+copy the exploit name so this exploit is
+
+165
+00:07:51,039 --> 00:07:54,789
+inside exploit<font color="#CCCCCC"> Unix</font><font color="#E5E5E5"> FTP directory and</font>
+
+166
+00:07:54,789 --> 00:07:57,940
+this<font color="#E5E5E5"> is the exploit name vs FTP D 2 3 4</font>
+
+167
+00:07:57,940 --> 00:08:03,490
+<font color="#E5E5E5">backdoor let me use this and here you</font>
+
+168
+00:08:03,490 --> 00:08:06,219
+can<font color="#E5E5E5"> also see that</font><font color="#CCCCCC"> disclosure date the</font>
+
+169
+00:08:06,219 --> 00:08:08,880
+rank is excellent<font color="#E5E5E5"> and</font><font color="#CCCCCC"> the description</font>
+
+170
+00:08:08,880 --> 00:08:12,729
+hit<font color="#E5E5E5"> enter so once you hit enter you</font><font color="#CCCCCC"> will</font>
+
+171
+00:08:12,729 --> 00:08:16,150
+<font color="#CCCCCC">see that you are</font><font color="#E5E5E5"> inside the exploit so</font>
+
+172
+00:08:16,150 --> 00:08:18,190
+once we are inside<font color="#CCCCCC"> the exploit</font><font color="#E5E5E5"> the next</font>
+
+173
+00:08:18,190 --> 00:08:21,219
+thing is we have<font color="#CCCCCC"> to set our exploit</font><font color="#E5E5E5"> so</font>
+
+174
+00:08:21,219 --> 00:08:23,650
+how we can<font color="#CCCCCC"> set our exploit</font><font color="#E5E5E5"> that it will</font>
+
+175
+00:08:23,650 --> 00:08:28,060
+triggers<font color="#E5E5E5"> to</font><font color="#CCCCCC"> Metasploit able framework</font><font color="#E5E5E5"> so</font>
+
+176
+00:08:28,060 --> 00:08:30,219
+what we can do is we<font color="#E5E5E5"> will</font><font color="#CCCCCC"> first find</font><font color="#E5E5E5"> the</font>
+
+177
+00:08:30,219 --> 00:08:32,979
+options we have<font color="#CCCCCC"> to give so in order to</font>
+
+178
+00:08:32,979 --> 00:08:35,500
+find that<font color="#E5E5E5"> what kind of option this</font>
+
+179
+00:08:35,500 --> 00:08:37,299
+exploit wants just write down show
+
+180
+00:08:37,299 --> 00:08:39,179
+options hit enter
+
+181
+00:08:39,179 --> 00:08:43,179
+<font color="#E5E5E5">so right now there are two options</font><font color="#CCCCCC"> our</font>
+
+182
+00:08:43,179 --> 00:08:45,670
+host and our port<font color="#E5E5E5"> in which this exploit</font>
+
+183
+00:08:45,670 --> 00:08:48,520
+wants so our<font color="#E5E5E5"> port is pre default set you</font>
+
+184
+00:08:48,520 --> 00:08:51,220
+can<font color="#CCCCCC"> just see</font><font color="#E5E5E5"> here 21 all we have to do</font>
+
+185
+00:08:51,220 --> 00:08:53,050
+is we just<font color="#CCCCCC"> have to set the</font>
+
+186
+00:08:53,050 --> 00:08:55,540
+our<font color="#E5E5E5"> host so what's the our host</font><font color="#CCCCCC"> our host</font>
+
+187
+00:08:55,540 --> 00:08:58,000
+is<font color="#E5E5E5"> a remote host</font><font color="#CCCCCC"> so we have to set the</font>
+
+188
+00:08:58,000 --> 00:09:01,200
+<font color="#CCCCCC">IP</font><font color="#E5E5E5"> address of</font><font color="#CCCCCC"> Metis palatable Linux and</font>
+
+189
+00:09:01,200 --> 00:09:03,850
+in order<font color="#E5E5E5"> to set our host we have to</font>
+
+190
+00:09:03,850 --> 00:09:07,450
+write down<font color="#E5E5E5"> set our host space and IP</font>
+
+191
+00:09:07,450 --> 00:09:14,440
+address so instead of IP address you<font color="#E5E5E5"> can</font>
+
+192
+00:09:14,440 --> 00:09:19,600
+also type the domain<font color="#E5E5E5"> name so I have said</font>
+
+193
+00:09:19,600 --> 00:09:22,120
+in my our host<font color="#E5E5E5"> now let's check the</font>
+
+194
+00:09:22,120 --> 00:09:25,570
+<font color="#E5E5E5">options</font><font color="#CCCCCC"> again</font><font color="#E5E5E5"> and here you can see that</font>
+
+195
+00:09:25,570 --> 00:09:29,110
+my our host is set now all I have<font color="#CCCCCC"> to do</font>
+
+196
+00:09:29,110 --> 00:09:33,790
+is I have<font color="#CCCCCC"> to write exploit</font><font color="#E5E5E5"> or even you</font>
+
+197
+00:09:33,790 --> 00:09:38,190
+<font color="#CCCCCC">can just write run and hit enter okay</font>
+
+198
+00:09:43,080 --> 00:09:45,340
+<font color="#CCCCCC">now we have exploit</font><font color="#E5E5E5"> Lee to the system</font>
+
+199
+00:09:45,340 --> 00:09:48,490
+you<font color="#CCCCCC"> can just</font><font color="#E5E5E5"> see here backdoor service</font>
+
+200
+00:09:48,490 --> 00:09:50,680
+has been spawned and found a shell
+
+201
+00:09:50,680 --> 00:09:54,730
+command<font color="#CCCCCC"> shell</font><font color="#E5E5E5"> open session</font><font color="#CCCCCC"> 1</font><font color="#E5E5E5"> now we are</font>
+
+202
+00:09:54,730 --> 00:09:58,390
+inside<font color="#E5E5E5"> the shell of</font><font color="#CCCCCC"> Metasploit a</font><font color="#E5E5E5"> table</font>
+
+203
+00:09:58,390 --> 00:10:01,630
+<font color="#E5E5E5">Linux means as a pen tester we have</font>
+
+204
+00:10:01,630 --> 00:10:03,880
+gained the access of this<font color="#CCCCCC"> Metasploit</font>
+
+205
+00:10:03,880 --> 00:10:06,370
+table Linux through<font color="#CCCCCC"> Metasploit framework</font>
+
+206
+00:10:06,370 --> 00:10:08,980
+<font color="#E5E5E5">and you</font><font color="#CCCCCC"> can just</font><font color="#E5E5E5"> check here if I</font><font color="#CCCCCC"> just</font>
+
+207
+00:10:08,980 --> 00:10:16,060
+<font color="#E5E5E5">write here who are who</font><font color="#CCCCCC"> are who am I so</font>
+
+208
+00:10:16,060 --> 00:10:18,460
+it will give us<font color="#E5E5E5"> the</font><font color="#CCCCCC"> output</font><font color="#E5E5E5"> just below</font>
+
+209
+00:10:18,460 --> 00:10:19,330
+our command
+
+210
+00:10:19,330 --> 00:10:21,880
+<font color="#E5E5E5">so root we are</font><font color="#CCCCCC"> root okay so let's print</font>
+
+211
+00:10:21,880 --> 00:10:23,980
+out the working<font color="#CCCCCC"> directory okay</font>
+
+212
+00:10:23,980 --> 00:10:27,400
+is this<font color="#E5E5E5"> and let's check the file listing</font>
+
+213
+00:10:27,400 --> 00:10:29,110
+so these are the files<font color="#CCCCCC"> and directories</font>
+
+214
+00:10:29,110 --> 00:10:31,390
+<font color="#E5E5E5">which are present inside the Metasploit</font>
+
+215
+00:10:31,390 --> 00:10:34,330
+<font color="#CCCCCC">table</font><font color="#E5E5E5"> Linux just for us ensure that</font>
+
+216
+00:10:34,330 --> 00:10:36,280
+whether we are<font color="#CCCCCC"> inside a correct shell</font>
+
+217
+00:10:36,280 --> 00:10:39,700
+let's create<font color="#CCCCCC"> an demo directory so let's</font>
+
+218
+00:10:39,700 --> 00:10:42,910
+<font color="#E5E5E5">create a directory named as demo hit</font>
+
+219
+00:10:42,910 --> 00:10:45,640
+<font color="#E5E5E5">enter now let's go back</font><font color="#CCCCCC"> to my disputable</font>
+
+220
+00:10:45,640 --> 00:10:50,100
+<font color="#E5E5E5">Linux let's write here LS and let's see</font>
+
+221
+00:10:50,100 --> 00:10:52,390
+whether<font color="#E5E5E5"> our demo directory has</font><font color="#CCCCCC"> been</font>
+
+222
+00:10:52,390 --> 00:10:55,470
+created or not<font color="#E5E5E5"> if I just write LS and</font>
+
+223
+00:10:55,470 --> 00:10:59,620
+here you can see that this is a demo
+
+224
+00:10:59,620 --> 00:11:01,210
+directory<font color="#CCCCCC"> which we have just</font><font color="#E5E5E5"> created</font>
+
+225
+00:11:01,210 --> 00:11:04,570
+through<font color="#CCCCCC"> Metasploit framework</font><font color="#E5E5E5"> and if you</font>
+
+226
+00:11:04,570 --> 00:11:05,950
+just want<font color="#CCCCCC"> to come back</font><font color="#E5E5E5"> you can</font><font color="#CCCCCC"> just</font>
+
+227
+00:11:05,950 --> 00:11:06,880
+<font color="#CCCCCC">right exit</font>
+
+228
+00:11:06,880 --> 00:11:09,339
+so once you exit your<font color="#E5E5E5"> command</font><font color="#CCCCCC"> session</font>
+
+229
+00:11:09,339 --> 00:11:17,350
+will<font color="#E5E5E5"> be closed now in order</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> protect</font>
+
+230
+00:11:17,350 --> 00:11:19,709
+your server from<font color="#CCCCCC"> Metasploit framework</font>
+
+231
+00:11:19,709 --> 00:11:23,019
+<font color="#E5E5E5">the best practice is to close the</font><font color="#CCCCCC"> pores</font>
+
+232
+00:11:23,019 --> 00:11:26,170
+and hide their version number if that
+
+233
+00:11:26,170 --> 00:11:28,449
+<font color="#CCCCCC">port is not in the use</font><font color="#E5E5E5"> it's the best</font>
+
+234
+00:11:28,449 --> 00:11:31,509
+practice so thanks for watching<font color="#CCCCCC"> this</font>
+
+235
+00:11:31,509 --> 00:00:00,000
+video
+

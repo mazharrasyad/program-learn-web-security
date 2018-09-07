@@ -1,0 +1,3663 @@
+1
+00:00:00,000 --> 00:00:06,210
+
+
+2
+00:00:06,210 --> 00:00:07,230
+ELIE BURSZTEIN: Bonjour.
+
+3
+00:00:07,230 --> 00:00:10,810
+My name is Elie Bursztein, and I
+work on anti-abuse and security
+
+4
+00:00:10,810 --> 00:00:11,310
+research.
+
+5
+00:00:11,310 --> 00:00:14,200
+And today with Yuan, who works
+on web security research,
+
+6
+00:00:14,200 --> 00:00:17,790
+and Eric who works on
+webmaster relationship,
+
+7
+00:00:17,790 --> 00:00:21,000
+we're going to tell you how you
+can learn about web security
+
+8
+00:00:21,000 --> 00:00:22,530
+with Google.
+
+9
+00:00:22,530 --> 00:00:25,810
+But before we get started,
+let's do a quick show of hands.
+
+10
+00:00:25,810 --> 00:00:27,480
+How many of you
+had their website
+
+11
+00:00:27,480 --> 00:00:31,420
+compromised or know someone
+who had their website hacked?
+
+12
+00:00:31,420 --> 00:00:31,920
+Come on.
+
+13
+00:00:31,920 --> 00:00:32,340
+Don't be shy.
+
+14
+00:00:32,340 --> 00:00:33,100
+Raise your hand.
+
+15
+00:00:33,100 --> 00:00:33,600
+Yep.
+
+16
+00:00:33,600 --> 00:00:39,722
+
+
+17
+00:00:39,722 --> 00:00:40,930
+Most of you raised your hand.
+
+18
+00:00:40,930 --> 00:00:42,820
+This is not surprising.
+
+19
+00:00:42,820 --> 00:00:46,960
+In 2016, hacking has
+never been so prevalent.
+
+20
+00:00:46,960 --> 00:00:52,120
+We've found 32% more website
+compromise than ever.
+
+21
+00:00:52,120 --> 00:00:56,620
+So hackers tries to hack your
+website for many reasons,
+
+22
+00:00:56,620 --> 00:01:00,040
+from attacking your user
+by sending malware to them
+
+23
+00:01:00,040 --> 00:01:03,580
+or trying to phish them to using
+your resources as an attack
+
+24
+00:01:03,580 --> 00:01:07,270
+platform to hack other websites
+to try to steal your data
+
+25
+00:01:07,270 --> 00:01:08,830
+and expose them.
+
+26
+00:01:08,830 --> 00:01:11,880
+In either way, when
+you get hacked,
+
+27
+00:01:11,880 --> 00:01:13,900
+the consequences
+are pretty dear.
+
+28
+00:01:13,900 --> 00:01:15,670
+You are losing the
+trust of your user
+
+29
+00:01:15,670 --> 00:01:18,400
+and potentially
+suffer financial loss.
+
+30
+00:01:18,400 --> 00:01:20,620
+Some of the lasting
+effects, such as user trust,
+
+31
+00:01:20,620 --> 00:01:23,450
+can take years to recover.
+
+32
+00:01:23,450 --> 00:01:27,490
+So this is why it is
+essential to keep security
+
+33
+00:01:27,490 --> 00:01:29,560
+at the forefront of
+your web strategy
+
+34
+00:01:29,560 --> 00:01:32,290
+and make sure that you
+invest in security constantly
+
+35
+00:01:32,290 --> 00:01:35,000
+from when you develop a new
+thing, so when you maintain it,
+
+36
+00:01:35,000 --> 00:01:36,840
+so when you upgrade it.
+
+37
+00:01:36,840 --> 00:01:39,340
+I'm pretty sure you already
+know that, because otherwise you
+
+38
+00:01:39,340 --> 00:01:40,900
+would not be there today, right?
+
+39
+00:01:40,900 --> 00:01:43,780
+So today, what
+we're going to do,
+
+40
+00:01:43,780 --> 00:01:45,790
+we're going to walk you
+through the resources
+
+41
+00:01:45,790 --> 00:01:48,640
+that Google provides to
+help you secure your website
+
+42
+00:01:48,640 --> 00:01:50,590
+and defend against hackers.
+
+43
+00:01:50,590 --> 00:01:53,330
+More precisely, we're going
+to go into two topics.
+
+44
+00:01:53,330 --> 00:01:58,005
+First, Eric will cover how you
+can get help from Google when
+
+45
+00:01:58,005 --> 00:01:58,630
+you get hacked.
+
+46
+00:01:58,630 --> 00:02:01,540
+What are the resources we
+have to help you clean up
+
+47
+00:02:01,540 --> 00:02:03,370
+and to help you
+restructure your website?
+
+48
+00:02:03,370 --> 00:02:05,470
+Then with Yuan, we're
+going to give you
+
+49
+00:02:05,470 --> 00:02:08,590
+a sneak preview of our
+upcoming web security courses.
+
+50
+00:02:08,590 --> 00:02:11,290
+And we are very excited to
+release later this summer.
+
+51
+00:02:11,290 --> 00:02:12,940
+To make it very
+practical and give you
+
+52
+00:02:12,940 --> 00:02:14,650
+a sense of what
+you're going to learn,
+
+53
+00:02:14,650 --> 00:02:16,810
+we're going to give you a
+short overview, followed
+
+54
+00:02:16,810 --> 00:02:20,020
+by a sneak preview of one of
+the lectures-- the SQL injection
+
+55
+00:02:20,020 --> 00:02:20,520
+lecture.
+
+56
+00:02:20,520 --> 00:02:22,186
+And of course, because
+we wanted to have
+
+57
+00:02:22,186 --> 00:02:23,710
+something which
+is very hands-on,
+
+58
+00:02:23,710 --> 00:02:25,300
+we have a lot of demo today.
+
+59
+00:02:25,300 --> 00:02:27,160
+That is, if that
+works, of course.
+
+60
+00:02:27,160 --> 00:02:30,360
+And let's go and jump right in.
+
+61
+00:02:30,360 --> 00:02:31,920
+Eric, they're all yours.
+
+62
+00:02:31,920 --> 00:02:33,610
+ERIC KUAN: Thanks, Elie.
+
+63
+00:02:33,610 --> 00:02:36,096
+So first off, hi, Mom.
+
+64
+00:02:36,096 --> 00:02:38,220
+I'm on livestream right
+now, and my mom's watching.
+
+65
+00:02:38,220 --> 00:02:38,990
+So I'm super excited.
+
+66
+00:02:38,990 --> 00:02:40,240
+I've always wanted to do that.
+
+67
+00:02:40,240 --> 00:02:41,178
+So hi, Mom.
+
+68
+00:02:41,178 --> 00:02:44,047
+[APPLAUSE]
+
+69
+00:02:44,047 --> 00:02:44,880
+Let's jump right in.
+
+70
+00:02:44,880 --> 00:02:47,530
+So what you should do if
+your site gets hacked.
+
+71
+00:02:47,530 --> 00:02:50,320
+You're most likely going to
+get some type of notification.
+
+72
+00:02:50,320 --> 00:02:52,300
+From Google's perspective,
+that notification
+
+73
+00:02:52,300 --> 00:02:54,670
+is this red interstitial
+that you may have seen.
+
+74
+00:02:54,670 --> 00:02:57,650
+It could be some type of
+notification in search results.
+
+75
+00:02:57,650 --> 00:02:59,230
+Now, notifications
+don't only have
+
+76
+00:02:59,230 --> 00:03:00,616
+to come from Google, right?
+
+77
+00:03:00,616 --> 00:03:02,740
+If your users are emailing
+you, and they're saying,
+
+78
+00:03:02,740 --> 00:03:05,200
+I'm getting redirected, there's
+something wrong with your site,
+
+79
+00:03:05,200 --> 00:03:07,020
+or if you're monitoring
+your web traffic
+
+80
+00:03:07,020 --> 00:03:09,250
+and you see sudden spikes,
+those are all early
+
+81
+00:03:09,250 --> 00:03:11,470
+warning signs that your
+site might be compromised.
+
+82
+00:03:11,470 --> 00:03:13,420
+And you'll want to
+check those out.
+
+83
+00:03:13,420 --> 00:03:16,120
+As Elie said, if your
+site is compromised,
+
+84
+00:03:16,120 --> 00:03:18,335
+there are financial
+burdens, brand reputation.
+
+85
+00:03:18,335 --> 00:03:19,210
+It's really annoying.
+
+86
+00:03:19,210 --> 00:03:22,000
+And worst of all, your users
+are trying to get to your site,
+
+87
+00:03:22,000 --> 00:03:23,570
+and they can't get to your site.
+
+88
+00:03:23,570 --> 00:03:25,630
+So it is in your best
+interest to clean up
+
+89
+00:03:25,630 --> 00:03:28,670
+as soon as possible.
+
+90
+00:03:28,670 --> 00:03:34,160
+Now, the process of cleaning
+up, it can be quite daunting.
+
+91
+00:03:34,160 --> 00:03:35,590
+It's going to take some time.
+
+92
+00:03:35,590 --> 00:03:37,600
+But if you follow these
+steps methodically,
+
+93
+00:03:37,600 --> 00:03:39,620
+there's a really high chance
+that you can clean your site.
+
+94
+00:03:39,620 --> 00:03:41,800
+And so I'm going to walk
+through these really fast.
+
+95
+00:03:41,800 --> 00:03:43,630
+The first thing is to
+quarantine your site.
+
+96
+00:03:43,630 --> 00:03:45,360
+That means taking
+your site offline.
+
+97
+00:03:45,360 --> 00:03:47,110
+Or if you can isolate
+it to certain parts,
+
+98
+00:03:47,110 --> 00:03:49,360
+take certain parts
+of your site offline.
+
+99
+00:03:49,360 --> 00:03:50,860
+In this phase,
+you'll want to change
+
+100
+00:03:50,860 --> 00:03:53,159
+any usernames, passwords,
+user permissions.
+
+101
+00:03:53,159 --> 00:03:54,700
+The whole point
+being, you don't want
+
+102
+00:03:54,700 --> 00:03:57,430
+to be hacked while you're
+trying to fix your site.
+
+103
+00:03:57,430 --> 00:03:58,900
+And also, you don't
+want your users
+
+104
+00:03:58,900 --> 00:04:01,090
+trying to get to your site
+while it's compromised.
+
+105
+00:04:01,090 --> 00:04:03,310
+So taking your site
+offline temporarily
+
+106
+00:04:03,310 --> 00:04:05,380
+is usually the best move.
+
+107
+00:04:05,380 --> 00:04:07,450
+You also want to start
+building your team here.
+
+108
+00:04:07,450 --> 00:04:08,740
+Talk to your hosting provider.
+
+109
+00:04:08,740 --> 00:04:10,060
+They may be able to help you.
+
+110
+00:04:10,060 --> 00:04:11,080
+Talk to your wider team.
+
+111
+00:04:11,080 --> 00:04:12,940
+Let them know that in
+these next few steps,
+
+112
+00:04:12,940 --> 00:04:15,240
+you're probably going
+to need their help.
+
+113
+00:04:15,240 --> 00:04:16,339
+Identification.
+
+114
+00:04:16,339 --> 00:04:18,040
+This is probably the
+most difficult part
+
+115
+00:04:18,040 --> 00:04:20,079
+and the most time consuming.
+
+116
+00:04:20,079 --> 00:04:22,390
+Hackers are constantly
+trying to prevent you
+
+117
+00:04:22,390 --> 00:04:24,310
+from removing the
+hack on your site.
+
+118
+00:04:24,310 --> 00:04:26,991
+And so they'll do weird little
+tricky things like cloaking,
+
+119
+00:04:26,991 --> 00:04:28,740
+where you'll go to a
+page, and you'll see,
+
+120
+00:04:28,740 --> 00:04:31,210
+oh, this page is
+showing an HTTP 404,
+
+121
+00:04:31,210 --> 00:04:34,600
+but it's still serving spam to
+your users and search engines.
+
+122
+00:04:34,600 --> 00:04:37,160
+So identification
+is really important.
+
+123
+00:04:37,160 --> 00:04:38,770
+But it's going to
+take some time.
+
+124
+00:04:38,770 --> 00:04:41,950
+At this phase, you'll also want
+to identify the vulnerability,
+
+125
+00:04:41,950 --> 00:04:45,730
+because you want to understand
+how hackers got into your site.
+
+126
+00:04:45,730 --> 00:04:48,460
+Cleaning up is just about
+removing those files
+
+127
+00:04:48,460 --> 00:04:50,980
+and then testing, making
+sure that your site is
+
+128
+00:04:50,980 --> 00:04:52,770
+running well again.
+
+129
+00:04:52,770 --> 00:04:54,520
+That's the main
+part of cleaning up,
+
+130
+00:04:54,520 --> 00:04:56,470
+and that's really
+all you need to do.
+
+131
+00:04:56,470 --> 00:04:58,962
+Patching is about closing
+those vulnerabilities
+
+132
+00:04:58,962 --> 00:05:01,420
+that you identified earlier to
+make sure that hackers can't
+
+133
+00:05:01,420 --> 00:05:02,740
+compromise your site again.
+
+134
+00:05:02,740 --> 00:05:03,910
+This is super important.
+
+135
+00:05:03,910 --> 00:05:05,770
+A lot of people miss
+this, and their sites
+
+136
+00:05:05,770 --> 00:05:06,850
+do get compromised again.
+
+137
+00:05:06,850 --> 00:05:09,490
+So don't forget to close
+those vulnerabilities.
+
+138
+00:05:09,490 --> 00:05:11,230
+One of the easiest
+things you can do
+
+139
+00:05:11,230 --> 00:05:14,380
+is just to update your
+site software, your CMSs,
+
+140
+00:05:14,380 --> 00:05:16,120
+your plugins, things like that.
+
+141
+00:05:16,120 --> 00:05:17,920
+Just make sure that
+they're updated,
+
+142
+00:05:17,920 --> 00:05:20,560
+and that'll close a
+lot of vulnerabilities.
+
+143
+00:05:20,560 --> 00:05:22,480
+Finally, if your site
+was flagged by Google--
+
+144
+00:05:22,480 --> 00:05:24,839
+you saw those red interstitials
+on your site or you
+
+145
+00:05:24,839 --> 00:05:26,380
+saw some warnings
+in search results--
+
+146
+00:05:26,380 --> 00:05:28,630
+you'll want to tell Google
+that your site was hacked
+
+147
+00:05:28,630 --> 00:05:34,120
+or that your site is cleaned up
+so they can remove those flags.
+
+148
+00:05:34,120 --> 00:05:36,150
+The steps we talked
+through just now,
+
+149
+00:05:36,150 --> 00:05:38,980
+they'll work for most types
+of hacks on your site.
+
+150
+00:05:38,980 --> 00:05:41,590
+But we've been doing
+a lot of research,
+
+151
+00:05:41,590 --> 00:05:43,930
+and we've realized that a
+lot of hacking campaigns,
+
+152
+00:05:43,930 --> 00:05:46,570
+they work in very,
+very similar ways.
+
+153
+00:05:46,570 --> 00:05:50,560
+And this helps us understand
+how attackers are scaling
+
+154
+00:05:50,560 --> 00:05:54,280
+their attacks, how they're
+trying to fly under the radar,
+
+155
+00:05:54,280 --> 00:05:55,690
+go against detection.
+
+156
+00:05:55,690 --> 00:05:58,600
+And this also helps us build
+better detection systems
+
+157
+00:05:58,600 --> 00:06:01,240
+and better documentation
+for our users.
+
+158
+00:06:01,240 --> 00:06:03,952
+We've identified three major
+hacking campaigns so far.
+
+159
+00:06:03,952 --> 00:06:06,160
+The cloaked keywords and
+link hack, where they create
+
+160
+00:06:06,160 --> 00:06:07,420
+cloaked pages.
+
+161
+00:06:07,420 --> 00:06:09,790
+They drop keywords and
+links on those pages.
+
+162
+00:06:09,790 --> 00:06:10,930
+The gibberish hack.
+
+163
+00:06:10,930 --> 00:06:14,020
+The gibberish hack creates a
+bunch of long-tail keywords
+
+164
+00:06:14,020 --> 00:06:16,924
+and then uses the domain's
+reputation to rank well.
+
+165
+00:06:16,924 --> 00:06:18,340
+And then when users
+click in, they
+
+166
+00:06:18,340 --> 00:06:22,030
+get redirected to these
+spammy malware bad sites.
+
+167
+00:06:22,030 --> 00:06:24,370
+And finally, the Japanese
+keyword injection.
+
+168
+00:06:24,370 --> 00:06:27,490
+This targets specifically
+Japanese brand-name goods
+
+169
+00:06:27,490 --> 00:06:29,710
+and sends users to
+counterfeit websites
+
+170
+00:06:29,710 --> 00:06:32,856
+and attempts to sell
+them fake goods.
+
+171
+00:06:32,856 --> 00:06:35,230
+Because we've been able to
+cluster the sites in this way,
+
+172
+00:06:35,230 --> 00:06:37,630
+we've been able to create
+really great documentation,
+
+173
+00:06:37,630 --> 00:06:39,939
+step-by-step guides for
+each one of these hacks.
+
+174
+00:06:39,939 --> 00:06:41,980
+And I'll link you to these
+documents in a second,
+
+175
+00:06:41,980 --> 00:06:43,438
+because I think it
+will really help
+
+176
+00:06:43,438 --> 00:06:46,540
+if you, your friends or
+someone that you know,
+
+177
+00:06:46,540 --> 00:06:49,060
+as you've shown in the show
+of hands, has been hacked
+
+178
+00:06:49,060 --> 00:06:50,809
+or will be hacked in the future.
+
+179
+00:06:50,809 --> 00:06:53,350
+First, though, I want to talk
+you through the gibberish hack.
+
+180
+00:06:53,350 --> 00:06:54,970
+Understanding how
+these hacks work
+
+181
+00:06:54,970 --> 00:06:56,980
+is super interesting,
+because it'll help you
+
+182
+00:06:56,980 --> 00:06:59,990
+with remediation in the future.
+
+183
+00:06:59,990 --> 00:07:01,990
+Now, this is what the
+gibberish hack looks like.
+
+184
+00:07:01,990 --> 00:07:03,100
+It's really plain.
+
+185
+00:07:03,100 --> 00:07:05,110
+Again, long-tail
+keywords, trying
+
+186
+00:07:05,110 --> 00:07:08,290
+to use a domain's reputation
+to rank well, redirects users.
+
+187
+00:07:08,290 --> 00:07:11,120
+
+
+188
+00:07:11,120 --> 00:07:12,830
+The underlying
+mechanics behind it
+
+189
+00:07:12,830 --> 00:07:14,960
+are also pretty
+simple when you put it
+
+190
+00:07:14,960 --> 00:07:16,880
+into three separate pieces.
+
+191
+00:07:16,880 --> 00:07:18,400
+The user clicks on
+the site, they're
+
+192
+00:07:18,400 --> 00:07:22,970
+redirected in some way or
+fashion to a PHP generator
+
+193
+00:07:22,970 --> 00:07:26,450
+script, and then those users
+are then redirected to the spam.
+
+194
+00:07:26,450 --> 00:07:29,650
+
+
+195
+00:07:29,650 --> 00:07:33,240
+So the first important
+part of this whole chain
+
+196
+00:07:33,240 --> 00:07:34,440
+is this redirect.
+
+197
+00:07:34,440 --> 00:07:36,870
+If you can identify how that
+redirect is happening, where
+
+198
+00:07:36,870 --> 00:07:39,780
+it's happening, you can identify
+the other parts of your site
+
+199
+00:07:39,780 --> 00:07:43,140
+that have been
+compromised as well.
+
+200
+00:07:43,140 --> 00:07:46,700
+In this example, the htaccess
+file has been compromised.
+
+201
+00:07:46,700 --> 00:07:47,984
+Three lines of code.
+
+202
+00:07:47,984 --> 00:07:50,400
+It's going to redirect your
+users coming from major search
+
+203
+00:07:50,400 --> 00:07:54,630
+engines and then send them
+to this page right here,
+
+204
+00:07:54,630 --> 00:07:56,812
+the spam dot php
+page generator page.
+
+205
+00:07:56,812 --> 00:07:58,770
+So you can see right now
+that you've identified
+
+206
+00:07:58,770 --> 00:08:00,510
+the other piece of the chain.
+
+207
+00:08:00,510 --> 00:08:03,510
+And so this is the piece that
+you want to identify later.
+
+208
+00:08:03,510 --> 00:08:05,220
+It's not going to be
+called spam dot php.
+
+209
+00:08:05,220 --> 00:08:06,790
+That's way too obvious.
+
+210
+00:08:06,790 --> 00:08:09,670
+We've seen hackers call
+things horse duck 2.
+
+211
+00:08:09,670 --> 00:08:12,435
+We've seen them try to
+mask as core files like wp
+
+212
+00:08:12,435 --> 00:08:16,410
+underscore config instead
+of wp dash config.
+
+213
+00:08:16,410 --> 00:08:18,270
+They're really
+trying to trick users
+
+214
+00:08:18,270 --> 00:08:23,490
+from accurately and
+quickly fixing their sites.
+
+215
+00:08:23,490 --> 00:08:25,680
+So from the redirect,
+we see that you're sent
+
+216
+00:08:25,680 --> 00:08:28,696
+to the page generator page.
+
+217
+00:08:28,696 --> 00:08:30,570
+Now, you're probably
+going to open this file.
+
+218
+00:08:30,570 --> 00:08:32,195
+You want to figure
+out what's going on.
+
+219
+00:08:32,195 --> 00:08:32,880
+You're curious.
+
+220
+00:08:32,880 --> 00:08:35,486
+You're curious how they're
+doing all this damage.
+
+221
+00:08:35,486 --> 00:08:37,318
+And you're going to get
+something like this.
+
+222
+00:08:37,318 --> 00:08:39,588
+This is just pure gibberish.
+
+223
+00:08:39,589 --> 00:08:40,380
+They've obfuscated.
+
+224
+00:08:40,380 --> 00:08:41,130
+They've encrypted.
+
+225
+00:08:41,130 --> 00:08:43,650
+They don't want you to find
+out exactly what they're doing.
+
+226
+00:08:43,650 --> 00:08:46,380
+It's really difficult
+to understand
+
+227
+00:08:46,380 --> 00:08:48,180
+what a lot of these
+scripts are doing.
+
+228
+00:08:48,180 --> 00:08:50,100
+Even if you do
+de-obfuscate, and you
+
+229
+00:08:50,100 --> 00:08:54,060
+take the time to figure out this
+is exactly what the code is,
+
+230
+00:08:54,060 --> 00:08:56,130
+it's still not really
+human readable.
+
+231
+00:08:56,130 --> 00:08:58,010
+This is not coding
+best practices.
+
+232
+00:08:58,010 --> 00:09:01,780
+Your CS professors would be
+appalled by looking at this.
+
+233
+00:09:01,780 --> 00:09:06,540
+Luckily for you, all you really
+need to do is remove this file.
+
+234
+00:09:06,540 --> 00:09:09,690
+I would ask that you back up
+these files just in case--
+
+235
+00:09:09,690 --> 00:09:11,070
+just in case they
+are good files.
+
+236
+00:09:11,070 --> 00:09:13,110
+And later on, if you do want
+to do some forensic work,
+
+237
+00:09:13,110 --> 00:09:15,234
+it could be helpful having
+these files as a backup.
+
+238
+00:09:15,234 --> 00:09:18,506
+So just back up just in case.
+
+239
+00:09:18,506 --> 00:09:20,880
+You can see these two files,
+they've done a lot of damage
+
+240
+00:09:20,880 --> 00:09:23,160
+to a website.
+
+241
+00:09:23,160 --> 00:09:25,222
+And so that's why
+you don't even want
+
+242
+00:09:25,222 --> 00:09:26,930
+to be in the phase of
+cleaning a website.
+
+243
+00:09:26,930 --> 00:09:30,660
+Cleaning a website is difficult.
+It's financially costly.
+
+244
+00:09:30,660 --> 00:09:31,780
+It's annoying.
+
+245
+00:09:31,780 --> 00:09:34,980
+You have your brand
+reputation on the line.
+
+246
+00:09:34,980 --> 00:09:40,600
+And that's why the key takeaway
+here is that prevention is key.
+
+247
+00:09:40,600 --> 00:09:42,390
+So let's talk about
+a couple quick things
+
+248
+00:09:42,390 --> 00:09:44,730
+that you can do today
+right after the session
+
+249
+00:09:44,730 --> 00:09:46,690
+in order to help
+with prevention.
+
+250
+00:09:46,690 --> 00:09:47,899
+First off, back up your site.
+
+251
+00:09:47,899 --> 00:09:50,231
+There are a lot of people
+that don't back up their site.
+
+252
+00:09:50,231 --> 00:09:52,020
+And that's a little
+bit baffling to me.
+
+253
+00:09:52,020 --> 00:09:55,770
+Definitely back up your
+site as often as possible.
+
+254
+00:09:55,770 --> 00:09:58,890
+If you do get compromised, one
+of the easiest ways to recover
+
+255
+00:09:58,890 --> 00:10:02,000
+is just to restore a backup
+version of your site.
+
+256
+00:10:02,000 --> 00:10:04,500
+Remember that even if you're
+restoring the backed up version
+
+257
+00:10:04,500 --> 00:10:07,110
+of your site, that vulnerability
+that the hackers initially
+
+258
+00:10:07,110 --> 00:10:08,910
+got to probably still exists.
+
+259
+00:10:08,910 --> 00:10:11,160
+So you want to fix
+that vulnerability.
+
+260
+00:10:11,160 --> 00:10:13,410
+Secondly, sign up
+for Search Console.
+
+261
+00:10:13,410 --> 00:10:16,246
+If Google does find that there
+is compromise on your site,
+
+262
+00:10:16,246 --> 00:10:18,120
+we'll send a notification
+via Search Console.
+
+263
+00:10:18,120 --> 00:10:20,550
+This is one of the ways
+that Google communicates
+
+264
+00:10:20,550 --> 00:10:22,680
+with webmasters about,
+not only security issues,
+
+265
+00:10:22,680 --> 00:10:25,000
+but a lot of search
+issues as well.
+
+266
+00:10:25,000 --> 00:10:27,360
+And finally, update your
+code, your CMS, your plugins,
+
+267
+00:10:27,360 --> 00:10:28,260
+your themes.
+
+268
+00:10:28,260 --> 00:10:30,840
+Like I said before, this is
+one of the most common ways
+
+269
+00:10:30,840 --> 00:10:33,030
+that attackers
+compromise a site.
+
+270
+00:10:33,030 --> 00:10:34,840
+And I know this is
+difficult, because I've
+
+271
+00:10:34,840 --> 00:10:38,820
+talked to a developer before,
+and she said, my clients, they
+
+272
+00:10:38,820 --> 00:10:41,040
+don't want to update their
+site, because if we update
+
+273
+00:10:41,040 --> 00:10:43,260
+the core CMS build
+files, they're
+
+274
+00:10:43,260 --> 00:10:46,510
+going to mess up a
+whole bunch of plugins.
+
+275
+00:10:46,510 --> 00:10:47,010
+Yeah.
+
+276
+00:10:47,010 --> 00:10:50,670
+That does happen, but it's
+really in your clients' best
+
+277
+00:10:50,670 --> 00:10:51,570
+interest to update.
+
+278
+00:10:51,570 --> 00:10:52,820
+And you have to convince them.
+
+279
+00:10:52,820 --> 00:10:54,570
+You have to talk to
+them about making
+
+280
+00:10:54,570 --> 00:10:57,130
+a site that is both secure
+and still works for them.
+
+281
+00:10:57,130 --> 00:10:59,060
+So that's a really,
+really important piece.
+
+282
+00:10:59,060 --> 00:11:01,660
+
+
+283
+00:11:01,660 --> 00:11:03,930
+As I said earlier, there's
+a lot of documentation
+
+284
+00:11:03,930 --> 00:11:05,430
+that Google can
+give to help you.
+
+285
+00:11:05,430 --> 00:11:09,522
+Our webmaster hacked help center
+is at g.co/hackedwebmasters,
+
+286
+00:11:09,522 --> 00:11:11,230
+and that's where our
+security guides are,
+
+287
+00:11:11,230 --> 00:11:13,300
+the ones for the specific
+hack campaigns that
+
+288
+00:11:13,300 --> 00:11:14,160
+we've identified.
+
+289
+00:11:14,160 --> 00:11:15,982
+And we're constantly
+building more
+
+290
+00:11:15,982 --> 00:11:18,190
+of these guides for different
+types of hacking things
+
+291
+00:11:18,190 --> 00:11:20,260
+that we've identified.
+
+292
+00:11:20,260 --> 00:11:22,210
+The second thing is the
+webmaster help forums.
+
+293
+00:11:22,210 --> 00:11:24,700
+We have a lot of awesome
+top contributors,
+
+294
+00:11:24,700 --> 00:11:28,180
+experienced webmasters, and
+Googlers in these help forums
+
+295
+00:11:28,180 --> 00:11:30,820
+to help you remediate
+your site, fix your site,
+
+296
+00:11:30,820 --> 00:11:32,980
+identify any vulnerabilities.
+
+297
+00:11:32,980 --> 00:11:34,570
+And finally, follow
+us on Twitter.
+
+298
+00:11:34,570 --> 00:11:36,190
+We give not only
+security updates,
+
+299
+00:11:36,190 --> 00:11:38,609
+we'll give you
+updates about search.
+
+300
+00:11:38,609 --> 00:11:40,150
+Now I'm going to
+hand it back to Elie
+
+301
+00:11:40,150 --> 00:11:43,180
+to talk to you about the second
+part of securing your site,
+
+302
+00:11:43,180 --> 00:11:46,010
+and that's building
+a safer website.
+
+303
+00:11:46,010 --> 00:11:47,704
+ELIE BURSZTEIN: Thank you, Eric.
+
+304
+00:11:47,704 --> 00:11:50,566
+[APPLAUSE]
+
+305
+00:11:50,566 --> 00:11:54,870
+
+
+306
+00:11:54,870 --> 00:11:59,470
+So as Eric said, when it comes
+to security, prevention is key.
+
+307
+00:11:59,470 --> 00:12:04,200
+And so far at Google, we didn't
+have much of a public course
+
+308
+00:12:04,200 --> 00:12:05,169
+to help you out.
+
+309
+00:12:05,169 --> 00:12:06,960
+So we decided over the
+last year and a half
+
+310
+00:12:06,960 --> 00:12:09,120
+to develop a new
+security course which
+
+311
+00:12:09,120 --> 00:12:11,574
+is meant to be very
+hands-on so you can have
+
+312
+00:12:11,574 --> 00:12:12,990
+a very practical
+knowledge you can
+
+313
+00:12:12,990 --> 00:12:14,964
+apply to secure your website.
+
+314
+00:12:14,964 --> 00:12:16,380
+The core idea
+behind the course is
+
+315
+00:12:16,380 --> 00:12:19,637
+to have very short, focused
+lecture on core concept
+
+316
+00:12:19,637 --> 00:12:21,470
+that you can apply
+immediately, and a lot of
+
+317
+00:12:21,470 --> 00:12:24,600
+exercises so you can build
+on hands-on experience
+
+318
+00:12:24,600 --> 00:12:28,000
+and have this knowledge that you
+can have to protect your site.
+
+319
+00:12:28,000 --> 00:12:30,280
+So let's look at what
+the course looks like.
+
+320
+00:12:30,280 --> 00:12:33,030
+And then we'll do a few
+demos along the way.
+
+321
+00:12:33,030 --> 00:12:36,030
+The course will be a set of 12
+lectures, which will be grouped
+
+322
+00:12:36,030 --> 00:12:37,567
+into three main categories.
+
+323
+00:12:37,567 --> 00:12:39,150
+The first thing we're
+going to discuss
+
+324
+00:12:39,150 --> 00:12:42,270
+is how to handle
+user data safely,
+
+325
+00:12:42,270 --> 00:12:44,840
+from how do
+authenticate my user?
+
+326
+00:12:44,840 --> 00:12:47,010
+How do I maintain
+session with them safely?
+
+327
+00:12:47,010 --> 00:12:50,040
+And finally, of course, how
+do I encrypt my communications
+
+328
+00:12:50,040 --> 00:12:52,140
+so that when they interact
+with your website,
+
+329
+00:12:52,140 --> 00:12:53,840
+your users are safe?
+
+330
+00:12:53,840 --> 00:12:57,120
+So second thing we're going
+to cover is web attacks.
+
+331
+00:12:57,120 --> 00:12:59,370
+These are attacks which are
+specific to web security
+
+332
+00:12:59,370 --> 00:13:01,750
+and that you need to know to
+make sure that you are not
+
+333
+00:13:01,750 --> 00:13:02,700
+vulnerable to them.
+
+334
+00:13:02,700 --> 00:13:05,140
+We're going to cover
+the four big ones, which
+
+335
+00:13:05,140 --> 00:13:09,750
+are XSS, CSRF, SQL
+injection, and clickjacking.
+
+336
+00:13:09,750 --> 00:13:13,500
+And finally, but not least,
+we are going to tell you how
+
+337
+00:13:13,500 --> 00:13:16,050
+to enter securely
+third-party content,
+
+338
+00:13:16,050 --> 00:13:18,510
+whether you would like to embed
+a widget from a third-party
+
+339
+00:13:18,510 --> 00:13:20,880
+website and make sure
+that when you do that,
+
+340
+00:13:20,880 --> 00:13:21,981
+you do not get hacked--
+
+341
+00:13:21,981 --> 00:13:22,980
+and you say get hacked--
+
+342
+00:13:22,980 --> 00:13:25,200
+to how do you deal
+with user content?
+
+343
+00:13:25,200 --> 00:13:26,970
+How do I make sure
+that I don't have
+
+344
+00:13:26,970 --> 00:13:28,800
+toxic content on
+my website or they
+
+345
+00:13:28,800 --> 00:13:32,610
+don't post infamous picture
+into my beautiful stream?
+
+346
+00:13:32,610 --> 00:13:36,370
+And finally because, as Eric
+said, when you get hacked,
+
+347
+00:13:36,370 --> 00:13:37,850
+it's really
+difficult to recover,
+
+348
+00:13:37,850 --> 00:13:40,800
+we have a lecture
+dedicated to investigation
+
+349
+00:13:40,800 --> 00:13:42,880
+and show you concrete
+case of hacking
+
+350
+00:13:42,880 --> 00:13:46,230
+so you can learn how to
+investigate them and clean up.
+
+351
+00:13:46,230 --> 00:13:49,710
+So in the event you get hacked,
+you're already prepared.
+
+352
+00:13:49,710 --> 00:13:53,590
+So for each lecture, we're going
+to provide you a few materials.
+
+353
+00:13:53,590 --> 00:13:56,010
+First, we're going to
+give you slides where
+
+354
+00:13:56,010 --> 00:13:57,720
+you can review the lecture.
+
+355
+00:13:57,720 --> 00:14:00,900
+We'll do a video of the
+slide with some explanation.
+
+356
+00:14:00,900 --> 00:14:02,400
+And the most important
+part, we will
+
+357
+00:14:02,400 --> 00:14:05,400
+give you exercises you can
+do and the quizzes so you
+
+358
+00:14:05,400 --> 00:14:07,410
+can know how well
+you're doing and if you
+
+359
+00:14:07,410 --> 00:14:09,270
+have understood the concept.
+
+360
+00:14:09,270 --> 00:14:13,500
+So exercise was really
+a key development point.
+
+361
+00:14:13,500 --> 00:14:15,360
+We have built a ton of those.
+
+362
+00:14:15,360 --> 00:14:17,970
+We have over 50
+exercises for you.
+
+363
+00:14:17,970 --> 00:14:20,870
+They are going to be in multiple
+aspects in which [INAUDIBLE]
+
+364
+00:14:20,870 --> 00:14:21,990
+aspect of web security.
+
+365
+00:14:21,990 --> 00:14:25,170
+First, you have attack exercise,
+where you wear your black hat
+
+366
+00:14:25,170 --> 00:14:26,890
+and you try to attack websites.
+
+367
+00:14:26,890 --> 00:14:29,010
+So you get into the
+mindset of the attacker
+
+368
+00:14:29,010 --> 00:14:31,464
+and understand how they go
+about hacking your website.
+
+369
+00:14:31,464 --> 00:14:32,880
+Then, of course,
+we go to defense,
+
+370
+00:14:32,880 --> 00:14:36,270
+where you know how to apply the
+best state-of-the-art technique
+
+371
+00:14:36,270 --> 00:14:38,724
+to protect your website, and
+you really understand what is
+
+372
+00:14:38,724 --> 00:14:40,890
+the secret to [INAUDIBLE]
+and how you can apply them
+
+373
+00:14:40,890 --> 00:14:41,670
+successfully.
+
+374
+00:14:41,670 --> 00:14:43,170
+And finally, for
+some of the things,
+
+375
+00:14:43,170 --> 00:14:45,850
+especially for hacking, we
+will cover investigation,
+
+376
+00:14:45,850 --> 00:14:48,480
+where we give you some puzzle
+and some interesting hack
+
+377
+00:14:48,480 --> 00:14:52,480
+to look at and understand
+if you can figure them out.
+
+378
+00:14:52,480 --> 00:14:55,470
+One of the essential
+challenges we had to overcome
+
+379
+00:14:55,470 --> 00:14:58,020
+was it's not easy to
+teach web security,
+
+380
+00:14:58,020 --> 00:15:00,210
+because you manipulate
+vulnerable code, right?
+
+381
+00:15:00,210 --> 00:15:03,000
+So we can't put it
+online because we're
+
+382
+00:15:03,000 --> 00:15:05,190
+going to get hacked,
+so how you do that?
+
+383
+00:15:05,190 --> 00:15:07,500
+Originally, people
+come up with the idea
+
+384
+00:15:07,500 --> 00:15:09,510
+of using virtual
+machines or have people
+
+385
+00:15:09,510 --> 00:15:10,830
+install a ton of packages.
+
+386
+00:15:10,830 --> 00:15:12,570
+And you have to run
+all those things.
+
+387
+00:15:12,570 --> 00:15:15,526
+This is not very ideal, because
+it's very resource-intensive.
+
+388
+00:15:15,526 --> 00:15:16,900
+You have to do
+[INAUDIBLE] stuff.
+
+389
+00:15:16,900 --> 00:15:18,450
+It's on your computer.
+
+390
+00:15:18,450 --> 00:15:20,490
+It also limits the amount
+of device you can use.
+
+391
+00:15:20,490 --> 00:15:22,600
+There is no way you can
+use a tablet, for example.
+
+392
+00:15:22,600 --> 00:15:25,080
+So about a year ago, I was
+thinking of the problem
+
+393
+00:15:25,080 --> 00:15:30,060
+and we say, well, what
+technology has so much evolved?
+
+394
+00:15:30,060 --> 00:15:31,720
+Let's try to do
+something different.
+
+395
+00:15:31,720 --> 00:15:34,560
+Let's try to use
+web app technology.
+
+396
+00:15:34,560 --> 00:15:37,860
+And the crazy idea we had
+is, let's build a web server
+
+397
+00:15:37,860 --> 00:15:39,690
+directly into a web page.
+
+398
+00:15:39,690 --> 00:15:42,030
+I know that sounds
+crazy, but the idea
+
+399
+00:15:42,030 --> 00:15:45,540
+was we have web service worker
+so we can make it offline.
+
+400
+00:15:45,540 --> 00:15:48,270
+We can make it intercepting the
+request and just respond to it.
+
+401
+00:15:48,270 --> 00:15:49,691
+So let's build that.
+
+402
+00:15:49,691 --> 00:15:50,440
+And you know what?
+
+403
+00:15:50,440 --> 00:15:55,110
+Let's throw in a web SQL
+database and maybe a PHP
+
+404
+00:15:55,110 --> 00:15:57,262
+interpreter and see if it works.
+
+405
+00:15:57,262 --> 00:15:59,220
+And it was crazy, but we
+tried, and it actually
+
+406
+00:15:59,220 --> 00:16:00,150
+worked really well.
+
+407
+00:16:00,150 --> 00:16:03,000
+So now what we have
+for you is a test bed
+
+408
+00:16:03,000 --> 00:16:05,610
+where you just go to the
+website and then everything
+
+409
+00:16:05,610 --> 00:16:07,584
+happens to your browser,
+nothing to install.
+
+410
+00:16:07,584 --> 00:16:08,250
+You get started.
+
+411
+00:16:08,250 --> 00:16:10,450
+It's very easy,
+and it all happens
+
+412
+00:16:10,450 --> 00:16:12,540
+as you are on the real website.
+
+413
+00:16:12,540 --> 00:16:15,390
+So that being said, this
+is our world, right?
+
+414
+00:16:15,390 --> 00:16:17,820
+And you probably want to see it?
+
+415
+00:16:17,820 --> 00:16:18,556
+Yes?
+
+416
+00:16:18,556 --> 00:16:19,300
+[APPLAUSE]
+
+417
+00:16:19,300 --> 00:16:19,800
+All right.
+
+418
+00:16:19,800 --> 00:16:23,340
+So let's jump to our
+first demo, which
+
+419
+00:16:23,340 --> 00:16:25,470
+will show you the framework.
+
+420
+00:16:25,470 --> 00:16:29,730
+So we're going to do a simple
+website, which is going
+
+421
+00:16:29,730 --> 00:16:32,150
+to allow us to login our users.
+
+422
+00:16:32,150 --> 00:16:34,650
+So to do that, we're
+going first to need
+
+423
+00:16:34,650 --> 00:16:37,030
+to have a server system.
+
+424
+00:16:37,030 --> 00:16:40,362
+So as everything really looks
+like node with [? express. ?]
+
+425
+00:16:40,362 --> 00:16:41,820
+So if you're familiar
+with node.js,
+
+426
+00:16:41,820 --> 00:16:43,420
+you will recognize the syntax.
+
+427
+00:16:43,420 --> 00:16:44,820
+We need to declare our root.
+
+428
+00:16:44,820 --> 00:16:47,940
+So because we're doing a login
+page, we need two web pages.
+
+429
+00:16:47,940 --> 00:16:51,540
+First, we need somewhere where
+the user would land and would
+
+430
+00:16:51,540 --> 00:16:52,110
+have a form.
+
+431
+00:16:52,110 --> 00:16:53,810
+So let's create that.
+
+432
+00:16:53,810 --> 00:16:55,880
+Then let's add a
+second root, which
+
+433
+00:16:55,880 --> 00:16:57,800
+would be processing
+the login information
+
+434
+00:16:57,800 --> 00:17:00,152
+and decide whether or not
+you authorize to login.
+
+435
+00:17:00,152 --> 00:17:01,610
+So we're going to
+create two roots.
+
+436
+00:17:01,610 --> 00:17:04,598
+
+
+437
+00:17:04,598 --> 00:17:07,549
+One is a get, as you can see,
+and the other one is a post.
+
+438
+00:17:07,550 --> 00:17:10,400
+And for now, we're just
+going to say hello world,
+
+439
+00:17:10,400 --> 00:17:12,020
+just to see if it works.
+
+440
+00:17:12,020 --> 00:17:14,490
+Remember, this all is local
+so you can see it on the bar.
+
+441
+00:17:14,490 --> 00:17:15,980
+This is all local host.
+
+442
+00:17:15,980 --> 00:17:16,839
+No connection.
+
+443
+00:17:16,839 --> 00:17:19,430
+All offline.
+
+444
+00:17:19,430 --> 00:17:22,200
+And we hope it's going to work.
+
+445
+00:17:22,200 --> 00:17:23,660
+All right.
+
+446
+00:17:23,660 --> 00:17:25,500
+So let's load the exercise.
+
+447
+00:17:25,500 --> 00:17:29,835
+We load the framework and go to
+the page and see if it works.
+
+448
+00:17:29,835 --> 00:17:30,710
+And here you have it.
+
+449
+00:17:30,710 --> 00:17:34,910
+We have a working web
+page into our browser.
+
+450
+00:17:34,910 --> 00:17:37,599
+Now, let's add a little bit
+things because, you know,
+
+451
+00:17:37,599 --> 00:17:39,140
+it's a login page,
+so we need a form.
+
+452
+00:17:39,140 --> 00:17:40,490
+So let's add a form.
+
+453
+00:17:40,490 --> 00:17:42,200
+Fortunately, our
+framework authorized
+
+454
+00:17:42,200 --> 00:17:45,050
+and supported templates like
+any normal web framework.
+
+455
+00:17:45,050 --> 00:17:48,290
+So let's add a little bit
+of CSS, which looks pretty,
+
+456
+00:17:48,290 --> 00:17:51,200
+a password, and a login field.
+
+457
+00:17:51,200 --> 00:17:54,070
+And let's reload to make
+sure we see our login form.
+
+458
+00:17:54,070 --> 00:18:00,120
+
+
+459
+00:18:00,120 --> 00:18:02,960
+So to add the template, I
+forgot to add-- thank you, Yuan.
+
+460
+00:18:02,960 --> 00:18:04,340
+We have to add the index HTML.
+
+461
+00:18:04,340 --> 00:18:07,220
+So we're going to load the
+template, return the template,
+
+462
+00:18:07,220 --> 00:18:12,920
+reload, and hopefully you
+have a nice Google I/O form.
+
+463
+00:18:12,920 --> 00:18:13,670
+Yeah.
+
+464
+00:18:13,670 --> 00:18:14,695
+So that's great.
+
+465
+00:18:14,695 --> 00:18:16,070
+But it doesn't do
+much right now.
+
+466
+00:18:16,070 --> 00:18:18,060
+We have a form, but
+we need to process it.
+
+467
+00:18:18,060 --> 00:18:19,830
+So let's have a bunch of users.
+
+468
+00:18:19,830 --> 00:18:21,860
+So here what we're
+going to do is
+
+469
+00:18:21,860 --> 00:18:24,150
+we're going to add a database.
+
+470
+00:18:24,150 --> 00:18:26,880
+So adding a database in
+the framework is very easy.
+
+471
+00:18:26,880 --> 00:18:30,510
+All you have to do is create
+a database, one line of code.
+
+472
+00:18:30,510 --> 00:18:32,690
+The form will do all
+the magic for us.
+
+473
+00:18:32,690 --> 00:18:34,410
+Then we're going to add a user.
+
+474
+00:18:34,410 --> 00:18:37,040
+So let's create a user table,
+which will just contain
+
+475
+00:18:37,040 --> 00:18:40,230
+a login and the password.
+
+476
+00:18:40,230 --> 00:18:40,730
+All right.
+
+477
+00:18:40,730 --> 00:18:43,290
+Let's add the user-- a Google
+I/O user-- for the demo.
+
+478
+00:18:43,290 --> 00:18:45,980
+
+
+479
+00:18:45,980 --> 00:18:48,050
+And by the way, do
+not do that for real.
+
+480
+00:18:48,050 --> 00:18:49,910
+Do not store your
+password in here.
+
+481
+00:18:49,910 --> 00:18:51,230
+Do not do this, right?
+
+482
+00:18:51,230 --> 00:18:52,140
+That's just for demo.
+
+483
+00:18:52,140 --> 00:18:53,015
+Please don't do that.
+
+484
+00:18:53,015 --> 00:18:53,672
+It's insecure.
+
+485
+00:18:53,672 --> 00:18:54,880
+But for the demo, it will do.
+
+486
+00:18:54,880 --> 00:18:57,650
+So let's add that and that other
+little bit of Javascript code
+
+487
+00:18:57,650 --> 00:19:00,910
+to check where is the database
+and check if it's happened.
+
+488
+00:19:00,910 --> 00:19:01,490
+Here it is.
+
+489
+00:19:01,490 --> 00:19:04,280
+So we get two variables
+from the environment.
+
+490
+00:19:04,280 --> 00:19:06,560
+Run it into an SQL query.
+
+491
+00:19:06,560 --> 00:19:09,700
+Test if it's correct, and we
+should have everything for--
+
+492
+00:19:09,700 --> 00:19:10,880
+and we're good to go, right?
+
+493
+00:19:10,880 --> 00:19:13,400
+So let's try it.
+
+494
+00:19:13,400 --> 00:19:14,180
+We reload.
+
+495
+00:19:14,180 --> 00:19:15,517
+Now, we have a page.
+
+496
+00:19:15,517 --> 00:19:16,850
+Let's try with a wrong password.
+
+497
+00:19:16,850 --> 00:19:18,683
+So GoogleIO, and I don't
+know, password 123?
+
+498
+00:19:18,683 --> 00:19:24,080
+
+
+499
+00:19:24,080 --> 00:19:25,400
+User not recognized.
+
+500
+00:19:25,400 --> 00:19:26,730
+Works as intended.
+
+501
+00:19:26,730 --> 00:19:29,750
+Now, let's copy the
+same, which is insecure,
+
+502
+00:19:29,750 --> 00:19:31,080
+and let's try again.
+
+503
+00:19:31,080 --> 00:19:38,010
+GoogleIO as a user and the
+password and click on it.
+
+504
+00:19:38,010 --> 00:19:38,990
+Ooh.
+
+505
+00:19:38,990 --> 00:19:39,810
+We are logged in.
+
+506
+00:19:39,810 --> 00:19:43,470
+So we have a fully functional
+login system with a database
+
+507
+00:19:43,470 --> 00:19:44,769
+website, few lines of code.
+
+508
+00:19:44,769 --> 00:19:47,060
+This is a framework we built,
+and this is the framework
+
+509
+00:19:47,060 --> 00:19:48,805
+we use to create our exercise.
+
+510
+00:19:48,805 --> 00:19:50,230
+Pretty cool?
+
+511
+00:19:50,230 --> 00:19:51,482
+Yes?
+
+512
+00:19:51,482 --> 00:19:53,790
+[APPLAUSE]
+
+513
+00:19:53,790 --> 00:19:54,710
+All right.
+
+514
+00:19:54,710 --> 00:19:57,770
+Let's go back to the slide
+and talk a little bit more
+
+515
+00:19:57,770 --> 00:19:59,122
+about the content.
+
+516
+00:19:59,122 --> 00:20:01,580
+So we showed you the technical
+framework we have behind it.
+
+517
+00:20:01,580 --> 00:20:04,730
+So the framework is
+great, content is better.
+
+518
+00:20:04,730 --> 00:20:05,520
+You need it.
+
+519
+00:20:05,520 --> 00:20:08,570
+So let's jump into one of our
+lectures, the SQL injection
+
+520
+00:20:08,570 --> 00:20:10,520
+lecture, so we show you
+what kind of content
+
+521
+00:20:10,520 --> 00:20:11,690
+you're going to learn.
+
+522
+00:20:11,690 --> 00:20:14,480
+So SQL injection is one
+of the most deadly attacks
+
+523
+00:20:14,480 --> 00:20:15,920
+you can suffer from.
+
+524
+00:20:15,920 --> 00:20:18,130
+And so I'm going to tell
+you a little bit about why
+
+525
+00:20:18,130 --> 00:20:21,737
+SQL injection vulnerability and,
+of course, how to prevent them.
+
+526
+00:20:21,737 --> 00:20:24,070
+And then after that, Yuan
+will do a few of the exercises
+
+527
+00:20:24,070 --> 00:20:26,690
+to show you how you
+can learn it hands on.
+
+528
+00:20:26,690 --> 00:20:30,290
+So why does SQL injection exist?
+
+529
+00:20:30,290 --> 00:20:32,930
+Well, it turns out that
+during our little demo,
+
+530
+00:20:32,930 --> 00:20:34,932
+we introduced a vulnerability.
+
+531
+00:20:34,932 --> 00:20:36,640
+One source of
+vulnerability, because when
+
+532
+00:20:36,640 --> 00:20:38,840
+you have an SQL
+statement, an SQL
+
+533
+00:20:38,840 --> 00:20:41,240
+contains both keywords,
+which tell you what to do,
+
+534
+00:20:41,240 --> 00:20:43,660
+and also parameter, which
+tells you what to look for.
+
+535
+00:20:43,660 --> 00:20:45,170
+If an attacker is
+able to control
+
+536
+00:20:45,170 --> 00:20:47,690
+one of those parameters, he
+can actually inject keywords,
+
+537
+00:20:47,690 --> 00:20:50,366
+and the server has no way to
+distinguish between the two.
+
+538
+00:20:50,366 --> 00:20:51,740
+We actually had
+the vulnerability
+
+539
+00:20:51,740 --> 00:20:53,490
+in our very own code.
+
+540
+00:20:53,490 --> 00:20:55,760
+So this is a mix between
+keyword and parameter, which
+
+541
+00:20:55,760 --> 00:20:58,430
+makes this condition possible.
+
+542
+00:20:58,430 --> 00:21:00,050
+So what an attacker
+can do with that?
+
+543
+00:21:00,050 --> 00:21:01,820
+Well, an attacker
+with the ability
+
+544
+00:21:01,820 --> 00:21:05,600
+to control SQL query will
+bypass any type of security
+
+545
+00:21:05,600 --> 00:21:08,210
+check you have and will
+do an unexpected query
+
+546
+00:21:08,210 --> 00:21:12,050
+from reading sensitive data
+to deleting your database,
+
+547
+00:21:12,050 --> 00:21:15,770
+encrypting it, and do
+all nefarious things.
+
+548
+00:21:15,770 --> 00:21:18,860
+More formally, the consequences
+of such an attack, if you have
+
+549
+00:21:18,860 --> 00:21:21,290
+it, is it breaches the
+confidentiality integrity
+
+550
+00:21:21,290 --> 00:21:24,450
+of your website, because
+everything is a database,
+
+551
+00:21:24,450 --> 00:21:26,729
+and also it allows
+to authenticate
+
+552
+00:21:26,729 --> 00:21:28,520
+without knowing the
+passwords, for example,
+
+553
+00:21:28,520 --> 00:21:31,310
+because you can defeat
+any type of check.
+
+554
+00:21:31,310 --> 00:21:36,877
+So there are multiple
+types of SQL injection.
+
+555
+00:21:36,877 --> 00:21:39,210
+There is a classic one we're
+going to demonstrate today,
+
+556
+00:21:39,210 --> 00:21:42,112
+and there are more advanced ones
+such as the blind SQL injection
+
+557
+00:21:42,112 --> 00:21:43,320
+and a second-order injection.
+
+558
+00:21:43,320 --> 00:21:45,070
+I'm not going to talk
+to them about today,
+
+559
+00:21:45,070 --> 00:21:46,380
+because we don't have time.
+
+560
+00:21:46,380 --> 00:21:48,420
+Let's just focus
+on the classic one.
+
+561
+00:21:48,420 --> 00:21:51,550
+So the classic one, as I
+explained, works very simply.
+
+562
+00:21:51,550 --> 00:21:54,900
+The attacker, instead of
+sending what you expect,
+
+563
+00:21:54,900 --> 00:21:58,260
+will do the unexpected and will
+try to manipulate the SQL query
+
+564
+00:21:58,260 --> 00:22:00,082
+by sending specific payloads.
+
+565
+00:22:00,082 --> 00:22:02,040
+Then it will result in
+an unexpected SQL query,
+
+566
+00:22:02,040 --> 00:22:03,498
+and then your
+database will be just
+
+567
+00:22:03,498 --> 00:22:05,310
+happy to do whatever
+the attacker wants
+
+568
+00:22:05,310 --> 00:22:08,670
+and potentially extract
+very sensitive data.
+
+569
+00:22:08,670 --> 00:22:10,620
+Here's a concrete example.
+
+570
+00:22:10,620 --> 00:22:12,970
+If the attacker can
+inject a username,
+
+571
+00:22:12,970 --> 00:22:16,890
+then it can decide instead of
+say username to say, let's say,
+
+572
+00:22:16,890 --> 00:22:20,490
+Google, then close the field
+and then add dash dash,
+
+573
+00:22:20,490 --> 00:22:21,810
+which [INAUDIBLE].
+
+574
+00:22:21,810 --> 00:22:24,640
+As a result of that, as
+you can see on the screen,
+
+575
+00:22:24,640 --> 00:22:28,660
+well, you are basically
+bypassing authentication.
+
+576
+00:22:28,660 --> 00:22:31,980
+So to make it more concrete,
+let's jump to our second demo.
+
+577
+00:22:31,980 --> 00:22:37,389
+So we'll show you the
+attack live, hopefully.
+
+578
+00:22:37,389 --> 00:22:37,930
+Demo, please.
+
+579
+00:22:37,930 --> 00:22:40,850
+
+
+580
+00:22:40,850 --> 00:22:41,350
+All right.
+
+581
+00:22:41,350 --> 00:22:43,810
+So we're back to our demo.
+
+582
+00:22:43,810 --> 00:22:48,130
+And if you remember-- can
+you go back to the code?
+
+583
+00:22:48,130 --> 00:22:50,560
+If you remember, we
+took the username
+
+584
+00:22:50,560 --> 00:22:52,800
+and directly put
+it into our query.
+
+585
+00:22:52,800 --> 00:22:54,040
+You can see it on the screen.
+
+586
+00:22:54,040 --> 00:22:55,090
+So we didn't do any checks.
+
+587
+00:22:55,090 --> 00:22:57,465
+We're like, OK, we trust the
+user input, which you should
+
+588
+00:22:57,465 --> 00:23:00,550
+never do, and as a result will
+be able to log to the website
+
+589
+00:23:00,550 --> 00:23:02,660
+without the password.
+
+590
+00:23:02,660 --> 00:23:04,190
+So let's demonstrate that.
+
+591
+00:23:04,190 --> 00:23:06,820
+So the way to do that
+is, as we explained,
+
+592
+00:23:06,820 --> 00:23:10,230
+is you use your username,
+so that's GoogleIO.
+
+593
+00:23:10,230 --> 00:23:12,710
+But then, instead of
+doing what is expected,
+
+594
+00:23:12,710 --> 00:23:15,460
+we're going to add a quote
+to close the parameters,
+
+595
+00:23:15,460 --> 00:23:18,480
+and then we're going to escape.
+
+596
+00:23:18,480 --> 00:23:20,890
+And escape in SQL is just this.
+
+597
+00:23:20,890 --> 00:23:23,740
+How many of you believe
+that's going to work?
+
+598
+00:23:23,740 --> 00:23:24,520
+1% of you.
+
+599
+00:23:24,520 --> 00:23:26,770
+You have no faith in me, man.
+
+600
+00:23:26,770 --> 00:23:27,560
+Come on.
+
+601
+00:23:27,560 --> 00:23:28,060
+All right.
+
+602
+00:23:28,060 --> 00:23:29,271
+So we're going to do it.
+
+603
+00:23:29,271 --> 00:23:29,770
+OK.
+
+604
+00:23:29,770 --> 00:23:32,231
+Let's try it.
+
+605
+00:23:32,231 --> 00:23:32,730
+All right.
+
+606
+00:23:32,730 --> 00:23:33,610
+So here it is.
+
+607
+00:23:33,610 --> 00:23:37,480
+We were able to log to the
+website without any password,
+
+608
+00:23:37,480 --> 00:23:40,370
+because we let the attacker
+manipulate the input, which
+
+609
+00:23:40,370 --> 00:23:42,891
+you should never do.
+
+610
+00:23:42,891 --> 00:23:43,390
+All right.
+
+611
+00:23:43,390 --> 00:23:44,473
+Let's go back to the site.
+
+612
+00:23:44,473 --> 00:23:47,820
+
+
+613
+00:23:47,820 --> 00:23:49,140
+So how do you prevent that?
+
+614
+00:23:49,140 --> 00:23:51,250
+There is a simple way
+to defend against that.
+
+615
+00:23:51,250 --> 00:23:53,730
+This is called parameterize
+query, also known
+
+616
+00:23:53,730 --> 00:23:54,680
+as prepared statement.
+
+617
+00:23:54,680 --> 00:23:57,390
+The idea is, instead of
+using the variable directly
+
+618
+00:23:57,390 --> 00:24:00,542
+into your query, you're going
+to actually write your query
+
+619
+00:24:00,542 --> 00:24:02,250
+and specify where the
+parameter should go
+
+620
+00:24:02,250 --> 00:24:04,440
+and then input it afterward.
+
+621
+00:24:04,440 --> 00:24:06,000
+That will prevent SQL injection.
+
+622
+00:24:06,000 --> 00:24:08,814
+You should also always escape
+the user input, because you
+
+623
+00:24:08,814 --> 00:24:09,730
+should not trust them.
+
+624
+00:24:09,730 --> 00:24:14,430
+It will open you to many
+other attacks such as XSS.
+
+625
+00:24:14,430 --> 00:24:18,800
+So that concludes our short
+explanation of SQL injection.
+
+626
+00:24:18,800 --> 00:24:20,310
+Yuan is going to,
+in a few minutes,
+
+627
+00:24:20,310 --> 00:24:22,960
+show you how the exercise works
+and how the framework works.
+
+628
+00:24:22,960 --> 00:24:24,570
+But before that, how
+many of you would
+
+629
+00:24:24,570 --> 00:24:27,180
+like to get early
+access to the course?
+
+630
+00:24:27,180 --> 00:24:27,982
+All of you.
+
+631
+00:24:27,982 --> 00:24:28,690
+That's brilliant.
+
+632
+00:24:28,690 --> 00:24:31,530
+So Yuan is going to tell you
+that just before the exercise.
+
+633
+00:24:31,530 --> 00:24:33,547
+Yuan, it's all yours.
+
+634
+00:24:33,547 --> 00:24:34,380
+YUAN NIU: All right.
+
+635
+00:24:34,380 --> 00:24:36,280
+So signing up is very easy.
+
+636
+00:24:36,280 --> 00:24:39,060
+You just have to register
+using the link on the screen,
+
+637
+00:24:39,060 --> 00:24:40,830
+starting today.
+
+638
+00:24:40,830 --> 00:24:44,470
+g.co/learnwebtech.
+
+639
+00:24:44,470 --> 00:24:44,970
+OK.
+
+640
+00:24:44,970 --> 00:24:47,850
+Let's switch to the demo, and
+we'll show that slide again
+
+641
+00:24:47,850 --> 00:24:50,310
+at the end of our presentation.
+
+642
+00:24:50,310 --> 00:24:53,830
+So since we're familiar
+with SQL injection already,
+
+643
+00:24:53,830 --> 00:24:56,490
+we'll just skip to that.
+
+644
+00:24:56,490 --> 00:24:59,400
+As Elie mentioned, each
+topic will have material
+
+645
+00:24:59,400 --> 00:25:01,030
+so that you can
+learn on your own.
+
+646
+00:25:01,030 --> 00:25:05,760
+So slides, the lecture, a
+related reading list, quizzes
+
+647
+00:25:05,760 --> 00:25:08,070
+and, of course,
+the exercises that
+
+648
+00:25:08,070 --> 00:25:10,500
+are going to give you
+some hands-on experience
+
+649
+00:25:10,500 --> 00:25:13,830
+so that you can reinforce
+what you've been learning.
+
+650
+00:25:13,830 --> 00:25:17,490
+You'll be attacking, defending,
+and investigating sites.
+
+651
+00:25:17,490 --> 00:25:19,030
+And to make it a
+little more fun,
+
+652
+00:25:19,030 --> 00:25:24,240
+we're taking inspiration
+from the pie versus cake war
+
+653
+00:25:24,240 --> 00:25:27,280
+to craft some of our scenarios.
+
+654
+00:25:27,280 --> 00:25:30,630
+So in our world,
+the pie syndicate
+
+655
+00:25:30,630 --> 00:25:34,530
+is a little worried that a new
+cake shop has just opened up.
+
+656
+00:25:34,530 --> 00:25:37,780
+And so they're going to try to
+attack their rival's website.
+
+657
+00:25:37,780 --> 00:25:39,900
+And then the cake
+guys are going to be
+
+658
+00:25:39,900 --> 00:25:43,391
+defending themselves and
+investigating these attacks.
+
+659
+00:25:43,391 --> 00:25:43,890
+All right.
+
+660
+00:25:43,890 --> 00:25:47,040
+So we'll be sticking with
+the basic exercises today.
+
+661
+00:25:47,040 --> 00:25:49,920
+And since we've pretty much
+done attack number one already
+
+662
+00:25:49,920 --> 00:25:52,440
+with Elie, we'll just
+skip to number two.
+
+663
+00:25:52,440 --> 00:25:55,990
+And for this, I'll
+need my black hat.
+
+664
+00:25:55,990 --> 00:25:58,250
+OK.
+
+665
+00:25:58,250 --> 00:25:59,360
+All right.
+
+666
+00:25:59,360 --> 00:26:01,720
+So we have our
+objective on the left.
+
+667
+00:26:01,720 --> 00:26:05,310
+Hey, pie minion, that cake
+shop is still in business.
+
+668
+00:26:05,310 --> 00:26:07,550
+We can't keep losing
+slices of our territory
+
+669
+00:26:07,550 --> 00:26:09,860
+to rival industries.
+
+670
+00:26:09,860 --> 00:26:12,250
+They still have a mostly
+online operation for now,
+
+671
+00:26:12,250 --> 00:26:14,360
+but we must act quickly.
+
+672
+00:26:14,360 --> 00:26:17,600
+Word is that they're still
+vulnerable to SQL injections.
+
+673
+00:26:17,600 --> 00:26:20,360
+We've gotten a leaked
+copy of their server code,
+
+674
+00:26:20,360 --> 00:26:23,570
+but, unfortunately, no idea
+who any users might be.
+
+675
+00:26:23,570 --> 00:26:25,430
+We need you to batter
+down the defenses
+
+676
+00:26:25,430 --> 00:26:27,530
+and get their customer list.
+
+677
+00:26:27,530 --> 00:26:28,550
+Get to it.
+
+678
+00:26:28,550 --> 00:26:30,110
+Pie Boss.
+
+679
+00:26:30,110 --> 00:26:30,620
+All right.
+
+680
+00:26:30,620 --> 00:26:34,130
+So very helpfully, we have
+a direct link to the page
+
+681
+00:26:34,130 --> 00:26:37,460
+that we're going to attack.
+
+682
+00:26:37,460 --> 00:26:39,920
+And we have a copy
+of the server code.
+
+683
+00:26:39,920 --> 00:26:43,130
+So we have the same
+vulnerability as before,
+
+684
+00:26:43,130 --> 00:26:50,180
+but because we don't
+know the user name,
+
+685
+00:26:50,180 --> 00:26:54,240
+our previous bad
+input won't work.
+
+686
+00:26:54,240 --> 00:26:56,050
+So let's take a
+look at the code.
+
+687
+00:26:56,050 --> 00:26:59,930
+And on line 12, we see that
+actually it doesn't really
+
+688
+00:26:59,930 --> 00:27:04,400
+matter what the select statement
+returns as long as it returns
+
+689
+00:27:04,400 --> 00:27:06,250
+anything at all.
+
+690
+00:27:06,250 --> 00:27:08,990
+And so this is where
+we'll be targeting
+
+691
+00:27:08,990 --> 00:27:11,750
+our new crafted query.
+
+692
+00:27:11,750 --> 00:27:15,140
+We just need to get the WHERE
+statement to return true
+
+693
+00:27:15,140 --> 00:27:16,730
+at all times.
+
+694
+00:27:16,730 --> 00:27:26,000
+And to do that, we'll just add,
+let's see, and/or 1 equals 1.
+
+695
+00:27:26,000 --> 00:27:31,520
+And this has the effect of
+saying select from users
+
+696
+00:27:31,520 --> 00:27:35,720
+where username
+equals admin or true.
+
+697
+00:27:35,720 --> 00:27:38,400
+And so now we're going
+to force the statement
+
+698
+00:27:38,400 --> 00:27:41,060
+to always evaluate to true.
+
+699
+00:27:41,060 --> 00:27:44,750
+And now we have access
+to their customer list.
+
+700
+00:27:44,750 --> 00:27:47,180
+And that popup means
+that we've succeeded.
+
+701
+00:27:47,180 --> 00:27:50,536
+So we can move on
+to the defense.
+
+702
+00:27:50,536 --> 00:27:51,036
+OK.
+
+703
+00:27:51,036 --> 00:27:52,034
+Let's close this.
+
+704
+00:27:52,034 --> 00:27:56,530
+
+
+705
+00:27:56,530 --> 00:27:57,070
+OK.
+
+706
+00:27:57,070 --> 00:28:00,340
+For this, I'm back on team cake.
+
+707
+00:28:00,340 --> 00:28:03,320
+And I got my white hat for that.
+
+708
+00:28:03,320 --> 00:28:08,860
+So our mission, once again,
+greetings, fellow baker.
+
+709
+00:28:08,860 --> 00:28:12,580
+As you know, there's been
+chatter of an upstart pie maker
+
+710
+00:28:12,580 --> 00:28:14,800
+with crusty connections.
+
+711
+00:28:14,800 --> 00:28:16,540
+We suspect they've
+been trying to attack
+
+712
+00:28:16,540 --> 00:28:19,050
+cake shops for some
+nefarious and no doubt
+
+713
+00:28:19,050 --> 00:28:21,190
+irrational purpose.
+
+714
+00:28:21,190 --> 00:28:24,460
+Your site has been identified
+as one of these targets.
+
+715
+00:28:24,460 --> 00:28:26,890
+In particular, it seems
+your login page leaves you
+
+716
+00:28:26,890 --> 00:28:29,650
+vulnerable to SQL injection.
+
+717
+00:28:29,650 --> 00:28:31,930
+Please fix it at your
+earliest convenience.
+
+718
+00:28:31,930 --> 00:28:33,040
+Cake Boss.
+
+719
+00:28:33,040 --> 00:28:33,649
+OK.
+
+720
+00:28:33,649 --> 00:28:35,440
+So this time we're
+going to use the editor.
+
+721
+00:28:35,440 --> 00:28:37,765
+And let's see, I'm
+going to refresh.
+
+722
+00:28:37,765 --> 00:28:41,080
+
+
+723
+00:28:41,080 --> 00:28:43,000
+Let's see.
+
+724
+00:28:43,000 --> 00:28:44,500
+Refresh again.
+
+725
+00:28:44,500 --> 00:28:47,380
+Sometimes the service workers
+need to get updated properly.
+
+726
+00:28:47,380 --> 00:28:51,571
+So it takes a
+little bit of time.
+
+727
+00:28:51,571 --> 00:28:52,070
+OK.
+
+728
+00:28:52,070 --> 00:28:54,810
+There we go.
+
+729
+00:28:54,810 --> 00:28:57,020
+And let's verify first
+that we are still
+
+730
+00:28:57,020 --> 00:28:59,820
+vulnerable to this
+SQL injection attack.
+
+731
+00:28:59,820 --> 00:29:02,640
+
+
+732
+00:29:02,640 --> 00:29:05,730
+And indeed we are.
+
+733
+00:29:05,730 --> 00:29:06,750
+OK.
+
+734
+00:29:06,750 --> 00:29:10,830
+So we're going to use
+our editor to fix things.
+
+735
+00:29:10,830 --> 00:29:14,500
+And this editor comes
+with syntax highlighting,
+
+736
+00:29:14,500 --> 00:29:17,550
+linting, all the nice stuff.
+
+737
+00:29:17,550 --> 00:29:20,260
+And we'll also need these
+three buttons on the side.
+
+738
+00:29:20,260 --> 00:29:24,450
+So the first one will run our
+code against the test framework
+
+739
+00:29:24,450 --> 00:29:28,080
+and make sure that what
+we're doing will succeed,
+
+740
+00:29:28,080 --> 00:29:29,300
+will not succeed.
+
+741
+00:29:29,300 --> 00:29:32,460
+You know, it just tells us when
+we've finished the exercise.
+
+742
+00:29:32,460 --> 00:29:34,860
+In this case, we failed
+because we haven't actually
+
+743
+00:29:34,860 --> 00:29:36,670
+fixed anything.
+
+744
+00:29:36,670 --> 00:29:39,240
+The second button is
+going to give us a hint.
+
+745
+00:29:39,240 --> 00:29:41,940
+
+
+746
+00:29:41,940 --> 00:29:47,160
+And finally, the third
+one will reset everything
+
+747
+00:29:47,160 --> 00:29:49,930
+so that we can
+start from scratch.
+
+748
+00:29:49,930 --> 00:29:53,100
+So to go about
+actually fixing this,
+
+749
+00:29:53,100 --> 00:29:55,470
+we'll just use
+parameterized queries,
+
+750
+00:29:55,470 --> 00:29:58,980
+or it's also called
+a prepared statement.
+
+751
+00:29:58,980 --> 00:30:02,770
+So remember, we're not supposed
+to use user input directly.
+
+752
+00:30:02,770 --> 00:30:06,060
+So instead we'll
+tell the SQL prepare
+
+753
+00:30:06,060 --> 00:30:10,560
+a statement that has
+specified exactly
+
+754
+00:30:10,560 --> 00:30:14,290
+when to expect external input.
+
+755
+00:30:14,290 --> 00:30:17,520
+So here, this is the
+parameterized statement.
+
+756
+00:30:17,520 --> 00:30:24,060
+And then we'll give it the
+user name and password here.
+
+757
+00:30:24,060 --> 00:30:27,600
+Let's see if that
+passes our test.
+
+758
+00:30:27,600 --> 00:30:28,140
+OK.
+
+759
+00:30:28,140 --> 00:30:30,820
+So this should be good.
+
+760
+00:30:30,820 --> 00:30:34,200
+Now let's refresh
+and double-check
+
+761
+00:30:34,200 --> 00:30:35,880
+that it actually works.
+
+762
+00:30:35,880 --> 00:30:36,380
+Oops.
+
+763
+00:30:36,380 --> 00:30:43,510
+
+
+764
+00:30:43,510 --> 00:30:45,760
+And we've successfully
+defended ourselves
+
+765
+00:30:45,760 --> 00:30:49,690
+against this particular
+SQL injection attack.
+
+766
+00:30:49,690 --> 00:30:52,510
+So remember that this is
+just the basic exercise.
+
+767
+00:30:52,510 --> 00:30:55,900
+So in practice, in creating
+actual websites in the live,
+
+768
+00:30:55,900 --> 00:30:59,710
+you would also sanitize
+user input, as Elie said.
+
+769
+00:30:59,710 --> 00:31:01,300
+And it can't be
+said enough times,
+
+770
+00:31:01,300 --> 00:31:04,840
+never trust external input.
+
+771
+00:31:04,840 --> 00:31:06,730
+So that's it for the demo today.
+
+772
+00:31:06,730 --> 00:31:11,230
+Let's not tempt the
+demo gods any further.
+
+773
+00:31:11,230 --> 00:31:12,656
+Back to the slides please.
+
+774
+00:31:12,656 --> 00:31:18,050
+[APPLAUSE]
+
+775
+00:31:18,050 --> 00:31:21,502
+So thank you for
+attending our session.
+
+776
+00:31:21,502 --> 00:31:23,710
+You can sign up for early
+access to the course, which
+
+777
+00:31:23,710 --> 00:31:25,330
+will be released this summer.
+
+778
+00:31:25,330 --> 00:31:28,780
+And if you're interested
+in learning more
+
+779
+00:31:28,780 --> 00:31:31,600
+about web tech or
+maps or whatever,
+
+780
+00:31:31,600 --> 00:31:33,950
+head over to some
+of the sandboxes.
+
+781
+00:31:33,950 --> 00:31:35,980
+I think there's one
+by stage 6 that's
+
+782
+00:31:35,980 --> 00:31:38,830
+going to talk about
+progressive web apps.
+
+783
+00:31:38,830 --> 00:31:41,940
+And thank you again, and
+enjoy the rest of I/O.
+
+784
+00:31:41,940 --> 00:00:00,000
+
+

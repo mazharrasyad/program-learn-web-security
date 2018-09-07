@@ -1,0 +1,228 @@
+1
+00:00:00,000 --> 00:00:03,149
+ hai dan selamat datang kembali <font color="#E5E5E5">di </font><font color="#CCCCCC">tutorial </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">saya </font>
+
+2
+00:00:03,149 --> 00:00:04,850
+ akan <font color="#E5E5E5">menunjukkan </font><font color="#CCCCCC">perbedaan antara </font>
+
+3
+00:00:04,850 --> 00:00:09,690
+ <font color="#E5E5E5">HTTP dan HTTPS menggunakan wireshark </font><font color="#CCCCCC">yang </font>
+
+4
+00:00:09,690 --> 00:00:12,690
+ <font color="#CCCCCC">penganalisis jaringan Wireshark adalah </font>
+
+5
+00:00:12,690 --> 00:00:15,330
+ tersedia gratis di situs web Wireshark 
+
+6
+00:00:15,330 --> 00:00:17,760
+ dan Anda dapat <font color="#E5E5E5">mengunduh untuk Windows dan </font>
+
+7
+00:00:17,760 --> 00:00:21,000
+ Linux <font color="#CCCCCC">jadi mari kita mulai </font>
+
+8
+00:00:21,000 --> 00:00:23,490
+ alat ini <font color="#CCCCCC">sangat </font><font color="#E5E5E5">mudah </font><font color="#CCCCCC">digunakan </font><font color="#E5E5E5">benar-benar </font>
+
+9
+00:00:23,490 --> 00:00:25,500
+ <font color="#E5E5E5">yang harus Anda lakukan adalah pergi </font><font color="#CCCCCC">ke sini dan </font>
+
+10
+00:00:25,500 --> 00:00:29,160
+ klik <font color="#E5E5E5">opsi pengambilan dan kemudian </font><font color="#CCCCCC">pilih </font>
+
+11
+00:00:29,160 --> 00:00:32,189
+ <font color="#E5E5E5">antarmuka yang ingin Anda </font><font color="#CCCCCC">gunakan </font><font color="#E5E5E5">di </font>
+
+12
+00:00:32,189 --> 00:00:34,500
+ <font color="#E5E5E5">kasus saya saya memiliki koneksi internet dari </font>
+
+13
+00:00:34,500 --> 00:00:38,070
+ <font color="#CCCCCC">antarmuka nirkabel saya </font><font color="#E5E5E5">sekarang tekan Mulai </font>
+
+14
+00:00:38,070 --> 00:00:39,930
+ <font color="#E5E5E5">tangkap semua lalu lintas </font><font color="#CCCCCC">itu </font>
+
+15
+00:00:39,930 --> 00:00:43,290
+ antarmuka <font color="#CCCCCC">pertama </font><font color="#E5E5E5">saya akan menunjukkan mengapa </font>
+
+16
+00:00:43,290 --> 00:00:46,530
+ HTTP tidak aman saat <font color="#CCCCCC">menjelajah </font>
+
+17
+00:00:46,530 --> 00:00:49,710
+ <font color="#E5E5E5">Internet dengan pergi ke situs yang menggunakan </font>
+
+18
+00:00:49,710 --> 00:00:53,489
+ HTTP dan sekarang saya akan mencoba <font color="#CCCCCC">untuk </font><font color="#E5E5E5">log in menggunakan </font>
+
+19
+00:00:53,489 --> 00:00:56,910
+ <font color="#E5E5E5">pengguna baru untuk nama pengguna dan biarkan saya masuk </font>
+
+20
+00:00:56,910 --> 00:01:00,420
+ untuk <font color="#CCCCCC">kata sandi ok jadi ayo lakukan </font>
+
+21
+00:01:00,420 --> 00:01:03,510
+ <font color="#CCCCCC">situs lain dengan </font><font color="#E5E5E5">HTTPS untuk melihat </font>
+
+22
+00:01:03,510 --> 00:01:06,119
+ perbedaan dan <font color="#E5E5E5">jika Anda melihat </font>
+
+23
+00:01:06,119 --> 00:01:08,939
+ kotak alamat <font color="#CCCCCC">Anda dapat melihat </font><font color="#E5E5E5">kunci ini </font>
+
+24
+00:01:08,939 --> 00:01:10,979
+ berarti <font color="#E5E5E5">bahwa </font><font color="#CCCCCC">lapisan </font><font color="#E5E5E5">soket aman </font><font color="#CCCCCC">memiliki </font>
+
+25
+00:01:10,979 --> 00:01:15,060
+ <font color="#CCCCCC">telah didirikan di halaman ini jadi sekali lagi </font><font color="#E5E5E5">saya </font>
+
+26
+00:01:15,060 --> 00:01:17,220
+ akan masuk menggunakan <font color="#E5E5E5">nama pengguna saya dan </font>
+
+27
+00:01:17,220 --> 00:01:20,070
+ kata sandi dan mari beralih <font color="#E5E5E5">kembali ke </font>
+
+28
+00:01:20,070 --> 00:01:23,640
+ Wireshark <font color="#E5E5E5">dan ubah filter ke </font><font color="#CCCCCC">HTTP </font>
+
+29
+00:01:23,640 --> 00:01:27,119
+ <font color="#CCCCCC">dan di sini Anda bisa melihat get </font><font color="#E5E5E5">dan </font>
+
+30
+00:01:27,119 --> 00:01:29,600
+ paket respons yang berisi 
+
+31
+00:01:29,600 --> 00:01:32,790
+ <font color="#CCCCCC">informasi seperti rute alamat MAC saya </font>
+
+32
+00:01:32,790 --> 00:01:36,090
+ alamat <font color="#E5E5E5">alamat tujuan sumber IP </font>
+
+33
+00:01:36,090 --> 00:01:40,439
+ <font color="#E5E5E5">dan seterusnya </font><font color="#CCCCCC">sekarang mari kita cari paket pos </font>
+
+34
+00:01:40,439 --> 00:01:43,409
+ yang berisi <font color="#CCCCCC">nama pengguna dan </font><font color="#E5E5E5">kata sandi </font>
+
+35
+00:01:43,409 --> 00:01:47,700
+ <font color="#E5E5E5">untuk </font><font color="#CCCCCC">situs HTTP </font><font color="#E5E5E5">jadi lanjutkan </font><font color="#CCCCCC">dan ubah </font>
+
+36
+00:01:47,700 --> 00:01:51,540
+ filter ke metode permintaan HTTP sama 
+
+37
+00:01:51,540 --> 00:01:56,119
+ sama dan dalam posting kaps dan klik <font color="#E5E5E5">pada HTML </font>
+
+38
+00:01:56,119 --> 00:01:59,969
+ <font color="#E5E5E5">4 seperti yang Anda lihat di sini adalah nama login </font>
+
+39
+00:01:59,969 --> 00:02:03,450
+ <font color="#E5E5E5">dan </font><font color="#CCCCCC">kata sandi jika Anda </font><font color="#E5E5E5">tidak melihat ini </font>
+
+40
+00:02:03,450 --> 00:02:06,420
+ <font color="#E5E5E5">Formulir HTML menggunakan </font><font color="#CCCCCC">klik </font><font color="#E5E5E5">kanan </font><font color="#CCCCCC">dan pilih </font>
+
+41
+00:02:06,420 --> 00:02:09,869
+ ikuti <font color="#E5E5E5">aliran TCP dan Anda akan melihat </font>
+
+42
+00:02:09,869 --> 00:02:13,710
+ <font color="#E5E5E5">nama pengguna dan kata sandi </font><font color="#CCCCCC">juga oke </font><font color="#E5E5E5">jadi </font>
+
+43
+00:02:13,710 --> 00:02:15,720
+ <font color="#E5E5E5">sekarang saya akan melihat lalu lintas </font><font color="#CCCCCC">dari </font>
+
+44
+00:02:15,720 --> 00:02:19,500
+ <font color="#CCCCCC">Situs HTTP </font><font color="#E5E5E5">untuk itu saya perlu mengubah </font>
+
+45
+00:02:19,500 --> 00:02:23,100
+ <font color="#E5E5E5">filter ke SSL dan di sini Anda dapat melihat </font>
+
+46
+00:02:23,100 --> 00:02:26,520
+ paket <font color="#E5E5E5">dienkripsi menggunakan transportasi </font>
+
+47
+00:02:26,520 --> 00:02:31,740
+ protokol keamanan layer <font color="#E5E5E5">atau TLS pada dasarnya </font>
+
+48
+00:02:31,740 --> 00:02:34,020
+ Anda berkomunikasi melalui <font color="#E5E5E5">enkripsi </font>
+
+49
+00:02:34,020 --> 00:02:37,110
+ saluran dengan situs web <font color="#E5E5E5">yang kita semua </font>
+
+50
+00:02:37,110 --> 00:02:39,630
+ <font color="#CCCCCC">ingin jenis koneksi </font><font color="#E5E5E5">ini </font>
+
+51
+00:02:39,630 --> 00:02:42,060
+ <font color="#CCCCCC">diperlukan jika Anda melakukan transaksi web </font>
+
+52
+00:02:42,060 --> 00:02:44,880
+ <font color="#E5E5E5">menggunakan </font><font color="#CCCCCC">kartu </font><font color="#E5E5E5">kredit Anda </font><font color="#CCCCCC">atau yang lainnya </font>
+
+53
+00:02:44,880 --> 00:02:48,720
+ <font color="#E5E5E5">informasi sensitif jadi itu untuk </font>
+
+54
+00:02:48,720 --> 00:02:49,260
+ <font color="#E5E5E5">sekarang </font>
+
+55
+00:02:49,260 --> 00:02:51,780
+ terima kasih <font color="#CCCCCC">telah menonton </font><font color="#E5E5E5">dan saya akan melihat Anda </font>
+
+56
+00:02:51,780 --> 00:02:54,110
+ lain <font color="#E5E5E5">kali </font>
+
+57
+00:03:00,760 --> 00:00:00,000
+ kamu 
+

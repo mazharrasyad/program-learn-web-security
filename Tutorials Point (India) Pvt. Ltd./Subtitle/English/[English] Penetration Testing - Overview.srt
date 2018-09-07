@@ -1,0 +1,372 @@
+1
+00:00:00,089 --> 00:00:03,419
+hello everyone in<font color="#E5E5E5"> this video</font><font color="#CCCCCC"> we'll going</font>
+
+2
+00:00:03,419 --> 00:00:05,640
+<font color="#E5E5E5">to know</font><font color="#CCCCCC"> about penetration</font><font color="#E5E5E5"> testing and</font>
+
+3
+00:00:05,640 --> 00:00:09,480
+vulnerability assessment so before going
+
+4
+00:00:09,480 --> 00:00:11,610
+deep into<font color="#E5E5E5"> penetration testing and</font><font color="#CCCCCC"> verne</font>
+
+5
+00:00:11,610 --> 00:00:14,340
+<font color="#E5E5E5">ability cess meant first of all let</font><font color="#CCCCCC"> us</font>
+
+6
+00:00:14,340 --> 00:00:16,440
+know that what<font color="#CCCCCC"> is vulnerability</font><font color="#E5E5E5"> so</font>
+
+7
+00:00:16,440 --> 00:00:18,900
+what's our nobility<font color="#E5E5E5"> it's actually a flow</font>
+
+8
+00:00:18,900 --> 00:00:21,600
+or a weakness<font color="#CCCCCC"> in</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> system which let</font>
+
+9
+00:00:21,600 --> 00:00:24,240
+the attacker<font color="#E5E5E5"> to compromise their system</font>
+
+10
+00:00:24,240 --> 00:00:26,910
+<font color="#E5E5E5">or in the short sense it's actually just</font>
+
+11
+00:00:26,910 --> 00:00:29,310
+kind<font color="#E5E5E5"> of flow through</font><font color="#CCCCCC"> which attacker can</font>
+
+12
+00:00:29,310 --> 00:00:31,590
+compromise your<font color="#E5E5E5"> system</font><font color="#CCCCCC"> or hack your</font>
+
+13
+00:00:31,590 --> 00:00:34,260
+system now what is vulnerability
+
+14
+00:00:34,260 --> 00:00:36,960
+assessment so vulnerability assessment
+
+15
+00:00:36,960 --> 00:00:39,390
+is an important<font color="#CCCCCC"> technique which ensures</font>
+
+16
+00:00:39,390 --> 00:00:41,010
+that our<font color="#E5E5E5"> system is secure</font>
+
+17
+00:00:41,010 --> 00:00:43,860
+<font color="#E5E5E5">now what's this technique is what's this</font>
+
+18
+00:00:43,860 --> 00:00:45,920
+process<font color="#E5E5E5"> so this</font><font color="#CCCCCC"> process is actually</font>
+
+19
+00:00:45,920 --> 00:00:48,809
+<font color="#E5E5E5">identifying the vulnerability making the</font>
+
+20
+00:00:48,809 --> 00:00:50,940
+points that where it was found<font color="#E5E5E5"> and in</font>
+
+21
+00:00:50,940 --> 00:00:53,730
+the last making a<font color="#CCCCCC"> report of it so this</font>
+
+22
+00:00:53,730 --> 00:00:56,280
+<font color="#E5E5E5">is</font><font color="#CCCCCC"> a process of identifying quantifying</font>
+
+23
+00:00:56,280 --> 00:00:58,199
+<font color="#E5E5E5">and making a report of the</font>
+
+24
+00:00:58,199 --> 00:01:00,000
+vulnerabilities and<font color="#E5E5E5"> by telling the</font>
+
+25
+00:01:00,000 --> 00:01:01,710
+organization that what's<font color="#CCCCCC"> the security</font>
+
+26
+00:01:01,710 --> 00:01:05,519
+<font color="#E5E5E5">impact of these</font><font color="#CCCCCC"> vulnerabilities now</font>
+
+27
+00:01:05,519 --> 00:01:07,320
+what's a penetration<font color="#E5E5E5"> testing so</font>
+
+28
+00:01:07,320 --> 00:01:09,750
+penetration testing is an extended
+
+29
+00:01:09,750 --> 00:01:12,360
+<font color="#E5E5E5">process of a vulnerability</font><font color="#CCCCCC"> assessment</font><font color="#E5E5E5"> so</font>
+
+30
+00:01:12,360 --> 00:01:14,430
+as I told<font color="#CCCCCC"> you that in vulnerability</font>
+
+31
+00:01:14,430 --> 00:01:15,869
+assessment<font color="#CCCCCC"> we'll find the</font>
+
+32
+00:01:15,869 --> 00:01:17,340
+vulnerabilities<font color="#E5E5E5"> will scan the</font>
+
+33
+00:01:17,340 --> 00:01:18,689
+vulnerabilities<font color="#E5E5E5"> will measure the</font>
+
+34
+00:01:18,689 --> 00:01:21,090
+vulnerabilities<font color="#E5E5E5"> but in penetration</font>
+
+35
+00:01:21,090 --> 00:01:23,729
+testing<font color="#CCCCCC"> we'll try</font><font color="#E5E5E5"> to exploit the</font>
+
+36
+00:01:23,729 --> 00:01:25,670
+vulnerabilities we'll try to get the
+
+37
+00:01:25,670 --> 00:01:28,619
+access of<font color="#E5E5E5"> the system so that's</font><font color="#CCCCCC"> why</font>
+
+38
+00:01:28,619 --> 00:01:30,530
+penetration testing is called as
+
+39
+00:01:30,530 --> 00:01:32,670
+extended process<font color="#E5E5E5"> of the vulnerability</font>
+
+40
+00:01:32,670 --> 00:01:35,130
+assessment<font color="#E5E5E5"> so it's a</font><font color="#CCCCCC"> process</font><font color="#E5E5E5"> of</font>
+
+41
+00:01:35,130 --> 00:01:36,960
+evaluating<font color="#E5E5E5"> exploiting the</font>
+
+42
+00:01:36,960 --> 00:01:39,060
+vulnerabilities<font color="#E5E5E5"> and in the last making a</font>
+
+43
+00:01:39,060 --> 00:01:41,759
+report<font color="#CCCCCC"> of it so it's an extended process</font>
+
+44
+00:01:41,759 --> 00:01:43,770
+of our nobility<font color="#CCCCCC"> so what it includes it</font>
+
+45
+00:01:43,770 --> 00:01:46,820
+includes<font color="#E5E5E5"> scanning in</font><font color="#CCCCCC"> AM rating</font>
+
+46
+00:01:46,820 --> 00:01:49,340
+exploiting and reporting the
+
+47
+00:01:49,340 --> 00:01:51,540
+vulnerabilities and their<font color="#E5E5E5"> security</font>
+
+48
+00:01:51,540 --> 00:01:57,119
+issues so how does this<font color="#CCCCCC"> process</font><font color="#E5E5E5"> going</font><font color="#CCCCCC"> so</font>
+
+49
+00:01:57,119 --> 00:01:59,670
+<font color="#E5E5E5">on what are the steps to</font><font color="#CCCCCC"> perform the</font>
+
+50
+00:01:59,670 --> 00:02:02,009
+penetration<font color="#E5E5E5"> test so the first step is</font>
+
+51
+00:02:02,009 --> 00:02:04,979
+scanning<font color="#E5E5E5"> so scanning includes scanning</font>
+
+52
+00:02:04,979 --> 00:02:06,869
+different targets different<font color="#E5E5E5"> websites</font>
+
+53
+00:02:06,869 --> 00:02:09,660
+different<font color="#E5E5E5"> techniques so once we scan the</font>
+
+54
+00:02:09,660 --> 00:02:11,970
+open ports<font color="#E5E5E5"> like open services</font><font color="#CCCCCC"> running</font>
+
+55
+00:02:11,970 --> 00:02:13,360
+and the<font color="#CCCCCC"> version number</font>
+
+56
+00:02:13,360 --> 00:02:16,240
+<font color="#E5E5E5">we'll do one ability assessment so here</font>
+
+57
+00:02:16,240 --> 00:02:17,830
+you came to know that<font color="#E5E5E5"> vulnerability</font>
+
+58
+00:02:17,830 --> 00:02:19,750
+<font color="#E5E5E5">assessment is actually a part of a</font>
+
+59
+00:02:19,750 --> 00:02:22,210
+<font color="#E5E5E5">penetration testing so once we</font><font color="#CCCCCC"> perform</font>
+
+60
+00:02:22,210 --> 00:02:23,920
+the vulnerability assessment<font color="#E5E5E5"> then the</font>
+
+61
+00:02:23,920 --> 00:02:25,650
+<font color="#E5E5E5">next step is to exploit the</font>
+
+62
+00:02:25,650 --> 00:02:27,880
+vulnerabilities<font color="#E5E5E5"> so once we exploit the</font>
+
+63
+00:02:27,880 --> 00:02:28,630
+vulnerabilities
+
+64
+00:02:28,630 --> 00:02:30,460
+<font color="#E5E5E5">we'll make a report and we'll submit</font>
+
+65
+00:02:30,460 --> 00:02:33,880
+<font color="#E5E5E5">that</font><font color="#CCCCCC"> report</font><font color="#E5E5E5"> to an organization so</font>
+
+66
+00:02:33,880 --> 00:02:35,680
+penetration testing<font color="#E5E5E5"> and vulnerability</font>
+
+67
+00:02:35,680 --> 00:02:37,570
+assessment<font color="#E5E5E5"> are actually two important</font>
+
+68
+00:02:37,570 --> 00:02:39,940
+techniques<font color="#E5E5E5"> which ensures to any</font>
+
+69
+00:02:39,940 --> 00:02:41,860
+organization<font color="#CCCCCC"> that the network is</font><font color="#E5E5E5"> secure</font>
+
+70
+00:02:41,860 --> 00:02:44,920
+<font color="#CCCCCC">so in every organization</font><font color="#E5E5E5"> in their</font>
+
+71
+00:02:44,920 --> 00:02:46,900
+<font color="#E5E5E5">premises actually conduct penetration</font>
+
+72
+00:02:46,900 --> 00:02:48,910
+testing and vulnerability assessment to
+
+73
+00:02:48,910 --> 00:02:51,820
+secure<font color="#CCCCCC"> the network</font><font color="#E5E5E5"> so now let's have a</font>
+
+74
+00:02:51,820 --> 00:02:53,010
+<font color="#E5E5E5">look at the difference between</font>
+
+75
+00:02:53,010 --> 00:02:55,630
+penetration testing and<font color="#CCCCCC"> Virna build</font>
+
+76
+00:02:55,630 --> 00:02:57,610
+assessment as I told you earlier<font color="#CCCCCC"> that</font>
+
+77
+00:02:57,610 --> 00:02:59,860
+these two techniques<font color="#E5E5E5"> are actually a part</font>
+
+78
+00:02:59,860 --> 00:03:02,410
+<font color="#E5E5E5">of vulnerability management process so</font>
+
+79
+00:03:02,410 --> 00:03:03,820
+penetration testing is actually
+
+80
+00:03:03,820 --> 00:03:05,440
+exploiting the vulnerabilities<font color="#E5E5E5"> and</font>
+
+81
+00:03:05,440 --> 00:03:08,050
+vulnerability assessment is<font color="#E5E5E5"> just making</font>
+
+82
+00:03:08,050 --> 00:03:09,880
+a report<font color="#CCCCCC"> and just identifying the</font>
+
+83
+00:03:09,880 --> 00:03:11,800
+<font color="#E5E5E5">vulnerabilities so it's extended process</font>
+
+84
+00:03:11,800 --> 00:03:14,920
+<font color="#CCCCCC">it's a small process and in</font><font color="#E5E5E5"> the last it</font>
+
+85
+00:03:14,920 --> 00:03:17,110
+includes exploiting and it includes
+
+86
+00:03:17,110 --> 00:03:18,610
+telling the impact of the
+
+87
+00:03:18,610 --> 00:03:20,700
+vulnerabilities<font color="#E5E5E5"> so this was all about</font>
+
+88
+00:03:20,700 --> 00:03:22,690
+<font color="#E5E5E5">penetration testing and vulnerability</font>
+
+89
+00:03:22,690 --> 00:03:24,910
+assessment<font color="#E5E5E5"> so in this</font><font color="#CCCCCC"> video we have</font>
+
+90
+00:03:24,910 --> 00:03:26,290
+covered that<font color="#CCCCCC"> what is vulnerability</font>
+
+91
+00:03:26,290 --> 00:03:28,750
+assessment<font color="#E5E5E5"> penetration testing and the</font>
+
+92
+00:03:28,750 --> 00:03:30,400
+difference<font color="#E5E5E5"> so thanks for</font><font color="#CCCCCC"> watching this</font>
+
+93
+00:03:30,400 --> 00:00:00,000
+video
+

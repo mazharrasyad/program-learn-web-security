@@ -1,0 +1,892 @@
+1
+00:00:08,480 --> 00:00:11,010
+hey everybody<font color="#CCCCCC"> john wagon here with dev</font>
+
+2
+00:00:11,010 --> 00:00:12,090
+central we're coming to you with<font color="#E5E5E5"> another</font>
+
+3
+00:00:12,090 --> 00:00:14,549
+<font color="#E5E5E5">light board lesson and today we're gonna</font>
+
+4
+00:00:14,549 --> 00:00:16,320
+go over<font color="#CCCCCC"> the Oh wash top</font><font color="#E5E5E5"> ten</font>
+
+5
+00:00:16,320 --> 00:00:18,180
+vulnerabilities and we've we've got<font color="#CCCCCC"> had</font>
+
+6
+00:00:18,180 --> 00:00:20,189
+a couple<font color="#E5E5E5"> other</font><font color="#CCCCCC"> videos on this today</font>
+
+7
+00:00:20,189 --> 00:00:21,900
+<font color="#CCCCCC">we're talking</font><font color="#E5E5E5"> about the</font><font color="#CCCCCC"> four the number</font>
+
+8
+00:00:21,900 --> 00:00:24,869
+four vulnerability on that list<font color="#CCCCCC"> and it's</font>
+
+9
+00:00:24,869 --> 00:00:29,609
+the<font color="#E5E5E5"> XML external entities or it's the</font>
+
+10
+00:00:29,609 --> 00:00:34,110
+acronym<font color="#CCCCCC"> that they use is X X which by</font>
+
+11
+00:00:34,110 --> 00:00:35,430
+the way<font color="#E5E5E5"> I</font><font color="#CCCCCC"> don't</font><font color="#E5E5E5"> know why they they call</font>
+
+12
+00:00:35,430 --> 00:00:37,770
+it X X<font color="#E5E5E5"> C because it's XML external</font>
+
+13
+00:00:37,770 --> 00:00:39,870
+entities<font color="#E5E5E5"> but nonetheless somebody named</font>
+
+14
+00:00:39,870 --> 00:00:41,629
+it<font color="#E5E5E5"> xx see that's what it</font><font color="#CCCCCC"> is</font>
+
+15
+00:00:41,629 --> 00:00:44,160
+essentially what<font color="#CCCCCC"> this vulnerability does</font>
+
+16
+00:00:44,160 --> 00:00:47,219
+is it takes advantage<font color="#CCCCCC"> of XML processors</font>
+
+17
+00:00:47,219 --> 00:00:49,410
+or XML parsers in your web<font color="#CCCCCC"> application</font>
+
+18
+00:00:49,410 --> 00:00:53,160
+that<font color="#E5E5E5"> might process or parse some bad</font>
+
+19
+00:00:53,160 --> 00:00:56,280
+data<font color="#E5E5E5"> so let me give you kind of a kind</font>
+
+20
+00:00:56,280 --> 00:00:59,010
+<font color="#CCCCCC">of an example here let's say you have a</font>
+
+21
+00:00:59,010 --> 00:01:01,890
+web application here<font color="#E5E5E5"> and that web</font>
+
+22
+00:01:01,890 --> 00:01:05,129
+application<font color="#CCCCCC"> is built with the foundation</font>
+
+23
+00:01:05,129 --> 00:01:06,990
+of you know a lot<font color="#CCCCCC"> of different stuff but</font>
+
+24
+00:01:06,990 --> 00:01:09,150
+one of<font color="#CCCCCC"> the things that it has the</font>
+
+25
+00:01:09,150 --> 00:01:11,549
+<font color="#CCCCCC">capability of or that it allows things</font>
+
+26
+00:01:11,549 --> 00:01:13,619
+to<font color="#CCCCCC"> do or that it</font><font color="#E5E5E5"> takes advantage</font><font color="#CCCCCC"> of is</font>
+
+27
+00:01:13,619 --> 00:01:17,549
+an XML parser<font color="#E5E5E5"> and I'll just put XML</font>
+
+28
+00:01:17,549 --> 00:01:19,439
+parser and and this<font color="#E5E5E5"> web app again it's</font>
+
+29
+00:01:19,439 --> 00:01:22,439
+gonna it's gonna be you know<font color="#E5E5E5"> built with</font>
+
+30
+00:01:22,439 --> 00:01:23,820
+lots and<font color="#CCCCCC"> lots of different things</font><font color="#E5E5E5"> but</font>
+
+31
+00:01:23,820 --> 00:01:25,259
+one of those<font color="#E5E5E5"> things again is an XML</font>
+
+32
+00:01:25,259 --> 00:01:25,619
+parser
+
+33
+00:01:25,619 --> 00:01:27,630
+<font color="#CCCCCC">all right so let's say you have an XML</font>
+
+34
+00:01:27,630 --> 00:01:32,150
+<font color="#CCCCCC">parser and you either I'll say</font><font color="#E5E5E5"> accept</font>
+
+35
+00:01:32,150 --> 00:01:38,610
+<font color="#E5E5E5">XML input directly XML directly or maybe</font>
+
+36
+00:01:38,610 --> 00:01:43,229
+you take some some other<font color="#E5E5E5"> XML input and</font>
+
+37
+00:01:43,229 --> 00:01:45,060
+then you let the XML parser parse
+
+38
+00:01:45,060 --> 00:01:47,009
+through that<font color="#E5E5E5"> input so again the web</font>
+
+39
+00:01:47,009 --> 00:01:49,259
+application it may directly accept<font color="#E5E5E5"> XML</font>
+
+40
+00:01:49,259 --> 00:01:51,780
+and process it itself or you<font color="#CCCCCC"> have an XML</font>
+
+41
+00:01:51,780 --> 00:01:53,460
+parser<font color="#CCCCCC"> that is a part of your web</font>
+
+42
+00:01:53,460 --> 00:01:56,250
+application<font color="#CCCCCC"> that would parse</font><font color="#E5E5E5"> XML input</font>
+
+43
+00:01:56,250 --> 00:01:59,969
+or an XML file<font color="#E5E5E5"> so nonetheless you've got</font>
+
+44
+00:01:59,969 --> 00:02:01,939
+<font color="#E5E5E5">XML going on on your web application</font>
+
+45
+00:02:01,939 --> 00:02:06,840
+<font color="#CCCCCC">okay sometimes these</font><font color="#E5E5E5"> XML documents will</font>
+
+46
+00:02:06,840 --> 00:02:10,378
+contain or a<font color="#CCCCCC"> reference to an</font><font color="#E5E5E5"> external</font>
+
+47
+00:02:10,378 --> 00:02:13,440
+entity<font color="#E5E5E5"> so as the XML document</font>
+
+48
+00:02:13,440 --> 00:02:16,110
+<font color="#CCCCCC">self</font><font color="#E5E5E5"> is built then you know you may have</font>
+
+49
+00:02:16,110 --> 00:02:20,070
+<font color="#E5E5E5">like you know XML I'll just say you</font><font color="#CCCCCC"> know</font>
+
+50
+00:02:20,070 --> 00:02:23,460
+doc right here and it's got lots of
+
+51
+00:02:23,460 --> 00:02:24,780
+<font color="#E5E5E5">different things you know that make up</font>
+
+52
+00:02:24,780 --> 00:02:27,210
+the XML document<font color="#CCCCCC"> but</font><font color="#E5E5E5"> I'll and and this</font>
+
+53
+00:02:27,210 --> 00:02:28,980
+<font color="#E5E5E5">is certainly not perfect syntax you can</font>
+
+54
+00:02:28,980 --> 00:02:31,410
+<font color="#E5E5E5">go into XML syntax to figure out exactly</font>
+
+55
+00:02:31,410 --> 00:02:33,780
+how XML documents are built<font color="#E5E5E5"> but let's</font>
+
+56
+00:02:33,780 --> 00:02:36,120
+say<font color="#E5E5E5"> that there's a that there's a</font>
+
+57
+00:02:36,120 --> 00:02:42,930
+<font color="#CCCCCC">reference here to an external</font><font color="#E5E5E5"> like an</font>
+
+58
+00:02:42,930 --> 00:02:45,900
+external<font color="#E5E5E5"> entity and so I'll put</font><font color="#CCCCCC"> that</font>
+
+59
+00:02:45,900 --> 00:02:48,330
+<font color="#CCCCCC">right there or like</font><font color="#E5E5E5"> an external type</font>
+
+60
+00:02:48,330 --> 00:02:51,000
+document<font color="#E5E5E5"> in the in the XML document</font>
+
+61
+00:02:51,000 --> 00:02:53,940
+<font color="#CCCCCC">alright</font><font color="#E5E5E5"> what this what this could allow</font>
+
+62
+00:02:53,940 --> 00:02:57,360
+<font color="#E5E5E5">an attacker to do is put some kind of a</font>
+
+63
+00:02:57,360 --> 00:03:01,620
+malicious payload<font color="#CCCCCC"> in that</font><font color="#E5E5E5"> external</font>
+
+64
+00:03:01,620 --> 00:03:04,620
+entity and then if the<font color="#CCCCCC"> XML parser or</font><font color="#E5E5E5"> the</font>
+
+65
+00:03:04,620 --> 00:03:08,310
+XML<font color="#CCCCCC"> documents</font><font color="#E5E5E5"> that is that it's parsed</font>
+
+66
+00:03:08,310 --> 00:03:10,620
+or processed by<font color="#CCCCCC"> your web application</font><font color="#E5E5E5"> if</font>
+
+67
+00:03:10,620 --> 00:03:12,510
+that<font color="#E5E5E5"> doesn't check things properly on</font>
+
+68
+00:03:12,510 --> 00:03:15,630
+this external<font color="#E5E5E5"> entity reference then the</font>
+
+69
+00:03:15,630 --> 00:03:17,310
+bad payload that's in<font color="#E5E5E5"> that thing could</font>
+
+70
+00:03:17,310 --> 00:03:19,680
+get<font color="#E5E5E5"> run and then it could do bad things</font>
+
+71
+00:03:19,680 --> 00:03:22,140
+for<font color="#E5E5E5"> the the contents of what your web</font>
+
+72
+00:03:22,140 --> 00:03:23,989
+application would<font color="#E5E5E5"> hold so things like</font>
+
+73
+00:03:23,989 --> 00:03:27,000
+let's say<font color="#E5E5E5"> for</font><font color="#CCCCCC"> example that this</font><font color="#E5E5E5"> that</font>
+
+74
+00:03:27,000 --> 00:03:28,739
+some bad guy put in some malicious
+
+75
+00:03:28,739 --> 00:03:31,620
+reference here<font color="#E5E5E5"> to say hey I want</font><font color="#CCCCCC"> to try</font>
+
+76
+00:03:31,620 --> 00:03:34,290
+to run a<font color="#E5E5E5"> system command on</font><font color="#CCCCCC"> your web</font>
+
+77
+00:03:34,290 --> 00:03:36,570
+application<font color="#E5E5E5"> and I want to I</font><font color="#CCCCCC"> want to</font>
+
+78
+00:03:36,570 --> 00:03:38,850
+trick it into<font color="#E5E5E5"> giving</font><font color="#CCCCCC"> me all your</font>
+
+79
+00:03:38,850 --> 00:03:40,530
+passwords<font color="#E5E5E5"> that are stored on</font><font color="#CCCCCC"> your web</font>
+
+80
+00:03:40,530 --> 00:03:43,320
+application<font color="#E5E5E5"> for</font><font color="#CCCCCC"> example</font><font color="#E5E5E5"> or</font><font color="#CCCCCC"> maybe I want</font>
+
+81
+00:03:43,320 --> 00:03:45,989
+<font color="#CCCCCC">to run some</font><font color="#E5E5E5"> other system command that</font>
+
+82
+00:03:45,989 --> 00:03:47,070
+would do some kind of malicious
+
+83
+00:03:47,070 --> 00:03:50,310
+something or another<font color="#CCCCCC"> if if the</font><font color="#E5E5E5"> XML</font>
+
+84
+00:03:50,310 --> 00:03:53,400
+parser is not<font color="#E5E5E5"> configured properly then</font>
+
+85
+00:03:53,400 --> 00:03:55,890
+then it's<font color="#CCCCCC"> going to run</font><font color="#E5E5E5"> that command</font><font color="#CCCCCC"> and</font>
+
+86
+00:03:55,890 --> 00:03:57,989
+it's<font color="#E5E5E5"> going to you know</font><font color="#CCCCCC"> spill all that</font>
+
+87
+00:03:57,989 --> 00:03:59,780
+data<font color="#E5E5E5"> and so that's not a good</font><font color="#CCCCCC"> thing</font>
+
+88
+00:03:59,780 --> 00:04:03,840
+<font color="#CCCCCC">there are a lot of</font><font color="#E5E5E5"> Java XML parsers that</font>
+
+89
+00:04:03,840 --> 00:04:08,160
+<font color="#CCCCCC">have xxe enabled by default that's</font><font color="#E5E5E5"> just</font>
+
+90
+00:04:08,160 --> 00:04:10,320
+the way that they're<font color="#CCCCCC"> built because xxe</font>
+
+91
+00:04:10,320 --> 00:04:13,350
+in and of itself is not<font color="#E5E5E5"> inherently a</font><font color="#CCCCCC"> bad</font>
+
+92
+00:04:13,350 --> 00:04:14,489
+thing<font color="#E5E5E5"> and certainly with some of the</font>
+
+93
+00:04:14,489 --> 00:04:17,370
+older<font color="#CCCCCC"> versions of xml they were it's a</font>
+
+94
+00:04:17,370 --> 00:04:19,260
+necessary<font color="#CCCCCC"> thing so you've got to go</font>
+
+95
+00:04:19,260 --> 00:04:21,600
+<font color="#E5E5E5">through and look at you know</font><font color="#CCCCCC"> how these</font>
+
+96
+00:04:21,600 --> 00:04:24,990
+things<font color="#CCCCCC"> are configured</font><font color="#E5E5E5"> and so anyway so</font>
+
+97
+00:04:24,990 --> 00:04:26,750
+sometimes<font color="#E5E5E5"> java will have that</font>
+
+98
+00:04:26,750 --> 00:04:31,400
+enabled by default<font color="#CCCCCC"> one</font><font color="#E5E5E5"> one specific</font>
+
+99
+00:04:31,400 --> 00:04:33,770
+example<font color="#E5E5E5"> of an attack that could happen</font>
+
+100
+00:04:33,770 --> 00:04:38,230
+with with these XML<font color="#E5E5E5"> external entities is</font>
+
+101
+00:04:38,230 --> 00:04:40,850
+is an attack called the billion<font color="#CCCCCC"> laughs</font>
+
+102
+00:04:40,850 --> 00:04:43,130
+so I'm<font color="#CCCCCC"> gonna</font><font color="#E5E5E5"> put I'm gonna put this up</font>
+
+103
+00:04:43,130 --> 00:04:45,560
+here<font color="#E5E5E5"> and I had to</font><font color="#CCCCCC"> I had to</font><font color="#E5E5E5"> kind of laugh</font>
+
+104
+00:04:45,560 --> 00:04:49,580
+a little<font color="#E5E5E5"> bit when I read about this and</font>
+
+105
+00:04:49,580 --> 00:04:51,920
+<font color="#E5E5E5">kind of kind of do a little research on</font>
+
+106
+00:04:51,920 --> 00:04:54,440
+this<font color="#E5E5E5"> basically what happens here what</font>
+
+107
+00:04:54,440 --> 00:04:56,300
+the what<font color="#CCCCCC"> the attacker bad guys gonna</font><font color="#E5E5E5"> do</font>
+
+108
+00:04:56,300 --> 00:04:57,800
+I'm<font color="#CCCCCC"> gonna kind of write out the</font><font color="#E5E5E5"> XML file</font>
+
+109
+00:04:57,800 --> 00:04:59,900
+that<font color="#CCCCCC"> would be sent into this XML parser</font>
+
+110
+00:04:59,900 --> 00:05:01,300
+that<font color="#E5E5E5"> doesn't validate things properly</font>
+
+111
+00:05:01,300 --> 00:05:03,470
+<font color="#CCCCCC">it's not going to be perfect syntax but</font>
+
+112
+00:05:03,470 --> 00:05:04,310
+<font color="#E5E5E5">you'll get the idea</font>
+
+113
+00:05:04,310 --> 00:05:06,920
+all right let's say you have<font color="#E5E5E5"> this XML</font>
+
+114
+00:05:06,920 --> 00:05:14,240
+file<font color="#E5E5E5"> and it's</font><font color="#CCCCCC"> XML</font><font color="#E5E5E5"> version 1.0 and then</font>
+
+115
+00:05:14,240 --> 00:05:19,070
+you've got<font color="#E5E5E5"> it</font><font color="#CCCCCC"> it defines the document</font>
+
+116
+00:05:19,070 --> 00:05:21,380
+type<font color="#E5E5E5"> all right so it's gonna have that</font>
+
+117
+00:05:21,380 --> 00:05:25,450
+<font color="#E5E5E5">and this one is going to be called lol's</font>
+
+118
+00:05:25,450 --> 00:05:30,050
+<font color="#CCCCCC">you know cuz</font><font color="#E5E5E5"> lols</font><font color="#CCCCCC"> and then there's going</font>
+
+119
+00:05:30,050 --> 00:05:33,100
+to be some entities defined in here
+
+120
+00:05:33,100 --> 00:05:39,770
+entity and one<font color="#E5E5E5"> entity is going</font><font color="#CCCCCC"> to be</font><font color="#E5E5E5"> lol</font>
+
+121
+00:05:39,770 --> 00:05:42,920
+<font color="#E5E5E5">one then there will be other entities</font>
+
+122
+00:05:42,920 --> 00:05:47,270
+<font color="#CCCCCC">and this will be</font><font color="#E5E5E5"> lol</font><font color="#CCCCCC"> too</font><font color="#E5E5E5"> lol</font><font color="#CCCCCC"> 3 all</font><font color="#E5E5E5"> the</font>
+
+123
+00:05:47,270 --> 00:05:51,110
+way<font color="#E5E5E5"> down to lol 9</font><font color="#CCCCCC"> alright so there's all</font>
+
+124
+00:05:51,110 --> 00:05:52,970
+these entities<font color="#E5E5E5"> there's also an</font><font color="#CCCCCC"> element</font>
+
+125
+00:05:52,970 --> 00:05:57,290
+that's defined<font color="#E5E5E5"> called lol's</font><font color="#CCCCCC"> as well</font>
+
+126
+00:05:57,290 --> 00:06:00,110
+anyway the point is<font color="#CCCCCC"> the the the way that</font>
+
+127
+00:06:00,110 --> 00:06:05,240
+<font color="#E5E5E5">this works is the entity</font><font color="#CCCCCC"> lol 1 is</font><font color="#E5E5E5"> going</font>
+
+128
+00:06:05,240 --> 00:06:09,190
+<font color="#E5E5E5">to is going to have</font><font color="#CCCCCC"> the contents of</font><font color="#E5E5E5"> its</font>
+
+129
+00:06:09,190 --> 00:06:11,900
+have the contents of<font color="#CCCCCC"> that is</font><font color="#E5E5E5"> going to be</font>
+
+130
+00:06:11,900 --> 00:06:13,450
+lol 1
+
+131
+00:06:13,450 --> 00:06:17,240
+<font color="#E5E5E5">semicolon lol 1 so forth and so</font><font color="#CCCCCC"> on it's</font>
+
+132
+00:06:17,240 --> 00:06:19,060
+<font color="#CCCCCC">going to have like 10 of</font><font color="#E5E5E5"> these out there</font>
+
+133
+00:06:19,060 --> 00:06:22,820
+<font color="#E5E5E5">and in</font><font color="#CCCCCC"> lol 2 is going to have lol -</font><font color="#E5E5E5"> lol</font>
+
+134
+00:06:22,820 --> 00:06:25,280
+- anyway these these entities<font color="#E5E5E5"> are going</font>
+
+135
+00:06:25,280 --> 00:06:28,910
+to have the<font color="#E5E5E5"> definition of what this</font>
+
+136
+00:06:28,910 --> 00:06:31,430
+entity contains is all these little lol
+
+137
+00:06:31,430 --> 00:06:33,550
+s<font color="#E5E5E5"> all the way all the way across</font><font color="#CCCCCC"> so</font>
+
+138
+00:06:33,550 --> 00:06:37,030
+<font color="#CCCCCC">whenever you send</font><font color="#E5E5E5"> this malicious payload</font>
+
+139
+00:06:37,030 --> 00:06:40,510
+basically you're going<font color="#E5E5E5"> to send ello</font>
+
+140
+00:06:40,510 --> 00:06:44,830
+<font color="#E5E5E5">z lolz it's gonna look something like</font>
+
+141
+00:06:44,830 --> 00:06:46,330
+<font color="#E5E5E5">this you're gonna have this little and</font>
+
+142
+00:06:46,330 --> 00:06:48,460
+<font color="#E5E5E5">ampersand and then you're gonna send it</font>
+
+143
+00:06:48,460 --> 00:06:53,200
+this<font color="#CCCCCC"> LOL nine alrighty and</font><font color="#E5E5E5"> then you'll</font>
+
+144
+00:06:53,200 --> 00:06:58,030
+have lolz<font color="#E5E5E5"> to close it out</font><font color="#CCCCCC"> alright I know</font>
+
+145
+00:06:58,030 --> 00:07:00,040
+<font color="#CCCCCC">that's not great penmanship basically</font>
+
+146
+00:07:00,040 --> 00:07:02,290
+you're<font color="#E5E5E5"> gonna say hey run this lol nine</font>
+
+147
+00:07:02,290 --> 00:07:03,970
+well lol<font color="#CCCCCC"> nine is going to be it's</font><font color="#E5E5E5"> going</font>
+
+148
+00:07:03,970 --> 00:07:06,430
+<font color="#E5E5E5">to consist of a bunch of lol eights and</font>
+
+149
+00:07:06,430 --> 00:07:08,260
+then the lol eights are going to consist
+
+150
+00:07:08,260 --> 00:07:10,120
+of<font color="#E5E5E5"> a bunch of lol 7s and then six and</font>
+
+151
+00:07:10,120 --> 00:07:12,040
+<font color="#CCCCCC">five and</font><font color="#E5E5E5"> four and all the way all the</font>
+
+152
+00:07:12,040 --> 00:07:14,110
+way up<font color="#CCCCCC"> when it's all</font><font color="#E5E5E5"> said and</font><font color="#CCCCCC"> done you</font>
+
+153
+00:07:14,110 --> 00:07:16,420
+would<font color="#E5E5E5"> have sent a document that's less</font>
+
+154
+00:07:16,420 --> 00:07:20,620
+than<font color="#E5E5E5"> one kilobyte in size and you're</font>
+
+155
+00:07:20,620 --> 00:07:22,570
+going<font color="#CCCCCC"> to make this parse or this XML</font>
+
+156
+00:07:22,570 --> 00:07:24,190
+processor on your<font color="#CCCCCC"> web application have</font>
+
+157
+00:07:24,190 --> 00:07:27,750
+to crunch through<font color="#CCCCCC"> approximately</font><font color="#E5E5E5"> three</font>
+
+158
+00:07:27,750 --> 00:07:32,890
+gigabytes<font color="#E5E5E5"> of memory</font><font color="#CCCCCC"> or use up three</font>
+
+159
+00:07:32,890 --> 00:07:34,720
+<font color="#E5E5E5">gigabytes of memory to crunch through</font>
+
+160
+00:07:34,720 --> 00:07:37,690
+this entire document<font color="#E5E5E5"> so in effect it's</font>
+
+161
+00:07:37,690 --> 00:07:39,100
+like a denial<font color="#E5E5E5"> of service attack it's</font>
+
+162
+00:07:39,100 --> 00:07:40,780
+this completely asymmetric attack you
+
+163
+00:07:40,780 --> 00:07:42,370
+send it one<font color="#E5E5E5"> little bitty file and ask to</font>
+
+164
+00:07:42,370 --> 00:07:43,510
+crunch<font color="#E5E5E5"> through like three gigs of memory</font>
+
+165
+00:07:43,510 --> 00:07:45,640
+<font color="#CCCCCC">all right so that's that's just</font><font color="#E5E5E5"> one</font>
+
+166
+00:07:45,640 --> 00:07:49,150
+example of what<font color="#E5E5E5"> may happen here</font><font color="#CCCCCC"> if you</font>
+
+167
+00:07:49,150 --> 00:07:52,270
+don't<font color="#E5E5E5"> have the XML parser configured</font>
+
+168
+00:07:52,270 --> 00:07:54,430
+properly<font color="#E5E5E5"> so the question is well what do</font>
+
+169
+00:07:54,430 --> 00:07:57,730
+we<font color="#E5E5E5"> do to help with this</font><font color="#CCCCCC"> one thing is you</font>
+
+170
+00:07:57,730 --> 00:08:01,840
+can disable<font color="#E5E5E5"> xxe completely on your</font><font color="#CCCCCC"> web</font>
+
+171
+00:08:01,840 --> 00:08:03,670
+application<font color="#E5E5E5"> and if you can't do it</font>
+
+172
+00:08:03,670 --> 00:08:06,040
+<font color="#CCCCCC">completely then you would</font><font color="#E5E5E5"> look at all</font>
+
+173
+00:08:06,040 --> 00:08:09,220
+the<font color="#CCCCCC"> different parts</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> pieces of your</font>
+
+174
+00:08:09,220 --> 00:08:11,530
+<font color="#E5E5E5">web application basically and go through</font>
+
+175
+00:08:11,530 --> 00:08:13,330
+each<font color="#CCCCCC"> one and say hey how can i disable</font>
+
+176
+00:08:13,330 --> 00:08:16,920
+this<font color="#E5E5E5"> you know per you</font><font color="#CCCCCC"> know per parser</font>
+
+177
+00:08:16,920 --> 00:08:19,930
+another thing that you can<font color="#E5E5E5"> do is disable</font>
+
+178
+00:08:19,930 --> 00:08:23,710
+<font color="#E5E5E5">what's called DTD processing and and</font>
+
+179
+00:08:23,710 --> 00:08:26,200
+that again if<font color="#E5E5E5"> you can do</font><font color="#CCCCCC"> it across the</font>
+
+180
+00:08:26,200 --> 00:08:28,060
+entire<font color="#E5E5E5"> web application then that's good</font>
+
+181
+00:08:28,060 --> 00:08:30,370
+otherwise you go through<font color="#E5E5E5"> each individual</font>
+
+182
+00:08:30,370 --> 00:08:32,860
+<font color="#E5E5E5">XML processor or parser to say hey how</font>
+
+183
+00:08:32,860 --> 00:08:35,460
+do I disable DTD on each of these
+
+184
+00:08:35,460 --> 00:08:37,750
+<font color="#CCCCCC">another thing you can do is you can</font>
+
+185
+00:08:37,750 --> 00:08:40,409
+implement<font color="#E5E5E5"> some positive server-side</font>
+
+186
+00:08:40,409 --> 00:08:43,510
+input validation so as you as you accept
+
+187
+00:08:43,510 --> 00:08:45,370
+these XML inputs into<font color="#CCCCCC"> your web</font>
+
+188
+00:08:45,370 --> 00:08:47,260
+application<font color="#E5E5E5"> do some input validation</font>
+
+189
+00:08:47,260 --> 00:08:50,770
+<font color="#E5E5E5">before you just run</font><font color="#CCCCCC"> the commands another</font>
+
+190
+00:08:50,770 --> 00:08:52,900
+thing you can do is what's<font color="#E5E5E5"> called source</font>
+
+191
+00:08:52,900 --> 00:08:53,950
+code<font color="#E5E5E5"> analysis</font>
+
+192
+00:08:53,950 --> 00:08:57,370
+<font color="#CCCCCC">this</font><font color="#E5E5E5"> tools or sassed</font><font color="#CCCCCC"> and you can run</font>
+
+193
+00:08:57,370 --> 00:09:00,040
+<font color="#E5E5E5">source code verification</font><font color="#CCCCCC"> and testing</font>
+
+194
+00:09:00,040 --> 00:09:01,390
+against your source code in your<font color="#E5E5E5"> web</font>
+
+195
+00:09:01,390 --> 00:09:03,310
+<font color="#CCCCCC">application to see</font><font color="#E5E5E5"> if any of this is</font>
+
+196
+00:09:03,310 --> 00:09:05,710
+vulnerable<font color="#CCCCCC"> another thing you can do is</font>
+
+197
+00:09:05,710 --> 00:09:06,660
+<font color="#E5E5E5">dine</font><font color="#CCCCCC"> it</font><font color="#E5E5E5"> what's called dynamic</font>
+
+198
+00:09:06,660 --> 00:09:09,910
+<font color="#E5E5E5">application security testing</font><font color="#CCCCCC"> or DAST and</font>
+
+199
+00:09:09,910 --> 00:09:11,110
+you can run<font color="#E5E5E5"> that against your web</font>
+
+200
+00:09:11,110 --> 00:09:13,570
+application to say hey<font color="#E5E5E5"> as we send things</font>
+
+201
+00:09:13,570 --> 00:09:17,110
+like<font color="#E5E5E5"> xxe you know attacks against it is</font>
+
+202
+00:09:17,110 --> 00:09:19,120
+it vulnerable<font color="#E5E5E5"> to those kinds of things</font>
+
+203
+00:09:19,120 --> 00:09:21,400
+<font color="#CCCCCC">so anyway</font><font color="#E5E5E5"> so those are a few</font><font color="#CCCCCC"> things</font><font color="#E5E5E5"> that</font>
+
+204
+00:09:21,400 --> 00:09:24,570
+you<font color="#CCCCCC"> can do to help mitigate this problem</font>
+
+205
+00:09:24,570 --> 00:09:26,980
+<font color="#CCCCCC">another</font><font color="#E5E5E5"> thing you can do is you can</font>
+
+206
+00:09:26,980 --> 00:09:28,420
+implement what's called a<font color="#E5E5E5"> web</font>
+
+207
+00:09:28,420 --> 00:09:30,670
+<font color="#E5E5E5">application</font><font color="#CCCCCC"> firewall or a</font><font color="#E5E5E5"> laugh and that</font>
+
+208
+00:09:30,670 --> 00:09:32,140
+helps<font color="#E5E5E5"> with a lot</font><font color="#CCCCCC"> of these</font><font color="#E5E5E5"> things so if</font>
+
+209
+00:09:32,140 --> 00:09:34,060
+you<font color="#E5E5E5"> can't fix the</font><font color="#CCCCCC"> problem in the code in</font>
+
+210
+00:09:34,060 --> 00:09:36,010
+the web application itself<font color="#CCCCCC"> then you can</font>
+
+211
+00:09:36,010 --> 00:09:38,140
+add on<font color="#CCCCCC"> a web application</font><font color="#E5E5E5"> firewall which</font>
+
+212
+00:09:38,140 --> 00:09:40,960
+is really handy<font color="#E5E5E5"> as</font><font color="#CCCCCC"> well</font><font color="#E5E5E5"> so anyway so</font>
+
+213
+00:09:40,960 --> 00:09:42,340
+again<font color="#E5E5E5"> xxe that's the number</font><font color="#CCCCCC"> for</font>
+
+214
+00:09:42,340 --> 00:09:46,000
+vulnerability on the OWASP top<font color="#CCCCCC"> 10 and we</font>
+
+215
+00:09:46,000 --> 00:09:47,230
+just want to<font color="#CCCCCC"> make sure</font><font color="#E5E5E5"> you understood</font>
+
+216
+00:09:47,230 --> 00:09:50,230
+what goes on here<font color="#CCCCCC"> the problems</font><font color="#E5E5E5"> that</font>
+
+217
+00:09:50,230 --> 00:09:52,870
+could arise<font color="#E5E5E5"> and hope you guys stay safe</font>
+
+218
+00:09:52,870 --> 00:09:55,240
+<font color="#CCCCCC">out there and thanks for watching this</font>
+
+219
+00:09:55,240 --> 00:09:56,920
+<font color="#CCCCCC">lightboard lesson video if you liked</font>
+
+220
+00:09:56,920 --> 00:09:59,260
+this<font color="#E5E5E5"> one make sure</font><font color="#CCCCCC"> you subscribe to</font><font color="#E5E5E5"> our</font>
+
+221
+00:09:59,260 --> 00:10:01,180
+YouTube channel<font color="#E5E5E5"> and we'll</font><font color="#CCCCCC"> see you guys</font>
+
+222
+00:10:01,180 --> 00:10:04,110
+out there<font color="#E5E5E5"> in the community</font>
+
+223
+00:10:09,950 --> 00:00:00,000
+you
+

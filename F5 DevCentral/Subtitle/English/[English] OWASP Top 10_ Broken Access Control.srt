@@ -1,0 +1,960 @@
+1
+00:00:08,540 --> 00:00:10,800
+hey everybody<font color="#E5E5E5"> John wagging on here with</font>
+
+2
+00:00:10,800 --> 00:00:12,030
+Deb<font color="#CCCCCC"> central we're coming to you</font><font color="#E5E5E5"> with</font>
+
+3
+00:00:12,030 --> 00:00:14,070
+another<font color="#E5E5E5"> light board lesson video and</font>
+
+4
+00:00:14,070 --> 00:00:15,990
+today we're gonna<font color="#E5E5E5"> go over</font><font color="#CCCCCC"> another one of</font>
+
+5
+00:00:15,990 --> 00:00:18,840
+the OWASP top<font color="#CCCCCC"> ten security risks out</font>
+
+6
+00:00:18,840 --> 00:00:20,789
+<font color="#CCCCCC">there and the new version just came out</font>
+
+7
+00:00:20,789 --> 00:00:24,029
+recently<font color="#E5E5E5"> and back in 2017</font><font color="#CCCCCC"> today we're</font>
+
+8
+00:00:24,029 --> 00:00:26,060
+going<font color="#E5E5E5"> to talk about the number five</font>
+
+9
+00:00:26,060 --> 00:00:28,050
+<font color="#E5E5E5">vulnerability out there the number five</font>
+
+10
+00:00:28,050 --> 00:00:29,580
+<font color="#E5E5E5">security risk and it's called broken</font>
+
+11
+00:00:29,580 --> 00:00:32,700
+access<font color="#E5E5E5"> control which very quickly this</font>
+
+12
+00:00:32,700 --> 00:00:34,320
+<font color="#E5E5E5">is not to be confused with</font>
+
+13
+00:00:34,320 --> 00:00:36,360
+authentication some people confuse
+
+14
+00:00:36,360 --> 00:00:39,000
+authentication and access<font color="#CCCCCC"> authentication</font>
+
+15
+00:00:39,000 --> 00:00:42,120
+is verifying your identity like hey<font color="#E5E5E5"> if</font>
+
+16
+00:00:42,120 --> 00:00:44,579
+I'm gonna access something<font color="#E5E5E5"> someone needs</font>
+
+17
+00:00:44,579 --> 00:00:46,440
+to<font color="#E5E5E5"> make</font><font color="#CCCCCC"> sure hey are you John or not</font>
+
+18
+00:00:46,440 --> 00:00:49,260
+<font color="#E5E5E5">that's authentication</font><font color="#CCCCCC"> access control is</font>
+
+19
+00:00:49,260 --> 00:00:52,469
+as about giving me<font color="#CCCCCC"> access to</font><font color="#E5E5E5"> the</font>
+
+20
+00:00:52,469 --> 00:00:54,570
+<font color="#CCCCCC">different resources</font><font color="#E5E5E5"> that</font><font color="#CCCCCC"> I need to gain</font>
+
+21
+00:00:54,570 --> 00:00:56,699
+access<font color="#E5E5E5"> to or frankly keeping me away</font>
+
+22
+00:00:56,699 --> 00:00:59,010
+from<font color="#CCCCCC"> the resources that</font><font color="#E5E5E5"> I don't need</font><font color="#CCCCCC"> to</font>
+
+23
+00:00:59,010 --> 00:01:01,710
+<font color="#E5E5E5">be touching so so when we talk about</font>
+
+24
+00:01:01,710 --> 00:01:06,210
+<font color="#CCCCCC">access control it is it is taking</font><font color="#E5E5E5"> the</font>
+
+25
+00:01:06,210 --> 00:01:09,740
+<font color="#CCCCCC">access that you</font><font color="#E5E5E5"> need to give some users</font>
+
+26
+00:01:09,740 --> 00:01:12,090
+allowing them to access<font color="#CCCCCC"> functions and</font>
+
+27
+00:01:12,090 --> 00:01:13,650
+features and then keeping everyone else
+
+28
+00:01:13,650 --> 00:01:16,140
+<font color="#E5E5E5">out so all right so with that said let's</font>
+
+29
+00:01:16,140 --> 00:01:20,340
+say you have your your<font color="#E5E5E5"> world class web</font>
+
+30
+00:01:20,340 --> 00:01:24,540
+application here<font color="#E5E5E5"> and it is comprised of</font>
+
+31
+00:01:24,540 --> 00:01:26,490
+a whole lot<font color="#E5E5E5"> of different stuff but built</font>
+
+32
+00:01:26,490 --> 00:01:28,470
+into this thing<font color="#CCCCCC"> you have different</font>
+
+33
+00:01:28,470 --> 00:01:31,290
+functions and<font color="#E5E5E5"> different features and and</font>
+
+34
+00:01:31,290 --> 00:01:33,720
+those<font color="#E5E5E5"> kinds of things so let's say</font><font color="#CCCCCC"> for</font>
+
+35
+00:01:33,720 --> 00:01:36,570
+example you have like some admin
+
+36
+00:01:36,570 --> 00:01:39,479
+functions<font color="#CCCCCC"> so here's an admin little</font>
+
+37
+00:01:39,479 --> 00:01:42,030
+chunk right here<font color="#E5E5E5"> let's say you have I'm</font>
+
+38
+00:01:42,030 --> 00:01:45,079
+<font color="#E5E5E5">gonna just call it like you know normal</font>
+
+39
+00:01:45,079 --> 00:01:50,130
+normal user<font color="#E5E5E5"> functions that you would</font>
+
+40
+00:01:50,130 --> 00:01:51,720
+<font color="#E5E5E5">want anyone to have this is kind of like</font>
+
+41
+00:01:51,720 --> 00:01:53,939
+<font color="#CCCCCC">that</font><font color="#E5E5E5"> public facing stuff let's say you</font>
+
+42
+00:01:53,939 --> 00:01:56,460
+have some auditing features<font color="#CCCCCC"> with like</font>
+
+43
+00:01:56,460 --> 00:01:58,380
+logs<font color="#E5E5E5"> and you know all kinds</font><font color="#CCCCCC"> of different</font>
+
+44
+00:01:58,380 --> 00:02:00,180
+stuff<font color="#E5E5E5"> all right so you maybe you</font><font color="#CCCCCC"> have</font>
+
+45
+00:02:00,180 --> 00:02:01,619
+different<font color="#E5E5E5"> parts and</font><font color="#CCCCCC"> pieces or different</font>
+
+46
+00:02:01,619 --> 00:02:03,590
+features<font color="#CCCCCC"> of your web application that</font>
+
+47
+00:02:03,590 --> 00:02:05,880
+<font color="#CCCCCC">you</font><font color="#E5E5E5"> want to give certain people access</font>
+
+48
+00:02:05,880 --> 00:02:06,540
+<font color="#CCCCCC">to or not</font>
+
+49
+00:02:06,540 --> 00:02:08,489
+well so out here people that<font color="#E5E5E5"> are going</font>
+
+50
+00:02:08,489 --> 00:02:09,810
+to<font color="#E5E5E5"> be accessing this web application</font>
+
+51
+00:02:09,810 --> 00:02:11,790
+<font color="#CCCCCC">there's a lot of different types of</font>
+
+52
+00:02:11,790 --> 00:02:12,580
+<font color="#E5E5E5">users so you</font>
+
+53
+00:02:12,580 --> 00:02:15,670
+I'll just put<font color="#CCCCCC"> I'll put normal user out</font>
+
+54
+00:02:15,670 --> 00:02:19,480
+here<font color="#CCCCCC"> this</font><font color="#E5E5E5"> is your everyday you know</font>
+
+55
+00:02:19,480 --> 00:02:21,910
+let's say your web application<font color="#E5E5E5"> your I</font>
+
+56
+00:02:21,910 --> 00:02:23,170
+don't<font color="#E5E5E5"> know you're selling</font><font color="#CCCCCC"> something</font>
+
+57
+00:02:23,170 --> 00:02:24,520
+<font color="#E5E5E5">that's that's what you do that's what</font>
+
+58
+00:02:24,520 --> 00:02:26,350
+your web application does and you want
+
+59
+00:02:26,350 --> 00:02:28,150
+all kinds<font color="#E5E5E5"> of people in the public to</font>
+
+60
+00:02:28,150 --> 00:02:29,950
+come out here<font color="#E5E5E5"> and access</font><font color="#CCCCCC"> your web</font>
+
+61
+00:02:29,950 --> 00:02:31,900
+application and buy all your stuff you
+
+62
+00:02:31,900 --> 00:02:33,490
+know so you<font color="#E5E5E5"> have all these typical</font>
+
+63
+00:02:33,490 --> 00:02:35,950
+normal<font color="#E5E5E5"> users and you want them to do</font>
+
+64
+00:02:35,950 --> 00:02:38,890
+<font color="#E5E5E5">these normal user features and functions</font>
+
+65
+00:02:38,890 --> 00:02:41,080
+<font color="#E5E5E5">of course but let's say you also have</font>
+
+66
+00:02:41,080 --> 00:02:44,890
+some admins<font color="#CCCCCC"> let's say you have like some</font>
+
+67
+00:02:44,890 --> 00:02:49,450
+super users super users<font color="#CCCCCC"> let's say you</font>
+
+68
+00:02:49,450 --> 00:02:53,200
+have maybe like an audit group<font color="#E5E5E5"> or an</font>
+
+69
+00:02:53,200 --> 00:02:54,910
+audit<font color="#CCCCCC"> you know type</font><font color="#E5E5E5"> of a user that wants</font>
+
+70
+00:02:54,910 --> 00:02:57,670
+<font color="#CCCCCC">to you know do some log analysis or</font>
+
+71
+00:02:57,670 --> 00:02:59,110
+whatever<font color="#E5E5E5"> so you know you've got all</font>
+
+72
+00:02:59,110 --> 00:03:02,080
+<font color="#E5E5E5">these different different types of users</font>
+
+73
+00:03:02,080 --> 00:03:04,000
+out there<font color="#CCCCCC"> well for the admin functions</font>
+
+74
+00:03:04,000 --> 00:03:06,430
+<font color="#E5E5E5">you may only</font><font color="#CCCCCC"> want the admin guys to</font>
+
+75
+00:03:06,430 --> 00:03:08,770
+access that the normal users only<font color="#CCCCCC"> need</font>
+
+76
+00:03:08,770 --> 00:03:10,870
+to have access<font color="#CCCCCC"> to this part of</font><font color="#E5E5E5"> your web</font>
+
+77
+00:03:10,870 --> 00:03:13,870
+application<font color="#CCCCCC"> and</font><font color="#E5E5E5"> actually the admin can</font>
+
+78
+00:03:13,870 --> 00:03:15,400
+<font color="#E5E5E5">do the normal user functionality and</font>
+
+79
+00:03:15,400 --> 00:03:17,560
+they can do<font color="#E5E5E5"> that you can maybe they can</font>
+
+80
+00:03:17,560 --> 00:03:19,450
+access the audit stuff maybe the audit
+
+81
+00:03:19,450 --> 00:03:21,250
+guys can<font color="#E5E5E5"> only</font><font color="#CCCCCC"> access</font><font color="#E5E5E5"> the audit stuff</font><font color="#CCCCCC"> you</font>
+
+82
+00:03:21,250 --> 00:03:22,450
+get the point here<font color="#CCCCCC"> so there's different</font>
+
+83
+00:03:22,450 --> 00:03:24,640
+<font color="#E5E5E5">types of users that can</font><font color="#CCCCCC"> access the</font>
+
+84
+00:03:24,640 --> 00:03:26,320
+different<font color="#E5E5E5"> parts</font><font color="#CCCCCC"> and pieces and features</font>
+
+85
+00:03:26,320 --> 00:03:30,100
+<font color="#CCCCCC">of</font><font color="#E5E5E5"> your web application one of the one</font>
+
+86
+00:03:30,100 --> 00:03:32,620
+<font color="#CCCCCC">of</font><font color="#E5E5E5"> the things to check for this broken</font>
+
+87
+00:03:32,620 --> 00:03:34,420
+access control the problem<font color="#CCCCCC"> that we're</font>
+
+88
+00:03:34,420 --> 00:03:36,760
+talking<font color="#E5E5E5"> about today and again the broken</font>
+
+89
+00:03:36,760 --> 00:03:39,700
+access control is where let's say<font color="#E5E5E5"> for</font>
+
+90
+00:03:39,700 --> 00:03:41,650
+example<font color="#CCCCCC"> a</font><font color="#E5E5E5"> normal user or what would</font>
+
+91
+00:03:41,650 --> 00:03:43,780
+appear to<font color="#CCCCCC"> be a</font><font color="#E5E5E5"> normal user gains access</font>
+
+92
+00:03:43,780 --> 00:03:45,910
+to<font color="#E5E5E5"> admin functions on your</font><font color="#CCCCCC"> web</font>
+
+93
+00:03:45,910 --> 00:03:48,040
+application or<font color="#E5E5E5"> they gain access to some</font>
+
+94
+00:03:48,040 --> 00:03:50,410
+audit log files or that kind of stuff
+
+95
+00:03:50,410 --> 00:03:52,959
+places that they don't need<font color="#CCCCCC"> to be so the</font>
+
+96
+00:03:52,959 --> 00:03:54,610
+access controls<font color="#E5E5E5"> that you have put in</font>
+
+97
+00:03:54,610 --> 00:03:58,570
+place<font color="#CCCCCC"> would then be broken of course</font><font color="#E5E5E5"> one</font>
+
+98
+00:03:58,570 --> 00:04:00,310
+of<font color="#E5E5E5"> the one</font><font color="#CCCCCC"> of</font><font color="#E5E5E5"> the things that's</font>
+
+99
+00:04:00,310 --> 00:04:01,780
+<font color="#E5E5E5">interesting about this</font><font color="#CCCCCC"> as some people</font>
+
+100
+00:04:01,780 --> 00:04:04,600
+<font color="#E5E5E5">say</font><font color="#CCCCCC"> we'll use these</font><font color="#E5E5E5"> use these different</font>
+
+101
+00:04:04,600 --> 00:04:06,220
+<font color="#E5E5E5">tools like</font><font color="#CCCCCC"> DAST</font>
+
+102
+00:04:06,220 --> 00:04:10,450
+the<font color="#CCCCCC"> DAST tool is the dynamic application</font>
+
+103
+00:04:10,450 --> 00:04:15,160
+security<font color="#CCCCCC"> testing tool</font><font color="#E5E5E5"> or</font><font color="#CCCCCC"> sass is another</font>
+
+104
+00:04:15,160 --> 00:04:17,738
+one and sass is the static application
+
+105
+00:04:17,738 --> 00:04:20,200
+security<font color="#CCCCCC"> testing tool some people call</font>
+
+106
+00:04:20,200 --> 00:04:23,860
+that<font color="#E5E5E5"> the source code analysis tool but</font>
+
+107
+00:04:23,860 --> 00:04:26,080
+anyway - and sassed<font color="#E5E5E5"> one of the issues</font>
+
+108
+00:04:26,080 --> 00:04:26,590
+<font color="#E5E5E5">would ask</font>
+
+109
+00:04:26,590 --> 00:04:29,110
+sass is that they can they do a good job
+
+110
+00:04:29,110 --> 00:04:32,199
+of<font color="#CCCCCC"> identifying whether an</font><font color="#E5E5E5"> access</font><font color="#CCCCCC"> control</font>
+
+111
+00:04:32,199 --> 00:04:34,330
+is in place or<font color="#E5E5E5"> not whether it's present</font>
+
+112
+00:04:34,330 --> 00:04:36,550
+or absent<font color="#CCCCCC"> and they'll let</font><font color="#E5E5E5"> you</font><font color="#CCCCCC"> know</font><font color="#E5E5E5"> that</font>
+
+113
+00:04:36,550 --> 00:04:39,940
+<font color="#E5E5E5">but if it's</font><font color="#CCCCCC"> present let's say they they</font>
+
+114
+00:04:39,940 --> 00:04:42,729
+don't do a great job necessarily of
+
+115
+00:04:42,729 --> 00:04:44,889
+telling you how functional it<font color="#CCCCCC"> is or how</font>
+
+116
+00:04:44,889 --> 00:04:48,070
+<font color="#CCCCCC">effective it is</font><font color="#E5E5E5"> so so one of the things</font>
+
+117
+00:04:48,070 --> 00:04:49,180
+that you really<font color="#E5E5E5"> need</font><font color="#CCCCCC"> to do with</font><font color="#E5E5E5"> broken</font>
+
+118
+00:04:49,180 --> 00:04:51,669
+access control is to do a lot of<font color="#CCCCCC"> manual</font>
+
+119
+00:04:51,669 --> 00:04:53,740
+testing<font color="#CCCCCC"> and a lot of</font><font color="#E5E5E5"> manual checks to</font>
+
+120
+00:04:53,740 --> 00:04:54,820
+<font color="#CCCCCC">make sure that you've got this thing</font>
+
+121
+00:04:54,820 --> 00:04:56,710
+<font color="#E5E5E5">under</font><font color="#CCCCCC"> control</font><font color="#E5E5E5"> I'm going</font><font color="#CCCCCC"> to give a quick</font>
+
+122
+00:04:56,710 --> 00:04:59,410
+example<font color="#E5E5E5"> of this web application of</font>
+
+123
+00:04:59,410 --> 00:05:01,600
+someone<font color="#E5E5E5"> that may come in there</font><font color="#CCCCCC"> and be</font>
+
+124
+00:05:01,600 --> 00:05:03,280
+able<font color="#E5E5E5"> to access a spot or a thing that</font>
+
+125
+00:05:03,280 --> 00:05:05,620
+<font color="#CCCCCC">they don't</font><font color="#E5E5E5"> need to gain access to so</font>
+
+126
+00:05:05,620 --> 00:05:07,990
+here's an example<font color="#CCCCCC"> a bad hacker guy comes</font>
+
+127
+00:05:07,990 --> 00:05:14,200
+in to<font color="#CCCCCC"> your you know</font><font color="#E5E5E5"> web web app dot-com</font>
+
+128
+00:05:14,200 --> 00:05:16,419
+<font color="#CCCCCC">all right</font><font color="#E5E5E5"> and that's let's</font><font color="#CCCCCC"> say that</font>
+
+129
+00:05:16,419 --> 00:05:18,760
+<font color="#E5E5E5">that's the URL for your web application</font>
+
+130
+00:05:18,760 --> 00:05:20,919
+and you<font color="#E5E5E5"> want all your normal users to be</font>
+
+131
+00:05:20,919 --> 00:05:22,270
+able<font color="#CCCCCC"> to</font><font color="#E5E5E5"> access that</font><font color="#CCCCCC"> and buy a bunch of</font>
+
+132
+00:05:22,270 --> 00:05:25,000
+<font color="#E5E5E5">stuff and do great</font><font color="#CCCCCC"> things but let's say</font>
+
+133
+00:05:25,000 --> 00:05:27,580
+the bad guy comes in and he puts this
+
+134
+00:05:27,580 --> 00:05:32,560
+slash<font color="#CCCCCC"> and he changes the URL and</font><font color="#E5E5E5"> he puts</font>
+
+135
+00:05:32,560 --> 00:05:36,610
+admin info all right<font color="#E5E5E5"> so let's say</font><font color="#CCCCCC"> that</font>
+
+136
+00:05:36,610 --> 00:05:39,729
+admin info is a place<font color="#E5E5E5"> on your web</font>
+
+137
+00:05:39,729 --> 00:05:42,370
+application<font color="#CCCCCC"> that a normal user does not</font>
+
+138
+00:05:42,370 --> 00:05:44,650
+<font color="#CCCCCC">need to</font><font color="#E5E5E5"> get to well if a normal user can</font>
+
+139
+00:05:44,650 --> 00:05:47,440
+<font color="#CCCCCC">access that</font><font color="#E5E5E5"> URL right there</font><font color="#CCCCCC"> then that's</font>
+
+140
+00:05:47,440 --> 00:05:49,270
+<font color="#CCCCCC">a problem that</font><font color="#E5E5E5"> means you've probably had</font>
+
+141
+00:05:49,270 --> 00:05:51,729
+some broken access controls another
+
+142
+00:05:51,729 --> 00:05:55,360
+example let's let's just<font color="#E5E5E5"> do this again</font>
+
+143
+00:05:55,360 --> 00:05:59,919
+<font color="#E5E5E5">what</font><font color="#CCCCCC"> about dot-com and let's say someone</font>
+
+144
+00:05:59,919 --> 00:06:04,240
+tries to<font color="#E5E5E5"> change some query parameters</font><font color="#CCCCCC"> so</font>
+
+145
+00:06:04,240 --> 00:06:06,190
+let's say they<font color="#E5E5E5"> want some they're trying</font>
+
+146
+00:06:06,190 --> 00:06:07,389
+to get<font color="#E5E5E5"> to somebody's account information</font>
+
+147
+00:06:07,389 --> 00:06:11,979
+so let's<font color="#E5E5E5"> say account info all right so</font>
+
+148
+00:06:11,979 --> 00:06:14,530
+they're gonna try<font color="#CCCCCC"> to</font><font color="#E5E5E5"> get there</font><font color="#CCCCCC"> and then</font>
+
+149
+00:06:14,530 --> 00:06:16,960
+they're gonna do a little parameter and
+
+150
+00:06:16,960 --> 00:06:20,229
+then<font color="#E5E5E5"> they'll say account equals and I'll</font>
+
+151
+00:06:20,229 --> 00:06:22,690
+just put<font color="#E5E5E5"> like one two</font><font color="#CCCCCC"> three four</font><font color="#E5E5E5"> all</font>
+
+152
+00:06:22,690 --> 00:06:25,900
+<font color="#E5E5E5">right so if I'm a user and I do not own</font>
+
+153
+00:06:25,900 --> 00:06:27,820
+account one<font color="#E5E5E5"> two three four and I type</font>
+
+154
+00:06:27,820 --> 00:06:29,680
+that<font color="#E5E5E5"> in</font><font color="#CCCCCC"> and I can get to</font><font color="#E5E5E5"> that then</font>
+
+155
+00:06:29,680 --> 00:06:30,970
+<font color="#E5E5E5">that's a</font><font color="#CCCCCC"> problem that</font><font color="#E5E5E5"> means you got some</font>
+
+156
+00:06:30,970 --> 00:06:33,340
+broken access control so those are a
+
+157
+00:06:33,340 --> 00:06:35,800
+couple<font color="#E5E5E5"> of different</font><font color="#CCCCCC"> things that</font><font color="#E5E5E5"> maybe</font>
+
+158
+00:06:35,800 --> 00:06:37,910
+some checks<font color="#CCCCCC"> or some ways that</font>
+
+159
+00:06:37,910 --> 00:06:39,950
+that<font color="#E5E5E5"> that this broken access control</font>
+
+160
+00:06:39,950 --> 00:06:42,050
+would manifest itself<font color="#CCCCCC"> all right so what</font>
+
+161
+00:06:42,050 --> 00:06:44,210
+<font color="#CCCCCC">are some</font><font color="#E5E5E5"> ways</font><font color="#CCCCCC"> to to get around this or</font>
+
+162
+00:06:44,210 --> 00:06:47,780
+to help with this<font color="#CCCCCC"> a few are that you</font>
+
+163
+00:06:47,780 --> 00:06:50,360
+need<font color="#E5E5E5"> to enforce all of this in what I'll</font>
+
+164
+00:06:50,360 --> 00:06:53,510
+call trusted server-side code<font color="#CCCCCC"> all</font><font color="#E5E5E5"> right</font>
+
+165
+00:06:53,510 --> 00:06:56,450
+so do do all<font color="#CCCCCC"> of</font><font color="#E5E5E5"> these checks or the</font>
+
+166
+00:06:56,450 --> 00:06:58,940
+access control features in trusted
+
+167
+00:06:58,940 --> 00:07:01,430
+server-side code<font color="#E5E5E5"> first of all I talked</font>
+
+168
+00:07:01,430 --> 00:07:03,440
+<font color="#E5E5E5">about</font><font color="#CCCCCC"> Dass and SAS tools where those</font>
+
+169
+00:07:03,440 --> 00:07:05,780
+those<font color="#CCCCCC"> are effective tools to use but</font>
+
+170
+00:07:05,780 --> 00:07:07,640
+don't<font color="#E5E5E5"> count on those exclusively for</font>
+
+171
+00:07:07,640 --> 00:07:11,800
+broken<font color="#E5E5E5"> access control</font><font color="#CCCCCC"> you know checks or</font>
+
+172
+00:07:11,800 --> 00:07:15,590
+functionality<font color="#CCCCCC"> another thing</font><font color="#E5E5E5"> that you can</font>
+
+173
+00:07:15,590 --> 00:07:18,890
+do is deny by default<font color="#E5E5E5"> so other</font><font color="#CCCCCC"> than this</font>
+
+174
+00:07:18,890 --> 00:07:20,780
+like normal<font color="#CCCCCC"> user stuff that you want the</font>
+
+175
+00:07:20,780 --> 00:07:23,330
+<font color="#E5E5E5">entire public</font><font color="#CCCCCC"> to see then</font><font color="#E5E5E5"> deny</font>
+
+176
+00:07:23,330 --> 00:07:25,550
+everything<font color="#E5E5E5"> else by default and then only</font>
+
+177
+00:07:25,550 --> 00:07:27,110
+give it out<font color="#CCCCCC"> to who needs who needs to</font>
+
+178
+00:07:27,110 --> 00:07:31,010
+use<font color="#CCCCCC"> it implement these access controls</font>
+
+179
+00:07:31,010 --> 00:07:33,500
+<font color="#E5E5E5">one time and then reuse them so rather</font>
+
+180
+00:07:33,500 --> 00:07:36,050
+than building access<font color="#E5E5E5"> control features</font>
+
+181
+00:07:36,050 --> 00:07:37,760
+and functionality around<font color="#E5E5E5"> save this part</font>
+
+182
+00:07:37,760 --> 00:07:39,140
+of your web application and others
+
+183
+00:07:39,140 --> 00:07:41,030
+<font color="#E5E5E5">around this and others around this build</font>
+
+184
+00:07:41,030 --> 00:07:43,160
+them one time make sure<font color="#CCCCCC"> that they make</font>
+
+185
+00:07:43,160 --> 00:07:44,660
+<font color="#E5E5E5">sense and they're secure in there</font>
+
+186
+00:07:44,660 --> 00:07:47,510
+<font color="#E5E5E5">they're powerful</font><font color="#CCCCCC"> and then reuse</font><font color="#E5E5E5"> those</font>
+
+187
+00:07:47,510 --> 00:07:49,850
+across<font color="#CCCCCC"> the web application so that's</font>
+
+188
+00:07:49,850 --> 00:07:53,710
+that's<font color="#E5E5E5"> another good way to to you know</font>
+
+189
+00:07:53,710 --> 00:07:55,970
+<font color="#E5E5E5">secure yourself against broken access</font>
+
+190
+00:07:55,970 --> 00:07:59,630
+control<font color="#CCCCCC"> another one is log your your</font>
+
+191
+00:07:59,630 --> 00:08:01,730
+failures and alert your admins whenever
+
+192
+00:08:01,730 --> 00:08:03,560
+that happens so<font color="#CCCCCC"> you can shoot off</font><font color="#E5E5E5"> you</font>
+
+193
+00:08:03,560 --> 00:08:05,419
+know<font color="#E5E5E5"> emails or you know different</font>
+
+194
+00:08:05,419 --> 00:08:07,190
+notification warnings to your admins
+
+195
+00:08:07,190 --> 00:08:11,360
+whenever failures are logged<font color="#CCCCCC"> you can</font>
+
+196
+00:08:11,360 --> 00:08:14,600
+also rate limit<font color="#CCCCCC"> access to some of these</font>
+
+197
+00:08:14,600 --> 00:08:16,669
+different features<font color="#E5E5E5"> so let's say an</font>
+
+198
+00:08:16,669 --> 00:08:19,070
+admins try to get in and let's say let's
+
+199
+00:08:19,070 --> 00:08:20,960
+<font color="#CCCCCC">say a bad guy is trying</font><font color="#E5E5E5"> to get into a</font>
+
+200
+00:08:20,960 --> 00:08:22,220
+spot<font color="#CCCCCC"> that they're not trying</font><font color="#E5E5E5"> to get into</font>
+
+201
+00:08:22,220 --> 00:08:23,560
+and it's an automated kind of a tool
+
+202
+00:08:23,560 --> 00:08:26,210
+<font color="#CCCCCC">well if you rate limit the access to</font>
+
+203
+00:08:26,210 --> 00:08:28,160
+that<font color="#CCCCCC"> then you'll minimize your your</font>
+
+204
+00:08:28,160 --> 00:08:31,070
+exposure<font color="#CCCCCC"> and your your problem areas and</font>
+
+205
+00:08:31,070 --> 00:08:33,110
+<font color="#E5E5E5">then the last thing that I would say is</font>
+
+206
+00:08:33,110 --> 00:08:35,450
+this concept<font color="#E5E5E5"> of least privilege</font><font color="#CCCCCC"> least</font>
+
+207
+00:08:35,450 --> 00:08:38,090
+privilege is is the<font color="#E5E5E5"> idea</font><font color="#CCCCCC"> that you're</font>
+
+208
+00:08:38,090 --> 00:08:41,870
+only going<font color="#CCCCCC"> to</font><font color="#E5E5E5"> give someone</font><font color="#CCCCCC"> access to the</font>
+
+209
+00:08:41,870 --> 00:08:43,849
+minimum extent<font color="#E5E5E5"> that they need it</font><font color="#CCCCCC"> to do</font>
+
+210
+00:08:43,849 --> 00:08:45,890
+their job<font color="#CCCCCC"> or to do that function</font><font color="#E5E5E5"> and</font>
+
+211
+00:08:45,890 --> 00:08:47,720
+<font color="#E5E5E5">beyond</font><font color="#CCCCCC"> that you're only going to</font><font color="#E5E5E5"> give</font>
+
+212
+00:08:47,720 --> 00:08:49,910
+them<font color="#E5E5E5"> that access for the minimum amount</font>
+
+213
+00:08:49,910 --> 00:08:51,860
+of<font color="#E5E5E5"> time that they</font><font color="#CCCCCC"> need to</font><font color="#E5E5E5"> do the job</font>
+
+214
+00:08:51,860 --> 00:08:54,500
+so that really<font color="#E5E5E5"> limits the exposure and</font>
+
+215
+00:08:54,500 --> 00:08:56,270
+<font color="#E5E5E5">the problems and</font><font color="#CCCCCC"> all</font><font color="#E5E5E5"> that so you know</font>
+
+216
+00:08:56,270 --> 00:08:59,030
+again if an admin<font color="#E5E5E5"> only needs to do this</font>
+
+217
+00:08:59,030 --> 00:09:01,190
+one thing<font color="#CCCCCC"> or</font><font color="#E5E5E5"> maybe a super user whatever</font>
+
+218
+00:09:01,190 --> 00:09:03,050
+it is<font color="#CCCCCC"> only needs to do this one thing</font>
+
+219
+00:09:03,050 --> 00:09:05,240
+then only<font color="#E5E5E5"> give them minimal</font><font color="#CCCCCC"> access to</font>
+
+220
+00:09:05,240 --> 00:09:06,770
+that one thing for<font color="#E5E5E5"> the minimum amount of</font>
+
+221
+00:09:06,770 --> 00:09:08,780
+<font color="#E5E5E5">time unnecessary</font>
+
+222
+00:09:08,780 --> 00:09:10,940
+so again broken access control the
+
+223
+00:09:10,940 --> 00:09:13,760
+number<font color="#E5E5E5"> five security risk out there on</font>
+
+224
+00:09:13,760 --> 00:09:15,770
+the<font color="#CCCCCC"> Internet today</font><font color="#E5E5E5"> based on the OWASP</font>
+
+225
+00:09:15,770 --> 00:09:17,990
+top 10 list<font color="#CCCCCC"> this is kind of what it is</font>
+
+226
+00:09:17,990 --> 00:09:19,640
+<font color="#E5E5E5">there there are also some other things</font>
+
+227
+00:09:19,640 --> 00:09:22,760
+<font color="#CCCCCC">like web application firewalls</font><font color="#E5E5E5"> that can</font>
+
+228
+00:09:22,760 --> 00:09:24,290
+help<font color="#E5E5E5"> with</font><font color="#CCCCCC"> some of</font><font color="#E5E5E5"> this I won't say it's</font>
+
+229
+00:09:24,290 --> 00:09:25,700
+the end-all be-all but there are some
+
+230
+00:09:25,700 --> 00:09:27,050
+there<font color="#E5E5E5"> are some things that those can</font>
+
+231
+00:09:27,050 --> 00:09:29,870
+help<font color="#E5E5E5"> with as well with regards to</font><font color="#CCCCCC"> to</font>
+
+232
+00:09:29,870 --> 00:09:31,640
+broken access control so thanks for
+
+233
+00:09:31,640 --> 00:09:33,710
+<font color="#E5E5E5">hanging in there today with us learning</font>
+
+234
+00:09:33,710 --> 00:09:35,690
+<font color="#CCCCCC">about broken</font><font color="#E5E5E5"> access broken access</font>
+
+235
+00:09:35,690 --> 00:09:38,570
+control<font color="#E5E5E5"> stay safe out there</font><font color="#CCCCCC"> on the</font>
+
+236
+00:09:38,570 --> 00:09:41,150
+internet if you enjoyed this video make
+
+237
+00:09:41,150 --> 00:09:43,220
+<font color="#CCCCCC">sure you subscribe to</font><font color="#E5E5E5"> our</font><font color="#CCCCCC"> dev</font><font color="#E5E5E5"> Central</font>
+
+238
+00:09:43,220 --> 00:09:45,440
+<font color="#E5E5E5">YouTube channel and we will see</font><font color="#CCCCCC"> you guys</font>
+
+239
+00:09:45,440 --> 00:09:48,400
+out there in<font color="#CCCCCC"> the community</font>
+
+240
+00:09:54,440 --> 00:00:00,000
+you
+

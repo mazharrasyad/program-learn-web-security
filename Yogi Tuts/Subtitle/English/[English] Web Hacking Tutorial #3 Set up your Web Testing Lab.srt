@@ -1,0 +1,172 @@
+1
+00:00:00,000 --> 00:00:03,149
+hi and welcome in<font color="#E5E5E5"> this tutorial I'm</font>
+
+2
+00:00:03,149 --> 00:00:05,190
+going to<font color="#E5E5E5"> show</font><font color="#CCCCCC"> you how</font><font color="#E5E5E5"> to prepare your</font>
+
+3
+00:00:05,190 --> 00:00:08,069
+<font color="#CCCCCC">web testing lab using zamp</font>
+
+4
+00:00:08,069 --> 00:00:11,219
+and all wasp<font color="#E5E5E5"> zamp is a local Apache</font>
+
+5
+00:00:11,219 --> 00:00:14,309
+server which comes along<font color="#E5E5E5"> with PHP my</font>
+
+6
+00:00:14,309 --> 00:00:17,690
+sequel and a bunch of other good<font color="#CCCCCC"> stuff</font>
+
+7
+00:00:17,690 --> 00:00:20,490
+<font color="#E5E5E5">basically allows you to</font><font color="#CCCCCC"> run a web server</font>
+
+8
+00:00:20,490 --> 00:00:24,420
+on<font color="#CCCCCC"> your local</font><font color="#E5E5E5"> machine and</font><font color="#CCCCCC"> os is</font><font color="#E5E5E5"> a free</font>
+
+9
+00:00:24,420 --> 00:00:27,210
+<font color="#CCCCCC">open source vulnerable web application</font>
+
+10
+00:00:27,210 --> 00:00:29,910
+designed for<font color="#E5E5E5"> beginners to learn web</font>
+
+11
+00:00:29,910 --> 00:00:34,800
+application<font color="#CCCCCC"> security and hacking</font><font color="#E5E5E5"> so</font>
+
+12
+00:00:34,800 --> 00:00:36,890
+let's go<font color="#CCCCCC"> ahead</font><font color="#E5E5E5"> and download these</font>
+
+13
+00:00:36,890 --> 00:00:39,980
+applications by going to sourceforge.net
+
+14
+00:00:39,980 --> 00:00:44,160
+<font color="#E5E5E5">and search for exam and click the</font>
+
+15
+00:00:44,160 --> 00:00:48,360
+<font color="#E5E5E5">download button</font><font color="#CCCCCC"> I</font><font color="#E5E5E5"> already downloaded the</font>
+
+16
+00:00:48,360 --> 00:00:51,690
+<font color="#CCCCCC">program so I will</font><font color="#E5E5E5"> skip ahead but don't</font>
+
+17
+00:00:51,690 --> 00:00:53,520
+worry<font color="#E5E5E5"> because the installation is very</font>
+
+18
+00:00:53,520 --> 00:00:56,430
+<font color="#E5E5E5">basic</font><font color="#CCCCCC"> once done with the installation</font>
+
+19
+00:00:56,430 --> 00:01:00,180
+<font color="#CCCCCC">open the program</font><font color="#E5E5E5"> and start Apache web</font>
+
+20
+00:01:00,180 --> 00:01:04,739
+<font color="#E5E5E5">server and my sequel database now you</font>
+
+21
+00:01:04,739 --> 00:01:07,799
+need to go to exam directory<font color="#E5E5E5"> and look</font>
+
+22
+00:01:07,799 --> 00:01:12,200
+for<font color="#CCCCCC"> htdocs directory that's where</font><font color="#E5E5E5"> os web</font>
+
+23
+00:01:12,200 --> 00:01:16,229
+application is going<font color="#CCCCCC"> to be</font><font color="#E5E5E5"> installed to</font>
+
+24
+00:01:16,229 --> 00:01:18,600
+<font color="#E5E5E5">download the vulnerable web application</font>
+
+25
+00:01:18,600 --> 00:01:21,960
+<font color="#E5E5E5">search for OS and select version and</font>
+
+26
+00:01:21,960 --> 00:01:25,830
+then download the<font color="#CCCCCC"> zip file so again I</font>
+
+27
+00:01:25,830 --> 00:01:28,829
+will skip ahead<font color="#E5E5E5"> after</font><font color="#CCCCCC"> the download</font><font color="#E5E5E5"> has</font>
+
+28
+00:01:28,829 --> 00:01:32,220
+<font color="#E5E5E5">finished extract the zip file and copy</font>
+
+29
+00:01:32,220 --> 00:01:36,140
+all the<font color="#CCCCCC"> files to</font><font color="#E5E5E5"> examp</font><font color="#CCCCCC"> htdocs directory</font>
+
+30
+00:01:36,140 --> 00:01:40,110
+<font color="#E5E5E5">now open your browser and go</font><font color="#CCCCCC"> to one</font><font color="#E5E5E5"> to</font>
+
+31
+00:01:40,110 --> 00:01:43,530
+seven zero zero<font color="#E5E5E5"> one you may need to</font>
+
+32
+00:01:43,530 --> 00:01:46,649
+reset the database by clicking reset the
+
+33
+00:01:46,649 --> 00:01:51,540
+DB link<font color="#E5E5E5"> if there is a database error</font><font color="#CCCCCC"> so</font>
+
+34
+00:01:51,540 --> 00:01:53,850
+when you get<font color="#E5E5E5"> into the system</font><font color="#CCCCCC"> there is a</font>
+
+35
+00:01:53,850 --> 00:01:56,490
+<font color="#E5E5E5">menu on the</font><font color="#CCCCCC"> Left where you can see</font>
+
+36
+00:01:56,490 --> 00:02:00,149
+<font color="#CCCCCC">different types of attacks like sequel</font>
+
+37
+00:02:00,149 --> 00:02:03,210
+injection cross-site scripting<font color="#E5E5E5"> and many</font>
+
+38
+00:02:03,210 --> 00:02:06,360
+more<font color="#E5E5E5"> but I will cover these attacks in</font>
+
+39
+00:02:06,360 --> 00:02:09,899
+another tutorial<font color="#CCCCCC"> so that's it for this</font>
+
+40
+00:02:09,899 --> 00:02:13,020
+lecture<font color="#E5E5E5"> thanks for watching and I'll see</font>
+
+41
+00:02:13,020 --> 00:02:13,770
+<font color="#E5E5E5">you</font><font color="#CCCCCC"> next</font>
+
+42
+00:02:13,770 --> 00:02:16,040
+time
+
+43
+00:02:22,480 --> 00:00:00,000
+you
+

@@ -1,0 +1,460 @@
+1
+00:00:09,290 --> 00:00:12,420
+in this<font color="#E5E5E5"> video we are going to look at</font>
+
+2
+00:00:12,420 --> 00:00:14,580
+outline of the course<font color="#CCCCCC"> so the first</font>
+
+3
+00:00:14,580 --> 00:00:17,550
+introduction<font color="#E5E5E5"> of bug bounty platform we</font>
+
+4
+00:00:17,550 --> 00:00:19,770
+<font color="#E5E5E5">will look at the websites which provide</font>
+
+5
+00:00:19,770 --> 00:00:22,050
+bug bounty programs and we will see how
+
+6
+00:00:22,050 --> 00:00:23,939
+you<font color="#CCCCCC"> can</font><font color="#E5E5E5"> start with bug bounty programs</font>
+
+7
+00:00:23,939 --> 00:00:27,449
+<font color="#E5E5E5">then we are going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> set up our lab we</font>
+
+8
+00:00:27,449 --> 00:00:29,760
+will<font color="#E5E5E5"> install our own web application on</font>
+
+9
+00:00:29,760 --> 00:00:32,070
+which we will understand and<font color="#E5E5E5"> learn the</font>
+
+10
+00:00:32,070 --> 00:00:34,920
+security issues then<font color="#E5E5E5"> we will cover</font>
+
+11
+00:00:34,920 --> 00:00:38,040
+<font color="#E5E5E5">topics like local file inclusion remote</font>
+
+12
+00:00:38,040 --> 00:00:40,649
+file inclusion<font color="#E5E5E5"> unrestricted file uploads</font>
+
+13
+00:00:40,649 --> 00:00:44,340
+tab<font color="#E5E5E5"> napping and many more all the topics</font>
+
+14
+00:00:44,340 --> 00:00:46,320
+that we are<font color="#CCCCCC"> going</font><font color="#E5E5E5"> to cover will</font><font color="#CCCCCC"> be</font>
+
+15
+00:00:46,320 --> 00:00:49,649
+explained with demo and<font color="#E5E5E5"> also with</font>
+
+16
+00:00:49,649 --> 00:00:51,780
+<font color="#E5E5E5">real-life reports I'll show you real</font>
+
+17
+00:00:51,780 --> 00:00:54,030
+<font color="#E5E5E5">life reports and the bounties that</font><font color="#CCCCCC"> are</font>
+
+18
+00:00:54,030 --> 00:00:57,690
+rewarded<font color="#E5E5E5"> in return</font><font color="#CCCCCC"> and after the</font>
+
+19
+00:00:57,690 --> 00:01:00,239
+completion of course<font color="#E5E5E5"> I will tell you how</font>
+
+20
+00:01:00,239 --> 00:01:02,219
+will you enhance the topics that<font color="#CCCCCC"> you</font>
+
+21
+00:01:02,219 --> 00:01:04,860
+<font color="#CCCCCC">learned in this course</font><font color="#E5E5E5"> I hope you will</font>
+
+22
+00:01:04,860 --> 00:01:05,760
+<font color="#E5E5E5">enjoy the</font><font color="#CCCCCC"> course</font>
+
+23
+00:01:05,760 --> 00:01:07,890
+<font color="#E5E5E5">hello everyone</font><font color="#CCCCCC"> if you're curious to know</font>
+
+24
+00:01:07,890 --> 00:01:09,479
+<font color="#CCCCCC">what are the security bugs</font><font color="#E5E5E5"> in a web</font>
+
+25
+00:01:09,479 --> 00:01:11,729
+application<font color="#E5E5E5"> and how security researchers</font>
+
+26
+00:01:11,729 --> 00:01:14,159
+<font color="#CCCCCC">/ hackers making money by reporting it</font>
+
+27
+00:01:14,159 --> 00:01:16,140
+<font color="#CCCCCC">to</font><font color="#E5E5E5"> a respective companies then you are</font>
+
+28
+00:01:16,140 --> 00:01:16,750
+at<font color="#E5E5E5"> the right place</font>
+
+29
+00:01:16,750 --> 00:01:25,569
+[Music]
+
+30
+00:01:33,080 --> 00:01:36,060
+this course is all about bug bounty or
+
+31
+00:01:36,060 --> 00:01:37,980
+you can call<font color="#E5E5E5"> it how to earn</font><font color="#CCCCCC"> money</font>
+
+32
+00:01:37,980 --> 00:01:40,470
+through finding security<font color="#E5E5E5"> issues in web</font>
+
+33
+00:01:40,470 --> 00:01:42,690
+application<font color="#E5E5E5"> so the first question</font><font color="#CCCCCC"> is</font>
+
+34
+00:01:42,690 --> 00:01:46,350
+what is bug bounty programs in brief the
+
+35
+00:01:46,350 --> 00:01:48,690
+bug bounty<font color="#E5E5E5"> program are the programs in</font>
+
+36
+00:01:48,690 --> 00:01:51,240
+which companies or organization invites
+
+37
+00:01:51,240 --> 00:01:53,250
+the web application<font color="#E5E5E5"> security researchers</font>
+
+38
+00:01:53,250 --> 00:01:56,250
+or hackers to find the security bugs<font color="#CCCCCC"> /</font>
+
+39
+00:01:56,250 --> 00:01:58,830
+vulnerabilities<font color="#E5E5E5"> or security issues</font><font color="#CCCCCC"> in</font>
+
+40
+00:01:58,830 --> 00:02:00,600
+their web application and when they
+
+41
+00:02:00,600 --> 00:02:02,520
+reported<font color="#CCCCCC"> to the company</font><font color="#E5E5E5"> they completely</font>
+
+42
+00:02:02,520 --> 00:02:05,400
+<font color="#CCCCCC">boards them with some bounty</font><font color="#E5E5E5"> or some</font>
+
+43
+00:02:05,400 --> 00:02:07,590
+other<font color="#E5E5E5"> stuff and that's how both get</font>
+
+44
+00:02:07,590 --> 00:02:10,590
+<font color="#CCCCCC">benefited and there are some examples of</font>
+
+45
+00:02:10,590 --> 00:02:14,190
+rewards like this t-shirt<font color="#CCCCCC"> this t-shirt</font>
+
+46
+00:02:14,190 --> 00:02:16,950
+<font color="#CCCCCC">is given by Beth government in their</font><font color="#E5E5E5"> bug</font>
+
+47
+00:02:16,950 --> 00:02:19,230
+bounty program and it says I<font color="#CCCCCC"> hate</font><font color="#E5E5E5"> the</font>
+
+48
+00:02:19,230 --> 00:02:21,390
+Dutch government<font color="#E5E5E5"> and all I got was this</font>
+
+49
+00:02:21,390 --> 00:02:22,500
+<font color="#CCCCCC">lousy t-shirt</font>
+
+50
+00:02:22,500 --> 00:02:25,260
+another t-shirt<font color="#CCCCCC"> is given by Sony in</font>
+
+51
+00:02:25,260 --> 00:02:26,880
+their bug bounty program which<font color="#E5E5E5"> says</font>
+
+52
+00:02:26,880 --> 00:02:29,459
+<font color="#E5E5E5">secure at Sony and there are many other</font>
+
+53
+00:02:29,459 --> 00:02:32,390
+companies<font color="#E5E5E5"> or organization who</font><font color="#CCCCCC"> gives</font>
+
+54
+00:02:32,390 --> 00:02:36,239
+t-shirts hoodies<font color="#E5E5E5"> etc</font><font color="#CCCCCC"> and their bug</font>
+
+55
+00:02:36,239 --> 00:02:38,370
+bounty programs<font color="#E5E5E5"> the another type</font><font color="#CCCCCC"> of</font>
+
+56
+00:02:38,370 --> 00:02:41,670
+reward is a<font color="#CCCCCC"> Hall of Fame in this type of</font>
+
+57
+00:02:41,670 --> 00:02:44,340
+<font color="#E5E5E5">reward the company have a dedicated web</font>
+
+58
+00:02:44,340 --> 00:02:47,220
+<font color="#E5E5E5">page which shows the faces or profiles</font>
+
+59
+00:02:47,220 --> 00:02:50,370
+of a security<font color="#CCCCCC"> researcher who had them in</font>
+
+60
+00:02:50,370 --> 00:02:53,580
+being<font color="#E5E5E5"> secure the another type is the</font>
+
+61
+00:02:53,580 --> 00:02:55,680
+money if<font color="#E5E5E5"> you do not know what is this</font>
+
+62
+00:02:55,680 --> 00:02:57,360
+this<font color="#E5E5E5"> is the hacker one</font><font color="#CCCCCC"> webpage I will</font>
+
+63
+00:02:57,360 --> 00:02:59,940
+tell you later<font color="#CCCCCC"> what is happy one</font><font color="#E5E5E5"> so you</font>
+
+64
+00:02:59,940 --> 00:03:04,769
+can see here the bounty of $1,120
+
+65
+00:03:04,769 --> 00:03:08,060
+is given<font color="#E5E5E5"> by Twitter calm</font><font color="#CCCCCC"> to this person</font>
+
+66
+00:03:08,060 --> 00:03:10,500
+<font color="#E5E5E5">so this was</font><font color="#CCCCCC"> very little</font><font color="#E5E5E5"> introduction</font>
+
+67
+00:03:10,500 --> 00:03:13,110
+about<font color="#E5E5E5"> the topic bug bounty in the next</font>
+
+68
+00:03:13,110 --> 00:03:15,180
+video we<font color="#CCCCCC"> will see the</font><font color="#E5E5E5"> outline of the</font>
+
+69
+00:03:15,180 --> 00:03:17,519
+course<font color="#E5E5E5"> in this video we will look at the</font>
+
+70
+00:03:17,519 --> 00:03:20,100
+platforms where you<font color="#E5E5E5"> can find bug bounty</font>
+
+71
+00:03:20,100 --> 00:03:23,130
+programs<font color="#E5E5E5"> one of</font><font color="#CCCCCC"> the popular platform is</font>
+
+72
+00:03:23,130 --> 00:03:26,220
+hacker<font color="#CCCCCC"> one or in short</font><font color="#E5E5E5"> edge one as you</font>
+
+73
+00:03:26,220 --> 00:03:28,860
+can<font color="#CCCCCC"> see</font><font color="#E5E5E5"> this is the website where</font><font color="#CCCCCC"> anyone</font>
+
+74
+00:03:28,860 --> 00:03:31,049
+can<font color="#E5E5E5"> create an account</font><font color="#CCCCCC"> and start</font><font color="#E5E5E5"> with bug</font>
+
+75
+00:03:31,049 --> 00:03:34,739
+bounty programs<font color="#E5E5E5"> so as we click on this</font>
+
+76
+00:03:34,739 --> 00:03:36,900
+tab for hackers<font color="#E5E5E5"> and go to</font><font color="#CCCCCC"> program</font>
+
+77
+00:03:36,900 --> 00:03:39,620
+directory<font color="#E5E5E5"> you will see a lot</font><font color="#CCCCCC"> of programs</font>
+
+78
+00:03:39,620 --> 00:03:43,080
+as you<font color="#CCCCCC"> can see here they are also big</font>
+
+79
+00:03:43,080 --> 00:03:44,610
+<font color="#E5E5E5">companies programs</font>
+
+80
+00:03:44,610 --> 00:03:48,480
+minimum bounties<font color="#E5E5E5"> also</font><font color="#CCCCCC"> mentioned there</font>
+
+81
+00:03:48,480 --> 00:03:49,950
+are<font color="#E5E5E5"> also some programs which do not</font>
+
+82
+00:03:49,950 --> 00:03:53,220
+<font color="#CCCCCC">provide bounty but gives point in return</font>
+
+83
+00:03:53,220 --> 00:03:55,950
+<font color="#CCCCCC">and points are beneficial in hacker one</font>
+
+84
+00:03:55,950 --> 00:03:59,670
+so here is aa who uber Twitter Adobe
+
+85
+00:03:59,670 --> 00:04:02,340
+<font color="#E5E5E5">let's click on one of the program and</font>
+
+86
+00:04:02,340 --> 00:04:06,990
+see<font color="#CCCCCC"> what our policies so here is Yahoo</font>
+
+87
+00:04:06,990 --> 00:04:09,540
+bug bounty program and you can<font color="#CCCCCC"> see</font>
+
+88
+00:04:09,540 --> 00:04:12,870
+policy are mentioned here<font color="#CCCCCC"> and there is a</font>
+
+89
+00:04:12,870 --> 00:04:16,320
+lot<font color="#CCCCCC"> of things in policy the first</font><font color="#E5E5E5"> thing</font>
+
+90
+00:04:16,320 --> 00:04:18,480
+is<font color="#E5E5E5"> Yahoo bug bounty program rules</font><font color="#CCCCCC"> then</font>
+
+91
+00:04:18,480 --> 00:04:21,329
+reporting rules<font color="#E5E5E5"> that in scope domains</font>
+
+92
+00:04:21,329 --> 00:04:23,460
+and properties<font color="#E5E5E5"> this means what are</font><font color="#CCCCCC"> the</font>
+
+93
+00:04:23,460 --> 00:04:26,430
+<font color="#E5E5E5">domains that</font><font color="#CCCCCC"> are</font><font color="#E5E5E5"> in scope and here out</font>
+
+94
+00:04:26,430 --> 00:04:28,590
+<font color="#E5E5E5">of scope domains that means what are the</font>
+
+95
+00:04:28,590 --> 00:04:30,750
+<font color="#CCCCCC">scope that</font><font color="#E5E5E5"> are not eligible for bounty</font>
+
+96
+00:04:30,750 --> 00:04:33,540
+or that are not eligible for<font color="#E5E5E5"> even</font>
+
+97
+00:04:33,540 --> 00:04:36,180
+testing you<font color="#CCCCCC"> can also see findings not</font>
+
+98
+00:04:36,180 --> 00:04:38,520
+eligible for bounty<font color="#E5E5E5"> this means these</font>
+
+99
+00:04:38,520 --> 00:04:40,770
+<font color="#CCCCCC">mentioned bugs are not eligible for</font>
+
+100
+00:04:40,770 --> 00:04:43,080
+<font color="#E5E5E5">bounty if you report them they will not</font>
+
+101
+00:04:43,080 --> 00:04:45,560
+<font color="#E5E5E5">give you bounty and there are also</font>
+
+102
+00:04:45,560 --> 00:04:49,830
+rewards<font color="#E5E5E5"> and legal the thing is you have</font>
+
+103
+00:04:49,830 --> 00:04:52,620
+<font color="#CCCCCC">to read</font><font color="#E5E5E5"> this policy before starting your</font>
+
+104
+00:04:52,620 --> 00:04:55,350
+quest for<font color="#E5E5E5"> bugs</font><font color="#CCCCCC"> you should read this</font>
+
+105
+00:04:55,350 --> 00:04:58,410
+policy for every<font color="#CCCCCC"> bug bounty program that</font>
+
+106
+00:04:58,410 --> 00:05:02,760
+you are<font color="#E5E5E5"> going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> participate in the</font>
+
+107
+00:05:02,760 --> 00:05:04,919
+another famous<font color="#E5E5E5"> platform is buck</font><font color="#CCCCCC"> trout</font>
+
+108
+00:05:04,919 --> 00:05:07,770
+you<font color="#CCCCCC"> can explore it by yourself</font><font color="#E5E5E5"> and you</font>
+
+109
+00:05:07,770 --> 00:05:10,290
+can also create an<font color="#CCCCCC"> account on this and</font>
+
+110
+00:05:10,290 --> 00:05:12,540
+you can<font color="#CCCCCC"> also use</font><font color="#E5E5E5"> Google</font><font color="#CCCCCC"> search to find</font>
+
+111
+00:05:12,540 --> 00:05:15,300
+some isolated<font color="#E5E5E5"> bug bounty programs</font><font color="#CCCCCC"> too so</font>
+
+112
+00:05:15,300 --> 00:05:17,580
+this was a very short<font color="#E5E5E5"> intro about bug</font>
+
+113
+00:05:17,580 --> 00:05:19,740
+bounty platforms thank you and have a
+
+114
+00:05:19,740 --> 00:05:20,620
+nice day
+
+115
+00:05:20,620 --> 00:00:00,000
+[Music]
+

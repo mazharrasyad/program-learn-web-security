@@ -1,0 +1,460 @@
+1
+00:00:09,290 --> 00:00:12,420
+ dalam <font color="#E5E5E5">video ini kita akan melihat </font>
+
+2
+00:00:12,420 --> 00:00:14,580
+ garis besar tentu saja <font color="#CCCCCC">jadi yang pertama </font>
+
+3
+00:00:14,580 --> 00:00:17,550
+ pengenalan <font color="#E5E5E5">bug bounty platform kami </font>
+
+4
+00:00:17,550 --> 00:00:19,770
+ <font color="#E5E5E5">akan melihat situs web yang menyediakan </font>
+
+5
+00:00:19,770 --> 00:00:22,050
+ program karunia bug dan kita akan melihat caranya 
+
+6
+00:00:22,050 --> 00:00:23,939
+ Anda <font color="#CCCCCC">dapat </font><font color="#E5E5E5">mulai dengan program karunia bug </font>
+
+7
+00:00:23,939 --> 00:00:27,449
+ <font color="#E5E5E5">maka kita </font><font color="#CCCCCC">akan </font><font color="#E5E5E5">mendirikan laboratorium kami kami </font>
+
+8
+00:00:27,449 --> 00:00:29,760
+ akan <font color="#E5E5E5">menginstal aplikasi web kita sendiri </font>
+
+9
+00:00:29,760 --> 00:00:32,070
+ yang akan kita pahami dan <font color="#E5E5E5">pelajari </font>
+
+10
+00:00:32,070 --> 00:00:34,920
+ masalah keamanan maka <font color="#E5E5E5">kita akan membahas </font>
+
+11
+00:00:34,920 --> 00:00:38,040
+ <font color="#E5E5E5">topik seperti file jarak jauh inklusi lokal </font>
+
+12
+00:00:38,040 --> 00:00:40,649
+ file inklusi <font color="#E5E5E5">upload file tidak terbatas </font>
+
+13
+00:00:40,649 --> 00:00:44,340
+ <font color="#E5E5E5">tidur siang dan banyak lagi semua topik </font>
+
+14
+00:00:44,340 --> 00:00:46,320
+ bahwa kita <font color="#CCCCCC">akan</font><font color="#E5E5E5"> menutupi </font><font color="#CCCCCC">akan </font>
+
+15
+00:00:46,320 --> 00:00:49,649
+ dijelaskan dengan demo dan <font color="#E5E5E5">juga dengan </font>
+
+16
+00:00:49,649 --> 00:00:51,780
+ <font color="#E5E5E5">laporan kehidupan nyata yang akan saya tunjukkan kepada Anda nyata </font>
+
+17
+00:00:51,780 --> 00:00:54,030
+ <font color="#E5E5E5">laporan kehidupan dan karunia yang </font><font color="#CCCCCC">ada </font>
+
+18
+00:00:54,030 --> 00:00:57,690
+ dihargai <font color="#E5E5E5">sebagai imbalan </font><font color="#CCCCCC">dan setelah </font>
+
+19
+00:00:57,690 --> 00:01:00,239
+ penyelesaian tentu saja <font color="#E5E5E5">saya akan memberi tahu Anda bagaimana </font>
+
+20
+00:01:00,239 --> 00:01:02,219
+ apakah Anda akan meningkatkan topik yang <font color="#CCCCCC">Anda </font>
+
+21
+00:01:02,219 --> 00:01:04,860
+ <font color="#CCCCCC">pelajari dalam kursus ini </font><font color="#E5E5E5">saya harap Anda akan melakukannya </font>
+
+22
+00:01:04,860 --> 00:01:05,760
+ <font color="#E5E5E5">nikmati </font><font color="#CCCCCC">saja </font>
+
+23
+00:01:05,760 --> 00:01:07,890
+ <font color="#E5E5E5">Halo semuanya </font><font color="#CCCCCC">jika kamu penasaran ingin tahu </font>
+
+24
+00:01:07,890 --> 00:01:09,479
+ <font color="#CCCCCC">apa saja bug keamanan </font><font color="#E5E5E5">di web </font>
+
+25
+00:01:09,479 --> 00:01:11,729
+ aplikasi <font color="#E5E5E5">dan bagaimana peneliti keamanan </font>
+
+26
+00:01:11,729 --> 00:01:14,159
+ <font color="#CCCCCC">/ peretas menghasilkan uang dengan melaporkannya </font>
+
+27
+00:01:14,159 --> 00:01:16,140
+ <font color="#CCCCCC">ke </font><font color="#E5E5E5">masing-masing perusahaan, maka Anda </font>
+
+28
+00:01:16,140 --> 00:01:16,750
+ di <font color="#E5E5E5">tempat yang tepat </font>
+
+29
+00:01:16,750 --> 00:01:25,569
+ [Musik] 
+
+30
+00:01:33,080 --> 00:01:36,060
+ kursus ini adalah semua tentang karunia bug atau 
+
+31
+00:01:36,060 --> 00:01:37,980
+ Anda bisa menyebutnya <font color="#E5E5E5">sebagai cara menghasilkan </font><font color="#CCCCCC">uang </font>
+
+32
+00:01:37,980 --> 00:01:40,470
+ melalui menemukan <font color="#E5E5E5">masalah keamanan di web </font>
+
+33
+00:01:40,470 --> 00:01:42,690
+ aplikasi <font color="#E5E5E5">jadi pertanyaan pertama </font><font color="#CCCCCC">adalah </font>
+
+34
+00:01:42,690 --> 00:01:46,350
+ apa program karunia bug secara singkat 
+
+35
+00:01:46,350 --> 00:01:48,690
+ <font color="#E5E5E5">program bounty bug adalah program di </font>
+
+36
+00:01:48,690 --> 00:01:51,240
+ yang mengundang perusahaan atau organisasi 
+
+37
+00:01:51,240 --> 00:01:53,250
+ <font color="#E5E5E5">peneliti keamanan aplikasi web </font>
+
+38
+00:01:53,250 --> 00:01:56,250
+ atau peretas untuk menemukan bug keamanan <font color="#CCCCCC">/ </font>
+
+39
+00:01:56,250 --> 00:01:58,830
+ kerentanan <font color="#E5E5E5">atau masalah keamanan </font><font color="#CCCCCC">di </font>
+
+40
+00:01:58,830 --> 00:02:00,600
+ aplikasi web mereka dan kapan mereka 
+
+41
+00:02:00,600 --> 00:02:02,520
+ dilaporkan <font color="#CCCCCC">ke perusahaan </font><font color="#E5E5E5">mereka sepenuhnya </font>
+
+42
+00:02:02,520 --> 00:02:05,400
+ <font color="#CCCCCC">papan mereka dengan beberapa karunia </font><font color="#E5E5E5">atau </font>
+
+43
+00:02:05,400 --> 00:02:07,590
+ <font color="#E5E5E5">hal - hal lain dan itulah bagaimana keduanya </font>
+
+44
+00:02:07,590 --> 00:02:10,590
+ <font color="#CCCCCC">diuntungkan dan ada beberapa contoh </font>
+
+45
+00:02:10,590 --> 00:02:14,190
+ hadiah seperti kaos <font color="#CCCCCC">ini kaos ini </font>
+
+46
+00:02:14,190 --> 00:02:16,950
+ <font color="#CCCCCC">diberikan oleh pemerintah Beth di </font><font color="#E5E5E5">bug </font><font color="#CCCCCC">mereka </font>
+
+47
+00:02:16,950 --> 00:02:19,230
+ Bounty Program dan mengatakan aku <font color="#E5E5E5">benci </font>
+
+48
+00:02:19,230 --> 00:02:21,390
+ Pemerintah Belanda <font color="#E5E5E5">dan yang saya dapatkan adalah ini </font>
+
+49
+00:02:21,390 --> 00:02:22,500
+ <font color="#CCCCCC">kaos buruk </font>
+
+50
+00:02:22,500 --> 00:02:25,260
+ kaos lain <font color="#CCCCCC">diberikan oleh Sony di </font>
+
+51
+00:02:25,260 --> 00:02:26,880
+ program karunia bug mereka yang <font color="#E5E5E5">mengatakan </font>
+
+52
+00:02:26,880 --> 00:02:29,459
+ <font color="#E5E5E5">aman di Sony dan ada banyak lainnya </font>
+
+53
+00:02:29,459 --> 00:02:32,390
+ perusahaan <font color="#E5E5E5">atau organisasi yang </font><font color="#CCCCCC">memberi </font>
+
+54
+00:02:32,390 --> 00:02:36,239
+ t-shirt hoodies <font color="#E5E5E5">dll </font><font color="#CCCCCC">dan bug mereka </font>
+
+55
+00:02:36,239 --> 00:02:38,370
+ program bounty <font color="#E5E5E5">jenis lain </font><font color="#CCCCCC">dari </font>
+
+56
+00:02:38,370 --> 00:02:41,670
+ hadiah adalah <font color="#CCCCCC">Hall of Fame dalam jenis ini </font>
+
+57
+00:02:41,670 --> 00:02:44,340
+ <font color="#E5E5E5">hadiah perusahaan memiliki web khusus </font>
+
+58
+00:02:44,340 --> 00:02:47,220
+ <font color="#E5E5E5">halaman yang menunjukkan wajah atau profil </font>
+
+59
+00:02:47,220 --> 00:02:50,370
+ seorang <font color="#CCCCCC">peneliti keamanan yang memilikinya </font>
+
+60
+00:02:50,370 --> 00:02:53,580
+ <font color="#E5E5E5">aman jenis lain adalah </font>
+
+61
+00:02:53,580 --> 00:02:55,680
+ uang jika <font color="#E5E5E5">Anda tidak tahu apa ini </font>
+
+62
+00:02:55,680 --> 00:02:57,360
+ ini <font color="#E5E5E5">adalah peretas satu </font><font color="#CCCCCC">halaman web saya akan </font>
+
+63
+00:02:57,360 --> 00:02:59,940
+ memberitahu nanti <font color="#CCCCCC">apa yang bahagia </font><font color="#E5E5E5">sehingga Anda </font>
+
+64
+00:02:59,940 --> 00:03:04,769
+ bisa lihat di sini karunia $ 1.120 
+
+65
+00:03:04,769 --> 00:03:08,060
+ diberikan <font color="#E5E5E5">oleh Twitter tenang </font><font color="#CCCCCC">untuk orang ini </font>
+
+66
+00:03:08,060 --> 00:03:10,500
+ <font color="#E5E5E5">jadi ini </font><font color="#CCCCCC">sedikit </font><font color="#E5E5E5">perkenalan </font>
+
+67
+00:03:10,500 --> 00:03:13,110
+ tentang <font color="#E5E5E5">karunia bug topik di berikutnya </font>
+
+68
+00:03:13,110 --> 00:03:15,180
+ video kita <font color="#CCCCCC">akan melihat </font><font color="#E5E5E5">garis besar </font>
+
+69
+00:03:15,180 --> 00:03:17,519
+ Tentu saja <font color="#E5E5E5">dalam video ini kita akan melihat </font>
+
+70
+00:03:17,519 --> 00:03:20,100
+ platform di mana Anda <font color="#E5E5E5">dapat menemukan karunia bug </font>
+
+71
+00:03:20,100 --> 00:03:23,130
+ program <font color="#E5E5E5">salah satu </font><font color="#CCCCCC">platform populer </font>
+
+72
+00:03:23,130 --> 00:03:26,220
+ peretas <font color="#CCCCCC">satu atau pendek-pendek </font><font color="#E5E5E5">satu seperti Anda </font>
+
+73
+00:03:26,220 --> 00:03:28,860
+ dapat <font color="#CCCCCC">melihat </font><font color="#E5E5E5">ini adalah situs web di mana </font><font color="#CCCCCC">siapa pun </font>
+
+74
+00:03:28,860 --> 00:03:31,049
+ dapat <font color="#E5E5E5">membuat akun </font><font color="#CCCCCC">dan memulai </font><font color="#E5E5E5">dengan bug </font>
+
+75
+00:03:31,049 --> 00:03:34,739
+ program bounty <font color="#E5E5E5">sehingga kita klik ini </font>
+
+76
+00:03:34,739 --> 00:03:36,900
+ tab untuk peretas <font color="#E5E5E5">dan pergi ke </font><font color="#CCCCCC">program </font>
+
+77
+00:03:36,900 --> 00:03:39,620
+ direktori <font color="#E5E5E5">Anda akan melihat banyak </font><font color="#CCCCCC">program </font>
+
+78
+00:03:39,620 --> 00:03:43,080
+ seperti yang Anda <font color="#CCCCCC">lihat di sini, mereka juga besar </font>
+
+79
+00:03:43,080 --> 00:03:44,610
+ <font color="#E5E5E5">program perusahaan </font>
+
+80
+00:03:44,610 --> 00:03:48,480
+ karunia minimum <font color="#E5E5E5">juga </font><font color="#CCCCCC">disebutkan di sana </font>
+
+81
+00:03:48,480 --> 00:03:49,950
+ <font color="#E5E5E5">juga beberapa program yang tidak </font>
+
+82
+00:03:49,950 --> 00:03:53,220
+ <font color="#CCCCCC">berikan bounty tetapi berikan point sebagai imbalannya </font>
+
+83
+00:03:53,220 --> 00:03:55,950
+ <font color="#CCCCCC">dan poin bermanfaat dalam peretas </font>
+
+84
+00:03:55,950 --> 00:03:59,670
+ jadi di sini adalah aa yang uber Twitter Adobe 
+
+85
+00:03:59,670 --> 00:04:02,340
+ <font color="#E5E5E5">mari kita klik salah satu program dan </font>
+
+86
+00:04:02,340 --> 00:04:06,990
+ lihat <font color="#CCCCCC">apa kebijakan kami jadi di sini adalah Yahoo </font>
+
+87
+00:04:06,990 --> 00:04:09,540
+ program karunia bug dan Anda dapat <font color="#CCCCCC">melihat </font>
+
+88
+00:04:09,540 --> 00:04:12,870
+ kebijakan disebutkan di sini <font color="#CCCCCC">dan di sana adalah a </font>
+
+89
+00:04:12,870 --> 00:04:16,320
+ banyak <font color="#CCCCCC">hal dalam kebijakan </font><font color="#E5E5E5">hal </font><font color="#CCCCCC">pertama </font>
+
+90
+00:04:16,320 --> 00:04:18,480
+ adalah <font color="#E5E5E5">aturan program karunia bug Yahoo </font><font color="#CCCCCC">kemudian </font>
+
+91
+00:04:18,480 --> 00:04:21,329
+ aturan pelaporan <font color="#E5E5E5">yang dalam domain lingkup </font>
+
+92
+00:04:21,329 --> 00:04:23,460
+ dan properti <font color="#E5E5E5">ini berarti apa </font><font color="#CCCCCC">saja </font>
+
+93
+00:04:23,460 --> 00:04:26,430
+ <font color="#E5E5E5">domain yang </font><font color="#CCCCCC">berada </font><font color="#E5E5E5">di lingkup dan di sini keluar </font>
+
+94
+00:04:26,430 --> 00:04:28,590
+ <font color="#E5E5E5">domain lingkup itu artinya apa itu </font>
+
+95
+00:04:28,590 --> 00:04:30,750
+ <font color="#CCCCCC">ruang lingkup yang </font><font color="#E5E5E5">tidak memenuhi syarat untuk karunia </font>
+
+96
+00:04:30,750 --> 00:04:33,540
+ atau yang tidak memenuhi syarat untuk <font color="#E5E5E5">bahkan </font>
+
+97
+00:04:33,540 --> 00:04:36,180
+ pengujian Anda <font color="#CCCCCC">juga bisa melihat temuan tidak </font>
+
+98
+00:04:36,180 --> 00:04:38,520
+ memenuhi syarat untuk karunia <font color="#E5E5E5">ini berarti ini </font>
+
+99
+00:04:38,520 --> 00:04:40,770
+ <font color="#CCCCCC">bug yang disebutkan tidak memenuhi syarat untuk itu </font>
+
+100
+00:04:40,770 --> 00:04:43,080
+ <font color="#E5E5E5">karunia jika Anda melaporkannya mereka tidak akan </font>
+
+101
+00:04:43,080 --> 00:04:45,560
+ <font color="#E5E5E5">memberi Anda karunia dan ada juga </font>
+
+102
+00:04:45,560 --> 00:04:49,830
+ pahala <font color="#E5E5E5">dan hukum hal yang Anda miliki </font>
+
+103
+00:04:49,830 --> 00:04:52,620
+ <font color="#CCCCCC">untuk membaca </font><font color="#E5E5E5">kebijakan ini sebelum memulai </font>
+
+104
+00:04:52,620 --> 00:04:55,350
+ mencari <font color="#E5E5E5">bug </font><font color="#CCCCCC">Anda harus membaca ini </font>
+
+105
+00:04:55,350 --> 00:04:58,410
+ kebijakan untuk setiap <font color="#CCCCCC">program karunia bug itu </font>
+
+106
+00:04:58,410 --> 00:05:02,760
+ Anda <font color="#CCCCCC">akan </font><font color="#E5E5E5">berpartisipasi dalam </font>
+
+107
+00:05:02,760 --> 00:05:04,919
+ <font color="#E5E5E5">Platform lain yang terkenal adalah </font><font color="#CCCCCC">trout </font><font color="#E5E5E5">buck </font>
+
+108
+00:05:04,919 --> 00:05:07,770
+ Anda <font color="#CCCCCC">dapat menjelajahinya sendiri </font><font color="#E5E5E5">dan Anda </font>
+
+109
+00:05:07,770 --> 00:05:10,290
+ bisa juga membuat <font color="#CCCCCC">akun di ini dan </font>
+
+110
+00:05:10,290 --> 00:05:12,540
+ Anda <font color="#CCCCCC">juga dapat menggunakan pencarian </font><font color="#E5E5E5">Google </font><font color="#CCCCCC">untuk menemukan </font>
+
+111
+00:05:12,540 --> 00:05:15,300
+ beberapa <font color="#E5E5E5">program karunia bug yang terisolasi </font><font color="#CCCCCC">juga begitu </font>
+
+112
+00:05:15,300 --> 00:05:17,580
+ ini adalah <font color="#E5E5E5">intro yang sangat singkat tentang bug </font>
+
+113
+00:05:17,580 --> 00:05:19,740
+ platform bounty terima kasih dan punya 
+
+114
+00:05:19,740 --> 00:05:20,620
+ hari yang baik 
+
+115
+00:05:20,620 --> 00:00:00,000
+ [Musik] 
+

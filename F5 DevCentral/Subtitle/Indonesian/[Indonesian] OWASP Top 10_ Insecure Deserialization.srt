@@ -1,0 +1,816 @@
+1
+00:00:08,450 --> 00:00:10,620
+ hey semua orang <font color="#E5E5E5">john wagon di sini </font>
+
+2
+00:00:10,620 --> 00:00:11,849
+ <font color="#CCCCCC">tuli pusat kami datang kepada Anda dengan </font>
+
+3
+00:00:11,849 --> 00:00:14,070
+ <font color="#E5E5E5">video pelajaran papan cahaya lain hari ini </font>
+
+4
+00:00:14,070 --> 00:00:15,809
+ kita <font color="#E5E5E5">akan berada di </font><font color="#CCCCCC">sepuluh </font><font color="#E5E5E5">tawon lama </font>
+
+5
+00:00:15,809 --> 00:00:18,480
+ <font color="#CCCCCC">lagi </font><font color="#E5E5E5">hari ini adalah angka delapan dari </font>
+
+6
+00:00:18,480 --> 00:00:22,500
+ <font color="#E5E5E5">sepuluh resiko keamanan pada daftar OWASP </font><font color="#CCCCCC">yang </font>
+
+7
+00:00:22,500 --> 00:00:25,550
+ nama <font color="#E5E5E5">risiko ini tidak aman </font>
+
+8
+00:00:25,550 --> 00:00:27,359
+ <font color="#E5E5E5">deserialisasi </font>
+
+9
+00:00:27,359 --> 00:00:30,029
+ <font color="#E5E5E5">dan ini baru untuk sepuluh besar sebenarnya </font>
+
+10
+00:00:30,029 --> 00:00:32,130
+ <font color="#CCCCCC">tahun </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">itu bukan pada </font><font color="#E5E5E5">yang terakhir atas </font><font color="#CCCCCC">10 </font>
+
+11
+00:00:32,130 --> 00:00:34,980
+ daftar <font color="#CCCCCC">terutama sebagian karena </font><font color="#E5E5E5">sangat sulit </font>
+
+12
+00:00:34,980 --> 00:00:36,600
+ <font color="#E5E5E5">untuk mengatakan tidak, </font><font color="#CCCCCC">saya </font><font color="#E5E5E5">tidak berpikir itu </font><font color="#CCCCCC">sebenarnya </font>
+
+13
+00:00:36,600 --> 00:00:38,730
+ benar <font color="#E5E5E5">tapi tetap </font><font color="#CCCCCC">tapi mungkin itu </font>
+
+14
+00:00:38,730 --> 00:00:41,160
+ mengambil <font color="#E5E5E5">penghargaan untuk keamanan yang paling sulit </font>
+
+15
+00:00:41,160 --> 00:00:42,809
+ risiko untuk <font color="#E5E5E5">mengatakan saya itu di atas </font><font color="#CCCCCC">10 besar </font>
+
+16
+00:00:42,809 --> 00:00:43,230
+ daftar 
+
+17
+00:00:43,230 --> 00:00:46,890
+ toh <font color="#E5E5E5">deserialisasi terlalu tidak aman </font>
+
+18
+00:00:46,890 --> 00:00:48,840
+ Anda <font color="#CCCCCC">mungkin </font><font color="#E5E5E5">bertanya apa yang ketidakamanan </font>
+
+19
+00:00:48,840 --> 00:00:51,270
+ deserialization <font color="#CCCCCC">dan saya kira bicara </font>
+
+20
+00:00:51,270 --> 00:00:53,250
+ tentang <font color="#E5E5E5">itu kita perlu </font><font color="#CCCCCC">mencadangkan dan </font><font color="#E5E5E5">berbicara </font>
+
+21
+00:00:53,250 --> 00:00:55,680
+ tentang <font color="#E5E5E5">konsep serialisasi dan </font>
+
+22
+00:00:55,680 --> 00:00:58,859
+ dalam aplikasi web <font color="#CCCCCC">Anda akan memiliki </font>
+
+23
+00:00:58,859 --> 00:01:00,539
+ <font color="#CCCCCC">keberatan </font><font color="#E5E5E5">jadi aku hanya akan menulis </font><font color="#CCCCCC">pasangan </font>
+
+24
+00:01:00,539 --> 00:01:03,210
+ <font color="#E5E5E5">hal di sini </font><font color="#CCCCCC">sehingga Anda akan memiliki objek </font><font color="#E5E5E5">keluar </font>
+
+25
+00:01:03,210 --> 00:01:06,570
+ di sini mungkin <font color="#E5E5E5">Anda memiliki seperti yang Anda </font><font color="#CCCCCC">miliki seperti </font>
+
+26
+00:01:06,570 --> 00:01:11,580
+ PHP <font color="#CCCCCC">Anda tahu situs atau forum PHP </font><font color="#E5E5E5">itu </font>
+
+27
+00:01:11,580 --> 00:01:12,720
+ Anda <font color="#CCCCCC">yang ingin Anda </font><font color="#E5E5E5">host dan Anda miliki </font>
+
+28
+00:01:12,720 --> 00:01:15,090
+ objek ini dan kemudian Anda <font color="#E5E5E5">inginkan dan kemudian </font>
+
+29
+00:01:15,090 --> 00:01:18,150
+ Anda harus <font color="#E5E5E5">mengirimnya </font><font color="#CCCCCC">melalui jaringan ke </font>
+
+30
+00:01:18,150 --> 00:01:20,100
+ tempat lain atau apa pun <font color="#E5E5E5">mungkin </font><font color="#CCCCCC">perlu </font>
+
+31
+00:01:20,100 --> 00:01:22,560
+ menyimpannya dalam <font color="#E5E5E5">database atau menyimpannya di </font>
+
+32
+00:01:22,560 --> 00:01:25,830
+ <font color="#E5E5E5">memori atau hal semacam itu </font><font color="#CCCCCC">yang </font>
+
+33
+00:01:25,830 --> 00:01:28,619
+ konsep <font color="#E5E5E5">serialisasi mengambil </font>
+
+34
+00:01:28,619 --> 00:01:31,140
+ <font color="#CCCCCC">objek dan mentransfer atau memutarnya </font>
+
+35
+00:01:31,140 --> 00:01:36,380
+ <font color="#E5E5E5">ke dalam apa yang saya sebut aliran byte atau </font>
+
+36
+00:01:36,380 --> 00:01:42,210
+ streaming atau aliran byte <font color="#CCCCCC">sehingga </font>
+
+37
+00:01:42,210 --> 00:01:44,670
+ bisa dalam <font color="#E5E5E5">format yang tepat </font><font color="#CCCCCC">untuk </font>
+
+38
+00:01:44,670 --> 00:01:49,170
+ melintasi hal-hal seperti <font color="#CCCCCC">jaringan HTTP atau </font>
+
+39
+00:01:49,170 --> 00:01:51,329
+ sehingga <font color="#E5E5E5">dapat disimpan dalam basis data </font>
+
+40
+00:01:51,329 --> 00:01:53,909
+ atau mungkin menyimpan memori <font color="#E5E5E5">semacam itu </font>
+
+41
+00:01:53,909 --> 00:01:55,860
+ Hal beberapa <font color="#E5E5E5">alasan </font><font color="#CCCCCC">yang Anda lakukan </font>
+
+42
+00:01:55,860 --> 00:01:58,590
+ <font color="#CCCCCC">menggunakan serialisasi karena Anda bisa </font>
+
+43
+00:01:58,590 --> 00:02:01,530
+ simpan atau tahan keadaan <font color="#CCCCCC">objek </font>
+
+44
+00:02:01,530 --> 00:02:03,689
+ <font color="#CCCCCC">sehingga setiap kali Anda kirimkan </font><font color="#E5E5E5">melintasi </font>
+
+45
+00:02:03,689 --> 00:02:05,369
+ kawat maka Anda tahu maka ini <font color="#E5E5E5">maka </font>
+
+46
+00:02:05,369 --> 00:02:07,039
+ keadaan kegigihan masih ada 
+
+47
+00:02:07,039 --> 00:02:09,628
+ <font color="#CCCCCC">jadi ketika Anda </font><font color="#E5E5E5">saat mengambil objek dan </font>
+
+48
+00:02:09,628 --> 00:02:11,489
+ <font color="#CCCCCC">Anda mengubahnya </font><font color="#E5E5E5">menjadi aliran byte atau </font>
+
+49
+00:02:11,489 --> 00:02:13,130
+ ke dalam <font color="#E5E5E5">format stream byte </font>
+
+50
+00:02:13,130 --> 00:02:14,330
+ maka itu adalah <font color="#CCCCCC">proses </font>
+
+51
+00:02:14,330 --> 00:02:16,940
+ <font color="#E5E5E5">serialisasi jadi seperti kebanyakan </font>
+
+52
+00:02:16,940 --> 00:02:19,250
+ <font color="#CCCCCC">jaringan hal-hal setiap kali Anda melakukannya </font>
+
+53
+00:02:19,250 --> 00:02:21,950
+ <font color="#CCCCCC">sesuatu yang salah dan kemudian </font><font color="#E5E5E5">Anda kirimkan </font>
+
+54
+00:02:21,950 --> 00:02:23,660
+ dan <font color="#E5E5E5">orang yang menerimanya </font><font color="#CCCCCC">adalah </font>
+
+55
+00:02:23,660 --> 00:02:25,130
+ <font color="#E5E5E5">akan harus membatalkan itu dan begitu </font>
+
+56
+00:02:25,130 --> 00:02:27,050
+ Hal yang sama <font color="#CCCCCC">berlaku di sini jadi ketika </font><font color="#E5E5E5">Anda mengambilnya </font>
+
+57
+00:02:27,050 --> 00:02:28,790
+ aliran <font color="#CCCCCC">bye ke aliran byte dan </font>
+
+58
+00:02:28,790 --> 00:02:31,700
+ maka Anda mengubahnya <font color="#CCCCCC">kembali </font><font color="#E5E5E5">menjadi itu </font>
+
+59
+00:02:31,700 --> 00:02:35,630
+ <font color="#CCCCCC">objek yang </font><font color="#E5E5E5">sama dari </font><font color="#CCCCCC">yang mengubahnya </font>
+
+60
+00:02:35,630 --> 00:02:37,520
+ <font color="#E5E5E5">perawatan </font><font color="#CCCCCC">sepeda </font><font color="#E5E5E5">kembali ke </font><font color="#CCCCCC">objek adalah </font>
+
+61
+00:02:37,520 --> 00:02:38,980
+ <font color="#CCCCCC">deserialisasi </font>
+
+62
+00:02:38,980 --> 00:02:42,910
+ <font color="#E5E5E5">banyak banyak bahasa pemrograman saat ini </font>
+
+63
+00:02:42,910 --> 00:02:45,680
+ <font color="#CCCCCC">memanfaatkan ini atau </font><font color="#E5E5E5">memiliki kemampuan untuk </font>
+
+64
+00:02:45,680 --> 00:02:48,140
+ cerita bersambung objek <font color="#E5E5E5">untuk untuk </font>
+
+65
+00:02:48,140 --> 00:02:49,790
+ alasan <font color="#E5E5E5">yang saya nyatakan plus banyak lainnya </font>
+
+66
+00:02:49,790 --> 00:02:52,970
+ jadi ini <font color="#CCCCCC">konsep </font><font color="#E5E5E5">serialisasi </font>
+
+67
+00:02:52,970 --> 00:02:55,520
+ deserialization <font color="#CCCCCC">ada di luar sana di web </font>
+
+68
+00:02:55,520 --> 00:02:58,760
+ aplikasi hari ini jadi <font color="#E5E5E5">pertanyaannya </font>
+
+69
+00:02:58,760 --> 00:03:01,820
+ <font color="#CCCCCC">adalah bagaimana ini bisa menjadi masalah dan </font>
+
+70
+00:03:01,820 --> 00:03:04,610
+ jenis <font color="#CCCCCC">jawaban garis bawah adalah </font><font color="#E5E5E5">ini </font>
+
+71
+00:03:04,610 --> 00:03:06,920
+ <font color="#E5E5E5">kembali </font><font color="#CCCCCC">ke </font><font color="#E5E5E5">risiko keamanan </font><font color="#CCCCCC">lain </font><font color="#E5E5E5">itu </font>
+
+72
+00:03:06,920 --> 00:03:08,330
+ kita sudah melihat <font color="#CCCCCC">pola seperti kita </font>
+
+73
+00:03:08,330 --> 00:03:10,430
+ berjalan <font color="#CCCCCC">melalui </font><font color="#E5E5E5">10 </font><font color="#CCCCCC">teratas ini </font><font color="#E5E5E5">dan itu jika </font>
+
+74
+00:03:10,430 --> 00:03:15,980
+ Anda mengambil input pengguna yang tidak tepercaya dan Anda 
+
+75
+00:03:15,980 --> 00:03:18,470
+ jangan memvalidasi <font color="#CCCCCC">itu </font><font color="#E5E5E5">dan kemudian Anda mengizinkan </font>
+
+76
+00:03:18,470 --> 00:03:20,170
+ masukan pengguna yang tidak tepercaya <font color="#CCCCCC">itu </font>
+
+77
+00:03:20,170 --> 00:03:23,000
+ deserialized <font color="#E5E5E5">dari </font><font color="#CCCCCC">aliran byte kembali ke </font>
+
+78
+00:03:23,000 --> 00:03:25,400
+ objek <font color="#E5E5E5">kemudian penyerang bisa mengambil </font>
+
+79
+00:03:25,400 --> 00:03:28,460
+ keuntungan <font color="#E5E5E5">dari itu dan melempar sisipan </font>
+
+80
+00:03:28,460 --> 00:03:32,180
+ masukan tak tepercaya tak tepercaya dan ini 
+
+81
+00:03:32,180 --> 00:03:34,010
+ <font color="#E5E5E5">proses serialisasi D dapat menyebabkan </font>
+
+82
+00:03:34,010 --> 00:03:39,380
+ <font color="#CCCCCC">penyerang yang Anda kenal </font><font color="#E5E5E5">vektor serangan </font>
+
+83
+00:03:39,380 --> 00:03:41,720
+ melakukan hal-hal buruk <font color="#CCCCCC">untuk aplikasi web Anda </font><font color="#E5E5E5">sehingga </font>
+
+84
+00:03:41,720 --> 00:03:43,940
+ <font color="#E5E5E5">katakanlah </font><font color="#CCCCCC">misalnya saya akan kembali ke </font>
+
+85
+00:03:43,940 --> 00:03:46,220
+ <font color="#E5E5E5">PHP ini katakanlah kita memiliki forum PHP </font>
+
+86
+00:03:46,220 --> 00:03:50,180
+ jadi saya akan <font color="#E5E5E5">menggunakan objek-objek ini </font>
+
+87
+00:03:50,180 --> 00:03:52,220
+ <font color="#CCCCCC">dan anggap itu sebagai bagian dari itu </font>
+
+88
+00:03:52,220 --> 00:03:57,620
+ <font color="#E5E5E5">forum kami ingin menyimpan save saya akan </font>
+
+89
+00:03:57,620 --> 00:04:02,930
+ katakanlah cookie ini <font color="#CCCCCC">yang mencakup banyak </font>
+
+90
+00:04:02,930 --> 00:04:05,000
+ <font color="#CCCCCC">hal </font><font color="#E5E5E5">-hal yang </font><font color="#CCCCCC">berbeda </font><font color="#E5E5E5">dan hal-hal yang itu </font>
+
+91
+00:04:05,000 --> 00:04:06,200
+ termasuk saya akan menulisnya <font color="#E5E5E5">dengan benar </font>
+
+92
+00:04:06,200 --> 00:04:11,209
+ <font color="#E5E5E5">di sini saya akan mengatakan </font><font color="#CCCCCC">ID pengguna saya akan mengatakan </font>
+
+93
+00:04:11,209 --> 00:04:14,840
+ <font color="#CCCCCC">itu termasuk mereka mungkin kata sandi mereka </font>
+
+94
+00:04:14,840 --> 00:04:17,589
+ atau saya minta maaf <font color="#E5E5E5">mungkin peran yang mereka miliki </font>
+
+95
+00:04:17,589 --> 00:04:20,839
+ <font color="#E5E5E5">mungkin itu termasuk beberapa kata sandi </font>
+
+96
+00:04:20,839 --> 00:04:25,430
+ <font color="#E5E5E5">hal informasi hash seperti itu </font><font color="#CCCCCC">mungkin </font>
+
+97
+00:04:25,430 --> 00:04:27,000
+ <font color="#CCCCCC">keadaan </font>
+
+98
+00:04:27,000 --> 00:04:28,530
+ Anda tahu apa pun itu <font color="#CCCCCC">jadi katakanlah </font>
+
+99
+00:04:28,530 --> 00:04:30,660
+ <font color="#CCCCCC">bahwa ada cookie super yang </font><font color="#E5E5E5">digunakan </font>
+
+100
+00:04:30,660 --> 00:04:33,240
+ di <font color="#E5E5E5">forum PHP ini </font><font color="#CCCCCC">yang mencakup semua </font>
+
+101
+00:04:33,240 --> 00:04:36,210
+ ini berbeda <font color="#E5E5E5">Anda tahu atribut </font>
+
+102
+00:04:36,210 --> 00:04:38,730
+ <font color="#E5E5E5">apa objek ini akan baik-baik saja </font>
+
+103
+00:04:38,730 --> 00:04:41,340
+ <font color="#CCCCCC">katakanlah dalam skenario tipikal </font><font color="#E5E5E5">Anda </font>
+
+104
+00:04:41,340 --> 00:04:45,570
+ <font color="#CCCCCC">memiliki </font><font color="#E5E5E5">Alice yang akan menyelamatkannya </font>
+
+105
+00:04:45,570 --> 00:04:48,870
+ cookie di sini <font color="#E5E5E5">dan begitu </font><font color="#CCCCCC">yang tepat </font>
+
+106
+00:04:48,870 --> 00:04:51,450
+ Formatnya adalah Anda tahu Alice <font color="#E5E5E5">dan kemudian </font>
+
+107
+00:04:51,450 --> 00:04:55,050
+ perannya <font color="#E5E5E5">katakanlah adalah pengguna dan kemudian </font>
+
+108
+00:04:55,050 --> 00:04:57,300
+ mungkin hash kata sandinya adalah Anda tahu <font color="#CCCCCC">satu </font>
+
+109
+00:04:57,300 --> 00:05:00,300
+ <font color="#CCCCCC">dua tiga empat </font><font color="#E5E5E5">dan kemudian </font><font color="#CCCCCC">mungkin menyukainya </font>
+
+110
+00:05:00,300 --> 00:05:01,740
+ <font color="#CCCCCC">mungkin Anda </font><font color="#E5E5E5">menyimpan beberapa tipe keadaan </font>
+
+111
+00:05:01,740 --> 00:05:04,410
+ informasi <font color="#E5E5E5">dan Anda tahu itu XYZ </font>
+
+112
+00:05:04,410 --> 00:05:05,970
+ apa pun <font color="#E5E5E5">itu benar jadi itu a </font>
+
+113
+00:05:05,970 --> 00:05:08,760
+ <font color="#E5E5E5">itu adalah pengguna biasa di forum ini dan </font>
+
+114
+00:05:08,760 --> 00:05:11,160
+ <font color="#E5E5E5">itulah </font><font color="#CCCCCC">kue supernya </font>
+
+115
+00:05:11,160 --> 00:05:14,910
+ adalah <font color="#E5E5E5">objek yang disimpan dengan </font><font color="#CCCCCC">baik </font>
+
+116
+00:05:14,910 --> 00:05:16,830
+ katakanlah bahwa <font color="#CCCCCC">penyerang masuk dan </font>
+
+117
+00:05:16,830 --> 00:05:19,919
+ aplikasi web Anda <font color="#CCCCCC">tidak memvalidasi </font>
+
+118
+00:05:19,919 --> 00:05:24,090
+ <font color="#E5E5E5">input pengguna </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">penyerang adalah </font>
+
+119
+00:05:24,090 --> 00:05:26,490
+ <font color="#CCCCCC">akan </font><font color="#E5E5E5">dapat memasukkan ini </font>
+
+120
+00:05:26,490 --> 00:05:28,800
+ data serial dan kemudian seperti <font color="#E5E5E5">Anda </font>
+
+121
+00:05:28,800 --> 00:05:31,050
+ <font color="#E5E5E5">Deserialize maka itu akan menjalankan beberapa </font>
+
+122
+00:05:31,050 --> 00:05:33,030
+ hal-hal jahat <font color="#E5E5E5">jadi mari kita katakan bahwa </font>
+
+123
+00:05:33,030 --> 00:05:35,640
+ penyerang datang dan mampu <font color="#E5E5E5">melakukannya </font>
+
+124
+00:05:35,640 --> 00:05:37,620
+ informasi <font color="#CCCCCC">dalam </font><font color="#E5E5E5">cookie super ini dan </font>
+
+125
+00:05:37,620 --> 00:05:40,110
+ katakanlah <font color="#CCCCCC">itu adalah Eve sekarang mereka berubah </font>
+
+126
+00:05:40,110 --> 00:05:42,810
+ nama pengguna <font color="#CCCCCC">untuk Hawa dan </font><font color="#E5E5E5">mungkin mereka </font>
+
+127
+00:05:42,810 --> 00:05:46,910
+ <font color="#CCCCCC">mengubah </font><font color="#E5E5E5">peran dari pengguna menjadi admin dan </font>
+
+128
+00:05:46,910 --> 00:05:50,030
+ <font color="#E5E5E5">lalu mereka menyimpan hash sandi yang sama </font>
+
+129
+00:05:50,030 --> 00:05:52,620
+ karena <font color="#E5E5E5">mereka tahu bahwa itu terjadi </font>
+
+130
+00:05:52,620 --> 00:05:54,570
+ mereka dan kemudian negara <font color="#CCCCCC">akan </font>
+
+131
+00:05:54,570 --> 00:05:56,630
+ <font color="#E5E5E5">sama juga </font><font color="#CCCCCC">baik- </font><font color="#E5E5E5">baik </font><font color="#CCCCCC">saja </font>
+
+132
+00:05:56,630 --> 00:05:58,710
+ <font color="#E5E5E5">efektif apa yang telah dilakukan penyerang </font>
+
+133
+00:05:58,710 --> 00:06:01,710
+ diambil mengambil <font color="#CCCCCC">objek ini </font>
+
+134
+00:06:01,710 --> 00:06:02,970
+ <font color="#E5E5E5">keuntungan dari fakta bahwa itu </font>
+
+135
+00:06:02,970 --> 00:06:05,100
+ <font color="#E5E5E5">serial dan tentu saja </font><font color="#CCCCCC">deserialized </font>
+
+136
+00:06:05,100 --> 00:06:08,130
+ <font color="#E5E5E5">lalu kapan ketika mereka memasukkan ini </font>
+
+137
+00:06:08,130 --> 00:06:11,070
+ kode berbahaya seperti <font color="#CCCCCC">sekarang mereka miliki </font>
+
+138
+00:06:11,070 --> 00:06:13,020
+ efektif <font color="#E5E5E5">ketika ini </font><font color="#CCCCCC">deserialized </font>
+
+139
+00:06:13,020 --> 00:06:16,200
+ karena input pengguna ini tidak <font color="#E5E5E5">divalidasi </font>
+
+140
+00:06:16,200 --> 00:06:19,110
+ di sisi aplikasi web maka mereka sudah 
+
+141
+00:06:19,110 --> 00:06:21,680
+ memberi mereka <font color="#CCCCCC">akses admin ke dalamnya </font>
+
+142
+00:06:21,680 --> 00:06:25,080
+ <font color="#E5E5E5">ke dalam aplikasi web secara efektif </font><font color="#CCCCCC">sehingga </font>
+
+143
+00:06:25,080 --> 00:06:26,130
+ apa adalah <font color="#CCCCCC">beberapa </font><font color="#E5E5E5">hal yang </font><font color="#CCCCCC">bisa </font>
+
+144
+00:06:26,130 --> 00:06:28,830
+ terjadi dengan <font color="#E5E5E5">baik ini pada akhirnya </font><font color="#CCCCCC">Anda </font>
+
+145
+00:06:28,830 --> 00:06:30,510
+ bisa memiliki hal <font color="#E5E5E5">- hal seperti kode jauh </font>
+
+146
+00:06:30,510 --> 00:06:32,190
+ eksekusi yang bisa <font color="#E5E5E5">mulai terjadi </font>
+
+147
+00:06:32,190 --> 00:06:33,900
+ di sini yang <font color="#CCCCCC">akan menjadi hal yang benar-benar </font><font color="#E5E5E5">buruk </font><font color="#CCCCCC">dari </font>
+
+148
+00:06:33,900 --> 00:06:36,419
+ Tentu saja <font color="#E5E5E5">Anda bisa melakukan beberapa </font><font color="#CCCCCC">penolakan </font>
+
+149
+00:06:36,419 --> 00:06:39,150
+ serangan layanan menggunakan menggunakan 
+
+150
+00:06:39,150 --> 00:06:42,360
+ vektor seperti ini <font color="#CCCCCC">sejumlah </font><font color="#E5E5E5">hal a </font>
+
+151
+00:06:42,360 --> 00:06:44,090
+ <font color="#CCCCCC">beberapa </font><font color="#E5E5E5">hal </font><font color="#CCCCCC">yang </font><font color="#E5E5E5">saya akan katakan tentang </font>
+
+152
+00:06:44,090 --> 00:06:47,370
+ <font color="#E5E5E5">deserialization tidak aman adalah bahwa itu </font>
+
+153
+00:06:47,370 --> 00:06:50,910
+ tidak <font color="#CCCCCC">mudah bagi kebanyakan </font><font color="#E5E5E5">orang untuk menemukan </font>
+
+154
+00:06:50,910 --> 00:06:52,199
+ ini karena <font color="#E5E5E5">itu jenis ceruk ini </font>
+
+155
+00:06:52,199 --> 00:06:55,650
+ daerah <font color="#CCCCCC">sehingga Anda perlu </font><font color="#E5E5E5">Anda perlu </font>
+
+156
+00:06:55,650 --> 00:06:57,030
+ benar-benar menggosok kode yang Anda <font color="#E5E5E5">perlukan </font>
+
+157
+00:06:57,030 --> 00:06:59,070
+ menggunakan <font color="#E5E5E5">banyak alat pemindaian dan terus terang </font>
+
+158
+00:06:59,070 --> 00:07:00,870
+ beberapa intervensi manusia juga <font color="#E5E5E5">untuk dikatakan </font>
+
+159
+00:07:00,870 --> 00:07:03,389
+ hei <font color="#E5E5E5">kita deserializing </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">tepat </font>
+
+160
+00:07:03,389 --> 00:07:05,610
+ hal-hal dan melakukannya <font color="#E5E5E5">dengan cara yang tidak aman </font>
+
+161
+00:07:05,610 --> 00:07:07,800
+ <font color="#CCCCCC">jadi ini </font><font color="#E5E5E5">membutuhkan </font><font color="#CCCCCC">lebih banyak manusia </font>
+
+162
+00:07:07,800 --> 00:07:10,080
+ interaksi untuk <font color="#E5E5E5">memeriksanya dan untuk </font>
+
+163
+00:07:10,080 --> 00:07:11,610
+ <font color="#CCCCCC">pastikan </font><font color="#E5E5E5">atau tahu jika Anda </font>
+
+164
+00:07:11,610 --> 00:07:14,760
+ rentan <font color="#E5E5E5">terhadap ini </font><font color="#CCCCCC">tapi tetap </font><font color="#E5E5E5">saja </font>
+
+165
+00:07:14,760 --> 00:07:17,340
+ itu adalah ancaman di <font color="#CCCCCC">luar sana </font>
+
+166
+00:07:17,340 --> 00:07:19,919
+ <font color="#CCCCCC">sepuluh </font><font color="#E5E5E5">jadi kami harus </font><font color="#CCCCCC">memastikan </font><font color="#E5E5E5">itu </font>
+
+167
+00:07:19,919 --> 00:07:22,250
+ kami siap untuk <font color="#E5E5E5">menjaga ini </font>
+
+168
+00:07:22,250 --> 00:07:24,360
+ <font color="#CCCCCC">lagi saya sudah mengatakannya </font><font color="#E5E5E5">sebelum saya akan </font><font color="#CCCCCC">mengatakannya </font>
+
+169
+00:07:24,360 --> 00:07:27,000
+ <font color="#E5E5E5">sekali </font><font color="#CCCCCC">lagi yang utama </font><font color="#E5E5E5">saya kira jika saya </font>
+
+170
+00:07:27,000 --> 00:07:29,039
+ jika saya bisa <font color="#E5E5E5">mengatakan satu </font><font color="#CCCCCC">hal </font><font color="#E5E5E5">secara keseluruhan tentang ini </font>
+
+171
+00:07:29,039 --> 00:07:32,370
+ itu tidak <font color="#E5E5E5">menerima input pengguna yang tidak dipercaya </font>
+
+172
+00:07:32,370 --> 00:07:34,860
+ <font color="#E5E5E5">atau pastikan Anda memvalidasi jenis apa pun </font>
+
+173
+00:07:34,860 --> 00:07:37,680
+ <font color="#CCCCCC">input pengguna jadi begitu saja jadi itu itu </font>
+
+174
+00:07:37,680 --> 00:07:39,479
+ <font color="#CCCCCC">hanya </font><font color="#E5E5E5">pendekatan</font><font color="#CCCCCC"> yang baik untuk mengambil </font><font color="#E5E5E5">bahwa </font><font color="#CCCCCC">aku akan </font>
+
+175
+00:07:39,479 --> 00:07:41,250
+ <font color="#CCCCCC">menangani sebenarnya </font><font color="#E5E5E5">lebih dari satu bagian atas </font>
+
+176
+00:07:41,250 --> 00:07:44,039
+ <font color="#CCCCCC">sepuluh </font><font color="#E5E5E5">daftar risiko keamanan </font><font color="#CCCCCC">ada beberapa </font>
+
+177
+00:07:44,039 --> 00:07:45,450
+ <font color="#CCCCCC">hal lain yang </font><font color="#E5E5E5">bisa Anda lakukan </font>
+
+178
+00:07:45,450 --> 00:07:48,720
+ <font color="#CCCCCC">Selain </font><font color="#E5E5E5">Anda tahu memperbaiki ini pada </font>
+
+179
+00:07:48,720 --> 00:07:50,280
+ sisi aplikasi web tentu saja dan di 
+
+180
+00:07:50,280 --> 00:07:52,320
+ kode itu sendiri <font color="#E5E5E5">seperti Aplikasi Web </font>
+
+181
+00:07:52,320 --> 00:07:54,840
+ <font color="#E5E5E5">Firewall </font><font color="#CCCCCC">Anda bisa menempatkan itu </font><font color="#E5E5E5">di depan </font>
+
+182
+00:07:54,840 --> 00:07:56,180
+ <font color="#E5E5E5">aplikasi web Anda dan sebagainya </font>
+
+183
+00:07:56,180 --> 00:07:58,800
+ potensi <font color="#E5E5E5">deserialization yang </font><font color="#CCCCCC">Anda tahu </font>
+
+184
+00:07:58,800 --> 00:08:01,260
+ <font color="#E5E5E5">serangan deserialization tidak aman adalah </font>
+
+185
+00:08:01,260 --> 00:08:04,020
+ dicoba <font color="#E5E5E5">di aplikasi web Anda kemudian a </font>
+
+186
+00:08:04,020 --> 00:08:05,849
+ <font color="#E5E5E5">firewall </font><font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">web bisa bisa </font>
+
+187
+00:08:05,849 --> 00:08:07,440
+ perhatikan itu dan bisa menghentikan itu sebelumnya 
+
+188
+00:08:07,440 --> 00:08:09,660
+ <font color="#E5E5E5">itu pernah sampai ke aplikasi web Anda </font>
+
+189
+00:08:09,660 --> 00:08:10,919
+ itu adalah <font color="#CCCCCC">hal lain yang </font><font color="#E5E5E5">bisa Anda lakukan </font>
+
+190
+00:08:10,919 --> 00:08:12,960
+ jadi lagi nomor delapan dalam <font color="#CCCCCC">daftar </font>
+
+191
+00:08:12,960 --> 00:08:17,340
+ <font color="#E5E5E5">Serialisasi serial D yang </font><font color="#CCCCCC">tidak aman ada di luar </font><font color="#E5E5E5">sana </font>
+
+192
+00:08:17,340 --> 00:08:19,080
+ <font color="#E5E5E5">itu masalah, itu mendapatkan traksi </font>
+
+193
+00:08:19,080 --> 00:08:20,639
+ terus terang jadi saya tidak <font color="#CCCCCC">akan terkejut jika </font>
+
+194
+00:08:20,639 --> 00:08:21,900
+ itu sebenarnya lebih tinggi pada daftar <font color="#E5E5E5">tersebut </font>
+
+195
+00:08:21,900 --> 00:08:24,570
+ <font color="#E5E5E5">waktu berikutnya sepuluh besar keluar begitu seterusnya </font>
+
+196
+00:08:24,570 --> 00:08:26,729
+ menyadari <font color="#CCCCCC">penjaga ini </font><font color="#E5E5E5">sendiri melawannya </font>
+
+197
+00:08:26,729 --> 00:08:28,770
+ <font color="#E5E5E5">dan terima kasih telah </font><font color="#CCCCCC">menonton papan cahaya ini </font>
+
+198
+00:08:28,770 --> 00:08:30,570
+ video pelajaran hari ini hei jika kamu <font color="#CCCCCC">menyukai </font><font color="#E5E5E5">ini </font>
+
+199
+00:08:30,570 --> 00:08:32,729
+ <font color="#E5E5E5">satu pastikan Anda </font><font color="#CCCCCC">berlangganan ke </font><font color="#E5E5E5">kami </font>
+
+200
+00:08:32,729 --> 00:08:34,080
+ <font color="#CCCCCC">Saluran YouTube Anda </font><font color="#E5E5E5">dapat </font><font color="#CCCCCC">mengklik sedikit </font>
+
+201
+00:08:34,080 --> 00:08:36,360
+ Bola DC di sini <font color="#E5E5E5">dan berlangganan ke kami </font>
+
+202
+00:08:36,360 --> 00:08:38,339
+ <font color="#CCCCCC">Saluran YouTube </font><font color="#E5E5E5">dan kami akan melihat kalian </font>
+
+203
+00:08:38,339 --> 00:08:41,360
+ <font color="#E5E5E5">di luar sana di masyarakat </font>
+
+204
+00:08:47,070 --> 00:00:00,000
+ kamu 
+

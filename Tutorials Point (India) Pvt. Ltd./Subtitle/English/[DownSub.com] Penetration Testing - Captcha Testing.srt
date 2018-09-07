@@ -1,0 +1,688 @@
+1
+00:00:00,089 --> 00:00:02,009
+hello everyone<font color="#CCCCCC"> now let's talk about</font>
+
+2
+00:00:02,009 --> 00:00:04,830
+capita testing<font color="#CCCCCC"> so if</font><font color="#E5E5E5"> you don't know what</font>
+
+3
+00:00:04,830 --> 00:00:07,200
+<font color="#E5E5E5">our captures so captures is a technique</font>
+
+4
+00:00:07,200 --> 00:00:10,200
+<font color="#E5E5E5">in order to distinguish the users from</font>
+
+5
+00:00:10,200 --> 00:00:13,740
+<font color="#E5E5E5">the human or bot which means it captures</font>
+
+6
+00:00:13,740 --> 00:00:16,079
+are used on a web<font color="#CCCCCC"> application in order</font>
+
+7
+00:00:16,079 --> 00:00:18,720
+to distinguish whether the user that is
+
+8
+00:00:18,720 --> 00:00:20,310
+assessing<font color="#E5E5E5"> that web application</font>
+
+9
+00:00:20,310 --> 00:00:23,160
+is human<font color="#E5E5E5"> or a bot so</font><font color="#CCCCCC"> CAPTCHAs are also</font>
+
+10
+00:00:23,160 --> 00:00:26,160
+used<font color="#CCCCCC"> to secure the</font><font color="#E5E5E5"> website from CSRF</font>
+
+11
+00:00:26,160 --> 00:00:29,369
+attacks<font color="#E5E5E5"> but if you use captures in order</font>
+
+12
+00:00:29,369 --> 00:00:31,710
+<font color="#E5E5E5">to protect CSRF then it's not a</font>
+
+13
+00:00:31,710 --> 00:00:34,320
+recommended<font color="#E5E5E5"> measure because the captures</font>
+
+14
+00:00:34,320 --> 00:00:36,809
+can be easily bypassed<font color="#E5E5E5"> it's no matter</font>
+
+15
+00:00:36,809 --> 00:00:39,390
+<font color="#E5E5E5">that how hard the captures has been</font>
+
+16
+00:00:39,390 --> 00:00:41,940
+developed<font color="#E5E5E5"> now let's see how we can test</font>
+
+17
+00:00:41,940 --> 00:00:44,129
+<font color="#E5E5E5">some captures in order to</font><font color="#CCCCCC"> bypass that</font>
+
+18
+00:00:44,129 --> 00:00:46,710
+captures now let's do some capture
+
+19
+00:00:46,710 --> 00:00:49,770
+testing on web for<font color="#CCCCCC"> pen tester too and</font>
+
+20
+00:00:49,770 --> 00:00:53,640
+you can<font color="#E5E5E5"> download the ISO file of web for</font>
+
+21
+00:00:53,640 --> 00:00:56,449
+pen tester<font color="#E5E5E5"> too by clicking over here</font><font color="#CCCCCC"> and</font>
+
+22
+00:00:56,449 --> 00:01:01,289
+here is that link<font color="#CCCCCC"> so it's later</font><font color="#E5E5E5"> it's the</font>
+
+23
+00:01:01,289 --> 00:01:04,470
+<font color="#E5E5E5">latest version of web for pen tester so</font>
+
+24
+00:01:04,470 --> 00:01:07,470
+<font color="#E5E5E5">I have already download this ISO file</font>
+
+25
+00:01:07,470 --> 00:01:09,780
+and you can<font color="#CCCCCC"> see on my desktop so let's</font>
+
+26
+00:01:09,780 --> 00:01:12,890
+create a virtual machine<font color="#CCCCCC"> in VirtualBox</font>
+
+27
+00:01:12,890 --> 00:01:16,049
+<font color="#E5E5E5">for the web for pen tester</font><font color="#CCCCCC"> 2 and here</font>
+
+28
+00:01:16,049 --> 00:01:19,650
+<font color="#E5E5E5">you can see that I have the previous</font>
+
+29
+00:01:19,650 --> 00:01:22,049
+version of web for pen tester<font color="#E5E5E5"> but it's a</font>
+
+30
+00:01:22,049 --> 00:01:25,259
+new one<font color="#E5E5E5"> so let</font><font color="#CCCCCC"> me create a new virtual</font>
+
+31
+00:01:25,259 --> 00:01:30,090
+machine so web for pen tester to click
+
+32
+00:01:30,090 --> 00:01:39,479
+on next<font color="#CCCCCC"> and click</font><font color="#E5E5E5"> on create so click on</font>
+
+33
+00:01:39,479 --> 00:01:43,649
+settings so depending upon<font color="#E5E5E5"> your network</font>
+
+34
+00:01:43,649 --> 00:01:45,030
+configuration<font color="#CCCCCC"> you can change your</font>
+
+35
+00:01:45,030 --> 00:01:48,090
+network<font color="#E5E5E5"> settings so for me I want to</font>
+
+36
+00:01:48,090 --> 00:01:52,340
+<font color="#E5E5E5">change and put it on the bridge adapter</font>
+
+37
+00:01:52,340 --> 00:01:54,000
+click on<font color="#E5E5E5"> OK</font>
+
+38
+00:01:54,000 --> 00:01:58,020
+<font color="#CCCCCC">and let's start this machine so when the</font>
+
+39
+00:01:58,020 --> 00:02:00,329
+first<font color="#E5E5E5"> time this machine will start up it</font>
+
+40
+00:02:00,329 --> 00:02:03,000
+will<font color="#E5E5E5"> ask us for the location of the ISO</font>
+
+41
+00:02:03,000 --> 00:02:06,270
+file<font color="#E5E5E5"> so let me give the location</font><font color="#CCCCCC"> of the</font>
+
+42
+00:02:06,270 --> 00:02:10,489
+ISO file it's on my desktop
+
+43
+00:02:35,060 --> 00:02:37,580
+so here you can<font color="#CCCCCC"> see that right now we</font>
+
+44
+00:02:37,580 --> 00:02:40,790
+are inside<font color="#E5E5E5"> the shell of reffered</font>
+
+45
+00:02:40,790 --> 00:02:43,660
+<font color="#E5E5E5">pentester now let's check its IP address</font>
+
+46
+00:02:43,660 --> 00:02:48,820
+so<font color="#CCCCCC"> its IP</font><font color="#E5E5E5"> address is 192.168.0.1</font><font color="#CCCCCC"> for one</font>
+
+47
+00:02:48,820 --> 00:02:53,800
+so let's open this IP address
+
+48
+00:03:19,849 --> 00:03:22,590
+so here you can see that the<font color="#E5E5E5"> web for</font>
+
+49
+00:03:22,590 --> 00:03:25,590
+<font color="#CCCCCC">pentester 2 contains lot of additional</font>
+
+50
+00:03:25,590 --> 00:03:28,040
+challenges<font color="#E5E5E5"> like mass assign assignment</font>
+
+51
+00:03:28,040 --> 00:03:31,290
+<font color="#E5E5E5">authorization MongoDB injection and here</font>
+
+52
+00:03:31,290 --> 00:03:32,760
+you<font color="#E5E5E5"> will find a list of challenges</font>
+
+53
+00:03:32,760 --> 00:03:35,639
+<font color="#E5E5E5">inside the</font><font color="#CCCCCC"> CAPTCHA section so let's open</font>
+
+54
+00:03:35,639 --> 00:03:44,519
+the first example so here you<font color="#E5E5E5"> will find</font>
+
+55
+00:03:44,519 --> 00:03:48,840
+a CAPTCHA<font color="#E5E5E5"> along with that field</font><font color="#CCCCCC"> so the</font>
+
+56
+00:03:48,840 --> 00:03:52,500
+main<font color="#CCCCCC"> reason for implementing captures to</font>
+
+57
+00:03:52,500 --> 00:03:56,969
+protect the website from<font color="#CCCCCC"> sea surf</font><font color="#E5E5E5"> but in</font>
+
+58
+00:03:56,969 --> 00:03:59,159
+order<font color="#CCCCCC"> to protect the seas of attack the</font>
+
+59
+00:03:59,159 --> 00:04:01,439
+CAPTCHA is not recommended<font color="#CCCCCC"> and nowadays</font>
+
+60
+00:04:01,439 --> 00:04:03,840
+<font color="#E5E5E5">the CAPTCHA is used for to differentiate</font>
+
+61
+00:04:03,840 --> 00:04:07,849
+between the bots<font color="#E5E5E5"> and the human beings so</font>
+
+62
+00:04:07,849 --> 00:04:10,799
+by doing CAPTCHA testing<font color="#E5E5E5"> our main motive</font>
+
+63
+00:04:10,799 --> 00:04:13,079
+is<font color="#E5E5E5"> that whether we can bypass this</font>
+
+64
+00:04:13,079 --> 00:04:15,959
+CAPTCHA otherwise we can fill it<font color="#E5E5E5"> and</font>
+
+65
+00:04:15,959 --> 00:04:19,978
+pass<font color="#CCCCCC"> it now for the time being if I just</font>
+
+66
+00:04:19,978 --> 00:04:22,800
+pass it<font color="#E5E5E5"> any random string and applicants</font>
+
+67
+00:04:22,800 --> 00:04:27,080
+submit<font color="#CCCCCC"> Kure now let's see what happens</font>
+
+68
+00:04:27,080 --> 00:04:29,759
+<font color="#CCCCCC">you will see nothing and the capture</font>
+
+69
+00:04:29,759 --> 00:04:31,800
+value<font color="#CCCCCC"> has been changed now if I go back</font>
+
+70
+00:04:31,800 --> 00:04:36,120
+<font color="#CCCCCC">here to the</font><font color="#E5E5E5"> it's paid source and if I</font>
+
+71
+00:04:36,120 --> 00:04:40,680
+scroll down<font color="#E5E5E5"> you</font><font color="#CCCCCC"> will find</font><font color="#E5E5E5"> that here is</font>
+
+72
+00:04:40,680 --> 00:04:42,780
+the image capture image<font color="#E5E5E5"> that's coming</font>
+
+73
+00:04:42,780 --> 00:04:45,270
+<font color="#E5E5E5">from and here you will see</font><font color="#CCCCCC"> the input tag</font>
+
+74
+00:04:45,270 --> 00:04:48,539
+where we'll add<font color="#CCCCCC"> our text</font><font color="#E5E5E5"> and here is an</font>
+
+75
+00:04:48,539 --> 00:04:51,630
+input button now<font color="#E5E5E5"> let's analyze this</font>
+
+76
+00:04:51,630 --> 00:04:58,770
+<font color="#E5E5E5">request through Bob sweet so in this</font>
+
+77
+00:04:58,770 --> 00:05:00,900
+video<font color="#E5E5E5"> I will</font><font color="#CCCCCC"> cover</font><font color="#E5E5E5"> two example of</font>
+
+78
+00:05:00,900 --> 00:05:06,750
+CAPTCHA testing and let us configure the
+
+79
+00:05:06,750 --> 00:05:09,919
+browser proxy settings
+
+80
+00:05:28,699 --> 00:05:31,470
+<font color="#CCCCCC">okay and here you can see that my</font><font color="#E5E5E5"> Bob</font>
+
+81
+00:05:31,470 --> 00:05:35,639
+<font color="#CCCCCC">suite is up and running</font><font color="#E5E5E5"> now let's add</font>
+
+82
+00:05:35,639 --> 00:05:39,440
+any random<font color="#CCCCCC"> Kure</font><font color="#E5E5E5"> and click on submit</font><font color="#CCCCCC"> and</font>
+
+83
+00:05:39,440 --> 00:05:43,500
+here you will<font color="#E5E5E5"> see</font><font color="#CCCCCC"> our request</font><font color="#E5E5E5"> under the</font>
+
+84
+00:05:43,500 --> 00:05:47,160
+<font color="#CCCCCC">proxy tab</font><font color="#E5E5E5"> so it's a get request</font><font color="#CCCCCC"> and here</font>
+
+85
+00:05:47,160 --> 00:05:49,460
+you can see CAPTCHA example<font color="#E5E5E5"> 1 submit and</font>
+
+86
+00:05:49,460 --> 00:05:52,740
+it's accepting is<font color="#CCCCCC"> 2 parameter</font>
+
+87
+00:05:52,740 --> 00:05:55,020
+the first one is capture and<font color="#CCCCCC"> its value</font>
+
+88
+00:05:55,020 --> 00:05:57,150
+which we have<font color="#E5E5E5"> just passed here you can</font>
+
+89
+00:05:57,150 --> 00:06:01,320
+see hello and then submit<font color="#E5E5E5"> and here you</font>
+
+90
+00:06:01,320 --> 00:06:03,030
+can see the<font color="#E5E5E5"> host details along with the</font>
+
+91
+00:06:03,030 --> 00:06:08,820
+<font color="#E5E5E5">user agents and cookie detail now if we</font>
+
+92
+00:06:08,820 --> 00:06:12,930
+just<font color="#CCCCCC"> click on</font><font color="#E5E5E5"> forward and forward</font><font color="#CCCCCC"> the</font>
+
+93
+00:06:12,930 --> 00:06:16,229
+<font color="#E5E5E5">request we will see nothing now let's</font>
+
+94
+00:06:16,229 --> 00:06:19,880
+try to bypass<font color="#E5E5E5"> this CAPTCHA and let's see</font>
+
+95
+00:06:19,880 --> 00:06:22,680
+what kind of response<font color="#E5E5E5"> we got from the</font>
+
+96
+00:06:22,680 --> 00:06:26,669
+server<font color="#E5E5E5"> now I'm just</font><font color="#CCCCCC"> leaving it as a</font>
+
+97
+00:06:26,669 --> 00:06:29,039
+<font color="#E5E5E5">empty so let's just click over here</font>
+
+98
+00:06:29,039 --> 00:06:34,770
+submit<font color="#E5E5E5"> query and</font><font color="#CCCCCC"> here you can see the</font>
+
+99
+00:06:34,770 --> 00:06:36,930
+same request<font color="#E5E5E5"> now what I'm going to do</font>
+
+100
+00:06:36,930 --> 00:06:41,070
+<font color="#E5E5E5">here is I'm removing this additional</font>
+
+101
+00:06:41,070 --> 00:06:44,909
+CAPTCHA parameter here you can see let
+
+102
+00:06:44,909 --> 00:06:47,159
+<font color="#E5E5E5">me move this and so now there</font><font color="#CCCCCC"> is only</font>
+
+103
+00:06:47,159 --> 00:06:51,180
+<font color="#E5E5E5">one parameter that submit and now</font><font color="#CCCCCC"> the</font>
+
+104
+00:06:51,180 --> 00:06:53,400
+point to<font color="#E5E5E5"> be</font><font color="#CCCCCC"> notice</font><font color="#E5E5E5"> this that we haven't</font>
+
+105
+00:06:53,400 --> 00:06:59,310
+given any kind of capture here<font color="#CCCCCC"> ok</font><font color="#E5E5E5"> and</font>
+
+106
+00:06:59,310 --> 00:07:00,990
+here you can see that we<font color="#CCCCCC"> are</font>
+
+107
+00:07:00,990 --> 00:07:03,720
+successfully<font color="#E5E5E5"> able to bypass the CAPTCHA</font>
+
+108
+00:07:03,720 --> 00:07:07,229
+and<font color="#E5E5E5"> here is a success message so due to</font>
+
+109
+00:07:07,229 --> 00:07:09,659
+the<font color="#E5E5E5"> poorly configured captures the</font>
+
+110
+00:07:09,659 --> 00:07:12,360
+captures can be easily bypassed<font color="#CCCCCC"> if there</font>
+
+111
+00:07:12,360 --> 00:07:17,940
+is a no validation checks occur now
+
+112
+00:07:17,940 --> 00:07:22,250
+let's have a look at capture example<font color="#CCCCCC"> 2</font>
+
+113
+00:07:30,520 --> 00:07:32,680
+okay so here<font color="#E5E5E5"> you can see the same</font>
+
+114
+00:07:32,680 --> 00:07:34,539
+challenge<font color="#E5E5E5"> the same capture challenge</font>
+
+115
+00:07:34,539 --> 00:07:38,919
+<font color="#E5E5E5">let's try to fill</font><font color="#CCCCCC"> any random Curie</font><font color="#E5E5E5"> and</font>
+
+116
+00:07:38,919 --> 00:07:45,430
+let's see what happens<font color="#CCCCCC"> so this</font><font color="#E5E5E5"> challenge</font>
+
+117
+00:07:45,430 --> 00:07:48,099
+<font color="#E5E5E5">is</font><font color="#CCCCCC"> very interesting</font><font color="#E5E5E5"> so here you can see</font>
+
+118
+00:07:48,099 --> 00:07:50,160
+the request<font color="#CCCCCC"> of</font><font color="#E5E5E5"> this challenge and</font>
+
+119
+00:07:50,160 --> 00:07:53,800
+example<font color="#E5E5E5"> - so now</font><font color="#CCCCCC"> it's taking actually</font>
+
+120
+00:07:53,800 --> 00:07:54,910
+three parameters
+
+121
+00:07:54,910 --> 00:07:56,889
+the first one is capture<font color="#E5E5E5"> in which we</font>
+
+122
+00:07:56,889 --> 00:07:59,229
+have<font color="#E5E5E5"> given the our input that's hello</font>
+
+123
+00:07:59,229 --> 00:08:02,349
+<font color="#CCCCCC">and another one that's answer here you</font>
+
+124
+00:08:02,349 --> 00:08:06,280
+can see the answer now<font color="#E5E5E5"> if I just</font><font color="#CCCCCC"> click</font>
+
+125
+00:08:06,280 --> 00:08:09,819
+<font color="#E5E5E5">on submit and let me forward this</font>
+
+126
+00:08:09,819 --> 00:08:15,130
+request<font color="#E5E5E5"> and we will see nothing</font><font color="#CCCCCC"> so in</font>
+
+127
+00:08:15,130 --> 00:08:18,130
+the most of the<font color="#CCCCCC"> cases what happen is the</font>
+
+128
+00:08:18,130 --> 00:08:20,139
+captures<font color="#E5E5E5"> actually comes</font><font color="#CCCCCC"> from the image</font>
+
+129
+00:08:20,139 --> 00:08:23,349
+source<font color="#E5E5E5"> now if we just</font><font color="#CCCCCC"> look at its path</font>
+
+130
+00:08:23,349 --> 00:08:25,509
+source of this challenge
+
+131
+00:08:25,509 --> 00:08:29,860
+<font color="#CCCCCC">we'll come</font><font color="#E5E5E5"> to know that by implementing</font>
+
+132
+00:08:29,860 --> 00:08:32,529
+this capture the web developer have
+
+133
+00:08:32,529 --> 00:08:36,159
+actually hard-coded<font color="#E5E5E5"> the</font><font color="#CCCCCC"> value of</font><font color="#E5E5E5"> CAPTCHA</font>
+
+134
+00:08:36,159 --> 00:08:39,039
+in the<font color="#CCCCCC"> pace source so if we just</font><font color="#E5E5E5"> look at</font>
+
+135
+00:08:39,039 --> 00:08:41,589
+the page source<font color="#E5E5E5"> and scroll down here you</font>
+
+136
+00:08:41,589 --> 00:08:44,829
+will see the<font color="#E5E5E5"> captcha image and here is</font>
+
+137
+00:08:44,829 --> 00:08:47,980
+the hidden input field<font color="#CCCCCC"> here you can see</font>
+
+138
+00:08:47,980 --> 00:08:51,399
+input type is hidden and its value<font color="#E5E5E5"> is</font>
+
+139
+00:08:51,399 --> 00:08:54,250
+this which means<font color="#E5E5E5"> the value</font><font color="#CCCCCC"> of this</font>
+
+140
+00:08:54,250 --> 00:08:59,410
+CAPTCHA is hard-coded<font color="#E5E5E5"> already inside the</font>
+
+141
+00:08:59,410 --> 00:09:02,709
+<font color="#CCCCCC">source code</font><font color="#E5E5E5"> so if this is hard-coded</font>
+
+142
+00:09:02,709 --> 00:09:04,870
+<font color="#E5E5E5">inside the source code or if it is</font>
+
+143
+00:09:04,870 --> 00:09:06,820
+already present<font color="#E5E5E5"> inside</font><font color="#CCCCCC"> the source code</font>
+
+144
+00:09:06,820 --> 00:09:08,620
+then what's the<font color="#E5E5E5"> need of implementing the</font>
+
+145
+00:09:08,620 --> 00:09:11,910
+<font color="#CCCCCC">CAPTCHA</font><font color="#E5E5E5"> so it's another a wrong</font>
+
+146
+00:09:11,910 --> 00:09:14,950
+<font color="#E5E5E5">application logic which might lead to</font>
+
+147
+00:09:14,950 --> 00:09:16,990
+<font color="#E5E5E5">bypass this capture so it's again a</font>
+
+148
+00:09:16,990 --> 00:09:20,200
+wrong<font color="#E5E5E5"> application</font><font color="#CCCCCC"> logic</font><font color="#E5E5E5"> now we can also</font>
+
+149
+00:09:20,200 --> 00:09:22,300
+do one thing let's now we came<font color="#E5E5E5"> to</font><font color="#CCCCCC"> know</font>
+
+150
+00:09:22,300 --> 00:09:24,790
+<font color="#E5E5E5">that this value is actually present</font>
+
+151
+00:09:24,790 --> 00:09:27,550
+<font color="#CCCCCC">inside a hidden</font><font color="#E5E5E5"> input field now let's go</font>
+
+152
+00:09:27,550 --> 00:09:32,230
+here and let's go to form and display
+
+153
+00:09:32,230 --> 00:09:35,170
+form details<font color="#E5E5E5"> and if we display form</font>
+
+154
+00:09:35,170 --> 00:09:37,390
+details<font color="#E5E5E5"> so here you can see that the</font>
+
+155
+00:09:37,390 --> 00:09:40,180
+<font color="#CCCCCC">hidden input field is displayed here in</font>
+
+156
+00:09:40,180 --> 00:09:42,760
+front of<font color="#E5E5E5"> us let's copy this input field</font>
+
+157
+00:09:42,760 --> 00:09:43,699
+<font color="#CCCCCC">and</font>
+
+158
+00:09:43,699 --> 00:09:47,989
+<font color="#E5E5E5">let's paste it here now click on</font><font color="#CCCCCC"> submit</font>
+
+159
+00:09:47,989 --> 00:09:52,249
+<font color="#E5E5E5">Curie and let's see what happens</font><font color="#CCCCCC"> so our</font>
+
+160
+00:09:52,249 --> 00:09:55,399
+request goes to<font color="#CCCCCC"> the Bob</font><font color="#E5E5E5"> sweet</font><font color="#CCCCCC"> okay click</font>
+
+161
+00:09:55,399 --> 00:09:59,359
+on<font color="#E5E5E5"> forward let's just go back and let's</font>
+
+162
+00:09:59,359 --> 00:10:03,859
+just<font color="#E5E5E5"> remove this and here you can see we</font>
+
+163
+00:10:03,859 --> 00:10:07,160
+are<font color="#E5E5E5"> successfully</font><font color="#CCCCCC"> able to crack this</font>
+
+164
+00:10:07,160 --> 00:10:10,100
+challenge so there<font color="#E5E5E5"> are different</font>
+
+165
+00:10:10,100 --> 00:10:11,839
+different<font color="#E5E5E5"> captures implementation and</font>
+
+166
+00:10:11,839 --> 00:10:15,139
+their weaknesses which we will cover in
+
+167
+00:10:15,139 --> 00:10:17,839
+the separate<font color="#CCCCCC"> video series</font><font color="#E5E5E5"> so but for the</font>
+
+168
+00:10:17,839 --> 00:10:20,809
+time<font color="#E5E5E5"> being we have discussed that what's</font>
+
+169
+00:10:20,809 --> 00:10:23,419
+<font color="#CCCCCC">a</font><font color="#E5E5E5"> CAPTCHA testing versus the use of</font>
+
+170
+00:10:23,419 --> 00:10:27,410
+CAPTCHA and how we can<font color="#E5E5E5"> find the Misurata</font>
+
+171
+00:10:27,410 --> 00:10:30,679
+configurations<font color="#E5E5E5"> and capture thanks for</font>
+
+172
+00:10:30,679 --> 00:00:00,000
+watching this video
+

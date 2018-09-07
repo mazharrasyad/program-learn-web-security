@@ -1,0 +1,1048 @@
+1
+00:00:00,000 --> 00:00:02,060
+ <font color="#E5E5E5">kamu </font>
+
+2
+00:00:09,610 --> 00:00:11,440
+ hey semua orang <font color="#E5E5E5">john wagon di sini dengan dev </font>
+
+3
+00:00:11,440 --> 00:00:12,610
+ pusat kami datang kepada Anda dengan yang <font color="#E5E5E5">lain </font>
+
+4
+00:00:12,610 --> 00:00:15,459
+ <font color="#E5E5E5">video pelajaran papan cahaya dan hari ini kita </font>
+
+5
+00:00:15,459 --> 00:00:18,009
+ akan berbicara <font color="#E5E5E5">tentang paparan data yang sensitif </font>
+
+6
+00:00:18,009 --> 00:00:20,740
+ ini <font color="#E5E5E5">adalah salah satu dari </font><font color="#CCCCCC">10 teratas </font><font color="#E5E5E5">tawon </font>
+
+7
+00:00:20,740 --> 00:00:22,869
+ kerentanan <font color="#E5E5E5">daftar OWASP yang baru </font>
+
+8
+00:00:22,869 --> 00:00:25,599
+ baru saja merilis versi 2017 dan ini 
+
+9
+00:00:25,599 --> 00:00:27,670
+ adalah <font color="#E5E5E5">nomor </font><font color="#CCCCCC">tiga di </font><font color="#E5E5E5">daftar itu jadi itu a </font>
+
+10
+00:00:27,670 --> 00:00:29,050
+ <font color="#E5E5E5">kerentanan cukup signifikan keluar </font>
+
+11
+00:00:29,050 --> 00:00:31,779
+ di sana <font color="#CCCCCC">dan jadi kami ingin </font><font color="#E5E5E5">membicarakannya </font>
+
+12
+00:00:31,779 --> 00:00:34,840
+ <font color="#E5E5E5">paparan data sangat sensitif pada dasarnya </font>
+
+13
+00:00:34,840 --> 00:00:36,400
+ <font color="#E5E5E5">Intinya </font><font color="#CCCCCC">pada ini adalah di mana Anda memiliki </font>
+
+14
+00:00:36,400 --> 00:00:38,440
+ aplikasi web <font color="#CCCCCC">Anda memiliki </font><font color="#E5E5E5">data sensitif </font>
+
+15
+00:00:38,440 --> 00:00:41,530
+ yang disimpan sebagai bagian dari <font color="#E5E5E5">itu dan </font><font color="#CCCCCC">Anda </font>
+
+16
+00:00:41,530 --> 00:00:44,220
+ biarkan <font color="#E5E5E5">data sensitif </font><font color="#CCCCCC">tersebut diekspos </font>
+
+17
+00:00:44,220 --> 00:00:46,330
+ <font color="#CCCCCC">yang merupakan sesuatu </font><font color="#E5E5E5">yang tidak ingin Anda lakukan </font>
+
+18
+00:00:46,330 --> 00:00:47,949
+ kami mendengar <font color="#CCCCCC">tentang hal-hal </font><font color="#E5E5E5">di berita </font><font color="#CCCCCC">seperti </font>
+
+19
+00:00:47,949 --> 00:00:49,720
+ sepanjang waktu Anda <font color="#CCCCCC">tahu perusahaan </font><font color="#E5E5E5">bertindak </font><font color="#CCCCCC">adil </font>
+
+20
+00:00:49,720 --> 00:00:51,970
+ diretas <font color="#E5E5E5">dan </font><font color="#CCCCCC">kartu kredit </font><font color="#E5E5E5">semua orang </font>
+
+21
+00:00:51,970 --> 00:00:54,129
+ nomor sekarang yang Anda tahu <font color="#E5E5E5">tersedia atau </font>
+
+22
+00:00:54,129 --> 00:00:55,269
+ <font color="#CCCCCC">nomor jaminan </font><font color="#E5E5E5">sosial atau </font><font color="#CCCCCC">Anda tahu </font>
+
+23
+00:00:55,269 --> 00:00:56,470
+ apa pun yang <font color="#E5E5E5">Anda lihat sepanjang </font><font color="#CCCCCC">waktu </font>
+
+24
+00:00:56,470 --> 00:00:58,869
+ berita jadi jangan <font color="#CCCCCC">jadi </font><font color="#E5E5E5">orang itu </font>
+
+25
+00:00:58,869 --> 00:01:00,400
+ bukan <font color="#E5E5E5">salah satu yang memungkinkan yang sensitif </font>
+
+26
+00:01:00,400 --> 00:01:02,589
+ data yang <font color="#E5E5E5">akan diekspos </font><font color="#CCCCCC">inilah jenisnya </font>
+
+27
+00:01:02,589 --> 00:01:06,060
+ <font color="#E5E5E5">Intinya atau semacam yang sangat umum </font>
+
+28
+00:01:06,060 --> 00:01:09,460
+ <font color="#CCCCCC">deskripsi </font><font color="#E5E5E5">itu atau atau Anda tahu </font>
+
+29
+00:01:09,460 --> 00:01:12,700
+ <font color="#E5E5E5">skenario jika Anda </font><font color="#CCCCCC">memiliki pengguna </font><font color="#E5E5E5">di sini di </font>
+
+30
+00:01:12,700 --> 00:01:15,450
+ <font color="#E5E5E5">internet Anda memiliki </font><font color="#CCCCCC">aplikasi web </font>
+
+31
+00:01:15,450 --> 00:01:18,429
+ jadi <font color="#CCCCCC">saya akan menempatkan aplikasi web di </font><font color="#E5E5E5">sini </font><font color="#CCCCCC">pengguna </font>
+
+32
+00:01:18,429 --> 00:01:20,289
+ ingin <font color="#CCCCCC">mengakses </font><font color="#E5E5E5">aplikasi web dan </font>
+
+33
+00:01:20,289 --> 00:01:24,240
+ <font color="#E5E5E5">mungkin ada Anda tahu beberapa halaman </font>
+
+34
+00:01:24,240 --> 00:01:26,740
+ Anda tahu bahwa <font color="#E5E5E5">aplikasi web ini memiliki </font>
+
+35
+00:01:26,740 --> 00:01:28,299
+ itu Anda tahu itu dibangun <font color="#E5E5E5">sehingga Anda punya </font>
+
+36
+00:01:28,299 --> 00:01:31,659
+ example.com <font color="#E5E5E5">example.com kredit slash </font>
+
+37
+00:01:31,659 --> 00:01:34,119
+ nomor kartu example.com tebas sensitif 
+
+38
+00:01:34,119 --> 00:01:37,539
+ <font color="#E5E5E5">halaman informasi data atau apa pun </font><font color="#CCCCCC">sehingga Anda </font>
+
+39
+00:01:37,539 --> 00:01:39,130
+ tahu <font color="#E5E5E5">ada </font><font color="#CCCCCC">beberapa halaman </font><font color="#E5E5E5">yang terdiri </font>
+
+40
+00:01:39,130 --> 00:01:41,289
+ seluruh aplikasi web ini Anda juga bisa 
+
+41
+00:01:41,289 --> 00:01:42,909
+ <font color="#E5E5E5">memiliki beberapa database </font><font color="#CCCCCC">yang ini </font>
+
+42
+00:01:42,909 --> 00:01:45,520
+ Hal menggunakan <font color="#CCCCCC">semua </font><font color="#E5E5E5">basis data put di sini </font>
+
+43
+00:01:45,520 --> 00:01:48,009
+ <font color="#E5E5E5">mungkin database di sini </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">katakanlah ini </font>
+
+44
+00:01:48,009 --> 00:01:53,520
+ satu adalah <font color="#E5E5E5">semua </font><font color="#CCCCCC">nama pengguna dan </font><font color="#E5E5E5">Anda tahu </font>
+
+45
+00:01:53,520 --> 00:01:55,929
+ kata sandi semua hal itu <font color="#E5E5E5">dan kemudian ini </font>
+
+46
+00:01:55,929 --> 00:01:58,539
+ satu di <font color="#E5E5E5">sini tentu saja adalah kredit Anda </font>
+
+47
+00:01:58,539 --> 00:02:00,670
+ <font color="#E5E5E5">nomor kartu Anda tahu kredit semua orang </font>
+
+48
+00:02:00,670 --> 00:02:02,859
+ nomor kartu <font color="#CCCCCC">yang Anda berbisnis </font><font color="#E5E5E5">dengan </font>
+
+49
+00:02:02,859 --> 00:02:05,319
+ Tentu saja <font color="#CCCCCC">Anda menyimpan semua itu </font><font color="#E5E5E5">mungkin Anda </font>
+
+50
+00:02:05,319 --> 00:02:07,539
+ seharusnya tidak menyimpan <font color="#E5E5E5">semua itu </font><font color="#CCCCCC">tapi tetap saja </font>
+
+51
+00:02:07,539 --> 00:02:10,810
+ <font color="#CCCCCC">masalahnya adalah pengguna datang di dalamnya </font>
+
+52
+00:02:10,810 --> 00:02:12,819
+ akses aplikasi web Anda <font color="#E5E5E5">dan mereka </font>
+
+53
+00:02:12,819 --> 00:02:14,200
+ ingin <font color="#E5E5E5">membeli </font><font color="#CCCCCC">sesuatu </font><font color="#E5E5E5">di online Anda </font>
+
+54
+00:02:14,200 --> 00:02:16,360
+ pasar <font color="#CCCCCC">misalnya mereka </font>
+
+55
+00:02:16,360 --> 00:02:17,740
+ dikonfirmasi melalui nama pengguna dan 
+
+56
+00:02:17,740 --> 00:02:19,510
+ <font color="#CCCCCC">kata sandi tentu saja </font><font color="#E5E5E5">dan </font><font color="#CCCCCC">Anda telah </font><font color="#E5E5E5">menyimpannya </font>
+
+57
+00:02:19,510 --> 00:02:20,920
+ <font color="#E5E5E5">nomor kartu kredit mereka untuk mereka </font>
+
+58
+00:02:20,920 --> 00:02:21,150
+ bahwa 
+
+59
+00:02:21,150 --> 00:02:22,560
+ <font color="#CCCCCC">mereka tidak perlu dipusingkan </font>
+
+60
+00:02:22,560 --> 00:02:24,180
+ melihat <font color="#E5E5E5">nomor kartu kredit mereka </font>
+
+61
+00:02:24,180 --> 00:02:25,920
+ <font color="#E5E5E5">kartu kredit mereka yang sebenarnya mereka bisa saja </font>
+
+62
+00:02:25,920 --> 00:02:27,329
+ satu klik beli <font color="#E5E5E5">ini </font>
+
+63
+00:02:27,329 --> 00:02:28,709
+ sudah mendapat <font color="#E5E5E5">detail kartu kredit </font>
+
+64
+00:02:28,709 --> 00:02:31,439
+ disimpan untuk mereka jadi <font color="#E5E5E5">super bagus super untuk </font>
+
+65
+00:02:31,439 --> 00:02:35,610
+ <font color="#E5E5E5">mereka semua baik tentu saja dengan </font>
+
+66
+00:02:35,610 --> 00:02:37,769
+ semua <font color="#E5E5E5">kebaikan itu memiliki potensi </font>
+
+67
+00:02:37,769 --> 00:02:39,390
+ kerentanan dan <font color="#E5E5E5">Anda memiliki orang jahat </font>
+
+68
+00:02:39,390 --> 00:02:40,530
+ yang <font color="#E5E5E5">ingin </font><font color="#CCCCCC">datang dan </font><font color="#E5E5E5">mereka </font><font color="#CCCCCC">ingin </font>
+
+69
+00:02:40,530 --> 00:02:42,569
+ tampilkan semua <font color="#CCCCCC">nomor kartu kredit ini </font>
+
+70
+00:02:42,569 --> 00:02:43,829
+ <font color="#CCCCCC">dan semua nama pengguna dan kata sandi ini </font>
+
+71
+00:02:43,829 --> 00:02:46,530
+ <font color="#E5E5E5">dan semua hal itu </font><font color="#CCCCCC">dan mereka gunakan </font>
+
+72
+00:02:46,530 --> 00:02:48,989
+ <font color="#CCCCCC">berbagai serangan untuk membuat barang itu </font>
+
+73
+00:02:48,989 --> 00:02:52,439
+ <font color="#CCCCCC">terjadi dan dan Anda tahu dan kemudian buruk </font>
+
+74
+00:02:52,439 --> 00:02:53,670
+ <font color="#CCCCCC">semuanya baik-baik </font><font color="#E5E5E5">saja </font>
+
+75
+00:02:53,670 --> 00:02:55,170
+ <font color="#CCCCCC">beberapa hal berbeda yang </font><font color="#E5E5E5">ingin saya tunjukkan </font>
+
+76
+00:02:55,170 --> 00:02:57,720
+ <font color="#CCCCCC">seperti yang </font><font color="#E5E5E5">kita lihat pada detail ini </font>
+
+77
+00:02:57,720 --> 00:02:59,489
+ mari kita <font color="#CCCCCC">katakan bahwa semua ini berbeda </font>
+
+78
+00:02:59,489 --> 00:03:02,430
+ <font color="#CCCCCC">Anda tahu </font><font color="#E5E5E5">halaman yang membentuk </font><font color="#CCCCCC">web Anda </font>
+
+79
+00:03:02,430 --> 00:03:04,920
+ <font color="#E5E5E5">aplikasi beberapa dari mereka digunakan </font>
+
+80
+00:03:04,920 --> 00:03:07,470
+ enkripsi <font color="#CCCCCC">dan beberapa dari mereka tidak </font><font color="#E5E5E5">demikian </font>
+
+81
+00:03:07,470 --> 00:03:09,510
+ katakanlah yang <font color="#CCCCCC">ini di sini </font><font color="#E5E5E5">dan </font>
+
+82
+00:03:09,510 --> 00:03:12,239
+ <font color="#E5E5E5">satu ini </font><font color="#CCCCCC">di sini keduanya menggunakan </font><font color="#E5E5E5">TLS </font>
+
+83
+00:03:12,239 --> 00:03:14,579
+ enkripsi dan yang <font color="#E5E5E5">satu ini lurus saja </font>
+
+84
+00:03:14,579 --> 00:03:17,760
+ <font color="#E5E5E5">Anda tahu HTTP tanpa enkripsi </font><font color="#CCCCCC">karena </font>
+
+85
+00:03:17,760 --> 00:03:19,139
+ <font color="#E5E5E5">ini </font><font color="#CCCCCC">seperti halaman dengan beberapa </font>
+
+86
+00:03:19,139 --> 00:03:20,370
+ gambar di atasnya atau sesuatu yang <font color="#CCCCCC">Anda </font><font color="#E5E5E5">tahu </font>
+
+87
+00:03:20,370 --> 00:03:23,430
+ <font color="#E5E5E5">itu bukan masalah besar </font><font color="#CCCCCC">jadi mungkin tidak </font><font color="#E5E5E5">semua </font>
+
+88
+00:03:23,430 --> 00:03:25,620
+ halaman Anda <font color="#CCCCCC">menggunakan itu sebaik yang </font><font color="#E5E5E5">Anda kembangkan </font>
+
+89
+00:03:25,620 --> 00:03:28,319
+ <font color="#E5E5E5">ini kadang-kadang Anda mungkin Anda bisa menyelinap masuk </font>
+
+90
+00:03:28,319 --> 00:03:30,629
+ beberapa data <font color="#CCCCCC">ke halaman yang tidak </font>
+
+91
+00:03:30,629 --> 00:03:34,079
+ menggunakan enkripsi <font color="#E5E5E5">tetapi data itu mungkin </font>
+
+92
+00:03:34,079 --> 00:03:35,819
+ <font color="#E5E5E5">sensitif jadi Anda harus </font><font color="#CCCCCC">berhati </font><font color="#E5E5E5">- </font><font color="#CCCCCC">hati </font>
+
+93
+00:03:35,819 --> 00:03:39,180
+ <font color="#CCCCCC">itu juga bahkan dengan halaman-halaman yang </font><font color="#E5E5E5">melakukannya </font>
+
+94
+00:03:39,180 --> 00:03:42,840
+ gunakan <font color="#E5E5E5">enkripsi TLS atau SSL yang </font><font color="#CCCCCC">mungkin mereka gunakan </font>
+
+95
+00:03:42,840 --> 00:03:46,650
+ <font color="#E5E5E5">cipher lemah jadi saya akan meletakkan cipher lemah </font>
+
+96
+00:03:46,650 --> 00:03:49,500
+ di sini baik-baik <font color="#E5E5E5">saja </font><font color="#CCCCCC">dan masalahnya </font>
+
+97
+00:03:49,500 --> 00:03:51,930
+ <font color="#CCCCCC">dengan menggunakan cipher lemah </font><font color="#E5E5E5">adalah bahwa mereka </font>
+
+98
+00:03:51,930 --> 00:03:54,629
+ orang lemah dan jahat bisa masuk dan berkata 
+
+99
+00:03:54,629 --> 00:03:56,459
+ hey <font color="#CCCCCC">saya </font><font color="#E5E5E5">akan menggunakan beberapa </font><font color="#CCCCCC">yang berbeda </font>
+
+100
+00:03:56,459 --> 00:04:00,180
+ alat <font color="#CCCCCC">untuk </font><font color="#E5E5E5">secara paksa menurunkan versi ini </font>
+
+101
+00:04:00,180 --> 00:04:02,010
+ koneksi yang <font color="#E5E5E5">akan dimiliki oleh pengguna </font>
+
+102
+00:04:02,010 --> 00:04:04,169
+ halaman ini dari TLS kembali ke hanya 
+
+103
+00:04:04,169 --> 00:04:06,479
+ <font color="#E5E5E5">HTTP jadi meskipun ini </font><font color="#CCCCCC">sensitif </font>
+
+104
+00:04:06,479 --> 00:04:08,489
+ <font color="#E5E5E5">data di halaman ini dan Anda mengaturnya </font>
+
+105
+00:04:08,489 --> 00:04:11,099
+ <font color="#E5E5E5">Enkripsi TLS memperdebatkan fakta itu </font>
+
+106
+00:04:11,099 --> 00:04:13,019
+ <font color="#E5E5E5">Anda memiliki cipher yang lemah yang dapat mengekspos Anda </font>
+
+107
+00:04:13,019 --> 00:04:14,909
+ untuk <font color="#E5E5E5">kerentanan mengatakan hei aku </font>
+
+108
+00:04:14,909 --> 00:04:16,560
+ <font color="#E5E5E5">orang jahat akan datang dan memaksa </font>
+
+109
+00:04:16,560 --> 00:04:19,228
+ ini <font color="#CCCCCC">ke hanya </font><font color="#E5E5E5">HTTP, bukan </font><font color="#CCCCCC">HTTPS </font>
+
+110
+00:04:19,228 --> 00:04:21,988
+ dan kemudian dengan demikian <font color="#CCCCCC">saya mendapatkan data itu </font>
+
+111
+00:04:21,988 --> 00:04:24,449
+ <font color="#CCCCCC">akan berada di </font><font color="#E5E5E5">halaman itu jadi itu a </font>
+
+112
+00:04:24,449 --> 00:04:28,169
+ <font color="#E5E5E5">itu masalah potensial yang lain </font>
+
+113
+00:04:28,169 --> 00:04:30,450
+ <font color="#E5E5E5">skenario lain mungkin itu katakanlah </font>
+
+114
+00:04:30,450 --> 00:04:33,180
+ <font color="#E5E5E5">Anda memiliki semacam file </font>
+
+115
+00:04:33,180 --> 00:04:35,090
+ <font color="#E5E5E5">mengunggah cacat </font>
+
+116
+00:04:35,090 --> 00:04:37,190
+ untuk semua <font color="#E5E5E5">nomor kartu kredit </font><font color="#CCCCCC">itu </font>
+
+117
+00:04:37,190 --> 00:04:39,830
+ disimpan dalam <font color="#E5E5E5">file di </font><font color="#CCCCCC">suatu tempat </font><font color="#E5E5E5">dan </font>
+
+118
+00:04:39,830 --> 00:04:42,110
+ pengguna <font color="#E5E5E5">orang jahat itu bisa </font><font color="#CCCCCC">masuk dan </font>
+
+119
+00:04:42,110 --> 00:04:44,600
+ ambil file itu dan unggah file <font color="#E5E5E5">dan </font>
+
+120
+00:04:44,600 --> 00:04:47,660
+ katakanlah Anda bahkan mengenkripsikannya <font color="#CCCCCC">Anda tahu </font>
+
+121
+00:04:47,660 --> 00:04:49,280
+ karena <font color="#CCCCCC">Anda berpikir ke depan </font><font color="#E5E5E5">seperti hei ini </font>
+
+122
+00:04:49,280 --> 00:04:50,870
+ <font color="#E5E5E5">adalah data sensitif tetapi tetapi jika tidak </font>
+
+123
+00:04:50,870 --> 00:04:53,590
+ mengenkripsi dengan baik <font color="#E5E5E5">maka mereka bisa digunakan </font>
+
+124
+00:04:53,590 --> 00:04:56,000
+ <font color="#E5E5E5">sesuatu seperti meja pelangi </font><font color="#CCCCCC">yang </font>
+
+125
+00:04:56,000 --> 00:04:58,880
+ daftar yang diketahui dari Anda tahu <font color="#CCCCCC">celah kata sandi </font>
+
+126
+00:04:58,880 --> 00:05:01,550
+ bahwa <font color="#E5E5E5">mereka bisa melawan itu </font>
+
+127
+00:05:01,550 --> 00:05:02,840
+ mencoba memecahkan <font color="#CCCCCC">kata sandi untuk itu </font>
+
+128
+00:05:02,840 --> 00:05:04,910
+ enkripsi <font color="#E5E5E5">dan kemudian mendapatkan </font><font color="#CCCCCC">akses ke </font>
+
+129
+00:05:04,910 --> 00:05:07,280
+ <font color="#E5E5E5">data sensitif </font><font color="#CCCCCC">dan kemudian setelah mereka punya </font>
+
+130
+00:05:07,280 --> 00:05:08,360
+ <font color="#E5E5E5">data sensitif terutama </font><font color="#CCCCCC">jika itu </font>
+
+131
+00:05:08,360 --> 00:05:10,160
+ <font color="#E5E5E5">seperti </font><font color="#CCCCCC">nomor jaminan </font><font color="#E5E5E5">sosial </font><font color="#CCCCCC">lalu itu </font>
+
+132
+00:05:10,160 --> 00:05:11,660
+ <font color="#E5E5E5">jenis data itu tidak benar-benar berubah </font>
+
+133
+00:05:11,660 --> 00:05:13,250
+ ketika Anda mendapatkan Anda <font color="#E5E5E5">mendapatkan yang ditugaskan di </font>
+
+134
+00:05:13,250 --> 00:05:14,660
+ lahir dan <font color="#E5E5E5">itu milikmu untuk sisanya </font>
+
+135
+00:05:14,660 --> 00:05:15,620
+ <font color="#CCCCCC">hidupmu </font>
+
+136
+00:05:15,620 --> 00:05:17,480
+ nomor kartu kredit akan <font color="#E5E5E5">berubah </font>
+
+137
+00:05:17,480 --> 00:05:21,890
+ <font color="#E5E5E5">setidaknya setiap beberapa tahun </font><font color="#CCCCCC">jadi </font><font color="#E5E5E5">begitu </font><font color="#CCCCCC">a </font>
+
+138
+00:05:21,890 --> 00:05:23,450
+ <font color="#E5E5E5">beberapa hal </font><font color="#CCCCCC">yang perlu Anda lakukan </font>
+
+139
+00:05:23,450 --> 00:05:26,090
+ <font color="#CCCCCC">lakukan untuk menjaga terhadap data sensitif ini </font>
+
+140
+00:05:26,090 --> 00:05:29,120
+ eksposur selain yang Anda tahu harus Anda lakukan 
+
+141
+00:05:29,120 --> 00:05:30,650
+ <font color="#CCCCCC">membangun aplikasi web benar </font><font color="#E5E5E5">dari </font>
+
+142
+00:05:30,650 --> 00:05:32,300
+ Tentu saja <font color="#CCCCCC">Anda perlu Anda perlu </font><font color="#E5E5E5">mengenkripsi </font>
+
+143
+00:05:32,300 --> 00:05:33,950
+ semua <font color="#CCCCCC">halaman yang perlu </font>
+
+144
+00:05:33,950 --> 00:05:36,130
+ <font color="#CCCCCC">dienkripsi bahkan mungkin mengenkripsi semuanya </font>
+
+145
+00:05:36,130 --> 00:05:38,840
+ <font color="#E5E5E5">Anda perlu mengenkripsi data sensitif </font>
+
+146
+00:05:38,840 --> 00:05:41,510
+ <font color="#E5E5E5">saat istirahat </font><font color="#CCCCCC">yang duduk di sana </font><font color="#E5E5E5">sebagai bagian dari </font>
+
+147
+00:05:41,510 --> 00:05:43,010
+ <font color="#CCCCCC">aplikasi web Anda, tetapi saya hanya </font><font color="#E5E5E5">pergi </font>
+
+148
+00:05:43,010 --> 00:05:46,370
+ untuk daftar <font color="#CCCCCC">beberapa jenis praktik terbaik atau </font>
+
+149
+00:05:46,370 --> 00:05:49,250
+ mitigasi <font color="#E5E5E5">yang mungkin Anda miliki dan </font>
+
+150
+00:05:49,250 --> 00:05:50,780
+ yang pertama yang <font color="#CCCCCC">akan saya </font><font color="#E5E5E5">katakan adalah </font>
+
+151
+00:05:50,780 --> 00:05:55,370
+ mengklasifikasikan data Anda sehingga <font color="#E5E5E5">mengklasifikasikan semua data </font>
+
+152
+00:05:55,370 --> 00:05:59,210
+ <font color="#E5E5E5">tepat sehingga kita semua </font><font color="#CCCCCC">tahu </font><font color="#E5E5E5">bahwa tidak </font><font color="#CCCCCC">semua </font>
+
+153
+00:05:59,210 --> 00:06:00,590
+ <font color="#E5E5E5">data yang pasti akan Anda gunakan </font>
+
+154
+00:06:00,590 --> 00:06:02,600
+ dengan data sensitif lagi Anda mungkin 
+
+155
+00:06:02,600 --> 00:06:04,340
+ memiliki <font color="#CCCCCC">beberapa gambar seperti yang Anda miliki </font>
+
+156
+00:06:04,340 --> 00:06:05,270
+ salah satu situs web Anda yang bukan 
+
+157
+00:06:05,270 --> 00:06:07,310
+ tentu data sensitif <font color="#E5E5E5">jadi mengklasifikasi </font>
+
+158
+00:06:07,310 --> 00:06:09,050
+ data beberapa <font color="#E5E5E5">yang sensitif tidak </font>
+
+159
+00:06:09,050 --> 00:06:12,140
+ dan kemudian Anda perlu <font color="#E5E5E5">menerapkan kontrol </font>
+
+160
+00:06:12,140 --> 00:06:17,330
+ Saya akan menerapkan kontrol untuk data <font color="#E5E5E5">itu </font>
+
+161
+00:06:17,330 --> 00:06:18,950
+ jika itu sangat <font color="#E5E5E5">sensitif maka Anda perlu </font>
+
+162
+00:06:18,950 --> 00:06:20,300
+ pastikan itu <font color="#E5E5E5">sangat baik lho </font>
+
+163
+00:06:20,300 --> 00:06:22,130
+ dilindungi itu tidak <font color="#E5E5E5">sensitif sama sekali </font>
+
+164
+00:06:22,130 --> 00:06:23,240
+ <font color="#E5E5E5">maka mungkin Anda </font><font color="#CCCCCC">tidak perlu khawatir </font>
+
+165
+00:06:23,240 --> 00:06:25,430
+ banyak <font color="#CCCCCC">tentang itu </font><font color="#E5E5E5">semua benar </font><font color="#CCCCCC">satu </font><font color="#E5E5E5">lagi saya </font>
+
+166
+00:06:25,430 --> 00:06:27,620
+ <font color="#E5E5E5">baru saja menyebutkan </font><font color="#CCCCCC">ini detik yang </font><font color="#E5E5E5">lalu mengenkripsi </font>
+
+167
+00:06:27,620 --> 00:06:33,740
+ data saat <font color="#E5E5E5">istirahat </font><font color="#CCCCCC">jadi </font><font color="#E5E5E5">saya akan menyimpan data saat istirahat </font>
+
+168
+00:06:33,740 --> 00:06:36,980
+ <font color="#CCCCCC">oke jadi data di istirahat lagi itu </font>
+
+169
+00:06:36,980 --> 00:06:38,870
+ akan memenuhi syarat <font color="#E5E5E5">berdasarkan data Anda Kalasha </font>
+
+170
+00:06:38,870 --> 00:06:41,300
+ fikasi <font color="#CCCCCC">bahwa data yang Anda butuhkan </font><font color="#E5E5E5">untuk memastikan </font>
+
+171
+00:06:41,300 --> 00:06:42,620
+ dan <font color="#E5E5E5">membuat Anda dienkripsi dan Anda mengenkripsi </font>
+
+172
+00:06:42,620 --> 00:06:44,810
+ <font color="#E5E5E5">itu dengan baik dengan </font><font color="#CCCCCC">enkripsi yang </font><font color="#E5E5E5">kuat </font><font color="#CCCCCC">itu </font>
+
+173
+00:06:44,810 --> 00:06:47,150
+ <font color="#E5E5E5">cara jika pernah Anda tahu jika ada yang pernah </font>
+
+174
+00:06:47,150 --> 00:06:48,689
+ mendapatkan <font color="#CCCCCC">file itu atau apa pun itu </font>
+
+175
+00:06:48,689 --> 00:06:51,629
+ <font color="#E5E5E5">kemudian data tersebut </font><font color="#CCCCCC">dienkripsi dan yang lainnya </font>
+
+176
+00:06:51,629 --> 00:06:54,949
+ hal <font color="#E5E5E5">yang perlu </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">gunakan adalah cipher yang kuat </font>
+
+177
+00:06:54,949 --> 00:06:59,219
+ <font color="#CCCCCC">dan ini </font><font color="#E5E5E5">kembali ke pengalaman </font>
+
+178
+00:06:59,219 --> 00:07:00,659
+ <font color="#E5E5E5">yang dimiliki pengguna dengan web Anda </font>
+
+179
+00:07:00,659 --> 00:07:02,879
+ aplikasi <font color="#E5E5E5">untuk </font><font color="#CCCCCC">memulai dengan </font><font color="#E5E5E5">ini </font>
+
+180
+00:07:02,879 --> 00:07:04,709
+ <font color="#E5E5E5">koneksi </font><font color="#CCCCCC">harus dilindungi </font>
+
+181
+00:07:04,709 --> 00:07:08,039
+ Enkripsi TLS <font color="#E5E5E5">dan Anda harus memastikan </font>
+
+182
+00:07:08,039 --> 00:07:10,199
+ Anda menggunakan cipher yang kuat seperti yang Anda <font color="#E5E5E5">membangun </font>
+
+183
+00:07:10,199 --> 00:07:12,959
+ bahwa TLS yang <font color="#E5E5E5">Anda kenal terkait dengannya </font>
+
+184
+00:07:12,959 --> 00:07:16,349
+ <font color="#E5E5E5">pengguna akhir Anda </font><font color="#CCCCCC">lagi jika Anda menggunakan yang lemah </font>
+
+185
+00:07:16,349 --> 00:07:18,029
+ cipher atau <font color="#E5E5E5">jika Anda memiliki sandi yang lemah </font>
+
+186
+00:07:18,029 --> 00:07:20,939
+ sama sekali dalam daftar <font color="#E5E5E5">cipher Anda </font><font color="#CCCCCC">kemudian </font>
+
+187
+00:07:20,939 --> 00:07:22,829
+ memaparkan Anda berpotensi <font color="#E5E5E5">hanya masalah </font>
+
+188
+00:07:22,829 --> 00:07:24,599
+ <font color="#CCCCCC">jadi pastikan </font><font color="#E5E5E5">Anda menggunakan cipher yang kuat </font>
+
+189
+00:07:24,599 --> 00:07:26,639
+ <font color="#CCCCCC">server web Anda karena server web </font>
+
+190
+00:07:26,639 --> 00:07:28,709
+ mendapat untuk menentukan <font color="#CCCCCC">cipher apa </font><font color="#E5E5E5">yang digunakan </font>
+
+191
+00:07:28,709 --> 00:07:31,289
+ dalam <font color="#E5E5E5">koneksi TLS yang </font><font color="#CCCCCC">lain </font><font color="#E5E5E5">itu </font>
+
+192
+00:07:31,289 --> 00:07:35,489
+ <font color="#E5E5E5">Aku akan menaruh adalah saya akan menaruh mungkin atau </font><font color="#CCCCCC">mungkin </font>
+
+193
+00:07:35,489 --> 00:07:39,539
+ pertimbangan <font color="#CCCCCC">untuk saya akan menempatkan P </font><font color="#E5E5E5">F </font><font color="#CCCCCC">S yang </font>
+
+194
+00:07:39,539 --> 00:07:42,300
+ adalah <font color="#CCCCCC">rahasia kedepan yang sempurna dan </font><font color="#E5E5E5">kemudian aku akan </font>
+
+195
+00:07:42,300 --> 00:07:50,099
+ katakan dan atau Hs <font color="#E5E5E5">T s yang HTTP ketat </font>
+
+196
+00:07:50,099 --> 00:07:52,800
+ Keamanan Transportasi <font color="#CCCCCC">sempurna ke depan </font>
+
+197
+00:07:52,800 --> 00:07:55,469
+ kerahasiaan <font color="#CCCCCC">berkaitan </font><font color="#E5E5E5">dengan TLS ini </font>
+
+198
+00:07:55,469 --> 00:07:56,639
+ koneksi <font color="#CCCCCC">kita punya beberapa </font><font color="#E5E5E5">lampu </font><font color="#CCCCCC">lainnya </font>
+
+199
+00:07:56,639 --> 00:07:58,079
+ papan pada itu yang kita dapat link ke tetapi 
+
+200
+00:07:58,079 --> 00:08:02,159
+ <font color="#E5E5E5">pada dasarnya itu tidak itu itu </font>
+
+201
+00:08:02,159 --> 00:08:04,829
+ <font color="#E5E5E5">bentuk komunikasi yang lebih kuat menggunakan </font>
+
+202
+00:08:04,829 --> 00:08:06,509
+ Protokol TLS <font color="#E5E5E5">antara pengguna </font><font color="#CCCCCC">dan </font>
+
+203
+00:08:06,509 --> 00:08:10,529
+ webserver <font color="#E5E5E5">dan kemudian HST pada dasarnya </font>
+
+204
+00:08:10,529 --> 00:08:12,089
+ kata hey jika Anda ingin <font color="#E5E5E5">berkomunikasi dengannya </font>
+
+205
+00:08:12,089 --> 00:08:14,309
+ <font color="#E5E5E5">aplikasi web saya </font><font color="#CCCCCC">maka yang harus Anda lakukan </font>
+
+206
+00:08:14,309 --> 00:08:17,329
+ itu <font color="#E5E5E5">HTTP </font><font color="#CCCCCC">itu</font><font color="#E5E5E5"> harus menjadi terenkripsi </font>
+
+207
+00:08:17,329 --> 00:08:21,539
+ komunikasi <font color="#CCCCCC">ada beberapa hal kecil </font>
+
+208
+00:08:21,539 --> 00:08:24,360
+ <font color="#E5E5E5">Gotchas pada yang satu jika sekali Anda pergi </font>
+
+209
+00:08:24,360 --> 00:08:27,139
+ <font color="#E5E5E5">HST htth </font>
+
+210
+00:08:27,139 --> 00:08:30,839
+ <font color="#E5E5E5">maka Anda tidak bisa benar-benar </font><font color="#CCCCCC">kembali sehingga </font><font color="#E5E5E5">Anda </font>
+
+211
+00:08:30,839 --> 00:08:32,308
+ <font color="#CCCCCC">tahu kamu tidak bisa menaruh pasta gigi </font><font color="#E5E5E5">kembali </font>
+
+212
+00:08:32,308 --> 00:08:34,110
+ di tabung karena <font color="#CCCCCC">berada di hal </font><font color="#E5E5E5">yang </font><font color="#CCCCCC">sangat </font>
+
+213
+00:08:34,110 --> 00:08:35,729
+ setelah Anda <font color="#E5E5E5">membuat </font><font color="#CCCCCC">keputusan itu </font>
+
+214
+00:08:35,729 --> 00:08:37,708
+ keputusan <font color="#E5E5E5">terhadap keamanan terhadap </font>
+
+215
+00:08:37,708 --> 00:08:39,479
+ kekuatan yang <font color="#E5E5E5">Anda butuhkan untuk </font><font color="#CCCCCC">memastikan Anda miliki </font>
+
+216
+00:08:39,479 --> 00:08:42,389
+ semuanya <font color="#E5E5E5">siap untuk </font><font color="#CCCCCC">pergi </font><font color="#E5E5E5">ketika kamu membalik </font>
+
+217
+00:08:42,389 --> 00:08:44,879
+ <font color="#CCCCCC">switch itu atau kamu bisa lubang hitam </font>
+
+218
+00:08:44,879 --> 00:08:46,110
+ <font color="#CCCCCC">beberapa </font><font color="#E5E5E5">hal yang bisa merusak beberapa hal </font>
+
+219
+00:08:46,110 --> 00:08:47,879
+ <font color="#E5E5E5">jadi </font><font color="#CCCCCC">berhati </font><font color="#E5E5E5">- </font><font color="#CCCCCC">hatilah pada yang </font><font color="#E5E5E5">satu itu </font><font color="#CCCCCC">jika </font><font color="#E5E5E5">kamu </font>
+
+220
+00:08:47,879 --> 00:08:48,870
+ ingin pergi dengan <font color="#E5E5E5">rute yang tidak saya katakan </font>
+
+221
+00:08:48,870 --> 00:08:50,720
+ jangan <font color="#E5E5E5">menggunakannya hanya </font><font color="#CCCCCC">berhati-hati ketika Anda melakukannya </font>
+
+222
+00:08:50,720 --> 00:08:54,149
+ <font color="#CCCCCC">paparan data baik-baik saja jadi lagi sensitif </font>
+
+223
+00:08:54,149 --> 00:08:56,880
+ <font color="#E5E5E5">Anda </font><font color="#CCCCCC">memiliki data sensitif ini </font><font color="#E5E5E5">dan Anda </font>
+
+224
+00:08:56,880 --> 00:08:58,259
+ <font color="#CCCCCC">tidak ingin </font><font color="#E5E5E5">mengungkapkannya hal lain </font>
+
+225
+00:08:58,259 --> 00:09:00,959
+ <font color="#CCCCCC">yang akan saya katakan </font><font color="#E5E5E5">dengan cepat adalah jangan simpan </font>
+
+226
+00:09:00,959 --> 00:09:02,610
+ <font color="#E5E5E5">data sensitif </font>
+
+227
+00:09:02,610 --> 00:09:04,110
+ Anda benar <font color="#E5E5E5">- benar harus menyimpan sensitif </font>
+
+228
+00:09:04,110 --> 00:09:06,149
+ <font color="#E5E5E5">data jadi jika ada jika </font><font color="#CCCCCC">ada </font>
+
+229
+00:09:06,149 --> 00:09:07,740
+ <font color="#CCCCCC">persyaratan mutlak di mana Anda harus </font>
+
+230
+00:09:07,740 --> 00:09:09,870
+ duduk di <font color="#E5E5E5">sana dan simpan data ini sebagai bagian dari </font>
+
+231
+00:09:09,870 --> 00:09:11,459
+ <font color="#E5E5E5">aplikasi web Anda atau database </font><font color="#CCCCCC">itu </font>
+
+232
+00:09:11,459 --> 00:09:14,220
+ <font color="#CCCCCC">Anda mengontrol atau apa pun </font><font color="#E5E5E5">kemudian baik-baik saja tetapi jika </font>
+
+233
+00:09:14,220 --> 00:09:17,250
+ jika itu <font color="#CCCCCC">mungkin </font><font color="#E5E5E5">untuk Anda ketahui </font>
+
+234
+00:09:17,250 --> 00:09:19,380
+ gunakan <font color="#CCCCCC">data sensitif dan </font><font color="#E5E5E5">kemudian hapus </font>
+
+235
+00:09:19,380 --> 00:09:22,170
+ <font color="#CCCCCC">dan menyingkirkannya dan Anda tahu melempar </font>
+
+236
+00:09:22,170 --> 00:09:24,690
+ itu jauh <font color="#CCCCCC">Anda tahu tepat setelah </font><font color="#E5E5E5">saat itu </font>
+
+237
+00:09:24,690 --> 00:09:26,850
+ <font color="#CCCCCC">yang </font><font color="#E5E5E5">Anda butuhkan kemudian lakukan </font><font color="#CCCCCC">itu jadi jangan </font>
+
+238
+00:09:26,850 --> 00:09:28,860
+ tidak berpegang <font color="#CCCCCC">pada </font><font color="#E5E5E5">ini lebih lama dari </font>
+
+239
+00:09:28,860 --> 00:09:30,209
+ <font color="#CCCCCC">Anda benar-benar harus </font>
+
+240
+00:09:30,209 --> 00:09:32,519
+ so <font color="#E5E5E5">anyway karena kalau datanya tidak </font>
+
+241
+00:09:32,519 --> 00:09:34,860
+ <font color="#E5E5E5">maka </font><font color="#CCCCCC">tidak mungkin </font><font color="#E5E5E5">kamu tahu itu tidak bisa </font>
+
+242
+00:09:34,860 --> 00:09:36,690
+ <font color="#E5E5E5">diekspos </font><font color="#CCCCCC">jadi itu semacam itu </font>
+
+243
+00:09:36,690 --> 00:09:39,060
+ <font color="#CCCCCC">ide dibalik </font><font color="#E5E5E5">semua itu jadi lagi ini </font>
+
+244
+00:09:39,060 --> 00:09:41,480
+ adalah nomor <font color="#E5E5E5">tiga yang Anda tahu </font>
+
+245
+00:09:41,480 --> 00:09:44,070
+ kerentanan pada <font color="#CCCCCC">sepuluh teratas OWASP </font>
+
+246
+00:09:44,070 --> 00:09:45,600
+ daftar ini yang <font color="#CCCCCC">baru saja keluar sensitif </font>
+
+247
+00:09:45,600 --> 00:09:48,089
+ <font color="#E5E5E5">pemaparan data sehingga terjadi </font><font color="#CCCCCC">banyak </font>
+
+248
+00:09:48,089 --> 00:09:49,950
+ lagi <font color="#CCCCCC">yang harus </font><font color="#E5E5E5">Anda lakukan adalah </font><font color="#CCCCCC">menonton </font>
+
+249
+00:09:49,950 --> 00:09:51,360
+ berita hari ini <font color="#E5E5E5">dan Anda melihat jenis ini </font>
+
+250
+00:09:51,360 --> 00:09:54,329
+ hal-hal <font color="#E5E5E5">terjadi sehingga hal-hal ini membangun </font>
+
+251
+00:09:54,329 --> 00:09:56,640
+ aplikasi web Anda dengan benar <font color="#CCCCCC">ada </font>
+
+252
+00:09:56,640 --> 00:09:57,959
+ beberapa hal lain <font color="#CCCCCC">seperti </font><font color="#E5E5E5">Anda bisa meletakkan </font>
+
+253
+00:09:57,959 --> 00:10:00,149
+ seperti <font color="#E5E5E5">aplikasi web </font><font color="#CCCCCC">firewall </font><font color="#E5E5E5">sejalan </font>
+
+254
+00:10:00,149 --> 00:10:02,130
+ <font color="#E5E5E5">yang dapat membantu </font><font color="#CCCCCC">Anda mengetahui bantuan ini </font>
+
+255
+00:10:02,130 --> 00:10:05,550
+ membantu mengamankan banyak data sensitif ini 
+
+256
+00:10:05,550 --> 00:10:08,130
+ eksposur <font color="#E5E5E5">tetapi tetap berhati-hati </font>
+
+257
+00:10:08,130 --> 00:10:09,899
+ <font color="#CCCCCC">pastikan </font><font color="#E5E5E5">Anda melakukan semua hal dengan benar </font>
+
+258
+00:10:09,899 --> 00:10:12,360
+ <font color="#E5E5E5">dan dan mari aman di </font><font color="#CCCCCC">internet </font>
+
+259
+00:10:12,360 --> 00:10:13,649
+ hari ini <font color="#E5E5E5">jadi terima kasih sudah menonton lampu </font><font color="#CCCCCC">ini </font>
+
+260
+00:10:13,649 --> 00:10:15,240
+ <font color="#E5E5E5">pelajaran dewan dan kita akan melihat kalian keluar </font>
+
+261
+00:10:15,240 --> 00:10:17,930
+ <font color="#E5E5E5">ada di komunitas </font>
+
+262
+00:10:23,570 --> 00:00:00,000
+ kamu 
+

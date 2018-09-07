@@ -1,0 +1,696 @@
+1
+00:00:11,769 --> 00:00:13,960
+welcome to the course on web application
+
+2
+00:00:13,960 --> 00:00:17,320
+attacks over the<font color="#CCCCCC"> next modules we will</font>
+
+3
+00:00:17,320 --> 00:00:18,789
+<font color="#E5E5E5">cover the most significant issues</font>
+
+4
+00:00:18,789 --> 00:00:20,200
+relating to common types<font color="#E5E5E5"> of web</font>
+
+5
+00:00:20,200 --> 00:00:22,300
+<font color="#E5E5E5">applications susceptibility and</font><font color="#CCCCCC"> talked</font>
+
+6
+00:00:22,300 --> 00:00:23,710
+of<font color="#CCCCCC"> the ways in which</font><font color="#E5E5E5"> you may</font><font color="#CCCCCC"> defend your</font>
+
+7
+00:00:23,710 --> 00:00:28,090
+applications against attacks the first
+
+8
+00:00:28,090 --> 00:00:29,859
+module<font color="#E5E5E5"> will focus on configuring the</font>
+
+9
+00:00:29,859 --> 00:00:31,359
+computer environment<font color="#CCCCCC"> so that</font><font color="#E5E5E5"> it may be</font>
+
+10
+00:00:31,359 --> 00:00:33,010
+used<font color="#E5E5E5"> for</font><font color="#CCCCCC"> further presentations</font><font color="#E5E5E5"> and</font>
+
+11
+00:00:33,010 --> 00:00:37,930
+experiments let's start with the xampp
+
+12
+00:00:37,930 --> 00:00:40,300
+package its components include the
+
+13
+00:00:40,300 --> 00:00:43,300
+<font color="#E5E5E5">apache HTTP server the PHP</font><font color="#CCCCCC"> interpreter</font>
+
+14
+00:00:43,300 --> 00:00:46,720
+<font color="#E5E5E5">MySQL database server</font><font color="#CCCCCC"> a PHP myadmin tool</font>
+
+15
+00:00:46,720 --> 00:00:48,760
+for database<font color="#CCCCCC"> management and other</font><font color="#E5E5E5"> tools</font>
+
+16
+00:00:48,760 --> 00:00:58,210
+<font color="#E5E5E5">for developing web applications we will</font>
+
+17
+00:00:58,210 --> 00:01:00,159
+<font color="#E5E5E5">use the Firefox web browser and find the</font>
+
+18
+00:01:00,159 --> 00:01:02,879
+xampp package
+
+19
+00:01:04,620 --> 00:01:07,760
+[Music]
+
+20
+00:01:11,840 --> 00:01:14,949
+[Music]
+
+21
+00:01:25,490 --> 00:01:29,960
+you can see here the<font color="#CCCCCC"> xampp website</font>
+
+22
+00:01:30,470 --> 00:01:34,820
+select the Windows installation<font color="#E5E5E5"> version</font>
+
+23
+00:02:02,750 --> 00:02:05,870
+[Music]
+
+24
+00:02:09,960 --> 00:02:13,080
+[Music]
+
+25
+00:02:23,200 --> 00:02:25,460
+install the package without<font color="#E5E5E5"> changing the</font>
+
+26
+00:02:25,460 --> 00:02:28,180
+default settings
+
+27
+00:03:00,880 --> 00:03:04,030
+[Music]
+
+28
+00:03:08,090 --> 00:03:11,210
+[Music]
+
+29
+00:03:59,010 --> 00:04:02,150
+[Music]
+
+30
+00:04:06,220 --> 00:04:09,340
+[Music]
+
+31
+00:04:54,950 --> 00:04:57,210
+after the xampp installation has
+
+32
+00:04:57,210 --> 00:04:59,280
+successfully completed<font color="#CCCCCC"> the control panel</font>
+
+33
+00:04:59,280 --> 00:05:02,310
+will<font color="#CCCCCC"> open</font><font color="#E5E5E5"> it serves as a tool</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> manage</font>
+
+34
+00:05:02,310 --> 00:05:04,520
+the individual components of<font color="#E5E5E5"> the package</font>
+
+35
+00:05:04,520 --> 00:05:06,750
+<font color="#E5E5E5">well pin it to the taskbar to make it</font>
+
+36
+00:05:06,750 --> 00:05:10,430
+easily<font color="#CCCCCC"> available for future</font><font color="#E5E5E5"> reference</font>
+
+37
+00:05:11,720 --> 00:05:14,580
+none<font color="#CCCCCC"> of the components are running so we</font>
+
+38
+00:05:14,580 --> 00:05:19,020
+may safely modify our configuration to
+
+39
+00:05:19,020 --> 00:05:20,430
+support the editing of text files
+
+40
+00:05:20,430 --> 00:05:22,380
+<font color="#E5E5E5">install the free syntax highlighting</font>
+
+41
+00:05:22,380 --> 00:05:26,190
+text editor<font color="#E5E5E5"> notepad plus plus its</font>
+
+42
+00:05:26,190 --> 00:05:27,510
+features include system shell
+
+43
+00:05:27,510 --> 00:05:28,950
+integration which makes possible<font color="#E5E5E5"> the</font>
+
+44
+00:05:28,950 --> 00:05:30,599
+<font color="#E5E5E5">editing of files through selecting</font>
+
+45
+00:05:30,599 --> 00:05:32,430
+<font color="#CCCCCC">options from the context menu for</font><font color="#E5E5E5"> each</font>
+
+46
+00:05:32,430 --> 00:05:34,760
+file
+
+47
+00:05:55,250 --> 00:05:58,399
+[Music]
+
+48
+00:06:02,460 --> 00:06:05,589
+[Music]
+
+49
+00:06:17,690 --> 00:06:22,280
+let's open the directory<font color="#CCCCCC"> xampp package</font>
+
+50
+00:06:29,360 --> 00:06:33,180
+in<font color="#E5E5E5"> apache backslash comp you will find</font>
+
+51
+00:06:33,180 --> 00:06:36,060
+the file<font color="#E5E5E5"> HTTP decom which contains the</font>
+
+52
+00:06:36,060 --> 00:06:50,310
+<font color="#CCCCCC">configuration for</font><font color="#E5E5E5"> apache the directory</font>
+
+53
+00:06:50,310 --> 00:06:51,870
+modules has been copied to<font color="#E5E5E5"> the</font><font color="#CCCCCC"> desktop</font>
+
+54
+00:06:51,870 --> 00:06:53,190
+from<font color="#E5E5E5"> the disk attached to the course</font>
+
+55
+00:06:53,190 --> 00:06:55,260
+book<font color="#E5E5E5"> you may also</font><font color="#CCCCCC"> download it</font><font color="#E5E5E5"> here</font>
+
+56
+00:06:55,260 --> 00:06:57,870
+hacking<font color="#CCCCCC"> school comm forward slash</font><font color="#E5E5E5"> get</font>
+
+57
+00:06:57,870 --> 00:07:02,729
+<font color="#E5E5E5">whp it contains examples of the next</font>
+
+58
+00:07:02,729 --> 00:07:05,610
+modules will also include applications
+
+59
+00:07:05,610 --> 00:07:08,600
+needed to illustrate some of<font color="#E5E5E5"> our topics</font>
+
+60
+00:07:08,600 --> 00:07:10,740
+<font color="#E5E5E5">we want it to be accessible from</font>
+
+61
+00:07:10,740 --> 00:07:17,910
+browsers the<font color="#E5E5E5"> configuration file contains</font>
+
+62
+00:07:17,910 --> 00:07:21,539
+<font color="#E5E5E5">the section directory it indicates to</font>
+
+63
+00:07:21,539 --> 00:07:23,400
+Apache the presence<font color="#E5E5E5"> of a folder and sets</font>
+
+64
+00:07:23,400 --> 00:07:26,930
+<font color="#E5E5E5">access options for each folder</font>
+
+65
+00:07:37,189 --> 00:07:39,449
+we see here<font color="#E5E5E5"> the definition</font><font color="#CCCCCC"> for</font><font color="#E5E5E5"> the</font>
+
+66
+00:07:39,449 --> 00:07:41,159
+<font color="#CCCCCC">htdocs directory that</font><font color="#E5E5E5"> comes with the</font>
+
+67
+00:07:41,159 --> 00:07:44,219
+<font color="#CCCCCC">xampp framework we</font><font color="#E5E5E5"> can copy the</font>
+
+68
+00:07:44,219 --> 00:07:52,860
+definition let's now copy the full path
+
+69
+00:07:52,860 --> 00:07:54,509
+<font color="#CCCCCC">two modules and paste it to the</font><font color="#E5E5E5"> copied</font>
+
+70
+00:07:54,509 --> 00:08:04,770
+directory definition changing the slash
+
+71
+00:08:04,770 --> 00:08:06,719
+<font color="#CCCCCC">Convention is also necessary as the</font>
+
+72
+00:08:06,719 --> 00:08:08,430
+<font color="#E5E5E5">Apache package supports and prefers</font>
+
+73
+00:08:08,430 --> 00:08:10,349
+<font color="#E5E5E5">Linux convention</font><font color="#CCCCCC"> even if it's launched</font>
+
+74
+00:08:10,349 --> 00:08:25,110
+on<font color="#E5E5E5"> Windows we must now logically define</font>
+
+75
+00:08:25,110 --> 00:08:26,370
+the relationship between the<font color="#E5E5E5"> path</font>
+
+76
+00:08:26,370 --> 00:08:27,960
+entered and the browser and the<font color="#E5E5E5"> defined</font>
+
+77
+00:08:27,960 --> 00:08:31,139
+directory for<font color="#E5E5E5"> this purpose use the</font>
+
+78
+00:08:31,139 --> 00:08:40,409
+<font color="#E5E5E5">command alias we can see the calling of</font>
+
+79
+00:08:40,409 --> 00:08:43,169
+<font color="#E5E5E5">the command let's redirect modules to</font>
+
+80
+00:08:43,169 --> 00:08:46,219
+<font color="#E5E5E5">the security directory</font>
+
+81
+00:08:49,620 --> 00:08:52,769
+[Music]
+
+82
+00:08:57,540 --> 00:09:00,279
+now let's launch the Apache server and
+
+83
+00:09:00,279 --> 00:09:08,020
+check<font color="#E5E5E5"> its configuration next start the</font>
+
+84
+00:09:08,020 --> 00:09:33,850
+<font color="#E5E5E5">MySQL server we can</font><font color="#CCCCCC"> see</font><font color="#E5E5E5"> that the</font>
+
+85
+00:09:33,850 --> 00:09:35,560
+security directory may be opened and
+
+86
+00:09:35,560 --> 00:09:40,150
+accessed the default page for the<font color="#E5E5E5"> X M</font>
+
+87
+00:09:40,150 --> 00:09:46,510
+framework is running let's now use<font color="#E5E5E5"> PHP</font>
+
+88
+00:09:46,510 --> 00:09:47,780
+myadmin
+
+89
+00:09:47,780 --> 00:09:50,900
+[Music]
+
+90
+00:09:53,720 --> 00:09:55,730
+and a test<font color="#E5E5E5"> user with access</font><font color="#CCCCCC"> to the</font>
+
+91
+00:09:55,730 --> 00:10:18,800
+<font color="#E5E5E5">localhost set the password to test</font><font color="#CCCCCC"> and</font>
+
+92
+00:10:18,800 --> 00:10:20,600
+grant the<font color="#CCCCCC"> user access to a database with</font>
+
+93
+00:10:20,600 --> 00:10:29,000
+<font color="#CCCCCC">the same name all the basic</font><font color="#E5E5E5"> access</font>
+
+94
+00:10:29,000 --> 00:10:32,350
+privileges are granted<font color="#CCCCCC"> to the user</font>
+
+95
+00:10:45,910 --> 00:10:49,020
+[Music]
+
+96
+00:10:50,080 --> 00:10:52,649
+let's also<font color="#E5E5E5"> select the option file</font>
+
+97
+00:10:52,649 --> 00:10:55,269
+normally<font color="#E5E5E5"> this would not</font><font color="#CCCCCC"> be done however</font>
+
+98
+00:10:55,269 --> 00:10:56,500
+<font color="#E5E5E5">for the purpose of one of our</font>
+
+99
+00:10:56,500 --> 00:11:07,209
+demonstrations this<font color="#E5E5E5"> is necessary the</font>
+
+100
+00:11:07,209 --> 00:11:10,240
+user has been<font color="#E5E5E5"> added</font><font color="#CCCCCC"> correctly</font><font color="#E5E5E5"> we must</font>
+
+101
+00:11:10,240 --> 00:11:12,339
+now import database<font color="#E5E5E5"> dump which will</font>
+
+102
+00:11:12,339 --> 00:11:14,050
+create tables needed in the<font color="#CCCCCC"> next modules</font>
+
+103
+00:11:14,050 --> 00:11:16,980
+and add sample<font color="#E5E5E5"> data</font>
+
+104
+00:11:44,000 --> 00:11:46,920
+[Music]
+
+105
+00:11:46,920 --> 00:11:49,230
+let's now install the<font color="#CCCCCC"> Javie advanced</font><font color="#E5E5E5"> SQL</font>
+
+106
+00:11:49,230 --> 00:11:51,269
+<font color="#E5E5E5">injection tool and</font><font color="#CCCCCC"> create a shortcut in</font>
+
+107
+00:11:51,269 --> 00:11:54,619
+<font color="#CCCCCC">the directory of module</font><font color="#E5E5E5"> 20</font>
+
+108
+00:12:42,130 --> 00:12:45,269
+[Music]
+
+109
+00:12:45,370 --> 00:12:47,740
+next<font color="#E5E5E5"> download the rips package for</font>
+
+110
+00:12:47,740 --> 00:13:20,380
+testing PHP applications<font color="#E5E5E5"> extract it</font><font color="#CCCCCC"> to</font>
+
+111
+00:13:20,380 --> 00:13:37,240
+<font color="#E5E5E5">the directory of module 20 we now need</font>
+
+112
+00:13:37,240 --> 00:13:39,070
+to download John the Ripper<font color="#CCCCCC"> a tool for</font>
+
+113
+00:13:39,070 --> 00:13:42,540
+<font color="#E5E5E5">cracking and generating passwords</font>
+
+114
+00:13:45,870 --> 00:13:47,950
+extract the<font color="#CCCCCC"> Windows</font><font color="#E5E5E5"> version to the right</font>
+
+115
+00:13:47,950 --> 00:14:28,300
+folder next we download another
+
+116
+00:14:28,300 --> 00:14:30,250
+<font color="#E5E5E5">universal brute force</font><font color="#CCCCCC"> password testing</font>
+
+117
+00:14:30,250 --> 00:14:33,990
+software<font color="#E5E5E5"> application Hydra</font>
+
+118
+00:14:38,380 --> 00:14:41,509
+[Music]
+
+119
+00:14:45,590 --> 00:14:48,700
+[Music]
+
+120
+00:14:51,700 --> 00:14:54,020
+the<font color="#E5E5E5"> software is released as source code</font>
+
+121
+00:14:54,020 --> 00:14:55,640
+<font color="#E5E5E5">which needs to be extracted to</font><font color="#CCCCCC"> a folder</font>
+
+122
+00:14:55,640 --> 00:15:25,610
+<font color="#CCCCCC">of</font><font color="#E5E5E5"> the right module to compile it we</font>
+
+123
+00:15:25,610 --> 00:15:28,190
+need cygwin the package enables
+
+124
+00:15:28,190 --> 00:15:29,600
+compiling and starting of<font color="#CCCCCC"> linux</font>
+
+125
+00:15:29,600 --> 00:15:33,280
+applications<font color="#CCCCCC"> under the</font><font color="#E5E5E5"> windows</font><font color="#CCCCCC"> system</font>
+
+126
+00:15:36,530 --> 00:15:39,630
+[Music]
+
+127
+00:15:43,690 --> 00:15:46,839
+[Music]
+
+128
+00:15:57,540 --> 00:16:02,130
+use the<font color="#E5E5E5"> default installation options</font>
+
+129
+00:16:08,970 --> 00:16:11,200
+select one<font color="#CCCCCC"> of the servers containing</font>
+
+130
+00:16:11,200 --> 00:16:14,830
+<font color="#E5E5E5">copies of the cygwin packages take time</font>
+
+131
+00:16:14,830 --> 00:16:17,590
+<font color="#E5E5E5">to pick</font><font color="#CCCCCC"> the right server not</font><font color="#E5E5E5"> all servers</font>
+
+132
+00:16:17,590 --> 00:16:19,660
+are equally fast<font color="#CCCCCC"> an installation time</font>
+
+133
+00:16:19,660 --> 00:16:33,580
+depends on<font color="#CCCCCC"> the server the packages we</font>
+
+134
+00:16:33,580 --> 00:16:36,540
+need to install are
+
+135
+00:16:41,840 --> 00:16:44,940
+[Music]
+
+136
+00:17:32,740 --> 00:17:35,900
+[Music]
+
+137
+00:17:39,960 --> 00:17:42,950
+[Music]
+
+138
+00:17:42,950 --> 00:17:44,750
+make sure all of them are<font color="#E5E5E5"> selected</font><font color="#CCCCCC"> and</font>
+
+139
+00:17:44,750 --> 00:17:50,990
+click<font color="#E5E5E5"> Next the installation of the</font>
+
+140
+00:17:50,990 --> 00:17:52,670
+cygwin<font color="#E5E5E5"> package depends on our internet</font>
+
+141
+00:17:52,670 --> 00:17:55,450
+<font color="#E5E5E5">connection</font><font color="#CCCCCC"> and hard-disk</font>
+
+142
+00:17:55,450 --> 00:17:57,920
+this may last<font color="#E5E5E5"> quite long</font><font color="#CCCCCC"> so don't be</font>
+
+143
+00:17:57,920 --> 00:18:00,040
+discouraged
+
+144
+00:18:30,880 --> 00:18:34,019
+[Music]
+
+145
+00:18:38,090 --> 00:18:41,190
+[Music]
+
+146
+00:18:55,280 --> 00:18:59,100
+the package has<font color="#CCCCCC"> been installed open</font>
+
+147
+00:18:59,100 --> 00:19:00,480
+terminal<font color="#E5E5E5"> and go to the directory</font>
+
+148
+00:19:00,480 --> 00:19:03,890
+containing the<font color="#E5E5E5"> Hydra source code</font>
+
+149
+00:19:30,020 --> 00:19:32,240
+launch the command configure so that the
+
+150
+00:19:32,240 --> 00:19:33,590
+installation<font color="#CCCCCC"> script can check whether</font>
+
+151
+00:19:33,590 --> 00:19:35,030
+<font color="#E5E5E5">the necessary libraries have been</font>
+
+152
+00:19:35,030 --> 00:19:56,480
+installed next<font color="#E5E5E5"> we may launch the command</font>
+
+153
+00:19:56,480 --> 00:19:58,040
+<font color="#E5E5E5">make which will perform the write</font>
+
+154
+00:19:58,040 --> 00:20:00,760
+compilation
+
+155
+00:20:27,130 --> 00:20:30,249
+[Music]
+
+156
+00:20:34,340 --> 00:20:37,460
+[Music]
+
+157
+00:20:43,080 --> 00:20:45,760
+after the compilation<font color="#E5E5E5"> copy the binary</font>
+
+158
+00:20:45,760 --> 00:21:05,890
+file to the right directory<font color="#CCCCCC"> launch the</font>
+
+159
+00:21:05,890 --> 00:21:07,480
+Windows System terminal and make sure
+
+160
+00:21:07,480 --> 00:21:22,960
+the<font color="#CCCCCC"> application is running as we can see</font>
+
+161
+00:21:22,960 --> 00:21:24,520
+the application needs<font color="#CCCCCC"> several libraries</font>
+
+162
+00:21:24,520 --> 00:21:25,960
+<font color="#E5E5E5">that are components of the cygwin</font>
+
+163
+00:21:25,960 --> 00:21:28,570
+package<font color="#E5E5E5"> they must be placed in the</font>
+
+164
+00:21:28,570 --> 00:21:30,460
+directory containing the binary file of
+
+165
+00:21:30,460 --> 00:21:32,460
+<font color="#E5E5E5">our application</font>
+
+166
+00:21:32,460 --> 00:21:35,579
+[Music]
+
+167
+00:22:18,220 --> 00:22:20,750
+the necessary<font color="#CCCCCC"> libraries have been added</font>
+
+168
+00:22:20,750 --> 00:22:23,400
+and<font color="#E5E5E5"> the application is running</font><font color="#CCCCCC"> correctly</font>
+
+169
+00:22:23,400 --> 00:22:26,519
+[Music]
+
+170
+00:22:30,600 --> 00:22:32,429
+in this way we've made<font color="#CCCCCC"> the environment</font>
+
+171
+00:22:32,429 --> 00:22:34,730
+ready for work<font color="#E5E5E5"> and other experiments</font>
+
+172
+00:22:34,730 --> 00:22:36,840
+thank you for your attention<font color="#E5E5E5"> and see you</font>
+
+173
+00:22:36,840 --> 00:22:38,909
+<font color="#CCCCCC">in module two which</font><font color="#E5E5E5"> discusses the data</font>
+
+174
+00:22:38,909 --> 00:00:00,000
+hiding method
+

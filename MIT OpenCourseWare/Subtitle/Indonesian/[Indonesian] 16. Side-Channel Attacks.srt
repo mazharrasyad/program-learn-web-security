@@ -1,0 +1,6884 @@
+1
+00:00:00,000 --> 00:00:00,090
+
+
+2
+00:00:00,090 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,050
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,050 --> 00:00:10,160
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,160 --> 00:00:12,690
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,690 --> 00:00:16,590
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,590 --> 00:00:17,260
+ di ocw.mit.edu. 
+
+9
+00:00:17,260 --> 00:00:26,700
+
+
+10
+00:00:26,700 --> 00:00:28,955
+ PROFESOR: Baiklah, teman-teman, mari kita mulai. 
+
+11
+00:00:28,955 --> 00:00:31,330
+ Jadi hari ini, kita akan berbicara tentang serangan saluran samping, 
+
+12
+00:00:31,330 --> 00:00:36,360
+ yang merupakan kelas umum masalah yang muncul 
+
+13
+00:00:36,360 --> 00:00:38,870
+ di semua jenis sistem. 
+
+14
+00:00:38,870 --> 00:00:40,320
+ Secara luas, serangan side-channel 
+
+15
+00:00:40,320 --> 00:00:42,778
+ situasi di mana Anda belum memikirkan beberapa informasi 
+
+16
+00:00:42,778 --> 00:00:44,810
+ bahwa sistem Anda mungkin mengungkapkan. 
+
+17
+00:00:44,810 --> 00:00:47,860
+ Jadi biasanya, Anda memiliki beberapa komponen yang Anda [TIDAK JELAS] 
+
+18
+00:00:47,860 --> 00:00:50,480
+ mungkin seorang pengguna berbicara dengan beberapa server. 
+
+19
+00:00:50,480 --> 00:00:53,387
+ Dan Anda berpikir, hebat, saya tahu persis semua bagiannya 
+
+20
+00:00:53,387 --> 00:00:57,600
+ pergi melalui beberapa kawat [tidak terdengar] server, dan mereka aman. 
+
+21
+00:00:57,600 --> 00:01:00,796
+ Tetapi seringkali mudah untuk melewatkan beberapa informasi yang terungkap, 
+
+22
+00:01:00,796 --> 00:01:03,830
+ baik oleh pengguna atau oleh server. 
+
+23
+00:01:03,830 --> 00:01:07,800
+ Jadi contoh yang dibicarakan oleh surat kabar hari ini 
+
+24
+00:01:07,800 --> 00:01:10,465
+ adalah situasi di mana pengaturan waktu pesan 
+
+25
+00:01:10,465 --> 00:01:12,900
+ antara pengguna dan server mengungkapkan 
+
+26
+00:01:12,900 --> 00:01:16,070
+ beberapa informasi tambahan yang tidak Anda miliki sebaliknya 
+
+27
+00:01:16,070 --> 00:01:19,390
+ belajar dengan hanya mengamati bit yang mengalir di antara keduanya 
+
+28
+00:01:19,390 --> 00:01:20,930
+ teman-teman. 
+
+29
+00:01:20,930 --> 00:01:24,650
+ Namun faktanya, ada banyak saluran sampingan yang lebih luas 
+
+30
+00:01:24,650 --> 00:01:25,790
+ Anda mungkin khawatir. 
+
+31
+00:01:25,790 --> 00:01:28,550
+ Awalnya, saluran samping muncul, 
+
+32
+00:01:28,550 --> 00:01:31,360
+ atau orang menemukan mereka di tahun 40-an ketika mereka menemukan 
+
+33
+00:01:31,360 --> 00:01:33,440
+ ketika Anda mulai mengetik karakter 
+
+34
+00:01:33,440 --> 00:01:37,110
+ pada teletype elektronik, atau mesin listrik 
+
+35
+00:01:37,110 --> 00:01:39,580
+ di teletype, akan memancarkan radiasi RF. 
+
+36
+00:01:39,580 --> 00:01:41,920
+ Dan Anda dapat menghubungkan osiloskop terdekat 
+
+37
+00:01:41,920 --> 00:01:44,490
+ dan perhatikan saja karakter yang diketikkan 
+
+38
+00:01:44,490 --> 00:01:48,230
+ dengan memonitor frekuensi atau frekuensi RF itu 
+
+39
+00:01:48,230 --> 00:01:49,800
+ akan keluar dari mesin ini. 
+
+40
+00:01:49,800 --> 00:01:54,410
+ Jadi radiasi RF adalah contoh klasik dari saluran samping 
+
+41
+00:01:54,410 --> 00:01:57,490
+ yang mungkin Anda khawatirkan. 
+
+42
+00:01:57,490 --> 00:02:00,880
+ Dan ada banyak contoh banyak contoh lainnya 
+
+43
+00:02:00,880 --> 00:02:02,900
+ yang dilihat orang, hampir apa saja. 
+
+44
+00:02:02,900 --> 00:02:07,343
+ Jadi penggunaan daya adalah saluran sisi lain 
+
+45
+00:02:07,343 --> 00:02:08,258
+ Anda mungkin khawatir. 
+
+46
+00:02:08,258 --> 00:02:09,749
+ Jadi komputer Anda mungkin pergi 
+
+47
+00:02:09,750 --> 00:02:12,230
+ untuk menggunakan jumlah daya yang berbeda tergantung pada apa sebenarnya 
+
+48
+00:02:12,230 --> 00:02:13,970
+ itu komputasi. 
+
+49
+00:02:13,970 --> 00:02:17,200
+ Saya akan pergi ke contoh suara pintar lainnya 
+
+50
+00:02:17,200 --> 00:02:19,330
+ ternyata juga bocor barang. 
+
+51
+00:02:19,330 --> 00:02:21,740
+ Ada [? lucu?] kertas yang bisa Anda lihat. 
+
+52
+00:02:21,740 --> 00:02:25,344
+ Orang-orang mendengarkan printer dan berdasarkan suara 
+
+53
+00:02:25,344 --> 00:02:26,760
+ printer membuat Anda bisa tahu 
+
+54
+00:02:26,760 --> 00:02:28,670
+ karakter apa yang dicetaknya. 
+
+55
+00:02:28,670 --> 00:02:31,695
+ Ini sangat mudah dilakukan untuk printer dot matrix itu 
+
+56
+00:02:31,695 --> 00:02:35,180
+ buat suara yang sangat menyebalkan ini saat mereka sedang mencetak. 
+
+57
+00:02:35,180 --> 00:02:38,690
+ Dan secara umum, hal yang baik untuk dipikirkan, 
+
+58
+00:02:38,690 --> 00:02:40,681
+ Kevin pada kuliah hari Senin juga menyebutkan 
+
+59
+00:02:40,681 --> 00:02:43,014
+ beberapa saluran sampingan menarik yang dia jalankan 
+
+60
+00:02:43,014 --> 00:02:45,700
+ dalam penelitiannya. 
+
+61
+00:02:45,700 --> 00:02:49,090
+ Tetapi, khususnya, di sini kita akan pergi 
+
+62
+00:02:49,090 --> 00:02:51,880
+ untuk melihat saluran samping spesifik 
+
+63
+00:02:51,880 --> 00:02:56,240
+ David Brumley dan Dan Boneh melihat di koran mereka-- I 
+
+64
+00:02:56,240 --> 00:02:59,095
+ tebak kira-kira 10 tahun yang lalu sekarang-- di mana mereka bisa mengekstrak 
+
+65
+00:02:59,095 --> 00:03:03,170
+ kunci kriptografi dari server web yang menjalankan Apache 
+
+66
+00:03:03,170 --> 00:03:06,310
+ dengan mengukur waktu tanggapan yang berbeda 
+
+67
+00:03:06,310 --> 00:03:11,520
+ ke paket input yang berbeda dari klien permusuhan. 
+
+68
+00:03:11,520 --> 00:03:14,330
+ Dan dalam kasus khusus ini, mereka 
+
+69
+00:03:14,330 --> 00:03:15,990
+ pergi setelah kunci kriptografi. 
+
+70
+00:03:15,990 --> 00:03:17,860
+ Bahkan, banyak serangan side-channel 
+
+71
+00:03:17,860 --> 00:03:21,440
+ menargetkan kunci kriptografi sebagian karena itu sedikit 
+
+72
+00:03:21,440 --> 00:03:24,744
+ sulit mendapatkan banyak data melalui saluran samping. 
+
+73
+00:03:24,744 --> 00:03:26,410
+ Dan kunci kriptografi adalah satu situasi 
+
+74
+00:03:26,410 --> 00:03:30,050
+ di mana mendapatkan sejumlah kecil bit sangat membantu Anda. 
+
+75
+00:03:30,050 --> 00:03:32,870
+ Jadi dalam serangan mereka, mereka dapat mengekstrak mungkin 
+
+76
+00:03:32,870 --> 00:03:36,760
+ sekitar 200 256 bit atau lebih. 
+
+77
+00:03:36,760 --> 00:03:38,970
+ Dan hanya dari potongan-potongan 200ish itu, mereka 
+
+78
+00:03:38,970 --> 00:03:42,300
+ mampu memecahkan kunci kriptografi dari server web ini. 
+
+79
+00:03:42,300 --> 00:03:43,890
+ Padahal, jika Anda mencoba bocor 
+
+80
+00:03:43,890 --> 00:03:46,140
+ beberapa database penuh nomor Jaminan Sosial, 
+
+81
+00:03:46,140 --> 00:03:48,340
+ maka itu akan menjadi banyak bit Anda 
+
+82
+00:03:48,340 --> 00:03:51,082
+ harus bocor keluar dari database ini. 
+
+83
+00:03:51,082 --> 00:03:53,290
+ Jadi itulah mengapa banyak saluran samping ini, 
+
+84
+00:03:53,290 --> 00:03:55,670
+ jika Anda akan melihatnya nanti, mereka sering 
+
+85
+00:03:55,670 --> 00:03:59,240
+ fokus untuk mengeluarkan rahasia kecil, 
+
+86
+00:03:59,240 --> 00:04:02,850
+ mungkin kunci atau kata sandi kriptografi. 
+
+87
+00:04:02,850 --> 00:04:04,970
+ Tetapi secara umum, ini berlaku untuk banyak 
+
+88
+00:04:04,970 --> 00:04:09,210
+ situasi lain juga. 
+
+89
+00:04:09,210 --> 00:04:11,230
+ Dan satu hal keren tentang makalah ini, 
+
+90
+00:04:11,230 --> 00:04:13,410
+ sebelum kita membahas detailnya, adalah 
+
+91
+00:04:13,410 --> 00:04:16,459
+ bahwa mereka menunjukkan bahwa Anda benar-benar melakukan ini melalui jaringan. 
+
+92
+00:04:16,459 --> 00:04:18,890
+ Jadi seperti yang Anda duga dari membaca tulisan ini, 
+
+93
+00:04:18,890 --> 00:04:20,560
+ mereka harus melakukan banyak kerja hati-hati 
+
+94
+00:04:20,560 --> 00:04:23,150
+ untuk menggoda perbedaan-perbedaan kecil ini 
+
+95
+00:04:23,150 --> 00:04:24,670
+ dalam informasi waktu. 
+
+96
+00:04:24,670 --> 00:04:28,290
+ Jadi jika Anda benar-benar menghitung angka dari makalah ini, 
+
+97
+00:04:28,290 --> 00:04:33,190
+ ternyata setiap permintaan yang mereka kirim ke server 
+
+98
+00:04:33,190 --> 00:04:35,365
+ berbeda dari yang lain [? situs web ?] 
+
+99
+00:04:35,365 --> 00:04:39,480
+ dengan urutan 1 hingga 2 mikrodetik, yang 
+
+100
+00:04:39,480 --> 00:04:41,280
+ cukup kecil. 
+
+101
+00:04:41,280 --> 00:04:47,000
+ Jadi Anda harus sangat berhati-hati, dan semua jaringan kami 
+
+102
+00:04:47,000 --> 00:04:50,080
+ mungkin sulit untuk mengetahui apakah beberapa server mengambil 
+
+103
+00:04:50,080 --> 00:04:53,750
+ 1 atau 2 mikrodetik lebih lama untuk memproses permintaan Anda atau tidak. 
+
+104
+00:04:53,750 --> 00:04:58,150
+ Dan sebagai hasilnya, tidak begitu jelas apakah Anda 
+
+105
+00:04:58,150 --> 00:05:01,060
+ dapat me-mount serangan semacam ini melalui jaringan yang sangat bising. 
+
+106
+00:05:01,060 --> 00:05:03,690
+ Dan orang-orang ini adalah salah satu orang pertama 
+
+107
+00:05:03,690 --> 00:05:06,620
+ untuk menunjukkan bahwa Anda benar-benar dapat melakukan ini di atas ethernet nyata 
+
+108
+00:05:06,620 --> 00:05:09,600
+ jaringan dengan server yang duduk di satu tempat, seorang klien duduk 
+
+109
+00:05:09,600 --> 00:05:10,461
+ di tempat lain. 
+
+110
+00:05:10,461 --> 00:05:12,460
+ Dan Anda benar-benar bisa mengukur perbedaan-perbedaan ini 
+
+111
+00:05:12,460 --> 00:05:16,740
+ sebagian dengan rata-rata, sebagian melalui trik lainnya. 
+
+112
+00:05:16,740 --> 00:05:21,270
+ Baiklah, apa itu masuk akal, hal-hal sampingan secara keseluruhan? 
+
+113
+00:05:21,270 --> 00:05:21,770
+ Baiklah. 
+
+114
+00:05:21,770 --> 00:05:23,860
+ Jadi rencana untuk sisa kuliah ini 
+
+115
+00:05:23,860 --> 00:05:27,990
+ pertama-tama kami akan menyelami detail RSA ini 
+
+116
+00:05:27,990 --> 00:05:29,800
+ cryptosystem yang digunakan orang-orang ini. 
+
+117
+00:05:29,800 --> 00:05:32,480
+ Maka kita tidak akan melihat dengan tepat mengapa itu aman 
+
+118
+00:05:32,480 --> 00:05:34,900
+ atau tidak tetapi kita akan melihat bagaimana Anda menerapkannya 
+
+119
+00:05:34,900 --> 00:05:37,980
+ karena itu ternyata sangat penting untuk dieksploitasi 
+
+120
+00:05:37,980 --> 00:05:39,350
+ saluran-sisi khusus ini. 
+
+121
+00:05:39,350 --> 00:05:42,800
+ Mereka dengan hati-hati memanfaatkan berbagai rincian implementasi 
+
+122
+00:05:42,800 --> 00:05:46,164
+ untuk mengetahui kapan ada beberapa hal lebih cepat atau lebih lambat. 
+
+123
+00:05:46,164 --> 00:05:48,080
+ Dan kemudian kita akan muncul kembali setelah kita mengerti 
+
+124
+00:05:48,080 --> 00:05:49,210
+ bagaimana RSA diimplementasikan. 
+
+125
+00:05:49,210 --> 00:05:52,125
+ Kemudian kami akan kembali dan mencari tahu bagaimana Anda menyerangnya, 
+
+126
+00:05:52,125 --> 00:05:54,250
+ bagaimana Anda menyerang semua organisasi yang berbeda ini 
+
+127
+00:05:54,250 --> 00:05:56,040
+ yang dimiliki RSA. 
+
+128
+00:05:56,040 --> 00:05:57,580
+ Kedengarannya bagus? 
+
+129
+00:05:57,580 --> 00:05:58,710
+ Baiklah. 
+
+130
+00:05:58,710 --> 00:06:00,760
+ Jadi saya kira mari kita mulai dengan mencari 
+
+131
+00:06:00,760 --> 00:06:04,200
+ pada rencana tingkat tinggi untuk RSA. 
+
+132
+00:06:04,200 --> 00:06:08,940
+ Jadi RSA adalah cryptosystem kunci publik yang cukup banyak digunakan. 
+
+133
+00:06:08,940 --> 00:06:10,800
+ Kami telah menyebutkan orang-orang ini beberapa minggu 
+
+134
+00:06:10,800 --> 00:06:14,690
+ lalu secara umum dalam sertifikat, dalam konteks sertifikat. 
+
+135
+00:06:14,690 --> 00:06:17,100
+ Tetapi sekarang kita akan melihat bagaimana sebenarnya cara kerjanya. 
+
+136
+00:06:17,100 --> 00:06:20,710
+ Jadi biasanya ada 3 hal yang perlu Anda khawatirkan. 
+
+137
+00:06:20,710 --> 00:06:25,290
+ Jadi ada menghasilkan kunci, mengenkripsi, dan mendekripsi. 
+
+138
+00:06:25,290 --> 00:06:29,220
+ Jadi untuk RSA, cara Anda menghasilkan kunci adalah Anda sebenarnya 
+
+139
+00:06:29,220 --> 00:06:32,220
+ pilih 2 bilangan bulat besar. 
+
+140
+00:06:32,220 --> 00:06:35,500
+ Jadi Anda akan memilih 2 bilangan prima, p dan q. 
+
+141
+00:06:35,500 --> 00:06:42,020
+ Dan di koran, orang-orang ini fokus pada p dan q, 
+
+142
+00:06:42,020 --> 00:06:45,810
+ masing-masing sekitar 512 bit. 
+
+143
+00:06:45,810 --> 00:06:49,730
+ Jadi ini biasanya disebut 1.024 bit RSA 
+
+144
+00:06:49,730 --> 00:06:52,570
+ karena produk yang dihasilkan dari bilangan prima ini bahwa Anda 
+
+145
+00:06:52,570 --> 00:06:56,500
+ akan digunakan dalam hitungan detik adalah nomor integer 1.000 bit. 
+
+146
+00:06:56,500 --> 00:06:59,360
+ Hari-hari ini, itu mungkin bukan pilihan yang sangat baik 
+
+147
+00:06:59,360 --> 00:07:02,170
+ untuk ukuran kunci RSA Anda karena itu 
+
+148
+00:07:02,170 --> 00:07:06,860
+ membuatnya relatif mudah bagi penyerang untuk faktor ini - tidak 
+
+149
+00:07:06,860 --> 00:07:09,080
+ sepele tapi pasti layak. 
+
+150
+00:07:09,080 --> 00:07:12,170
+ Jadi jika 10 tahun lalu, ini sepertinya berpotensi masuk akal 
+
+151
+00:07:12,170 --> 00:07:14,520
+ parameter, jika Anda benar-benar membuat sistem, 
+
+152
+00:07:14,520 --> 00:07:16,780
+ Anda mungkin harus memilih 2.000 atau 3.000 
+
+153
+00:07:16,780 --> 00:07:19,866
+ atau bahkan kunci RSA 4.000 bit. 
+
+154
+00:07:19,866 --> 00:07:22,590
+ Nah, itulah arti ukuran kunci RSA 
+
+155
+00:07:22,590 --> 00:07:24,620
+ adalah ukuran bilangan prima ini. 
+
+156
+00:07:24,620 --> 00:07:26,480
+ Dan kemudian, demi kenyamanan, kita akan pergi 
+
+157
+00:07:26,480 --> 00:07:28,140
+ untuk membicarakan tentang nomor n, yang 
+
+158
+00:07:28,140 --> 00:07:33,010
+ hanyalah produk dari 2 bilangan prima ini, p kali q. 
+
+159
+00:07:33,010 --> 00:07:33,510
+ Baiklah. 
+
+160
+00:07:33,510 --> 00:07:35,490
+ Jadi sekarang kita tahu cara menghasilkan kunci, 
+
+161
+00:07:35,490 --> 00:07:38,440
+ sekarang kita perlu mencari tahu - baik ini setidaknya 
+
+162
+00:07:38,440 --> 00:07:40,100
+ bagian dari kunci-- sekarang kita akan memiliki 
+
+163
+00:07:40,100 --> 00:07:45,060
+ untuk mencari tahu bagaimana kami akan mengenkripsi dan mendekripsi pesan. 
+
+164
+00:07:45,060 --> 00:07:48,280
+ Dan cara kami akan mengenkripsi dan mendekripsi pesan 
+
+165
+00:07:48,280 --> 00:07:54,320
+ adalah dengan memvalidasi nomor modulo nomor ini n. 
+
+166
+00:07:54,320 --> 00:07:57,790
+ Jadi sepertinya sedikit aneh, tapi ayo kita lakukan sebentar. 
+
+167
+00:07:57,790 --> 00:08:00,520
+ Jadi jika Anda ingin mengenkripsi pesan, 
+
+168
+00:08:00,520 --> 00:08:03,560
+ maka kita akan mengambil pesan m 
+
+169
+00:08:03,560 --> 00:08:11,920
+ dan mengubahnya menjadi m ke kekuatan e mod m. 
+
+170
+00:08:11,920 --> 00:08:14,570
+ Jadi e akan menjadi eksponen - kita akan bicara tentang bagaimana 
+
+171
+00:08:14,570 --> 00:08:15,640
+ untuk memilihnya dalam hitungan detik. 
+
+172
+00:08:15,640 --> 00:08:17,880
+ Tapi beginilah cara kami mengenkripsi pesan. 
+
+173
+00:08:17,880 --> 00:08:21,230
+ Kami hanya akan mengambil pesan ini sebagai nomor integer 
+
+174
+00:08:21,230 --> 00:08:23,260
+ dan hanya exponentiate-nya. 
+
+175
+00:08:23,260 --> 00:08:25,610
+ Dan kemudian kita akan melihat mengapa ini bekerja dalam hitungan detik, 
+
+176
+00:08:25,610 --> 00:08:30,500
+ tapi mari kita panggil orang ini c, ciphertext. 
+
+177
+00:08:30,500 --> 00:08:36,039
+ Kemudian untuk mendekripsi, kita akan entah bagaimana menemukan 
+
+178
+00:08:36,039 --> 00:08:37,940
+ eksponen lain yang menarik di mana 
+
+179
+00:08:37,940 --> 00:08:41,336
+ Anda dapat mengambil ciphertext c dan jika Anda mengeksponentasikannya 
+
+180
+00:08:41,336 --> 00:08:46,440
+ ke beberapa kekuatan d mod m, maka Anda akan secara ajaib 
+
+181
+00:08:46,440 --> 00:08:49,500
+ dapatkan kembali pesan yang sama m. 
+
+182
+00:08:49,500 --> 00:08:52,290
+ Jadi ini adalah rencana umum: Untuk mengenkripsi, Anda melakukan eksponensial. 
+
+183
+00:08:52,290 --> 00:08:56,687
+ Untuk mendekripsi, Anda exponentiate oleh eksponen lain. 
+
+184
+00:08:56,687 --> 00:08:58,270
+ Dan secara umum, tampaknya agak sulit 
+
+185
+00:08:58,270 --> 00:09:00,561
+ untuk mencari tahu bagaimana kita akan datang dengan dua ini 
+
+186
+00:09:00,561 --> 00:09:02,800
+ angka ajaib yang entah bagaimana berakhir memberi kita 
+
+187
+00:09:02,800 --> 00:09:04,390
+ kembali pesan yang sama. 
+
+188
+00:09:04,390 --> 00:09:06,890
+ Tetapi ternyata jika Anda melihat 
+
+189
+00:09:06,890 --> 00:09:12,000
+ bagaimana cara kerja eksponensial atau perkalian, 
+
+190
+00:09:12,000 --> 00:09:14,340
+ modulo nomor ini n. 
+
+191
+00:09:14,340 --> 00:09:22,670
+ Lalu ada properti keren ini jika Anda memiliki angka x, 
+
+192
+00:09:22,670 --> 00:09:26,000
+ dan Anda meningkatkannya menjadi apa yang disebut [? memesan?] dari phi 
+
+193
+00:09:26,000 --> 00:09:32,215
+ fungsi n-- mungkin saya akan menggunakan lebih banyak ruang papan untuk ini. 
+
+194
+00:09:32,215 --> 00:09:33,790
+ Ini sepertinya penting. 
+
+195
+00:09:33,790 --> 00:09:37,998
+ Jadi jika Anda mengambil x dan Anda naikkan ke phi of n, 
+
+196
+00:09:37,998 --> 00:09:44,370
+ maka ini akan sama dengan 1 mod m. 
+
+197
+00:09:44,370 --> 00:09:48,260
+ Dan fungsi phi ini untuk pilihan khusus kami dari n 
+
+198
+00:09:48,260 --> 00:09:49,960
+ cukup mudah, sebenarnya 
+
+199
+00:09:49,960 --> 00:09:54,600
+ p minus 1 kali q minus 1 
+
+200
+00:09:54,600 --> 00:10:01,560
+ Jadi ini memberi kita harapan bahwa mungkin jika kita memilih sehingga e kali 
+
+201
+00:10:01,560 --> 00:10:06,370
+ d adalah 5n plus 1, maka kita dalam kondisi yang baik. 
+
+202
+00:10:06,370 --> 00:10:11,200
+ Karena dengan begitu pesan apa pun kita eksponensial ke e dan d, 
+
+203
+00:10:11,200 --> 00:10:16,380
+ kami mendapatkan kembali 1 kali m karena produk ed kami 
+
+204
+00:10:16,380 --> 00:10:19,420
+ akan menjadi sekitar 5n plus 1, 
+
+205
+00:10:19,420 --> 00:10:25,445
+ atau mungkin beberapa kali alpha konstan 5n plus 1. 
+
+206
+00:10:25,445 --> 00:10:26,320
+ Apakah ini masuk akal? 
+
+207
+00:10:26,320 --> 00:10:30,800
+ Inilah sebabnya mengapa pesan akan didekripsi dengan benar. 
+
+208
+00:10:30,800 --> 00:10:33,900
+ Dan ternyata ada yang cukup mudah 
+
+209
+00:10:33,900 --> 00:10:39,880
+ algoritma jika Anda tahu nilai phi ini untuk cara menghitung 
+
+210
+00:10:39,880 --> 00:10:42,430
+ d diberi e atau e diberi d. 
+
+211
+00:10:42,430 --> 00:10:42,930
+ Baiklah. 
+
+212
+00:10:42,930 --> 00:10:43,770
+ Pertanyaan. 
+
+213
+00:10:43,770 --> 00:10:45,640
+ AUDIENCE: Bukankah 1 mod n hanya 1? 
+
+214
+00:10:45,640 --> 00:10:48,710
+ PROFESOR: Ya, sejauh ini kami menambahkan satu lagi. 
+
+215
+00:10:48,710 --> 00:10:50,048
+ Maaf? 
+
+216
+00:10:50,048 --> 00:10:52,388
+ AUDIENCE: Seperti, di sana. 
+
+217
+00:10:52,388 --> 00:10:53,471
+ PROFESOR: Ya, yang ini? 
+
+218
+00:10:53,471 --> 00:10:55,430
+ AUDIENCE: Ya. 
+
+219
+00:10:55,430 --> 00:10:57,200
+ PROFESOR: Bukankah 1 mod n hanya 1? 
+
+220
+00:10:57,200 --> 00:10:58,820
+ Maaf, maksud saya ini. 
+
+221
+00:10:58,820 --> 00:11:02,462
+ Jadi ketika saya mengatakan ini 1 n, itu artinya kedua pihak mengambil 1n 
+
+222
+00:11:02,462 --> 00:11:04,820
+ adalah sama. 
+
+223
+00:11:04,820 --> 00:11:07,990
+ Jadi apa artinya ini jika Anda mau 
+
+224
+00:11:07,990 --> 00:11:10,046
+ memikirkan mod sebagai operator secara harfiah, 
+
+225
+00:11:10,046 --> 00:11:13,816
+ Anda akan menulis mod m ini sama dengan 1 mod m. 
+
+226
+00:11:13,816 --> 00:11:15,440
+ Jadi itulah mod di sisi berarti. 
+
+227
+00:11:15,440 --> 00:11:18,325
+ Seperti, seluruh persamaan adalah mod m. 
+
+228
+00:11:18,325 --> 00:11:21,175
+ Maaf untuk [TIDAK JELAS]. 
+
+229
+00:11:21,175 --> 00:11:22,610
+ Masuk akal? 
+
+230
+00:11:22,610 --> 00:11:24,120
+ Baiklah. 
+
+231
+00:11:24,120 --> 00:11:27,665
+ Jadi apa artinya ini untuk RSA adalah kita 
+
+232
+00:11:27,665 --> 00:11:32,150
+ akan memilih beberapa nilai e. 
+
+233
+00:11:32,150 --> 00:11:34,558
+ Jadi e akan menjadi nilai enkripsi kami. 
+
+234
+00:11:34,558 --> 00:11:41,180
+ Dan kemudian dari e kita akan menghasilkan d pada dasarnya 
+
+235
+00:11:41,180 --> 00:11:45,826
+ 1 melalui e mod phi dari n. 
+
+236
+00:11:45,826 --> 00:11:47,665
+ Dan ada beberapa algoritma Euclidean 
+
+237
+00:11:47,665 --> 00:11:51,460
+ Anda dapat menggunakan untuk melakukan perhitungan ini secara efisien. 
+
+238
+00:11:51,460 --> 00:11:53,390
+ Tetapi untuk melakukan ini, Anda sebenarnya 
+
+239
+00:11:53,390 --> 00:11:56,180
+ harus tahu phi ini n, yang mana 
+
+240
+00:11:56,180 --> 00:11:59,485
+ membutuhkan mengetahui faktorisasi nomor kami n 
+
+241
+00:11:59,485 --> 00:12:01,910
+ menjadi p dan q. 
+
+242
+00:12:01,910 --> 00:12:02,410
+ Baiklah. 
+
+243
+00:12:02,410 --> 00:12:08,600
+ Jadi akhirnya, RSA akhirnya menjadi sistem di mana 
+
+244
+00:12:08,600 --> 00:12:13,132
+ kunci publik adalah nomor ini n dan eksponen enkripsi ini e. 
+
+245
+00:12:13,132 --> 00:12:16,750
+ Jadi n dan e bersifat publik, dan d harus bersifat pribadi. 
+
+246
+00:12:16,750 --> 00:12:18,820
+ Jadi siapa pun dapat mengekspansi pesan 
+
+247
+00:12:18,820 --> 00:12:20,320
+ untuk mengenkripsi untuk Anda. 
+
+248
+00:12:20,320 --> 00:12:22,914
+ Tetapi hanya Anda yang tahu nilai ini d dan karenanya 
+
+249
+00:12:22,914 --> 00:12:25,230
+ dapat mendekripsi pesan. 
+
+250
+00:12:25,230 --> 00:12:30,090
+ Dan selama Anda tidak tahu faktorisasi p dan q ini, 
+
+251
+00:12:30,090 --> 00:12:32,660
+ dari n ke p dan q, maka Anda tidak tahu 
+
+252
+00:12:32,660 --> 00:12:33,785
+ apa ini [? phi del?] adalah. 
+
+253
+00:12:33,785 --> 00:12:35,910
+ Dan sebagai hasilnya, sebenarnya sulit untuk dihitung 
+
+254
+00:12:35,910 --> 00:12:37,470
+ nilai d ini. 
+
+255
+00:12:37,470 --> 00:12:41,580
+ Jadi ini kira-kira seperti apa RSA. 
+
+256
+00:12:41,580 --> 00:12:43,370
+ Level tinggi. 
+
+257
+00:12:43,370 --> 00:12:45,450
+ Apakah ini masuk akal? 
+
+258
+00:12:45,450 --> 00:12:45,950
+ Baiklah. 
+
+259
+00:12:45,950 --> 00:12:48,140
+ Jadi ada 2 hal yang ingin saya bicarakan sekarang 
+
+260
+00:12:48,140 --> 00:12:52,590
+ bahwa kita setidaknya memiliki [dasar? implementasi?] untuk RSA. 
+
+261
+00:12:52,590 --> 00:12:55,850
+ Ada trik untuk menggunakannya dengan benar dan jebakan 
+
+262
+00:12:55,850 --> 00:12:57,085
+ dan bagaimana menggunakan RSA. 
+
+263
+00:12:57,085 --> 00:12:59,210
+ Dan kemudian ada berbagai macam trik implementasi 
+
+264
+00:12:59,210 --> 00:13:02,440
+ bagaimana Anda benar-benar mengimplementasikan [? root?] 
+
+265
+00:13:02,440 --> 00:13:07,360
+ kode untuk melakukan eksponensial ini dan melakukannya secara efisien. 
+
+266
+00:13:07,360 --> 00:13:10,010
+ Sebenarnya ada yang lebih sepele karena ini semua 
+
+267
+00:13:10,010 --> 00:13:13,110
+ dalam jumlah besar, ini adalah 1.000 bilangan bulat yang tidak bisa begitu saja 
+
+268
+00:13:13,110 --> 00:13:15,730
+ lakukan instruksi perkalian untuk. 
+
+269
+00:13:15,730 --> 00:13:18,156
+ Mungkin akan memakan waktu yang cukup lama 
+
+270
+00:13:18,156 --> 00:13:20,430
+ untuk melakukan operasi ini. 
+
+271
+00:13:20,430 --> 00:13:20,930
+ Baiklah. 
+
+272
+00:13:20,930 --> 00:13:22,430
+ Jadi, hal pertama yang ingin saya sebutkan 
+
+273
+00:13:22,430 --> 00:13:26,470
+ adalah berbagai perangkap RSA. 
+
+274
+00:13:26,470 --> 00:13:31,310
+ Salah satunya kita benar-benar akan mengandalkan sedikit. 
+
+275
+00:13:31,310 --> 00:13:35,360
+ Satu properti adalah, bahwa itu multiplikatif. 
+
+276
+00:13:35,360 --> 00:13:38,827
+
+
+277
+00:13:38,827 --> 00:13:43,600
+ Jadi yang saya maksud dengan ini adalah bahwa misalkan kita memiliki 2 pesan. 
+
+278
+00:13:43,600 --> 00:13:46,950
+ Misalkan kita memiliki m0 dan m1. 
+
+279
+00:13:46,950 --> 00:13:49,196
+ Dan misalkan saya mengenkripsi orang-orang ini, 
+
+280
+00:13:49,196 --> 00:13:55,612
+ jadi saya mengenkripsi m0, saya akan mendapatkan m0 ke power e mod n. 
+
+281
+00:13:55,612 --> 00:14:02,840
+ Dan jika saya mengenkripsi m1, maka saya akan mendapatkan m1 ke e mod n. 
+
+282
+00:14:02,840 --> 00:14:06,220
+ Masalahnya adalah - belum tentu masalah 
+
+283
+00:14:06,220 --> 00:14:08,940
+ tetapi bisa menjadi kejutan bagi seseorang 
+
+284
+00:14:08,940 --> 00:14:11,300
+ menggunakan RSA-- sangat mudah dibuat 
+
+285
+00:14:11,300 --> 00:14:14,480
+ enkripsi m0 kali m1 karena Anda baru saja 
+
+286
+00:14:14,480 --> 00:14:15,940
+ kalikan 2 angka ini. 
+
+287
+00:14:15,940 --> 00:14:18,480
+ Jika Anda melipatgandakan orang-orang ini, Anda 
+
+288
+00:14:18,480 --> 00:14:26,500
+ akan mendapatkan m0 m1 ke e mod n. 
+
+289
+00:14:26,500 --> 00:14:29,840
+ Ini adalah enkripsi yang benar di bawah penggunaan yang sederhana ini 
+
+290
+00:14:29,840 --> 00:14:34,512
+ RSA untuk nilai m0 kali m1. 
+
+291
+00:14:34,512 --> 00:14:36,847
+ Maksud saya pada titik ini, itu bukan masalah besar 
+
+292
+00:14:36,847 --> 00:14:38,555
+ karena jika Anda tidak dapat mendekripsi, 
+
+293
+00:14:38,555 --> 00:14:41,940
+ Anda hanya dapat membuat pesan terenkripsi ini. 
+
+294
+00:14:41,940 --> 00:14:45,620
+ Tetapi mungkin sistem secara keseluruhan memungkinkan Anda 
+
+295
+00:14:45,620 --> 00:14:46,786
+ untuk mendekripsi pesan tertentu. 
+
+296
+00:14:46,786 --> 00:14:50,110
+ Dan jika memungkinkan Anda untuk mendekripsi pesan ini yang Anda buat 
+
+297
+00:14:50,110 --> 00:14:52,670
+ diri Anda, mungkin sekarang Anda bisa kembali dan mencari tahu 
+
+298
+00:14:52,670 --> 00:14:53,820
+ apa pesan-pesan ini. 
+
+299
+00:14:53,820 --> 00:15:00,310
+ Jadi mungkin bukan rencana yang bagus untuk tidak mengetahui fakta ini. 
+
+300
+00:15:00,310 --> 00:15:04,000
+ Ini tentu saja kembali menggigit sejumlah protokol 
+
+301
+00:15:04,000 --> 00:15:05,450
+ yang menggunakan RSA. 
+
+302
+00:15:05,450 --> 00:15:06,950
+ Ada satu properti, kita akan benar-benar 
+
+303
+00:15:06,950 --> 00:15:11,450
+ menggunakannya sebagai mekanisme pertahanan menjelang akhir kuliah. 
+
+304
+00:15:11,450 --> 00:15:15,910
+ Properti RSA lain yang mungkin ingin Anda perhatikan 
+
+305
+00:15:15,910 --> 00:15:18,566
+ adalah fakta bahwa itu deterministik. 
+
+306
+00:15:18,566 --> 00:15:21,350
+
+
+307
+00:15:21,350 --> 00:15:23,695
+ Jadi dalam hal ini [? naif?] implementasi 
+
+308
+00:15:23,695 --> 00:15:27,072
+ yang baru saya jelaskan di sini, jika Anda mengambil pesan m 
+
+309
+00:15:27,072 --> 00:15:29,165
+ dan Anda mengenkripsinya, Anda akan mendapatkan m 
+
+310
+00:15:29,165 --> 00:15:32,100
+ ke e mod n, yang merupakan fungsi deterministik 
+
+311
+00:15:32,100 --> 00:15:33,296
+ pesan itu. 
+
+312
+00:15:33,296 --> 00:15:35,303
+ Jadi jika Anda mengenkripsinya lagi, Anda akan 
+
+313
+00:15:35,303 --> 00:15:36,870
+ dapatkan enkripsi yang persis sama. 
+
+314
+00:15:36,870 --> 00:15:38,590
+ Ini tidak mengherankan tetapi mungkin tidak 
+
+315
+00:15:38,590 --> 00:15:40,510
+ menjadi properti yang diinginkan karena jika saya 
+
+316
+00:15:40,510 --> 00:15:44,090
+ melihat Anda mengirim mengirim pesan yang dienkripsi dengan RSA, 
+
+317
+00:15:44,090 --> 00:15:46,495
+ dan saya ingin tahu apa itu, mungkin sulit 
+
+318
+00:15:46,495 --> 00:15:47,370
+ bagi saya untuk mendekripsi itu. 
+
+319
+00:15:47,370 --> 00:15:48,890
+ Tetapi saya dapat mencoba berbagai hal dan saya bisa melihat, 
+
+320
+00:15:48,890 --> 00:15:50,306
+ apakah Anda mengirim pesan ini? 
+
+321
+00:15:50,306 --> 00:15:52,600
+ Saya akan mengenkripsi dan melihat apakah Anda mendapatkan ciphertext yang sama. 
+
+322
+00:15:52,600 --> 00:15:54,820
+ Dan jika demikian, maka saya akan tahu itulah yang Anda enkripsi. 
+
+323
+00:15:54,820 --> 00:15:56,790
+ Karena semua yang saya butuhkan untuk mengenkripsi pesan adalah 
+
+324
+00:15:56,790 --> 00:16:01,850
+ kunci publik yang dikenal publik, yang n dan nomor e. 
+
+325
+00:16:01,850 --> 00:16:04,104
+ Jadi itu tidak begitu hebat. 
+
+326
+00:16:04,104 --> 00:16:06,145
+ Dan Anda mungkin ingin berhati-hati untuk properti ini 
+
+327
+00:16:06,145 --> 00:16:08,640
+ jika Anda benar-benar menggunakan RSA. 
+
+328
+00:16:08,640 --> 00:16:10,140
+ Jadi semua ini [? primitif?] 
+
+329
+00:16:10,140 --> 00:16:14,340
+ mungkin agak sulit untuk digunakan secara langsung. 
+
+330
+00:16:14,340 --> 00:16:17,320
+ Apa yang dilakukan orang dalam praktik dalam rangka 
+
+331
+00:16:17,320 --> 00:16:20,024
+ untuk menghindari masalah ini dengan RSA 
+
+332
+00:16:20,024 --> 00:16:21,690
+ mereka mengkodekan pesan dengan cara tertentu 
+
+333
+00:16:21,690 --> 00:16:23,030
+ sebelum mengenkripsinya. 
+
+334
+00:16:23,030 --> 00:16:25,790
+ Alih-alih langsung mengekspentasi pesan, 
+
+335
+00:16:25,790 --> 00:16:28,020
+ sebenarnya dibutuhkan beberapa fungsi dari sebuah pesan, 
+
+336
+00:16:28,020 --> 00:16:31,680
+ lalu mereka mengenkripsinya. 
+
+337
+00:16:31,680 --> 00:16:33,096
+ mod n. 
+
+338
+00:16:33,096 --> 00:16:38,190
+ Dan fungsi ini f, yang tepat untuk digunakan hari ini, 
+
+339
+00:16:38,190 --> 00:16:41,526
+ mungkin sesuatu yang disebut enkripsi asimetris optimal 
+
+340
+00:16:41,526 --> 00:16:45,595
+ padding, OAE P. Anda dapat mencarinya. 
+
+341
+00:16:45,595 --> 00:16:49,310
+ Ini adalah kode yang memiliki dua properti yang menarik. 
+
+342
+00:16:49,310 --> 00:16:51,390
+ Pertama-tama, itu menyuntikkan keacakan. 
+
+343
+00:16:51,390 --> 00:16:57,230
+ Anda dapat menganggap fn sebagai menghasilkan pesan 1.000 bit 
+
+344
+00:16:57,230 --> 00:16:58,580
+ bahwa Anda akan mengenkripsi. 
+
+345
+00:16:58,580 --> 00:17:01,566
+ Bagian dari pesan ini akan menjadi pesan Anda di tengah 
+
+346
+00:17:01,566 --> 00:17:02,065
+ sini. 
+
+347
+00:17:02,065 --> 00:17:03,420
+ Sehingga Anda bisa mendapatkannya kembali ketika Anda mendekripsi, tentu saja. 
+
+348
+00:17:03,420 --> 00:17:04,641
+ [TIDAK JELAS]. 
+
+349
+00:17:04,641 --> 00:17:06,598
+ Jadi ada 2 hal menarik yang ingin Anda lakukan. 
+
+350
+00:17:06,598 --> 00:17:08,338
+ Anda ingin memasukkan beberapa keacakan di sini, 
+
+351
+00:17:08,339 --> 00:17:10,640
+ beberapa nilai r sehingga ketika Anda mengenkripsi pesan 
+
+352
+00:17:10,640 --> 00:17:12,839
+ beberapa kali, Anda akan mendapatkan hasil yang berbeda 
+
+353
+00:17:12,839 --> 00:17:16,069
+ setiap waktu jadi itu tidak deterministik lagi. 
+
+354
+00:17:16,069 --> 00:17:18,390
+ Dan untuk mengalahkan properti multiplikatif ini 
+
+355
+00:17:18,390 --> 00:17:20,839
+ dan jenis masalah lainnya, Anda 
+
+356
+00:17:20,839 --> 00:17:23,009
+ akan dimasukkan ke dalam beberapa bantalan tetap di sini. 
+
+357
+00:17:23,010 --> 00:17:25,510
+ Anda dapat menganggap ini sebagai urutan pengubahan 1 0 
+
+358
+00:17:25,510 --> 00:17:27,002
+ 1 0 1 0. 
+
+359
+00:17:27,002 --> 00:17:28,043
+ Anda dapat melakukan hal-hal yang lebih baik. 
+
+360
+00:17:28,044 --> 00:17:30,134
+ Tapi kira-kira itu adalah beberapa urutan yang dapat diprediksi 
+
+361
+00:17:30,134 --> 00:17:33,395
+ yang Anda masukkan di sini dan kapan pun Anda mendekripsi, 
+
+362
+00:17:33,395 --> 00:17:35,590
+ Anda memastikan urutannya masih ada. 
+
+363
+00:17:35,590 --> 00:17:37,560
+ Bahkan dalam pelipatgandaan itu terjadi 
+
+364
+00:17:37,560 --> 00:17:40,570
+ untuk menghancurkan kekuatan kecil ini. 
+
+365
+00:17:40,570 --> 00:17:43,597
+ Dan kemudian Anda harus jelas bahwa seseorang dirusak 
+
+366
+00:17:43,597 --> 00:17:46,082
+ dengan pesan saya dan menolaknya. 
+
+367
+00:17:46,082 --> 00:17:51,220
+ Dan jika itu masih ada, maka mungkin, kadang-kadang bisa dibuktikan, 
+
+368
+00:17:51,220 --> 00:17:53,621
+ tidak ada yang merusak pesan Anda, dan sebagai hasilnya 
+
+369
+00:17:53,621 --> 00:17:55,004
+ Anda harus bisa menerimanya. 
+
+370
+00:17:55,004 --> 00:17:59,140
+ Dan memperlakukan pesan m dengan benar dienkripsi oleh seseorang. 
+
+371
+00:17:59,140 --> 00:18:00,721
+ Masuk akal? 
+
+372
+00:18:00,721 --> 00:18:01,220
+ Ya? 
+
+373
+00:18:01,220 --> 00:18:05,250
+ AUDIENCE: Jika penyerang tahu seberapa besar padnya, bukankah begitu 
+
+374
+00:18:05,250 --> 00:18:10,960
+ menaruh 1 di tempat terendah dan kemudian [tidak terdengar] 
+
+375
+00:18:10,960 --> 00:18:13,207
+ di bawah multiplikasi? 
+
+376
+00:18:13,207 --> 00:18:14,165
+ PROFESOR: Ya, mungkin. 
+
+377
+00:18:14,165 --> 00:18:16,552
+ Ini sedikit rumit karena keacakan ini 
+
+378
+00:18:16,552 --> 00:18:17,510
+ akan berdarah. 
+
+379
+00:18:17,510 --> 00:18:20,170
+ Jadi konstruksi khusus OAEP ini 
+
+380
+00:18:20,170 --> 00:18:22,740
+ sedikit lebih canggih dari ini. 
+
+381
+00:18:22,740 --> 00:18:25,210
+ Tetapi jika Anda membayangkan ini adalah integer 
+
+382
+00:18:25,210 --> 00:18:28,160
+ perkalian bukan perkalian bit-bijaksana. 
+
+383
+00:18:28,160 --> 00:18:31,530
+ Dan jadi keacakan ini akan berdarah di suatu tempat, 
+
+384
+00:18:31,530 --> 00:18:34,700
+ dan Anda dapat membangun skema OAEP seperti itu 
+
+385
+00:18:34,700 --> 00:18:37,896
+ bahwa ini tidak terjadi. 
+
+386
+00:18:37,896 --> 00:18:41,720
+ [TIDAK JELAS] Masuk akal? 
+
+387
+00:18:41,720 --> 00:18:42,390
+ Baiklah. 
+
+388
+00:18:42,390 --> 00:18:44,514
+ Jadi ternyata pada dasarnya Anda tidak harus benar-benar 
+
+389
+00:18:44,514 --> 00:18:46,170
+ menggunakan matematika RSA ini secara langsung, Anda harus 
+
+390
+00:18:46,170 --> 00:18:48,760
+ menggunakan beberapa pustaka dalam praktik yang mengimplementasikan semua 
+
+391
+00:18:48,760 --> 00:18:51,340
+ hal-hal itu dengan benar untuk Anda. 
+
+392
+00:18:51,340 --> 00:18:53,980
+ Dan menggunakannya hanya sebagai parameter enkripsi / dekripsi. 
+
+393
+00:18:53,980 --> 00:18:56,390
+ Namun ternyata rincian ini akan datang dan menjadi masalah 
+
+394
+00:18:56,390 --> 00:18:58,473
+ bagi kami karena kami benar-benar mencoba untuk mencari tahu 
+
+395
+00:18:58,473 --> 00:19:03,300
+ cara merusak atau cara menyerang implementasi RSA yang ada. 
+
+396
+00:19:03,300 --> 00:19:07,100
+ Jadi khususnya serangan dari tulisan ini 
+
+397
+00:19:07,100 --> 00:19:10,080
+ akan memanfaatkan fakta bahwa server tersebut 
+
+398
+00:19:10,080 --> 00:19:13,210
+ akan memeriksa padding ini ketika mereka mendapat pesan. 
+
+399
+00:19:13,210 --> 00:19:17,130
+ Jadi ini adalah bagaimana kita akan menghitung waktu yang dibutuhkan server 
+
+400
+00:19:17,130 --> 00:19:17,770
+ untuk mendekripsi. 
+
+401
+00:19:17,770 --> 00:19:21,690
+ Kami akan mengirim beberapa pesan acak, atau beberapa dengan hati-hati 
+
+402
+00:19:21,690 --> 00:19:22,545
+ pesan yang dibangun. 
+
+403
+00:19:22,545 --> 00:19:26,243
+ Tapi pesan itu tidak dikonstruksi dengan mengambil m nyata 
+
+404
+00:19:26,243 --> 00:19:27,330
+ dan mengenkripsi itu. 
+
+405
+00:19:27,330 --> 00:19:29,980
+ Kita akan membangun integer cipherteks yang cermat 
+
+406
+00:19:29,980 --> 00:19:31,300
+ nilai. 
+
+407
+00:19:31,300 --> 00:19:33,020
+ Dan server akan mendekripsi, 
+
+408
+00:19:33,020 --> 00:19:34,700
+ itu akan mendekripsi ke beberapa omong kosong, 
+
+409
+00:19:34,700 --> 00:19:36,590
+ dan paddingnya tidak akan cocok 
+
+410
+00:19:36,590 --> 00:19:37,820
+ dengan probabilitas yang sangat tinggi. 
+
+411
+00:19:37,820 --> 00:19:40,090
+ Dan segera server akan menolaknya. 
+
+412
+00:19:40,090 --> 00:19:41,720
+ Dan alasannya ini akan menjadi baik 
+
+413
+00:19:41,720 --> 00:19:44,340
+ bagi kami adalah karena itu akan memberi tahu kami berapa lama waktu yang dibutuhkan 
+
+414
+00:19:44,340 --> 00:19:47,250
+ server untuk sampai ke titik ini, cukup lakukan dekripsi RSA, 
+
+415
+00:19:47,250 --> 00:19:50,281
+ dapatkan pesan ini, periksa padding, dan tolak. 
+
+416
+00:19:50,281 --> 00:19:52,030
+ Jadi itulah yang akan kita ukur 
+
+417
+00:19:52,030 --> 00:19:54,290
+ dalam serangan ini dari kertas. 
+
+418
+00:19:54,290 --> 00:19:55,450
+ Apakah itu masuk akal? 
+
+419
+00:19:55,450 --> 00:19:57,700
+ Jadi ada beberapa komponen integritas untuk pesan itu 
+
+420
+00:19:57,700 --> 00:20:02,800
+ yang memungkinkan kita untuk mengatur waktu dekripsi yang mengarah ke sana. 
+
+421
+00:20:02,800 --> 00:20:03,625
+ Baiklah. 
+
+422
+00:20:03,625 --> 00:20:07,180
+ Jadi sekarang mari kita bicara tentang bagaimana Anda benar-benar menerapkan RSA. 
+
+423
+00:20:07,180 --> 00:20:09,940
+ Jadi inti dari itu adalah benar-benar eksponensial ini, 
+
+424
+00:20:09,940 --> 00:20:12,485
+ yang tidak sepele untuk dilakukan 
+
+425
+00:20:12,485 --> 00:20:14,860
+ seperti yang saya sebutkan sebelumnya karena semua angka-angka ini 
+
+426
+00:20:14,860 --> 00:20:15,880
+ bilangan bulat sangat besar. 
+
+427
+00:20:15,880 --> 00:20:18,820
+ Jadi pesan itu sendiri setidaknya akan menjadi, 
+
+428
+00:20:18,820 --> 00:20:20,830
+ dalam makalah ini, 1.000 bit integer. 
+
+429
+00:20:20,830 --> 00:20:23,810
+ Dan eksponen itu sendiri juga akan menjadi sangat besar. 
+
+430
+00:20:23,810 --> 00:20:26,180
+ Eksponen enkripsi paling tidak dikenal. 
+
+431
+00:20:26,180 --> 00:20:27,596
+ Tapi eksponen dekripsi lebih baik 
+
+432
+00:20:27,596 --> 00:20:30,255
+ juga merupakan bilangan bulat besar juga pada urutan 1.000 bit. 
+
+433
+00:20:30,255 --> 00:20:32,126
+ Jadi Anda memiliki 1.000 bit bilangan bulat Anda 
+
+434
+00:20:32,126 --> 00:20:35,900
+ ingin exponentiate ke lain 1.000 bit integer power modulo 
+
+435
+00:20:35,900 --> 00:20:38,030
+ beberapa lainnya 1.000 bit integer n itu 
+
+436
+00:20:38,030 --> 00:20:39,830
+ akan menjadi sedikit berantakan, jika Anda hanya melakukannya 
+
+437
+00:20:39,830 --> 00:20:42,210
+ [? hal yang naif. ?] Jadi hampir semua orang punya 
+
+438
+00:20:42,210 --> 00:20:45,530
+ banyak pengoptimalan dalam implementasi RSA mereka 
+
+439
+00:20:45,530 --> 00:20:48,640
+ untuk membuatnya sedikit lebih cepat. 
+
+440
+00:20:48,640 --> 00:20:51,970
+ Dan ada empat optimisasi yang penting 
+
+441
+00:20:51,970 --> 00:20:53,420
+ untuk tujuan serangan ini. 
+
+442
+00:20:53,420 --> 00:20:55,420
+ Sebenarnya ada banyak trik yang bisa kamu mainkan, 
+
+443
+00:20:55,420 --> 00:20:57,100
+ tetapi yang paling penting adalah ini. 
+
+444
+00:20:57,100 --> 00:21:02,130
+ Jadi pertama ada sesuatu yang disebut sisa Cina 
+
+445
+00:21:02,130 --> 00:21:06,640
+ teorema, atau CR T. Dan hanya untuk mengingatkan Anda 
+
+446
+00:21:06,640 --> 00:21:10,250
+ dari sekolah dasar atau sekolah menengah mungkin apa 
+
+447
+00:21:10,250 --> 00:21:12,330
+ teorema sisa ini mengatakan. 
+
+448
+00:21:12,330 --> 00:21:16,380
+ Itu benar-benar mengatakan bahwa jika Anda memiliki dua angka 
+
+449
+00:21:16,380 --> 00:21:20,170
+ dan Anda memiliki nilai x dan Anda tahu 
+
+450
+00:21:20,170 --> 00:21:25,360
+ bahwa x sama dengan a1 mod p. 
+
+451
+00:21:25,360 --> 00:21:31,200
+ Dan Anda tahu bahwa x sama dengan a2 mod q, di mana 
+
+452
+00:21:31,200 --> 00:21:33,350
+ p dan q adalah bilangan prima. 
+
+453
+00:21:33,350 --> 00:21:38,790
+ Dan kesetaraan modular ini berlaku untuk seluruh persamaan. 
+
+454
+00:21:38,790 --> 00:21:42,920
+ Kemudian ternyata ada solusi unik untuk ini 
+
+455
+00:21:42,920 --> 00:21:43,650
+ adalah mod p q. 
+
+456
+00:21:43,650 --> 00:21:52,210
+ Jadi ada beberapa x sama dengan beberapa x prime mod pq. 
+
+457
+00:21:52,210 --> 00:21:55,050
+ Dan sebenarnya, ada x prime yang unik seperti itu, 
+
+458
+00:21:55,050 --> 00:21:57,170
+ dan itu sebenarnya sangat efisien untuk dihitung. 
+
+459
+00:21:57,170 --> 00:21:59,450
+ Jadi teorema sisa Cina juga 
+
+460
+00:21:59,450 --> 00:22:03,070
+ dilengkapi dengan algoritma untuk cara menghitung x unik ini 
+
+461
+00:22:03,070 --> 00:22:09,300
+ prime itu sama dengan x mod pq diberikan nilai a1 dan a2 mod 
+
+462
+00:22:09,300 --> 00:22:12,570
+ p dan q, masing-masing. 
+
+463
+00:22:12,570 --> 00:22:15,170
+ Masuk akal? 
+
+464
+00:22:15,170 --> 00:22:17,495
+ OK, jadi bagaimana Anda bisa menggunakan teorema sisa Cina ini 
+
+465
+00:22:17,495 --> 00:22:22,580
+ untuk mempercepat eksponensial modular? 
+
+466
+00:22:22,580 --> 00:22:24,130
+ Jadi cara ini akan membantu kita 
+
+467
+00:22:24,130 --> 00:22:26,350
+ adalah jika Anda memperhatikan setiap saat 
+
+468
+00:22:26,350 --> 00:22:31,400
+ kami melakukan komputasi ini beberapa modulo barang 
+
+469
+00:22:31,400 --> 00:22:33,710
+ n, yang merupakan p kali q. 
+
+470
+00:22:33,710 --> 00:22:35,135
+ Dan teorema sisa Cina 
+
+471
+00:22:35,135 --> 00:22:39,100
+ mengatakan bahwa jika Anda menginginkan nilai dari sesuatu mod p kali q, 
+
+472
+00:22:39,100 --> 00:22:42,320
+ itu sudah cukup untuk menghitung nilai dari hal itu mod p 
+
+473
+00:22:42,320 --> 00:22:44,746
+ dan nilai hal itu mod q. 
+
+474
+00:22:44,746 --> 00:22:46,610
+ Dan kemudian gunakan teorema sisa Cina 
+
+475
+00:22:46,610 --> 00:22:48,960
+ untuk mencari tahu solusi unik untuk apa 
+
+476
+00:22:48,960 --> 00:22:53,220
+ hal ini adalah mod p kali q. 
+
+477
+00:22:53,220 --> 00:22:55,516
+ Baiklah, mengapa ini lebih cepat? 
+
+478
+00:22:55,516 --> 00:22:58,335
+ Sepertinya Anda pada dasarnya melakukan hal yang sama dua kali, 
+
+479
+00:22:58,335 --> 00:23:00,854
+ dan itu lebih banyak pekerjaan untuk menggabungkannya kembali 
+
+480
+00:23:00,854 --> 00:23:02,270
+ Apakah ini akan menyelamatkan saya apa pun? 
+
+481
+00:23:02,270 --> 00:23:02,770
+ Ya? 
+
+482
+00:23:02,770 --> 00:23:03,746
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+483
+00:23:03,746 --> 00:23:06,479
+
+
+484
+00:23:06,479 --> 00:23:08,270
+ PROFESOR: Yah, mereka pasti lebih kecil, 
+
+485
+00:23:08,270 --> 00:23:09,311
+ mereka tidak lebih kecil. 
+
+486
+00:23:09,311 --> 00:23:11,950
+ Jadi p dan q, jadi n adalah 1.000 bit, p dan q 
+
+487
+00:23:11,950 --> 00:23:15,600
+ keduanya 500 bit, mereka tidak sesuai dengan ukuran kata mesin 
+
+488
+00:23:15,600 --> 00:23:16,360
+ namun. 
+
+489
+00:23:16,360 --> 00:23:18,980
+ Tetapi itu akan membantu kita karena sebagian besar 
+
+490
+00:23:18,980 --> 00:23:21,340
+ dari hal-hal yang kami lakukan dalam perhitungan ini 
+
+491
+00:23:21,340 --> 00:23:23,160
+ adalah semua perkalian ini. 
+
+492
+00:23:23,160 --> 00:23:26,315
+ Dan perkalian kira-kira adalah kuadrat dalam ukuran 
+
+493
+00:23:26,315 --> 00:23:29,960
+ dari hal yang Anda gandakan karena sekolah dasar 
+
+494
+00:23:29,960 --> 00:23:31,980
+ metode perkalian Anda mengambil semua digit 
+
+495
+00:23:31,980 --> 00:23:34,910
+ dan kalikan mereka dengan semua digit lain di nomor tersebut. 
+
+496
+00:23:34,910 --> 00:23:38,785
+ Dan sebagai hasilnya, melakukan perkalian eksponensial 
+
+497
+00:23:38,785 --> 00:23:40,650
+ kira-kira kuadrat di sisi input. 
+
+498
+00:23:40,650 --> 00:23:46,460
+ Jadi jika kita mengecilkan nilai p, kita pada dasarnya pergi dari 1.000 bit 
+
+499
+00:23:46,460 --> 00:23:49,204
+ hingga 512 bit, kami mengurangi ukuran masukan kami sebesar 2. 
+
+500
+00:23:49,204 --> 00:23:51,370
+ Jadi ini berarti semua eksponasi perkalian ini 
+
+501
+00:23:51,370 --> 00:23:54,930
+ akan menjadi sekitar 4 kali lebih murah. 
+
+502
+00:23:54,930 --> 00:23:58,530
+ Jadi meskipun kita melakukannya dua kali, setiap kali 4 kali lebih cepat. 
+
+503
+00:23:58,530 --> 00:24:01,300
+ Jadi secara keseluruhan, optimasi CRT adalah 
+
+504
+00:24:01,300 --> 00:24:04,120
+ akan memberi kita pada dasarnya kinerja 2x 
+
+505
+00:24:04,120 --> 00:24:08,080
+ dorongan untuk melakukan operasi RSA apa pun, 
+
+506
+00:24:08,080 --> 00:24:10,694
+ di sisi enkripsi dan dekripsi. 
+
+507
+00:24:10,694 --> 00:24:14,220
+ Masuk akal? 
+
+508
+00:24:14,220 --> 00:24:15,570
+ Baiklah. 
+
+509
+00:24:15,570 --> 00:24:20,250
+ Jadi itulah optimasi pertama yang kebanyakan orang gunakan. 
+
+510
+00:24:20,250 --> 00:24:24,550
+ Hal kedua yang dilakukan sebagian besar implementasi 
+
+511
+00:24:24,550 --> 00:24:27,195
+ adalah teknik yang disebut sliding windows. 
+
+512
+00:24:27,195 --> 00:24:32,620
+
+
+513
+00:24:32,620 --> 00:24:36,200
+ Dan kita akan melihat implementasi ini dalam 2 langkah 
+
+514
+00:24:36,200 --> 00:24:40,199
+ jadi implementasi ini akan peduli dengan apa 
+
+515
+00:24:40,199 --> 00:24:41,740
+ operasi dasar akan tampil 
+
+516
+00:24:41,740 --> 00:24:44,390
+ untuk melakukan eksponensial ini. 
+
+517
+00:24:44,390 --> 00:24:49,000
+ Misalkan Anda memiliki beberapa ciphertext c yang sekarang berukuran 500 bit 
+
+518
+00:24:49,000 --> 00:24:52,155
+ karena Anda tidak melakukan mod p atau mod q. 
+
+519
+00:24:52,155 --> 00:24:58,270
+ Kami memiliki 500 bit c dan, kira-kira, kira-kira 500 bit d 
+
+520
+00:24:58,270 --> 00:25:00,185
+ demikian juga. 
+
+521
+00:25:00,185 --> 00:25:04,070
+ Jadi bagaimana kita menaikkan c ke kekuatan d? 
+
+522
+00:25:04,070 --> 00:25:07,040
+ Saya kira cara bodoh itu adalah mengambil dan menyimpan 
+
+523
+00:25:07,040 --> 00:25:08,740
+ mengalikan d kali. 
+
+524
+00:25:08,740 --> 00:25:10,770
+ Tapi d sangat besar, 2 sampai 500. 
+
+525
+00:25:10,770 --> 00:25:12,940
+ Jadi itu tidak akan pernah selesai. 
+
+526
+00:25:12,940 --> 00:25:16,780
+ Jadi, yang lebih ramah, atau lebih berkinerja, 
+
+527
+00:25:16,780 --> 00:25:20,810
+ rencana adalah melakukan apa yang disebut pengulangan kuadrat. 
+
+528
+00:25:20,810 --> 00:25:24,880
+ Jadi itulah langkah sebelum jendela geser. 
+
+529
+00:25:24,880 --> 00:25:31,360
+ Jadi teknik ini disebut tampilan squaring berulang 
+
+530
+00:25:31,360 --> 00:25:31,860
+ seperti ini. 
+
+531
+00:25:31,860 --> 00:25:40,580
+ Jadi jika Anda ingin menghitung c ke daya 2 x, 
+
+532
+00:25:40,580 --> 00:25:46,080
+ maka Anda benar-benar dapat menghitung c ke x dan kemudian persegi itu. 
+
+533
+00:25:46,080 --> 00:25:48,600
+ Jadi dalam rencana naif kami, hitung c hingga 2x 
+
+534
+00:25:48,600 --> 00:25:50,850
+ akan melibatkan kami membuat iterasi dua kali lebih banyak 
+
+535
+00:25:50,850 --> 00:25:53,449
+ mengalikan karena itu mengalikan c dua kali banyak kali. 
+
+536
+00:25:53,449 --> 00:25:55,490
+ Namun pada kenyataannya, Anda bisa menjadi pintar dan hanya menghitung 
+
+537
+00:25:55,490 --> 00:25:58,336
+ c ke x lalu buat persegi nanti. 
+
+538
+00:25:58,336 --> 00:26:00,610
+ Jadi ini berfungsi dengan baik, dan ini berarti 
+
+539
+00:26:00,610 --> 00:26:06,810
+ bahwa jika Anda menghitung c bahkan eksponen, ini berfungsi. 
+
+540
+00:26:06,810 --> 00:26:10,412
+ Dan sebaliknya, jika Anda menghitung c hingga sekitar 2x ditambah 1, 
+
+541
+00:26:10,412 --> 00:26:11,870
+ maka Anda bisa membayangkan ini adil 
+
+542
+00:26:11,870 --> 00:26:16,461
+ c ke x kuadrat kali yang lain c. 
+
+543
+00:26:16,461 --> 00:26:18,770
+ Jadi ini yang disebut kuadrat berulang. 
+
+544
+00:26:18,770 --> 00:26:23,375
+ Dan ini sekarang memungkinkan kami untuk menghitung eksponensial ini, 
+
+545
+00:26:23,375 --> 00:26:27,600
+ atau eksponensial modular, dalam waktu yang sama 
+
+546
+00:26:27,600 --> 00:26:31,200
+ pada dasarnya linier dalam ukuran eksponen. 
+
+547
+00:26:31,200 --> 00:26:34,110
+ Jadi untuk setiap bit di eksponen, 
+
+548
+00:26:34,110 --> 00:26:37,090
+ kita akan menentukan sesuatu 
+
+549
+00:26:37,090 --> 00:26:40,760
+ atau persegi sesuatu lalu lakukan perkalian ekstra. 
+
+550
+00:26:40,760 --> 00:26:43,920
+ Jadi itulah rencana untuk mengulang berulang. 
+
+551
+00:26:43,920 --> 00:26:47,290
+ Jadi sekarang kita setidaknya dapat memiliki waktu berjalan yang tidak memalukan 
+
+552
+00:26:47,290 --> 00:26:50,045
+ untuk menghitung eksponen modular. 
+
+553
+00:26:50,045 --> 00:26:54,652
+ Apakah ini masuk akal, mengapa ini berfungsi dan mengapa lebih cepat? 
+
+554
+00:26:54,652 --> 00:26:56,610
+ Baiklah, jadi apa trik jendela geser ini 
+
+555
+00:26:56,610 --> 00:26:58,930
+ bahwa makalah itu berbicara tentang? 
+
+556
+00:26:58,930 --> 00:27:02,500
+ Jadi ini sedikit lebih canggih dari ini 
+
+557
+00:27:02,500 --> 00:27:04,050
+ mengulang bisnis kuadrat. 
+
+558
+00:27:04,050 --> 00:27:08,020
+ Dan pada dasarnya kuadratnya sedang berjalan 
+
+559
+00:27:08,020 --> 00:27:09,690
+ menjadi cukup banyak tak terelakkan. 
+
+560
+00:27:09,690 --> 00:27:13,450
+ Namun apa yang dilakukan oleh optimasi sliding windows 
+
+561
+00:27:13,450 --> 00:27:17,570
+ mengurangi biaya perkalian dengan ekstra c ini 
+
+562
+00:27:17,570 --> 00:27:18,656
+ dibawah sini. 
+
+563
+00:27:18,656 --> 00:27:21,300
+ Jadi anggaplah jika Anda memiliki beberapa nomor itu 
+
+564
+00:27:21,300 --> 00:27:25,470
+ memiliki beberapa 1 bit di eksponen, untuk setiap 1 bit 
+
+565
+00:27:25,470 --> 00:27:27,485
+ dalam eksponen di dalam binder presentasi, 
+
+566
+00:27:27,485 --> 00:27:30,670
+ Anda akan melakukan langkah ini daripada langkah ini. 
+
+567
+00:27:30,670 --> 00:27:33,130
+ Karena untuk setiap nomor ganjil, Anda 
+
+568
+00:27:33,130 --> 00:27:34,610
+ akan harus berkembang biak dengan c. 
+
+569
+00:27:34,610 --> 00:27:37,930
+ Jadi orang-orang ini ingin tidak berkembang biak dengan ini sesering mungkin. 
+
+570
+00:27:37,930 --> 00:27:44,754
+ Jadi rencananya adalah untuk meng-precompute kekuatan berbeda c. 
+
+571
+00:27:44,754 --> 00:27:46,170
+ Jadi apa yang akan kita lakukan adalah kita 
+
+572
+00:27:46,170 --> 00:27:48,340
+ akan menghasilkan tabel yang mengatakan, 
+
+573
+00:27:48,340 --> 00:27:53,020
+ baik, inilah nilai c ke x-- maaf, c ke 1-- 
+
+574
+00:27:53,020 --> 00:27:56,460
+ inilah nilai c ke 3, c ke 7. 
+
+575
+00:27:56,460 --> 00:27:57,960
+ Dan saya pikir [? secara terbuka?] sebagai sebuah sel, 
+
+576
+00:27:57,960 --> 00:28:02,020
+ naik ke c ke 31. 
+
+577
+00:28:02,020 --> 00:28:04,780
+ Jadi tabel ini akan menjadi begitu saja 
+
+578
+00:28:04,780 --> 00:28:08,640
+ precomputed ketika Anda ingin melakukan eksponensial modular. 
+
+579
+00:28:08,640 --> 00:28:11,660
+ Anda akan mengolah semua slot di tabel ini. 
+
+580
+00:28:11,660 --> 00:28:14,340
+ Dan kemudian ketika Anda ingin melakukan eksponensial ini, sebagai gantinya 
+
+581
+00:28:14,340 --> 00:28:16,850
+ melakukan kuadrat berulang dan mengalikan dengan ini c 
+
+582
+00:28:16,850 --> 00:28:18,754
+ setiap saat, 
+
+583
+00:28:18,754 --> 00:28:20,420
+ Anda akan menggunakan formula yang berbeda. 
+
+584
+00:28:20,420 --> 00:28:26,580
+ Ia mengatakan juga jika Anda memiliki c ke 32x ditambah beberapa y, 
+
+585
+00:28:26,580 --> 00:28:29,075
+ baik Anda bisa melakukan c ke x, dan Anda 
+
+586
+00:28:29,075 --> 00:28:33,665
+ dapat melakukan squaring berulang - sangat mirip dengan sebelumnya-- ini 
+
+587
+00:28:33,665 --> 00:28:38,250
+ adalah untuk mendapatkan 32, ada seperti 5 kekuatan 2 di sini 
+
+588
+00:28:38,250 --> 00:28:41,560
+ kali c ke y. 
+
+589
+00:28:41,560 --> 00:28:44,055
+ Dan c ke y, Anda bisa keluar dari meja ini. 
+
+590
+00:28:44,055 --> 00:28:46,770
+ Jadi Anda dapat melihat bahwa kami melakukan jumlah kuadrat yang sama 
+
+591
+00:28:46,770 --> 00:28:48,280
+ seperti sebelumnya di sini. 
+
+592
+00:28:48,280 --> 00:28:52,270
+ Tapi kita tidak perlu mengalikannya berkali-kali. 
+
+593
+00:28:52,270 --> 00:28:54,400
+ Anda akan memancingnya keluar dari meja ini 
+
+594
+00:28:54,400 --> 00:28:56,580
+ dan melakukan beberapa perkalian dengan c untuk biaya 
+
+595
+00:28:56,580 --> 00:28:59,030
+ satu kali saja. 
+
+596
+00:28:59,030 --> 00:29:00,484
+ Ini masuk akal? 
+
+597
+00:29:00,484 --> 00:29:00,983
+ Ya? 
+
+598
+00:29:00,983 --> 00:29:03,876
+ AUDIENCE: Bagaimana Anda menentukan x dan y di tempat pertama? 
+
+599
+00:29:03,876 --> 00:29:05,125
+ PROFESOR: Bagaimana menentukan y? 
+
+600
+00:29:05,125 --> 00:29:06,156
+ AUDIENCE: X dan y. 
+
+601
+00:29:06,156 --> 00:29:07,000
+ PROFESOR: Oh, oke. 
+
+602
+00:29:07,000 --> 00:29:08,380
+ Jadi mari kita lihat itu. 
+
+603
+00:29:08,380 --> 00:29:13,290
+ Jadi untuk kuadrat berulang, sebenarnya juga 
+
+604
+00:29:13,290 --> 00:29:14,940
+ dalam kedua kasus, apa yang ingin Anda lakukan 
+
+605
+00:29:14,940 --> 00:29:17,240
+ apakah Anda ingin melihat eksponen 
+
+606
+00:29:17,240 --> 00:29:21,830
+ yang Anda coba gunakan dalam representasi biner. 
+
+607
+00:29:21,830 --> 00:29:26,180
+ Jadi misalkan saya mencoba untuk menghitung nilai c ke eksponen, 
+
+608
+00:29:26,180 --> 00:29:32,755
+ Saya tidak tahu, 1 0 1 1 0 1 0, dan mungkin ada lebih banyak bit. 
+
+609
+00:29:32,755 --> 00:29:35,310
+ Oke, jadi jika kita ingin melakukan pengulangan berulang, 
+
+610
+00:29:35,310 --> 00:29:38,410
+ kemudian Anda melihat sedikit terendah di sini-- ini 0. 
+
+611
+00:29:38,410 --> 00:29:39,910
+ Jadi apa yang akan Anda tulis 
+
+612
+00:29:39,910 --> 00:29:46,346
+ apakah ini sama dengan c ke 1 0 1 1 0 1 kuadrat. 
+
+613
+00:29:46,346 --> 00:29:49,205
+ Oke, jadi sekarang kalau saja Anda tahu nilai ini, 
+
+614
+00:29:49,205 --> 00:29:50,812
+ maka Anda bisa mengujinya. 
+
+615
+00:29:50,812 --> 00:29:54,816
+ Oke, sekarang kita akan menghitung orang ini, jadi c ke 1 0 1 1 
+
+616
+00:29:54,816 --> 00:29:57,850
+ 0 1 sama dengan - baik di sini kita tidak bisa menggunakan aturan ini 
+
+617
+00:29:57,850 --> 00:30:00,400
+ karena itu bukan 2x-- itu akan menjadi x plus 1. 
+
+618
+00:30:00,400 --> 00:30:06,030
+ Jadi sekarang kita akan menulis ini c ke 1 0 1 1 0 
+
+619
+00:30:06,030 --> 00:30:09,430
+ kali kuadrat c lain. 
+
+620
+00:30:09,430 --> 00:30:15,020
+ Karena ini awalan kali 2 ditambah m ini. 
+
+621
+00:30:15,020 --> 00:30:17,140
+ Begitulah cara Anda memancingnya untuk dikuadrat berulang. 
+
+622
+00:30:17,140 --> 00:30:19,950
+ Dan untuk jendela geser, Anda hanya perlu mengambil lebih banyak bit 
+
+623
+00:30:19,950 --> 00:30:20,680
+ dari ujung rendah. 
+
+624
+00:30:20,680 --> 00:30:24,090
+ Jadi jika Anda ingin melakukan trik jendela geser di sini 
+
+625
+00:30:24,090 --> 00:30:27,130
+ bukannya mengambil satu c, misalkan 
+
+626
+00:30:27,130 --> 00:30:29,880
+ kita lakukan-- bukannya meja raksasa ini-- mungkin 
+
+627
+00:30:29,880 --> 00:30:30,980
+ kami melakukan 3 bit sekaligus. 
+
+628
+00:30:30,980 --> 00:30:32,785
+ Jadi kita pergi ke c ke 7. 
+
+629
+00:30:32,785 --> 00:30:36,620
+ Jadi di sini Anda akan mengambil 3 bit pertama, 
+
+630
+00:30:36,620 --> 00:30:40,448
+ dan itulah yang akan Anda hitung di sini: c ke 1 
+
+631
+00:30:40,448 --> 00:30:42,700
+ 0 1 hingga kekuatan 8. 
+
+632
+00:30:42,700 --> 00:30:47,995
+ Dan kemudian, sisanya adalah c ke kekuatan 1 0 1 di sini. 
+
+633
+00:30:47,995 --> 00:30:50,120
+ Agak disayangkan ini adalah hal yang sama, 
+
+634
+00:30:50,120 --> 00:30:53,001
+ tapi sebenarnya ada lebih banyak bit di sini. 
+
+635
+00:30:53,001 --> 00:30:54,625
+ Tetapi di sini, ini adalah hal yang Anda 
+
+636
+00:30:54,625 --> 00:30:55,875
+ akan mencari di atas meja. 
+
+637
+00:30:55,875 --> 00:30:57,760
+ Ini adalah c ke 5 dalam desimal. 
+
+638
+00:30:57,760 --> 00:31:00,590
+ Dan ini mengatakan Anda akan terus melakukan jendela geser 
+
+639
+00:31:00,590 --> 00:31:03,310
+ untuk menghitung nilai ini. 
+
+640
+00:31:03,310 --> 00:31:05,036
+ Masuk akal? 
+
+641
+00:31:05,036 --> 00:31:06,410
+ Ini hanya menghemat berapa kali 
+
+642
+00:31:06,410 --> 00:31:08,760
+ Anda harus mengalikan dengan c dengan melakukan pra-penggandaan 
+
+643
+00:31:08,760 --> 00:31:10,910
+ beberapa kali. 
+
+644
+00:31:10,910 --> 00:31:12,870
+ [? Dan orang-orang sel?] Setidaknya 10 tahun yang lalu 
+
+645
+00:31:12,870 --> 00:31:16,520
+ berpikir bahwa naik ke 32 daya 
+
+646
+00:31:16,520 --> 00:31:18,229
+ adalah rencana terbaik dalam hal efisiensi 
+
+647
+00:31:18,229 --> 00:31:20,020
+ karena ada beberapa trade di sini, kan? 
+
+648
+00:31:20,020 --> 00:31:21,728
+ Anda menghabiskan waktu untuk mengkonfigurasikan tabel ini, 
+
+649
+00:31:21,728 --> 00:31:24,109
+ tapi kemudian jika meja ini terlalu besar, 
+
+650
+00:31:24,109 --> 00:31:25,650
+ Anda tidak akan menggunakan beberapa entri, 
+
+651
+00:31:25,650 --> 00:31:28,190
+ karena jika Anda menjalankan tabel ini, 
+
+652
+00:31:28,190 --> 00:31:31,700
+ Saya tidak tahu, c ke 128 tetapi Anda hanya berkomputasi 
+
+653
+00:31:31,700 --> 00:31:33,191
+ seperti 500 [? bit penuh?] eksponen, 
+
+654
+00:31:33,191 --> 00:31:35,190
+ mungkin Anda tidak akan menggunakan semua entri ini. 
+
+655
+00:31:35,190 --> 00:31:36,670
+ Jadi ini akan membuang-buang waktu. 
+
+656
+00:31:36,670 --> 00:31:37,170
+ Pertanyaan. 
+
+657
+00:31:37,170 --> 00:31:41,156
+ AUDIENCE: [TIDAK JELAS] Apakah ada alasan 
+
+658
+00:31:41,156 --> 00:31:44,128
+ tidak menghitung tabel [tidak terdengar]? 
+
+659
+00:31:44,128 --> 00:31:44,628
+ [TIDAK JELAS] 
+
+660
+00:31:44,628 --> 00:31:49,460
+
+
+661
+00:31:49,460 --> 00:31:52,240
+ PROFESOR: Akhirnya menjadi kasus 
+
+662
+00:31:52,240 --> 00:31:57,740
+ bahwa Anda tidak ingin-- baik ada dua hal yang terjadi. 
+
+663
+00:31:57,740 --> 00:32:01,850
+ Salah satunya adalah Anda sekarang memiliki kode untuk memeriksa apakah entri itu ada 
+
+664
+00:32:01,850 --> 00:32:05,440
+ diisi atau tidak, dan itu mungkin akan mengurangi cabang Anda 
+
+665
+00:32:05,440 --> 00:32:07,232
+ Akurasi prediktor pada CPU Jadi 
+
+666
+00:32:07,232 --> 00:32:09,010
+ akan berjalan lebih lambat dalam kasus umum 
+
+667
+00:32:09,010 --> 00:32:11,903
+ karena jika Anda [tidak terdengar] dengan entri di sana. 
+
+668
+00:32:11,903 --> 00:32:13,319
+ Hal lain yang sedikit menyebalkan adalah 
+
+669
+00:32:13,319 --> 00:32:15,850
+ yang ternyata entri ini bocor barang 
+
+670
+00:32:15,850 --> 00:32:18,440
+ melalui saluran samping yang berbeda, yaitu 
+
+671
+00:32:18,440 --> 00:32:20,670
+ pola akses cache. 
+
+672
+00:32:20,670 --> 00:32:23,610
+ Jadi, jika Anda memiliki beberapa proses lain pada CPU yang sama, 
+
+673
+00:32:23,610 --> 00:32:26,650
+ Anda dapat mengurutkan untuk melihat alamat cache mana yang mendapatkan 
+
+674
+00:32:26,650 --> 00:32:30,910
+ dikeluarkan dari cache atau lebih lambat karena seseorang mengakses 
+
+675
+00:32:30,910 --> 00:32:32,730
+ entri ini atau entri ini. 
+
+676
+00:32:32,730 --> 00:32:35,400
+ Dan semakin besar tabel ini, semakin mudah 
+
+677
+00:32:35,400 --> 00:32:38,630
+ itu adalah untuk mengetahui apa yang menjadi eksponen. 
+
+678
+00:32:38,630 --> 00:32:42,930
+ Dalam batasnya, tabel ini sangat besar dan hanya menceritakan, 
+
+679
+00:32:42,930 --> 00:32:47,680
+ hanya bisa mengetahui alamat cache mana pada CPU ini 
+
+680
+00:32:47,680 --> 00:32:50,345
+ punya [? miss?] memberitahu Anda bahwa proses enkripsi harus 
+
+681
+00:32:50,345 --> 00:32:51,965
+ telah mengakses entri itu di dalam tabel. 
+
+682
+00:32:51,965 --> 00:32:55,450
+ Dan memberitahu Anda bahwa, oh sekuens sedikit itu muncul di suatu tempat 
+
+683
+00:32:55,450 --> 00:32:58,170
+ dalam eksponen kunci rahasia Anda. 
+
+684
+00:32:58,170 --> 00:33:00,930
+ Jadi saya kira jawabannya tidak matematis 
+
+685
+00:33:00,930 --> 00:33:03,080
+ Anda benar-benar dapat mengisi ini sesuai permintaan. 
+
+686
+00:33:03,080 --> 00:33:06,550
+ Dalam prakteknya, Anda mungkin tidak ingin menjadi raksasa itu. 
+
+687
+00:33:06,550 --> 00:33:08,810
+ Dan juga, jika Anda memilikinya sangat raksasa, 
+
+688
+00:33:08,810 --> 00:33:12,350
+ Anda tidak akan dapat menggunakan entri seefisien 
+
+689
+00:33:12,350 --> 00:33:13,250
+ baik. 
+
+690
+00:33:13,250 --> 00:33:14,910
+ Anda dapat menggunakan kembali entri ini seperti Anda 
+
+691
+00:33:14,910 --> 00:33:16,576
+ komputasi. [TIDAK TERDENGAR] Sebenarnya tidak 
+
+692
+00:33:16,576 --> 00:33:19,460
+ itu mahal karena Anda menggunakan c ke dadu 
+
+693
+00:33:19,460 --> 00:33:23,330
+ ketika Anda menghitung c ke 7 dan seterusnya dan seterusnya. 
+
+694
+00:33:23,330 --> 00:33:25,644
+ Tidak seburuk itu. 
+
+695
+00:33:25,644 --> 00:33:26,800
+ Masuk akal? 
+
+696
+00:33:26,800 --> 00:33:30,040
+ Pertanyaan Lain? 
+
+697
+00:33:30,040 --> 00:33:31,260
+ Baiklah. 
+
+698
+00:33:31,260 --> 00:33:35,250
+ Jadi ini adalah kuadrat berulang dan geser 
+
+699
+00:33:35,250 --> 00:33:41,384
+ optimasi jendela yang terbuka [? sel?] mengimplementasikan 
+
+700
+00:33:41,384 --> 00:33:43,550
+ [TIDAK TERDENGAR] Saya sebenarnya tidak tahu apakah mereka masih 
+
+701
+00:33:43,550 --> 00:33:46,252
+ memiliki ukuran jendela geser yang sama atau tidak. 
+
+702
+00:33:46,252 --> 00:33:48,460
+ Tapi itu benar-benar memberi Anda sedikit lebih cepat. 
+
+703
+00:33:48,460 --> 00:33:53,135
+ Jadi sebelum Anda harus persegi untuk setiap bit di eksponen. 
+
+704
+00:33:53,135 --> 00:33:57,060
+ Dan kemudian Anda harus memiliki perbanyak untuk setiap 1 bit. 
+
+705
+00:33:57,060 --> 00:33:59,990
+ Jadi, jika Anda memiliki eksponen 500 bit kemudian 
+
+706
+00:33:59,990 --> 00:34:02,880
+ Anda akan melakukan 500 squarings dan, rata-rata, 
+
+707
+00:34:02,880 --> 00:34:06,349
+ kira-kira 256 perkalian dengan c. 
+
+708
+00:34:06,349 --> 00:34:07,890
+ Jadi dengan jendela geser, Anda akan pergi 
+
+709
+00:34:07,890 --> 00:34:11,469
+ untuk tetap melakukan 512 squarings karena ada 
+
+710
+00:34:11,469 --> 00:34:13,280
+ tidak mendapatkan sekitar itu. 
+
+711
+00:34:13,280 --> 00:34:16,050
+ Tapi bukannya melakukan 256 mengalikan dengan c, 
+
+712
+00:34:16,050 --> 00:34:19,214
+ Anda akan mudah-mudahan melakukan cara yang lebih sedikit, 
+
+713
+00:34:19,214 --> 00:34:21,130
+ mungkin sesuatu di urutan 32 [TIDAK TERDENGAR] 
+
+714
+00:34:21,130 --> 00:34:24,900
+ mengalikan dengan beberapa entri dalam tabel ini. 
+
+715
+00:34:24,900 --> 00:34:27,489
+ Jadi itulah rencananya. 
+
+716
+00:34:27,489 --> 00:34:31,400
+ [TIDAK TERDENGAR] Tidak sedramatis CRT, bukan 2x, 
+
+717
+00:34:31,400 --> 00:34:33,760
+ tetapi bisa menyelamatkan Anda seperti hampir 1,5x. 
+
+718
+00:34:33,760 --> 00:34:37,516
+
+
+719
+00:34:37,516 --> 00:34:40,659
+ Semua tergantung pada apa [TIDAK JELAS]. 
+
+720
+00:34:40,659 --> 00:34:42,869
+ Masuk akal? 
+
+721
+00:34:42,870 --> 00:34:45,888
+ Pertanyaan lain tentang ini? 
+
+722
+00:34:45,888 --> 00:34:47,260
+ Baiklah. 
+
+723
+00:34:47,260 --> 00:34:50,360
+ Jadi ini adalah [? kira-kira?] pengoptimalan lebih mudah. 
+
+724
+00:34:50,360 --> 00:34:53,040
+ Dan kemudian ada dua trik pintar 
+
+725
+00:34:53,040 --> 00:34:57,290
+ bermain dengan angka untuk bagaimana melakukan lebih banyak perkalian 
+
+726
+00:34:57,290 --> 00:34:59,150
+ efisien. 
+
+727
+00:34:59,150 --> 00:35:01,690
+ Jadi yang pertama dari pengoptimalan ini 
+
+728
+00:35:01,690 --> 00:35:04,080
+ bahwa kita akan melihat-- kurasa 
+
+729
+00:35:04,080 --> 00:35:08,060
+ Saya akan menaikkan dewan ini-- disebut Montgomery ini 
+
+730
+00:35:08,060 --> 00:35:09,820
+ perwakilan. 
+
+731
+00:35:09,820 --> 00:35:13,190
+ Dan kita akan lihat sebentar lagi mengapa 
+
+732
+00:35:13,190 --> 00:35:14,800
+ sangat penting bagi kami. 
+
+733
+00:35:14,800 --> 00:35:23,820
+
+
+734
+00:35:23,820 --> 00:35:26,700
+ Jadi masalah representasi Montgomery ini 
+
+735
+00:35:26,700 --> 00:35:29,150
+ optimisasi sedang mencoba untuk memecahkan bagi kita 
+
+736
+00:35:29,150 --> 00:35:33,170
+ adalah kenyataan bahwa setiap kali kita melakukan perkalian, 
+
+737
+00:35:33,170 --> 00:35:34,880
+ kami mendapatkan angka yang terus bertambah 
+
+738
+00:35:34,880 --> 00:35:36,650
+ dan tumbuh dan berkembang. 
+
+739
+00:35:36,650 --> 00:35:40,690
+ Secara khusus, baik di jendela geser 
+
+740
+00:35:40,690 --> 00:35:43,750
+ atau dalam kuadrat berulang, sebenarnya saat 
+
+741
+00:35:43,750 --> 00:35:46,010
+ Anda dapat mengalikan 2 angka secara bersamaan, 
+
+742
+00:35:46,010 --> 00:35:47,510
+ ketika Anda mengalikan dengan c ke y, Anda 
+
+743
+00:35:47,510 --> 00:35:48,685
+ kalikan 2 angka bersama. 
+
+744
+00:35:48,685 --> 00:35:53,010
+ Dan masalahnya adalah jika input ke perkalian 
+
+745
+00:35:53,010 --> 00:35:56,910
+ adalah, katakanlah, masing-masing 512 bit. 
+
+746
+00:35:56,910 --> 00:35:59,140
+ Kemudian hasil perkalian 
+
+747
+00:35:59,140 --> 00:36:01,130
+ akan menjadi 1.000 bit. 
+
+748
+00:36:01,130 --> 00:36:03,120
+ Dan kemudian Anda akan mengambil hasil 1.000 bit ini 
+
+749
+00:36:03,120 --> 00:36:04,746
+ dan Anda mengalikannya lagi dengan sesuatu 
+
+750
+00:36:04,746 --> 00:36:05,870
+ seperti lima bit [INAUDIBLE]. 
+
+751
+00:36:05,870 --> 00:36:08,910
+ Dan sekarang ada 1.500 bit, 2.000 bit, 2.500 bit, 
+
+752
+00:36:08,910 --> 00:36:10,790
+ dan itu terus tumbuh dan berkembang. 
+
+753
+00:36:10,790 --> 00:36:13,430
+ Dan Anda benar-benar tidak menginginkan ini karena perkalian 
+
+754
+00:36:13,430 --> 00:36:17,670
+ [? kuadrat?] dalam ukuran angka yang kita gandakan. 
+
+755
+00:36:17,670 --> 00:36:19,430
+ Jadi kita harus menjaga ukuran nomor kami 
+
+756
+00:36:19,430 --> 00:36:21,985
+ sekecil mungkin, yang artinya pada dasarnya 512 
+
+757
+00:36:21,985 --> 00:36:27,360
+ bit karena semua perhitungan ini adalah mod p atau mod q. 
+
+758
+00:36:27,360 --> 00:36:28,045
+ Ya? 
+
+759
+00:36:28,045 --> 00:36:29,670
+ AUDIENCE: Apa yang Anda inginkan [TIDAK JELAS]? 
+
+760
+00:36:29,670 --> 00:36:31,960
+
+
+761
+00:36:31,960 --> 00:36:33,210
+ PROFESOR: Itu benar, ya. 
+
+762
+00:36:33,210 --> 00:36:36,240
+ Jadi hal yang keren adalah kita dapat menyimpan angka ini 
+
+763
+00:36:36,240 --> 00:36:37,640
+ karena apa yang kita lakukan adalah, katakanlah, 
+
+764
+00:36:37,640 --> 00:36:40,730
+ kami ingin menghitung c ke x hanya untuk contoh ini. 
+
+765
+00:36:40,730 --> 00:36:41,524
+ Kuadrat. 
+
+766
+00:36:41,524 --> 00:36:43,270
+ Squared lagi. 
+
+767
+00:36:43,270 --> 00:36:44,350
+ Squared lagi. 
+
+768
+00:36:44,350 --> 00:36:46,610
+ Apa yang bisa Anda lakukan adalah Anda menghitung c ke x 
+
+769
+00:36:46,610 --> 00:36:49,740
+ maka Anda mengambil mod p, katakanlah, benar. 
+
+770
+00:36:49,740 --> 00:36:53,110
+ Kemudian Anda menukarnya maka Anda melakukan mod p lagi. 
+
+771
+00:36:53,110 --> 00:36:56,820
+ Kemudian Anda menukarnya lagi, dan kemudian Anda melakukan mod p lagi. 
+
+772
+00:36:56,820 --> 00:36:57,539
+ Dan seterusnya. 
+
+773
+00:36:57,539 --> 00:36:59,330
+ Jadi ini pada dasarnya apa yang Anda usulkan. 
+
+774
+00:36:59,330 --> 00:37:00,100
+ Jadi ini luar biasa. 
+
+775
+00:37:00,100 --> 00:37:02,830
+ Kenyataannya, ini mempertahankan ukuran angka kami 
+
+776
+00:37:02,830 --> 00:37:05,260
+ pada dasarnya lima bit total, yaitu sekitar 
+
+777
+00:37:05,260 --> 00:37:06,890
+ sekecil yang bisa kita dapatkan. 
+
+778
+00:37:06,890 --> 00:37:08,710
+ Ini bagus dalam hal menekan 
+
+779
+00:37:08,710 --> 00:37:11,940
+ ukuran angka-angka ini untuk perkalian. 
+
+780
+00:37:11,940 --> 00:37:15,310
+ Tapi sebenarnya agak mahal untuk melakukan mod p ini 
+
+781
+00:37:15,310 --> 00:37:16,920
+ operasi. 
+
+782
+00:37:16,920 --> 00:37:19,240
+ Karena cara Anda melakukan mod p adalah sesuatu 
+
+783
+00:37:19,240 --> 00:37:21,740
+ Anda pada dasarnya harus melakukan pembagian. 
+
+784
+00:37:21,740 --> 00:37:24,510
+ Dan pembagian jauh lebih buruk daripada perkalian. 
+
+785
+00:37:24,510 --> 00:37:27,730
+ Saya tidak akan pergi melalui algoritma untuk pembagian, 
+
+786
+00:37:27,730 --> 00:37:30,520
+ tapi ini sangat lambat. 
+
+787
+00:37:30,520 --> 00:37:33,907
+ Anda biasanya ingin menghindari pembagian sebanyak mungkin. 
+
+788
+00:37:33,907 --> 00:37:36,240
+ Karena itu bahkan bukan hanya pemrograman langsung 
+
+789
+00:37:36,240 --> 00:37:39,290
+ hal, Anda harus melakukan beberapa algoritma aproksimasi, 
+
+790
+00:37:39,290 --> 00:37:41,780
+ semacam metode Newton semacam itu 
+
+791
+00:37:41,780 --> 00:37:43,330
+ dan simpan saja [tidak terdengar]. 
+
+792
+00:37:43,330 --> 00:37:44,790
+ Ini akan lambat. 
+
+793
+00:37:44,790 --> 00:37:47,290
+ Dan dalam implementasi utama, ini sebenarnya 
+
+794
+00:37:47,290 --> 00:37:50,640
+ ternyata menjadi bagian paling lambat dalam melakukan perkalian. 
+
+795
+00:37:50,640 --> 00:37:52,230
+ Perkaliannya murah. 
+
+796
+00:37:52,230 --> 00:37:56,210
+ Tetapi kemudian lakukan mod p atau mod q untuk mengembalikannya dalam ukuran 
+
+797
+00:37:56,210 --> 00:37:59,190
+ akan benar-benar lebih mahal daripada mengalikan. 
+
+798
+00:37:59,190 --> 00:38:01,480
+ Jadi itu sebenarnya agak mengecewakan. 
+
+799
+00:38:01,480 --> 00:38:04,560
+ Jadi cara kita mengatasi ini 
+
+800
+00:38:04,560 --> 00:38:08,590
+ adalah dengan melakukan penggandaan ini, ini pintar lainnya 
+
+801
+00:38:08,590 --> 00:38:13,280
+ representasi, dan juga saya akan menunjukkan triknya di sini. 
+
+802
+00:38:13,280 --> 00:38:14,780
+ Ayo lihat. 
+
+803
+00:38:14,780 --> 00:38:16,680
+ Bersabarlah sebentar, lalu kita akan 
+
+804
+00:38:16,680 --> 00:38:21,082
+ dan kemudian melihat mengapa begitu cepat untuk menggunakan trik Montgomery ini. 
+
+805
+00:38:21,082 --> 00:38:26,190
+ Dan ide dasarnya adalah merepresentasikan angka, 
+
+806
+00:38:26,190 --> 00:38:29,570
+ ini adalah angka biasa yang mungkin Anda benar-benar 
+
+807
+00:38:29,570 --> 00:38:30,852
+ ingin berkembang biak. 
+
+808
+00:38:30,852 --> 00:38:32,980
+ Dan kita akan memiliki representasi yang berbeda 
+
+809
+00:38:32,980 --> 00:38:35,313
+ untuk angka-angka ini, yang disebut representasi Montgomery. 
+
+810
+00:38:35,313 --> 00:38:37,530
+
+
+811
+00:38:37,530 --> 00:38:41,190
+ Dan representasi itu sebenarnya sangat mudah. 
+
+812
+00:38:41,190 --> 00:38:43,990
+ Kami hanya mengambil nilai a dan kami melipatgandakannya 
+
+813
+00:38:43,990 --> 00:38:46,000
+ oleh beberapa nilai ajaib R. 
+
+814
+00:38:46,000 --> 00:38:48,250
+ Saya akan memberi tahu Anda apa R ini dalam hitungan detik. 
+
+815
+00:38:48,250 --> 00:38:51,710
+ Tapi pertama-tama mari kita cari tahu apakah Anda memilih nilai sewenang-wenang 
+
+816
+00:38:51,710 --> 00:38:53,820
+ R, apa yang akan terjadi di sini? 
+
+817
+00:38:53,820 --> 00:38:56,200
+ Jadi kita mengambil 2 angka, a dan b. 
+
+818
+00:38:56,200 --> 00:39:00,075
+ Representasi Montgomery mereka agak diharapkan. 
+
+819
+00:39:00,075 --> 00:39:02,840
+ A adalah aR, b adalah bR. 
+
+820
+00:39:02,840 --> 00:39:05,920
+ Dan jika Anda ingin menghitung produk kali b, 
+
+821
+00:39:05,920 --> 00:39:08,100
+ baik di ruang Montgomery, Anda juga bisa 
+
+822
+00:39:08,100 --> 00:39:09,160
+ kalikan orang-orang ini. 
+
+823
+00:39:09,160 --> 00:39:13,310
+ Anda dapat mengambil rR sebanyak itu dengan bR. 
+
+824
+00:39:13,310 --> 00:39:17,130
+ Dan apa yang Anda dapatkan di sini adalah ab kali R kuadrat. 
+
+825
+00:39:17,130 --> 00:39:18,770
+ Jadi ada dua R sekarang. 
+
+826
+00:39:18,770 --> 00:39:22,570
+ Itu agak menyebalkan, tetapi Anda dapat membagi itu dengan R. 
+
+827
+00:39:22,570 --> 00:39:29,610
+ Dan kita mendapatkan ab kali R. Jadi ini mungkin aneh dalam arti 
+
+828
+00:39:29,610 --> 00:39:32,190
+ mengapa Anda mengalikan angka tambahan ini. 
+
+829
+00:39:32,190 --> 00:39:34,525
+ Tapi pertama-tama mari kita cari tahu apakah ini benar. 
+
+830
+00:39:34,525 --> 00:39:37,179
+ Dan kemudian kita akan mencari tahu mengapa ini akan menjadi lebih cepat. 
+
+831
+00:39:37,179 --> 00:39:39,220
+ Jadi itu benar dalam arti bahwa itu sangat mudah. 
+
+832
+00:39:39,220 --> 00:39:40,840
+ Jika Anda ingin melipatgandakan beberapa angka, 
+
+833
+00:39:40,840 --> 00:39:43,364
+ kita hanya mengalikan dengan nilai R ini dan mendapatkan Montgomery 
+
+834
+00:39:43,364 --> 00:39:44,208
+ perwakilan. 
+
+835
+00:39:44,208 --> 00:39:45,980
+ Lalu kita bisa melakukan semua perkalian ini 
+
+836
+00:39:45,980 --> 00:39:47,920
+ untuk bentuk-bentuk Montgomery. 
+
+837
+00:39:47,920 --> 00:39:50,264
+ Dan setiap kali kita mengalikan 2 angka, 
+
+838
+00:39:50,264 --> 00:39:52,180
+ kita harus membagi dengan R, lihat Montgomery 
+
+839
+00:39:52,180 --> 00:39:54,550
+ bentuk hasil penggandaan. 
+
+840
+00:39:54,550 --> 00:39:56,360
+ Dan kemudian ketika kita selesai melakukan semuanya 
+
+841
+00:39:56,360 --> 00:39:58,780
+ dari squarings kami, perkalian, semua hal ini, 
+
+842
+00:39:58,780 --> 00:40:01,180
+ kita akan kembali ke bentuk normal yang normal 
+
+843
+00:40:01,180 --> 00:40:04,890
+ dengan hanya membaginya dengan R untuk terakhir kalinya. 
+
+844
+00:40:04,890 --> 00:40:06,586
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+845
+00:40:06,586 --> 00:40:08,086
+ PROFESOR: Kami sekarang akan memilih R 
+
+846
+00:40:08,086 --> 00:40:09,560
+ menjadi angka yang sangat bagus. 
+
+847
+00:40:09,560 --> 00:40:11,900
+ Dan khususnya, kita akan memilih R 
+
+848
+00:40:11,900 --> 00:40:17,780
+ menjadi angka yang sangat bagus untuk membuat pembagian ini dengan R sangat cepat. 
+
+849
+00:40:17,780 --> 00:40:21,320
+ Dan yang keren adalah jika pembagian ini oleh R 
+
+850
+00:40:21,320 --> 00:40:24,499
+ akan sangat cepat, maka ini 
+
+851
+00:40:24,499 --> 00:40:26,290
+ akan menjadi angka kecil dan kita tidak 
+
+852
+00:40:26,290 --> 00:40:29,460
+ akan harus melakukan mod q ini sangat sering. 
+
+853
+00:40:29,460 --> 00:40:32,120
+ Secara khusus, aR, katakanlah, juga 
+
+854
+00:40:32,120 --> 00:40:34,530
+ akan menjadi sekitar 500 bit karena itu semua sebenarnya 
+
+855
+00:40:34,530 --> 00:40:36,630
+ mod p atau mod q. 
+
+856
+00:40:36,630 --> 00:40:39,320
+ Jadi aR adalah 500 bit. 
+
+857
+00:40:39,320 --> 00:40:41,230
+ BR juga akan menjadi 500 bit. 
+
+858
+00:40:41,230 --> 00:40:44,160
+ Jadi produk ini akan menjadi 1.000 bit. 
+
+859
+00:40:44,160 --> 00:40:46,830
+ R ini akan menjadi 500 kurang lebih bagus 
+
+860
+00:40:46,830 --> 00:40:48,630
+ angka, ukuran yang sama dengan p. 
+
+861
+00:40:48,630 --> 00:40:50,925
+ Dan jika kita bisa membuat pembagian ini menjadi cepat, 
+
+862
+00:40:50,925 --> 00:40:55,744
+ maka hasilnya akan menjadi sekitar 500 bit di sini. 
+
+863
+00:40:55,744 --> 00:40:57,910
+ Jadi kami bisa melakukan penggandaan tanpa 
+
+864
+00:40:57,910 --> 00:40:59,400
+ untuk melakukan pembagian tambahan. 
+
+865
+00:40:59,400 --> 00:41:03,920
+ Dibagi oleh R dengan murah memberi kita hasil yang kecil ini, membawa kita 
+
+866
+00:41:03,920 --> 00:41:08,360
+ keluar dari melakukan mod p untuk sebagian besar situasi. 
+
+867
+00:41:08,360 --> 00:41:11,670
+ Oke, jadi angka aneh apa yang terus saya bicarakan ini? 
+
+868
+00:41:11,670 --> 00:41:17,944
+ Yah R hanya akan menjadi 2 hingga 512. 
+
+869
+00:41:17,944 --> 00:41:22,930
+ Ini akan menjadi 1 diikuti oleh satu ton nol. 
+
+870
+00:41:22,930 --> 00:41:25,260
+ Jadi mengalikan dengan ini adalah mudah, Anda saja 
+
+871
+00:41:25,260 --> 00:41:27,320
+ menambahkan sekelompok nol ke angka. 
+
+872
+00:41:27,320 --> 00:41:32,960
+ Membagi bisa menjadi mudah jika bit rendah hasilnya 
+
+873
+00:41:32,960 --> 00:41:34,547
+ semua nol. 
+
+874
+00:41:34,547 --> 00:41:37,750
+ Jadi, jika Anda memiliki nilai yang sangat sedikit 
+
+875
+00:41:37,750 --> 00:41:41,460
+ diikuti oleh 512 nol, lalu dibagi dengan 2 hingga 512 
+
+876
+00:41:41,460 --> 00:41:41,960
+ murah. 
+
+877
+00:41:41,960 --> 00:41:44,337
+ Anda hanya membuang nol di sisi kanan. 
+
+878
+00:41:44,337 --> 00:41:47,140
+ Dan itu sebenarnya pembagian yang benar. 
+
+879
+00:41:47,140 --> 00:41:48,650
+ Apakah itu masuk akal? 
+
+880
+00:41:48,650 --> 00:41:50,311
+ Masalah kecilnya adalah kita sebenarnya 
+
+881
+00:41:50,311 --> 00:41:51,664
+ tidak memiliki nol di sisi kanan 
+
+882
+00:41:51,664 --> 00:41:53,110
+ ketika Anda melakukan perkalian ini. 
+
+883
+00:41:53,110 --> 00:41:56,750
+ Ini seperti nomor bit 512 nyata dengan semua 512 bit 
+
+884
+00:41:56,750 --> 00:41:57,460
+ bekas. 
+
+885
+00:41:57,460 --> 00:41:58,890
+ Jadi ini akan menjadi angka 1.000 bit 
+
+886
+00:41:58,890 --> 00:42:02,352
+ [? atau?] dengan semua bit ini juga diatur secara acak 0 atau 1, 
+
+887
+00:42:02,352 --> 00:42:03,560
+ tergantung apa yang terjadi. 
+
+888
+00:42:03,560 --> 00:42:06,460
+ Jadi kita tidak bisa membuang bit rendah. 
+
+889
+00:42:06,460 --> 00:42:09,144
+ Tetapi kepandaian berasal dari fakta 
+
+890
+00:42:09,144 --> 00:42:11,210
+ bahwa satu-satunya hal yang kita pedulikan 
+
+891
+00:42:11,210 --> 00:42:14,370
+ adalah nilai dari hal ini mod p. 
+
+892
+00:42:14,370 --> 00:42:18,610
+ Jadi Anda selalu dapat menambahkan kelipatan p untuk nilai ini 
+
+893
+00:42:18,610 --> 00:42:22,380
+ tanpa mengubahnya ketika itu setara dengan mod p. 
+
+894
+00:42:22,380 --> 00:42:25,130
+ Dan sebagai hasilnya, kita dapat menambahkan kelipatan p 
+
+895
+00:42:25,130 --> 00:42:28,020
+ untuk mendapatkan bit rendah untuk semua menjadi nol. 
+
+896
+00:42:28,020 --> 00:42:30,510
+ Jadi mari kita lihat beberapa contoh sederhana. 
+
+897
+00:42:30,510 --> 00:42:33,390
+ Saya tidak akan menulis 512 bit di papan tulis. 
+
+898
+00:42:33,390 --> 00:42:37,325
+ Tapi misalkan itu-- inilah contoh singkat. 
+
+899
+00:42:37,325 --> 00:42:40,200
+
+
+900
+00:42:40,200 --> 00:42:42,710
+ Misalkan kita memiliki situasi di mana 
+
+901
+00:42:42,710 --> 00:42:46,340
+ nilai R kami adalah 2 hingga ke-4. 
+
+902
+00:42:46,340 --> 00:42:49,810
+ Jadi 1 diikuti oleh empat nol. 
+
+903
+00:42:49,810 --> 00:42:53,170
+ Jadi ini adalah contoh yang jauh lebih kecil dari yang sebenarnya. 
+
+904
+00:42:53,170 --> 00:42:55,140
+ Tapi mari kita lihat bagaimana divisi Montgomery ini 
+
+905
+00:42:55,140 --> 00:42:57,170
+ akan berhasil. 
+
+906
+00:42:57,170 --> 00:43:02,600
+ Jadi misalkan kita akan mencoba menghitung mod q, di mana 
+
+907
+00:43:02,600 --> 00:43:05,570
+ q, katakanlah, mungkin 7. 
+
+908
+00:43:05,570 --> 00:43:10,000
+ Jadi ini adalah 1 1 1 dalam bentuk biner. 
+
+909
+00:43:10,000 --> 00:43:12,970
+ Dan apa yang akan kami coba lakukan 
+
+910
+00:43:12,970 --> 00:43:16,360
+ mungkin kita melakukan beberapa perkalian. 
+
+911
+00:43:16,360 --> 00:43:19,700
+ Dan nilai ini aR kali bR sama 
+
+912
+00:43:19,700 --> 00:43:26,520
+ presentasi biner ini 1 1 0 1 0. 
+
+913
+00:43:26,520 --> 00:43:31,060
+ Jadi ini akan menjadi nilai aR kali bR. 
+
+914
+00:43:31,060 --> 00:43:32,780
+ Bagaimana kita membaginya dengan R? 
+
+915
+00:43:32,780 --> 00:43:35,175
+ Jadi jelas rendahnya empat bit tidak semuanya 0, 
+
+916
+00:43:35,175 --> 00:43:37,472
+ jadi kami tidak bisa membaginya begitu saja. 
+
+917
+00:43:37,472 --> 00:43:40,680
+ Tapi kita bisa menambahkan kelipatan q. 
+
+918
+00:43:40,680 --> 00:43:45,510
+ Secara khusus, kita dapat menambahkan 2 kali q. 
+
+919
+00:43:45,510 --> 00:43:49,700
+ Jadi 2q sama dengan 1 1 1 0. 
+
+920
+00:43:49,700 --> 00:43:56,740
+ Dan sekarang apa yang kita dapatkan adalah 0 0, membawa 1, 0, 
+
+921
+00:43:56,740 --> 00:44:01,520
+ membawa 1, 1, membawa 1, 0 1. 
+
+922
+00:44:01,520 --> 00:44:02,520
+ Saya harap saya melakukannya dengan benar. 
+
+923
+00:44:02,520 --> 00:44:03,530
+ Jadi ini yang kita dapatkan. 
+
+924
+00:44:03,530 --> 00:44:07,207
+ Jadi sekarang kita mendapatkan aR bR plus 2 potong dadu. 
+
+925
+00:44:07,207 --> 00:44:09,290
+ Tapi kami sebenarnya tidak peduli dengan 2 plus dadu. 
+
+926
+00:44:09,290 --> 00:44:11,123
+ Ini sebenarnya baik-baik saja karena semua yang kita pedulikan 
+
+927
+00:44:11,123 --> 00:44:12,190
+ adalah nilai dari mod q. 
+
+928
+00:44:12,190 --> 00:44:15,190
+
+
+929
+00:44:15,190 --> 00:44:18,070
+ Dan sekarang kami lebih dekat, kami memiliki tiga 0 bit di bagian bawah. 
+
+930
+00:44:18,070 --> 00:44:20,190
+ Sekarang kita dapat menambahkan kelipatan q lainnya. 
+
+931
+00:44:20,190 --> 00:44:23,000
+ Kali ini mungkin 8q. 
+
+932
+00:44:23,000 --> 00:44:26,680
+ Jadi kita tambahkan 1 1 1 di sini 0 0. 
+
+933
+00:44:26,680 --> 00:44:29,905
+ Dan jika kita menambahkannya, kita akan mendapatkan, katakanlah, 
+
+934
+00:44:29,905 --> 00:44:37,120
+ 0 0 0 kemudian tambahkan dua orang ini 0, bawa 1, 0, bawa 1, 1 1. 
+
+935
+00:44:37,120 --> 00:44:38,250
+ Saya pikir itu benar. 
+
+936
+00:44:38,250 --> 00:44:41,390
+ Tapi sekarang kita punya aR bR asli kita 
+
+937
+00:44:41,390 --> 00:44:45,030
+ ditambah 2q plus 8q sama dengan benda ini. 
+
+938
+00:44:45,030 --> 00:44:48,720
+ Dan akhirnya, kita dapat membagi hal ini dengan R dengan sangat murah. 
+
+939
+00:44:48,720 --> 00:44:54,762
+ Karena kita hanya membuang empat angka nol yang rendah. 
+
+940
+00:44:54,762 --> 00:44:56,205
+ Masuk akal? 
+
+941
+00:44:56,205 --> 00:44:57,167
+ Pertanyaan. 
+
+942
+00:44:57,167 --> 00:45:01,150
+ AUDIENCE: Apakah aR bR selalu akan berakhir, saya kira, 
+
+943
+00:45:01,150 --> 00:45:03,270
+ 1,024 nol? 
+
+944
+00:45:03,270 --> 00:45:08,021
+ PROFESOR: Tidak, dan alasannya adalah itu-- OK, 
+
+945
+00:45:08,021 --> 00:45:10,130
+ di sini adalah hal yang mungkin membingungkan. 
+
+946
+00:45:10,130 --> 00:45:12,710
+ A adalah, katakanlah, 512 bit. 
+
+947
+00:45:12,710 --> 00:45:15,470
+ Kemudian Anda mengalikannya dengan R. Jadi di sini, Anda benar. 
+
+948
+00:45:15,470 --> 00:45:19,380
+ Nilai ini adalah angka 1.000 bit di mana bit yang tinggi 
+
+949
+00:45:19,380 --> 00:45:20,980
+ a, 512 bit yang tinggi adalah a. 
+
+950
+00:45:20,980 --> 00:45:22,794
+ Dan bit rendah semuanya nol. 
+
+951
+00:45:22,794 --> 00:45:24,710
+ Tapi kemudian, kamu akan pergi [? melakukannya dengan?] mod 
+
+952
+00:45:24,710 --> 00:45:27,410
+ q untuk menurunkannya agar lebih kecil. 
+
+953
+00:45:27,410 --> 00:45:29,570
+ Dan secara umum, ini akan menjadi kasusnya. 
+
+954
+00:45:29,570 --> 00:45:32,745
+ Karena [? hanya?] memiliki nol rendah ini pertama kalinya 
+
+955
+00:45:32,745 --> 00:45:33,370
+ Anda mengubahnya. 
+
+956
+00:45:33,370 --> 00:45:35,119
+ Tetapi setelah Anda melakukan beberapa perkalian, 
+
+957
+00:45:35,119 --> 00:45:37,685
+ mereka akan menjadi bit acak. 
+
+958
+00:45:37,685 --> 00:45:40,270
+ Jadi orang-orang ini-- jadi saya benar-benar harus 
+
+959
+00:45:40,270 --> 00:45:43,260
+ telah menulis mod q di sini - dan untuk menghitung mod q ini 
+
+960
+00:45:43,260 --> 00:45:49,356
+ segera setelah Anda melakukan konversi untuk menjaga seluruh nilai kecil. 
+
+961
+00:45:49,356 --> 00:45:50,802
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+962
+00:45:50,802 --> 00:45:53,460
+ PROFESOR: Ya, jadi konversi awal mahal 
+
+963
+00:45:53,460 --> 00:45:58,650
+ atau setidaknya harganya semahal melakukan modulus biasa 
+
+964
+00:45:58,650 --> 00:46:01,010
+ selama perbanyakan. 
+
+965
+00:46:01,010 --> 00:46:03,010
+ Yang keren adalah Anda membayar biaya ini 
+
+966
+00:46:03,010 --> 00:46:05,176
+ hanya sekali ketika Anda melakukan konversi ke Montgomery 
+
+967
+00:46:05,176 --> 00:46:06,122
+ bentuk. 
+
+968
+00:46:06,122 --> 00:46:09,240
+ Dan kemudian, alih-alih mengubahnya kembali di setiap langkah, 
+
+969
+00:46:09,240 --> 00:46:11,235
+ Anda hanya menyimpannya dalam bentuk Montgomery. 
+
+970
+00:46:11,235 --> 00:46:13,700
+ Tetapi ingat bahwa untuk melakukan eksponensial 
+
+971
+00:46:13,700 --> 00:46:16,064
+ ke eksponen yang memiliki 512 bit, 
+
+972
+00:46:16,064 --> 00:46:17,480
+ Anda mengatakan Anda akan memiliki 
+
+973
+00:46:17,480 --> 00:46:21,320
+ untuk melakukan lebih dari 500 perkalian karena kita harus melakukan setidaknya 
+
+974
+00:46:21,320 --> 00:46:23,870
+ 500 squarings plus kemudian beberapa. 
+
+975
+00:46:23,870 --> 00:46:27,000
+ Jadi Anda melakukan mod ini dua kali dan kemudian 
+
+976
+00:46:27,000 --> 00:46:30,370
+ Anda mendapatkan banyak divisi murah jika Anda tetap dalam formulir ini. 
+
+977
+00:46:30,370 --> 00:46:34,500
+ Dan kemudian Anda melakukan pembagian oleh R untuk kembali ke formulir ini lagi. 
+
+978
+00:46:34,500 --> 00:46:37,520
+ Jadi daripada melakukan 500 mod qs untuk setiap langkah perkalian, 
+
+979
+00:46:37,520 --> 00:46:39,366
+ Anda melakukannya dua kali mod q. 
+
+980
+00:46:39,366 --> 00:46:41,510
+ Dan kemudian Anda terus melakukan pembagian ini 
+
+981
+00:46:41,510 --> 00:46:45,080
+ oleh R dengan murah menggunakan trik ini. 
+
+982
+00:46:45,080 --> 00:46:45,580
+ Pertanyaan. 
+
+983
+00:46:45,580 --> 00:46:49,460
+ AUDIENCE: Jadi ketika Anda menambahkan kelipatan q 
+
+984
+00:46:49,460 --> 00:46:51,400
+ dan kemudian membaginya dengan R, [TIDAK JELAS] 
+
+985
+00:46:51,400 --> 00:46:54,310
+
+
+986
+00:46:54,310 --> 00:46:56,780
+ PROFESOR: Karena itu sebenarnya berarti mod q 
+
+987
+00:46:56,780 --> 00:46:58,920
+ sisanya saat Anda membagi dengan q. 
+
+988
+00:46:58,920 --> 00:47:07,990
+ Jadi x tambah y kali q, mod q hanya x. 
+
+989
+00:47:07,990 --> 00:47:08,930
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+990
+00:47:08,930 --> 00:47:12,230
+
+
+991
+00:47:12,230 --> 00:47:16,089
+ PROFESOR: Jadi dalam hal ini, membagi oleh-- jadi semacam lain 
+
+992
+00:47:16,089 --> 00:47:17,630
+ properti bagus adalah karena itu 
+
+993
+00:47:17,630 --> 00:47:22,450
+ semua modulus di bilangan prima-- itu juga benar 
+
+994
+00:47:22,450 --> 00:47:28,080
+ bahwa jika Anda memiliki x plus yq dibagi dengan R, 
+
+995
+00:47:28,080 --> 00:47:35,790
+ mod q sebenarnya sama dengan x dibagi dengan R mod q. 
+
+996
+00:47:35,790 --> 00:47:39,180
+ Cara berpikirnya adalah tidak ada pembagian yang nyata 
+
+997
+00:47:39,180 --> 00:47:40,650
+ dalam aritmatika modular. 
+
+998
+00:47:40,650 --> 00:47:41,730
+ Itu hanya kebalikan. 
+
+999
+00:47:41,730 --> 00:47:44,060
+ Jadi apa yang sebenarnya dikatakan adalah ini sebenarnya 
+
+1000
+00:47:44,060 --> 00:47:49,465
+ x ditambah yq kali beberapa angka yang disebut R terbalik. 
+
+1001
+00:47:49,465 --> 00:47:52,930
+ Dan kemudian Anda menghitung semua ini mod q. 
+
+1002
+00:47:52,930 --> 00:47:57,210
+ Dan kemudian Anda bisa menganggap ini sebagai x kali R terbalik 
+
+1003
+00:47:57,210 --> 00:48:05,320
+ mod q plus y [? u?] R inverse mod q. 
+
+1004
+00:48:05,320 --> 00:48:08,610
+ Dan hal ini dibatalkan karena itu adalah sesuatu kali q. 
+
+1005
+00:48:08,610 --> 00:48:15,060
+
+
+1006
+00:48:15,060 --> 00:48:17,856
+ Dan ada beberapa bentuk tertutup untuk benda ini. 
+
+1007
+00:48:17,856 --> 00:48:22,195
+ Jadi di sini saya melakukannya sedikit demi sedikit, 2q kemudian 8q, dan sebagainya. 
+
+1008
+00:48:22,195 --> 00:48:23,765
+ Sebenarnya ini adalah formula tertutup yang bagus 
+
+1009
+00:48:23,765 --> 00:48:25,630
+ Anda dapat menghitung-- itu ada di catatan kuliah, 
+
+1010
+00:48:25,630 --> 00:48:27,880
+ tapi mungkin tidak layak menghabiskan waktu di papan 
+
+1011
+00:48:27,880 --> 00:48:31,215
+ di sini - untuk bagaimana Anda mencari tahu apa yang berganda q 
+
+1012
+00:48:31,215 --> 00:48:35,331
+ Anda harus menambahkan untuk mendapatkan semua bit rendah untuk beralih ke 0. 
+
+1013
+00:48:35,331 --> 00:48:38,200
+ Jadi ternyata untuk melakukan pembagian ini oleh R, 
+
+1014
+00:48:38,200 --> 00:48:43,450
+ Anda hanya perlu menghitung multiple magic ini dari q, tambahkan. 
+
+1015
+00:48:43,450 --> 00:48:46,290
+ Dan kemudian buang bit rendah dan itu 
+
+1016
+00:48:46,290 --> 00:48:53,047
+ membawa nomor Anda kembali ke 512 bit, atau berapa pun ukurannya. 
+
+1017
+00:48:53,047 --> 00:48:54,029
+ BAIK. 
+
+1018
+00:48:54,029 --> 00:48:55,790
+ Dan inilah kehalusannya. 
+
+1019
+00:48:55,790 --> 00:48:57,470
+ Satu-satunya alasan kita membicarakan hal ini 
+
+1020
+00:48:57,470 --> 00:49:00,470
+ adalah ada sesuatu yang lucu terjadi di sini 
+
+1021
+00:49:00,470 --> 00:49:05,090
+ yang akan memungkinkan kita untuk mempelajari informasi waktu. 
+
+1022
+00:49:05,090 --> 00:49:09,780
+ Dan khususnya, meskipun kami dibagi oleh R, 
+
+1023
+00:49:09,780 --> 00:49:12,770
+ kita tahu hasilnya akan menjadi 512 bit. 
+
+1024
+00:49:12,770 --> 00:49:15,123
+ Tapi itu mungkin lebih besar dari q 
+
+1025
+00:49:15,123 --> 00:49:16,820
+ karena q tidak tepat [? hingga 512?], 
+
+1026
+00:49:16,820 --> 00:49:18,340
+ bukan nomor 512 bit. 
+
+1027
+00:49:18,340 --> 00:49:20,840
+ Jadi mungkin sedikit kurang dari R. 
+
+1028
+00:49:20,840 --> 00:49:24,730
+ Jadi mungkin itu setelah kita melakukan pembagian murah ini oleh R, 
+
+1029
+00:49:24,730 --> 00:49:26,960
+ [? jalan?] kita kurangi q satu lagi 
+
+1030
+00:49:26,960 --> 00:49:29,690
+ waktu karena kita mendapatkan sesuatu yang kecil tetapi tidak 
+
+1031
+00:49:29,690 --> 00:49:31,400
+ cukup kecil. 
+
+1032
+00:49:31,400 --> 00:49:34,740
+ Jadi ada kemungkinan setelah melakukan pembagian ini, 
+
+1033
+00:49:34,740 --> 00:49:39,740
+ kita mungkin juga harus mengurangi q lagi. 
+
+1034
+00:49:39,740 --> 00:49:42,390
+ Dan pengurangan ini akan menjadi bagian dari apa 
+
+1035
+00:49:42,390 --> 00:49:44,250
+ serangan ini adalah semua tentang. 
+
+1036
+00:49:44,250 --> 00:49:48,060
+ Ternyata mengurangkan q ini menambah waktu. 
+
+1037
+00:49:48,060 --> 00:49:51,660
+ Dan seseorang tahu - bukan orang-orang ini 
+
+1038
+00:49:51,660 --> 00:49:53,050
+ tetapi beberapa pekerjaan sebelumnya-- bahwa Anda 
+
+1039
+00:49:53,050 --> 00:49:56,770
+ menunjukkan bahwa kemungkinan melakukan hal ini, ini 
+
+1040
+00:49:56,770 --> 00:49:58,145
+ disebut pengurangan ekstraktor. 
+
+1041
+00:49:58,145 --> 00:50:03,500
+
+
+1042
+00:50:03,500 --> 00:50:10,020
+ Probabilitas semacam ini tergantung pada nilai tertentu 
+
+1043
+00:50:10,020 --> 00:50:12,410
+ bahwa Anda exponentiating. 
+
+1044
+00:50:12,410 --> 00:50:19,790
+ Jadi jika Anda menghitung x ke d mod q, 
+
+1045
+00:50:19,790 --> 00:50:22,400
+ kemungkinan pengurangan ekstra, 
+
+1046
+00:50:22,400 --> 00:50:25,240
+ di beberapa titik saat menghitung x ke d mod q, 
+
+1047
+00:50:25,240 --> 00:50:31,860
+ akan sama dengan x mod q dibagi dengan 2R. 
+
+1048
+00:50:31,860 --> 00:50:36,890
+
+
+1049
+00:50:36,890 --> 00:50:40,390
+ Jadi jika kita akan mengkomputasi x ke mod q, 
+
+1050
+00:50:40,390 --> 00:50:43,690
+ lalu tergantung berapa nilai x mod q 
+
+1051
+00:50:43,690 --> 00:50:45,410
+ adalah, apakah itu besar atau kecil, Anda 
+
+1052
+00:50:45,410 --> 00:50:49,080
+ akan memiliki lebih banyak atau lebih sedikit dari pengurangan ekstra ini. 
+
+1053
+00:50:49,080 --> 00:50:51,577
+ Dan hanya untuk menunjukkan di mana ini akan cocok, 
+
+1054
+00:50:51,577 --> 00:50:53,785
+ ini sebenarnya akan terjadi dalam langkah dekripsi, 
+
+1055
+00:50:53,785 --> 00:50:55,951
+ karena selama langkah dekripsi, server akan berjalan 
+
+1056
+00:50:55,951 --> 00:50:57,330
+ menjadi komputasi c ke d. 
+
+1057
+00:50:57,330 --> 00:51:00,650
+ Dan ini mengatakan pengurangan ekstraktor 
+
+1058
+00:51:00,650 --> 00:51:05,160
+ akan sebanding dengan seberapa dekat x, atau c dalam hal ini, 
+
+1059
+00:51:05,160 --> 00:51:07,254
+ adalah nilai q. 
+
+1060
+00:51:07,254 --> 00:51:08,920
+ Jadi ini akan menjadi mengkhawatirkan, benar, 
+
+1061
+00:51:08,920 --> 00:51:12,490
+ karena penyerang dapat memilih input c. 
+
+1062
+00:51:12,490 --> 00:51:14,640
+ Dan jumlah pengurangan ekstraktor 
+
+1063
+00:51:14,640 --> 00:51:16,940
+ akan sebanding dengan seberapa dekat c itu 
+
+1064
+00:51:16,940 --> 00:51:18,981
+ ke salah satu faktor, q. 
+
+1065
+00:51:18,981 --> 00:51:21,260
+ Dan ini adalah bagaimana Anda akan memberitahu saya semakin dekat 
+
+1066
+00:51:21,260 --> 00:51:23,337
+ ke q, atau saya sudah melampaui q. 
+
+1067
+00:51:23,337 --> 00:51:25,545
+ Dan tiba-tiba, tidak ada pengurangan pengekstraksi, 
+
+1068
+00:51:25,545 --> 00:51:28,556
+ mungkin karena x mod q sangat kecil x adalah 
+
+1069
+00:51:28,556 --> 00:51:29,472
+ q ditambah sedikit epsilon. 
+
+1070
+00:51:29,472 --> 00:51:31,720
+ Dan itu sangat kecil. 
+
+1071
+00:51:31,720 --> 00:51:33,942
+ Jadi itulah salah satu bagian dari serangan waktu 
+
+1072
+00:51:33,942 --> 00:51:35,650
+ kita akan melihat dalam satu detik. 
+
+1073
+00:51:35,650 --> 00:51:38,770
+
+
+1074
+00:51:38,770 --> 00:51:42,740
+ Saya tidak punya bukti bahwa ini benar [tidak terdengar] 
+
+1075
+00:51:42,740 --> 00:51:44,905
+ Pengurangan ekstraktor ini bekerja seperti ini. 
+
+1076
+00:51:44,905 --> 00:51:45,680
+ Ya, pertanyaan. 
+
+1077
+00:51:45,680 --> 00:51:48,700
+ AUDIENCE: Apa yang terjadi jika Anda tidak melakukan pengurangan ekstra ini? 
+
+1078
+00:51:48,700 --> 00:51:51,210
+ PROFESOR: Oh, apa yang terjadi jika Anda tidak melakukan extractor ini 
+
+1079
+00:51:51,210 --> 00:51:51,710
+ pengurangan? 
+
+1080
+00:51:51,710 --> 00:51:55,510
+
+
+1081
+00:51:55,510 --> 00:51:57,850
+ Anda dapat menghindari pengurangan ekstra ini. 
+
+1082
+00:51:57,850 --> 00:52:01,790
+ Dan kemudian Anda hanya perlu melakukan beberapa tambahan mungkin 
+
+1083
+00:52:01,790 --> 00:52:03,410
+ pengurangan modular nanti. 
+
+1084
+00:52:03,410 --> 00:52:06,500
+ Saya pikir matematika hanya berhasil dengan baik dengan cara ini 
+
+1085
+00:52:06,500 --> 00:52:07,834
+ untuk bentuk Montgomery. 
+
+1086
+00:52:07,834 --> 00:52:09,750
+ Saya pikir untuk banyak hal ini sebenarnya 
+
+1087
+00:52:09,750 --> 00:52:12,406
+ setelah Anda melihatnya sebagai saluran waktu [tidak terdengar] 
+
+1088
+00:52:12,406 --> 00:52:13,780
+ [? berpikir?] jangan lakukan ini sama sekali, 
+
+1089
+00:52:13,780 --> 00:52:16,004
+ atau mungkin Anda harus melakukan beberapa rencana lain. 
+
+1090
+00:52:16,004 --> 00:52:16,670
+ Jadi kamu benar, 
+
+1091
+00:52:16,670 --> 00:52:19,710
+ Saya pikir Anda mungkin bisa menghindari pengurangan ekstra ini 
+
+1092
+00:52:19,710 --> 00:52:22,655
+ dan mungkin hanya melakukan mod q, mungkin di bagian akhir. 
+
+1093
+00:52:22,655 --> 00:52:24,840
+ Saya belum benar-benar mencoba menerapkan ini. 
+
+1094
+00:52:24,840 --> 00:52:27,380
+ Tapi sepertinya itu bisa berhasil. 
+
+1095
+00:52:27,380 --> 00:52:29,390
+ Mungkin Anda hanya harus melakukan mod q sekali 
+
+1096
+00:52:29,390 --> 00:52:31,598
+ [? ada?], yang mungkin harus Anda lakukan pula. 
+
+1097
+00:52:31,598 --> 00:52:32,820
+ Jadi tidak terlalu jelas. 
+
+1098
+00:52:32,820 --> 00:52:37,770
+ Mungkin itu [TIDAK JELAS] mungkin tidak q. 
+
+1099
+00:52:37,770 --> 00:52:40,314
+ Jadi mengingat fakta bahwa [TIDAK JELAS]. 
+
+1100
+00:52:40,314 --> 00:52:44,274
+
+
+1101
+00:52:44,274 --> 00:52:46,440
+ Sebenarnya, saya tidak harus berbicara dengan otoritatif untuk ini. 
+
+1102
+00:52:46,440 --> 00:52:47,000
+ Saya belum lelah menerapkan ini. 
+
+1103
+00:52:47,000 --> 00:52:49,166
+ Jadi mungkin ada beberapa alasan yang mendalam mengapa ekstraktor ini 
+
+1104
+00:52:49,166 --> 00:52:50,184
+ reduksi harus terjadi. 
+
+1105
+00:52:50,184 --> 00:52:53,490
+ Saya tidak bisa memikirkan satu. 
+
+1106
+00:52:53,490 --> 00:52:54,450
+ Baiklah, pertanyaan? 
+
+1107
+00:52:54,450 --> 00:52:57,110
+
+
+1108
+00:52:57,110 --> 00:53:00,995
+ Jadi, inilah bagian terakhir dari teka-teki untuk bagaimana OpenSSL, 
+
+1109
+00:53:00,995 --> 00:53:06,040
+ perpustakaan ini yang digunakan serangan kertas ini 
+
+1110
+00:53:06,040 --> 00:53:07,870
+ perkalian. 
+
+1111
+00:53:07,870 --> 00:53:12,630
+ Jadi trik Montgomery ini sangat bagus untuk menghindari mod q 
+
+1112
+00:53:12,630 --> 00:53:15,630
+ bagian selama perkalian modular. 
+
+1113
+00:53:15,630 --> 00:53:17,770
+ Tapi kemudian ada pertanyaan tentang bagaimana Anda sebenarnya 
+
+1114
+00:53:17,770 --> 00:53:19,020
+ kalikan dua angka bersama. 
+
+1115
+00:53:19,020 --> 00:53:21,235
+ Jadi kami melakukan level yang lebih rendah dan lebih rendah. 
+
+1116
+00:53:21,235 --> 00:53:25,791
+ Jadi misalkan Anda punya [? perbanyakan mentah. 
+
+1117
+00:53:25,791 --> 00:53:28,579
+
+
+1118
+00:53:28,579 --> 00:53:30,370
+ Jadi ini bukan perkalian modular. 
+
+1119
+00:53:30,370 --> 00:53:33,475
+ Anda memiliki dua angka, a dan b. 
+
+1120
+00:53:33,475 --> 00:53:38,636
+ Dan kedua orang ini adalah angka 512 bit. 
+
+1121
+00:53:38,636 --> 00:53:40,250
+ Bagaimana Anda melipatgandakannya bersama 
+
+1122
+00:53:40,250 --> 00:53:42,400
+ ketika mesin Anda hanya mesin 32 bit, 
+
+1123
+00:53:42,400 --> 00:53:46,226
+ seperti orang-orang di koran, atau 64 bit, tapi masih, hal yang sama? 
+
+1124
+00:53:46,226 --> 00:53:48,670
+ Bagaimana Anda akan menerapkan perkalian dari orang-orang ini? 
+
+1125
+00:53:48,670 --> 00:53:53,740
+
+
+1126
+00:53:53,740 --> 00:53:56,242
+ Ada saran? 
+
+1127
+00:53:56,242 --> 00:53:58,200
+ Yah, saya kira itu pertanyaan yang langsung, 
+
+1128
+00:53:58,200 --> 00:54:01,860
+ Anda hanya mewakili a dan b sebagai urutan mesin 
+
+1129
+00:54:01,860 --> 00:54:05,290
+ [? kata-kata. ?] Dan kemudian Anda hanya melakukan produk kuadrat ini 
+
+1130
+00:54:05,290 --> 00:54:06,752
+ dari dua orang ini. 
+
+1131
+00:54:06,752 --> 00:54:08,960
+ [TIDAK JELAS] melihat contoh sederhana, daripada berpikir 
+
+1132
+00:54:08,960 --> 00:54:13,574
+ sejumlah 512 bit, mari kita pikirkan tentang orang-orang ini sebagai angka 64 bit 
+
+1133
+00:54:13,574 --> 00:54:15,671
+ dan kami menggunakan mesin 32 bit. 
+
+1134
+00:54:15,671 --> 00:54:16,170
+ Kanan. 
+
+1135
+00:54:16,170 --> 00:54:17,900
+ Jadi kita akan memiliki nilai. 
+
+1136
+00:54:17,900 --> 00:54:20,794
+ Nilai a akan diwakili oleh dua 
+
+1137
+00:54:20,794 --> 00:54:21,960
+ [? sangat?] hal yang berbeda. 
+
+1138
+00:54:21,960 --> 00:54:27,550
+ Ini akan menjadi, sebut saja, a1 dan a0. 
+
+1139
+00:54:27,550 --> 00:54:29,895
+ Jadi a0 adalah bit rendah, a1 adalah bit yang tinggi. 
+
+1140
+00:54:29,895 --> 00:54:31,520
+ Dan sama, kita akan mewakili 
+
+1141
+00:54:31,520 --> 00:54:36,760
+ b sebagai dua hal, b1 b0. 
+
+1142
+00:54:36,760 --> 00:54:39,640
+ Jadi cara naif untuk mewakili ab 
+
+1143
+00:54:39,640 --> 00:54:44,310
+ akan memperbanyak semua orang-orang ini. 
+
+1144
+00:54:44,310 --> 00:54:48,020
+ Jadi itu akan menjadi tiga nomor sel. 
+
+1145
+00:54:48,020 --> 00:54:52,140
+ Bit tinggi akan menjadi a1 b1. 
+
+1146
+00:54:52,140 --> 00:54:55,560
+ Bit rendah akan menjadi a0 b0. 
+
+1147
+00:54:55,560 --> 00:55:01,845
+ Dan kata tengah akan menjadi a1 b0 plus a0 b1. 
+
+1148
+00:55:01,845 --> 00:55:06,330
+ Jadi ini adalah bagaimana Anda melakukan perkalian, benar. 
+
+1149
+00:55:06,330 --> 00:55:06,940
+ Pertanyaan? 
+
+1150
+00:55:06,940 --> 00:55:08,822
+ AUDIENCE: Jadi saya akan katakan adalah 
+
+1151
+00:55:08,822 --> 00:55:10,785
+ Anda menggunakan metode [TIDAK JELAS]? 
+
+1152
+00:55:10,785 --> 00:55:13,060
+ PROFESOR: Ya, jadi ini seperti metode pintar 
+
+1153
+00:55:13,060 --> 00:55:15,490
+ alternatif untuk melakukan perkalian, yang 
+
+1154
+00:55:15,490 --> 00:55:16,680
+ tidak melibatkan empat langkah. 
+
+1155
+00:55:16,680 --> 00:55:18,435
+ Di sini, Anda harus melakukan empat perkalian. 
+
+1156
+00:55:18,435 --> 00:55:20,807
+ Ada metode pintar lainnya, Karatsuba. 
+
+1157
+00:55:20,807 --> 00:55:22,890
+ Apakah mereka mengajarkan ini pada 601 atau sesuatu hari ini? 
+
+1158
+00:55:22,890 --> 00:55:23,290
+ AUDIENCE: 042. 
+
+1159
+00:55:23,290 --> 00:55:24,373
+ PROFESOR: 042, luar biasa. 
+
+1160
+00:55:24,373 --> 00:55:25,980
+ Ya, itu metode yang sangat bagus. 
+
+1161
+00:55:25,980 --> 00:55:29,440
+ Hampir setiap perpustakaan kriptografi mengimplementasikan ini. 
+
+1162
+00:55:29,440 --> 00:55:32,230
+ Dan bagi Anda itu, saya kira, 
+
+1163
+00:55:32,230 --> 00:55:34,980
+ bukan undergrads di sini, karena kami memiliki mahasiswa pascasarjana mungkin 
+
+1164
+00:55:34,980 --> 00:55:35,685
+ mereka belum melihat Karatsuba. 
+
+1165
+00:55:35,685 --> 00:55:37,184
+ Saya hanya akan menuliskannya di papan tulis. 
+
+1166
+00:55:37,184 --> 00:55:40,850
+ Ini adalah hal yang cerdas saat pertama kali Anda melihatnya. 
+
+1167
+00:55:40,850 --> 00:55:46,310
+ Dan apa yang dapat Anda lakukan pada dasarnya adalah menghitung tiga nilai. 
+
+1168
+00:55:46,310 --> 00:55:49,040
+ Anda akan menghitung a1 b1. 
+
+1169
+00:55:49,040 --> 00:55:59,190
+ Anda juga akan menghitung a1 dikurangi b0 kali b1 
+
+1170
+00:55:59,190 --> 00:56:04,950
+ minus-- maaf-- a1 dikurangi a0, b1 dikurangi b0. 
+
+1171
+00:56:04,950 --> 00:56:08,690
+ Dan a0 b0. 
+
+1172
+00:56:08,690 --> 00:56:11,125
+ Dan ini melakukan tiga perkalian 
+
+1173
+00:56:11,125 --> 00:56:12,225
+ bukannya empat. 
+
+1174
+00:56:12,225 --> 00:56:13,810
+ Dan ternyata Anda bisa benar-benar 
+
+1175
+00:56:13,810 --> 00:56:18,440
+ merekonstruksi nilai ini dari tiga perkalian ini 
+
+1176
+00:56:18,440 --> 00:56:20,200
+ hasil. 
+
+1177
+00:56:20,200 --> 00:56:22,810
+ Dan cara khusus untuk melakukannya adalah ini 
+
+1178
+00:56:22,810 --> 00:56:29,736
+ akan menjadi-- biarkan aku menuliskannya 
+
+1179
+00:56:29,736 --> 00:56:31,910
+ dalam bentuk yang berbeda. 
+
+1180
+00:56:31,910 --> 00:56:41,010
+ Jadi kita akan memiliki 2 hingga 64 kali-- maaf - 2 ke 64 
+
+1181
+00:56:41,010 --> 00:56:52,710
+ tambah 2 ke 32 kali a1 b1 plus 2 
+
+1182
+00:56:52,710 --> 00:57:00,230
+ ke 32 kali dikurangi si kecil di tengah a1 
+
+1183
+00:57:00,230 --> 00:57:05,640
+ minus a0 b1 dikurangi b0. 
+
+1184
+00:57:05,640 --> 00:57:15,020
+ Dan akhirnya, kita akan melakukan 2 hingga 32 plus 1 kali a0 b0. 
+
+1185
+00:57:15,020 --> 00:57:16,920
+ Dan itu sedikit berantakan, tapi sebenarnya 
+
+1186
+00:57:16,920 --> 00:57:19,380
+ jika Anda bekerja melalui detail, Anda akan 
+
+1187
+00:57:19,380 --> 00:57:20,880
+ akhirnya meyakinkan diri sendiri dengan mudah 
+
+1188
+00:57:20,880 --> 00:57:26,285
+ bahwa nilai ini persis sama dengan nilai ini. 
+
+1189
+00:57:26,285 --> 00:57:27,930
+ Jadi itu pintar. 
+
+1190
+00:57:27,930 --> 00:57:31,470
+ Tapi tetap saja, ini menghemat satu perkalian. 
+
+1191
+00:57:31,470 --> 00:57:34,670
+ Dan cara kita menerapkan ini dilakukan 
+
+1192
+00:57:34,670 --> 00:57:37,660
+ perkalian yang jauh lebih besar adalah bahwa Anda secara rekursif 
+
+1193
+00:57:37,660 --> 00:57:38,610
+ terus turun. 
+
+1194
+00:57:38,610 --> 00:57:41,750
+ Jadi, jika Anda memiliki nilai bit 512, Anda 
+
+1195
+00:57:41,750 --> 00:57:44,790
+ bisa memecahnya menjadi perkalian 256 bit. 
+
+1196
+00:57:44,790 --> 00:57:47,802
+ Anda melakukan tiga perkalian 256 bit. 
+
+1197
+00:57:47,802 --> 00:57:49,260
+ Dan kemudian masing-masing dari Anda akan pergi 
+
+1198
+00:57:49,260 --> 00:57:52,410
+ untuk menggunakan trik Karatsuba yang sama secara rekursif. 
+
+1199
+00:57:52,410 --> 00:57:54,840
+ Dan akhirnya Anda akan turun ke ukuran mesin, yang 
+
+1200
+00:57:54,840 --> 00:57:56,986
+ Anda hanya bisa melakukannya dengan satu mesin 
+
+1201
+00:57:56,986 --> 00:58:02,590
+ petunjuk. [TIDAK JELAS] Ini masuk akal? 
+
+1202
+00:58:02,590 --> 00:58:04,660
+ Jadi, apa serangan waktunya di sini? 
+
+1203
+00:58:04,660 --> 00:58:07,430
+ Bagaimana orang-orang ini mengeksploitasi perkalian Karatsuba ini? 
+
+1204
+00:58:07,430 --> 00:58:11,720
+ Nah, ternyata kekhawatiran OpenSSL 
+
+1205
+00:58:11,720 --> 00:58:13,920
+ tentang dasarnya dua jenis perkalian 
+
+1206
+00:58:13,920 --> 00:58:15,850
+ yang mungkin perlu Anda lakukan. 
+
+1207
+00:58:15,850 --> 00:58:18,757
+ Salah satunya adalah perkalian antara dua angka besar 
+
+1208
+00:58:18,757 --> 00:58:19,965
+ ukurannya hampir sama. 
+
+1209
+00:58:19,965 --> 00:58:22,250
+ Jadi ini sering terjadi ketika kita sedang melakukan 
+
+1210
+00:58:22,250 --> 00:58:25,327
+ eksponensial modular ini karena semua nilai kita 
+
+1211
+00:58:25,327 --> 00:58:26,868
+ akan menjadi berlipat ganda semua akan terjadi 
+
+1212
+00:58:26,868 --> 00:58:29,445
+ berukuran kira-kira 512 bit. 
+
+1213
+00:58:29,445 --> 00:58:33,330
+ Jadi ketika kita mengalikan dengan c ke y atau melakukan squaring, 
+
+1214
+00:58:33,330 --> 00:58:35,850
+ kami mengalikan dua hal dengan ukuran yang sama. 
+
+1215
+00:58:35,850 --> 00:58:38,890
+ Dan kemudian trik Karatsuba ini sangat masuk akal 
+
+1216
+00:58:38,890 --> 00:58:41,290
+ karena, daripada menghitung barang 
+
+1217
+00:58:41,290 --> 00:58:43,790
+ dalam waktu kuadrat dari ukuran input, 
+
+1218
+00:58:43,790 --> 00:58:48,740
+ Karatsuba kira-kira n ke 1,58, sesuatu seperti itu. 
+
+1219
+00:58:48,740 --> 00:58:50,335
+ Jadi jauh lebih cepat. 
+
+1220
+00:58:50,335 --> 00:58:52,490
+ Tetapi kemudian ada situasi lain ini 
+
+1221
+00:58:52,490 --> 00:58:54,930
+ di mana OpenSSL mungkin mengalikan dua angka itu 
+
+1222
+00:58:54,930 --> 00:58:57,410
+ ukurannya sangat berbeda: yang sangat besar, 
+
+1223
+00:58:57,410 --> 00:58:58,530
+ dan yang sangat kecil. 
+
+1224
+00:58:58,530 --> 00:59:00,900
+ Dan dalam hal ini Anda bisa menggunakan Karatsuba, 
+
+1225
+00:59:00,900 --> 00:59:02,990
+ tetapi kemudian itu akan membuat Anda lebih lambat 
+
+1226
+00:59:02,990 --> 00:59:04,610
+ daripada melakukan hal yang naif. 
+
+1227
+00:59:04,610 --> 00:59:06,660
+ Misalnya Anda mencoba untuk mengalikan 512 bit 
+
+1228
+00:59:06,660 --> 00:59:08,997
+ nomor dengan nomor 64 bit, Anda lebih suka hanya 
+
+1229
+00:59:08,997 --> 00:59:10,830
+ lakukan hal yang langsung, di mana Anda hanya 
+
+1230
+00:59:10,830 --> 00:59:13,050
+ kalikan dengan masing-masing hal dalam 64 bit 
+
+1231
+00:59:13,050 --> 00:59:18,290
+ nomor ditambah 2n bukannya n ke 1,58 sesuatu. 
+
+1232
+00:59:18,290 --> 00:59:21,900
+ Jadi sebagai hasilnya, orang-orang OpenSSL berusaha menjadi pintar, 
+
+1233
+00:59:21,900 --> 00:59:25,760
+ dan di situlah sering masalah mulai. 
+
+1234
+00:59:25,760 --> 00:59:28,280
+ Mereka memutuskan bahwa mereka akan benar-benar 
+
+1235
+00:59:28,280 --> 00:59:30,880
+ beralih secara dinamis antara hal yang efisien Karatsuba ini 
+
+1236
+00:59:30,880 --> 00:59:35,450
+ dan metode perkuliahan sekolah dasar semacam ini di sini. 
+
+1237
+00:59:35,450 --> 00:59:37,400
+ Dan heuristik mereka pada dasarnya 
+
+1238
+00:59:37,400 --> 00:59:39,050
+ jika dua hal yang Anda gandakan 
+
+1239
+00:59:39,050 --> 00:59:42,483
+ adalah jumlah kata mesin yang persis sama, 
+
+1240
+00:59:42,483 --> 00:59:44,024
+ jadi mereka setidaknya memiliki nomor yang sama 
+
+1241
+00:59:44,024 --> 00:59:48,110
+ unit bit hingga 32-bit, kemudian mereka akan pergi ke Karatsuba. 
+
+1242
+00:59:48,110 --> 00:59:50,380
+ Dan jika kedua hal itu berkembang biak 
+
+1243
+00:59:50,380 --> 00:59:52,770
+ memiliki nomor yang berbeda atau unit 32 bit, 
+
+1244
+00:59:52,770 --> 00:59:57,660
+ maka mereka akan melakukan kuadrat atau lugas atau reguler, 
+
+1245
+00:59:57,660 --> 00:59:59,882
+ perkalian normal. 
+
+1246
+00:59:59,882 --> 01:00:03,880
+ Dan di sana Anda dapat melihat apakah nomor Anda tiba-tiba 
+
+1247
+01:00:03,880 --> 01:00:06,290
+ beralih menjadi sedikit lebih kecil, 
+
+1248
+01:00:06,290 --> 01:00:08,710
+ maka Anda akan beralih dari hal yang cukup 
+
+1249
+01:00:08,710 --> 01:00:11,240
+ ke metode perkalian lainnya ini. 
+
+1250
+01:00:11,240 --> 01:00:14,030
+ Dan sepertinya, titik cutoff tidak 
+
+1251
+01:00:14,030 --> 01:00:15,595
+ akan menjadi sangat halus sehingga Anda akan 
+
+1252
+01:00:15,595 --> 01:00:17,500
+ bisa tahu secara tiba-tiba, itu 
+
+1253
+01:00:17,500 --> 01:00:19,190
+ sekarang mengambil lebih banyak waktu untuk berkembang biak 
+
+1254
+01:00:19,190 --> 01:00:22,320
+ atau jauh lebih pendek dari sekarang. 
+
+1255
+01:00:22,320 --> 01:00:26,000
+ Dan itulah yang dieksploitasi oleh orang-orang ini dalam serangan waktu mereka 
+
+1256
+01:00:26,000 --> 01:00:26,940
+ lagi. 
+
+1257
+01:00:26,940 --> 01:00:28,060
+ Apakah itu masuk akal? 
+
+1258
+01:00:28,060 --> 01:00:32,070
+ Apa yang terjadi dengan [TIDAK JELAS] Baiklah. 
+
+1259
+01:00:32,070 --> 01:00:34,680
+ Jadi saya pikir saya sudah selesai memberi tahu Anda 
+
+1260
+01:00:34,680 --> 01:00:36,385
+ tentang semua implementasi aneh 
+
+1261
+01:00:36,385 --> 01:00:39,590
+ trik yang dimainkan orang saat menerapkan RSA dalam praktik. 
+
+1262
+01:00:39,590 --> 01:00:41,630
+ Jadi sekarang mari kita coba untuk menyatukannya kembali 
+
+1263
+01:00:41,630 --> 01:00:44,410
+ ke seluruh server web dan mencari tahu 
+
+1264
+01:00:44,410 --> 01:00:48,230
+ apa kabar [? menggelitik?] semua bit menarik ini 
+
+1265
+01:00:48,230 --> 01:00:52,220
+ implementasi dari paket jaringan input. 
+
+1266
+01:00:52,220 --> 01:00:54,910
+ Jadi apa yang terjadi di server web 
+
+1267
+01:00:54,910 --> 01:00:59,330
+ bahwa server web, jika Anda ingat dari HTTPS 
+
+1268
+01:00:59,330 --> 01:01:01,890
+ kuliah, memiliki kunci rahasia. 
+
+1269
+01:01:01,890 --> 01:01:04,780
+ Dan itu menggunakan kunci rahasia untuk membuktikan 
+
+1270
+01:01:04,780 --> 01:01:06,820
+ bahwa itu adalah pemilik yang benar 
+
+1271
+01:01:06,820 --> 01:01:11,190
+ sertifikat itu dalam protokol HTTPS atau di TLS. 
+
+1272
+01:01:11,190 --> 01:01:15,940
+ Dan cara mereka bekerja adalah bahwa klien mengirim beberapa secara acak 
+
+1273
+01:01:15,940 --> 01:01:19,470
+ bit yang dipilih, dan bit dienkripsi 
+
+1274
+01:01:19,470 --> 01:01:21,210
+ menggunakan kunci publik server. 
+
+1275
+01:01:21,210 --> 01:01:24,395
+ Dan server dalam protokol TLS ini mendekripsi pesan ini. 
+
+1276
+01:01:24,395 --> 01:01:26,730
+ Dan jika pesan itu keluar, itu 
+
+1277
+01:01:26,730 --> 01:01:29,249
+ menggunakan bit acak untuk membentuk [? sesi?]. 
+
+1278
+01:01:29,249 --> 01:01:32,246
+ Tetapi dalam hal ini, pesan tidak akan diperiksa. 
+
+1279
+01:01:32,246 --> 01:01:34,079
+ Pesannya akan dipilih dengan cermat, 
+
+1280
+01:01:34,079 --> 01:01:35,845
+ padding bit tidak akan cocok, 
+
+1281
+01:01:35,845 --> 01:01:37,470
+ dan server akan mengembalikan kesalahan 
+
+1282
+01:01:37,470 --> 01:01:39,850
+ segera setelah selesai mengenkripsi pesan kami. 
+
+1283
+01:01:39,850 --> 01:01:42,080
+ Dan itulah yang akan kita habiskan di sini. 
+
+1284
+01:01:42,080 --> 01:01:49,368
+ Jadi server-- Anda dapat menganggap ini adalah Apache dengan SSL-- terbuka 
+
+1285
+01:01:49,368 --> 01:01:52,500
+ Anda akan mendapat pesan dari klien, 
+
+1286
+01:01:52,500 --> 01:01:55,940
+ dan Anda dapat menganggap ini sebagai ciphertext 
+
+1287
+01:01:55,940 --> 01:01:59,400
+ c, atau ciphertext hipotetis, bahwa klien 
+
+1288
+01:01:59,400 --> 01:02:00,545
+ mungkin telah menghasilkan. 
+
+1289
+01:02:00,545 --> 01:02:03,340
+ Dan hal pertama yang akan kita lakukan dengan ciphertext c, 
+
+1290
+01:02:03,340 --> 01:02:06,910
+ kami ingin mendekripsi menggunakan kira-kira rumus ini. 
+
+1291
+01:02:06,910 --> 01:02:08,820
+ Dan jika Anda ingat optimasi pertama 
+
+1292
+01:02:08,820 --> 01:02:12,806
+ kita akan menerapkan adalah Teorema Sisa Cina. 
+
+1293
+01:02:12,806 --> 01:02:14,306
+ Jadi, hal pertama yang akan kita lakukan 
+
+1294
+01:02:14,306 --> 01:02:16,730
+ pada dasarnya membagi jalur pipa kami dalam dua bagian. 
+
+1295
+01:02:16,730 --> 01:02:20,430
+ Kita akan melakukan satu hal mod p hal lain mod q 
+
+1296
+01:02:20,430 --> 01:02:22,719
+ dan kemudian gabungkan hasilnya pada akhir hari. 
+
+1297
+01:02:22,719 --> 01:02:24,218
+ Jadi, hal pertama yang akan kita lakukan 
+
+1298
+01:02:24,218 --> 01:02:26,070
+ adalah, kita benar-benar akan mengambil c 
+
+1299
+01:02:26,070 --> 01:02:28,580
+ dan kita akan menghitung, mari 
+
+1300
+01:02:28,580 --> 01:02:35,480
+ sebut c0 ini, yang akan sama dengan c mod q. 
+
+1301
+01:02:35,480 --> 01:02:38,710
+ Dan kita juga akan memiliki nilai yang berbeda, mari 
+
+1302
+01:02:38,710 --> 01:02:44,730
+ sebut saja c1, yang akan menjadi c mod p. 
+
+1303
+01:02:44,730 --> 01:02:46,930
+ Dan kemudian kita akan melakukan hal yang sama untuk masing-masing 
+
+1304
+01:02:46,930 --> 01:02:51,905
+ nilai-nilai ini pada dasarnya menghitung c ke d mod p 
+
+1305
+01:02:51,905 --> 01:02:55,010
+ dan c ke d mod q. 
+
+1306
+01:02:55,010 --> 01:02:58,070
+ Dan di sini kita akan pada dasarnya pada dasarnya kita 
+
+1307
+01:02:58,070 --> 01:03:00,585
+ pergi ke [? pati. ?] Setelah CRT, kami 
+
+1308
+01:03:00,585 --> 01:03:02,610
+ akan beralih ke representasi Montgomery 
+
+1309
+01:03:02,610 --> 01:03:06,040
+ karena itu akan membuat kita berlipat ganda dengan sangat cepat. 
+
+1310
+01:03:06,040 --> 01:03:08,150
+ Jadi hal selanjutnya yang akan dilakukan SSL 
+
+1311
+01:03:08,150 --> 01:03:09,610
+ ke nomor Anda, itu benar-benar terjadi 
+
+1312
+01:03:09,610 --> 01:03:12,900
+ untuk menghitung semua [tidak terdengar] pada c0 prime, 
+
+1313
+01:03:12,900 --> 01:03:18,740
+ yang akan menjadi c0 kali R mod q. 
+
+1314
+01:03:18,740 --> 01:03:20,208
+ Dan hal yang sama di sini, aku 
+
+1315
+01:03:20,208 --> 01:03:21,666
+ tidak akan menulis pipa 
+
+1316
+01:03:21,666 --> 01:03:23,200
+ karena itu akan terlihat sama. 
+
+1317
+01:03:23,200 --> 01:03:27,520
+ Dan kemudian, sekarang kita telah beralih ke bentuk Montgomery, 
+
+1318
+01:03:27,520 --> 01:03:31,840
+ akhirnya kita bisa melakukan perkalian kami. 
+
+1319
+01:03:31,840 --> 01:03:34,190
+ Dan di sinilah kita akan menggunakan jendela geser 
+
+1320
+01:03:34,190 --> 01:03:35,780
+ teknik. 
+
+1321
+01:03:35,780 --> 01:03:38,290
+ Jadi begitu kita memiliki c prime, kita bisa benar-benar 
+
+1322
+01:03:38,290 --> 01:03:47,460
+ coba hitung prime ini exponentiate ke 2d mod q. 
+
+1323
+01:03:47,460 --> 01:03:52,250
+ Dan di sini, karena kami menghitung nilai ini ke d, 
+
+1324
+01:03:52,250 --> 01:03:53,990
+ kita akan menggunakan jendela geser. 
+
+1325
+01:03:53,990 --> 01:03:59,510
+ Jadi di sini, kita akan melakukan jendela geser 
+
+1326
+01:03:59,510 --> 01:04:03,350
+ untuk bit dalam eksponen ini. 
+
+1327
+01:04:03,350 --> 01:04:08,450
+ Dan juga kita akan melakukan Karatsuba 
+
+1328
+01:04:08,450 --> 01:04:12,820
+ atau perkalian biasa tergantung pada apa 
+
+1329
+01:04:12,820 --> 01:04:15,540
+ ukuran operan kami adalah. 
+
+1330
+01:04:15,540 --> 01:04:18,500
+ Jadi jika ternyata hal itu kami perbanyak, 
+
+1331
+01:04:18,500 --> 01:04:25,070
+ c0 prime dan mungkin hasil yang sebelumnya kuadrat, 
+
+1332
+01:04:25,070 --> 01:04:27,310
+ berukuran sama, kita akan melakukan Karatsuba. 
+
+1333
+01:04:27,310 --> 01:04:31,230
+ Jika c0 prime kecil tetapi beberapa hal sebelumnya 
+
+1334
+01:04:31,230 --> 01:04:34,240
+ kita mengalikannya menjadi besar, lalu kita akan melakukannya 
+
+1335
+01:04:34,240 --> 01:04:36,610
+ perkalian kuadrat, perbanyakan normal. 
+
+1336
+01:04:36,610 --> 01:04:38,520
+ Ada jendela geser masuk ke sini, 
+
+1337
+01:04:38,520 --> 01:04:45,770
+ di sini kita juga memiliki Karatsuba ini dengan kelipatan normal. 
+
+1338
+01:04:45,770 --> 01:04:49,630
+ Dan juga di langkah ini, pengurangan ekstra datang. 
+
+1339
+01:04:49,630 --> 01:04:54,420
+ Karena setiap bertambah banyak, pengurangan ekstra 
+
+1340
+01:04:54,420 --> 01:04:58,840
+ akan sebanding dengan hal yang kita 
+
+1341
+01:04:58,840 --> 01:05:00,950
+ exponentiating mod q. 
+
+1342
+01:05:00,950 --> 01:05:04,452
+ [TIDAK TERDENGAR] pasang saja rumus di sini, 
+
+1343
+01:05:04,452 --> 01:05:05,910
+ kemungkinan pengurangan ekstra adalah 
+
+1344
+01:05:05,910 --> 01:05:11,170
+ akan sebanding dengan nilai c0 prime mod ini 
+
+1345
+01:05:11,170 --> 01:05:14,990
+ q dibagi dengan 2R. 
+
+1346
+01:05:14,990 --> 01:05:19,200
+
+
+1347
+01:05:19,200 --> 01:05:21,672
+ Jadi di sinilah bit yang sangat tepat waktu 
+
+1348
+01:05:21,672 --> 01:05:22,718
+ akan datang. 
+
+1349
+01:05:22,718 --> 01:05:24,384
+ Dan sebenarnya ada dua efek di sini. 
+
+1350
+01:05:24,384 --> 01:05:27,425
+ Ada Karatsuba versus pilihan normal. 
+
+1351
+01:05:27,425 --> 01:05:29,720
+ Dan kemudian ada jumlah pengurangan ekstra 
+
+1352
+01:05:29,720 --> 01:05:32,605
+ Anda akan membuat. 
+
+1353
+01:05:32,605 --> 01:05:34,480
+ Jadi kita akan melihat bagaimana kita memanfaatkan ini dalam hitungan detik, 
+
+1354
+01:05:34,480 --> 01:05:36,800
+ tetapi sekarang Anda mendapatkan hasil ini untuk mod q, 
+
+1355
+01:05:36,800 --> 01:05:39,560
+ Anda akan mendapatkan hasil p mod yang sama, 
+
+1356
+01:05:39,560 --> 01:05:43,780
+ Anda akhirnya bisa menyatukan kembali orang-orang ini dari atas 
+
+1357
+01:05:43,780 --> 01:05:46,660
+ dan bagian bawah dan gunakan CRT. 
+
+1358
+01:05:46,660 --> 01:05:49,870
+ Dan apa yang Anda dapatkan dari CRT sebenarnya-- 
+
+1359
+01:05:49,870 --> 01:05:55,110
+ maaf saya kira kita perlu konversi pertama kembali ke non 
+
+1360
+01:05:55,110 --> 01:05:56,760
+ Bentuk Montgomery. 
+
+1361
+01:05:56,760 --> 01:06:00,380
+ Jadi kita akan duluan, kita 
+
+1362
+01:06:00,380 --> 01:06:09,620
+ akan mendapatkan c0 prime ke d dibagi dengan R mod q. 
+
+1363
+01:06:09,620 --> 01:06:15,160
+ Dan hal ini, karena c0 prime adalah c0 kali R mod q, 
+
+1364
+01:06:15,160 --> 01:06:19,820
+ jika kita melakukan ini maka kita akan mendapatkan kembali nilai kita c 
+
+1365
+01:06:19,820 --> 01:06:23,110
+ ke d mod q. 
+
+1366
+01:06:23,110 --> 01:06:25,370
+ Dan kita dapat c ke sini, kita 
+
+1367
+01:06:25,370 --> 01:06:28,290
+ akan mendapatkan c ke d mod p di versi bawah 
+
+1368
+01:06:28,290 --> 01:06:29,700
+ pipa ini. 
+
+1369
+01:06:29,700 --> 01:06:35,220
+ Dan kita bisa menggunakan CRT untuk mendapatkan nilai c ke d mod m. 
+
+1370
+01:06:35,220 --> 01:06:38,060
+ Maaf untuk tipe kecil di sini, atau ukuran font. 
+
+1371
+01:06:38,060 --> 01:06:40,680
+ Tapi kira-kira itu hal yang sama yang kita harapkan di sini. 
+
+1372
+01:06:40,680 --> 01:06:44,305
+ Kami akhirnya bisa mendapatkan hasil kami. Dan kami mendapatkan pesan kami, m. 
+
+1373
+01:06:44,305 --> 01:06:46,420
+ Jadi server mengambil paket yang masuk 
+
+1374
+01:06:46,420 --> 01:06:51,000
+ yang didapatnya, menjalankannya melalui seluruh jalur pipa ini, 
+
+1375
+01:06:51,000 --> 01:06:53,578
+ apakah dua bagian dari pipa ini, berakhir 
+
+1376
+01:06:53,578 --> 01:06:57,627
+ dengan pesan yang didekripsi m itu sama c ke d mod m. 
+
+1377
+01:06:57,627 --> 01:07:00,682
+ Dan kemudian akan memeriksa padding dari pesan ini. 
+
+1378
+01:07:00,682 --> 01:07:02,940
+ Dan dalam serangan khusus ini, karena kita 
+
+1379
+01:07:02,940 --> 01:07:05,320
+ akan hati-hati membangun nilai ini c, 
+
+1380
+01:07:05,320 --> 01:07:07,810
+ paddingnya akan benar-benar tidak cocok. 
+
+1381
+01:07:07,810 --> 01:07:10,290
+ Kami akan memilih nilai c sesuai 
+
+1382
+01:07:10,290 --> 01:07:12,629
+ untuk beberapa heuristik lain yang tidak 
+
+1383
+01:07:12,629 --> 01:07:14,754
+ mengenkripsi pesan nyata dengan padding yang benar. 
+
+1384
+01:07:14,754 --> 01:07:17,310
+ Jadi paddingnya akan menjadi mismatch, dan server 
+
+1385
+01:07:17,310 --> 01:07:19,601
+ akan membutuhkannya untuk merekam kesalahan kembali ke klien. 
+
+1386
+01:07:19,601 --> 01:07:22,080
+ [? Dan itu menarik?] Koneksi. 
+
+1387
+01:07:22,080 --> 01:07:23,680
+ Dan itulah saatnya kita pergi 
+
+1388
+01:07:23,680 --> 01:07:28,230
+ untuk mengukur berapa lama seluruh jalur pipa ini. 
+
+1389
+01:07:28,230 --> 01:07:29,362
+ Masuk akal? 
+
+1390
+01:07:29,362 --> 01:07:31,070
+ Pertanyaan tentang pipa dan penempatan ini 
+
+1391
+01:07:31,070 --> 01:07:34,396
+ semua pengoptimalan bersama? 
+
+1392
+01:07:34,396 --> 01:07:35,354
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+1393
+01:07:35,354 --> 01:07:41,445
+
+
+1394
+01:07:41,445 --> 01:07:43,070
+ PROFESOR: Ya, Anda mungkin benar. 
+
+1395
+01:07:43,070 --> 01:07:45,600
+ Ya, c1 ke d, c0 ke d. 
+
+1396
+01:07:45,600 --> 01:07:46,620
+ Ya, ini c0. 
+
+1397
+01:07:46,620 --> 01:07:49,287
+ Ya benar. 
+
+1398
+01:07:49,287 --> 01:07:51,722
+ AUDIENCE: Ketika Anda membagi dengan r [tidak terdengar], 
+
+1399
+01:07:51,722 --> 01:07:55,131
+ tidak ada [INAUDIBLE] pada berapa banyak 
+
+1400
+01:07:55,131 --> 01:08:00,812
+ Apakah Anda harus mendapatkan [? sedikit?] menjadi 
+
+1401
+01:08:00,812 --> 01:08:03,035
+ 0? [TIDAK JELAS]. 
+
+1402
+01:08:03,035 --> 01:08:05,160
+ PROFESOR: Ya, jadi mungkin ada pengurangan ekstra 
+
+1403
+01:08:05,160 --> 01:08:07,049
+ dalam fase terakhir ini juga. 
+
+1404
+01:08:07,049 --> 01:08:07,590
+ Kamu benar. 
+
+1405
+01:08:07,590 --> 01:08:11,220
+ Jadi berpotensi, kita telah melakukan pembagian ini dengan R dengan benar. 
+
+1406
+01:08:11,220 --> 01:08:13,300
+ Jadi kita mungkin harus melakukan hal yang persis sama 
+
+1407
+01:08:13,300 --> 01:08:16,399
+ seperti yang kita lihat untuk pengurangan Montgomery di sini. 
+
+1408
+01:08:16,399 --> 01:08:19,649
+ Ketika kita melakukan pembagian ini oleh R untuk mengubahnya kembali. 
+
+1409
+01:08:19,649 --> 01:08:22,560
+ Jadi tidak jelas berapa tepatnya qs yang harus kita tambahkan. 
+
+1410
+01:08:22,560 --> 01:08:25,250
+ Kita harus mencari tahu berapa banyak qs untuk ditambahkan, tambahkan banyak, 
+
+1411
+01:08:25,250 --> 01:08:28,328
+ membunuh angka nol rendah, dan kemudian lakukan mod q lagi, 
+
+1412
+01:08:28,328 --> 01:08:29,513
+ mungkin pengurangan ekstra. 
+
+1413
+01:08:29,514 --> 01:08:31,180
+ Anda memang benar, ini persis 
+
+1414
+01:08:31,180 --> 01:08:33,406
+ jenis pembagian yang sama dengan R mod q 
+
+1415
+01:08:33,406 --> 01:08:38,229
+ seperti yang kita lakukan untuk setiap langkah perkalian Montgomery. 
+
+1416
+01:08:38,229 --> 01:08:40,689
+ Masuk akal? 
+
+1417
+01:08:40,689 --> 01:08:43,569
+ Ada pertanyaan lain? 
+
+1418
+01:08:43,569 --> 01:08:44,116
+ Baiklah. 
+
+1419
+01:08:44,116 --> 01:08:45,240
+ Jadi bagaimana Anda memanfaatkan ini? 
+
+1420
+01:08:45,240 --> 01:08:47,689
+ Bagaimana seorang penyerang benar-benar tahu 
+
+1421
+01:08:47,689 --> 01:08:49,710
+ apa kunci rahasia server 
+
+1422
+01:08:49,710 --> 01:08:54,300
+ adalah dengan mengukur waktu dari keseluruhan jalur pipa ini? 
+
+1423
+01:08:54,300 --> 01:08:58,160
+ Jadi orang-orang ini punya rencana yang pada dasarnya 
+
+1424
+01:08:58,160 --> 01:09:03,810
+ melibatkan menebak satu bit kunci privat pada suatu waktu. 
+
+1425
+01:09:03,810 --> 01:09:07,060
+ Dan apa yang mereka maksud sebenarnya dengan menebak kunci privat adalah 
+
+1426
+01:09:07,060 --> 01:09:10,960
+ Anda mungkin berpikir kunci privat adalah eksponen enkripsi ini 
+
+1427
+01:09:10,960 --> 01:09:13,528
+ d, karena sebenarnya kamu tahu e, kamu 
+
+1428
+01:09:13,528 --> 01:09:15,160
+ tahu n, itulah kunci publik. 
+
+1429
+01:09:15,160 --> 01:09:16,849
+ Satu-satunya hal yang Anda tidak tahu adalah d. 
+
+1430
+01:09:16,849 --> 01:09:19,785
+ Namun nyatanya, dalam serangan ini mereka tidak pergi untuk eksponen d 
+
+1431
+01:09:19,785 --> 01:09:21,810
+ secara langsung, itu sedikit lebih sulit ditebak. 
+
+1432
+01:09:21,810 --> 01:09:23,185
+ Sebaliknya, apa yang akan mereka lakukan 
+
+1433
+01:09:23,185 --> 01:09:25,890
+ adalah nilai q atau nilai p, 
+
+1434
+01:09:25,890 --> 01:09:27,649
+ tidak terlalu penting yang mana. 
+
+1435
+01:09:27,649 --> 01:09:31,229
+ Setelah Anda menebak apa nilai p atau q, maka 
+
+1436
+01:09:31,229 --> 01:09:34,662
+ Anda dapat memberikan n, Anda dapat menghitung dalam p kali q. 
+
+1437
+01:09:34,662 --> 01:09:37,470
+ Kemudian jika Anda tahu p kali q, Anda dapat benar-benar-- 
+
+1438
+01:09:37,470 --> 01:09:39,219
+ maaf-- jika Anda tahu nilai p dan q, 
+
+1439
+01:09:39,219 --> 01:09:41,729
+ Anda dapat menghitung fungsi phi yang kita lihat sebelumnya. 
+
+1440
+01:09:41,729 --> 01:09:45,979
+ Itu akan memungkinkan Anda untuk mendapatkan nilai d dari nilai e. 
+
+1441
+01:09:45,979 --> 01:09:48,750
+ Jadi faktorisasi nilai m ini sangat penting, 
+
+1442
+01:09:48,750 --> 01:09:51,984
+ itu harus dirahasiakan agar RSA tetap aman. 
+
+1443
+01:09:51,984 --> 01:09:53,839
+ Jadi, orang-orang ini benar-benar akan pergi 
+
+1444
+01:09:53,840 --> 01:09:55,830
+ dan coba tebak berapa nilai q 
+
+1445
+01:09:55,830 --> 01:09:59,570
+ adalah dengan mengatur waktu pipa ini. 
+
+1446
+01:09:59,570 --> 01:10:00,070
+ Baiklah. 
+
+1447
+01:10:00,070 --> 01:10:02,410
+ Jadi bagaimana orang-orang ini benar-benar melakukannya? 
+
+1448
+01:10:02,410 --> 01:10:10,280
+ Yah, mereka membangun input yang dipilih dengan cermat, c, 
+
+1449
+01:10:10,280 --> 01:10:12,570
+ ke dalam pipa ini dan-- kurasa aku 
+
+1450
+01:10:12,570 --> 01:10:16,800
+ terus katakan mereka terus mengukur waktu untuk orang ini. 
+
+1451
+01:10:16,800 --> 01:10:22,130
+ Tapi yang khusus, yah, ada 
+
+1452
+01:10:22,130 --> 01:10:23,505
+ dua bagian dari serangan itu, Anda punya 
+
+1453
+01:10:23,505 --> 01:10:26,390
+ untuk bootstrap itu sedikit untuk menebak beberapa bit pertama. 
+
+1454
+01:10:26,390 --> 01:10:28,390
+ Dan setelah Anda memiliki beberapa bit pertama, 
+
+1455
+01:10:28,390 --> 01:10:29,600
+ Anda bisa saya tebak sedikit berikutnya. 
+
+1456
+01:10:29,600 --> 01:10:31,810
+ Jadi biarkan saya tidak mengatakan dengan pasti bagaimana mereka 
+
+1457
+01:10:31,810 --> 01:10:34,997
+ tebak beberapa bit pertama karena sebenarnya jauh lebih banyak 
+
+1458
+01:10:34,997 --> 01:10:36,955
+ menarik untuk melihat bagaimana mereka menebak bit selanjutnya. 
+
+1459
+01:10:36,955 --> 01:10:38,330
+ Dan kemudian kita akan kembali jika kita punya 
+
+1460
+01:10:38,330 --> 01:10:40,621
+ waktu untuk melihat bagaimana mereka menebak beberapa bit pertama 
+
+1461
+01:10:40,621 --> 01:10:41,970
+ [? di ini?] di koran. 
+
+1462
+01:10:41,970 --> 01:10:45,820
+ Tetapi pada dasarnya, anggaplah Anda memiliki tebakan tentang apa 
+
+1463
+01:10:45,820 --> 01:10:48,216
+ bit-bit memiliki nilai ini q. 
+
+1464
+01:10:48,216 --> 01:10:56,820
+ Jadi Anda tahu bahwa q memiliki beberapa bit, g0, g1, g2, dan lain-lain. 
+
+1465
+01:10:56,820 --> 01:11:01,720
+ Dan sebenarnya, saya kira ini bahkan bukan gs, 
+
+1466
+01:11:01,720 --> 01:11:04,990
+ ini adalah bit q yang nyata, jadi biarkan saya menulisnya seperti itu. 
+
+1467
+01:11:04,990 --> 01:11:10,310
+ Jadi Anda tahu tat q bit 0 q bit 1, q bit 2, 
+
+1468
+01:11:10,310 --> 01:11:12,690
+ ini adalah bit tertinggi q. 
+
+1469
+01:11:12,690 --> 01:11:15,455
+ Dan kemudian Anda mencoba menebak bit yang lebih rendah dan lebih rendah. 
+
+1470
+01:11:15,455 --> 01:11:20,275
+ Jadi misalkan Anda tahu nilai q hingga bit j. 
+
+1471
+01:11:20,275 --> 01:11:22,750
+ Dan sejak saat itu, tebakan Anda sebenarnya adalah 0. 
+
+1472
+01:11:22,750 --> 01:11:26,280
+ Anda tidak tahu apa bit lainnya. 
+
+1473
+01:11:26,280 --> 01:11:31,900
+ Jadi orang-orang ini akan mencoba menebak ini 
+
+1474
+01:11:31,900 --> 01:11:35,760
+ g ke tempat ini di dalam pipa. 
+
+1475
+01:11:35,760 --> 01:11:38,280
+ Karena di sinilah ada dua efek kecil: 
+
+1476
+01:11:38,280 --> 01:11:41,010
+ pilihan ini Karatsuba dibandingkan perkalian normal. 
+
+1477
+01:11:41,010 --> 01:11:44,230
+ Dan pilihan ini, atau ini nomor yang berbeda 
+
+1478
+01:11:44,230 --> 01:11:48,436
+ pengurangan ekstra tergantung pada nilai c0 prime. 
+
+1479
+01:11:48,436 --> 01:11:51,020
+ Sp mereka akan benar-benar mencoba untuk mendapatkan dua tebakan yang berbeda 
+
+1480
+01:11:51,020 --> 01:11:53,330
+ nilai-nilai ke tempat itu di dalam pipa. 
+
+1481
+01:11:53,330 --> 01:11:58,120
+ Yang terlihat seperti ini, dan yang mereka sebut 
+
+1482
+01:11:58,120 --> 01:12:05,110
+ g tinggi, yaitu semua bit tinggi yang sama, q2 qj. 
+
+1483
+01:12:05,110 --> 01:12:07,440
+ Dan untuk bagian selanjutnya, yang tidak mereka ketahui, 
+
+1484
+01:12:07,440 --> 01:12:09,750
+ [? Anda?] tebak g akan memiliki 0, 
+
+1485
+01:12:09,750 --> 01:12:14,906
+ g tinggi akan memiliki sedikit 1 di sini dan semua nol nanti. 
+
+1486
+01:12:14,906 --> 01:12:19,040
+ Jadi bagaimana cara membantu orang-orang ini mengetahui apa yang terjadi? 
+
+1487
+01:12:19,040 --> 01:12:22,120
+ Jadi sebenarnya ada dua cara yang bisa Anda pikirkan. 
+
+1488
+01:12:22,120 --> 01:12:28,930
+ Misalkan kita mendapatkan tebakan ini menjadi nilai c0 prime. 
+
+1489
+01:12:28,930 --> 01:12:34,350
+ Kita dapat menganggap g dan g tinggi sebagai nilai utama c0 
+
+1490
+01:12:34,350 --> 01:12:36,200
+ di papan sebelah kiri di sana. 
+
+1491
+01:12:36,200 --> 01:12:37,700
+ Ini sebenarnya cukup mudah 
+
+1492
+01:12:37,700 --> 01:12:42,460
+ untuk melakukan ini karena c0 prime cukup deterministik 
+
+1493
+01:12:42,460 --> 01:12:44,480
+ dihitung dari input ciphertext c0. 
+
+1494
+01:12:44,480 --> 01:12:47,030
+ Anda cukup mengalikannya dengan R. Jadi, dalam urutan 
+
+1495
+01:12:47,030 --> 01:12:49,240
+ bagi mereka untuk mendapatkan nilai di sini, 
+
+1496
+01:12:49,240 --> 01:12:53,370
+ sebagai tebakan, mereka hanya perlu menebak 
+
+1497
+01:12:53,370 --> 01:12:57,340
+ dan pertama membaginya dengan R, jadi bagi dengan 2 hingga 512 mod 
+
+1498
+01:12:57,340 --> 01:12:58,340
+ sesuatu. 
+
+1499
+01:12:58,340 --> 01:13:01,610
+ Dan kemudian, mereka akan menyuntikkan kembali. 
+
+1500
+01:13:01,610 --> 01:13:04,260
+ Dan server akan mengalikannya dengan R, 
+
+1501
+01:13:04,260 --> 01:13:06,490
+ dan kemudian pergilah. 
+
+1502
+01:13:06,490 --> 01:13:07,910
+ Masuk akal? 
+
+1503
+01:13:07,910 --> 01:13:09,490
+ Baiklah. 
+
+1504
+01:13:09,490 --> 01:13:13,730
+ Jadi misalkan kita berhasil mendapatkan integer pilihan kita 
+
+1505
+01:13:13,730 --> 01:13:16,650
+ nilai ke dalam c0 Anda tempat utama. 
+
+1506
+01:13:16,650 --> 01:13:19,930
+ Jadi apa yang akan menjadi waktu untuk menghitung 
+
+1507
+01:13:19,930 --> 01:13:22,522
+ c0 prima ke d mod q? 
+
+1508
+01:13:22,522 --> 01:13:26,780
+ Jadi ada dua kemungkinan opsi di sini di mana 
+
+1509
+01:13:26,780 --> 01:13:28,180
+ q jatuh dalam gambar ini. 
+
+1510
+01:13:28,180 --> 01:13:33,920
+ Jadi mungkin q antara dua nilai ini. 
+
+1511
+01:13:33,920 --> 01:13:37,462
+ Karena bit berikutnya q adalah 0. 
+
+1512
+01:13:37,462 --> 01:13:39,170
+ Jadi nilai ini akan menjadi kurang dari q, 
+
+1513
+01:13:39,170 --> 01:13:41,670
+ tetapi orang ini akan menjadi lebih besar dari q. 
+
+1514
+01:13:41,670 --> 01:13:44,970
+ Jadi ini terjadi jika bit Q0 berikutnya atau itu 
+
+1515
+01:13:44,970 --> 01:13:48,340
+ mungkin bahwa q terletak di atas kedua nilai ini 
+
+1516
+01:13:48,340 --> 01:13:51,880
+ jika sedikit q berikutnya adalah 1. 
+
+1517
+01:13:51,880 --> 01:13:53,860
+ Jadi sekarang kita bisa tahu, oke, apa yang terjadi 
+
+1518
+01:13:53,860 --> 01:13:58,280
+ menjadi waktu mendekripsi dua nilai ini, 
+
+1519
+01:13:58,280 --> 01:14:04,225
+ jika q terletak di antara mereka, atau jika q terletak di atas keduanya. 
+
+1520
+01:14:04,225 --> 01:14:05,600
+ Mari kita lihat situasi di mana 
+
+1521
+01:14:05,600 --> 01:14:08,140
+ q terletak di atas keduanya. 
+
+1522
+01:14:08,140 --> 01:14:11,760
+ Nah dalam hal itu, sebenarnya semuanya 
+
+1523
+01:14:11,760 --> 01:14:13,160
+ hampir sama. 
+
+1524
+01:14:13,160 --> 01:14:13,660
+ Kanan? 
+
+1525
+01:14:13,660 --> 01:14:16,330
+ Karena kedua nilai ini lebih kecil dari q, 
+
+1526
+01:14:16,330 --> 01:14:18,057
+ maka nilai dari hal-hal ini adalah mod q 
+
+1527
+01:14:18,057 --> 01:14:19,390
+ akan kurang lebih sama. 
+
+1528
+01:14:19,390 --> 01:14:21,140
+ Mereka akan sedikit berbeda 
+
+1529
+01:14:21,140 --> 01:14:24,540
+ karena ini sedikit tambahan, tapi kurang lebih mereka 
+
+1530
+01:14:24,540 --> 01:14:26,420
+ sama besarnya. 
+
+1531
+01:14:26,420 --> 01:14:28,797
+ Dan jumlah pengurangan ekstraktor 
+
+1532
+01:14:28,797 --> 01:14:31,380
+ juga mungkin tidak akan sangat berbeda karena itu 
+
+1533
+01:14:31,380 --> 01:14:34,780
+ sebanding dengan nilai pria mod q ini. 
+
+1534
+01:14:34,780 --> 01:14:37,690
+ Dan untuk kedua orang ini, keduanya sedikit lebih kecil 
+
+1535
+01:14:37,690 --> 01:14:40,130
+ dari q, jadi semuanya hampir sama. 
+
+1536
+01:14:40,130 --> 01:14:43,080
+ Tak satu pun dari mereka akan melebihi q dan tiba-tiba 
+
+1537
+01:14:43,080 --> 01:14:46,080
+ punya [? banyak atau lebih sedikit?] pengurangan ekstra. 
+
+1538
+01:14:46,080 --> 01:14:49,290
+ Jadi jika q lebih besar dari kedua tebakan ini 
+
+1539
+01:14:49,290 --> 01:14:52,197
+ Karatsuba versus normal akan tetap sama. 
+
+1540
+01:14:52,197 --> 01:14:54,280
+ Server akan melakukan hal yang sama pada dasarnya 
+
+1541
+01:14:54,280 --> 01:14:56,825
+ untuk g dan g tinggi dalam hal Karatsuba versus normal. 
+
+1542
+01:14:56,825 --> 01:14:59,145
+ Dan server akan melakukan hal yang sama 
+
+1543
+01:14:59,145 --> 01:15:01,497
+ pengurangan ekstra untuk kedua orang ini juga. 
+
+1544
+01:15:01,497 --> 01:15:04,080
+ Jadi, jika Anda melihat bahwa server mengambil jumlah waktu yang sama 
+
+1545
+01:15:04,080 --> 01:15:06,050
+ untuk menanggapi tebakan ini, maka Anda 
+
+1546
+01:15:06,050 --> 01:15:10,580
+ mungkin harus menebak itu, oh, q mungkin memiliki bit 1 di sini. 
+
+1547
+01:15:10,580 --> 01:15:12,754
+ Di sisi lain, jika q terletak di tengah, 
+
+1548
+01:15:12,754 --> 01:15:14,170
+ maka ada dua hal yang mungkin 
+
+1549
+01:15:14,170 --> 01:15:17,370
+ yang bisa memicu perubahan waktu. 
+
+1550
+01:15:17,370 --> 01:15:19,680
+ Salah satu kemungkinan adalah karena tingginya 
+
+1551
+01:15:19,680 --> 01:15:22,712
+ hanya sedikit lebih besar dari q, 
+
+1552
+01:15:22,712 --> 01:15:24,170
+ lalu jumlah pengurangan ekstra 
+
+1553
+01:15:24,170 --> 01:15:26,336
+ akan sebanding dengan orang mod q ini, yang 
+
+1554
+01:15:26,336 --> 01:15:31,040
+ sangat kecil karena c0 prime adalah q plus saja 
+
+1555
+01:15:31,040 --> 01:15:33,915
+ sedikit di bit ekstra ini. 
+
+1556
+01:15:33,915 --> 01:15:35,290
+ Jadi jumlah pengurangan ekstra 
+
+1557
+01:15:35,290 --> 01:15:36,650
+ akan [? memamerkannya ?]. 
+
+1558
+01:15:36,650 --> 01:15:39,297
+ Dan tiba-tiba, itu akan lebih cepat. 
+
+1559
+01:15:39,297 --> 01:15:40,880
+ Hal lain yang mungkin bisa terjadi 
+
+1560
+01:15:40,880 --> 01:15:42,623
+ adalah mungkin server akan memutuskan, oh, 
+
+1561
+01:15:42,623 --> 01:15:44,664
+ sekarang saatnya untuk melakukan perkalian normal 
+
+1562
+01:15:44,664 --> 01:15:45,690
+ dari Karatsuba. 
+
+1563
+01:15:45,690 --> 01:15:51,910
+ Mungkin untuk nilai ini, semua ini, c ke 0 
+
+1564
+01:15:51,910 --> 01:15:55,170
+ prime adalah jumlah bit yang sama dengan q 
+
+1565
+01:15:55,170 --> 01:15:58,890
+ jika ternyata tinggi g diatas q, 
+
+1566
+01:15:58,890 --> 01:16:02,700
+ kemudian g mod tinggi q berpotensi akan memiliki bit lebih sedikit. 
+
+1567
+01:16:02,700 --> 01:16:04,930
+ Dan jika ini melintasi batas [TIDAK JELAS], 
+
+1568
+01:16:04,930 --> 01:16:07,055
+ maka server akan melakukan perbanyakan normal 
+
+1569
+01:16:07,055 --> 01:16:08,270
+ tiba-tiba. 
+
+1570
+01:16:08,270 --> 01:16:10,590
+ Jadi itu akan berada di arah lain. 
+
+1571
+01:16:10,590 --> 01:16:14,260
+ Jadi jika Anda menyeberang, maka perkalian biasa akan dimulai, 
+
+1572
+01:16:14,260 --> 01:16:16,885
+ dan semuanya menjadi lebih lambat karena perkalian normal 
+
+1573
+01:16:16,885 --> 01:16:20,612
+ adalah kuadrat, bukan Karatuba yang lebih baik dan lebih cepat. 
+
+1574
+01:16:20,612 --> 01:16:21,112
+ Pertanyaan. 
+
+1575
+01:16:21,112 --> 01:16:22,066
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+1576
+01:16:22,066 --> 01:16:23,859
+
+
+1577
+01:16:23,859 --> 01:16:26,150
+ PROFESOR: Ya, karena jumlah pengurangan ekstra 
+
+1578
+01:16:26,150 --> 01:16:31,520
+ sebanding dengan dari atas sana ke c0 prime mod q. 
+
+1579
+01:16:31,520 --> 01:16:36,880
+ Jadi jika c0 prime, yang merupakan nilai ini, hanya sedikit di atas q. 
+
+1580
+01:16:36,880 --> 01:16:40,350
+ Kemudian, ini kecil, dibandingkan dengan orang ini yang pada dasarnya 
+
+1581
+01:16:40,350 --> 01:16:43,495
+ sama dengan q, atau semua bit tinggi sama dengan q, 
+
+1582
+01:16:43,495 --> 01:16:44,820
+ lalu itu besar. 
+
+1583
+01:16:44,820 --> 01:16:47,980
+ Jadi itu akan menjadi perbedaan yang dapat Anda coba untuk mengukur. 
+
+1584
+01:16:47,980 --> 01:16:49,730
+ Jadi ini adalah satu hal yang menarik, sebenarnya 
+
+1585
+01:16:49,730 --> 01:16:51,480
+ beberapa hal yang menarik, efek ini 
+
+1586
+01:16:51,480 --> 01:16:53,355
+ sebenarnya bekerja di berbagai arah, benar. 
+
+1587
+01:16:53,355 --> 01:16:55,870
+ Jadi jika Anda mencapai batas 32 bit dan Karatsuba 
+
+1588
+01:16:55,870 --> 01:16:58,170
+ dibandingkan switch normal, lalu tiba-tiba 
+
+1589
+01:16:58,170 --> 01:17:00,930
+ butuh waktu lebih lama untuk mendekripsi pesan ini. 
+
+1590
+01:17:00,930 --> 01:17:04,460
+ Di sisi lain, jika itu bukan batas 32 bit, 
+
+1591
+01:17:04,460 --> 01:17:07,424
+ mungkin efek ini akan memberi tahu Anda apa yang terjadi. 
+
+1592
+01:17:07,424 --> 01:17:09,590
+ Jadi Anda benar-benar harus memperhatikan efek yang berbeda. 
+
+1593
+01:17:09,590 --> 01:17:13,400
+ Jika Anda tidak menebak sedikit kelipatan 32 bit, 
+
+1594
+01:17:13,400 --> 01:17:15,410
+ Maka Anda mungkin harus mengharapkan waktu 
+
+1595
+01:17:15,410 --> 01:17:18,125
+ untuk turun karena pengurangan ekstra. 
+
+1596
+01:17:18,125 --> 01:17:19,620
+ Di sisi lain, jika Anda mencoba 
+
+1597
+01:17:19,620 --> 01:17:22,570
+ untuk menebak sedikit itu kelipatan 32, lalu 
+
+1598
+01:17:22,570 --> 01:17:25,100
+ mungkin Anda harus mengharapkannya untuk melompat banyak 
+
+1599
+01:17:25,100 --> 01:17:27,890
+ atau mungkin jatuhkan jika itu [TIDAK JELAS] normal. 
+
+1600
+01:17:27,890 --> 01:17:29,890
+ Jadi saya kira apa yang dilihat orang-orang ini di koran, 
+
+1601
+01:17:29,890 --> 01:17:31,450
+ ini sebenarnya tidak terlalu penting 
+
+1602
+01:17:31,450 --> 01:17:34,380
+ apakah ada lompatan atau lonjakan waktu. 
+
+1603
+01:17:34,380 --> 01:17:38,570
+ Anda hanya harus berharap jika q adalah, jika bit q berikutnya adalah 1, 
+
+1604
+01:17:38,570 --> 01:17:40,310
+ Anda harus mengharapkan hal-hal ini terjadi 
+
+1605
+01:17:40,310 --> 01:17:41,740
+ jumlah waktu yang hampir sama. 
+
+1606
+01:17:41,740 --> 01:17:44,607
+ Dan jika bit q berikutnya adalah 0, maka Anda 
+
+1607
+01:17:44,607 --> 01:17:46,940
+ harus mengharapkan orang-orang ini memiliki perbedaan yang nyata 
+
+1608
+01:17:46,940 --> 01:17:51,740
+ bahkan jika itu besar atau kecil, bahkan jika itu positif atau negatif. 
+
+1609
+01:17:51,740 --> 01:17:53,364
+ Jadi sebenarnya, mereka mengukur ini. 
+
+1610
+01:17:53,364 --> 01:17:55,280
+ Dan ternyata benar-benar berfungsi dengan baik. 
+
+1611
+01:17:55,280 --> 01:17:57,790
+ Mereka harus benar-benar melakukan dua trik yang menarik 
+
+1612
+01:17:57,790 --> 01:17:58,820
+ untuk membuat ini berhasil. 
+
+1613
+01:17:58,820 --> 01:18:01,890
+ Jika Anda ingat perbedaan waktu sangat kecil, 
+
+1614
+01:18:01,890 --> 01:18:05,110
+ ini adalah urutan 1 hingga 2 mikrodetik. 
+
+1615
+01:18:05,110 --> 01:18:07,690
+ Jadi akan sulit untuk mengukur ini melalui jaringan, 
+
+1616
+01:18:07,690 --> 01:18:10,060
+ melalui switch ethernet misalnya. 
+
+1617
+01:18:10,060 --> 01:18:13,460
+ Apa yang mereka lakukan adalah mereka benar-benar melakukan dua macam pengukuran, 
+
+1618
+01:18:13,460 --> 01:18:15,310
+ dua jenis rata-rata. 
+
+1619
+01:18:15,310 --> 01:18:17,370
+ Jadi untuk setiap tebakan yang mereka kirim, 
+
+1620
+01:18:17,370 --> 01:18:18,870
+ mereka benar-benar mengirimkannya beberapa kali. 
+
+1621
+01:18:18,870 --> 01:18:20,710
+ Di koran, mereka mengatakan mereka mengirimnya 
+
+1622
+01:18:20,710 --> 01:18:22,380
+ seperti 7 kali atau sesuatu. 
+
+1623
+01:18:22,380 --> 01:18:24,430
+ Jadi, suara macam apa yang Anda pikirkan 
+
+1624
+01:18:24,430 --> 01:18:26,670
+ ini membantu mereka dengan [? jika mereka?] hanya mengirim ulang 
+
+1625
+01:18:26,670 --> 01:18:29,440
+ tebakan yang sama berulang-ulang? 
+
+1626
+01:18:29,440 --> 01:18:30,400
+ Ya. 
+
+1627
+01:18:30,400 --> 01:18:33,114
+ AUDIENCE: Ada apa dengan [TIDAK JELAS]? 
+
+1628
+01:18:33,114 --> 01:18:34,780
+ PROFESOR: Ya, jadi jika jaringan terus 
+
+1629
+01:18:34,780 --> 01:18:36,154
+ menambahkan hal-hal yang berbeda, kamu saja 
+
+1630
+01:18:36,154 --> 01:18:37,686
+ coba hal yang sama berkali-kali. 
+
+1631
+01:18:37,686 --> 01:18:39,060
+ Hal di server seharusnya 
+
+1632
+01:18:39,060 --> 01:18:41,101
+ mengambil jumlah waktu yang sama setiap waktu 
+
+1633
+01:18:41,101 --> 01:18:42,870
+ dan hanya rata-rata kebisingan jaringan. 
+
+1634
+01:18:42,870 --> 01:18:45,460
+ Di koran, mereka mengatakan mereka mengambil nilai rata-rata - saya sebenarnya 
+
+1635
+01:18:45,460 --> 01:18:47,030
+ tidak mengerti mengapa mereka mengambil median, 
+
+1636
+01:18:47,030 --> 01:18:48,510
+ Saya pikir mereka harus mengambil min dari hal yang nyata 
+
+1637
+01:18:48,510 --> 01:18:50,160
+ itu terjadi-- tapi bagaimanapun juga, ini 
+
+1638
+01:18:50,160 --> 01:18:52,000
+ adalah rata-rata jaringan. 
+
+1639
+01:18:52,000 --> 01:18:54,630
+ Tapi kemudian mereka melakukan hal aneh lainnya, 
+
+1640
+01:18:54,630 --> 01:18:57,850
+ yaitu ketika mereka mengirim tebakan, 
+
+1641
+01:18:57,850 --> 01:19:00,280
+ mereka tidak hanya mengirimkan tebakan yang sama 7 kali, 
+
+1642
+01:19:00,280 --> 01:19:02,730
+ mereka benar-benar mengirim sebuah lingkungan tebakan. 
+
+1643
+01:19:02,730 --> 01:19:04,920
+ Dan setiap nilai di lingkungan itu 
+
+1644
+01:19:04,920 --> 01:19:06,250
+ akan dikirim 7 kali sendiri. 
+
+1645
+01:19:06,250 --> 01:19:09,960
+ Jadi mereka benar-benar mengirim g 7 kali. 
+
+1646
+01:19:09,960 --> 01:19:13,700
+ Kemudian mereka mengirim g plus 1 juga 7 kali. 
+
+1647
+01:19:13,700 --> 01:19:17,980
+ Kemudian mereka mengirim g plus 2 juga 7 kali, dan sebagainya, hingga g 
+
+1648
+01:19:17,980 --> 01:19:20,660
+ ditambah 400 di koran. 
+
+1649
+01:19:20,660 --> 01:19:23,640
+ Mengapa mereka melakukan hal ini rata-rata 
+
+1650
+01:19:23,640 --> 01:19:29,120
+ juga lebih dari nilai g yang berbeda, bukan hanya mengirim g 
+
+1651
+01:19:29,120 --> 01:19:32,007
+ 7 kali 400 kali. 
+
+1652
+01:19:32,007 --> 01:19:33,590
+ Karena sepertinya lebih mudah. 
+
+1653
+01:19:33,590 --> 01:19:34,090
+ Ya? 
+
+1654
+01:19:34,090 --> 01:19:35,000
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+1655
+01:19:35,000 --> 01:19:38,290
+
+
+1656
+01:19:38,290 --> 01:19:40,380
+ PROFESOR: Ya, itu sebenarnya yang terjadi. 
+
+1657
+01:19:40,380 --> 01:19:44,060
+ Kami benar-benar mencoba mengukur dengan tepat berapa lama bagian ini 
+
+1658
+01:19:44,060 --> 01:19:45,109
+ perhitungan akan mengambil. 
+
+1659
+01:19:45,109 --> 01:19:46,650
+ Tapi ada banyak hal lain. 
+
+1660
+01:19:46,650 --> 01:19:48,858
+ Misalnya, jalur pipa lain yang ada di bagian bawah 
+
+1661
+01:19:48,858 --> 01:19:50,339
+ melakukan semua hal mod p. 
+
+1662
+01:19:50,339 --> 01:19:52,630
+ Maksud saya, itu juga akan membutuhkan waktu yang berbeda 
+
+1663
+01:19:52,630 --> 01:19:54,870
+ tergantung pada apa sebenarnya inputnya. 
+
+1664
+01:19:54,870 --> 01:19:57,600
+ Jadi hal yang keren adalah jika Anda terganggu 
+
+1665
+01:19:57,600 --> 01:20:01,340
+ nilai semua tebakan Anda dengan menambahkan 1, 2, 3, 
+
+1666
+01:20:01,340 --> 01:20:03,370
+ apa pun, itu hanya [TIDAK JELAS] bagian-bagian kecil. 
+
+1667
+01:20:03,370 --> 01:20:05,690
+ Jadi serangan waktu yang baru saja kita lihat sekarang, 
+
+1668
+01:20:05,690 --> 01:20:07,570
+ tidak akan berubah karena itu tergantung 
+
+1669
+01:20:07,570 --> 01:20:10,400
+ pada bit tengah ini membalik. 
+
+1670
+01:20:10,400 --> 01:20:13,115
+ Tapi semua yang terjadi di sisi bawah 
+
+1671
+01:20:13,115 --> 01:20:15,550
+ dari mod pipa p akan benar-benar 
+
+1672
+01:20:15,550 --> 01:20:17,160
+ diacak oleh ini karena ketika mereka 
+
+1673
+01:20:17,160 --> 01:20:19,570
+ lakukan itu mod p lalu tambahkan sedikit tambahan 
+
+1674
+01:20:19,570 --> 01:20:22,610
+ bisa menggeser hal-hal di sekitar sedikit mod p. 
+
+1675
+01:20:22,610 --> 01:20:25,920
+ Maka Anda akan melakukannya, itu akan rata-rata keluar 
+
+1676
+01:20:25,920 --> 01:20:28,000
+ jenis lain dari kebisingan komputasi 
+
+1677
+01:20:28,000 --> 01:20:30,140
+ itu deterministik untuk nilai tertentu 
+
+1678
+01:20:30,140 --> 01:20:33,730
+ tapi itu tidak berhubungan dengan bagian perhitungan ini 
+
+1679
+01:20:33,730 --> 01:20:34,690
+ mencoba untuk pergi setelah. 
+
+1680
+01:20:34,690 --> 01:20:35,668
+ Masuk akal? 
+
+1681
+01:20:35,668 --> 01:20:37,436
+ AUDIENCE: Bagaimana mereka melakukannya ketika mereka 
+
+1682
+01:20:37,436 --> 01:20:38,602
+ coba tebak bit yang lebih rendah? 
+
+1683
+01:20:38,602 --> 01:20:41,650
+ PROFESOR: Jadi sebenarnya mereka menggunakan beberapa trik matematika lainnya 
+
+1684
+01:20:41,650 --> 01:20:44,910
+ untuk benar-benar mengganggu menebak setengah bagian atas bit q. 
+
+1685
+01:20:44,910 --> 01:20:47,160
+ Ternyata jika Anda tahu setengah bagian atas bit q 
+
+1686
+01:20:47,160 --> 01:20:50,480
+ ada beberapa matematika yang dapat Anda andalkan untuk faktor angka-angka, 
+
+1687
+01:20:50,480 --> 01:20:51,730
+ dan kemudian Anda dalam kondisi yang baik. 
+
+1688
+01:20:51,730 --> 01:20:53,790
+ Jadi Anda selalu bisa [INAUDIBLE] sedikit. 
+
+1689
+01:20:53,790 --> 01:20:55,689
+ Pada dasarnya tidak perlu khawatir tentang itu. 
+
+1690
+01:20:55,689 --> 01:20:56,189
+ Masuk akal? 
+
+1691
+01:20:56,189 --> 01:20:57,155
+ Ya, pertanyaan. 
+
+1692
+01:20:57,155 --> 01:20:58,121
+ AUDIENCE: [TIDAK TERDENGAR] 
+
+1693
+01:20:58,121 --> 01:21:01,510
+
+
+1694
+01:21:01,510 --> 01:21:05,600
+ PROFESOR: Nah, Anda akan membangun nilai ini c0-- baik 
+
+1695
+01:21:05,600 --> 01:21:08,250
+ Anda ingin prime1 c0 - Anda akan membangun nilai 
+
+1696
+01:21:08,250 --> 01:21:13,200
+ c pada dasarnya mengambil prime c0 Anda dan mengalikannya berkali-kali 
+
+1697
+01:21:13,200 --> 01:21:14,990
+ R inverse mod n. 
+
+1698
+01:21:14,990 --> 01:21:17,860
+
+
+1699
+01:21:17,860 --> 01:21:20,430
+ Dan kemudian ketika server mengambil nilai ini, 
+
+1700
+01:21:20,430 --> 01:21:22,000
+ itu akan mendorongnya lewat sini. 
+
+1701
+01:21:22,000 --> 01:21:23,680
+ Jadi itu akan menghitung c0. 
+
+1702
+01:21:23,680 --> 01:21:26,386
+ Ini akan menjadi c mod q, jadi nilai itu akan terjadi 
+
+1703
+01:21:26,386 --> 01:21:29,210
+ menjadi c0 prime R inverse mod q. 
+
+1704
+01:21:29,210 --> 01:21:32,550
+ Kemudian Anda mengalikannya dengan R, sehingga Anda menyingkirkan R terbalik. 
+
+1705
+01:21:32,550 --> 01:21:35,800
+ Dan Anda akhirnya menebak dengan tepat di posisi ini. 
+
+1706
+01:21:35,800 --> 01:21:37,820
+ Jadi yang keren pada dasarnya adalah semua manipulasi 
+
+1707
+01:21:37,820 --> 01:21:40,570
+ mengarah ke sini hanya mengalikan dengan R. ini 
+
+1708
+01:21:40,570 --> 01:21:43,360
+ Dan Anda tahu apa yang akan terjadi, akan menjadi 2 ke 512. 
+
+1709
+01:21:43,360 --> 01:21:46,894
+ Aku akan sangat berterus terang. 
+
+1710
+01:21:46,894 --> 01:21:47,674
+ Masuk akal? 
+
+1711
+01:21:47,674 --> 01:21:48,382
+ Pertanyaan lain? 
+
+1712
+01:21:48,382 --> 01:21:51,180
+ AUDIENCE: Bisakah kita hanya membatalkan waktu [tidak terdengar]? 
+
+1713
+01:21:51,180 --> 01:21:56,115
+
+
+1714
+01:21:56,115 --> 01:21:59,930
+ PROFESOR: Nah, jika Anda melakukannya, Anda akan berbisnis. 
+
+1715
+01:21:59,930 --> 01:22:01,220
+ Ya, jadi begitulah. 
+
+1716
+01:22:01,220 --> 01:22:03,341
+ Ya, kamu tidak tahu apa itu, tapi kamu saja 
+
+1717
+01:22:03,341 --> 01:22:06,375
+ ingin mengacaknya. 
+
+1718
+01:22:06,375 --> 01:22:07,440
+ Ada pertanyaan? 
+
+1719
+01:22:07,440 --> 01:22:10,549
+ Baiklah. [INAUDIBLE] tapi terima kasih sudah mencuat. 
+
+1720
+01:22:10,549 --> 01:22:13,300
+ Jadi kita akan mulai membicarakan masalah lain 
+
+1721
+01:22:13,300 --> 00:00:00,000
+ minggu depan. 
+

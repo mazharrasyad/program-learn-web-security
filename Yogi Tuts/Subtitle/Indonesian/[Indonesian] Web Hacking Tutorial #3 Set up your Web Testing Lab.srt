@@ -1,0 +1,172 @@
+1
+00:00:00,000 --> 00:00:03,149
+ hi dan selamat datang di <font color="#E5E5E5">tutorial ini saya </font>
+
+2
+00:00:03,149 --> 00:00:05,190
+ akan <font color="#E5E5E5">menunjukkan kepada </font><font color="#CCCCCC">Anda bagaimana </font><font color="#E5E5E5">mempersiapkan Anda </font>
+
+3
+00:00:05,190 --> 00:00:08,069
+ <font color="#CCCCCC">lab pengujian web menggunakan zamp </font>
+
+4
+00:00:08,069 --> 00:00:11,219
+ dan semua tawon <font color="#E5E5E5">zamp adalah Apache lokal </font>
+
+5
+00:00:11,219 --> 00:00:14,309
+ server yang datang <font color="#E5E5E5">dengan PHP saya </font>
+
+6
+00:00:14,309 --> 00:00:17,690
+ sekuel dan banyak <font color="#CCCCCC">barang bagus lainnya </font>
+
+7
+00:00:17,690 --> 00:00:20,490
+ <font color="#E5E5E5">pada dasarnya memungkinkan Anda </font><font color="#CCCCCC">menjalankan server web </font>
+
+8
+00:00:20,490 --> 00:00:24,420
+ di <font color="#CCCCCC">komputer lokal Anda </font><font color="#E5E5E5">dan </font><font color="#CCCCCC">os </font><font color="#E5E5E5">gratis </font>
+
+9
+00:00:24,420 --> 00:00:27,210
+ <font color="#CCCCCC">aplikasi web rentan open source </font>
+
+10
+00:00:27,210 --> 00:00:29,910
+ dirancang untuk <font color="#E5E5E5">pemula untuk belajar web </font>
+
+11
+00:00:29,910 --> 00:00:34,800
+ <font color="#CCCCCC">keamanan aplikasi dan peretasan </font><font color="#E5E5E5">jadi </font>
+
+12
+00:00:34,800 --> 00:00:36,890
+ mari kita pergi <font color="#CCCCCC">ke depan </font><font color="#E5E5E5">dan men-download ini </font>
+
+13
+00:00:36,890 --> 00:00:39,980
+ aplikasi dengan pergi ke sourceforge.net 
+
+14
+00:00:39,980 --> 00:00:44,160
+ <font color="#E5E5E5">dan cari ujian dan klik </font>
+
+15
+00:00:44,160 --> 00:00:48,360
+ <font color="#E5E5E5">tombol unduh </font><font color="#CCCCCC">saya </font><font color="#E5E5E5">sudah mengunduh </font>
+
+16
+00:00:48,360 --> 00:00:51,690
+ <font color="#CCCCCC">program jadi saya akan </font><font color="#E5E5E5">langsung beralih tetapi tidak </font>
+
+17
+00:00:51,690 --> 00:00:53,520
+ khawatir <font color="#E5E5E5">karena instalasi sangat </font>
+
+18
+00:00:53,520 --> 00:00:56,430
+ <font color="#E5E5E5">dasar </font><font color="#CCCCCC">sekali dilakukan dengan instalasi </font>
+
+19
+00:00:56,430 --> 00:01:00,180
+ <font color="#CCCCCC">buka program </font><font color="#E5E5E5">dan mulai menjalankan web Apache </font>
+
+20
+00:01:00,180 --> 00:01:04,739
+ <font color="#E5E5E5">server dan database sekuel saya sekarang </font>
+
+21
+00:01:04,739 --> 00:01:07,799
+ perlu pergi ke direktori ujian <font color="#E5E5E5">dan lihat </font>
+
+22
+00:01:07,799 --> 00:01:12,200
+ untuk <font color="#CCCCCC">direktori htdocs di situlah </font><font color="#E5E5E5">web os </font>
+
+23
+00:01:12,200 --> 00:01:16,229
+ aplikasi <font color="#CCCCCC">akan </font><font color="#E5E5E5">diinstal ke </font>
+
+24
+00:01:16,229 --> 00:01:18,600
+ <font color="#E5E5E5">unduh aplikasi web yang rentan </font>
+
+25
+00:01:18,600 --> 00:01:21,960
+ <font color="#E5E5E5">cari OS dan pilih versi dan </font>
+
+26
+00:01:21,960 --> 00:01:25,830
+ kemudian unduh <font color="#CCCCCC">file zip jadi lagi saya </font>
+
+27
+00:01:25,830 --> 00:01:28,829
+ akan langsung beralih <font color="#E5E5E5">setelah </font><font color="#CCCCCC">download </font><font color="#E5E5E5">memiliki </font>
+
+28
+00:01:28,829 --> 00:01:32,220
+ <font color="#E5E5E5">selesai ekstrak file zip dan salin </font>
+
+29
+00:01:32,220 --> 00:01:36,140
+ semua <font color="#CCCCCC">file untuk </font><font color="#E5E5E5">mengecek </font><font color="#CCCCCC">direktori htdocs </font>
+
+30
+00:01:36,140 --> 00:01:40,110
+ <font color="#E5E5E5">sekarang buka browser Anda dan pergi </font><font color="#CCCCCC">ke salah satu </font><font color="#E5E5E5">ke </font>
+
+31
+00:01:40,110 --> 00:01:43,530
+ tujuh nol nol <font color="#E5E5E5">satu yang mungkin Anda perlukan </font>
+
+32
+00:01:43,530 --> 00:01:46,649
+ mengatur ulang database dengan mengklik ulang 
+
+33
+00:01:46,649 --> 00:01:51,540
+ Link DB <font color="#E5E5E5">jika ada kesalahan basis data </font><font color="#CCCCCC">jadi </font>
+
+34
+00:01:51,540 --> 00:01:53,850
+ ketika Anda masuk <font color="#E5E5E5">ke sistem </font><font color="#CCCCCC">ada </font>
+
+35
+00:01:53,850 --> 00:01:56,490
+ <font color="#E5E5E5">menu di </font><font color="#CCCCCC">Kiri di mana Anda dapat melihat </font>
+
+36
+00:01:56,490 --> 00:02:00,149
+ <font color="#CCCCCC">berbagai jenis serangan seperti sekuel </font>
+
+37
+00:02:00,149 --> 00:02:03,210
+ injeksi scripting lintas situs <font color="#E5E5E5">dan banyak </font>
+
+38
+00:02:03,210 --> 00:02:06,360
+ lebih <font color="#E5E5E5">tetapi saya akan meliput serangan ini </font>
+
+39
+00:02:06,360 --> 00:02:09,899
+ tutorial lain <font color="#CCCCCC">jadi itu untuk ini </font>
+
+40
+00:02:09,899 --> 00:02:13,020
+ ceramah <font color="#E5E5E5">terima kasih untuk menonton dan saya akan lihat </font>
+
+41
+00:02:13,020 --> 00:02:13,770
+ <font color="#E5E5E5">kamu </font><font color="#CCCCCC">selanjutnya </font>
+
+42
+00:02:13,770 --> 00:02:16,040
+ waktu 
+
+43
+00:02:22,480 --> 00:00:00,000
+ kamu 
+

@@ -1,0 +1,1080 @@
+1
+00:00:00,060 --> 00:00:01,770
+ halo teman-teman sekarang mari kita bicarakan 
+
+2
+00:00:01,770 --> 00:00:04,680
+ cross-site <font color="#E5E5E5">scripting jadi lintas situs </font>
+
+3
+00:00:04,680 --> 00:00:06,000
+ kerentanan scripting itu a 
+
+4
+00:00:06,000 --> 00:00:08,250
+ serangan sisi klien dan sebagian besar 
+
+5
+00:00:08,250 --> 00:00:10,860
+ populer disebut sebagai XSS <font color="#E5E5E5">jadi lintas situs </font>
+
+6
+00:00:10,860 --> 00:00:12,599
+ kerentanan scripting sering ditemukan 
+
+7
+00:00:12,599 --> 00:00:14,880
+ di banyak <font color="#E5E5E5">aplikasi web khususnya </font>
+
+8
+00:00:14,880 --> 00:00:17,820
+ di mana pengguna memberikan input <font color="#E5E5E5">ke </font><font color="#CCCCCC">input </font>
+
+9
+00:00:17,820 --> 00:00:20,490
+ menerima daerah seperti <font color="#E5E5E5">bentuk bar pencarian </font>
+
+10
+00:00:20,490 --> 00:00:23,070
+ dan formulir umpan balik <font color="#E5E5E5">jadi jika pengguna </font>
+
+11
+00:00:23,070 --> 00:00:25,109
+ <font color="#CCCCCC">Masukan yang diberikan </font><font color="#E5E5E5">sebenarnya sedang </font>
+
+12
+00:00:25,109 --> 00:00:27,960
+ dieksekusi <font color="#CCCCCC">oleh aplikasi web </font><font color="#E5E5E5">yang </font>
+
+13
+00:00:27,960 --> 00:00:30,449
+ <font color="#E5E5E5">berarti </font><font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">web </font><font color="#CCCCCC">adalah lintas situs </font>
+
+14
+00:00:30,449 --> 00:00:32,700
+ scripting rentan <font color="#E5E5E5">jadi pengguna </font>
+
+15
+00:00:32,700 --> 00:00:35,430
+ menyediakan <font color="#E5E5E5">kode JavaScript </font><font color="#CCCCCC">bukannya </font>
+
+16
+00:00:35,430 --> 00:00:37,800
+ menyediakan <font color="#E5E5E5">teks yang sah dan jika </font>
+
+17
+00:00:37,800 --> 00:00:39,870
+ Kode JavaScript <font color="#E5E5E5">sedang dieksekusi </font><font color="#CCCCCC">oleh </font>
+
+18
+00:00:39,870 --> 00:00:42,390
+ aplikasi web yang berarti <font color="#E5E5E5">web itu </font>
+
+19
+00:00:42,390 --> 00:00:44,430
+ Aplikasi <font color="#CCCCCC">diproses</font><font color="#E5E5E5"> scripting </font>
+
+20
+00:00:44,430 --> 00:00:46,649
+ dapat dibakar sehingga scripting lintas situs 
+
+21
+00:00:46,649 --> 00:00:49,110
+ kerentanan juga dapat digunakan <font color="#E5E5E5">dan di </font>
+
+22
+00:00:49,110 --> 00:00:51,570
+ memesan <font color="#CCCCCC">untuk mengosongkan sesi sesi cookie pengguna </font>
+
+23
+00:00:51,570 --> 00:00:55,050
+ dan bahkan itu <font color="#E5E5E5">juga dapat menyebabkan serangan </font><font color="#CCCCCC">CSRF </font>
+
+24
+00:00:55,050 --> 00:00:57,329
+ jadi skrip lintas situs adalah <font color="#E5E5E5">dua </font><font color="#CCCCCC">jenis </font>
+
+25
+00:00:57,329 --> 00:00:59,640
+ <font color="#E5E5E5">yang </font><font color="#CCCCCC">pertama dicerminkan lintas-situs </font>
+
+26
+00:00:59,640 --> 00:01:01,649
+ scripting <font color="#E5E5E5">dan yang kedua disimpan </font>
+
+27
+00:01:01,649 --> 00:01:03,239
+ <font color="#E5E5E5">crosser scripting </font><font color="#CCCCCC">sekarang mari kita bicarakan </font>
+
+28
+00:01:03,239 --> 00:01:05,720
+ <font color="#E5E5E5">keduanya jauh lebih detail </font>
+
+29
+00:01:05,720 --> 00:01:08,130
+ jadi tercermin skrip lintas situs adalah 
+
+30
+00:01:08,130 --> 00:01:10,320
+ <font color="#E5E5E5">juga disebut sebagai cross-site yang tidak persisten </font>
+
+31
+00:01:10,320 --> 00:01:12,990
+ scripting <font color="#E5E5E5">karena di sini pengguna </font>
+
+32
+00:01:12,990 --> 00:01:15,630
+ input tidak disimpan dalam database yang mana 
+
+33
+00:01:15,630 --> 00:01:17,790
+ <font color="#E5E5E5">berarti jika input pengguna tidak disimpan </font>
+
+34
+00:01:17,790 --> 00:01:20,520
+ database sehingga <font color="#CCCCCC">kemudian respon </font>
+
+35
+00:01:20,520 --> 00:01:22,979
+ aplikasi web hanya ditampilkan ke 
+
+36
+00:01:22,979 --> 00:01:24,659
+ pengguna yang sebenarnya menyuntikkan 
+
+37
+00:01:24,659 --> 00:01:27,450
+ JavaScript <font color="#E5E5E5">yang berarti jika kita </font>
+
+38
+00:01:27,450 --> 00:01:29,880
+ menyuntikkan <font color="#CCCCCC">sesuatu di dalam bar pencarian dan </font>
+
+39
+00:01:29,880 --> 00:01:32,460
+ <font color="#CCCCCC">JavaScript kami sedang dieksekusi </font><font color="#E5E5E5">dengan itu </font>
+
+40
+00:01:32,460 --> 00:01:34,950
+ aplikasi <font color="#E5E5E5">yang berarti respons dari </font>
+
+41
+00:01:34,950 --> 00:01:37,110
+ <font color="#E5E5E5">JavaScript itu hanya dapat ditampilkan kepada kami </font>
+
+42
+00:01:37,110 --> 00:01:39,990
+ bukan orang lain karena <font color="#E5E5E5">masukan kami tidak </font>
+
+43
+00:01:39,990 --> 00:01:43,049
+ disimpan dalam basis data dan inputnya <font color="#E5E5E5">tidak </font>
+
+44
+00:01:43,049 --> 00:01:44,700
+ disimpan <font color="#E5E5E5">dalam database dan sering ditemukan di </font>
+
+45
+00:01:44,700 --> 00:01:48,240
+ search bar <font color="#E5E5E5">sekarang mari kita bicara tentang </font><font color="#CCCCCC">disimpan </font>
+
+46
+00:01:48,240 --> 00:01:50,159
+ scripting lintas situs jadi <font color="#CCCCCC">simpan lintas situs </font>
+
+47
+00:01:50,159 --> 00:01:53,119
+ scripting <font color="#E5E5E5">juga disebut sebagai XSS tersimpan dan </font>
+
+48
+00:01:53,119 --> 00:01:56,250
+ XSS persisten mengapa karena pengguna 
+
+49
+00:01:56,250 --> 00:01:59,070
+ input disimpan dalam basis data dan setelah itu 
+
+50
+00:01:59,070 --> 00:02:01,229
+ input pengguna disimpan dalam database itu 
+
+51
+00:02:01,229 --> 00:02:03,180
+ ada saja <font color="#CCCCCC">misalnya ada satu </font>
+
+52
+00:02:03,180 --> 00:02:06,780
+ <font color="#E5E5E5">bagian komentar dan kami berkomentar a </font>
+
+53
+00:02:06,780 --> 00:02:09,959
+ <font color="#E5E5E5">Teori JavaScript dan menggantikannya </font>
+
+54
+00:02:09,959 --> 00:02:12,030
+ komentar <font color="#E5E5E5">kami menambahkan </font><font color="#CCCCCC">curie javascript </font><font color="#E5E5E5">dan </font>
+
+55
+00:02:12,030 --> 00:02:13,930
+ kami mengklik submit dan <font color="#E5E5E5">kami </font>
+
+56
+00:02:13,930 --> 00:02:17,709
+ <font color="#CCCCCC">Mendes serahkan dan sekarang jika </font><font color="#E5E5E5">ada yang berkunjung </font>
+
+57
+00:02:17,709 --> 00:02:20,500
+ halaman itu maka <font color="#E5E5E5">JavaScript juga menjadi </font>
+
+58
+00:02:20,500 --> 00:02:24,340
+ dieksekusi pada pengguna <font color="#E5E5E5">yang artinya </font>
+
+59
+00:02:24,340 --> 00:02:26,079
+ <font color="#E5E5E5">dampak dari </font><font color="#CCCCCC">scripting cross-site toko adalah </font>
+
+60
+00:02:26,079 --> 00:02:30,129
+ lebih dari sekadar <font color="#E5E5E5">lintas situs yang tidak tetap </font>
+
+61
+00:02:30,129 --> 00:02:33,370
+ scripting <font color="#E5E5E5">dan itu juga dapat menyebabkan CSRF </font>
+
+62
+00:02:33,370 --> 00:02:35,769
+ serang <font color="#E5E5E5">sekarang mari kita lihat bagaimana kita bisa mengeksploitasi </font>
+
+63
+00:02:35,769 --> 00:02:37,900
+ kerentanan skrip lintas situs di OS 
+
+64
+00:02:37,900 --> 00:02:40,510
+ aplikasi web yang rusak sekarang mari kita coba 
+
+65
+00:02:40,510 --> 00:02:42,189
+ <font color="#E5E5E5">menemukan kerentanan skrip lintas situs </font>
+
+66
+00:02:42,189 --> 00:02:44,920
+ dalam <font color="#CCCCCC">memutilasi aplikasi web Somu </font>
+
+67
+00:02:44,920 --> 00:02:46,540
+ <font color="#CCCCCC">hari ini aplikasi web dikelola oleh </font>
+
+68
+00:02:46,540 --> 00:02:49,329
+ OS p-- <font color="#E5E5E5">dan itu sudah ada di OS </font>
+
+69
+00:02:49,329 --> 00:02:51,069
+ aplikasi web yang rusak yang kita miliki 
+
+70
+00:02:51,069 --> 00:02:54,939
+ <font color="#E5E5E5">dipasang di video terakhir </font><font color="#CCCCCC">jadi di sini Anda </font>
+
+71
+00:02:54,939 --> 00:02:57,430
+ <font color="#E5E5E5">dapat melihat bahwa manusia OS rusak saya web </font>
+
+72
+00:02:57,430 --> 00:02:59,739
+ aplikasi <font color="#E5E5E5">aktif dan berjalan </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">di sini </font>
+
+73
+00:02:59,739 --> 00:03:06,340
+ adalah alamat IPnya <font color="#E5E5E5">192.168.1.1 IP ini </font>
+
+74
+00:03:06,340 --> 00:03:14,950
+ <font color="#CCCCCC">alamat </font><font color="#E5E5E5">di firefox saya </font><font color="#CCCCCC">baik-baik saja jadi di sini Anda </font>
+
+75
+00:03:14,950 --> 00:03:16,930
+ <font color="#E5E5E5">dapat melihat ini adalah web yang rusak </font>
+
+76
+00:03:16,930 --> 00:03:19,510
+ aplikasi dan di sini adalah <font color="#E5E5E5">tautan dari OS </font>
+
+77
+00:03:19,510 --> 00:03:22,599
+ bermutasi satu detik <font color="#E5E5E5">jadi mari kita klik ini </font>
+
+78
+00:03:22,599 --> 00:03:27,760
+ link <font color="#E5E5E5">dan di sini Anda dapat melihat OS diredam a </font>
+
+79
+00:03:27,760 --> 00:03:29,739
+ aplikasi web <font color="#CCCCCC">dan di sebelah kiri </font>
+
+80
+00:03:29,739 --> 00:03:32,739
+ <font color="#E5E5E5">sisi Anda </font><font color="#CCCCCC">akan melihat daftar OS yang berbeda </font>
+
+81
+00:03:32,739 --> 00:03:36,459
+ daftar kerentanan <font color="#E5E5E5">dan mari kita buka di sini </font><font color="#CCCCCC">OS </font>
+
+82
+00:03:36,459 --> 00:03:39,489
+ 2013 jadi di sini Anda dapat melihat perbedaannya 
+
+83
+00:03:39,489 --> 00:03:41,319
+ tantangan aplikasi web yang rentan 
+
+84
+00:03:41,319 --> 00:03:43,150
+ dibagi ke dalam <font color="#E5E5E5">kategori yang berbeda seperti </font>
+
+85
+00:03:43,150 --> 00:03:45,310
+ <font color="#E5E5E5">serangan injeksi otentikasi rusak </font>
+
+86
+00:03:45,310 --> 00:03:47,919
+ cross-site scripting <font color="#CCCCCC">Saya melakukan lintas situs </font>
+
+87
+00:03:47,919 --> 00:03:50,829
+ meminta pemalsuan tapi <font color="#E5E5E5">untuk saat ini </font>
+
+88
+00:03:50,829 --> 00:03:53,879
+ <font color="#E5E5E5">mari kita pergi di sini skrip lintas situs dan </font>
+
+89
+00:03:53,879 --> 00:03:57,939
+ sekarang scripting lintas situs memiliki dua 
+
+90
+00:03:57,939 --> 00:03:59,769
+ jenis <font color="#E5E5E5">seperti yang saya katakan </font><font color="#CCCCCC">sebelumnya </font>
+
+91
+00:03:59,769 --> 00:04:01,870
+ tercermin dan persisten <font color="#E5E5E5">dan </font>
+
+92
+00:04:01,870 --> 00:04:04,389
+ tercermin tidak ada yang disimpan dalam basis data 
+
+93
+00:04:04,389 --> 00:04:06,939
+ <font color="#E5E5E5">itu adalah sementara dan di gigih </font><font color="#CCCCCC">kami </font>
+
+94
+00:04:06,939 --> 00:04:09,250
+ <font color="#CCCCCC">javascript disimpan dalam basis data </font>
+
+95
+00:04:09,250 --> 00:04:12,150
+ dan itu terpengaruh dan semua pengguna 
+
+96
+00:04:12,150 --> 00:04:15,280
+ <font color="#E5E5E5">yang akan mengunjungi halaman itu </font>
+
+97
+00:04:15,280 --> 00:04:18,810
+ terpengaruh melalui <font color="#CCCCCC">JavaScript </font><font color="#E5E5E5">jadi pertama </font>
+
+98
+00:04:18,810 --> 00:04:21,608
+ mari kita fokus pada ini mencerminkan situs lintas 
+
+99
+00:04:21,608 --> 00:04:25,590
+ scripting <font color="#CCCCCC">jadi jika Anda pergi </font><font color="#E5E5E5">di sini </font>
+
+100
+00:04:26,620 --> 00:04:29,930
+ pilih ini <font color="#CCCCCC">link ini mengatur </font><font color="#E5E5E5">latar belakang </font>
+
+101
+00:04:29,930 --> 00:04:37,759
+ <font color="#E5E5E5">warna oke sekarang izinkan saya memberi Anda </font>
+
+102
+00:04:37,759 --> 00:04:40,669
+ skenario seperti yang Anda miliki <font color="#CCCCCC">Anda menangkap </font><font color="#E5E5E5">satu </font>
+
+103
+00:04:40,669 --> 00:04:44,419
+ <font color="#CCCCCC">situs web </font><font color="#E5E5E5">jadi di sini </font><font color="#CCCCCC">adalah halaman yang sama atau </font>
+
+104
+00:04:44,419 --> 00:04:46,430
+ fungsi <font color="#E5E5E5">yang sama dengan situs web </font>
+
+105
+00:04:46,430 --> 00:04:49,030
+ menawarkan untuk pengguna <font color="#E5E5E5">sekarang mari kita coba </font><font color="#CCCCCC">untuk </font>
+
+106
+00:04:49,030 --> 00:04:51,740
+ <font color="#E5E5E5">bermain dengan itu apa yang dikatakannya </font><font color="#CCCCCC">jadi tolong </font>
+
+107
+00:04:51,740 --> 00:04:53,599
+ <font color="#CCCCCC">masukkan </font><font color="#E5E5E5">warna latar belakang yang Anda inginkan </font>
+
+108
+00:04:53,599 --> 00:04:55,069
+ <font color="#CCCCCC">ingin melihat </font><font color="#E5E5E5">baik-baik saja </font>
+
+109
+00:04:55,069 --> 00:04:59,259
+ jadi masukkan warna dalam format hex <font color="#E5E5E5">sekarang </font>
+
+110
+00:04:59,259 --> 00:05:02,500
+ Contoh merah ini <font color="#E5E5E5">sekarang mari kita coba tambahkan </font>
+
+111
+00:05:02,500 --> 00:05:07,490
+ <font color="#E5E5E5">kode warna ini dan mari kita lihat apa </font>
+
+112
+00:05:07,490 --> 00:05:12,050
+ terjadi dan jika <font color="#E5E5E5">saya mengklik latar belakang yang ditetapkan </font>
+
+113
+00:05:12,050 --> 00:05:14,330
+ <font color="#E5E5E5">warna </font><font color="#CCCCCC">Anda akan melihat latar belakang kami </font>
+
+114
+00:05:14,330 --> 00:05:17,449
+ <font color="#CCCCCC">telah berubah sekarang </font><font color="#E5E5E5">baik-baik saja sekarang seperti </font><font color="#CCCCCC">yang </font><font color="#E5E5E5">saya katakan </font>
+
+115
+00:05:17,449 --> 00:05:19,250
+ <font color="#CCCCCC">sebelumnya yang </font><font color="#E5E5E5">di crosshair scripting kami </font>
+
+116
+00:05:19,250 --> 00:05:23,780
+ motif utama adalah <font color="#E5E5E5">untuk mengeksekusi JavaScript </font>
+
+117
+00:05:23,780 --> 00:05:26,870
+ aplikasi web ini <font color="#E5E5E5">sekarang sebagai tester pena </font>
+
+118
+00:05:26,870 --> 00:05:29,479
+ apa yang bisa kita lakukan adalah <font color="#CCCCCC">bukan </font><font color="#E5E5E5">menambahkan </font>
+
+119
+00:05:29,479 --> 00:05:31,880
+ <font color="#E5E5E5">teks sederhana daripada menambahkan yang sah </font>
+
+120
+00:05:31,880 --> 00:05:35,750
+ teks <font color="#E5E5E5">bisa kita tambahkan JavaScript disini jadi </font>
+
+121
+00:05:35,750 --> 00:05:40,819
+ sebelum <font color="#E5E5E5">pergi lebih jauh biarkan aku biarkan </font><font color="#CCCCCC">aku </font><font color="#E5E5E5">menulis </font>
+
+122
+00:05:40,819 --> 00:05:44,240
+ kode HTML sederhana <font color="#CCCCCC">yang bertanggung jawab </font>
+
+123
+00:05:44,240 --> 00:05:49,279
+ <font color="#CCCCCC">untuk </font><font color="#E5E5E5">mengambil input pengguna untuk di sini </font>
+
+124
+00:05:49,279 --> 00:05:51,110
+ <font color="#CCCCCC">misalnya </font><font color="#E5E5E5">saya hanya menulis di sini </font>
+
+125
+00:05:51,110 --> 00:05:58,779
+ <font color="#E5E5E5">sebuah contoh teks jenis input kode 'dan </font>
+
+126
+00:05:58,779 --> 00:06:09,289
+ <font color="#E5E5E5">nama sama dengan warna dan nilai </font><font color="#CCCCCC">oke </font><font color="#E5E5E5">jadi adil </font>
+
+127
+00:06:09,289 --> 00:06:13,789
+ <font color="#E5E5E5">untuk </font><font color="#CCCCCC">contoh </font><font color="#E5E5E5">ini adalah tag </font><font color="#CCCCCC">input </font><font color="#E5E5E5">yang </font>
+
+128
+00:06:13,789 --> 00:06:15,740
+ <font color="#CCCCCC">bertanggung jawab </font><font color="#E5E5E5">untuk </font><font color="#CCCCCC">mengambil input pengguna </font>
+
+129
+00:06:15,740 --> 00:06:19,219
+ <font color="#E5E5E5">dan </font><font color="#CCCCCC">masukan </font><font color="#E5E5E5">apa pun </font><font color="#CCCCCC">yang diberikan </font><font color="#E5E5E5">oleh pengguna </font>
+
+130
+00:06:19,219 --> 00:06:25,539
+ <font color="#E5E5E5">seperti jika saya hanya </font><font color="#CCCCCC">berikan di sini, jadi masukan ini </font>
+
+131
+00:06:25,539 --> 00:06:30,560
+ <font color="#CCCCCC">adalah dapatkan </font><font color="#E5E5E5">disimpan di sini dan di ini </font>
+
+132
+00:06:30,560 --> 00:06:35,240
+ tempatkan <font color="#E5E5E5">jadi jika pengguna akan menambahkan input ini </font>
+
+133
+00:06:35,240 --> 00:06:38,780
+ <font color="#E5E5E5">itu hanya akan mendapatkan toko di sini sekarang ini </font>
+
+134
+00:06:38,780 --> 00:06:43,730
+ menjadi seperti ini <font color="#CCCCCC">oke </font><font color="#E5E5E5">sekarang apa kita </font>
+
+135
+00:06:43,730 --> 00:06:44,840
+ motif <font color="#E5E5E5">atau apa pak </font>
+
+136
+00:06:44,840 --> 00:06:47,240
+ apa <font color="#E5E5E5">tujuan kita adalah melakukan eksekusi </font>
+
+137
+00:06:47,240 --> 00:06:52,280
+ <font color="#E5E5E5">JavaScript dalam </font><font color="#CCCCCC">paket </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">sekarang </font><font color="#E5E5E5">hanya untuk </font>
+
+138
+00:06:52,280 --> 00:06:55,400
+ <font color="#E5E5E5">Misalnya bagaimana jika jika pengguna mencoba menambahkan </font>
+
+139
+00:06:55,400 --> 00:07:00,230
+ <font color="#E5E5E5">ini sebagai masukan sekarang jika ini diberikan sebagai </font>
+
+140
+00:07:00,230 --> 00:07:03,169
+ masukan <font color="#E5E5E5">sekarang mari kita lihat </font><font color="#CCCCCC">bagaimana ini </font>
+
+141
+00:07:03,169 --> 00:07:06,260
+ <font color="#E5E5E5">tag input terlihat seperti begitu saya hapus </font>
+
+142
+00:07:06,260 --> 00:07:11,720
+ ini dan biarkan aku <font color="#E5E5E5">menyalin ini, biarkan aku </font>
+
+143
+00:07:11,720 --> 00:07:16,160
+ <font color="#E5E5E5">tempelkan di sini dan jika saya menempelkannya di sini Anda </font>
+
+144
+00:07:16,160 --> 00:07:20,330
+ dapat <font color="#CCCCCC">melihat </font><font color="#E5E5E5">bahwa sekarang aplikasi web kami mungkin </font>
+
+145
+00:07:20,330 --> 00:07:24,080
+ bingung <font color="#E5E5E5">mengapa karena jika kita jika </font><font color="#CCCCCC">kita </font>
+
+146
+00:07:24,080 --> 00:07:27,440
+ <font color="#CCCCCC">lihat saja di sini ia mengatakan web kami </font>
+
+147
+00:07:27,440 --> 00:07:29,900
+ aplikasi mungkin berpikir bahwa tag <font color="#CCCCCC">ini </font>
+
+148
+00:07:29,900 --> 00:07:32,360
+ tutup di sini pada <font color="#E5E5E5">titik ini karena </font><font color="#CCCCCC">kami </font>
+
+149
+00:07:32,360 --> 00:07:35,990
+ <font color="#E5E5E5">masukan jadi sekarang apa yang bisa kita </font><font color="#CCCCCC">lakukan adalah dapatkah kita </font>
+
+150
+00:07:35,990 --> 00:07:38,720
+ tambahkan tag lain <font color="#CCCCCC">setelah ini yang kami </font>
+
+151
+00:07:38,720 --> 00:07:41,240
+ <font color="#E5E5E5">jalankan di sini pada titik ini </font>
+
+152
+00:07:41,240 --> 00:07:44,350
+ <font color="#E5E5E5">contohnya mari kita tulis di sini skrip </font>
+
+153
+00:07:44,350 --> 00:07:48,560
+ <font color="#E5E5E5">kode JavaScript sederhana yang akan memperingatkan </font>
+
+154
+00:07:48,560 --> 00:07:51,580
+ XSS <font color="#E5E5E5">oke </font>
+
+155
+00:07:51,580 --> 00:07:57,289
+ sekarang mari kita salin masukan ini <font color="#CCCCCC">dan mari </font>
+
+156
+00:07:57,289 --> 00:08:00,289
+ tempelkan di sini <font color="#E5E5E5">dan mari kita lihat </font><font color="#CCCCCC">sekarang bagaimana ini </font>
+
+157
+00:08:00,289 --> 00:08:04,789
+ <font color="#E5E5E5">tag terlihat oke jadi di sini Anda bisa melihat </font>
+
+158
+00:08:04,789 --> 00:08:06,910
+ bahwa <font color="#E5E5E5">tag input kami menutup di sini dan </font>
+
+159
+00:08:06,910 --> 00:08:10,419
+ disini <font color="#CCCCCC">tag script kami akan </font><font color="#E5E5E5">akan </font>
+
+160
+00:08:10,419 --> 00:08:13,640
+ dieksekusi jadi ini adalah bagaimana kita bisa <font color="#E5E5E5">menganalisa </font>
+
+161
+00:08:13,640 --> 00:08:15,770
+ atau kita dapat menemukan bagaimana kita bisa <font color="#E5E5E5">menyingkirkannya </font>
+
+162
+00:08:15,770 --> 00:08:18,890
+ <font color="#CCCCCC">perilaku normal </font><font color="#E5E5E5">web </font>
+
+163
+00:08:18,890 --> 00:08:20,330
+ aplikasi <font color="#E5E5E5">dan bagaimana kami dapat mencoba </font>
+
+164
+00:08:20,330 --> 00:08:22,400
+ <font color="#E5E5E5">jalankan skrip lintas situs kami atau </font>
+
+165
+00:08:22,400 --> 00:08:25,850
+ <font color="#E5E5E5">JavaScript sekarang mari kita coba tambahkan atau </font>
+
+166
+00:08:25,850 --> 00:08:28,880
+ berikan <font color="#E5E5E5">input ini </font><font color="#CCCCCC">ke aplikasi web </font>
+
+167
+00:08:28,880 --> 00:08:31,010
+ <font color="#E5E5E5">dan mari kita lihat bagaimana </font><font color="#CCCCCC">tampilannya </font><font color="#E5E5E5">atau bagaimana </font>
+
+168
+00:08:31,010 --> 00:08:35,450
+ itu bekerja biar saya <font color="#CCCCCC">tulis saja di </font><font color="#E5E5E5">sini </font>
+
+169
+00:08:35,450 --> 00:08:39,589
+ lagi teks normal sekarang <font color="#CCCCCC">pada tanda kutip ganda </font>
+
+170
+00:08:39,589 --> 00:08:42,520
+ untuk <font color="#CCCCCC">pakaian </font><font color="#E5E5E5">ini adalah untuk penutupan </font>
+
+171
+00:08:42,520 --> 00:08:45,710
+ tag masukan sekarang mari kita coba menambahkan skrip 
+
+172
+00:08:45,710 --> 00:08:49,630
+ <font color="#E5E5E5">beri tag di sini dan mari kita lihat tampilannya </font>
+
+173
+00:08:54,380 --> 00:09:00,480
+ <font color="#E5E5E5">oke sekarang jika saya menekan </font><font color="#CCCCCC">enter Anda </font><font color="#E5E5E5">akan melihat </font>
+
+174
+00:09:00,480 --> 00:09:05,490
+ bahwa <font color="#E5E5E5">kami </font><font color="#CCCCCC">berhasil </font><font color="#E5E5E5">mengeksekusi </font>
+
+175
+00:09:05,490 --> 00:09:08,250
+ JavaScript di sini injeksi JavaScript kami 
+
+176
+00:09:08,250 --> 00:09:10,440
+ atau <font color="#CCCCCC">injeksi skrip crosshair </font>
+
+177
+00:09:10,440 --> 00:09:13,290
+ <font color="#E5E5E5">telah berhasil di sini Anda dapat melihat begitu kami </font>
+
+178
+00:09:13,290 --> 00:09:15,570
+ JavaScript <font color="#E5E5E5">telah </font><font color="#CCCCCC">dijalankan </font><font color="#E5E5E5">jika saya </font><font color="#CCCCCC">sekarang </font><font color="#E5E5E5">jika </font>
+
+179
+00:09:15,570 --> 00:09:20,970
+ Saya <font color="#E5E5E5">mengklik </font><font color="#CCCCCC">OK Anda </font><font color="#E5E5E5">akan melihat halaman yang sama </font>
+
+180
+00:09:20,970 --> 00:09:23,370
+ kembali <font color="#E5E5E5">lihat di halaman sebelumnya mengapa </font>
+
+181
+00:09:23,370 --> 00:09:26,730
+ karena ini <font color="#E5E5E5">tercermin XSS tidak ada </font>
+
+182
+00:09:26,730 --> 00:09:29,220
+ disimpan dalam database <font color="#E5E5E5">sehingga </font><font color="#CCCCCC">respon </font>
+
+183
+00:09:29,220 --> 00:09:31,440
+ <font color="#E5E5E5">JavaScript ini hanya akan ditampilkan </font>
+
+184
+00:09:31,440 --> 00:09:35,280
+ pengguna yang <font color="#CCCCCC">sebenarnya menambahkan </font>
+
+185
+00:09:35,280 --> 00:09:38,970
+ <font color="#E5E5E5">JavaScript ke dalam aplikasi web jadi </font>
+
+186
+00:09:38,970 --> 00:09:42,390
+ ini semua <font color="#E5E5E5">tentang tercermin XSS sekarang </font>
+
+187
+00:09:42,390 --> 00:09:45,210
+ mari kita lihat di <font color="#E5E5E5">toko XSS begitu masuk </font>
+
+188
+00:09:45,210 --> 00:09:49,050
+ <font color="#E5E5E5">memesan </font><font color="#CCCCCC">untuk mengeksploitasi cross-site scripting </font>
+
+189
+00:09:49,050 --> 00:09:52,170
+ disimpan jadi ayo ke sini lintas situs 
+
+190
+00:09:52,170 --> 00:09:55,710
+ scripting <font color="#E5E5E5">dan sekarang mari pilih tautan ini </font>
+
+191
+00:09:55,710 --> 00:09:58,470
+ <font color="#E5E5E5">urutan kedua terus-menerus dan di sini adalah satu </font>
+
+192
+00:09:58,470 --> 00:10:01,230
+ tautan di sini adalah satu halaman yang ditambahkan ke blog Anda 
+
+193
+00:10:01,230 --> 00:10:05,790
+ <font color="#E5E5E5">mari klik di sini dan satu </font><font color="#CCCCCC">lagi </font>
+
+194
+00:10:05,790 --> 00:10:08,940
+ <font color="#CCCCCC">aplikasi pemberontak Avast ini hadir </font>
+
+195
+00:10:08,940 --> 00:10:11,130
+ <font color="#E5E5E5">tingkat keamanan yang berbeda berbeda </font>
+
+196
+00:10:11,130 --> 00:10:15,180
+ sekarang <font color="#E5E5E5">tingkat keamanan adalah </font><font color="#CCCCCC">0 itu sangat </font>
+
+197
+00:10:15,180 --> 00:10:17,940
+ mudah <font color="#CCCCCC">jadi dalam </font><font color="#E5E5E5">seri video yang akan datang </font>
+
+198
+00:10:17,940 --> 00:10:20,040
+ <font color="#CCCCCC">Saya akan </font><font color="#E5E5E5">membuat berbagai video berbeda </font>
+
+199
+00:10:20,040 --> 00:10:21,300
+ <font color="#E5E5E5">seri </font><font color="#CCCCCC">untuk berbeda berbeda </font>
+
+200
+00:10:21,300 --> 00:10:23,040
+ kerentanan <font color="#E5E5E5">dengan keamanan mereka </font>
+
+201
+00:10:23,040 --> 00:10:25,680
+ level 5 <font color="#E5E5E5">tetapi </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">waktu tetapi untuk </font><font color="#CCCCCC">ini </font>
+
+202
+00:10:25,680 --> 00:10:27,690
+ <font color="#E5E5E5">seri video saya akan membahas semua </font>
+
+203
+00:10:27,690 --> 00:10:30,290
+ <font color="#CCCCCC">kerentanan dengan tingkat keamanan 0 </font>
+
+204
+00:10:30,290 --> 00:10:33,150
+ <font color="#E5E5E5">oke jadi sekarang kita ada </font><font color="#CCCCCC">di </font><font color="#E5E5E5">halaman ini </font>
+
+205
+00:10:33,150 --> 00:10:35,550
+ <font color="#E5E5E5">selamat datang di blog sehingga terlihat mengatakannya </font>
+
+206
+00:10:35,550 --> 00:10:38,340
+ terlihat mirip dengan situs web blog mana pun 
+
+207
+00:10:38,340 --> 00:10:40,530
+ dimana kita <font color="#E5E5E5">bisa menambahkan blog jadi apa itu </font>
+
+208
+00:10:40,530 --> 00:10:44,670
+ <font color="#E5E5E5">adblock yang sama </font><font color="#CCCCCC">untuk anonim ok jadi pertama </font>
+
+209
+00:10:44,670 --> 00:10:47,700
+ <font color="#E5E5E5">mari mencoba menambahkan teks normal </font>
+
+210
+00:10:47,700 --> 00:10:49,530
+ pertama mari kita <font color="#E5E5E5">coba menganalisa yang normal </font>
+
+211
+00:10:49,530 --> 00:10:51,510
+ <font color="#CCCCCC">perilaku </font><font color="#E5E5E5">aplikasi ini </font><font color="#CCCCCC">mari kita tambahkan </font>
+
+212
+00:10:51,510 --> 00:10:58,290
+ di sini halo <font color="#E5E5E5">ini adalah klik teks </font><font color="#CCCCCC">sampel </font>
+
+213
+00:10:58,290 --> 00:11:00,990
+ untuk menyimpan entri blog <font color="#CCCCCC">dan mari kita lihat bagaimana web </font>
+
+214
+00:11:00,990 --> 00:11:04,380
+ aplikasi memperlakukan teks kami jika 
+
+215
+00:11:04,380 --> 00:11:06,720
+ gulir <font color="#CCCCCC">ke bawah di sini Anda dapat </font><font color="#E5E5E5">melihat bahwa kami </font>
+
+216
+00:11:06,720 --> 00:11:09,450
+ <font color="#E5E5E5">teks disimpan di </font><font color="#CCCCCC">bagian komentar di sini </font>
+
+217
+00:11:09,450 --> 00:11:11,130
+ Anda <font color="#E5E5E5">dapat melihat halo ini </font><font color="#CCCCCC">adalah contoh teks </font>
+
+218
+00:11:11,130 --> 00:11:15,330
+ sekarang apa yang bisa kita lakukan <font color="#E5E5E5">sekarang mari kita coba </font>
+
+219
+00:11:15,330 --> 00:11:17,730
+ periksa ini <font color="#CCCCCC">mencoba untuk memeriksa elemen </font>
+
+220
+00:11:17,730 --> 00:11:28,020
+ <font color="#CCCCCC">mari kita pergi di sini memeriksa elemen </font><font color="#E5E5E5">mari kita </font><font color="#CCCCCC">lebih </font>
+
+221
+00:11:28,020 --> 00:11:30,500
+ sini 
+
+222
+00:11:36,660 --> 00:11:40,520
+ oke jadi di sini adalah teks kami <font color="#E5E5E5">yang bisa Anda lihat </font>
+
+223
+00:11:40,520 --> 00:11:43,290
+ halo ini adalah contoh teks <font color="#E5E5E5">dan ini </font>
+
+224
+00:11:43,290 --> 00:11:48,930
+ teks <font color="#E5E5E5">sedang diapit dalam </font><font color="#CCCCCC">tag PD </font><font color="#E5E5E5">sekarang </font>
+
+225
+00:11:48,930 --> 00:11:52,860
+ apa yang bisa kita lakukan <font color="#E5E5E5">biarkan saya membuka notepad </font>
+
+226
+00:11:52,860 --> 00:12:00,270
+ file lagi <font color="#E5E5E5">jadi di sini adalah teks kami halo </font>
+
+227
+00:12:00,270 --> 00:12:03,860
+ ini adalah <font color="#E5E5E5">contoh teks yang tertutup oleh </font>
+
+228
+00:12:03,860 --> 00:12:09,030
+ Tag TD sekarang <font color="#E5E5E5">apa yang dapat dilakukan pen tester pena </font>
+
+229
+00:12:09,030 --> 00:12:14,100
+ tester dapat memberikan <font color="#CCCCCC">input seperti ini oke </font>
+
+230
+00:12:14,100 --> 00:12:16,740
+ <font color="#E5E5E5">jadi sekarang ini akan menjadi masukan kami sekarang ini </font>
+
+231
+00:12:16,740 --> 00:12:19,410
+ aplikasi web akan berpikir bahwa ini 
+
+232
+00:12:19,410 --> 00:12:23,340
+ sekarang tag TD ini <font color="#CCCCCC">ditutup di sini </font><font color="#E5E5E5">sekarang </font>
+
+233
+00:12:23,340 --> 00:12:27,870
+ biarkan <font color="#E5E5E5">aku menghapus benda ini dan biarkan aku </font>
+
+234
+00:12:27,870 --> 00:12:31,530
+ cukup <font color="#E5E5E5">salin dan tempelkan di antaranya </font>
+
+235
+00:12:31,530 --> 00:12:33,930
+ <font color="#E5E5E5">dua </font><font color="#CCCCCC">label ini </font><font color="#E5E5E5">dan di sini Anda dapat melihatnya </font>
+
+236
+00:12:33,930 --> 00:12:36,990
+ tag TD kami ditutup <font color="#E5E5E5">di sini pada titik ini </font>
+
+237
+00:12:36,990 --> 00:12:40,350
+ <font color="#E5E5E5">dan setelah tag TD ini kita bisa mencoba menambahkan </font>
+
+238
+00:12:40,350 --> 00:12:43,310
+ beberapa <font color="#CCCCCC">kode JavaScript </font>
+
+239
+00:12:52,450 --> 00:12:57,500
+ <font color="#E5E5E5">oke sekarang jika saya </font><font color="#CCCCCC">hanya menyalin ini </font><font color="#E5E5E5">dan saya </font>
+
+240
+00:12:57,500 --> 00:13:03,230
+ hapus ini dan tempelkan di <font color="#CCCCCC">sini </font><font color="#E5E5E5">sekarang di sini </font>
+
+241
+00:13:03,230 --> 00:13:06,020
+ Anda <font color="#E5E5E5">dapat </font><font color="#CCCCCC">melihat bahwa kami berhasil </font>
+
+242
+00:13:06,020 --> 00:13:08,770
+ dapat <font color="#E5E5E5">menutup tag TD di sini dan </font>
+
+243
+00:13:08,770 --> 00:13:13,520
+ mengeksekusi JavaScript kami sekarang mari salin 
+
+244
+00:13:13,520 --> 00:13:26,170
+ masukan ini <font color="#E5E5E5">dan mari kembali ke kami </font>
+
+245
+00:13:26,170 --> 00:13:31,280
+ menantang dan mari kita tempelkan di <font color="#E5E5E5">sini masukan </font>
+
+246
+00:13:31,280 --> 00:13:35,620
+ <font color="#E5E5E5">dan sekarang klik simpan entri blog </font><font color="#CCCCCC">dan </font>
+
+247
+00:13:36,250 --> 00:13:39,400
+ <font color="#E5E5E5">di sini Anda dapat melihat bahwa kita </font>
+
+248
+00:13:39,400 --> 00:13:42,710
+ berhasil dapat <font color="#E5E5E5">mengeksekusi JavaScript </font>
+
+249
+00:13:42,710 --> 00:13:45,490
+ <font color="#CCCCCC">di halaman ini dan di sini Anda dapat melihat kami </font>
+
+250
+00:13:45,490 --> 00:13:49,220
+ <font color="#E5E5E5">ID sesi bersama dengan cookie jadi jika saya </font>
+
+251
+00:13:49,220 --> 00:13:53,780
+ klik <font color="#CCCCCC">OK </font><font color="#E5E5E5">lalu jika saya gulir </font><font color="#CCCCCC">ke bawah </font><font color="#E5E5E5">dan </font>
+
+252
+00:13:53,780 --> 00:13:56,860
+ mari coba periksa <font color="#E5E5E5">elemen lagi dan </font>
+
+253
+00:13:56,860 --> 00:14:00,080
+ di sini Anda dapat melihat bahwa <font color="#E5E5E5">JavaScript kami di </font>
+
+254
+00:14:00,080 --> 00:14:06,350
+ sekarang menjadi bagian dari halaman ini <font color="#CCCCCC">dan jika saya </font>
+
+255
+00:14:06,350 --> 00:14:08,420
+ gulir ke bawah di <font color="#E5E5E5">sini </font><font color="#CCCCCC">Anda dapat </font><font color="#E5E5E5">melihat itu sekarang </font>
+
+256
+00:14:08,420 --> 00:14:12,980
+ <font color="#CCCCCC">JavaScript kami adalah bagian dari </font><font color="#E5E5E5">halaman ini </font>
+
+257
+00:14:12,980 --> 00:14:14,930
+ <font color="#CCCCCC">baganz itu dan itu disimpan </font><font color="#E5E5E5">dalam </font>
+
+258
+00:14:14,930 --> 00:14:19,700
+ database <font color="#E5E5E5">sekarang mari coba </font><font color="#CCCCCC">buka </font>
+
+259
+00:14:19,700 --> 00:14:22,490
+ <font color="#E5E5E5">halaman lain dan kemudian kami akan kembali </font>
+
+260
+00:14:22,490 --> 00:14:24,470
+ <font color="#E5E5E5">ke halaman ini untuk melihat apakah itu </font>
+
+261
+00:14:24,470 --> 00:14:29,030
+ disimpan dalam <font color="#E5E5E5">database</font><font color="#CCCCCC"> atau tidak ok </font><font color="#E5E5E5">jadi di sini </font>
+
+262
+00:14:29,030 --> 00:14:31,580
+ Anda dapat <font color="#E5E5E5">melihat </font><font color="#CCCCCC">sekarang mari saya biarkan saya mencoba </font>
+
+263
+00:14:31,580 --> 00:14:35,720
+ <font color="#E5E5E5">segarkan halaman ini dan di </font><font color="#CCCCCC">sini Anda </font><font color="#E5E5E5">akan </font><font color="#CCCCCC">melihat </font>
+
+264
+00:14:35,720 --> 00:14:38,120
+ bahwa <font color="#CCCCCC">kode javascript ini sedang </font>
+
+265
+00:14:38,120 --> 00:14:40,490
+ <font color="#E5E5E5">dieksekusi lagi dan lagi karena sekarang </font>
+
+266
+00:14:40,490 --> 00:14:44,140
+ kali ini disimpan <font color="#E5E5E5">di database </font><font color="#CCCCCC">jadi </font>
+
+267
+00:14:44,140 --> 00:14:47,000
+ <font color="#CCCCCC">sekarang di </font><font color="#E5E5E5">video </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">kami telah membahasnya </font>
+
+268
+00:14:47,000 --> 00:14:48,020
+ apa itu scripting lintas situs 
+
+269
+00:14:48,020 --> 00:14:49,610
+ kerentanan <font color="#E5E5E5">itu tipe yang berbeda </font>
+
+270
+00:14:49,610 --> 00:00:00,000
+ <font color="#E5E5E5">terima kasih telah menonton video ini </font>
+

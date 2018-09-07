@@ -1,0 +1,360 @@
+1
+00:00:00,089 --> 00:00:03,030
+hello everyone now let's see how we can
+
+2
+00:00:03,030 --> 00:00:07,890
+<font color="#CCCCCC">take our target or a website offline so</font>
+
+3
+00:00:07,890 --> 00:00:09,900
+in<font color="#CCCCCC"> order to take our target or a website</font>
+
+4
+00:00:09,900 --> 00:00:12,690
+<font color="#E5E5E5">into</font><font color="#CCCCCC"> our system</font><font color="#E5E5E5"> we will use this</font>
+
+5
+00:00:12,690 --> 00:00:15,330
+software<font color="#CCCCCC"> st track</font><font color="#E5E5E5"> so st track is</font><font color="#CCCCCC"> the</font>
+
+6
+00:00:15,330 --> 00:00:18,240
+<font color="#E5E5E5">website copier which is used to copy the</font>
+
+7
+00:00:18,240 --> 00:00:20,220
+entire content of<font color="#E5E5E5"> the website including</font>
+
+8
+00:00:20,220 --> 00:00:24,119
+<font color="#CCCCCC">JavaScript pages CSS and HTML pages so</font>
+
+9
+00:00:24,119 --> 00:00:26,220
+as a penetration tester<font color="#CCCCCC"> sometimes we</font>
+
+10
+00:00:26,220 --> 00:00:28,320
+faced<font color="#E5E5E5"> our conditions where</font><font color="#CCCCCC"> we have to</font>
+
+11
+00:00:28,320 --> 00:00:30,599
+test<font color="#E5E5E5"> the website but not</font><font color="#CCCCCC"> on a production</font>
+
+12
+00:00:30,599 --> 00:00:33,630
+<font color="#E5E5E5">server so as a penetration tester we</font>
+
+13
+00:00:33,630 --> 00:00:35,760
+will use this tool in order to copy our
+
+14
+00:00:35,760 --> 00:00:37,950
+target or a<font color="#CCCCCC"> website</font><font color="#E5E5E5"> into our</font><font color="#CCCCCC"> local</font>
+
+15
+00:00:37,950 --> 00:00:40,140
+system<font color="#CCCCCC"> so once we copy the website</font><font color="#E5E5E5"> we</font>
+
+16
+00:00:40,140 --> 00:00:42,329
+<font color="#CCCCCC">can host that files</font><font color="#E5E5E5"> into our</font><font color="#CCCCCC"> local</font><font color="#E5E5E5"> host</font>
+
+17
+00:00:42,329 --> 00:00:45,930
+server and we will test<font color="#E5E5E5"> that website now</font>
+
+18
+00:00:45,930 --> 00:00:48,210
+let's see<font color="#E5E5E5"> that how we can use</font><font color="#CCCCCC"> HT</font><font color="#E5E5E5"> track</font>
+
+19
+00:00:48,210 --> 00:00:52,320
+in our Kali Linux<font color="#CCCCCC"> now let's see</font><font color="#E5E5E5"> that how</font>
+
+20
+00:00:52,320 --> 00:00:55,469
+we<font color="#CCCCCC"> can use st track</font><font color="#E5E5E5"> so as</font><font color="#CCCCCC"> i told you</font>
+
+21
+00:00:55,469 --> 00:00:57,989
+<font color="#E5E5E5">earlier that st track is available</font><font color="#CCCCCC"> for</font>
+
+22
+00:00:57,989 --> 00:01:01,770
+linux<font color="#E5E5E5"> as well as windows so st track is</font>
+
+23
+00:01:01,770 --> 00:01:03,870
+by<font color="#CCCCCC"> default or a</font><font color="#E5E5E5"> prebuilt</font>
+
+24
+00:01:03,870 --> 00:01:06,270
+installed in<font color="#E5E5E5"> kali linux so we have to</font>
+
+25
+00:01:06,270 --> 00:01:09,180
+start it so<font color="#CCCCCC"> here you</font><font color="#E5E5E5"> can see that right</font>
+
+26
+00:01:09,180 --> 00:01:11,670
+<font color="#CCCCCC">now I am inside my Kali Linux instance</font>
+
+27
+00:01:11,670 --> 00:01:14,939
+<font color="#E5E5E5">so in</font><font color="#CCCCCC"> order to start</font><font color="#E5E5E5"> st track we have to</font>
+
+28
+00:01:14,939 --> 00:01:17,820
+open<font color="#E5E5E5"> the</font><font color="#CCCCCC"> terminal so just click over</font>
+
+29
+00:01:17,820 --> 00:01:21,360
+<font color="#E5E5E5">here and</font><font color="#CCCCCC"> you can see the terminal</font><font color="#E5E5E5"> now</font>
+
+30
+00:01:21,360 --> 00:01:25,110
+just<font color="#E5E5E5"> simply type here as T track and hit</font>
+
+31
+00:01:25,110 --> 00:01:28,439
+enter<font color="#CCCCCC"> so once we hit enter here you</font><font color="#E5E5E5"> can</font>
+
+32
+00:01:28,439 --> 00:01:32,100
+see that right<font color="#CCCCCC"> now we are inside the st</font>
+
+33
+00:01:32,100 --> 00:01:34,500
+track<font color="#CCCCCC"> website</font><font color="#E5E5E5"> copier so the first of all</font>
+
+34
+00:01:34,500 --> 00:01:37,799
+it asks<font color="#CCCCCC"> for the</font><font color="#E5E5E5"> project name so let</font><font color="#CCCCCC"> us</font>
+
+35
+00:01:37,799 --> 00:01:42,329
+give the project<font color="#CCCCCC"> name called as demo ok</font>
+
+36
+00:01:42,329 --> 00:01:45,390
+<font color="#E5E5E5">now it asks for the directory in which</font>
+
+37
+00:01:45,390 --> 00:01:49,110
+it will store the website<font color="#E5E5E5"> so if you want</font>
+
+38
+00:01:49,110 --> 00:01:51,180
+to<font color="#E5E5E5"> give a</font><font color="#CCCCCC"> particular directory</font><font color="#E5E5E5"> in which</font>
+
+39
+00:01:51,180 --> 00:01:53,610
+you want<font color="#CCCCCC"> to save</font><font color="#E5E5E5"> the copied website and</font>
+
+40
+00:01:53,610 --> 00:01:55,530
+then you can<font color="#E5E5E5"> otherwise you can</font><font color="#CCCCCC"> just</font>
+
+41
+00:01:55,530 --> 00:01:59,040
+leave empty<font color="#E5E5E5"> and hit enter so</font><font color="#CCCCCC"> if you just</font>
+
+42
+00:01:59,040 --> 00:02:01,799
+leave<font color="#E5E5E5"> this empty then by default it will</font>
+
+43
+00:02:01,799 --> 00:02:06,180
+save<font color="#E5E5E5"> all the website files in this</font>
+
+44
+00:02:06,180 --> 00:02:09,149
+directory slash<font color="#CCCCCC"> root</font><font color="#E5E5E5"> slash</font><font color="#CCCCCC"> web sites now</font>
+
+45
+00:02:09,149 --> 00:02:13,200
+<font color="#CCCCCC">here we have to</font><font color="#E5E5E5"> add the URL so let me</font>
+
+46
+00:02:13,200 --> 00:02:15,590
+add a URL
+
+47
+00:02:16,270 --> 00:02:21,830
+and let's hit<font color="#E5E5E5"> enter</font><font color="#CCCCCC"> okay</font>
+
+48
+00:02:21,830 --> 00:02:26,060
+so now it<font color="#E5E5E5"> give us the</font><font color="#CCCCCC"> Action List</font><font color="#E5E5E5"> so the</font>
+
+49
+00:02:26,060 --> 00:02:28,430
+first one is<font color="#CCCCCC"> Mirror website</font><font color="#E5E5E5"> then the</font>
+
+50
+00:02:28,430 --> 00:02:30,590
+second<font color="#E5E5E5"> one is mirror website with Vizard</font>
+
+51
+00:02:30,590 --> 00:02:33,140
+<font color="#E5E5E5">then if you want to just fetch out all</font>
+
+52
+00:02:33,140 --> 00:02:35,660
+the<font color="#CCCCCC"> URLs</font><font color="#E5E5E5"> and if you just want</font><font color="#CCCCCC"> to fetch</font>
+
+53
+00:02:35,660 --> 00:02:38,480
+out the test<font color="#E5E5E5"> links but here we</font><font color="#CCCCCC"> are</font>
+
+54
+00:02:38,480 --> 00:02:41,060
+<font color="#CCCCCC">interested</font><font color="#E5E5E5"> and mirroring the website so</font>
+
+55
+00:02:41,060 --> 00:02:43,970
+I'll<font color="#E5E5E5"> select the first one and let's hit</font>
+
+56
+00:02:43,970 --> 00:02:47,239
+<font color="#CCCCCC">enter so if you want to give a proxy URL</font>
+
+57
+00:02:47,239 --> 00:02:49,250
+<font color="#CCCCCC">and then you can</font><font color="#E5E5E5"> otherwise leave it</font>
+
+58
+00:02:49,250 --> 00:02:52,310
+empty<font color="#E5E5E5"> leave it also empty</font><font color="#CCCCCC"> hit</font><font color="#E5E5E5"> enter</font>
+
+59
+00:02:52,310 --> 00:02:55,580
+hit enter<font color="#CCCCCC"> again okay</font><font color="#E5E5E5"> so now ready to</font>
+
+60
+00:02:55,580 --> 00:02:57,709
+<font color="#E5E5E5">launch the mirror now if you are ready</font>
+
+61
+00:02:57,709 --> 00:03:01,069
+<font color="#CCCCCC">to launch the website</font><font color="#E5E5E5"> copier</font><font color="#CCCCCC"> then just</font>
+
+62
+00:03:01,069 --> 00:03:04,850
+<font color="#E5E5E5">write</font><font color="#CCCCCC"> down here</font><font color="#E5E5E5"> why and hit enter</font><font color="#CCCCCC"> so you</font>
+
+63
+00:03:04,850 --> 00:03:07,069
+can just see here<font color="#E5E5E5"> that you are running</font>
+
+64
+00:03:07,069 --> 00:03:09,739
+<font color="#E5E5E5">this program as a</font><font color="#CCCCCC"> root</font><font color="#E5E5E5"> okay thanks for</font>
+
+65
+00:03:09,739 --> 00:03:10,970
+<font color="#CCCCCC">using s3 tracks</font>
+
+66
+00:03:10,970 --> 00:03:14,630
+so now<font color="#E5E5E5"> st track has copied this website</font>
+
+67
+00:03:14,630 --> 00:03:18,019
+modern<font color="#CCCCCC"> indian babies names calm now</font>
+
+68
+00:03:18,019 --> 00:03:20,000
+let's go to<font color="#E5E5E5"> that directory slash</font><font color="#CCCCCC"> root</font>
+
+69
+00:03:20,000 --> 00:03:22,970
+slash website to check<font color="#E5E5E5"> whether</font><font color="#CCCCCC"> website</font>
+
+70
+00:03:22,970 --> 00:03:25,730
+has<font color="#CCCCCC"> been copied or not</font><font color="#E5E5E5"> so let me just go</font>
+
+71
+00:03:25,730 --> 00:03:28,340
+there first<font color="#E5E5E5"> of all let's see that where</font>
+
+72
+00:03:28,340 --> 00:03:31,310
+we are<font color="#E5E5E5"> so we are inside root let's do LS</font>
+
+73
+00:03:31,310 --> 00:03:34,790
+so here is that<font color="#E5E5E5"> website directory</font>
+
+74
+00:03:34,790 --> 00:03:38,690
+hit<font color="#E5E5E5"> enter do LS so here is the</font><font color="#CCCCCC"> project</font>
+
+75
+00:03:38,690 --> 00:03:42,549
+name demo<font color="#E5E5E5"> so let's go to demo directory</font>
+
+76
+00:03:42,549 --> 00:03:47,540
+<font color="#CCCCCC">hit</font><font color="#E5E5E5"> enter again LS so here you can see a</font>
+
+77
+00:03:47,540 --> 00:03:51,410
+few<font color="#E5E5E5"> details like</font><font color="#CCCCCC"> cache a log log dot txt</font>
+
+78
+00:03:51,410 --> 00:03:55,180
+<font color="#E5E5E5">and here is one directory called as</font>
+
+79
+00:03:55,180 --> 00:03:58,280
+modern Indian babies<font color="#E5E5E5"> named</font><font color="#CCCCCC"> comm</font><font color="#E5E5E5"> which</font>
+
+80
+00:03:58,280 --> 00:04:02,600
+was our<font color="#E5E5E5"> target so let's go there hit</font>
+
+81
+00:04:02,600 --> 00:04:06,650
+<font color="#E5E5E5">enter and here you can see that it has</font>
+
+82
+00:04:06,650 --> 00:04:10,730
+fetched<font color="#CCCCCC"> and copied</font><font color="#E5E5E5"> its index page so</font>
+
+83
+00:04:10,730 --> 00:04:13,850
+let's open this page in Firefox<font color="#E5E5E5"> and</font>
+
+84
+00:04:13,850 --> 00:04:20,120
+<font color="#E5E5E5">let's see how it looks like okay so here</font>
+
+85
+00:04:20,120 --> 00:04:24,080
+<font color="#E5E5E5">you can see that it has copied this page</font>
+
+86
+00:04:24,080 --> 00:04:27,870
+along with<font color="#CCCCCC"> the JavaScript and CSS files</font>
+
+87
+00:04:27,870 --> 00:04:29,940
+so here you can<font color="#CCCCCC"> see and you can also</font>
+
+88
+00:04:29,940 --> 00:04:38,610
+check the<font color="#E5E5E5"> part so this was all</font><font color="#CCCCCC"> about</font><font color="#E5E5E5"> a</font>
+
+89
+00:04:38,610 --> 00:04:41,040
+steed rack<font color="#E5E5E5"> so thanks for watching</font><font color="#CCCCCC"> this</font>
+
+90
+00:04:41,040 --> 00:00:00,000
+video
+

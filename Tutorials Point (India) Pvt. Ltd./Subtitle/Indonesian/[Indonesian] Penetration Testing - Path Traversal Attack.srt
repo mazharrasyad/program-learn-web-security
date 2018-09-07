@@ -1,0 +1,496 @@
+1
+00:00:00,089 --> 00:00:02,939
+ Halo semuanya <font color="#CCCCCC">sekarang mari kita bicara tentang </font><font color="#E5E5E5">jalan </font>
+
+2
+00:00:02,939 --> 00:00:05,940
+ serangan traversal <font color="#E5E5E5">sehingga tag path diversity </font>
+
+3
+00:00:05,940 --> 00:00:08,280
+ <font color="#E5E5E5">juga disebut sebagai direktori traversal </font>
+
+4
+00:00:08,280 --> 00:00:11,130
+ menyerang <font color="#E5E5E5">begitu dalam serangan </font><font color="#CCCCCC">semacam </font><font color="#E5E5E5">ini </font>
+
+5
+00:00:11,130 --> 00:00:13,769
+ penjelajahan direktori <font color="#E5E5E5">diizinkan pada a </font>
+
+6
+00:00:13,769 --> 00:00:16,680
+ server web jauh dan jika direktori 
+
+7
+00:00:16,680 --> 00:00:19,109
+ browsing diizinkan di server <font color="#E5E5E5">kemudian </font>
+
+8
+00:00:19,109 --> 00:00:21,270
+ apa yang penyerang dapat lakukan <font color="#CCCCCC">penyerang </font>
+
+9
+00:00:21,270 --> 00:00:24,600
+ dapat mencoba mengakses <font color="#E5E5E5">file dari yang </font><font color="#CCCCCC">berbeda </font>
+
+10
+00:00:24,600 --> 00:00:27,480
+ folder <font color="#CCCCCC">atau dari direktori lain </font>
+
+11
+00:00:27,480 --> 00:00:30,269
+ jadi <font color="#E5E5E5">tujuan utama penyerang bisa </font>
+
+12
+00:00:30,269 --> 00:00:32,460
+ mencoba mengakses <font color="#E5E5E5">file yang ada </font>
+
+13
+00:00:32,460 --> 00:00:35,219
+ hadir di luar <font color="#E5E5E5">direktori root atau </font>
+
+14
+00:00:35,219 --> 00:00:37,710
+ di luar direktori home <font color="#CCCCCC">dari web itu </font>
+
+15
+00:00:37,710 --> 00:00:40,140
+ server <font color="#E5E5E5">sehingga file-file ini adalah server </font>
+
+16
+00:00:40,140 --> 00:00:42,780
+ file internal yang tidak dapat diakses 
+
+17
+00:00:42,780 --> 00:00:45,809
+ oleh pengguna <font color="#E5E5E5">dengan menggunakan jenis ini </font>
+
+18
+00:00:45,809 --> 00:00:48,000
+ serangan <font color="#E5E5E5">jalur sel teror menyerang </font>
+
+19
+00:00:48,000 --> 00:00:50,190
+ penyerang dapat mengakses file-file ini <font color="#E5E5E5">yang mana </font>
+
+20
+00:00:50,190 --> 00:00:52,710
+ hasil <font color="#E5E5E5">kompromi penuh sistem sekarang </font>
+
+21
+00:00:52,710 --> 00:00:54,449
+ mari kita lihat bagaimana jalur traversal attack 
+
+22
+00:00:54,449 --> 00:00:57,809
+ bekerja sekarang mari kita lihat bagaimana jalan traversal 
+
+23
+00:00:57,809 --> 00:01:03,300
+ <font color="#E5E5E5">atau serangan penjelajahan direktori berfungsi demikian </font>
+
+24
+00:01:03,300 --> 00:01:04,830
+ di sini Anda dapat melihat bahwa sekarang <font color="#CCCCCC">aku </font>
+
+25
+00:01:04,830 --> 00:01:07,229
+ <font color="#E5E5E5">menyuarakan aplikasi web </font><font color="#CCCCCC">jadi mari kita </font><font color="#E5E5E5">pergi </font>
+
+26
+00:01:07,229 --> 00:01:09,570
+ di sini <font color="#CCCCCC">OS dua puluh tiga belas dan di sini Anda </font>
+
+27
+00:01:09,570 --> 00:01:11,340
+ akan <font color="#CCCCCC">menemukan kategori </font><font color="#E5E5E5">keamanan </font><font color="#CCCCCC">Nona </font>
+
+28
+00:01:11,340 --> 00:01:13,890
+ konfigurasi <font color="#E5E5E5">dan di dalamnya </font><font color="#CCCCCC">ada satu </font>
+
+29
+00:01:13,890 --> 00:01:16,259
+ tantang <font color="#E5E5E5">penjelajahan direktori </font><font color="#CCCCCC">biar saya saja </font>
+
+30
+00:01:16,259 --> 00:01:21,420
+ buka <font color="#E5E5E5">dan di sini Anda akan </font><font color="#CCCCCC">melihat apa </font>
+
+31
+00:01:21,420 --> 00:01:23,580
+ itu mengatakan begitu mengatakan bahwa beberapa <font color="#E5E5E5">web </font>
+
+32
+00:01:23,580 --> 00:01:26,070
+ server sebenarnya salah konfigurasi 
+
+33
+00:01:26,070 --> 00:01:28,409
+ memungkinkan penjelajahan direktori <font color="#E5E5E5">yang berarti </font>
+
+34
+00:01:28,409 --> 00:01:30,420
+ dan sebagian besar aplikasi web dari 
+
+35
+00:01:30,420 --> 00:01:32,430
+ server sebenarnya salah konfigurasi 
+
+36
+00:01:32,430 --> 00:01:34,890
+ sebenarnya memungkinkan pengguna untuk <font color="#CCCCCC">mengaksesnya </font>
+
+37
+00:01:34,890 --> 00:01:37,740
+ direktori dan untuk <font color="#CCCCCC">merebut itu apa </font>
+
+38
+00:01:37,740 --> 00:01:39,270
+ <font color="#E5E5E5">di dalam direktori dan apa yang ada </font>
+
+39
+00:01:39,270 --> 00:01:41,159
+ file mereka <font color="#E5E5E5">jadi sebagian besar web </font>
+
+40
+00:01:41,159 --> 00:01:43,740
+ aplikasi telah menonaktifkan <font color="#E5E5E5">direktori </font>
+
+41
+00:01:43,740 --> 00:01:45,540
+ menjelajah <font color="#E5E5E5">sedangkan sebagian besar web </font>
+
+42
+00:01:45,540 --> 00:01:48,090
+ aplikasi telah mengaktifkan direktori 
+
+43
+00:01:48,090 --> 00:01:50,759
+ browsing <font color="#E5E5E5">sekarang mari kita lihat </font><font color="#CCCCCC">apakah ini </font>
+
+44
+00:01:50,759 --> 00:01:53,009
+ <font color="#CCCCCC">memutilasi aplikasi web telah diaktifkan </font>
+
+45
+00:01:53,009 --> 00:01:55,530
+ <font color="#E5E5E5">penjelajahan direktori atau menonaktifkan </font>
+
+46
+00:01:55,530 --> 00:01:58,920
+ penjelajahan direktori <font color="#CCCCCC">jadi pentester </font>
+
+47
+00:01:58,920 --> 00:02:00,329
+ <font color="#E5E5E5">apa yang bisa dilakukan di sana berbeda </font>
+
+48
+00:02:00,329 --> 00:02:02,310
+ <font color="#E5E5E5">teknik berbeda </font><font color="#CCCCCC">untuk ditemukan </font>
+
+49
+00:02:02,310 --> 00:02:03,899
+ apakah penjelajahan direktori atau 
+
+50
+00:02:03,899 --> 00:02:05,549
+ serangan traversal jalan <font color="#CCCCCC">sebenarnya </font>
+
+51
+00:02:05,549 --> 00:02:08,399
+ diaktifkan atau tidak <font color="#CCCCCC">jadi </font><font color="#E5E5E5">teknik pertama adalah </font>
+
+52
+00:02:08,399 --> 00:02:10,889
+ <font color="#E5E5E5">menggunakan </font><font color="#CCCCCC">sendawa </font><font color="#E5E5E5">karena di </font>
+
+53
+00:02:10,889 --> 00:02:12,970
+ video terakhir saya tunjukkan <font color="#CCCCCC">itu </font>
+
+54
+00:02:12,970 --> 00:02:15,730
+ <font color="#E5E5E5">Kali Linux </font><font color="#CCCCCC">mengandung banyak </font><font color="#E5E5E5">kata </font>
+
+55
+00:02:15,730 --> 00:02:17,380
+ daftar file yang berisi <font color="#E5E5E5">banyak </font><font color="#CCCCCC">pembusukan </font>
+
+56
+00:02:17,380 --> 00:02:19,750
+ yang berisi <font color="#CCCCCC">banyak </font><font color="#E5E5E5">kamus kata </font><font color="#CCCCCC">- </font><font color="#E5E5E5">kata </font>
+
+57
+00:02:19,750 --> 00:02:22,240
+ kata-kata <font color="#E5E5E5">sehingga seseorang dapat mengkonfigurasi </font><font color="#CCCCCC">itu Bob </font>
+
+58
+00:02:22,240 --> 00:02:25,000
+ <font color="#E5E5E5">modul intruder </font><font color="#CCCCCC">suite </font><font color="#E5E5E5">untuk menyerang </font>
+
+59
+00:02:25,000 --> 00:02:26,740
+ <font color="#E5E5E5">aplikasi server dan mencoba </font><font color="#CCCCCC">menemukan </font>
+
+60
+00:02:26,740 --> 00:02:29,620
+ <font color="#CCCCCC">direktori penting dan kemudian kami </font>
+
+61
+00:02:29,620 --> 00:02:31,000
+ akan melihat <font color="#E5E5E5">bahwa apakah direktori itu </font>
+
+62
+00:02:31,000 --> 00:02:32,710
+ hadir atau tidak <font color="#CCCCCC">yang kedua adalah </font>
+
+63
+00:02:32,710 --> 00:02:35,730
+ bahwa <font color="#E5E5E5">kita hanya bisa menebak </font>
+
+64
+00:02:35,730 --> 00:02:38,080
+ nama direktori dan kita <font color="#E5E5E5">akan melihat itu </font>
+
+65
+00:02:38,080 --> 00:02:40,240
+ <font color="#E5E5E5">apakah direktori yang berisi daftar keluar semua </font>
+
+66
+00:02:40,240 --> 00:02:42,400
+ file untuk kami atau <font color="#E5E5E5">tidak dan jika direktori itu </font>
+
+67
+00:02:42,400 --> 00:02:44,470
+ hadir dan <font color="#E5E5E5">daftar semua </font>
+
+68
+00:02:44,470 --> 00:02:46,690
+ file untuk <font color="#E5E5E5">kami yang berarti web ini </font>
+
+69
+00:02:46,690 --> 00:02:48,540
+ aplikasi <font color="#CCCCCC">adalah penjelajahan direktori </font>
+
+70
+00:02:48,540 --> 00:02:51,610
+ <font color="#CCCCCC">runnable </font><font color="#E5E5E5">jadi jika saya hanya menghapus hal ini </font>
+
+71
+00:02:51,610 --> 00:02:54,040
+ jadi di sini Anda <font color="#E5E5E5">akan melihat bahwa di sini ada satu </font>
+
+72
+00:02:54,040 --> 00:02:56,380
+ direktori <font color="#CCCCCC">bermutasi </font><font color="#E5E5E5">dan jika saya baru saja memukul </font>
+
+73
+00:02:56,380 --> 00:02:59,710
+ masukkan, <font color="#E5E5E5">kita hanya akan diminta di dalam </font>
+
+74
+00:02:59,710 --> 00:03:03,430
+ <font color="#E5E5E5">indeks ini dot file PHP sekarang menjadi palsu </font>
+
+75
+00:03:03,430 --> 00:03:05,830
+ tebak pasti ada gambar 
+
+76
+00:03:05,830 --> 00:03:07,840
+ direktori di dalam ini <font color="#E5E5E5">memutilasi web </font>
+
+77
+00:03:07,840 --> 00:03:09,520
+ aplikasi <font color="#CCCCCC">dari </font><font color="#E5E5E5">mana gambar-gambar ini </font>
+
+78
+00:03:09,520 --> 00:03:12,610
+ <font color="#E5E5E5">ikon </font><font color="#CCCCCC">- </font><font color="#E5E5E5">ikon ini berasal jadi sekarang mari </font>
+
+79
+00:03:12,610 --> 00:03:14,140
+ saya <font color="#CCCCCC">hanya menulis </font><font color="#E5E5E5">di sini gambar dan mari </font>
+
+80
+00:03:14,140 --> 00:03:15,790
+ lihat apakah direktori itu adalah 
+
+81
+00:03:15,790 --> 00:03:18,489
+ <font color="#E5E5E5">gambar hadir atau tidak </font><font color="#CCCCCC">dan jika saya </font><font color="#E5E5E5">hanya memukul </font>
+
+82
+00:03:18,489 --> 00:03:21,280
+ masukkan di <font color="#CCCCCC">sini Anda </font><font color="#E5E5E5">akan melihat bahwa </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">mampu </font>
+
+83
+00:03:21,280 --> 00:03:24,220
+ untuk mengakses direktori gambar ini dan <font color="#CCCCCC">di sini </font>
+
+84
+00:03:24,220 --> 00:03:27,040
+ Anda <font color="#CCCCCC">akan </font><font color="#E5E5E5">melihat itu semua file jadi jika saya </font>
+
+85
+00:03:27,040 --> 00:03:29,800
+ buka <font color="#E5E5E5">saja file di sini, Anda akan melihat </font>
+
+86
+00:03:29,800 --> 00:03:33,489
+ <font color="#E5E5E5">file itu Anda bisa kembali begitu saja di sini </font>
+
+87
+00:03:33,489 --> 00:03:34,630
+ Anda dapat melihat bahwa <font color="#CCCCCC">mutasi </font><font color="#E5E5E5">ini </font>
+
+88
+00:03:34,630 --> 00:03:36,250
+ <font color="#E5E5E5">aplikasi yang benar-benar setiap kali </font><font color="#CCCCCC">dari </font>
+
+89
+00:03:36,250 --> 00:03:39,610
+ penjelajahan direktori <font color="#E5E5E5">jadi alih-alih gambar </font>
+
+90
+00:03:39,610 --> 00:03:44,440
+ <font color="#E5E5E5">mari coba tebak satu lagi </font>
+
+91
+00:03:44,440 --> 00:03:46,989
+ direktori yang disebut <font color="#E5E5E5">sebagai termasuk dan jika saya </font>
+
+92
+00:03:46,989 --> 00:03:49,950
+ <font color="#E5E5E5">tekan saja enter di </font><font color="#CCCCCC">sini </font><font color="#E5E5E5">Anda akan melihat itu </font>
+
+93
+00:03:49,950 --> 00:03:52,450
+ <font color="#CCCCCC">file yang ada di dalam </font>
+
+94
+00:03:52,450 --> 00:03:55,209
+ termasuk direktori <font color="#CCCCCC">beberapa </font><font color="#E5E5E5">file PHP beberapa </font>
+
+95
+00:03:55,209 --> 00:03:59,590
+ file konfigurasi jadi apa yang bisa <font color="#CCCCCC">dilakukan </font>
+
+96
+00:03:59,590 --> 00:04:01,630
+ <font color="#CCCCCC">adalah salah satu </font><font color="#E5E5E5">dapat mengkonfigurasi suite Bob-nya </font>
+
+97
+00:04:01,630 --> 00:04:04,420
+ menyerang <font color="#E5E5E5">aplikasi web ini dengan </font><font color="#CCCCCC">menggunakan </font>
+
+98
+00:04:04,420 --> 00:04:07,750
+ <font color="#E5E5E5">daftar kata sekarang biar </font><font color="#CCCCCC">saya tunjukkan </font>
+
+99
+00:04:07,750 --> 00:04:10,780
+ beberapa <font color="#E5E5E5">daftar kata di Kali Linux yang mana </font>
+
+100
+00:04:10,780 --> 00:04:15,370
+ dapat <font color="#CCCCCC">menggunakan sehingga daftar kata hadir </font>
+
+101
+00:04:15,370 --> 00:04:18,030
+ <font color="#E5E5E5">di dalam direktori ini </font>
+
+102
+00:04:21,700 --> 00:04:24,680
+ di sini Anda dapat melihat <font color="#E5E5E5">hei jadi di sini Anda bisa melihat </font>
+
+103
+00:04:24,680 --> 00:04:27,220
+ ada dua direktori <font color="#CCCCCC">dir dan dir </font>
+
+104
+00:04:27,220 --> 00:04:30,080
+ <font color="#CCCCCC">Buster </font><font color="#E5E5E5">itu </font><font color="#CCCCCC">pelacak </font><font color="#E5E5E5">direktori biarkan aku </font>
+
+105
+00:04:30,080 --> 00:04:35,690
+ hanya pergi di <font color="#CCCCCC">sini dan di </font><font color="#E5E5E5">sini </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">akan melihat di sana </font>
+
+106
+00:04:35,690 --> 00:04:38,840
+ <font color="#CCCCCC">banyak file </font><font color="#E5E5E5">sekarang biar saya </font><font color="#CCCCCC">tambahkan saja </font>
+
+107
+00:04:38,840 --> 00:04:42,320
+ itu file dot txt besar ini <font color="#E5E5E5">dan mari kita lihat </font>
+
+108
+00:04:42,320 --> 00:04:45,170
+ seperti apa direktori <font color="#E5E5E5">atau file </font>
+
+109
+00:04:45,170 --> 00:04:47,210
+ nama <font color="#CCCCCC">- nama yang ada di sini Anda akan melihat banyak </font>
+
+110
+00:04:47,210 --> 00:04:50,300
+ nama file atau nama direktori yang 
+
+111
+00:04:50,300 --> 00:04:55,340
+ yang bisa <font color="#E5E5E5">digunakan jadi biarkan aku mencarinya </font>
+
+112
+00:04:55,340 --> 00:04:58,340
+ seperti admin di sini <font color="#E5E5E5">Anda akan melihat </font>
+
+113
+00:04:58,340 --> 00:05:01,070
+ nama direktori <font color="#CCCCCC">adalah instal admin dan sebagainya </font>
+
+114
+00:05:01,070 --> 00:05:03,670
+ untuk <font color="#E5E5E5">seterusnya </font>
+
+115
+00:05:05,080 --> 00:05:08,680
+ jadi ini semua tentang <font color="#E5E5E5">jalur traversal atau </font>
+
+116
+00:05:08,680 --> 00:05:11,120
+ serangan penjelajahan direktori <font color="#E5E5E5">sehingga sebagai </font>
+
+117
+00:05:11,120 --> 00:05:15,470
+ tester penetrasi atau sebagai web yang aman 
+
+118
+00:05:15,470 --> 00:05:17,930
+ pengembang saya sarankan Anda untuk menyenangkan 
+
+119
+00:05:17,930 --> 00:05:20,450
+ nonaktifkan penjelajahan direktori <font color="#CCCCCC">di web Anda </font>
+
+120
+00:05:20,450 --> 00:05:22,640
+ aplikasi <font color="#CCCCCC">jadi dalam video ini yang </font><font color="#E5E5E5">kita miliki </font>
+
+121
+00:05:22,640 --> 00:05:25,220
+ tertutup <font color="#E5E5E5">bahwa apa itu jalan traversal </font>
+
+122
+00:05:25,220 --> 00:05:28,670
+ serangan dan <font color="#CCCCCC">diksi Reg dan direktori </font>
+
+123
+00:05:28,670 --> 00:05:31,970
+ <font color="#E5E5E5">masalah browsing jadi terima kasih sudah </font><font color="#CCCCCC">menonton </font>
+
+124
+00:05:31,970 --> 00:00:00,000
+ video ini 
+

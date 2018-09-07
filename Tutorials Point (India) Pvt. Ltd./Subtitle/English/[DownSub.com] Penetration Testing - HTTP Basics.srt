@@ -1,0 +1,556 @@
+1
+00:00:00,060 --> 00:00:03,600
+hello everyone<font color="#E5E5E5"> now let's talk about HTTP</font>
+
+2
+00:00:03,600 --> 00:00:06,779
+protocol<font color="#CCCCCC"> so HTTP stands</font><font color="#E5E5E5"> for hypertext</font>
+
+3
+00:00:06,779 --> 00:00:08,039
+Transfer Protocol
+
+4
+00:00:08,039 --> 00:00:10,139
+so<font color="#E5E5E5"> it's a client-server model in which a</font>
+
+5
+00:00:10,139 --> 00:00:11,880
+client<font color="#CCCCCC"> requests a particular resource</font>
+
+6
+00:00:11,880 --> 00:00:14,009
+from<font color="#E5E5E5"> the server whereas the server</font>
+
+7
+00:00:14,009 --> 00:00:16,650
+serves that resource<font color="#E5E5E5"> to the client so</font>
+
+8
+00:00:16,650 --> 00:00:19,199
+HTTP protocol is<font color="#CCCCCC"> used</font><font color="#E5E5E5"> for accessing a</font>
+
+9
+00:00:19,199 --> 00:00:22,350
+resource on the<font color="#CCCCCC"> internet and it is used</font>
+
+10
+00:00:22,350 --> 00:00:23,880
+to<font color="#E5E5E5"> request a resource from</font><font color="#CCCCCC"> the server</font>
+
+11
+00:00:23,880 --> 00:00:26,670
+<font color="#E5E5E5">and here you can see the HTTP working so</font>
+
+12
+00:00:26,670 --> 00:00:29,250
+here is our<font color="#E5E5E5"> client here is our server so</font>
+
+13
+00:00:29,250 --> 00:00:30,900
+client<font color="#E5E5E5"> requests a particular resource</font>
+
+14
+00:00:30,900 --> 00:00:34,290
+<font color="#E5E5E5">and the server will serve that resource</font>
+
+15
+00:00:34,290 --> 00:00:37,320
+<font color="#E5E5E5">to the client now let's talk about HTTP</font>
+
+16
+00:00:37,320 --> 00:00:39,719
+versions<font color="#E5E5E5"> so there are two HTTP versions</font>
+
+17
+00:00:39,719 --> 00:00:45,120
+HTTP 1.0 and HTTP 1.1<font color="#E5E5E5"> so HTTP 1.0 is the</font>
+
+18
+00:00:45,120 --> 00:00:45,690
+older one
+
+19
+00:00:45,690 --> 00:00:48,989
+<font color="#E5E5E5">whereas HTTP 1.1 is a newer one and used</font>
+
+20
+00:00:48,989 --> 00:00:52,980
+nowadays<font color="#E5E5E5"> so in HTTP 1.0 we can request</font>
+
+21
+00:00:52,980 --> 00:00:55,829
+<font color="#CCCCCC">only one resource</font><font color="#E5E5E5"> in a</font><font color="#CCCCCC"> 1</font><font color="#E5E5E5"> connection</font>
+
+22
+00:00:55,829 --> 00:00:58,949
+whereas by using HTTP 1.1 version<font color="#E5E5E5"> we can</font>
+
+23
+00:00:58,949 --> 00:01:00,750
+request multiple<font color="#E5E5E5"> resource from the</font>
+
+24
+00:01:00,750 --> 00:01:03,840
+<font color="#E5E5E5">server using a single connection</font><font color="#CCCCCC"> now let</font>
+
+25
+00:01:03,840 --> 00:01:06,630
+us<font color="#E5E5E5"> talk about HTTP 1.0 and HTTP 1.1</font>
+
+26
+00:01:06,630 --> 00:01:10,500
+working in much more detail so here you
+
+27
+00:01:10,500 --> 00:01:12,990
+can see the HTTP 1.0 working so the
+
+28
+00:01:12,990 --> 00:01:14,490
+first of all the client will send a
+
+29
+00:01:14,490 --> 00:01:16,170
+request<font color="#E5E5E5"> to</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> server</font><font color="#CCCCCC"> for making a</font>
+
+30
+00:01:16,170 --> 00:01:18,240
+connection<font color="#CCCCCC"> and once their connection is</font>
+
+31
+00:01:18,240 --> 00:01:20,549
+<font color="#E5E5E5">established the client will send a</font>
+
+32
+00:01:20,549 --> 00:01:22,320
+request<font color="#E5E5E5"> for requesting a resource and</font>
+
+33
+00:01:22,320 --> 00:01:24,780
+the server<font color="#E5E5E5"> will serve that resource and</font>
+
+34
+00:01:24,780 --> 00:01:27,780
+once the client<font color="#E5E5E5"> got that resource here</font>
+
+35
+00:01:27,780 --> 00:01:29,520
+you can see that their connection breaks
+
+36
+00:01:29,520 --> 00:01:33,630
+<font color="#E5E5E5">so this was an HTTP 1.0 whereas in HTTP</font>
+
+37
+00:01:33,630 --> 00:01:36,570
+1.1<font color="#CCCCCC"> let's see what happens so by using</font>
+
+38
+00:01:36,570 --> 00:01:39,810
+HTTP 1.1 version<font color="#CCCCCC"> so the 4 steps are same</font>
+
+39
+00:01:39,810 --> 00:01:41,670
+so make connection<font color="#E5E5E5"> connection</font>
+
+40
+00:01:41,670 --> 00:01:43,439
+<font color="#E5E5E5">established client will request a</font>
+
+41
+00:01:43,439 --> 00:01:45,720
+resource server will serve that resource
+
+42
+00:01:45,720 --> 00:01:48,229
+and then here<font color="#E5E5E5"> you</font><font color="#CCCCCC"> can</font><font color="#E5E5E5"> see that monster</font>
+
+43
+00:01:48,229 --> 00:01:50,850
+<font color="#E5E5E5">client got that resource the client is</font>
+
+44
+00:01:50,850 --> 00:01:53,520
+requesting another<font color="#CCCCCC"> resource and it's so</font>
+
+45
+00:01:53,520 --> 00:01:55,649
+on and their connection will still still
+
+46
+00:01:55,649 --> 00:01:58,500
+remains until client wants to disconnect
+
+47
+00:01:58,500 --> 00:02:00,509
+that connection<font color="#E5E5E5"> so this was the key</font>
+
+48
+00:02:00,509 --> 00:02:03,270
+advantage of HTTP 1.1 version<font color="#CCCCCC"> in which</font>
+
+49
+00:02:03,270 --> 00:02:06,030
+<font color="#E5E5E5">we can request multiple resources by</font>
+
+50
+00:02:06,030 --> 00:02:08,639
+<font color="#CCCCCC">using a</font><font color="#E5E5E5"> single connection</font><font color="#CCCCCC"> now let's talk</font>
+
+51
+00:02:08,639 --> 00:02:09,929
+about HTTP
+
+52
+00:02:09,929 --> 00:02:13,439
+<font color="#CCCCCC">test code so just for</font><font color="#E5E5E5"> example</font><font color="#CCCCCC"> so you</font><font color="#E5E5E5"> you</font>
+
+53
+00:02:13,439 --> 00:02:15,450
+might<font color="#E5E5E5"> have seen that</font><font color="#CCCCCC"> while opening any</font>
+
+54
+00:02:15,450 --> 00:02:18,510
+<font color="#CCCCCC">website sometimes the website give us an</font>
+
+55
+00:02:18,510 --> 00:02:22,620
+error like<font color="#CCCCCC"> 3-0</font><font color="#E5E5E5"> to 404 500 error so what</font>
+
+56
+00:02:22,620 --> 00:02:24,870
+<font color="#E5E5E5">these kind of errors are so these are</font>
+
+57
+00:02:24,870 --> 00:02:28,859
+called<font color="#E5E5E5"> as HTTP status codes so HTTP</font>
+
+58
+00:02:28,859 --> 00:02:30,959
+status codes are nothing but just a
+
+59
+00:02:30,959 --> 00:02:35,220
+server<font color="#CCCCCC"> responds towards our HTTP request</font>
+
+60
+00:02:35,220 --> 00:02:37,500
+<font color="#E5E5E5">so here are</font><font color="#CCCCCC"> different kind of HTTP</font>
+
+61
+00:02:37,500 --> 00:02:40,109
+response codes you can<font color="#CCCCCC"> see here</font><font color="#E5E5E5"> like</font><font color="#CCCCCC"> 200</font>
+
+62
+00:02:40,109 --> 00:02:45,090
+<font color="#CCCCCC">400 3 300 500 so if we</font><font color="#E5E5E5"> are successfully</font>
+
+63
+00:02:45,090 --> 00:02:48,480
+able to access<font color="#E5E5E5"> our resource then we got</font>
+
+64
+00:02:48,480 --> 00:02:51,780
+this HTTP response code that is 200<font color="#E5E5E5"> so</font>
+
+65
+00:02:51,780 --> 00:02:54,209
+HTTP 200 response code is<font color="#CCCCCC"> 4 ok or a</font>
+
+66
+00:02:54,209 --> 00:02:56,849
+success<font color="#E5E5E5"> and the response code which are</font>
+
+67
+00:02:56,849 --> 00:02:59,730
+<font color="#CCCCCC">responsible for the redirection</font><font color="#E5E5E5"> is 3</font><font color="#CCCCCC"> 0 1</font>
+
+68
+00:02:59,730 --> 00:03:03,900
+<font color="#CCCCCC">&</font><font color="#E5E5E5"> 3 0 2 and now just for example we are</font>
+
+69
+00:03:03,900 --> 00:03:05,639
+<font color="#E5E5E5">try</font><font color="#CCCCCC"> to access</font><font color="#E5E5E5"> any resource and that</font>
+
+70
+00:03:05,639 --> 00:03:07,769
+resource is<font color="#CCCCCC"> not present</font><font color="#E5E5E5"> on that server</font>
+
+71
+00:03:07,769 --> 00:03:11,129
+<font color="#CCCCCC">then we got this HTTP status code that</font>
+
+72
+00:03:11,129 --> 00:03:14,400
+is 404<font color="#E5E5E5"> not found and in the last there</font>
+
+73
+00:03:14,400 --> 00:03:16,819
+are<font color="#CCCCCC"> two</font><font color="#E5E5E5"> access HTTP status code that is</font>
+
+74
+00:03:16,819 --> 00:03:21,419
+<font color="#E5E5E5">505</font><font color="#CCCCCC"> 0 3 so these are server-side HTTP</font>
+
+75
+00:03:21,419 --> 00:03:23,730
+status code in which there<font color="#E5E5E5"> might be an</font>
+
+76
+00:03:23,730 --> 00:03:27,239
+server error and we got<font color="#E5E5E5"> the these HTTP</font>
+
+77
+00:03:27,239 --> 00:03:31,769
+status code<font color="#CCCCCC"> 505 0</font><font color="#E5E5E5"> 3 in that cases so in</font>
+
+78
+00:03:31,769 --> 00:03:34,530
+order to<font color="#E5E5E5"> send HTTP</font><font color="#CCCCCC"> requests</font><font color="#E5E5E5"> we also have</font>
+
+79
+00:03:34,530 --> 00:03:37,079
+to<font color="#CCCCCC"> specify that</font><font color="#E5E5E5"> what kind of HTTP method</font>
+
+80
+00:03:37,079 --> 00:03:39,659
+we want to<font color="#CCCCCC"> use now let's talk about HTTP</font>
+
+81
+00:03:39,659 --> 00:03:42,690
+methods so HTTP methods are types of
+
+82
+00:03:42,690 --> 00:03:46,109
+requests which we want<font color="#E5E5E5"> to send means we</font>
+
+83
+00:03:46,109 --> 00:03:48,989
+<font color="#E5E5E5">want to send an HTTP request</font><font color="#CCCCCC"> and what we</font>
+
+84
+00:03:48,989 --> 00:03:52,440
+have to do<font color="#E5E5E5"> in HTTP</font><font color="#CCCCCC"> requests can be</font>
+
+85
+00:03:52,440 --> 00:03:55,379
+<font color="#E5E5E5">defined as HTTP methods and here you can</font>
+
+86
+00:03:55,379 --> 00:03:57,569
+see the different HTTP methods like get
+
+87
+00:03:57,569 --> 00:04:01,769
+head put post patch so the get method is
+
+88
+00:04:01,769 --> 00:04:03,930
+used for accessing any resource or
+
+89
+00:04:03,930 --> 00:04:06,569
+fetching out any resource so head<font color="#E5E5E5"> method</font>
+
+90
+00:04:06,569 --> 00:04:10,379
+is used<font color="#E5E5E5"> to see the server HTTP headers</font>
+
+91
+00:04:10,379 --> 00:04:13,799
+<font color="#E5E5E5">but not the HTML data whereas the post</font>
+
+92
+00:04:13,799 --> 00:04:16,380
+and put methods are used for sending<font color="#E5E5E5"> an</font>
+
+93
+00:04:16,380 --> 00:04:19,120
+input to the server<font color="#E5E5E5"> and there is</font>
+
+94
+00:04:19,120 --> 00:04:21,579
+interesting method called as options<font color="#E5E5E5"> so</font>
+
+95
+00:04:21,579 --> 00:04:24,430
+if the<font color="#E5E5E5"> user wants</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> know that what kind</font>
+
+96
+00:04:24,430 --> 00:04:26,620
+of HTTP methods are enabled on<font color="#CCCCCC"> a remote</font>
+
+97
+00:04:26,620 --> 00:04:29,229
+server<font color="#CCCCCC"> then a user can send HTTP</font>
+
+98
+00:04:29,229 --> 00:04:32,169
+<font color="#E5E5E5">requests by using options method and in</font>
+
+99
+00:04:32,169 --> 00:04:34,840
+<font color="#E5E5E5">the response</font><font color="#CCCCCC"> the user will see that what</font>
+
+100
+00:04:34,840 --> 00:04:36,400
+<font color="#CCCCCC">kind of HTTP methods are actually</font>
+
+101
+00:04:36,400 --> 00:04:39,190
+<font color="#E5E5E5">enabled on a remote server</font><font color="#CCCCCC"> and in</font><font color="#E5E5E5"> the</font>
+
+102
+00:04:39,190 --> 00:04:40,930
+last there is<font color="#E5E5E5"> one method called as</font>
+
+103
+00:04:40,930 --> 00:04:43,300
+delete so delete method is one of the
+
+104
+00:04:43,300 --> 00:04:45,910
+dangerous methods because by using the
+
+105
+00:04:45,910 --> 00:04:47,770
+delete method<font color="#E5E5E5"> and if the delete method</font>
+
+106
+00:04:47,770 --> 00:04:50,410
+<font color="#CCCCCC">is enabled on any server</font><font color="#E5E5E5"> then a user can</font>
+
+107
+00:04:50,410 --> 00:04:52,330
+delete any particular resource<font color="#E5E5E5"> on the</font>
+
+108
+00:04:52,330 --> 00:04:55,270
+server<font color="#E5E5E5"> by sending the HTTP request</font><font color="#CCCCCC"> by</font>
+
+109
+00:04:55,270 --> 00:04:58,150
+using delete method so this<font color="#E5E5E5"> was all</font>
+
+110
+00:04:58,150 --> 00:05:00,430
+<font color="#E5E5E5">about HTTP protocol now let's talk about</font>
+
+111
+00:05:00,430 --> 00:05:03,250
+three-way handshake<font color="#E5E5E5"> so what is</font><font color="#CCCCCC"> 3-way</font>
+
+112
+00:05:03,250 --> 00:05:05,380
+handshake<font color="#CCCCCC"> a 3-way handshake is the first</font>
+
+113
+00:05:05,380 --> 00:05:07,990
+<font color="#E5E5E5">process before requesting any resource</font>
+
+114
+00:05:07,990 --> 00:05:10,510
+so a<font color="#E5E5E5"> three-way handshake is used for</font>
+
+115
+00:05:10,510 --> 00:05:12,639
+making<font color="#E5E5E5"> a</font><font color="#CCCCCC"> connection between a client</font><font color="#E5E5E5"> and</font>
+
+116
+00:05:12,639 --> 00:05:14,860
+server<font color="#E5E5E5"> or between two networking device</font>
+
+117
+00:05:14,860 --> 00:05:16,630
+<font color="#E5E5E5">so three-way handshake is a first</font>
+
+118
+00:05:16,630 --> 00:05:18,660
+process and it's a three-step method
+
+119
+00:05:18,660 --> 00:05:22,060
+<font color="#CCCCCC">here you can see our client</font><font color="#E5E5E5"> and here is</font>
+
+120
+00:05:22,060 --> 00:05:23,860
+<font color="#E5E5E5">our server so</font><font color="#CCCCCC"> the first of all the</font>
+
+121
+00:05:23,860 --> 00:05:26,139
+client will send a send request to the
+
+122
+00:05:26,139 --> 00:05:28,840
+server so send means<font color="#E5E5E5"> synchronize so just</font>
+
+123
+00:05:28,840 --> 00:05:30,970
+for example<font color="#CCCCCC"> the</font><font color="#E5E5E5"> client will say hey I am</font>
+
+124
+00:05:30,970 --> 00:05:34,210
+new here<font color="#CCCCCC"> I want to</font><font color="#E5E5E5"> connect</font><font color="#CCCCCC"> with you now</font>
+
+125
+00:05:34,210 --> 00:05:36,490
+let's see what server<font color="#CCCCCC"> gives the response</font>
+
+126
+00:05:36,490 --> 00:05:39,010
+<font color="#E5E5E5">so the server will send say none deck so</font>
+
+127
+00:05:39,010 --> 00:05:40,240
+send means synchronize and
+
+128
+00:05:40,240 --> 00:05:43,300
+<font color="#CCCCCC">acknowledgment acknowledgment</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> then</font>
+
+129
+00:05:43,300 --> 00:05:45,729
+the server sent<font color="#E5E5E5"> okay let's connect and</font>
+
+130
+00:05:45,729 --> 00:05:47,979
+in the last here you can see that the
+
+131
+00:05:47,979 --> 00:05:50,380
+client<font color="#E5E5E5"> will</font><font color="#CCCCCC"> again send</font><font color="#E5E5E5"> act which means</font>
+
+132
+00:05:50,380 --> 00:05:53,199
+thank you<font color="#CCCCCC"> and here you can see their</font>
+
+133
+00:05:53,199 --> 00:05:56,020
+connection is established<font color="#E5E5E5"> so</font><font color="#CCCCCC"> this is how</font>
+
+134
+00:05:56,020 --> 00:05:57,970
+the three-way handshake works so in this
+
+135
+00:05:57,970 --> 00:06:00,070
+video we<font color="#E5E5E5"> have</font><font color="#CCCCCC"> discussed about</font><font color="#E5E5E5"> what is</font>
+
+136
+00:06:00,070 --> 00:06:02,229
+<font color="#CCCCCC">STB protocol it's different</font><font color="#E5E5E5"> versions and</font>
+
+137
+00:06:02,229 --> 00:06:05,080
+<font color="#E5E5E5">it's HTTP status course along with</font><font color="#CCCCCC"> its</font>
+
+138
+00:06:05,080 --> 00:06:07,199
+methods and what is<font color="#E5E5E5"> 3-way handshake</font>
+
+139
+00:06:07,199 --> 00:00:00,000
+<font color="#CCCCCC">thanks for</font><font color="#E5E5E5"> watching this video</font>
+

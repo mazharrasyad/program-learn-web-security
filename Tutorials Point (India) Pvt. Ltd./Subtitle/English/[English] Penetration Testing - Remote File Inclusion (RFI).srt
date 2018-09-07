@@ -1,0 +1,496 @@
+1
+00:00:00,089 --> 00:00:02,179
+hello everyone<font color="#E5E5E5"> now let us talk about</font>
+
+2
+00:00:02,179 --> 00:00:05,160
+remote file inclusion vulnerability<font color="#E5E5E5"> so</font>
+
+3
+00:00:05,160 --> 00:00:07,290
+remote file inclusion<font color="#CCCCCC"> over nobility also</font>
+
+4
+00:00:07,290 --> 00:00:09,870
+referred as<font color="#CCCCCC"> RFI</font><font color="#E5E5E5"> so in remote file</font>
+
+5
+00:00:09,870 --> 00:00:11,940
+inclusion over nobility attacker or
+
+6
+00:00:11,940 --> 00:00:14,610
+<font color="#E5E5E5">penetration testers tries to include</font>
+
+7
+00:00:14,610 --> 00:00:17,160
+remote files which<font color="#E5E5E5"> are hosted on a</font>
+
+8
+00:00:17,160 --> 00:00:19,830
+different<font color="#E5E5E5"> web</font><font color="#CCCCCC"> servers</font><font color="#E5E5E5"> so these files are</font>
+
+9
+00:00:19,830 --> 00:00:22,080
+specially web shells<font color="#E5E5E5"> and if you don't</font>
+
+10
+00:00:22,080 --> 00:00:24,359
+know what is the web shell so a web
+
+11
+00:00:24,359 --> 00:00:26,849
+shell is a small piece<font color="#CCCCCC"> of</font><font color="#E5E5E5"> code which is</font>
+
+12
+00:00:26,849 --> 00:00:27,779
+written<font color="#E5E5E5"> in different different</font>
+
+13
+00:00:27,779 --> 00:00:29,939
+programming languages depending<font color="#CCCCCC"> upon the</font>
+
+14
+00:00:29,939 --> 00:00:32,668
+web application so through web shell<font color="#E5E5E5"> one</font>
+
+15
+00:00:32,668 --> 00:00:35,820
+can access<font color="#CCCCCC"> the remote server so all we</font>
+
+16
+00:00:35,820 --> 00:00:38,219
+have<font color="#E5E5E5"> to do is we</font><font color="#CCCCCC"> just</font><font color="#E5E5E5"> have to include a</font>
+
+17
+00:00:38,219 --> 00:00:40,379
+remote web shell inside the web
+
+18
+00:00:40,379 --> 00:00:42,450
+application which is remote file
+
+19
+00:00:42,450 --> 00:00:44,640
+inclusion<font color="#CCCCCC"> burnable and once our web</font>
+
+20
+00:00:44,640 --> 00:00:46,410
+shell is included<font color="#CCCCCC"> and died web</font>
+
+21
+00:00:46,410 --> 00:00:48,329
+application<font color="#E5E5E5"> then we</font><font color="#CCCCCC"> can access</font><font color="#E5E5E5"> its</font>
+
+22
+00:00:48,329 --> 00:00:51,300
+remote server<font color="#E5E5E5"> now let's see how we can</font>
+
+23
+00:00:51,300 --> 00:00:53,149
+exploit<font color="#E5E5E5"> the</font><font color="#CCCCCC"> mod file inclusion</font>
+
+24
+00:00:53,149 --> 00:00:56,039
+vulnerability<font color="#E5E5E5"> now let's have a look at</font>
+
+25
+00:00:56,039 --> 00:00:58,320
+remote file inclusion vulnerability<font color="#E5E5E5"> that</font>
+
+26
+00:00:58,320 --> 00:01:02,609
+<font color="#E5E5E5">how it works so here you can see my</font>
+
+27
+00:01:02,609 --> 00:01:05,309
+notepad files<font color="#E5E5E5"> which we have created in</font>
+
+28
+00:01:05,309 --> 00:01:06,960
+<font color="#E5E5E5">the last video while doing local file</font>
+
+29
+00:01:06,960 --> 00:01:09,720
+inclusion vulnerability<font color="#CCCCCC"> test here</font><font color="#E5E5E5"> so</font>
+
+30
+00:01:09,720 --> 00:01:13,140
+here are<font color="#E5E5E5"> some URLs so let's analyze them</font>
+
+31
+00:01:13,140 --> 00:01:16,680
+so here you will see that<font color="#CCCCCC"> the page</font>
+
+32
+00:01:16,680 --> 00:01:19,140
+parameter is actually accepting<font color="#E5E5E5"> one file</font>
+
+33
+00:01:19,140 --> 00:01:23,159
+<font color="#E5E5E5">which is included in index dot PHP so</font>
+
+34
+00:01:23,159 --> 00:01:25,140
+the difference<font color="#CCCCCC"> between local</font><font color="#E5E5E5"> file</font>
+
+35
+00:01:25,140 --> 00:01:29,159
+inclusion and RFI is<font color="#CCCCCC"> that in remote file</font>
+
+36
+00:01:29,159 --> 00:01:31,890
+inclusion<font color="#CCCCCC"> what we can do is we can</font>
+
+37
+00:01:31,890 --> 00:01:34,590
+<font color="#CCCCCC">include a file which is hosted</font><font color="#E5E5E5"> on a</font>
+
+38
+00:01:34,590 --> 00:01:37,079
+different server which means the file
+
+39
+00:01:37,079 --> 00:01:38,369
+which are not present<font color="#CCCCCC"> on our actual</font>
+
+40
+00:01:38,369 --> 00:01:40,890
+servers but it's hosted on some another
+
+41
+00:01:40,890 --> 00:01:41,340
+server
+
+42
+00:01:41,340 --> 00:01:44,579
+so<font color="#CCCCCC"> now owatta pentester what a hacker</font>
+
+43
+00:01:44,579 --> 00:01:49,290
+can do so they can<font color="#E5E5E5"> try to include some</font>
+
+44
+00:01:49,290 --> 00:01:52,740
+<font color="#CCCCCC">kind</font><font color="#E5E5E5"> of web shells to the web</font>
+
+45
+00:01:52,740 --> 00:01:54,810
+applications and if the web application
+
+46
+00:01:54,810 --> 00:01:58,920
+<font color="#E5E5E5">is able to include the web shell inside</font>
+
+47
+00:01:58,920 --> 00:02:02,869
+it then what the<font color="#CCCCCC"> pentester can do he can</font>
+
+48
+00:02:02,869 --> 00:02:05,280
+<font color="#E5E5E5">gain a remote access of</font><font color="#CCCCCC"> that web</font>
+
+49
+00:02:05,280 --> 00:02:09,449
+application<font color="#CCCCCC"> now in order to test remote</font>
+
+50
+00:02:09,449 --> 00:02:11,400
+file inclusion vulnerability is the
+
+51
+00:02:11,400 --> 00:02:13,810
+first thing is we have<font color="#CCCCCC"> to start our OS</font>
+
+52
+00:02:13,810 --> 00:02:15,489
+<font color="#CCCCCC">touken web application where you can see</font>
+
+53
+00:02:15,489 --> 00:02:18,550
+it's<font color="#E5E5E5"> up and</font><font color="#CCCCCC"> running the next thing is we</font>
+
+54
+00:02:18,550 --> 00:02:20,920
+have<font color="#E5E5E5"> to start our</font><font color="#CCCCCC"> kali linux here you</font>
+
+55
+00:02:20,920 --> 00:02:24,780
+can see my Kali Linux is up and running
+
+56
+00:02:24,780 --> 00:02:28,750
+<font color="#E5E5E5">now let's do one thing first of all</font>
+
+57
+00:02:28,750 --> 00:02:30,580
+let's just open the<font color="#CCCCCC"> muted</font><font color="#E5E5E5"> a web</font>
+
+58
+00:02:30,580 --> 00:02:33,209
+<font color="#CCCCCC">application</font>
+
+59
+00:02:44,210 --> 00:02:52,860
+<font color="#CCCCCC">let</font><font color="#E5E5E5"> me just</font><font color="#CCCCCC"> open any page</font><font color="#E5E5E5"> okay now in</font>
+
+60
+00:02:52,860 --> 00:02:55,380
+<font color="#E5E5E5">Kali Linux there is one directory which</font>
+
+61
+00:02:55,380 --> 00:03:00,720
+stores a web shells<font color="#CCCCCC"> now let's go to</font><font color="#E5E5E5"> that</font>
+
+62
+00:03:00,720 --> 00:03:04,110
+<font color="#E5E5E5">directory</font><font color="#CCCCCC"> it's inside us are then share</font>
+
+63
+00:03:04,110 --> 00:03:09,150
+and web shells<font color="#E5E5E5"> so</font><font color="#CCCCCC"> here you</font><font color="#E5E5E5"> can see that</font>
+
+64
+00:03:09,150 --> 00:03:11,070
+here are different<font color="#E5E5E5"> different web shells</font>
+
+65
+00:03:11,070 --> 00:03:13,380
+<font color="#CCCCCC">available in different</font><font color="#E5E5E5"> languages like</font>
+
+66
+00:03:13,380 --> 00:03:16,050
+the web<font color="#E5E5E5"> shells written in PHP is present</font>
+
+67
+00:03:16,050 --> 00:03:18,210
+in PHP directory the<font color="#CCCCCC"> web site written in</font>
+
+68
+00:03:18,210 --> 00:03:20,880
+Perl is present in Perl directory<font color="#E5E5E5"> but</font>
+
+69
+00:03:20,880 --> 00:03:22,500
+for the time<font color="#CCCCCC"> being we are interested in</font>
+
+70
+00:03:22,500 --> 00:03:25,920
+PHP<font color="#E5E5E5"> so let's go to PHP directory hit</font>
+
+71
+00:03:25,920 --> 00:03:28,380
+tell us and<font color="#E5E5E5"> you will find a lot</font><font color="#CCCCCC"> of web</font>
+
+72
+00:03:28,380 --> 00:03:31,590
+shells written and are available in PHP
+
+73
+00:03:31,590 --> 00:03:33,780
+<font color="#E5E5E5">so the most common one is simple</font>
+
+74
+00:03:33,780 --> 00:03:35,430
+<font color="#CCCCCC">backdoor dot PHP it's a command-line</font>
+
+75
+00:03:35,430 --> 00:03:38,550
+<font color="#CCCCCC">shell</font><font color="#E5E5E5"> and PHP</font><font color="#CCCCCC"> back dot dot PHP it's a</font>
+
+76
+00:03:38,550 --> 00:03:41,280
+GUI shell now what I'm<font color="#E5E5E5"> going to do here</font>
+
+77
+00:03:41,280 --> 00:03:46,770
+<font color="#E5E5E5">is I am I will run a</font><font color="#CCCCCC"> Python</font><font color="#E5E5E5"> simple HTTP</font>
+
+78
+00:03:46,770 --> 00:03:54,270
+server and the port will<font color="#CCCCCC"> be 5,000 now</font>
+
+79
+00:03:54,270 --> 00:03:56,430
+what it<font color="#CCCCCC"> means actually in</font><font color="#E5E5E5"> Python there</font>
+
+80
+00:03:56,430 --> 00:03:58,890
+are pre-built<font color="#E5E5E5"> servers or scripts so I'm</font>
+
+81
+00:03:58,890 --> 00:04:00,420
+using this script<font color="#E5E5E5"> Python</font>
+
+82
+00:04:00,420 --> 00:04:03,570
+-<font color="#CCCCCC"> 'm simple HTTP server</font><font color="#E5E5E5"> and i'll run</font><font color="#CCCCCC"> the</font>
+
+83
+00:04:03,570 --> 00:04:06,000
+server on port<font color="#CCCCCC"> 5,000</font><font color="#E5E5E5"> so what it will do</font>
+
+84
+00:04:06,000 --> 00:04:10,610
+it will<font color="#E5E5E5"> actually create a server on this</font>
+
+85
+00:04:10,610 --> 00:04:14,510
+directory PHP and then<font color="#CCCCCC"> I can access</font><font color="#E5E5E5"> this</font>
+
+86
+00:04:14,510 --> 00:04:18,839
+files and try<font color="#E5E5E5"> to include</font><font color="#CCCCCC"> in neutral a</font>
+
+87
+00:04:18,839 --> 00:04:20,640
+web<font color="#CCCCCC"> application but</font><font color="#E5E5E5"> for that we also</font>
+
+88
+00:04:20,640 --> 00:04:22,830
+have<font color="#E5E5E5"> to know that what is the IP of Kali</font>
+
+89
+00:04:22,830 --> 00:04:30,540
+Linux so IP is 192.168.0.1 35 now let's
+
+90
+00:04:30,540 --> 00:04:32,370
+do one thing let me<font color="#E5E5E5"> just</font><font color="#CCCCCC"> hit enter</font><font color="#E5E5E5"> and</font>
+
+91
+00:04:32,370 --> 00:04:34,200
+here<font color="#E5E5E5"> you will see</font><font color="#CCCCCC"> that my</font><font color="#E5E5E5"> astir DP</font>
+
+92
+00:04:34,200 --> 00:04:36,480
+<font color="#E5E5E5">server is up and running let's go back</font>
+
+93
+00:04:36,480 --> 00:04:40,190
+here<font color="#E5E5E5"> and at this after this page</font>
+
+94
+00:04:40,190 --> 00:04:45,540
+parameter now let's try to include web
+
+95
+00:04:45,540 --> 00:04:49,260
+shell remotely by just entering<font color="#CCCCCC"> the</font><font color="#E5E5E5"> IP</font>
+
+96
+00:04:49,260 --> 00:04:52,640
+address of<font color="#E5E5E5"> Kali Linux</font>
+
+97
+00:04:54,730 --> 00:05:01,600
+and the port<font color="#E5E5E5"> is</font><font color="#CCCCCC"> 5,000 and the shell name</font>
+
+98
+00:05:01,600 --> 00:05:10,660
+is simple backdoor dot<font color="#CCCCCC"> php' hit</font><font color="#E5E5E5"> enter</font>
+
+99
+00:05:10,660 --> 00:05:13,540
+and here<font color="#E5E5E5"> you will see</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> our rep shell</font>
+
+100
+00:05:13,540 --> 00:05:15,730
+is up and running<font color="#E5E5E5"> so this web shell</font>
+
+101
+00:05:15,730 --> 00:05:17,980
+simple<font color="#E5E5E5"> backdoored PHP also takes one</font>
+
+102
+00:05:17,980 --> 00:05:20,140
+parameter called a<font color="#CCCCCC"> CMD</font>
+
+103
+00:05:20,140 --> 00:05:23,920
+now let's pass this parameter in a URL
+
+104
+00:05:23,920 --> 00:05:27,730
+string but<font color="#E5E5E5"> here the thing to be notices</font>
+
+105
+00:05:27,730 --> 00:05:30,340
+that we have already<font color="#E5E5E5"> given one parameter</font>
+
+106
+00:05:30,340 --> 00:05:35,520
+<font color="#E5E5E5">that is page so now here we</font><font color="#CCCCCC"> can't add</font>
+
+107
+00:05:35,520 --> 00:05:39,370
+exclamation sign<font color="#E5E5E5"> we have</font><font color="#CCCCCC"> to add and then</font>
+
+108
+00:05:39,370 --> 00:05:40,930
+parameter name because it's a second
+
+109
+00:05:40,930 --> 00:05:44,110
+parameter CMD equals<font color="#E5E5E5"> LS and here you</font>
+
+110
+00:05:44,110 --> 00:05:48,700
+<font color="#E5E5E5">will see</font><font color="#CCCCCC"> that we</font><font color="#E5E5E5"> are able to access the</font>
+
+111
+00:05:48,700 --> 00:05:51,190
+remote server by using<font color="#CCCCCC"> this rev-share</font>
+
+112
+00:05:51,190 --> 00:05:54,670
+<font color="#CCCCCC">now we can execute any command</font><font color="#E5E5E5"> like if</font>
+
+113
+00:05:54,670 --> 00:05:55,990
+you want to check the present working
+
+114
+00:05:55,990 --> 00:05:59,430
+directory<font color="#E5E5E5"> so here you can see</font><font color="#CCCCCC"> go</font><font color="#E5E5E5"> ASP</font>
+
+115
+00:05:59,430 --> 00:06:03,400
+<font color="#E5E5E5">mutiny</font><font color="#CCCCCC"> day so this</font><font color="#E5E5E5"> was a difference</font>
+
+116
+00:06:03,400 --> 00:06:06,160
+<font color="#CCCCCC">between</font><font color="#E5E5E5"> local file inclusion and remote</font>
+
+117
+00:06:06,160 --> 00:06:08,170
+file inclusion vulnerability<font color="#E5E5E5"> that in</font>
+
+118
+00:06:08,170 --> 00:06:10,690
+<font color="#E5E5E5">mode file inclusion we can remotely</font>
+
+119
+00:06:10,690 --> 00:06:13,930
+include any web shell or any script
+
+120
+00:06:13,930 --> 00:06:18,730
+inside a web<font color="#CCCCCC"> application so in this</font>
+
+121
+00:06:18,730 --> 00:06:22,720
+<font color="#E5E5E5">video we</font><font color="#CCCCCC"> have covered</font><font color="#E5E5E5"> that what is</font><font color="#CCCCCC"> RFI</font>
+
+122
+00:06:22,720 --> 00:06:25,030
+<font color="#E5E5E5">vulnerability and how to exploit RFI</font>
+
+123
+00:06:25,030 --> 00:06:27,220
+vulnerability<font color="#E5E5E5"> thanks for watching this</font>
+
+124
+00:06:27,220 --> 00:00:00,000
+video
+

@@ -1,0 +1,480 @@
+1
+00:00:00,030 --> 00:00:01,469
+welcome ladies<font color="#CCCCCC"> and gentlemen to</font><font color="#E5E5E5"> the</font>
+
+2
+00:00:01,469 --> 00:00:05,299
+<font color="#E5E5E5">third video of web security and hacking</font>
+
+3
+00:00:05,299 --> 00:00:07,560
+<font color="#E5E5E5">today</font><font color="#CCCCCC"> we are talking about JavaScript</font>
+
+4
+00:00:07,560 --> 00:00:10,920
+injections<font color="#E5E5E5"> and first off everything you</font>
+
+5
+00:00:10,920 --> 00:00:13,230
+<font color="#E5E5E5">learn here is for securing your</font><font color="#CCCCCC"> own web</font>
+
+6
+00:00:13,230 --> 00:00:15,870
+applications not<font color="#E5E5E5"> to hack anybody else's</font>
+
+7
+00:00:15,870 --> 00:00:19,680
+because<font color="#CCCCCC"> it's illegal and it's very evil</font>
+
+8
+00:00:19,680 --> 00:00:23,130
+so just use this information to<font color="#E5E5E5"> make</font>
+
+9
+00:00:23,130 --> 00:00:25,439
+your web applications more secure<font color="#CCCCCC"> and of</font>
+
+10
+00:00:25,439 --> 00:00:28,140
+course<font color="#E5E5E5"> unreliable for any special direct</font>
+
+11
+00:00:28,140 --> 00:00:30,420
+or indirect damage<font color="#E5E5E5"> for any other damage</font>
+
+12
+00:00:30,420 --> 00:00:32,668
+resulting from<font color="#CCCCCC"> the use of information</font>
+
+13
+00:00:32,668 --> 00:00:35,790
+presented in<font color="#E5E5E5"> this video so what is</font>
+
+14
+00:00:35,790 --> 00:00:38,070
+injection<font color="#CCCCCC"> I have a citation from</font>
+
+15
+00:00:38,070 --> 00:00:41,930
+Wikipedia which is directly on point<font color="#CCCCCC"> and</font>
+
+16
+00:00:41,930 --> 00:00:44,430
+injection is used by an attacker or
+
+17
+00:00:44,430 --> 00:00:47,309
+hacker to introduce or inject code into
+
+18
+00:00:47,309 --> 00:00:49,710
+a<font color="#CCCCCC"> vulnerable computer program</font><font color="#E5E5E5"> and change</font>
+
+19
+00:00:49,710 --> 00:00:52,739
+the course<font color="#E5E5E5"> of execution so what this</font>
+
+20
+00:00:52,739 --> 00:00:55,500
+<font color="#E5E5E5">means we</font><font color="#CCCCCC"> need</font><font color="#E5E5E5"> something an input field a</font>
+
+21
+00:00:55,500 --> 00:01:00,289
+text<font color="#CCCCCC"> field a form where we</font><font color="#E5E5E5"> can post a</font>
+
+22
+00:01:00,289 --> 00:01:05,069
+code to the server and this code has<font color="#CCCCCC"> to</font>
+
+23
+00:01:05,069 --> 00:01:09,780
+<font color="#E5E5E5">be stored in a database and this code</font>
+
+24
+00:01:09,780 --> 00:01:13,430
+<font color="#CCCCCC">that we save into a database</font><font color="#E5E5E5"> has to</font><font color="#CCCCCC"> be</font>
+
+25
+00:01:13,430 --> 00:01:18,540
+shown on<font color="#E5E5E5"> the</font><font color="#CCCCCC"> website to be executable so</font>
+
+26
+00:01:18,540 --> 00:01:21,030
+we<font color="#CCCCCC"> save something</font><font color="#E5E5E5"> in a database which is</font>
+
+27
+00:01:21,030 --> 00:01:24,060
+later<font color="#CCCCCC"> on used for displaying on the</font>
+
+28
+00:01:24,060 --> 00:01:28,439
+<font color="#CCCCCC">webpage and execute our code because</font>
+
+29
+00:01:28,439 --> 00:01:33,799
+every browser executes JavaScript<font color="#E5E5E5"> so</font>
+
+30
+00:01:33,799 --> 00:01:35,880
+today we<font color="#E5E5E5"> are learning</font><font color="#CCCCCC"> about is</font>
+
+31
+00:01:35,880 --> 00:01:38,729
+<font color="#CCCCCC">injections so we need to store a string</font>
+
+32
+00:01:38,729 --> 00:01:40,979
+<font color="#E5E5E5">into</font><font color="#CCCCCC"> the database which could be</font>
+
+33
+00:01:40,979 --> 00:01:43,649
+something<font color="#CCCCCC"> like script</font><font color="#E5E5E5"> load my script</font>
+
+34
+00:01:43,649 --> 00:01:47,790
+loaded and<font color="#E5E5E5"> this string is displayed</font><font color="#CCCCCC"> on</font>
+
+35
+00:01:47,790 --> 00:01:50,040
+website and browser<font color="#E5E5E5"> execute the</font>
+
+36
+00:01:50,040 --> 00:01:53,939
+JavaScript code so this<font color="#E5E5E5"> will</font><font color="#CCCCCC"> result in</font>
+
+37
+00:01:53,939 --> 00:01:58,549
+<font color="#E5E5E5">something like this and you can</font><font color="#CCCCCC"> use the</font>
+
+38
+00:01:58,549 --> 00:02:05,750
+<font color="#CCCCCC">webpage root of sums</font><font color="#E5E5E5"> Pizza es y es for</font>
+
+39
+00:02:05,750 --> 00:02:09,360
+studying this video and I'm using my
+
+40
+00:02:09,360 --> 00:02:12,420
+<font color="#E5E5E5">local host portion and I'm going</font><font color="#CCCCCC"> to the</font>
+
+41
+00:02:12,420 --> 00:02:13,140
+<font color="#CCCCCC">guestbook</font>
+
+42
+00:02:13,140 --> 00:02:16,380
+as you see we<font color="#CCCCCC"> have something to</font><font color="#E5E5E5"> inject</font>
+
+43
+00:02:16,380 --> 00:02:22,819
+here and<font color="#E5E5E5"> I try</font><font color="#CCCCCC"> to I'd</font><font color="#E5E5E5"> write a script</font>
+
+44
+00:02:22,819 --> 00:02:28,490
+script<font color="#E5E5E5"> we</font><font color="#CCCCCC"> closed the</font><font color="#E5E5E5"> script tags and</font>
+
+45
+00:02:28,490 --> 00:02:34,350
+inside<font color="#CCCCCC"> of</font><font color="#E5E5E5"> here</font><font color="#CCCCCC"> we</font><font color="#E5E5E5"> simply use alert you</font>
+
+46
+00:02:34,350 --> 00:02:36,240
+got hacked
+
+47
+00:02:36,240 --> 00:02:40,410
+for example<font color="#CCCCCC"> okay and what happens if</font><font color="#E5E5E5"> we</font>
+
+48
+00:02:40,410 --> 00:02:43,230
+post this<font color="#CCCCCC"> all right every time</font>
+
+49
+00:02:43,230 --> 00:02:48,030
+<font color="#E5E5E5">the guestbook side is loaded</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> the</font>
+
+50
+00:02:48,030 --> 00:02:51,380
+browser<font color="#CCCCCC"> checks there is a script tag and</font>
+
+51
+00:02:51,380 --> 00:02:54,300
+then execute<font color="#CCCCCC"> the script inside of the</font>
+
+52
+00:02:54,300 --> 00:02:57,360
+script<font color="#CCCCCC"> tags</font><font color="#E5E5E5"> so it displays</font><font color="#CCCCCC"> you've got</font>
+
+53
+00:02:57,360 --> 00:03:01,380
+hacked in alert box so if we take a look
+
+54
+00:03:01,380 --> 00:03:09,480
+<font color="#CCCCCC">at the page source we have</font><font color="#E5E5E5"> our script</font>
+
+55
+00:03:09,480 --> 00:03:13,050
+here you see just<font color="#E5E5E5"> place the script tag</font>
+
+56
+00:03:13,050 --> 00:03:16,350
+and execute the code<font color="#E5E5E5"> inside</font><font color="#CCCCCC"> of here and</font>
+
+57
+00:03:16,350 --> 00:03:20,820
+<font color="#CCCCCC">if</font><font color="#E5E5E5"> we take a look at the</font><font color="#CCCCCC"> adair h source</font>
+
+58
+00:03:20,820 --> 00:03:23,700
+<font color="#E5E5E5">we see we could do anything</font>
+
+59
+00:03:23,700 --> 00:03:27,329
+with<font color="#E5E5E5"> JavaScript so we see</font><font color="#CCCCCC"> okay there is</font>
+
+60
+00:03:27,329 --> 00:03:31,350
+an ID we copy this and we want to hide
+
+61
+00:03:31,350 --> 00:03:33,930
+the guest book the complete gas book
+
+62
+00:03:33,930 --> 00:03:42,019
+okay so I<font color="#E5E5E5"> write a script script</font><font color="#CCCCCC"> and</font>
+
+63
+00:03:42,019 --> 00:03:43,590
+inside<font color="#CCCCCC"> of</font><font color="#E5E5E5"> here</font>
+
+64
+00:03:43,590 --> 00:03:52,790
+I say document dot get element by ID
+
+65
+00:03:53,510 --> 00:03:57,239
+posts<font color="#E5E5E5"> my ID inside of here then we say</font>
+
+66
+00:03:57,239 --> 00:04:03,510
+style with zip bility style visibility
+
+67
+00:04:03,510 --> 00:04:08,329
+and<font color="#E5E5E5"> we set the visibility to hidden okay</font>
+
+68
+00:04:08,329 --> 00:04:11,850
+so if we post this to<font color="#CCCCCC"> the server</font>
+
+69
+00:04:11,850 --> 00:04:15,470
+you see our<font color="#E5E5E5"> guestbook is hidden now</font>
+
+70
+00:04:15,470 --> 00:04:22,039
+<font color="#E5E5E5">because we add with our script</font><font color="#CCCCCC"> we add a</font>
+
+71
+00:04:24,080 --> 00:04:25,230
+star
+
+72
+00:04:25,230 --> 00:04:28,230
+on our guest book which says
+
+73
+00:04:28,230 --> 00:04:30,690
+<font color="#E5E5E5">visibility:hidden of course you can</font>
+
+74
+00:04:30,690 --> 00:04:35,790
+inject anything<font color="#E5E5E5"> inside</font><font color="#CCCCCC"> of this if the</font>
+
+75
+00:04:35,790 --> 00:04:38,880
+creator of<font color="#E5E5E5"> this web application does not</font>
+
+76
+00:04:38,880 --> 00:04:42,210
+<font color="#E5E5E5">secure the web application so we could</font>
+
+77
+00:04:42,210 --> 00:04:49,950
+go to<font color="#E5E5E5"> google google</font><font color="#CCCCCC"> jquery and go to the</font>
+
+78
+00:04:49,950 --> 00:04:54,410
+hosted libraries and we could inject
+
+79
+00:04:54,410 --> 00:04:58,890
+<font color="#E5E5E5">jquery for example</font><font color="#CCCCCC"> i mean there is</font>
+
+80
+00:04:58,890 --> 00:05:01,320
+<font color="#E5E5E5">already jquery on this</font><font color="#CCCCCC"> webpage so it</font>
+
+81
+00:05:01,320 --> 00:05:02,730
+does<font color="#E5E5E5"> not make any</font><font color="#CCCCCC"> sense</font>
+
+82
+00:05:02,730 --> 00:05:09,510
+<font color="#CCCCCC">but if i would i</font><font color="#E5E5E5"> could post the</font><font color="#CCCCCC"> jquery</font>
+
+83
+00:05:09,510 --> 00:05:12,120
+library<font color="#E5E5E5"> inside of here then make a</font>
+
+84
+00:05:12,120 --> 00:05:21,660
+script and use jQuery<font color="#E5E5E5"> to make the</font>
+
+85
+00:05:21,660 --> 00:05:23,990
+<font color="#E5E5E5">guestbook with a</font><font color="#CCCCCC"> bowl again for example</font>
+
+86
+00:05:23,990 --> 00:05:29,280
+<font color="#E5E5E5">so</font><font color="#CCCCCC"> I would post something</font><font color="#E5E5E5"> like</font><font color="#CCCCCC"> this</font><font color="#E5E5E5"> get</font>
+
+87
+00:05:29,280 --> 00:05:40,700
+my ID and say CSS and with the<font color="#E5E5E5"> bill it</font><font color="#CCCCCC"> t</font>
+
+88
+00:05:41,600 --> 00:05:51,000
+visible with<font color="#E5E5E5"> bull so try this and as you</font>
+
+89
+00:05:51,000 --> 00:05:57,600
+see<font color="#E5E5E5"> D</font><font color="#CCCCCC"> gas book is visible again and we</font>
+
+90
+00:05:57,600 --> 00:06:01,740
+have injected<font color="#E5E5E5"> jQuery inside</font><font color="#CCCCCC"> of our</font>
+
+91
+00:06:01,740 --> 00:06:06,480
+<font color="#CCCCCC">guestbook</font><font color="#E5E5E5"> so this is pretty evil</font><font color="#CCCCCC"> you see</font>
+
+92
+00:06:06,480 --> 00:06:10,650
+<font color="#CCCCCC">visibility visible and inside of here we</font>
+
+93
+00:06:10,650 --> 00:06:15,570
+<font color="#CCCCCC">have our</font><font color="#E5E5E5"> jQuery library and here we use</font>
+
+94
+00:06:15,570 --> 00:06:20,160
+<font color="#CCCCCC">our</font><font color="#E5E5E5"> jQuery so what can</font><font color="#CCCCCC"> we do to make</font>
+
+95
+00:06:20,160 --> 00:06:27,060
+that not work so we learned about the
+
+96
+00:06:27,060 --> 00:06:30,990
+strict tax function in PHP before so I
+
+97
+00:06:30,990 --> 00:06:33,550
+use this<font color="#CCCCCC"> for my</font>
+
+98
+00:06:33,550 --> 00:06:38,169
+for my<font color="#E5E5E5"> sin feedback form</font><font color="#CCCCCC"> and we need to</font>
+
+99
+00:06:38,169 --> 00:06:44,860
+make<font color="#CCCCCC"> sure that</font><font color="#E5E5E5"> nobody can</font><font color="#CCCCCC"> inject script</font>
+
+100
+00:06:44,860 --> 00:06:48,099
+X<font color="#E5E5E5"> anymore because a script tag is simply</font>
+
+101
+00:06:48,099 --> 00:06:51,699
+<font color="#E5E5E5">a HTML tag which could be injected</font><font color="#CCCCCC"> so if</font>
+
+102
+00:06:51,699 --> 00:06:56,470
+we do<font color="#E5E5E5"> something</font><font color="#CCCCCC"> like</font><font color="#E5E5E5"> this to our insert</font>
+
+103
+00:06:56,470 --> 00:06:59,860
+guestbook every HTML<font color="#E5E5E5"> tag will</font><font color="#CCCCCC"> be</font>
+
+104
+00:06:59,860 --> 00:07:04,569
+stripped<font color="#E5E5E5"> away also</font><font color="#CCCCCC"> the script</font><font color="#E5E5E5"> tag so if</font>
+
+105
+00:07:04,569 --> 00:07:11,280
+we save this and go<font color="#CCCCCC"> back to</font><font color="#E5E5E5"> our page</font><font color="#CCCCCC"> and</font>
+
+106
+00:07:11,280 --> 00:07:15,280
+<font color="#E5E5E5">we're posting something like this and we</font>
+
+107
+00:07:15,280 --> 00:07:21,099
+post<font color="#E5E5E5"> the script again and we say</font><font color="#CCCCCC"> for</font>
+
+108
+00:07:21,099 --> 00:07:29,500
+example alert again for<font color="#E5E5E5"> example this</font>
+
+109
+00:07:29,500 --> 00:07:31,810
+will not<font color="#CCCCCC"> work anymore</font><font color="#E5E5E5"> because if I send</font>
+
+110
+00:07:31,810 --> 00:07:37,060
+a<font color="#CCCCCC"> feedback you see it strips the script</font>
+
+111
+00:07:37,060 --> 00:07:39,610
+tags away and we're not allowed anymore
+
+112
+00:07:39,610 --> 00:07:46,599
+do<font color="#E5E5E5"> you inject JavaScript</font><font color="#CCCCCC"> so this is one</font>
+
+113
+00:07:46,599 --> 00:07:49,270
+way<font color="#CCCCCC"> to make</font><font color="#E5E5E5"> sure</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> you cannot in</font>
+
+114
+00:07:49,270 --> 00:07:52,360
+check<font color="#CCCCCC"> JavaScript</font><font color="#E5E5E5"> to your web application</font>
+
+115
+00:07:52,360 --> 00:07:56,580
+<font color="#E5E5E5">so we are pretty secure now okay</font>
+
+116
+00:07:56,580 --> 00:08:01,270
+so that's it for this video don't<font color="#E5E5E5"> forget</font>
+
+117
+00:08:01,270 --> 00:08:03,430
+<font color="#CCCCCC">to give me</font><font color="#E5E5E5"> a thumbs up to subscribe to</font>
+
+118
+00:08:03,430 --> 00:08:05,469
+my<font color="#CCCCCC"> channel and to share this</font><font color="#E5E5E5"> video</font>
+
+119
+00:08:05,469 --> 00:08:07,509
+everywhere and we see<font color="#CCCCCC"> us in the next</font>
+
+120
+00:08:07,509 --> 00:00:00,000
+<font color="#CCCCCC">video bye</font>
+

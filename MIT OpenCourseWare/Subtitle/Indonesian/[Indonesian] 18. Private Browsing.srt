@@ -1,0 +1,7128 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,050
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,050 --> 00:00:10,160
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,160 --> 00:00:12,700
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,263
+ di ocw.mit.edu. 
+
+9
+00:00:17,263 --> 00:00:26,590
+
+
+10
+00:00:26,590 --> 00:00:29,840
+ PROFESOR: Baiklah, mari kita mulai. 
+
+11
+00:00:29,840 --> 00:00:33,336
+ Jadi, selamat datang di ceramah menarik lainnya tentang keamanan 
+
+12
+00:00:33,336 --> 00:00:34,710
+ dan mengapa dunia sangat mengerikan. 
+
+13
+00:00:34,710 --> 00:00:37,390
+ Jadi hari ini kita akan berbicara tentang penelusuran pribadi 
+
+14
+00:00:37,390 --> 00:00:38,860
+ mode, sesuatu yang banyak dari Anda 
+
+15
+00:00:38,860 --> 00:00:40,940
+ mungkin memiliki banyak pengalaman pribadi dengan. 
+
+16
+00:00:40,940 --> 00:00:43,996
+ Pada tingkat tinggi, apa tujuan dari privasi? 
+
+17
+00:00:43,996 --> 00:00:45,870
+ Ketika peneliti keamanan berbicara tentang privasi, 
+
+18
+00:00:45,870 --> 00:00:47,140
+ apa yang mereka bicarakan? 
+
+19
+00:00:47,140 --> 00:00:48,900
+ Baik pada tingkat tinggi, mereka berbicara 
+
+20
+00:00:48,900 --> 00:00:50,060
+ tentang tujuan berikut. 
+
+21
+00:00:50,060 --> 00:00:55,260
+ Jadi setiap pengguna tertentu harus dapat dibedakan dari sekelompok 
+
+22
+00:00:55,260 --> 00:00:56,200
+ dari pengguna lain. 
+
+23
+00:00:56,200 --> 00:00:58,560
+ Khususnya, aktivitas pengguna yang diberikan 
+
+24
+00:00:58,560 --> 00:01:02,480
+ harus tidak memberatkan jika dilihat dalam terang aktivitas 
+
+25
+00:01:02,480 --> 00:01:05,099
+ dari sekelompok pengguna lain yang berbeda. 
+
+26
+00:01:05,099 --> 00:01:06,620
+ Jadi, seperti yang saya sebutkan, hari ini kita 
+
+27
+00:01:06,620 --> 00:01:09,480
+ akan berbicara tentang privasi dalam konteks spesifik 
+
+28
+00:01:09,480 --> 00:01:11,800
+ penjelajahan web pribadi. 
+
+29
+00:01:11,800 --> 00:01:14,460
+ Dan sebenarnya tidak ada definisi formal 
+
+30
+00:01:14,460 --> 00:01:16,960
+ untuk apa arti penelusuran web pribadi. 
+
+31
+00:01:16,960 --> 00:01:19,020
+ Ada beberapa alasan berbeda untuk itu. 
+
+32
+00:01:19,020 --> 00:01:20,850
+ Jadi salah satu alasannya adalah aplikasi web itu 
+
+33
+00:01:20,850 --> 00:01:22,170
+ sangat, sangat rumit. 
+
+34
+00:01:22,170 --> 00:01:24,160
+ Dan mereka menambahkan fitur baru setiap saat 
+
+35
+00:01:24,160 --> 00:01:26,140
+ seperti kemampuan dan hal-hal audio dan video 
+
+36
+00:01:26,140 --> 00:01:26,870
+ seperti ini. 
+
+37
+00:01:26,870 --> 00:01:29,020
+ Akibatnya, ada target bergerak ini 
+
+38
+00:01:29,020 --> 00:01:30,910
+ dalam hal apa yang bisa dilakukan oleh browser. 
+
+39
+00:01:30,910 --> 00:01:32,520
+ Dan sebagai hasilnya, informasi apa 
+
+40
+00:01:32,520 --> 00:01:35,470
+ mereka mungkin bisa bocor tentang pengguna tertentu. 
+
+41
+00:01:35,470 --> 00:01:37,740
+ Dan apa yang akhirnya terjadi adalah dalam praktiknya, 
+
+42
+00:01:37,740 --> 00:01:39,630
+ suka dengan banyak hal yang melibatkan browser, 
+
+43
+00:01:39,630 --> 00:01:41,990
+ ada standar hidup ini. 
+
+44
+00:01:41,990 --> 00:01:43,400
+ Vendor browser yang berbeda akan demikian 
+
+45
+00:01:43,400 --> 00:01:45,420
+ mengimplementasikan fitur yang berbeda, terutama dengan hormat 
+
+46
+00:01:45,420 --> 00:01:46,370
+ ke penelusuran pribadi. 
+
+47
+00:01:46,370 --> 00:01:49,150
+ Vendor lain akan melihat dan melihat apa yang dilakukan vendor X. 
+
+48
+00:01:49,150 --> 00:01:51,970
+ Mereka akan memperbarui browser mereka sendiri. 
+
+49
+00:01:51,970 --> 00:01:54,260
+ Jadi itu seperti target yang bergerak. 
+
+50
+00:01:54,260 --> 00:01:58,040
+ Dan karena pengguna semakin bergantung pada penjelajahan pribadi semakin banyak, 
+
+51
+00:01:58,040 --> 00:02:00,910
+ mereka akhirnya sering menemukan bug 
+
+52
+00:02:00,910 --> 00:02:03,730
+ dalam mode penjelajahan pribadi, karena saya akan membahas pasangan 
+
+53
+00:02:03,730 --> 00:02:05,430
+ beberapa menit kemudian di kuliah. 
+
+54
+00:02:05,430 --> 00:02:07,510
+ Dan begitu private browsing pada level yang tinggi 
+
+55
+00:02:07,510 --> 00:02:09,930
+ Anda dapat menganggap sebagai tujuan aspiratif. 
+
+56
+00:02:09,930 --> 00:02:11,960
+ Tetapi kita sebagai masyarakat terus menerus 
+
+57
+00:02:11,960 --> 00:02:14,070
+ menyempurnakan apa artinya melakukan penelusuran pribadi 
+
+58
+00:02:14,070 --> 00:02:16,470
+ dan menjadi lebih baik dalam beberapa aspek-- 
+
+59
+00:02:16,470 --> 00:02:19,090
+ lebih buruk di beberapa aspek-- karena kita akan melihat sedikit nanti. 
+
+60
+00:02:19,090 --> 00:02:22,920
+ Jadi apa sebenarnya yang kami maksud dengan penelusuran pribadi? 
+
+61
+00:02:22,920 --> 00:02:23,440
+ Itu sulit. 
+
+62
+00:02:23,440 --> 00:02:27,030
+ Tetapi makalah ini mencoba memformalkannya dalam dua cara khusus. 
+
+63
+00:02:27,030 --> 00:02:31,640
+ Jadi pertama-tama, makalah ini berbicara tentang penyerang lokal 
+
+64
+00:02:31,640 --> 00:02:33,015
+ pada penelusuran web pribadi. 
+
+65
+00:02:33,015 --> 00:02:34,640
+ Ini adalah seseorang yang akan memilikinya 
+
+66
+00:02:34,640 --> 00:02:35,866
+ mesin Anda setelah selesai melakukan penelusuran pribadi 
+
+67
+00:02:35,866 --> 00:02:36,555
+ sidang. 
+
+68
+00:02:36,555 --> 00:02:39,066
+ Dan ia ingin mencari tahu situs apa yang Anda lihat 
+
+69
+00:02:39,066 --> 00:02:40,710
+ di dalam mode penjelajahan pribadi. 
+
+70
+00:02:40,710 --> 00:02:44,520
+ Dan makalah ini juga berbicara tentang penyerang web. 
+
+71
+00:02:44,520 --> 00:02:47,425
+ Penyerang web adalah seseorang yang mengontrol situs web 
+
+72
+00:02:47,425 --> 00:02:48,680
+ yang kamu kunjungi. 
+
+73
+00:02:48,680 --> 00:02:51,750
+ Dan penyerang web ini mungkin ingin mencoba mencari tahu 
+
+74
+00:02:51,750 --> 00:02:55,470
+ bahwa Anda adalah orang tertentu, John atau Jane, sebagai lawan 
+
+75
+00:02:55,470 --> 00:02:58,460
+ untuk beberapa pengguna amorf bahwa situs web tidak bisa 
+
+76
+00:02:58,460 --> 00:02:59,210
+ beri tahu siapa mereka. 
+
+77
+00:02:59,210 --> 00:03:03,840
+ Jadi kita akan melihat masing-masing serangan ini secara detail. 
+
+78
+00:03:03,840 --> 00:03:07,400
+ Tetapi untuk sekarang, cukuplah untuk mengatakan bahwa jika penyerang dapat meluncurkan 
+
+79
+00:03:07,400 --> 00:03:10,488
+ kedua serangan ini - baik lokal maupun web 
+
+80
+00:03:10,488 --> 00:03:12,783
+ attack-- yang sebenarnya sangat memperkuat kemampuan mereka 
+
+81
+00:03:12,783 --> 00:03:14,160
+ untuk mencoba untuk mempercayai kami. 
+
+82
+00:03:14,160 --> 00:03:16,230
+ Jadi, misalnya, penyerang lokal 
+
+83
+00:03:16,230 --> 00:03:18,820
+ siapa, misalnya, mungkin tahu alamat IP Anda 
+
+84
+00:03:18,820 --> 00:03:21,390
+ dapat benar-benar berbicara dengan situs web dan berkata, hei, 
+
+85
+00:03:21,390 --> 00:03:23,640
+ sudahkah Anda melihat alamat IP tertentu ini di log Anda. 
+
+86
+00:03:23,640 --> 00:03:24,310
+ Jika iya, aha! 
+
+87
+00:03:24,310 --> 00:03:28,744
+ Anda sedang melihat pengguna yang mesinnya saya kontrol sekarang. 
+
+88
+00:03:28,744 --> 00:03:31,160
+ Jadi sebenarnya sangat berguna dari perspektif keamanan 
+
+89
+00:03:31,160 --> 00:03:33,299
+ untuk mempertimbangkan serangan lokal dan web ini. 
+
+90
+00:03:33,299 --> 00:03:35,090
+ Jadi mereka adalah hal yang terpisah dan kemudian dilihat 
+
+91
+00:03:35,090 --> 00:03:37,110
+ bagaimana mereka bisa menulis. 
+
+92
+00:03:37,110 --> 00:03:42,100
+ Jadi mari kita lihat jenis penyerang pertama ini, 
+
+93
+00:03:42,100 --> 00:03:44,560
+ yang merupakan penyerang lokal. 
+
+94
+00:03:44,560 --> 00:03:49,880
+
+
+95
+00:03:49,880 --> 00:03:54,890
+ Jadi seperti yang saya sebutkan, kami berasumsi bahwa penyerang ini 
+
+96
+00:03:54,890 --> 00:04:02,700
+ akan mengontrol mesin pengguna pasca-sesi. 
+
+97
+00:04:02,700 --> 00:04:07,784
+ Maka oleh pasca-sesi, maksud saya adalah penelusuran pribadi 
+
+98
+00:04:07,784 --> 00:04:11,440
+ aktivitas telah selesai-- pengguna mungkin telah pergi 
+
+99
+00:04:11,440 --> 00:04:12,809
+ dan melakukan sesuatu yang lain. 
+
+100
+00:04:12,809 --> 00:04:13,850
+ Bukan di komputer. 
+
+101
+00:04:13,850 --> 00:04:15,891
+ Dan kemudian penyerang mengambil alih masalah itu 
+
+102
+00:04:15,891 --> 00:04:17,890
+ dan ingin mencari tahu apa yang terjadi. 
+
+103
+00:04:17,890 --> 00:04:21,110
+ Jadi tujuan keamanannya adalah bahwa kita bukan penyerang 
+
+104
+00:04:21,110 --> 00:04:23,080
+ dapat mengetahui situs web apa pun 
+
+105
+00:04:23,080 --> 00:04:27,310
+ yang dikunjungi pengguna selama aktivitas penelusuran pribadi ini. 
+
+106
+00:04:27,310 --> 00:04:29,885
+ Sekarang, alasan mengapa pos itu sebenarnya penting 
+
+107
+00:04:29,885 --> 00:04:32,420
+ ada karena jika kita berasumsi bahwa penyerang dapat mengendalikan 
+
+108
+00:04:32,420 --> 00:04:34,787
+ mesin sebelum pengguna menjelajah pribadi, 
+
+109
+00:04:34,787 --> 00:04:37,370
+ maka pada dasarnya game over, benar, karena penyerang bisa 
+
+110
+00:04:37,370 --> 00:04:41,730
+ menginstal keystroke logger-- penyerang dapat menumbangkan biner 
+
+111
+00:04:41,730 --> 00:04:44,120
+ bahwa [TIDAK JELAS] browser. 
+
+112
+00:04:44,120 --> 00:04:45,980
+ Penyerang dapat mengirimkan OS. 
+
+113
+00:04:45,980 --> 00:04:50,460
+ Jadi kami tidak begitu peduli dengan penyerang pra-sesi ini. 
+
+114
+00:04:50,460 --> 00:04:52,800
+ Dan juga perhatikan bahwa kami tidak berusaha memberikan privasi 
+
+115
+00:04:52,800 --> 00:04:57,189
+ untuk pengguna setelah penyerang mengontrol mesin. 
+
+116
+00:04:57,189 --> 00:04:58,480
+ Dan itu karena alasan yang sama. 
+
+117
+00:04:58,480 --> 00:04:59,910
+ Setelah penyerang sampai ke mesin, 
+
+118
+00:04:59,910 --> 00:05:02,535
+ dia dapat melakukan hal yang sama yang disebut - logger kunci. 
+
+119
+00:05:02,535 --> 00:05:05,530
+ Jadi, pada dasarnya, setelah pengguna meninggalkan mesin, 
+
+120
+00:05:05,530 --> 00:05:08,840
+ kami tidak menganggap ada gagasan tentang privasi. 
+
+121
+00:05:08,840 --> 00:05:09,740
+ Apakah itu masuk akal? 
+
+122
+00:05:09,740 --> 00:05:11,580
+ Ini cukup mudah. 
+
+123
+00:05:11,580 --> 00:05:14,700
+ Dan Anda dapat membayangkan bahwa tujuan lain yang Anda mungkin 
+
+124
+00:05:14,700 --> 00:05:17,950
+ ingin mencoba memuaskan di sini adalah Anda 
+
+125
+00:05:17,950 --> 00:05:20,150
+ mungkin ingin mencoba bersembunyi dari penyerang 
+
+126
+00:05:20,150 --> 00:05:23,820
+ bahwa pengguna menggunakan mode penjelajahan pribadi sama sekali. 
+
+127
+00:05:23,820 --> 00:05:26,290
+ Sekarang koran itu benar-benar mengatakan itu sangat sulit. 
+
+128
+00:05:26,290 --> 00:05:28,530
+ Properti ini sering disebut deniability yang masuk akal. 
+
+129
+00:05:28,530 --> 00:05:31,389
+ Jadi bos Anda mendatangi Anda setelah Anda menggunakan penelusuran pribadi, 
+
+130
+00:05:31,389 --> 00:05:33,305
+ dan mengatakan apakah kamu melihat mylittlepony.com? 
+
+131
+00:05:33,305 --> 00:05:35,027
+ Tidak, tidak, tentu saja tidak. 
+
+132
+00:05:35,027 --> 00:05:37,110
+ Dan saya jelas tidak menggunakan mode penjelajahan pribadi 
+
+133
+00:05:37,110 --> 00:05:39,444
+ untuk menyembunyikan fakta bahwa saya melihat mylittlepony.com. 
+
+134
+00:05:39,444 --> 00:05:40,818
+ Jadi seperti yang saya katakan, koran itu mengatakannya 
+
+135
+00:05:40,818 --> 00:05:42,390
+ sulit untuk menyediakan properti ini 
+
+136
+00:05:42,390 --> 00:05:43,770
+ deniability yang masuk akal. 
+
+137
+00:05:43,770 --> 00:05:45,300
+ Saya akan memberi Anda beberapa alasan konkret 
+
+138
+00:05:45,300 --> 00:05:47,190
+ mengapa ini mungkin terjadi sedikit kemudian 
+
+139
+00:05:47,190 --> 00:05:48,570
+ di dalam kuliah. 
+
+140
+00:05:48,570 --> 00:05:51,440
+ Tapi itu pada dasarnya adalah gambaran dari penyerang lokal. 
+
+141
+00:05:51,440 --> 00:05:55,142
+ Jadi satu pertanyaan yang mungkin ingin kita pikirkan 
+
+142
+00:05:55,142 --> 00:06:05,760
+ adalah apa jenis negara sisi klien yang gigih 
+
+143
+00:06:05,760 --> 00:06:11,041
+ dapat dibocorkan oleh sesi penjelajahan pribadi? 
+
+144
+00:06:11,041 --> 00:06:14,730
+
+
+145
+00:06:14,730 --> 00:06:18,796
+ Dan dengan gigih, saya hanya mengartikan hal-hal 
+
+146
+00:06:18,796 --> 00:06:22,022
+ yang akan berakhir dengan disimpan di hard disk lokal, 
+
+147
+00:06:22,022 --> 00:06:24,716
+ SSD lokal atau apa pun. 
+
+148
+00:06:24,716 --> 00:06:27,215
+ Jadi, negara macam apa yang mungkin bocor jika kita tidak berhati-hati 
+
+149
+00:06:27,215 --> 00:06:29,381
+ ketika seseorang melakukan jenis penelusuran pribadi ini? 
+
+150
+00:06:29,381 --> 00:06:31,010
+ Jadi satu hal yang mungkin Anda khawatirkan 
+
+151
+00:06:31,010 --> 00:06:38,150
+ adalah status yang dapat diakses JavaScript. 
+
+152
+00:06:38,150 --> 00:06:45,391
+ Jadi, contoh ini mencakup hal-hal seperti cookie dan DOM 
+
+153
+00:06:45,391 --> 00:06:45,890
+ penyimpanan. 
+
+154
+00:06:45,890 --> 00:06:49,400
+
+
+155
+00:06:49,400 --> 00:06:52,220
+ Hal lain yang mungkin Anda khawatirkan-- 
+
+156
+00:06:52,220 --> 00:06:55,049
+ dan inilah yang dipikirkan kebanyakan orang ketika mereka berpikir 
+
+157
+00:06:55,049 --> 00:06:57,090
+ tentang apa yang ingin mereka katakan di private browsing-- 
+
+158
+00:06:57,090 --> 00:06:59,514
+ mungkin cache browser. 
+
+159
+00:06:59,514 --> 00:07:01,680
+ Jadi Anda tidak ingin seseorang melihat ke dalam cache bagian dalam 
+
+160
+00:07:01,680 --> 00:07:04,200
+ dan mencari tahu di sini adalah beberapa gambar atau HTML 
+
+161
+00:07:04,200 --> 00:07:05,908
+ file dari situs web yang Anda sukai 
+
+162
+00:07:05,908 --> 00:07:07,116
+ tidak tahu kalau kamu berkunjung. 
+
+163
+00:07:07,116 --> 00:07:10,620
+
+
+164
+00:07:10,620 --> 00:07:16,377
+ Hal penting lainnya adalah riwayat situs yang Anda kunjungi. 
+
+165
+00:07:16,377 --> 00:07:19,680
+
+
+166
+00:07:19,680 --> 00:07:21,486
+ Begitu banyak hubungan Anda miliki 
+
+167
+00:07:21,486 --> 00:07:24,032
+ rusak ketika yang lain masuk ke browser-- mulai mengetik 
+
+168
+00:07:24,032 --> 00:07:26,240
+ sesuatu ke address bar dan tiba-tiba 
+
+169
+00:07:26,240 --> 00:07:28,281
+ itu otomatis selesai untuk sesuatu yang sangat memalukan. 
+
+170
+00:07:28,281 --> 00:07:30,245
+ Jadi ini adalah satu hal yang pasti Anda 
+
+171
+00:07:30,245 --> 00:07:33,610
+ tidak ingin bocor di luar sesi penjelajahan pribadi. 
+
+172
+00:07:33,610 --> 00:07:38,610
+ Anda juga dapat berpikir tentang status konfigurasi 
+
+173
+00:07:38,610 --> 00:07:39,830
+ dengan penjelajahan. 
+
+174
+00:07:39,830 --> 00:07:43,270
+ Dan di sini Anda bisa memikirkan banyak hal 
+
+175
+00:07:43,270 --> 00:07:47,330
+ seperti sertifikat klien. 
+
+176
+00:07:47,330 --> 00:07:51,725
+ Anda juga bisa memikirkan hal-hal seperti bookmark. 
+
+177
+00:07:51,725 --> 00:07:55,170
+
+
+178
+00:07:55,170 --> 00:07:58,262
+ Mungkin jika Anda login ke situs tertentu dan browser 
+
+179
+00:07:58,262 --> 00:08:00,178
+ menawarkan untuk menyimpan kata sandi Anda dalam jenis lain 
+
+180
+00:08:00,178 --> 00:08:02,455
+ status konfigurasi yang mungkin tidak ingin Anda bocor 
+
+181
+00:08:02,455 --> 00:08:05,210
+ dari mode penelusuran pribadi. 
+
+182
+00:08:05,210 --> 00:08:09,940
+ File yang diunduh-- seperti yang akan kita diskusikan, 
+
+183
+00:08:09,940 --> 00:08:12,520
+ yang ini sedikit menarik 
+
+184
+00:08:12,520 --> 00:08:15,972
+ karena mengunduh file sebenarnya membutuhkan pengguna eksplisit 
+
+185
+00:08:15,972 --> 00:08:17,180
+ tindakan untuk mengunduh file itu. 
+
+186
+00:08:17,180 --> 00:08:18,876
+ Mungkin kita sebenarnya menginginkan barang-barang ini 
+
+187
+00:08:18,876 --> 00:08:20,610
+ bocor di luar mode penjelajahan pribadi. 
+
+188
+00:08:20,610 --> 00:08:22,780
+ Mungkin jika Anda mengunduh sesuatu dalam mode penjelajahan pribadi, 
+
+189
+00:08:22,780 --> 00:08:25,247
+ seharusnya bisa diakses ketika Anda membuka browser 
+
+190
+00:08:25,247 --> 00:08:26,830
+ atau gunakan mesin setelah sesi itu. 
+
+191
+00:08:26,830 --> 00:08:30,660
+ Jadi kita akan membicarakan ini sedikit sebentar. 
+
+192
+00:08:30,660 --> 00:08:34,320
+ Dan kemudian, akhirnya, selama mode penjelajahan pribadi, 
+
+193
+00:08:34,320 --> 00:08:39,260
+ Anda dapat menginstal plug-in baru atau sesi browser. 
+
+194
+00:08:39,260 --> 00:08:43,488
+
+
+195
+00:08:43,489 --> 00:08:45,030
+ Itu adalah tipe lain dari keadaan Anda 
+
+196
+00:08:45,030 --> 00:08:48,970
+ bayangkan Anda tidak ingin bocor keluar 
+
+197
+00:08:48,970 --> 00:08:50,160
+ mode penjelajahan pribadi. 
+
+198
+00:08:50,160 --> 00:08:54,040
+ Jadi, pada dasarnya, mode penjelajahan saat ini biasanya 
+
+199
+00:08:54,040 --> 00:08:58,750
+ cobalah untuk mencegah satu, dua, dan tiga bocor keluar 
+
+200
+00:08:58,750 --> 00:09:00,351
+ sesi browser pribadi. 
+
+201
+00:09:00,351 --> 00:09:00,850
+ Kanan? 
+
+202
+00:09:00,850 --> 00:09:02,808
+ Jadi tidak boleh ada cookie atau toko DOM 
+
+203
+00:09:02,808 --> 00:09:03,732
+ untuk keluar dari sana. 
+
+204
+00:09:03,732 --> 00:09:05,940
+ Apa pun yang Anda masukkan ke dalam cache saat menjelajah pribadi 
+
+205
+00:09:05,940 --> 00:09:07,404
+ sesi harus dihapus. 
+
+206
+00:09:07,404 --> 00:09:09,320
+ Dan Anda seharusnya tidak memiliki riwayat URL 
+
+207
+00:09:09,320 --> 00:09:11,160
+ yang Anda gunakan. 
+
+208
+00:09:11,160 --> 00:09:14,510
+ Biasanya, empat, lima, dan enam mode penjelajahan pribadi 
+
+209
+00:09:14,510 --> 00:09:16,890
+ biarkan bocor di luar sesi. 
+
+210
+00:09:16,890 --> 00:09:19,220
+ Dan ada beberapa alasan bagus dan buruk 
+
+211
+00:09:19,220 --> 00:09:20,570
+ mengapa ini mungkin terjadi. 
+
+212
+00:09:20,570 --> 00:09:22,400
+ Dan seperti yang akan kita diskusikan nanti, kita akan 
+
+213
+00:09:22,400 --> 00:09:25,050
+ lihat apakah Anda mengizinkan sesuatu bocor dari penelusuran pribadi 
+
+214
+00:09:25,050 --> 00:09:28,130
+ sesi, yang sebenarnya secara radikal meningkatkan ancaman 
+
+215
+00:09:28,130 --> 00:09:29,470
+ permukaan kebocoran pribadi. 
+
+216
+00:09:29,470 --> 00:09:31,540
+ Jadi jauh lebih sulit untuk bernalar 
+
+217
+00:09:31,540 --> 00:09:33,240
+ tentang apa sifat keamanannya 
+
+218
+00:09:33,240 --> 00:09:34,429
+ untuk mode penelusuran pribadi. 
+
+219
+00:09:34,429 --> 00:09:35,470
+ Apakah itu semua masuk akal? 
+
+220
+00:09:35,470 --> 00:09:38,370
+ Ada yang punya pertanyaan? 
+
+221
+00:09:38,370 --> 00:09:41,320
+ Ini cukup mudah. 
+
+222
+00:09:41,320 --> 00:09:45,320
+ Jadi hal berikutnya yang akan kita bicarakan sebentar 
+
+223
+00:09:45,320 --> 00:09:50,704
+ adalah aktivitas jaringan selama mode penelusuran pribadi. 
+
+224
+00:09:50,704 --> 00:09:53,460
+ Dan yang menarik tentang ini 
+
+225
+00:09:53,460 --> 00:09:56,911
+ apakah itu bahkan jika kita menutupi semua barang ini-- 
+
+226
+00:09:56,911 --> 00:09:58,910
+ kami tidak mengizinkan penelusuran pribadi untuk membocorkan apa pun 
+
+227
+00:09:58,910 --> 00:10:02,060
+ dari sana-- fakta bahwa Anda mengeluarkan paket jaringan 
+
+228
+00:10:02,060 --> 00:10:04,650
+ koneksi meninggalkan bukti dari apa yang Anda lakukan. 
+
+229
+00:10:04,650 --> 00:10:06,513
+ Jadi bayangkan ketika Anda ingin pergi ke foo.com, 
+
+230
+00:10:06,513 --> 00:10:08,540
+ situs web, mesin Anda sebenarnya 
+
+231
+00:10:08,540 --> 00:10:12,259
+ harus mengeluarkan permintaan resolusi DNS untuk foo.com. 
+
+232
+00:10:12,259 --> 00:10:14,050
+ Jadi bahkan jika Anda tidak meninggalkan jenis ini 
+
+233
+00:10:14,050 --> 00:10:15,508
+ negara persisten di sana, di sana 
+
+234
+00:10:15,508 --> 00:10:18,310
+ dapat berupa catatan di cache DNS lokal Anda 
+
+235
+00:10:18,310 --> 00:10:21,681
+ bahwa Anda, pada kenyataannya, mencoba menyelesaikan foo.com hostname. 
+
+236
+00:10:21,681 --> 00:10:22,680
+ Itu sangat menarik. 
+
+237
+00:10:22,680 --> 00:10:24,680
+ Jadi Anda bisa membayangkan bahwa browser bisa 
+
+238
+00:10:24,680 --> 00:10:27,660
+ cobalah untuk membersihkan cache DNS entah bagaimana 
+
+239
+00:10:27,660 --> 00:10:29,390
+ setelah sesi pribadi selesai. 
+
+240
+00:10:29,390 --> 00:10:30,370
+ Sekarang, dalam prakteknya, itu sebenarnya 
+
+241
+00:10:30,370 --> 00:10:31,911
+ sulit dilakukan karena pada banyak sistem, 
+
+242
+00:10:31,911 --> 00:10:34,480
+ Anda memerlukan hak administrator untuk melakukan itu. 
+
+243
+00:10:34,480 --> 00:10:37,360
+ Jadi tidak jelas apakah Anda ingin browser berjalan sebagai root 
+
+244
+00:10:37,360 --> 00:10:40,115
+ karena browser, seperti yang kita lihat, agak 
+
+245
+00:10:40,115 --> 00:10:42,020
+ individu yang tidak dapat dipercaya. 
+
+246
+00:10:42,020 --> 00:10:44,130
+ Dan juga - banyak penyiraman DNS 
+
+247
+00:10:44,130 --> 00:10:46,290
+ commands-- mereka tidak benar-benar bertindak per pengguna. 
+
+248
+00:10:46,290 --> 00:10:47,707
+ Mereka menyiram seluruh cache, yang 
+
+249
+00:10:47,707 --> 00:10:50,165
+ biasanya bukan apa yang Anda inginkan jika Anda menerapkan 
+
+250
+00:10:50,165 --> 00:10:51,250
+ mode penjelajahan pribadi. 
+
+251
+00:10:51,250 --> 00:10:53,000
+ Anda akan ingin menggunakan jenis benda bedah 
+
+252
+00:10:53,000 --> 00:10:55,472
+ dimana saya hanya ingin menyingkirkan foo.com dan hal-hal itu 
+
+253
+00:10:55,472 --> 00:10:57,597
+ dikunjungi selama sesi penjelajahan pribadi ini, 
+
+254
+00:10:57,597 --> 00:10:59,470
+ tetapi tidak menghapus hal-hal lain. 
+
+255
+00:10:59,470 --> 00:11:02,462
+ Jadi dalam prakteknya, itu semacam hal yang sulit untuk ditangani. 
+
+256
+00:11:02,462 --> 00:11:03,920
+ Dan hal lain yang sulit untuk ditangani, 
+
+257
+00:11:03,920 --> 00:11:08,310
+ yang disebutkan oleh koran-- adalah hal-hal ini 
+
+258
+00:11:08,310 --> 00:11:10,620
+ bahwa saya akan memanggil artefak RAM. 
+
+259
+00:11:10,620 --> 00:11:13,330
+
+
+260
+00:11:13,330 --> 00:11:18,210
+ Jadi ide dasarnya di sini adalah selama mode penjelajahan pribadi, 
+
+261
+00:11:18,210 --> 00:11:22,320
+ peramban pribadi itu harus menyimpan beberapa hal dalam ingatan. 
+
+262
+00:11:22,320 --> 00:11:24,290
+ Dan bahkan jika mode penjelajahan pribadi 
+
+263
+00:11:24,290 --> 00:11:29,630
+ tidak mengeluarkan I / Os langsung ke disk-- hak pengguna. 
+
+264
+00:11:29,630 --> 00:11:32,620
+ RAM yang dimiliki tab penelusuran pribadi 
+
+265
+00:11:32,620 --> 00:11:35,720
+ masih bisa direfleksikan ke dalam file halaman, misalnya. 
+
+266
+00:11:35,720 --> 00:11:38,490
+ Itu masih bisa dipantulkan ke dalam file hibernasi, 
+
+267
+00:11:38,490 --> 00:11:40,330
+ misalnya laptop. 
+
+268
+00:11:40,330 --> 00:11:42,500
+ Dan jika negara itu direfleksikan 
+
+269
+00:11:42,500 --> 00:11:45,450
+ ke penyimpanan persisten, lalu apa yang mungkin akhirnya terjadi 
+
+270
+00:11:45,450 --> 00:11:47,740
+ adalah setelah sesi penjelajahan pribadi Anda berakhir, 
+
+271
+00:11:47,740 --> 00:11:50,160
+ penyerang dapat melihat di file halaman Anda, misalnya, 
+
+272
+00:11:50,160 --> 00:11:52,420
+ dan temukan, misalnya, kode JavaScript itu 
+
+273
+00:11:52,420 --> 00:11:54,480
+ dipantulkan ke disk atau mencari HTML 
+
+274
+00:11:54,480 --> 00:11:56,320
+ yang dipantulkan ke disk. 
+
+275
+00:11:56,320 --> 00:11:59,650
+ Jadi kita akan memiliki sedikit demonstrasi bagaimana caranya 
+
+276
+00:11:59,650 --> 00:12:01,160
+ ini mungkin berhasil. 
+
+277
+00:12:01,160 --> 00:12:04,080
+ Jadi jika Anda melihat di sini di layar, 
+
+278
+00:12:04,080 --> 00:12:09,750
+ Saya pada dasarnya dimuat tab browsing pribadi. 
+
+279
+00:12:09,750 --> 00:12:11,890
+ Dan apa yang akan saya lakukan adalah saya 
+
+280
+00:12:11,890 --> 00:12:15,810
+ akan pergi ke beberapa situs web. 
+
+281
+00:12:15,810 --> 00:12:21,360
+ Jadi ini untuk grup PDOS di sini di CSAIL. 
+
+282
+00:12:21,360 --> 00:12:23,160
+ Saya sudah memuat halaman itu. 
+
+283
+00:12:23,160 --> 00:12:25,090
+ Dan kemudian apa yang akan saya lakukan adalah penggunaan 
+
+284
+00:12:25,090 --> 00:12:28,540
+ Perintah menyenangkan ini disebut gcore. 
+
+285
+00:12:28,540 --> 00:12:30,740
+ Jadi, pada dasarnya, saya akan mengambil memori 
+
+286
+00:12:30,740 --> 00:12:34,200
+ snapshot dari halaman yang sedang berjalan ini. 
+
+287
+00:12:34,200 --> 00:12:37,410
+ Maka saya akan melakukan sihir berikut. 
+
+288
+00:12:37,410 --> 00:12:48,780
+
+
+289
+00:12:48,780 --> 00:12:53,150
+ Jadi pada dasarnya akan ada beberapa pekerjaan 
+
+290
+00:12:53,150 --> 00:12:58,345
+ bahwa terminal saya lakukan untuk menghasilkan snapshot memori itu. 
+
+291
+00:12:58,345 --> 00:13:02,270
+
+
+292
+00:13:02,270 --> 00:13:04,980
+ Jadi ini membutuhkan sedikit waktu kadang-kadang. 
+
+293
+00:13:04,980 --> 00:13:10,400
+
+
+294
+00:13:10,400 --> 00:13:16,220
+ Sekarang, apa yang terjadi di sini. 
+
+295
+00:13:16,220 --> 00:13:18,840
+ Jadi sekarang kita pada dasarnya menghasilkan file inti 
+
+296
+00:13:18,840 --> 00:13:20,987
+ untuk itu gambar penelusuran pribadi. 
+
+297
+00:13:20,987 --> 00:13:22,570
+ Jadi apa yang akan kita lakukan sekarang adalah kita 
+
+298
+00:13:22,570 --> 00:13:26,550
+ akan melihat ke dalam gambar itu 
+
+299
+00:13:26,550 --> 00:13:30,790
+ dan lihat apakah kami dapat menemukan sebarang PDOS. 
+
+300
+00:13:30,790 --> 00:13:33,832
+
+
+301
+00:13:33,832 --> 00:13:35,290
+ Dan yang menarik adalah yang kita lihat 
+
+302
+00:13:35,290 --> 00:13:39,410
+ satu ton contoh PDOS string dalam gambar memori itu 
+
+303
+00:13:39,410 --> 00:13:41,330
+ untuk mode penelusuran pribadi. 
+
+304
+00:13:41,330 --> 00:13:43,590
+ Dan yang menarik adalah kita benar-benar melihat 
+
+305
+00:13:43,590 --> 00:13:45,610
+ berbagai awalan untuk berbagai hal. 
+
+306
+00:13:45,610 --> 00:13:48,860
+ Jika kita melihat lebih jauh, kita bisa melihat banyak hal 
+
+307
+00:13:48,860 --> 00:13:52,630
+ seperti ada URL lengkap di sini dan hal-hal seperti ini. 
+
+308
+00:13:52,630 --> 00:13:55,280
+ Anda juga menemukan kode HTML di sana. 
+
+309
+00:13:55,280 --> 00:13:58,580
+ Jadi intinya di sini adalah jika kita menemukan semua ini 
+
+310
+00:13:58,580 --> 00:14:02,780
+ dalam memori halaman itu, lalu jika ini-- jika ada halaman-halaman itu 
+
+311
+00:14:02,780 --> 00:14:05,786
+ dimasukkan ke disk di file halaman, lalu dia penyerang 
+
+312
+00:14:05,786 --> 00:14:07,160
+ pada dasarnya bisa hanya menjalankan string. 
+
+313
+00:14:07,160 --> 00:14:09,602
+ Jadi mereka bisa melakukan apa yang baru saja saya lakukan di atas file halaman 
+
+314
+00:14:09,602 --> 00:14:11,560
+ dan coba cari tahu situs apa yang Anda kunjungi 
+
+315
+00:14:11,560 --> 00:14:13,340
+ dalam mode penelusuran pribadi. 
+
+316
+00:14:13,340 --> 00:14:14,340
+ Jadi apakah itu masuk akal? 
+
+317
+00:14:14,340 --> 00:14:17,540
+ Pada dasarnya, masalahnya di sini adalah mode penjelajahan pribadi 
+
+318
+00:14:17,540 --> 00:14:20,226
+ jangan mencoba mengaburkan RAM pada dasarnya atau mengenkripsinya 
+
+319
+00:14:20,226 --> 00:14:21,051
+ dengan cara apapun. 
+
+320
+00:14:21,051 --> 00:14:23,300
+ Dan itu sepertinya hal yang sangat mendasar karena 
+
+321
+00:14:23,300 --> 00:14:24,780
+ pada titik tertentu, prosesor 
+
+322
+00:14:24,780 --> 00:14:27,600
+ harus mengeksekusi pada data teks yang jelas. 
+
+323
+00:14:27,600 --> 00:14:31,814
+ Dan ini sebenarnya tantangan yang cukup besar. 
+
+324
+00:14:31,814 --> 00:14:33,230
+ Jadi apakah ada yang punya pertanyaan? 
+
+325
+00:14:33,230 --> 00:14:34,200
+ Ya? 
+
+326
+00:14:34,200 --> 00:14:37,472
+ AUDIENCE: Jadi satu hal yang saya tidak harapkan browser saya 
+
+327
+00:14:37,472 --> 00:14:38,951
+ untuk melakukannya. 
+
+328
+00:14:38,951 --> 00:14:41,021
+ Satu hal adalah bahwa browser ini-- jaminannya 
+
+329
+00:14:41,021 --> 00:14:42,895
+ yang mereka berikan melalui penelusuran pribadi-- 
+
+330
+00:14:42,895 --> 00:14:45,360
+ contoh yang mereka berikan adalah jika Anda berbelanja untuk sesuatu, 
+
+331
+00:14:45,360 --> 00:14:47,825
+ teman awam Anda tidak bisa pergi ke komputer 
+
+332
+00:14:47,825 --> 00:14:49,179
+ dan melihat semuanya. 
+
+333
+00:14:49,179 --> 00:14:51,679
+ Jadi bisakah Anda berbicara sedikit tentang jaminan apa yang mereka berikan 
+
+334
+00:14:51,679 --> 00:14:52,950
+ dan jika mereka harus mengubah apa pun 
+
+335
+00:14:52,950 --> 00:14:54,360
+ sebagai konsekuensi dari tulisan ini? 
+
+336
+00:14:54,360 --> 00:14:57,030
+ PROFESOR: Ya, itu sangat menarik. 
+
+337
+00:14:57,030 --> 00:14:58,960
+ Satu hal yang bisa Anda lihat adalah ketika Anda membuka diri 
+
+338
+00:14:58,960 --> 00:15:00,335
+ tab penjelajahan pribadi, biasanya 
+
+339
+00:15:00,335 --> 00:15:02,630
+ akan ada sedikit uraian yang mengatakan, hei, 
+
+340
+00:15:02,630 --> 00:15:03,730
+ selamat datang di mode penyamaran. 
+
+341
+00:15:03,730 --> 00:15:05,230
+ Di sinilah kami akan membantu Anda melawan. 
+
+342
+00:15:05,230 --> 00:15:07,200
+ Kami tidak akan membantu Anda jika seseorang berdiri di belakang Anda 
+
+343
+00:15:07,200 --> 00:15:08,741
+ dengan selang karet akan mengalahkan Anda. 
+
+344
+00:15:08,741 --> 00:15:10,850
+ Dan begitu vendor browser itu sendiri 
+
+345
+00:15:10,850 --> 00:15:14,737
+ daerah sedikit cerdik tentang jaminan apa yang mereka berikan. 
+
+346
+00:15:14,737 --> 00:15:17,320
+ Dan faktanya, setelah insiden Snowden, banyak sekali browser 
+
+347
+00:15:17,320 --> 00:15:18,800
+ sebenarnya mengubah halaman splash 
+
+348
+00:15:18,800 --> 00:15:20,533
+ karena mereka ingin membuatnya jelas 
+
+349
+00:15:20,533 --> 00:15:22,658
+ bahwa kita sebenarnya tidak melindungi dari cara yang kuat 
+
+350
+00:15:22,658 --> 00:15:24,650
+ dengan NSA atau sesuatu seperti itu. 
+
+351
+00:15:24,650 --> 00:15:26,505
+ Singkat cerita, apa jaminannya 
+
+352
+00:15:26,505 --> 00:15:27,660
+ apakah mereka memberi Anda? 
+
+353
+00:15:27,660 --> 00:15:30,502
+ Dalam prakteknya, mereka menyediakan hal yang lemah itu 
+
+354
+00:15:30,502 --> 00:15:31,460
+ yang Anda sebutkan di sana. 
+
+355
+00:15:31,460 --> 00:15:33,266
+ Itu seperti orang awam yang menginginkan 
+
+356
+00:15:33,266 --> 00:15:34,990
+ untuk melihat apa yang Anda lakukan sesudahnya 
+
+357
+00:15:34,990 --> 00:15:36,990
+ tidak tahu apa yang kamu lakukan. 
+
+358
+00:15:36,990 --> 00:15:38,365
+ Dan kita mengasumsikan orang awam 
+
+359
+00:15:38,365 --> 00:15:41,227
+ tidak dapat menjalankan string pada file halaman atau hal-hal seperti itu. 
+
+360
+00:15:41,227 --> 00:15:43,560
+ Sekarang, masalahnya-- sebenarnya ada dua masalah. 
+
+361
+00:15:43,560 --> 00:15:47,835
+ Satu masalah adalah yang pertama-tama, karena browser 
+
+362
+00:15:47,835 --> 00:15:49,720
+ sangat rumit, bahkan sering tidak 
+
+363
+00:15:49,720 --> 00:15:50,970
+ melindungi terhadap orang awam. 
+
+364
+00:15:50,970 --> 00:15:52,520
+ Saya bisa memberi Anda contoh pribadi. 
+
+365
+00:15:52,520 --> 00:15:56,920
+ Sering kali ketika Anda melihat iklan konyol itu 
+
+366
+00:15:56,920 --> 00:15:58,670
+ dari "Huffington Post," seperti, oh, ya ampun. 
+
+367
+00:15:58,670 --> 00:16:00,920
+ Ini seperti anak anjing mencoba membantu anak anjing kecil turun 
+
+368
+00:16:00,920 --> 00:16:02,310
+ tangga dan hal-hal seperti itu. 
+
+369
+00:16:02,310 --> 00:16:03,340
+ Kanan? 
+
+370
+00:16:03,340 --> 00:16:06,010
+ Karena saya lemah, saya kadang-kadang akan tertarik pada hal-hal itu. 
+
+371
+00:16:06,010 --> 00:16:08,093
+ Tetapi karena saya tidak tahu ingin orang tahu itu, 
+
+372
+00:16:08,093 --> 00:16:10,734
+ Terkadang saya melakukan itu dalam mode penjelajahan pribadi. 
+
+373
+00:16:10,734 --> 00:16:12,900
+ Jadi apa yang akan terjadi kadang-kadang adalah bahwa kadang-kadang saya akan melakukannya 
+
+374
+00:16:12,900 --> 00:16:16,610
+ lihat URL tersebut akan bocor ke riwayat URL saya 
+
+375
+00:16:16,610 --> 00:16:19,240
+ seperti peramban mode publik biasa saya, yang 
+
+376
+00:16:19,240 --> 00:16:22,220
+ tepatnya apa yang dirancang untuk tidak dirancang. 
+
+377
+00:16:22,220 --> 00:16:25,346
+ Jadi satu masalah adalah bahwa kadang-kadang browser ini 
+
+378
+00:16:25,346 --> 00:16:27,720
+ tidak memberikan perlindungan terhadap penyerang awam. 
+
+379
+00:16:27,720 --> 00:16:29,844
+ Yang kedua adalah saya pikir sebenarnya ada 
+
+380
+00:16:29,844 --> 00:16:32,270
+ banyak orang yang menginginkan mode penelusuran pribadi 
+
+381
+00:16:32,270 --> 00:16:34,652
+ untuk menyediakan sesuatu yang lebih kuat, khususnya 
+
+382
+00:16:34,652 --> 00:16:36,640
+ dengan seluruh makhluk Snowden. 
+
+383
+00:16:36,640 --> 00:16:37,280
+ Saya pikir ada banyak orang semakin banyak 
+
+384
+00:16:37,280 --> 00:16:39,279
+ yang ingin mode penjelajahan pribadi untuk melindungi, 
+
+385
+00:16:39,279 --> 00:16:41,510
+ misalnya, melawan serangan artefak RAM ini, 
+
+386
+00:16:41,510 --> 00:16:44,310
+ meskipun mereka mungkin tidak dapat mengartikulasikan secara teknis 
+
+387
+00:16:44,310 --> 00:16:45,617
+ tujuan itu. 
+
+388
+00:16:45,617 --> 00:16:47,200
+ Dan sebenarnya salah satu hal yang saya miliki 
+
+389
+00:16:47,200 --> 00:16:48,120
+ selesai saat aku di sini, aku harus melakukannya 
+
+390
+00:16:48,120 --> 00:16:50,351
+ beberapa penelitian dalam mode penjelajahan pribadi yang lebih kuat 
+
+391
+00:16:50,351 --> 00:16:50,850
+ perlindungan. 
+
+392
+00:16:50,850 --> 00:16:52,350
+ Jadi kita bisa ngobrol tentang itu. 
+
+393
+00:16:52,350 --> 00:16:54,308
+ Salah satu hal yang kita pelajari tentang semua profesor 
+
+394
+00:16:54,308 --> 00:16:56,763
+ adalah bahwa kita akan berbicara tentang penelitian kita tanpa henti. 
+
+395
+00:16:56,763 --> 00:16:59,013
+ Jadi jika Anda ingin membicarakannya selama tiga jam saja 
+
+396
+00:16:59,013 --> 00:17:00,150
+ kirim saya permintaan kalender. 
+
+397
+00:17:00,150 --> 00:17:02,490
+ Dan kita bisa melakukannya. 
+
+398
+00:17:02,490 --> 00:17:06,098
+ Jadi, bagaimanapun, ini pada dasarnya adalah demonstrasi. 
+
+399
+00:17:06,098 --> 00:17:07,179
+ Oh, kamu punya pertanyaan? 
+
+400
+00:17:07,180 --> 00:17:09,400
+ AUDIENCE: Ya, tentang RAM. 
+
+401
+00:17:09,400 --> 00:17:12,375
+ Jadi saya tidak terbiasa dengan cara kerjanya. 
+
+402
+00:17:12,375 --> 00:17:15,333
+ Kenapa browser tidak bisa di akhir sesi, 
+
+403
+00:17:15,333 --> 00:17:19,384
+ hanya meminta OS untuk menyiram bagian-bagian di sekitar yang dia gunakan? 
+
+404
+00:17:19,384 --> 00:17:20,800
+ PROFESOR: Jadi kita benar-benar pergi 
+
+405
+00:17:20,800 --> 00:17:23,436
+ untuk sampai ke topik itu dalam beberapa menit. 
+
+406
+00:17:23,436 --> 00:17:24,269
+ Tapi kamu benar. 
+
+407
+00:17:24,270 --> 00:17:26,920
+ Pada tingkat yang tinggi, apa yang dapat Anda bayangkan 
+
+408
+00:17:26,920 --> 00:17:30,280
+ adalah mungkin OS saat itu, misalnya, membunuh proses, 
+
+409
+00:17:30,280 --> 00:17:32,510
+ akan benar-benar melalui semua halaman bernomor 
+
+410
+00:17:32,510 --> 00:17:34,540
+ dan tulis nol ke semua halaman itu. 
+
+411
+00:17:34,540 --> 00:17:37,375
+ Atau Anda juga bisa membayangkan bahwa mungkin browser mencoba 
+
+412
+00:17:37,375 --> 00:17:40,140
+ untuk menyematkan semua halaman dalam memori untuk mencegah apa pun 
+
+413
+00:17:40,140 --> 00:17:42,410
+ agar tidak memerah sama sekali. 
+
+414
+00:17:42,410 --> 00:17:44,880
+ Jadi ada beberapa solusi yang bisa melakukan itu. 
+
+415
+00:17:44,880 --> 00:17:48,040
+ Jadi pegang pertanyaan itu selama satu detik. 
+
+416
+00:17:48,040 --> 00:17:50,170
+ Ini pada dasarnya adalah contoh bagaimana data dari RAM 
+
+417
+00:17:50,170 --> 00:17:53,060
+ dapat bocor ke disk melalui aktivitas paging. 
+
+418
+00:17:53,060 --> 00:17:58,460
+ Tetapi perhatikan bahwa umur data adalah masalah yang lebih besar dari sekedar 
+
+419
+00:17:58,460 --> 00:18:00,797
+ dalam konteks penelusuran pribadi. 
+
+420
+00:18:00,797 --> 00:18:02,880
+ Anda dapat membayangkan bahwa semua program yang berhubungan dengan, 
+
+421
+00:18:02,880 --> 00:18:05,740
+ katakanlah, kunci kriptografi atau kata sandi pengguna 
+
+422
+00:18:05,740 --> 00:18:06,930
+ akan memiliki masalah ini. 
+
+423
+00:18:06,930 --> 00:18:09,540
+ Kapan saja Anda mengetikkan kata sandi Anda ke program aa, 
+
+424
+00:18:09,540 --> 00:18:12,330
+ halaman memori yang menyimpan kata sandi itu selalu bisa didapatkan 
+
+425
+00:18:12,330 --> 00:18:13,080
+ tercermin ke disk. 
+
+426
+00:18:13,080 --> 00:18:17,560
+ Jadi biarkan saya tunjukkan contoh lain dari ini. 
+
+427
+00:18:17,560 --> 00:18:24,140
+ Jadi mari kita katakan bahwa kita melihat program berikut, yang 
+
+428
+00:18:24,140 --> 00:18:25,660
+ sangat sederhana. 
+
+429
+00:18:25,660 --> 00:18:26,890
+ Ini disebut memclear. 
+
+430
+00:18:26,890 --> 00:18:28,700
+ Jadi Anda lihat di sini di bagian bawah dan utama, 
+
+431
+00:18:28,700 --> 00:18:33,410
+ kita hanya akan membaca di beberapa file teks rahasia di sini. 
+
+432
+00:18:33,410 --> 00:18:35,420
+ Dan kemudian kita akan tidur selamanya. 
+
+433
+00:18:35,420 --> 00:18:37,990
+ Jadi, apa yang Baca Rahasia itu lakukan? 
+
+434
+00:18:37,990 --> 00:18:42,470
+ Pada dasarnya, itu alasan dari file. 
+
+435
+00:18:42,470 --> 00:18:48,790
+ Ini akan mencetak isi dari file itu. 
+
+436
+00:18:48,790 --> 00:18:50,770
+ Dan kemudian itu benar-benar akan dihapus 
+
+437
+00:18:50,770 --> 00:18:54,040
+ buffer yang digunakan untuk menyimpan informasi rahasia itu. 
+
+438
+00:18:54,040 --> 00:18:55,290
+ Jadi kembali ke masalah Anda. 
+
+439
+00:18:55,290 --> 00:18:57,123
+ Jadi orang bisa membayangkan browser, misalnya, 
+
+440
+00:18:57,123 --> 00:19:01,180
+ akan mencoba hanya memset ke nol semua rahasia itu 
+
+441
+00:19:01,180 --> 00:19:05,940
+ ditemui ketika hanya di browser pribadi. 
+
+442
+00:19:05,940 --> 00:19:12,810
+ Jadi jika kita melihat file-file rahasia, itu tidak terlalu menyenangkan. 
+
+443
+00:19:12,810 --> 00:19:14,660
+ Itu hanya mengatakan, rahasia saya dalam sebuah file. 
+
+444
+00:19:14,660 --> 00:19:21,230
+ Dan kemudian jika kita menjalankan program ini, di latar belakang-- 
+
+445
+00:19:21,230 --> 00:19:22,210
+ jadi apa yang dilakukannya? 
+
+446
+00:19:22,210 --> 00:19:24,040
+ Jadi seperti yang saya katakan, itu hanya dicetak. 
+
+447
+00:19:24,040 --> 00:19:26,970
+ Itu membaca file itu, dicetak nilai rahasia-- 
+
+448
+00:19:26,970 --> 00:19:28,930
+ membersihkan buffer memori itu 
+
+449
+00:19:28,930 --> 00:19:30,400
+ digunakan untuk mencetak barang-barang itu. 
+
+450
+00:19:30,400 --> 00:19:32,870
+ Sekarang hanya tidur di latar belakang. 
+
+451
+00:19:32,870 --> 00:19:39,190
+ Jadi sekali lagi, jika kita menggunakan perintah gcore yang menyenangkan ini, 
+
+452
+00:19:39,190 --> 00:19:44,050
+ kita dapat mengambil dump memori dari program memclear 
+
+453
+00:19:44,050 --> 00:19:46,730
+ yang berjalan dalam memori sekarang. 
+
+454
+00:19:46,730 --> 00:19:51,050
+ OK, dan kemudian jika kita lakukan-- mari kita lihat 
+
+455
+00:19:51,050 --> 00:19:54,440
+ yang akan kita lihat. 
+
+456
+00:19:54,440 --> 00:20:00,390
+ Jadi kalau kita lihat-- orang ini yang kita inginkan. 
+
+457
+00:20:00,390 --> 00:20:05,540
+ Dan kemudian kita melakukan grep untuk sebuah rahasia. 
+
+458
+00:20:05,540 --> 00:20:07,650
+ Jadi sekali lagi, kita melihat bahwa jika dilihat 
+
+459
+00:20:07,650 --> 00:20:11,700
+ dalam gambar RAM dari program yang sedang berjalan itu, 
+
+460
+00:20:11,700 --> 00:20:14,050
+ kami menemukan contoh dari kedua nama file itu 
+
+461
+00:20:14,050 --> 00:20:17,240
+ dibaca dan juga beberapa awalan string 
+
+462
+00:20:17,240 --> 00:20:20,390
+ isi file itu, meskipun kita 
+
+463
+00:20:20,390 --> 00:20:24,190
+ menyeka buffer dalam program C itu sendiri. 
+
+464
+00:20:24,190 --> 00:20:26,810
+ Jadi Anda mungkin mengatakan mengapa ini terjadi? 
+
+465
+00:20:26,810 --> 00:20:28,720
+ Ini sepertinya sangat, sangat aneh. 
+
+466
+00:20:28,720 --> 00:20:30,860
+ Dan alasannya adalah jika Anda memikirkan jalannya 
+
+467
+00:20:30,860 --> 00:20:34,710
+ bahwa I / O berfungsi, itu seperti jenis lapisan. 
+
+468
+00:20:34,710 --> 00:20:37,830
+ Jadi pada saat itu isi file itu 
+
+469
+00:20:37,830 --> 00:20:41,320
+ sampai ke program, itu sudah melalui, katakanlah, 
+
+470
+00:20:41,320 --> 00:20:42,070
+ memori kernel. 
+
+471
+00:20:42,070 --> 00:20:45,740
+ Ini sudah melalui mungkin seperti Perpustakaan Standar C 
+
+472
+00:20:45,740 --> 00:20:47,430
+ untuk melakukan I / O karena perpustakaan itu 
+
+473
+00:20:47,430 --> 00:20:48,980
+ penyangga dan hal-hal seperti itu. 
+
+474
+00:20:48,980 --> 00:20:50,730
+ Dan akhirnya apa yang terjadi adalah itu 
+
+475
+00:20:50,730 --> 00:20:54,870
+ jika Anda memset aplikasi buffer yang terlihat, 
+
+476
+00:20:54,870 --> 00:20:57,757
+ masih ada contoh data rahasia berbohong 
+
+477
+00:20:57,757 --> 00:21:00,590
+ di berbagai tempat di seluruh sistem. 
+
+478
+00:21:00,590 --> 00:21:02,300
+ Dan ini melihat mode pengguna 
+
+479
+00:21:02,300 --> 00:21:03,960
+ bagian dari aplikasi ini. 
+
+480
+00:21:03,960 --> 00:21:06,530
+ Jadi mungkin masih ada data yang duduk di sekitar mungkin 
+
+481
+00:21:06,530 --> 00:21:09,110
+ seperti kernel I / O buffer atau hal-hal seperti itu. 
+
+482
+00:21:09,110 --> 00:21:10,740
+ Jadi, kembalilah ke pertanyaan Anda, 
+
+483
+00:21:10,740 --> 00:21:13,800
+ jika Anda ingin melakukan apa yang mereka sebut alokasi keamanan, 
+
+484
+00:21:13,800 --> 00:21:17,655
+ Anda tidak bisa hanya mengandalkan mekanisme di aplikasi 
+
+485
+00:21:17,655 --> 00:21:20,730
+ tingkat karena mungkin ada tempat lain di mana data itu hidup. 
+
+486
+00:21:20,730 --> 00:21:22,720
+ Jadi apa beberapa contoh dari tempat lain 
+
+487
+00:21:22,720 --> 00:21:26,110
+ di mana data ini bisa hidup? 
+
+488
+00:21:26,110 --> 00:21:33,540
+ Jadi, misalnya, mungkin hidup dalam memori proses. 
+
+489
+00:21:33,540 --> 00:21:41,470
+ Jadi ini adalah hal-hal seperti tumpukan dan tumpukan. 
+
+490
+00:21:41,470 --> 00:21:45,080
+ Jadi ketika kita melakukan memet itu di dalam memclear.c, 
+
+491
+00:21:45,080 --> 00:21:47,520
+ kami pada dasarnya mencoba untuk mengatasi ini. 
+
+492
+00:21:47,520 --> 00:21:50,530
+ Tapi yang kami temukan adalah itu 
+
+493
+00:21:50,530 --> 00:21:54,260
+ diperlukan, tetapi tidak cukup untuk benar-benar menghapus semua contoh 
+
+494
+00:21:54,260 --> 00:21:56,490
+ rahasia itu dari ingatan. 
+
+495
+00:21:56,490 --> 00:22:02,830
+ Jadi, di mana lagi artefak RAM saya hidup atau data rahasia 
+
+496
+00:22:02,830 --> 00:22:05,790
+ tetap ada-- jadi semua jenis file-- 
+
+497
+00:22:05,790 --> 00:22:11,590
+ backups-- SQL menulis database. 
+
+498
+00:22:11,590 --> 00:22:14,900
+
+
+499
+00:22:14,900 --> 00:22:18,291
+ Jika suatu saat, aplikasi mengambil sesuatu dalam RAM 
+
+500
+00:22:18,291 --> 00:22:20,540
+ dan menulisnya ke salah satu dari hal-hal ini, lalu sekali lagi, 
+
+501
+00:22:20,540 --> 00:22:23,640
+ penyerang mungkin dapat memulihkannya setelah penyerang 
+
+502
+00:22:23,640 --> 00:22:25,500
+ mengendalikan disk. 
+
+503
+00:22:25,500 --> 00:22:33,080
+ Seperti yang saya sebutkan, memori kernel adalah tempat umum lainnya 
+
+504
+00:22:33,080 --> 00:22:35,840
+ di mana rahasia RAM bisa hidup karena, sekali 
+
+505
+00:22:35,840 --> 00:22:39,650
+ lagi, aplikasi biasanya melakukan I / O berlapis di mana 
+
+506
+00:22:39,650 --> 00:22:42,580
+ setiap bagian data melewati beberapa bagian tumpukan. 
+
+507
+00:22:42,580 --> 00:22:45,560
+ Anggaplah seperti transmisi jaringan, misalnya. 
+
+508
+00:22:45,560 --> 00:22:48,052
+ Pertama, data harus datang ke beberapa buffer jaringan itu 
+
+509
+00:22:48,052 --> 00:22:49,420
+ mungkin di dalam kernel. 
+
+510
+00:22:49,420 --> 00:22:52,400
+ Kemudian sekali lagi, mungkin melewati beberapa buffer 
+
+511
+00:22:52,400 --> 00:22:54,170
+ di dalam Perpustakaan Standar C. 
+
+512
+00:22:54,170 --> 00:22:57,334
+ Dan akhirnya akan masuk ke mode pengguna-- 
+
+513
+00:22:57,334 --> 00:22:59,500
+ bagian dari aplikasi yang ditulis oleh pengembang 
+
+514
+00:22:59,500 --> 00:23:02,400
+ dia sendiri. 
+
+515
+00:23:02,400 --> 00:23:04,140
+ Sehingga sebenarnya bisa menjadi masalah besar. 
+
+516
+00:23:04,140 --> 00:23:07,500
+ Anda juga dapat berpikir terlalu banyak halaman memori yang dibebaskan 
+
+517
+00:23:07,500 --> 00:23:09,900
+ tempat dimana data bisa bocor. 
+
+518
+00:23:09,900 --> 00:23:14,610
+ Jadi bayangkan bahwa aplikasi Anda mengalokasikan 
+
+519
+00:23:14,610 --> 00:23:18,370
+ banyak memori menggunakan apa pun [tidak terdengar] atau entah apa lagi. 
+
+520
+00:23:18,370 --> 00:23:20,730
+ Dan kemudian proses itu mati. 
+
+521
+00:23:20,730 --> 00:23:23,190
+ Dan kernel mengirimkan proses lain 
+
+522
+00:23:23,190 --> 00:23:26,980
+ tetapi belum benar-benar memusatkan semua halaman RAM fisik. 
+
+523
+00:23:26,980 --> 00:23:29,912
+ Jadi apa yang bisa terjadi adalah ketika proses baru itu berputar, 
+
+524
+00:23:29,912 --> 00:23:32,370
+ itu hanya bisa berjalan melalui semua halaman RAM fisik ini 
+
+525
+00:23:32,370 --> 00:23:33,995
+ dan gunakan banyak memori dan lakukan saja 
+
+526
+00:23:33,995 --> 00:23:36,430
+ hal yang sama - lakukan hal yang aneh - lihat apakah ada 
+
+527
+00:23:36,430 --> 00:23:38,090
+ ada yang menarik di sana. 
+
+528
+00:23:38,090 --> 00:23:40,321
+ Dan kemudian mereka mungkin bisa mendapatkan rahasia seperti itu. 
+
+529
+00:23:40,321 --> 00:23:41,820
+ Jadi ada banyak cara informasi 
+
+530
+00:23:41,820 --> 00:23:44,140
+ bocor dari kernel. 
+
+531
+00:23:44,140 --> 00:23:47,130
+ Anda juga bisa memikirkan I / O buffer dan hal-hal 
+
+532
+00:23:47,130 --> 00:23:50,230
+ seperti keyboard dari hal-hal seperti mouse. 
+
+533
+00:23:50,230 --> 00:23:52,870
+ Hanya ada banyak faktor yang berbeda 
+
+534
+00:23:52,870 --> 00:23:55,430
+ data itu bisa bocor melalui kernel. 
+
+535
+00:23:55,430 --> 00:23:59,650
+
+
+536
+00:23:59,650 --> 00:24:03,366
+ Bagaimana penyerang mencoba mendapatkan beberapa informasi ini? 
+
+537
+00:24:03,366 --> 00:24:04,740
+ Yah, dalam beberapa kasus, itu sama saja 
+
+538
+00:24:04,740 --> 00:24:09,520
+ sederhana seperti membaca file - jadi baca saja file halaman. 
+
+539
+00:24:09,520 --> 00:24:13,350
+ Baca file hibernasi dan lihat apa yang ada di sana. 
+
+540
+00:24:13,350 --> 00:24:16,060
+ Beberapa format file benar-benar menyematkan versi yang berbeda 
+
+541
+00:24:16,060 --> 00:24:17,360
+ di dalam diri mereka. 
+
+542
+00:24:17,360 --> 00:24:19,610
+ Misalnya, cara Microsoft Word digunakan untuk bekerja 
+
+543
+00:24:19,610 --> 00:24:22,180
+ adalah bahwa satu file Word sebenarnya berisi versi 
+
+544
+00:24:22,180 --> 00:24:23,850
+ untuk potongan data lama. 
+
+545
+00:24:23,850 --> 00:24:25,910
+ Jadi jika Anda bisa mendapatkan akses ke file Word itu, 
+
+546
+00:24:25,910 --> 00:24:27,826
+ Anda hanya bisa duduk di sana melalui salah satu format 
+
+547
+00:24:27,826 --> 00:24:30,380
+ dan melangkah melalui semua versi lama. 
+
+548
+00:24:30,380 --> 00:24:33,580
+ Dan seperti yang telah kita bahas dalam pasangan terakhir 
+
+549
+00:24:33,580 --> 00:24:38,030
+ menit, alokasi keamanan juga menjadi masalah. 
+
+550
+00:24:38,030 --> 00:24:40,430
+ Tidak dapat mendukung tumpukan penuh. 
+
+551
+00:24:40,430 --> 00:24:42,610
+ Jadi misalnya, kernel Linux yang lebih lama - kapan 
+
+552
+00:24:42,610 --> 00:24:45,830
+ Anda akan membuat direktori, direktori akhir, 
+
+553
+00:24:45,830 --> 00:24:49,410
+ Anda bisa membocorkan hingga empat kilobyte memori kernel. 
+
+554
+00:24:49,410 --> 00:24:51,160
+ Hanya Zeus yang tahu apa yang ada di dalam ingatan itu. 
+
+555
+00:24:51,160 --> 00:24:55,870
+ Dan itu karena Linux tidak benar-benar keluar 
+
+556
+00:24:55,870 --> 00:24:58,480
+ memori kernel yang telah dialokasikan, deallocated, 
+
+557
+00:24:58,480 --> 00:25:02,060
+ dan kemudian dialokasikan ke hal lain. 
+
+558
+00:25:02,060 --> 00:25:06,780
+ Jadi seperti yang saya sebutkan sebelumnya juga - jika kernel tidak keluar 
+
+559
+00:25:06,780 --> 00:25:09,390
+ halaman yang diberikan kepada proses mode pengguna, 
+
+560
+00:25:09,390 --> 00:25:10,973
+ Anda juga dapat memiliki rahasia mode pengguna 
+
+561
+00:25:10,973 --> 00:25:14,020
+ kebocoran melalui jenis-jenis halaman menu juga. 
+
+562
+00:25:14,020 --> 00:25:21,990
+ Hal lain adalah bahwa - SSD - banyak dari mereka menerapkan penebangan. 
+
+563
+00:25:21,990 --> 00:25:26,290
+
+
+564
+00:25:26,290 --> 00:25:32,250
+ Dan dengan kata lain, ketika Anda mengirim menulis ke SSD, 
+
+565
+00:25:32,250 --> 00:25:35,480
+ seringkali Anda tidak secara langsung menimpa data, 
+
+566
+00:25:35,480 --> 00:25:37,480
+ Anda benar-benar menulis ke log. 
+
+567
+00:25:37,480 --> 00:25:40,260
+ Dan ketika sebagian data menjadi tidak valid, 
+
+568
+00:25:40,260 --> 00:25:42,760
+ itu meletakkan klaim Anda. 
+
+569
+00:25:42,760 --> 00:25:46,664
+ Jadi apa artinya adalah jika Anda sebagai pengguna tidak beruntung. 
+
+570
+00:25:46,664 --> 00:25:49,205
+ Dan Anda telah menulis banyak data yang belum direklamasi 
+
+571
+00:25:49,205 --> 00:25:51,440
+ oleh SSD, maka mungkin penyerang 
+
+572
+00:25:51,440 --> 00:25:54,754
+ dapat melihat perangkat keras itu dan berkata, oh, oke, 
+
+573
+00:25:54,754 --> 00:25:55,920
+ Saya memahami format log. 
+
+574
+00:25:55,920 --> 00:25:56,850
+ Dan meskipun secara teknis, 
+
+575
+00:25:56,850 --> 00:25:58,810
+ data ini mungkin tidak valid, saya masih bisa 
+
+576
+00:25:58,810 --> 00:26:01,832
+ memulihkan karena saya mengerti bagaimana lapisan terjemahan Flash 
+
+577
+00:26:01,832 --> 00:26:03,040
+ bekerja atau sesuatu seperti itu. 
+
+578
+00:26:03,040 --> 00:26:04,550
+ Dan pada tingkat yang tinggi, Anda juga bisa 
+
+579
+00:26:04,550 --> 00:26:10,020
+ memiliki masalah ini dengan perangkat keras yang dicuri atau dibuang juga. 
+
+580
+00:26:10,020 --> 00:26:12,500
+ Jika Anda tidak menggunakan enkripsi, maka banyak kali, 
+
+581
+00:26:12,500 --> 00:26:14,270
+ Anda hanya dapat mengambil beberapa disk yang Anda 
+
+582
+00:26:14,270 --> 00:26:15,900
+ ditemukan di tempat sampah di suatu tempat-- Anda 
+
+583
+00:26:15,900 --> 00:26:17,483
+ mengerti apa tata letak fisiknya 
+
+584
+00:26:17,483 --> 00:26:19,670
+ dan memulihkan data seperti itu. 
+
+585
+00:26:19,670 --> 00:26:21,570
+ Jadi, ada banyak masalah 
+
+586
+00:26:21,570 --> 00:26:25,220
+ dengan artefak RAM ini terjebak dalam penyimpanan persisten 
+
+587
+00:26:25,220 --> 00:26:30,490
+ entah bagaimana dan kemudian tersedia untuk penyerang nanti. 
+
+588
+00:26:30,490 --> 00:26:38,670
+ Jadi bagaimana kita bisa memperbaiki masalah data seumur hidup ini? 
+
+589
+00:26:38,670 --> 00:26:42,570
+
+
+590
+00:26:42,570 --> 00:26:47,700
+ Jadi kita sudah membahas satu solusi, 
+
+591
+00:26:47,700 --> 00:26:53,429
+ yang pada dasarnya menghilangkan memori 
+
+592
+00:26:53,429 --> 00:26:54,470
+ ketika kamu selesai dengan itu. 
+
+593
+00:26:54,470 --> 00:26:57,680
+
+
+594
+00:26:57,680 --> 00:27:00,620
+ Jadi, setiap kali Anda menanggalkan sesuatu, Anda cukup melewatinya. 
+
+595
+00:27:00,620 --> 00:27:02,970
+ Anda menulis sekelompok nol atau beberapa hal acak 
+
+596
+00:27:02,970 --> 00:27:04,595
+ lalu dasarnya menyembunyikan data lama 
+
+597
+00:27:04,595 --> 00:27:06,470
+ dari orang lain yang mungkin akan datang nanti. 
+
+598
+00:27:06,470 --> 00:27:09,011
+ Jadi apakah ada yang melihat potensi masalah potensial dengan itu? 
+
+599
+00:27:09,011 --> 00:27:13,500
+
+
+600
+00:27:13,500 --> 00:27:16,555
+ Satu masalah yang mungkin Anda bayangkan adalah seperti halnya dengan semua hal 
+
+601
+00:27:16,555 --> 00:27:20,130
+ dalam keamanan, orang selalu mengeluh tentang kinerja. 
+
+602
+00:27:20,130 --> 00:27:22,940
+ Dan ketika Anda mengatakan bahwa Anda kehabisan memori, 
+
+603
+00:27:22,940 --> 00:27:26,410
+ mungkin ini bukan masalah jika program Anda terikat I / O. 
+
+604
+00:27:26,410 --> 00:27:28,776
+ Jadi Anda menunggu beberapa bagian mekanis yang lambat 
+
+605
+00:27:28,776 --> 00:27:30,110
+ dari hard disk atau yang lainnya. 
+
+606
+00:27:30,110 --> 00:27:32,862
+ Tetapi bayangkan jika program Anda terikat pada CPU. 
+
+607
+00:27:32,862 --> 00:27:34,570
+ Dan mungkin juga sangat intensif dengan ingatan. 
+
+608
+00:27:34,570 --> 00:27:36,630
+ Jadi itu selalu mengalokasikan dan deallocating data. 
+
+609
+00:27:36,630 --> 00:27:40,400
+ Jadi mungkin zeroing out memory mungkin adalah biaya kinerja 
+
+610
+00:27:40,400 --> 00:27:42,499
+ yang tidak ingin Anda bayarkan. 
+
+611
+00:27:42,499 --> 00:27:44,290
+ Biasanya ini bukan masalah dalam praktiknya. 
+
+612
+00:27:44,290 --> 00:27:45,990
+ Tetapi seperti yang kita semua ketahui, orang menyukai kinerja. 
+
+613
+00:27:45,990 --> 00:27:47,740
+ Ini terkadang merupakan suatu keberatan yang akan Anda lakukan 
+
+614
+00:27:47,740 --> 00:27:49,200
+ miliki dengan pendekatan ini. 
+
+615
+00:27:49,200 --> 00:27:51,903
+ Hal lain yang bisa Anda bayangkan lakukan 
+
+616
+00:27:51,903 --> 00:27:53,486
+ adalah bahwa alih-alih memusatkan memori, 
+
+617
+00:27:53,486 --> 00:28:03,130
+ Anda selalu mengenkripsi data saat masuk ke penyimpanan stabil. 
+
+618
+00:28:03,130 --> 00:28:08,550
+
+
+619
+00:28:08,550 --> 00:28:11,210
+ Jadi dalam sistem seperti ini, pada dasarnya, 
+
+620
+00:28:11,210 --> 00:28:14,880
+ sebelum aplikasi pernah menulis apa pun ke disk, 
+
+621
+00:28:14,880 --> 00:28:17,520
+ itu sebenarnya akan mengenkripsi sebelum benar-benar terpukul 
+
+622
+00:28:17,520 --> 00:28:19,180
+ SSD atau hard disk itu. 
+
+623
+00:28:19,180 --> 00:28:22,857
+ Demikian pula, ketika data kembali dari penyimpanan stabil, 
+
+624
+00:28:22,857 --> 00:28:24,440
+ Anda akan mendekripsi secara dinamis 
+
+625
+00:28:24,440 --> 00:28:26,160
+ sebelum Anda memasukkannya ke RAM. 
+
+626
+00:28:26,160 --> 00:28:29,410
+ Dan apa yang menarik dari pendekatan ini 
+
+627
+00:28:29,410 --> 00:28:33,060
+ bahwa jika kunci yang Anda gunakan untuk mendekripsi dan mengenkripsi data-- 
+
+628
+00:28:33,060 --> 00:28:36,920
+ jika kamu membuangnya, maka setelah kamu membuangnya, 
+
+629
+00:28:36,920 --> 00:28:39,830
+ Anda telah secara efektif membuat data pada disk 
+
+630
+00:28:39,830 --> 00:28:42,944
+ tidak dapat dipulihkan oleh penyerang, dengan asumsi bahwa Anda 
+
+631
+00:28:42,944 --> 00:28:44,920
+ percaya pada kriptografi. 
+
+632
+00:28:44,920 --> 00:28:49,160
+ Jadi ini sangat, sangat bagus karena memberi kita 
+
+633
+00:28:49,160 --> 00:28:50,840
+ properti bagus ini yang tidak kita miliki 
+
+634
+00:28:50,840 --> 00:28:53,010
+ untuk diingat di semua tempat di mana Anda sudah 
+
+635
+00:28:53,010 --> 00:28:54,810
+ menulis data terenkripsi ini. 
+
+636
+00:28:54,810 --> 00:28:56,455
+ Kami hanya bisa mengatakan mengapa menjatuhkan kunci? 
+
+637
+00:28:56,455 --> 00:28:58,380
+ Dan saya hanya akan memperlakukan semua data yang dienkripsi 
+
+638
+00:28:58,380 --> 00:29:01,230
+ karena itu adalah sesuatu yang bisa saya alokasikan lagi. 
+
+639
+00:29:01,230 --> 00:29:08,050
+ Jadi, misalnya, jika Anda melihat Open BSD, 
+
+640
+00:29:08,050 --> 00:29:14,610
+ mereka memiliki opsi ini di mana Anda dapat melakukan enkripsi swap. 
+
+641
+00:29:14,610 --> 00:29:19,190
+ Jadi pada dasarnya Anda dapat mengaitkan kunci 
+
+642
+00:29:19,190 --> 00:29:22,120
+ dengan berbagai bagian dari file halaman. 
+
+643
+00:29:22,120 --> 00:29:24,115
+ Jadi ini adalah hal yang saya sebutkan. 
+
+644
+00:29:24,115 --> 00:29:25,690
+ Jadi setiap kali Anda mengelompokkan mesin, 
+
+645
+00:29:25,690 --> 00:29:27,720
+ itu akan menghasilkan banyak kunci baru. 
+
+646
+00:29:27,720 --> 00:29:30,340
+ Dan kemudian ketika mesin Anda turun karena Anda mematikannya 
+
+647
+00:29:30,340 --> 00:29:32,298
+ atau Anda reboot atau apa pun, pada dasarnya itu akan 
+
+648
+00:29:32,298 --> 00:29:35,100
+ lupakan semua kunci yang digunakan untuk mengenkripsi ruang swap itu. 
+
+649
+00:29:35,100 --> 00:29:37,058
+ Dan kemudian pada dasarnya bisa mengatakan sekarang semua pertukaran itu 
+
+650
+00:29:37,058 --> 00:29:38,520
+ tersedia untuk digunakan lagi. 
+
+651
+00:29:38,520 --> 00:29:40,910
+ Dan karena kunci-kunci itu terlupakan, 
+
+652
+00:29:40,910 --> 00:29:42,740
+ seseorang dapat berasumsi bahwa penyerang tidak dapat melihat 
+
+653
+00:29:42,740 --> 00:29:43,990
+ pada barang-barang yang ada di sana. 
+
+654
+00:29:43,990 --> 00:29:47,127
+ AUDIENCE: Apa [TIDAK JELAS]? 
+
+655
+00:29:47,127 --> 00:29:48,960
+ PROFESOR: Ah, ya, itu pertanyaan yang bagus. 
+
+656
+00:29:48,960 --> 00:29:52,960
+ Saya sebenarnya tidak yakin apa sumber entropi yang digunakannya. 
+
+657
+00:29:52,960 --> 00:29:56,200
+ Buka BSD cukup paranoid tentang keamanan. 
+
+658
+00:29:56,200 --> 00:29:58,557
+ Jadi saya membayangkan itu melakukan hal-hal seperti itu 
+
+659
+00:29:58,557 --> 00:30:00,390
+ lihatlah katakanlah kolam entropi berkumpul 
+
+660
+00:30:00,390 --> 00:30:02,276
+ dari input keyboard pengguna, misalnya, 
+
+661
+00:30:02,276 --> 00:30:03,400
+ dan hal-hal lain seperti itu. 
+
+662
+00:30:03,400 --> 00:30:05,608
+ Ya, saya tidak benar-benar yakin bagaimana itu menggerakkan kunci itu. 
+
+663
+00:30:05,608 --> 00:30:08,155
+ Tapi Anda benar sekali jika sumber entropi ini 
+
+664
+00:30:08,155 --> 00:30:10,197
+ yang digunakan dapat diprediksi, maka itu pada dasarnya 
+
+665
+00:30:10,197 --> 00:30:12,029
+ menyusutkan ruang entropi dari kunci itu sendiri, 
+
+666
+00:30:12,029 --> 00:30:13,788
+ yang kemudian membuat kunci lebih rentan. 
+
+667
+00:30:13,788 --> 00:30:18,189
+ AUDIENCE: Jadi dengan memori itu menangkap [tidak terdengar]. 
+
+668
+00:30:18,189 --> 00:30:21,940
+
+
+669
+00:30:21,940 --> 00:30:25,510
+ PROFESOR: Ya, jadi pada dasarnya, apa yang diasumsikan oleh model ini 
+
+670
+00:30:25,510 --> 00:30:28,580
+ jika semua yang kita lakukan adalah melihat enkripsi swap, 
+
+671
+00:30:28,580 --> 00:30:32,230
+ Ini mengasumsikan bahwa halaman RAM untuk kunci, 
+
+672
+00:30:32,230 --> 00:30:34,159
+ misalnya, tidak pernah ditukar. 
+
+673
+00:30:34,159 --> 00:30:35,700
+ Dan itu sebenarnya cukup mudah dilakukan 
+
+674
+00:30:35,700 --> 00:30:38,180
+ jika Anda OS dari jika Anda hanya pin halaman itu ke memori. 
+
+675
+00:30:38,180 --> 00:30:40,030
+ Dan ini juga tidak membantu Anda dengan seseorang 
+
+676
+00:30:40,030 --> 00:30:42,465
+ yang mendapat pin dengan bus memori atau seseorang yang 
+
+677
+00:30:42,465 --> 00:30:44,590
+ bisa berjalan di halaman memori kernel atau hal-hal seperti itu. 
+
+678
+00:30:44,590 --> 00:30:45,256
+ Jadi kamu benar. 
+
+679
+00:30:45,256 --> 00:30:47,460
+
+
+680
+00:30:47,460 --> 00:30:49,190
+ AUDIENCE: Dalam hal browsing, itu 
+
+681
+00:30:49,190 --> 00:30:51,641
+ membantu para penyerang yang datang setelah kejadian itu 
+
+682
+00:30:51,641 --> 00:30:53,390
+ karena jika Anda harus membuang kuncinya, 
+
+683
+00:30:53,390 --> 00:30:55,500
+ kemudian setelah fakta itu, tidak ada kunci untuk mengingat. 
+
+684
+00:30:55,500 --> 00:30:57,083
+ PROFESOR: Ya, itu benar sekali. 
+
+685
+00:30:57,083 --> 00:30:59,890
+ Jadi apa yang baik tentang ini adalah pada dasarnya 
+
+686
+00:30:59,890 --> 00:31:01,910
+ tidak memerlukan modifikasi untuk aplikasi. 
+
+687
+00:31:01,910 --> 00:31:04,810
+ Seperti yang Anda katakan, Anda bisa meletakkan barang lama di atas ini 
+
+688
+00:31:04,810 --> 00:31:06,140
+ dan dapatkan properti ini secara gratis. 
+
+689
+00:31:06,140 --> 00:31:09,008
+
+
+690
+00:31:09,008 --> 00:31:11,790
+ AUDIENCE: Kembali sedikit - jika Anda melihat data 
+
+691
+00:31:11,790 --> 00:31:16,272
+ sebelum [tidak terdengar] ke RAM. 
+
+692
+00:31:16,272 --> 00:31:18,355
+ Bagaimana cara menghindari artefak RAM [TIDAK JELAS]? 
+
+693
+00:31:18,355 --> 00:31:21,555
+
+
+694
+00:31:21,555 --> 00:31:23,513
+ PROFESOR: OK, jadi jika saya mengerti pertanyaan Anda 
+
+695
+00:31:23,513 --> 00:31:25,930
+ dengan benar, saya pikir Anda khawatir tentang fakta itu 
+
+696
+00:31:25,930 --> 00:31:29,081
+ itu, tentu, data dienkripsi saat berada di disk, 
+
+697
+00:31:29,081 --> 00:31:31,080
+ tetapi kemudian benar-benar dapat duduk dalam bentuk teks yang jelas 
+
+698
+00:31:31,080 --> 00:31:34,710
+ entah bagaimana dalam memori itu sendiri. 
+
+699
+00:31:34,710 --> 00:31:37,880
+ Jadi ini kembali ke diskusi yang kita miliki di sini. 
+
+700
+00:31:37,880 --> 00:31:42,150
+ Jadi memastikan bahwa data mengenai disk terenkripsi 
+
+701
+00:31:42,150 --> 00:31:44,445
+ sebenarnya tidak melindungi terhadap penyerang yang 
+
+702
+00:31:44,445 --> 00:31:46,566
+ dapat melihat RAM secara real time. 
+
+703
+00:31:46,566 --> 00:31:47,940
+ Jadi pada dasarnya apa yang kami katakan adalah 
+
+704
+00:31:47,940 --> 00:31:50,300
+ bahwa jika Anda hanya khawatir tentang post-session ini 
+
+705
+00:31:50,300 --> 00:31:52,800
+ penyerang yang tidak bisa, misalnya, melihat tampilan RAM Anda 
+
+706
+00:31:52,800 --> 00:31:54,354
+ dalam waktu nyata, ini berfungsi dengan baik. 
+
+707
+00:31:54,354 --> 00:31:56,520
+ Tapi Anda benar bahwa ini tidak menyediakan, 
+
+708
+00:31:56,520 --> 00:31:58,469
+ karena tidak ada istilah yang lebih baik, RAM terenkripsi. 
+
+709
+00:31:58,469 --> 00:32:00,510
+ Dan sebenarnya ada beberapa sistem penelitian itu 
+
+710
+00:32:00,510 --> 00:32:01,880
+ cobalah melakukan sesuatu seperti itu. 
+
+711
+00:32:01,880 --> 00:32:04,590
+ Ini menjadi sedikit rumit karena pada suatu saat kapan 
+
+712
+00:32:04,590 --> 00:32:06,340
+ Anda melihat perangkat keras Anda, prosesor Anda, 
+
+713
+00:32:06,340 --> 00:32:10,276
+ itu harus benar-benar melakukan sesuatu pada data nyata 
+
+714
+00:32:10,276 --> 00:32:13,470
+ seperti jika Anda ingin melakukan iklan dan Anda harus menyampaikan teks yang jelas 
+
+715
+00:32:13,470 --> 00:32:15,260
+ operan mungkin. 
+
+716
+00:32:15,260 --> 00:32:17,670
+ Ada juga beberapa sistem penelitian yang menarik 
+
+717
+00:32:17,670 --> 00:32:20,530
+ yang sebenarnya mencoba melakukan komputasi pada data terenkripsi. 
+
+718
+00:32:20,530 --> 00:32:23,240
+ Ini pikiran bertiup seperti "The Matrix." 
+
+719
+00:32:23,240 --> 00:32:26,220
+ Tetapi cukuplah untuk mengatakan bahwa perlindungan yang dimiliki orang 
+
+720
+00:32:26,220 --> 00:32:29,851
+ karena dalam data RAM biasanya jauh lebih lemah dari apa 
+
+721
+00:32:29,851 --> 00:32:32,477
+ mereka memiliki data yang hidup pada penyimpanan stabil. 
+
+722
+00:32:32,477 --> 00:32:33,268
+ Anda punya pertanyaan? 
+
+723
+00:32:33,268 --> 00:32:35,152
+ AUDIENCE: Ya, tetapi apakah itu [tidak terdengar] 
+
+724
+00:32:35,152 --> 00:32:38,710
+ karena meskipun penyerang memiliki akses pasca-sesi, 
+
+725
+00:32:38,710 --> 00:32:41,851
+ itu hanya akses mode pasca-swasta. 
+
+726
+00:32:41,851 --> 00:32:43,342
+ Jadi mungkin ini masih bisa terjadi 
+
+727
+00:32:43,342 --> 00:32:45,330
+ sesi mode publik terjadi. 
+
+728
+00:32:45,330 --> 00:32:48,320
+ Dan penyerang akan memiliki akses ke mesin itu, kan? 
+
+729
+00:32:48,320 --> 00:32:49,660
+ PROFESOR: Jadi Anda khawatir tentang jika bersamaan-- 
+
+730
+00:32:49,660 --> 00:32:50,656
+ AUDIENCE: Jadi jika Anda memiliki tab mode publik 
+
+731
+00:32:50,656 --> 00:32:51,989
+ dan Anda memiliki tab mode pribadi. 
+
+732
+00:32:51,989 --> 00:32:54,171
+ Anda menutup tab pribadi dan tab mode publik 
+
+733
+00:32:54,171 --> 00:32:58,761
+ tetap aktif - penyerang masih bisa membuang memori. 
+
+734
+00:32:58,761 --> 00:33:00,813
+ Dan artefak RAM akan bermasalah. 
+
+735
+00:33:00,813 --> 00:33:01,680
+ Apakah itu benar? 
+
+736
+00:33:01,680 --> 00:33:04,250
+ PROFESOR: Ya, menarik - jadi kami 
+
+737
+00:33:04,250 --> 00:33:07,110
+ akan berbicara di akhir ceramah tentang serangan yang 
+
+738
+00:33:07,110 --> 00:33:08,710
+ agak mirip. 
+
+739
+00:33:08,710 --> 00:33:11,242
+ Jadi sebagian besar model ancaman penjelajahan pribadi 
+
+740
+00:33:11,242 --> 00:33:12,950
+ karena tidak menganggap penyerang saat ini sama sekali. 
+
+741
+00:33:12,950 --> 00:33:14,615
+ Dengan kata lain, mereka berasumsi bahwa kapan 
+
+742
+00:33:14,615 --> 00:33:16,115
+ Anda melakukan penelusuran pribadi, di sana 
+
+743
+00:33:16,115 --> 00:33:18,480
+ tidak ada orang lain yang memiliki mode publik 
+
+744
+00:33:18,480 --> 00:33:20,100
+ tab terbuka atau semacamnya. 
+
+745
+00:33:20,100 --> 00:33:24,880
+ Tetapi pada kenyataannya Anda benar bahwa cara penjelajahan pribadi 
+
+746
+00:33:24,880 --> 00:33:26,434
+ mode sering diimplementasikan - mari 
+
+747
+00:33:26,434 --> 00:33:27,850
+ mengatakan Anda membuka penjelajahan pribadi 
+
+748
+00:33:27,850 --> 00:33:29,974
+ tab, Anda menutup tab itu. 
+
+749
+00:33:29,974 --> 00:33:31,890
+ Anda langsung lari untuk mengambil secangkir kopi. 
+
+750
+00:33:31,890 --> 00:33:34,490
+ Jadi satu serangan yang akan saya jelaskan adalah bahwa Firefox, misalnya, 
+
+751
+00:33:34,490 --> 00:33:37,830
+ masih menyimpan statistik tentang, katakanlah, alokasi memori. 
+
+752
+00:33:37,830 --> 00:33:39,405
+ Jadi jika memori untuk tab pribadi Anda 
+
+753
+00:33:39,405 --> 00:33:40,780
+ sebenarnya diletakkan dengan sampah 
+
+754
+00:33:40,780 --> 00:33:43,830
+ dikumpulkan dan saya pada dasarnya bisa pergi ke about.memory atau apa pun 
+
+755
+00:33:43,830 --> 00:33:46,794
+ dan benar-benar melihat URL dan hal-hal di tab Anda. 
+
+756
+00:33:46,794 --> 00:33:49,210
+ Tapi ya, tapi ceritanya panjang, kebanyakan penyerang ini 
+
+757
+00:33:49,210 --> 00:33:51,570
+ model tidak mengasumsikan penyerang konkuren 
+
+758
+00:33:51,570 --> 00:33:55,070
+ pada saat yang sama saat Anda menjelajahi secara pribadi. 
+
+759
+00:33:55,070 --> 00:33:55,570
+ Masuk akal? 
+
+760
+00:33:55,570 --> 00:34:00,690
+
+
+761
+00:34:00,690 --> 00:34:03,312
+ Jadi ini adalah salah satu yang Anda lakukan - lakukan enkripsi swap 
+
+762
+00:34:03,312 --> 00:34:04,020
+ seperti yang saya sebutkan. 
+
+763
+00:34:04,020 --> 00:34:06,862
+ Ini bagus karena ini memberi Anda keamanan yang cukup keren 
+
+764
+00:34:06,862 --> 00:34:08,320
+ properti tanpa harus berubah 
+
+765
+00:34:08,320 --> 00:34:10,510
+ browser sama sekali atau aplikasi apa pun 
+
+766
+00:34:10,510 --> 00:34:11,630
+ berjalan di atas ini. 
+
+767
+00:34:11,630 --> 00:34:15,290
+ Dan dalam prakteknya, biaya CPU melakukan hal semacam ini 
+
+768
+00:34:15,290 --> 00:34:17,810
+ jauh, jauh lebih rendah dari biaya sebenarnya 
+
+769
+00:34:17,810 --> 00:34:19,879
+ melakukan I / O secara umum, khususnya 
+
+770
+00:34:19,879 --> 00:34:21,670
+ jika Anda memiliki disk karena dengan disk Anda 
+
+771
+00:34:21,670 --> 00:34:22,989
+ khususnya membayar biaya C. 
+
+772
+00:34:22,989 --> 00:34:24,449
+ Itu biaya mekanik. 
+
+773
+00:34:24,449 --> 00:34:27,360
+ Ini semua biaya proses-- hal-hal komputasi murni. 
+
+774
+00:34:27,360 --> 00:34:30,166
+ Jadi biasanya ini bukan pukulan besar. 
+
+775
+00:34:30,166 --> 00:34:36,159
+
+
+776
+00:34:36,159 --> 00:34:37,818
+ Oh, tuhan ada fisika di sini. 
+
+777
+00:34:37,818 --> 00:34:41,319
+
+
+778
+00:34:41,319 --> 00:34:45,980
+ Ini selalu merupakan petualangan. 
+
+779
+00:34:45,980 --> 00:34:52,320
+ Jadi penyerang berikutnya yang akan kita lihat 
+
+780
+00:34:52,320 --> 00:34:57,940
+ adalah penyerang web ini yang saya sebutkan 
+
+781
+00:34:57,940 --> 00:35:00,920
+ di awal kuliah. 
+
+782
+00:35:00,920 --> 00:35:08,940
+ Jadi anggapan di sini adalah bahwa penyerang 
+
+783
+00:35:08,940 --> 00:35:17,376
+ siapa yang mengontrol situs web tempat pengguna pergi 
+
+784
+00:35:17,376 --> 00:35:22,066
+ untuk dikunjungi dalam mode penjelajahan pribadi-- 
+
+785
+00:35:22,066 --> 00:35:27,686
+ bagaimana penyerang tidak mengontrol pengguna 
+
+786
+00:35:27,686 --> 00:35:28,618
+ mesin lokal. 
+
+787
+00:35:28,618 --> 00:35:32,350
+
+
+788
+00:35:32,350 --> 00:35:34,820
+ Dan itulah tujuan keamanan yang kami 
+
+789
+00:35:34,820 --> 00:35:38,990
+ ingin melawan penyerang web adalah dua kali lipat. 
+
+790
+00:35:38,990 --> 00:35:41,680
+
+
+791
+00:35:41,680 --> 00:35:46,960
+ Jadi pertama, kami tidak menginginkan penyerang 
+
+792
+00:35:46,960 --> 00:35:52,560
+ untuk dapat mengidentifikasi pengguna. 
+
+793
+00:35:52,560 --> 00:35:55,560
+
+
+794
+00:35:55,560 --> 00:35:57,320
+ Dan dengan mengidentifikasikan dengan, kami hanya bermaksud 
+
+795
+00:35:57,320 --> 00:35:59,820
+ kami tidak ingin penyerang dapat membedakan 
+
+796
+00:35:59,820 --> 00:36:02,778
+ pengguna dari pengguna lain yang terjadi 
+
+797
+00:36:02,778 --> 00:36:04,640
+ untuk mengunjungi situs ini. 
+
+798
+00:36:04,640 --> 00:36:08,140
+ Dan Anda juga mungkin membayangkan bahwa mungkin kita 
+
+799
+00:36:08,140 --> 00:36:15,340
+ tidak ingin penyerang mengatakan apakah kita ada atau tidak 
+
+800
+00:36:15,340 --> 00:36:18,940
+ menggunakan mode penjelajahan pribadi. 
+
+801
+00:36:18,940 --> 00:36:24,430
+ Jadi penyerang tidak bisa memberi tahu karyawan pengguna 
+
+802
+00:36:24,430 --> 00:36:25,290
+ penelusuran pribadi. 
+
+803
+00:36:25,290 --> 00:36:28,380
+
+
+804
+00:36:28,380 --> 00:36:33,330
+ Dan seperti yang dibahas makalah, membela 
+
+805
+00:36:33,330 --> 00:36:37,260
+ melawan penyerang web sebenarnya cukup rumit. 
+
+806
+00:36:37,260 --> 00:36:39,000
+ Jadi apa artinya itu, misalnya, 
+
+807
+00:36:39,000 --> 00:36:41,935
+ untuk mengidentifikasi pengguna yang berbeda. 
+
+808
+00:36:41,935 --> 00:36:44,060
+ Seperti saya katakan, pada tingkat yang tinggi, seperti yang Anda bayangkan, 
+
+809
+00:36:44,060 --> 00:36:47,320
+ pengguna tidak terlihat berbeda dari pengguna lain 
+
+810
+00:36:47,320 --> 00:36:48,910
+ yang mengunjungi situs ini. 
+
+811
+00:36:48,910 --> 00:36:50,460
+ Jadi Anda bisa membayangkan penyerang web 
+
+812
+00:36:50,460 --> 00:36:53,170
+ mungkin ingin melakukan satu dari dua hal spesifik. 
+
+813
+00:36:53,170 --> 00:36:56,400
+ Mungkin ingin mengatakan, OK, saya melihat banyak orang yang 
+
+814
+00:36:56,400 --> 00:36:59,740
+ mengunjungi situs saya dalam mode penjelajahan pribadi. 
+
+815
+00:36:59,740 --> 00:37:02,890
+ Anda adalah pengunjung lima, tujuh, dan delapan. 
+
+816
+00:37:02,890 --> 00:37:04,890
+ Jadi dengan kata lain, mengidentifikasi pengguna tertentu 
+
+817
+00:37:04,890 --> 00:37:07,820
+ dalam konteks beberapa sesi penelusuran pribadi. 
+
+818
+00:37:07,820 --> 00:37:09,920
+ Yang kedua mungkin ingin dilakukan penyerang 
+
+819
+00:37:09,920 --> 00:37:14,230
+ sebenarnya mencoba untuk menghubungkan pengguna di mode publik dan pribadi 
+
+820
+00:37:14,230 --> 00:37:15,120
+ sesi browsing. 
+
+821
+00:37:15,120 --> 00:37:18,110
+ Jadi saya pergi ke Amazon.com satu kali dalam mode penjelajahan publik. 
+
+822
+00:37:18,110 --> 00:37:20,350
+ Saya kemudian pergi ke itu lagi dalam mode penjelajahan pribadi. 
+
+823
+00:37:20,350 --> 00:37:22,366
+ Dapatkah penyerang benar-benar tahu 
+
+824
+00:37:22,366 --> 00:37:23,740
+ bahwa aku sebenarnya orang yang sama 
+
+825
+00:37:23,740 --> 00:37:24,600
+ melalui dua kunjungan itu. 
+
+826
+00:37:24,600 --> 00:37:25,150
+ Iya nih? 
+
+827
+00:37:25,150 --> 00:37:27,900
+ AUDIENCE: Ini semua adalah modul dari alamat IP. 
+
+828
+00:37:27,900 --> 00:37:31,370
+ PROFESOR: Ah, ya, itu tepat sekali. 
+
+829
+00:37:31,370 --> 00:37:32,740
+ Itu adalah bayangan luar biasa. 
+
+830
+00:37:32,740 --> 00:37:38,315
+ Jadi sekarang saya berasumsi bahwa pengguna menggunakan Tor atau menggunakan 
+
+831
+00:37:38,315 --> 00:37:39,180
+ sesuatu seperti ini. 
+
+832
+00:37:39,180 --> 00:37:41,180
+ Jadi ya, kami mengesampingkan seluruh masalah IP ini 
+
+833
+00:37:41,180 --> 00:37:42,270
+ diakui untuk saat ini. 
+
+834
+00:37:42,270 --> 00:37:44,640
+ Betul. 
+
+835
+00:37:44,640 --> 00:37:47,150
+ Jadi ya, ini segues sangat baik. 
+
+836
+00:37:47,150 --> 00:37:48,960
+ Jadi apa cara mudah untuk mengidentifikasi pengguna, 
+
+837
+00:37:48,960 --> 00:37:50,780
+ seperti yang Anda sarankan, alamat IP. 
+
+838
+00:37:50,780 --> 00:37:53,260
+ Jadi itu kemungkinan yang cukup tinggi jika Anda 
+
+839
+00:37:53,260 --> 00:37:55,425
+ melihat dua kunjungan yang agak berdekatan 
+
+840
+00:37:55,425 --> 00:37:57,590
+ relatif berbicara dengan IP yang sama 
+
+841
+00:37:57,590 --> 00:38:00,900
+ dengan kemungkinan besar itu mungkin pengguna yang sama. 
+
+842
+00:38:00,900 --> 00:38:02,442
+ Dan ini sebenarnya motivasi-- satu 
+
+843
+00:38:02,442 --> 00:38:05,110
+ motivasi untuk hal-hal seperti Tor. 
+
+844
+00:38:05,110 --> 00:38:08,510
+ Jadi kami benar-benar mau mendiskusikan kuliah berikutnya. 
+
+845
+00:38:08,510 --> 00:38:10,320
+ Jadi jika Anda belum pernah mendengar tentang Tor, 
+
+846
+00:38:10,320 --> 00:38:13,560
+ itu pada dasarnya alat yang mencoba mengaburkan sesuatu 
+
+847
+00:38:13,560 --> 00:38:15,120
+ seperti alamat IP Anda. 
+
+848
+00:38:15,120 --> 00:38:18,560
+ Dan Anda benar-benar bisa membayangkan layering Tor-- 
+
+849
+00:38:18,560 --> 00:38:22,210
+ memiliki Tor menjadi fondasi. 
+
+850
+00:38:22,210 --> 00:38:24,630
+ Dan kemudian Anda menempatkan mode penjelajahan pribadi di atas itu. 
+
+851
+00:38:24,630 --> 00:38:26,986
+ Dan itu mungkin memberi Anda beberapa sifat yang lebih kuat kemudian 
+
+852
+00:38:26,986 --> 00:38:31,680
+ Anda akan jika Anda menggunakan mode penjelajahan pribadi sama sekali. 
+
+853
+00:38:31,680 --> 00:38:34,610
+ Tapi, bagaimanapun, jadi hal yang perlu disebutkan tentang Tor 
+
+854
+00:38:34,610 --> 00:38:37,940
+ meskipun adalah bahwa Tor tidak memberikan rasa anonimitas IP. 
+
+855
+00:38:37,940 --> 00:38:40,830
+ Tapi itu tidak benar-benar mengatasi hal-hal seperti kerahasiaan data 
+
+856
+00:38:40,830 --> 00:38:42,920
+ masalah masa hidup atau hal-hal seperti itu. 
+
+857
+00:38:42,920 --> 00:38:46,410
+ Jadi Tor-- mungkin Anda bisa menganggapnya sebagai mungkin perlu, 
+
+858
+00:38:46,410 --> 00:38:48,580
+ tetapi tidak cukup untuk implementasi penuh 
+
+859
+00:38:48,580 --> 00:38:50,760
+ mode penjelajahan pribadi. 
+
+860
+00:38:50,760 --> 00:38:53,450
+ Dan yang menarik juga adalah bahwa bahkan jika seorang pengguna 
+
+861
+00:38:53,450 --> 00:38:57,800
+ karyawan Tor, masih ada cara yang dapat dilakukan oleh server web 
+
+862
+00:38:57,800 --> 00:39:02,020
+ identifikasi pengguna dengan melihat karakteristik yang unik 
+
+863
+00:39:02,020 --> 00:39:06,230
+ dari browser pengguna itu. 
+
+864
+00:39:06,230 --> 00:39:09,080
+ Jadi ini adalah demo terakhir kami untuk hari ini. 
+
+865
+00:39:09,080 --> 00:39:12,255
+ Jadi mari kita lihat di sini. 
+
+866
+00:39:12,255 --> 00:39:15,980
+ Jadi akan menyingkirkan orang ini. 
+
+867
+00:39:15,980 --> 00:39:18,380
+ Dan kemudian mari kita lihat. 
+
+868
+00:39:18,380 --> 00:39:22,632
+ Saya akan pergi ke situs ini yang disebut Panopticlick. 
+
+869
+00:39:22,632 --> 00:39:23,840
+ Beberapa dari Anda mendengar hal ini. 
+
+870
+00:39:23,840 --> 00:39:25,260
+ Ini menjalankan EFF. 
+
+871
+00:39:25,260 --> 00:39:29,640
+ Ide dasarnya adalah mencoba mengidentifikasi Anda sebagai pengguna 
+
+872
+00:39:29,640 --> 00:39:32,940
+ dengan melihat berbagai karakteristik web Anda 
+
+873
+00:39:32,940 --> 00:39:33,738
+ browser. 
+
+874
+00:39:33,738 --> 00:39:37,410
+ Jadi saya akan menunjukkan dengan tepat apa yang saya maksud. 
+
+875
+00:39:37,410 --> 00:39:39,101
+ Jadi saya ingin pergi - URL sangat panjang. 
+
+876
+00:39:39,101 --> 00:39:41,506
+ Ini sangat menegangkan bagi saya untuk mengetik. 
+
+877
+00:39:41,506 --> 00:39:43,911
+ Jadi tolong jangan hanya jika tidak berhasil. 
+
+878
+00:39:43,911 --> 00:39:45,354
+ Ayo lihat. 
+
+879
+00:39:45,354 --> 00:39:49,220
+ Panopticlick-- apakah itu berhasil? 
+
+880
+00:39:49,220 --> 00:39:51,730
+ Ya ok. 
+
+881
+00:39:51,730 --> 00:39:54,030
+ Jadi saya akan pergi ke situs web ini. 
+
+882
+00:39:54,030 --> 00:39:57,600
+ Dan itu dijalankan oleh orang-orang di EFF. 
+
+883
+00:39:57,600 --> 00:39:59,820
+ Dan saya katakan, oke, ujilah saya. 
+
+884
+00:39:59,820 --> 00:40:02,117
+ Jadi apa yang dilakukan pada dasarnya 
+
+885
+00:40:02,117 --> 00:40:03,825
+ menjalankan sekumpulan kode JavaScript, mungkin 
+
+886
+00:40:03,825 --> 00:40:05,730
+ applet-- mungkin beberapa Java. 
+
+887
+00:40:05,730 --> 00:40:08,110
+ Dan itu mencoba sidik jari browser saya. 
+
+888
+00:40:08,110 --> 00:40:12,115
+ Dan itu mencoba untuk mencari tahu berapa banyak informasi unik 
+
+889
+00:40:12,115 --> 00:40:12,990
+ apakah itu ada. 
+
+890
+00:40:12,990 --> 00:40:18,810
+ Dan jadi - biarkan aku meningkatkan font di sini. 
+
+891
+00:40:18,810 --> 00:40:20,960
+ Jadi, misalnya, satu hal yang terlihat 
+
+892
+00:40:20,960 --> 00:40:23,620
+ apakah itu terlihat pada Anda lihat di sini apa 
+
+893
+00:40:23,620 --> 00:40:27,060
+ semua detail dari plugin browser yang saya jalankan. 
+
+894
+00:40:27,060 --> 00:40:29,390
+ Jadi pada dasarnya itu akan menjalankan kode di halaman webnya 
+
+895
+00:40:29,390 --> 00:40:31,454
+ yang terlihat dan dilihat apakah saya memasang Flash? 
+
+896
+00:40:31,454 --> 00:40:32,370
+ Versi Flash apa? 
+
+897
+00:40:32,370 --> 00:40:33,620
+ Apakah saya sudah menginstal Java? 
+
+898
+00:40:33,620 --> 00:40:35,970
+ Versi Java apa? 
+
+899
+00:40:35,970 --> 00:40:39,190
+ Jadi Anda dapat melihat bahwa ini semua - mereka bahkan tidak bisa 
+
+900
+00:40:39,190 --> 00:40:40,810
+ muat di pohon pada satu waktu. 
+
+901
+00:40:40,810 --> 00:40:44,820
+ Ini seperti semua berbagai plugin dan format konyol 
+
+902
+00:40:44,820 --> 00:40:45,960
+ yang didukung browser saya. 
+
+903
+00:40:45,960 --> 00:40:48,774
+ Sekarang, level tinggi-- ini seharusnya merepotkanmu 
+
+904
+00:40:48,774 --> 00:40:49,940
+ jika Anda seorang petugas keamanan. 
+
+905
+00:40:49,940 --> 00:40:51,939
+ Apakah saya sebenarnya aktif menggunakan semua hal ini 
+
+906
+00:40:51,939 --> 00:40:53,180
+ pada waktu tertentu? 
+
+907
+00:40:53,180 --> 00:40:55,805
+ Ini memberi saya mimpi buruk. 
+
+908
+00:40:55,805 --> 00:40:57,930
+ Jadi apa yang akhirnya terjadi adalah web itu 
+
+909
+00:40:57,930 --> 00:41:00,389
+ servers-- penyerang web ini-- mereka dapat memburu kode seperti ini. 
+
+910
+00:41:00,389 --> 00:41:02,888
+ Dan mereka bisa mengetahui apa saja plugin itu 
+
+911
+00:41:02,888 --> 00:41:03,840
+ melihat ke. 
+
+912
+00:41:03,840 --> 00:41:05,970
+ Sekarang jika Anda melihat dua kolom ini ke kiri, 
+
+913
+00:41:05,970 --> 00:41:07,020
+ Apakah mereka? 
+
+914
+00:41:07,020 --> 00:41:09,550
+ Jadi Anda lihat di sini. 
+
+915
+00:41:09,550 --> 00:41:11,810
+ Ia mengatakan sedikit informasi identifikasi. 
+
+916
+00:41:11,810 --> 00:41:15,760
+ Dan kemudian satu di x browser memiliki nilai ini. 
+
+917
+00:41:15,760 --> 00:41:18,635
+ Jadi, misalnya, jika kita melihat sebuah plugin, 
+
+918
+00:41:18,635 --> 00:41:21,979
+ itu mengatakan ada pada dasarnya-- itu mungkin 
+
+919
+00:41:21,979 --> 00:41:23,770
+ ini adalah angka yang lebih menarik. 
+
+920
+00:41:23,770 --> 00:41:24,660
+ Tidak lagi benar. 
+
+921
+00:41:24,660 --> 00:41:30,140
+ Ini mengatakan bahwa 1 di sekitar 280.000 browser 
+
+922
+00:41:30,140 --> 00:41:33,610
+ memiliki set plugin yang tepat ini. 
+
+923
+00:41:33,610 --> 00:41:37,960
+ Jadi itu sebenarnya cara yang cukup spesifik untuk sidik jari saya. 
+
+924
+00:41:37,960 --> 00:41:40,580
+ Itu mengatakan sangat, sangat sedikit orang 
+
+925
+00:41:40,580 --> 00:41:43,674
+ yang memiliki set plugin dan konfigurasi yang tepat. 
+
+926
+00:41:43,674 --> 00:41:45,090
+ Jadi ternyata, mereka benar. 
+
+927
+00:41:45,090 --> 00:41:45,840
+ Saya cukup unik. 
+
+928
+00:41:45,840 --> 00:41:50,104
+ Tapi ini masalah dari perspektif keamanan. 
+
+929
+00:41:50,104 --> 00:41:50,770
+ Jadi lihat ini. 
+
+930
+00:41:50,770 --> 00:41:55,120
+ Ukuran layar dan kedalaman warna untuk mesin saya-- 
+
+931
+00:41:55,120 --> 00:41:57,830
+ 1 in-- apa ini? 
+
+932
+00:41:57,830 --> 00:42:00,570
+ 1,5 juta. 
+
+933
+00:42:00,570 --> 00:42:02,515
+ Itu sebenarnya cukup mengejutkan. 
+
+934
+00:42:02,515 --> 00:42:07,050
+ Jadi hanya ada satu orang dalam sampel 1,5 juta orang 
+
+935
+00:42:07,050 --> 00:42:10,420
+ yang memiliki gambar layar khusus ini. 
+
+936
+00:42:10,420 --> 00:42:14,110
+ Jadi hal-hal ini-- mereka aditif dalam arti tertentu. 
+
+937
+00:42:14,110 --> 00:42:17,340
+ Jadi semakin banyak sidik jari yang Anda miliki, semakin mudah 
+
+938
+00:42:17,340 --> 00:42:21,180
+ bagi penyerang untuk mencari tahu siapa Anda sebenarnya. 
+
+939
+00:42:21,180 --> 00:42:24,420
+ Dan perhatikan ini dilakukan murni dari sisi server. 
+
+940
+00:42:24,420 --> 00:42:26,090
+ Saya baru saja membuka halaman web ini. 
+
+941
+00:42:26,090 --> 00:42:27,490
+ Dan saya baru saja melakukan ini. 
+
+942
+00:42:27,490 --> 00:42:28,710
+ Dan inilah yang harus dilakukan. 
+
+943
+00:42:28,710 --> 00:42:30,716
+ Satu detik-- Saya ingin menunjukkan satu hal lagi. 
+
+944
+00:42:30,716 --> 00:42:33,614
+ Ini dilakukan dalam mode penjelajahan pribadi. 
+
+945
+00:42:33,614 --> 00:42:35,063
+ Dan mari kita lihat di sini. 
+
+946
+00:42:35,063 --> 00:42:38,927
+
+
+947
+00:42:38,927 --> 00:42:43,948
+ Saya akan membuka versi reguler Firefox. 
+
+948
+00:42:43,948 --> 00:42:47,392
+
+
+949
+00:42:47,392 --> 00:42:51,850
+ Kemudian saya menjalankan ini lagi. 
+
+950
+00:42:51,850 --> 00:42:55,490
+ Jadi perhatikan bahwa sekarang saya berada di browser mode publik. 
+
+951
+00:42:55,490 --> 00:42:57,050
+ Sebelum saya dalam mode pribadi. 
+
+952
+00:42:57,050 --> 00:42:58,970
+ Sekarang saya mode publik. 
+
+953
+00:42:58,970 --> 00:43:02,250
+ Jadi apa yang akan Anda lihat adalah ketika kami melihat plugin browser, 
+
+954
+00:43:02,250 --> 00:43:04,000
+ sejauh mana saya bisa sidik jari 
+
+955
+00:43:04,000 --> 00:43:05,820
+ pada dasarnya sama. 
+
+956
+00:43:05,820 --> 00:43:08,448
+ Jadi ini akan menjadi beberapa plugin yang mungkin atau tidak 
+
+957
+00:43:08,448 --> 00:43:10,274
+ memuat tergantung pada liku-liku bagaimana 
+
+958
+00:43:10,274 --> 00:43:11,440
+ mode privasi diimplementasikan. 
+
+959
+00:43:11,440 --> 00:43:13,512
+ Tapi tetap saja, lihat itu. 
+
+960
+00:43:13,512 --> 00:43:15,872
+ Saya masih sangat mudah untuk sidik jari. 
+
+961
+00:43:15,872 --> 00:43:18,392
+ Dan sebenarnya, jika Anda melihat kembali pada pria ini 
+
+962
+00:43:18,392 --> 00:43:20,100
+ again-- bahwa ukuran layar dan kedalaman warna. 
+
+963
+00:43:20,100 --> 00:43:22,082
+ Saya tidak mengubah itu sebenarnya antara keduanya-- 
+
+964
+00:43:22,082 --> 00:43:23,790
+ antara mode penjelajahan publik dan pribadi. 
+
+965
+00:43:23,790 --> 00:43:26,730
+ Jadi kemampuan sidik jari itu pada dasarnya sama. 
+
+966
+00:43:26,730 --> 00:43:29,430
+ Inilah salah satu alasan mengapa sangat sulit untuk melindungi diri sendiri 
+
+967
+00:43:29,430 --> 00:43:33,110
+ terhadap serangan web ini karena peramban itu sendiri terungkap 
+
+968
+00:43:33,110 --> 00:43:35,749
+ begitu banyak informasi tentang Anda hanya dari konfigurasi mereka. 
+
+969
+00:43:35,749 --> 00:43:37,998
+ AUDIENCE: Saya ingin tahu ukuran layar dan kedalaman warna 
+
+970
+00:43:37,998 --> 00:43:39,133
+ benda. 
+
+971
+00:43:39,133 --> 00:43:39,966
+ Bagaimana cara melakukannya? 
+
+972
+00:43:39,966 --> 00:43:42,336
+ Bagaimana itu unik? 
+
+973
+00:43:42,336 --> 00:43:44,887
+ Berapa banyak ukuran layar dan kedalaman warna yang ada? 
+
+974
+00:43:44,887 --> 00:43:46,470
+ PROFESOR: Yah, saya pikir itu sebenarnya 
+
+975
+00:43:46,470 --> 00:43:48,136
+ menyembunyikan beberapa sihir yang digunakannya 
+
+976
+00:43:48,136 --> 00:43:49,430
+ untuk mencari tahu apa itu. 
+
+977
+00:43:49,430 --> 00:43:51,638
+ Jadi pada tingkat yang tinggi, bagaimana banyak dari tes-tes ini bekerja? 
+
+978
+00:43:51,638 --> 00:43:55,250
+ Jadi ada beberapa bagian dari lingkungan browser Anda 
+
+979
+00:43:55,250 --> 00:43:57,300
+ yang dapat diuji murni oleh kode JavaScript. 
+
+980
+00:43:57,300 --> 00:43:59,866
+ Jadi, Anda dapat membayangkan bahwa Anda pada dasarnya bisa 
+
+981
+00:43:59,866 --> 00:44:01,240
+ memiliki kode JavaScript, yang terlihat 
+
+982
+00:44:01,240 --> 00:44:03,198
+ atas sifat-sifat objek jendela, yang 
+
+983
+00:44:03,198 --> 00:44:05,370
+ seperti naskah JavaScript global 
+
+984
+00:44:05,370 --> 00:44:07,741
+ dan melihat bagaimana Anda mendefinisikan widget aneh ini? 
+
+985
+00:44:07,741 --> 00:44:09,240
+ Bagaimana Anda mendefinisikan widget aneh ini? 
+
+986
+00:44:09,240 --> 00:44:12,090
+ Dan jika demikian, saya menghitung plug-in Anda, katakanlah. 
+
+987
+00:44:12,090 --> 00:44:14,650
+ Halaman-halaman seperti ini juga biasanya memanfaatkan fakta 
+
+988
+00:44:14,650 --> 00:44:18,522
+ bahwa applet Java dan objek Flash 
+
+989
+00:44:18,522 --> 00:44:20,480
+ dapat melihat segala macam hal yang lebih menarik 
+
+990
+00:44:20,480 --> 00:44:22,521
+ seperti font yang tersedia di komputer Anda 
+
+991
+00:44:22,521 --> 00:44:23,660
+ dan hal-hal seperti itu. 
+
+992
+00:44:23,660 --> 00:44:27,180
+ Jadi untuk ukuran layar dan kedalaman warna tertentu-- 
+
+993
+00:44:27,180 --> 00:44:28,555
+ Saya pikir - jangan mengutip saya tentang itu. 
+
+994
+00:44:28,555 --> 00:44:29,971
+ Tapi saya pikir apa yang akhirnya terjadi 
+
+995
+00:44:29,971 --> 00:44:32,796
+ apakah itu akan mencoba menjalankan applet, katakanlah, itu akan benar-benar 
+
+996
+00:44:32,796 --> 00:44:35,360
+ cobalah untuk menanyakan kartu grafis Anda atau apa pun grafisnya 
+
+997
+00:44:35,360 --> 00:44:38,334
+ antarmuka di Jawa dan menyodok untuk berbagai aspek itu. 
+
+998
+00:44:38,334 --> 00:44:40,250
+ Jadi saya pikir itu sebenarnya lebih dari sekadar layar 
+
+999
+00:44:40,250 --> 00:44:41,030
+ ukuran dan kedalaman. 
+
+1000
+00:44:41,030 --> 00:44:43,620
+ Mereka memadatkannya untuk ukuran seperti itu. 
+
+1001
+00:44:43,620 --> 00:44:45,842
+ Jadi pada level yang tinggi, itulah bagaimana semua trik ini bekerja. 
+
+1002
+00:44:45,842 --> 00:44:47,300
+ Jadi Anda melihat banyak informasi-- 
+
+1003
+00:44:47,300 --> 00:44:48,830
+ Anda dapat menyelinap melalui JavaScript. 
+
+1004
+00:44:48,830 --> 00:44:50,720
+ Kemudian Anda menjalankan banyak plugin, yang 
+
+1005
+00:44:50,720 --> 00:44:53,820
+ biasanya dapat mengakses lebih banyak barang dan melihat apa yang dapat mereka selipkan. 
+
+1006
+00:44:53,820 --> 00:44:56,910
+ Dan kemudian Anda melihat apa yang terjadi. 
+
+1007
+00:44:56,910 --> 00:44:58,736
+ Apakah itu semua masuk akal? 
+
+1008
+00:44:58,736 --> 00:45:01,152
+ Ya, ini pada dasarnya mengapa sangat sulit untuk dilindungi 
+
+1009
+00:45:01,152 --> 00:45:02,520
+ melawan penyerang web. 
+
+1010
+00:45:02,520 --> 00:45:04,686
+ Dan khususnya, kembali ke diskusi kita 
+
+1011
+00:45:04,686 --> 00:45:07,940
+ memiliki tentang Tor, benar, bahkan jika aku telah melewati Tor-- begitu 
+
+1012
+00:45:07,940 --> 00:45:12,145
+ Anda akan mencatat alamat IP - Anda tidak melihatnya di sini. 
+
+1013
+00:45:12,145 --> 00:45:13,867
+ Dan Anda dapat membayangkan bahwa ya, 
+
+1014
+00:45:13,867 --> 00:45:16,200
+ mungkin hal ini akan benar-benar melihat alamat IP Anda. 
+
+1015
+00:45:16,200 --> 00:45:17,405
+ Tetapi hal itu seperti bahkan jika saya tidak 
+
+1016
+00:45:17,405 --> 00:45:19,200
+ tahu apa IP Anda berasal dari semua, 
+
+1017
+00:45:19,200 --> 00:45:21,924
+ Saya bisa melakukan semua hal ini. 
+
+1018
+00:45:21,924 --> 00:45:22,840
+ Ini cukup menjengkelkan. 
+
+1019
+00:45:22,840 --> 00:45:23,890
+ Itu cukup gila. 
+
+1020
+00:45:23,890 --> 00:45:25,682
+ Jadi ada beberapa produk di luar sana 
+
+1021
+00:45:25,682 --> 00:45:28,690
+ yang mencoba melakukan hal-hal seperti bayangan 
+
+1022
+00:45:28,690 --> 00:45:31,090
+ bahwa Anda memiliki proxy di cloud 
+
+1023
+00:45:31,090 --> 00:45:33,170
+ bahwa semua lalu lintas web Anda berhasil. 
+
+1024
+00:45:33,170 --> 00:45:34,680
+ Dan kemudian bayangkan proxy itu mencoba 
+
+1025
+00:45:34,680 --> 00:45:40,250
+ untuk menyajikan versi kanonik dari runtime browser. 
+
+1026
+00:45:40,250 --> 00:45:42,890
+ Dan bayangkan bahwa itu akan selalu mencoba untuk meniru, 
+
+1027
+00:45:42,890 --> 00:45:46,400
+ katakanlah, Firefox v 10.7. 
+
+1028
+00:45:46,400 --> 00:45:48,780
+ Maka itu akan mencoba mengirim kembali data 
+
+1029
+00:45:48,780 --> 00:45:51,930
+ yang diberikan sebagai Firefox v 10.7. 
+
+1030
+00:45:51,930 --> 00:45:53,960
+ Jadi beberapa orang akan mencoba menyerang ini. 
+
+1031
+00:45:53,960 --> 00:45:54,970
+ Ini agak rumit. 
+
+1032
+00:45:54,970 --> 00:45:55,886
+ AUDIENCE: [TIDAK JELAS]. 
+
+1033
+00:45:55,886 --> 00:45:58,896
+
+
+1034
+00:45:58,896 --> 00:45:59,878
+ PROFESOR: Saya bukan-- 
+
+1035
+00:45:59,878 --> 00:46:00,860
+ AUDIENCE: Apakah itu distribusi Tor? 
+
+1036
+00:46:00,860 --> 00:46:02,333
+ Apakah itu dipasangkan dengan mesin virtual? 
+
+1037
+00:46:02,333 --> 00:46:02,833
+ [TIDAK JELAS] 
+
+1038
+00:46:02,833 --> 00:46:05,527
+
+
+1039
+00:46:05,527 --> 00:46:07,110
+ PROFESOR: Saya mengerti-- jadi ide dasar-- 
+
+1040
+00:46:07,110 --> 00:46:09,443
+ apakah itu ide yang mirip dengan apa yang baru saja kita bicarakan? 
+
+1041
+00:46:09,443 --> 00:46:10,744
+ AUDIENCE: Ya, [TIDAK JELAS]. 
+
+1042
+00:46:10,744 --> 00:46:12,660
+ PROFESOR: Ya, jadi saya tidak pernah mendengar yang satu itu. 
+
+1043
+00:46:12,660 --> 00:46:14,535
+ Saya pernah mendengar tentang beberapa proyek lain ini. 
+
+1044
+00:46:14,535 --> 00:46:18,480
+ Saya membayangkan sebenarnya ada beberapa trickiness dalam mendapatkan 
+
+1045
+00:46:18,480 --> 00:46:20,495
+ sistem seperti ini menjadi efisien banyak kali 
+
+1046
+00:46:20,495 --> 00:46:22,870
+ karena khususnya bayangkan jika Anda memiliki sesuatu itu 
+
+1047
+00:46:22,870 --> 00:46:23,655
+ interaktif. 
+
+1048
+00:46:23,655 --> 00:46:26,030
+ Ini seperti Anda ingin bermain game atau sesuatu seperti itu. 
+
+1049
+00:46:26,030 --> 00:46:28,790
+ Agak canggung untuk mengirim mouse saya 
+
+1050
+00:46:28,790 --> 00:46:30,650
+ klik ke beberapa proxy. 
+
+1051
+00:46:30,650 --> 00:46:34,858
+ Proksi itu kemudian entah bagaimana pergi ke [TIDAK JELAS]. 
+
+1052
+00:46:34,858 --> 00:46:38,770
+ AUDIENCE: Biarkan saya mengklarifikasi mesin virtual stasiun pertama 
+
+1053
+00:46:38,770 --> 00:46:41,215
+ sebenarnya menjalankan [INAUDIBLE] Firefox. 
+
+1054
+00:46:41,215 --> 00:46:44,160
+ Dalam proxy itu dikenal sebagai Tor. 
+
+1055
+00:46:44,160 --> 00:46:46,512
+ PROFESOR: Ah, itu hanya proxy Tor. 
+
+1056
+00:46:46,512 --> 00:46:48,470
+ Jadi jika itu adalah proxy Tor, tentu, itu satu hal. 
+
+1057
+00:46:48,470 --> 00:46:50,303
+ Maka satu-satunya overhead di sana Anda harus membayar 
+
+1058
+00:46:50,303 --> 00:46:53,062
+ adalah overhead Tor reguler untuk pergi 
+
+1059
+00:46:53,062 --> 00:46:54,840
+ melalui semua rute bawang. 
+
+1060
+00:46:54,840 --> 00:46:57,860
+ Ya, jadi saya berbicara ada sistem-- 
+
+1061
+00:46:57,860 --> 00:46:59,880
+ mari kita mengabaikan anonimitas IP untuk kedua 
+
+1062
+00:46:59,880 --> 00:47:01,820
+ karena pada dasarnya mereka mencoba mengatakan 
+
+1063
+00:47:01,820 --> 00:47:04,550
+ Anda memiliki peramban sidik jari sendiri 
+
+1064
+00:47:04,550 --> 00:47:05,571
+ di komputer Anda sendiri. 
+
+1065
+00:47:05,571 --> 00:47:07,570
+ Anda tidak ingin mengekspos itu ke server web. 
+
+1066
+00:47:07,570 --> 00:47:09,270
+ Jadi intinya Anda melalui proxy, 
+
+1067
+00:47:09,270 --> 00:47:10,686
+ yang Anda pikirkan sepanjang waktu 
+
+1068
+00:47:10,686 --> 00:47:14,370
+ seperti Firefox tanpa kepala katakanlah beberapa versi kanonik. 
+
+1069
+00:47:14,370 --> 00:47:16,760
+ Server web berpikir itu berinteraksi dengan hal ini. 
+
+1070
+00:47:16,760 --> 00:47:19,910
+ Jadi jika saya membuka situs ini, saya dianggap oleh server web 
+
+1071
+00:47:19,910 --> 00:47:21,490
+ seperti Firefox 10.7 atau apa pun. 
+
+1072
+00:47:21,490 --> 00:47:23,910
+ Jika Anda pergi ke sana, Anda juga dianggap sebagai Firefox 10.7. 
+
+1073
+00:47:23,910 --> 00:47:26,954
+ Kemudian di balik layar itu 'memuntahkan HTML dan semacamnya 
+
+1074
+00:47:26,954 --> 00:47:29,000
+ seperti itu dikumpulkan dari proxy. 
+
+1075
+00:47:29,000 --> 00:47:32,680
+ Jadi kedua hal itu bersifat orthogonal. 
+
+1076
+00:47:32,680 --> 00:47:35,620
+ AUDIENCE: Tapi sepertinya Anda tidak perlu proxy untuk ini. 
+
+1077
+00:47:35,620 --> 00:47:36,600
+ Anda dapat memiliki dukungan browser untuk ini, bukan? 
+
+1078
+00:47:36,600 --> 00:47:38,460
+ Artinya browser Tor melakukan ini 
+
+1079
+00:47:38,460 --> 00:47:42,150
+ sudah dengan mencoba tampil sebagai versi yang paling umum 
+
+1080
+00:47:42,150 --> 00:47:42,870
+ dari Firefox. 
+
+1081
+00:47:42,870 --> 00:47:44,560
+ PROFESOR: Ya, jadi ini benar. 
+
+1082
+00:47:44,560 --> 00:47:46,810
+ Meskipun, saya pikir masalah dengan banyak hal-hal itu 
+
+1083
+00:47:46,810 --> 00:47:49,311
+ bahwa bahkan jika Anda mencoba mengunci diri ke dalam satu versi, 
+
+1084
+00:47:49,311 --> 00:47:51,560
+ masih ada banyak hal yang bisa sidik jari. 
+
+1085
+00:47:51,560 --> 00:47:53,768
+ Jadi saya pikir dengan distribusi Tor, apa yang sering mereka lakukan 
+
+1086
+00:47:53,768 --> 00:47:56,950
+ lakukan adalah mereka mengatakan, kita mengendalikan apa yang ada di distribusi Tor. 
+
+1087
+00:47:56,950 --> 00:47:59,670
+ Jadi, jika kita semua turun ke distribusi Tor, lalu berdesakan, 
+
+1088
+00:47:59,670 --> 00:48:04,000
+ kita berdua akan mendapatkan Firefox dengan versi Java yang sama-- 
+
+1089
+00:48:04,000 --> 00:48:05,624
+ hal yang sama dan seterusnya. 
+
+1090
+00:48:05,624 --> 00:48:07,490
+ AUDIENCE: Yah, itu lebih dari itu. 
+
+1091
+00:48:07,490 --> 00:48:09,823
+ Mereka mengembalikan ukuran layar yang merupakan layar paling umum 
+
+1092
+00:48:09,823 --> 00:48:11,909
+ ukuran setiap kali Anda membersihkan layar. 
+
+1093
+00:48:11,909 --> 00:48:13,034
+ PROFESOR: Itu semua benar. 
+
+1094
+00:48:13,034 --> 00:48:14,170
+ Ya, jadi satu hal yang menarik untuk dilihat 
+
+1095
+00:48:14,170 --> 00:48:16,639
+ di olah-- tim Tor yang juga mengeluarkan-- orang-orang yang 
+
+1096
+00:48:16,639 --> 00:48:19,180
+ lakukan bundle-- mereka akan sering mengeluarkan laporan tentang data apa 
+
+1097
+00:48:19,180 --> 00:48:20,120
+ masih bocor. 
+
+1098
+00:48:20,120 --> 00:48:21,946
+ Jadi barang masih bocor. 
+
+1099
+00:48:21,946 --> 00:48:23,297
+ Tapi kamu benar. 
+
+1100
+00:48:23,297 --> 00:48:25,880
+ Jika Anda bisa - tingkat tinggi dari tujuan itu sangat masuk akal. 
+
+1101
+00:48:25,880 --> 00:48:27,590
+ Itu mengatakan bahwa jika kita semua setuju 
+
+1102
+00:48:27,590 --> 00:48:29,629
+ untuk mengunduh distribusi yang sama 
+
+1103
+00:48:29,629 --> 00:48:32,170
+ dan kemudian tidak mengelabui dengan menambahkan plugin atau hal-hal seperti, 
+
+1104
+00:48:32,170 --> 00:48:33,253
+ maka Anda benar. 
+
+1105
+00:48:33,253 --> 00:48:35,197
+ Itu akan berhasil. 
+
+1106
+00:48:35,197 --> 00:48:36,030
+ Ada pertanyaan lain? 
+
+1107
+00:48:36,030 --> 00:48:40,410
+
+
+1108
+00:48:40,410 --> 00:48:44,030
+ Ya, jadi itu untuk waktu demo. 
+
+1109
+00:48:44,030 --> 00:48:51,845
+
+
+1110
+00:48:51,845 --> 00:48:52,886
+ Dan ada lebih banyak fisika. 
+
+1111
+00:48:52,886 --> 00:48:56,330
+
+
+1112
+00:48:56,330 --> 00:48:59,560
+ Ini pasti kelas sebelumnya yang memukau. 
+
+1113
+00:48:59,560 --> 00:49:01,295
+ Jadi kita akan mengabaikan itu untuk saat ini. 
+
+1114
+00:49:01,295 --> 00:49:01,920
+ Mari kita lihat di sini. 
+
+1115
+00:49:01,920 --> 00:49:07,240
+
+
+1116
+00:49:07,240 --> 00:49:08,340
+ Jadi dimana kita? 
+
+1117
+00:49:08,340 --> 00:49:12,116
+
+
+1118
+00:49:12,116 --> 00:49:14,525
+ Jadi apa tujuan privasi tingkat tinggi? 
+
+1119
+00:49:14,525 --> 00:49:15,900
+ Dan Anda dapat menganggapnya sebagai apa 
+
+1120
+00:49:15,900 --> 00:49:18,420
+ anonimitas Anda diatur jika Anda pengguna? 
+
+1121
+00:49:18,420 --> 00:49:20,490
+ Jadi dengan kata lain, berapa banyak - apa 
+
+1122
+00:49:20,490 --> 00:49:22,630
+ ukuran orang - jumlah orang 
+
+1123
+00:49:22,630 --> 00:49:25,270
+ Anda bisa bingung untuk-- Anda 
+
+1124
+00:49:25,270 --> 00:49:26,857
+ bisa disalahartikan oleh penyerang. 
+
+1125
+00:49:26,857 --> 00:49:28,940
+ Dan apa yang ditunjukkan oleh hal-hal browser fingerprinting 
+
+1126
+00:49:28,940 --> 00:49:32,620
+ adalah seringkali penyerang web dapat mempersempit Anda 
+
+1127
+00:49:32,620 --> 00:49:35,360
+ ke demografis yang sangat, sangat ketat 
+
+1128
+00:49:35,360 --> 00:49:38,510
+ tanpa mengontrol apa pun di komputer lokal Anda. 
+
+1129
+00:49:38,510 --> 00:49:41,370
+ Jadi itu sebenarnya sedikit menakutkan untuk diketahui. 
+
+1130
+00:49:41,370 --> 00:49:44,020
+
+
+1131
+00:49:44,020 --> 00:49:47,480
+ Jadi Anda mungkin ingin memikirkan caranya 
+
+1132
+00:49:47,480 --> 00:49:50,480
+ dapatkah penyerang web menentukan apakah Anda menggunakan penelusuran pribadi 
+
+1133
+00:49:50,480 --> 00:49:51,692
+ mode? 
+
+1134
+00:49:51,692 --> 00:49:53,400
+ Mungkin itu [tidak terdengar] untuk beberapa alasan. 
+
+1135
+00:49:53,400 --> 00:49:56,260
+ Jadi di koran mereka menggambarkan serangan 
+
+1136
+00:49:56,260 --> 00:49:58,400
+ yang menggunakan warna tautan. 
+
+1137
+00:49:58,400 --> 00:50:00,260
+ Jadi ingat, dalam mode penjelajahan pribadi, 
+
+1138
+00:50:00,260 --> 00:50:01,730
+ peramban tidak seharusnya disimpan 
+
+1139
+00:50:01,730 --> 00:50:04,770
+ melacak riwayat situs yang Anda kunjungi. 
+
+1140
+00:50:04,770 --> 00:50:07,630
+ Maka di koran, penulis menggambarkan serangan 
+
+1141
+00:50:07,630 --> 00:50:10,630
+ di mana pada dasarnya halaman yang dikendalikan penyerang 
+
+1142
+00:50:10,630 --> 00:50:14,510
+ membuat iframe ke beberapa URL yang dikontrol oleh penyerang 
+
+1143
+00:50:14,510 --> 00:50:16,780
+ dan memuatnya di dalam halaman penyerang. 
+
+1144
+00:50:16,780 --> 00:50:19,400
+ Dan kemudian pada dasarnya terlihat pada warna tautan. 
+
+1145
+00:50:19,400 --> 00:50:21,065
+ Ini membuat tautan ke halaman itu-- itu 
+
+1146
+00:50:21,065 --> 00:50:22,880
+ iframe itu hanya dibuat-- dan kemudian melihat 
+
+1147
+00:50:22,880 --> 00:50:26,810
+ bahwa warna tautan untuk tautan itu adalah warna yang dikunjungi. 
+
+1148
+00:50:26,810 --> 00:50:29,460
+ Jadi melihatnya sebagai ungu versus biru. 
+
+1149
+00:50:29,460 --> 00:50:33,600
+ Dan gagasan bahwa jika Anda melakukan tes ini dalam mode penjelajahan pribadi, 
+
+1150
+00:50:33,600 --> 00:50:35,510
+ maka mungkin warna tautan seharusnya 
+
+1151
+00:50:35,510 --> 00:50:38,084
+ tetap seperti warna yang belum dikunjungi karena peramban 
+
+1152
+00:50:38,084 --> 00:50:40,542
+ seharusnya melupakan semua hal semacam ini. 
+
+1153
+00:50:40,542 --> 00:50:43,097
+ Jadi itulah serangan yang mereka gambarkan di koran. 
+
+1154
+00:50:43,097 --> 00:50:45,055
+ Yang menarik adalah serangan ini sebenarnya 
+
+1155
+00:50:45,055 --> 00:50:46,330
+ tidak berfungsi lagi. 
+
+1156
+00:50:46,330 --> 00:50:49,280
+ Jadi kami benar-benar mendiskusikan ini beberapa kuliah kembali. 
+
+1157
+00:50:49,280 --> 00:50:51,430
+ Jadi serangan ini yang digambarkan oleh koran 
+
+1158
+00:50:51,430 --> 00:50:53,550
+ adalah serangan sniffing riwayat browser. 
+
+1159
+00:50:53,550 --> 00:50:55,640
+ Jadi saat kita membahas beberapa ceramah yang lalu, 
+
+1160
+00:50:55,640 --> 00:50:59,770
+ Kode JavaScript sekarang tidak menampilkan warna tautan yang benar 
+
+1161
+00:50:59,770 --> 00:51:02,380
+ pada dasarnya JavaScript. 
+
+1162
+00:51:02,380 --> 00:51:06,290
+ Dan justru untuk mencegah jenis serangan ini. 
+
+1163
+00:51:06,290 --> 00:51:08,775
+ Jadi bagian tertentu dari koran itu sudah ketinggalan jaman. 
+
+1164
+00:51:08,775 --> 00:51:11,790
+ AUDIENCE: Apa itu menunjuk ke browser yang sekarang juga menunjukkan 
+
+1165
+00:51:11,790 --> 00:51:14,774
+ tautan berwarna ungu dalam mode penjelajahan pribadi 
+
+1166
+00:51:14,774 --> 00:51:16,444
+ dan membiru lagi ketika Anda keluar. 
+
+1167
+00:51:16,444 --> 00:51:18,110
+ PROFESOR: Ya, itu agak aneh, ya. 
+
+1168
+00:51:18,110 --> 00:51:20,442
+ Mereka menerapkan serangan itu-- pertahanan-- 
+
+1169
+00:51:20,442 --> 00:51:22,275
+ Saya pikir sebelum banyak browser pribadi 
+
+1170
+00:51:22,275 --> 00:51:23,220
+ seperti popware. 
+
+1171
+00:51:23,220 --> 00:51:25,190
+ Jadi sekarang mereka melakukan hal tambahan ini juga. 
+
+1172
+00:51:25,190 --> 00:51:27,854
+ Singkat cerita, serangan yang mereka gambarkan di koran 
+
+1173
+00:51:27,854 --> 00:51:30,145
+ tidak berfungsi karena beberapa browser ini mengendus 
+
+1174
+00:51:30,145 --> 00:51:30,700
+ pertahanan. 
+
+1175
+00:51:30,700 --> 00:51:32,610
+ Tapi Anda masih bisa membayangkan itu di sana 
+
+1176
+00:51:32,610 --> 00:51:36,054
+ mungkin cara bagi penyerang web untuk mencari tahu apakah Anda 
+
+1177
+00:51:36,054 --> 00:51:37,220
+ menggunakan mode penjelajahan pribadi. 
+
+1178
+00:51:37,220 --> 00:51:40,500
+ Jadi misalnya, ketika Anda melakukan mode penjelajahan pribadi, 
+
+1179
+00:51:40,500 --> 00:51:42,640
+ cookie apa pun yang Anda dapatkan dari mode publik 
+
+1180
+00:51:42,640 --> 00:51:45,340
+ tidak boleh dikirim selama mode pribadi. 
+
+1181
+00:51:45,340 --> 00:51:48,102
+ Jadi dengan kata lain, jika saya membuka Amazon.com dalam mode publik, 
+
+1182
+00:51:48,102 --> 00:51:50,050
+ Saya menghasilkan beberapa cookie. 
+
+1183
+00:51:50,050 --> 00:51:52,521
+ Lalu saya pergi ke Amazon.com dalam mode penjelajahan pribadi. 
+
+1184
+00:51:52,521 --> 00:51:54,270
+ Ketika saya menghubungi Amazon.com dalam mode pribadi, 
+
+1185
+00:51:54,270 --> 00:51:57,320
+ cookie mode publik itu tidak boleh dikirim. 
+
+1186
+00:51:57,320 --> 00:52:02,420
+ Itu benar-benar dapat bertindak sebagai tanda ke penyerang web 
+
+1187
+00:52:02,420 --> 00:52:04,500
+ bahwa Anda benar-benar menggunakan mode pribadi. 
+
+1188
+00:52:04,500 --> 00:52:06,940
+ AUDIENCE: Ini juga sekarang Anda menggunakan kanvas 
+
+1189
+00:52:06,940 --> 00:52:08,612
+ di kedua acara ini, bukan? 
+
+1190
+00:52:08,612 --> 00:52:10,770
+ Jadi, Anda perlu tahu alamat IP. 
+
+1191
+00:52:10,770 --> 00:52:12,722
+ PROFESOR: Ya, itu benar. 
+
+1192
+00:52:12,722 --> 00:52:14,610
+ AUDIENCE: Jadi link itu Anda 
+
+1193
+00:52:14,610 --> 00:52:17,442
+ penargetan dengan warna tautan akan berada pada basis per IP. 
+
+1194
+00:52:17,442 --> 00:52:19,358
+ Dan Anda harus mengandalkan pengguna itu terlebih dahulu 
+
+1195
+00:52:19,358 --> 00:52:21,494
+ mengunjunginya sebagai mode publik, dan Anda melindunginya. 
+
+1196
+00:52:21,494 --> 00:52:23,160
+ PROFESOR: Ah, jadi tautannya - jadi tautannya 
+
+1197
+00:52:23,160 --> 00:52:26,800
+ serangan yang sebenarnya dapat Anda lakukan dalam konteks satu halaman. 
+
+1198
+00:52:26,800 --> 00:52:29,300
+ Jadi bayangkan saya, penyerang web, 
+
+1199
+00:52:29,300 --> 00:52:30,819
+ membangun satu halaman. 
+
+1200
+00:52:30,819 --> 00:52:33,110
+ Saya, penyerang, memiliki JavaScript yang membuat iframe 
+
+1201
+00:52:33,110 --> 00:52:35,820
+ ke foo.com seperti ini. 
+
+1202
+00:52:35,820 --> 00:52:38,570
+ Sehingga iframe akan memuat isi halaman itu. 
+
+1203
+00:52:38,570 --> 00:52:40,570
+ Dan kemudian saya, penyerang, di bingkai induk 
+
+1204
+00:52:40,570 --> 00:52:42,840
+ kemudian dapat membuat elemen tautan kemudian 
+
+1205
+00:52:42,840 --> 00:52:44,190
+ cobalah untuk melihat warnanya. 
+
+1206
+00:52:44,190 --> 00:52:46,330
+ Ini berhasil empat tahun lalu. 
+
+1207
+00:52:46,330 --> 00:52:49,880
+ Jadi dalam hal ini, itu tidak bergantung pada pengguna secara eksplisit 
+
+1208
+00:52:49,880 --> 00:52:53,890
+ mengunjungi halaman iframe sama sekali karena saya, penyerang, 
+
+1209
+00:52:53,890 --> 00:52:56,008
+ dapat membuat itu dalam konteks halaman. 
+
+1210
+00:52:56,008 --> 00:52:59,330
+ Saya telah mendapatkan [TIDAK JELAS]. 
+
+1211
+00:52:59,330 --> 00:53:01,310
+ Ada pertanyaan lain? 
+
+1212
+00:53:01,310 --> 00:53:04,167
+ Jadi ya, jadi Anda mungkin bisa memikirkan tentang bagaimana cookie 
+
+1213
+00:53:04,167 --> 00:53:06,000
+ dapat mengungkapkan mode penjelajahan publik dan pribadi 
+
+1214
+00:53:06,000 --> 00:53:08,660
+ dan hal-hal seperti itu. 
+
+1215
+00:53:08,660 --> 00:53:12,120
+ Jadi satu hal yang mungkin kita pikirkan 
+
+1216
+00:53:12,120 --> 00:53:21,210
+ adalah bagaimana kami dapat memberikan privasi yang lebih kuat 
+
+1217
+00:53:21,210 --> 00:53:25,520
+ jaminan untuk peramban pribadi? 
+
+1218
+00:53:25,520 --> 00:53:29,554
+
+
+1219
+00:53:29,554 --> 00:53:35,050
+ Dan demi diskusi ini, 
+
+1220
+00:53:35,050 --> 00:53:41,630
+ mari kita abaikan alamat IP untuk saat ini 
+
+1221
+00:53:41,630 --> 00:53:45,260
+ karena seperti yang akan kita bahas kuliah berikutnya, 
+
+1222
+00:53:45,260 --> 00:53:47,670
+ kita bisa menggunakan Tor untuk membantu beberapa orang 
+
+1223
+00:53:47,670 --> 00:53:49,330
+ privasi alamat IP. 
+
+1224
+00:53:49,330 --> 00:53:51,971
+ Jadi, satu hal yang dapat Anda bayangkan lakukan 
+
+1225
+00:53:51,971 --> 00:53:55,712
+ apakah Anda bisa membayangkan menggunakan VM dalam beberapa cara 
+
+1226
+00:53:55,712 --> 00:54:06,200
+ untuk membantu menyediakan penjelajahan pribadi yang lebih terjamin - jadi VM 
+
+1227
+00:54:06,200 --> 00:54:08,490
+ privasi tingkat. 
+
+1228
+00:54:08,490 --> 00:54:11,290
+ Jadi ide dasarnya adalah Anda 
+
+1229
+00:54:11,290 --> 00:54:21,825
+ ingin menjalankan setiap sesi pribadi di dalam VM terpisah. 
+
+1230
+00:54:21,825 --> 00:54:25,020
+
+
+1231
+00:54:25,020 --> 00:54:29,070
+ Dan kemudian ketika pengguna selesai dengan itu-- 
+
+1232
+00:54:29,070 --> 00:54:31,830
+ jadi selesai dengan sesi penelusuran pribadi, 
+
+1233
+00:54:31,830 --> 00:54:38,580
+ Anda pada dasarnya menghapus VM setelah sesi itu selesai. 
+
+1234
+00:54:38,580 --> 00:54:43,820
+
+
+1235
+00:54:43,820 --> 00:54:47,870
+ Jadi apa keunggulannya? 
+
+1236
+00:54:47,870 --> 00:54:51,230
+ Nah, apa yang baik tentang ini mungkin 
+
+1237
+00:54:51,230 --> 00:54:52,730
+ Anda bisa mendapatkan jaminan yang lebih kuat 
+
+1238
+00:54:52,730 --> 00:54:58,910
+ tentang apa properti privasi yang dapat Anda berikan kepada pengguna 
+
+1239
+00:54:58,910 --> 00:55:01,640
+ karena, mungkin, VM itu cantik 
+
+1240
+00:55:01,640 --> 00:55:06,606
+ bersihkan antarmuka ke jalur I / O dari Post-OS yang mendasarinya. 
+
+1241
+00:55:06,606 --> 00:55:07,980
+ Jadi Anda bisa membayangkan bahwa mungkin Anda 
+
+1242
+00:55:07,980 --> 00:55:13,000
+ gabungkan VM ini ke dalam katakanlah beberapa jenis swap aman 
+
+1243
+00:55:13,000 --> 00:55:16,206
+ solusi seperti Open BSD has-- beri kami disk terenkripsi lainnya 
+
+1244
+00:55:16,206 --> 00:55:16,705
+ ketik hal. 
+
+1245
+00:55:16,705 --> 00:55:21,840
+ Jadi Anda bisa bayangkan, OK, kami memiliki pemisahan VM yang sangat bersih 
+
+1246
+00:55:21,840 --> 00:55:24,450
+ di sini dan semua I / Os yang dihasilkan di sini. 
+
+1247
+00:55:24,450 --> 00:55:27,420
+ Dan itu memberi Anda jaminan yang lebih kuat 
+
+1248
+00:55:27,420 --> 00:55:30,891
+ dari apa yang bisa Anda dapatkan dari browser, yang tidak dirancang 
+
+1249
+00:55:30,891 --> 00:55:33,390
+ dari bawah ke atas untuk berpikir dengan sangat hati-hati tentang semua I / O 
+
+1250
+00:55:33,390 --> 00:55:35,764
+ jalur dan rahasia apa yang mungkin bocor ketika berada di gudang penyimpanan. 
+
+1251
+00:55:35,764 --> 00:55:38,620
+
+
+1252
+00:55:38,620 --> 00:55:42,330
+ Jadi ya, ini menyediakan apa yang baik 
+
+1253
+00:55:42,330 --> 00:55:45,050
+ tentang ini-- jaminan kuat. 
+
+1254
+00:55:45,050 --> 00:55:48,930
+
+
+1255
+00:55:48,930 --> 00:55:52,560
+ Dan, juga, apa yang baik itu tidak membutuhkan 
+
+1256
+00:55:52,560 --> 00:55:57,060
+ setiap perubahan pada aplikasi Anda-- itu 
+
+1257
+00:55:57,060 --> 00:55:58,474
+ adalah untuk mengatakan kepada browser. 
+
+1258
+00:55:58,474 --> 00:56:00,140
+ Anda mengambil browser Anda, taruh di dalamnya 
+
+1259
+00:56:00,140 --> 00:56:03,760
+ dari VMs-- ini maka semuanya menjadi lebih baik secara ajaib. 
+
+1260
+00:56:03,760 --> 00:56:06,045
+ Bukan perubahan lokasi. 
+
+1261
+00:56:06,045 --> 00:56:11,315
+ Jadi apa yang buruk tentang ini-- Saya akan menggunakan wajah yang tidak senang 
+
+1262
+00:56:11,315 --> 00:56:12,330
+ untuk menunjukkan itu. 
+
+1263
+00:56:12,330 --> 00:56:17,110
+ Jadi apa yang buruk adalah pertama-tama, itu kelas berat. 
+
+1264
+00:56:17,110 --> 00:56:20,050
+ Dan dengan kelas berat, maksud saya waktu itu Anda 
+
+1265
+00:56:20,050 --> 00:56:22,860
+ ingin memutarkan salah satu sesi penelusuran pribadi ini, 
+
+1266
+00:56:22,860 --> 00:56:25,000
+ Anda harus memutarkan seluruh VM. 
+
+1267
+00:56:25,000 --> 00:56:27,260
+ Dan itu sebenarnya bisa sangat menyakitkan. 
+
+1268
+00:56:27,260 --> 00:56:28,886
+ Jadi mungkin pengguna akan kecewa 
+
+1269
+00:56:28,886 --> 00:56:30,760
+ karena itu akan memakan waktu lama sekarang 
+
+1270
+00:56:30,760 --> 00:56:32,660
+ untuk meluncurkan sesi penelusuran pribadi ini. 
+
+1271
+00:56:32,660 --> 00:56:36,730
+ Dan masalah lainnya adalah solusi ini benar-benar ada 
+
+1272
+00:56:36,730 --> 00:56:39,830
+ kegunaan buruk. 
+
+1273
+00:56:39,830 --> 00:56:43,080
+ Dan alasan saya mengatakan itu karena sekarang itu sebenarnya 
+
+1274
+00:56:43,080 --> 00:56:47,230
+ sulit bagi pengguna untuk melakukan hal-hal seperti mengambil file 
+
+1275
+00:56:47,230 --> 00:56:49,176
+ yang mereka simpan dalam mode penjelajahan pribadi 
+
+1276
+00:56:49,176 --> 00:56:52,190
+ dan kemudian membawa mereka ke komputer-- 
+
+1277
+00:56:52,190 --> 00:56:54,731
+ bookmark apa pun yang mereka hasilkan selama mode penjelajahan pribadi 
+
+1278
+00:56:54,731 --> 00:56:57,110
+ bahwa siapa yang sebenarnya ingin mereka pertahankan 
+
+1279
+00:56:57,110 --> 00:56:59,485
+ akan sulit mendapatkan mereka di akhir. 
+
+1280
+00:56:59,485 --> 00:57:00,110
+ Itu bisa dilakukan. 
+
+1281
+00:57:00,110 --> 00:57:02,120
+ Tapi ada banyak friksi di sini. 
+
+1282
+00:57:02,120 --> 00:57:03,400
+ Jadi itu mengecewakan. 
+
+1283
+00:57:03,400 --> 00:57:05,920
+
+
+1284
+00:57:05,920 --> 00:57:11,720
+ Jadi, hal lain yang mungkin Anda bayangkan lakukan 
+
+1285
+00:57:11,720 --> 00:57:16,740
+ adalah sesuatu yang terlihat seperti mendekati nomor satu. 
+
+1286
+00:57:16,740 --> 00:57:23,813
+ Tapi kami benar-benar menerapkannya di dalam OS itu sendiri 
+
+1287
+00:57:23,813 --> 00:57:26,180
+ bukan di mesin virtual. 
+
+1288
+00:57:26,180 --> 00:57:28,500
+ Jadi ide dasarnya di sini adalah Anda 
+
+1289
+00:57:28,500 --> 00:57:35,500
+ dapat membayangkan bahwa setiap proses berpotensi 
+
+1290
+00:57:35,500 --> 00:57:39,746
+ berjalan di domain privasi. 
+
+1291
+00:57:39,746 --> 00:57:44,620
+
+
+1292
+00:57:44,620 --> 00:57:51,340
+ Jadi pada dasarnya, domain privasi mengakses koleksi 
+
+1293
+00:57:51,340 --> 00:57:54,400
+ sumber daya global OS yang digunakan proses. 
+
+1294
+00:57:54,400 --> 00:57:56,680
+ Jadi OS melacak semua hal semacam itu. 
+
+1295
+00:57:56,680 --> 00:58:00,190
+ Dan kemudian setelah prosesnya mati, pada dasarnya OS 
+
+1296
+00:58:00,190 --> 00:58:01,950
+ melewati dan melihat semua hal 
+
+1297
+00:58:01,950 --> 00:58:04,230
+ yang ada di dalam domain privasi itu. 
+
+1298
+00:58:04,230 --> 00:58:09,050
+ Dan kemudian sepenuhnya membatalkan semua sumber daya itu. 
+
+1299
+00:58:09,050 --> 00:58:12,993
+ Dan keuntungan ini lebih dari VM 
+
+1300
+00:58:12,993 --> 00:58:20,330
+ apakah itu bobotnya lebih ringan karena jika Anda memikirkannya, 
+
+1301
+00:58:20,330 --> 00:58:23,450
+ VM pada dasarnya agnostik untuk semua negara OS dan semuanya 
+
+1302
+00:58:23,450 --> 00:58:26,580
+ status aplikasi yang sebenarnya digunakan untuk menjalankan. 
+
+1303
+00:58:26,580 --> 00:58:29,266
+ Jadi hasilnya - mungkin lebih berhasil daripada OS 
+
+1304
+00:58:29,266 --> 00:58:31,880
+ harus dilakukan karena OS mungkin 
+
+1305
+00:58:31,880 --> 00:58:35,082
+ tahu semua poin di mana browser pribadi akan melakukannya 
+
+1306
+00:58:35,082 --> 00:58:38,360
+ menjadi menyentuh I / O, dan berbicara dengan jaringan, dan hal-hal seperti itu. 
+
+1307
+00:58:38,360 --> 00:58:40,585
+ Jadi, mungkin itu bahkan tahu hal-hal seperti Anda dapat benar-benar 
+
+1308
+00:58:40,585 --> 00:58:43,980
+ kosongkan cache DNS secara selektif, misalnya. 
+
+1309
+00:58:43,980 --> 00:58:46,560
+ Jadi Anda dapat membayangkan bahwa itu jauh lebih mudah 
+
+1310
+00:58:46,560 --> 00:58:49,095
+ untuk memutarkan hal-hal ini-- domain privasi ini-- 
+
+1311
+00:58:49,095 --> 00:58:51,090
+ lalu merobeknya. 
+
+1312
+00:58:51,090 --> 00:58:53,930
+ Namun, hal yang menyedihkan, setidaknya dengan rasa hormat 
+
+1313
+00:58:53,930 --> 00:58:58,580
+ ke solusi mesin virtual, adalah bahwa itu lebih sulit 
+
+1314
+00:58:58,580 --> 00:58:59,330
+ untuk mendapatkan ini dengan benar. 
+
+1315
+00:58:59,330 --> 00:59:03,010
+
+
+1316
+00:59:03,010 --> 00:59:07,292
+ Jadi saya baru saja menjelaskan pendekatan VM 
+
+1317
+00:59:07,292 --> 00:59:09,000
+ sebagai kemajuan karena pada dasarnya 
+
+1318
+00:59:09,000 --> 00:59:12,650
+ agnostik untuk semua yang ada di dalam kontainer. 
+
+1319
+00:59:12,650 --> 00:59:14,832
+ Tapi apa yang baik tentang itu adalah yang memungkinkan 
+
+1320
+00:59:14,832 --> 00:59:18,585
+ pendekatan VM hanya fokus pada beberapa antarmuka tingkat rendah. 
+
+1321
+00:59:18,585 --> 00:59:20,620
+ Dan itu bisa fokus pada hal-hal itu. 
+
+1322
+00:59:20,620 --> 00:59:23,600
+ Misalnya, antarmuka yang digunakan VM untuk menulis ke disk, 
+
+1323
+00:59:23,600 --> 00:59:27,230
+ maka Anda dapat memiliki keyakinan yang tinggi bahwa itu sebenarnya 
+
+1324
+00:59:27,230 --> 00:59:29,070
+ berhasil memuat semuanya. 
+
+1325
+00:59:29,070 --> 00:59:30,705
+ Padahal dengan OS-- jika Anda berpikir 
+
+1326
+00:59:30,705 --> 00:59:33,291
+ OS akan melakukan interpose pada file individu dengan sistem 
+
+1327
+00:59:33,291 --> 00:59:35,790
+ antarmuka - antarmuka jaringan mungkin individu dan hal-hal 
+
+1328
+00:59:35,790 --> 00:59:37,714
+ seperti itu-- jauh lebih rumit untuk ditemukan 
+
+1329
+00:59:37,714 --> 00:59:42,667
+ semua titik di mana data dapat bocor jika Anda pergi 
+
+1330
+00:59:42,667 --> 00:59:44,450
+ untuk melakukan itu di tingkat OS. 
+
+1331
+00:59:44,450 --> 00:59:45,782
+ Jadi apakah itu semua masuk akal? 
+
+1332
+00:59:45,782 --> 00:59:57,972
+
+
+1333
+00:59:57,972 --> 00:59:59,263
+ Mengapa fisika ini ada di mana-mana? 
+
+1334
+00:59:59,263 --> 01:00:02,124
+
+
+1335
+01:00:02,124 --> 01:00:03,207
+ Ah, Tuhan, aku sedang diuji. 
+
+1336
+01:00:03,207 --> 01:00:09,468
+
+
+1337
+01:00:09,468 --> 01:00:10,926
+ Mereka pada dasarnya adalah beberapa pendekatan 
+
+1338
+01:00:10,926 --> 01:00:13,952
+ kita dapat menggunakan untuk menyediakan privasi yang berpotensi lebih kuat 
+
+1339
+01:00:13,952 --> 01:00:16,202
+ jaminan dari apa yang diterapkan di peramban pribadi 
+
+1340
+01:00:16,202 --> 01:00:18,240
+ sekarang juga. 
+
+1341
+01:00:18,240 --> 01:00:26,610
+ Jadi satu pertanyaan yang mungkin Anda miliki adalah bisakah kita diam 
+
+1342
+01:00:26,610 --> 01:00:33,250
+ menjadi pengguna anonim jika browser-- maaf, 
+
+1343
+01:00:33,250 --> 01:00:38,950
+ jika pengguna menggunakan salah satu solusi yang lebih kuat ini-- 
+
+1344
+01:00:38,950 --> 01:00:43,039
+ jika pengguna berselancar melalui VM 
+
+1345
+01:00:43,039 --> 01:00:45,330
+ atau menjelajahi salah satu domain privasi ini di OS-- dapat 
+
+1346
+01:00:45,330 --> 01:00:46,960
+ kita masih mencari tahu siapa mereka? 
+
+1347
+01:00:46,960 --> 01:00:48,420
+ Dan jawabannya adalah, ya. 
+
+1348
+01:00:48,420 --> 01:00:53,020
+ Jadi mungkin VM itu unik karena beberapa alasan. 
+
+1349
+01:00:53,020 --> 01:00:56,800
+
+
+1350
+01:00:56,800 --> 01:01:02,844
+ Dan sangat mirip dengan bagaimana kami dapat membidik sidik jari 
+
+1351
+01:01:02,844 --> 01:01:04,760
+ menggunakan situs web Panopticlick itu, mungkin ada 
+
+1352
+01:01:04,760 --> 01:01:07,460
+ sesuatu yang unik tentang cara VM akan diatur 
+
+1353
+01:01:07,460 --> 01:01:09,530
+ yang memungkinkan untuk sidik jari. 
+
+1354
+01:01:09,530 --> 01:01:14,800
+ Dan itu mungkin adalah kasus yang mungkin mesin virtual 
+
+1355
+01:01:14,800 --> 01:01:20,640
+ monitor atau OS itu sendiri unik dalam beberapa hal. 
+
+1356
+01:01:20,640 --> 01:01:23,650
+ Itu akan memungkinkan penyerang web untuk mencari tahu siapa pengguna itu. 
+
+1357
+01:01:23,650 --> 01:01:28,440
+ Dan satu contoh lucu dari ini adalah sidik jari TCP. 
+
+1358
+01:01:28,440 --> 01:01:32,742
+
+
+1359
+01:01:32,742 --> 01:01:34,200
+ Jadi apa ide besar dibalik ini? 
+
+1360
+01:01:34,200 --> 01:01:35,980
+ Jadi ternyata, spesifikasinya 
+
+1361
+01:01:35,980 --> 01:01:38,290
+ untuk protokol TCP sebenarnya memungkinkan 
+
+1362
+01:01:38,290 --> 01:01:40,420
+ beberapa parameter untuk protokol 
+
+1363
+01:01:40,420 --> 01:01:44,080
+ harus diatur oleh implementasi protokol. 
+
+1364
+01:01:44,080 --> 01:01:47,725
+ Jadi, misalnya, TCP memungkinkan pelaksana untuk memilih sesuatu 
+
+1365
+01:01:47,725 --> 01:01:49,556
+ seperti ukuran paket awal-- hal-hal itu 
+
+1366
+01:01:49,556 --> 01:01:52,140
+ dikirim bagian pertama dari koneksi TCP-- 
+
+1367
+01:01:52,140 --> 01:01:55,000
+ itu memungkinkan pelaksana untuk memilih hal-hal seperti waktu awal itu 
+
+1368
+01:01:55,000 --> 01:01:57,870
+ untuk hidup dalam paket itu. 
+
+1369
+01:01:57,870 --> 01:01:59,745
+ Dan Anda dapat membayangkan, dan kenyataannya, Anda 
+
+1370
+01:01:59,745 --> 01:02:01,995
+ tidak perlu membayangkan bahwa ini sebenarnya adalah kebenaran. 
+
+1371
+01:02:01,995 --> 01:02:04,817
+ Anda dapat keluar dari alat rak seperti InMap, misalnya, 
+
+1372
+01:02:04,817 --> 01:02:07,150
+ bahwa mereka benar-benar tahu apa sistem operasi Anda 
+
+1373
+01:02:07,150 --> 01:02:10,340
+ berjalan dengan probabilitas tinggi hanya dengan mengirimkan paket kepada Anda. 
+
+1374
+01:02:10,340 --> 01:02:13,040
+ Mereka akan mengirimkan paket yang sangat hati-hati ini. 
+
+1375
+01:02:13,040 --> 01:02:15,042
+ Dan mereka akan melihat dan melihat hal-hal seperti ini 
+
+1376
+01:02:15,042 --> 01:02:17,000
+ apa TTL itu atau inilah ukuran paketnya 
+
+1377
+01:02:17,000 --> 01:02:20,090
+ distribusi adalah-- inilah yang nomor urut TTP adalah. 
+
+1378
+01:02:20,090 --> 01:02:22,394
+ Dan pada dasarnya mereka memiliki basis data untuk sidik jari. 
+
+1379
+01:02:22,394 --> 01:02:24,644
+ Dan mereka berkata, OK, jika paket kembali memiliki ini, ini, 
+
+1380
+01:02:24,644 --> 01:02:27,280
+ dan karakteristik ini, lalu meja 
+
+1381
+01:02:27,280 --> 01:02:29,420
+ mengatakan bahwa kamu mungkin berlari untuk beberapa alasan 
+
+1382
+01:02:29,420 --> 01:02:30,650
+ Solaris. 
+
+1383
+01:02:30,650 --> 01:02:31,800
+ Anda menjalankan Mac. 
+
+1384
+01:02:31,800 --> 01:02:34,120
+ Anda menjalankan Windows atau apa pun. 
+
+1385
+01:02:34,120 --> 01:02:36,770
+ Jadi bahkan jika kita menggunakan salah satu pendekatan yang lebih kuat ini 
+
+1386
+01:02:36,770 --> 01:02:39,070
+ untuk penelusuran pribadi dengan VM atau OS, 
+
+1387
+01:02:39,070 --> 01:02:41,570
+ Anda masih mungkin dapat menjalankan salah satu sidik jari TCP tersebut 
+
+1388
+01:02:41,570 --> 01:02:45,360
+ menyerang dan belajar banyak tentang pengguna tertentu. 
+
+1389
+01:02:45,360 --> 01:02:50,302
+ Dan satu hal yang juga menarik untuk diperhatikan 
+
+1390
+01:02:50,302 --> 01:02:56,042
+ adalah bahwa bahkan jika kita menggunakan salah satu teknik yang lebih kuat ini 
+
+1391
+01:02:56,042 --> 01:02:59,070
+ untuk mencoba melindungi pengguna, pengguna tetap 
+
+1392
+01:02:59,070 --> 01:03:04,500
+ dibagikan di penjelajahan publik dan pribadi 
+
+1393
+01:03:04,500 --> 01:03:05,550
+ sidang. 
+
+1394
+01:03:05,550 --> 01:03:07,460
+ Masih menggunakan - tampaknya menggunakan mesin. 
+
+1395
+01:03:07,460 --> 01:03:09,480
+ Jadi mengapa ini menarik? 
+
+1396
+01:03:09,480 --> 01:03:13,020
+ Yah, ini menarik karena kamu sendiri 
+
+1397
+01:03:13,020 --> 01:03:17,180
+ dengan cara Anda menggunakan komputer, dapat membocorkan informasi 
+
+1398
+01:03:17,180 --> 01:03:17,980
+ tentang dirimu. 
+
+1399
+01:03:17,980 --> 01:03:22,780
+ Jadi, misalnya, ternyata, 
+
+1400
+01:03:22,780 --> 01:03:26,140
+ pengguna memiliki keystroke timing yang unik. 
+
+1401
+01:03:26,140 --> 01:03:29,050
+
+
+1402
+01:03:29,050 --> 01:03:32,600
+ Jadi jika saya melihat-- jika saya memberi semua orang di kelas ini sama 
+
+1403
+01:03:32,600 --> 01:03:35,240
+ hal untuk mengetik - rubah cepat, coklat-- 
+
+1404
+01:03:35,240 --> 01:03:37,380
+ apa pun itu - dan aku benar-benar melihat 
+
+1405
+01:03:37,380 --> 01:03:42,320
+ pada waktu pers antar-kunci, kita semua akan memiliki yang unik ini 
+
+1406
+01:03:42,320 --> 01:03:44,790
+ distribusi yang berpotensi digunakan 
+
+1407
+01:03:44,790 --> 01:03:46,890
+ untuk sidik jari kami. 
+
+1408
+01:03:46,890 --> 01:03:50,960
+ Hal lain yang menarik adalah pengguna itu 
+
+1409
+01:03:50,960 --> 01:03:52,510
+ memiliki gaya penulisan yang unik. 
+
+1410
+01:03:52,510 --> 01:03:55,850
+
+
+1411
+01:03:55,850 --> 01:04:00,500
+ Jadi ada cabang keamanan ini 
+
+1412
+01:04:00,500 --> 01:04:02,525
+ itu disebut stylography. 
+
+1413
+01:04:02,525 --> 01:04:06,060
+
+
+1414
+01:04:06,060 --> 01:04:12,270
+ Dan ide dasar di sini adalah untuk mengetahui apakah saya seorang penyerang, 
+
+1415
+01:04:12,270 --> 01:04:14,410
+ bisakah aku mencari tahu siapa kamu sebenarnya 
+
+1416
+01:04:14,410 --> 01:04:16,460
+ dengan melihat contoh tulisan darimu? 
+
+1417
+01:04:16,460 --> 01:04:18,730
+ Jadi bayangkan itu karena alasan apa pun 
+
+1418
+01:04:18,730 --> 01:04:21,190
+ Anda nongkrong di 4chan-- jangan bergaul di 4chan-- 
+
+1419
+01:04:21,190 --> 01:04:23,697
+ dan saya ingin mencari tahu apakah Anda sebenarnya, sebenarnya, 
+
+1420
+01:04:23,697 --> 01:04:24,780
+ nongkrong di 4chan. 
+
+1421
+01:04:24,780 --> 01:04:27,240
+ Jadi mungkin yang bisa saya lakukan adalah saya bisa 
+
+1422
+01:04:27,240 --> 01:04:30,970
+ lihat banyak posting yang berbeda dari 4chan. 
+
+1423
+01:04:30,970 --> 01:04:34,692
+ Mungkin saya bisa mengelompokkan posting tersebut ke dalam set posting 
+
+1424
+01:04:34,692 --> 01:04:37,999
+ yang saya pikir terlihat dengan gaya yang sama. 
+
+1425
+01:04:37,999 --> 01:04:39,790
+ Dan kemudian yang bisa saya lakukan adalah saya dapat menemukan berbagai hal 
+
+1426
+01:04:39,790 --> 01:04:42,580
+ Anda telah menulis secara terbuka di mana Anda sebenarnya 
+
+1427
+01:04:42,580 --> 01:04:43,652
+ dikaitkan sebagai penulis. 
+
+1428
+01:04:43,652 --> 01:04:45,610
+ Saya akan melihat Anda pekerjaan rumah atau makalah 
+
+1429
+01:04:45,610 --> 01:04:47,276
+ yang telah Anda tulis atau hal-hal seperti itu. 
+
+1430
+01:04:47,276 --> 01:04:49,630
+ Dan saya akan melihat apakah Anda cocok dengan salah satu dari gugus ini 
+
+1431
+01:04:49,630 --> 01:04:51,130
+ dari komentar 4chan ini. 
+
+1432
+01:04:51,130 --> 01:04:53,900
+ Dan jika demikian, mereka mungkin bisa saya katakan mungkin mengirimkan Anda sebuah catatan yang keras. 
+
+1433
+01:04:53,900 --> 01:04:55,121
+ Bicaralah kepada orang tua bahwa anak mereka telah pergi 
+
+1434
+01:04:55,121 --> 01:04:56,090
+ jalan yang dipukuli. 
+
+1435
+01:04:56,090 --> 01:04:57,700
+ Turun dari 4chan. 
+
+1436
+01:04:57,700 --> 01:05:00,460
+ Jadi alasannya adalah saya ingin melihat hal yang disebut ini 
+
+1437
+01:05:00,460 --> 01:05:00,960
+ stilografi. 
+
+1438
+01:05:00,960 --> 01:05:03,100
+ Sebenarnya cukup menarik. 
+
+1439
+01:05:03,100 --> 01:05:06,371
+ Apakah ada yang punya pertanyaan tentang itu? 
+
+1440
+01:05:06,371 --> 01:05:06,870
+ Luar biasa. 
+
+1441
+01:05:06,870 --> 01:05:09,620
+
+
+1442
+01:05:09,620 --> 01:05:15,040
+ Jadi kami mendiskusikan bagaimana kami dapat menggunakannya 
+
+1443
+01:05:15,040 --> 01:05:19,340
+ VM atau sistem operasi yang dimodifikasi untuk menyediakan penelusuran pribadi 
+
+1444
+01:05:19,340 --> 01:05:20,130
+ mendukung. 
+
+1445
+01:05:20,130 --> 01:05:23,010
+ Jadi Anda mungkin bertanya-tanya, oke, kalau begitu, mengapa tidak ada peramban 
+
+1446
+01:05:23,010 --> 01:05:25,895
+ mengharuskan pengguna untuk melakukan salah satu dari hal-hal ini-- 
+
+1447
+01:05:25,895 --> 01:05:28,270
+ untuk memiliki salah satu dari VM yang ditipu ini atau mengakali OS? 
+
+1448
+01:05:28,270 --> 01:05:30,050
+ Jadi mengapa browser membawanya sendiri 
+
+1449
+01:05:30,050 --> 01:05:31,560
+ untuk mengimplementasikan semua hal ini? 
+
+1450
+01:05:31,560 --> 01:05:34,200
+ Dan alasan utamanya adalah deployability. 
+
+1451
+01:05:34,200 --> 01:05:36,210
+ Jadi sebenarnya, vendor browser biasanya 
+
+1452
+01:05:36,210 --> 01:05:39,290
+ tidak ingin meminta pengguna mereka untuk melakukan sesuatu yang istimewa 
+
+1453
+01:05:39,290 --> 01:05:42,550
+ untuk menggunakan browser selain menginstal biner browser 
+
+1454
+01:05:42,550 --> 01:05:43,050
+ diri. 
+
+1455
+01:05:43,050 --> 01:05:44,582
+ Ini mirip dengan motivasi 
+
+1456
+01:05:44,582 --> 01:05:45,720
+ dari klien asli. 
+
+1457
+01:05:45,720 --> 01:05:47,840
+ Jadi jika Google ingin menambahkan masa depan yang keren ini 
+
+1458
+01:05:47,840 --> 01:05:49,020
+ untuk mengakhiri komputer pengguna. 
+
+1459
+01:05:49,020 --> 01:05:50,640
+ Tetapi tidak ingin memaksa pengguna 
+
+1460
+01:05:50,640 --> 01:05:53,795
+ untuk menginstal beberapa versi khusus Windows atau Linux 
+
+1461
+01:05:53,795 --> 01:05:54,620
+ atau terserah. 
+
+1462
+01:05:54,620 --> 01:05:58,610
+ Jadi pada dasarnya Google mengatakan, kami akan mengurus ini sendiri. 
+
+1463
+01:05:58,610 --> 01:06:01,100
+ Maka alasan lain adalah kegunaan sebenarnya. 
+
+1464
+01:06:01,100 --> 01:06:04,920
+ Jadi banyak VM dan tingkat OS ini 
+
+1465
+01:06:04,920 --> 01:06:07,260
+ solusi dalam penelusuran pribadi-- seperti yang telah kita diskusikan, 
+
+1466
+01:06:07,260 --> 01:06:08,960
+ mereka membuatnya lebih sulit bagi pengguna 
+
+1467
+01:06:08,960 --> 01:06:12,160
+ untuk mempertahankan status dari sesi penelusuran pribadi 
+
+1468
+01:06:12,160 --> 01:06:15,830
+ bahwa mereka sebenarnya ingin bertahan seperti mengunduh file 
+
+1469
+01:06:15,830 --> 01:06:19,480
+ seperti bookmark yang mereka buat dan hal-hal seperti itu. 
+
+1470
+01:06:19,480 --> 01:06:21,539
+ Jadi pada dasarnya vendor peramban mengatakan, yah, 
+
+1471
+01:06:21,539 --> 01:06:23,580
+ jika kita menerapkan mode penjelajahan pribadi sendiri, 
+
+1472
+01:06:23,580 --> 01:06:25,730
+ kita benar-benar dapat memungkinkan pengguna untuk melakukan hal-hal itu. 
+
+1473
+01:06:25,730 --> 01:06:27,780
+ Kami dapat mengizinkan pengguna untuk mengambil file yang diunduh 
+
+1474
+01:06:27,780 --> 01:06:29,470
+ dari mode penelusuran pribadi dan mengambilnya 
+
+1475
+01:06:29,470 --> 01:06:30,594
+ ke sisa mesin. 
+
+1476
+01:06:30,594 --> 01:06:32,710
+ Jadi sepertinya bagus pada awalnya. 
+
+1477
+01:06:32,710 --> 01:06:35,635
+ Tetapi perhatikan bahwa, tentu saja, yang memungkinkan pengguna 
+
+1478
+01:06:35,635 --> 01:06:37,740
+ untuk mengekspor beberapa jenis negara pribadi 
+
+1479
+01:06:37,740 --> 01:06:40,490
+ sebenarnya membuka banyak kerentanan keamanan. 
+
+1480
+01:06:40,490 --> 01:06:43,420
+ Itu membuatnya sangat sulit untuk menganalisis properti keamanan 
+
+1481
+01:06:43,420 --> 01:06:49,770
+ yang menghasilkan mode penjelajahan pribadi yang sebenarnya disediakan. 
+
+1482
+01:06:49,770 --> 01:06:53,665
+ Dan begitu di koran, mereka mencoba untuk mengkarakterisasi 
+
+1483
+01:06:53,665 --> 01:06:57,900
+ berbagai jenis status browser yang dapat dimodifikasi 
+
+1484
+01:06:57,900 --> 01:07:01,400
+ dan bagaimana mode penelusuran pribadi saat ini benar-benar ditangani 
+
+1485
+01:07:01,400 --> 01:07:03,080
+ modifikasi yang dipertaruhkan. 
+
+1486
+01:07:03,080 --> 01:07:06,292
+ Jadi makalah ini menggambarkan taksonomi ini 
+
+1487
+01:07:06,292 --> 01:07:12,122
+ perubahan status browser. 
+
+1488
+01:07:12,122 --> 01:07:14,540
+ Jadi ada empat hal dalam taksonomi. 
+
+1489
+01:07:14,540 --> 01:07:22,110
+ Jadi satu jenis perubahan negara dimulai 
+
+1490
+01:07:22,110 --> 01:07:25,109
+ oleh situs web itu sendiri. 
+
+1491
+01:07:25,109 --> 01:07:26,442
+ Dan tidak ada interaksi pengguna. 
+
+1492
+01:07:26,442 --> 01:07:29,750
+
+
+1493
+01:07:29,750 --> 01:07:33,880
+ Dan begitu contoh dari jenis perubahan negara 
+
+1494
+01:07:33,880 --> 01:07:37,580
+ pikirkan tentang hal-hal seperti saat cookie 
+
+1495
+01:07:37,580 --> 01:07:43,482
+ set-- ketika sesuatu ditambahkan ke alamat 
+
+1496
+01:07:43,482 --> 01:07:49,250
+ riwayat browser - mungkin di dalam browser 
+
+1497
+01:07:49,250 --> 01:07:52,270
+ cache atau sesuatu. 
+
+1498
+01:07:52,270 --> 01:07:56,210
+ Dan dari jenis negara ini, pada dasarnya, 
+
+1499
+01:07:56,210 --> 01:07:57,935
+ mode penjelajahan pribadi mengatakan keadaan ini 
+
+1500
+01:07:57,935 --> 01:08:01,240
+ adalah sesi mode penelusuran pribadi. 
+
+1501
+01:08:01,240 --> 01:08:03,300
+ Tapi itu pada dasarnya akan hancur 
+
+1502
+01:08:03,300 --> 01:08:05,982
+ ketika sesi penelusuran pribadi selesai. 
+
+1503
+01:08:05,982 --> 01:08:10,419
+ Dan intuisi di balik ini adalah itu karena di sana 
+
+1504
+01:08:10,419 --> 01:08:14,158
+ tidak ada interaksi pengguna dalam pembuatan status ini, 
+
+1505
+01:08:14,158 --> 01:08:16,241
+ maka mungkin hal yang tepat untuk dilakukan browser 
+
+1506
+01:08:16,241 --> 01:08:21,050
+ diasumsikan bahwa pengguna tidak ingin itu bertahan. 
+
+1507
+01:08:21,050 --> 01:08:25,094
+ Jadi jenis lain dari perubahan status browser 
+
+1508
+01:08:25,094 --> 01:08:32,569
+ diprakarsai oleh situs web yang dikunjungi pengguna. 
+
+1509
+01:08:32,569 --> 01:08:37,314
+ Tetapi ada beberapa jenis interaksi pengguna yang terlibat 
+
+1510
+01:08:37,314 --> 01:08:40,189
+ dalam perubahan negara. 
+
+1511
+01:08:40,189 --> 01:08:45,234
+ Jadi contoh ini mungkin pengguna menginstal klien 
+
+1512
+01:08:45,234 --> 01:08:53,359
+ sertifikat atau mungkin ada kata sandi yang aman. 
+
+1513
+01:08:53,359 --> 01:08:57,920
+ Jadi, pengguna mencoba masuk ke sesuatu. 
+
+1514
+01:08:57,920 --> 01:09:00,130
+ Dan browser mengatakan sangat membantu Anda 
+
+1515
+01:09:00,130 --> 01:09:01,608
+ ingin menyimpan kata sandi ini? 
+
+1516
+01:09:01,608 --> 01:09:03,649
+ Dan kemudian jika pengguna berkata, ya, maka jenis ini 
+
+1517
+01:09:03,649 --> 01:09:05,616
+ hal-hal, kata sandi, dapat benar-benar 
+
+1518
+01:09:05,616 --> 01:09:08,970
+ digunakan di luar mode penjelajahan pribadi. 
+
+1519
+01:09:08,970 --> 01:09:12,460
+ Dan itu sedikit tidak jelas pada prinsipnya 
+
+1520
+01:09:12,460 --> 01:09:14,926
+ apa kebijakan untuk ini seharusnya. 
+
+1521
+01:09:14,926 --> 01:09:16,949
+ Jadi apa yang akhirnya terjadi dalam praktik 
+
+1522
+01:09:16,950 --> 01:09:20,260
+ adalah bahwa browser biasanya mengizinkan pernyataan 
+
+1523
+01:09:20,260 --> 01:09:23,095
+ dalam kategori ini yang diatur dalam mode penjelajahan pribadi 
+
+1524
+01:09:23,095 --> 01:09:26,200
+ untuk bertahan di luar mode penjelajahan pribadi 
+
+1525
+01:09:26,200 --> 01:09:29,995
+ di bawah intuisi bahwa pengguna memang harus mengatakan ya atau tidak. 
+
+1526
+01:09:29,995 --> 01:09:31,743
+ Jika pengguna berkata, ya, maka mungkin pengguna 
+
+1527
+01:09:31,743 --> 01:09:35,688
+ cukup pintar untuk memahami bahwa mereka 
+
+1528
+01:09:35,689 --> 01:09:38,066
+ simpan kata sandi untuk beberapa situs yang tidak aman 
+
+1529
+01:09:38,066 --> 01:09:39,649
+ dan seseorang datang nanti dan angka 
+
+1530
+01:09:39,649 --> 01:09:42,950
+ itu, itu kesalahan pengguna - bukan kesalahan browser. 
+
+1531
+01:09:42,950 --> 01:09:45,330
+ Jadi sedikit tidak jelas apa kebijakan terbaik di sini. 
+
+1532
+01:09:45,330 --> 01:09:46,795
+ Namun dalam praktiknya, jenis negara ini berubah 
+
+1533
+01:09:46,795 --> 01:09:49,086
+ diizinkan untuk tetap berada di luar mode penjelajahan pribadi. 
+
+1534
+01:09:49,086 --> 01:09:52,359
+
+
+1535
+01:09:52,359 --> 01:09:54,860
+ Jadi ada tipe lain dari perubahan status, yaitu 
+
+1536
+01:09:54,860 --> 01:09:59,790
+ murni diprakarsai oleh pengguna. 
+
+1537
+01:09:59,790 --> 01:10:05,590
+ Dan di sini Anda dapat memikirkan hal-hal seperti mengatur bookmark 
+
+1538
+01:10:05,590 --> 01:10:08,420
+ atau mungkin mengunduh file. 
+
+1539
+01:10:08,420 --> 01:10:11,800
+
+
+1540
+01:10:11,800 --> 01:10:13,880
+ Dan begitulah ceritanya untuk negara ini 
+
+1541
+01:10:13,880 --> 01:10:15,700
+ mirip dengan cerita untuk negara di atas sini. 
+
+1542
+01:10:15,700 --> 01:10:18,440
+ Jadi pada dasarnya karena pengguna itu secara eksplisit 
+
+1543
+01:10:18,440 --> 01:10:20,492
+ terlibat dalam penciptaan negara itu. 
+
+1544
+01:10:20,492 --> 01:10:22,408
+ Mode penjelajahan pribadi biasanya mengatakan, oke, itu 
+
+1545
+01:10:22,408 --> 01:10:25,174
+ OK untuk mempertahankan jenis perubahan ini 
+
+1546
+01:10:25,174 --> 01:10:29,040
+ ke dunia luar di luar mode penjelajahan pribadi. 
+
+1547
+01:10:29,040 --> 01:10:31,450
+ Lalu ada beberapa set negara yang 
+
+1548
+01:10:31,450 --> 01:10:40,720
+ sebenarnya tidak terkait dengan sesi tertentu sama sekali. 
+
+1549
+01:10:40,720 --> 01:10:46,100
+ Jadi ini adalah barang, misalnya, seperti pembaruan ke browser 
+
+1550
+01:10:46,100 --> 01:10:53,890
+ itu sendiri-- biner sebenarnya yang merupakan peramban. 
+
+1551
+01:10:53,890 --> 01:10:56,327
+ Begitulah cara vendor browser berpikir tentang keadaan ini 
+
+1552
+01:10:56,327 --> 01:10:57,826
+ apakah negara ini pada dasarnya diasumsikan 
+
+1553
+01:10:57,826 --> 01:11:01,651
+ untuk menjadi bagian dari negara global tunggal itu 
+
+1554
+01:11:01,651 --> 01:11:04,540
+ tersedia untuk mode penjelajahan publik dan pribadi. 
+
+1555
+01:11:04,540 --> 01:11:06,585
+ Dan akhirnya, jika Anda melihatnya, 
+
+1556
+01:11:06,585 --> 01:11:09,210
+ sebenarnya ada cukup banyak negara yang akan benar-benar 
+
+1557
+01:11:09,210 --> 01:11:11,930
+ berpotensi bocor di luar mode penjelajahan pribadi, 
+
+1558
+01:11:11,930 --> 01:11:14,539
+ terutama jika ada kemauan pengguna yang terlibat. 
+
+1559
+01:11:14,539 --> 01:11:16,080
+ Jadi menarik untuk dipikirkan adalah 
+
+1560
+01:11:16,080 --> 01:11:22,150
+ ini trade off yang tepat antara keamanan dan privasi? 
+
+1561
+01:11:22,150 --> 01:11:25,899
+ Jadi yang menarik adalah itu - jadi makalah sebenarnya 
+
+1562
+01:11:25,899 --> 01:11:32,045
+ mengatakan bahwa sulit untuk mengatasinya mencegah penyerang lokal 
+
+1563
+01:11:32,045 --> 01:11:34,136
+ dari mendeteksi apakah Anda pernah atau tidak 
+
+1564
+01:11:34,136 --> 01:11:35,700
+ menggunakan mode penjelajahan pribadi. 
+
+1565
+01:11:35,700 --> 01:11:37,200
+ Dan kertas itu sedikit kabur 
+
+1566
+01:11:37,200 --> 01:11:38,810
+ tentang mengapa ini mungkin terjadi. 
+
+1567
+01:11:38,810 --> 01:11:40,700
+ Jadi salah satu alasan mengapa ini mungkin terjadi 
+
+1568
+01:11:40,700 --> 01:11:43,457
+ adalah karena beberapa keadaan ini yang sebenarnya bocor 
+
+1569
+01:11:43,457 --> 01:11:46,140
+ dari mode penelusuran pribadi ke mode penjelajahan publik, 
+
+1570
+01:11:46,140 --> 01:11:47,967
+ pada dasarnya sebenarnya bisa mengandung 
+
+1571
+01:11:47,967 --> 01:11:50,960
+ petunjuk bahwa negara dihasilkan dalam mode penelusuran pribadi. 
+
+1572
+01:11:50,960 --> 01:11:53,940
+ Jadi misalnya, di Firefox dan Chrome, 
+
+1573
+01:11:53,940 --> 01:11:58,524
+ saat Anda membuat bookmark dalam mode penjelajahan pribadi, 
+
+1574
+01:11:58,524 --> 01:12:00,440
+ bookmark itu memiliki banyak metadata dengannya. 
+
+1575
+01:12:00,440 --> 01:12:02,860
+ Jadi misalnya, waktu kunjungannya 
+
+1576
+01:12:02,860 --> 01:12:03,780
+ dan hal-hal seperti itu. 
+
+1577
+01:12:03,780 --> 01:12:06,350
+ Jadi dalam banyak kasus, metadata itu akan 
+
+1578
+01:12:06,350 --> 01:12:08,682
+ disetel ke nol atau beberapa nilai nol 
+
+1579
+01:12:08,682 --> 01:12:11,140
+ jika bookmark itu dibuat di dalam penjelajahan pribadi 
+
+1580
+01:12:11,140 --> 01:12:12,133
+ mode. 
+
+1581
+01:12:12,133 --> 01:12:14,216
+ Jadi nanti jika seseorang mengontrol mesin Anda, 
+
+1582
+01:12:14,216 --> 01:12:16,650
+ dan mereka melihat informasi bookmark Anda 
+
+1583
+01:12:16,650 --> 01:12:19,580
+ jika mereka melihat metadata ini diatur ke nol dan nilai nol ini, 
+
+1584
+01:12:19,580 --> 01:12:22,590
+ mereka dapat mengatakan, aha, bookmark itu mungkin dihasilkan 
+
+1585
+01:12:22,590 --> 01:12:25,140
+ dalam mode penelusuran pribadi. 
+
+1586
+01:12:25,140 --> 01:12:28,775
+ Jadi satu hal yang perlu dipikirkan adalah biasanya 
+
+1587
+01:12:28,775 --> 01:12:30,290
+ kita berbicara tentang keamanan peramban. 
+
+1588
+01:12:30,290 --> 01:12:32,250
+ Kami berbicara tentang, oke, apa yang bisa dilakukan orang 
+
+1589
+01:12:32,250 --> 01:12:34,356
+ dengan JavaScript atau HTML atau CSS. 
+
+1590
+01:12:34,356 --> 01:12:35,980
+ Satu hal yang mungkin ingin Anda pikirkan 
+
+1591
+01:12:35,980 --> 01:12:38,400
+ apa yang bisa dilakukan orang dengan plug-in atau ekstensi? 
+
+1592
+01:12:38,400 --> 01:12:40,350
+ Jadi dalam konteks penelusuran pribadi, 
+
+1593
+01:12:40,350 --> 01:12:41,910
+ plug-in dan ekstensi cukup 
+
+1594
+01:12:41,910 --> 01:12:46,260
+ menarik karena mereka tidak dibatasi dalam banyak kasus 
+
+1595
+01:12:46,260 --> 01:12:48,020
+ oleh kebijakan asal yang sama. 
+
+1596
+01:12:48,020 --> 01:12:49,840
+ Mereka dapat membatasi hal-hal seperti JavaScript. 
+
+1597
+01:12:49,840 --> 01:12:52,340
+ Dan yang menarik adalah ekstensi dan plug-in ini 
+
+1598
+01:12:52,340 --> 01:12:54,875
+ biasanya dijalankan dengan otoritas yang sangat tinggi. 
+
+1599
+01:12:54,875 --> 01:12:57,500
+ Secara longgar, Anda dapat menganggapnya sebagai modul kernel. 
+
+1600
+01:12:57,500 --> 01:12:59,020
+ Mereka menerapkan fitur-fitur baru secara langsung 
+
+1601
+01:12:59,020 --> 01:13:01,470
+ di dalam peramban itu sendiri. 
+
+1602
+01:13:01,470 --> 01:13:03,280
+ Dan itu sedikit bermasalah 
+
+1603
+01:13:03,280 --> 01:13:05,450
+ karena plug-in dan ekstensi ini sering 
+
+1604
+01:13:05,450 --> 01:13:09,030
+ dikembangkan oleh seseorang yang bukan vendor browser sebenarnya. 
+
+1605
+01:13:09,030 --> 01:13:10,580
+ Jadi apa artinya itu adalah seseorang 
+
+1606
+01:13:10,580 --> 01:13:12,496
+ sedang mencoba melakukan sesuatu yang baik dan memberi Anda 
+
+1607
+01:13:12,496 --> 01:13:15,580
+ dengan nilai bagus ini tambahkan plug atau ekstensi browser ini. 
+
+1608
+01:13:15,580 --> 01:13:17,380
+ Namun implementor itu mungkin tidak sepenuhnya 
+
+1609
+01:13:17,380 --> 01:13:19,775
+ memahami konteksnya, konteks keamanan, 
+
+1610
+01:13:19,775 --> 01:13:22,140
+ di mana ekstensi itu berjalan. 
+
+1611
+01:13:22,140 --> 01:13:25,760
+ Sehingga ekstensi tersebut tidak dapat menerapkan mode penjelajahan pribadi 
+
+1612
+01:13:25,760 --> 01:13:26,450
+ semantik. 
+
+1613
+01:13:26,450 --> 01:13:29,710
+ Atau mungkin mencoba menerapkannya untuk melakukannya dengan cara yang buruk. 
+
+1614
+01:13:29,710 --> 01:13:33,052
+ Dan seperti yang akan saya jelaskan dalam beberapa menit, itu 
+
+1615
+01:13:33,052 --> 01:13:35,110
+ sebenarnya buruk dari perspektif keamanan 
+
+1616
+01:13:35,110 --> 01:13:37,401
+ karena itu berarti jika kita menambahkan beberapa plug-in baru ini 
+
+1617
+01:13:37,401 --> 01:13:39,100
+ atau ekstensi, Anda sekarang tidak bisa kuat 
+
+1618
+01:13:39,100 --> 01:13:42,990
+ alasan tentang apa yang dihasilkan [TIDAK JELAS]. 
+
+1619
+01:13:42,990 --> 01:13:45,430
+ Satu hal yang bagus adalah plug-in itu sebenarnya 
+
+1620
+01:13:45,430 --> 01:13:47,920
+ mungkin akan jalan dinosaurus. 
+
+1621
+01:13:47,920 --> 01:13:50,387
+ Jadi seperti yang Anda ketahui, HTML5 menambahkan semua fitur baru ini 
+
+1622
+01:13:50,387 --> 01:13:51,970
+ seperti tag audio dan tag video, 
+
+1623
+01:13:51,970 --> 01:13:53,010
+ dan hal-hal seperti itu. 
+
+1624
+01:13:53,010 --> 01:13:56,440
+ Dan begitu banyak fitur baru ini dirancang untuk memungkinkan 
+
+1625
+01:13:56,440 --> 01:13:58,030
+ orang-orang untuk menjauh dari plug-ins-- 
+
+1626
+01:13:58,030 --> 01:14:01,745
+ untuk menjauh dari Java-- untuk menjauh dari Flash. 
+
+1627
+01:14:01,745 --> 01:14:03,610
+ Jadi ketika orang di masa lalu ingin melakukan sesuatu 
+
+1628
+01:14:03,610 --> 01:14:06,560
+ seperti memiliki grafik 2D atau 3D yang kaya, 
+
+1629
+01:14:06,560 --> 01:14:08,660
+ mereka harus melakukan sesuatu seperti Java atau Flash. 
+
+1630
+01:14:08,660 --> 01:14:10,460
+ Sekarang mereka dapat menggunakan hal-hal seperti Web GL. 
+
+1631
+01:14:10,460 --> 01:14:12,960
+ Mereka dapat menggunakan hal-hal seperti tag kanvas. 
+
+1632
+01:14:12,960 --> 01:14:14,980
+ Jadi mungkin plug-in akan hilang. 
+
+1633
+01:14:14,980 --> 01:14:16,410
+ Bahkan, tim IE misalnya, 
+
+1634
+01:14:16,410 --> 01:14:17,910
+ telah mengatakan bahwa dalam beberapa tahun mereka 
+
+1635
+01:14:17,910 --> 01:14:20,410
+ jangan berpikir siapa pun akan menggunakan plug-ins sama sekali. 
+
+1636
+01:14:20,410 --> 01:14:22,246
+ Ini semua akan menjadi barang-barang jenis HTML5. 
+
+1637
+01:14:22,246 --> 01:14:24,870
+ Bahkan, jika Anda pergi ke YouTube-- saya tidak tahu apakah Anda telah memperhatikan. 
+
+1638
+01:14:24,870 --> 01:14:26,650
+ Tetapi banyak kali jika Anda pergi ke video, 
+
+1639
+01:14:26,650 --> 01:14:30,250
+ video sebenarnya menggunakan-- ini disebut pemutar HTML5. 
+
+1640
+01:14:30,250 --> 01:14:34,290
+ Mereka telah pergi jauh dari yang berbasis plugin standar mereka. 
+
+1641
+01:14:34,290 --> 01:14:35,415
+ Jadi itu sangat menarik. 
+
+1642
+01:14:35,415 --> 01:14:37,600
+ Anda sudah dapat melihat situs yang mencoba untuk pindah 
+
+1643
+01:14:37,600 --> 01:14:39,049
+ menuju dunia plug-in baru ini. 
+
+1644
+01:14:39,049 --> 01:14:40,590
+ Namun, ekstensi mungkin ada di sini 
+
+1645
+01:14:40,590 --> 01:14:42,423
+ untuk tinggal setidaknya selama masa mendatang. 
+
+1646
+01:14:42,423 --> 01:14:45,409
+ Jadi masih penting untuk mendapatkan yang benar. 
+
+1647
+01:14:45,409 --> 01:14:47,450
+ Jadi, ya, hal terakhir yang ingin saya diskusikan 
+
+1648
+01:14:47,450 --> 01:14:51,340
+ adalah sebuah makalah yang ditulis pada tahun 2010 - itu empat tahun yang lalu. 
+
+1649
+01:14:51,340 --> 01:14:52,930
+ Jadi Anda mungkin berpikir untuk diri sendiri apa 
+
+1650
+01:14:52,930 --> 01:14:55,250
+ berubah tentang penelusuran pribadi? 
+
+1651
+01:14:55,250 --> 01:14:57,470
+ Dan pada tingkat yang tinggi, mode penjelajahan pribadi 
+
+1652
+01:14:57,470 --> 01:14:59,580
+ masih sulit untuk menjadi benar. 
+
+1653
+01:14:59,580 --> 01:15:02,370
+ Dan alasan mengapa sulit untuk mendapatkan hak-- 
+
+1654
+01:15:02,370 --> 01:15:03,220
+ beberapa alasan. 
+
+1655
+01:15:03,220 --> 01:15:05,430
+ Jadi pertama-tama, karena browser [TIDAK JELAS] 
+
+1656
+01:15:05,430 --> 01:15:10,560
+ masih berkembang karena hal-hal seperti hal HTML5 ini. 
+
+1657
+01:15:10,560 --> 01:15:13,500
+ Antarmuka, yang harus aman dengan hormat 
+
+1658
+01:15:13,500 --> 01:15:15,505
+ ke mode penjelajahan pribadi, perbatasan itu 
+
+1659
+01:15:15,505 --> 01:15:17,160
+ selalu semakin besar. 
+
+1660
+01:15:17,160 --> 01:15:19,230
+ Dan juga banyak pengembang kali-- 
+
+1661
+01:15:19,230 --> 01:15:22,950
+ mereka lebih fokus untuk menambahkan fitur baru yang keren. 
+
+1662
+01:15:22,950 --> 01:15:24,360
+ Dan kemudian implikasi privasi 
+
+1663
+01:15:24,360 --> 01:15:26,340
+ diambil nanti. 
+
+1664
+01:15:26,340 --> 01:15:29,377
+ Dan dalam prakteknya, itu masih sulit untuk diproduksi 
+
+1665
+01:15:29,377 --> 01:15:31,710
+ mode penjelajahan pribadi yang menangkap semua data potensial 
+
+1666
+01:15:31,710 --> 01:15:33,430
+ kebocoran. 
+
+1667
+01:15:33,430 --> 01:15:37,600
+ Jadi satu contoh, ada perbaikan bug Firefox 
+
+1668
+01:15:37,600 --> 01:15:39,680
+ mulai Januari 2014. 
+
+1669
+01:15:39,680 --> 01:15:44,060
+ Dan ide dasarnya adalah ada ekstensi ini-- 
+
+1670
+01:15:44,060 --> 01:15:49,050
+ itu disebut pdf.js pada dasarnya adalah cara 
+
+1671
+01:15:49,050 --> 01:15:55,020
+ untuk melihat file PDF menggunakan antarmuka HTML5 murni. 
+
+1672
+01:15:55,020 --> 01:15:58,280
+ Dan ternyata, ekstensi ini 
+
+1673
+01:15:58,280 --> 01:16:03,010
+ sedang mengizinkan cookie mode publik bocor ketika sedang 
+
+1674
+01:16:03,010 --> 01:16:06,446
+ digunakan dalam mode penelusuran pribadi. 
+
+1675
+01:16:06,446 --> 01:16:08,440
+ Idenya adalah bahwa katakanlah Anda mengunjungi 
+
+1676
+01:16:08,440 --> 01:16:10,600
+ beberapa situs web dalam mode publik. 
+
+1677
+01:16:10,600 --> 01:16:11,850
+ Anda ingin mengunduh beberapa PDF. 
+
+1678
+01:16:11,850 --> 01:16:13,470
+ Mungkin Anda mendapatkan beberapa cookie yang kembali. 
+
+1679
+01:16:13,470 --> 01:16:15,180
+ Anda kembali dalam mode penjelajahan pribadi. 
+
+1680
+01:16:15,180 --> 01:16:17,850
+ Anda ingin melihat PDF lain dari situs itu. 
+
+1681
+01:16:17,850 --> 01:16:20,215
+ Dan kemudian pdf.js sebenarnya mengirim mode publik tersebut 
+
+1682
+01:16:20,215 --> 01:16:23,800
+ cookie bersama dengan mode pribadi apa pun yang diatur. 
+
+1683
+01:16:23,800 --> 01:16:26,110
+ Dan dalam catatan kuliah, saya sebenarnya 
+
+1684
+01:16:26,110 --> 01:16:29,639
+ memiliki tautan ke diskusi bugzilla 
+
+1685
+01:16:29,639 --> 01:16:30,680
+ tentang bug tertentu. 
+
+1686
+01:16:30,680 --> 01:16:32,600
+ Jadi perbaikannya sebenarnya cukup sederhana 
+
+1687
+01:16:32,600 --> 01:16:34,267
+ begitu mereka menyadari ini masalahnya. 
+
+1688
+01:16:34,267 --> 01:16:36,100
+ Pada dasarnya mereka hanya perlu menambahkan cek itu 
+
+1689
+01:16:36,100 --> 01:16:38,680
+ mengatakan secara moral, apakah saya dalam mode penjelajahan pribadi? 
+
+1690
+01:16:38,680 --> 01:16:41,020
+ Jika ya, lakukan beberapa hal-- dan salah satunya 
+
+1691
+01:16:41,020 --> 01:16:43,140
+ bukan dari cookie. 
+
+1692
+01:16:43,140 --> 01:16:45,630
+ Jadi perbaiki di sini sebenarnya cukup sederhana. 
+
+1693
+01:16:45,630 --> 01:16:49,070
+ Tetapi tantangannya adalah sekali lagi, orang-orang 
+
+1694
+01:16:49,070 --> 01:16:51,500
+ menambahkan ekstensi baru yang keren ini. 
+
+1695
+01:16:51,500 --> 01:16:53,920
+ Tapi itu tidak benar-benar terlintas dalam pikiran mereka 
+
+1696
+01:16:53,920 --> 01:16:57,590
+ untuk melakukan audit penuh dan invasif ini. 
+
+1697
+01:16:57,590 --> 01:17:00,270
+ Dan katakan di mana semua tempat di mana 
+
+1698
+01:17:00,270 --> 01:17:03,720
+ penelusuran pribadi dengan semantik mungkin terpengaruh 
+
+1699
+01:17:03,720 --> 01:17:05,445
+ oleh plug-in khusus ini. 
+
+1700
+01:17:05,445 --> 01:17:06,930
+ Ada lagi yang menarik juga 
+
+1701
+01:17:06,930 --> 01:17:09,405
+ ini sebenarnya diskusi kita 
+
+1702
+01:17:09,405 --> 01:17:11,751
+ memiliki sekitar 30 menit yang lalu tentang apa yang terjadi jika Anda memilikinya 
+
+1703
+01:17:11,751 --> 01:17:14,250
+ tab pribadi dan tab publik tempat Anda membuka pada saat bersamaan 
+
+1704
+01:17:14,250 --> 01:17:15,570
+ atau sangat dekat satu sama lain. 
+
+1705
+01:17:15,570 --> 01:17:18,080
+ Sebenarnya ada bug di Firefox. 
+
+1706
+01:17:18,080 --> 01:17:19,870
+ Saya pikir itu dari-- mari kita lihat di sini-- 
+
+1707
+01:17:19,870 --> 01:17:22,750
+ ya, 2011, yang masih belum terisi. 
+
+1708
+01:17:22,750 --> 01:17:24,360
+ Dan ide dasarnya adalah jika Anda 
+
+1709
+01:17:24,360 --> 01:17:27,740
+ pergi ke tugas dalam mode penjelajahan pribadi-- OK, 
+
+1710
+01:17:27,740 --> 01:17:28,655
+ Anda melakukan beberapa hal. 
+
+1711
+01:17:28,655 --> 01:17:31,875
+ Anda kemudian tutup tab itu. 
+
+1712
+01:17:31,875 --> 01:17:34,170
+ Anda kemudian membuka tab mode publik baru. 
+
+1713
+01:17:34,170 --> 01:17:40,906
+ Dan Anda pergi ke tentang: memori. 
+
+1714
+01:17:40,906 --> 01:17:43,354
+ Jadi seperti yang mungkin Anda ketahui, browser didefinisikan sebagai URL palsu 
+
+1715
+01:17:43,354 --> 01:17:45,520
+ dan memberi tahu informasi tentang cara kerja browser. 
+
+1716
+01:17:45,520 --> 01:17:47,706
+ Jadi Anda pergi ke tab pribadi, tutuplah, 
+
+1717
+01:17:47,706 --> 01:17:49,539
+ kemudian pergi ke tentang: memori. 
+
+1718
+01:17:49,539 --> 01:17:51,080
+ Ini akan memberi tahu Anda informasi 
+
+1719
+01:17:51,080 --> 01:17:53,830
+ tentang semua objek yang telah dialokasikan oleh Firefox. 
+
+1720
+01:17:53,830 --> 01:17:58,000
+ Jadi apa yang akan terjadi adalah objek jendela biasanya 
+
+1721
+01:17:58,000 --> 01:18:01,362
+ deallocated-- mereka [INAUDIBLE] di Firefox. 
+
+1722
+01:18:01,362 --> 01:18:03,820
+ Jadi apa yang akhirnya terjadi adalah ketika Anda membuka yang baru itu 
+
+1723
+01:18:03,820 --> 01:18:06,880
+ tab mode publik, pergi ke tentang: memori Anda benar-benar bisa 
+
+1724
+01:18:06,880 --> 01:18:11,670
+ menemukan informasi masih tentang jendela mode privat seperti itu 
+
+1725
+01:18:11,670 --> 01:18:13,087
+ seperti hal-hal seperti URL, misalnya, 
+
+1726
+01:18:13,087 --> 01:18:15,545
+ yang akan memberi tahu Anda berapa banyak memori untuk dialokasikan dan semua itu 
+
+1727
+01:18:15,545 --> 01:18:16,140
+ jenis barang. 
+
+1728
+01:18:16,140 --> 01:18:17,570
+ Dan semuanya ada dalam teks biasa. 
+
+1729
+01:18:17,570 --> 01:18:20,762
+ Dan itulah contoh bagaimana ini sangat halus 
+
+1730
+01:18:20,762 --> 01:18:22,470
+ antarmuka dan browser yang sebenarnya bisa 
+
+1731
+01:18:22,470 --> 01:18:24,340
+ membocorkan banyak informasi. 
+
+1732
+01:18:24,340 --> 01:18:26,395
+ Dan itu sangat menarik. 
+
+1733
+01:18:26,395 --> 01:18:28,020
+ Jika Anda melihat diskusi bugzilla, 
+
+1734
+01:18:28,020 --> 01:18:31,244
+ sebenarnya sangat menarik untuk melihat bagaimana masalah ini terjadi 
+
+1735
+01:18:31,244 --> 01:18:32,160
+ diselesaikan dalam kehidupan nyata. 
+
+1736
+01:18:32,160 --> 01:18:35,170
+ Dan saya menaruh tautan itu sehingga ada pesan 
+
+1737
+01:18:35,170 --> 01:18:39,025
+ bahwa buku ini telah kehilangan prioritas ketika menjadi jelas 
+
+1738
+01:18:39,025 --> 01:18:42,020
+ bahwa solusi potensial lebih terlibat daripada 
+
+1739
+01:18:42,020 --> 01:18:44,552
+ awalnya diantisipasi. 
+
+1740
+01:18:44,552 --> 01:18:46,239
+ Jadi itu diskusi yang cukup panjang 
+
+1741
+01:18:46,239 --> 01:18:47,280
+ tentang bagaimana kita memperbaiki ini. 
+
+1742
+01:18:47,280 --> 01:18:49,070
+ Dan itu melibatkan mengubah cara pengumpulan sampah 
+
+1743
+01:18:49,070 --> 01:18:49,610
+ selesai. 
+
+1744
+01:18:49,610 --> 01:18:53,350
+ Dan itu sangat rumit karena jika Anda terlalu sering memohonnya 
+
+1745
+01:18:53,350 --> 01:18:55,100
+ maka itu mendapat kinerja. 
+
+1746
+01:18:55,100 --> 01:18:57,230
+ Jadi ada diskusi panjang tentang hal ini. 
+
+1747
+01:18:57,230 --> 01:18:58,810
+ Jadi mereka berkata, "Itu deprioritized 
+
+1748
+01:18:58,810 --> 01:19:00,809
+ ketika sudah jelas solusinya lebih terlibat 
+
+1749
+01:19:00,809 --> 01:19:01,746
+ dari yang diantisipasi. " 
+
+1750
+01:19:01,746 --> 01:19:04,810
+ Dan kemudian sebagai tanggapan, seorang pengembang berkata, 
+
+1751
+01:19:04,810 --> 01:19:06,250
+ "Sangat sedih mendengarnya. 
+
+1752
+01:19:06,250 --> 01:19:08,100
+ Ini bisa sangat banyak mengalahkan tujuannya 
+
+1753
+01:19:08,100 --> 01:19:10,440
+ hal-hal seperti toko sesi untuk mendapatkan 
+
+1754
+01:19:10,440 --> 01:19:12,130
+ tentang jendela pribadi tertutup. " 
+
+1755
+01:19:12,130 --> 01:19:14,977
+ Jadi para pengembang tentang hal ini. 
+
+1756
+01:19:14,977 --> 01:19:16,560
+ Seperti dalam kasus toko sesi, 
+
+1757
+01:19:16,560 --> 01:19:19,780
+ ini adalah fitur penyimpanan untuk HTML5-- 
+
+1758
+01:19:19,780 --> 01:19:21,936
+ mereka telah mengalami banyak masalah 
+
+1759
+01:19:21,936 --> 01:19:25,780
+ untuk membuatnya menghapus hal-hal yang menjadi miliknya 
+
+1760
+01:19:25,780 --> 01:19:28,320
+ ke jendela pribadi tertutup ini. 
+
+1761
+01:19:28,320 --> 01:19:30,440
+ Tapi, pada dasarnya, apa yang dilakukan bug ini-- masih-- 
+
+1762
+01:19:30,440 --> 01:19:32,060
+ itu pada dasarnya masih meninggalkan informasi 
+
+1763
+01:19:32,060 --> 01:19:35,260
+ tentang hal-hal yang ada dalam memori di suatu tempat. 
+
+1764
+01:19:35,260 --> 01:19:37,841
+ Singkat cerita, itu masih sangat sulit 
+
+1765
+01:19:37,841 --> 01:19:39,090
+ untuk mendapatkan penelusuran pribadi dengan benar. 
+
+1766
+01:19:39,090 --> 01:19:41,765
+ Dan sebenarnya, sebenarnya ada alat forensik off-the-shelf 
+
+1767
+01:19:41,765 --> 01:19:43,431
+ Anda dapat mengunduh itu sebenarnya 
+
+1768
+01:19:43,431 --> 01:19:47,959
+ mencari bukti dari kedua mode penjelajahan publik dan pribadi. 
+
+1769
+01:19:47,959 --> 01:19:49,625
+ Jadi jika Anda seorang penyerang, Anda tidak punya 
+
+1770
+01:19:49,625 --> 01:19:50,910
+ untuk menggulung alat kustom Anda sendiri. 
+
+1771
+01:19:50,910 --> 01:19:52,436
+ Ada yang ini yang mereka sebut Magnet. 
+
+1772
+01:19:52,436 --> 01:19:54,615
+ Saya pikir ini adalah pencari bukti internet. 
+
+1773
+01:19:54,615 --> 01:19:55,740
+ Anda hanya pergi mendapatkan barang ini. 
+
+1774
+01:19:55,740 --> 01:19:57,670
+ Itu akan melakukan hal-hal seperti melihat melalui halaman Anda 
+
+1775
+01:19:57,670 --> 01:19:59,090
+ file untuk artefak RAM. 
+
+1776
+01:19:59,090 --> 01:20:00,730
+ Dan itu akan memberi Anda GUI yang sangat bagus. 
+
+1777
+01:20:00,730 --> 01:20:02,570
+ Itu akan mengatakan di sini adalah gambar yang saya temukan. 
+
+1778
+01:20:02,570 --> 01:20:04,540
+ Berikut adalah URL-nya. 
+
+1779
+01:20:04,540 --> 01:20:07,240
+ Jadi dalam prakteknya, ini mode penjelajahan pribadi 
+
+1780
+01:20:07,240 --> 01:20:08,740
+ masih membocorkan beberapa informasi. 
+
+1781
+01:20:08,740 --> 01:20:11,190
+ Baiklah, bagian selanjutnya, kita akan bicara tentang Tor. 
+
+1782
+01:20:11,190 --> 00:00:00,000
+
+

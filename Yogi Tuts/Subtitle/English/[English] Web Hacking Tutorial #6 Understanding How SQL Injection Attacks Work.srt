@@ -1,0 +1,244 @@
+1
+00:00:00,060 --> 00:00:02,669
+<font color="#E5E5E5">okay so welcome</font><font color="#CCCCCC"> back in this</font><font color="#E5E5E5"> tutorial</font>
+
+2
+00:00:02,669 --> 00:00:04,770
+<font color="#CCCCCC">I'm going to show you how</font><font color="#E5E5E5"> to bypass</font>
+
+3
+00:00:04,770 --> 00:00:08,570
+login screens using sequel injection
+
+4
+00:00:08,570 --> 00:00:10,830
+<font color="#CCCCCC">sequel injection is the code injection</font>
+
+5
+00:00:10,830 --> 00:00:14,280
+<font color="#E5E5E5">technique used to hack data applications</font>
+
+6
+00:00:14,280 --> 00:00:17,340
+in which malicious sequel statements are
+
+7
+00:00:17,340 --> 00:00:20,039
+inserted<font color="#CCCCCC"> into an entry field for</font>
+
+8
+00:00:20,039 --> 00:00:23,340
+execution<font color="#E5E5E5"> so let's get started by</font><font color="#CCCCCC"> going</font>
+
+9
+00:00:23,340 --> 00:00:27,570
+<font color="#E5E5E5">first to user info sequel and extract</font>
+
+10
+00:00:27,570 --> 00:00:30,170
+the<font color="#CCCCCC"> county</font><font color="#E5E5E5"> tales from the database</font>
+
+11
+00:00:30,170 --> 00:00:32,610
+<font color="#E5E5E5">sometimes it is better to know how the</font>
+
+12
+00:00:32,610 --> 00:00:35,700
+sequel query looks like for that you can
+
+13
+00:00:35,700 --> 00:00:38,280
+type<font color="#CCCCCC"> a</font><font color="#E5E5E5"> single quote in the name field</font>
+
+14
+00:00:38,280 --> 00:00:41,610
+and press<font color="#CCCCCC"> Enter and you can see the</font>
+
+15
+00:00:41,610 --> 00:00:44,579
+query<font color="#E5E5E5"> down here which is select from</font>
+
+16
+00:00:44,579 --> 00:00:47,399
+accounts where<font color="#CCCCCC"> username is what you have</font>
+
+17
+00:00:47,399 --> 00:00:50,910
+passed in and<font color="#E5E5E5"> password whatever you have</font>
+
+18
+00:00:50,910 --> 00:00:53,940
+passed in now in order<font color="#CCCCCC"> to view the</font>
+
+19
+00:00:53,940 --> 00:00:56,059
+account details you need<font color="#E5E5E5"> to type in</font>
+
+20
+00:00:56,059 --> 00:01:00,870
+<font color="#E5E5E5">single quote or one equal one this one</font>
+
+21
+00:01:00,870 --> 00:01:04,619
+equal one is a true<font color="#CCCCCC"> statement so you</font><font color="#E5E5E5"> can</font>
+
+22
+00:01:04,619 --> 00:01:08,970
+type any true statement<font color="#E5E5E5"> like</font><font color="#CCCCCC"> 4 equal</font><font color="#E5E5E5"> 4 6</font>
+
+23
+00:01:08,970 --> 00:01:12,869
+equals 6<font color="#CCCCCC"> and so on</font><font color="#E5E5E5"> and to escape from</font>
+
+24
+00:01:12,869 --> 00:01:14,189
+the password field
+
+25
+00:01:14,189 --> 00:01:17,280
+<font color="#E5E5E5">use the</font><font color="#CCCCCC"> comment</font><font color="#E5E5E5"> symbol this common</font>
+
+26
+00:01:17,280 --> 00:01:19,680
+symbol will ignore the password field
+
+27
+00:01:19,680 --> 00:01:22,970
+when the query is executed on<font color="#E5E5E5"> the server</font>
+
+28
+00:01:22,970 --> 00:01:25,950
+<font color="#CCCCCC">so go ahead</font><font color="#E5E5E5"> and press view account</font>
+
+29
+00:01:25,950 --> 00:01:28,619
+details<font color="#E5E5E5"> and</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> can see all the</font>
+
+30
+00:01:28,619 --> 00:01:31,290
+<font color="#CCCCCC">usernames and passwords from the</font>
+
+31
+00:01:31,290 --> 00:01:34,110
+database<font color="#E5E5E5"> you can also use the same</font>
+
+32
+00:01:34,110 --> 00:01:38,130
+statement<font color="#CCCCCC"> single quote 1 equal 1</font><font color="#E5E5E5"> and the</font>
+
+33
+00:01:38,130 --> 00:01:42,240
+<font color="#E5E5E5">comment symbol to log in and you can see</font>
+
+34
+00:01:42,240 --> 00:01:46,049
+I have<font color="#CCCCCC"> successfully</font><font color="#E5E5E5"> logged as admin ok</font>
+
+35
+00:01:46,049 --> 00:01:48,049
+now let's look out and see another
+
+36
+00:01:48,049 --> 00:01:50,939
+<font color="#CCCCCC">example let's say you know</font><font color="#E5E5E5"> the user name</font>
+
+37
+00:01:50,939 --> 00:01:53,810
+is<font color="#E5E5E5"> John</font><font color="#CCCCCC"> but you don't know the password</font>
+
+38
+00:01:53,810 --> 00:01:56,880
+<font color="#CCCCCC">for that you</font><font color="#E5E5E5"> need</font><font color="#CCCCCC"> to type John single</font>
+
+39
+00:01:56,880 --> 00:02:00,240
+quote and the comment symbol to ignore
+
+40
+00:02:00,240 --> 00:02:03,000
+the password field for John in my case
+
+41
+00:02:03,000 --> 00:02:04,979
+and press login
+
+42
+00:02:04,979 --> 00:02:08,190
+and up here<font color="#CCCCCC"> you can</font><font color="#E5E5E5"> see I'm logged as</font>
+
+43
+00:02:08,190 --> 00:02:11,790
+John<font color="#E5E5E5"> now let's understand the sequel</font>
+
+44
+00:02:11,790 --> 00:02:13,450
+query behind the scene
+
+45
+00:02:13,450 --> 00:02:16,540
+and this is how the sequel query will
+
+46
+00:02:16,540 --> 00:02:19,030
+look like when<font color="#E5E5E5"> you are trying to</font><font color="#CCCCCC"> login</font>
+
+47
+00:02:19,030 --> 00:02:22,780
+<font color="#CCCCCC">to a web application select from table</font>
+
+48
+00:02:22,780 --> 00:02:26,080
+name this can be any name<font color="#E5E5E5"> where</font><font color="#CCCCCC"> username</font>
+
+49
+00:02:26,080 --> 00:02:29,290
+is whatever name you have typed<font color="#E5E5E5"> if the</font>
+
+50
+00:02:29,290 --> 00:02:31,750
+<font color="#CCCCCC">username is in the database for example</font>
+
+51
+00:02:31,750 --> 00:02:35,709
+<font color="#CCCCCC">John</font><font color="#E5E5E5"> then this will be true</font><font color="#CCCCCC"> and the</font>
+
+52
+00:02:35,709 --> 00:02:38,620
+trick<font color="#CCCCCC"> here is when you put 1 equal 1 or</font>
+
+53
+00:02:38,620 --> 00:02:42,430
+4 equal<font color="#E5E5E5"> 4 this will also validate as</font>
+
+54
+00:02:42,430 --> 00:02:46,150
+true and to bypass the password field<font color="#CCCCCC"> I</font>
+
+55
+00:02:46,150 --> 00:02:49,420
+have used the<font color="#CCCCCC"> comment symbol</font><font color="#E5E5E5"> which will</font>
+
+56
+00:02:49,420 --> 00:02:52,720
+ignore the last part of the query<font color="#E5E5E5"> that's</font>
+
+57
+00:02:52,720 --> 00:02:55,720
+<font color="#E5E5E5">why you are able to log in without using</font>
+
+58
+00:02:55,720 --> 00:02:59,830
+a password<font color="#CCCCCC"> so that's it for</font><font color="#E5E5E5"> now thanks</font>
+
+59
+00:02:59,830 --> 00:03:02,110
+for<font color="#CCCCCC"> watching and I will see you next</font>
+
+60
+00:03:02,110 --> 00:03:04,319
+<font color="#E5E5E5">time</font>
+
+61
+00:03:11,030 --> 00:00:00,000
+you
+

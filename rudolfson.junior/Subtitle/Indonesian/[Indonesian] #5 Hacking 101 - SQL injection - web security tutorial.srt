@@ -1,0 +1,760 @@
+1
+00:00:00,030 --> 00:00:01,639
+ sambutlah <font color="#E5E5E5">tuan dan nyonya </font><font color="#CCCCCC">untuk ini </font>
+
+2
+00:00:01,639 --> 00:00:04,770
+ video hari ini <font color="#E5E5E5">kita sedang berbicara tentang web </font>
+
+3
+00:00:04,770 --> 00:00:08,309
+ keamanan <font color="#CCCCCC">dan lagi </font><font color="#E5E5E5">kita berbicara </font><font color="#CCCCCC">tentang </font>
+
+4
+00:00:08,309 --> 00:00:12,870
+ suntikan <font color="#E5E5E5">terutama tentang SQL </font>
+
+5
+00:00:12,870 --> 00:00:15,269
+ suntikan <font color="#E5E5E5">untuk ditindaklanjuti dengan ini </font>
+
+6
+00:00:15,269 --> 00:00:17,910
+ tutorial <font color="#CCCCCC">Anda dapat dengan itu </font><font color="#E5E5E5">aturan lagu </font>
+
+7
+00:00:17,910 --> 00:00:24,210
+ pizza <font color="#CCCCCC">es y dot ya dan </font><font color="#E5E5E5">heck </font><font color="#CCCCCC">memutuskan </font><font color="#E5E5E5">jika </font>
+
+8
+00:00:24,210 --> 00:00:29,369
+ Anda ingin <font color="#E5E5E5">ya begitu </font><font color="#CCCCCC">tapi </font><font color="#E5E5E5">semuanya pertama </font>
+
+9
+00:00:29,369 --> 00:00:31,380
+ Anda belajar di sini adalah untuk mengamankan <font color="#E5E5E5">milik Anda sendiri </font>
+
+10
+00:00:31,380 --> 00:00:33,899
+ aplikasi web <font color="#CCCCCC">dan tidak meretas siapa pun </font>
+
+11
+00:00:33,899 --> 00:00:38,489
+ <font color="#E5E5E5">yang lain jadi ini legal dan itu benar-benar </font>
+
+12
+00:00:38,489 --> 00:00:39,090
+ jahat 
+
+13
+00:00:39,090 --> 00:00:42,840
+ begitu <font color="#CCCCCC">juga aku tidak </font><font color="#E5E5E5">bertanggung jawab atas sesuatu yang </font><font color="#CCCCCC">istimewa </font>
+
+14
+00:00:42,840 --> 00:00:45,180
+ atau <font color="#E5E5E5">kerusakan langsung atau tidak langsung untuk apa pun </font>
+
+15
+00:00:45,180 --> 00:00:47,370
+ kerusakan lain yang dihasilkan <font color="#CCCCCC">dari penggunaan </font>
+
+16
+00:00:47,370 --> 00:00:50,760
+ <font color="#CCCCCC">informasi yang disajikan dalam video ini jadi </font>
+
+17
+00:00:50,760 --> 00:00:54,960
+ mari kita <font color="#CCCCCC">mulai dengan suntikan lagi </font>
+
+18
+00:00:54,960 --> 00:00:56,940
+ <font color="#E5E5E5">suntikan digunakan oleh penyerang </font><font color="#CCCCCC">untuk </font>
+
+19
+00:00:56,940 --> 00:00:59,250
+ memperkenalkan atau menyuntikkan kode ke dalam 
+
+20
+00:00:59,250 --> 00:01:01,620
+ <font color="#E5E5E5">program komputer yang rentan dan berubah </font>
+
+21
+00:01:01,620 --> 00:01:06,000
+ jalannya eksekusi <font color="#E5E5E5">sehingga bisa kita gunakan </font>
+
+22
+00:01:06,000 --> 00:01:08,760
+ apa pun yang <font color="#E5E5E5">posting sesuatu </font><font color="#CCCCCC">di </font>
+
+23
+00:01:08,760 --> 00:01:11,869
+ server yang menggunakan pernyataan SQL 
+
+24
+00:01:11,869 --> 00:01:15,330
+ <font color="#E5E5E5">ketinggalan untuk mendapatkan data dari database </font><font color="#CCCCCC">semua </font>
+
+25
+00:01:15,330 --> 00:01:27,630
+ <font color="#E5E5E5">benar jadi kita bahkan bisa menggunakan pesanan itu </font>
+
+26
+00:01:27,630 --> 00:01:31,799
+ <font color="#E5E5E5">kita bahkan dapat menggunakan kotak Select di sini jika </font>
+
+27
+00:01:31,799 --> 00:01:35,070
+ Anda pergi ke Pilih <font color="#E5E5E5">Anda melihat bahwa kita </font>
+
+28
+00:01:35,070 --> 00:01:37,829
+ miliki di <font color="#E5E5E5">sini berbagai </font><font color="#CCCCCC">jenis nilai semua </font>
+
+29
+00:01:37,829 --> 00:01:42,869
+ benar <font color="#E5E5E5">jadi jika Anda berada </font><font color="#CCCCCC">di peretas </font>
+
+30
+00:01:42,869 --> 00:01:47,490
+ <font color="#E5E5E5">Anda dapat menguji apakah nilai-nilai ini harus </font>
+
+31
+00:01:47,490 --> 00:01:50,630
+ ada sesuatu yang <font color="#E5E5E5">harus dilakukan </font>
+
+32
+00:01:50,630 --> 00:01:54,450
+ <font color="#E5E5E5">pernyataan </font><font color="#CCCCCC">SQL </font><font color="#E5E5E5">bahkan hanya dengan </font>
+
+33
+00:01:54,450 --> 00:01:58,380
+ <font color="#CCCCCC">mengubah </font><font color="#E5E5E5">nilainya jadi saya mengubahnya menjadi </font>
+
+34
+00:01:58,380 --> 00:02:02,030
+ <font color="#CCCCCC">dua untuk vegetarian </font><font color="#E5E5E5">dan seperti yang Anda lihat, saya </font>
+
+35
+00:02:02,030 --> 00:02:06,420
+ pikir <font color="#E5E5E5">pizza salami </font><font color="#CCCCCC">dan prosciutto </font>
+
+36
+00:02:06,420 --> 00:02:10,330
+ pizza <font color="#CCCCCC">jadi harus melakukan sesuatu </font>
+
+37
+00:02:10,330 --> 00:02:13,210
+ dengan pernyataan SQL di belakang <font color="#CCCCCC">jadi ini </font>
+
+38
+00:02:13,210 --> 00:02:18,160
+ nilai <font color="#E5E5E5">digunakan oleh pernyataan SQL </font><font color="#CCCCCC">jadi </font><font color="#E5E5E5">kami </font>
+
+39
+00:02:18,160 --> 00:02:21,790
+ <font color="#E5E5E5">dapat menggunakan ini dengan </font><font color="#CCCCCC">baik yang Anda rasakan untuk disuntikkan </font>
+
+40
+00:02:21,790 --> 00:02:26,800
+ <font color="#E5E5E5">SQL kami jadi apa yang akan kami </font><font color="#CCCCCC">lakukan hari ini </font>
+
+41
+00:02:26,800 --> 00:02:32,940
+ adalah kami mencoba untuk menghasilkan setiap <font color="#CCCCCC">nama pengguna </font>
+
+42
+00:02:32,940 --> 00:02:39,520
+ <font color="#E5E5E5">di dalam menu ini sehingga kami ingin output </font>
+
+43
+00:02:39,520 --> 00:02:43,360
+ <font color="#CCCCCC">Pizza username </font><font color="#E5E5E5">dan password </font><font color="#CCCCCC">di sini </font>
+
+44
+00:02:43,360 --> 00:02:47,410
+ <font color="#E5E5E5">di dalam bahan oke jadi mari </font>
+
+45
+00:02:47,410 --> 00:02:50,530
+ <font color="#E5E5E5">lihatlah </font><font color="#CCCCCC">suntikan SQL </font><font color="#E5E5E5">jadi </font>
+
+46
+00:02:50,530 --> 00:02:53,320
+ <font color="#E5E5E5">mungkin ada </font><font color="#CCCCCC">pernyataan di </font>
+
+47
+00:02:53,320 --> 00:02:56,260
+ <font color="#CCCCCC">hanya server yang terlihat seperti </font>
+
+48
+00:02:56,260 --> 00:02:59,890
+ ini <font color="#E5E5E5">pilih </font><font color="#CCCCCC">bintang dari pizza di mana tipe </font>
+
+49
+00:02:59,890 --> 00:03:03,370
+ sama dengan jenis yang kita tidak tahu bagaimana bidang ini 
+
+50
+00:03:03,370 --> 00:03:06,820
+ disebut <font color="#CCCCCC">kita tidak tahu bagaimana tabel ini </font>
+
+51
+00:03:06,820 --> 00:03:09,070
+ dipanggil <font color="#E5E5E5">dan kita tidak tahu berapa banyak </font>
+
+52
+00:03:09,070 --> 00:03:13,150
+ bidang dipilih di <font color="#CCCCCC">sana tetapi seperti yang kita tahu </font>
+
+53
+00:03:13,150 --> 00:03:18,790
+ <font color="#E5E5E5">seorang peretas terkadang mencoba kadang-kadang </font>
+
+54
+00:03:18,790 --> 00:03:22,930
+ dia mencoba <font color="#E5E5E5">500 kali dan kemudian berhasil </font>
+
+55
+00:03:22,930 --> 00:03:26,320
+ kita harus menguji berapa banyak bidang yang kita 
+
+56
+00:03:26,320 --> 00:03:29,739
+ <font color="#CCCCCC">ada di sana dan seperti yang </font><font color="#E5E5E5">saya tahu berapa banyak bidang </font>
+
+57
+00:03:29,739 --> 00:03:35,230
+ kami <font color="#CCCCCC">memiliki enam bidang dan kami bisa </font>
+
+58
+00:03:35,230 --> 00:03:40,690
+ coba saja ini dengan membuat <font color="#CCCCCC">persatuan </font>
+
+59
+00:03:40,690 --> 00:03:45,400
+ pilih jadi apa <font color="#E5E5E5">serikat </font><font color="#CCCCCC">pilih </font><font color="#E5E5E5">dilakukannya itu </font>
+
+60
+00:03:45,400 --> 00:03:48,550
+ menggabungkan dua tabel <font color="#E5E5E5">atau untuk memilih </font>
+
+61
+00:03:48,550 --> 00:03:52,510
+ pernyataan dalam <font color="#E5E5E5">satu dalam satu </font>
+
+62
+00:03:52,510 --> 00:03:56,260
+ menghasilkan <font color="#CCCCCC">tabel </font><font color="#E5E5E5">oke jadi memilih </font><font color="#CCCCCC">T </font>
+
+63
+00:03:56,260 --> 00:04:01,600
+ dan menggabungkan tabel <font color="#E5E5E5">ini dengan tabel ini </font>
+
+64
+00:04:01,600 --> 00:04:09,730
+ jadi kami bisa menyuntikkan <font color="#E5E5E5">nama pengguna dan pilih </font>
+
+65
+00:04:09,730 --> 00:04:13,000
+ menggunakan <font color="#CCCCCC">password</font><font color="#E5E5E5"> dari pengguna dan kehendak ini </font>
+
+66
+00:04:13,000 --> 00:04:15,580
+ mungkin <font color="#E5E5E5">terlihat </font><font color="#CCCCCC">seperti ini </font>
+
+67
+00:04:15,580 --> 00:04:23,020
+ jadi jika kita menyalin ini dan saya mencoba untuk <font color="#E5E5E5">bekerja </font>
+
+68
+00:04:23,020 --> 00:04:23,830
+ hanya dalam 
+
+69
+00:04:23,830 --> 00:04:27,039
+ database saya, <font color="#E5E5E5">Anda melihat bahwa itu menggabungkan </font>
+
+70
+00:04:27,039 --> 00:04:35,069
+ dua <font color="#E5E5E5">tabel ini jadi jika kita mencoba untuk </font><font color="#CCCCCC">menyuntikkan </font>
+
+71
+00:04:35,069 --> 00:04:40,569
+ pernyataan SQL ini <font color="#E5E5E5">di sini kita </font>
+
+72
+00:04:40,569 --> 00:04:46,240
+ <font color="#E5E5E5">hanya harus melakukan Union pilih kemudian </font><font color="#CCCCCC">1 2 </font>
+
+73
+00:04:46,240 --> 00:04:50,139
+ <font color="#CCCCCC">3 4 5 6 </font><font color="#E5E5E5">kita </font><font color="#CCCCCC">harus menguji </font><font color="#E5E5E5">itu </font><font color="#CCCCCC">jika Anda </font>
+
+74
+00:04:50,139 --> 00:04:53,530
+ <font color="#E5E5E5">tidak tahu bagaimana struktur tabel bekerja </font>
+
+75
+00:04:53,530 --> 00:05:00,030
+ di belakang jadi jika kita melakukan <font color="#E5E5E5">sesuatu seperti ini </font><font color="#CCCCCC">saya </font>
+
+76
+00:05:00,030 --> 00:05:05,259
+ salin ini dapat Anda <font color="#E5E5E5">lihat yang akan kita dapatkan </font>
+
+77
+00:05:05,259 --> 00:05:05,830
+ <font color="#E5E5E5">kembali </font>
+
+78
+00:05:05,830 --> 00:05:11,620
+ <font color="#E5E5E5">Oh salin ini tentu saja kita harus pergi ke </font>
+
+79
+00:05:11,620 --> 00:05:15,279
+ apa <font color="#CCCCCC">Darien </font><font color="#E5E5E5">jika kita melakukan ini, Anda melihat </font><font color="#CCCCCC">bahwa </font>
+
+80
+00:05:15,279 --> 00:05:21,310
+ kami kembali ke 4 5 <font color="#E5E5E5">sehingga kami tahu bahwa </font>
+
+81
+00:05:21,310 --> 00:05:27,370
+ <font color="#E5E5E5">kolom kedua ditampilkan sebagai sebagai </font>
+
+82
+00:05:27,370 --> 00:05:31,240
+ <font color="#E5E5E5">judul di </font><font color="#CCCCCC">sini sehingga kita bisa menyuntikkan </font>
+
+83
+00:05:31,240 --> 00:05:33,490
+ <font color="#CCCCCC">nama pengguna di dalam pernyataan kedua </font>
+
+84
+00:05:33,490 --> 00:05:36,819
+ dan pernyataan keempat <font color="#CCCCCC">adalah </font>
+
+85
+00:05:36,819 --> 00:05:39,490
+ bahan <font color="#E5E5E5">jadi </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">bisa dan periksa </font>
+
+86
+00:05:39,490 --> 00:05:42,490
+ paspor <font color="#E5E5E5">di </font><font color="#CCCCCC">dalam bahan </font><font color="#E5E5E5">jadi jika </font>
+
+87
+00:05:42,490 --> 00:05:45,819
+ kami menyalin pernyataan kami <font color="#E5E5E5">dan kami </font><font color="#CCCCCC">tentu saja </font>
+
+88
+00:05:45,819 --> 00:05:50,680
+ <font color="#E5E5E5">peretas harus tahu bagaimana bidangnya </font>
+
+89
+00:05:50,680 --> 00:05:53,560
+ <font color="#CCCCCC">meja dipanggil </font><font color="#E5E5E5">jadi jika dia tidak </font>
+
+90
+00:05:53,560 --> 00:05:57,370
+ tahu <font color="#E5E5E5">bahwa di lapangan disebut pengguna </font>
+
+91
+00:05:57,370 --> 00:05:59,740
+ <font color="#CCCCCC">garis bawahi nama atau pengguna yang </font><font color="#E5E5E5">digarisbawahi </font>
+
+92
+00:05:59,740 --> 00:06:02,560
+ kata sandi maka dia tidak akan <font color="#E5E5E5">mendapatkannya </font>
+
+93
+00:06:02,560 --> 00:06:07,539
+ hasil <font color="#E5E5E5">tetapi saat kami menguji 100 </font>
+
+94
+00:06:07,539 --> 00:06:11,699
+ kali <font color="#CCCCCC">kami menemukan bahwa </font><font color="#E5E5E5">untuk menggunakan nama </font>
+
+95
+00:06:11,699 --> 00:06:14,319
+ di dalam tabel <font color="#E5E5E5">disebut pengguna </font>
+
+96
+00:06:14,319 --> 00:06:17,229
+ <font color="#CCCCCC">garis bawahi nama dan kata sandinya </font>
+
+97
+00:06:17,229 --> 00:06:22,810
+ disebut biasa <font color="#CCCCCC">menggarisbawahi </font><font color="#E5E5E5">PW </font><font color="#CCCCCC">peewee </font><font color="#E5E5E5">jadi jika </font>
+
+98
+00:06:22,810 --> 00:06:29,650
+ kami kembali memilih vegetarian <font color="#E5E5E5">kami di sini </font>
+
+99
+00:06:29,650 --> 00:06:31,279
+ akan mendapatkan 
+
+100
+00:06:31,279 --> 00:06:34,549
+ semuanya dari <font color="#E5E5E5">tabel pengguna jadi kami </font>
+
+101
+00:06:34,549 --> 00:06:36,769
+ harus menggunakan <font color="#E5E5E5">nama dan </font><font color="#CCCCCC">menggunakan </font>
+
+102
+00:06:36,769 --> 00:06:41,619
+ kata sandi <font color="#CCCCCC">dan seperti yang Anda lihat </font><font color="#E5E5E5">kata sandinya </font>
+
+103
+00:06:41,619 --> 00:06:45,079
+ disimpan sebagai teks biasa <font color="#E5E5E5">di dalam </font>
+
+104
+00:06:45,079 --> 00:06:47,509
+ <font color="#CCCCCC">database dan ini benar- </font><font color="#E5E5E5">benar buruk </font>
+
+105
+00:06:47,509 --> 00:06:51,259
+ <font color="#CCCCCC">itu benar-benar kebiasaan buruk oke jadi kami </font>
+
+106
+00:06:51,259 --> 00:06:54,229
+ harus mempekerjakan satu dengan kata sandi ini <font color="#E5E5E5">kami </font>
+
+107
+00:06:54,229 --> 00:06:56,989
+ harus menggunakan dua dengan kata sandi ini <font color="#CCCCCC">kami </font>
+
+108
+00:06:56,989 --> 00:06:59,989
+ harus Peter dengan <font color="#CCCCCC">kata sandi ini </font><font color="#E5E5E5">dan kami </font>
+
+109
+00:06:59,989 --> 00:07:01,909
+ memiliki <font color="#CCCCCC">salmon dengan kata sandi </font><font color="#E5E5E5">jadi kami </font>
+
+110
+00:07:01,909 --> 00:07:08,110
+ sekarang dapat cukup <font color="#CCCCCC">login dengan karyawan </font>
+
+111
+00:07:08,110 --> 00:07:13,099
+ <font color="#E5E5E5">mempekerjakan </font><font color="#CCCCCC">dua dan memasukkan kata sandi dan </font>
+
+112
+00:07:13,099 --> 00:07:16,159
+ kita dikunci sebagai pekerja <font color="#CCCCCC">dua dan sekarang </font>
+
+113
+00:07:16,159 --> 00:07:18,889
+ kita bisa memposting sesuatu yang jahat di <font color="#E5E5E5">dalam </font>
+
+114
+00:07:18,889 --> 00:07:25,219
+ <font color="#E5E5E5">jet rahasia oke jadi ini cukup cantik </font>
+
+115
+00:07:25,219 --> 00:07:31,939
+ buruk <font color="#E5E5E5">jadi mengapa ini bekerja baik-baik saja </font><font color="#CCCCCC">jadi mari </font>
+
+116
+00:07:31,939 --> 00:07:35,199
+ <font color="#E5E5E5">lihat daftar Pizza di sini </font>
+
+117
+00:07:35,199 --> 00:07:40,729
+ jadi sekali lagi saya menggunakan <font color="#E5E5E5">query MySQL lama </font>
+
+118
+00:07:40,729 --> 00:07:43,789
+ untuk mendapatkan hasil buruk ini dan ini 
+
+119
+00:07:43,789 --> 00:07:46,429
+ cara lain bagaimana melakukan ini <font color="#E5E5E5">karena ini </font>
+
+120
+00:07:46,429 --> 00:07:48,499
+ <font color="#E5E5E5">benar </font><font color="#CCCCCC">- </font><font color="#E5E5E5">benar buruk kita tidak </font><font color="#CCCCCC">memiliki persiapan </font>
+
+121
+00:07:48,499 --> 00:07:51,579
+ Pernyataan <font color="#CCCCCC">dan kita tidak </font><font color="#E5E5E5">memiliki </font>
+
+122
+00:07:51,579 --> 00:07:57,889
+ placeholder <font color="#CCCCCC">jadi apa yang kita lakukan di sini </font><font color="#E5E5E5">adalah get </font>
+
+123
+00:07:57,889 --> 00:08:00,469
+ semua <font color="#E5E5E5">entri pizza pilih bintang dari </font><font color="#CCCCCC">pizza </font>
+
+124
+00:08:00,469 --> 00:08:02,929
+ tidak <font color="#E5E5E5">ada yang disuntikkan karena di sana </font>
+
+125
+00:08:02,929 --> 00:08:05,569
+ tidak verbal seperti yang <font color="#E5E5E5">Anda lihat kami </font><font color="#CCCCCC">punya </font>
+
+126
+00:08:05,569 --> 00:08:09,619
+ variabel yang <font color="#E5E5E5">disebut </font><font color="#CCCCCC">jenis dan ini adalah </font>
+
+127
+00:08:09,619 --> 00:08:11,360
+ cookie jenis jadi kita <font color="#E5E5E5">menyimpan sesuatu dalam </font>
+
+128
+00:08:11,360 --> 00:08:17,719
+ cookie dan kita bisa melihat <font color="#E5E5E5">ini jika kita mengaturnya </font>
+
+129
+00:08:17,719 --> 00:08:26,960
+ jenis posting yang ini kemudian 
+
+130
+00:08:26,960 --> 00:08:30,800
+ dengan cookie baru itu dengan <font color="#E5E5E5">postingan dengan baik </font>
+
+131
+00:08:30,800 --> 00:08:36,320
+ Anda <font color="#CCCCCC">jenis Pizza </font><font color="#E5E5E5">selama 30 hari </font><font color="#CCCCCC">jadi kami akan </font>
+
+132
+00:08:36,320 --> 00:08:39,559
+ <font color="#E5E5E5">punya ini setiap kali kita </font><font color="#CCCCCC">masuk pesanan </font>
+
+133
+00:08:39,559 --> 00:08:42,020
+ halaman karena <font color="#E5E5E5">kami memiliki cookie di sini ditetapkan </font>
+
+134
+00:08:42,020 --> 00:08:50,089
+ untuk ini <font color="#CCCCCC">baik-baik saja begitu dan di dalam ini </font>
+
+135
+00:08:50,089 --> 00:08:53,600
+ jika cookie diatur, kita atur jenisnya 
+
+136
+00:08:53,600 --> 00:08:58,160
+ <font color="#CCCCCC">cookie </font><font color="#E5E5E5">dan cookie kami terlihat seperti </font>
+
+137
+00:08:58,160 --> 00:09:02,020
+ pernyataan ini <font color="#E5E5E5">dan ini adalah cookie kami </font>
+
+138
+00:09:02,020 --> 00:09:08,630
+ <font color="#E5E5E5">oke dan kami hanya mengatakan pilih jika kami </font>
+
+139
+00:09:08,630 --> 00:09:13,760
+ <font color="#E5E5E5">pilih vegetarian atau daging yang kita miliki </font>
+
+140
+00:09:13,760 --> 00:09:16,160
+ sesuatu <font color="#E5E5E5">untuk disuntikkan karena jika jenis </font>
+
+141
+00:09:16,160 --> 00:09:19,880
+ sama dengan <font color="#CCCCCC">satu kita memiliki sesuatu di </font><font color="#E5E5E5">sini </font>
+
+142
+00:09:19,880 --> 00:09:28,850
+ <font color="#E5E5E5">menyuntikkan baik-baik saja sehingga kami bisa mengatakan dan memeriksa </font>
+
+143
+00:09:28,850 --> 00:09:36,470
+ ketik dan jenis <font color="#E5E5E5">diatur ke Union pilih </font>
+
+144
+00:09:36,470 --> 00:09:39,500
+ <font color="#CCCCCC">1 2 3 4 5 dari pengguna dan masukkan pengguna </font>
+
+145
+00:09:39,500 --> 00:09:44,810
+ nama <font color="#E5E5E5">dan kata sandi pengguna jadi ini akan membuat </font>
+
+146
+00:09:44,810 --> 00:09:48,350
+ kueri di database <font color="#E5E5E5">dan untuk setiap </font>
+
+147
+00:09:48,350 --> 00:09:55,670
+ baris kami akan mencetak <font color="#CCCCCC">data ini dan sebagai </font>
+
+148
+00:09:55,670 --> 00:10:01,459
+ kita telah melihat dalam database yang kita dapatkan kembali 
+
+149
+00:10:01,459 --> 00:10:03,920
+ sesuatu <font color="#CCCCCC">seperti </font><font color="#E5E5E5">ini sehingga akan </font><font color="#CCCCCC">dicetak </font>
+
+150
+00:10:03,920 --> 00:10:07,730
+ setiap setiap <font color="#E5E5E5">baris sampai selesai </font>
+
+151
+00:10:07,730 --> 00:10:10,790
+ dan kami <font color="#E5E5E5">hanya memainkan ini untuk </font>
+
+152
+00:10:10,790 --> 00:10:17,810
+ pengguna <font color="#E5E5E5">jadi bagaimana kita bisa mengubah </font><font color="#CCCCCC">ini pada awalnya </font>
+
+153
+00:10:17,810 --> 00:10:25,130
+ <font color="#E5E5E5">singkirkan </font><font color="#CCCCCC">oh my SQL dan kami gunakan </font>
+
+154
+00:10:25,130 --> 00:10:27,850
+ <font color="#E5E5E5">PDO </font>
+
+155
+00:10:27,850 --> 00:10:32,200
+ jadi yang kami lakukan di <font color="#CCCCCC">sini adalah PDO </font>
+
+156
+00:10:32,200 --> 00:10:35,670
+ objek yang kami buat di handler saya <font color="#E5E5E5">dan </font>
+
+157
+00:10:35,670 --> 00:10:39,820
+ kami menyimpannya di <font color="#CCCCCC">TB </font><font color="#E5E5E5">oke dan kemudian kami </font>
+
+158
+00:10:39,820 --> 00:10:45,420
+ buat pernyataan siap untuk <font color="#CCCCCC">itu dan </font>
+
+159
+00:10:45,420 --> 00:10:49,660
+ ini hanya akan pra lulus <font color="#E5E5E5">dari </font>
+
+160
+00:10:49,660 --> 00:10:51,580
+ database <font color="#E5E5E5">dan database tahu caranya </font>
+
+161
+00:10:51,580 --> 00:10:54,700
+ <font color="#E5E5E5">pernyataan ini terlihat seperti semuanya </font>
+
+162
+00:10:54,700 --> 00:10:57,580
+ yang dimasukkan ke dalam placeholder ini 
+
+163
+00:10:57,580 --> 00:11:02,380
+ <font color="#CCCCCC">dengan usus besar akan diabaikan </font><font color="#E5E5E5">jika ada </font>
+
+164
+00:11:02,380 --> 00:11:06,670
+ adalah <font color="#E5E5E5">pernyataan SQL lain sehingga dieksekusi </font>
+
+165
+00:11:06,670 --> 00:11:13,890
+ ini dengan <font color="#E5E5E5">jenis kode placeholder dan </font>
+
+166
+00:11:13,890 --> 00:11:17,530
+ jika ada SQL <font color="#E5E5E5">di dalamnya itu </font><font color="#CCCCCC">hanya </font><font color="#E5E5E5">akan </font>
+
+167
+00:11:17,530 --> 00:11:22,260
+ parsing sebagai string <font color="#CCCCCC">dan </font><font color="#E5E5E5">bukan sebagai </font>
+
+168
+00:11:22,260 --> 00:11:25,960
+ <font color="#CCCCCC">pernyataan SQL yang berbeda jadi ini tidak akan </font>
+
+169
+00:11:25,960 --> 00:11:30,070
+ bekerja lagi <font color="#E5E5E5">jadi sekarang kita dapatkan kita akan mengambil </font>
+
+170
+00:11:30,070 --> 00:11:42,040
+ semua <font color="#E5E5E5">semua hasil </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">dan kami </font>
+
+171
+00:11:42,040 --> 00:11:46,180
+ katakan untuk <font color="#CCCCCC">setiap </font><font color="#E5E5E5">atau sementara atau </font><font color="#CCCCCC">pizza </font><font color="#E5E5E5">apa pun </font>
+
+172
+00:11:46,180 --> 00:11:50,650
+ <font color="#CCCCCC">adalah baris </font><font color="#E5E5E5">dan </font><font color="#CCCCCC">sepuluh yang kami dapatkan untuk setiap single </font>
+
+173
+00:11:50,650 --> 00:11:53,260
+ baris yang kami miliki di sini kami output <font color="#E5E5E5">kami </font>
+
+174
+00:11:53,260 --> 00:11:57,100
+ <font color="#E5E5E5">informasi jadi jika kami mencoba ini lagi </font><font color="#CCCCCC">Anda </font>
+
+175
+00:11:57,100 --> 00:12:02,230
+ lihat itu tidak berfungsi <font color="#CCCCCC">lagi jadi jika saya </font>
+
+176
+00:12:02,230 --> 00:12:05,200
+ ketik vegetarian <font color="#E5E5E5">itu akan menunjukkan kepada </font><font color="#CCCCCC">saya apa </font>
+
+177
+00:12:05,200 --> 00:12:07,450
+ <font color="#CCCCCC">Taran jika saya </font><font color="#E5E5E5">mengetikkan daging itu menunjukkan saya </font>
+
+178
+00:12:07,450 --> 00:12:10,150
+ daging jika saya mengetik di <font color="#E5E5E5">alt itu memberi saya semua </font>
+
+179
+00:12:10,150 --> 00:12:15,130
+ <font color="#E5E5E5">tetapi apa yang terjadi jika saya mencoba </font><font color="#CCCCCC">menyuntikkan saya </font>
+
+180
+00:12:15,130 --> 00:12:22,180
+ SQL lagi jadi kami menyalin ini lagi 
+
+181
+00:12:22,180 --> 00:12:27,670
+ <font color="#E5E5E5">dan kami memiliki </font><font color="#CCCCCC">pernyataan </font><font color="#E5E5E5">Union </font><font color="#CCCCCC">Select kami </font>
+
+182
+00:12:27,670 --> 00:12:31,000
+ <font color="#CCCCCC">di sini kita klik pada pilih </font><font color="#E5E5E5">dan tidak </font>
+
+183
+00:12:31,000 --> 00:12:33,700
+ bekerja <font color="#CCCCCC">jadi sekarang kita punya brankas </font>
+
+184
+00:12:33,700 --> 00:12:36,830
+ aplikasi di sini <font color="#E5E5E5">dan </font>
+
+185
+00:12:36,830 --> 00:12:39,110
+ Saya harap Anda menikmati video ini <font color="#E5E5E5">Anda </font>
+
+186
+00:12:39,110 --> 00:12:43,550
+ <font color="#CCCCCC">belajar banyak </font><font color="#E5E5E5">dan tentu saja jangan lupa </font>
+
+187
+00:12:43,550 --> 00:12:45,290
+ untuk <font color="#E5E5E5">memberi </font><font color="#CCCCCC">saya jempol untuk memukul </font>
+
+188
+00:12:45,290 --> 00:12:49,790
+ tombol berlangganan <font color="#E5E5E5">dan untuk membagikan video ini </font>
+
+189
+00:12:49,790 --> 00:12:52,850
+ di mana-mana di Internet <font color="#E5E5E5">jadi melihat Anda masuk </font>
+
+190
+00:12:52,850 --> 00:00:00,000
+ <font color="#E5E5E5">video berikutnya sampai jumpa </font>
+

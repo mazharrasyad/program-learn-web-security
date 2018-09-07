@@ -1,0 +1,344 @@
+1
+00:00:00,060 --> 00:00:02,129
+ Halo semuanya, <font color="#E5E5E5">mari kita bicarakan </font>
+
+2
+00:00:02,129 --> 00:00:05,009
+ XPath suntikan sehingga <font color="#CCCCCC">suntikan x5 adalah </font>
+
+3
+00:00:05,009 --> 00:00:08,970
+ mirip dengan <font color="#E5E5E5">injeksi SQL sehingga dalam SQL </font>
+
+4
+00:00:08,970 --> 00:00:11,370
+ <font color="#CCCCCC">input yang disediakan pengguna injeksi menjadi a </font>
+
+5
+00:00:11,370 --> 00:00:12,570
+ <font color="#E5E5E5">bagian dari </font><font color="#CCCCCC">kueri SQL </font>
+
+6
+00:00:12,570 --> 00:00:15,660
+ <font color="#CCCCCC">sedangkan pada pengguna injeksi XPath disediakan </font>
+
+7
+00:00:15,660 --> 00:00:19,590
+ <font color="#CCCCCC">input menjadi </font><font color="#E5E5E5">jalur query XPath begitu </font>
+
+8
+00:00:19,590 --> 00:00:22,170
+ jika pengguna akan memberikan <font color="#E5E5E5">format yang salah </font>
+
+9
+00:00:22,170 --> 00:00:25,019
+ masukan maka yang dapat mengakibatkan <font color="#CCCCCC">menjadi </font><font color="#E5E5E5">akses </font>
+
+10
+00:00:25,019 --> 00:00:28,650
+ isi file yang dibatasi jadi mari kita lihat 
+
+11
+00:00:28,650 --> 00:00:32,040
+ bagaimana cara kerja injeksi XPath <font color="#E5E5E5">sekarang mari kita lihat </font>
+
+12
+00:00:32,040 --> 00:00:35,399
+ bagaimana injeksi XPath berfungsi <font color="#E5E5E5">demikian untuk </font>
+
+13
+00:00:35,399 --> 00:00:39,030
+ uji XPath injection yang harus kita <font color="#CCCCCC">unduh </font>
+
+14
+00:00:39,030 --> 00:00:41,430
+ ini satu lagi <font color="#E5E5E5">tidak pernah aplikasi web </font>
+
+15
+00:00:41,430 --> 00:00:42,960
+ yang merupakan <font color="#E5E5E5">web yang </font><font color="#CCCCCC">sangat rentan </font>
+
+16
+00:00:42,960 --> 00:00:46,020
+ <font color="#E5E5E5">aplikasi xvw sehingga Anda dapat mengunduh </font>
+
+17
+00:00:46,020 --> 00:00:48,750
+ aplikasi ini <font color="#E5E5E5">dari tautan ini </font><font color="#CCCCCC">jadi sekali </font>
+
+18
+00:00:48,750 --> 00:00:50,879
+ Anda mengunduh <font color="#CCCCCC">aplikasi yang Anda miliki </font>
+
+19
+00:00:50,879 --> 00:00:53,370
+ <font color="#CCCCCC">untuk </font><font color="#E5E5E5">mengekstrak file dan kemudian Anda </font><font color="#CCCCCC">bisa </font>
+
+20
+00:00:53,370 --> 00:00:56,070
+ host aplikasi ini di localhost Anda 
+
+21
+00:00:56,070 --> 00:00:59,010
+ server Kali Linux <font color="#E5E5E5">jadi di sini Anda dapat melihat </font>
+
+22
+00:00:59,010 --> 00:01:00,660
+ <font color="#E5E5E5">bahwa saya sudah menyelenggarakan ini </font>
+
+23
+00:01:00,660 --> 00:01:02,399
+ aplikasi pada <font color="#CCCCCC">server o lokal saya dan </font>
+
+24
+00:01:02,399 --> 00:01:05,430
+ terserah dan <font color="#E5E5E5">berjalan jadi begini caranya </font>
+
+25
+00:01:05,430 --> 00:01:07,799
+ <font color="#CCCCCC">aplikasi seperti aplikasi ini </font>
+
+26
+00:01:07,799 --> 00:01:09,450
+ juga mengandung <font color="#E5E5E5">berbagai jenis </font>
+
+27
+00:01:09,450 --> 00:01:11,790
+ <font color="#CCCCCC">kerentanan yang dapat Anda uji </font><font color="#E5E5E5">tetapi </font>
+
+28
+00:01:11,790 --> 00:01:13,950
+ untuk saat <font color="#E5E5E5">ini kami tertarik </font>
+
+29
+00:01:13,950 --> 00:01:19,380
+ hanya <font color="#E5E5E5">di XPath jadi inilah tautannya </font>
+
+30
+00:01:19,380 --> 00:01:22,979
+ <font color="#CCCCCC">halaman itu X Box injection mari kita buka </font>
+
+31
+00:01:22,979 --> 00:01:28,020
+ halaman ini jadi di sini <font color="#CCCCCC">Anda dapat melihat pencarian </font>
+
+32
+00:01:28,020 --> 00:01:30,060
+ bar dan di sini ada <font color="#E5E5E5">tertulis pencarian Anda </font>
+
+33
+00:01:30,060 --> 00:01:33,479
+ kopi <font color="#E5E5E5">jadi mari kita hapus yang sebelumnya </font>
+
+34
+00:01:33,479 --> 00:01:37,729
+ masukan jadi di sini disebutkan <font color="#E5E5E5">pencarian berdasarkan ID </font>
+
+35
+00:01:37,729 --> 00:01:41,400
+ jadi hanya misalnya <font color="#CCCCCC">mari </font><font color="#E5E5E5">tekan enter </font><font color="#CCCCCC">disini </font>
+
+36
+00:01:41,400 --> 00:01:44,189
+ <font color="#CCCCCC">satu jadi di sini Anda dapat melihat bahwa itu </font>
+
+37
+00:01:44,189 --> 00:01:49,770
+ ditampilkan <font color="#E5E5E5">item ID-nya </font><font color="#CCCCCC">jadi jika </font>
+
+38
+00:01:49,770 --> 00:01:53,159
+ kami <font color="#E5E5E5">mengubah ID mari kita mengubahnya </font>
+
+39
+00:01:53,159 --> 00:01:55,860
+ <font color="#CCCCCC">tiga jadi di </font><font color="#E5E5E5">mana Anda dapat melihat bahwa itu </font>
+
+40
+00:01:55,860 --> 00:02:00,899
+ menampilkan <font color="#E5E5E5">item 3 yang memiliki ID 3 sekarang </font>
+
+41
+00:02:00,899 --> 00:02:03,119
+ <font color="#E5E5E5">seperti yang saya katakan </font><font color="#CCCCCC">sebelumnya bahwa XPath </font>
+
+42
+00:02:03,119 --> 00:02:04,890
+ injeksi <font color="#E5E5E5">sekuel injeksi LDAP </font>
+
+43
+00:02:04,890 --> 00:02:06,600
+ injeksi <font color="#CCCCCC">semua jenis </font><font color="#E5E5E5">injeksi </font>
+
+44
+00:02:06,600 --> 00:02:11,340
+ entah bagaimana sama tetapi bukannya <font color="#E5E5E5">mengeksekusi </font>
+
+45
+00:02:11,340 --> 00:02:13,380
+ permintaan sekuel di bagian belakang <font color="#E5E5E5">apa </font>
+
+46
+00:02:13,380 --> 00:02:16,380
+ <font color="#CCCCCC">Exim XPath ini benar-benar menerima </font>
+
+47
+00:02:16,380 --> 00:02:17,940
+ <font color="#CCCCCC">masukan dari pengguna yang kita </font>
+
+48
+00:02:17,940 --> 00:02:20,400
+ hanya <font color="#E5E5E5">memberi jadi dibutuhkan input pengguna </font>
+
+49
+00:02:20,400 --> 00:02:25,010
+ <font color="#E5E5E5">dan membentuk </font><font color="#CCCCCC">curie </font><font color="#E5E5E5">XML di </font><font color="#CCCCCC">backend jadi </font>
+
+50
+00:02:25,010 --> 00:02:27,570
+ ketika input pengguna <font color="#E5E5E5">tidak disterilkan </font>
+
+51
+00:02:27,570 --> 00:02:30,120
+ benar <font color="#CCCCCC">apa yang </font><font color="#E5E5E5">jahat bisa jahat </font>
+
+52
+00:02:30,120 --> 00:02:32,430
+ penyerang dapat melakukan mereka benar-benar <font color="#E5E5E5">mengirim </font>
+
+53
+00:02:32,430 --> 00:02:34,230
+ <font color="#E5E5E5">Curie berbahaya dan dengan bantuan </font>
+
+54
+00:02:34,230 --> 00:02:37,380
+ <font color="#CCCCCC">curie itu </font><font color="#E5E5E5">kita bisa menampilkan semuanya </font>
+
+55
+00:02:37,380 --> 00:02:45,420
+ <font color="#E5E5E5">data XML di sini sekarang mari kita coba baca </font>
+
+56
+00:02:45,420 --> 00:02:55,560
+ sumber halaman <font color="#E5E5E5">dari tantangan ini sekarang </font>
+
+57
+00:02:55,560 --> 00:02:57,390
+ mari kita lihat <font color="#E5E5E5">sumber halaman </font>
+
+58
+00:02:57,390 --> 00:02:59,850
+ tantangan ini <font color="#E5E5E5">jadi di sini </font><font color="#CCCCCC">Anda dapat melihat itu </font>
+
+59
+00:02:59,850 --> 00:03:03,140
+ saat ini <font color="#CCCCCC">saya berada </font><font color="#E5E5E5">di dalam jalur dan </font>
+
+60
+00:03:03,140 --> 00:03:06,780
+ jika saya melakukan <font color="#E5E5E5">LS di sini adalah file home dot PHP </font>
+
+61
+00:03:06,780 --> 00:03:09,090
+ yang bertanggung jawab <font color="#CCCCCC">untuk mengambil kami </font>
+
+62
+00:03:09,090 --> 00:03:14,030
+ masukan jadi mari kita lihat apa yang ada di dalam <font color="#E5E5E5">file </font><font color="#CCCCCC">ini </font>
+
+63
+00:03:14,120 --> 00:03:17,040
+ jadi di <font color="#E5E5E5">sini Anda bisa melihat itu file PHP dan </font>
+
+64
+00:03:17,040 --> 00:03:20,910
+ jika saya gulir ke bawah di <font color="#CCCCCC">sini adalah QT </font><font color="#E5E5E5">XPath </font><font color="#CCCCCC">kami </font>
+
+65
+00:03:20,910 --> 00:03:24,360
+ yang dapat Anda lihat ini adalah kueri XPath 
+
+66
+00:03:24,360 --> 00:03:28,890
+ dan <font color="#E5E5E5">masukan apa pun yang diberikan oleh pengguna </font>
+
+67
+00:03:28,890 --> 00:03:32,100
+ <font color="#E5E5E5">hanya </font><font color="#CCCCCC">ditempatkan di sini dan curie </font>
+
+68
+00:03:32,100 --> 00:03:34,800
+ menjadi <font color="#CCCCCC">kopi slash dan kopi slash </font>
+
+69
+00:03:34,800 --> 00:03:39,000
+ <font color="#CCCCCC">ids input pengguna </font><font color="#E5E5E5">jadi jika input ini </font>
+
+70
+00:03:39,000 --> 00:03:43,410
+ <font color="#CCCCCC">tidak dibersihkan dengan benar maka pengguna dapat </font>
+
+71
+00:03:43,410 --> 00:03:47,820
+ dapat <font color="#CCCCCC">mengambil semua data XML sekarang </font>
+
+72
+00:03:47,820 --> 00:03:51,450
+ mari kita <font color="#CCCCCC">kembali ke </font><font color="#E5E5E5">tantangan </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">dan biarkan </font>
+
+73
+00:03:51,450 --> 00:03:53,760
+ <font color="#E5E5E5">kami mencoba menambahkan di sini </font><font color="#CCCCCC">suntikan sekuel </font>
+
+74
+00:03:53,760 --> 00:03:58,500
+ payload yang kami gunakan untuk <font color="#CCCCCC">melewati </font><font color="#E5E5E5">login </font>
+
+75
+00:03:58,500 --> 00:04:09,360
+ halaman <font color="#E5E5E5">jadi itu atau sama dengan </font><font color="#CCCCCC">1 sekarang jika kita </font>
+
+76
+00:04:09,360 --> 00:04:11,850
+ <font color="#CCCCCC">klik saja pada pencarian </font><font color="#E5E5E5">Anda akan </font><font color="#CCCCCC">melihat itu </font>
+
+77
+00:04:11,850 --> 00:04:14,550
+ kami <font color="#E5E5E5">dapat mengambil semua data semua </font>
+
+78
+00:04:14,550 --> 00:04:19,340
+ <font color="#CCCCCC">data XML di sini di depan </font><font color="#E5E5E5">kita </font>
+
+79
+00:04:22,840 --> 00:04:25,669
+ jadi ini adalah cara <font color="#E5E5E5">kerja injeksi XPath </font>
+
+80
+00:04:25,669 --> 00:04:28,250
+ <font color="#E5E5E5">dengan sedikit perbedaan bahwa </font><font color="#CCCCCC">alih-alih </font>
+
+81
+00:04:28,250 --> 00:04:30,320
+ <font color="#E5E5E5">membentuk </font><font color="#CCCCCC">kueri </font><font color="#E5E5E5">sekuel saya membentuk </font>
+
+82
+00:04:30,320 --> 00:04:34,479
+ <font color="#E5E5E5">Kueri XPath dan mengambil data XML </font>
+
+83
+00:04:34,479 --> 00:04:36,889
+ <font color="#E5E5E5">jadi dalam video ini kita telah membahasnya </font>
+
+84
+00:04:36,889 --> 00:04:39,410
+ apa itu XPath injection dan bagaimana XPath 
+
+85
+00:04:39,410 --> 00:04:41,479
+ karya injeksi <font color="#E5E5E5">terima kasih untuk menonton ini </font>
+
+86
+00:04:41,479 --> 00:00:00,000
+ video 
+

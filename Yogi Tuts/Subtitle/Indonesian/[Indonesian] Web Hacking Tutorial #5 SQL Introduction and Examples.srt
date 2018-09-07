@@ -1,0 +1,312 @@
+1
+00:00:00,060 --> 00:00:02,909
+ <font color="#E5E5E5">oke jadi selamat datang </font><font color="#CCCCCC">kembali </font><font color="#E5E5E5">di video ini </font><font color="#CCCCCC">saya </font>
+
+2
+00:00:02,909 --> 00:00:04,650
+ akan <font color="#E5E5E5">mengajarkan </font><font color="#CCCCCC">Anda pemahaman dasar </font>
+
+3
+00:00:04,650 --> 00:00:08,550
+ sekuel injeksi <font color="#CCCCCC">lanjutan adalah singkatan </font>
+
+4
+00:00:08,550 --> 00:00:11,160
+ bahasa query terstruktur dan <font color="#CCCCCC">itu </font>
+
+5
+00:00:11,160 --> 00:00:14,730
+ <font color="#E5E5E5">bahasa yang digunakan untuk </font><font color="#CCCCCC">manajemen </font><font color="#E5E5E5">basis data di </font>
+
+6
+00:00:14,730 --> 00:00:18,060
+ sekuel pendek memberitahu <font color="#CCCCCC">database apa yang harus dilakukan </font>
+
+7
+00:00:18,060 --> 00:00:20,580
+ jadi sebelum kita <font color="#CCCCCC">mulai jika kamu tahu apa </font>
+
+8
+00:00:20,580 --> 00:00:23,779
+ injeksi sekuel <font color="#E5E5E5">dan database </font>
+
+9
+00:00:23,779 --> 00:00:26,369
+ injeksi sekuel <font color="#E5E5E5">adalah salah satu yang paling banyak </font>
+
+10
+00:00:26,369 --> 00:00:29,189
+ teknik hacking web yang umum digunakan untuk 
+
+11
+00:00:29,189 --> 00:00:32,759
+ <font color="#E5E5E5">mengakses database </font><font color="#CCCCCC">situs web dan </font>
+
+12
+00:00:32,759 --> 00:00:35,010
+ penyerang bisa mendapatkan semua detail <font color="#CCCCCC">dari </font>
+
+13
+00:00:35,010 --> 00:00:39,210
+ <font color="#E5E5E5">database dengan mengakses data yang </font><font color="#CCCCCC">melewati </font>
+
+14
+00:00:39,210 --> 00:00:42,140
+ login atau matikan <font color="#CCCCCC">server sekuel </font>
+
+15
+00:00:42,140 --> 00:00:45,829
+ sekarang mari kita pahami apa itu database 
+
+16
+00:00:45,829 --> 00:00:49,050
+ database pada dasarnya <font color="#E5E5E5">adalah struktur </font>
+
+17
+00:00:49,050 --> 00:00:52,260
+ tabel di <font color="#E5E5E5">mana setiap tabel berisi pengguna </font>
+
+18
+00:00:52,260 --> 00:00:57,050
+ <font color="#E5E5E5">IDs rincian halaman web dan banyak lagi </font>
+
+19
+00:00:57,050 --> 00:01:00,629
+ jadi saya akan <font color="#E5E5E5">beralih ke komputer saya dan menunjukkan </font>
+
+20
+00:01:00,629 --> 00:01:03,960
+ Anda bagaimana <font color="#CCCCCC">database terlihat dengan pergi </font>
+
+21
+00:01:03,960 --> 00:01:07,890
+ <font color="#E5E5E5">untuk satu dua </font><font color="#CCCCCC">tujuh nol nol </font><font color="#E5E5E5">satu memangkas PHP </font>
+
+22
+00:01:07,890 --> 00:01:11,820
+ <font color="#E5E5E5">admin saya ' </font><font color="#CCCCCC">saya lupa menyebutkan </font><font color="#E5E5E5">soal itu </font>
+
+23
+00:01:11,820 --> 00:01:14,610
+ <font color="#E5E5E5">juga dilengkapi dengan PHP myadmin </font>
+
+24
+00:01:14,610 --> 00:01:18,170
+ yang merupakan <font color="#E5E5E5">alat manajemen basis data dan </font>
+
+25
+00:01:18,170 --> 00:01:21,920
+ di sebelah kiri Anda <font color="#CCCCCC">dapat </font><font color="#E5E5E5">melihat </font><font color="#CCCCCC">beberapa basis data </font>
+
+26
+00:01:21,920 --> 00:01:25,200
+ <font color="#E5E5E5">misalnya </font><font color="#CCCCCC">saya akan </font><font color="#E5E5E5">memilih </font><font color="#CCCCCC">NOAA </font>
+
+27
+00:01:25,200 --> 00:01:28,979
+ database tapi tolong <font color="#E5E5E5">ingat saya tidak </font>
+
+28
+00:01:28,979 --> 00:01:32,280
+ <font color="#E5E5E5">peretasan apa pun dalam tutorial </font><font color="#CCCCCC">ini ini </font>
+
+29
+00:01:32,280 --> 00:01:33,930
+ <font color="#E5E5E5">hanya untuk memberi Anda dasar </font>
+
+30
+00:01:33,930 --> 00:01:36,960
+ pemahaman <font color="#E5E5E5">untuk melihat cara kerja database </font>
+
+31
+00:01:36,960 --> 00:01:41,159
+ <font color="#E5E5E5">di belakang layar </font><font color="#CCCCCC">seperti yang Anda lihat di sini kita </font>
+
+32
+00:01:41,159 --> 00:01:44,189
+ memiliki <font color="#CCCCCC">semua tabel untuk memilih </font><font color="#E5E5E5">meja </font>
+
+33
+00:01:44,189 --> 00:01:46,619
+ cukup klik salah satu yang <font color="#CCCCCC">ingin Anda </font><font color="#E5E5E5">ambil </font>
+
+34
+00:01:46,619 --> 00:01:49,860
+ informasi <font color="#E5E5E5">dalam kasus saya saya </font><font color="#CCCCCC">akan </font>
+
+35
+00:01:49,860 --> 00:01:52,680
+ pilih akun dan Anda dapat melihat 
+
+36
+00:01:52,680 --> 00:01:55,530
+ <font color="#E5E5E5">nama pengguna dan </font><font color="#CCCCCC">kata sandi untuk </font><font color="#E5E5E5">semua </font>
+
+37
+00:01:55,530 --> 00:01:58,890
+ akun di database <font color="#E5E5E5">yang dapat Anda edit </font>
+
+38
+00:01:58,890 --> 00:02:01,530
+ ubah hak <font color="#E5E5E5">atau hapus yang spesifik </font>
+
+39
+00:02:01,530 --> 00:02:05,369
+ <font color="#CCCCCC">akun sekarang mari belajar beberapa dasar </font>
+
+40
+00:02:05,369 --> 00:02:09,840
+ pertanyaan untuk sekuel <font color="#E5E5E5">jadi lanjutkan dan klik </font>
+
+41
+00:02:09,840 --> 00:02:13,430
+ sekuel di sini dan mari kita ambil 
+
+42
+00:02:13,430 --> 00:02:16,280
+ data dari <font color="#E5E5E5">tabel menggunakan pilih </font>
+
+43
+00:02:16,280 --> 00:02:21,310
+ pernyataan <font color="#E5E5E5">begitu ketik pilih Asterix </font><font color="#CCCCCC">dari </font>
+
+44
+00:02:21,310 --> 00:02:24,349
+ yang berarti <font color="#E5E5E5">semuanya dari meja </font>
+
+45
+00:02:24,349 --> 00:02:28,370
+ dan <font color="#CCCCCC">nama </font><font color="#E5E5E5">tabel dan cara Anda </font><font color="#CCCCCC">mengakhiri </font>
+
+46
+00:02:28,370 --> 00:02:31,010
+ permintaan sekuel adalah dengan meletakkan 
+
+47
+00:02:31,010 --> 00:02:34,819
+ <font color="#CCCCCC">titik koma </font><font color="#E5E5E5">dan mari kita pergi ke depan dan mengeksekusi </font>
+
+48
+00:02:34,819 --> 00:02:39,079
+ kueri dengan menekan <font color="#E5E5E5">ctrl + Enter </font><font color="#CCCCCC">dan </font>
+
+49
+00:02:39,079 --> 00:02:42,549
+ <font color="#CCCCCC">Anda dapat melihat semua </font><font color="#E5E5E5">data dari </font><font color="#CCCCCC">tabel </font>
+
+50
+00:02:42,549 --> 00:02:45,620
+ <font color="#E5E5E5">katakanlah Anda ingin memeriksa siapa yang admin </font>
+
+51
+00:02:45,620 --> 00:02:48,319
+ dari akun untuk itu Anda perlu <font color="#CCCCCC">mengetik </font>
+
+52
+00:02:48,319 --> 00:02:51,939
+ pilih <font color="#CCCCCC">nama pengguna </font><font color="#E5E5E5">koma </font><font color="#CCCCCC">adalah admin dari </font>
+
+53
+00:02:51,939 --> 00:02:56,239
+ akun dan nama pengguna yang kami <font color="#E5E5E5">miliki </font>
+
+54
+00:02:56,239 --> 00:02:57,680
+ <font color="#CCCCCC">hak admin </font>
+
+55
+00:02:57,680 --> 00:03:01,519
+ kueri sekuel penting lainnya <font color="#E5E5E5">adalah di mana </font>
+
+56
+00:03:01,519 --> 00:03:04,430
+ <font color="#E5E5E5">pernyataan misalnya bayangkan jika Anda </font>
+
+57
+00:03:04,430 --> 00:03:07,219
+ ingin mendapatkan semua pengguna yang memiliki hal yang <font color="#E5E5E5">sama </font>
+
+58
+00:03:07,219 --> 00:03:10,090
+ kata sandi <font color="#CCCCCC">Anda dapat menggunakan pernyataan di mana </font>
+
+59
+00:03:10,090 --> 00:03:14,810
+ <font color="#CCCCCC">dengan mengetikkan </font><font color="#E5E5E5">kata sandi nama pengguna dari </font>
+
+60
+00:03:14,810 --> 00:03:18,769
+ akun di mana kata sandi kata sandi sama 
+
+61
+00:03:18,769 --> 00:03:22,790
+ dan jika Anda mengeksekusi <font color="#CCCCCC">permintaan, </font><font color="#E5E5E5">Anda akan melakukannya </font>
+
+62
+00:03:22,790 --> 00:03:25,959
+ lihat <font color="#CCCCCC">nama pengguna dengan kata sandi yang sama </font>
+
+63
+00:03:25,959 --> 00:03:28,340
+ <font color="#CCCCCC">tetapi untuk </font><font color="#E5E5E5">itu Anda </font><font color="#CCCCCC">perlu tahu </font>
+
+64
+00:03:28,340 --> 00:03:31,340
+ kata sandi <font color="#CCCCCC">sekarang, katakanlah Anda memiliki </font>
+
+65
+00:03:31,340 --> 00:03:34,609
+ akun dengan <font color="#CCCCCC">nama pengguna John dan kata sandi </font>
+
+66
+00:03:34,609 --> 00:03:38,389
+ adalah kata sandi <font color="#CCCCCC">jadi ketika Anda mencoba masuk ke </font>
+
+67
+00:03:38,389 --> 00:03:39,139
+ sebuah situs 
+
+68
+00:03:39,139 --> 00:03:42,639
+ sintaks sekuel <font color="#E5E5E5">akan seperti ini </font>
+
+69
+00:03:42,639 --> 00:03:47,840
+ <font color="#E5E5E5">pilih kata sandi koma </font><font color="#CCCCCC">nama pengguna </font><font color="#E5E5E5">dari tabel </font>
+
+70
+00:03:47,840 --> 00:03:51,790
+ nama <font color="#E5E5E5">tempat nama pengguna memiliki dan </font>
+
+71
+00:03:51,790 --> 00:03:56,180
+ kata sandi yang <font color="#E5E5E5">sama dengan kata sandi jika nama pengguna </font>
+
+72
+00:03:56,180 --> 00:03:59,689
+ <font color="#E5E5E5">dan kata sandi </font><font color="#CCCCCC">benar </font><font color="#E5E5E5">maka Anda akan </font>
+
+73
+00:03:59,689 --> 00:04:03,590
+ berhasil masuk <font color="#CCCCCC">ok jadi sekarang saya percaya </font>
+
+74
+00:04:03,590 --> 00:04:05,870
+ <font color="#CCCCCC">bahwa </font><font color="#E5E5E5">Anda </font><font color="#CCCCCC">memiliki </font><font color="#E5E5E5">pemahaman dasar </font>
+
+75
+00:04:05,870 --> 00:04:10,189
+ <font color="#E5E5E5">database sekuel jadi itu untuk saat ini </font>
+
+76
+00:04:10,189 --> 00:04:13,310
+ terima kasih <font color="#CCCCCC">telah menonton dan saya akan melihat Anda </font>
+
+77
+00:04:13,310 --> 00:04:15,699
+ lain <font color="#E5E5E5">kali </font>
+
+78
+00:04:22,180 --> 00:00:00,000
+ kamu 
+

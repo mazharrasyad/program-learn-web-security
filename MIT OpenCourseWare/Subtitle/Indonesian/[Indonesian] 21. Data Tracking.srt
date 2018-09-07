@@ -1,0 +1,6756 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,050
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,050 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,690
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,690 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,310
+ di ocw.mit.edu. 
+
+9
+00:00:17,310 --> 00:00:25,732
+
+
+10
+00:00:25,732 --> 00:00:28,210
+ PROFESOR: Baiklah, mari kita mulai. 
+
+11
+00:00:28,210 --> 00:00:29,820
+ Terima kasih sudah datang ke tempat ini 
+
+12
+00:00:29,820 --> 00:00:32,619
+ kuliah khusus pra-Thanksgiving. 
+
+13
+00:00:32,619 --> 00:00:35,570
+ Aku senang kalian memiliki pengabdian seperti itu terhadap keamanan, 
+
+14
+00:00:35,570 --> 00:00:37,790
+ Saya yakin Anda akan mendapat imbalan di pasar kerja 
+
+15
+00:00:37,790 --> 00:00:38,373
+ dalam beberapa kasus. 
+
+16
+00:00:38,373 --> 00:00:40,340
+ Jangan ragu untuk mencantumkan saya sebagai rekomendasi. 
+
+17
+00:00:40,340 --> 00:00:42,877
+ Jadi hari ini kita akan berbicara tentang pelacakan noda, 
+
+18
+00:00:42,877 --> 00:00:45,210
+ dan khususnya kita akan melihat sistem yang disebut 
+
+19
+00:00:45,210 --> 00:00:47,950
+ TaintDroid yang melihat cara melakukan jenis informasi ini 
+
+20
+00:00:47,950 --> 00:00:51,930
+ analisis aliran dalam konteks smartphone Android. 
+
+21
+00:00:51,930 --> 00:00:54,970
+ Dan masalah dasar yang berhubungan dengan kertas 
+
+22
+00:00:54,970 --> 00:00:57,190
+ apakah ini fakta bahwa aplikasi dapat mengeksfiltrasi data. 
+
+23
+00:00:57,190 --> 00:00:58,940
+ Jadi ide dasarnya adalah ponsel Anda 
+
+24
+00:00:58,940 --> 00:01:01,670
+ mengandung banyak informasi sensitif, benar. 
+
+25
+00:01:01,670 --> 00:01:05,060
+ Ini berisi daftar kontak Anda dan nomor telepon Anda 
+
+26
+00:01:05,060 --> 00:01:06,920
+ dan email Anda dan semua hal semacam itu. 
+
+27
+00:01:06,920 --> 00:01:12,070
+ Jadi jika sistem operasi atau telepon itu sendiri tidak hati-hati, 
+
+28
+00:01:12,070 --> 00:01:14,550
+ maka aplikasi jahat mungkin bisa diambil 
+
+29
+00:01:14,550 --> 00:01:17,030
+ beberapa informasi itu dan mengirimkannya kembali 
+
+30
+00:01:17,030 --> 00:01:19,337
+ ke server rumahnya, dan server itu 
+
+31
+00:01:19,337 --> 00:01:21,170
+ dapat menggunakannya untuk semua jenis hal jahat 
+
+32
+00:01:21,170 --> 00:01:23,810
+ seperti yang akan kita bicarakan nanti. 
+
+33
+00:01:23,810 --> 00:01:29,900
+ Solusi tingkat tinggi yang disarankan oleh TaintDroid 
+
+34
+00:01:29,900 --> 00:01:35,320
+ adalah bahwa pada dasarnya kita harus melacak data sensitif seperti itu 
+
+35
+00:01:35,320 --> 00:01:37,940
+ mengalir melalui sistem, dan pada dasarnya, kita 
+
+36
+00:01:37,940 --> 00:01:42,754
+ harus menghentikannya melalui jaringan. 
+
+37
+00:01:42,754 --> 00:01:44,170
+ Dengan kata lain, kita harus menghentikannya 
+
+38
+00:01:44,170 --> 00:01:50,380
+ dari dilewatkan sebagai argumen untuk panggilan sistem jaringan. 
+
+39
+00:01:50,380 --> 00:01:54,260
+
+
+40
+00:01:54,260 --> 00:01:56,400
+ Dan mungkin, jika kita bisa melakukan itu, 
+
+41
+00:01:56,400 --> 00:01:59,230
+ maka kita pada dasarnya dapat menghentikan kebocoran tepat pada saat ini 
+
+42
+00:01:59,230 --> 00:02:00,940
+ bahwa itu akan terjadi. 
+
+43
+00:02:00,940 --> 00:02:02,660
+ Jadi Anda mungkin berpikir untuk diri sendiri, jadi mengapa 
+
+44
+00:02:02,660 --> 00:02:05,470
+ adalah izin Android tradisional 
+
+45
+00:02:05,470 --> 00:02:09,770
+ tidak cukup untuk menghentikan jenis-jenis eksfiltrasi data ini? 
+
+46
+00:02:09,770 --> 00:02:12,660
+ Dan alasannya adalah bahwa izin ini tidak benar-benar 
+
+47
+00:02:12,660 --> 00:02:15,452
+ memiliki tata bahasa yang tepat untuk berbicara tentang jenis serangan 
+
+48
+00:02:15,452 --> 00:02:16,660
+ yang kami coba cegah. 
+
+49
+00:02:16,660 --> 00:02:18,493
+ Jadi, banyak kali izin Android ini, 
+
+50
+00:02:18,493 --> 00:02:21,400
+ mereka berurusan dengan hal-hal ini seperti dapat aplikasi 
+
+51
+00:02:21,400 --> 00:02:23,550
+ baca atau tulis ke perangkat tertentu. 
+
+52
+00:02:23,550 --> 00:02:24,940
+ Tapi kita sedang membicarakan sesuatu 
+
+53
+00:02:24,940 --> 00:02:27,570
+ pada semacam tingkat semantik yang berbeda. 
+
+54
+00:02:27,570 --> 00:02:30,620
+ Kami mengatakan bahkan jika aplikasi telah diberikan 
+
+55
+00:02:30,620 --> 00:02:33,330
+ wewenang untuk membaca atau menulis perangkat tertentu, 
+
+56
+00:02:33,330 --> 00:02:35,830
+ seperti jaringan, misalnya, masih 
+
+57
+00:02:35,830 --> 00:02:40,100
+ mungkin tidak baik untuk membiarkan aplikasi itu membaca atau menulis 
+
+58
+00:02:40,100 --> 00:02:43,000
+ data sensitif tertentu di atas perangkat yang padanya 
+
+59
+00:02:43,000 --> 00:02:44,890
+ memiliki izin. 
+
+60
+00:02:44,890 --> 00:02:48,060
+ Dengan kata lain, menggunakan keamanan Android tradisional ini 
+
+61
+00:02:48,060 --> 00:02:49,690
+ kebijakan, sulit untuk berbicara 
+
+62
+00:02:49,690 --> 00:02:51,997
+ tentang jenis data tertentu. 
+
+63
+00:02:51,997 --> 00:02:54,580
+ Jauh lebih mudah untuk berbicara tentang apakah suatu aplikasi mengakses 
+
+64
+00:02:54,580 --> 00:02:55,620
+ perangkat atau tidak. 
+
+65
+00:02:55,620 --> 00:03:00,490
+ Jadi Anda mungkin berpikir, oke, jadi itu agak mengecewakan, 
+
+66
+00:03:00,490 --> 00:03:02,870
+ tapi mungkin kita bisa menyelesaikan masalah ini 
+
+67
+00:03:02,870 --> 00:03:07,015
+ oleh-- kami memiliki solusi alternatif ini, jadi kita akan 
+
+68
+00:03:07,015 --> 00:03:08,600
+ sebut bintang solusi ini. 
+
+69
+00:03:08,600 --> 00:03:11,410
+ Jadi mungkin kita tidak bisa menginstal 
+
+70
+00:03:11,410 --> 00:03:21,410
+ aplikasi yang dapat melakukan pembacaan data sensitif 
+
+71
+00:03:21,410 --> 00:03:24,690
+ dan juga memiliki akses jaringan. 
+
+72
+00:03:24,690 --> 00:03:27,660
+
+
+73
+00:03:27,660 --> 00:03:29,890
+ Pada pandangan pertama, itu tampaknya memecahkan masalah. 
+
+74
+00:03:29,890 --> 00:03:31,430
+ Karena jika tidak dapat melakukan kedua hal ini, 
+
+75
+00:03:31,430 --> 00:03:33,138
+ itu tidak bisa sampai ke data sensitif 
+
+76
+00:03:33,138 --> 00:03:35,879
+ di tempat pertama, atau bisa, tetapi tidak dapat mengirimnya ke mana pun. 
+
+77
+00:03:35,879 --> 00:03:38,170
+ Jadi apakah ada yang punya ide di mana ini mungkin tidak 
+
+78
+00:03:38,170 --> 00:03:39,336
+ akan berhasil dengan baik? 
+
+79
+00:03:39,336 --> 00:03:42,252
+
+
+80
+00:03:42,252 --> 00:03:43,960
+ Semua orang sudah memikirkan tentang kalkun. 
+
+81
+00:03:43,960 --> 00:03:46,760
+ Aku bisa melihat di matamu. 
+
+82
+00:03:46,760 --> 00:03:50,500
+ Alasan utama mengapa ini mungkin ide yang buruk 
+
+83
+00:03:50,500 --> 00:03:57,220
+ adalah bahwa ini akan merusak banyak aplikasi yang sah. 
+
+84
+00:03:57,220 --> 00:03:59,950
+
+
+85
+00:03:59,950 --> 00:04:02,234
+ Jadi Anda dapat membayangkan bahwa ada banyak program, 
+
+86
+00:04:02,234 --> 00:04:03,650
+ seperti mungkin klien atau hal email 
+
+87
+00:04:03,650 --> 00:04:07,550
+ seperti itu, yang seharusnya benar-benar memiliki kemampuan, mungkin, 
+
+88
+00:04:07,550 --> 00:04:09,060
+ membaca beberapa data yang sensitif 
+
+89
+00:04:09,060 --> 00:04:12,044
+ dan juga mengirim informasi melalui jaringan. 
+
+90
+00:04:12,044 --> 00:04:13,460
+ Jadi jika kita mengatakan bahwa kita akan pergi 
+
+91
+00:04:13,460 --> 00:04:15,617
+ untuk mencegah jenis dan jenis aktivitas seperti ini, 
+
+92
+00:04:15,617 --> 00:04:17,700
+ maka Anda benar-benar akan membuat banyak hal 
+
+93
+00:04:17,700 --> 00:04:20,019
+ pekerjaan itu sekarang gagal. 
+
+94
+00:04:20,019 --> 00:04:22,220
+ Jadi pengguna tidak akan seperti itu. 
+
+95
+00:04:22,220 --> 00:04:26,580
+ Ada juga masalah di sini adalah bahwa bahkan jika kita menerapkannya 
+
+96
+00:04:26,580 --> 00:04:32,300
+ solusi ini, itu tidak akan menghentikan banyak sisi yang berbeda 
+
+97
+00:04:32,300 --> 00:04:35,890
+ mekanisme saluran untuk kebocoran data. 
+
+98
+00:04:35,890 --> 00:04:37,930
+ Jadi misalnya, kami sudah melihat di kelas sebelumnya 
+
+99
+00:04:37,930 --> 00:04:40,750
+ tentang cara cache browser, misalnya, 
+
+100
+00:04:40,750 --> 00:04:43,900
+ dapat membocorkan informasi tentang apakah situs tertentu memiliki atau tidak 
+
+101
+00:04:43,900 --> 00:04:45,200
+ dikunjungi atau tidak. 
+
+102
+00:04:45,200 --> 00:04:48,200
+ Dan bahkan jika kita memiliki kebijakan keamanan seperti ini, 
+
+103
+00:04:48,200 --> 00:04:50,387
+ mungkin kami tidak menangkap semua jenis saluran samping. 
+
+104
+00:04:50,387 --> 00:04:52,720
+ Kami akan membicarakan beberapa saluran lain sedikit nanti 
+
+105
+00:04:52,720 --> 00:04:54,870
+ di kuliah. 
+
+106
+00:04:54,870 --> 00:05:01,250
+ Hal lain yang tidak akan berhenti adalah kolusi aplikasi. 
+
+107
+00:05:01,250 --> 00:05:05,040
+ Jadi, dua aplikasi dapat benar-benar berkolaborasi 
+
+108
+00:05:05,040 --> 00:05:07,220
+ untuk merusak sistem keamanan. 
+
+109
+00:05:07,220 --> 00:05:10,400
+ Jadi misalnya, bagaimana jika ada satu aplikasi itu 
+
+110
+00:05:10,400 --> 00:05:12,060
+ tidak memiliki jaringan akses, tetapi itu 
+
+111
+00:05:12,060 --> 00:05:14,600
+ dapat berbicara dengan aplikasi kedua, yang mana. 
+
+112
+00:05:14,600 --> 00:05:16,879
+ Jadi mungkin itu bisa menggunakan mekanisme IPC Android 
+
+113
+00:05:16,879 --> 00:05:18,920
+ untuk meneruskan data sensitif ke aplikasi itu 
+
+114
+00:05:18,920 --> 00:05:21,170
+ tidak memiliki izin jaringan, dan aplikasi kedua itu bisa 
+
+115
+00:05:21,170 --> 00:05:24,780
+ sebenarnya mengunggah informasi itu ke server. 
+
+116
+00:05:24,780 --> 00:05:27,920
+ Dan bahkan jika aplikasi tidak berkolusi, 
+
+117
+00:05:27,920 --> 00:05:31,540
+ maka mungkin ada beberapa tipuan 
+
+118
+00:05:31,540 --> 00:05:34,300
+ bahwa aplikasi dapat terlibat 
+
+119
+00:05:34,300 --> 00:05:37,000
+ untuk mengelabui beberapa aplikasi lain agar tidak sengaja terungkap 
+
+120
+00:05:37,000 --> 00:05:38,040
+ data sensitif. 
+
+121
+00:05:38,040 --> 00:05:40,960
+ Jadi mungkin ada beberapa jenis kelemahan di jalan 
+
+122
+00:05:40,960 --> 00:05:42,510
+ bahwa program email itu ditulis, 
+
+123
+00:05:42,510 --> 00:05:45,322
+ dan mungkin program email itu menerima 
+
+124
+00:05:45,322 --> 00:05:47,280
+ terlalu banyak pesan acak dari hal lain itu 
+
+125
+00:05:47,280 --> 00:05:48,340
+ hidup di sistem. 
+
+126
+00:05:48,340 --> 00:05:50,850
+ Jadi mungkin kita bisa membuat maksud khusus yang entah bagaimana 
+
+127
+00:05:50,850 --> 00:05:53,360
+ akan mengelabui aplikasi Gmail Anda, misalnya, 
+
+128
+00:05:53,360 --> 00:05:57,409
+ mengirim sesuatu melalui email ke seseorang di luar telepon. 
+
+129
+00:05:57,409 --> 00:05:59,950
+ Pada tingkat tinggi, pendekatan ini tidak benar-benar berfungsi dengan baik. 
+
+130
+00:05:59,950 --> 00:06:02,682
+
+
+131
+00:06:02,682 --> 00:06:04,390
+ Satu hal penting untuk dipikirkan adalah OK, 
+
+132
+00:06:04,390 --> 00:06:06,681
+ jadi sepertinya kami sangat khawatir tentang yang sensitif 
+
+133
+00:06:06,681 --> 00:06:07,710
+ data meninggalkan telepon. 
+
+134
+00:06:07,710 --> 00:06:12,690
+ Jadi apa sebenarnya yang dilakukan malware Android dalam praktiknya. 
+
+135
+00:06:12,690 --> 00:06:16,364
+ Apakah ada jenis serangan dunia nyata 
+
+136
+00:06:16,364 --> 00:06:18,030
+ bahwa kita akan mencegah semuanya 
+
+137
+00:06:18,030 --> 00:06:19,950
+ hal jenis pelacakan taint ini. 
+
+138
+00:06:19,950 --> 00:06:21,320
+ Dan jawabannya ya. 
+
+139
+00:06:21,320 --> 00:06:24,080
+ Jadi semakin, malware menjadi masalah yang lebih besar 
+
+140
+00:06:24,080 --> 00:06:25,080
+ untuk ponsel ini. 
+
+141
+00:06:25,080 --> 00:06:31,020
+ Jadi satu hal yang mungkin dilakukan adalah mungkin menggunakan lokasi Anda 
+
+142
+00:06:31,020 --> 00:06:37,325
+ atau mungkin IMEI Anda untuk iklan. 
+
+143
+00:06:37,325 --> 00:06:40,227
+
+
+144
+00:06:40,227 --> 00:06:41,810
+ Begitu juga dengan malware, sebenarnya 
+
+145
+00:06:41,810 --> 00:06:44,060
+ akan melihat dan melihat di mana Anda berada secara fisik 
+
+146
+00:06:44,060 --> 00:06:46,970
+ di dunia dan kemudian mungkin itu akan bahwa oh, Anda 
+
+147
+00:06:46,970 --> 00:06:48,720
+ terletak di dekat kampus MIT, oleh karena itu Anda 
+
+148
+00:06:48,720 --> 00:06:50,190
+ pastilah siswa yang lapar jadi hei, kenapa tidak kamu 
+
+149
+00:06:50,190 --> 00:06:52,356
+ pergi ke truk makanan saya yang kebetulan terletak tepat 
+
+150
+00:06:52,356 --> 00:06:54,130
+ dimana kamu berada. 
+
+151
+00:06:54,130 --> 00:06:57,282
+ IMEI adalah jenis seperti ini-- Anda bisa 
+
+152
+00:06:57,282 --> 00:07:00,410
+ Anggap saja sebagai bilangan bulat yang seperti per perangkat uniquefier. 
+
+153
+00:07:00,410 --> 00:07:02,924
+ Jadi ini bisa digunakan mungkin untuk melacak Anda dengan cara yang Anda 
+
+154
+00:07:02,924 --> 00:07:04,965
+ tidak ingin dilacak, di lokasi yang berbeda, 
+
+155
+00:07:04,965 --> 00:07:05,757
+ seterusnya dan seterusnya. 
+
+156
+00:07:05,757 --> 00:07:07,381
+ Jadi sebenarnya ada malware di alam liar 
+
+157
+00:07:07,381 --> 00:07:08,840
+ itu melakukan hal-hal seperti itu. 
+
+158
+00:07:08,840 --> 00:07:11,080
+ Hal lain yang mungkin coba dilakukan oleh malware 
+
+159
+00:07:11,080 --> 00:07:13,040
+ mencuri kredensial Anda. 
+
+160
+00:07:13,040 --> 00:07:17,250
+
+
+161
+00:07:17,250 --> 00:07:22,850
+ Jadi misalnya, mungkin mencoba untuk mengambil nomor telepon Anda, 
+
+162
+00:07:22,850 --> 00:07:24,880
+ atau mungkin mencoba mengambil daftar kontak Anda, 
+
+163
+00:07:24,880 --> 00:07:27,680
+ mungkin mencoba untuk mengunggah hal-hal tersebut ke server jarak jauh. 
+
+164
+00:07:27,680 --> 00:07:30,690
+ Mungkin itu berguna untuk mencoba menyamar sebagai Anda, 
+
+165
+00:07:30,690 --> 00:07:33,690
+ misalnya, dalam sebuah pesan yang terjadi 
+
+166
+00:07:33,690 --> 00:07:35,790
+ untuk digunakan untuk spam nanti. 
+
+167
+00:07:35,790 --> 00:07:39,990
+ Ada malware di luar sana yang melakukan hal-hal seperti ini hari ini. 
+
+168
+00:07:39,990 --> 00:07:44,290
+ Mungkin yang paling mengerikan, setidaknya untuk saya, 
+
+169
+00:07:44,290 --> 00:07:49,891
+ perangkat lunak perusak mungkin dapat mengubah ponsel Anda menjadi bot. 
+
+170
+00:07:49,891 --> 00:07:52,140
+ Ini, tentu saja, adalah masalah yang tidak dimiliki orangtua kita 
+
+171
+00:07:52,140 --> 00:07:53,120
+ harus berurusan dengan. 
+
+172
+00:07:53,120 --> 00:07:55,380
+ Ponsel modern sangat kuat sehingga mereka bisa benar-benar 
+
+173
+00:07:55,380 --> 00:07:57,845
+ digunakan untuk mengirim pesan spam itu sendiri. 
+
+174
+00:07:57,845 --> 00:08:00,230
+ Jadi sebenarnya ada bagian yang sangat buruk 
+
+175
+00:08:00,230 --> 00:08:01,900
+ malware yang terjadi saat ini 
+
+176
+00:08:01,900 --> 00:08:03,810
+ yang tampaknya menargetkan beberapa lingkungan perusahaan 
+
+177
+00:08:03,810 --> 00:08:04,710
+ melakukan hal ini dengan tepat. 
+
+178
+00:08:04,710 --> 00:08:07,168
+ Jadi itu sampai ke ponsel Anda dan mulai mengirim barang. 
+
+179
+00:08:07,168 --> 00:08:09,160
+ AUDIENCE: Jadi jenis malware ini, 
+
+180
+00:08:09,160 --> 00:08:12,397
+ apakah itu malware yang merongrong OS Android, atau apakah itu 
+
+181
+00:08:12,397 --> 00:08:13,642
+ hanya aplikasi biasa? 
+
+182
+00:08:13,642 --> 00:08:16,630
+ Jika itu aplikasi yang khas, tampaknya seharusnya bisa-- 
+
+183
+00:08:16,630 --> 00:08:18,810
+ PROFESOR: Ya. 
+
+184
+00:08:18,810 --> 00:08:20,720
+ Itu pertanyaan yang bagus. 
+
+185
+00:08:20,720 --> 00:08:22,720
+ Ada dua jenis malware di luar sana. 
+
+186
+00:08:22,720 --> 00:08:24,990
+ Ternyata, itu sebenarnya cukup mudah 
+
+187
+00:08:24,990 --> 00:08:28,620
+ untuk membuat pengguna mengeklik sesuatu. 
+
+188
+00:08:28,620 --> 00:08:29,790
+ Jadi saya akan memberi Anda sebuah contoh. 
+
+189
+00:08:29,790 --> 00:08:31,290
+ Ini tidak selalu menunjukkan malware, 
+
+190
+00:08:31,290 --> 00:08:32,832
+ lebih lanjut tentang keadaan kemanusiaan yang menyedihkan. 
+
+191
+00:08:32,832 --> 00:08:34,373
+ Akan ada permainan populer di luar sana, 
+
+192
+00:08:34,373 --> 00:08:35,832
+ katakanlah Angry Birds, misalnya. 
+
+193
+00:08:35,832 --> 00:08:37,996
+ Anda pergi ke App Store dan Anda mengetik Angry Birds, 
+
+194
+00:08:37,996 --> 00:08:39,109
+ Saya ingin mendapatkan Angry Birds. 
+
+195
+00:08:39,110 --> 00:08:40,880
+ Jadi semoga hit pertama yang Anda dapatkan 
+
+196
+00:08:40,880 --> 00:08:42,530
+ adalah Angry Birds yang sebenarnya. 
+
+197
+00:08:42,530 --> 00:08:46,160
+ Tapi kemudian pukulan kedua akan menjadi sesuatu seperti Angry Birdss, 
+
+198
+00:08:46,160 --> 00:08:47,374
+ dengan dua S, misalnya. 
+
+199
+00:08:47,374 --> 00:08:48,790
+ Dan banyak orang akan pergi ke sana, 
+
+200
+00:08:48,790 --> 00:08:50,789
+ dan mungkin lebih murah daripada versi biasa, 
+
+201
+00:08:50,789 --> 00:08:51,649
+ dan mereka pergi ke sana. 
+
+202
+00:08:51,649 --> 00:08:53,440
+ Ini akan menyajikan hal yang mengatakan, 
+
+203
+00:08:53,440 --> 00:08:55,450
+ apakah Anda mengizinkan aplikasi ini untuk melakukan ini, ini, dan ini. 
+
+204
+00:08:55,450 --> 00:08:57,275
+ Orang itu akan berkata, ya, karena aku harus mendapatkan Angry-ku 
+
+205
+00:08:57,275 --> 00:08:58,190
+ Burung, ya, tentu. 
+
+206
+00:08:58,190 --> 00:09:00,280
+ Boom, maka orang itu bisa dimiliki. 
+
+207
+00:09:00,280 --> 00:09:01,910
+ Jadi dalam prakteknya Anda lihat sekarang di mana 
+
+208
+00:09:01,910 --> 00:09:03,520
+ mengeksploitasi kedua jenis vektor. 
+
+209
+00:09:03,520 --> 00:09:06,800
+ Tapi Anda benar bahwa jika Anda mengasumsikan bahwa Android 
+
+210
+00:09:06,800 --> 00:09:09,950
+ model keamanan benar, maka semacam malware 
+
+211
+00:09:09,950 --> 00:09:13,760
+ harus bergantung pada pengguna yang bodoh atau naif 
+
+212
+00:09:13,760 --> 00:09:15,869
+ dan memberinya akses jaringan, misalnya, 
+
+213
+00:09:15,869 --> 00:09:17,660
+ ketika game tic-tac-toe Anda seharusnya tidak benar-benar 
+
+214
+00:09:17,660 --> 00:09:18,530
+ memiliki akses jaringan. 
+
+215
+00:09:18,530 --> 00:09:21,814
+
+
+216
+00:09:21,814 --> 00:09:23,480
+ Ya, jadi Anda benar-benar dapat memiliki ponsel Anda 
+
+217
+00:09:23,480 --> 00:09:24,470
+ berubah menjadi bot. 
+
+218
+00:09:24,470 --> 00:09:25,860
+ Ini mengerikan karena berbagai alasan, 
+
+219
+00:09:25,860 --> 00:09:27,360
+ bukan hanya karena ponsel Anda adalah bot 
+
+220
+00:09:27,360 --> 00:09:28,930
+ tetapi juga karena mungkin Anda membayar 
+
+221
+00:09:28,930 --> 00:09:30,612
+ untuk data untuk semua email itu 
+
+222
+00:09:30,612 --> 00:09:31,820
+ dikirim dari ponsel Anda. 
+
+223
+00:09:31,820 --> 00:09:33,640
+ Mungkin baterai Anda semakin rusak 
+
+224
+00:09:33,640 --> 00:09:36,610
+ karena ponsel Anda hanya duduk-duduk saja 
+
+225
+00:09:36,610 --> 00:09:41,740
+ mengirim iklan kapan saja, perjalanan gratis ke Bermuda atau apa pun. 
+
+226
+00:09:41,740 --> 00:09:45,170
+ Sebenarnya ada aplikasi jahat di luar sana 
+
+227
+00:09:45,170 --> 00:09:48,975
+ yang akan menggunakan informasi pribadi Anda untuk hal buruk. 
+
+228
+00:09:48,975 --> 00:09:50,850
+ Dan hal yang sangat buruk tentang bot ini 
+
+229
+00:09:50,850 --> 00:09:52,891
+ di sini adalah bahwa itu benar-benar dapat melihat kontak Anda 
+
+230
+00:09:52,891 --> 00:09:54,380
+ daftar dan beberapa spam atas nama Anda 
+
+231
+00:09:54,380 --> 00:09:57,130
+ kepada orang-orang yang Anda kenal dan membuat kemungkinan korban 
+
+232
+00:09:57,130 --> 00:09:59,380
+ mengklik sesuatu di email itu jauh, jauh lebih tinggi. 
+
+233
+00:09:59,380 --> 00:10:01,511
+
+
+234
+00:10:01,511 --> 00:10:03,510
+ Satu hal yang perlu diperhatikan, dan kembali seperti ini 
+
+235
+00:10:03,510 --> 00:10:04,660
+ untuk diskusi yang baru saja kita lakukan, jadi 
+
+236
+00:10:04,660 --> 00:10:06,034
+ mencegah eksfiltrasi data ini 
+
+237
+00:10:06,034 --> 00:10:07,240
+ sangat bagus, benar. 
+
+238
+00:10:07,240 --> 00:10:09,440
+ Tetapi dengan sendirinya, mencegah eksfiltrasi itu 
+
+239
+00:10:09,440 --> 00:10:11,512
+ tidak menghentikan peretasan di tempat pertama. 
+
+240
+00:10:11,512 --> 00:10:13,470
+ Jadi sebenarnya ada mekanisme yang sebenarnya 
+
+241
+00:10:13,470 --> 00:10:15,910
+ harus melihat untuk mencegah komputer Anda menjadi milik 
+
+242
+00:10:15,910 --> 00:10:18,249
+ di tempat pertama atau untuk mendidik pengguna tentang apa yang mereka 
+
+243
+00:10:18,249 --> 00:10:19,540
+ harus dan tidak boleh mengklik. 
+
+244
+00:10:19,540 --> 00:10:20,914
+ Jadi hanya melakukan pelacakan noda ini 
+
+245
+00:10:20,914 --> 00:10:23,124
+ bukan solusi lengkap untuk mencegah mesin Anda 
+
+246
+00:10:23,124 --> 00:10:24,165
+ dari dikompromikan. 
+
+247
+00:10:24,165 --> 00:10:26,910
+
+
+248
+00:10:26,910 --> 00:10:33,240
+ Bagaimana khususnya TaintDroid bekerja? 
+
+249
+00:10:33,240 --> 00:10:35,520
+ Ayo lihat. 
+
+250
+00:10:35,520 --> 00:10:38,460
+ Jadi seperti yang saya sebutkan sebelumnya, TaintDroid 
+
+251
+00:10:38,460 --> 00:10:43,760
+ akan melacak semua informasi sensitif Anda 
+
+252
+00:10:43,760 --> 00:10:45,520
+ saat menyebar melalui sistem. 
+
+253
+00:10:45,520 --> 00:10:48,340
+ Jadi TaintDroid membedakan antara apa 
+
+254
+00:10:48,340 --> 00:10:51,140
+ mereka menyebut sumber informasi dan sink informasi. 
+
+255
+00:10:51,140 --> 00:10:58,240
+ Jadi sumber-sumber ini adalah hal-hal yang menghasilkan data sensitif. 
+
+256
+00:10:58,240 --> 00:11:02,520
+ Jadi Anda mungkin menganggap ini sebagai hal-hal seperti sensor. 
+
+257
+00:11:02,520 --> 00:11:05,310
+ Jadi misalnya, GPS, akselerometer, 
+
+258
+00:11:05,310 --> 00:11:06,780
+ hal-hal seperti itu. 
+
+259
+00:11:06,780 --> 00:11:12,600
+ Ini bisa menjadi database daftar kontak Anda, 
+
+260
+00:11:12,600 --> 00:11:20,520
+ ini bisa berupa hal-hal seperti IMEI, pada dasarnya apa pun itu 
+
+261
+00:11:20,520 --> 00:11:24,000
+ mungkin membantu mengikat Anda, pengguna tertentu, 
+
+262
+00:11:24,000 --> 00:11:25,250
+ ke telepon Anda yang sebenarnya. 
+
+263
+00:11:25,250 --> 00:11:28,220
+ Jadi ini adalah hal-hal yang menghasilkan noda. 
+
+264
+00:11:28,220 --> 00:11:31,280
+ Dan kemudian Anda bisa memikirkan wastafel ini 
+
+265
+00:11:31,280 --> 00:11:36,170
+ sebagai tempat di mana kami tidak ingin data yang tercemar masuk. 
+
+266
+00:11:36,170 --> 00:11:38,150
+ Dan dalam kasus TaintDroid, 
+
+267
+00:11:38,150 --> 00:11:41,530
+ wastafel khusus yang kami khawatirkan adalah jaringan. 
+
+268
+00:11:41,530 --> 00:11:44,090
+
+
+269
+00:11:44,090 --> 00:11:47,690
+ Seperti yang akan kita bicarakan nanti, Anda dapat menyamaratakan arus informasi 
+
+270
+00:11:47,690 --> 00:11:49,990
+ untuk lebih banyak skenario daripada TaintDroid khusus mencakup. 
+
+271
+00:11:49,990 --> 00:11:52,281
+ Jadi Anda bisa membayangkan mungkin ada sink lain yang lebih banyak 
+
+272
+00:11:52,281 --> 00:11:53,430
+ sistem tujuan umum. 
+
+273
+00:11:53,430 --> 00:11:54,971
+ Tetapi untuk TaintDroid, mereka benar-benar 
+
+274
+00:11:54,971 --> 00:11:59,180
+ peduli tentang jaringan sebagai penyerap informasi. 
+
+275
+00:11:59,180 --> 00:12:08,550
+ Jadi di TaintDroid, mereka akan menggunakan bitvector 32-bit 
+
+276
+00:12:08,550 --> 00:12:12,300
+ untuk mewakili noda. 
+
+277
+00:12:12,300 --> 00:12:15,590
+ Dan apa artinya ini adalah bahwa Anda dapat memiliki, 
+
+278
+00:12:15,590 --> 00:12:20,140
+ paling banyak, 32 sumber noda yang berbeda. 
+
+279
+00:12:20,140 --> 00:12:22,510
+ Jadi setiap nilai data sensitif akan 
+
+280
+00:12:22,510 --> 00:12:24,204
+ memiliki satu dalam posisi tertentu 
+
+281
+00:12:24,204 --> 00:12:26,620
+ jika telah tercemar oleh beberapa sumber noda tertentu. 
+
+282
+00:12:26,620 --> 00:12:31,370
+ Itu seperti, apakah itu berasal dari data GPS Anda, 
+
+283
+00:12:31,370 --> 00:12:32,140
+ sebagai contoh. 
+
+284
+00:12:32,140 --> 00:12:34,370
+ Apakah itu berasal dari sesuatu dari kontak Anda 
+
+285
+00:12:34,370 --> 00:12:37,540
+ daftar, dan seterusnya dan seterusnya. 
+
+286
+00:12:37,540 --> 00:12:41,680
+ Satu hal yang menarik adalah 32 sumber noda 
+
+287
+00:12:41,680 --> 00:12:44,120
+ sebenarnya tidak sebesar itu, benar. 
+
+288
+00:12:44,120 --> 00:12:47,960
+ Dan pertanyaan yang menarik adalah, 
+
+289
+00:12:47,960 --> 00:12:49,900
+ itu cukup besar untuk sistem khusus ini 
+
+290
+00:12:49,900 --> 00:12:52,108
+ dan apakah itu cukup besar secara umum untuk informasi ini 
+
+291
+00:12:52,108 --> 00:12:53,430
+ sistem aliran. 
+
+292
+00:12:53,430 --> 00:12:55,860
+ Jadi dalam kasus tertentu TaintDroid, 
+
+293
+00:12:55,860 --> 00:12:58,160
+ 32 kemungkinan sumber noda tampaknya 
+
+294
+00:12:58,160 --> 00:13:01,160
+ menjadi agak masuk akal, karena itu sebenarnya 
+
+295
+00:13:01,160 --> 00:13:04,360
+ melihat masalah aliran informasi yang cukup terbatas. 
+
+296
+00:13:04,360 --> 00:13:07,230
+ Jadi itu mengatakan diberikan semua sensor yang Anda miliki di ponsel Anda, 
+
+297
+00:13:07,230 --> 00:13:09,400
+ mengingat semua pangkalan data sensitif ini, 
+
+298
+00:13:09,400 --> 00:13:12,000
+ dan hal-hal seperti itu, 32 tampaknya kasar 
+
+299
+00:13:12,000 --> 00:13:15,250
+ urutan besarnya yang benar dalam hal 
+
+300
+00:13:15,250 --> 00:13:18,170
+ menyimpan bendera noda ini. 
+
+301
+00:13:18,170 --> 00:13:21,100
+ Dan seperti yang akan kita lihat dalam penerapan sistem ini, 
+
+302
+00:13:21,100 --> 00:13:22,600
+ 32 sebenarnya sangat nyaman juga, 
+
+303
+00:13:22,600 --> 00:13:24,390
+ karena apa lagi yang 32 bit? 
+
+304
+00:13:24,390 --> 00:13:25,590
+ Nah, sebuah bilangan bulat. 
+
+305
+00:13:25,590 --> 00:13:28,006
+ Jadi Anda benar-benar dapat melakukan beberapa representasi yang sangat efisien 
+
+306
+00:13:28,006 --> 00:13:30,650
+ bendera-bendera kotor ini dengan cara mereka benar-benar membangun ini. 
+
+307
+00:13:30,650 --> 00:13:32,150
+ Seperti yang akan kita diskusikan sedikit nanti, 
+
+308
+00:13:32,150 --> 00:13:36,090
+ meskipun, jika Anda ingin mengekspos aliran informasi ke pemrogram 
+
+309
+00:13:36,090 --> 00:13:38,310
+ dengan cara yang lebih umum, jadi misalnya, 
+
+310
+00:13:38,310 --> 00:13:40,440
+ jika Anda ingin programmer dapat menentukan 
+
+311
+00:13:40,440 --> 00:13:44,080
+ sumber noda mereka sendiri dan jenis wastafel mereka sendiri, 
+
+312
+00:13:44,080 --> 00:13:46,660
+ 32 bit mungkin tidak cukup. 
+
+313
+00:13:46,660 --> 00:13:48,060
+ Dalam sistem seperti itu Anda sebenarnya 
+
+314
+00:13:48,060 --> 00:13:51,790
+ harus berpikir tentang termasuk dukungan runtime yang lebih kompleks 
+
+315
+00:13:51,790 --> 00:13:54,960
+ untuk ruang label yang lebih besar. 
+
+316
+00:13:54,960 --> 00:13:57,720
+ Jadi apakah itu semua masuk akal? 
+
+317
+00:13:57,720 --> 00:14:02,830
+ OK jadi berbicara kasar, ketika Anda melihat jalan 
+
+318
+00:14:02,830 --> 00:14:06,370
+ bahwa noda mengalir melalui sistem, pada tingkat tinggi, 
+
+319
+00:14:06,370 --> 00:14:09,750
+ pada dasarnya berasal dari sisi kanan dari sebuah pernyataan 
+
+320
+00:14:09,750 --> 00:14:11,160
+ ke sisi kiri. 
+
+321
+00:14:11,160 --> 00:14:16,060
+ Jadi sebagai contoh yang sangat sederhana, jika Anda memiliki beberapa pernyataan, 
+
+322
+00:14:16,060 --> 00:14:19,180
+ seperti Anda mendeklarasikan variabel integer yang akan didapatkan 
+
+323
+00:14:19,180 --> 00:14:27,520
+ lintang Anda, dan kemudian tingkat tinggi yang Anda sebut gps.getLat (), 
+
+324
+00:14:27,520 --> 00:14:31,770
+ maka pada dasarnya hal ini di sini akan menghasilkan nilai 
+
+325
+00:14:31,770 --> 00:14:33,972
+ yang memiliki noda yang terkait dengannya. 
+
+326
+00:14:33,972 --> 00:14:35,930
+ Beberapa bendera tertentu akan diatur yang menunjukkan 
+
+327
+00:14:35,930 --> 00:14:38,400
+ bahwa hei, nilai ini saya kembalikan 
+
+328
+00:14:38,400 --> 00:14:39,650
+ berasal dari sumber yang sensitif. 
+
+329
+00:14:39,650 --> 00:14:41,941
+ Jadi noda akan datang dari sini di sisi kanan 
+
+330
+00:14:41,941 --> 00:14:43,600
+ dan pergi ke sini ke sisi kiri, 
+
+331
+00:14:43,600 --> 00:14:45,840
+ dan sekarang itu benar-benar tercemar. 
+
+332
+00:14:45,840 --> 00:14:49,210
+ Jadi itu semacam apa yang terlihat dari perspektif 
+
+333
+00:14:49,210 --> 00:14:52,080
+ pengembang manusia yang menulis kode sumber. 
+
+334
+00:14:52,080 --> 00:14:56,284
+ Namun, Dalvik VM benar-benar menggunakan format berbasis register ini 
+
+335
+00:14:56,284 --> 00:14:58,200
+ pada tingkat yang lebih rendah untuk benar-benar membuat program, 
+
+336
+00:14:58,200 --> 00:15:00,770
+ dan itulah sebenarnya cara semantik noda ini 
+
+337
+00:15:00,770 --> 00:15:03,864
+ diimplementasikan dalam kenyataan. 
+
+338
+00:15:03,864 --> 00:15:06,030
+ Inilah yang dijelaskan di meja salah satu koran, 
+
+339
+00:15:06,030 --> 00:15:09,345
+ sehingga mereka memiliki daftar besar kelas-kelas dari opcode, 
+
+340
+00:15:09,345 --> 00:15:11,720
+ dan mereka menggambarkan bagaimana aliran semacam noda 
+
+341
+00:15:11,720 --> 00:15:12,880
+ untuk jenis-jenis opcode. 
+
+342
+00:15:12,880 --> 00:15:14,950
+ Jadi misalnya, Anda mungkin membayangkan 
+
+343
+00:15:14,950 --> 00:15:20,060
+ bahwa Anda memiliki operasi yang terlihat seperti bergerak, 
+
+344
+00:15:20,060 --> 00:15:24,990
+ dan itu menyebutkan tujuan dan sumber. 
+
+345
+00:15:24,990 --> 00:15:28,334
+ Jadi di Dalvik, untuk mendaftarkan mesin virtual dasar, 
+
+346
+00:15:28,334 --> 00:15:29,750
+ sehingga Anda dapat menganggap ini sebagai 
+
+347
+00:15:29,750 --> 00:15:33,450
+ mendaftar pada mesin perhitungan abstrak semacam ini. 
+
+348
+00:15:33,450 --> 00:15:36,990
+ Dan pada dasarnya apa yang terjadi di sini adalah, seperti yang saya katakan, 
+
+349
+00:15:36,990 --> 00:15:39,557
+ noda pergi dari sisi kanan ke sisi kiri. 
+
+350
+00:15:39,557 --> 00:15:41,390
+ Jadi dalam hal ini, ketika penerjemah Dalvik 
+
+351
+00:15:41,390 --> 00:15:43,190
+ menjalankan instruksi ini di sini, itu 
+
+352
+00:15:43,190 --> 00:15:45,830
+ akan melihat label noda, ini, 
+
+353
+00:15:45,830 --> 00:15:48,050
+ dan itu akan menugaskannya di sini. 
+
+354
+00:15:48,050 --> 00:15:50,714
+
+
+355
+00:15:50,714 --> 00:15:53,130
+ Maka Anda mungkin membayangkan Anda memiliki instruksi lain itu 
+
+356
+00:15:53,130 --> 00:15:55,110
+ seperti operasi biner. 
+
+357
+00:15:55,110 --> 00:15:59,300
+ Jadi pikirkan ini sebagai sesuatu seperti penambahan, misalnya. 
+
+358
+00:15:59,300 --> 00:16:01,480
+ Jadi di sini Anda akan memiliki satu tujuan tunggal, 
+
+359
+00:16:01,480 --> 00:16:07,350
+ tetapi kemudian Anda akan memiliki dua sumber. 
+
+360
+00:16:07,350 --> 00:16:09,000
+ Dan apa yang akan terjadi dalam kasus ini 
+
+361
+00:16:09,000 --> 00:16:12,120
+ adalah bahwa ketika penerjemah Dalvik bertemu instruksi ini, 
+
+362
+00:16:12,120 --> 00:16:14,040
+ itu akan mengambil noda dari kedua hal ini, 
+
+363
+00:16:14,040 --> 00:16:18,960
+ membangun kesatuan dari mereka, dan kemudian menetapkan serikat itu 
+
+364
+00:16:18,960 --> 00:16:22,049
+ menjadi tag noda di sini. 
+
+365
+00:16:22,049 --> 00:16:23,090
+ Apakah itu semua masuk akal? 
+
+366
+00:16:23,090 --> 00:16:24,470
+ Ini cukup mudah. 
+
+367
+00:16:24,470 --> 00:16:28,250
+ Jadi tabel memecah semua jenis instruksi yang berbeda 
+
+368
+00:16:28,250 --> 00:16:30,952
+ yang akan Anda lihat, tetapi ke pendekatan pertama, 
+
+369
+00:16:30,952 --> 00:16:32,660
+ ini adalah cara paling umum yang mencemari 
+
+370
+00:16:32,660 --> 00:16:34,500
+ menjalar melalui sistem. 
+
+371
+00:16:34,500 --> 00:16:37,350
+ Sekarang sebenarnya ada beberapa kasus khusus yang menarik 
+
+372
+00:16:37,350 --> 00:16:39,240
+ yang mereka sebutkan di koran. 
+
+373
+00:16:39,240 --> 00:16:46,680
+ Jadi salah satu dari kasus-kasus khusus itu melibatkan array. 
+
+374
+00:16:46,680 --> 00:16:49,130
+ Katakanlah Anda memiliki kode itu 
+
+375
+00:16:49,130 --> 00:16:53,470
+ akan mendeklarasikan karakter, dan Anda 
+
+376
+00:16:53,470 --> 00:16:56,480
+ mendapatkan nilai untuk karakter, tidak terlalu penting. 
+
+377
+00:16:56,480 --> 00:17:02,380
+ Dan kemudian katakanlah program ini menyatakan beberapa array, 
+
+378
+00:17:02,380 --> 00:17:04,608
+ kami akan menyebutnya atas (). 
+
+379
+00:17:04,608 --> 00:17:15,019
+ Dan pada dasarnya akan memiliki versi huruf besar. 
+
+380
+00:17:15,020 --> 00:17:16,980
+ Dan satu hal yang sangat umum dilakukan dalam kode 
+
+381
+00:17:16,980 --> 00:17:20,690
+ adalah indeks ke dalam array seperti ini menggunakan, misalnya, mungkin 
+
+382
+00:17:20,690 --> 00:17:22,579
+ hanya C langsung, karena seperti yang kita semua tahu, 
+
+383
+00:17:22,579 --> 00:17:25,078
+ Kernighan dan Ritchie mengajari kita bahwa pada dasarnya karakter 
+
+384
+00:17:25,079 --> 00:17:26,710
+ bilangan bulat, jadi hore untuk itu. 
+
+385
+00:17:26,710 --> 00:17:29,670
+ Jadi Anda bisa membayangkan bahwa Anda memiliki beberapa kode itu 
+
+386
+00:17:29,670 --> 00:17:33,960
+ mengatakan sesuatu seperti versi huruf besar dari karakter ini 
+
+387
+00:17:33,960 --> 00:17:38,080
+ di sini akan menjadi apa pun pada indeks tertentu 
+
+388
+00:17:38,080 --> 00:17:43,400
+ dalam tabel ini di sini, di indeks tabel itu oleh c seperti ini. 
+
+389
+00:17:43,400 --> 00:17:48,780
+ Jadi ada pertanyaan tentang noda apa yang harus diterima. 
+
+390
+00:17:48,780 --> 00:17:50,280
+ Sepertinya cukup jelas apa 
+
+391
+00:17:50,280 --> 00:17:52,930
+ seharusnya terjadi dalam kasus ini, tetapi dalam kasus ini, 
+
+392
+00:17:52,930 --> 00:17:55,352
+ sepertinya kita memiliki banyak hal yang sedang terjadi. 
+
+393
+00:17:55,352 --> 00:17:57,810
+ Kami punya array ini di sini yang mungkin memiliki beberapa jenis noda, 
+
+394
+00:17:57,810 --> 00:17:59,476
+ kita punya karakter ini di sini yang mungkin 
+
+395
+00:17:59,476 --> 00:18:01,500
+ memiliki beberapa jenis noda. 
+
+396
+00:18:01,500 --> 00:18:04,350
+ Apa yang Dalvik putuskan untuk lakukan dalam kasus ini 
+
+397
+00:18:04,350 --> 00:18:05,835
+ sedikit mirip dengan apa itu 
+
+398
+00:18:05,835 --> 00:18:08,000
+ tidak dalam kasus op biner ini di sini. 
+
+399
+00:18:08,000 --> 00:18:11,450
+ Jadi pada dasarnya akan mengatakan bahwa karakter ini ada di sini 
+
+400
+00:18:11,450 --> 00:18:15,500
+ akan mendapatkan persatuan dari noda c dan juga 
+
+401
+00:18:15,500 --> 00:18:16,800
+ dari array. 
+
+402
+00:18:16,800 --> 00:18:19,930
+ Dan intuisi dibalik itu adalah untuk menghasilkan 
+
+403
+00:18:19,930 --> 00:18:23,000
+ karakter ini, entah bagaimana kami harus tahu sesuatu 
+
+404
+00:18:23,000 --> 00:18:24,320
+ tentang array ini di sini. 
+
+405
+00:18:24,320 --> 00:18:26,702
+ Kami harus tahu sesuatu tentang indeks ini di sini. 
+
+406
+00:18:26,702 --> 00:18:28,160
+ Jadi karena itu saya kira itu masuk akal 
+
+407
+00:18:28,160 --> 00:18:30,789
+ bahwa benda ini harus sama sensitifnya dengan keduanya 
+
+408
+00:18:30,789 --> 00:18:31,830
+ dari hal-hal ini digabungkan. 
+
+409
+00:18:31,830 --> 00:18:35,580
+
+
+410
+00:18:35,580 --> 00:18:38,220
+ AUDIENCE: Bisakah Anda menjelaskan lagi langkah op dan biner 
+
+411
+00:18:38,220 --> 00:18:40,860
+ op, apa sebenarnya artinya, seperti penyatuan noda. 
+
+412
+00:18:40,860 --> 00:18:48,320
+ PROFESOR: Ya, jadi bayangkan itu-- mari kita lihat 
+
+413
+00:18:48,320 --> 00:18:49,800
+ di langkah op di sini. 
+
+414
+00:18:49,800 --> 00:18:53,030
+ Jadi bayangkan operasi sumber ini di sini saja 
+
+415
+00:18:53,030 --> 00:18:56,050
+ had-- sebenarnya, biarkan aku lebih konkrit. 
+
+416
+00:18:56,050 --> 00:18:57,760
+ Jadi setiap variabel, seperti yang akan saya jelaskan 
+
+417
+00:18:57,760 --> 00:19:00,610
+ dalam satu detik apa variabel, memiliki bilangan bulat ini, pada dasarnya, 
+
+418
+00:19:00,610 --> 00:19:02,460
+ yang memiliki banyak bit yang diatur 
+
+419
+00:19:02,460 --> 00:19:04,550
+ menurut apa noda itu. 
+
+420
+00:19:04,550 --> 00:19:06,760
+ Jadi bayangkan masing-masing dari nilai-nilai ini terbang 
+
+421
+00:19:06,760 --> 00:19:08,270
+ memiliki terbang bilangan bulat terkait ini 
+
+422
+00:19:08,270 --> 00:19:09,740
+ sekitar yang memiliki beberapa bit yang ditetapkan. 
+
+423
+00:19:09,740 --> 00:19:14,415
+ Jadi mari kita katakan bahwa sumber ini memiliki dua bit, sesuai 
+
+424
+00:19:14,415 --> 00:19:16,540
+ untuk fakta bahwa itu telah dinodai oleh dua hal, 
+
+425
+00:19:16,540 --> 00:19:17,510
+ itu tidak terlalu penting. 
+
+426
+00:19:17,510 --> 00:19:20,093
+ Jadi apa yang akan dilakukan oleh interpreter adalah ia akan melihat sumber ini 
+
+427
+00:19:20,093 --> 00:19:22,560
+ hal, itu akan melihat bilangan bulat terkait, 
+
+428
+00:19:22,560 --> 00:19:24,550
+ dan itu akan mengatakan aha. 
+
+429
+00:19:24,550 --> 00:19:27,410
+ Saya harus mengambil integer yang memiliki dua bit yang ditetapkan 
+
+430
+00:19:27,410 --> 00:19:33,775
+ dan kemudian pada dasarnya membuat integer label noda untuk ini. 
+
+431
+00:19:33,775 --> 00:19:35,400
+ Jadi itu semacam kasus sederhana, benar. 
+
+432
+00:19:35,400 --> 00:19:37,160
+ Kasus yang lebih rumit, seperti apa serikat pekerja 
+
+433
+00:19:37,160 --> 00:19:38,060
+ sebenarnya terlihat seperti. 
+
+434
+00:19:38,060 --> 00:19:44,480
+ Jadi bayangkan kita punya dua hal ini di sini 
+
+435
+00:19:44,480 --> 00:19:48,524
+ dan kami punya sumber 0, sumber 1. 
+
+436
+00:19:48,524 --> 00:19:49,940
+ Jadi saya akan tunjukkan di sini, 
+
+437
+00:19:49,940 --> 00:19:53,719
+ ini adalah bit yang tercemar untuk particular-- ini 
+
+438
+00:19:53,719 --> 00:19:54,635
+ AUDIENCE: [TIDAK JELAS]? 
+
+439
+00:19:54,635 --> 00:19:58,819
+ PROFESOR: Ya, jadi bayangkan yang Anda miliki 
+
+440
+00:19:58,819 --> 00:20:00,110
+ ini adalah noda untuk yang satu ini. 
+
+441
+00:20:00,110 --> 00:20:03,650
+ Dan bayangkan bahwa noda untuk yang satu ini adalah ini. 
+
+442
+00:20:03,650 --> 00:20:07,030
+ Jadi apa noda yang akan terlihat untuk dest? 
+
+443
+00:20:07,030 --> 00:20:10,320
+ Anda pada dasarnya mengambil semua bit itu 
+
+444
+00:20:10,320 --> 00:20:12,970
+ mengatakan salah satu dari mereka dan kemudian menetapkan itu 
+
+445
+00:20:12,970 --> 00:20:15,444
+ untuk kemunduran yang satu ini. 
+
+446
+00:20:15,444 --> 00:20:16,610
+ AUDIENCE: Baiklah, terima kasih. 
+
+447
+00:20:16,610 --> 00:20:17,776
+ PROFESOR: Ya, tidak masalah. 
+
+448
+00:20:17,776 --> 00:20:20,940
+ Dan jadi satu alasan, jadi sekali lagi saya harus menekankan ini, 
+
+449
+00:20:20,940 --> 00:20:24,390
+ jadi karena kita dapat mewakili semua kemungkinan noda di 32 ini 
+
+450
+00:20:24,390 --> 00:20:26,590
+ bit, seperti yang baru saja kita bahas, 
+
+451
+00:20:26,590 --> 00:20:28,999
+ melakukan operasi ini di sini, itu hanya operasi bitwise. 
+
+452
+00:20:28,999 --> 00:20:31,040
+ Jadi ini benar-benar mengurangi overhead 
+
+453
+00:20:31,040 --> 00:20:32,500
+ dari menerapkan potongan-potongan noda ini. 
+
+454
+00:20:32,500 --> 00:20:35,160
+ Jika Anda harus mengekspresikan alam semesta yang lebih besar dari noda-noda itu 
+
+455
+00:20:35,160 --> 00:20:37,076
+ Anda mungkin dalam masalah, karena mungkin tidak 
+
+456
+00:20:37,076 --> 00:20:39,070
+ dapat menggunakan bitwise yang sangat efisien ini 
+
+457
+00:20:39,070 --> 00:20:41,440
+ operasi untuk melakukan sesuatu. 
+
+458
+00:20:41,440 --> 00:20:44,051
+ Ada pertanyaan lain tentang itu? 
+
+459
+00:20:44,051 --> 00:20:44,550
+ BAIK. 
+
+460
+00:20:44,550 --> 00:20:47,270
+
+
+461
+00:20:47,270 --> 00:20:50,212
+ Jadi cara kerja array sedikit seperti op biner 
+
+462
+00:20:50,212 --> 00:20:50,920
+ seperti yang saya sebutkan. 
+
+463
+00:20:50,920 --> 00:20:53,010
+ Jadi ini akan mendapatkan serikat pekerja 
+
+464
+00:20:53,010 --> 00:20:56,290
+ dari noda ini dan itu. 
+
+465
+00:20:56,290 --> 00:20:59,950
+ Dan satu keputusan desain yang mereka buat di TaintDroid 
+
+466
+00:20:59,950 --> 00:21:07,741
+ adalah bahwa mereka mengaitkan tab noda tunggal dengan setiap array. 
+
+467
+00:21:07,741 --> 00:21:09,240
+ Jadi dengan kata lain, mereka tidak pergi 
+
+468
+00:21:09,240 --> 00:21:13,492
+ untuk mencoba mencemari semua elemen individu di sana. 
+
+469
+00:21:13,492 --> 00:21:14,950
+ Jadi pada dasarnya apa yang akan berakhir 
+
+470
+00:21:14,950 --> 00:21:19,660
+ terjadi adalah bahwa ini akan menyelamatkan mereka ruang penyimpanan, 
+
+471
+00:21:19,660 --> 00:21:21,452
+ benar, karena untuk setiap larik yang mereka nyatakan, 
+
+472
+00:21:21,452 --> 00:21:23,118
+ mereka hanya akan memiliki satu jalur tunggal 
+
+473
+00:21:23,118 --> 00:21:25,250
+ ke entitas yang semacam mengapung di sekitar array itu 
+
+474
+00:21:25,250 --> 00:21:28,550
+ dan mewakili semua noda yang menjadi milik array itu. 
+
+475
+00:21:28,550 --> 00:21:32,270
+
+
+476
+00:21:32,270 --> 00:21:34,170
+ Ada satu pertanyaan tentang mengapa 
+
+477
+00:21:34,170 --> 00:21:40,010
+ aman untuk tidak memiliki sistem biji-bijian yang lebih halus untuk noda. 
+
+478
+00:21:40,010 --> 00:21:43,110
+ Karena sepertinya array adalah kumpulan data, 
+
+479
+00:21:43,110 --> 00:21:45,680
+ jadi mengapa kita tidak harus memiliki banyak label yang beredar 
+
+480
+00:21:45,680 --> 00:21:48,010
+ untuk setiap hal yang ada dalam array itu? 
+
+481
+00:21:48,010 --> 00:21:51,190
+ Jadi jawabannya hanya itu saja 
+
+482
+00:21:51,190 --> 00:21:53,380
+ mengaitkan satu tag noda dengan larik 
+
+483
+00:21:53,380 --> 00:21:56,910
+ dan menjadikannya gabungan dari semua hal yang ada di dalam, 
+
+484
+00:21:56,910 --> 00:22:00,500
+ yang sebenarnya akan melebih-lebihkan noda. 
+
+485
+00:22:00,500 --> 00:22:02,590
+ Jadi dengan kata lain, jika Anda memiliki array itu 
+
+486
+00:22:02,590 --> 00:22:04,580
+ memiliki dua item di dalamnya, dan array itu 
+
+487
+00:22:04,580 --> 00:22:06,640
+ tercemar dengan penyatuan semua hal itu, 
+
+488
+00:22:06,640 --> 00:22:09,930
+ yah, itu mungkin sedikit - itu konservatif. 
+
+489
+00:22:09,930 --> 00:22:12,270
+ Karena mungkin bahwa jika sesuatu hanya mengakses ini, 
+
+490
+00:22:12,270 --> 00:22:14,186
+ mungkin itu tidak belajar apa pun tentang noda 
+
+491
+00:22:14,186 --> 00:22:15,070
+ itu di sini. 
+
+492
+00:22:15,070 --> 00:22:17,720
+ Tetapi dengan bersikap konservatif, mudah-mudahan kita 
+
+493
+00:22:17,720 --> 00:22:19,607
+ akan selalu benar. 
+
+494
+00:22:19,607 --> 00:22:21,065
+ Dengan kata lain, jika kita meremehkan 
+
+495
+00:22:21,065 --> 00:22:22,620
+ jumlah noda yang dimiliki sesuatu, 
+
+496
+00:22:22,620 --> 00:22:24,540
+ maka kita mungkin secara tidak sengaja mengungkapkan sesuatu 
+
+497
+00:22:24,540 --> 00:22:26,248
+ yang sebenarnya tidak ingin kami ungkapkan. 
+
+498
+00:22:26,248 --> 00:22:28,570
+ Tetapi jika kita melebih-lebihkan, maka dalam kasus terburuk, 
+
+499
+00:22:28,570 --> 00:22:31,700
+ mungkin kita mencegah sesuatu keluar dari ponsel itu 
+
+500
+00:22:31,700 --> 00:22:33,380
+ seharusnya benar-benar OK, tapi kita akan pergi 
+
+501
+00:22:33,380 --> 00:22:35,027
+ menjadi salah di sisi keamanan. 
+
+502
+00:22:35,027 --> 00:22:36,110
+ Apakah itu semua masuk akal? 
+
+503
+00:22:36,110 --> 00:22:38,790
+
+
+504
+00:22:38,790 --> 00:22:43,910
+ Contoh lain dari-- semacam noda kasus khusus 
+
+505
+00:22:43,910 --> 00:22:49,825
+ propagasi yang mereka sebutkan adalah hal-hal seperti metode asli. 
+
+506
+00:22:49,825 --> 00:22:54,120
+
+
+507
+00:22:54,120 --> 00:22:57,570
+ Dan metode asli mungkin ada di dalam v 
+
+508
+00:22:57,570 --> 00:23:02,360
+ dalam dirinya sendiri, jadi misalnya, Dalvik VM memaparkan beberapa fungsi 
+
+509
+00:23:02,360 --> 00:23:08,120
+ seperti System.arraycopy (), sehingga kita dapat melewati semuanya 
+
+510
+00:23:08,120 --> 00:23:13,270
+ ini, dan internal ke VM, ini diimplementasikan dalam C atau C ++ 
+
+511
+00:23:13,270 --> 00:23:15,750
+ kode karena alasan kecepatan. 
+
+512
+00:23:15,750 --> 00:23:18,510
+ Itu adalah salah satu contoh metode asli yang mungkin Anda miliki. 
+
+513
+00:23:18,510 --> 00:23:22,950
+ Hal lain yang mungkin Anda miliki, sejenis metode asli 
+
+514
+00:23:22,950 --> 00:23:28,800
+ adalah apa yang mereka sebut JNI mengekspos metode. 
+
+515
+00:23:28,800 --> 00:23:31,310
+ Jadi antarmuka asli pada dasarnya 
+
+516
+00:23:31,310 --> 00:23:35,330
+ memungkinkan kode Java untuk memanggil kode 
+
+517
+00:23:35,330 --> 00:23:38,492
+ itu bukan Java, yang diimplementasikan menggunakan x86 atau ARM 
+
+518
+00:23:38,492 --> 00:23:39,450
+ atau semacam itu. 
+
+519
+00:23:39,450 --> 00:23:41,350
+ Ada konvensi pemanggilan seluruhnya 
+
+520
+00:23:41,350 --> 00:23:43,600
+ yang diekspos di sini untuk memungkinkan kedua jenis tumpukan itu 
+
+521
+00:23:43,600 --> 00:23:45,330
+ melakukan interoperasi. 
+
+522
+00:23:45,330 --> 00:23:49,460
+ Jadi masalahnya dengan metode kode asli ini, 
+
+523
+00:23:49,460 --> 00:23:52,370
+ dari perspektif pelacakan noda, 
+
+524
+00:23:52,370 --> 00:23:57,440
+ adalah bahwa kode asli ini tidak dieksekusi secara langsung 
+
+525
+00:23:57,440 --> 00:23:59,540
+ oleh penerjemah Dalvik. 
+
+526
+00:23:59,540 --> 00:24:03,400
+ Bahkan, sering tidak bahkan kode Java, mungkin kode C atau C ++. 
+
+527
+00:24:03,400 --> 00:24:06,300
+ Jadi itu berarti aliran eksekusi sekali berjalan 
+
+528
+00:24:06,300 --> 00:24:09,020
+ menjadi salah satu metode asli ini, 
+
+529
+00:24:09,020 --> 00:24:12,690
+ TaintDroid tidak dapat melakukan propagasi noda ini 
+
+530
+00:24:12,690 --> 00:24:17,010
+ yang dilakukannya untuk kode yang hidup di dunia Jawa. 
+
+531
+00:24:17,010 --> 00:24:18,930
+ Sehingga sepertinya sedikit bermasalah 
+
+532
+00:24:18,930 --> 00:24:21,630
+ karena hal-hal ini seperti kotak hitam. 
+
+533
+00:24:21,630 --> 00:24:25,360
+ Anda ingin memastikan bahwa ketika metode ini kembali, 
+
+534
+00:24:25,360 --> 00:24:28,640
+ kita sebenarnya bisa mewakili 
+
+535
+00:24:28,640 --> 00:24:30,720
+ noda baru yang diciptakan oleh eksekusi 
+
+536
+00:24:30,720 --> 00:24:31,690
+ dari metode tersebut. 
+
+537
+00:24:31,690 --> 00:24:38,490
+ Dan cara penulis memecahkan masalah ini adalah, 
+
+538
+00:24:38,490 --> 00:24:42,980
+ mereka pada dasarnya menghasilkan analisis manual. 
+
+539
+00:24:42,980 --> 00:24:46,160
+
+
+540
+00:24:46,160 --> 00:24:49,890
+ Jadi pada dasarnya mereka mengatakan, tidak ada banyak 
+
+541
+00:24:49,890 --> 00:24:51,890
+ dari jenis metode di sini. 
+
+542
+00:24:51,890 --> 00:24:55,430
+ Jadi misalnya, Dalvik VM hanya memperlihatkan angka tertentu 
+
+543
+00:24:55,430 --> 00:24:57,290
+ fungsi seperti Systems.arraycopy (), 
+
+544
+00:24:57,290 --> 00:25:00,080
+ jadi kami sebagai pengembang manusia dapat melihat ini secara relatif 
+
+545
+00:25:00,080 --> 00:25:03,860
+ sejumlah kecil panggilan dan pada dasarnya mencari tahu apa 
+
+546
+00:25:03,860 --> 00:25:05,560
+ hubungan noda harus. 
+
+547
+00:25:05,560 --> 00:25:08,424
+ Jadi misalnya, mereka dapat melihat sesuatu seperti larik salin 
+
+548
+00:25:08,424 --> 00:25:09,840
+ dan katakan, oke, berdasarkan apa yang kita ketahui 
+
+549
+00:25:09,840 --> 00:25:11,840
+ semantik operasi ini, 
+
+550
+00:25:11,840 --> 00:25:13,950
+ kita tahu bahwa kita harus mencemari kembali nilai-nilai 
+
+551
+00:25:13,950 --> 00:25:15,960
+ dari fungsi ini dengan cara tertentu 
+
+552
+00:25:15,960 --> 00:25:19,660
+ diberikan nilai input ke fungsi ini. 
+
+553
+00:25:19,660 --> 00:25:22,700
+ Dan seberapa baik skala ini? 
+
+554
+00:25:22,700 --> 00:25:25,690
+ Nah, jika sebenarnya ada hanya sejumlah kecil 
+
+555
+00:25:25,690 --> 00:25:30,300
+ hal-hal yang diekspos oleh, misalnya, VM dalam kode asli, 
+
+556
+00:25:30,300 --> 00:25:31,960
+ ini benar-benar berfungsi dengan baik. 
+
+557
+00:25:31,960 --> 00:25:34,410
+ Karena jika Anda mengasumsikan bahwa antarmuka VM Dalvik tidak 
+
+558
+00:25:34,410 --> 00:25:36,640
+ sangat sering berubah, maka sebenarnya tidak 
+
+559
+00:25:36,640 --> 00:25:39,300
+ terlalu memberatkan untuk melihat hal-hal ini, lihat dokumentasi, 
+
+560
+00:25:39,300 --> 00:25:43,350
+ dan mencari tahu bagaimana noda akan menyebar. 
+
+561
+00:25:43,350 --> 00:25:46,541
+ Ini mungkin atau mungkin tidak lebih merepotkan. 
+
+562
+00:25:46,541 --> 00:25:48,790
+ Mereka memberikan beberapa data empiris yang menunjukkan banyak hal 
+
+563
+00:25:48,790 --> 00:25:51,100
+ aplikasi tidak, pada kenyataannya, 
+
+564
+00:25:51,100 --> 00:25:56,075
+ termasuk kode di samping mereka yang benar-benar terjadi 
+
+565
+00:25:56,075 --> 00:25:58,307
+ untuk dijalankan dalam C atau C ++. 
+
+566
+00:25:58,307 --> 00:26:00,140
+ Jadi mereka berpendapat bahwa secara empiris, ini tidak 
+
+567
+00:26:00,140 --> 00:26:01,223
+ akan menjadi masalah besar. 
+
+568
+00:26:01,223 --> 00:26:05,840
+ Mereka juga berpendapat bahwa untuk jenis tertentu dari tanda tangan metode, 
+
+569
+00:26:05,840 --> 00:26:09,900
+ Anda benar-benar dapat mengotomatiskan cara di mana noda ini 
+
+570
+00:26:09,900 --> 00:26:11,160
+ perhitungan sudah selesai. 
+
+571
+00:26:11,160 --> 00:26:14,210
+ Jadi mereka mengatakan itu, misalnya, jika hanya bilangan bulat atau string 
+
+572
+00:26:14,210 --> 00:26:17,000
+ masuk ke beberapa fungsi asli di sini, lalu 
+
+573
+00:26:17,000 --> 00:26:20,150
+ kita bisa melakukan hal standar penandaan output 
+
+574
+00:26:20,150 --> 00:26:23,389
+ nilai dengan penyatuan segala sesuatu noda dari input. 
+
+575
+00:26:23,389 --> 00:26:25,430
+ Jadi dalam prakteknya, sepertinya ini tidak mungkin 
+
+576
+00:26:25,430 --> 00:26:27,315
+ akan menjadi masalah yang terlalu besar di sini. 
+
+577
+00:26:27,315 --> 00:26:30,780
+ AUDIENCE: Tapi mengapa Anda tidak bisa hanya memindai - apa pun 
+
+578
+00:26:30,780 --> 00:26:33,750
+ memindai kode Anda [TIDAK JELAS]? 
+
+579
+00:26:33,750 --> 00:26:36,720
+
+
+580
+00:26:36,720 --> 00:26:39,610
+ PROFESOR: Oh ya, jadi dalam prakteknya, apa yang mereka lakukan. 
+
+581
+00:26:39,610 --> 00:26:43,610
+ Jadi mereka tahu bahwa kapan pun interpreter akan mengeksekusi 
+
+582
+00:26:43,610 --> 00:26:46,410
+ sesuatu seperti ini, maka ketika nilai kembali datang kembali, 
+
+583
+00:26:46,410 --> 00:26:49,130
+ mereka memiliki kode kasus khusus yang akan secara otomatis 
+
+584
+00:26:49,130 --> 00:26:52,750
+ katakanlah nilai return System.arraycopy () seharusnya 
+
+585
+00:26:52,750 --> 00:26:54,149
+ noda ini ditugaskan untuk itu. 
+
+586
+00:26:54,149 --> 00:26:56,190
+ AUDIENCE: Benar, jadi apa bagian manualnya? 
+
+587
+00:26:56,190 --> 00:26:57,545
+ PROFESOR: Oh, bagian manualnya 
+
+588
+00:26:57,545 --> 00:27:00,260
+ adalah mencari tahu apa kebijakan itu harus di tempat pertama. 
+
+589
+00:27:00,260 --> 00:27:03,450
+ Jadi dengan kata lain, jika Anda hanya melihat dari rak 
+
+590
+00:27:03,450 --> 00:27:05,255
+ Mencemari atau keluar dari rak Android, ini 
+
+591
+00:27:05,255 --> 00:27:06,630
+ akan melakukan sesuatu untukmu, 
+
+592
+00:27:06,630 --> 00:27:08,380
+ tetapi tidak akan ditetapkan secara otomatis 
+
+593
+00:27:08,380 --> 00:27:09,630
+ Mencemari dengan cara yang benar. 
+
+594
+00:27:09,630 --> 00:27:11,130
+ Jadi seseorang melihat ini dan angka 
+
+595
+00:27:11,130 --> 00:27:12,990
+ tahu apa kebijakan itu. 
+
+596
+00:27:12,990 --> 00:27:13,490
+ Masuk akal? 
+
+597
+00:27:13,490 --> 00:27:15,584
+ Ada pertanyaan lain? 
+
+598
+00:27:15,584 --> 00:27:17,000
+ Tidak terlihat seperti ini 
+
+599
+00:27:17,000 --> 00:27:23,210
+ menjadi masalah besar dalam praktik, meskipun Anda dapat membayangkan itu, 
+
+600
+00:27:23,210 --> 00:27:26,120
+ misalnya, jika ada peningkatan ini 
+
+601
+00:27:26,120 --> 00:27:29,280
+ jumlah aplikasi yang menentukan panggilan asli ini, 
+
+602
+00:27:29,280 --> 00:27:32,841
+ maka kita bisa sedikit bermasalah. 
+
+603
+00:27:32,841 --> 00:27:33,340
+ Baiklah. 
+
+604
+00:27:33,340 --> 00:27:38,790
+
+
+605
+00:27:38,790 --> 00:27:42,780
+ Jadi jenis data lain yang kami miliki 
+
+606
+00:27:42,780 --> 00:27:49,290
+ khawatir tentang menugaskan noda ke, pesan IPC. 
+
+607
+00:27:49,290 --> 00:27:53,257
+ Jadi pesan IPC pada dasarnya 
+
+608
+00:27:53,257 --> 00:27:54,090
+ diperlakukan seperti array. 
+
+609
+00:27:54,090 --> 00:27:56,610
+
+
+610
+00:27:56,610 --> 00:28:01,790
+ Jadi masing-masing dari pesan-pesan ini pergi 
+
+611
+00:28:01,790 --> 00:28:04,310
+ dikaitkan dengan satu noda itu 
+
+612
+00:28:04,310 --> 00:28:08,230
+ adalah gabungan dari noda semua bagian penyusunnya. 
+
+613
+00:28:08,230 --> 00:28:09,900
+ Sekali lagi, ini membantu dengan efisiensi 
+
+614
+00:28:09,900 --> 00:28:13,140
+ karena kita hanya perlu menyimpan satu tag noda 
+
+615
+00:28:13,140 --> 00:28:15,360
+ untuk masing-masing pesan ini. 
+
+616
+00:28:15,360 --> 00:28:17,860
+ Dan dalam kasus terburuk, ini konservatif, 
+
+617
+00:28:17,860 --> 00:28:19,170
+ itu melebih-lebihkan noda. 
+
+618
+00:28:19,170 --> 00:28:21,727
+ Tapi itu seharusnya tidak pernah menghasilkan kebocoran keamanan. 
+
+619
+00:28:21,727 --> 00:28:23,560
+ Paling buruk, seharusnya hanya menghasilkan sesuatu 
+
+620
+00:28:23,560 --> 00:28:25,650
+ yang seharusnya bisa melewati jaringan tidak 
+
+621
+00:28:25,650 --> 00:28:27,030
+ bisa masuk ke jaringan. 
+
+622
+00:28:27,030 --> 00:28:30,110
+
+
+623
+00:28:30,110 --> 00:28:32,730
+ Beginilah cara kerja Anda saat membangun 
+
+624
+00:28:32,730 --> 00:28:34,800
+ pesan, sehingga pesan itu mendapat 
+
+625
+00:28:34,800 --> 00:28:36,880
+ penyatuan semua noda komponennya. 
+
+626
+00:28:36,880 --> 00:28:40,570
+ Kemudian ketika Anda membacanya, apa Anda 
+
+627
+00:28:40,570 --> 00:28:46,500
+ terima dalam pesan-- data yang diekstrak 
+
+628
+00:28:46,500 --> 00:28:52,560
+ mendapat noda pesan itu sendiri, yang masuk akal. 
+
+629
+00:28:52,560 --> 00:28:55,240
+
+
+630
+00:28:55,240 --> 00:28:57,200
+ Jadi itulah bagaimana pesan-pesan IPC diperlakukan. 
+
+631
+00:28:57,200 --> 00:29:03,000
+ Sumber lain yang mungkin Anda khawatirkan adalah bagaimana file ditangani. 
+
+632
+00:29:03,000 --> 00:29:10,160
+ Jadi sekali lagi setiap file mendapat tag taint tunggal, 
+
+633
+00:29:10,160 --> 00:29:11,770
+ dan tag itu pada dasarnya disimpan 
+
+634
+00:29:11,770 --> 00:29:14,970
+ di samping file dalam metadatanya di toko yang stabil 
+
+635
+00:29:14,970 --> 00:29:17,219
+ seperti kartu SD atau apalah. 
+
+636
+00:29:17,219 --> 00:29:19,260
+ Jadi ini pada dasarnya adalah skema konservatif yang sama 
+
+637
+00:29:19,260 --> 00:29:20,360
+ yang telah kita lihat sebelumnya. 
+
+638
+00:29:20,360 --> 00:29:25,030
+ Jadi ide dasarnya adalah aplikasi mengakses 
+
+639
+00:29:25,030 --> 00:29:27,090
+ beberapa data sensitif seperti, misalnya, GPS Anda 
+
+640
+00:29:27,090 --> 00:29:31,710
+ lokasi, mungkin itu akan menulis data itu ke file. 
+
+641
+00:29:31,710 --> 00:29:34,730
+ Jadi TaintDroid memperbarui tag noda file itu 
+
+642
+00:29:34,730 --> 00:29:38,700
+ dengan bendera GPS, mungkin aplikasi ditutup, 
+
+643
+00:29:38,700 --> 00:29:42,940
+ kemudian pada beberapa aplikasi lain keluar, ia membaca file itu. 
+
+644
+00:29:42,940 --> 00:29:46,700
+ Ketika datang ke VM, ke dalam aplikasi, 
+
+645
+00:29:46,700 --> 00:29:48,200
+ TaintDroid akan melihat dan melihatnya 
+
+646
+00:29:48,200 --> 00:29:52,150
+ memiliki bendera yang ditandai, dan begitu pun data itu 
+
+647
+00:29:52,150 --> 00:29:55,550
+ berasal dari membaca file yang juga akan memiliki bendera GPS 
+
+648
+00:29:55,550 --> 00:29:56,240
+ set. 
+
+649
+00:29:56,240 --> 00:29:59,590
+ Sangat sederhana, saya pikir. 
+
+650
+00:29:59,590 --> 00:30:04,410
+ Jadi, hal-hal apa yang kita miliki 
+
+651
+00:30:04,410 --> 00:30:07,170
+ mencemari negara Jawa. 
+
+652
+00:30:07,170 --> 00:30:15,990
+ Jadi pada dasarnya ada lima jenis objek Java 
+
+653
+00:30:15,990 --> 00:30:19,570
+ yang membutuhkan bendera noda. 
+
+654
+00:30:19,570 --> 00:30:23,190
+
+
+655
+00:30:23,190 --> 00:30:31,330
+ Dan jenis pertama adalah variabel lokal 
+
+656
+00:30:31,330 --> 00:30:34,370
+ yang hidup dalam suatu metode. 
+
+657
+00:30:34,370 --> 00:30:37,430
+ Jadi kita bisa membayangkan kembali ke sini, 
+
+658
+00:30:37,430 --> 00:30:40,110
+ ini adalah variabel lokal, char c, misalnya. 
+
+659
+00:30:40,110 --> 00:30:44,560
+ Jadi kita harus memberikan tanda-tanda noda untuk hal-hal itu. 
+
+660
+00:30:44,560 --> 00:30:50,560
+ Anda juga dapat membayangkan argumen metode tersebut 
+
+661
+00:30:50,560 --> 00:30:52,440
+ perlu memiliki bendera noda. 
+
+662
+00:30:52,440 --> 00:30:59,030
+ Kedua hal ini di sini, ini hidup dalam tumpukan. 
+
+663
+00:30:59,030 --> 00:31:03,280
+
+
+664
+00:31:03,280 --> 00:31:06,090
+ Jadi TaintDroid harus melacak penandaan bendera 
+
+665
+00:31:06,090 --> 00:31:08,070
+ dan yang lainnya untuk hal-hal semacam itu. 
+
+666
+00:31:08,070 --> 00:31:15,460
+ Juga kita perlu menetapkan bendera ke bidang contoh objek. 
+
+667
+00:31:15,460 --> 00:31:19,980
+
+
+668
+00:31:19,980 --> 00:31:24,670
+ Dan ini seperti, bayangkan bahwa saya memiliki beberapa objek yang disebut 
+
+669
+00:31:24,670 --> 00:31:28,166
+ c, itu lingkaran jadi tentu saja hal yang tepat untuk dilakukan 
+
+670
+00:31:28,166 --> 00:31:29,730
+ adalah saya ingin melihat radiusnya. 
+
+671
+00:31:29,730 --> 00:31:31,520
+ Ini bidang di sini. 
+
+672
+00:31:31,520 --> 00:31:36,690
+ Jadi kita harus mengaitkan informasi kotor untuk masing-masing 
+
+673
+00:31:36,690 --> 00:31:39,030
+ bidang-bidang ini di sini. 
+
+674
+00:31:39,030 --> 00:31:46,660
+ Java juga memungkinkan Anda memiliki bidang kelas statis, 
+
+675
+00:31:46,660 --> 00:31:50,300
+ jadi Anda perlu informasi kotor untuk itu. 
+
+676
+00:31:50,300 --> 00:31:56,030
+ Ini mengatakan sesuatu seperti, misalnya, mungkin lingkaran itu 
+
+677
+00:31:56,030 --> 00:31:59,200
+ bahwa beberapa properti, oke, kami akan memberikan noda 
+
+678
+00:31:59,200 --> 00:32:00,530
+ informasi di sana. 
+
+679
+00:32:00,530 --> 00:32:04,080
+ Kemudian array, seperti yang sudah kita bahas sebelumnya, 
+
+680
+00:32:04,080 --> 00:32:07,750
+ kami akan menetapkan satu bagian informasi kotor 
+
+681
+00:32:07,750 --> 00:32:09,350
+ per seluruh larik itu. 
+
+682
+00:32:09,350 --> 00:32:12,030
+ Dan itulah ide dasar untuk bagaimana kita 
+
+683
+00:32:12,030 --> 00:32:15,450
+ akan menyimpan bendera kotor ini di tingkat implementasi, 
+
+684
+00:32:15,450 --> 00:32:21,887
+ adalah bahwa kita akan mencoba untuk pada dasarnya menyimpan noda 
+
+685
+00:32:21,887 --> 00:32:27,560
+ bendera untuk variabel dekat variabel itu sendiri. 
+
+686
+00:32:27,560 --> 00:32:33,620
+
+
+687
+00:32:33,620 --> 00:32:38,170
+ Ide dasarnya di sini adalah, misalnya, 
+
+688
+00:32:38,170 --> 00:32:40,070
+ katakanlah beberapa variabel integer, dan kami 
+
+689
+00:32:40,070 --> 00:32:42,740
+ ingin menyimpan beberapa noda dengan itu. 
+
+690
+00:32:42,740 --> 00:32:45,430
+ Kami ingin mencoba menjaga agar negara itu dekat dengan variabel 
+
+691
+00:32:45,430 --> 00:32:47,660
+ mungkin karena alasan membuat cache 
+
+692
+00:32:47,660 --> 00:32:50,420
+ bekerja secara efisien pada level prosesor. 
+
+693
+00:32:50,420 --> 00:32:52,790
+ Jadi jika kita menyimpan noda sangat jauh 
+
+694
+00:32:52,790 --> 00:32:54,376
+ jauh dari variabel itu, itu bisa 
+
+695
+00:32:54,376 --> 00:32:56,640
+ menjadi bermasalah karena mungkin, penerjemah 
+
+696
+00:32:56,640 --> 00:32:59,250
+ akan melihat nilai memori untuk Java yang sebenarnya 
+
+697
+00:32:59,250 --> 00:32:59,860
+ variabel. 
+
+698
+00:32:59,860 --> 00:33:02,310
+ Ini akan sangat cepat setelahnya, atau bahkan 
+
+699
+00:33:02,310 --> 00:33:04,990
+ sebelum itu, lihat dan lihat apa informasi noda itu. 
+
+700
+00:33:04,990 --> 00:33:09,566
+ Karena jika Anda melihat operasi ini di sini, 
+
+701
+00:33:09,566 --> 00:33:10,940
+ tempat yang sama di kode di mana 
+
+702
+00:33:10,940 --> 00:33:12,280
+ penerjemah melihat nilai-nilai, 
+
+703
+00:33:12,280 --> 00:33:13,710
+ itu juga melihat noda. 
+
+704
+00:33:13,710 --> 00:33:17,710
+ Pada dasarnya dengan menyimpan hal-hal ini dekat satu sama lain, 
+
+705
+00:33:17,710 --> 00:33:19,880
+ Anda mencoba membuat perilaku cache lebih baik. 
+
+706
+00:33:19,880 --> 00:33:22,840
+ Dan cara mereka melakukan ini sebenarnya 
+
+707
+00:33:22,840 --> 00:33:25,520
+ cukup mudah. 
+
+708
+00:33:25,520 --> 00:33:30,660
+ Jadi jika Anda melihat apa yang mereka lakukan untuk argumen metode 
+
+709
+00:33:30,660 --> 00:33:32,500
+ dan variabel lokal yang hidup di tumpukan, 
+
+710
+00:33:32,500 --> 00:33:36,390
+ mereka pada dasarnya mengalokasikan bendera noda 
+
+711
+00:33:36,390 --> 00:33:39,330
+ tepat di samping di mana variabel dialokasikan. 
+
+712
+00:33:39,330 --> 00:33:44,860
+ Jadi katakanlah kita memiliki hal favorit di kelas ini, 
+
+713
+00:33:44,860 --> 00:33:47,360
+ diagram tumpukan, yang mungkin Anda akan 
+
+714
+00:33:47,360 --> 00:33:49,110
+ benci setelah kamu keluar dari sini. 
+
+715
+00:33:49,110 --> 00:33:56,740
+ Jadi Anda punya beberapa variabel lokal 0 pada tumpukan, 
+
+716
+00:33:56,740 --> 00:33:59,220
+ lalu apa yang akan dilakukan oleh TaintDroid 
+
+717
+00:33:59,220 --> 00:34:02,270
+ itu akan menyimpan tag noda untuk variabel itu 
+
+718
+00:34:02,270 --> 00:34:05,540
+ tepat di samping tempat variabel lokal berada di memori. 
+
+719
+00:34:05,540 --> 00:34:10,810
+ Begitu pula, jika Anda memiliki variabel lokal lain di sini, 
+
+720
+00:34:10,810 --> 00:34:16,900
+ maka Anda akan melihat tag nodanya di sini. 
+
+721
+00:34:16,900 --> 00:34:19,362
+ Begitu seterusnya dan seterusnya. 
+
+722
+00:34:19,362 --> 00:34:20,320
+ Cukup mudah. 
+
+723
+00:34:20,320 --> 00:34:22,567
+ Jadi semoga Anda mendapatkan hal-hal ini 
+
+724
+00:34:22,567 --> 00:34:25,150
+ di baris cache yang sama, itu akan membuat akses sangat 
+
+725
+00:34:25,150 --> 00:34:25,670
+ murah. 
+
+726
+00:34:25,670 --> 00:34:26,169
+ Ya? 
+
+727
+00:34:26,170 --> 00:34:28,094
+ AUDIENCE: Saya hanya ingin tahu, bagaimana Anda bisa 
+
+728
+00:34:28,094 --> 00:34:30,350
+ memiliki satu bendera untuk seluruh larik 
+
+729
+00:34:30,350 --> 00:34:33,810
+ dan bendera berbeda untuk setiap properti dari suatu objek. 
+
+730
+00:34:33,810 --> 00:34:38,080
+ Bagaimana jika salah satu metode dari objek tersebut 
+
+731
+00:34:38,080 --> 00:34:41,023
+ dapat mengakses data yang disimpan di propertinya. 
+
+732
+00:34:41,023 --> 00:34:42,895
+ Itu ingin-- tahu apa yang saya maksud? 
+
+733
+00:34:42,895 --> 00:34:44,190
+ PROFESOR: Mari kita lihat. 
+
+734
+00:34:44,190 --> 00:34:47,030
+ Jadi Anda bertanya sebagai alasan kebijakan, mengapa? 
+
+735
+00:34:47,030 --> 00:34:48,530
+ AUDIENCE: Sebagai alasan kebijakan, benar. 
+
+736
+00:34:48,530 --> 00:34:51,840
+ PROFESOR: Jadi saya pikir beberapa hal ini mereka lakukan untuk implementasi 
+
+737
+00:34:51,840 --> 00:34:53,489
+ alasan efisiensi. 
+
+738
+00:34:53,489 --> 00:34:56,530
+ Saya pikir untuk kasus itu - jadi mereka memiliki beberapa aturan lain, 
+
+739
+00:34:56,530 --> 00:34:57,030
+ terlalu. 
+
+740
+00:34:57,030 --> 00:35:00,232
+ Misalnya, mereka mengatakan bahwa mereka tidak mengatakan panjangnya data 
+
+741
+00:35:00,232 --> 00:35:02,750
+ array, sebenarnya akan membocorkan informasi, 
+
+742
+00:35:02,750 --> 00:35:04,700
+ jadi mereka tidak menyebarkan noda untuk itu. 
+
+743
+00:35:04,700 --> 00:35:07,000
+ Jadi sebagian hanya karena alasan efisiensi. 
+
+744
+00:35:07,000 --> 00:35:09,820
+ Saya pikir pada prinsipnya, tidak ada yang menghentikan Anda 
+
+745
+00:35:09,820 --> 00:35:14,450
+ dari mengatakan, ambil setiap elemen dalam array 
+
+746
+00:35:14,450 --> 00:35:16,636
+ dan, ketika Anda melakukan beberapa akses khusus di dalamnya, 
+
+747
+00:35:16,636 --> 00:35:18,760
+ maka Anda hanya mengatakan hal di sisi kiri 
+
+748
+00:35:18,760 --> 00:35:21,741
+ akan mendapatkan noda, hanya barang-barang itu. 
+
+749
+00:35:21,741 --> 00:35:23,740
+ Tidak sepenuhnya jelas itu hal yang benar 
+
+750
+00:35:23,740 --> 00:35:25,910
+ harus dilakukan, karena mungkin 
+
+751
+00:35:25,910 --> 00:35:28,980
+ dalam mendapatkan benda itu ke dalam array di tempat pertama, 
+
+752
+00:35:28,980 --> 00:35:30,930
+ hal yang melakukan itu harus mengetahui sesuatu 
+
+753
+00:35:30,930 --> 00:35:32,851
+ tentang array dalam beberapa cara. 
+
+754
+00:35:32,851 --> 00:35:35,100
+ Jadi saya pikir ini adalah kombinasi dari kedua alasan kebijakan-- 
+
+755
+00:35:35,100 --> 00:35:38,060
+ mereka berpikir bahwa dengan menjadi terlalu konservatif, 
+
+756
+00:35:38,060 --> 00:35:42,200
+ Anda tidak boleh membiarkan kebocoran data apa pun yang ingin Anda cegah. 
+
+757
+00:35:42,200 --> 00:35:44,740
+ Dan juga saya pikir itu semacam intuitif 
+
+758
+00:35:44,740 --> 00:35:47,035
+ masuk akal bahwa mengakses array, 
+
+759
+00:35:47,035 --> 00:35:49,160
+ Anda harus tahu sesuatu tentang array itu. 
+
+760
+00:35:49,160 --> 00:35:50,740
+ Dan ketika Anda harus tahu sesuatu tentang sesuatu, 
+
+761
+00:35:50,740 --> 00:35:52,948
+ yang biasanya berarti bahwa Anda ingin tercemar oleh. 
+
+762
+00:35:52,948 --> 00:35:54,810
+
+
+763
+00:35:54,810 --> 00:35:57,210
+ Ada pertanyaan lain? 
+
+764
+00:35:57,210 --> 00:35:59,425
+ OK, jadi ini adalah skema dasar yang mereka 
+
+765
+00:35:59,425 --> 00:36:02,830
+ gunakan untuk menyimpan semua informasi ini pada dasarnya 
+
+766
+00:36:02,830 --> 00:36:03,500
+ satu sama lain. 
+
+767
+00:36:03,500 --> 00:36:05,300
+ Jadi Anda bisa membayangkan itu untuk bidang kelas 
+
+768
+00:36:05,300 --> 00:36:07,440
+ dan untuk bidang objek, Anda melakukan hal serupa. 
+
+769
+00:36:07,440 --> 00:36:09,280
+ Jadi dalam deklarasi kelas, 
+
+770
+00:36:09,280 --> 00:36:12,580
+ Anda punya beberapa memori slot untuk variabel instan tertentu, 
+
+771
+00:36:12,580 --> 00:36:14,530
+ lalu tepat di samping slot itu Anda 
+
+772
+00:36:14,530 --> 00:36:18,660
+ memiliki informasi noda untuk variabel tertentu. 
+
+773
+00:36:18,660 --> 00:36:21,380
+ Jadi saya pikir itu semua masuk akal. 
+
+774
+00:36:21,380 --> 00:36:22,860
+
+
+775
+00:36:22,860 --> 00:36:26,780
+ Itu semacam ikhtisar tingkat tinggi tentang bagaimana TaintDroid 
+
+776
+00:36:26,780 --> 00:36:30,990
+ bekerja, jadi jika Anda mendapatkan semua ini, maka ide dasarnya 
+
+777
+00:36:30,990 --> 00:36:33,900
+ di belakang TaintDroid sebenarnya cukup sederhana. 
+
+778
+00:36:33,900 --> 00:36:37,900
+ Jadi pada waktu inisialisasi sistem atau apa pun, 
+
+779
+00:36:37,900 --> 00:36:41,660
+ TaintDroid melihat semua sumber yang berpotensi tercemar 
+
+780
+00:36:41,660 --> 00:36:43,880
+ informasi, dan pada dasarnya menetapkan bendera 
+
+781
+00:36:43,880 --> 00:36:45,046
+ untuk masing-masing hal ini. 
+
+782
+00:36:45,046 --> 00:36:47,940
+ Jadi hal-hal seperti GPS Anda, kamera Anda, dan seterusnya dan sebagainya. 
+
+783
+00:36:47,940 --> 00:36:50,243
+ Saat program dijalankan, itu akan berjalan 
+
+784
+00:36:50,243 --> 00:36:51,670
+ untuk menarik informasi sensitif 
+
+785
+00:36:51,670 --> 00:36:54,720
+ dari sumber-sumber sensitif ini, dan kemudian sebagai hal semacam itu 
+
+786
+00:36:54,720 --> 00:36:56,460
+ terjadi, interpreter akan pergi 
+
+787
+00:36:56,460 --> 00:36:58,043
+ untuk melihat semua jenis kode op ini 
+
+788
+00:36:58,043 --> 00:37:01,640
+ di sini dan pada dasarnya mengikuti kebijakan tersebut 
+
+789
+00:37:01,640 --> 00:37:03,653
+ aturan dalam tabel di atas kertas, dan cari tahu 
+
+790
+00:37:03,653 --> 00:37:06,780
+ bagaimana menyebarkan noda melalui sistem. 
+
+791
+00:37:06,780 --> 00:37:08,990
+ Jadi bagian yang paling menarik adalah apa 
+
+792
+00:37:08,990 --> 00:37:12,570
+ terjadi jika data mencoba untuk mengeksfiltrasi dirinya sendiri. 
+
+793
+00:37:12,570 --> 00:37:15,660
+ Jadi intinya, TaintDroid bisa duduk di antarmuka jaringan 
+
+794
+00:37:15,660 --> 00:37:18,320
+ dan mereka dapat melihat semua yang mencoba untuk melewati jaringan 
+
+795
+00:37:18,320 --> 00:37:18,944
+ antarmuka. 
+
+796
+00:37:18,944 --> 00:37:20,610
+ Kami benar-benar melihat label noda di sana 
+
+797
+00:37:20,610 --> 00:37:24,520
+ dan kita dapat mengatakan jika data itu mencoba meninggalkan jaringan 
+
+798
+00:37:24,520 --> 00:37:29,070
+ memiliki satu atau lebih noda bendera, maka kita akan mengatakan tidak. 
+
+799
+00:37:29,070 --> 00:37:32,060
+ Data itu tidak akan diizinkan masuk ke jaringan. 
+
+800
+00:37:32,060 --> 00:37:35,175
+ Sekarang apa yang terjadi pada titik itu sebenarnya 
+
+801
+00:37:35,175 --> 00:37:37,090
+ jenis aplikasi-tergantung. 
+
+802
+00:37:37,090 --> 00:37:39,730
+ Anda bisa membayangkan bahwa TaintDroid menunjukkan peringatan 
+
+803
+00:37:39,730 --> 00:37:41,690
+ kepada pengguna yang mengatakan hei, seseorang 
+
+804
+00:37:41,690 --> 00:37:44,859
+ mencoba mengirim lokasi Anda melalui jaringan. 
+
+805
+00:37:44,859 --> 00:37:46,650
+ Anda bisa membayangkan bahwa mungkin TaintDroid memiliki 
+
+806
+00:37:46,650 --> 00:37:49,380
+ beberapa kebijakan yang dibangun di mana, misalnya, 
+
+807
+00:37:49,380 --> 00:37:51,390
+ mungkin itu memungkinkan aliran jaringan itu padam, 
+
+808
+00:37:51,390 --> 00:37:53,610
+ tapi itu nol semua data sensitif itu, 
+
+809
+00:37:53,610 --> 00:37:54,620
+ seterusnya dan seterusnya. 
+
+810
+00:37:54,620 --> 00:37:56,895
+ Itu dari perspektif tertentu, sedikit 
+
+811
+00:37:56,895 --> 00:37:57,850
+ ortogonal terhadap kontribusi inti 
+
+812
+00:37:57,850 --> 00:38:00,250
+ kertas, yang menemukan exfiltrations data tersebut 
+
+813
+00:38:00,250 --> 00:38:03,335
+ di tempat pertama. 
+
+814
+00:38:03,335 --> 00:38:04,960
+ Di bagian evaluasi kertas, 
+
+815
+00:38:04,960 --> 00:38:07,240
+ mereka mendiskusikan beberapa hal yang mereka temukan. 
+
+816
+00:38:07,240 --> 00:38:10,740
+ Mereka menemukan bahwa aplikasi Android akan 
+
+817
+00:38:10,740 --> 00:38:13,410
+ coba eksfiltrasi data dengan cara itu 
+
+818
+00:38:13,410 --> 00:38:15,104
+ tidak terkena pengguna. 
+
+819
+00:38:15,104 --> 00:38:17,187
+ Jadi misalnya, mereka akan mencoba menggunakan lokasi Anda 
+
+820
+00:38:17,187 --> 00:38:20,090
+ untuk iklan, mereka akan mengirim nomor telepon Anda 
+
+821
+00:38:20,090 --> 00:38:22,080
+ dan hal-hal seperti ini ke server jauh. 
+
+822
+00:38:22,080 --> 00:38:26,170
+ Sekali lagi, penting untuk dicatat bahwa aplikasi ini, 
+
+823
+00:38:26,170 --> 00:38:31,200
+ biasanya mereka tidak melanggar keamanan Android 
+
+824
+00:38:31,200 --> 00:38:33,870
+ model dalam arti bahwa pengguna itu 
+
+825
+00:38:33,870 --> 00:38:36,350
+ memungkinkan aplikasi ini dengan akses ke jaringan, 
+
+826
+00:38:36,350 --> 00:38:37,087
+ sebagai contoh. 
+
+827
+00:38:37,087 --> 00:38:38,670
+ Atau mereka telah mengijinkan aplikasi ini 
+
+828
+00:38:38,670 --> 00:38:40,760
+ untuk memiliki akses ke hal-hal seperti daftar kontak. 
+
+829
+00:38:40,760 --> 00:38:43,140
+ Namun, aplikasinya tidak 
+
+830
+00:38:43,140 --> 00:38:46,027
+ terkena pengguna di EULA, di Lisensi Pengguna Akhir 
+
+831
+00:38:46,027 --> 00:38:48,360
+ Perjanjian, bahwa hei, saya akan mengambil nomor telepon Anda 
+
+832
+00:38:48,360 --> 00:38:52,550
+ dan benar-benar mengirimkannya ke beberapa server di Silk Road 8 
+
+833
+00:38:52,550 --> 00:38:54,280
+ atau terserah. 
+
+834
+00:38:54,280 --> 00:38:57,134
+ Itu sebenarnya menyesatkan dan menipu, karena sebagian besar pengguna, 
+
+835
+00:38:57,134 --> 00:38:58,800
+ jika mereka benar-benar melihat itu di EULA 
+
+836
+00:38:58,800 --> 00:39:00,299
+ dan mereka tahu itu terjadi, 
+
+837
+00:39:00,299 --> 00:39:02,827
+ mereka setidaknya memiliki pemikiran kedua tentang 
+
+838
+00:39:02,827 --> 00:39:05,035
+ apakah mereka ingin menginstal aplikasi ini atau tidak. 
+
+839
+00:39:05,035 --> 00:39:08,915
+ AUDIENCE: Apakah masuk akal untuk menebak bahwa bahkan jika mereka menaruhnya 
+
+840
+00:39:08,915 --> 00:39:10,855
+ di EULA, itu tidak terlalu berharga 
+
+841
+00:39:10,855 --> 00:39:12,313
+ itu karena orang tidak pernah membaca itu. 
+
+842
+00:39:12,313 --> 00:39:14,080
+ PROFESOR: Ya, sebenarnya cukup 
+
+843
+00:39:14,080 --> 00:39:15,770
+ masuk akal untuk menganggap itu. 
+
+844
+00:39:15,770 --> 00:39:17,945
+ Jadi, para ilmuwan komputer yang terlatih seperti saya 
+
+845
+00:39:17,945 --> 00:39:19,820
+ tidak selalu memeriksa EULA karena itu 
+
+846
+00:39:19,820 --> 00:39:21,670
+ seperti, Anda harus memiliki Flappy Birds 
+
+847
+00:39:21,670 --> 00:39:23,000
+ atau apa yang akan kamu lakukan. 
+
+848
+00:39:23,000 --> 00:39:25,794
+ Saya pikir apa yang berguna, meskipun, dan ini 
+
+849
+00:39:25,794 --> 00:39:27,710
+ adalah jenis spiritual yang tidak memuaskan tetapi bermanfaat 
+
+850
+00:39:27,710 --> 00:39:30,081
+ dalam prakteknya, adalah bahwa jika itu dimasukkan ke dalam EULA, 
+
+851
+00:39:30,081 --> 00:39:32,330
+ maka mungkin akan ada beberapa individu bajik yang 
+
+852
+00:39:32,330 --> 00:39:34,050
+ benar-benar membaca EULA. 
+
+853
+00:39:34,050 --> 00:39:34,600
+ AUDIENCE: Dan mereka bisa bilang suka-- 
+
+854
+00:39:34,600 --> 00:39:35,490
+ PROFESOR: Benar, itu benar. 
+
+855
+00:39:35,490 --> 00:39:35,880
+ AUDIENCE: --Jangan lakukan itu. 
+
+856
+00:39:35,880 --> 00:39:37,960
+ PROFESOR: Ya, Laporan Konsumen 
+
+857
+00:39:37,960 --> 00:39:41,380
+ atau beberapa moral yang setara akan mengatakan tugas kita adalah membaca EULA, 
+
+858
+00:39:41,380 --> 00:39:43,526
+ dan omong-omong, Anda tidak boleh mengunduh aplikasi ini. 
+
+859
+00:39:43,526 --> 00:39:45,820
+ Tetapi Anda benar-benar tepat bahwa mengandalkan pengguna 
+
+860
+00:39:45,820 --> 00:39:48,345
+ untuk membaca halaman cetak kecil pada dasarnya - 
+
+861
+00:39:48,345 --> 00:39:49,470
+ mereka tidak akan melakukannya. 
+
+862
+00:39:49,470 --> 00:39:54,260
+ Mereka akan menekan Next dan kemudian melanjutkan. 
+
+863
+00:39:54,260 --> 00:39:57,500
+ Oke, jadi ada pertanyaan sampai titik ini? 
+
+864
+00:39:57,500 --> 00:40:02,890
+ Saya pikir itu aturan untuk bagaimana informasi 
+
+865
+00:40:02,890 --> 00:40:05,650
+ mengalir melalui sistem cukup mudah. 
+
+866
+00:40:05,650 --> 00:40:07,560
+ Jadi saat kami berdiskusi, pada dasarnya 
+
+867
+00:40:07,560 --> 00:40:10,400
+ noda dari sisi kanan mengarah ke sisi kiri. 
+
+868
+00:40:10,400 --> 00:40:13,010
+ Kadang-kadang, meskipun, aturan arus informasi ini 
+
+869
+00:40:13,010 --> 00:40:15,140
+ dapat memiliki hasil yang agak berlawanan dengan intuisi. 
+
+870
+00:40:15,140 --> 00:40:17,580
+ Jadi bayangkan aplikasi itu 
+
+871
+00:40:17,580 --> 00:40:22,120
+ akan menerapkan kelas daftar tertautnya sendiri. 
+
+872
+00:40:22,120 --> 00:40:28,550
+ Jadi itu akan mendefinisikan beberapa kelas sederhana di sini disebut 
+
+873
+00:40:28,550 --> 00:40:35,020
+ ListNode dan itu akan memiliki bidang objek untuk data. 
+
+874
+00:40:35,020 --> 00:40:39,528
+ Dan kemudian akan memiliki objek ListNode 
+
+875
+00:40:39,528 --> 00:40:46,310
+ yang mewakili hal berikutnya dalam daftar tertaut. 
+
+876
+00:40:46,310 --> 00:40:50,770
+ Anggaplah jika aplikasi menugaskan beberapa data yang tercemar 
+
+877
+00:40:50,770 --> 00:40:54,590
+ ke bidang ini di sini. 
+
+878
+00:40:54,590 --> 00:40:57,400
+ Beberapa data sensitif berasal dari GPS atau apa pun. 
+
+879
+00:40:57,400 --> 00:40:59,810
+ Jadi satu pertanyaan yang mungkin Anda miliki adalah 
+
+880
+00:40:59,810 --> 00:41:03,730
+ apa yang terjadi ketika kami menghitung panjang untuk daftar ini. 
+
+881
+00:41:03,730 --> 00:41:08,660
+ Haruskah panjang daftar tercemar? 
+
+882
+00:41:08,660 --> 00:41:10,870
+ Ini mungkin menyerang Anda sebagai sedikit berlawanan dengan intuisi 
+
+883
+00:41:10,870 --> 00:41:13,920
+ bahwa jawabannya adalah kemungkinan tidak, setidaknya di jalan 
+
+884
+00:41:13,920 --> 00:41:15,670
+ bahwa TaintDroid dan banyak sistem ini 
+
+885
+00:41:15,670 --> 00:41:16,980
+ menentukan arus informasi. 
+
+886
+00:41:16,980 --> 00:41:25,530
+ Jadi apa artinya menambahkan simpul ke daftar tertaut. 
+
+887
+00:41:25,530 --> 00:41:28,460
+ Itu pada dasarnya berarti tiga hal. 
+
+888
+00:41:28,460 --> 00:41:33,450
+ Jadi, hal pertama yang Anda lakukan adalah Anda mengalokasikan daftar baru 
+
+889
+00:41:33,450 --> 00:41:37,680
+ node berisi data baru ini yang ingin Anda tambahkan. 
+
+890
+00:41:37,680 --> 00:41:45,420
+ Maka hal kedua yang Anda lakukan adalah Anda menetapkan ke data 
+
+891
+00:41:45,420 --> 00:41:48,050
+ bidang simpul baru ini. 
+
+892
+00:41:48,050 --> 00:41:50,130
+ Dan kemudian hal ketiga yang Anda lakukan 
+
+893
+00:41:50,130 --> 00:41:57,140
+ apakah Anda melakukan beberapa jenis patch dari pointer berikutnya 
+
+894
+00:41:57,140 --> 00:42:02,380
+ untuk benar-benar menyambungkan node ke dalam daftar. 
+
+895
+00:42:02,380 --> 00:42:05,710
+ Yang menarik adalah langkah ini tidak benar-benar terjadi 
+
+896
+00:42:05,710 --> 00:42:08,960
+ melibatkan bidang data sama sekali. 
+
+897
+00:42:08,960 --> 00:42:10,840
+ Hanya melihat nilai-nilai berikut ini. 
+
+898
+00:42:10,840 --> 00:42:14,820
+ Benar, jadi yang menarik adalah karena hanya data ini 
+
+899
+00:42:14,820 --> 00:42:20,000
+ benda-benda tercemar, bagaimana kita menghitung panjang daftar. 
+
+900
+00:42:20,000 --> 00:42:21,701
+ Kami pada dasarnya mulai dari beberapa simpul kepala 
+
+901
+00:42:21,701 --> 00:42:23,200
+ dan kami melintasi petunjuk berikut ini, 
+
+902
+00:42:23,200 --> 00:42:25,050
+ dan kami menghitung berapa banyak yang kami lintasi. 
+
+903
+00:42:25,050 --> 00:42:27,383
+ Sehingga algoritma tersebut tidak akan menyentuh data yang tercemar 
+
+904
+00:42:27,383 --> 00:42:27,920
+ sama sekali. 
+
+905
+00:42:27,920 --> 00:42:31,990
+ Sangat menarik, bahkan jika Anda memiliki daftar tertaut itu 
+
+906
+00:42:31,990 --> 00:42:36,190
+ penuh dengan data yang tercemar, lalu saja 
+
+907
+00:42:36,190 --> 00:42:38,410
+ menghitung panjang daftar itu 
+
+908
+00:42:38,410 --> 00:42:41,360
+ tidak akan benar-benar menghasilkan generasi nilai 
+
+909
+00:42:41,360 --> 00:42:43,630
+ yang ternoda sama sekali. 
+
+910
+00:42:43,630 --> 00:42:45,200
+ Jadi apakah itu masuk akal? 
+
+911
+00:42:45,200 --> 00:42:47,772
+ Itu mungkin tampak sedikit berlawanan dengan intuisi, 
+
+912
+00:42:47,772 --> 00:42:49,230
+ dan ini adalah salah satu alasan mengapa, 
+
+913
+00:42:49,230 --> 00:42:51,521
+ misalnya, seperti ketika kita berbicara tentang array, 
+
+914
+00:42:51,521 --> 00:42:52,080
+ sebagai contoh. 
+
+915
+00:42:52,080 --> 00:42:54,410
+ Mereka mengatakan array.length, aku tidak pergi 
+
+916
+00:42:54,410 --> 00:42:56,110
+ untuk menghasilkan noda untuk itu. 
+
+917
+00:42:56,110 --> 00:43:00,390
+ Itu karena alasan seperti ini. 
+
+918
+00:43:00,390 --> 00:43:04,950
+ Jika Anda menginginkan jaminan yang lebih kuat 
+
+919
+00:43:04,950 --> 00:43:06,810
+ tentang - jaminan tidak lebih kuat. 
+
+920
+00:43:06,810 --> 00:43:08,730
+ Tetapi jika Anda benar-benar ingin menghitung 
+
+921
+00:43:08,730 --> 00:43:14,620
+ panjang daftar untuk menghasilkan semacam nilai, 
+
+922
+00:43:14,620 --> 00:43:16,650
+ kita bisa membayangkan bahwa implementasi Anda, itu 
+
+923
+00:43:16,650 --> 00:43:19,857
+ sedikit konyol, tetapi Anda dapat memutuskan untuk menyentuh data 
+
+924
+00:43:19,857 --> 00:43:21,940
+ tanpa alasan semantik nyata selain untuk menghasilkan 
+
+925
+00:43:21,940 --> 00:43:24,156
+ noda pada panjang yang dihasilkan. 
+
+926
+00:43:24,156 --> 00:43:26,280
+ Atau, seperti yang akan saya diskusikan menjelang akhir kuliah, 
+
+927
+00:43:26,280 --> 00:43:27,780
+ Anda benar-benar bisa menggunakan bahasa 
+
+928
+00:43:27,780 --> 00:43:31,740
+ yang memungkinkan Anda mendefinisikan programmer 
+
+929
+00:43:31,740 --> 00:43:33,780
+ jenis noda Anda sendiri. 
+
+930
+00:43:33,780 --> 00:43:36,530
+ Dan kemudian Anda benar-benar dapat menentukan kebijakan Anda sendiri 
+
+931
+00:43:36,530 --> 00:43:38,280
+ untuk hal-hal seperti ini. 
+
+932
+00:43:38,280 --> 00:43:41,146
+ Satu hal yang menyenangkan tentang TaintDroid adalah Anda sebagai pengembang, 
+
+933
+00:43:41,146 --> 00:43:42,520
+ Anda tidak perlu memberi label apa pun. 
+
+934
+00:43:42,520 --> 00:43:44,144
+ TaintDroid pada dasarnya melakukan itu untuk Anda. 
+
+935
+00:43:44,144 --> 00:43:46,767
+ Dikatakan inilah semua hal sensitif yang bisa menjadi sumber, 
+
+936
+00:43:46,767 --> 00:43:48,850
+ inilah semua hal sensitif yang bisa menjadi wastafel. 
+
+937
+00:43:48,850 --> 00:43:51,104
+ Anda sebagai pengembang, Anda siap untuk pergi. 
+
+938
+00:43:51,104 --> 00:43:53,020
+ Tetapi jika Anda ingin pointer itu dikontrol, 
+
+939
+00:43:53,020 --> 00:43:56,700
+ Anda mungkin harus membuat beberapa kebijakan sendiri. 
+
+940
+00:43:56,700 --> 00:44:04,364
+ Baiklah, jadi dalam hal overhead kinerja 
+
+941
+00:44:04,364 --> 00:44:06,030
+ dari TaintDroid, seperti apa bentuknya? 
+
+942
+00:44:06,030 --> 00:44:08,550
+
+
+943
+00:44:08,550 --> 00:44:11,710
+ Overhead sebenarnya tampaknya cukup masuk akal. 
+
+944
+00:44:11,710 --> 00:44:16,006
+ Jadi akan ada memori di atas kepala, dan itu 
+
+945
+00:44:16,006 --> 00:44:18,070
+ overhead memori, pada dasarnya, 
+
+946
+00:44:18,070 --> 00:44:21,730
+ menyimpan semua label noda ini. 
+
+947
+00:44:21,730 --> 00:44:27,320
+ Jadi akan ada overhead CPU, 
+
+948
+00:44:27,320 --> 00:44:32,290
+ dan ini pada dasarnya untuk menetapkan, menyebarkan, dan memeriksa 
+
+949
+00:44:32,290 --> 00:44:34,720
+ perhitungan noda itu. 
+
+950
+00:44:34,720 --> 00:44:36,600
+ Dan itu karena overhead seperti di sini. 
+
+951
+00:44:36,600 --> 00:44:38,640
+ Jadi setiap penafsiran untuk VM Dalvik, 
+
+952
+00:44:38,640 --> 00:44:40,470
+ kami benar-benar melakukan pekerjaan tambahan. 
+
+953
+00:44:40,470 --> 00:44:44,080
+ Jadi lihatlah sumbernya, lihat noda 32 bit ini 
+
+954
+00:44:44,080 --> 00:44:47,209
+ informasi, kami melakukan atau operasi 
+
+955
+00:44:47,209 --> 00:44:49,250
+ yang kita diskusikan sebelumnya, dan seterusnya dan seterusnya. 
+
+956
+00:44:49,250 --> 00:44:52,260
+ Jadi itu overhead komputasional. 
+
+957
+00:44:52,260 --> 00:44:54,610
+ Overhead ini sebenarnya cukup moderat. 
+
+958
+00:44:54,610 --> 00:45:01,540
+ Jadi untuk ingatan, penulis melaporkan sekitar 3% hingga 5% 
+
+959
+00:45:01,540 --> 00:45:03,910
+ dalam hal ruang RAM ekstra Anda 
+
+960
+00:45:03,910 --> 00:45:06,015
+ perlu menyimpan label noda itu. 
+
+961
+00:45:06,015 --> 00:45:07,550
+ Jadi itu tidak terlalu buruk. 
+
+962
+00:45:07,550 --> 00:45:11,460
+ Overhead CPU lebih tinggi, yang menurut saya masuk akal. 
+
+963
+00:45:11,460 --> 00:45:18,610
+ Keduanya berada di antara, katakanlah, 3% dan sekitar 29% CPU 
+
+964
+00:45:18,610 --> 00:45:19,661
+ atas. 
+
+965
+00:45:19,661 --> 00:45:22,160
+ Dan alasan mengapa saya pikir masuk akal untuk melihat mengapa itu terjadi 
+
+966
+00:45:22,160 --> 00:45:27,080
+ lebih tinggi karena Anda bisa membayangkan itu setiap kali Anda 
+
+967
+00:45:27,080 --> 00:45:28,850
+ masuk ke loop interpreter, Anda 
+
+968
+00:45:28,850 --> 00:45:31,440
+ harus melihat tag ini dan melakukan beberapa operasi. 
+
+969
+00:45:31,440 --> 00:45:34,850
+ Jadi meskipun semua operasi bitwise ini, 
+
+970
+00:45:34,850 --> 00:45:36,690
+ Anda harus melakukannya sepanjang waktu. 
+
+971
+00:45:36,690 --> 00:45:39,960
+ Jadi sepertinya itu akan terasa menyakitkan, padahal pada dasarnya, 
+
+972
+00:45:39,960 --> 00:45:43,630
+ overhead untuk ini, OK, jadi Anda menaruh beberapa bilangan bulat ekstra 
+
+973
+00:45:43,630 --> 00:45:44,740
+ dalam memori di suatu tempat. 
+
+974
+00:45:44,740 --> 00:45:48,340
+ Itu tidak tampak, mungkin, terlalu buruk. 
+
+975
+00:45:48,340 --> 00:45:53,570
+ Bahkan pada akhir yang tinggi, 29%, dalam dirinya sendiri mungkin tidak apa-apa, 
+
+976
+00:45:53,570 --> 00:45:56,664
+ karena Lembah Silikon terus memberitahu kita 
+
+977
+00:45:56,664 --> 00:45:59,080
+ bahwa kita perlu ponsel yang memiliki seperti quad core dan yang lainnya, 
+
+978
+00:45:59,080 --> 00:46:01,329
+ jadi mungkin ada banyak siklus cadangan yang ada. 
+
+979
+00:46:01,329 --> 00:46:03,550
+ Jadi mungkin itu tidak terlalu menghancurkan. 
+
+980
+00:46:03,550 --> 00:46:06,750
+ Meskipun mungkin ada masalah dengan daya tahan baterai. 
+
+981
+00:46:06,750 --> 00:46:08,567
+ Jadi bahkan jika Anda memiliki inti ekstra ini, 
+
+982
+00:46:08,567 --> 00:46:10,900
+ Anda mungkin tidak ingin ponsel Anda menjadi panas di saku Anda 
+
+983
+00:46:10,900 --> 00:46:12,950
+ karena Anda hanya duduk di sana, cukup urutkan 
+
+984
+00:46:12,950 --> 00:46:15,100
+ mengaduk dan menghitung beberapa barang ini. 
+
+985
+00:46:15,100 --> 00:46:17,400
+ Saya pikir untuk di sini, masalah utama di sini 
+
+986
+00:46:17,400 --> 00:46:19,400
+ akan jika ini buruk untuk baterai Anda. 
+
+987
+00:46:19,400 --> 00:46:21,235
+ Jika itu tidak buruk untuk baterai Anda, 
+
+988
+00:46:21,235 --> 00:46:23,985
+ maka mungkin bahkan di ujung yang tinggi itu, yang mungkin tidak seburuk itu. 
+
+989
+00:46:23,985 --> 00:46:28,800
+
+
+990
+00:46:28,800 --> 00:46:30,860
+ Jadi itu pada dasarnya adalah ikhtisar 
+
+991
+00:46:30,860 --> 00:46:32,785
+ bagaimana TaintDroid bekerja. 
+
+992
+00:46:32,785 --> 00:46:34,564
+ Ada pertanyaan lagi sebelum kita-- 
+
+993
+00:46:34,564 --> 00:46:37,516
+ AUDIENCE: Apakah Anda menandai sesuatu itu juga 
+
+994
+00:46:37,516 --> 00:46:39,484
+ telah ada sepanjang waktu? 
+
+995
+00:46:39,484 --> 00:46:41,698
+ Apakah Anda memberi tag setiap variabel, atau hanya 
+
+996
+00:46:41,698 --> 00:46:43,420
+ tag orang-orang yang memiliki ini? 
+
+997
+00:46:43,420 --> 00:46:46,840
+ PROFESOR: Ya, jadi pada dasarnya Anda menandai semuanya. 
+
+998
+00:46:46,840 --> 00:46:52,518
+ Jadi dalam teori, tidak ada yang menghalangi Anda 
+
+999
+00:46:52,518 --> 00:46:56,917
+ dari tidak mengalokasikan informasi kotor untuk hal-hal itu 
+
+1000
+00:46:56,917 --> 00:46:57,750
+ tidak memiliki noda sama sekali. 
+
+1001
+00:46:57,750 --> 00:47:00,170
+ Saya pikir masalahnya, kemudian, dengan itu-- 
+
+1002
+00:47:00,170 --> 00:47:04,545
+ maka setelah sesuatu mencapai sedikit pun noda, 
+
+1003
+00:47:04,545 --> 00:47:07,770
+ maka Anda harus melakukan semacam perubahan tata letak dinamis. 
+
+1004
+00:47:07,770 --> 00:47:11,670
+ Jadi bagaimana jika di tumpukan, ini lokal di sini, maka itu 
+
+1005
+00:47:11,670 --> 00:47:13,670
+ memiliki noda, jadi sekarang Anda mengalokasikan dengan ini, 
+
+1006
+00:47:13,670 --> 00:47:14,303
+ dan itu mendapatkan noda. 
+
+1007
+00:47:14,303 --> 00:47:16,520
+ Atau Anda memiliki bendera noda tambahan di heap, 
+
+1008
+00:47:16,520 --> 00:47:18,020
+ dan Anda akan melihat bagaimana itu menulis ulang tumpukan, 
+
+1009
+00:47:18,020 --> 00:47:20,140
+ dan kemudian seseorang membuat kode Anda - jadi kami 
+
+1010
+00:47:20,140 --> 00:47:21,306
+ akan melihat cara kerjanya. 
+
+1011
+00:47:21,306 --> 00:47:25,210
+ Jadi dalam prakteknya, penggunaan yang umum seperti memori bayangan entah bagaimana, 
+
+1012
+00:47:25,210 --> 00:47:29,800
+ jadi setiap byte dalam aplikasi dicadangkan 
+
+1013
+00:47:29,800 --> 00:47:32,060
+ oleh beberapa byte informasi tambahan di suatu tempat. 
+
+1014
+00:47:32,060 --> 00:47:35,060
+ Dan dalam kasus TaintDroid, itu membayangi sebenarnya 
+
+1015
+00:47:35,060 --> 00:47:37,060
+ hidup berdampingan dengan variabel sebenarnya itu sendiri. 
+
+1016
+00:47:37,060 --> 00:47:40,060
+ Ada yang punya pertanyaan lain? 
+
+1017
+00:47:40,060 --> 00:47:41,860
+ BAIK. 
+
+1018
+00:47:41,860 --> 00:47:43,302
+ Keren. 
+
+1019
+00:47:43,302 --> 00:47:46,720
+ Sistem ini pada dasarnya melacak informasi 
+
+1020
+00:47:46,720 --> 00:47:53,840
+ pada tingkat instruksi VM Dalvik tingkat tinggi ini. 
+
+1021
+00:47:53,840 --> 00:47:59,310
+ Jadi satu hal yang mungkin Anda pikirkan untuk diri sendiri 
+
+1022
+00:47:59,310 --> 00:48:11,230
+ adalah, dapatkah kita melacak noda pada level instruksi x86 
+
+1023
+00:48:11,230 --> 00:48:14,087
+ atau instruksi ARM. 
+
+1024
+00:48:14,087 --> 00:48:17,797
+
+
+1025
+00:48:17,797 --> 00:48:19,255
+ Salah satu alasan mengapa itu mungkin berguna 
+
+1026
+00:48:19,255 --> 00:48:22,470
+ karena kita bisa benar-benar 
+
+1027
+00:48:22,470 --> 00:48:26,650
+ memahami bagaimana informasi mengalir melalui aplikasi yang sewenang-wenang, 
+
+1028
+00:48:26,650 --> 00:48:30,160
+ bukan hanya yang berjalan di dalam ini ditipu 
+
+1029
+00:48:30,160 --> 00:48:33,270
+ VM yang mengharuskan Anda untuk menjalankan Java dan seterusnya dan seterusnya. 
+
+1030
+00:48:33,270 --> 00:48:37,367
+ Jadi mengapa tidak melacak noda di tingkat itu. 
+
+1031
+00:48:37,367 --> 00:48:39,200
+ Ternyata Anda bisa, pada kenyataannya, melakukan itu. 
+
+1032
+00:48:39,200 --> 00:48:42,100
+ Jadi ada proyek yang kami amati di pelacakan noda 
+
+1033
+00:48:42,100 --> 00:48:43,960
+ pada tingkat yang rendah ini. 
+
+1034
+00:48:43,960 --> 00:48:46,768
+ Yang menyenangkan adalah Anda mungkin mendapatkan cakupan yang meningkat. 
+
+1035
+00:48:46,768 --> 00:48:48,724
+ Anda tidak melempar baris ke [TIDAK BISA DIANGGAP] 
+
+1036
+00:48:48,724 --> 00:48:51,560
+ untuk bagaimana, misalnya, kode Java berinteraksi dengan kode asli 
+
+1037
+00:48:51,560 --> 00:48:52,060
+ metode. 
+
+1038
+00:48:52,060 --> 00:48:54,015
+ Semua pada akhirnya akan menghasilkan hasil 
+
+1039
+00:48:54,015 --> 00:48:56,324
+ ke instruksi x86 dieksekusi, sehingga 
+
+1040
+00:48:56,324 --> 00:48:58,740
+ menghapus banyak upaya manual bahwa Anda sebagai pengembang 
+
+1041
+00:48:58,740 --> 00:49:01,819
+ harus melakukan semacam memahami itu semantik taint jika Anda 
+
+1042
+00:49:01,819 --> 00:49:02,610
+ menggunakan metode asli. 
+
+1043
+00:49:02,610 --> 00:49:07,210
+ Tetapi masalah dengan itu, jika kita melacak pada tingkat yang rendah ini, 
+
+1044
+00:49:07,210 --> 00:49:11,540
+ itu bisa sangat mahal untuk melakukan ini. 
+
+1045
+00:49:11,540 --> 00:49:17,460
+ Anda juga bisa mendapatkan banyak positif palsu. 
+
+1046
+00:49:17,460 --> 00:49:20,160
+ Jadi jika mereka spekulasi untuk biaya, 
+
+1047
+00:49:20,160 --> 00:49:24,217
+ ada juga masalah kebenaran ini. 
+
+1048
+00:49:24,217 --> 00:49:26,750
+
+
+1049
+00:49:26,750 --> 00:49:31,050
+ Seperti yang Anda ketahui, x86 adalah kompleks yang kompleks 
+
+1050
+00:49:31,050 --> 00:49:32,690
+ set instruksi. 
+
+1051
+00:49:32,690 --> 00:49:34,830
+ Ada banyak hal gila yang bisa dilakukan. 
+
+1052
+00:49:34,830 --> 00:49:38,540
+ Saya tidak tahu apakah Anda pernah melihat instruksi manual x86, 
+
+1053
+00:49:38,540 --> 00:49:39,810
+ mereka sangat besar. 
+
+1054
+00:49:39,810 --> 00:49:42,730
+ Jadi mereka akan memiliki satu manual besar yang sangat tebal ini, 
+
+1055
+00:49:42,730 --> 00:49:45,710
+ dan kemudian itu akan mengatakan ini adalah instruksi yang suratnya 
+
+1056
+00:49:45,710 --> 00:49:48,435
+ mulai dengan M sampai P, dan akan ada seri lengkap ini 
+
+1057
+00:49:48,435 --> 00:49:50,172
+ tentang itu. 
+
+1058
+00:49:50,172 --> 00:49:52,270
+ Jadi sebenarnya sangat sulit untuk berpikir 
+
+1059
+00:49:52,270 --> 00:49:54,295
+ tentang apa artinya benar-benar melacak noda 
+
+1060
+00:49:54,295 --> 00:49:57,130
+ pada tingkat instruksi x86. 
+
+1061
+00:49:57,130 --> 00:49:59,605
+ Karena bahkan instruksi yang tampaknya sederhana, 
+
+1062
+00:49:59,605 --> 00:50:02,080
+ seperti terkadang di, mereka sedang mengatur 
+
+1063
+00:50:02,080 --> 00:50:04,060
+ semua jenis register prosesor internal 
+
+1064
+00:50:04,060 --> 00:50:05,840
+ dan bendera dan hal-hal seperti itu. 
+
+1065
+00:50:05,840 --> 00:50:08,400
+ Jadi sangat sulit untuk menggambarkan di tempat pertama. 
+
+1066
+00:50:08,400 --> 00:50:12,220
+ Jika Anda bisa melakukan itu, seringkali juga sangat mahal. 
+
+1067
+00:50:12,220 --> 00:50:16,547
+ Anda seperti melihat hal-hal pada tingkat yang sangat, sangat rendah. 
+
+1068
+00:50:16,547 --> 00:50:18,310
+ Jadi jumlah negara yang harus Anda lacak 
+
+1069
+00:50:18,310 --> 00:50:19,914
+ mungkin menjadi sangat besar dengan sangat cepat. 
+
+1070
+00:50:19,914 --> 00:50:22,710
+ Ini mungkin klausa komputasi yang sangat sensitif. 
+
+1071
+00:50:22,710 --> 00:50:25,090
+ Lalu ada masalah positif palsu ini. 
+
+1072
+00:50:25,090 --> 00:50:29,180
+ Ini sebenarnya sangat menghancurkan. 
+
+1073
+00:50:29,180 --> 00:50:34,576
+ Anda bisa mendapat masalah buruk jika Anda pernah 
+
+1074
+00:50:34,576 --> 00:50:42,729
+ memiliki data kernel yang tidak pantas tercemar. 
+
+1075
+00:50:42,729 --> 00:50:47,719
+
+
+1076
+00:50:47,719 --> 00:50:52,960
+ Dan jika ini terjadi, mungkin karena infrastruktur Anda 
+
+1077
+00:50:52,960 --> 00:50:56,034
+ mencoba menjadi ultrakonservatif, tidak mau 
+
+1078
+00:50:56,034 --> 00:50:57,450
+ untuk melewatkan apa pun, jadi itu berkata baik, 
+
+1079
+00:50:57,450 --> 00:50:59,480
+ Saya akan berbuat salah di sisi keamanan. 
+
+1080
+00:50:59,480 --> 00:51:02,740
+ Dan saya akan mencemari beberapa struktur data kernel ini, 
+
+1081
+00:51:02,740 --> 00:51:07,470
+ maka apa yang Anda dapatkan di sini adalah istilah yang menarik ini 
+
+1082
+00:51:07,470 --> 00:51:09,190
+ sebut ledakan noda. 
+
+1083
+00:51:09,190 --> 00:51:11,730
+ Apa yang pada dasarnya berarti ini adalah pada titik tertentu, 
+
+1084
+00:51:11,730 --> 00:51:13,780
+ ada hal-hal tertentu yang jika akhirnya mereka tercemar, 
+
+1085
+00:51:13,780 --> 00:51:15,446
+ mereka terlibat dalam banyak perhitungan 
+
+1086
+00:51:15,446 --> 00:51:18,342
+ bahwa pada dasarnya segala sesuatu dalam program Anda tercemar. 
+
+1087
+00:51:18,342 --> 00:51:20,550
+ Ini seperti salah satu dari hal-hal ini di Dungeons and Dragons 
+
+1088
+00:51:20,550 --> 00:51:22,900
+ di mana Anda menyentuh benda jahat ini dan akhirnya 
+
+1089
+00:51:22,900 --> 00:51:26,395
+ kematian menyebar ke seluruh tubuh Anda. 
+
+1090
+00:51:26,395 --> 00:51:29,624
+ Ini sangat buruk, karena jika Anda tidak bisa dengan kuat 
+
+1091
+00:51:29,624 --> 00:51:32,140
+ membatasi cara yang mencemari mengalir melalui sistem, 
+
+1092
+00:51:32,140 --> 00:51:34,510
+ lalu akhirnya apa yang akan terjadi 
+
+1093
+00:51:34,510 --> 00:51:34,984
+ adalah Anda membiarkan ini berjalan untuk sementara waktu, 
+
+1094
+00:51:34,984 --> 00:51:36,984
+ sistem akan mengatakan Anda tidak bisa berbuat apa-apa. 
+
+1095
+00:51:36,984 --> 00:51:38,964
+ Anda tidak dapat mengirim apa pun melalui jaringan, 
+
+1096
+00:51:38,964 --> 00:51:40,672
+ Anda tidak dapat menampilkan apa pun di layar, 
+
+1097
+00:51:40,672 --> 00:51:42,270
+ karena semuanya ada di sistem Anda 
+
+1098
+00:51:42,270 --> 00:51:44,700
+ sepertinya sudah tercemar oleh beberapa kesalahan sensitif, 
+
+1099
+00:51:44,700 --> 00:51:47,350
+ bahkan jika itu tidak terjadi. 
+
+1100
+00:51:47,350 --> 00:51:53,980
+ Salah satu cara bahwa ini dapat terjadi adalah jika entah bagaimana 
+
+1101
+00:51:53,980 --> 00:51:59,700
+ penunjuk tumpukan atau penembak jeda tercemar. 
+
+1102
+00:51:59,700 --> 00:52:03,780
+
+
+1103
+00:52:03,780 --> 00:52:06,819
+ Jika ini terjadi, Anda mungkin berada di dunia yang terluka. 
+
+1104
+00:52:06,819 --> 00:52:09,540
+ Anda dapat membayangkan bahwa semua instruksi di x86, 
+
+1105
+00:52:09,540 --> 00:52:15,100
+ misalnya, yang mengakses tumpukan, semuanya melalui ESB. 
+
+1106
+00:52:15,100 --> 00:52:19,130
+ Jadi daftar stack akan rusak entah bagaimana, itu buruk. 
+
+1107
+00:52:19,130 --> 00:52:20,910
+ Jika daftar titik istirahat menjadi buruk, 
+
+1108
+00:52:20,910 --> 00:52:24,065
+ sering kali ketika Anda ingin setara dengan akses Anda 
+
+1109
+00:52:24,065 --> 00:52:28,238
+ variabel lokal, itu harus pergi EBP secara tidak langsung. 
+
+1110
+00:52:28,238 --> 00:52:31,070
+ Jadi, jika ada yang menyentuh mereka dalam hal noda, 
+
+1111
+00:52:31,070 --> 00:52:32,355
+ pada dasarnya game berakhir. 
+
+1112
+00:52:32,355 --> 00:52:33,980
+ Jadi ada tautan dalam ceramah itu 
+
+1113
+00:52:33,980 --> 00:52:36,063
+ tentang kertas yang mengakui beberapa hal ini 
+
+1114
+00:52:36,063 --> 00:52:39,540
+ dan pada dasarnya mengatakan bahwa kita harus sangat berhati-hati ketika kita melakukannya 
+
+1115
+00:52:39,540 --> 00:52:42,274
+ taint tracking pada level rendah ini karena sangat cepat, jika Anda 
+
+1116
+00:52:42,274 --> 00:52:44,190
+ melihat bagaimana ini bekerja di kernel Linux, 
+
+1117
+00:52:44,190 --> 00:52:46,564
+ ada optimisasi tertentu yang akan dilakukan kernel Linux 
+
+1118
+00:52:46,564 --> 00:52:49,054
+ untuk membuat kodenya cepat, tetapi akan menghasilkan, secara tidak sengaja, 
+
+1119
+00:52:49,054 --> 00:52:51,960
+ dalam penembak jeda atau penunjuk tumpukan menjadi tercemar. 
+
+1120
+00:52:51,960 --> 00:52:54,407
+ Dan sekali itu terjadi, Anda tidak bisa benar-benar melakukan sesuatu yang bermanfaat 
+
+1121
+00:52:54,407 --> 00:52:55,698
+ dengan sistem pelacakan noda. 
+
+1122
+00:52:55,698 --> 00:53:01,316
+ AUDIENCE: Jadi bagaimana Anda melakukan ini [tidak terdengar] program? 
+
+1123
+00:53:01,316 --> 00:53:04,120
+ Sepertinya Anda memiliki semua file daftar ini di dalam CPU. 
+
+1124
+00:53:04,120 --> 00:53:06,210
+ PROFESOR: Ya, sangat hebat. 
+
+1125
+00:53:06,210 --> 00:53:08,261
+ Jadi semua file register itu, itu menggantung kembali 
+
+1126
+00:53:08,261 --> 00:53:09,260
+ untuk kasus kebenaran. 
+
+1127
+00:53:09,260 --> 00:53:11,362
+ Jadi kecuali Anda sangat, sangat bagus 
+
+1128
+00:53:11,362 --> 00:53:12,790
+ memahami arsitektur x86, 
+
+1129
+00:53:12,790 --> 00:53:14,694
+ akan ada hal-hal yang kamu rindukan. 
+
+1130
+00:53:14,694 --> 00:53:17,550
+ Ini syarat tingkat perhitungan, bagaimana Anda sebenarnya 
+
+1131
+00:53:17,550 --> 00:53:18,260
+ lakukan hal ini. 
+
+1132
+00:53:18,260 --> 00:53:22,307
+ Ada ini-- saya pikir cara yang paling populer, 
+
+1133
+00:53:22,307 --> 00:53:23,640
+ dan saya bisa salah tentang ini. 
+
+1134
+00:53:23,640 --> 00:53:25,406
+ Jadi ketika saya mengatakan itu populer, seperti saya 
+
+1135
+00:53:25,406 --> 00:53:28,010
+ tahu tentang, karena saya adalah pengetahuan [tidak terdengar], benar. 
+
+1136
+00:53:28,010 --> 00:53:31,050
+ Ada pengirim sistem yang disebut Bochs, 
+
+1137
+00:53:31,050 --> 00:53:35,552
+ Saya pikir itu dieja seperti ini. 
+
+1138
+00:53:35,552 --> 00:53:37,010
+ Mereka sebenarnya memiliki sesuatu yang disebut 
+
+1139
+00:53:37,010 --> 00:53:43,600
+ TaintBochs, yang sebenarnya melakukan inuasi x86 aliran. 
+
+1140
+00:53:43,600 --> 00:53:45,390
+ Dan itu sebenarnya seorang penerjemah, 
+
+1141
+00:53:45,390 --> 00:53:47,840
+ Anda dapat menganggapnya sebagai. 
+
+1142
+00:53:47,840 --> 00:53:50,166
+ Jadi itu akan mengambil seluruh OS Anda dan semua 
+
+1143
+00:53:50,166 --> 00:53:51,970
+ aplikasi Anda, dan itu terjadi 
+
+1144
+00:53:51,970 --> 00:53:55,450
+ untuk melihat setiap instruksi x86 dan mencoba untuk mensimulasikan 
+
+1145
+00:53:55,450 --> 00:53:57,230
+ apa yang akan dilakukan perangkat keras. 
+
+1146
+00:53:57,230 --> 00:53:59,090
+ Jadi Anda bisa membayangkan ini sangat, sangat lambat. 
+
+1147
+00:53:59,090 --> 00:54:00,940
+ Yang bagus tentang itu adalah Anda tidak memerlukan perangkat keras apa pun 
+
+1148
+00:54:00,940 --> 00:54:03,290
+ dukungan, dan kemudian itu relatif mudah 
+
+1149
+00:54:03,290 --> 00:54:06,794
+ untuk mengubah model perangkat lunak Anda tentang cara kerja sesuatu, 
+
+1150
+00:54:06,794 --> 00:54:08,210
+ jika kamu menemukan bahwa kamu tidak 
+
+1151
+00:54:08,210 --> 00:54:10,460
+ melacak beberapa file yang terdaftar atau sesuatu seperti itu. 
+
+1152
+00:54:10,460 --> 00:54:14,114
+ AUDIENCE: Jadi solusi ideal adalah dukungan arsitektur. 
+
+1153
+00:54:14,114 --> 00:54:15,715
+ PROFESOR: Ya, jadi sudah ada 
+
+1154
+00:54:15,715 --> 00:54:17,240
+ teknik untuk melakukan itu juga. 
+
+1155
+00:54:17,240 --> 00:54:22,179
+ Itu menjadi sedikit halus karena, misalnya, 
+
+1156
+00:54:22,179 --> 00:54:23,720
+ jika Anda melihat di sini, Anda telah melihat bagaimana caranya 
+
+1157
+00:54:23,720 --> 00:54:27,488
+ kami telah mengalokasikan negara noda di samping variabel 
+
+1158
+00:54:27,488 --> 00:54:28,840
+ diri. 
+
+1159
+00:54:28,840 --> 00:54:31,610
+ Jadi jika Anda memanggang dukungan di perangkat keras, 
+
+1160
+00:54:31,610 --> 00:54:34,565
+ itu bisa sangat sulit, misalnya, mengubah caranya 
+
+1161
+00:54:34,565 --> 00:54:35,920
+ Anda ingin tata letak berfungsi. 
+
+1162
+00:54:35,920 --> 00:54:37,836
+ Karena itu seperti dipanggang ke dalam silikon. 
+
+1163
+00:54:37,836 --> 00:54:42,258
+ Anda bisa membayangkan melakukan ini karena pada level yang tinggi-- 
+
+1164
+00:54:42,258 --> 00:54:43,580
+ dimana kita memilikinya. 
+
+1165
+00:54:43,580 --> 00:54:47,716
+ Jadi, Dalvik VM dan TaintDroid sedang mengeksekusi level tinggi ini 
+
+1166
+00:54:47,716 --> 00:54:49,960
+ instruksi dan itu menempatkan noda di tingkat ini. 
+
+1167
+00:54:49,960 --> 00:54:52,340
+ Anda dapat membayangkan melakukannya di level perangkat keras juga. 
+
+1168
+00:54:52,340 --> 00:54:53,840
+ Jadi sebenarnya, jika ini adalah silikon, 
+
+1169
+00:54:53,840 --> 00:54:55,340
+ Anda mungkin bisa membuat pekerjaan itu. 
+
+1170
+00:54:55,340 --> 00:54:56,840
+ Jadi itu pasti mungkin. 
+
+1171
+00:54:56,840 --> 00:54:58,340
+ Anda punya pertanyaan? 
+
+1172
+00:54:58,340 --> 00:55:00,840
+ AUDIENCE: Apa yang dilakukan TaintDroid 
+
+1173
+00:55:00,840 --> 00:55:03,840
+ dengan informasi yang dibangun dari uji percabangan dan izin. 
+
+1174
+00:55:03,840 --> 00:55:06,090
+ PROFESOR: Oh, kita akan membahasnya sebentar lagi. 
+
+1175
+00:55:06,090 --> 00:55:08,339
+ Jadi, pegang saja pikiran itu, kita akan membahasnya. 
+
+1176
+00:55:08,339 --> 00:55:10,588
+ AUDIENCE: Saya ingin tahu, berapa lama 
+
+1177
+00:55:10,588 --> 00:55:13,796
+ untuk hal-hal seperti buffer overflow karena semua hal begitu 
+
+1178
+00:55:13,796 --> 00:55:14,962
+ bersarang bersama [INAUDIBLE]? 
+
+1179
+00:55:14,962 --> 00:55:18,850
+
+
+1180
+00:55:18,850 --> 00:55:20,340
+ PROFESOR: Itu pertanyaan yang bagus. 
+
+1181
+00:55:20,340 --> 00:55:24,530
+ Jadi agaknya, orang akan berharap bahwa dalam bahasa seperti Java 
+
+1182
+00:55:24,530 --> 00:55:26,950
+ tidak ada buffer overflow, kan. 
+
+1183
+00:55:26,950 --> 00:55:29,436
+ Tapi Anda bisa membayangkan dalam bahasa seperti C, 
+
+1184
+00:55:29,436 --> 00:55:31,700
+ misalnya, di mana Anda tidak memiliki perlindungan ini, 
+
+1185
+00:55:31,700 --> 00:55:33,950
+ mungkin ada bencana besar yang bisa terjadi 
+
+1186
+00:55:33,950 --> 00:55:35,964
+ atau entah bagaimana, jika Anda melakukan buffer overflow 
+
+1187
+00:55:35,964 --> 00:55:37,880
+ lalu Anda dapat menimpa label noda 
+
+1188
+00:55:37,880 --> 00:55:41,239
+ dan Anda bisa mengatur ini ke nol, maka Anda bisa saja 
+
+1189
+00:55:41,239 --> 00:55:42,280
+ biarkan data Anda terkumpul. 
+
+1190
+00:55:42,280 --> 00:55:45,196
+ AUDIENCE: Saya pikir jika itu sangat bisa diprediksi, 
+
+1191
+00:55:45,196 --> 00:55:47,626
+ seperti satu sama lain untuk variabel q berikutnya, 
+
+1192
+00:55:47,626 --> 00:55:49,084
+ tidak ada tumpukan-- 
+
+1193
+00:55:49,084 --> 00:55:51,546
+ PROFESOR: Saya akan mengatakan, itu tepat sekali. 
+
+1194
+00:55:51,546 --> 00:55:52,550
+ Jadi Anda mengalami masalah yang agak mirip 
+
+1195
+00:55:52,550 --> 00:55:54,720
+ seperti apa yang bisa kita diskusikan dengan burung kenari stack, 
+
+1196
+00:55:54,720 --> 00:55:57,520
+ karena pada dasarnya kami memiliki data ini di tumpukan, 
+
+1197
+00:55:57,520 --> 00:56:00,370
+ seperti dalam tata letak khusus ini, yang tidak Anda lakukan juga 
+
+1198
+00:56:00,370 --> 00:56:02,720
+ ingin membuatnya mustahil untuk ditimpa, 
+
+1199
+00:56:02,720 --> 00:56:05,400
+ atau jika ditimpa, salah satu yang diretas dalam beberapa cara. 
+
+1200
+00:56:05,400 --> 00:56:07,264
+ Jadi Anda benar tentang itu. 
+
+1201
+00:56:07,264 --> 00:56:12,120
+
+
+1202
+00:56:12,120 --> 00:56:16,069
+ Jadi Anda sebenarnya bisa melakukan pelacakan noda di tingkat rendah ini 
+
+1203
+00:56:16,069 --> 00:56:18,360
+ meskipun mungkin mahal dan sedikit sulit 
+
+1204
+00:56:18,360 --> 00:56:19,700
+ untuk menjadi benar. 
+
+1205
+00:56:19,700 --> 00:56:21,980
+ Jadi Anda mungkin berkata baik, mengapa kita tidak hanya mengalah 
+
+1206
+00:56:21,980 --> 00:56:24,313
+ pada seluruh masalah pelacakan noda di tempat pertama 
+
+1207
+00:56:24,313 --> 00:56:26,870
+ dan sebaliknya kita hanya akan melihat hal-hal 
+
+1208
+00:56:26,870 --> 00:56:29,450
+ bahwa program mencoba untuk menghasilkan melalui jaringan, katakanlah, 
+
+1209
+00:56:29,450 --> 00:56:32,290
+ dan lakukan pemindaian untuk data yang tampaknya sensitif. 
+
+1210
+00:56:32,290 --> 00:56:34,150
+ Kelihatannya jauh lebih ringan, 
+
+1211
+00:56:34,150 --> 00:56:37,240
+ Anda tidak perlu melakukan instrumentasi dinamis ini semua 
+
+1212
+00:56:37,240 --> 00:56:39,240
+ hal-hal yang dilakukan program. 
+
+1213
+00:56:39,240 --> 00:56:41,600
+ Masalahnya, itu hanya itu saja 
+
+1214
+00:56:41,600 --> 00:56:43,210
+ bekerja sebagai heuristik. 
+
+1215
+00:56:43,210 --> 00:56:46,100
+ Bahkan, jika penyerang tahu bahwa ini adalah apa yang Anda lakukan, 
+
+1216
+00:56:46,100 --> 00:56:47,871
+ maka cukup mudah untuk menumbangkan itu. 
+
+1217
+00:56:47,871 --> 00:56:49,620
+ Jadi jika Anda hanya duduk di sana dan Anda 
+
+1218
+00:56:49,620 --> 00:56:53,940
+ mencoba melakukan grep untuk angka, nomor Jaminan Sosial, 
+
+1219
+00:56:53,940 --> 00:56:57,030
+ maka penyerang hanya dapat menggunakan enkode 64 basis, 
+
+1220
+00:56:57,030 --> 00:56:59,190
+ atau melakukan hal aneh lainnya, kompres. 
+
+1221
+00:56:59,190 --> 00:57:01,630
+ Ini sebenarnya sepele untuk melewati jenis filter itu. 
+
+1222
+00:57:01,630 --> 00:57:03,360
+ Jadi dalam prakteknya, itu sepenuhnya 
+
+1223
+00:57:03,360 --> 00:57:06,060
+ tidak cukup dari perspektif keamanan. 
+
+1224
+00:57:06,060 --> 00:57:07,650
+ Sekarang mari kembali ke pertanyaan 
+
+1225
+00:57:07,650 --> 00:57:11,650
+ Anda dibesarkan, yang pada dasarnya 
+
+1226
+00:57:11,650 --> 00:57:16,380
+ bagaimana kita bisa melacak arus melalui hal-hal seperti cabang, 
+
+1227
+00:57:16,380 --> 00:57:17,290
+ sebagai contoh. 
+
+1228
+00:57:17,290 --> 00:57:20,312
+ Jadi ini pada dasarnya akan memimpin kita 
+
+1229
+00:57:20,312 --> 00:57:27,450
+ ke topik yang disebut aliran implisit. 
+
+1230
+00:57:27,450 --> 00:57:29,900
+ Dan aliran implisit terjadi biasanya 
+
+1231
+00:57:29,900 --> 00:57:32,540
+ ketika Anda memiliki nilai yang tercemar itu 
+
+1232
+00:57:32,540 --> 00:57:38,560
+ akan mempengaruhi cara variabel lain ditetapkan, 
+
+1233
+00:57:38,560 --> 00:57:42,730
+ meskipun variabel aliran implisit tidak secara langsung 
+
+1234
+00:57:42,730 --> 00:57:43,530
+ menetapkan variabel. 
+
+1235
+00:57:43,530 --> 00:57:46,470
+ Ini akan lebih masuk akal dengan contoh konkret. 
+
+1236
+00:57:46,470 --> 00:57:51,980
+ Katakanlah Anda memiliki pernyataan if yang melakukan sesuatu 
+
+1237
+00:57:51,980 --> 00:57:54,130
+ seperti, itu akan melihat INEI Anda 
+
+1238
+00:57:54,130 --> 00:57:58,110
+ dan itu akan mengatakan jika itu lebih besar dari 42, 
+
+1239
+00:57:58,110 --> 00:58:03,340
+ mungkin saya akan menetapkan 0 hingga x. 
+
+1240
+00:58:03,340 --> 00:58:08,350
+ Kalau tidak, saya akan menetapkan 1. 
+
+1241
+00:58:08,350 --> 00:58:11,430
+ Jadi yang menarik di sini adalah kita 
+
+1242
+00:58:11,430 --> 00:58:14,240
+ melihat data sensitif ini di sini 
+
+1243
+00:58:14,240 --> 00:58:16,960
+ dan kami melakukan perbandingan di sini, 
+
+1244
+00:58:16,960 --> 00:58:19,610
+ tetapi ketika kami menugaskan ke x di sini, 
+
+1245
+00:58:19,610 --> 00:58:21,470
+ kami sebenarnya tidak menugaskan sesuatu 
+
+1246
+00:58:21,470 --> 00:58:26,940
+ yang langsung berasal dari data sensitif di sini. 
+
+1247
+00:58:26,940 --> 00:58:29,200
+ Ini adalah contoh dari salah satu aliran implisit ini. 
+
+1248
+00:58:29,200 --> 00:58:31,070
+ Karena nilai x sebenarnya 
+
+1249
+00:58:31,070 --> 00:58:34,880
+ tergantung pada hal ini di sini, tetapi musuh, 
+
+1250
+00:58:34,880 --> 00:58:37,380
+ jika mereka pintar, dapat menyusun struktur kode mereka dengan cara 
+
+1251
+00:58:37,380 --> 00:58:39,340
+ bahwa tidak ada penugasan langsung. 
+
+1252
+00:58:39,340 --> 00:58:42,427
+ Sekarang perhatikan bahwa bahkan di sini, daripada hanya menugaskan ke x, 
+
+1253
+00:58:42,427 --> 00:58:44,260
+ Anda bisa mengatakan, mari mencoba mengirim sesuatu 
+
+1254
+00:58:44,260 --> 00:58:45,190
+ melalui jaringan. 
+
+1255
+00:58:45,190 --> 00:58:48,440
+ Anda mungkin mengatakan melalui jaringan x adalah 0, 
+
+1256
+00:58:48,440 --> 00:58:50,250
+ atau x adalah 1, atau sesuatu seperti itu. 
+
+1257
+00:58:50,250 --> 00:58:53,860
+ Jadi itulah contoh dari salah satu aliran implisit itu 
+
+1258
+00:58:53,860 --> 00:58:57,050
+ sistem seperti TaintDroid tidak dapat menangani. 
+
+1259
+00:58:57,050 --> 00:59:00,990
+ Jadi apakah orang-orang melihat masalah di sini pada tingkat tinggi? 
+
+1260
+00:59:00,990 --> 00:59:01,490
+ Iya nih. 
+
+1261
+00:59:01,490 --> 00:59:03,890
+ Ini disebut aliran eksplisit sebagai kontras 
+
+1262
+00:59:03,890 --> 00:59:08,042
+ untuk mereka yang langsung mengalir seperti dari operator penugasan. 
+
+1263
+00:59:08,042 --> 00:59:15,838
+ AUDIENCE: Bagaimana jika [TIDAK TERDENGAR] fungsi daya asli itu 
+
+1264
+00:59:15,838 --> 00:59:17,335
+ melakukan persis [tidak terdengar]? 
+
+1265
+00:59:17,335 --> 00:59:20,735
+
+
+1266
+00:59:20,735 --> 00:59:23,355
+ Karena output dalam kasus itu, kan? 
+
+1267
+00:59:23,355 --> 00:59:24,480
+ PROFESOR: Baiklah, mari kita lihat. 
+
+1268
+00:59:24,480 --> 00:59:26,074
+ Jadi itu tergantung. 
+
+1269
+00:59:26,074 --> 00:59:28,002
+ Jadi jika saya memahami pertanyaan Anda dengan benar, 
+
+1270
+00:59:28,002 --> 00:59:29,930
+ Anda mengatakan mungkin ada beberapa fungsi asli itu 
+
+1271
+00:59:29,930 --> 00:59:31,440
+ melakukan sesuatu yang setara dengan ini, 
+
+1272
+00:59:31,440 --> 00:59:34,016
+ dan jadi misalnya, TaintDroid tidak akan tahu tentu, 
+
+1273
+00:59:34,016 --> 00:59:35,890
+ karena tidak bisa melihat ke dalam kode asli ini 
+
+1274
+00:59:35,890 --> 00:59:38,627
+ untuk melihat hal semacam ini. 
+
+1275
+00:59:38,627 --> 00:59:40,925
+ Cara yang penulis klaim akan mereka tangani 
+
+1276
+00:59:40,925 --> 00:59:44,775
+ itu adalah bahwa mereka akan mengatakan metode asli yang didefinisikan 
+
+1277
+00:59:44,775 --> 00:59:47,380
+ oleh VM itu sendiri, mereka akan melihat kontraknya 
+
+1278
+00:59:47,380 --> 00:59:49,140
+ metode yang mengekspos dan mereka mungkin 
+
+1279
+00:59:49,140 --> 00:59:51,540
+ mengatakan hal-hal seperti saya mengambil dua bilangan bulat ini 
+
+1280
+00:59:51,540 --> 00:59:52,980
+ lalu kembalikan rata-rata. 
+
+1281
+00:59:52,980 --> 00:59:54,960
+ Jadi sistem TaintDroid akan 
+
+1282
+00:59:54,960 --> 00:59:57,224
+ katakanlah kita percaya bahwa fungsi asli melakukan itu, jadi kita 
+
+1283
+00:59:57,224 --> 00:59:59,224
+ perlu mencari tahu apa tainting yang sesuai 
+
+1284
+00:59:59,224 --> 01:00:00,380
+ kebijakan seharusnya. 
+
+1285
+01:00:00,380 --> 01:00:03,165
+ Namun, Anda benar jika hal seperti ini terjadi 
+
+1286
+01:00:03,165 --> 01:00:05,880
+ adalah semacam tersembunyi di dalam dan untuk alasan apa pun tidak 
+
+1287
+01:00:05,880 --> 01:00:07,850
+ terkena kontrak yang dihadapi publik, 
+
+1288
+01:00:07,850 --> 01:00:13,310
+ kemudian kebijakan manual yang dibuat oleh penulis TaintDroid 
+
+1289
+01:00:13,310 --> 01:00:15,220
+ mungkin tidak menangkap aliran implisit ini. 
+
+1290
+01:00:15,220 --> 01:00:16,700
+ Mungkin benar-benar memungkinkan informasi 
+
+1291
+01:00:16,700 --> 01:00:17,534
+ bocor keluar entah bagaimana. 
+
+1292
+01:00:17,534 --> 01:00:19,367
+ Tetapi maksud saya dalam hal ini, bahkan mungkin ada 
+
+1293
+01:00:19,367 --> 01:00:23,514
+ menjadi aliran langsung di sana yang tidak bisa dilakukan oleh para penulis TaintDroid 
+
+1294
+01:00:23,514 --> 01:00:26,958
+ lihat dan Anda mungkin masih memiliki kebocoran lebih langsung. 
+
+1295
+01:00:26,958 --> 01:00:30,402
+ AUDIENCE: Jadi dalam prakteknya, ini tampaknya sangat berbahaya, bukan? 
+
+1296
+01:00:30,402 --> 01:00:32,862
+ Karena Anda benar-benar dapat mengirim keseluruhan nilai [TIDAK JELAS] 
+
+1297
+01:00:32,862 --> 01:00:37,782
+ dengan hanya melihat ketiga terakhir ini-- 
+
+1298
+01:00:37,782 --> 01:00:38,870
+ PROFESOR: Benar. 
+
+1299
+01:00:38,870 --> 01:00:40,780
+ Kami memiliki kelas beberapa kali di mana Anda akan duduk di loop sementara 
+
+1300
+01:00:40,780 --> 01:00:42,990
+ dan Anda akan mencoba membangun aliran implisit ini 
+
+1301
+01:00:42,990 --> 01:00:44,050
+ hal-hal semacam ini. 
+
+1302
+01:00:44,050 --> 01:00:45,950
+ Sebenarnya ada beberapa cara yang Anda 
+
+1303
+01:00:45,950 --> 01:00:49,390
+ dapat berpikir tentang mencoba memperbaiki beberapa hal ini. 
+
+1304
+01:00:49,390 --> 01:00:52,142
+ Pada tingkat yang tinggi, seseorang mendekati Anda 
+
+1305
+01:00:52,142 --> 01:00:53,618
+ bisa lakukan untuk mencoba mencegah hal ini 
+
+1306
+01:00:53,618 --> 01:01:03,600
+ apakah Anda benar-benar dapat memberikan tag noda ke PC. 
+
+1307
+01:01:03,600 --> 01:01:07,390
+
+
+1308
+01:01:07,390 --> 01:01:18,690
+ Maka intinya Anda mencemarkannya dengan tes cabang. 
+
+1309
+01:01:18,690 --> 01:01:23,130
+ Jadi ide di sini adalah bahwa kita sebagai manusia dapat melihat kode ini 
+
+1310
+01:01:23,130 --> 01:01:25,380
+ di sini dan kita dapat mengatakan bahwa ada aliran implisit ini 
+
+1311
+01:01:25,380 --> 01:01:28,470
+ di sini, karena kita tahu bahwa entah bagaimana untuk sampai ke sini, 
+
+1312
+01:01:28,470 --> 01:01:30,355
+ kami harus melihat data sensitif. 
+
+1313
+01:01:30,355 --> 01:01:32,480
+ Jadi apa artinya itu di tingkat implementasi? 
+
+1314
+01:01:32,480 --> 01:01:33,979
+ Itu berarti bahwa untuk sampai ke sini, ada 
+
+1315
+01:01:33,979 --> 01:01:39,180
+ sesuatu tentang PC yang telah dinodai oleh data sensitif. 
+
+1316
+01:01:39,180 --> 01:01:40,710
+ Untuk mengatakan bahwa kita sudah sampai di sini adalah 
+
+1317
+01:01:40,710 --> 01:01:43,450
+ untuk mengatakan PC telah diatur di sini atau di sini. 
+
+1318
+01:01:43,450 --> 01:01:48,090
+ Pada tingkat tinggi, kita dapat membayangkan bahwa sistem akan 
+
+1319
+01:01:48,090 --> 01:01:49,860
+ melakukan beberapa analisis dan itu akan berkata 
+
+1320
+01:01:49,860 --> 01:01:54,050
+ bahwa pada titik ini dalam kode, PC tidak memiliki noda sama sekali. 
+
+1321
+01:01:54,050 --> 01:01:57,180
+ Pada titik ini, itu entah bagaimana tercemar oleh INEI, 
+
+1322
+01:01:57,180 --> 01:02:01,820
+ dan pada titik ini di sini, itu akan memiliki noda itu. 
+
+1323
+01:02:01,820 --> 01:02:06,257
+ Jadi apa yang akhirnya akan terjadi adalah jika x adalah variabel itu 
+
+1324
+01:02:06,257 --> 01:02:08,090
+ awalnya muncul tanpa noda mungkin kita akan 
+
+1325
+01:02:08,090 --> 01:02:09,675
+ katakan OK, pada titik ini, sebenarnya 
+
+1326
+01:02:09,675 --> 01:02:11,800
+ akan memberikan noda PC yang sebenarnya 
+
+1327
+01:02:11,800 --> 01:02:13,450
+ akan mencemari disana. 
+
+1328
+01:02:13,450 --> 01:02:15,787
+ Jadi ada beberapa sublety di sini yang saya tambahkan, 
+
+1329
+01:02:15,787 --> 01:02:18,200
+ tetapi pada tingkat yang tinggi itulah bagaimana Anda dapat menangkap beberapa 
+
+1330
+01:02:18,200 --> 01:02:20,450
+ Arus ini di sini dengan benar-benar melihat dan melihat bagaimana 
+
+1331
+01:02:20,450 --> 01:02:22,345
+ PC semakin diatur, dan kemudian mencoba 
+
+1332
+01:02:22,345 --> 01:02:28,190
+ untuk menyebarkannya ke target dari pernyataan if ini. 
+
+1333
+01:02:28,190 --> 01:02:30,390
+ Apakah itu semua masuk akal? 
+
+1334
+01:02:30,390 --> 01:02:30,940
+ BAIK. 
+
+1335
+01:02:30,940 --> 01:02:32,648
+ Dan jika Anda tertarik untuk mempelajari lebih lanjut 
+
+1336
+01:02:32,648 --> 01:02:36,005
+ tentang ini, ayo bicara padaku, sudah ada banyak penelitian 
+
+1337
+01:02:36,005 --> 01:02:37,340
+ menjadi semacam ini. 
+
+1338
+01:02:37,340 --> 01:02:41,280
+ Namun, Anda dapat membayangkan bahwa sistem yang baru saya jelaskan 
+
+1339
+01:02:41,280 --> 01:02:44,750
+ mungkin terlalu konservatif sekali lagi. 
+
+1340
+01:02:44,750 --> 01:02:49,770
+ Jadi bayangkan bahwa alih-alih memiliki kode ini di sini, 
+
+1341
+01:02:49,770 --> 01:02:51,980
+ ini juga 0. 
+
+1342
+01:02:51,980 --> 01:02:56,300
+ Jadi dalam kasus sampah ini, sama sekali tidak ada alasan 
+
+1343
+01:02:56,300 --> 01:03:00,830
+ mencemari x dengan apapun yang berhubungan dengan INEI, 
+
+1344
+01:03:00,830 --> 01:03:03,590
+ karena Anda sebenarnya tidak membocorkan informasi apa pun 
+
+1345
+01:03:03,590 --> 01:03:04,995
+ di salah satu cabang ini. 
+
+1346
+01:03:04,995 --> 01:03:09,780
+ Tetapi jika Anda menggunakannya dengan skema tainting PC yang naif, 
+
+1347
+01:03:09,780 --> 01:03:16,580
+ maka Anda mungkin melebih-lebihkan seberapa banyak x telah tercemar oleh. 
+
+1348
+01:03:16,580 --> 01:03:18,730
+ Jadi saya harus mengatakan ada beberapa kehalusan Anda 
+
+1349
+01:03:18,730 --> 01:03:21,380
+ dapat lakukan untuk mencoba mengatasi beberapa masalah ini, 
+
+1350
+01:03:21,380 --> 01:03:24,010
+ tapi itu sedikit rumit. 
+
+1351
+01:03:24,010 --> 01:03:25,435
+ Apakah ini semua masuk akal? 
+
+1352
+01:03:25,435 --> 01:03:28,006
+
+
+1353
+01:03:28,006 --> 01:03:28,505
+ Baiklah. 
+
+1354
+01:03:28,505 --> 01:03:29,373
+ AUDIENCE: Hanya sebuah pertanyaan. 
+
+1355
+01:03:29,373 --> 01:03:30,339
+ PROFESOR: Oh, maaf. 
+
+1356
+01:03:30,339 --> 01:03:33,720
+ AUDIENCE: Ketika Anda keluar dari pernyataan if, maka Anda keluar 
+
+1357
+01:03:33,720 --> 01:03:36,062
+ dari cabang, apakah Anda [TIDAK JELAS] tercemar? 
+
+1358
+01:03:36,062 --> 01:03:37,520
+ PROFESOR: Ya, jadi biasanya, ya. 
+
+1359
+01:03:37,520 --> 01:03:40,640
+ Jadi seperti di sini noda PC akan dihapus. 
+
+1360
+01:03:40,640 --> 01:03:43,608
+ Jadi itu hanya akan diatur di dalam cabang-cabang ini di sini. 
+
+1361
+01:03:43,608 --> 01:03:45,566
+ Dan alasannya adalah karena pada dasarnya, 
+
+1362
+01:03:45,566 --> 01:03:47,770
+ pada saat kamu turun ke sini, kamu 
+
+1363
+01:03:47,770 --> 01:03:49,686
+ dapatkan di sini terlepas dari apa INEI itu. 
+
+1364
+01:03:49,686 --> 01:03:51,114
+ Jadi ya, kamu bersihkan itu. 
+
+1365
+01:03:51,114 --> 01:03:52,066
+ Ini pertanyaan yang bagus. 
+
+1366
+01:03:52,066 --> 01:03:55,480
+
+
+1367
+01:03:55,480 --> 01:03:55,980
+ Ayo lihat. 
+
+1368
+01:03:55,980 --> 01:04:00,680
+
+
+1369
+01:04:00,680 --> 01:04:03,860
+ Anda berbicara tentang bagaimana Anda mungkin bisa mencemari 
+
+1370
+01:04:03,860 --> 01:04:07,450
+ pada tingkat yang sangat rendah ini, meskipun itu mungkin mahal, 
+
+1371
+01:04:07,450 --> 01:04:09,130
+ satu alasan mengapa itu mungkin berguna 
+
+1372
+01:04:09,130 --> 01:04:10,705
+ karena itu benar-benar memungkinkan 
+
+1373
+01:04:10,705 --> 01:04:12,680
+ Anda melakukan hal-hal seperti melihat seperti apa kehidupan data Anda terlihat. 
+
+1374
+01:04:12,680 --> 01:04:14,763
+ Jadi beberapa ceramah yang lalu, kami berbicara tentang fakta 
+
+1375
+01:04:14,763 --> 01:04:16,990
+ bahwa banyak kali data kunci, misalnya, 
+
+1376
+01:04:16,990 --> 01:04:19,365
+ akan hidup dalam memori lebih lama dari yang Anda pikir seharusnya. 
+
+1377
+01:04:19,365 --> 01:04:24,612
+ Jadi Anda dapat membayangkan bahwa bahkan jika beberapa tingkat x86 atau ARM 
+
+1378
+01:04:24,612 --> 01:04:27,059
+ pelacakan noda mahal, dapat Anda bayangkan 
+
+1379
+01:04:27,059 --> 01:04:28,725
+ menggunakannya untuk membentuk audit sistem Anda 
+
+1380
+01:04:28,725 --> 01:04:30,190
+ dan sebenarnya mencoreng, katakanlah, 
+
+1381
+01:04:30,190 --> 01:04:32,415
+ beberapa kunci rahasia yang dimasukkan pengguna, 
+
+1382
+01:04:32,415 --> 01:04:34,980
+ dan hanya melihat ke mana saja di seluruh sistem Anda. 
+
+1383
+01:04:34,980 --> 01:04:37,146
+ Ini adalah analisis offline, tidak menghadap pelanggan, 
+
+1384
+01:04:37,146 --> 01:04:38,380
+ jadi tidak masalah untuk lambat. 
+
+1385
+01:04:38,380 --> 01:04:40,810
+ Itu mungkin sebenarnya sangat membantu Anda untuk mencari tahu oh, 
+
+1386
+01:04:40,810 --> 01:04:43,550
+ data ini masuk ke buffer keyboard, 
+
+1387
+01:04:43,550 --> 01:04:46,240
+ itu masuk ke server x, itu ke mana pun. 
+
+1388
+01:04:46,240 --> 01:04:49,240
+ Jadi bahkan jika itu lambat, itu masih sangat, sangat berguna. 
+
+1389
+01:04:49,240 --> 01:04:54,180
+ Jadi saya hanya ingin menyebutkan itu sebentar. 
+
+1390
+01:04:54,180 --> 01:04:57,290
+ Satu hal menarik yang mungkin Anda pikirkan 
+
+1391
+01:04:57,290 --> 01:05:01,010
+ adalah fakta yang saya sebutkan, TaintDroid 
+
+1392
+01:05:01,010 --> 01:05:06,490
+ bagus karena membatasi alam semesta sumber noda 
+
+1393
+01:05:06,490 --> 01:05:08,090
+ dan noda tenggelam. 
+
+1394
+01:05:08,090 --> 01:05:10,090
+ Tetapi sebagai pengembang, mungkin Anda ingin benar-benar 
+
+1395
+01:05:10,090 --> 01:05:17,895
+ secara eksplisit menegaskan beberapa kontrol biji-bijian yang lebih baik atas label 
+
+1396
+01:05:17,895 --> 01:05:19,270
+ bahwa program Anda berinteraksi dengan. 
+
+1397
+01:05:19,270 --> 01:05:23,110
+ Jadi sekarang sebagai programmer, Anda ingin bisa mengatakan sesuatu 
+
+1398
+01:05:23,110 --> 01:05:23,900
+ seperti ini. 
+
+1399
+01:05:23,900 --> 01:05:30,320
+ Jadi Anda mengajukan beberapa int, dan katakanlah kita menyebutnya x, 
+
+1400
+01:05:30,320 --> 01:05:34,320
+ lalu Anda kaitkan beberapa label dengannya. 
+
+1401
+01:05:34,320 --> 01:05:36,360
+ Mungkin nama label ini adalah Alice 
+
+1402
+01:05:36,360 --> 01:05:39,330
+ adalah pemilik data ini, tetapi Alice 
+
+1403
+01:05:39,330 --> 01:05:42,320
+ memungkinkan Bob, atau sesuatu yang diberi label dengan Bob, 
+
+1404
+01:05:42,320 --> 01:05:43,744
+ untuk bisa melihat itu. 
+
+1405
+01:05:43,744 --> 01:05:46,160
+ TaintDroid tidak membiarkan Anda melakukan ini, karena pada dasarnya 
+
+1406
+01:05:46,160 --> 01:05:47,830
+ mengontrol semesta label itu. 
+
+1407
+01:05:47,830 --> 01:05:49,534
+ Tetapi mungkin sebagai programmer yang Anda inginkan 
+
+1408
+01:05:49,534 --> 01:05:51,510
+ untuk bisa melakukan hal seperti ini. 
+
+1409
+01:05:51,510 --> 01:05:56,770
+ Anda dapat membayangkan bahwa program Anda memiliki beragam masukan 
+
+1410
+01:05:56,770 --> 01:06:01,825
+ saluran dan saluran keluaran, dan semua 
+
+1411
+01:06:01,825 --> 01:06:03,898
+ dari saluran input dan output ini, 
+
+1412
+01:06:03,898 --> 01:06:06,310
+ mereka semua memiliki label juga. 
+
+1413
+01:06:06,310 --> 01:06:08,950
+ Dan ini adalah label bahwa Anda sebagai seorang programmer 
+
+1414
+01:06:08,950 --> 01:06:11,790
+ harus benar-benar memilih, sebagai lawan dari sistem itu sendiri 
+
+1415
+01:06:11,790 --> 01:06:14,600
+ mencoba untuk mengatakan inilah kelompok ini baik-baik saja. 
+
+1416
+01:06:14,600 --> 01:06:23,620
+ Jadi mungkin katakan untuk saluran input, Anda tahu nilai baca, 
+
+1417
+01:06:23,620 --> 01:06:25,450
+ mungkin mereka mendapatkan label saluran. 
+
+1418
+01:06:25,450 --> 01:06:28,040
+
+
+1419
+01:06:28,040 --> 01:06:33,777
+ Itu sangat mirip dengan cara kerja TaintDroid saat ini. 
+
+1420
+01:06:33,777 --> 01:06:35,360
+ Jadi jika Anda membaca sesuatu dari GPS, 
+
+1421
+01:06:35,360 --> 01:06:37,359
+ bahwa nilai yang dibaca adalah noda dari saluran GPS, 
+
+1422
+01:06:37,359 --> 01:06:43,330
+ tetapi sekarang Anda sebagai programmer dapat memilih label apa itu. 
+
+1423
+01:06:43,330 --> 01:06:47,590
+ Dan kemudian Anda dapat membayangkan bahwa untuk saluran keluaran yang diberi label 
+
+1424
+01:06:47,590 --> 01:06:59,834
+ akan menyalurkan harus mencocokkan beberapa nilai label yang telah kami tulis. 
+
+1425
+01:06:59,834 --> 01:07:05,020
+
+
+1426
+01:07:05,020 --> 01:07:07,090
+ Anda dapat membayangkan kebijakan lain di sini juga. 
+
+1427
+01:07:07,090 --> 01:07:09,170
+ Tetapi ide dasarnya adalah bahwa sebenarnya ada 
+
+1428
+01:07:09,170 --> 01:07:11,080
+ manajer program yang memungkinkan Anda pengembang 
+
+1429
+01:07:11,080 --> 01:07:14,055
+ untuk memilih apa labelnya dan apa 
+
+1430
+01:07:14,055 --> 01:07:16,370
+ semantik untuk label itu bisa. 
+
+1431
+01:07:16,370 --> 01:07:19,346
+ Jadi apa yang baik tentang beberapa hal ini 
+
+1432
+01:07:19,346 --> 01:07:22,078
+ apakah mereka memang membutuhkan programmer untuk melakukan sedikit 
+
+1433
+01:07:22,078 --> 01:07:26,650
+ lebih banyak pekerjaan, tetapi hasil dari pekerjaan itu 
+
+1434
+01:07:26,650 --> 01:07:30,100
+ apakah itu static checking-- dan dengan static checking 
+
+1435
+01:07:30,100 --> 01:07:35,948
+ Maksud saya memeriksa yang dilakukan pada waktu kompilasi-- 
+
+1436
+01:07:35,948 --> 01:07:42,530
+ dapat menangkap banyak jenis bug aliran informasi. 
+
+1437
+01:07:42,530 --> 01:07:46,534
+ Jadi jika Anda rajin melabeli semua jaringan Anda 
+
+1438
+01:07:46,534 --> 01:07:49,861
+ saluran dan saluran layar dengan tepat 
+
+1439
+01:07:49,861 --> 01:07:52,266
+ perizinan, dan Anda sangat rajin pergi 
+
+1440
+01:07:52,266 --> 01:07:54,090
+ data Anda seperti ini, apa yang bisa terjadi 
+
+1441
+01:07:54,090 --> 01:07:56,930
+ adalah pada saat kompilasi, ketika Anda mengkompilasi program Anda 
+
+1442
+01:07:56,930 --> 01:07:59,077
+ dan kompiler Anda dapat memberi tahu Anda hal-hal seperti hey, 
+
+1443
+01:07:59,077 --> 01:08:01,160
+ jika Anda menjalankan program ini, maka Anda benar-benar 
+
+1444
+01:08:01,160 --> 01:08:05,150
+ memiliki kebocoran informasi yang merupakan bagian data khusus ini 
+
+1445
+01:08:05,150 --> 01:08:07,910
+ akan melewati saluran yang sama, yang tidak dipercaya. 
+
+1446
+01:08:07,910 --> 01:08:10,605
+ Dan pada tingkat tinggi, alasan mengapa pengecekan statis 
+
+1447
+01:08:10,605 --> 01:08:13,910
+ dapat menangkap banyak bug ini karena biasanya berbicara, 
+
+1448
+01:08:13,910 --> 01:08:16,340
+ ketika Anda memikirkan beberapa anotasi ini, 
+
+1449
+01:08:16,340 --> 01:08:18,580
+ mereka agak mirip dengan tipe. 
+
+1450
+01:08:18,580 --> 01:08:23,140
+ Jadi cara yang sama bahwa kompiler dapat menangkap kesalahan 
+
+1451
+01:08:23,140 --> 01:08:25,362
+ melibatkan jenis dan menginstal jenis bahasa, 
+
+1452
+01:08:25,362 --> 01:08:26,796
+ Anda dapat membayangkan bahwa kompilator 
+
+1453
+01:08:26,796 --> 01:08:29,663
+ dalam bahasa seperti ini dapat mengkode beberapa kalkulus 
+
+1454
+01:08:29,663 --> 01:08:32,129
+ lebih dari label ini, dan dalam banyak kasus, 
+
+1455
+01:08:32,130 --> 01:08:35,251
+ tentukan, jika Anda benar-benar menjalankan program ini, 
+
+1456
+01:08:35,251 --> 01:08:36,250
+ ini akan menjadi masalah. 
+
+1457
+01:08:36,250 --> 01:08:39,960
+ Jadi Anda benar-benar harus memperbaiki cara kerja label, 
+
+1458
+01:08:39,960 --> 01:08:42,140
+ mungkin Anda perlu mendeklasifikasi secara eksplisit sesuatu, 
+
+1459
+01:08:42,140 --> 01:08:43,109
+ seterusnya dan seterusnya. 
+
+1460
+01:08:43,109 --> 01:08:45,049
+ AUDIENCE: Anda tidak bisa hanya [TIDAK JELAS]? 
+
+1461
+01:08:45,050 --> 01:08:48,444
+
+
+1462
+01:08:48,444 --> 01:08:51,019
+ PROFESOR: Ya, ya, itu benar. 
+
+1463
+01:08:51,020 --> 01:08:53,850
+ Jadi tergantung pada bahasa, label-label ini 
+
+1464
+01:08:53,850 --> 01:08:57,380
+ dapat mengaitkan orang dengan port IO, semua hal semacam itu. 
+
+1465
+01:08:57,380 --> 01:08:59,533
+ Itu benar sekali. 
+
+1466
+01:08:59,533 --> 01:09:02,948
+ Jadi ini hanya menarik untuk diketahui, 
+
+1467
+01:09:02,948 --> 01:09:06,728
+ karena TaintDroid memiliki pengantar umum yang sangat bagus 
+
+1468
+01:09:06,729 --> 01:09:09,279
+ untuk informasi ini mengalir barang, tapi sebenarnya ada 
+
+1469
+01:09:09,279 --> 01:09:10,862
+ beberapa sistem yang sangat hardcore di luar sana 
+
+1470
+01:09:10,863 --> 01:09:13,084
+ daripada dapat mengekspresikan semantik yang lebih kaya 
+
+1471
+01:09:13,084 --> 01:09:17,500
+ dalam kendali program sehubungan dengan arus informasi. 
+
+1472
+01:09:17,500 --> 01:09:20,180
+ Dan Anda tahu juga, bahwa ketika kita berbicara tentang pemeriksaan statis 
+
+1473
+01:09:20,180 --> 01:09:21,595
+ dan mampu menangkap banyak bug, 
+
+1474
+01:09:21,595 --> 01:09:24,405
+ sebenarnya lebih baik untuk menangkap banyak bug yang digunakan 
+
+1475
+01:09:24,406 --> 01:09:27,506
+ pemeriksaan statis dan kegagalan statis sebagai lawan 
+
+1476
+01:09:27,506 --> 01:09:29,997
+ untuk pengecekan dinamis dan kegagalan dinamis. 
+
+1477
+01:09:29,997 --> 01:09:31,705
+ Ada alasan yang sangat halus tetapi kuat 
+
+1478
+01:09:31,706 --> 01:09:32,694
+ untuk alasan itu. 
+
+1479
+01:09:32,694 --> 01:09:35,658
+ Alasannya adalah, katakanlah kita 
+
+1480
+01:09:35,658 --> 01:09:38,375
+ tangguhkan semua cek statis ke runtime, yang 
+
+1481
+01:09:38,375 --> 01:09:39,609
+ Anda pasti bisa melakukannya. 
+
+1482
+01:09:39,609 --> 01:09:41,309
+ Tidak ada alasan Anda tidak bisa mengambil semua pemeriksaan statis 
+
+1483
+01:09:41,310 --> 01:09:42,435
+ dan memberi Anda nama untuk itu. 
+
+1484
+01:09:42,435 --> 01:09:45,770
+ Masalahnya adalah kegagalan atau keberhasilan pemeriksaan ini 
+
+1485
+01:09:45,770 --> 01:09:48,359
+ sebenarnya adalah saluran rahasia, mungkin. 
+
+1486
+01:09:48,359 --> 01:09:50,064
+ Jadi si penyerang sebenarnya bisa memberi makan 
+
+1487
+01:09:50,064 --> 01:09:52,089
+ program Anda beberapa informasi dan kemudian lihat 
+
+1488
+01:09:52,090 --> 01:09:53,819
+ apakah itu jatuh atau tidak. 
+
+1489
+01:09:53,819 --> 01:09:55,720
+ Dan jika itu jatuh, bisa dikatakan, aha, 
+
+1490
+01:09:55,720 --> 01:09:58,960
+ Anda telah melewati beberapa pemeriksaan dinamis dari arus informasi, itu 
+
+1491
+01:09:58,960 --> 01:10:01,956
+ harus berarti ada sesuatu yang rahasia tentang nilai ini yang saya urutkan 
+
+1492
+01:10:01,956 --> 01:10:03,800
+ dari membujuk Anda ke dalam komputasi. 
+
+1493
+01:10:03,800 --> 01:10:05,590
+ Jadi Anda ingin mencoba melakukan pemeriksaan ini 
+
+1494
+01:10:05,590 --> 01:10:10,240
+ sedapat mungkin statis sejauh mungkin. 
+
+1495
+01:10:10,240 --> 01:10:14,480
+ Jika Anda ingin informasi lebih lanjut tentang hal-hal semacam ini, mungkin 
+
+1496
+01:10:14,480 --> 01:10:17,818
+ tempat yang bagus untuk memulai, kata untuk mencari adalah Jif. 
+
+1497
+01:10:17,818 --> 01:10:20,041
+ Ini adalah sistem yang sangat berpengaruh itu 
+
+1498
+01:10:20,041 --> 01:10:23,746
+ membangun beberapa masalah perhitungan label ini. 
+
+1499
+01:10:23,746 --> 01:10:27,204
+ Jadi Anda bisa mulai dari sana dan berguling ke depan. 
+
+1500
+01:10:27,204 --> 01:10:29,674
+ Rekan saya sebenarnya telah melakukan banyak pekerjaan baik 
+
+1501
+01:10:29,674 --> 01:10:31,340
+ dalam hal ini, jadi Anda bisa bertanya padanya tentang itu 
+
+1502
+01:10:31,340 --> 01:10:34,614
+ jika Anda ingin berbicara lebih banyak barang label. 
+
+1503
+01:10:34,614 --> 01:10:38,090
+ Itu agak menarik untuk mengetahui bahwa TaintDroid 
+
+1504
+01:10:38,090 --> 01:10:41,526
+ sebenarnya cukup membatasi dalam ekspresif 
+
+1505
+01:10:41,526 --> 01:10:44,560
+ dari label itu memungkinkan Anda untuk melihat. 
+
+1506
+01:10:44,560 --> 01:10:46,143
+ Ada sistem di luar sana yang memungkinkan 
+
+1507
+01:10:46,143 --> 01:10:48,150
+ Anda melakukan hal-hal yang lebih kuat. 
+
+1508
+01:10:48,150 --> 01:10:51,610
+
+
+1509
+01:10:51,610 --> 01:10:58,734
+ Akhirnya, yang ingin saya bicarakan adalah apa yang bisa kita lakukan jika kita 
+
+1510
+01:10:58,734 --> 01:11:03,040
+ ingin melacak arus informasi di beberapa warisan ini 
+
+1511
+01:11:03,040 --> 01:11:08,670
+ program, atau melalui program yang ditulis dalam C atau C ++ 
+
+1512
+01:11:08,670 --> 01:11:12,040
+ yang tidak memiliki semua dukungan runtime mewah. 
+
+1513
+01:11:12,040 --> 01:11:16,046
+ Jadi ada sistem yang sangat imut, beberapa 
+
+1514
+01:11:16,046 --> 01:11:20,620
+ dari penulis yang sama pada makalah ini yang melihat masalah ini 
+
+1515
+01:11:20,620 --> 01:11:24,160
+ bagaimana kita bisa melacak kebocoran informasi 
+
+1516
+01:11:24,160 --> 01:11:28,143
+ dalam sistem yang tidak ingin kita modifikasi 
+
+1517
+01:11:28,143 --> 01:11:29,101
+ aplikasi sama sekali. 
+
+1518
+01:11:29,101 --> 01:11:30,568
+ Ini adalah sistem TightLip. 
+
+1519
+01:11:30,568 --> 01:11:33,013
+ Jadi ide dasarnya adalah mereka memperkenalkan 
+
+1520
+01:11:33,013 --> 01:11:36,305
+ gagasan ini tentang apa yang mereka sebut proses doppelganger. 
+
+1521
+01:11:36,305 --> 01:11:42,020
+
+
+1522
+01:11:42,020 --> 01:11:44,200
+ TightLip menggunakan proses doppelganger yang berevolusi. 
+
+1523
+01:11:44,200 --> 01:11:48,350
+ Jadi hal pertama yang dilakukannya adalah secara berkala 
+
+1524
+01:11:48,350 --> 01:11:54,082
+ memindai sistem file pengguna dan itu 
+
+1525
+01:11:54,082 --> 01:11:57,690
+ mencari jenis file sensitif. 
+
+1526
+01:11:57,690 --> 01:12:02,720
+ Ini mungkin hal-hal seperti file email Anda, pemrosesan kata Anda 
+
+1527
+01:12:02,720 --> 01:12:04,859
+ dokumen, seterusnya dan seterusnya. 
+
+1528
+01:12:04,859 --> 01:12:07,025
+ Jadi apa yang akan dilakukan untuk masing-masing file ini 
+
+1529
+01:12:07,025 --> 01:12:10,210
+ apakah itu akan menghasilkan versi scrubbed. 
+
+1530
+01:12:10,210 --> 01:12:13,410
+
+
+1531
+01:12:13,410 --> 01:12:16,060
+ Jadi misalnya, jika menemukan file email, 
+
+1532
+01:12:16,060 --> 01:12:22,002
+ itu akan menggantikan ke atau dari informasi dengan, 
+
+1533
+01:12:22,002 --> 01:12:25,986
+ katakanlah, string dengan panjang yang sama tetapi hanya data tiruan. 
+
+1534
+01:12:25,986 --> 01:12:28,180
+ Mungkin semua ruang atau sesuatu seperti itu. 
+
+1535
+01:12:28,180 --> 01:12:32,308
+ Itu melakukan ini sebagai tugas latar belakang. 
+
+1536
+01:12:32,308 --> 01:12:36,772
+ Lalu hal kedua yang akan dilakukan, pada suatu titik proses 
+
+1537
+01:12:36,772 --> 01:12:40,035
+ akan mulai mengeksekusi, dan kemudian TightLip 
+
+1538
+01:12:40,035 --> 01:12:48,200
+ akan mendeteksi kapan dan jika proses mencoba 
+
+1539
+01:12:48,200 --> 01:12:49,605
+ untuk mengakses file sensitif. 
+
+1540
+01:12:49,605 --> 01:12:52,510
+
+
+1541
+01:12:52,510 --> 01:12:57,220
+ Dan jika akses semacam itu terjadi, 
+
+1542
+01:12:57,220 --> 01:13:01,986
+ TightLip akan menelurkan salah satu doppelganger ini 
+
+1543
+01:13:01,986 --> 01:13:02,485
+ proses. 
+
+1544
+01:13:02,485 --> 01:13:05,520
+
+
+1545
+01:13:05,520 --> 01:13:09,500
+ Dan begitulah proses doppelganger 
+
+1546
+01:13:09,500 --> 01:13:14,896
+ sepertinya sangat mirip dengan proses aslinya itu 
+
+1547
+01:13:14,896 --> 01:13:16,760
+ mencoba menyentuh data sensitif itu, 
+
+1548
+01:13:16,760 --> 01:13:21,786
+ tetapi perbedaan utamanya adalah si doppelganger, yang 
+
+1549
+01:13:21,786 --> 01:13:27,460
+ Saya akan menyingkat DG, membaca data yang digosok. 
+
+1550
+01:13:27,460 --> 01:13:31,180
+
+
+1551
+01:13:31,180 --> 01:13:34,460
+ Jadi bayangkan itu-- sehingga prosesnya berjalan, 
+
+1552
+01:13:34,460 --> 01:13:36,900
+ itu mencoba mengakses file email Anda. 
+
+1553
+01:13:36,900 --> 01:13:39,500
+ Sistem menumbuhkan proses baru ini, si doppelganger, 
+
+1554
+01:13:39,500 --> 01:13:42,769
+ doppelganger itu persis sama dengan yang asli, 
+
+1555
+01:13:42,769 --> 01:13:44,810
+ tetapi sekarang membaca dari data scrub saja 
+
+1556
+01:13:44,810 --> 01:13:46,122
+ dari data yang sangat sensitif. 
+
+1557
+01:13:46,122 --> 01:13:48,760
+
+
+1558
+01:13:48,760 --> 01:13:51,458
+ Apa yang terjadi kemudian. 
+
+1559
+01:13:51,458 --> 01:13:54,963
+ Intinya, TightLip, kita berangkat 
+
+1560
+01:13:54,963 --> 01:14:01,020
+ untuk menjalankan kedua proses tersebut secara paralel. 
+
+1561
+01:14:01,020 --> 01:14:05,620
+ Hanya perlu mengawasi mereka dan melihat apa yang mereka lakukan. 
+
+1562
+01:14:05,620 --> 01:14:09,842
+ Dan khususnya, kita akan melihat, 
+
+1563
+01:14:09,842 --> 01:14:21,330
+ lakukan proses yang mengeluarkan panggilan sistem yang sama 
+
+1564
+01:14:21,330 --> 01:14:23,708
+ dengan argumen yang sama. 
+
+1565
+01:14:23,708 --> 01:14:28,050
+
+
+1566
+01:14:28,050 --> 01:14:34,795
+ Dan jika itu yang terjadi, maka mungkin panggilan sistem itu 
+
+1567
+01:14:34,795 --> 01:14:38,610
+ tidak bergantung pada data sensitif. 
+
+1568
+01:14:38,610 --> 01:14:41,410
+ Jadi dengan kata lain, jika saya memulai proses itu 
+
+1569
+01:14:41,410 --> 01:14:43,160
+ mencoba membuka beberapa file sensitif, 
+
+1570
+01:14:43,160 --> 01:14:46,390
+ Saya memberi makan pada dasarnya data sampah, saya membiarkannya mengeksekusi. 
+
+1571
+01:14:46,390 --> 01:14:49,860
+ Jika proses doppelganger itu masih melakukan hal yang sama 
+
+1572
+01:14:49,860 --> 01:14:52,021
+ bahwa proses yang biasa akan dilakukan, 
+
+1573
+01:14:52,021 --> 01:14:53,520
+ maka agaknya itu tidak terpengaruh 
+
+1574
+01:14:53,520 --> 01:14:56,550
+ oleh data sensitif itu sama sekali. 
+
+1575
+01:14:56,550 --> 01:15:00,500
+ Jadi pada dasarnya doppelganger akan membiarkan proses ini berjalan, 
+
+1576
+01:15:00,500 --> 01:15:02,379
+ TightLip akan membiarkan proses ini berjalan, 
+
+1577
+01:15:02,379 --> 01:15:03,920
+ dan kemudian periksa panggilan sistem di sini. 
+
+1578
+01:15:03,920 --> 01:15:09,445
+ Dan kemudian mungkin terjadi bahwa dalam beberapa kasus, sys memanggil pengalihan. 
+
+1579
+01:15:09,445 --> 01:15:13,530
+
+
+1580
+01:15:13,530 --> 01:15:17,260
+ Jadi khususnya, bagaimana jika si doppelganger 
+
+1581
+01:15:17,260 --> 01:15:21,004
+ mulai melakukan hal-hal yang merupakan versi reguler dari proses tersebut 
+
+1582
+01:15:21,004 --> 01:15:23,170
+ tidak akan dilakukan, dan kemudian doppelganger mencoba 
+
+1583
+01:15:23,170 --> 01:15:24,800
+ untuk membuat panggilan jaringan. 
+
+1584
+01:15:24,800 --> 01:15:27,210
+ Jadi sama seperti di TaintDroid, ketika doppelganger itu mencoba 
+
+1585
+01:15:27,210 --> 01:15:29,577
+ untuk melakukan panggilan jaringan, saat itulah kami mengucapkan aha, 
+
+1586
+01:15:29,577 --> 01:15:31,660
+ kita mungkin harus menghentikan apa yang sedang terjadi sekarang 
+
+1587
+01:15:31,660 --> 01:15:33,660
+ lalu lakukan sesuatu. 
+
+1588
+01:15:33,660 --> 01:15:40,120
+ Jadi jika sistem panggilan berbeda, maka doppelganger 
+
+1589
+01:15:40,120 --> 01:15:47,540
+ membuat panggilan jaringan, lalu kita akan melakukan sesuatu. 
+
+1590
+01:15:47,540 --> 01:15:50,980
+ Jadi kita akan meningkatkan peringatan kepada pengguna 
+
+1591
+01:15:50,980 --> 01:15:52,737
+ atau terserah. 
+
+1592
+01:15:52,737 --> 01:15:54,670
+ Jenis seperti di TaintDroid, tetapi pada titik ini 
+
+1593
+01:15:54,670 --> 01:15:56,044
+ ada kebijakan khusus yang Anda bisa 
+
+1594
+01:15:56,044 --> 01:15:58,520
+ tambahkan beberapa sistem khusus yang akan Anda gunakan. 
+
+1595
+01:15:58,520 --> 01:16:00,728
+ Tapi ini semacam titik yang menarik di mana Anda 
+
+1596
+01:16:00,728 --> 01:16:05,140
+ dapat mengatakan dengan baik, entah bagaimana proses doppelganger itu 
+
+1597
+01:16:05,140 --> 01:16:07,990
+ dipengaruhi oleh data sensitif yang dikembalikan. 
+
+1598
+01:16:07,990 --> 01:16:10,390
+ Itu berarti bahwa mungkin jika pengguna tidak 
+
+1599
+01:16:10,390 --> 01:16:12,597
+ berpikir bahwa proses tertentu sedang berjalan 
+
+1600
+01:16:12,597 --> 01:16:14,680
+ untuk mendapatkan data exfiltrated, sekarang pengguna bisa benar-benar 
+
+1601
+01:16:14,680 --> 01:16:16,940
+ lakukan audit terhadap program tersebut untuk mencari tahu 
+
+1602
+01:16:16,940 --> 01:16:20,600
+ mengapa program itu kembali mengirim data itu melalui jaringan. 
+
+1603
+01:16:20,600 --> 01:16:22,104
+ Begitu juga siapa pun-- lanjutkan. 
+
+1604
+01:16:22,104 --> 01:16:23,992
+ AUDIENCE: Jadi jika Anda memukul sesuatu 
+
+1605
+01:16:23,992 --> 01:16:26,706
+ seperti file kata atau apa pun, Anda semacam 
+
+1606
+01:16:26,706 --> 01:16:28,229
+ harus tahu apa yang Anda nolkan 
+
+1607
+01:16:28,229 --> 01:16:29,427
+ dan apa yang Anda [TIDAK JELAS]. 
+
+1608
+01:16:29,427 --> 01:16:32,593
+
+
+1609
+01:16:32,593 --> 01:16:34,217
+ PROFESOR: Pertanyaan bagus, itu benar. 
+
+1610
+01:16:34,217 --> 01:16:36,133
+ Jadi saya akan membahas beberapa batasan, 
+
+1611
+01:16:36,133 --> 01:16:38,008
+ dan salah satu keterbatasannya adalah persis seperti itu. 
+
+1612
+01:16:38,008 --> 01:16:40,874
+ Anda harus memiliki scrubbers jenis file. 
+
+1613
+01:16:40,874 --> 01:16:42,746
+ Jadi Anda tidak bisa hanya mengambil pemindai email Anda 
+
+1614
+01:16:42,746 --> 01:16:44,380
+ dan menggunakannya untuk Word. 
+
+1615
+01:16:44,380 --> 01:16:47,860
+ Dan sebenarnya, jika para scrubber itu kehilangan sesuatu, 
+
+1616
+01:16:47,860 --> 01:16:50,670
+ jadi jika mereka tidak mengubah segalanya, 
+
+1617
+01:16:50,670 --> 01:16:53,719
+ maka sistem ini mungkin tidak menangkap semua data sensitif yang mungkin 
+
+1618
+01:16:53,719 --> 01:16:54,360
+ kebocoran. 
+
+1619
+01:16:54,360 --> 01:16:55,900
+ Jadi Anda benar tentang itu. 
+
+1620
+01:16:55,900 --> 01:16:57,130
+ Tapi kupikir ... lanjutkan saja. 
+
+1621
+01:16:57,130 --> 01:17:00,450
+ AUDIENCE: Jadi jika saya mengerti, mengapa 
+
+1622
+01:17:00,450 --> 01:17:04,595
+ haruskah proses melihat data sebelum mengatakan maju? 
+
+1623
+01:17:04,595 --> 01:17:07,000
+ Kenapa kamu tidak mengirim barangnya saja? 
+
+1624
+01:17:07,000 --> 01:17:09,240
+ PROFESOR: Mengapa prosesnya-- 
+
+1625
+01:17:09,240 --> 01:17:12,740
+ AUDIENCE: Jika proses berencana memasukkan data, [TIDAK JELAS]? 
+
+1626
+01:17:12,740 --> 01:17:15,410
+
+
+1627
+01:17:15,410 --> 01:17:17,870
+ PROFESOR: Oh, tidak, tidak. 
+
+1628
+01:17:17,870 --> 01:17:20,650
+ Dari perspektif si doppelganger, 
+
+1629
+01:17:20,650 --> 01:17:22,335
+ Maksud saya, mungkin mencoba, pada kenyataannya, lihat 
+
+1630
+01:17:22,335 --> 01:17:24,747
+ dan melihat hal-hal seperti apakah alamat email ini masuk akal, 
+
+1631
+01:17:24,747 --> 01:17:26,580
+ misalnya, sebelum mencoba mengirimnya. 
+
+1632
+01:17:26,580 --> 01:17:28,330
+ Tetapi proses doppelganger, seharusnya tidak 
+
+1633
+01:17:28,330 --> 01:17:30,740
+ tahu bahwa itu mendapatkan data yang digosok aneh ini. 
+
+1634
+01:17:30,740 --> 01:17:32,010
+ Jadi ini kembali sedikit ke pertanyaan 
+
+1635
+01:17:32,010 --> 01:17:33,134
+ kami hanya berbicara tentang. 
+
+1636
+01:17:33,134 --> 01:17:37,620
+ Jika scrubber Anda tidak menggosok sesuatu 
+
+1637
+01:17:37,620 --> 01:17:39,790
+ dengan cara semantik yang masuk akal, 
+
+1638
+01:17:39,790 --> 01:17:42,725
+ doppelganger mungkin, pada kenyataannya, crash, misalnya. 
+
+1639
+01:17:42,725 --> 01:17:45,080
+ Ia mengharapkan hal-hal dalam format semacam ini, tetapi tidak. 
+
+1640
+01:17:45,080 --> 01:17:46,990
+ Tetapi pada tingkat yang tinggi, idenya adalah bahwa kita 
+
+1641
+01:17:46,990 --> 01:17:51,330
+ mencoba mengelabui si doppelganger untuk melakukan apa yang akan dilakukannya 
+
+1642
+01:17:51,330 --> 01:17:54,690
+ biasanya, tetapi pada data yang berbeda 
+
+1643
+01:17:54,690 --> 01:17:57,080
+ dalam versi asli dan lihat apakah ada 
+
+1644
+01:17:57,080 --> 01:17:59,120
+ akan menjadi perbedaan itu. 
+
+1645
+01:17:59,120 --> 01:18:01,440
+ Jadi salah satu kelemahannya adalah, seperti yang kita diskusikan, 
+
+1646
+01:18:01,440 --> 01:18:04,410
+ ini pada dasarnya menempatkan scrubber di TCB 
+
+1647
+01:18:04,410 --> 01:18:06,876
+ dan jika mereka tidak berfungsi dengan baik, doppelganger mungkin macet, 
+
+1648
+01:18:06,876 --> 01:18:09,410
+ Anda mungkin tidak dapat menangkap beberapa pelanggaran, hal-hal 
+
+1649
+01:18:09,410 --> 01:18:10,224
+ seperti itu. 
+
+1650
+01:18:10,224 --> 01:18:11,890
+ Tetapi hal yang baik tentang ini adalah itu 
+
+1651
+01:18:11,890 --> 01:18:14,362
+ bekerja dengan sistem warisan. 
+
+1652
+01:18:14,362 --> 01:18:15,820
+ Jadi kita tidak perlu mengubah apa pun 
+
+1653
+01:18:15,820 --> 01:18:17,680
+ tentang aplikasi itu sendiri berjalan. 
+
+1654
+01:18:17,680 --> 01:18:21,950
+ Kita hanya perlu membuat beberapa perubahan kecil pada kernel OS 
+
+1655
+01:18:21,950 --> 01:18:25,020
+ untuk dapat melacak hal-hal panggilan sistem, dan kemudian 
+
+1656
+01:18:25,020 --> 01:18:26,420
+ hal semacam pekerjaan. 
+
+1657
+01:18:26,420 --> 01:18:27,336
+ Ini sangat, sangat bagus. 
+
+1658
+01:18:27,336 --> 01:18:29,210
+ Dan overhead sistem pada dasarnya 
+
+1659
+01:18:29,210 --> 01:18:31,810
+ overhead menjalankan proses tambahan, yang 
+
+1660
+01:18:31,810 --> 01:18:34,734
+ cukup rendah dalam sistem operasi modern. 
+
+1661
+01:18:34,734 --> 01:18:36,400
+ Ini hanyalah cara yang rapi untuk berpikir 
+
+1662
+01:18:36,400 --> 01:18:40,970
+ tentang bagaimana melakukan beberapa jenis pelacakan noda terbatas 
+
+1663
+01:18:40,970 --> 01:18:44,020
+ tanpa melakukan perubahan kelas berat ke runtime 
+
+1664
+01:18:44,020 --> 01:18:46,165
+ tanpa memerlukan perubahan dari OS-- atau maaf, 
+
+1665
+01:18:46,165 --> 01:18:47,040
+ dari aplikasi. 
+
+1666
+01:18:47,040 --> 01:18:49,490
+ AUDIENCE: Apakah kita hanya melakukan paralel 
+
+1667
+01:18:49,490 --> 01:18:51,940
+ atau menunggu masing-masing? 
+
+1668
+01:18:51,940 --> 01:18:54,125
+ Apakah kita menjalankan kedua proses dan kemudian 
+
+1669
+01:18:54,125 --> 01:18:55,958
+ setelah itu kita bisa mengecek saja sistem itu 
+
+1670
+01:18:55,958 --> 01:18:56,350
+ panggilan sama? 
+
+1671
+01:18:56,350 --> 01:18:56,840
+ Seperti kapan kita memeriksa-- 
+
+1672
+01:18:56,840 --> 01:18:58,131
+ PROFESOR: Ya, dua pertanyaan. 
+
+1673
+01:18:58,131 --> 01:19:03,500
+ Jadi selama proses doppelganger melakukan banyak hal 
+
+1674
+01:19:03,500 --> 01:19:06,800
+ bahwa OS dapat mengontrol dan mempertahankan mesin lokal, 
+
+1675
+01:19:06,800 --> 01:19:08,925
+ Anda dapat membayangkan menjalankan proses doppelganger 
+
+1676
+01:19:08,925 --> 01:19:10,120
+ dan yang biasa maju. 
+
+1677
+01:19:10,120 --> 01:19:14,240
+ Tapi begitu doppelganger mencoba mempengaruhi keadaan eksternal, 
+
+1678
+01:19:14,240 --> 01:19:16,200
+ jadi mungkin jaringan melakukan ini dan itu. 
+
+1679
+01:19:16,200 --> 01:19:18,722
+ Mungkin Anda bisa memikirkan beberapa sumber terkait lainnya seperti itu. 
+
+1680
+01:19:18,722 --> 01:19:20,180
+ Mungkin ada sesuatu seperti pipa, 
+
+1681
+01:19:20,180 --> 01:19:22,471
+ misalnya, bahwa kernel tidak tahu cara membuatnya 
+
+1682
+01:19:22,471 --> 01:19:23,670
+ keadaan doppelganger untuk. 
+
+1683
+01:19:23,670 --> 01:19:26,591
+ Pada titik itu Anda harus menghentikannya dan kemudian menyatakannya 
+
+1684
+01:19:26,591 --> 01:19:27,841
+ sukses atau kemenangan, pada dasarnya. 
+
+1685
+01:19:27,841 --> 01:19:30,930
+
+
+1686
+01:19:30,930 --> 01:19:33,262
+ Ada pertanyaan lain? 
+
+1687
+01:19:33,262 --> 01:19:35,220
+ Baiklah, itulah akhir ceramahnya. 
+
+1688
+01:19:35,220 --> 01:19:36,261
+ Selamat merayakan Thanksgiving. 
+
+1689
+01:19:36,261 --> 00:00:00,000
+ Sampai jumpa minggu depan. 
+

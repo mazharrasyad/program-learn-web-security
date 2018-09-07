@@ -1,0 +1,260 @@
+1
+00:00:00,060 --> 00:00:02,419
+hello everyone<font color="#E5E5E5"> now let's talk about</font>
+
+2
+00:00:02,419 --> 00:00:06,569
+<font color="#E5E5E5">MongoDB injections so MongoDB is one of</font>
+
+3
+00:00:06,569 --> 00:00:08,760
+the most popular non relational database
+
+4
+00:00:08,760 --> 00:00:11,730
+so it's a non relational database which
+
+5
+00:00:11,730 --> 00:00:14,009
+means<font color="#E5E5E5"> it not store data in the form of</font>
+
+6
+00:00:14,009 --> 00:00:16,920
+rows and<font color="#E5E5E5"> columns</font><font color="#CCCCCC"> but the interesting</font>
+
+7
+00:00:16,920 --> 00:00:19,890
+fact is that MongoDB database can<font color="#CCCCCC"> be</font>
+
+8
+00:00:19,890 --> 00:00:22,609
+exploited<font color="#E5E5E5"> similar to SQL injections and</font>
+
+9
+00:00:22,609 --> 00:00:26,160
+XPath injections<font color="#E5E5E5"> but in order to exploit</font>
+
+10
+00:00:26,160 --> 00:00:29,640
+<font color="#E5E5E5">MongoDB database we have to do a little</font>
+
+11
+00:00:29,640 --> 00:00:32,700
+<font color="#E5E5E5">modification and special characters now</font>
+
+12
+00:00:32,700 --> 00:00:34,620
+let's see how we<font color="#E5E5E5"> can do MongoDB</font>
+
+13
+00:00:34,620 --> 00:00:37,579
+injections now let's see how we can
+
+14
+00:00:37,579 --> 00:00:41,219
+exploit MongoDB database<font color="#CCCCCC"> so in order to</font>
+
+15
+00:00:41,219 --> 00:00:44,550
+test MongoDB injections<font color="#E5E5E5"> we have to use</font>
+
+16
+00:00:44,550 --> 00:00:46,559
+the same<font color="#CCCCCC"> web</font><font color="#E5E5E5"> for</font><font color="#CCCCCC"> pen tester</font><font color="#E5E5E5"> to</font>
+
+17
+00:00:46,559 --> 00:00:49,050
+<font color="#E5E5E5">vulnerable web application which we are</font>
+
+18
+00:00:49,050 --> 00:00:52,050
+using from last few videos<font color="#E5E5E5"> and here you</font>
+
+19
+00:00:52,050 --> 00:00:54,570
+can see the web for pen tester<font color="#E5E5E5"> is up and</font>
+
+20
+00:00:54,570 --> 00:00:57,719
+running<font color="#CCCCCC"> and</font><font color="#E5E5E5"> here are two examples of</font>
+
+21
+00:00:57,719 --> 00:01:01,050
+MongoDB injections so let's open the
+
+22
+00:01:01,050 --> 00:01:04,530
+first<font color="#E5E5E5"> one example one and here you can</font>
+
+23
+00:01:04,530 --> 00:01:07,260
+see that it<font color="#E5E5E5"> asks us</font><font color="#CCCCCC"> for the username</font><font color="#E5E5E5"> and</font>
+
+24
+00:01:07,260 --> 00:01:08,159
+<font color="#CCCCCC">the password</font>
+
+25
+00:01:08,159 --> 00:01:11,880
+and if you look at this URL<font color="#CCCCCC"> it's looks</font>
+
+26
+00:01:11,880 --> 00:01:16,409
+same like the LDAP injections<font color="#E5E5E5"> but as I</font>
+
+27
+00:01:16,409 --> 00:01:18,570
+told<font color="#E5E5E5"> you</font><font color="#CCCCCC"> earlier that</font><font color="#E5E5E5"> the MongoDB</font>
+
+28
+00:01:18,570 --> 00:01:20,850
+<font color="#E5E5E5">database</font><font color="#CCCCCC"> is a known relational database</font>
+
+29
+00:01:20,850 --> 00:01:24,420
+and it not contains the tables<font color="#E5E5E5"> rows and</font>
+
+30
+00:01:24,420 --> 00:01:28,729
+columns<font color="#E5E5E5"> now how we can bypass this</font>
+
+31
+00:01:28,729 --> 00:01:33,840
+mechanism<font color="#E5E5E5"> so if you remember then while</font>
+
+32
+00:01:33,840 --> 00:01:37,470
+doing login page sequel injection<font color="#E5E5E5"> we</font>
+
+33
+00:01:37,470 --> 00:01:40,560
+have<font color="#E5E5E5"> given our input which is logical</font>
+
+34
+00:01:40,560 --> 00:01:48,979
+<font color="#E5E5E5">true so that input</font><font color="#CCCCCC"> was admin or 1 equals</font>
+
+35
+00:01:50,390 --> 00:01:55,290
+1 which<font color="#E5E5E5"> means this admin and or 1 equals</font>
+
+36
+00:01:55,290 --> 00:01:58,340
+<font color="#CCCCCC">1 so this previous query and this</font>
+
+37
+00:01:58,340 --> 00:02:02,399
+statement will be compared<font color="#E5E5E5"> and as we</font>
+
+38
+00:02:02,399 --> 00:02:04,439
+know<font color="#E5E5E5"> that</font><font color="#CCCCCC"> one is equals to 1 it's a</font>
+
+39
+00:02:04,439 --> 00:02:05,369
+universal<font color="#CCCCCC"> truth</font>
+
+40
+00:02:05,369 --> 00:02:08,128
+so this<font color="#CCCCCC"> Curie will be executed and</font><font color="#E5E5E5"> will</font>
+
+41
+00:02:08,128 --> 00:02:12,660
+be successfully logged<font color="#CCCCCC"> in</font><font color="#E5E5E5"> but as this</font>
+
+42
+00:02:12,660 --> 00:02:13,950
+MongoDB<font color="#E5E5E5"> is</font><font color="#CCCCCC"> a non</font>
+
+43
+00:02:13,950 --> 00:02:16,080
+relational database<font color="#E5E5E5"> so we have to do</font>
+
+44
+00:02:16,080 --> 00:02:18,060
+some little modifications<font color="#E5E5E5"> in our given</font>
+
+45
+00:02:18,060 --> 00:02:22,800
+input so so we'll just give admin so
+
+46
+00:02:22,800 --> 00:02:27,959
+instead of writing or we will write the
+
+47
+00:02:27,959 --> 00:02:31,670
+or operator which is two pipe signs<font color="#E5E5E5"> and</font>
+
+48
+00:02:31,670 --> 00:02:37,950
+we'll give it one and instead of typing
+
+49
+00:02:37,950 --> 00:02:40,830
+<font color="#E5E5E5">this equals</font><font color="#CCCCCC"> to sign we have</font><font color="#E5E5E5"> to write two</font>
+
+50
+00:02:40,830 --> 00:02:44,390
+equals to sign so<font color="#CCCCCC"> that it can become the</font>
+
+51
+00:02:44,390 --> 00:02:47,250
+equals to operator<font color="#CCCCCC"> so if we just give</font>
+
+52
+00:02:47,250 --> 00:02:49,440
+one equals to sign<font color="#E5E5E5"> that will</font><font color="#CCCCCC"> acts then</font>
+
+53
+00:02:49,440 --> 00:02:51,900
+it acts like an assignment<font color="#E5E5E5"> operator</font><font color="#CCCCCC"> so</font>
+
+54
+00:02:51,900 --> 00:02:55,890
+you have to give<font color="#E5E5E5"> it two and one</font><font color="#CCCCCC"> so now</font>
+
+55
+00:02:55,890 --> 00:03:01,890
+let's just<font color="#E5E5E5"> copy this input and let me</font>
+
+56
+00:03:01,890 --> 00:03:06,329
+<font color="#E5E5E5">just paste it here and</font><font color="#CCCCCC"> let's see whether</font>
+
+57
+00:03:06,329 --> 00:03:10,680
+we<font color="#E5E5E5"> are able to logged in or not</font><font color="#CCCCCC"> and here</font>
+
+58
+00:03:10,680 --> 00:03:13,440
+you can see that we are successfully
+
+59
+00:03:13,440 --> 00:03:19,980
+able to<font color="#CCCCCC"> log in</font><font color="#E5E5E5"> so this was a small demo</font>
+
+60
+00:03:19,980 --> 00:03:23,310
+of MongoDB injections which can be
+
+61
+00:03:23,310 --> 00:03:27,510
+applied to<font color="#CCCCCC"> any another non-relational</font>
+
+62
+00:03:27,510 --> 00:03:30,359
+database<font color="#E5E5E5"> so in this</font><font color="#CCCCCC"> video we</font><font color="#E5E5E5"> have</font>
+
+63
+00:03:30,359 --> 00:03:31,889
+covered<font color="#E5E5E5"> that what</font><font color="#CCCCCC"> our non-relational</font>
+
+64
+00:03:31,889 --> 00:03:35,730
+database and how we can exploit MongoDB
+
+65
+00:03:35,730 --> 00:00:00,000
+database<font color="#E5E5E5"> thanks for watching this video</font>
+

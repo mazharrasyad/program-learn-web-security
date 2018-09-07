@@ -1,0 +1,596 @@
+1
+00:00:12,219 --> 00:00:14,769
+welcome to module 19 which will examine
+
+2
+00:00:14,769 --> 00:00:19,360
+phishing phishing attacks<font color="#E5E5E5"> target users</font>
+
+3
+00:00:19,360 --> 00:00:21,130
+and user<font color="#E5E5E5"> groups rather than specific</font>
+
+4
+00:00:21,130 --> 00:00:26,230
+applications or servers the attack
+
+5
+00:00:26,230 --> 00:00:28,029
+consists of an intruder<font color="#E5E5E5"> attempting to</font>
+
+6
+00:00:28,029 --> 00:00:30,009
+impersonate<font color="#E5E5E5"> entities such as companies</font>
+
+7
+00:00:30,009 --> 00:00:32,020
+or financial institutions in<font color="#E5E5E5"> order to</font>
+
+8
+00:00:32,020 --> 00:00:33,850
+trick a victim into<font color="#E5E5E5"> visiting a specially</font>
+
+9
+00:00:33,850 --> 00:00:35,559
+crafted website designed<font color="#E5E5E5"> to look like</font>
+
+10
+00:00:35,559 --> 00:00:38,230
+the legitimate service the<font color="#CCCCCC"> page is</font>
+
+11
+00:00:38,230 --> 00:00:40,030
+<font color="#E5E5E5">instead set up to deceive users and</font>
+
+12
+00:00:40,030 --> 00:00:41,590
+steal submitted passwords and other
+
+13
+00:00:41,590 --> 00:00:47,199
+types of<font color="#E5E5E5"> sensitive information early</font>
+
+14
+00:00:47,199 --> 00:00:48,940
+phishing attacks mostly targeted<font color="#E5E5E5"> bank</font>
+
+15
+00:00:48,940 --> 00:00:53,260
+<font color="#E5E5E5">customers attackers try to register</font><font color="#CCCCCC"> a</font>
+
+16
+00:00:53,260 --> 00:00:54,940
+domain<font color="#E5E5E5"> similar to the official</font><font color="#CCCCCC"> bank</font>
+
+17
+00:00:54,940 --> 00:00:59,620
+domain and then set<font color="#CCCCCC"> up a website</font><font color="#E5E5E5"> which</font>
+
+18
+00:00:59,620 --> 00:01:03,510
+masqueraded as<font color="#CCCCCC"> the legitimate Bakke page</font>
+
+19
+00:01:04,050 --> 00:01:06,580
+next<font color="#CCCCCC"> they send emails to potential</font>
+
+20
+00:01:06,580 --> 00:01:08,260
+customers of the bank<font color="#E5E5E5"> which requested</font>
+
+21
+00:01:08,260 --> 00:01:10,120
+them to<font color="#E5E5E5"> log</font><font color="#CCCCCC"> into a service and unlock</font>
+
+22
+00:01:10,120 --> 00:01:11,770
+their account these attacks have become
+
+23
+00:01:11,770 --> 00:01:17,080
+widespread<font color="#CCCCCC"> you can probably find</font><font color="#E5E5E5"> a</font>
+
+24
+00:01:17,080 --> 00:01:18,370
+number<font color="#E5E5E5"> of phishing emails in</font><font color="#CCCCCC"> your</font>
+
+25
+00:01:18,370 --> 00:01:25,690
+mailbox but what are the distinctive
+
+26
+00:01:25,690 --> 00:01:28,210
+features<font color="#CCCCCC"> of</font><font color="#E5E5E5"> these attacks first of all</font>
+
+27
+00:01:28,210 --> 00:01:29,620
+the address to<font color="#E5E5E5"> which the email will</font>
+
+28
+00:01:29,620 --> 00:01:31,000
+direct us will frequently<font color="#E5E5E5"> look</font>
+
+29
+00:01:31,000 --> 00:01:36,610
+suspicious<font color="#E5E5E5"> if you pay close attention</font>
+
+30
+00:01:36,610 --> 00:01:39,070
+you'll discover typos in<font color="#CCCCCC"> the domain</font><font color="#E5E5E5"> name</font>
+
+31
+00:01:39,070 --> 00:01:42,420
+<font color="#E5E5E5">or weird parts at the end of the URL</font>
+
+32
+00:01:42,420 --> 00:01:44,530
+since diacritical marks have been
+
+33
+00:01:44,530 --> 00:01:47,070
+<font color="#E5E5E5">allowed in URLs</font><font color="#CCCCCC"> Fisher's make use of</font>
+
+34
+00:01:47,070 --> 00:01:49,120
+internationalized domain names<font color="#CCCCCC"> to launch</font>
+
+35
+00:01:49,120 --> 00:01:57,190
+attacks another<font color="#E5E5E5"> key aspect is the look</font>
+
+36
+00:01:57,190 --> 00:01:59,260
+and feel<font color="#CCCCCC"> of the service</font><font color="#E5E5E5"> the layout might</font>
+
+37
+00:01:59,260 --> 00:02:00,850
+differ slightly from<font color="#CCCCCC"> the</font><font color="#E5E5E5"> layout</font><font color="#CCCCCC"> of the</font>
+
+38
+00:02:00,850 --> 00:02:03,160
+legitimate<font color="#CCCCCC"> bank website the site</font><font color="#E5E5E5"> could</font>
+
+39
+00:02:03,160 --> 00:02:05,200
+contain graphic errors and some<font color="#E5E5E5"> elements</font>
+
+40
+00:02:05,200 --> 00:02:09,340
+could be non-functional<font color="#E5E5E5"> early phishing</font>
+
+41
+00:02:09,340 --> 00:02:10,449
+attacks were constructed with
+
+42
+00:02:10,449 --> 00:02:12,640
+<font color="#CCCCCC">painstaking precision so the forged</font>
+
+43
+00:02:12,640 --> 00:02:14,409
+<font color="#E5E5E5">websites were nearly undistinguishable</font>
+
+44
+00:02:14,409 --> 00:02:17,530
+<font color="#E5E5E5">from legitimate services today phishing</font>
+
+45
+00:02:17,530 --> 00:02:19,659
+emails are sent in bulk<font color="#E5E5E5"> and websites are</font>
+
+46
+00:02:19,659 --> 00:02:21,010
+<font color="#CCCCCC">created semi-automatically</font>
+
+47
+00:02:21,010 --> 00:02:22,840
+which means that the forged websites
+
+48
+00:02:22,840 --> 00:02:24,490
+will rarely<font color="#E5E5E5"> look legitimate enough to</font>
+
+49
+00:02:24,490 --> 00:02:26,970
+deceive us
+
+50
+00:02:28,870 --> 00:02:31,460
+what's more these attacks are launched
+
+51
+00:02:31,460 --> 00:02:33,050
+internationally<font color="#E5E5E5"> by groups of criminals</font>
+
+52
+00:02:33,050 --> 00:02:34,520
+<font color="#E5E5E5">who frequently don't speak the native</font>
+
+53
+00:02:34,520 --> 00:02:36,020
+<font color="#E5E5E5">tongue of</font><font color="#CCCCCC"> the attacked institutions</font>
+
+54
+00:02:36,020 --> 00:02:39,800
+customers the messages<font color="#CCCCCC"> are translated by</font>
+
+55
+00:02:39,800 --> 00:02:41,660
+free machine<font color="#E5E5E5"> translation services and</font>
+
+56
+00:02:41,660 --> 00:02:43,610
+abound in grammatical and syntactical
+
+57
+00:02:43,610 --> 00:02:46,610
+errors<font color="#E5E5E5"> sometimes</font><font color="#CCCCCC"> they are practically</font>
+
+58
+00:02:46,610 --> 00:02:49,910
+incomprehensible<font color="#E5E5E5"> we'll take a look at</font>
+
+59
+00:02:49,910 --> 00:02:51,500
+some sample messages which serve<font color="#CCCCCC"> as a</font>
+
+60
+00:02:51,500 --> 00:02:53,950
+<font color="#CCCCCC">warning</font>
+
+61
+00:03:00,880 --> 00:03:02,850
+[Music]
+
+62
+00:03:02,850 --> 00:03:05,350
+you can see here an attack which targets
+
+63
+00:03:05,350 --> 00:03:08,980
+users of a popular auction service the
+
+64
+00:03:08,980 --> 00:03:10,000
+attackers have done a good job
+
+65
+00:03:10,000 --> 00:03:13,200
+<font color="#E5E5E5">recreating the design of the service</font>
+
+66
+00:03:13,200 --> 00:03:18,459
+the address is<font color="#CCCCCC"> wwl</font><font color="#E5E5E5"> egg row tomorrow</font><font color="#CCCCCC"> the</font>
+
+67
+00:03:18,459 --> 00:03:20,980
+home<font color="#E5E5E5"> taro top-level domain should alert</font>
+
+68
+00:03:20,980 --> 00:03:27,520
+us<font color="#E5E5E5"> you can see in the image the content</font>
+
+69
+00:03:27,520 --> 00:03:28,900
+of a<font color="#CCCCCC"> message sent in a different</font>
+
+70
+00:03:28,900 --> 00:03:33,130
+phishing attack everything seems to
+
+71
+00:03:33,130 --> 00:03:34,750
+point<font color="#E5E5E5"> to it being sent from</font><font color="#CCCCCC"> allegro</font>
+
+72
+00:03:34,750 --> 00:03:38,680
+servers remember however<font color="#E5E5E5"> that attackers</font>
+
+73
+00:03:38,680 --> 00:03:40,450
+can use gates<font color="#E5E5E5"> which allow them to adopt</font>
+
+74
+00:03:40,450 --> 00:03:44,980
+<font color="#E5E5E5">any email</font><font color="#CCCCCC"> address to make sure the email</font>
+
+75
+00:03:44,980 --> 00:03:46,780
+has really been sent by<font color="#CCCCCC"> Allegro and</font><font color="#E5E5E5"> not</font>
+
+76
+00:03:46,780 --> 00:03:49,269
+by<font color="#CCCCCC"> Fisher's</font><font color="#E5E5E5"> you should carefully examine</font>
+
+77
+00:03:49,269 --> 00:03:50,950
+<font color="#E5E5E5">the headers which record specific paths</font>
+
+78
+00:03:50,950 --> 00:03:59,890
+<font color="#CCCCCC">used in sending the email also as you</font>
+
+79
+00:03:59,890 --> 00:04:01,930
+<font color="#CCCCCC">can see the message</font><font color="#E5E5E5"> contains serious</font>
+
+80
+00:04:01,930 --> 00:04:03,880
+linguistic errors which again should
+
+81
+00:04:03,880 --> 00:04:09,790
+alert<font color="#CCCCCC"> us this is another example</font><font color="#E5E5E5"> of a</font>
+
+82
+00:04:09,790 --> 00:04:11,470
+phishing attack targeting a popular
+
+83
+00:04:11,470 --> 00:04:14,769
+social networking service the message
+
+84
+00:04:14,769 --> 00:04:16,899
+looks innocent<font color="#E5E5E5"> on the surface but let's</font>
+
+85
+00:04:16,899 --> 00:04:18,488
+pay<font color="#CCCCCC"> attention to the fact that the URL</font>
+
+86
+00:04:18,488 --> 00:04:20,260
+<font color="#E5E5E5">begins with ww8</font>
+
+87
+00:04:20,260 --> 00:04:22,390
+remember that if the sent message is
+
+88
+00:04:22,390 --> 00:04:25,600
+formatted in<font color="#CCCCCC"> the HTML the visible URL</font>
+
+89
+00:04:25,600 --> 00:04:26,770
+could be different from<font color="#E5E5E5"> the actual</font>
+
+90
+00:04:26,770 --> 00:04:34,300
+<font color="#E5E5E5">address to which you'll be directed you</font>
+
+91
+00:04:34,300 --> 00:04:36,130
+can see here a message sent to<font color="#CCCCCC"> customers</font>
+
+92
+00:04:36,130 --> 00:04:40,419
+of<font color="#CCCCCC"> a bank how can we</font><font color="#E5E5E5"> protect ourselves</font>
+
+93
+00:04:40,419 --> 00:04:44,590
+against these<font color="#E5E5E5"> attacks first of all you</font>
+
+94
+00:04:44,590 --> 00:04:45,760
+should be<font color="#E5E5E5"> careful with submitting</font>
+
+95
+00:04:45,760 --> 00:04:47,440
+sensitive data such<font color="#CCCCCC"> as passwords</font>
+
+96
+00:04:47,440 --> 00:04:51,060
+identifiers<font color="#E5E5E5"> or credit card numbers</font>
+
+97
+00:04:52,169 --> 00:04:54,610
+<font color="#E5E5E5">remember that very few companies request</font>
+
+98
+00:04:54,610 --> 00:04:57,600
+such information to<font color="#E5E5E5"> unlock an account</font>
+
+99
+00:04:57,600 --> 00:05:00,039
+this<font color="#E5E5E5"> is especially true in the case</font><font color="#CCCCCC"> of</font>
+
+100
+00:05:00,039 --> 00:05:01,900
+banks you<font color="#E5E5E5"> can unlock your</font><font color="#CCCCCC"> account</font><font color="#E5E5E5"> by</font>
+
+101
+00:05:01,900 --> 00:05:03,760
+calling a consultant<font color="#E5E5E5"> or contacting a</font>
+
+102
+00:05:03,760 --> 00:05:05,470
+<font color="#E5E5E5">local branch of the bank another key</font>
+
+103
+00:05:05,470 --> 00:05:07,180
+point is never trusting the links
+
+104
+00:05:07,180 --> 00:05:10,360
+contained in incoming mail even if the
+
+105
+00:05:10,360 --> 00:05:12,250
+link seems trustworthy<font color="#CCCCCC"> it's better</font><font color="#E5E5E5"> to</font>
+
+106
+00:05:12,250 --> 00:05:13,939
+manually provide<font color="#E5E5E5"> an own you</font>
+
+107
+00:05:13,939 --> 00:05:15,169
+rather than click on the link provided
+
+108
+00:05:15,169 --> 00:05:20,629
+<font color="#E5E5E5">in</font><font color="#CCCCCC"> the message</font><font color="#E5E5E5"> by</font><font color="#CCCCCC"> doing so you'll be</font>
+
+109
+00:05:20,629 --> 00:05:22,249
+sure<font color="#CCCCCC"> that the website</font><font color="#E5E5E5"> you visit is</font><font color="#CCCCCC"> the</font>
+
+110
+00:05:22,249 --> 00:05:24,860
+<font color="#E5E5E5">legitimate service then you can make</font>
+
+111
+00:05:24,860 --> 00:05:26,479
+<font color="#E5E5E5">sure whether the information passed in</font>
+
+112
+00:05:26,479 --> 00:05:28,099
+the message<font color="#E5E5E5"> that an account has</font><font color="#CCCCCC"> been</font>
+
+113
+00:05:28,099 --> 00:05:30,770
+<font color="#E5E5E5">locked was true</font><font color="#CCCCCC"> if there really are any</font>
+
+114
+00:05:30,770 --> 00:05:32,779
+problems<font color="#CCCCCC"> use the official</font><font color="#E5E5E5"> service and</font>
+
+115
+00:05:32,779 --> 00:05:34,639
+<font color="#E5E5E5">its functionalities to be sure that you</font>
+
+116
+00:05:34,639 --> 00:05:36,080
+<font color="#E5E5E5">don't give up crucial information to</font>
+
+117
+00:05:36,080 --> 00:05:43,550
+attackers it might also be<font color="#E5E5E5"> worth</font><font color="#CCCCCC"> it to</font>
+
+118
+00:05:43,550 --> 00:05:47,300
+<font color="#E5E5E5">check HTTPS certificates</font><font color="#CCCCCC"> an increasing</font>
+
+119
+00:05:47,300 --> 00:05:49,029
+<font color="#CCCCCC">number of websites use the encrypted</font>
+
+120
+00:05:49,029 --> 00:05:54,219
+<font color="#E5E5E5">HTTPS protocol to verify server identity</font>
+
+121
+00:05:55,419 --> 00:05:57,740
+you can<font color="#E5E5E5"> display in</font><font color="#CCCCCC"> your browser the</font>
+
+122
+00:05:57,740 --> 00:05:59,599
+details of a certificate<font color="#CCCCCC"> and check its</font>
+
+123
+00:05:59,599 --> 00:06:06,500
+validity<font color="#CCCCCC"> subject and issuer browsers</font>
+
+124
+00:06:06,500 --> 00:06:08,150
+attempt to verify key information<font color="#CCCCCC"> such</font>
+
+125
+00:06:08,150 --> 00:06:09,979
+<font color="#CCCCCC">as expiration date or issue or</font>
+
+126
+00:06:09,979 --> 00:06:16,999
+trustworthiness<font color="#CCCCCC"> on their own you can</font>
+
+127
+00:06:16,999 --> 00:06:18,919
+however check<font color="#E5E5E5"> by yourself whether a</font>
+
+128
+00:06:18,919 --> 00:06:20,509
+certificate has been issued<font color="#CCCCCC"> for the</font>
+
+129
+00:06:20,509 --> 00:06:24,099
+service<font color="#CCCCCC"> you are trying</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> log into if</font>
+
+130
+00:06:24,099 --> 00:06:26,569
+you suspect phishing<font color="#E5E5E5"> it's good to</font>
+
+131
+00:06:26,569 --> 00:06:28,279
+contact the service administrator<font color="#E5E5E5"> and</font>
+
+132
+00:06:28,279 --> 00:06:30,139
+share your suspicions by sending them an
+
+133
+00:06:30,139 --> 00:06:36,469
+original email this could help in
+
+134
+00:06:36,469 --> 00:06:38,180
+<font color="#CCCCCC">verifying the information</font><font color="#E5E5E5"> contained in</font>
+
+135
+00:06:38,180 --> 00:06:42,189
+the email<font color="#CCCCCC"> and protecting other customers</font>
+
+136
+00:06:43,719 --> 00:06:47,020
+if you want to contact the administrator
+
+137
+00:06:47,020 --> 00:06:49,430
+<font color="#E5E5E5">remember not to</font><font color="#CCCCCC"> use the reply option as</font>
+
+138
+00:06:49,430 --> 00:06:52,729
+the email address could be<font color="#E5E5E5"> forged check</font>
+
+139
+00:06:52,729 --> 00:06:54,620
+the legitimate service page for contact
+
+140
+00:06:54,620 --> 00:06:57,830
+data another<font color="#CCCCCC"> good idea</font><font color="#E5E5E5"> is to examine the</font>
+
+141
+00:06:57,830 --> 00:07:00,560
+<font color="#E5E5E5">physical URL of a link don't rely on the</font>
+
+142
+00:07:00,560 --> 00:07:03,889
+<font color="#E5E5E5">text displayed</font><font color="#CCCCCC"> in the HTML messages it's</font>
+
+143
+00:07:03,889 --> 00:07:06,110
+safer to<font color="#E5E5E5"> copy a target</font><font color="#CCCCCC"> address and make</font>
+
+144
+00:07:06,110 --> 00:07:09,789
+sure it leads to<font color="#CCCCCC"> a legitimate</font><font color="#E5E5E5"> location</font>
+
+145
+00:07:10,240 --> 00:07:13,759
+if the URL seems suspicious<font color="#E5E5E5"> don't visit</font>
+
+146
+00:07:13,759 --> 00:07:15,510
+it
+
+147
+00:07:15,510 --> 00:07:18,910
+that's all in module 19<font color="#E5E5E5"> thanks for your</font>
+
+148
+00:07:18,910 --> 00:07:21,400
+<font color="#E5E5E5">attention and see</font><font color="#CCCCCC"> you in module 20 which</font>
+
+149
+00:07:21,400 --> 00:00:00,000
+<font color="#CCCCCC">will</font><font color="#E5E5E5"> discuss automated security testing</font>
+

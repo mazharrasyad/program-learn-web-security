@@ -1,0 +1,1080 @@
+1
+00:00:00,060 --> 00:00:01,770
+hello friends now let's talk about
+
+2
+00:00:01,770 --> 00:00:04,680
+cross-site<font color="#E5E5E5"> scripting so cross-site</font>
+
+3
+00:00:04,680 --> 00:00:06,000
+scripting vulnerability it's a
+
+4
+00:00:06,000 --> 00:00:08,250
+client-side attack and it's most
+
+5
+00:00:08,250 --> 00:00:10,860
+popularly called as XSS<font color="#E5E5E5"> so cross-site</font>
+
+6
+00:00:10,860 --> 00:00:12,599
+scripting vulnerability is often found
+
+7
+00:00:12,599 --> 00:00:14,880
+in lot<font color="#E5E5E5"> of web application especially</font>
+
+8
+00:00:14,880 --> 00:00:17,820
+where a user provides input<font color="#E5E5E5"> to</font><font color="#CCCCCC"> an input</font>
+
+9
+00:00:17,820 --> 00:00:20,490
+receiving areas like search bars<font color="#E5E5E5"> forms</font>
+
+10
+00:00:20,490 --> 00:00:23,070
+and feedback forms<font color="#E5E5E5"> so if the user</font>
+
+11
+00:00:23,070 --> 00:00:25,109
+supplied<font color="#CCCCCC"> input is</font><font color="#E5E5E5"> actually being</font>
+
+12
+00:00:25,109 --> 00:00:27,960
+executed<font color="#CCCCCC"> by the web application</font><font color="#E5E5E5"> which</font>
+
+13
+00:00:27,960 --> 00:00:30,449
+<font color="#E5E5E5">means that web</font><font color="#CCCCCC"> application is cross-site</font>
+
+14
+00:00:30,449 --> 00:00:32,700
+scripting vulnerable<font color="#E5E5E5"> so the user</font>
+
+15
+00:00:32,700 --> 00:00:35,430
+provides<font color="#E5E5E5"> JavaScript code instead</font><font color="#CCCCCC"> of</font>
+
+16
+00:00:35,430 --> 00:00:37,800
+providing<font color="#E5E5E5"> a legitimate text and if the</font>
+
+17
+00:00:37,800 --> 00:00:39,870
+JavaScript code<font color="#E5E5E5"> is being executed by</font><font color="#CCCCCC"> the</font>
+
+18
+00:00:39,870 --> 00:00:42,390
+web application which means<font color="#E5E5E5"> that web</font>
+
+19
+00:00:42,390 --> 00:00:44,430
+application<font color="#CCCCCC"> is</font><font color="#E5E5E5"> processed scripting</font>
+
+20
+00:00:44,430 --> 00:00:46,649
+burnable so cross-site scripting
+
+21
+00:00:46,649 --> 00:00:49,110
+vulnerability can also be used<font color="#E5E5E5"> and in</font>
+
+22
+00:00:49,110 --> 00:00:51,570
+order<font color="#CCCCCC"> to steam user cookies session IDs</font>
+
+23
+00:00:51,570 --> 00:00:55,050
+and even it<font color="#E5E5E5"> can also lead</font><font color="#CCCCCC"> to CSRF</font><font color="#E5E5E5"> attack</font>
+
+24
+00:00:55,050 --> 00:00:57,329
+so cross-site scripting is<font color="#E5E5E5"> of two</font><font color="#CCCCCC"> types</font>
+
+25
+00:00:57,329 --> 00:00:59,640
+<font color="#E5E5E5">the</font><font color="#CCCCCC"> first one is reflected cross-site</font>
+
+26
+00:00:59,640 --> 00:01:01,649
+scripting<font color="#E5E5E5"> and the second one is stored</font>
+
+27
+00:01:01,649 --> 00:01:03,239
+<font color="#E5E5E5">crosser scripting</font><font color="#CCCCCC"> now let's talk about</font>
+
+28
+00:01:03,239 --> 00:01:05,720
+<font color="#E5E5E5">both of them in much more detail</font>
+
+29
+00:01:05,720 --> 00:01:08,130
+so reflected cross-site scripting is
+
+30
+00:01:08,130 --> 00:01:10,320
+<font color="#E5E5E5">also called as non persistent cross-site</font>
+
+31
+00:01:10,320 --> 00:01:12,990
+scripting<font color="#E5E5E5"> because the here the user</font>
+
+32
+00:01:12,990 --> 00:01:15,630
+input is not stored in database which
+
+33
+00:01:15,630 --> 00:01:17,790
+<font color="#E5E5E5">means if the user input is not stored in</font>
+
+34
+00:01:17,790 --> 00:01:20,520
+database so<font color="#CCCCCC"> that then the response of</font>
+
+35
+00:01:20,520 --> 00:01:22,979
+the web application is only shown to the
+
+36
+00:01:22,979 --> 00:01:24,659
+user who is actually injecting the
+
+37
+00:01:24,659 --> 00:01:27,450
+JavaScript<font color="#E5E5E5"> which means if we are</font>
+
+38
+00:01:27,450 --> 00:01:29,880
+injecting<font color="#CCCCCC"> something in in search bar and</font>
+
+39
+00:01:29,880 --> 00:01:32,460
+our<font color="#CCCCCC"> JavaScript is being executed</font><font color="#E5E5E5"> by that</font>
+
+40
+00:01:32,460 --> 00:01:34,950
+application<font color="#E5E5E5"> which means the response of</font>
+
+41
+00:01:34,950 --> 00:01:37,110
+that<font color="#E5E5E5"> JavaScript can only be shown to us</font>
+
+42
+00:01:37,110 --> 00:01:39,990
+not anyone else because<font color="#E5E5E5"> our input is not</font>
+
+43
+00:01:39,990 --> 00:01:43,049
+stored in database and the input is<font color="#E5E5E5"> not</font>
+
+44
+00:01:43,049 --> 00:01:44,700
+stored<font color="#E5E5E5"> in database and often found in</font>
+
+45
+00:01:44,700 --> 00:01:48,240
+search bar<font color="#E5E5E5"> now let's talk about</font><font color="#CCCCCC"> stored</font>
+
+46
+00:01:48,240 --> 00:01:50,159
+cross-site scripting so<font color="#CCCCCC"> store cross-site</font>
+
+47
+00:01:50,159 --> 00:01:53,119
+scripting<font color="#E5E5E5"> also called as stored XSS and</font>
+
+48
+00:01:53,119 --> 00:01:56,250
+persistent XSS why because the user
+
+49
+00:01:56,250 --> 00:01:59,070
+input is stored in database and once the
+
+50
+00:01:59,070 --> 00:02:01,229
+user input is stored in database then
+
+51
+00:02:01,229 --> 00:02:03,180
+there are just<font color="#CCCCCC"> for example there is one</font>
+
+52
+00:02:03,180 --> 00:02:06,780
+<font color="#E5E5E5">comment section and we commented out a</font>
+
+53
+00:02:06,780 --> 00:02:09,959
+<font color="#E5E5E5">JavaScript theory and in place of</font>
+
+54
+00:02:09,959 --> 00:02:12,030
+comment<font color="#E5E5E5"> we added a</font><font color="#CCCCCC"> javascript curie</font><font color="#E5E5E5"> and</font>
+
+55
+00:02:12,030 --> 00:02:13,930
+we click on submit and<font color="#E5E5E5"> our</font>
+
+56
+00:02:13,930 --> 00:02:17,709
+<font color="#CCCCCC">Mendes submit and now if</font><font color="#E5E5E5"> anyone visit</font>
+
+57
+00:02:17,709 --> 00:02:20,500
+that page then the<font color="#E5E5E5"> JavaScript also being</font>
+
+58
+00:02:20,500 --> 00:02:24,340
+executed on that user<font color="#E5E5E5"> which means the</font>
+
+59
+00:02:24,340 --> 00:02:26,079
+<font color="#E5E5E5">impact of</font><font color="#CCCCCC"> store cross-site scripting is</font>
+
+60
+00:02:26,079 --> 00:02:30,129
+much more than<font color="#E5E5E5"> non persistent cross-site</font>
+
+61
+00:02:30,129 --> 00:02:33,370
+scripting<font color="#E5E5E5"> and it can also lead to CSRF</font>
+
+62
+00:02:33,370 --> 00:02:35,769
+attack<font color="#E5E5E5"> now let's see how we can exploit</font>
+
+63
+00:02:35,769 --> 00:02:37,900
+cross-site scripting vulnerability in OS
+
+64
+00:02:37,900 --> 00:02:40,510
+broken web application now let's try to
+
+65
+00:02:40,510 --> 00:02:42,189
+<font color="#E5E5E5">find cross-site scripting vulnerability</font>
+
+66
+00:02:42,189 --> 00:02:44,920
+in<font color="#CCCCCC"> mutilate a web application Somu</font>
+
+67
+00:02:44,920 --> 00:02:46,540
+<font color="#CCCCCC">today's a web application maintained by</font>
+
+68
+00:02:46,540 --> 00:02:49,329
+OS p--<font color="#E5E5E5"> and it's already present in OS</font>
+
+69
+00:02:49,329 --> 00:02:51,069
+broken web application which we have
+
+70
+00:02:51,069 --> 00:02:54,939
+<font color="#E5E5E5">installed in the last video</font><font color="#CCCCCC"> so here you</font>
+
+71
+00:02:54,939 --> 00:02:57,430
+<font color="#E5E5E5">can see that man my OS broken web</font>
+
+72
+00:02:57,430 --> 00:02:59,739
+application is<font color="#E5E5E5"> up and running</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> here</font>
+
+73
+00:02:59,739 --> 00:03:06,340
+is its IP address<font color="#E5E5E5"> 192.168.1.1 this IP</font>
+
+74
+00:03:06,340 --> 00:03:14,950
+<font color="#CCCCCC">address</font><font color="#E5E5E5"> in my firefox</font><font color="#CCCCCC"> okay so here you</font>
+
+75
+00:03:14,950 --> 00:03:16,930
+<font color="#E5E5E5">can see this is a / s broken web</font>
+
+76
+00:03:16,930 --> 00:03:19,510
+application and here is the<font color="#E5E5E5"> link of OS</font>
+
+77
+00:03:19,510 --> 00:03:22,599
+mutated a second<font color="#E5E5E5"> so let's click on this</font>
+
+78
+00:03:22,599 --> 00:03:27,760
+link<font color="#E5E5E5"> and here you can see the OS muted a</font>
+
+79
+00:03:27,760 --> 00:03:29,739
+web application<font color="#CCCCCC"> and on the left hand</font>
+
+80
+00:03:29,739 --> 00:03:32,739
+<font color="#E5E5E5">side you</font><font color="#CCCCCC"> will see a different OS list</font>
+
+81
+00:03:32,739 --> 00:03:36,459
+vulnerability list<font color="#E5E5E5"> and let's go here</font><font color="#CCCCCC"> OS</font>
+
+82
+00:03:36,459 --> 00:03:39,489
+2013 so here you can see the different
+
+83
+00:03:39,489 --> 00:03:41,319
+vulnerable web application challenges
+
+84
+00:03:41,319 --> 00:03:43,150
+divided into<font color="#E5E5E5"> different categories like</font>
+
+85
+00:03:43,150 --> 00:03:45,310
+<font color="#E5E5E5">injection attacks broken authentication</font>
+
+86
+00:03:45,310 --> 00:03:47,919
+cross-site scripting<font color="#CCCCCC"> I do be cross-site</font>
+
+87
+00:03:47,919 --> 00:03:50,829
+request forgery but for the time<font color="#E5E5E5"> being</font>
+
+88
+00:03:50,829 --> 00:03:53,879
+<font color="#E5E5E5">let's go here cross-site scripting and</font>
+
+89
+00:03:53,879 --> 00:03:57,939
+now the cross-site scripting has two
+
+90
+00:03:57,939 --> 00:03:59,769
+types<font color="#E5E5E5"> as I told you</font><font color="#CCCCCC"> earlier the</font>
+
+91
+00:03:59,769 --> 00:04:01,870
+reflected and the persistent<font color="#E5E5E5"> and</font>
+
+92
+00:04:01,870 --> 00:04:04,389
+reflected nothing is stored in database
+
+93
+00:04:04,389 --> 00:04:06,939
+<font color="#E5E5E5">it's a temporary and in persistent</font><font color="#CCCCCC"> our</font>
+
+94
+00:04:06,939 --> 00:04:09,250
+<font color="#CCCCCC">javascript is being stored in database</font>
+
+95
+00:04:09,250 --> 00:04:12,150
+and it's affected and all the users
+
+96
+00:04:12,150 --> 00:04:15,280
+<font color="#E5E5E5">which will visit that page will just get</font>
+
+97
+00:04:15,280 --> 00:04:18,810
+affected through a<font color="#CCCCCC"> JavaScript</font><font color="#E5E5E5"> so first</font>
+
+98
+00:04:18,810 --> 00:04:21,608
+let's focus on this reflected cross-site
+
+99
+00:04:21,608 --> 00:04:25,590
+scripting<font color="#CCCCCC"> so if you go</font><font color="#E5E5E5"> here</font>
+
+100
+00:04:26,620 --> 00:04:29,930
+select this this<font color="#CCCCCC"> links set</font><font color="#E5E5E5"> background</font>
+
+101
+00:04:29,930 --> 00:04:37,759
+<font color="#E5E5E5">color okay now let me give you an</font>
+
+102
+00:04:37,759 --> 00:04:40,669
+scenario like you have<font color="#CCCCCC"> you arrested</font><font color="#E5E5E5"> one</font>
+
+103
+00:04:40,669 --> 00:04:44,419
+<font color="#CCCCCC">website</font><font color="#E5E5E5"> so here</font><font color="#CCCCCC"> is the same page or the</font>
+
+104
+00:04:44,419 --> 00:04:46,430
+same functionality<font color="#E5E5E5"> which the website is</font>
+
+105
+00:04:46,430 --> 00:04:49,030
+offering to the user<font color="#E5E5E5"> now let's try</font><font color="#CCCCCC"> to</font>
+
+106
+00:04:49,030 --> 00:04:51,740
+<font color="#E5E5E5">play with it what it's saying</font><font color="#CCCCCC"> so please</font>
+
+107
+00:04:51,740 --> 00:04:53,599
+<font color="#CCCCCC">enter</font><font color="#E5E5E5"> the background color you would</font>
+
+108
+00:04:53,599 --> 00:04:55,069
+<font color="#CCCCCC">like to see</font><font color="#E5E5E5"> okay</font>
+
+109
+00:04:55,069 --> 00:04:59,259
+so enter the color in hex format<font color="#E5E5E5"> now</font>
+
+110
+00:04:59,259 --> 00:05:02,500
+example red is this<font color="#E5E5E5"> now let's try to add</font>
+
+111
+00:05:02,500 --> 00:05:07,490
+this color<font color="#E5E5E5"> code and let's see what</font>
+
+112
+00:05:07,490 --> 00:05:12,050
+happens and if<font color="#E5E5E5"> I click on set background</font>
+
+113
+00:05:12,050 --> 00:05:14,330
+<font color="#E5E5E5">color</font><font color="#CCCCCC"> you will see our background has</font>
+
+114
+00:05:14,330 --> 00:05:17,449
+<font color="#CCCCCC">been changed now</font><font color="#E5E5E5"> okay now as I told</font><font color="#CCCCCC"> you</font>
+
+115
+00:05:17,449 --> 00:05:19,250
+<font color="#CCCCCC">earlier that</font><font color="#E5E5E5"> in crosshair scripting our</font>
+
+116
+00:05:19,250 --> 00:05:23,780
+main motive is<font color="#E5E5E5"> to execute JavaScript on</font>
+
+117
+00:05:23,780 --> 00:05:26,870
+this web application<font color="#E5E5E5"> now as a pen tester</font>
+
+118
+00:05:26,870 --> 00:05:29,479
+what we can do is instead<font color="#CCCCCC"> of adding</font><font color="#E5E5E5"> a</font>
+
+119
+00:05:29,479 --> 00:05:31,880
+<font color="#E5E5E5">simple text instead of adding legitimate</font>
+
+120
+00:05:31,880 --> 00:05:35,750
+text<font color="#E5E5E5"> can we add a JavaScript here so</font>
+
+121
+00:05:35,750 --> 00:05:40,819
+before<font color="#E5E5E5"> going further let me let</font><font color="#CCCCCC"> me</font><font color="#E5E5E5"> write</font>
+
+122
+00:05:40,819 --> 00:05:44,240
+a simple HTML code<font color="#CCCCCC"> which is responsible</font>
+
+123
+00:05:44,240 --> 00:05:49,279
+<font color="#CCCCCC">for</font><font color="#E5E5E5"> taking the user input for here so</font>
+
+124
+00:05:49,279 --> 00:05:51,110
+just<font color="#CCCCCC"> for example</font><font color="#E5E5E5"> I am just writing here</font>
+
+125
+00:05:51,110 --> 00:05:58,779
+<font color="#E5E5E5">an example code input type text' and</font>
+
+126
+00:05:58,779 --> 00:06:09,289
+<font color="#E5E5E5">name equals color and value</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so just</font>
+
+127
+00:06:09,289 --> 00:06:13,789
+<font color="#E5E5E5">for</font><font color="#CCCCCC"> example</font><font color="#E5E5E5"> this is</font><font color="#CCCCCC"> the input</font><font color="#E5E5E5"> tag which</font>
+
+128
+00:06:13,789 --> 00:06:15,740
+<font color="#CCCCCC">is responsible</font><font color="#E5E5E5"> for</font><font color="#CCCCCC"> taking the user input</font>
+
+129
+00:06:15,740 --> 00:06:19,219
+<font color="#E5E5E5">and whatever</font><font color="#CCCCCC"> input is given</font><font color="#E5E5E5"> by a user</font>
+
+130
+00:06:19,219 --> 00:06:25,539
+<font color="#E5E5E5">like if I just</font><font color="#CCCCCC"> give here so this input</font>
+
+131
+00:06:25,539 --> 00:06:30,560
+<font color="#CCCCCC">is get is</font><font color="#E5E5E5"> get stored in here and in this</font>
+
+132
+00:06:30,560 --> 00:06:35,240
+place<font color="#E5E5E5"> so if the user will add this input</font>
+
+133
+00:06:35,240 --> 00:06:38,780
+<font color="#E5E5E5">it will just get store here now this</font>
+
+134
+00:06:38,780 --> 00:06:43,730
+becomes like this<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> now what is our</font>
+
+135
+00:06:43,730 --> 00:06:44,840
+motive<font color="#E5E5E5"> or what sir</font>
+
+136
+00:06:44,840 --> 00:06:47,240
+what's our<font color="#E5E5E5"> goal is to somehow execute</font>
+
+137
+00:06:47,240 --> 00:06:52,280
+<font color="#E5E5E5">JavaScript in this</font><font color="#CCCCCC"> pack now</font><font color="#E5E5E5"> just for</font>
+
+138
+00:06:52,280 --> 00:06:55,400
+<font color="#E5E5E5">example what if if user tries to add</font>
+
+139
+00:06:55,400 --> 00:07:00,230
+<font color="#E5E5E5">this as an input now if this is given as</font>
+
+140
+00:07:00,230 --> 00:07:03,169
+an input<font color="#E5E5E5"> now let's see</font><font color="#CCCCCC"> that how this</font>
+
+141
+00:07:03,169 --> 00:07:06,260
+input<font color="#E5E5E5"> tag looks like so let me remove</font>
+
+142
+00:07:06,260 --> 00:07:11,720
+this and let me<font color="#E5E5E5"> copy this out let me</font>
+
+143
+00:07:11,720 --> 00:07:16,160
+<font color="#E5E5E5">paste it here and if I paste it here you</font>
+
+144
+00:07:16,160 --> 00:07:20,330
+can<font color="#CCCCCC"> see</font><font color="#E5E5E5"> that now our web application may</font>
+
+145
+00:07:20,330 --> 00:07:24,080
+get confused<font color="#E5E5E5"> why because if we if</font><font color="#CCCCCC"> we</font>
+
+146
+00:07:24,080 --> 00:07:27,440
+<font color="#CCCCCC">just look at here it says our our web</font>
+
+147
+00:07:27,440 --> 00:07:29,900
+application may think that this tag<font color="#CCCCCC"> is</font>
+
+148
+00:07:29,900 --> 00:07:32,360
+closing here at this<font color="#E5E5E5"> point due</font><font color="#CCCCCC"> to our</font>
+
+149
+00:07:32,360 --> 00:07:35,990
+<font color="#E5E5E5">input so now what we can</font><font color="#CCCCCC"> do is can we</font>
+
+150
+00:07:35,990 --> 00:07:38,720
+add an another tag<font color="#CCCCCC"> after this which we</font>
+
+151
+00:07:38,720 --> 00:07:41,240
+just<font color="#E5E5E5"> get execute here at this point so</font>
+
+152
+00:07:41,240 --> 00:07:44,350
+<font color="#E5E5E5">just for example let's write here script</font>
+
+153
+00:07:44,350 --> 00:07:48,560
+<font color="#E5E5E5">simple JavaScript code which will alert</font>
+
+154
+00:07:48,560 --> 00:07:51,580
+XSS<font color="#E5E5E5"> okay</font>
+
+155
+00:07:51,580 --> 00:07:57,289
+now let's copy this input<font color="#CCCCCC"> and let's</font>
+
+156
+00:07:57,289 --> 00:08:00,289
+paste it here<font color="#E5E5E5"> and let's see</font><font color="#CCCCCC"> now how this</font>
+
+157
+00:08:00,289 --> 00:08:04,789
+<font color="#E5E5E5">tag looks like okay so here you can see</font>
+
+158
+00:08:04,789 --> 00:08:06,910
+that<font color="#E5E5E5"> our input tag is closing here and</font>
+
+159
+00:08:06,910 --> 00:08:10,419
+here<font color="#CCCCCC"> our script tag will</font><font color="#E5E5E5"> going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> be</font>
+
+160
+00:08:10,419 --> 00:08:13,640
+executed so this is how we can<font color="#E5E5E5"> analyze</font>
+
+161
+00:08:13,640 --> 00:08:15,770
+or we can find that how we can<font color="#E5E5E5"> get rid</font>
+
+162
+00:08:15,770 --> 00:08:18,890
+<font color="#CCCCCC">of the normal behavior of</font><font color="#E5E5E5"> the web</font>
+
+163
+00:08:18,890 --> 00:08:20,330
+application<font color="#E5E5E5"> and how we can try to</font>
+
+164
+00:08:20,330 --> 00:08:22,400
+<font color="#E5E5E5">execute our cross-site scripting or</font>
+
+165
+00:08:22,400 --> 00:08:25,850
+<font color="#E5E5E5">JavaScript now let's try to add or</font>
+
+166
+00:08:25,850 --> 00:08:28,880
+supply this<font color="#E5E5E5"> input</font><font color="#CCCCCC"> to the web application</font>
+
+167
+00:08:28,880 --> 00:08:31,010
+<font color="#E5E5E5">and let's see how it</font><font color="#CCCCCC"> looks</font><font color="#E5E5E5"> like or how</font>
+
+168
+00:08:31,010 --> 00:08:35,450
+it works let me<font color="#CCCCCC"> just write down</font><font color="#E5E5E5"> here</font>
+
+169
+00:08:35,450 --> 00:08:39,589
+again normal text now<font color="#CCCCCC"> on double quotes</font>
+
+170
+00:08:39,589 --> 00:08:42,520
+for<font color="#CCCCCC"> clothes</font><font color="#E5E5E5"> this is for the closing the</font>
+
+171
+00:08:42,520 --> 00:08:45,710
+input tag now let's try to add script
+
+172
+00:08:45,710 --> 00:08:49,630
+tag here and<font color="#E5E5E5"> let's see how it looks like</font>
+
+173
+00:08:54,380 --> 00:09:00,480
+<font color="#E5E5E5">okay now if I hit</font><font color="#CCCCCC"> enter you</font><font color="#E5E5E5"> will notice</font>
+
+174
+00:09:00,480 --> 00:09:05,490
+that<font color="#E5E5E5"> we</font><font color="#CCCCCC"> are successful</font><font color="#E5E5E5"> to executing a</font>
+
+175
+00:09:05,490 --> 00:09:08,250
+JavaScript here our JavaScript injection
+
+176
+00:09:08,250 --> 00:09:10,440
+or<font color="#CCCCCC"> crosshair scripting injection has</font>
+
+177
+00:09:10,440 --> 00:09:13,290
+<font color="#E5E5E5">been successful here you can see so our</font>
+
+178
+00:09:13,290 --> 00:09:15,570
+JavaScript<font color="#E5E5E5"> has been</font><font color="#CCCCCC"> executed</font><font color="#E5E5E5"> if I</font><font color="#CCCCCC"> now</font><font color="#E5E5E5"> if</font>
+
+179
+00:09:15,570 --> 00:09:20,970
+I<font color="#E5E5E5"> click on</font><font color="#CCCCCC"> OK you</font><font color="#E5E5E5"> will see the same page</font>
+
+180
+00:09:20,970 --> 00:09:23,370
+back<font color="#E5E5E5"> see in the previous page why</font>
+
+181
+00:09:23,370 --> 00:09:26,730
+because this<font color="#E5E5E5"> is reflected XSS nothing is</font>
+
+182
+00:09:26,730 --> 00:09:29,220
+stored in database<font color="#E5E5E5"> so the response</font><font color="#CCCCCC"> of</font>
+
+183
+00:09:29,220 --> 00:09:31,440
+this<font color="#E5E5E5"> JavaScript will only be shown to</font>
+
+184
+00:09:31,440 --> 00:09:35,280
+the user who is<font color="#CCCCCC"> actually adding the</font>
+
+185
+00:09:35,280 --> 00:09:38,970
+<font color="#E5E5E5">JavaScript into the web application so</font>
+
+186
+00:09:38,970 --> 00:09:42,390
+this was all<font color="#E5E5E5"> about reflected XSS now</font>
+
+187
+00:09:42,390 --> 00:09:45,210
+let's have a look at<font color="#E5E5E5"> store XSS so in</font>
+
+188
+00:09:45,210 --> 00:09:49,050
+<font color="#E5E5E5">order</font><font color="#CCCCCC"> to exploit cross-site scripting</font>
+
+189
+00:09:49,050 --> 00:09:52,170
+stored so just let's go here cross-site
+
+190
+00:09:52,170 --> 00:09:55,710
+scripting<font color="#E5E5E5"> and now let's select this link</font>
+
+191
+00:09:55,710 --> 00:09:58,470
+persistent<font color="#E5E5E5"> second order and here is one</font>
+
+192
+00:09:58,470 --> 00:10:01,230
+link here is one page add to your blog
+
+193
+00:10:01,230 --> 00:10:05,790
+<font color="#E5E5E5">let's click over here and one thing</font><font color="#CCCCCC"> more</font>
+
+194
+00:10:05,790 --> 00:10:08,940
+this<font color="#CCCCCC"> Avast mutiny application comes in</font>
+
+195
+00:10:08,940 --> 00:10:11,130
+different different<font color="#E5E5E5"> security levels so</font>
+
+196
+00:10:11,130 --> 00:10:15,180
+right now<font color="#E5E5E5"> security level is</font><font color="#CCCCCC"> 0 it's very</font>
+
+197
+00:10:15,180 --> 00:10:17,940
+easy<font color="#CCCCCC"> so in the</font><font color="#E5E5E5"> upcoming video series</font>
+
+198
+00:10:17,940 --> 00:10:20,040
+<font color="#CCCCCC">I'll</font><font color="#E5E5E5"> make different different video</font>
+
+199
+00:10:20,040 --> 00:10:21,300
+<font color="#E5E5E5">series of</font><font color="#CCCCCC"> for different different</font>
+
+200
+00:10:21,300 --> 00:10:23,040
+vulnerabilities<font color="#E5E5E5"> with their security</font>
+
+201
+00:10:23,040 --> 00:10:25,680
+level 5<font color="#E5E5E5"> but</font><font color="#CCCCCC"> for the</font><font color="#E5E5E5"> time but for</font><font color="#CCCCCC"> this</font>
+
+202
+00:10:25,680 --> 00:10:27,690
+video<font color="#E5E5E5"> series I will cover all the</font>
+
+203
+00:10:27,690 --> 00:10:30,290
+<font color="#CCCCCC">vulnerabilities with security level 0</font>
+
+204
+00:10:30,290 --> 00:10:33,150
+<font color="#E5E5E5">okay so right now we are</font><font color="#CCCCCC"> at</font><font color="#E5E5E5"> this page</font>
+
+205
+00:10:33,150 --> 00:10:35,550
+<font color="#E5E5E5">welcome to the blog so it looks say it</font>
+
+206
+00:10:35,550 --> 00:10:38,340
+looks similar to any blogging website so
+
+207
+00:10:38,340 --> 00:10:40,530
+where we<font color="#E5E5E5"> can add a blog so what that</font>
+
+208
+00:10:40,530 --> 00:10:44,670
+same<font color="#E5E5E5"> adblock</font><font color="#CCCCCC"> for anonymous ok so first</font>
+
+209
+00:10:44,670 --> 00:10:47,700
+<font color="#E5E5E5">of all let's try to add a normal text</font>
+
+210
+00:10:47,700 --> 00:10:49,530
+first let's<font color="#E5E5E5"> try to analyze the normal</font>
+
+211
+00:10:49,530 --> 00:10:51,510
+behavior<font color="#CCCCCC"> of</font><font color="#E5E5E5"> this application</font><font color="#CCCCCC"> let's add</font>
+
+212
+00:10:51,510 --> 00:10:58,290
+here hello<font color="#E5E5E5"> this is</font><font color="#CCCCCC"> a sample</font><font color="#E5E5E5"> text click</font>
+
+213
+00:10:58,290 --> 00:11:00,990
+on save blog entry<font color="#CCCCCC"> and let's see how web</font>
+
+214
+00:11:00,990 --> 00:11:04,380
+application is treating our text if
+
+215
+00:11:04,380 --> 00:11:06,720
+scroll<font color="#CCCCCC"> down here you can</font><font color="#E5E5E5"> see that our</font>
+
+216
+00:11:06,720 --> 00:11:09,450
+<font color="#E5E5E5">text is stored in</font><font color="#CCCCCC"> comment section here</font>
+
+217
+00:11:09,450 --> 00:11:11,130
+you<font color="#E5E5E5"> can see hello this</font><font color="#CCCCCC"> is a sample text</font>
+
+218
+00:11:11,130 --> 00:11:15,330
+now what we can do<font color="#E5E5E5"> now let's try to</font>
+
+219
+00:11:15,330 --> 00:11:17,730
+inspect this<font color="#CCCCCC"> le try to inspect element</font>
+
+220
+00:11:17,730 --> 00:11:28,020
+<font color="#CCCCCC">let's go here inspect element</font><font color="#E5E5E5"> let's</font><font color="#CCCCCC"> over</font>
+
+221
+00:11:28,020 --> 00:11:30,500
+here
+
+222
+00:11:36,660 --> 00:11:40,520
+okay so here is our text<font color="#E5E5E5"> you can see</font>
+
+223
+00:11:40,520 --> 00:11:43,290
+hello this is a sample text<font color="#E5E5E5"> and this</font>
+
+224
+00:11:43,290 --> 00:11:48,930
+text<font color="#E5E5E5"> is being enclosed in</font><font color="#CCCCCC"> PD tag</font><font color="#E5E5E5"> now</font>
+
+225
+00:11:48,930 --> 00:11:52,860
+what we can do<font color="#E5E5E5"> let me open a notepad</font>
+
+226
+00:11:52,860 --> 00:12:00,270
+file again<font color="#E5E5E5"> so here is our text hello</font>
+
+227
+00:12:00,270 --> 00:12:03,860
+this is<font color="#E5E5E5"> a sample text being enclosed by</font>
+
+228
+00:12:03,860 --> 00:12:09,030
+TD tag now<font color="#E5E5E5"> what a pen tester can do pen</font>
+
+229
+00:12:09,030 --> 00:12:14,100
+tester can give the<font color="#CCCCCC"> input like this okay</font>
+
+230
+00:12:14,100 --> 00:12:16,740
+<font color="#E5E5E5">so now this will be our input now this</font>
+
+231
+00:12:16,740 --> 00:12:19,410
+web application will think that this is
+
+232
+00:12:19,410 --> 00:12:23,340
+now that this TD tag is<font color="#CCCCCC"> closed here</font><font color="#E5E5E5"> now</font>
+
+233
+00:12:23,340 --> 00:12:27,870
+let<font color="#E5E5E5"> me just remove this thing and let me</font>
+
+234
+00:12:27,870 --> 00:12:31,530
+just<font color="#E5E5E5"> copy this out and paste it between</font>
+
+235
+00:12:31,530 --> 00:12:33,930
+<font color="#E5E5E5">these two</font><font color="#CCCCCC"> tags</font><font color="#E5E5E5"> and here you can see that</font>
+
+236
+00:12:33,930 --> 00:12:36,990
+our TD tag is closed<font color="#E5E5E5"> here at this point</font>
+
+237
+00:12:36,990 --> 00:12:40,350
+<font color="#E5E5E5">and after this TD tag we can try to add</font>
+
+238
+00:12:40,350 --> 00:12:43,310
+some<font color="#CCCCCC"> JavaScript code</font>
+
+239
+00:12:52,450 --> 00:12:57,500
+<font color="#E5E5E5">okay now if I</font><font color="#CCCCCC"> just copy this</font><font color="#E5E5E5"> out and me</font>
+
+240
+00:12:57,500 --> 00:13:03,230
+remove this and paste it<font color="#CCCCCC"> here</font><font color="#E5E5E5"> now here</font>
+
+241
+00:13:03,230 --> 00:13:06,020
+you<font color="#E5E5E5"> can</font><font color="#CCCCCC"> see that we are successfully</font>
+
+242
+00:13:06,020 --> 00:13:08,770
+able<font color="#E5E5E5"> to close the TD tag here and</font>
+
+243
+00:13:08,770 --> 00:13:13,520
+executing our JavaScript now let's copy
+
+244
+00:13:13,520 --> 00:13:26,170
+this input<font color="#E5E5E5"> and let's go back to our</font>
+
+245
+00:13:26,170 --> 00:13:31,280
+challenge and let's paste<font color="#E5E5E5"> it here input</font>
+
+246
+00:13:31,280 --> 00:13:35,620
+<font color="#E5E5E5">and now click on save blog entry</font><font color="#CCCCCC"> and</font>
+
+247
+00:13:36,250 --> 00:13:39,400
+<font color="#E5E5E5">here you can see that we are</font>
+
+248
+00:13:39,400 --> 00:13:42,710
+successfully able<font color="#E5E5E5"> to execute JavaScript</font>
+
+249
+00:13:42,710 --> 00:13:45,490
+<font color="#CCCCCC">on this page and here you can see our</font>
+
+250
+00:13:45,490 --> 00:13:49,220
+<font color="#E5E5E5">session ID along with the cookie so if I</font>
+
+251
+00:13:49,220 --> 00:13:53,780
+click on<font color="#CCCCCC"> OK</font><font color="#E5E5E5"> then if I scroll</font><font color="#CCCCCC"> down</font><font color="#E5E5E5"> and</font>
+
+252
+00:13:53,780 --> 00:13:56,860
+let's try to inspect<font color="#E5E5E5"> element again and</font>
+
+253
+00:13:56,860 --> 00:14:00,080
+here you can see that our<font color="#E5E5E5"> JavaScript in</font>
+
+254
+00:14:00,080 --> 00:14:06,350
+is now the part of this page<font color="#CCCCCC"> and if I</font>
+
+255
+00:14:06,350 --> 00:14:08,420
+scroll down<font color="#E5E5E5"> here</font><font color="#CCCCCC"> you can</font><font color="#E5E5E5"> see that now</font>
+
+256
+00:14:08,420 --> 00:14:12,980
+our<font color="#CCCCCC"> JavaScript is the part of</font><font color="#E5E5E5"> this page</font>
+
+257
+00:14:12,980 --> 00:14:14,930
+<font color="#CCCCCC">baganz it and it's stored</font><font color="#E5E5E5"> in the</font>
+
+258
+00:14:14,930 --> 00:14:19,700
+database<font color="#E5E5E5"> now let's try</font><font color="#CCCCCC"> to open any</font>
+
+259
+00:14:19,700 --> 00:14:22,490
+<font color="#E5E5E5">another page and then we will come back</font>
+
+260
+00:14:22,490 --> 00:14:24,470
+<font color="#E5E5E5">to this page to see that whether it's</font>
+
+261
+00:14:24,470 --> 00:14:29,030
+stored in<font color="#E5E5E5"> the</font><font color="#CCCCCC"> database or not ok</font><font color="#E5E5E5"> so here</font>
+
+262
+00:14:29,030 --> 00:14:31,580
+you can<font color="#E5E5E5"> see</font><font color="#CCCCCC"> now let's let me try to</font>
+
+263
+00:14:31,580 --> 00:14:35,720
+<font color="#E5E5E5">refresh this page and</font><font color="#CCCCCC"> here you</font><font color="#E5E5E5"> will</font><font color="#CCCCCC"> see</font>
+
+264
+00:14:35,720 --> 00:14:38,120
+that<font color="#CCCCCC"> this javascript code is being</font>
+
+265
+00:14:38,120 --> 00:14:40,490
+<font color="#E5E5E5">executed again and again because at now</font>
+
+266
+00:14:40,490 --> 00:14:44,140
+this time it's stored<font color="#E5E5E5"> in the database</font><font color="#CCCCCC"> so</font>
+
+267
+00:14:44,140 --> 00:14:47,000
+<font color="#CCCCCC">now in this</font><font color="#E5E5E5"> video we have covered that</font>
+
+268
+00:14:47,000 --> 00:14:48,020
+what is cross-site scripting
+
+269
+00:14:48,020 --> 00:14:49,610
+vulnerabilities<font color="#E5E5E5"> it's different types</font>
+
+270
+00:14:49,610 --> 00:00:00,000
+<font color="#E5E5E5">thanks for watching this video</font>
+

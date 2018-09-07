@@ -1,0 +1,8764 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,820
+ Lisensi Commons. 
+
+4
+00:00:03,820 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,690
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,690 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,305
+ di ocw.mit.edu. 
+
+9
+00:00:17,305 --> 00:00:31,670
+
+
+10
+00:00:31,670 --> 00:00:34,729
+ PROFESOR: Bagaimana keadaan kalian? 
+
+11
+00:00:34,729 --> 00:00:36,620
+ Aku tidak tahu. 
+
+12
+00:00:36,620 --> 00:00:38,329
+ Seperti kata Nickolai, terima kasih telah mengundang kami. 
+
+13
+00:00:38,329 --> 00:00:40,453
+ Sungguh senang bisa datang ke sini dan memiliki kesempatan 
+
+14
+00:00:40,453 --> 00:00:41,680
+ untuk berbicara dengan semua orang hari ini. 
+
+15
+00:00:41,680 --> 00:00:43,638
+ Saya membawa salah satu manajer senior saya 
+
+16
+00:00:43,638 --> 00:00:46,360
+ yang mengawasi jaringan dan area keamanan, Dave LaPorte, 
+
+17
+00:00:46,360 --> 00:00:48,933
+ siapa yang akan berbicara tentang beberapa lebih 
+
+18
+00:00:48,933 --> 00:00:50,224
+ rincian taktis tentang apa yang kami lakukan. 
+
+19
+00:00:50,224 --> 00:00:52,615
+ Saya akan berbicara tentang level tinggi. 
+
+20
+00:00:52,615 --> 00:00:54,446
+ Jangan ragu untuk bertanya kapan saja. 
+
+21
+00:00:54,446 --> 00:00:56,571
+ Jadi, kesempatan Anda benar-benar bebas untuk bertanya apa pun 
+
+22
+00:00:56,571 --> 00:00:57,510
+ kamu penasaran. 
+
+23
+00:00:57,510 --> 00:01:00,686
+ Jadi tidak ada sopan santun dalam hal apa yang mungkin kalian tanyakan, 
+
+24
+00:01:00,686 --> 00:01:03,470
+ kapan saja merasa bebas untuk terlibat. 
+
+25
+00:01:03,470 --> 00:01:07,226
+ Jadi saya pikir saya sedang duduk di tempat kalian duduk-- 
+
+26
+00:01:07,226 --> 00:01:09,218
+ Saya tidak tahu - ini hampir 20 tahun yang lalu sekarang? 
+
+27
+00:01:09,218 --> 00:01:09,716
+ PROFESOR: Ya. 
+
+28
+00:01:09,716 --> 00:01:11,040
+ PROFESOR: [CHUCKLES] Jadi Nickolai dan saya 
+
+29
+00:01:11,040 --> 00:01:12,190
+ jauh lebih muda saat itu. 
+
+30
+00:01:12,190 --> 00:01:13,870
+ Dan saya mungkin jauh lebih kurus saat itu 
+
+31
+00:01:13,870 --> 00:01:16,800
+ dan memiliki sedikit lebih banyak rambut. 
+
+32
+00:01:16,800 --> 00:01:19,160
+ Anda tahu, salah satu hal baik tentang pengawasan 
+
+33
+00:01:19,160 --> 00:01:21,840
+ Infrastruktur dan area operasi MIT, 
+
+34
+00:01:21,840 --> 00:01:24,061
+ Anda dapat melihat segala macam hal menarik. 
+
+35
+00:01:24,061 --> 00:01:26,560
+ Dan beberapa hal yang akan kita bicarakan, banyak dari apa yang kita lakukan 
+
+36
+00:01:26,560 --> 00:01:28,510
+ berurusan dengan masalah menarik. 
+
+37
+00:01:28,510 --> 00:01:32,230
+ Dan Anda tahu, tidak ada kekurangan 
+
+38
+00:01:32,230 --> 00:01:33,620
+ di lingkungan seperti MIT. 
+
+39
+00:01:33,620 --> 00:01:35,390
+ Saya pikir apa yang benar-benar luar biasa 
+
+40
+00:01:35,390 --> 00:01:38,490
+ kami menjalankan jaringan terbuka, yang merupakan sedikit hal yang baik 
+
+41
+00:01:38,490 --> 00:01:40,730
+ dan hal yang buruk. 
+
+42
+00:01:40,730 --> 00:01:43,374
+ Kami tidak memiliki firewall kampus yang luas, untuk sebagian besar. 
+
+43
+00:01:43,374 --> 00:01:44,790
+ Dan semuanya cukup terbuka. 
+
+44
+00:01:44,790 --> 00:01:47,320
+ Jika kalian ingin menjalankan komputer di asrama Anda, benar 
+
+45
+00:01:47,320 --> 00:01:49,240
+ di sini di ruang kuliah, atau yang lainnya, 
+
+46
+00:01:49,240 --> 00:01:50,823
+ Anda memiliki akses yang sangat terbatas 
+
+47
+00:01:50,823 --> 00:01:53,940
+ ke internet, yang dibandingkan dengan sekolah lain, 
+
+48
+00:01:53,940 --> 00:01:55,255
+ sebenarnya, cukup tidak biasa. 
+
+49
+00:01:55,255 --> 00:01:57,380
+ Anda tahu, Anda mungkin tidak menyadari bahwa ketika Anda duduk di sini, 
+
+50
+00:01:57,380 --> 00:01:58,910
+ tapi itu bukan norma. 
+
+51
+00:01:58,910 --> 00:02:02,970
+ Dan itu membawa banyak tantangan, 
+
+52
+00:02:02,970 --> 00:02:05,052
+ dalam hal menjaga keamanan. 
+
+53
+00:02:05,052 --> 00:02:08,258
+ Sangat banyak, kami terbuka lebar untuk dunia. 
+
+54
+00:02:08,258 --> 00:02:09,689
+ Dan itu berarti siapa saja, di mana saja, 
+
+55
+00:02:09,690 --> 00:02:12,051
+ dari negara apa pun, dari bagian planet apa pun. 
+
+56
+00:02:12,051 --> 00:02:14,550
+ Jika mereka ingin menjangkau dan menyentuh perangkat Anda di sini 
+
+57
+00:02:14,550 --> 00:02:15,770
+ di ruangan ini, saat Anda duduk di sini hari ini, 
+
+58
+00:02:15,770 --> 00:02:17,040
+ apakah itu ponsel Anda di saku Anda, 
+
+59
+00:02:17,040 --> 00:02:19,040
+ atau laptop yang Anda ketikkan saat Anda sedang mengetik 
+
+60
+00:02:19,040 --> 00:02:20,740
+ duduk di sini, mereka bisa melakukan itu. 
+
+61
+00:02:20,740 --> 00:02:23,045
+ Tidak ada yang mencegah mereka melakukan itu, kan? 
+
+62
+00:02:23,045 --> 00:02:25,390
+ Dan itu agak menakutkan, bukan? 
+
+63
+00:02:25,390 --> 00:02:28,330
+ Jadi kami melakukan eksperimen beberapa tahun lalu. 
+
+64
+00:02:28,330 --> 00:02:33,210
+ Dan kami baru saja mengambil perangkat dari kotak baru, merek Apple baru 
+
+65
+00:02:33,210 --> 00:02:36,270
+ laptop, dan hanya memasangnya. 
+
+66
+00:02:36,270 --> 00:02:39,550
+ Mendaftar untuk DHCP dan membiarkannya di sana 
+
+67
+00:02:39,550 --> 00:02:40,670
+ selama 24 jam. 
+
+68
+00:02:40,670 --> 00:02:44,330
+ Dan kami meninggalkan dump TCP berjalan hanya untuk mengambil 
+
+69
+00:02:44,330 --> 00:02:46,370
+ inventaris dari apa yang masuk ke mesin 
+
+70
+00:02:46,370 --> 00:02:49,280
+ selama 24 jam, hanya untuk melihat apa yang akan kita lihat. 
+
+71
+00:02:49,280 --> 00:02:51,470
+ Lalu kami menggabungkan itu dengan, hei, 
+
+72
+00:02:51,470 --> 00:02:55,150
+ mari kita pergi dan grafik semua berbagai IP, menggunakan pencarian GeoIP 
+
+73
+00:02:55,150 --> 00:02:57,440
+ dan buat grafiknya, letakkan di Google Earth 
+
+74
+00:02:57,440 --> 00:02:59,840
+ dan lihat seperti apa bentuknya. 
+
+75
+00:02:59,840 --> 00:03:03,450
+ Dan untuk satu periode 24 jam, untuk yang tidak menguntungkan atau relevan 
+
+76
+00:03:03,450 --> 00:03:07,010
+ host yang baru terdaftar untuk internet, 
+
+77
+00:03:07,010 --> 00:03:09,920
+ itu menerima koneksi dari setiap negara di bumi, 
+
+78
+00:03:09,920 --> 00:03:12,240
+ kecuali dua. 
+
+79
+00:03:12,240 --> 00:03:17,650
+ Dalam satu periode 24 jam, satu host, setiap negara, kecuali dua. 
+
+80
+00:03:17,650 --> 00:03:19,150
+ Itu cukup mengejutkan, bukan? 
+
+81
+00:03:19,150 --> 00:03:20,110
+ Apakah ada yang ingin menebak apa 
+
+82
+00:03:20,110 --> 00:03:22,390
+ kedua negara yang tidak mencoba terhubung 
+
+83
+00:03:22,390 --> 00:03:24,002
+ ke mesin ini? 
+
+84
+00:03:24,002 --> 00:03:24,918
+ AUDIENCE: [TIDAK JELAS]. 
+
+85
+00:03:24,918 --> 00:03:25,350
+ AUDIENCE: Korea Utara. 
+
+86
+00:03:25,350 --> 00:03:26,220
+ PROFESOR: Siapa saja? 
+
+87
+00:03:26,220 --> 00:03:27,590
+ Korea Utara adalah satu. 
+
+88
+00:03:27,590 --> 00:03:28,590
+ Baik. 
+
+89
+00:03:28,590 --> 00:03:29,090
+ Nggak. 
+
+90
+00:03:29,090 --> 00:03:31,015
+ Cina sangat aktif diwakili. 
+
+91
+00:03:31,015 --> 00:03:32,075
+ [TAWA] 
+
+92
+00:03:32,075 --> 00:03:34,200
+ Jadi mungkin bagian militer, saya tidak tahu, 
+
+93
+00:03:34,200 --> 00:03:37,190
+ tetapi tentu saja sangat aktif diwakili. 
+
+94
+00:03:37,190 --> 00:03:38,460
+ AUDIENCE: Antartika. 
+
+95
+00:03:38,460 --> 00:03:39,459
+ PROFESOR: Benar. 
+
+96
+00:03:39,459 --> 00:03:40,086
+ Antartika. 
+
+97
+00:03:40,086 --> 00:03:41,512
+ Sangat bagus. 
+
+98
+00:03:41,512 --> 00:03:42,970
+ Jadi Anda mendapatkan bintang emas untuk hari ini. 
+
+99
+00:03:42,970 --> 00:03:44,400
+ Sangat bagus. 
+
+100
+00:03:44,400 --> 00:03:44,900
+ Ya. 
+
+101
+00:03:44,900 --> 00:03:46,020
+ Ya. 
+
+102
+00:03:46,020 --> 00:03:48,260
+ Maka, selama satu periode 24 jam, Anda 
+
+103
+00:03:48,260 --> 00:03:52,200
+ melihat diri Anda mengalami serangan potensial, ancaman, 
+
+104
+00:03:52,200 --> 00:03:54,985
+ malware, apa pun di mana saja. 
+
+105
+00:03:54,985 --> 00:03:56,820
+ Untuk satu host. 
+
+106
+00:03:56,820 --> 00:04:01,540
+ Dan seluruh kampus MIT sekarang berkompromi tentang, saya akan mengatakan, 
+
+107
+00:04:01,540 --> 00:04:04,450
+ 150.000 perangkat yang berbeda. 
+
+108
+00:04:04,450 --> 00:04:06,049
+ Jadi, jika Anda melakukan math-- 
+
+109
+00:04:06,049 --> 00:04:07,090
+ Anda bisa melakukannya secara langsung. 
+
+110
+00:04:07,090 --> 00:04:10,270
+ Anda pandai matematika di sini di MIT-- 
+
+111
+00:04:10,270 --> 00:04:13,580
+ itu banyak ancaman, kan? 
+
+112
+00:04:13,580 --> 00:04:18,290
+ Dan Anda tahu itu terjadi sepanjang hari, setiap hari. 
+
+113
+00:04:18,290 --> 00:04:18,790
+ Kanan? 
+
+114
+00:04:18,790 --> 00:04:20,370
+ Dan itu sangat menakutkan. 
+
+115
+00:04:20,370 --> 00:04:22,420
+ Dan Anda ingin menggabungkan itu dengan sesuatu yang lain 
+
+116
+00:04:22,420 --> 00:04:24,520
+ membuat sedikit lebih takut? 
+
+117
+00:04:24,520 --> 00:04:29,320
+ Jadi Dave dan saya duduk dalam arti beberapa bulan yang lalu. 
+
+118
+00:04:29,320 --> 00:04:31,320
+ Ini adalah semacam tindak lanjut untuk pemadaman listrik 
+
+119
+00:04:31,320 --> 00:04:32,110
+ itu terjadi. 
+
+120
+00:04:32,110 --> 00:04:34,235
+ Setiap dari Anda di sini untuk pemadaman listrik besar setahun yang lalu 
+
+121
+00:04:34,235 --> 00:04:35,400
+ atau satu setengah tahun yang lalu? 
+
+122
+00:04:35,400 --> 00:04:36,860
+ Itu adalah saat yang menyenangkan, bukan? 
+
+123
+00:04:36,860 --> 00:04:38,309
+ [CHUCKLES DARI AUDIENCE] 
+
+124
+00:04:38,309 --> 00:04:40,600
+ Saya di sini untuk pemadaman listrik besar sekitar 20 tahun yang lalu, 
+
+125
+00:04:40,600 --> 00:04:42,349
+ ketika seluruh kota Cambridge keluar. 
+
+126
+00:04:42,349 --> 00:04:43,630
+ Sekarang, itu keren. 
+
+127
+00:04:43,630 --> 00:04:45,345
+ Kecuali itu sekitar 100 derajat, jadi itu 
+
+128
+00:04:45,345 --> 00:04:46,845
+ adalah saat yang tepat untuk pergi ke Boston 
+
+129
+00:04:46,845 --> 00:04:49,242
+ dan melihat film di bioskop. 
+
+130
+00:04:49,242 --> 00:04:50,825
+ Tapi satu hal yang keluar darinya itu 
+
+131
+00:04:50,825 --> 00:04:52,075
+ sangat menarik bagi kami-- 
+
+132
+00:04:52,075 --> 00:04:53,765
+ Saya tidak tahu, mari kita bicara tentang itu 
+
+133
+00:04:53,765 --> 00:04:55,931
+ untuk yang kedua-- tetapi Departemen Fasilitas datang kepada kami 
+
+134
+00:04:55,931 --> 00:04:58,615
+ dan berkata, Anda tahu, ini benar-benar buruk, 
+
+135
+00:04:58,615 --> 00:04:59,510
+ pemadaman listrik ini. 
+
+136
+00:04:59,510 --> 00:05:01,600
+ Kami benar-benar harus menghabiskan empat atau lima terakhir 
+
+137
+00:05:01,600 --> 00:05:04,570
+ berbulan-bulan melintasi kampus dan memprogram ulang 
+
+138
+00:05:04,570 --> 00:05:07,041
+ semua perangkat ini. 
+
+139
+00:05:07,041 --> 00:05:07,540
+ BAIK. 
+
+140
+00:05:07,540 --> 00:05:09,880
+ Yah, mereka harus memiliki beberapa sistem SCADA 
+
+141
+00:05:09,880 --> 00:05:11,755
+ yang terhubung ke AC mereka, 
+
+142
+00:05:11,755 --> 00:05:14,990
+ atau ke lampu di kamar, pintu-pintu, hal-hal seperti itu, 
+
+143
+00:05:14,990 --> 00:05:15,490
+ kanan? 
+
+144
+00:05:15,490 --> 00:05:16,490
+ Anda akan berpikir mereka melakukannya. 
+
+145
+00:05:16,490 --> 00:05:17,390
+ Itu MIT. 
+
+146
+00:05:17,390 --> 00:05:19,350
+ Masuk akal. 
+
+147
+00:05:19,350 --> 00:05:23,850
+ Jadi yakin, Anda bayangkan mereka aman. 
+
+148
+00:05:23,850 --> 00:05:25,600
+ Bicara tentang itu sebentar lagi. 
+
+149
+00:05:25,600 --> 00:05:29,900
+ Dan kami pikir itu cukup mudah. 
+
+150
+00:05:29,900 --> 00:05:33,010
+ Dan mereka mengatakan salah satu hal yang mereka punya masalah adalah 
+
+151
+00:05:33,010 --> 00:05:34,878
+ perangkat mereka terus terlempar 
+
+152
+00:05:34,878 --> 00:05:37,030
+ bersih, memiliki masalah ini. 
+
+153
+00:05:37,030 --> 00:05:38,710
+ Dan semakin Anda mulai berbicara dengan mereka, 
+
+154
+00:05:38,710 --> 00:05:39,670
+ Anda mengupas lapisan bawang. 
+
+155
+00:05:39,670 --> 00:05:42,266
+ Anda seperti, apa maksud Anda perangkat Anda di internet? 
+
+156
+00:05:42,266 --> 00:05:44,891
+ Katakanlah, yah, perangkat kita ada di internet. 
+
+157
+00:05:44,891 --> 00:05:45,390
+ Oh 
+
+158
+00:05:45,390 --> 00:05:49,030
+ Anda harus memiliki kontrol kepemilikan yang aman 
+
+159
+00:05:49,030 --> 00:05:51,442
+ sistem, jaringan kontrol. 
+
+160
+00:05:51,442 --> 00:05:53,400
+ Dan mereka memandang kami dengan tatapan kosong 
+
+161
+00:05:53,400 --> 00:05:56,250
+ dan seperti, eh, saya pikir itulah itu. 
+
+162
+00:05:56,250 --> 00:05:58,280
+ Itulah yang dikatakan vendor kepada kami. 
+
+163
+00:05:58,280 --> 00:06:00,610
+ Dan ini memunculkan salah satu hal yang menarik 
+
+164
+00:06:00,610 --> 00:06:02,195
+ internet hal-hal atau era 
+
+165
+00:06:02,195 --> 00:06:06,237
+ kami bergerak ke dalam, untuk sebagian besar, ketika saya masih muda, 
+
+166
+00:06:06,237 --> 00:06:08,695
+ orang yang menggunakan internet harus cukup spesifik, bukan? 
+
+167
+00:06:08,695 --> 00:06:11,480
+ Anda harus cukup mengetahui sesuatu yang sedang Anda lakukan. 
+
+168
+00:06:11,480 --> 00:06:13,650
+ Hari ini, semua orang menggunakannya. 
+
+169
+00:06:13,650 --> 00:06:16,067
+ Dan bar untuk menggunakannya dulu, ketika Anda naik roller 
+
+170
+00:06:16,067 --> 00:06:17,816
+ coaster, engkau akan setinggi ini jika Anda 
+
+171
+00:06:17,816 --> 00:06:19,300
+ akan naik roket ini. 
+
+172
+00:06:19,300 --> 00:06:21,460
+ Jauh lebih rendah, oke? 
+
+173
+00:06:21,460 --> 00:06:24,050
+ Dan melalui percakapan dengan mereka, 
+
+174
+00:06:24,050 --> 00:06:27,510
+ kami menemukan bahwa mereka memiliki cukup banyak segalanya 
+
+175
+00:06:27,510 --> 00:06:29,630
+ Anda bisa memikirkan terhubung ke internet. 
+
+176
+00:06:29,630 --> 00:06:30,955
+ Segala sesuatu. 
+
+177
+00:06:30,955 --> 00:06:32,580
+ Salah satu hal yang menarik. 
+
+178
+00:06:32,580 --> 00:06:33,996
+ MIT meluncurkan Initiative energi, 
+
+179
+00:06:33,996 --> 00:06:35,540
+ Saya tidak tahu, lima, tujuh tahun lalu, 
+
+180
+00:06:35,540 --> 00:06:37,460
+ ketika Susan Hockfield ada di sini sebagai presiden. 
+
+181
+00:06:37,460 --> 00:06:38,959
+ Dan salah satu hal yang dilakukan Fasilitas 
+
+182
+00:06:38,959 --> 00:06:42,255
+ benar-benar menumbuhkan internet hal-hal di kampus 
+
+183
+00:06:42,255 --> 00:06:45,300
+ untuk membuat bangunan yang dikelola secara dinamis ini. 
+
+184
+00:06:45,300 --> 00:06:48,260
+ Jadi ketika ruang kelas tidak digunakan, lampu akan padam, 
+
+185
+00:06:48,260 --> 00:06:49,230
+ pemanasan akan berubah. 
+
+186
+00:06:49,230 --> 00:06:49,730
+ Baru. 
+
+187
+00:06:49,730 --> 00:06:52,840
+ Mereka melakukan hal-hal seperti itu di kampus. 
+
+188
+00:06:52,840 --> 00:06:56,060
+ Mereka menyebarkan jaringan kontrol raksasa. 
+
+189
+00:06:56,060 --> 00:06:57,190
+ Raksasa. 
+
+190
+00:06:57,190 --> 00:06:59,570
+ Ini sebenarnya lebih besar dari internet kampus kita sendiri, 
+
+191
+00:06:59,570 --> 00:07:00,070
+ agak. 
+
+192
+00:07:00,070 --> 00:07:01,830
+ Jadi kontrol mereka berkompromi, saya pikir, 
+
+193
+00:07:01,830 --> 00:07:03,950
+ 400.000 poin berbeda 
+
+194
+00:07:03,950 --> 00:07:05,900
+ pemantauan di kampus. 
+
+195
+00:07:05,900 --> 00:07:09,790
+ Lebih dari 75.000 hingga 100.000 tempat. 
+
+196
+00:07:09,790 --> 00:07:12,030
+ Dan pertanyaan berikutnya yang Anda tanyakan pada diri sendiri-- 
+
+197
+00:07:12,030 --> 00:07:14,390
+ Dave bertanya, dengan mata besar, cerah, dan lebar 
+
+198
+00:07:14,390 --> 00:07:17,260
+ adalah, bagaimana kalian mengamankan itu? 
+
+199
+00:07:17,260 --> 00:07:19,050
+ Mereka seperti, baik, kami memanggil kalian, 
+
+200
+00:07:19,050 --> 00:07:20,724
+ dan kami akan memeriksanya. 
+
+201
+00:07:20,724 --> 00:07:21,515
+ Dan mereka memasukkannya. 
+
+202
+00:07:21,515 --> 00:07:23,780
+ Dan mereka mendapat alamat IP dengan melalui formulir web 
+
+203
+00:07:23,780 --> 00:07:25,420
+ dan minta IP. 
+
+204
+00:07:25,420 --> 00:07:28,290
+ Meminta IP, berfungsi. 
+
+205
+00:07:28,290 --> 00:07:32,560
+ Dan Anda tahu kami duduk di sana pergi, ya, ini terbuka 
+
+206
+00:07:32,560 --> 00:07:34,222
+ hal internet-- 
+
+207
+00:07:34,222 --> 00:07:37,125
+ bagaimana kalian mengamankan itu? 
+
+208
+00:07:37,125 --> 00:07:39,366
+ Dan pertanyaannya, tentu saja, yang mana, Anda tahu, 
+
+209
+00:07:39,366 --> 00:07:42,110
+ ketika tekanan darahmu naik sedikit 
+
+210
+00:07:42,110 --> 00:07:46,000
+ itu, baik, itu aman, karena kalian yang mengurus itu. 
+
+211
+00:07:46,000 --> 00:07:48,960
+ Jadi keamanan sudah diurus. 
+
+212
+00:07:48,960 --> 00:07:52,390
+ Dan Anda tahu tampilan kami di wajah kami sedikit-- 
+
+213
+00:07:52,390 --> 00:07:53,650
+ apa yang kamu maksud dengan aman? 
+
+214
+00:07:53,650 --> 00:07:55,164
+ Kami punya firewall perusahaan. 
+
+215
+00:07:55,164 --> 00:07:55,830
+ Ini ditangani. 
+
+216
+00:07:55,830 --> 00:07:56,330
+ Dan semuanya keren. 
+
+217
+00:07:56,330 --> 00:07:57,510
+ [AUDIENCE CHUCKLES] 
+
+218
+00:07:57,510 --> 00:07:59,980
+ Dan Anda tahu pertanyaan saya selanjutnya adalah, 
+
+219
+00:07:59,980 --> 00:08:01,910
+ bisakah kau tunjukkan padaku dimana itu? 
+
+220
+00:08:01,910 --> 00:08:02,890
+ Aku tidak tahu. 
+
+221
+00:08:02,890 --> 00:08:05,200
+ Dan Anda tahu, tentu saja, jawabannya 
+
+222
+00:08:05,200 --> 00:08:08,240
+ adalah, baik, semua orang. 
+
+223
+00:08:08,240 --> 00:08:10,426
+ Dan tentu saja, kami sedikit berbeda, 
+
+224
+00:08:10,426 --> 00:08:12,050
+ kembali ke titik yang saya buat sebelumnya, 
+
+225
+00:08:12,050 --> 00:08:14,200
+ kami mengoperasikan lingkungan yang cukup terbuka. 
+
+226
+00:08:14,200 --> 00:08:16,740
+ Dan kami selalu percaya dan itu filosofi MIT 
+
+227
+00:08:16,740 --> 00:08:22,297
+ bahwa kami percaya pada pertahanan dan keamanan di seluruh tumpukan. 
+
+228
+00:08:22,297 --> 00:08:24,880
+ Anda tidak ingin bergantung pada salah satu bagian dari infrastruktur 
+
+229
+00:08:24,880 --> 00:08:25,635
+ untuk mengimplementasikan keamanan. 
+
+230
+00:08:25,635 --> 00:08:27,844
+ Itu adalah sesuatu yang harus Anda lakukan di setiap lapisan, bukan? 
+
+231
+00:08:27,844 --> 00:08:29,140
+ Anda tidak hanya melakukannya di infrastruktur, 
+
+232
+00:08:29,140 --> 00:08:30,348
+ Anda melakukannya di aplikasi. 
+
+233
+00:08:30,348 --> 00:08:31,799
+ Anda melakukan segala macam tempat. 
+
+234
+00:08:31,799 --> 00:08:33,049
+ Itu bukan bagaimana sistem ini-- 
+
+235
+00:08:33,049 --> 00:08:35,988
+ Anda tahu, internet hal di sisi SCADA - bisa dibangun. 
+
+236
+00:08:35,988 --> 00:08:38,340
+ Anda tahu, itu agak menakutkan. 
+
+237
+00:08:38,340 --> 00:08:40,469
+ Dan salah satu hal yang kami lihat di sini 
+
+238
+00:08:40,469 --> 00:08:42,760
+ yang kita tangani, jadi selain berurusan dengan orang-orang 
+
+239
+00:08:42,760 --> 00:08:44,320
+ seperti dirimu sendiri yang melakukan segala macam 
+
+240
+00:08:44,320 --> 00:08:47,169
+ hal-hal kreatif dan inventif yang membuat orang tetap seperti Dave 
+
+241
+00:08:47,169 --> 00:08:49,126
+ dan saya bangun di malam hari. 
+
+242
+00:08:49,126 --> 00:08:50,500
+ Anda tahu, internet menjadi 
+
+243
+00:08:50,500 --> 00:08:52,760
+ utilitas ini yang digunakan untuk segala macam hal 
+
+244
+00:08:52,760 --> 00:08:53,750
+ di kampus. 
+
+245
+00:08:53,750 --> 00:08:55,530
+ Dan itu benar-benar mengubah dinamikanya 
+
+246
+00:08:55,530 --> 00:08:58,460
+ yang harus kita khawatirkan, dalam hal ancaman, 
+
+247
+00:08:58,460 --> 00:09:00,610
+ masalah keamanan, segala macam hal. 
+
+248
+00:09:00,610 --> 00:09:02,340
+ Jadi sekarang, Anda tahu, saat internet 
+
+249
+00:09:02,340 --> 00:09:06,030
+ digunakan untuk turun atau memiliki masalah ketika kita menjadi siswa, 
+
+250
+00:09:06,030 --> 00:09:07,102
+ itu adalah ketidaknyamanan. 
+
+251
+00:09:07,102 --> 00:09:07,602
+ Kanan? 
+
+252
+00:09:07,602 --> 00:09:10,940
+ Itu menjengkelkan. 
+
+253
+00:09:10,940 --> 00:09:12,790
+ Dalam jenis acara terbaru ini, 
+
+254
+00:09:12,790 --> 00:09:14,998
+ ketika internet padam, AC orang-orang 
+
+255
+00:09:14,998 --> 00:09:15,650
+ berhenti bekerja. 
+
+256
+00:09:15,650 --> 00:09:17,720
+ Panasmu padam, tahu? 
+
+257
+00:09:17,720 --> 00:09:19,650
+ Jadi ancamannya benar-benar berubah. 
+
+258
+00:09:19,650 --> 00:09:23,201
+ Dan bagi kita, kita berurusan dengan spektrum luas ini 
+
+259
+00:09:23,201 --> 00:09:25,450
+ di mana kami beroperasi sebagai penyedia layanan untuk kampus, 
+
+260
+00:09:25,450 --> 00:09:27,200
+ memberikan layanan kepada orang-orang seperti Anda. 
+
+261
+00:09:27,200 --> 00:09:29,520
+ Kami juga menyediakan layanan untuk segala macam hal. 
+
+262
+00:09:29,520 --> 00:09:32,920
+ Dan jika Anda menggabungkan itu dengan filosofi jaringan terbuka kami, 
+
+263
+00:09:32,920 --> 00:09:36,720
+ itu menciptakan banyak kasus penggunaan dan ancaman yang menarik 
+
+264
+00:09:36,720 --> 00:09:41,150
+ yang harus kita khawatirkan secara terus menerus. 
+
+265
+00:09:41,150 --> 00:09:44,010
+ Dan harapan masyarakat tentang bagaimana internet akan bekerja 
+
+266
+00:09:44,010 --> 00:09:46,093
+ dan salah satu hal yang juga membuka mata 
+
+267
+00:09:46,093 --> 00:09:48,350
+ apakah sistem ini jenis tumbuh. 
+
+268
+00:09:48,350 --> 00:09:50,045
+ Ketika pemadaman listrik terjadi, satu 
+
+269
+00:09:50,045 --> 00:09:53,010
+ pertanyaan pertama yang mereka miliki adalah, 
+
+270
+00:09:53,010 --> 00:09:55,680
+ mengapa jaringan berhenti berfungsi? 
+
+271
+00:09:55,680 --> 00:09:59,375
+ Tanggapan kami adalah, yah, tidak ada kekuatan. 
+
+272
+00:09:59,375 --> 00:10:02,000
+ Dan mereka berkata, yah, itu berasal dari baterai di telepon 
+
+273
+00:10:02,000 --> 00:10:03,050
+ sistem, kan? 
+
+274
+00:10:03,050 --> 00:10:05,006
+ Semua sudah diurus. 
+
+275
+00:10:05,006 --> 00:10:05,880
+ Seperti, tidak, tidak. 
+
+276
+00:10:05,880 --> 00:10:07,171
+ Itu teknologi telepon analog. 
+
+277
+00:10:07,171 --> 00:10:08,930
+ Seperti, apa bedanya? 
+
+278
+00:10:08,930 --> 00:10:11,510
+ Yah, kalian tahu banyak hal. 
+
+279
+00:10:11,510 --> 00:10:13,910
+ Tetapi ada harapan bahwa hal-hal ini akan beroperasi 
+
+280
+00:10:13,910 --> 00:10:15,610
+ dengan layanan utilitas, apakah itu 
+
+281
+00:10:15,610 --> 00:10:17,885
+ pada tingkat keamanan, tingkat ketahanan, atau segalanya 
+
+282
+00:10:17,885 --> 00:10:18,750
+ lain. 
+
+283
+00:10:18,750 --> 00:10:22,712
+ Dan saya suka orang-orang yang begitu percaya diri 
+
+284
+00:10:22,712 --> 00:10:24,920
+ bahwa hal-hal ini sedang ditangani pada tingkat itu. 
+
+285
+00:10:24,920 --> 00:10:29,020
+ Tapi itu celah besar dari tempat kita sekarang. 
+
+286
+00:10:29,020 --> 00:10:31,270
+ Jadi kami menghabiskan sebagian besar waktu kami untuk mencoba 
+
+287
+00:10:31,270 --> 00:10:34,120
+ untuk menjaga lingkungan kampus tetap berjalan, 
+
+288
+00:10:34,120 --> 00:10:35,790
+ jaga segalanya seaman mungkin. 
+
+289
+00:10:35,790 --> 00:10:37,670
+ Dave akan membicarakan hal itu sedikit lebih detail. 
+
+290
+00:10:37,670 --> 00:10:39,000
+ Dia akan memberi Anda beberapa cerita menarik tentang jenisnya 
+
+291
+00:10:39,000 --> 00:10:40,510
+ hal-hal yang kita hadapi. 
+
+292
+00:10:40,510 --> 00:10:44,700
+ Tapi ini pekerjaan yang menarik, bukan? 
+
+293
+00:10:44,700 --> 00:10:47,470
+ Dan kami melihat segala macam hal menarik. 
+
+294
+00:10:47,470 --> 00:10:49,910
+ Dan saya pikir masalahnya semakin sulit. 
+
+295
+00:10:49,910 --> 00:10:53,166
+ Dan saya pikir masalahnya adalah memperluas jenis internet. 
+
+296
+00:10:53,166 --> 00:10:55,040
+ Dan internet hal adalah kata kunci yang besar. 
+
+297
+00:10:55,040 --> 00:10:57,710
+ Berapa banyak dari Anda yang pernah mendengar hal itu sebelum hari ini? 
+
+298
+00:10:57,710 --> 00:11:00,520
+ Kalian telah pergi ke situs web Cisco atau apalah. 
+
+299
+00:11:00,520 --> 00:11:03,641
+ Mencoba menjual peralatan mahal. 
+
+300
+00:11:03,641 --> 00:11:05,390
+ Tetapi seluruh fenomena ini di mana segalanya 
+
+301
+00:11:05,390 --> 00:11:09,680
+ internet atau IP-enabled, itu di sini. 
+
+302
+00:11:09,680 --> 00:11:12,580
+ Dan sayangnya, banyak orang yang menulis sistem ini 
+
+303
+00:11:12,580 --> 00:11:16,194
+ tidak rajin seperti orang yang pergi ke MIT. 
+
+304
+00:11:16,194 --> 00:11:18,110
+ Mereka menciptakan segala macam masalah menarik. 
+
+305
+00:11:18,110 --> 00:11:19,693
+ Jadi saya pikir, bagi kami, tantangan nyata 
+
+306
+00:11:19,693 --> 00:11:22,759
+ adalah, ketika Anda melihat keamanan dari tingkat sistemik, 
+
+307
+00:11:22,759 --> 00:11:24,800
+ hanya ada seribu keping kecil. 
+
+308
+00:11:24,800 --> 00:11:26,350
+ Dan itu sangat, sangat sulit. 
+
+309
+00:11:26,350 --> 00:11:29,600
+ Dan bahkan bagi kami, kami harus berurusan dengan penyedia layanan 
+
+310
+00:11:29,600 --> 00:11:30,476
+ di sisi eksternal. 
+
+311
+00:11:30,476 --> 00:11:32,100
+ Kami harus berurusan dengan pelanggan kami sendiri. 
+
+312
+00:11:32,100 --> 00:11:33,950
+ Kami harus berurusan dengan penyedia aplikasi. 
+
+313
+00:11:33,950 --> 00:11:35,700
+ Ini ekosistem yang sangat luas ini 
+
+314
+00:11:35,700 --> 00:11:38,620
+ Anda harus khawatir tentang memberikan keamanan secara holistik. 
+
+315
+00:11:38,620 --> 00:11:40,760
+ Dan tantangannya cukup bergelombang. 
+
+316
+00:11:40,760 --> 00:11:42,824
+ Dan dari titik itu, saya kira saya akan 
+
+317
+00:11:42,824 --> 00:11:44,990
+ minta Dave berbicara sedikit tentang beberapa hal 
+
+318
+00:11:44,990 --> 00:11:45,720
+ kami telah melihat. 
+
+319
+00:11:45,720 --> 00:11:47,345
+ Kalian ada pertanyaan sebelum Dave 
+
+320
+00:11:47,345 --> 00:11:51,710
+ diatur yang ingin Anda tanyakan pada sesuatu yang khusus? 
+
+321
+00:11:51,710 --> 00:11:52,700
+ Apa pun? 
+
+322
+00:11:52,700 --> 00:11:53,960
+ Ayo, Dave. 
+
+323
+00:11:53,960 --> 00:11:55,668
+ PROFESOR: Oh, Anda punya pertanyaan sekarang. 
+
+324
+00:11:55,668 --> 00:11:56,760
+ PROFESOR: Ya? 
+
+325
+00:11:56,760 --> 00:11:59,780
+ AUDIENCE: Pernahkah Anda melihat kampanye APT apa pun 
+
+326
+00:11:59,780 --> 00:12:02,205
+ menyerang MIT secara langsung? 
+
+327
+00:12:02,205 --> 00:12:03,175
+ PROFESOR: Ya. 
+
+328
+00:12:03,175 --> 00:12:04,172
+ Iya nih. 
+
+329
+00:12:04,172 --> 00:12:06,130
+ Saya pikir yang menarik adalah salah satu hal 
+
+330
+00:12:06,130 --> 00:12:10,112
+ kita melihat lebih banyak is-- 
+
+331
+00:12:10,112 --> 00:12:12,570
+ Anda tahu, salah satu hal yang akan dibicarakan Dave sekarang 
+
+332
+00:12:12,570 --> 00:12:15,610
+ sangat sulit adalah visibilitas. 
+
+333
+00:12:15,610 --> 00:12:18,900
+ Jika saya menceritakan kisah tentang satu laptop, 
+
+334
+00:12:18,900 --> 00:12:22,217
+ dan kami memiliki 100.000 atau 150.000 perangkat, dan juga, 
+
+335
+00:12:22,217 --> 00:12:24,800
+ jika Anda memikirkan jumlah alamat IP yang baru saja dimiliki MIT 
+
+336
+00:12:24,800 --> 00:12:30,160
+ / 8 jaringan, menemukan jarum di tumpukan jerami sangat sulit. 
+
+337
+00:12:30,160 --> 00:12:34,640
+ Jadi APT ini-- yang kami miliki-- 
+
+338
+00:12:34,640 --> 00:12:36,302
+ menemukan suara itu atau aktivitas itu 
+
+339
+00:12:36,302 --> 00:12:38,135
+ terjadi dalam arus lalu lintas yang luas ini 
+
+340
+00:12:38,135 --> 00:12:39,150
+ sangat sulit. 
+
+341
+00:12:39,150 --> 00:12:41,150
+ Salah satu hal yang telah kami bantu 
+
+342
+00:12:41,150 --> 00:12:43,816
+ adalah beberapa alat yang kami miliki sekarang sedikit lebih maju. 
+
+343
+00:12:43,816 --> 00:12:45,840
+ Dan kita akan membicarakannya sebentar lagi. 
+
+344
+00:12:45,840 --> 00:12:47,381
+ Tetapi salah satu hal yang juga kita lihat sekarang 
+
+345
+00:12:47,381 --> 00:12:50,260
+ adalah bantuan penegak hukum dari pihak Federal 
+
+346
+00:12:50,260 --> 00:12:53,077
+ atau dari bagian lain di mana mereka menjangkau Anda 
+
+347
+00:12:53,077 --> 00:12:54,910
+ untuk memberi Anda bimbingan dalam beberapa hal ini 
+
+348
+00:12:54,910 --> 00:12:59,720
+ di mana mereka melihat hal-hal seperti itu, yang sangat membantu. 
+
+349
+00:12:59,720 --> 00:13:01,730
+ Tapi Anda tahu, mengoperasikan lingkungan terbuka, 
+
+350
+00:13:01,730 --> 00:13:04,150
+ kami sudah memiliki beberapa di mana saya sudah 
+
+351
+00:13:04,150 --> 00:13:06,890
+ benar-benar terkejut bahwa mereka sedang terjadi, tetapi mereka melakukannya. 
+
+352
+00:13:06,890 --> 00:13:08,598
+ Dan saya pikir salah satu hal lainnya adalah kita 
+
+353
+00:13:08,598 --> 00:13:11,060
+ akan melihat di masa depan adalah-- hari ini, 
+
+354
+00:13:11,060 --> 00:13:13,700
+ kami melakukan banyak aktivitas penelitian di sini di MIT. 
+
+355
+00:13:13,700 --> 00:13:16,530
+ Ini salah satu misi utama kami. 
+
+356
+00:13:16,530 --> 00:13:19,650
+ Sumber pendanaan Federal yang menyediakan untuk penelitian itu 
+
+357
+00:13:19,650 --> 00:13:24,994
+ tidak benar-benar memiliki banyak aturan tentang bagaimana Anda melakukannya. 
+
+358
+00:13:24,994 --> 00:13:27,160
+ Seperti yang Anda akan tahu, saat Anda masuk ke mahasiswa pascasarjana Anda 
+
+359
+00:13:27,160 --> 00:13:28,576
+ hidup dan hal-hal lain dan Anda dapatkan 
+
+360
+00:13:28,576 --> 00:13:30,910
+ Hibah federal untuk penelitian, apakah itu pribadi 
+
+361
+00:13:30,910 --> 00:13:32,455
+ atau terutama dari pemerintah, 
+
+362
+00:13:32,455 --> 00:13:36,954
+ apakah itu NSF, NIH, persyaratan mereka cukup samar. 
+
+363
+00:13:36,954 --> 00:13:38,745
+ Salah satu hal yang kita hadapi akhir-akhir ini 
+
+364
+00:13:38,745 --> 00:13:42,880
+ adalah mereka akan mengatakan, kami memiliki persyaratan data dalam hibah itu 
+
+365
+00:13:42,880 --> 00:13:45,727
+ kata, Anda harus memiliki kebijakan data tentang semua data Anda 
+
+366
+00:13:45,727 --> 00:13:47,810
+ menghasilkan dari hibah Anda akan dipertahankan. 
+
+367
+00:13:47,810 --> 00:13:48,610
+ Baiklah? 
+
+368
+00:13:48,610 --> 00:13:52,120
+ Dan cara MIT melakukan itu adalah dikatakan kepada PI, itu bagus. 
+
+369
+00:13:52,120 --> 00:13:53,295
+ Kami memiliki persyaratan ini. 
+
+370
+00:13:53,295 --> 00:13:54,670
+ Apakah kamu akan mengurusnya? 
+
+371
+00:13:54,670 --> 00:13:55,295
+ Mereka berkata, tentu. 
+
+372
+00:13:55,295 --> 00:13:56,380
+ Saya akan mengurusnya. 
+
+373
+00:13:56,380 --> 00:13:59,280
+ Tanda tangani dokumennya, kan? 
+
+374
+00:13:59,280 --> 00:14:00,460
+ Memenuhi itu? 
+
+375
+00:14:00,460 --> 00:14:02,387
+ Apa yang mereka lakukan dengan itu? 
+
+376
+00:14:02,387 --> 00:14:04,720
+ Ini diserahkan pada kebijaksanaan penyelidik utama. 
+
+377
+00:14:04,720 --> 00:14:07,094
+ Jadi jika pemerintah datang kepada kami dan berkata, hei, 
+
+378
+00:14:07,094 --> 00:14:08,560
+ dimana datanya? 
+
+379
+00:14:08,560 --> 00:14:11,420
+ Tunjuk seorang anggota fakultas dan katakan, hei, bicara ke rumah. 
+
+380
+00:14:11,420 --> 00:14:12,360
+ Tetapi salah satu hal yang juga kita lihat 
+
+381
+00:14:12,360 --> 00:14:13,880
+ adalah pepatah pemerintah, hei, lihat. 
+
+382
+00:14:13,880 --> 00:14:16,070
+ Kami menginvestasikan banyak uang dalam melakukan penelitian ini. 
+
+383
+00:14:16,070 --> 00:14:17,170
+ Kami tidak ingin menghabiskan semua uang 
+
+384
+00:14:17,170 --> 00:14:18,920
+ dan memberikan penelitian ke negara lain-- 
+
+385
+00:14:18,920 --> 00:14:20,930
+ dalam beberapa kasus, bukan? 
+
+386
+00:14:20,930 --> 00:14:22,840
+ Jadi apa yang kami lihat di sisi legislatif 
+
+387
+00:14:22,840 --> 00:14:24,780
+ atau beberapa sisi lembaga pendanaan Federal 
+
+388
+00:14:24,780 --> 00:14:28,845
+ banyak dari mereka datang kepada kami dan berkata, sebagai sebuah industri, 
+
+389
+00:14:28,845 --> 00:14:31,650
+ Saya pikir kita lebih banyak lagi departemen keamanan untuk ini. 
+
+390
+00:14:31,650 --> 00:14:33,700
+ Dan saya pikir yang sulit bagi kita adalah 
+
+391
+00:14:33,700 --> 00:14:35,860
+ MIT sangat inkubator. 
+
+392
+00:14:35,860 --> 00:14:39,360
+ Kami memiliki banyak sekali orang-orang brilian. 
+
+393
+00:14:39,360 --> 00:14:41,026
+ Dan untuk administrasi pada umumnya, 
+
+394
+00:14:41,026 --> 00:14:42,900
+ kami melayani sebagai semacam perusahaan hosting, bukan? 
+
+395
+00:14:42,900 --> 00:14:44,010
+ Kami menetaskan aktivitas itu. 
+
+396
+00:14:44,010 --> 00:14:46,705
+ Kami menyediakan mereka ruang lab, atau konektivitas internet, 
+
+397
+00:14:46,705 --> 00:14:48,942
+ atau segala macam hal. 
+
+398
+00:14:48,942 --> 00:14:51,400
+ Tetapi untuk sebagian besar, itu adalah lingkungan yang cukup federasi. 
+
+399
+00:14:51,400 --> 00:14:53,290
+ Orang memiliki tingkat otonomi. 
+
+400
+00:14:53,290 --> 00:14:56,160
+ Maka, karena Anda memiliki lebih banyak persyaratan yang akan datang, 
+
+401
+00:14:56,160 --> 00:14:58,990
+ menerapkannya di seluruh institusi sangat sulit. 
+
+402
+00:14:58,990 --> 00:15:00,570
+ Untuk kembali ke APT, ada 
+
+403
+00:15:00,570 --> 00:15:02,775
+ sejumlah besar modal intelektual di sini. 
+
+404
+00:15:02,775 --> 00:15:04,400
+ Banyak sekali hal-hal menarik 
+
+405
+00:15:04,400 --> 00:15:07,605
+ terjadi di sini bahwa orang-orang di luar negeri ini 
+
+406
+00:15:07,605 --> 00:15:09,040
+ sangat tertarik. 
+
+407
+00:15:09,040 --> 00:15:11,050
+ Dan saya tidak tahu apakah kalian tahu ini. 
+
+408
+00:15:11,050 --> 00:15:13,560
+ Negara mana yang menurut Anda bertanggung jawab untuk lebih banyak 
+
+409
+00:15:13,560 --> 00:15:16,420
+ pencurian kekayaan intelektual daripada kebanyakan tempat di dunia? 
+
+410
+00:15:16,420 --> 00:15:18,888
+ Ada yang mau tebak? 
+
+411
+00:15:18,888 --> 00:15:20,774
+ AUDIENCE: Itu adalah proposisi berbahaya. 
+
+412
+00:15:20,774 --> 00:15:21,690
+ PROFESOR: Tidak, tidak, tidak. 
+
+413
+00:15:21,690 --> 00:15:22,370
+ Tapi saya serius. 
+
+414
+00:15:22,370 --> 00:15:23,620
+ Maksudku, salah satu yang ... 
+
+415
+00:15:23,620 --> 00:15:26,210
+ itu benar-benar mengejutkan saya, karena saya tidak pernah mengharapkannya. 
+
+416
+00:15:26,210 --> 00:15:28,126
+ Dan itu bukan berarti mereka melakukan itu di sini. 
+
+417
+00:15:28,126 --> 00:15:30,900
+ Tapi ada yang ingin memberi petunjuk? 
+
+418
+00:15:30,900 --> 00:15:34,068
+ Ayolah, seseorang. 
+
+419
+00:15:34,068 --> 00:15:35,980
+ Siapa saja. 
+
+420
+00:15:35,980 --> 00:15:36,750
+ AUDIENCE: China? 
+
+421
+00:15:36,750 --> 00:15:37,800
+ PROFESOR: Siapa? 
+
+422
+00:15:37,800 --> 00:15:39,254
+ Bukan China. 
+
+423
+00:15:39,254 --> 00:15:40,150
+ AUDIENCE: Rusia? 
+
+424
+00:15:40,150 --> 00:15:41,592
+ PROFESOR: Tidak. 
+
+425
+00:15:41,592 --> 00:15:42,175
+ Bukankah Rusia. 
+
+426
+00:15:42,175 --> 00:15:43,105
+ Tidak. 
+
+427
+00:15:43,105 --> 00:15:44,304
+ AUDIENCE: Apakah itu Kanada? 
+
+428
+00:15:44,304 --> 00:15:44,970
+ PROFESOR: Tidak. 
+
+429
+00:15:44,970 --> 00:15:45,470
+ [TAWA] 
+
+430
+00:15:45,470 --> 00:15:47,511
+ Anda semakin dekat, tapi di Eropa. 
+
+431
+00:15:47,511 --> 00:15:48,680
+ AUDIENCE: Prancis? 
+
+432
+00:15:48,680 --> 00:15:50,090
+ PROFESOR: Prancis. 
+
+433
+00:15:50,090 --> 00:15:51,699
+ Perancis. 
+
+434
+00:15:51,699 --> 00:15:52,240
+ Betul. 
+
+435
+00:15:52,240 --> 00:15:53,070
+ AUDIENCE: Apa itu? 
+
+436
+00:15:53,070 --> 00:15:53,820
+ PROFESOR: Prancis. 
+
+437
+00:15:53,820 --> 00:15:56,246
+
+
+438
+00:15:56,246 --> 00:15:58,560
+ Ya. 
+
+439
+00:15:58,560 --> 00:16:00,790
+ Jadi ya, Anda tidak akan mengharapkan itu, bukan? 
+
+440
+00:16:00,790 --> 00:16:02,290
+ Tapi aku punya banyak orang yang bekerja 
+
+441
+00:16:02,290 --> 00:16:07,079
+ di sisi industri, sektor komersial, di area keamanan. 
+
+442
+00:16:07,079 --> 00:16:08,995
+ Dan salah satu hal yang harus mereka khawatirkan 
+
+443
+00:16:08,995 --> 00:16:11,860
+ adalah perusahaan, beberapa di antaranya berlokasi di geografi ini, 
+
+444
+00:16:11,860 --> 00:16:14,030
+ itu adalah salah satu ancaman terbesar mereka, 
+
+445
+00:16:14,030 --> 00:16:15,220
+ yang agak mengejutkan. 
+
+446
+00:16:15,220 --> 00:16:16,110
+ Anda akan berpikir itu adalah Iran. 
+
+447
+00:16:16,110 --> 00:16:18,226
+ Anda akan berpikir itu semua jenis tempat lain. 
+
+448
+00:16:18,226 --> 00:16:19,140
+ Tidak. 
+
+449
+00:16:19,140 --> 00:16:22,540
+ Jadi, ini menarik, bukan? 
+
+450
+00:16:22,540 --> 00:16:23,950
+ Anda tidak akan mengharapkan itu. 
+
+451
+00:16:23,950 --> 00:16:26,780
+ Dan itu bukan berarti AS tidak melakukannya juga. 
+
+452
+00:16:26,780 --> 00:16:27,800
+ Mari jujur, bukan? 
+
+453
+00:16:27,800 --> 00:16:28,925
+ Kami melakukannya dengan lebih baik. 
+
+454
+00:16:28,925 --> 00:16:31,350
+ Kami tidak tertangkap, mungkin. 
+
+455
+00:16:31,350 --> 00:16:35,760
+ Tapi tak perlu dikatakan lagi, ini adalah salah satu hal yang lebih menarik. 
+
+456
+00:16:35,760 --> 00:16:36,710
+ Pertanyaan lain? 
+
+457
+00:16:36,710 --> 00:16:37,600
+ Anda siap, Dave? 
+
+458
+00:16:37,600 --> 00:16:39,040
+ PROFESOR: Tentu. 
+
+459
+00:16:39,040 --> 00:16:40,000
+ PROFESOR: Ya? 
+
+460
+00:16:40,000 --> 00:16:43,540
+ AUDIENCE: Hal-hal apa yang Anda log on di sektor IP? 
+
+461
+00:16:43,540 --> 00:16:44,444
+ [TAWA] 
+
+462
+00:16:44,444 --> 00:16:47,790
+ PROFESOR: Matikan kamera sekarang. 
+
+463
+00:16:47,790 --> 00:16:51,530
+ Kami mencatat beberapa hal yang cukup menarik. 
+
+464
+00:16:51,530 --> 00:16:53,760
+ Saya akan mengatakan, untuk sebagian besar, saya akan jujur ​​dengan Anda, 
+
+465
+00:16:53,760 --> 00:16:55,440
+ permintaan otentikasi, kami log. 
+
+466
+00:16:55,440 --> 00:16:57,071
+ Jadi ketika Anda masuk melalui Kerberos, 
+
+467
+00:16:57,071 --> 00:16:58,570
+ Anda masuk melalui Active Directory, 
+
+468
+00:16:58,570 --> 00:17:01,900
+ Anda masuk melalui Touchstone, melalui SAML iVp kami, 
+
+469
+00:17:01,900 --> 00:17:03,850
+ hal-hal itu dicatat. 
+
+470
+00:17:03,850 --> 00:17:05,935
+ Kami memiliki kebijakan penyimpanan yang sangat detail, yang 
+
+471
+00:17:05,935 --> 00:17:07,185
+ kami senang berbagi dengan Anda. 
+
+472
+00:17:07,185 --> 00:17:09,078
+ Itu diterbitkan. 
+
+473
+00:17:09,079 --> 00:17:13,780
+ Jika Anda mengakses halaman web, jika Anda check in untuk membaca email Anda, 
+
+474
+00:17:13,780 --> 00:17:15,530
+ hal-hal seperti itu, maka salah satu masalah 
+
+475
+00:17:15,530 --> 00:17:17,320
+ kami telah menghubungkan semua informasi itu 
+
+476
+00:17:17,320 --> 00:17:18,264
+ akan cukup sulit. 
+
+477
+00:17:18,265 --> 00:17:19,981
+ Itu banyak sumber yang berbeda. 
+
+478
+00:17:19,981 --> 00:17:21,730
+ Dave akan membicarakannya sebentar lagi. 
+
+479
+00:17:21,730 --> 00:17:23,146
+ Tapi itu cukup banyak yang kami lakukan. 
+
+480
+00:17:23,146 --> 00:17:25,569
+ Kami mencoba untuk mempertahankan periode retensi kami, biasanya, 
+
+481
+00:17:25,569 --> 00:17:27,717
+ dalam 30 hari. 
+
+482
+00:17:27,717 --> 00:17:31,021
+ AUDIENCE: Jadi MIT menjalankan CA sendiri, kan? 
+
+483
+00:17:31,021 --> 00:17:32,920
+ Ada sertifikat MIT root. 
+
+484
+00:17:32,920 --> 00:17:36,470
+ Kunci pribadi [TIDAK TERDENGAR] Di mana Anda menyimpan kunci pribadi itu? 
+
+485
+00:17:36,470 --> 00:17:41,970
+ [TAWA] 
+
+486
+00:17:41,970 --> 00:17:42,960
+ PROFESOR: OK. 
+
+487
+00:17:42,960 --> 00:17:43,950
+ AUDIENCE: Bisakah Anda menggunakan perangkat keras tahan-perusakan, 
+
+488
+00:17:43,950 --> 00:17:44,908
+ atau semacam itu? 
+
+489
+00:17:44,908 --> 00:17:46,920
+ Atau apakah Anda hanya meletakkannya di komputer di suatu tempat 
+
+490
+00:17:46,920 --> 00:17:49,900
+ menjalankan Linux [INAUDIBLE]? 
+
+491
+00:17:49,900 --> 00:17:51,690
+ PROFESOR: Wah, wah. 
+
+492
+00:17:51,690 --> 00:17:52,572
+ Pertanyaan bagus. 
+
+493
+00:17:52,572 --> 00:17:53,530
+ Ya, kami menjalankan CA. 
+
+494
+00:17:53,530 --> 00:17:57,860
+ Kami telah menjalankan CA kami sendiri sejak akhir 1990-an. 
+
+495
+00:17:57,860 --> 00:18:01,240
+ Jadi di seluruh dunia di mana web melakukan otentikasi 
+
+496
+00:18:01,240 --> 00:18:03,600
+ menggunakan nama pengguna, kata sandi melalui SSL, 
+
+497
+00:18:03,600 --> 00:18:06,910
+ Saya pikir MIT cukup progresif di sana, melakukan PKI. 
+
+498
+00:18:06,910 --> 00:18:07,780
+ Sekarang saya tidak tahu. 
+
+499
+00:18:07,780 --> 00:18:11,107
+ Kalian sedikit lebih muda, tetapi pada tahun 1998, 
+
+500
+00:18:11,107 --> 00:18:13,440
+ mereka memberi tahu saya tahun PKI baru saja di sini. 
+
+501
+00:18:13,440 --> 00:18:14,569
+ Ini akan menjadi tahun depan. 
+
+502
+00:18:14,569 --> 00:18:16,485
+ Dan kami sudah mengatakan itu selama 20 tahun. 
+
+503
+00:18:16,485 --> 00:18:17,879
+ Mudah-mudahan, segera. 
+
+504
+00:18:17,879 --> 00:18:19,170
+ Jadi dalam hal bagaimana itu disimpan? 
+
+505
+00:18:19,170 --> 00:18:21,699
+
+
+506
+00:18:21,699 --> 00:18:23,615
+ Perangkat keras tahan-perusakan, itu ide yang bagus. 
+
+507
+00:18:23,615 --> 00:18:25,370
+ Aku suka itu. 
+
+508
+00:18:25,370 --> 00:18:27,090
+ Itu bagus sekali. 
+
+509
+00:18:27,090 --> 00:18:28,731
+ Bukan begitu cara kami melakukannya. 
+
+510
+00:18:28,731 --> 00:18:30,230
+ AUDIENCE: Apakah itu bagaimana CA melakukannya? 
+
+511
+00:18:30,230 --> 00:18:34,930
+ PROFESOR: Jadi CA biasanya melakukannya melalui menggunakan kunci USB 
+
+512
+00:18:34,930 --> 00:18:38,151
+ atau token lain yang memiliki protokol yang cukup terlibat di mana 
+
+513
+00:18:38,151 --> 00:18:39,770
+ Anda hanya dapat mengakses informasi 
+
+514
+00:18:39,770 --> 00:18:41,426
+ setelah ditulis, dalam hal Anda 
+
+515
+00:18:41,426 --> 00:18:43,050
+ dapat mengirim sesuatu untuk ditandatangani, 
+
+516
+00:18:43,050 --> 00:18:45,410
+ tetapi Anda tidak bisa benar-benar melepas kunci. 
+
+517
+00:18:45,410 --> 00:18:47,940
+ Jadi mereka memiliki seluruh cara melakukan itu. 
+
+518
+00:18:47,940 --> 00:18:49,800
+ Sejujurnya, server CA yang kami gunakan sekarang 
+
+519
+00:18:49,800 --> 00:18:52,640
+ ditulis sebelum pasar-pasar itu ada. 
+
+520
+00:18:52,640 --> 00:18:56,210
+ Dan kami telah menggunakan, saya akan mengatakan, semangat MIT yang khas 
+
+521
+00:18:56,210 --> 00:18:58,540
+ menjadi sedikit kreatif. 
+
+522
+00:18:58,540 --> 00:19:03,450
+ Dan itu disimpan di sistem file. 
+
+523
+00:19:03,450 --> 00:19:06,005
+ Ini disimpan sedemikian rupa untuk membuatnya sulit untuk pulih. 
+
+524
+00:19:06,005 --> 00:19:07,380
+ Dan itu disimpan dalam berbagai cara. 
+
+525
+00:19:07,380 --> 00:19:09,100
+ Dan itu dienkripsi dengan beberapa kunci. 
+
+526
+00:19:09,100 --> 00:19:11,610
+ Dan ada berbagai parameter khusus sistem, 
+
+527
+00:19:11,610 --> 00:19:14,749
+ yang saya tidak akan masuk ke masing-masing dari mereka di sini. 
+
+528
+00:19:14,749 --> 00:19:16,790
+ AUDIENCE: Jadi itu lebih dari keamanan oleh keamanan. 
+
+529
+00:19:16,790 --> 00:19:18,160
+ PROFESOR: Ya. 
+
+530
+00:19:18,160 --> 00:19:18,690
+ Iya nih. 
+
+531
+00:19:18,690 --> 00:19:22,570
+ Jadi, jika Anda tahu lokasi spesifik, 
+
+532
+00:19:22,570 --> 00:19:24,190
+ yang mungkin bukan file-- 
+
+533
+00:19:24,190 --> 00:19:26,579
+ Saya akan memberi Anda petunjuk untuk mencari-- 
+
+534
+00:19:26,579 --> 00:19:28,120
+ dan Anda tahu berapa banyak kunci yang dibutuhkan 
+
+535
+00:19:28,120 --> 00:19:29,705
+ dan Anda tahu berapa banyak byte untuk dibaca, 
+
+536
+00:19:29,705 --> 00:19:31,431
+ Anda mungkin bisa mengetahuinya. 
+
+537
+00:19:31,431 --> 00:19:32,930
+ Tetapi jujur ​​dengan Anda, jika Anda 
+
+538
+00:19:32,930 --> 00:19:35,462
+ dapat benar-benar masuk ke mesin, game over, kan? 
+
+539
+00:19:35,462 --> 00:19:37,977
+ Jika Anda bisa masuk ke mesin, game over. 
+
+540
+00:19:37,977 --> 00:19:40,018
+ Anda tahu, orang-orang yang memberi tahu Anda bahwa mereka masih bisa 
+
+541
+00:19:40,018 --> 00:19:41,726
+ masuk ke mesin dan tidak kompromi 
+
+542
+00:19:41,726 --> 00:19:43,960
+ kunci untuk beberapa ETA, nah. 
+
+543
+00:19:43,960 --> 00:19:45,670
+ Saya akan sangat skeptis tentang itu. 
+
+544
+00:19:45,670 --> 00:19:48,040
+ Jadi kami berusaha cukup aman, tapi-- 
+
+545
+00:19:48,040 --> 00:19:51,684
+ bagaimanapun, itu tidak sempurna. 
+
+546
+00:19:51,684 --> 00:19:52,350
+ Pertanyaan Lain? 
+
+547
+00:19:52,350 --> 00:19:55,230
+
+
+548
+00:19:55,230 --> 00:19:56,920
+ AUDIENCE: Biasanya, berapa persen 
+
+549
+00:19:56,920 --> 00:19:59,260
+ apakah Anda akan mengatakan tentang akun MIT 
+
+550
+00:19:59,260 --> 00:20:01,059
+ dikompromikan pada waktu tertentu? 
+
+551
+00:20:01,059 --> 00:20:02,100
+ PROFESOR: Pertanyaan bagus. 
+
+552
+00:20:02,100 --> 00:20:04,420
+ Bukan milikmu, kan? 
+
+553
+00:20:04,420 --> 00:20:06,160
+ Saya pikir saya kagum-- 
+
+554
+00:20:06,160 --> 00:20:07,960
+ jadi apakah semua orang tahu apa itu phishing? 
+
+555
+00:20:07,960 --> 00:20:08,430
+ AUDIENCE: Mm-hm. 
+
+556
+00:20:08,430 --> 00:20:08,700
+ PROFESOR: OK. 
+
+557
+00:20:08,700 --> 00:20:09,105
+ Baik. 
+
+558
+00:20:09,105 --> 00:20:11,688
+ Saya tidak bisa memberi tahu Anda berapa banyak pembicaraan saya pergi ke tempat mereka melihat Anda 
+
+559
+00:20:11,688 --> 00:20:14,690
+ dan mereka bilang, bukankah itu seperti Seattle? 
+
+560
+00:20:14,690 --> 00:20:17,691
+ Tapi itu sedikit dari audiens yang lebih tua. 
+
+561
+00:20:17,691 --> 00:20:19,690
+ Setiap kali salah satu dari hal-hal ini terjadi-- 
+
+562
+00:20:19,690 --> 00:20:21,981
+ dan mereka terjadi sedikit di mana email-email ini keluar-- 
+
+563
+00:20:21,981 --> 00:20:23,870
+ Aku akan memberitahumu, itu membuatku kagum. 
+
+564
+00:20:23,870 --> 00:20:27,280
+ Anda adalah institusi terpintar di dunia, oke? 
+
+565
+00:20:27,280 --> 00:20:29,832
+ Sebagai alum, saya sangat bangga mempercayai itu. 
+
+566
+00:20:29,832 --> 00:20:31,290
+ Anda tahu, kami adalah yang terdepan di dunia 
+
+567
+00:20:31,290 --> 00:20:34,452
+ institusi teknologi di dunia, bukan? 
+
+568
+00:20:34,452 --> 00:20:36,660
+ Saya tidak dapat memberi tahu Anda berapa banyak orang yang akan membalasnya 
+
+569
+00:20:36,660 --> 00:20:37,130
+ sesuatu. 
+
+570
+00:20:37,130 --> 00:20:38,440
+ Itu selalu mengherankan saya berapa banyak 
+
+571
+00:20:38,440 --> 00:20:39,815
+ dari mereka membalas "Dear Help Desk, 
+
+572
+00:20:39,815 --> 00:20:42,570
+ inilah nama pengguna dan kata sandi saya. 
+
+573
+00:20:42,570 --> 00:20:44,090
+ Itu mengejutkanku, kan? 
+
+574
+00:20:44,090 --> 00:20:47,250
+ Dan beberapa dari mereka adalah dosen. 
+
+575
+00:20:47,250 --> 00:20:49,252
+ Dan mereka memanggil meja bantuan dan pergi, hei, 
+
+576
+00:20:49,252 --> 00:20:50,710
+ Saya menulis kembali ke pesan kuota Anda. 
+
+577
+00:20:50,710 --> 00:20:52,910
+ Kenapa kuota saya belum naik? 
+
+578
+00:20:52,910 --> 00:20:55,330
+ Dan oh, omong-omong, seperti kotak masuk saya sudah penuh sekarang. 
+
+579
+00:20:55,330 --> 00:20:56,630
+ Jadi apa yang terjadi? 
+
+580
+00:20:56,630 --> 00:20:59,865
+ Yah, mereka mendapat 200.000 pesan terpental berada di kotak masuk mereka 
+
+581
+00:20:59,865 --> 00:21:02,387
+ karena digunakan untuk mengirim email massal. 
+
+582
+00:21:02,387 --> 00:21:03,220
+ Jadi saya jujur. 
+
+583
+00:21:03,220 --> 00:21:07,800
+ Saya akan mengatakan kita melihat 10, 15, 20 hingga 30 sebulan. 
+
+584
+00:21:07,800 --> 00:21:10,090
+ Selama salah satu paku phishing ini, bahkan lebih besar. 
+
+585
+00:21:10,090 --> 00:21:12,420
+ Dan saya pikir yang benar-benar menarik 
+
+586
+00:21:12,420 --> 00:21:15,550
+ adalah hal-hal yang tidak kami ketahui, oke? 
+
+587
+00:21:15,550 --> 00:21:19,020
+ Dan pemerintah mendatangi kami, saya tidak tahu, sekitar satu atau dua tahun 
+
+588
+00:21:19,020 --> 00:21:23,500
+ lalu dan berkata, hei, kita tidak akan membahas secara spesifik, 
+
+589
+00:21:23,500 --> 00:21:25,730
+ tetapi ada pasar di mana Anda 
+
+590
+00:21:25,730 --> 00:21:27,650
+ dapat membeli nama pengguna dan kata sandi MIT, jadi Anda 
+
+591
+00:21:27,650 --> 00:21:29,640
+ dapat mengakses sumber daya perpustakaan. 
+
+592
+00:21:29,640 --> 00:21:33,497
+ Jadi mereka menawar secara online di pasar gelap ini. 
+
+593
+00:21:33,497 --> 00:21:35,372
+ Jika Anda ingin mengakses semua materi MIT 
+
+594
+00:21:35,372 --> 00:21:37,667
+ ada di perpustakaan mereka atau di kampus, 
+
+595
+00:21:37,667 --> 00:21:39,500
+ Anda cukup melelang salah satu dari akun ini 
+
+596
+00:21:39,500 --> 00:21:41,860
+ bahwa mereka telah berkompromi dari halaman web. 
+
+597
+00:21:41,860 --> 00:21:44,486
+ Dan mereka berkata, oh, omong-omong, apakah Anda tahu tentang ini? 
+
+598
+00:21:44,486 --> 00:21:45,841
+ Tidak. 
+
+599
+00:21:45,841 --> 00:21:46,340
+ Tidak. 
+
+600
+00:21:46,340 --> 00:21:49,890
+ Jadi kita melihat banyak sekali. 
+
+601
+00:21:49,890 --> 00:21:51,820
+ Keberhasilan vektor sosial 
+
+602
+00:21:51,820 --> 00:21:54,160
+ untuk mendapatkan kredensial orang adalah 
+
+603
+00:21:54,160 --> 00:21:56,414
+ sangat tinggi, khususnya, di seluruh industri kami-- 
+
+604
+00:21:56,414 --> 00:21:58,580
+ Dave akan membicarakannya sedikit, bagaimana Anda mencoba 
+
+605
+00:21:58,580 --> 00:22:01,170
+ dan mengurangi hal-hal itu-- sangat tinggi. 
+
+606
+00:22:01,170 --> 00:22:02,970
+ Dan itu sedikit menakutkan. 
+
+607
+00:22:02,970 --> 00:22:05,310
+ Ya? 
+
+608
+00:22:05,310 --> 00:22:08,140
+ AUDIENCE: Berurusan dengan itu, apakah ada cara atau beberapa situs web 
+
+609
+00:22:08,140 --> 00:22:11,650
+ untuk melihat semua tempat yang telah Anda masuki 
+
+610
+00:22:11,650 --> 00:22:14,470
+ dengan Touchstone atau sesuatu? 
+
+611
+00:22:14,470 --> 00:22:15,410
+ PROFESOR: Ya. 
+
+612
+00:22:15,410 --> 00:22:18,990
+ Jadi kami sedang mengerjakan-- salah satu hal yang saya bicarakan sebagai jawaban 
+
+613
+00:22:18,990 --> 00:22:22,070
+ pertanyaan log adalah apa yang kalian kumpulkan? 
+
+614
+00:22:22,070 --> 00:22:23,570
+ Kami mengumpulkan berbagai informasi. 
+
+615
+00:22:23,570 --> 00:22:25,880
+ Salah satu hal yang tidak dapat kita lakukan hari ini 
+
+616
+00:22:25,880 --> 00:22:27,640
+ adalah berkorelasi. 
+
+617
+00:22:27,640 --> 00:22:30,317
+ Jadi dalam kasus kami, ada 30 sistem teknologi yang berbeda 
+
+618
+00:22:30,317 --> 00:22:32,650
+ terlibat dalam beberapa hal ini, dan format yang berbeda, 
+
+619
+00:22:32,650 --> 00:22:35,509
+ dan segala macam cara berbeda untuk menghasilkannya. 
+
+620
+00:22:35,509 --> 00:22:37,300
+ Kami berupaya untuk mencoba dan membuatnya lebih mudah. 
+
+621
+00:22:37,300 --> 00:22:39,960
+ Dan harapan kami adalah memberi komunitas pengguna sesuatu di mana, 
+
+622
+00:22:39,960 --> 00:22:41,470
+ dari GeoIP atau sudut pandang lain, 
+
+623
+00:22:41,470 --> 00:22:43,220
+ mereka dapat melihat di mana aktivitas mereka mungkin 
+
+624
+00:22:43,220 --> 00:22:45,357
+ selama 30 hari terakhir, atau tujuh hari, 
+
+625
+00:22:45,357 --> 00:22:47,045
+ atau apa pun periode retensi mereka, 
+
+626
+00:22:47,045 --> 00:22:48,420
+ untuk membantu memberi tahu orang-orang tentang di mana 
+
+627
+00:22:48,420 --> 00:22:49,544
+ hal-hal ini sedang terjadi. 
+
+628
+00:22:49,544 --> 00:22:51,311
+ Dave ingin melangkah lebih jauh. 
+
+629
+00:22:51,311 --> 00:22:53,310
+ Dia ingin Anda dapat memilih lingkaran dengan jari-jari 
+
+630
+00:22:53,310 --> 00:22:55,730
+ di mana Anda diizinkan untuk masuk dari geografis. 
+
+631
+00:22:55,730 --> 00:22:57,569
+ Dan jika Anda masuk dari luar rentang itu, 
+
+632
+00:22:57,569 --> 00:22:59,360
+ sebaiknya tidak membiarkannya, atau itu saja 
+
+633
+00:22:59,360 --> 00:23:00,752
+ kirim SMS ke ponsel Anda untuk memberi tahu Anda sesuatu itu 
+
+634
+00:23:00,752 --> 00:23:03,870
+ terjadi, yang menurut saya merupakan langkah ke arah yang benar. 
+
+635
+00:23:03,870 --> 00:23:06,330
+ Tapi ya, kami sedang mengusahakannya, 
+
+636
+00:23:06,330 --> 00:23:09,266
+ tetapi kita tidak memilikinya hari ini. 
+
+637
+00:23:09,266 --> 00:23:11,736
+ AUDIENCE: Anda mengatakan ada lalu lintas berbahaya di MIT 
+
+638
+00:23:11,736 --> 00:23:12,724
+ jaringan? 
+
+639
+00:23:12,724 --> 00:23:14,210
+ PROFESOR: Ya. 
+
+640
+00:23:14,210 --> 00:23:15,086
+ Dengan kondisi-- 
+
+641
+00:23:15,086 --> 00:23:16,586
+ AUDIENCE: Apa sumber utamanya? 
+
+642
+00:23:16,586 --> 00:23:18,195
+ Apakah dari luar masuk? 
+
+643
+00:23:18,195 --> 00:23:22,384
+ Atau apakah ada lalu lintas berbahaya dari dalam yang keluar? 
+
+644
+00:23:22,384 --> 00:23:24,550
+ PROFESOR: Anda tahu, saya ingin mengatakan itu sepenuhnya 
+
+645
+00:23:24,550 --> 00:23:26,040
+ dari luar masuk. 
+
+646
+00:23:26,040 --> 00:23:29,466
+ Saya akan mengatakan ada sedikit dari dalam keluar. 
+
+647
+00:23:29,466 --> 00:23:32,090
+ Saya pikir, secara realistis, kami memiliki banyak sekali internet 
+
+648
+00:23:32,090 --> 00:23:34,170
+ bandwidth dan konektivitas. 
+
+649
+00:23:34,170 --> 00:23:36,650
+ Kami akan berbicara tentang beberapa refleksi UDP yang lebih baru 
+
+650
+00:23:36,650 --> 00:23:38,730
+ serangan, yang merupakan contoh yang bagus. 
+
+651
+00:23:38,730 --> 00:23:40,184
+ Tetapi ketika Anda memiliki pipa besar, itu 
+
+652
+00:23:40,184 --> 00:23:42,047
+ sumber daya yang baik untuk digunakan untuk menyakiti orang lain. 
+
+653
+00:23:42,047 --> 00:23:43,880
+ Jadi kami melihat banyak hal, saya akan mengatakan lebih banyak 
+
+654
+00:23:43,880 --> 00:23:44,755
+ dari barang yang masuk. 
+
+655
+00:23:44,755 --> 00:23:46,255
+ Barang masuk, Anda melihat sedikit adil, 
+
+656
+00:23:46,255 --> 00:23:47,920
+ seperti yang saya bicarakan dengan laptop. 
+
+657
+00:23:47,920 --> 00:23:50,625
+ Tapi saya akan mengatakan, dalam hal volume lalu lintas yang sebenarnya, 
+
+658
+00:23:50,625 --> 00:23:52,250
+ hal-hal besar yang Anda lihat masuk dan keluar, 
+
+659
+00:23:52,250 --> 00:23:56,466
+ dalam hal throughput semata. 
+
+660
+00:23:56,466 --> 00:23:59,220
+ AUDIENCE: Berapa banyak orang yang terhubung ke MIT 
+
+661
+00:23:59,220 --> 00:24:01,640
+ Jaringan pada hari tertentu? 
+
+662
+00:24:01,640 --> 00:24:04,320
+ PROFESOR: Pada hari tertentu, saya akan mengatakan seperti, saya tidak tahu, 
+
+663
+00:24:04,320 --> 00:24:07,190
+ 100.000, 120.000 jenis perangkat yang berbeda. 
+
+664
+00:24:07,190 --> 00:24:10,320
+ Saya akan mengatakan, orang-bijaksana, jika Anda mencari orang rata-rata 2-1 / 2 
+
+665
+00:24:10,320 --> 00:24:14,174
+ perangkat, mungkin 35.000 orang, 40.000 orang pada hari tertentu. 
+
+666
+00:24:14,174 --> 00:24:16,590
+ Saya pikir yang lebih mengejutkan adalah populasi pengunjung kami 
+
+667
+00:24:16,590 --> 00:24:17,589
+ cukup besar dalam sebulan. 
+
+668
+00:24:17,589 --> 00:24:20,050
+
+
+669
+00:24:20,050 --> 00:24:22,133
+ AUDIENCE: Apa kebijakan untuk menjalankan TOR keluar 
+
+670
+00:24:22,133 --> 00:24:23,461
+ simpul di jaringan MIT? 
+
+671
+00:24:23,461 --> 00:24:24,210
+ PROFESOR: Kebijakan? 
+
+672
+00:24:24,210 --> 00:24:24,672
+ Apa? 
+
+673
+00:24:24,672 --> 00:24:25,171
+ Tidak. 
+
+674
+00:24:25,171 --> 00:24:26,520
+ [TAWA] 
+
+675
+00:24:26,520 --> 00:24:28,830
+ AUDIENCE: Apakah ada alasan kuat untuk tidak melakukannya? 
+
+676
+00:24:28,830 --> 00:24:31,492
+ PROFESOR: Jadi Anda tahu, MIT adalah tempat yang sangat terbuka, oke? 
+
+677
+00:24:31,492 --> 00:24:33,700
+ Dan saya pikir itu adalah salah satu keindahan yang luar biasa 
+
+678
+00:24:33,700 --> 00:24:35,700
+ seorang siswa di sini dan salah satu hal yang selalu saya lakukan 
+
+679
+00:24:35,700 --> 00:24:38,120
+ Yang disayangi tentang berada di sini adalah kita adalah tempat di mana 
+
+680
+00:24:38,120 --> 00:24:39,565
+ tidak apa-apa untuk bereksperimen. 
+
+681
+00:24:39,565 --> 00:24:40,440
+ Tidak apa-apa untuk melakukan sesuatu. 
+
+682
+00:24:40,440 --> 00:24:41,590
+ Tidak apa-apa untuk belajar tentang hal-hal. 
+
+683
+00:24:41,590 --> 00:24:42,510
+ Tidak apa-apa untuk mengembangkan hal-hal baru. 
+
+684
+00:24:42,510 --> 00:24:44,650
+ Itu salah satu hal hebat tentang berada di MIT 
+
+685
+00:24:44,650 --> 00:24:47,430
+ dan apa yang spesial tentang berada di sini juga, kan? 
+
+686
+00:24:47,430 --> 00:24:48,629
+ Itulah yang cukup unik. 
+
+687
+00:24:48,629 --> 00:24:50,670
+ Anda tidak perlu pergi ke kantor kebijakan untuk mengatakan, 
+
+688
+00:24:50,670 --> 00:24:53,625
+ hei, saya ingin menjalankan simpul keluar inti hari ini, 
+
+689
+00:24:53,625 --> 00:24:55,500
+ atau saya ingin membuat protokol anonim baru, 
+
+690
+00:24:55,500 --> 00:24:56,560
+ atau semacam itu. 
+
+691
+00:24:56,560 --> 00:24:59,060
+ Itulah salah satu hal yang sangat unik dalam bekerja 
+
+692
+00:24:59,060 --> 00:25:00,480
+ di sini dan pergi ke sekolah di sini. 
+
+693
+00:25:00,480 --> 00:25:04,800
+ Dan saya pikir, bagi kami, apakah itu ide yang bagus atau itu ide yang buruk, 
+
+694
+00:25:04,800 --> 00:25:06,760
+ tergantung bagaimana Anda mencoba melakukannya, bukan? 
+
+695
+00:25:06,760 --> 00:25:09,087
+ Jika Anda melakukannya sebagai bagian dari beberapa penelitian tesis 
+
+696
+00:25:09,087 --> 00:25:11,045
+ menjadi teknik otomatisasi, beberapa privasi, 
+
+697
+00:25:11,045 --> 00:25:12,604
+ itu mungkin baik-baik saja. 
+
+698
+00:25:12,604 --> 00:25:14,020
+ Jika Anda melakukannya untuk tujuan itu 
+
+699
+00:25:14,020 --> 00:25:17,461
+ menjalankan semacam cincin pasar gelap atau sesuatu 
+
+700
+00:25:17,461 --> 00:25:17,960
+ seperti itu-- 
+
+701
+00:25:17,960 --> 00:25:20,210
+ Maksud saya itu mungkin bukan ide yang bagus. 
+
+702
+00:25:20,210 --> 00:25:23,010
+ Tetapi dari sudut pandang kebijakan, MIT cukup fleksibel. 
+
+703
+00:25:23,010 --> 00:25:27,635
+ Kami benar-benar berusaha menyeimbangkan kebutuhan untuk-- 
+
+704
+00:25:27,635 --> 00:25:29,135
+ institusi memiliki tanggung jawab 
+
+705
+00:25:29,135 --> 00:25:30,662
+ untuk berperilaku bertanggung jawab, bukan? 
+
+706
+00:25:30,662 --> 00:25:31,554
+ Mari kita jujur ​​saja. 
+
+707
+00:25:31,554 --> 00:25:33,350
+ Sebagai sebuah institusi, kita harus melakukan itu. 
+
+708
+00:25:33,350 --> 00:25:35,480
+ Tetapi kami berusaha sebisa mungkin untuk tidak membebani 
+
+709
+00:25:35,480 --> 00:25:37,320
+ aktivitas inovasi. 
+
+710
+00:25:37,320 --> 00:25:40,090
+ Jadi, untuk sebagian besar, itu berhasil dengan cukup baik. 
+
+711
+00:25:40,090 --> 00:25:42,780
+ Saya akan mengatakan MIT sudah cukup sukses selama 125 terakhir 
+
+712
+00:25:42,780 --> 00:25:44,720
+ tahun. 
+
+713
+00:25:44,720 --> 00:25:47,020
+ Tapi Anda tahu, saya pikir ini adalah salah satu daerah di mana 
+
+714
+00:25:47,020 --> 00:25:48,850
+ jika salah satu dari kegiatan itu dilakukan 
+
+715
+00:25:48,850 --> 00:25:51,595
+ institusi secara kolektif dalam bahaya, lalu 
+
+716
+00:25:51,595 --> 00:25:53,180
+ kita harus melihat itu. 
+
+717
+00:25:53,180 --> 00:25:55,140
+ Tetapi MIT menjalankan berbagai simpul keluar TOR. 
+
+718
+00:25:55,140 --> 00:25:56,650
+ SIPI punya beberapa. 
+
+719
+00:25:56,650 --> 00:25:57,930
+ CSAIL memiliki beberapa. 
+
+720
+00:25:57,930 --> 00:26:00,770
+ Mereka muncul di daftar nakal Dave seperti wabah, 
+
+721
+00:26:00,770 --> 00:26:03,740
+ tetapi kami melakukan itu. 
+
+722
+00:26:03,740 --> 00:26:06,210
+ Anda tidak dapat menjalankannya di kebanyakan sekolah. 
+
+723
+00:26:06,210 --> 00:26:06,710
+ Pertanyaan? 
+
+724
+00:26:06,710 --> 00:26:13,660
+
+
+725
+00:26:13,660 --> 00:26:15,880
+ Rekan saya yang terhormat, Dave LaPorte. 
+
+726
+00:26:15,880 --> 00:26:20,867
+ Dia dari dulu bekerja di jaringan Universitas Harvard. 
+
+727
+00:26:20,867 --> 00:26:22,700
+ Dan dia akan berbicara sedikit tentang jaringan 
+
+728
+00:26:22,700 --> 00:26:25,682
+ di sekolah seni liberal, jika Anda membawanya ke luar kantor. 
+
+729
+00:26:25,682 --> 00:26:29,578
+ Dan dia juga seorang guru sendiri di Northeastern, 
+
+730
+00:26:29,578 --> 00:26:31,526
+ itu bagus. 
+
+731
+00:26:31,526 --> 00:26:33,660
+ Jadi Dave akan berbicara dengan Anda sedikit 
+
+732
+00:26:33,660 --> 00:26:35,839
+ tentang beberapa contoh spesifik raja-raja 
+
+733
+00:26:35,839 --> 00:26:36,880
+ yang membuat kita terjaga di malam hari. 
+
+734
+00:26:36,880 --> 00:27:01,207
+
+
+735
+00:27:01,207 --> 00:27:02,040
+ PROFESOR: Oh, tunggu. 
+
+736
+00:27:02,040 --> 00:27:02,290
+ Tunggu. 
+
+737
+00:27:02,290 --> 00:27:03,140
+ Saya rasa saya mengerti. 
+
+738
+00:27:03,140 --> 00:27:03,848
+ Koneksi longgar. 
+
+739
+00:27:03,848 --> 00:27:10,835
+
+
+740
+00:27:10,835 --> 00:27:11,335
+ BAIK. 
+
+741
+00:27:11,335 --> 00:27:17,192
+
+
+742
+00:27:17,192 --> 00:27:17,692
+ [TIDAK JELAS] 
+
+743
+00:27:17,692 --> 00:27:22,350
+
+
+744
+00:27:22,350 --> 00:27:22,850
+ Baiklah. 
+
+745
+00:27:22,850 --> 00:27:23,690
+ Halo semua. 
+
+746
+00:27:23,690 --> 00:27:24,690
+ Namaku Dave LaPorte. 
+
+747
+00:27:24,690 --> 00:27:27,050
+
+
+748
+00:27:27,050 --> 00:27:29,950
+ Seperti klaim judul yang sangat verbose ini, 
+
+749
+00:27:29,950 --> 00:27:33,272
+ Saya Manajer Operasi Infrastruktur dan Keamanan, 
+
+750
+00:27:33,272 --> 00:27:34,730
+ yang pada intinya berarti singkat 
+
+751
+00:27:34,730 --> 00:27:38,970
+ Saya bertanggung jawab untuk menjaga dan mengoperasikan dan mengamankan 
+
+752
+00:27:38,970 --> 00:27:44,190
+ mit.net, yang jelas merupakan pekerjaan penuh waktu. 
+
+753
+00:27:44,190 --> 00:27:47,212
+ Hari ini, saya punya banyak konten untuk dibahas. 
+
+754
+00:27:47,212 --> 00:27:49,670
+ Saya akan menjelajahinya, meninggalkan ruang untuk pertanyaan 
+
+755
+00:27:49,670 --> 00:27:51,878
+ pada akhirnya, karena saya pikir itu mungkin di mana Anda 
+
+756
+00:27:51,878 --> 00:27:53,070
+ orang mendapatkan hasil maksimal dari itu. 
+
+757
+00:27:53,070 --> 00:27:54,990
+ Jika ada yang tidak jelas, hentikan saya. 
+
+758
+00:27:54,990 --> 00:27:55,220
+ Angkat tanganmu. 
+
+759
+00:27:55,220 --> 00:27:56,511
+ Saya tidak keberatan diganggu. 
+
+760
+00:27:56,511 --> 00:27:58,930
+
+
+761
+00:27:58,930 --> 00:28:02,170
+ Tapi ya, dengan itu, kita akan mulai berbicara dengan Keamanan 
+
+762
+00:28:02,170 --> 00:28:05,800
+ Tim Operasi, yang benar-benar merupakan badan pusat itu 
+
+763
+00:28:05,800 --> 00:28:08,432
+ melakukan keamanan sebagai pekerjaan penuh waktu di MIT. 
+
+764
+00:28:08,432 --> 00:28:09,890
+ Kami akan berbicara tentang beberapa kejadian 
+
+765
+00:28:09,890 --> 00:28:12,530
+ yang kita miliki di masa lalu di sini 
+
+766
+00:28:12,530 --> 00:28:14,610
+ dan apa yang kami lakukan untuk meredakannya 
+
+767
+00:28:14,610 --> 00:28:18,970
+ dan meninggalkan keadaan keamanan saat ini di mit.net. 
+
+768
+00:28:18,970 --> 00:28:20,910
+ Kami akan berbicara tentang lanskap saat ini, apa 
+
+769
+00:28:20,910 --> 00:28:23,210
+ kita menghadapi banyak hal sekarang, yang-- seperti Mark disinggung-- 
+
+770
+00:28:23,210 --> 00:28:26,600
+ adalah untuk gelar besar, sosial. 
+
+771
+00:28:26,600 --> 00:28:29,150
+ Dan kita akan berbicara tentang beberapa tren masa depan, 
+
+772
+00:28:29,150 --> 00:28:35,340
+ yang samar-samar oleh alam, sehingga slide agak jarang. 
+
+773
+00:28:35,340 --> 00:28:38,520
+ Jadi tim di sana, seperti yang Anda lihat adalah Markus. 
+
+774
+00:28:38,520 --> 00:28:40,090
+ Saya melaporkan langsung ke Mark. 
+
+775
+00:28:40,090 --> 00:28:42,530
+ Di bawah saya, ada Tim Operasi Keamanan 
+
+776
+00:28:42,530 --> 00:28:44,440
+ dipimpin oleh pimpinan tim kami, Harry Hoffman. 
+
+777
+00:28:44,440 --> 00:28:49,325
+ Dia memiliki tiga orang di bawahnya, Andrew Munchbach, 
+
+778
+00:28:49,325 --> 00:28:51,080
+ yang pada dasarnya adalah analis yang melakukannya 
+
+779
+00:28:51,080 --> 00:28:52,880
+ banyak pencucian sistem, 
+
+780
+00:28:52,880 --> 00:28:55,190
+ melakukan banyak notifikasi kepada pengguna, 
+
+781
+00:28:55,190 --> 00:28:57,461
+ menanggapi keluhan dari dunia luar. 
+
+782
+00:28:57,461 --> 00:29:00,086
+ Lalu Mike Hossle, yang melakukan banyak kegiatan rekayasa, 
+
+783
+00:29:00,086 --> 00:29:01,910
+ banyak forensik. 
+
+784
+00:29:01,910 --> 00:29:03,600
+ Dan Anda memiliki Monique Buchanan, siapa 
+
+785
+00:29:03,600 --> 00:29:05,840
+ menangani banyak korespondensi dan komunitas 
+
+786
+00:29:05,840 --> 00:29:07,370
+ diluar jangkauan. 
+
+787
+00:29:07,370 --> 00:29:09,765
+ Harry sendiri juga sangat tangan. 
+
+788
+00:29:09,765 --> 00:29:11,515
+ Jadi saya hanya ingin mengawali semua ini 
+
+789
+00:29:11,515 --> 00:29:14,045
+ dengan kami memiliki tim beranggotakan empat orang di institusi yang sangat besar 
+
+790
+00:29:14,045 --> 00:29:15,650
+ dengan banyak perangkat. 
+
+791
+00:29:15,650 --> 00:29:17,530
+ Jadi federasi yang dibicarakan Markus 
+
+792
+00:29:17,530 --> 00:29:19,900
+ benar-benar suatu keharusan, untuk bahkan mencoba 
+
+793
+00:29:19,900 --> 00:29:22,579
+ untuk mengamankan jaringan sebesar ini. 
+
+794
+00:29:22,579 --> 00:29:24,620
+ Jadi sekarang, layanan portofolio yang kami miliki dan apa-- 
+
+795
+00:29:24,620 --> 00:29:26,730
+ kita akan meledakkan melalui hal ini fast-- 
+
+796
+00:29:26,730 --> 00:29:30,750
+ konsultasi, kami berbicara dengan orang-orang dan membantu mereka di kampus. 
+
+797
+00:29:30,750 --> 00:29:34,280
+ Layanan, kami menyediakan beberapa layanan kepada komunitas. 
+
+798
+00:29:34,280 --> 00:29:37,620
+ Dan set alat yang kami gunakan. 
+
+799
+00:29:37,620 --> 00:29:41,520
+ Layanan yang kami berikan cukup bervariasi. 
+
+800
+00:29:41,520 --> 00:29:43,230
+ Kami melakukan penyalahgunaan pelaporan. 
+
+801
+00:29:43,230 --> 00:29:44,790
+ Jadi ini adalah tanggapan atas keluhan 
+
+802
+00:29:44,790 --> 00:29:46,391
+ dari dunia luar, biasanya, 
+
+803
+00:29:46,391 --> 00:29:50,000
+ sebagian besar di antaranya adalah Tor exit node-related. 
+
+804
+00:29:50,000 --> 00:29:50,700
+ [TAWA] 
+
+805
+00:29:50,700 --> 00:29:52,076
+ Mereka begitu saja. 
+
+806
+00:29:52,076 --> 00:29:53,584
+ PROFESOR: Mereka baru saja. 
+
+807
+00:29:53,584 --> 00:29:55,250
+ PROFESOR: Perlindungan titik akhir, jadi di sana 
+
+808
+00:29:55,250 --> 00:29:57,250
+ beberapa alat dan produk di luar sana 
+
+809
+00:29:57,250 --> 00:30:00,800
+ yang kami pasang di komunitas pada mesin besar-- 
+
+810
+00:30:00,800 --> 00:30:02,680
+ Anda memilih ikut jika Anda lebih suka. 
+
+811
+00:30:02,680 --> 00:30:05,115
+ Jika Anda bagian dari domain MIT, yang biasanya 
+
+812
+00:30:05,115 --> 00:30:08,602
+ staf administrasi, beberapa mungkin dipasang otomatis untuk Anda. 
+
+813
+00:30:08,602 --> 00:30:10,810
+ Perlindungan jaringan, ini adalah kumpulan alat yang kami miliki, 
+
+814
+00:30:10,810 --> 00:30:13,260
+ baik di perbatasan atau di seluruh mit.net 
+
+815
+00:30:13,260 --> 00:30:19,570
+ yang mendeteksi anomali atau menangkap data aliran untuk analisis. 
+
+816
+00:30:19,570 --> 00:30:22,071
+ Analisis data membantu kami berkorelasi, meletakkan semua hal ini 
+
+817
+00:30:22,071 --> 00:30:24,404
+ bersama-sama dan mencoba untuk mendapatkan beberapa intelijen yang dapat ditindaklanjuti 
+
+818
+00:30:24,404 --> 00:30:26,100
+ tentang itu. 
+
+819
+00:30:26,100 --> 00:30:30,300
+ Forensik ... baiklah, kita akan membicarakannya sebentar lagi. 
+
+820
+00:30:30,300 --> 00:30:33,830
+ Identifikasi risiko, pada dasarnya alat menyelidik dan penilaian, 
+
+821
+00:30:33,830 --> 00:30:37,750
+ pada dasarnya Nessus dan hal-hal yang mencari PII, 
+
+822
+00:30:37,750 --> 00:30:40,010
+ Informasi Identitas Pribadi. 
+
+823
+00:30:40,010 --> 00:30:44,210
+ yang, di Massachusetts, kita harus mematuhi 201 CMR 
+
+824
+00:30:44,210 --> 00:30:47,470
+ 17.00, yang merupakan peraturan Massal yang mengharuskan kita 
+
+825
+00:30:47,470 --> 00:30:51,650
+ untuk dapat mengidentifikasi di mana semua PII di jaringan kami hidup. 
+
+826
+00:30:51,650 --> 00:30:54,520
+ Kesadaran dan pelatihan outreach, hanya apa yang dikatakannya. 
+
+827
+00:30:54,520 --> 00:30:58,590
+ Kebutuhan kepatuhan, ini, sebagian besar, PCI DSS. 
+
+828
+00:30:58,590 --> 00:31:01,160
+ Jadi PCI, menjadi Industri Kartu Pembayaran, 
+
+829
+00:31:01,160 --> 00:31:04,302
+ memiliki DSS, yang merupakan Standar Keamanan Data. 
+
+830
+00:31:04,302 --> 00:31:06,760
+ Percaya atau tidak, MIT-- yah, kamu mungkin akan percaya itu-- 
+
+831
+00:31:06,760 --> 00:31:08,570
+ MIT adalah pedagang kartu kredit. 
+
+832
+00:31:08,570 --> 00:31:11,140
+ Kami memiliki banyak vendor di kampus, 
+
+833
+00:31:11,140 --> 00:31:12,750
+ dan kita harus bisa memastikannya 
+
+834
+00:31:12,750 --> 00:31:15,620
+ bahwa infrastruktur tersebut sesuai dengan PCI DSS. 
+
+835
+00:31:15,620 --> 00:31:19,700
+ Jadi Keamanan adalah bagian dari tim yang pada dasarnya mengelola 
+
+836
+00:31:19,700 --> 00:31:21,820
+ dan memastikan kepatuhan itu. 
+
+837
+00:31:21,820 --> 00:31:27,230
+ PCI 3.0, yang merupakan pembaruan utama keenam standar, 
+
+838
+00:31:27,230 --> 00:31:28,820
+ ditayangkan pada tanggal 1 Januari. 
+
+839
+00:31:28,820 --> 00:31:30,800
+ Jadi kami sedang dalam proses sekarang 
+
+840
+00:31:30,800 --> 00:31:33,460
+ memastikan kepatuhan terhadap semua infrastruktur kami. 
+
+841
+00:31:33,460 --> 00:31:39,520
+ Dan memberikan pelaporan yang mengingatkan metrik pada pekerjaan yang kita lakukan. 
+
+842
+00:31:39,520 --> 00:31:43,440
+ Jadi inilah beberapa produk perlindungan titik akhir yang kami gunakan. 
+
+843
+00:31:43,440 --> 00:31:46,100
+ Elang ini - saya pikir itu elang di sana-- 
+
+844
+00:31:46,100 --> 00:31:49,890
+ adalah alat yang disebut CrowdStrike, yang saat ini 
+
+845
+00:31:49,890 --> 00:31:53,595
+ sedang diuji dalam IS & T. Pada dasarnya, ini 
+
+846
+00:31:53,595 --> 00:31:56,990
+ alat yang memperhatikan perilaku anomali 
+
+847
+00:31:56,990 --> 00:31:59,350
+ dari perspektif panggilan sistem. 
+
+848
+00:31:59,350 --> 00:32:00,977
+ Jika Anda menggunakan Word, dan Word tiba-tiba 
+
+849
+00:32:00,977 --> 00:32:02,810
+ mulai melakukan sesuatu yang seharusnya tidak dilakukan, 
+
+850
+00:32:02,810 --> 00:32:05,320
+ seperti mungkin mencoba membaca basis data akun 
+
+851
+00:32:05,320 --> 00:32:07,430
+ sistem dan sekelompok kata sandi, 
+
+852
+00:32:07,430 --> 00:32:10,220
+ itu mengingatkan dan melempar bendera. 
+
+853
+00:32:10,220 --> 00:32:13,430
+ Ini adalah alat berbasis cloud, yang akan kita bicarakan lebih lanjut nanti. 
+
+854
+00:32:13,430 --> 00:32:16,120
+ Jadi semua data ini dikirim ke konsol pusat. 
+
+855
+00:32:16,120 --> 00:32:18,890
+ Dan seharusnya mesin mulai melakukan hal-hal yang tidak diinginkan 
+
+856
+00:32:18,890 --> 00:32:21,430
+ dari perspektif heuristik atau perilaku, 
+
+857
+00:32:21,430 --> 00:32:24,040
+ mereka mendapat bendera merah. 
+
+858
+00:32:24,040 --> 00:32:26,410
+ GPO di sini, ini hanya Objek Kebijakan Grup, 
+
+859
+00:32:26,410 --> 00:32:28,950
+ jadi sistem yang dikelola yang menekan kebijakan. 
+
+860
+00:32:28,950 --> 00:32:30,790
+ S adalah Sophos. 
+
+861
+00:32:30,790 --> 00:32:33,320
+ Ini anti-xrays, anti-malware, anti-spam-- 
+
+862
+00:32:33,320 --> 00:32:35,130
+ oh, bukan anti-spam-- tapi anti-malware, 
+
+863
+00:32:35,130 --> 00:32:37,210
+ anti-virus, semua hal yang khas 
+
+864
+00:32:37,210 --> 00:32:41,750
+ yang kami harapkan ketika kami membeli dan produk perlindungan titik akhir. 
+
+865
+00:32:41,750 --> 00:32:48,480
+ PGP melakukan enkripsi hard drive untuk sistem tertentu di kampus 
+
+866
+00:32:48,480 --> 00:32:50,650
+ yang memiliki data sensitif. 
+
+867
+00:32:50,650 --> 00:32:53,070
+ Beberapa alat ini berubah-ubah. 
+
+868
+00:32:53,070 --> 00:32:55,180
+ Industri tampaknya semakin mengarah ke lebih banyak lagi 
+
+869
+00:32:55,180 --> 00:32:58,540
+ solusi netral vendor, jika Anda mau 
+
+870
+00:32:58,540 --> 00:33:02,420
+ untuk menyebutnya begitu, jadi BitLocker di Windows, FileVault di Mac. 
+
+871
+00:33:02,420 --> 00:33:04,720
+ Jadi kami mengeksplorasi opsi-opsi itu juga. 
+
+872
+00:33:04,720 --> 00:33:10,070
+ Dan Casper adalah cara untuk mengelola, sebagian besar Mac, untuk menegakkan kebijakan 
+
+873
+00:33:10,070 --> 00:33:12,980
+ pada Mac yang dikelola. 
+
+874
+00:33:12,980 --> 00:33:15,760
+ Di sisi perlindungan jaringan-- 
+
+875
+00:33:15,760 --> 00:33:17,770
+ Saya hanya akan mulai di sini. 
+
+876
+00:33:17,770 --> 00:33:20,280
+ Akamai adalah perusahaan yang keluar dari MIT, 
+
+877
+00:33:20,280 --> 00:33:21,780
+ memiliki banyak alum MIT. 
+
+878
+00:33:21,780 --> 00:33:24,220
+ Mereka juga memiliki layanan yang sangat baik, 
+
+879
+00:33:24,220 --> 00:33:28,410
+ jadi kami telah bermitra dengan mereka dalam banyak layanan mereka. 
+
+880
+00:33:28,410 --> 00:33:31,390
+ Dan kita akan membicarakannya secara luas. 
+
+881
+00:33:31,390 --> 00:33:35,900
+ TippingPoint adalah vendor IDS, sistem deteksi intrusi. 
+
+882
+00:33:35,900 --> 00:33:38,197
+ Seperti yang saya katakan, beberapa alat ini berubah-ubah. 
+
+883
+00:33:38,197 --> 00:33:39,280
+ Itu mungkin salah satunya. 
+
+884
+00:33:39,280 --> 00:33:42,740
+ Tetapi pada dasarnya kita memiliki sistem pencegahan intrusi 
+
+885
+00:33:42,740 --> 00:33:43,750
+ di perbatasan kita. 
+
+886
+00:33:43,750 --> 00:33:45,970
+ Kami sebenarnya tidak mencegah, kami hanya mendeteksi. 
+
+887
+00:33:45,970 --> 00:33:49,600
+ Jadi kami sebenarnya tidak memblokir apa pun di perbatasan MIT, 
+
+888
+00:33:49,600 --> 00:33:52,370
+ kecuali beberapa anti-spoofing yang sangat dasar 
+
+889
+00:33:52,370 --> 00:33:55,300
+ dan aturan standar yang Anda temukan di mana saja. 
+
+890
+00:33:55,300 --> 00:33:58,610
+ Stealth Watch adalah alat yang menghasilkan data NetFlow-- 
+
+891
+00:33:58,610 --> 00:34:00,870
+ atau saya harus mengatakan mengumpulkan data NetFlow. 
+
+892
+00:34:00,870 --> 00:34:05,140
+ Jadi kami menggunakan perangkat Cisco, tetapi semua perangkat jaringan 
+
+893
+00:34:05,140 --> 00:34:07,924
+ akan menampilkan detail, informasi meta 
+
+894
+00:34:07,924 --> 00:34:09,679
+ tentang arus yang mereka kirim, 
+
+895
+00:34:09,679 --> 00:34:12,415
+ port sumber, port dest, sumber IP, dest IP, protokol, 
+
+896
+00:34:12,415 --> 00:34:14,380
+ dan sebagainya. 
+
+897
+00:34:14,380 --> 00:34:18,520
+ StealthWatch mengumpulkan ini, melakukan beberapa analisis keamanan dasar 
+
+898
+00:34:18,520 --> 00:34:20,650
+ di atasnya, dan juga menyediakan API yang kami 
+
+899
+00:34:20,650 --> 00:34:22,310
+ dapat menghubungkan alat kami dengan yang harus dilakukan 
+
+900
+00:34:22,310 --> 00:34:25,949
+ beberapa hal yang lebih cerdas. 
+
+901
+00:34:25,949 --> 00:34:28,580
+ Dan RSA Security Analytics, ini adalah alat lain. 
+
+902
+00:34:28,580 --> 00:34:30,570
+ [BANG] Ups. 
+
+903
+00:34:30,570 --> 00:34:34,710
+ Itu, dalam banyak cara, seperti IDS pada steroid. 
+
+904
+00:34:34,710 --> 00:34:36,800
+ Itu menangkap paket penuh, jadi Anda benar-benar bisa 
+
+905
+00:34:36,800 --> 00:34:38,864
+ lihat beberapa konten jika ada yang ditandai merah. 
+
+906
+00:34:38,864 --> 00:34:42,310
+
+
+907
+00:34:42,310 --> 00:34:44,090
+ Di depan identifikasi risiko, 
+
+908
+00:34:44,090 --> 00:34:50,290
+ Nessus, jenis alat penilaian kerentanan de facto. 
+
+909
+00:34:50,290 --> 00:34:52,350
+ Jadi kami biasanya menggunakan ini sesuai permintaan. 
+
+910
+00:34:52,350 --> 00:34:55,420
+ Kami tidak melepaskan ini pada 18/8 pada umumnya. 
+
+911
+00:34:55,420 --> 00:34:59,240
+ Tetapi jika kita mendapatkan DLC di kampus itu 
+
+912
+00:34:59,240 --> 00:35:03,360
+ ingin kami datang dan melakukan penilaian dasar 
+
+913
+00:35:03,360 --> 00:35:05,750
+ bagi mereka, kita bisa menggunakan Nessus. 
+
+914
+00:35:05,750 --> 00:35:08,810
+ Shodan adalah komputer-- mereka menyebutnya mesin pencari komputer. 
+
+915
+00:35:08,810 --> 00:35:11,430
+ Pada dasarnya, mereka memindai internet secara luas 
+
+916
+00:35:11,430 --> 00:35:13,334
+ dan memiliki banyak, banyak data keamanan yang bagus. 
+
+917
+00:35:13,334 --> 00:35:14,750
+ Kami memiliki langganan, sehingga kami 
+
+918
+00:35:14,750 --> 00:35:16,940
+ dapat memanfaatkan kecerdasan itu. 
+
+919
+00:35:16,940 --> 00:35:19,790
+ Dan Identity Finder, itu alat 
+
+920
+00:35:19,790 --> 00:35:22,930
+ yang kami gunakan di lokasi di mana ada PII, 
+
+921
+00:35:22,930 --> 00:35:24,480
+ Informasi Identitas Pribadi, 
+
+922
+00:35:24,480 --> 00:35:26,652
+ untuk mematuhi aturan massa 
+
+923
+00:35:26,652 --> 00:35:28,985
+ dan hanya untuk memastikan kita tahu di mana data penting hidup. 
+
+924
+00:35:28,985 --> 00:35:31,920
+
+
+925
+00:35:31,920 --> 00:35:42,163
+ Forensik adalah bisnis yang-- 
+
+926
+00:35:42,163 --> 00:35:43,430
+ berkala? 
+
+927
+00:35:43,430 --> 00:35:44,950
+ Saya mencari kata yang tepat. 
+
+928
+00:35:44,950 --> 00:35:47,250
+ Ini bukan sesuatu yang kita lakukan, sampai kita melakukan banyak hal 
+
+929
+00:35:47,250 --> 00:35:48,010
+ untuk waktu yang lama. 
+
+930
+00:35:48,010 --> 00:35:49,410
+ Dan kemudian kita tidak melakukan banyak hal. 
+
+931
+00:35:49,410 --> 00:35:52,430
+ Pada dasarnya, ketika permukaan kasus, kami memiliki set alat. 
+
+932
+00:35:52,430 --> 00:35:54,510
+ EnCase adalah alat yang memungkinkan kita untuk drive gambar 
+
+933
+00:35:54,510 --> 00:35:56,450
+ dan pergi melaluinya mencari konten. 
+
+934
+00:35:56,450 --> 00:35:59,575
+ FTK, Forensic Toolkit, dan Sleuth Kit adalah alat lain. 
+
+935
+00:35:59,575 --> 00:36:02,090
+
+
+936
+00:36:02,090 --> 00:36:06,160
+ Kita sering dipanggil untuk kasus-kasus di mana kita harus drive gambar 
+
+937
+00:36:06,160 --> 00:36:10,300
+ untuk kasus kekayaan intelektual atau kasus apa pun OGC, 
+
+938
+00:36:10,300 --> 00:36:11,900
+ Kantor Penasihat Umum, 
+
+939
+00:36:11,900 --> 00:36:15,910
+ perlu memiliki komputer yang dicitrakan. 
+
+940
+00:36:15,910 --> 00:36:18,520
+ Jadi kami memiliki semua alat yang diperlukan untuk melakukan itu. 
+
+941
+00:36:18,520 --> 00:36:20,050
+ Tapi sejujurnya, ini bukan pekerjaan kita sehari-hari. 
+
+942
+00:36:20,050 --> 00:36:22,154
+ Itu adalah sesuatu yang muncul sesekali. 
+
+943
+00:36:22,154 --> 00:36:23,820
+ Jadi bagaimana kita mengumpulkan semua data ini? 
+
+944
+00:36:23,820 --> 00:36:26,690
+ Tandai disinggung korelasi. 
+
+945
+00:36:26,690 --> 00:36:30,165
+ Kami memiliki log sistem operasi untuk sistem yang dikelola. 
+
+946
+00:36:30,165 --> 00:36:31,540
+ Anda dapat melihat bahwa kami memiliki NetFlow. 
+
+947
+00:36:31,540 --> 00:36:35,940
+ Kami memiliki beberapa log DHCP, IDS log, log Touchstone. 
+
+948
+00:36:35,940 --> 00:36:41,440
+ Splunk adalah alat yang melakukan banyak korelasi ini 
+
+949
+00:36:41,440 --> 00:36:44,842
+ bekerja dan mengambil data yang belum tentu dinormalisasi 
+
+950
+00:36:44,842 --> 00:36:46,740
+ dan menormalkannya dan memungkinkan kami untuk berkorelasi 
+
+951
+00:36:46,740 --> 00:36:49,690
+ di berbagai sumber untuk mendapatkan lebih banyak kecerdasan. 
+
+952
+00:36:49,690 --> 00:36:52,117
+ Jadi ketika kamu berbicara tentang-- 
+
+953
+00:36:52,117 --> 00:36:53,700
+ siapa pun di luar sana bertanya tentang, mungkin, 
+
+954
+00:36:53,700 --> 00:36:56,720
+ halaman log-in yang bisa menunjukkan di mana Anda terakhir login 
+
+955
+00:36:56,720 --> 00:37:00,280
+ di, dan sebagainya, Splunk mungkin akan 
+
+956
+00:37:00,280 --> 00:37:01,915
+ menjadi teknologi yang memungkinkan untuk itu, 
+
+957
+00:37:01,915 --> 00:37:03,540
+ karena kita bisa menyatukan semuanya, 
+
+958
+00:37:03,540 --> 00:37:07,340
+ kita bisa melakukan pencarian GeoIP, dan benar-benar membangun sesuatu 
+
+959
+00:37:07,340 --> 00:37:11,080
+ di atas data mentah, tarik kebijaksanaan yang sebenarnya 
+
+960
+00:37:11,080 --> 00:37:13,605
+ dari data itu, sehingga kami bisa menyajikannya kepada Anda di halaman. 
+
+961
+00:37:13,605 --> 00:37:16,540
+
+
+962
+00:37:16,540 --> 00:37:17,040
+ BAIK. 
+
+963
+00:37:17,040 --> 00:37:21,055
+ Jadi sekarang, kita akan berbicara tentang serangan dan hal-hal 
+
+964
+00:37:21,055 --> 00:37:23,274
+ yang mungkin Anda temukan lebih menarik. 
+
+965
+00:37:23,274 --> 00:37:25,440
+ Kami akan berbicara pertama tentang Distributed Denial of Service 
+
+966
+00:37:25,440 --> 00:37:26,940
+ serangan, yang kami terima 
+
+967
+00:37:26,940 --> 00:37:29,290
+ banyak dalam beberapa tahun terakhir. 
+
+968
+00:37:29,290 --> 00:37:31,040
+ Kami juga akan berbicara secara khusus tentang serangan 
+
+969
+00:37:31,040 --> 00:37:34,160
+ yang dihasilkan dari tragedi Aaron Swartz beberapa tahun 
+
+970
+00:37:34,160 --> 00:37:38,730
+ lalu, yang terkait dengan Distributed Denial of Service 
+
+971
+00:37:38,730 --> 00:37:40,850
+ serangan. 
+
+972
+00:37:40,850 --> 00:37:41,350
+ BAIK. 
+
+973
+00:37:41,350 --> 00:37:44,230
+ Jadi hanya sebuah primer tentang Distributed Denial of Service. 
+
+974
+00:37:44,230 --> 00:37:47,110
+ Saya minta maaf jika ini remedial. 
+
+975
+00:37:47,110 --> 00:37:48,980
+ Jadi serangan Denial of Service benar-benar 
+
+976
+00:37:48,980 --> 00:37:51,110
+ menyerang A dari triad CIA. 
+
+977
+00:37:51,110 --> 00:37:53,110
+ CIA triad adalah dasar keamanan komputer. 
+
+978
+00:37:53,110 --> 00:37:55,955
+ Ini Kerahasiaan, Integritas, dan Ketersediaan. 
+
+979
+00:37:55,955 --> 00:37:57,830
+ Jadi kita akan mencari ketersediaan, bukan? 
+
+980
+00:37:57,830 --> 00:38:01,260
+ Kami ingin mengambil sumber daya sehingga pengguna yang sah tidak bisa 
+
+981
+00:38:01,260 --> 00:38:03,092
+ Gunakan. 
+
+982
+00:38:03,092 --> 00:38:04,550
+ Itu bisa menjadi pergantian halaman. 
+
+983
+00:38:04,550 --> 00:38:05,530
+ Sangat sederhana, bukan? 
+
+984
+00:38:05,530 --> 00:38:08,362
+ Grafiti digital, hanya merusak halaman sehingga tidak ada yang bisa melihatnya. 
+
+985
+00:38:08,362 --> 00:38:09,820
+ Bisa jadi konsumsi sumber daya di mana 
+
+986
+00:38:09,820 --> 00:38:12,510
+ Anda memakan semua perhitungan pada suatu sistem, 
+
+987
+00:38:12,510 --> 00:38:14,700
+ semua bandwidth di jaringan. 
+
+988
+00:38:14,700 --> 00:38:16,219
+ Bisa jadi penyerang tunggal. 
+
+989
+00:38:16,219 --> 00:38:17,760
+ Tetapi jauh lebih mungkin saat ini, Anda 
+
+990
+00:38:17,760 --> 00:38:19,384
+ akan mengundang teman-teman Anda dan Anda 
+
+991
+00:38:19,384 --> 00:38:20,957
+ akan mengadakan pesta dan DDoS, 
+
+992
+00:38:20,957 --> 00:38:22,290
+ Penolakan Layanan Terdistribusi. 
+
+993
+00:38:22,290 --> 00:38:27,330
+
+
+994
+00:38:27,330 --> 00:38:29,340
+ OK ini adalah tren terbaru di industri. 
+
+995
+00:38:29,340 --> 00:38:31,580
+ Ini ditarik dari Jaringan Arbor 
+
+996
+00:38:31,580 --> 00:38:35,010
+ Laporan keadaan Internet. 
+
+997
+00:38:35,010 --> 00:38:39,370
+ Hacktivisme adalah motivasi yang paling umum. 
+
+998
+00:38:39,370 --> 00:38:43,690
+ Menurut mereka, itu 40% dari semua yang diklaim-- 
+
+999
+00:38:43,690 --> 00:38:46,240
+ sebenarnya, serangan yang dikaitkan, 40% dari mereka 
+
+1000
+00:38:46,240 --> 00:38:48,090
+ dikaitkan dengan hacktivism. 
+
+1001
+00:38:48,090 --> 00:38:50,030
+ Yang berikutnya adalah 39% tidak diketahui. 
+
+1002
+00:38:50,030 --> 00:38:56,380
+ Jadi mendominasi bagian atas tumpukan. 
+
+1003
+00:38:56,380 --> 00:38:59,750
+ Tahun lalu-- dan angka-angka ini, saya yakin, berasal dari 2013-- 
+
+1004
+00:38:59,750 --> 00:39:03,320
+ ada beberapa serangan 100Gbps. 
+
+1005
+00:39:03,320 --> 00:39:04,850
+ Jadi tahun sebelum itu menjadi berita 
+
+1006
+00:39:04,850 --> 00:39:07,885
+ karena saya pikir ada serangan terhadap Spamhaus itu 
+
+1007
+00:39:07,885 --> 00:39:09,990
+ adalah 300Gbpm. 
+
+1008
+00:39:09,990 --> 00:39:12,244
+ Tahun berikutnya, itu semacam-- 
+
+1009
+00:39:12,244 --> 00:39:13,660
+ Saya tidak akan mengatakan norma, tapi kami 
+
+1010
+00:39:13,660 --> 00:39:16,280
+ melihat lebih banyak dari itu. 
+
+1011
+00:39:16,280 --> 00:39:19,570
+ Serangan yang berlangsung lebih lama, operasi ini di sini, 
+
+1012
+00:39:19,570 --> 00:39:22,850
+ Ababil, adalah serangan multi-bulan terhadap AS 
+
+1013
+00:39:22,850 --> 00:39:25,370
+ sektor keuangan. 
+
+1014
+00:39:25,370 --> 00:39:26,720
+ Itu berlangsung berbulan-bulan. 
+
+1015
+00:39:26,720 --> 00:39:29,579
+ Itu 65Gps berkelanjutan di kali. 
+
+1016
+00:39:29,579 --> 00:39:31,870
+ Saya pernah mendengar cerita tentang ini - tetapi Anda bisa lebih banyak menggunakan Google 
+
+1017
+00:39:31,870 --> 00:39:32,700
+ on line-- 
+
+1018
+00:39:32,700 --> 00:39:35,130
+ dimana itu tanpa henti. 
+
+1019
+00:39:35,130 --> 00:39:36,600
+ Mereka tidak bisa menghentikannya. 
+
+1020
+00:39:36,600 --> 00:39:39,170
+ Dan kita akan berbicara tentang bagaimana akhirnya mereka melakukannya. 
+
+1021
+00:39:39,170 --> 00:39:42,919
+ Tapi terus terang, pada 65Gbps atau pada 100Gbps, 
+
+1022
+00:39:42,919 --> 00:39:44,710
+ Anda berada di bawah kekuasaan penyerang, bukan? 
+
+1023
+00:39:44,710 --> 00:39:47,200
+ Hanya ada sedikit organisasi di planet ini 
+
+1024
+00:39:47,200 --> 00:39:49,390
+ yang dapat mempertahankan serangan-- 
+
+1025
+00:39:49,390 --> 00:39:54,260
+ dapat mempertahankan - dapat bertahan dari serangan yang berkelanjutan 
+
+1026
+00:39:54,260 --> 00:39:55,622
+ sebesar itu. 
+
+1027
+00:39:55,622 --> 00:39:58,350
+ Anda tidak bisa melakukannya. 
+
+1028
+00:39:58,350 --> 00:40:01,400
+ Dan kita melihat pergeseran ke arah refleksi dan amplifikasi 
+
+1029
+00:40:01,400 --> 00:40:02,310
+ serangan. 
+
+1030
+00:40:02,310 --> 00:40:07,080
+ Jadi ini adalah di mana Anda mengambil masukan kecil 
+
+1031
+00:40:07,080 --> 00:40:08,720
+ dan menghasilkan output yang besar. 
+
+1032
+00:40:08,720 --> 00:40:09,640
+ Ini bukan hal baru. 
+
+1033
+00:40:09,640 --> 00:40:12,610
+ Ini jalan kembali ke-- 
+
+1034
+00:40:12,610 --> 00:40:17,070
+ mari kita lanjutkan sebentar, baiklah, aku meninggalkan slide itu keluar-- 
+
+1035
+00:40:17,070 --> 00:40:22,880
+ tapi ini berjalan kembali ke serangan ICMP Smurf 
+
+1036
+00:40:22,880 --> 00:40:25,645
+ di mana Anda akan melakukan ping alamat broadcast dari suatu jaringan, 
+
+1037
+00:40:25,645 --> 00:40:27,020
+ dan setiap mesin di jaringan itu 
+
+1038
+00:40:27,020 --> 00:40:30,326
+ akan menanggapi pencetus yang seharusnya 
+
+1039
+00:40:30,326 --> 00:40:32,700
+ dari paket, yang tentu saja, akan dipalsukan, kan? 
+
+1040
+00:40:32,700 --> 00:40:35,090
+ Jadi saya akan menyamar sebagai Markus. 
+
+1041
+00:40:35,090 --> 00:40:37,580
+ Saya akan mengirim paket ke alamat broadcast kelas ini. 
+
+1042
+00:40:37,580 --> 00:40:40,960
+ Dan Anda semua akan merespon dengan paket untuk Mark, 
+
+1043
+00:40:40,960 --> 00:40:42,240
+ berpikir bahwa dia mengirimnya. 
+
+1044
+00:40:42,240 --> 00:40:44,410
+ Sementara itu, saya duduk di sudut dan tertawa. 
+
+1045
+00:40:44,410 --> 00:40:45,770
+ Jadi ini bukan hal baru. 
+
+1046
+00:40:45,770 --> 00:40:48,050
+ Ini kembali - maksud saya, ketika saya masih di sekolah menengah, 
+
+1047
+00:40:48,050 --> 00:40:51,011
+ Saya sedang membaca tentang hal ini. 
+
+1048
+00:40:51,011 --> 00:40:53,170
+ [TAWA] 
+
+1049
+00:40:53,170 --> 00:40:57,370
+ Jadi UDP dan ICMP, tetapi UDP adalah kebakaran dan melupakan protokol, 
+
+1050
+00:40:57,370 --> 00:40:57,870
+ kanan? 
+
+1051
+00:40:57,870 --> 00:40:58,746
+ Bukan TCP. 
+
+1052
+00:40:58,746 --> 00:40:59,495
+ Itu tidak bisa diandalkan. 
+
+1053
+00:40:59,495 --> 00:41:01,220
+ Ini tidak berorientasi pada koneksi. 
+
+1054
+00:41:01,220 --> 00:41:04,740
+ Jadi api dan lupakan, itu mudah spoofable. 
+
+1055
+00:41:04,740 --> 00:41:06,780
+ Dan selama setahun terakhir, apa yang kami lihat 
+
+1056
+00:41:06,780 --> 00:41:12,560
+ adalah eksploitasi fitur penguat dari ketiganya 
+
+1057
+00:41:12,560 --> 00:41:14,720
+ protokol, khususnya. 
+
+1058
+00:41:14,720 --> 00:41:17,844
+ Jadi DNS-- ini tidak berfungsi. 
+
+1059
+00:41:17,844 --> 00:41:20,150
+ Ia bekerja dengan clicker. 
+
+1060
+00:41:20,150 --> 00:41:24,280
+ DNS, port 53, UDP, kan? 
+
+1061
+00:41:24,280 --> 00:41:27,770
+ Pada dasarnya, jika Anda mengirim query SETIAP 64-byte 
+
+1062
+00:41:27,770 --> 00:41:30,000
+ ke server yang salah konfigurasi, itu akan merespon 
+
+1063
+00:41:30,000 --> 00:41:32,740
+ dengan tanggapan 512-byte. 
+
+1064
+00:41:32,740 --> 00:41:36,070
+ Jadi itulah faktor amplifikasi 8X di sana. 
+
+1065
+00:41:36,070 --> 00:41:38,400
+ Tidak buruk. 
+
+1066
+00:41:38,400 --> 00:41:40,860
+ Apa yang kami temukan secara pribadi di sini di mit.net adalah, 
+
+1067
+00:41:40,860 --> 00:41:44,022
+ saat seluruh tren ini dimulai, seperti kebanyakan hal-- 
+
+1068
+00:41:44,022 --> 00:41:46,230
+ EDU dan khususnya di sini - kami berada di garis terdepan 
+
+1069
+00:41:46,230 --> 00:41:47,210
+ ke dalam tren ini. 
+
+1070
+00:41:47,210 --> 00:41:49,640
+ Kami melihat ini sebelum benar-benar lepas landas 
+
+1071
+00:41:49,640 --> 00:41:52,190
+ terhadap korban komersial. 
+
+1072
+00:41:52,190 --> 00:41:56,890
+ Tapi kami melihat serangan amplifikasi DNS 12-gig di sini, 
+
+1073
+00:41:56,890 --> 00:42:00,500
+ yang secara substansial berdampak pada bandwidth keluar kami. 
+
+1074
+00:42:00,500 --> 00:42:03,190
+ Kami memiliki bandwidth yang cukup. 
+
+1075
+00:42:03,190 --> 00:42:06,550
+ Tetapi dengan harga tersebut, jika Anda menambahkannya ke lalu lintas yang sah, 
+
+1076
+00:42:06,550 --> 00:42:07,810
+ kami mulai memperhatikan masalah. 
+
+1077
+00:42:07,810 --> 00:42:10,150
+ Dan Markus dan saya harus datang dan menyelesaikannya. 
+
+1078
+00:42:10,150 --> 00:42:13,270
+
+
+1079
+00:42:13,270 --> 00:42:18,710
+ SNMP, yang merupakan port UDP 161, manajemen yang sangat berguna 
+
+1080
+00:42:18,710 --> 00:42:19,750
+ protokol. 
+
+1081
+00:42:19,750 --> 00:42:24,820
+ Tetapi jika Anda mengirim GetBulkRequest dari 64 byte ke perangkat 
+
+1082
+00:42:24,820 --> 00:42:30,330
+ yang tidak dikonfigurasi dengan benar, akan merespons hingga 1.000X 
+
+1083
+00:42:30,330 --> 00:42:31,560
+ amplifikasi. 
+
+1084
+00:42:31,560 --> 00:42:33,100
+ Jadi itu lebih baik, bukan? 
+
+1085
+00:42:33,100 --> 00:42:35,308
+ Jika Anda penyerang, Anda akan menargetkan hal-hal. 
+
+1086
+00:42:35,308 --> 00:42:38,950
+ Dan kami melihat serangan besar terhadap printer di kampus. 
+
+1087
+00:42:38,950 --> 00:42:42,290
+ Jadi mereka akan memiliki printer dengan agen SNMP terbuka. 
+
+1088
+00:42:42,290 --> 00:42:44,280
+ Mereka akan mengirim paket ke sana. 
+
+1089
+00:42:44,280 --> 00:42:50,360
+ Dan kami akan mengirim 1.000 dari mereka dan mengotori internet. 
+
+1090
+00:42:50,360 --> 00:42:54,720
+ NTP, Network Time Protocol. 
+
+1091
+00:42:54,720 --> 00:42:56,220
+ Dalam hal ini, server yang salah konfigurasi 
+
+1092
+00:42:56,220 --> 00:42:59,514
+ akan menanggapi perintah MONLIST, yang akan-- 
+
+1093
+00:42:59,514 --> 00:43:01,180
+ Saya tidak yakin tentang faktor amplifikasi 
+
+1094
+00:43:01,180 --> 00:43:01,680
+ pada yang satu itu. 
+
+1095
+00:43:01,680 --> 00:43:03,680
+ Tapi yang satu itu sangat, sangat populer. 
+
+1096
+00:43:03,680 --> 00:43:06,970
+ Jadi kami dipukul cukup keras dengan NTP MONLIST 
+
+1097
+00:43:06,970 --> 00:43:08,530
+ misconfiguration. 
+
+1098
+00:43:08,530 --> 00:43:10,150
+ Dan kami akhirnya melakukan beberapa hal 
+
+1099
+00:43:10,150 --> 00:43:12,450
+ untuk mengurangi semua serangan ini. 
+
+1100
+00:43:12,450 --> 00:43:14,590
+ Jadi di sisi NTP, kami menonaktifkan MONLIST 
+
+1101
+00:43:14,590 --> 00:43:16,950
+ pada server NTP kita bisa, seperti apa 
+
+1102
+00:43:16,950 --> 00:43:19,080
+ membunuh serangan di jalurnya. 
+
+1103
+00:43:19,080 --> 00:43:21,960
+ Tapi ini adalah lembaga gabungan di mana kita tidak punya 
+
+1104
+00:43:21,960 --> 00:43:23,924
+ berkuasa atas hampir segalanya-- 
+
+1105
+00:43:23,924 --> 00:43:24,840
+ Aku seharusnya tidak mengatakan itu-- 
+
+1106
+00:43:24,840 --> 00:43:26,420
+ hampir semuanya, hanya ada banyak 
+
+1107
+00:43:26,420 --> 00:43:29,370
+ hal-hal yang tidak dapat kami sentuh atau yang berwenang 
+
+1108
+00:43:29,370 --> 00:43:30,024
+ menyentuh. 
+
+1109
+00:43:30,024 --> 00:43:31,440
+ Jadi apa yang akhirnya kami lakukan adalah adil 
+
+1110
+00:43:31,440 --> 00:43:33,530
+ NTP yang membatasi laju di perbatasan. 
+
+1111
+00:43:33,530 --> 00:43:36,940
+ Dan itu sudah ada selama hampir satu tahun? 
+
+1112
+00:43:36,940 --> 00:43:40,180
+ Hampir setahun dengan hampir tidak ada dampak negatif. 
+
+1113
+00:43:40,180 --> 00:43:44,140
+ Jadi kita menilai terbatas ke, katakanlah, beberapa megabit, 
+
+1114
+00:43:44,140 --> 00:43:46,640
+ yang tentu saja lebih baik daripada pertunjukan yang kami kirimkan 
+
+1115
+00:43:46,640 --> 00:43:47,890
+ ke internet sebelumnya. 
+
+1116
+00:43:47,890 --> 00:43:49,990
+ Jadi itu semacam masalah terpecahkan. 
+
+1117
+00:43:49,990 --> 00:43:56,380
+ DNS sedikit lebih keras, sedikit lebih sulit untuk diurus. 
+
+1118
+00:43:56,380 --> 00:43:58,390
+ Apa yang kami lakukan akhirnya mulai mengungkit 
+
+1119
+00:43:58,390 --> 00:44:00,860
+ layanan Akamai yang disebut, eDNS. 
+
+1120
+00:44:00,860 --> 00:44:02,720
+ Jadi Akamai memiliki layanan ini di mana Anda bisa 
+
+1121
+00:44:02,720 --> 00:44:04,900
+ host zona Anda dengan mereka. 
+
+1122
+00:44:04,900 --> 00:44:06,150
+ Mereka adalah salah satu dari banyak penyedia. 
+
+1123
+00:44:06,150 --> 00:44:07,852
+ Tetapi kami memiliki hubungan yang sudah ada 
+
+1124
+00:44:07,852 --> 00:44:09,810
+ dengan Akamai, yang akan saya bicarakan dalam satu menit. 
+
+1125
+00:44:09,810 --> 00:44:14,240
+ Jadi kami memanfaatkan eDNA mereka, membagi draf DNS kami, domain kami 
+
+1126
+00:44:14,240 --> 00:44:16,270
+ beri nama ruang sistem. 
+
+1127
+00:44:16,270 --> 00:44:18,720
+ Kami menempatkan pandangan eksternal pada Akamai. 
+
+1128
+00:44:18,720 --> 00:44:23,070
+ Kami menempatkan internal pada server yang selalu melayani MIT. 
+
+1129
+00:44:23,070 --> 00:44:25,410
+ Lalu kita ACL dari tampilan internal, 
+
+1130
+00:44:25,410 --> 00:44:28,220
+ jadi hanya klien MIT yang dapat menekan server internal kami. 
+
+1131
+00:44:28,220 --> 00:44:31,290
+ Dan seluruh dunia menyentuh Akamai. 
+
+1132
+00:44:31,290 --> 00:44:34,380
+ Manfaat dari Akamai eDNS adalah host dalam suatu konten 
+
+1133
+00:44:34,380 --> 00:44:35,690
+ jaringan distribusi. 
+
+1134
+00:44:35,690 --> 00:44:36,960
+ Di seluruh dunia. 
+
+1135
+00:44:36,960 --> 00:44:41,170
+ Ini dilayani dari Asia, Eropa, Amerika Utara 
+
+1136
+00:44:41,170 --> 00:44:42,510
+ Barat timur. 
+
+1137
+00:44:42,510 --> 00:44:45,472
+ Semuanya ada di mana-mana. 
+
+1138
+00:44:45,472 --> 00:44:46,930
+ Kebanyakan orang tidak bisa mengalahkan Akamai, 
+
+1139
+00:44:46,930 --> 00:44:49,532
+ jadi kami tidak perlu khawatir tentang DNS kami turun lagi. 
+
+1140
+00:44:49,532 --> 00:44:51,490
+ Jadi itulah cara kami mengatasi masalah itu. 
+
+1141
+00:44:51,490 --> 00:44:54,950
+
+
+1142
+00:44:54,950 --> 00:44:55,450
+ BAIK. 
+
+1143
+00:44:55,450 --> 00:45:00,350
+ Jadi ini adalah rincian dari serangan itu sendiri. 
+
+1144
+00:45:00,350 --> 00:45:03,080
+ Sumber obfuscation, ini mungkin remedial. 
+
+1145
+00:45:03,080 --> 00:45:05,163
+ Mengapa Anda melakukannya, untuk menghindari deteksi dan penuntutan. 
+
+1146
+00:45:05,163 --> 00:45:07,770
+
+
+1147
+00:45:07,770 --> 00:45:10,070
+ Saya akan melewatkan yang satu itu. 
+
+1148
+00:45:10,070 --> 00:45:10,570
+ BAIK. 
+
+1149
+00:45:10,570 --> 00:45:12,480
+ Jadi mungkin Anda tidak ingin menyembunyikan alamat Anda 
+
+1150
+00:45:12,480 --> 00:45:14,460
+ atau spoof alamat Anda, Anda hanya ingin 
+
+1151
+00:45:14,460 --> 00:45:17,420
+ untuk menghancurkan target dengan bot. 
+
+1152
+00:45:17,420 --> 00:45:20,632
+ Jadi botnet sangat besar sekarang. 
+
+1153
+00:45:20,632 --> 00:45:23,820
+ "Tidak apa-apa, tidak masalah, bro" 
+
+1154
+00:45:23,820 --> 00:45:27,510
+ digunakan dalam operasi Ababil, yang benar-benar menargetkan AS 
+
+1155
+00:45:27,510 --> 00:45:29,390
+ sektor keuangan. 
+
+1156
+00:45:29,390 --> 00:45:31,140
+ Jadi dalam hal ini, bukan hanya spoofing 
+
+1157
+00:45:31,140 --> 00:45:33,330
+ sekelompok paket dari satu host, 
+
+1158
+00:45:33,330 --> 00:45:37,170
+ kami menggunakan botnet dari sistem yang sah 
+
+1159
+00:45:37,170 --> 00:45:40,340
+ yang tidak perlu hanya spoof. 
+
+1160
+00:45:40,340 --> 00:45:41,810
+ Karena ini adalah sistem yang sah 
+
+1161
+00:45:41,810 --> 00:45:45,040
+ dan mereka akan menanggapi, katakanlah, TCP synack, 
+
+1162
+00:45:45,040 --> 00:45:46,920
+ kita benar-benar dapat melakukan lebih banyak serangan tingkat tinggi, 
+
+1163
+00:45:46,920 --> 00:45:49,967
+ seperti menyerang server HTTP dan lakukan GET dan POST floods. 
+
+1164
+00:45:49,967 --> 00:45:53,630
+
+
+1165
+00:45:53,630 --> 00:45:55,180
+ Mereka mungkin mempekerjakan pemicu stres. 
+
+1166
+00:45:55,180 --> 00:45:57,880
+ Stressors pada dasarnya adalah botnets untuk disewa 
+
+1167
+00:45:57,880 --> 00:46:02,170
+ di mana Anda mempekerjakan mereka untuk melakukan pengujian beban, 
+
+1168
+00:46:02,170 --> 00:46:06,440
+ dan mereka pergi dan memuat tes orang lain untuk Anda. 
+
+1169
+00:46:06,440 --> 00:46:09,980
+ Tidak diragukan, mungkin ada yang sah di luar sana. 
+
+1170
+00:46:09,980 --> 00:46:13,334
+ Tetapi ada orang lain yang tidak dan pada dasarnya 
+
+1171
+00:46:13,334 --> 00:46:14,500
+ penolakan layanan untuk disewa. 
+
+1172
+00:46:14,500 --> 00:46:18,140
+
+
+1173
+00:46:18,140 --> 00:46:19,770
+ OK, jadi strategi mitigasi. 
+
+1174
+00:46:19,770 --> 00:46:22,800
+ Kami berbicara tentang satu, yaitu DNS. 
+
+1175
+00:46:22,800 --> 00:46:25,500
+ Kita dapat menggunakan DNS untuk mengurangi serangan-serangan ini. 
+
+1176
+00:46:25,500 --> 00:46:28,620
+ Jadi kami telah menggunakan Akamai untuk melakukan itu. 
+
+1177
+00:46:28,620 --> 00:46:32,150
+ Dalam grafik ini di sini-- yang mungkin terlalu kecil untuk Anda 
+
+1178
+00:46:32,150 --> 00:46:33,810
+ untuk melihat-- 
+
+1179
+00:46:33,810 --> 00:46:41,170
+ tetapi pada dasarnya, slide ini terlalu jauh ke depan 
+
+1180
+00:46:41,170 --> 00:46:42,030
+ dimana seharusnya. 
+
+1181
+00:46:42,030 --> 00:46:44,770
+ Jadi OK, kami melakukan serangan terhadap server web kami, 
+
+1182
+00:46:44,770 --> 00:46:46,300
+ jadi saya hanya akan menjelaskan Anda dengan cepat. 
+
+1183
+00:46:46,300 --> 00:46:48,730
+ Salah satu serangan yang mengikuti tragedi Swartz 
+
+1184
+00:46:48,730 --> 00:46:51,050
+ adalah serangan terhadap web.mit. 
+
+1185
+00:46:51,050 --> 00:46:52,840
+ Mereka menurunkan server web kami. 
+
+1186
+00:46:52,840 --> 00:46:56,880
+ Cara kami memecahkan itu adalah kami menggunakan DNS bifurcated kami 
+
+1187
+00:46:56,880 --> 00:47:00,520
+ untuk mengarahkan klien internal ke web.mit secara internal. 
+
+1188
+00:47:00,520 --> 00:47:03,240
+ Lalu kami menggunakan jaringan distribusi konten Akamai 
+
+1189
+00:47:03,240 --> 00:47:05,710
+ pada dasarnya mencerminkan web.mit. 
+
+1190
+00:47:05,710 --> 00:47:07,450
+ Lalu kami menggunakan tampilan eksternal 
+
+1191
+00:47:07,450 --> 00:47:11,020
+ DNS kami untuk mengarahkan klien eksternal ke Akamai. 
+
+1192
+00:47:11,020 --> 00:47:14,560
+ Jadi ketika seorang pengguna keluar di internet-- 
+
+1193
+00:47:14,560 --> 00:47:16,200
+ yang akan kami katakan adalah di sini-- 
+
+1194
+00:47:16,200 --> 00:47:18,620
+ ingin membuka web.mit, sebenarnya 
+
+1195
+00:47:18,620 --> 00:47:22,180
+ buka CDN Akamai, yang menyajikan konten. 
+
+1196
+00:47:22,180 --> 00:47:23,790
+ Jika konten itu, untuk beberapa alasan, 
+
+1197
+00:47:23,790 --> 00:47:25,580
+ mereka tidak dapat secara langsung melayani cache, 
+
+1198
+00:47:25,580 --> 00:47:31,050
+ itu dinamis atau apa pun, server asal, yang masih 
+
+1199
+00:47:31,050 --> 00:47:35,910
+ web.mit, dan Akamai akan pergi dan mengambil konten yang diperlukan, 
+
+1200
+00:47:35,910 --> 00:47:38,370
+ kirimkan ke pengguna, lalu berpotensi menyimpannya 
+
+1201
+00:47:38,370 --> 00:47:40,050
+ untuk beberapa interval. 
+
+1202
+00:47:40,050 --> 00:47:43,350
+ Jadi cerita pendek di sini adalah bahwa attack-- 
+
+1203
+00:47:43,350 --> 00:47:44,840
+ Saya akan membicarakannya sebentar lagi-- 
+
+1204
+00:47:44,840 --> 00:47:47,520
+ tetapi cara kami memecahkannya adalah kami menempatkan server web yang sebenarnya 
+
+1205
+00:47:47,520 --> 00:47:50,462
+ di jaringan distribusi konten dari Akamai. 
+
+1206
+00:47:50,462 --> 00:47:53,870
+
+
+1207
+00:47:53,870 --> 00:47:56,380
+ Serangan lain yang akan kita bicarakan 
+
+1208
+00:47:56,380 --> 00:47:57,950
+ about-- ini cara kami mengurangi. 
+
+1209
+00:47:57,950 --> 00:48:01,982
+ Dua slide ini rusak. 
+
+1210
+00:48:01,982 --> 00:48:03,190
+ Jadi saya menyebutkan beberapa serangan. 
+
+1211
+00:48:03,190 --> 00:48:06,090
+ Saya menyebutkan serangan NTP. 
+
+1212
+00:48:06,090 --> 00:48:08,050
+ Saya akan menyebutkan beberapa orang lain. 
+
+1213
+00:48:08,050 --> 00:48:09,610
+ Tetapi pada dasarnya, ini adalah serangan itu 
+
+1214
+00:48:09,610 --> 00:48:12,130
+ hanya brute force, mencoba membanjiri bandwidth kami. 
+
+1215
+00:48:12,130 --> 00:48:14,140
+ Dan saya menyebutkan, ketika Anda bangun ke dalam puluhan 
+
+1216
+00:48:14,140 --> 00:48:19,830
+ rentang gigabit, banyak pengguna akhir internet, 
+
+1217
+00:48:19,830 --> 00:48:20,849
+ seperti MIT-- 
+
+1218
+00:48:20,849 --> 00:48:23,140
+ Anda dapat menamai penyedia layanan lain, tetapi sangat besar 
+
+1219
+00:48:23,140 --> 00:48:25,170
+ user-- bahkan kami akan kesulitan menangani 
+
+1220
+00:48:25,170 --> 00:48:28,077
+ puluhan gigabit lalu lintas. 
+
+1221
+00:48:28,077 --> 00:48:30,410
+ Jadi dalam hal ini, pilihan Anda sangat terbatas, bukan? 
+
+1222
+00:48:30,410 --> 00:48:31,868
+ Jika itu lalulintas palsu, bagaimana Anda 
+
+1223
+00:48:31,868 --> 00:48:35,260
+ letakkan filter di perbatasan Anda untuk memblokir lalu lintas ini? 
+
+1224
+00:48:35,260 --> 00:48:37,702
+ Dan meskipun demikian, begitu sampai ke perbatasan Anda 
+
+1225
+00:48:37,702 --> 00:48:39,910
+ di mana Anda menyaringnya, itu sudah membanjiri pipa Anda. 
+
+1226
+00:48:39,910 --> 00:48:41,047
+ Jadi bagaimana Anda melakukan ini? 
+
+1227
+00:48:41,047 --> 00:48:43,630
+ Anda harus mendorongnya kembali ke awan, ke internet, 
+
+1228
+00:48:43,630 --> 00:48:45,200
+ dan memblokirnya di sana. 
+
+1229
+00:48:45,200 --> 00:48:47,305
+ Dan cara banyak orang memilih untuk melakukannya 
+
+1230
+00:48:47,305 --> 00:48:51,719
+ dan cara kami melakukannya di sini adalah melalui mitigasi BGP. 
+
+1231
+00:48:51,719 --> 00:48:54,010
+ Jadi jika Anda akrab dengan BGP, yang merupakan Border Gateway 
+
+1232
+00:48:54,010 --> 00:48:57,250
+ Protokol, itu protokol yang menjalankan routing di internet. 
+
+1233
+00:48:57,250 --> 00:48:59,680
+ Dan itu adalah protokol vektor jalan itu 
+
+1234
+00:48:59,680 --> 00:49:04,630
+ menggunakan ASN, jadi nomor sistem otonom. 
+
+1235
+00:49:04,630 --> 00:49:07,840
+ Jadi setiap organisasi multi-rumahan di internet 
+
+1236
+00:49:07,840 --> 00:49:11,180
+ memiliki ASN, nomor sistem otonom. 
+
+1237
+00:49:11,180 --> 00:49:16,410
+ Dan BGP menggunakan nomor itu untuk membangun jalur 
+
+1238
+00:49:16,410 --> 00:49:19,120
+ melalui internet sehingga Anda dapat memiliki banyak jalur untuk mendapatkannya 
+
+1239
+00:49:19,120 --> 00:49:22,090
+ ke ASN tertentu. 
+
+1240
+00:49:22,090 --> 00:49:24,225
+ Dalam hal ini, saya menggunakan contoh 123, 
+
+1241
+00:49:24,225 --> 00:49:27,230
+ karena saya membuat ini untuk organisasi lain. 
+
+1242
+00:49:27,230 --> 00:49:31,530
+ Kami bertiga, karena kami luar biasa seperti itu. 
+
+1243
+00:49:31,530 --> 00:49:35,020
+ Harvard adalah 11, jadi mereka sedikit lebih lambat untuk pukulan. 
+
+1244
+00:49:35,020 --> 00:49:37,930
+ Tapi dalam kasus ini, kita punya jalan. 
+
+1245
+00:49:37,930 --> 00:49:41,990
+ Jadi kita punya awal jalannya adalah ASN123. 
+
+1246
+00:49:41,990 --> 00:49:44,160
+ Ujung jalan adalah 789. 
+
+1247
+00:49:44,160 --> 00:49:47,990
+ Dan ada beberapa urutan AS, sistem otonom, 
+
+1248
+00:49:47,990 --> 00:49:50,320
+ bahwa paket ini harus melewatinya. 
+
+1249
+00:49:50,320 --> 00:49:54,160
+ Jadi apa yang akan kita lakukan dengan mitigasi BGP 
+
+1250
+00:49:54,160 --> 00:49:57,050
+ hanya menyuntikkan ASN lain ke dalam campuran. 
+
+1251
+00:49:57,050 --> 00:49:59,100
+ Dan ASN itu memiliki kemampuan 
+
+1252
+00:49:59,100 --> 00:50:02,000
+ untuk menangani lalu lintas ini di kami. 
+
+1253
+00:50:02,000 --> 00:50:06,020
+ Jadi dalam hal ini, kami memiliki ASN456. 
+
+1254
+00:50:06,020 --> 00:50:08,210
+ Dan mereka akan menjadi semacam orang yang dijatuhi sanksi 
+
+1255
+00:50:08,210 --> 00:50:09,460
+ di tengah untuk kita. 
+
+1256
+00:50:09,460 --> 00:50:13,290
+ Kami akan mengizinkan mereka untuk mengiklankan awalan kami sehingga, 
+
+1257
+00:50:13,290 --> 00:50:20,480
+ ketika kita diserang, jika 18.1.2.3.0 / 24, 
+
+1258
+00:50:20,480 --> 00:50:25,070
+ sepotong kecil 255 alamat di MIT diserang, 
+
+1259
+00:50:25,070 --> 00:50:31,980
+ kami mengizinkan AS456 ini untuk mengiklankan awalan itu atas nama kami. 
+
+1260
+00:50:31,980 --> 00:50:34,620
+ Setelah perubahan itu menyebar di internet, 
+
+1261
+00:50:34,620 --> 00:50:37,480
+ semua lalu lintas mulai masuk ke AS itu. 
+
+1262
+00:50:37,480 --> 00:50:40,119
+ Dan dalam hal ini, bagi kami, AS adalah Akamai. 
+
+1263
+00:50:40,119 --> 00:50:42,410
+ Dan mereka memiliki banyak scrubber dan dapat menangani yang tinggi 
+
+1264
+00:50:42,410 --> 00:50:44,240
+ bandwidth yang tidak bisa kami. 
+
+1265
+00:50:44,240 --> 00:50:46,970
+ Jadi di bagian belakang koneksi itu 
+
+1266
+00:50:46,970 --> 00:50:48,940
+ adalah koneksi pribadi yang kami miliki ke Akamai 
+
+1267
+00:50:48,940 --> 00:50:50,640
+ di mana mereka mengirim pasca-scrub, 
+
+1268
+00:50:50,640 --> 00:50:53,110
+ lalu lintas yang bersih keluar untuk kita. 
+
+1269
+00:50:53,110 --> 00:50:56,310
+ Dan dengan begitu, kita bisa menghindari hal semacam ini 
+
+1270
+00:50:56,310 --> 00:50:58,195
+ dari serangan yang berpotensi mematikan itu 
+
+1271
+00:50:58,195 --> 00:50:59,550
+ hanya bisa membawa kita offline. 
+
+1272
+00:50:59,550 --> 00:51:01,460
+ Jika Anda terkena banyak lalu lintas, 
+
+1273
+00:51:01,460 --> 00:51:02,793
+ tidak ada yang bisa Anda lakukan. 
+
+1274
+00:51:02,793 --> 00:51:07,664
+
+
+1275
+00:51:07,664 --> 00:51:09,080
+ Jadi sebenarnya, sebelum kita melanjutkan, 
+
+1276
+00:51:09,080 --> 00:51:13,400
+ ada pertanyaan tentang apa yang sudah kita bahas sejauh ini? 
+
+1277
+00:51:13,400 --> 00:51:14,692
+ Iya nih? 
+
+1278
+00:51:14,692 --> 00:51:16,900
+ AUDIENCE: Ini lebih dari sekedar pertanyaan jaringan. 
+
+1279
+00:51:16,900 --> 00:51:17,983
+ Anda menyebutkan perbatasannya. 
+
+1280
+00:51:17,983 --> 00:51:18,900
+ PROFESOR: Ya. 
+
+1281
+00:51:18,900 --> 00:51:21,400
+ AUDIENCE: Dan [TIDAK JELAS]. 
+
+1282
+00:51:21,400 --> 00:51:25,400
+
+
+1283
+00:51:25,400 --> 00:51:29,730
+ Jadi saya mencoba memahami struktur jaringan mikro 
+
+1284
+00:51:29,730 --> 00:51:32,830
+ dan hanya apa perbatasan sebenarnya. 
+
+1285
+00:51:32,830 --> 00:51:34,194
+ PROFESOR: Mari kita lihat. 
+
+1286
+00:51:34,194 --> 00:51:36,787
+ Biarkan saya melihat apakah saya dapat menarik diagram cepat untuk Anda. 
+
+1287
+00:51:36,787 --> 00:51:37,745
+ PROFESOR: [TIDAK JELAS]. 
+
+1288
+00:51:37,745 --> 00:51:39,944
+
+
+1289
+00:51:39,944 --> 00:51:41,110
+ PROFESOR: Oh, itu benar. 
+
+1290
+00:51:41,110 --> 00:51:41,610
+ Ya. 
+
+1291
+00:51:41,610 --> 00:51:43,780
+ Ini kamera video, bukan-- 
+
+1292
+00:51:43,780 --> 00:51:58,680
+ Jadi MIT benar-benar memiliki tiga router perbatasan, eksternal 1, 
+
+1293
+00:51:58,680 --> 00:52:01,820
+ eksternal 2, dan router lain. 
+
+1294
+00:52:01,820 --> 00:52:04,380
+ Mari kita sebut saja eksternal 3. 
+
+1295
+00:52:04,380 --> 00:52:05,380
+ Jadi ini adalah ... 
+
+1296
+00:52:05,380 --> 00:52:14,610
+
+
+1297
+00:52:14,610 --> 00:52:18,300
+ jadi pada dasarnya, mit.net sebenarnya adalah pusat standar 
+
+1298
+00:52:18,300 --> 00:52:19,340
+ dan berbicara topologi. 
+
+1299
+00:52:19,340 --> 00:52:23,170
+ Kami memiliki switch inti yang terhubung ke lapisan distribusi. 
+
+1300
+00:52:23,170 --> 00:52:25,930
+ Lalu mereka keluar untuk mengakses lapisan, 
+
+1301
+00:52:25,930 --> 00:52:27,600
+ yang pada dasarnya adalah bangunan. 
+
+1302
+00:52:27,600 --> 00:52:29,645
+ Di perbatasan, kami memiliki tiga perbatasan ini di sini. 
+
+1303
+00:52:29,645 --> 00:52:32,420
+
+
+1304
+00:52:32,420 --> 00:52:33,470
+ Ini sangat tidak jelas. 
+
+1305
+00:52:33,470 --> 00:52:34,170
+ Saya minta maaf. 
+
+1306
+00:52:34,170 --> 00:52:37,600
+ Tetapi kami memiliki banyak penyedia. 
+
+1307
+00:52:37,600 --> 00:52:40,550
+ Jadi misalnya, penyedia komersial kami 
+
+1308
+00:52:40,550 --> 00:52:43,320
+ akan segera menjadi rumah kedua dari kedua router perbatasan kami. 
+
+1309
+00:52:43,320 --> 00:52:44,990
+ Router eksternal ini 3 di sini-- 
+
+1310
+00:52:44,990 --> 00:52:47,820
+
+
+1311
+00:52:47,820 --> 00:52:50,660
+ yang bukan nama sebenarnya-- tetapi router eksternal ini di sini 
+
+1312
+00:52:50,660 --> 00:52:53,440
+ pada dasarnya untuk peering penelitian. 
+
+1313
+00:52:53,440 --> 00:52:56,820
+ Jadi kita memiliki deliniasi antara komoditas 
+
+1314
+00:52:56,820 --> 00:53:00,070
+ dan peering dan peering riset komersial. 
+
+1315
+00:53:00,070 --> 00:53:03,170
+ Jadi semua BGP yang sedang kita bicarakan 
+
+1316
+00:53:03,170 --> 00:53:06,700
+ terjadi antara perbatasan eksternal dan penyedia kami 
+
+1317
+00:53:06,700 --> 00:53:08,900
+ dan kembali ke internet itu sendiri. 
+
+1318
+00:53:08,900 --> 00:53:11,820
+
+
+1319
+00:53:11,820 --> 00:53:14,680
+ Oh, dan ini hanya router titik choke 
+
+1320
+00:53:14,680 --> 00:53:17,120
+ yang kita miliki antara perbatasan kita dan inti kita. 
+
+1321
+00:53:17,120 --> 00:53:21,690
+
+
+1322
+00:53:21,690 --> 00:53:22,190
+ BAIK. 
+
+1323
+00:53:22,190 --> 00:53:27,910
+ Jadi sebagai tanggapan atas tragedi Swartz of-- 
+
+1324
+00:53:27,910 --> 00:53:32,260
+ Saya percaya itu dua tahun yang lalu, saya baru saja mulai di sini-- 
+
+1325
+00:53:32,260 --> 00:53:34,010
+ hactivists tertentu mengambil itu pada diri mereka sendiri 
+
+1326
+00:53:34,010 --> 00:53:35,560
+ untuk menyerang MIT sebagai institusi. 
+
+1327
+00:53:35,560 --> 00:53:37,387
+ Jadi kami mengalami tiga serangan. 
+
+1328
+00:53:37,387 --> 00:53:38,970
+ Dan saya akan membahas ketiga-tiganya, 
+
+1329
+00:53:38,970 --> 00:53:42,466
+ karena ada tiga jenis yang terpisah dan berbeda 
+
+1330
+00:53:42,466 --> 00:53:42,965
+ serangan. 
+
+1331
+00:53:42,965 --> 00:53:45,940
+
+
+1332
+00:53:45,940 --> 00:53:49,460
+ Jadi serangan pertama adalah melawan infrastruktur kita sendiri. 
+
+1333
+00:53:49,460 --> 00:53:55,810
+ Jadi pada saat itu, MIT melakukan dan melakukan dan akan mendukung keterbukaan. 
+
+1334
+00:53:55,810 --> 00:53:59,240
+ Dan kami memiliki jaringan yang sangat terbuka, terutama jika dibandingkan 
+
+1335
+00:53:59,240 --> 00:54:04,690
+ ke titik edus lainnya, yang datang dari yang lain. 
+
+1336
+00:54:04,690 --> 00:54:07,269
+ Itu bisa menjadi berkah dan kutukan dari keamanan 
+
+1337
+00:54:07,269 --> 00:54:08,060
+ perspektif, kan? 
+
+1338
+00:54:08,060 --> 00:54:10,070
+ Jadi kami terbuka untuk dunia. 
+
+1339
+00:54:10,070 --> 00:54:12,970
+ Dalam hal ini, router perbatasan kami, orang-orang ini di sini 
+
+1340
+00:54:12,970 --> 00:54:16,470
+ yang baru saja kami gambar, menjalankan versi perangkat lunak yang lebih lama 
+
+1341
+00:54:16,470 --> 00:54:20,770
+ yang rentan terhadap penolakan layanan tertentu 
+
+1342
+00:54:20,770 --> 00:54:22,000
+ menyerang. 
+
+1343
+00:54:22,000 --> 00:54:25,100
+ Jadi para penyerang dalam hal ini mengirim bandwidth yang sangat rendah 
+
+1344
+00:54:25,100 --> 00:54:25,800
+ aliran. 
+
+1345
+00:54:25,800 --> 00:54:27,470
+ Maksud saya, itu sangat rendah. 
+
+1346
+00:54:27,470 --> 00:54:28,610
+ Itu kurang dari 100k. 
+
+1347
+00:54:28,610 --> 00:54:30,890
+ Itu benar-benar tidak terlihat, 
+
+1348
+00:54:30,890 --> 00:54:33,200
+ tanpa benar-benar terjadi pada perangkat dan debugging. 
+
+1349
+00:54:33,200 --> 00:54:36,010
+ Mereka mengirimkannya ke antarmuka manajemen perangkat tersebut. 
+
+1350
+00:54:36,010 --> 00:54:38,860
+ Dan perangkat-perangkat itu segera jatuh, bukan? 
+
+1351
+00:54:38,860 --> 00:54:40,470
+ Mereka tidak mati, tetapi CPU berduri. 
+
+1352
+00:54:40,470 --> 00:54:41,840
+ Mereka tidak merutekan paket. 
+
+1353
+00:54:41,840 --> 00:54:45,920
+ mit.net, pada saat itu, sedang offline. 
+
+1354
+00:54:45,920 --> 00:54:49,680
+ Jadi dalam hal ini, ini adalah serangan pertama yang kami alami. 
+
+1355
+00:54:49,680 --> 00:54:52,532
+ Saya pikir itu selama pertandingan playoff Patriot. 
+
+1356
+00:54:52,532 --> 00:54:53,990
+ Terkadang, saya pikir hal-hal ini 
+
+1357
+00:54:53,990 --> 00:54:57,610
+ direncanakan untuk menemukannya ketika staf tidak memperhatikan. 
+
+1358
+00:54:57,610 --> 00:55:01,130
+ Jadi selama pertandingan playoff itu. 
+
+1359
+00:55:01,130 --> 00:55:02,720
+ Apa yang akhirnya kami lakukan adalah segera 
+
+1360
+00:55:02,720 --> 00:55:04,845
+ memutakhirkan perangkat lunak ke versi tambalan, bukan? 
+
+1361
+00:55:04,845 --> 00:55:07,550
+ Itu adalah perbaikan triase cepat. 
+
+1362
+00:55:07,550 --> 00:55:10,824
+ Perbaikan jangka panjang adalah itu-- 
+
+1363
+00:55:10,824 --> 00:55:12,240
+ orang luar di internet mungkin 
+
+1364
+00:55:12,240 --> 00:55:14,680
+ tidak perlu mengakses antarmuka manajemen kami, kan? 
+
+1365
+00:55:14,680 --> 00:55:18,860
+ Sangat sedikit yang perlu untuk mengakses antarmuka tersebut. 
+
+1366
+00:55:18,860 --> 00:55:22,400
+ Jadi kami akhirnya menerapkan, pada dasarnya, 
+
+1367
+00:55:22,400 --> 00:55:24,420
+ paling tidak istimewa, sehingga hanya di IP 
+
+1368
+00:55:24,420 --> 00:55:28,010
+ alamat staf kami di VPN dapat mengaksesnya. 
+
+1369
+00:55:28,010 --> 00:55:33,190
+ Dan kami berhenti menggunakan protokol manajemen teks yang jelas. 
+
+1370
+00:55:33,190 --> 00:55:36,330
+ Jadi itu sudah diperbaiki. 
+
+1371
+00:55:36,330 --> 00:55:37,836
+ Lalu serang dua orang masuk. 
+
+1372
+00:55:37,836 --> 00:55:39,502
+ PROFESOR: Ada pertanyaan di sini. 
+
+1373
+00:55:39,502 --> 00:55:39,886
+ PROFESOR: Oh, sebuah pertanyaan. 
+
+1374
+00:55:39,886 --> 00:55:40,468
+ Maaf. 
+
+1375
+00:55:40,468 --> 00:55:44,010
+ AUDIENCE: Jadi tidak benar bahwa ini adalah serangan zero-day 
+
+1376
+00:55:44,010 --> 00:55:45,300
+ terhadap penyedia layanan? 
+
+1377
+00:55:45,300 --> 00:55:46,540
+ PROFESOR: Saya pikir itu adil untuk dikatakan 
+
+1378
+00:55:46,540 --> 00:55:47,770
+ itu bukan serangan zero-day. 
+
+1379
+00:55:47,770 --> 00:55:50,960
+
+
+1380
+00:55:50,960 --> 00:55:53,700
+ Serangan kedua adalah melawan web.mit.edu sendiri. 
+
+1381
+00:55:53,700 --> 00:55:59,206
+ Dan inilah yang saya singgung pada slide mitigasi DNS 
+
+1382
+00:55:59,206 --> 00:56:00,910
+ yang saya hadapi. 
+
+1383
+00:56:00,910 --> 00:56:05,850
+ Jadi web.mit ada di pusat data kami, 
+
+1384
+00:56:05,850 --> 00:56:07,010
+ dilindungi oleh firewall. 
+
+1385
+00:56:07,010 --> 00:56:08,570
+ Jadi itu di belakang firewall. 
+
+1386
+00:56:08,570 --> 00:56:11,300
+ Apa yang akhirnya terjadi adalah penyerang itu 
+
+1387
+00:56:11,300 --> 00:56:14,820
+ mengirim banjir lalu lintas HTTP. 
+
+1388
+00:56:14,820 --> 00:56:16,540
+ Itu adalah GET dan banjir POST. 
+
+1389
+00:56:16,540 --> 00:56:19,800
+ Saya tidak yakin yang mana itu. 
+
+1390
+00:56:19,800 --> 00:56:21,795
+ Tetapi pada dasarnya, mereka tidak membunuh server web, 
+
+1391
+00:56:21,795 --> 00:56:23,580
+ mereka membunuh firewall. 
+
+1392
+00:56:23,580 --> 00:56:27,060
+ Firewall jatuh karena firewall juga 
+
+1393
+00:56:27,060 --> 00:56:28,710
+ sebuah berkat dan kutukan, bukan? 
+
+1394
+00:56:28,710 --> 00:56:33,465
+ Daftar akses router tanpa kewarganegaraan sangat sederhana, sangat cepat, 
+
+1395
+00:56:33,465 --> 00:56:35,215
+ tetapi Anda juga kehilangan banyak granularity 
+
+1396
+00:56:35,215 --> 00:56:36,700
+ dalam apa yang Anda dapat filter. 
+
+1397
+00:56:36,700 --> 00:56:38,325
+ Karena itu melakukannya paket oleh paket, 
+
+1398
+00:56:38,325 --> 00:56:41,150
+ Anda hanya dapat menggunakan kriteria di setiap paket, port, dan IP 
+
+1399
+00:56:41,150 --> 00:56:43,250
+ alamat, sebagian besar. 
+
+1400
+00:56:43,250 --> 00:56:47,220
+ Kami bersembunyi di balik firewall, yang bekerja dengan baik ketika berhasil. 
+
+1401
+00:56:47,220 --> 00:56:49,310
+ Tetapi ketika itu di bawah beban, negara 
+
+1402
+00:56:49,310 --> 00:56:50,515
+ diperlukan dari firewall-- 
+
+1403
+00:56:50,515 --> 00:56:52,973
+ karena pelacakan firewall di setiap negara bagian, selain 
+
+1404
+00:56:52,973 --> 00:56:54,115
+ paket-paketnya-- 
+
+1405
+00:56:54,115 --> 00:56:55,920
+ itu mati. 
+
+1406
+00:56:55,920 --> 00:56:59,310
+ Jadi triase memperbaiki serangan ini 
+
+1407
+00:56:59,310 --> 00:57:02,090
+ adalah kami memindahkannya ke jaringan yang di-routing. 
+
+1408
+00:57:02,090 --> 00:57:04,840
+ Dan itu adalah sesuatu yang kami lebih suka tidak lakukan, 
+
+1409
+00:57:04,840 --> 00:57:08,080
+ tetapi Anda benar-benar harus, karena serangan yang sedang berlangsung. 
+
+1410
+00:57:08,080 --> 00:57:10,410
+ Mitigasi jangka panjang yang kami lakukan 
+
+1411
+00:57:10,410 --> 00:57:13,420
+ adalah bahwa kami pindah ke CDN Akamai. 
+
+1412
+00:57:13,420 --> 00:57:15,860
+ Jadi Anda mungkin memperhatikan, jika Anda pergi ke luar MIT, 
+
+1413
+00:57:15,860 --> 00:57:21,110
+ saat Anda membuka web.mit sekarang, tidak terpecahkan hingga 18.09.22 
+
+1414
+00:57:21,110 --> 00:57:21,610
+ lagi. 
+
+1415
+00:57:21,610 --> 00:57:25,060
+ Ini menyelesaikan ke nama C, yang pada gilirannya akan menyelesaikan 
+
+1416
+00:57:25,060 --> 00:57:26,856
+ ke alamat IP Akamai. 
+
+1417
+00:57:26,856 --> 00:57:30,670
+
+
+1418
+00:57:30,670 --> 00:57:34,630
+ Dan menyerang nomor tiga, yang ini sebenarnya 
+
+1419
+00:57:34,630 --> 00:57:38,180
+ tidak di sisi mit.net. 
+
+1420
+00:57:38,180 --> 00:57:40,180
+ Ini ada di sisi registrar kami. 
+
+1421
+00:57:40,180 --> 00:57:44,760
+ Jadi kami menemukan beranda MIT-- 
+
+1422
+00:57:44,760 --> 00:57:48,350
+ www.mit dan web.mit diganti dengan halaman ini di sini. 
+
+1423
+00:57:48,350 --> 00:57:51,660
+ Dan kami dengan cepat melakukan beberapa diagnosa di server web. 
+
+1424
+00:57:51,660 --> 00:57:53,010
+ Semuanya tampak baik-baik saja. 
+
+1425
+00:57:53,010 --> 00:57:54,660
+ Server tidak terganggu. 
+
+1426
+00:57:54,660 --> 00:57:57,130
+ Itu tidak dirusak seperti ini. 
+
+1427
+00:57:57,130 --> 00:58:00,180
+ Dan apa yang akhirnya kami temukan adalah 
+
+1428
+00:58:00,180 --> 00:58:05,380
+ bahwa kami yang informasi untuk nama kami dan DNS kami yang sebenarnya 
+
+1429
+00:58:05,380 --> 00:58:07,590
+ delegasi tidak berfungsi. 
+
+1430
+00:58:07,590 --> 00:58:11,000
+ Jadi dalam hal ini, Anda dapat melihat kontak administratif, 
+
+1431
+00:58:11,000 --> 00:58:12,550
+ "Aku dimiliki." 
+
+1432
+00:58:12,550 --> 00:58:17,710
+ Dan kemudian alamat kami, "Operasi jaringan yang dimiliki, Hancur, 
+
+1433
+00:58:17,710 --> 00:58:19,060
+ Massachusetts. " 
+
+1434
+00:58:19,060 --> 00:58:22,466
+ Mereka jelas hanya mencoba menusuk kami. 
+
+1435
+00:58:22,466 --> 00:58:24,340
+ Tapi itu didelegasikan ke dua server ini 
+
+1436
+00:58:24,340 --> 00:58:26,778
+ di CloudFlare, yang merupakan penyedia hosting berbasis cloud. 
+
+1437
+00:58:26,778 --> 00:58:30,770
+
+
+1438
+00:58:30,770 --> 00:58:33,220
+ Jadi ini yang saya sebut troll. 
+
+1439
+00:58:33,220 --> 00:58:34,570
+ Ini ada di Gizmodo. 
+
+1440
+00:58:34,570 --> 00:58:38,700
+ Ini adalah sedikit tipuan dari pihak penyerang, 
+
+1441
+00:58:38,700 --> 00:58:40,792
+ Namun banyak yang ada. 
+
+1442
+00:58:40,792 --> 00:58:42,000
+ Peretasannya turun seperti ini. 
+
+1443
+00:58:42,000 --> 00:58:43,510
+ Jadi ini yang dia ceritakan kepada dunia 
+
+1444
+00:58:43,510 --> 00:58:45,210
+ segera setelah ini terjadi. 
+
+1445
+00:58:45,210 --> 00:58:48,080
+ Jadi, begitu kita menyadari bahwa itu bukan 
+
+1446
+00:58:48,080 --> 00:58:51,030
+ MIT atau apa pun di mit.net yang diretas, 
+
+1447
+00:58:51,030 --> 00:58:53,270
+ itu benar-benar registrar kami, kami mendapat kontak 
+
+1448
+00:58:53,270 --> 00:58:53,805
+ dengan registrar kami. 
+
+1449
+00:58:53,805 --> 00:58:54,929
+ Kami mendapat catatan kami berubah. 
+
+1450
+00:58:54,929 --> 00:58:56,690
+ Kami sudah mengunci semuanya. 
+
+1451
+00:58:56,690 --> 00:59:00,250
+ Namun tentu saja, dalam DNS, ada waktu untuk menghayati nilai-nilai yang terlibat. 
+
+1452
+00:59:00,250 --> 00:59:01,570
+ Beberapa di antaranya berjam-jam. 
+
+1453
+00:59:01,570 --> 00:59:04,410
+ Jadi setelah serangan ini diselesaikan, 
+
+1454
+00:59:04,410 --> 00:59:06,660
+ masih ada beberapa fluks sesudahnya. 
+
+1455
+00:59:06,660 --> 00:59:09,790
+ Dan selama waktu itu, kami berusaha membersihkan semuanya, 
+
+1456
+00:59:09,790 --> 00:59:12,080
+ dia posting di Gizmodo di komentar 
+
+1457
+00:59:12,080 --> 00:59:14,630
+ pada artikel tentang ini. 
+
+1458
+00:59:14,630 --> 00:59:17,760
+ "Pemilik pria MIT NOC dengan mengeksploitasi browser." 
+
+1459
+00:59:17,760 --> 00:59:20,220
+ Orang itu. 
+
+1460
+00:59:20,220 --> 00:59:23,570
+ "Dapatkan login Educause mereka, yang bla." 
+
+1461
+00:59:23,570 --> 00:59:27,560
+ Jadi dia menjalani seluruh skenario. 
+
+1462
+00:59:27,560 --> 00:59:32,120
+ Tapi vektor di sini adalah pria MIT NOC. 
+
+1463
+00:59:32,120 --> 00:59:34,037
+ Jadi Mark bersumpah pada saat itu, naik dan turun-- 
+
+1464
+00:59:34,037 --> 00:59:35,536
+ tidak benar-benar mengumpat - tetapi bersumpah 
+
+1465
+00:59:35,536 --> 00:59:36,890
+ naik dan turun itu bukan dia. 
+
+1466
+00:59:36,890 --> 00:59:39,660
+ Dia tidak terganggu. 
+
+1467
+00:59:39,660 --> 00:59:44,050
+ Jadi apa yang akhirnya kita temukan setelah fakta adalah ini 
+
+1468
+00:59:44,050 --> 00:59:46,331
+ diterbitkan setelah kejadian. 
+
+1469
+00:59:46,331 --> 00:59:48,580
+ Tautan itu masih aktif, jika Anda ingin membacanya. 
+
+1470
+00:59:48,580 --> 00:59:51,050
+ Ini adalah tipuan. 
+
+1471
+00:59:51,050 --> 00:59:52,260
+ Itu tidak benar. 
+
+1472
+00:59:52,260 --> 00:59:55,640
+ Vektor yang sebenarnya adalah seluruh registrar kami dimiliki. 
+
+1473
+00:59:55,640 --> 00:59:59,160
+ Registrar kami, menjadi .edu, dijalankan oleh sebuah organisasi bernama 
+
+1474
+00:59:59,160 --> 01:00:01,180
+ Educause. 
+
+1475
+01:00:01,180 --> 01:00:04,520
+ Ternyata setiap registrasi DNS 
+
+1476
+01:00:04,520 --> 01:00:05,970
+ akun telah dikompromikan. 
+
+1477
+01:00:05,970 --> 01:00:08,040
+ Penyerang punya ini karena saya tidak tahu berapa lama, 
+
+1478
+01:00:08,040 --> 01:00:11,590
+ tetapi mereka hanya memutuskan untuk menunjukkan tangan mereka dengan peretasan MIT 
+
+1479
+01:00:11,590 --> 01:00:14,600
+ di sini dan benar-benar menggunakan kekuatan mereka untuk mengekspos diri mereka sendiri, 
+
+1480
+01:00:14,600 --> 01:00:17,630
+ tetapi juga meretas DNS kami. 
+
+1481
+01:00:17,630 --> 01:00:20,220
+ Jadi yang satu ini sebenarnya bukan siapa-siapa 
+
+1482
+01:00:20,220 --> 01:00:23,780
+ pada kesalahan MIT, itu pada bagian registrar kami, 
+
+1483
+01:00:23,780 --> 01:00:25,860
+ yang segera mereka akui. 
+
+1484
+01:00:25,860 --> 01:00:28,810
+ Ini terjadi pada Februari 2013. 
+
+1485
+01:00:28,810 --> 01:00:31,275
+ Mereka menyebutkan bahwa mereka sebenarnya dilanggar. 
+
+1486
+01:00:31,275 --> 01:00:32,900
+ Dan kami semua harus mengubah kata sandi kami. 
+
+1487
+01:00:32,900 --> 01:00:34,400
+ Dan apakah kita memiliki dua faktor sekarang? 
+
+1488
+01:00:34,400 --> 01:00:35,400
+ PROFESOR: Tidak. 
+
+1489
+01:00:35,400 --> 01:00:38,400
+ PROFESOR: OK. 
+
+1490
+01:00:38,400 --> 01:00:40,740
+ Tapi kami akhirnya mengunci akun domain kami jadi 
+
+1491
+01:00:40,740 --> 01:00:41,580
+ itu tidak bisa diubah. 
+
+1492
+01:00:41,580 --> 01:00:43,996
+ Tapi tahukah Anda, ternyata, jika seluruh sistem dimiliki, 
+
+1493
+01:00:43,996 --> 01:00:45,660
+ jika Anda mencentang kotak yang mengatakan, "terkunci," 
+
+1494
+01:00:45,660 --> 01:00:47,300
+ yang mencegah orang memperbaruinya, 
+
+1495
+01:00:47,300 --> 01:00:49,530
+ itu tidak banyak gunanya. 
+
+1496
+01:00:49,530 --> 01:00:51,880
+ Bagaimanapun, mereka telah memperbaiki sistem mereka. 
+
+1497
+01:00:51,880 --> 01:00:53,910
+ Dan yang ini bukan salah kami, tapi itu 
+
+1498
+01:00:53,910 --> 01:00:55,910
+ adalah jenis yang menarik karena itu benar-benar 
+
+1499
+01:00:55,910 --> 01:00:58,090
+ menumbangkan beberapa protokol inti internet 
+
+1500
+01:00:58,090 --> 01:01:00,849
+ untuk melakukan ini. 
+
+1501
+01:01:00,849 --> 01:01:03,687
+ OK, jadi lansekap ancaman saat ini. 
+
+1502
+01:01:03,687 --> 01:01:04,633
+ Tidak tidak Tidak. 
+
+1503
+01:01:04,633 --> 01:01:06,052
+ [TIDAK JELAS] 
+
+1504
+01:01:06,052 --> 01:01:07,950
+ Ah. 
+
+1505
+01:01:07,950 --> 01:01:11,920
+ Jadi jika Anda tidak bisa mengeksploitasi silikon, manfaatkan karbon. 
+
+1506
+01:01:11,920 --> 01:01:13,990
+ Eksploitasi penggunaan di keyboard. 
+
+1507
+01:01:13,990 --> 01:01:18,091
+ Dan inilah yang kami lihat banyak sekarang. 
+
+1508
+01:01:18,091 --> 01:01:19,590
+ Maksud saya, dari pengalaman pribadi saya, 
+
+1509
+01:01:19,590 --> 01:01:22,530
+ telah berada di ini selama hampir 20 tahun, 
+
+1510
+01:01:22,530 --> 01:01:25,477
+ vector-- berbasis jaringan 
+
+1511
+01:01:25,477 --> 01:01:27,060
+ dengan pengecualian tahun ini, yang mana 
+
+1512
+01:01:27,060 --> 01:01:29,120
+ Saya akan berbicara tentang dalam satu menit - tetapi vektor berbasis jaringan, 
+
+1513
+01:01:29,120 --> 01:01:30,661
+ serangan yang berasal dari jaringan 
+
+1514
+01:01:30,661 --> 01:01:33,180
+ dan mengeksploitasi host dari jarak jauh, itu tidak 
+
+1515
+01:01:33,180 --> 01:01:35,620
+ banyak hal yang kita lihat lagi. 
+
+1516
+01:01:35,620 --> 01:01:38,700
+ Sistem komputer benar-benar tampaknya menjadi lebih aman, 
+
+1517
+01:01:38,700 --> 01:01:40,185
+ dari luar setidaknya. 
+
+1518
+01:01:40,185 --> 01:01:43,510
+ Anda tahu, Windows, dan Solaris, dan Linux, di masa lalu, 
+
+1519
+01:01:43,510 --> 01:01:46,190
+ mungkin satu dekade yang lalu, mereka biasa mengirim dengan semua layanan mereka 
+
+1520
+01:01:46,190 --> 01:01:46,782
+ memungkinkan. 
+
+1521
+01:01:46,782 --> 01:01:48,490
+ Saya menyebutnya menyala seperti pohon Natal. 
+
+1522
+01:01:48,490 --> 01:01:53,520
+ Semuanya akan menyala, karena pada kenyamanan dan keamanan 
+
+1523
+01:01:53,520 --> 01:01:54,090
+ kontinum-- 
+
+1524
+01:01:54,090 --> 01:01:56,965
+ jika kita setuju bahwa ada, beberapa orang tidak-- tetapi mereka 
+
+1525
+01:01:56,965 --> 01:01:58,530
+ berada di sisi yang nyaman. 
+
+1526
+01:01:58,530 --> 01:02:01,160
+ Mereka ingin semuanya bekerja di luar kotak. 
+
+1527
+01:02:01,160 --> 01:02:03,170
+ Padahal, saya pikir kami menemukan medium yang masuk akal 
+
+1528
+01:02:03,170 --> 01:02:06,050
+ di mana, ketika Anda menginstal sistem operasi baru, 
+
+1529
+01:02:06,050 --> 01:02:09,350
+ ada firewall berbasis host yang berjalan. 
+
+1530
+01:02:09,350 --> 01:02:13,170
+ Dan tidak ada layanan yang dapat diakses dunia 
+
+1531
+01:02:13,170 --> 01:02:14,340
+ berjalan pada suatu sistem. 
+
+1532
+01:02:14,340 --> 01:02:17,320
+ Kami juga memiliki hal-hal seperti Pembaruan Windows dan Pembaruan Apple 
+
+1533
+01:02:17,320 --> 01:02:20,070
+ dan manajer paket di semua distro Linux, 
+
+1534
+01:02:20,070 --> 01:02:23,280
+ sehingga kotak yang online, cukup cepat, 
+
+1535
+01:02:23,280 --> 01:02:24,552
+ akan menjadi yang terbaru. 
+
+1536
+01:02:24,552 --> 01:02:27,010
+ Jadi Anda tidak memiliki kotak kuno ini dengan layanan kuno 
+
+1537
+01:02:27,010 --> 01:02:28,660
+ terbuka untuk dunia. 
+
+1538
+01:02:28,660 --> 01:02:29,160
+ BAIK. 
+
+1539
+01:02:29,160 --> 01:02:32,090
+ Jadi ke mana saya pergi dengan itu adalah mereka 
+
+1540
+01:02:32,090 --> 01:02:34,312
+ naik tumpukan sekarang, kan? 
+
+1541
+01:02:34,312 --> 01:02:36,020
+ Mungkin mereka berada di level delapan atau sembilan sekarang. 
+
+1542
+01:02:36,020 --> 01:02:37,186
+ Mereka berurusan dengan orang. 
+
+1543
+01:02:37,186 --> 01:02:41,680
+ Dan mereka mencoba mengeksploitasi kelemahan manusia atau kelemahan, 
+
+1544
+01:02:41,680 --> 01:02:45,950
+ seperti rasa takut, atau keserakahan, atau kepercayaan, atau keakraban, untuk berbaik hati 
+
+1545
+01:02:45,950 --> 01:02:49,220
+ kredensial leverage, sehingga mereka dapat memanfaatkan aplikasi 
+
+1546
+01:02:49,220 --> 01:02:50,720
+ akses atau akses istimewa. 
+
+1547
+01:02:50,720 --> 01:02:52,640
+ Daripada mengeksploitasi host sendiri, 
+
+1548
+01:02:52,640 --> 01:02:56,410
+ mereka mengeksploitasi orang. 
+
+1549
+01:02:56,410 --> 01:03:01,190
+ Beberapa hal yang kami lihat di kampus di masa lalu. 
+
+1550
+01:03:01,190 --> 01:03:02,780
+ Yang ini di sini-- oh, saya harus mengatakan, 
+
+1551
+01:03:02,780 --> 01:03:04,800
+ kami belum pernah mengalami yang satu ini di kampus. 
+
+1552
+01:03:04,800 --> 01:03:06,660
+ Saya tidak ingin menakuti siapa pun. 
+
+1553
+01:03:06,660 --> 01:03:09,550
+ Hal ini telah terlihat, meskipun, di seluruh bangsa berbeda 
+
+1554
+01:03:09,550 --> 01:03:10,174
+ .edus. 
+
+1555
+01:03:10,174 --> 01:03:11,840
+ Dan itu ancaman yang sangat serius, jadi kita 
+
+1556
+01:03:11,840 --> 01:03:13,270
+ bergerak cepat untuk mengatasinya. 
+
+1557
+01:03:13,270 --> 01:03:15,490
+ Namun, kami belum benar-benar melihatnya di sini. 
+
+1558
+01:03:15,490 --> 01:03:18,089
+ Jadi ancaman ini adalah phishing tombak. 
+
+1559
+01:03:18,089 --> 01:03:20,130
+ Dan ini mungkin remedial, tetapi phishing tombak 
+
+1560
+01:03:20,130 --> 01:03:22,650
+ menargetkan komunitas tertentu dengan pesan yang masuk akal. 
+
+1561
+01:03:22,650 --> 01:03:26,620
+ Jadi, jika Anda hanya menerima pesan spam atau pesan phishing, 
+
+1562
+01:03:26,620 --> 01:03:30,420
+ mereka hanya membuat jaring lebar dan menangkap 
+
+1563
+01:03:30,420 --> 01:03:34,940
+ orang-orang yang, untuk beberapa alasan aneh, mungkin menanggapi itu. 
+
+1564
+01:03:34,940 --> 01:03:37,765
+ Namun, dalam serangan phishing tombak, 
+
+1565
+01:03:37,765 --> 01:03:40,610
+ jika mereka dapat mempersempitnya dan menemukan komunitas yang menarik, 
+
+1566
+01:03:40,610 --> 01:03:43,690
+ bahwa mereka benar-benar dapat mengatakan sesuatu yang terdengar ringan 
+
+1567
+01:03:43,690 --> 01:03:45,640
+ masuk akal, pelanggan Bank of America, 
+
+1568
+01:03:45,640 --> 01:03:47,420
+ atau mahasiswa, staf, dan fakultas MIT. 
+
+1569
+01:03:47,420 --> 01:03:50,420
+
+
+1570
+01:03:50,420 --> 01:03:53,140
+ Dalam hal ini, mereka dapat memilih komunitas 
+
+1571
+01:03:53,140 --> 01:03:55,012
+ institusi yang berbeda. 
+
+1572
+01:03:55,012 --> 01:03:56,970
+ Saya tidak memilih siapa pun di luar, tetapi itu bersifat publik. 
+
+1573
+01:03:56,970 --> 01:03:59,760
+ Dan Universitas Boston adalah salah satunya. 
+
+1574
+01:03:59,760 --> 01:04:04,950
+ Mereka menargetkan komunitas dengan pesan email palsu menunjuk 
+
+1575
+01:04:04,950 --> 01:04:06,870
+ ke situs otentikasi palsu. 
+
+1576
+01:04:06,870 --> 01:04:09,179
+ Beberapa persentase pengguna benar-benar diklik 
+
+1577
+01:04:09,179 --> 01:04:11,220
+ dan masuk, yang tentu saja, memberi penyerang 
+
+1578
+01:04:11,220 --> 01:04:12,480
+ kredensial. 
+
+1579
+01:04:12,480 --> 01:04:15,800
+ Penyerang kemudian pergi ke situs yang sah 
+
+1580
+01:04:15,800 --> 01:04:17,645
+ dan mengalihkan simpanan langsung pengguna tersebut 
+
+1581
+01:04:17,645 --> 01:04:19,790
+ ke akun di bawah kendali mereka 
+
+1582
+01:04:19,790 --> 01:04:22,660
+ dan mengosongkan akun itu. 
+
+1583
+01:04:22,660 --> 01:04:26,080
+ Saya tidak yakin dolar terpengaruh di sana publik, 
+
+1584
+01:04:26,080 --> 01:04:30,140
+ tapi mungkin jumlahnya besar. 
+
+1585
+01:04:30,140 --> 01:04:31,970
+ Jadi menanggapi ini-- 
+
+1586
+01:04:31,970 --> 01:04:33,510
+ Maksud saya, bagaimana Anda melawan itu? 
+
+1587
+01:04:33,510 --> 01:04:37,110
+ Untuk sebagian besar, itu masalah pendidikan pengguna, jadi 
+
+1588
+01:04:37,110 --> 01:04:38,150
+ kesadaran masyarakat. 
+
+1589
+01:04:38,150 --> 01:04:41,180
+ Biarkan orang lain tahu Anda tidak dapat mempercayai email. 
+
+1590
+01:04:41,180 --> 01:04:44,720
+ Anda hanya perlu memverifikasi hal-hal, sebelum Anda mengkliknya. 
+
+1591
+01:04:44,720 --> 01:04:49,681
+ Tetapi dari pengalaman dan hanya mengetahui sifat manusia, 
+
+1592
+01:04:49,681 --> 01:04:51,180
+ itu hanya akan membuat Anda sejauh ini. 
+
+1593
+01:04:51,180 --> 01:04:52,490
+ Akan selalu ada beberapa persen orang 
+
+1594
+01:04:52,490 --> 01:04:53,540
+ yang mengkliknya. 
+
+1595
+01:04:53,540 --> 01:04:55,530
+ Dan saya kagum. 
+
+1596
+01:04:55,530 --> 01:04:57,670
+ Seperti yang Anda bayangkan - Anda semua mungkin juga - 
+
+1597
+01:04:57,670 --> 01:04:59,544
+ Saya repositori semua pesan phishing 
+
+1598
+01:04:59,544 --> 01:05:00,590
+ keluarga saya menerima. 
+
+1599
+01:05:00,590 --> 01:05:03,880
+ Jadi saya mendapatkan barang-barang dari ayah saya, saudara perempuan saya, seperti, 
+
+1600
+01:05:03,880 --> 01:05:04,730
+ apakah ini sah? 
+
+1601
+01:05:04,730 --> 01:05:06,695
+ Dan semakin sulit untuk diceritakan. 
+
+1602
+01:05:06,695 --> 01:05:08,570
+ Jadi Anda harus benar-benar masuk ke header 
+
+1603
+01:05:08,570 --> 01:05:09,861
+ dan melihat dari mana asalnya. 
+
+1604
+01:05:09,861 --> 01:05:12,470
+
+
+1605
+01:05:12,470 --> 01:05:13,940
+ Dan banyak klien pria sekarang, mereka 
+
+1606
+01:05:13,940 --> 01:05:15,606
+ sebenarnya tidak suka menunjukkan tautannya 
+
+1607
+01:05:15,606 --> 01:05:18,690
+ yang menunjuk ke, yang menjadi sangat menjengkelkan. 
+
+1608
+01:05:18,690 --> 01:05:19,800
+ Jadi semakin sulit. 
+
+1609
+01:05:19,800 --> 01:05:24,800
+ Jadi sebagian dari itu hanyalah kesalahan pengguna, 
+
+1610
+01:05:24,800 --> 01:05:25,940
+ karena tidak ada kata yang lebih baik. 
+
+1611
+01:05:25,940 --> 01:05:28,690
+ Dan sebagian lagi justru semakin sulit untuk diceritakan. 
+
+1612
+01:05:28,690 --> 01:05:31,630
+ Jadi pada akar masalah, menurut saya, 
+
+1613
+01:05:31,630 --> 01:05:34,526
+ apakah password itu hanya teknologi mati, kan? 
+
+1614
+01:05:34,526 --> 01:05:37,025
+ Dalam hal faktor, itu adalah sesuatu yang Anda tahu kata sandi, 
+
+1615
+01:05:37,025 --> 01:05:39,240
+ itu adalah Anda, mungkin biometrik, 
+
+1616
+01:05:39,240 --> 01:05:42,840
+ atau sesuatu yang Anda miliki, sebuah token. 
+
+1617
+01:05:42,840 --> 01:05:46,120
+ Jadi apa yang kami lakukan untuk mengurangi ini di sini-- 
+
+1618
+01:05:46,120 --> 01:05:48,650
+ karena pada dasarnya, serangan man-in-the-middle ini 
+
+1619
+01:05:48,650 --> 01:05:50,330
+ hanya mencuri sesuatu yang kamu tahu. 
+
+1620
+01:05:50,330 --> 01:05:51,780
+ Mereka mencuri kata sandi Anda. 
+
+1621
+01:05:51,780 --> 01:05:55,084
+ Nah, jika kami juga dapat menambahkan sesuatu yang Anda miliki, 
+
+1622
+01:05:55,084 --> 01:05:57,000
+ serangan itu hanya akan membuat mereka setengah jalan. 
+
+1623
+01:05:57,000 --> 01:06:00,150
+ Mereka tidak akan bisa mengkompromikan identitas Anda. 
+
+1624
+01:06:00,150 --> 01:06:02,430
+ AUDIENCE: [TIDAK JELAS] angka? 
+
+1625
+01:06:02,430 --> 01:06:04,648
+ PROFESOR: Anda tidak akan dapat berkompromi-- 
+
+1626
+01:06:04,648 --> 01:06:06,314
+ penyerang tidak akan bisa berkompromi 
+
+1627
+01:06:06,314 --> 01:06:07,910
+ identitas pengguna. 
+
+1628
+01:06:07,910 --> 01:06:11,720
+ Jadi kami meluncurkan faktor otentikasi kedua 
+
+1629
+01:06:11,720 --> 01:06:18,380
+ dalam waktu dekat yang akan terikat ke IDP Touchstone kami. 
+
+1630
+01:06:18,380 --> 01:06:20,150
+ Kita bisa melepaskan itu kepada orang-orang ini, kan? 
+
+1631
+01:06:20,150 --> 01:06:22,440
+ Jadi rilisan awal, jika Anda tertarik. 
+
+1632
+01:06:22,440 --> 01:06:28,217
+ Jika Anda pergi ke duo.mit.edu, kami menggunakan vendor 
+
+1633
+01:06:28,217 --> 01:06:29,050
+ disebut Duo Security. 
+
+1634
+01:06:29,050 --> 01:06:32,640
+ Ini adalah sistem otentikasi dua faktor berbasis cloud 
+
+1635
+01:06:32,640 --> 01:06:34,330
+ digunakan di banyak edus. 
+
+1636
+01:06:34,330 --> 01:06:37,750
+ Tetapi pada dasarnya, Anda akan mendaftarkan ponsel Anda sebagai faktor kedua 
+
+1637
+01:06:37,750 --> 01:06:39,530
+ dan Anda menjalankan aplikasi ponsel cerdas kecil. 
+
+1638
+01:06:39,530 --> 01:06:41,960
+ Jika Anda tidak memiliki smartphone, saya minta maaf. 
+
+1639
+01:06:41,960 --> 01:06:47,980
+ Tetapi jika Anda tidak memilikinya, Anda juga dapat melakukannya melalui SMS. 
+
+1640
+01:06:47,980 --> 01:06:51,090
+ Ini benar-benar akan menelepon Anda dan memberi tahu Anda sebuah nomor. 
+
+1641
+01:06:51,090 --> 01:06:58,930
+ Dan Anda juga dapat menghasilkan satu kali kata sandi, 
+
+1642
+01:06:58,930 --> 01:07:01,240
+ daftar 10 kata sandi yang dapat Anda gunakan. 
+
+1643
+01:07:01,240 --> 01:07:03,150
+ Jadi ini segera hadir di komunitas. 
+
+1644
+01:07:03,150 --> 01:07:06,020
+ Ini benar-benar aktif pada titik ini, hanya saja tidak diumumkan. 
+
+1645
+01:07:06,020 --> 01:07:08,640
+ Jika Anda ingin pergi ke duo.mit, Anda dapat memilih ponsel Anda. 
+
+1646
+01:07:08,640 --> 01:07:10,870
+ Anda benar-benar dapat mengaktifkan Touchstone. 
+
+1647
+01:07:10,870 --> 01:07:15,690
+ Saya akan memberi Anda demo cepat, untuk menunjukkan kepada Anda bagaimana itu terintegrasi. 
+
+1648
+01:07:15,690 --> 01:07:19,870
+ Keindahan menggunakan standar dan sistem federasi, 
+
+1649
+01:07:19,870 --> 01:07:23,260
+ seperti SAML dan Shibboleth, yang mendasari Touchstone, 
+
+1650
+01:07:23,260 --> 01:07:28,020
+ adalah kita dapat dengan mudah menggunakan faktor tambahan. 
+
+1651
+01:07:28,020 --> 01:07:33,240
+ Jadi dalam hal ini, saya akan pergi ke alat yang saya gunakan, 
+
+1652
+01:07:33,240 --> 01:07:37,010
+ yang transparan akan mengautentikasi saya menggunakan 
+
+1653
+01:07:37,010 --> 01:07:38,390
+ Batu ujian dengan sertifikat saya. 
+
+1654
+01:07:38,390 --> 01:07:39,980
+ Tapi saya sekarang harus diminta untuk-- 
+
+1655
+01:07:39,980 --> 01:07:44,625
+
+
+1656
+01:07:44,625 --> 01:07:45,250
+ terlalu cepat di sana. 
+
+1657
+01:07:45,250 --> 01:07:52,881
+
+
+1658
+01:07:52,881 --> 01:07:53,631
+ Siapa yang menjalankan ini sekarang? 
+
+1659
+01:07:53,631 --> 01:07:56,589
+
+
+1660
+01:07:56,589 --> 01:07:58,054
+ PROFESOR: Tidak kenal orang itu. 
+
+1661
+01:07:58,054 --> 01:07:59,054
+ PROFESOR: Saya tidak tahu. 
+
+1662
+01:07:59,054 --> 01:07:59,554
+ [TAWA] 
+
+1663
+01:07:59,554 --> 01:08:00,554
+ PROFESOR: Dia dimiliki. 
+
+1664
+01:08:00,554 --> 01:08:01,519
+ [TAWA] 
+
+1665
+01:08:01,519 --> 01:08:02,185
+ AUDIENCE: Ya. 
+
+1666
+01:08:02,185 --> 01:08:03,560
+ PROFESOR: Beri saya situs untuk memukul. 
+
+1667
+01:08:03,560 --> 01:08:05,020
+ Saya hanya menggambar kosong, karena saya 
+
+1668
+01:08:05,020 --> 01:08:05,560
+ di depan kerumunan. 
+
+1669
+01:08:05,560 --> 01:08:06,310
+ PROFESOR: Splunk? 
+
+1670
+01:08:06,310 --> 01:08:07,290
+ PROFESOR: Splunk. 
+
+1671
+01:08:07,290 --> 01:08:08,760
+ Tidak, bukan Splunk. 
+
+1672
+01:08:08,760 --> 01:08:12,060
+ Karena itu bukan integrasi Touchstone asli. 
+
+1673
+01:08:12,060 --> 01:08:12,780
+ Atlas. 
+
+1674
+01:08:12,780 --> 01:08:13,738
+ PROFESOR: Atlas, ya. 
+
+1675
+01:08:13,738 --> 01:08:25,956
+
+
+1676
+01:08:25,956 --> 01:08:27,033
+ [TAWA] 
+
+1677
+01:08:27,033 --> 01:08:27,908
+ PROFESOR: Baiklah. 
+
+1678
+01:08:27,908 --> 01:08:28,408
+ Baiklah. 
+
+1679
+01:08:28,408 --> 01:08:30,533
+ PROFESOR: Yah, dia sangat aman, setidaknya, kan? 
+
+1680
+01:08:30,533 --> 01:08:31,460
+ [TAWA] 
+
+1681
+01:08:31,460 --> 01:08:33,585
+ Satu-satunya keamanan yang nyata adalah menjauhkan diri dari internet. 
+
+1682
+01:08:33,585 --> 01:08:36,904
+
+
+1683
+01:08:36,904 --> 01:08:37,779
+ PROFESOR: Baiklah. 
+
+1684
+01:08:37,779 --> 01:08:43,349
+ Jika ini tidak berhasil dalam 20 detik, saya akan melanjutkan. 
+
+1685
+01:08:43,349 --> 01:08:45,890
+ PROFESOR: Apakah Anda memiliki browser lain, mungkin, itu di-cache? 
+
+1686
+01:08:45,890 --> 01:08:46,598
+ PROFESOR: Mungkin. 
+
+1687
+01:08:46,598 --> 01:08:53,580
+
+
+1688
+01:08:53,580 --> 01:08:54,130
+ Di sana kami pergi. 
+
+1689
+01:08:54,130 --> 01:08:54,630
+ Oh, aneh 
+
+1690
+01:08:54,630 --> 01:08:57,064
+ OK, jadi inilah login Touchstone saya yang khas. 
+
+1691
+01:08:57,064 --> 01:09:00,119
+
+
+1692
+01:09:00,120 --> 01:09:02,055
+ Sekarang, Anda hanya akan mendapatkan satu prompt lagi. 
+
+1693
+01:09:02,055 --> 01:09:05,700
+
+
+1694
+01:09:05,700 --> 01:09:08,566
+ PROFESOR: Anda benar-benar lepas dari Wi-Fi, sepertinya. 
+
+1695
+01:09:08,566 --> 01:09:09,399
+ PROFESOR: Oh ya. 
+
+1696
+01:09:09,399 --> 01:09:09,899
+ Aku melakukannya. 
+
+1697
+01:09:09,899 --> 01:09:17,166
+
+
+1698
+01:09:17,166 --> 01:09:17,666
+ Baiklah. 
+
+1699
+01:09:17,666 --> 01:09:19,499
+ Baiklah, mari tinggalkan demo untuk setelah kelas, 
+
+1700
+01:09:19,499 --> 01:09:21,870
+ dan mari kita edit itu. 
+
+1701
+01:09:21,870 --> 01:09:23,490
+ [TAWA] 
+
+1702
+01:09:23,490 --> 01:09:24,990
+ PROFESOR: Bahkan, sekarang saya mencobanya-- 
+
+1703
+01:09:24,990 --> 01:09:25,080
+ PROFESOR: Baiklah. 
+
+1704
+01:09:25,080 --> 01:09:27,203
+ Saya tidak melatih demo itu, jadi itulah yang saya dapatkan. 
+
+1705
+01:09:27,203 --> 01:09:28,789
+ Tapi percayalah, itu berhasil. 
+
+1706
+01:09:28,790 --> 01:09:31,850
+ Jika Anda pergi ke Duo, Anda dapat mendaftarkan diri. 
+
+1707
+01:09:31,850 --> 01:09:34,924
+ Dan semua interaksi dua faktor Anda-- atau saya minta maaf, 
+
+1708
+01:09:34,924 --> 01:09:37,340
+ Interaksi Touchstone Anda semua akan menjadi dua-faktor sekarang. 
+
+1709
+01:09:37,340 --> 01:09:39,270
+ Dan Anda akan sangat aman. 
+
+1710
+01:09:39,270 --> 01:09:41,450
+ Itu benar-benar berfungsi dengan baik. 
+
+1711
+01:09:41,450 --> 01:09:47,120
+ Ancaman lain yang kami alami dalam beberapa bulan terakhir adalah-- 
+
+1712
+01:09:47,120 --> 01:09:49,850
+ ini, sekali lagi, adalah sesuatu yang menargetkan tidak hanya edus, 
+
+1713
+01:09:49,850 --> 01:09:52,630
+ tetapi organisasi di seluruh negeri. 
+
+1714
+01:09:52,630 --> 01:09:55,040
+ Tapi kami sudah mendapatkan polisi yang disebut ID spoofing. 
+
+1715
+01:09:55,040 --> 01:09:57,850
+ Dan jenis ini melampaui dunia digital, 
+
+1716
+01:09:57,850 --> 01:09:59,474
+ sebagian besar. 
+
+1717
+01:09:59,474 --> 01:10:01,140
+ Anggota komunitas MIT mendapatkan 
+
+1718
+01:10:01,140 --> 01:10:03,720
+ panggilan dari departemen kepolisian setempat 
+
+1719
+01:10:03,720 --> 01:10:05,284
+ dekat kampung halaman mereka. 
+
+1720
+01:10:05,284 --> 01:10:05,950
+ PROFESOR: Ya. 
+
+1721
+01:10:05,950 --> 01:10:07,110
+ Tampaknya panggilan. 
+
+1722
+01:10:07,110 --> 01:10:08,280
+ PROFESOR: Ya. 
+
+1723
+01:10:08,280 --> 01:10:12,205
+ Jadi departemen kepolisian ini memberi tahu mereka kabar buruk, kan? 
+
+1724
+01:10:12,205 --> 01:10:13,830
+ Mereka mengatakan kepada mereka Anda akan menjadi 
+
+1725
+01:10:13,830 --> 01:10:14,890
+ dituduh melakukan kejahatan. 
+
+1726
+01:10:14,890 --> 01:10:16,900
+ Saya pikir beberapa dari mereka adalah penipuan pajak. 
+
+1727
+01:10:16,900 --> 01:10:19,160
+ Anggota keluarga Anda mengalami kecelakaan. 
+
+1728
+01:10:19,160 --> 01:10:21,740
+ Tentu saja, ini tidak nyata. 
+
+1729
+01:10:21,740 --> 01:10:23,600
+ Panggilan mereka berasal dari penyerang siapa 
+
+1730
+01:10:23,600 --> 01:10:26,573
+ menggunakan ANI, yang otomatis-- 
+
+1731
+01:10:26,573 --> 01:10:28,545
+ PROFESOR: Mereka menggunakan SIP, pada dasarnya, 
+
+1732
+01:10:28,545 --> 01:10:31,037
+ untuk memalsukan field From mereka dalam panggilan suara mereka, bukan? 
+
+1733
+01:10:31,037 --> 01:10:31,620
+ PROFESOR: OK. 
+
+1734
+01:10:31,620 --> 01:10:32,746
+ Yang dimasukkan ke ID pemanggil. 
+
+1735
+01:10:32,746 --> 01:10:34,286
+ PROFESOR: Yang kemudian diterjemahkan 
+
+1736
+01:10:34,286 --> 01:10:36,850
+ oleh jembatan yang mempercayai bidang Dari yang menjadi pesan SIP 
+
+1737
+01:10:36,850 --> 01:10:38,141
+ nomor apa pun yang ditempatkan di dalamnya. 
+
+1738
+01:10:38,141 --> 01:10:38,770
+ PROFESOR: OK. 
+
+1739
+01:10:38,770 --> 01:10:41,617
+ PROFESOR: Dan penyerang suka, oke, jadi saya mendaftar 
+
+1740
+01:10:41,617 --> 01:10:42,700
+ untuk layanan SIP cheapie. 
+
+1741
+01:10:42,700 --> 01:10:45,170
+ Dan saya akan mengatur bidang Dari saya menjadi departemen kepolisian 
+
+1742
+01:10:45,170 --> 01:10:46,590
+ nomor di Lexington. 
+
+1743
+01:10:46,590 --> 01:10:47,480
+ Dan saya akan mengirimkannya. 
+
+1744
+01:10:47,480 --> 01:10:49,560
+ Dan setelah sampai ke gerbang transcoding itu 
+
+1745
+01:10:49,560 --> 01:10:51,780
+ mengubahnya kembali menjadi telepon tradisional, katanya, oke. 
+
+1746
+01:10:51,780 --> 01:10:53,196
+ Nah, itulah nomornya. 
+
+1747
+01:10:53,196 --> 01:10:55,235
+ Kami hanya akan menunjukkannya kepada pengguna ketika muncul. 
+
+1748
+01:10:55,235 --> 01:10:56,860
+ PROFESOR: Jadi Anda akhirnya mendapatkan panggilan 
+
+1749
+01:10:56,860 --> 01:10:59,235
+ dari apa yang Anda pikirkan adalah departemen kepolisian dengan sangat 
+
+1750
+01:10:59,235 --> 01:11:00,300
+ kabar buruk. 
+
+1751
+01:11:00,300 --> 01:11:02,390
+ Sekali lagi, mereka mengeksploitasi kelemahan manusia di sini. 
+
+1752
+01:11:02,390 --> 01:11:04,210
+ Dalam hal ini, mungkin itu adalah ketakutan. 
+
+1753
+01:11:04,210 --> 01:11:06,540
+ Mungkin itu sedikit kemarahan, tapi ini kasusnya-- 
+
+1754
+01:11:06,540 --> 01:11:07,410
+ PROFESOR: Atau rasa bersalah. 
+
+1755
+01:11:07,410 --> 01:11:08,060
+ PROFESOR: Apa itu? 
+
+1756
+01:11:08,060 --> 01:11:08,480
+ PROFESOR: Atau rasa bersalah. 
+
+1757
+01:11:08,480 --> 01:11:09,146
+ PROFESOR: Ya. 
+
+1758
+01:11:09,146 --> 01:11:10,010
+ Ya, saya kira. 
+
+1759
+01:11:10,010 --> 01:11:12,680
+ [TERTAWA] Jika itu sah. 
+
+1760
+01:11:12,680 --> 01:11:15,730
+ Tetapi dalam hal apapun, semua panggilan ini datang ke titik yang sama, yang 
+
+1761
+01:11:15,730 --> 01:11:21,242
+ apakah Anda perlu membayar biaya untuk sesuatu, yang, pada wajahnya 
+
+1762
+01:11:21,242 --> 01:11:21,950
+ adalah jenis palsu. 
+
+1763
+01:11:21,950 --> 01:11:23,180
+ Tapi setelah mereka memberitahumu ini-- 
+
+1764
+01:11:23,180 --> 01:11:25,260
+ Maksudku, jika mereka memberitahuku bahwa istriku mengalami kecelakaan mobil, 
+
+1765
+01:11:25,260 --> 01:11:27,010
+ Saya tidak akan berada dalam kondisi pikiran yang benar. 
+
+1766
+01:11:27,010 --> 01:11:28,630
+ Dan saya mungkin percaya beberapa kegilaan 
+
+1767
+01:11:28,630 --> 01:11:30,400
+ bahwa mereka memberi tahu saya setelah fakta. 
+
+1768
+01:11:30,400 --> 01:11:35,930
+ Jadi kami memiliki orang-orang di kampus yang-- 
+
+1769
+01:11:35,930 --> 01:11:38,420
+ Saya tidak berpikir itu sebenarnya orang yang benar-benar dibayar, 
+
+1770
+01:11:38,420 --> 01:11:40,940
+ tetapi kami memiliki banyak target serangan ini. 
+
+1771
+01:11:40,940 --> 01:11:42,569
+ Dan lagi, ini bukan hanya di sini. 
+
+1772
+01:11:42,569 --> 01:11:44,360
+ Jika Anda Google itu, Anda akan menemukan laporan tentang itu 
+
+1773
+01:11:44,360 --> 01:11:47,637
+ di koran Pittsburgh dan di seluruh negeri. 
+
+1774
+01:11:47,637 --> 01:11:49,720
+ Tapi sekali lagi, ini adalah serangan phishing tombak, kan? 
+
+1775
+01:11:49,720 --> 01:11:51,510
+ Mereka mencari tahu di mana Anda tinggal. 
+
+1776
+01:11:51,510 --> 01:11:53,520
+ Dan mereka dapat melakukan ini hanya dengan Googling nama Anda 
+
+1777
+01:11:53,520 --> 01:11:56,920
+ atau hanya melihat MIT dan memeriksa direktori 
+
+1778
+01:11:56,920 --> 01:11:59,080
+ dan mencari tahu detail tentang Anda. 
+
+1779
+01:11:59,080 --> 01:12:00,940
+ Dan mereka hanya butuh cukup untuk menjadi masuk akal. 
+
+1780
+01:12:00,940 --> 01:12:03,740
+ Dan kemudian mereka melanjutkan untuk menghubungi Anda dan menakut-nakuti Anda dan mencoba 
+
+1781
+01:12:03,740 --> 01:12:05,890
+ untuk memerasmu. 
+
+1782
+01:12:05,890 --> 01:12:07,969
+ Mitigasi di sini sulit, 
+
+1783
+01:12:07,969 --> 01:12:09,510
+ karena melibatkan sistem telepon. 
+
+1784
+01:12:09,510 --> 01:12:11,992
+ Ini melibatkan beberapa jembatan. 
+
+1785
+01:12:11,992 --> 01:12:13,450
+ Terus terang, saya bukan orang telepon, jadi itu 
+
+1786
+01:12:13,450 --> 01:12:16,700
+ melibatkan banyak hal yang saya hanya akan melambaikan tangan saya tentang. 
+
+1787
+01:12:16,700 --> 01:12:19,432
+ Namun penegakan hukum perlu dilibatkan di sini. 
+
+1788
+01:12:19,432 --> 01:12:22,015
+ Anda harus pergi ke penyedia Anda dan bekerja dengan penegak hukum 
+
+1789
+01:12:22,015 --> 01:12:23,090
+ untuk mendapatkan itu ditelusuri kembali. 
+
+1790
+01:12:23,090 --> 01:12:25,842
+
+
+1791
+01:12:25,842 --> 01:12:26,800
+ Sebenarnya bergerak maju? 
+
+1792
+01:12:26,800 --> 01:12:33,067
+ Dan satu lagi di sepanjang sisi email phishing tombak. 
+
+1793
+01:12:33,067 --> 01:12:34,650
+ Ada hal lain yang membuat beberapa orang 
+
+1794
+01:12:34,650 --> 01:12:36,720
+ sebut perburuan paus, yang merupakan penargetan yang disengaja 
+
+1795
+01:12:36,720 --> 01:12:38,344
+ staf tingkat tinggi di sebuah organisasi. 
+
+1796
+01:12:38,344 --> 01:12:41,280
+
+
+1797
+01:12:41,280 --> 01:12:42,790
+ Kami telah mengalami ini-- 
+
+1798
+01:12:42,790 --> 01:12:45,373
+ Saya pernah mengalaminya di tempat lain, tetapi kami juga mengalami ini 
+
+1799
+01:12:45,373 --> 01:12:48,110
+ di sini di mana mereka akan mengirim pesan yang sangat ditargetkan 
+
+1800
+01:12:48,110 --> 01:12:51,620
+ di staf tingkat tinggi, menggunakan bagan organisasi, 
+
+1801
+01:12:51,620 --> 01:12:54,420
+ menggunakan direktori untuk menemukan pelaporan yang masuk akal 
+
+1802
+01:12:54,420 --> 01:12:59,830
+ hubungan, dan menulis beberapa pesan yang benar-benar dapat dipercaya 
+
+1803
+01:12:59,830 --> 01:13:02,107
+ itu, jika Anda tidak berhati-hati saat mengeklik balasan, 
+
+1804
+01:13:02,107 --> 01:13:03,690
+ nomor transfer kawat itu 
+
+1805
+01:13:03,690 --> 01:13:05,790
+ meminta untuk tidak pergi ke orang yang Anda pikirkan 
+
+1806
+01:13:05,790 --> 01:13:06,498
+ mengirim pesan. 
+
+1807
+01:13:06,498 --> 01:13:09,660
+ Ini akan pergi ke suatu tempat di sisi lain dunia 
+
+1808
+01:13:09,660 --> 01:13:11,470
+ atau sisi lain negara itu. 
+
+1809
+01:13:11,470 --> 01:13:13,544
+ Jadi kita sudah mengalami ini juga. 
+
+1810
+01:13:13,544 --> 01:13:16,210
+ Kekurangannya adalah-- di kelas keamanan Anda sendiri, Anda tahu ini-- 
+
+1811
+01:13:16,210 --> 01:13:18,090
+ SMTP bukan protokol yang andal. 
+
+1812
+01:13:18,090 --> 01:13:19,960
+ Anda tidak bisa percaya apa pun 
+
+1813
+01:13:19,960 --> 01:13:23,150
+ di sana, yang hanya berjalan sepenuhnya berlawanan 
+
+1814
+01:13:23,150 --> 01:13:23,900
+ untuk sifat manusia. 
+
+1815
+01:13:23,900 --> 01:13:27,302
+ Jadi ambil semuanya dengan butiran garam. 
+
+1816
+01:13:27,302 --> 01:13:28,926
+ PROFESOR: Anda akan menceritakan kisahnya? 
+
+1817
+01:13:28,926 --> 01:13:29,884
+ PROFESOR: Tidak, Anda bisa. 
+
+1818
+01:13:29,884 --> 01:13:31,782
+ PROFESOR: Ya. 
+
+1819
+01:13:31,782 --> 01:13:32,740
+ Ya. 
+
+1820
+01:13:32,740 --> 01:13:34,320
+ Jadi Anda bisa menceritakannya. 
+
+1821
+01:13:34,320 --> 01:13:35,810
+ Pada dasarnya, kami baru-baru ini. 
+
+1822
+01:13:35,810 --> 01:13:38,360
+ Dan saya tidak akan membahas detail atau nama-nama itu. 
+
+1823
+01:13:38,360 --> 01:13:39,577
+ Jaga anonimitas. 
+
+1824
+01:13:39,577 --> 01:13:44,040
+ Tetapi seorang anggota senior administrasi 
+
+1825
+01:13:44,040 --> 01:13:49,180
+ menjangkau dan berkata, hei, saya mendapat email ini. 
+
+1826
+01:13:49,180 --> 01:13:51,800
+ Ini dari seseorang dan mengatakan, saya butuh 
+
+1827
+01:13:51,800 --> 01:13:55,270
+ help-- eksekutif yang sangat senior-- dengan transfer kawat. 
+
+1828
+01:13:55,270 --> 01:13:56,640
+ Dan dia mengirimi saya email ini. 
+
+1829
+01:13:56,640 --> 01:13:57,450
+ Dan saya menjawab. 
+
+1830
+01:13:57,450 --> 01:14:00,820
+ Dan dia bilang dia tidak tahu apa yang saya bicarakan. 
+
+1831
+01:14:00,820 --> 01:14:01,990
+ Dan bagaimana itu bisa terjadi? 
+
+1832
+01:14:01,990 --> 01:14:03,180
+ Apakah akun email saya diretas? 
+
+1833
+01:14:03,180 --> 01:14:06,410
+ Ia mengatakan saya mengirim email ini, tapi saya tidak. 
+
+1834
+01:14:06,410 --> 01:14:10,140
+ Dan untuk poin Dave, seluruh kemungkinan email itu sendiri 
+
+1835
+01:14:10,140 --> 01:14:12,794
+ entah bagaimana bisa dipalsukan, tanpa akun Anda sendiri 
+
+1836
+01:14:12,794 --> 01:14:14,960
+ dikompromikan, sangat asing bagi orang, bukan? 
+
+1837
+01:14:14,960 --> 01:14:16,270
+ Itu adalah hubungan kepercayaan. 
+
+1838
+01:14:16,270 --> 01:14:17,970
+ Jadi ternyata, saya kira, itu adalah seseorang 
+
+1839
+01:14:17,970 --> 01:14:22,485
+ di warnet di Nigeria atau sesuatu seperti itu, 
+
+1840
+01:14:22,485 --> 01:14:23,610
+ yang kami bercanda. 
+
+1841
+01:14:23,610 --> 01:14:25,735
+ Tapi ya, mereka pada dasarnya pergi ke bagan organisasi MIT, 
+
+1842
+01:14:25,735 --> 01:14:27,520
+ menemukan seorang eksekutif senior, menemukan seseorang 
+
+1843
+01:14:27,520 --> 01:14:29,770
+ di kantor Wakil Presiden Keuangan dan berkata, hei, 
+
+1844
+01:14:29,770 --> 01:14:31,894
+ Saya ingin Anda membantu saya dengan panggilan transfer kawat ini. 
+
+1845
+01:14:31,894 --> 01:14:32,760
+ Ini nomornya. 
+
+1846
+01:14:32,760 --> 01:14:36,510
+ Dan ini adalah hal-hal yang terjadi setiap hari. 
+
+1847
+01:14:36,510 --> 01:14:38,450
+ Mereka tidak mentransfer uang itu, jelas. 
+
+1848
+01:14:38,450 --> 01:14:39,520
+ PROFESOR: Email benar-benar dapat dipercaya? 
+
+1849
+01:14:39,520 --> 01:14:39,780
+ PROFESOR: Ya. 
+
+1850
+01:14:39,780 --> 01:14:40,980
+ PROFESOR: Saya telah melihatnya. 
+
+1851
+01:14:40,980 --> 01:14:41,830
+ PROFESOR: Bahkan nada dan semuanya 
+
+1852
+01:14:41,830 --> 01:14:42,810
+ tampak sangat masuk akal. 
+
+1853
+01:14:42,810 --> 01:14:42,845
+ PROFESOR: Ya. 
+
+1854
+01:14:42,845 --> 01:14:44,678
+ PROFESOR: Mereka benar-benar menggunakan pesan email 
+
+1855
+01:14:44,678 --> 01:14:46,590
+ eksekutif senior ini telah menulis 
+
+1856
+01:14:46,590 --> 01:14:48,174
+ yang diposting di situs web publik, 
+
+1857
+01:14:48,174 --> 01:14:49,840
+ karena mereka mengirim memo ke komunitas 
+
+1858
+01:14:49,840 --> 01:14:53,760
+ dan hal-hal seperti itu yang menggunakan gaya yang sama persis, 
+
+1859
+01:14:53,760 --> 01:14:56,200
+ pendahuluan, cara mereka menutup pesan. 
+
+1860
+01:14:56,200 --> 01:14:59,055
+ Bahkan bahasa dan istilah yang mereka gunakan pun identik. 
+
+1861
+01:14:59,055 --> 01:15:01,214
+ Ini adalah hal-hal yang mereka gunakan dengan cara lain. 
+
+1862
+01:15:01,214 --> 01:15:02,630
+ Jadi sebenarnya agak menyeramkan, 
+
+1863
+01:15:02,630 --> 01:15:04,046
+ karena bahkan ketika saya pertama kali membacanya, 
+
+1864
+01:15:04,046 --> 01:15:07,060
+ jika Anda tidak tahu apa itu, itu semi-masuk akal. 
+
+1865
+01:15:07,060 --> 01:15:09,310
+ Dan untungnya, anggota staf yang diminta 
+
+1866
+01:15:09,310 --> 01:15:11,910
+ of-- seperti ini semacam diluar permintaan biasa, 
+
+1867
+01:15:11,910 --> 01:15:14,180
+ itu ditandai, meskipun terlihat sah. 
+
+1868
+01:15:14,180 --> 01:15:19,530
+ Dan dia menjawab langsung ke pengirim, 
+
+1869
+01:15:19,530 --> 01:15:21,300
+ menghapus alamat Balas Ke dan sebenarnya 
+
+1870
+01:15:21,300 --> 01:15:25,170
+ menempatkan yang dikenal baik dari buku alamat atau alamatnya 
+
+1871
+01:15:25,170 --> 01:15:29,377
+ buku, dan menanggapi dan bertanya dan jenis diresmikan 
+
+1872
+01:15:29,377 --> 01:15:30,270
+ seluruh skema. 
+
+1873
+01:15:30,270 --> 01:15:34,620
+ Tapi itu bisa pergi ke selatan dengan sangat cepat. 
+
+1874
+01:15:34,620 --> 01:15:36,620
+ OK, jadi saya menyebutkan bahwa vektor berbasis jaringan 
+
+1875
+01:15:36,620 --> 01:15:39,310
+ dalam pengalaman saya tidak lazim seperti dulu. 
+
+1876
+01:15:39,310 --> 01:15:43,900
+ Dan saya akan mempercayainya di sini, atau membuat kebohongan di sini. 
+
+1877
+01:15:43,900 --> 01:15:47,390
+ Tahun ini merupakan tahun eksploitasi besar. 
+
+1878
+01:15:47,390 --> 01:15:50,320
+ Setiap implementasi SSL utama tunggal 
+
+1879
+01:15:50,320 --> 01:15:51,630
+ telah ditargetkan. 
+
+1880
+01:15:51,630 --> 01:15:55,120
+ Ada Schannel di pihak Microsoft. 
+
+1881
+01:15:55,120 --> 01:15:59,190
+ Ada implementasi Apple, buka SSL. 
+
+1882
+01:15:59,190 --> 01:16:00,640
+ Ada Poodle dengan SSL v3. 
+
+1883
+01:16:00,640 --> 01:16:04,179
+
+
+1884
+01:16:04,179 --> 01:16:04,970
+ Ini SSL, kan? 
+
+1885
+01:16:04,970 --> 01:16:06,220
+ Ini adalah layanan keamanan. 
+
+1886
+01:16:06,220 --> 01:16:09,770
+ Jadi ketika Anda memasang layanan menghadapi dunia, 
+
+1887
+01:16:09,770 --> 01:16:11,240
+ Anda akan menjalankan SSL. 
+
+1888
+01:16:11,240 --> 01:16:13,360
+ Jadi kami memiliki banyak layanan yang menghadap ke dunia 
+
+1889
+01:16:13,360 --> 01:16:16,220
+ di luar sana yang rentan terhadap beberapa hal ini. 
+
+1890
+01:16:16,220 --> 01:16:19,990
+ Shellshock adalah salah satu yang mempengaruhi shell Bash di mana Anda bisa 
+
+1891
+01:16:19,990 --> 01:16:21,680
+ mengeksploitasi sistem dari jarak jauh. 
+
+1892
+01:16:21,680 --> 01:16:24,730
+ Jadi ini semua adalah standar emas 
+
+1893
+01:16:24,730 --> 01:16:26,644
+ dari eksploitasi berbasis jaringan. 
+
+1894
+01:16:26,644 --> 01:16:28,560
+ Mereka dieksploitasi dari jarak jauh, dan mereka bisa 
+
+1895
+01:16:28,560 --> 01:16:31,330
+ dapatkan hak akses administratif. 
+
+1896
+01:16:31,330 --> 01:16:34,400
+ Jadi ini semacam tahun yang buruk, dalam hal itu. 
+
+1897
+01:16:34,400 --> 01:16:37,560
+ Jadi, menurut saya, sedikit pelampiasan. 
+
+1898
+01:16:37,560 --> 01:16:38,970
+ Tetapi bagaimana kita menangani hal ini? 
+
+1899
+01:16:38,970 --> 01:16:40,780
+ Karena layanan ini bersifat publik. 
+
+1900
+01:16:40,780 --> 01:16:41,840
+ Mereka harus publik. 
+
+1901
+01:16:41,840 --> 01:16:43,800
+ Kita tidak bisa memagari mereka begitu saja, karena mereka 
+
+1902
+01:16:43,800 --> 01:16:46,040
+ rentan terhadap sesuatu. 
+
+1903
+01:16:46,040 --> 01:16:49,640
+ Yang pertama adalah penambalan otomatis. 
+
+1904
+01:16:49,640 --> 01:16:52,875
+ Di masa lalu, latensi antara nol hari keluar 
+
+1905
+01:16:52,875 --> 01:16:54,500
+ dan tambalan yang keluar cukup panjang. 
+
+1906
+01:16:54,500 --> 01:16:56,583
+ Itu memendekkan, dan memperpendek, dan memperpendek, 
+
+1907
+01:16:56,583 --> 01:16:58,572
+ jadi kita harus benar-benar berjam-jam. 
+
+1908
+01:16:58,572 --> 01:17:00,030
+ Jadi ketika hal-hal ini muncul, kita 
+
+1909
+01:17:00,030 --> 01:17:02,029
+ mampu mendorong pembaruan ke setidaknya sistem 
+
+1910
+01:17:02,029 --> 01:17:03,370
+ yang kita pertahankan. 
+
+1911
+01:17:03,370 --> 01:17:05,455
+ Sistem yang tidak kami pertahankan, kami 
+
+1912
+01:17:05,455 --> 01:17:09,500
+ dapat menggunakan orang-orang komunikasi kami, seperti komunikasi 
+
+1913
+01:17:09,500 --> 01:17:11,770
+ kantor dan Monique di tim keamanan, 
+
+1914
+01:17:11,770 --> 01:17:14,410
+ membuat pesan untuk pergi ke komunitas untuk setidaknya waspada 
+
+1915
+01:17:14,410 --> 01:17:16,460
+ mereka untuk fakta bahwa Anda benar-benar membutuhkan patch, 
+
+1916
+01:17:16,460 --> 01:17:20,030
+ karena ini berbahaya dan ada di luar sana. 
+
+1917
+01:17:20,030 --> 01:17:23,800
+ Di bagian depan yang lebih aktif, kita dapat mendeteksi pemindaian ini. 
+
+1918
+01:17:23,800 --> 01:17:26,990
+ Jadi alat StealthWatch, saya sebutkan jalan kembali, 
+
+1919
+01:17:26,990 --> 01:17:28,920
+ adalah alat yang menarik data NetFlow 
+
+1920
+01:17:28,920 --> 01:17:30,507
+ perangkat jaringan kami. 
+
+1921
+01:17:30,507 --> 01:17:32,340
+ Dan kita dapat melakukan beberapa heuristik dasar tentang itu. 
+
+1922
+01:17:32,340 --> 01:17:34,570
+ Dan jika kita melihat alamat IP luar 
+
+1923
+01:17:34,570 --> 01:17:37,370
+ berbicara dengan beberapa ratus sistem MIT, 
+
+1924
+01:17:37,370 --> 01:17:40,780
+ itu mungkin tidak bagus. 
+
+1925
+01:17:40,780 --> 01:17:41,620
+ Itu bisa bagus. 
+
+1926
+01:17:41,620 --> 01:17:43,814
+ Dan jika itu bagus, kita akan benar-benar menyusun daftar itu. 
+
+1927
+01:17:43,814 --> 01:17:46,230
+ Dan kami telah melakukan itu berkali-kali untuk proyek penelitian 
+
+1928
+01:17:46,230 --> 01:17:48,500
+ dan hanya hal-hal yang sah. 
+
+1929
+01:17:48,500 --> 01:17:50,440
+ Tapi itu mungkin bukan postur yang buruk 
+
+1930
+01:17:50,440 --> 01:17:52,980
+ untuk mengatakan, oke, jika kita melihatnya, itu mungkin buruk. 
+
+1931
+01:17:52,980 --> 01:17:54,560
+ Mari kita hentikan. 
+
+1932
+01:17:54,560 --> 01:17:57,230
+ Jadi kita sebenarnya memiliki beberapa BGP null-routing otomatis 
+
+1933
+01:17:57,230 --> 01:17:59,640
+ terjadi di mana kami benar-benar mengawasi arus. 
+
+1934
+01:17:59,640 --> 01:18:01,470
+ Dan jika kita melihat perilaku anomali, 
+
+1935
+01:18:01,470 --> 01:18:03,410
+ kami membatalkan rute dengan cepat. 
+
+1936
+01:18:03,410 --> 01:18:04,710
+ Itu berjalan setiap lima menit. 
+
+1937
+01:18:04,710 --> 01:18:10,330
+ Jadi begitu pemindaian dimulai, kita memotongnya di lutut. 
+
+1938
+01:18:10,330 --> 01:18:15,100
+ Di depan yang lebih proaktif bahkan daripada itu 
+
+1939
+01:18:15,100 --> 01:18:16,630
+ kami akan memindai secara proaktif. 
+
+1940
+01:18:16,630 --> 01:18:20,900
+ Jadi dalam kasus Shellshock dan beberapa SSL sebelumnya 
+
+1941
+01:18:20,900 --> 01:18:23,350
+ kerentanan yang sangat mematikan, 
+
+1942
+01:18:23,350 --> 01:18:24,980
+ kami benar-benar memindai komunitas 
+
+1943
+01:18:24,980 --> 01:18:26,950
+ dan mengirimkan daftar kepada orang-orang yang kami miliki 
+
+1944
+01:18:26,950 --> 01:18:28,890
+ info kontak untuk memberi tahu mereka, hei, 
+
+1945
+01:18:28,890 --> 01:18:30,480
+ alamat IP ini menjalankan layanan. 
+
+1946
+01:18:30,480 --> 01:18:31,605
+ Ini dikenal rentan. 
+
+1947
+01:18:31,605 --> 01:18:32,352
+ Tolong tempelkan. 
+
+1948
+01:18:32,352 --> 01:18:34,435
+ Ini benar-benar hanya tentang mengeluarkan informasi 
+
+1949
+01:18:34,435 --> 01:18:36,910
+ ke komunitas secepat yang kami bisa. 
+
+1950
+01:18:36,910 --> 01:18:39,950
+ OK tren masa depan, karena kita kekurangan waktu, 
+
+1951
+01:18:39,950 --> 01:18:43,500
+ konsumerisasi TI. 
+
+1952
+01:18:43,500 --> 01:18:47,720
+ Saya menyebutnya tren masa depan, tetapi masa depan sekarang ada di MIT 
+
+1953
+01:18:47,720 --> 01:18:49,410
+ dan cukup banyak di setiap .edu. 
+
+1954
+01:18:49,410 --> 01:18:51,870
+ Ini adalah hal lama yang telah kita hadapi. 
+
+1955
+01:18:51,870 --> 01:18:53,050
+ Bawa perangkat Anda sendiri-- 
+
+1956
+01:18:53,050 --> 01:18:54,740
+ Maksud saya, saya memiliki ponsel saya sendiri di sini 
+
+1957
+01:18:54,740 --> 01:18:58,880
+ dan di institusi lain di ruang edu selamanya. 
+
+1958
+01:18:58,880 --> 01:19:00,866
+ Itu membuat penegakan kebijakan sangat sulit, 
+
+1959
+01:19:00,866 --> 01:19:02,740
+ karena bagaimana Anda menegakkan kebijakan di perangkat 
+
+1960
+01:19:02,740 --> 01:19:04,725
+ bahwa Anda tidak membayar untuk itu Anda tidak mengelola? 
+
+1961
+01:19:04,725 --> 01:19:07,260
+
+
+1962
+01:19:07,260 --> 01:19:10,417
+ Konsumerisasi layanan, di sini di MIT, 
+
+1963
+01:19:10,417 --> 01:19:12,250
+ kami memiliki perjanjian perusahaan dengan Dropbox 
+
+1964
+01:19:12,250 --> 01:19:14,760
+ sekarang, sehingga Anda dapat menyimpan data di Dropbox. 
+
+1965
+01:19:14,760 --> 01:19:15,510
+ Penyimpanan tidak terbatas. 
+
+1966
+01:19:15,510 --> 01:19:17,140
+ Itu terbuka untuk siswa, bukan? 
+
+1967
+01:19:17,140 --> 01:19:21,660
+ Jadi ya, penyimpanan tanpa batas di Dropbox, yang sangat bagus. 
+
+1968
+01:19:21,660 --> 01:19:23,340
+ Masalah yang muncul dengan itu 
+
+1969
+01:19:23,340 --> 01:19:24,780
+ mungkin data tahanan. 
+
+1970
+01:19:24,780 --> 01:19:26,320
+ Di mana data itu akan hidup? 
+
+1971
+01:19:26,320 --> 01:19:28,910
+ Dalam kasus kami, kami telah memastikan bahwa yurisdiksi akan selalu 
+
+1972
+01:19:28,910 --> 01:19:30,050
+ berada di Amerika Serikat. 
+
+1973
+01:19:30,050 --> 01:19:32,500
+ Namun apa yang terjadi jika Anda berurusan dengan provider itu 
+
+1974
+01:19:32,500 --> 01:19:35,640
+ melintasi batas-batas nasional ke daerah-daerah di mana mereka 
+
+1975
+01:19:35,640 --> 01:19:37,450
+ memiliki peraturan berbeda? 
+
+1976
+01:19:37,450 --> 01:19:41,845
+ Apa yang Anda lakukan jika seseorang meletakkan informasi sensitif 
+
+1977
+01:19:41,845 --> 01:19:44,400
+ di Dropbox itu dan disinkronkan ke awan. 
+
+1978
+01:19:44,400 --> 01:19:46,880
+ Dan mereka pikir itu hanya tinggal di awan, 
+
+1979
+01:19:46,880 --> 01:19:49,330
+ tetapi kami tahu bahwa Dropbox disinkronkan ke sistem lokal. 
+
+1980
+01:19:49,330 --> 01:19:54,670
+ Ada banyak masalah yang terkait dengan konsumerisasi TI, 
+
+1981
+01:19:54,670 --> 01:19:56,520
+ karena departemen TI tidak 
+
+1982
+01:19:56,520 --> 01:19:57,710
+ mengendalikan layanan lagi. 
+
+1983
+01:19:57,710 --> 01:20:00,251
+ Mereka benar-benar hanya memperantarai layanan antara layanan 
+
+1984
+01:20:00,251 --> 01:20:02,570
+ penyedia dan konsumen. 
+
+1985
+01:20:02,570 --> 01:20:04,640
+ Penyedia email pihak ketiga, semacam hal yang sama. 
+
+1986
+01:20:04,640 --> 01:20:06,180
+ Anda mungkin mengirim informasi sensitif 
+
+1987
+01:20:06,180 --> 01:20:08,390
+ melalui sistem email yang tidak sepenuhnya internal. 
+
+1988
+01:20:08,390 --> 01:20:10,660
+ Jadi data sensitif mungkin meninggalkan lembaga itu. 
+
+1989
+01:20:10,660 --> 01:20:13,240
+
+
+1990
+01:20:13,240 --> 01:20:16,390
+ Sumber daya berbasis cloud memiliki hubungan semacam itu juga. 
+
+1991
+01:20:16,390 --> 01:20:18,600
+ MIT tidak pernah benar-benar memiliki batas. 
+
+1992
+01:20:18,600 --> 01:20:21,400
+ Juga tidak seluruh dunia sekarang, kan? 
+
+1993
+01:20:21,400 --> 01:20:23,150
+ Jika Anda seorang pemula kecil-- 
+
+1994
+01:20:23,150 --> 01:20:26,530
+ dan saya yakin Anda semua punya banyak teman di startup, 
+
+1995
+01:20:26,530 --> 01:20:27,530
+ Saya juga-- 
+
+1996
+01:20:27,530 --> 01:20:29,660
+ tidak satupun dari mereka memiliki sumber daya lokal lagi, bukan? 
+
+1997
+01:20:29,660 --> 01:20:32,540
+ Mereka menggunakan hal-hal yang sepenuhnya ada di awan. 
+
+1998
+01:20:32,540 --> 01:20:34,570
+ Bagaimana Anda menggambar garis atau memasang parit 
+
+1999
+01:20:34,570 --> 01:20:37,000
+ sekitar sumber daya tersebut saat mereka tinggal di Amazon Web 
+
+2000
+01:20:37,000 --> 01:20:40,310
+ Layanan, dan di Salesforce.com, dan sebagai Google Apps, 
+
+2001
+01:20:40,310 --> 01:20:42,180
+ dan sebagai Dropbox? 
+
+2002
+01:20:42,180 --> 01:20:44,390
+ Kita perlu menemukan cara berbeda untuk mengatasinya. 
+
+2003
+01:20:44,390 --> 01:20:46,120
+ Kami memiliki masalah hak asuh data yang sama 
+
+2004
+01:20:46,120 --> 01:20:47,990
+ ke mana data itu bisa hidup. 
+
+2005
+01:20:47,990 --> 01:20:51,110
+ Kami juga punya masalah otentikasi dan otorisasi. 
+
+2006
+01:20:51,110 --> 01:20:53,520
+ Bagaimana Anda memastikan bahwa hanya pengguna Anda 
+
+2007
+01:20:53,520 --> 01:20:55,065
+ sedang mengakses layanan tersebut? 
+
+2008
+01:20:55,065 --> 01:20:56,440
+ Dan di situlah hal-hal seperti SAML 
+
+2009
+01:20:56,440 --> 01:21:00,380
+ datang, yang saya pikir MIT benar-benar posisi yang baik, 
+
+2010
+01:21:00,380 --> 01:21:03,510
+ karena kami memiliki arsitektur SAML yang sangat kuat ini. 
+
+2011
+01:21:03,510 --> 01:21:05,100
+ Ketika kami ingin menambahkan Dropbox, itu 
+
+2012
+01:21:05,100 --> 01:21:07,141
+ cukup mudah untuk menambahkan mereka sebagai penyedia layanan 
+
+2013
+01:21:07,141 --> 01:21:09,580
+ ke infrastruktur Touchstone kami. 
+
+2014
+01:21:09,580 --> 01:21:11,170
+ Dan itu berhasil. 
+
+2015
+01:21:11,170 --> 01:21:13,030
+ Saya yakin saya melapisi beberapa hal, 
+
+2016
+01:21:13,030 --> 01:21:15,060
+ tetapi Anda tahu, dalam skema besar, 
+
+2017
+01:21:15,060 --> 01:21:16,680
+ sistem berbasis standar dan federasi, 
+
+2018
+01:21:16,680 --> 01:21:19,810
+ seperti SAML dan Shibboleth benar-benar 
+
+2019
+01:21:19,810 --> 01:21:23,070
+ life savers di dunia berbasis cloud. 
+
+2020
+01:21:23,070 --> 01:21:25,150
+ Internet hal, apa artinya itu? 
+
+2021
+01:21:25,150 --> 01:21:28,310
+ Sepertinya ini adalah kata kunci baru. 
+
+2022
+01:21:28,310 --> 01:21:30,450
+ Tetapi dalam hal pengalaman kami sejauh ini, 
+
+2023
+01:21:30,450 --> 01:21:33,030
+ internet hal-hal di mit.net, 
+
+2024
+01:21:33,030 --> 01:21:36,042
+ kita memiliki sistem manajemen gedung, kan? 
+
+2025
+01:21:36,042 --> 01:21:37,500
+ Ini adalah sistem komputer yang 
+
+2026
+01:21:37,500 --> 01:21:39,010
+ dibangun oleh orang-orang baik yang dibangun 
+
+2027
+01:21:39,010 --> 01:21:40,590
+ pendingin udara tahun lalu. 
+
+2028
+01:21:40,590 --> 01:21:44,706
+ Jadi mereka tidak begitu aman, untuk sebagian besar. 
+
+2029
+01:21:44,706 --> 01:21:46,330
+ Markus punya cerita tentang mereka 
+
+2030
+01:21:46,330 --> 01:21:47,830
+ hidup di mit.net publik. 
+
+2031
+01:21:47,830 --> 01:21:49,864
+ Mereka bisa diperiksa oleh siapa pun di dunia. 
+
+2032
+01:21:49,864 --> 01:21:51,530
+ Apa yang telah kami mulai lakukan-- dan sebenarnya, 
+
+2033
+01:21:51,530 --> 01:21:53,821
+ kami hampir sepenuhnya selesai dengan manajemen gedung kami 
+
+2034
+01:21:53,821 --> 01:21:54,930
+ systems-- 
+
+2035
+01:21:54,930 --> 01:21:57,120
+ memindahkannya ke VRF berbeda, yang 
+
+2036
+01:21:57,120 --> 01:21:59,100
+ adalah contoh Virtual Routing and Forwarding, 
+
+2037
+01:21:59,100 --> 01:22:01,980
+ sehingga mereka memiliki jalur penerusan yang sama sekali berbeda. 
+
+2038
+01:22:01,980 --> 01:22:03,550
+ Dan kami membukanya dengan firewall. 
+
+2039
+01:22:03,550 --> 01:22:04,740
+ Itu semua akses terkontrol. 
+
+2040
+01:22:04,740 --> 01:22:08,260
+ Itu hidup di infrastruktur fisik terpisah di lemari. 
+
+2041
+01:22:08,260 --> 01:22:10,100
+ Lemari dijamin. 
+
+2042
+01:22:10,100 --> 01:22:12,570
+ Tetapi ketika kita pindah ke dunia internet hal-hal dunia, 
+
+2043
+01:22:12,570 --> 01:22:14,260
+ masalah ini hanya akan berkembang biak. 
+
+2044
+01:22:14,260 --> 01:22:15,968
+ Apa yang terjadi ketika saklar lampu ada 
+
+2045
+01:22:15,968 --> 01:22:19,690
+ Alamat IP dan, siapa tahu, sepatu saya memiliki alamat IP? 
+
+2046
+01:22:19,690 --> 01:22:21,544
+ Dan itu akan menjadi gila. 
+
+2047
+01:22:21,544 --> 01:22:22,710
+ Jadi bagaimana kita menghadapinya? 
+
+2048
+01:22:22,710 --> 01:22:25,320
+ Dan sejujurnya, saya belum punya jawaban. 
+
+2049
+01:22:25,320 --> 01:22:26,520
+ Banyak perusahaan mengatakan demikian. 
+
+2050
+01:22:26,520 --> 01:22:29,040
+ Dan mereka akan membuat Anda menghabiskan banyak uang untuk solusi. 
+
+2051
+01:22:29,040 --> 01:22:31,560
+ Tapi salah satu yang bisa saya pikirkan adalah mungkin kita memetakan kebijakan akses 
+
+2052
+01:22:31,560 --> 01:22:33,750
+ ke perangkat, berdasarkan 802.1X. 
+
+2053
+01:22:33,750 --> 01:22:36,620
+ Jadi ketika saya mengotentikasi atau mengautentikasi perangkat saya, 
+
+2054
+01:22:36,620 --> 01:22:39,059
+ itu menarik kebijakan termostat, 
+
+2055
+01:22:39,059 --> 01:22:40,850
+ sehingga bisa hidup berdampingan di jaringan yang sama, 
+
+2056
+01:22:40,850 --> 01:22:44,840
+ namun tidak terbuka lebar untuk dunia seperti, katakanlah, laptop saya. 
+
+2057
+01:22:44,840 --> 01:22:47,207
+
+
+2058
+01:22:47,207 --> 01:22:49,290
+ Maka dengan itu, saya menyadari kita sudah berakhir, tetapi ada di sana 
+
+2059
+01:22:49,290 --> 01:22:49,873
+ ada pertanyaan? 
+
+2060
+01:22:49,873 --> 01:22:52,485
+
+
+2061
+01:22:52,485 --> 01:22:53,359
+ Iya nih. 
+
+2062
+01:22:53,359 --> 01:22:55,359
+ AUDIENCE: Jadi ada satu halaman yang Anda lewati 
+
+2063
+01:22:55,359 --> 01:22:56,317
+ sambungan slide yang lalu. 
+
+2064
+01:22:56,317 --> 01:22:57,637
+ PROFESOR: Oh, tentu. 
+
+2065
+01:22:57,637 --> 01:22:58,720
+ AUDIENCE: Firewall kampus. 
+
+2066
+01:22:58,720 --> 01:22:59,835
+ PROFESOR: Oh, saya minta maaf. 
+
+2067
+01:22:59,835 --> 01:23:00,460
+ Dimana ini? 
+
+2068
+01:23:00,460 --> 01:23:02,190
+ AUDIENCE: Saya ingin tahu tentang hal itu. 
+
+2069
+01:23:02,190 --> 01:23:03,520
+ PROFESOR: [TIDAK JELAS]. 
+
+2070
+01:23:03,520 --> 01:23:05,270
+ PROFESOR: Saya bersumpah, itu tidak disengaja. 
+
+2071
+01:23:05,270 --> 01:23:06,320
+ Oh ya. 
+
+2072
+01:23:06,320 --> 01:23:07,120
+ Segera akan datang. 
+
+2073
+01:23:07,120 --> 01:23:09,520
+ Jadi ini-- apakah Anda ingin membicarakannya, atau haruskah saya? 
+
+2074
+01:23:09,520 --> 01:23:10,186
+ PROFESOR: Ya. 
+
+2075
+01:23:10,186 --> 01:23:11,182
+ Jadi saya akan membicarakannya. 
+
+2076
+01:23:11,182 --> 01:23:13,390
+ Maksud saya, salah satu hal yang kami sadari, seperti kata David, 
+
+2077
+01:23:13,390 --> 01:23:18,240
+ adalah postur bawaan Anda untuk berbagai hal, Anda mendapatkannya dengan Xbox 
+
+2078
+01:23:18,240 --> 01:23:19,610
+ Anda menginstalnya hari ini. 
+
+2079
+01:23:19,610 --> 01:23:22,080
+ Anda memiliki tabel IP secara default. Instal mesin Windows, 
+
+2080
+01:23:22,080 --> 01:23:24,000
+ Anda memiliki firewall host Windows. 
+
+2081
+01:23:24,000 --> 01:23:25,410
+ Salah satu hal yang kami lihat adalah-- 
+
+2082
+01:23:25,410 --> 01:23:27,159
+ Anda tahu, Anda memiliki internet hal ini 
+
+2083
+01:23:27,159 --> 01:23:29,596
+ dan berbagai macam perangkat ini di mit.net 
+
+2084
+01:23:29,596 --> 01:23:32,170
+ memiliki postur yang lebih aman secara default, 
+
+2085
+01:23:32,170 --> 01:23:34,930
+ sehingga perangkat, secara default, mungkin belum tentu 
+
+2086
+01:23:34,930 --> 01:23:37,620
+ terpapar ke seluruh jaringan publik. 
+
+2087
+01:23:37,620 --> 01:23:39,377
+ Dan ada alasan orang yang sah 
+
+2088
+01:23:39,377 --> 01:23:41,210
+ ingin memiliki perangkat di jaringan publik. 
+
+2089
+01:23:41,210 --> 01:23:41,876
+ Dan itu bagus. 
+
+2090
+01:23:41,876 --> 01:23:44,480
+ Anda tahu, salah satu hal yang hebat tentang MIT adalah, 
+
+2091
+01:23:44,480 --> 01:23:47,180
+ jika orang ingin melakukan itu, Anda mengizinkan mereka melakukan itu. 
+
+2092
+01:23:47,180 --> 01:23:48,770
+ Mereka dapat melakukannya dengan cara otomatis. 
+
+2093
+01:23:48,770 --> 01:23:49,910
+ Mereka bisa melakukannya sendiri. 
+
+2094
+01:23:49,910 --> 01:23:51,430
+ Mereka tidak perlu bertanya pada orang kebijakan. 
+
+2095
+01:23:51,430 --> 01:23:53,190
+ Mereka tidak perlu melakukan hal seperti itu. 
+
+2096
+01:23:53,190 --> 01:23:54,690
+ Jadi apa yang kami coba lakukan 
+
+2097
+01:23:54,690 --> 01:23:58,210
+ adalah topologi jaringan di mana, secara default, orang 
+
+2098
+01:23:58,210 --> 01:24:00,490
+ akan berada di belakang lapisan perlindungan. 
+
+2099
+01:24:00,490 --> 01:24:02,960
+ Jika mereka ingin pergi ke halaman web dan mendaftarkan diri 
+
+2100
+01:24:02,960 --> 01:24:04,645
+ di tingkat akses internet publik, 
+
+2101
+01:24:04,645 --> 01:24:06,436
+ mereka bisa melakukan itu tanpa berbicara dengan siapa pun. 
+
+2102
+01:24:06,436 --> 01:24:07,690
+ Dan itu otomatis. 
+
+2103
+01:24:07,690 --> 01:24:11,154
+ Dan itu terjadi hanya dalam satu atau dua menit. 
+
+2104
+01:24:11,154 --> 01:24:13,070
+ Jadi saya pikir apa yang kami coba lakukan adalah adil 
+
+2105
+01:24:13,070 --> 01:24:14,986
+ memindahkan postur keamanan default ke sesuatu 
+
+2106
+01:24:14,986 --> 01:24:17,980
+ sedikit lebih aman, secara default. Tapi diwaktu yang sama, 
+
+2107
+01:24:17,980 --> 01:24:20,262
+ kami menyadari bahwa tujuan kami di sini adalah 
+
+2108
+01:24:20,262 --> 01:24:22,220
+ untuk tidak benar-benar mengganggu kegiatan inovatif 
+
+2109
+01:24:22,220 --> 01:24:23,190
+ itu terjadi di sini. 
+
+2110
+01:24:23,190 --> 01:24:25,440
+ Dan jika orang ingin melakukan itu, siswa atau dosen, 
+
+2111
+01:24:25,440 --> 01:24:28,956
+ secara opt-in dan pergi ke halaman web, terserah mereka. 
+
+2112
+01:24:28,956 --> 01:24:31,790
+
+
+2113
+01:24:31,790 --> 01:24:33,661
+ Ada pertanyaan lain? 
+
+2114
+01:24:33,661 --> 01:24:34,494
+ AUDIENCE: Saya punya satu. 
+
+2115
+01:24:34,494 --> 01:24:36,374
+ PROFESOR: Tentu. 
+
+2116
+01:24:36,374 --> 01:24:39,750
+ AUDIENCE: Seperti apa lalu lintas sekarang di jaringan MIT? 
+
+2117
+01:24:39,750 --> 01:24:42,180
+ Ini seperti, lalu lintas seperti apa yang paling Anda lihat? 
+
+2118
+01:24:42,180 --> 01:24:42,500
+ PROFESOR: Ya. 
+
+2119
+01:24:42,500 --> 01:24:43,990
+ Jadi maksud saya, melihat StealthWatch, 
+
+2120
+01:24:43,990 --> 01:24:46,930
+ Saya akan mengatakan seperti 80% dari lalu lintas kami, jika Anda melihatnya dengan protokol, 
+
+2121
+01:24:46,930 --> 01:24:48,930
+ seperti HTTP, Anda tahu, [TIDAK JELAS]. 
+
+2122
+01:24:48,930 --> 01:24:51,210
+ PROFESOR: Yang termasuk media yang di-streaming HTTP. 
+
+2123
+01:24:51,210 --> 01:24:52,300
+ PROFESOR: Film, media. 
+
+2124
+01:24:52,300 --> 01:24:54,180
+ Sekarang, saya pikir pertanyaan menarik yang bisa Anda tanyakan 
+
+2125
+01:24:54,180 --> 01:24:56,300
+ adalah seberapa banyak kegiatan riset yang sah. 
+
+2126
+01:24:56,300 --> 01:24:57,670
+ [TAWA] 
+
+2127
+01:24:57,670 --> 01:24:59,730
+ Saya tahu kalian semua belajar dengan giat. 
+
+2128
+01:24:59,730 --> 01:25:01,730
+ Saya tahu saya, itulah mengapa saya masih bekerja di sini. 
+
+2129
+01:25:01,730 --> 01:25:02,230
+ Tidak. 
+
+2130
+01:25:02,230 --> 01:25:04,590
+ Tapi ya, itu uraian yang menarik. 
+
+2131
+01:25:04,590 --> 01:25:06,950
+ Saya pikir satu hal yang kami lakukan secara filosofis, 
+
+2132
+01:25:06,950 --> 01:25:08,735
+ sebagai penyedia, is-- 
+
+2133
+01:25:08,735 --> 01:25:10,110
+ Anda tahu, banyak sekolah, di sana 
+
+2134
+01:25:10,110 --> 01:25:11,485
+ adalah saat di mana mereka mencoba 
+
+2135
+01:25:11,485 --> 01:25:14,450
+ untuk membuat penilaian tentang jenis lalu lintas apa 
+
+2136
+01:25:14,450 --> 01:25:16,730
+ dan berapa banyak yang terjadi di jaringan kampus mereka. 
+
+2137
+01:25:16,730 --> 01:25:17,990
+ MIT tidak melakukan itu. 
+
+2138
+01:25:17,990 --> 01:25:21,210
+ Satu hal yang sangat kami yakini adalah bukan saya 
+
+2139
+01:25:21,210 --> 01:25:23,080
+ atau siapa pun di pemerintahan 
+
+2140
+01:25:23,080 --> 01:25:26,310
+ berada dalam posisi untuk memberikan penilaian atas seseorang 
+
+2141
+01:25:26,310 --> 01:25:27,520
+ aktivitas internet. 
+
+2142
+01:25:27,520 --> 01:25:28,540
+ PROFESOR: Karena orang tinggal di sini. 
+
+2143
+01:25:28,540 --> 01:25:29,250
+ PROFESOR: Anda tinggal di sini, kan? 
+
+2144
+01:25:29,250 --> 01:25:30,430
+ PROFESOR: Ini bukan hanya pekerjaan Anda. 
+
+2145
+01:25:30,430 --> 01:25:32,800
+ Maksud saya, orang-orang melakukan banyak penelitian di Netflix, 
+
+2146
+01:25:32,800 --> 01:25:34,340
+ karena kami memiliki cache Netflix. 
+
+2147
+01:25:34,340 --> 01:25:35,840
+ Dan kami banyak lalu lintas ke sana. 
+
+2148
+01:25:35,840 --> 01:25:39,780
+ Tetapi kami juga memiliki ribuan siswa dan staf yang tinggal di sini. 
+
+2149
+01:25:39,780 --> 01:25:42,900
+ Jadi itulah mereka di malam hari menyalakan kotak Netflix mereka 
+
+2150
+01:25:42,900 --> 01:25:43,750
+ dan streaming. 
+
+2151
+01:25:43,750 --> 01:25:44,720
+ PROFESOR: Atau apa pun itu. 
+
+2152
+01:25:44,720 --> 01:25:46,510
+ Jadi kami selalu berada di posisi seperti, Anda tahu, kami 
+
+2153
+01:25:46,510 --> 01:25:48,718
+ memiliki informasi yang sangat rinci tentang apa itu. 
+
+2154
+01:25:48,718 --> 01:25:51,200
+ Tapi saya akan mengatakan bahwa sebagian besar, saya akan mengatakan, 
+
+2155
+01:25:51,200 --> 01:25:53,290
+ bahkan saat ini, agak menakutkan. 
+
+2156
+01:25:53,290 --> 01:25:56,550
+ Saya akan mengatakan, pada malam hari, setengah dari aliran video, yang is-- 
+
+2157
+01:25:56,550 --> 01:25:58,780
+ AUDIENCE: Apakah Anda mengizinkan traffic torrent? 
+
+2158
+01:25:58,780 --> 01:25:58,910
+ PROFESOR: Porno? 
+
+2159
+01:25:58,910 --> 01:25:59,620
+ PROFESOR: Kami tidak. 
+
+2160
+01:25:59,620 --> 01:26:00,210
+ Tidak. 
+
+2161
+01:26:00,210 --> 01:26:00,595
+ AUDIENCE: Torrents. 
+
+2162
+01:26:00,595 --> 01:26:00,980
+ [TIDAK JELAS] 
+
+2163
+01:26:00,980 --> 01:26:01,563
+ PROFESOR: Oh. 
+
+2164
+01:26:01,563 --> 01:26:02,910
+ Anda tahu apa yang menarik? 
+
+2165
+01:26:02,910 --> 01:26:06,370
+ Jadi porno dan torrent sangat mirip, jadi ya. 
+
+2166
+01:26:06,370 --> 01:26:07,027
+ [TAWA] 
+
+2167
+01:26:07,027 --> 01:26:09,360
+ Bukan itu yang melalui kepala saya Freudian-bijaksana. 
+
+2168
+01:26:09,360 --> 01:26:10,845
+ Maafkan saya. 
+
+2169
+01:26:10,845 --> 01:26:11,970
+ Anda tahu, ini menarik. 
+
+2170
+01:26:11,970 --> 01:26:14,245
+ Lalu lintas torrent sebenarnya telah turun. 
+
+2171
+01:26:14,245 --> 01:26:15,870
+ Saya pikir itulah yang menarik. 
+
+2172
+01:26:15,870 --> 01:26:18,180
+ Saya akan mengatakan itu sebenarnya sudah turun selama bertahun-tahun. 
+
+2173
+01:26:18,180 --> 01:26:21,966
+ Saya pikir, di sisi positifnya, kebanyakan hal menjadi sangat mudah 
+
+2174
+01:26:21,966 --> 01:26:24,090
+ agar orang dapat melalui sesuatu seperti Netflix, 
+
+2175
+01:26:24,090 --> 01:26:25,800
+ atau Amazon Prime, atau apapun itu 
+
+2176
+01:26:25,800 --> 01:26:28,940
+ adalah, di mana Anda dapat berlangganan seharga $ 4 per bulan, 
+
+2177
+01:26:28,940 --> 01:26:30,550
+ di mana orang-orang umumnya melakukannya. 
+
+2178
+01:26:30,550 --> 01:26:32,200
+ Kami memiliki layanan TV video Comcast 
+
+2179
+01:26:32,200 --> 01:26:34,222
+ kami menawarkan secara gratis kepada siswa. 
+
+2180
+01:26:34,222 --> 01:26:36,680
+ Jika Anda ingin melakukan IPTV, Anda bisa melakukannya di komputer Anda 
+
+2181
+01:26:36,680 --> 01:26:37,319
+ sekarang. 
+
+2182
+01:26:37,319 --> 01:26:39,610
+ Tetapi untuk sebagian besar, saya telah melihat torrents sebenarnya 
+
+2183
+01:26:39,610 --> 01:26:40,448
+ turun. 
+
+2184
+01:26:40,448 --> 01:26:42,614
+ Saya hanya akan jujur, yang agak mengejutkan. 
+
+2185
+01:26:42,614 --> 01:26:44,785
+
+
+2186
+01:26:44,785 --> 01:26:45,660
+ PROFESOR: Baiklah. 
+
+2187
+01:26:45,660 --> 01:26:46,820
+ Baiklah, mari kita berterima kasih pada Dave dan Mark. 
+
+2188
+01:26:46,820 --> 01:26:47,420
+ PROFESOR: Terima kasih, teman-teman. 
+
+2189
+01:26:47,420 --> 01:26:48,295
+ PROFESOR: Terima kasih. 
+
+2190
+01:26:48,295 --> 01:26:49,570
+ [TEPUK TANGAN] 
+
+2191
+01:26:49,570 --> 00:00:00,000
+
+

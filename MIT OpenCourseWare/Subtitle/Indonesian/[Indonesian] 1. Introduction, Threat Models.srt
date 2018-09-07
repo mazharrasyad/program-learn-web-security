@@ -1,0 +1,7608 @@
+1
+00:00:00,000 --> 00:00:00,090
+
+
+2
+00:00:00,090 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,820
+ Lisensi Commons. 
+
+4
+00:00:03,820 --> 00:00:06,050
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,050 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,690
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,690 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:26,054
+ di ocw.mit.edu 
+
+9
+00:00:26,054 --> 00:00:27,720
+ PROFESOR: Di kelas ini, semester ini, 
+
+10
+00:00:27,720 --> 00:00:29,696
+ dosen lain akan menjadi 
+
+11
+00:00:29,696 --> 00:00:32,070
+ James Mickens, yang merupakan profesor tamu dari Microsoft 
+
+12
+00:00:32,070 --> 00:00:33,480
+ Penelitian. 
+
+13
+00:00:33,480 --> 00:00:36,130
+ Dia akan memberi kuliah tentang beberapa topik lain seperti keamanan web 
+
+14
+00:00:36,130 --> 00:00:37,520
+ kemudian. 
+
+15
+00:00:37,520 --> 00:00:40,500
+ Tapi kami akan memutuskan nanti apa yang terjadi tepatnya, dalam istilah 
+
+16
+00:00:40,500 --> 00:00:41,600
+ dari kuliah berpisah. 
+
+17
+00:00:41,600 --> 00:00:46,120
+ Kami juga memiliki empat TA tahun ini, Stephen, Webb, [TIDAK JELAS], 
+
+18
+00:00:46,120 --> 00:00:47,610
+ dan James. 
+
+19
+00:00:47,610 --> 00:00:52,590
+ Dan semoga Anda akan bertemu mereka di jam kantor selama setahun 
+
+20
+00:00:52,590 --> 00:00:54,780
+ jika kamu butuh bantuan. 
+
+21
+00:00:54,780 --> 00:00:57,950
+ Jadi rencana untuk kelas ini adalah memahami 
+
+22
+00:00:57,950 --> 00:01:01,900
+ bagaimana membangun sistem yang aman, mengapa sistem komputer kadang-kadang 
+
+23
+00:01:01,900 --> 00:01:04,330
+ tidak aman dan bagaimana kita bisa membuatnya lebih baik, 
+
+24
+00:01:04,330 --> 00:01:06,040
+ dan apa yang salah. 
+
+25
+00:01:06,040 --> 00:01:08,970
+ Dan untuk melakukan ini, tidak ada buku teks yang bagus 
+
+26
+00:01:08,970 --> 00:01:09,830
+ tentang topik ini. 
+
+27
+00:01:09,830 --> 00:01:11,246
+ Jadi sebaliknya, apa yang akan kita lakukan 
+
+28
+00:01:11,246 --> 00:01:13,690
+ adalah, setiap kuliah selain yang satu ini 
+
+29
+00:01:13,690 --> 00:01:16,860
+ akan difokuskan di sekitar beberapa penelitian, biasanya kertas, 
+
+30
+00:01:16,860 --> 00:01:19,730
+ yang akan kami tetapkan di situs web dan kalian 
+
+31
+00:01:19,730 --> 00:01:21,050
+ harus membaca sebelumnya. 
+
+32
+00:01:21,050 --> 00:01:22,550
+ Dan ada beberapa pertanyaan yang Anda 
+
+33
+00:01:22,550 --> 00:01:25,780
+ harus menjawab dalam sistem pengiriman tentang kertas. 
+
+34
+00:01:25,780 --> 00:01:28,520
+ Dan kirimkan pertanyaan Anda sendiri pada pukul 10:00 malam sebelum kuliah 
+
+35
+00:01:28,520 --> 00:01:29,220
+ hari. 
+
+36
+00:01:29,220 --> 00:01:30,110
+ Dan kemudian ketika Anda datang untuk memberi kuliah, 
+
+37
+00:01:30,110 --> 00:01:31,984
+ kita akan membahas makalahnya, mencari tahu, 
+
+38
+00:01:31,984 --> 00:01:32,810
+ apa sistemnya? 
+
+39
+00:01:32,810 --> 00:01:34,500
+ Masalah apa yang dipecahkannya? 
+
+40
+00:01:34,500 --> 00:01:35,300
+ Kapan itu berfungsi? 
+
+41
+00:01:35,300 --> 00:01:36,730
+ Kapan itu tidak berfungsi? 
+
+42
+00:01:36,730 --> 00:01:39,000
+ Apakah ide-ide ini bagus dalam kasus lain? 
+
+43
+00:01:39,000 --> 00:01:39,560
+ Dan sebagainya. 
+
+44
+00:01:39,560 --> 00:01:41,840
+ Dan semoga, melalui studi kasus ini, 
+
+45
+00:01:41,840 --> 00:01:45,080
+ kami akan mendapatkan apresiasi tentang bagaimana kami benar-benar membangun 
+
+46
+00:01:45,080 --> 00:01:47,220
+ sistem yang aman. 
+
+47
+00:01:47,220 --> 00:01:49,644
+ Dan kami memiliki beberapa jadwal awal di situs web. 
+
+48
+00:01:49,644 --> 00:01:52,310
+ Jika ada topik lain yang menarik bagi Anda, 
+
+49
+00:01:52,310 --> 00:01:54,300
+ atau jika ada koran khusus yang membuat Anda bersemangat, 
+
+50
+00:01:54,300 --> 00:01:56,050
+ kirimkan saja email kepada kami dan kami akan lihat apakah kami bisa 
+
+51
+00:01:56,050 --> 00:01:57,530
+ cocokkan mereka atau melakukan sesuatu. 
+
+52
+00:01:57,530 --> 00:01:59,150
+ Kami cukup fleksibel. 
+
+53
+00:01:59,150 --> 00:02:01,150
+ Jadi jika ada sesuatu yang Anda mau 
+
+54
+00:02:01,150 --> 00:02:03,973
+ ingin mendengar lebih banyak tentang, beri tahu kami. 
+
+55
+00:02:03,973 --> 00:02:08,520
+ Dan dalam nada yang sama, jika Anda pernah punya pertanyaan 
+
+56
+00:02:08,520 --> 00:02:11,290
+ atau jika ada kesalahan, hentikan dan tanyakan 
+
+57
+00:02:11,290 --> 00:02:15,760
+ kami apa yang terjadi di kuliah, kapan saja. 
+
+58
+00:02:15,760 --> 00:02:18,190
+ Keamanan, dalam banyak hal, semua tentang detailnya 
+
+59
+00:02:18,190 --> 00:02:20,100
+ dan mendapatkan segalanya dengan benar. 
+
+60
+00:02:20,100 --> 00:02:21,742
+ Dan saya pasti akan membuat kesalahan. 
+
+61
+00:02:21,742 --> 00:02:23,200
+ Jadi jika ada sesuatu yang sepertinya tidak benar, 
+
+62
+00:02:23,200 --> 00:02:24,570
+ ada peluang bagus tidak. 
+
+63
+00:02:24,570 --> 00:02:26,153
+ Dan Anda hanya harus menyela dan bertanya. 
+
+64
+00:02:26,153 --> 00:02:28,040
+ Dan kami akan mencari tahu apa yang terjadi 
+
+65
+00:02:28,040 --> 00:02:30,730
+ dan apa cara yang tepat untuk melakukan sesuatu. 
+
+66
+00:02:30,730 --> 00:02:33,670
+ Dan saya kira dalam hal organisasi kelas, 
+
+67
+00:02:33,670 --> 00:02:35,136
+ bagian besar lainnya dari kelas, 
+
+68
+00:02:35,136 --> 00:02:36,510
+ di samping kuliah, pergi 
+
+69
+00:02:36,510 --> 00:02:38,540
+ menjadi serangkaian tugas laboratorium. 
+
+70
+00:02:38,540 --> 00:02:40,740
+ Yang pertama sudah diposting di situs web. 
+
+71
+00:02:40,740 --> 00:02:42,960
+ Dan tugas lab ini akan membantu 
+
+72
+00:02:42,960 --> 00:02:46,840
+ Anda melewati pemahaman berbagai keamanan yang berbeda 
+
+73
+00:02:46,840 --> 00:02:51,220
+ masalah dan bagaimana Anda mencegahnya di web server sederhana. 
+
+74
+00:02:51,220 --> 00:02:54,136
+ Jadi di lab satu, yang keluar sekarang, 
+
+75
+00:02:54,136 --> 00:02:55,510
+ Anda benar-benar akan mengambil server web 
+
+76
+00:02:55,510 --> 00:02:58,910
+ yang kami berikan dan temukan cara untuk memanfaatkan buffer overflow 
+
+77
+00:02:58,910 --> 00:03:01,800
+ kerentanan di dalamnya dan mengendalikan situs web ini 
+
+78
+00:03:01,800 --> 00:03:04,020
+ dengan hanya mengirimkan permintaan yang dibuat dengan hati-hati 
+
+79
+00:03:04,020 --> 00:03:05,430
+ dan paket. 
+
+80
+00:03:05,430 --> 00:03:07,300
+ Dan di laboratorium lain, Anda akan melihat cara 
+
+81
+00:03:07,300 --> 00:03:10,150
+ untuk membela server web, untuk menemukan bug dalam kode, 
+
+82
+00:03:10,150 --> 00:03:13,910
+ untuk menulis worm yang berjalan di pengguna 
+
+83
+00:03:13,910 --> 00:03:18,920
+ browser, dan jenis masalah keamanan yang menarik lainnya. 
+
+84
+00:03:18,920 --> 00:03:21,150
+ Satu hal yang mengejutkan banyak siswa 
+
+85
+00:03:21,150 --> 00:03:24,740
+ adalah setiap lab menggunakan bahasa yang berbeda. 
+
+86
+00:03:24,740 --> 00:03:27,160
+ Jadi lab satu semuanya tentang C dan Assembly. 
+
+87
+00:03:27,160 --> 00:03:29,530
+ Lab dua melibatkan banyak coding Python. 
+
+88
+00:03:29,530 --> 00:03:30,980
+ Lab tiga akan menjadi sesuatu yang lain. 
+
+89
+00:03:30,980 --> 00:03:32,660
+ Lab lima adalah JavaScript. 
+
+90
+00:03:32,660 --> 00:03:33,600
+ Dan seterusnya. 
+
+91
+00:03:33,600 --> 00:03:35,340
+ Ini semacam tak terelakkan. 
+
+92
+00:03:35,340 --> 00:03:36,920
+ Dan saya meminta maaf sebelumnya 
+
+93
+00:03:36,920 --> 00:03:37,970
+ bahwa Anda harus belajar 
+
+94
+00:03:37,970 --> 00:03:40,179
+ semua bahasa ini jika Anda belum melihatnya. 
+
+95
+00:03:40,179 --> 00:03:42,178
+ Dalam beberapa hal itu berguna, karena dunia nyata 
+
+96
+00:03:42,178 --> 00:03:42,740
+ seperti ini. 
+
+97
+00:03:42,740 --> 00:03:44,573
+ Semua sistem rumit dan tersusun 
+
+98
+00:03:44,573 --> 00:03:45,550
+ dari berbagai bagian. 
+
+99
+00:03:45,550 --> 00:03:48,149
+ Dan dalam jangka panjang, itu akan berguna untukmu, 
+
+100
+00:03:48,149 --> 00:03:49,690
+ untuk karakter moral Anda atau sesuatu 
+
+101
+00:03:49,690 --> 00:03:52,180
+ seperti itu, untuk mempelajari hal ini. 
+
+102
+00:03:52,180 --> 00:03:53,871
+ Tetapi itu akan membutuhkan persiapan, 
+
+103
+00:03:53,871 --> 00:03:56,120
+ terutama jika Anda belum pernah melihat bahasa-bahasa ini sebelumnya. 
+
+104
+00:03:56,120 --> 00:03:57,790
+ Mungkin berguna untuk memulai lebih awal. 
+
+105
+00:03:57,790 --> 00:04:00,750
+ Secara khusus, lab satu akan bergantung 
+
+106
+00:04:00,750 --> 00:04:03,130
+ pada banyak detail halus dari C dan Majelis 
+
+107
+00:04:03,130 --> 00:04:06,040
+ kode yang tidak benar-benar kita ajarkan di kelas lain 
+
+108
+00:04:06,040 --> 00:04:07,560
+ di sini sebanyak mungkin detail. 
+
+109
+00:04:07,560 --> 00:04:09,400
+ Jadi mungkin ide yang bagus untuk memulai lebih awal. 
+
+110
+00:04:09,400 --> 00:04:12,290
+ Dan kami akan mencoba mendapatkan jam kerja kantor minggu depan 
+
+111
+00:04:12,290 --> 00:04:14,700
+ di mana kita akan melakukan semacam sesi tutorial 
+
+112
+00:04:14,700 --> 00:04:18,700
+ di mana kami dapat membantu Anda memulai dengan memahami apa 
+
+113
+00:04:18,700 --> 00:04:21,500
+ program biner seperti, bagaimana membongkar, 
+
+114
+00:04:21,500 --> 00:04:25,900
+ bagaimana cara mencari tahu apa yang ada di tumpukan, dan seterusnya. 
+
+115
+00:04:25,900 --> 00:04:26,790
+ Baiklah. 
+
+116
+00:04:26,790 --> 00:04:29,259
+ Dan saya kira satu hal lainnya, sebenarnya 
+
+117
+00:04:29,259 --> 00:04:30,550
+ videotaping kuliah tahun ini. 
+
+118
+00:04:30,550 --> 00:04:33,030
+ Jadi Anda mungkin bisa menonton ini secara online. 
+
+119
+00:04:33,030 --> 00:04:35,030
+ Kami akan mempostingnya segera setelah kami mendapatkannya sendiri 
+
+120
+00:04:35,030 --> 00:04:37,690
+ dari orang-orang video. 
+
+121
+00:04:37,690 --> 00:04:39,340
+ Dan sedikit administrasi terakhir 
+
+122
+00:04:39,340 --> 00:04:42,777
+ adalah seharusnya, jika Anda memiliki pertanyaan secara daring, 
+
+123
+00:04:42,777 --> 00:04:44,360
+ kami menggunakan Piazza, jadi saya yakin Anda sudah 
+
+124
+00:04:44,360 --> 00:04:46,870
+ menggunakan ini di kelas lain. 
+
+125
+00:04:46,870 --> 00:04:47,530
+ Baiklah. 
+
+126
+00:04:47,530 --> 00:04:51,020
+ Jadi sebelum kita masuk ke dalam keamanan, saya perlu memberi tahu Anda satu hal. 
+
+127
+00:04:51,020 --> 00:04:55,190
+ Ada semacam aturan yang dimiliki MIT untuk mengakses 
+
+128
+00:04:55,190 --> 00:04:58,030
+ Jaringan MIT ketika Anda, terutama, melakukan keamanan 
+
+129
+00:04:58,030 --> 00:05:00,180
+ penelitian atau bermain dengan masalah keamanan, 
+
+130
+00:05:00,180 --> 00:05:03,200
+ Anda harus menyadari bahwa tidak semua yang Anda bisa secara teknis 
+
+131
+00:05:03,200 --> 00:05:04,870
+ lakukan adalah legal. 
+
+132
+00:05:04,870 --> 00:05:08,450
+ Dan ada banyak hal yang akan Anda pelajari di kelas ini itu 
+
+133
+00:05:08,450 --> 00:05:09,580
+ secara teknis mungkin. 
+
+134
+00:05:09,580 --> 00:05:13,880
+ Kami akan memahami bagaimana sistem dapat rusak atau dikompromikan. 
+
+135
+00:05:13,880 --> 00:05:16,650
+ Bukan berarti Anda harus keluar dan melakukan ini di mana-mana. 
+
+136
+00:05:16,650 --> 00:05:19,370
+ Dan ada tautan ini di catatan kuliah 
+
+137
+00:05:19,370 --> 00:05:22,290
+ kami akan memposting yang memiliki beberapa aturan yang merupakan pedoman yang baik. 
+
+138
+00:05:22,290 --> 00:05:24,060
+ Tetapi secara umum, jika Anda ragu, 
+
+139
+00:05:24,060 --> 00:05:28,950
+ tanya salah satu dosen atau seorang TA tentang apa yang harus Anda lakukan. 
+
+140
+00:05:28,950 --> 00:05:34,800
+ Dan semoga tidak terlalu membingungkan, apa yang terjadi. 
+
+141
+00:05:34,800 --> 00:05:35,300
+ Baiklah. 
+
+142
+00:05:35,300 --> 00:05:37,290
+ Jadi setiap pertanyaan tentang semua administrasi ini 
+
+143
+00:05:37,290 --> 00:05:39,620
+ sebelum kita menyelam? 
+
+144
+00:05:39,620 --> 00:05:42,150
+ Jangan ragu untuk bertanya. 
+
+145
+00:05:42,150 --> 00:05:42,990
+ BAIK. 
+
+146
+00:05:42,990 --> 00:05:44,290
+ Jadi apa itu keamanan? 
+
+147
+00:05:44,290 --> 00:05:47,240
+ Jadi kita akan mulai dengan beberapa hal dasar hari ini. 
+
+148
+00:05:47,240 --> 00:05:50,150
+ Dan kita akan melihat beberapa contoh umum 
+
+149
+00:05:50,150 --> 00:05:53,280
+ mengapa keamanan sulit dan apa artinya mencoba 
+
+150
+00:05:53,280 --> 00:05:55,160
+ untuk membangun sistem yang aman. 
+
+151
+00:05:55,160 --> 00:05:56,770
+ Karena tidak ada kertas, 
+
+152
+00:05:56,770 --> 00:05:59,930
+ ini tidak akan memiliki semacam konten intelektual yang mendalam, mungkin, 
+
+153
+00:05:59,930 --> 00:06:02,180
+ tetapi itu akan memberi Anda beberapa latar belakang dan konteks untuk caranya 
+
+154
+00:06:02,180 --> 00:06:04,550
+ untuk berpikir tentang sistem yang aman. 
+
+155
+00:06:04,550 --> 00:06:06,890
+ Jadi keamanan, secara umum, adalah segalanya 
+
+156
+00:06:06,890 --> 00:06:10,755
+ mencapai suatu tujuan ketika ada hadiah musuh. 
+
+157
+00:06:10,755 --> 00:06:13,410
+
+
+158
+00:06:13,410 --> 00:06:16,510
+ Jadi pikirkan itu karena ada orang jahat di luar sana yang menginginkannya 
+
+159
+00:06:16,510 --> 00:06:18,520
+ untuk memastikan Anda tidak berhasil. 
+
+160
+00:06:18,520 --> 00:06:19,770
+ Mereka ingin mencuri file Anda. 
+
+161
+00:06:19,770 --> 00:06:22,450
+ Mereka ingin menghapus seluruh isi hard drive Anda. 
+
+162
+00:06:22,450 --> 00:06:24,710
+ Mereka ingin memastikan tidak ada yang berhasil 
+
+163
+00:06:24,710 --> 00:06:27,770
+ dan teleponmu tidak terhubung, semua ini, kan? 
+
+164
+00:06:27,770 --> 00:06:30,130
+ Dan sistem yang aman adalah yang sebenarnya 
+
+165
+00:06:30,130 --> 00:06:32,650
+ melakukan sesuatu, terlepas dari apa orang jahat itu 
+
+166
+00:06:32,650 --> 00:06:33,492
+ coba lakukan untuk Anda. 
+
+167
+00:06:33,492 --> 00:06:35,950
+ Jadi itu agak keren bahwa kita sebenarnya bisa membangun 
+
+168
+00:06:35,950 --> 00:06:39,000
+ sistem yang tahan terhadap seluruh jajaran 
+
+169
+00:06:39,000 --> 00:06:41,400
+ orang jahat, musuh, penyerang, 
+
+170
+00:06:41,400 --> 00:06:43,440
+ terserah kamu mau memanggil mereka. 
+
+171
+00:06:43,440 --> 00:06:45,720
+ Dan kita masih bisa membangun sistem komputer itu 
+
+172
+00:06:45,720 --> 00:06:48,010
+ izinkan kami untuk menyelesaikan pekerjaan kami. 
+
+173
+00:06:48,010 --> 00:06:53,430
+ Dan cara umum untuk memikirkan keamanan 
+
+174
+00:06:53,430 --> 00:06:55,880
+ adalah semacam memecahnya menjadi tiga bagian. 
+
+175
+00:06:55,880 --> 00:07:00,064
+ Satu bagian kira-kira adalah kebijakan yang Anda 
+
+176
+00:07:00,064 --> 00:07:01,230
+ ingin sistem Anda untuk menegakkan. 
+
+177
+00:07:01,230 --> 00:07:03,313
+ Ini kira-kira tujuan yang ingin Anda capai. 
+
+178
+00:07:03,313 --> 00:07:05,430
+ Seperti juga, mungkin, hanya aku yang seharusnya 
+
+179
+00:07:05,430 --> 00:07:09,190
+ dapat membaca file nilai untuk 6.858. 
+
+180
+00:07:09,190 --> 00:07:11,330
+ Atau mungkin juga As, dan semua rekan dosen, 
+
+181
+00:07:11,330 --> 00:07:11,979
+ dan sebagainya. 
+
+182
+00:07:11,979 --> 00:07:14,270
+ Tetapi ada beberapa pernyataan tentang apa yang saya inginkan dari sistem saya 
+
+183
+00:07:14,270 --> 00:07:16,210
+ untuk bisa melakukannya. 
+
+184
+00:07:16,210 --> 00:07:18,466
+ Dan kemudian, jika Anda ingin berpikir semacam itu 
+
+185
+00:07:18,466 --> 00:07:20,340
+ tentang jenis kebijakan apa yang mungkin Anda tulis, 
+
+186
+00:07:20,340 --> 00:07:26,850
+ yang biasa ada hubungannya dengan kerahasiaan data, 
+
+187
+00:07:26,850 --> 00:07:31,040
+ sehingga file nilai hanya dapat diakses oleh kursus 6.858 
+
+188
+00:07:31,040 --> 00:07:32,330
+ staf. 
+
+189
+00:07:32,330 --> 00:07:33,890
+ Contoh lain dari kebijakan keamanan 
+
+190
+00:07:33,890 --> 00:07:35,744
+ ada hubungannya dengan integritas. 
+
+191
+00:07:35,744 --> 00:07:37,160
+ Misalnya, hanya staf kursus 
+
+192
+00:07:37,160 --> 00:07:38,604
+ juga dapat memodifikasi file nilai. 
+
+193
+00:07:38,604 --> 00:07:40,770
+ Atau hanya staf kursus yang dapat mengunggah nilai akhir 
+
+194
+00:07:40,770 --> 00:07:41,853
+ ke kantor registrar. 
+
+195
+00:07:41,853 --> 00:07:43,290
+ Itu akan sangat bagus. 
+
+196
+00:07:43,290 --> 00:07:47,770
+ Kemudian Anda juga dapat memikirkan hal-hal seperti ketersediaan. 
+
+197
+00:07:47,770 --> 00:07:51,770
+ Jadi misalnya, situs web harus tersedia, 
+
+198
+00:07:51,770 --> 00:07:54,040
+ bahkan jika orang-orang jahat mencoba untuk menurunkannya dan naik 
+
+199
+00:07:54,040 --> 00:07:57,972
+ semacam DOS-- Denial of Service-- menyerangnya. 
+
+200
+00:07:57,972 --> 00:07:59,180
+ Jadi ini semua baik dan bagus. 
+
+201
+00:07:59,180 --> 00:08:01,180
+ Jadi ini adalah kebijakan yang kita mungkin benar-benar 
+
+202
+00:08:01,180 --> 00:08:02,860
+ peduli tentang suatu sistem. 
+
+203
+00:08:02,860 --> 00:08:05,220
+ Tapi karena itu keamanan, ada orang jahat yang terlibat. 
+
+204
+00:08:05,220 --> 00:08:06,680
+ Kita perlu mengerti, apa yang kita pikirkan 
+
+205
+00:08:06,680 --> 00:08:07,980
+ orang jahat itu akan lakukan? 
+
+206
+00:08:07,980 --> 00:08:10,190
+ Dan ini biasanya apa yang kita sebut model ancaman. 
+
+207
+00:08:10,190 --> 00:08:13,090
+
+
+208
+00:08:13,090 --> 00:08:15,130
+ Dan ini pada dasarnya hanyalah seperangkat asumsi 
+
+209
+00:08:15,130 --> 00:08:23,090
+ tentang orang jahat atau musuh. 
+
+210
+00:08:23,090 --> 00:08:25,710
+ Dan penting untuk memiliki semacam asumsi 
+
+211
+00:08:25,710 --> 00:08:29,310
+ tentang orang jahat karena, jika orang jahat itu ada di mana-mana 
+
+212
+00:08:29,310 --> 00:08:32,700
+ dan ada di mana-mana sekaligus dan Anda dapat melakukan apa pun yang mereka inginkan, 
+
+213
+00:08:32,700 --> 00:08:36,030
+ itu akan sulit untuk mencapai beberapa kemiripan keamanan. 
+
+214
+00:08:36,030 --> 00:08:37,630
+ Jadi misalnya, Anda mungkin menginginkannya 
+
+215
+00:08:37,630 --> 00:08:40,750
+ untuk menganggap orang jahat tidak tahu kata sandi Anda, 
+
+216
+00:08:40,750 --> 00:08:43,159
+ atau mereka sebenarnya tidak memiliki akses fisik ke ponsel Anda 
+
+217
+00:08:43,159 --> 00:08:45,050
+ dan kunci Anda dan laptop Anda. 
+
+218
+00:08:45,050 --> 00:08:47,990
+ Jika tidak, akan sulit untuk membuat semacam kemajuan 
+
+219
+00:08:47,990 --> 00:08:50,510
+ dalam permainan ini. 
+
+220
+00:08:50,510 --> 00:08:52,940
+ Dan ternyata saat ini sebenarnya cukup rumit 
+
+221
+00:08:52,940 --> 00:08:56,470
+ untuk muncul, tapi saya kira satu aturan umum adalah itu 
+
+222
+00:08:56,470 --> 00:08:59,390
+ kesalahan yang jauh lebih baik di sisi hati-hati 
+
+223
+00:08:59,390 --> 00:09:01,800
+ dan bersikap konservatif dalam memilih model ancaman Anda, 
+
+224
+00:09:01,800 --> 00:09:03,920
+ karena pria jahat mungkin selalu mengejutkanmu 
+
+225
+00:09:03,920 --> 00:09:07,290
+ dalam hal apa yang bisa mereka lakukan dalam praktek. 
+
+226
+00:09:07,290 --> 00:09:10,190
+ Dan akhirnya, untuk mencapai keamanan, dalam rangka 
+
+227
+00:09:10,190 --> 00:09:12,980
+ untuk mencapai tujuan kami di bawah serangkaian asumsi, 
+
+228
+00:09:12,980 --> 00:09:14,580
+ kita akan melihat beberapa mekanisme. 
+
+229
+00:09:14,580 --> 00:09:17,400
+
+
+230
+00:09:17,400 --> 00:09:21,720
+ Dan ini adalah, pada dasarnya, perangkat lunak atau perangkat keras 
+
+231
+00:09:21,720 --> 00:09:24,590
+ atau bagian apa pun dari desain sistem, 
+
+232
+00:09:24,590 --> 00:09:26,280
+ implementasi, dan sebagainya, itu 
+
+233
+00:09:26,280 --> 00:09:30,470
+ akan mencoba memastikan kebijakan kami diikuti 
+
+234
+00:09:30,470 --> 00:09:34,430
+ selama si jahat mengikuti model ancaman. 
+
+235
+00:09:34,430 --> 00:09:36,970
+ Jadi hasil akhirnya adalah, selama itu 
+
+236
+00:09:36,970 --> 00:09:39,700
+ sebagai model ancaman kami benar, mudah-mudahan kita akan 
+
+237
+00:09:39,700 --> 00:09:40,810
+ memenuhi kebijakan kami. 
+
+238
+00:09:40,810 --> 00:09:44,100
+ Dan itu harus menjadi kasus bahwa mekanisme tidak mengacaukan. 
+
+239
+00:09:44,100 --> 00:09:45,420
+ Masuk akal? 
+
+240
+00:09:45,420 --> 00:09:48,220
+ Cerita tingkat yang cukup tinggi tentang bagaimana 
+
+241
+00:09:48,220 --> 00:09:50,470
+ untuk memikirkan hal semacam ini. 
+
+242
+00:09:50,470 --> 00:09:52,410
+ Jadi mengapa ini sangat sulit, bukan? 
+
+243
+00:09:52,410 --> 00:09:53,644
+ Sepertinya rencana yang sederhana. 
+
+244
+00:09:53,644 --> 00:09:55,060
+ Anda menuliskan ketiga hal ini, 
+
+245
+00:09:55,060 --> 00:09:57,180
+ dan Anda mulai berlari. 
+
+246
+00:09:57,180 --> 00:10:02,180
+ Namun dalam praktik, seperti Anda, saya yakin, telah melihat di dunia, 
+
+247
+00:10:02,180 --> 00:10:04,490
+ sistem komputer hampir selalu dikompromikan 
+
+248
+00:10:04,490 --> 00:10:05,730
+ dalam beberapa cara atau lainnya. 
+
+249
+00:10:05,730 --> 00:10:08,300
+ Dan istirahat merupakan hal yang lumrah. 
+
+250
+00:10:08,300 --> 00:10:12,210
+ Dan alasan besar mengapa keamanan cenderung 
+
+251
+00:10:12,210 --> 00:10:14,800
+ menjadi masalah yang sulit adalah karena apa yang kita miliki di sini 
+
+252
+00:10:14,800 --> 00:10:17,260
+ adalah semacam, ini akan akrab bagi anda 
+
+253
+00:10:17,260 --> 00:10:19,400
+ mengambil 6.033, ini adalah tujuan negatif, 
+
+254
+00:10:19,400 --> 00:10:23,270
+ artinya kita harus memastikan kebijakan keamanan kita 
+
+255
+00:10:23,270 --> 00:10:27,360
+ diikuti apa pun yang dapat dilakukan penyerang. 
+
+256
+00:10:27,360 --> 00:10:30,730
+ Jadi sebaliknya, jika Anda ingin membangun sistem file, 
+
+257
+00:10:30,730 --> 00:10:36,310
+ dan Anda ingin memastikan bahwa TA saya dapat mengakses nilai 
+
+258
+00:10:36,310 --> 00:10:37,790
+ file, itu cukup mudah. 
+
+259
+00:10:37,790 --> 00:10:40,120
+ Saya hanya meminta mereka, hei, bisakah kalian menguji dan melihat? 
+
+260
+00:10:40,120 --> 00:10:41,411
+ Bisakah Anda mengakses file nilai? 
+
+261
+00:10:41,411 --> 00:10:43,600
+ Dan jika mereka semua dapat mengaksesnya, selesai. 
+
+262
+00:10:43,600 --> 00:10:45,340
+ Sistem bekerja. 
+
+263
+00:10:45,340 --> 00:10:48,070
+ Tetapi jika saya ingin mengatakan bahwa tidak ada orang lain selain TA 
+
+264
+00:10:48,070 --> 00:10:50,640
+ dapat mengakses file nilai, ini adalah masalah yang jauh lebih sulit 
+
+265
+00:10:50,640 --> 00:10:52,820
+ untuk dipecahkan, karena sekarang saya harus mencari tahu 
+
+266
+00:10:52,820 --> 00:10:56,010
+ apa yang bisa semua orang-orang non TA di dunia untuk mencoba 
+
+267
+00:10:56,010 --> 00:10:57,460
+ untuk mendapatkan file nilai saya, kan? 
+
+268
+00:10:57,460 --> 00:11:01,110
+ Mereka bisa mencoba membukanya dan membacanya. 
+
+269
+00:11:01,110 --> 00:11:02,960
+ Mungkin sistem file saya akan melarangnya. 
+
+270
+00:11:02,960 --> 00:11:04,900
+ Tetapi mereka mungkin mencoba semua jenis serangan lainnya, 
+
+271
+00:11:04,900 --> 00:11:07,060
+ seperti menebak kata sandi untuk TA 
+
+272
+00:11:07,060 --> 00:11:10,670
+ atau mencuri laptop TAs atau membobol ruangan 
+
+273
+00:11:10,670 --> 00:11:11,960
+ atau siapa yang tahu, bukan? 
+
+274
+00:11:11,960 --> 00:11:14,010
+ Ini semua adalah hal yang harus benar-benar kita letakkan 
+
+275
+00:11:14,010 --> 00:11:15,050
+ ke dalam model ancaman kami. 
+
+276
+00:11:15,050 --> 00:11:17,650
+ Mungkin untuk kelas ini, saya tidak begitu peduli 
+
+277
+00:11:17,650 --> 00:11:21,280
+ file nilai untuk khawatir tentang laptop orang-orang ini 
+
+278
+00:11:21,280 --> 00:11:22,880
+ dicuri dari kamar asrama mereka. 
+
+279
+00:11:22,880 --> 00:11:23,460
+ Meskipun mungkin seharusnya begitu. 
+
+280
+00:11:23,460 --> 00:11:24,001
+ Aku tidak tahu. 
+
+281
+00:11:24,001 --> 00:11:25,140
+ Sulit untuk mengatakannya, kan? 
+
+282
+00:11:25,140 --> 00:11:27,700
+ Dan akibatnya, game keamanan ini 
+
+283
+00:11:27,700 --> 00:11:30,030
+ seringkali tidak begitu jelas seperti apa 
+
+284
+00:11:30,030 --> 00:11:32,884
+ seperangkat asumsi yang tepat untuk dibuat. 
+
+285
+00:11:32,884 --> 00:11:35,050
+ Dan hanya setelah fakta yang sering Anda sadari, 
+
+286
+00:11:35,050 --> 00:11:37,000
+ seharusnya sudah memikirkan hal itu. 
+
+287
+00:11:37,000 --> 00:11:39,520
+
+
+288
+00:11:39,520 --> 00:11:40,720
+ Baiklah. 
+
+289
+00:11:40,720 --> 00:11:42,700
+ Dan semacam itu, sebagai hasilnya, ini sangat banyak 
+
+290
+00:11:42,700 --> 00:11:44,170
+ proses berulang. 
+
+291
+00:11:44,170 --> 00:11:46,960
+ Dan hal yang Anda akhirnya sadari pada setiap iterasi 
+
+292
+00:11:46,960 --> 00:11:49,132
+ adalah, yah, inilah tautan terlemah ke dalam sistem saya. 
+
+293
+00:11:49,132 --> 00:11:50,590
+ Mungkin saya punya model ancaman yang salah. 
+
+294
+00:11:50,590 --> 00:11:53,290
+ Mungkin mekanisme saya memiliki beberapa bug di dalamnya karena ini adalah perangkat lunak 
+
+295
+00:11:53,290 --> 00:11:55,120
+ dan itu akan menjadi sistem besar. 
+
+296
+00:11:55,120 --> 00:11:57,010
+ Mereka akan memiliki banyak bug. 
+
+297
+00:11:57,010 --> 00:11:58,490
+ Dan Anda semacam memperbaikinya. 
+
+298
+00:11:58,490 --> 00:11:59,950
+ Anda mengubah model ancaman Anda sedikit. 
+
+299
+00:11:59,950 --> 00:12:02,900
+ Dan Anda melakukan iterasi dan mencoba merancang sistem baru, 
+
+300
+00:12:02,900 --> 00:12:06,720
+ dan semoga, membuat segalanya menjadi lebih baik. 
+
+301
+00:12:06,720 --> 00:12:10,640
+ Jadi salah satu interpretasi yang mungkin dari kelas ini-- baik, 
+
+302
+00:12:10,640 --> 00:12:14,360
+ satu bahaya-- adalah bahwa Anda datang jauh untuk berpikir, man, semuanya 
+
+303
+00:12:14,360 --> 00:12:15,070
+ hanya rusak. 
+
+304
+00:12:15,070 --> 00:12:15,780
+ Tidak ada yang berhasil. 
+
+305
+00:12:15,780 --> 00:12:18,390
+ Kita harus menyerah dan berhenti menggunakan komputer. 
+
+306
+00:12:18,390 --> 00:12:21,460
+ Dan ini adalah salah satu interpretasi yang mungkin. 
+
+307
+00:12:21,460 --> 00:12:23,752
+ Tapi itu mungkin bukan yang benar. 
+
+308
+00:12:23,752 --> 00:12:25,210
+ Alasan ini akan muncul 
+
+309
+00:12:25,210 --> 00:12:26,585
+ atau Anda akan berpikir seperti ini 
+
+310
+00:12:26,585 --> 00:12:28,060
+ karena, di seluruh kelas ini, 
+
+311
+00:12:28,060 --> 00:12:29,850
+ kita akan melihat semua sistem yang berbeda ini, 
+
+312
+00:12:29,850 --> 00:12:31,270
+ dan kita akan mendorong mereka ke tepi. 
+
+313
+00:12:31,270 --> 00:12:33,100
+ Kita akan melihat, oke, bagaimana jika kita melakukan ini? 
+
+314
+00:12:33,100 --> 00:12:33,690
+ Apakah akan rusak? 
+
+315
+00:12:33,690 --> 00:12:34,320
+ Bagaimana kalau kita melakukan itu? 
+
+316
+00:12:34,320 --> 00:12:35,519
+ Apakah akan rusak? 
+
+317
+00:12:35,519 --> 00:12:37,060
+ Dan mau tidak mau, setiap sistem berjalan 
+
+318
+00:12:37,060 --> 00:12:38,643
+ untuk memiliki semacam titik puncak. 
+
+319
+00:12:38,643 --> 00:12:39,860
+ Dan kami akan mencari tahu, oh hey. 
+
+320
+00:12:39,860 --> 00:12:42,420
+ Sistem ini, kita bisa mendobraknya jika kita mendorong cara ini. 
+
+321
+00:12:42,420 --> 00:12:46,260
+ Dan sistem ini tidak berfungsi di bawah asumsi-asumsi ini. 
+
+322
+00:12:46,260 --> 00:12:48,195
+ Dan tak terelakkan bahwa setiap sistem 
+
+323
+00:12:48,195 --> 00:12:49,320
+ akan memiliki titik puncak. 
+
+324
+00:12:49,320 --> 00:12:51,380
+ Tetapi itu tidak berarti bahwa setiap sistem tidak berharga. 
+
+325
+00:12:51,380 --> 00:12:52,920
+ Itu artinya Anda harus tahu kapan 
+
+326
+00:12:52,920 --> 00:12:54,980
+ untuk menggunakan setiap desain sistem. 
+
+327
+00:12:54,980 --> 00:12:57,360
+ Dan itu berguna untuk melakukan latihan mendorong ini 
+
+328
+00:12:57,360 --> 00:12:59,130
+ untuk menemukan kelemahanmu 
+
+329
+00:12:59,130 --> 00:13:03,530
+ tahu kapan ide-ide tertentu bekerja, ketika ide-ide tertentu tidak 
+
+330
+00:13:03,530 --> 00:13:04,940
+ berlaku. 
+
+331
+00:13:04,940 --> 00:13:09,190
+ Dan dalam kenyataannya, ini adalah batas yang lebih kabur, bukan? 
+
+332
+00:13:09,190 --> 00:13:11,660
+ Semakin aman Anda membuat sistem Anda, semakin kecil kemungkinannya 
+
+333
+00:13:11,660 --> 00:13:14,910
+ Anda akan memiliki beberapa cerita memalukan di halaman depan New 
+
+334
+00:13:14,910 --> 00:13:17,000
+ York Times berkata, perusahaan baru Anda 
+
+335
+00:13:17,000 --> 00:13:21,460
+ membocorkan sejuta nomor jaminan sosial. 
+
+336
+00:13:21,460 --> 00:13:26,770
+ Dan kemudian Anda membayar lebih sedikit uang untuk pulih dari bencana itu. 
+
+337
+00:13:26,770 --> 00:13:29,650
+ Dan saya kira semacam catatan positif tentang keamanan 
+
+338
+00:13:29,650 --> 00:13:33,230
+ adalah bahwa, dalam banyak hal, keamanan memungkinkan hal-hal keren yang Anda miliki 
+
+339
+00:13:33,230 --> 00:13:36,450
+ tidak bisa lakukan sebelumnya, karena keamanan, khususnya 
+
+340
+00:13:36,450 --> 00:13:40,170
+ mekanisme, yang memungkinkan kita untuk melindungi 
+
+341
+00:13:40,170 --> 00:13:43,140
+ melawan kelas serangan tertentu, cukup kuat. 
+
+342
+00:13:43,140 --> 00:13:46,512
+ Sebagai salah satu contoh, browser biasanya cukup membosankan 
+
+343
+00:13:46,512 --> 00:13:47,720
+ apa yang bisa Anda lakukan dengan itu. 
+
+344
+00:13:47,720 --> 00:13:49,270
+ Anda hanya bisa melihat halaman web, mungkin 
+
+345
+00:13:49,270 --> 00:13:50,930
+ jalankan beberapa kode JavaScript di dalamnya. 
+
+346
+00:13:50,930 --> 00:13:52,710
+ Tapi sekarang ada semua mekanisme keren ini 
+
+347
+00:13:52,710 --> 00:13:54,420
+ kita akan belajar tentangnya dalam beberapa minggu 
+
+348
+00:13:54,420 --> 00:13:57,810
+ yang memungkinkan Anda menjalankan kode native x86 sewenang-wenang di web 
+
+349
+00:13:57,810 --> 00:13:59,530
+ browser dan pastikan tidak 
+
+350
+00:13:59,530 --> 00:14:01,260
+ sesuatu yang lucu untuk mesin Anda. 
+
+351
+00:14:01,260 --> 00:14:04,154
+ Dan itu bisa mengirim-- dan ada teknik atau sistem 
+
+352
+00:14:04,154 --> 00:14:06,070
+ disebut Native Client dari Google yang sebenarnya 
+
+353
+00:14:06,070 --> 00:14:08,200
+ memungkinkan kami melakukan ini dengan aman. 
+
+354
+00:14:08,200 --> 00:14:11,127
+ Dan sebelumnya, untuk menjalankan beberapa game asli di komputer Anda, 
+
+355
+00:14:11,127 --> 00:14:13,710
+ Anda akan mengunduh dan menginstalnya, klik pada banyak dialog 
+
+356
+00:14:13,710 --> 00:14:15,671
+ kotak, katakan ya, saya mengizinkan ini. 
+
+357
+00:14:15,671 --> 00:14:17,420
+ Tetapi sekarang, Anda bisa menjalankannya di browser, 
+
+358
+00:14:17,420 --> 00:14:18,600
+ tidak perlu diklik. 
+
+359
+00:14:18,600 --> 00:14:19,510
+ Itu hanya berjalan. 
+
+360
+00:14:19,510 --> 00:14:22,200
+ Dan alasannya sangat mudah dan kuat 
+
+361
+00:14:22,200 --> 00:14:25,990
+ adalah bahwa mekanisme keamanan kami dapat melakukan sandbox pada program ini 
+
+362
+00:14:25,990 --> 00:14:29,590
+ dan tidak perlu mengasumsikan apa pun tentang pengguna yang memilih 
+
+363
+00:14:29,590 --> 00:14:31,730
+ game yang tepat dan bukan game berbahaya untuk dimainkan 
+
+364
+00:14:31,730 --> 00:14:34,460
+ di komputer mereka, atau program lain untuk dijalankan. 
+
+365
+00:14:34,460 --> 00:14:36,270
+ Jadi dalam banyak hal, mekanisme keamanan yang baik 
+
+366
+00:14:36,270 --> 00:14:40,610
+ akan memungkinkan membangun sistem baru yang keren yang tidak 
+
+367
+00:14:40,610 --> 00:14:43,551
+ mungkin untuk membangun sebelumnya. 
+
+368
+00:14:43,551 --> 00:14:44,050
+ Baiklah. 
+
+369
+00:14:44,050 --> 00:14:45,420
+ Masuk akal? 
+
+370
+00:14:45,420 --> 00:14:50,485
+ Ada pertanyaan tentang cerita ini? 
+
+371
+00:14:50,485 --> 00:14:51,890
+ Baiklah. 
+
+372
+00:14:51,890 --> 00:14:54,150
+ Jadi saya kira di sisa kuliah, 
+
+373
+00:14:54,150 --> 00:14:58,320
+ Saya ingin membahas banyak contoh berbeda tentang caranya 
+
+374
+00:14:58,320 --> 00:15:00,000
+ keamanan berjalan salah. 
+
+375
+00:15:00,000 --> 00:15:02,680
+ Jadi, sejauh ini, kami telah melihat bagaimana Anda dapat memikirkannya. 
+
+376
+00:15:02,680 --> 00:15:05,790
+ Tapi mau tidak mau, itu berguna untuk melihat contoh 
+
+377
+00:15:05,790 --> 00:15:10,230
+ dari apa yang tidak boleh dilakukan sehingga Anda dapat memiliki pola pikir yang lebih baik saat 
+
+378
+00:15:10,230 --> 00:15:12,470
+ Anda mendekati masalah keamanan. 
+
+379
+00:15:12,470 --> 00:15:16,586
+ Dan dalam pemecahan semacam ini dari sistem keamanan, 
+
+380
+00:15:16,586 --> 00:15:18,942
+ hampir semua dari tiga hal ini salah. 
+
+381
+00:15:18,942 --> 00:15:20,650
+ Dalam prakteknya, orang-orang salah mengambil kebijakan, 
+
+382
+00:15:20,650 --> 00:15:22,066
+ orang-orang mendapatkan model ancaman yang salah, 
+
+383
+00:15:22,066 --> 00:15:23,580
+ dan orang-orang mendapatkan mekanisme yang salah. 
+
+384
+00:15:23,580 --> 00:15:27,280
+ Dan mari, saya kira, mulailah dengan kebijakan dan contoh 
+
+385
+00:15:27,280 --> 00:15:31,420
+ bagaimana Anda bisa mengacaukan kebijakan sistem. 
+
+386
+00:15:31,420 --> 00:15:35,220
+ Mungkin contoh yang paling sederhana atau paling bersih dari ini 
+
+387
+00:15:35,220 --> 00:15:38,350
+ adalah pertanyaan pemulihan akun. 
+
+388
+00:15:38,350 --> 00:15:41,810
+
+
+389
+00:15:41,810 --> 00:15:46,282
+ Jadi biasanya, ketika Anda masuk ke situs web, 
+
+390
+00:15:46,282 --> 00:15:47,240
+ Anda memberikan kata sandi. 
+
+391
+00:15:47,240 --> 00:15:49,640
+ Tetapi apa yang terjadi jika Anda kehilangan kata sandi? 
+
+392
+00:15:49,640 --> 00:15:52,570
+ Beberapa situs akan mengirimi Anda email jika Anda 
+
+393
+00:15:52,570 --> 00:15:55,190
+ kehilangan kata sandi Anda dengan tautan untuk mereset kata sandi Anda. 
+
+394
+00:15:55,190 --> 00:15:57,481
+ Jadi cukup mudah, jika Anda memiliki alamat email lain. 
+
+395
+00:15:57,481 --> 00:15:59,400
+ Tetapi bagaimana jika ini adalah penyedia email Anda? 
+
+396
+00:15:59,400 --> 00:16:03,700
+ Jadi setidaknya, beberapa tahun lalu, Yahoo 
+
+397
+00:16:03,700 --> 00:16:06,660
+ host email, webmail, untuk siapa pun di internet. 
+
+398
+00:16:06,660 --> 00:16:08,572
+ Dan ketika Anda lupa kata sandi Yahoo Anda, 
+
+399
+00:16:08,572 --> 00:16:10,030
+ mereka tidak bisa mengirimi Anda email 
+
+400
+00:16:10,030 --> 00:16:11,610
+ karena kamu tidak bisa mendapatkannya. 
+
+401
+00:16:11,610 --> 00:16:13,420
+ Jadi sebagai gantinya, mereka telah Anda daftarkan 
+
+402
+00:16:13,420 --> 00:16:16,317
+ beberapa pertanyaan dengan mereka yang semoga hanya Anda yang tahu. 
+
+403
+00:16:16,317 --> 00:16:18,650
+ Dan jika Anda lupa kata sandi Anda, Anda dapat mengeklik tautan 
+
+404
+00:16:18,650 --> 00:16:21,130
+ dan katakan, yah, inilah jawaban atas pertanyaan saya. 
+
+405
+00:16:21,130 --> 00:16:23,480
+ Biarkan saya memiliki kata sandi saya lagi. 
+
+406
+00:16:23,480 --> 00:16:26,360
+ Dan apa yang terjadi adalah kasusnya-- baik, 
+
+407
+00:16:26,360 --> 00:16:30,430
+ beberapa orang gagal menyadari bahwa ini mengubah kebijakan Anda, 
+
+408
+00:16:30,430 --> 00:16:32,800
+ karena sebelumnya, kebijakan sistem 
+
+409
+00:16:32,800 --> 00:16:35,280
+ adalah orang yang dapat masuk adalah orang-orang itu 
+
+410
+00:16:35,280 --> 00:16:36,931
+ tahu kata sandinya. 
+
+411
+00:16:36,931 --> 00:16:38,930
+ Dan ketika Anda memperkenalkan pertanyaan pemulihan ini, 
+
+412
+00:16:38,930 --> 00:16:40,596
+ kebijakan menjadi, Anda dapat masuk 
+
+413
+00:16:40,596 --> 00:16:44,380
+ jika Anda tahu kata sandi atau pertanyaan keamanan tersebut. 
+
+414
+00:16:44,380 --> 00:16:47,001
+ Jadi itu sangat melemahkan keamanan sistem Anda. 
+
+415
+00:16:47,001 --> 00:16:49,250
+ Dan banyak orang benar-benar memanfaatkan ini. 
+
+416
+00:16:49,250 --> 00:16:53,410
+ Salah satu contoh yang terkenal adalah, saya pikir beberapa tahun yang lalu, 
+
+417
+00:16:53,410 --> 00:16:55,820
+ Sarah Palin memiliki akun email di Yahoo. 
+
+418
+00:16:55,820 --> 00:16:59,390
+ Dan pertanyaan pemulihannya adalah hal-hal seperti, yah, 
+
+419
+00:16:59,390 --> 00:17:00,660
+ dari mana kamu pergi ke sekolah? 
+
+420
+00:17:00,660 --> 00:17:03,406
+ Siapa nama temanmu? 
+
+421
+00:17:03,406 --> 00:17:04,280
+ Apa hari ulang tahunmu? 
+
+422
+00:17:04,280 --> 00:17:04,960
+ Dan sebagainya. 
+
+423
+00:17:04,960 --> 00:17:07,430
+ Ini semua adalah hal yang ditulis di halaman Wikipedia-nya. 
+
+424
+00:17:07,430 --> 00:17:09,690
+ Dan sebagai hasilnya, seseorang dapat dengan mudah, 
+
+425
+00:17:09,690 --> 00:17:12,839
+ dan seseorang benar-benar masuk ke akun email Yahoo-nya 
+
+426
+00:17:12,839 --> 00:17:15,319
+ hanya dengan melihat di Wikipedia apa sekolah menengahnya 
+
+427
+00:17:15,319 --> 00:17:17,378
+ dan apa ulang tahunnya. 
+
+428
+00:17:17,378 --> 00:17:18,919
+ Jadi Anda benar-benar harus berpikir dengan hati-hati 
+
+429
+00:17:18,920 --> 00:17:21,890
+ tentang implikasi dari keamanan yang berbeda 
+
+430
+00:17:21,890 --> 00:17:24,819
+ kebijakan yang Anda buat di sini. 
+
+431
+00:17:24,819 --> 00:17:29,220
+ Mungkin contoh yang lebih rumit dan, mungkin, menarik, 
+
+432
+00:17:29,220 --> 00:17:32,720
+ adalah apa yang terjadi ketika Anda memiliki beberapa sistem yang dimulai 
+
+433
+00:17:32,720 --> 00:17:34,750
+ berinteraksi satu sama lain. 
+
+434
+00:17:34,750 --> 00:17:39,340
+ Jadi ada cerita bagus tentang seorang pria bernama Mat Honan. 
+
+435
+00:17:39,340 --> 00:17:42,660
+ Mungkin Anda membaca cerita ini satu atau dua tahun yang lalu. 
+
+436
+00:17:42,660 --> 00:17:45,900
+ Dia seorang editor di majalah wired.com ini. 
+
+437
+00:17:45,900 --> 00:17:48,150
+ Dan ada sedikit masalah. 
+
+438
+00:17:48,150 --> 00:17:50,550
+ Seseorang pada dasarnya masuk ke akun Gmail-nya 
+
+439
+00:17:50,550 --> 00:17:52,340
+ dan melakukan banyak hal buruk. 
+
+440
+00:17:52,340 --> 00:17:53,590
+ Tapi bagaimana mereka melakukannya, bukan? 
+
+441
+00:17:53,590 --> 00:17:54,870
+ Jadi ini agak menarik. 
+
+442
+00:17:54,870 --> 00:17:57,640
+ Jadi semua pihak dalam cerita ini tampak 
+
+443
+00:17:57,640 --> 00:17:58,890
+ untuk melakukan hal-hal yang masuk akal. 
+
+444
+00:17:58,890 --> 00:18:01,181
+ Tapi kita akan melihat bagaimana mereka menambahkan sesuatu yang tidak menguntungkan. 
+
+445
+00:18:01,181 --> 00:18:02,530
+ Jadi kami memiliki Gmail. 
+
+446
+00:18:02,530 --> 00:18:06,580
+ Dan Gmail memungkinkan Anda mengatur ulang kata sandi Anda 
+
+447
+00:18:06,580 --> 00:18:09,700
+ jika Anda lupa, seperti halnya hampir semua sistem lainnya. 
+
+448
+00:18:09,700 --> 00:18:13,670
+ Dan cara Anda melakukan reset di Gmail 
+
+449
+00:18:13,670 --> 00:18:16,090
+ apakah Anda mengirimi mereka permintaan setel ulang. 
+
+450
+00:18:16,090 --> 00:18:19,030
+ Dan apa yang mereka katakan adalah, yah, Anda tidak 
+
+451
+00:18:19,030 --> 00:18:21,420
+ akan melakukan pertanyaan pemulihan ini, setidaknya 
+
+452
+00:18:21,420 --> 00:18:22,306
+ bukan untuk orang ini. 
+
+453
+00:18:22,306 --> 00:18:24,930
+ Apa yang mereka lakukan adalah mengirimi Anda tautan pemulihan ke email cadangan 
+
+454
+00:18:24,930 --> 00:18:27,130
+ alamat, atau alamat email lain yang Anda miliki. 
+
+455
+00:18:27,130 --> 00:18:29,588
+ Dan membantu, mereka benar-benar mencetak alamat email untuk Anda. 
+
+456
+00:18:29,588 --> 00:18:31,139
+ Jadi untuk akun orang ini, seseorang 
+
+457
+00:18:31,139 --> 00:18:32,930
+ pergi dan meminta Gmail untuk mereset kata sandi. 
+
+458
+00:18:32,930 --> 00:18:33,830
+ Dan mereka berkata, yah, ya. 
+
+459
+00:18:33,830 --> 00:18:34,330
+ Yakin. 
+
+460
+00:18:34,330 --> 00:18:37,080
+ Kami baru saja mengirim tautan pemulihan ke email ini, 
+
+461
+00:18:37,080 --> 00:18:42,089
+ foo@me.com, yang merupakan beberapa layanan email Apple. 
+
+462
+00:18:42,089 --> 00:18:44,505
+ Oke, tapi si jahat juga tidak punya akses ke me.com. 
+
+463
+00:18:44,505 --> 00:18:46,860
+ Tetapi mereka ingin mendapatkan pengaturan ulang kata sandi ini 
+
+464
+00:18:46,860 --> 00:18:48,790
+ tautan untuk mendapatkan akses ke Gmail. 
+
+465
+00:18:48,790 --> 00:18:50,860
+ Nah, cara kerjanya adalah, 
+
+466
+00:18:50,860 --> 00:18:55,980
+ dalam kasus Apple, situs me.com ini, 
+
+467
+00:18:55,980 --> 00:19:00,830
+ memungkinkan Anda untuk mereset kata sandi Anda jika Anda tahu 
+
+468
+00:19:00,830 --> 00:19:03,580
+ alamat penagihan Anda dan empat digit terakhir dari kredit Anda 
+
+469
+00:19:03,580 --> 00:19:05,112
+ nomor kartu. 
+
+470
+00:19:05,112 --> 00:19:07,300
+ Jadi masih belum jelas bagaimana Anda akan mendapatkan ini 
+
+471
+00:19:07,300 --> 00:19:10,591
+ guy's-- baik, alamat rumah, mungkin Anda bisa mencarinya 
+
+472
+00:19:10,591 --> 00:19:11,090
+ suatu tempat. 
+
+473
+00:19:11,090 --> 00:19:12,981
+ Orang ini adalah orang terkenal pada saat itu. 
+
+474
+00:19:12,981 --> 00:19:15,480
+ Tapi di mana Anda mendapatkan empat digit terakhir dari kartu kreditnya 
+
+475
+00:19:15,480 --> 00:19:16,640
+ jumlah? 
+
+476
+00:19:16,640 --> 00:19:21,177
+ Yah, tidak jelas, tapi mari kita lanjutkan lebih jauh. 
+
+477
+00:19:21,177 --> 00:19:23,510
+ Jadi Anda perlu mengirim hal-hal ini ke me.com untuk mendapatkan akses 
+
+478
+00:19:23,510 --> 00:19:25,652
+ ke akun emailnya di sana. 
+
+479
+00:19:25,652 --> 00:19:28,110
+ Nah, ternyata orang ini punya akun di Amazon, yang mana 
+
+480
+00:19:28,110 --> 00:19:31,250
+ adalah pihak lain dalam cerita ini. 
+
+481
+00:19:31,250 --> 00:19:34,460
+ Amazon benar-benar ingin Anda membeli barang. 
+
+482
+00:19:34,460 --> 00:19:38,030
+ Dan sebagai hasilnya, mereka benar-benar memiliki akun yang cukup rumit 
+
+483
+00:19:38,030 --> 00:19:39,770
+ sistem manajemen. 
+
+484
+00:19:39,770 --> 00:19:42,950
+ Dan khususnya, karena mereka benar-benar ingin Anda membeli barang, 
+
+485
+00:19:42,950 --> 00:19:44,490
+ mereka tidak mengharuskan Anda masuk 
+
+486
+00:19:44,490 --> 00:19:47,670
+ untuk membeli barang dengan kartu kredit. 
+
+487
+00:19:47,670 --> 00:19:50,710
+ Jadi saya benar-benar bisa pergi di Amazon, atau setidaknya pada saat itu, 
+
+488
+00:19:50,710 --> 00:19:53,400
+ Saya bisa pergi di Amazon dan berkata, saya adalah pengguna ini. 
+
+489
+00:19:53,400 --> 00:19:57,490
+ Dan saya ingin membeli paket sikat gigi ini. 
+
+490
+00:19:57,490 --> 00:20:00,140
+ Dan jika saya ingin menggunakan kartu kredit yang disimpan 
+
+491
+00:20:00,140 --> 00:20:02,640
+ nomor di akun pria itu, aku seharusnya tidak bisa melakukan ini. 
+
+492
+00:20:02,640 --> 00:20:05,740
+ Tetapi jika saya hanya memberikan kartu kredit baru, apa Amazon 
+
+493
+00:20:05,740 --> 00:20:08,280
+ akan lakukan adalah, mereka benar-benar dapat menambahkan kredit baru 
+
+494
+00:20:08,280 --> 00:20:13,500
+ kartu ke akun beberapa orang. 
+
+495
+00:20:13,500 --> 00:20:15,500
+ Jadi sepertinya tidak terlalu buruk, kan? 
+
+496
+00:20:15,500 --> 00:20:17,060
+ Saya pada dasarnya memesan sikat gigi 
+
+497
+00:20:17,060 --> 00:20:18,839
+ melalui salah satu akun Amazon Anda. 
+
+498
+00:20:18,839 --> 00:20:20,380
+ Tapi ini bukan kartu kredit Anda. 
+
+499
+00:20:20,380 --> 00:20:22,380
+ Hanya nomor kartu kredit saya yang digunakan. 
+
+500
+00:20:22,380 --> 00:20:24,220
+ Jadi tidak jelas bagaimana hal-hal yang salah terjadi. 
+
+501
+00:20:24,220 --> 00:20:26,630
+ Tetapi Amazon memiliki antarmuka lain. 
+
+502
+00:20:26,630 --> 00:20:28,430
+ Semua ini adalah sistem yang rumit. 
+
+503
+00:20:28,430 --> 00:20:31,700
+ Dan Amazon memiliki antarmuka untuk mengatur ulang kata sandi. 
+
+504
+00:20:31,700 --> 00:20:34,550
+ Dan untuk mereset kata sandi di Amazon, 
+
+505
+00:20:34,550 --> 00:20:38,230
+ apa yang harus Anda sediakan hanyalah salah satu kartu kredit pengguna 
+
+506
+00:20:38,230 --> 00:20:39,560
+ angka. 
+
+507
+00:20:39,560 --> 00:20:42,424
+ Jadi saya bisa memesan barang dan menambahkan nomor kartu kredit 
+
+508
+00:20:42,424 --> 00:20:43,090
+ ke akun Anda. 
+
+509
+00:20:43,090 --> 00:20:45,298
+ Dan kemudian saya dapat mengatakan, hei, saya ingin mereset kata sandi saya. 
+
+510
+00:20:45,298 --> 00:20:46,920
+ Ini adalah salah satu nomor kartu kredit saya. 
+
+511
+00:20:46,920 --> 00:20:48,900
+ Dan ini, pada kenyataannya, berhasil. 
+
+512
+00:20:48,900 --> 00:20:53,590
+ Jadi ini adalah di mana orang jahat memegang orang ini, Mat, 
+
+513
+00:20:53,590 --> 00:20:54,920
+ Akun Amazon. 
+
+514
+00:20:54,920 --> 00:20:55,420
+ Baiklah. 
+
+515
+00:20:55,420 --> 00:20:57,260
+ Bagaimana Anda mengeluarkan nomor kartu kredit 
+
+516
+00:20:57,260 --> 00:20:59,350
+ untuk mereset situs Apple? 
+
+517
+00:20:59,350 --> 00:21:01,010
+ Nah, Amazon sebenarnya sangat berhati-hati. 
+
+518
+00:21:01,010 --> 00:21:03,010
+ Bahkan jika Anda masuk ke akun Amazon seseorang, 
+
+519
+00:21:03,010 --> 00:21:05,620
+ itu tidak akan mencetak Anda kartu kredit yang disimpan 
+
+520
+00:21:05,620 --> 00:21:07,700
+ angka dari orang itu. 
+
+521
+00:21:07,700 --> 00:21:09,284
+ Tapi itu akan menunjukkan empat digit terakhir. 
+
+522
+00:21:09,284 --> 00:21:11,616
+ Asal Anda tahu kartu kredit mana yang Anda bicarakan. 
+
+523
+00:21:11,616 --> 00:21:14,220
+ Jadi Anda bisa daftar semua kartu kredit, selain yang satu ini 
+
+524
+00:21:14,220 --> 00:21:14,930
+ kamu sudah menambahkan. 
+
+525
+00:21:14,930 --> 00:21:16,770
+ Anda kemudian dapat pergi dan masuk ke me.com. 
+
+526
+00:21:16,770 --> 00:21:19,620
+ Anda dapat mengklik tautan ini dan mendapatkan akses 
+
+527
+00:21:19,620 --> 00:21:21,281
+ ke akun Gmail orang itu. 
+
+528
+00:21:21,281 --> 00:21:22,530
+ Ini semua hal yang sangat halus. 
+
+529
+00:21:22,530 --> 00:21:24,380
+ Dan dalam isolasi, setiap sistem tampaknya 
+
+530
+00:21:24,380 --> 00:21:26,880
+ melakukan hal-hal yang masuk akal. 
+
+531
+00:21:26,880 --> 00:21:28,590
+ Tapi sebenarnya cukup sulit untuk berpikir 
+
+532
+00:21:28,590 --> 00:21:31,560
+ tentang kerentanan dan kelemahan ini 
+
+533
+00:21:31,560 --> 00:21:34,480
+ kecuali Anda memiliki seluruh gambar ini menjelaskan kepada Anda 
+
+534
+00:21:34,480 --> 00:21:37,380
+ dan Anda sudah mengumpulkan semua bagian. 
+
+535
+00:21:37,380 --> 00:21:41,310
+ Jadi ini sebenarnya hal yang cukup rumit. 
+
+536
+00:21:41,310 --> 00:21:45,012
+ Dan sayangnya, yah, seperti untuk setiap orang 
+
+537
+00:21:45,012 --> 00:21:47,470
+ dari ketiga kategori ini, jawaban untuk cara menghindarinya 
+
+538
+00:21:47,470 --> 00:21:50,630
+ sering berpikir keras dan berhati-hati. 
+
+539
+00:21:50,630 --> 00:21:54,330
+ Saya kira satu rencana umum adalah, bersikap konservatif 
+
+540
+00:21:54,330 --> 00:21:57,960
+ dari apa yang Anda tetapkan untuk menjadi kebijakan Anda, 
+
+541
+00:21:57,960 --> 00:22:01,540
+ mungkin tidak bergantung pada hal-hal yang mungkin diungkapkan situs lain. 
+
+542
+00:22:01,540 --> 00:22:05,645
+ Sangat baik, saya tidak yakin apakah ada saran yang sangat bagus 
+
+543
+00:22:05,645 --> 00:22:06,942
+ telah mencegah masalah ini. 
+
+544
+00:22:06,942 --> 00:22:07,650
+ Tapi sekarang kamu tahu. 
+
+545
+00:22:07,650 --> 00:22:11,180
+ Dan sekarang Anda akan membuat kesalahan lain. 
+
+546
+00:22:11,180 --> 00:22:13,970
+ Ada banyak contoh kebijakan lainnya 
+
+547
+00:22:13,970 --> 00:22:18,577
+ salah dan memungkinkan sistem dikompromikan. 
+
+548
+00:22:18,577 --> 00:22:19,660
+ Itu cukup menarik. 
+
+549
+00:22:19,660 --> 00:22:22,550
+ Tapi mari kita lihat bagaimana orang-orang mungkin mengacaukan model ancaman. 
+
+550
+00:22:22,550 --> 00:22:28,020
+ Jadi biarkan saya mematikan kotak biru ini. 
+
+551
+00:22:28,020 --> 00:22:28,520
+ BAIK. 
+
+552
+00:22:28,520 --> 00:22:36,060
+ Jadi apa contoh model ancaman yang salah? 
+
+553
+00:22:36,060 --> 00:22:42,410
+ Yah, mungkin yang besar dalam praktiknya adalah faktor manusia. 
+
+554
+00:22:42,410 --> 00:22:45,970
+ Jadi kita sering membuat asumsi tentang apa 
+
+555
+00:22:45,970 --> 00:22:49,040
+ orang akan melakukan sistem, seperti mereka 
+
+556
+00:22:49,040 --> 00:22:51,150
+ akan memilih kata sandi yang bagus dan kuat, 
+
+557
+00:22:51,150 --> 00:22:53,920
+ atau mereka tidak akan mengklik situs web acak 
+
+558
+00:22:53,920 --> 00:22:56,800
+ yang mereka dapatkan melalui email dan masukkan kata sandi mereka di sana. 
+
+559
+00:22:56,800 --> 00:22:59,594
+ Jadi ini ... well, seperti yang mungkin Anda duga, 
+
+560
+00:22:59,594 --> 00:23:01,260
+ dan dalam prakteknya, kebetulan terjadi, 
+
+561
+00:23:01,260 --> 00:23:03,800
+ ini bukan asumsi yang bagus dalam semua kasus. 
+
+562
+00:23:03,800 --> 00:23:06,020
+ Dan orang-orang memilih kata sandi yang buruk. 
+
+563
+00:23:06,020 --> 00:23:08,510
+ Dan orang-orang akan mengklik tautan acak. 
+
+564
+00:23:08,510 --> 00:23:10,350
+ Dan orang-orang akan memasukkan kata sandi mereka 
+
+565
+00:23:10,350 --> 00:23:13,510
+ di situs yang sebenarnya bukan situs yang tepat sama sekali. 
+
+566
+00:23:13,510 --> 00:23:16,990
+ Dan mereka tidak akan membayar banyak perhatian. 
+
+567
+00:23:16,990 --> 00:23:19,960
+ Jadi Anda mungkin tidak ingin memiliki model ancaman itu 
+
+568
+00:23:19,960 --> 00:23:21,600
+ membuat asumsi yang sangat kuat tentang apa 
+
+569
+00:23:21,600 --> 00:23:23,433
+ manusia akan melakukan karena mau tidak mau, sesuatu 
+
+570
+00:23:23,433 --> 00:23:25,610
+ akan salah. 
+
+571
+00:23:25,610 --> 00:23:26,720
+ Masuk akal? 
+
+572
+00:23:26,720 --> 00:23:29,220
+ Ada pertanyaan? 
+
+573
+00:23:29,220 --> 00:23:29,850
+ Baiklah. 
+
+574
+00:23:29,850 --> 00:23:32,690
+ Hal lain yang baik untuk diperhatikan dalam model ancaman 
+
+575
+00:23:32,690 --> 00:23:35,860
+ adalah bahwa kadang-kadang mereka berubah seiring waktu. 
+
+576
+00:23:35,860 --> 00:23:38,160
+ Atau apakah sesuatu itu asumsi yang bagus atau tidak 
+
+577
+00:23:38,160 --> 00:23:40,160
+ berubah seiring waktu. 
+
+578
+00:23:40,160 --> 00:23:45,420
+ Salah satu contohnya adalah di MIT pertengahan pertengahan 90-an 
+
+579
+00:23:45,420 --> 00:23:48,080
+ '80 -an, sebenarnya-- Proyek Athena dikembangkan 
+
+580
+00:23:48,080 --> 00:23:49,250
+ sistem ini disebut Kerberos. 
+
+581
+00:23:49,250 --> 00:23:52,830
+ Dan kita akan membaca tentang ini dalam beberapa minggu di kelas ini. 
+
+582
+00:23:52,830 --> 00:23:55,640
+ Dan pada saat itu, mereka semacam mencari tahu, baik, Kerberos 
+
+583
+00:23:55,640 --> 00:23:57,181
+ akan didasarkan pada kriptografi. 
+
+584
+00:23:57,181 --> 00:23:59,331
+ Jadi kita perlu memilih beberapa kunci ukuran 
+
+585
+00:23:59,331 --> 00:24:00,830
+ untuk memastikan itu tidak akan terjadi 
+
+586
+00:24:00,830 --> 00:24:02,570
+ ditebak oleh orang yang sewenang-wenang. 
+
+587
+00:24:02,570 --> 00:24:03,320
+ Dan mereka berkata, oke. 
+
+588
+00:24:03,320 --> 00:24:06,120
+ Yah Anda tahu, kunci 56-bit, pada saat itu, 
+
+589
+00:24:06,120 --> 00:24:09,960
+ untuk ini disebut Cypher, tampak seperti ukuran yang masuk akal. 
+
+590
+00:24:09,960 --> 00:24:13,700
+ Mungkin tidak hebat, tetapi tentu saja tidak sepenuhnya tidak masuk akal. 
+
+591
+00:24:13,700 --> 00:24:14,997
+ Dan ini di pertengahan tahun 80-an. 
+
+592
+00:24:14,997 --> 00:24:17,580
+ Tapi kemudian Anda tahu, sistem ini menjadi populer dan banyak digunakan. 
+
+593
+00:24:17,580 --> 00:24:19,400
+ MIT masih menggunakannya. 
+
+594
+00:24:19,400 --> 00:24:22,400
+ Dan mereka tidak pernah benar-benar kembali untuk kembali secara serius 
+
+595
+00:24:22,400 --> 00:24:23,900
+ asumsi ini. 
+
+596
+00:24:23,900 --> 00:24:27,244
+ Dan kemudian, beberapa tahun yang lalu, sekelompok 6.858 siswa 
+
+597
+00:24:27,244 --> 00:24:29,910
+ tahu itu sebenarnya, ya, kamu bisa pecahkan ini, kan? 
+
+598
+00:24:29,910 --> 00:24:34,480
+ Cukup mudah untuk menghitung semua kunci 256 hari ini. 
+
+599
+00:24:34,480 --> 00:24:36,570
+ Komputer begitu cepat, Anda bisa melakukannya. 
+
+600
+00:24:36,570 --> 00:24:38,780
+ Dan sebagai hasilnya, mereka mampu, 
+
+601
+00:24:38,780 --> 00:24:42,619
+ dengan bantuan beberapa perangkat keras dari web tertentu 
+
+602
+00:24:42,619 --> 00:24:45,160
+ layanan-- kami akan memiliki beberapa tautan catatan kuliah-- mereka 
+
+603
+00:24:45,160 --> 00:24:50,170
+ bisa mendapatkan, pada dasarnya, siapa pun kunci akun Kerberos secara kasar 
+
+604
+00:24:50,170 --> 00:24:51,100
+ satu hari. 
+
+605
+00:24:51,100 --> 00:24:55,030
+ Dan asumsi ini bagus pada pertengahan 1980-an. 
+
+606
+00:24:55,030 --> 00:24:57,210
+ Tidak ada lagi asumsi yang bagus hari ini. 
+
+607
+00:24:57,210 --> 00:24:59,850
+ Jadi Anda benar-benar harus memastikan asumsi Anda 
+
+608
+00:24:59,850 --> 00:25:02,220
+ semacam mengikuti perkembangan zaman. 
+
+609
+00:25:02,220 --> 00:25:06,140
+ Mungkin contoh yang lebih tepat adalah, jika musuh Anda-- 
+
+610
+00:25:06,140 --> 00:25:08,980
+ atau jika Anda khawatir tentang serangan pemerintah, 
+
+611
+00:25:08,980 --> 00:25:12,371
+ Anda mungkin menyadari bahwa Anda tidak seharusnya mempercayai perangkat keras sekalipun 
+
+612
+00:25:12,371 --> 00:25:13,120
+ belakangan ini, kan? 
+
+613
+00:25:13,120 --> 00:25:14,870
+ Ada semua wahyu ini tentang apa 
+
+614
+00:25:14,870 --> 00:25:16,860
+ NSA mampu melakukannya. 
+
+615
+00:25:16,860 --> 00:25:18,590
+ Dan mereka memiliki pintu belakang hardware 
+
+616
+00:25:18,590 --> 00:25:20,922
+ yang dapat mereka masukkan ke komputer. 
+
+617
+00:25:20,922 --> 00:25:23,444
+ Dan mungkin sampai beberapa tahun yang lalu, yah, siapa yang tahu? 
+
+618
+00:25:23,444 --> 00:25:25,110
+ Saya kira kita tidak tahu tentang hal ini. 
+
+619
+00:25:25,110 --> 00:25:27,360
+ Jadi mungkin itu adalah asumsi yang masuk akal 
+
+620
+00:25:27,360 --> 00:25:29,270
+ berasumsi laptop Anda tidak berfungsi 
+
+621
+00:25:29,270 --> 00:25:31,962
+ untuk dikompromikan secara fisik, perangkat keras itu sendiri. 
+
+622
+00:25:31,962 --> 00:25:32,670
+ Tapi sekarang kamu tahu. 
+
+623
+00:25:32,670 --> 00:25:34,670
+ Sebenarnya, jika Anda khawatir tentang pemerintah 
+
+624
+00:25:34,670 --> 00:25:37,190
+ menjadi setelah Anda, Anda mungkin memiliki masalah yang jauh lebih sulit 
+
+625
+00:25:37,190 --> 00:25:39,009
+ untuk menangani karena laptop Anda mungkin 
+
+626
+00:25:39,009 --> 00:25:40,550
+ dikompromikan secara fisik, bagaimanapun juga 
+
+627
+00:25:40,550 --> 00:25:42,621
+ dari apa yang Anda pasang di dalamnya. 
+
+628
+00:25:42,621 --> 00:25:44,870
+ Jadi kita benar-benar harus berhati-hati dengan model ancaman Anda 
+
+629
+00:25:44,870 --> 00:25:46,820
+ dan benar-benar menyeimbangkannya dengan siapa 
+
+630
+00:25:46,820 --> 00:25:48,236
+ Anda pikir keluar untuk mendapatkan Anda. 
+
+631
+00:25:48,236 --> 00:25:50,860
+ Saya pikir itu akan menjadi proposisi yang sangat mahal jika Anda 
+
+632
+00:25:50,860 --> 00:25:53,302
+ akan mencoba untuk melindungi diri dari NSA, sungguh. 
+
+633
+00:25:53,302 --> 00:25:55,510
+ Di sisi lain, jika Anda hanya melindungi diri sendiri 
+
+634
+00:25:55,510 --> 00:25:57,772
+ dari siswa lain acak yang, 
+
+635
+00:25:57,772 --> 00:26:00,230
+ Saya tidak tahu, mengintip di direktori home Athena Anda 
+
+636
+00:26:00,230 --> 00:26:01,938
+ atau entah apa lagi, mungkin Anda tidak perlu khawatir 
+
+637
+00:26:01,938 --> 00:26:03,210
+ tentang hal ini. 
+
+638
+00:26:03,210 --> 00:26:06,320
+ Jadi ini benar-benar permainan penyeimbang dan memilih ancaman yang tepat 
+
+639
+00:26:06,320 --> 00:26:08,610
+ model. 
+
+640
+00:26:08,610 --> 00:26:15,370
+ Contoh lain dari model ancaman buruk muncul di jalan 
+
+641
+00:26:15,370 --> 00:26:18,307
+ situs web aman hari ini memeriksa sertifikat situs web 
+
+642
+00:26:18,307 --> 00:26:19,390
+ yang Anda hubungkan. 
+
+643
+00:26:19,390 --> 00:26:23,350
+ Jadi dalam protokol SSL ini atau TLS, ketika Anda terhubung ke situs web 
+
+644
+00:26:23,350 --> 00:26:25,860
+ dan dikatakan HTTPS-- kami akan berbicara lebih banyak tentang ini 
+
+645
+00:26:25,860 --> 00:26:28,710
+ di kuliah nanti - tetapi apa yang terjadi 
+
+646
+00:26:28,710 --> 00:26:30,955
+ adalah situs yang Anda sambungkan untuk menyajikan Anda 
+
+647
+00:26:30,955 --> 00:26:34,800
+ sertifikat yang ditandatangani oleh salah satu otoritas sertifikat 
+
+648
+00:26:34,800 --> 00:26:37,450
+ di luar sana yang membuktikan itu, ya, kunci ini 
+
+649
+00:26:37,450 --> 00:26:39,910
+ milik Amazon.com. 
+
+650
+00:26:39,910 --> 00:26:42,330
+ Dan secara arsitektural, semacam kesalahan 
+
+651
+00:26:42,330 --> 00:26:46,937
+ atau model ancaman buruk yang diasumsikan orang-orang ini 
+
+652
+00:26:46,937 --> 00:26:49,020
+ adalah semua CA ini akan dapat dipercaya. 
+
+653
+00:26:49,020 --> 00:26:50,805
+ Mereka tidak akan pernah melakukan kesalahan. 
+
+654
+00:26:50,805 --> 00:26:52,180
+ Dan faktanya, cara sistem bekerja 
+
+655
+00:26:52,180 --> 00:26:54,710
+ adalah ada ratusan CA di luar sana. 
+
+656
+00:26:54,710 --> 00:26:58,390
+ Otoritas pos India, saya pikir, memiliki CA. 
+
+657
+00:26:58,390 --> 00:27:00,420
+ Pemerintah Cina memiliki CA. 
+
+658
+00:27:00,420 --> 00:27:04,780
+ Banyak entitas adalah otoritas sertifikat dalam desain ini. 
+
+659
+00:27:04,780 --> 00:27:06,870
+ Dan mereka bisa membuat sertifikat 
+
+660
+00:27:06,870 --> 00:27:09,667
+ untuk nama host atau nama domain apa pun. 
+
+661
+00:27:09,667 --> 00:27:11,750
+ Dan sebagai hasilnya, apa yang terjadi jika Anda orang jahat, 
+
+662
+00:27:11,750 --> 00:27:14,750
+ jika Anda ingin berkompromi dengan Gmail atau jika Anda ingin berkedok sebagai orang lain 
+
+663
+00:27:14,750 --> 00:27:16,739
+ Situs web Gmail, Anda hanya perlu berkompromi 
+
+664
+00:27:16,739 --> 00:27:18,280
+ salah satu dari otoritas sertifikat ini. 
+
+665
+00:27:18,280 --> 00:27:20,450
+ Dan ternyata tautan terlemah itu mungkin 
+
+666
+00:27:20,450 --> 00:27:23,170
+ beberapa otoritas yang dikelola dengan buruk di suatu tempat di beberapa, 
+
+667
+00:27:23,170 --> 00:27:26,730
+ Anda tahu, tidak terlalu up to date country. 
+
+668
+00:27:26,730 --> 00:27:27,760
+ Siapa yang tahu, kan? 
+
+669
+00:27:27,760 --> 00:27:31,170
+ Dan sebagai hasilnya, itu mungkin asumsi yang buruk 
+
+670
+00:27:31,170 --> 00:27:33,216
+ untuk membangun sistem-- atau itu ide yang buruk 
+
+671
+00:27:33,216 --> 00:27:34,840
+ untuk membangun sistem di sekitar asumsi 
+
+672
+00:27:34,840 --> 00:27:38,870
+ Anda akan berhasil menyimpan semua 300 sertifikat 
+
+673
+00:27:38,870 --> 00:27:42,420
+ pihak berwenang tersebar di seluruh dunia dengan sangat aman. 
+
+674
+00:27:42,420 --> 00:27:44,560
+ Namun, itulah asumsi yang mendukung 
+
+675
+00:27:44,560 --> 00:27:49,090
+ mekanisme keamanan protokol SSL saat ini digunakan 
+
+676
+00:27:49,090 --> 00:27:51,900
+ oleh peramban web. 
+
+677
+00:27:51,900 --> 00:27:56,040
+ Dan ada banyak contoh lain, saya kira 
+
+678
+00:27:56,040 --> 00:27:58,510
+ itu adalah hal-hal yang mungkin tidak terpikirkan oleh Anda. 
+
+679
+00:27:58,510 --> 00:28:04,080
+ Contoh lain yang menyenangkan dari tahun 1980an adalah DARPA. 
+
+680
+00:28:04,080 --> 00:28:07,090
+ Agen pertahanan ini, pada saat itu, 
+
+681
+00:28:07,090 --> 00:28:10,310
+ sangat ingin membangun sistem operasi yang aman. 
+
+682
+00:28:10,310 --> 00:28:13,646
+ Dan mereka benar-benar melangkah lebih jauh 
+
+683
+00:28:13,646 --> 00:28:15,270
+ sekelompok universitas dan peneliti 
+
+684
+00:28:15,270 --> 00:28:17,840
+ untuk membangun prototipe OS yang aman. 
+
+685
+00:28:17,840 --> 00:28:19,520
+ Dan kemudian mereka benar-benar mendapat tim merah, 
+
+686
+00:28:19,520 --> 00:28:23,516
+ seperti tim orang jahat yang berpura-pura menjadi penyerang, 
+
+687
+00:28:23,516 --> 00:28:25,890
+ dan memberi tahu mereka, baik, masuk ke operasi yang aman ini 
+
+688
+00:28:25,890 --> 00:28:26,930
+ sistem dengan cara apa pun yang Anda bisa. 
+
+689
+00:28:26,930 --> 00:28:29,300
+ Kami sebenarnya ingin tahu, apakah aman? 
+
+690
+00:28:29,300 --> 00:28:32,322
+ Dan itu agak lucu, beberapa cara yang mengejutkan 
+
+691
+00:28:32,322 --> 00:28:33,530
+ mereka merusak sistem. 
+
+692
+00:28:33,530 --> 00:28:36,960
+ Salah satunya adalah bahwa ada penelitian OS ini 
+
+693
+00:28:36,960 --> 00:28:39,072
+ tim yang tampaknya memiliki OS yang sangat aman, 
+
+694
+00:28:39,072 --> 00:28:40,030
+ tapi itu dikompromikan. 
+
+695
+00:28:40,030 --> 00:28:42,940
+ Dan cara itu terjadi adalah server di mana sumbernya 
+
+696
+00:28:42,940 --> 00:28:44,190
+ kode sistem operasi disimpan 
+
+697
+00:28:44,190 --> 00:28:46,070
+ adalah beberapa mesin pengembangan di kantor seseorang 
+
+698
+00:28:46,070 --> 00:28:47,270
+ itu tidak aman sama sekali. 
+
+699
+00:28:47,270 --> 00:28:48,660
+ Tapi itu semua kode sumbernya. 
+
+700
+00:28:48,660 --> 00:28:50,500
+ Jadi orang jahat masuk ke server itu. 
+
+701
+00:28:50,500 --> 00:28:51,850
+ Itu tidak terlindungi dengan baik. 
+
+702
+00:28:51,850 --> 00:28:53,340
+ Mengubah kode sumber sistem operasi 
+
+703
+00:28:53,340 --> 00:28:54,690
+ untuk memperkenalkan pintu belakang. 
+
+704
+00:28:54,690 --> 00:28:57,964
+ Dan kemudian, ketika para peneliti membangun sistem operasi mereka, 
+
+705
+00:28:57,964 --> 00:28:59,130
+ baik, ada pintu belakang ini. 
+
+706
+00:28:59,130 --> 00:29:00,755
+ Dan orang-orang jahat itu bisa masuk. 
+
+707
+00:29:00,755 --> 00:29:03,530
+ Jadi Anda benar-benar harus memikirkan semua kemungkinan yang mungkin 
+
+708
+00:29:03,530 --> 00:29:05,800
+ asumsi yang Anda buat tentang 
+
+709
+00:29:05,800 --> 00:29:07,440
+ dari mana perangkat lunak Anda berasal, 
+
+710
+00:29:07,440 --> 00:29:09,630
+ tentang bagaimana orang jahat bisa masuk, 
+
+711
+00:29:09,630 --> 00:29:14,150
+ untuk memastikan sistem Anda benar-benar aman. 
+
+712
+00:29:14,150 --> 00:29:18,160
+ Dan ada banyak contoh lain dalam catatan kuliah, jika Anda mau. 
+
+713
+00:29:18,160 --> 00:29:19,240
+ Jadi saya menggunakan anekdot. 
+
+714
+00:29:19,240 --> 00:29:20,910
+ Anda dapat halaman melalui itu. 
+
+715
+00:29:20,910 --> 00:29:23,750
+
+
+716
+00:29:23,750 --> 00:29:28,580
+ Mungkin masalah yang paling meluas yang muncul, 
+
+717
+00:29:28,580 --> 00:29:30,710
+ tentu saja, dalam mekanisme. 
+
+718
+00:29:30,710 --> 00:29:33,290
+ Dan sebagian, itu karena mekanisme 
+
+719
+00:29:33,290 --> 00:29:35,490
+ adalah bagian paling rumit dari cerita. 
+
+720
+00:29:35,490 --> 00:29:39,225
+ Ini adalah keseluruhan dari semua perangkat lunak dan perangkat keras 
+
+721
+00:29:39,225 --> 00:29:41,000
+ dan semua komponen sistem semacam itu 
+
+722
+00:29:41,000 --> 00:29:45,400
+ yang membentuk apa yang mencoba untuk menegakkan kebijakan keamanan Anda. 
+
+723
+00:29:45,400 --> 00:29:49,960
+ Dan tidak ada akhir cara di mana mekanisme bisa gagal. 
+
+724
+00:29:49,960 --> 00:29:55,070
+ Dan, sebagian hasilnya, banyak dari kelas ini 
+
+725
+00:29:55,070 --> 00:29:57,760
+ akan sangat fokus pada mekanisme 
+
+726
+00:29:57,760 --> 00:30:00,480
+ dan bagaimana Anda membuat mekanisme yang aman, 
+
+727
+00:30:00,480 --> 00:30:04,450
+ yang memberikan penegakan kebijakan keamanan yang benar. 
+
+728
+00:30:04,450 --> 00:30:06,930
+ Dan kita akan berbicara tentang model dan kebijakan ancaman juga. 
+
+729
+00:30:06,930 --> 00:30:12,010
+ Tetapi ternyata jauh lebih mudah untuk membuat bersih, 
+
+730
+00:30:12,010 --> 00:30:14,300
+ semacam pernyataan yang tajam tentang mekanisme dan cara 
+
+731
+00:30:14,300 --> 00:30:18,100
+ mereka bekerja dan tidak berfungsi, berlawanan dengan kebijakan dan ancaman 
+
+732
+00:30:18,100 --> 00:30:20,420
+ model yang, sungguh, Anda harus mencari tahu 
+
+733
+00:30:20,420 --> 00:30:22,190
+ bagaimana menyesuaikan mereka ke dalam konteks tertentu 
+
+734
+00:30:22,190 --> 00:30:24,980
+ di mana Anda menggunakan sistem. 
+
+735
+00:30:24,980 --> 00:30:30,320
+ Jadi mari kita lihat beberapa contoh, saya kira, bug mekanisme. 
+
+736
+00:30:30,320 --> 00:30:33,280
+ Salah satu yang mungkin Anda dengar dalam beberapa hari terakhir 
+
+737
+00:30:33,280 --> 00:30:38,380
+ adalah masalah dalam mekanisme keamanan di cloud Apple 
+
+738
+00:30:38,380 --> 00:30:39,610
+ infrastruktur yang disebut iCloud. 
+
+739
+00:30:39,610 --> 00:30:42,820
+
+
+740
+00:30:42,820 --> 00:30:45,430
+ Yah sebenarnya, siapa pun dari Anda yang memiliki iPhone 
+
+741
+00:30:45,430 --> 00:30:47,450
+ mungkin menggunakan layanan iCloud ini. 
+
+742
+00:30:47,450 --> 00:30:49,690
+ Mereka pada dasarnya menyediakan penyimpanan untuk file 
+
+743
+00:30:49,690 --> 00:30:53,290
+ dan membiarkan Anda menemukan iPhone Anda jika Anda kehilangannya, dan mungkin 
+
+744
+00:30:53,290 --> 00:30:55,450
+ banyak fitur bermanfaat lainnya. 
+
+745
+00:30:55,450 --> 00:30:58,780
+ Dan saya pikir itu kerabat dari layanan me.com ini 
+
+746
+00:30:58,780 --> 00:31:03,150
+ yang terlibat dalam skema ini beberapa tahun lalu. 
+
+747
+00:31:03,150 --> 00:31:04,840
+ Dan masalah yang ditemukan seseorang 
+
+748
+00:31:04,840 --> 00:31:08,270
+ dalam layanan iCloud ini adalah bahwa mereka 
+
+749
+00:31:08,270 --> 00:31:11,960
+ tidak menegakkan mekanisme yang sama di semua antarmuka. 
+
+750
+00:31:11,960 --> 00:31:13,540
+ Oke, jadi seperti apa iCloud? 
+
+751
+00:31:13,540 --> 00:31:18,410
+ Yah, pada dasarnya menyediakan banyak layanan untuk jenis yang sama 
+
+752
+00:31:18,410 --> 00:31:19,650
+ dari set akun. 
+
+753
+00:31:19,650 --> 00:31:23,050
+ Jadi mungkin Anda memiliki penyimpanan file Anda di iCloud. 
+
+754
+00:31:23,050 --> 00:31:26,087
+ Mungkin Anda memiliki berbagi foto Anda. 
+
+755
+00:31:26,087 --> 00:31:27,420
+ Mungkin Anda memiliki antarmuka lain. 
+
+756
+00:31:27,420 --> 00:31:28,850
+ Dan salah satu antarmuka ke iCloud-- 
+
+757
+00:31:28,850 --> 00:31:30,475
+ ini semua adalah jenis API yang berbeda 
+
+758
+00:31:30,475 --> 00:31:35,130
+ yang mereka sediakan-- adalah fitur ini untuk menemukan iPhone saya, 
+
+759
+00:31:35,130 --> 00:31:36,730
+ Kupikir. 
+
+760
+00:31:36,730 --> 00:31:39,090
+ Dan semua antarmuka ini ingin memastikan 
+
+761
+00:31:39,090 --> 00:31:42,580
+ bahwa Anda adalah pengguna yang tepat, Anda diotentikasi dengan benar. 
+
+762
+00:31:42,580 --> 00:31:45,050
+ Dan sayangnya, para pengembang 
+
+763
+00:31:45,050 --> 00:31:48,190
+ semua sistem iCloud ini, Anda tahu itu adalah perangkat lunak raksasa. 
+
+764
+00:31:48,190 --> 00:31:51,310
+ Saya yakin banyak pengembang yang mengerjakan ini. 
+
+765
+00:31:51,310 --> 00:31:53,070
+ Tetapi pada antarmuka khusus ini, 
+
+766
+00:31:53,070 --> 00:31:55,480
+ temukan antarmuka iPhone saya, kapan 
+
+767
+00:31:55,480 --> 00:31:58,510
+ Anda mencoba masuk dengan nama pengguna dan kata sandi, 
+
+768
+00:31:58,510 --> 00:32:02,420
+ mereka tidak melacak berapa kali Anda mencoba masuk. 
+
+769
+00:32:02,420 --> 00:32:05,640
+ Dan alasannya penting adalah bahwa, seperti yang saya sebutkan sebelumnya, 
+
+770
+00:32:05,640 --> 00:32:07,930
+ manusia tidak begitu hebat dalam memilih kata sandi yang bagus. 
+
+771
+00:32:07,930 --> 00:32:10,920
+ Jadi sebenarnya membangun sistem yang mengautentikasi pengguna 
+
+772
+00:32:10,920 --> 00:32:12,490
+ dengan kata sandi cukup rumit. 
+
+773
+00:32:12,490 --> 00:32:14,820
+ Kami akan benar-benar membaca seluruh makalah tentang ini nanti. 
+
+774
+00:32:14,820 --> 00:32:19,290
+ Tetapi satu strategi yang baik adalah, mungkin ada 
+
+775
+00:32:19,290 --> 00:32:22,170
+ sejuta kata sandi di luar sana yang akan bertanggung jawab 
+
+776
+00:32:22,170 --> 00:32:24,180
+ untuk 50% persen akun. 
+
+777
+00:32:24,180 --> 00:32:26,420
+ Jadi jika Anda bisa menebak, buat satu juta percobaan 
+
+778
+00:32:26,420 --> 00:32:28,900
+ di akun seseorang, lalu ada 
+
+779
+00:32:28,900 --> 00:32:31,150
+ kemungkinan besar Anda akan mendapatkan kata sandi karena orang-orang 
+
+780
+00:32:31,150 --> 00:32:33,060
+ sebenarnya memilih kata kunci yang dapat diprediksi. 
+
+781
+00:32:33,060 --> 00:32:34,494
+ Dan satu cara untuk mencoba mengalahkan ini 
+
+782
+00:32:34,494 --> 00:32:36,160
+ adalah memastikan bahwa sistem Anda tidak 
+
+783
+00:32:36,160 --> 00:32:38,670
+ memungkinkan sejumlah upaya yang sewenang-wenang 
+
+784
+00:32:38,670 --> 00:32:39,870
+ untuk masuk ke akun. 
+
+785
+00:32:39,870 --> 00:32:42,220
+ Mungkin setelah tiga atau 10 kali mencoba, Anda 
+
+786
+00:32:42,220 --> 00:32:44,950
+ harus berkata, baik, Anda sudah cukup mencoba. 
+
+787
+00:32:44,950 --> 00:32:45,740
+ Waktu habis. 
+
+788
+00:32:45,740 --> 00:32:48,360
+ Anda dapat mencoba lagi dalam 10 menit atau dalam satu jam. 
+
+789
+00:32:48,360 --> 00:32:50,870
+ Dan dengan cara ini Anda benar-benar memperlambat penyerang. 
+
+790
+00:32:50,870 --> 00:32:54,460
+ Jadi mereka hanya bisa membuat beberapa tebakan sehari, 
+
+791
+00:32:54,460 --> 00:32:56,217
+ bukannya jutaan tebakan. 
+
+792
+00:32:56,217 --> 00:32:58,300
+ Dan sebagai hasilnya, bahkan jika Anda belum memiliki yang terhebat 
+
+793
+00:32:58,300 --> 00:33:00,550
+ kata sandi, itu akan sangat sulit bagi seseorang 
+
+794
+00:33:00,550 --> 00:33:01,570
+ untuk menebaknya. 
+
+795
+00:33:01,570 --> 00:33:06,990
+ Apa yang akan terjadi adalah bahwa iCloud memiliki tebakan kata sandi ini 
+
+796
+00:33:06,990 --> 00:33:10,210
+ pencegahan atau, pada dasarnya, mundur, pada beberapa antarmuka, 
+
+797
+00:33:10,210 --> 00:33:12,730
+ seperti jika Anda mencoba masuk melalui antarmuka lain 
+
+798
+00:33:12,730 --> 00:33:15,130
+ dan Anda gagal 10 kali, itu akan berkata, baik, maaf. 
+
+799
+00:33:15,130 --> 00:33:17,150
+ Anda harus menunggu sampai Anda mencoba lagi. 
+
+800
+00:33:17,150 --> 00:33:18,710
+ Tetapi pada ini menemukan antarmuka iPhone saya, 
+
+801
+00:33:18,710 --> 00:33:19,669
+ mereka melupakan cek ini. 
+
+802
+00:33:19,669 --> 00:33:21,335
+ Itu mungkin, Anda tahu, hanya seorang pria 
+
+803
+00:33:21,335 --> 00:33:23,300
+ lupa untuk memanggil fungsi ini di API ini. 
+
+804
+00:33:23,300 --> 00:33:26,867
+ Tapi hasilnya adalah itu, untuk kumpulan akun yang sama, 
+
+805
+00:33:26,867 --> 00:33:28,950
+ orang jahat akan bisa menebak kata sandi Anda sekarang 
+
+806
+00:33:28,950 --> 00:33:32,890
+ melalui antarmuka ini di jutaan upaya per hari 
+
+807
+00:33:32,890 --> 00:33:35,340
+ dengan mudah, karena ini hanya terbatas pada seberapa cepat mereka 
+
+808
+00:33:35,340 --> 00:33:37,452
+ dapat mengirim paket ke hal iCloud ini. 
+
+809
+00:33:37,452 --> 00:33:39,160
+ Dan mereka mungkin bisa menebak kata sandi Anda 
+
+810
+00:33:39,160 --> 00:33:43,960
+ dengan akurasi yang cukup bagus, atau dengan tingkat keberhasilan yang cukup bagus, 
+
+811
+00:33:43,960 --> 00:33:46,780
+ setelah membuat banyak tebakan. 
+
+812
+00:33:46,780 --> 00:33:48,890
+ Dan ini menyebabkan beberapa gangguan yang tidak menguntungkan. 
+
+813
+00:33:48,890 --> 00:33:51,660
+ Dan data rahasia orang-orang dicuri 
+
+814
+00:33:51,660 --> 00:33:54,870
+ dari layanan iCloud ini. 
+
+815
+00:33:54,870 --> 00:33:59,621
+ Jadi ini semacam contoh Anda memiliki kebijakan yang tepat. 
+
+816
+00:33:59,621 --> 00:34:01,120
+ Hanya pengguna dan kata sandi yang benar 
+
+817
+00:34:01,120 --> 00:34:02,632
+ akan memberi Anda akses ke file. 
+
+818
+00:34:02,632 --> 00:34:04,090
+ Anda bahkan memiliki model ancaman yang tepat 
+
+819
+00:34:04,090 --> 00:34:06,810
+ itu, yah, si jahat bisa menebak kata sandi. 
+
+820
+00:34:06,810 --> 00:34:09,370
+ Jadi kita harus istirahat membatasi jumlah percobaan tebakan. 
+
+821
+00:34:09,370 --> 00:34:12,250
+ Tapi dia hanya mengacau, seperti mekanisme memiliki bug di dalamnya. 
+
+822
+00:34:12,250 --> 00:34:15,239
+ Dia hanya lupa untuk menegakkan kebijakan dan mekanisme yang benar ini 
+
+823
+00:34:15,239 --> 00:34:16,280
+ di beberapa antarmuka. 
+
+824
+00:34:16,280 --> 00:34:19,520
+ Dan ini muncul lagi dan lagi dalam sistem, 
+
+825
+00:34:19,520 --> 00:34:24,060
+ di mana hanya membuat kesalahan dan memiliki efek yang cukup drastis 
+
+826
+00:34:24,060 --> 00:34:27,000
+ pada keamanan sistem secara keseluruhan. 
+
+827
+00:34:27,000 --> 00:34:28,960
+ Ini masuk akal? 
+
+828
+00:34:28,960 --> 00:34:30,320
+ Ada pertanyaan sejauh ini? 
+
+829
+00:34:30,320 --> 00:34:33,290
+
+
+830
+00:34:33,290 --> 00:34:34,630
+ Baiklah. 
+
+831
+00:34:34,630 --> 00:34:35,260
+ BAIK. 
+
+832
+00:34:35,260 --> 00:34:39,149
+ Jadi contoh lain-- ini semacam contoh dari Anda 
+
+833
+00:34:39,149 --> 00:34:42,982
+ lupa untuk memeriksa upaya menebak kata sandi. 
+
+834
+00:34:42,982 --> 00:34:44,690
+ Ada banyak hal lain yang bisa kamu lupakan. 
+
+835
+00:34:44,690 --> 00:34:47,830
+ Anda bisa lupa untuk memeriksa kontrol akses sama sekali. 
+
+836
+00:34:47,830 --> 00:34:53,179
+ Jadi salah satu contohnya adalah, Citibank memiliki situs web-- sebenarnya, masih 
+
+837
+00:34:53,179 --> 00:34:57,150
+ memiliki situs web yang memungkinkan Anda melihat kartu kredit Anda 
+
+838
+00:34:57,150 --> 00:34:58,280
+ Informasi Akun. 
+
+839
+00:34:58,280 --> 00:34:59,560
+ Jadi jika Anda memiliki kartu kredit dengan Citibank, 
+
+840
+00:34:59,560 --> 00:35:00,660
+ Anda pergi ke situs web ini, ia memberi tahu Anda, 
+
+841
+00:35:00,660 --> 00:35:01,993
+ ya, kamu punya kartu kredit ini. 
+
+842
+00:35:01,993 --> 00:35:04,160
+ Ini semua tuduhan, semua hal hebat ini. 
+
+843
+00:35:04,160 --> 00:35:08,480
+ Dan alur kerja beberapa tahun yang lalu adalah Anda pergi 
+
+844
+00:35:08,480 --> 00:35:12,710
+ ke beberapa situs, Anda memberikan nama pengguna dan kata sandi login, 
+
+845
+00:35:12,710 --> 00:35:15,630
+ dan Anda dialihkan ke URL lain, 
+
+846
+00:35:15,630 --> 00:35:18,130
+ yang seperti, saya tidak tahu, saya tebak, 
+
+847
+00:35:18,130 --> 00:35:23,190
+ tetapi pada dasarnya seperti citi.com/account?id= Anda tahu, 
+
+848
+00:35:23,190 --> 00:35:26,640
+ apa pun, satu dua tiga empat. 
+
+849
+00:35:26,640 --> 00:35:29,422
+ Dan ternyata ada orang yang tahu, yah, 
+
+850
+00:35:29,422 --> 00:35:30,880
+ jika Anda mengubah nomor ini, Anda hanya 
+
+851
+00:35:30,880 --> 00:35:33,910
+ dapatkan akun orang lain. 
+
+852
+00:35:33,910 --> 00:35:37,510
+ Dan tidak jelas bagaimana memikirkan ini. 
+
+853
+00:35:37,510 --> 00:35:40,010
+ Salah satu kemungkinan adalah bahwa orang-orang ini hanya berpikir dengan benar, 
+
+854
+00:35:40,010 --> 00:35:43,020
+ tetapi mereka, sekali lagi, lupa untuk memeriksa fungsi di akun ini 
+
+855
+00:35:43,020 --> 00:35:46,646
+ halaman itu, saya tidak hanya memiliki nomor ID yang valid, 
+
+856
+00:35:46,646 --> 00:35:48,520
+ tapi itu juga nomor ID pria itu 
+
+857
+00:35:48,520 --> 00:35:50,480
+ sedang masuk. 
+
+858
+00:35:50,480 --> 00:35:51,950
+ Ini adalah cek penting untukku. 
+
+859
+00:35:51,950 --> 00:35:53,759
+ Tapi itu mudah dilupakan. 
+
+860
+00:35:53,759 --> 00:35:55,800
+ Hal lain adalah, mungkin orang-orang ini sedang berpikir, 
+
+861
+00:35:55,800 --> 00:35:56,932
+ tidak, tidak ada yang bisa menekan URL. 
+
+862
+00:35:56,932 --> 00:35:58,640
+ Mungkin mereka punya model ancaman yang buruk, kan? 
+
+863
+00:35:58,640 --> 00:36:00,450
+ Mungkin mereka berpikir, URL-- 
+
+864
+00:36:00,450 --> 00:36:02,820
+ jika saya tidak mencetak URL ini, tidak ada yang bisa mengkliknya. 
+
+865
+00:36:02,820 --> 00:36:04,190
+ Ini seperti model ancaman yang buruk. 
+
+866
+00:36:04,190 --> 00:36:07,480
+ Jadi mungkin itu-- yah, sulit untuk mengatakan dengan tepat apa yang terjadi 
+
+867
+00:36:07,480 --> 00:36:08,160
+ salah. 
+
+868
+00:36:08,160 --> 00:36:10,280
+ Tapi bagaimanapun, kesalahan-kesalahan ini bisa terjadi. 
+
+869
+00:36:10,280 --> 00:36:12,860
+ Dan mereka sering muncul. 
+
+870
+00:36:12,860 --> 00:36:17,620
+ Sangat mudah memiliki bug yang kecil dan sepertinya 
+
+871
+00:36:17,620 --> 00:36:24,430
+ dalam mekanisme Anda menyebabkan konsekuensi yang sangat tidak menguntungkan. 
+
+872
+00:36:24,430 --> 00:36:28,150
+ Contoh lain yang tidak begitu banyak dalam pemeriksaan yang hilang 
+
+873
+00:36:28,150 --> 00:36:30,990
+ adalah masalah yang muncul di Android 
+
+874
+00:36:30,990 --> 00:36:33,810
+ ponsel beberapa bulan yang lalu. 
+
+875
+00:36:33,810 --> 00:36:38,070
+ Mungkin saya akan menggunakan papan ini di sini. 
+
+876
+00:36:38,070 --> 00:36:42,110
+ Jadi masalahnya terkait dengan Bitcoin, yang ini-- baik, 
+
+877
+00:36:42,110 --> 00:36:44,480
+ Saya yakin Anda pernah mendengar - mata uang elektronik ini 
+
+878
+00:36:44,480 --> 00:36:47,770
+ sistem yang cukup populer belakangan ini. 
+
+879
+00:36:47,770 --> 00:36:54,650
+ Dan cara kerja Bitcoin, pada tingkat yang sangat tinggi, 
+
+880
+00:36:54,650 --> 00:36:58,710
+ adalah bahwa saldo Bitcoin Anda 
+
+881
+00:36:58,710 --> 00:37:00,900
+ terkait dengan kunci pribadi. 
+
+882
+00:37:00,900 --> 00:37:03,000
+ Dan jika Anda memiliki kunci pribadi seseorang 
+
+883
+00:37:03,000 --> 00:37:05,770
+ Anda dapat, tentu saja, menghabiskan Bitcoin mereka. 
+
+884
+00:37:05,770 --> 00:37:10,610
+ Jadi keamanan Bitcoin sangat bergantung 
+
+885
+00:37:10,610 --> 00:37:13,410
+ tidak ada orang lain yang tahu kunci pribadi Anda. 
+
+886
+00:37:13,410 --> 00:37:15,720
+ Itu seperti kata sandi, kecuali lebih dari itu 
+
+887
+00:37:15,720 --> 00:37:18,397
+ penting, karena orang mungkin bisa membuat banyak tebakan 
+
+888
+00:37:18,397 --> 00:37:19,230
+ di kunci pribadi Anda. 
+
+889
+00:37:19,230 --> 00:37:21,396
+ Dan tidak ada server nyata yang memeriksa kunci Anda. 
+
+890
+00:37:21,396 --> 00:37:22,390
+ Itu hanya kriptografi. 
+
+891
+00:37:22,390 --> 00:37:24,717
+ Jadi mesin apa pun dapat mencoba membuat banyak tebakan 
+
+892
+00:37:24,717 --> 00:37:25,550
+ di kunci pribadi Anda. 
+
+893
+00:37:25,550 --> 00:37:28,380
+ Dan jika mereka menebaknya, maka mereka dapat mentransfer Bitcoin Anda 
+
+894
+00:37:28,380 --> 00:37:30,220
+ untuk orang lain. 
+
+895
+00:37:30,220 --> 00:37:32,340
+ Dan sebagai hasilnya, itu sangat penting 
+
+896
+00:37:32,340 --> 00:37:34,910
+ Anda menghasilkan kunci acak yang bagus 
+
+897
+00:37:34,910 --> 00:37:36,980
+ yang tidak bisa ditebak orang lain. 
+
+898
+00:37:36,980 --> 00:37:41,220
+ Dan ada orang yang menggunakan Bitcoin di Android. 
+
+899
+00:37:41,220 --> 00:37:45,450
+ Dan aplikasi Android untuk Bitcoin semakin acak 
+
+900
+00:37:45,450 --> 00:37:51,210
+ nilai untuk kunci ini menggunakan Java API ini yang disebut SecureRandom (), 
+
+901
+00:37:51,210 --> 00:37:56,040
+ kedengarannya bagus, tetapi seperti yang orang-orang tahu, baiklah, oke. 
+
+902
+00:37:56,040 --> 00:37:59,080
+ Jadi apa itu, benar, itu tidak benar-benar mendapatkan angka acak yang nyata. 
+
+903
+00:37:59,080 --> 00:38:00,800
+ Di dalamnya, ada konstruksi ini 
+
+904
+00:38:00,800 --> 00:38:04,090
+ disebut Pseudorandom Number Generator, 
+
+905
+00:38:04,090 --> 00:38:07,217
+ atau PRNG itu, diberi benih tertentu 
+
+906
+00:38:07,217 --> 00:38:09,540
+ nilai, seperti Anda mendapatkan mungkin beberapa ratus 
+
+907
+00:38:09,540 --> 00:38:12,400
+ bit keacakan dan Anda mendorongnya ke dalam PRNG ini, 
+
+908
+00:38:12,400 --> 00:38:15,410
+ Anda dapat terus meminta lebih banyak keacakan dan semacam peregangan 
+
+909
+00:38:15,410 --> 00:38:19,660
+ bit acak ini menjadi banyak bit acak yang Anda inginkan. 
+
+910
+00:38:19,660 --> 00:38:22,126
+ Jadi Anda melihat mereka pada awalnya, dan kemudian Anda 
+
+911
+00:38:22,126 --> 00:38:24,000
+ dapat menghasilkan banyak bit acak yang Anda inginkan. 
+
+912
+00:38:24,000 --> 00:38:26,581
+ Dan untuk berbagai alasan kriptografi saya tidak akan masuk ke sini, 
+
+913
+00:38:26,581 --> 00:38:27,330
+ itu benar-benar berfungsi. 
+
+914
+00:38:27,330 --> 00:38:30,030
+ Jika Anda memberikan beberapa ratus bit acak yang sangat bagus 
+
+915
+00:38:30,030 --> 00:38:32,070
+ awalnya, ini akan menjadi sangat sulit bagi siapa pun 
+
+916
+00:38:32,070 --> 00:38:37,380
+ untuk memprediksi apa nilai pseudorandom yang dihasilkannya. 
+
+917
+00:38:37,380 --> 00:38:40,300
+ Tapi masalahnya adalah perpustakaan Java ini 
+
+918
+00:38:40,300 --> 00:38:41,840
+ memiliki bug kecil di dalamnya. 
+
+919
+00:38:41,840 --> 00:38:44,980
+ Dalam beberapa keadaan, ia lupa 
+
+920
+00:38:44,980 --> 00:38:46,860
+ untuk menginisialisasi PRNG dengan benih, 
+
+921
+00:38:46,860 --> 00:38:50,022
+ jadi itu hanya semua nol, yang artinya semua orang bisa saja 
+
+922
+00:38:50,022 --> 00:38:51,730
+ cari tahu berapa nomor acak Anda. 
+
+923
+00:38:51,730 --> 00:38:53,120
+ Jika mereka mulai dengan nol, mereka akan 
+
+924
+00:38:53,120 --> 00:38:54,757
+ menghasilkan nomor acak yang sama dengan Anda, 
+
+925
+00:38:54,757 --> 00:38:57,090
+ yang berarti mereka akan menghasilkan kunci pribadi yang sama dengan Anda. 
+
+926
+00:38:57,090 --> 00:38:59,190
+ Jadi mereka hanya bisa menghasilkan kunci pribadi yang sama 
+
+927
+00:38:59,190 --> 00:39:01,120
+ dan transfer Bitcoin Anda. 
+
+928
+00:39:01,120 --> 00:39:05,400
+ Jadi ini, sekali lagi, bug kecil atau tidak kecil, 
+
+929
+00:39:05,400 --> 00:39:08,320
+ tergantung pada, saya kira, siapa yang bertanya. 
+
+930
+00:39:08,320 --> 00:39:10,000
+ Tapi tetap saja, kan? 
+
+931
+00:39:10,000 --> 00:39:12,500
+ Contoh lain dari kesalahan pemrograman kecil 
+
+932
+00:39:12,500 --> 00:39:14,790
+ menyebabkan hasil yang cukup bencana. 
+
+933
+00:39:14,790 --> 00:39:17,410
+ Banyak orang mendapatkan saldo Bitcoin mereka dicuri 
+
+934
+00:39:17,410 --> 00:39:19,400
+ karena kelemahan ini. 
+
+935
+00:39:19,400 --> 00:39:21,920
+ Tentu saja, perbaikannya cukup sederhana pada level tertentu. 
+
+936
+00:39:21,920 --> 00:39:23,360
+ Anda mengubah implementasi Java 
+
+937
+00:39:23,360 --> 00:39:28,270
+ dari SecureRandom () untuk selalu menjadi seed PRNG ini dengan input acak 
+
+938
+00:39:28,270 --> 00:39:29,210
+ bit. 
+
+939
+00:39:29,210 --> 00:39:31,300
+ Dan kemudian, semoga, Anda dalam kondisi yang baik. 
+
+940
+00:39:31,300 --> 00:39:36,532
+ Tapi tetap, itu contoh lain dari kegagalan mekanisme. 
+
+941
+00:39:36,532 --> 00:39:37,174
+ Ya? 
+
+942
+00:39:37,174 --> 00:39:39,424
+ AUDIENCE: Hanya untuk menjadi jelas, apakah ini serangan yang berbeda 
+
+943
+00:39:39,424 --> 00:39:42,096
+ dari keacakan tanda DSA? 
+
+944
+00:39:42,096 --> 00:39:42,970
+ PROFESOR: Yah, ya. 
+
+945
+00:39:42,970 --> 00:39:44,810
+ Jadi masalah sebenarnya sedikit lebih banyak 
+
+946
+00:39:44,810 --> 00:39:46,310
+ rumit, karena Anda mengisyaratkan. 
+
+947
+00:39:46,310 --> 00:39:48,700
+ Masalahnya adalah, bahkan jika Anda tidak menghasilkan 
+
+948
+00:39:48,700 --> 00:39:51,140
+ kunci Anda pada perangkat Android di tempat pertama, 
+
+949
+00:39:51,140 --> 00:39:56,150
+ skema tanda tangan khusus yang digunakan oleh Bitcoin 
+
+950
+00:39:56,150 --> 00:39:59,110
+ berasumsi bahwa setiap kali Anda membuat tanda tangan baru 
+
+951
+00:39:59,110 --> 00:40:01,310
+ dengan kunci itu, Anda menggunakan yang segar, apa 
+
+952
+00:40:01,310 --> 00:40:03,290
+ disebut nonce, untuk menghasilkan tanda tangan itu. 
+
+953
+00:40:03,290 --> 00:40:07,270
+ Dan jika Anda pernah menghasilkan dua tanda tangan dengan huruf yang sama, 
+
+954
+00:40:07,270 --> 00:40:09,544
+ maka seseorang dapat mengetahui apa kuncinya. 
+
+955
+00:40:09,544 --> 00:40:10,710
+ Ceritanya sangat mirip. 
+
+956
+00:40:10,710 --> 00:40:12,270
+ Tetapi detailnya sedikit berbeda. 
+
+957
+00:40:12,270 --> 00:40:14,310
+ Jadi ya, bahkan jika Anda benar-benar menghasilkan kunci Anda di suatu tempat 
+
+958
+00:40:14,310 --> 00:40:16,726
+ lain dan kunci Anda hebat, hanya saja setiap kali Anda 
+
+959
+00:40:16,726 --> 00:40:19,840
+ menghasilkan tanda tangan, kamu akan-- 
+
+960
+00:40:19,840 --> 00:40:23,190
+ dan Anda menghasilkan dua tanda tangan dengan sama persis, 
+
+961
+00:40:23,190 --> 00:40:26,650
+ atau nilai acak, seseorang dapat menerapkan beberapa matematika pintar 
+
+962
+00:40:26,650 --> 00:40:30,270
+ tanda tangan Anda dan semacam mengekstrak kunci publik Anda keluar 
+
+963
+00:40:30,270 --> 00:40:30,770
+ tentang itu. 
+
+964
+00:40:30,770 --> 00:40:34,240
+ Atau kunci pribadi, yang lebih penting. 
+
+965
+00:40:34,240 --> 00:40:35,140
+ Baiklah. 
+
+966
+00:40:35,140 --> 00:40:40,610
+ Pertanyaan lain tentang masalah ini, contoh, dan sebagainya? 
+
+967
+00:40:40,610 --> 00:40:41,690
+ Baiklah. 
+
+968
+00:40:41,690 --> 00:40:46,570
+ Jadi saya rasa, satu hal yang ingin saya tunjukkan adalah bahwa sebenarnya, 
+
+969
+00:40:46,570 --> 00:40:48,400
+ baik, karena Anda mulai menghargai, 
+
+970
+00:40:48,400 --> 00:40:52,830
+ adalah bahwa dalam keamanan komputer, hampir setiap detailnya 
+
+971
+00:40:52,830 --> 00:40:55,000
+ kesempatan yang benar-benar penting. 
+
+972
+00:40:55,000 --> 00:40:58,390
+ Jika Anda mengacaukan hampir sesuatu yang tampaknya tidak penting, 
+
+973
+00:40:58,390 --> 00:41:00,780
+ seperti lupa untuk memeriksa sesuatu, atau ini, 
+
+974
+00:41:00,780 --> 00:41:03,190
+ atau lupa untuk menginisialisasi benih acak, 
+
+975
+00:41:03,190 --> 00:41:04,980
+ itu bisa memiliki konsekuensi yang cukup dramatis 
+
+976
+00:41:04,980 --> 00:41:07,010
+ untuk keseluruhan sistem. 
+
+977
+00:41:07,010 --> 00:41:09,530
+ Dan Anda benar-benar harus sangat jelas tentang, 
+
+978
+00:41:09,530 --> 00:41:11,510
+ apa spesifikasi sistem anda? 
+
+979
+00:41:11,510 --> 00:41:12,510
+ Apa yang sedang dilakukannya? 
+
+980
+00:41:12,510 --> 00:41:14,870
+ Sebenarnya, apa itu semua kasus pojok? 
+
+981
+00:41:14,870 --> 00:41:17,170
+ Dan cara yang baik untuk berpikir tentang memecahkan suatu sistem 
+
+982
+00:41:17,170 --> 00:41:19,369
+ atau, sebaliknya, cari tahu apakah sistem Anda aman, 
+
+983
+00:41:19,369 --> 00:41:20,910
+ adalah benar-benar mendorong semua kasus tepi, 
+
+984
+00:41:20,910 --> 00:41:23,950
+ seperti apa yang terjadi jika masukan saya cukup besar? 
+
+985
+00:41:23,950 --> 00:41:26,620
+ Atau apa masukan terbesar atau terkecil? 
+
+986
+00:41:26,620 --> 00:41:28,980
+ Apa jenis set aneh 
+
+987
+00:41:28,980 --> 00:41:30,670
+ input yang bisa saya berikan untuk program saya 
+
+988
+00:41:30,670 --> 00:41:34,250
+ dan mendorongnya ke semua kasus sudut ini? 
+
+989
+00:41:34,250 --> 00:41:38,960
+ Salah satu contoh ambiguitas ini, semacam contoh yang baik 
+
+990
+00:41:38,960 --> 00:41:44,850
+ untuk diingat, adalah bagaimana sertifikat SSL, sekali lagi, 
+
+991
+00:41:44,850 --> 00:41:49,202
+ menyandikan nama ke dalam sertifikat itu sendiri. 
+
+992
+00:41:49,202 --> 00:41:51,160
+ Jadi ini masalah yang berbeda dari masalah 
+
+993
+00:41:51,160 --> 00:41:53,580
+ tentang otoritas sertifikat yang dipercaya. 
+
+994
+00:41:53,580 --> 00:41:57,470
+ Jadi, sertifikat SSL ini hanyalah urutan byte 
+
+995
+00:41:57,470 --> 00:41:59,000
+ bahwa server web mengirim kepada Anda. 
+
+996
+00:41:59,000 --> 00:42:01,200
+ Dan di dalam sertifikat SSL ini 
+
+997
+00:42:01,200 --> 00:42:04,340
+ adalah nama server yang Anda hubungi, 
+
+998
+00:42:04,340 --> 00:42:06,144
+ jadi sesuatu seperti Amazon.com. 
+
+999
+00:42:06,144 --> 00:42:08,060
+ Anda tahu, Anda tidak bisa begitu saja meletakkan byte itu. 
+
+1000
+00:42:08,060 --> 00:42:09,870
+ Anda harus menyandikannya entah bagaimana dan menentukan, baik, 
+
+1001
+00:42:09,870 --> 00:42:10,536
+ itu Amazon.com. 
+
+1002
+00:42:10,536 --> 00:42:12,860
+ Dan itulah akhir dari string. 
+
+1003
+00:42:12,860 --> 00:42:18,540
+ Jadi dalam sertifikat SSL, mereka menggunakan skema pengkodean tertentu 
+
+1004
+00:42:18,540 --> 00:42:24,290
+ yang menuliskan Amazon.com dengan menulis terlebih dahulu 
+
+1005
+00:42:24,290 --> 00:42:26,394
+ jumlah byte dalam string. 
+
+1006
+00:42:26,394 --> 00:42:27,560
+ Jadi Anda pertama kali menulis, oke. 
+
+1007
+00:42:27,560 --> 00:42:32,314
+ Yah, saya akan memiliki string 10 byte yang disebut Amazon.com. 
+
+1008
+00:42:32,314 --> 00:42:35,679
+
+
+1009
+00:42:35,679 --> 00:42:36,720
+ Itu sebenarnya 10 byte. 
+
+1010
+00:42:36,720 --> 00:42:36,990
+ Besar. 
+
+1011
+00:42:36,990 --> 00:42:37,510
+ BAIK. 
+
+1012
+00:42:37,510 --> 00:42:40,120
+ Jadi ini seperti-- di sertifikat SSL, di suatu tempat 
+
+1013
+00:42:40,120 --> 00:42:44,160
+ di sana, ada 10 byte ini diikuti dengan 10 byte yang mengatakan 
+
+1014
+00:42:44,160 --> 00:42:45,170
+ apa nama host itu. 
+
+1015
+00:42:45,170 --> 00:42:48,840
+ Dan ada hal-hal lain sesudahnya, benar, dan sebelumnya. 
+
+1016
+00:42:48,840 --> 00:42:50,810
+ Dan ketika browser mengambilnya, nah, browser 
+
+1017
+00:42:50,810 --> 00:42:54,140
+ ditulis dalam C. Dan cara C mewakili string 
+
+1018
+00:42:54,140 --> 00:42:56,660
+ adalah dengan null mengakhiri mereka. 
+
+1019
+00:42:56,660 --> 00:42:59,350
+ Jadi dalam C, string tidak memiliki hitungan panjang. 
+
+1020
+00:42:59,350 --> 00:43:01,080
+ Sebaliknya, ia memiliki semua byte. 
+
+1021
+00:43:01,080 --> 00:43:03,660
+ Dan ujung dari string hanyalah byte nol. 
+
+1022
+00:43:03,660 --> 00:43:07,110
+ Dan di C, Anda menulisnya dengan karakter nol backslash. 
+
+1023
+00:43:07,110 --> 00:43:08,740
+ Jadi ini dalam memori di browser Anda. 
+
+1024
+00:43:08,740 --> 00:43:11,340
+
+
+1025
+00:43:11,340 --> 00:43:13,310
+ Di suatu tempat di memori ada string ini 
+
+1026
+00:43:13,310 --> 00:43:15,951
+ dari 11 byte, sekarang, dengan nol ekstra di bagian akhir. 
+
+1027
+00:43:15,951 --> 00:43:17,700
+ Dan ketika browser menafsirkan string ini, 
+
+1028
+00:43:17,700 --> 00:43:19,950
+ itu terus berjalan sampai ia melihat ujung tali 
+
+1029
+00:43:19,950 --> 00:43:22,840
+ penanda, yang merupakan nol byte. 
+
+1030
+00:43:22,840 --> 00:43:24,000
+ BAIK. 
+
+1031
+00:43:24,000 --> 00:43:26,330
+ Jadi, apa yang bisa salah? 
+
+1032
+00:43:26,330 --> 00:43:28,751
+ Tebakan apa saja? 
+
+1033
+00:43:28,751 --> 00:43:29,250
+ Ya? 
+
+1034
+00:43:29,250 --> 00:43:31,575
+ AUDIENCE: Anda memiliki nol di tengah [TIDAK TERDENGAR]? 
+
+1035
+00:43:31,575 --> 00:43:32,040
+ PROFESOR: Ya. 
+
+1036
+00:43:32,040 --> 00:43:32,510
+ Ini luar biasa. 
+
+1037
+00:43:32,510 --> 00:43:33,009
+ Baiklah. 
+
+1038
+00:43:33,009 --> 00:43:35,222
+ Jadi, ini sebenarnya sedikit diskontinuitas 
+
+1039
+00:43:35,222 --> 00:43:36,680
+ dalam hal bagaimana orang ini mewakili 
+
+1040
+00:43:36,680 --> 00:43:37,850
+ string dan orang ini. 
+
+1041
+00:43:37,850 --> 00:43:41,530
+ Jadi misalkan saya memiliki domain foo.com. 
+
+1042
+00:43:41,530 --> 00:43:45,731
+ Jadi saya bisa mendapatkan sertifikat untuk dot dot com apa pun. 
+
+1043
+00:43:45,731 --> 00:43:50,568
+ Jadi apa yang bisa saya lakukan adalah meminta sertifikat untuk nama itu 
+
+1044
+00:43:50,568 --> 00:43:51,443
+ amazon.com0x.foo.com. 
+
+1045
+00:43:51,443 --> 00:43:57,325
+
+
+1046
+00:43:57,325 --> 00:43:59,160
+ Itu string yang benar-benar valid. 
+
+1047
+00:43:59,160 --> 00:44:00,730
+ Ini memiliki banyak byte. 
+
+1048
+00:44:00,730 --> 00:44:03,710
+ Saya kira itu 10, 11 12 13, 14, 15, 16, 
+
+1049
+00:44:03,710 --> 00:44:05,830
+ ada empat lagi, 20, kan? 
+
+1050
+00:44:05,830 --> 00:44:10,020
+ Jadi ini adalah nama 20 byte dengan 20 byte ini. 
+
+1051
+00:44:10,020 --> 00:44:12,760
+ Jadi biasanya jika Anda pergi ke otoritas sertifikat, 
+
+1052
+00:44:12,760 --> 00:44:15,230
+ dalam banyak kasus, Anda bisa mengatakan, hei, saya memiliki foo.com. 
+
+1053
+00:44:15,230 --> 00:44:16,990
+ Berikan saya sertifikat untuk hal ini. 
+
+1054
+00:44:16,990 --> 00:44:19,660
+ Dan mereka akan dengan senang hati melakukannya karena itu 
+
+1055
+00:44:19,660 --> 00:44:20,790
+ subdomain dari foo.com. 
+
+1056
+00:44:20,790 --> 00:44:22,750
+ Itu semua milikmu. 
+
+1057
+00:44:22,750 --> 00:44:25,220
+ Tetapi kemudian, ketika browser mengambil string ini 
+
+1058
+00:44:25,220 --> 00:44:27,930
+ dan memuatnya dalam memori, baik, apa yang dilakukannya adalah hal yang sama 
+
+1059
+00:44:27,930 --> 00:44:28,830
+ itu di sini. 
+
+1060
+00:44:28,830 --> 00:44:30,839
+ Ini menyalin string. 
+
+1061
+00:44:30,839 --> 00:44:31,714
+ amazon.com0x.foo.com. 
+
+1062
+00:44:31,714 --> 00:44:37,206
+
+
+1063
+00:44:37,206 --> 00:44:40,700
+ Itu dengan patuh akan menambahkan nol yang berhenti di bagian akhir. 
+
+1064
+00:44:40,700 --> 00:44:43,370
+ Namun kemudian, ketika sisa peramban perangkat lunak 
+
+1065
+00:44:43,370 --> 00:44:47,510
+ pergi dan mencoba menafsirkan string di lokasi memori ini, 
+
+1066
+00:44:47,510 --> 00:44:50,722
+ itu akan terus naik sampai mencapai nol dan berkata, OK baiklah, 
+
+1067
+00:44:50,722 --> 00:44:51,930
+ itulah akhir dari string. 
+
+1068
+00:44:51,930 --> 00:44:53,276
+ Jadi ini adalah Amazon.com. 
+
+1069
+00:44:53,276 --> 00:44:54,630
+ Itu dia. 
+
+1070
+00:44:54,630 --> 00:45:00,120
+ Jadi semacam ini memutuskan hubungan antara bagaimana perangkat lunak C 
+
+1071
+00:45:00,120 --> 00:45:03,070
+ dan bagaimana sertifikat SSL mewakili nama 
+
+1072
+00:45:03,070 --> 00:45:05,800
+ menyebabkan beberapa masalah keamanan yang tidak menguntungkan. 
+
+1073
+00:45:05,800 --> 00:45:08,240
+ Ini sebenarnya ditemukan beberapa tahun 
+
+1074
+00:45:08,240 --> 00:45:11,030
+ lalu sekarang oleh orang ini, Moxie Marlinspike. 
+
+1075
+00:45:11,030 --> 00:45:13,620
+ Tapi itu pengamatan yang cukup pintar. 
+
+1076
+00:45:13,620 --> 00:45:17,470
+ Dan jenis-jenis bug encoding ini sebenarnya juga 
+
+1077
+00:45:17,470 --> 00:45:20,470
+ sangat umum di banyak perangkat lunak 
+
+1078
+00:45:20,470 --> 00:45:24,030
+ karena, kecuali Anda sangat tekun tentang bagaimana Anda 
+
+1079
+00:45:24,030 --> 00:45:27,090
+ menyandikan sesuatu, mungkin ada cara pengkodean yang berbeda. 
+
+1080
+00:45:27,090 --> 00:45:28,547
+ Dan kapan pun ada perselisihan, 
+
+1081
+00:45:28,547 --> 00:45:30,880
+ ada kemungkinan si jahat bisa memanfaatkan ini. 
+
+1082
+00:45:30,880 --> 00:45:32,421
+ Satu sistem menganggap itu nama yang bagus. 
+
+1083
+00:45:32,421 --> 00:45:34,590
+ Yang lain berpikir itu tidak, sesuatu yang lain. 
+
+1084
+00:45:34,590 --> 00:45:36,870
+ Jadi ini adalah tempat yang bagus untuk mengurutkan sistem 
+
+1085
+00:45:36,870 --> 00:45:39,360
+ untuk melihat bagaimana itu bisa pecah. 
+
+1086
+00:45:39,360 --> 00:45:42,030
+ Masuk akal? 
+
+1087
+00:45:42,030 --> 00:45:42,530
+ Baiklah. 
+
+1088
+00:45:42,530 --> 00:45:47,220
+ Jadi mungkin contoh terakhir dari kegagalan mekanisme 
+
+1089
+00:45:47,220 --> 00:45:51,090
+ Saya akan berbicara tentang hari ini adalah salah satu yang cukup populer. 
+
+1090
+00:45:51,090 --> 00:45:52,910
+ Ini masalah atau buffer overflows. 
+
+1091
+00:45:52,910 --> 00:45:56,230
+
+
+1092
+00:45:56,230 --> 00:45:59,380
+ Jadi beberapa dari Anda telah melihat ini, atau setidaknya pada tingkat tertentu, 
+
+1093
+00:45:59,380 --> 00:46:01,860
+ di 6.033, jika Anda mengikuti kursus undergrad. 
+
+1094
+00:46:01,860 --> 00:46:05,290
+ Tetapi bagi Anda yang telah lupa atau belum diambil 
+
+1095
+00:46:05,290 --> 00:46:07,540
+ oh, tiga tiga, kita akan pergi melewati buffer overflows 
+
+1096
+00:46:07,540 --> 00:46:08,130
+ lebih detail. 
+
+1097
+00:46:08,130 --> 00:46:10,463
+ Dan ini akan, sebenarnya, cukup penting untuk kalian, 
+
+1098
+00:46:10,463 --> 00:46:12,826
+ karena lab satu adalah tentang buffer overflows. 
+
+1099
+00:46:12,826 --> 00:46:14,200
+ Dan Anda akan mengeksploitasi 
+
+1100
+00:46:14,200 --> 00:46:19,710
+ kerentanan ini di server web yang agak nyata. 
+
+1101
+00:46:19,710 --> 00:46:21,610
+ Jadi mari kita cari tahu, apa pengaturannya? 
+
+1102
+00:46:21,610 --> 00:46:23,300
+ apa yang sedang kita bicarakan di sini? 
+
+1103
+00:46:23,300 --> 00:46:25,470
+ Jadi pengaturan kita akan mempertimbangkan 
+
+1104
+00:46:25,470 --> 00:46:30,330
+ adalah sistem yang memiliki, katakanlah, server web. 
+
+1105
+00:46:30,330 --> 00:46:34,510
+ Jadi apa yang kami miliki adalah, kami memiliki beberapa komputer di luar sana 
+
+1106
+00:46:34,510 --> 00:46:36,540
+ yang memiliki server web di dalamnya. 
+
+1107
+00:46:36,540 --> 00:46:39,130
+
+
+1108
+00:46:39,130 --> 00:46:41,200
+ Dan web server adalah program itu 
+
+1109
+00:46:41,200 --> 00:46:44,070
+ akan menerima koneksi dari dunia luar, 
+
+1110
+00:46:44,070 --> 00:46:47,480
+ ambil request-- yang pada dasarnya hanya paket-- 
+
+1111
+00:46:47,480 --> 00:46:51,820
+ dan entah bagaimana memprosesnya, dan melakukan beberapa pemeriksaan, mungkin. 
+
+1112
+00:46:51,820 --> 00:46:54,174
+ Jika itu URL ilegal atau apakah itu 
+
+1113
+00:46:54,174 --> 00:46:56,590
+ mencoba mengakses file yang tidak diizinkan untuk mereka akses, 
+
+1114
+00:46:56,590 --> 00:46:58,381
+ server web akan mengembalikan kesalahan. 
+
+1115
+00:46:58,381 --> 00:47:00,400
+ Tetapi sebaliknya, itu akan mengakses beberapa file, 
+
+1116
+00:47:00,400 --> 00:47:04,040
+ mungkin di disk, dan mengirimnya kembali 
+
+1117
+00:47:04,040 --> 00:47:06,990
+ dalam semacam balasan. 
+
+1118
+00:47:06,990 --> 00:47:10,320
+ Jadi ini adalah gambaran yang sangat umum, hampir semua sistem 
+
+1119
+00:47:10,320 --> 00:47:11,970
+ kamu lihat. 
+
+1120
+00:47:11,970 --> 00:47:13,146
+ Apa kebijakannya? 
+
+1121
+00:47:13,146 --> 00:47:14,270
+ Atau apa model ancamannya? 
+
+1122
+00:47:14,270 --> 00:47:18,300
+
+
+1123
+00:47:18,300 --> 00:47:22,130
+ Jadi ini adalah sedikit masalah di banyak sistem dunia nyata, 
+
+1124
+00:47:22,130 --> 00:47:23,850
+ yaitu sebenarnya sangat sulit 
+
+1125
+00:47:23,850 --> 00:47:26,990
+ untuk menunjukkan apa itu kebijakan atau model ancaman yang tepat 
+
+1126
+00:47:26,990 --> 00:47:28,320
+ yang sedang kita bicarakan. 
+
+1127
+00:47:28,320 --> 00:47:31,570
+ Dan ketidaktepatan semacam ini atau ambiguitas tentang kebijakan, 
+
+1128
+00:47:31,570 --> 00:47:33,825
+ model ancaman, dan sebagainya, adalah apa yang kadang-kadang 
+
+1129
+00:47:33,825 --> 00:47:34,950
+ menyebabkan masalah keamanan. 
+
+1130
+00:47:34,950 --> 00:47:37,180
+ Tidak dalam kasus khusus ini, tetapi kita akan lihat. 
+
+1131
+00:47:37,180 --> 00:47:40,090
+ Tapi mungkin hanya untuk memberi Anda rasa bagaimana 
+
+1132
+00:47:40,090 --> 00:47:44,780
+ memikirkan server web biasa dalam konteks kebijakan ini, 
+
+1133
+00:47:44,780 --> 00:47:47,630
+ model ancaman semacam barang, apakah itu baik, mungkin kebijakannya 
+
+1134
+00:47:47,630 --> 00:47:50,005
+ adalah, server web harus melakukan apa yang diinginkan programmer 
+
+1135
+00:47:50,005 --> 00:47:50,660
+ itu harus dilakukan. 
+
+1136
+00:47:50,660 --> 00:47:51,575
+ Sedikit kabur. 
+
+1137
+00:47:51,575 --> 00:47:53,950
+ Tapi mungkin itulah yang terjadi karena lebih dari itu 
+
+1138
+00:47:53,950 --> 00:47:55,616
+ spesifik, juga, server web seharusnya 
+
+1139
+00:47:55,616 --> 00:47:57,485
+ lakukan persis apa yang dilakukan kode itu, pergi 
+
+1140
+00:47:57,485 --> 00:47:59,860
+ menjadi sedikit [TIDAK JELAS] Dan jika kode Anda memiliki bug, 
+
+1141
+00:47:59,860 --> 00:48:01,090
+ baik, kebijakan Anda mengatakan, yah, itu 
+
+1142
+00:48:01,090 --> 00:48:02,131
+ tepatnya apa yang harus saya lakukan. 
+
+1143
+00:48:02,131 --> 00:48:04,120
+ Saya harus mengikuti bug. 
+
+1144
+00:48:04,120 --> 00:48:07,390
+ Jadi agak sulit untuk menyatakan kebijakan dengan tepat, 
+
+1145
+00:48:07,390 --> 00:48:09,332
+ tetapi dalam kasus ini, mari kita lakukan dengan beberapa intuitif 
+
+1146
+00:48:09,332 --> 00:48:11,290
+ versi, baik, server web harus melakukan apa 
+
+1147
+00:48:11,290 --> 00:48:13,785
+ programmer menginginkannya. 
+
+1148
+00:48:13,785 --> 00:48:15,160
+ Dan model ancamannya mungkin, 
+
+1149
+00:48:15,160 --> 00:48:18,260
+ penyerang tidak memiliki akses ke mesin ini, 
+
+1150
+00:48:18,260 --> 00:48:20,800
+ tidak dapat masuk ke jarak jauh, tidak memiliki akses fisik 
+
+1151
+00:48:20,800 --> 00:48:22,690
+ untuk itu, tetapi dapat mengirim paket yang mereka inginkan. 
+
+1152
+00:48:22,690 --> 00:48:26,874
+ Jadi mereka tidak terbatas pada jenis paket tertentu. 
+
+1153
+00:48:26,874 --> 00:48:28,290
+ Apa pun yang Anda bisa bentuk dan semacam 
+
+1154
+00:48:28,290 --> 00:48:30,187
+ mengantarkan ke server web ini, itu permainan yang adil. 
+
+1155
+00:48:30,187 --> 00:48:32,270
+ Sepertinya model ancaman yang masuk akal, dalam praktiknya, 
+
+1156
+00:48:32,270 --> 00:48:34,450
+ ada dalam pikiran. 
+
+1157
+00:48:34,450 --> 00:48:39,940
+ Dan saya kira tujuannya adalah bahwa server web ini tidak seharusnya 
+
+1158
+00:48:39,940 --> 00:48:42,752
+ izinkan hal-hal yang sewenang-wenang menjadi salah di sini. 
+
+1159
+00:48:42,752 --> 00:48:44,460
+ Saya kira semacam itu sejalan dengan apa 
+
+1160
+00:48:44,460 --> 00:48:45,590
+ programmer yang dimaksud. 
+
+1161
+00:48:45,590 --> 00:48:47,740
+ Programmer mungkin tidak menginginkan permintaan apa pun 
+
+1162
+00:48:47,740 --> 00:48:49,610
+ untuk dapat mengakses apa pun di server. 
+
+1163
+00:48:49,610 --> 00:48:51,630
+ Namun, ternyata jika Anda membuat jenis kesalahan tertentu 
+
+1164
+00:48:51,630 --> 00:48:53,937
+ dalam menulis perangkat lunak server web, yang pada dasarnya 
+
+1165
+00:48:53,937 --> 00:48:55,020
+ mekanisme di sini, kan? 
+
+1166
+00:48:55,020 --> 00:48:57,390
+ Perangkat lunak server web adalah hal yang membutuhkan permintaan 
+
+1167
+00:48:57,390 --> 00:48:59,050
+ dan melihatnya dan memastikan tidak 
+
+1168
+00:48:59,050 --> 00:49:01,710
+ akan melakukan sesuatu yang buruk, mengirim balasan jika semuanya ada 
+
+1169
+00:49:01,710 --> 00:49:02,050
+ BAIK. 
+
+1170
+00:49:02,050 --> 00:49:03,424
+ Server web dalam mekanisme ini. 
+
+1171
+00:49:03,424 --> 00:49:05,720
+ Ini menegakkan kebijakan Anda. 
+
+1172
+00:49:05,720 --> 00:49:08,730
+ Dan sebagai hasilnya, jika perangkat lunak server web buggy, 
+
+1173
+00:49:08,730 --> 00:49:10,270
+ maka kamu dalam masalah. 
+
+1174
+00:49:10,270 --> 00:49:12,650
+ Dan satu jenis masalah umum, jika Anda 
+
+1175
+00:49:12,650 --> 00:49:14,670
+ menulis perangkat lunak di C yang, Anda tahu, 
+
+1176
+00:49:14,670 --> 00:49:16,240
+ banyak hal yang masih ditulis dalam C 
+
+1177
+00:49:16,240 --> 00:49:19,590
+ dan mungkin akan terus ditulis dalam bahasa C untuk sementara waktu, 
+
+1178
+00:49:19,590 --> 00:49:21,540
+ Anda dapat salah mengatur alokasi memori Anda. 
+
+1179
+00:49:21,540 --> 00:49:25,330
+ Dan seperti yang kita lihat dalam contoh penamaan sertifikat SSL ini, 
+
+1180
+00:49:25,330 --> 00:49:27,270
+ bahkan semacam satu byte pun bisa benar-benar 
+
+1181
+00:49:27,270 --> 00:49:30,470
+ membuat perbedaan besar, dalam hal apa yang terjadi. 
+
+1182
+00:49:30,470 --> 00:49:32,480
+ Dan saya kira untuk contoh ini, kita akan 
+
+1183
+00:49:32,480 --> 00:49:35,960
+ lihatlah bagian kecil kode yang bukan web sebenarnya 
+
+1184
+00:49:35,960 --> 00:49:36,460
+ server 
+
+1185
+00:49:36,460 --> 00:49:38,900
+ Di lab, Anda akan memiliki seluruh gambar ini untuk dimainkan. 
+
+1186
+00:49:38,900 --> 00:49:41,340
+ Tapi untuk kuliah, saya hanya ingin memberi Anda 
+
+1187
+00:49:41,340 --> 00:49:43,470
+ contoh yang disederhanakan sehingga kita dapat berbicara 
+
+1188
+00:49:43,470 --> 00:49:47,140
+ tentang apa yang menjadi inti dari apa yang salah. 
+
+1189
+00:49:47,140 --> 00:49:51,515
+ Dan, khususnya, jika sistem ini bangun, 
+
+1190
+00:49:51,515 --> 00:49:56,240
+ Saya akan menunjukkan kepada Anda semacam fungsi C yang sangat kecil. 
+
+1191
+00:49:56,240 --> 00:49:59,070
+ Dan kita bisa melihat apa yang salah 
+
+1192
+00:49:59,070 --> 00:50:04,400
+ jika Anda memberikan masukan yang berbeda ke potongan kode itu. 
+
+1193
+00:50:04,400 --> 00:50:05,220
+ Baiklah. 
+
+1194
+00:50:05,220 --> 00:50:09,460
+ Jadi fungsi C yang ada dalam pikiran saya adalah orang ini. 
+
+1195
+00:50:09,460 --> 00:50:13,950
+
+
+1196
+00:50:13,950 --> 00:50:15,920
+ Di suatu tempat di sini. 
+
+1197
+00:50:15,920 --> 00:50:16,720
+ Oh ya. 
+
+1198
+00:50:16,720 --> 00:50:19,684
+
+
+1199
+00:50:19,684 --> 00:50:21,166
+ Itu datang. 
+
+1200
+00:50:21,166 --> 00:50:23,150
+ Baiklah. 
+
+1201
+00:50:23,150 --> 00:50:27,740
+ Jadi, inilah jenis program yang saya bicarakan, 
+
+1202
+00:50:27,740 --> 00:50:30,280
+ atau saya ingin gunakan sebagai contoh di sini. 
+
+1203
+00:50:30,280 --> 00:50:32,974
+ Jadi program ini hanya akan membaca permintaan. 
+
+1204
+00:50:32,974 --> 00:50:34,890
+ Dan Anda bisa membayangkan itu akan terbaca 
+
+1205
+00:50:34,890 --> 00:50:36,400
+ permintaan dari jaringan. 
+
+1206
+00:50:36,400 --> 00:50:38,462
+ Tetapi untuk keperluan contoh ini, 
+
+1207
+00:50:38,462 --> 00:50:40,420
+ itu hanya akan membaca permintaan dari apa pun 
+
+1208
+00:50:40,420 --> 00:50:42,940
+ Saya sedang mengetik di keyboard. 
+
+1209
+00:50:42,940 --> 00:50:45,425
+ Dan itu akan disimpan dalam buffer di sini. 
+
+1210
+00:50:45,425 --> 00:50:47,300
+ Dan kemudian itu akan mengurai itu adalah bilangan bulat 
+
+1211
+00:50:47,300 --> 00:50:48,470
+ dan kembalikan bilangan bulat. 
+
+1212
+00:50:48,470 --> 00:50:52,430
+ Dan program ini akan mencetak integer apa pun yang saya dapatkan kembali. 
+
+1213
+00:50:52,430 --> 00:50:54,110
+ Ini seperti jauh dari server web. 
+
+1214
+00:50:54,110 --> 00:50:57,290
+ Tapi setidaknya kita akan melihat beberapa hal mendasar 
+
+1215
+00:50:57,290 --> 00:51:00,920
+ bagaimana buffer overflow bekerja dan apa yang salah. 
+
+1216
+00:51:00,920 --> 00:51:03,380
+ Jadi mari kita lihat apa yang terjadi jika kita menjalankan program ini. 
+
+1217
+00:51:03,380 --> 00:51:05,875
+ Jadi saya dapat mengkompilasi di sini. 
+
+1218
+00:51:05,875 --> 00:51:07,250
+ Dan sebenarnya, Anda bisa mengatasinya 
+
+1219
+00:51:07,250 --> 00:51:10,600
+ the-- itu sudah memberitahuku apa yang aku lakukan, kan? 
+
+1220
+00:51:10,600 --> 00:51:13,535
+ Fungsi get berbahaya dan tidak boleh digunakan. 
+
+1221
+00:51:13,535 --> 00:51:15,710
+ Dan kita akan lihat sebentar lagi mengapa kompiler itu 
+
+1222
+00:51:15,710 --> 00:51:18,300
+ sangat ingin memberitahuku ini. 
+
+1223
+00:51:18,300 --> 00:51:20,320
+ Dan itu benar. 
+
+1224
+00:51:20,320 --> 00:51:23,530
+ Tapi untuk saat ini, anggaplah kita bahagia beruntung 
+
+1225
+00:51:23,530 --> 00:51:26,660
+ pengembang yang bersedia mengabaikan peringatan ini. 
+
+1226
+00:51:26,660 --> 00:51:27,350
+ Jadi ok. 
+
+1227
+00:51:27,350 --> 00:51:30,200
+ Saya menjalankan fungsi pengalihan ini, saya memberikan beberapa masukan, 
+
+1228
+00:51:30,200 --> 00:51:33,040
+ dan itu berhasil. 
+
+1229
+00:51:33,040 --> 00:51:34,900
+ Mari kita lihat apakah saya menyediakan input besar. 
+
+1230
+00:51:34,900 --> 00:51:37,265
+ Jika saya mengetikkan sejumlah besar, yah, 
+
+1231
+00:51:37,265 --> 00:51:38,890
+ setidaknya itu memberi saya sejumlah besar. 
+
+1232
+00:51:38,890 --> 00:51:43,000
+ Pada dasarnya maxes out to two to the 31 dan mencetak itu 
+
+1233
+00:51:43,000 --> 00:51:44,530
+ dan tidak pergi lebih tinggi. 
+
+1234
+00:51:44,530 --> 00:51:46,290
+ Jadi itu mungkin bukan bencana, bukan? 
+
+1235
+00:51:46,290 --> 00:51:46,790
+ Terserah. 
+
+1236
+00:51:46,790 --> 00:51:49,570
+ Anda memberikan nomor yang sangat besar ini. 
+
+1237
+00:51:49,570 --> 00:51:51,990
+ Anda mendapat sesuatu yang tidak berhasil. 
+
+1238
+00:51:51,990 --> 00:51:53,510
+ Ini belum cukup masalah. 
+
+1239
+00:51:53,510 --> 00:51:55,520
+ Tetapi jika kami menyediakan beberapa masukan yang sangat besar, 
+
+1240
+00:51:55,520 --> 00:51:57,880
+ kita mungkin mendapat masalah lain, kan? 
+
+1241
+00:51:57,880 --> 00:52:00,940
+ Jadi misalkan saya menyediakan banyak dengan 12 
+
+1242
+00:52:00,940 --> 00:52:03,395
+ Saya hanya memberikan hal-hal yang bukan angka. 
+
+1243
+00:52:03,395 --> 00:52:04,020
+ Mencetak nol. 
+
+1244
+00:52:04,020 --> 00:52:06,430
+ Itu tidak terlalu buruk. 
+
+1245
+00:52:06,430 --> 00:52:10,990
+ Tapi seandainya saya akan menyisipkan dalam jumlah besar As. 
+
+1246
+00:52:10,990 --> 00:52:13,490
+ OK, jadi sekarang programnya macet. 
+
+1247
+00:52:13,490 --> 00:52:14,770
+ Mungkin tidak terlalu mengejutkan. 
+
+1248
+00:52:14,770 --> 00:52:18,115
+ Jadi jika itu terjadi jika saya mengirim permintaan buruk ke web 
+
+1249
+00:52:18,115 --> 00:52:20,740
+ server, itu tidak membalas saya atau tidak mengirim balasan, 
+
+1250
+00:52:20,740 --> 00:52:21,629
+ itu akan baik-baik saja. 
+
+1251
+00:52:21,629 --> 00:52:23,170
+ Tapi kita akan melihat ke dalam dan melihat 
+
+1252
+00:52:23,170 --> 00:52:25,750
+ apa yang terjadi, dan coba cari tahu bagaimana kita bisa benar-benar 
+
+1253
+00:52:25,750 --> 00:52:30,610
+ Manfaatkan tabrakan ini untuk melakukan sesuatu yang jauh lebih baik 
+
+1254
+00:52:30,610 --> 00:52:35,960
+ menarik, atau, jauh lebih baik dengan apa yang mungkin dilakukan oleh peretas 
+
+1255
+00:52:35,960 --> 00:52:37,794
+ tertarik untuk melakukan. 
+
+1256
+00:52:37,794 --> 00:52:39,710
+ Jadi untuk melakukan ini, kita akan menjalankan program ini 
+
+1257
+00:52:39,710 --> 00:52:40,680
+ di bawah debugger. 
+
+1258
+00:52:40,680 --> 00:52:43,980
+ Anda akan sangat akrab dengan ini di lab satu. 
+
+1259
+00:52:43,980 --> 00:52:45,500
+ Tapi untuk sekarang, apa yang akan kita lakukan 
+
+1260
+00:52:45,500 --> 00:52:49,700
+ adalah set breakpoint dalam fungsi pengalihan itu. 
+
+1261
+00:52:49,700 --> 00:52:52,380
+ Dan kita akan berlari dan melihat apa yang terjadi. 
+
+1262
+00:52:52,380 --> 00:52:54,410
+ Jadi ketika saya menjalankan program, itu akan terjadi 
+
+1263
+00:52:54,410 --> 00:52:56,450
+ untuk mulai mengeksekusi dalam fungsi utama. 
+
+1264
+00:52:56,450 --> 00:52:58,780
+ Dan cukup cepat, itu memanggil redirect. 
+
+1265
+00:52:58,780 --> 00:53:01,790
+ Dan debugger sekarang berhenti di awal redirect. 
+
+1266
+00:53:01,790 --> 00:53:06,830
+ Dan kita benar-benar dapat melihat apa yang terjadi di sini, misalnya, 
+
+1267
+00:53:06,830 --> 00:53:09,455
+ kita dapat memintanya untuk mencetak register CPU saat ini. 
+
+1268
+00:53:09,455 --> 00:53:11,330
+ Kita akan melihat hal-hal yang sangat rendah 
+
+1269
+00:53:11,330 --> 00:53:13,610
+ di sini, sebagai lawan pada tingkat kode sumber C. 
+
+1270
+00:53:13,610 --> 00:53:15,090
+ Kita akan melihat instruksi yang sebenarnya 
+
+1271
+00:53:15,090 --> 00:53:16,881
+ bahwa mesin saya mengeksekusi karena itu 
+
+1272
+00:53:16,881 --> 00:53:17,930
+ apa yang sebenarnya sedang terjadi. 
+
+1273
+00:53:17,930 --> 00:53:20,950
+ C sebenarnya mungkin menyembunyikan beberapa hal dari kami. 
+
+1274
+00:53:20,950 --> 00:53:23,110
+ Jadi Anda benar-benar dapat mencetak semua register. 
+
+1275
+00:53:23,110 --> 00:53:25,974
+ Jadi pada x86, seperti yang Anda ingat. 
+
+1276
+00:53:25,974 --> 00:53:27,390
+ Yah, pada arsitektur [TIDAK JELAS], 
+
+1277
+00:53:27,390 --> 00:53:29,170
+ ada penunjuk tumpukan. 
+
+1278
+00:53:29,170 --> 00:53:32,530
+ Jadi mari saya mulai mungkin menggambar diagram ini di papan tulis 
+
+1279
+00:53:32,530 --> 00:53:36,450
+ jadi kita bisa mencoba merekonstruksi apa yang terjadi. 
+
+1280
+00:53:36,450 --> 00:53:39,550
+ Jadi apa yang terjadi adalah program saya, tidak mengherankan, 
+
+1281
+00:53:39,550 --> 00:53:41,020
+ memiliki setumpuk. 
+
+1282
+00:53:41,020 --> 00:53:43,300
+ Pada x86, tumpukan menumpuk. 
+
+1283
+00:53:43,300 --> 00:53:46,040
+ Jadi semacam tumpukan ini seperti ini. 
+
+1284
+00:53:46,040 --> 00:53:49,020
+ Dan kita bisa terus mendorongnya. 
+
+1285
+00:53:49,020 --> 00:53:51,980
+ Jadi sekarang, titik penunjuk tumpukan 
+
+1286
+00:53:51,980 --> 00:53:58,230
+ di lokasi memori khusus ini FFD010. 
+
+1287
+00:53:58,230 --> 00:53:59,535
+ Jadi beberapa nilai. 
+
+1288
+00:53:59,535 --> 00:54:01,660
+ Jadi Anda dapat mencoba mencari tahu, bagaimana cara mendapatkannya di sana? 
+
+1289
+00:54:01,660 --> 00:54:05,480
+ Salah satu cara untuk melakukannya adalah dengan membongkar kode 
+
+1290
+00:54:05,480 --> 00:54:07,380
+ fungsi pengalihan ini. 
+
+1291
+00:54:07,380 --> 00:54:12,650
+
+
+1292
+00:54:12,650 --> 00:54:14,230
+ Apakah ini akan bekerja lebih baik? 
+
+1293
+00:54:14,230 --> 00:54:15,620
+ Sangat? 
+
+1294
+00:54:15,620 --> 00:54:18,250
+ Variabel kenyamanan harus memiliki nilai integer. 
+
+1295
+00:54:18,250 --> 00:54:20,870
+
+
+1296
+00:54:20,870 --> 00:54:21,370
+ Manusia. 
+
+1297
+00:54:21,370 --> 00:54:22,786
+ Apa yang terjadi dengan debugger saya? 
+
+1298
+00:54:22,786 --> 00:54:28,190
+
+
+1299
+00:54:28,190 --> 00:54:28,690
+ Baiklah. 
+
+1300
+00:54:28,690 --> 00:54:31,500
+ Yah, kita bisa membongkar fungsi dengan nama. 
+
+1301
+00:54:31,500 --> 00:54:33,200
+ Jadi inilah fungsi yang sedang dilakukan. 
+
+1302
+00:54:33,200 --> 00:54:36,340
+ Jadi pertama, dimulai dengan memanipulasi sesuatu 
+
+1303
+00:54:36,340 --> 00:54:37,362
+ dengan register EBP ini. 
+
+1304
+00:54:37,362 --> 00:54:38,570
+ Itu tidak terlalu menarik. 
+
+1305
+00:54:38,570 --> 00:54:40,620
+ Tetapi hal pertama yang dilakukannya setelah itu 
+
+1306
+00:54:40,620 --> 00:54:43,800
+ kurangi nilai tertentu dari penunjuk tumpukan. 
+
+1307
+00:54:43,800 --> 00:54:46,940
+ Ini, pada dasarnya, itu membuat ruang untuk semua variabel tersebut, 
+
+1308
+00:54:46,940 --> 00:54:50,680
+ seperti buffer dan integer, saya, kami melihat dalam kode sumber C. 
+
+1309
+00:54:50,680 --> 00:54:53,570
+ Jadi kita sebenarnya, sekarang, empat instruksi 
+
+1310
+00:54:53,570 --> 00:54:55,230
+ ke dalam fungsi, di sini. 
+
+1311
+00:54:55,230 --> 00:54:57,190
+ Jadi nilai stack pointer itu kita 
+
+1312
+00:54:57,190 --> 00:55:01,560
+ lihat sebelumnya sebenarnya sudah di tengah, jadi untuk mengatakan, 
+
+1313
+00:55:01,560 --> 00:55:02,730
+ dari tumpukan. 
+
+1314
+00:55:02,730 --> 00:55:06,840
+ Dan saat ini, ada banyak hal di atasnya 
+
+1315
+00:55:06,840 --> 00:55:09,550
+ yang akan menjadi buffer, integer itu 
+
+1316
+00:55:09,550 --> 00:55:12,110
+ nilai, dan sebenarnya, juga alamat pengirim 
+
+1317
+00:55:12,110 --> 00:55:14,390
+ ke fungsi utama berjalan di stack, juga. 
+
+1318
+00:55:14,390 --> 00:55:17,734
+ Jadi di suatu tempat di sini, kami akan memiliki alamat pengirim. 
+
+1319
+00:55:17,734 --> 00:55:19,150
+ Dan kami benar-benar mencoba untuk mencari tahu, 
+
+1320
+00:55:19,150 --> 00:55:20,720
+ di mana barang-barang di tumpukan? 
+
+1321
+00:55:20,720 --> 00:55:26,850
+ Jadi kita bisa mencetak alamat dari variabel buffer itu. 
+
+1322
+00:55:26,850 --> 00:55:31,040
+ Jadi variabel buffer ada pada alamat D02C. 
+
+1323
+00:55:31,040 --> 00:55:35,690
+ Kami juga dapat mencetak nilai integer itu, i. 
+
+1324
+00:55:35,690 --> 00:55:38,960
+ Orang itu ada di D0AC. 
+
+1325
+00:55:38,960 --> 00:55:40,970
+ Jadi saya adalah cara di atas tumpukan. 
+
+1326
+00:55:40,970 --> 00:55:44,310
+ Tetapi buffer sedikit lebih rendah. 
+
+1327
+00:55:44,310 --> 00:55:47,210
+ Jadi apa yang terjadi adalah kita memiliki penyangga di sini 
+
+1328
+00:55:47,210 --> 00:55:52,460
+ di tumpukan, dan kemudian diikuti di atas oleh saya dan mungkin 
+
+1329
+00:55:52,460 --> 00:55:54,640
+ beberapa barang lainnya, dan akhirnya, kembalinya 
+
+1330
+00:55:54,640 --> 00:55:57,260
+ alamat ke fungsi utama yang disebut redirect. 
+
+1331
+00:55:57,260 --> 00:56:00,910
+ Dan penyangganya adalah - ini akan terjadi, 
+
+1332
+00:56:00,910 --> 00:56:02,290
+ tumpukan menebas. 
+
+1333
+00:56:02,290 --> 00:56:03,845
+ Jadi ini adalah alamat yang lebih tinggi. 
+
+1334
+00:56:03,845 --> 00:56:07,250
+
+
+1335
+00:56:07,250 --> 00:56:11,010
+ Jadi apa artinya ini adalah buffer-- kita sebenarnya 
+
+1336
+00:56:11,010 --> 00:56:13,750
+ harus memutuskan, di mana elemen zeroth dari buffer, 
+
+1337
+00:56:13,750 --> 00:56:16,950
+ dan di mana elemen 128 dari buffer ini? 
+
+1338
+00:56:16,950 --> 00:56:20,510
+ Jadi di mana elemen zeroth dari buffer pergi? 
+
+1339
+00:56:20,510 --> 00:56:22,205
+ Ya? 
+
+1340
+00:56:22,205 --> 00:56:24,080
+ Seharusnya ada di bawah, benar, karena ya, 
+
+1341
+00:56:24,080 --> 00:56:25,590
+ elemen yang lebih tinggi terus naik. 
+
+1342
+00:56:25,590 --> 00:56:27,505
+ Jadi penggemar nol ada di bawah sini. 
+
+1343
+00:56:27,505 --> 00:56:28,760
+ Itu terus terjadi. 
+
+1344
+00:56:28,760 --> 00:56:31,140
+ Dan buff 127 akan ada di sana. 
+
+1345
+00:56:31,140 --> 00:56:34,240
+ Dan kemudian kita akan memiliki saya dan barang-barang lainnya. 
+
+1346
+00:56:34,240 --> 00:56:35,020
+ BAIK. 
+
+1347
+00:56:35,020 --> 00:56:36,860
+ Baiklah, mari kita lihat apa yang terjadi sekarang jika kita 
+
+1348
+00:56:36,860 --> 00:56:39,620
+ memberikan masukan yang sepertinya menabraknya sebelumnya. 
+
+1349
+00:56:39,620 --> 00:56:41,120
+ Jadi saya kira satu hal yang sebenarnya bisa kita lakukan 
+
+1350
+00:56:41,120 --> 00:56:43,700
+ lakukan sebelum ini untuk melihat apakah kita benar-benar bisa 
+
+1351
+00:56:43,700 --> 00:56:45,270
+ temukan alamat pengirim ini. 
+
+1352
+00:56:45,270 --> 00:56:48,870
+ Di mana sebenarnya terjadi untuk hidup adalah pada pointer EBP. 
+
+1353
+00:56:48,870 --> 00:56:52,700
+ Ini hanya hal yang mudah dalam konvensi pemanggilan x86, 
+
+1354
+00:56:52,700 --> 00:56:59,270
+ bahwa pointer EBP, atau mendaftar, sebenarnya 
+
+1355
+00:56:59,270 --> 00:57:02,150
+ kebetulan menunjuk ke sesuatu di tumpukan yang sedang terjadi 
+
+1356
+00:57:02,150 --> 00:57:06,040
+ disebut EBP yang disimpan. 
+
+1357
+00:57:06,040 --> 00:57:08,870
+ Ini adalah lokasi terpisah, semacam setelah semua variabel 
+
+1358
+00:57:08,870 --> 00:57:10,250
+ tetapi sebelum alamat kembali. 
+
+1359
+00:57:10,250 --> 00:57:11,666
+ Dan ini adalah hal yang sedang terjadi 
+
+1360
+00:57:11,666 --> 00:57:14,800
+ diselamatkan oleh beberapa instruksi pertama di bagian atas. 
+
+1361
+00:57:14,800 --> 00:57:16,630
+ Dan Anda sebenarnya memeriksanya. 
+
+1362
+00:57:16,630 --> 00:57:23,450
+ Di GDB Anda dapat mengatakan, memeriksa x, beberapa nilai, sehingga pointer EBP 
+
+1363
+00:57:23,450 --> 00:57:24,570
+ nilai. 
+
+1364
+00:57:24,570 --> 00:57:26,720
+ Jadi itulah lokasi tumpukan, D0B8. 
+
+1365
+00:57:26,720 --> 00:57:30,020
+ Memang, itu sebenarnya di atas bahkan variabel i. 
+
+1366
+00:57:30,020 --> 00:57:30,770
+ Jadi ini luar biasa. 
+
+1367
+00:57:30,770 --> 00:57:32,436
+ Dan itu memiliki nilai lain yang terjadi 
+
+1368
+00:57:32,436 --> 00:57:36,050
+ menjadi EBP sebelum fungsi ini dipanggil. 
+
+1369
+00:57:36,050 --> 00:57:38,950
+ Tapi kemudian, semacam satu lagi lokasi memori 
+
+1370
+00:57:38,950 --> 00:57:40,710
+ akan menjadi alamat pengirim. 
+
+1371
+00:57:40,710 --> 00:57:44,210
+ Jadi, jika kami mencetak EBP plus empat, ada hal lain di sana, 
+
+1372
+00:57:44,210 --> 00:57:48,800
+ ini 0x08048E5F. 
+
+1373
+00:57:48,800 --> 00:57:51,720
+ Dan mari kita lihat di mana itu menunjuk. 
+
+1374
+00:57:51,720 --> 00:57:54,485
+ Jadi ini adalah sesuatu yang akan Anda lakukan banyak di lab. 
+
+1375
+00:57:54,485 --> 00:57:56,140
+ Jadi Anda bisa mengambil alamat ini. 
+
+1376
+00:57:56,140 --> 00:57:59,070
+ Dan Anda dapat mencoba membongkarnya. 
+
+1377
+00:57:59,070 --> 00:58:00,130
+ Jadi siapa pria ini? 
+
+1378
+00:58:00,130 --> 00:58:02,290
+ Di mana kita berakhir? 
+
+1379
+00:58:02,290 --> 00:58:05,040
+ Jadi GDB benar-benar membantu mengetahui fungsi mana 
+
+1380
+00:58:05,040 --> 00:58:06,480
+ mengandung alamat itu. 
+
+1381
+00:58:06,480 --> 00:58:07,640
+ Jadi 5F. 
+
+1382
+00:58:07,640 --> 00:58:11,550
+ Ini adalah orang yang ditunjuk oleh alamat pengirim kami. 
+
+1383
+00:58:11,550 --> 00:58:13,790
+ Dan seperti yang Anda lihat, ini adalah instruksi yang tepat 
+
+1384
+00:58:13,790 --> 00:58:16,070
+ setelah panggilan untuk mengalihkan. 
+
+1385
+00:58:16,070 --> 00:58:17,655
+ Jadi ketika kita kembali dari pengalihan, ini 
+
+1386
+00:58:17,655 --> 00:58:20,570
+ adalah tepat di mana kita akan melompat dan melanjutkan eksekusi. 
+
+1387
+00:58:20,570 --> 00:58:22,319
+ Ini, semoga, cukup mudah 
+
+1388
+00:58:22,319 --> 00:58:25,660
+ barang dari dobel oh empat, beberapa kelas OS standar. 
+
+1389
+00:58:25,660 --> 00:58:26,160
+ BAIK. 
+
+1390
+00:58:26,160 --> 00:58:28,300
+ Jadi dimana kita sekarang? 
+
+1391
+00:58:28,300 --> 00:58:33,060
+ Sekadar rekap, kita bisa mencoba untuk membongkar instruksi kita 
+
+1392
+00:58:33,060 --> 00:58:33,990
+ penunjuk. 
+
+1393
+00:58:33,990 --> 00:58:36,900
+ Jadi kita berada di awal pengalihan sekarang. 
+
+1394
+00:58:36,900 --> 00:58:43,520
+ Dan kita bisa berlari sebentar, dan mungkin menjalankan fungsi getS (). 
+
+1395
+00:58:43,520 --> 00:58:45,210
+ Jadi OK, kita jalankan selanjutnya. 
+
+1396
+00:58:45,210 --> 00:58:48,620
+ Apa yang dilakukan adalah menjalankan getS () dan menunggu getS () 
+
+1397
+00:58:48,620 --> 00:58:49,627
+ mengembalikan. 
+
+1398
+00:58:49,627 --> 00:58:51,960
+ Kami dapat memberikan masukan buruk kami untuk mendapatkan () dan mencoba untuk mendapatkannya 
+
+1399
+00:58:51,960 --> 00:58:54,950
+ crash lagi dan melihat apa yang terjadi, sungguh, di sana, kan? 
+
+1400
+00:58:54,950 --> 00:58:57,310
+ Jadi kita bisa menyisipkan sekelompok As lagi. 
+
+1401
+00:58:57,310 --> 00:58:57,810
+ BAIK. 
+
+1402
+00:58:57,810 --> 00:59:00,420
+ Jadi kami keluar dari getS () dan semuanya sebenarnya masih OK, 
+
+1403
+00:59:00,420 --> 00:59:00,919
+ kanan? 
+
+1404
+00:59:00,919 --> 00:59:02,520
+ Programnya masih berjalan. 
+
+1405
+00:59:02,520 --> 00:59:05,830
+ Tapi kita bisa mencoba mencari tahu, apa yang ada di ingatan sekarang 
+
+1406
+00:59:05,830 --> 00:59:08,775
+ dan mengapa hal-hal akan salah? 
+
+1407
+00:59:08,775 --> 00:59:10,150
+ Sebenarnya, apa yang kalian pikirkan? 
+
+1408
+00:59:10,150 --> 00:59:11,025
+ Apa yang terjadi, bukan? 
+
+1409
+00:59:11,025 --> 00:59:12,980
+ Jadi saya mencetak sekelompok As. 
+
+1410
+00:59:12,980 --> 00:59:14,560
+ Apa yang dilakukan getS () pada memori? 
+
+1411
+00:59:14,560 --> 00:59:16,770
+
+
+1412
+00:59:16,770 --> 00:59:17,270
+ Ya, ya. 
+
+1413
+00:59:17,270 --> 00:59:18,936
+ Jadi itu terus menulis Seperti di sini, kan? 
+
+1414
+00:59:18,936 --> 00:59:21,360
+ Semua yang kami lewati untuk getS () adalah penunjuk tunggal, 
+
+1415
+00:59:21,360 --> 00:59:23,410
+ awal dari alamat ini, bukan? 
+
+1416
+00:59:23,410 --> 00:59:26,660
+ Jadi ini adalah argumen untuk getS (), 
+
+1417
+00:59:26,660 --> 00:59:28,800
+ adalah penunjuk ke lokasi memori ini di tumpukan. 
+
+1418
+00:59:28,800 --> 00:59:30,470
+ Jadi itu terus menulis As. 
+
+1419
+00:59:30,470 --> 00:59:32,470
+ Dan itu sebenarnya tidak tahu berapa panjangnya, 
+
+1420
+00:59:32,470 --> 00:59:33,760
+ jadi itu terus berjalan, kan? 
+
+1421
+00:59:33,760 --> 00:59:36,334
+ Ini akan menimpa Seperti semua jalan menumpuk tumpukan, 
+
+1422
+00:59:36,334 --> 00:59:38,500
+ melewati alamat pengirim, mungkin, dan menjadi apa pun 
+
+1423
+00:59:38,500 --> 00:59:40,934
+ naik tumpukan di atas kita. 
+
+1424
+00:59:40,934 --> 00:59:42,600
+ Jadi kita bisa memeriksa apakah itu yang terjadi. 
+
+1425
+00:59:42,600 --> 00:59:47,064
+ Jadi kita benar-benar dapat mencetak buffer. 
+
+1426
+00:59:47,064 --> 00:59:48,480
+ Dan faktanya, itu memberitahu kita, ya, kita 
+
+1427
+00:59:48,480 --> 00:59:51,500
+ memiliki 180 Seperti di sana, meskipun buffer 
+
+1428
+00:59:51,500 --> 00:59:55,670
+ harus 128 elemen besar. 
+
+1429
+00:59:55,670 --> 00:59:57,310
+ Jadi ini tidak begitu hebat. 
+
+1430
+00:59:57,310 --> 00:59:59,530
+ Dan kita sebenarnya dapat, sekali lagi, memeriksa apa 
+
+1431
+00:59:59,530 --> 01:00:03,290
+ terjadi di penunjuk EBP. 
+
+1432
+01:00:03,290 --> 01:00:05,095
+ Tanda dolar, EBP. 
+
+1433
+01:00:05,095 --> 01:00:06,610
+ Jadi sebenarnya, ya. 
+
+1434
+01:00:06,610 --> 01:00:12,159
+ Ini semua 0x41, yang merupakan pengkodean ASCII dari huruf A. 
+
+1435
+01:00:12,159 --> 01:00:14,200
+ Dan sebenarnya, alamat pengirimnya mungkin akan kembali 
+
+1436
+01:00:14,200 --> 01:00:15,283
+ dengan cara yang sama, kan? 
+
+1437
+01:00:15,283 --> 01:00:19,350
+ Jika kami mencetak alamat pengirim, itu juga semua As. 
+
+1438
+01:00:19,350 --> 01:00:20,245
+ Itu tidak begitu hebat. 
+
+1439
+01:00:20,245 --> 01:00:22,370
+ Sebenarnya, apa yang akan terjadi jika kita kembali sekarang adalah 
+
+1440
+01:00:22,370 --> 01:00:25,447
+ program akan melompat ke alamat itu, 41414141. 
+
+1441
+01:00:25,447 --> 01:00:26,530
+ Dan tidak ada apa pun di sana. 
+
+1442
+01:00:26,530 --> 01:00:27,196
+ Dan itu akan crash. 
+
+1443
+01:00:27,196 --> 01:00:29,840
+ Itulah kesalahan segmentasi yang Anda dapatkan. 
+
+1444
+01:00:29,840 --> 01:00:33,090
+ Jadi mari kita lanjutkan saja dan lihat apa yang terjadi. 
+
+1445
+01:00:33,090 --> 01:00:34,490
+ Jadi, mari kita jalankan berikutnya. 
+
+1446
+01:00:34,490 --> 01:00:37,470
+ Jadi kami terus melangkah melalui program ini. 
+
+1447
+01:00:37,470 --> 01:00:40,060
+ Dan kita bisa melihat di mana kita berada. 
+
+1448
+01:00:40,060 --> 01:00:40,560
+ BAIK. 
+
+1449
+01:00:40,560 --> 01:00:43,330
+ Kami semakin mendekati akhir dari fungsi. 
+
+1450
+01:00:43,330 --> 01:00:46,400
+ Jadi kita bisa melangkahi dua instruksi lagi. 
+
+1451
+01:00:46,400 --> 01:00:49,260
+ nexti. 
+
+1452
+01:00:49,260 --> 01:00:51,531
+ Dan sekarang kita bisa membongkar lagi. 
+
+1453
+01:00:51,531 --> 01:00:52,030
+ BAIK. 
+
+1454
+01:00:52,030 --> 01:00:54,859
+ Kami sekarang hanya di instruksi pengembalian dari fungsi ini. 
+
+1455
+01:00:54,859 --> 01:00:56,150
+ Dan kita sebenarnya bisa mengetahuinya. 
+
+1456
+01:00:56,150 --> 01:00:59,690
+ Jadi seperti yang Anda lihat, di akhir fungsi, 
+
+1457
+01:00:59,690 --> 01:01:02,120
+ itu menjalankan ini meninggalkan instruksi x86, 
+
+1458
+01:01:02,120 --> 01:01:05,220
+ yang pada dasarnya mengembalikan tumpukan kembali ke tempatnya. 
+
+1459
+01:01:05,220 --> 01:01:07,020
+ Jadi itu semacam mendorong penunjuk tumpukan 
+
+1460
+01:01:07,020 --> 01:01:10,200
+ semua jalan kembali ke alamat pengirim menggunakan EBP yang sama. 
+
+1461
+01:01:10,200 --> 01:01:11,810
+ Itulah dasarnya untuk itu. 
+
+1462
+01:01:11,810 --> 01:01:15,421
+ Dan sekarang, tumpukan itu menunjuk pada alamat pengirim 
+
+1463
+01:01:15,421 --> 01:01:16,420
+ yang akan kita gunakan. 
+
+1464
+01:01:16,420 --> 01:01:18,340
+ Dan sebenarnya, itu semua milik A. 
+
+1465
+01:01:18,340 --> 01:01:20,370
+ Dan jika kita menjalankan satu instruksi lagi, 
+
+1466
+01:01:20,370 --> 01:01:22,730
+ CPU akan melompat ke alamat memori yang tepat 
+
+1467
+01:01:22,730 --> 01:01:25,350
+ dan mulai mengeksekusi kode di sana dan crash, 
+
+1468
+01:01:25,350 --> 01:01:29,160
+ karena itu bukan alamat valid yang ada di tabel halaman. 
+
+1469
+01:01:29,160 --> 01:01:32,360
+ Jadi mari kita lihat, hanya untuk memeriksa ulang, apa yang terjadi. 
+
+1470
+01:01:32,360 --> 01:01:34,569
+ Mari cetak buffer kita lagi. 
+
+1471
+01:01:34,569 --> 01:01:36,860
+ Penyangga kami - baik, itu sebenarnya agak menarik, 
+
+1472
+01:01:36,860 --> 01:01:37,359
+ kanan? 
+
+1473
+01:01:37,359 --> 01:01:38,930
+ Jadi sekarang, buffer, untuk beberapa alasan 
+
+1474
+01:01:38,930 --> 01:01:41,710
+ hanya mengatakan A mengulangi 128 kali. 
+
+1475
+01:01:41,710 --> 01:01:45,590
+ Sedangkan jika Anda ingat sebelumnya, dikatakan A berulang 180 kali 
+
+1476
+01:01:45,590 --> 01:01:47,690
+ di buffer kami. 
+
+1477
+01:01:47,690 --> 01:01:49,376
+ Jadi apa yang terjadi? 
+
+1478
+01:01:49,376 --> 01:01:49,876
+ Ya? 
+
+1479
+01:01:49,876 --> 01:01:51,340
+ AUDIENCE: [TIDAK JELAS]. 
+
+1480
+01:01:51,340 --> 01:01:51,695
+ PROFESOR: Ya, ya. 
+
+1481
+01:01:51,695 --> 01:01:52,050
+ Persis. 
+
+1482
+01:01:52,050 --> 01:01:53,633
+ Jadi sebenarnya ada sesuatu yang terjadi 
+
+1483
+01:01:53,633 --> 01:01:55,160
+ setelah buffer overflow terjadi 
+
+1484
+01:01:55,160 --> 01:01:56,812
+ yang mengubah apa yang terjadi. 
+
+1485
+01:01:56,812 --> 01:01:58,270
+ Jadi sebenarnya, jika Anda ingat, kami melakukannya 
+
+1486
+01:01:58,270 --> 01:02:00,650
+ ini untuk saya konversi string ke integer. 
+
+1487
+01:02:00,650 --> 01:02:03,070
+ Dan jika Anda menyediakan semua As, itu sebenarnya 
+
+1488
+01:02:03,070 --> 01:02:05,850
+ menulis nol ke lokasi memori ini. 
+
+1489
+01:02:05,850 --> 01:02:08,840
+ Jadi nol, jika Anda ingat, mengakhiri string dalam C. 
+
+1490
+01:02:08,840 --> 01:02:12,120
+ Jadi GDB sekarang berpikir, ya, kami memiliki penghentian yang sangat baik 
+
+1491
+01:02:12,120 --> 01:02:15,155
+ 128 byte string dari semua As. 
+
+1492
+01:02:15,155 --> 01:02:16,780
+ Tapi Anda tahu, itu tidak terlalu penting, 
+
+1493
+01:02:16,780 --> 01:02:18,530
+ karena kita masih memiliki mereka sebagai atas itu 
+
+1494
+01:02:18,530 --> 01:02:21,180
+ sudah merusak tumpukan kami. 
+
+1495
+01:02:21,180 --> 01:02:21,680
+ BAIK. 
+
+1496
+01:02:21,680 --> 01:02:23,554
+ Itu sebenarnya semacam pelajaran penting 
+
+1497
+01:02:23,554 --> 01:02:25,990
+ itu-- sebenarnya agak sedikit rumit, terkadang, 
+
+1498
+01:02:25,990 --> 01:02:28,896
+ untuk mengeksplorasi buffer overflows ini karena, bahkan 
+
+1499
+01:02:28,896 --> 01:02:31,270
+ meskipun Anda sudah banyak mengganti barang di tumpukan, 
+
+1500
+01:02:31,270 --> 01:02:32,870
+ Anda masih harus langsung ke intinya 
+
+1501
+01:02:32,870 --> 01:02:34,810
+ di mana Anda menggunakan nilai yang Anda miliki 
+
+1502
+01:02:34,810 --> 01:02:35,700
+ ditempatkan di tumpukan. 
+
+1503
+01:02:35,700 --> 01:02:37,140
+ Jadi ada kode lain yang terjadi 
+
+1504
+01:02:37,140 --> 01:02:38,940
+ untuk dijalankan setelah Anda berhasil meluap 
+
+1505
+01:02:38,940 --> 01:02:40,274
+ beberapa penyangga dan memori rusak. 
+
+1506
+01:02:40,274 --> 01:02:42,690
+ Anda harus memastikan bahwa kode tidak melakukan sesuatu yang konyol 
+
+1507
+01:02:42,690 --> 01:02:45,490
+ seperti, jika A untuk saya, segera keluar, 
+
+1508
+01:02:45,490 --> 01:02:48,070
+ segera setelah melihat nilai non-integer, 
+
+1509
+01:02:48,070 --> 01:02:53,350
+ kita mungkin tidak bisa melompat ke semua alamat 41414141 ini. 
+
+1510
+01:02:53,350 --> 01:02:55,419
+ Jadi Anda harus memijat masukan Anda dalam beberapa kasus. 
+
+1511
+01:02:55,419 --> 01:02:56,710
+ Mungkin tidak begitu banyak dalam hal ini. 
+
+1512
+01:02:56,710 --> 01:02:58,470
+ Tetapi dalam situasi lain, Anda akan memilikinya 
+
+1513
+01:02:58,470 --> 01:03:01,110
+ untuk berhati-hati dalam membangun masukan ini. 
+
+1514
+01:03:01,110 --> 01:03:04,655
+ Oke, jadi hanya untuk melihat apa yang terjadi, kita bisa melompat sekali lagi. 
+
+1515
+01:03:04,655 --> 01:03:06,030
+ Nah, mari kita lihat daftar kami. 
+
+1516
+01:03:06,030 --> 01:03:10,400
+ Jadi sekarang, EIP kami, semacam penunjuk instruksi, 
+
+1517
+01:03:10,400 --> 01:03:12,780
+ menunjuk pada hal terakhir dalam pengalihan. 
+
+1518
+01:03:12,780 --> 01:03:14,830
+ Dan jika kita melangkah sekali lagi, semoga kita akan 
+
+1519
+01:03:14,830 --> 01:03:19,570
+ lompat ke, akhirnya, alamat 4141 yang malang itu. 
+
+1520
+01:03:19,570 --> 01:03:20,120
+ Disini. 
+
+1521
+01:03:20,120 --> 01:03:20,987
+ Dan sebenarnya, ya. 
+
+1522
+01:03:20,987 --> 01:03:22,820
+ Program ini sekarang sepertinya akan dieksekusi di sana. 
+
+1523
+01:03:22,820 --> 01:03:25,990
+ Jika kami meminta GDB untuk mencetak set register saat ini, 
+
+1524
+01:03:25,990 --> 01:03:29,420
+ yap, pointer instruksi saat ini adalah nilai aneh ini. 
+
+1525
+01:03:29,420 --> 01:03:31,840
+ Dan jika kita mengecualikan satu instruksi lagi, 
+
+1526
+01:03:31,840 --> 01:03:34,200
+ itu akan crash karena itu akhirnya 
+
+1527
+01:03:34,200 --> 01:03:39,700
+ mencoba mengeksekusi pointer instruksi yang tidak sesuai 
+
+1528
+01:03:39,700 --> 01:03:42,730
+ ke halaman yang valid dalam tabel halaman sistem operasi 
+
+1529
+01:03:42,730 --> 01:03:44,770
+ untuk proses ini. 
+
+1530
+01:03:44,770 --> 01:03:46,750
+ Masuk akal? 
+
+1531
+01:03:46,750 --> 01:03:49,260
+ Ada pertanyaan? 
+
+1532
+01:03:49,260 --> 01:03:49,760
+ Baiklah. 
+
+1533
+01:03:49,760 --> 01:03:52,910
+ Yah, aku punya pertanyaan untuk kalian, sebenarnya. 
+
+1534
+01:03:52,910 --> 01:03:58,540
+ Jadi apa yang terjadi - Anda tahu, tampaknya bisa dieksploitasi. 
+
+1535
+01:03:58,540 --> 01:03:59,644
+ Atau yah, oke. 
+
+1536
+01:03:59,644 --> 01:04:02,060
+ Mungkin pertama mari kita cari tahu mengapa ini sangat buruk, 
+
+1537
+01:04:02,060 --> 01:04:02,560
+ kanan? 
+
+1538
+01:04:02,560 --> 01:04:03,762
+ Jadi mengapa ini menjadi masalah? 
+
+1539
+01:04:03,762 --> 01:04:05,220
+ Jadi tidak hanya program kami crash, 
+
+1540
+01:04:05,220 --> 01:04:07,011
+ tapi mungkin kita akan mengambil alih. 
+
+1541
+01:04:07,011 --> 01:04:09,010
+ Jadi saya kira, pertanyaan sederhana pertama adalah, oke, 
+
+1542
+01:04:09,010 --> 01:04:10,474
+ jadi apa masalahnya? 
+
+1543
+01:04:10,474 --> 01:04:11,140
+ Apa yang bisa kau lakukan? 
+
+1544
+01:04:11,140 --> 01:04:11,890
+ Ya? 
+
+1545
+01:04:11,890 --> 01:04:13,180
+ AUDIENCE: Anda dapat melakukan apapun yang Anda inginkan. 
+
+1546
+01:04:13,180 --> 01:04:13,846
+ PROFESOR: Ya. 
+
+1547
+01:04:13,846 --> 01:04:16,809
+ Jadi saya sebenarnya sangat konyol dan hanya memasukkan banyak As. 
+
+1548
+01:04:16,809 --> 01:04:18,350
+ Tetapi jika Anda berhati-hati untuk mengetahui 
+
+1549
+01:04:18,350 --> 01:04:20,512
+ di mana untuk menempatkan nilai-nilai apa, Anda mungkin 
+
+1550
+01:04:20,512 --> 01:04:21,970
+ dapat dimasukkan ke dalam nilai yang berbeda 
+
+1551
+01:04:21,970 --> 01:04:23,387
+ dan membuatnya melompat ke tempat lain. 
+
+1552
+01:04:23,387 --> 01:04:25,344
+ Jadi mari kita lihat apakah kita benar-benar bisa melakukan ini, kan? 
+
+1553
+01:04:25,344 --> 01:04:26,710
+ Kita bisa mengingat kembali semua ini. 
+
+1554
+01:04:26,710 --> 01:04:27,210
+ BAIK. 
+
+1555
+01:04:27,210 --> 01:04:28,930
+ Jalankan kembali program tersebut. 
+
+1556
+01:04:28,930 --> 01:04:33,030
+ Dan saya kira saya harus mengatur ulang breakpoint. 
+
+1557
+01:04:33,030 --> 01:04:35,450
+ Jadi saya bisa istirahat dan mengalihkan lagi. 
+
+1558
+01:04:35,450 --> 01:04:36,570
+ Dan lari. 
+
+1559
+01:04:36,570 --> 01:04:42,000
+ Dan kali ini, saya akan, lagi, selanjutnya, 
+
+1560
+01:04:42,000 --> 01:04:43,900
+ menyediakan banyak hal As dan overflow. 
+
+1561
+01:04:43,900 --> 01:04:47,980
+ Tapi aku tidak akan mencoba membangun dengan hati-hati-- 
+
+1562
+01:04:47,980 --> 01:04:50,445
+ Anda tahu, mencari tahu titik mana dalam hubungan As ini 
+
+1563
+01:04:50,445 --> 01:04:51,710
+ ke lokasi dalam tumpukan. 
+
+1564
+01:04:51,710 --> 01:04:52,430
+ Itu sesuatu yang akan kalian lakukan 
+
+1565
+01:04:52,430 --> 01:04:53,920
+ harus dilakukan untuk lab satu. 
+
+1566
+01:04:53,920 --> 01:04:57,050
+ Tetapi misalkan saya meluap tumpukan di sini. 
+
+1567
+01:04:57,050 --> 01:04:58,470
+ Dan kemudian saya akan mencoba secara manual 
+
+1568
+01:04:58,470 --> 01:05:01,470
+ untuk mengubah hal-hal di stack untuk membuatnya melompat ke beberapa titik saya 
+
+1569
+01:05:01,470 --> 01:05:03,310
+ ingin melompat ke. 
+
+1570
+01:05:03,310 --> 01:05:08,979
+ Dan dalam program ini, oke, jadi ayo lagi-- nexti. 
+
+1571
+01:05:08,979 --> 01:05:09,520
+ Di mana kita? 
+
+1572
+01:05:09,520 --> 01:05:12,350
+ Kami berada di, sekali lagi, pada akhir pengalihan. 
+
+1573
+01:05:12,350 --> 01:05:14,540
+ Dan mari kita lihat tumpukannya, kan? 
+
+1574
+01:05:14,540 --> 01:05:18,420
+ Jadi jika kita memeriksa esp di sini, kita melihat pointer yang rusak. 
+
+1575
+01:05:18,420 --> 01:05:18,920
+ BAIK. 
+
+1576
+01:05:18,920 --> 01:05:21,020
+ Di mana kita bisa melompat? 
+
+1577
+01:05:21,020 --> 01:05:22,794
+ Hal menarik apa yang bisa kita lakukan? 
+
+1578
+01:05:22,794 --> 01:05:24,710
+ Sayangnya, program ini sangat terbatas. 
+
+1579
+01:05:24,710 --> 01:05:26,543
+ Hampir tidak ada kode program 
+
+1580
+01:05:26,543 --> 01:05:28,880
+ di mana Anda bisa melompat dan melakukan sesuatu yang menarik. 
+
+1581
+01:05:28,880 --> 01:05:31,350
+ Tapi mungkin kita bisa melakukan sedikit sesuatu yang menarik. 
+
+1582
+01:05:31,350 --> 01:05:33,460
+ Mungkin kita akan menemukan printf di utama 
+
+1583
+01:05:33,460 --> 01:05:36,190
+ dan melompat langsung ke sana, dan dapatkan untuk mencetak nilai x, 
+
+1584
+01:05:36,190 --> 01:05:37,710
+ atau x sama dengan sesuatu. 
+
+1585
+01:05:37,710 --> 01:05:38,590
+ Jadi kita bisa melakukan ini. 
+
+1586
+01:05:38,590 --> 01:05:41,820
+ Kami benar-benar dapat membongkar fungsi utama. 
+
+1587
+01:05:41,820 --> 01:05:44,630
+ Dan utama melakukan banyak hal, Anda 
+
+1588
+01:05:44,630 --> 01:05:47,710
+ tahu, menginisialisasi, pengalihan panggilan, melakukan beberapa hal lagi, 
+
+1589
+01:05:47,710 --> 01:05:49,360
+ dan kemudian memanggil printf. 
+
+1590
+01:05:49,360 --> 01:05:51,970
+ Jadi bagaimana kalau kita melompat ke titik ini, yaitu, 
+
+1591
+01:05:51,970 --> 01:05:54,200
+ ia menyiapkan argumen untuk printf, 
+
+1592
+01:05:54,200 --> 01:05:58,204
+ yang x sama dengan persen d, dan kemudian benar-benar memanggil printf. 
+
+1593
+01:05:58,204 --> 01:05:59,620
+ Jadi kita benar-benar dapat mengambil nilai ini 
+
+1594
+01:05:59,620 --> 01:06:01,900
+ dan coba tempelkan di tumpukan. 
+
+1595
+01:06:01,900 --> 01:06:05,290
+ Dan harus bisa melakukan ini dengan debugger 
+
+1596
+01:06:05,290 --> 01:06:06,850
+ cukup mudah, setidaknya. 
+
+1597
+01:06:06,850 --> 01:06:11,780
+ Jadi Anda bisa melakukan set ini [? int?] esp sama dengan nilai ini. 
+
+1598
+01:06:11,780 --> 01:06:14,040
+ Jadi kita bisa memeriksa esp lagi dan, memang, sebenarnya 
+
+1599
+01:06:14,040 --> 01:06:14,780
+ memiliki nilai ini. 
+
+1600
+01:06:14,780 --> 01:06:19,590
+ Jadi jika kita lanjutkan sekarang, yah, dicetak x 
+
+1601
+01:06:19,590 --> 01:06:21,950
+ sama dengan beberapa sampah, yang saya kira 
+
+1602
+01:06:21,950 --> 01:06:24,380
+ kebetulan apa saja yang ada di tumpukan itu 
+
+1603
+01:06:24,380 --> 01:06:25,260
+ disahkan ke printf. 
+
+1604
+01:06:25,260 --> 01:06:26,690
+ Kami tidak dengan benar mengatur semua argumen 
+
+1605
+01:06:26,690 --> 01:06:29,065
+ karena kami melompat di tengah-tengah urutan panggilan ini. 
+
+1606
+01:06:29,065 --> 01:06:30,810
+ Tapi ya, kami mencetak nilai ini. 
+
+1607
+01:06:30,810 --> 01:06:32,790
+ Dan kemudian jatuh. 
+
+1608
+01:06:32,790 --> 01:06:33,650
+ Kenapa kecelakaan? 
+
+1609
+01:06:33,650 --> 01:06:36,312
+ Mengapa kamu berpikir? 
+
+1610
+01:06:36,312 --> 01:06:37,520
+ Apa yang sebenarnya terjadi, bukan? 
+
+1611
+01:06:37,520 --> 01:06:40,000
+ Jadi kita melompat ke printf. 
+
+1612
+01:06:40,000 --> 01:06:42,085
+ Dan kemudian, ada yang salah. 
+
+1613
+01:06:42,085 --> 01:06:42,585
+ Ya? 
+
+1614
+01:06:42,585 --> 01:06:45,772
+
+
+1615
+01:06:45,772 --> 01:06:47,230
+ Kami mengubah alamat kembali 
+
+1616
+01:06:47,230 --> 01:06:48,930
+ sehingga ketika kami kembali dari pengalihan, 
+
+1617
+01:06:48,930 --> 01:06:52,420
+ sekarang kita lompat ke alamat baru ini, yang ada di sana, 
+
+1618
+01:06:52,420 --> 01:06:53,825
+ tepat setelah printf. 
+
+1619
+01:06:53,825 --> 01:06:58,160
+ Jadi dari mana datangnya kecelakaan ini? 
+
+1620
+01:06:58,160 --> 01:06:59,317
+ Ya? 
+
+1621
+01:06:59,317 --> 01:07:01,025
+ AUDIENCE: Apakah dibatasi karena i Anda 
+
+1622
+01:07:01,025 --> 01:07:02,981
+ seharusnya semacam integer, tapi-- 
+
+1623
+01:07:02,981 --> 01:07:04,420
+ PROFESOR: Tidak, sebenarnya, baik saya seperti, 
+
+1624
+01:07:04,420 --> 01:07:05,580
+ baik itu register 32-bit. 
+
+1625
+01:07:05,580 --> 01:07:06,790
+ Jadi apa pun yang ada di register, itu akan dicetak. 
+
+1626
+01:07:06,790 --> 01:07:08,831
+ Bahkan, itulah hal yang ada dalam daftar. 
+
+1627
+01:07:08,831 --> 01:07:10,370
+ Jadi tidak apa-apa. 
+
+1628
+01:07:10,370 --> 01:07:11,024
+ Ya? 
+
+1629
+01:07:11,024 --> 01:07:12,482
+ AUDIENCE: [TIDAK JELAS] hasil utama. 
+
+1630
+01:07:12,482 --> 01:07:12,935
+ PROFESOR: Ya. 
+
+1631
+01:07:12,935 --> 01:07:13,560
+ Sebenarnya, ya. 
+
+1632
+01:07:13,560 --> 01:07:15,525
+ Apa yang terjadi adalah, Anda harus mengurutkan-- OK, 
+
+1633
+01:07:15,525 --> 01:07:17,710
+ jadi ini adalah titik di mana kita melompat. 
+
+1634
+01:07:17,710 --> 01:07:18,960
+ Ini menyiapkan beberapa argumen. 
+
+1635
+01:07:18,960 --> 01:07:20,115
+ Itu benar-benar memanggil printf. 
+
+1636
+01:07:20,115 --> 01:07:22,140
+ printf tampaknya berfungsi. printf akan kembali. 
+
+1637
+01:07:22,140 --> 01:07:24,584
+ Sekarang sebenarnya, itu bagus, karena instruksi panggilan ini 
+
+1638
+01:07:24,584 --> 01:07:26,750
+ masukkan alamat pengirim pada stack untuk printf untuk digunakan. 
+
+1639
+01:07:26,750 --> 01:07:27,810
+ Tidak apa-apa. 
+
+1640
+01:07:27,810 --> 01:07:29,639
+ Kemudian main akan terus berjalan. 
+
+1641
+01:07:29,639 --> 01:07:31,930
+ Ini akan menjalankan instruksi sleeve, yang tidak 
+
+1642
+01:07:31,930 --> 01:07:32,929
+ lakukan sesuatu yang menarik. 
+
+1643
+01:07:32,929 --> 01:07:34,454
+ Dan kemudian ia kembali lagi. 
+
+1644
+01:07:34,454 --> 01:07:36,120
+ Tapi hal dalam ini-- sampai ke tumpukan, 
+
+1645
+01:07:36,120 --> 01:07:38,120
+ itu sebenarnya tidak memiliki alamat pengirim yang valid. 
+
+1646
+01:07:38,120 --> 01:07:40,250
+ Jadi agaknya, kita kembali ke yang lain 
+
+1647
+01:07:40,250 --> 01:07:42,800
+ siapa yang tahu lokasi memori apa yang ada di tumpukan itu 
+
+1648
+01:07:42,800 --> 01:07:44,750
+ dan lompat ke tempat lain. 
+
+1649
+01:07:44,750 --> 01:07:48,010
+ Jadi sayangnya, di sini, pseudoattack kami 
+
+1650
+01:07:48,010 --> 01:07:48,890
+ tidak benar-benar berfungsi. 
+
+1651
+01:07:48,890 --> 01:07:49,840
+ Itu menjalankan beberapa kode. 
+
+1652
+01:07:49,840 --> 01:07:51,140
+ Tapi kemudian jatuh. 
+
+1653
+01:07:51,140 --> 01:07:52,310
+ Itu mungkin bukan sesuatu yang ingin Anda lakukan. 
+
+1654
+01:07:52,310 --> 01:07:53,936
+ Jadi jika Anda benar-benar ingin berhati-hati, 
+
+1655
+01:07:53,936 --> 01:07:56,310
+ Anda akan dengan hati-hati menanam bukan hanya alamat kembali ini 
+
+1656
+01:07:56,310 --> 01:07:58,180
+ di tumpukan, tapi mungkin Anda tahu, 
+
+1657
+01:07:58,180 --> 01:08:02,270
+ di mana merah kedua ini akan mendapatkan alamat pengirimnya dari, 
+
+1658
+01:08:02,270 --> 01:08:03,770
+ dan coba hati-hati tempatkan sesuatu 
+
+1659
+01:08:03,770 --> 01:08:06,100
+ lain di tumpukan ada yang akan memastikan 
+
+1660
+01:08:06,100 --> 01:08:08,950
+ bahwa program Anda keluar dengan bersih setelah dieksploitasi 
+
+1661
+01:08:08,950 --> 01:08:10,892
+ agar tidak ada yang memperhatikan. 
+
+1662
+01:08:10,892 --> 01:08:12,350
+ Jadi ini semua hal yang akan Anda urutkan 
+
+1663
+01:08:12,350 --> 01:08:15,680
+ coba lakukan di lab satu dalam sedikit lebih detail. 
+
+1664
+01:08:15,680 --> 01:08:20,189
+ Tapi saya rasa satu hal yang dapat kita coba pikirkan sekarang 
+
+1665
+01:08:20,189 --> 01:08:24,198
+ adalah, kita agak mengerti mengapa itu buruk untuk melompat ke the-- 
+
+1666
+01:08:24,198 --> 01:08:25,613
+ atau memiliki buffer overflow ini. 
+
+1667
+01:08:25,613 --> 01:08:31,629
+
+
+1668
+01:08:31,630 --> 01:08:33,790
+ Satu masalah, atau semacam cara untuk memikirkan ini 
+
+1669
+01:08:33,790 --> 01:08:35,939
+ apakah itu, masalahnya hanya karena alamat pengirimnya 
+
+1670
+01:08:35,939 --> 01:08:36,604
+ di sana, kan? 
+
+1671
+01:08:36,604 --> 01:08:38,938
+ Jadi buffer terus tumbuh dan akhirnya berjalan 
+
+1672
+01:08:38,939 --> 01:08:41,149
+ di atas alamat pengirim. 
+
+1673
+01:08:41,149 --> 01:08:43,279
+ Bagaimana jika kita membalik tumpukan itu? 
+
+1674
+01:08:43,279 --> 01:08:47,319
+ Anda tahu, beberapa mesin sebenarnya memiliki tumpukan yang tumbuh besar. 
+
+1675
+01:08:47,319 --> 01:08:51,529
+ Jadi desain alternatif yang bisa kita bayangkan 
+
+1676
+01:08:51,529 --> 01:08:55,370
+ adalah tempat tumpukan dimulai di bagian bawah 
+
+1677
+01:08:55,370 --> 01:08:58,550
+ dan terus naik alih-alih turun. 
+
+1678
+01:08:58,550 --> 01:09:01,336
+ Jadi, jika Anda meluap penyangga ini, 
+
+1679
+01:09:01,336 --> 01:09:02,960
+ Anda hanya akan terus naik ke tumpukan, 
+
+1680
+01:09:02,960 --> 01:09:06,576
+ dan mungkin tidak ada hal buruk yang akan terjadi. 
+
+1681
+01:09:06,576 --> 01:09:07,995
+ Ya? 
+
+1682
+01:09:07,995 --> 01:09:10,845
+ AUDIENCE: [TIDAK JELAS]. 
+
+1683
+01:09:10,845 --> 01:09:11,969
+ PROFESOR: Jadi Anda benar. 
+
+1684
+01:09:11,970 --> 01:09:14,667
+ Mungkin itu, jika Anda memiliki - baik, 
+
+1685
+01:09:14,667 --> 01:09:16,250
+ jadi biarkan saya menggambar diagram tumpukan baru ini. 
+
+1686
+01:09:16,250 --> 01:09:20,090
+ Dan kami akan mencoba mencari tahu apa yang berlaku dan tidak. 
+
+1687
+01:09:20,090 --> 01:09:20,618
+ Baiklah. 
+
+1688
+01:09:20,618 --> 01:09:22,409
+ Jadi pada dasarnya kita akan membalikkan gambar. 
+
+1689
+01:09:22,410 --> 01:09:25,410
+ Jadi ketika Anda memanggil redirect pada arsitektur alternatif ini, 
+
+1690
+01:09:25,410 --> 01:09:27,300
+ apa yang akan terjadi adalah alamat pengirim 
+
+1691
+01:09:27,300 --> 01:09:31,040
+ akan pergi di sini di stack. 
+
+1692
+01:09:31,040 --> 01:09:34,076
+ Kemudian kita akan memiliki variabel i kami, atau mungkin EBP yang disimpan. 
+
+1693
+01:09:34,076 --> 01:09:36,930
+
+
+1694
+01:09:36,930 --> 01:09:38,620
+ Maka kita akan memiliki variabel i kami. 
+
+1695
+01:09:38,620 --> 01:09:39,670
+ Dan kemudian kita akan memiliki buff. 
+
+1696
+01:09:39,670 --> 01:09:44,660
+ Jadi kita akan memiliki penggemar nol, buff 127, dan seterusnya, kan? 
+
+1697
+01:09:44,660 --> 01:09:48,229
+ Jadi ketika kita meluap, meluap ke atas sana dan mungkin 
+
+1698
+01:09:48,229 --> 01:09:49,310
+ tidak mengenai sesuatu yang buruk. 
+
+1699
+01:09:49,310 --> 01:09:50,768
+ Saya kira apa yang Anda katakan itu, 
+
+1700
+01:09:50,768 --> 01:09:52,595
+ Yah, mungkin kita punya penyangga di sana. 
+
+1701
+01:09:52,595 --> 01:09:54,470
+ Dan jika kita punya penyangga di sana, maka ya, 
+
+1702
+01:09:54,470 --> 01:09:55,761
+ yang sepertinya tidak menguntungkan. 
+
+1703
+01:09:55,761 --> 01:09:58,930
+ Itu bisa membanjiri alamat pengirim ini. 
+
+1704
+01:09:58,930 --> 01:09:59,690
+ Jadi kamu benar. 
+
+1705
+01:09:59,690 --> 01:10:01,420
+ Jadi Anda masih bisa mengalami masalah 
+
+1706
+01:10:01,420 --> 01:10:03,350
+ di tumpukan ini tumbuh. 
+
+1707
+01:10:03,350 --> 01:10:04,785
+ Tetapi bagaimana dengan program yang tepat ini? 
+
+1708
+01:10:04,785 --> 01:10:08,420
+
+
+1709
+01:10:08,420 --> 01:10:11,119
+ Apakah program khusus ini aman pada mesin 
+
+1710
+01:10:11,119 --> 01:10:12,160
+ di mana tumpukan tumbuh? 
+
+1711
+01:10:12,160 --> 01:10:15,670
+ Jadi hanya untuk meringkas apa yang dibaca oleh program itu adalah orang ini. 
+
+1712
+01:10:15,670 --> 01:10:18,391
+
+
+1713
+01:10:18,391 --> 01:10:18,890
+ Ya? 
+
+1714
+01:10:18,890 --> 01:10:19,810
+ AUDIENCE: Masih akan menimpa 
+
+1715
+01:10:19,810 --> 01:10:21,190
+ [TIDAK JELAS] sebagai nilai kembali. 
+
+1716
+01:10:21,190 --> 01:10:21,360
+ PROFESOR: Ya. 
+
+1717
+01:10:21,360 --> 01:10:22,735
+ Jadi itu benar-benar pintar, kan? 
+
+1718
+01:10:22,735 --> 01:10:29,040
+ Jadi ini adalah bingkai stack untuk pengalihan. 
+
+1719
+01:10:29,040 --> 01:10:31,250
+ Saya kira itu sebenarnya membentang sepanjang jalan di sini. 
+
+1720
+01:10:31,250 --> 01:10:34,790
+ Tapi apa yang sebenarnya terjadi ketika Anda memanggil getS () adalah itu 
+
+1721
+01:10:34,790 --> 01:10:36,610
+ redirect membuat panggilan fungsi. 
+
+1722
+01:10:36,610 --> 01:10:40,380
+ Ini benar-benar menyimpan alamat kembalinya di sini di stack. 
+
+1723
+01:10:40,380 --> 01:10:42,740
+ Dan kemudian getS () mulai berjalan. 
+
+1724
+01:10:42,740 --> 01:10:45,490
+ Dan getS () menempatkan EBP yang disimpan sendiri di sini. 
+
+1725
+01:10:45,490 --> 01:10:50,240
+ Dan getS () akan memposting variabelnya sendiri lebih tinggi. 
+
+1726
+01:10:50,240 --> 01:10:54,142
+ Dan kemudian getS () akan mengisi buffer. 
+
+1727
+01:10:54,142 --> 01:10:55,350
+ Jadi ini masih bermasalah. 
+
+1728
+01:10:55,350 --> 01:10:57,599
+ Pada dasarnya, buffer dikelilingi oleh inisial pengembalian 
+
+1729
+01:10:57,599 --> 01:10:59,430
+ di semua sisi. 
+
+1730
+01:10:59,430 --> 01:11:02,190
+ Either way, Anda akan dapat meluap sesuatu. 
+
+1731
+01:11:02,190 --> 01:11:06,300
+ Jadi pada titik apa - anggaplah kita memiliki tumpukan mesin tumbuh. 
+
+1732
+01:11:06,300 --> 01:11:08,770
+ Pada titik mana Anda bisa mengambilnya 
+
+1733
+01:11:08,770 --> 01:11:10,614
+ kontrol eksekusi program itu? 
+
+1734
+01:11:10,614 --> 01:11:14,100
+
+
+1735
+01:11:14,100 --> 01:11:16,424
+ Ya, dan itu sebenarnya lebih mudah dalam beberapa hal. 
+
+1736
+01:11:16,424 --> 01:11:18,340
+ Anda tidak harus menunggu sampai redirect kembali. 
+
+1737
+01:11:18,340 --> 01:11:20,200
+ Dan mungkin ada, hal-hal yang akan mengacaukanmu 
+
+1738
+01:11:20,200 --> 01:11:21,210
+ seperti ini A ke saya. 
+
+1739
+01:11:21,210 --> 01:11:21,710
+ Tidak. 
+
+1740
+01:11:21,710 --> 01:11:24,281
+ Sebenarnya lebih mudah, karena getS () akan meluap 
+
+1741
+01:11:24,281 --> 01:11:24,780
+ buffer. 
+
+1742
+01:11:24,780 --> 01:11:26,480
+ Ini akan mengubah alamat kembali 
+
+1743
+01:11:26,480 --> 01:11:28,271
+ lalu segera kembali dan segera 
+
+1744
+01:11:28,271 --> 01:11:32,440
+ lompat ke mana pun Anda mencoba untuk membangun, 
+
+1745
+01:11:32,440 --> 01:11:34,780
+ masuk akal. 
+
+1746
+01:11:34,780 --> 01:11:38,175
+ Jadi apa yang terjadi jika kita memiliki program seperti ini 
+
+1747
+01:11:38,175 --> 01:11:39,050
+ itu sangat membosankan? 
+
+1748
+01:11:39,050 --> 01:11:41,091
+ Tidak ada kode yang menarik untuk dilewati. 
+
+1749
+01:11:41,091 --> 01:11:45,200
+ Yang bisa Anda lakukan adalah mendapatkannya untuk mencetak nilai x yang berbeda di sini. 
+
+1750
+01:11:45,200 --> 01:11:47,504
+ Bagaimana jika Anda ingin melakukan sesuatu yang menarik yang Anda 
+
+1751
+01:11:47,504 --> 01:11:48,645
+ tidak-- ya? 
+
+1752
+01:11:48,645 --> 01:11:52,085
+ AUDIENCE: Maksud saya, jika Anda memiliki setumpuk kabel ekstra, 
+
+1753
+01:11:52,085 --> 01:11:54,400
+ Anda bisa memasukkan kode arbitrer itu, 
+
+1754
+01:11:54,400 --> 01:11:56,027
+ misalnya, mengeksekusi cangkang? 
+
+1755
+01:11:56,027 --> 01:11:57,110
+ PROFESOR: Ya ya ya. 
+
+1756
+01:11:57,110 --> 01:11:59,810
+ Jadi itu agak pintar, benar, karena Anda sebenarnya 
+
+1757
+01:11:59,810 --> 01:12:01,370
+ dapat menyediakan input lain, bukan? 
+
+1758
+01:12:01,370 --> 01:12:04,520
+ Jadi setidaknya, yah - ada beberapa pertahanan melawan ini. 
+
+1759
+01:12:04,520 --> 01:12:06,700
+ Dan kita akan membahasnya di kuliah selanjutnya. 
+
+1760
+01:12:06,700 --> 01:12:10,270
+ Tetapi pada prinsipnya, Anda dapat memiliki alamat pengirim di sini 
+
+1761
+01:12:10,270 --> 01:12:13,380
+ yang Anda timpa pada tumpukan atau tumpukan mesin. 
+
+1762
+01:12:13,380 --> 01:12:16,360
+ Dan alih-alih mengarahkannya ke beberapa kode yang ada, 
+
+1763
+01:12:16,360 --> 01:12:18,340
+ seperti printf di dalam main, kami 
+
+1764
+01:12:18,340 --> 01:12:22,486
+ dapat benar-benar memiliki titik alamat pengirim ke dalam buffer. 
+
+1765
+01:12:22,486 --> 01:12:24,610
+ Jadi sebelumnya hanya beberapa lokasi di stack. 
+
+1766
+01:12:24,610 --> 01:12:27,080
+ Tetapi Anda bisa melompat ke sana dan memperlakukannya sebagai dapat dieksekusi. 
+
+1767
+01:12:27,080 --> 01:12:29,270
+ Jadi sebagai bagian dari permintaan Anda, Anda akan benar-benar 
+
+1768
+01:12:29,270 --> 01:12:32,160
+ mengirim beberapa byte data ke server, 
+
+1769
+01:12:32,160 --> 01:12:35,690
+ dan kemudian memiliki alamat pengirim atau hal yang Anda timpa di sini 
+
+1770
+01:12:35,690 --> 01:12:37,720
+ arahkan ke dasar buffer, dan Anda hanya akan 
+
+1771
+01:12:37,720 --> 01:12:39,240
+ terus berjalan dari sana. 
+
+1772
+01:12:39,240 --> 01:12:41,429
+ Jadi, Anda akan dapat memberikan semacam 
+
+1773
+01:12:41,429 --> 01:12:42,970
+ kode yang ingin Anda jalankan, lompat ke itu, 
+
+1774
+01:12:42,970 --> 01:12:44,390
+ dan dapatkan server untuk menjalankannya. 
+
+1775
+01:12:44,390 --> 01:12:46,710
+ Dan pada kenyataannya, secara tradisional, dalam sistem Unix, 
+
+1776
+01:12:46,710 --> 01:12:49,230
+ apa yang sering dilakukan musuh adalah meminta operasi 
+
+1777
+01:12:49,230 --> 01:12:51,280
+ sistem untuk menjalankan perintah binsh, yang 
+
+1778
+01:12:51,280 --> 01:12:53,390
+ memungkinkan Anda mengetik jenis perintah shell sewenang-wenang 
+
+1779
+01:12:53,390 --> 01:12:54,240
+ setelah itu. 
+
+1780
+01:12:54,240 --> 01:12:56,360
+ Jadi sebagai hasilnya, benda ini, bagian ini 
+
+1781
+01:12:56,360 --> 01:12:57,910
+ kode yang Anda masukkan ke buffer ini, 
+
+1782
+01:12:57,910 --> 01:13:01,260
+ sering disebut, semacam alasan historis, kode shell. 
+
+1783
+01:13:01,260 --> 01:13:06,420
+ Dan Anda akan mencoba membuat beberapa di lab ini juga. 
+
+1784
+01:13:06,420 --> 01:13:07,380
+ Baiklah. 
+
+1785
+01:13:07,380 --> 01:13:09,627
+ Masuk akal, apa yang bisa Anda lakukan di sini? 
+
+1786
+01:13:09,627 --> 01:13:10,210
+ Ada pertanyaan? 
+
+1787
+01:13:10,210 --> 01:13:11,004
+ Ya? 
+
+1788
+01:13:11,004 --> 01:13:13,492
+ AUDIENCE: Apakah ada pemisahan antara kode dan data? 
+
+1789
+01:13:13,492 --> 01:13:14,200
+ PROFESOR: Benar. 
+
+1790
+01:13:14,200 --> 01:13:17,270
+ Jadi apakah ada pemisahan antara kode dan data di sini? 
+
+1791
+01:13:17,270 --> 01:13:20,882
+ Setidaknya, baik, secara historis, banyak mesin 
+
+1792
+01:13:20,882 --> 01:13:22,840
+ tidak memaksakan pemisahan kode dan data. 
+
+1793
+01:13:22,840 --> 01:13:24,740
+ Anda hanya akan memiliki ruang alamat memori yang datar. 
+
+1794
+01:13:24,740 --> 01:13:26,290
+ Penunjuk tumpukan menunjuk di suatu tempat. 
+
+1795
+01:13:26,290 --> 01:13:28,322
+ Penunjuk kode menunjuk tempat lain. 
+
+1796
+01:13:28,322 --> 01:13:30,780
+ Dan Anda hanya menjalankan dimanapun penunjuk kode, instruksi 
+
+1797
+01:13:30,780 --> 01:13:32,510
+ pointer menunjuk. 
+
+1798
+01:13:32,510 --> 01:13:35,000
+ Mesin modern mencoba memberikan beberapa pertahanan 
+
+1799
+01:13:35,000 --> 01:13:36,660
+ untuk jenis serangan ini. 
+
+1800
+01:13:36,660 --> 01:13:39,140
+ Dan apa yang sering dilakukan mesin modern adalah, 
+
+1801
+01:13:39,140 --> 01:13:40,810
+ mereka sebenarnya mengaitkan izin 
+
+1802
+01:13:40,810 --> 01:13:42,320
+ dengan berbagai wilayah memori. 
+
+1803
+01:13:42,320 --> 01:13:44,280
+ Dan salah satu izin dijalankan. 
+
+1804
+01:13:44,280 --> 01:13:47,730
+ Jadi bagian dari alamat 32-bit atau 64-bit Anda 
+
+1805
+01:13:47,730 --> 01:13:51,180
+ ruang yang berisi kode memiliki izin eksekusi. 
+
+1806
+01:13:51,180 --> 01:13:53,450
+ Jadi, jika pointer instruksi Anda menunjukkan di sana, 
+
+1807
+01:13:53,450 --> 01:13:55,740
+ CPU akan menjalankan semuanya. 
+
+1808
+01:13:55,740 --> 01:13:59,057
+ Dan tumpukan dan bagian data lainnya dari ruang alamat Anda 
+
+1809
+01:13:59,057 --> 01:14:00,890
+ biasanya tidak memiliki izin eksekusi. 
+
+1810
+01:14:00,890 --> 01:14:03,610
+ Jadi jika Anda entah bagaimana mengatur pointer instruksi Anda 
+
+1811
+01:14:03,610 --> 01:14:07,570
+ ke beberapa lokasi memori non-kode, Anda dapat mengaturnya, 
+
+1812
+01:14:07,570 --> 01:14:10,060
+ tetapi CPU akan menolak untuk mengeksekusinya. 
+
+1813
+01:14:10,060 --> 01:14:13,930
+ Jadi ini adalah cara yang cukup bagus untuk dipertahankan 
+
+1814
+01:14:13,930 --> 01:14:15,250
+ melawan serangan semacam ini. 
+
+1815
+01:14:15,250 --> 01:14:18,680
+ Tapi itu tidak cukup mencegah semuanya. 
+
+1816
+01:14:18,680 --> 01:14:19,990
+ Jadi hanya sebuah pertanyaan. 
+
+1817
+01:14:19,990 --> 01:14:20,490
+ BAIK. 
+
+1818
+01:14:20,490 --> 01:14:22,410
+ Jadi bagaimana Anda akan melewati ini jika Anda 
+
+1819
+01:14:22,410 --> 01:14:24,985
+ punya tumpukan yang tidak bisa dieksekusi ini? 
+
+1820
+01:14:24,985 --> 01:14:26,860
+ Anda benar-benar melihat contoh ini sebelumnya, benar, 
+
+1821
+01:14:26,860 --> 01:14:30,050
+ ketika saya benar-benar melompat ke tengah-tengah utama. 
+
+1822
+01:14:30,050 --> 01:14:34,180
+ Jadi itu adalah cara semacam mengeksploitasi buffer ini 
+
+1823
+01:14:34,180 --> 01:14:36,820
+ meluap tanpa harus menyuntikkan kode baru saya sendiri. 
+
+1824
+01:14:36,820 --> 01:14:39,514
+ Jadi bahkan jika tumpukan itu tidak dapat dieksekusi, 
+
+1825
+01:14:39,514 --> 01:14:41,680
+ Saya masih bisa melompat di tengah-tengah utama. 
+
+1826
+01:14:41,680 --> 01:14:43,554
+ Dalam kasus ini, itu agak membosankan. 
+
+1827
+01:14:43,554 --> 01:14:45,020
+ Itu hanya mencetak x dan crash. 
+
+1828
+01:14:45,020 --> 01:14:46,550
+ Tetapi dalam situasi lain, Anda mungkin 
+
+1829
+01:14:46,550 --> 01:14:48,090
+ memiliki potongan kode lain di program Anda 
+
+1830
+01:14:48,090 --> 01:14:50,089
+ yang melakukan hal-hal menarik yang Anda benar-benar 
+
+1831
+01:14:50,089 --> 01:14:51,320
+ memang ingin mengeksekusi. 
+
+1832
+01:14:51,320 --> 01:14:54,520
+ Dan itu semacam dipanggil kembali ke serangan libc untuk, sekali lagi, 
+
+1833
+01:14:54,520 --> 01:14:56,170
+ alasan agak historis. 
+
+1834
+01:14:56,170 --> 01:14:59,610
+ Tetapi ini adalah cara untuk melewati langkah-langkah keamanan. 
+
+1835
+01:14:59,610 --> 01:15:02,860
+ Jadi dalam konteks buffer overflows, 
+
+1836
+01:15:02,860 --> 01:15:06,699
+ tidak ada solusi pemotongan yang jelas 
+
+1837
+01:15:06,699 --> 01:15:08,990
+ yang memberikan perlindungan sempurna terhadap kesalahan-kesalahan ini 
+
+1838
+01:15:08,990 --> 01:15:10,600
+ karena, pada akhirnya, programmer melakukannya 
+
+1839
+01:15:10,600 --> 01:15:12,310
+ membuat kesalahan dalam menulis kode sumber ini. 
+
+1840
+01:15:12,310 --> 01:15:14,540
+ Dan cara terbaik untuk memperbaikinya mungkin hanya berubah 
+
+1841
+01:15:14,540 --> 01:15:17,100
+ kode sumber dan pastikan Anda tidak memanggil getS () sangat 
+
+1842
+01:15:17,100 --> 01:15:18,570
+ banyak, seperti compiler memperingatkan Anda. 
+
+1843
+01:15:18,570 --> 01:15:20,000
+ Dan ada hal-hal yang lebih halus dari kompilator 
+
+1844
+01:15:20,000 --> 01:15:20,958
+ tidak memperingatkanmu tentang. 
+
+1845
+01:15:20,958 --> 01:15:23,490
+ Dan Anda masih harus menghindari melakukan panggilan tersebut. 
+
+1846
+01:15:23,490 --> 01:15:26,570
+ Tetapi karena itu sulit, dalam praktiknya, 
+
+1847
+01:15:26,570 --> 01:15:28,470
+ untuk mengubah semua perangkat lunak di luar sana, 
+
+1848
+01:15:28,470 --> 01:15:30,080
+ banyak orang mencoba merancang teknik 
+
+1849
+01:15:30,080 --> 01:15:33,100
+ yang membuatnya lebih sulit untuk mengeksploitasi bug ini. 
+
+1850
+01:15:33,100 --> 01:15:35,590
+ Misalnya, membuat tumpukan tidak dapat dieksekusi, 
+
+1851
+01:15:35,590 --> 01:15:39,135
+ jadi Anda tidak bisa menyuntikkan kode shell ke dalam tumpukan, 
+
+1852
+01:15:39,135 --> 01:15:41,930
+ dan Anda harus melakukan sesuatu yang sedikit lebih rumit. 
+
+1853
+01:15:41,930 --> 01:15:45,690
+ Dan beberapa ceramah berikutnya, dua ceramah berikutnya, 
+
+1854
+01:15:45,690 --> 01:15:47,930
+ sebenarnya, kita akan melihat teknik pertahanan ini. 
+
+1855
+01:15:47,930 --> 01:15:48,980
+ Mereka tidak semuanya sempurna. 
+
+1856
+01:15:48,980 --> 01:15:50,480
+ Tetapi mereka melakukannya, dalam praktek, membuatnya 
+
+1857
+01:15:50,480 --> 01:15:52,780
+ jauh lebih sulit bagi peretas itu untuk mengeksploitasi sesuatu. 
+
+1858
+01:15:52,780 --> 01:15:53,065
+ Pertanyaan? 
+
+1859
+01:15:53,065 --> 01:15:54,802
+ AUDIENCE: Saya hanya memiliki pertanyaan administrasi umum. 
+
+1860
+01:15:54,802 --> 01:15:55,286
+ PROFESOR: Ya? 
+
+1861
+01:15:55,286 --> 01:15:56,738
+ AUDIENCE: Saya bertanya-tanya apakah ada final? 
+
+1862
+01:15:56,738 --> 01:15:58,696
+ Dan juga jika ada kuis, dan tanggal berapa - 
+
+1863
+01:15:58,696 --> 01:16:00,200
+ PROFESOR: Oh ya. 
+
+1864
+01:16:00,200 --> 01:16:02,630
+ Ya, saya pikir jika Anda pergi ke halaman jadwal, 
+
+1865
+01:16:02,630 --> 01:16:03,960
+ ada dua kuis. 
+
+1866
+01:16:03,960 --> 01:16:05,780
+ Dan tidak ada final selama minggu terakhir, 
+
+1867
+01:16:05,780 --> 01:16:08,034
+ tapi ada kuis tepat sebelum itu. 
+
+1868
+01:16:08,034 --> 01:16:09,450
+ Jadi Anda gratis untuk minggu terakhir, 
+
+1869
+01:16:09,450 --> 01:16:12,100
+ tapi masih ada sesuatu di akhir kelas. 
+
+1870
+01:16:12,100 --> 01:16:13,190
+ Ya. 
+
+1871
+01:16:13,190 --> 01:16:14,470
+ Baiklah. 
+
+1872
+01:16:14,470 --> 01:16:14,970
+ BAIK. 
+
+1873
+01:16:14,970 --> 01:16:17,310
+ Jadi saya pikir itu mungkin untuk buffer overflows. 
+
+1874
+01:16:17,310 --> 01:16:19,600
+ Saya kira satu pertanyaannya adalah, jadi apa 
+
+1875
+01:16:19,600 --> 01:16:21,380
+ yang Anda lakukan tentang masalah mekanisme? 
+
+1876
+01:16:21,380 --> 01:16:26,030
+ Dan jawaban umumnya adalah mungkin memiliki mekanisme yang lebih sedikit. 
+
+1877
+01:16:26,030 --> 01:16:27,530
+ Jadi seperti yang kita lihat di sini, jika Anda mengandalkan 
+
+1878
+01:16:27,530 --> 01:16:29,850
+ pada setiap perangkat lunak untuk menegakkan kebijakan keamanan Anda, 
+
+1879
+01:16:29,850 --> 01:16:31,349
+ Anda pasti akan memiliki kesalahan itu 
+
+1880
+01:16:31,349 --> 01:16:34,110
+ memungkinkan musuh untuk melewati mekanisme Anda untuk mengeksploitasi 
+
+1881
+01:16:34,110 --> 01:16:35,829
+ beberapa bug di server web. 
+
+1882
+01:16:35,829 --> 01:16:37,370
+ Dan desain yang jauh lebih baik, dan satu tapi 
+
+1883
+01:16:37,370 --> 01:16:39,300
+ Anda akan menjelajahi lab dua, adalah satu 
+
+1884
+01:16:39,300 --> 01:16:41,030
+ di mana Anda menyusun seluruh sistem Anda 
+
+1885
+01:16:41,030 --> 01:16:42,621
+ jadi keamanan sistem tidak 
+
+1886
+01:16:42,621 --> 01:16:44,120
+ tergantung pada semua bagian perangkat lunak 
+
+1887
+01:16:44,120 --> 01:16:45,790
+ menegakkan kebijakan keamanan Anda. 
+
+1888
+01:16:45,790 --> 01:16:47,206
+ Kebijakan keamanan akan menjadi 
+
+1889
+01:16:47,206 --> 01:16:48,970
+ diberlakukan oleh sejumlah kecil komponen. 
+
+1890
+01:16:48,970 --> 01:16:49,900
+ Dan sisanya sebenarnya 
+
+1891
+01:16:49,900 --> 01:16:51,483
+ tidak masalah, untuk tujuan keamanan, 
+
+1892
+01:16:51,483 --> 01:16:52,740
+ apakah itu benar atau salah. 
+
+1893
+01:16:52,740 --> 01:16:55,060
+ Itu tidak akan melanggar kebijakan keamanan Anda sama sekali. 
+
+1894
+01:16:55,060 --> 01:16:58,540
+ Jadi ini, semacam meminimalkan basis komputasi tepercaya Anda 
+
+1895
+01:16:58,540 --> 01:17:01,820
+ adalah teknik yang cukup kuat untuk menyiasati mekanisme ini 
+
+1896
+01:17:01,820 --> 01:17:04,410
+ bug dan masalah yang kita lihat hari ini, setidaknya 
+
+1897
+01:17:04,410 --> 01:17:05,775
+ dalam sedikit detail. 
+
+1898
+01:17:05,775 --> 01:17:06,370
+ Baiklah. 
+
+1899
+01:17:06,370 --> 01:17:07,620
+ Jadi baca koran untuk hari Senin. 
+
+1900
+01:17:07,620 --> 01:17:08,828
+ Dan datanglah ke kuliah hari Senin. 
+
+1901
+01:17:08,828 --> 01:17:10,770
+ Dan kirimkan pertanyaan di situs web. 
+
+1902
+01:17:10,770 --> 00:00:00,000
+ Sampai ketemu lagi. 
+

@@ -1,0 +1,1440 @@
+1
+00:00:09,679 --> 00:00:12,690
+in this<font color="#E5E5E5"> video we are going to look at</font>
+
+2
+00:00:12,690 --> 00:00:15,240
+file intelligent vulnerability line of
+
+3
+00:00:15,240 --> 00:00:17,699
+the video is first<font color="#E5E5E5"> what is file</font>
+
+4
+00:00:17,699 --> 00:00:20,490
+inclusion vulnerability second type of
+
+5
+00:00:20,490 --> 00:00:23,519
+<font color="#E5E5E5">file inclusion vulnerability local file</font>
+
+6
+00:00:23,519 --> 00:00:25,789
+inclusion and remote file inclusion
+
+7
+00:00:25,789 --> 00:00:30,119
+<font color="#E5E5E5">third the demo of both</font><font color="#CCCCCC"> lfi</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> era file</font>
+
+8
+00:00:30,119 --> 00:00:34,500
+using dvwa<font color="#E5E5E5"> and in last</font><font color="#CCCCCC"> real-life reports</font>
+
+9
+00:00:34,500 --> 00:00:38,070
+at<font color="#CCCCCC"> Packer</font><font color="#E5E5E5"> one also in this</font><font color="#CCCCCC"> video I</font><font color="#E5E5E5"> will</font>
+
+10
+00:00:38,070 --> 00:00:40,829
+<font color="#CCCCCC">introduce you</font><font color="#E5E5E5"> with</font><font color="#CCCCCC"> OWS P which</font><font color="#E5E5E5"> stands</font>
+
+11
+00:00:40,829 --> 00:00:42,450
+for<font color="#E5E5E5"> open web application security</font>
+
+12
+00:00:42,450 --> 00:00:45,629
+project<font color="#CCCCCC"> so the official website of OWA</font>
+
+13
+00:00:45,629 --> 00:00:49,590
+space<font color="#CCCCCC"> definitely dot o w</font><font color="#E5E5E5"> ASP dot R so</font>
+
+14
+00:00:49,590 --> 00:00:53,039
+here<font color="#E5E5E5"> we are on the website of Oh W ASP o</font>
+
+15
+00:00:53,039 --> 00:00:56,219
+w ASP is a<font color="#E5E5E5"> project run by security</font>
+
+16
+00:00:56,219 --> 00:00:58,230
+community to<font color="#E5E5E5"> help the web application</font>
+
+17
+00:00:58,230 --> 00:01:00,989
+developer in developing more secure web
+
+18
+00:01:00,989 --> 00:01:03,210
+application by providing very useful
+
+19
+00:01:03,210 --> 00:01:05,630
+information about<font color="#E5E5E5"> security bugs or</font>
+
+20
+00:01:05,630 --> 00:01:09,540
+vulnerabilities we will learn about<font color="#CCCCCC"> LF I</font>
+
+21
+00:01:09,540 --> 00:01:14,130
+<font color="#E5E5E5">and RFI through</font><font color="#CCCCCC"> OWA</font><font color="#E5E5E5"> SP website so here</font>
+
+22
+00:01:14,130 --> 00:01:17,070
+<font color="#CCCCCC">is the OWS be</font><font color="#E5E5E5"> page of Ella file which is</font>
+
+23
+00:01:17,070 --> 00:01:20,490
+local file inclusion so let's read what
+
+24
+00:01:20,490 --> 00:01:23,430
+us say about<font color="#CCCCCC"> Ella five local</font><font color="#E5E5E5"> file</font>
+
+25
+00:01:23,430 --> 00:01:25,920
+inclusion<font color="#CCCCCC"> alpha</font><font color="#E5E5E5"> Mona's</font><font color="#CCCCCC"> alpha</font><font color="#E5E5E5"> is the</font>
+
+26
+00:01:25,920 --> 00:01:27,930
+process of including<font color="#E5E5E5"> files that are</font>
+
+27
+00:01:27,930 --> 00:01:29,610
+already locally<font color="#CCCCCC"> present on the server</font>
+
+28
+00:01:29,610 --> 00:01:31,590
+<font color="#E5E5E5">through the exploiting of vulnerability</font>
+
+29
+00:01:31,590 --> 00:01:34,049
+inclusion procedures implemented in the
+
+30
+00:01:34,049 --> 00:01:36,360
+application<font color="#E5E5E5"> what are they trying to say</font>
+
+31
+00:01:36,360 --> 00:01:38,939
+is when a web application<font color="#CCCCCC"> is developed</font>
+
+32
+00:01:38,939 --> 00:01:41,579
+in such a way<font color="#CCCCCC"> that a</font><font color="#E5E5E5"> file which is</font>
+
+33
+00:01:41,579 --> 00:01:44,939
+stored on<font color="#E5E5E5"> local server is included using</font>
+
+34
+00:01:44,939 --> 00:01:46,979
+include function of the<font color="#E5E5E5"> programming</font>
+
+35
+00:01:46,979 --> 00:01:49,130
+<font color="#CCCCCC">language or a scripting language and</font>
+
+36
+00:01:49,130 --> 00:01:51,570
+when this include function is not
+
+37
+00:01:51,570 --> 00:01:54,720
+properly implemented or the checking on
+
+38
+00:01:54,720 --> 00:01:57,719
+this function<font color="#E5E5E5"> is not</font><font color="#CCCCCC"> done properly that</font>
+
+39
+00:01:57,719 --> 00:01:59,880
+attacker can take advantage<font color="#E5E5E5"> of this</font>
+
+40
+00:01:59,880 --> 00:02:01,979
+function by including<font color="#CCCCCC"> some other</font>
+
+41
+00:02:01,979 --> 00:02:05,579
+sensitive file located<font color="#E5E5E5"> on the local</font>
+
+42
+00:02:05,579 --> 00:02:07,619
+server<font color="#E5E5E5"> and attacker can read this</font>
+
+43
+00:02:07,619 --> 00:02:10,770
+sensitive file<font color="#CCCCCC"> also this is all what</font>
+
+44
+00:02:10,770 --> 00:02:11,560
+they
+
+45
+00:02:11,560 --> 00:02:15,010
+to explain<font color="#E5E5E5"> you in this page there is</font>
+
+46
+00:02:15,010 --> 00:02:16,470
+also a page for remote file inclusion
+
+47
+00:02:16,470 --> 00:02:19,270
+<font color="#CCCCCC">remote file inclusion is also the same</font>
+
+48
+00:02:19,270 --> 00:02:22,060
+the only difference is file that is
+
+49
+00:02:22,060 --> 00:02:25,360
+included is on the remote<font color="#E5E5E5"> server</font><font color="#CCCCCC"> it is</font>
+
+50
+00:02:25,360 --> 00:02:27,489
+not present<font color="#CCCCCC"> on</font><font color="#E5E5E5"> the local server</font>
+
+51
+00:02:27,489 --> 00:02:29,890
+remote server means on the other website
+
+52
+00:02:29,890 --> 00:02:33,040
+<font color="#E5E5E5">as you</font><font color="#CCCCCC"> can see this link the</font><font color="#E5E5E5"> file which</font>
+
+53
+00:02:33,040 --> 00:02:35,980
+is included is on<font color="#E5E5E5"> different</font><font color="#CCCCCC"> website if</font>
+
+54
+00:02:35,980 --> 00:02:37,510
+you did not get what I'm<font color="#CCCCCC"> trying</font><font color="#E5E5E5"> to</font>
+
+55
+00:02:37,510 --> 00:02:38,140
+explain
+
+56
+00:02:38,140 --> 00:02:40,239
+don't worry<font color="#CCCCCC"> I will give you a demo of</font>
+
+57
+00:02:40,239 --> 00:02:42,640
+<font color="#CCCCCC">lfi and Aero file which will give you</font>
+
+58
+00:02:42,640 --> 00:02:46,000
+<font color="#E5E5E5">more clarity so here is the owh PDF</font><font color="#CCCCCC"> site</font>
+
+59
+00:02:46,000 --> 00:02:48,640
+you can explore it by yourself<font color="#CCCCCC"> at some</font>
+
+60
+00:02:48,640 --> 00:02:51,640
+other time<font color="#E5E5E5"> now let's see the demo of</font>
+
+61
+00:02:51,640 --> 00:02:55,150
+both<font color="#CCCCCC"> lfi</font><font color="#E5E5E5"> and RF I'll start the exam and</font>
+
+62
+00:02:55,150 --> 00:02:57,730
+run these two services<font color="#CCCCCC"> Apache web server</font>
+
+63
+00:02:57,730 --> 00:03:00,250
+and MySQL database<font color="#E5E5E5"> then go to your</font>
+
+64
+00:03:00,250 --> 00:03:04,000
+localhost and start<font color="#CCCCCC"> DBW let's login with</font>
+
+65
+00:03:04,000 --> 00:03:07,870
+username admin and password password<font color="#CCCCCC"> see</font>
+
+66
+00:03:07,870 --> 00:03:11,019
+at your left section<font color="#E5E5E5"> before starting</font>
+
+67
+00:03:11,019 --> 00:03:14,170
+<font color="#E5E5E5">with file inclusion we go to add dvwa</font>
+
+68
+00:03:14,170 --> 00:03:16,510
+security because<font color="#CCCCCC"> we are at</font><font color="#E5E5E5"> learning</font>
+
+69
+00:03:16,510 --> 00:03:19,060
+phase we<font color="#CCCCCC"> are going to select low</font>
+
+70
+00:03:19,060 --> 00:03:22,150
+<font color="#CCCCCC">security on this dvw a</font><font color="#E5E5E5"> click on submit</font>
+
+71
+00:03:22,150 --> 00:03:26,079
+<font color="#E5E5E5">and it will be submitted now go to file</font>
+
+72
+00:03:26,079 --> 00:03:27,970
+inclusion<font color="#E5E5E5"> if you are seeing this warning</font>
+
+73
+00:03:27,970 --> 00:03:32,019
+<font color="#E5E5E5">then don't worry</font><font color="#CCCCCC"> this is for</font><font color="#E5E5E5"> RFI when we</font>
+
+74
+00:03:32,019 --> 00:03:34,780
+look at<font color="#CCCCCC"> RFI we will sort it out so let's</font>
+
+75
+00:03:34,780 --> 00:03:38,650
+see what is local file inclusion now at
+
+76
+00:03:38,650 --> 00:03:41,019
+this page you are seeing that<font color="#E5E5E5"> there are</font>
+
+77
+00:03:41,019 --> 00:03:43,989
+<font color="#E5E5E5">three files which says file one dot PHP</font>
+
+78
+00:03:43,989 --> 00:03:47,680
+file<font color="#E5E5E5"> do dot PHP and files the PHP if I</font>
+
+79
+00:03:47,680 --> 00:03:50,560
+click<font color="#E5E5E5"> on file one dot PHP I'll see our</font>
+
+80
+00:03:50,560 --> 00:03:53,889
+file which says hello admin<font color="#E5E5E5"> your</font><font color="#CCCCCC"> end</font><font color="#E5E5E5"> IP</font>
+
+81
+00:03:53,889 --> 00:03:57,880
+address so this section is nothing<font color="#E5E5E5"> but</font>
+
+82
+00:03:57,880 --> 00:04:01,389
+it is<font color="#E5E5E5"> a file which is included in</font><font color="#CCCCCC"> this</font>
+
+83
+00:04:01,389 --> 00:04:04,540
+dvwa<font color="#E5E5E5"> weather equation so the</font>
+
+84
+00:04:04,540 --> 00:04:06,900
+functionality of<font color="#E5E5E5"> the web application is</font>
+
+85
+00:04:06,900 --> 00:04:11,739
+this<font color="#E5E5E5"> website is including a file which</font>
+
+86
+00:04:11,739 --> 00:04:15,639
+is stored at local server<font color="#E5E5E5"> fine if I</font>
+
+87
+00:04:15,639 --> 00:04:18,370
+click on file<font color="#E5E5E5"> to this section shows me</font>
+
+88
+00:04:18,370 --> 00:04:20,649
+another file which<font color="#CCCCCC"> says I need a</font>
+
+89
+00:04:20,649 --> 00:04:24,230
+password<font color="#E5E5E5"> it correct along</font><font color="#CCCCCC"> and so on</font>
+
+90
+00:04:24,230 --> 00:04:28,190
+if<font color="#CCCCCC"> I</font><font color="#E5E5E5"> click on file 3 then this web</font>
+
+91
+00:04:28,190 --> 00:04:31,130
+<font color="#CCCCCC">application is including tied</font><font color="#E5E5E5"> file so</font>
+
+92
+00:04:31,130 --> 00:04:33,470
+this section is nothing but it is<font color="#E5E5E5"> a file</font>
+
+93
+00:04:33,470 --> 00:04:36,260
+which is included<font color="#E5E5E5"> using some include</font>
+
+94
+00:04:36,260 --> 00:04:39,220
+function of the programming<font color="#E5E5E5"> language</font><font color="#CCCCCC"> and</font>
+
+95
+00:04:39,220 --> 00:04:42,320
+as<font color="#E5E5E5"> you can see this parameter page</font>
+
+96
+00:04:42,320 --> 00:04:45,620
+parameter is taking<font color="#E5E5E5"> input as an</font><font color="#CCCCCC"> filename</font>
+
+97
+00:04:45,620 --> 00:04:48,560
+so if I save file<font color="#CCCCCC"> to dot PHP</font>
+
+98
+00:04:48,560 --> 00:04:52,490
+it will include file<font color="#CCCCCC"> 2 so this parameter</font>
+
+99
+00:04:52,490 --> 00:04:56,510
+<font color="#E5E5E5">is not sanitized properly in this case</font>
+
+100
+00:04:56,510 --> 00:05:00,020
+let's see if it can include some other
+
+101
+00:05:00,020 --> 00:05:02,900
+sensitive file<font color="#E5E5E5"> so for that for learning</font>
+
+102
+00:05:02,900 --> 00:05:06,320
+<font color="#E5E5E5">purpose let's go to our</font><font color="#CCCCCC"> exam directory</font>
+
+103
+00:05:06,320 --> 00:05:08,900
+<font color="#CCCCCC">and in that same directory we have</font>
+
+104
+00:05:08,900 --> 00:05:11,420
+<font color="#CCCCCC">htdocs folder and in that - to Doc's</font>
+
+105
+00:05:11,420 --> 00:05:15,170
+folder we have<font color="#CCCCCC"> dvwa</font><font color="#E5E5E5"> - master so let's</font>
+
+106
+00:05:15,170 --> 00:05:17,990
+open text<font color="#CCCCCC"> editor this</font><font color="#E5E5E5"> is only for</font>
+
+107
+00:05:17,990 --> 00:05:20,570
+learning purpose so if<font color="#E5E5E5"> I create</font><font color="#CCCCCC"> a web</font>
+
+108
+00:05:20,570 --> 00:05:23,480
+page which says<font color="#CCCCCC"> you should not read this</font>
+
+109
+00:05:23,480 --> 00:05:29,560
+file<font color="#E5E5E5"> fine so if I save it on</font><font color="#CCCCCC"> htdocs only</font>
+
+110
+00:05:36,220 --> 00:05:44,000
+by renaming it sensitive<font color="#E5E5E5"> dot PHP</font><font color="#CCCCCC"> let's</font>
+
+111
+00:05:44,000 --> 00:05:48,380
+save it so I create a file<font color="#E5E5E5"> create a PHP</font>
+
+112
+00:05:48,380 --> 00:05:52,040
+<font color="#E5E5E5">file which is a sensitive file this is</font>
+
+113
+00:05:52,040 --> 00:05:53,360
+only for learning and<font color="#E5E5E5"> understanding</font>
+
+114
+00:05:53,360 --> 00:05:57,560
+purpose<font color="#E5E5E5"> so say this</font><font color="#CCCCCC"> is my local server</font>
+
+115
+00:05:57,560 --> 00:06:01,550
+<font color="#E5E5E5">and at this server</font><font color="#CCCCCC"> I</font><font color="#E5E5E5"> have a sensitive</font>
+
+116
+00:06:01,550 --> 00:06:04,190
+<font color="#E5E5E5">PHP file which should not</font><font color="#CCCCCC"> be read by any</font>
+
+117
+00:06:04,190 --> 00:06:08,030
+other person<font color="#E5E5E5"> now go back to</font><font color="#CCCCCC"> your</font><font color="#E5E5E5"> DVD</font>
+
+118
+00:06:08,030 --> 00:06:12,610
+blue<font color="#E5E5E5"> here so using this parameter if I</font>
+
+119
+00:06:12,610 --> 00:06:16,520
+<font color="#E5E5E5">include this sensitive file then this</font>
+
+120
+00:06:16,520 --> 00:06:18,320
+file will be<font color="#E5E5E5"> shown on the</font><font color="#CCCCCC"> screen</font><font color="#E5E5E5"> and</font>
+
+121
+00:06:18,320 --> 00:06:20,600
+this<font color="#CCCCCC"> is a sensitive</font><font color="#E5E5E5"> file this file</font>
+
+122
+00:06:20,600 --> 00:06:23,050
+should<font color="#E5E5E5"> not be seen</font><font color="#CCCCCC"> by every other person</font>
+
+123
+00:06:23,050 --> 00:06:29,750
+<font color="#CCCCCC">so if I</font><font color="#E5E5E5"> enter dot dot slash this dot</font><font color="#CCCCCC"> dot</font>
+
+124
+00:06:29,750 --> 00:06:31,970
+slash<font color="#E5E5E5"> double dot slash means</font><font color="#CCCCCC"> one</font>
+
+125
+00:06:31,970 --> 00:06:34,430
+directly back so if we<font color="#CCCCCC"> are at this</font>
+
+126
+00:06:34,430 --> 00:06:37,520
+directly<font color="#E5E5E5"> see we are at dvw -</font>
+
+127
+00:06:37,520 --> 00:06:39,740
+star and inside that<font color="#CCCCCC"> we have a directive</font>
+
+128
+00:06:39,740 --> 00:06:41,690
+vulnerabilities and inside that<font color="#CCCCCC"> we have</font>
+
+129
+00:06:41,690 --> 00:06:44,750
+a directly<font color="#CCCCCC"> fi so first go</font><font color="#E5E5E5"> one directly</font>
+
+130
+00:06:44,750 --> 00:06:47,120
+back which is from fi<font color="#CCCCCC"> two</font>
+
+131
+00:06:47,120 --> 00:06:49,370
+vulnerabilities then another directly
+
+132
+00:06:49,370 --> 00:06:51,680
+back<font color="#E5E5E5"> which is from vulnerabilities to</font>
+
+133
+00:06:51,680 --> 00:06:56,060
+<font color="#CCCCCC">dvwa</font><font color="#E5E5E5"> master and from</font><font color="#CCCCCC"> that directly we go</font>
+
+134
+00:06:56,060 --> 00:06:58,879
+<font color="#CCCCCC">into dvwa</font><font color="#E5E5E5"> two extra dogs and in that</font>
+
+135
+00:06:58,879 --> 00:07:01,669
+<font color="#E5E5E5">directly we have sensitive page that we</font>
+
+136
+00:07:01,669 --> 00:07:04,970
+had create sensitive dot<font color="#CCCCCC"> php'</font><font color="#E5E5E5"> as soon as</font>
+
+137
+00:07:04,970 --> 00:07:08,629
+I click enter<font color="#CCCCCC"> the file</font><font color="#E5E5E5"> is</font><font color="#CCCCCC"> included and</font>
+
+138
+00:07:08,629 --> 00:07:11,960
+it says I'm a sensitive file<font color="#E5E5E5"> and using</font>
+
+139
+00:07:11,960 --> 00:07:14,270
+<font color="#CCCCCC">this file inclusion I read this n</font>
+
+140
+00:07:14,270 --> 00:07:17,300
+certified<font color="#E5E5E5"> so this is Elif ID now if I go</font>
+
+141
+00:07:17,300 --> 00:07:20,900
+back<font color="#CCCCCC"> to</font><font color="#E5E5E5"> OWS</font><font color="#CCCCCC"> P page</font><font color="#E5E5E5"> you can see it is not</font>
+
+142
+00:07:20,900 --> 00:07:23,840
+only limited with reading sensitive data
+
+143
+00:07:23,840 --> 00:07:26,449
+this can<font color="#E5E5E5"> lead to something is outputting</font>
+
+144
+00:07:26,449 --> 00:07:28,520
+the content of the file<font color="#E5E5E5"> but depending on</font>
+
+145
+00:07:28,520 --> 00:07:30,949
+<font color="#E5E5E5">the severity it can also lead</font><font color="#CCCCCC"> to code</font>
+
+146
+00:07:30,949 --> 00:07:33,169
+execution on the<font color="#E5E5E5"> web server code</font>
+
+147
+00:07:33,169 --> 00:07:34,909
+execution on the<font color="#E5E5E5"> client side such</font><font color="#CCCCCC"> as</font>
+
+148
+00:07:34,909 --> 00:07:36,440
+JavaScript<font color="#E5E5E5"> which can lead to</font><font color="#CCCCCC"> other</font>
+
+149
+00:07:36,440 --> 00:07:38,240
+<font color="#E5E5E5">attacks such as cross-site scripting</font>
+
+150
+00:07:38,240 --> 00:07:41,020
+which we see in<font color="#E5E5E5"> later videos</font>
+
+151
+00:07:41,020 --> 00:07:53,700
+[Music]
+
+152
+00:07:53,700 --> 00:07:56,860
+[Applause]
+
+153
+00:07:57,580 --> 00:08:01,540
+now let's see a demo<font color="#CCCCCC"> of our f5 for</font>
+
+154
+00:08:01,540 --> 00:08:05,270
+<font color="#E5E5E5">starting</font><font color="#CCCCCC"> RFI</font><font color="#E5E5E5"> we have to first allow the</font>
+
+155
+00:08:05,270 --> 00:08:08,540
+URL include function for allowing this
+
+156
+00:08:08,540 --> 00:08:11,300
+URL include<font color="#E5E5E5"> we have to go to our exam</font>
+
+157
+00:08:11,300 --> 00:08:13,970
+directory<font color="#E5E5E5"> now if you are using Windows</font>
+
+158
+00:08:13,970 --> 00:08:16,400
+then you have to go to your C Drive<font color="#E5E5E5"> or</font>
+
+159
+00:08:16,400 --> 00:08:18,140
+the drive in which operating system<font color="#CCCCCC"> is</font>
+
+160
+00:08:18,140 --> 00:08:19,970
+installed<font color="#E5E5E5"> and inside that drive there</font>
+
+161
+00:08:19,970 --> 00:08:21,170
+will be a folder<font color="#E5E5E5"> of</font><font color="#CCCCCC"> zamp</font>
+
+162
+00:08:21,170 --> 00:08:23,810
+and inside<font color="#CCCCCC"> that</font><font color="#E5E5E5"> Sam folder there will be</font>
+
+163
+00:08:23,810 --> 00:08:27,980
+a file PHP dot<font color="#E5E5E5"> Ali</font><font color="#CCCCCC"> and I and for Ubuntu</font>
+
+164
+00:08:27,980 --> 00:08:31,250
+users we<font color="#E5E5E5"> have go to back our lamp</font>
+
+165
+00:08:31,250 --> 00:08:33,320
+<font color="#E5E5E5">directory and inside</font><font color="#CCCCCC"> that directory we</font>
+
+166
+00:08:33,320 --> 00:08:36,230
+<font color="#E5E5E5">have</font><font color="#CCCCCC"> etc' directory and</font><font color="#E5E5E5"> inside that if</font>
+
+167
+00:08:36,230 --> 00:08:39,679
+we have a<font color="#E5E5E5"> PHP dot ini file so we have to</font>
+
+168
+00:08:39,679 --> 00:08:43,400
+change this PHP<font color="#E5E5E5"> dot ini file we open</font><font color="#CCCCCC"> it</font>
+
+169
+00:08:43,400 --> 00:08:46,370
+with editor if<font color="#CCCCCC"> your Windows user please</font>
+
+170
+00:08:46,370 --> 00:08:49,220
+open this file<font color="#E5E5E5"> using your notepad and</font>
+
+171
+00:08:49,220 --> 00:08:55,070
+search for allow underscore URL<font color="#E5E5E5"> as you</font>
+
+172
+00:08:55,070 --> 00:08:57,260
+can see this is allow underscore URL
+
+173
+00:08:57,260 --> 00:09:00,170
+include<font color="#E5E5E5"> so it is off right now we will</font>
+
+174
+00:09:00,170 --> 00:09:05,750
+on it so that we can<font color="#CCCCCC"> perform our fi now</font>
+
+175
+00:09:05,750 --> 00:09:13,220
+I<font color="#E5E5E5"> have on it save it</font><font color="#CCCCCC"> and close it</font><font color="#E5E5E5"> there</font>
+
+176
+00:09:13,220 --> 00:09:15,170
+is one<font color="#CCCCCC"> thing</font><font color="#E5E5E5"> we also have to do in</font>
+
+177
+00:09:15,170 --> 00:09:17,630
+<font color="#E5E5E5">Ubuntu</font><font color="#CCCCCC"> system is we have</font><font color="#E5E5E5"> to change this</font>
+
+178
+00:09:17,630 --> 00:09:20,750
+<font color="#E5E5E5">PHP dot ini</font><font color="#CCCCCC"> permission so for changing</font>
+
+179
+00:09:20,750 --> 00:09:22,400
+permission we have to<font color="#CCCCCC"> right-click</font><font color="#E5E5E5"> and</font>
+
+180
+00:09:22,400 --> 00:09:27,830
+open in terminal and type<font color="#E5E5E5"> C as you do</font>
+
+181
+00:09:27,830 --> 00:09:36,050
+<font color="#E5E5E5">sudo</font><font color="#CCCCCC"> CHM</font><font color="#E5E5E5"> OD</font><font color="#CCCCCC"> triple7 and the PHP dot</font><font color="#E5E5E5"> ini</font>
+
+182
+00:09:36,050 --> 00:09:41,900
+<font color="#CCCCCC">ini</font><font color="#E5E5E5"> enter the password now this will</font>
+
+183
+00:09:41,900 --> 00:09:44,120
+change<font color="#E5E5E5"> the permission and now we can</font>
+
+184
+00:09:44,120 --> 00:09:46,340
+edit this file<font color="#CCCCCC"> if</font><font color="#E5E5E5"> you are not able</font><font color="#CCCCCC"> to</font>
+
+185
+00:09:46,340 --> 00:09:48,860
+<font color="#CCCCCC">edit this file</font><font color="#E5E5E5"> then please change your</font>
+
+186
+00:09:48,860 --> 00:09:50,900
+permission of this fight<font color="#CCCCCC"> so please</font>
+
+187
+00:09:50,900 --> 00:09:52,310
+change the permission<font color="#E5E5E5"> of this file and</font>
+
+188
+00:09:52,310 --> 00:09:55,070
+<font color="#CCCCCC">then added the file</font><font color="#E5E5E5"> now we have to</font>
+
+189
+00:09:55,070 --> 00:09:56,120
+restart<font color="#E5E5E5"> our zamp</font>
+
+190
+00:09:56,120 --> 00:09:59,060
+software again first stop the MySQL
+
+191
+00:09:59,060 --> 00:10:01,070
+database service<font color="#E5E5E5"> then stop the Apache</font>
+
+192
+00:10:01,070 --> 00:10:05,510
+web service we will start it again<font color="#CCCCCC"> and</font>
+
+193
+00:10:05,510 --> 00:10:08,900
+then the<font color="#E5E5E5"> changes will occur now refresh</font>
+
+194
+00:10:08,900 --> 00:10:10,970
+the page and you'll see<font color="#CCCCCC"> the error</font>
+
+195
+00:10:10,970 --> 00:10:15,020
+warning<font color="#E5E5E5"> corn so for</font><font color="#CCCCCC"> our fi what we can</font>
+
+196
+00:10:15,020 --> 00:10:17,630
+do is for say we can<font color="#E5E5E5"> include another</font><font color="#CCCCCC"> web</font>
+
+197
+00:10:17,630 --> 00:10:20,060
+<font color="#CCCCCC">page</font><font color="#E5E5E5"> which is not on the local server</font>
+
+198
+00:10:20,060 --> 00:10:23,390
+for say some<font color="#E5E5E5"> Wikipedia page so this is</font>
+
+199
+00:10:23,390 --> 00:10:27,620
+the<font color="#CCCCCC"> Wikipedia page on our</font><font color="#E5E5E5"> fi if I copy</font>
+
+200
+00:10:27,620 --> 00:10:31,550
+this page and paste it here
+
+201
+00:10:31,550 --> 00:10:34,160
+<font color="#E5E5E5">this parameter which is not checked</font>
+
+202
+00:10:34,160 --> 00:10:37,730
+properly<font color="#E5E5E5"> if I paste it here then this V</font>
+
+203
+00:10:37,730 --> 00:10:40,870
+<font color="#CCCCCC">capito page gets included in this page</font>
+
+204
+00:10:40,870 --> 00:10:44,720
+<font color="#E5E5E5">so this is our fi remote file inclusion</font>
+
+205
+00:10:44,720 --> 00:10:48,560
+<font color="#CCCCCC">a file which is not</font><font color="#E5E5E5"> located at local</font>
+
+206
+00:10:48,560 --> 00:10:50,810
+server but<font color="#CCCCCC"> it is located</font><font color="#E5E5E5"> at some other</font>
+
+207
+00:10:50,810 --> 00:10:53,660
+<font color="#E5E5E5">remote server we can include that file</font>
+
+208
+00:10:53,660 --> 00:10:56,750
+<font color="#E5E5E5">also so this is the difference between</font>
+
+209
+00:10:56,750 --> 00:10:58,580
+<font color="#E5E5E5">lf-i and lf-ii</font>
+
+210
+00:10:58,580 --> 00:11:03,170
+<font color="#E5E5E5">so if I go to OS</font><font color="#CCCCCC"> our fi page you can see</font>
+
+211
+00:11:03,170 --> 00:11:06,650
+here<font color="#E5E5E5"> this</font><font color="#CCCCCC"> is a vulnerable</font><font color="#E5E5E5"> host website</font>
+
+212
+00:11:06,650 --> 00:11:09,620
+and this parameter file is vulnerable
+
+213
+00:11:09,620 --> 00:11:12,590
+<font color="#E5E5E5">and here we input some malicious page</font>
+
+214
+00:11:12,590 --> 00:11:15,500
+which is on some<font color="#E5E5E5"> different website so</font>
+
+215
+00:11:15,500 --> 00:11:17,660
+this is our F file<font color="#E5E5E5"> now we will look at</font>
+
+216
+00:11:17,660 --> 00:11:20,600
+the<font color="#CCCCCC"> real-life</font><font color="#E5E5E5"> reports of our fi and</font>
+
+217
+00:11:20,600 --> 00:11:23,060
+alpha so this<font color="#E5E5E5"> is the report with number</font>
+
+218
+00:11:23,060 --> 00:11:26,990
+one six<font color="#E5E5E5"> seven five here you can see this</font>
+
+219
+00:11:26,990 --> 00:11:28,880
+is the case<font color="#CCCCCC"> of local</font><font color="#E5E5E5"> file inclusion</font>
+
+220
+00:11:28,880 --> 00:11:32,270
+which was reported to Yahoo<font color="#E5E5E5"> and the</font>
+
+221
+00:11:32,270 --> 00:11:35,290
+bounty was<font color="#CCCCCC"> of $1,390</font>
+
+222
+00:11:35,290 --> 00:11:38,600
+although there is no detail of the<font color="#E5E5E5"> verb</font>
+
+223
+00:11:38,600 --> 00:11:42,460
+but the concept was same<font color="#E5E5E5"> only second</font>
+
+224
+00:11:42,460 --> 00:11:45,230
+report number is five nine double six
+
+225
+00:11:45,230 --> 00:11:47,600
+five<font color="#E5E5E5"> this</font><font color="#CCCCCC"> is also case of local</font><font color="#E5E5E5"> file</font>
+
+226
+00:11:47,600 --> 00:11:49,880
+inclusion vulnerabilities in concrete
+
+227
+00:11:49,880 --> 00:11:52,310
+<font color="#CCCCCC">five version five point seven point</font>
+
+228
+00:11:52,310 --> 00:11:54,890
+three point<font color="#E5E5E5"> one so this is also a</font><font color="#CCCCCC"> report</font>
+
+229
+00:11:54,890 --> 00:11:58,460
+with same bug<font color="#E5E5E5"> so this report at one</font>
+
+230
+00:11:58,460 --> 00:12:00,350
+eight three<font color="#E5E5E5"> nine seven eight is the</font>
+
+231
+00:12:00,350 --> 00:12:02,060
+<font color="#CCCCCC">local file inclusion vulnerability</font>
+
+232
+00:12:02,060 --> 00:12:04,640
+report which was reported to US
+
+233
+00:12:04,640 --> 00:12:06,710
+Department<font color="#E5E5E5"> of</font><font color="#CCCCCC"> Defense</font><font color="#E5E5E5"> as I told you</font>
+
+234
+00:12:06,710 --> 00:12:08,990
+hacker one is one<font color="#E5E5E5"> of the famous platform</font>
+
+235
+00:12:08,990 --> 00:12:11,990
+and you can<font color="#CCCCCC"> see that</font><font color="#E5E5E5"> US Department of</font>
+
+236
+00:12:11,990 --> 00:12:12,800
+<font color="#E5E5E5">Defense</font><font color="#CCCCCC"> or</font>
+
+237
+00:12:12,800 --> 00:12:15,380
+the bug bounty<font color="#E5E5E5"> program on</font><font color="#CCCCCC"> Hacker one so</font>
+
+238
+00:12:15,380 --> 00:12:17,290
+this<font color="#E5E5E5"> is great these are some real life</font>
+
+239
+00:12:17,290 --> 00:12:19,940
+<font color="#E5E5E5">reports you can also explore hacker</font>
+
+240
+00:12:19,940 --> 00:12:23,149
+<font color="#CCCCCC">one.com and can look for other reports</font>
+
+241
+00:12:23,149 --> 00:12:25,640
+present there<font color="#E5E5E5"> so this is it for</font><font color="#CCCCCC"> this</font>
+
+242
+00:12:25,640 --> 00:12:27,470
+video<font color="#E5E5E5"> thank you and have a nice day</font>
+
+243
+00:12:27,470 --> 00:12:29,649
+in this video<font color="#E5E5E5"> we are going to look at</font>
+
+244
+00:12:29,649 --> 00:12:32,060
+unrestricted file upload vulnerability
+
+245
+00:12:32,060 --> 00:12:35,000
+<font color="#E5E5E5">video is first word is unrestricted file</font>
+
+246
+00:12:35,000 --> 00:12:39,230
+upload second demo by using dvwa<font color="#E5E5E5"> and at</font>
+
+247
+00:12:39,230 --> 00:12:42,380
+last<font color="#CCCCCC"> third hacker one reports starred</font>
+
+248
+00:12:42,380 --> 00:12:43,490
+your<font color="#E5E5E5"> zamp</font>
+
+249
+00:12:43,490 --> 00:12:46,399
+and run<font color="#CCCCCC"> these services</font><font color="#E5E5E5"> MySQL database</font>
+
+250
+00:12:46,399 --> 00:12:48,829
+and Apache web server<font color="#E5E5E5"> then go to your</font>
+
+251
+00:12:48,829 --> 00:12:55,700
+browser<font color="#CCCCCC"> open</font><font color="#E5E5E5"> your dvwa and change your</font>
+
+252
+00:12:55,700 --> 00:12:58,690
+<font color="#E5E5E5">dvw security to low for blending purpose</font>
+
+253
+00:12:58,690 --> 00:13:02,000
+click on file upload<font color="#E5E5E5"> and</font><font color="#CCCCCC"> you will see</font>
+
+254
+00:13:02,000 --> 00:13:04,100
+this screen<font color="#CCCCCC"> this</font><font color="#E5E5E5"> is the page where</font>
+
+255
+00:13:04,100 --> 00:13:07,100
+person upload the file by clicking on
+
+256
+00:13:07,100 --> 00:13:10,820
+browse and<font color="#CCCCCC"> go to its own system i've</font>
+
+257
+00:13:10,820 --> 00:13:12,339
+seen this hundreds of times on different
+
+258
+00:13:12,339 --> 00:13:15,829
+<font color="#CCCCCC">websites</font><font color="#E5E5E5"> now I will tell you</font><font color="#CCCCCC"> what is</font>
+
+259
+00:13:15,829 --> 00:13:19,310
+unrestricted file upload suppose a web
+
+260
+00:13:19,310 --> 00:13:21,529
+developer<font color="#E5E5E5"> did not restricted on the</font>
+
+261
+00:13:21,529 --> 00:13:24,589
+<font color="#E5E5E5">extension of file that is going to be</font>
+
+262
+00:13:24,589 --> 00:13:27,290
+<font color="#E5E5E5">uploaded by user then this vulnerability</font>
+
+263
+00:13:27,290 --> 00:13:30,950
+<font color="#CCCCCC">arises for say this is a form to upload</font>
+
+264
+00:13:30,950 --> 00:13:34,250
+a<font color="#CCCCCC"> picture</font><font color="#E5E5E5"> and as we know the extension</font>
+
+265
+00:13:34,250 --> 00:13:38,149
+<font color="#CCCCCC">of picture can be gif or jpg</font><font color="#E5E5E5"> or some</font>
+
+266
+00:13:38,149 --> 00:13:41,690
+other extension<font color="#E5E5E5"> but what if I upload</font>
+
+267
+00:13:41,690 --> 00:13:46,070
+some code file<font color="#E5E5E5"> for say code dot PHP</font>
+
+268
+00:13:46,070 --> 00:13:49,310
+instead of image file<font color="#E5E5E5"> if web application</font>
+
+269
+00:13:49,310 --> 00:13:52,850
+<font color="#E5E5E5">allowed to load a code file then this is</font>
+
+270
+00:13:52,850 --> 00:13:55,730
+the vulnerable point<font color="#E5E5E5"> if I open and</font>
+
+271
+00:13:55,730 --> 00:14:01,130
+return and write some HTML file which
+
+272
+00:14:01,130 --> 00:14:07,899
+say<font color="#CCCCCC"> I'm a cold fine not an image file</font>
+
+273
+00:14:09,579 --> 00:14:13,459
+let's save it on our download folder by
+
+274
+00:14:13,459 --> 00:14:17,810
+extension<font color="#CCCCCC"> Co de dot HTML</font><font color="#E5E5E5"> now let's try</font>
+
+275
+00:14:17,810 --> 00:14:19,790
+to upload it if the file<font color="#CCCCCC"> upload</font>
+
+276
+00:14:19,790 --> 00:14:22,540
+successfully then this is vulnerable to
+
+277
+00:14:22,540 --> 00:14:26,329
+unrestricted file upload this
+
+278
+00:14:26,329 --> 00:14:28,579
+is happening<font color="#CCCCCC"> because</font><font color="#E5E5E5"> web developer did</font>
+
+279
+00:14:28,579 --> 00:14:31,279
+not restrict<font color="#E5E5E5"> the extension of file</font><font color="#CCCCCC"> let's</font>
+
+280
+00:14:31,279 --> 00:14:33,230
+<font color="#E5E5E5">click on open and you can see it is</font>
+
+281
+00:14:33,230 --> 00:14:35,480
+uploaded successfully<font color="#CCCCCC"> so we know the</font>
+
+282
+00:14:35,480 --> 00:14:37,999
+<font color="#CCCCCC">destination where file</font><font color="#E5E5E5"> successfully</font>
+
+283
+00:14:37,999 --> 00:14:45,110
+uploaded let's try to<font color="#E5E5E5"> visit there as I</font>
+
+284
+00:14:45,110 --> 00:14:46,639
+click enter you can<font color="#CCCCCC"> see the code is</font>
+
+285
+00:14:46,639 --> 00:14:49,910
+executed<font color="#CCCCCC"> so this is the unrestricted</font>
+
+286
+00:14:49,910 --> 00:14:52,459
+file upload<font color="#E5E5E5"> now what could be the impact</font>
+
+287
+00:14:52,459 --> 00:14:54,799
+of unrestricted file upload<font color="#E5E5E5"> an attacker</font>
+
+288
+00:14:54,799 --> 00:14:57,829
+can upload a<font color="#E5E5E5"> PHP file which is nothing</font>
+
+289
+00:14:57,829 --> 00:14:59,989
+<font color="#CCCCCC">but our shall give you a lot</font><font color="#E5E5E5"> of</font>
+
+290
+00:14:59,989 --> 00:15:03,049
+functionality<font color="#E5E5E5"> like seeing a file like</font>
+
+291
+00:15:03,049 --> 00:15:06,019
+creating a file like renaming a file
+
+292
+00:15:06,019 --> 00:15:08,259
+editing<font color="#E5E5E5"> a file so this could impact a</font>
+
+293
+00:15:08,259 --> 00:15:11,899
+website to be defaced<font color="#E5E5E5"> an attacker can</font>
+
+294
+00:15:11,899 --> 00:15:13,489
+deface the website using<font color="#CCCCCC"> this</font>
+
+295
+00:15:13,489 --> 00:15:16,489
+vulnerability<font color="#E5E5E5"> also let's see how let's</font>
+
+296
+00:15:16,489 --> 00:15:20,829
+create a new<font color="#E5E5E5"> file and</font><font color="#CCCCCC"> started with PHP</font>
+
+297
+00:15:22,420 --> 00:15:25,160
+so what this line is doing it is taking
+
+298
+00:15:25,160 --> 00:15:29,389
+<font color="#E5E5E5">a parameter CMD and executing whatever</font>
+
+299
+00:15:29,389 --> 00:15:32,269
+be the command<font color="#E5E5E5"> is passed</font><font color="#CCCCCC"> to this</font>
+
+300
+00:15:32,269 --> 00:15:34,999
+<font color="#E5E5E5">parameter for learning purpose let's</font>
+
+301
+00:15:34,999 --> 00:15:40,249
+open<font color="#E5E5E5"> a terminal so this is the terminal</font>
+
+302
+00:15:40,249 --> 00:15:44,629
+<font color="#E5E5E5">if i type LS command then this will show</font>
+
+303
+00:15:44,629 --> 00:15:47,329
+me what are the files presented in the
+
+304
+00:15:47,329 --> 00:15:51,049
+directory so this is the command<font color="#E5E5E5"> okay so</font>
+
+305
+00:15:51,049 --> 00:15:53,959
+this<font color="#E5E5E5"> PHP file is going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> do same save</font>
+
+306
+00:15:53,959 --> 00:15:57,980
+it in our download folder and name it<font color="#E5E5E5"> sh</font>
+
+307
+00:15:57,980 --> 00:16:01,009
+<font color="#CCCCCC">e ll</font><font color="#E5E5E5"> shell dot PHP fine upload this file</font>
+
+308
+00:16:01,009 --> 00:16:03,709
+from upload section<font color="#E5E5E5"> click on browse and</font>
+
+309
+00:16:03,709 --> 00:16:07,249
+<font color="#CCCCCC">go to</font><font color="#E5E5E5"> shell dot PHP and open it then</font>
+
+310
+00:16:07,249 --> 00:16:09,049
+upload<font color="#E5E5E5"> because there is no restriction</font>
+
+311
+00:16:09,049 --> 00:16:11,480
+<font color="#E5E5E5">on extension of file then this file will</font>
+
+312
+00:16:11,480 --> 00:16:13,610
+get upload successful<font color="#CCCCCC"> day</font><font color="#E5E5E5"> now it is</font>
+
+313
+00:16:13,610 --> 00:16:20,389
+uploaded here<font color="#E5E5E5"> let's open this now give</font>
+
+314
+00:16:20,389 --> 00:16:24,439
+the<font color="#E5E5E5"> command CMD</font><font color="#CCCCCC"> this is equal to LS as</font>
+
+315
+00:16:24,439 --> 00:16:27,110
+you can see it will show the files which
+
+316
+00:16:27,110 --> 00:16:30,019
+are present<font color="#E5E5E5"> in the directory now let's</font>
+
+317
+00:16:30,019 --> 00:16:34,189
+go back<font color="#E5E5E5"> to the upload file and let's</font>
+
+318
+00:16:34,189 --> 00:16:38,540
+<font color="#E5E5E5">create a file</font><font color="#CCCCCC"> we</font><font color="#E5E5E5"> say hammer</font><font color="#CCCCCC"> D face page</font>
+
+319
+00:16:38,540 --> 00:16:43,040
+and save<font color="#E5E5E5"> it now again</font><font color="#CCCCCC"> uploaded because</font><font color="#E5E5E5"> I</font>
+
+320
+00:16:43,040 --> 00:16:45,290
+make change in code file then I'll
+
+321
+00:16:45,290 --> 00:16:47,330
+upload<font color="#CCCCCC"> that code file</font><font color="#E5E5E5"> again which is a</font>
+
+322
+00:16:47,330 --> 00:16:51,280
+stable page<font color="#E5E5E5"> open it and upload it</font><font color="#CCCCCC"> now</font>
+
+323
+00:16:51,280 --> 00:16:57,950
+<font color="#E5E5E5">let's try to visit there see it is or</font>
+
+324
+00:16:57,950 --> 00:17:00,650
+deface page<font color="#E5E5E5"> now the task is we have to</font>
+
+325
+00:17:00,650 --> 00:17:05,060
+copy this page<font color="#E5E5E5"> from here to the main</font>
+
+326
+00:17:05,060 --> 00:17:12,440
+directory<font color="#E5E5E5"> now whenever I visit dvwa it</font>
+
+327
+00:17:12,440 --> 00:17:13,880
+opened<font color="#CCCCCC"> their index page</font>
+
+328
+00:17:13,880 --> 00:17:17,150
+fine and this is our index<font color="#E5E5E5"> page</font><font color="#CCCCCC"> if</font><font color="#E5E5E5"> I</font>
+
+329
+00:17:17,150 --> 00:17:19,160
+rename this<font color="#CCCCCC"> defaced page as an index</font>
+
+330
+00:17:19,160 --> 00:17:21,710
+page<font color="#CCCCCC"> and I copied to main directory then</font>
+
+331
+00:17:21,710 --> 00:17:24,530
+whenever<font color="#CCCCCC"> they open this</font><font color="#E5E5E5"> website the</font>
+
+332
+00:17:24,530 --> 00:17:26,990
+<font color="#E5E5E5">defense page will open and this is how</font>
+
+333
+00:17:26,990 --> 00:17:29,690
+other side<font color="#E5E5E5"> that defense let's try so</font>
+
+334
+00:17:29,690 --> 00:17:34,760
+again<font color="#CCCCCC"> shell dot PHP</font><font color="#E5E5E5"> command is equal to</font>
+
+335
+00:17:34,760 --> 00:17:38,060
+first<font color="#E5E5E5"> of all</font><font color="#CCCCCC"> I am renaming the file CP</font>
+
+336
+00:17:38,060 --> 00:17:46,120
+code dot HTML to code to index dot PHP
+
+337
+00:17:46,990 --> 00:17:53,750
+let's move this index those HTML index
+
+338
+00:17:53,750 --> 00:17:57,860
+dot PHP<font color="#E5E5E5"> to</font><font color="#CCCCCC"> run directly back which is</font>
+
+339
+00:17:57,860 --> 00:18:00,590
+from<font color="#CCCCCC"> uploads to my table</font><font color="#E5E5E5"> then another</font>
+
+340
+00:18:00,590 --> 00:18:02,510
+<font color="#CCCCCC">directly back from hackable</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> DBW</font>
+
+341
+00:18:02,510 --> 00:18:06,470
+master<font color="#CCCCCC"> and now let's try to visit</font><font color="#E5E5E5"> again</font>
+
+342
+00:18:06,470 --> 00:18:08,870
+our<font color="#E5E5E5"> website and you can see the website</font>
+
+343
+00:18:08,870 --> 00:18:12,050
+<font color="#CCCCCC">gets defaced and this is one possibility</font>
+
+344
+00:18:12,050 --> 00:18:15,110
+of this<font color="#CCCCCC"> bug</font><font color="#E5E5E5"> so this is a very critical</font>
+
+345
+00:18:15,110 --> 00:18:19,490
+bug now let's see<font color="#CCCCCC"> real life reports so</font>
+
+346
+00:18:19,490 --> 00:18:21,860
+this is<font color="#E5E5E5"> malicious file upload bug and</font>
+
+347
+00:18:21,860 --> 00:18:24,410
+<font color="#E5E5E5">you can see through this little</font><font color="#CCCCCC"> person</font>
+
+348
+00:18:24,410 --> 00:18:27,920
+able<font color="#CCCCCC"> to upload a PHP file see the image</font>
+
+349
+00:18:27,920 --> 00:18:30,860
+it is<font color="#E5E5E5"> calling a PHP info function which</font>
+
+350
+00:18:30,860 --> 00:18:33,860
+shows the configuration<font color="#E5E5E5"> of PHP so this</font>
+
+351
+00:18:33,860 --> 00:18:36,320
+was resolved<font color="#E5E5E5"> and was reported to</font><font color="#CCCCCC"> Square</font>
+
+352
+00:18:36,320 --> 00:18:39,500
+and bounties of<font color="#CCCCCC"> $2000</font>
+
+353
+00:18:39,500 --> 00:18:41,660
+the another report is reported to
+
+354
+00:18:41,660 --> 00:18:45,080
+<font color="#E5E5E5">informatica and it was also resolved and</font>
+
+355
+00:18:45,080 --> 00:18:48,560
+the third report<font color="#E5E5E5"> is reported to money</font>
+
+356
+00:18:48,560 --> 00:18:51,340
+<font color="#E5E5E5">word and the bounties of</font><font color="#CCCCCC"> 100</font>
+
+357
+00:18:51,340 --> 00:18:53,230
+I hope you get what I was trying<font color="#CCCCCC"> to</font>
+
+358
+00:18:53,230 --> 00:18:55,480
+explain<font color="#E5E5E5"> so this is it for</font><font color="#CCCCCC"> this video</font>
+
+359
+00:18:55,480 --> 00:18:58,560
+<font color="#E5E5E5">thank you</font>
+
+360
+00:18:58,560 --> 00:00:00,000
+[Music]
+

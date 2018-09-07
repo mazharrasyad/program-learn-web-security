@@ -1,0 +1,420 @@
+1
+00:00:00,060 --> 00:00:02,190
+ Halo semua <font color="#E5E5E5">sekarang mari kita </font><font color="#CCCCCC">bicara </font><font color="#E5E5E5">tentang </font>
+
+2
+00:00:02,190 --> 00:00:05,130
+ sesi <font color="#CCCCCC">jadi apa sajakah sesi itu </font>
+
+3
+00:00:05,130 --> 00:00:07,140
+ sesi adalah <font color="#E5E5E5">penyimpanan sisi server </font>
+
+4
+00:00:07,140 --> 00:00:10,320
+ informasi yang hadir <font color="#E5E5E5">sampai pengguna </font>
+
+5
+00:00:10,320 --> 00:00:12,599
+ berinteraksi dengan <font color="#E5E5E5">aplikasi web itu </font>
+
+6
+00:00:12,599 --> 00:00:16,650
+ <font color="#CCCCCC">atau dengan </font><font color="#E5E5E5">server itu sekarang bagaimana </font><font color="#CCCCCC">itu </font>
+
+7
+00:00:16,650 --> 00:00:18,420
+ informasi <font color="#E5E5E5">disimpan di </font><font color="#CCCCCC">server itu </font>
+
+8
+00:00:18,420 --> 00:00:20,850
+ <font color="#CCCCCC">informasi macam apa </font><font color="#E5E5E5">itu begitu </font>
+
+9
+00:00:20,850 --> 00:00:22,590
+ <font color="#E5E5E5">informasi yang </font><font color="#CCCCCC">disimpan di server </font>
+
+10
+00:00:22,590 --> 00:00:24,689
+ <font color="#CCCCCC">sampai pengguna </font><font color="#E5E5E5">berinteraksi dengan itu </font>
+
+11
+00:00:24,689 --> 00:00:26,930
+ aplikasi web <font color="#CCCCCC">dalam </font><font color="#E5E5E5">bentuk </font>
+
+12
+00:00:26,930 --> 00:00:30,240
+ ID sesi <font color="#CCCCCC">jadi apa ID sesi a </font>
+
+13
+00:00:30,240 --> 00:00:34,140
+ ID sesi <font color="#E5E5E5">adalah alfanumerik acak panjang </font>
+
+14
+00:00:34,140 --> 00:00:36,750
+ string yang secara unik mengidentifikasi <font color="#CCCCCC">pengguna </font>
+
+15
+00:00:36,750 --> 00:00:39,960
+ di <font color="#CCCCCC">situs web itu berarti </font><font color="#E5E5E5">setiap pengguna </font>
+
+16
+00:00:39,960 --> 00:00:42,360
+ berisi ID sesi berbeda yang berbeda 
+
+17
+00:00:42,360 --> 00:00:45,149
+ dan <font color="#E5E5E5">bagaimana </font><font color="#CCCCCC">ID </font><font color="#E5E5E5">sesi </font><font color="#CCCCCC">berasal </font><font color="#E5E5E5">adalah </font>
+
+18
+00:00:45,149 --> 00:00:49,020
+ tergantung pada logika aplikasi web <font color="#E5E5E5">sehingga </font>
+
+19
+00:00:49,020 --> 00:00:51,899
+ terkadang yang terjadi adalah <font color="#E5E5E5">ID sesi </font>
+
+20
+00:00:51,899 --> 00:00:54,360
+ juga disimpan di dalam cookie <font color="#E5E5E5">jadi </font>
+
+21
+00:00:54,360 --> 00:00:56,640
+ karakteristik penting <font color="#E5E5E5">dari setiap kebaikan </font>
+
+22
+00:00:56,640 --> 00:00:58,800
+ sesi ID <font color="#E5E5E5">harus </font><font color="#CCCCCC">harus </font><font color="#E5E5E5">acak </font>
+
+23
+00:00:58,800 --> 00:01:01,199
+ <font color="#E5E5E5">yang kedua </font><font color="#CCCCCC">harus panjang dan </font>
+
+24
+00:01:01,199 --> 00:01:04,470
+ seharusnya alfanumerik sekarang <font color="#E5E5E5">apa </font>
+
+25
+00:01:04,470 --> 00:01:06,420
+ perbedaan antara <font color="#E5E5E5">ID sesi dan </font>
+
+26
+00:01:06,420 --> 00:01:09,630
+ <font color="#E5E5E5">cookie jadi cookie disimpan di klien </font>
+
+27
+00:01:09,630 --> 00:01:12,750
+ situs melalui browser dan sesi 
+
+28
+00:01:12,750 --> 00:01:15,060
+ disimpan <font color="#E5E5E5">di situs server sehingga dalam cookie </font>
+
+29
+00:01:15,060 --> 00:01:17,729
+ kita bisa melihat data yang ada di dalam 
+
+30
+00:01:17,729 --> 00:01:19,650
+ <font color="#E5E5E5">cookie dalam bentuk nama dan </font><font color="#CCCCCC">nilai </font>
+
+31
+00:01:19,650 --> 00:01:22,890
+ <font color="#E5E5E5">pasang sedangkan di ID sesi kita bisa lihat </font>
+
+32
+00:01:22,890 --> 00:01:25,409
+ data kami <font color="#CCCCCC">sehingga </font><font color="#E5E5E5">ID sesi adalah </font>
+
+33
+00:01:25,409 --> 00:01:27,720
+ <font color="#CCCCCC">aman </font><font color="#E5E5E5">sedangkan cookie tidak </font>
+
+34
+00:01:27,720 --> 00:01:30,829
+ <font color="#E5E5E5">aman dan dapat dicuri dengan menggunakan </font>
+
+35
+00:01:30,829 --> 00:01:32,040
+ <font color="#CCCCCC">JavaScript </font>
+
+36
+00:01:32,040 --> 00:01:35,100
+ sekarang mari kita lihat bagaimana kita bisa <font color="#E5E5E5">menggunakan </font><font color="#CCCCCC">Bob suite </font>
+
+37
+00:01:35,100 --> 00:01:38,850
+ <font color="#CCCCCC">untuk</font><font color="#E5E5E5"> menemukan ID sesi sekarang </font>
+
+38
+00:01:38,850 --> 00:01:41,700
+ mari kita lakukan beberapa analisis ID sesi jadi di 
+
+39
+00:01:41,700 --> 00:01:44,180
+ untuk <font color="#E5E5E5">melihat </font><font color="#CCCCCC">bagaimana tampilan ID sesi </font>
+
+40
+00:01:44,180 --> 00:01:46,740
+ apa yang harus kita lakukan adalah <font color="#E5E5E5">pertama-tama kita harus </font>
+
+41
+00:01:46,740 --> 00:01:49,200
+ <font color="#E5E5E5">mengatur </font><font color="#CCCCCC">Bob </font><font color="#E5E5E5">suite kami </font><font color="#CCCCCC">dan di sini Anda bisa </font>
+
+42
+00:01:49,200 --> 00:01:51,149
+ lihat itu <font color="#E5E5E5">sekarang </font><font color="#CCCCCC">saya </font><font color="#E5E5E5">di dalam Kali saya </font>
+
+43
+00:01:51,149 --> 00:01:54,119
+ <font color="#E5E5E5">Contoh Linux memungkinkan saya mengkonfigurasi Bob saya </font>
+
+44
+00:01:54,119 --> 00:01:55,799
+ suite <font color="#E5E5E5">sehingga </font><font color="#CCCCCC">kita bisa mencegat </font>
+
+45
+00:01:55,799 --> 00:01:58,590
+ permintaan <font color="#E5E5E5">karena sebagian besar kali </font>
+
+46
+00:01:58,590 --> 00:02:03,060
+ ID sesi <font color="#E5E5E5">hadir di HTTP kami </font>
+
+47
+00:02:03,060 --> 00:02:05,520
+ <font color="#E5E5E5">meminta tetapi beberapa aplikasi mungkin </font>
+
+48
+00:02:05,520 --> 00:02:07,380
+ simpan ID sesi dalam <font color="#E5E5E5">bentuk cookie </font>
+
+49
+00:02:07,380 --> 00:02:13,220
+ <font color="#CCCCCC">di browser kami jadi di sini adalah </font><font color="#E5E5E5">suite Bob saya </font>
+
+50
+00:02:26,620 --> 00:02:38,290
+ dan biarkan saya juga <font color="#E5E5E5">membuka </font><font color="#CCCCCC">Firefox </font><font color="#E5E5E5">saya </font><font color="#CCCCCC">dan kami </font>
+
+51
+00:02:38,290 --> 00:02:40,780
+ tahu <font color="#E5E5E5">bahwa </font><font color="#CCCCCC">buff </font><font color="#E5E5E5">suite berjalan pada IP ini </font>
+
+52
+00:02:40,780 --> 00:02:43,629
+ <font color="#E5E5E5">localhost IP dan port 8080 dan </font>
+
+53
+00:02:43,629 --> 00:02:45,910
+ biarkan saya mengkonfigurasi <font color="#E5E5E5">browser firefox saya </font>
+
+54
+00:02:45,910 --> 00:02:48,430
+ pengaturan proxy oleh <font color="#CCCCCC">perekatan terjadi di sini </font>
+
+55
+00:02:48,430 --> 00:02:51,310
+ <font color="#E5E5E5">preferensi jaringan dan jaringan canggih </font>
+
+56
+00:02:51,310 --> 00:02:53,560
+ <font color="#E5E5E5">pengaturan konfigurasi proxy sehingga manual </font>
+
+57
+00:02:53,560 --> 00:02:57,150
+ <font color="#CCCCCC">jadi ini adalah IP proksi Bob suite </font><font color="#E5E5E5">dan </font>
+
+58
+00:02:57,150 --> 00:03:00,220
+ ini nomor portnya <font color="#E5E5E5">biar saya klik </font>
+
+59
+00:03:00,220 --> 00:03:04,660
+ <font color="#CCCCCC">ok dan di sini mari kita buka </font>
+
+60
+00:03:04,660 --> 00:03:10,510
+ tutorialspoint.com <font color="#CCCCCC">ok jadi yang pertama </font>
+
+61
+00:03:10,510 --> 00:03:12,910
+ permintaan adalah permintaan HTTP sederhana itu 
+
+62
+00:03:12,910 --> 00:03:21,790
+ tidak <font color="#E5E5E5">mengirim HTTP jadi izinkan saya meneruskan ini </font><font color="#CCCCCC">ok </font>
+
+63
+00:03:21,790 --> 00:03:26,560
+ mari kita pergi <font color="#CCCCCC">ke sini untuk memberitahu koneksi lanjutan </font>
+
+64
+00:03:26,560 --> 00:03:31,569
+ mari kita terima pengecualian ini <font color="#E5E5E5">dan sekarang Anda </font>
+
+65
+00:03:31,569 --> 00:03:33,970
+ dapat melihat bahwa setelan Bob kami akan mencegat 
+
+66
+00:03:33,970 --> 00:03:37,359
+ <font color="#E5E5E5">Permintaan HTTP off tutorialspoint.com di sini </font>
+
+67
+00:03:37,359 --> 00:03:39,760
+ Anda dapat melihat sekarang <font color="#CCCCCC">permintaannya adalah HTTP </font>
+
+68
+00:03:39,760 --> 00:03:43,389
+ meminta <font color="#CCCCCC">dan di sini Anda dapat </font><font color="#E5E5E5">melihat cookie </font>
+
+69
+00:03:43,389 --> 00:03:46,540
+ beberapa jenis cookie yang berbeda baik- <font color="#E5E5E5">baik saja </font>
+
+70
+00:03:46,540 --> 00:03:53,290
+ <font color="#E5E5E5">saya meneruskan ini </font><font color="#CCCCCC">ok dan jika Anda membaca </font><font color="#E5E5E5">ini </font>
+
+71
+00:03:53,290 --> 00:03:55,950
+ permintaan di <font color="#E5E5E5">sini adalah tambahan </font>
+
+72
+00:03:55,950 --> 00:04:00,340
+ informasi yang disebut sebagai <font color="#E5E5E5">ID sesi PHP jadi </font>
+
+73
+00:04:00,340 --> 00:04:02,590
+ dengan <font color="#CCCCCC">hanya melihat ini pada awalnya </font>
+
+74
+00:04:02,590 --> 00:04:05,319
+ <font color="#E5E5E5">sekilas kita dapat mengatakan bahwa ini adalah </font><font color="#CCCCCC">sesi </font>
+
+75
+00:04:05,319 --> 00:04:08,470
+ ID karena <font color="#CCCCCC">Harrah's menulis PHP ini </font>
+
+76
+00:04:08,470 --> 00:04:10,989
+ <font color="#E5E5E5">ID sesi jadi </font><font color="#CCCCCC">ini adalah bagaimana </font><font color="#E5E5E5">ID sesi </font>
+
+77
+00:04:10,989 --> 00:04:13,540
+ tampak seperti string acak panjang dan 
+
+78
+00:04:13,540 --> 00:04:16,720
+ string alfanumerik sehingga sebagian besar 
+
+79
+00:04:16,720 --> 00:04:18,339
+ <font color="#E5E5E5">aplikasi web </font><font color="#CCCCCC">jika saya </font><font color="#E5E5E5">berbicara tentang </font>
+
+80
+00:04:18,339 --> 00:04:21,220
+ Google Facebook jika <font color="#E5E5E5">Anda mencegat </font>
+
+81
+00:04:21,220 --> 00:04:23,380
+ meminta <font color="#E5E5E5">Anda akan menemukan neraka </font>
+
+82
+00:04:23,380 --> 00:04:25,810
+ detail <font color="#CCCCCC">banyak </font><font color="#E5E5E5">detail yang mengandung ini </font>
+
+83
+00:04:25,810 --> 00:04:27,940
+ jenis <font color="#E5E5E5">ID ID berbeda differen </font><font color="#CCCCCC">begitu </font>
+
+84
+00:04:27,940 --> 00:04:30,700
+ <font color="#CCCCCC">maka </font><font color="#E5E5E5">waktu itu akan sangat sangat </font>
+
+85
+00:04:30,700 --> 00:04:32,950
+ <font color="#E5E5E5">sulit dibedakan itu </font><font color="#CCCCCC">apa </font><font color="#E5E5E5">kita </font>
+
+86
+00:04:32,950 --> 00:04:34,990
+ <font color="#E5E5E5">apa ID sesi dan apa </font>
+
+87
+00:04:34,990 --> 00:04:37,780
+ <font color="#E5E5E5">ID yang berbeda dan lainnya tetapi di sini di </font>
+
+88
+00:04:37,780 --> 00:04:40,060
+ pandangan pertama kita <font color="#CCCCCC">bisa mengatakan itu </font>
+
+89
+00:04:40,060 --> 00:04:43,630
+ ini adalah <font color="#E5E5E5">ID sesi </font><font color="#CCCCCC">karena sebagian besar </font>
+
+90
+00:04:43,630 --> 00:04:47,290
+ kali pengembang kata melakukannya apa yang mereka 
+
+91
+00:04:47,290 --> 00:04:49,419
+ lakukan adalah mereka benar-benar mengubah ini 
+
+92
+00:04:49,419 --> 00:04:52,510
+ nama parameter untuk <font color="#E5E5E5">nama yang berbeda </font><font color="#CCCCCC">jadi </font>
+
+93
+00:04:52,510 --> 00:04:56,669
+ hanya sebagai contoh <font color="#E5E5E5">jika ada </font><font color="#CCCCCC">tertulis </font>
+
+94
+00:04:56,669 --> 00:05:00,100
+ UTMC <font color="#CCCCCC">dan lainnya jika ada tulisan </font><font color="#E5E5E5">XYZ </font>
+
+95
+00:05:00,100 --> 00:05:02,770
+ alih-alih ID sesi PHP, <font color="#E5E5E5">maka Anda bisa </font>
+
+96
+00:05:02,770 --> 00:05:04,480
+ <font color="#CCCCCC">pikirkan saja </font><font color="#E5E5E5">betapa sulitnya itu </font>
+
+97
+00:05:04,480 --> 00:05:06,970
+ <font color="#CCCCCC">untuk menganalisis </font><font color="#E5E5E5">bahwa apa ID sesi kami </font>
+
+98
+00:05:06,970 --> 00:05:12,040
+ di antara mereka semua begitu menemukan 
+
+99
+00:05:12,040 --> 00:05:14,080
+ <font color="#E5E5E5">ID sesi PHP yang </font><font color="#CCCCCC">tepat </font><font color="#E5E5E5">atau yang berbeda </font>
+
+100
+00:05:14,080 --> 00:05:16,540
+ <font color="#E5E5E5">ID sesi lainnya juga </font><font color="#CCCCCC">sangat rumit </font>
+
+101
+00:05:16,540 --> 00:05:20,889
+ Tugas <font color="#E5E5E5">jadi dalam video ini kita </font><font color="#CCCCCC">telah membahas </font>
+
+102
+00:05:20,889 --> 00:05:23,380
+ <font color="#E5E5E5">bahwa apa ID sesi bagaimana sesi </font><font color="#CCCCCC">arey </font>
+
+103
+00:05:23,380 --> 00:05:25,090
+ <font color="#E5E5E5">terlihat seperti karakteristik </font><font color="#CCCCCC">yang baik </font>
+
+104
+00:05:25,090 --> 00:05:28,270
+ <font color="#E5E5E5">ID sesi dan terima kasih telah </font><font color="#CCCCCC">menonton ini </font>
+
+105
+00:05:28,270 --> 00:00:00,000
+ video 
+

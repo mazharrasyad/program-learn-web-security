@@ -1,0 +1,408 @@
+1
+00:00:00,060 --> 00:00:02,090
+ Halo semuanya, <font color="#CCCCCC">mari kita bicarakan </font>
+
+2
+00:00:02,090 --> 00:00:05,160
+ <font color="#E5E5E5">buffer overflow jadi buffer overflow adalah </font><font color="#CCCCCC">a </font>
+
+3
+00:00:05,160 --> 00:00:07,680
+ Kondisi ketika pengguna disediakan <font color="#E5E5E5">input </font>
+
+4
+00:00:07,680 --> 00:00:10,710
+ lebih dari <font color="#E5E5E5">memori yang dialokasikan untuk itu </font>
+
+5
+00:00:10,710 --> 00:00:13,799
+ <font color="#CCCCCC">pengguna sehingga masukan ekstra </font><font color="#E5E5E5">yang </font>
+
+6
+00:00:13,799 --> 00:00:16,680
+ <font color="#E5E5E5">disediakan oleh pengguna </font><font color="#CCCCCC">benar-benar menimpa beberapa </font>
+
+7
+00:00:16,680 --> 00:00:19,560
+ fragmen memori <font color="#CCCCCC">sehingga hasilnya </font>
+
+8
+00:00:19,560 --> 00:00:22,439
+ kesalahan tak terduga dan bekerja tak terduga 
+
+9
+00:00:22,439 --> 00:00:25,800
+ aplikasi web itu <font color="#CCCCCC">jadi berbeda </font>
+
+10
+00:00:25,800 --> 00:00:28,289
+ <font color="#CCCCCC">jenis buffer overflows adalah tumpukan </font>
+
+11
+00:00:28,289 --> 00:00:31,019
+ overflow <font color="#CCCCCC">dan overflow tumpukan sekarang mari kita lihat </font>
+
+12
+00:00:31,019 --> 00:00:33,510
+ bagaimana buffer overflow bekerja di web 
+
+13
+00:00:33,510 --> 00:00:36,540
+ aplikasi <font color="#E5E5E5">sekarang mari kita lihat bagaimana buffer </font>
+
+14
+00:00:36,540 --> 00:00:40,620
+ Serangan overflow terjadi sehingga seperti <font color="#CCCCCC">yang saya katakan </font>
+
+15
+00:00:40,620 --> 00:00:44,040
+ <font color="#CCCCCC">sebelumnya bahwa </font><font color="#E5E5E5">jika input pengguna </font><font color="#CCCCCC">diberikan </font>
+
+16
+00:00:44,040 --> 00:00:46,440
+ lebih <font color="#E5E5E5">dari memori yang </font><font color="#CCCCCC">dialokasikan ke </font>
+
+17
+00:00:46,440 --> 00:00:48,719
+ aplikasi web <font color="#CCCCCC">maka </font><font color="#E5E5E5">aplikasi web </font>
+
+18
+00:00:48,719 --> 00:00:51,149
+ akan melempar kesalahan <font color="#E5E5E5">dan melalui itu </font>
+
+19
+00:00:51,149 --> 00:00:53,879
+ <font color="#E5E5E5">kesalahan </font><font color="#CCCCCC">kadang-kadang mungkin aplikasi web </font>
+
+20
+00:00:53,879 --> 00:00:55,890
+ mengungkapkan beberapa <font color="#CCCCCC">informasi menarik </font>
+
+21
+00:00:55,890 --> 00:00:59,070
+ <font color="#E5E5E5">pengguna mana yang dapat menggunakannya untuk menguji </font>
+
+22
+00:00:59,070 --> 00:01:01,710
+ kerentanan buffer overflow <font color="#CCCCCC">kita harus </font>
+
+23
+00:01:01,710 --> 00:01:04,530
+ memulai <font color="#E5E5E5">aplikasi web rusak OS kami dan </font>
+
+24
+00:01:04,530 --> 00:01:07,320
+ di sini Anda <font color="#E5E5E5">dapat melihat itu berdiri dan berjalan sekarang </font>
+
+25
+00:01:07,320 --> 00:01:10,830
+ biarkan <font color="#E5E5E5">saya </font><font color="#CCCCCC">membuka Firefox </font><font color="#E5E5E5">saya </font><font color="#CCCCCC">jadi satu lagi </font>
+
+26
+00:01:10,830 --> 00:01:12,689
+ <font color="#E5E5E5">hal </font><font color="#CCCCCC">yang harus Anda </font><font color="#E5E5E5">lakukan adalah Anda harus </font><font color="#CCCCCC">melakukannya </font>
+
+27
+00:01:12,689 --> 00:01:14,400
+ install <font color="#CCCCCC">add-on </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">disebut </font><font color="#E5E5E5">sebagai web </font>
+
+28
+00:01:14,400 --> 00:01:17,610
+ pengembang <font color="#E5E5E5">jadi setelah Anda menginstal ini </font>
+
+29
+00:01:17,610 --> 00:01:19,860
+ <font color="#CCCCCC">add-on </font><font color="#E5E5E5">pengaya </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">akan muncul seperti ini </font>
+
+30
+00:01:19,860 --> 00:01:21,979
+ <font color="#E5E5E5">bar </font><font color="#CCCCCC">jadi setelah Anda menginstal </font><font color="#E5E5E5">pengaya </font><font color="#CCCCCC">ini </font>
+
+31
+00:01:21,979 --> 00:01:27,650
+ mari kita buka aplikasi web rusak OS kami 
+
+32
+00:01:27,650 --> 00:01:32,369
+ jadi <font color="#E5E5E5">mari kita pergi di sini </font><font color="#CCCCCC">melalui web </font><font color="#E5E5E5">ASP </font><font color="#CCCCCC">baik </font>
+
+33
+00:01:32,369 --> 00:01:35,549
+ setelah Anda <font color="#CCCCCC">klik di sini itu meminta kita </font><font color="#E5E5E5">untuk </font>
+
+34
+00:01:35,549 --> 00:01:38,280
+ <font color="#E5E5E5">nama pengguna dan </font><font color="#CCCCCC">kata sandi yang menjadi tamu </font>
+
+35
+00:01:38,280 --> 00:01:40,770
+ tamu <font color="#E5E5E5">tetapi sekarang saya sudah dikonfirmasi </font>
+
+36
+00:01:40,770 --> 00:01:44,670
+ <font color="#E5E5E5">dan saya masuk Anda </font><font color="#CCCCCC">bisa lihat di sini begitu masuk </font>
+
+37
+00:01:44,670 --> 00:01:46,680
+ Untuk menguji buffer overflow, <font color="#CCCCCC">klik saja </font>
+
+38
+00:01:46,680 --> 00:01:48,270
+ di <font color="#CCCCCC">sini </font><font color="#E5E5E5">di buffer overflow dan ini </font>
+
+39
+00:01:48,270 --> 00:01:52,470
+ <font color="#E5E5E5">menantang off-by-one overflow jadi jika kita </font>
+
+40
+00:01:52,470 --> 00:01:55,200
+ hanya <font color="#E5E5E5">melihat halaman ini meminta </font><font color="#CCCCCC">kita untuk </font>
+
+41
+00:01:55,200 --> 00:01:57,570
+ <font color="#E5E5E5">pendaftaran untuk keanggotaan </font>
+
+42
+00:01:57,570 --> 00:01:59,820
+ <font color="#E5E5E5">pendaftaran di sini Anda dapat melihat begitu </font>
+
+43
+00:01:59,820 --> 00:02:03,630
+ nama pertama <font color="#E5E5E5">mari kita uji untuk yang pertama </font>
+
+44
+00:02:03,630 --> 00:02:06,360
+ waktu <font color="#CCCCCC">Sharat Kumar dan nomor kamar </font>
+
+45
+00:02:06,360 --> 00:02:09,840
+ seharusnya ada apa-apa <font color="#E5E5E5">jadi sekarang kalau aku saja </font>
+
+46
+00:02:09,840 --> 00:02:12,679
+ <font color="#E5E5E5">klik kirim </font>
+
+47
+00:02:12,730 --> 00:02:15,620
+ di sini Anda akan <font color="#CCCCCC">melihat bahwa itu memberi kita </font>
+
+48
+00:02:15,620 --> 00:02:18,530
+ daftar harga rencana yang tersedia jadi mari 
+
+49
+00:02:18,530 --> 00:02:22,070
+ menerima apa saja <font color="#E5E5E5">dan sekarang mari kita klik </font>
+
+50
+00:02:22,070 --> 00:02:27,430
+ menerima persyaratan dan di sini Anda akan <font color="#E5E5E5">melihat </font>
+
+51
+00:02:27,430 --> 00:02:31,700
+ tidak ada apa-apa jadi di <font color="#CCCCCC">sini </font><font color="#E5E5E5">hanya mengatakan kita </font>
+
+52
+00:02:31,700 --> 00:02:33,380
+ <font color="#CCCCCC">ingin </font><font color="#E5E5E5">mengucapkan terima kasih </font><font color="#CCCCCC">atas pembayarannya </font>
+
+53
+00:02:33,380 --> 00:02:37,610
+ tetapi yang harus kita <font color="#E5E5E5">lakukan adalah kita harus </font><font color="#CCCCCC">mencoba </font>
+
+54
+00:02:37,610 --> 00:02:41,840
+ <font color="#E5E5E5">untuk mengeksploitasi </font><font color="#CCCCCC">halaman web </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">dengan memberi masukan </font>
+
+55
+00:02:41,840 --> 00:02:44,780
+ dalam jumlah yang sangat <font color="#E5E5E5">besar </font><font color="#CCCCCC">jadi satu lagi </font>
+
+56
+00:02:44,780 --> 00:02:47,360
+ <font color="#CCCCCC">hal yang </font><font color="#E5E5E5">harus kita lakukan adalah mari kita pergi ke sini </font>
+
+57
+00:02:47,360 --> 00:02:49,820
+ formulir dan sekarang mari klik <font color="#CCCCCC">di sini </font>
+
+58
+00:02:49,820 --> 00:02:53,180
+ <font color="#E5E5E5">tampilan detail bentuk dan di sini Anda akan </font>
+
+59
+00:02:53,180 --> 00:02:56,060
+ <font color="#E5E5E5">lihat </font><font color="#CCCCCC">ini berisi masukan tersembunyi </font>
+
+60
+00:02:56,060 --> 00:02:58,910
+ lapangan <font color="#E5E5E5">Anda dapat melihat bidang input yang tersembunyi </font>
+
+61
+00:02:58,910 --> 00:03:02,480
+ <font color="#E5E5E5">jadi itu adalah bidang input formulir tersembunyi sekarang jika </font>
+
+62
+00:03:02,480 --> 00:03:05,180
+ Aku hanya <font color="#E5E5E5">pergi </font><font color="#CCCCCC">kembali </font><font color="#E5E5E5">ke sini dan hapus centang </font><font color="#CCCCCC">ini Anda </font>
+
+63
+00:03:05,180 --> 00:03:09,640
+ tidak akan melihat apa-apa <font color="#CCCCCC">jadi </font><font color="#E5E5E5">ayo kembali ke </font><font color="#CCCCCC">sini </font>
+
+64
+00:03:09,640 --> 00:03:13,550
+ sekarang sebagai tester pena apa yang bisa kita lakukan adalah begitu 
+
+65
+00:03:13,550 --> 00:03:18,470
+ kami <font color="#E5E5E5">hanya bisa memberikan nama dan di sini di </font>
+
+66
+00:03:18,470 --> 00:03:19,880
+ nomor kamar <font color="#E5E5E5">karena </font><font color="#CCCCCC">nomor aturan </font>
+
+67
+00:03:19,880 --> 00:03:23,300
+ <font color="#E5E5E5">mungkin </font><font color="#CCCCCC">bilangan bulat </font><font color="#E5E5E5">jadi </font><font color="#CCCCCC">apa yang bisa kita </font><font color="#E5E5E5">lakukan adalah </font>
+
+68
+00:03:23,300 --> 00:03:26,150
+ kita <font color="#E5E5E5">dapat memberikan nomor kamar secara acak untuk waktu yang lama </font>
+
+69
+00:03:26,150 --> 00:03:28,820
+ daftar nomor kamar <font color="#E5E5E5">yang mungkin menyebabkan dan </font>
+
+70
+00:03:28,820 --> 00:03:32,360
+ buffer overflow jadi biarkan aku <font color="#E5E5E5">kembali seterusnya </font>
+
+71
+00:03:32,360 --> 00:03:34,940
+ desktop saya <font color="#CCCCCC">Anda dapat melihat file ini yang mana </font>
+
+72
+00:03:34,940 --> 00:03:37,790
+ <font color="#E5E5E5">enam </font><font color="#CCCCCC">ribu angka jadi file ini </font>
+
+73
+00:03:37,790 --> 00:03:40,459
+ <font color="#CCCCCC">berisi enam ribu angka jadi biarkan aku </font>
+
+74
+00:03:40,459 --> 00:03:44,480
+ salin <font color="#E5E5E5">file ini jadi saya telah menyalin semua </font>
+
+75
+00:03:44,480 --> 00:03:47,660
+ <font color="#E5E5E5">angka biarkan aku kembali ke sini </font><font color="#CCCCCC">dan biarkan </font>
+
+76
+00:03:47,660 --> 00:03:50,840
+ <font color="#CCCCCC">saya tempelkan </font><font color="#E5E5E5">dan sekarang biarkan saya klik </font>
+
+77
+00:03:50,840 --> 00:03:55,100
+ <font color="#E5E5E5">kirim </font><font color="#CCCCCC">dan sekarang mari kita lihat apa jenisnya </font>
+
+78
+00:03:55,100 --> 00:03:59,090
+ <font color="#CCCCCC">dari </font><font color="#E5E5E5">field tersembunyi halaman ini berisi begitu </font>
+
+79
+00:03:59,090 --> 00:04:02,150
+ di sini Anda akan melihat <font color="#E5E5E5">bahwa ini adalah masukannya </font>
+
+80
+00:04:02,150 --> 00:04:05,660
+ bidang yang <font color="#E5E5E5">dapat Anda lihat dan bertiga ini </font>
+
+81
+00:04:05,660 --> 00:04:08,330
+ adalah bidang tersembunyi <font color="#E5E5E5">sekarang jika saya </font><font color="#CCCCCC">hanya mengklik </font>
+
+82
+00:04:08,330 --> 00:04:12,590
+ menerima persyaratan jadi di sini Anda <font color="#E5E5E5">akan melihat itu </font>
+
+83
+00:04:12,590 --> 00:04:14,209
+ selamat <font color="#E5E5E5">Anda telah berhasil </font>
+
+84
+00:04:14,209 --> 00:04:16,700
+ selesai <font color="#CCCCCC">instalasi yang artinya kita </font>
+
+85
+00:04:16,700 --> 00:04:19,040
+ <font color="#E5E5E5">berhasil menghantam memori </font>
+
+86
+00:04:19,040 --> 00:04:21,950
+ fragmen yang berada di luar <font color="#CCCCCC">yang </font><font color="#E5E5E5">dialokasikan </font>
+
+87
+00:04:21,950 --> 00:04:24,800
+ <font color="#CCCCCC">memori sekarang jika Anda hanya pergi di sini bentuk dan </font>
+
+88
+00:04:24,800 --> 00:04:26,270
+ sekarang kalau aku kamu <font color="#E5E5E5">saja </font>
+
+89
+00:04:26,270 --> 00:04:28,520
+ disini menampilkan <font color="#CCCCCC">formfield di sini Anda akan </font>
+
+90
+00:04:28,520 --> 00:04:31,460
+ melihat bahwa <font color="#CCCCCC">kami berhasil dapat </font>
+
+91
+00:04:31,460 --> 00:04:35,509
+ temukan <font color="#E5E5E5">informasi dari </font><font color="#CCCCCC">pengguna yang berbeda </font>
+
+92
+00:04:35,509 --> 00:04:38,900
+ <font color="#E5E5E5">yang sudah terdaftar </font><font color="#CCCCCC">untuk ini </font>
+
+93
+00:04:38,900 --> 00:04:40,400
+ aplikasi web di sini Anda <font color="#E5E5E5">dapat melihat </font>
+
+94
+00:04:40,400 --> 00:04:43,909
+ rincian pengguna <font color="#E5E5E5">seperti Lewis Hamilton Anna </font>
+
+95
+00:04:43,909 --> 00:04:49,159
+ Smith <font color="#E5E5E5">dan </font><font color="#CCCCCC">Ravan </font><font color="#E5E5E5">dan seterusnya jadi ini </font>
+
+96
+00:04:49,159 --> 00:04:53,030
+ <font color="#CCCCCC">contoh dasar yang bagaimana buffer </font>
+
+97
+00:04:53,030 --> 00:04:55,759
+ serangan meluap bekerja <font color="#E5E5E5">begitu dalam </font><font color="#CCCCCC">video </font><font color="#E5E5E5">ini </font>
+
+98
+00:04:55,759 --> 00:04:57,289
+ kami <font color="#E5E5E5">telah membahas bahwa apa itu buffer </font>
+
+99
+00:04:57,289 --> 00:04:59,449
+ <font color="#E5E5E5">serangan meluap dan yang terakhir kita miliki </font>
+
+100
+00:04:59,449 --> 00:05:01,729
+ melihat bagaimana kita <font color="#E5E5E5">dapat memanfaatkan buffer </font>
+
+101
+00:05:01,729 --> 00:05:04,479
+ kerentanan meluap dan <font color="#E5E5E5">webgoat </font>
+
+102
+00:05:04,479 --> 00:00:00,000
+ <font color="#E5E5E5">terima kasih telah menonton video ini </font>
+

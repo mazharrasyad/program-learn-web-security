@@ -1,0 +1,556 @@
+1
+00:00:00,060 --> 00:00:03,600
+ Halo semuanya, <font color="#E5E5E5">mari kita bicara tentang HTTP </font>
+
+2
+00:00:03,600 --> 00:00:06,779
+ protokol <font color="#CCCCCC">jadi HTTP adalah singkatan </font><font color="#E5E5E5">dari hypertext </font>
+
+3
+00:00:06,779 --> 00:00:08,039
+ Protokol Transfer 
+
+4
+00:00:08,039 --> 00:00:10,139
+ jadi <font color="#E5E5E5">itu adalah model client-server di mana a </font>
+
+5
+00:00:10,139 --> 00:00:11,880
+ <font color="#CCCCCC">permintaan klien sumber daya tertentu </font>
+
+6
+00:00:11,880 --> 00:00:14,009
+ dari <font color="#E5E5E5">server sedangkan server </font>
+
+7
+00:00:14,009 --> 00:00:16,650
+ menyajikan sumber daya itu <font color="#E5E5E5">kepada klien </font>
+
+8
+00:00:16,650 --> 00:00:19,199
+ Protokol HTTP <font color="#CCCCCC">digunakan </font><font color="#E5E5E5">untuk mengakses a </font>
+
+9
+00:00:19,199 --> 00:00:22,350
+ sumber daya di <font color="#CCCCCC">internet dan digunakan </font>
+
+10
+00:00:22,350 --> 00:00:23,880
+ untuk <font color="#E5E5E5">meminta sumber daya dari </font><font color="#CCCCCC">server </font>
+
+11
+00:00:23,880 --> 00:00:26,670
+ <font color="#E5E5E5">dan di sini Anda dapat melihat HTTP bekerja begitu </font>
+
+12
+00:00:26,670 --> 00:00:29,250
+ di sini adalah <font color="#E5E5E5">klien kami di sini adalah server kami </font>
+
+13
+00:00:29,250 --> 00:00:30,900
+ <font color="#E5E5E5">permintaan klien sumber daya tertentu </font>
+
+14
+00:00:30,900 --> 00:00:34,290
+ <font color="#E5E5E5">dan server akan melayani sumber daya itu </font>
+
+15
+00:00:34,290 --> 00:00:37,320
+ <font color="#E5E5E5">ke klien sekarang mari kita bicara tentang HTTP </font>
+
+16
+00:00:37,320 --> 00:00:39,719
+ versi <font color="#E5E5E5">jadi ada dua versi HTTP </font>
+
+17
+00:00:39,719 --> 00:00:45,120
+ HTTP 1.0 dan HTTP 1.1 <font color="#E5E5E5">sehingga HTTP 1.0 adalah </font>
+
+18
+00:00:45,120 --> 00:00:45,690
+ yang lebih tua 
+
+19
+00:00:45,690 --> 00:00:48,989
+ <font color="#E5E5E5">sedangkan HTTP 1.1 adalah yang lebih baru dan digunakan </font>
+
+20
+00:00:48,989 --> 00:00:52,980
+ saat ini <font color="#E5E5E5">sehingga di HTTP 1.0 kami dapat meminta </font>
+
+21
+00:00:52,980 --> 00:00:55,829
+ <font color="#CCCCCC">hanya satu sumber daya </font><font color="#E5E5E5">dalam </font><font color="#CCCCCC">1 </font><font color="#E5E5E5">koneksi </font>
+
+22
+00:00:55,829 --> 00:00:58,949
+ padahal dengan menggunakan versi HTTP 1.1 <font color="#E5E5E5">kita bisa </font>
+
+23
+00:00:58,949 --> 00:01:00,750
+ meminta beberapa <font color="#E5E5E5">sumber daya dari </font>
+
+24
+00:01:00,750 --> 00:01:03,840
+ <font color="#E5E5E5">server menggunakan koneksi tunggal </font><font color="#CCCCCC">sekarang biarkan </font>
+
+25
+00:01:03,840 --> 00:01:06,630
+ kami <font color="#E5E5E5">berbicara tentang HTTP 1.0 dan HTTP 1.1 </font>
+
+26
+00:01:06,630 --> 00:01:10,500
+ bekerja lebih detail jadi di sini Anda 
+
+27
+00:01:10,500 --> 00:01:12,990
+ dapat melihat HTTP 1.0 bekerja begitu 
+
+28
+00:01:12,990 --> 00:01:14,490
+ pertama-tama klien akan mengirim 
+
+29
+00:01:14,490 --> 00:01:16,170
+ meminta <font color="#E5E5E5">ke server </font><font color="#CCCCCC">untuk membuat </font>
+
+30
+00:01:16,170 --> 00:01:18,240
+ koneksi <font color="#CCCCCC">dan sekali koneksi mereka </font>
+
+31
+00:01:18,240 --> 00:01:20,549
+ <font color="#E5E5E5">didirikan klien akan mengirim </font>
+
+32
+00:01:20,549 --> 00:01:22,320
+ permintaan <font color="#E5E5E5">untuk meminta sumber daya dan </font>
+
+33
+00:01:22,320 --> 00:01:24,780
+ server <font color="#E5E5E5">akan melayani sumber daya itu dan </font>
+
+34
+00:01:24,780 --> 00:01:27,780
+ begitu klien <font color="#E5E5E5">mendapatkan sumber daya itu di sini </font>
+
+35
+00:01:27,780 --> 00:01:29,520
+ Anda dapat melihat bahwa koneksi mereka putus 
+
+36
+00:01:29,520 --> 00:01:33,630
+ <font color="#E5E5E5">jadi ini adalah HTTP 1.0 sedangkan di HTTP </font>
+
+37
+00:01:33,630 --> 00:01:36,570
+ 1.1 <font color="#CCCCCC">mari kita lihat apa yang terjadi dengan menggunakan </font>
+
+38
+00:01:36,570 --> 00:01:39,810
+ Versi HTTP 1.1 <font color="#CCCCCC">jadi 4 langkahnya sama </font>
+
+39
+00:01:39,810 --> 00:01:41,670
+ jadi buat koneksi <font color="#E5E5E5">koneksi </font>
+
+40
+00:01:41,670 --> 00:01:43,439
+ <font color="#E5E5E5">klien yang sudah mapan akan meminta </font>
+
+41
+00:01:43,439 --> 00:01:45,720
+ server sumber daya akan melayani sumber daya itu 
+
+42
+00:01:45,720 --> 00:01:48,229
+ dan kemudian di sini <font color="#E5E5E5">Anda </font><font color="#CCCCCC">dapat </font><font color="#E5E5E5">melihat monster itu </font>
+
+43
+00:01:48,229 --> 00:01:50,850
+ <font color="#E5E5E5">klien mendapat sumber daya itu klien </font>
+
+44
+00:01:50,850 --> 00:01:53,520
+ meminta <font color="#CCCCCC">sumber daya lain dan begitu </font>
+
+45
+00:01:53,520 --> 00:01:55,649
+ dan koneksi mereka masih akan tetap 
+
+46
+00:01:55,649 --> 00:01:58,500
+ tetap sampai klien ingin memutuskan hubungan 
+
+47
+00:01:58,500 --> 00:02:00,509
+ koneksi itu <font color="#E5E5E5">jadi ini kuncinya </font>
+
+48
+00:02:00,509 --> 00:02:03,270
+ keuntungan dari versi HTTP 1.1 <font color="#CCCCCC">di mana </font>
+
+49
+00:02:03,270 --> 00:02:06,030
+ <font color="#E5E5E5">kami dapat meminta beberapa sumber daya dengan </font>
+
+50
+00:02:06,030 --> 00:02:08,639
+ <font color="#CCCCCC">menggunakan </font><font color="#E5E5E5">koneksi tunggal </font><font color="#CCCCCC">sekarang mari kita bicara </font>
+
+51
+00:02:08,639 --> 00:02:09,929
+ tentang HTTP 
+
+52
+00:02:09,929 --> 00:02:13,439
+ <font color="#CCCCCC">kode uji jadi </font><font color="#E5E5E5">misalnya </font><font color="#CCCCCC">saja </font><font color="#E5E5E5">Anda </font>
+
+53
+00:02:13,439 --> 00:02:15,450
+ mungkin <font color="#E5E5E5">telah melihat itu </font><font color="#CCCCCC">saat membuka apapun </font>
+
+54
+00:02:15,450 --> 00:02:18,510
+ <font color="#CCCCCC">situs web terkadang situs web memberi kami </font>
+
+55
+00:02:18,510 --> 00:02:22,620
+ error seperti <font color="#CCCCCC">3-0 </font><font color="#E5E5E5">hingga 404 500 error jadi apa </font>
+
+56
+00:02:22,620 --> 00:02:24,870
+ <font color="#E5E5E5">kesalahan semacam ini begitu ini </font>
+
+57
+00:02:24,870 --> 00:02:28,859
+ disebut <font color="#E5E5E5">sebagai kode status HTTP sehingga HTTP </font>
+
+58
+00:02:28,859 --> 00:02:30,959
+ kode status tidak lain hanyalah a 
+
+59
+00:02:30,959 --> 00:02:35,220
+ server <font color="#CCCCCC">merespons permintaan HTTP kami </font>
+
+60
+00:02:35,220 --> 00:02:37,500
+ <font color="#E5E5E5">jadi di sini ada </font><font color="#CCCCCC">berbagai jenis HTTP </font>
+
+61
+00:02:37,500 --> 00:02:40,109
+ kode respons yang bisa Anda <font color="#CCCCCC">lihat di sini </font><font color="#E5E5E5">seperti </font><font color="#CCCCCC">200 </font>
+
+62
+00:02:40,109 --> 00:02:45,090
+ <font color="#CCCCCC">400 3 300 500 jadi jika kita </font><font color="#E5E5E5">berhasil </font>
+
+63
+00:02:45,090 --> 00:02:48,480
+ dapat mengakses <font color="#E5E5E5">sumber daya kami kemudian kami dapatkan </font>
+
+64
+00:02:48,480 --> 00:02:51,780
+ kode respons HTTP ini yang 200 <font color="#E5E5E5">jadi </font>
+
+65
+00:02:51,780 --> 00:02:54,209
+ Kode respons HTTP 200 adalah <font color="#CCCCCC">4 ok atau a </font>
+
+66
+00:02:54,209 --> 00:02:56,849
+ sukses <font color="#E5E5E5">dan kode respon yang </font>
+
+67
+00:02:56,849 --> 00:02:59,730
+ <font color="#CCCCCC">bertanggung jawab untuk redirection </font><font color="#E5E5E5">adalah 3 </font><font color="#CCCCCC">0 1 </font>
+
+68
+00:02:59,730 --> 00:03:03,900
+ <font color="#CCCCCC">& </font><font color="#E5E5E5">3 0 2 dan sekarang hanya untuk contoh kita </font>
+
+69
+00:03:03,900 --> 00:03:05,639
+ <font color="#E5E5E5">mencoba </font><font color="#CCCCCC">mengakses </font><font color="#E5E5E5">sumber daya apa pun dan itu </font>
+
+70
+00:03:05,639 --> 00:03:07,769
+ sumber daya <font color="#CCCCCC">tidak ada </font><font color="#E5E5E5">di server itu </font>
+
+71
+00:03:07,769 --> 00:03:11,129
+ <font color="#CCCCCC">lalu kami mendapat kode status HTTP ini </font>
+
+72
+00:03:11,129 --> 00:03:14,400
+ adalah 404 <font color="#E5E5E5">tidak ditemukan dan yang terakhir di sana </font>
+
+73
+00:03:14,400 --> 00:03:16,819
+ adalah <font color="#CCCCCC">dua </font><font color="#E5E5E5">kode status HTTP akses yang ada </font>
+
+74
+00:03:16,819 --> 00:03:21,419
+ <font color="#E5E5E5">505 </font><font color="#CCCCCC">0 3 jadi ini adalah HTTP sisi server </font>
+
+75
+00:03:21,419 --> 00:03:23,730
+ kode status di mana <font color="#E5E5E5">mungkin ada </font>
+
+76
+00:03:23,730 --> 00:03:27,239
+ kesalahan server dan kami mendapat <font color="#E5E5E5">HTTP ini </font>
+
+77
+00:03:27,239 --> 00:03:31,769
+ kode status <font color="#CCCCCC">505 0 </font><font color="#E5E5E5">3 dalam kasus itu jadi di </font>
+
+78
+00:03:31,769 --> 00:03:34,530
+ untuk <font color="#E5E5E5">mengirim </font><font color="#CCCCCC">permintaan </font><font color="#E5E5E5">HTTP yang kami miliki </font>
+
+79
+00:03:34,530 --> 00:03:37,079
+ untuk <font color="#CCCCCC">menentukan </font><font color="#E5E5E5">apa jenis metode HTTP </font>
+
+80
+00:03:37,079 --> 00:03:39,659
+ kami ingin <font color="#CCCCCC">menggunakan sekarang mari kita bicara tentang HTTP </font>
+
+81
+00:03:39,659 --> 00:03:42,690
+ metode sehingga metode HTTP adalah jenis 
+
+82
+00:03:42,690 --> 00:03:46,109
+ permintaan yang ingin kami <font color="#E5E5E5">kirim berarti kami </font>
+
+83
+00:03:46,109 --> 00:03:48,989
+ <font color="#E5E5E5">ingin mengirim permintaan HTTP </font><font color="#CCCCCC">dan apa yang kami </font>
+
+84
+00:03:48,989 --> 00:03:52,440
+ harus dilakukan <font color="#E5E5E5">dalam </font><font color="#CCCCCC">permintaan </font><font color="#E5E5E5">HTTP </font><font color="#CCCCCC">bisa </font>
+
+85
+00:03:52,440 --> 00:03:55,379
+ <font color="#E5E5E5">didefinisikan sebagai metode HTTP dan di sini Anda bisa </font>
+
+86
+00:03:55,379 --> 00:03:57,569
+ lihat metode HTTP yang berbeda seperti dapatkan 
+
+87
+00:03:57,569 --> 00:04:01,769
+ kepala menempatkan patch posting sehingga metode get 
+
+88
+00:04:01,769 --> 00:04:03,930
+ digunakan untuk mengakses sumber daya apa pun atau 
+
+89
+00:04:03,930 --> 00:04:06,569
+ mengambil sumber daya apa pun jadi <font color="#E5E5E5">metode kepala </font>
+
+90
+00:04:06,569 --> 00:04:10,379
+ digunakan <font color="#E5E5E5">untuk melihat header HTTP server </font>
+
+91
+00:04:10,379 --> 00:04:13,799
+ <font color="#E5E5E5">tetapi bukan data HTML sedangkan postingan </font>
+
+92
+00:04:13,799 --> 00:04:16,380
+ dan metode menempatkan digunakan untuk <font color="#E5E5E5">mengirim </font>
+
+93
+00:04:16,380 --> 00:04:19,120
+ masukan ke server <font color="#E5E5E5">dan ada </font>
+
+94
+00:04:19,120 --> 00:04:21,579
+ metode yang menarik disebut sebagai opsi <font color="#E5E5E5">jadi </font>
+
+95
+00:04:21,579 --> 00:04:24,430
+ jika <font color="#E5E5E5">pengguna </font><font color="#CCCCCC">ingin </font><font color="#E5E5E5">tahu bahwa apa jenis </font>
+
+96
+00:04:24,430 --> 00:04:26,620
+ metode HTTP diaktifkan pada <font color="#CCCCCC">remote </font>
+
+97
+00:04:26,620 --> 00:04:29,229
+ server <font color="#CCCCCC">maka pengguna dapat mengirim HTTP </font>
+
+98
+00:04:29,229 --> 00:04:32,169
+ <font color="#E5E5E5">permintaan dengan menggunakan metode opsi dan di </font>
+
+99
+00:04:32,169 --> 00:04:34,840
+ <font color="#E5E5E5">tanggapan </font><font color="#CCCCCC">pengguna akan melihat apa itu </font>
+
+100
+00:04:34,840 --> 00:04:36,400
+ <font color="#CCCCCC">jenis metode HTTP sebenarnya </font>
+
+101
+00:04:36,400 --> 00:04:39,190
+ <font color="#E5E5E5">diaktifkan di server jauh </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">dalam </font>
+
+102
+00:04:39,190 --> 00:04:40,930
+ terakhir ada <font color="#E5E5E5">satu metode yang disebut sebagai </font>
+
+103
+00:04:40,930 --> 00:04:43,300
+ delete jadi delete method adalah salah satu dari 
+
+104
+00:04:43,300 --> 00:04:45,910
+ metode berbahaya karena dengan menggunakan 
+
+105
+00:04:45,910 --> 00:04:47,770
+ hapus metode <font color="#E5E5E5">dan jika metode hapus </font>
+
+106
+00:04:47,770 --> 00:04:50,410
+ <font color="#CCCCCC">diaktifkan di server apa pun </font><font color="#E5E5E5">yang dapat dilakukan pengguna </font>
+
+107
+00:04:50,410 --> 00:04:52,330
+ hapus sumber daya tertentu <font color="#E5E5E5">di </font>
+
+108
+00:04:52,330 --> 00:04:55,270
+ server <font color="#E5E5E5">dengan mengirim permintaan HTTP </font><font color="#CCCCCC">oleh </font>
+
+109
+00:04:55,270 --> 00:04:58,150
+ menggunakan metode delete jadi ini <font color="#E5E5E5">semua </font>
+
+110
+00:04:58,150 --> 00:05:00,430
+ <font color="#E5E5E5">tentang protokol HTTP sekarang mari kita bicara tentang </font>
+
+111
+00:05:00,430 --> 00:05:03,250
+ jabat tangan tiga arah <font color="#E5E5E5">jadi apa </font><font color="#CCCCCC">3-way </font>
+
+112
+00:05:03,250 --> 00:05:05,380
+ jabat tangan <font color="#CCCCCC">3-way handshake adalah yang pertama </font>
+
+113
+00:05:05,380 --> 00:05:07,990
+ <font color="#E5E5E5">proses sebelum meminta sumber daya apa pun </font>
+
+114
+00:05:07,990 --> 00:05:10,510
+ jadi <font color="#E5E5E5">jabat tangan tiga arah digunakan untuk </font>
+
+115
+00:05:10,510 --> 00:05:12,639
+ membuat <font color="#E5E5E5">koneksi</font><font color="#CCCCCC"> antara klien </font><font color="#E5E5E5">dan </font>
+
+116
+00:05:12,639 --> 00:05:14,860
+ server <font color="#E5E5E5">atau antara dua perangkat jaringan </font>
+
+117
+00:05:14,860 --> 00:05:16,630
+ <font color="#E5E5E5">jadi jabat tangan tiga arah adalah yang pertama </font>
+
+118
+00:05:16,630 --> 00:05:18,660
+ proses dan itu adalah metode tiga langkah 
+
+119
+00:05:18,660 --> 00:05:22,060
+ <font color="#CCCCCC">di sini Anda dapat melihat klien kami </font><font color="#E5E5E5">dan di sini adalah </font>
+
+120
+00:05:22,060 --> 00:05:23,860
+ <font color="#E5E5E5">server kami jadi </font><font color="#CCCCCC">yang pertama dari semua </font>
+
+121
+00:05:23,860 --> 00:05:26,139
+ klien akan mengirim permintaan pengiriman ke 
+
+122
+00:05:26,139 --> 00:05:28,840
+ server jadi kirim berarti <font color="#E5E5E5">menyinkronkan jadi hanya </font>
+
+123
+00:05:28,840 --> 00:05:30,970
+ misalnya <font color="#CCCCCC">klien</font><font color="#E5E5E5"> akan mengatakan hey saya </font>
+
+124
+00:05:30,970 --> 00:05:34,210
+ baru di sini <font color="#CCCCCC">saya ingin </font><font color="#E5E5E5">terhubung </font><font color="#CCCCCC">dengan Anda sekarang </font>
+
+125
+00:05:34,210 --> 00:05:36,490
+ mari kita lihat server apa yang <font color="#CCCCCC">memberikan respon </font>
+
+126
+00:05:36,490 --> 00:05:39,010
+ <font color="#E5E5E5">jadi server akan mengirim mengatakan tidak ada dek jadi </font>
+
+127
+00:05:39,010 --> 00:05:40,240
+ kirim berarti menyinkronkan dan 
+
+128
+00:05:40,240 --> 00:05:43,300
+ <font color="#CCCCCC">pengakuan pengakuan </font><font color="#E5E5E5">sehingga </font><font color="#CCCCCC">kemudian </font>
+
+129
+00:05:43,300 --> 00:05:45,729
+ server dikirim <font color="#E5E5E5">oke mari terhubung dan </font>
+
+130
+00:05:45,729 --> 00:05:47,979
+ di terakhir di sini Anda dapat melihat bahwa 
+
+131
+00:05:47,979 --> 00:05:50,380
+ klien <font color="#E5E5E5">akan </font><font color="#CCCCCC">mengirim lagi </font><font color="#E5E5E5">tindakan yang berarti </font>
+
+132
+00:05:50,380 --> 00:05:53,199
+ terima kasih <font color="#CCCCCC">dan di sini Anda dapat melihat mereka </font>
+
+133
+00:05:53,199 --> 00:05:56,020
+ koneksi dibuat <font color="#E5E5E5">jadi </font><font color="#CCCCCC">begini caranya </font>
+
+134
+00:05:56,020 --> 00:05:57,970
+ jabat tangan tiga arah bekerja begitu dalam hal ini 
+
+135
+00:05:57,970 --> 00:06:00,070
+ video yang <font color="#E5E5E5">telah kita </font><font color="#CCCCCC">diskusikan tentang </font><font color="#E5E5E5">apa itu </font>
+
+136
+00:06:00,070 --> 00:06:02,229
+ <font color="#CCCCCC">Protokol STB itu </font><font color="#E5E5E5">versi yang </font><font color="#CCCCCC">berbeda </font><font color="#E5E5E5">dan </font>
+
+137
+00:06:02,229 --> 00:06:05,080
+ <font color="#E5E5E5">itu tentu saja status HTTP bersama dengan </font><font color="#CCCCCC">nya </font>
+
+138
+00:06:05,080 --> 00:06:07,199
+ metode dan apa itu <font color="#E5E5E5">jabat tangan 3 arah </font>
+
+139
+00:06:07,199 --> 00:00:00,000
+ <font color="#CCCCCC">terima kasih telah </font><font color="#E5E5E5">menonton video ini </font>
+

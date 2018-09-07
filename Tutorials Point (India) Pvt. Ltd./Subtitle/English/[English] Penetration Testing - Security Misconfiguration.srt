@@ -1,0 +1,908 @@
+1
+00:00:00,089 --> 00:00:02,340
+hello everyone<font color="#CCCCCC"> now let's talk about</font>
+
+2
+00:00:02,340 --> 00:00:04,620
+<font color="#E5E5E5">security</font><font color="#CCCCCC"> miss configuration issues</font><font color="#E5E5E5"> so</font>
+
+3
+00:00:04,620 --> 00:00:06,359
+the main cause<font color="#CCCCCC"> of security</font><font color="#E5E5E5"> miss</font>
+
+4
+00:00:06,359 --> 00:00:08,280
+configuration issues are wrong
+
+5
+00:00:08,280 --> 00:00:10,740
+<font color="#CCCCCC">application logic</font><font color="#E5E5E5"> so what happen is</font>
+
+6
+00:00:10,740 --> 00:00:14,400
+while developing one web application<font color="#E5E5E5"> the</font>
+
+7
+00:00:14,400 --> 00:00:16,710
+web developer implements some wrong
+
+8
+00:00:16,710 --> 00:00:18,890
+<font color="#E5E5E5">application logic which results in</font>
+
+9
+00:00:18,890 --> 00:00:21,420
+security<font color="#E5E5E5"> miss configurations</font><font color="#CCCCCC"> so one of</font>
+
+10
+00:00:21,420 --> 00:00:24,300
+the<font color="#E5E5E5"> common example is a user hide secret</font>
+
+11
+00:00:24,300 --> 00:00:28,230
+pages<font color="#E5E5E5"> by unknown URL example a web</font>
+
+12
+00:00:28,230 --> 00:00:30,240
+developer wants<font color="#CCCCCC"> to hide</font><font color="#E5E5E5"> some secret</font>
+
+13
+00:00:30,240 --> 00:00:33,059
+pages from the<font color="#E5E5E5"> users so it actually</font>
+
+14
+00:00:33,059 --> 00:00:36,360
+<font color="#E5E5E5">changed the name</font><font color="#CCCCCC"> of that URL</font><font color="#E5E5E5"> so that the</font>
+
+15
+00:00:36,360 --> 00:00:38,160
+users can't be<font color="#CCCCCC"> figure</font><font color="#E5E5E5"> out that what's</font>
+
+16
+00:00:38,160 --> 00:00:41,550
+the name of<font color="#CCCCCC"> that URL so this is how the</font>
+
+17
+00:00:41,550 --> 00:00:43,590
+web application or<font color="#E5E5E5"> the secret pages</font>
+
+18
+00:00:43,590 --> 00:00:46,770
+remain<font color="#E5E5E5"> hidden but what's the threat here</font>
+
+19
+00:00:46,770 --> 00:00:49,379
+so the threat is<font color="#E5E5E5"> that someone can brute</font>
+
+20
+00:00:49,379 --> 00:00:51,840
+<font color="#E5E5E5">force or first that web application</font><font color="#CCCCCC"> urls</font>
+
+21
+00:00:51,840 --> 00:00:54,570
+<font color="#E5E5E5">in order to find some interesting</font><font color="#CCCCCC"> urls</font>
+
+22
+00:00:54,570 --> 00:00:57,870
+<font color="#E5E5E5">and if they are able to find that urls</font>
+
+23
+00:00:57,870 --> 00:01:00,629
+which are hidden<font color="#E5E5E5"> that resultant so some</font>
+
+24
+00:01:00,629 --> 00:01:02,190
+of the msconfig security<font color="#CCCCCC"> miss</font>
+
+25
+00:01:02,190 --> 00:01:04,319
+configuration issues<font color="#E5E5E5"> also results in</font>
+
+26
+00:01:04,319 --> 00:01:07,830
+<font color="#E5E5E5">path disclosures or even directory</font>
+
+27
+00:01:07,830 --> 00:01:09,900
+traversal attacks<font color="#E5E5E5"> now let's have a look</font>
+
+28
+00:01:09,900 --> 00:01:12,900
+at one<font color="#E5E5E5"> example of security miss</font>
+
+29
+00:01:12,900 --> 00:01:15,299
+configuration issues<font color="#E5E5E5"> now let's have a</font>
+
+30
+00:01:15,299 --> 00:01:17,159
+look at security<font color="#CCCCCC"> Miss configuration</font>
+
+31
+00:01:17,159 --> 00:01:21,600
+issues so here you<font color="#E5E5E5"> can see that my OS</font>
+
+32
+00:01:21,600 --> 00:01:25,100
+broken<font color="#E5E5E5"> or application is up and running</font>
+
+33
+00:01:28,420 --> 00:01:31,189
+so in<font color="#CCCCCC"> order to access</font><font color="#E5E5E5"> the security</font><font color="#CCCCCC"> miss</font>
+
+34
+00:01:31,189 --> 00:01:33,439
+configuration challenge<font color="#E5E5E5"> let's go here</font>
+
+35
+00:01:33,439 --> 00:01:34,670
+here you can see security<font color="#E5E5E5"> Miss</font>
+
+36
+00:01:34,670 --> 00:01:37,310
+configuration let's select that this
+
+37
+00:01:37,310 --> 00:01:41,179
+first one secret administrative<font color="#CCCCCC"> pages so</font>
+
+38
+00:01:41,179 --> 00:01:44,270
+what's the goal<font color="#CCCCCC"> of</font><font color="#E5E5E5"> this</font><font color="#CCCCCC"> challenge other</font>
+
+39
+00:01:44,270 --> 00:01:47,119
+words the aim is to<font color="#E5E5E5"> try to find some</font>
+
+40
+00:01:47,119 --> 00:01:51,679
+<font color="#E5E5E5">hidden pages which the administrator has</font>
+
+41
+00:01:51,679 --> 00:01:55,039
+actually hide it from the user<font color="#CCCCCC"> now what</font>
+
+42
+00:01:55,039 --> 00:01:57,590
+we can do is while testing the<font color="#CCCCCC"> Ella fire</font>
+
+43
+00:01:57,590 --> 00:02:03,259
+nobility<font color="#E5E5E5"> we have seen that this muted a</font>
+
+44
+00:02:03,259 --> 00:02:05,000
+web application<font color="#CCCCCC"> is actually</font><font color="#E5E5E5"> including</font>
+
+45
+00:02:05,000 --> 00:02:06,799
+all the pages from here from this
+
+46
+00:02:06,799 --> 00:02:09,619
+parameter pages<font color="#E5E5E5"> so what we can do we</font><font color="#CCCCCC"> can</font>
+
+47
+00:02:09,619 --> 00:02:14,450
+actually try to brute force<font color="#CCCCCC"> or we can</font>
+
+48
+00:02:14,450 --> 00:02:16,099
+actually<font color="#E5E5E5"> try to find different different</font>
+
+49
+00:02:16,099 --> 00:02:18,560
+pages<font color="#E5E5E5"> by doing some different attacks</font>
+
+50
+00:02:18,560 --> 00:02:20,209
+like dictionary attack<font color="#CCCCCC"> brute force</font>
+
+51
+00:02:20,209 --> 00:02:24,440
+attack so<font color="#E5E5E5"> to do so</font><font color="#CCCCCC"> we have</font><font color="#E5E5E5"> to start our</font>
+
+52
+00:02:24,440 --> 00:02:27,440
+web suite so let me just<font color="#CCCCCC"> open my</font><font color="#E5E5E5"> web</font>
+
+53
+00:02:27,440 --> 00:02:30,069
+suite here
+
+54
+00:02:38,390 --> 00:02:40,640
+so the security<font color="#CCCCCC"> Miss configuration</font>
+
+55
+00:02:40,640 --> 00:02:43,510
+issues<font color="#CCCCCC"> actually occurs when a wrong</font>
+
+56
+00:02:43,510 --> 00:02:48,970
+<font color="#E5E5E5">business or a web application logic is</font>
+
+57
+00:02:48,970 --> 00:02:53,510
+made by the web application developer so
+
+58
+00:02:53,510 --> 00:02:55,910
+here you<font color="#E5E5E5"> can see that my</font><font color="#CCCCCC"> BOB</font><font color="#E5E5E5"> suite is up</font>
+
+59
+00:02:55,910 --> 00:02:58,610
+and running<font color="#CCCCCC"> let me just go to</font><font color="#E5E5E5"> proxy tab</font>
+
+60
+00:02:58,610 --> 00:03:00,320
+and it's running<font color="#E5E5E5"> on one to seven</font>
+
+61
+00:03:00,320 --> 00:03:02,870
+localhost IP and port is 8080 let me
+
+62
+00:03:02,870 --> 00:03:06,400
+<font color="#E5E5E5">configure my proxy settings of Firefox</font>
+
+63
+00:03:06,400 --> 00:03:10,150
+by going<font color="#CCCCCC"> here to</font><font color="#E5E5E5"> the options advanced</font>
+
+64
+00:03:10,150 --> 00:03:12,709
+network settings<font color="#E5E5E5"> and manual proxy</font>
+
+65
+00:03:12,709 --> 00:03:14,180
+configuration and here you can see that
+
+66
+00:03:14,180 --> 00:03:15,560
+<font color="#CCCCCC">I have already configured my manual</font>
+
+67
+00:03:15,560 --> 00:03:19,580
+proxy the through port 8080 just click
+
+68
+00:03:19,580 --> 00:03:23,060
+on<font color="#CCCCCC"> OK and now if I</font><font color="#E5E5E5"> just reload this page</font>
+
+69
+00:03:23,060 --> 00:03:26,150
+you will<font color="#CCCCCC"> see that my</font><font color="#E5E5E5"> BOB suite has start</font>
+
+70
+00:03:26,150 --> 00:03:28,520
+blinking<font color="#CCCCCC"> so here you we can</font><font color="#E5E5E5"> see the full</font>
+
+71
+00:03:28,520 --> 00:03:31,370
+<font color="#E5E5E5">request so it's a get request</font><font color="#CCCCCC"> and here</font>
+
+72
+00:03:31,370 --> 00:03:34,790
+you can see the page parameters<font color="#CCCCCC"> they're</font>
+
+73
+00:03:34,790 --> 00:03:37,940
+actually including this PHP<font color="#E5E5E5"> file</font><font color="#CCCCCC"> so now</font>
+
+74
+00:03:37,940 --> 00:03:41,290
+<font color="#E5E5E5">what's our aim is our aim is to</font><font color="#CCCCCC"> try to</font>
+
+75
+00:03:41,290 --> 00:03:46,310
+find some hidden PHP files which are
+
+76
+00:03:46,310 --> 00:03:50,019
+being<font color="#CCCCCC"> included</font><font color="#E5E5E5"> in this web application</font>
+
+77
+00:03:50,019 --> 00:03:53,510
+<font color="#E5E5E5">so now let</font><font color="#CCCCCC"> me send</font><font color="#E5E5E5"> this</font><font color="#CCCCCC"> request</font><font color="#E5E5E5"> to</font>
+
+78
+00:03:53,510 --> 00:03:55,760
+intruder<font color="#CCCCCC"> so to do so just right click</font>
+
+79
+00:03:55,760 --> 00:03:59,000
+<font color="#CCCCCC">and send to intruder and</font><font color="#E5E5E5"> here you will</font>
+
+80
+00:03:59,000 --> 00:04:01,160
+<font color="#CCCCCC">see that our intruder tab starts</font>
+
+81
+00:04:01,160 --> 00:04:03,620
+blinking<font color="#CCCCCC"> let me</font><font color="#E5E5E5"> open this so through</font>
+
+82
+00:04:03,620 --> 00:04:08,600
+this intruder<font color="#E5E5E5"> tab we can actually attack</font>
+
+83
+00:04:08,600 --> 00:04:10,280
+<font color="#CCCCCC">the web application through different</font>
+
+84
+00:04:10,280 --> 00:04:12,170
+different<font color="#E5E5E5"> ways like</font><font color="#CCCCCC"> we can do password</font>
+
+85
+00:04:12,170 --> 00:04:13,610
+guessing attacks we can do dictionary
+
+86
+00:04:13,610 --> 00:04:15,410
+attacks<font color="#CCCCCC"> brute forcing</font><font color="#E5E5E5"> attacks simplest</font>
+
+87
+00:04:15,410 --> 00:04:18,918
+attacks and so<font color="#E5E5E5"> on so the first thing you</font>
+
+88
+00:04:18,918 --> 00:04:21,200
+will<font color="#CCCCCC"> see here</font><font color="#E5E5E5"> the target</font><font color="#CCCCCC"> so here is our</font>
+
+89
+00:04:21,200 --> 00:04:23,540
+<font color="#E5E5E5">IP address</font><font color="#CCCCCC"> of mutiny Day and here is</font>
+
+90
+00:04:23,540 --> 00:04:25,970
+port 80<font color="#CCCCCC"> so now let me</font><font color="#E5E5E5"> just click over</font>
+
+91
+00:04:25,970 --> 00:04:29,090
+here positions<font color="#E5E5E5"> so the positions is</font><font color="#CCCCCC"> the</font>
+
+92
+00:04:29,090 --> 00:04:31,820
+main thing<font color="#E5E5E5"> which we have</font><font color="#CCCCCC"> to be take care</font>
+
+93
+00:04:31,820 --> 00:04:35,060
+<font color="#CCCCCC">of now what's the position</font><font color="#E5E5E5"> is so the</font>
+
+94
+00:04:35,060 --> 00:04:37,340
+positions are actually the points on
+
+95
+00:04:37,340 --> 00:04:41,600
+which we<font color="#E5E5E5"> want</font><font color="#CCCCCC"> to do attack</font><font color="#E5E5E5"> or we want to</font>
+
+96
+00:04:41,600 --> 00:04:44,419
+repeat now first of all the first<font color="#CCCCCC"> thing</font>
+
+97
+00:04:44,419 --> 00:04:46,400
+we have to<font color="#CCCCCC"> do it we are we have to</font><font color="#E5E5E5"> clear</font>
+
+98
+00:04:46,400 --> 00:04:48,740
+<font color="#CCCCCC">all the points so just click</font><font color="#E5E5E5"> over here</font>
+
+99
+00:04:48,740 --> 00:04:51,580
+<font color="#CCCCCC">clear ok now</font>
+
+100
+00:04:51,580 --> 00:04:53,770
+<font color="#E5E5E5">is</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> request now what we want we want to</font>
+
+101
+00:04:53,770 --> 00:04:56,650
+<font color="#E5E5E5">send this request multiple times to the</font>
+
+102
+00:04:56,650 --> 00:05:00,069
+server<font color="#E5E5E5"> but what we want that this file</font>
+
+103
+00:05:00,069 --> 00:05:03,129
+<font color="#E5E5E5">this this thing after</font><font color="#CCCCCC"> the page should be</font>
+
+104
+00:05:03,129 --> 00:05:07,539
+changed in every<font color="#CCCCCC"> request</font><font color="#E5E5E5"> so now what we</font>
+
+105
+00:05:07,539 --> 00:05:09,699
+can<font color="#CCCCCC"> do is we have to select</font><font color="#E5E5E5"> this thing</font>
+
+106
+00:05:09,699 --> 00:05:12,430
+which we want to repeat or we want to
+
+107
+00:05:12,430 --> 00:05:15,639
+<font color="#E5E5E5">change then click over</font><font color="#CCCCCC"> here add and here</font>
+
+108
+00:05:15,639 --> 00:05:18,250
+you will<font color="#E5E5E5"> see</font><font color="#CCCCCC"> that this</font><font color="#E5E5E5"> position has been</font>
+
+109
+00:05:18,250 --> 00:05:20,169
+selected now<font color="#E5E5E5"> so here the different</font>
+
+110
+00:05:20,169 --> 00:05:22,509
+attack types but for<font color="#CCCCCC"> the time being</font>
+
+111
+00:05:22,509 --> 00:05:26,020
+click over<font color="#CCCCCC"> here sniper now</font><font color="#E5E5E5"> once we did</font>
+
+112
+00:05:26,020 --> 00:05:28,150
+<font color="#E5E5E5">this</font><font color="#CCCCCC"> we have to select the</font><font color="#E5E5E5"> payload we</font>
+
+113
+00:05:28,150 --> 00:05:30,460
+want to use and here you<font color="#CCCCCC"> will</font><font color="#E5E5E5"> see the</font>
+
+114
+00:05:30,460 --> 00:05:33,250
+payload set<font color="#CCCCCC"> 1 and payload</font><font color="#E5E5E5"> type a</font><font color="#CCCCCC"> simple</font>
+
+115
+00:05:33,250 --> 00:05:35,169
+<font color="#CCCCCC">list</font><font color="#E5E5E5"> there are</font><font color="#CCCCCC"> a lot of another payloads</font>
+
+116
+00:05:35,169 --> 00:05:37,960
+like<font color="#CCCCCC"> run time file</font><font color="#E5E5E5"> case modification</font>
+
+117
+00:05:37,960 --> 00:05:40,180
+character blocks brute force<font color="#CCCCCC"> earthday</font>
+
+118
+00:05:40,180 --> 00:05:43,000
+<font color="#CCCCCC">it's numbers and but we are</font><font color="#E5E5E5"> interested</font>
+
+119
+00:05:43,000 --> 00:05:48,400
+over here simple list now let<font color="#E5E5E5"> me just</font>
+
+120
+00:05:48,400 --> 00:05:53,740
+take<font color="#CCCCCC"> you</font><font color="#E5E5E5"> inside</font><font color="#CCCCCC"> the kali linux</font><font color="#E5E5E5"> and show</font>
+
+121
+00:05:53,740 --> 00:05:58,500
+you that the kali linux contains a
+
+122
+00:05:58,500 --> 00:06:01,360
+directory called as word list<font color="#E5E5E5"> where it</font>
+
+123
+00:06:01,360 --> 00:06:06,190
+has tons of words<font color="#E5E5E5"> which we can use for</font>
+
+124
+00:06:06,190 --> 00:06:13,979
+<font color="#E5E5E5">our attack so</font><font color="#CCCCCC"> let's go to USR then share</font>
+
+125
+00:06:13,979 --> 00:06:17,139
+then wordless directory and<font color="#E5E5E5"> here you</font>
+
+126
+00:06:17,139 --> 00:06:18,779
+will<font color="#E5E5E5"> see a different directories</font>
+
+127
+00:06:18,779 --> 00:06:22,719
+contains a different<font color="#CCCCCC"> word</font><font color="#E5E5E5"> list so as now</font>
+
+128
+00:06:22,719 --> 00:06:25,599
+we are interested<font color="#CCCCCC"> in dictionary attack</font>
+
+129
+00:06:25,599 --> 00:06:27,250
+or a directory<font color="#CCCCCC"> because we are</font><font color="#E5E5E5"> finding a</font>
+
+130
+00:06:27,250 --> 00:06:29,199
+directory or<font color="#CCCCCC"> we are finding the page so</font>
+
+131
+00:06:29,199 --> 00:06:30,759
+you can<font color="#E5E5E5"> go to any of them these two</font>
+
+132
+00:06:30,759 --> 00:06:33,069
+directories<font color="#E5E5E5"> yet for the timing let's go</font>
+
+133
+00:06:33,069 --> 00:06:37,800
+here<font color="#CCCCCC"> and here</font><font color="#E5E5E5"> you will find</font><font color="#CCCCCC"> a lot of</font>
+
+134
+00:06:37,800 --> 00:06:40,560
+text<font color="#CCCCCC"> files already</font><font color="#E5E5E5"> created by the</font>
+
+135
+00:06:40,560 --> 00:06:43,330
+researchers so let's see<font color="#CCCCCC"> that what's</font>
+
+136
+00:06:43,330 --> 00:06:45,550
+inside<font color="#CCCCCC"> a particular all the files let me</font>
+
+137
+00:06:45,550 --> 00:06:47,080
+just see what's inside this small<font color="#E5E5E5"> dot</font>
+
+138
+00:06:47,080 --> 00:06:50,020
+txt file<font color="#CCCCCC"> hit</font><font color="#E5E5E5"> enter and here you will see</font>
+
+139
+00:06:50,020 --> 00:06:53,949
+<font color="#CCCCCC">a lot of</font><font color="#E5E5E5"> words and the file names which</font>
+
+140
+00:06:53,949 --> 00:06:57,370
+are actually present so what we can do
+
+141
+00:06:57,370 --> 00:07:00,669
+we can<font color="#E5E5E5"> configure our Bob</font><font color="#CCCCCC"> suite</font><font color="#E5E5E5"> to pick</font>
+
+142
+00:07:00,669 --> 00:07:03,699
+all these words from<font color="#E5E5E5"> this file and</font><font color="#CCCCCC"> just</font>
+
+143
+00:07:03,699 --> 00:07:04,720
+start<font color="#E5E5E5"> at</font>
+
+144
+00:07:04,720 --> 00:07:07,810
+but here is one limitation in Bob<font color="#E5E5E5"> sweet</font>
+
+145
+00:07:07,810 --> 00:07:11,410
+<font color="#E5E5E5">that we can add a list we can add a file</font>
+
+146
+00:07:11,410 --> 00:07:15,100
+list but that's only<font color="#E5E5E5"> available</font><font color="#CCCCCC"> for a pro</font>
+
+147
+00:07:15,100 --> 00:07:17,320
+version<font color="#CCCCCC"> means we have to purchase a</font><font color="#E5E5E5"> Bob</font>
+
+148
+00:07:17,320 --> 00:07:19,870
+<font color="#E5E5E5">suite license or a pro version</font><font color="#CCCCCC"> in order</font>
+
+149
+00:07:19,870 --> 00:07:22,060
+<font color="#CCCCCC">to access</font><font color="#E5E5E5"> that feature but for the time</font>
+
+150
+00:07:22,060 --> 00:07:23,920
+<font color="#CCCCCC">in what</font><font color="#E5E5E5"> we can do we</font><font color="#CCCCCC"> can manually add</font>
+
+151
+00:07:23,920 --> 00:07:27,190
+items in our list<font color="#CCCCCC"> so let's just add here</font>
+
+152
+00:07:27,190 --> 00:07:30,970
+<font color="#E5E5E5">demo dot PHP file name then admin dot</font>
+
+153
+00:07:30,970 --> 00:07:41,400
+PHP success dot PHP secret dot PHP
+
+154
+00:07:41,400 --> 00:07:45,990
+hidden dot PHP<font color="#CCCCCC"> and so on so</font><font color="#E5E5E5"> forth like</font>
+
+155
+00:07:45,990 --> 00:07:52,900
+just any random files dot PHP hit<font color="#E5E5E5"> enter</font>
+
+156
+00:07:52,900 --> 00:07:57,640
+<font color="#CCCCCC">so now what will happen is our Bob</font><font color="#E5E5E5"> suite</font>
+
+157
+00:07:57,640 --> 00:08:01,060
+will send<font color="#E5E5E5"> the same request to the</font>
+
+158
+00:08:01,060 --> 00:08:03,100
+<font color="#E5E5E5">Moutere web application and then check</font>
+
+159
+00:08:03,100 --> 00:08:07,330
+<font color="#E5E5E5">it responds but it will send this</font>
+
+160
+00:08:07,330 --> 00:08:11,160
+request<font color="#E5E5E5"> by</font><font color="#CCCCCC"> using these different</font><font color="#E5E5E5"> pages</font>
+
+161
+00:08:11,160 --> 00:08:15,700
+by adding here<font color="#CCCCCC"> ok let's</font><font color="#E5E5E5"> go</font><font color="#CCCCCC"> back to our</font>
+
+162
+00:08:15,700 --> 00:08:17,320
+payloads<font color="#CCCCCC"> so now here you</font><font color="#E5E5E5"> can</font><font color="#CCCCCC"> see our</font>
+
+163
+00:08:17,320 --> 00:08:19,870
+payloads<font color="#CCCCCC"> has been selected so if I just</font>
+
+164
+00:08:19,870 --> 00:08:23,370
+scroll down here you will see some
+
+165
+00:08:23,370 --> 00:08:26,260
+<font color="#CCCCCC">payload encodings so what we have to do</font>
+
+166
+00:08:26,260 --> 00:08:28,690
+is we<font color="#CCCCCC"> just have to remove</font><font color="#E5E5E5"> this equals</font><font color="#CCCCCC"> to</font>
+
+167
+00:08:28,690 --> 00:08:31,660
+sign and here you can see that<font color="#CCCCCC"> I have</font>
+
+168
+00:08:31,660 --> 00:08:34,479
+removed this equals to<font color="#E5E5E5"> sign now</font>
+
+169
+00:08:34,479 --> 00:08:37,809
+everything is set<font color="#E5E5E5"> now let's go here to</font>
+
+170
+00:08:37,809 --> 00:08:41,190
+intruder and now click on start attack
+
+171
+00:08:41,190 --> 00:08:45,660
+click on<font color="#E5E5E5"> OK and here you will see that</font>
+
+172
+00:08:45,660 --> 00:08:48,700
+<font color="#CCCCCC">our Bob suite has started the interval</font>
+
+173
+00:08:48,700 --> 00:08:51,040
+attack and now it's finished<font color="#CCCCCC"> so here you</font>
+
+174
+00:08:51,040 --> 00:08:53,770
+<font color="#E5E5E5">will see</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> request number payload</font><font color="#CCCCCC"> it's</font>
+
+175
+00:08:53,770 --> 00:08:58,150
+status code and<font color="#E5E5E5"> its length so if I just</font>
+
+176
+00:08:58,150 --> 00:09:00,610
+click<font color="#CCCCCC"> over here demo dot PHP here you</font>
+
+177
+00:09:00,610 --> 00:09:02,800
+will see<font color="#CCCCCC"> it's request so here is the</font>
+
+178
+00:09:02,800 --> 00:09:04,440
+same request<font color="#E5E5E5"> but what's the difference</font>
+
+179
+00:09:04,440 --> 00:09:07,180
+the<font color="#CCCCCC"> difference is here if I</font><font color="#E5E5E5"> just select</font>
+
+180
+00:09:07,180 --> 00:09:09,550
+<font color="#E5E5E5">the admin you will see the admin file is</font>
+
+181
+00:09:09,550 --> 00:09:11,950
+included<font color="#CCCCCC"> in this</font><font color="#E5E5E5"> request so if I just go</font>
+
+182
+00:09:11,950 --> 00:09:16,000
+here demo dot PHP and now let's see<font color="#CCCCCC"> that</font>
+
+183
+00:09:16,000 --> 00:09:17,980
+is response<font color="#CCCCCC"> versus response</font>
+
+184
+00:09:17,980 --> 00:09:20,020
+so you can see the spoon<font color="#E5E5E5"> squad is 200</font>
+
+185
+00:09:20,020 --> 00:09:23,710
+<font color="#E5E5E5">okay now let's see the HTML content and</font>
+
+186
+00:09:23,710 --> 00:09:25,920
+none let's just render the HTML content
+
+187
+00:09:25,920 --> 00:09:28,420
+<font color="#E5E5E5">let's see that how this page looks</font><font color="#CCCCCC"> like</font>
+
+188
+00:09:28,420 --> 00:09:30,430
+whether this page is<font color="#CCCCCC"> present or not and</font>
+
+189
+00:09:30,430 --> 00:09:32,770
+here you will<font color="#E5E5E5"> see</font><font color="#CCCCCC"> a 404 page</font><font color="#E5E5E5"> not found</font>
+
+190
+00:09:32,770 --> 00:09:35,590
+<font color="#CCCCCC">okay</font><font color="#E5E5E5"> no worries now let's select this</font>
+
+191
+00:09:35,590 --> 00:09:39,790
+<font color="#E5E5E5">admin dot PHP</font><font color="#CCCCCC"> and here you</font><font color="#E5E5E5"> will see that</font>
+
+192
+00:09:39,790 --> 00:09:42,160
+we are successfully able<font color="#E5E5E5"> to find a</font>
+
+193
+00:09:42,160 --> 00:09:45,250
+secret<font color="#E5E5E5"> page inside the mutilator web</font>
+
+194
+00:09:45,250 --> 00:09:48,550
+application and here you<font color="#E5E5E5"> will find</font><font color="#CCCCCC"> we'll</font>
+
+195
+00:09:48,550 --> 00:09:50,740
+<font color="#E5E5E5">just go here here you will see that a</font>
+
+196
+00:09:50,740 --> 00:09:54,940
+secret PHP configuration page here you
+
+197
+00:09:54,940 --> 00:09:58,630
+<font color="#E5E5E5">can find a PHP configuration so most of</font>
+
+198
+00:09:58,630 --> 00:10:00,670
+the time what the web developers<font color="#E5E5E5"> do they</font>
+
+199
+00:10:00,670 --> 00:10:02,800
+actually hide some important pages<font color="#CCCCCC"> or</font>
+
+200
+00:10:02,800 --> 00:10:05,650
+important directories from the user by
+
+201
+00:10:05,650 --> 00:10:08,530
+just<font color="#E5E5E5"> changing their names so what an</font>
+
+202
+00:10:08,530 --> 00:10:10,780
+attacker or a pen tester can do they<font color="#E5E5E5"> can</font>
+
+203
+00:10:10,780 --> 00:10:13,990
+just try<font color="#E5E5E5"> to brute</font><font color="#CCCCCC"> force or try to some</font>
+
+204
+00:10:13,990 --> 00:10:16,330
+attack<font color="#CCCCCC"> do any attack and just try to</font>
+
+205
+00:10:16,330 --> 00:10:18,100
+guess that directories and here you can
+
+206
+00:10:18,100 --> 00:10:20,530
+<font color="#E5E5E5">see that what we are doing the same</font><font color="#CCCCCC"> so</font>
+
+207
+00:10:20,530 --> 00:10:23,130
+success dot PHP page<font color="#CCCCCC"> not found</font><font color="#E5E5E5"> and</font>
+
+208
+00:10:23,130 --> 00:10:26,260
+secret dot PHP<font color="#E5E5E5"> okay so here you can see</font>
+
+209
+00:10:26,260 --> 00:10:28,150
+that we have found<font color="#E5E5E5"> it another secret PHP</font>
+
+210
+00:10:28,150 --> 00:10:32,190
+<font color="#CCCCCC">surfer configuration page hidden dot PHP</font>
+
+211
+00:10:32,190 --> 00:10:36,460
+<font color="#CCCCCC">okay the same page seek a server and not</font>
+
+212
+00:10:36,460 --> 00:10:40,510
+found and not found so this was how we
+
+213
+00:10:40,510 --> 00:10:46,030
+<font color="#CCCCCC">can try to</font><font color="#E5E5E5"> guess a different pages which</font>
+
+214
+00:10:46,030 --> 00:10:47,230
+are actually present<font color="#E5E5E5"> on a web</font>
+
+215
+00:10:47,230 --> 00:10:51,070
+application<font color="#E5E5E5"> so if you want to add the</font>
+
+216
+00:10:51,070 --> 00:10:53,440
+words from<font color="#E5E5E5"> the file list then you have</font>
+
+217
+00:10:53,440 --> 00:10:56,500
+to buy this Bob<font color="#E5E5E5"> sweet Pro Edition and I</font>
+
+218
+00:10:56,500 --> 00:10:57,940
+recommend<font color="#CCCCCC"> you</font><font color="#E5E5E5"> that</font><font color="#CCCCCC"> if you</font><font color="#E5E5E5"> are a</font>
+
+219
+00:10:57,940 --> 00:11:00,240
+penetration tester working in any
+
+220
+00:11:00,240 --> 00:11:02,920
+InfoSec company or<font color="#CCCCCC"> have</font><font color="#E5E5E5"> a penetration</font>
+
+221
+00:11:02,920 --> 00:11:05,620
+testing company then do by<font color="#E5E5E5"> Bob</font><font color="#CCCCCC"> sweet pro</font>
+
+222
+00:11:05,620 --> 00:11:08,680
+version so in<font color="#E5E5E5"> this video we have covered</font>
+
+223
+00:11:08,680 --> 00:11:10,420
+<font color="#CCCCCC">their water security</font><font color="#E5E5E5"> miss configuration</font>
+
+224
+00:11:10,420 --> 00:11:12,370
+issues and how we<font color="#E5E5E5"> can use the Bob sweet</font>
+
+225
+00:11:12,370 --> 00:11:17,020
+intruder module<font color="#E5E5E5"> to attack the</font><font color="#CCCCCC"> MU</font><font color="#E5E5E5"> tilde</font>
+
+226
+00:11:17,020 --> 00:11:19,510
+web application and thanks for<font color="#CCCCCC"> watching</font>
+
+227
+00:11:19,510 --> 00:00:00,000
+this video
+

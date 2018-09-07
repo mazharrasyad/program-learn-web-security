@@ -1,0 +1,312 @@
+1
+00:00:00,060 --> 00:00:02,909
+<font color="#E5E5E5">okay so welcome</font><font color="#CCCCCC"> back</font><font color="#E5E5E5"> in this video</font><font color="#CCCCCC"> I'm</font>
+
+2
+00:00:02,909 --> 00:00:04,650
+going to<font color="#E5E5E5"> teach</font><font color="#CCCCCC"> you a basic understanding</font>
+
+3
+00:00:04,650 --> 00:00:08,550
+of sequel injection<font color="#CCCCCC"> sequel is short for</font>
+
+4
+00:00:08,550 --> 00:00:11,160
+structured query language and<font color="#CCCCCC"> it's</font>
+
+5
+00:00:11,160 --> 00:00:14,730
+<font color="#E5E5E5">language used for database</font><font color="#CCCCCC"> management</font><font color="#E5E5E5"> in</font>
+
+6
+00:00:14,730 --> 00:00:18,060
+short sequel tells<font color="#CCCCCC"> databases what to do</font>
+
+7
+00:00:18,060 --> 00:00:20,580
+so before we<font color="#CCCCCC"> start if you know what</font>
+
+8
+00:00:20,580 --> 00:00:23,779
+sequel injection<font color="#E5E5E5"> and databases are</font>
+
+9
+00:00:23,779 --> 00:00:26,369
+sequel injection<font color="#E5E5E5"> is one of the most</font>
+
+10
+00:00:26,369 --> 00:00:29,189
+common web hacking technique used for
+
+11
+00:00:29,189 --> 00:00:32,759
+<font color="#E5E5E5">accessing the database of the</font><font color="#CCCCCC"> website an</font>
+
+12
+00:00:32,759 --> 00:00:35,010
+attacker can get all the details<font color="#CCCCCC"> from</font>
+
+13
+00:00:35,010 --> 00:00:39,210
+the<font color="#E5E5E5"> database by accessing data</font><font color="#CCCCCC"> bypassing</font>
+
+14
+00:00:39,210 --> 00:00:42,140
+logins or shut<font color="#CCCCCC"> down the sequel server</font>
+
+15
+00:00:42,140 --> 00:00:45,829
+now let's understand what is a database
+
+16
+00:00:45,829 --> 00:00:49,050
+databases are basically<font color="#E5E5E5"> a structure of</font>
+
+17
+00:00:49,050 --> 00:00:52,260
+tables<font color="#E5E5E5"> where each table contains user</font>
+
+18
+00:00:52,260 --> 00:00:57,050
+<font color="#E5E5E5">IDs passwords web page details and more</font>
+
+19
+00:00:57,050 --> 00:01:00,629
+so I will<font color="#E5E5E5"> switch to my computer and show</font>
+
+20
+00:01:00,629 --> 00:01:03,960
+you how a<font color="#CCCCCC"> database looks like by going</font>
+
+21
+00:01:03,960 --> 00:01:07,890
+<font color="#E5E5E5">to one two</font><font color="#CCCCCC"> seven zero zero</font><font color="#E5E5E5"> one slash PHP</font>
+
+22
+00:01:07,890 --> 00:01:11,820
+<font color="#E5E5E5">my admin'</font><font color="#CCCCCC"> i forgot to mention</font><font color="#E5E5E5"> that examp</font>
+
+23
+00:01:11,820 --> 00:01:14,610
+<font color="#E5E5E5">also comes with PHP myadmin</font>
+
+24
+00:01:14,610 --> 00:01:18,170
+which is a<font color="#E5E5E5"> database management tool and</font>
+
+25
+00:01:18,170 --> 00:01:21,920
+on the left you<font color="#CCCCCC"> can</font><font color="#E5E5E5"> see</font><font color="#CCCCCC"> some databases</font>
+
+26
+00:01:21,920 --> 00:01:25,200
+<font color="#E5E5E5">for example</font><font color="#CCCCCC"> I'm going</font><font color="#E5E5E5"> to select</font><font color="#CCCCCC"> NOAA's</font>
+
+27
+00:01:25,200 --> 00:01:28,979
+database but please<font color="#E5E5E5"> remember I'm not</font>
+
+28
+00:01:28,979 --> 00:01:32,280
+<font color="#E5E5E5">hacking anything in this tutorial</font><font color="#CCCCCC"> this</font>
+
+29
+00:01:32,280 --> 00:01:33,930
+<font color="#E5E5E5">is just to give you a basic</font>
+
+30
+00:01:33,930 --> 00:01:36,960
+understanding<font color="#E5E5E5"> to see how database works</font>
+
+31
+00:01:36,960 --> 00:01:41,159
+<font color="#E5E5E5">behind the scene</font><font color="#CCCCCC"> as you can see here we</font>
+
+32
+00:01:41,159 --> 00:01:44,189
+have<font color="#CCCCCC"> all the tables to select</font><font color="#E5E5E5"> a table</font>
+
+33
+00:01:44,189 --> 00:01:46,619
+just click the one you<font color="#CCCCCC"> want to</font><font color="#E5E5E5"> retrieve</font>
+
+34
+00:01:46,619 --> 00:01:49,860
+information<font color="#E5E5E5"> in my case I'm</font><font color="#CCCCCC"> going to</font>
+
+35
+00:01:49,860 --> 00:01:52,680
+select accounts and you can see the
+
+36
+00:01:52,680 --> 00:01:55,530
+<font color="#E5E5E5">username and</font><font color="#CCCCCC"> the password for</font><font color="#E5E5E5"> all the</font>
+
+37
+00:01:55,530 --> 00:01:58,890
+accounts on the database<font color="#E5E5E5"> you can edit</font>
+
+38
+00:01:58,890 --> 00:02:01,530
+change the rights<font color="#E5E5E5"> or delete a specific</font>
+
+39
+00:02:01,530 --> 00:02:05,369
+<font color="#CCCCCC">account now let's learn some basic</font>
+
+40
+00:02:05,369 --> 00:02:09,840
+queries for sequel<font color="#E5E5E5"> so go ahead and click</font>
+
+41
+00:02:09,840 --> 00:02:13,430
+sequel up here and let's retrieve
+
+42
+00:02:13,430 --> 00:02:16,280
+data from<font color="#E5E5E5"> the table using select</font>
+
+43
+00:02:16,280 --> 00:02:21,310
+statement<font color="#E5E5E5"> so type select Asterix</font><font color="#CCCCCC"> from</font>
+
+44
+00:02:21,310 --> 00:02:24,349
+which means<font color="#E5E5E5"> everything from the table</font>
+
+45
+00:02:24,349 --> 00:02:28,370
+and<font color="#E5E5E5"> the table</font><font color="#CCCCCC"> name</font><font color="#E5E5E5"> and the way you</font><font color="#CCCCCC"> end</font>
+
+46
+00:02:28,370 --> 00:02:31,010
+the sequel query is by putting a
+
+47
+00:02:31,010 --> 00:02:34,819
+<font color="#CCCCCC">semicolon</font><font color="#E5E5E5"> and let's go ahead and execute</font>
+
+48
+00:02:34,819 --> 00:02:39,079
+the query by pressing<font color="#E5E5E5"> ctrl + Enter</font><font color="#CCCCCC"> and</font>
+
+49
+00:02:39,079 --> 00:02:42,549
+<font color="#CCCCCC">you can see all the</font><font color="#E5E5E5"> data from the</font><font color="#CCCCCC"> table</font>
+
+50
+00:02:42,549 --> 00:02:45,620
+<font color="#E5E5E5">let's say you want to check who is admin</font>
+
+51
+00:02:45,620 --> 00:02:48,319
+from accounts for that you need<font color="#CCCCCC"> to type</font>
+
+52
+00:02:48,319 --> 00:02:51,939
+select<font color="#CCCCCC"> username</font><font color="#E5E5E5"> coma</font><font color="#CCCCCC"> is admin from</font>
+
+53
+00:02:51,939 --> 00:02:56,239
+accounts and the user names we<font color="#E5E5E5"> true have</font>
+
+54
+00:02:56,239 --> 00:02:57,680
+admin<font color="#CCCCCC"> rights</font>
+
+55
+00:02:57,680 --> 00:03:01,519
+another important sequel query<font color="#E5E5E5"> is where</font>
+
+56
+00:03:01,519 --> 00:03:04,430
+<font color="#E5E5E5">statement for example imagine if you</font>
+
+57
+00:03:04,430 --> 00:03:07,219
+want to get all users who have the<font color="#E5E5E5"> same</font>
+
+58
+00:03:07,219 --> 00:03:10,090
+password<font color="#CCCCCC"> you can use the where statement</font>
+
+59
+00:03:10,090 --> 00:03:14,810
+<font color="#CCCCCC">by typing select</font><font color="#E5E5E5"> username password from</font>
+
+60
+00:03:14,810 --> 00:03:18,769
+accounts where password equal password
+
+61
+00:03:18,769 --> 00:03:22,790
+and if you execute<font color="#CCCCCC"> the query</font><font color="#E5E5E5"> you will</font>
+
+62
+00:03:22,790 --> 00:03:25,959
+see the<font color="#CCCCCC"> usernames with the same password</font>
+
+63
+00:03:25,959 --> 00:03:28,340
+<font color="#CCCCCC">but for</font><font color="#E5E5E5"> that you</font><font color="#CCCCCC"> need to know the</font>
+
+64
+00:03:28,340 --> 00:03:31,340
+password<font color="#CCCCCC"> now let's say you have an</font>
+
+65
+00:03:31,340 --> 00:03:34,609
+account with<font color="#CCCCCC"> username John and password</font>
+
+66
+00:03:34,609 --> 00:03:38,389
+is password<font color="#CCCCCC"> so when you try to log in to</font>
+
+67
+00:03:38,389 --> 00:03:39,139
+a website
+
+68
+00:03:39,139 --> 00:03:42,639
+the sequel syntax<font color="#E5E5E5"> will be like this</font>
+
+69
+00:03:42,639 --> 00:03:47,840
+<font color="#E5E5E5">select</font><font color="#CCCCCC"> username</font><font color="#E5E5E5"> coma password from table</font>
+
+70
+00:03:47,840 --> 00:03:51,790
+name<font color="#E5E5E5"> where username equals own and</font>
+
+71
+00:03:51,790 --> 00:03:56,180
+password<font color="#E5E5E5"> equal password if the username</font>
+
+72
+00:03:56,180 --> 00:03:59,689
+<font color="#E5E5E5">and password</font><font color="#CCCCCC"> are correct</font><font color="#E5E5E5"> then you will</font>
+
+73
+00:03:59,689 --> 00:04:03,590
+successfully log in<font color="#CCCCCC"> ok so now I believe</font>
+
+74
+00:04:03,590 --> 00:04:05,870
+<font color="#CCCCCC">that</font><font color="#E5E5E5"> you have</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> basic understanding of</font>
+
+75
+00:04:05,870 --> 00:04:10,189
+<font color="#E5E5E5">sequel databases so that's it for now</font>
+
+76
+00:04:10,189 --> 00:04:13,310
+thanks<font color="#CCCCCC"> for watching and I will see you</font>
+
+77
+00:04:13,310 --> 00:04:15,699
+next<font color="#E5E5E5"> time</font>
+
+78
+00:04:22,180 --> 00:00:00,000
+you
+

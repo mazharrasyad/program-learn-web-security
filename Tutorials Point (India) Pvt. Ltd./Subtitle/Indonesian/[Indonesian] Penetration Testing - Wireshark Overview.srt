@@ -1,0 +1,392 @@
+1
+00:00:00,089 --> 00:00:02,959
+ Halo semuanya, <font color="#E5E5E5">mari kita bicarakan </font>
+
+2
+00:00:02,959 --> 00:00:06,270
+ <font color="#E5E5E5">Wireshark jadi Wireshark paling populer </font>
+
+3
+00:00:06,270 --> 00:00:09,300
+ menggunakan <font color="#E5E5E5">analisa protokol jaringan sehingga dengan </font>
+
+4
+00:00:09,300 --> 00:00:11,820
+ <font color="#E5E5E5">bantuan Wireshark kita dapat menangkap </font>
+
+5
+00:00:11,820 --> 00:00:13,980
+ paket internet yang <font color="#E5E5E5">masuk dan </font>
+
+6
+00:00:13,980 --> 00:00:16,379
+ keluar dari sistem kami jadi <font color="#CCCCCC">itu </font>
+
+7
+00:00:16,379 --> 00:00:19,470
+ perangkat lunak yang paling populer digunakan untuk 
+
+8
+00:00:19,470 --> 00:00:21,539
+ <font color="#E5E5E5">menangkap </font><font color="#CCCCCC">paket internet </font><font color="#E5E5E5">terutama </font>
+
+9
+00:00:21,539 --> 00:00:23,939
+ paket tcp / ip internet <font color="#E5E5E5">sekarang </font><font color="#CCCCCC">mari kita lihat </font>
+
+10
+00:00:23,939 --> 00:00:26,430
+ bagaimana kita bisa <font color="#E5E5E5">menangkap beberapa paket dengan menggunakan </font>
+
+11
+00:00:26,430 --> 00:00:30,269
+ wireshark <font color="#CCCCCC">sekarang mari kita lihat bagaimana Wireshark </font>
+
+12
+00:00:30,269 --> 00:00:35,460
+ berfungsi <font color="#E5E5E5">untuk memulai Wireshark kami </font>
+
+13
+00:00:35,460 --> 00:00:37,800
+ harus memilah <font color="#CCCCCC">linux kali </font><font color="#E5E5E5">kami dan bahkan jika </font>
+
+14
+00:00:37,800 --> 00:00:40,770
+ Anda ingin <font color="#E5E5E5">menggunakan Wireshark di </font><font color="#CCCCCC">Windows </font><font color="#E5E5E5">Anda </font>
+
+15
+00:00:40,770 --> 00:00:42,329
+ <font color="#CCCCCC">dapat mengunduh Wireshark dari mereka </font>
+
+16
+00:00:42,329 --> 00:00:44,850
+ situs <font color="#CCCCCC">web resmi tetapi di Kali Linux </font>
+
+17
+00:00:44,850 --> 00:00:47,610
+ <font color="#E5E5E5">itu sudah terinstal </font><font color="#CCCCCC">Anda tahu begitu masuk </font>
+
+18
+00:00:47,610 --> 00:00:50,520
+ <font color="#CCCCCC">memerintahkan </font><font color="#E5E5E5">untuk menjalankan Wireshark membuka terminal </font>
+
+19
+00:00:50,520 --> 00:00:54,539
+ <font color="#E5E5E5">dan langsung </font><font color="#CCCCCC">ke sini Wireshark </font><font color="#E5E5E5">dan tekan </font>
+
+20
+00:00:54,539 --> 00:00:59,190
+ masuk sehingga <font color="#CCCCCC">setiap </font><font color="#E5E5E5">kali </font><font color="#CCCCCC">ia </font><font color="#E5E5E5">menjalankan </font>
+
+21
+00:00:59,190 --> 00:01:01,440
+ Wireshark kesalahan ini akan datang <font color="#E5E5E5">jadi Anda </font>
+
+22
+00:01:01,440 --> 00:01:06,540
+ harus <font color="#E5E5E5">mengabaikan ini </font><font color="#CCCCCC">baik-baik saja jadi saya diberitahu </font>
+
+23
+00:01:06,540 --> 00:01:09,090
+ Anda sebelumnya <font color="#CCCCCC">bahwa melalui tembakan dapat menangkap </font>
+
+24
+00:01:09,090 --> 00:01:12,030
+ paket <font color="#E5E5E5">pada antarmuka tertentu tetapi </font>
+
+25
+00:01:12,030 --> 00:01:13,710
+ apa antarmuka <font color="#E5E5E5">apa itu </font>
+
+26
+00:01:13,710 --> 00:01:16,409
+ <font color="#E5E5E5">antarmuka sehingga antarmuka tidak lain </font>
+
+27
+00:01:16,409 --> 00:01:20,100
+ hanya koneksi internet Anda <font color="#CCCCCC">jadi jika </font><font color="#E5E5E5">Anda </font>
+
+28
+00:01:20,100 --> 00:01:22,920
+ <font color="#CCCCCC">Kali Linux diinstal di </font><font color="#E5E5E5">VirtualBox </font>
+
+29
+00:01:22,920 --> 00:01:26,310
+ maka antarmuka Anda <font color="#E5E5E5">harus </font><font color="#CCCCCC">makan </font><font color="#E5E5E5">0 </font><font color="#CCCCCC">ETH </font>
+
+30
+00:01:26,310 --> 00:01:29,520
+ <font color="#CCCCCC">0 </font><font color="#E5E5E5">dan jika Anda jika Anda telah terhubung </font>
+
+31
+00:01:29,520 --> 00:01:33,270
+ Kali Linux Anda melalui Wi-Fi Anda kemudian 
+
+32
+00:01:33,270 --> 00:01:36,329
+ antarmuka Anda harus <font color="#E5E5E5">WN 0 </font><font color="#CCCCCC">dan jika Anda </font>
+
+33
+00:01:36,329 --> 00:01:39,689
+ ingin mengendus paket <font color="#CCCCCC">ke </font>
+
+34
+00:01:39,689 --> 00:01:41,579
+ <font color="#CCCCCC">localhost maka Anda harus memilih ini </font>
+
+35
+00:01:41,579 --> 00:01:44,460
+ antarmuka antarmuka loopback tetapi benar 
+
+36
+00:01:44,460 --> 00:01:48,930
+ sekarang <font color="#E5E5E5">Kali Linux saya benar-benar terhubung </font>
+
+37
+00:01:48,930 --> 00:01:50,939
+ dengan <font color="#E5E5E5">masing-masing 0 antarmuka jadi di sini Anda </font>
+
+38
+00:01:50,939 --> 00:01:53,130
+ bisa melihat aktivitas <font color="#CCCCCC">paket itu </font>
+
+39
+00:01:53,130 --> 00:01:55,439
+ <font color="#E5E5E5">akan datang keluar sehingga Anda bisa </font>
+
+40
+00:01:55,439 --> 00:01:57,990
+ <font color="#E5E5E5">lihat sedikit aktivitas di sini di setiap </font><font color="#CCCCCC">0 </font>
+
+41
+00:01:57,990 --> 00:02:01,020
+ sekarang untuk mengendus paket atau ke 
+
+42
+00:02:01,020 --> 00:02:03,680
+ menangkap <font color="#CCCCCC">paket-paket </font><font color="#E5E5E5">pada antarmuka ini </font>
+
+43
+00:02:03,680 --> 00:02:06,869
+ <font color="#CCCCCC">Anda harus </font><font color="#E5E5E5">memilih ini, Anda bisa saja </font>
+
+44
+00:02:06,869 --> 00:02:09,869
+ <font color="#CCCCCC">klik di sini ikon ini jika tidak Anda </font>
+
+45
+00:02:09,869 --> 00:02:13,760
+ <font color="#CCCCCC">bisa </font><font color="#E5E5E5">klik dua kali pada interface ini </font>
+
+46
+00:02:13,790 --> 00:02:17,130
+ jadi segera <font color="#E5E5E5">saya klik dua kali di sini Anda bisa </font>
+
+47
+00:02:17,130 --> 00:02:19,110
+ lihat daftar <font color="#E5E5E5">paket </font><font color="#CCCCCC">yang sedang berjalan </font>
+
+48
+00:02:19,110 --> 00:02:21,450
+ masuk dan keluar <font color="#E5E5E5">hasil yang bisa Anda lihat </font>
+
+49
+00:02:21,450 --> 00:02:23,460
+ <font color="#CCCCCC">sebenarnya dibagi menjadi berbeda </font>
+
+50
+00:02:23,460 --> 00:02:25,410
+ kolom <font color="#CCCCCC">di sini </font><font color="#E5E5E5">Anda dapat melihat </font><font color="#CCCCCC">jumlah </font>
+
+51
+00:02:25,410 --> 00:02:28,320
+ paket <font color="#E5E5E5">waktu dan tujuan mereka itu </font>
+
+52
+00:02:28,320 --> 00:02:30,210
+ cara mereka <font color="#CCCCCC">pergi dan protokol </font>
+
+53
+00:02:30,210 --> 00:02:32,160
+ yang mereka <font color="#E5E5E5">gunakan dan informasi </font>
+
+54
+00:02:32,160 --> 00:02:35,070
+ <font color="#CCCCCC">mengenai paket tertentu sekarang </font><font color="#E5E5E5">di </font>
+
+55
+00:02:35,070 --> 00:02:38,700
+ <font color="#E5E5E5">misalnya saja ping google.com </font>
+
+56
+00:02:38,700 --> 00:02:44,520
+ <font color="#E5E5E5">dan kita akan melihat paket-paket yang ada </font>
+
+57
+00:02:44,520 --> 00:02:46,980
+ <font color="#E5E5E5">masuk dan keluar dan paket-paket ini </font>
+
+58
+00:02:46,980 --> 00:02:51,750
+ ditangkap <font color="#CCCCCC">oleh Wireshark </font><font color="#E5E5E5">dan jika saya </font>
+
+59
+00:02:51,750 --> 00:02:54,300
+ gulir ke bawah <font color="#E5E5E5">Anda </font><font color="#CCCCCC">dapat melihat paket Eco </font>
+
+60
+00:02:54,300 --> 00:02:57,960
+ ping ping request <font color="#E5E5E5">dan ping reply jadi ini </font>
+
+61
+00:02:57,960 --> 00:03:00,840
+ sumber <font color="#E5E5E5">Anda dapat melihat sumber di sini ini </font>
+
+62
+00:03:00,840 --> 00:03:03,510
+ <font color="#CCCCCC">alamat IP Linux mobil saya dan ini </font><font color="#E5E5E5">adalah </font>
+
+63
+00:03:03,510 --> 00:03:05,280
+ <font color="#E5E5E5">IP tujuan jadi ini adalah IP dari </font>
+
+64
+00:03:05,280 --> 00:03:08,750
+ google.com <font color="#E5E5E5">dan protokolnya adalah ICMP dan </font>
+
+65
+00:03:08,750 --> 00:03:12,540
+ <font color="#E5E5E5">untuk menemukan atau </font><font color="#CCCCCC">untuk membaca </font>
+
+66
+00:03:12,540 --> 00:03:15,030
+ <font color="#E5E5E5">informasi rinci tentang masing-masing dan </font>
+
+67
+00:03:15,030 --> 00:03:17,160
+ <font color="#E5E5E5">setiap paket cukup </font><font color="#CCCCCC">pilih paket itu dan </font>
+
+68
+00:03:17,160 --> 00:03:19,160
+ berikut adalah beberapa informasi paket header 
+
+69
+00:03:19,160 --> 00:03:23,520
+ <font color="#E5E5E5">jadi </font><font color="#CCCCCC">itu frame Ethernet header </font><font color="#E5E5E5">Internet </font>
+
+70
+00:03:23,520 --> 00:03:30,600
+ Protokol <font color="#E5E5E5">jadi mari baca ini di </font>
+
+71
+00:03:30,600 --> 00:03:33,270
+ Header Internet Protocol Anda bisa <font color="#CCCCCC">saja </font>
+
+72
+00:03:33,270 --> 00:03:35,250
+ periksa alamat sumber <font color="#E5E5E5">dan </font>
+
+73
+00:03:35,250 --> 00:03:37,470
+ alamat tujuan <font color="#E5E5E5">dan tujuan </font>
+
+74
+00:03:37,470 --> 00:03:40,470
+ <font color="#E5E5E5">lokasi geo IP juga lokasi </font>
+
+75
+00:03:40,470 --> 00:03:42,980
+ google.com <font color="#E5E5E5">atau lokasi IP ini </font>
+
+76
+00:03:42,980 --> 00:03:47,820
+ <font color="#E5E5E5">Amerika Serikat dan di babak </font><font color="#CCCCCC">ada </font>
+
+77
+00:03:47,820 --> 00:03:52,050
+ header ICMP juga Anda dapat memeriksa 
+
+78
+00:03:52,050 --> 00:03:55,050
+ Header protokol ICMP <font color="#E5E5E5">jadi tipe 8 </font>
+
+79
+00:03:55,050 --> 00:03:57,600
+ tajuk <font color="#E5E5E5">dan di sini Anda dapat melihat koping </font>
+
+80
+00:03:57,600 --> 00:04:00,870
+ meminta dan jika saya gulir <font color="#E5E5E5">ke bawah </font><font color="#CCCCCC">Anda bisa </font>
+
+81
+00:04:00,870 --> 00:04:03,720
+ hanya <font color="#CCCCCC">juga memeriksa cap waktu dan juga </font>
+
+82
+00:04:03,720 --> 00:04:06,780
+ data yang masuk dan keluar <font color="#E5E5E5">dan </font>
+
+83
+00:04:06,780 --> 00:04:11,160
+ ukuran juga 48 byte di sini Anda dapat melihat 
+
+84
+00:04:11,160 --> 00:04:14,930
+ data dan panjangnya <font color="#E5E5E5">dan di bagian </font><font color="#CCCCCC">bawah </font>
+
+85
+00:04:14,930 --> 00:04:18,029
+ <font color="#E5E5E5">di sini </font><font color="#CCCCCC">adalah beberapa nilai hex Anda dapat melihat </font><font color="#E5E5E5">begitu </font>
+
+86
+00:04:18,029 --> 00:04:21,358
+ sebenarnya data ini <font color="#E5E5E5">ada dalam hex </font>
+
+87
+00:04:21,358 --> 00:04:24,090
+ nilai-nilai sehingga pekerjaan Wireshark <font color="#E5E5E5">adalah untuk </font>
+
+88
+00:04:24,090 --> 00:04:25,990
+ <font color="#CCCCCC">parsing data ini </font>
+
+89
+00:04:25,990 --> 00:04:28,509
+ dan <font color="#E5E5E5">data hex untuk mengurai data hex </font>
+
+90
+00:04:28,509 --> 00:04:31,930
+ ke dalam <font color="#E5E5E5">teks ini </font><font color="#CCCCCC">satu jadi bahkan jika Anda hanya </font>
+
+91
+00:04:31,930 --> 00:04:34,449
+ <font color="#CCCCCC">pilih </font><font color="#E5E5E5">bagian mana pun dari data hex yang dapat Anda lihat </font>
+
+92
+00:04:34,449 --> 00:04:36,130
+ bahwa bagian <font color="#E5E5E5">dari teks akan </font>
+
+93
+00:04:36,130 --> 00:04:37,780
+ secara otomatis <font color="#E5E5E5">memilihnya jika saya klik saja </font>
+
+94
+00:04:37,780 --> 00:04:44,800
+ <font color="#E5E5E5">di sini Anda </font><font color="#CCCCCC">dapat melihat ini </font><font color="#E5E5E5">adalah bagaimana Anda </font>
+
+95
+00:04:44,800 --> 00:04:49,509
+ dapat <font color="#CCCCCC">menggunakan Wireshark untuk menangkap paket </font>
+
+96
+00:04:49,509 --> 00:04:51,910
+ yang datang <font color="#E5E5E5">dan </font><font color="#CCCCCC">keluar </font><font color="#E5E5E5">dari </font>
+
+97
+00:04:51,910 --> 00:04:55,750
+ <font color="#CCCCCC">terima kasih jaringan Anda untuk menonton ini </font>
+
+98
+00:04:55,750 --> 00:00:00,000
+ video 
+

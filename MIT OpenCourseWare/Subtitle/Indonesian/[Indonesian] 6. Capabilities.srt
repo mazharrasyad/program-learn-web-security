@@ -1,0 +1,8236 @@
+1
+00:00:00,000 --> 00:00:00,070
+
+
+2
+00:00:00,070 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,820
+ Lisensi Commons. 
+
+4
+00:00:03,820 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan, atau untuk melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,260
+ di ocw.mit.edu. 
+
+9
+00:00:17,260 --> 00:00:26,985
+
+
+10
+00:00:26,985 --> 00:00:27,860
+ PROFESOR: Baiklah. 
+
+11
+00:00:27,860 --> 00:00:29,760
+ Mari kita mulai. 
+
+12
+00:00:29,760 --> 00:00:32,409
+ Jadi hari ini kita akan berbicara tentang kemampuan, 
+
+13
+00:00:32,409 --> 00:00:36,310
+ lanjutkan diskusi kita tentang bagaimana melakukan pemisahan hak istimewa. 
+
+14
+00:00:36,310 --> 00:00:39,960
+ Dan ingat minggu lalu kami berbicara tentang bagaimana Unix menyediakan 
+
+15
+00:00:39,960 --> 00:00:41,910
+ beberapa mekanisme untuk aplikasi untuk digunakan 
+
+16
+00:00:41,910 --> 00:00:45,600
+ jika mereka ingin hak istimewa memisahkan aplikasi itu 
+
+17
+00:00:45,600 --> 00:00:46,649
+ struktur internal. 
+
+18
+00:00:46,649 --> 00:00:48,940
+ Dan hari ini kita akan berbicara tentang kemampuan, yang mana 
+
+19
+00:00:48,940 --> 00:00:53,720
+ adalah cara berpikir yang sangat berbeda tentang hak istimewa 
+
+20
+00:00:53,720 --> 00:00:56,220
+ yang mungkin dimiliki aplikasi. 
+
+21
+00:00:56,220 --> 00:00:59,030
+ Dan inilah mengapa kita sebenarnya memiliki dua hal yang agak berbeda ini 
+
+22
+00:00:59,030 --> 00:01:06,840
+ bacaan untuk hari ini, salah satunya adalah masalah wakil yang membingungkan ini 
+
+23
+00:01:06,840 --> 00:01:10,982
+ dan bagaimana membuat hak istimewa Anda jauh lebih eksplisit saat Anda 
+
+24
+00:01:10,982 --> 00:01:12,940
+ menulis perangkat lunak sehingga Anda tidak sengaja 
+
+25
+00:01:12,940 --> 00:01:14,595
+ gunakan hak istimewa yang salah. 
+
+26
+00:01:14,595 --> 00:01:16,470
+ Dan kemudian makalah kedua adalah tentang sistem 
+
+27
+00:01:16,470 --> 00:01:20,700
+ disebut Capsicum, yang semuanya tentang sandboxing dan berjalan 
+
+28
+00:01:20,700 --> 00:01:22,930
+ beberapa bagian kode dengan hak yang lebih sedikit 
+
+29
+00:01:22,930 --> 00:01:26,420
+ jadi, sangat mirip [tidak terdengar], 
+
+30
+00:01:26,420 --> 00:01:29,786
+ jika itu dikompromikan, kerusakannya tidak begitu besar. 
+
+31
+00:01:29,786 --> 00:01:31,830
+ Sekarang ternyata para penulis 
+
+32
+00:01:31,830 --> 00:01:34,380
+ dari kedua bacaan ini benar-benar berpikir 
+
+33
+00:01:34,380 --> 00:01:37,610
+ kemampuan adalah jawabannya, karena mereka membiarkan Anda memanipulasi 
+
+34
+00:01:37,610 --> 00:01:42,540
+ hak istimewa dalam cara yang agak berbeda dari bagaimana Unix, katakanlah, 
+
+35
+00:01:42,540 --> 00:01:44,812
+ berpikir tentang hak istimewa. 
+
+36
+00:01:44,812 --> 00:01:47,270
+ Jadi untuk memulai, mari kita lihat deputi yang bingung ini 
+
+37
+00:01:47,270 --> 00:01:48,880
+ masalah dan mencoba memahami apa 
+
+38
+00:01:48,880 --> 00:01:52,980
+ masalah inilah yang dialami Norman Hardy 
+
+39
+00:01:52,980 --> 00:01:54,590
+ sangat bingung. 
+
+40
+00:01:54,590 --> 00:01:56,854
+ Jadi makalahnya ditulis-- yah, itu 
+
+41
+00:01:56,854 --> 00:01:58,395
+ ditulis beberapa waktu yang lalu, dan itu 
+
+42
+00:01:58,395 --> 00:02:01,020
+ menggunakan sintaks untuk nama file yang sedikit mengejutkan. 
+
+43
+00:02:01,020 --> 00:02:04,480
+ Tetapi kita dapat mencoba setidaknya menuliskan masalahnya 
+
+44
+00:02:04,480 --> 00:02:07,690
+ ke sintaks yang lebih akrab dengan jalur gaya Unix 
+
+45
+00:02:07,690 --> 00:02:08,947
+ nama, dan sebagainya. 
+
+46
+00:02:08,947 --> 00:02:10,530
+ Jadi sejauh yang saya tahu, apa yang terjadi 
+
+47
+00:02:10,530 --> 00:02:13,880
+ di dalam sistem mereka adalah bahwa mereka memiliki kompiler Fortran, yang 
+
+48
+00:02:13,880 --> 00:02:16,310
+ semacam tanggal desain mereka pada tingkat tertentu juga. 
+
+49
+00:02:16,310 --> 00:02:22,030
+ Tapi kompiler Fortran mereka tinggal di / sysx / fort, 
+
+50
+00:02:22,030 --> 00:02:26,150
+ dan mereka ingin mengubah kompiler Fortran ini, 
+
+51
+00:02:26,150 --> 00:02:29,554
+ jadi mereka akan menyimpan statistik tentang apa yang dikompilasi, 
+
+52
+00:02:29,554 --> 00:02:31,720
+ bagian mana dari kompilator yang sangat mahal 
+
+53
+00:02:31,720 --> 00:02:33,410
+ mungkin, dan sebagainya. 
+
+54
+00:02:33,410 --> 00:02:36,120
+ Jadi dia ingin memastikan kompiler Fortran ini entah bagaimana 
+
+55
+00:02:36,120 --> 00:02:39,110
+ akhirnya menulis ke file ini / sysx / stat, 
+
+56
+00:02:39,110 --> 00:02:44,360
+ bahwa itu akan merekam informasi tentang berbagai doa 
+
+57
+00:02:44,360 --> 00:02:46,350
+ dari compiler. 
+
+58
+00:02:46,350 --> 00:02:50,070
+ Dan cara mereka melakukan ini adalah, dalam sistem operasi mereka, mereka 
+
+59
+00:02:50,070 --> 00:02:52,170
+ memiliki sesuatu yang mirip dengan setuid 
+
+60
+00:02:52,170 --> 00:02:54,040
+ yang kita bicarakan di Unix. 
+
+61
+00:02:54,040 --> 00:02:57,360
+ Kecuali di sana, mereka menyebutnya lisensi file rumahan. 
+
+62
+00:02:57,360 --> 00:03:01,380
+ Dan apa artinya jika Anda menjalankan / sysx / fort, 
+
+63
+00:03:01,380 --> 00:03:05,710
+ dan program ini memiliki apa yang disebut lisensi file rumahan ini, 
+
+64
+00:03:05,710 --> 00:03:09,860
+ maka proses ini yang baru saja Anda jalankan akan memiliki hak istimewa tambahan 
+
+65
+00:03:09,860 --> 00:03:13,102
+ untuk bisa menulis semuanya di / sysx. 
+
+66
+00:03:13,102 --> 00:03:15,310
+ Jadi itu akan memiliki hak istimewa ekstra ini dalam segala hal 
+
+67
+00:03:15,310 --> 00:03:18,819
+ di / sysx /, pada dasarnya, bintang. 
+
+68
+00:03:18,819 --> 00:03:20,610
+ Itu bisa mengakses semua file itu sebagai tambahan 
+
+69
+00:03:20,610 --> 00:03:22,985
+ untuk apa pun yang bisa diakses karena pengguna menjalankannya, 
+
+70
+00:03:22,985 --> 00:03:25,190
+ sebagai contoh. 
+
+71
+00:03:25,190 --> 00:03:27,030
+ Jadi masalah khusus yang mereka hadapi 
+
+72
+00:03:27,030 --> 00:03:31,236
+ adalah bahwa beberapa pengguna pintar dapat melakukan ini. 
+
+73
+00:03:31,236 --> 00:03:32,860
+ Jadi mereka akan menjalankan kompiler Fortran, 
+
+74
+00:03:32,860 --> 00:03:35,151
+ dan kompiler Fortran akan mengambil argumen sangat banyak 
+
+75
+00:03:35,151 --> 00:03:36,790
+ seperti GCC mengambil argumen. 
+
+76
+00:03:36,790 --> 00:03:39,590
+ Dan mereka akan mengkompilasi sesuatu seperti foo.f. 
+
+77
+00:03:39,590 --> 00:03:41,620
+ Ini adalah kode sumber Fortran saya. 
+
+78
+00:03:41,620 --> 00:03:48,120
+ Dan mereka akan mengatakan, yah, masukkan output itu -o ke / sysx / stat. 
+
+79
+00:03:48,120 --> 00:03:50,700
+ Atau lebih merusak dalam kasus mereka, 
+
+80
+00:03:50,700 --> 00:03:54,470
+ ada file lain di / sysx yang merupakan file penagihan 
+
+81
+00:03:54,470 --> 00:03:56,390
+ untuk semua pelanggan di sistem. 
+
+82
+00:03:56,390 --> 00:04:01,850
+ Jadi Anda juga bisa meminta kompiler Fortran untuk mengkompilasi 
+
+83
+00:04:01,850 --> 00:04:05,800
+ file sumber dan masukkan hasilnya ke dalam beberapa file khusus 
+
+84
+00:04:05,800 --> 00:04:07,980
+ di / sysx. 
+
+85
+00:04:07,980 --> 00:04:10,860
+ Dan dalam kasus mereka, ini benar-benar berhasil. 
+
+86
+00:04:10,860 --> 00:04:12,570
+ Meskipun pengguna itu sendiri tidak 
+
+87
+00:04:12,570 --> 00:04:15,430
+ memiliki akses untuk menulis ke file atau direktori ini, 
+
+88
+00:04:15,430 --> 00:04:18,620
+ karena compiler memiliki privilege-- ekstra ini 
+
+89
+00:04:18,620 --> 00:04:21,660
+ lisensi file rumahan ini, dalam kasus mereka-- 
+
+90
+00:04:21,660 --> 00:04:24,590
+ itu mampu menimpa file-file ini 
+
+91
+00:04:24,590 --> 00:04:28,784
+ meskipun itu tidak benar-benar niat pengembang. 
+
+92
+00:04:28,784 --> 00:04:29,450
+ Ini masuk akal? 
+
+93
+00:04:29,450 --> 00:04:31,116
+ Ini masalah kasar yang mereka hadapi? 
+
+94
+00:04:31,116 --> 00:04:32,515
+ Jadi siapa yang mereka salahkan? 
+
+95
+00:04:32,515 --> 00:04:33,765
+ Menurut mereka, apa yang salah? 
+
+96
+00:04:33,765 --> 00:04:40,995
+
+
+97
+00:04:40,995 --> 00:04:42,780
+ Atau bagaimana Anda mendesainnya secara berbeda 
+
+98
+00:04:42,780 --> 00:04:46,150
+ untuk menghindari masalah seperti itu? 
+
+99
+00:04:46,150 --> 00:04:48,770
+ Jadi hal yang mereka pikirkan di sini, 
+
+100
+00:04:48,770 --> 00:04:51,930
+ atau mereka berbicara tentang dalam penulisan ini, 
+
+101
+00:04:51,930 --> 00:04:55,240
+ adalah bahwa mereka percaya ini kompiler Fortran seharusnya 
+
+102
+00:04:55,240 --> 00:04:57,990
+ berhati-hatilah ketika menggunakan hak istimewanya. 
+
+103
+00:04:57,990 --> 00:04:59,960
+ Karena, pada tingkat tertentu, kompiler Fortran 
+
+104
+00:04:59,960 --> 00:05:01,570
+ memiliki dua jenis hak istimewa. 
+
+105
+00:05:01,570 --> 00:05:05,660
+ Ini berasal dari fakta pengguna memanggilnya, 
+
+106
+00:05:05,660 --> 00:05:08,140
+ jadi pengguna harus dapat mengakses sumbernya 
+
+107
+00:05:08,140 --> 00:05:10,050
+ file, seperti foo.f. 
+
+108
+00:05:10,050 --> 00:05:11,860
+ Dan jika itu adalah pengguna lain, mungkin 
+
+109
+00:05:11,860 --> 00:05:14,680
+ itu tidak akan dapat mengakses kode sumber pengguna. 
+
+110
+00:05:14,680 --> 00:05:17,590
+ Dan dalam bentuk lain dari hak istimewa adalah dari file-file rumah 
+
+111
+00:05:17,590 --> 00:05:20,830
+ hal lisensi yang memungkinkan kita untuk menulis ke file khusus ini. 
+
+112
+00:05:20,830 --> 00:05:23,480
+ Dan secara internal, dalam kode sumber kompilator, 
+
+113
+00:05:23,480 --> 00:05:25,920
+ ketika mereka membuka file, kompilator 
+
+114
+00:05:25,920 --> 00:05:28,900
+ seharusnya sangat eksplisit tentang yang mana dari hak-hak istimewa ini 
+
+115
+00:05:28,900 --> 00:05:31,910
+ ia ingin berolahraga ketika membuka file 
+
+116
+00:05:31,910 --> 00:05:34,372
+ atau melakukan beberapa operasi istimewa. 
+
+117
+00:05:34,372 --> 00:05:36,330
+ Tetapi kompiler mereka tidak ditulis dengan cara ini. 
+
+118
+00:05:36,330 --> 00:05:38,140
+ Itu hanya disebut terbuka, baca, tulis, 
+
+119
+00:05:38,140 --> 00:05:39,550
+ seperti yang dilakukan program lain. 
+
+120
+00:05:39,550 --> 00:05:42,440
+ Dan secara implisit akan menggunakan semua hak istimewa yang dimilikinya, 
+
+121
+00:05:42,440 --> 00:05:45,033
+ yang menggabungkan-- baik, dalam desain sistem mereka, 
+
+122
+00:05:45,033 --> 00:05:47,410
+ itu semacam penyatuan hak-hak pengguna 
+
+123
+00:05:47,410 --> 00:05:51,086
+ dan hak lisensi file rumahan ini. 
+
+124
+00:05:51,086 --> 00:05:52,790
+ Masuk akal? 
+
+125
+00:05:52,790 --> 00:05:55,390
+ Jadi orang-orang ini benar-benar tertarik untuk memperbaikinya 
+
+126
+00:05:55,390 --> 00:05:56,180
+ masalah ini. 
+
+127
+00:05:56,180 --> 00:05:59,240
+ Dan mereka semacam menyebut kompiler ini bingung 
+
+128
+00:05:59,240 --> 00:06:00,964
+ wakil, karena perlu disambiguasi 
+
+129
+00:06:00,964 --> 00:06:02,505
+ beberapa hak istimewa yang dimilikinya 
+
+130
+00:06:02,505 --> 00:06:06,800
+ dan hati-hati menggunakannya dalam contoh yang tepat. 
+
+131
+00:06:06,800 --> 00:06:09,350
+ Jadi saya kira satu hal yang bisa kita coba lihat 
+
+132
+00:06:09,350 --> 00:06:15,120
+ adalah bagaimana kita mendesain kompiler seperti itu di Unix? 
+
+133
+00:06:15,120 --> 00:06:18,024
+ Jadi dalam sistem mereka, mereka memiliki semua hal lisensi file ini. 
+
+134
+00:06:18,024 --> 00:06:20,190
+ Mekanisme lain, kemudian mereka memperkenalkan kemampuan. 
+
+135
+00:06:20,190 --> 00:06:21,750
+ Kami akan membicarakannya sebentar lagi. 
+
+136
+00:06:21,750 --> 00:06:24,830
+ Tapi bisakah kita menyelesaikan ini dalam sistem Unix? 
+
+137
+00:06:24,830 --> 00:06:27,080
+ Misalkan Anda harus menulis kompiler Fortran ini di Unix 
+
+138
+00:06:27,080 --> 00:06:29,566
+ dan menulis ke file khusus dan hindari ini bingung 
+
+139
+00:06:29,566 --> 00:06:30,190
+ masalah deputi. 
+
+140
+00:06:30,190 --> 00:06:32,775
+ Apa yang akan kamu lakukan? 
+
+141
+00:06:32,775 --> 00:06:33,275
+ Ada ide? 
+
+142
+00:06:33,275 --> 00:06:35,802
+
+
+143
+00:06:35,802 --> 00:06:37,760
+ Saya kira Anda hanya bisa menyatakan ini rencana yang buruk. 
+
+144
+00:06:37,760 --> 00:06:40,212
+ Seperti tidak menyimpan statistik. 
+
+145
+00:06:40,212 --> 00:06:42,028
+ Ya? 
+
+146
+00:06:42,028 --> 00:06:44,649
+ AUDIENCE: [TIDAK JELAS]. 
+
+147
+00:06:44,649 --> 00:06:45,315
+ PROFESOR: Tentu. 
+
+148
+00:06:45,315 --> 00:06:46,670
+ Itu mungkin, kan? 
+
+149
+00:06:46,670 --> 00:06:47,530
+ Yah begitulah. 
+
+150
+00:06:47,530 --> 00:06:50,530
+ Jadi Anda tidak bisa mendukung bendera seperti -o. 
+
+151
+00:06:50,530 --> 00:06:52,210
+ Di sisi lain, Anda mungkin menginginkannya 
+
+152
+00:06:52,210 --> 00:06:55,980
+ untuk memungkinkan menentukan kode sumber mana yang Anda inginkan 
+
+153
+00:06:55,980 --> 00:06:58,196
+ untuk mengkompilasi sehingga mungkin Anda bisa membaca tagihannya 
+
+154
+00:06:58,196 --> 00:06:59,820
+ file atau membaca file statistik, yang 
+
+155
+00:06:59,820 --> 00:07:01,230
+ mungkin harus dirahasiakan. 
+
+156
+00:07:01,230 --> 00:07:02,897
+ Atau mungkin kode sumbernya - mungkin Anda 
+
+157
+00:07:02,897 --> 00:07:04,646
+ dapat mendukung kode sumber pada standar, 
+
+158
+00:07:04,646 --> 00:07:06,330
+ tetapi sudah termasuk pernyataan, jadi 
+
+159
+00:07:06,330 --> 00:07:08,370
+ perlu menyertakan potongan kode sumber lainnya. 
+
+160
+00:07:08,370 --> 00:07:09,354
+ Jadi itu sedikit rumit. 
+
+161
+00:07:09,354 --> 00:07:11,729
+ AUDIENCE: Anda dapat membagi aplikasi [tidak terdengar]. 
+
+162
+00:07:11,729 --> 00:07:16,905
+
+
+163
+00:07:16,905 --> 00:07:17,530
+ PROFESOR: Ya. 
+
+164
+00:07:17,530 --> 00:07:20,270
+ Jadi desain lain yang berpotensi bagus adalah membaginya, 
+
+165
+00:07:20,270 --> 00:07:20,770
+ kanan? 
+
+166
+00:07:20,770 --> 00:07:23,130
+ Dan menyadari bahwa kompiler benteng ini benar-benar 
+
+167
+00:07:23,130 --> 00:07:25,525
+ tidak membutuhkan semua dua hak istimewa ini pada saat yang bersamaan. 
+
+168
+00:07:25,525 --> 00:07:33,420
+ Jadi mungkin kita harus memiliki dunia / bin / fortcc Unix kami atau sesuatu, 
+
+169
+00:07:33,420 --> 00:07:36,570
+ kompiler, dan kemudian orang ini hanya program biasa dengan 
+
+170
+00:07:36,570 --> 00:07:37,790
+ tidak ada hak istimewa tambahan. 
+
+171
+00:07:37,790 --> 00:07:41,980
+ Dan kemudian kita juga mungkin memiliki / bin / fortlog, 
+
+172
+00:07:41,980 --> 00:07:44,350
+ yang akan menjadi program khusus dengan beberapa tambahan 
+
+173
+00:07:44,350 --> 00:07:47,640
+ hak istimewa dan itu akan mencatat beberapa statistik tentang apa yang terjadi 
+
+174
+00:07:47,640 --> 00:07:49,410
+ di dalam kompilator. 
+
+175
+00:07:49,410 --> 00:07:53,010
+ Dan benteng akan memanggil orang ini. 
+
+176
+00:07:53,010 --> 00:07:56,020
+ Jadi bagaimana kita memberi orang ini hak istimewa tambahan? 
+
+177
+00:07:56,020 --> 00:07:56,520
+ Ya? 
+
+178
+00:07:56,520 --> 00:07:58,153
+ AUDIENCE: Yah, mungkin jika Anda menggunakan sesuatu seperti setuid 
+
+179
+00:07:58,153 --> 00:08:00,930
+ atau sesuatu, seperti fortlog, maka mungkin ada pengguna lain 
+
+180
+00:08:00,930 --> 00:08:03,034
+ bisa juga mencatat data sewenang-wenang melaluinya. 
+
+181
+00:08:03,034 --> 00:08:03,700
+ PROFESOR: Ya. 
+
+182
+00:08:03,700 --> 00:08:04,719
+ Jadi ini tidak begitu hebat. 
+
+183
+00:08:04,719 --> 00:08:06,510
+ Karena di fortlog, mungkin satu-satunya cara 
+
+184
+00:08:06,510 --> 00:08:07,968
+ untuk memberikan hak istimewa tambahan di Unix adalah 
+
+185
+00:08:07,968 --> 00:08:11,170
+ sebenarnya membuatnya dimiliki oleh, saya tidak tahu, mungkin benteng UID, 
+
+186
+00:08:11,170 --> 00:08:14,490
+ dan itu juga setuid. 
+
+187
+00:08:14,490 --> 00:08:17,550
+ Jadi setiap kali Anda menjalankannya, ia beralih ke Fortran UID ini. 
+
+188
+00:08:17,550 --> 00:08:19,580
+ Dan mungkin ada beberapa file statistik khusus. 
+
+189
+00:08:19,580 --> 00:08:23,170
+ Namun, pada kenyataannya, siapa pun dapat meminta hal fortlog ini. 
+
+190
+00:08:23,170 --> 00:08:24,730
+ Yang mungkin tidak bagus. 
+
+191
+00:08:24,730 --> 00:08:26,940
+ Sekarang siapa pun dapat menulis ke file statistik. 
+
+192
+00:08:26,940 --> 00:08:29,782
+ Tapi mungkin contoh ini bukan masalah keamanan terbesar 
+
+193
+00:08:29,782 --> 00:08:31,490
+ tentang seseorang yang merusak statistik Anda. 
+
+194
+00:08:31,490 --> 00:08:33,220
+ Tetapi anggaplah ini adalah file penagihan. 
+
+195
+00:08:33,220 --> 00:08:36,072
+ Maka mungkin masalah yang sama akan sedikit lebih akut. 
+
+196
+00:08:36,072 --> 00:08:36,571
+ Ya? 
+
+197
+00:08:36,571 --> 00:08:39,674
+ AUDIENCE: Tapi Anda selalu dapat membuat statistik [TIDAK TERDENGAR] 
+
+198
+00:08:39,674 --> 00:08:40,340
+ yang kamu inginkan, bukan? 
+
+199
+00:08:40,340 --> 00:08:41,298
+ Alih-alih [TIDAK JELAS]. 
+
+200
+00:08:41,298 --> 00:08:44,940
+
+
+201
+00:08:44,940 --> 00:08:46,930
+ PROFESOR: Jadi dalam beberapa hal, ya. 
+
+202
+00:08:46,930 --> 00:08:48,960
+ Jika Anda bersedia hidup dengan sewenang-wenang 
+
+203
+00:08:48,960 --> 00:08:51,262
+ barang-barang di statistik Anda atau file logging, 
+
+204
+00:08:51,262 --> 00:08:52,220
+ mungkin itu benar. 
+
+205
+00:08:52,220 --> 00:08:54,212
+ AUDIENCE: Bahkan jika Anda [TIDAK JELAS], 
+
+206
+00:08:54,212 --> 00:08:56,702
+ Anda sudah dapat membuat kode C Anda memiliki statistik apa pun 
+
+207
+00:08:56,702 --> 00:08:57,994
+ bahwa Anda ingin direkam. 
+
+208
+00:08:57,994 --> 00:08:58,868
+ PROFESOR: Anda bisa. 
+
+209
+00:08:58,868 --> 00:08:59,585
+ Ya. 
+
+210
+00:08:59,585 --> 00:09:00,084
+ Ya. 
+
+211
+00:09:00,084 --> 00:09:01,524
+ Jadi mungkin dalam kasus ini, 
+
+212
+00:09:01,524 --> 00:09:03,940
+ tidak masalah jika Anda bisa login barang-barang sewenang-wenang. 
+
+213
+00:09:03,940 --> 00:09:05,240
+ Jadi itu benar. 
+
+214
+00:09:05,240 --> 00:09:06,040
+ Ya. 
+
+215
+00:09:06,040 --> 00:09:08,480
+ Jadi jika Anda peduli tentang siapa yang dapat meminta hal fortlog ini, 
+
+216
+00:09:08,480 --> 00:09:10,063
+ bisakah kamu benar-benar melakukan sesuatu 
+
+217
+00:09:10,063 --> 00:09:12,484
+ di Unix, atau tidak begitu banyak? 
+
+218
+00:09:12,484 --> 00:09:12,984
+ Ya? 
+
+219
+00:09:12,984 --> 00:09:14,892
+ AUDIENCE: [TIDAK JELAS]. 
+
+220
+00:09:14,892 --> 00:09:18,090
+ Itu akan membuat keduanya setuid. 
+
+221
+00:09:18,090 --> 00:09:23,120
+ Sekarang benteng itu akan membaca file sumber itu. 
+
+222
+00:09:23,120 --> 00:09:26,430
+ Itu akan beralih kembali ke UID yang disimpan, hanya pengguna UID. 
+
+223
+00:09:26,430 --> 00:09:31,060
+ Remote fortlog dalam setuid, yang memiliki 
+
+224
+00:09:31,060 --> 00:09:32,485
+ izin untuk menjalankan fortlog. 
+
+225
+00:09:32,485 --> 00:09:37,812
+ Dan benteng itu akan menjadi cair lagi [tidak terdengar]. 
+
+226
+00:09:37,812 --> 00:09:38,520
+ PROFESOR: Benar. 
+
+227
+00:09:38,520 --> 00:09:39,020
+ Ya. 
+
+228
+00:09:39,020 --> 00:09:42,710
+ Jadi ada mekanisme yang agak rumit di Unix 
+
+229
+00:09:42,710 --> 00:09:46,280
+ bahwa kami melewatkan kuliah Senin lalu, itu 
+
+230
+00:09:46,280 --> 00:09:48,780
+ sebenarnya memungkinkan aplikasi untuk beralih 
+
+231
+00:09:48,780 --> 00:09:50,190
+ antara beberapa UID. 
+
+232
+00:09:50,190 --> 00:09:53,800
+ jika sudah disetuid ke beberapa ID pengguna, maka bisa dibilang, 
+
+233
+00:09:53,800 --> 00:09:55,730
+ nah, sekarang saya ingin menjalankan dengan ID pengguna ini. 
+
+234
+00:09:55,730 --> 00:09:57,480
+ Sekarang saya ingin menjalankan dengan ID pengguna lain ini. 
+
+235
+00:09:57,480 --> 00:10:00,820
+ Dan itu bisa dengan hati-hati bergantian antara ini. 
+
+236
+00:10:00,820 --> 00:10:02,320
+ Agak sulit melakukannya dengan benar, 
+
+237
+00:10:02,320 --> 00:10:04,213
+ tapi mungkin bisa dilakukan. 
+
+238
+00:10:04,213 --> 00:10:06,224
+ Jadi itulah satu desain potensial. 
+
+239
+00:10:06,224 --> 00:10:08,140
+ Saya kira hack lain yang mungkin bisa Anda coba lakukan 
+
+240
+00:10:08,140 --> 00:10:10,740
+ adalah membuat biner fortlog ini hanya bisa dieksekusi 
+
+241
+00:10:10,740 --> 00:10:14,790
+ ke grup tertentu dan membuat benteng biner setgid 
+
+242
+00:10:14,790 --> 00:10:15,622
+ ke grup itu. 
+
+243
+00:10:15,622 --> 00:10:17,830
+ Ini tidak bagus, karena melenyapkan kelompok apa pun 
+
+244
+00:10:17,830 --> 00:10:19,950
+ daftar pengguna pada awalnya. 
+
+245
+00:10:19,950 --> 00:10:21,200
+ Tapi siapa yang tahu? 
+
+246
+00:10:21,200 --> 00:10:24,190
+ Mungkin itu lebih baik daripada tidak sama sekali. 
+
+247
+00:10:24,190 --> 00:10:26,550
+ Bagaimanapun, ini masalah yang cukup rumit 
+
+248
+00:10:26,550 --> 00:10:29,600
+ untuk dipecahkan dengan cara yang sepenuhnya memuaskan 
+
+249
+00:10:29,600 --> 00:10:31,812
+ dengan mekanisme Unix ini. 
+
+250
+00:10:31,812 --> 00:10:33,770
+ Meskipun, mungkin Anda harus memikirkan kembali masalah Anda 
+
+251
+00:10:33,770 --> 00:10:35,640
+ dan jangan khawatir tentang statistik Anda 
+
+252
+00:10:35,640 --> 00:10:38,970
+ file sebanyak di tempat pertama. 
+
+253
+00:10:38,970 --> 00:10:45,150
+ Tapi bagaimana kita berpikir tentang apa yang salah dalam desain? 
+
+254
+00:10:45,150 --> 00:10:47,920
+ Ada dua hal yang bisa kita coba pelajari dari ini, 
+
+255
+00:10:47,920 --> 00:10:49,925
+ atau pada dasarnya, apa yang salah. 
+
+256
+00:10:49,925 --> 00:10:53,120
+
+
+257
+00:10:53,120 --> 00:10:58,180
+ Dan satu interpretasi yang diinginkan oleh satu pihak untuk kita ambil 
+
+258
+00:10:58,180 --> 00:11:01,560
+ adalah gagasan yang dia sebut otoritas ambient. 
+
+259
+00:11:01,560 --> 00:11:06,730
+
+
+260
+00:11:06,730 --> 00:11:08,300
+ Jadi apa kewenangan ambien? 
+
+261
+00:11:08,300 --> 00:11:10,230
+ Adakah yang tahu apa artinya? 
+
+262
+00:11:10,230 --> 00:11:12,230
+ Mereka tidak pernah secara pasti mendefinisikan ini. 
+
+263
+00:11:12,230 --> 00:11:12,730
+ Ya? 
+
+264
+00:11:12,730 --> 00:11:14,248
+ AUDIENCE: Ini berarti Anda memiliki kewenangan yang diberikan 
+
+265
+00:11:14,248 --> 00:11:15,590
+ kepada Anda oleh lingkungan. 
+
+266
+00:11:15,590 --> 00:11:19,464
+ Jadi seolah-olah [TIDAK JELAS] pengguna tanpa batasan. 
+
+267
+00:11:19,464 --> 00:11:20,130
+ PROFESOR: Ya. 
+
+268
+00:11:20,130 --> 00:11:24,040
+ Jadi Anda melakukan operasi, dan Anda dapat menentukan 
+
+269
+00:11:24,040 --> 00:11:25,177
+ operasi apa yang Anda inginkan. 
+
+270
+00:11:25,177 --> 00:11:27,760
+ Tetapi keputusan apakah operasi itu akan berhasil 
+
+271
+00:11:27,760 --> 00:11:30,850
+ berasal dari beberapa parameter implisit ekstra dalam proses Anda, 
+
+272
+00:11:30,850 --> 00:11:31,660
+ sebagai contoh. 
+
+273
+00:11:31,660 --> 00:11:34,970
+ Dan di Unix, Anda bisa mencari tahu apa kewenangan ambien ini 
+
+274
+00:11:34,970 --> 00:11:36,490
+ periksa mungkin terlihat seperti. 
+
+275
+00:11:36,490 --> 00:11:38,860
+ Jadi jika Anda membuat panggilan sistem, maka Anda mungkin 
+
+276
+00:11:38,860 --> 00:11:41,080
+ menyediakan semacam nama untuk panggilan sistem. 
+
+277
+00:11:41,080 --> 00:11:43,340
+ Dan di dalam kernel, ini mendapat 
+
+278
+00:11:43,340 --> 00:11:45,570
+ dipetakan ke semacam objek. 
+
+279
+00:11:45,570 --> 00:11:48,580
+ Dan objek itu agaknya memiliki semacam kontrol akses 
+
+280
+00:11:48,580 --> 00:11:52,110
+ daftar di atasnya, seperti izin pada file, dan sebagainya. 
+
+281
+00:11:52,110 --> 00:11:53,930
+ Jadi ada beberapa izin yang Anda miliki 
+
+282
+00:11:53,930 --> 00:11:56,460
+ bisa dapatkan dari objek. 
+
+283
+00:11:56,460 --> 00:11:58,770
+ Dan itu harus memutuskan apakah suatu operasi 
+
+284
+00:11:58,770 --> 00:12:00,480
+ akan diizinkan atas nama ini 
+
+285
+00:12:00,480 --> 00:12:02,180
+ dari aplikasi yang disediakan. 
+
+286
+00:12:02,180 --> 00:12:04,400
+ Ini adalah semacam apa yang bisa dilihat oleh aplikasi. 
+
+287
+00:12:04,400 --> 00:12:06,850
+ Di dalam kernel, ada juga 
+
+288
+00:12:06,850 --> 00:12:09,780
+ ID pengguna saat ini dari proses yang membuat panggilan. 
+
+289
+00:12:09,780 --> 00:12:12,600
+ Jadi ini adalah UID prox saat ini. 
+
+290
+00:12:12,600 --> 00:12:15,140
+
+
+291
+00:12:15,140 --> 00:12:18,250
+ Dan hal ini masuk ke dalam keputusan 
+
+292
+00:12:18,250 --> 00:12:22,710
+ apakah mengizinkan operasi tertentu atau tidak. 
+
+293
+00:12:22,710 --> 00:12:24,770
+ Jadi ID pengguna proses saat ini 
+
+294
+00:12:24,770 --> 00:12:27,210
+ itu hak istimewa ambient ini. 
+
+295
+00:12:27,210 --> 00:12:29,240
+ Apapun operasi yang akan Anda coba lakukan, 
+
+296
+00:12:29,240 --> 00:12:31,540
+ kernel sebenarnya akan mencoba, dalam beberapa hal, 
+
+297
+00:12:31,540 --> 00:12:35,815
+ sekeras mungkin untuk mengizinkannya dengan menggunakan UID Anda saat ini, 
+
+298
+00:12:35,815 --> 00:12:39,410
+ dan GID Anda saat ini dan apa pun hak istimewa ekstra lainnya 
+
+299
+00:12:39,410 --> 00:12:40,500
+ Anda mungkin. 
+
+300
+00:12:40,500 --> 00:12:43,120
+ Dan selama ada beberapa hak istimewa yang memungkinkan Anda 
+
+301
+00:12:43,120 --> 00:12:45,690
+ untuk melakukannya, itu akan membiarkan Anda melakukannya. 
+
+302
+00:12:45,690 --> 00:12:47,065
+ Yang mungkin bukan yang terbaik 
+
+303
+00:12:47,065 --> 00:12:51,080
+ untuk dilakukan jika Anda tidak sepenuhnya menyadari apa semua masalah ini. 
+
+304
+00:12:51,080 --> 00:12:53,010
+ Mungkin Anda tidak ingin menggunakan semuanya 
+
+305
+00:12:53,010 --> 00:12:57,910
+ untuk membuka file tertentu atau melakukan operasi lainnya. 
+
+306
+00:12:57,910 --> 00:13:01,867
+ Apakah ini masuk akal, kira-kira apa hak istimewa ambien itu? 
+
+307
+00:13:01,867 --> 00:13:03,325
+ Dalam kasus sistem operasi, 
+
+308
+00:13:03,325 --> 00:13:05,910
+ itu pada dasarnya berakhir dengan kenyataan bahwa suatu proses 
+
+309
+00:13:05,910 --> 00:13:07,680
+ semacam ID pengguna. 
+
+310
+00:13:07,680 --> 00:13:11,570
+ Apakah ada contoh non-OS tentang hak istimewa ambien 
+
+311
+00:13:11,570 --> 00:13:12,710
+ kalian bisa memikirkan? 
+
+312
+00:13:12,710 --> 00:13:15,280
+ Seperti ketika Anda melakukan operasi, sesuatu 
+
+313
+00:13:15,280 --> 00:13:17,525
+ tentang identitas si penelepon, istilah 
+
+314
+00:13:17,525 --> 00:13:18,900
+ apakah mereka akan berhasil atau tidak. 
+
+315
+00:13:18,900 --> 00:13:21,640
+
+
+316
+00:13:21,640 --> 00:13:23,765
+ Salah satu contohnya mungkin adalah firewall juga. 
+
+317
+00:13:23,765 --> 00:13:25,610
+ Jadi ini hanya contoh OS. 
+
+318
+00:13:25,610 --> 00:13:29,940
+ Dan dalam privilege, yang lain adalah firewall di jaringan. 
+
+319
+00:13:29,940 --> 00:13:32,570
+ Karena setiap operasi yang Anda lakukan dari mesin 
+
+320
+00:13:32,570 --> 00:13:35,890
+ di dalam firewall akan diizinkan karena, 
+
+321
+00:13:35,890 --> 00:13:37,410
+ baik, Anda hanya memiliki alamat IP itu, 
+
+322
+00:13:37,410 --> 00:13:39,930
+ atau Anda berada di sisi jaringan itu. 
+
+323
+00:13:39,930 --> 00:13:43,870
+ Dan jika Anda berada di luar, operasi yang sama akan dianulir. 
+
+324
+00:13:43,870 --> 00:13:47,330
+ Jadi itu juga masalah matahari. 
+
+325
+00:13:47,330 --> 00:13:50,850
+ Katakanlah Anda mengunjungi beberapa situs web, dan situs web menyertakan tautan 
+
+326
+00:13:50,850 --> 00:13:53,794
+ ke beberapa server yang berbeda, yah, mungkin Anda 
+
+327
+00:13:53,794 --> 00:13:55,710
+ tidak ingin menggunakan hak istimewa yang Anda miliki 
+
+328
+00:13:55,710 --> 00:13:58,500
+ atau bagian dalam jaringan Anda untuk mengakses tautan itu. 
+
+329
+00:13:58,500 --> 00:14:00,500
+ Karena mungkin itu akan mengakses printer internal Anda 
+
+330
+00:14:00,500 --> 00:14:02,470
+ dan memanfaatkannya dalam beberapa cara. 
+
+331
+00:14:02,470 --> 00:14:05,021
+ Dan sungguh, orang yang memberi Anda tautan 
+
+332
+00:14:05,021 --> 00:14:06,396
+ seharusnya tidak bisa dijangkau 
+
+333
+00:14:06,396 --> 00:14:08,397
+ printer di tempat pertama, karena mereka 
+
+334
+00:14:08,397 --> 00:14:09,230
+ berada di luar. 
+
+335
+00:14:09,230 --> 00:14:14,190
+ Atau firewall yang browser Anda, mungkin dengan mengunjungi tautan up, 
+
+336
+00:14:14,190 --> 00:14:15,885
+ akan ditipu untuk melakukan ini. 
+
+337
+00:14:15,885 --> 00:14:19,510
+ Ini semacam persamaan moral yang membingungkan ini 
+
+338
+00:14:19,510 --> 00:14:21,010
+ masalah pada model jaringan. 
+
+339
+00:14:21,010 --> 00:14:22,010
+ Ya? 
+
+340
+00:14:22,010 --> 00:14:25,344
+ AUDIENCE: Izin [INAUDIBLE] juga terpengaruh langsung. 
+
+341
+00:14:25,344 --> 00:14:26,010
+ PROFESOR: Ya. 
+
+342
+00:14:26,010 --> 00:14:28,070
+ AUDIENCE: Karena itu pada dasarnya DAC, berpotensi, 
+
+343
+00:14:28,070 --> 00:14:28,830
+ di Capsicum. 
+
+344
+00:14:28,830 --> 00:14:29,280
+ PROFESOR: Ya. 
+
+345
+00:14:29,280 --> 00:14:31,250
+ Jadi ini cukup banyak apa yang orang-orang Capsicum 
+
+346
+00:14:31,250 --> 00:14:33,550
+ anggap sebagai kontrol akses discretionary. 
+
+347
+00:14:33,550 --> 00:14:35,800
+ Dan fakta bahwa itu diskresi, baik, 
+
+348
+00:14:35,800 --> 00:14:38,697
+ ini tidak cukup apa kontrol akses diskresioner 
+
+349
+00:14:38,697 --> 00:14:39,470
+ cara. 
+
+350
+00:14:39,470 --> 00:14:41,790
+ Tapi apa arti kontrol akses diskresioner 
+
+351
+00:14:41,790 --> 00:14:45,350
+ adalah bahwa pengguna, atau pemilik suatu objek, 
+
+352
+00:14:45,350 --> 00:14:48,609
+ dapat memutuskan kebijakan keamanan apa yang akan terlihat seperti objek. 
+
+353
+00:14:48,609 --> 00:14:51,025
+ Yang tampaknya sangat alami dalam pengaturan Unix. itu file saya, 
+
+354
+00:14:51,025 --> 00:14:51,970
+ Saya bisa memutuskan apa yang saya inginkan. 
+
+355
+00:14:51,970 --> 00:14:54,386
+ Saya bisa memberikannya kepada Anda, atau saya bisa menjaga mereka pribadi, hebat. 
+
+356
+00:14:54,386 --> 00:14:55,960
+
+
+357
+00:14:55,960 --> 00:14:58,700
+ Jadi hampir semua sistem DAC memang terlihat 
+
+358
+00:14:58,700 --> 00:15:01,300
+ seperti ini, karena mereka ingin memiliki semacam izin 
+
+359
+00:15:01,300 --> 00:15:04,450
+ yang dapat dimodifikasi oleh pengguna untuk mengontrol keamanan 
+
+360
+00:15:04,450 --> 00:15:07,800
+ kebijakan untuk file mereka. 
+
+361
+00:15:07,800 --> 00:15:11,910
+ Sisi lain adalah kontrol akses wajib. 
+
+362
+00:15:11,910 --> 00:15:15,257
+ Kami akan membicarakannya sebentar, tetapi pada tingkat tertentu, 
+
+363
+00:15:15,257 --> 00:15:17,340
+ mereka memiliki pandangan yang sangat berbeda secara filosofis ini 
+
+364
+00:15:17,340 --> 00:15:17,881
+ di dunia. 
+
+365
+00:15:17,881 --> 00:15:20,000
+ Mereka berpikir, Anda adalah pengguna. 
+
+366
+00:15:20,000 --> 00:15:22,240
+ Tetapi orang lain akan mengatur kebijakan keamanan 
+
+367
+00:15:22,240 --> 00:15:24,460
+ untuk bagaimana Anda menggunakan komputer ini. 
+
+368
+00:15:24,460 --> 00:15:29,000
+ Dan semacam ini keluar dari militer pada tahun 70-an atau 80-an, 
+
+369
+00:15:29,000 --> 00:15:32,946
+ ketika mereka benar-benar ingin mengklasifikasikan sistem komputer 
+
+370
+00:15:32,946 --> 00:15:34,654
+ di mana, Anda sedang mengerjakan beberapa hal 
+
+371
+00:15:34,654 --> 00:15:35,613
+ dan itu ditandai rahasia. 
+
+372
+00:15:35,613 --> 00:15:37,737
+ Saya sedang mengerjakan beberapa hal yang ditandai dengan rahasia. 
+
+373
+00:15:37,737 --> 00:15:39,113
+ Jadi barang-barangku tidak bisa pergi kepadamu. 
+
+374
+00:15:39,113 --> 00:15:41,112
+ Bukan terserah saya apakah akan mengatur izin 
+
+375
+00:15:41,112 --> 00:15:42,000
+ pada file, dan sebagainya. 
+
+376
+00:15:42,000 --> 00:15:44,830
+ Itu tidak diizinkan oleh seorang pria yang bertanggung jawab. 
+
+377
+00:15:44,830 --> 00:15:46,630
+ Jadi kontrol akses wajib benar-benar 
+
+378
+00:15:46,630 --> 00:15:49,640
+ mencoba untuk menegakkan berbagai jenis kebijakan ini 
+
+379
+00:15:49,640 --> 00:15:52,500
+ di tempat pertama, di mana ada 
+
+380
+00:15:52,500 --> 00:15:54,610
+ pengguna dan pengembang aplikasi. 
+
+381
+00:15:54,610 --> 00:15:56,910
+ Dan kemudian ada beberapa pria yang terpisah dari pengguna 
+
+382
+00:15:56,910 --> 00:15:59,472
+ dan pengembang yang menetapkan kebijakan. 
+
+383
+00:15:59,472 --> 00:16:02,492
+ Dan, karena Anda bisa menebak, itu tidak selalu berhasil. 
+
+384
+00:16:02,492 --> 00:16:03,950
+ Kita akan membicarakannya sebentar lagi. 
+
+385
+00:16:03,950 --> 00:16:06,001
+ Tapi itulah yang discretionary versus mandatory 
+
+386
+00:16:06,001 --> 00:16:10,110
+ berarti pada kontrol ini. 
+
+387
+00:16:10,110 --> 00:16:11,310
+ Baiklah. 
+
+388
+00:16:11,310 --> 00:16:14,480
+ Jadi ada banyak contoh lain yang bisa Anda bayangkan di mana 
+
+389
+00:16:14,480 --> 00:16:16,040
+ kami memiliki otoritas ambient. 
+
+390
+00:16:16,040 --> 00:16:20,910
+ Dan itu tidak buruk, hukum tetapi itu hanya sesuatu 
+
+391
+00:16:20,910 --> 00:16:22,637
+ Anda harus sangat berhati-hati. 
+
+392
+00:16:22,637 --> 00:16:24,470
+ Jika Anda memiliki sistem dengan otoritas ambien, 
+
+393
+00:16:24,470 --> 00:16:27,020
+ Anda mungkin harus sangat berhati-hati 
+
+394
+00:16:27,020 --> 00:16:29,595
+ jika Anda melakukan operasi istimewa. 
+
+395
+00:16:29,595 --> 00:16:31,220
+ Anda harus memastikan bahwa Anda benar-benar 
+
+396
+00:16:31,220 --> 00:16:35,980
+ menggunakan otoritas yang benar dan tidak secara tidak sengaja 
+
+397
+00:16:35,980 --> 00:16:39,146
+ Ditipu sangat banyak seperti kompiler Fortran ini 20 tahun yang lalu. 
+
+398
+00:16:39,146 --> 00:16:41,580
+ 25 sekarang. 
+
+399
+00:16:41,580 --> 00:16:42,450
+ Baiklah. 
+
+400
+00:16:42,450 --> 00:16:45,470
+ Jadi ini adalah salah satu interpretasi dari apa yang salah. 
+
+401
+00:16:45,470 --> 00:16:47,487
+ Dan itu bukan satu-satunya cara 
+
+402
+00:16:47,487 --> 00:16:49,070
+ untuk memikirkan apa yang salah, kan? 
+
+403
+00:16:49,070 --> 00:16:51,192
+ Kemungkinan lainnya adalah itu, yah, 
+
+404
+00:16:51,192 --> 00:16:53,400
+ tidak akan lebih baik jika itu mudah untuk sebuah aplikasi 
+
+405
+00:16:53,400 --> 00:16:56,440
+ untuk memberi tahu apakah harus mengakses file atas nama 
+
+406
+00:16:56,440 --> 00:16:57,445
+ dari beberapa prinsip? 
+
+407
+00:16:57,445 --> 00:17:00,700
+ Jadi mungkin masalah lain adalah bahwa kontrol akses 
+
+408
+00:17:00,700 --> 00:17:02,024
+ cek rumit. 
+
+409
+00:17:02,024 --> 00:17:07,381
+
+
+410
+00:17:07,381 --> 00:17:10,294
+ Jadi dalam beberapa hal, ketika kompiler Fortran berjalan, 
+
+411
+00:17:10,294 --> 00:17:13,900
+ dan itu membuka file atas nama pengguna, 
+
+412
+00:17:13,900 --> 00:17:16,660
+ pada dasarnya perlu mereplikasi logika yang sama persis 
+
+413
+00:17:16,660 --> 00:17:20,240
+ kita melihat ditarik di sini, kecuali bahwa kebutuhan kompiler Fortran 
+
+414
+00:17:20,240 --> 00:17:22,490
+ untuk plug-in sesuatu yang lain di sini. 
+
+415
+00:17:22,490 --> 00:17:25,770
+ Alih-alih menggunakan hak istimewanya saat ini, dan semuanya, 
+
+416
+00:17:25,770 --> 00:17:27,470
+ seharusnya hanya mereplikasi pemeriksaan ini 
+
+417
+00:17:27,470 --> 00:17:32,150
+ dan mencoba membuatnya dengan seperangkat hak istimewa yang berbeda. 
+
+418
+00:17:32,150 --> 00:17:34,110
+ Jadi di Unix, ini ternyata adil 
+
+419
+00:17:34,110 --> 00:17:36,920
+ sulit dilakukan, karena ada banyak tempat 
+
+420
+00:17:36,920 --> 00:17:38,500
+ di mana pemeriksaan keamanan ini terjadi. 
+
+421
+00:17:38,500 --> 00:17:41,020
+ jika Anda memiliki tautan simbolis, maka tautan simbolis 
+
+422
+00:17:41,020 --> 00:17:43,660
+ diangkat, dan nama jalan itu juga 
+
+423
+00:17:43,660 --> 00:17:47,540
+ dievaluasi dengan hak istimewa seseorang, dan sebagainya. 
+
+424
+00:17:47,540 --> 00:17:50,220
+ Tapi mungkin itu, di beberapa sistem, 
+
+425
+00:17:50,220 --> 00:17:51,940
+ Anda dapat menyederhanakan kontrol akses ini 
+
+426
+00:17:51,940 --> 00:17:55,632
+ periksa, di mana Anda bisa melakukannya sendiri di aplikasi. 
+
+427
+00:17:55,632 --> 00:17:59,320
+ Apakah itu tampak seperti rencana yang masuk akal untuk kalian? 
+
+428
+00:17:59,320 --> 00:18:01,960
+ Apakah Anda akan pergi dengan itu? 
+
+429
+00:18:01,960 --> 00:18:03,640
+ Ada bahaya mereplikasi pemeriksaan ini? 
+
+430
+00:18:03,640 --> 00:18:04,260
+ Ya? 
+
+431
+00:18:04,260 --> 00:18:06,865
+ AUDIENCE: Nah, jika Anda melakukan pemeriksaan dalam aplikasi, 
+
+432
+00:18:06,865 --> 00:18:08,594
+ Anda tidak bisa melakukan pemeriksaan. 
+
+433
+00:18:08,594 --> 00:18:09,260
+ PROFESOR: Ya. 
+
+434
+00:18:09,260 --> 00:18:10,360
+ Jadi Anda bisa dengan mudah melewatkan pemeriksaan. 
+
+435
+00:18:10,360 --> 00:18:11,360
+ Itu benar sekali. 
+
+436
+00:18:11,360 --> 00:18:13,680
+ Jadi dalam arti, apa yang dilakukan kompiler Fortran di sini, 
+
+437
+00:18:13,680 --> 00:18:15,370
+ baik, mereka bahkan tidak repot-repot mencoba melakukan pemeriksaan, 
+
+438
+00:18:15,370 --> 00:18:16,659
+ sekarang mereka mengacaukannya. 
+
+439
+00:18:16,659 --> 00:18:18,950
+ Kemungkinan lain, selain kehilangan cek, 
+
+440
+00:18:18,950 --> 00:18:21,589
+ mungkin kernel akan berubah seiring waktu, 
+
+441
+00:18:21,589 --> 00:18:23,380
+ dan itu akan memiliki pemeriksaan yang sedikit berbeda. 
+
+442
+00:18:23,380 --> 00:18:25,100
+ Ini akan memperkenalkan beberapa ukuran keamanan ekstra, 
+
+443
+00:18:25,100 --> 00:18:26,766
+ dan aplikasi akan ditinggalkan. 
+
+444
+00:18:26,766 --> 00:18:28,455
+ Dan itu akan menerapkan pemeriksaan gaya lama. 
+
+445
+00:18:28,455 --> 00:18:31,280
+ Dan mungkin bukan rencana yang bagus. 
+
+446
+00:18:31,280 --> 00:18:34,862
+ Jadi ingat, satu ide bagus dalam keamanan 
+
+447
+00:18:34,862 --> 00:18:36,590
+ adalah memiliki mekanisme ekonomi. 
+
+448
+00:18:36,590 --> 00:18:39,222
+ Jadi hanya ada sejumlah kecil tempat yang memberlakukan 
+
+449
+00:18:39,222 --> 00:18:40,180
+ kebijakan keamanan Anda. 
+
+450
+00:18:40,180 --> 00:18:41,890
+ Anda mungkin tidak ingin meniru 
+
+451
+00:18:41,890 --> 00:18:45,520
+ fungsi yang sama dalam aplikasi di kernel, 
+
+452
+00:18:45,520 --> 00:18:46,020
+ dan sebagainya. 
+
+453
+00:18:46,020 --> 00:18:48,090
+ Anda benar-benar ingin merebusnya ke satu tempat. 
+
+454
+00:18:48,090 --> 00:18:50,900
+ Itu kira-kira masuk akal? 
+
+455
+00:18:50,900 --> 00:18:52,070
+ BAIK. 
+
+456
+00:18:52,070 --> 00:18:56,980
+ Jadi apa kemampuan ini, saya kira, 
+
+457
+00:18:56,980 --> 00:19:02,220
+ Ide di mana berpikir mungkin memecahkan masalah otoritas ini? 
+
+458
+00:19:02,220 --> 00:19:05,150
+ Nah, ada beberapa definisi formal untuk hal itu. 
+
+459
+00:19:05,150 --> 00:19:08,570
+ Tapi sungguh, Anda bisa sangat dekat dengan memikirkan file Unix 
+
+460
+00:19:08,570 --> 00:19:11,270
+ deskriptor sebagai kemampuan. 
+
+461
+00:19:11,270 --> 00:19:15,210
+ Jadi saya kira alternatif untuk gambar ini, 
+
+462
+00:19:15,210 --> 00:19:18,470
+ di dunia kemampuan, adalah sebaliknya 
+
+463
+00:19:18,470 --> 00:19:20,510
+ memiliki nama suplai aplikasi, 
+
+464
+00:19:20,510 --> 00:19:22,510
+ dan Anda mencari objek, Anda mendapat izin, 
+
+465
+00:19:22,510 --> 00:19:24,180
+ Anda memutuskan apakah akan mengizinkannya berdasarkan 
+
+466
+00:19:24,180 --> 00:19:25,910
+ pada beberapa otoritas ambient, sebagai gantinya, 
+
+467
+00:19:25,910 --> 00:19:28,920
+ kemampuannya adalah gambar terlihat sangat sederhana. 
+
+468
+00:19:28,920 --> 00:19:32,230
+ Anda memiliki kemampuan, dan jika Anda memiliki kemampuan, 
+
+469
+00:19:32,230 --> 00:19:35,270
+ itu menunjuk ke suatu objek. 
+
+470
+00:19:35,270 --> 00:19:37,482
+ Dan mungkin kemampuannya memiliki sejumlah kecil 
+
+471
+00:19:37,482 --> 00:19:40,450
+ pembatasan apa yang dapat Anda lakukan dengan suatu objek. 
+
+472
+00:19:40,450 --> 00:19:43,340
+ Tetapi pada dasarnya, jika Anda memiliki kemampuan untuk suatu objek, 
+
+473
+00:19:43,340 --> 00:19:44,830
+ Anda dapat mengakses objek. 
+
+474
+00:19:44,830 --> 00:19:46,420
+ Sebenarnya sangat sederhana. 
+
+475
+00:19:46,420 --> 00:19:49,280
+ Jadi tidak ada otoritas ambient itu 
+
+476
+00:19:49,280 --> 00:19:51,470
+ memutuskan apakah suatu operasi pada kemampuan 
+
+477
+00:19:51,470 --> 00:19:53,310
+ akan diizinkan. 
+
+478
+00:19:53,310 --> 00:19:55,290
+ Satu-satunya hal yang mungkin dimiliki oleh kemampuan itu 
+
+479
+00:19:55,290 --> 00:19:57,623
+ beberapa bit tambahan, atau massa ini yang mereka gambarkan 
+
+480
+00:19:57,623 --> 00:19:59,629
+ di koran, yang mengatakan, yah, kamu 
+
+481
+00:19:59,629 --> 00:20:02,240
+ memiliki kemampuan untuk file ini, karena dibatasi 
+
+482
+00:20:02,240 --> 00:20:03,470
+ untuk membaca operasi saja. 
+
+483
+00:20:03,470 --> 00:20:07,440
+ Atau dibatasi untuk menulis atau menambahkan operasi saja. 
+
+484
+00:20:07,440 --> 00:20:10,885
+ Dan kemudian keputusan keamanan Anda tiba-tiba sangat mudah. 
+
+485
+00:20:10,885 --> 00:20:12,260
+ Karena jika Anda memiliki kemampuan, 
+
+486
+00:20:12,260 --> 00:20:13,410
+ kamu bisa melakukan sesuatu. 
+
+487
+00:20:13,410 --> 00:20:15,248
+ Jika tidak, Anda tidak bisa. 
+
+488
+00:20:15,248 --> 00:20:17,940
+ Masuk akal? 
+
+489
+00:20:17,940 --> 00:20:21,430
+ Jadi saya kira satu sifat penting dari kemampuan 
+
+490
+00:20:21,430 --> 00:20:25,000
+ adalah bahwa mereka seharusnya tidak dapat dikalahkan, 
+
+491
+00:20:25,000 --> 00:20:27,396
+ seperti yang dibicarakan makalah. 
+
+492
+00:20:27,396 --> 00:20:29,020
+ Jadi apa artinya menjadi tidak dapat diraih, 
+
+493
+00:20:29,020 --> 00:20:31,900
+ atau mengapa kita menginginkan ini di dunia kemampuan ini? 
+
+494
+00:20:31,900 --> 00:20:34,980
+
+
+495
+00:20:34,980 --> 00:20:37,700
+ Yah, saya kira ini sebenarnya hampir terlalu jelas di sini. 
+
+496
+00:20:37,700 --> 00:20:39,324
+ Nah, jika Anda bisa membuat kemampuan apa pun 
+
+497
+00:20:39,324 --> 00:20:41,275
+ Anda ingin - saya bisa membuat kemampuan untuk apa pun 
+
+498
+00:20:41,275 --> 00:20:42,849
+ file orang-orangmu dan pergi mengaksesnya. 
+
+499
+00:20:42,849 --> 00:20:44,640
+ Jadi jika saya bisa membuatnya, dan saya akan mengaksesnya, 
+
+500
+00:20:44,640 --> 00:20:47,760
+ dan tidak ada yang lain dalam desain keamanan, yang menghentikan saya 
+
+501
+00:20:47,760 --> 00:20:54,030
+ dari mengakses objek begitu saya dapat memproduksi suatu kemampuan. 
+
+502
+00:20:54,030 --> 00:20:55,870
+ Jadi penting sekali kemampuan ini 
+
+503
+00:20:55,870 --> 00:20:58,765
+ tidak dapat dibuat dari udara tipis oleh aplikasi 
+
+504
+00:20:58,765 --> 00:21:01,340
+ atau dengan apa pun yang sedang berjalan. 
+
+505
+00:21:01,340 --> 00:21:05,170
+ Bagaimana ini bisa dipaksakan, jika kita memikirkan deskriptor file 
+
+506
+00:21:05,170 --> 00:21:07,249
+ sebagai kemampuan? 
+
+507
+00:21:07,249 --> 00:21:09,040
+ Banyak dari kalian yang benar-benar mengirimkan ini 
+
+508
+00:21:09,040 --> 00:21:11,300
+ sebagai pertanyaan besar tentang Capsicum. 
+
+509
+00:21:11,300 --> 00:21:13,080
+ Apa yang kamu pikirkan? 
+
+510
+00:21:13,080 --> 00:21:17,490
+ Apa yang mencegah aplikasi dari mensintesis suatu kemampuan 
+
+511
+00:21:17,490 --> 00:21:20,490
+ di dunia deskripsi file ini? 
+
+512
+00:21:20,490 --> 00:21:24,310
+ Bisakah Anda mensintesis suatu kemampuan? 
+
+513
+00:21:24,310 --> 00:21:24,950
+ Ya? 
+
+514
+00:21:24,950 --> 00:21:26,949
+ AUDIENCE: Yah, itu mungkin seperti struktur 
+
+515
+00:21:26,949 --> 00:21:29,364
+ dan sebuah konstruksi yang mengatakan bahwa mereka 
+
+516
+00:21:29,364 --> 00:21:31,504
+ memiliki kemampuan untuk deskriptor file tertentu. 
+
+517
+00:21:31,504 --> 00:21:32,170
+ PROFESOR: Ya. 
+
+518
+00:21:32,170 --> 00:21:35,510
+ Jadi sebenarnya cukup mudah untuk dilihat 
+
+519
+00:21:35,510 --> 00:21:37,500
+ apa yang terjadi setelah Anda melihat apa sebenarnya 
+
+520
+00:21:37,500 --> 00:21:38,666
+ adalah file deskriptor, kan? 
+
+521
+00:21:38,666 --> 00:21:40,230
+ Jadi deskriptor file pada dasarnya 
+
+522
+00:21:40,230 --> 00:21:42,040
+ hanya semacam integer. 
+
+523
+00:21:42,040 --> 00:21:44,756
+ Dan integer-- ini seperti di Unix, Anda 
+
+524
+00:21:44,756 --> 00:21:46,880
+ memiliki file descriptor 0, yang mengacu pada masukan Anda, 
+
+525
+00:21:46,880 --> 00:21:48,796
+ file descriptor 1 yang mengacu pada output Anda. 
+
+526
+00:21:48,796 --> 00:21:49,470
+ Rockwell 
+
+527
+00:21:49,470 --> 00:21:52,580
+ Tapi sungguh, ini hanya bilangan bulat di ruang pengguna. 
+
+528
+00:21:52,580 --> 00:21:56,120
+ Dan inilah yang mungkin dilakukan oleh aplikasi, 
+
+529
+00:21:56,120 --> 00:21:58,380
+ dan dapat memilih bilangan bulat apa pun yang diinginkannya. 
+
+530
+00:21:58,380 --> 00:22:00,190
+ Tetapi setiap kali Anda mencoba melakukan sesuatu 
+
+531
+00:22:00,190 --> 00:22:02,570
+ ke deskriptor file, yang merupakan salah satu bilangan bulat ini, 
+
+532
+00:22:02,570 --> 00:22:05,640
+ kernel akan selalu menafsirkan integer 
+
+533
+00:22:05,640 --> 00:22:08,680
+ menurut pendeskripsi file proses Anda saat ini 
+
+534
+00:22:08,680 --> 00:22:09,490
+ meja. 
+
+535
+00:22:09,490 --> 00:22:12,430
+ Jadi untuk setiap PID-- katakanlah, yah, ini PID, 
+
+536
+00:22:12,430 --> 00:22:13,395
+ Saya tidak tahu, 57. 
+
+537
+00:22:13,395 --> 00:22:14,830
+ Jadi saya sedang menjalankan proses. 
+
+538
+00:22:14,830 --> 00:22:18,750
+ Ini memiliki tabel file terbuka, dan setiap bilangan bulat 
+
+539
+00:22:18,750 --> 00:22:20,560
+ dari pasokan dari ruang pengguna, merujuk 
+
+540
+00:22:20,560 --> 00:22:23,185
+ ke beberapa entri dalam tabel ini. 
+
+541
+00:22:23,185 --> 00:22:26,650
+ Dan tentu saja, kernel harus memeriksa bilangan bulat itu 
+
+542
+00:22:26,650 --> 00:22:28,000
+ dalam batas di kandang ini. 
+
+543
+00:22:28,000 --> 00:22:29,630
+ Itu tidak negatif. 
+
+544
+00:22:29,630 --> 00:22:31,890
+ Tidak melewati ujung meja. 
+
+545
+00:22:31,890 --> 00:22:34,050
+ Jika tidak, itu akan memiliki buffer overflow biasa 
+
+546
+00:22:34,050 --> 00:22:35,630
+ masalah, dan sebagainya. 
+
+547
+00:22:35,630 --> 00:22:38,517
+ Tetapi jika Anda dengan hati-hati memeriksa apakah bilangan bulat itu 
+
+548
+00:22:38,517 --> 00:22:41,380
+ dalam batasan dalam implementasi kernel, 
+
+549
+00:22:41,380 --> 00:22:44,670
+ maka satu-satunya hal yang mungkin bahwa aplikasi 
+
+550
+00:22:44,670 --> 00:22:46,550
+ dapat merujuk oleh file deskriptor 
+
+551
+00:22:46,550 --> 00:22:48,910
+ adalah entri dalam tabel ini. 
+
+552
+00:22:48,910 --> 00:22:51,060
+ Jadi agaknya, kernel akan entah bagaimana 
+
+553
+00:22:51,060 --> 00:22:54,640
+ pastikan bahwa Anda secara sah menjaga kemampuan tertentu. 
+
+554
+00:22:54,640 --> 00:22:58,810
+ Jadi ketika Anda, misalnya, buka file di luar kemampuan ini 
+
+555
+00:22:58,810 --> 00:23:03,240
+ model di Unix, baik, kernel, setelah panggilan terbuka berhasil, 
+
+556
+00:23:03,240 --> 00:23:07,420
+ itu akan mengubah tabel deskriptor file 
+
+557
+00:23:07,420 --> 00:23:10,090
+ entri untuk menunjuk ke file terbuka tertentu, 
+
+558
+00:23:10,090 --> 00:23:11,126
+ seperti mungkin buka / etc / pwd. 
+
+559
+00:23:11,126 --> 00:23:14,350
+
+
+560
+00:23:14,350 --> 00:23:17,380
+ Dan sekarang, entri di slot ini di atas meja 
+
+561
+00:23:17,380 --> 00:23:18,580
+ menunjuk ke file yang terbuka. 
+
+562
+00:23:18,580 --> 00:23:20,080
+ Beberapa dari mereka mungkin sebenarnya nol. 
+
+563
+00:23:20,080 --> 00:23:23,260
+ Mungkin Anda tidak memiliki file terbuka dengan indeks tertentu 
+
+564
+00:23:23,260 --> 00:23:24,660
+ di meja ini. 
+
+565
+00:23:24,660 --> 00:23:29,000
+ Dan sebagai hasilnya, apa artinya menempa kemampuan? 
+
+566
+00:23:29,000 --> 00:23:30,700
+ Satu-satunya hal yang dapat Anda lakukan di ruang pengguna 
+
+567
+00:23:30,700 --> 00:23:32,460
+ adalah membuat integer. 
+
+568
+00:23:32,460 --> 00:23:35,230
+ Dan satu-satunya bilangan bulat yang masuk akal untuk dibuat 
+
+569
+00:23:35,230 --> 00:23:38,560
+ akan menjadi entri yang mengarah ke entri non-null dalam tabel ini. 
+
+570
+00:23:38,560 --> 00:23:42,910
+ Dan orang-orang itu adalah kemampuan yang Anda miliki. 
+
+571
+00:23:42,910 --> 00:23:45,620
+ Jadi apakah itu masuk akal mengapa itu sulit, dalam file ini 
+
+572
+00:23:45,620 --> 00:23:47,750
+ dunia deskriptor, untuk benar-benar menempa kemampuan 
+
+573
+00:23:47,750 --> 00:23:48,542
+ di tempat pertama? 
+
+574
+00:23:48,542 --> 00:23:49,708
+ Jadi itu keren, kan? 
+
+575
+00:23:49,708 --> 00:23:52,130
+ Seperti satu-satunya file yang Anda buka persis 
+
+576
+00:23:52,130 --> 00:23:53,420
+ hal-hal yang dapat Anda operasikan. 
+
+577
+00:23:53,420 --> 00:23:56,740
+ Dan tidak ada hal lain yang dapat Anda lakukan secara potensial 
+
+578
+00:23:56,740 --> 00:23:59,996
+ sentuhan dan efek. 
+
+579
+00:23:59,996 --> 00:24:00,820
+ Masuk akal? 
+
+580
+00:24:00,820 --> 00:24:01,403
+ Ada pertanyaan? 
+
+581
+00:24:01,403 --> 00:24:05,630
+
+
+582
+00:24:05,630 --> 00:24:06,610
+ Baiklah. 
+
+583
+00:24:06,610 --> 00:24:07,110
+ BAIK. 
+
+584
+00:24:07,110 --> 00:24:09,990
+ Jadi saya kira, bagaimana kemampuannya 
+
+585
+00:24:09,990 --> 00:24:12,540
+ membantu memecahkan masalah otoritas lingkungan 
+
+586
+00:24:12,540 --> 00:24:14,820
+ bahwa Norman Hardy bersemangat dengan Fortran-nya 
+
+587
+00:24:14,820 --> 00:24:16,020
+ penyusun? 
+
+588
+00:24:16,020 --> 00:24:19,790
+ Jadi apa yang akan menjadi deskriptor file setara moral 
+
+589
+00:24:19,790 --> 00:24:22,600
+ solusi untuk hal sysx / benteng ini? 
+
+590
+00:24:22,600 --> 00:24:25,682
+
+
+591
+00:24:25,682 --> 00:24:27,140
+ Apakah mereka benar-benar memecahkan masalah? 
+
+592
+00:24:27,140 --> 00:24:28,016
+ Ya? 
+
+593
+00:24:28,016 --> 00:24:31,590
+ AUDIENCE: Yah, mereka hanya menggunakan kemampuan yang sesuai 
+
+594
+00:24:31,590 --> 00:24:33,160
+ kapan pun dibutuhkan. 
+
+595
+00:24:33,160 --> 00:24:36,660
+ Jadi ketika Anda harus mengakses file output, dalam statistik, 
+
+596
+00:24:36,660 --> 00:24:39,378
+ Anda menggunakan file [INAUDIBLE] berkemampuan. 
+
+597
+00:24:39,378 --> 00:24:42,320
+ Tetapi ketika Anda mengakses file yang akan Anda baca, 
+
+598
+00:24:42,320 --> 00:24:44,714
+ Anda tidak menggunakan kemampuan itu. 
+
+599
+00:24:44,714 --> 00:24:45,380
+ PROFESOR: Ya. 
+
+600
+00:24:45,380 --> 00:24:48,370
+ Jadi saya kira apa yang menjadi intinya adalah entah bagaimana caranya 
+
+601
+00:24:48,370 --> 00:24:51,560
+ kompiler Fortran seharusnya sudah memiliki file deskriptor 
+
+602
+00:24:51,560 --> 00:24:54,280
+ terbuka untuk itu / sysx / file stat. 
+
+603
+00:24:54,280 --> 00:24:57,660
+ Jadi mereka tidak benar-benar menggambarkan, di kertas pendek mereka, 
+
+604
+00:24:57,660 --> 00:24:59,950
+ tentang bagaimana kami tidak mendapatkan kemampuan itu. 
+
+605
+00:24:59,950 --> 00:25:02,340
+ Tetapi pada dasarnya berarti Anda tidak harus benar-benar 
+
+606
+00:25:02,340 --> 00:25:04,250
+ berikan nama file di sekitar. 
+
+607
+00:25:04,250 --> 00:25:05,925
+ Anda tidak boleh mengeset deskriptor file sebelumnya. 
+
+608
+00:25:05,925 --> 00:25:08,270
+ Jadi, Anda benar-benar dapat menghasilkan lebih banyak 
+
+609
+00:25:08,270 --> 00:25:12,540
+ desain elegan untuk pengganti Unix kami di Fortran 
+
+610
+00:25:12,540 --> 00:25:14,290
+ compiler menggunakan kemampuan. 
+
+611
+00:25:14,290 --> 00:25:19,530
+ Jadi mungkin rencananya kita hanya harus memiliki kompiler Fortran 
+
+612
+00:25:19,530 --> 00:25:22,310
+ ujung depan yang tidak memiliki hak istimewa tambahan, 
+
+613
+00:25:22,310 --> 00:25:25,750
+ dan dibutuhkan semua argumen ini yang Anda berikan, dan konversi 
+
+614
+00:25:25,750 --> 00:25:30,340
+ semua nama path yang Anda berikan ke dalam deskriptor file terbuka. 
+
+615
+00:25:30,340 --> 00:25:33,540
+ Jadi desain alternatif yang saya pikirkan di sini 
+
+616
+00:25:33,540 --> 00:25:36,160
+ adalah mungkin kita memiliki program 
+
+617
+00:25:36,160 --> 00:25:38,200
+ fort1, yang merupakan ujung depan. 
+
+618
+00:25:38,200 --> 00:25:40,345
+ Dan itu akan mengambil semacam file, foo.f, 
+
+619
+00:25:40,345 --> 00:25:45,390
+ dan semua argumen lainnya, -o, terserah. 
+
+620
+00:25:45,390 --> 00:25:48,470
+ Dan itu tidak benar-benar mengimplementasikan salah satu kompilator 
+
+621
+00:25:48,470 --> 00:25:50,020
+ logika, yang lainnya. 
+
+622
+00:25:50,020 --> 00:25:52,080
+ Yang dicari hanyalah nama jalan dalam argumennya, 
+
+623
+00:25:52,080 --> 00:25:54,870
+ dan itu akan membukanya dan membangun 
+
+624
+00:25:54,870 --> 00:25:55,991
+ pendeskripsi file untuk mereka. 
+
+625
+00:25:55,991 --> 00:25:56,471
+
+
+626
+00:25:56,471 --> 00:25:58,054
+ Dan yang keren adalah itu, karena itu 
+
+627
+00:25:58,054 --> 00:26:01,570
+ tidak memiliki hak istimewa tambahan, jika pengguna tidak dapat memiliki akses 
+
+628
+00:26:01,570 --> 00:26:03,520
+ ke beberapa nama file, maka itu akan gagal. 
+
+629
+00:26:03,520 --> 00:26:04,720
+ Itu bagus. 
+
+630
+00:26:04,720 --> 00:26:07,280
+ Dan kemudian setelah ujung depan ini telah membuka semua file ini 
+
+631
+00:26:07,280 --> 00:26:10,990
+ deskriptor, dapat mengeksekusi komponen ekstra istimewa, 
+
+632
+00:26:10,990 --> 00:26:14,500
+ seperti kompilator Fortrole setuid yang sebenarnya. 
+
+633
+00:26:14,500 --> 00:26:16,520
+ Jadi mungkin itu akan menjalankan benteng. 
+
+634
+00:26:16,520 --> 00:26:19,075
+ Orang ini mungkin setuid ke beberapa ID pengguna khusus itu 
+
+635
+00:26:19,075 --> 00:26:21,230
+ memiliki akses ke file statistik. 
+
+636
+00:26:21,230 --> 00:26:23,750
+ Tapi itu tidak benar-benar menerima nama jalan sebagai masukan. 
+
+637
+00:26:23,750 --> 00:26:27,250
+ Semua yang akan dilakukan adalah menerima deskriptor file. 
+
+638
+00:26:27,250 --> 00:26:29,550
+ Dan, dalam hal ini, deskriptor file 
+
+639
+00:26:29,550 --> 00:26:33,980
+ sudah membuktikan bahwa pemanggil memiliki akses untuk membukanya. 
+
+640
+00:26:33,980 --> 00:26:35,845
+ Apakah properti itu masuk akal? 
+
+641
+00:26:35,845 --> 00:26:37,800
+ Jadi tentu saja tidak menyelesaikan setiap masalah. 
+
+642
+00:26:37,800 --> 00:26:40,570
+ Saya hanya membuat sketsa bagaimana kemampuan bisa membantu. 
+
+643
+00:26:40,570 --> 00:26:43,565
+ Tapi itu kira-kira rencananya, adalah bahwa Anda harus menunjukkan 
+
+644
+00:26:43,565 --> 00:26:45,760
+ fakta bahwa Anda memiliki akses ke nama tertentu 
+
+645
+00:26:45,760 --> 00:26:49,190
+ dengan hanya membukanya dan memberikan kemampuan, daripada mengatakan, 
+
+646
+00:26:49,190 --> 00:26:51,140
+ mengapa Anda tidak mencoba membuka file ini 
+
+647
+00:26:51,140 --> 00:26:54,457
+ dan mungkin tidak sengaja menggunakan beberapa hak istimewa tambahan. 
+
+648
+00:26:54,457 --> 00:26:54,956
+ Iya nih. 
+
+649
+00:26:54,956 --> 00:26:56,354
+ AUDIENCE: Jadi ini menggeneralisasikan 
+
+650
+00:26:56,354 --> 00:26:59,137
+ untuk memiliki satu proses per kapabilitas? 
+
+651
+00:26:59,137 --> 00:27:00,470
+ PROFESOR: Apakah ini menyamaratakan? 
+
+652
+00:27:00,470 --> 00:27:02,330
+ Yah, tentu saja Anda dapat memiliki banyak proses yang Anda inginkan. 
+
+653
+00:27:02,330 --> 00:27:04,288
+ Anda dapat memiliki beberapa proses per kapabilitas, 
+
+654
+00:27:04,288 --> 00:27:05,324
+ tapi aku tidak yakin-- 
+
+655
+00:27:05,324 --> 00:27:06,240
+ AUDIENCE: [TIDAK JELAS]. 
+
+656
+00:27:06,240 --> 00:27:12,930
+
+
+657
+00:27:12,930 --> 00:27:16,480
+ PROFESOR: Saya masih tidak yakin apa yang Anda maksud dengan satu properti. 
+
+658
+00:27:16,480 --> 00:27:19,222
+ AUDIENCE: Jadi kami memiliki kemampuan [INAUDIBLE] yang dimiliki pengguna. 
+
+659
+00:27:19,222 --> 00:27:19,801
+
+
+660
+00:27:19,801 --> 00:27:20,800
+ PROFESOR: Benar. 
+
+661
+00:27:20,800 --> 00:27:22,633
+ AUDIENCE: Dan kemudian kami memiliki akses fort 
+
+662
+00:27:22,633 --> 00:27:24,211
+ ke file masa lalu ini. 
+
+663
+00:27:24,211 --> 00:27:25,210
+ PROFESOR: Benar. 
+
+664
+00:27:25,210 --> 00:27:25,470
+ Ya. 
+
+665
+00:27:25,470 --> 00:27:27,595
+ Jadi cara berpikirnya adalah, Anda tidak perlu 
+
+666
+00:27:27,595 --> 00:27:31,516
+ membutuhkan proses terpisah untuk setiap kemampuan. 
+
+667
+00:27:31,516 --> 00:27:35,140
+ Karena di sini, hal fort1 mungkin membuka banyak file 
+
+668
+00:27:35,140 --> 00:27:38,590
+ dan mungkin melewati banyak kemampuan ke benteng istimewa 
+
+669
+00:27:38,590 --> 00:27:40,435
+ komponen. 
+
+670
+00:27:40,435 --> 00:27:42,060
+ Masalahnya di sini - alasannya adalah ini 
+
+671
+00:27:42,060 --> 00:27:44,030
+ mungkin tampak seperti Anda menginginkan proses terpisah 
+
+672
+00:27:44,030 --> 00:27:48,427
+ untuk setiap kemampuan adalah kita 
+
+673
+00:27:48,427 --> 00:27:51,010
+ semacam berurusan dengan antarmuka aneh antara kemampuan 
+
+674
+00:27:51,010 --> 00:27:52,450
+ dan hak istimewa ambient. 
+
+675
+00:27:52,450 --> 00:27:54,780
+ Karena fort1 semacam itu memang memiliki privilese ambien. 
+
+676
+00:27:54,780 --> 00:27:56,155
+ Dan apa yang kami lakukan pada dasarnya 
+
+677
+00:27:56,155 --> 00:27:59,100
+ kami mengubah hak istimewa ambient ini menjadi kemampuan 
+
+678
+00:27:59,100 --> 00:28:00,890
+ dalam proses fort1 ini. 
+
+679
+00:28:00,890 --> 00:28:02,580
+ Jadi, jika Anda memiliki beberapa jenis berbeda 
+
+680
+00:28:02,580 --> 00:28:05,035
+ hak istimewa ambient, atau beberapa hak istimewa yang berbeda 
+
+681
+00:28:05,035 --> 00:28:07,730
+ yang ingin Anda gunakan dengan hati-hati, maka mungkin apa yang Anda inginkan 
+
+682
+00:28:07,730 --> 00:28:10,320
+ adalah proses terpisah yang memegang hak istimewa itu. 
+
+683
+00:28:10,320 --> 00:28:12,820
+ Dan kapan pun Anda ingin menggunakan serangkaian hak istimewa tertentu, 
+
+684
+00:28:12,820 --> 00:28:14,520
+ Anda akan menanyakan proses yang sesuai 
+
+685
+00:28:14,520 --> 00:28:16,800
+ untuk mohon melakukan pemisahan. 
+
+686
+00:28:16,800 --> 00:28:19,120
+ Dan jika berhasil, kembalikan kemampuan saya. 
+
+687
+00:28:19,120 --> 00:28:21,210
+ Jadi itu mungkin salah satu cara untuk memikirkan ini. 
+
+688
+00:28:21,210 --> 00:28:24,000
+
+
+689
+00:28:24,000 --> 00:28:26,336
+ Sebenarnya ada beberapa desain sistem operasi itu 
+
+690
+00:28:26,336 --> 00:28:30,770
+ sepenuhnya berbasis kemampuan, tidak ada privilese ambient 
+
+691
+00:28:30,770 --> 00:28:31,564
+ apa pun. 
+
+692
+00:28:31,564 --> 00:28:32,480
+ Dan itu agak keren. 
+
+693
+00:28:32,480 --> 00:28:35,961
+ Sayangnya, ini lebih merupakan semacam bacaan yang menarik 
+
+694
+00:28:35,961 --> 00:28:36,460
+ pengalaman. 
+
+695
+00:28:36,460 --> 00:28:37,905
+ Seperti oh, ya, kamu bisa melakukannya. 
+
+696
+00:28:37,905 --> 00:28:38,920
+ Itu keren sekali. 
+
+697
+00:28:38,920 --> 00:28:42,680
+ Tapi itu mungkin tidak terlalu praktis untuk digunakan 
+
+698
+00:28:42,680 --> 00:28:45,540
+ dalam sistem nyata, sayangnya. 
+
+699
+00:28:45,540 --> 00:28:48,300
+ Ternyata Anda benar-benar ingin tidak begitu banyak 
+
+700
+00:28:48,300 --> 00:28:51,200
+ ambient privilege tetapi mampu memberi nama objek 
+
+701
+00:28:51,200 --> 00:28:53,960
+ dan beri tahu seseorang tentang suatu objek tanpa perlu menyampaikannya 
+
+702
+00:28:53,960 --> 00:28:56,060
+ hak atas objek itu. 
+
+703
+00:28:56,060 --> 00:28:57,670
+ Jadi mungkin saya tidak tahu apa hak istimewanya 
+
+704
+00:28:57,670 --> 00:29:00,599
+ Anda mungkin memiliki lebih dari beberapa dokumen bersama, tapi saya lakukan 
+
+705
+00:29:00,599 --> 00:29:02,890
+ ingin memberi tahu Anda, hei, ada dokumen bersama. 
+
+706
+00:29:02,890 --> 00:29:04,230
+ Jika Anda bisa membacanya, bacalah. 
+
+707
+00:29:04,230 --> 00:29:05,605
+ Jika Anda menulisnya, bagus, tulislah. 
+
+708
+00:29:05,605 --> 00:29:07,830
+ Tetapi saya tidak ingin selalu menyampaikan hak apa pun. 
+
+709
+00:29:07,830 --> 00:29:10,960
+ Saya hanya ingin memberi tahu Anda, hei, ada hal ini, coba saja. 
+
+710
+00:29:10,960 --> 00:29:13,540
+ Jadi itu sedikit mengecewakan dalam dunia kemampuan 
+
+711
+00:29:13,540 --> 00:29:16,930
+ bahwa itu benar-benar memaksa Anda untuk tidak pernah bicara 
+
+712
+00:29:16,930 --> 00:29:21,050
+ tentang objek tanpa menyampaikan hak ke objek itu. 
+
+713
+00:29:21,050 --> 00:29:24,910
+ Jadi ini ide yang penting untuk diketahui, 
+
+714
+00:29:24,910 --> 00:29:27,240
+ dan menggunakannya di beberapa bagian sistem, 
+
+715
+00:29:27,240 --> 00:29:29,639
+ tapi mungkin tidak semuanya berakhir semua solusi 
+
+716
+00:29:29,639 --> 00:29:31,930
+ untuk keamanan, seperti hampir semua hal lainnya [tidak terdengar] 
+
+717
+00:29:31,930 --> 00:29:33,419
+ di sini. 
+
+718
+00:29:33,419 --> 00:29:33,918
+ Masuk akal? 
+
+719
+00:29:33,918 --> 00:29:34,810
+ Ya? 
+
+720
+00:29:34,810 --> 00:29:37,720
+ AUDIENCE: Jadi jika proses memiliki kemampuan yang diberikan kepadanya 
+
+721
+00:29:37,720 --> 00:29:40,811
+ oleh beberapa proses lain, dan itu terjadi 
+
+722
+00:29:40,811 --> 00:29:43,395
+ sudah memiliki kemampuan untuk objek itu, itu lebih besar. 
+
+723
+00:29:43,395 --> 00:29:45,269
+ Bisakah itu membandingkannya untuk memastikan bahwa mereka 
+
+724
+00:29:45,269 --> 00:29:46,629
+ tentang objek yang sama? 
+
+725
+00:29:46,629 --> 00:29:48,420
+ Atau akankah itu hanya menggunakan yang lebih besar? 
+
+726
+00:29:48,420 --> 00:29:50,919
+ PROFESOR: Jadi masalahnya adalah bahwa proses tidak secara implisit 
+
+727
+00:29:50,919 --> 00:29:51,794
+ gunakan kemampuannya. 
+
+728
+00:29:51,794 --> 00:29:53,627
+ Jadi itu hal keren tentang kemampuan. 
+
+729
+00:29:53,627 --> 00:29:55,760
+ Anda harus secara eksplisit menyebutkan yang mana yang Anda gunakan. 
+
+730
+00:29:55,760 --> 00:29:57,680
+ Jadi pikirkan itu dalam hal deskriptor file. 
+
+731
+00:29:57,680 --> 00:30:01,820
+ Misalkan saya memberi Anda deskriptor file terbuka untuk beberapa file, 
+
+732
+00:30:01,820 --> 00:30:02,807
+ dan itu hanya bisa dibaca. 
+
+733
+00:30:02,807 --> 00:30:04,890
+ Dan kemudian orang lain memberi Anda kemampuan lain 
+
+734
+00:30:04,890 --> 00:30:07,431
+ untuk beberapa lainnya-- mungkin file yang sama mungkin file yang berbeda, 
+
+735
+00:30:07,431 --> 00:30:08,760
+ dan itu baca / tulis. 
+
+736
+00:30:08,760 --> 00:30:10,390
+ Tiba-tiba tidak seperti itu jika kamu 
+
+737
+00:30:10,390 --> 00:30:12,869
+ mencoba menulis ke deskriptor file pertama 
+
+738
+00:30:12,869 --> 00:30:14,660
+ Anda hanya membaca, tiba-tiba 
+
+739
+00:30:14,660 --> 00:30:16,390
+ itu akan mulai berhasil karena Anda 
+
+740
+00:30:16,390 --> 00:30:19,270
+ memiliki deskriptor file yang dapat ditulisi tambahan ini terbuka. 
+
+741
+00:30:19,270 --> 00:30:21,407
+ Jadi itu semacam hal yang keren. 
+
+742
+00:30:21,407 --> 00:30:22,990
+ Anda tidak ingin privilese ambient ini. 
+
+743
+00:30:22,990 --> 00:30:24,920
+ Karena jika Anda memikirkan kemampuan ini 
+
+744
+00:30:24,920 --> 00:30:27,245
+ sebagai sekelompok hak istimewa yang terus terakumulasi 
+
+745
+00:30:27,245 --> 00:30:29,190
+ dalam proses Anda, maka Anda akan benar-benar adil 
+
+746
+00:30:29,190 --> 00:30:30,690
+ berakhir dengan hak istimewa ambient lagi. 
+
+747
+00:30:30,690 --> 00:30:32,849
+ Anda hanya memiliki semua kemampuan ajaib ini, 
+
+748
+00:30:32,849 --> 00:30:34,765
+ dan orang-orang benar-benar membangun perpustakaan seperti itu. 
+
+749
+00:30:34,765 --> 00:30:37,197
+ Pada dasarnya, mereka mengelola kemampuan Anda untuk Anda. 
+
+750
+00:30:37,197 --> 00:30:38,280
+ Mereka mengumpulkannya. 
+
+751
+00:30:38,280 --> 00:30:39,680
+ Dan ketika Anda mencoba melakukan operasi, 
+
+752
+00:30:39,680 --> 00:30:40,670
+ mereka mencari kemampuan dan menemukan 
+
+753
+00:30:40,670 --> 00:30:42,250
+ yang akan membuatnya bekerja. 
+
+754
+00:30:42,250 --> 00:30:44,500
+ Itu benar-benar membawa Anda kembali ke otoritas ambient ini 
+
+755
+00:30:44,500 --> 00:30:45,890
+ yang coba kamu hindari. 
+
+756
+00:30:45,890 --> 00:30:47,390
+ Jadi hal keren tentang kemampuan 
+
+757
+00:30:47,390 --> 00:30:50,670
+ adalah bahwa itu hampir seperti konstruksi pemrograman, 
+
+758
+00:30:50,670 --> 00:30:52,875
+ di mana itu membuatnya mudah bagi Anda-- yang mana 
+
+759
+00:30:52,875 --> 00:30:54,875
+ adalah hal yang langka dalam keamanan-- itu membuatnya lebih mudah 
+
+760
+00:30:54,875 --> 00:30:56,950
+ bagi Anda untuk menulis kode yang menentukan 
+
+761
+00:30:56,950 --> 00:30:59,200
+ apa hak istimewa yang ingin Anda lakukan dari keamanan 
+
+762
+00:30:59,200 --> 00:30:59,700
+ sudut. 
+
+763
+00:30:59,700 --> 00:31:02,570
+ Dan itu sebenarnya adalah kode yang cukup alami untuk ditulis. 
+
+764
+00:31:02,570 --> 00:31:05,280
+ Jadi jika Anda masuk ke dalam pola pikir selalu membawa-bawa 
+
+765
+00:31:05,280 --> 00:31:07,450
+ keistimewaan ini dengan objek yang Anda akses, 
+
+766
+00:31:07,450 --> 00:31:09,210
+ sepertinya hal yang keren untuk dilakukan. 
+
+767
+00:31:09,210 --> 00:31:12,750
+ Itu tidak selalu masuk akal, tetapi kadang kala. 
+
+768
+00:31:12,750 --> 00:31:16,070
+ Ada pertanyaan lain? 
+
+769
+00:31:16,070 --> 00:31:16,640
+ BAIK. 
+
+770
+00:31:16,640 --> 00:31:20,150
+ Jadi itu lebih pada otoritas ambien 
+
+771
+00:31:20,150 --> 00:31:21,730
+ yang kita lihat di sini. 
+
+772
+00:31:21,730 --> 00:31:23,640
+ Ternyata kemampuan itu juga 
+
+773
+00:31:23,640 --> 00:31:26,100
+ bagus untuk masalah lain, juga. 
+
+774
+00:31:26,100 --> 00:31:30,000
+ Dan khususnya, masalah mengelola hak istimewa 
+
+775
+00:31:30,000 --> 00:31:33,700
+ sering muncul ketika Anda ingin menjalankan beberapa kode yang tidak dapat dipercaya. 
+
+776
+00:31:33,700 --> 00:31:35,370
+ Karena Anda ingin benar-benar mengendalikan 
+
+777
+00:31:35,370 --> 00:31:37,280
+ hak istimewa mana yang Anda berikan, karena Anda 
+
+778
+00:31:37,280 --> 00:31:40,590
+ berpikir itu akan menyalahgunakan hak istimewa apa pun yang Anda berikan sama sekali. 
+
+779
+00:31:40,590 --> 00:31:44,150
+ Dan ini adalah sudut pandang yang sedikit berbeda 
+
+780
+00:31:44,150 --> 00:31:46,960
+ dari mana penulis kertas Capsicum 
+
+781
+00:31:46,960 --> 00:31:50,640
+ datang pada kemampuan. 
+
+782
+00:31:50,640 --> 00:31:53,575
+ Jadi mereka tentu saja sadar akan otoritas ambient ini 
+
+783
+00:31:53,575 --> 00:31:55,450
+ masalah, tapi itu masalah yang berbeda 
+
+784
+00:31:55,450 --> 00:31:57,720
+ bahwa Anda mungkin atau mungkin tidak peduli tentang pemecahan. 
+
+785
+00:31:57,720 --> 00:32:00,960
+ Tetapi hal khusus yang benar-benar mereka pedulikan 
+
+786
+00:32:00,960 --> 00:32:04,776
+ apakah mereka memiliki aplikasi istimewa yang sangat besar, 
+
+787
+00:32:04,776 --> 00:32:06,150
+ dan mereka khawatir akan terjadi 
+
+788
+00:32:06,150 --> 00:32:10,480
+ menjadi bug di berbagai bagian dari kode sumber aplikasi itu. 
+
+789
+00:32:10,480 --> 00:32:12,900
+ Jadi mereka ingin mengurangi keistimewaan 
+
+790
+00:32:12,900 --> 00:32:16,380
+ komponen yang berbeda dari aplikasi itu. 
+
+791
+00:32:16,380 --> 00:32:20,480
+ Jadi dalam arti itu, ceritanya sangat mirip dengan OKWS. 
+
+792
+00:32:20,480 --> 00:32:24,459
+ Jadi Anda punya-- untuk sandboxing, Anda 
+
+793
+00:32:24,459 --> 00:32:27,000
+ memiliki beberapa aplikasi besar, Anda memecahnya menjadi komponen, 
+
+794
+00:32:27,000 --> 00:32:30,270
+ dan Anda akan membatasi hak apa yang dimiliki setiap komponen. 
+
+795
+00:32:30,270 --> 00:32:31,520
+ Jadi di mana ini masuk akal? 
+
+796
+00:32:31,520 --> 00:32:34,140
+ Seperti OKWS jelas merupakan salah satu contoh. 
+
+797
+00:32:34,140 --> 00:32:36,010
+ Apa situasi lain di mana Anda mungkin 
+
+798
+00:32:36,010 --> 00:32:40,280
+ peduli tentang pemisahan prasyarat? 
+
+799
+00:32:40,280 --> 00:32:43,707
+ Yah, saya kira di koran mereka menggambarkan contoh saya 
+
+800
+00:32:43,707 --> 00:32:44,540
+ sebenarnya harus dijalankan. 
+
+801
+00:32:44,540 --> 00:32:48,320
+ Jadi hal-hal seperti tcpdump dan aplikasi lain 
+
+802
+00:32:48,320 --> 00:32:50,285
+ yang mem-parse data jaringan. 
+
+803
+00:32:50,285 --> 00:32:53,890
+ Jadi mengapa mereka begitu khawatir tentang aplikasi 
+
+804
+00:32:53,890 --> 00:32:56,000
+ yang mem-parsing input jaringan? 
+
+805
+00:32:56,000 --> 00:32:57,580
+ Apa yang salah dalam tcpdump? 
+
+806
+00:32:57,580 --> 00:32:58,656
+ Mengapa mereka begitu paranoid? 
+
+807
+00:32:58,656 --> 00:33:01,036
+ AUDIENCE: Yah, penyerang dapat mengontrol apa yang sedang dikirim 
+
+808
+00:33:01,036 --> 00:33:01,988
+ dan apa yang dipanggil. 
+
+809
+00:33:01,988 --> 00:33:02,470
+ PROFESOR: Ya. 
+
+810
+00:33:02,470 --> 00:33:04,020
+ Saya pikir apa yang mereka khawatirkan adalah, 
+
+811
+00:33:04,020 --> 00:33:06,603
+ sangat mirip dengan OKWS, mereka khawatir tentang permukaan serangan itu 
+
+812
+00:33:06,603 --> 00:33:08,900
+ dan seberapa banyak penyerang dapat mengontrol input? 
+
+813
+00:33:08,900 --> 00:33:11,970
+ Dan dengan program penguraian jaringan ini, 
+
+814
+00:33:11,970 --> 00:33:14,698
+ ada banyak kendali yang dimiliki faktor itu. 
+
+815
+00:33:14,698 --> 00:33:16,100
+ Mereka memiliki paket yang tepat. 
+
+816
+00:33:16,100 --> 00:33:18,355
+ Dan alasan bahwa ini sangat bermasalah 
+
+817
+00:33:18,355 --> 00:33:21,400
+ adalah jika Anda menulis kode dalam C itu 
+
+818
+00:33:21,400 --> 00:33:23,920
+ harus menguraikan struktur data, Anda mungkin 
+
+819
+00:33:23,920 --> 00:33:26,100
+ akan melakukan banyak manipulasi penunjuk, 
+
+820
+00:33:26,100 --> 00:33:28,830
+ menyalin gigitan ke dalam array, mengalokasikan memori. 
+
+821
+00:33:28,830 --> 00:33:32,450
+ Dan karena Anda sekarang ahli, ini super rapuh. 
+
+822
+00:33:32,450 --> 00:33:34,875
+ Dan Anda dapat dengan mudah memiliki kesalahan manajemen memori 
+
+823
+00:33:34,875 --> 00:33:38,155
+ yang membawa konsekuensi yang sangat buruk. 
+
+824
+00:33:38,155 --> 00:33:39,530
+ Jadi ini alasan mengapa mereka 
+
+825
+00:33:39,530 --> 00:33:43,990
+ sangat senang tentang berbagai protokol jaringan sandboxing, 
+
+826
+00:33:43,990 --> 00:33:45,790
+ mengurai hal-hal, dan sebagainya. 
+
+827
+00:33:45,790 --> 00:33:47,850
+ Contoh dunia lain yang mungkin nyata 
+
+828
+00:33:47,850 --> 00:33:50,070
+ di mana Anda benar-benar peduli tentang ini di browser Anda. 
+
+829
+00:33:50,070 --> 00:33:52,070
+ Anda mungkin ingin sandbox plug-in Flash Anda, 
+
+830
+00:33:52,070 --> 00:33:54,960
+ atau ekstensi Java Anda, atau entah apa lagi. 
+
+831
+00:33:54,960 --> 00:33:56,570
+ Karena mereka serangan yang cukup besar 
+
+832
+00:33:56,570 --> 00:33:58,430
+ permukaan juga yang didapat 
+
+833
+00:33:58,430 --> 00:34:01,352
+ dieksploitasi dengan cukup agresif. 
+
+834
+00:34:01,352 --> 00:34:02,810
+ Jadi sepertinya itu rencana yang masuk akal. 
+
+835
+00:34:02,810 --> 00:34:04,726
+ Seperti jika Anda sedang menulis beberapa perangkat lunak, 
+
+836
+00:34:04,726 --> 00:34:06,980
+ Anda ingin sandbox berbagai komponen itu. 
+
+837
+00:34:06,980 --> 00:34:08,790
+ Bagaimana dengan lebih umum, jika Anda mengunduh sesuatu 
+
+838
+00:34:08,790 --> 00:34:10,498
+ dari internet, dan Anda ingin menjalankannya 
+
+839
+00:34:10,498 --> 00:34:12,889
+ dengan lebih sedikit hak istimewa? 
+
+840
+00:34:12,889 --> 00:34:16,989
+ Apakah isolasi gaya Capsicum semacam ini merupakan rencana yang bagus untuk itu? 
+
+841
+00:34:16,989 --> 00:34:19,500
+ Saya dapat mengunduh beberapa screensaver acak atau beberapa permainan 
+
+842
+00:34:19,500 --> 00:34:20,290
+ dari internet. 
+
+843
+00:34:20,290 --> 00:34:21,590
+ Dan saya ingin menjalankannya di komputer saya, 
+
+844
+00:34:21,590 --> 00:34:23,380
+ dan saya ingin memastikan itu tidak mengacaukan 
+
+845
+00:34:23,380 --> 00:34:24,689
+ apa pun yang saya miliki. 
+
+846
+00:34:24,690 --> 00:34:27,802
+
+
+847
+00:34:27,802 --> 00:34:28,760
+ Apakah Anda akan menggunakan Capsicum? 
+
+848
+00:34:28,760 --> 00:34:31,588
+ Apakah ini rencana yang bagus? 
+
+849
+00:34:31,588 --> 00:34:33,045
+ Ya? 
+
+850
+00:34:33,045 --> 00:34:35,475
+ AUDIENCE: Anda bisa menulis program sandboxing, 
+
+851
+00:34:35,476 --> 00:34:38,878
+ yang akan Anda gunakan Capsicum ke kotak pasir [TIDAK JELAS]. 
+
+852
+00:34:38,878 --> 00:34:42,652
+
+
+853
+00:34:42,652 --> 00:34:43,360
+ PROFESOR: Benar. 
+
+854
+00:34:43,360 --> 00:34:44,900
+ Anda bisa mencoba menggunakan Capsicum. 
+
+855
+00:34:44,900 --> 00:34:46,150
+ Jadi bagaimana Anda akan menggunakan Capsicum? 
+
+856
+00:34:46,150 --> 00:34:49,380
+ Nah, Anda baru saja masuk ke mode sandbox dengan cap_enter. 
+
+857
+00:34:49,380 --> 00:34:53,330
+ Dan kemudian Anda menjalankan program. 
+
+858
+00:34:53,330 --> 00:34:54,514
+ Apakah Anda mengharapkannya berfungsi? 
+
+859
+00:34:54,514 --> 00:34:56,887
+
+
+860
+00:34:56,887 --> 00:34:59,220
+ Saya kira masalahnya adalah jika program itu tidak benar-benar 
+
+861
+00:34:59,220 --> 00:35:01,155
+ berharap akan dikotori dengan Capsicum, 
+
+862
+00:35:01,155 --> 00:35:04,920
+ lalu tiba-tiba program akan mencoba membuka apa pun 
+
+863
+00:35:04,920 --> 00:35:07,460
+ disederhanakan - itu akan membuka pustaka bersama, 
+
+864
+00:35:07,460 --> 00:35:09,430
+ dan tidak dapat membuka pustaka bersama, 
+
+865
+00:35:09,430 --> 00:35:11,570
+ karena tidak bisa membuka / hidup / sesuatu yang lain. 
+
+866
+00:35:11,570 --> 00:35:13,810
+ Itu tidak diizinkan dalam mode kemampuan. 
+
+867
+00:35:13,810 --> 00:35:16,790
+ Jadi itu sedikit masalah. 
+
+868
+00:35:16,790 --> 00:35:18,800
+ Jadi biasanya, teknik sandboxing ini 
+
+869
+00:35:18,800 --> 00:35:21,685
+ bahwa kita akan melihat di sini-- kemampuan, gaya, 
+
+870
+00:35:21,685 --> 00:35:24,850
+ barang-barang, dan seterusnya - benar-benar yang terbaik 
+
+871
+00:35:24,850 --> 00:35:27,400
+ digunakan ketika pengembang adalah semacam bangunan 
+
+872
+00:35:27,400 --> 00:35:30,110
+ aplikasi menyadari bahwa kode tersebut 
+
+873
+00:35:30,110 --> 00:35:31,882
+ akan dijalankan dalam mode ini. 
+
+874
+00:35:31,882 --> 00:35:34,260
+ Mungkin ada jenis teknik sandboxing lainnya 
+
+875
+00:35:34,260 --> 00:35:36,550
+ yang dapat digunakan untuk kode yang tidak dimodifikasi, 
+
+876
+00:35:36,550 --> 00:35:40,270
+ tetapi kemudian fokus, atau persyaratannya, berubah sedikit. 
+
+877
+00:35:40,270 --> 00:35:42,410
+ Jadi di Capsicum, mereka tidak benar-benar 
+
+878
+00:35:42,410 --> 00:35:43,910
+ khawatir tentang kompatibilitas mundur. 
+
+879
+00:35:43,910 --> 00:35:45,320
+ Yah, kita harus membuka file secara berbeda? 
+
+880
+00:35:45,320 --> 00:35:46,770
+ Tentu, kami akan membukanya secara berbeda. 
+
+881
+00:35:46,770 --> 00:35:48,820
+ Sedangkan, jika Anda ingin menulis kode yang ada, 
+
+882
+00:35:48,820 --> 00:35:51,330
+ Anda mungkin menginginkan sesuatu yang lebih seperti mungkin 
+
+883
+00:35:51,330 --> 00:35:52,450
+ mesin virtual penuh. 
+
+884
+00:35:52,450 --> 00:35:55,040
+ Jadi Anda bisa membuka VM dan menjalankannya di sana. 
+
+885
+00:35:55,040 --> 00:35:58,400
+ Dan itu sangat kompatibel, dan ada 
+
+886
+00:35:58,400 --> 00:36:03,440
+ tidak ada pertanyaan bahwa itu hanya akan berjalan, dan mungkin tidak-- 
+
+887
+00:36:03,440 --> 00:36:07,060
+ Yah, itu sebenarnya latihan pikiran yang bagus. 
+
+888
+00:36:07,060 --> 00:36:11,970
+ Haruskah kita menggunakan mesin virtual ke kotak pasir, bukan Capsicum? 
+
+889
+00:36:11,970 --> 00:36:12,886
+ AUDIENCE: [TIDAK JELAS]. 
+
+890
+00:36:12,886 --> 00:36:13,690
+ PROFESOR: Ya. 
+
+891
+00:36:13,690 --> 00:36:16,510
+ Biaya overhead mungkin cukup signifikan. 
+
+892
+00:36:16,510 --> 00:36:20,715
+ Jadi overhead memori sangat buruk. 
+
+893
+00:36:20,715 --> 00:36:21,325
+ Bisa jadi. 
+
+894
+00:36:21,325 --> 00:36:22,900
+ Tetapi bagaimana jika kita tidak peduli dengan overhead memori? 
+
+895
+00:36:22,900 --> 00:36:24,691
+ Jadi mungkin mesin virtual menjadi sangat bagus, 
+
+896
+00:36:24,691 --> 00:36:28,080
+ dan mereka sebenarnya tidak menggunakan banyak memori. 
+
+897
+00:36:28,080 --> 00:36:30,210
+ Apakah ini masih rencana yang buruk? 
+
+898
+00:36:30,210 --> 00:36:32,708
+ AUDIENCE: [TIDAK JELAS]. 
+
+899
+00:36:32,708 --> 00:36:33,374
+ PROFESOR: Ya. 
+
+900
+00:36:33,374 --> 00:36:37,160
+ Jadi agak sulit untuk mengontrol apa yang terjadi di jaringan, 
+
+901
+00:36:37,160 --> 00:36:40,150
+ karena entah Anda memberi mesin virtual tidak ada akses 
+
+902
+00:36:40,150 --> 00:36:42,570
+ ke jaringan sama sekali, atau Anda terhubung ke jaringan 
+
+903
+00:36:42,570 --> 00:36:45,800
+ melalui mode NAT atau sesuatu di Preview atau VMware. 
+
+904
+00:36:45,800 --> 00:36:47,550
+ Dan kemudian dapat mengakses seluruh internet. 
+
+905
+00:36:47,550 --> 00:36:52,652
+ Jadi Anda harus lebih mengontrol jaringan secara eksplisit 
+
+906
+00:36:52,652 --> 00:36:55,110
+ dengan mungkin mengatur aturan firewall untuk mesin virtual, 
+
+907
+00:36:55,110 --> 00:36:55,797
+ dan sebagainya. 
+
+908
+00:36:55,797 --> 00:36:56,880
+ Itu mungkin tidak begitu hebat. 
+
+909
+00:36:56,880 --> 00:36:58,890
+ Bagaimana jika Anda tidak peduli dengan jaringan? 
+
+910
+00:36:58,890 --> 00:37:04,240
+ Bagaimana jika Anda beberapa video sederhana atau tcpdump parser. 
+
+911
+00:37:04,240 --> 00:37:05,260
+ Anda hanya memutar sebuah VM. 
+
+912
+00:37:05,260 --> 00:37:07,000
+ Ini akan mem-parsing paket tcpdump Anda 
+
+913
+00:37:07,000 --> 00:37:09,490
+ dan meludahkan Anda kembali setelah presentasi Anda 
+
+914
+00:37:09,490 --> 00:37:11,850
+ bahwa tcpdump ingin dibakar ke pengguna. 
+
+915
+00:37:11,850 --> 00:37:14,190
+ Jadi tidak ada jaringan nyata I / O. Mungkin kamu, 
+
+916
+00:37:14,190 --> 00:37:20,820
+ untuk beberapa alasan [TIDAK JELAS] masih? 
+
+917
+00:37:20,820 --> 00:37:23,340
+ AUDIENCE: Karena biaya overhead inisialisasi 
+
+918
+00:37:23,340 --> 00:37:24,656
+ masih besar. 
+
+919
+00:37:24,656 --> 00:37:25,490
+ PROFESOR: Ya. 
+
+920
+00:37:25,490 --> 00:37:27,823
+ Jadi mungkin seperti biaya awal awal untuk memulai VM. 
+
+921
+00:37:27,823 --> 00:37:28,620
+ Jadi itu benar. 
+
+922
+00:37:28,620 --> 00:37:32,030
+ Ada beberapa hal kinerja. 
+
+923
+00:37:32,030 --> 00:37:32,530
+ Ya. 
+
+924
+00:37:32,530 --> 00:37:34,780
+ AUDIENCE: Yah, Anda mungkin ingin memiliki hak basis data 
+
+925
+00:37:34,780 --> 00:37:35,762
+ dan hal-hal seperti itu. 
+
+926
+00:37:35,762 --> 00:37:36,200
+ PROFESOR: Ya. 
+
+927
+00:37:36,200 --> 00:37:38,158
+ Tetapi lebih umum lagi, apa yang Anda maksudkan 
+
+928
+00:37:38,158 --> 00:37:41,140
+ adalah bagaimana jika ada data nyata yang Anda pedulikan di sini? 
+
+929
+00:37:41,140 --> 00:37:42,840
+ Dan sangat sulit untuk dibagikan. 
+
+930
+00:37:42,840 --> 00:37:45,990
+ Jadi VM benar-benar jauh lebih baik 
+
+931
+00:37:45,990 --> 00:37:50,040
+ mekanisme pemisahan, di mana Anda tidak dapat berbagi hal 
+
+932
+00:37:50,040 --> 00:37:51,970
+ di VMs sangat mudah. 
+
+933
+00:37:51,970 --> 00:37:53,640
+ Jadi bagus untuk situasi di mana 
+
+934
+00:37:53,640 --> 00:37:57,090
+ Anda memiliki program yang sangat terisolasi yang ingin Anda jalankan, pada dasarnya 
+
+935
+00:37:57,090 --> 00:37:59,470
+ tidak ingin berbagi file apa pun dengan direktori apa pun, 
+
+936
+00:37:59,470 --> 00:38:01,830
+ proses apa pun, pipa apa pun. 
+
+937
+00:38:01,830 --> 00:38:03,640
+ Dan Anda membiarkannya berjalan secara terpisah. 
+
+938
+00:38:03,640 --> 00:38:04,290
+ Jadi ini luar biasa. 
+
+939
+00:38:04,290 --> 00:38:07,340
+ Mungkin, dalam beberapa hal, isolasi lebih kuat dari apa 
+
+940
+00:38:07,340 --> 00:38:10,340
+ Capsicum menyediakan, karena mungkin ada lebih sedikit 
+
+941
+00:38:10,340 --> 00:38:12,865
+ cara untuk hal-hal yang salah. 
+
+942
+00:38:12,865 --> 00:38:14,240
+ Dan, Anda tahu, semua masalah ini 
+
+943
+00:38:14,240 --> 00:38:15,640
+ kami berbicara tentang sejauh ini. 
+
+944
+00:38:15,640 --> 00:38:18,189
+ Tetapi itu juga tidak berlaku di banyak situasi 
+
+945
+00:38:18,189 --> 00:38:19,730
+ di mana Anda mungkin ingin menggunakan Capsicum, 
+
+946
+00:38:19,730 --> 00:38:21,880
+ karena di Capsicum, Anda bisa benar-benar 
+
+947
+00:38:21,880 --> 00:38:26,645
+ berbagi file yang memiliki perincian yang sangat bagus antara kotak pasir 
+
+948
+00:38:26,645 --> 00:38:30,342
+ [TIDAK JELAS] dengan hanya memberikannya kemampuan untuk [TIDAK JELAS] file. 
+
+949
+00:38:30,342 --> 00:38:32,550
+ Ini adalah sesuatu yang sangat mudah dilakukan di Capsicum, 
+
+950
+00:38:32,550 --> 00:38:35,220
+ dan akan membutuhkan sedikit mesin 
+
+951
+00:38:35,220 --> 00:38:37,280
+ dalam pengaturan mesin virtual. 
+
+952
+00:38:37,280 --> 00:38:40,720
+ Itu masuk akal? 
+
+953
+00:38:40,720 --> 00:38:43,200
+ Pertanyaan? 
+
+954
+00:38:43,200 --> 00:38:44,330
+ Baiklah. 
+
+955
+00:38:44,330 --> 00:38:47,600
+ Jadi apakah itu tampak seperti primitif yang berguna 
+
+956
+00:38:47,600 --> 00:38:49,340
+ harus mungkin barang sandbox. 
+
+957
+00:38:49,340 --> 00:38:53,040
+ Jadi saya kira kita akan berbicara tentang berbagai cara 
+
+958
+00:38:53,040 --> 00:38:54,900
+ untuk mencoba sandbox sesuatu. 
+
+959
+00:38:54,900 --> 00:38:58,060
+ Dan Capsicum khususnya adalah hal baru di sini 
+
+960
+00:38:58,060 --> 00:38:59,270
+ yang menggunakan kemampuan. 
+
+961
+00:38:59,270 --> 00:39:05,810
+ Tetapi hanya dengan perbandingan, saya kira, Anda 
+
+962
+00:39:05,810 --> 00:39:08,350
+ dapat melakukan beberapa sandboxing di Unix, seperti yang kita lihat dengan OKWS. 
+
+963
+00:39:08,350 --> 00:39:08,850
+ Kanan? 
+
+964
+00:39:08,850 --> 00:39:13,170
+ Hanya saja tidak bagus dari beberapa sudut pandang. 
+
+965
+00:39:13,170 --> 00:39:17,860
+ Jadi mari kita ambil contoh tcpdump 
+
+966
+00:39:17,860 --> 00:39:24,530
+ dan lihat mengapa tcpdump sulit untuk sandbox dengan mekanisme Unix. 
+
+967
+00:39:24,530 --> 00:39:27,880
+ Jadi ingat, di koran Capsicum, orang-orang ini mengambil tcpdump. 
+
+968
+00:39:27,880 --> 00:39:32,570
+ Dan cara kerja tcpdump adalah itu 
+
+969
+00:39:32,570 --> 00:39:39,080
+ membuka beberapa soket khusus dan kemudian berjalan pada dasarnya parsing 
+
+970
+00:39:39,080 --> 00:39:41,010
+ logika pada paket jaringan. 
+
+971
+00:39:41,010 --> 00:39:44,860
+ Dan hasilnya dan mencetaknya ke terminal pengguna. 
+
+972
+00:39:44,860 --> 00:39:51,180
+ Jadi apa yang diperlukan untuk sandbox tcpdump dengan Unix primitif? 
+
+973
+00:39:51,180 --> 00:39:54,066
+ Apakah Anda membatasi hak istimewa? 
+
+974
+00:39:54,066 --> 00:39:55,870
+ Jadi saya kira satu masalah dengan Unix 
+
+975
+00:39:55,870 --> 00:39:59,300
+ adalah bahwa pada dasarnya Anda harus-- baik, satu-satunya cara 
+
+976
+00:39:59,300 --> 00:40:01,890
+ untuk benar-benar mengubah hak adalah untuk berubah 
+
+977
+00:40:01,890 --> 00:40:04,152
+ masukan ke dalam fungsi keputusan itu 
+
+978
+00:40:04,152 --> 00:40:06,610
+ memutuskan apakah Anda benar-benar dapat mengakses beberapa objek atau tidak. 
+
+979
+00:40:06,610 --> 00:40:09,160
+ Dan satu-satunya hal yang benar-benar dapat Anda ubah 
+
+980
+00:40:09,160 --> 00:40:11,860
+ baik, Anda dapat mengubah hak istimewa dari proses tersebut, 
+
+981
+00:40:11,860 --> 00:40:14,300
+ yang berarti mengirim UID ke sesuatu yang lain. 
+
+982
+00:40:14,300 --> 00:40:15,800
+ Atau Anda bisa mengubah izin 
+
+983
+00:40:15,800 --> 00:40:21,510
+ pada berbagai objek yang ada di sekitar sistem Anda. 
+
+984
+00:40:21,510 --> 00:40:23,330
+ Atau mungkin keduanya, pada kenyataannya, bukan? 
+
+985
+00:40:23,330 --> 00:40:25,110
+ Jika Anda ingin sandbox tcpdump, 
+
+986
+00:40:25,110 --> 00:40:27,850
+ Anda mungkin harus memilih beberapa ID pengguna tambahan 
+
+987
+00:40:27,850 --> 00:40:31,612
+ dan beralih ke saat Anda sedang berlari. 
+
+988
+00:40:31,612 --> 00:40:36,660
+ Mungkin bukan rencana yang ideal, karena Anda mungkin 
+
+989
+00:40:36,660 --> 00:40:39,340
+ tidak berarti untuk beberapa contoh tcpdump 
+
+990
+00:40:39,340 --> 00:40:41,049
+ untuk dijalankan sebagai ID pengguna yang sama. 
+
+991
+00:40:41,049 --> 00:40:42,840
+ Jadi jika saya berkompromi satu contoh tcpdump, 
+
+992
+00:40:42,840 --> 00:40:45,307
+ itu tidak benar-benar berarti saya ingin membiarkan faktor itu 
+
+993
+00:40:45,307 --> 00:40:47,515
+ untuk sekarang mengendalikan instance lain dari tcpdump running 
+
+994
+00:40:47,515 --> 00:40:49,070
+ di mesin saya. 
+
+995
+00:40:49,070 --> 00:40:53,614
+ Jadi itu berpotensi menjadi bagian buruk dalam menggunakan ID pengguna di sini. 
+
+996
+00:40:53,614 --> 00:40:55,530
+ Masalah lainnya adalah, di Unix, Anda sebenarnya 
+
+997
+00:40:55,530 --> 00:40:58,924
+ harus menjadi root untuk mengubah pengguna 
+
+998
+00:40:58,924 --> 00:41:01,215
+ ID proses atau hal lain, atau hak istimewa pengguna 
+
+999
+00:41:01,215 --> 00:41:03,200
+ atau beralih ke yang lain. 
+
+1000
+00:41:03,200 --> 00:41:05,060
+ Itu tidak bagus juga. 
+
+1001
+00:41:05,060 --> 00:41:08,080
+ Dan masalah lain adalah itu, terlepas 
+
+1002
+00:41:08,080 --> 00:41:11,700
+ dari apa ID pengguna Anda, mungkin ada file 
+
+1003
+00:41:11,700 --> 00:41:13,830
+ yang memungkinkan akses ke mereka. 
+
+1004
+00:41:13,830 --> 00:41:16,760
+ Jadi mungkin ada file yang dapat ditulis atau dunia yang dapat dibaca dunia 
+
+1005
+00:41:16,760 --> 00:41:17,800
+ dalam sistem file Anda. 
+
+1006
+00:41:17,800 --> 00:41:19,730
+ Seperti file kata sandi dll Anda. 
+
+1007
+00:41:19,730 --> 00:41:22,370
+ Terlepas dari apa UID Anda, prosesnya 
+
+1008
+00:41:22,370 --> 00:41:24,420
+ masih bisa membaca kata sandi itu. 
+
+1009
+00:41:24,420 --> 00:41:26,070
+ Jadi itu tidak begitu baik. 
+
+1010
+00:41:26,070 --> 00:41:29,850
+ Jadi hasilnya, untuk membuat kotak pasir, 
+
+1011
+00:41:29,850 --> 00:41:36,257
+ Anda mungkin harus melakukan keduanya-- beberapa UID berubah dan mungkin 
+
+1012
+00:41:36,257 --> 00:41:38,340
+ hati-hati melihat izin dari semua objek 
+
+1013
+00:41:38,340 --> 00:41:40,507
+ untuk meyakinkan diri sendiri bahwa tidak ada dunia yang dapat ditulisi 
+
+1014
+00:41:40,507 --> 00:41:41,714
+ file yang sangat sensitif. 
+
+1015
+00:41:41,714 --> 00:41:43,130
+ Atau tidak ada file yang dapat dibaca dunia 
+
+1016
+00:41:43,130 --> 00:41:45,742
+ bahwa Anda tidak ingin peretas itu mendapatkan akses ke. 
+
+1017
+00:41:45,742 --> 00:41:48,200
+ Dan saya kira [TIDAK JELAS] benar bahwa Anda mendapatkan mekanisme lain 
+
+1018
+00:41:48,200 --> 00:41:49,530
+ unit yang dapat Anda gunakan. 
+
+1019
+00:41:49,530 --> 00:41:50,920
+ Tapi semuanya mulai bertambah. 
+
+1020
+00:41:50,920 --> 00:41:52,420
+ Jika Anda melihatnya, maka itu mungkin 
+
+1021
+00:41:52,420 --> 00:41:56,681
+ susah berbagi file atau berbagi direktori dan sebagainya. 
+
+1022
+00:41:56,681 --> 00:41:57,680
+ Jadi apakah itu masuk akal? 
+
+1023
+00:41:57,680 --> 00:42:00,466
+ Hanya dalam hal kontras untuk apa 
+
+1024
+00:42:00,466 --> 00:42:02,393
+ Capsicum sedang mencoba untuk memecahkan? 
+
+1025
+00:42:02,393 --> 00:42:06,160
+ Ada pertanyaan tentang barang-barang Unix? 
+
+1026
+00:42:06,160 --> 00:42:06,950
+ Baiklah. 
+
+1027
+00:42:06,950 --> 00:42:10,650
+ Jadi mari kita lihat bagaimana Capsicum mencoba memecahkan masalah ini. 
+
+1028
+00:42:10,650 --> 00:42:13,680
+ Jadi di Capsicum, seperti yang terus kami singgung, 
+
+1029
+00:42:13,680 --> 00:42:18,330
+ rencananya sangat banyak ketika Anda memasuki mode sandboxing, 
+
+1030
+00:42:18,330 --> 00:42:20,879
+ semuanya akan diakses saja 
+
+1031
+00:42:20,879 --> 00:42:21,670
+ melalui kemampuan. 
+
+1032
+00:42:21,670 --> 00:42:23,490
+ Jadi jika Anda tidak memiliki kemampuan, 
+
+1033
+00:42:23,490 --> 00:42:27,610
+ Anda tidak bisa mengakses objek apa pun. 
+
+1034
+00:42:27,610 --> 00:42:32,000
+ Jadi orang-orang ini, di koran, membuat kesepakatan besar 
+
+1035
+00:42:32,000 --> 00:42:34,870
+ tentang ruangnama global. 
+
+1036
+00:42:34,870 --> 00:42:37,720
+ Jadi apa ini tentang namespace global, 
+
+1037
+00:42:37,720 --> 00:42:39,460
+ dan mengapa mereka begitu mengkhawatirkannya? 
+
+1038
+00:42:39,460 --> 00:42:43,155
+
+
+1039
+00:42:43,155 --> 00:42:44,780
+ Apa contoh dari namespace global 
+
+1040
+00:42:44,780 --> 00:42:47,379
+ orang-orang ini khawatir? 
+
+1041
+00:42:47,379 --> 00:42:48,534
+ AUDIENCE: [TIDAK JELAS]. 
+
+1042
+00:42:48,534 --> 00:42:49,200
+ PROFESOR: Ya. 
+
+1043
+00:42:49,200 --> 00:42:51,634
+ Jadi sistem file dari mereka adalah semacam contoh utama 
+
+1044
+00:42:51,634 --> 00:42:52,550
+ dari namespace global. 
+
+1045
+00:42:52,550 --> 00:42:55,420
+ Anda dapat memulai garis miring, dan pada dasarnya Anda dapat menghitung 
+
+1046
+00:42:55,420 --> 00:42:56,690
+ file apa pun yang Anda bisa, kan? 
+
+1047
+00:42:56,690 --> 00:42:59,450
+ Seperti pergi ke direktori rumah seseorang-- 
+
+1048
+00:42:59,450 --> 00:43:03,748
+ / home / nickolai / sesuatu, sesuatu. 
+
+1049
+00:43:03,748 --> 00:43:04,860
+ Kenapa ini buruk? 
+
+1050
+00:43:04,860 --> 00:43:08,470
+ Mengapa mereka melawan ruang nama global di Capsicum? 
+
+1051
+00:43:08,470 --> 00:43:14,350
+
+
+1052
+00:43:14,350 --> 00:43:15,100
+ Apa yang kamu pikirkan? 
+
+1053
+00:43:15,100 --> 00:43:15,460
+ Ya? 
+
+1054
+00:43:15,460 --> 00:43:17,543
+ AUDIENCE: Yah, jika Anda memiliki izin yang salah, 
+
+1055
+00:43:17,543 --> 00:43:20,534
+ kemudian gunakan otoritas, dan kemudian Anda bisa mendapat masalah. 
+
+1056
+00:43:20,534 --> 00:43:21,200
+ PROFESOR: Ya. 
+
+1057
+00:43:21,200 --> 00:43:23,116
+ Jadi masalahnya adalah bahwa ini adalah Unix. 
+
+1058
+00:43:23,116 --> 00:43:27,370
+ Jadi masih ada izin reguler dalam file. 
+
+1059
+00:43:27,370 --> 00:43:29,790
+ Jadi mungkin Anda benar-benar ingin melakukan beberapa proses sandbox 
+
+1060
+00:43:29,790 --> 00:43:31,804
+ dan tidak bisa membaca apa pun di sistem 
+
+1061
+00:43:31,804 --> 00:43:32,970
+ dan tidak bisa menulis apa pun. 
+
+1062
+00:43:32,970 --> 00:43:35,530
+ Tetapi jika Anda bisa memberi nama file mulai dari awal, 
+
+1063
+00:43:35,530 --> 00:43:38,060
+ Anda akan menemukan beberapa pengguna bodoh yang memiliki dunia yang bisa ditulisi 
+
+1064
+00:43:38,060 --> 00:43:39,970
+ file di direktori home mereka. 
+
+1065
+00:43:39,970 --> 00:43:43,874
+ Dan itu tidak akan begitu bagus untuk klien sandboxing. 
+
+1066
+00:43:43,874 --> 00:43:46,290
+ Dan saya kira lebih umum, cara mereka memikirkannya 
+
+1067
+00:43:46,290 --> 00:43:50,430
+ adalah bahwa, dengan kemampuan, Anda bisa, pada prinsipnya, menghitung 
+
+1068
+00:43:50,430 --> 00:43:53,122
+ tepatnya semua benda yang dimiliki suatu proses. 
+
+1069
+00:43:53,122 --> 00:43:56,030
+ Karena Anda hanya bisa menyebutkan semua kemampuan 
+
+1070
+00:43:56,030 --> 00:43:58,350
+ di tabel deskriptor file, atau apa pun itu 
+
+1071
+00:43:58,350 --> 00:44:00,250
+ menyimpan kemampuan untuk Anda. 
+
+1072
+00:44:00,250 --> 00:44:03,970
+ Dan itulah satu-satunya hal yang bisa dilakukan proses itu 
+
+1073
+00:44:03,970 --> 00:44:05,734
+ menyentuh. 
+
+1074
+00:44:05,734 --> 00:44:07,900
+ Dan jika Anda pernah memiliki akses ke namespace global kami, 
+
+1075
+00:44:07,900 --> 00:44:09,090
+ dan ini berpotensi tidak terbatas. 
+
+1076
+00:44:09,090 --> 00:44:10,540
+ Karena Anda bisa - bahkan jika Anda memilikinya 
+
+1077
+00:44:10,540 --> 00:44:11,920
+ beberapa set kemampuan terbatas, 
+
+1078
+00:44:11,920 --> 00:44:14,850
+ mungkin Anda akan mulai dari garis miring lagi dan menemukan beberapa file baru, 
+
+1079
+00:44:14,850 --> 00:44:16,510
+ dan Anda tidak akan pernah benar-benar tahu apa 
+
+1080
+00:44:16,510 --> 00:44:19,745
+ adalah himpunan operasi atau objek 
+
+1081
+00:44:19,745 --> 00:44:22,120
+ bahwa suatu proses dapat mengakses. 
+
+1082
+00:44:22,120 --> 00:44:25,370
+ Jadi ini alasan mereka sangat khawatir tentang ruang nama global 
+
+1083
+00:44:25,370 --> 00:44:28,775
+ karena bertentangan dengan tujuan mereka dalam mengendalikan dengan tepat 
+
+1084
+00:44:28,775 --> 00:44:33,880
+ semua hal yang harus diakses oleh proses kotak pasir. 
+
+1085
+00:44:33,880 --> 00:44:36,440
+ Masuk akal? 
+
+1086
+00:44:36,440 --> 00:44:37,590
+ Baiklah. 
+
+1087
+00:44:37,590 --> 00:44:39,850
+ Jadi mereka mencoba untuk menghilangkan ruang nama global 
+
+1088
+00:44:39,850 --> 00:44:44,590
+ dengan banyak perubahan kernel pada FreeBSD, dalam kasus mereka, 
+
+1089
+00:44:44,590 --> 00:44:47,960
+ kernel untuk memastikan semua operasi berjalan 
+
+1090
+00:44:47,960 --> 00:44:52,220
+ melalui semacam kemampuan, yang, dalam kasus mereka, 
+
+1091
+00:44:52,220 --> 00:44:54,190
+ deskriptor file. 
+
+1092
+00:44:54,190 --> 00:44:57,800
+ Jadi hanya untuk memeriksa ulang, apakah kita benar-benar perlu perubahan kernel? 
+
+1093
+00:44:57,800 --> 00:45:00,350
+ Bagaimana jika kita melakukan ini di perpustakaan? 
+
+1094
+00:45:00,350 --> 00:45:03,040
+ Jadi kami menerapkan Capsicum, yang sudah memiliki perpustakaan. 
+
+1095
+00:45:03,040 --> 00:45:05,700
+ Dan yang kita lakukan adalah kita mengubah semua fungsi ini, 
+
+1096
+00:45:05,700 --> 00:45:08,590
+ seperti buka, baca, dan tulis, untuk semua penggunaan yang sangat eksklusif 
+
+1097
+00:45:08,590 --> 00:45:09,927
+ kemampuan. 
+
+1098
+00:45:09,927 --> 00:45:12,010
+ Jadi semua operasi akan melalui beberapa kemampuan, 
+
+1099
+00:45:12,010 --> 00:45:16,193
+ dan cari di tabel file, dan sebagainya. 
+
+1100
+00:45:16,193 --> 00:45:17,140
+ Apakah itu bekerja? 
+
+1101
+00:45:17,140 --> 00:45:17,640
+ Ya? 
+
+1102
+00:45:17,640 --> 00:45:19,730
+ AUDIENCE: Anda selalu dapat melakukan panggilan sys. 
+
+1103
+00:45:19,730 --> 00:45:20,010
+ PROFESOR: Ya. 
+
+1104
+00:45:20,010 --> 00:45:22,551
+ Jadi masalahnya adalah bahwa ada sistem yang sudah ada 
+
+1105
+00:45:22,551 --> 00:45:23,866
+ panggilan kernel akan menerima. 
+
+1106
+00:45:23,866 --> 00:45:25,866
+ Dan bahkan jika Anda menerapkan perpustakaan yang bagus, 
+
+1107
+00:45:25,866 --> 00:45:28,240
+ itu tidak mencegah proses yang buruk atau proses yang dikompromikan 
+
+1108
+00:45:28,240 --> 00:45:29,656
+ dari membuat panggilan sys secara langsung. 
+
+1109
+00:45:29,656 --> 00:45:32,270
+ Dan kemudian Anda harus memiliki penegakan kernel 
+
+1110
+00:45:32,270 --> 00:45:33,786
+ sesuatu atau lainnya. 
+
+1111
+00:45:33,786 --> 00:45:34,286
+ Ya? 
+
+1112
+00:45:34,286 --> 00:45:36,724
+ AUDIENCE: [TIDAK JELAS]. 
+
+1113
+00:45:36,724 --> 00:45:37,390
+ PROFESOR: Ya. 
+
+1114
+00:45:37,390 --> 00:45:39,247
+ Jadi saya pikir itu pertanyaan - saya kira 
+
+1115
+00:45:39,247 --> 00:45:40,330
+ apa model ancaman Anda? 
+
+1116
+00:45:40,330 --> 00:45:40,830
+ Persis. 
+
+1117
+00:45:40,830 --> 00:45:42,580
+ Jadi untuk compiler, model ancaman 
+
+1118
+00:45:42,580 --> 00:45:47,230
+ adalah bahwa programmer mungkin tidak memperhatikan 
+
+1119
+00:45:47,230 --> 00:45:50,240
+ jauh, tapi itu bukan proses kompiler yang dikompromikan, 
+
+1120
+00:45:50,240 --> 00:45:51,710
+ bukan kode acak. 
+
+1121
+00:45:51,710 --> 00:45:54,750
+ Jadi jika kita hanya membantu pengembang yang bermaksud baik lakukan 
+
+1122
+00:45:54,750 --> 00:45:58,590
+ hal yang benar, maka perpustakaan mungkin akan cukup. 
+
+1123
+00:45:58,590 --> 00:46:00,990
+ Di sisi lain, jika kita berbicara tentang suatu proses itu 
+
+1124
+00:46:00,990 --> 00:46:03,110
+ bisa menjadi kode arbitrer eksekusi kami 
+
+1125
+00:46:03,110 --> 00:46:05,610
+ dan bisa mencoba untuk melewati mekanisme kami 
+
+1126
+00:46:05,610 --> 00:46:07,210
+ dengan cara apapun, maka kita punya 
+
+1127
+00:46:07,210 --> 00:46:09,370
+ untuk memiliki batas penegakan yang kuat. 
+
+1128
+00:46:09,370 --> 00:46:12,160
+ Dan perpustakaan tidak memberikan penegakan yang kuat 
+
+1129
+00:46:12,160 --> 00:46:12,660
+ jaminan. 
+
+1130
+00:46:12,660 --> 00:46:16,311
+ Padahal kernel, dalam kasus kami, akan melakukan itu. 
+
+1131
+00:46:16,311 --> 00:46:16,810
+ BAIK. 
+
+1132
+00:46:16,810 --> 00:46:20,805
+ Jadi apa yang sebenarnya mereka lakukan dalam hal perubahan pada kernel? 
+
+1133
+00:46:20,805 --> 00:46:25,270
+ Jadi saya kira yang pertama adalah panggilan sistem ini 
+
+1134
+00:46:25,270 --> 00:46:26,780
+ yang mereka sebut cap_enter. 
+
+1135
+00:46:26,780 --> 00:46:30,750
+
+
+1136
+00:46:30,750 --> 00:46:33,049
+ Dan apa yang terjadi setelah Anda menjalankan cap_enter? 
+
+1137
+00:46:33,049 --> 00:46:35,215
+ Setelah Anda [INAUDIBLE] cap_enter dari proses Anda? 
+
+1138
+00:46:35,215 --> 00:46:38,309
+
+
+1139
+00:46:38,309 --> 00:46:39,850
+ Jadi sejauh yang saya tahu, apa yang terjadi 
+
+1140
+00:46:39,850 --> 00:46:44,950
+ adalah bahwa kernel akan berhenti menerima panggilan sistem apa pun itu 
+
+1141
+00:46:44,950 --> 00:46:47,635
+ lihat ruang nama global. 
+
+1142
+00:46:47,635 --> 00:46:49,260
+ Dan satu-satunya hal yang bisa Anda lakukan 
+
+1143
+00:46:49,260 --> 00:46:52,650
+ mengacu pada deskriptor file yang ada 
+
+1144
+00:46:52,650 --> 00:46:54,810
+ yang telah Anda buka dalam proses Anda. 
+
+1145
+00:46:54,810 --> 00:46:58,340
+ Jadi cap_enter akan menempatkan proses Anda dalam mode khusus di mana 
+
+1146
+00:46:58,340 --> 00:47:02,265
+ Anda tidak dapat menggunakan sistem reguler yang disebut terbuka, 
+
+1147
+00:47:02,265 --> 00:47:06,059
+ dan sebagai gantinya Anda harus melakukan hal-hal seperti openat. 
+
+1148
+00:47:06,059 --> 00:47:07,475
+ Jadi ada jenis keluarga baru ini 
+
+1149
+00:47:07,475 --> 00:47:10,830
+ sistem yang disebut, di Unix seperti sistem operasi, di mana 
+
+1150
+00:47:10,830 --> 00:47:13,280
+ daripada membuka satu nama jalan, 
+
+1151
+00:47:13,280 --> 00:47:15,850
+ Anda dapat benar-benar membukanya, di mana 
+
+1152
+00:47:15,850 --> 00:47:17,560
+ Anda melewatkannya argumen pertama yang 
+
+1153
+00:47:17,560 --> 00:47:20,110
+ adalah deskriptor file untuk direktori 
+
+1154
+00:47:20,110 --> 00:47:23,640
+ dan yang kedua adalah semacam nama. 
+
+1155
+00:47:23,640 --> 00:47:27,610
+ Dan buka di system call akan membuka nama ini 
+
+1156
+00:47:27,610 --> 00:47:31,250
+ relatif terhadap direktori apa pun yang ditunjuk oleh file deskriptor. 
+
+1157
+00:47:31,250 --> 00:47:33,430
+ Jadi ini adalah versi yang jauh lebih mirip kemampuan 
+
+1158
+00:47:33,430 --> 00:47:36,930
+ terbuka, di mana Anda masih dapat menunjuk file deskriptor 
+
+1159
+00:47:36,930 --> 00:47:42,580
+ ke direktori, tetapi Anda bisa-- yah, maaf. 
+
+1160
+00:47:42,580 --> 00:47:44,795
+ Anda masih bisa mengarahkan operasi Anda. 
+
+1161
+00:47:44,795 --> 00:47:46,170
+ Tetapi untuk melakukan ini, Anda punya 
+
+1162
+00:47:46,170 --> 00:47:47,872
+ untuk memiliki kemampuan ke direktori 
+
+1163
+00:47:47,872 --> 00:47:49,830
+ dalam bentuk deskriptor file terbuka untuk itu 
+
+1164
+00:47:49,830 --> 00:47:51,200
+ [TIDAK JELAS]. 
+
+1165
+00:47:51,200 --> 00:47:53,944
+ Masuk akal? 
+
+1166
+00:47:53,944 --> 00:47:55,290
+ BAIK. 
+
+1167
+00:47:55,290 --> 00:47:58,480
+ Jadi apakah mereka memerlukan perubahan kernel lainnya? 
+
+1168
+00:47:58,480 --> 00:48:00,630
+ Apakah ada hal lain yang mereka khawatirkan? 
+
+1169
+00:48:00,630 --> 00:48:04,520
+
+
+1170
+00:48:04,520 --> 00:48:06,086
+ Jadi saya kira ada yang lain-- ya? 
+
+1171
+00:48:06,086 --> 00:48:07,650
+ AUDIENCE: [TIDAK JELAS]. 
+
+1172
+00:48:07,650 --> 00:48:08,316
+ PROFESOR: Ya. 
+
+1173
+00:48:08,316 --> 00:48:10,274
+ Jadi apa yang mereka lakukan tentang akses jaringan, bukan? 
+
+1174
+00:48:10,274 --> 00:48:12,073
+ Jadi apa yang terjadi dalam mode kemampuan? 
+
+1175
+00:48:12,073 --> 00:48:14,281
+ AUDIENCE: Saya kira mereka memiliki kemampuan untuk keamanan 
+
+1176
+00:48:14,281 --> 00:48:17,365
+ paket [tidak terdengar]. 
+
+1177
+00:48:17,365 --> 00:48:17,990
+ PROFESOR: Ya. 
+
+1178
+00:48:17,990 --> 00:48:19,365
+ Jadi saya pikir cara mereka pada dasarnya 
+
+1179
+00:48:19,365 --> 00:48:22,682
+ lakukan itu adalah bahwa mereka memperlakukan jaringan sebagai namespace global, 
+
+1180
+00:48:22,682 --> 00:48:23,890
+ sangat mirip dengan sistem file. 
+
+1181
+00:48:23,890 --> 00:48:28,020
+ Jadi saya pikir setelah Anda memasuki mode kemampuan, 
+
+1182
+00:48:28,020 --> 00:48:30,660
+ Anda tidak dapat membuat soket baru. 
+
+1183
+00:48:30,660 --> 00:48:33,320
+ Atau Anda tidak dapat membuat soket baru dan terhubung ke beberapa 
+
+1184
+00:48:33,320 --> 00:48:36,321
+ mesin sewenang-wenang, atau ke beberapa alamat atau benteng yang sewenang-wenang 
+
+1185
+00:48:36,321 --> 00:48:36,820
+ jumlah. 
+
+1186
+00:48:36,820 --> 00:48:40,710
+ Anda harus pada dasarnya membuat semua koneksi yang Anda inginkan ke depan 
+
+1187
+00:48:40,710 --> 00:48:42,420
+ waktu dan mengisinya sebagai kemampuan. 
+
+1188
+00:48:42,420 --> 00:48:44,670
+ Atau mungkin Anda harus mendapatkannya dari seseorang yang akan melakukannya 
+
+1189
+00:48:44,670 --> 00:48:46,185
+ memberikan Anda file deskriptor. 
+
+1190
+00:48:46,185 --> 00:48:48,655
+ Tetapi pada dasarnya, setelah Anda berada dalam mode kemampuan, 
+
+1191
+00:48:48,655 --> 00:48:51,280
+ kumpulan deskriptor file yang telah Anda buka benar-benar disebutkan 
+
+1192
+00:48:51,280 --> 00:48:52,821
+ semua mesin yang pernah Anda ajak bicara. 
+
+1193
+00:48:52,821 --> 00:48:54,430
+ Jadi Anda dapat menemukan koneksi terbuka. 
+
+1194
+00:48:54,430 --> 00:48:55,846
+ Mungkin Anda sedang mendengarkan di sebuah bengkel. 
+
+1195
+00:48:55,846 --> 00:48:57,050
+ Tidak apa-apa. 
+
+1196
+00:48:57,050 --> 00:48:59,790
+ Tetapi Anda tidak dapat terhubung ke alamat yang ditentukan 
+
+1197
+00:48:59,790 --> 00:49:02,453
+ dengan nama mutlak, jenis seperti namespace global akan 
+
+1198
+00:49:02,453 --> 00:49:03,866
+ memungkinkan Anda melakukannya. 
+
+1199
+00:49:03,866 --> 00:49:05,150
+ Masuk akal? 
+
+1200
+00:49:05,150 --> 00:49:09,310
+ Jadi itu akses melalui namespace jaringan, juga. 
+
+1201
+00:49:09,310 --> 00:49:11,840
+ Apa yang mereka lakukan untuk proses? 
+
+1202
+00:49:11,840 --> 00:49:14,400
+ Jadi, namespace global lain, saya kira, di Unix, 
+
+1203
+00:49:14,400 --> 00:49:16,670
+ adalah PID itu sendiri. 
+
+1204
+00:49:16,670 --> 00:49:18,875
+ Jadi contoh panggilan sistem yang beroperasi 
+
+1205
+00:49:18,875 --> 00:49:20,090
+ di ruang nama ini adalah "bunuh." 
+
+1206
+00:49:20,090 --> 00:49:22,549
+ Jadi saya bisa membunuh PID 25. 
+
+1207
+00:49:22,549 --> 00:49:24,840
+ Dan saya bisa - yah, mungkin saya akan menaruh satu nomor 
+
+1208
+00:49:24,840 --> 00:49:26,110
+ di sana juga. 
+
+1209
+00:49:26,110 --> 00:49:31,040
+ Tapi saya benar-benar bisa membunuh proses dengan nomor PID-nya. 
+
+1210
+00:49:31,040 --> 00:49:35,320
+ Bagaimana mereka memperbaikinya di Capsicum? 
+
+1211
+00:49:35,320 --> 00:49:36,130
+ Apa rencananya? 
+
+1212
+00:49:36,130 --> 00:49:41,553
+
+
+1213
+00:49:41,553 --> 00:49:42,269
+ Ya? 
+
+1214
+00:49:42,269 --> 00:49:44,018
+ AUDIENCE: deskriptor File dengan proses. 
+
+1215
+00:49:44,018 --> 00:49:44,520
+ PROFESOR: Ya. 
+
+1216
+00:49:44,520 --> 00:49:45,130
+ Sebenarnya agak keren. 
+
+1217
+00:49:45,130 --> 00:49:47,300
+ Ini seperti, saya berharap Unix memiliki ini selama ini. 
+
+1218
+00:49:47,300 --> 00:49:50,640
+ Yaitu, alih-alih memiliki jenis-jenis yang berbeda ini 
+
+1219
+00:49:50,640 --> 00:49:54,630
+ angka atau PID, sebaliknya, saat Anda melakukan off suatu proses, 
+
+1220
+00:49:54,630 --> 00:49:56,620
+ sebenarnya memiliki varian garpu baru 
+
+1221
+00:49:56,620 --> 00:50:01,300
+ disebut pdfork, atau Proses Descriptor Fork. 
+
+1222
+00:50:01,300 --> 00:50:04,560
+ Dan apa yang dilakukannya adalah ketika ia menciptakan proses anak, 
+
+1223
+00:50:04,560 --> 00:50:07,700
+ itu sebenarnya mengacu pada proses anak itu 
+
+1224
+00:50:07,700 --> 00:50:10,320
+ ke dalam tabel deskriptor file Anda di suatu tempat. 
+
+1225
+00:50:10,320 --> 00:50:11,730
+ Dan ini adalah proses baru Anda. 
+
+1226
+00:50:11,730 --> 00:50:13,700
+ Dan Anda dapat beroperasi pada proses anak 
+
+1227
+00:50:13,700 --> 00:50:15,409
+ dengan menentukan nomor deskripsi file. 
+
+1228
+00:50:15,409 --> 00:50:17,491
+ Yah, itu akan sangat keren, karena kamu bisa sekarang 
+
+1229
+00:50:17,491 --> 00:50:19,550
+ berikan proses anak Anda kepada orang lain 
+
+1230
+00:50:19,550 --> 00:50:21,580
+ dan berkata, yah, jika Anda bisa pergi dan membunuh mereka sekarang, 
+
+1231
+00:50:21,580 --> 00:50:24,230
+ atau Anda dapat mengelola proses ini sesuka Anda, 
+
+1232
+00:50:24,230 --> 00:50:26,560
+ Anda akan mendapat notifikasi ketika prosesnya mati. 
+
+1233
+00:50:26,560 --> 00:50:31,000
+ Ini akan terlihat seperti file deskriptor yang dapat dibaca, dan sebagainya. 
+
+1234
+00:50:31,000 --> 00:50:34,530
+ Jadi mereka benar-benar mencoba untuk menghomogenkan semuanya 
+
+1235
+00:50:34,530 --> 00:50:38,930
+ ke dalam tampak seperti file deskriptor dari beberapa macam di sini. 
+
+1236
+00:50:38,930 --> 00:50:40,695
+ Dan dengan perubahan kernel ini, Anda 
+
+1237
+00:50:40,695 --> 00:50:43,300
+ akhirnya bisa memiliki semua fungsi 
+
+1238
+00:50:43,300 --> 00:50:44,330
+ Anda mungkin peduli. 
+
+1239
+00:50:44,330 --> 00:50:46,110
+ Anda sudah memiliki dukungan untuk soket, 
+
+1240
+00:50:46,110 --> 00:50:48,160
+ deskriptor proses, dan sebagainya. 
+
+1241
+00:50:48,160 --> 00:50:52,350
+ Dan Anda memiliki cara membatasi 
+
+1242
+00:50:52,350 --> 00:50:53,840
+ apa yang bisa dilakukan proses. 
+
+1243
+00:50:53,840 --> 00:50:56,470
+ Karena itu tidak bisa merujuk ke salah satu nama global lagi 
+
+1244
+00:50:56,470 --> 00:50:59,690
+ setelah [TIDAK JELAS]. 
+
+1245
+00:50:59,690 --> 00:51:00,610
+ Baiklah. 
+
+1246
+00:51:00,610 --> 00:51:03,050
+ Ada pertanyaan? 
+
+1247
+00:51:03,050 --> 00:51:05,700
+ Jadi, inilah teka-teki yang menarik. 
+
+1248
+00:51:05,700 --> 00:51:07,820
+ Saya mencoba memahami dari koran. 
+
+1249
+00:51:07,820 --> 00:51:10,410
+ Mereka membuat masalah besar tentang dot dot 
+
+1250
+00:51:10,410 --> 00:51:12,820
+ dalam mencari nama direktori. 
+
+1251
+00:51:12,820 --> 00:51:16,210
+ Jadi pada dasarnya mereka mengatakan, baik, begitu Anda berada dalam mode kemampuan, 
+
+1252
+00:51:16,210 --> 00:51:19,430
+ ketika Anda melewati nama tertentu untuk membukanya, 
+
+1253
+00:51:19,430 --> 00:51:21,416
+ Anda tidak dapat menggunakan dot dot pada nama-nama itu. 
+
+1254
+00:51:21,416 --> 00:51:23,040
+ Dan mungkin, jika Anda memiliki Simulink, 
+
+1255
+00:51:23,040 --> 00:51:25,205
+ jika target Simulink mengandung dot dot, 
+
+1256
+00:51:25,205 --> 00:51:28,780
+ mereka akan menolaknya jika Anda berada dalam mode kemampuan. 
+
+1257
+00:51:28,780 --> 00:51:31,830
+ Jadi apakah ini sangat diperlukan? 
+
+1258
+00:51:31,830 --> 00:51:33,980
+ Bisakah Anda membayangkan desain yang aman pada prinsipnya 
+
+1259
+00:51:33,980 --> 00:51:35,610
+ yang memungkinkan penggunaan dot dot? 
+
+1260
+00:51:35,610 --> 00:51:40,330
+
+
+1261
+00:51:40,330 --> 00:51:41,040
+ Ya. 
+
+1262
+00:51:41,040 --> 00:51:43,664
+ AUDIENCE: Yah, Anda harus dapat menemukan apakah mereka memilikinya 
+
+1263
+00:51:43,664 --> 00:51:46,892
+ file atau kemampuan yang memungkinkan massa untuk orang tua 
+
+1264
+00:51:46,892 --> 00:51:47,880
+ direktori. 
+
+1265
+00:51:47,880 --> 00:51:48,640
+ PROFESOR: Benar. 
+
+1266
+00:51:48,640 --> 00:51:50,181
+ AUDIENCE: Jadi itu sepele untuk turun, 
+
+1267
+00:51:50,181 --> 00:51:52,908
+ karena subdirektori apa pun-- Anda sudah memiliki akses ke sana 
+
+1268
+00:51:52,908 --> 00:51:53,490
+ dengan memiliki kemampuan. 
+
+1269
+00:51:53,490 --> 00:51:54,190
+ PROFESOR: Benar. 
+
+1270
+00:51:54,190 --> 00:51:54,740
+ Ya. 
+
+1271
+00:51:54,740 --> 00:51:56,050
+ AUDIENCE: Tapi naik, Anda perlu melihat 
+
+1272
+00:51:56,050 --> 00:51:58,050
+ apakah Anda memiliki kemampuan untuk orang tua 
+
+1273
+00:51:58,050 --> 00:51:58,810
+ direktori. 
+
+1274
+00:51:58,810 --> 00:51:59,810
+ PROFESOR: Benar. 
+
+1275
+00:51:59,810 --> 00:52:00,300
+ Ya. 
+
+1276
+00:52:00,300 --> 00:52:01,060
+ AUDIENCE: Cari entah bagaimana. 
+
+1277
+00:52:01,060 --> 00:52:01,220
+ PROFESOR: Ya. 
+
+1278
+00:52:01,220 --> 00:52:01,955
+ Jadi itu sedikit rumit. 
+
+1279
+00:52:01,955 --> 00:52:03,503
+ Dan juga, itu bertentangan dengan arus 
+
+1280
+00:52:03,503 --> 00:52:06,490
+ dari hal otoritas yang eksplisit secara keseluruhan ini. 
+
+1281
+00:52:06,490 --> 00:52:09,895
+ Bagaimana jika Anda menggunakan dot dot dalam urutan 
+
+1282
+00:52:09,895 --> 00:52:11,415
+ satu panggilan terbuka? 
+
+1283
+00:52:11,415 --> 00:52:15,800
+ Jadi misalnya, bagaimana jika Anda memanggil sesuatu seperti membukanya 
+
+1284
+00:52:15,800 --> 00:52:18,050
+ direktori atau nomor deskripsi file tertentu, 
+
+1285
+00:52:18,050 --> 00:52:20,332
+ dan Anda membuka sesuatu seperti, saya tidak tahu, b / c /../ ..? 
+
+1286
+00:52:20,332 --> 00:52:26,690
+
+
+1287
+00:52:26,690 --> 00:52:28,910
+ Pada prinsipnya, ini mungkin aman, kan? 
+
+1288
+00:52:28,910 --> 00:52:31,290
+ Karena Anda pergi ke beberapa direktori, dan kemudian Anda saja 
+
+1289
+00:52:31,290 --> 00:52:33,770
+ naik kembali dari itu. 
+
+1290
+00:52:33,770 --> 00:52:34,660
+ Ya? 
+
+1291
+00:52:34,660 --> 00:52:36,824
+ AUDIENCE: Bagaimana jika c adalah [TIDAK JELAS]? 
+
+1292
+00:52:36,824 --> 00:52:37,490
+ PROFESOR: Ya. 
+
+1293
+00:52:37,490 --> 00:52:38,560
+ Jadi agak sedikit rumit, tentu saja, 
+
+1294
+00:52:38,560 --> 00:52:40,570
+ untuk menentukan dengan tepat apa artinya aman. 
+
+1295
+00:52:40,570 --> 00:52:41,070
+ Kanan? 
+
+1296
+00:52:41,070 --> 00:52:44,350
+ Anda mungkin harus memastikan bahwa c bukan Simulink itu 
+
+1297
+00:52:44,350 --> 00:52:46,160
+ pergi ke tempat lain dan seterusnya. 
+
+1298
+00:52:46,160 --> 00:52:46,660
+ Ya. 
+
+1299
+00:52:46,660 --> 00:52:48,190
+ Itu adalah proposisi yang cukup rumit, untuk mendapatkan hak ini. 
+
+1300
+00:52:48,190 --> 00:52:50,106
+ Dan saya pikir, di koran, apa dasarnya mereka 
+
+1301
+00:52:50,106 --> 00:52:52,000
+ berdebat tentang itu sebenarnya 
+
+1302
+00:52:52,000 --> 00:52:54,630
+ cukup sulit dalam praktek untuk menerapkan satu set pemeriksaan 
+
+1303
+00:52:54,630 --> 00:52:57,990
+ itu cukup dan melewati semua tingkat yang mungkin 
+
+1304
+00:52:57,990 --> 00:52:59,640
+ kondisi di sini. 
+
+1305
+00:52:59,640 --> 00:53:02,020
+ Jadi pada dasarnya mereka hanya melakukan hal yang konservatif 
+
+1306
+00:53:02,020 --> 00:53:04,190
+ dan larang dot dot apa pun setiap saat 
+
+1307
+00:53:04,190 --> 00:53:07,520
+ setelah Anda berada dalam mode kemampuan. 
+
+1308
+00:53:07,520 --> 00:53:09,330
+ Ada beberapa kondisi tarif yang menarik 
+
+1309
+00:53:09,330 --> 00:53:10,496
+ kamu bisa datang ke sini. 
+
+1310
+00:53:10,496 --> 00:53:14,000
+ Catatan kuliah memiliki lebih banyak detail. 
+
+1311
+00:53:14,000 --> 00:53:16,010
+ Tetapi pada dasarnya saya pikir orang-orang ini 
+
+1312
+00:53:16,010 --> 00:53:18,560
+ bersikap ekstra hati-hati dalam menentukan apa yang diizinkan 
+
+1313
+00:53:18,560 --> 00:53:22,700
+ dan apa yang tidak diizinkan dalam mode kemampuan. 
+
+1314
+00:53:22,700 --> 00:53:23,567
+ BAIK. 
+
+1315
+00:53:23,567 --> 00:53:25,620
+ Jadi di sini, untuk menjawab pertanyaan Anda, 
+
+1316
+00:53:25,620 --> 00:53:27,036
+ setelah Anda memasukkan mode kemampuan, itu 
+
+1317
+00:53:27,036 --> 00:53:30,505
+ tampaknya semua dikendalikan oleh tabel file Anda. 
+
+1318
+00:53:30,505 --> 00:53:33,641
+ Apakah UID Anda masih penting, begitu Anda memasuki mode kemampuan? 
+
+1319
+00:53:33,641 --> 00:53:41,020
+
+
+1320
+00:53:41,020 --> 00:53:43,340
+ [TIDAK JELAS] 
+
+1321
+00:53:43,340 --> 00:53:44,080
+ Ya? 
+
+1322
+00:53:44,080 --> 00:53:46,080
+ AUDIENCE: Yah, Anda masih bisa meluncurkan proses 
+
+1323
+00:53:46,080 --> 00:53:48,077
+ itu tidak menggunakan kemampuan. 
+
+1324
+00:53:48,077 --> 00:53:48,660
+ PROFESOR: Tidak. 
+
+1325
+00:53:48,660 --> 00:53:50,187
+ Sebenarnya, tidak, kamu tidak bisa. 
+
+1326
+00:53:50,187 --> 00:53:52,520
+ Anda harus memastikan bahwa - jika tidak, Anda bisa melarikan diri, 
+
+1327
+00:53:52,520 --> 00:53:54,811
+ seperti baik, saya tidak dapat mengakses - mengapa Anda tidak menjalankan orang ini? 
+
+1328
+00:53:54,811 --> 00:53:56,258
+ [TIDAK JELAS] 
+
+1329
+00:53:56,258 --> 00:53:59,535
+ Jadi ya, cap_enter diwarisi oleh semua anak, yang 
+
+1330
+00:53:59,535 --> 00:54:01,550
+ sebenarnya sangat penting. 
+
+1331
+00:54:01,550 --> 00:54:02,050
+ Ya? 
+
+1332
+00:54:02,050 --> 00:54:06,000
+
+
+1333
+00:54:06,000 --> 00:54:09,190
+ Ada yang lain? 
+
+1334
+00:54:09,190 --> 00:54:10,990
+ Jadi bagaimana jika kita membunuh UID? 
+
+1335
+00:54:10,990 --> 00:54:13,591
+ Jadi seharusnya seperti pergi ke cap_enter, 
+
+1336
+00:54:13,591 --> 00:54:15,590
+ dan kita hanya membunuh UID dari proses saat ini. 
+
+1337
+00:54:15,590 --> 00:54:17,476
+ Kami sebenarnya tidak peduli apa itu lagi. 
+
+1338
+00:54:17,476 --> 00:54:19,225
+ Dan kemudian proses mencoba membuka file. 
+
+1339
+00:54:19,225 --> 00:54:22,350
+ Pemeriksaan apa yang harus diterapkan? 
+
+1340
+00:54:22,350 --> 00:54:22,850
+ Ya? 
+
+1341
+00:54:22,850 --> 00:54:25,191
+ AUDIENCE: Oh, saya berpikir bahwa UID adalah 
+
+1342
+00:54:25,191 --> 00:54:26,690
+ berguna untuk keperluan penebangan juga, 
+
+1343
+00:54:26,690 --> 00:54:28,580
+ seperti bisa mengetahui apakah Anda melakukan sesuatu. 
+
+1344
+00:54:28,580 --> 00:54:29,130
+ PROFESOR: Jadi ya, Anda benar. 
+
+1345
+00:54:29,130 --> 00:54:29,460
+ Sebenarnya, ya. 
+
+1346
+00:54:29,460 --> 00:54:30,930
+ Jadi itu benar-benar agak merusak, kan? 
+
+1347
+00:54:30,930 --> 00:54:33,500
+ Seperti saya menelurkan beberapa proses sandbox di mesin saya 
+
+1348
+00:54:33,500 --> 00:54:34,669
+ dan kehilangan UID. 
+
+1349
+00:54:34,669 --> 00:54:36,460
+ Saya seperti saya memiliki seratus proses yang sedang berjalan 
+
+1350
+00:54:36,460 --> 00:54:38,730
+ di mesin saya, dan saya tidak tahu apa itu. 
+
+1351
+00:54:38,730 --> 00:54:40,400
+ Jadi itu mungkin bukan rencana yang bagus untuk tujuan manajemen. 
+
+1352
+00:54:40,400 --> 00:54:41,555
+ Anda memang benar. 
+
+1353
+00:54:41,555 --> 00:54:44,170
+ Tapi saya hanya mengatakan secara hipotesis, yah, 
+
+1354
+00:54:44,170 --> 00:54:45,920
+ apakah kita membutuhkannya untuk kontrol akses, saya kira. 
+
+1355
+00:54:45,920 --> 00:54:46,750
+ Ya? 
+
+1356
+00:54:46,750 --> 00:54:48,280
+ AUDIENCE: Mungkin jika UID ini hanya 
+
+1357
+00:54:48,280 --> 00:54:50,790
+ seharusnya dapat mengakses file ini dengan membaca 
+
+1358
+00:54:50,790 --> 00:54:54,075
+ atau apa pun, tetapi Anda memiliki deskriptor file untuk itu, 
+
+1359
+00:54:54,075 --> 00:54:55,450
+ tetapi kemudian jika Anda kehilangan UID, Anda 
+
+1360
+00:54:55,450 --> 00:54:57,960
+ mungkin mendapatkan izin untuk menulis [tidak terdengar] atau sesuatu? 
+
+1361
+00:54:57,960 --> 00:54:58,780
+ PROFESOR: Ya. 
+
+1362
+00:54:58,780 --> 00:55:03,410
+ Saya pikir sebenarnya apa yang muncul di dalam direktori. 
+
+1363
+00:55:03,410 --> 00:55:05,287
+ Karena setelah Anda menambahkan kemampuan ke file, 
+
+1364
+00:55:05,287 --> 00:55:06,120
+ itu pada dasarnya. 
+
+1365
+00:55:06,120 --> 00:55:08,600
+ Anda memilikinya terbuka dengan hak istimewa tertentu, dan sebagainya. 
+
+1366
+00:55:08,600 --> 00:55:11,519
+ Namun masalahnya adalah mereka memiliki desain hibrida ini di mana 
+
+1367
+00:55:11,519 --> 00:55:13,560
+ mereka berkata, yah, Anda benar-benar dapat menambah kemampuan 
+
+1368
+00:55:13,560 --> 00:55:15,510
+ ke direktori, dan Anda dapat membuka file baru 
+
+1369
+00:55:15,510 --> 00:55:17,030
+ saat Anda berlari bersama. 
+
+1370
+00:55:17,030 --> 00:55:19,375
+ Dan mungkin saja Anda menambahkan kemampuan 
+
+1371
+00:55:19,375 --> 00:55:22,200
+ ke direktori, seperti / etc. 
+
+1372
+00:55:22,200 --> 00:55:24,450
+ Dan Anda tidak memiliki akses ke semua file yang diperlukan 
+
+1373
+00:55:24,450 --> 00:55:25,520
+ di / etc. 
+
+1374
+00:55:25,520 --> 00:55:27,440
+ Tetapi setelah Anda memasuki mode kemampuan, 
+
+1375
+00:55:27,440 --> 00:55:29,860
+ Anda sekarang dapat mencoba membuka file-file tersebut dengan mengatakan, yah, 
+
+1376
+00:55:29,860 --> 00:55:31,840
+ Saya memiliki akses ke direktori / etc. 
+
+1377
+00:55:31,840 --> 00:55:32,850
+ Sudah terbuka. 
+
+1378
+00:55:32,850 --> 00:55:34,620
+ Mengapa Anda tidak memberi saya file bernama 
+
+1379
+00:55:34,620 --> 00:55:36,060
+ kata sandi di direktori itu? 
+
+1380
+00:55:36,060 --> 00:55:38,780
+ Dan kernel masih perlu membuat keputusan kontrol akses 
+
+1381
+00:55:38,780 --> 00:55:42,090
+ apakah akan mengizinkan Anda membuka file di direktori itu 
+
+1382
+00:55:42,090 --> 00:55:45,010
+ dengan mode baca atau mode tulis atau apa pun yang Anda miliki. 
+
+1383
+00:55:45,010 --> 00:55:47,490
+ Jadi saya pikir ini adalah satu tempat di mana Anda masih membutuhkannya 
+
+1384
+00:55:47,490 --> 00:55:50,620
+ hak istimewa ambient ini, sampai batas tertentu, karena mereka 
+
+1385
+00:55:50,620 --> 00:55:53,140
+ mencoba untuk membangun desain yang kompatibel ini di mana 
+
+1386
+00:55:53,140 --> 00:55:56,780
+ Anda dapat memiliki semantik semi alami untuk mengetahui bagaimana direktori 
+
+1387
+00:55:56,780 --> 00:55:57,670
+ kerja. 
+
+1388
+00:55:57,670 --> 00:55:59,410
+ Apakah itu masuk akal? 
+
+1389
+00:55:59,410 --> 00:56:02,920
+ itu seperti satu tempat yang tersisa, semacam untuk kompatibilitas 
+
+1390
+00:56:02,920 --> 00:56:05,884
+ alasan, atau setidaknya cara sistem file Unix 
+
+1391
+00:56:05,884 --> 00:56:07,660
+ biasanya disiapkan. 
+
+1392
+00:56:07,660 --> 00:56:09,649
+ AUDIENCE: Apakah ada tempat lain? 
+
+1393
+00:56:09,649 --> 00:56:10,690
+ PROFESOR: Pertanyaan bagus. 
+
+1394
+00:56:10,690 --> 00:56:12,240
+ Saya tidak bisa memikirkan satu dari tangan, 
+
+1395
+00:56:12,240 --> 00:56:14,531
+ tapi saya kira saya harus mendapatkan sumber daya mereka sebelumnya 
+
+1396
+00:56:14,531 --> 00:56:17,980
+ kode untuk mencari tahu apa yang terjadi. 
+
+1397
+00:56:17,980 --> 00:56:20,150
+ Saya pikir sebagian besar situasi lainnya 
+
+1398
+00:56:20,150 --> 00:56:22,069
+ tidak benar-benar membutuhkan pemeriksaan UID. 
+
+1399
+00:56:22,069 --> 00:56:23,860
+ Karena untuk jaringan, itu tidak muncul. 
+
+1400
+00:56:23,860 --> 00:56:27,406
+ Saya pikir untuk deskriptor proses itu tidak muncul juga. 
+
+1401
+00:56:27,406 --> 00:56:29,660
+ Jika Anda memilikinya, maka Anda hanya memilikinya. 
+
+1402
+00:56:29,660 --> 00:56:33,421
+ Jadi saya pikir itu mungkin hanya operasi sistem file. 
+
+1403
+00:56:33,421 --> 00:56:35,920
+ Untuk memori bersama, itu juga - begitu Anda memiliki memori bersama 
+
+1404
+00:56:35,920 --> 00:56:37,760
+ Segmen, Anda memilikinya terbuka. 
+
+1405
+00:56:37,760 --> 00:56:41,232
+
+
+1406
+00:56:41,232 --> 00:56:41,841
+ Ya? 
+
+1407
+00:56:41,841 --> 00:56:43,216
+ AUDIENCE: Bisakah Anda menjelaskan lagi 
+
+1408
+00:56:43,216 --> 00:56:47,404
+ seberapa tepatnya ID pengguna penting jika Anda memiliki kemampuan? 
+
+1409
+00:56:47,404 --> 00:56:48,070
+ PROFESOR: Ya. 
+
+1410
+00:56:48,070 --> 00:56:51,810
+ Jadi saya pikir di mana itu penting, Anda punya 
+
+1411
+00:56:51,810 --> 00:56:54,910
+ kemampuan untuk direktori. 
+
+1412
+00:56:54,910 --> 00:56:57,770
+ Pertanyaannya adalah, apa yang diwakili oleh kemampuan? 
+
+1413
+00:56:57,770 --> 00:57:01,260
+ Jadi satu interpretasi itu-- misalnya, beberapa kemampuan 
+
+1414
+00:57:01,260 --> 00:57:03,130
+ keadaan sistem, bukan Capsicum. 
+
+1415
+00:57:03,130 --> 00:57:04,130
+ Sistem kemampuan murni. 
+
+1416
+00:57:04,130 --> 00:57:06,870
+ Mereka berkata, yah, jika Anda memiliki kemampuan ke direktori, 
+
+1417
+00:57:06,870 --> 00:57:08,828
+ maka tentu saja Anda memiliki akses ke semua file 
+
+1418
+00:57:08,828 --> 00:57:11,392
+ di direktori itu, tidak ada pertanyaan tentang itu. 
+
+1419
+00:57:11,392 --> 00:57:13,225
+ Dan di Unix, ini biasanya tidak terjadi. 
+
+1420
+00:57:13,225 --> 00:57:16,110
+ Anda dapat membuka direktori seperti / etc, 
+
+1421
+00:57:16,110 --> 00:57:18,670
+ tapi ada banyak file sistem di sana yang mungkin 
+
+1422
+00:57:18,670 --> 00:57:21,917
+ pribadi, seperti kunci pribadi server Anda disimpan di sana. 
+
+1423
+00:57:21,917 --> 00:57:24,250
+ Dan hanya karena Anda dapat melihat direktori dan membukanya 
+
+1424
+00:57:24,250 --> 00:57:26,820
+ dan daftar itu tidak berarti Anda tidak dapat membuka file 
+
+1425
+00:57:26,820 --> 00:57:28,310
+ di direktori itu. 
+
+1426
+00:57:28,310 --> 00:57:32,392
+ Jadi di Capsicum, jika Anda membuka direktori seperti / etc, 
+
+1427
+00:57:32,392 --> 00:57:33,850
+ lalu Anda memasuki mode kemampuan. 
+
+1428
+00:57:33,850 --> 00:57:35,190
+ Dan kemudian Anda berkata, yah, hei, saya tidak 
+
+1429
+00:57:35,190 --> 00:57:36,200
+ tahu apa direktori ini. 
+
+1430
+00:57:36,200 --> 00:57:37,658
+ Saya hanya menambahkan deskripsi file untuk itu. 
+
+1431
+00:57:37,658 --> 00:57:39,342
+ Ada file di sana yang disebut "kunci." 
+
+1432
+00:57:39,342 --> 00:57:41,390
+ Mengapa Anda tidak membuka file itu "kunci"? 
+
+1433
+00:57:41,390 --> 00:57:44,070
+ Dan pada titik ini, Anda mungkin tidak 
+
+1434
+00:57:44,070 --> 00:57:46,270
+ ingin memungkinkan prosesor berbasis kemampuan ini 
+
+1435
+00:57:46,270 --> 00:57:48,480
+ untuk membukanya, karena itu bukan maksudnya. 
+
+1436
+00:57:48,480 --> 00:57:52,060
+ Mereka akan memungkinkan Anda untuk melewati izin Unix pada file. 
+
+1437
+00:57:52,060 --> 00:57:54,250
+ Jadi saya pikir penulis makalah ini 
+
+1438
+00:57:54,250 --> 00:57:59,850
+ hati-hati merancang sistem yang tidak akan melanggar 
+
+1439
+00:57:59,850 --> 00:58:01,600
+ mekanisme keamanan yang ada. 
+
+1440
+00:58:01,600 --> 00:58:04,462
+ AUDIENCE: Jadi Anda mengatakan bahwa Anda dapat, dalam beberapa kasus, 
+
+1441
+00:58:04,462 --> 00:58:06,370
+ menggunakan kombinasi keduanya? 
+
+1442
+00:58:06,370 --> 00:58:08,760
+ Jadi meskipun itu akan dapat mengubahnya ke direktori, 
+
+1443
+00:58:08,760 --> 00:58:10,760
+ di dalam direktori, file mana yang dapat Anda akses 
+
+1444
+00:58:10,760 --> 00:58:11,839
+ tergantung pada ID pengguna Anda? 
+
+1445
+00:58:11,839 --> 00:58:12,880
+ PROFESOR: Ya, tepatnya. 
+
+1446
+00:58:12,880 --> 00:58:16,645
+ Jadi di Capsicum, cara mereka membuatnya bekerja dalam praktek 
+
+1447
+00:58:16,645 --> 00:58:19,890
+ adalah, sebenarnya, sebelum Anda memasuki mode kemampuan, 
+
+1448
+00:58:19,890 --> 00:58:20,666
+ kamu harus menebak. 
+
+1449
+00:58:20,666 --> 00:58:22,415
+ Nah, file apa yang akan saya butuhkan nanti? 
+
+1450
+00:58:22,415 --> 00:58:23,970
+ Saya akan membutuhkan beberapa pustaka bersama. 
+
+1451
+00:58:23,970 --> 00:58:25,060
+ Saya memerlukan beberapa file teks. 
+
+1452
+00:58:25,060 --> 00:58:26,644
+ Saya akan membutuhkan beberapa template. 
+
+1453
+00:58:26,644 --> 00:58:28,560
+ Saya akan membutuhkan koneksi jaringan, dan sebagainya. 
+
+1454
+00:58:28,560 --> 00:58:30,960
+ Jadi Anda membuka semua hal ini sebelumnya. 
+
+1455
+00:58:30,960 --> 00:58:33,970
+ Dan Anda tidak selalu harus tahu file mana yang Anda butuhkan. 
+
+1456
+00:58:33,970 --> 00:58:35,754
+ Jadi apa yang orang-orang ini dukung juga, 
+
+1457
+00:58:35,754 --> 00:58:38,045
+ Anda benar-benar dapat membuka file deskripsi direktori, 
+
+1458
+00:58:38,045 --> 00:58:38,780
+ demikian juga. 
+
+1459
+00:58:38,780 --> 00:58:41,460
+ Dan kemudian saya bisa mencari file-file tertentu nanti. 
+
+1460
+00:58:41,460 --> 00:58:42,960
+ Tapi mungkin file itu tidak ada 
+
+1461
+00:58:42,960 --> 00:58:44,209
+ memiliki semua izin yang sama. 
+
+1462
+00:58:44,209 --> 00:58:46,760
+ Jadi itulah alasannya, ya. 
+
+1463
+00:58:46,760 --> 00:58:49,610
+ Masuk akal? 
+
+1464
+00:58:49,610 --> 00:58:50,940
+ Baiklah. 
+
+1465
+00:58:50,940 --> 00:58:55,560
+ Jadi ini adalah bagian dari mekanisme kernel. 
+
+1466
+00:58:55,560 --> 00:59:01,830
+ Mengapa mereka juga membutuhkan perpustakaan ini untuk libcapsicum? 
+
+1467
+00:59:01,830 --> 00:59:04,410
+ Saya kira ada dua hal yang mereka dukung di perpustakaan itu, 
+
+1468
+00:59:04,410 --> 00:59:07,330
+ sejauh yang saya tahu, atau dua hal utama. 
+
+1469
+00:59:07,330 --> 00:59:15,342
+ Salah satunya adalah bahwa mereka menerapkan fungsi ini yang mereka sebut lch_start 
+
+1470
+00:59:15,342 --> 00:59:21,930
+ yang harus Anda gunakan alih-alih cap_enter. 
+
+1471
+00:59:21,930 --> 00:59:25,600
+ Dan jenis lain dari fitur yang disediakan perpustakaan 
+
+1472
+00:59:25,600 --> 00:59:31,120
+ dalam libcapsicum adalah gagasan ini disebut daftar fd 
+
+1473
+00:59:31,120 --> 00:59:33,600
+ bukannya melewatkan pendeskripsi file berdasarkan angka. 
+
+1474
+00:59:33,600 --> 00:59:35,030
+ Jadi hal daftar fd ini mungkin 
+
+1475
+00:59:35,030 --> 00:59:36,460
+ hal termudah untuk dijelaskan. 
+
+1476
+00:59:36,460 --> 00:59:40,940
+ Ini pada dasarnya generalisasi, atau mungkin pembersihan, 
+
+1477
+00:59:40,940 --> 00:59:43,520
+ tentang bagaimana Unix mengelola dan meneruskan file 
+
+1478
+00:59:43,520 --> 00:59:46,220
+ pendeskripsi antar proses. 
+
+1479
+00:59:46,220 --> 00:59:49,580
+ Jadi di Unix dan Linux tradisional, 
+
+1480
+00:59:49,580 --> 00:59:52,910
+ bagaimana Anda menggunakannya hari ini, biasanya ketika Anda meluncurkan suatu proses, 
+
+1481
+00:59:52,910 --> 00:59:54,550
+ Anda dapat meneruskannya beberapa deskriptor file. 
+
+1482
+00:59:54,550 --> 00:59:56,020
+ Anda cukup membuka beberapa deskriptor file 
+
+1483
+00:59:56,020 --> 00:59:58,485
+ pada bilangan bulat tertentu dalam tabel ini 
+
+1484
+00:59:58,485 --> 01:00:00,610
+ dan Anda menjalankan proses anak yang ingin Anda jalankan. 
+
+1485
+01:00:00,610 --> 01:00:03,180
+ Atau Anda menjalankan biner tertentu, dan itu 
+
+1486
+01:00:03,180 --> 01:00:08,000
+ mewarisi semua slot terbuka ini di tabel fd. 
+
+1487
+01:00:08,000 --> 01:00:10,370
+ Tetapi tidak ada cara yang benar-benar bagus untuk menyebutkan hal-hal ini 
+
+1488
+01:00:10,370 --> 01:00:11,730
+ selain dengan nomor. 
+
+1489
+01:00:11,730 --> 01:00:15,244
+ Jadi konvensi yang agak mengejutkan, 
+
+1490
+01:00:15,244 --> 01:00:16,660
+ jika Anda belum [tidak terdengar] sebelumnya, 
+
+1491
+01:00:16,660 --> 01:00:18,750
+ apakah itu, yah, slot 0 adalah masukan Anda. 
+
+1492
+01:00:18,750 --> 01:00:20,940
+ Slot 1 adalah output Anda. 
+
+1493
+01:00:20,940 --> 01:00:24,010
+ Slot 2 adalah tempat Anda harus mencetak pesan kesalahan ke. 
+
+1494
+01:00:24,010 --> 01:00:27,370
+ Dan begitulah cara kerja Unix. 
+
+1495
+01:00:27,370 --> 01:00:32,240
+ Dan itu berfungsi baik jika Anda hanya melewati tiga ini 
+
+1496
+01:00:32,240 --> 01:00:35,430
+ file atau aliran ke suatu proses. 
+
+1497
+01:00:35,430 --> 01:00:37,570
+ Namun di Capsicum, apa yang terjadi 
+
+1498
+01:00:37,570 --> 01:00:41,140
+ adalah bahwa Anda mewariskan banyak deskriptor file di sekitar. 
+
+1499
+01:00:41,140 --> 01:00:43,894
+ Jadi Anda melewatkan deskriptor file untuk beberapa file. 
+
+1500
+01:00:43,894 --> 01:00:46,310
+ Anda melewati pendeskripsi file untuk koneksi jaringan, 
+
+1501
+01:00:46,310 --> 01:00:49,320
+ untuk pustaka bersama, apa yang Anda miliki. 
+
+1502
+01:00:49,320 --> 01:00:52,060
+ Dan menjadi jauh lebih membosankan untuk mengelola semua angka ini. 
+
+1503
+01:00:52,060 --> 01:00:55,370
+ Jadi pada dasarnya, libcapsicum memberikan abstraksi 
+
+1504
+01:00:55,370 --> 01:00:59,460
+ untuk penamaan deskriptor file masa lalu antara proses 
+
+1505
+01:00:59,460 --> 01:01:01,810
+ oleh semacam nama hierarkis, 
+
+1506
+01:01:01,810 --> 01:01:06,980
+ bukan hanya bilangan bulat buram ini, jika Anda mau. 
+
+1507
+01:01:06,980 --> 01:01:08,410
+ Jadi itu semacam hal yang sederhana 
+
+1508
+01:01:08,410 --> 01:01:10,240
+ yang mereka sediakan di perpustakaan mereka. 
+
+1509
+01:01:10,240 --> 01:01:13,260
+ Jadi saya bisa meneruskan deskriptor file ke suatu proses 
+
+1510
+01:01:13,260 --> 01:01:14,100
+ dan berikan namanya. 
+
+1511
+01:01:14,100 --> 01:01:16,100
+ Dan tidak peduli berapa pun jumlahnya, 
+
+1512
+01:01:16,100 --> 01:01:16,982
+ sedikit lebih mudah. 
+
+1513
+01:01:16,982 --> 01:01:17,968
+ Masuk akal? 
+
+1514
+01:01:17,968 --> 01:01:19,450
+ BAIK. 
+
+1515
+01:01:19,450 --> 01:01:21,120
+ Jadi mereka memiliki mekanisme lain ini, 
+
+1516
+01:01:21,120 --> 01:01:25,906
+ cara yang jauh lebih rumit untuk memulai kotak pasir. 
+
+1517
+01:01:25,906 --> 01:01:29,740
+ Host ini, Tuan libcapsicum, API untuk memulai kotak pasir, 
+
+1518
+01:01:29,740 --> 01:01:33,342
+ bukan hanya memasuki mode kemampuan. 
+
+1519
+01:01:33,342 --> 01:01:34,050
+ Jadi apa yang terjadi? 
+
+1520
+01:01:34,050 --> 01:01:36,396
+ Mengapa mereka membutuhkan sesuatu yang lebih dari sekadar masuk 
+
+1521
+01:01:36,396 --> 01:01:37,392
+ mode kemampuan? 
+
+1522
+01:01:37,392 --> 01:01:39,950
+ Apa yang Anda khawatir tentang pembuatan kotak pasir? 
+
+1523
+01:01:39,950 --> 01:01:40,810
+ Ya? 
+
+1524
+01:01:40,810 --> 01:01:43,502
+ AUDIENCE: Ini menghapus semua hal yang diwariskan 
+
+1525
+01:01:43,502 --> 01:01:45,524
+ untuk memberi Anda awal yang bersih. 
+
+1526
+01:01:45,524 --> 01:01:46,190
+ PROFESOR: Ya. 
+
+1527
+01:01:46,190 --> 01:01:48,430
+ Jadi saya pikir mereka khawatir mencoba 
+
+1528
+01:01:48,430 --> 01:01:51,230
+ untuk menyebutkan semua hal yang dapat diakses sandbox 
+
+1529
+01:01:51,230 --> 01:01:51,870
+ untuk. 
+
+1530
+01:01:51,870 --> 01:01:56,160
+ Dan masalahnya adalah jika Anda hanya memanggil cap_enter, 
+
+1531
+01:01:56,160 --> 01:01:58,560
+ secara teknis, pada tingkat mekanisme kernel, seperti yang kita bicarakan 
+
+1532
+01:01:58,560 --> 01:01:59,285
+ baru saja, itu berhasil. 
+
+1533
+01:01:59,285 --> 01:01:59,785
+ Kanan? 
+
+1534
+01:01:59,785 --> 01:02:02,270
+ Itu hanya mencegah Anda membuka kemampuan baru apa pun. 
+
+1535
+01:02:02,270 --> 01:02:05,230
+ Tapi masalahnya adalah mungkin ada banyak barang yang ada 
+
+1536
+01:02:05,230 --> 01:02:08,780
+ bahwa proses sudah memiliki akses ke. 
+
+1537
+01:02:08,780 --> 01:02:11,256
+ Jadi saya kira contoh yang paling sederhana adalah mungkin 
+
+1538
+01:02:11,256 --> 01:02:13,930
+ ada beberapa deskriptor file yang Anda lupa telah Anda buka, 
+
+1539
+01:02:13,930 --> 01:02:17,310
+ dan itu hanya akan diwariskan oleh proses ini. 
+
+1540
+01:02:17,310 --> 01:02:20,470
+ Jadi salah satu contohnya adalah mereka melihat tcpdump. 
+
+1541
+01:02:20,470 --> 01:02:23,950
+ Dan mereka menyadari itu-- yah, pertama, mereka mengubah tcpdump 
+
+1542
+01:02:23,950 --> 01:02:27,500
+ hanya dengan memanggil cap_enter pada intinya 
+
+1543
+01:02:27,500 --> 01:02:30,594
+ tepat sebelum mereka mem-parse semua input jaringan. 
+
+1544
+01:02:30,594 --> 01:02:32,760
+ Jadi ini berfungsi dengan baik, dalam beberapa hal, karena Anda tidak bisa 
+
+1545
+01:02:32,760 --> 01:02:34,290
+ dapatkan lebih banyak kemampuan. 
+
+1546
+01:02:34,290 --> 01:02:36,331
+ Tapi kemudian mereka melihat deskriptor file yang terbuka, 
+
+1547
+01:02:36,331 --> 01:02:39,285
+ dan mereka menyadari bahwa Anda memiliki akses penuh ke pengguna 
+
+1548
+01:02:39,285 --> 01:02:41,720
+ terminal, karena Anda memiliki deskriptor file terbuka untuk itu. 
+
+1549
+01:02:41,720 --> 01:02:43,145
+ Jadi Anda benar-benar dapat mengendus semua penekanan tombol 
+
+1550
+01:02:43,145 --> 01:02:45,225
+ bahwa pengguna sedang mengetik dan semua hal itu. 
+
+1551
+01:02:45,225 --> 01:02:48,602
+ Jadi itu mungkin bukan rencana yang bagus untuk tcpdump. 
+
+1552
+01:02:48,602 --> 01:02:51,060
+ Kompromi ini Anda mungkin tidak ingin mengendus segalanya 
+
+1553
+01:02:51,060 --> 01:02:52,950
+ Anda sedang mengetik. 
+
+1554
+01:02:52,950 --> 01:02:56,520
+ Jadi sebaliknya mereka-- baik, dalam kasus tcpdump, 
+
+1555
+01:02:56,520 --> 01:03:00,900
+ mereka secara manual mengubah deskriptor file ini 
+
+1556
+01:03:00,900 --> 01:03:03,010
+ untuk menambahkan beberapa bit kemampuan kepada mereka, 
+
+1557
+01:03:03,010 --> 01:03:05,360
+ untuk membatasi jenis operasi apa yang dapat Anda lakukan. 
+
+1558
+01:03:05,360 --> 01:03:07,990
+ Jadi ingat, kemampuannya, setidaknya di Capsicum, 
+
+1559
+01:03:07,990 --> 01:03:11,030
+ memiliki bit tambahan yang mengatakan, inilah kelas operasi 
+
+1560
+01:03:11,030 --> 01:03:13,310
+ Anda dapat melakukan pada deskriptor file. 
+
+1561
+01:03:13,310 --> 01:03:17,650
+ Jadi pada dasarnya mereka mengambil apa yang biasa menjadi file descriptor 0. 
+
+1562
+01:03:17,650 --> 01:03:20,700
+ Ini menunjuk ke terminal pengguna, tty. 
+
+1563
+01:03:20,700 --> 01:03:23,670
+ Dan awalnya, ini hanya penunjuk langsung 
+
+1564
+01:03:23,670 --> 01:03:25,880
+ ke struktur tty di kernel. 
+
+1565
+01:03:25,880 --> 01:03:27,570
+ Apa yang mereka lakukan adalah mereka benar-benar ... dalam rangka 
+
+1566
+01:03:27,570 --> 01:03:30,070
+ untuk membatasi jenis operasi yang dapat Anda lakukan pada file ini 
+
+1567
+01:03:30,070 --> 01:03:31,930
+ deskriptor, mereka pada dasarnya memperkenalkan beberapa beta ekstra 
+
+1568
+01:03:31,930 --> 01:03:32,930
+ struktur di tengah. 
+
+1569
+01:03:32,930 --> 01:03:34,810
+ Orang ini akan menunjuk ke terminal. 
+
+1570
+01:03:34,810 --> 01:03:36,730
+ Dan deskriptor file itu sendiri akan 
+
+1571
+01:03:36,730 --> 01:03:39,950
+ arahkan ke semacam struktur kemampuan. 
+
+1572
+01:03:39,950 --> 01:03:43,040
+ Dan di dalamnya adalah pointer ke file asli 
+
+1573
+01:03:43,040 --> 01:03:46,685
+ yang Anda coba akses, serta beberapa bit terbatas 
+
+1574
+01:03:46,685 --> 01:03:51,590
+ atau izin pada file deskriptor itu 
+
+1575
+01:03:51,590 --> 01:03:53,280
+ objek yang dapat Anda lakukan. 
+
+1576
+01:03:53,280 --> 01:03:55,740
+ Dalam kasus mereka, mereka pada dasarnya dapat mengatakan untuk standar tcpdumps 
+
+1577
+01:03:55,740 --> 01:03:57,585
+ masukan, Anda tidak dapat melakukan apa pun di atasnya. 
+
+1578
+01:03:57,585 --> 01:03:59,602
+ Anda hanya dapat melihat bahwa itu ada, dan hanya itu. 
+
+1579
+01:03:59,602 --> 01:04:01,564
+ Untuk deskriptor file keluaran, mereka berkata, 
+
+1580
+01:04:01,564 --> 01:04:03,980
+ Anda dapat menulisnya, tetapi Anda mungkin tidak dapat mengubah posisi. 
+
+1581
+01:04:03,980 --> 01:04:07,710
+ Anda tidak dapat [TIDAK JELAS] bolak-balik, dan sebagainya. 
+
+1582
+01:04:07,710 --> 01:04:10,280
+ Masuk akal? 
+
+1583
+01:04:10,280 --> 01:04:11,900
+ Jadi apa lagi yang Anda khawatirkan, 
+
+1584
+01:04:11,900 --> 01:04:12,570
+ dalam hal memulai kotak pasir? 
+
+1585
+01:04:12,570 --> 01:04:14,810
+ Jadi ada, saya kira, status deskriptor file. 
+
+1586
+01:04:14,810 --> 01:04:16,234
+ Ada hal lain yang penting? 
+
+1587
+01:04:16,234 --> 01:04:21,448
+
+
+1588
+01:04:21,448 --> 01:04:24,320
+ Yah, saya kira di Unix itu deskriptor file dan memori. 
+
+1589
+01:04:24,320 --> 01:04:25,670
+ Itu cukup banyak. 
+
+1590
+01:04:25,670 --> 01:04:29,400
+ Jadi hal lain yang mengkhawatirkan orang-orang ini 
+
+1591
+01:04:29,400 --> 01:04:32,250
+ adalah mungkin di ruang alamat Anda, 
+
+1592
+01:04:32,250 --> 01:04:34,600
+ Anda sebelumnya mengalokasikan beberapa data sensitif. 
+
+1593
+01:04:34,600 --> 01:04:36,920
+ Dan proses itu bak pasir Anda 
+
+1594
+01:04:36,920 --> 01:04:38,830
+ akan dapat membaca semua memorinya. 
+
+1595
+01:04:38,830 --> 01:04:40,205
+ Jadi jika ada beberapa kata sandi 
+
+1596
+01:04:40,205 --> 01:04:42,420
+ yang Anda periksa sebelumnya saat pengguna masuk, 
+
+1597
+01:04:42,420 --> 01:04:44,150
+ dan Anda belum membersihkannya, 
+
+1598
+01:04:44,150 --> 01:04:45,749
+ proses sandbox akan baik 
+
+1599
+01:04:45,749 --> 01:04:47,165
+ bisa membaca itu dan melakukan sesuatu 
+
+1600
+01:04:47,165 --> 01:04:49,050
+ mungkin menarik untuk itu. 
+
+1601
+01:04:49,050 --> 01:04:50,920
+ Jadi cara mereka memecahkan masalah ini 
+
+1602
+01:04:50,920 --> 01:04:55,100
+ adalah, di lch_start, pada dasarnya Anda harus memulai program yang segar. 
+
+1603
+01:04:55,100 --> 01:04:57,270
+ Anda pada dasarnya mengambil program. 
+
+1604
+01:04:57,270 --> 01:04:59,197
+ Anda secara eksplisit mengemas semua argumen 
+
+1605
+01:04:59,197 --> 01:05:00,030
+ kamu ingin memberikannya. 
+
+1606
+01:05:00,030 --> 01:05:01,590
+ Anda secara eksplisit mengemas semua deskriptor file 
+
+1607
+01:05:01,590 --> 01:05:02,860
+ kamu ingin memberikannya. 
+
+1608
+01:05:02,860 --> 01:05:04,235
+ Dan kemudian Anda memulai proses baru, 
+
+1609
+01:05:04,235 --> 01:05:06,410
+ atau Anda akan memanggil eksekutif untuk menginisialisasi ulang 
+
+1610
+01:05:06,410 --> 01:05:09,200
+ seluruh ruang memori virtual Anda. 
+
+1611
+01:05:09,200 --> 01:05:11,080
+ Dan kemudian tidak ada pertanyaan tentang apa 
+
+1612
+01:05:11,080 --> 01:05:14,370
+ adalah kumpulan data sensitif dari hak istimewa tambahan 
+
+1613
+01:05:14,370 --> 01:05:15,510
+ bahwa proses ini. 
+
+1614
+01:05:15,510 --> 01:05:18,160
+ Ini persis seperti apa yang Anda berikan kepada lch_start, 
+
+1615
+01:05:18,160 --> 01:05:22,040
+ dalam hal nama program, argumen, dan kemampuan. 
+
+1616
+01:05:22,040 --> 01:05:24,540
+ Apakah itu masuk akal? 
+
+1617
+01:05:24,540 --> 01:05:27,160
+ AUDIENCE: Apa yang akan terjadi jika proses itu Anda 
+
+1618
+01:05:27,160 --> 01:05:29,494
+ mulai adalah biner setuid 0? 
+
+1619
+01:05:29,494 --> 01:05:30,160
+ PROFESOR: Ya. 
+
+1620
+01:05:30,160 --> 01:05:35,380
+ Saya pikir orang-orang ini mengatakan bahwa mereka sebenarnya tidak 
+
+1621
+01:05:35,380 --> 01:05:38,020
+ memungkinkan binari setuid dalam mode kemampuan, 
+
+1622
+01:05:38,020 --> 01:05:39,860
+ hanya untuk menghindari beberapa interaksi aneh itu 
+
+1623
+01:05:39,860 --> 01:05:40,905
+ akan muncul. 
+
+1624
+01:05:40,905 --> 01:05:42,940
+ Saya pikir aturan yang mereka terapkan 
+
+1625
+01:05:42,940 --> 01:05:45,263
+ adalah Anda bisa memiliki program setuid itu 
+
+1626
+01:05:45,263 --> 01:05:47,770
+ mendapatkan hak istimewanya dari biner setuid, 
+
+1627
+01:05:47,770 --> 01:05:50,950
+ dan kemudian dapat memanggil capenter atau lch_start. 
+
+1628
+01:05:50,950 --> 01:05:52,890
+ Tetapi setelah Anda berada dalam mode kemampuan, 
+
+1629
+01:05:52,890 --> 01:05:54,640
+ Anda tidak dapat memperoleh kembali hak istimewa tambahan. 
+
+1630
+01:05:54,640 --> 01:05:58,110
+ Pada prinsipnya, ini bisa berhasil, tetapi itu akan sangat aneh. 
+
+1631
+01:05:58,110 --> 01:06:00,680
+ Karena ingat, satu-satunya tempat di mana masalah UID, 
+
+1632
+01:06:00,680 --> 01:06:02,275
+ setelah Anda berada dalam mode kemampuan, adalah 
+
+1633
+01:06:02,275 --> 01:06:04,150
+ dalam membuka file-file ini di dalam direktori. 
+
+1634
+01:06:04,150 --> 01:06:07,080
+ Jadi tidak jelas ini benar-benar rencana yang bagus 
+
+1635
+01:06:07,080 --> 01:06:10,850
+ untuk mendapatkan lebih banyak hak istimewa atau [TIDAK JELAS] di sana. 
+
+1636
+01:06:10,850 --> 01:06:11,350
+ Masuk akal? 
+
+1637
+01:06:11,350 --> 01:06:12,790
+ Ya? 
+
+1638
+01:06:12,790 --> 01:06:14,270
+ AUDIENCE: Kami berbicara tentang sebelumnya 
+
+1639
+01:06:14,270 --> 01:06:17,575
+ mengapa perpustakaan tidak benar-benar mendukung pemisahan yang ketat 
+
+1640
+01:06:17,575 --> 01:06:19,165
+ di antara keduanya. 
+
+1641
+01:06:19,165 --> 01:06:21,390
+ Dan kemudian kami hanya menyebutkan semua masalah ini 
+
+1642
+01:06:21,390 --> 01:06:23,800
+ yang bisa Anda gunakan [TIDAK JELAS], jadi kita masih 
+
+1643
+01:06:23,800 --> 01:06:26,680
+ tidak di bawah batasan untuk menggunakan lch_start, kan? 
+
+1644
+01:06:26,680 --> 01:06:27,680
+ PROFESOR: Benar. 
+
+1645
+01:06:27,680 --> 01:06:28,179
+ Ya. 
+
+1646
+01:06:28,179 --> 01:06:30,510
+ Jadi lch_start, ini semacam cara untuk memikirkannya. 
+
+1647
+01:06:30,510 --> 01:06:32,960
+ Jadi Anda memiliki aplikasi, seperti mungkin tcpdump. 
+
+1648
+01:06:32,960 --> 01:06:36,309
+ Atau gzip adalah hal lain yang mereka gunakan. 
+
+1649
+01:06:36,309 --> 01:06:37,725
+ Dan apa yang pada dasarnya Anda anggap 
+
+1650
+01:06:37,725 --> 01:06:40,390
+ apakah aplikasi ini mungkin tidak terganggu, 
+
+1651
+01:06:40,390 --> 01:06:42,960
+ dan ada beberapa bagian inti dari aplikasi yang Anda 
+
+1652
+01:06:42,960 --> 01:06:44,730
+ khawatir tentang sandboxing. 
+
+1653
+01:06:44,730 --> 01:06:47,570
+ Dalam kasus tcpdump, itu sebenarnya parsing paket 
+
+1654
+01:06:47,570 --> 01:06:48,730
+ berasal dari jaringan. 
+
+1655
+01:06:48,730 --> 01:06:50,660
+ Dalam kasus gzip, itu benar-benar mengambil file 
+
+1656
+01:06:50,660 --> 01:06:51,915
+ dan mendekompresinya. 
+
+1657
+01:06:51,915 --> 01:06:54,250
+ Dan Anda pada dasarnya mengasumsikan, baik, sampai titik tertentu, 
+
+1658
+01:06:54,250 --> 01:06:56,250
+ prosesnya mungkin melakukan semua hal yang benar. 
+
+1659
+01:06:56,250 --> 01:06:57,041
+ Itu tidak dieksploitasi. 
+
+1660
+01:06:57,041 --> 01:06:59,420
+ Mungkin belum ada bug untuk [INAUDIBLE] sekalipun. 
+
+1661
+01:06:59,420 --> 01:07:00,795
+ Jadi pada saat itu, Anda percaya 
+
+1662
+01:07:00,795 --> 01:07:04,210
+ bahwa itu akan menjalankan lch_start dengan benar dan benar 
+
+1663
+01:07:04,210 --> 01:07:06,580
+ gambar, dengan benar mengatur semua kemampuan, 
+
+1664
+01:07:06,580 --> 01:07:09,870
+ dan kemudian membatasi diri dari membuat panggilan sistem lebih lanjut 
+
+1665
+01:07:09,870 --> 01:07:11,840
+ di luar mode kemampuannya. 
+
+1666
+01:07:11,840 --> 01:07:13,490
+ Dan kemudian Anda menjalankan hal-hal yang berbahaya. 
+
+1667
+01:07:13,490 --> 01:07:16,590
+ Dan pada saat itu, pengaturan ini telah terjadi dengan benar, 
+
+1668
+01:07:16,590 --> 01:07:20,252
+ dan tidak ada cara untuk keluar dari kotak pasir itu. 
+
+1669
+01:07:20,252 --> 01:07:22,570
+ Masuk akal? 
+
+1670
+01:07:22,570 --> 01:07:23,690
+ Baiklah. 
+
+1671
+01:07:23,690 --> 01:07:28,230
+ Jadi saya kira mari kita lihat bagaimana Anda benar-benar menggunakan mode kemampuan 
+
+1672
+01:07:28,230 --> 01:07:30,584
+ ke aplikasi kotak pasir. 
+
+1673
+01:07:30,584 --> 01:07:32,250
+ Jadi kami berbicara sedikit tentang tcpdump. 
+
+1674
+01:07:32,250 --> 01:07:36,005
+ Bagaimana Anda mengisolasi proses ini? 
+
+1675
+01:07:36,005 --> 01:07:38,410
+ Contoh menarik lainnya yang mereka miliki 
+
+1676
+01:07:38,410 --> 01:07:44,660
+ adalah program gzip yang mengompres, mendekompresi file. 
+
+1677
+01:07:44,660 --> 01:07:47,010
+ Jadi mengapa mereka khawatir tentang sandboxing itu? 
+
+1678
+01:07:47,010 --> 01:07:50,420
+ Saya kira mereka khawatir bahwa kode dekompresi akan terjadi 
+
+1679
+01:07:50,420 --> 01:07:52,740
+ menjadi berpotensi buggy, atau mungkin ada 
+
+1680
+01:07:52,740 --> 01:07:54,880
+ beberapa kesalahan manajemen memori dalam cara 
+
+1681
+01:07:54,880 --> 01:07:58,100
+ mereka mengelola buffer selama dekompresi, dan sebagainya. 
+
+1682
+01:07:58,100 --> 01:08:05,450
+ Jadi bisakah mereka-- yah, satu pertanyaan menarik, saya kira, 
+
+1683
+01:08:05,450 --> 01:08:10,390
+ mengapa perubahan pada gzip tampaknya jauh lebih banyak 
+
+1684
+01:08:10,390 --> 01:08:16,109
+ rumit daripada tcpdump? 
+
+1685
+01:08:16,109 --> 01:08:23,670
+
+
+1686
+01:08:23,670 --> 01:08:24,170
+ Tebakan apa saja? 
+
+1687
+01:08:24,170 --> 01:08:26,654
+
+
+1688
+01:08:26,654 --> 01:08:28,028
+ Sejauh yang kamu tahu, itu 
+
+1689
+01:08:28,029 --> 01:08:31,640
+ kebanyakan hanya pertanyaan tentang bagaimana aplikasi terstruktur 
+
+1690
+01:08:31,640 --> 01:08:32,439
+ secara internal, bukan? 
+
+1691
+01:08:32,439 --> 01:08:39,170
+ Jadi jika Anda memiliki aplikasi yang cukup dikompres 
+
+1692
+01:08:39,170 --> 01:08:42,029
+ satu file, atau mendekompresi file tunggal, 
+
+1693
+01:08:42,029 --> 01:08:48,125
+ maka mungkin OK bagi kita untuk menjalankannya dalam mode kemampuan 
+
+1694
+01:08:48,125 --> 01:08:49,249
+ tanpa benar-benar mengubahnya. 
+
+1695
+01:08:49,249 --> 01:08:52,540
+ Anda hanya memberikan standar baru untuk sesuatu yang dapat didekompresi, 
+
+1696
+01:08:52,540 --> 01:08:55,830
+ dan standar keluar ke output yang didekompresi, 
+
+1697
+01:08:55,830 --> 01:08:57,300
+ dan itu akan berfungsi dengan baik. 
+
+1698
+01:08:57,300 --> 01:08:59,830
+ Masalahnya, seperti hampir selalu terjadi 
+
+1699
+01:08:59,830 --> 01:09:01,899
+ di sini dengan teknik-teknik sandboxing semacam ini, 
+
+1700
+01:09:01,899 --> 01:09:04,830
+ adalah bahwa aplikasi tersebut sebenarnya memiliki logika yang jauh lebih rumit 
+
+1701
+01:09:04,830 --> 01:09:05,330
+ di sekitarnya. 
+
+1702
+01:09:05,330 --> 01:09:07,359
+ Jadi gzip, misalnya, bisa kompres 
+
+1703
+01:09:07,359 --> 01:09:09,490
+ banyak file, dan sebagainya. 
+
+1704
+01:09:09,490 --> 01:09:13,580
+ Dan dalam hal ini, Anda memiliki semacam proses pengandar di atas 
+
+1705
+01:09:13,580 --> 01:09:15,450
+ yang sebenarnya memiliki hak istimewa ekstra ini 
+
+1706
+01:09:15,450 --> 01:09:18,899
+ untuk membuka banyak file, untuk membuat sesuatu, dan sebagainya. 
+
+1707
+01:09:18,899 --> 01:09:22,300
+ Dan logika inti perlu sering menjadi proses pembantu yang lain. 
+
+1708
+01:09:22,300 --> 01:09:24,600
+ Dan itu hanya kasus di gzip 
+
+1709
+01:09:24,600 --> 01:09:27,359
+ bahwa aplikasi tidak terstruktur 
+
+1710
+01:09:27,359 --> 01:09:29,890
+ dengan cara di mana ini sudah menjadi proses terpisah 
+
+1711
+01:09:29,890 --> 01:09:31,689
+ semua dekompresi atau kompresi. 
+
+1712
+01:09:31,689 --> 01:09:36,020
+ Jadi mereka harus mengubah implementasi inti gzip, 
+
+1713
+01:09:36,020 --> 01:09:42,050
+ dan, yah, beberapa struktur dari aplikasi gzip, sebagai gantinya 
+
+1714
+01:09:42,050 --> 01:09:44,560
+ hanya melewati data ke dekompresi 
+
+1715
+01:09:44,560 --> 01:09:47,060
+ berfungsi untuk benar-benar mengirimnya melalui panggilan RPC 
+
+1716
+01:09:47,060 --> 01:09:49,859
+ atau benar-benar hanya menulis ke beberapa deskriptor file hampir 
+
+1717
+01:09:49,859 --> 01:09:52,660
+ untuk membantu memproses masalah di samping 
+
+1718
+01:09:52,660 --> 01:09:54,200
+ dan melakukan semua dekompresi 
+
+1719
+01:09:54,200 --> 01:09:55,940
+ dengan hampir tidak ada hak istimewa. 
+
+1720
+01:09:55,940 --> 01:09:57,760
+ Satu-satunya hal yang bisa dilakukan adalah kembali 
+
+1721
+01:09:57,760 --> 01:10:00,090
+ data yang didekompresi, atau data terkompresi, 
+
+1722
+01:10:00,090 --> 01:10:02,670
+ kembali ke proses pemanggil. 
+
+1723
+01:10:02,670 --> 01:10:03,670
+ Itu kira-kira masuk akal? 
+
+1724
+01:10:03,670 --> 01:10:06,230
+ Apa yang terjadi di gzip? 
+
+1725
+01:10:06,230 --> 01:10:07,820
+ Baiklah. 
+
+1726
+01:10:07,820 --> 01:10:12,180
+ Jadi saya kira satu hal yang kami minta PR adalah bagaimana Anda 
+
+1727
+01:10:12,180 --> 01:10:13,667
+ sebenarnya menggunakan Capsicum di OKWS? 
+
+1728
+01:10:13,667 --> 01:10:14,750
+ Jadi apa yang kalian pikirkan? 
+
+1729
+01:10:14,750 --> 01:10:17,025
+ Apakah itu berguna? 
+
+1730
+01:10:17,025 --> 01:10:19,385
+ Akankah para anggota OKWS bersemangat 
+
+1731
+01:10:19,385 --> 01:10:23,980
+ dan beralih ke FreeBSD karena ini lebih mudah digunakan? 
+
+1732
+01:10:23,980 --> 01:10:25,590
+ Atau apakah ini mencuci? 
+
+1733
+01:10:25,590 --> 01:10:26,777
+ Jadi apa yang Anda pikirkan? 
+
+1734
+01:10:26,777 --> 01:10:28,360
+ Bagaimana Anda akan menggunakan Capsicum di FreeBSD? 
+
+1735
+01:10:28,360 --> 01:10:30,954
+ Apakah ini jauh berbeda? 
+
+1736
+01:10:30,954 --> 01:10:31,890
+ Ya. 
+
+1737
+01:10:31,890 --> 01:10:33,765
+ AUDIENCE: Jadi itu berarti Anda dapat menyingkirkan beberapa 
+
+1738
+01:10:33,765 --> 01:10:36,944
+ dari penjara [tidak terdengar]. 
+
+1739
+01:10:36,944 --> 01:10:37,610
+ PROFESOR: Ya. 
+
+1740
+01:10:37,610 --> 01:10:38,109
+ Itu benar. 
+
+1741
+01:10:38,109 --> 01:10:40,600
+ Jadi kebenaran tampaknya sepenuhnya digantikan oleh rencana ini 
+
+1742
+01:10:40,600 --> 01:10:42,980
+ memiliki deskriptor dan kapabilitas file direktori. 
+
+1743
+01:10:42,980 --> 01:10:43,646
+ Jadi itu hebat. 
+
+1744
+01:10:43,646 --> 01:10:45,980
+ Jadi Anda tidak perlu pengaturan chroots. 
+
+1745
+01:10:45,980 --> 01:10:46,770
+ Itu kelihatannya berantakan. 
+
+1746
+01:10:46,770 --> 01:10:48,270
+ Dan ini jauh lebih tepat, juga. 
+
+1747
+01:10:48,270 --> 01:10:49,996
+ Karena Anda bisa - alih-alih memiliki 
+
+1748
+01:10:49,996 --> 01:10:51,870
+ sebuah chroot dengan banyak hal kecil di sana, 
+
+1749
+01:10:51,870 --> 01:10:54,397
+ Anda harus mengatur izin di sana dengan hati-hati. 
+
+1750
+01:10:54,397 --> 01:10:56,480
+ Anda bisa langsung membuka file yang Anda butuhkan. 
+
+1751
+01:10:56,480 --> 01:10:58,800
+ Jadi itu tampak seperti nilai tambah. 
+
+1752
+01:10:58,800 --> 01:11:00,788
+ Manfaat lain apa saja? 
+
+1753
+01:11:00,788 --> 01:11:01,288
+ Ya. 
+
+1754
+01:11:01,288 --> 01:11:02,236
+ AUDIENCE: [TIDAK JELAS]. 
+
+1755
+01:11:02,236 --> 01:11:06,502
+
+
+1756
+01:11:06,502 --> 01:11:08,120
+ PROFESOR: Dalam OKWS, maksud Anda? 
+
+1757
+01:11:08,120 --> 01:11:09,036
+ AUDIENCE: [TIDAK JELAS]. 
+
+1758
+01:11:09,036 --> 01:11:09,438
+ PROFESOR: Ya. 
+
+1759
+01:11:09,438 --> 01:11:11,880
+ Jadi di OKWS, benar, Anda memiliki daemon launcher OK ini 
+
+1760
+01:11:11,880 --> 01:11:14,150
+ harus meluncurkan semua orang ini. 
+
+1761
+01:11:14,150 --> 01:11:15,870
+ Dan itu adalah proses orang tua. 
+
+1762
+01:11:15,870 --> 01:11:18,030
+ Hanya ketika mereka mati, sinyal kembali 
+
+1763
+01:11:18,030 --> 01:11:22,197
+ ke okld ini untuk memulai kembali proses macet. 
+
+1764
+01:11:22,197 --> 01:11:24,155
+ Dan benda itu harus menjalankan akar ini, karena itu 
+
+1765
+01:11:24,155 --> 01:11:25,700
+ harus sandbox hal. 
+
+1766
+01:11:25,700 --> 01:11:28,140
+ Sebenarnya ada beberapa hal yang dapat Anda lakukan dengan lebih baik 
+
+1767
+01:11:28,140 --> 01:11:31,240
+ dengan Capsicum di OKWS. 
+
+1768
+01:11:31,240 --> 01:11:33,200
+ Jadi salah satu contohnya adalah Anda mungkin bisa 
+
+1769
+01:11:33,200 --> 01:11:35,410
+ telah okld memiliki banyak hak istimewa lebih sedikit. 
+
+1770
+01:11:35,410 --> 01:11:39,410
+ Karena mungkin perlu menjadi root pada awalnya untuk mendapatkan benteng 80. 
+
+1771
+01:11:39,410 --> 01:11:42,516
+ Namun setelah itu, ia dapat menyiapkan kotak pasir untuk semua orang 
+
+1772
+01:11:42,516 --> 01:11:43,640
+ tanpa menjadi root lagi. 
+
+1773
+01:11:43,640 --> 01:11:44,670
+ Jadi itu agak keren. 
+
+1774
+01:11:44,670 --> 01:11:46,620
+ Dan mungkin Anda bahkan dapat mendelegasikan pekerjaan 
+
+1775
+01:11:46,620 --> 01:11:48,870
+ dalam menanggapi suatu proses kepada orang lain, 
+
+1776
+01:11:48,870 --> 01:11:50,930
+ mungkin monitor per layanan Damion 
+
+1777
+01:11:50,930 --> 01:11:54,430
+ yang baru saja menangani proses deskriptor ini, 
+
+1778
+01:11:54,430 --> 01:11:56,950
+ atau deskriptor proses untuk proses anak, 
+
+1779
+01:11:56,950 --> 01:11:58,870
+ dan kapan saja crash, memulai yang baru. 
+
+1780
+01:11:58,870 --> 01:12:02,745
+ Jadi saya pikir proses ini [INAUDIBLE] sangat membantu banyak hal. 
+
+1781
+01:12:02,745 --> 01:12:06,160
+ Dan fakta bahwa Anda dapat membuat kotak pasir tanpa menjadi root 
+
+1782
+01:12:06,160 --> 01:12:09,542
+ juga cukup membantu juga. 
+
+1783
+01:12:09,542 --> 01:12:11,000
+ Barang-barang lainnya, apa yang bisa Anda lakukan? 
+
+1784
+01:12:11,000 --> 01:12:11,440
+ Ya? 
+
+1785
+01:12:11,440 --> 01:12:12,320
+ AUDIENCE: Anda bisa memberi masing-masing 
+
+1786
+01:12:12,320 --> 01:12:14,387
+ deskriptor file dengan menambahkan hanya mode ke log. 
+
+1787
+01:12:14,387 --> 01:12:15,053
+ PROFESOR: Ya. 
+
+1788
+01:12:15,053 --> 01:12:16,750
+ Jadi itu sangat keren. 
+
+1789
+01:12:16,750 --> 01:12:19,560
+ Jadi seperti yang kita bicarakan terakhir kali, di OKWS, 
+
+1790
+01:12:19,560 --> 01:12:23,675
+ baik, oklogd mungkin bisa menghambat dengan file log. 
+
+1791
+01:12:23,675 --> 01:12:25,373
+ Dan siapa yang tahu apa yang akan kernel 
+
+1792
+01:12:25,373 --> 01:12:27,710
+ izinkan untuk melakukannya setelah memiliki deskriptor file di log 
+
+1793
+01:12:27,710 --> 01:12:28,670
+ file itu sendiri. 
+
+1794
+01:12:28,670 --> 01:12:30,090
+ Tetapi di sini, fakta yang bisa kita lakukan 
+
+1795
+01:12:30,090 --> 01:12:33,010
+ lebih dari peta kemampuan yang tepat 
+
+1796
+01:12:33,010 --> 01:12:35,562
+ pada deskriptor file, yah, kita bisa memberikannya file log 
+
+1797
+01:12:35,562 --> 01:12:37,895
+ dan berkata, yah, Anda hanya bisa menulisnya, tetapi tidak mencari. 
+
+1798
+01:12:37,895 --> 01:12:40,150
+ Sehingga pada dasarnya berarti hanya menambahkan, 
+
+1799
+01:12:40,150 --> 01:12:41,935
+ jika Anda satu-satunya penulis untuk file itu. 
+
+1800
+01:12:41,935 --> 01:12:43,060
+ Jadi sepertinya itu menyenangkan. 
+
+1801
+01:12:43,060 --> 01:12:45,270
+ Dan Anda bisa mencegahnya membaca file. 
+
+1802
+01:12:45,270 --> 01:12:47,140
+ Anda bisa mengatakan, yah, Anda hanya bisa menulis, tetapi tidak membaca, 
+
+1803
+01:12:47,140 --> 01:12:48,270
+ yang mungkin itu sesuatu 
+
+1804
+01:12:48,270 --> 01:12:50,519
+ sulit dilakukan dengan hak akses Unix sendiri sekarang. 
+
+1805
+01:12:50,519 --> 01:12:53,253
+
+
+1806
+01:12:53,253 --> 01:12:54,630
+ Masuk akal? 
+
+1807
+01:12:54,630 --> 01:12:57,120
+ Ada gagasan lain tentang bagaimana Capsicum mungkin membantu? 
+
+1808
+01:12:57,120 --> 01:12:59,680
+
+
+1809
+01:12:59,680 --> 01:13:01,815
+ Apakah Anda berharap ada lebih banyak barang di Capsicum? 
+
+1810
+01:13:01,815 --> 01:13:03,670
+ Saya kira kita selalu berharap ada lebih banyak barang. 
+
+1811
+01:13:03,670 --> 01:13:05,128
+ AUDIENCE: Jadi satu hal yang mungkin 
+
+1812
+01:13:05,128 --> 01:13:07,326
+ mungkin rumit adalah daemon tim layanan yang dibutuhkan 
+
+1813
+01:13:07,326 --> 01:13:11,617
+ untuk terhubung ke database backend mereka entah bagaimana. 
+
+1814
+01:13:11,617 --> 01:13:13,470
+ Yang mungkin dari jarak jauh. 
+
+1815
+01:13:13,470 --> 01:13:15,235
+ Tetapi Anda tidak ingin peluncuran daemon 
+
+1816
+01:13:15,235 --> 01:13:17,235
+ untuk mengetahui tentang layanan mana yang setiap layanan 
+
+1817
+01:13:17,235 --> 01:13:18,722
+ akan terhubung ke. 
+
+1818
+01:13:18,722 --> 01:13:19,680
+ PROFESOR: Mungkin, ya. 
+
+1819
+01:13:19,680 --> 01:13:20,930
+ Itu pertanyaan yang bagus, kan? 
+
+1820
+01:13:20,930 --> 01:13:23,990
+ Jadi di Capsicum, seperti yang kita bicarakan, 
+
+1821
+01:13:23,990 --> 01:13:25,780
+ jaringan dalam ruang nama global. 
+
+1822
+01:13:25,780 --> 01:13:27,570
+ Anda harus memiliki deskriptor file yang ada 
+
+1823
+01:13:27,570 --> 01:13:29,910
+ untuk semua koneksi luar biasa sebelumnya. 
+
+1824
+01:13:29,910 --> 01:13:30,576
+ AUDIENCE: Benar. 
+
+1825
+01:13:30,576 --> 01:13:33,675
+ Tetapi Anda tidak perlu ingin membuka semua soket 
+
+1826
+01:13:33,675 --> 01:13:34,700
+ untuk semua layanan. 
+
+1827
+01:13:34,700 --> 01:13:37,940
+ Karena mungkin tidak tahu di mana layanan terhubung. 
+
+1828
+01:13:37,940 --> 01:13:38,140
+ PROFESOR: Benar. 
+
+1829
+01:13:38,140 --> 01:13:38,510
+ Ya. 
+
+1830
+01:13:38,510 --> 01:13:39,960
+ Jadi itu sedikit aneh. 
+
+1831
+01:13:39,960 --> 01:13:40,850
+ Saya sangat setuju. 
+
+1832
+01:13:40,850 --> 01:13:42,700
+ Dan ini adalah bagian dari alasan mengapa 
+
+1833
+01:13:42,700 --> 01:13:44,950
+ Saya pikir kemampuan belum sepenuhnya 
+
+1834
+01:13:44,950 --> 01:13:46,830
+ memasukkan segalanya ke dunia keamanan, 
+
+1835
+01:13:46,830 --> 01:13:48,350
+ karena mereka agak canggung untuk digunakan. 
+
+1836
+01:13:48,350 --> 01:13:50,430
+ Karena orang yang memberi Anda semua hak istimewa 
+
+1837
+01:13:50,430 --> 01:13:52,638
+ harus tahu persis apa yang akan Anda butuhkan, 
+
+1838
+01:13:52,638 --> 01:13:55,100
+ seperti koneksi ini ke server backend. 
+
+1839
+01:13:55,100 --> 01:13:58,150
+ Jadi pada tingkat tertentu, mungkin ini bukan masalah besar 
+
+1840
+01:13:58,150 --> 01:13:58,650
+ di OKWS. 
+
+1841
+01:13:58,650 --> 01:14:01,330
+ Karena daemon launcher harus membaca Config 
+
+1842
+01:14:01,330 --> 01:14:03,610
+ file dan akan meneruskan token ke layanan 
+
+1843
+01:14:03,610 --> 01:14:04,401
+ di tempat pertama. 
+
+1844
+01:14:04,401 --> 01:14:07,070
+ Jadi mungkin token akan berisi host dan port 
+
+1845
+01:14:07,070 --> 01:14:08,580
+ nomor yang Anda terhubung. 
+
+1846
+01:14:08,580 --> 01:14:09,080
+ Tapi saya setuju. 
+
+1847
+01:14:09,080 --> 01:14:10,360
+ Tidak bagus. 
+
+1848
+01:14:10,360 --> 01:14:12,590
+ Karena khususnya, misalkan server database 
+
+1849
+01:14:12,590 --> 01:14:13,780
+ memutus hubungan Anda. 
+
+1850
+01:14:13,780 --> 01:14:15,150
+ Yah, kamu agak terjebak sekarang. 
+
+1851
+01:14:15,150 --> 01:14:17,135
+ File server tidak terhubung lagi, 
+
+1852
+01:14:17,135 --> 01:14:18,060
+ dan Anda tidak dapat terhubung dengan yang baru. 
+
+1853
+01:14:18,060 --> 01:14:20,476
+ Jadi pada dasarnya, jika server database crash, atau restart, 
+
+1854
+01:14:20,476 --> 01:14:22,130
+ atau jaringan rusak, pada dasarnya Anda 
+
+1855
+01:14:22,130 --> 01:14:24,500
+ harus menghentikannya, dapatkan respons Anda sendiri, 
+
+1856
+01:14:24,500 --> 01:14:27,230
+ sehingga Anda bisa mendapatkan koneksi baru yang melewati Anda. 
+
+1857
+01:14:27,230 --> 01:14:29,104
+ Jadi itu mungkin bukan rencana yang bagus dalam hal itu. 
+
+1858
+01:14:29,104 --> 01:14:32,518
+ AUDIENCE: Bisakah kita membungkus panggilan sistem, fungsi 
+
+1859
+01:14:32,518 --> 01:14:35,144
+ [INAUDIBLE] untuk membuka soket sehingga salah 
+
+1860
+01:14:35,144 --> 01:14:37,602
+ perantara alih-alih soket yang dikirim pengguna 
+
+1861
+01:14:37,602 --> 01:14:39,254
+ ke [TIDAK JELAS]? 
+
+1862
+01:14:39,254 --> 01:14:39,920
+ PROFESOR: Ya. 
+
+1863
+01:14:39,920 --> 01:14:43,130
+ Inilah yang menurut saya telah dilakukan oleh orang-orang FreeBSD sejak itu. 
+
+1864
+01:14:43,130 --> 01:14:46,312
+ Ada banyak situasi 
+
+1865
+01:14:46,312 --> 01:14:48,770
+ seperti ini, di mana Anda ingin membuka file setelah fakta, 
+
+1866
+01:14:48,770 --> 01:14:50,728
+ atau Anda ingin terhubung ke sesuatu setelah pergi 
+
+1867
+01:14:50,728 --> 01:14:51,880
+ ke dalam mode kemampuan. 
+
+1868
+01:14:51,880 --> 01:14:54,060
+ Jadi pengembang FreeBSD telah menambahkan 
+
+1869
+01:14:54,060 --> 01:14:58,250
+ daemon ini disebut Casper, bahwa setiap proses berbasis kemampuan 
+
+1870
+01:14:58,250 --> 01:14:59,470
+ memiliki pegangan. 
+
+1871
+01:14:59,470 --> 01:15:03,010
+ Dan daemon Casper ini berjalan di luar mode kemampuan, 
+
+1872
+01:15:03,010 --> 01:15:04,470
+ dan pada dasarnya mendengarkan permintaan 
+
+1873
+01:15:04,470 --> 01:15:06,380
+ dari proses sandbox. 
+
+1874
+01:15:06,380 --> 01:15:09,790
+ Dan jika Anda ingin membuka beberapa file, 
+
+1875
+01:15:09,790 --> 01:15:12,400
+ atau jika Anda ingin mengirim koneksi jaringan, atau paket, 
+
+1876
+01:15:12,400 --> 01:15:14,980
+ atau sesuatu, tetapi Anda tidak memiliki kemampuan yang tepat 
+
+1877
+01:15:14,980 --> 01:15:18,250
+ sebelumnya, maka daemon Casper ini akan melakukannya untuk Anda. 
+
+1878
+01:15:18,250 --> 01:15:21,022
+ Tapi itu dengan hati-hati menyimpan daftar hal-hal 
+
+1879
+01:15:21,022 --> 01:15:22,980
+ bahwa setiap proses kotak pasir harus atau tidak seharusnya 
+
+1880
+01:15:22,980 --> 01:15:24,010
+ dapat dilakukan. 
+
+1881
+01:15:24,010 --> 01:15:25,870
+ Jadi ini seperti layanan sistem. 
+
+1882
+01:15:25,870 --> 01:15:28,400
+ Jadi ketika Anda memulai proses kemampuan, 
+
+1883
+01:15:28,400 --> 01:15:30,900
+ atau masuk ke mode kemampuan, secara default, 
+
+1884
+01:15:30,900 --> 01:15:33,620
+ Hal Casper ini tidak akan memungkinkan Anda melakukan sesuatu yang ekstra lucu. 
+
+1885
+01:15:33,620 --> 01:15:35,250
+ Tapi Anda bisa mengatakan, yah, hei, saya 
+
+1886
+01:15:35,250 --> 01:15:37,050
+ akan memulai proses kotak pasir. 
+
+1887
+01:15:37,050 --> 01:15:40,750
+ Dan Anda dapat meminta Casper, yah, tolong izinkan proses saya 
+
+1888
+01:15:40,750 --> 01:15:42,977
+ untuk melakukan hal-hal berikut ini. 
+
+1889
+01:15:42,977 --> 01:15:43,810
+ Jadi kamu bisa, kan? 
+
+1890
+01:15:43,810 --> 01:15:46,240
+ Dan hal yang keren adalah Anda dapat melewatkan pendeskripsi file 
+
+1891
+01:15:46,240 --> 01:15:48,700
+ atau kemampuan melalui fd lewat di Unix. 
+
+1892
+01:15:48,700 --> 01:15:51,520
+ Jadi setelah Anda memiliki pegangan pada pria Casper ini, 
+
+1893
+01:15:51,520 --> 01:15:55,120
+ Anda bisa mendapatkan lebih banyak kemampuan nantinya. 
+
+1894
+01:15:55,120 --> 01:15:58,680
+ Jadi, sekali lagi, tukar menukar antara kemampuan murni 
+
+1895
+01:15:58,680 --> 01:16:04,330
+ dunia versus benar-benar dapat diprogram atau mudah digunakan. 
+
+1896
+01:16:04,330 --> 01:16:06,110
+ Jadi sepertinya berhasil. 
+
+1897
+01:16:06,110 --> 01:16:10,230
+ Saya pikir hal khusus yang mereka gunakan untuk di FreeBSD, 
+
+1898
+01:16:10,230 --> 01:16:13,350
+ atau hal yang sering muncul, adalah membuat permintaan DNS. 
+
+1899
+01:16:13,350 --> 01:16:15,600
+ Jadi Anda ingin dapat membuat kueri DNS begitu Anda 
+
+1900
+01:16:15,600 --> 01:16:16,150
+ di kotak pasir. 
+
+1901
+01:16:16,150 --> 01:16:18,608
+ Dan sebenarnya, ini adalah masalah yang mereka hadapi dengan tcpdump. 
+
+1902
+01:16:18,608 --> 01:16:20,850
+ Karena ketika tcpdump sedang mencetak paket Anda, 
+
+1903
+01:16:20,850 --> 01:16:22,580
+ ia ingin mencetak nama host untuk alamat IP. 
+
+1904
+01:16:22,580 --> 01:16:24,680
+ Untuk melakukan ini, ia harus berbicara dengan server DNS. 
+
+1905
+01:16:24,680 --> 01:16:26,263
+ Tetapi Anda mungkin tidak ingin terhubung 
+
+1906
+01:16:26,263 --> 01:16:28,940
+ ke server DNS sebelumnya, atau ke setiap server DNS 
+
+1907
+01:16:28,940 --> 01:16:30,320
+ yang mungkin Anda butuhkan. 
+
+1908
+01:16:30,320 --> 01:16:32,230
+ Jadi sebagai gantinya, mereka menggunakan daemon pembantu ini 
+
+1909
+01:16:32,230 --> 01:16:35,440
+ itu akan membuat kueri DNS untuk Anda. 
+
+1910
+01:16:35,440 --> 01:16:37,388
+ Masuk akal? 
+
+1911
+01:16:37,388 --> 01:16:38,750
+ Baiklah. 
+
+1912
+01:16:38,750 --> 01:16:42,905
+ Jadi saya kira hal terakhir yang ingin saya bicarakan 
+
+1913
+01:16:42,905 --> 01:16:46,310
+ apa jaminan keamanan yang Capsicum 
+
+1914
+01:16:46,310 --> 01:16:46,810
+ menyediakan? 
+
+1915
+01:16:46,810 --> 01:16:49,120
+ Jadi haruskah kamu mempercayainya? 
+
+1916
+01:16:49,120 --> 01:16:50,700
+ Bagaimana Capsicum bisa salah? 
+
+1917
+01:16:50,700 --> 01:16:53,399
+
+
+1918
+01:16:53,399 --> 01:16:55,440
+ Agaknya Anda selalu dapat memiliki masalah keamanan, 
+
+1919
+01:16:55,440 --> 01:16:57,870
+ terlepas dari mekanisme apa yang Anda gunakan di bawahnya. 
+
+1920
+01:16:57,870 --> 01:16:59,370
+ Tetapi hal-hal khusus apa yang harus kita lakukan 
+
+1921
+01:16:59,370 --> 01:17:01,930
+ khawatir tentang di Capsicum ketika kita 
+
+1922
+01:17:01,930 --> 01:17:03,310
+ membangun beberapa sistem di sini? 
+
+1923
+01:17:03,310 --> 01:17:06,710
+
+
+1924
+01:17:06,710 --> 01:17:08,680
+ Misalkan Anda harus menyerang benda ini. 
+
+1925
+01:17:08,680 --> 01:17:11,970
+ Anda harus menyerang tcpdump ini, atau gzip, 
+
+1926
+01:17:11,970 --> 01:17:14,060
+ atau apa pun yang mereka terapkan. 
+
+1927
+01:17:14,060 --> 01:17:18,039
+ Apa yang akan Anda lihat, dalam hal bug atau masalah? 
+
+1928
+01:17:18,039 --> 01:17:19,872
+ AUDIENCE: Yah, itu tergantung pada pengembang 
+
+1929
+01:17:19,872 --> 01:17:21,524
+ mengetahui apa yang mereka lakukan. 
+
+1930
+01:17:21,524 --> 01:17:24,220
+ Jadi mereka mungkin memberi kemampuan yang buruk. 
+
+1931
+01:17:24,220 --> 01:17:25,220
+ PROFESOR: Benar. 
+
+1932
+01:17:25,220 --> 01:17:25,350
+ Ya. 
+
+1933
+01:17:25,350 --> 01:17:27,710
+ Jadi sebenarnya ini salah satu properti yang menarik dari Capsicum 
+
+1934
+01:17:27,710 --> 01:17:30,640
+ adalah bahwa itu bukan jaminan bahwa pengguna sistem 
+
+1935
+01:17:30,640 --> 01:17:31,430
+ mendapat. 
+
+1936
+01:17:31,430 --> 01:17:33,290
+ Ini benar-benar alat pengembang 
+
+1937
+01:17:33,290 --> 01:17:38,260
+ harus membangun perangkat lunak aplikasi yang lebih dapat dipercaya atau lebih baik. 
+
+1938
+01:17:38,260 --> 01:17:40,095
+ Tapi saya, sebagai pengguna sistem, tidak tahu 
+
+1939
+01:17:40,095 --> 01:17:41,553
+ apakah ini hal yang baik atau buruk 
+
+1940
+01:17:41,553 --> 01:17:43,178
+ bahwa aplikasi menggunakan Capsicum. 
+
+1941
+01:17:43,178 --> 01:17:46,440
+ Anda benar-benar dapat menyalahgunakannya, karena Anda memang benar. 
+
+1942
+01:17:46,440 --> 01:17:49,170
+ Jadi mungkin satu contohnya adalah, seperti yang ditampilkan di koran, 
+
+1943
+01:17:49,170 --> 01:17:51,490
+ Anda dapat memberikan terlalu banyak hak istimewa ke kotak pasir 
+
+1944
+01:17:51,490 --> 01:17:51,990
+ proses. 
+
+1945
+01:17:51,990 --> 01:17:53,810
+ Seperti penolong TCP, atau mungkin 
+
+1946
+01:17:53,810 --> 01:17:55,030
+ ini memiliki akses ke konsol saya. 
+
+1947
+01:17:55,030 --> 01:17:57,900
+ Dan itu tidak begitu hebat, tapi sulit bagiku 
+
+1948
+01:17:57,900 --> 01:18:01,130
+ sebagai pengguna untuk benar-benar mengatakan ini dengan cara tujuan umum. 
+
+1949
+01:18:01,130 --> 01:18:01,828
+ Ya? 
+
+1950
+01:18:01,828 --> 01:18:05,443
+ AUDIENCE: Mungkin juga saat Anda mengatur izin 
+
+1951
+01:18:05,443 --> 01:18:09,100
+ ke masker pada setiap file deskriptor yang diberikan 
+
+1952
+01:18:09,100 --> 01:18:11,304
+ bahwa Anda menetapkan dua topeng izin. 
+
+1953
+01:18:11,304 --> 01:18:11,970
+ PROFESOR: Ya. 
+
+1954
+01:18:11,970 --> 01:18:12,170
+ Kanan. 
+
+1955
+01:18:12,170 --> 01:18:13,720
+ Jadi bukan hanya deskriptor file. 
+
+1956
+01:18:13,720 --> 01:18:15,610
+ Juga, apa yang dapat Anda lakukan dengan deskriptor file tersebut? 
+
+1957
+01:18:15,610 --> 01:18:16,220
+ Kamu benar. 
+
+1958
+01:18:16,220 --> 01:18:16,450
+ Iya nih. 
+
+1959
+01:18:16,450 --> 01:18:18,140
+ Peta-peta ini adalah bagian lain dari cerita 
+
+1960
+01:18:18,140 --> 01:18:21,460
+ yang harus diwaspadai. 
+
+1961
+01:18:21,460 --> 01:18:21,980
+ BAIK. 
+
+1962
+01:18:21,980 --> 01:18:23,594
+ Jadi misalkan kita mendapatkan topengnya dengan benar. 
+
+1963
+01:18:23,594 --> 01:18:25,010
+ Kami mendapat deskriptor file yang tepat. 
+
+1964
+01:18:25,010 --> 01:18:26,120
+ Kami belum pernah menggunakan lth_start. 
+
+1965
+01:18:26,120 --> 01:18:28,740
+ Tidak ada yang ekstra dalam memori. 
+
+1966
+01:18:28,740 --> 01:18:30,532
+ AUDIENCE: [TIDAK JELAS]. 
+
+1967
+01:18:30,532 --> 01:18:31,490
+ PROFESOR: Itu benar. 
+
+1968
+01:18:31,490 --> 01:18:31,990
+ Iya nih. 
+
+1969
+01:18:31,990 --> 01:18:34,030
+ Jadi mungkin ada sesuatu yang mirip bahkan sebelum Anda 
+
+1970
+01:18:34,030 --> 01:18:35,950
+ tambahkan mode kemampuan yang merusak. 
+
+1971
+01:18:35,950 --> 01:18:39,030
+ Jadi itu hanya membantu begitu Anda melompat. 
+
+1972
+01:18:39,030 --> 01:18:42,240
+ Dan satu hal yang sedikit menyebalkan adalah 
+
+1973
+01:18:42,240 --> 01:18:47,360
+ sepertinya itu tidak bisa melakukan banyak hal dalam kapabilitas 
+
+1974
+01:18:47,360 --> 01:18:51,560
+ mode, tidak dalam arti bahwa Anda tidak dapat menjalankan perhitungan besar, 
+
+1975
+01:18:51,560 --> 01:18:55,010
+ tetapi Anda tidak dapat benar-benar menempatkan sebagian besar sistem yang rumit 
+
+1976
+01:18:55,010 --> 01:18:55,900
+ ke dalam mode kemampuan. 
+
+1977
+01:18:55,900 --> 01:18:57,358
+ Karena mau tidak mau, di Unix, Anda akan 
+
+1978
+01:18:57,358 --> 01:18:59,820
+ perlu melakukan sesuatu dengan proses baru, 
+
+1979
+01:18:59,820 --> 01:19:01,870
+ membuka koneksi jaringan, dan sebagainya. 
+
+1980
+01:19:01,870 --> 01:19:03,487
+ Dan Anda mungkin perlu menggunakan beberapa 
+
+1981
+01:19:03,487 --> 01:19:05,130
+ dari ruang nama global ini yang tidak 
+
+1982
+01:19:05,130 --> 01:19:06,790
+ tersedia dalam mode kemampuan. 
+
+1983
+01:19:06,790 --> 01:19:08,330
+ Jadi itu mungkin akan cukup 
+
+1984
+01:19:08,330 --> 01:19:12,790
+ sulit untuk menempatkan potongan besar logika atau sistem yang rumit 
+
+1985
+01:19:12,790 --> 01:19:15,370
+ kode di dalam mode kemampuan. 
+
+1986
+01:19:15,370 --> 01:19:19,760
+ Jadi hanya potongan aplikasi yang terdefinisi dengan baik 
+
+1987
+01:19:19,760 --> 01:19:22,500
+ kemungkinan akan berjalan dalam mode kemampuan. 
+
+1988
+01:19:22,500 --> 01:19:23,000
+ Tergantung. 
+
+1989
+01:19:23,000 --> 01:19:25,520
+ Saya tidak tahu apakah ini sepenuhnya benar atau tidak. 
+
+1990
+01:19:25,520 --> 01:19:27,180
+ Di Chrome, misalnya, proses besar 
+
+1991
+01:19:27,180 --> 01:19:30,460
+ jangan jalankan dalam mode kemampuan dalam desain mereka. 
+
+1992
+01:19:30,460 --> 01:19:32,960
+ Mungkin pada dasarnya Anda punya 
+
+1993
+01:19:32,960 --> 01:19:37,190
+ untuk memiliki mode non-kemampuan potongan aplikasi Anda 
+
+1994
+01:19:37,190 --> 01:19:40,390
+ karena Anda ingin menggabungkan dengan baik dengan Unix, 
+
+1995
+01:19:40,390 --> 01:19:44,330
+ atau apa pun yang Anda jalankan di sampingnya. 
+
+1996
+01:19:44,330 --> 01:19:44,910
+ BAIK. 
+
+1997
+01:19:44,910 --> 01:19:48,460
+ Hal lain yang perlu Anda khawatirkan? 
+
+1998
+01:19:48,460 --> 01:19:49,170
+ Ya? 
+
+1999
+01:19:49,170 --> 01:19:51,450
+ AUDIENCE: Yah, apakah mereka menerapkan kemampuan 
+
+2000
+01:19:51,450 --> 01:19:52,090
+ benar. 
+
+2001
+01:19:52,090 --> 01:19:53,012
+ PROFESOR: Ya. 
+
+2002
+01:19:53,012 --> 01:19:55,320
+ AUDIENCE: Apakah mereka sudah mencakup semua panggilan sistem. 
+
+2003
+01:19:55,320 --> 01:19:55,750
+ PROFESOR: Benar. 
+
+2004
+01:19:55,750 --> 01:19:56,010
+ Iya nih. 
+
+2005
+01:19:56,010 --> 01:19:58,220
+ Jadi itu sebenarnya masalah besar, dalam beberapa hal, 
+
+2006
+01:19:58,220 --> 01:19:58,980
+ sudah. 
+
+2007
+01:19:58,980 --> 01:20:01,230
+ Jika Anda memikirkannya, mungkin ada 
+
+2008
+01:20:01,230 --> 01:20:03,960
+ ratusan panggilan sistem yang diberikan kernel kepada Anda. 
+
+2009
+01:20:03,960 --> 01:20:06,529
+ Dan mereka tidak didokumentasikan secara khusus, 
+
+2010
+01:20:06,529 --> 01:20:08,695
+ jadi Anda mungkin harus melihat implementasinya 
+
+2011
+01:20:08,695 --> 01:20:11,242
+ dan lihat apakah, untuk setiap panggilan sistem, jika ada 
+
+2012
+01:20:11,242 --> 01:20:13,650
+ beberapa cara untuk mendapatkan aplikasi 
+
+2013
+01:20:13,650 --> 01:20:16,010
+ panggilan sistem untuk melakukan beberapa operasi 
+
+2014
+01:20:16,010 --> 01:20:18,600
+ pada beberapa objek tambahan yang tidak memiliki deskriptor file untuk itu. 
+
+2015
+01:20:18,600 --> 01:20:20,490
+ Dan sebagian besar panggilan sistem Unix tidak 
+
+2016
+01:20:20,490 --> 01:20:22,870
+ ditulis dengan harapan semuanya 
+
+2017
+01:20:22,870 --> 01:20:24,600
+ harus beroperasi pada deskriptor file. 
+
+2018
+01:20:24,600 --> 01:20:27,160
+ Jadi Anda benar-benar harus mendapatkan semua sistem dengan baik. 
+
+2019
+01:20:27,160 --> 01:20:30,100
+ Dan mungkin yang lebih mengkhawatirkan adalah kernel itu 
+
+2020
+01:20:30,100 --> 01:20:32,300
+ untuk bebas dari bug, seperti buffer overflows 
+
+2021
+01:20:32,300 --> 01:20:34,884
+ atau korupsi memori apa pun lainnya seperti kalian 
+
+2022
+01:20:34,884 --> 01:20:35,800
+ menjelaskan [tidak terdengar]. 
+
+2023
+01:20:35,800 --> 01:20:37,940
+ Jika tidak, semua ini sepenuhnya tidak masuk akal. 
+
+2024
+01:20:37,940 --> 01:20:40,300
+ Anda baru saja berada pada kode assembly arbitrary di kernel, 
+
+2025
+01:20:40,300 --> 01:20:43,298
+ dan Anda memiliki kontrol penuh atas mesin. 
+
+2026
+01:20:43,298 --> 01:20:44,214
+ AUDIENCE: [TIDAK JELAS]. 
+
+2027
+01:20:44,214 --> 01:20:52,225
+
+
+2028
+01:20:52,225 --> 01:20:53,300
+ PROFESOR: Ya. 
+
+2029
+01:20:53,300 --> 01:20:54,100
+ Saya kira, ya. 
+
+2030
+01:20:54,100 --> 01:20:55,900
+ Jadi satu hal yang saya tidak punya kesempatan untuk dibicarakan 
+
+2031
+01:20:55,900 --> 01:20:56,816
+ adalah hal-hal alternatif. 
+
+2032
+01:20:56,816 --> 01:20:58,150
+ Jadi ini ada di FreeBSD. 
+
+2033
+01:20:58,150 --> 01:20:59,990
+ Linux memiliki hal yang disebut [INAUDIBLE], 
+
+2034
+01:20:59,990 --> 01:21:04,140
+ yang memungkinkan Anda menentukan sistem yang memanggil Anda dapat beroperasi. 
+
+2035
+01:21:04,140 --> 01:21:06,070
+ Jika Anda menyipitkan mata, itu seperti Capsicum 
+
+2036
+01:21:06,070 --> 01:21:08,190
+ tetapi sangat berbeda, dalam arti Capsicum 
+
+2037
+01:21:08,190 --> 01:21:09,731
+ berbicara tentang deskriptor file tertentu 
+
+2038
+01:21:09,731 --> 01:21:11,010
+ yang dapat Anda operasikan. 
+
+2039
+01:21:11,010 --> 01:21:12,812
+ Dan di Linux, mekanisme [TIDAK JELAS] 
+
+2040
+01:21:12,812 --> 01:21:14,520
+ memungkinkan Anda berbicara tentang panggilan sistem tertentu 
+
+2041
+01:21:14,520 --> 01:21:16,040
+ Anda bisa berlari. 
+
+2042
+01:21:16,040 --> 01:21:18,670
+ Jadi itu mungkin kurang berbutir halus, 
+
+2043
+01:21:18,670 --> 01:21:22,110
+ tetapi apa yang tersedia di Linux saat ini. 
+
+2044
+01:21:22,110 --> 01:21:24,289
+ Dan itu mungkin ide yang bagus 
+
+2045
+01:21:24,289 --> 01:21:26,622
+ untuk melihat aplikasi Anda dan melihat apa yang dilakukan oleh sistem panggilan 
+
+2046
+01:21:26,622 --> 01:21:29,450
+ Anda mengharapkannya untuk membuat dan kemudian mengkodekan dalam filter 
+
+2047
+01:21:29,450 --> 01:21:31,770
+ dan memungkinkannya untuk membuat panggilan sistem saja. 
+
+2048
+01:21:31,770 --> 01:21:34,311
+ Masalahnya adalah jika Anda memiliki aplikasi yang menarik, 
+
+2049
+01:21:34,311 --> 01:21:36,215
+ itu mungkin akan menjalankan exec dan membuka dan menulis, 
+
+2050
+01:21:36,215 --> 01:21:38,680
+ dan itu mungkin cukup untuk melakukan sedikit kerusakan 
+
+2051
+01:21:38,680 --> 01:21:39,264
+ ke sistem. 
+
+2052
+01:21:39,264 --> 01:21:41,763
+ Jadi itulah mengapa Anda mungkin menginginkan sistem yang lebih halus 
+
+2053
+01:21:41,763 --> 01:21:43,170
+ seperti Capsicum, di mana Anda bisa mengatakan, 
+
+2054
+01:21:43,170 --> 01:21:45,630
+ baik, Anda dapat berjalan dengan benar, tetapi hanya pada hal ini, 
+
+2055
+01:21:45,630 --> 01:21:49,350
+ bukan di seluruh direktori home saya. 
+
+2056
+01:21:49,350 --> 01:21:49,850
+ Baiklah. 
+
+2057
+01:21:49,850 --> 01:21:51,520
+ Jadi saya kira kita kehabisan waktu untuk berbicara tentang Capsicum. 
+
+2058
+01:21:51,520 --> 01:21:53,250
+ Jadi mari kita bicara tentang klien asli 
+
+2059
+01:21:53,250 --> 00:00:00,000
+ pada hari Rabu dan cara yang berbeda untuk program kotak pasir. 
+

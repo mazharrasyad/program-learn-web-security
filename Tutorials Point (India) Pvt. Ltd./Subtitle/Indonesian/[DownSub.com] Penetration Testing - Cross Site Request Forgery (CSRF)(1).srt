@@ -1,0 +1,520 @@
+1
+00:00:00,089 --> 00:00:02,790
+ Halo semua orang di video ini 
+
+2
+00:00:02,790 --> 00:00:05,069
+ berbicara tentang <font color="#E5E5E5">pemalsuan permintaan lintas situs </font>
+
+3
+00:00:05,069 --> 00:00:07,589
+ jadi pemalsuan permintaan lintas situs <font color="#CCCCCC">juga </font>
+
+4
+00:00:07,589 --> 00:00:12,000
+ disebut sebagai <font color="#E5E5E5">CSRF atau </font><font color="#CCCCCC">C Cerf </font><font color="#E5E5E5">jadi sebelumnya </font>
+
+5
+00:00:12,000 --> 00:00:13,590
+ <font color="#E5E5E5">pergi lebih jauh </font><font color="#CCCCCC">izinkan saya memberi Anda satu </font>
+
+6
+00:00:13,590 --> 00:00:16,260
+ Misalnya <font color="#CCCCCC">ada satu pengguna yang ada </font>
+
+7
+00:00:16,260 --> 00:00:18,770
+ login di <font color="#CCCCCC">situs web </font><font color="#E5E5E5">tertentu </font><font color="#CCCCCC">dan </font>
+
+8
+00:00:18,770 --> 00:00:21,930
+ penyerang mengirimkan <font color="#E5E5E5">tautan jahat ke itu </font>
+
+9
+00:00:21,930 --> 00:00:24,750
+ <font color="#E5E5E5">pengguna situs web jahat </font><font color="#CCCCCC">dan jika itu </font>
+
+10
+00:00:24,750 --> 00:00:27,570
+ pengguna mengklik <font color="#CCCCCC">tautan itu dan membukanya </font>
+
+11
+00:00:27,570 --> 00:00:30,029
+ <font color="#E5E5E5">situs </font><font color="#CCCCCC">web jahat </font><font color="#E5E5E5">maka itu jahat </font>
+
+12
+00:00:30,029 --> 00:00:33,180
+ <font color="#E5E5E5">situs </font><font color="#CCCCCC">web </font><font color="#E5E5E5">akan membuat permintaan </font><font color="#CCCCCC">ke web itu </font>
+
+13
+00:00:33,180 --> 00:00:35,280
+ <font color="#CCCCCC">situs </font><font color="#E5E5E5">tempat pengguna masuk </font>
+
+14
+00:00:35,280 --> 00:00:39,120
+ atas nama pengguna <font color="#E5E5E5">jadi di sini Anda dapat melihat </font>
+
+15
+00:00:39,120 --> 00:00:41,940
+ <font color="#E5E5E5">situs web jahat itu akan membuat </font>
+
+16
+00:00:41,940 --> 00:00:44,550
+ <font color="#E5E5E5">permintaan yang sah untuk itu sah </font>
+
+17
+00:00:44,550 --> 00:00:46,640
+ <font color="#E5E5E5">situs web tempat pengguna berada </font>
+
+18
+00:00:46,640 --> 00:00:49,590
+ <font color="#E5E5E5">dikonfirmasi dan permintaannya </font>
+
+19
+00:00:49,590 --> 00:00:52,500
+ <font color="#E5E5E5">dipicu segera setelah pengguna mengkliknya </font>
+
+20
+00:00:52,500 --> 00:00:55,260
+ <font color="#E5E5E5">tautan berbahaya jadi ID sesi </font>
+
+21
+00:00:55,260 --> 00:00:59,579
+ token cookie <font color="#E5E5E5">semuanya dikirim oleh pengguna </font>
+
+22
+00:00:59,579 --> 00:01:02,789
+ browser <font color="#E5E5E5">ke </font><font color="#CCCCCC">situs web yang </font><font color="#E5E5E5">sah itu </font><font color="#CCCCCC">jika </font>
+
+23
+00:01:02,789 --> 00:01:05,880
+ situs web jahat membuat permintaan 
+
+24
+00:01:05,880 --> 00:01:09,630
+ sekarang mari kita lihat bagaimana <font color="#E5E5E5">serangan CSRF bekerja sekarang </font>
+
+25
+00:01:09,630 --> 00:01:12,119
+ mari kita lihat <font color="#CCCCCC">dasar </font><font color="#E5E5E5">serangan </font><font color="#CCCCCC">C </font>
+
+26
+00:01:12,119 --> 00:01:14,460
+ hal pertama yang harus kita <font color="#CCCCCC">lakukan adalah kita punya </font>
+
+27
+00:01:14,460 --> 00:01:16,740
+ <font color="#E5E5E5">untuk memulai aplikasi web rusak OS kami </font>
+
+28
+00:01:16,740 --> 00:01:18,659
+ yang biasanya kita <font color="#E5E5E5">lakukan sepanjang waktu dan </font>
+
+29
+00:01:18,659 --> 00:01:21,509
+ di sini Anda <font color="#E5E5E5">akan melihat bahwa </font><font color="#CCCCCC">web OS saya rusak </font>
+
+30
+00:01:21,509 --> 00:01:26,360
+ aplikasi sudah aktif dan berjalan jadi biarkan <font color="#E5E5E5">aku </font>
+
+31
+00:01:26,360 --> 00:01:30,930
+ membuka <font color="#CCCCCC">replikasi </font><font color="#E5E5E5">rusak OS </font>
+
+32
+00:01:30,930 --> 00:01:33,500
+ Firefox 
+
+33
+00:01:36,830 --> 00:01:41,360
+ sekarang kali ini kita harus menggunakan <font color="#E5E5E5">web ini </font>
+
+34
+00:01:41,360 --> 00:01:44,330
+ aplikasi <font color="#CCCCCC">lebih dari pantat </font><font color="#E5E5E5">dengan kambing </font><font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">jadi jika </font>
+
+35
+00:01:44,330 --> 00:01:46,760
+ Saya hanya <font color="#E5E5E5">klik di </font><font color="#CCCCCC">sini untuk meminta kami </font>
+
+36
+00:01:46,760 --> 00:01:48,380
+ <font color="#E5E5E5">nama pengguna dan </font><font color="#CCCCCC">kata sandinya </font>
+
+37
+00:01:48,380 --> 00:01:51,470
+ jadi <font color="#CCCCCC">nama pengguna adalah </font><font color="#E5E5E5">tamu dan </font>
+
+38
+00:01:51,470 --> 00:01:55,750
+ kata sandi adalah <font color="#E5E5E5">klik tamu pada </font><font color="#CCCCCC">OK </font>
+
+39
+00:01:55,750 --> 00:01:58,250
+ jadi di sini Anda akan melihat <font color="#CCCCCC">kode web ovis </font>
+
+40
+00:01:58,250 --> 00:02:00,200
+ <font color="#E5E5E5">aplikasi web jadi mari klik di sini </font>
+
+41
+00:02:00,200 --> 00:02:03,980
+ <font color="#E5E5E5">mulai web yang bagus dan di sisi kiri </font>
+
+42
+00:02:03,980 --> 00:02:07,370
+ Anda akan <font color="#CCCCCC">melihat banyak </font><font color="#E5E5E5">tantangan mari kita pergi </font>
+
+43
+00:02:07,370 --> 00:02:10,520
+ di sini skrip lintas situs <font color="#E5E5E5">dan di sini Anda </font>
+
+44
+00:02:10,520 --> 00:02:12,160
+ <font color="#E5E5E5">akan </font><font color="#CCCCCC">menemukan satu tantangan yang disebut sebagai </font>
+
+45
+00:02:12,160 --> 00:02:15,260
+ pemalsuan permintaan lintas situs <font color="#E5E5E5">atau berhenti </font>
+
+46
+00:02:15,260 --> 00:02:17,870
+ biarkan saya <font color="#CCCCCC">membuka tantangan ini jadi apa kita </font>
+
+47
+00:02:17,870 --> 00:02:20,420
+ harus lakukan adalah kita <font color="#CCCCCC">hanya </font><font color="#E5E5E5">harus berasumsi </font>
+
+48
+00:02:20,420 --> 00:02:23,470
+ <font color="#CCCCCC">bahwa kami adalah </font><font color="#E5E5E5">pengguna biasa, </font><font color="#CCCCCC">kami adalah a </font>
+
+49
+00:02:23,470 --> 00:02:26,170
+ pengguna terotentikasi dan kami masuk 
+
+50
+00:02:26,170 --> 00:02:30,140
+ jadi sekarang apa <font color="#E5E5E5">yang harus kita </font><font color="#CCCCCC">lakukan adalah kita benar-benar </font>
+
+51
+00:02:30,140 --> 00:02:34,970
+ <font color="#CCCCCC">harus membuat </font><font color="#E5E5E5">halaman HTML atau </font><font color="#CCCCCC">kita punya </font>
+
+52
+00:02:34,970 --> 00:02:37,700
+ sebenarnya harus <font color="#E5E5E5">membuat halaman HTML </font><font color="#CCCCCC">dan </font>
+
+53
+00:02:37,700 --> 00:02:40,430
+ di dalamnya kita harus <font color="#E5E5E5">membuat tag gambar </font>
+
+54
+00:02:40,430 --> 00:02:43,489
+ yang akan <font color="#E5E5E5">disembunyikan sehingga </font><font color="#CCCCCC">tag gambar </font>
+
+55
+00:02:43,489 --> 00:02:48,980
+ akan benar-benar menunjuk ke <font color="#E5E5E5">URL ini </font><font color="#CCCCCC">dan di </font>
+
+56
+00:02:48,980 --> 00:02:52,310
+ tag gambar yang <font color="#E5E5E5">harus kita lewati </font>
+
+57
+00:02:52,310 --> 00:02:55,010
+ <font color="#E5E5E5">parameter tambahan yang disebut sebagai transfer </font>
+
+58
+00:02:55,010 --> 00:03:00,590
+ dana jadi <font color="#E5E5E5">jika saya jika saya </font><font color="#CCCCCC">jika </font><font color="#E5E5E5">ada pengguna seperti saya, saya </font>
+
+59
+00:03:00,590 --> 00:03:03,620
+ saya dikonfirmasi pengguna di sini sebagai <font color="#E5E5E5">web </font><font color="#CCCCCC">Tuhan </font><font color="#E5E5E5">sehingga </font>
+
+60
+00:03:03,620 --> 00:03:07,280
+ jika penyerang akan mengirimi saya <font color="#E5E5E5">tautan </font>
+
+61
+00:03:07,280 --> 00:03:10,430
+ <font color="#E5E5E5">halaman webnya jadi jika saya hanya membuka webnya </font>
+
+62
+00:03:10,430 --> 00:03:15,670
+ Halaman kemudian <font color="#E5E5E5">transfer </font><font color="#CCCCCC">4.000 rupee </font>
+
+63
+00:03:15,670 --> 00:03:19,820
+ <font color="#E5E5E5">akan dilakukan dari </font><font color="#CCCCCC">akun kambing </font><font color="#E5E5E5">web saya </font><font color="#CCCCCC">begitu </font>
+
+64
+00:03:19,820 --> 00:03:21,230
+ ini <font color="#CCCCCC">adalah tantangan </font><font color="#E5E5E5">jadi di </font><font color="#CCCCCC">sini Anda bisa </font>
+
+65
+00:03:21,230 --> 00:03:23,330
+ lihat tujuan Anda adalah <font color="#E5E5E5">mengirim email ke </font>
+
+66
+00:03:23,330 --> 00:03:26,360
+ newsgroup <font color="#E5E5E5">yang </font><font color="#CCCCCC">mengandung edge yang mengandung </font>
+
+67
+00:03:26,360 --> 00:03:29,570
+ gambar yang URL-nya menunjuk ke 
+
+68
+00:03:29,570 --> 00:03:33,709
+ permintaan berbahaya <font color="#E5E5E5">jadi coba </font><font color="#CCCCCC">sertakan 1x1 </font>
+
+69
+00:03:33,709 --> 00:03:36,980
+ <font color="#E5E5E5">gambar piksel URL harus mengarah ke CSRF </font>
+
+70
+00:03:36,980 --> 00:03:39,500
+ pelajaran dengan parameter ekstra yang <font color="#E5E5E5">disebut sebagai </font>
+
+71
+00:03:39,500 --> 00:03:43,820
+ transfer dana dan di sini Anda <font color="#E5E5E5">akan melihat </font>
+
+72
+00:03:43,820 --> 00:03:47,210
+ bahwa <font color="#CCCCCC">mereka telah memberi kami sesuatu untuk </font>
+
+73
+00:03:47,210 --> 00:03:49,610
+ <font color="#E5E5E5">simpan nilai seperti jika saya hanya </font><font color="#CCCCCC">menulis </font>
+
+74
+00:03:49,610 --> 00:03:50,540
+ sini 
+
+75
+00:03:50,540 --> 00:03:58,730
+ <font color="#CCCCCC">teks halo </font><font color="#E5E5E5">ini adalah contoh teks dan sekarang </font>
+
+76
+00:03:58,730 --> 00:04:02,450
+ jika <font color="#E5E5E5">saya mengklik submit Anda akan </font><font color="#CCCCCC">melihatnya </font>
+
+77
+00:04:02,450 --> 00:04:06,950
+ teks ini <font color="#CCCCCC">telah dikirimkan </font><font color="#E5E5E5">dan </font><font color="#CCCCCC">kami bisa </font>
+
+78
+00:04:06,950 --> 00:04:11,349
+ baca saja <font color="#CCCCCC">kontennya sekarang mari buat </font>
+
+79
+00:04:11,349 --> 00:04:16,220
+ <font color="#E5E5E5">File HTML yang akan mengarah ke CSRF itu </font>
+
+80
+00:04:16,220 --> 00:04:18,880
+ URL 
+
+81
+00:04:26,480 --> 00:04:30,980
+ jadi tingginya harus <font color="#E5E5E5">satu dan itu seharusnya </font>
+
+82
+00:04:30,980 --> 00:04:38,090
+ <font color="#E5E5E5">satu dan </font><font color="#CCCCCC">sumber biarkan aku menyalin ini </font>
+
+83
+00:04:38,090 --> 00:04:42,230
+ URL <font color="#CCCCCC">biarkan saya menempelkannya di sini dan apa </font>
+
+84
+00:04:42,230 --> 00:04:43,970
+ yang mereka inginkan <font color="#E5E5E5">adalah mereka menginginkan tambahan </font>
+
+85
+00:04:43,970 --> 00:04:51,970
+ parameter yang <font color="#E5E5E5">disebut sebagai transfer dana </font>
+
+86
+00:04:51,970 --> 00:04:56,410
+ sama dengan <font color="#E5E5E5">4.000 </font>
+
+87
+00:05:03,130 --> 00:05:05,800
+ jadi di sini <font color="#CCCCCC">Anda </font><font color="#E5E5E5">akan melihat bahwa </font><font color="#CCCCCC">HTML kami </font>
+
+88
+00:05:05,800 --> 00:05:10,720
+ <font color="#CCCCCC">halaman web siap </font><font color="#E5E5E5">sekarang </font><font color="#CCCCCC">satu hal lagi </font><font color="#E5E5E5">sehingga </font>
+
+89
+00:05:10,720 --> 00:05:12,490
+ ada <font color="#E5E5E5">berbagai tag berbeda di </font>
+
+90
+00:05:12,490 --> 00:05:15,430
+ HTML yang bisa kita gunakan <font color="#E5E5E5">untuk memicu </font>
+
+91
+00:05:15,430 --> 00:05:19,000
+ <font color="#E5E5E5">Serangan CSRF jadi salah satunya adalah gambar karena </font>
+
+92
+00:05:19,000 --> 00:05:20,920
+ tag gambar mengandung sumber dan kami 
+
+93
+00:05:20,920 --> 00:05:24,340
+ dapat mengarahkan sumber ke <font color="#E5E5E5">web CSRF kami </font>
+
+94
+00:05:24,340 --> 00:05:26,890
+ <font color="#E5E5E5">aplikasi sehingga kami juga dapat menggunakan iframe </font>
+
+95
+00:05:26,890 --> 00:05:29,950
+ tag karena tag iframe juga <font color="#CCCCCC">terdiri dari </font>
+
+96
+00:05:29,950 --> 00:05:32,020
+ <font color="#CCCCCC">sumber </font><font color="#E5E5E5">atribut ini </font><font color="#CCCCCC">maka </font><font color="#E5E5E5">kita juga bisa </font>
+
+97
+00:05:32,020 --> 00:05:37,360
+ <font color="#E5E5E5">gunakan tag skrip dan beberapa lagi jadi biarkan aku </font>
+
+98
+00:05:37,360 --> 00:05:40,810
+ cukup tempelkan saja <font color="#CCCCCC">kita </font><font color="#E5E5E5">buat file </font>
+
+99
+00:05:40,810 --> 00:05:50,200
+ <font color="#CCCCCC">disebut sebagai serangan </font><font color="#E5E5E5">dot HTML dan biarkan aku </font>
+
+100
+00:05:50,200 --> 00:05:52,930
+ <font color="#CCCCCC">tutup saja ini jadi sekarang sebagai asumsi </font>
+
+101
+00:05:52,930 --> 00:05:55,120
+ jadi apa yang harus kita lakukan adalah harus 
+
+102
+00:05:55,120 --> 00:05:57,640
+ <font color="#CCCCCC">tata letak </font><font color="#E5E5E5">korban </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">sebagai pen tester kami </font>
+
+103
+00:05:57,640 --> 00:05:59,740
+ harus menurunkan <font color="#E5E5E5">korban kami untuk membuka ini </font>
+
+104
+00:05:59,740 --> 00:06:03,760
+ file jadi jika kita jika korban kami <font color="#CCCCCC">membuka ini </font>
+
+105
+00:06:03,760 --> 00:06:06,940
+ file kemudian <font color="#E5E5E5">transfer </font><font color="#CCCCCC">4.000 rupee </font>
+
+106
+00:06:06,940 --> 00:06:10,660
+ akan dilakukan dari akunnya <font color="#E5E5E5">jadi jika saya </font>
+
+107
+00:06:10,660 --> 00:06:16,240
+ buka saja <font color="#CCCCCC">file ini ok sekarang mari kita ke sini </font>
+
+108
+00:06:16,240 --> 00:06:19,200
+ <font color="#E5E5E5">dan saya akan menyegarkan halaman ini tetapi sebelumnya </font>
+
+109
+00:06:19,200 --> 00:06:23,410
+ <font color="#E5E5E5">refresh halaman ini mari lakukan satu hal </font>
+
+110
+00:06:23,410 --> 00:06:30,550
+ mari kita <font color="#CCCCCC">pergi ke sini ke pengembang </font><font color="#E5E5E5">dan klik </font>
+
+111
+00:06:30,550 --> 00:06:33,250
+ <font color="#E5E5E5">di sini </font><font color="#CCCCCC">Jaringan dan </font><font color="#E5E5E5">saya akan membiarkan sekarang mari </font>
+
+112
+00:06:33,250 --> 00:06:34,300
+ lihat <font color="#CCCCCC">apa lalu lintas jaringannya </font>
+
+113
+00:06:34,300 --> 00:06:36,700
+ <font color="#E5E5E5">masuk dan keluar sekarang jika saya hanya </font>
+
+114
+00:06:36,700 --> 00:06:44,320
+ <font color="#E5E5E5">muat ulang halaman yang akan Anda lihat di bagian atas ini </font>
+
+115
+00:06:44,320 --> 00:06:46,600
+ mendapatkan <font color="#CCCCCC">permintaan dan </font><font color="#E5E5E5">jika saya </font><font color="#CCCCCC">klik saja di </font><font color="#E5E5E5">atas </font>
+
+116
+00:06:46,600 --> 00:06:54,220
+ <font color="#E5E5E5">di sini Anda </font><font color="#CCCCCC">akan melihat </font><font color="#E5E5E5">permintaan </font><font color="#CCCCCC">kami dan di sini </font>
+
+117
+00:06:54,220 --> 00:06:57,130
+ Anda <font color="#E5E5E5">akan melihat tanda centang hijau kecil </font>
+
+118
+00:06:57,130 --> 00:07:00,760
+ dana <font color="#E5E5E5">transfer </font><font color="#CCCCCC">4000 telah </font>
+
+119
+00:07:00,760 --> 00:07:03,280
+ berhasil dilakukan dari korban 
+
+120
+00:07:03,280 --> 00:07:07,000
+ akun sehingga <font color="#CCCCCC">Anda akan melihat tanda centang hijau </font>
+
+121
+00:07:07,000 --> 00:07:08,470
+ jika Anda ingin <font color="#E5E5E5">memulai kembali pelajaran ini saja </font>
+
+122
+00:07:08,470 --> 00:07:10,930
+ <font color="#E5E5E5">cukup klik pada me-restart pelajaran ini </font>
+
+123
+00:07:10,930 --> 00:07:14,550
+ ini adalah hal yang <font color="#E5E5E5">sangat mendasar </font>
+
+124
+00:07:15,110 --> 00:07:17,810
+ serangan <font color="#CCCCCC">ombak laut </font><font color="#E5E5E5">tetapi di tingkat lanjut </font>
+
+125
+00:07:17,810 --> 00:07:20,720
+ kursus <font color="#CCCCCC">kami akan membahas topik ini dalam banyak hal </font>
+
+126
+00:07:20,720 --> 00:07:24,169
+ <font color="#E5E5E5">lebih detail jadi di video ini kami </font><font color="#CCCCCC">punya </font>
+
+127
+00:07:24,169 --> 00:07:25,610
+ ditutupi <font color="#CCCCCC">bahwa apa yang </font><font color="#E5E5E5">menghentikan serangan </font>
+
+128
+00:07:25,610 --> 00:07:28,099
+ dan bagaimana kita bisa <font color="#E5E5E5">menghentikan serangan dan </font>
+
+129
+00:07:28,099 --> 00:07:31,400
+ <font color="#E5E5E5">dengan aplikasi web yang bagus jadi terima kasih </font>
+
+130
+00:07:31,400 --> 00:00:00,000
+ <font color="#CCCCCC">menonton video ini </font>
+

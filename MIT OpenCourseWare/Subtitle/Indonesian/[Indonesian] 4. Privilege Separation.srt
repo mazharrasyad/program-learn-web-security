@@ -1,0 +1,7612 @@
+1
+00:00:00,000 --> 00:00:00,090
+
+
+2
+00:00:00,090 --> 00:00:02,830
+ Konten berikut ini dibuktikan dengan Creative Commons 
+
+3
+00:00:02,830 --> 00:00:03,820
+ lisensi. 
+
+4
+00:00:03,820 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,690
+ di ocw.mit.edu. 
+
+9
+00:00:17,690 --> 00:00:26,044
+
+
+10
+00:00:26,044 --> 00:00:28,210
+ PROFESOR: Hari ini kita akan berbicara tentang hak istimewa 
+
+11
+00:00:28,210 --> 00:00:32,409
+ pemisahan, jadi kita selesai dengan buffer overflows pada level tertentu, 
+
+12
+00:00:32,409 --> 00:00:34,871
+ tetapi akan terus kembali seperti dulu 
+
+13
+00:00:34,871 --> 00:00:36,370
+ masalah yang ingin kita hadapi, 
+
+14
+00:00:36,370 --> 00:00:39,510
+ jadi kita tidak akan membicarakan tentang bagaimana cara mengeksploitasinya, 
+
+15
+00:00:39,510 --> 00:00:42,210
+ sekarang kita akan beralih lebih ke mitigasi, jika Anda mau, 
+
+16
+00:00:42,210 --> 00:00:45,860
+ atau teknik pencegahan bagaimana Anda mendesain sistem di mana 
+
+17
+00:00:45,860 --> 00:00:49,780
+ buffer overflow bukan masalah besar bagi Anda, mungkin, 
+
+18
+00:00:49,780 --> 00:00:52,730
+ serta kerentanan keamanan lainnya. 
+
+19
+00:00:52,730 --> 00:00:56,610
+ Jadi untuk hari ini kita akan berbicara tentang pemisahan hak istimewa 
+
+20
+00:00:56,610 --> 00:00:58,550
+ sebagai teknik tujuan umum untuk bagaimana 
+
+21
+00:00:58,550 --> 00:01:02,860
+ untuk membangun sistem yang lebih aman, dan kertas khusus 
+
+22
+00:01:02,860 --> 00:01:05,489
+ kami ditugaskan untuk Anda hari ini adalah server web ini yang disebut OKWS. 
+
+23
+00:01:05,489 --> 00:01:10,040
+ Ini bukanlah contoh pemisahan privilege terbesar 
+
+24
+00:01:10,040 --> 00:01:14,072
+ di sana, tapi itu sistem yang dijelaskan dengan cukup baik 
+
+25
+00:01:14,072 --> 00:01:16,030
+ bahwa kita benar-benar dapat membaca dan benar-benar mengerti 
+
+26
+00:01:16,030 --> 00:01:18,280
+ bagaimana semua bagian bekerja, dan Anda harus benar-benar 
+
+27
+00:01:18,280 --> 00:01:20,450
+ menganggapnya lebih sebagai studi kasus tentang bagaimana melakukannya 
+
+28
+00:01:20,450 --> 00:01:22,120
+ hak pemisahan hak. 
+
+29
+00:01:22,120 --> 00:01:24,650
+ Belum tentu Anda harus pergi dan mengunduh OKWS 
+
+30
+00:01:24,650 --> 00:01:27,260
+ untuk menjalankan situs web Anda sekarang juga. 
+
+31
+00:01:27,260 --> 00:01:29,690
+ Jadi sebelum kita menyelami detail dari OKWS 
+
+32
+00:01:29,690 --> 00:01:33,010
+ dan izin Unix, mari kita lihat saja 
+
+33
+00:01:33,010 --> 00:01:37,180
+ apa pemisahan hak istimewa, mengapa itu ide yang bagus? 
+
+34
+00:01:37,180 --> 00:01:39,330
+ Dan kemudian, kuliah minggu lalu, James 
+
+35
+00:01:39,330 --> 00:01:41,400
+ menunjukkan kepada Anda bahwa jika Anda menulis program di C, 
+
+36
+00:01:41,400 --> 00:01:44,480
+ maka itu hampir tak terelakkan Anda akan memiliki sesuatu yang buruk 
+
+37
+00:01:44,480 --> 00:01:47,510
+ salah dalam program itu, dan masalahnya, 
+
+38
+00:01:47,510 --> 00:01:51,710
+ pada tingkat tertentu adalah jika Anda memiliki aplikasi besar 
+
+39
+00:01:51,710 --> 00:01:53,725
+ dan ada segala jenis kerentanan 
+
+40
+00:01:53,725 --> 00:01:57,200
+ dalam aplikasi ini, maka musuh dapat terhubung 
+
+41
+00:01:57,200 --> 00:01:59,270
+ dan mengirim permintaan untuk aplikasi ini, 
+
+42
+00:01:59,270 --> 00:02:01,520
+ mungkin bisa mengelabui untuk melakukan hal-hal buruk. 
+
+43
+00:02:01,520 --> 00:02:04,170
+ Dan aplikasinya dianggap istimewa, 
+
+44
+00:02:04,170 --> 00:02:07,200
+ artinya mungkin ada banyak data yang duduk 
+
+45
+00:02:07,200 --> 00:02:11,110
+ di belakang aplikasi yang dapat diakses dan mungkin dihapus 
+
+46
+00:02:11,110 --> 00:02:13,850
+ file, seperti kalian akan di Lab sekarang, 
+
+47
+00:02:13,850 --> 00:02:18,280
+ baca data sensitif, instal kembali pintu. 
+
+48
+00:02:18,280 --> 00:02:20,650
+ Dan masalahnya adalah kerentanan itu 
+
+49
+00:02:20,650 --> 00:02:23,210
+ dalam aplikasi besar ini dapat memungkinkan 
+
+50
+00:02:23,210 --> 00:02:26,520
+ untuk memodifikasi data ini, atau pada dasarnya 
+
+51
+00:02:26,520 --> 00:02:29,340
+ menggunakan semua hak istimewa yang dimiliki aplikasi ini, 
+
+52
+00:02:29,340 --> 00:02:31,330
+ dan itu mungkin memiliki banyak hak istimewa, 
+
+53
+00:02:31,330 --> 00:02:33,850
+ kecuali kamu berhati-hati tentang itu. 
+
+54
+00:02:33,850 --> 00:02:36,610
+ Dan pemisahan hak istimewa apa yang coba dilakukan, 
+
+55
+00:02:36,610 --> 00:02:38,620
+ dan apa yang akan kita lihat dalam kuliah ini, 
+
+56
+00:02:38,620 --> 00:02:40,540
+ adalah mengambil aplikasi dan memotongnya 
+
+57
+00:02:40,540 --> 00:02:43,300
+ menjadi potongan-potongan yang berbeda dan pastikan 
+
+58
+00:02:43,300 --> 00:02:47,780
+ bahwa setiap bagian hanya memiliki hak yang diperlukan 
+
+59
+00:02:47,780 --> 00:02:50,170
+ untuk melakukan tugasnya dengan benar. 
+
+60
+00:02:50,170 --> 00:02:52,470
+ Jadi Anda bisa membayangkan mungkin semua hak istimewa 
+
+61
+00:02:52,470 --> 00:02:55,160
+ Anda peduli adalah akses ke data di bagian belakang, 
+
+62
+00:02:55,160 --> 00:02:58,980
+ maka semua data ini, mungkin Anda bisa mengirisnya dalam beberapa cara, 
+
+63
+00:02:58,980 --> 00:03:01,814
+ berikan akses ini ke bagian data ini, 
+
+64
+00:03:01,814 --> 00:03:06,580
+ sepotong akses ini ke bagian data ini, dan seterusnya. 
+
+65
+00:03:06,580 --> 00:03:09,511
+ Jadi, jika Anda menemukan bug di sini, maka mungkin data ini 
+
+66
+00:03:09,511 --> 00:03:11,260
+ agak terganggu, tapi mudah-mudahan 
+
+67
+00:03:11,260 --> 00:03:13,245
+ pemotongan apa pun yang Anda lakukan akan terjadi 
+
+68
+00:03:13,245 --> 00:03:16,830
+ untuk menegakkan pemisahan sehingga kerentanan di sini 
+
+69
+00:03:16,830 --> 00:03:19,540
+ tidak memungkinkan penyerang untuk pergi dan mengakses 
+
+70
+00:03:19,540 --> 00:03:22,950
+ potongan data lainnya ini, atau, lebih umum, 
+
+71
+00:03:22,950 --> 00:03:26,719
+ hak istimewa lain dari aplikasi memiliki akses ke. 
+
+72
+00:03:26,719 --> 00:03:28,885
+ Jadi ini adalah ide besar di balik pemisahan hak istimewa, 
+
+73
+00:03:28,885 --> 00:03:31,590
+ dan itu sangat kuat. 
+
+74
+00:03:31,590 --> 00:03:34,540
+ Sebenarnya tidak terlalu bergantung pada buffer overflows 
+
+75
+00:03:34,540 --> 00:03:36,990
+ atau jenis kerentanan lain yang hadir. 
+
+76
+00:03:36,990 --> 00:03:39,940
+ Itu hanya arsitektur umum untuk memastikan 
+
+77
+00:03:39,940 --> 00:03:41,810
+ kerentanan itu di satu tempat 
+
+78
+00:03:41,810 --> 00:03:48,140
+ tidak mempengaruhi sebanyak mungkin sistem Anda. 
+
+79
+00:03:48,140 --> 00:03:50,880
+ Ini ternyata digunakan cukup luas. 
+
+80
+00:03:50,880 --> 00:03:54,165
+ Mesin virtual sering digunakan untuk menegakkan isolasi 
+
+81
+00:03:54,165 --> 00:03:55,012
+ dalam komponen. 
+
+82
+00:03:55,012 --> 00:03:56,470
+ Mungkin Anda akan mengambil sistem besar Anda 
+
+83
+00:03:56,470 --> 00:03:59,245
+ dan membaginya menjadi sekelompok DM untuk isolasi, 
+
+84
+00:03:59,245 --> 00:04:03,590
+ tetapi Anda juga dapat menggunakan Unix untuk benar-benar melakukan 
+
+85
+00:04:03,590 --> 00:04:06,170
+ isolasi ini dengan mengiris. 
+
+86
+00:04:06,170 --> 00:04:07,950
+ Dan seperti yang akan kita bicarakan sebentar lagi, 
+
+87
+00:04:07,950 --> 00:04:10,250
+ Unix memang memberi Anda cukup banyak mekanisme 
+
+88
+00:04:10,250 --> 00:04:14,492
+ bahwa OKWS benar-benar digunakan untuk mencapai pemisahan hak istimewa. 
+
+89
+00:04:14,492 --> 00:04:15,950
+ Dan kemudian banyak aplikasi sebenarnya 
+
+90
+00:04:15,950 --> 00:04:17,366
+ menggunakan praktik pemisahan hak istimewa. 
+
+91
+00:04:17,366 --> 00:04:20,630
+ Kalian mungkin menggunakan SSH cukup sering. 
+
+92
+00:04:20,630 --> 00:04:23,360
+ Itu menggunakan pemisahan hak istimewa dalam banyak komponennya 
+
+93
+00:04:23,360 --> 00:04:25,510
+ untuk memastikan kuncinya tidak bocor 
+
+94
+00:04:25,510 --> 00:04:28,190
+ dan server tidak dikompromikan 
+
+95
+00:04:28,190 --> 00:04:32,090
+ atau efek dari kompromi server kami berkurang. 
+
+96
+00:04:32,090 --> 00:04:36,484
+ Dan mungkin lebih relevan untuk kalian, Chrome, browser web, 
+
+97
+00:04:36,484 --> 00:04:37,900
+ sebenarnya pemisahan hak istimewa 
+
+98
+00:04:37,900 --> 00:04:39,380
+ cukup luas juga. 
+
+99
+00:04:39,380 --> 00:04:42,340
+ Sehingga jika ada bug di penerapan Chrome, 
+
+100
+00:04:42,340 --> 00:04:45,560
+ musuh tidak mendapatkan kendali penuh atas komputer Anda, yang mana 
+
+101
+00:04:45,560 --> 00:04:49,480
+ adalah properti yang bagus untuk dimiliki. 
+
+102
+00:04:49,480 --> 00:04:51,520
+ Jadi itu hanya ringkasan yang sangat cepat 
+
+103
+00:04:51,520 --> 00:04:53,610
+ tentang apa pemisahan hak istimewa itu 
+
+104
+00:04:53,610 --> 00:04:55,760
+ dan mengapa mungkin OKWS adalah studi kasus yang menarik. 
+
+105
+00:04:55,760 --> 00:04:57,970
+ Saya kira kita bisa menambahkannya ke daftar ini, 
+
+106
+00:04:57,970 --> 00:05:01,390
+ tetapi ini lebih merupakan contoh ilustratif 
+
+107
+00:05:01,390 --> 00:05:04,960
+ bukan bagian penting dari perangkat lunak dalam dirinya sendiri. 
+
+108
+00:05:04,960 --> 00:05:06,380
+ Masuk akal? 
+
+109
+00:05:06,380 --> 00:05:08,710
+ Ada pertanyaan sebelum kita masuk? 
+
+110
+00:05:08,710 --> 00:05:13,220
+
+
+111
+00:05:13,220 --> 00:05:13,720
+ Baiklah. 
+
+112
+00:05:13,720 --> 00:05:16,130
+ Jadi OKWS, seperti yang saya sebutkan, itu terjadi 
+
+113
+00:05:16,130 --> 00:05:20,830
+ untuk menggunakan izin Unix dan semacam mekanisme Unix 
+
+114
+00:05:20,830 --> 00:05:23,169
+ untuk mencapai pemisahan antara 
+
+115
+00:05:23,169 --> 00:05:24,210
+ komponen yang berbeda. 
+
+116
+00:05:24,210 --> 00:05:26,280
+ Jadi sebagai hasilnya, itu akan menjadi penting 
+
+117
+00:05:26,280 --> 00:05:31,700
+ bagi kami untuk memahami bagaimana mekanisme perlindungan Unix bekerja. 
+
+118
+00:05:31,700 --> 00:05:35,740
+ Dan Unix tidak penting bagi OKWS 
+
+119
+00:05:35,740 --> 00:05:38,330
+ pada tingkat tertentu untuk pemisahan hak istimewa, 
+
+120
+00:05:38,330 --> 00:05:41,590
+ tetapi untuk mekanisme isolasi apa pun Anda 
+
+121
+00:05:41,590 --> 00:05:45,190
+ akan digunakan, apakah itu Unix, uid, mekanisme lain ini, 
+
+122
+00:05:45,190 --> 00:05:48,050
+ atau mesin atau kontainer virtual 
+
+123
+00:05:48,050 --> 00:05:50,660
+ atau teknologi lainnya, sangat penting untuk dipahami 
+
+124
+00:05:50,660 --> 00:05:54,430
+ rincian bagaimana mekanisme isolasi bekerja, 
+
+125
+00:05:54,430 --> 00:05:56,597
+ karena ada banyak potongan rumit untuk menjadi benar, 
+
+126
+00:05:56,597 --> 00:05:58,513
+ karena Anda berurusan dengan beberapa penyerang itu 
+
+127
+00:05:58,513 --> 00:06:00,444
+ dapat memanfaatkan [tidak terdengar]. 
+
+128
+00:06:00,444 --> 00:06:01,860
+ Jadi sebagai hasilnya, kita akan melihat pada Unix 
+
+129
+00:06:01,860 --> 00:06:04,270
+ dalam jumlah cukup banyak hanya untuk dilihat 
+
+130
+00:06:04,270 --> 00:06:06,560
+ seperti apa rasanya, bagaimana seharusnya kita mendekat 
+
+131
+00:06:06,560 --> 00:06:10,950
+ memikirkan tentang mekanisme keamanan tertentu. 
+
+132
+00:06:10,950 --> 00:06:12,120
+ Mari kita lihat pada Unix. 
+
+133
+00:06:12,120 --> 00:06:17,900
+ Jadi Unix secara historis - baik, itu belum tentu yang terbaik 
+
+134
+00:06:17,900 --> 00:06:20,550
+ contoh bagaimana membangun mekanisme keamanan, 
+
+135
+00:06:20,550 --> 00:06:22,880
+ karena mekanisme keamanannya muncul 
+
+136
+00:06:22,880 --> 00:06:25,740
+ dari kebutuhan kebutuhan yang cukup utilitarian 
+
+137
+00:06:25,740 --> 00:06:28,496
+ untuk memisahkan pengguna yang berbeda pada satu sistem Unix dari satu 
+
+138
+00:06:28,496 --> 00:06:29,870
+ yang lain, jadi mereka tidak berpikir 
+
+139
+00:06:29,870 --> 00:06:31,395
+ itu sebagai mekanisme tujuan umum 
+
+140
+00:06:31,395 --> 00:06:33,530
+ bahwa aplikasi seperti OKWS sedang berjalan 
+
+141
+00:06:33,530 --> 00:06:35,477
+ digunakan untuk menerapkan pemisahan hak istimewa. 
+
+142
+00:06:35,477 --> 00:06:37,060
+ Mereka hanya berpikir, kita punya banyak 
+
+143
+00:06:37,060 --> 00:06:38,810
+ pengguna yang menggunakan komputer yang sama, 
+
+144
+00:06:38,810 --> 00:06:40,630
+ kita harus menjaga mereka dari satu sama lain. 
+
+145
+00:06:40,630 --> 00:06:43,160
+ Jadi itu belum tentu mekanisme tujuan umum 
+
+146
+00:06:43,160 --> 00:06:48,170
+ tetapi masih satu yang cukup umum dan, sebagai hasilnya, 
+
+147
+00:06:48,170 --> 00:06:49,460
+ banyak digunakan. 
+
+148
+00:06:49,460 --> 00:06:53,512
+ Chrome mencoba menggunakan banyak jika mekanisme Unix ini. 
+
+149
+00:06:53,512 --> 00:06:54,470
+ Jadi apa yang dimiliki Unix? 
+
+150
+00:06:54,470 --> 00:06:56,678
+ Jadi, secara umum, ketika Anda memikirkan tentang perlindungan 
+
+151
+00:06:56,678 --> 00:06:58,470
+ mekanisme, Anda harus berpikir, baik, 
+
+152
+00:06:58,470 --> 00:07:02,810
+ apa prinsipnya, artinya apa entitas itu 
+
+153
+00:07:02,810 --> 00:07:07,720
+ memiliki hak atau hak, dan di Unix para pelaku ini 
+
+154
+00:07:07,720 --> 00:07:13,410
+ biasanya dipanggil, atau semacam dipegang, oleh suatu proses. 
+
+155
+00:07:13,410 --> 00:07:21,250
+ Jadi saya kira subjeknya, jika Anda mau, di Unix adalah sebuah proses, jadi 
+
+156
+00:07:21,250 --> 00:07:24,740
+ setiap operasi atau permintaan yang dapat kita pikirkan dalam istilah 
+
+157
+00:07:24,740 --> 00:07:27,170
+ keamanan, apakah sesuatu harus diizinkan atau tidak, 
+
+158
+00:07:27,170 --> 00:07:28,670
+ mungkin akan menjadi operasi 
+
+159
+00:07:28,670 --> 00:07:32,080
+ bahwa suatu proses dipanggil dengan membuat panggilan sistem. 
+
+160
+00:07:32,080 --> 00:07:35,870
+ Dan prinsipnya adalah bagaimana kita mendeskripsikan apa 
+
+161
+00:07:35,870 --> 00:07:38,430
+ hak istimewa yang dimiliki proses itu. 
+
+162
+00:07:38,430 --> 00:07:42,670
+ Sebaliknya, ada juga yang bisa kita pikirkan sebagai objek, 
+
+163
+00:07:42,670 --> 00:07:44,690
+ dan ini adalah hal-hal yang merupakan suatu proses 
+
+164
+00:07:44,690 --> 00:07:48,620
+ mungkin bertindak untuk mencoba memodifikasi, membaca, mengamati dalam beberapa cara. 
+
+165
+00:07:48,620 --> 00:07:51,440
+ Sebenarnya ada banyak jenis yang berbeda 
+
+166
+00:07:51,440 --> 00:07:54,130
+ benda-benda yang mungkin Anda khawatirkan tentang perlindungan dalam operasi 
+
+167
+00:07:54,130 --> 00:07:54,630
+ sistem. 
+
+168
+00:07:54,630 --> 00:07:56,350
+ apa yang kalian pikirkan? 
+
+169
+00:07:56,350 --> 00:07:58,786
+ Apa yang harus kita khawatirkan tentang melindungi? 
+
+170
+00:07:58,786 --> 00:07:59,530
+ AUDIENCE: File. 
+
+171
+00:07:59,530 --> 00:07:59,790
+ PROFESOR: File. 
+
+172
+00:07:59,790 --> 00:08:00,340
+ Ya bagus. 
+
+173
+00:08:00,340 --> 00:08:01,115
+ Itu yang besar. 
+
+174
+00:08:01,115 --> 00:08:03,724
+ Di situlah semua data kita hidup, kan? 
+
+175
+00:08:03,724 --> 00:08:05,140
+ Ada hal yang berhubungan erat dengan kita 
+
+176
+00:08:05,140 --> 00:08:06,740
+ mungkin khawatir tentang-- direktori. 
+
+177
+00:08:06,740 --> 00:08:10,100
+
+
+178
+00:08:10,100 --> 00:08:11,730
+ Ternyata sangat penting juga 
+
+179
+00:08:11,730 --> 00:08:13,870
+ dari sudut pandang keamanan. 
+
+180
+00:08:13,870 --> 00:08:14,630
+ Ada yang lain? 
+
+181
+00:08:14,630 --> 00:08:15,880
+ AUDIENCE: Stopkontak jaringan. 
+
+182
+00:08:15,880 --> 00:08:16,838
+ PROFESOR: Ya, bagus. 
+
+183
+00:08:16,838 --> 00:08:17,775
+ Soket jaringan. 
+
+184
+00:08:17,775 --> 00:08:23,425
+
+
+185
+00:08:23,425 --> 00:08:25,170
+ Ada lagi yang terjadi? 
+
+186
+00:08:25,170 --> 00:08:26,590
+ AUDIENCE: Proses lainnya. 
+
+187
+00:08:26,590 --> 00:08:27,700
+ PROFESOR: Oh ya. 
+
+188
+00:08:27,700 --> 00:08:29,820
+ Sebenarnya, ini seperti barang yang aplikasi 
+
+189
+00:08:29,820 --> 00:08:31,620
+ atau pengguna mungkin peduli, tetapi kemudian ada 
+
+190
+00:08:31,620 --> 00:08:34,160
+ semua jenis barang internal yang harus Anda lindungi juga, 
+
+191
+00:08:34,160 --> 00:08:37,509
+ jadi proses bukan hanya subjek yang membuat sistem 
+
+192
+00:08:37,510 --> 00:08:39,280
+ panggilan, tetapi proses juga sesuatu 
+
+193
+00:08:39,280 --> 00:08:41,445
+ bahwa proses lain dapat bertindak. 
+
+194
+00:08:41,445 --> 00:08:44,280
+ Dapat membunuhnya atau membuat yang baru. 
+
+195
+00:08:44,280 --> 00:08:47,390
+ Anda harus mencari tahu, apa aturan untuk berpikir 
+
+196
+00:08:47,390 --> 00:08:50,715
+ tentang proses sebagai objek yang dapat Anda manipulasi. 
+
+197
+00:08:50,715 --> 00:08:52,090
+ Hal-hal lain yang mungkin kita sukai? 
+
+198
+00:08:52,090 --> 00:08:54,036
+ AUDIENCE: Variabel lingkungan. 
+
+199
+00:08:54,036 --> 00:08:56,160
+ PROFESOR: Saya kira mereka mungkin 
+
+200
+00:08:56,160 --> 00:08:59,380
+ bukan suatu entitas yang dapat Anda modifikasi, dalam arti 
+
+201
+00:08:59,380 --> 00:09:02,650
+ dikelola oleh iOS dan memiliki semacam keamanan 
+
+202
+00:09:02,650 --> 00:09:03,460
+ kebijakan. 
+
+203
+00:09:03,460 --> 00:09:05,530
+ Saya kira saya semacam memikirkan variabel lingkungan 
+
+204
+00:09:05,530 --> 00:09:10,560
+ karena hanya menjadi beberapa negara proses yang disimpan dalam memori. 
+
+205
+00:09:10,560 --> 00:09:12,090
+ Tapi, saya kira lebih umum, kami lakukan 
+
+206
+00:09:12,090 --> 00:09:14,060
+ peduli tentang mungkin bagian dari suatu proses 
+
+207
+00:09:14,060 --> 00:09:15,955
+ adalah semua hal ini dalam ingatan. 
+
+208
+00:09:15,955 --> 00:09:18,080
+ Jadi akan ada variabel lingkungan di sana, 
+
+209
+00:09:18,080 --> 00:09:21,090
+ ada tumpukan, ada argumen, 
+
+210
+00:09:21,090 --> 00:09:23,030
+ dan ini juga ternyata sangat penting. 
+
+211
+00:09:23,030 --> 00:09:24,405
+ Agaknya banyak data sensitif 
+
+212
+00:09:24,405 --> 00:09:25,571
+ tinggal di memori prosesor. 
+
+213
+00:09:25,571 --> 00:09:27,150
+ Hal-hal lain? 
+
+214
+00:09:27,150 --> 00:09:28,740
+ AUDIENCE: File descriptor secara umum. 
+
+215
+00:09:28,740 --> 00:09:31,480
+ PROFESOR: Ada semacam detail internal lainnya 
+
+216
+00:09:31,480 --> 00:09:32,460
+ itu sangat berarti. 
+
+217
+00:09:32,460 --> 00:09:35,740
+ Jadi file adalah hal-hal yang mungkin kita pedulikan di disk, 
+
+218
+00:09:35,740 --> 00:09:41,600
+ dan ada hal operasional ini, deskriptor file, 
+
+219
+00:09:41,600 --> 00:09:44,460
+ bahwa OKWS membuat penggunaan yang cukup ekstensif, 
+
+220
+00:09:44,460 --> 00:09:46,810
+ dan kita akan melihat deskriptor file apa 
+
+221
+00:09:46,810 --> 00:09:48,806
+ sedikit lagi. 
+
+222
+00:09:48,806 --> 00:09:52,964
+ Barang-barang lain yang ingin Anda lindungi dalam sistem operasi? 
+
+223
+00:09:52,964 --> 00:09:53,755
+ AUDIENCE: Hardware. 
+
+224
+00:09:53,755 --> 00:09:54,588
+ PROFESOR: Perangkat Keras? 
+
+225
+00:09:54,588 --> 00:09:57,980
+ Ya, saya kira dalam banyak hal perangkat keras - baik, 
+
+226
+00:09:57,980 --> 00:10:02,700
+ perangkat keras, dalam beberapa hal, tidak benar-benar sebuah abstraksi 
+
+227
+00:10:02,700 --> 00:10:04,236
+ yang disediakan oleh iOS untuk Anda. 
+
+228
+00:10:04,236 --> 00:10:05,610
+ Saya kira Anda menjalankan suatu proses, jadi Anda 
+
+229
+00:10:05,610 --> 00:10:08,464
+ mungkin ingin memastikan CPU tidak macet. 
+
+230
+00:10:08,464 --> 00:10:09,380
+ AUDIENCE: [TIDAK JELAS]. 
+
+231
+00:10:09,380 --> 00:10:11,610
+ PROFESOR: Oh, ya, ya. 
+
+232
+00:10:11,610 --> 00:10:13,720
+ Jadi, seperti, perangkat tambahan, Ya, Anda 
+
+233
+00:10:13,720 --> 00:10:15,384
+ benar, terutama pada mesin desktop, 
+
+234
+00:10:15,384 --> 00:10:16,550
+ ada banyak barang ekstra. 
+
+235
+00:10:16,550 --> 00:10:19,107
+ Jadi ada USB drive yang Anda colokkan, mungkin webcam Anda 
+
+236
+00:10:19,107 --> 00:10:21,440
+ tampilan Anda sendiri adalah sesuatu yang ingin Anda lindungi, 
+
+237
+00:10:21,440 --> 00:10:24,100
+ seperti aplikasi seharusnya tidak menarik seluruh layar Anda 
+
+238
+00:10:24,100 --> 00:10:25,719
+ di mana saja. 
+
+239
+00:10:25,719 --> 00:10:27,510
+ Jadi, ya, sebenarnya saya kira ini tidak benar 
+
+240
+00:10:27,510 --> 00:10:30,630
+ pada tampilan sisi server, di mana hanya ada 
+
+241
+00:10:30,630 --> 00:10:34,260
+ server di suatu tempat di lemari, tetapi di ponsel Anda, 
+
+242
+00:10:34,260 --> 00:10:38,200
+ mikrofon Anda mungkin, adalah objek yang sangat penting 
+
+243
+00:10:38,200 --> 00:10:40,770
+ yang ingin Anda lindungi, ya, tetapi saya juga akan membiarkannya 
+
+244
+00:10:40,770 --> 00:10:41,600
+ dari daftar ini, karena kita akan pergi 
+
+245
+00:10:41,600 --> 00:10:43,590
+ untuk berbicara lebih banyak tentang aplikasi server untuk saat ini, 
+
+246
+00:10:43,590 --> 00:10:44,756
+ tetapi Anda memang benar. 
+
+247
+00:10:44,756 --> 00:10:46,600
+
+
+248
+00:10:46,600 --> 00:10:48,495
+ Saya pikir untuk OKWS, ini mungkin 
+
+249
+00:10:48,495 --> 00:10:50,580
+ daftar hal-hal yang kurang lebih lengkap 
+
+250
+00:10:50,580 --> 00:10:55,270
+ kita mungkin peduli tentang melindungi, atau setidaknya yang digunakan OKWS. 
+
+251
+00:10:55,270 --> 00:10:58,660
+ Jadi mari kita bicara tentang bagaimana kernel OS 
+
+252
+00:10:58,660 --> 00:11:02,440
+ memutuskan kapan suatu proses dapat melakukan sesuatu 
+
+253
+00:11:02,440 --> 00:11:05,660
+ ke benda-benda ini? 
+
+254
+00:11:05,660 --> 00:11:10,010
+ Jadi [TIDAK JELAS], saya kira, kita kebanyakan memikirkan suatu proses 
+
+255
+00:11:10,010 --> 00:11:13,350
+ memiliki hak istimewa yang diwakili oleh prinsip ini, 
+
+256
+00:11:13,350 --> 00:11:16,020
+ dan kepala sekolah dalam sistem Unix 
+
+257
+00:11:16,020 --> 00:11:18,870
+ apakah ini hal yang sedikit rumit. 
+
+258
+00:11:18,870 --> 00:11:22,050
+ Ada sesuatu yang disebut userid, 
+
+259
+00:11:22,050 --> 00:11:23,800
+ yang hanya berupa bilangan bulat 32-bit. 
+
+260
+00:11:23,800 --> 00:11:27,440
+
+
+261
+00:11:27,440 --> 00:11:34,700
+ Ada juga ID grup, yang juga merupakan bilangan bulat 32-bit. 
+
+262
+00:11:34,700 --> 00:11:39,205
+ Dan tidak ada alasan bagus mengapa mereka berbeda. 
+
+263
+00:11:39,205 --> 00:11:40,830
+ Akan lebih baik jika mereka adil 
+
+264
+00:11:40,830 --> 00:11:44,200
+ satu set seragam bilangan pokok bilangan bulat 32-bit, 
+
+265
+00:11:44,200 --> 00:11:45,985
+ tapi sayangnya Unix membagi mereka 
+
+266
+00:11:45,985 --> 00:11:47,130
+ menjadi dua kategori. 
+
+267
+00:11:47,130 --> 00:11:49,900
+ Ada bilangan bulat userid dan kemudian ada grup ID bilangan bulat. 
+
+268
+00:11:49,900 --> 00:11:53,129
+
+
+269
+00:11:53,129 --> 00:11:55,420
+ Ketika kita berbicara tentang suatu proses yang memiliki hak istimewa tertentu, 
+
+270
+00:11:55,420 --> 00:11:59,040
+ kami biasanya memikirkan proses yang terkait 
+
+271
+00:11:59,040 --> 00:12:01,290
+ dengan nilai uid tertentu. 
+
+272
+00:12:01,290 --> 00:12:06,446
+ Prosesnya, untuk sebagian besar, memiliki satu uid. 
+
+273
+00:12:06,446 --> 00:12:08,070
+ Seperti hampir semua hal lain, ada 
+
+274
+00:12:08,070 --> 00:12:09,690
+ komplikasi di mana-mana di Unix, 
+
+275
+00:12:09,690 --> 00:12:11,410
+ tapi saya akan menyederhanakannya untuk saat ini. 
+
+276
+00:12:11,410 --> 00:12:14,360
+ Suatu proses memiliki satu uid, dan ada 
+
+277
+00:12:14,360 --> 00:12:20,320
+ juga daftar ID grup yang dimiliki suatu proses. 
+
+278
+00:12:20,320 --> 00:12:22,950
+ Untuk alasan historis, ID grup 
+
+279
+00:12:22,950 --> 00:12:27,620
+ dibagi menjadi satu dan kemudian daftar orang lain. 
+
+280
+00:12:27,620 --> 00:12:30,030
+ Kira-kira, suatu proses kemudian dapat berolahraga 
+
+281
+00:12:30,030 --> 00:12:34,020
+ hak istimewa yang diwakili oleh semua pengidentifikasi ini. 
+
+282
+00:12:34,020 --> 00:12:36,315
+ Jadi jika ada sesuatu yang dapat diakses oleh userid ini 
+
+283
+00:12:36,315 --> 00:12:39,510
+ suatu proses dapat melakukan hal-hal dengan itu. 
+
+284
+00:12:39,510 --> 00:12:42,310
+ Begitulah cara kami berpikir tentang keistimewaan suatu proses 
+
+285
+00:12:42,310 --> 00:12:45,050
+ telah, jadi sekarang mari kita bicara tentang file, direktori 
+
+286
+00:12:45,050 --> 00:12:46,630
+ dan jenis benda lainnya. 
+
+287
+00:12:46,630 --> 00:12:52,370
+ Jadi apa yang terjadi dengan file, atau bagaimana perizinan Unix 
+
+288
+00:12:52,370 --> 00:12:53,780
+ untuk file berfungsi? 
+
+289
+00:12:53,780 --> 00:12:58,520
+ Nah, di Unix, setiap file memiliki-- sebenarnya, 
+
+290
+00:12:58,520 --> 00:13:00,490
+ mungkin cara yang lebih baik untuk memulai adalah memikirkan apa 
+
+291
+00:13:00,490 --> 00:13:01,820
+ operasi yang kita pedulikan? 
+
+292
+00:13:01,820 --> 00:13:04,970
+ Untuk file, semuanya relatif mudah. 
+
+293
+00:13:04,970 --> 00:13:11,450
+ Untuk file, Anda mungkin peduli tentang membaca, menulis, 
+
+294
+00:13:11,450 --> 00:13:13,890
+ mungkin hal-hal seperti mengeksekusi juga, 
+
+295
+00:13:13,890 --> 00:13:21,395
+ mengubah izin, mungkin mengubah properti keamanan lainnya. 
+
+296
+00:13:21,395 --> 00:13:22,126
+ AUDIENCE: Batalkan tautan. 
+
+297
+00:13:22,126 --> 00:13:22,960
+ PROFESOR: Batalkan tautan. 
+
+298
+00:13:22,960 --> 00:13:26,820
+ Nah, begitu juga tautan properti dari file itu sendiri 
+
+299
+00:13:26,820 --> 00:13:29,410
+ atau itu adalah hal direktori? 
+
+300
+00:13:29,410 --> 00:13:32,460
+ Sebenarnya agak tidak jelas. 
+
+301
+00:13:32,460 --> 00:13:34,985
+ Setidaknya, cara Unix berpikir tentang menghapus file, 
+
+302
+00:13:34,985 --> 00:13:40,530
+ adalah bahwa itu benar-benar semacam direktori, 
+
+303
+00:13:40,530 --> 00:13:44,720
+ karena di Unix Anda dapat memiliki-- file sebenarnya adalah inode, 
+
+304
+00:13:44,720 --> 00:13:47,540
+ dan di Unix Anda dapat memiliki banyak tautan keras ke sebuah inode 
+
+305
+00:13:47,540 --> 00:13:51,900
+ dan ketika Anda membatalkan tautan nama tertentu dari file Unix, apa 
+
+306
+00:13:51,900 --> 00:13:54,880
+ Anda benar-benar melakukan membunuh salah satu nama untuk file itu, 
+
+307
+00:13:54,880 --> 00:13:58,310
+ tetapi mungkin memiliki nama lain, tautan lain ke sana. 
+
+308
+00:13:58,310 --> 00:14:01,910
+ Jadi apa yang sebenarnya penting adalah apakah Anda 
+
+309
+00:14:01,910 --> 00:14:04,740
+ diizinkan untuk mengubah direktori yang menunjuk pada file 
+
+310
+00:14:04,740 --> 00:14:08,850
+ dan tidak melakukan sesuatu pada inode file itu sendiri. 
+
+311
+00:14:08,850 --> 00:14:13,490
+ Jadi biasanya, hapus tautan dan tautkan dan ganti nama, 
+
+312
+00:14:13,490 --> 00:14:20,370
+ buat, adalah operasi yang kita pikirkan 
+
+313
+00:14:20,370 --> 00:14:22,120
+ karena terkait dengan direktori, 
+
+314
+00:14:22,120 --> 00:14:25,150
+ meskipun, mereka sebenarnya terkait, jadi "buat" mempengaruhi 
+
+315
+00:14:25,150 --> 00:14:27,190
+ baik direktori maupun file baru juga, 
+
+316
+00:14:27,190 --> 00:14:30,820
+ jadi kita harus mencari tahu aturan apa di sana. 
+
+317
+00:14:30,820 --> 00:14:32,410
+ Oke, jadi apa aturannya? 
+
+318
+00:14:32,410 --> 00:14:35,410
+ Untuk membantu kami memutuskan kapan seseorang dapat membaca atau menulis 
+
+319
+00:14:35,410 --> 00:14:38,960
+ file, kita akan memasukkan beberapa izin, atau bit, 
+
+320
+00:14:38,960 --> 00:14:41,260
+ di inode file. 
+
+321
+00:14:41,260 --> 00:14:45,460
+ Di Unix, setiap inode, artinya sesuatu 
+
+322
+00:14:45,460 --> 00:14:49,790
+ yang akhirnya menjadi file atau direktori, 
+
+323
+00:14:49,790 --> 00:14:53,500
+ memiliki beberapa bidang menarik untuk tujuan keamanan. 
+
+324
+00:14:53,500 --> 00:14:58,910
+ Ada userid dan grup yang kita katakan memiliki file itu 
+
+325
+00:14:58,910 --> 00:15:01,020
+ atau memiliki direktori. 
+
+326
+00:15:01,020 --> 00:15:03,450
+ Jadi Anda mungkin memiliki semua file di direktori home Anda 
+
+327
+00:15:03,450 --> 00:15:07,980
+ mungkin dimiliki oleh Anda di sistem Unix Anda. 
+
+328
+00:15:07,980 --> 00:15:13,091
+ Ada juga satu set bit izin di Unix 
+
+329
+00:15:13,091 --> 00:15:16,520
+ bahwa Anda dapat mengurutkan dari sedikit matriks, 
+
+330
+00:15:16,520 --> 00:15:20,780
+ jadi kami ingin memiliki - baik di Unix pada dasarnya ada 
+
+331
+00:15:20,780 --> 00:15:23,430
+ desain dasar, ada yang baca, tulis 
+
+332
+00:15:23,430 --> 00:15:26,280
+ dan x untuk mengeksekusi izin. 
+
+333
+00:15:26,280 --> 00:15:30,630
+ Kami dapat menentukan izin ini untuk entitas yang berbeda, 
+
+334
+00:15:30,630 --> 00:15:33,940
+ dan di Unix ini ditentukan untuk pemiliknya, 
+
+335
+00:15:33,940 --> 00:15:35,930
+ berarti untuk cairan inode, 
+
+336
+00:15:35,930 --> 00:15:41,250
+ untuk grup yang memiliki file, gid dan semua orang ini 
+
+337
+00:15:41,250 --> 00:15:42,600
+ lain, lainnya. 
+
+338
+00:15:42,600 --> 00:15:46,380
+ Anda dapat mengurutkan dari 3 ini dengan 3 biner matriks. 
+
+339
+00:15:46,380 --> 00:15:49,430
+ Anda mungkin berkata, baik, saya bisa membaca dan menulis dan mungkin tidak mengeksekusi 
+
+340
+00:15:49,430 --> 00:15:50,400
+ file ini. 
+
+341
+00:15:50,400 --> 00:15:53,020
+ Orang-orang dalam gid itu mungkin bisa membaca tetapi tidak 
+
+342
+00:15:53,020 --> 00:15:56,040
+ tulis file ini, dan semua orang lain-- atau mungkin mereka 
+
+343
+00:15:56,040 --> 00:15:59,250
+ bisa juga membacanya - tetapi tidak melakukan hal lain dengannya. 
+
+344
+00:15:59,250 --> 00:16:02,300
+ Jadi ini adalah cara izin toko Unix. 
+
+345
+00:16:02,300 --> 00:16:05,310
+ Ada beberapa cara barok untuk mengkodekan hal-hal ini 
+
+346
+00:16:05,310 --> 00:16:08,860
+ Anda akan sering melihat itu mungkin layak disebut. 
+
+347
+00:16:08,860 --> 00:16:12,390
+ Di Unix, Anda menyandikan matriks ini sebagai angka oktal, 
+
+348
+00:16:12,390 --> 00:16:19,300
+ sehingga Anda memperlakukan setiap baris di sini sebagai bilangan dasar 8, jadi r adalah bit 4, 
+
+349
+00:16:19,300 --> 00:16:22,620
+ w adalah bit 2, x bit 1, jadi ini berakhir 
+
+350
+00:16:22,620 --> 00:16:27,570
+ menjadi 6, 4, 4, jadi Anda akan mengatakan-- baik, 
+
+351
+00:16:27,570 --> 00:16:30,100
+ Anda akan sering melihat notasi ini, bahkan dalam tulisan ini. 
+
+352
+00:16:30,100 --> 00:16:32,263
+ Anda akan berkata, yah, file ini memiliki izin 6, 4, 
+
+353
+00:16:32,263 --> 00:16:34,880
+ 4, artinya pemilik dapat membaca dan menulis file ini, 
+
+354
+00:16:34,880 --> 00:16:38,260
+ pemilik grup dapat membacanya dan orang lain juga dapat membacanya. 
+
+355
+00:16:38,260 --> 00:16:39,375
+ Apakah itu masuk akal? 
+
+356
+00:16:39,375 --> 00:16:45,690
+
+
+357
+00:16:45,690 --> 00:16:48,845
+ Ini memberitahu kita ketika Anda bisa membaca, menulis, dan mengeksekusi file. 
+
+358
+00:16:48,845 --> 00:16:50,765
+ Bagaimana dengan mengubah izin pada file? 
+
+359
+00:16:50,765 --> 00:16:53,475
+
+
+360
+00:16:53,475 --> 00:16:55,890
+ Ini bukan sepenuhnya pertanyaan yang adil, tetapi apa yang Anda lakukan 
+
+361
+00:16:55,890 --> 00:16:56,390
+ kalian pikir? 
+
+362
+00:16:56,390 --> 00:16:57,810
+ Bagaimana seharusnya kita memutuskan kapan seseorang 
+
+363
+00:16:57,810 --> 00:16:59,601
+ harus dapat mengubah izin ini, 
+
+364
+00:16:59,601 --> 00:17:04,191
+ karena itu juga sesuatu yang coba dilakukan, setidaknya. 
+
+365
+00:17:04,191 --> 00:17:04,690
+ Tebakan apa saja? 
+
+366
+00:17:04,690 --> 00:17:05,189
+ Ya. 
+
+367
+00:17:05,189 --> 00:17:08,319
+ AUDIENCE: Jika mereka memiliki [TIDAK JELAS]. 
+
+368
+00:17:08,319 --> 00:17:10,199
+ PROFESOR: Mungkin, ya. 
+
+369
+00:17:10,200 --> 00:17:10,710
+ Tergantung. 
+
+370
+00:17:10,710 --> 00:17:15,134
+ Di sisi lain, Anda dapat membuat file yang bisa ditulisi 
+
+371
+00:17:15,134 --> 00:17:17,092
+ bahwa saya hanya ingin berbagi dengan siapa pun, bahwa Anda 
+
+372
+00:17:17,092 --> 00:17:18,824
+ dapat membaca dan menulis serta memodifikasi file saya, 
+
+373
+00:17:18,824 --> 00:17:20,990
+ tetapi kemudian ini juga berarti bahwa Anda akan tiba-tiba 
+
+374
+00:17:20,990 --> 00:17:22,656
+ dapat mengubah izin, jadi Anda akan 
+
+375
+00:17:22,656 --> 00:17:25,010
+ dapat mengambil file saya dan membuatnya tidak dapat ditimpa 
+
+376
+00:17:25,010 --> 00:17:26,230
+ atau mengambil alih. 
+
+377
+00:17:26,230 --> 00:17:29,370
+ Itu sepertinya belum tentu bagus, jadi 
+
+378
+00:17:29,370 --> 00:17:31,970
+ di Unix, apa yang dipilih oleh para desainer, 
+
+379
+00:17:31,970 --> 00:17:34,430
+ apakah itu, yah, jika Anda memiliki file itu, 
+
+380
+00:17:34,430 --> 00:17:38,180
+ artinya jika Anda memiliki uid yang sama dengan file, 
+
+381
+00:17:38,180 --> 00:17:40,040
+ maka Anda dapat mengubah izin. 
+
+382
+00:17:40,040 --> 00:17:41,190
+ Kalau tidak, Anda tidak bisa. 
+
+383
+00:17:41,190 --> 00:17:44,572
+ Jadi bahkan jika Anda berada di gid di sini dan grup itu memiliki semuanya 
+
+384
+00:17:44,572 --> 00:17:47,030
+ izin dalam file, Anda masih tidak dapat benar-benar berubah 
+
+385
+00:17:47,030 --> 00:17:48,790
+ izin pada file itu. 
+
+386
+00:17:48,790 --> 00:17:50,240
+ Anda hanya bisa membaca, menulis, mengeksekusi, 
+
+387
+00:17:50,240 --> 00:17:52,170
+ apa pun untuk menyelesaikannya. 
+
+388
+00:17:52,170 --> 00:17:54,660
+ Masuk akal? 
+
+389
+00:17:54,660 --> 00:17:56,047
+ Maka sebenarnya direktori di Unix 
+
+390
+00:17:56,047 --> 00:17:58,320
+ ikuti kisah yang sangat mirip. 
+
+391
+00:17:58,320 --> 00:18:05,180
+ Jadi batalkan tautan dan tautkan entri di direktori 
+
+392
+00:18:05,180 --> 00:18:08,820
+ berarti memiliki izin menulis di direktori itu, 
+
+393
+00:18:08,820 --> 00:18:11,230
+ dan jika Anda ingin mengganti nama file, 
+
+394
+00:18:11,230 --> 00:18:13,370
+ maka Anda mungkin harus memiliki izin menulis 
+
+395
+00:18:13,370 --> 00:18:15,600
+ di kedua direktori tempat Anda memindahkannya 
+
+396
+00:18:15,600 --> 00:18:17,760
+ dan direktori tempat Anda memindahkannya. 
+
+397
+00:18:17,760 --> 00:18:20,300
+ Rencana yang cukup alami. 
+
+398
+00:18:20,300 --> 00:18:23,470
+ Ada beberapa kasus sudut dengan tautan keras, ternyata. 
+
+399
+00:18:23,470 --> 00:18:25,870
+ Catatan kuliah memiliki beberapa detail, tetapi kurang lebih, 
+
+400
+00:18:25,870 --> 00:18:27,420
+ itulah cara kerjanya. 
+
+401
+00:18:27,420 --> 00:18:29,390
+ Sebenarnya ada operasi menarik lainnya 
+
+402
+00:18:29,390 --> 00:18:31,770
+ pada direktori yang mungkin Anda pedulikan, yaitu pencarian. 
+
+403
+00:18:31,770 --> 00:18:35,430
+ Jadi Anda mungkin ingin mencari file di direktori. 
+
+404
+00:18:35,430 --> 00:18:38,300
+ Dan semacam Unix dari encode mengeksekusi izin 
+
+405
+00:18:38,300 --> 00:18:41,752
+ sebagai penerapan pencarian untuk direktori, 
+
+406
+00:18:41,752 --> 00:18:44,210
+ jadi apa artinya memiliki hak akses pada direktori 
+
+407
+00:18:44,210 --> 00:18:46,535
+ hanya bisa mencari nama tertentu di sana. 
+
+408
+00:18:46,535 --> 00:18:48,540
+ Mungkin Anda tidak benar-benar harus mengeksekusi izin 
+
+409
+00:18:48,540 --> 00:18:49,240
+ di direktori sehingga Anda dapat mencari nama, 
+
+410
+00:18:49,240 --> 00:18:51,600
+ tetapi Anda tidak tidak memiliki izin baca, 
+
+411
+00:18:51,600 --> 00:18:54,990
+ jadi Anda tidak bisa daftar isi direktori. 
+
+412
+00:18:54,990 --> 00:18:57,030
+ Ternyata berguna dalam beberapa situasi 
+
+413
+00:18:57,030 --> 00:18:59,360
+ jika Anda benar-benar ingin membatasi seseorang 
+
+414
+00:18:59,360 --> 00:19:03,690
+ bisa lakukan dengan file-file itu, atau semacam hide 
+
+415
+00:19:03,690 --> 00:19:06,030
+ file dari pengguna. 
+
+416
+00:19:06,030 --> 00:19:07,790
+ Mari kita bekerja melalui sebuah contoh. 
+
+417
+00:19:07,790 --> 00:19:11,468
+ Apa yang terjadi pada Unix jika saya memanggil terbuka ("/ etc / password")? 
+
+418
+00:19:11,468 --> 00:19:16,840
+
+
+419
+00:19:16,840 --> 00:19:21,370
+ Pemeriksaan apa yang akan dilakukan kernel atas nama saya 
+
+420
+00:19:21,370 --> 00:19:22,700
+ ketika saya mengeluarkan panggilan sistem ini? 
+
+421
+00:19:22,700 --> 00:19:26,374
+
+
+422
+00:19:26,374 --> 00:19:29,490
+ AUDIENCE: Ini memeriksa apakah Anda telah menjalankan izin 
+
+423
+00:19:29,490 --> 00:19:30,017
+ di dll? 
+
+424
+00:19:30,017 --> 00:19:31,850
+ PROFESOR: Ya, itu akan terjadi di suatu tempat. 
+
+425
+00:19:31,850 --> 00:19:34,025
+ Saya harus mengeksekusi pada dll. 
+
+426
+00:19:34,025 --> 00:19:35,870
+ AUDIENCE: Dan kemudian jalankan pada garis miring. 
+
+427
+00:19:35,870 --> 00:19:38,820
+ PROFESOR: Ya, sebenarnya, saya harus mencari apa yang / etc bahkan 
+
+428
+00:19:38,820 --> 00:19:39,340
+ arahkan ke? 
+
+429
+00:19:39,340 --> 00:19:41,540
+ Jadi jika saya tidak mencari izin di root, 
+
+430
+00:19:41,540 --> 00:19:43,487
+ maka itu tidak akan berhasil. 
+
+431
+00:19:43,487 --> 00:19:47,220
+ AUDIENCE: Maka Anda perlu membaca di / etc / password. 
+
+432
+00:19:47,220 --> 00:19:51,975
+
+
+433
+00:19:51,975 --> 00:19:55,230
+ PROFESOR: Masuk akal, kira-kira? 
+
+434
+00:19:55,230 --> 00:19:57,660
+ Ini teka-teki kecil. 
+
+435
+00:19:57,660 --> 00:20:03,630
+ Misalkan MIT membentuk kelompok untuk semua orang yang terkait 
+
+436
+00:20:03,630 --> 00:20:07,960
+ dengan 6.858 dan grup lain dalam set-set unix 
+
+437
+00:20:07,960 --> 00:20:13,695
+ untuk semua TA di MIT, tetapi mereka tidak memiliki grup empat 6.858 
+
+438
+00:20:13,695 --> 00:20:15,980
+ TAs untuk beberapa alasan konyol. 
+
+439
+00:20:15,980 --> 00:20:22,010
+ Bisakah saya membuat file yang hanya dapat diakses oleh 6.858 TA? 
+
+440
+00:20:22,010 --> 00:20:29,260
+ Jika saya memiliki grup 6.858, atau beberapa gid, dan gumpalan TAs. 
+
+441
+00:20:29,260 --> 00:20:32,182
+
+
+442
+00:20:32,182 --> 00:20:36,920
+ Jadi hanya ada satu gid yang bisa saya tempelkan dalam file. 
+
+443
+00:20:36,920 --> 00:20:39,822
+ Tebakan apa saja? 
+
+444
+00:20:39,822 --> 00:20:42,030
+ AUDIENCE: Yah, Anda tidak bisa karena Anda mungkin 
+
+445
+00:20:42,030 --> 00:20:45,686
+ memiliki TA dan bukan 858 TA. 
+
+446
+00:20:45,686 --> 00:20:47,534
+ PROFESOR: Itu benar, ya. 
+
+447
+00:20:47,534 --> 00:20:49,283
+ Misalkan mereka ingin-- Anda benar, ya, 
+
+448
+00:20:49,283 --> 00:20:52,717
+ jadi ada siswa di 858 yang merupakan TA dari kelas lain, 
+
+449
+00:20:52,717 --> 00:20:53,800
+ jadi itu mungkin tidak bagus. 
+
+450
+00:20:53,800 --> 00:20:56,209
+ Tapi, tetap saja, mari mencoba melakukan persimpangan entah bagaimana. 
+
+451
+00:20:56,209 --> 00:20:57,125
+ AUDIENCE: [TIDAK JELAS]. 
+
+452
+00:20:57,125 --> 00:21:00,520
+
+
+453
+00:21:00,520 --> 00:21:03,437
+ PROFESOR: Ya, jadi Anda benar-benar bisa bermain trik 
+
+454
+00:21:03,437 --> 00:21:04,270
+ dengan mekanisme ini. 
+
+455
+00:21:04,270 --> 00:21:05,770
+ Ini tidak sempurna, tetapi Anda bisa mengatasinya 
+
+456
+00:21:05,770 --> 00:21:07,478
+ menggunakannya untuk menyandikan hal-hal yang lebih menarik. 
+
+457
+00:21:07,478 --> 00:21:12,940
+ Anda benar-benar bisa melakukan sesuatu seperti create / foo / bar / grades 
+
+458
+00:21:12,940 --> 00:21:17,070
+ file, dan apa yang akan saya lakukan adalah saya benar-benar akan membuat foo dimiliki 
+
+459
+00:21:17,070 --> 00:21:23,260
+ by-- atau atur gid ke 6.858 dan hanya membuatnya bisa dieksekusi 
+
+460
+00:21:23,260 --> 00:21:25,070
+ untuk grup. 
+
+461
+00:21:25,070 --> 00:21:28,030
+ Jadi kecuali Anda berada di grup ini, Anda bahkan tidak dapat melihat-lihat 
+
+462
+00:21:28,030 --> 00:21:32,080
+ di / foo, dan kemudian saya bisa mengatur izin di bar 
+
+463
+00:21:32,080 --> 00:21:37,250
+ sehingga gid adalah untuk TA dan kemudian dieksekusi untuk grup 
+
+464
+00:21:37,250 --> 00:21:40,390
+ juga dan bukan yang lain. 
+
+465
+00:21:40,390 --> 00:21:42,579
+ Jadi kecuali Anda benar-benar dapat melintasi jalur ini, 
+
+466
+00:21:42,579 --> 00:21:43,995
+ Anda tidak bisa mendapatkan file nilai ini. 
+
+467
+00:21:43,995 --> 00:21:47,950
+ Ini semacam, Anda tahu, hack lucu, jika Anda mau, 
+
+468
+00:21:47,950 --> 00:21:49,680
+ tetapi trik-trik semacam ini adalah hal-hal 
+
+469
+00:21:49,680 --> 00:21:53,230
+ Anda akhirnya melakukan apa pun dengan primitif dasar, 
+
+470
+00:21:53,230 --> 00:21:56,400
+ mekanisme isolasi disediakan untuk Anda. 
+
+471
+00:21:56,400 --> 00:22:02,320
+ Dan bahkan OKWS memainkan semua trik ini juga dalam desain mereka. 
+
+472
+00:22:02,320 --> 00:22:02,891
+ Masuk akal? 
+
+473
+00:22:02,891 --> 00:22:03,390
+ Pertanyaan? 
+
+474
+00:22:03,390 --> 00:22:04,237
+ Ya. 
+
+475
+00:22:04,237 --> 00:22:07,690
+ AUDIENCE: Jika, seperti, izin pada nilai 
+
+476
+00:22:07,690 --> 00:22:09,910
+ file itu sendiri, katakanlah - QID adalah 6.858, 
+
+477
+00:22:09,910 --> 00:22:12,725
+ bisa TA, seperti, tautkan ke beberapa direktori lain 
+
+478
+00:22:12,725 --> 00:22:15,290
+ dan mengizinkan siapa saja di 6.858 untuk mengaksesnya? 
+
+479
+00:22:15,290 --> 00:22:16,790
+ PROFESOR: Ya, berpotensi, kan? 
+
+480
+00:22:16,790 --> 00:22:19,490
+ Jadi Anda mungkin khawatir tentang hal-hal lain seperti kebocoran sekarang, 
+
+481
+00:22:19,490 --> 00:22:24,320
+ jadi Unix pada umumnya tidak mencoba untuk menegakkan 
+
+482
+00:22:24,320 --> 00:22:27,000
+ jenis-jenis sifat keamanan transitif ini, 
+
+483
+00:22:27,000 --> 00:22:30,540
+ artinya sekali proses memiliki akses ke beberapa data, 
+
+484
+00:22:30,540 --> 00:22:34,520
+ atau memiliki beberapa hak istimewa, pada dasarnya dapat mendelegasikan 
+
+485
+00:22:34,520 --> 00:22:37,090
+ hak istimewa itu kepada siapa pun yang diinginkannya. 
+
+486
+00:22:37,090 --> 00:22:39,880
+ Ada jenis lain dari sistem yang disebut kontrol akses wajib 
+
+487
+00:22:39,880 --> 00:22:40,750
+ sistem. 
+
+488
+00:22:40,750 --> 00:22:42,495
+ Kita mungkin akan membicarakannya nanti, 
+
+489
+00:22:42,495 --> 00:22:43,870
+ tetapi mereka mencoba untuk benar-benar menegakkan 
+
+490
+00:22:43,870 --> 00:22:47,589
+ properti transitif ini, jika saya memberikannya kepada Anda, maka 
+
+491
+00:22:47,589 --> 00:22:48,880
+ Anda tidak bisa memberi kepada orang lain. 
+
+492
+00:22:48,880 --> 00:22:49,838
+ Anda pada dasarnya terjebak. 
+
+493
+00:22:49,838 --> 00:22:53,450
+ Ini semacam mencemari Anda dan Anda tidak bisa pergi ke tempat lain. 
+
+494
+00:22:53,450 --> 00:22:55,410
+ Di Unix, ini umumnya tidak terjadi, 
+
+495
+00:22:55,410 --> 00:23:02,090
+ dan TA mungkin tidak bisa menautkan file ini karena 
+
+496
+00:23:02,090 --> 00:23:05,040
+ aturan konyol lain yang memaksa Unix untuk tautan keras, yang 
+
+497
+00:23:05,040 --> 00:23:08,075
+ adalah hanya pemilik file yang bisa keras 
+
+498
+00:23:08,075 --> 00:23:10,420
+ tautkan di tempat lain. 
+
+499
+00:23:10,420 --> 00:23:12,970
+ Dan ini sebagian karena caranya 
+
+500
+00:23:12,970 --> 00:23:15,790
+ Unix melakukan kuota, karena dalam kuota Unix 
+
+501
+00:23:15,790 --> 00:23:18,520
+ adalah dengan siapa yang memiliki file itu. 
+
+502
+00:23:18,520 --> 00:23:20,900
+ Jadi jika Anda membuat beberapa file raksasa, 
+
+503
+00:23:20,900 --> 00:23:23,330
+ Saya dapat dengan keras menautkan salinan ke direktori saya, 
+
+504
+00:23:23,330 --> 00:23:25,760
+ maka Anda mungkin menghapus file itu, tetapi saya masih memilikinya, 
+
+505
+00:23:25,760 --> 00:23:27,860
+ dan sistem file berpikir, ya, itu pemiliknya, 
+
+506
+00:23:27,860 --> 00:23:29,484
+ tetapi Anda bahkan tidak dapat menghapusnya, karena saya 
+
+507
+00:23:29,484 --> 00:23:31,160
+ memiliki referensi untuk itu. 
+
+508
+00:23:31,160 --> 00:23:34,200
+ Jadi itu akan menjadi kombinasi yang tidak menguntungkan 
+
+509
+00:23:34,200 --> 00:23:36,970
+ mekanisme Unix di sana. 
+
+510
+00:23:36,970 --> 00:23:39,530
+ Tetapi secara umum, Anda harus khawatir tentang hal-hal seperti itu 
+
+511
+00:23:39,530 --> 00:23:41,660
+ seperti transitivitas, seperti dapat seseorang-- 
+
+512
+00:23:41,660 --> 00:23:45,040
+ atau mungkin masalah yang lebih baik adalah, mungkin seseorang adalah seorang TA 
+
+513
+00:23:45,040 --> 00:23:46,289
+ dan kemudian kami menghapusnya. 
+
+514
+00:23:46,289 --> 00:23:48,580
+ Tapi mungkin mereka masih bisa menyembunyikan referensi 
+
+515
+00:23:48,580 --> 00:23:52,590
+ suatu tempat, jadi ini mungkin bukan solusi sempurna 
+
+516
+00:23:52,590 --> 00:23:54,410
+ untuk masalah ini karena berbagai alasan, 
+
+517
+00:23:54,410 --> 00:23:59,240
+ termasuk fakta bahwa ada T-858 yang tidak mengambil 858. 
+
+518
+00:23:59,240 --> 00:24:00,470
+ Apakah ada pertanyaan? 
+
+519
+00:24:00,470 --> 00:24:03,050
+
+
+520
+00:24:03,050 --> 00:24:06,140
+ Oke, jadi itu file dan direktori di Unix, 
+
+521
+00:24:06,140 --> 00:24:09,535
+ jadi bagaimana keamanan bekerja untuk mereka. 
+
+522
+00:24:09,535 --> 00:24:13,060
+ Hal yang terkait erat di Unix adalah file deskriptor. 
+
+523
+00:24:13,060 --> 00:24:18,800
+
+
+524
+00:24:18,800 --> 00:24:22,920
+ File deskriptor digunakan cukup luas di OKWS 
+
+525
+00:24:22,920 --> 00:24:25,990
+ dan apa yang digambarkan oleh file deskriptor di Unix 
+
+526
+00:24:25,990 --> 00:24:27,600
+ pada dasarnya adalah file terbuka. 
+
+527
+00:24:27,600 --> 00:24:30,200
+ Jadi di Unix khususnya, ternyata 
+
+528
+00:24:30,200 --> 00:24:36,142
+ bahwa pemeriksaan keamanan saat membuka file dilakukan-- 
+
+529
+00:24:36,142 --> 00:24:37,850
+ atau pemeriksaan keamanan untuk mengakses file-- 
+
+530
+00:24:37,850 --> 00:24:41,310
+ dilakukan ketika Anda membuka file di tempat pertama. 
+
+531
+00:24:41,310 --> 00:24:43,880
+ Dan dari sana, pada dasarnya Anda memiliki pegangan 
+
+532
+00:24:43,880 --> 00:24:46,400
+ pada file, di mana siapa pun dengan pegangan itu 
+
+533
+00:24:46,400 --> 00:24:48,540
+ sekarang dapat melakukan operasi pada file itu. 
+
+534
+00:24:48,540 --> 00:24:51,220
+ Jadi aturan untuk dasarnya mengakses file deskriptor 
+
+535
+00:24:51,220 --> 00:24:54,230
+ adalah, jika Anda memiliki deskriptor file terbuka dalam proses Anda, 
+
+536
+00:24:54,230 --> 00:24:56,060
+ maka Anda dapat mengaksesnya. 
+
+537
+00:24:56,060 --> 00:24:58,820
+ Dan pemeriksaan keamanan tidak berlaku dalam arti 
+
+538
+00:24:58,820 --> 00:25:00,277
+ itu, untuk mendapatkan file deskriptor itu, 
+
+539
+00:25:00,277 --> 00:25:02,360
+ Anda bisa saja membuka file, dalam hal ini 
+
+540
+00:25:02,360 --> 00:25:04,180
+ pemeriksaan rutin ini akan diterapkan, 
+
+541
+00:25:04,180 --> 00:25:07,020
+ atau beberapa proses lain mungkin telah lulus file 
+
+542
+00:25:07,020 --> 00:25:10,500
+ deskriptor kepada Anda, sehingga Anda dapat melewatkan pendeskripsi file 
+
+543
+00:25:10,500 --> 00:25:13,260
+ dengan mewarisi dari orang tua, jadi orang tua 
+
+544
+00:25:13,260 --> 00:25:15,260
+ dapat meneruskan deskriptor file ke proses anak 
+
+545
+00:25:15,260 --> 00:25:18,510
+ atau Anda bisa meneruskan deskriptor file melalui soket di Unix, 
+
+546
+00:25:18,510 --> 00:25:20,580
+ tetapi bagaimanapun Anda berhasil mendapatkan deskriptor file, 
+
+547
+00:25:20,580 --> 00:25:22,914
+ Anda dapat membaca dan menulis deskriptor file semau Anda, 
+
+548
+00:25:22,914 --> 00:25:24,580
+ karena pemeriksaan keamanan sudah 
+
+549
+00:25:24,580 --> 00:25:26,650
+ telah dilakukan ketika deskriptor file awalnya 
+
+550
+00:25:26,650 --> 00:25:27,629
+ dibuat. 
+
+551
+00:25:27,629 --> 00:25:29,170
+ Jadi itu sebenarnya cara yang bagus di Unix 
+
+552
+00:25:29,170 --> 00:25:33,360
+ untuk memberi seseorang hak istimewa yang tidak mereka miliki. 
+
+553
+00:25:33,360 --> 00:25:36,940
+ Jadi dalam OKWS mungkin ada banyak komponen itu 
+
+554
+00:25:36,940 --> 00:25:39,890
+ perlu bertindak sebagai soket atau file tertentu, 
+
+555
+00:25:39,890 --> 00:25:42,440
+ atau apa pun yang Anda miliki, dan satu cara 
+
+556
+00:25:42,440 --> 00:25:45,450
+ untuk menerapkan ini tanpa memberi mereka akses langsung 
+
+557
+00:25:45,450 --> 00:25:48,280
+ untuk membaca dan menulis file dalam sistem file, 
+
+558
+00:25:48,280 --> 00:25:51,600
+ adalah meminta orang lain membuka file, membuat deskriptor file 
+
+559
+00:25:51,600 --> 00:25:53,585
+ dan kemudian menyebarkannya ke komponen tambahan ini. 
+
+560
+00:25:53,585 --> 00:25:55,210
+ Dengan cara ini, Anda benar-benar dapat mengatakan, 
+
+561
+00:25:55,210 --> 00:25:58,080
+ itulah satu-satunya file deskriptor yang pernah Anda miliki. 
+
+562
+00:25:58,080 --> 00:25:59,482
+ Dan tidak ada yang bisa mereka lakukan 
+
+563
+00:25:59,482 --> 00:26:02,910
+ coba lakukan di sistem file yang mungkin lucu. 
+
+564
+00:26:02,910 --> 00:26:04,942
+ Masuk akal? 
+
+565
+00:26:04,942 --> 00:26:06,942
+ Jadi sebenarnya, ini memiliki aturan yang cukup sederhana, saya kira. 
+
+566
+00:26:06,942 --> 00:26:08,358
+ Jika Anda memiliki deskriptor file, Anda 
+
+567
+00:26:08,358 --> 00:26:09,830
+ dapat melakukan apapun yang Anda inginkan dengan itu. 
+
+568
+00:26:09,830 --> 00:26:11,760
+ OK, jadi bagaimana dengan proses? 
+
+569
+00:26:11,760 --> 00:26:13,190
+ Apa aturannya di sana? 
+
+570
+00:26:13,190 --> 00:26:15,470
+ Saya kira, apa yang dapat Anda lakukan untuk suatu proses? 
+
+571
+00:26:15,470 --> 00:26:17,360
+ Di Unix itu cukup sederhana. 
+
+572
+00:26:17,360 --> 00:26:19,270
+ Anda bisa, saya kira, membuat suatu proses. 
+
+573
+00:26:19,270 --> 00:26:21,130
+ Anda bisa membunuhnya. 
+
+574
+00:26:21,130 --> 00:26:23,410
+ Anda bisa mendebugnya. 
+
+575
+00:26:23,410 --> 00:26:26,660
+ Ada mekanisme yang disebut ptrace di Unix, 
+
+576
+00:26:26,660 --> 00:26:29,470
+ dan mungkin beberapa hal lainnya. 
+
+577
+00:26:29,470 --> 00:26:33,940
+ Dan aturannya relatif mudah. 
+
+578
+00:26:33,940 --> 00:26:37,280
+ Jadi Anda selalu dapat membuat suatu proses, lebih atau kurang, 
+
+579
+00:26:37,280 --> 00:26:39,177
+ kecuali bahwa proses anak sedang berjalan 
+
+580
+00:26:39,177 --> 00:26:41,260
+ untuk mendapatkan pengguna yang sama dengan Anda, sehingga Anda tidak dapat membuatnya 
+
+581
+00:26:41,260 --> 00:26:45,700
+ sebuah proses dengan beberapa userid lain secara default. Jadi Anda tidak bisa berkata, 
+
+582
+00:26:45,700 --> 00:26:47,780
+ baik, saya ingin membuat proses yang berjalan 
+
+583
+00:26:47,780 --> 00:26:50,070
+ sebagai "web," salah satu TAs saya. 
+
+584
+00:26:50,070 --> 00:26:52,279
+ Kernel sistem operasi tidak akan membiarkan Anda melakukan itu. 
+
+585
+00:26:52,279 --> 00:26:54,111
+ Jika Anda ingin membunuh suatu proses, pada dasarnya Anda 
+
+586
+00:26:54,111 --> 00:26:56,580
+ harus memiliki userid yang sama dengan proses itu juga. 
+
+587
+00:26:56,580 --> 00:26:57,860
+ Bagus sekali. 
+
+588
+00:26:57,860 --> 00:27:00,040
+ Semua hal dengan userid tunggal 
+
+589
+00:27:00,040 --> 00:27:03,290
+ terisolasi dari hal-hal dengan pengguna lain. 
+
+590
+00:27:03,290 --> 00:27:08,050
+ Dan lebih atau kurang, aturan yang sama berlaku untuk ptrace juga. 
+
+591
+00:27:08,050 --> 00:27:10,250
+ Proses dengan uid yang sama dapat memproses debug 
+
+592
+00:27:10,250 --> 00:27:15,220
+ dengan cairan yang sama. 
+
+593
+00:27:15,220 --> 00:27:18,496
+ Seperti halnya semuanya, ternyata kondisi lomba sering muncul 
+
+594
+00:27:18,496 --> 00:27:19,870
+ dan dapat menyebabkan masalah, tetapi ada 
+
+595
+00:27:19,870 --> 00:27:21,540
+ sebenarnya adalah beberapa bug yang menarik 
+
+596
+00:27:21,540 --> 00:27:27,040
+ dalam mekanisme ptrace di Linux di mana, jika Anda melakukan debug pada suatu proses 
+
+597
+00:27:27,040 --> 00:27:30,000
+ dan kemudian beralih dan mendapat lebih banyak hak istimewa, maka mungkin Anda 
+
+598
+00:27:30,000 --> 00:27:32,770
+ entah bagaimana bisa menipu kernel agar membiarkan Anda mempertahankan 
+
+599
+00:27:32,770 --> 00:27:34,630
+ hak istimewa debug ini pada proses ini, 
+
+600
+00:27:34,630 --> 00:27:36,455
+ bahkan setelah itu menjadi lebih istimewa. 
+
+601
+00:27:36,455 --> 00:27:40,520
+ Maka Anda bisa monyet dengan ingatannya dan mengambil alih. 
+
+602
+00:27:40,520 --> 00:27:43,060
+ Namun setidaknya desain dasar yang Anda mungkin 
+
+603
+00:27:43,060 --> 00:27:45,610
+ ingin menegakkan adalah kira-kira proses dengan uid yang sama 
+
+604
+00:27:45,610 --> 00:27:48,126
+ dapat bertindak satu sama lain, sebaliknya tidak. 
+
+605
+00:27:48,126 --> 00:27:50,458
+
+
+606
+00:27:50,458 --> 00:27:53,112
+ Dan saya kira, oke, jadi apa lagi yang kami miliki di daftar ini? 
+
+607
+00:27:53,112 --> 00:27:54,160
+ Proses. 
+
+608
+00:27:54,160 --> 00:27:56,250
+ Jenis memori berjalan seiring dengan prosesnya. 
+
+609
+00:27:56,250 --> 00:27:57,750
+ Jadi, kecuali Anda dalam proses itu 
+
+610
+00:27:57,750 --> 00:27:59,250
+ Anda tidak dapat mengakses memori proses. 
+
+611
+00:27:59,250 --> 00:28:02,780
+ Memori virtual dengan baik memaksa isolasi ini untuk kita. 
+
+612
+00:28:02,780 --> 00:28:04,596
+ Kecuali mekanisme debug ini memungkinkan Anda 
+
+613
+00:28:04,596 --> 00:28:06,220
+ masukkan memori proses lain jika Anda 
+
+614
+00:28:06,220 --> 00:28:07,511
+ kebetulan memiliki userid yang sama. 
+
+615
+00:28:07,511 --> 00:28:10,420
+
+
+616
+00:28:10,420 --> 00:28:12,850
+ Dan kemudian, saya kira hal lain yang tersisa 
+
+617
+00:28:12,850 --> 00:28:18,530
+ bagi kami adalah jaringan, dan jaringan di Unix 
+
+618
+00:28:18,530 --> 00:28:20,770
+ tidak benar-benar jatuh dalam model yang sama, 
+
+619
+00:28:20,770 --> 00:28:22,780
+ sebagian karena itu muncul kemudian. 
+
+620
+00:28:22,780 --> 00:28:25,260
+ Anda tahu, sistem operasi Unix dirancang terlebih dahulu 
+
+621
+00:28:25,260 --> 00:28:27,475
+ dan kemudian jaringan datang dan menjadi populer. 
+
+622
+00:28:27,475 --> 00:28:30,120
+
+
+623
+00:28:30,120 --> 00:28:33,060
+ Ini memiliki seperangkat aturan yang sedikit berbeda. 
+
+624
+00:28:33,060 --> 00:28:35,470
+ Jadi saya kira operasi yang benar-benar kita pedulikan 
+
+625
+00:28:35,470 --> 00:28:41,850
+ di jaringan, mungkin, menghubungkan suatu tempat atau mungkin 
+
+626
+00:28:41,850 --> 00:28:44,160
+ mendengarkan sebenarnya untuk koneksi juga. 
+
+627
+00:28:44,160 --> 00:28:46,535
+ Jadi Anda mungkin ingin terhubung ke beberapa server web 
+
+628
+00:28:46,535 --> 00:28:48,910
+ atau Anda mungkin ingin menjalankan server web sendiri dan mendengarkan 
+
+629
+00:28:48,910 --> 00:28:51,080
+ pada port tertentu. 
+
+630
+00:28:51,080 --> 00:28:54,080
+ Mungkin Anda ingin benar-benar membaca data dari koneksi, 
+
+631
+00:28:54,080 --> 00:28:58,830
+ atau membaca / menulis data pada koneksi yang ada, 
+
+632
+00:28:58,830 --> 00:29:01,445
+ atau Anda ingin mengirim paket mentah atau menerima. 
+
+633
+00:29:01,445 --> 00:29:07,440
+
+
+634
+00:29:07,440 --> 00:29:11,800
+ Jadi di Unix hal-hal jaringan pada dasarnya 
+
+635
+00:29:11,800 --> 00:29:16,450
+ tidak ada kaitannya dengan pengguna, pendekatan pertama. 
+
+636
+00:29:16,450 --> 00:29:20,990
+ Aturannya adalah siapa pun dapat selalu terhubung 
+
+637
+00:29:20,990 --> 00:29:23,770
+ ke mesin atau alamat IP mana pun, 
+
+638
+00:29:23,770 --> 00:29:26,080
+ selalu dapat membuka koneksi. 
+
+639
+00:29:26,080 --> 00:29:28,165
+ Jika Anda ingin mendengarkan pada port, itu 
+
+640
+00:29:28,165 --> 00:29:30,100
+ di mana satu perbedaan muncul, yang 
+
+641
+00:29:30,100 --> 00:29:33,140
+ adalah bahwa sebagian besar pengguna dilarang 
+
+642
+00:29:33,140 --> 00:29:38,050
+ dari mendengarkan di port di bawah nilai ajaib 1024. 
+
+643
+00:29:38,050 --> 00:29:43,750
+ Pada dasarnya, jika Anda mendengarkan dan port kurang dari 1024, 
+
+644
+00:29:43,750 --> 00:29:46,290
+ maka Anda harus menjadi pengguna khusus yang dipanggil 
+
+645
+00:29:46,290 --> 00:29:50,800
+ "pengguna super" dengan uid 0. 
+
+646
+00:29:50,800 --> 00:29:54,870
+ Dan secara umum, Unix memiliki gagasan tentang administrator ini, 
+
+647
+00:29:54,870 --> 00:29:57,710
+ atau pengguna super, yang diwakili dengan memiliki uid 0, 
+
+648
+00:29:57,710 --> 00:30:00,780
+ yang dapat memotong hampir semua pemeriksaan ini, 
+
+649
+00:30:00,780 --> 00:30:03,930
+ jadi jika Anda menjalankan sebagai root, maka semua ini tidak berlaku. 
+
+650
+00:30:03,930 --> 00:30:06,610
+ Anda dapat membaca / menulis file, Anda dapat mengubah izin 
+
+651
+00:30:06,610 --> 00:30:08,910
+ pada file siapa pun dan sistem operasi 
+
+652
+00:30:08,910 --> 00:30:10,790
+ akan membiarkan Anda melakukan itu karena menganggap Anda 
+
+653
+00:30:10,790 --> 00:30:13,380
+ harus memiliki semua hak istimewa. 
+
+654
+00:30:13,380 --> 00:30:14,900
+ Dan satu hal yang sangat Anda butuhkan 
+
+655
+00:30:14,900 --> 00:30:19,060
+ adalah untuk mendengarkan pada port di bawah 1024. 
+
+656
+00:30:19,060 --> 00:30:22,880
+ Ada yang tahu mengapa pembatasan aneh ini? 
+
+657
+00:30:22,880 --> 00:30:25,272
+ Siapa yang peduli dengan nomor port Anda? 
+
+658
+00:30:25,272 --> 00:30:28,150
+ AUDIENCE: Apakah mereka menentukan nomor port tertentu 
+
+659
+00:30:28,150 --> 00:30:29,955
+ menjadi hal-hal tertentu, seperti HTTP seperti 80. 
+
+660
+00:30:29,955 --> 00:30:30,455
+
+
+661
+00:30:30,455 --> 00:30:33,600
+ PROFESOR: Ya, ini seperti HTTP 80 di sini. 
+
+662
+00:30:33,600 --> 00:30:37,930
+ Di sisi lain, layanan lain mungkin di atas 1024, 
+
+663
+00:30:37,930 --> 00:30:39,840
+ jadi mengapa pembatasan ini? 
+
+664
+00:30:39,840 --> 00:30:40,925
+ Mengapa ini berguna? 
+
+665
+00:30:40,925 --> 00:30:44,280
+ Tampaknya mempersulit hidup saya lebih banyak, setelah Anda. 
+
+666
+00:30:44,280 --> 00:30:49,545
+ AUDIENCE: Karena Anda tidak ingin pencarian acak hanya mendengarkan 
+
+667
+00:30:49,545 --> 00:30:50,765
+ di HTTP Anda. 
+
+668
+00:30:50,765 --> 00:30:51,390
+ PROFESOR: Ya. 
+
+669
+00:30:51,390 --> 00:30:53,822
+ Saya pikir alasannya adalah karena itu 
+
+670
+00:30:53,822 --> 00:30:55,530
+ dulu kasusnya, setidaknya, bahwa Anda akan 
+
+671
+00:30:55,530 --> 00:30:57,930
+ memiliki mesin-mesin ini di mana ada banyak hal yang berjalan, 
+
+672
+00:30:57,930 --> 00:31:00,930
+ ada pengguna yang masuk, ada layanan yang berjalan, 
+
+673
+00:31:00,930 --> 00:31:03,130
+ dan Anda ingin memastikan bahwa beberapa pengguna acak 
+
+674
+00:31:03,130 --> 00:31:06,445
+ masuk ke komputer kami tidak tiba-tiba mengambil alih web 
+
+675
+00:31:06,445 --> 00:31:08,820
+ server yang berjalan di mesin itu, karena orang terhubung 
+
+676
+00:31:08,820 --> 00:31:11,590
+ dari luar tidak benar-benar tahu siapa yang sedang berlari di pelabuhan itu. 
+
+677
+00:31:11,590 --> 00:31:13,200
+ Mereka hanya terhubung ke port 80. 
+
+678
+00:31:13,200 --> 00:31:14,823
+ Dan jika saya ingin masuk ke mesin itu 
+
+679
+00:31:14,823 --> 00:31:16,390
+ dan mulai server web saya sendiri, maka saya 
+
+680
+00:31:16,390 --> 00:31:19,056
+ hanya akan mengambil alih semua lalu lintas server web ke mesin itu. 
+
+681
+00:31:19,056 --> 00:31:21,180
+ Itu mungkin bukan rencana yang bagus. 
+
+682
+00:31:21,180 --> 00:31:25,020
+ Jadi ini adalah salah satu cara subsistem jaringan di Unix 
+
+683
+00:31:25,020 --> 00:31:27,886
+ mencegah pengguna sewenang-wenang melakukan peniruan identitas 
+
+684
+00:31:27,886 --> 00:31:30,320
+ apa yang disebut layanan terkenal berjalan 
+
+685
+00:31:30,320 --> 00:31:32,510
+ pada nomor port yang rendah ini. 
+
+686
+00:31:32,510 --> 00:31:36,664
+ Jadi itu semacam alasan untuk pembatasan ini. 
+
+687
+00:31:36,664 --> 00:31:38,580
+ Dan kemudian, dalam hal membaca dan menulis data 
+
+688
+00:31:38,580 --> 00:31:40,930
+ pada koneksi, baik, jika Anda memiliki deskriptor file 
+
+689
+00:31:40,930 --> 00:31:43,930
+ untuk soket tertentu, kemudian Unix memungkinkan Anda membaca dan menulis 
+
+690
+00:31:43,930 --> 00:31:46,986
+ data apa pun yang Anda inginkan pada koneksi TCP atau uTP. 
+
+691
+00:31:46,986 --> 00:31:48,360
+ Dan kemudian untuk mengirim paket mentah, 
+
+692
+00:31:48,360 --> 00:31:50,280
+ Unix sebenarnya cukup paranoid tentang ini, 
+
+693
+00:31:50,280 --> 00:31:52,314
+ jadi itu benar-benar tidak akan membiarkan Anda mengirim sewenang-wenang 
+
+694
+00:31:52,314 --> 00:31:53,355
+ paket melalui jaringan. 
+
+695
+00:31:53,355 --> 00:31:56,820
+ Itu harus dalam konteks koneksi tertentu, 
+
+696
+00:31:56,820 --> 00:31:58,320
+ kecuali jika Anda root, tentu saja, 
+
+697
+00:31:58,320 --> 00:32:01,870
+ maka Anda dapat melakukan apapun yang Anda inginkan. 
+
+698
+00:32:01,870 --> 00:32:02,550
+ Masuk akal? 
+
+699
+00:32:02,550 --> 00:32:03,050
+ Agak? 
+
+700
+00:32:03,050 --> 00:32:09,424
+ Ada pertanyaan lain tentang semua mesin Unix ini? 
+
+701
+00:32:09,424 --> 00:32:11,590
+ Oke, jadi satu pertanyaan menarik yang bisa kami coba tanyakan, 
+
+702
+00:32:11,590 --> 00:32:15,160
+ darimana para pengguna ini berasal? 
+
+703
+00:32:15,160 --> 00:32:17,550
+ Jadi, ketika kita berbicara tentang proses yang memiliki userid 
+
+704
+00:32:17,550 --> 00:32:20,552
+ atau memiliki groupid, dan jika Anda menjalankan PS di komputer Anda, 
+
+705
+00:32:20,552 --> 00:32:22,760
+ Anda mungkin melihat banyak proses dengan uid yang berbeda 
+
+706
+00:32:22,760 --> 00:32:23,480
+ nilai-nilai. 
+
+707
+00:32:23,480 --> 00:32:24,730
+ Darimana orang-orang ini berasal? 
+
+708
+00:32:24,730 --> 00:32:27,770
+ Kami membutuhkan semacam mekanisme benar-benar 
+
+709
+00:32:27,770 --> 00:32:31,550
+ untuk mem-bootstrap semua nilai-nilai pemakai ini, 
+
+710
+00:32:31,550 --> 00:32:34,850
+ dan cara kerjanya di Unix, setidaknya pada level mekanisme, 
+
+711
+00:32:34,850 --> 00:32:38,940
+ adalah bahwa ada beberapa panggilan sistem untuk melakukan ini. 
+
+712
+00:32:38,940 --> 00:32:43,800
+
+
+713
+00:32:43,800 --> 00:32:46,270
+ Jadi awalnya untuk bootstrap nilai-nilai cairan ini, 
+
+714
+00:32:46,270 --> 00:32:50,840
+ ada sistem yang disebut setuid () bahwa Anda dapat melewatinya 
+
+715
+00:32:50,840 --> 00:32:55,150
+ semacam nomor uid untuk, dan itu akan mengatur userid 
+
+716
+00:32:55,150 --> 00:32:58,400
+ dari proses saat ini ke nilai ini. 
+
+717
+00:32:58,400 --> 00:33:00,660
+ Ini sebenarnya operasi berbahaya, tentu saja, 
+
+718
+00:33:00,660 --> 00:33:04,220
+ jadi semacam tradisi Unix, Anda hanya bisa melakukan ini 
+
+719
+00:33:04,220 --> 00:33:07,080
+ jika Anda uid sama dengan 0. 
+
+720
+00:33:07,080 --> 00:33:08,690
+ Yah, harus. 
+
+721
+00:33:08,690 --> 00:33:11,660
+
+
+722
+00:33:11,660 --> 00:33:15,150
+ Jadi jika Anda adalah pengguna root ini dengan uid 0, 
+
+723
+00:33:15,150 --> 00:33:17,650
+ maka Anda dapat memanggil setuid () dan mengalihkan pengguna Anda ke apa pun 
+
+724
+00:33:17,650 --> 00:33:18,720
+ lain. 
+
+725
+00:33:18,720 --> 00:33:20,500
+ Ada beberapa sistem serupa lainnya 
+
+726
+00:33:20,500 --> 00:33:24,730
+ panggilan untuk menginisialisasi tindakan yang terkait dengan proses. 
+
+727
+00:33:24,730 --> 00:33:27,930
+ Ini setgid dan setgroup. 
+
+728
+00:33:27,930 --> 00:33:32,330
+
+
+729
+00:33:32,330 --> 00:33:34,670
+ Jadi sistem ini panggilan bersama biarkan 
+
+730
+00:33:34,670 --> 00:33:38,870
+ Anda mengkonfigurasi hak istimewa yang dimiliki oleh suatu proses. 
+
+731
+00:33:38,870 --> 00:33:42,720
+ Jadi biasanya, ketika Anda masuk dan masuk ke mesin Unix, 
+
+732
+00:33:42,720 --> 00:33:46,430
+ cara proses Anda mendapatkan hak istimewa yang tepat, 
+
+733
+00:33:46,430 --> 00:33:48,800
+ adalah bahwa Anda awalnya sebenarnya 
+
+734
+00:33:48,800 --> 00:33:51,520
+ tidak berbicara dengan proses yang berjalan sebagai uid Anda, 
+
+735
+00:33:51,520 --> 00:33:54,240
+ sebagian karena sistem belum tahu siapa Anda. 
+
+736
+00:33:54,240 --> 00:33:56,610
+ Sebaliknya, apa yang awalnya Anda ajak bicara di Unix 
+
+737
+00:33:56,610 --> 00:33:59,450
+ adalah semacam proses masuk, jadi mungkin SSH 
+
+738
+00:33:59,450 --> 00:34:04,200
+ menjalankan proses untuk siapa saja yang terhubung dengannya 
+
+739
+00:34:04,200 --> 00:34:06,340
+ dan mencoba mengotentikasi pengguna. 
+
+740
+00:34:06,340 --> 00:34:16,060
+ Jadi proses login ini berjalan dengan uid = 0 sebagai root dan kemudian kapan 
+
+741
+00:34:16,060 --> 00:34:19,719
+ nama pengguna dan kata sandi suplai, 
+
+742
+00:34:19,719 --> 00:34:24,469
+ itu sebenarnya akan mengeceknya dengan database sendiri 
+
+743
+00:34:24,469 --> 00:34:27,110
+ akun dan, biasanya di Unix, 
+
+744
+00:34:27,110 --> 00:34:32,650
+ ini disimpan dalam dua file, / etc / password, yang, 
+
+745
+00:34:32,650 --> 00:34:36,739
+ karena alasan historis, tidak lagi menyimpan kata sandi. 
+
+746
+00:34:36,739 --> 00:34:39,409
+ Dan ada file lain, / etc / shadow, 
+
+747
+00:34:39,409 --> 00:34:42,610
+ yang menyimpan kata sandi, tetapi di / etc / password, 
+
+748
+00:34:42,610 --> 00:34:46,300
+ sebenarnya ada tabel pemetaan setiap nama pengguna 
+
+749
+00:34:46,300 --> 00:34:49,070
+ dalam sistem ke nilai-nilai integer ini. 
+
+750
+00:34:49,070 --> 00:34:51,739
+ Jadi nama pengguna Anda dipetakan ke bilangan bulat tertentu 
+
+751
+00:34:51,739 --> 00:34:55,330
+ dalam file / etc / password ini, dan kemudian login akan memeriksa apakah 
+
+752
+00:34:55,330 --> 00:34:57,830
+ kata sandi Anda benar, sesuai dengan file ini, 
+
+753
+00:34:57,830 --> 00:35:01,060
+ dan jika ya, itu akan menemukan bilangan bulat Anda dan kemudian menelepon 
+
+754
+00:35:01,060 --> 00:35:07,440
+ setuid pada nilai uid Anda dan kemudian jalankan shell Anda. 
+
+755
+00:35:07,440 --> 00:35:12,050
+ Apa pun, (den / sh) Dan sekarang Anda benar-benar dapat berinteraksi dengannya 
+
+756
+00:35:12,050 --> 00:35:15,840
+ shell, tetapi itu berjalan sebagai uid Anda sehingga Anda tidak dapat melakukan apapun 
+
+757
+00:35:15,840 --> 00:35:18,336
+ kerusakan yang sewenang-wenang terhadap mesin ini. 
+
+758
+00:35:18,336 --> 00:35:18,835
+ Pertanyaan? 
+
+759
+00:35:18,835 --> 00:35:21,980
+ AUDIENCE: Apakah mungkin untuk memulai proses baru dengan uid 0 
+
+760
+00:35:21,980 --> 00:35:24,502
+ jika Anda memiliki cairan non-0? 
+
+761
+00:35:24,502 --> 00:35:27,180
+ Misalnya, jika Anda ingin [TIDAK JELAS]. 
+
+762
+00:35:27,180 --> 00:35:30,089
+ PROFESOR: Ya, jadi semacam ini memungkinkan Anda turun, jika Anda mau, 
+
+763
+00:35:30,089 --> 00:35:32,130
+ jadi dengan akar Anda, Anda dapat membatasi diri 
+
+764
+00:35:32,130 --> 00:35:34,050
+ ke uid berbeda, tetapi aturan yang kami tetapkan sejauh ini 
+
+765
+00:35:34,050 --> 00:35:36,675
+ Anda hanya dapat membuat proses dengan cairan yang sama seperti diri Anda sendiri. 
+
+766
+00:35:36,675 --> 00:35:38,760
+ Namun, tentu saja, Anda ingin meningkatkan hak istimewa Anda 
+
+767
+00:35:38,760 --> 00:35:39,593
+ karena berbagai alasan. 
+
+768
+00:35:39,593 --> 00:35:41,820
+ Anda ingin, saya tidak tahu, instal paket sekarang 
+
+769
+00:35:41,820 --> 00:35:43,670
+ dan Anda perlu hak akses root. 
+
+770
+00:35:43,670 --> 00:35:47,410
+ Jadi, Unix pada dasarnya memiliki dua cara Anda 
+
+771
+00:35:47,410 --> 00:35:49,380
+ bisa berpikir tentang melakukan ini. 
+
+772
+00:35:49,380 --> 00:35:51,240
+ Salah satu cara yang telah kami sebutkan, file ini 
+
+773
+00:35:51,240 --> 00:35:52,680
+ pendeskripsi hal yang lewat. 
+
+774
+00:35:52,680 --> 00:35:54,730
+ Jadi jika Anda benar-benar ingin meningkatkan hak istimewa Anda, 
+
+775
+00:35:54,730 --> 00:35:56,480
+ mungkin Anda bisa berbicara dengan beberapa pembantu, 
+
+776
+00:35:56,480 --> 00:35:58,150
+ dan helper berjalan sebagai root. 
+
+777
+00:35:58,150 --> 00:36:00,370
+ Anda dapat menanyakannya, hei, bisakah Anda membuka file ini untuk saya? 
+
+778
+00:36:00,370 --> 00:36:03,139
+ Dan mungkin Anda suka mendefinisikan beberapa antarmuka baru, 
+
+779
+00:36:03,139 --> 00:36:05,180
+ dan pembantu itu membuka file dan memberi Anda kembali 
+
+780
+00:36:05,180 --> 00:36:07,493
+ pendeskripsi file melalui fd passing. 
+
+781
+00:36:07,493 --> 00:36:10,070
+ Itu salah satu cara Anda dapat meningkatkan hak istimewa Anda, 
+
+782
+00:36:10,070 --> 00:36:12,450
+ tapi agak canggung, karena kamu benar-benar 
+
+783
+00:36:12,450 --> 00:36:16,510
+ inginkan dalam beberapa kasus adalah proses yang berjalan dengan lebih banyak hak istimewa. 
+
+784
+00:36:16,510 --> 00:36:20,170
+ Jadi untuk melakukan ini, Unix memiliki kecerdasan semacam ini, 
+
+785
+00:36:20,170 --> 00:36:24,040
+ semacam mekanisme bermasalah yang disebut binari setuid. 
+
+786
+00:36:24,040 --> 00:36:30,560
+
+
+787
+00:36:30,560 --> 00:36:35,980
+ Jadi binari setuid hanya executable biasa dalam Unix 
+
+788
+00:36:35,980 --> 00:36:40,330
+ sistem file, kecuali ketika Anda menjalankannya, 
+
+789
+00:36:40,330 --> 00:36:44,610
+ ketika Anda mengurutkan co-exec pada biner setuid-- salah satu contohnya adalah, 
+
+790
+00:36:44,610 --> 00:36:50,114
+ misalnya, / bin / su pada kebanyakan mesin, atau sudo juga. 
+
+791
+00:36:50,114 --> 00:36:52,280
+ Ada sekelompok biner setuid pada Unix yang khas 
+
+792
+00:36:52,280 --> 00:36:53,610
+ sistem. 
+
+793
+00:36:53,610 --> 00:36:56,950
+ Perbedaannya adalah ketika Anda menjalankan salah satu binari ini, 
+
+794
+00:36:56,950 --> 00:37:01,250
+ itu benar-benar mengalihkan pengguna dari proses 
+
+795
+00:37:01,250 --> 00:37:04,890
+ kepada pemilik biner ini. 
+
+796
+00:37:04,890 --> 00:37:07,360
+ Ini sedikit mekanisme aneh ketika Anda pertama kali 
+
+797
+00:37:07,360 --> 00:37:08,200
+ lihat itu. 
+
+798
+00:37:08,200 --> 00:37:11,520
+ Biasanya cara yang digunakan adalah bahwa biner ini mungkin 
+
+799
+00:37:11,520 --> 00:37:16,490
+ memiliki pemilik uid 0, karena Anda benar-benar 
+
+800
+00:37:16,490 --> 00:37:18,950
+ ingin mendapatkan kembali banyak hak istimewa-- Anda ingin mendapatkan kembali 
+
+801
+00:37:18,950 --> 00:37:22,410
+ hak akses root-- sehingga Anda dapat menjalankan perintah su ini, 
+
+802
+00:37:22,410 --> 00:37:24,280
+ dan kernel, ketika Anda menjalankan biner ini, 
+
+803
+00:37:24,280 --> 00:37:27,010
+ akan mengalihkan uid dari proses ke 0, 
+
+804
+00:37:27,010 --> 00:37:32,470
+ jadi program ini sekarang akan melakukan beberapa hal istimewa. 
+
+805
+00:37:32,470 --> 00:37:34,510
+ Masuk akal? 
+
+806
+00:37:34,510 --> 00:37:36,570
+ AUDIENCE: Jika Anda memiliki uid 0 dan Anda 
+
+807
+00:37:36,570 --> 00:37:38,710
+ mengubah uid dari semua binari setuid tersebut 
+
+808
+00:37:38,710 --> 00:37:43,710
+ untuk sesuatu yang tidak 0 dan kemudian Anda dapat memulai [TIDAK JELAS]. 
+
+809
+00:37:43,710 --> 00:37:46,160
+ PROFESOR: Yah, banyak proses tidak akan 
+
+810
+00:37:46,160 --> 00:37:48,330
+ dapat memperoleh kembali hak istimewa nanti. 
+
+811
+00:37:48,330 --> 00:37:50,420
+ Anda mungkin agak macet. 
+
+812
+00:37:50,420 --> 00:37:53,135
+ Mungkin masih bisa boot, tapi mungkin beberapa hal 
+
+813
+00:37:53,135 --> 00:37:55,130
+ Tidak akan berhasil. 
+
+814
+00:37:55,130 --> 00:37:57,455
+ Mekanisme ini tidak terikat dengan uid 0. 
+
+815
+00:37:57,455 --> 00:38:01,290
+ Bahkan, "Saya" sebagai pengguna pada sistem Unix dapat membuat biner apa pun. 
+
+816
+00:38:01,290 --> 00:38:04,770
+ Saya dapat membuat beberapa program, kompilasi, 
+
+817
+00:38:04,770 --> 00:38:09,560
+ dan saya dapat mengatur bit setuid ini pada program itu sendiri. 
+
+818
+00:38:09,560 --> 00:38:12,370
+ Dimiliki oleh saya, pengguna, pengguna saya. 
+
+819
+00:38:12,370 --> 00:38:15,310
+ Dan apa artinya ini, siapa pun yang menjalankan program saya 
+
+820
+00:38:15,310 --> 00:38:18,815
+ akan menjalankan kode itu dengan userid saya. 
+
+821
+00:38:18,815 --> 00:38:20,130
+ Apakah itu bermasalah? 
+
+822
+00:38:20,130 --> 00:38:23,020
+ Haruskah saya melakukan ini? 
+
+823
+00:38:23,020 --> 00:38:25,690
+ AUDIENCE: Jadi, jika ada bug di aplikasi Anda 
+
+824
+00:38:25,690 --> 00:38:27,784
+ dan tiba-tiba seseorang dapat melakukan apa saja seperti Anda, 
+
+825
+00:38:27,784 --> 00:38:29,825
+ tidak hanya dengan program yang ditugaskan kepada Anda. 
+
+826
+00:38:29,825 --> 00:38:30,220
+ PROFESOR: Benar. 
+
+827
+00:38:30,220 --> 00:38:31,261
+ Tapi ya, memang begitu. 
+
+828
+00:38:31,261 --> 00:38:34,590
+ Jika aplikasi saya buggy, atau jika itu 
+
+829
+00:38:34,590 --> 00:38:36,090
+ memungkinkan Anda untuk menjalankan apa pun yang Anda inginkan, 
+
+830
+00:38:36,090 --> 00:38:37,680
+ baik, saya bisa menyalin shell sistem 
+
+831
+00:38:37,680 --> 00:38:39,550
+ dan menjadikannya setuid kepada saya, lalu siapa pun 
+
+832
+00:38:39,550 --> 00:38:41,140
+ dapat menjalankan shell di bawah akun saya. 
+
+833
+00:38:41,140 --> 00:38:44,300
+ Itu mungkin bukan rencana aksi terbaik. 
+
+834
+00:38:44,300 --> 00:38:48,680
+ Tetapi mekanisme sistem, yah, ini belum tentu 
+
+835
+00:38:48,680 --> 00:38:52,585
+ bermasalah, karena satu-satunya orang yang dapat mengatur setuid 
+
+836
+00:38:52,585 --> 00:38:56,680
+ bit pada biner adalah pemilik file, 
+
+837
+00:38:56,680 --> 00:38:59,230
+ dan pemilik file memiliki hak istimewa uid, 
+
+838
+00:38:59,230 --> 00:39:02,060
+ jadi pada dasarnya saya bisa memberikan akun saya kepada orang lain jika saya 
+
+839
+00:39:02,060 --> 00:39:06,620
+ inginkan, tetapi orang lain tidak dapat membuat biner setuid dengan 
+
+840
+00:39:06,620 --> 00:39:07,330
+ pengguna saya. 
+
+841
+00:39:07,330 --> 00:39:09,500
+ Masuk akal? 
+
+842
+00:39:09,500 --> 00:39:12,050
+ Dan bit setuid semacam disimpan 
+
+843
+00:39:12,050 --> 00:39:13,940
+ bersama bit izin ini. 
+
+844
+00:39:13,940 --> 00:39:17,710
+ Jadi di suatu tempat ada juga bit setuid 
+
+845
+00:39:17,710 --> 00:39:22,420
+ di setiap inode yang mengatakan apakah ini dapat dijalankan atau program ini 
+
+846
+00:39:22,420 --> 00:39:26,124
+ harus dialihkan ke uid pemilik saat eksekusi. 
+
+847
+00:39:26,124 --> 00:39:29,030
+ Apakah itu masuk akal sebagai semacam estimasi hak istimewa 
+
+848
+00:39:29,030 --> 00:39:30,580
+ mekanisme? 
+
+849
+00:39:30,580 --> 00:39:33,740
+ Ternyata ini adalah mekanisme yang sangat rumit 
+
+850
+00:39:33,740 --> 00:39:34,997
+ untuk digunakan dengan benar. 
+
+851
+00:39:34,997 --> 00:39:36,580
+ Jadi kernel mengimplementasikannya dengan benar. 
+
+852
+00:39:36,580 --> 00:39:37,980
+ Ini sebenarnya hal yang cukup mudah dilakukan. 
+
+853
+00:39:37,980 --> 00:39:38,813
+ Hanya satu cek saja. 
+
+854
+00:39:38,813 --> 00:39:40,530
+ Jika ada [TIDAK JELAS], alihkan uid. 
+
+855
+00:39:40,530 --> 00:39:41,410
+ Cukup mudah. 
+
+856
+00:39:41,410 --> 00:39:44,700
+ Tetapi menggunakannya dengan aman ternyata sangat rumit karena, 
+
+857
+00:39:44,700 --> 00:39:49,280
+ seperti yang baru saja disebutkan, jika program ini memiliki bug di dalamnya 
+
+858
+00:39:49,280 --> 00:39:52,410
+ atau melakukan sesuatu yang tidak terduga, lalu 
+
+859
+00:39:52,410 --> 00:39:55,110
+ Anda mungkin bisa melakukan hal-hal sewenang-wenang uid 0 
+
+860
+00:39:55,110 --> 00:39:57,080
+ atau apa pun uid lainnya. 
+
+861
+00:39:57,080 --> 00:40:00,290
+ Dan ternyata di Unix, cara Anda menjalankan program, 
+
+862
+00:40:00,290 --> 00:40:04,260
+ Anda mewarisi banyak hal dari proses orang tua Anda. 
+
+863
+00:40:04,260 --> 00:40:06,650
+ Misalnya, Anda dapat meneruskan variabel lingkungan 
+
+864
+00:40:06,650 --> 00:40:09,890
+ ke binari setuid, dan itu digunakan menjadi kasus itu-- 
+
+865
+00:40:09,890 --> 00:40:13,960
+ baik, di Unix, Anda dapat menentukan apa perpustakaan bersama seharusnya 
+
+866
+00:40:13,960 --> 00:40:17,284
+ digunakan untuk proses dengan menetapkan variabel lingkungan, 
+
+867
+00:40:17,284 --> 00:40:19,700
+ dan dulu bahwa biner setuid tidak berhati-hati 
+
+868
+00:40:19,700 --> 00:40:21,700
+ tentang menyaring variabel lingkungan ini, 
+
+869
+00:40:21,700 --> 00:40:23,770
+ jadi kamu bisa menjalankan bin / su, tapi katakan, baiklah, 
+
+870
+00:40:23,770 --> 00:40:26,290
+ gunakan pustaka bersama saya untuk hal-hal seperti printf (), 
+
+871
+00:40:26,290 --> 00:40:30,100
+ jadi printf Anda () akan berjalan ketika bin / su mencetak sesuatu 
+
+872
+00:40:30,100 --> 00:40:33,590
+ keluar, dan Anda bisa mendapatkannya untuk menjalankan shell bukannya mencetak 
+
+873
+00:40:33,590 --> 00:40:35,030
+ barang. 
+
+874
+00:40:35,030 --> 00:40:37,170
+ Jadi ada banyak hal halus lainnya 
+
+875
+00:40:37,170 --> 00:40:40,130
+ bahwa Anda harus benar dalam hal program ini 
+
+876
+00:40:40,130 --> 00:40:42,254
+ tidak mempercayai input pengguna, dan ini sebenarnya 
+
+877
+00:40:42,254 --> 00:40:43,670
+ sangat berbeda dari apa yang kamu pikirkan 
+
+878
+00:40:43,670 --> 00:40:45,030
+ menulis sebagian besar program Unix. 
+
+879
+00:40:45,030 --> 00:40:47,900
+ Anda umumnya percaya banyak pengguna memasukkan banyak, 
+
+880
+00:40:47,900 --> 00:40:51,840
+ jadi untuk alasan ini, mekanisme setuid 
+
+881
+00:40:51,840 --> 00:40:55,940
+ belum menjadi bagian paling aman, dalam beberapa hal, 
+
+882
+00:40:55,940 --> 00:40:59,290
+ dari sistem Unix secara keseluruhan. 
+
+883
+00:40:59,290 --> 00:40:59,790
+ Baiklah. 
+
+884
+00:40:59,790 --> 00:41:01,591
+ Ada pertanyaan tentang hal ini? 
+
+885
+00:41:01,591 --> 00:41:02,090
+ Ya. 
+
+886
+00:41:02,090 --> 00:41:04,072
+ AUDIENCE: Apakah setuid berlaku untuk grup juga, 
+
+887
+00:41:04,072 --> 00:41:04,780
+ atau hanya pengguna? 
+
+888
+00:41:04,780 --> 00:41:08,580
+ PROFESOR: Sebenarnya ada bit setgid simetris 
+
+889
+00:41:08,580 --> 00:41:10,970
+ Anda bisa mengatur. 
+
+890
+00:41:10,970 --> 00:41:12,640
+ Kenapa tidak. 
+
+891
+00:41:12,640 --> 00:41:16,660
+ Dan Anda bisa - yah, hal yang sama terjadi, bukan? 
+
+892
+00:41:16,660 --> 00:41:19,500
+ Jika file memiliki gid tertentu dan setgid bit itu 
+
+893
+00:41:19,500 --> 00:41:22,610
+ diatur ketika Anda menjalankan program, Anda mendapatkan grup itu. 
+
+894
+00:41:22,610 --> 00:41:25,930
+ Ini tidak banyak digunakan, tetapi berguna dalam kasus 
+
+895
+00:41:25,930 --> 00:41:28,120
+ di mana Anda ingin memberikan hak istimewa yang sangat spesifik. 
+
+896
+00:41:28,120 --> 00:41:30,490
+ Jadi di sini, seperti bin / su mungkin membutuhkan banyak hak istimewa, 
+
+897
+00:41:30,490 --> 00:41:32,200
+ tapi mungkin ada beberapa program itu 
+
+898
+00:41:32,200 --> 00:41:33,824
+ membutuhkan sedikit keistimewaan ekstra, 
+
+899
+00:41:33,824 --> 00:41:35,991
+ seperti mungkin untuk menulis sesuatu ke file log khusus. 
+
+900
+00:41:35,991 --> 00:41:37,740
+ Jadi Anda mungkin ingin memberikannya beberapa kelompok 
+
+901
+00:41:37,740 --> 00:41:39,734
+ dan membuat file log itu dapat ditulis oleh grup itu. 
+
+902
+00:41:39,734 --> 00:41:42,150
+ Jadi bahkan jika programnya buggy, yang mungkin terjadi, 
+
+903
+00:41:42,150 --> 00:41:44,530
+ kemudian, Anda kehilangan grup itu, semacam, 
+
+904
+00:41:44,530 --> 00:41:46,510
+ hak istimewa tetapi tidak banyak yang lain. 
+
+905
+00:41:46,510 --> 00:41:48,710
+ Ini semacam berguna sebagai mekanisme, 
+
+906
+00:41:48,710 --> 00:41:52,660
+ tapi itu tidak sering muncul, karena itu-- saya tidak mengapa. 
+
+907
+00:41:52,660 --> 00:41:56,390
+ Orang-orang harus menggunakan root lebih banyak. 
+
+908
+00:41:56,390 --> 00:41:56,890
+ Ya. 
+
+909
+00:41:56,890 --> 00:41:58,640
+ AUDIENCE: Apa batasan pada siapa 
+
+910
+00:41:58,640 --> 00:41:59,870
+ dapat mengubah [tidak terdengar]? 
+
+911
+00:41:59,870 --> 00:42:00,453
+ AUDIENCE: Ya. 
+
+912
+00:42:00,453 --> 00:42:05,290
+
+
+913
+00:42:05,290 --> 00:42:08,940
+ Implementasi Unix yang berbeda memiliki pemeriksaan yang sedikit berbeda 
+
+914
+00:42:08,940 --> 00:42:09,670
+ untuk ini. 
+
+915
+00:42:09,670 --> 00:42:13,120
+ Aturan umumnya adalah, hanya root yang bisa berubah 
+
+916
+00:42:13,120 --> 00:42:15,000
+ pemilik file, karena Anda tidak 
+
+917
+00:42:15,000 --> 00:42:18,002
+ ingin membuat file yang dimiliki oleh orang lain, 
+
+918
+00:42:18,002 --> 00:42:20,210
+ dan Anda tidak ingin mengambil alih file orang lain, 
+
+919
+00:42:20,210 --> 00:42:21,590
+ tentu saja. 
+
+920
+00:42:21,590 --> 00:42:24,750
+ Jadi, secara umum, jika Anda bukan pengguna utama, 
+
+921
+00:42:24,750 --> 00:42:25,570
+ maka kamu terjebak. 
+
+922
+00:42:25,570 --> 00:42:28,870
+ Anda tidak dapat mengubah pemilik file apa pun. 
+
+923
+00:42:28,870 --> 00:42:31,950
+ Jika Anda adalah root, Anda dapat mengubahnya ke apapun yang Anda inginkan. 
+
+924
+00:42:31,950 --> 00:42:34,860
+ Ada beberapa komplikasi jika Anda seorang biner setuid 
+
+925
+00:42:34,860 --> 00:42:36,620
+ dan Anda beralih dari satu uid ke yang lain-- 
+
+926
+00:42:36,620 --> 00:42:39,820
+ itu sedikit rumit - tetapi untuk sebagian besar 
+
+927
+00:42:39,820 --> 00:42:41,805
+ Anda pada dasarnya tidak dapat mengubah pemilik file 
+
+928
+00:42:41,805 --> 00:42:45,230
+ kecuali Anda adalah root. 
+
+929
+00:42:45,230 --> 00:42:46,280
+ Masuk akal? 
+
+930
+00:42:46,280 --> 00:42:50,425
+ Pertanyaan lain tentang mesin ini? 
+
+931
+00:42:50,425 --> 00:42:52,300
+ Memang, diakui, sistem barok sedikit. 
+
+932
+00:42:52,300 --> 00:42:54,716
+ Anda mungkin bisa membayangkan banyak cara di mana Anda bisa 
+
+933
+00:42:54,716 --> 00:42:57,240
+ menyederhanakan ini tetapi, pada kenyataannya, sistem yang paling sukses semacam 
+
+934
+00:42:57,240 --> 00:42:59,230
+ terlihat seperti ini karena mereka berkembang seiring waktu. 
+
+935
+00:42:59,230 --> 00:43:02,120
+ Ternyata, Anda bisa memanfaatkannya dengan baik 
+
+936
+00:43:02,120 --> 00:43:04,800
+ mekanisme sandboxing ini. 
+
+937
+00:43:04,800 --> 00:43:07,960
+ Ini hanyalah semacam primitif Unix dasar yang muncul 
+
+938
+00:43:07,960 --> 00:43:10,190
+ di hampir semua sistem operasi mirip Unix, 
+
+939
+00:43:10,190 --> 00:43:13,900
+ jadi Mac OS X punya ini, Linux punya ini, FreeBSD punya ini, 
+
+940
+00:43:13,900 --> 00:43:17,585
+ Solaris-- jika ada yang masih menjalankan ini, dan sebagainya. 
+
+941
+00:43:17,585 --> 00:43:20,820
+ Tetapi dalam setiap ini, sebenarnya ada yang lebih canggih 
+
+942
+00:43:20,820 --> 00:43:22,730
+ mekanisme yang mungkin Anda gunakan, jadi Linux 
+
+943
+00:43:22,730 --> 00:43:26,090
+ memiliki sesuatu yang disebut mengatur COMP untuk proses sandboxing, 
+
+944
+00:43:26,090 --> 00:43:29,170
+ Mac OS X memiliki hal yang disebut Seatbelt, 
+
+945
+00:43:29,170 --> 00:43:31,420
+ dan ada semua jenis ekstensi. 
+
+946
+00:43:31,420 --> 00:43:33,740
+ Kami akan di satu ekstensi sebenarnya minggu depan, hanya untuk melihat, 
+
+947
+00:43:33,740 --> 00:43:36,330
+ tetapi ini hanya untuk membuat Anda terbiasa dengan hal-hal mendasar 
+
+948
+00:43:36,330 --> 00:43:38,208
+ yang dimiliki oleh setiap sistem Unix. 
+
+949
+00:43:38,208 --> 00:43:41,210
+
+
+950
+00:43:41,210 --> 00:43:44,020
+ Jadi satu jenis mesin terakhir 
+
+951
+00:43:44,020 --> 00:43:46,870
+ kami ingin melihat sebelum menyelam ke OKWS, 
+
+952
+00:43:46,870 --> 00:43:48,730
+ adalah bagaimana Anda menangani binary setuid? 
+
+953
+00:43:48,730 --> 00:43:52,950
+ Bagaimana Anda melindungi diri dari lubang keamanan ini, 
+
+954
+00:43:52,950 --> 00:43:53,770
+ jika kamu mau. 
+
+955
+00:43:53,770 --> 00:43:56,970
+ Jadi masalahnya adalah bahwa Anda pasti akan memiliki beberapa 
+
+956
+00:43:56,970 --> 00:44:00,060
+ binari setuid di sistem Anda seperti / bin / su, atau sudo, 
+
+957
+00:44:00,060 --> 00:44:03,890
+ atau apa yang Anda miliki, dan mungkin ada bug di dalamnya 
+
+958
+00:44:03,890 --> 00:44:07,300
+ program, jadi jika seseorang dapat menjalankan biner setuid, 
+
+959
+00:44:07,300 --> 00:44:11,522
+ maka proses itu mungkin mendapat akses root, 
+
+960
+00:44:11,522 --> 00:44:13,980
+ jadi kamu tidak mau melakukan itu-- atau tidak mau membiarkan itu. 
+
+961
+00:44:13,980 --> 00:44:17,640
+
+
+962
+00:44:17,640 --> 00:44:19,130
+ Mekanisme di Unix yang sering 
+
+963
+00:44:19,130 --> 00:44:22,980
+ digunakan untuk mencegah proses yang berpotensi berbahaya 
+
+964
+00:44:22,980 --> 00:44:26,430
+ dari mengeksploitasi binari setuid adalah 
+
+965
+00:44:26,430 --> 00:44:29,470
+ untuk menggunakan namespace sistem file untuk memodifikasinya, 
+
+966
+00:44:29,470 --> 00:44:31,980
+ menggunakan panggilan sistem chroot. 
+
+967
+00:44:31,980 --> 00:44:34,280
+ OKWS menggunakan ini cukup luas. 
+
+968
+00:44:34,280 --> 00:44:38,820
+ Jadi di Unix, yang bisa Anda lakukan adalah memanggil chroot 
+
+969
+00:44:38,820 --> 00:44:40,540
+ pada direktori tertentu. 
+
+970
+00:44:40,540 --> 00:44:46,920
+ Jadi mungkin Anda bisa chroot ("/ foo") dan sebenarnya ada dua 
+
+971
+00:44:46,920 --> 00:44:49,010
+ penjelasan yang ingin saya berikan untuk apa yang dilakukan oleh chroot. 
+
+972
+00:44:49,010 --> 00:44:50,800
+ Yang pertama hanya intuitif. 
+
+973
+00:44:50,800 --> 00:44:53,960
+ Apa yang dilakukannya adalah artinya setelah Anda menjalankan chroot, 
+
+974
+00:44:53,960 --> 00:44:58,130
+ direktori root atau garis miring pada dasarnya sama dengan apa / foo 
+
+975
+00:44:58,130 --> 00:45:01,280
+ dulu sebelum Anda memanggil chroot. 
+
+976
+00:45:01,280 --> 00:45:04,690
+ Jadi agak membatasi ruang nama Anda turun / foo sehingga terlihat 
+
+977
+00:45:04,690 --> 00:45:06,150
+ seperti itu semua hal yang Anda miliki. 
+
+978
+00:45:06,150 --> 00:45:11,610
+ Jadi jika Anda memiliki file yang biasa dipanggil / foo / x, 
+
+979
+00:45:11,610 --> 00:45:15,390
+ setelah memanggil chroot, Anda bisa mendapatkan file itu dengan adil 
+
+980
+00:45:15,390 --> 00:45:17,230
+ membuka / x. 
+
+981
+00:45:17,230 --> 00:45:20,930
+ Jadi, cukup batasi namespace Anda ke subdirektori. 
+
+982
+00:45:20,930 --> 00:45:22,600
+ Jadi ini adalah versi intuitifnya. 
+
+983
+00:45:22,600 --> 00:45:24,110
+ Tentu saja, dalam keamanan, yang penting 
+
+984
+00:45:24,110 --> 00:45:26,610
+ bukan versi intuitif, tapi apa tepatnya kernelnya 
+
+985
+00:45:26,610 --> 00:45:28,750
+ lakukan dengan panggilan sistem ini? 
+
+986
+00:45:28,750 --> 00:45:32,240
+ Apa yang dilakukan kernel pada dasarnya adalah dua hal. 
+
+987
+00:45:32,240 --> 00:45:34,810
+ Jadi ketika Anda memanggil chroot direktori tertentu, 
+
+988
+00:45:34,810 --> 00:45:36,000
+ itu melakukan dua hal. 
+
+989
+00:45:36,000 --> 00:45:39,300
+ Satu, itu mengubah apa artinya garis miring, 
+
+990
+00:45:39,300 --> 00:45:42,330
+ jadi kapan pun Anda mengakses - kapan pun Anda memulai jalur 
+
+991
+00:45:42,330 --> 00:45:46,910
+ nama dengan slash, kernel sekarang akan memasukkan apa pun file 
+
+992
+00:45:46,910 --> 00:45:47,890
+ Anda berikan untuk chroot. 
+
+993
+00:45:47,890 --> 00:45:53,250
+ Ini kira-kira file / foo dari sebelum Anda memanggil chroot. 
+
+994
+00:45:53,250 --> 00:45:56,800
+ Hal lain yang dilakukan kernel, adalah mencoba untuk mencegah Anda 
+
+995
+00:45:56,800 --> 00:46:01,840
+ melarikan diri dari / dengan melakukan /../ karena Anda bisa bayangkan 
+
+996
+00:46:01,840 --> 00:46:04,339
+ di Unix, saya bisa minta, Anda tahu, beri saya /../etcpassword. 
+
+997
+00:46:04,339 --> 00:46:07,552
+
+
+998
+00:46:07,552 --> 00:46:12,070
+ Jadi jika saya baru saja menambahkan / foo, maka ini tidak akan baik, 
+
+999
+00:46:12,070 --> 00:46:14,605
+ karena saya bisa keluar dari / foo dan pergi 
+
+1000
+00:46:14,605 --> 00:46:16,330
+ / etc / password. 
+
+1001
+00:46:16,330 --> 00:46:18,380
+ Jadi hal lain yang dilakukan kernel Unix, 
+
+1002
+00:46:18,380 --> 00:46:22,730
+ ketika Anda memanggil chroot, adalah untuk proses khusus itu, 
+
+1003
+00:46:22,730 --> 00:46:27,455
+ itu mengubah cara mengevaluasi /../ di direktori ini, 
+
+1004
+00:46:27,455 --> 00:46:33,860
+ jadi pada dasarnya mengubah /../ in / foo untuk menunjuk ke dirinya sendiri, 
+
+1005
+00:46:33,860 --> 00:46:36,780
+ jadi itu tidak membiarkan Anda melarikan diri seperti ini, 
+
+1006
+00:46:36,780 --> 00:46:40,790
+ dan perubahan ini hanya berlaku untuk proses ini dan tidak semua orang 
+
+1007
+00:46:40,790 --> 00:46:41,576
+ lain. 
+
+1008
+00:46:41,576 --> 00:46:44,896
+ Apakah itu kira-kira masuk akal? 
+
+1009
+00:46:44,896 --> 00:46:48,570
+ Jadi apakah kalian punya ide tentang bagaimana 
+
+1010
+00:46:48,570 --> 00:46:52,830
+ Anda bisa keluar dari lingkungan chroot karena jalannya 
+
+1011
+00:46:52,830 --> 00:46:53,671
+ itu diimplementasikan? 
+
+1012
+00:46:53,671 --> 00:46:54,170
+ Ya. 
+
+1013
+00:46:54,170 --> 00:46:55,628
+ AUDIENCE: Jadi jika Anda [TIDAK JELAS], 
+
+1014
+00:46:55,628 --> 00:46:57,920
+ Anda dapat membuat direktori dan kemudian membawa direktori itu, 
+
+1015
+00:46:57,920 --> 00:47:00,044
+ dan kemudian kembali ke direktori Anda dan [INAUDIBLE]. 
+
+1016
+00:47:00,044 --> 00:47:00,830
+ PROFESOR: Ya. 
+
+1017
+00:47:00,830 --> 00:47:03,750
+ Jadi, hal yang menarik - jadi kernel 
+
+1018
+00:47:03,750 --> 00:47:07,030
+ hanya melacak satu direktori chroot. 
+
+1019
+00:47:07,030 --> 00:47:09,800
+ Dan saya akan menjelaskan semacam jawaban yang saya berikan dalam hitungan detik. 
+
+1020
+00:47:09,800 --> 00:47:15,970
+ Jadi apa yang bisa Anda lakukan adalah, mungkin chroot Anda ke / foo. 
+
+1021
+00:47:15,970 --> 00:47:19,220
+
+
+1022
+00:47:19,220 --> 00:47:20,095
+ Anda agak macet. 
+
+1023
+00:47:20,095 --> 00:47:21,140
+ Anda ingin mendapatkan / etc / password, 
+
+1024
+00:47:21,140 --> 00:47:22,190
+ tapi bagaimana kamu melakukannya? 
+
+1025
+00:47:22,190 --> 00:47:24,540
+ Nah, yang bisa Anda lakukan sebenarnya adalah Anda 
+
+1026
+00:47:24,540 --> 00:47:29,110
+ buka direktori root sekarang. 
+
+1027
+00:47:29,110 --> 00:47:33,180
+ Itu akan memberi Anda deskriptor file untuk secara efektif apa 
+
+1028
+00:47:33,180 --> 00:47:35,350
+ is / foo. 
+
+1029
+00:47:35,350 --> 00:47:37,940
+ Kemudian Anda bisa memanggil chroot lagi. 
+
+1030
+00:47:37,940 --> 00:47:43,110
+ Mungkin Anda bisa chroot ke / bar. 
+
+1031
+00:47:43,110 --> 00:47:46,440
+ Jadi sekarang kernel berubah rencana. 
+
+1032
+00:47:46,440 --> 00:47:50,840
+ Root tidak lagi / foo tetapi / foo / bar dan ini / ../ 
+
+1033
+00:47:50,840 --> 00:47:53,060
+ redirection hanya berlaku untuk / foo / bar / .. 
+
+1034
+00:47:53,060 --> 00:47:56,950
+
+
+1035
+00:47:56,950 --> 00:48:00,530
+ Tetapi ketahuilah bahwa Anda masih memiliki deskriptor file untuk / foo. 
+
+1036
+00:48:00,530 --> 00:48:04,320
+ Jadi sekarang yang bisa Anda lakukan adalah mengubah direktori 
+
+1037
+00:48:04,320 --> 00:48:11,140
+ ke dalam file deskriptor, fchdir (fd) dari panggilan terbuka ini, 
+
+1038
+00:48:11,140 --> 00:48:20,820
+ dan sekarang Anda chdir (..) Dan pada titik ini, Anda berada di / foo, 
+
+1039
+00:48:20,820 --> 00:48:22,910
+ Anda pergi ke /../ dari foo. 
+
+1040
+00:48:22,910 --> 00:48:25,230
+ Tidak lagi dilingkarkan kembali ke / foo itu sendiri, 
+
+1041
+00:48:25,230 --> 00:48:28,730
+ karena sekarang Anda memiliki rute yang berbeda dan sekarang Anda dapat melarikan diri, 
+
+1042
+00:48:28,730 --> 00:48:33,170
+ jadi ini mungkin ilustrasi yang bagus untuk mengapa persisnya 
+
+1043
+00:48:33,170 --> 00:48:34,170
+ mekanisme sangat berarti. 
+
+1044
+00:48:34,170 --> 00:48:36,720
+ Bukan, semacam, penjelasan intuitif yang penting. 
+
+1045
+00:48:36,720 --> 00:48:41,730
+ Dan sebagian sebagai hasilnya, di Unix hanya pengguna root 
+
+1046
+00:48:41,730 --> 00:48:45,230
+ dapat memanggil chroot, karena jika tidak chroot 
+
+1047
+00:48:45,230 --> 00:48:50,210
+ akan cukup tidak berarti, dalam beberapa hal. 
+
+1048
+00:48:50,210 --> 00:48:52,570
+ Jadi di Unix, pada dasarnya Anda harus memiliki uid 0 secara berurutan 
+
+1049
+00:48:52,570 --> 00:48:54,830
+ untuk melakukan proses chroot. 
+
+1050
+00:48:54,830 --> 00:48:57,980
+ Ini sedikit mengecewakan dalam beberapa hal, 
+
+1051
+00:48:57,980 --> 00:49:00,700
+ karena jika Anda ingin membangun yang benar-benar istimewa 
+
+1052
+00:49:00,700 --> 00:49:02,810
+ sistem terpisah di mana setiap orang punya 
+
+1053
+00:49:02,810 --> 00:49:05,047
+ hanya set minimum hak istimewa yang diperlukan, 
+
+1054
+00:49:05,047 --> 00:49:06,630
+ Anda mungkin perlu menggunakan chroot, 
+
+1055
+00:49:06,630 --> 00:49:08,740
+ Anda perlu membuat pengguna baru, dan sebagainya, 
+
+1056
+00:49:08,740 --> 00:49:10,090
+ tetapi untuk melakukan itu di Unix, Anda 
+
+1057
+00:49:10,090 --> 00:49:11,715
+ harus memiliki proses yang berjalan sebagai root, 
+
+1058
+00:49:11,715 --> 00:49:12,930
+ yang memiliki banyak hak istimewa. 
+
+1059
+00:49:12,930 --> 00:49:16,050
+ Jadi ini sedikit perdagangan yang tidak menguntungkan, 
+
+1060
+00:49:16,050 --> 00:49:19,080
+ tapi mungkin Anda bisa membuat desain yang masuk akal 
+
+1061
+00:49:19,080 --> 00:49:20,370
+ keputusan. 
+
+1062
+00:49:20,370 --> 00:49:21,080
+ Pertanyaan. 
+
+1063
+00:49:21,080 --> 00:49:24,840
+ AUDIENCE: Jika di direktori [INAUDIBLE], jadi [TIDAK JELAS] 
+
+1064
+00:49:24,840 --> 00:49:28,200
+ ke file yang ada di [INAUDIBLE]. 
+
+1065
+00:49:28,200 --> 00:49:31,420
+ PROFESOR: Tidak, sebenarnya, kecuali Anda melakukan trik ini, 
+
+1066
+00:49:31,420 --> 00:49:36,800
+ kernel mengevaluasi symlink dalam konteks root Anda, jika Anda mau. 
+
+1067
+00:49:36,800 --> 00:49:39,187
+ Jadi jika Anda memiliki symlink ke / etc / password, 
+
+1068
+00:49:39,187 --> 00:49:41,520
+ itu akan mengevaluasi seolah-olah mirip dengan / foo / etc / password. 
+
+1069
+00:49:41,520 --> 00:49:43,012
+ AUDIENCE: [TIDAK JELAS]. 
+
+1070
+00:49:43,012 --> 00:49:45,970
+ PROFESOR: Tautan yang sulit tidak akan dilindungi. 
+
+1071
+00:49:45,970 --> 00:49:46,650
+ Ya. 
+
+1072
+00:49:46,650 --> 00:49:49,700
+ Jadi salah satu cara untuk membuat lingkungan chroot tanpa membuat 
+
+1073
+00:49:49,700 --> 00:49:51,790
+ banyak salinan file adalah, pada kenyataannya, 
+
+1074
+00:49:51,790 --> 00:49:54,420
+ buat direktori dan tautan keras semua ini kembali. 
+
+1075
+00:49:54,420 --> 00:49:58,050
+ Itu cukup murah dan kemudian menggunakannya. 
+
+1076
+00:49:58,050 --> 00:50:00,550
+ AUDIENCE: Jika sebuah program secara bertahap menghasilkan inode dan, seperti, 
+
+1077
+00:50:00,550 --> 00:50:03,182
+ sebenarnya tidak memberi Anda file descriptor-- 
+
+1078
+00:50:03,182 --> 00:50:03,890
+ PROFESOR: Benar. 
+
+1079
+00:50:03,890 --> 00:50:07,570
+ Jadi itu seperti detail yang sangat penting di sini, adalah Anda 
+
+1080
+00:50:07,570 --> 00:50:11,150
+ hanya dapat mengakses file dengan nama jalur, bukan dengan mengatakan, 
+
+1081
+00:50:11,150 --> 00:50:13,340
+ Saya ingin membuka nomor inode 23. 
+
+1082
+00:50:13,340 --> 00:50:16,290
+ Ini mungkin beberapa file aneh di luar chroot saya. 
+
+1083
+00:50:16,290 --> 00:50:20,820
+ Jadi di Unix Anda tidak dapat membuka inode dengan nomor inode kecuali 
+
+1084
+00:50:20,820 --> 00:50:24,590
+ Anda root, tentu saja. 
+
+1085
+00:50:24,590 --> 00:50:27,060
+ Pertanyaan Lain? 
+
+1086
+00:50:27,060 --> 00:50:27,560
+ Baiklah. 
+
+1087
+00:50:27,560 --> 00:50:29,351
+ Jadi saya pikir kami memiliki semacam mesin yang cukup 
+
+1088
+00:50:29,351 --> 00:50:34,170
+ sekarang untuk melihat apa yang dilakukan orang-orang OKWS ini, dan mungkin 
+
+1089
+00:50:34,170 --> 00:50:38,500
+ pengantar yang bermanfaat dan cepat adalah sebaliknya 
+
+1090
+00:50:38,500 --> 00:50:40,100
+ untuk apa yang orang lain lakukan. 
+
+1091
+00:50:40,100 --> 00:50:44,540
+ Jadi apa yang orang lain lakukan adalah orang-orang OKWS 
+
+1092
+00:50:44,540 --> 00:50:45,540
+ takut? 
+
+1093
+00:50:45,540 --> 00:50:48,270
+ Jadi desain alternatif yang cukup banyak di setiap web 
+
+1094
+00:50:48,270 --> 00:50:51,180
+ server berikut, seperti gambar memisahkan unprivileged 
+
+1095
+00:50:51,180 --> 00:50:54,900
+ di atas sana, sehingga Anda mungkin memiliki peramban web di luar sana 
+
+1096
+00:50:54,900 --> 00:50:59,020
+ di internet, orang-orang ini akan terhubung ke server Anda 
+
+1097
+00:50:59,020 --> 00:51:02,750
+ dan, di dalam server Anda, pada dasarnya Anda akan memiliki, 
+
+1098
+00:51:02,750 --> 00:51:09,050
+ pada dasarnya satu proses, httpd, baik, Apache, katakanlah. 
+
+1099
+00:51:09,050 --> 00:51:13,473
+ Dan ini adalah satu proses yang berjalan sebagai userid tunggal yang disebut www 
+
+1100
+00:51:13,473 --> 00:51:14,940
+ di / etc / password. 
+
+1101
+00:51:14,940 --> 00:51:17,850
+ Dibutuhkan semua koneksi Anda, melakukan segalanya 
+
+1102
+00:51:17,850 --> 00:51:21,420
+ dengan proses Anda, termasuk melakukan pemrosesan SSL mungkin, 
+
+1103
+00:51:21,420 --> 00:51:24,160
+ termasuk menjalankan kode aplikasi dan PHP, 
+
+1104
+00:51:24,160 --> 00:51:27,760
+ dan sebagainya, semua bagian dari proses yang sama. 
+
+1105
+00:51:27,760 --> 00:51:31,380
+ Dan jika perlu, proses ini biasanya akan terhubung kembali 
+
+1106
+00:51:31,380 --> 00:51:35,329
+ ke beberapa server database, mungkin MySQL 
+
+1107
+00:51:35,329 --> 00:51:36,870
+ bisa berjalan di mesin yang sama, 
+
+1108
+00:51:36,870 --> 00:51:38,640
+ bisa berjalan di tempat lain. 
+
+1109
+00:51:38,640 --> 00:51:43,240
+ Dan proses MySQL ini sebenarnya menulis data ke disk. 
+
+1110
+00:51:43,240 --> 00:51:45,426
+ Tetapi untuk terhubung ke MySQL ini, Anda mungkin 
+
+1111
+00:51:45,426 --> 00:51:47,050
+ harus memberikan nama pengguna dan kata sandi 
+
+1112
+00:51:47,050 --> 00:51:51,600
+ tetapi, biasanya, cara aplikasi ditulis 
+
+1113
+00:51:51,600 --> 00:51:54,600
+ atau, setidaknya, aplikasi yang sangat tidak aman untuk keamanan 
+
+1114
+00:51:54,600 --> 00:51:57,280
+ tertulis, adalah bahwa ada satu akun di MySQL 
+
+1115
+00:51:57,280 --> 00:52:00,187
+ server bahwa aplikasi mengetahui nama pengguna dan kata sandi 
+
+1116
+00:52:00,187 --> 00:52:02,020
+ untuk, jadi Anda cukup terhubung dan Anda memiliki akses 
+
+1117
+00:52:02,020 --> 00:52:02,853
+ ke semua data Anda. 
+
+1118
+00:52:02,853 --> 00:52:04,670
+ Jadi sangat mudah untuk menulis, 
+
+1119
+00:52:04,670 --> 00:52:07,291
+ karena Anda hanya menulis kode apa pun yang Anda inginkan. 
+
+1120
+00:52:07,291 --> 00:52:09,540
+ Anda dapat mengakses data apa pun dalam database yang Anda inginkan. 
+
+1121
+00:52:09,540 --> 00:52:11,870
+ Tidak ada isolasi nyata, tetapi itu 
+
+1122
+00:52:11,870 --> 00:52:14,410
+ memiliki masalah keamanan yang mengkhawatirkan orang-orang ini, 
+
+1123
+00:52:14,410 --> 00:52:18,450
+ yaitu jika ada bug di Apache, mungkin di SSL, mungkin 
+
+1124
+00:52:18,450 --> 00:52:21,010
+ dalam kode aplikasi atau di interpreter PHP, 
+
+1125
+00:52:21,010 --> 00:52:24,860
+ maka jawabannya adalah, jika ada bug 
+
+1126
+00:52:24,860 --> 00:52:26,550
+ dan Anda dapat memanfaatkannya, lalu, ya, 
+
+1127
+00:52:26,550 --> 00:52:30,470
+ Anda mendapatkan seluruh isi data aplikasi. 
+
+1128
+00:52:30,470 --> 00:52:31,700
+ Apakah itu masuk akal? 
+
+1129
+00:52:31,700 --> 00:52:34,845
+ Anda punya beberapa pertanyaan sebelumnya. 
+
+1130
+00:52:34,845 --> 00:52:35,499
+ Tidak? 
+
+1131
+00:52:35,499 --> 00:52:36,040
+ AUDIENCE: Oh. 
+
+1132
+00:52:36,040 --> 00:52:36,936
+ Uh, ya, itu baik-baik saja. 
+
+1133
+00:52:36,936 --> 00:52:37,270
+ Terima kasih. 
+
+1134
+00:52:37,270 --> 00:52:38,145
+ PROFESOR: Baiklah. 
+
+1135
+00:52:38,145 --> 00:52:39,140
+ Jangan khawatir. 
+
+1136
+00:52:39,140 --> 00:52:39,830
+ BAIK. 
+
+1137
+00:52:39,830 --> 00:52:42,387
+ Jadi ini semacam seni rupa apa sebenarnya orang-orang ini 
+
+1138
+00:52:42,387 --> 00:52:43,470
+ ingin melindungi. 
+
+1139
+00:52:43,470 --> 00:52:48,340
+ Dan dalam kasus mereka, saya kira mereka sangat khawatir karena mereka 
+
+1140
+00:52:48,340 --> 00:52:50,840
+ berpikir, yah, mereka sedang membangun situs kencan, 
+
+1141
+00:52:50,840 --> 00:52:53,020
+ okcupid.com dan mereka benar-benar menginginkannya 
+
+1142
+00:52:53,020 --> 00:52:55,450
+ untuk memastikan mereka, saya kira reputasi, 
+
+1143
+00:52:55,450 --> 00:52:58,520
+ tidak akan rusak oleh pengungkapan data ini. 
+
+1144
+00:52:58,520 --> 00:53:03,200
+ Jadi sebenarnya, saya kira - dari berbicara 
+
+1145
+00:53:03,200 --> 00:53:04,890
+ kepada orang yang menulis makalah ini, 
+
+1146
+00:53:04,890 --> 00:53:07,350
+ sepertinya mereka sebenarnya belum berkompromi-- 
+
+1147
+00:53:07,350 --> 00:53:10,570
+ atau, setidaknya, bukan mereka yang tahu-- 
+
+1148
+00:53:10,570 --> 00:53:13,610
+ atau data mereka tidak bocor. 
+
+1149
+00:53:13,610 --> 00:53:17,125
+ Dan sepertinya sebagian sebagai hasil dari menjalankan OKWS, 
+
+1150
+00:53:17,125 --> 00:53:19,750
+ sebagian sebagai hasil dari pemantauan yang mungkin lebih proaktif bahwa mereka 
+
+1151
+00:53:19,750 --> 00:53:22,870
+ lakukan, dan sebagainya, tetapi tampaknya telah berhasil secara wajar 
+
+1152
+00:53:22,870 --> 00:53:25,740
+ baik bagi mereka, sampai taraf tertentu, saya kira, 
+
+1153
+00:53:25,740 --> 00:53:28,720
+ karena arsitektur ini yang kita miliki. 
+
+1154
+00:53:28,720 --> 00:53:29,220
+ BAIK. 
+
+1155
+00:53:29,220 --> 00:53:33,190
+ Jadi alasan orang itu, saya kira, 
+
+1156
+00:53:33,190 --> 00:53:36,356
+ jangan memecah aplikasi mereka menjadi lebih kecil 
+
+1157
+00:53:36,356 --> 00:53:37,730
+ komponen karena sebenarnya 
+
+1158
+00:53:37,730 --> 00:53:40,820
+ butuh sedikit usaha untuk memisahkan semua bagiannya 
+
+1159
+00:53:40,820 --> 00:53:43,540
+ kode dan mendefinisikan antarmuka yang bersih di antara mereka, 
+
+1160
+00:53:43,540 --> 00:53:45,215
+ memutuskan data mana setiap komponen 
+
+1161
+00:53:45,215 --> 00:53:47,505
+ harus memiliki akses ke, atau jika Anda memutuskan untuk menerapkan 
+
+1162
+00:53:47,505 --> 00:53:48,880
+ fitur baru, Anda akan memiliki 
+
+1163
+00:53:48,880 --> 00:53:52,620
+ untuk mengubah data yang setiap komponen memiliki akses untuk memberikannya 
+
+1164
+00:53:52,620 --> 00:53:54,940
+ hak istimewa baru atau mengambil beberapa, dan sebagainya. 
+
+1165
+00:53:54,940 --> 00:54:00,350
+ Jadi itu sedikit overhead untuk memisahkan aplikasi, 
+
+1166
+00:54:00,350 --> 00:54:02,480
+ tetapi dalam kasus mereka saya kira mereka memutuskan 
+
+1167
+00:54:02,480 --> 00:54:05,890
+ itu sepadan dengan usaha. 
+
+1168
+00:54:05,890 --> 00:54:10,540
+ Mari kita coba memahami cara kerja desain server web mereka, 
+
+1169
+00:54:10,540 --> 00:54:14,980
+ dan mungkin satu cara untuk melakukannya adalah dengan menelusuri secara kasar 
+
+1170
+00:54:14,980 --> 00:54:22,700
+ bagaimana permintaan http diproses oleh server OKWS. 
+
+1171
+00:54:22,700 --> 00:54:24,400
+ Jadi, mirip dengan gambar itu, ada 
+
+1172
+00:54:24,400 --> 00:54:26,290
+ mungkin browser web di luar sana di suatu tempat 
+
+1173
+00:54:26,290 --> 00:54:30,992
+ yang ingin masuk ke okcupid.com, dan dalam desain mereka 
+
+1174
+00:54:30,992 --> 00:54:32,450
+ mereka membayangkan mereka akan pergi 
+
+1175
+00:54:32,450 --> 00:54:34,949
+ untuk memiliki banyak mesin, tapi kami hanya akan melihat mungkin 
+
+1176
+00:54:34,949 --> 00:54:37,340
+ hanya satu mesin front-end itu 
+
+1177
+00:54:37,340 --> 00:54:41,310
+ akan menjalankan OKWS di sini dan kemudian komputer lain 
+
+1178
+00:54:41,310 --> 00:54:43,180
+ di belakang layar yang akan terjadi 
+
+1179
+00:54:43,180 --> 00:54:45,200
+ menyimpan database di suatu tempat. 
+
+1180
+00:54:45,200 --> 00:54:48,410
+ Dan saya membayangkan mereka mungkin juga menggunakan MySQL, 
+
+1181
+00:54:48,410 --> 00:54:51,960
+ karena ini adalah perangkat lunak yang bagus dalam banyak hal. 
+
+1182
+00:54:51,960 --> 00:54:54,210
+ Mereka tidak ingin menerapkan kembali fungsi ini, 
+
+1183
+00:54:54,210 --> 00:54:56,780
+ tetapi mereka ingin benar-benar melindungi data ini, jadi 
+
+1184
+00:54:56,780 --> 00:54:59,040
+ bahwa sangat sulit untuk sampai ke disk mentah 
+
+1185
+00:54:59,040 --> 00:55:01,174
+ atau database mentah. 
+
+1186
+00:55:01,174 --> 00:55:02,590
+ Jadi bagaimana cara kerja permintaan, atau bagaimana caranya 
+
+1187
+00:55:02,590 --> 00:55:05,400
+ apakah permintaan ditangani oleh OKWS? 
+
+1188
+00:55:05,400 --> 00:55:07,960
+ Yah, permintaannya pertama datang dan didapat 
+
+1189
+00:55:07,960 --> 00:55:10,570
+ ditangani oleh proses ini yang mereka sebut 
+
+1190
+00:55:10,570 --> 00:55:14,870
+ okd untuk operator OKWS. 
+
+1191
+00:55:14,870 --> 00:55:19,120
+ Jadi orang-orang itu melihat apa yang diminta permintaan itu 
+
+1192
+00:55:19,120 --> 00:55:21,690
+ dan kemudian melakukan beberapa hal. 
+
+1193
+00:55:21,690 --> 00:55:25,380
+ Jadi pertama-tama mungkin perlu untuk mencatat permintaan, 
+
+1194
+00:55:25,380 --> 00:55:30,680
+ sehingga meneruskannya ke komponen yang disebut oklogd ini, 
+
+1195
+00:55:30,680 --> 00:55:34,590
+ maka mungkin perlu menghasilkan beberapa templat, 
+
+1196
+00:55:34,590 --> 00:55:37,020
+ mungkin sebelum permintaan masuk bahkan. 
+
+1197
+00:55:37,020 --> 00:55:42,670
+ Dan ini ditangani oleh komponen lain yang disebut pubd. 
+
+1198
+00:55:42,670 --> 00:55:45,390
+ Dan akhirnya, ada layanan tertentu 
+
+1199
+00:55:45,390 --> 00:55:48,580
+ bahwa permintaan ini dikirim ke, 
+
+1200
+00:55:48,580 --> 00:55:51,740
+ jadi okd memiliki tabel dari banyak layanan yang didukungnya. 
+
+1201
+00:55:51,740 --> 00:55:54,110
+ Permintaan ini mungkin akan salah satunya, 
+
+1202
+00:55:54,110 --> 00:55:58,260
+ dan, sebagai akibatnya, okd akan meneruskan permintaan ini 
+
+1203
+00:55:58,260 --> 00:56:01,890
+ ke proses layanan tertentu. 
+
+1204
+00:56:01,890 --> 00:56:04,300
+ Dan tugas layanan adalah benar-benar melakukan sesuatu 
+
+1205
+00:56:04,300 --> 00:56:05,910
+ dengan permintaan ini, seperti berlangganan 
+
+1206
+00:56:05,910 --> 00:56:08,910
+ orang itu ke newsletter atau mencocokkannya 
+
+1207
+00:56:08,910 --> 00:56:14,430
+ untuk siapa pun yang menggunakan OkCupid, menggunakan database. 
+
+1208
+00:56:14,430 --> 00:56:17,830
+ Dan untuk melakukan ini, layanan itu mungkin 
+
+1209
+00:56:17,830 --> 00:56:21,120
+ mungkin perlu mencatat beberapa informasi tentang permintaan tersebut 
+
+1210
+00:56:21,120 --> 00:56:24,350
+ juga dengan berbicara dengan komponen oklogd ini. 
+
+1211
+00:56:24,350 --> 00:56:28,282
+ Dan pada akhirnya, harus berbicara dengan database ini. 
+
+1212
+00:56:28,282 --> 00:56:29,740
+ Begitulah cara orang-orang ini sebenarnya 
+
+1213
+00:56:29,740 --> 00:56:31,770
+ mengimplementasikan berbicara ke database 
+
+1214
+00:56:31,770 --> 00:56:34,850
+ adalah bahwa, tidak seperti gambar Apache di mana Anda baru saja 
+
+1215
+00:56:34,850 --> 00:56:37,890
+ berbicara dengan database dan mengeluarkan pertanyaan SQL sewenang-wenang, 
+
+1216
+00:56:37,890 --> 00:56:45,480
+ orang-orang ini datang dengan gagasan proksi basis data itu 
+
+1217
+00:56:45,480 --> 00:56:48,120
+ duduk di depan database MySQL 
+
+1218
+00:56:48,120 --> 00:56:54,220
+ dan menerima permintaan dari layanan untuk melakukan beberapa kueri, 
+
+1219
+00:56:54,220 --> 00:57:00,220
+ dan saya pikir itu sebagian besar gambar untuk OKWS. 
+
+1220
+00:57:00,220 --> 00:57:06,040
+ Ada komponen lain di seluruh gambar ini 
+
+1221
+00:57:06,040 --> 00:57:09,520
+ memicu kekacauan ini, sehingga mereka memiliki komponen lain 
+
+1222
+00:57:09,520 --> 00:57:13,800
+ disebut okld, untuk demon peluncur ok, 
+
+1223
+00:57:13,800 --> 00:57:17,720
+ dan orang ini bertanggung jawab untuk memulai semua proses ini 
+
+1224
+00:57:17,720 --> 00:57:21,075
+ pada mesin web server front end ini. 
+
+1225
+00:57:21,075 --> 00:57:22,700
+ Semoga beberapa hal ini benar-benar 
+
+1226
+00:57:22,700 --> 00:57:24,283
+ terlihat akrab, karena ini persis 
+
+1227
+00:57:24,283 --> 00:57:27,062
+ arsitektur [tidak terdengar] untuk tugas lab Anda, 
+
+1228
+00:57:27,062 --> 00:57:30,905
+ jadi ini pada dasarnya adalah apa desain kami semua didasarkan pada. 
+
+1229
+00:57:30,905 --> 00:57:33,410
+ Sepertinya desain yang bagus, sebenarnya. 
+
+1230
+00:57:33,410 --> 00:57:35,740
+ Kami tidak memiliki pubd atau logd, 
+
+1231
+00:57:35,740 --> 00:57:39,530
+ tetapi kami memiliki dua orang dan layanan ini. 
+
+1232
+00:57:39,530 --> 00:57:41,450
+ Tidak ada proksi basis data. 
+
+1233
+00:57:41,450 --> 00:57:45,590
+ Baiklah, jadi ada pertanyaan tentang OKWS? 
+
+1234
+00:57:45,590 --> 00:57:46,090
+ Iya nih. 
+
+1235
+00:57:46,090 --> 00:57:47,030
+
+
+1236
+00:57:47,030 --> 00:57:51,095
+ AUDIENCE: Dbproxy tidak menerima query SQL, 
+
+1237
+00:57:51,095 --> 00:57:51,931
+ itu menerima semacam 
+
+1238
+00:57:51,931 --> 00:57:52,255
+
+
+1239
+00:57:52,255 --> 00:57:52,880
+ PROFESOR: Ya. 
+
+1240
+00:57:52,880 --> 00:57:54,338
+ Seperti apakah tampilan antarmuka ini? 
+
+1241
+00:57:54,338 --> 00:57:56,450
+ Mereka tidak benar-benar menggambarkannya dalam banyak detail, 
+
+1242
+00:57:56,450 --> 00:58:00,190
+ tetapi satu hal yang saya bayangkan bisa Anda lakukan dalam database ini 
+
+1243
+00:58:00,190 --> 00:58:02,650
+ proxy pada dasarnya memiliki persediaan ini 
+
+1244
+00:58:02,650 --> 00:58:05,840
+ sekelompok argumen untuk templat kueri SQL. 
+
+1245
+00:58:05,840 --> 00:58:08,120
+ Jadi mungkin saja ini dbproxy ini, 
+
+1246
+00:58:08,120 --> 00:58:11,710
+ yang satu ini khususnya, mungkin untuk menemukan, 
+
+1247
+00:58:11,710 --> 00:58:13,530
+ Saya tidak tahu, teman-teman Anda atau sesuatu, 
+
+1248
+00:58:13,530 --> 00:58:16,190
+ jadi di dalam dbproxy mungkin ada 
+
+1249
+00:58:16,190 --> 00:58:31,634
+ permintaan template seperti pilih ID dari teman, di mana pengguna-- I 
+
+1250
+00:58:31,634 --> 00:58:33,300
+ tebak ini seperti ID teman, 
+
+1251
+00:58:33,300 --> 00:58:36,290
+ dan ini adalah ID dari orang yang adalah teman dari. 
+
+1252
+00:58:36,290 --> 00:58:39,260
+ Pengguna sama, saya tidak tahu, orang D di sini, 
+
+1253
+00:58:39,260 --> 00:58:42,020
+ atau sesuatu, atau orang S di sini, kan? 
+
+1254
+00:58:42,020 --> 00:58:43,810
+ Dan mereka semacam membersihkan string ini, 
+
+1255
+00:58:43,810 --> 00:58:46,850
+ dan saya membayangkan permintaan RPC ini di sini semacam terlihat 
+
+1256
+00:58:46,850 --> 00:58:53,970
+ seperti melakukan permintaan satu, dan argumennya adalah, saya tidak tahu, 
+
+1257
+00:58:53,970 --> 00:58:55,020
+ "Alice." 
+
+1258
+00:58:55,020 --> 00:58:57,930
+ Saya agak membayangkan tampilan antarmuka RPC ini 
+
+1259
+00:58:57,930 --> 00:59:00,410
+ seperti ini, di mana aplikasi tahu sebelumnya 
+
+1260
+00:59:00,410 --> 00:59:02,720
+ bahwa proxy basis data ini bersedia dijalankan 
+
+1261
+00:59:02,720 --> 00:59:04,740
+ tiga jenis pertanyaan atas namanya, 
+
+1262
+00:59:04,740 --> 00:59:07,270
+ dan sekarang saya ingin menjalankan permintaan nomor satu 
+
+1263
+00:59:07,270 --> 00:59:09,010
+ dan argumennya adalah Alice. 
+
+1264
+00:59:09,010 --> 00:59:10,960
+ Dan itulah cara saya mendapatkan akses 
+
+1265
+00:59:10,960 --> 00:59:13,170
+ ke data apa pun dalam database. 
+
+1266
+00:59:13,170 --> 00:59:16,580
+ Apakah ini masuk akal? 
+
+1267
+00:59:16,580 --> 00:59:19,661
+ AUDIENCE: Dapatkah pengguna eksternal di tingkat browser web 
+
+1268
+00:59:19,661 --> 00:59:21,410
+ kirim permintaan seperti itu ke database 
+
+1269
+00:59:21,410 --> 00:59:23,104
+ atau apakah itu semua internal? 
+
+1270
+00:59:23,104 --> 00:59:24,020
+ PROFESOR: Ya, ya. 
+
+1271
+00:59:24,020 --> 00:59:25,140
+ Jadi, bagaimana cara kerjanya? 
+
+1272
+00:59:25,140 --> 00:59:26,723
+ Sebenarnya agak aneh, begini 
+
+1273
+00:59:26,723 --> 00:59:28,764
+ adalah mesin yang terpisah, karena sekarang sepertinya, 
+
+1274
+00:59:28,764 --> 00:59:31,350
+ mengapa tidak hanya terhubung ke proksi basis data sendiri, 
+
+1275
+00:59:31,350 --> 00:59:33,850
+ atau ke server MySQL, bukan? 
+
+1276
+00:59:33,850 --> 00:59:35,760
+ Jadi apa yang mencegah ini dalam desain mereka? 
+
+1277
+00:59:35,760 --> 00:59:36,830
+ AUDIENCE: Fire wall? 
+
+1278
+00:59:36,830 --> 00:59:38,060
+ PROFESOR: Ya, mungkin pada tingkat tertentu. 
+
+1279
+00:59:38,060 --> 00:59:40,185
+ Mereka tidak benar-benar menggambarkan ini terlalu banyak detail, 
+
+1280
+00:59:40,185 --> 00:59:43,460
+ tetapi mungkin ini adalah beberapa jaringan internal, di mana ada 
+
+1281
+00:59:43,460 --> 00:59:45,424
+ seperti saklar di sini, dan mesin ini 
+
+1282
+00:59:45,424 --> 00:59:47,090
+ terhubung ke saklar, mesin ini 
+
+1283
+00:59:47,090 --> 00:59:48,850
+ terhubung ke switch, tetapi switch 
+
+1284
+00:59:48,850 --> 00:59:50,516
+ tidak dapat dijangkau dari dunia luar. 
+
+1285
+00:59:50,516 --> 00:59:52,610
+ Sepertinya ada koneksi internet di sini 
+
+1286
+00:59:52,610 --> 00:59:54,319
+ dan orang-orang itu adalah jaringan back-end. 
+
+1287
+00:59:54,319 --> 00:59:56,234
+ Atau mungkin mereka benar-benar berada di jaringan yang sama, 
+
+1288
+00:59:56,234 --> 00:59:59,110
+ tetapi ada firewall di sini yang memiliki aturan yang mengatakan, yah, Anda 
+
+1289
+00:59:59,110 --> 01:00:01,570
+ hanya dapat terhubung ke mesin front-end ini pada port 80. 
+
+1290
+01:00:01,570 --> 01:00:05,240
+ Anda tidak dapat berbicara dengan server back-end. 
+
+1291
+01:00:05,240 --> 01:00:06,504
+ Jadi itulah satu rencana. 
+
+1292
+01:00:06,504 --> 01:00:08,170
+ Saya kira rencana lain yang ada dalam pikiran mereka 
+
+1293
+01:00:08,170 --> 01:00:11,530
+ adalah bahwa sebenarnya ketika Anda terhubung ke proksi basis data ini, 
+
+1294
+01:00:11,530 --> 01:00:15,580
+ Anda harus menyediakan token 20 byte ini, 
+
+1295
+01:00:15,580 --> 01:00:18,920
+ dan kecuali Anda menyediakannya, dbproxy 
+
+1296
+01:00:18,920 --> 01:00:20,499
+ akan menolak koneksi Anda. 
+
+1297
+01:00:20,499 --> 01:00:22,290
+ Jadi aturannya adalah Anda membuka koneksi TCP, 
+
+1298
+01:00:22,290 --> 01:00:23,320
+ Anda mengirim 20 byte Anda. 
+
+1299
+01:00:23,320 --> 01:00:24,736
+ Jika mereka bukan 20 byte yang benar, 
+
+1300
+01:00:24,736 --> 01:00:27,820
+ koneksi Anda tertutup, dan semoga ini 
+
+1301
+01:00:27,820 --> 01:00:30,440
+ adalah sesuatu yang relatif mudah untuk proxy basis data 
+
+1302
+01:00:30,440 --> 01:00:34,690
+ untuk menerapkan, sehingga mungkin ada 
+
+1303
+01:00:34,690 --> 01:00:38,420
+ probabilitas rendah dari bug dalam logika pengecekan token itu 
+
+1304
+01:00:38,420 --> 01:00:39,590
+ tepat di depan. 
+
+1305
+01:00:39,590 --> 01:00:41,900
+ Dan kecuali Anda memiliki token, Anda 
+
+1306
+01:00:41,900 --> 01:00:44,360
+ tidak akan dapat melakukan hal lain yang menarik 
+
+1307
+01:00:44,360 --> 01:00:45,856
+ ke server database. 
+
+1308
+01:00:45,856 --> 01:00:50,300
+ Itu, saya pikir, tujuan desain mereka di sini. 
+
+1309
+01:00:50,300 --> 01:00:53,180
+ Masuk akal? 
+
+1310
+01:00:53,180 --> 01:00:54,000
+ Baiklah. 
+
+1311
+01:00:54,000 --> 01:00:55,900
+ Jadi, mari coba cari tahu, saya kira, 
+
+1312
+01:00:55,900 --> 01:01:00,740
+ bagaimana orang-orang ini mengisolasi proses yang berbeda ini. 
+
+1313
+01:01:00,740 --> 01:01:03,850
+ Jadi bagaimana mereka memastikan semua komponen ini 
+
+1314
+01:01:03,850 --> 01:01:08,690
+ tidak menginjak satu sama lain? 
+
+1315
+01:01:08,690 --> 01:01:09,680
+ Apa rencananya? 
+
+1316
+01:01:09,680 --> 01:01:12,488
+
+
+1317
+01:01:12,488 --> 01:01:14,859
+ AUDIENCE: Akar yang berbeda dan pengguna yang berbeda? 
+
+1318
+01:01:14,859 --> 01:01:17,400
+ PROFESOR: Ya, sangat banyak setiap komponen ini 
+
+1319
+01:01:17,400 --> 01:01:20,410
+ berjalan sebagai pembeda, jadi mereka memiliki seluruh tabel ini 
+
+1320
+01:01:20,410 --> 01:01:23,620
+ di kertas yang menjelaskan, untuk setiap komponen, 
+
+1321
+01:01:23,620 --> 01:01:25,250
+ dimana itu berjalan dan apa yang uid. 
+
+1322
+01:01:25,250 --> 01:01:29,830
+ Jadi kita bisa menulis ini, jadi okd memiliki uid sendiri, 
+
+1323
+01:01:29,830 --> 01:01:34,850
+ pubd memiliki uid sendiri, logger memiliki uid sendiri. 
+
+1324
+01:01:34,850 --> 01:01:37,850
+ okld berfungsi sebagai root, yang agak disayangkan, 
+
+1325
+01:01:37,850 --> 01:01:40,380
+ tetapi mungkin baik-baik saja. 
+
+1326
+01:01:40,380 --> 01:01:43,200
+ Lalu, ada banyak pengguna yang ditugaskan secara dinamis 
+
+1327
+01:01:43,200 --> 01:01:43,960
+ untuk setiap layanan. 
+
+1328
+01:01:43,960 --> 01:01:48,880
+ Saya membayangkan dia memiliki ID 51001. 
+
+1329
+01:01:48,880 --> 01:01:52,260
+ Jadi ini memastikan bahwa setiap layanan tidak dapat di-poke 
+
+1330
+01:01:52,260 --> 01:01:55,980
+ pada proses layanan lainnya, 
+
+1331
+01:01:55,980 --> 01:02:00,120
+ dan mereka juga menggunakan chroot cukup luas, 
+
+1332
+01:02:00,120 --> 01:02:03,560
+ jadi semua orang ini masuk ke dalam beberapa direktori. 
+
+1333
+01:02:03,560 --> 01:02:05,290
+ Mereka semula mengatakan, ya, Anda 
+
+1334
+01:02:05,290 --> 01:02:08,350
+ harus benar-benar membuat semua orang menjadi direktori terpisah. 
+
+1335
+01:02:08,350 --> 01:02:11,730
+ Ternyata, di meja itu, itu 
+
+1336
+01:02:11,730 --> 01:02:15,190
+ ternyata itu okd dan semua layanannya 
+
+1337
+01:02:15,190 --> 01:02:19,060
+ pada dasarnya berbagi direktori chroot. 
+
+1338
+01:02:19,060 --> 01:02:21,111
+ Agak aneh. 
+
+1339
+01:02:21,111 --> 01:02:25,370
+ Mengapa kalian pikir mereka menempatkan okd dan layanannya 
+
+1340
+01:02:25,370 --> 01:02:29,880
+ menjadi chroot tunggal dan tidak memberi mereka chroot mereka sendiri? 
+
+1341
+01:02:29,880 --> 01:02:30,380
+ Aneh. 
+
+1342
+01:02:30,380 --> 01:02:31,335
+ Ya. 
+
+1343
+01:02:31,335 --> 01:02:33,095
+ AUDIENCE: okd bukan root. 
+
+1344
+01:02:33,095 --> 01:02:35,250
+ PROFESOR: Yah, ya, tapi kenapa tidak mereka 
+
+1345
+01:02:35,250 --> 01:02:37,860
+ masukkan pubd dan oklogd dan semua orang di tempat yang sama 
+
+1346
+01:02:37,860 --> 01:02:38,770
+ chroot juga? 
+
+1347
+01:02:38,770 --> 01:02:41,494
+
+
+1348
+01:02:41,494 --> 01:02:42,856
+ AUDIENCE: Okld [TIDAK TERDENGAR]. 
+
+1349
+01:02:42,856 --> 01:02:44,770
+ PROFESOR: okld sebenarnya duduk di sini 
+
+1350
+01:02:44,770 --> 01:02:46,030
+ di chroot terpisah. 
+
+1351
+01:02:46,030 --> 01:02:46,970
+ Orang ini, pria ini. 
+
+1352
+01:02:46,970 --> 01:02:49,620
+
+
+1353
+01:02:49,620 --> 01:02:51,000
+ Sebenarnya okld bukan chroot. 
+
+1354
+01:02:51,000 --> 01:02:52,250
+ Saya minta maaf atas hal tersebut. 
+
+1355
+01:02:52,250 --> 01:02:53,516
+ Orang-orang ini adalah chroot. 
+
+1356
+01:02:53,516 --> 01:02:55,309
+ Apakah itu penting? 
+
+1357
+01:02:55,309 --> 01:02:57,225
+ AUDIENCE: Saya berpikir, jika layanan memiliki 
+
+1358
+01:02:57,225 --> 01:03:00,982
+ untuk berbagi banyak data, di mana [TIDAK JELAS] mengisolasinya? 
+
+1359
+01:03:00,982 --> 01:03:01,690
+ PROFESOR: Mungkin. 
+
+1360
+01:03:01,690 --> 01:03:03,190
+ Sebenarnya, saya pikir apa yang terjadi 
+
+1361
+01:03:03,190 --> 01:03:06,660
+ apakah mereka harus berbagi beberapa data, tetapi tidak ada data ini 
+
+1362
+01:03:06,660 --> 01:03:08,910
+ sebenarnya tinggal di file, sehingga mereka melewatkan banyak data 
+
+1363
+01:03:08,910 --> 01:03:11,920
+ melalui soket dari okd ke layanan. 
+
+1364
+01:03:11,920 --> 01:03:14,650
+ Namun pada kenyataannya, tidak satu pun dari orang-orang ini menyimpan sesuatu yang menarik 
+
+1365
+01:03:14,650 --> 01:03:16,860
+ sama sekali dalam sistem file. 
+
+1366
+01:03:16,860 --> 01:03:21,150
+ Jadi sebagai hasilnya, tidak ada yang menarik 
+
+1367
+01:03:21,150 --> 01:03:24,510
+ di direktori chroot, jadi saya membayangkan orang OKWS saja 
+
+1368
+01:03:24,510 --> 01:03:27,442
+ memutuskan, yah, mungkin ada beberapa overhead 
+
+1369
+01:03:27,442 --> 01:03:28,900
+ untuk menciptakan chroot, seperti yang Anda miliki 
+
+1370
+01:03:28,900 --> 01:03:30,316
+ untuk membuat salinan direktori, 
+
+1371
+01:03:30,316 --> 01:03:33,470
+ mungkin ada beberapa overhead manajemen untuk setiap chroot. 
+
+1372
+01:03:33,470 --> 01:03:36,330
+ Padahal, untuk ini, tidak ada file nyata di sini, 
+
+1373
+01:03:36,330 --> 01:03:37,920
+ jadi mungkin itu baik-baik saja. 
+
+1374
+01:03:37,920 --> 01:03:39,480
+ Maksud saya, tidak ada yang jelas, semacam, 
+
+1375
+01:03:39,480 --> 01:03:42,280
+ potong trade disini, atau bukan argumen yang jelas 
+
+1376
+01:03:42,280 --> 01:03:44,930
+ ke arah mana Anda harus pergi, tetapi tentu saja mencegah 
+
+1377
+01:03:44,930 --> 01:03:46,760
+ dari binari setuid. 
+
+1378
+01:03:46,760 --> 01:03:49,260
+ Alasan orang-orang ini mungkin di chroots yang berbeda 
+
+1379
+01:03:49,260 --> 01:03:50,940
+ karena sebenarnya ada beberapa hal menarik di sana. 
+
+1380
+01:03:50,940 --> 01:03:52,560
+ Mungkin ada template di sini, 
+
+1381
+01:03:52,560 --> 01:03:54,300
+ mungkin ada file log di sini, jadi Anda 
+
+1382
+01:03:54,300 --> 01:03:56,260
+ tidak ingin orang-orang ini tidak sengaja membaca 
+
+1383
+01:03:56,260 --> 01:03:59,940
+ file log untuk beberapa alasan, tapi ada 
+
+1384
+01:03:59,940 --> 01:04:02,510
+ tidak ada keadaan yang bisa berubah di dalam chroot yang dibagikan 
+
+1385
+01:04:02,510 --> 01:04:05,050
+ oleh semua okd dan layanannya. 
+
+1386
+01:04:05,050 --> 01:04:07,770
+ AUDIENCE: Jangan layanan memiliki, seperti, dua file 
+
+1387
+01:04:07,770 --> 01:04:11,032
+ atau, saya tidak tahu, file aspx. 
+
+1388
+01:04:11,032 --> 01:04:13,170
+ PROFESOR: Yah, setidaknya cara mereka menggambarkannya 
+
+1389
+01:04:13,170 --> 01:04:18,480
+ di koran, layanan ini adalah biner tunggal C ++ yang dikompilasi, 
+
+1390
+01:04:18,480 --> 01:04:23,477
+ jadi sebenarnya tidak ada file tambahan, dan ada templat, 
+
+1391
+01:04:23,477 --> 01:04:26,060
+ tetapi mereka benar-benar dilewatkan melalui mekanisme aneh ini, 
+
+1392
+01:04:26,060 --> 01:04:28,280
+ dimana pubd memiliki templat di direktorinya, 
+
+1393
+01:04:28,280 --> 01:04:31,560
+ itu membuat mereka-- atau semacam pra-menghitung mereka-- 
+
+1394
+01:04:31,560 --> 01:04:34,500
+ mengirim mereka ke okd dan okd memberikan template kepada semua 
+
+1395
+01:04:34,500 --> 01:04:35,960
+ layanan melalui panggilan RPC. 
+
+1396
+01:04:35,960 --> 01:04:38,020
+ Jadi mereka duduk dalam memori, tetapi sebenarnya tidak 
+
+1397
+01:04:38,020 --> 01:04:40,590
+ langsung dapat diakses melalui sistem file. 
+
+1398
+01:04:40,590 --> 01:04:43,170
+ Ini desain yang agak paranoid di sini. 
+
+1399
+01:04:43,170 --> 01:04:44,700
+ Bahkan tidak bisa membaca template. 
+
+1400
+01:04:44,700 --> 01:04:49,860
+
+
+1401
+01:04:49,860 --> 01:04:52,712
+ Jadi apa gunanya semua komponen ini berpisah? 
+
+1402
+01:04:52,712 --> 01:04:54,420
+ Jadi saya kira mari kita bicara tentang mungkin oklogd, 
+
+1403
+01:04:54,420 --> 01:04:56,530
+ jadi mengapa Anda memiliki oklogd yang terpisah? 
+
+1404
+01:04:56,530 --> 01:04:59,970
+
+
+1405
+01:04:59,970 --> 01:05:00,795
+ Ya. 
+
+1406
+01:05:00,795 --> 01:05:02,503
+ AUDIENCE: Karena jika Anda memiliki [INAUDIBLE], 
+
+1407
+01:05:02,503 --> 01:05:04,245
+ Anda bisa menimpa log, atau memotong log. 
+
+1408
+01:05:04,245 --> 01:05:05,230
+ PROFESOR: Ya, jadi kami benar-benar menginginkannya 
+
+1409
+01:05:05,230 --> 01:05:08,025
+ untuk memastikan bahwa jika ada yang salah, log, setidaknya, 
+
+1410
+01:05:08,025 --> 01:05:09,180
+ utuh. 
+
+1411
+01:05:09,180 --> 01:05:10,920
+ Jadi ada file log yang terpisah itu 
+
+1412
+01:05:10,920 --> 01:05:15,570
+ hanya dapat ditulis oleh uid ini, dan semua pesan log 
+
+1413
+01:05:15,570 --> 01:05:19,770
+ dikirim sebagai RPC ke layanan log ini, 
+
+1414
+01:05:19,770 --> 01:05:23,360
+ dan bahkan jika semuanya dikompromikan-- baik, 
+
+1415
+01:05:23,360 --> 01:05:26,940
+ kecuali okld-- maka lognya masih utuh, 
+
+1416
+01:05:26,940 --> 01:05:30,140
+ karena mereka berbicara tentang proses penambahan kebisingan 
+
+1417
+01:05:30,140 --> 01:05:30,644
+ ke log ini. 
+
+1418
+01:05:30,644 --> 01:05:31,560
+ Jadi tentang apa ini? 
+
+1419
+01:05:31,560 --> 01:05:32,390
+ Apakah ini penting? 
+
+1420
+01:05:32,390 --> 01:05:35,061
+ Haruskah kita khawatir tentang kebisingan ini? 
+
+1421
+01:05:35,061 --> 01:05:36,384
+ Ya. 
+
+1422
+01:05:36,384 --> 01:05:38,560
+ AUDIENCE: Jika entah bagaimana Anda tidak sengaja menemukan 
+
+1423
+01:05:38,560 --> 01:05:41,290
+ cara untuk membaca log dan Anda tidak dapat melihat apa 
+
+1424
+01:05:41,290 --> 01:05:42,866
+ yang telah dilakukan orang lain? 
+
+1425
+01:05:42,866 --> 01:05:45,240
+ PROFESOR: Tidak, saya pikir kebisingan ini sebenarnya 
+
+1426
+01:05:45,240 --> 01:05:48,970
+ khawatir tentang itu, misalkan Anda berkompromi 
+
+1427
+01:05:48,970 --> 01:05:52,394
+ layanan atau kompromi pubd atau sesuatu, 
+
+1428
+01:05:52,394 --> 01:05:54,310
+ Anda tiba-tiba mungkin bisa menulis log 
+
+1429
+01:05:54,310 --> 01:05:56,018
+ pesan ke log, dan Anda dapat benar-benar 
+
+1430
+01:05:56,018 --> 01:05:59,220
+ tulis apa pun yang Anda inginkan ke log pada saat itu. 
+
+1431
+01:05:59,220 --> 01:06:02,049
+ Jadi satu-satunya jaminan yang mereka klaim untuk berikan adalah, saya kira, 
+
+1432
+01:06:02,049 --> 01:06:04,340
+ sebelum titik kompromi, semua entri log 
+
+1433
+01:06:04,340 --> 01:06:07,370
+ masih utuh, dan setelahnya ada semacam log yang sah 
+
+1434
+01:06:07,370 --> 01:06:09,170
+ entri diselingi dengan apa pun 
+
+1435
+01:06:09,170 --> 01:06:12,400
+ lain penyerang ingin masuk. 
+
+1436
+01:06:12,400 --> 01:06:15,750
+ Satu hal yang benar-benar keren tentang memiliki oklogd menjadi terpisah 
+
+1437
+01:06:15,750 --> 01:06:19,220
+ proses alih-alih hanya menjadi file append-only, 
+
+1438
+01:06:19,220 --> 01:06:22,770
+ apakah oklogd tidak dapat menambahkan beberapa informasi tambahan ke setiap log 
+
+1439
+01:06:22,770 --> 01:06:26,080
+ masuk, karena Anda bisa membayangkan mungkin sistem operasi 
+
+1440
+01:06:26,080 --> 01:06:30,230
+ mendukung file append-only, tetapi kemudian Anda tidak benar-benar 
+
+1441
+01:06:30,230 --> 01:06:33,220
+ tahu siapa yang menulis apa pun ke file, saat itu, 
+
+1442
+01:06:33,220 --> 01:06:35,010
+ sedangkan oklogd, untuk setiap pesan, 
+
+1443
+01:06:35,010 --> 01:06:37,260
+ itu sebenarnya bisa cap waktu itu dan berkata, sebenarnya, 
+
+1444
+01:06:37,260 --> 01:06:40,250
+ Saya tahu ini berasal dari layanan ini, atau ini berasal dari okd, 
+
+1445
+01:06:40,250 --> 01:06:43,560
+ jadi Anda benar-benar mendapatkan informasi tambahan dalam file log itu 
+
+1446
+01:06:43,560 --> 01:06:46,270
+ karena ini adalah layanan terpisah di sini. 
+
+1447
+01:06:46,270 --> 01:06:49,110
+ Masuk akal? 
+
+1448
+01:06:49,110 --> 01:06:52,420
+ Jadi apa gunanya pria oktek ini? 
+
+1449
+01:06:52,420 --> 01:06:56,795
+ Mengapa kita perlu orang ini berlari sebagai root? 
+
+1450
+01:06:56,795 --> 01:06:58,540
+ Saya kira beberapa alasan. 
+
+1451
+01:06:58,540 --> 01:07:02,252
+ AUDIENCE: Jika Anda tidak ingin orang lain menjalankannya sebagai root, 
+
+1452
+01:07:02,252 --> 01:07:04,100
+ maka Anda perlu okld untuk mendelegasikan siapa itu. 
+
+1453
+01:07:04,100 --> 01:07:04,725
+ PROFESOR: Ya. 
+
+1454
+01:07:04,725 --> 01:07:07,250
+ Jadi seseorang perlu mengatur semua hal chroot cair ini, 
+
+1455
+01:07:07,250 --> 01:07:11,110
+ dan Anda perlu root untuk ini di Unix, jadi oke itu. 
+
+1456
+01:07:11,110 --> 01:07:12,505
+ Itu salah satu alasannya. 
+
+1457
+01:07:12,505 --> 01:07:13,240
+ Ada yang lain? 
+
+1458
+01:07:13,240 --> 01:07:14,220
+ AUDIENCE: Untuk mendefinisikan 80? 
+
+1459
+01:07:14,220 --> 01:07:14,940
+ PROFESOR: Oh, ya, ya. 
+
+1460
+01:07:14,940 --> 01:07:17,080
+ Ini seperti mendengarkan seluruh pada bisnis pelabuhan, 
+
+1461
+01:07:17,080 --> 01:07:23,400
+ Anda harus mengikat pada port 80, jadi okld melakukannya juga untuk kami. 
+
+1462
+01:07:23,400 --> 01:07:26,385
+ Ada yang lain? 
+
+1463
+01:07:26,385 --> 01:07:28,860
+ AUDIENCE: Lengkap untuk membuka file log oklogd. 
+
+1464
+01:07:28,860 --> 01:07:32,660
+ Anda tidak ingin membuka oklogd untuk memiliki akses untuk membuka file. 
+
+1465
+01:07:32,660 --> 01:07:34,961
+ Anda ingin membukanya untuk [INAUDIBLE]. 
+
+1466
+01:07:34,961 --> 01:07:35,669
+ PROFESOR: Mungkin. 
+
+1467
+01:07:35,669 --> 01:07:37,028
+ Sebenarnya, ya. 
+
+1468
+01:07:37,028 --> 01:07:38,740
+ Aku tidak tahu. 
+
+1469
+01:07:38,740 --> 01:07:40,610
+ Saya lupa ini dari kode sumber 
+
+1470
+01:07:40,610 --> 01:07:42,460
+ apakah mereka benar-benar melakukan ini atau tidak. 
+
+1471
+01:07:42,460 --> 01:07:43,380
+ Anda bisa membayangkan absolutley-- 
+
+1472
+01:07:43,380 --> 01:07:45,040
+ AUDIENCE: Saya pikir mereka menulisnya di koran juga. 
+
+1473
+01:07:45,040 --> 01:07:45,748
+ PROFESOR: Saya melihat. 
+
+1474
+01:07:45,748 --> 01:07:48,381
+ Jadi okld membuka file log dan memasukkannya? 
+
+1475
+01:07:48,381 --> 01:07:48,880
+ Bisa jadi. 
+
+1476
+01:07:48,880 --> 01:07:50,505
+ AUDIENCE: Karena jika tidak seorang penyerang 
+
+1477
+01:07:50,505 --> 01:07:53,100
+ oklogd yang disusupi akan dapat menghapus seluruh log. 
+
+1478
+01:07:53,100 --> 01:07:54,350
+ PROFESOR: Itu benar, ya. 
+
+1479
+01:07:54,350 --> 01:07:56,840
+ Jadi mungkin Anda ingin membuka dalam mode append-only 
+
+1480
+01:07:56,840 --> 01:07:59,616
+ dan kemudian berikan ke oklogd lalu 
+
+1481
+01:07:59,616 --> 01:08:02,300
+ Anda memiliki jaminan keamanan lebih untuk log. 
+
+1482
+01:08:02,300 --> 01:08:03,840
+ Ya, itu sebenarnya sangat keren. 
+
+1483
+01:08:03,840 --> 01:08:09,650
+ Saya melewatkan itu di atas kertas, tetapi sangat masuk akal, ya. 
+
+1484
+01:08:09,650 --> 01:08:12,200
+ Apa saja yang dilakukan okld untuk kita? 
+
+1485
+01:08:12,200 --> 01:08:14,174
+
+
+1486
+01:08:14,174 --> 01:08:15,340
+ Saya pikir itu pada dasarnya. 
+
+1487
+01:08:15,340 --> 01:08:16,756
+ Inilah hal-hal utama yang Anda 
+
+1488
+01:08:16,756 --> 01:08:18,910
+ tidak bisa kecuali Anda root, dan okld 
+
+1489
+01:08:18,910 --> 01:08:21,890
+ adalah semacam komponen yang akhirnya memiliki 
+
+1490
+01:08:21,890 --> 01:08:25,479
+ untuk melakukan semua operasi ini. 
+
+1491
+01:08:25,479 --> 01:08:29,439
+ Jadi saya kira kami punya pertanyaan pekerjaan rumah ini 
+
+1492
+01:08:29,439 --> 01:08:31,470
+ tentang apa yang terjadi jika Anda membocorkan 20 ini 
+
+1493
+01:08:31,470 --> 01:08:33,279
+ hal token database byte. 
+
+1494
+01:08:33,279 --> 01:08:34,720
+ Jadi apa yang kalian pikirkan? 
+
+1495
+01:08:34,720 --> 01:08:36,740
+ Apa kerusakannya? 
+
+1496
+01:08:36,740 --> 01:08:38,180
+ Haruskah kita membocorkan orang-orang ini? 
+
+1497
+01:08:38,180 --> 01:08:39,290
+ Haruskah kita khawatir tentang itu? 
+
+1498
+01:08:39,290 --> 01:08:42,060
+
+
+1499
+01:08:42,060 --> 01:08:42,643
+ Ada yang lain? 
+
+1500
+01:08:42,644 --> 01:08:45,404
+
+
+1501
+01:08:45,404 --> 01:08:47,728
+ AUDIENCE: Penyerang dapat berpura-pura 
+
+1502
+01:08:47,729 --> 01:08:49,640
+ menjadi layanan khusus [tidak terdengar]. 
+
+1503
+01:08:49,640 --> 01:08:50,889
+ PROFESOR: Itu benar, ya. 
+
+1504
+01:08:50,890 --> 01:08:52,790
+ Jadi, Anda sekarang dapat terhubung dan keluar, 
+
+1505
+01:08:52,790 --> 01:08:53,890
+ tentu saja, semua permintaan template ini. 
+
+1506
+01:08:53,890 --> 01:08:56,055
+ Itu sebenarnya cukup mudah, saya kira, 
+
+1507
+01:08:56,055 --> 01:08:57,308
+ dari gambar ini. 
+
+1508
+01:08:57,309 --> 01:08:59,600
+ Anda mungkin perlu mengkompromikan salah satu komponen ini 
+
+1509
+01:08:59,600 --> 01:09:01,109
+ untuk dapat terhubung ke database 
+
+1510
+01:09:01,109 --> 01:09:02,192
+ server di tempat pertama. 
+
+1511
+01:09:02,192 --> 01:09:04,680
+ Jadi saya kira jika Anda memiliki token ini 
+
+1512
+01:09:04,680 --> 01:09:08,550
+ dan Anda berhasil mengkompromikan salah satu bagian ini dalam gambar, 
+
+1513
+01:09:08,550 --> 01:09:11,631
+ maka Anda bisa menjalankan semua pertanyaan ini juga. 
+
+1514
+01:09:11,631 --> 01:09:13,619
+ Masuk akal? 
+
+1515
+01:09:13,620 --> 01:09:16,845
+ Hal yang cukup sederhana. 
+
+1516
+01:09:16,845 --> 01:09:21,600
+ OK, saya kira mari kita lihat, bisakah Anda melakukan lebih baik? 
+
+1517
+01:09:21,600 --> 01:09:24,310
+ Bisakah Anda melakukan lebih baik daripada desain OKWS ini? 
+
+1518
+01:09:24,310 --> 01:09:26,700
+ Kecuali untuk membuat seluruh argumen ini tentang, 
+
+1519
+01:09:26,700 --> 01:09:30,319
+ baik, kita mungkin bisa melakukan lebih baik, seperti mengalokasikan 
+
+1520
+01:09:30,319 --> 01:09:34,279
+ unit uid terpisah per pengguna dalam desain ini 
+
+1521
+01:09:34,279 --> 01:09:36,340
+ bukannya per layanan. 
+
+1522
+01:09:36,340 --> 01:09:39,689
+ Tapi di sini, setiap layanan, seperti buletin atau teman yang cocok 
+
+1523
+01:09:39,689 --> 01:09:43,240
+ atau pendaftaran akun adalah pengguna terpisah, 
+
+1524
+01:09:43,240 --> 01:09:49,979
+ tetapi setiap pengguna OKWS tidak benar-benar diwakili oleh UID Unix. 
+
+1525
+01:09:49,979 --> 01:09:53,960
+ Tidak benar-benar pengguna, mereka adalah ID layanan. 
+
+1526
+01:09:53,960 --> 01:10:00,040
+ Jadi, apakah masuk akal untuk memiliki cairan berbeda untuk setiap OKWS 
+
+1527
+01:10:00,040 --> 01:10:00,986
+ pelanggan? 
+
+1528
+01:10:00,986 --> 01:10:03,350
+ Apakah ada alasan untuk itu? 
+
+1529
+01:10:03,350 --> 01:10:03,850
+ Ya. 
+
+1530
+01:10:03,850 --> 01:10:06,260
+ AUDIENCE: Jadi saat ini, jika satu pengguna berkompromi 
+
+1531
+01:10:06,260 --> 01:10:09,450
+ layanan, maka mereka bisa mendapatkan akses ke semua pengguna lain 
+
+1532
+01:10:09,450 --> 01:10:10,910
+ data untuk server yang sama. 
+
+1533
+01:10:10,910 --> 01:10:12,340
+ PROFESOR: Itu benar, ya. 
+
+1534
+01:10:12,340 --> 01:10:14,589
+ AUDIENCE: Padahal, jika Anda memiliki-- terpisah pada dasarnya 
+
+1535
+01:10:14,589 --> 01:10:16,440
+ layanan terpisah dan dbproxy terpisah 
+
+1536
+01:10:16,440 --> 01:10:18,996
+ untuk setiap pengguna, tidak ada cara Anda 
+
+1537
+01:10:18,996 --> 01:10:20,620
+ bisa mengakses data orang lain juga. 
+
+1538
+01:10:20,620 --> 01:10:23,720
+ PROFESOR: Benar, tapi mungkinkah itu model yang lebih kuat? 
+
+1539
+01:10:23,720 --> 01:10:26,000
+ Jadi terutama untuk ... yah, kurasa 
+
+1540
+01:10:26,000 --> 01:10:28,930
+ sebenarnya ada dua alasan mengapa saya pikir orang-orang OKWS tidak 
+
+1541
+01:10:28,930 --> 01:10:31,542
+ pergi ke model ekstrim itu. 
+
+1542
+01:10:31,542 --> 01:10:33,750
+ Salah satunya adalah-- mereka membuat kesepakatan besar dalam paper-- ini 
+
+1543
+01:10:33,750 --> 01:10:34,730
+ adalah kinerja, bukan? 
+
+1544
+01:10:34,730 --> 01:10:37,150
+ Jadi jika Anda punya, saya tidak tahu, pasangan 
+
+1545
+01:10:37,150 --> 01:10:39,990
+ juta pengguna di OkCupid, lalu tiba-tiba Anda 
+
+1546
+01:10:39,990 --> 01:10:42,790
+ memiliki beberapa juta proses yang berjalan di sini, 
+
+1547
+01:10:42,790 --> 01:10:44,830
+ atau mungkin beberapa juta dbproxies, 
+
+1548
+01:10:44,830 --> 01:10:47,536
+ atau mungkin Anda dapat mengoptimalkan sesuatu di sisi dbproxy, 
+
+1549
+01:10:47,536 --> 01:10:50,660
+ tapi di sini, ya, Anda memiliki beberapa juta pengguna 
+
+1550
+01:10:50,660 --> 01:10:54,030
+ dan Anda memiliki banyak proses yang berjalan sepanjang waktu 
+
+1551
+01:10:54,030 --> 01:10:56,890
+ atau Anda memulai proses ini sesuai permintaan. 
+
+1552
+01:10:56,890 --> 01:10:59,900
+ Dan memulai suatu proses melibatkan beberapa jumlah yang tidak seimbang 
+
+1553
+01:10:59,900 --> 01:11:02,440
+ overhead, jadi Anda mungkin tidak akan melakukannya 
+
+1554
+01:11:02,440 --> 01:11:04,680
+ dapat memperoleh angka performa yang baik 
+
+1555
+01:11:04,680 --> 01:11:07,319
+ karena orang-orang ini dapat tampil dengan OKWS. 
+
+1556
+01:11:07,319 --> 01:11:08,610
+ Ada argumen kinerja. 
+
+1557
+01:11:08,610 --> 01:11:09,189
+ Pertanyaan. 
+
+1558
+01:11:09,189 --> 01:11:10,127
+ AUDIENCE: Ya, saya baru saja membaca 
+
+1559
+01:11:10,127 --> 01:11:12,452
+ di koran yang mengatakan kinerja sistem 
+
+1560
+01:11:12,452 --> 01:11:13,410
+ lebih baik dari yang lain? 
+
+1561
+01:11:13,410 --> 01:11:14,076
+ PROFESOR: Ya. 
+
+1562
+01:11:14,076 --> 01:11:15,345
+ AUDIENCE: Bagaimana bisa? 
+
+1563
+01:11:15,345 --> 01:11:19,580
+ PROFESOR: Yah, saya pikir itu sebagian karena mereka baik-baik saja 
+
+1564
+01:11:19,580 --> 01:11:23,330
+ desain mereka untuk beban kerja khusus mereka dan itu juga mereka 
+
+1565
+01:11:23,330 --> 01:11:25,050
+ tulis semuanya di C ++. 
+
+1566
+01:11:25,050 --> 01:11:27,510
+ Alternatifnya adalah Anda menulis beberapa hal dalam PHP, 
+
+1567
+01:11:27,510 --> 01:11:30,320
+ maka Anda mungkin akan menang di depan itu. 
+
+1568
+01:11:30,320 --> 01:11:33,250
+ Ini juga kasus yang tidak mereka lakukan 
+
+1569
+01:11:33,250 --> 01:11:36,900
+ memiliki hampir sebanyak fitur seperti, katakanlah, Apache memiliki. 
+
+1570
+01:11:36,900 --> 01:11:40,930
+ Apache memiliki desain tujuan yang sangat umum, 
+
+1571
+01:11:40,930 --> 01:11:42,780
+ jadi ada banyak proses yang berjalan, 
+
+1572
+01:11:42,780 --> 01:11:44,840
+ restart mereka setiap sesekali. 
+
+1573
+01:11:44,840 --> 01:11:47,349
+ Ini sebenarnya memiliki setiap koneksi ttp 
+
+1574
+01:11:47,349 --> 01:11:49,640
+ mengikat proses untuk durasi koneksi itu. 
+
+1575
+01:11:49,640 --> 01:11:50,962
+ Mereka menjaga-alives. 
+
+1576
+01:11:50,962 --> 01:11:52,920
+ Itu juga meningkatkan jumlah proses Anda 
+
+1577
+01:11:52,920 --> 01:11:55,100
+ harus berlari untuk desain mereka. 
+
+1578
+01:11:55,100 --> 01:11:57,110
+ Jadi semua hal itu hanya bertambah 
+
+1579
+01:11:57,110 --> 01:11:58,540
+ overhead untuk Apache, karena itu 
+
+1580
+01:11:58,540 --> 01:11:59,914
+ ingin menangani apa pun mungkin 
+
+1581
+01:11:59,914 --> 01:12:01,206
+ Anda bisa melakukannya dengan server web. 
+
+1582
+01:12:01,206 --> 01:12:03,164
+ Padahal orang-orang ini, saya pikir, sangat spesifik. 
+
+1583
+01:12:03,164 --> 01:12:05,770
+ Kami hanya akan menjalankan layanan ini, permintaan yang sangat cepat, 
+
+1584
+01:12:05,770 --> 01:12:10,077
+ dan bahkan tidak ada penyajian file statis, jika mereka dapat membantu. 
+
+1585
+01:12:10,077 --> 01:12:12,410
+ Tapi saya pikir sebenarnya ada server web lain di luar sana 
+
+1586
+01:12:12,410 --> 01:12:14,980
+ hari-hari ini yang mungkin bisa cocok dengan kinerja OKWS 
+
+1587
+01:12:14,980 --> 01:12:15,979
+ jika Anda benar-benar menginginkannya. 
+
+1588
+01:12:15,979 --> 01:12:18,660
+ Jadi, misalnya, Nginx adalah server web yang sangat optimal 
+
+1589
+01:12:18,660 --> 01:12:19,860
+ Anda dapat menjalankan hari-hari ini. 
+
+1590
+01:12:19,860 --> 01:12:22,590
+ Jika Anda ingin kinerja aplikasi cepat di sisi server, 
+
+1591
+01:12:22,590 --> 01:12:25,450
+ Anda mungkin ingin membuat proses berjalan sangat lama 
+
+1592
+01:12:25,450 --> 01:12:28,680
+ seperti hal layanan OKWS, dan cgi cepat 
+
+1593
+01:12:28,680 --> 01:12:31,610
+ adalah mekanisme umum, atau semacam protokol, 
+
+1594
+01:12:31,610 --> 01:12:33,240
+ yang bisa Anda gunakan di sisi server 
+
+1595
+01:12:33,240 --> 01:12:36,460
+ untuk menerapkan ini bahkan di Apache atau Nginx juga. 
+
+1596
+01:12:36,460 --> 01:12:39,110
+ Jadi saya pikir banyak dari ide-ide kinerja ini 
+
+1597
+01:12:39,110 --> 01:12:40,540
+ tidak eksklusif untuk OKWS. 
+
+1598
+01:12:40,540 --> 01:12:43,250
+ Anda tidak dapat melakukan trik kinerja yang sama 
+
+1599
+01:12:43,250 --> 01:12:45,040
+ di layanan lain juga. 
+
+1600
+01:12:45,040 --> 01:12:48,040
+ Mereka hanya menunjukkan keamanan yang lebih baik 
+
+1601
+01:12:48,040 --> 01:12:49,660
+ tidak menghalangi trik ini. 
+
+1602
+01:12:49,660 --> 01:12:51,810
+ Anda masih bisa mendapatkan pertunjukan. 
+
+1603
+01:12:51,810 --> 01:12:54,410
+ Saya kira untuk mereka, mereka baru saja memulai 
+
+1604
+01:12:54,410 --> 01:12:57,400
+ dengan desain mirip Apache, di mana 
+
+1605
+01:12:57,400 --> 01:12:59,900
+ mereka bersedia membayar harga jika mudah untuk memprogram 
+
+1606
+01:12:59,900 --> 01:13:02,066
+ dan aman, tetapi itu tidak aman, jadi mereka berkata, 
+
+1607
+01:13:02,066 --> 01:13:03,600
+ OK, baik kita akan melakukan ini, dan aku tidak 
+
+1608
+01:13:03,600 --> 01:13:06,540
+ pikir pertunjukan itu seperti seharusnya 
+
+1609
+01:13:06,540 --> 01:13:07,780
+ tujuan besar bagi mereka. 
+
+1610
+01:13:07,780 --> 01:13:10,240
+ Saya kira mereka ingin - baik, pada saat mereka 
+
+1611
+01:13:10,240 --> 01:13:11,530
+ memiliki beberapa masalah dalam hal kinerja juga, 
+
+1612
+01:13:11,530 --> 01:13:13,488
+ jadi saya pikir mereka sangat menginginkan kinerja yang baik. 
+
+1613
+01:13:13,488 --> 01:13:17,464
+
+
+1614
+01:13:17,464 --> 01:13:21,240
+ Ada pertanyaan lain tentang hal ini? 
+
+1615
+01:13:21,240 --> 01:13:22,250
+ BAIK. 
+
+1616
+01:13:22,250 --> 01:13:25,620
+ Jadi saya kira itu mengatakan, satu alasan 
+
+1617
+01:13:25,620 --> 01:13:28,560
+ mengapa orang-orang ini tidak ingin menjalankan layanan terpisah per pengguna 
+
+1618
+01:13:28,560 --> 01:13:31,710
+ adalah fakta bahwa ada overhead kinerja 
+
+1619
+01:13:31,710 --> 01:13:32,630
+ dalam melakukan itu. 
+
+1620
+01:13:32,630 --> 01:13:35,175
+ Alasan lainnya adalah model aplikasi lengkap mereka 
+
+1621
+01:13:35,175 --> 01:13:39,170
+ semacam engsel di sekitar layanan yang harus mendapatkan akses 
+
+1622
+01:13:39,170 --> 01:13:42,650
+ untuk setiap data pengguna, seperti mencari teman di OkCupid 
+
+1623
+01:13:42,650 --> 01:13:45,460
+ atau seseorang yang berkencan dengannya. 
+
+1624
+01:13:45,460 --> 01:13:49,659
+ Dan sebagai hasilnya, model isolasi per pengguna ini 
+
+1625
+01:13:49,659 --> 01:13:51,950
+ mungkin tidak masuk akal, karena pada akhirnya ada 
+
+1626
+01:13:51,950 --> 01:13:55,780
+ harus menjadi layanan yang akan Anda kirimi permintaan, 
+
+1627
+01:13:55,780 --> 01:13:57,900
+ dan itu akan melihat data orang lain 
+
+1628
+01:13:57,900 --> 01:13:59,970
+ untuk menemukan pasanganmu. 
+
+1629
+01:13:59,970 --> 01:14:04,600
+ Jadi itu mungkin, sebagai hasilnya, tidak benar-benar setuju, seperti, 
+
+1630
+01:14:04,600 --> 01:14:08,004
+ bahkan jika Anda memiliki ID pengguna atau semacam per isolasi pengguna 
+
+1631
+01:14:08,004 --> 01:14:09,920
+ mekanisme, Anda harus memberikan layanan itu 
+
+1632
+01:14:09,920 --> 01:14:12,730
+ akses ke setiap userid. 
+
+1633
+01:14:12,730 --> 01:14:15,700
+ Jadi untuk layanan lain seperti mungkin Gmail atau Dropbox, 
+
+1634
+01:14:15,700 --> 01:14:17,390
+ di mana itu lebih fokus pada pengguna 
+
+1635
+01:14:17,390 --> 01:14:20,380
+ dan tidak ada pembagian, lalu isolasi per pengguna 
+
+1636
+01:14:20,380 --> 01:14:22,610
+ mungkin lebih masuk akal dalam hal manfaat 
+
+1637
+01:14:22,610 --> 01:14:25,410
+ Anda bisa keluar dari itu, karena jika ada 
+
+1638
+01:14:25,410 --> 01:14:29,790
+ seorang pengguna di server Dropbox untuk setiap pelanggan Dropbox, 
+
+1639
+01:14:29,790 --> 01:14:32,782
+ kemudian, yah, ada proses yang berjalan untuk Anda 
+
+1640
+01:14:32,782 --> 01:14:34,740
+ dan ada proses yang berjalan untuk orang lain, 
+
+1641
+01:14:34,740 --> 01:14:36,310
+ dan jika Anda mengeksploitasi bug, maka Anda 
+
+1642
+01:14:36,310 --> 01:14:37,920
+ tidak bisa menyentuh data orang lain. 
+
+1643
+01:14:37,920 --> 01:14:39,676
+ Tapi bisa jadi keren, saya tidak tahu. 
+
+1644
+01:14:39,676 --> 01:14:42,050
+ Dropbox mungkin tidak melakukan ini karena alasan kinerja, 
+
+1645
+01:14:42,050 --> 01:14:43,716
+ tetapi Anda bisa mendapatkan beberapa manfaat keamanan. 
+
+1646
+01:14:43,716 --> 01:14:46,890
+ Sedangkan, untuk orang-orang OKWS, dan bahkan fungsionalitas-bijaksana, 
+
+1647
+01:14:46,890 --> 01:14:48,800
+ mereka tidak akan dapat mengambil keuntungan 
+
+1648
+01:14:48,800 --> 01:14:50,830
+ sebanyak dari model ini. 
+
+1649
+01:14:50,830 --> 01:14:52,860
+ Jadi mungkin untuk layanan pengeditan profil Anda, 
+
+1650
+01:14:52,860 --> 01:14:54,730
+ mungkin itu bisa dijalankan per pengguna, 
+
+1651
+01:14:54,730 --> 01:14:57,192
+ tetapi hal yang cocok masih akan dibagikan. 
+
+1652
+01:14:57,192 --> 01:14:59,760
+ Masuk akal? 
+
+1653
+01:14:59,760 --> 01:15:00,260
+ Baiklah. 
+
+1654
+01:15:00,260 --> 01:15:03,290
+ Jadi mari kita lihat apakah OKWS benar-benar mengelola 
+
+1655
+01:15:03,290 --> 01:15:05,190
+ untuk meningkatkan keamanan di sini. 
+
+1656
+01:15:05,190 --> 01:15:08,269
+ Jadi ketika kita memikirkan apakah suatu sistem aman atau tidak 
+
+1657
+01:15:08,269 --> 01:15:10,810
+ adalah melihat semua komponen dan melihat, yah, pertama-tama, 
+
+1658
+01:15:10,810 --> 01:15:11,893
+ apa permukaan serangannya? 
+
+1659
+01:15:11,893 --> 01:15:13,780
+ Artinya, bagaimana Anda akan mencoba berkompromi 
+
+1660
+01:15:13,780 --> 01:15:15,770
+ komponen itu, atau seberapa sulitnya, 
+
+1661
+01:15:15,770 --> 01:15:17,330
+ dan kedua apa kerusakannya? 
+
+1662
+01:15:17,330 --> 01:15:19,390
+ Jadi mari kita lihat daftar ini. 
+
+1663
+01:15:19,390 --> 01:15:23,770
+ Mari kita mulai dengan okd, jadi apa permukaan serangannya? 
+
+1664
+01:15:23,770 --> 01:15:30,020
+ Apa saja yang bisa Anda gunakan untuk menyerangnya? 
+
+1665
+01:15:30,020 --> 01:15:31,835
+ [TIDAK JELAS], seperti semua permintaan ini 
+
+1666
+01:15:31,835 --> 01:15:32,882
+ berasal dari browser. 
+
+1667
+01:15:32,882 --> 01:15:33,840
+ Itu sepertinya cukup bagus. 
+
+1668
+01:15:33,840 --> 01:15:35,510
+ Anda dapat mengendalikannya mungkin dalam banyak cara, 
+
+1669
+01:15:35,510 --> 01:15:36,993
+ Anda dapat mengirim banyak masukan aneh. 
+
+1670
+01:15:36,993 --> 01:15:37,960
+ AUDIENCE: [TIDAK JELAS]. 
+
+1671
+01:15:37,960 --> 01:15:39,459
+ PROFESOR: Ya, jadi mungkin ada-- 
+
+1672
+01:15:39,459 --> 01:15:42,210
+ Hal ini ditulis dalam C ++, jadi mungkin orang-orang ini 
+
+1673
+01:15:42,210 --> 01:15:42,710
+ ceroboh. 
+
+1674
+01:15:42,710 --> 01:15:44,251
+ Saya pikir orang ini adalah programmer yang baik, 
+
+1675
+01:15:44,251 --> 01:15:47,440
+ tetapi jika dia tidak terlalu berhati-hati di suatu tempat, 
+
+1676
+01:15:47,440 --> 01:15:49,235
+ bisa dengan mudah dieksploitasi. 
+
+1677
+01:15:49,235 --> 01:15:50,110
+ Jadi apa kerusakannya? 
+
+1678
+01:15:50,110 --> 01:15:52,335
+ Misalkan Anda menemukan buffer overflow atau beberapa bug lainnya 
+
+1679
+01:15:52,335 --> 01:15:53,070
+ di okd? 
+
+1680
+01:15:53,070 --> 01:15:54,690
+ Seberapa buruk ini? 
+
+1681
+01:15:54,690 --> 01:16:03,139
+
+
+1682
+01:16:03,139 --> 01:16:04,079
+ Ya. 
+
+1683
+01:16:04,079 --> 01:16:06,620
+ AUDIENCE: Pada dasarnya Anda dapat memanggil layanan apa pun di mesin itu? 
+
+1684
+01:16:06,620 --> 01:16:09,010
+ PROFESOR: Ya, oke, jadi Anda bisa memanggil layanan apa pun. 
+
+1685
+01:16:09,010 --> 01:16:09,870
+ Apakah itu buruk? 
+
+1686
+01:16:09,870 --> 01:16:12,159
+ Bagaimana seharusnya kita memikirkan ini? 
+
+1687
+01:16:12,159 --> 01:16:14,242
+ AUDIENCE: Anda dapat memanggil masukan apa pun yang Anda inginkan. 
+
+1688
+01:16:14,242 --> 01:16:15,720
+ PROFESOR: Itu benar, ya. 
+
+1689
+01:16:15,720 --> 01:16:18,742
+ Tapi Anda mungkin bisa melakukannya tanpa kompromi, 
+
+1690
+01:16:18,742 --> 01:16:20,700
+ karena Anda dapat mengirim permintaan http yang Anda inginkan, 
+
+1691
+01:16:20,700 --> 01:16:23,340
+ yang pada dasarnya apa permintaan layanan ini berakhir. 
+
+1692
+01:16:23,340 --> 01:16:25,020
+ Mungkin itu sebenarnya tidak terlalu buruk. 
+
+1693
+01:16:25,020 --> 01:16:26,178
+ Ya. 
+
+1694
+01:16:26,178 --> 01:16:30,360
+ AUDIENCE: Bisakah itu mengarahkan semua lalu lintas untuk situs web mungkin OK? 
+
+1695
+01:16:30,360 --> 01:16:31,230
+ PROFESOR: Ya. 
+
+1696
+01:16:31,230 --> 01:16:32,910
+ Itu sebenarnya terlihat sedikit lebih merusak, bukan? 
+
+1697
+01:16:32,910 --> 01:16:35,034
+ Anda dapat tiba-tiba mengambil alih seluruh situs web 
+
+1698
+01:16:35,034 --> 01:16:36,957
+ dan melayani halaman Anda alih-alih mengirim 
+
+1699
+01:16:36,957 --> 01:16:38,040
+ permintaan ke layanan. 
+
+1700
+01:16:38,040 --> 01:16:39,956
+ Anda dapat mengalihkan semua orang ke match.com 
+
+1701
+01:16:39,956 --> 01:16:42,250
+ atau siapa pun yang Anda inginkan, saya tidak tahu. 
+
+1702
+01:16:42,250 --> 01:16:47,430
+ Saya kira sekarang mereka membeli OkCupid tetapi, sebelumnya, siapa yang tahu. 
+
+1703
+01:16:47,430 --> 01:16:49,180
+ Oke, ada yang lain? 
+
+1704
+01:16:49,180 --> 01:16:52,190
+ Bisakah Anda membocorkan data dengan cara apa pun? 
+
+1705
+01:16:52,190 --> 01:16:52,690
+ Ya. 
+
+1706
+01:16:52,690 --> 01:16:54,906
+ AUDIENCE: Yah, itu tergantung pada, seperti jika Anda 
+
+1707
+01:16:54,906 --> 01:16:56,965
+ gunakan otentikasi apa pun di okd. 
+
+1708
+01:16:56,965 --> 01:16:59,815
+ Alih-alih SVC, Anda berpotensi 
+
+1709
+01:16:59,815 --> 01:17:02,082
+ hanya melakukan permintaan yang tidak sah, seperti di database? 
+
+1710
+01:17:02,082 --> 01:17:02,790
+ PROFESOR: Benar. 
+
+1711
+01:17:02,790 --> 01:17:04,700
+ Dalam kasus mereka, orang ini hanya mem-parsing dan meneruskan permintaan itu 
+
+1712
+01:17:04,700 --> 01:17:05,402
+ di. 
+
+1713
+01:17:05,402 --> 01:17:07,924
+ AUDIENCE: Mungkinkah [tidak terdengar]? 
+
+1714
+01:17:07,924 --> 01:17:08,590
+ PROFESOR: Ya. 
+
+1715
+01:17:08,590 --> 01:17:09,850
+ Anda tidak hanya dapat mengalihkannya terlebih dahulu, 
+
+1716
+01:17:09,850 --> 01:17:12,433
+ Anda sebenarnya bisa mencari semua permintaan berikutnya, yang 
+
+1717
+01:17:12,433 --> 01:17:15,030
+ mungkin termasuk kata sandi pengguna lain yang terhubung 
+
+1718
+01:17:15,030 --> 01:17:18,870
+ ke situs, dan Anda dapat menyimpan kata sandinya 
+
+1719
+01:17:18,870 --> 01:17:21,400
+ atau mengubah permintaan mereka atau melihat apa yang mereka lakukan 
+
+1720
+01:17:21,400 --> 01:17:23,007
+ atau mengambil barang atas nama mereka. 
+
+1721
+01:17:23,007 --> 01:17:24,340
+ Itu tampaknya berpotensi merusak. 
+
+1722
+01:17:24,340 --> 01:17:25,714
+ Itu mungkin kebocoran terbesar. 
+
+1723
+01:17:25,714 --> 01:17:28,445
+ Jika Anda berkompromi okd, Anda mungkin dapat melihat permintaan lain 
+
+1724
+01:17:28,445 --> 01:17:31,820
+ dan mencuri kata sandi kredensial orang, mencuri datanya 
+
+1725
+01:17:31,820 --> 01:17:33,268
+ saat mengalir. 
+
+1726
+01:17:33,268 --> 01:17:34,762
+ Masuk akal? 
+
+1727
+01:17:34,762 --> 01:17:37,760
+ AUDIENCE: Bisakah Anda melakukan semacam penolakan layanan dengan adil 
+
+1728
+01:17:37,760 --> 01:17:38,676
+ dengan mengirim keseluruhan-- 
+
+1729
+01:17:38,676 --> 01:17:39,120
+
+
+1730
+01:17:39,120 --> 01:17:41,370
+ PROFESOR: Ya, jadi Anda mungkin bisa mengunyah CPU 
+
+1731
+01:17:41,370 --> 01:17:43,634
+ atau mengirim banyak permintaan untuk ini, mengisi database 
+
+1732
+01:17:43,634 --> 01:17:45,550
+ dengan banyak data, tetapi Anda mungkin bisa 
+
+1733
+01:17:45,550 --> 01:17:48,050
+ lakukan bahkan dengan hanya mengirim banyak permintaan di tempat pertama. 
+
+1734
+01:17:48,050 --> 01:17:51,820
+ Jadi sekarang [tidak terdengar] agak rumit - baik, berbeda. 
+
+1735
+01:17:51,820 --> 01:17:52,320
+ Ya. 
+
+1736
+01:17:52,320 --> 01:17:54,362
+ AUDIENCE: Jadi, tujuannya di sini bukan untuk membocorkan data-- 
+
+1737
+01:17:54,362 --> 01:17:55,028
+ PROFESOR: Ya. 
+
+1738
+01:17:55,028 --> 01:17:56,810
+ AUDIENCE: - dari layanan yang berbeda. 
+
+1739
+01:17:56,810 --> 01:17:58,519
+ Jika Anda memiliki akses ke okd, mungkin Anda 
+
+1740
+01:17:58,519 --> 01:18:00,434
+ dapat membaca tanggapan yang dikirim-- 
+
+1741
+01:18:00,434 --> 01:18:00,630
+
+
+1742
+01:18:00,630 --> 01:18:01,671
+ PROFESOR: Ya, tepatnya. 
+
+1743
+01:18:01,671 --> 01:18:05,270
+ Jadi sebenarnya, oke harus cukup bisa dipercaya, 
+
+1744
+01:18:05,270 --> 01:18:10,073
+ karena tanggapannya tidak langsung kembali melalui okd 
+
+1745
+01:18:10,073 --> 01:18:13,240
+ dalam operasi normal, karena Anda baru saja lulus dari fd, 
+
+1746
+01:18:13,240 --> 01:18:15,134
+ dan layanan langsung menulis ke fd. 
+
+1747
+01:18:15,134 --> 01:18:17,550
+ Tetapi Anda benar-benar dapat memalsukannya dan membuat fd Anda sendiri di sini. 
+
+1748
+01:18:17,550 --> 01:18:19,466
+ Jadi jika Anda berkompromi, pada dasarnya Anda bisa 
+
+1749
+01:18:19,466 --> 01:18:23,405
+ perhatikan semua lalu lintas dan mencuri kata sandi orang di sana. 
+
+1750
+01:18:23,405 --> 01:18:24,710
+ AUDIENCE: Tapi, cara lain-- 
+
+1751
+01:18:24,710 --> 01:18:26,043
+ PROFESOR: Dan jawabannya adalah-- 
+
+1752
+01:18:26,043 --> 01:18:26,314
+
+
+1753
+01:18:26,314 --> 01:18:27,162
+ AUDIENCE: --untuk output, yang berarti bahwa pada dasarnya Anda dapatkan 
+
+1754
+01:18:27,162 --> 01:18:27,240
+ mengakses-- 
+
+1755
+01:18:27,240 --> 01:18:27,590
+
+
+1756
+01:18:27,590 --> 01:18:28,590
+ PROFESOR: Benar. 
+
+1757
+01:18:28,590 --> 01:18:31,240
+ Ya, jadi Anda bisa-- Jika okd dikompromikan 
+
+1758
+01:18:31,240 --> 01:18:33,510
+ dan saya kebetulan masuk ke situs itu, 
+
+1759
+01:18:33,510 --> 01:18:35,135
+ Anda mungkin bisa melihat tanggapan saya 
+
+1760
+01:18:35,135 --> 01:18:37,150
+ dan Anda bahkan mungkin bisa mengambil kata sandi saya 
+
+1761
+01:18:37,150 --> 01:18:39,200
+ dan mengirim permintaan lain dengan kredensial saya 
+
+1762
+01:18:39,200 --> 01:18:40,571
+ dan dapatkan data dari sana juga. 
+
+1763
+01:18:40,571 --> 01:18:41,070
+ Ya. 
+
+1764
+01:18:41,070 --> 01:18:42,410
+ AUDIENCE: Dan kemudian pada dasarnya merekonstruksi keseluruhan 
+
+1765
+01:18:42,410 --> 01:18:42,852
+ database. 
+
+1766
+01:18:42,852 --> 01:18:43,294
+ PROFESOR: Tepat sekali. 
+
+1767
+01:18:43,294 --> 01:18:44,572
+ Ya, atau setidaknya untuk pengguna yang dulu 
+
+1768
+01:18:44,572 --> 01:18:46,900
+ login pada saat itu dan hal-hal yang dapat Anda rekonstruksi. 
+
+1769
+01:18:46,900 --> 01:18:48,410
+ Ini sangat merusak, kan? 
+
+1770
+01:18:48,410 --> 01:18:52,710
+ Jadi komponen ini sebenarnya agak merepotkan di sini. 
+
+1771
+01:18:52,710 --> 01:18:54,906
+ Apa yang terjadi jika kita berkompromi, katakanlah, oklogd? 
+
+1772
+01:18:54,906 --> 01:18:56,270
+ Seberapa buruk itu? 
+
+1773
+01:18:56,270 --> 01:18:59,735
+
+
+1774
+01:18:59,735 --> 01:19:00,725
+ Ya. 
+
+1775
+01:19:00,725 --> 01:19:03,302
+ AUDIENCE: [INAUDIBLE] sangat buruk. 
+
+1776
+01:19:03,302 --> 01:19:05,760
+ PROFESOR: Ya, jadi ada seperti semua data rahasia ini 
+
+1777
+01:19:05,760 --> 01:19:07,843
+ di entri log, maka itu mungkin tidak baik, 
+
+1778
+01:19:07,843 --> 01:19:11,560
+ tetapi jika tidak, Anda mungkin tidak dapat mengakses basis data secara langsung, 
+
+1779
+01:19:11,560 --> 01:19:12,420
+ kanan? 
+
+1780
+01:19:12,420 --> 01:19:15,220
+ Pubd, saya kira Anda mungkin merusak template, atau sesuatu 
+
+1781
+01:19:15,220 --> 01:19:18,510
+ seperti ini, kirim permintaan dan tanggapan yang berbeda, maksud saya. 
+
+1782
+01:19:18,510 --> 01:19:19,010
+ Ya. 
+
+1783
+01:19:19,010 --> 01:19:20,510
+ AUDIENCE: Jadi ini tentang logd. 
+
+1784
+01:19:20,510 --> 01:19:23,836
+ Agaknya okdlogd tidak memiliki akses untuk membaca log. 
+
+1785
+01:19:23,836 --> 01:19:24,661
+ Itu hanya needs-- 
+
+1786
+01:19:24,661 --> 01:19:24,833
+
+
+1787
+01:19:24,833 --> 01:19:25,916
+ PROFESOR: Ah, ya, ya. 
+
+1788
+01:19:25,916 --> 01:19:26,090
+ Poin bagus. 
+
+1789
+01:19:26,090 --> 01:19:27,340
+ Yah, itu tergantung bagaimana mereka melakukannya, kan? 
+
+1790
+01:19:27,340 --> 01:19:29,090
+ Jika mereka benar-benar memiliki file append-only ini, 
+
+1791
+01:19:29,090 --> 01:19:31,695
+ maka mungkin Anda bahkan tidak bisa membaca log, jadi-- 
+
+1792
+01:19:31,695 --> 01:19:33,570
+ AUDIENCE: Yang bisa Anda lakukan adalah menambahkan sampah. 
+
+1793
+01:19:33,570 --> 01:19:34,050
+ PROFESOR: Itu benar, ya. 
+
+1794
+01:19:34,050 --> 01:19:35,780
+ Jadi Anda bisa menulis banyak sampah, 
+
+1795
+01:19:35,780 --> 01:19:38,400
+ tetapi jika mereka menggunakan OS untuk menerapkan log append-only, 
+
+1796
+01:19:38,400 --> 01:19:40,470
+ dan tidak membaca, maka Anda mungkin sebenarnya 
+
+1797
+01:19:40,470 --> 01:19:42,065
+ dalam kondisi baik untuk isi log. 
+
+1798
+01:19:42,065 --> 01:19:42,564
+ Ya. 
+
+1799
+01:19:42,564 --> 01:19:45,102
+ AUDIENCE: Yah, saya kira juga, Anda tidak bisa menambahkan. 
+
+1800
+01:19:45,102 --> 01:19:46,352
+ Jadi ketika log yang valid masuk-- 
+
+1801
+01:19:46,352 --> 01:19:46,452
+
+
+1802
+01:19:46,452 --> 01:19:48,910
+ PROFESOR: Benar, jadi Anda mungkin bisa memblokir entri nyata, 
+
+1803
+01:19:48,910 --> 01:19:49,909
+ isi dengan sampah. 
+
+1804
+01:19:49,909 --> 01:19:53,130
+ Anda juga dapat menonton entri baru dan setidaknya mengkompromikannya. 
+
+1805
+01:19:53,130 --> 01:19:54,796
+ AUDIENCE: Atau jika Anda mengandalkan tarif 
+
+1806
+01:19:54,796 --> 01:19:56,248
+ batas jumlah login. 
+
+1807
+01:19:56,248 --> 01:19:56,748
+
+
+1808
+01:19:56,748 --> 01:19:58,063
+ PROFESOR: Itu benar, ya. 
+
+1809
+01:19:58,063 --> 01:19:59,188
+ Anda mungkin bisa melakukan itu. 
+
+1810
+01:19:59,188 --> 01:19:59,688
+ BAIK. 
+
+1811
+01:19:59,688 --> 01:20:01,560
+ Jadi bagaimana dengan layanannya? 
+
+1812
+01:20:01,560 --> 01:20:03,310
+ Itu, saya pikir, faktor serangan utama mereka, 
+
+1813
+01:20:03,310 --> 01:20:06,040
+ karena-- sebenarnya, di sebagian besar sistem ini, apa yang Anda 
+
+1814
+01:20:06,040 --> 01:20:09,120
+ benar-benar khawatir tentang adalah komponen satu-off, 
+
+1815
+01:20:09,120 --> 01:20:12,960
+ karena bahkan di Apache, kode Apache mungkin 
+
+1816
+01:20:12,960 --> 01:20:14,000
+ cukup bagus. 
+
+1817
+01:20:14,000 --> 01:20:15,980
+ Seperti jutaan orang yang menjalankannya, 
+
+1818
+01:20:15,980 --> 01:20:17,890
+ semua orang mencari bug di dalamnya. 
+
+1819
+01:20:17,890 --> 01:20:21,390
+ Mungkin [TIDAK JELAS] tidak banyak bug di Apache itu sendiri 
+
+1820
+01:20:21,390 --> 01:20:26,370
+ atau, yah, bahkan di SSL, untuk semua kehebohan yang baru-baru ini kita dengar 
+
+1821
+01:20:26,370 --> 01:20:29,370
+ tentang [TIDAK JELAS] dan masih bug mungkin tidak seburuk 
+
+1822
+01:20:29,370 --> 01:20:32,420
+ sebagai kode aplikasi yang Anda tulis untuk situs tertentu, 
+
+1823
+01:20:32,420 --> 01:20:34,569
+ karena tidak ada orang lain yang meninjau kode itu. 
+
+1824
+01:20:34,569 --> 01:20:36,110
+ Anda baru saja menulisnya, Anda belum benar-benar 
+
+1825
+01:20:36,110 --> 01:20:37,193
+ diuji dengan sangat teliti. 
+
+1826
+01:20:37,193 --> 01:20:40,370
+ Itu mungkin di mana sebagian besar bug dalam sistem yang kompleks 
+
+1827
+01:20:40,370 --> 01:20:41,380
+ sebenarnya berbohong. 
+
+1828
+01:20:41,380 --> 01:20:44,800
+ Jadi kode layanan mungkin setara untuk OKWS. 
+
+1829
+01:20:44,800 --> 01:20:46,820
+ Komponen-komponen ini ditulis oleh Max Krohn. 
+
+1830
+01:20:46,820 --> 01:20:50,000
+ Dia berhati-hati untuk memastikan tidak ada buffer overflows. 
+
+1831
+01:20:50,000 --> 01:20:52,160
+ Komponen ini ditulis oleh beberapa pengembang web yang 
+
+1832
+01:20:52,160 --> 01:20:54,710
+ ingin menyebarkan fitur berikutnya secepat mungkin, 
+
+1833
+01:20:54,710 --> 01:20:56,840
+ jadi ini adalah bagian di mana saya pikir mereka benar-benar 
+
+1834
+01:20:56,840 --> 01:21:00,710
+ khawatir tentang bug menjadi semacam dieksploitasi dan berpotensi 
+
+1835
+01:21:00,710 --> 01:21:02,010
+ merusak. 
+
+1836
+01:21:02,010 --> 01:21:04,570
+ Tapi semoga kerusakan di sini tidak terlalu besar, dalam arti 
+
+1837
+01:21:04,570 --> 01:21:08,960
+ bahwa Anda hanya dapat mengeluarkan pertanyaan apa pun yang diizinkan 
+
+1838
+01:21:08,960 --> 01:21:11,980
+ dilakukan oleh proxy basis data. 
+
+1839
+01:21:11,980 --> 01:21:13,450
+ Masuk akal? 
+
+1840
+01:21:13,450 --> 01:21:14,690
+ Jadi bagaimana dengan okld? 
+
+1841
+01:21:14,690 --> 01:21:16,890
+ Ini sedikit jempol di sini. 
+
+1842
+01:21:16,890 --> 01:21:18,804
+ Ini seperti, berjalan sebagai root. 
+
+1843
+01:21:18,804 --> 01:21:20,220
+ Berapa banyak yang harus kita khawatirkan? 
+
+1844
+01:21:20,220 --> 01:21:22,553
+ Tentu saja, kerusakannya cukup besar jika kita kompromi. 
+
+1845
+01:21:22,553 --> 01:21:24,700
+ Anda mendapatkan akses ke semua yang ada di mesin dan semua 
+
+1846
+01:21:24,700 --> 01:21:26,640
+ token proxy basis data. 
+
+1847
+01:21:26,640 --> 01:21:29,770
+ Seberapa sulit kompromi okld? 
+
+1848
+01:21:29,770 --> 01:21:32,350
+ Apa sinyal - apa yang bisa Anda gunakan? 
+
+1849
+01:21:32,350 --> 01:21:36,770
+
+
+1850
+01:21:36,770 --> 01:21:40,375
+ Apakah itu mengambil masukan? 
+
+1851
+01:21:40,375 --> 01:21:44,239
+ AUDIENCE: [TIDAK JELAS] dalam pola yang sangat spesifik. 
+
+1852
+01:21:44,239 --> 01:21:47,800
+ PROFESOR: Ya, cukup banyak masukan yang diperlukan 
+
+1853
+01:21:47,800 --> 01:21:50,170
+ adalah ketika seorang anak keluar dan mendapat pemberitahuan 
+
+1854
+01:21:50,170 --> 01:21:52,780
+ bahwa proses anak keluar dan kemudian mungkin itu 
+
+1855
+01:21:52,780 --> 01:21:55,650
+ meresponnya, atau tidak, jika tingkatnya terbatas. 
+
+1856
+01:21:55,650 --> 01:21:57,789
+ Jadi jika ada semacam kondisi menghapus 
+
+1857
+01:21:57,789 --> 01:21:59,330
+ atau bug yang menangani persisnya-- itu 
+
+1858
+01:21:59,330 --> 01:22:01,329
+ banyak banyak jalan keluar menarik pada saat yang sama, 
+
+1859
+01:22:01,329 --> 01:22:03,120
+ maka mungkin Anda bisa memicu sesuatu yang buruk, 
+
+1860
+01:22:03,120 --> 01:22:04,920
+ tetapi bahkan kemudian tampaknya sulit untuk dibayangkan 
+
+1861
+01:22:04,920 --> 01:22:09,505
+ menyuntikkan semacam kode shell melalui pola keluar. 
+
+1862
+01:22:09,505 --> 01:22:13,930
+ Jadi mungkin hal yang wajar harus dijalankan sebagai root, 
+
+1863
+01:22:13,930 --> 01:22:17,520
+ karena tidak membutuhkan banyak masukan. 
+
+1864
+01:22:17,520 --> 01:22:18,550
+ Masuk akal? 
+
+1865
+01:22:18,550 --> 01:22:20,149
+ Pertanyaan Lain? 
+
+1866
+01:22:20,149 --> 01:22:21,690
+ AUDIENCE: Jadi agaknya perhatian besar 
+
+1867
+01:22:21,690 --> 01:22:24,496
+ akan jika Anda berhasil entah bagaimana mengeksploitasi dbproxy. 
+
+1868
+01:22:24,496 --> 01:22:25,246
+ PROFESOR: Uh-huh. 
+
+1869
+01:22:25,246 --> 01:22:28,730
+ AUDIENCE: Jika ternyata tidak, seperti, 
+
+1870
+01:22:28,730 --> 01:22:30,950
+ ini menyediakan RPC yang terbatas dalam ruang lingkup, 
+
+1871
+01:22:30,950 --> 01:22:33,695
+ tetapi jika ada beberapa masukan yang bisa Anda berikan, itu ternyata 
+
+1872
+01:22:33,695 --> 01:22:35,070
+ untuk menjalankan permintaan yang berbeda dari itu 
+
+1873
+01:22:35,070 --> 01:22:37,635
+ Diharapkan untuk berlari, mungkin itu bisa 
+
+1874
+01:22:37,635 --> 01:22:38,610
+ menjadi besar [tidak terdengar]. 
+
+1875
+01:22:38,610 --> 01:22:40,443
+ PROFESOR: Itu bisa menjadi sedikit masalah. 
+
+1876
+01:22:40,443 --> 01:22:42,860
+ Jadi apa vektor serangannya di proksi basis data ini? 
+
+1877
+01:22:42,860 --> 01:22:44,442
+ Saya pikir Anda harus memiliki akses ke satu 
+
+1878
+01:22:44,442 --> 01:22:46,340
+ dari komponen-komponen lainnya di tempat pertama. 
+
+1879
+01:22:46,340 --> 01:22:49,320
+ Jadi setidaknya Anda harus berkompromi keduanya-- 
+
+1880
+01:22:49,320 --> 01:22:52,260
+ Anda harus menemukan bug baik di dbproxy dan di tempat lain, 
+
+1881
+01:22:52,260 --> 01:22:52,760
+ begitu-- 
+
+1882
+01:22:52,760 --> 01:22:55,730
+ AUDIENCE: Jadi belum tentu, karena SVC sudah 
+
+1883
+01:22:55,730 --> 01:22:56,230
+ forwarding-- 
+
+1884
+01:22:56,230 --> 01:22:56,938
+ PROFESOR: Benar. 
+
+1885
+01:22:56,938 --> 01:22:59,479
+ Jadi saat SVC melewati permintaan besar 
+
+1886
+01:22:59,479 --> 01:23:00,395
+ sebagian besar tidak dicentang-- 
+
+1887
+01:23:00,395 --> 01:23:01,842
+ AUDIENCE: Yah, jadi, maksud saya, katakanlah 
+
+1888
+01:23:01,842 --> 01:23:03,133
+ Anda mencoba masuk, bukan? 
+
+1889
+01:23:03,133 --> 01:23:03,830
+ Itu akan berlalu. 
+
+1890
+01:23:03,830 --> 01:23:05,840
+ PROFESOR: Ya, seperti nama Alice Anda di dalam template, 
+
+1891
+01:23:05,840 --> 01:23:06,361
+ dan ya. 
+
+1892
+01:23:06,361 --> 01:23:06,860
+
+
+1893
+01:23:06,860 --> 01:23:09,124
+ AUDIENCE: Alice langsung ke dbproxy, dalam teori. 
+
+1894
+01:23:09,124 --> 01:23:10,040
+ PROFESOR: Tentu saja. 
+
+1895
+01:23:10,040 --> 01:23:12,670
+ Jadi, mungkin ada beberapa bug dbproxy di sini 
+
+1896
+01:23:12,670 --> 01:23:14,819
+ yang juga bisa dieksploitasi. 
+
+1897
+01:23:14,819 --> 01:23:16,360
+ Bagaimanapun, ini semoga memberi kalian 
+
+1898
+01:23:16,360 --> 01:23:18,651
+ beberapa rasa bagaimana Anda memikirkan memisahkan istimewa 
+
+1899
+01:23:18,651 --> 01:23:19,217
+ aplikasi. 
+
+1900
+01:23:19,217 --> 01:23:20,550
+ Dan seperti yang kita lihat, itu tidak sempurna. 
+
+1901
+01:23:20,550 --> 01:23:22,920
+ Masih banyak hal yang bisa salah. 
+
+1902
+01:23:22,920 --> 01:23:26,290
+ Tetapi tampaknya jauh lebih baik daripada yang tidak beruntung 
+
+1903
+01:23:26,290 --> 00:00:00,000
+ desain yang kami mulai dengan. 
+

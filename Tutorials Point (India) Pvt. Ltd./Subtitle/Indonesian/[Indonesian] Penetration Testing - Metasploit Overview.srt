@@ -1,0 +1,940 @@
+1
+00:00:00,089 --> 00:00:02,040
+ Halo semuanya, mari <font color="#CCCCCC">kita bicarakan </font>
+
+2
+00:00:02,040 --> 00:00:04,620
+ <font color="#CCCCCC">Metasploit framework </font><font color="#E5E5E5">jadi </font><font color="#CCCCCC">Metasploit </font>
+
+3
+00:00:04,620 --> 00:00:06,810
+ kerangka kerja adalah alat yang digunakan untuk <font color="#E5E5E5">penetrasi </font>
+
+4
+00:00:06,810 --> 00:00:10,200
+ <font color="#E5E5E5">pengujian memanfaatkan riset dan pemanfaatan </font>
+
+5
+00:00:10,200 --> 00:00:11,870
+ <font color="#E5E5E5">sistem dan kerentanan dan </font>
+
+6
+00:00:11,870 --> 00:00:14,610
+ jaringan sehingga <font color="#CCCCCC">kerangka Metasploit adalah sebuah </font>
+
+7
+00:00:14,610 --> 00:00:16,410
+ <font color="#CCCCCC">alat open-source dan itu ditulis </font><font color="#E5E5E5">dalam </font>
+
+8
+00:00:16,410 --> 00:00:18,720
+ <font color="#CCCCCC">rubi yang berarti jika Anda tahu </font><font color="#E5E5E5">Ruby </font>
+
+9
+00:00:18,720 --> 00:00:20,430
+ bahasa dan Anda tahu bagaimana Anda bisa menulis 
+
+10
+00:00:20,430 --> 00:00:22,619
+ kode <font color="#E5E5E5">di Ruby, maka Anda dapat berkontribusi </font>
+
+11
+00:00:22,619 --> 00:00:26,310
+ <font color="#CCCCCC">kerangka</font><font color="#E5E5E5"> Metasploit dan </font><font color="#CCCCCC">meta penyebaran </font>
+
+12
+00:00:26,310 --> 00:00:28,109
+ kerangka kerja berisi lebih dari <font color="#CCCCCC">1.200 </font>
+
+13
+00:00:28,109 --> 00:00:31,309
+ <font color="#E5E5E5">mengeksploitasi 330 muatan ditambah 30 plus </font>
+
+14
+00:00:31,309 --> 00:00:34,380
+ encoders jadi sebelum <font color="#CCCCCC">pergi lebih jauh </font><font color="#E5E5E5">mari kita </font>
+
+15
+00:00:34,380 --> 00:00:36,450
+ berbicara tentang <font color="#E5E5E5">beberapa istilah penting yang kami </font>
+
+16
+00:00:36,450 --> 00:00:39,059
+ akan <font color="#CCCCCC">digunakan dalam seluruh video ini jadi ini </font>
+
+17
+00:00:39,059 --> 00:00:40,920
+ <font color="#E5E5E5">istilah penting adalah kerentanan </font>
+
+18
+00:00:40,920 --> 00:00:44,010
+ mengeksploitasi dan payload <font color="#E5E5E5">jadi apa itu </font>
+
+19
+00:00:44,010 --> 00:00:46,170
+ kerentanan <font color="#E5E5E5">seperti yang saya </font><font color="#CCCCCC">katakan sebelumnya </font>
+
+20
+00:00:46,170 --> 00:00:48,120
+ <font color="#E5E5E5">kerentanan itu adalah aliran atau </font>
+
+21
+00:00:48,120 --> 00:00:50,370
+ kelemahan <font color="#CCCCCC">dalam </font><font color="#E5E5E5">sistem yang membiarkan suatu </font>
+
+22
+00:00:50,370 --> 00:00:52,590
+ penyerang <font color="#E5E5E5">untuk kompromi </font><font color="#CCCCCC">sistem dan </font>
+
+23
+00:00:52,590 --> 00:00:55,620
+ apa yang ahli gunakan adalah kode 
+
+24
+00:00:55,620 --> 00:00:58,109
+ yang digunakan penyerang <font color="#E5E5E5">untuk </font>
+
+25
+00:00:58,109 --> 00:01:00,539
+ mengeksploitasi kerentanan itu <font color="#E5E5E5">dan masuk ke dalamnya </font>
+
+26
+00:01:00,539 --> 00:01:03,840
+ <font color="#E5E5E5">sistem </font><font color="#CCCCCC">sekarang berapa muatannya </font>
+
+27
+00:01:03,840 --> 00:01:07,049
+ muatan didefinisikan sebagai kegiatan 
+
+28
+00:01:07,049 --> 00:01:09,479
+ yang mana bisa dilakukan setelah kita berada <font color="#E5E5E5">di dalam </font>
+
+29
+00:01:09,479 --> 00:01:10,260
+ <font color="#CCCCCC">sebuah sistem </font>
+
+30
+00:01:10,260 --> 00:01:12,330
+ hanya untuk <font color="#CCCCCC">contoh kami menemukan </font><font color="#E5E5E5">satu </font>
+
+31
+00:01:12,330 --> 00:01:15,090
+ kerentanan <font color="#E5E5E5">dan kami juga menemukan satu kode </font>
+
+32
+00:01:15,090 --> 00:01:16,950
+ <font color="#E5E5E5">yang akan kita </font><font color="#CCCCCC">gunakan </font><font color="#E5E5E5">untuk mengeksploitasi </font>
+
+33
+00:01:16,950 --> 00:01:19,290
+ kerentanan yang <font color="#E5E5E5">kemudian sekali kita </font>
+
+34
+00:01:19,290 --> 00:01:21,810
+ di <font color="#CCCCCC">dalam sistem </font><font color="#E5E5E5">lalu seperti apa </font>
+
+35
+00:01:21,810 --> 00:01:24,689
+ kegiatan yang dapat kami <font color="#E5E5E5">lakukan dapat ditentukan </font>
+
+36
+00:01:24,689 --> 00:01:27,570
+ sebagai <font color="#CCCCCC">payload </font><font color="#E5E5E5">yang akan kita gunakan sementara </font>
+
+37
+00:01:27,570 --> 00:01:30,930
+ mengeksploitasi <font color="#E5E5E5">target jadi sekarang mari kita pergi </font>
+
+38
+00:01:30,930 --> 00:01:33,090
+ lebih jauh <font color="#E5E5E5">jadi sekarang mari kita bahas </font>
+
+39
+00:01:33,090 --> 00:01:35,250
+ <font color="#CCCCCC">Metasploit arsitektur itu caranya </font>
+
+40
+00:01:35,250 --> 00:01:36,900
+ <font color="#CCCCCC">Kerangka Metasploit diatur </font>
+
+41
+00:01:36,900 --> 00:01:39,150
+ secara internal <font color="#CCCCCC">jadi di sini Anda dapat melihat itu </font>
+
+42
+00:01:39,150 --> 00:01:40,770
+ hal-hal di sini adalah Metasploit 
+
+43
+00:01:40,770 --> 00:01:43,619
+ modul kerangka kerja <font color="#E5E5E5">dan di sini di </font><font color="#CCCCCC">Metasploit </font>
+
+44
+00:01:43,619 --> 00:01:45,930
+ antarmuka dan berikut adalah beberapa pustaka 
+
+45
+00:01:45,930 --> 00:01:48,890
+ jadi modul <font color="#CCCCCC">berisi berbagai jenis </font>
+
+46
+00:01:48,890 --> 00:01:51,420
+ direktori yang berisi <font color="#E5E5E5">muatan </font>
+
+47
+00:01:51,420 --> 00:01:54,780
+ <font color="#E5E5E5">mengeksploitasi encoders modul auxilary dan </font>
+
+48
+00:01:54,780 --> 00:01:57,780
+ seterusnya <font color="#E5E5E5">jadi apa saya </font><font color="#CCCCCC">antarmuka Metasploit </font>
+
+49
+00:01:57,780 --> 00:02:00,329
+ <font color="#CCCCCC">Saya akan bahas di slide mendatang dan </font>
+
+50
+00:02:00,329 --> 00:02:02,130
+ di sini Anda dapat melihat Metasploit 
+
+51
+00:02:02,130 --> 00:02:04,020
+ perpustakaan yang <font color="#CCCCCC">berisi berbeda </font>
+
+52
+00:02:04,020 --> 00:02:06,450
+ <font color="#CCCCCC">Fungsi kerangka Metasploit seperti MSF </font>
+
+53
+00:02:06,450 --> 00:02:08,818
+ <font color="#CCCCCC">pustaka basis </font><font color="#E5E5E5">MSF perpustakaan inti plugin </font>
+
+54
+00:02:08,818 --> 00:02:12,340
+ <font color="#E5E5E5">dan seterusnya jadi sekarang mari kita bahas </font>
+
+55
+00:02:12,340 --> 00:02:15,099
+ tentang <font color="#CCCCCC">Metasploit skenario kehidupan nyata </font><font color="#E5E5E5">jadi </font>
+
+56
+00:02:15,099 --> 00:02:17,200
+ apa itu <font color="#CCCCCC">skenario kehidupan nyata Metasploit </font>
+
+57
+00:02:17,200 --> 00:02:19,900
+ apa artinya <font color="#CCCCCC">itu berarti itu bagaimana caranya </font>
+
+58
+00:02:19,900 --> 00:02:23,019
+ penguji penetrasi <font color="#E5E5E5">menggunakan </font><font color="#CCCCCC">Metasploit di </font>
+
+59
+00:02:23,019 --> 00:02:25,540
+ <font color="#CCCCCC">skenario kehidupan nyata atau nyata nyata </font>
+
+60
+00:02:25,540 --> 00:02:28,150
+ <font color="#E5E5E5">waktu </font><font color="#CCCCCC">untuk menembus </font><font color="#E5E5E5">ke dalam </font>
+
+61
+00:02:28,150 --> 00:02:30,700
+ sistem <font color="#CCCCCC">sehingga </font><font color="#E5E5E5">untuk menggunakan </font><font color="#CCCCCC">Metasploit </font>
+
+62
+00:02:30,700 --> 00:02:33,129
+ <font color="#E5E5E5">ada tiga langkah jadi langkah pertama </font>
+
+63
+00:02:33,129 --> 00:02:36,730
+ adalah kita akan menemukan layanan port terbuka dan 
+
+64
+00:02:36,730 --> 00:02:38,680
+ <font color="#CCCCCC">nomor versi mereka berjalan </font><font color="#E5E5E5">pada </font>
+
+65
+00:02:38,680 --> 00:02:40,780
+ <font color="#CCCCCC">sistem remote </font><font color="#E5E5E5">jadi setelah kami temukan terbuka </font>
+
+66
+00:02:40,780 --> 00:02:42,879
+ <font color="#E5E5E5">port dan layanan yang berjalan pada mereka </font>
+
+67
+00:02:42,879 --> 00:02:45,700
+ maka kami akan mencoba <font color="#CCCCCC">mencari </font><font color="#E5E5E5">versinya </font>
+
+68
+00:02:45,700 --> 00:02:48,130
+ jumlah <font color="#E5E5E5">layanan itu dan setelah kami dapatkan </font>
+
+69
+00:02:48,130 --> 00:02:49,930
+ nomor versi apa yang akan kita lakukan 
+
+70
+00:02:49,930 --> 00:02:53,049
+ kami akan mencoba <font color="#E5E5E5">menemukan exploit di </font><font color="#CCCCCC">Metasploit </font>
+
+71
+00:02:53,049 --> 00:02:55,840
+ <font color="#E5E5E5">database framework sesuai dengan itu </font>
+
+72
+00:02:55,840 --> 00:02:58,450
+ <font color="#E5E5E5">nomor versi yang kami temukan dan jika </font>
+
+73
+00:02:58,450 --> 00:03:01,180
+ yang mengeksploitasi hadir di <font color="#CCCCCC">dalam </font>
+
+74
+00:03:01,180 --> 00:03:03,069
+ Database framework Metasploit <font color="#E5E5E5">kemudian kita </font>
+
+75
+00:03:03,069 --> 00:03:05,230
+ <font color="#CCCCCC">akan menggunakan </font><font color="#E5E5E5">eksploit itu untuk </font>
+
+76
+00:03:05,230 --> 00:03:07,690
+ mengeksploitasi sistem itu jadi ini <font color="#E5E5E5">adalah </font>
+
+77
+00:03:07,690 --> 00:03:09,700
+ <font color="#CCCCCC">Metasploit skenario kehidupan nyata yang </font>
+
+78
+00:03:09,700 --> 00:03:12,730
+ setiap tester penetrasi mengikuti sekarang 
+
+79
+00:03:12,730 --> 00:03:15,340
+ kami membahas <font color="#E5E5E5">tentang </font><font color="#CCCCCC">antarmuka Metasploit </font>
+
+80
+00:03:15,340 --> 00:03:18,160
+ jadi <font color="#CCCCCC">antarmuka Metasploit tidak lain </font>
+
+81
+00:03:18,160 --> 00:03:20,200
+ hanya <font color="#CCCCCC">cara yang berbeda </font><font color="#E5E5E5">dalam urutan </font>
+
+82
+00:03:20,200 --> 00:03:22,209
+ <font color="#E5E5E5">untuk menggunakan </font><font color="#CCCCCC">Metasploit </font><font color="#E5E5E5">jadi dua yang pertama </font>
+
+83
+00:03:22,209 --> 00:03:25,180
+ antarmuka <font color="#E5E5E5">web </font><font color="#CCCCCC">Metasploit </font><font color="#E5E5E5">sehingga dengan menggunakan </font>
+
+84
+00:03:25,180 --> 00:03:27,790
+ <font color="#CCCCCC">Metasploit web kita dapat mengakses Metasploit </font>
+
+85
+00:03:27,790 --> 00:03:29,980
+ <font color="#E5E5E5">dengan menggunakan browser seperti Google Chrome </font>
+
+86
+00:03:29,980 --> 00:03:32,319
+ <font color="#CCCCCC">Mozilla Firefox dan ada satu sama lain </font>
+
+87
+00:03:32,319 --> 00:03:35,260
+ antarmuka yang <font color="#E5E5E5">disebut Armitage jadi Armitage </font>
+
+88
+00:03:35,260 --> 00:03:37,690
+ <font color="#E5E5E5">adalah </font><font color="#CCCCCC">kerangka kerja Metasploit </font><font color="#E5E5E5">GUI </font>
+
+89
+00:03:37,690 --> 00:03:39,910
+ aplikasi yang menyediakan fitur GUI 
+
+90
+00:03:39,910 --> 00:03:42,700
+ sedangkan <font color="#E5E5E5">antarmuka </font><font color="#CCCCCC">Metasploit terakhir </font>
+
+91
+00:03:42,700 --> 00:03:44,980
+ <font color="#E5E5E5">baris perintah sehingga dengan menggunakan baris perintah </font>
+
+92
+00:03:44,980 --> 00:03:47,349
+ <font color="#CCCCCC">antarmuka kita dapat mengakses Metasploit </font>
+
+93
+00:03:47,349 --> 00:03:49,150
+ kerangka kerja <font color="#E5E5E5">melalui Kali Linux kami </font>
+
+94
+00:03:49,150 --> 00:03:51,609
+ terminal <font color="#E5E5E5">dan untuk </font><font color="#CCCCCC">menggunakan Metasploit </font>
+
+95
+00:03:51,609 --> 00:03:53,500
+ baris perintah framework yang <font color="#E5E5E5">harus kita tulis </font>
+
+96
+00:03:53,500 --> 00:03:57,790
+ MSF console di <font color="#E5E5E5">terminal Linux Kali kita </font>
+
+97
+00:03:57,790 --> 00:04:00,280
+ <font color="#E5E5E5">sekarang mari kita lihat bagaimana kita bisa menggunakan </font><font color="#CCCCCC">Metasploit </font>
+
+98
+00:04:00,280 --> 00:04:04,959
+ dengan menggunakan <font color="#E5E5E5">konsol MSF sekarang mari kita lihat itu </font>
+
+99
+00:04:04,959 --> 00:04:07,019
+ bagaimana <font color="#E5E5E5">kita </font><font color="#CCCCCC">bisa menggunakan kerangka Metasploit </font>
+
+100
+00:04:07,019 --> 00:04:10,840
+ melalui konsol MSF sehingga untuk melakukan itu kita 
+
+101
+00:04:10,840 --> 00:04:13,540
+ harus memulai Kali Linux kami dan saya punya 
+
+102
+00:04:13,540 --> 00:04:15,609
+ sudah <font color="#E5E5E5">memulai Colin Linux saya dan di sini </font>
+
+103
+00:04:15,609 --> 00:04:17,410
+ Anda dapat <font color="#E5E5E5">melihat contoh Kali Linux saya dan </font>
+
+104
+00:04:17,410 --> 00:04:20,529
+ di sini adalah terminal Kali sehingga <font color="#E5E5E5">untuk </font>
+
+105
+00:04:20,529 --> 00:04:22,300
+ mulai <font color="#CCCCCC">kerangka Metasploit kita harus </font>
+
+106
+00:04:22,300 --> 00:04:23,340
+ tulis disini 
+
+107
+00:04:23,340 --> 00:04:26,820
+ Konsol MSF 
+
+108
+00:04:30,120 --> 00:04:34,900
+ dan di sini Anda dapat melihat itu <font color="#CCCCCC">sekarang </font>
+
+109
+00:04:34,900 --> 00:04:37,979
+ berada di dalam <font color="#CCCCCC">kerangka shell Metasploit </font>
+
+110
+00:04:37,979 --> 00:04:40,750
+ baik <font color="#E5E5E5">saya katakan sebelumnya </font><font color="#CCCCCC">bahwa apa yang akan terjadi </font>
+
+111
+00:04:40,750 --> 00:04:42,669
+ <font color="#CCCCCC">menjadi skenario kami, skenario kami akan </font>
+
+112
+00:04:42,669 --> 00:04:45,370
+ bahwa sebagai penguji penetrasi <font color="#E5E5E5">kita akan </font>
+
+113
+00:04:45,370 --> 00:04:47,949
+ pertama <font color="#E5E5E5">temukan port terbuka bersama dengan </font>
+
+114
+00:04:47,949 --> 00:04:50,770
+ nomor versi <font color="#E5E5E5">dan layanan kemudian setelah kami </font>
+
+115
+00:04:50,770 --> 00:04:53,949
+ temukan <font color="#CCCCCC">port terbuka yang harus kita temukan </font>
+
+116
+00:04:53,949 --> 00:04:57,939
+ eksploitasi khusus sesuai dengan <font color="#E5E5E5">itu </font>
+
+117
+00:04:57,939 --> 00:05:01,210
+ <font color="#E5E5E5">nomor versi dan jika itu mengeksploitasi ada </font>
+
+118
+00:05:01,210 --> 00:05:03,729
+ dalam <font color="#CCCCCC">database kerangka Metasploit </font><font color="#E5E5E5">kemudian </font>
+
+119
+00:05:03,729 --> 00:05:05,909
+ kami akan <font color="#E5E5E5">menggunakan </font><font color="#CCCCCC">eksploit itu dan mencoba </font>
+
+120
+00:05:05,909 --> 00:05:11,139
+ mengeksploitasi sistem <font color="#E5E5E5">jadi di sini Anda bisa melihat </font>
+
+121
+00:05:11,139 --> 00:05:13,719
+ yang saya <font color="#CCCCCC">linux </font><font color="#E5E5E5">tingkat </font><font color="#CCCCCC">Metasploit adalah membuat </font><font color="#E5E5E5">dan </font>
+
+122
+00:05:13,719 --> 00:05:18,779
+ <font color="#CCCCCC">berjalan dan </font><font color="#E5E5E5">IP-nya 192.168.1.1 </font><font color="#CCCCCC">o6 </font>
+
+123
+00:05:18,779 --> 00:05:22,270
+ sekarang apa yang <font color="#E5E5E5">akan saya lakukan adalah </font><font color="#CCCCCC">saya memindai </font>
+
+124
+00:05:22,270 --> 00:05:25,860
+ <font color="#E5E5E5">port terbuka dari </font><font color="#CCCCCC">Metasploit table Linux </font>
+
+125
+00:05:25,860 --> 00:05:29,610
+ <font color="#E5E5E5">melalui dan memetakan dan saya tampil </font>
+
+126
+00:05:29,610 --> 00:05:33,069
+ layanan pemindaian <font color="#E5E5E5">bisa Anda lihat di sini dan biarkan </font><font color="#CCCCCC">saya </font>
+
+127
+00:05:33,069 --> 00:05:35,669
+ <font color="#CCCCCC">cukup tuliskan alamat IP saya </font>
+
+128
+00:05:35,669 --> 00:05:44,770
+ <font color="#CCCCCC">display table Linux hit </font><font color="#E5E5E5">masukkan surat wasiat ini </font>
+
+129
+00:05:44,770 --> 00:05:46,500
+ ambil sedikit waktu karena 
+
+130
+00:05:46,500 --> 00:05:49,240
+ <font color="#CCCCCC">Metasploit linux mengandung banyak </font>
+
+131
+00:05:49,240 --> 00:05:52,089
+ kerentanan jadi <font color="#E5E5E5">itu sebabnya lebih dari </font>
+
+132
+00:05:52,089 --> 00:05:54,729
+ <font color="#E5E5E5">10 atau 15 port akan terbuka jadi itu </font>
+
+133
+00:05:54,729 --> 00:05:57,250
+ mengapa <font color="#CCCCCC">di peta akan memindai seluruh port dan </font>
+
+134
+00:05:57,250 --> 00:06:00,279
+ <font color="#CCCCCC">akan mencoba </font><font color="#E5E5E5">untuk mengambil semua layanan mereka dan </font>
+
+135
+00:06:00,279 --> 00:06:02,740
+ <font color="#CCCCCC">nomor versi mereka jadi kami harus menunggu </font>
+
+136
+00:06:02,740 --> 00:06:10,229
+ <font color="#CCCCCC">untuk sementara waktu dan di sini Anda bisa melihat </font>
+
+137
+00:06:10,229 --> 00:06:13,599
+ <font color="#E5E5E5">daftar port terbuka layanan mereka </font>
+
+138
+00:06:13,599 --> 00:06:16,779
+ <font color="#E5E5E5">dan nomor versi mereka untuk waktu itu </font>
+
+139
+00:06:16,779 --> 00:06:19,509
+ menjadi <font color="#CCCCCC">fokus mari pada port port 21 ini </font>
+
+140
+00:06:19,509 --> 00:06:23,139
+ <font color="#E5E5E5">dan layanan Anda bisa lihat di sini FTP </font>
+
+141
+00:06:23,139 --> 00:06:30,969
+ dan <font color="#E5E5E5">versinya adalah </font><font color="#CCCCCC">vs FTP </font><font color="#E5E5E5">D 2.3.4 </font><font color="#CCCCCC">oke </font>
+
+142
+00:06:30,969 --> 00:06:34,509
+ <font color="#E5E5E5">sekarang kami mendapat layanan layanan dan </font>
+
+143
+00:06:34,509 --> 00:06:36,520
+ <font color="#E5E5E5">nomor versi sekarang mari kita cari a </font>
+
+144
+00:06:36,520 --> 00:06:39,520
+ mengeksploitasi khusus di <font color="#E5E5E5">Metasploit </font>
+
+145
+00:06:39,520 --> 00:06:44,020
+ database kerangka dengan nama ini <font color="#E5E5E5">vs </font>
+
+146
+00:06:44,020 --> 00:06:48,340
+ <font color="#E5E5E5">FTP D 2.3.4 dan untuk </font><font color="#CCCCCC">mencari apa saja </font>
+
+147
+00:06:48,340 --> 00:06:50,530
+ mengeksploitasi <font color="#E5E5E5">dan </font><font color="#CCCCCC">kerangka Metasploit </font>
+
+148
+00:06:50,530 --> 00:06:52,569
+ Database kami <font color="#E5E5E5">harus hanya </font><font color="#CCCCCC">di sini </font>
+
+149
+00:06:52,569 --> 00:06:55,090
+ <font color="#E5E5E5">pencarian diikuti dengan nama eksploit atau </font>
+
+150
+00:06:55,090 --> 00:07:02,530
+ <font color="#E5E5E5">nama versi jadi </font><font color="#CCCCCC">vs FTP D dan </font>
+
+151
+00:07:02,530 --> 00:07:06,009
+ nama versi yang <font color="#CCCCCC">2.3.4 </font><font color="#E5E5E5">dan klik </font>
+
+152
+00:07:06,009 --> 00:07:16,060
+ masukkan jadi <font color="#CCCCCC">jika eksploit ada di </font>
+
+153
+00:07:16,060 --> 00:07:18,250
+ Direktori kerangka Metasploit atau 
+
+154
+00:07:18,250 --> 00:07:20,680
+ <font color="#E5E5E5">database maka kita dapat mengeksploitasi sistem </font>
+
+155
+00:07:20,680 --> 00:07:24,240
+ <font color="#E5E5E5">kalau tidak kita tidak bisa mengeksploitasi sistem </font>
+
+156
+00:07:24,240 --> 00:07:27,159
+ tetapi sebagai <font color="#CCCCCC">pentester </font><font color="#E5E5E5">jika Anda tahu bagaimana Anda </font>
+
+157
+00:07:27,159 --> 00:07:29,289
+ dapat <font color="#E5E5E5">membuat eksploitasi, maka Anda dapat membuat </font>
+
+158
+00:07:29,289 --> 00:07:31,539
+ <font color="#E5E5E5">mengeksploitasi tertentu dan dapat menggunakannya </font>
+
+159
+00:07:31,539 --> 00:07:34,780
+ mengeksploitasi <font color="#CCCCCC">oke dan tapi di sini sudah </font>
+
+160
+00:07:34,780 --> 00:07:37,840
+ <font color="#CCCCCC">n memanfaatkan yang hadir dalam </font>
+
+161
+00:07:37,840 --> 00:07:39,729
+ <font color="#E5E5E5">Database framework Metasploit </font><font color="#CCCCCC">Anda bisa </font>
+
+162
+00:07:39,729 --> 00:07:42,520
+ periksa namanya jadi <font color="#CCCCCC">untuk menggunakan ini </font>
+
+163
+00:07:42,520 --> 00:07:44,820
+ mengeksploitasi <font color="#E5E5E5">tepat</font><font color="#CCCCCC"> di sini menggunakan dan </font>
+
+164
+00:07:44,820 --> 00:07:51,039
+ salin nama eksploit jadi eksploitasi ini 
+
+165
+00:07:51,039 --> 00:07:54,789
+ di dalam mengeksploitasi <font color="#E5E5E5">direktori FTP </font><font color="#CCCCCC">Unix </font><font color="#E5E5E5">dan </font>
+
+166
+00:07:54,789 --> 00:07:57,940
+ ini <font color="#E5E5E5">adalah nama exploit vs FTP D 2 3 4 </font>
+
+167
+00:07:57,940 --> 00:08:03,490
+ <font color="#E5E5E5">backdoor biarkan saya menggunakan ini dan di sini Anda </font>
+
+168
+00:08:03,490 --> 00:08:06,219
+ <font color="#E5E5E5">juga dapat melihat </font><font color="#CCCCCC">tanggal pengungkapan itu </font>
+
+169
+00:08:06,219 --> 00:08:08,880
+ peringkat sangat baik <font color="#E5E5E5">dan </font><font color="#CCCCCC">deskripsi </font>
+
+170
+00:08:08,880 --> 00:08:12,729
+ tekan <font color="#E5E5E5">enter jadi setelah kamu menekan enter kamu </font><font color="#CCCCCC">akan </font>
+
+171
+00:08:12,729 --> 00:08:16,150
+ <font color="#CCCCCC">melihat bahwa Anda berada </font><font color="#E5E5E5">di dalam mengeksploitasi </font>
+
+172
+00:08:16,150 --> 00:08:18,190
+ begitu kita berada di <font color="#CCCCCC">dalam mengeksploitasi </font><font color="#E5E5E5">berikutnya </font>
+
+173
+00:08:18,190 --> 00:08:21,219
+ hal yang kita <font color="#CCCCCC">harus mengatur kami mengeksploitasi </font><font color="#E5E5E5">sehingga </font>
+
+174
+00:08:21,219 --> 00:08:23,650
+ bagaimana kita bisa <font color="#CCCCCC">mengatur eksploit kita </font><font color="#E5E5E5">bahwa itu akan terjadi </font>
+
+175
+00:08:23,650 --> 00:08:28,060
+ pemicu <font color="#E5E5E5">untuk </font><font color="#CCCCCC">kerangka Metasploit mampu </font><font color="#E5E5E5">demikian </font>
+
+176
+00:08:28,060 --> 00:08:30,219
+ apa yang bisa kita lakukan adalah <font color="#CCCCCC">pertama-tama kita </font><font color="#E5E5E5">akan menemukan </font>
+
+177
+00:08:30,219 --> 00:08:32,979
+ pilihan yang harus kita <font color="#CCCCCC">berikan untuk itu </font>
+
+178
+00:08:32,979 --> 00:08:35,500
+ temukan <font color="#E5E5E5">pilihan seperti apa ini </font>
+
+179
+00:08:35,500 --> 00:08:37,299
+ mengeksploitasi keinginan hanya menuliskan acara 
+
+180
+00:08:37,299 --> 00:08:39,179
+ opsi tekan enter 
+
+181
+00:08:39,179 --> 00:08:43,179
+ <font color="#E5E5E5">jadi saat ini ada dua pilihan </font><font color="#CCCCCC">kami </font>
+
+182
+00:08:43,179 --> 00:08:45,670
+ tuan rumah dan pelabuhan kami <font color="#E5E5E5">di mana ini mengeksploitasi </font>
+
+183
+00:08:45,670 --> 00:08:48,520
+ ingin agar <font color="#E5E5E5">port kami ditetapkan sebagai default </font>
+
+184
+00:08:48,520 --> 00:08:51,220
+ <font color="#CCCCCC">hanya bisa lihat di </font><font color="#E5E5E5">sini 21 yang harus kita lakukan </font>
+
+185
+00:08:51,220 --> 00:08:53,050
+ adalah kita hanya <font color="#CCCCCC">perlu mengatur </font>
+
+186
+00:08:53,050 --> 00:08:55,540
+ <font color="#E5E5E5">tuan rumah kami jadi apa tuan rumah </font><font color="#CCCCCC">kami tuan </font><font color="#E5E5E5">rumah </font><font color="#CCCCCC">kami </font>
+
+187
+00:08:55,540 --> 00:08:58,000
+ adalah <font color="#E5E5E5">remote host </font><font color="#CCCCCC">jadi kami harus mengaturnya </font>
+
+188
+00:08:58,000 --> 00:09:01,200
+ <font color="#E5E5E5">Alamat </font><font color="#CCCCCC">IP Metis palatable Linux dan </font>
+
+189
+00:09:01,200 --> 00:09:03,850
+ <font color="#E5E5E5">untuk mengatur tuan rumah kami harus </font>
+
+190
+00:09:03,850 --> 00:09:07,450
+ tuliskan <font color="#E5E5E5">ruang host dan IP kami </font>
+
+191
+00:09:07,450 --> 00:09:14,440
+ alamat jadi bukan alamat IP yang Anda <font color="#E5E5E5">bisa </font>
+
+192
+00:09:14,440 --> 00:09:19,600
+ juga ketik <font color="#E5E5E5">nama domain jadi saya sudah bilang </font>
+
+193
+00:09:19,600 --> 00:09:22,120
+ di host kami <font color="#E5E5E5">sekarang mari kita periksa </font>
+
+194
+00:09:22,120 --> 00:09:25,570
+ <font color="#E5E5E5">pilihan </font><font color="#CCCCCC">lagi </font><font color="#E5E5E5">dan di sini Anda bisa melihatnya </font>
+
+195
+00:09:25,570 --> 00:09:29,110
+ Tuan rumah saya diatur sekarang yang harus saya <font color="#CCCCCC">lakukan </font>
+
+196
+00:09:29,110 --> 00:09:33,790
+ adalah saya harus <font color="#CCCCCC">menulis mengeksploitasi </font><font color="#E5E5E5">atau bahkan Anda </font>
+
+197
+00:09:33,790 --> 00:09:38,190
+ <font color="#CCCCCC">hanya bisa menulis run dan tekan enter oke </font>
+
+198
+00:09:43,080 --> 00:09:45,340
+ <font color="#CCCCCC">sekarang kita telah mengeksploitasi </font><font color="#E5E5E5">Lee ke sistem </font>
+
+199
+00:09:45,340 --> 00:09:48,490
+ Anda <font color="#CCCCCC">hanya bisa </font><font color="#E5E5E5">melihat di sini layanan backdoor </font>
+
+200
+00:09:48,490 --> 00:09:50,680
+ telah menelurkan dan menemukan cangkang 
+
+201
+00:09:50,680 --> 00:09:54,730
+ command <font color="#CCCCCC">shell </font><font color="#E5E5E5">open session </font><font color="#CCCCCC">1 </font><font color="#E5E5E5">sekarang kita </font>
+
+202
+00:09:54,730 --> 00:09:58,390
+ di <font color="#E5E5E5">dalam cangkang </font><font color="#CCCCCC">Metasploit </font><font color="#E5E5E5">meja </font>
+
+203
+00:09:58,390 --> 00:10:01,630
+ <font color="#E5E5E5">Linux berarti sebagai pen tester yang kami miliki </font>
+
+204
+00:10:01,630 --> 00:10:03,880
+ memperoleh akses <font color="#CCCCCC">Metasploit ini </font>
+
+205
+00:10:03,880 --> 00:10:06,370
+ tabel Linux melalui <font color="#CCCCCC">kerangka Metasploit </font>
+
+206
+00:10:06,370 --> 00:10:08,980
+ <font color="#E5E5E5">dan Anda </font><font color="#CCCCCC">bisa </font><font color="#E5E5E5">memeriksanya di sini jika saya </font><font color="#CCCCCC">hanya </font>
+
+207
+00:10:08,980 --> 00:10:16,060
+ <font color="#E5E5E5">tulis di sini siapa saja </font><font color="#CCCCCC">siapa aku ini </font>
+
+208
+00:10:16,060 --> 00:10:18,460
+ itu akan memberi kita <font color="#CCCCCC">output </font><font color="#E5E5E5">tepat di bawah </font>
+
+209
+00:10:18,460 --> 00:10:19,330
+ perintah kita 
+
+210
+00:10:19,330 --> 00:10:21,880
+ <font color="#E5E5E5">jadi root kita adalah </font><font color="#CCCCCC">root oke jadi mari kita cetak </font>
+
+211
+00:10:21,880 --> 00:10:23,980
+ keluar <font color="#CCCCCC">direktori kerja baik-baik saja </font>
+
+212
+00:10:23,980 --> 00:10:27,400
+ apakah ini <font color="#E5E5E5">dan mari kita periksa daftar file </font>
+
+213
+00:10:27,400 --> 00:10:29,110
+ jadi ini adalah file <font color="#CCCCCC">dan direktori </font>
+
+214
+00:10:29,110 --> 00:10:31,390
+ <font color="#E5E5E5">yang ada di dalam Metasploit </font>
+
+215
+00:10:31,390 --> 00:10:34,330
+ <font color="#CCCCCC">tabel </font><font color="#E5E5E5">Linux hanya untuk kami memastikan itu </font>
+
+216
+00:10:34,330 --> 00:10:36,280
+ apakah kita berada <font color="#CCCCCC">di dalam cangkang yang benar </font>
+
+217
+00:10:36,280 --> 00:10:39,700
+ mari kita buat <font color="#CCCCCC">direktori demo jadi mari </font>
+
+218
+00:10:39,700 --> 00:10:42,910
+ <font color="#E5E5E5">buat direktori bernama demo hit </font>
+
+219
+00:10:42,910 --> 00:10:45,640
+ <font color="#E5E5E5">masukkan sekarang mari kembali </font><font color="#CCCCCC">ke yang bisa diperdebatkan </font>
+
+220
+00:10:45,640 --> 00:10:50,100
+ <font color="#E5E5E5">Linux mari tulis di sini LS dan mari kita lihat </font>
+
+221
+00:10:50,100 --> 00:10:52,390
+ apakah <font color="#E5E5E5">direktori demo kami </font><font color="#CCCCCC">telah </font>
+
+222
+00:10:52,390 --> 00:10:55,470
+ dibuat atau tidak <font color="#E5E5E5">jika saya hanya menulis LS dan </font>
+
+223
+00:10:55,470 --> 00:10:59,620
+ di sini Anda dapat melihat bahwa ini adalah demo 
+
+224
+00:10:59,620 --> 00:11:01,210
+ direktori <font color="#CCCCCC">yang baru saja kita </font><font color="#E5E5E5">buat </font>
+
+225
+00:11:01,210 --> 00:11:04,570
+ melalui <font color="#CCCCCC">kerangka Metasploit </font><font color="#E5E5E5">dan jika Anda </font>
+
+226
+00:11:04,570 --> 00:11:05,950
+ hanya ingin <font color="#CCCCCC">kembali, </font><font color="#E5E5E5">Anda bisa </font><font color="#CCCCCC">saja </font>
+
+227
+00:11:05,950 --> 00:11:06,880
+ <font color="#CCCCCC">pintu keluar kanan </font>
+
+228
+00:11:06,880 --> 00:11:09,339
+ jadi setelah Anda keluar dari <font color="#CCCCCC">sesi </font><font color="#E5E5E5">perintah Anda </font>
+
+229
+00:11:09,339 --> 00:11:17,350
+ akan <font color="#E5E5E5">ditutup sekarang </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">melindungi </font>
+
+230
+00:11:17,350 --> 00:11:19,709
+ server Anda dari <font color="#CCCCCC">kerangka Metasploit </font>
+
+231
+00:11:19,709 --> 00:11:23,019
+ <font color="#E5E5E5">praktik terbaik adalah menutup </font><font color="#CCCCCC">pori </font><font color="#E5E5E5">- </font><font color="#CCCCCC">pori </font>
+
+232
+00:11:23,019 --> 00:11:26,170
+ dan sembunyikan nomor versinya jika itu 
+
+233
+00:11:26,170 --> 00:11:28,449
+ <font color="#CCCCCC">port tidak di gunakan </font><font color="#E5E5E5">itu yang terbaik </font>
+
+234
+00:11:28,449 --> 00:11:31,509
+ berlatih jadi terima kasih sudah menonton <font color="#CCCCCC">ini </font>
+
+235
+00:11:31,509 --> 00:00:00,000
+ video 
+

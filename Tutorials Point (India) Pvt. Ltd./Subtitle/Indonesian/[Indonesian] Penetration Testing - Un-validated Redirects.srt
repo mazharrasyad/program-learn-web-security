@@ -1,0 +1,264 @@
+1
+00:00:00,089 --> 00:00:01,949
+ Halo semuanya, <font color="#CCCCCC">mari kita bicarakan </font>
+
+2
+00:00:01,949 --> 00:00:05,160
+ <font color="#E5E5E5">pengalihan yang tidak divalidasi jadi </font><font color="#CCCCCC">kencan anomali </font>
+
+3
+00:00:05,160 --> 00:00:07,140
+ pengalihan kerentanan adalah salah satu dari 
+
+4
+00:00:07,140 --> 00:00:09,480
+ kerentanan paling populer dan 
+
+5
+00:00:09,480 --> 00:00:12,290
+ <font color="#CCCCCC">sering ditemukan dalam rangka aplikasi web </font><font color="#E5E5E5">jadi </font>
+
+6
+00:00:12,290 --> 00:00:14,610
+ sebelum <font color="#CCCCCC">pergi lebih jauh mari kita bicara tentang </font>
+
+7
+00:00:14,610 --> 00:00:17,220
+ pengalihan <font color="#E5E5E5">jadi apa pengalihan jadi </font>
+
+8
+00:00:17,220 --> 00:00:19,859
+ pengalihan mengambil <font color="#E5E5E5">pengguna dari satu </font><font color="#CCCCCC">halaman </font><font color="#E5E5E5">web </font>
+
+9
+00:00:19,859 --> 00:00:22,199
+ ke <font color="#E5E5E5">halaman web lain </font><font color="#CCCCCC">atau kadang-kadang dari </font>
+
+10
+00:00:22,199 --> 00:00:24,240
+ satu aplikasi web ke <font color="#E5E5E5">web lain </font>
+
+11
+00:00:24,240 --> 00:00:26,460
+ aplikasi <font color="#E5E5E5">jadi kadang-kadang itu perlu </font>
+
+12
+00:00:26,460 --> 00:00:29,369
+ untuk <font color="#E5E5E5">mengalihkan pengguna </font><font color="#CCCCCC">dari satu halaman web ke </font>
+
+13
+00:00:29,369 --> 00:00:33,120
+ <font color="#E5E5E5">contoh lain adalah halaman login jadi ini </font>
+
+14
+00:00:33,120 --> 00:00:35,010
+ jenis kerentanan sering ditemukan 
+
+15
+00:00:35,010 --> 00:00:38,430
+ <font color="#E5E5E5">di situs web e-commerce tempat pengalihan </font>
+
+16
+00:00:38,430 --> 00:00:40,550
+ terjadi saat <font color="#CCCCCC">waktu pembayaran </font><font color="#E5E5E5">atau </font>
+
+17
+00:00:40,550 --> 00:00:44,309
+ sementara <font color="#E5E5E5">checkout contoh kami </font><font color="#CCCCCC">membeli satu </font>
+
+18
+00:00:44,309 --> 00:00:46,860
+ hal dan jika kita ingin <font color="#E5E5E5">membayar uang itu </font>
+
+19
+00:00:46,860 --> 00:00:48,809
+ kita dapat menyalahgunakan <font color="#E5E5E5">fungsi </font>
+
+20
+00:00:48,809 --> 00:00:51,899
+ <font color="#CCCCCC">pengalihan yang tidak </font><font color="#E5E5E5">divalidasi jadi sekarang mari kita lihat </font>
+
+21
+00:00:51,899 --> 00:00:55,590
+ bagaimana <font color="#E5E5E5">pengalihan yang tidak divalidasi bekerja sekarang </font>
+
+22
+00:00:55,590 --> 00:00:58,710
+ mari kita lihat <font color="#E5E5E5">bagaimana pengalihan yang tidak divalidasi </font>
+
+23
+00:00:58,710 --> 00:01:03,059
+ bekerja <font color="#E5E5E5">dan di sini Anda dapat melihat itu </font><font color="#CCCCCC">sekarang </font>
+
+24
+00:01:03,059 --> 00:01:06,030
+ <font color="#CCCCCC">Saya </font><font color="#E5E5E5">pada OS diredam aplikasi web </font><font color="#CCCCCC">mari </font>
+
+25
+00:01:06,030 --> 00:01:09,750
+ buka di sini selama <font color="#E5E5E5">2013 dan di terakhir Anda </font>
+
+26
+00:01:09,750 --> 00:01:11,130
+ <font color="#E5E5E5">akan melihat bagian yang tidak divalidasi </font>
+
+27
+00:01:11,130 --> 00:01:13,320
+ pengalihan dan ke depan jadi biarkan aku saja 
+
+28
+00:01:13,320 --> 00:01:16,409
+ <font color="#CCCCCC">buka halaman pertama kredit oke </font>
+
+29
+00:01:16,409 --> 00:01:18,420
+ jadi sekarang <font color="#E5E5E5">Anda dapat melihat bahwa kami </font><font color="#CCCCCC">berada </font>
+
+30
+00:01:18,420 --> 00:01:21,840
+ <font color="#CCCCCC">halaman ini kredit </font><font color="#E5E5E5">dan di halaman ini Anda </font>
+
+31
+00:01:21,840 --> 00:01:26,369
+ akan <font color="#E5E5E5">melihat banyak hyperlink </font><font color="#CCCCCC">seperti saya </font>
+
+32
+00:01:26,369 --> 00:01:29,009
+ <font color="#CCCCCC">mengatakan sebelumnya bahwa tidak divalidasi </font>
+
+33
+00:01:29,009 --> 00:01:32,009
+ pengalihan <font color="#E5E5E5">kerentanan apa tujuan kami </font>
+
+34
+00:01:32,009 --> 00:01:34,890
+ <font color="#CCCCCC">tujuan kami adalah untuk mengarahkan kembali </font>
+
+35
+00:01:34,890 --> 00:01:38,369
+ pengguna <font color="#E5E5E5">ke beberapa </font><font color="#CCCCCC">situs web </font><font color="#E5E5E5">lain jadi hanya </font><font color="#CCCCCC">untuk </font>
+
+36
+00:01:38,369 --> 00:01:44,399
+ <font color="#CCCCCC">Sebagai contoh jika </font><font color="#E5E5E5">saya </font><font color="#CCCCCC">hanya menyalin tautan ini dan jika </font>
+
+37
+00:01:44,399 --> 00:01:46,560
+ Saya <font color="#CCCCCC">baru saja </font><font color="#E5E5E5">membuka tautan ini Anda akan </font><font color="#CCCCCC">melihatnya </font>
+
+38
+00:01:46,560 --> 00:01:49,259
+ kami hanya <font color="#E5E5E5">dialihkan ke </font><font color="#CCCCCC">a </font>
+
+39
+00:01:49,259 --> 00:01:51,899
+ <font color="#E5E5E5">situs web tertentu yang </font><font color="#CCCCCC">baru saja </font>
+
+40
+00:01:51,899 --> 00:01:53,670
+ disebutkan dalam <font color="#E5E5E5">hyperlink ini dapat Anda lihat </font>
+
+41
+00:01:53,670 --> 00:01:57,390
+ di sini jadi biarkan <font color="#CCCCCC">aku </font><font color="#E5E5E5">hanya pergi </font><font color="#CCCCCC">kembali </font>
+
+42
+00:01:57,390 --> 00:02:01,830
+ dan biarkan aku <font color="#CCCCCC">menempel tautan ini </font><font color="#E5E5E5">jadi jika jika </font>
+
+43
+00:02:01,830 --> 00:02:04,979
+ kami membaca tautan ini dengan hati-hati, jadi di sini Anda 
+
+44
+00:02:04,979 --> 00:02:07,050
+ <font color="#E5E5E5">akan melihat bahwa </font><font color="#CCCCCC">itu menerima yang lain </font>
+
+45
+00:02:07,050 --> 00:02:09,810
+ parameter yang disebut <font color="#CCCCCC">sebagai URL maju dan di sini </font>
+
+46
+00:02:09,810 --> 00:02:13,380
+ adalah URL <font color="#CCCCCC">yang baru kita dapatkan </font>
+
+47
+00:02:13,380 --> 00:02:15,570
+ dialihkan <font color="#E5E5E5">jika kami hanya mengeklik tautan itu </font>
+
+48
+00:02:15,570 --> 00:02:18,450
+ <font color="#E5E5E5">jadi tujuan utama kami dari redirect yang tidak divalidasi </font>
+
+49
+00:02:18,450 --> 00:02:21,480
+ mengatakan untuk <font color="#E5E5E5">mencoba mengarahkan pengguna </font><font color="#CCCCCC">ke beberapa </font>
+
+50
+00:02:21,480 --> 00:02:24,540
+ <font color="#CCCCCC">situs web yang </font><font color="#E5E5E5">berbeda </font><font color="#CCCCCC">hanya </font><font color="#E5E5E5">sebagai </font><font color="#CCCCCC">contoh jika </font><font color="#E5E5E5">saya </font>
+
+51
+00:02:24,540 --> 00:02:28,140
+ <font color="#E5E5E5">tulis saja di sini di tutorialspoint.com </font><font color="#CCCCCC">dan </font>
+
+52
+00:02:28,140 --> 00:02:33,270
+ sekarang jika <font color="#E5E5E5">saya </font><font color="#CCCCCC">hanya menekan enter </font><font color="#E5E5E5">dan jika saya hanya </font>
+
+53
+00:02:33,270 --> 00:02:36,060
+ <font color="#E5E5E5">dapat mengalihkan ke tutorialspoint.com </font>
+
+54
+00:02:36,060 --> 00:02:39,600
+ <font color="#CCCCCC">yang berarti </font><font color="#E5E5E5">panjang ini tidak divalidasi </font>
+
+55
+00:02:39,600 --> 00:02:42,390
+ pengalihan rentan dan web ini 
+
+56
+00:02:42,390 --> 00:02:44,489
+ aplikasi <font color="#CCCCCC">adalah </font><font color="#E5E5E5">pengalihan yang </font><font color="#CCCCCC">tidak teralokasikan </font>
+
+57
+00:02:44,489 --> 00:02:46,320
+ <font color="#CCCCCC">rentan </font><font color="#E5E5E5">dan di sini Anda dapat melihat itu </font>
+
+58
+00:02:46,320 --> 00:02:48,150
+ di sini <font color="#CCCCCC">kita berhasil </font><font color="#E5E5E5">dapat </font>
+
+59
+00:02:48,150 --> 00:02:50,820
+ mengarahkan pengguna ke beberapa <font color="#CCCCCC">website lain </font><font color="#E5E5E5">sehingga </font>
+
+60
+00:02:50,820 --> 00:02:54,660
+ ini <font color="#CCCCCC">karena </font><font color="#E5E5E5">pengguna yang buruk disanitasi </font>
+
+61
+00:02:54,660 --> 00:02:59,190
+ <font color="#E5E5E5">masukan dan tidak ada pemeriksaan basis data untuk </font>
+
+62
+00:02:59,190 --> 00:03:02,340
+ pengalihan ini <font color="#E5E5E5">jadi di video ini kita </font>
+
+63
+00:03:02,340 --> 00:03:03,959
+ <font color="#E5E5E5">telah membahas bahwa apa yang tidak divalidasi </font>
+
+64
+00:03:03,959 --> 00:03:07,650
+ mengalihkan kerentanan <font color="#E5E5E5">dan bagaimana normal </font>
+
+65
+00:03:07,650 --> 00:03:11,910
+ pengalihan tidak terkait <font color="#E5E5E5">bekerja jadi terima kasih untuk </font>
+
+66
+00:03:11,910 --> 00:00:00,000
+ menonton <font color="#E5E5E5">video ini </font>
+

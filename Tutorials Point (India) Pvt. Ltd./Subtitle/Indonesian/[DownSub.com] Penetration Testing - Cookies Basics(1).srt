@@ -1,0 +1,564 @@
+1
+00:00:00,089 --> 00:00:02,399
+ Halo semua <font color="#E5E5E5">sekarang </font><font color="#CCCCCC">mari kita bicara tentang </font>
+
+2
+00:00:02,399 --> 00:00:05,069
+ cookie <font color="#E5E5E5">jadi sebelum pergi lebih jauh mari kita </font>
+
+3
+00:00:05,069 --> 00:00:08,490
+ <font color="#E5E5E5">diskusikan </font><font color="#CCCCCC">tentang </font><font color="#E5E5E5">statelessness HTTP jadi HTTP </font>
+
+4
+00:00:08,490 --> 00:00:10,800
+ protokol adalah protokol <font color="#E5E5E5">tanpa negara yang </font>
+
+5
+00:00:10,800 --> 00:00:13,080
+ berarti <font color="#E5E5E5">jika </font><font color="#CCCCCC">Anda membuka situs web </font><font color="#E5E5E5">apapun </font><font color="#CCCCCC">lagi dan </font>
+
+6
+00:00:13,080 --> 00:00:15,179
+ <font color="#E5E5E5">sekali lagi Anda akan diperlakukan sebagai pengguna baru </font>
+
+7
+00:00:15,179 --> 00:00:18,240
+ <font color="#CCCCCC">jadi kami harus memberikan informasi kami lagi </font>
+
+8
+00:00:18,240 --> 00:00:20,460
+ dan <font color="#E5E5E5">lagi ketika kami membuka </font><font color="#CCCCCC">halaman </font><font color="#E5E5E5">web apa pun </font>
+
+9
+00:00:20,460 --> 00:00:22,320
+ <font color="#CCCCCC">situs web itu </font><font color="#E5E5E5">karena kami diperlakukan sebagai </font>
+
+10
+00:00:22,320 --> 00:00:23,460
+ pengguna baru 
+
+11
+00:00:23,460 --> 00:00:26,449
+ itu sebabnya protokol HTTP <font color="#E5E5E5">disebut sebagai </font>
+
+12
+00:00:26,449 --> 00:00:29,609
+ <font color="#E5E5E5">protokol tanpa negara karena kita harus </font>
+
+13
+00:00:29,609 --> 00:00:31,349
+ berikan informasi kami setiap <font color="#CCCCCC">kali kami membuka </font>
+
+14
+00:00:31,349 --> 00:00:34,140
+ <font color="#E5E5E5">halaman </font><font color="#CCCCCC">web apa pun </font><font color="#E5E5E5">sehingga </font><font color="#CCCCCC">untuk menyingkirkan </font>
+
+15
+00:00:34,140 --> 00:00:37,380
+ itu <font color="#E5E5E5">kami menggunakan dua hal cookie dan </font>
+
+16
+00:00:37,380 --> 00:00:40,050
+ sesi <font color="#E5E5E5">jadi dengan bantuan memasak dan </font>
+
+17
+00:00:40,050 --> 00:00:41,910
+ sesi kami tidak harus <font color="#E5E5E5">memberikan kami </font>
+
+18
+00:00:41,910 --> 00:00:44,370
+ informasi lagi dan lagi <font color="#E5E5E5">saat kami buka </font>
+
+19
+00:00:44,370 --> 00:00:46,350
+ <font color="#E5E5E5">situs web tertentu </font><font color="#CCCCCC">sekarang mari kita diskusikan </font>
+
+20
+00:00:46,350 --> 00:00:49,289
+ <font color="#CCCCCC">tentang </font><font color="#E5E5E5">cookie sehingga cookie berukuran kecil </font>
+
+21
+00:00:49,289 --> 00:00:51,870
+ file <font color="#E5E5E5">yang berisi informasi jadi </font>
+
+22
+00:00:51,870 --> 00:00:53,820
+ cookie <font color="#CCCCCC">berisi informasi </font><font color="#E5E5E5">dalam sebuah teks </font>
+
+23
+00:00:53,820 --> 00:00:55,379
+ file <font color="#CCCCCC">atau itu teks </font>
+
+24
+00:00:55,379 --> 00:00:58,800
+ itu hampir <font color="#CCCCCC">4 KB dalam ukuran sehingga cookie </font>
+
+25
+00:00:58,800 --> 00:01:01,410
+ <font color="#CCCCCC">bukan file yang dapat dieksekusi </font><font color="#E5E5E5">dan disimpan </font>
+
+26
+00:01:01,410 --> 00:01:04,319
+ di situs klien <font color="#E5E5E5">oleh browser ke kami </font>
+
+27
+00:01:04,319 --> 00:01:07,200
+ sistem <font color="#E5E5E5">dan terkadang cookie </font>
+
+28
+00:01:07,200 --> 00:01:09,420
+ <font color="#CCCCCC">juga disimpan untuk menyimpan </font><font color="#E5E5E5">pengguna </font>
+
+29
+00:01:09,420 --> 00:01:11,970
+ preferensi jadi cookie juga <font color="#E5E5E5">mengandung beberapa </font>
+
+30
+00:01:11,970 --> 00:01:13,710
+ <font color="#E5E5E5">autentikasi informasi login </font>
+
+31
+00:01:13,710 --> 00:01:16,619
+ informasi <font color="#CCCCCC">dan bahkan ID sesi jadi </font><font color="#E5E5E5">sekarang </font>
+
+32
+00:01:16,619 --> 00:01:18,509
+ mari kita bahas tentang <font color="#E5E5E5">itu seperti </font><font color="#CCCCCC">apa </font>
+
+33
+00:01:18,509 --> 00:01:20,400
+ isian <font color="#E5E5E5">ada di </font><font color="#CCCCCC">dalam cookie dan </font>
+
+34
+00:01:20,400 --> 00:01:23,610
+ bagaimana cookie menyimpan data kami <font color="#E5E5E5">jadi cookie </font>
+
+35
+00:01:23,610 --> 00:01:25,680
+ menyimpan data kami dalam bentuk nama dan 
+
+36
+00:01:25,680 --> 00:01:27,930
+ <font color="#CCCCCC">pasangan nilai </font><font color="#E5E5E5">seperti akan ada nama dan </font>
+
+37
+00:01:27,930 --> 00:01:30,960
+ maka akan ada <font color="#E5E5E5">nilainya</font><font color="#CCCCCC"> jadi sekarang </font>
+
+38
+00:01:30,960 --> 00:01:33,479
+ mari kita bahas tentang cookie penting 
+
+39
+00:01:33,479 --> 00:01:35,189
+ bidang jadi di sini Anda <font color="#E5E5E5">dapat melihat itu di sana </font>
+
+40
+00:01:35,189 --> 00:01:37,829
+ <font color="#CCCCCC">5 bidang penting dalam cookie jadi </font>
+
+41
+00:01:37,829 --> 00:01:40,049
+ field pertama <font color="#E5E5E5">adalah domain jadi domain field </font>
+
+42
+00:01:40,049 --> 00:01:42,450
+ <font color="#E5E5E5">memberitahu kita tentang domain mana ini </font>
+
+43
+00:01:42,450 --> 00:01:45,659
+ cookie kemudian bidang lintasan <font color="#CCCCCC">akan memberi tahu </font>
+
+44
+00:01:45,659 --> 00:01:48,390
+ kita yang <font color="#E5E5E5">jalur khusus ini </font>
+
+45
+00:01:48,390 --> 00:01:52,799
+ cookie <font color="#E5E5E5">mengaturnya kemudian </font><font color="#CCCCCC">diamankan jadi jika </font>
+
+46
+00:01:52,799 --> 00:01:54,600
+ cookie sedang dikirim <font color="#E5E5E5">melalui </font>
+
+47
+00:01:54,600 --> 00:01:57,270
+ <font color="#E5E5E5">media aman dengan </font><font color="#CCCCCC">menggunakan protokol HTTP </font>
+
+48
+00:01:57,270 --> 00:01:59,759
+ <font color="#E5E5E5">maka bidang ini akan hadir di dalam </font>
+
+49
+00:01:59,759 --> 00:02:02,579
+ <font color="#E5E5E5">cookie kami dan kemudian ada kedaluwarsa </font>
+
+50
+00:02:02,579 --> 00:02:05,909
+ jadi kedaluwarsa lapangan <font color="#E5E5E5">akan memberitahu kita bahwa kapan </font>
+
+51
+00:02:05,909 --> 00:02:08,399
+ cookie ini akan kedaluwarsa <font color="#E5E5E5">dan yang terakhir </font>
+
+52
+00:02:08,399 --> 00:02:11,250
+ ada <font color="#CCCCCC">satu bidang yang disebut sebagai hanya HTTP </font>
+
+53
+00:02:11,250 --> 00:02:13,740
+ jadi jika <font color="#CCCCCC">hanya bidang STP </font>
+
+54
+00:02:13,740 --> 00:02:15,600
+ hadir di dalam <font color="#E5E5E5">cookie yang artinya </font>
+
+55
+00:02:15,600 --> 00:02:18,420
+ cookie itu <font color="#E5E5E5">tidak dapat dicuri dengan menggunakan </font>
+
+56
+00:02:18,420 --> 00:02:21,630
+ javascript <font color="#CCCCCC">jadi ini semua </font><font color="#E5E5E5">tentang cookie </font>
+
+57
+00:02:21,630 --> 00:02:24,060
+ sekarang mari kita lakukan <font color="#E5E5E5">satu contoh cookie dengan </font>
+
+58
+00:02:24,060 --> 00:02:27,660
+ menggunakan Python flask <font color="#E5E5E5">sekarang mari kita lihat </font>
+
+59
+00:02:27,660 --> 00:02:30,960
+ demo penyisipan cookie menggunakan labu <font color="#CCCCCC">jadi saya </font>
+
+60
+00:02:30,960 --> 00:02:33,180
+ telah menulis <font color="#E5E5E5">skrip yang sangat sederhana </font><font color="#CCCCCC">di </font>
+
+61
+00:02:33,180 --> 00:02:36,990
+ Python yang <font color="#E5E5E5">akan mengatur </font><font color="#CCCCCC">cookie </font><font color="#E5E5E5">di kami </font>
+
+62
+00:02:36,990 --> 00:02:39,540
+ browser <font color="#E5E5E5">dan kemudian kita akan melihat itu caranya </font>
+
+63
+00:02:39,540 --> 00:02:42,690
+ kue itu <font color="#E5E5E5">terlihat seperti ini, jadi inilah saya </font>
+
+64
+00:02:42,690 --> 00:02:46,260
+ <font color="#CCCCCC">tautan github </font><font color="#E5E5E5">dan di sini adalah skrip itu </font>
+
+65
+00:02:46,260 --> 00:02:47,910
+ <font color="#E5E5E5">yang </font><font color="#CCCCCC">dapat Anda unduh dari sini </font>
+
+66
+00:02:47,910 --> 00:02:52,440
+ <font color="#E5E5E5">dari tautan ini </font><font color="#CCCCCC">dan jika saya </font><font color="#E5E5E5">membuka </font><font color="#CCCCCC">ini saja </font>
+
+67
+00:02:52,440 --> 00:02:55,410
+ sehingga Anda <font color="#E5E5E5">dapat </font><font color="#CCCCCC">melihat kode di sini ditetapkan </font>
+
+68
+00:02:55,410 --> 00:03:00,210
+ cookie <font color="#CCCCCC">PI jadi saya menggunakan termos dalam ini </font>
+
+69
+00:03:00,210 --> 00:03:02,880
+ contoh <font color="#E5E5E5">jadi apa labu begitu termos </font>
+
+70
+00:03:02,880 --> 00:03:05,280
+ adalah <font color="#E5E5E5">kerangka kerja aplikasi web yang ditulis </font>
+
+71
+00:03:05,280 --> 00:03:07,770
+ dengan Python <font color="#E5E5E5">sehingga dalam dua baris di </font><font color="#CCCCCC">atas </font><font color="#E5E5E5">Anda </font>
+
+72
+00:03:07,770 --> 00:03:09,750
+ <font color="#E5E5E5">dapat melihat bahwa </font><font color="#CCCCCC">saya mengimpor </font><font color="#E5E5E5">labu </font>
+
+73
+00:03:09,750 --> 00:03:12,960
+ perpustakaan dan di sini adalah <font color="#CCCCCC">fungsi yang mana </font>
+
+74
+00:03:12,960 --> 00:03:14,670
+ <font color="#E5E5E5">bertanggung</font><font color="#CCCCCC"> jawab untuk </font><font color="#E5E5E5">menyiapkan cookie </font>
+
+75
+00:03:14,670 --> 00:03:17,430
+ dan ini adalah pasangan Cookie nilai kunci <font color="#E5E5E5">sehingga </font>
+
+76
+00:03:17,430 --> 00:03:19,380
+ <font color="#CCCCCC">keene nama kuncinya adalah tentu saja </font>
+
+77
+00:03:19,380 --> 00:03:22,980
+ <font color="#CCCCCC">dan </font><font color="#E5E5E5">nilainya adalah pentesting </font><font color="#CCCCCC">web </font><font color="#E5E5E5">jadi mari </font>
+
+78
+00:03:22,980 --> 00:03:28,530
+ saya membuka <font color="#E5E5E5">contoh Kali Linux saya jadi di sini </font>
+
+79
+00:03:28,530 --> 00:03:31,920
+ adalah contoh Kali Linux saya dan inilah saya 
+
+80
+00:03:31,920 --> 00:03:37,080
+ <font color="#E5E5E5">browser firefox dan biarkan saya mengunduh </font><font color="#CCCCCC">ini </font>
+
+81
+00:03:37,080 --> 00:03:39,410
+ mengajukan 
+
+82
+00:03:45,390 --> 00:03:47,970
+ biarkan saya menyimpan halaman ini di <font color="#CCCCCC">desktop saya </font>
+
+83
+00:03:47,970 --> 00:03:51,870
+ setcookie <font color="#E5E5E5">dot pi oke </font><font color="#CCCCCC">jadi file tersebut </font>
+
+84
+00:03:51,870 --> 00:03:54,570
+ telah disimpan di <font color="#CCCCCC">desktop terakhir </font><font color="#E5E5E5">kami di sini Anda </font>
+
+85
+00:03:54,570 --> 00:03:58,440
+ bisa lihat <font color="#E5E5E5">sekarang biar saya buka </font><font color="#CCCCCC">callee </font>
+
+86
+00:03:58,440 --> 00:04:03,300
+ terminal sehingga <font color="#E5E5E5">untuk </font><font color="#CCCCCC">menjalankan file ini </font>
+
+87
+00:04:03,300 --> 00:04:07,650
+ pastikan <font color="#E5E5E5">bahwa python 2.7 dan labu </font>
+
+88
+00:04:07,650 --> 00:04:10,350
+ terinstal di <font color="#CCCCCC">sistem Anda </font><font color="#E5E5E5">sehingga Python </font>
+
+89
+00:04:10,350 --> 00:04:14,580
+ 2.7 <font color="#CCCCCC">sudah terpasang </font><font color="#E5E5E5">di Kali </font>
+
+90
+00:04:14,580 --> 00:04:18,298
+ Linux di sini <font color="#E5E5E5">Anda dapat melihat dan </font><font color="#CCCCCC">untuk </font>
+
+91
+00:04:18,298 --> 00:04:21,120
+ menginstal labu <font color="#E5E5E5">Anda dapat menginstal labu oleh </font>
+
+92
+00:04:21,120 --> 00:04:26,070
+ menulis <font color="#E5E5E5">pip menginstal labu dan itu </font>
+
+93
+00:04:26,070 --> 00:04:30,570
+ sudah terpasang <font color="#E5E5E5">di sistem saya </font><font color="#CCCCCC">jadi di sini </font>
+
+94
+00:04:30,570 --> 00:04:32,160
+ Anda dapat melihat <font color="#E5E5E5">persyaratan sudah </font>
+
+95
+00:04:32,160 --> 00:04:35,520
+ puas <font color="#E5E5E5">sekarang mari kita pergi ke desktop kita </font>
+
+96
+00:04:35,520 --> 00:04:39,300
+ <font color="#E5E5E5">dan di sini Anda dapat melihat bahwa di sini adalah </font><font color="#CCCCCC">itu </font>
+
+97
+00:04:39,300 --> 00:04:44,970
+ file <font color="#CCCCCC">setcookie dot py </font><font color="#E5E5E5">dan untuk </font>
+
+98
+00:04:44,970 --> 00:04:51,270
+ <font color="#E5E5E5">menjalankannya kita harus mengubahnya agar </font><font color="#CCCCCC">teratur </font>
+
+99
+00:04:51,270 --> 00:04:53,490
+ <font color="#CCCCCC">untuk menjalankannya </font><font color="#E5E5E5">kita harus menjadikannya sebagai </font>
+
+100
+00:04:53,490 --> 00:04:55,620
+ dieksekusi <font color="#E5E5E5">jadi </font><font color="#CCCCCC">untuk membuatnya </font>
+
+101
+00:04:55,620 --> 00:05:00,210
+ dieksekusi <font color="#CCCCCC">tulis saja chmod lalu + </font>
+
+102
+00:05:00,210 --> 00:05:03,570
+ X diikuti <font color="#E5E5E5">oleh nama file </font><font color="#CCCCCC">setcookie dot </font>
+
+103
+00:05:03,570 --> 00:05:06,840
+ py <font color="#E5E5E5">dan jika saya melakukan LS lagi di </font><font color="#CCCCCC">sini Anda dapat melihat </font>
+
+104
+00:05:06,840 --> 00:05:10,860
+ bahwa <font color="#E5E5E5">sekarang ini merupakan file yang dapat dieksekusi </font>
+
+105
+00:05:10,860 --> 00:05:16,919
+ untuk <font color="#E5E5E5">menjalankannya cukup tuliskan </font><font color="#CCCCCC">Python </font>
+
+106
+00:05:16,919 --> 00:05:21,270
+ <font color="#E5E5E5">dan nama file ini dan tekan enter </font><font color="#CCCCCC">ok </font><font color="#E5E5E5">dan </font>
+
+107
+00:05:21,270 --> 00:05:24,360
+ di sini kita <font color="#E5E5E5">dapat melihat bahwa file ini sudah aktif dan </font>
+
+108
+00:05:24,360 --> 00:05:26,669
+ <font color="#E5E5E5">berjalan di server </font><font color="#CCCCCC">localhost </font><font color="#E5E5E5">kami </font><font color="#CCCCCC">IP ini </font>
+
+109
+00:05:26,669 --> 00:05:29,729
+ dan port <font color="#E5E5E5">5000 sekarang mari kita kembali </font>
+
+110
+00:05:29,729 --> 00:05:32,300
+ ke <font color="#E5E5E5">browser </font><font color="#CCCCCC">kami </font>
+
+111
+00:05:37,710 --> 00:05:43,300
+ dan sekarang mari kita pergi <font color="#E5E5E5">ke IP localhost IP ini </font>
+
+112
+00:05:43,300 --> 00:05:46,870
+ dan <font color="#E5E5E5">port </font><font color="#CCCCCC">lima ribu jadi sebelum </font>
+
+113
+00:05:46,870 --> 00:05:49,509
+ <font color="#E5E5E5">pergi ke sana biar saya tunjukkan itu </font><font color="#CCCCCC">pada Anda </font>
+
+114
+00:05:49,509 --> 00:05:54,339
+ yang menempatkan <font color="#E5E5E5">browser kami menyimpan cookie jadi </font>
+
+115
+00:05:54,339 --> 00:05:59,589
+ hanya pergi ke pengaturan preferensi dan kemudian 
+
+116
+00:05:59,589 --> 00:06:02,860
+ privasi <font color="#E5E5E5">dan di sini Anda akan melihat opsi </font>
+
+117
+00:06:02,860 --> 00:06:05,770
+ hapus cookie individual jadi jika Anda mau 
+
+118
+00:06:05,770 --> 00:06:07,990
+ ingat <font color="#E5E5E5">di sini di sini Anda dapat melihat cookie </font>
+
+119
+00:06:07,990 --> 00:06:09,999
+ <font color="#E5E5E5">dari berbagai situs web seperti </font>
+
+120
+00:06:09,999 --> 00:06:13,270
+ github.com <font color="#E5E5E5">dan jika </font><font color="#CCCCCC">saya memperluas ini Anda bisa </font>
+
+121
+00:06:13,270 --> 00:06:15,669
+ melihat domain domain cookie <font color="#E5E5E5">adalah </font>
+
+122
+00:06:15,669 --> 00:06:18,249
+ github.com <font color="#CCCCCC">dan jalur ini hanyalah </font><font color="#E5E5E5">sebuah root </font>
+
+123
+00:06:18,249 --> 00:06:21,430
+ folder dan nama cookie dan 
+
+124
+00:06:21,430 --> 00:06:23,979
+ kedaluwarsa hari ini jadi ini <font color="#E5E5E5">kedaluwarsa </font>
+
+125
+00:06:23,979 --> 00:06:27,339
+ <font color="#E5E5E5">tanggal sekarang mari kita lakukan satu hal, mari kita bergerak </font>
+
+126
+00:06:27,339 --> 00:06:31,689
+ semua cookie dan sekarang mari kita <font color="#E5E5E5">buka itu </font>
+
+127
+00:06:31,689 --> 00:06:40,270
+ localhost IP dan port adalah <font color="#CCCCCC">5000 dan jika </font>
+
+128
+00:06:40,270 --> 00:06:44,770
+ Saya menekan <font color="#E5E5E5">enter di sini </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">dapat melihat di </font>
+
+129
+00:06:44,770 --> 00:06:47,620
+ <font color="#E5E5E5">cookie respons dimasukkan sekarang mari </font>
+
+130
+00:06:47,620 --> 00:06:53,020
+ verifikasi klik di sini, hapus individu 
+
+131
+00:06:53,020 --> 00:06:55,990
+ cookie <font color="#E5E5E5">dan di sini Anda dapat melihat cookie kami </font>
+
+132
+00:06:55,990 --> 00:06:59,020
+ dan ilmuwan <font color="#CCCCCC">localhost kami </font><font color="#E5E5E5">dan jika saya </font>
+
+133
+00:06:59,020 --> 00:07:06,099
+ <font color="#E5E5E5">memperluas jadi ini adalah </font><font color="#CCCCCC">cookie</font><font color="#E5E5E5"> sehingga dalam </font>
+
+134
+00:07:06,099 --> 00:07:07,779
+ nama kursus cookie <font color="#E5E5E5">seperti kami </font>
+
+135
+00:07:07,779 --> 00:07:10,659
+ didiskusikan dan nilainya <font color="#E5E5E5">adalah </font><font color="#CCCCCC">WebP dan </font>
+
+136
+00:07:10,659 --> 00:07:13,020
+ <font color="#CCCCCC">pengujian </font><font color="#E5E5E5">sehingga Anda dapat melihat host di sini dan </font>
+
+137
+00:07:13,020 --> 00:07:16,319
+ <font color="#E5E5E5">jalan juga </font>
+
+138
+00:07:23,420 --> 00:07:25,880
+ sehingga dalam <font color="#CCCCCC">video </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">kita </font><font color="#E5E5E5">telah membahas </font><font color="#CCCCCC">bahwa </font>
+
+139
+00:07:25,880 --> 00:07:29,240
+ bagaimana <font color="#CCCCCC">situs web biasanya mengatur </font><font color="#E5E5E5">cookie </font>
+
+140
+00:07:29,240 --> 00:07:32,120
+ browser pengguna <font color="#E5E5E5">jadi terima kasih sudah menonton </font>
+
+141
+00:07:32,120 --> 00:00:00,000
+ <font color="#E5E5E5">video ini </font>
+

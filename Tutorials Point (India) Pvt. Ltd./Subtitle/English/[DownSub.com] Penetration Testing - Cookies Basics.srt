@@ -1,0 +1,564 @@
+1
+00:00:00,089 --> 00:00:02,399
+hello everyone<font color="#E5E5E5"> now</font><font color="#CCCCCC"> let's talk about</font>
+
+2
+00:00:02,399 --> 00:00:05,069
+cookies<font color="#E5E5E5"> so before going further let us</font>
+
+3
+00:00:05,069 --> 00:00:08,490
+<font color="#E5E5E5">discuss</font><font color="#CCCCCC"> about</font><font color="#E5E5E5"> HTTP statelessness so HTTP</font>
+
+4
+00:00:08,490 --> 00:00:10,800
+protocol is a<font color="#E5E5E5"> stateless protocol which</font>
+
+5
+00:00:10,800 --> 00:00:13,080
+means<font color="#E5E5E5"> if</font><font color="#CCCCCC"> you open</font><font color="#E5E5E5"> any</font><font color="#CCCCCC"> website again and</font>
+
+6
+00:00:13,080 --> 00:00:15,179
+<font color="#E5E5E5">again you will be treated as a new user</font>
+
+7
+00:00:15,179 --> 00:00:18,240
+<font color="#CCCCCC">so we have to give our information again</font>
+
+8
+00:00:18,240 --> 00:00:20,460
+and<font color="#E5E5E5"> again when we open any web</font><font color="#CCCCCC"> page of</font>
+
+9
+00:00:20,460 --> 00:00:22,320
+that<font color="#CCCCCC"> website</font><font color="#E5E5E5"> because we are treated as a</font>
+
+10
+00:00:22,320 --> 00:00:23,460
+new user
+
+11
+00:00:23,460 --> 00:00:26,449
+that's why HTTP protocol is<font color="#E5E5E5"> called as</font>
+
+12
+00:00:26,449 --> 00:00:29,609
+<font color="#E5E5E5">stateless protocol because we have to</font>
+
+13
+00:00:29,609 --> 00:00:31,349
+give our information every<font color="#CCCCCC"> time we open</font>
+
+14
+00:00:31,349 --> 00:00:34,140
+<font color="#CCCCCC">any web</font><font color="#E5E5E5"> page so in order</font><font color="#CCCCCC"> to get rid of</font>
+
+15
+00:00:34,140 --> 00:00:37,380
+it<font color="#E5E5E5"> we use two things cookies and</font>
+
+16
+00:00:37,380 --> 00:00:40,050
+sessions<font color="#E5E5E5"> so with the help of cooking and</font>
+
+17
+00:00:40,050 --> 00:00:41,910
+sessions we not have<font color="#E5E5E5"> to give our</font>
+
+18
+00:00:41,910 --> 00:00:44,370
+information again and again<font color="#E5E5E5"> when we open</font>
+
+19
+00:00:44,370 --> 00:00:46,350
+a particular<font color="#E5E5E5"> website</font><font color="#CCCCCC"> now let us discuss</font>
+
+20
+00:00:46,350 --> 00:00:49,289
+<font color="#CCCCCC">about</font><font color="#E5E5E5"> cookies so cookies are a small</font>
+
+21
+00:00:49,289 --> 00:00:51,870
+files<font color="#E5E5E5"> which contains information so</font>
+
+22
+00:00:51,870 --> 00:00:53,820
+cookies<font color="#CCCCCC"> contain information</font><font color="#E5E5E5"> in a text</font>
+
+23
+00:00:53,820 --> 00:00:55,379
+file<font color="#CCCCCC"> or it's a text</font>
+
+24
+00:00:55,379 --> 00:00:58,800
+it's hardly of<font color="#CCCCCC"> 4 KB in size so cookie is</font>
+
+25
+00:00:58,800 --> 00:01:01,410
+<font color="#CCCCCC">not an executable file</font><font color="#E5E5E5"> and it's stored</font>
+
+26
+00:01:01,410 --> 00:01:04,319
+on a client site<font color="#E5E5E5"> by a browser into our</font>
+
+27
+00:01:04,319 --> 00:01:07,200
+system<font color="#E5E5E5"> and sometimes the cookies are</font>
+
+28
+00:01:07,200 --> 00:01:09,420
+<font color="#CCCCCC">also stored for storing the</font><font color="#E5E5E5"> user</font>
+
+29
+00:01:09,420 --> 00:01:11,970
+preference so cookies also<font color="#E5E5E5"> contains some</font>
+
+30
+00:01:11,970 --> 00:01:13,710
+login information<font color="#E5E5E5"> authentication</font>
+
+31
+00:01:13,710 --> 00:01:16,619
+information<font color="#CCCCCC"> and even session IDs so</font><font color="#E5E5E5"> now</font>
+
+32
+00:01:16,619 --> 00:01:18,509
+let's discuss about<font color="#E5E5E5"> that</font><font color="#CCCCCC"> what</font><font color="#E5E5E5"> kind of</font>
+
+33
+00:01:18,509 --> 00:01:20,400
+fields are<font color="#E5E5E5"> present inside</font><font color="#CCCCCC"> the cookie and</font>
+
+34
+00:01:20,400 --> 00:01:23,610
+how cookie stores our data<font color="#E5E5E5"> so cookie</font>
+
+35
+00:01:23,610 --> 00:01:25,680
+stores our data in the form of name and
+
+36
+00:01:25,680 --> 00:01:27,930
+<font color="#CCCCCC">value pair</font><font color="#E5E5E5"> like there will be a name and</font>
+
+37
+00:01:27,930 --> 00:01:30,960
+then there will be<font color="#E5E5E5"> its</font><font color="#CCCCCC"> value so now</font>
+
+38
+00:01:30,960 --> 00:01:33,479
+let's discuss about cookies important
+
+39
+00:01:33,479 --> 00:01:35,189
+fields so here you<font color="#E5E5E5"> can see that there</font>
+
+40
+00:01:35,189 --> 00:01:37,829
+<font color="#CCCCCC">are 5 important fields in cookies so the</font>
+
+41
+00:01:37,829 --> 00:01:40,049
+first field<font color="#E5E5E5"> is domain so domain field</font>
+
+42
+00:01:40,049 --> 00:01:42,450
+<font color="#E5E5E5">tells us that of which domain this</font>
+
+43
+00:01:42,450 --> 00:01:45,659
+cookie is then the path field<font color="#CCCCCC"> will tell</font>
+
+44
+00:01:45,659 --> 00:01:48,390
+us that of which particular<font color="#E5E5E5"> path this</font>
+
+45
+00:01:48,390 --> 00:01:52,799
+cookie is<font color="#E5E5E5"> set it up then</font><font color="#CCCCCC"> secured so if</font>
+
+46
+00:01:52,799 --> 00:01:54,600
+the cookie is being sent through<font color="#E5E5E5"> a</font>
+
+47
+00:01:54,600 --> 00:01:57,270
+<font color="#E5E5E5">secure medium by</font><font color="#CCCCCC"> using HTTP protocol</font>
+
+48
+00:01:57,270 --> 00:01:59,759
+<font color="#E5E5E5">then this field will be present inside</font>
+
+49
+00:01:59,759 --> 00:02:02,579
+<font color="#E5E5E5">our cookie and then there is an expires</font>
+
+50
+00:02:02,579 --> 00:02:05,909
+so expires field<font color="#E5E5E5"> will tell us that when</font>
+
+51
+00:02:05,909 --> 00:02:08,399
+this cookie will expire<font color="#E5E5E5"> and in the last</font>
+
+52
+00:02:08,399 --> 00:02:11,250
+there<font color="#CCCCCC"> is one field called as HTTP only</font>
+
+53
+00:02:11,250 --> 00:02:13,740
+so if the<font color="#CCCCCC"> STP only field</font>
+
+54
+00:02:13,740 --> 00:02:15,600
+present inside the<font color="#E5E5E5"> cookie which means</font>
+
+55
+00:02:15,600 --> 00:02:18,420
+that cookie<font color="#E5E5E5"> cannot be stolen by using</font>
+
+56
+00:02:18,420 --> 00:02:21,630
+javascript<font color="#CCCCCC"> so this was all</font><font color="#E5E5E5"> about cookies</font>
+
+57
+00:02:21,630 --> 00:02:24,060
+now let's do<font color="#E5E5E5"> one cookies example by</font>
+
+58
+00:02:24,060 --> 00:02:27,660
+using Python flask<font color="#E5E5E5"> now let's see</font>
+
+59
+00:02:27,660 --> 00:02:30,960
+cookie insertion demo using flask<font color="#CCCCCC"> so I</font>
+
+60
+00:02:30,960 --> 00:02:33,180
+have written<font color="#E5E5E5"> very simple script</font><font color="#CCCCCC"> in</font>
+
+61
+00:02:33,180 --> 00:02:36,990
+Python which<font color="#E5E5E5"> will set a</font><font color="#CCCCCC"> cookie</font><font color="#E5E5E5"> in our</font>
+
+62
+00:02:36,990 --> 00:02:39,540
+browser<font color="#E5E5E5"> and then we will see that how</font>
+
+63
+00:02:39,540 --> 00:02:42,690
+that cookie<font color="#E5E5E5"> looks like so here is my</font>
+
+64
+00:02:42,690 --> 00:02:46,260
+<font color="#CCCCCC">github link</font><font color="#E5E5E5"> and here is that script</font>
+
+65
+00:02:46,260 --> 00:02:47,910
+<font color="#E5E5E5">which</font><font color="#CCCCCC"> you can just download it from here</font>
+
+66
+00:02:47,910 --> 00:02:52,440
+<font color="#E5E5E5">from this link</font><font color="#CCCCCC"> and if I just</font><font color="#E5E5E5"> open</font><font color="#CCCCCC"> this</font>
+
+67
+00:02:52,440 --> 00:02:55,410
+up so you<font color="#E5E5E5"> can</font><font color="#CCCCCC"> see the code here set</font>
+
+68
+00:02:55,410 --> 00:03:00,210
+cookie<font color="#CCCCCC"> PI so I'm using flask in this</font>
+
+69
+00:03:00,210 --> 00:03:02,880
+example<font color="#E5E5E5"> so what's the flask is so flask</font>
+
+70
+00:03:02,880 --> 00:03:05,280
+is a web application<font color="#E5E5E5"> framework written</font>
+
+71
+00:03:05,280 --> 00:03:07,770
+in Python<font color="#E5E5E5"> so in the</font><font color="#CCCCCC"> above</font><font color="#E5E5E5"> two lines you</font>
+
+72
+00:03:07,770 --> 00:03:09,750
+<font color="#E5E5E5">can see that</font><font color="#CCCCCC"> I'm importing</font><font color="#E5E5E5"> flask</font>
+
+73
+00:03:09,750 --> 00:03:12,960
+libraries and here is the<font color="#CCCCCC"> function which</font>
+
+74
+00:03:12,960 --> 00:03:14,670
+<font color="#E5E5E5">is</font><font color="#CCCCCC"> responsible for</font><font color="#E5E5E5"> setting up</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> cookie</font>
+
+75
+00:03:14,670 --> 00:03:17,430
+and this is the cookie key value pair<font color="#E5E5E5"> so</font>
+
+76
+00:03:17,430 --> 00:03:19,380
+the<font color="#CCCCCC"> keene the name of the key is course</font>
+
+77
+00:03:19,380 --> 00:03:22,980
+<font color="#CCCCCC">and its</font><font color="#E5E5E5"> value is</font><font color="#CCCCCC"> web</font><font color="#E5E5E5"> pentesting so let</font>
+
+78
+00:03:22,980 --> 00:03:28,530
+me open my<font color="#E5E5E5"> Kali Linux instance so here</font>
+
+79
+00:03:28,530 --> 00:03:31,920
+is my Kali Linux instance and here's my
+
+80
+00:03:31,920 --> 00:03:37,080
+<font color="#E5E5E5">firefox browser and let me download</font><font color="#CCCCCC"> this</font>
+
+81
+00:03:37,080 --> 00:03:39,410
+file
+
+82
+00:03:45,390 --> 00:03:47,970
+let me save this page on my<font color="#CCCCCC"> desktop</font>
+
+83
+00:03:47,970 --> 00:03:51,870
+setcookie<font color="#E5E5E5"> dot pi okay</font><font color="#CCCCCC"> so the file has</font>
+
+84
+00:03:51,870 --> 00:03:54,570
+been saved on<font color="#E5E5E5"> our</font><font color="#CCCCCC"> last desktop</font><font color="#E5E5E5"> here you</font>
+
+85
+00:03:54,570 --> 00:03:58,440
+can see<font color="#E5E5E5"> now let me open the</font><font color="#CCCCCC"> callee</font>
+
+86
+00:03:58,440 --> 00:04:03,300
+terminal so in order<font color="#E5E5E5"> to</font><font color="#CCCCCC"> run this file</font>
+
+87
+00:04:03,300 --> 00:04:07,650
+make sure<font color="#E5E5E5"> that python 2.7 and the flask</font>
+
+88
+00:04:07,650 --> 00:04:10,350
+is installed in your<font color="#CCCCCC"> system</font><font color="#E5E5E5"> so Python</font>
+
+89
+00:04:10,350 --> 00:04:14,580
+2.7<font color="#CCCCCC"> is already installed</font><font color="#E5E5E5"> in the Kali</font>
+
+90
+00:04:14,580 --> 00:04:18,298
+Linux here<font color="#E5E5E5"> you can see and in order</font><font color="#CCCCCC"> to</font>
+
+91
+00:04:18,298 --> 00:04:21,120
+install flask<font color="#E5E5E5"> you can install flask by</font>
+
+92
+00:04:21,120 --> 00:04:26,070
+writing<font color="#E5E5E5"> pip install flask and it's</font>
+
+93
+00:04:26,070 --> 00:04:30,570
+already installed<font color="#E5E5E5"> in my system</font><font color="#CCCCCC"> so here</font>
+
+94
+00:04:30,570 --> 00:04:32,160
+you can see<font color="#E5E5E5"> requirement already</font>
+
+95
+00:04:32,160 --> 00:04:35,520
+satisfied<font color="#E5E5E5"> now let's go to our desktop</font>
+
+96
+00:04:35,520 --> 00:04:39,300
+<font color="#E5E5E5">and here you can see that here is</font><font color="#CCCCCC"> that</font>
+
+97
+00:04:39,300 --> 00:04:44,970
+file<font color="#CCCCCC"> setcookie dot py</font><font color="#E5E5E5"> and in order to</font>
+
+98
+00:04:44,970 --> 00:04:51,270
+<font color="#E5E5E5">run it we have to change it so</font><font color="#CCCCCC"> in order</font>
+
+99
+00:04:51,270 --> 00:04:53,490
+<font color="#CCCCCC">to run it</font><font color="#E5E5E5"> we have to make it as an</font>
+
+100
+00:04:53,490 --> 00:04:55,620
+executable<font color="#E5E5E5"> so in</font><font color="#CCCCCC"> order to make it</font>
+
+101
+00:04:55,620 --> 00:05:00,210
+executable<font color="#CCCCCC"> just write down chmod then +</font>
+
+102
+00:05:00,210 --> 00:05:03,570
+X followed<font color="#E5E5E5"> by the filename</font><font color="#CCCCCC"> setcookie dot</font>
+
+103
+00:05:03,570 --> 00:05:06,840
+py<font color="#E5E5E5"> and if I do LS again</font><font color="#CCCCCC"> here you can see</font>
+
+104
+00:05:06,840 --> 00:05:10,860
+that<font color="#E5E5E5"> now it's an executable file so in</font>
+
+105
+00:05:10,860 --> 00:05:16,919
+order to<font color="#E5E5E5"> run it just write down</font><font color="#CCCCCC"> Python</font>
+
+106
+00:05:16,919 --> 00:05:21,270
+<font color="#E5E5E5">and this file name and hit enter</font><font color="#CCCCCC"> ok</font><font color="#E5E5E5"> and</font>
+
+107
+00:05:21,270 --> 00:05:24,360
+here we<font color="#E5E5E5"> can see that this file is up and</font>
+
+108
+00:05:24,360 --> 00:05:26,669
+<font color="#E5E5E5">running on our</font><font color="#CCCCCC"> localhost</font><font color="#E5E5E5"> server</font><font color="#CCCCCC"> this IP</font>
+
+109
+00:05:26,669 --> 00:05:29,729
+and the port<font color="#E5E5E5"> is 5000 now let's go back</font>
+
+110
+00:05:29,729 --> 00:05:32,300
+to<font color="#CCCCCC"> our</font><font color="#E5E5E5"> browser</font>
+
+111
+00:05:37,710 --> 00:05:43,300
+and now let's go<font color="#E5E5E5"> to this IP localhost IP</font>
+
+112
+00:05:43,300 --> 00:05:46,870
+and the port<font color="#E5E5E5"> is</font><font color="#CCCCCC"> five thousand so before</font>
+
+113
+00:05:46,870 --> 00:05:49,509
+<font color="#E5E5E5">going there let me show you that</font><font color="#CCCCCC"> in</font>
+
+114
+00:05:49,509 --> 00:05:54,339
+which place<font color="#E5E5E5"> our browser stores cookie so</font>
+
+115
+00:05:54,339 --> 00:05:59,589
+just go to settings preferences and then
+
+116
+00:05:59,589 --> 00:06:02,860
+privacy<font color="#E5E5E5"> and here you will see the option</font>
+
+117
+00:06:02,860 --> 00:06:05,770
+remove individual cookie so if you just
+
+118
+00:06:05,770 --> 00:06:07,990
+recall<font color="#E5E5E5"> here here you can see the cookies</font>
+
+119
+00:06:07,990 --> 00:06:09,999
+<font color="#E5E5E5">of the different websites like</font>
+
+120
+00:06:09,999 --> 00:06:13,270
+github.com<font color="#E5E5E5"> and if</font><font color="#CCCCCC"> I expand this you can</font>
+
+121
+00:06:13,270 --> 00:06:15,669
+see the cookie domain domain<font color="#E5E5E5"> is</font>
+
+122
+00:06:15,669 --> 00:06:18,249
+github.com<font color="#CCCCCC"> and this path is just</font><font color="#E5E5E5"> a root</font>
+
+123
+00:06:18,249 --> 00:06:21,430
+folder and the name of cookie and the
+
+124
+00:06:21,430 --> 00:06:23,979
+expiration today so this<font color="#E5E5E5"> is expiration</font>
+
+125
+00:06:23,979 --> 00:06:27,339
+<font color="#E5E5E5">date now let's do one thing let's move</font>
+
+126
+00:06:27,339 --> 00:06:31,689
+all the cookies and now let's<font color="#E5E5E5"> open that</font>
+
+127
+00:06:31,689 --> 00:06:40,270
+localhost IP and the port is<font color="#CCCCCC"> 5000 and if</font>
+
+128
+00:06:40,270 --> 00:06:44,770
+I hit<font color="#E5E5E5"> enter here</font><font color="#CCCCCC"> you</font><font color="#E5E5E5"> can see in the</font>
+
+129
+00:06:44,770 --> 00:06:47,620
+response<font color="#E5E5E5"> cookie inserted now let's</font>
+
+130
+00:06:47,620 --> 00:06:53,020
+verify click over here remove individual
+
+131
+00:06:53,020 --> 00:06:55,990
+cookies<font color="#E5E5E5"> and here you can see our cookie</font>
+
+132
+00:06:55,990 --> 00:06:59,020
+and scientist our<font color="#CCCCCC"> localhost</font><font color="#E5E5E5"> and if I</font>
+
+133
+00:06:59,020 --> 00:07:06,099
+expand<font color="#E5E5E5"> it so this is</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> cookie so in</font>
+
+134
+00:07:06,099 --> 00:07:07,779
+the name of the cookies course<font color="#E5E5E5"> as we</font>
+
+135
+00:07:07,779 --> 00:07:10,659
+discussed and its value<font color="#E5E5E5"> is</font><font color="#CCCCCC"> WebP and</font>
+
+136
+00:07:10,659 --> 00:07:13,020
+<font color="#CCCCCC">testing</font><font color="#E5E5E5"> so you can see the host here and</font>
+
+137
+00:07:13,020 --> 00:07:16,319
+<font color="#E5E5E5">path also</font>
+
+138
+00:07:23,420 --> 00:07:25,880
+so in<font color="#E5E5E5"> this</font><font color="#CCCCCC"> video we</font><font color="#E5E5E5"> have discussed</font><font color="#CCCCCC"> that</font>
+
+139
+00:07:25,880 --> 00:07:29,240
+how<font color="#CCCCCC"> websites usually set the</font><font color="#E5E5E5"> cookie in</font>
+
+140
+00:07:29,240 --> 00:07:32,120
+the user browser<font color="#E5E5E5"> so thanks for watching</font>
+
+141
+00:07:32,120 --> 00:00:00,000
+<font color="#E5E5E5">this video</font>
+

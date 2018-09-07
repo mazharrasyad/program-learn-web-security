@@ -1,0 +1,696 @@
+1
+00:00:11,769 --> 00:00:13,960
+ selamat datang di kursus di aplikasi web 
+
+2
+00:00:13,960 --> 00:00:17,320
+ menyerang <font color="#CCCCCC">modul-modul selanjutnya </font>
+
+3
+00:00:17,320 --> 00:00:18,789
+ <font color="#E5E5E5">mencakup masalah paling signifikan </font>
+
+4
+00:00:18,789 --> 00:00:20,200
+ berkaitan dengan jenis <font color="#E5E5E5">web yang umum </font>
+
+5
+00:00:20,200 --> 00:00:22,300
+ <font color="#E5E5E5">kerentanan aplikasi dan </font><font color="#CCCCCC">berbicara </font>
+
+6
+00:00:22,300 --> 00:00:23,710
+ dari <font color="#CCCCCC">cara-cara di mana </font><font color="#E5E5E5">Anda dapat </font><font color="#CCCCCC">membela Anda </font>
+
+7
+00:00:23,710 --> 00:00:28,090
+ aplikasi melawan serangan yang pertama 
+
+8
+00:00:28,090 --> 00:00:29,859
+ modul <font color="#E5E5E5">akan fokus pada konfigurasi </font>
+
+9
+00:00:29,859 --> 00:00:31,359
+ lingkungan komputer <font color="#CCCCCC">sehingga </font><font color="#E5E5E5">mungkin </font>
+
+10
+00:00:31,359 --> 00:00:33,010
+ digunakan <font color="#E5E5E5">untuk </font><font color="#CCCCCC">presentasi lebih lanjut </font><font color="#E5E5E5">dan </font>
+
+11
+00:00:33,010 --> 00:00:37,930
+ percobaan mari kita mulai dengan xampp 
+
+12
+00:00:37,930 --> 00:00:40,300
+ paket komponennya termasuk 
+
+13
+00:00:40,300 --> 00:00:43,300
+ <font color="#E5E5E5">apache server HTTP </font><font color="#CCCCCC">penerjemah </font><font color="#E5E5E5">PHP </font>
+
+14
+00:00:43,300 --> 00:00:46,720
+ <font color="#E5E5E5">MySQL database server </font><font color="#CCCCCC">alat PHP myadmin </font>
+
+15
+00:00:46,720 --> 00:00:48,760
+ untuk <font color="#CCCCCC">manajemen basis data dan </font><font color="#E5E5E5">alat </font><font color="#CCCCCC">lainnya </font>
+
+16
+00:00:48,760 --> 00:00:58,210
+ <font color="#E5E5E5">untuk mengembangkan aplikasi web kami akan </font>
+
+17
+00:00:58,210 --> 00:01:00,159
+ <font color="#E5E5E5">gunakan browser web Firefox dan temukan </font>
+
+18
+00:01:00,159 --> 00:01:02,879
+ paket xampp 
+
+19
+00:01:04,620 --> 00:01:07,760
+ [Musik] 
+
+20
+00:01:11,840 --> 00:01:14,949
+ [Musik] 
+
+21
+00:01:25,490 --> 00:01:29,960
+ Anda bisa lihat di sini <font color="#CCCCCC">situs web xampp </font>
+
+22
+00:01:30,470 --> 00:01:34,820
+ pilih <font color="#E5E5E5">versi instalasi Windows </font>
+
+23
+00:02:02,750 --> 00:02:05,870
+ [Musik] 
+
+24
+00:02:09,960 --> 00:02:13,080
+ [Musik] 
+
+25
+00:02:23,200 --> 00:02:25,460
+ instal paket tanpa <font color="#E5E5E5">mengubah </font>
+
+26
+00:02:25,460 --> 00:02:28,180
+ pengaturan standar 
+
+27
+00:03:00,880 --> 00:03:04,030
+ [Musik] 
+
+28
+00:03:08,090 --> 00:03:11,210
+ [Musik] 
+
+29
+00:03:59,010 --> 00:04:02,150
+ [Musik] 
+
+30
+00:04:06,220 --> 00:04:09,340
+ [Musik] 
+
+31
+00:04:54,950 --> 00:04:57,210
+ setelah menginstal xampp 
+
+32
+00:04:57,210 --> 00:04:59,280
+ berhasil menyelesaikan <font color="#CCCCCC">panel kontrol </font>
+
+33
+00:04:59,280 --> 00:05:02,310
+ akan <font color="#CCCCCC">terbuka </font><font color="#E5E5E5">berfungsi sebagai alat </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">mengelola </font>
+
+34
+00:05:02,310 --> 00:05:04,520
+ komponen individual dari <font color="#E5E5E5">paket </font>
+
+35
+00:05:04,520 --> 00:05:06,750
+ <font color="#E5E5E5">pasang pin itu ke taskbar untuk membuatnya </font>
+
+36
+00:05:06,750 --> 00:05:10,430
+ mudah <font color="#CCCCCC">tersedia untuk </font><font color="#E5E5E5">referensi di </font><font color="#CCCCCC">masa mendatang </font>
+
+37
+00:05:11,720 --> 00:05:14,580
+ tidak ada <font color="#CCCCCC">komponen yang berjalan jadi kami </font>
+
+38
+00:05:14,580 --> 00:05:19,020
+ dapat dengan aman mengubah konfigurasi kami menjadi 
+
+39
+00:05:19,020 --> 00:05:20,430
+ mendukung pengeditan file teks 
+
+40
+00:05:20,430 --> 00:05:22,380
+ <font color="#E5E5E5">instal penyorotan sintaks gratis </font>
+
+41
+00:05:22,380 --> 00:05:26,190
+ teks editor <font color="#E5E5E5">notepad plus plus nya </font>
+
+42
+00:05:26,190 --> 00:05:27,510
+ fitur termasuk shell sistem 
+
+43
+00:05:27,510 --> 00:05:28,950
+ integrasi yang memungkinkan <font color="#E5E5E5">para </font>
+
+44
+00:05:28,950 --> 00:05:30,599
+ <font color="#E5E5E5">mengedit file melalui pemilihan </font>
+
+45
+00:05:30,599 --> 00:05:32,430
+ <font color="#CCCCCC">pilihan dari menu konteks untuk </font><font color="#E5E5E5">masing </font><font color="#CCCCCC">- </font><font color="#E5E5E5">masing </font>
+
+46
+00:05:32,430 --> 00:05:34,760
+ mengajukan 
+
+47
+00:05:55,250 --> 00:05:58,399
+ [Musik] 
+
+48
+00:06:02,460 --> 00:06:05,589
+ [Musik] 
+
+49
+00:06:17,690 --> 00:06:22,280
+ mari kita buka <font color="#CCCCCC">paket xampp direktori </font>
+
+50
+00:06:29,360 --> 00:06:33,180
+ di <font color="#E5E5E5">apache backslash comp yang akan Anda temukan </font>
+
+51
+00:06:33,180 --> 00:06:36,060
+ file <font color="#E5E5E5">HTTP decom yang berisi </font>
+
+52
+00:06:36,060 --> 00:06:50,310
+ <font color="#CCCCCC">konfigurasi untuk </font><font color="#E5E5E5">apache direktori </font>
+
+53
+00:06:50,310 --> 00:06:51,870
+ modul telah disalin ke <font color="#CCCCCC">desktop </font>
+
+54
+00:06:51,870 --> 00:06:53,190
+ dari <font color="#E5E5E5">disk yang melekat pada kursus </font>
+
+55
+00:06:53,190 --> 00:06:55,260
+ buku <font color="#E5E5E5">Anda juga dapat </font><font color="#CCCCCC">mengunduhnya </font><font color="#E5E5E5">di sini </font>
+
+56
+00:06:55,260 --> 00:06:57,870
+ hacking <font color="#CCCCCC">comm commuter sekolah </font><font color="#E5E5E5">mendapatkan </font><font color="#CCCCCC">slash </font>
+
+57
+00:06:57,870 --> 00:07:02,729
+ <font color="#E5E5E5">whp itu berisi contoh-contoh berikutnya </font>
+
+58
+00:07:02,729 --> 00:07:05,610
+ modul juga akan menyertakan aplikasi 
+
+59
+00:07:05,610 --> 00:07:08,600
+ diperlukan untuk mengilustrasikan beberapa <font color="#E5E5E5">topik kami </font>
+
+60
+00:07:08,600 --> 00:07:10,740
+ <font color="#E5E5E5">kami ingin dapat diakses dari </font>
+
+61
+00:07:10,740 --> 00:07:17,910
+ browser <font color="#E5E5E5">berisi file konfigurasi </font>
+
+62
+00:07:17,910 --> 00:07:21,539
+ <font color="#E5E5E5">direktori bagian yang ditunjukkannya </font>
+
+63
+00:07:21,539 --> 00:07:23,400
+ Apache kehadiran <font color="#E5E5E5">folder dan set </font>
+
+64
+00:07:23,400 --> 00:07:26,930
+ <font color="#E5E5E5">opsi akses untuk setiap folder </font>
+
+65
+00:07:37,189 --> 00:07:39,449
+ kita lihat di sini <font color="#E5E5E5">definisi untuk </font>
+
+66
+00:07:39,449 --> 00:07:41,159
+ <font color="#CCCCCC">direktori htdocs yang </font><font color="#E5E5E5">disertakan dengan </font>
+
+67
+00:07:41,159 --> 00:07:44,219
+ <font color="#CCCCCC">Kerangka xampp kita </font><font color="#E5E5E5">dapat menyalin </font>
+
+68
+00:07:44,219 --> 00:07:52,860
+ definisi sekarang mari kita salin path lengkap 
+
+69
+00:07:52,860 --> 00:07:54,509
+ <font color="#CCCCCC">dua modul dan tempelkan ke yang </font><font color="#E5E5E5">disalin </font>
+
+70
+00:07:54,509 --> 00:08:04,770
+ definisi direktori mengubah garis miring 
+
+71
+00:08:04,770 --> 00:08:06,719
+ <font color="#CCCCCC">Konvensi juga diperlukan sebagai </font>
+
+72
+00:08:06,719 --> 00:08:08,430
+ <font color="#E5E5E5">Paket Apache mendukung dan lebih suka </font>
+
+73
+00:08:08,430 --> 00:08:10,349
+ <font color="#E5E5E5">Konvensi Linux </font><font color="#CCCCCC">bahkan jika diluncurkan </font>
+
+74
+00:08:10,349 --> 00:08:25,110
+ pada <font color="#E5E5E5">Windows kita sekarang harus mendefinisikan secara logis </font>
+
+75
+00:08:25,110 --> 00:08:26,370
+ hubungan antara sang <font color="#E5E5E5">jalan </font>
+
+76
+00:08:26,370 --> 00:08:27,960
+ masuk dan browser dan yang <font color="#E5E5E5">ditentukan </font>
+
+77
+00:08:27,960 --> 00:08:31,139
+ direktori untuk <font color="#E5E5E5">tujuan ini menggunakan </font>
+
+78
+00:08:31,139 --> 00:08:40,409
+ <font color="#E5E5E5">alias perintah kita bisa melihat panggilan dari </font>
+
+79
+00:08:40,409 --> 00:08:43,169
+ <font color="#E5E5E5">perintah mari redirect modul ke </font>
+
+80
+00:08:43,169 --> 00:08:46,219
+ <font color="#E5E5E5">direktori keamanan </font>
+
+81
+00:08:49,620 --> 00:08:52,769
+ [Musik] 
+
+82
+00:08:57,540 --> 00:09:00,279
+ sekarang mari kita luncurkan server Apache dan 
+
+83
+00:09:00,279 --> 00:09:08,020
+ periksa <font color="#E5E5E5">konfigurasinya untuk memulai </font>
+
+84
+00:09:08,020 --> 00:09:33,850
+ <font color="#E5E5E5">Server MySQL kita dapat </font><font color="#CCCCCC">melihat </font><font color="#E5E5E5">bahwa </font>
+
+85
+00:09:33,850 --> 00:09:35,560
+ direktori keamanan dapat dibuka dan 
+
+86
+00:09:35,560 --> 00:09:40,150
+ mengakses halaman default untuk <font color="#E5E5E5">XM </font>
+
+87
+00:09:40,150 --> 00:09:46,510
+ framework sedang berjalan sekarang gunakan <font color="#E5E5E5">PHP </font>
+
+88
+00:09:46,510 --> 00:09:47,780
+ myadmin 
+
+89
+00:09:47,780 --> 00:09:50,900
+ [Musik] 
+
+90
+00:09:53,720 --> 00:09:55,730
+ dan <font color="#E5E5E5">pengguna uji dengan akses </font><font color="#CCCCCC">ke </font>
+
+91
+00:09:55,730 --> 00:10:18,800
+ <font color="#E5E5E5">localhost mengatur kata sandi untuk menguji </font><font color="#CCCCCC">dan </font>
+
+92
+00:10:18,800 --> 00:10:20,600
+ memberikan <font color="#CCCCCC">akses pengguna ke database dengan </font>
+
+93
+00:10:20,600 --> 00:10:29,000
+ <font color="#CCCCCC">nama yang sama semua </font><font color="#E5E5E5">akses </font><font color="#CCCCCC">dasar </font>
+
+94
+00:10:29,000 --> 00:10:32,350
+ hak istimewa diberikan <font color="#CCCCCC">kepada pengguna </font>
+
+95
+00:10:45,910 --> 00:10:49,020
+ [Musik] 
+
+96
+00:10:50,080 --> 00:10:52,649
+ mari juga <font color="#E5E5E5">pilih file opsi </font>
+
+97
+00:10:52,649 --> 00:10:55,269
+ biasanya <font color="#E5E5E5">ini tidak </font><font color="#CCCCCC">akan dilakukan </font>
+
+98
+00:10:55,269 --> 00:10:56,500
+ <font color="#E5E5E5">untuk tujuan salah satu dari kami </font>
+
+99
+00:10:56,500 --> 00:11:07,209
+ demonstrasi ini <font color="#E5E5E5">diperlukan </font>
+
+100
+00:11:07,209 --> 00:11:10,240
+ pengguna telah <font color="#E5E5E5">ditambahkan </font><font color="#CCCCCC">dengan benar, </font><font color="#E5E5E5">kita harus </font>
+
+101
+00:11:10,240 --> 00:11:12,339
+ sekarang mengimpor <font color="#E5E5E5">dump basis data yang akan </font>
+
+102
+00:11:12,339 --> 00:11:14,050
+ buat tabel yang dibutuhkan dalam <font color="#CCCCCC">modul berikutnya </font>
+
+103
+00:11:14,050 --> 00:11:16,980
+ dan tambahkan <font color="#E5E5E5">data sampel </font>
+
+104
+00:11:44,000 --> 00:11:46,920
+ [Musik] 
+
+105
+00:11:46,920 --> 00:11:49,230
+ mari sekarang instal <font color="#CCCCCC">Javie advanced </font><font color="#E5E5E5">SQL </font>
+
+106
+00:11:49,230 --> 00:11:51,269
+ <font color="#E5E5E5">alat injeksi dan </font><font color="#CCCCCC">buat pintasan di </font>
+
+107
+00:11:51,269 --> 00:11:54,619
+ <font color="#CCCCCC">direktori modul </font><font color="#E5E5E5">20 </font>
+
+108
+00:12:42,130 --> 00:12:45,269
+ [Musik] 
+
+109
+00:12:45,370 --> 00:12:47,740
+ selanjutnya <font color="#E5E5E5">unduh paket robekan untuk </font>
+
+110
+00:12:47,740 --> 00:13:20,380
+ pengujian aplikasi PHP <font color="#E5E5E5">ekstrak </font><font color="#CCCCCC">ke </font>
+
+111
+00:13:20,380 --> 00:13:37,240
+ <font color="#E5E5E5">direktori modul 20 yang kita butuhkan sekarang </font>
+
+112
+00:13:37,240 --> 00:13:39,070
+ untuk mengunduh <font color="#CCCCCC">alat bantu John the Ripper </font>
+
+113
+00:13:39,070 --> 00:13:42,540
+ <font color="#E5E5E5">cracking dan menghasilkan kata sandi </font>
+
+114
+00:13:45,870 --> 00:13:47,950
+ ekstrak <font color="#E5E5E5">versi </font><font color="#CCCCCC">Windows </font><font color="#E5E5E5">ke kanan </font>
+
+115
+00:13:47,950 --> 00:14:28,300
+ folder selanjutnya kita unduh yang lain 
+
+116
+00:14:28,300 --> 00:14:30,250
+ <font color="#CCCCCC">tes kata sandi </font><font color="#E5E5E5">brute force universal </font>
+
+117
+00:14:30,250 --> 00:14:33,990
+ <font color="#E5E5E5">aplikasi perangkat lunak Hydra </font>
+
+118
+00:14:38,380 --> 00:14:41,509
+ [Musik] 
+
+119
+00:14:45,590 --> 00:14:48,700
+ [Musik] 
+
+120
+00:14:51,700 --> 00:14:54,020
+ <font color="#E5E5E5">perangkat lunak dilepaskan sebagai kode sumber </font>
+
+121
+00:14:54,020 --> 00:14:55,640
+ <font color="#E5E5E5">yang perlu diekstrak ke </font><font color="#CCCCCC">folder </font>
+
+122
+00:14:55,640 --> 00:15:25,610
+ <font color="#CCCCCC">dari </font><font color="#E5E5E5">modul yang tepat untuk mengkompilasi kami </font>
+
+123
+00:15:25,610 --> 00:15:28,190
+ perlu cygwin paket memungkinkan 
+
+124
+00:15:28,190 --> 00:15:29,600
+ kompilasi dan memulai <font color="#CCCCCC">linux </font>
+
+125
+00:15:29,600 --> 00:15:33,280
+ aplikasi di <font color="#CCCCCC">bawah sistem </font><font color="#E5E5E5">windows </font>
+
+126
+00:15:36,530 --> 00:15:39,630
+ [Musik] 
+
+127
+00:15:43,690 --> 00:15:46,839
+ [Musik] 
+
+128
+00:15:57,540 --> 00:16:02,130
+ gunakan <font color="#E5E5E5">opsi instalasi default </font>
+
+129
+00:16:08,970 --> 00:16:11,200
+ pilih salah <font color="#CCCCCC">satu server yang berisi </font>
+
+130
+00:16:11,200 --> 00:16:14,830
+ <font color="#E5E5E5">salinan paket cygwin membutuhkan waktu </font>
+
+131
+00:16:14,830 --> 00:16:17,590
+ <font color="#E5E5E5">untuk memilih </font><font color="#CCCCCC">server yang tepat tidak </font><font color="#E5E5E5">semua server </font>
+
+132
+00:16:17,590 --> 00:16:19,660
+ sama cepatnya <font color="#CCCCCC">waktu instalasi </font>
+
+133
+00:16:19,660 --> 00:16:33,580
+ tergantung pada <font color="#CCCCCC">server paket-paket yang kami </font>
+
+134
+00:16:33,580 --> 00:16:36,540
+ perlu menginstal adalah 
+
+135
+00:16:41,840 --> 00:16:44,940
+ [Musik] 
+
+136
+00:17:32,740 --> 00:17:35,900
+ [Musik] 
+
+137
+00:17:39,960 --> 00:17:42,950
+ [Musik] 
+
+138
+00:17:42,950 --> 00:17:44,750
+ pastikan semuanya <font color="#E5E5E5">dipilih </font><font color="#CCCCCC">dan </font>
+
+139
+00:17:44,750 --> 00:17:50,990
+ klik <font color="#E5E5E5">Next instalasi dari </font>
+
+140
+00:17:50,990 --> 00:17:52,670
+ <font color="#E5E5E5">paket cygwin tergantung pada internet kita </font>
+
+141
+00:17:52,670 --> 00:17:55,450
+ <font color="#E5E5E5">koneksi </font><font color="#CCCCCC">dan hard-disk </font>
+
+142
+00:17:55,450 --> 00:17:57,920
+ ini mungkin berlangsung <font color="#E5E5E5">cukup lama </font><font color="#CCCCCC">jadi jangan </font>
+
+143
+00:17:57,920 --> 00:18:00,040
+ putus asa 
+
+144
+00:18:30,880 --> 00:18:34,019
+ [Musik] 
+
+145
+00:18:38,090 --> 00:18:41,190
+ [Musik] 
+
+146
+00:18:55,280 --> 00:18:59,100
+ paket telah <font color="#CCCCCC">terinstal terbuka </font>
+
+147
+00:18:59,100 --> 00:19:00,480
+ terminal <font color="#E5E5E5">dan pergi ke direktori </font>
+
+148
+00:19:00,480 --> 00:19:03,890
+ mengandung <font color="#E5E5E5">kode sumber Hydra </font>
+
+149
+00:19:30,020 --> 00:19:32,240
+ jalankan perintah konfigurasi sehingga 
+
+150
+00:19:32,240 --> 00:19:33,590
+ <font color="#CCCCCC">skrip instalasi dapat memeriksa apakah </font>
+
+151
+00:19:33,590 --> 00:19:35,030
+ <font color="#E5E5E5">perpustakaan yang diperlukan telah </font>
+
+152
+00:19:35,030 --> 00:19:56,480
+ diinstal berikutnya <font color="#E5E5E5">kita dapat meluncurkan perintah </font>
+
+153
+00:19:56,480 --> 00:19:58,040
+ <font color="#E5E5E5">buat yang akan melakukan penulisan </font>
+
+154
+00:19:58,040 --> 00:20:00,760
+ kompilasi 
+
+155
+00:20:27,130 --> 00:20:30,249
+ [Musik] 
+
+156
+00:20:34,340 --> 00:20:37,460
+ [Musik] 
+
+157
+00:20:43,080 --> 00:20:45,760
+ setelah kompilasi <font color="#E5E5E5">menyalin biner </font>
+
+158
+00:20:45,760 --> 00:21:05,890
+ file ke direktori yang benar <font color="#CCCCCC">meluncurkan </font>
+
+159
+00:21:05,890 --> 00:21:07,480
+ Terminal Windows System dan pastikan 
+
+160
+00:21:07,480 --> 00:21:22,960
+ <font color="#CCCCCC">aplikasi berjalan seperti yang bisa kita lihat </font>
+
+161
+00:21:22,960 --> 00:21:24,520
+ aplikasi membutuhkan <font color="#CCCCCC">beberapa pustaka </font>
+
+162
+00:21:24,520 --> 00:21:25,960
+ <font color="#E5E5E5">yang merupakan komponen dari cygwin </font>
+
+163
+00:21:25,960 --> 00:21:28,570
+ paket <font color="#E5E5E5">mereka harus ditempatkan di </font>
+
+164
+00:21:28,570 --> 00:21:30,460
+ direktori yang berisi file biner dari 
+
+165
+00:21:30,460 --> 00:21:32,460
+ <font color="#E5E5E5">aplikasi kami </font>
+
+166
+00:21:32,460 --> 00:21:35,579
+ [Musik] 
+
+167
+00:22:18,220 --> 00:22:20,750
+ <font color="#CCCCCC">perpustakaan yang diperlukan telah ditambahkan </font>
+
+168
+00:22:20,750 --> 00:22:23,400
+ dan <font color="#E5E5E5">aplikasi berjalan </font><font color="#CCCCCC">dengan benar </font>
+
+169
+00:22:23,400 --> 00:22:26,519
+ [Musik] 
+
+170
+00:22:30,600 --> 00:22:32,429
+ dengan cara ini kami telah membuat <font color="#CCCCCC">lingkungan </font>
+
+171
+00:22:32,429 --> 00:22:34,730
+ siap untuk bekerja <font color="#E5E5E5">dan eksperimen lainnya </font>
+
+172
+00:22:34,730 --> 00:22:36,840
+ terima kasih atas perhatiannya <font color="#E5E5E5">dan sampai jumpa </font>
+
+173
+00:22:36,840 --> 00:22:38,909
+ <font color="#CCCCCC">dalam modul dua yang </font><font color="#E5E5E5">membahas data </font>
+
+174
+00:22:38,909 --> 00:00:00,000
+ metode bersembunyi 
+

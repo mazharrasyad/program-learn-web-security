@@ -1,0 +1,324 @@
+1
+00:00:00,089 --> 00:00:02,040
+hello everyone<font color="#E5E5E5"> now let</font><font color="#CCCCCC"> us</font><font color="#E5E5E5"> talk about</font>
+
+2
+00:00:02,040 --> 00:00:04,170
+HTML injection were nobility
+
+3
+00:00:04,170 --> 00:00:06,509
+so HTML injection is also called as a
+
+4
+00:00:06,509 --> 00:00:08,990
+<font color="#E5E5E5">rendering attack because instead of</font>
+
+5
+00:00:08,990 --> 00:00:11,160
+<font color="#E5E5E5">injecting JavaScript</font><font color="#CCCCCC"> into a web</font>
+
+6
+00:00:11,160 --> 00:00:14,040
+<font color="#CCCCCC">application</font><font color="#E5E5E5"> we try to inject</font><font color="#CCCCCC"> HTML code</font>
+
+7
+00:00:14,040 --> 00:00:16,619
+<font color="#E5E5E5">and if that web</font><font color="#CCCCCC"> application is being</font>
+
+8
+00:00:16,619 --> 00:00:18,630
+rendered<font color="#E5E5E5"> according to our HTML</font><font color="#CCCCCC"> code</font>
+
+9
+00:00:18,630 --> 00:00:21,930
+<font color="#CCCCCC">which means</font><font color="#E5E5E5"> that web application</font><font color="#CCCCCC"> is HTML</font>
+
+10
+00:00:21,930 --> 00:00:24,840
+injection burnable so similar<font color="#CCCCCC"> to</font>
+
+11
+00:00:24,840 --> 00:00:26,760
+cross-site scripting HTML injection is
+
+12
+00:00:26,760 --> 00:00:29,340
+also of<font color="#CCCCCC"> two types</font><font color="#E5E5E5"> stored in which the</font>
+
+13
+00:00:29,340 --> 00:00:31,439
+user input is stored in database the
+
+14
+00:00:31,439 --> 00:00:34,079
+next one is reflected in which the user
+
+15
+00:00:34,079 --> 00:00:36,030
+input it will<font color="#CCCCCC"> be not stored</font><font color="#E5E5E5"> in the</font>
+
+16
+00:00:36,030 --> 00:00:38,790
+database<font color="#E5E5E5"> and the response of that HTML</font>
+
+17
+00:00:38,790 --> 00:00:40,770
+injection<font color="#E5E5E5"> can only be shown to the</font><font color="#CCCCCC"> user</font>
+
+18
+00:00:40,770 --> 00:00:43,320
+who<font color="#CCCCCC"> is actually</font><font color="#E5E5E5"> injecting that</font><font color="#CCCCCC"> HTML code</font>
+
+19
+00:00:43,320 --> 00:00:46,320
+<font color="#E5E5E5">now let's see how HTML injection works</font>
+
+20
+00:00:46,320 --> 00:00:49,440
+<font color="#E5E5E5">now let's see how we can exploit HTML</font>
+
+21
+00:00:49,440 --> 00:00:51,840
+injection vulnerability in<font color="#E5E5E5"> you today so</font>
+
+22
+00:00:51,840 --> 00:00:54,329
+in<font color="#E5E5E5"> this</font><font color="#CCCCCC"> video I</font><font color="#E5E5E5"> am taking the previous</font>
+
+23
+00:00:54,329 --> 00:00:56,640
+<font color="#E5E5E5">cross-site scripting challenges pages</font>
+
+24
+00:00:56,640 --> 00:00:59,039
+which we have covered<font color="#CCCCCC"> in the last video</font>
+
+25
+00:00:59,039 --> 00:01:01,800
+<font color="#CCCCCC">but instead of adding a Java Script</font>
+
+26
+00:01:01,800 --> 00:01:05,010
+in them we will try to inject<font color="#CCCCCC"> HTML code</font>
+
+27
+00:01:05,010 --> 00:01:07,470
+<font color="#E5E5E5">and we will see whether the utility web</font>
+
+28
+00:01:07,470 --> 00:01:09,270
+application is being rendered
+
+29
+00:01:09,270 --> 00:01:12,900
+according to over<font color="#E5E5E5"> HTML code</font><font color="#CCCCCC"> here you can</font>
+
+30
+00:01:12,900 --> 00:01:14,670
+see that right<font color="#CCCCCC"> now I am on mutilate a</font>
+
+31
+00:01:14,670 --> 00:01:16,740
+web application<font color="#CCCCCC"> so</font><font color="#E5E5E5"> let us go</font><font color="#CCCCCC"> back to the</font>
+
+32
+00:01:16,740 --> 00:01:18,810
+previous challenges of the cross-site
+
+33
+00:01:18,810 --> 00:01:21,229
+scripting
+
+34
+00:01:26,070 --> 00:01:29,850
+and here you can see that right<font color="#CCCCCC"> now</font><font color="#E5E5E5"> we</font>
+
+35
+00:01:29,850 --> 00:01:31,620
+are this challenge<font color="#CCCCCC"> at</font><font color="#E5E5E5"> background color</font>
+
+36
+00:01:31,620 --> 00:01:33,600
+<font color="#E5E5E5">so</font><font color="#CCCCCC"> this</font><font color="#E5E5E5"> challenge looks similar to the</font>
+
+37
+00:01:33,600 --> 00:01:36,420
+crosshair scripting but now here instead
+
+38
+00:01:36,420 --> 00:01:38,430
+<font color="#CCCCCC">of</font><font color="#E5E5E5"> adding a</font><font color="#CCCCCC"> JavaScript</font><font color="#E5E5E5"> we will try to</font>
+
+39
+00:01:38,430 --> 00:01:41,610
+add HTML<font color="#E5E5E5"> code</font><font color="#CCCCCC"> okay let me close</font><font color="#E5E5E5"> this tag</font>
+
+40
+00:01:41,610 --> 00:01:48,600
+<font color="#E5E5E5">now let's add here h1 tag and let's see</font>
+
+41
+00:01:48,600 --> 00:01:51,030
+whether this<font color="#E5E5E5"> web</font><font color="#CCCCCC"> application or this</font>
+
+42
+00:01:51,030 --> 00:01:54,510
+page is being rendered<font color="#CCCCCC"> according to this</font>
+
+43
+00:01:54,510 --> 00:01:58,940
+<font color="#CCCCCC">HTML tag</font><font color="#E5E5E5"> so let me just write down here</font>
+
+44
+00:01:58,940 --> 00:02:04,740
+<font color="#CCCCCC">DML injection and let me close this h1</font>
+
+45
+00:02:04,740 --> 00:02:06,990
+tag let's click over<font color="#CCCCCC"> here set background</font>
+
+46
+00:02:06,990 --> 00:02:11,540
+<font color="#E5E5E5">color and here you can see that we are</font>
+
+47
+00:02:11,540 --> 00:02:15,450
+successfully able<font color="#E5E5E5"> to execute HTML code</font>
+
+48
+00:02:15,450 --> 00:02:17,760
+here<font color="#CCCCCC"> and here</font><font color="#E5E5E5"> you can see that this web</font>
+
+49
+00:02:17,760 --> 00:02:21,780
+application<font color="#CCCCCC"> this web page is rendered</font>
+
+50
+00:02:21,780 --> 00:02:24,959
+according to our<font color="#E5E5E5"> HTML</font><font color="#CCCCCC"> code here you can</font>
+
+51
+00:02:24,959 --> 00:02:31,230
+see<font color="#E5E5E5"> our HTML h1 tag is executed so this</font>
+
+52
+00:02:31,230 --> 00:02:33,540
+is the reflected at<font color="#E5E5E5"> steam injection now</font>
+
+53
+00:02:33,540 --> 00:02:36,180
+let's have a<font color="#E5E5E5"> look at</font><font color="#CCCCCC"> stored ATS tml</font>
+
+54
+00:02:36,180 --> 00:02:39,180
+injection but before<font color="#E5E5E5"> going let's reset</font>
+
+55
+00:02:39,180 --> 00:02:46,560
+the database so that<font color="#E5E5E5"> our previous</font><font color="#CCCCCC"> Java</font>
+
+56
+00:02:46,560 --> 00:02:48,450
+<font color="#CCCCCC">Script Curie which which was stored</font><font color="#E5E5E5"> in</font>
+
+57
+00:02:48,450 --> 00:02:55,500
+<font color="#E5E5E5">the database just get deleted now let's</font>
+
+58
+00:02:55,500 --> 00:02:59,310
+go here<font color="#CCCCCC"> cross-site scripting second</font>
+
+59
+00:02:59,310 --> 00:03:04,260
+order and add to<font color="#E5E5E5"> your block now in the</font>
+
+60
+00:03:04,260 --> 00:03:06,480
+last video<font color="#E5E5E5"> if you remember then we just</font>
+
+61
+00:03:06,480 --> 00:03:08,760
+came to know<font color="#E5E5E5"> that the</font><font color="#CCCCCC"> PV tag is</font>
+
+62
+00:03:08,760 --> 00:03:12,320
+responsible for enclosing our input now
+
+63
+00:03:12,320 --> 00:03:16,140
+let's give us<font color="#E5E5E5"> now let's just write hello</font>
+
+64
+00:03:16,140 --> 00:03:19,530
+and let's close the TD tag here<font color="#CCCCCC"> and</font>
+
+65
+00:03:19,530 --> 00:03:23,340
+let's<font color="#E5E5E5"> try to add any JavaScript code so</font>
+
+66
+00:03:23,340 --> 00:03:27,019
+I am adding<font color="#CCCCCC"> a market tag here</font>
+
+67
+00:03:34,800 --> 00:03:37,590
+and let me<font color="#E5E5E5"> click on 'save blog entry</font><font color="#CCCCCC"> and</font>
+
+68
+00:03:37,590 --> 00:03:42,180
+let's see whether we<font color="#E5E5E5"> are able to exploit</font>
+
+69
+00:03:42,180 --> 00:03:43,890
+this page or whether we<font color="#E5E5E5"> are able</font><font color="#CCCCCC"> to</font>
+
+70
+00:03:43,890 --> 00:03:46,320
+execute<font color="#CCCCCC"> that</font><font color="#E5E5E5"> steam injection here or not</font>
+
+71
+00:03:46,320 --> 00:03:49,800
+<font color="#CCCCCC">okay</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> here you can see that our HTML</font>
+
+72
+00:03:49,800 --> 00:03:51,960
+code<font color="#CCCCCC"> market</font><font color="#E5E5E5"> tag is being executed and</font>
+
+73
+00:03:51,960 --> 00:03:56,700
+it's running<font color="#E5E5E5"> here you can see and in</font>
+
+74
+00:03:56,700 --> 00:03:58,560
+this video<font color="#E5E5E5"> we have covered that</font><font color="#CCCCCC"> what is</font>
+
+75
+00:03:58,560 --> 00:04:01,020
+at steam injection<font color="#E5E5E5"> there it's different</font>
+
+76
+00:04:01,020 --> 00:04:03,540
+types and here we will<font color="#E5E5E5"> see</font><font color="#CCCCCC"> that how we</font>
+
+77
+00:04:03,540 --> 00:04:07,560
+can<font color="#E5E5E5"> exploit the HTML injection</font>
+
+78
+00:04:07,560 --> 00:04:11,790
+vulnerabilities so I recommend<font color="#E5E5E5"> you to</font>
+
+79
+00:04:11,790 --> 00:04:14,310
+practice<font color="#E5E5E5"> these all challenges in your</font><font color="#CCCCCC"> OS</font>
+
+80
+00:04:14,310 --> 00:04:16,890
+broken web application<font color="#CCCCCC"> and thanks for</font>
+
+81
+00:04:16,890 --> 00:00:00,000
+<font color="#E5E5E5">watching</font><font color="#CCCCCC"> this video</font>
+

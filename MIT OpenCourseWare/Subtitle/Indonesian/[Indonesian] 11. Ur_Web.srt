@@ -1,0 +1,7104 @@
+1
+00:00:00,000 --> 00:00:00,090
+
+
+2
+00:00:00,090 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,820
+ Lisensi Commons. 
+
+4
+00:00:03,820 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,310
+ di ocw.mit.edu. 
+
+9
+00:00:17,310 --> 00:00:26,790
+
+
+10
+00:00:26,790 --> 00:00:28,930
+ PROFESOR: Baiklah, teman-teman, mari kita mulai. 
+
+11
+00:00:28,930 --> 00:00:31,350
+ Jadi hari ini, kita akan berbicara tentang hal yang sangat 
+
+12
+00:00:31,350 --> 00:00:33,944
+ pendekatan yang berbeda dan berprinsip untuk membangun web yang aman 
+
+13
+00:00:33,944 --> 00:00:34,485
+ aplikasi. 
+
+14
+00:00:34,485 --> 00:00:36,604
+ Dan itu akan menjadi sistem yang disebut Ur / Web. 
+
+15
+00:00:36,604 --> 00:00:37,978
+ Dan sekarang, dosen tamu kami 
+
+16
+00:00:37,978 --> 00:00:39,769
+ adalah penulis sistem, Adam Chlipala, 
+
+17
+00:00:39,769 --> 00:00:41,982
+ siapa profesor di MIT, akan memberitahu Anda 
+
+18
+00:00:41,982 --> 00:00:44,361
+ lebih lanjut tentang sistem yang dibangunnya. 
+
+19
+00:00:44,361 --> 00:00:48,830
+ ADAM CHLIPALA: Baiklah, jadi saya ingin mendapatkan demo 
+
+20
+00:00:48,830 --> 00:00:49,770
+ secepatnya. 
+
+21
+00:00:49,770 --> 00:00:51,630
+ Tapi sebelum itu, saya hanya ingin menghabiskan 
+
+22
+00:00:51,630 --> 00:00:54,890
+ beberapa slide yang mengatur bagian dari konteks tentang sistem ini. 
+
+23
+00:00:54,890 --> 00:00:57,150
+ Dan Anda mungkin sudah mendapatkan beberapa konteks itu 
+
+24
+00:00:57,150 --> 00:00:59,560
+ sudah dari draft kertas itu 
+
+25
+00:00:59,560 --> 00:01:03,740
+ adalah bacaan untuk kelas ini. 
+
+26
+00:01:03,740 --> 00:01:05,360
+ Jadi apa itu Ur / Web? 
+
+27
+00:01:05,360 --> 00:01:07,360
+ Selalu baik untuk memulai dengan menjelaskan apa 
+
+28
+00:01:07,360 --> 00:01:08,885
+ nama sesuatu berarti. 
+
+29
+00:01:08,885 --> 00:01:12,600
+ Jadi Ur / Web, pertama-tama itu adalah bahasa pemrograman 
+
+30
+00:01:12,600 --> 00:01:14,030
+ untuk membangun aplikasi web. 
+
+31
+00:01:14,030 --> 00:01:16,045
+ Itulah arti dari bagian Web dari nama itu. 
+
+32
+00:01:16,045 --> 00:01:18,050
+ Dan itu semacam sistem tumpukan penuh. 
+
+33
+00:01:18,050 --> 00:01:22,640
+ Itu melakukan semua yang perlu Anda lakukan untuk membangun aplikasi web. 
+
+34
+00:01:22,640 --> 00:01:26,560
+ Dan Ur adalah pemrograman fungsional tujuan umum baru 
+
+35
+00:01:26,560 --> 00:01:28,950
+ bahasa yang digunakan untuk mengimplementasikan 
+
+36
+00:01:28,950 --> 00:01:31,000
+ fitur khusus web ini. 
+
+37
+00:01:31,000 --> 00:01:33,820
+
+
+38
+00:01:33,820 --> 00:01:36,340
+ Dan inti dari Ur / Web adalah sebaliknya 
+
+39
+00:01:36,340 --> 00:01:38,340
+ memiliki bahasa pemrograman tujuan umum 
+
+40
+00:01:38,340 --> 00:01:40,840
+ dan kemudian memiliki perpustakaan atau kerangka kerja tradisional 
+
+41
+00:01:40,840 --> 00:01:42,540
+ untuk membangun aplikasi web, itu 
+
+42
+00:01:42,540 --> 00:01:45,730
+ semua diintegrasikan ke dalam bahasa pemrograman yang disesuaikan di Ur / Web. 
+
+43
+00:01:45,730 --> 00:01:49,690
+ Dan itu bahasa yang melibatkan kompilasi, bukan 
+
+44
+00:01:49,690 --> 00:01:51,100
+ interpretasi pada waktu proses. 
+
+45
+00:01:51,100 --> 00:01:53,890
+ Dan kompilator dalam arti tertentu memahami apa itu web 
+
+46
+00:01:53,890 --> 00:01:55,400
+ aplikasi seharusnya dilakukan. 
+
+47
+00:01:55,400 --> 00:01:57,150
+ Dan itu akan menunjukkan kesalahan bahwa Anda 
+
+48
+00:01:57,150 --> 00:02:00,700
+ membuat sebuah compiler konvensional, untuk mengatakan Java, 
+
+49
+00:02:00,700 --> 00:02:04,170
+ tidak akan bisa menyadari di mana kesalahan. 
+
+50
+00:02:04,170 --> 00:02:06,620
+ Jadi sebenarnya ada tiga prinsip utama 
+
+51
+00:02:06,620 --> 00:02:11,590
+ yang saya coba ikuti dalam merancang bahasa ini. 
+
+52
+00:02:11,590 --> 00:02:13,850
+ Yang tengah paling relevan dalam konteks ini. 
+
+53
+00:02:13,850 --> 00:02:16,970
+ Tetapi mereka adalah produktivitas programmer, keamanan, 
+
+54
+00:02:16,970 --> 00:02:17,860
+ dan kinerja. 
+
+55
+00:02:17,860 --> 00:02:22,300
+ Dan bagian terakhir, terutama di sisi server, karena itu 
+
+56
+00:02:22,300 --> 00:02:24,350
+ tampak lebih penting untuk alasan penskalaan. 
+
+57
+00:02:24,350 --> 00:02:27,200
+ Dalam banyak kasus, para pengguna aplikasi Anda 
+
+58
+00:02:27,200 --> 00:02:30,771
+ tidak akan melihat masalah kinerja kecil di sisi klien. 
+
+59
+00:02:30,771 --> 00:02:32,270
+ Tetapi masalah kecil di sisi server 
+
+60
+00:02:32,270 --> 00:02:34,590
+ dapat memaksa Anda membeli lebih banyak server dari yang seharusnya 
+
+61
+00:02:34,590 --> 00:02:35,090
+ jika tidak. 
+
+62
+00:02:35,090 --> 00:02:37,950
+
+
+63
+00:02:37,950 --> 00:02:41,820
+ Dan pada titik ini, ada beberapa pengguna Ur / Web-- 
+
+64
+00:02:41,820 --> 00:02:44,380
+ hampir tidak sebanyak bahasa lainnya 
+
+65
+00:02:44,380 --> 00:02:45,490
+ Anda mungkin memikirkan. 
+
+66
+00:02:45,490 --> 00:02:48,730
+ Tapi setidaknya ada satu aplikasi web komersial ini, 
+
+67
+00:02:48,730 --> 00:02:53,420
+ yang merupakan pembaca umpan RSS yang mendukung fitur eksotis semacam itu 
+
+68
+00:02:53,420 --> 00:02:55,170
+ sebagai menampilkan komentar. 
+
+69
+00:02:55,170 --> 00:02:59,060
+ Dan ada URL yang dipilih oleh pembicara bahasa Inggris non-pribumi yang 
+
+70
+00:02:59,060 --> 00:03:00,210
+ menyesali sekarang. 
+
+71
+00:03:00,210 --> 00:03:03,200
+ Ini disebut BazQux Reader, sebagai kombinasi obat umum 
+
+72
+00:03:03,200 --> 00:03:06,840
+ variabel taktik dari komunitas hacker. 
+
+73
+00:03:06,840 --> 00:03:10,019
+ Dan ada beberapa ribu pengguna yang membayar. 
+
+74
+00:03:10,019 --> 00:03:12,060
+ Dan kelihatannya seperti itu - jauh lebih baik dari apapun 
+
+75
+00:03:12,060 --> 00:03:15,010
+ Saya tahu cara membuatnya dengan CSS. 
+
+76
+00:03:15,010 --> 00:03:17,380
+ Tapi inilah bukti bahwa itu bisa dilakukan dengan menggunakan Ur / Web. 
+
+77
+00:03:17,380 --> 00:03:20,640
+
+
+78
+00:03:20,640 --> 00:03:22,829
+ Jangan ragu untuk melompat dengan pertanyaan kapan saja, 
+
+79
+00:03:22,829 --> 00:03:24,870
+ meskipun saya mungkin belum sampai pada intinya 
+
+80
+00:03:24,870 --> 00:03:27,400
+ yang memancing banyak pertanyaan. 
+
+81
+00:03:27,400 --> 00:03:29,505
+ Jadi penjualan dasar untuk Ur / Web 
+
+82
+00:03:29,505 --> 00:03:31,880
+ adalah bahwa ia memiliki model pemrograman tingkat yang sangat tinggi, yang 
+
+83
+00:03:31,880 --> 00:03:33,380
+ sangat berbeda dari, katakanlah, Django, 
+
+84
+00:03:33,380 --> 00:03:35,810
+ yang saya tahu Anda menghabiskan waktu membaca tentang atau berbicara 
+
+85
+00:03:35,810 --> 00:03:38,020
+ tentang di kelas. 
+
+86
+00:03:38,020 --> 00:03:41,362
+ Dan itu memiliki kisah keamanan yang bagus. 
+
+87
+00:03:41,362 --> 00:03:42,820
+ Beberapa fitur yang Anda inginkan untuk keamanan 
+
+88
+00:03:42,820 --> 00:03:44,580
+ benar-benar terintegrasi ke dalam sistem 
+
+89
+00:03:44,580 --> 00:03:48,340
+ sehingga Anda benar-benar harus bekerja keras untuk tidak mewarisi 
+
+90
+00:03:48,340 --> 00:03:49,360
+ manfaat keamanan ini. 
+
+91
+00:03:49,360 --> 00:03:51,780
+ Dan saya akan mengatakan lebih banyak lagi tentang detailnya. 
+
+92
+00:03:51,780 --> 00:03:53,410
+ Dan juga, kinerja sisi server 
+
+93
+00:03:53,410 --> 00:03:56,874
+ luar biasa bagus, bahkan di antara alat-alat populer 
+
+94
+00:03:56,874 --> 00:03:58,790
+ untuk membangun aplikasi web yang lebih banyak 
+
+95
+00:03:58,790 --> 00:04:01,490
+ kemungkinan telah mendengar sebelumnya. 
+
+96
+00:04:01,490 --> 00:04:06,180
+ Dan peringatannya adalah bahwa kita mungkin 
+
+97
+00:04:06,180 --> 00:04:09,290
+ perlu menginternalisasi ide-ide besar 
+
+98
+00:04:09,290 --> 00:04:10,800
+ bahasa pemrograman fungsional 
+
+99
+00:04:10,800 --> 00:04:13,890
+ seperti Haskell sebelum programmer siap memulai 
+
+100
+00:04:13,890 --> 00:04:14,550
+ menggunakan Ur / Web. 
+
+101
+00:04:14,550 --> 00:04:19,110
+ Dan melihat pertanyaan dan jawaban untuk kelas ini, 
+
+102
+00:04:19,110 --> 00:04:22,060
+ mungkin seperlima dari Anda mengeluh 
+
+103
+00:04:22,060 --> 00:04:25,380
+ tentang bagian pemrograman fungsional dari kertas 
+
+104
+00:04:25,380 --> 00:04:26,700
+ menjadi sulit untuk diikuti. 
+
+105
+00:04:26,700 --> 00:04:29,166
+ Saya minta maaf. 
+
+106
+00:04:29,166 --> 00:04:30,540
+ Ada begitu banyak ide bagus 
+
+107
+00:04:30,540 --> 00:04:31,800
+ di dunia pemrograman fungsional 
+
+108
+00:04:31,800 --> 00:04:33,340
+ bahwa sulit untuk tidak memulai dari titik itu 
+
+109
+00:04:33,340 --> 00:04:35,070
+ dan tambahkan lebih banyak barang keren di atasnya. 
+
+110
+00:04:35,070 --> 00:04:38,110
+ Dan saya akan mencoba untuk menghindari persyaratan apa pun 
+
+111
+00:04:38,110 --> 00:04:40,800
+ untuk mengetahui materi itu untuk mengikuti apa 
+
+112
+00:04:40,800 --> 00:04:45,240
+ Saya akan melakukan di kelas hari ini. 
+
+113
+00:04:45,240 --> 00:04:48,580
+ Jadi model pemrograman sangat erat hubungannya 
+
+114
+00:04:48,580 --> 00:04:49,910
+ ke pengetikan statis. 
+
+115
+00:04:49,910 --> 00:04:52,060
+ Dan itu bukan hanya mengetik seperti statis 
+
+116
+00:04:52,060 --> 00:04:54,170
+ di, katakanlah, Jawa, yang memiliki relatif tidak ekspresif 
+
+117
+00:04:54,170 --> 00:04:56,190
+ sistem jenis kikuk, tetapi mengetik statis 
+
+118
+00:04:56,190 --> 00:04:58,460
+ seperti di Haskell atau OCaml. 
+
+119
+00:04:58,460 --> 00:05:00,260
+ Dan tipe ini adalah salah satu cara 
+
+120
+00:05:00,260 --> 00:05:02,380
+ bahwa kompilator memahami apa yang Anda lakukan 
+
+121
+00:05:02,380 --> 00:05:05,190
+ dan menangkap kesalahan dalam program Anda. 
+
+122
+00:05:05,190 --> 00:05:07,954
+ Dan ternyata itu adalah bahasa Ur inti 
+
+123
+00:05:07,954 --> 00:05:10,120
+ Ur / Web yang dibangun di atas memiliki sangat ekspresif 
+
+124
+00:05:10,120 --> 00:05:11,090
+ sistem tipe statis. 
+
+125
+00:05:11,090 --> 00:05:12,700
+ Begitu banyak hal yang dilakukan Ur / Web 
+
+126
+00:05:12,700 --> 00:05:14,710
+ sebenarnya hanya terpapar sebagai perpustakaan 
+
+127
+00:05:14,710 --> 00:05:16,630
+ tanpa dukungan kompiler khusus. 
+
+128
+00:05:16,630 --> 00:05:20,520
+ Sebagai contoh, kita akan mengajarkan compiler bagaimana cara mengetik cek 
+
+129
+00:05:20,520 --> 00:05:23,860
+ Kueri SQL tanpa benar-benar membangun aturan pengetikan 
+
+130
+00:05:23,860 --> 00:05:25,420
+ dari SQL ke dalam compiler. 
+
+131
+00:05:25,420 --> 00:05:29,310
+ Mereka dapat dikodekan sebagai perpustakaan dan menggunakan pemeriksa tipe standar 
+
+132
+00:05:29,310 --> 00:05:33,425
+ untuk memastikan query SQL Anda mengikuti aturan SQL. 
+
+133
+00:05:33,425 --> 00:05:36,950
+
+
+134
+00:05:36,950 --> 00:05:40,010
+ Paling relevan dalam konteks ini, kisah keamanan 
+
+135
+00:05:40,010 --> 00:05:44,200
+ pada tingkat yang tinggi - sebagian besar keamanan yang paling umum 
+
+136
+00:05:44,200 --> 00:05:48,690
+ kerentanan tidak mungkin dilakukan dengan konstruksi di Ur / Web. 
+
+137
+00:05:48,690 --> 00:05:51,400
+ Anda harus secara eksplisit mengaktifkan menakutkan 
+
+138
+00:05:51,400 --> 00:05:55,520
+ mencari nama-nama bendera diizinkan untuk melakukan sebagian besar dari yang paling banyak 
+
+139
+00:05:55,520 --> 00:05:57,550
+ hal-hal buruk yang dapat Anda lakukan di aplikasi web, 
+
+140
+00:05:57,550 --> 00:06:02,090
+ seperti tidak ada kerentanan skrip lintas situs kecuali Anda 
+
+141
+00:06:02,090 --> 00:06:04,610
+ benar-benar memanggil beberapa sihir hitam, katakanlah, dengan menggunakan 
+
+142
+00:06:04,610 --> 00:06:08,020
+ antarmuka fungsi asing. 
+
+143
+00:06:08,020 --> 00:06:11,130
+ Dan ada beberapa fitur khusus keamanan lainnya 
+
+144
+00:06:11,130 --> 00:06:14,100
+ yang akan saya soroti nanti. 
+
+145
+00:06:14,100 --> 00:06:16,540
+ Dan kinerjanya juga sangat bagus. 
+
+146
+00:06:16,540 --> 00:06:21,790
+ Compiler adalah, pertama-tama, sebuah kompiler khusus domain 
+
+147
+00:06:21,790 --> 00:06:22,970
+ untuk aplikasi web. 
+
+148
+00:06:22,970 --> 00:06:25,890
+ Jadi ia mengerti apa yang sedang dilakukan dan sedang dilakukan oleh aplikasi web 
+
+149
+00:06:25,890 --> 00:06:28,800
+ mampu mengoptimalkan beberapa hal yang lebih umum dikompilasi 
+
+150
+00:06:28,800 --> 00:06:29,770
+ tidak akan menangkap. 
+
+151
+00:06:29,770 --> 00:06:31,904
+ Dan biasanya kode yang keluar 
+
+152
+00:06:31,904 --> 00:06:33,570
+ kompiler ini yang berjalan di server 
+
+153
+00:06:33,570 --> 00:06:36,100
+ adalah kode asli, yang sangat, sangat 
+
+154
+00:06:36,100 --> 00:06:41,450
+ kompetitif dengan apa yang Anda mungkin repot-repot untuk menulis dengan tangan dalam C. 
+
+155
+00:06:41,450 --> 00:06:44,449
+ Dan biaya pertunjukan itu ada di sana 
+
+156
+00:06:44,449 --> 00:06:45,990
+ dibandingkan dengan pendekatan lain cenderung 
+
+157
+00:06:45,990 --> 00:06:47,630
+ harus dilakukan dengan model konkurensi, yang 
+
+158
+00:06:47,630 --> 00:06:49,340
+ membuat kehidupan programmer lebih mudah 
+
+159
+00:06:49,340 --> 00:06:50,905
+ di beberapa biaya dalam kinerja. 
+
+160
+00:06:50,905 --> 00:06:53,155
+ Dan saya akan mengatakan sedikit lebih banyak tentang itu sebentar lagi. 
+
+161
+00:06:53,155 --> 00:06:55,920
+
+
+162
+00:06:55,920 --> 00:06:59,960
+ Berikut ini plug cepat untuk pembandingan kerangka kerja web ini 
+
+163
+00:06:59,960 --> 00:07:03,380
+ inisiatif yang dijalankan oleh pihak ketiga. 
+
+164
+00:07:03,380 --> 00:07:05,750
+ Ini adalah screenshot hasil paling banyak 
+
+165
+00:07:05,750 --> 00:07:09,830
+ putaran baru-baru ini di mana sejumlah tugas pemrograman web yang berbeda 
+
+166
+00:07:09,830 --> 00:07:11,870
+ diselesaikan dalam berbagai kerangka kerja yang berbeda, 
+
+167
+00:07:11,870 --> 00:07:15,460
+ dan mereka dibandingkan cukup banyak pada kinerja 
+
+168
+00:07:15,460 --> 00:07:16,470
+ sejauh ini. 
+
+169
+00:07:16,470 --> 00:07:18,780
+ Dan di sini Anda dapat melihat Ur / Web duduk 
+
+170
+00:07:18,780 --> 00:07:23,400
+ di urutan keempat dari sekitar 60 kerangka kerja pada tolok ukur ini. 
+
+171
+00:07:23,400 --> 00:07:24,890
+ Dan sudah ada beberapa perbaikan 
+
+172
+00:07:24,890 --> 00:07:28,460
+ ke kompiler Ur / Web sejak tangkapan layar ini diambil. 
+
+173
+00:07:28,460 --> 00:07:29,960
+ Dan saya harapkan di babak selanjutnya 
+
+174
+00:07:29,960 --> 00:07:32,740
+ naik sedikit lebih tinggi. 
+
+175
+00:07:32,740 --> 00:07:35,880
+ Tetapi pada dasarnya, sudah ini adalah contoh sederhana yang digunakan 
+
+176
+00:07:35,880 --> 00:07:37,630
+ SQL untuk menghasilkan halaman HTML. 
+
+177
+00:07:37,630 --> 00:07:40,970
+ Anda mendapatkan sekitar 100.000 permintaan per detik 
+
+178
+00:07:40,970 --> 00:07:43,100
+ dari server Ur / Web, yang sedang berjalan 
+
+179
+00:07:43,100 --> 00:07:45,920
+ menjadi cukup banyak untuk sebagian besar aplikasi. 
+
+180
+00:07:45,920 --> 00:07:48,940
+ Jadi semacam pesan takeaway yang penting 
+
+181
+00:07:48,940 --> 00:07:53,110
+ dari slide ini di kelas ini adalah bahwa Anda dapat mengadopsi tingkat tinggi 
+
+182
+00:07:53,110 --> 00:07:57,270
+ model yang membuat keamanan lebih mudah dicapai tanpa hanya memberi 
+
+183
+00:07:57,270 --> 00:08:00,914
+ up semua kinerja yang Anda harapkan untuk mendapatkan lebih banyak 
+
+184
+00:08:00,914 --> 00:08:01,830
+ teknik arus utama. 
+
+185
+00:08:01,830 --> 00:08:04,840
+
+
+186
+00:08:04,840 --> 00:08:07,760
+ Baiklah, biar aku mulai dengan memberikan kartunku 
+
+187
+00:08:07,760 --> 00:08:09,810
+ kesan cara berpikir para programmer web 
+
+188
+00:08:09,810 --> 00:08:12,885
+ tentang menulis aplikasi web dalam kerangka kerja utama saat ini. 
+
+189
+00:08:12,885 --> 00:08:15,250
+ Dan kemudian saya akan menunjukkan perspektif yang berbeda 
+
+190
+00:08:15,250 --> 00:08:17,810
+ yang disediakan Ur / Web, di mana beberapa hal itu 
+
+191
+00:08:17,810 --> 00:08:20,520
+ bisa salah pada tingkat ini mengingat abstraksi itu 
+
+192
+00:08:20,520 --> 00:08:24,115
+ terkena tidak bisa lagi salah dengan konstruksi. 
+
+193
+00:08:24,115 --> 00:08:26,740
+ Jadi gambar kartun dasar adalah ada server web di luar sana. 
+
+194
+00:08:26,740 --> 00:08:29,410
+ Dan itu semacam bertanggung jawab atas seluruh proses 
+
+195
+00:08:29,410 --> 00:08:30,720
+ aplikasi Anda. 
+
+196
+00:08:30,720 --> 00:08:33,049
+ Dan ada banyak armada peramban di luar sana 
+
+197
+00:08:33,049 --> 00:08:35,260
+ yang akan berinteraksi dengan server itu. 
+
+198
+00:08:35,260 --> 00:08:38,010
+ Itu akan memiliki beberapa keadaan yang berakhir secara efektif 
+
+199
+00:08:38,010 --> 00:08:40,350
+ dibagikan di semua browser ini melalui kontak mereka 
+
+200
+00:08:40,350 --> 00:08:42,179
+ dengan server. 
+
+201
+00:08:42,179 --> 00:08:44,210
+ Jadi gambar yang biasa adalah browser itu 
+
+202
+00:08:44,210 --> 00:08:46,060
+ mulai berinteraksi dengan server web 
+
+203
+00:08:46,060 --> 00:08:49,520
+ dengan mengirimkannya permintaan HTTP yang mencakup 
+
+204
+00:08:49,520 --> 00:08:51,320
+ beberapa URL yang tertanam di dalamnya. 
+
+205
+00:08:51,320 --> 00:08:53,380
+ Dan kemudian server web kembali, 
+
+206
+00:08:53,380 --> 00:08:55,597
+ lagi, halaman HTTP dan HTML. 
+
+207
+00:08:55,597 --> 00:08:57,305
+ Dan ada beberapa URL yang disematkan di dalamnya, 
+
+208
+00:08:57,305 --> 00:08:59,860
+ yang dapat digunakan untuk memutuskan permintaan untuk membuat web 
+
+209
+00:08:59,860 --> 00:09:02,760
+ server di masa depan. 
+
+210
+00:09:02,760 --> 00:09:04,350
+ Server web ini mungkin juga berbicara 
+
+211
+00:09:04,350 --> 00:09:07,450
+ ke database yang menyediakan penyimpanan yang gigih itu 
+
+212
+00:09:07,450 --> 00:09:10,170
+ dibagi di semua pengguna aplikasi. 
+
+213
+00:09:10,170 --> 00:09:13,240
+ Satu protokol populer untuk berbicara di antara web 
+
+214
+00:09:13,240 --> 00:09:15,870
+ server dan basis datanya adalah SQL. 
+
+215
+00:09:15,870 --> 00:09:20,070
+ Itulah yang akan saya fokuskan untuk berbicara tentang Ur / Web. 
+
+216
+00:09:20,070 --> 00:09:24,390
+ Dan juga, dengan aplikasi web modern, 
+
+217
+00:09:24,390 --> 00:09:27,569
+ bukan hanya satu halaman pada model waktu 
+
+218
+00:09:27,569 --> 00:09:29,610
+ di mana setiap kali ada sesuatu yang berubah di halaman 
+
+219
+00:09:29,610 --> 00:09:31,010
+ Anda membuat permintaan baru ke server 
+
+220
+00:09:31,010 --> 00:09:32,843
+ dan kemudian mengganti seluruh halaman unit. 
+
+221
+00:09:32,843 --> 00:09:35,424
+ Ada gaya Ajax ini di mana browser 
+
+222
+00:09:35,424 --> 00:09:37,090
+ dalam tampilan halaman tunggal kadang-kadang 
+
+223
+00:09:37,090 --> 00:09:39,960
+ membuat permintaan HTTP tambahan ke server web 
+
+224
+00:09:39,960 --> 00:09:42,390
+ dan menerima tanggapan yang diproses secara terprogram 
+
+225
+00:09:42,390 --> 00:09:43,970
+ dengan cara yang disesuaikan. 
+
+226
+00:09:43,970 --> 00:09:45,870
+ Dan ini sering menggunakan representasi 
+
+227
+00:09:45,870 --> 00:09:49,070
+ seperti XML dan JSON dan kabel sederhana lainnya 
+
+228
+00:09:49,070 --> 00:09:51,980
+ format untuk bertukar data di antara klien 
+
+229
+00:09:51,980 --> 00:09:54,400
+ dan server. 
+
+230
+00:09:54,400 --> 00:09:56,980
+ Dan kemudian ketika browser menerima respons itu, 
+
+231
+00:09:56,980 --> 00:09:58,480
+ ada beberapa kode JavaScript yang sedang berjalan 
+
+232
+00:09:58,480 --> 00:10:01,440
+ di sana, yang mengimplementasikan logika sewenang-wenang untuk mengendalikan 
+
+233
+00:10:01,440 --> 00:10:03,875
+ UI yang kami tampilkan kepada pengguna. 
+
+234
+00:10:03,875 --> 00:10:06,000
+ Dan cara kerjanya adalah kode JavaScript ini 
+
+235
+00:10:06,000 --> 00:10:08,200
+ dapat membaca tanggapan yang telah diberikan oleh server 
+
+236
+00:10:08,200 --> 00:10:10,050
+ untuk panggilan Ajax yang berbeda. 
+
+237
+00:10:10,050 --> 00:10:14,480
+ Dan kemudian dapat memodifikasi halaman yang ditampilkan pada dasarnya 
+
+238
+00:10:14,480 --> 00:10:18,470
+ dengan mem-mutasi variabel global yang mewakili halaman. 
+
+239
+00:10:18,470 --> 00:10:21,170
+ Dan setiap bagian dari program dapat memiliki 
+
+240
+00:10:21,170 --> 00:10:25,130
+ efek sewenang-wenang pada variabel global ini yaitu halaman. 
+
+241
+00:10:25,130 --> 00:10:27,230
+ Dan seringkali, bagian-bagian dari halaman itu dicari 
+
+242
+00:10:27,230 --> 00:10:30,391
+ oleh ID string yang dianotasikan pada simpul pohon itu 
+
+243
+00:10:30,391 --> 00:10:31,390
+ mendeskripsikan dokumen. 
+
+244
+00:10:31,390 --> 00:10:34,000
+
+
+245
+00:10:34,000 --> 00:10:36,300
+ Dan akhirnya, satu lagi komplikasi-- terkadang 
+
+246
+00:10:36,300 --> 00:10:40,730
+ kami ingin mengizinkan apa yang terasa seperti server web yang dihubungi 
+
+247
+00:10:40,730 --> 00:10:43,840
+ browser tanpa disuruh. 
+
+248
+00:10:43,840 --> 00:10:45,700
+ Jadi katakanlah ada pesan email baru. 
+
+249
+00:10:45,700 --> 00:10:48,260
+ Server web ingin memberi tahu browser, pesan baru. 
+
+250
+00:10:48,260 --> 00:10:50,850
+ Jadi ada berbagai cara untuk melakukan hal ini 
+
+251
+00:10:50,850 --> 00:10:53,610
+ akronim seperti Comet dan WebSockets 
+
+252
+00:10:53,610 --> 00:10:56,540
+ yang sangat mirip dengan peramban yang menghubungi server. 
+
+253
+00:10:56,540 --> 00:10:59,210
+ Ini hal yang sama secara konseptual 
+
+254
+00:10:59,210 --> 00:11:02,610
+ ke arah lain. 
+
+255
+00:11:02,610 --> 00:11:05,940
+ Baiklah, jadi saya ingin kembali ke layar 
+
+256
+00:11:05,940 --> 00:11:08,360
+ semua protokol dan bahasa ini, 
+
+257
+00:11:08,360 --> 00:11:11,630
+ soroti beberapa bagian dengan warna kuning di sini. 
+
+258
+00:11:11,630 --> 00:11:13,530
+ Setelah membaca koran, apakah ada orang 
+
+259
+00:11:13,530 --> 00:11:16,580
+ tebak apa kesamaannya di antara semuanya 
+
+260
+00:11:16,580 --> 00:11:19,465
+ bagian yang disorot di sini dari perspektif keamanan? 
+
+261
+00:11:19,465 --> 00:11:24,190
+
+
+262
+00:11:24,190 --> 00:11:24,690
+ Iya nih. 
+
+263
+00:11:24,690 --> 00:11:26,310
+ SISWA: Mereka semua string. 
+
+264
+00:11:26,310 --> 00:11:28,327
+ Jadi Anda bisa menaruh apa pun yang Anda inginkan di dalamnya. 
+
+265
+00:11:28,327 --> 00:11:30,410
+ ADAM CHLIPALA: Benar, dalam pendekatan arus utama 
+
+266
+00:11:30,410 --> 00:11:32,620
+ ke pemrograman aplikasi web, semua hal ini 
+
+267
+00:11:32,620 --> 00:11:33,460
+ adalah string. 
+
+268
+00:11:33,460 --> 00:11:35,600
+ Dan bahasa pemrogramannya tidak mengerti 
+
+269
+00:11:35,600 --> 00:11:37,140
+ cara Anda menggunakannya dan dapat 
+
+270
+00:11:37,140 --> 00:11:39,460
+ membantu Anda menghindari kesalahan. 
+
+271
+00:11:39,460 --> 00:11:42,380
+ Jadi misalnya, dengan merepresentasikan hal-hal ini adalah string, 
+
+272
+00:11:42,380 --> 00:11:44,960
+ Anda mendapatkan serangan injeksi kode. 
+
+273
+00:11:44,960 --> 00:11:47,260
+ Jadi sejauh yang saya ketahui, serangan kode injeksi 
+
+274
+00:11:47,260 --> 00:11:49,160
+ pada dasarnya tentang konsekuensinya 
+
+275
+00:11:49,160 --> 00:11:51,280
+ termasuk sebagai primitif dalam pemrograman Anda 
+
+276
+00:11:51,280 --> 00:11:55,410
+ bahasa atau kerangka kerja Anda beberapa fungsi yang menjalankan program 
+
+277
+00:11:55,410 --> 00:11:59,090
+ sebagai teks dalam beberapa bahasa yang cukup ekspresif. 
+
+278
+00:11:59,090 --> 00:12:01,850
+ Di Ur / Web, tidak ada juru bahasa built-in 
+
+279
+00:12:01,850 --> 00:12:04,640
+ saat runtime untuk string sebagai program. 
+
+280
+00:12:04,640 --> 00:12:07,830
+ Dan itu membuat banyak kesalahan paling umum 
+
+281
+00:12:07,830 --> 00:12:10,684
+ dalam aplikasi web tidak mungkin dengan konstruksi. 
+
+282
+00:12:10,684 --> 00:12:12,350
+ Jadi semua hal ini yang disoroti 
+
+283
+00:12:12,350 --> 00:12:15,240
+ tidak akan terlihat, atau mereka akan 
+
+284
+00:12:15,240 --> 00:12:20,040
+ direpresentasikan dengan tipe khusus yang menjelaskan apa 
+
+285
+00:12:20,040 --> 00:12:23,380
+ kode yang Anda hadapi dan tidak 
+
+286
+00:12:23,380 --> 00:12:24,960
+ memiliki semacam pemaksaan otomatis 
+
+287
+00:12:24,960 --> 00:12:27,780
+ dari string ke salah satu tipe khusus tersebut. 
+
+288
+00:12:27,780 --> 00:12:31,210
+
+
+289
+00:12:31,210 --> 00:12:33,700
+ Baiklah, inilah model alternatifnya 
+
+290
+00:12:33,700 --> 00:12:36,170
+ bahwa Ur / Web mengekspos, yang akan dikompilasi 
+
+291
+00:12:36,170 --> 00:12:37,270
+ ke model tradisional. 
+
+292
+00:12:37,270 --> 00:12:40,810
+ Jadi itu berfungsi di semua browser yang banyak digunakan. 
+
+293
+00:12:40,810 --> 00:12:43,630
+ Tetapi programmer dapat berpikir pada tingkat yang lebih tinggi ini 
+
+294
+00:12:43,630 --> 00:12:46,450
+ dan hindari potensi kesalahan 
+
+295
+00:12:46,450 --> 00:12:48,334
+ yang dimungkinkan dalam gambar sebelumnya. 
+
+296
+00:12:48,334 --> 00:12:50,500
+ Jadi kami masih memiliki server web, yang bertanggung jawab. 
+
+297
+00:12:50,500 --> 00:12:52,110
+ Dan kita masih memiliki armada peramban ini 
+
+298
+00:12:52,110 --> 00:12:53,630
+ mencoba menggunakan server web. 
+
+299
+00:12:53,630 --> 00:12:55,240
+ Tapi sekarang, perubahan penting pertama 
+
+300
+00:12:55,240 --> 00:12:58,370
+ adalah ketika browser ingin memulai penggunaan web 
+
+301
+00:12:58,370 --> 00:13:02,710
+ aplikasi, itu tidak hanya mengirim string permintaan HTTP 
+
+302
+00:13:02,710 --> 00:13:03,980
+ dengan URL di dalamnya. 
+
+303
+00:13:03,980 --> 00:13:09,090
+ Secara efektif, abstraksi adalah browser yang menamai suatu fungsi 
+
+304
+00:13:09,090 --> 00:13:12,680
+ yang seharusnya disebut di mana panggilan berjalan di server sebagai gantinya 
+
+305
+00:13:12,680 --> 00:13:14,720
+ dari klien. 
+
+306
+00:13:14,720 --> 00:13:19,030
+ Dan kemudian server merespon dengan bukan string 
+
+307
+00:13:19,030 --> 00:13:24,680
+ teks protokol HTTP tetapi dokumenter yang sangat diketik. 
+
+308
+00:13:24,680 --> 00:13:27,640
+ Jadi, bukannya string HTML, itu adalah pohon, 
+
+309
+00:13:27,640 --> 00:13:31,210
+ objek kelas pertama dalam bahasa. 
+
+310
+00:13:31,210 --> 00:13:34,420
+ Dan begitulah cara program memanipulasi 
+
+311
+00:13:34,420 --> 00:13:37,750
+ itu, bukan sebagai string. 
+
+312
+00:13:37,750 --> 00:13:40,162
+ Dan setiap pohon ini mengandung tautan di dalamnya, 
+
+313
+00:13:40,162 --> 00:13:41,620
+ yang pada dasarnya memang adil 
+
+314
+00:13:41,620 --> 00:13:43,453
+ referensi ke fungsi lain yang mungkin Anda 
+
+315
+00:13:43,453 --> 00:13:45,500
+ pilih untuk menelepon di server. 
+
+316
+00:13:45,500 --> 00:13:48,590
+ Maka browser, ketika pengguna mengklik tautan tersebut, 
+
+317
+00:13:48,590 --> 00:13:50,861
+ memilih fungsi dan secara konseptual menyebutnya 
+
+318
+00:13:50,861 --> 00:13:53,110
+ di server, sama seperti fungsi asli yang kami 
+
+319
+00:13:53,110 --> 00:13:54,276
+ dipanggil untuk sampai ke titik ini. 
+
+320
+00:13:54,276 --> 00:13:56,840
+
+
+321
+00:13:56,840 --> 00:13:59,740
+ Dan kami memiliki antarmuka basis data, 
+
+322
+00:13:59,740 --> 00:14:01,850
+ yang diakses oleh server web 
+
+323
+00:14:01,850 --> 00:14:03,450
+ melempar pertanyaan di database. 
+
+324
+00:14:03,450 --> 00:14:05,730
+ Dan ini bukan hanya teks dalam model Ur / Web. 
+
+325
+00:14:05,730 --> 00:14:09,610
+ Mereka sangat diketik struktur sintaks SQL. 
+
+326
+00:14:09,610 --> 00:14:13,930
+ Dan kemudian basis data akan membalas kembali tanpa teks, 
+
+327
+00:14:13,930 --> 00:14:18,500
+ tetapi daftar catatan nilai asli 
+
+328
+00:14:18,500 --> 00:14:20,950
+ dalam bahasa pemrograman yang kami kerjakan. 
+
+329
+00:14:20,950 --> 00:14:24,220
+ Jadi kita tidak perlu khawatir tentang salah konversi 
+
+330
+00:14:24,220 --> 00:14:27,190
+ antara string dan representasi asli, 
+
+331
+00:14:27,190 --> 00:14:29,920
+ atau representasi asli dalam format lain apa pun 
+
+332
+00:14:29,920 --> 00:14:32,070
+ bahwa database mungkin secara tradisional 
+
+333
+00:14:32,070 --> 00:14:33,860
+ menyajikan kepada kami. 
+
+334
+00:14:33,860 --> 00:14:36,760
+
+
+335
+00:14:36,760 --> 00:14:41,450
+ Dan inilah elemen kunci dari bagaimana semantik Ur / Web 
+
+336
+00:14:41,450 --> 00:14:43,630
+ membuatnya lebih mudah bagi pemrogram untuk berpikir tentang lebih sedikit 
+
+337
+00:14:43,630 --> 00:14:46,340
+ skenario yang benar-benar dapat terjadi ketika aplikasi tersebut 
+
+338
+00:14:46,340 --> 00:14:48,340
+ berlari. 
+
+339
+00:14:48,340 --> 00:14:50,590
+ Ada gagasan standar transaksi 
+
+340
+00:14:50,590 --> 00:14:52,890
+ di dunia database relasional 
+
+341
+00:14:52,890 --> 00:14:54,630
+ di mana Anda dapat menjalankan serangkaian operasi 
+
+342
+00:14:54,630 --> 00:14:56,940
+ yang tampaknya berjalan tanpa gangguan 
+
+343
+00:14:56,940 --> 00:14:58,500
+ oleh benang konkuren lainnya. 
+
+344
+00:14:58,500 --> 00:15:00,570
+ Dan Ur / Web mengadopsi model itu dan membuatnya 
+
+345
+00:15:00,570 --> 00:15:02,790
+ ke semantik bahasa. 
+
+346
+00:15:02,790 --> 00:15:06,190
+ Jadi ketika satu fungsi sedang berjalan 
+
+347
+00:15:06,190 --> 00:15:08,820
+ di server atas nama klien, 
+
+348
+00:15:08,820 --> 00:15:11,300
+ maka semua akses basis datanya 
+
+349
+00:15:11,300 --> 00:15:13,000
+ tampaknya terjadi sebagai unit atom 
+
+350
+00:15:13,000 --> 00:15:16,860
+ tanpa gangguan oleh permintaan bersamaan lainnya 
+
+351
+00:15:16,860 --> 00:15:18,320
+ ke server yang sama. 
+
+352
+00:15:18,320 --> 00:15:21,100
+ Dan Anda bahkan tidak dapat menghindari perilaku ini jika Anda mau. 
+
+353
+00:15:21,100 --> 00:15:24,410
+ Transaksi dibangun ke dalam bahasa. 
+
+354
+00:15:24,410 --> 00:15:27,840
+ Dan mereka benar-benar membuat konkurensi lebih mudah 
+
+355
+00:15:27,840 --> 00:15:30,050
+ untuk memikirkan, dan berpotensi membantu 
+
+356
+00:15:30,050 --> 00:15:32,510
+ Anda menghindari masalah keamanan yang hanya muncul saat 
+
+357
+00:15:32,510 --> 00:15:35,870
+ beberapa interleaving langka terjadi dengan kombinasi tertentu 
+
+358
+00:15:35,870 --> 00:15:38,610
+ permintaan. 
+
+359
+00:15:38,610 --> 00:15:41,380
+ Dan sebenarnya, saya ingin mendapatkan salah satu pertanyaan 
+
+360
+00:15:41,380 --> 00:15:44,830
+ bahwa seseorang yang dikirim untuk kelas ini yang saya temukan menarik. 
+
+361
+00:15:44,830 --> 00:15:47,940
+ Ur / Web akan mendeteksi ketika transaksi gagal karena 
+
+362
+00:15:47,940 --> 00:15:49,810
+ masalah konkurensi, seperti kebuntuan, 
+
+363
+00:15:49,810 --> 00:15:52,420
+ dan secara otomatis memulai kembali transaksi. 
+
+364
+00:15:52,420 --> 00:15:56,550
+ Tanggapan seseorang atas sebuah pertanyaan berkata, 
+
+365
+00:15:56,550 --> 00:16:00,090
+ ini mungkin membuatnya lebih mudah untuk meluncurkan serangan keamanan itu 
+
+366
+00:16:00,090 --> 00:16:02,400
+ bergantung pada menyebabkan transaksi gagal 
+
+367
+00:16:02,400 --> 00:16:05,512
+ karena masalah konkurensi. 
+
+368
+00:16:05,512 --> 00:16:07,095
+ Saya hanya ingin bertanya di kelas, apa 
+
+369
+00:16:07,095 --> 00:16:09,125
+ contoh serangan seperti itu, 
+
+370
+00:16:09,125 --> 00:16:13,260
+ apakah ada yang kebetulan memiliki satu dalam pikiran? 
+
+371
+00:16:13,260 --> 00:16:15,260
+ Jika Anda memiliki sistem yang secara otomatis restart 
+
+372
+00:16:15,260 --> 00:16:17,330
+ transaksi yang mengalami deadlock, 
+
+373
+00:16:17,330 --> 00:16:21,001
+ bagaimana itu menyebabkan masalah keamanan, jika itu terjadi? 
+
+374
+00:16:21,001 --> 00:16:23,042
+ Ini adalah pertanyaan yang saya tidak punya jawabannya 
+
+375
+00:16:23,042 --> 00:16:24,793
+ karena itulah mengapa saya menanyakannya. 
+
+376
+00:16:24,793 --> 00:16:34,940
+
+
+377
+00:16:34,940 --> 00:16:36,782
+ Mungkin juga hanya memiliki jawaban yang tidak jelas 
+
+378
+00:16:36,782 --> 00:16:38,990
+ tidak akan ada yang muncul di tempat seperti ini, 
+
+379
+00:16:38,990 --> 00:16:39,878
+ yang baik juga. 
+
+380
+00:16:39,878 --> 00:16:44,856
+
+
+381
+00:16:44,856 --> 00:16:45,356
+ Ya. 
+
+382
+00:16:45,356 --> 00:16:47,846
+ SISWA: Bisakah Anda melakukan semacam penolakan layanan? 
+
+383
+00:16:47,846 --> 00:16:50,336
+ Jika itu akan memulai kembali transaksi Anda 
+
+384
+00:16:50,336 --> 00:16:51,830
+ mengirim, dan Anda tahu itu akan gagal, 
+
+385
+00:16:51,830 --> 00:16:54,320
+ dapatkah Anda terus menyalakan ulang dan mencoba lagi? 
+
+386
+00:16:54,320 --> 00:16:56,840
+
+
+387
+00:16:56,840 --> 00:16:59,335
+ ADAM CHLIPALA: OK, jadi-- 
+
+388
+00:16:59,335 --> 00:17:01,248
+ SISWA: Jadi jika Anda bisa menyebabkan sistem 
+
+389
+00:17:01,248 --> 00:17:04,741
+ untuk melakukan beberapa transaksi yang Anda tahu akan gagal dan berulang kali 
+
+390
+00:17:04,741 --> 00:17:07,965
+ gagal, itu terus mencoba lagi dan lagi, 
+
+391
+00:17:07,965 --> 00:17:09,396
+ itu tidak akan pernah [tidak terdengar]. 
+
+392
+00:17:09,396 --> 00:17:11,729
+ ADAM CHLIPALA: Benar, jadi Anda membutuhkan setidaknya dua utas 
+
+393
+00:17:11,730 --> 00:17:13,140
+ berlari sekaligus untuk melakukan itu. 
+
+394
+00:17:13,140 --> 00:17:17,140
+ Tapi berpotensi itu bisa berhasil. 
+
+395
+00:17:17,140 --> 00:17:20,368
+ Jadi Anda bisa meluncurkan serangan denial of service mengambil keuntungan 
+
+396
+00:17:20,368 --> 00:17:23,149
+ fakta bahwa pertikaian mengarah 
+
+397
+00:17:23,150 --> 00:17:26,473
+ untuk meminta penangan memulai ulang berulang kali 
+
+398
+00:17:26,473 --> 00:17:28,640
+ dan dengan sengaja menyebabkan perselisihan dan menggunakan ini sebagai suatu cara 
+
+399
+00:17:28,640 --> 00:17:31,630
+ untuk memperkuat kekuatan serangan denial of service Anda 
+
+400
+00:17:31,630 --> 00:17:36,401
+ melampaui apa yang bisa Anda dapatkan dengan model tradisional. 
+
+401
+00:17:36,401 --> 00:17:37,650
+ Baiklah, aku bisa percaya itu. 
+
+402
+00:17:37,650 --> 00:17:38,010
+ Ya. 
+
+403
+00:17:38,010 --> 00:17:40,551
+ SISWA: Apakah [TIDAK JELAS] satu-satunya cara untuk menyebabkan transaksi 
+
+404
+00:17:40,551 --> 00:17:41,500
+ gagal? 
+
+405
+00:17:41,500 --> 00:17:42,880
+ ADAM CHLIPALA: Benar. 
+
+406
+00:17:42,880 --> 00:17:45,580
+ Yah, itu satu-satunya cara untuk membuatnya gagal dan otomatis 
+
+407
+00:17:45,580 --> 00:17:46,080
+ mengulang kembali. 
+
+408
+00:17:46,080 --> 00:17:50,660
+
+
+409
+00:17:50,660 --> 00:17:52,392
+ Ya. 
+
+410
+00:17:52,392 --> 00:17:54,450
+ SISWA: Mungkin itu bisa memiliki pihak ketiga, 
+
+411
+00:17:54,450 --> 00:17:56,346
+ yang akan gagal secara kondisional. 
+
+412
+00:17:56,346 --> 00:17:59,427
+ Dan kemudian Anda bisa menggunakannya untuk memantau beberapa pengguna lain 
+
+413
+00:17:59,427 --> 00:18:00,140
+ tingkah laku. 
+
+414
+00:18:00,140 --> 00:18:01,640
+ ADAM CHLIPALA: Anda juga membutuhkan suatu cara 
+
+415
+00:18:01,640 --> 00:18:04,390
+ untuk mengamati fakta bahwa itu telah gagal, yang seharusnya Anda lakukan 
+
+416
+00:18:04,390 --> 00:18:05,790
+ dapat dilakukan melalui waktu. 
+
+417
+00:18:05,790 --> 00:18:07,320
+ Tapi itu masih bisa jadi masalah. 
+
+418
+00:18:07,320 --> 00:18:11,300
+ Oke, benar, jadi Anda bisa menggunakan ini sebagai saluran samping 
+
+419
+00:18:11,300 --> 00:18:12,800
+ untuk melihat apa yang dilakukan ulir lain, 
+
+420
+00:18:12,800 --> 00:18:14,758
+ karena tindakan mereka mungkin atau mungkin tidak dibuat 
+
+421
+00:18:14,758 --> 00:18:15,880
+ konflik di utas Anda. 
+
+422
+00:18:15,880 --> 00:18:19,170
+
+
+423
+00:18:19,170 --> 00:18:25,520
+ OK, itu mungkin terdengar pada prinsipnya, dan sangat berkelok-kelok. 
+
+424
+00:18:25,520 --> 00:18:26,897
+ Aku tidak yakin. 
+
+425
+00:18:26,897 --> 00:18:28,730
+ Sulit memikirkan serangan konkret itu 
+
+426
+00:18:28,730 --> 00:18:31,810
+ akan bekerja dengan baik. 
+
+427
+00:18:31,810 --> 00:18:33,430
+ Tapi itu bisa menjadi latihan yang menyenangkan. 
+
+428
+00:18:33,430 --> 00:18:33,930
+ Ya. 
+
+429
+00:18:33,930 --> 00:18:38,752
+ SISWA: Jadi, lakukan transaksi yang Anda jalankan-- untuk setiap permintaan itu 
+
+430
+00:18:38,752 --> 00:18:41,145
+ masuk, Anda menjalankan transaksi untuk kode 
+
+431
+00:18:41,145 --> 00:18:42,470
+ Anda menjalankan di server web. 
+
+432
+00:18:42,470 --> 00:18:44,303
+ Tetapi ketika Anda mengirim kode itu ke database, 
+
+433
+00:18:44,303 --> 00:18:46,705
+ apakah itu diterjemahkan ke dalam transaksi basis data juga? 
+
+434
+00:18:46,705 --> 00:18:47,830
+ ADAM CHLIPALA: Ya, ya. 
+
+435
+00:18:47,830 --> 00:18:49,800
+ Seluruh eksekusi di sisi server 
+
+436
+00:18:49,800 --> 00:18:52,040
+ dibungkus dalam satu transaksi basis data 
+
+437
+00:18:52,040 --> 00:18:54,981
+ jika aplikasi menggunakan database. 
+
+438
+00:18:54,981 --> 00:18:55,480
+ Ya. 
+
+439
+00:18:55,480 --> 00:18:57,313
+ SISWA: Jadi jika Anda memiliki transaksi itu 
+
+440
+00:18:57,313 --> 00:19:00,427
+ tidak akan berakhir mendapatkan, apakah Anda berpikir [TIDAK JELAS]? 
+
+441
+00:19:00,427 --> 00:19:01,260
+ ADAM CHLIPALA: Ya. 
+
+442
+00:19:01,260 --> 00:19:02,820
+ SISWA: Apakah Anda memberi tahu basis data 
+
+443
+00:19:02,820 --> 00:19:04,851
+ bahwa tidak ada yang akan diperbarui nanti? 
+
+444
+00:19:04,851 --> 00:19:06,975
+ Karena mungkin, database tidak tahu itu. 
+
+445
+00:19:06,975 --> 00:19:09,308
+ ADAM CHLIPALA: Ya, jadi kompilator melakukan analisis statis 
+
+446
+00:19:09,308 --> 00:19:11,560
+ dan menemukan transaksi yang perlu dibaca-saja. 
+
+447
+00:19:11,560 --> 00:19:14,310
+ Dan itu menciptakan transaksi dalam mode hanya-baca, 
+
+448
+00:19:14,310 --> 00:19:18,516
+ yang dalam beberapa sistem basis data memungkinkan pengoptimalan ekstra. 
+
+449
+00:19:18,516 --> 00:19:23,450
+ SISWA: Bagaimana jika Anda membaca beberapa hal, dan beberapa 
+
+450
+00:19:23,450 --> 00:19:25,142
+ hal-hal yang Anda baca tidak mempengaruhi 
+
+451
+00:19:25,142 --> 00:19:26,962
+ apa yang akan Anda tulis, tetapi beberapa hal lainnya 
+
+452
+00:19:26,962 --> 00:19:27,770
+ Anda baca tidak? 
+
+453
+00:19:27,770 --> 00:19:29,395
+ ADAM CHLIPALA: Saya mengerti, jadi Anda bertanya, 
+
+454
+00:19:29,395 --> 00:19:32,470
+ bisakah kita menggunakan pengetahuan kita tentang semantik 
+
+455
+00:19:32,470 --> 00:19:35,000
+ aplikasi untuk memberikan petunjuk ke sistem basis data 
+
+456
+00:19:35,000 --> 00:19:39,860
+ mengatakan beberapa dari apa yang tampak seperti pelanggaran konkurensi 
+
+457
+00:19:39,860 --> 00:19:44,130
+ sebenarnya jinak, dan kita tidak perlu me-restart pada saat itu? 
+
+458
+00:19:44,130 --> 00:19:45,450
+ Saya pikir jawaban singkatnya adalah tidak. 
+
+459
+00:19:45,450 --> 00:19:46,940
+ Implementasi saat ini tidak melakukan itu. 
+
+460
+00:19:46,940 --> 00:19:48,670
+ Tapi itu akan menarik untuk dilihat. 
+
+461
+00:19:48,670 --> 00:19:51,003
+ Saya pikir itu akan membutuhkan perubahan pada mesin database, 
+
+462
+00:19:51,003 --> 00:19:52,660
+ bukan hanya antarmuka dalam bahasa. 
+
+463
+00:19:52,660 --> 00:19:54,124
+ SISWA: Biasanya Anda bisa membaginya 
+
+464
+00:19:54,124 --> 00:19:55,707
+ menjadi dua transaksi terpisah, mungkin, 
+
+465
+00:19:55,707 --> 00:20:00,394
+ atau sesuatu dalam keadaan tertentu. 
+
+466
+00:20:00,394 --> 00:20:03,700
+ ADAM CHLIPALA: Ya, kedengarannya sulit untuk dilakukan dengan benar, 
+
+467
+00:20:03,700 --> 00:20:06,872
+ tapi berpotensi berharga untuk-- Saya tidak tahu bagaimana memperkirakannya 
+
+468
+00:20:06,872 --> 00:20:09,330
+ berapa pecahan aplikasi bisa memanfaatkan itu, 
+
+469
+00:20:09,330 --> 00:20:10,410
+ tapi itu ide yang bagus. 
+
+470
+00:20:10,410 --> 00:20:13,910
+
+
+471
+00:20:13,910 --> 00:20:16,235
+ Baiklah, jadi transaksi itu bagus. 
+
+472
+00:20:16,235 --> 00:20:19,370
+
+
+473
+00:20:19,370 --> 00:20:22,190
+ Kami juga punya-- jadi saya hanya memberi tahu Anda tentang modelnya, 
+
+474
+00:20:22,190 --> 00:20:23,725
+ model sekolah lama browser 
+
+475
+00:20:23,725 --> 00:20:25,920
+ meminta satu halaman dari server web. 
+
+476
+00:20:25,920 --> 00:20:28,720
+ Kami juga dapat memiliki hal-hal gaya Ajax yang pada dasarnya 
+
+477
+00:20:28,720 --> 00:20:30,432
+ tampak seperti kode pada klien. 
+
+478
+00:20:30,432 --> 00:20:31,890
+ Itu memanggil fungsi itu saja 
+
+479
+00:20:31,890 --> 00:20:33,370
+ ditandai untuk berjalan di server. 
+
+480
+00:20:33,370 --> 00:20:37,460
+ Ketika selesai, hasilnya akan muncul di kode klien. 
+
+481
+00:20:37,460 --> 00:20:39,190
+ Dan hasilnya hanya nilai asli 
+
+482
+00:20:39,190 --> 00:20:40,356
+ dalam bahasa pemrograman. 
+
+483
+00:20:40,356 --> 00:20:42,800
+ Anda tidak perlu khawatir membuatnya menjadi string 
+
+484
+00:20:42,800 --> 00:20:44,190
+ entah bagaimana dan menerjemahkannya kembali. 
+
+485
+00:20:44,190 --> 00:20:47,580
+
+
+486
+00:20:47,580 --> 00:20:49,079
+ Dan kemudian kita harus mengambil hasilnya 
+
+487
+00:20:49,079 --> 00:20:51,120
+ dan menggunakannya untuk mengubah halaman yang dilihat pengguna. 
+
+488
+00:20:51,120 --> 00:20:54,150
+ Kalau tidak, itu bukan permintaan yang sangat berguna untuk dibuat. 
+
+489
+00:20:54,150 --> 00:20:56,250
+ Jadi model di Ur / Web sangat berbeda 
+
+490
+00:20:56,250 --> 00:20:58,310
+ dari model objek dokumen standar 
+
+491
+00:20:58,310 --> 00:20:59,840
+ yang diekspos secara langsung oleh browser. 
+
+492
+00:20:59,840 --> 00:21:01,730
+ Ide dasarnya adalah sesuatu yang disebut 
+
+493
+00:21:01,730 --> 00:21:03,840
+ pemrograman reaktif fungsional, yang saya tidak akan mencoba 
+
+494
+00:21:03,840 --> 00:21:05,090
+ untuk menjelaskan terlalu banyak detail. 
+
+495
+00:21:05,090 --> 00:21:10,210
+ Karena saya tahu itu membutuhkan grokking nontrivial 
+
+496
+00:21:10,210 --> 00:21:13,585
+ pemrograman fungsional pertama, bahkan jika kita memotong 
+
+497
+00:21:13,585 --> 00:21:14,890
+ bagian yang reaktif. 
+
+498
+00:21:14,890 --> 00:21:16,730
+ Tetapi ide dasarnya adalah dokumen 
+
+499
+00:21:16,730 --> 00:21:19,490
+ dijelaskan dalam hal satu set sel yang bisa berubah, yang 
+
+500
+00:21:19,490 --> 00:21:21,360
+ adalah semacam data yang bergantung pada halaman. 
+
+501
+00:21:21,360 --> 00:21:23,450
+ Dan halaman itu sendiri adalah sesuatu yang berbeda, 
+
+502
+00:21:23,450 --> 00:21:25,350
+ digambarkan sebagai fungsi yang dibutuhkan 
+
+503
+00:21:25,350 --> 00:21:27,030
+ sebagai masukan nilai dari sel-sel itu, 
+
+504
+00:21:27,030 --> 00:21:28,710
+ dan kemudian menghitung halaman. 
+
+505
+00:21:28,710 --> 00:21:30,650
+ Dan kemudian sistem runtime bahasa 
+
+506
+00:21:30,650 --> 00:21:32,865
+ jam tangan berubah menjadi sel-sel yang bisa berubah. 
+
+507
+00:21:32,865 --> 00:21:34,680
+ Dan ketika mereka berubah, secara otomatis 
+
+508
+00:21:34,680 --> 00:21:37,550
+ menghitung konsekuensi untuk halaman yang ditampilkan 
+
+509
+00:21:37,550 --> 00:21:41,066
+ dan perbarui secara efisien hanya bagian-bagian halaman 
+
+510
+00:21:41,066 --> 00:21:42,990
+ yang telah berubah berdasarkan sel-sel itu. 
+
+511
+00:21:42,990 --> 00:21:47,050
+
+
+512
+00:21:47,050 --> 00:21:49,570
+ Baiklah, dan di setiap klien, di sana 
+
+513
+00:21:49,570 --> 00:21:51,690
+ dapat banyak utas yang berbeda berjalan sekaligus. 
+
+514
+00:21:51,690 --> 00:21:54,320
+
+
+515
+00:21:54,320 --> 00:21:56,870
+ Benang ini dibuat dalam kode Ur / Web 
+
+516
+00:21:56,870 --> 00:21:58,780
+ dan mereka sendiri menjalankan kode Ur / Web. 
+
+517
+00:21:58,780 --> 00:22:01,460
+ Tetapi compiler perlu menerjemahkannya ke JavaScript 
+
+518
+00:22:01,460 --> 00:22:03,170
+ untuk mendapatkan browser untuk menjalankannya. 
+
+519
+00:22:03,170 --> 00:22:06,840
+ Jadi itulah salah satu layanan yang disediakan kompilator. 
+
+520
+00:22:06,840 --> 00:22:09,495
+ Itu salah satu poin penting tentang utas. 
+
+521
+00:22:09,495 --> 00:22:11,620
+ Hal penting lainnya adalah threading sisi klien 
+
+522
+00:22:11,620 --> 00:22:13,860
+ mengikuti apa yang disebut dengan multi-threading koperatif 
+
+523
+00:22:13,860 --> 00:22:14,580
+ model. 
+
+524
+00:22:14,580 --> 00:22:16,329
+ Thread tidak perlu khawatir tentang keberadaan 
+
+525
+00:22:16,329 --> 00:22:19,160
+ digantikan oleh utas lain pada titik yang berubah-ubah. 
+
+526
+00:22:19,160 --> 00:22:21,220
+ Ada operasi yang terdefinisi dengan baik 
+
+527
+00:22:21,220 --> 00:22:23,691
+ sinyal itu, oke, tidak masalah untuk beralih ke utas lain 
+
+528
+00:22:23,691 --> 00:22:24,190
+ sini. 
+
+529
+00:22:24,190 --> 00:22:26,530
+ Salah satunya adalah membuat panggilan fungsi jarak jauh 
+
+530
+00:22:26,530 --> 00:22:29,700
+ ke server, misalnya, atau bertanya 
+
+531
+00:22:29,700 --> 00:22:31,690
+ untuk tidur selama beberapa milidetik. 
+
+532
+00:22:31,690 --> 00:22:34,270
+ Tetapi hanya kode biasa tidak dapat disela secara sewenang-wenang. 
+
+533
+00:22:34,270 --> 00:22:35,770
+ Jadi itu berarti programmer tidak 
+
+534
+00:22:35,770 --> 00:22:37,690
+ perlu memikirkan banyak interleavings, 
+
+535
+00:22:37,690 --> 00:22:39,780
+ dan lebih mudah untuk meyakinkan diri sendiri 
+
+536
+00:22:39,780 --> 00:22:41,970
+ itu, katakanlah, potongan kode tertentu 
+
+537
+00:22:41,970 --> 00:22:44,915
+ menghindari beberapa masalah keamanan atau bug lainnya. 
+
+538
+00:22:44,915 --> 00:22:47,700
+ Karena Anda dapat lebih mudah menyebutkan semua cara yang mungkin 
+
+539
+00:22:47,700 --> 00:22:49,982
+ untuk dua utas untuk berinteraksi satu sama lain. 
+
+540
+00:22:49,982 --> 00:22:51,440
+ Dan ini semacam model alami 
+
+541
+00:22:51,440 --> 00:22:55,890
+ untuk digunakan mengingat cara JavaScript biasanya diimplementasikan. 
+
+542
+00:22:55,890 --> 00:22:58,480
+ Tidak ada preemption di JavaScript dan browser 
+
+543
+00:22:58,480 --> 00:22:58,980
+ sudah. 
+
+544
+00:22:58,980 --> 00:23:01,270
+ Jadi ini hanya menyajikan abstraksi threading 
+
+545
+00:23:01,270 --> 00:23:03,404
+ di atas model berbasis callbacks 
+
+546
+00:23:03,404 --> 00:23:05,320
+ JavaScript yang menunjukkan programmer langsung. 
+
+547
+00:23:05,320 --> 00:23:09,000
+
+
+548
+00:23:09,000 --> 00:23:11,720
+ Dan bagian terakhir yang salah satu built-in 
+
+549
+00:23:11,720 --> 00:23:14,100
+ abstraksi yang digunakan aplikasi Ur / Web 
+
+550
+00:23:14,100 --> 00:23:19,060
+ adalah saluran untuk meneruskan pesan antar mesin yang berbeda. 
+
+551
+00:23:19,060 --> 00:23:22,300
+ Jadi setiap saluran memiliki tipe, yang menyatakan apa 
+
+552
+00:23:22,300 --> 00:23:23,610
+ jenis data dapat mengalir jika. 
+
+553
+00:23:23,610 --> 00:23:25,734
+ Anda tidak perlu mengonversi sesuatu ke dan dari string 
+
+554
+00:23:25,734 --> 00:23:28,630
+ atau JSON atau apa pun untuk membuat ini berfungsi. 
+
+555
+00:23:28,630 --> 00:23:31,550
+ Dan saluran dapat hidup dalam basis data. 
+
+556
+00:23:31,550 --> 00:23:33,425
+ Jadi bayangkan gambar ini menunjukkan kepada kita ada 
+
+557
+00:23:33,425 --> 00:23:34,549
+ saluran yang dibuat. 
+
+558
+00:23:34,549 --> 00:23:36,160
+ Ini memiliki sisi tulis dan sisi baca, 
+
+559
+00:23:36,160 --> 00:23:38,170
+ yang bisa pergi ke tempat terpisah. 
+
+560
+00:23:38,170 --> 00:23:40,660
+ Tulisan berakhir di dalam database. 
+
+561
+00:23:40,660 --> 00:23:42,970
+ Dan ujung bacaan entah bagaimana berhasil sampai ke klien 
+
+562
+00:23:42,970 --> 00:23:46,010
+ dan sedang duduk di lingkungan variabel utas. 
+
+563
+00:23:46,010 --> 00:23:48,500
+ Jadi bayangkan bahwa thread tadi membuat panggilan jarak jauh 
+
+564
+00:23:48,500 --> 00:23:50,610
+ ke server, yang membuat saluran, 
+
+565
+00:23:50,610 --> 00:23:53,580
+ mengembalikannya ke klien, dan memasukkannya ke dalam basis data 
+
+566
+00:23:53,580 --> 00:23:55,930
+ transaksi. 
+
+567
+00:23:55,930 --> 00:23:59,870
+ Jadi nanti, server memutuskan, OK, saya akan menanyakan saluran itu 
+
+568
+00:23:59,870 --> 00:24:00,560
+ dari database. 
+
+569
+00:24:00,560 --> 00:24:02,080
+ Dan saya akan membuang nilai ke dalamnya. 
+
+570
+00:24:02,080 --> 00:24:05,786
+ Dan itu hanya muncul dari ujung yang lain pada klien. 
+
+571
+00:24:05,786 --> 00:24:08,290
+ Dan semuanya sangat terikat dalam proses ini. 
+
+572
+00:24:08,290 --> 00:24:11,450
+
+
+573
+00:24:11,450 --> 00:24:14,380
+ Baiklah, saya pikir ini adalah langkah terakhir dari animasi saya di sini. 
+
+574
+00:24:14,380 --> 00:24:18,940
+ Ada pertanyaan tentang model ini sebelum saya beralih ke demo kode? 
+
+575
+00:24:18,940 --> 00:24:23,940
+
+
+576
+00:24:23,940 --> 00:24:27,940
+ SISWA: Jadi bagaimana ini berbeda dari [TIDAK JELAS]? 
+
+577
+00:24:27,940 --> 00:24:30,940
+ Mengapa Anda membutuhkan suatu bagian pesan jika sudah 
+
+578
+00:24:30,940 --> 00:24:33,940
+ memiliki itu [tidak terdengar]? 
+
+579
+00:24:33,940 --> 00:24:36,860
+ ADAM CHLIPALA: OK, jadi antarmuka RPC keluar dari browser 
+
+580
+00:24:36,860 --> 00:24:40,900
+ memulai panggilan, server menanganinya. 
+
+581
+00:24:40,900 --> 00:24:42,546
+ Pesannya adalah salurannya 
+
+582
+00:24:42,546 --> 00:24:44,420
+ ditujukan untuk kasus di mana server memulai 
+
+583
+00:24:44,420 --> 00:24:45,710
+ komunikasi. 
+
+584
+00:24:45,710 --> 00:24:48,060
+ Misalnya, pesan email baru-- itu 
+
+585
+00:24:48,060 --> 00:24:49,460
+ akan menjadi contoh kanonik. 
+
+586
+00:24:49,460 --> 00:24:51,560
+ Dan klien sedang menunggu untuk mendengar bahwa ada email baru 
+
+587
+00:24:51,560 --> 00:24:52,059
+ pesan. 
+
+588
+00:24:52,059 --> 00:24:54,050
+ Tapi itu tidak bisa ditentukan sendiri 
+
+589
+00:24:54,050 --> 00:24:55,840
+ ketika pesan berikutnya tersedia. 
+
+590
+00:24:55,840 --> 00:24:57,012
+ Ya. 
+
+591
+00:24:57,012 --> 00:24:58,720
+ SISWA: Apakah semua pesan di-multipleks 
+
+592
+00:24:58,720 --> 00:25:00,732
+ melalui satu koneksi, atau apakah [tidak terdengar]? 
+
+593
+00:25:00,732 --> 00:25:02,190
+ ADAM CHLIPALA: Mereka multiplexing 
+
+594
+00:25:02,190 --> 00:25:04,380
+ melalui satu koneksi HTTP. 
+
+595
+00:25:04,380 --> 00:25:06,710
+ Saya tahu ada hal-hal baru yang disebut hari ini 
+
+596
+00:25:06,710 --> 00:25:08,700
+ soket web dan mungkin beberapa protokol lain 
+
+597
+00:25:08,700 --> 00:25:11,033
+ seperti itu, yang tidak ada ketika ini dilaksanakan. 
+
+598
+00:25:11,033 --> 00:25:13,650
+ Ini semua bekerja di atas HTTP sekolah lama 
+
+599
+00:25:13,650 --> 00:25:17,263
+ dengan satu koneksi untuk semua pesan di saluran yang berbeda. 
+
+600
+00:25:17,263 --> 00:25:22,000
+
+
+601
+00:25:22,000 --> 00:25:24,000
+ Baiklah, mari kita lihat apa selanjutnya. 
+
+602
+00:25:24,000 --> 00:25:25,850
+ Ya, biarkan saya beralih ke demo di sini. 
+
+603
+00:25:25,850 --> 00:25:29,740
+
+
+604
+00:25:29,740 --> 00:25:33,510
+ Jadi, inilah program Hello World di Ur / Web. 
+
+605
+00:25:33,510 --> 00:25:35,510
+ Mungkin itu layak lebih dari ruang layar 
+
+606
+00:25:35,510 --> 00:25:38,180
+ dari hasil kompilasi ini. 
+
+607
+00:25:38,180 --> 00:25:44,660
+ Jadi ini terlihat sangat tidak menakutkan pada titik ini, saya harap. 
+
+608
+00:25:44,660 --> 00:25:47,800
+ Hal yang tidak biasa di sini mungkin adalah ini benar-benar 
+
+609
+00:25:47,800 --> 00:25:48,550
+ seluruh program. 
+
+610
+00:25:48,550 --> 00:25:50,980
+ Tidak ada logika routing ekstra itu 
+
+611
+00:25:50,980 --> 00:25:54,410
+ menjelaskan cara memetakan URL ke dalam beberapa kode untuk dijalankan 
+
+612
+00:25:54,410 --> 00:25:57,010
+ untuk melayani permintaan ke URL itu. 
+
+613
+00:25:57,010 --> 00:25:59,810
+ Kami hanya memiliki fungsi reguler dari jenis standar 
+
+614
+00:25:59,810 --> 00:26:00,840
+ bahasa pemrograman. 
+
+615
+00:26:00,840 --> 00:26:06,130
+ Dan kompilator mengekspos semua fungsi dalam modul utama Anda 
+
+616
+00:26:06,130 --> 00:26:08,740
+ sebagai callable melalui URL. 
+
+617
+00:26:08,740 --> 00:26:11,220
+ Dan URL baru saja terbentuk dari nama fungsi. 
+
+618
+00:26:11,220 --> 00:26:13,740
+ Dan jika ada beberapa modul struktur bertumpuk, 
+
+619
+00:26:13,740 --> 00:26:19,890
+ struktur modul juga direplikasi di URL. 
+
+620
+00:26:19,890 --> 00:26:22,230
+ Dan kemudian kita memiliki fungsi yang mengembalikan 
+
+621
+00:26:22,230 --> 00:26:26,160
+ sepotong sintaks XHTML. 
+
+622
+00:26:26,160 --> 00:26:29,240
+ Compiler sebenarnya menggunakan ekstensi parsing khusus 
+
+623
+00:26:29,240 --> 00:26:32,680
+ untuk memproses sintaks XHTML ini. 
+
+624
+00:26:32,680 --> 00:26:34,640
+ Dan itu juga melakukan beberapa tipe dasar 
+
+625
+00:26:34,640 --> 00:26:38,372
+ periksa untuk memastikan bahwa elemen XML yang berbeda muncul 
+
+626
+00:26:38,372 --> 00:26:39,830
+ di dalam orang lain bahwa mereka sebenarnya 
+
+627
+00:26:39,830 --> 00:26:43,140
+ diizinkan untuk tampil di dalam. 
+
+628
+00:26:43,140 --> 00:26:46,340
+ Dan saya pikir saya menyusun ini sebelum kita mulai. 
+
+629
+00:26:46,340 --> 00:26:48,610
+ Dan itu bukan hal yang sangat mengejutkan 
+
+630
+00:26:48,610 --> 00:26:50,070
+ di browser. 
+
+631
+00:26:50,070 --> 00:26:56,290
+ Dan inilah halaman HTML yang keluar. 
+
+632
+00:26:56,290 --> 00:27:00,050
+ Jadi di antara sifat-sifat lainnya, secara otomatis 
+
+633
+00:27:00,050 --> 00:27:01,940
+ menambahkan header XHTML yang tepat. 
+
+634
+00:27:01,940 --> 00:27:06,700
+ Dan itu menyatakan pengkodean karakter untuk dokumen ini. 
+
+635
+00:27:06,700 --> 00:27:08,365
+ Saya agak ngeri untuk melihat beberapa 
+
+636
+00:27:08,365 --> 00:27:09,990
+ bacaan yang ditugaskan untuk kelas ini 
+
+637
+00:27:09,990 --> 00:27:13,120
+ dan lihat berapa banyak waktu yang dibelanjakan buku ini tentang karakter 
+
+638
+00:27:13,120 --> 00:27:17,331
+ pengkodean dan apa yang terjadi jika Anda tidak menggunakan UTF-8. 
+
+639
+00:27:17,331 --> 00:27:18,930
+ Saya harap saya mengerti itu dengan benar. 
+
+640
+00:27:18,930 --> 00:27:21,570
+ Ini memaksa Anda untuk menggunakan UTF-8 sehingga hal-hal yang mengerikan 
+
+641
+00:27:21,570 --> 00:27:23,080
+ tidak akan terjadi, kuharap. 
+
+642
+00:27:23,080 --> 00:27:24,680
+ Tetapi jika ada yang melihat cara untuk mereplikasi 
+
+643
+00:27:24,680 --> 00:27:28,620
+ salah satu serangan dari buku itu Tangled Web di Ur / Web, 
+
+644
+00:27:28,620 --> 00:27:30,180
+ atau memiliki hipotesis tentang sesuatu 
+
+645
+00:27:30,180 --> 00:27:32,060
+ kita harus mencoba untuk melihat apakah itu berhasil, 
+
+646
+00:27:32,060 --> 00:27:33,530
+ Saya akan tertarik mendengarnya. 
+
+647
+00:27:33,530 --> 00:27:35,446
+ Dan omong-omong, kapan saja selama demo ini, 
+
+648
+00:27:35,446 --> 00:27:39,740
+ tolong sarankan eksperimen yang datang 
+
+649
+00:27:39,740 --> 00:27:41,350
+ memikirkan hal-hal yang harus kita coba, 
+
+650
+00:27:41,350 --> 00:27:44,290
+ kesalahan Anda mungkin membuat Anda bertanya-tanya apakah sistem ini 
+
+651
+00:27:44,290 --> 00:27:45,390
+ mampu menangkap. 
+
+652
+00:27:45,390 --> 00:27:47,340
+ Saya pikir itu jenis demo yang paling menyenangkan. 
+
+653
+00:27:47,340 --> 00:27:47,840
+ Ya. 
+
+654
+00:27:47,840 --> 00:27:49,828
+ SISWA: Jadi hal-hal seperti CRSF [TIDAK JELAS], 
+
+655
+00:27:49,828 --> 00:27:51,319
+ Anda mengatakan bahwa [TIDAK JELAS]. 
+
+656
+00:27:51,319 --> 00:27:55,300
+
+
+657
+00:27:55,300 --> 00:27:58,910
+ ADAM CHLIPALA: Jadi pemalsuan lintas situs permintaan 
+
+658
+00:27:58,910 --> 00:28:02,120
+ Saya ingin menjelaskan sedikit kemudian secara eksplisit. 
+
+659
+00:28:02,120 --> 00:28:04,880
+ Saya pikir semacam kertas menjelaskan mengapa situs lintas 
+
+660
+00:28:04,880 --> 00:28:06,200
+ scripting tidak berfungsi. 
+
+661
+00:28:06,200 --> 00:28:11,640
+ Dan alasannya adalah kapan pun Anda membuat sintaksis, 
+
+662
+00:28:11,640 --> 00:28:18,830
+ itu obyek, pohon sub berbeda 
+
+663
+00:28:18,830 --> 00:28:19,810
+ bagian dari sintaks itu. 
+
+664
+00:28:19,810 --> 00:28:21,620
+ Itu bukan sekedar string. 
+
+665
+00:28:21,620 --> 00:28:23,830
+ Dan Anda tidak akan secara tidak sengaja berubah 
+
+666
+00:28:23,830 --> 00:28:26,899
+ string dari pengguna ke pohon dengan struktur. 
+
+667
+00:28:26,899 --> 00:28:28,190
+ Anda akan tahu jika Anda melakukan itu. 
+
+668
+00:28:28,190 --> 00:28:30,370
+ Karena sulit untuk menulis juru bahasa. 
+
+669
+00:28:30,370 --> 00:28:32,370
+ Dan di Ur / Web, Anda harus menulis juru bahasa. 
+
+670
+00:28:32,370 --> 00:28:34,490
+ Itu tidak otomatis terjadi untuk Anda. 
+
+671
+00:28:34,490 --> 00:28:38,650
+ Tapi saya akan memiliki contoh segera yang mungkin juga 
+
+672
+00:28:38,650 --> 00:28:40,440
+ mengatasi masalah itu. 
+
+673
+00:28:40,440 --> 00:28:44,690
+ Jadi saya ingin menunjukkan kepada Anda apa sebenarnya gula sintaksis ini 
+
+674
+00:28:44,690 --> 00:28:46,200
+ berubah menjadi di kompilator. 
+
+675
+00:28:46,200 --> 00:28:47,920
+ Jadi ini mungkin terlihat seperti kita bisa saja 
+
+676
+00:28:47,920 --> 00:28:49,740
+ tambahkan beberapa tanda kutip ganda di sekitar HTML, 
+
+677
+00:28:49,740 --> 00:28:51,710
+ dan kemudian kita kembali ke dunia normal. 
+
+678
+00:28:51,710 --> 00:28:53,760
+ Kita mungkin bertanya-tanya, mengapa ini menjadi masalah besar 
+
+679
+00:28:53,760 --> 00:28:56,640
+ yang menghilangkan tanda kutip ganda dan menempatkan XML sebagai gantinya? 
+
+680
+00:28:56,640 --> 00:29:02,340
+ Jadi kita benar-benar dapat mengambil kata saya untuk itu 
+
+681
+00:29:02,340 --> 00:29:05,820
+ bahwa ini adalah kode yang setara untuk apa yang dilakukannya. 
+
+682
+00:29:05,820 --> 00:29:08,910
+ Jadi tag adalah fungsi yang dibangun yang membangun sebuah pohon 
+
+683
+00:29:08,910 --> 00:29:11,260
+ simpul dari dokumen HTML. 
+
+684
+00:29:11,260 --> 00:29:14,080
+ Dan saya menyampaikan banyak argumen yang mengekspresikan 
+
+685
+00:29:14,080 --> 00:29:17,162
+ style CSS pada node itu. 
+
+686
+00:29:17,162 --> 00:29:19,120
+ Yang ini tidak benar-benar ada yang terjadi, 
+
+687
+00:29:19,120 --> 00:29:22,930
+ jadi ada berbagai cara untuk tidak mengatakan apa-apa. 
+
+688
+00:29:22,930 --> 00:29:26,690
+ Dan itu tidak mengambil atribut apa pun. 
+
+689
+00:29:26,690 --> 00:29:28,770
+ Dan tag itu adalah tag tubuh. 
+
+690
+00:29:28,770 --> 00:29:31,340
+ Jadi itu hal lain di perpustakaan standar. 
+
+691
+00:29:31,340 --> 00:29:34,680
+ Semua tag standar berfungsi dengan kelas satu 
+
+692
+00:29:34,680 --> 00:29:36,890
+ status di perpustakaan standar. 
+
+693
+00:29:36,890 --> 00:29:39,870
+ Dan kemudian kita perlu memasukkan teks "Hello World" di dalamnya. 
+
+694
+00:29:39,870 --> 00:29:41,740
+ Jadi kami memanggil fungsi cdata di mana 
+
+695
+00:29:41,740 --> 00:29:46,027
+ cdata adalah kata XML untuk data karakter 
+
+696
+00:29:46,027 --> 00:29:47,110
+ atau hanya string yang konstan. 
+
+697
+00:29:47,110 --> 00:29:51,710
+ Dan kita dapat menempatkan persis teks dari bawah. 
+
+698
+00:29:51,710 --> 00:29:53,460
+ Kami akan berkomentar tentang itu. 
+
+699
+00:29:53,460 --> 00:29:56,390
+ Ini seharusnya memberi kita hasil yang sama seperti sebelumnya. 
+
+700
+00:29:56,390 --> 00:29:58,880
+ Biarkan saya melihat apakah itu berhasil. 
+
+701
+00:29:58,880 --> 00:30:05,500
+ Oke, dan sekarang saya akan kembali ke halaman yang sebenarnya. 
+
+702
+00:30:05,500 --> 00:30:10,530
+ Sama seperti sebelumnya, jadi inilah fungsinya yang sebenarnya 
+
+703
+00:30:10,530 --> 00:30:11,517
+ lakukan di awal. 
+
+704
+00:30:11,517 --> 00:30:12,850
+ Bukan hanya membangun string. 
+
+705
+00:30:12,850 --> 00:30:14,308
+ Ini memanggil serangkaian operasi 
+
+706
+00:30:14,308 --> 00:30:16,480
+ yang dirancang hanya untuk mereka saja 
+
+707
+00:30:16,480 --> 00:30:19,580
+ memungkinkan Anda untuk membangun HTML yang valid, dan mereka tidak pernah 
+
+708
+00:30:19,580 --> 00:30:24,240
+ implisit menafsirkan string sebagai kode, bukan hanya 
+
+709
+00:30:24,240 --> 00:30:25,240
+ konten yang ada di sana. 
+
+710
+00:30:25,240 --> 00:30:26,107
+ Ya? 
+
+711
+00:30:26,107 --> 00:30:26,982
+ SISWA: [TIDAK JELAS]? 
+
+712
+00:30:26,982 --> 00:30:29,450
+
+
+713
+00:30:29,450 --> 00:30:31,939
+ ADAM CHLIPALA: Benar, Anda mengantisipasi 
+
+714
+00:30:31,939 --> 00:30:32,730
+ beberapa langkah selanjutnya. 
+
+715
+00:30:32,730 --> 00:30:34,715
+ Biarkan saya melakukan sesuatu yang lebih rumit 
+
+716
+00:30:34,715 --> 00:30:37,556
+ pertama, yang juga berpotensi mengkhawatirkan. 
+
+717
+00:30:37,556 --> 00:30:41,290
+ Mari putuskan bahwa kita benar-benar senang melihat dunia, jadi kita 
+
+718
+00:30:41,290 --> 00:30:47,965
+ lebih baik letakkan kata "hello" dalam huruf tebal dan kompilasi itu lagi. 
+
+719
+00:30:47,965 --> 00:30:51,410
+ Itu hanya muncul sebagai penafsiran yang secara harfiah 
+
+720
+00:30:51,410 --> 00:30:53,800
+ sebagai teks, bukan markup. 
+
+721
+00:30:53,800 --> 00:30:59,010
+ Jadi ini presentasi sintaks HTML 
+
+722
+00:30:59,010 --> 00:31:02,140
+ sebagai fungsi yang membangun sintaks tidak 
+
+723
+00:31:02,140 --> 00:31:04,407
+ memiliki salah satu dari pengkodean sintaksis biasa 
+
+724
+00:31:04,407 --> 00:31:05,490
+ konvensi dibangun ke dalamnya. 
+
+725
+00:31:05,490 --> 00:31:07,910
+ Ini menafsirkan hal-hal dengan cara yang Anda inginkan. 
+
+726
+00:31:07,910 --> 00:31:11,320
+ Dan begitu penerapan cdata 
+
+727
+00:31:11,320 --> 00:31:13,150
+ melakukan apa yang biasanya disebut melarikan diri. 
+
+728
+00:31:13,150 --> 00:31:14,640
+ Tetapi programmer tidak perlu tahu di sana 
+
+729
+00:31:14,640 --> 00:31:15,720
+ adalah hal seperti itu melarikan diri. 
+
+730
+00:31:15,720 --> 00:31:17,210
+ Anda hanya bisa menganggapnya sebagai, inilah 
+
+731
+00:31:17,210 --> 00:31:19,972
+ satu set fungsi yang nyaman untuk membangun objek pohon itu 
+
+732
+00:31:19,972 --> 00:31:20,680
+ menggambarkan sebuah halaman. 
+
+733
+00:31:20,680 --> 00:31:22,774
+ Apakah saya melihat pertanyaan di sana? 
+
+734
+00:31:22,774 --> 00:31:24,584
+ SISWA: [TIDAK JELAS]? 
+
+735
+00:31:24,584 --> 00:31:27,000
+ ADAM CHLIPALA: Anda ingin melihat HTML yang dihasilkannya. 
+
+736
+00:31:27,000 --> 00:31:32,170
+ OK, itu bukan hal yang paling menarik. 
+
+737
+00:31:32,170 --> 00:31:33,874
+ Saya tidak tahu apakah itu [TIDAK JELAS]. 
+
+738
+00:31:33,874 --> 00:31:36,290
+ Saya bisa membuatnya lebih besar, tetapi kemudian tidak muat pada satu baris. 
+
+739
+00:31:36,290 --> 00:31:39,680
+ Jadi beri tahu saya jika saya harus membuatnya lebih besar. 
+
+740
+00:31:39,680 --> 00:31:44,065
+ Itu hanya dimasukkan ke dalam pelarian biasa untuk kurang dari karakter 
+
+741
+00:31:44,065 --> 00:31:47,660
+ dengan ampersand. 
+
+742
+00:31:47,660 --> 00:31:49,484
+ SISWA: Jadi mengingat bahwa Anda menggunakan XHTML, 
+
+743
+00:31:49,484 --> 00:31:52,376
+ tidak bisakah kamu menggunakan cdata [tidak terdengar] 
+
+744
+00:31:52,376 --> 00:31:55,567
+ bukannya melakukan manual [tidak terdengar]? 
+
+745
+00:31:55,567 --> 00:31:56,566
+ ADAM CHLIPALA: Mungkin. 
+
+746
+00:31:56,566 --> 00:31:59,040
+ Itu akan mengharuskan saya mengetahui lebih banyak tentang XML daripada saya. 
+
+747
+00:31:59,040 --> 00:32:04,430
+
+
+748
+00:32:04,430 --> 00:32:07,880
+ Baiklah, jadi ada pertanyaan lain tentang URL JavaScript, 
+
+749
+00:32:07,880 --> 00:32:08,740
+ yang bagus. 
+
+750
+00:32:08,740 --> 00:32:11,140
+ Jika kami mengizinkan URL JavaScript, maka kami 
+
+751
+00:32:11,140 --> 00:32:15,890
+ memiliki pintu belakang untuk interpretasi otomatis string 
+
+752
+00:32:15,890 --> 00:32:17,790
+ sebagai program saat runtime. 
+
+753
+00:32:17,790 --> 00:32:19,510
+ Dan itu menyebabkan segala macam masalah. 
+
+754
+00:32:19,510 --> 00:32:21,600
+ Jadi mari kita coba untuk menghindari itu. 
+
+755
+00:32:21,600 --> 00:32:26,130
+ Saya akan beralih kembali, pertama-tama, ke versi yang lebih pendek dari ini. 
+
+756
+00:32:26,130 --> 00:32:32,510
+ Dan kemudian di dalam tubuh, saya akan membuat beberapa baris ini. 
+
+757
+00:32:32,510 --> 00:32:37,000
+ Dan mari letakkan tautan yang mencoba melakukan sesuatu yang sesuai. 
+
+758
+00:32:37,000 --> 00:32:46,820
+
+
+759
+00:32:46,820 --> 00:32:48,795
+ Kami akan meninggalkan beberapa ruang untuk pesan kesalahan di sini. 
+
+760
+00:32:48,795 --> 00:32:49,878
+ Ini berfungsi dengan benar. 
+
+761
+00:32:49,878 --> 00:32:54,700
+
+
+762
+00:32:54,700 --> 00:32:57,350
+ URL tidak valid, sesuatu JavaScript, berkat yang diberikan. 
+
+763
+00:32:57,350 --> 00:32:59,305
+ Jadi berkah adalah fungsi yang dibangun di dalamnya 
+
+764
+00:32:59,305 --> 00:33:02,420
+ adalah gatekeeper di mana URL diizinkan. 
+
+765
+00:33:02,420 --> 00:33:05,340
+ Dan secara default, tidak ada URL yang diizinkan. 
+
+766
+00:33:05,340 --> 00:33:08,320
+ Jadi tentunya yang satu ini tidak diperbolehkan. 
+
+767
+00:33:08,320 --> 00:33:12,430
+ Dan secara umum, itu adalah ide yang buruk untuk menulis kebijakan URL Anda 
+
+768
+00:33:12,430 --> 00:33:16,777
+ sehingga Anda dapat membuat nilai yang mewakili URL JavaScript. 
+
+769
+00:33:16,777 --> 00:33:19,110
+ Karena dengan demikian segala macam jaminan yang mungkin Anda sukai 
+
+770
+00:33:19,110 --> 00:33:20,400
+ tidak valid. 
+
+771
+00:33:20,400 --> 00:33:22,630
+ Untuk membuatnya sedikit lebih jelas bagaimana 
+
+772
+00:33:22,630 --> 00:33:28,350
+ bekerja, biarkan saya faktor kode ini menjadi fungsi yang terpisah 
+
+773
+00:33:28,350 --> 00:33:32,335
+ disebut tautan yang mengambil URL. 
+
+774
+00:33:32,335 --> 00:33:33,331
+ Jadi URL adalah tipe. 
+
+775
+00:33:33,331 --> 00:33:34,205
+ Bukan hanya string. 
+
+776
+00:33:34,205 --> 00:33:37,830
+ Ini adalah jenis yang mewakili URL yang secara eksplisit 
+
+777
+00:33:37,830 --> 00:33:41,260
+ disahkan oleh kebijakan aplikasi Anda. 
+
+778
+00:33:41,260 --> 00:33:47,140
+ Dan kita bisa [TIDAK JELAS] XML. 
+
+779
+00:33:47,140 --> 00:33:52,160
+ Dan bukannya konstan, saya hanya akan menempatkan Anda di sini. 
+
+780
+00:33:52,160 --> 00:33:54,430
+ Jadi saya menggunakan kurung kurawal 
+
+781
+00:33:54,430 --> 00:33:58,470
+ seperti dalam beberapa kerangka kerangka HTML populer 
+
+782
+00:33:58,470 --> 00:34:01,260
+ untuk menunjukkan memasukkan beberapa kode dari host 
+
+783
+00:34:01,260 --> 00:34:03,722
+ bahasa di dalam HTML yang sedang kami bangun. 
+
+784
+00:34:03,722 --> 00:34:05,180
+ Dan ini semua dilakukan dengan cara di mana 
+
+785
+00:34:05,180 --> 00:34:06,500
+ itu tipe yang diperiksa secara statis. 
+
+786
+00:34:06,500 --> 00:34:08,020
+ Jadi sistem akan memeriksa, ya, ini 
+
+787
+00:34:08,020 --> 00:34:09,739
+ adalah tempat di mana URL berada. 
+
+788
+00:34:09,739 --> 00:34:11,090
+ Dan ini mengatakan itu adalah URL. 
+
+789
+00:34:11,090 --> 00:34:13,020
+ Jadi baiklah. 
+
+790
+00:34:13,020 --> 00:34:18,210
+ Dan kemudian saya dapat secara eksplisit mengekspos panggilan untuk memberkati dengan mengatakan, 
+
+791
+00:34:18,210 --> 00:34:21,107
+ mari kita panggil fungsi linker di sini 
+
+792
+00:34:21,107 --> 00:34:23,280
+ pada hasil memberkati URL itu. 
+
+793
+00:34:23,280 --> 00:34:28,679
+
+
+794
+00:34:28,679 --> 00:34:31,300
+ Kita harus mendapatkan pesan kesalahan yang sama seperti sebelumnya. 
+
+795
+00:34:31,300 --> 00:34:35,380
+ Ada beberapa analisis program yang terjadi di sini untuk mencari tahu-- 
+
+796
+00:34:35,380 --> 00:34:36,820
+ Saya kira itu tidak membutuhkan itu. 
+
+797
+00:34:36,820 --> 00:34:39,350
+ Karena string ini dilewatkan langsung untuk memberkati. 
+
+798
+00:34:39,350 --> 00:34:42,368
+ Dan kita bisa melihat - Saya tidak sabar untuk menjalankan ini untuk Anda saat runtime 
+
+799
+00:34:42,368 --> 00:34:43,409
+ dan temukan kegagalannya. 
+
+800
+00:34:43,409 --> 00:34:45,342
+ Tapi aku tahu itu pasti akan gagal. 
+
+801
+00:34:45,342 --> 00:34:46,925
+ Jadi saya hanya akan membuat kesalahan kompilator. 
+
+802
+00:34:46,925 --> 00:34:50,800
+ URL ini tidak akan diterima oleh kebijakan URL. 
+
+803
+00:34:50,800 --> 00:34:54,728
+ SISWA: Jadi jika Anda tidak memiliki [TIDAK JELAS]? 
+
+804
+00:34:54,728 --> 00:34:57,039
+ ADAM CHLIPALA: Jika saya meninggalkan panggilan ini untuk memberkati, 
+
+805
+00:34:57,039 --> 00:35:00,546
+ itu akan menjadi kesalahan waktu kompilasi yang jauh lebih mendasar. 
+
+806
+00:35:00,546 --> 00:35:01,920
+ Anda memiliki string dan membutuhkan URL. 
+
+807
+00:35:01,920 --> 00:35:02,920
+ Mereka tipe berbeda. 
+
+808
+00:35:02,920 --> 00:35:06,738
+
+
+809
+00:35:06,738 --> 00:35:09,370
+ Baiklah, tapi mari kita buat ini sedikit lebih menarik. 
+
+810
+00:35:09,370 --> 00:35:11,120
+ Dan saya akan membuka konfigurasi 
+
+811
+00:35:11,120 --> 00:35:12,900
+ file untuk demo ini. 
+
+812
+00:35:12,900 --> 00:35:15,820
+ Ini sangat singkat, karena hal-hal ini pergi, 
+
+813
+00:35:15,820 --> 00:35:19,760
+ setidaknya jika Anda melihat kerangka kerja aplikasi web Java. 
+
+814
+00:35:19,760 --> 00:35:22,080
+ Mereka memiliki file XML raksasa untuk konfigurasi. 
+
+815
+00:35:22,080 --> 00:35:27,000
+ Ini sedikit lebih bagus dari itu, atau begitulah yang saya klaim. 
+
+816
+00:35:27,000 --> 00:35:30,990
+ Kita dapat menambahkan aturan yang mengatakan, apa pun di Wikipedia 
+
+817
+00:35:30,990 --> 00:35:31,950
+ Diperbolehkan. 
+
+818
+00:35:31,950 --> 00:35:34,765
+ Lalu kita dapat menempatkan URL Wikipedia di sini. 
+
+819
+00:35:34,765 --> 00:35:41,517
+
+
+820
+00:35:41,517 --> 00:35:46,008
+ Sekarang kita dalam kondisi yang baik. 
+
+821
+00:35:46,008 --> 00:35:47,006
+ Apa yang hilang? 
+
+822
+00:35:47,006 --> 00:35:53,992
+
+
+823
+00:35:53,992 --> 00:35:56,890
+ Oh, saya kira saya tidak ingat skema URL untuk itu. 
+
+824
+00:35:56,890 --> 00:35:58,414
+ Tapi kami sampai di situs web. 
+
+825
+00:35:58,414 --> 00:35:59,205
+ Itu cukup bagus. 
+
+826
+00:35:59,205 --> 00:36:01,983
+
+
+827
+00:36:01,983 --> 00:36:03,840
+ Baiklah, jadi ide besarnya di sini adalah 
+
+828
+00:36:03,840 --> 00:36:06,735
+ untuk memiliki jenis URL abstrak, adil 
+
+829
+00:36:06,735 --> 00:36:08,860
+ seperti Anda bisa memiliki jenis tabel hash abstrak 
+
+830
+00:36:08,860 --> 00:36:11,851
+ yang mengkodekan invarian tentang bagaimana tampilan tabel hash 
+
+831
+00:36:11,851 --> 00:36:13,850
+ dan mencegah kode mencapai dalam array 
+
+832
+00:36:13,850 --> 00:36:15,030
+ dari tabel hash. 
+
+833
+00:36:15,030 --> 00:36:17,210
+ Kami dapat melakukan hal yang sama untuk URL. 
+
+834
+00:36:17,210 --> 00:36:20,250
+ Dan sistem memberlakukan melalui fungsi berkah ini 
+
+835
+00:36:20,250 --> 00:36:22,710
+ bahwa setiap nilai dari tipe ini memiliki 
+
+836
+00:36:22,710 --> 00:36:24,835
+ lulus pemeriksaan yang sesuai di beberapa titik. 
+
+837
+00:36:24,835 --> 00:36:26,400
+ Dan misalnya, dengan kebijakan ini, 
+
+838
+00:36:26,400 --> 00:36:28,980
+ kami tahu tidak akan pernah ada URL JavaScript. 
+
+839
+00:36:28,980 --> 00:36:33,780
+ Dan aman untuk mengambil nilai URL dan menggunakannya sebagai tautan. 
+
+840
+00:36:33,780 --> 00:36:36,492
+ Itu tidak akan memecahkan abstraksi dasar bahasa. 
+
+841
+00:36:36,492 --> 00:36:37,505
+ Ya. 
+
+842
+00:36:37,505 --> 00:36:38,380
+ SISWA: [TIDAK JELAS]? 
+
+843
+00:36:38,380 --> 00:36:49,100
+
+
+844
+00:36:49,100 --> 00:36:52,060
+ ADAM CHLIPALA: OK, jadi kita harus mencoba sesuatu seperti itu. 
+
+845
+00:36:52,060 --> 00:36:54,310
+ Dan ini harus dilalui. 
+
+846
+00:36:54,310 --> 00:36:58,982
+ Dan kemudian browser tahu itu adalah kutipan. 
+
+847
+00:36:58,982 --> 00:37:01,000
+ Dan kita bisa melihat sumbernya. 
+
+848
+00:37:01,000 --> 00:37:05,010
+ Itu karena lolos dengan cara yang benar. 
+
+849
+00:37:05,010 --> 00:37:07,447
+ SISWA: Tetapi Anda masih bisa menggunakan-- jadi JavaScript memungkinkan Anda 
+
+850
+00:37:07,447 --> 00:37:11,488
+ untuk mengatakan, [TIDAK JELAS], lalu tentukan JavaScript sebaris 
+
+851
+00:37:11,488 --> 00:37:11,988
+ sana. 
+
+852
+00:37:11,988 --> 00:37:14,870
+ Apakah itu sesuatu yang [TIDAK JELAS]? 
+
+853
+00:37:14,870 --> 00:37:16,580
+ ADAM CHLIPALA: Ya dan tidak. 
+
+854
+00:37:16,580 --> 00:37:18,780
+ Jadi kita bisa menambah beban tubuh. 
+
+855
+00:37:18,780 --> 00:37:21,781
+ Dan bukannya JavaScript, Anda menaruh beberapa kode Ur / Web 
+
+856
+00:37:21,781 --> 00:37:22,743
+ itu melakukan sesuatu. 
+
+857
+00:37:22,743 --> 00:37:29,490
+
+
+858
+00:37:29,490 --> 00:37:33,695
+ Jadi itu akan menjadi bencana untuk menafsirkan kode JavaScript 
+
+859
+00:37:33,695 --> 00:37:35,419
+ dalam bentuk string sebagai program di sana. 
+
+860
+00:37:35,419 --> 00:37:37,210
+ Tetapi kita dapat menempatkan kode pemrograman yang sama 
+
+861
+00:37:37,210 --> 00:37:39,600
+ bahasa yang Anda gunakan sudah lolos 
+
+862
+00:37:39,600 --> 00:37:41,086
+ dengan kurung kurawal ini. 
+
+863
+00:37:41,086 --> 00:37:42,710
+ Dan kemudian secara otomatis dikompilasi 
+
+864
+00:37:42,710 --> 00:37:44,842
+ ke JavaScript untuk dijalankan pada klien. 
+
+865
+00:37:44,842 --> 00:37:52,778
+
+
+866
+00:37:52,778 --> 00:37:54,762
+ Baiklah, ada pertanyaan lagi? 
+
+867
+00:37:54,762 --> 00:37:55,375
+ Ya. 
+
+868
+00:37:55,375 --> 00:37:56,250
+ SISWA: [TIDAK JELAS]? 
+
+869
+00:37:56,250 --> 00:38:04,499
+
+
+870
+00:38:04,499 --> 00:38:09,490
+ ADAM CHLIPALA: Saya pikir itu segalanya? 
+
+871
+00:38:09,490 --> 00:38:12,560
+ Apakah memalukan bahwa saya mengatakan semuanya? 
+
+872
+00:38:12,560 --> 00:38:15,919
+ Apakah ada sesuatu yang tidak boleh diizinkan? 
+
+873
+00:38:15,919 --> 00:38:16,794
+ SISWA: [TIDAK JELAS]. 
+
+874
+00:38:16,794 --> 00:38:24,966
+
+
+875
+00:38:24,966 --> 00:38:27,340
+ ADAM CHLIPALA: Saya paham, jadi simbol yang bisa berdiri sendiri 
+
+876
+00:38:27,340 --> 00:38:29,960
+ memiliki hal-hal lucu terjadi dengan eksekusi perangkat lunak 
+
+877
+00:38:29,960 --> 00:38:32,414
+ akan membingungkan pengguna manusia? 
+
+878
+00:38:32,414 --> 00:38:33,289
+ SISWA: [TIDAK JELAS]. 
+
+879
+00:38:33,289 --> 00:38:36,600
+
+
+880
+00:38:36,600 --> 00:38:39,070
+ ADAM CHLIPALA: OK, saya ingat pernah membaca beberapa hal itu. 
+
+881
+00:38:39,070 --> 00:38:42,090
+ Dan mungkin itu mengatakan versi browser yang baru 
+
+882
+00:38:42,090 --> 00:38:42,990
+ hindari masalah itu. 
+
+883
+00:38:42,990 --> 00:38:45,820
+ Tetapi beberapa yang lama akan bingung. 
+
+884
+00:38:45,820 --> 00:38:49,540
+ Ada kemungkinan ini akan menimbulkan masalah pada yang lama itu 
+
+885
+00:38:49,540 --> 00:38:50,690
+ terlalu permisif. 
+
+886
+00:38:50,690 --> 00:38:51,660
+ Aku tidak yakin. 
+
+887
+00:38:51,660 --> 00:38:55,540
+
+
+888
+00:38:55,540 --> 00:38:57,750
+ Tapi setidaknya semuanya ini 
+
+889
+00:38:57,750 --> 00:39:00,435
+ akan ditafsirkan sebagai UTF-8 jika mereka masuk ke dalam dokumen. 
+
+890
+00:39:00,435 --> 00:39:02,643
+ Jadi jika ada masalah dengan pengkodean yang berbeda, 
+
+891
+00:39:02,643 --> 00:39:06,444
+ seharusnya tidak berlaku di sini. 
+
+892
+00:39:06,444 --> 00:39:06,944
+ Ya. 
+
+893
+00:39:06,944 --> 00:39:09,809
+ SISWA: String [tidak terdengar], sekarang 
+
+894
+00:39:09,809 --> 00:39:11,809
+ itu memeriksa waktu kompilasi dari string itu 
+
+895
+00:39:11,809 --> 00:39:13,440
+ di URL yang diizinkan. 
+
+896
+00:39:13,440 --> 00:39:16,006
+ Tetapi jika Anda menghitung string saat runtime, 
+
+897
+00:39:16,006 --> 00:39:19,104
+ apakah memberkati melakukan pemeriksaan pada saat runtime 
+
+898
+00:39:19,104 --> 00:39:21,096
+ apakah atau tidak string diperbolehkan, atau sedang 
+
+899
+00:39:21,096 --> 00:39:22,590
+ kamu tidak diijinkan untuk-- 
+
+900
+00:39:22,590 --> 00:39:25,578
+ ADAM CHLIPALA: Jadi mari kita tulis formulir untuk menguji klaim itu. 
+
+901
+00:39:25,578 --> 00:39:31,056
+
+
+902
+00:39:31,056 --> 00:39:32,550
+ Jadi kita bisa memasukkan formulir di sini. 
+
+903
+00:39:32,550 --> 00:39:38,028
+
+
+904
+00:39:38,028 --> 00:39:42,510
+ Dan formulir menginginkan kita memasukkan URL dalam kotak teks yang disebut URL. 
+
+905
+00:39:42,510 --> 00:39:45,498
+
+
+906
+00:39:45,498 --> 00:39:48,520
+ Lalu kita dapat memiliki tombol Kirim. 
+
+907
+00:39:48,520 --> 00:39:52,090
+ Ketika Anda mengkliknya, ia harus memanggil fungsi linker 
+
+908
+00:39:52,090 --> 00:39:55,480
+ dengan catatan satu nilai untuk setiap bidang dalam formulir. 
+
+909
+00:39:55,480 --> 00:39:57,990
+ Dalam hal ini, hanya ada satu bidang yang disebut URL. 
+
+910
+00:39:57,990 --> 00:40:00,710
+ Jadi linker akan mendapatkan catatan yang berisi 
+
+911
+00:40:00,710 --> 00:40:02,430
+ URL sebagai tipe string. 
+
+912
+00:40:02,430 --> 00:40:05,152
+ Dan kemudian kami akan secara eksplisit mencoba memberkatinya di sana 
+
+913
+00:40:05,152 --> 00:40:05,985
+ dan lihat apakah berhasil. 
+
+914
+00:40:05,985 --> 00:40:16,150
+
+
+915
+00:40:16,150 --> 00:40:17,990
+ Ini adalah contoh kesalahan tipe yang menarik 
+
+916
+00:40:17,990 --> 00:40:20,730
+ pesan, yang diakui sub-optimal dalam beberapa hal. 
+
+917
+00:40:20,730 --> 00:40:27,247
+
+
+918
+00:40:27,247 --> 00:40:29,830
+ Inilah salah satu hal yang tidak masuk akal jika Anda 
+
+919
+00:40:29,830 --> 00:40:30,913
+ tidak akrab dengan Haskell. 
+
+920
+00:40:30,913 --> 00:40:32,670
+ Saya lupa kembali. 
+
+921
+00:40:32,670 --> 00:40:35,165
+ Tapi setidaknya sekarang ini lebih mirip program Java. 
+
+922
+00:40:35,165 --> 00:40:39,342
+
+
+923
+00:40:39,342 --> 00:40:43,770
+ Punya string - biarkan saya gulir sampai akhir, lakukan salah satu dari ini, 
+
+924
+00:40:43,770 --> 00:40:46,370
+ semacam menyalin tipe lengkap semua atribut 
+
+925
+00:40:46,370 --> 00:40:47,775
+ yang bisa diambil oleh tag ini. 
+
+926
+00:40:47,775 --> 00:40:50,790
+ Dan saya juga lupa mengatakan, ini sekarang menjadi halaman penuh. 
+
+927
+00:40:50,790 --> 00:40:54,880
+ Jadi kita tidak bisa menggunakan tag sampai kita berada di dalam tag tubuh. 
+
+928
+00:40:54,880 --> 00:40:56,631
+ Dan ini adalah kesalahan tipe muskil 
+
+929
+00:40:56,631 --> 00:40:57,714
+ pesan untuk properti itu. 
+
+930
+00:40:57,714 --> 00:41:01,800
+
+
+931
+00:41:01,800 --> 00:41:05,330
+ Oke, sekarang mari kita lihat apa yang terjadi. 
+
+932
+00:41:05,330 --> 00:41:13,250
+ URL is-- yay. 
+
+933
+00:41:13,250 --> 00:41:23,830
+
+
+934
+00:41:23,830 --> 00:41:27,253
+ Di sana kami pergi. 
+
+935
+00:41:27,253 --> 00:41:30,805
+ Jadi itu agak panjang dan belum tentu super 
+
+936
+00:41:30,805 --> 00:41:32,180
+ jawaban yang menarik untuk pertanyaan Anda. 
+
+937
+00:41:32,180 --> 00:41:32,680
+ Ya. 
+
+938
+00:41:32,680 --> 00:41:36,750
+ SISWA: URL [TIDAK TERDENGAR], adalah hanya untuk [TIDAK JELAS], 
+
+939
+00:41:36,750 --> 00:41:38,250
+ atau lebih restriktif dari itu? 
+
+940
+00:41:38,250 --> 00:41:39,791
+ ADAM CHLIPALA: Ini lebih membatasi. 
+
+941
+00:41:39,791 --> 00:41:42,155
+ Saat ini hanya konstanta dan prefiks. 
+
+942
+00:41:42,155 --> 00:41:44,575
+ Tetapi Anda juga dapat memiliki aturan yang tidak diizinkan. 
+
+943
+00:41:44,575 --> 00:41:46,450
+ Dan mereka berlari sesuai urutan yang Anda tulis. 
+
+944
+00:41:46,450 --> 00:41:52,351
+ SISWA: Oh, jadi jika Anda tetap melarang JavaScript [tidak terdengar] 
+
+945
+00:41:52,351 --> 00:41:54,601
+ bahwa jika Anda meletakkan jeda baris di tengah kata 
+
+946
+00:41:54,601 --> 00:41:57,812
+ "JavaScript," masih akan menafsirkannya sebagai-- 
+
+947
+00:41:57,812 --> 00:42:00,150
+ ADAM CHLIPALA: Itu terlalu buruk. 
+
+948
+00:42:00,150 --> 00:42:01,745
+ Karena itulah lebih baik tetap menggunakan pendekatan daftar putih 
+
+949
+00:42:01,745 --> 00:42:02,991
+ dari pendekatan daftar hitam. 
+
+950
+00:42:02,991 --> 00:42:05,020
+ Jadi Anda mungkin ingin semua aturan 
+
+951
+00:42:05,020 --> 00:42:10,020
+ untuk memulai dengan protokol tertentu, seperti HTTP, 
+
+952
+00:42:10,020 --> 00:42:13,584
+ dan hanya izinkan hal-hal yang jatuh pada set Anda yang disetujui 
+
+953
+00:42:13,584 --> 00:42:15,192
+ protokol. 
+
+954
+00:42:15,192 --> 00:42:18,066
+ Itulah yang saya sarankan. 
+
+955
+00:42:18,066 --> 00:42:18,566
+ Ya. 
+
+956
+00:42:18,566 --> 00:42:20,012
+ SISWA: Untuk banyak situs, Anda mungkin 
+
+957
+00:42:20,012 --> 00:42:21,928
+ biarkan pengguna berbagi tautan, dalam hal ini, yang Anda butuhkan 
+
+958
+00:42:21,928 --> 00:42:23,734
+ untuk memungkinkan tautan ke mana saja. 
+
+959
+00:42:23,734 --> 00:42:25,192
+ ADAM CHLIPALA: Anda dapat mengizinkan tautan. 
+
+960
+00:42:25,192 --> 00:42:27,442
+ Nah, apakah Anda ingin pengguna Anda berbagi tautan JavaScript 
+
+961
+00:42:27,442 --> 00:42:29,890
+ atau, saya tidak tahu, tautan Flash, atau apa pun yang diizinkan? 
+
+962
+00:42:29,890 --> 00:42:34,990
+ Anda lihat, Anda dapat daftar putih semua HTTP, HTTPS, URL 
+
+963
+00:42:34,990 --> 00:42:37,705
+ dan berada dalam kondisi yang baik untuk sebagian besar situs web. 
+
+964
+00:42:37,705 --> 00:42:39,200
+ Itu akan melakukan itu. 
+
+965
+00:42:39,200 --> 00:42:42,630
+ Dan jaminannya sedikit lebih lemah 
+
+966
+00:42:42,630 --> 00:42:44,460
+ dibandingkan dengan hanya mengizinkan URL tertentu. 
+
+967
+00:42:44,460 --> 00:42:47,408
+ Tetapi Anda setidaknya bisa memastikan bahwa tidak ada eksekusi otomatis 
+
+968
+00:42:47,408 --> 00:42:48,842
+ string sebagai program. 
+
+969
+00:42:48,842 --> 00:42:54,590
+
+
+970
+00:42:54,590 --> 00:42:59,664
+ Jadi biarkan saya menarik salah satu contoh dari kertas, yang 
+
+971
+00:42:59,664 --> 00:43:10,600
+ adalah yang ini, contoh dari sistem yang sederhana 
+
+972
+00:43:10,600 --> 00:43:13,600
+ dengan satu set ruang obrolan diwakili dalam database. 
+
+973
+00:43:13,600 --> 00:43:16,110
+ Dan pengguna dapat mengeklik tautan untuk masuk ke suatu ruangan 
+
+974
+00:43:16,110 --> 00:43:17,360
+ lalu kirim pesan. 
+
+975
+00:43:17,360 --> 00:43:20,085
+ Ini adalah yang pertama dari beberapa varian pada skema itu. 
+
+976
+00:43:20,085 --> 00:43:22,640
+
+
+977
+00:43:22,640 --> 00:43:25,040
+ Pertama, saya akan menunjukkan saya akan mengkompilasi ulang ini. 
+
+978
+00:43:25,040 --> 00:43:27,770
+ Dan kemudian secara ajaib, semua tabel database 
+
+979
+00:43:27,770 --> 00:43:30,410
+ yang dinyatakan akan ditambahkan ke database. 
+
+980
+00:43:30,410 --> 00:43:33,014
+ Dan kita sekarang bisa mulai menggunakan aplikasi. 
+
+981
+00:43:33,014 --> 00:43:35,010
+ Tapi pertama-tama, kita harus menambahkan beberapa ruangan. 
+
+982
+00:43:35,010 --> 00:43:39,160
+ Jadi mari kita buka antarmuka [INAUDIBLE] kami ke database demo 
+
+983
+00:43:39,160 --> 00:43:48,216
+ dan masukkan ke dalam tabel ruangan beberapa nilai seperti satu dan dua. 
+
+984
+00:43:48,216 --> 00:43:51,100
+ Semoga ini ada di sini sekarang. 
+
+985
+00:43:51,100 --> 00:43:53,210
+ Oke, dan kita masuk ke sana, dan kita bisa 
+
+986
+00:43:53,210 --> 00:43:57,930
+ menghibur diri sepanjang hari mengirim string teks. 
+
+987
+00:43:57,930 --> 00:44:05,983
+ Mungkin sedikit lebih menarik, Anda bisa mencoba mengirim HTML, 
+
+988
+00:44:05,983 --> 00:44:09,634
+ dan itu segera ditangani. 
+
+989
+00:44:09,634 --> 00:44:12,040
+ Itulah fungsi dasar di sana. 
+
+990
+00:44:12,040 --> 00:44:15,870
+ Dan hanya dengan cepat membahas cara kerjanya kembali, 
+
+991
+00:44:15,870 --> 00:44:17,625
+ jadi kita punya dua tabel SQL itu 
+
+992
+00:44:17,625 --> 00:44:19,870
+ baru saja diumumkan di kelas pertama ini 
+
+993
+00:44:19,870 --> 00:44:21,370
+ jauh di dalam bahasa pemrograman. 
+
+994
+00:44:21,370 --> 00:44:23,125
+ Dan kami memberikan skema masing-masing tabel. 
+
+995
+00:44:23,125 --> 00:44:25,720
+ Dan kemudian, ketika kami mencoba mengakses tabel itu, 
+
+996
+00:44:25,720 --> 00:44:27,990
+ compiler akan memeriksa apakah kita mengaksesnya 
+
+997
+00:44:27,990 --> 00:44:30,323
+ dengan cara yang konsisten dengan skema dari mengetik 
+
+998
+00:44:30,323 --> 00:44:31,550
+ perspektif. 
+
+999
+00:44:31,550 --> 00:44:34,420
+ Jadi kami memiliki meja kamar di mana setiap kamar berada 
+
+1000
+00:44:34,420 --> 00:44:37,520
+ catatan ID, yang merupakan bilangan bulat, 
+
+1001
+00:44:37,520 --> 00:44:39,720
+ dan sebuah judul, yang merupakan string. 
+
+1002
+00:44:39,720 --> 00:44:42,540
+ Ini adalah jenis kami hanya menghasilkan catatan. 
+
+1003
+00:44:42,540 --> 00:44:47,000
+ Dan saya membuat beberapa ruang di konsol SQL. 
+
+1004
+00:44:47,000 --> 00:44:52,730
+ Dan kami juga memiliki pesan bahwa setiap pesan milik sebuah ruangan. 
+
+1005
+00:44:52,730 --> 00:44:54,990
+ Dan itu memiliki waktu ketika diposting. 
+
+1006
+00:44:54,990 --> 00:44:59,210
+ Dan itu memiliki beberapa teks, yang merupakan isi pesan. 
+
+1007
+00:44:59,210 --> 00:45:03,520
+ Dan biarkan saya maju cepat ke fungsi utama. 
+
+1008
+00:45:03,520 --> 00:45:06,092
+ Kami menjalankan kueri SQL. 
+
+1009
+00:45:06,092 --> 00:45:08,610
+ Jadi, inilah contoh sintaks SQL yang tertanam di dalamnya 
+
+1010
+00:45:08,610 --> 00:45:09,130
+ dari Ur / Web. 
+
+1011
+00:45:09,130 --> 00:45:11,410
+ Saya tidak ingin melakukan ekspansi yang satu ini 
+
+1012
+00:45:11,410 --> 00:45:13,790
+ ke fungsi panggilan dari pustaka standar. 
+
+1013
+00:45:13,790 --> 00:45:17,370
+ Karena itu sangat verbose jika saya melakukan itu. 
+
+1014
+00:45:17,370 --> 00:45:19,710
+ Tapi, kata-kataku, ini adalah de-gula dalam panggilan 
+
+1015
+00:45:19,710 --> 00:45:21,790
+ fungsi di perpustakaan standar itu 
+
+1016
+00:45:21,790 --> 00:45:25,720
+ mewakili cara yang valid untuk membangun kueri SQL. 
+
+1017
+00:45:25,720 --> 00:45:27,630
+ Dan fungsi-fungsi itu memiliki tipe itu 
+
+1018
+00:45:27,630 --> 00:45:29,580
+ menyebabkan mereka mengetik memeriksa kueri untuk Anda, 
+
+1019
+00:45:29,580 --> 00:45:33,320
+ bukan hanya menjamin bahwa sintaks itu masuk akal. 
+
+1020
+00:45:33,320 --> 00:45:36,630
+ Jadi ini mendapat de-gula menjadi indikasi permintaan SQL. 
+
+1021
+00:45:36,630 --> 00:45:38,210
+ Dan kemudian kode di sini pada dasarnya 
+
+1022
+00:45:38,210 --> 00:45:41,910
+ hanya melompati semua baris yang keluar dari kueri tersebut 
+
+1023
+00:45:41,910 --> 00:45:44,580
+ dan menghasilkan sepotong HTML untuk masing-masing. 
+
+1024
+00:45:44,580 --> 00:45:46,950
+ Khususnya, kita akan mengambil judul 
+
+1025
+00:45:46,950 --> 00:45:52,472
+ bidang hasil kueri dan mengonversinya 
+
+1026
+00:45:52,472 --> 00:45:57,000
+ ke dalam HTML dengan notasi ini yang melibatkan kurung kurawal. 
+
+1027
+00:45:57,000 --> 00:45:59,310
+ Dan kurung kotak juga mengatakan, 
+
+1028
+00:45:59,310 --> 00:46:01,900
+ ini sebenarnya bukan bagian dari HTML. 
+
+1029
+00:46:01,900 --> 00:46:04,455
+ Tapi tolong konversikan untuk saya dengan cara standar. 
+
+1030
+00:46:04,455 --> 00:46:06,445
+ Jadi kita bisa melakukannya dengan string dan bilangan bulat 
+
+1031
+00:46:06,445 --> 00:46:07,862
+ dan segala jenis lainnya. 
+
+1032
+00:46:07,862 --> 00:46:08,677
+ Ya. 
+
+1033
+00:46:08,677 --> 00:46:11,479
+ SISWA: Jadi jika itu mengandung HTML berbahaya atau sesuatu, 
+
+1034
+00:46:11,479 --> 00:46:12,630
+ apakah itu disaring? 
+
+1035
+00:46:12,630 --> 00:46:15,220
+
+
+1036
+00:46:15,220 --> 00:46:16,410
+ ADAM CHLIPALA: Pasti. 
+
+1037
+00:46:16,410 --> 00:46:19,030
+ Jadi dengan cara biasa membicarakan hal-hal ini, 
+
+1038
+00:46:19,030 --> 00:46:21,186
+ melarikan diri terjadi dengan cara yang Anda inginkan. 
+
+1039
+00:46:21,186 --> 00:46:24,640
+ Di Ur / Web, Anda bisa menganggap ini sebagai membangun pohon. 
+
+1040
+00:46:24,640 --> 00:46:27,080
+ Ini adalah simpul yang mewakili beberapa teks. 
+
+1041
+00:46:27,080 --> 00:46:28,550
+ Jelas sekali teks tidak bisa melakukan apa-apa. 
+
+1042
+00:46:28,550 --> 00:46:30,951
+ SISWA: Jadi jika judul itu adalah Kontrol Pengguna, 
+
+1043
+00:46:30,951 --> 00:46:34,362
+ dan seseorang membuat ruang obrolan dengan judul Memberi tahu sesuatu, 
+
+1044
+00:46:34,362 --> 00:46:35,570
+ itu tidak akan menjadi JavaScript? 
+
+1045
+00:46:35,570 --> 00:46:36,480
+ ADAM CHLIPALA: Itu tidak akan secara otomatis 
+
+1046
+00:46:36,480 --> 00:46:39,336
+ ditafsirkan sebagai JavaScript atau HTML atau yang lainnya. 
+
+1047
+00:46:39,336 --> 00:46:41,220
+ Itu hanya akan menjadi teks saja. 
+
+1048
+00:46:41,220 --> 00:46:42,595
+ Baiklah, jadi kami memiliki judul ini. 
+
+1049
+00:46:42,595 --> 00:46:45,200
+ Dan mari kita bungkus tag di sekitarnya. 
+
+1050
+00:46:45,200 --> 00:46:47,900
+ Dan bukannya href, cara biasa untuk melakukan tautan di HTML, 
+
+1051
+00:46:47,900 --> 00:46:50,567
+ kami menggunakan atribut tautan, yaitu 
+
+1052
+00:46:50,567 --> 00:46:54,200
+ semacam atribut pseudo di Ur / Web, yang 
+
+1053
+00:46:54,200 --> 00:46:57,570
+ Dibutuhkan sebagai argumen bukan URL, tetapi pada dasarnya 
+
+1054
+00:46:57,570 --> 00:46:58,570
+ ekspresi Ur / Web. 
+
+1055
+00:46:58,570 --> 00:47:00,290
+ Dan artinya adalah ketika Anda mengklik tautan ini, 
+
+1056
+00:47:00,290 --> 00:47:02,623
+ tolong jalankan ekspresi ini untuk menghasilkan halaman baru itu 
+
+1057
+00:47:02,623 --> 00:47:04,125
+ harus ditampilkan. 
+
+1058
+00:47:04,125 --> 00:47:06,000
+ Dalam hal ini, kita memanggil fungsi yang disebut 
+
+1059
+00:47:06,000 --> 00:47:10,280
+ obrolan, yang didefinisikan di sini. 
+
+1060
+00:47:10,280 --> 00:47:14,990
+ Dan inilah dia. 
+
+1061
+00:47:14,990 --> 00:47:16,804
+ Saya tidak akan terlalu banyak membahas detailnya. 
+
+1062
+00:47:16,804 --> 00:47:18,220
+ Tetapi kami memiliki beberapa kueri SQL yang lebih banyak 
+
+1063
+00:47:18,220 --> 00:47:21,280
+ menggunakan berbagai fungsi pustaka standar 
+
+1064
+00:47:21,280 --> 00:47:24,000
+ untuk berbagai cara menggunakan hasil tanya. 
+
+1065
+00:47:24,000 --> 00:47:26,421
+ Kami menghasilkan halaman HTML ini. 
+
+1066
+00:47:26,421 --> 00:47:27,920
+ Dan kami katakan, Anda berada di ruang obrolan. 
+
+1067
+00:47:27,920 --> 00:47:28,900
+ Ini judulnya. 
+
+1068
+00:47:28,900 --> 00:47:30,750
+ Kami mendapatkan jenis pelarian yang sama di sana. 
+
+1069
+00:47:30,750 --> 00:47:33,320
+ Dan ada bentuk di mana pengguna dapat memasukkan beberapa teks. 
+
+1070
+00:47:33,320 --> 00:47:36,325
+ Itu adalah bentuk yang saya gunakan untuk menunjukkan ini 
+
+1071
+00:47:36,325 --> 00:47:38,500
+ beberapa saat yang lalu. 
+
+1072
+00:47:38,500 --> 00:47:40,530
+ Dan tombol Kirim formulir 
+
+1073
+00:47:40,530 --> 00:47:44,250
+ memiliki atribut ask ini yang mengandung say, 
+
+1074
+00:47:44,250 --> 00:47:46,018
+ yang merupakan nama fungsi di Ur / Web. 
+
+1075
+00:47:46,018 --> 00:47:46,902
+ Dan ini dia. 
+
+1076
+00:47:46,902 --> 00:47:49,060
+ Jadi ketika kami menyerahkan formulir, kami memanggil fungsi ini. 
+
+1077
+00:47:49,060 --> 00:47:51,050
+ Jalankan beberapa lebih banyak SQL. 
+
+1078
+00:47:51,050 --> 00:47:53,470
+ Masukkan baris baru ke dalam tabel. 
+
+1079
+00:47:53,470 --> 00:47:58,870
+ Kami secara otomatis melompat di ID ruang obrolan 
+
+1080
+00:47:58,870 --> 00:48:00,940
+ dan bidang teks yang berasal dari formulir. 
+
+1081
+00:48:00,940 --> 00:48:03,054
+ Dan ini secara otomatis lolos seperlunya. 
+
+1082
+00:48:03,054 --> 00:48:05,095
+ Tetapi sekali lagi, Anda tidak perlu berpikir untuk melarikan diri 
+
+1083
+00:48:05,095 --> 00:48:06,870
+ dengan cara itu di Ur / Web. 
+
+1084
+00:48:06,870 --> 00:48:09,642
+ Karena ini hanya sintaks untuk membangun pohon. 
+
+1085
+00:48:09,642 --> 00:48:12,580
+ Itu tidak berdiri untuk string. 
+
+1086
+00:48:12,580 --> 00:48:16,070
+ Jadi tidak mungkin ada hal aneh terjadi 
+
+1087
+00:48:16,070 --> 00:48:18,270
+ dengan parsing yang tidak Anda harapkan dari jalan 
+
+1088
+00:48:18,270 --> 00:48:21,100
+ bahwa sintaks ditulis. 
+
+1089
+00:48:21,100 --> 00:48:21,665
+ Ya. 
+
+1090
+00:48:21,665 --> 00:48:22,540
+ SISWA: [TIDAK JELAS]? 
+
+1091
+00:48:22,540 --> 00:48:29,740
+
+
+1092
+00:48:29,740 --> 00:48:34,660
+ ADAM CHLIPALA: Ya, jadi dari fakta bahwa ada satu widget, 
+
+1093
+00:48:34,660 --> 00:48:37,700
+ satu widget GUI dalam formulir ini, dan namanya adalah teks, 
+
+1094
+00:48:37,700 --> 00:48:40,101
+ dan yang satu itu adalah kotak teks, kompilator 
+
+1095
+00:48:40,101 --> 00:48:42,350
+ menyimpulkan bahwa catatan yang mewakili hasil formulir 
+
+1096
+00:48:42,350 --> 00:48:47,870
+ harus memiliki satu elemen yang disebut teks yang bertipe string. 
+
+1097
+00:48:47,870 --> 00:48:51,187
+ Dan ini mengkodekan formulir, aturan pengetikan untuk itu 
+
+1098
+00:48:51,187 --> 00:48:52,520
+ tidak dibangun ke dalam bahasa. 
+
+1099
+00:48:52,520 --> 00:48:55,130
+ Anda benar-benar dapat dengan sistem tipe di Ur 
+
+1100
+00:48:55,130 --> 00:48:58,690
+ mengekspresikan sebagai perpustakaan, apa operasi untuk membangun 
+
+1101
+00:48:58,690 --> 00:49:01,400
+ formulir, dan bagaimana Anda memeriksa bahwa mereka digunakan dengan benar, 
+
+1102
+00:49:01,400 --> 00:49:02,990
+ termasuk konsekuensi apa yang mereka miliki 
+
+1103
+00:49:02,990 --> 00:49:04,510
+ dari jenis-jenis fungsi itu 
+
+1104
+00:49:04,510 --> 00:49:05,974
+ sebenarnya menangani formulir itu? 
+
+1105
+00:49:05,974 --> 00:49:13,770
+
+
+1106
+00:49:13,770 --> 00:49:14,270
+ [TIDAK JELAS] 
+
+1107
+00:49:14,270 --> 00:49:19,660
+
+
+1108
+00:49:19,660 --> 00:49:21,330
+ Ada pertanyaan lain tentang kode ini 
+
+1109
+00:49:21,330 --> 00:49:25,755
+ sebelum saya beralih ke langkah berikutnya dari urutan 
+
+1110
+00:49:25,755 --> 00:49:28,129
+ dalam versi dari kertas, yang hanya merupakan perubahan kecil? 
+
+1111
+00:49:28,129 --> 00:49:33,552
+
+
+1112
+00:49:33,552 --> 00:49:36,510
+ Baiklah, inilah yang akan saya lakukan. 
+
+1113
+00:49:36,510 --> 00:49:40,860
+ Ini pada dasarnya memanfaatkan jalan 
+
+1114
+00:49:40,860 --> 00:49:44,156
+ untuk mendapatkan enkapsulasi yang diberlakukan dari berbagai bagian 
+
+1115
+00:49:44,156 --> 00:49:45,780
+ aplikasi yang didukung Ur / Web, 
+
+1116
+00:49:45,780 --> 00:49:49,590
+ yang setidaknya jarang didukung di tempat lain. 
+
+1117
+00:49:49,590 --> 00:49:51,640
+ Saya akan mengambil ruangan ini. 
+
+1118
+00:49:51,640 --> 00:49:53,560
+ Saya akan mengambil beberapa definisi ini 
+
+1119
+00:49:53,560 --> 00:49:55,760
+ di sini dan letakkan mereka di dalam modul yang merangkum 
+
+1120
+00:49:55,760 --> 00:49:56,760
+ beberapa di antaranya bersifat pribadi. 
+
+1121
+00:49:56,760 --> 00:50:01,080
+ Secara khusus, tabel database akan menjadi pribadi. 
+
+1122
+00:50:01,080 --> 00:50:02,917
+ Jadi tidak ada yang bisa mengaksesnya secara langsung. 
+
+1123
+00:50:02,917 --> 00:50:05,000
+ Mereka hanya dapat mengaksesnya melalui serangkaian metode 
+
+1124
+00:50:05,000 --> 00:50:05,800
+ yang kami berikan. 
+
+1125
+00:50:05,800 --> 00:50:08,388
+ Jadi satu metode berjalan di dalam transaksi. 
+
+1126
+00:50:08,388 --> 00:50:09,513
+ Itulah yang dikatakan oleh tipe ini. 
+
+1127
+00:50:09,513 --> 00:50:12,110
+ Dan itu menghasilkan daftar catatan dengan ID 
+
+1128
+00:50:12,110 --> 00:50:16,180
+ dan kolom judul yang berdiri untuk ruangan yang tersedia. 
+
+1129
+00:50:16,180 --> 00:50:19,870
+ Dan kami juga akan mengekspos operasi obrolan ini. 
+
+1130
+00:50:19,870 --> 00:50:21,370
+ Dan satu hal yang saya lakukan di sini adalah saya 
+
+1131
+00:50:21,370 --> 00:50:24,400
+ memperkenalkan nama untuk konsep ID. 
+
+1132
+00:50:24,400 --> 00:50:26,150
+ Saya tidak akan hanya mengatakan bahwa ID adalah bilangan bulat. 
+
+1133
+00:50:26,150 --> 00:50:28,140
+ Saya akan mengatakan itu tipe baru. 
+
+1134
+00:50:28,140 --> 00:50:30,930
+ Dan satu-satunya cara dunia luar akan mendapatkannya 
+
+1135
+00:50:30,930 --> 00:50:32,520
+ adalah daftar semua kamar. 
+
+1136
+00:50:32,520 --> 00:50:34,990
+ Dan satu-satunya cara dunia luar bisa menggunakannya 
+
+1137
+00:50:34,990 --> 00:50:37,130
+ adalah untuk memanggil fungsi obrolan di atasnya. 
+
+1138
+00:50:37,130 --> 00:50:39,010
+ Jadi seperti, katakanlah, tipe abstrak 
+
+1139
+00:50:39,010 --> 00:50:41,870
+ dari tabel hash di dalam kelas tabel hash di mana 
+
+1140
+00:50:41,870 --> 00:50:45,740
+ rincian tentang apa itu ID dan bagaimana mereka mendapatkannya 
+
+1141
+00:50:45,740 --> 00:50:48,750
+ diproduksi secara internal bersifat pribadi untuk modul ini. 
+
+1142
+00:50:48,750 --> 00:50:51,130
+ Dan kode klien yang memanggil modul ini 
+
+1143
+00:50:51,130 --> 00:50:52,700
+ tidak perlu menggunakannya. 
+
+1144
+00:50:52,700 --> 00:50:56,640
+ Jadi saya akan menggunakan sintaks ini untuk meletakkan segalanya 
+
+1145
+00:50:56,640 --> 00:50:58,920
+ di sini di dalam modul jadi tidak 
+
+1146
+00:50:58,920 --> 00:51:04,199
+ terkena sisa kode secara default. 
+
+1147
+00:51:04,199 --> 00:51:08,360
+ Dan kami juga akan ingin menerapkan metode kamar ini. 
+
+1148
+00:51:08,360 --> 00:51:10,180
+ Kami sudah kebetulan mengobrol di sekitar. 
+
+1149
+00:51:10,180 --> 00:51:13,105
+ Tapi kita bisa mengimplementasikan kamar dengan cara sederhana 
+
+1150
+00:51:13,105 --> 00:51:15,480
+ menggunakan pustaka standar lainnya 
+
+1151
+00:51:15,480 --> 00:51:17,800
+ berfungsi untuk menginterpretasikan sebuah query dengan cara yang bermanfaat. 
+
+1152
+00:51:17,800 --> 00:51:19,800
+ Mari kita pilih semuanya dari meja kamar 
+
+1153
+00:51:19,800 --> 00:51:21,120
+ memesan berdasarkan judul. 
+
+1154
+00:51:21,120 --> 00:51:23,280
+ Dan seperti biasa, kueri ini dicentang untuk kami. 
+
+1155
+00:51:23,280 --> 00:51:25,204
+ Dan sistem menentukan, oke, ungkapan ini 
+
+1156
+00:51:25,204 --> 00:51:26,787
+ akan menghasilkan daftar catatan 
+
+1157
+00:51:26,787 --> 00:51:28,920
+ yang terjadi untuk mencocokkan jenis yang kami nyatakan 
+
+1158
+00:51:28,920 --> 00:51:30,870
+ dalam tanda tangan dari modul ini. 
+
+1159
+00:51:30,870 --> 00:51:33,320
+ Jadi sekarang di luar modul ini, tidak ada kode lain 
+
+1160
+00:51:33,320 --> 00:51:36,242
+ diperbolehkan menyebutkan tabel ruang atau tabel pesan. 
+
+1161
+00:51:36,242 --> 00:51:38,126
+ Jadi kita bisa, paling tidak dari perspektif 
+
+1162
+00:51:38,126 --> 00:51:40,010
+ aplikasi ini, terapkan kapan saja 
+
+1163
+00:51:40,010 --> 00:51:41,500
+ invarian yang kita inginkan pada mereka. 
+
+1164
+00:51:41,500 --> 00:51:43,685
+ Kita bahkan bisa menyembunyikan rahasia di dalamnya 
+
+1165
+00:51:43,685 --> 00:51:47,120
+ itu akan menjadi masalah keamanan jika bagian lain dari kode 
+
+1166
+00:51:47,120 --> 00:51:48,918
+ bisa mendapatkan mereka. 
+
+1167
+00:51:48,918 --> 00:51:49,856
+ Ya. 
+
+1168
+00:51:49,856 --> 00:51:51,897
+ SISWA: Tetapi tidak bisa beberapa bagian lain dari kode 
+
+1169
+00:51:51,897 --> 00:51:53,322
+ hanya menyatakan ruang meja juga? 
+
+1170
+00:51:53,322 --> 00:51:55,280
+ ADAM CHLIPALA: Itu akan menjadi meja yang berbeda. 
+
+1171
+00:51:55,280 --> 00:51:57,782
+ Kami bisa melakukan itu, sebenarnya. 
+
+1172
+00:51:57,782 --> 00:51:59,620
+ Pasti ada di sini. 
+
+1173
+00:51:59,620 --> 00:52:04,442
+ Saya pikir ini seharusnya tidak berpengaruh pada perilaku. 
+
+1174
+00:52:04,442 --> 00:52:06,434
+ Saya pikir dalam hal ini kita akan dapatkan 
+
+1175
+00:52:06,434 --> 00:52:07,928
+ sesuatu yang lucu terjadi. 
+
+1176
+00:52:07,928 --> 00:52:10,674
+ Mari letakkan ini di modul yang berbeda 
+
+1177
+00:52:10,674 --> 00:52:15,950
+ hanya untuk menghindari sesuatu yang konyol. 
+
+1178
+00:52:15,950 --> 00:52:17,170
+ Hebat, jadi kita bisa melakukan itu. 
+
+1179
+00:52:17,170 --> 00:52:19,252
+ Dan kita dapat melakukan apapun yang kita inginkan dengan tabel ini. 
+
+1180
+00:52:19,252 --> 00:52:22,355
+ Dan saya akan mengkompilasi ini mungkin sekitar 30 detik 
+
+1181
+00:52:22,355 --> 00:52:23,670
+ dan kita akan lihat apa yang terjadi. 
+
+1182
+00:52:23,670 --> 00:52:25,400
+ Tapi sebenarnya itu meja yang berbeda, 
+
+1183
+00:52:25,400 --> 00:52:27,610
+ sama seperti jika Anda memiliki bidang pribadi yang sama 
+
+1184
+00:52:27,610 --> 00:52:31,282
+ nama di dua kelas di Jawa mereka nama bidang yang berbeda. 
+
+1185
+00:52:31,282 --> 00:52:31,895
+ Ya. 
+
+1186
+00:52:31,895 --> 00:52:32,770
+ SISWA: [TIDAK JELAS]? 
+
+1187
+00:52:32,770 --> 00:52:42,690
+
+
+1188
+00:52:42,690 --> 00:52:47,570
+ ADAM CHLIPALA: Jadi Anda menyarankan kami, 
+
+1189
+00:52:47,570 --> 00:52:49,070
+ di dalam modul ini, tipe abstrak 
+
+1190
+00:52:49,070 --> 00:52:52,604
+ disebut ruangan, yang berisi ID dan judul. 
+
+1191
+00:52:52,604 --> 00:52:54,693
+ Apakah itu benar? 
+
+1192
+00:52:54,693 --> 00:52:55,568
+ SISWA: [TIDAK JELAS]? 
+
+1193
+00:52:55,568 --> 00:53:05,460
+
+
+1194
+00:53:05,460 --> 00:53:07,920
+ Jadi saya pikir apa yang akan bekerja sebagai gantinya 
+
+1195
+00:53:07,920 --> 00:53:10,790
+ bukan tipe ID memiliki tipe kamar, 
+
+1196
+00:53:10,790 --> 00:53:12,290
+ memiliki kamar menentukan daftar kamar, 
+
+1197
+00:53:12,290 --> 00:53:13,665
+ dan obrolan mengambil ruang sebagai masukan. 
+
+1198
+00:53:13,665 --> 00:53:15,010
+ Apakah itu yang ada dalam pikiran Anda? 
+
+1199
+00:53:15,010 --> 00:53:17,970
+ Jadi apa yang akan terjadi kemudian adalah ketika kita memanggil fungsi obrolan, 
+
+1200
+00:53:17,970 --> 00:53:20,429
+ itu sebenarnya akan dipanggil melalui URL yang diberikan 
+
+1201
+00:53:20,429 --> 00:53:21,720
+ cara kami menggunakan ini akhirnya. 
+
+1202
+00:53:21,720 --> 00:53:25,040
+ Itu akan melewati ID dan judul 
+
+1203
+00:53:25,040 --> 00:53:28,925
+ dalam URL di representasi URL untuk suatu fungsi 
+
+1204
+00:53:28,925 --> 00:53:30,700
+ panggilan. 
+
+1205
+00:53:30,700 --> 00:53:33,042
+ Dan kita hanya butuh ID untuk mengimplementasikan fungsi itu. 
+
+1206
+00:53:33,042 --> 00:53:34,750
+ Jadi itu akan menjadi sedikit pemborosan ruang 
+
+1207
+00:53:34,750 --> 00:53:36,526
+ dan mungkin terlihat menjijikkan bagi pengguna 
+
+1208
+00:53:36,526 --> 00:53:40,170
+ untuk memiliki judul disahkan sebagai argumen tambahan 
+
+1209
+00:53:40,170 --> 00:53:43,136
+ dalam doa obrolan melalui URL. 
+
+1210
+00:53:43,136 --> 00:53:46,690
+ Apakah itu masuk akal? 
+
+1211
+00:53:46,690 --> 00:53:48,336
+ Atau mungkin cara lain untuk mengatakannya, 
+
+1212
+00:53:48,336 --> 00:53:54,410
+ jika saya punya yang ini [TIDAK JELAS], lihatlah di bilah URL. 
+
+1213
+00:53:54,410 --> 00:53:57,850
+ ID saluran yang kita masuki 
+
+1214
+00:53:57,850 --> 00:54:00,985
+ diserialkan secara otomatis di URL di bagian akhir di sini. 
+
+1215
+00:54:00,985 --> 00:54:02,513
+ Dan jika kami melewati rekor itu 
+
+1216
+00:54:02,513 --> 00:54:04,560
+ berisi ID dan judul, judul 
+
+1217
+00:54:04,560 --> 00:54:07,312
+ akan serial, juga, yang setidaknya sedikit 
+
+1218
+00:54:07,312 --> 00:54:08,020
+ kontraintuatif. 
+
+1219
+00:54:08,020 --> 00:54:13,300
+
+
+1220
+00:54:13,300 --> 00:54:17,210
+ OK, hal terakhir yang perlu kita lakukan-- sebenarnya, 
+
+1221
+00:54:17,210 --> 00:54:21,340
+ mungkin instruktif untuk membuat perubahan yang dangkal saja 
+
+1222
+00:54:21,340 --> 00:54:25,840
+ ke kode ini, referensi modul ruangan di sana, lalu coba 
+
+1223
+00:54:25,840 --> 00:54:28,177
+ untuk mengakses meja kamar seperti sebelumnya. 
+
+1224
+00:54:28,177 --> 00:54:29,260
+ Ini seharusnya tidak diizinkan. 
+
+1225
+00:54:29,260 --> 00:54:31,430
+ Ini seperti bisa membaca dan menulis 
+
+1226
+00:54:31,430 --> 00:54:34,300
+ bidang pribadi kelas di Jawa. 
+
+1227
+00:54:34,300 --> 00:54:37,230
+ Dan memang, kami mendapat pesan yang cukup lugas 
+
+1228
+00:54:37,230 --> 00:54:42,130
+ pada dasarnya mengatakan, ini di sini adalah variabel yang tidak terikat. 
+
+1229
+00:54:42,130 --> 00:54:44,280
+ Tidak ada meja yang disebut ruang dalam ruang lingkup. 
+
+1230
+00:54:44,280 --> 00:54:46,060
+ Dan kita bisa menyebutkan yang ekstra ini 
+
+1231
+00:54:46,060 --> 00:54:47,700
+ yang kami buat hanya untuk bersenang-senang. 
+
+1232
+00:54:47,700 --> 00:54:50,120
+ Tapi itu akan menjadi meja yang berbeda. 
+
+1233
+00:54:50,120 --> 00:54:53,050
+ Itu tidak akan menjadi masalah bahwa kita dapat mengaksesnya. 
+
+1234
+00:54:53,050 --> 00:54:56,780
+ Jadi sebagai gantinya, apa yang harus kita lakukan adalah aku akan memecahnya menjadi dua bagian. 
+
+1235
+00:54:56,780 --> 00:54:59,330
+
+
+1236
+00:54:59,330 --> 00:55:02,240
+ Kami akan mulai dengan hanya memanggil metode kamar, 
+
+1237
+00:55:02,240 --> 00:55:06,930
+ dan kemudian melakukan hal yang sedikit berbeda untuk membaca elemennya, 
+
+1238
+00:55:06,930 --> 00:55:12,884
+ petakan daftar hasil yang memberi - apa yang saya panggil 
+
+1239
+00:55:12,884 --> 00:55:13,384
+ [TIDAK JELAS]? 
+
+1240
+00:55:13,384 --> 00:55:21,112
+
+
+1241
+00:55:21,112 --> 00:55:24,766
+ Petakan semua daftar hasil alih-alih dengan cara lain 
+
+1242
+00:55:24,766 --> 00:55:27,465
+ sedang bekerja, yang kira-kira setara kecuali untuk menggunakan 
+
+1243
+00:55:27,465 --> 00:55:28,431
+ tipe data yang berbeda. 
+
+1244
+00:55:28,431 --> 00:55:30,846
+ Mari kita lihat bagaimana ini berjalan. 
+
+1245
+00:55:30,846 --> 00:55:36,740
+ Baiklah, jadi saya akan kembali ke sini. 
+
+1246
+00:55:36,740 --> 00:55:40,660
+ Dan kita dapat melakukan semua hal yang sangat menyenangkan 
+
+1247
+00:55:40,660 --> 00:55:43,109
+ kita bisa lakukan sebelumnya. 
+
+1248
+00:55:43,109 --> 00:55:44,400
+ Tetapi kita memiliki enkapsulasi ini. 
+
+1249
+00:55:44,400 --> 00:55:46,530
+ Dan Anda bisa memikirkan struktur ruangan ini 
+
+1250
+00:55:46,530 --> 00:55:49,264
+ seperti sekarang ini adalah perpustakaan, dan Anda dapat menyebutnya 
+
+1251
+00:55:49,264 --> 00:55:50,680
+ dari segala macam tempat yang berbeda 
+
+1252
+00:55:50,680 --> 00:55:52,050
+ yang ingin memiliki fungsi ini. 
+
+1253
+00:55:52,050 --> 00:55:52,790
+ Anda tidak perlu khawatir. 
+
+1254
+00:55:52,790 --> 00:55:54,165
+ Ada tempat berbeda 
+
+1255
+00:55:54,165 --> 00:55:56,540
+ akan mematahkan invariance internal sistem. 
+
+1256
+00:55:56,540 --> 00:55:59,350
+ Mungkin Anda ingin tahu bahwa setelah pesan ditambahkan, 
+
+1257
+00:55:59,350 --> 00:56:00,440
+ itu tidak akan pernah dihapus. 
+
+1258
+00:56:00,440 --> 00:56:02,160
+ Itu selalu ada di log. 
+
+1259
+00:56:02,160 --> 00:56:04,060
+ Struktur ini memberlakukannya secara mandiri 
+
+1260
+00:56:04,060 --> 00:56:07,034
+ yang kode lain modul kamar mungkin terdiri dengan, 
+
+1261
+00:56:07,034 --> 00:56:07,575
+ contohnya. 
+
+1262
+00:56:07,575 --> 00:56:10,341
+
+
+1263
+00:56:10,341 --> 00:56:11,245
+ Ya. 
+
+1264
+00:56:11,245 --> 00:56:13,589
+ SISWA: Katakanlah Anda mengubah definisi ruangan, 
+
+1265
+00:56:13,589 --> 00:56:15,038
+ [TIDAK JELAS]. 
+
+1266
+00:56:15,038 --> 00:56:17,679
+ Apa yang akan terjadi pada tabel database? 
+
+1267
+00:56:17,679 --> 00:56:19,220
+ ADAM CHLIPALA: Ini akan sedikit menyedihkan. 
+
+1268
+00:56:19,220 --> 00:56:23,345
+ Kita harus menjalankan perintah alter table secara manual jika Anda 
+
+1269
+00:56:23,345 --> 00:56:26,680
+ ingin menyimpan data lama. 
+
+1270
+00:56:26,680 --> 00:56:28,890
+ Tetapi ketika aplikasi dijalankan, 
+
+1271
+00:56:28,890 --> 00:56:31,770
+ ia menanyakan katalog database sistem dan pemeriksaan 
+
+1272
+00:56:31,770 --> 00:56:33,840
+ bahwa skema itu masih sesuai dengan apa yang diharapkannya. 
+
+1273
+00:56:33,840 --> 00:56:35,350
+ Jadi Anda akan mendapatkan kesalahan statis saat itu. 
+
+1274
+00:56:35,350 --> 00:56:37,940
+ Dan semoga itu memberi Anda petunjuk tentang apa yang Anda miliki 
+
+1275
+00:56:37,940 --> 00:56:39,265
+ harus berubah dalam database. 
+
+1276
+00:56:39,265 --> 00:56:40,660
+ SISWA: Tapi itu tidak akan secara otomatis 
+
+1277
+00:56:40,660 --> 00:56:42,055
+ jatuhkan database Anda atau sesuatu? 
+
+1278
+00:56:42,055 --> 00:56:43,138
+ ADAM CHLIPALA: Saya harap tidak. 
+
+1279
+00:56:43,138 --> 00:56:44,810
+ Saya tidak berpikir itu harus melakukan itu. 
+
+1280
+00:56:44,810 --> 00:56:46,850
+ Dan Anda bisa membayangkan tweaker compiler 
+
+1281
+00:56:46,850 --> 00:56:48,830
+ untuk memahami evolusi basis data. 
+
+1282
+00:56:48,830 --> 00:56:52,002
+ Saya pikir Anda harus menulis perintah untuk menjalankan tabel alter. 
+
+1283
+00:56:52,002 --> 00:56:53,486
+ Itu tidak melakukannya sekarang. 
+
+1284
+00:56:53,486 --> 00:56:57,190
+
+
+1285
+00:56:57,190 --> 00:57:02,800
+ OK, jadi sekarang mari kita bicara tentang pemalsuan permintaan lintas situs 
+
+1286
+00:57:02,800 --> 00:57:03,874
+ dan mencegahnya. 
+
+1287
+00:57:03,874 --> 00:57:06,220
+ Sebenarnya, sebelum kita melakukan itu, mari 
+
+1288
+00:57:06,220 --> 00:57:09,750
+ lihat kode di halaman ini. 
+
+1289
+00:57:09,750 --> 00:57:11,665
+ Kami memiliki bentuk HTML yang tampak tradisional 
+
+1290
+00:57:11,665 --> 00:57:13,780
+ yang dihasilkan di sini. 
+
+1291
+00:57:13,780 --> 00:57:17,150
+ Dan tentu saja tidak ada permintaan pemalsuan lintas situs 
+
+1292
+00:57:17,150 --> 00:57:19,930
+ di sini, yang menurut saya bagus. 
+
+1293
+00:57:19,930 --> 00:57:22,660
+ Karena seperti yang saya mengerti pemalsuan lintas situs permintaan, 
+
+1294
+00:57:22,660 --> 00:57:24,580
+ masalahnya adalah ada beberapa konteks implisit 
+
+1295
+00:57:24,580 --> 00:57:26,954
+ yang dikirimkan aplikasi Anda pada setiap permintaan. 
+
+1296
+00:57:26,954 --> 00:57:28,370
+ Jadi ada beberapa penyerang di luar sana 
+
+1297
+00:57:28,370 --> 00:57:30,280
+ siapa yang tidak tahu konteks implisit Anda. 
+
+1298
+00:57:30,280 --> 00:57:32,250
+ Katakanlah kata sandi Anda disimpan dalam cookie, 
+
+1299
+00:57:32,250 --> 00:57:34,020
+ untuk contoh yang sangat sederhana. 
+
+1300
+00:57:34,020 --> 00:57:36,330
+ Dan ketika penyerang menipu Anda untuk mengikuti tautan 
+
+1301
+00:57:36,330 --> 00:57:39,240
+ ke aplikasi, browser Anda mengirim konteks implisit 
+
+1302
+00:57:39,240 --> 00:57:41,320
+ secara otomatis dan menyebabkan aplikasi 
+
+1303
+00:57:41,320 --> 00:57:44,580
+ untuk melakukan sesuatu yang penyerang tidak bisa lakukan secara langsung. 
+
+1304
+00:57:44,580 --> 00:57:46,890
+ Dalam hal ini, tidak ada konteks implisit. 
+
+1305
+00:57:46,890 --> 00:57:49,899
+ Jadi tidak ada risiko pemalsuan permintaan lintas situs. 
+
+1306
+00:57:49,899 --> 00:57:51,940
+ Apakah ada yang ingin membantah karakterisasi itu 
+
+1307
+00:57:51,940 --> 00:57:53,425
+ sebelum saya melanjutkan? 
+
+1308
+00:57:53,425 --> 00:57:54,910
+ Itu bisa mendidik saya. 
+
+1309
+00:57:54,910 --> 00:57:58,307
+
+
+1310
+00:57:58,307 --> 00:58:00,390
+ Baiklah, sekarang mari tambahkan beberapa konteks implisit. 
+
+1311
+00:58:00,390 --> 00:58:01,730
+ Dan sistem itu otomatis berjalan 
+
+1312
+00:58:01,730 --> 00:58:03,438
+ untuk menerapkan tindakan penanggulangan yang tepat 
+
+1313
+00:58:03,438 --> 00:58:05,140
+ pada analisis program yang disadari 
+
+1314
+00:58:05,140 --> 00:58:08,660
+ sekarang ada konteks implisit. 
+
+1315
+00:58:08,660 --> 00:58:14,222
+ Secara khusus, kami hanya memasukkan cookie di sini. 
+
+1316
+00:58:14,222 --> 00:58:20,174
+
+
+1317
+00:58:20,174 --> 00:58:22,890
+ Sebagai contoh lain dari kapitalisasi modul, 
+
+1318
+00:58:22,890 --> 00:58:25,723
+ sebenarnya, saya akan memasukkan seluruh jenis otentikasi pengguna 
+
+1319
+00:58:25,723 --> 00:58:31,830
+ sistem di mana kami memiliki akun pengguna dan jenis abstrak 
+
+1320
+00:58:31,830 --> 00:58:32,705
+ ID dan kata sandi. 
+
+1321
+00:58:32,705 --> 00:58:36,795
+ Jadi Anda tidak bisa hanya membangun nilai dari kedua jenis ini 
+
+1322
+00:58:36,795 --> 00:58:37,295
+ langsung. 
+
+1323
+00:58:37,295 --> 00:58:39,388
+ Anda harus melalui beberapa jenis 
+
+1324
+00:58:39,388 --> 00:58:45,400
+ metode yang disetujui untuk membangun nilai-nilai dari jenis-jenis ini. 
+
+1325
+00:58:45,400 --> 00:58:50,040
+ Dan saya benar-benar akan mengekspos meja secara langsung 
+
+1326
+00:58:50,040 --> 00:58:51,340
+ di tanda tangan. 
+
+1327
+00:58:51,340 --> 00:58:53,040
+ Dan saya akan meletakkan kendala pada itu juga, 
+
+1328
+00:58:53,040 --> 00:58:55,002
+ mengatakan bahwa formulir ID adalah kunci untuk itu. 
+
+1329
+00:58:55,002 --> 00:58:55,502
+ [TIDAK JELAS] 
+
+1330
+00:58:55,502 --> 00:58:58,160
+
+
+1331
+00:58:58,160 --> 00:59:00,390
+ Tapi masalahnya, di tabel pengguna ini, 
+
+1332
+00:59:00,390 --> 00:59:02,680
+ ID dan kata sandi adalah tipe abstrak. 
+
+1333
+00:59:02,680 --> 00:59:06,580
+ Jadi kode tidak bisa benar-benar melihat kata sandi. 
+
+1334
+00:59:06,580 --> 00:59:11,080
+ Dan itu tidak dapat menghasilkan semua ID secara berurutan 
+
+1335
+00:59:11,080 --> 00:59:12,470
+ dan coba mereka melawan meja ini. 
+
+1336
+00:59:12,470 --> 00:59:13,678
+ Karena tipenya abstrak. 
+
+1337
+00:59:13,678 --> 00:59:14,970
+ Tidak ada cara untuk membuat ID. 
+
+1338
+00:59:14,970 --> 00:59:16,180
+ Tidak ada cara untuk membuat kata sandi. 
+
+1339
+00:59:16,180 --> 00:59:17,310
+ Mereka baru saja keluar dari meja ini, 
+
+1340
+00:59:17,310 --> 00:59:18,393
+ dan mereka token buram. 
+
+1341
+00:59:18,393 --> 00:59:22,880
+
+
+1342
+00:59:22,880 --> 00:59:27,640
+ Tetapi kita mungkin ingin membiarkan mereka menjadi masukan dari string. 
+
+1343
+00:59:27,640 --> 00:59:29,900
+ Anda mungkin ingin mengizinkan satu arah konversi 
+
+1344
+00:59:29,900 --> 00:59:31,370
+ antara string dan tipe ini. 
+
+1345
+00:59:31,370 --> 00:59:33,495
+ Jadi itulah yang akan saya lakukan di sini. 
+
+1346
+00:59:33,495 --> 00:59:35,745
+ Pada dasarnya, detail yang tidak ingin saya jelaskan. 
+
+1347
+00:59:35,745 --> 00:59:38,910
+ Tapi ini seperti deklarasi, oke, 
+
+1348
+00:59:38,910 --> 00:59:41,275
+ Anda diizinkan mengonversi string menjadi ID. 
+
+1349
+00:59:41,275 --> 00:59:44,130
+ Bagi mereka yang berbicara Haskell, ini adalah jenis kelas instan. 
+
+1350
+00:59:44,130 --> 00:59:46,530
+ Bagi mereka yang tidak, itu izin 
+
+1351
+00:59:46,530 --> 00:59:49,124
+ untuk mengubah string menjadi ID. 
+
+1352
+00:59:49,124 --> 00:59:51,040
+ Kami akan meninggalkan izin lainnya. 
+
+1353
+00:59:51,040 --> 00:59:55,980
+ Kami tidak ingin dapat mengubah ID menjadi apa pun. 
+
+1354
+00:59:55,980 --> 00:59:58,635
+ Dan kata sandinya-- mari lakukan hal yang sama. 
+
+1355
+00:59:58,635 --> 01:00:00,760
+ Kami ingin dapat membaca kata sandi dari pengguna 
+
+1356
+01:00:00,760 --> 01:00:04,709
+ tetapi tidak mengambil kata sandi dan mengubahnya menjadi string 
+
+1357
+01:00:04,709 --> 01:00:06,750
+ di mana kita benar-benar dapat mengetahui apa yang dimasukkan pengguna. 
+
+1358
+01:00:06,750 --> 01:00:08,166
+ Jadi bagian lain dari kode itu akan 
+
+1359
+01:00:08,166 --> 01:00:10,880
+ dapat menerima input kata sandi dari pengguna, 
+
+1360
+01:00:10,880 --> 01:00:15,110
+ mengubahnya menjadi jenis ini, dan kirimkan ke modul pengguna 
+
+1361
+01:00:15,110 --> 01:00:16,820
+ dan sudah diperiksa. 
+
+1362
+01:00:16,820 --> 01:00:19,170
+ Tetapi apa yang tidak bisa mereka lakukan adalah query tabel pengguna 
+
+1363
+01:00:19,170 --> 01:00:22,310
+ dan dapatkan semua kata sandi dalam bentuk di mana mereka bisa benar-benar 
+
+1364
+01:00:22,310 --> 01:00:25,500
+ ekstrak teks dari mereka. 
+
+1365
+01:00:25,500 --> 01:00:32,438
+ Kemudian kita dapat memiliki metode login yang mengambil dua komponen ini 
+
+1366
+01:00:32,438 --> 01:00:36,406
+ dan hanya berjalan untuk efek sampingnya, yang efektif 
+
+1367
+01:00:36,406 --> 01:00:37,398
+ apa kata kode itu. 
+
+1368
+01:00:37,398 --> 01:00:40,814
+ Kami juga membutuhkan cara untuk memberi tahu pengguna mana yang masuk. 
+
+1369
+01:00:40,814 --> 01:00:43,520
+ Itu adalah kode yang menjalankan transaksi itu 
+
+1370
+01:00:43,520 --> 01:00:46,730
+ menghasilkan ID. 
+
+1371
+01:00:46,730 --> 01:00:49,264
+ Baiklah, jadi langkah pertama, kita bisa menyalin definisi ini. 
+
+1372
+01:00:49,264 --> 01:00:54,566
+
+
+1373
+01:00:54,566 --> 01:00:56,650
+ Dan saya akan mengisi apa ini sebenarnya. 
+
+1374
+01:00:56,650 --> 01:00:58,590
+ Ternyata-- kejutan, kejutan-- ID pengguna 
+
+1375
+01:00:58,590 --> 01:00:59,910
+ dan kata sandi keduanya string. 
+
+1376
+01:00:59,910 --> 01:01:03,706
+ Tetapi di luar modul, itu tidak akan diekspos. 
+
+1377
+01:01:03,706 --> 01:01:05,330
+ Dan sekarang kita akan membuat cookie. 
+
+1378
+01:01:05,330 --> 01:01:09,410
+ Jadi cookie adalah hal lain yang dibangun ke dalam bahasa. 
+
+1379
+01:01:09,410 --> 01:01:12,220
+ Secara efektif, mereka bertindak seperti variabel global yang bisa berubah 
+
+1380
+01:01:12,220 --> 01:01:16,400
+ yang memiliki satu salinan per klien yang menggunakan aplikasi Anda. 
+
+1381
+01:01:16,400 --> 01:01:18,940
+ Jadi kita akan membuat cookie yang ada di setiap klien 
+
+1382
+01:01:18,940 --> 01:01:24,102
+ akan menyimpan pada dasarnya hanya salinan dari dua bidang yang sama 
+
+1383
+01:01:24,102 --> 01:01:25,453
+ yang kita miliki di sini. 
+
+1384
+01:01:25,453 --> 01:01:27,715
+ Jadi cookie ini bersifat pribadi untuk modul ini. 
+
+1385
+01:01:27,715 --> 01:01:30,470
+ Bagian lain dari kode tidak akan bisa membaca cookie, 
+
+1386
+01:01:30,470 --> 01:01:33,270
+ karena mereka tidak memiliki bidang dan cakupan pribadi ini. 
+
+1387
+01:01:33,270 --> 01:01:35,170
+ Jadi tidak ada orang lain yang bisa melihat langsung 
+
+1388
+01:01:35,170 --> 01:01:38,090
+ ID dan kata sandi yang disimpan untuk pengguna ini. 
+
+1389
+01:01:38,090 --> 01:01:40,870
+ Tetapi mereka akan bertahan di berbagai tampilan halaman, 
+
+1390
+01:01:40,870 --> 01:01:45,594
+ sama seperti yang Anda harapkan untuk cookie biasanya. 
+
+1391
+01:01:45,594 --> 01:01:48,170
+ Saya akan memberikannya fungsi login itu 
+
+1392
+01:01:48,170 --> 01:01:53,460
+ akan menjalankan beberapa mantera untuk memeriksa database 
+
+1393
+01:01:53,460 --> 01:01:58,328
+ apakah ini benar-benar sepasang nama pengguna dan kata sandi yang benar. 
+
+1394
+01:01:58,328 --> 01:02:00,302
+ Itu hanya akan diperiksa, bisakah kita menemukan baris 
+
+1395
+01:02:00,302 --> 01:02:05,945
+ dalam database yang memiliki ID pengguna ini dan memiliki kata sandi ini? 
+
+1396
+01:02:05,945 --> 01:02:10,350
+
+
+1397
+01:02:10,350 --> 01:02:13,450
+ Jika kita menemukan satu, maka ya, bagus, itu nilai yang benar. 
+
+1398
+01:02:13,450 --> 01:02:15,580
+ Mari kita simpan saja ke dalam cookie. 
+
+1399
+01:02:15,580 --> 01:02:18,390
+ Kami menggunakan metode yang mengubah nilai cookie. 
+
+1400
+01:02:18,390 --> 01:02:20,180
+ Dan kita harus meletakkan beberapa hal di sini, 
+
+1401
+01:02:20,180 --> 01:02:23,960
+ seperti hanya untuk kesederhanaan, saya akan mengatakan cookie ini tidak pernah kedaluwarsa. 
+
+1402
+01:02:23,960 --> 01:02:26,660
+ Dan saya tidak ingin menjalankan SSL di sini, 
+
+1403
+01:02:26,660 --> 01:02:29,180
+ jadi saya akan mengatakan itu tidak perlu aman. 
+
+1404
+01:02:29,180 --> 01:02:32,220
+ Tetapi jika Anda benar-benar peduli dengan keamanan, 
+
+1405
+01:02:32,220 --> 01:02:35,840
+ jelas Anda akan menulis kata aman sama benar. 
+
+1406
+01:02:35,840 --> 01:02:38,300
+ Dan jika pemeriksaan gagal, maka kita bisa-- saya tidak tahu. 
+
+1407
+01:02:38,300 --> 01:02:39,050
+ Tidak masalah. 
+
+1408
+01:02:39,050 --> 01:02:41,150
+ Jika itu menandakan kesalahan, eksekusi 
+
+1409
+01:02:41,150 --> 01:02:44,720
+ berhenti dengan deskripsi kesalahan ini. 
+
+1410
+01:02:44,720 --> 01:02:47,520
+ Akhirnya, kita dapat membuat fungsi ini 
+
+1411
+01:02:47,520 --> 01:02:50,230
+ yang memberi tahu siapa pengguna yang masuk sebagai dengan mendapatkan 
+
+1412
+01:02:50,230 --> 01:02:51,620
+ nilai cookie saat ini. 
+
+1413
+01:02:51,620 --> 01:02:57,320
+ Dan itu mungkin tidak ada jika pengguna belum 
+
+1414
+01:02:57,320 --> 01:03:00,150
+ belum login, dalam hal ini, kita dapat memiliki kesalahan yang berbeda 
+
+1415
+01:03:00,150 --> 01:03:01,870
+ pesan. 
+
+1416
+01:03:01,870 --> 01:03:05,070
+ Atau mungkin ada beberapa catatan tentang tipe persisnya 
+
+1417
+01:03:05,070 --> 01:03:06,486
+ kami menggunakan di sana. 
+
+1418
+01:03:06,486 --> 01:03:07,986
+ Jadi saya akan menyalin beberapa di sini. 
+
+1419
+01:03:07,986 --> 01:03:14,762
+
+
+1420
+01:03:14,762 --> 01:03:17,110
+ Mari kita jalankan cek yang sama di sana. 
+
+1421
+01:03:17,110 --> 01:03:19,730
+ Jika berhasil, maka kami akan kembali 
+
+1422
+01:03:19,730 --> 01:03:21,480
+ ID bagian dari catatan itu kami saja 
+
+1423
+01:03:21,480 --> 01:03:22,735
+ diverifikasi terhadap database. 
+
+1424
+01:03:22,735 --> 01:03:25,350
+
+
+1425
+01:03:25,350 --> 01:03:26,940
+ Jika tidak, [TIDAK JELAS]. 
+
+1426
+01:03:26,940 --> 01:03:34,062
+
+
+1427
+01:03:34,062 --> 01:03:39,496
+ Jadi biarkan aku mengetikkan ini untuk melihat apakah ini di jalur, 
+
+1428
+01:03:39,496 --> 01:03:44,930
+ bagian itu-- Ups, Id kapital. 
+
+1429
+01:03:44,930 --> 01:03:53,370
+
+
+1430
+01:03:53,370 --> 01:03:55,950
+ Baiklah, jadi yang penting adalah semua 
+
+1431
+01:03:55,950 --> 01:03:57,250
+ rincian implementasi tersebut. 
+
+1432
+01:03:57,250 --> 01:03:59,083
+ Tetapi dari luar modul ini, kami memikirkannya 
+
+1433
+01:03:59,083 --> 01:04:00,990
+ dalam hal antarmuka di sana. 
+
+1434
+01:04:00,990 --> 01:04:03,660
+ Ada beberapa jenis ID dan kata sandi yang tidak dikenal. 
+
+1435
+01:04:03,660 --> 01:04:06,780
+ Tabel pengguna ini diekspresikan menurut mereka 
+
+1436
+01:04:06,780 --> 01:04:09,532
+ diizinkan mengubah string menjadi ID dan kata sandi, tetapi tidak 
+
+1437
+01:04:09,532 --> 01:04:11,280
+ sebaliknya. 
+
+1438
+01:04:11,280 --> 01:04:13,795
+ Dan kami memiliki dua metode ini untuk masuk di tempat pertama 
+
+1439
+01:04:13,795 --> 01:04:18,830
+ dan untuk memeriksa pengguna mana yang masuk pada titik ini. 
+
+1440
+01:04:18,830 --> 01:04:19,830
+ Ada pertanyaan tentang ini? 
+
+1441
+01:04:19,830 --> 01:04:20,330
+ Ya. 
+
+1442
+01:04:20,330 --> 01:04:22,602
+ SISWA: Apakah Anda perlu mengekspos tabel pengguna? 
+
+1443
+01:04:22,602 --> 01:04:24,510
+
+
+1444
+01:04:24,510 --> 01:04:27,135
+ ADAM CHLIPALA: Karena saya ingin menggunakannya sebagai kunci asing nantinya. 
+
+1445
+01:04:27,135 --> 01:04:28,504
+ Itulah alasan saya melakukannya. 
+
+1446
+01:04:28,504 --> 01:04:30,472
+ Itu bukan alasan yang bagus. 
+
+1447
+01:04:30,472 --> 01:04:34,408
+
+
+1448
+01:04:34,408 --> 01:04:36,290
+ Baiklah, kita hampir sampai pada intinya 
+
+1449
+01:04:36,290 --> 01:04:38,510
+ di mana saya bisa menunjukkan perlindungan CSRF dalam tindakan. 
+
+1450
+01:04:38,510 --> 01:04:41,090
+ Kami harus mulai masuk. 
+
+1451
+01:04:41,090 --> 01:04:44,030
+ Jadi itu cukup mudah dilakukan. 
+
+1452
+01:04:44,030 --> 01:04:50,400
+
+
+1453
+01:04:50,400 --> 01:04:52,720
+ Oke, jadi apa yang bisa kita lakukan di sini? 
+
+1454
+01:04:52,720 --> 01:04:56,696
+ Mari kita tambahkan bagian lain dari halaman ini yang mengatakan, 
+
+1455
+01:04:56,696 --> 01:04:58,684
+ di sinilah Anda masuk. 
+
+1456
+01:04:58,684 --> 01:05:02,660
+
+
+1457
+01:05:02,660 --> 01:05:03,654
+ Ini formulirnya. 
+
+1458
+01:05:03,654 --> 01:05:10,681
+
+
+1459
+01:05:10,681 --> 01:05:13,097
+ Di sinilah Anda akan meletakkan nama pengguna dan kata sandi. 
+
+1460
+01:05:13,097 --> 01:05:22,540
+
+
+1461
+01:05:22,540 --> 01:05:24,405
+ Dan kemudian klik tombolnya. 
+
+1462
+01:05:24,405 --> 01:05:26,920
+ Ini mencoba untuk memanggil fungsi yang disebut login, 
+
+1463
+01:05:26,920 --> 01:05:29,370
+ yang akan kita definisikan sebentar lagi. 
+
+1464
+01:05:29,370 --> 01:05:36,230
+
+
+1465
+01:05:36,230 --> 01:05:43,090
+ Mari kita definisikan login sebagai fungsi yang melakukan hal-hal ini. 
+
+1466
+01:05:43,090 --> 01:05:47,580
+ Sebenarnya ini hanya pembungkus yang menyebut proses masuk 
+
+1467
+01:05:47,580 --> 01:05:51,270
+ berfungsi dari modul itu di mana kita mengambil masing-masing komponen 
+
+1468
+01:05:51,270 --> 01:05:54,387
+ dan mengubahnya dari string ke tipe abstrak. 
+
+1469
+01:05:54,387 --> 01:05:55,720
+ Itulah yang dilakukan oleh kesalahan membaca. 
+
+1470
+01:05:55,720 --> 01:05:58,090
+ Kesalahan berarti jika tidak berfungsi, aborsi saja 
+
+1471
+01:05:58,090 --> 01:06:01,333
+ bukannya menandakan kegagalan dengan nilai pengembalian khusus. 
+
+1472
+01:06:01,333 --> 01:06:04,279
+
+
+1473
+01:06:04,279 --> 01:06:06,925
+ Berikut keduanya, masuk dan kemudian lompat ke utama. 
+
+1474
+01:06:06,925 --> 01:06:08,848
+ Jadi sekarang kita harus bisa masuk. 
+
+1475
+01:06:08,848 --> 01:06:10,252
+ Mari kita periksa apakah itu benar. 
+
+1476
+01:06:10,252 --> 01:06:13,160
+
+
+1477
+01:06:13,160 --> 01:06:16,106
+ Oke, jadi itu [TIDAK JELAS]. 
+
+1478
+01:06:16,106 --> 01:06:22,500
+
+
+1479
+01:06:22,500 --> 01:06:25,570
+ Kami mungkin ingin membuat akun untuk memungkinkan kami masuk. 
+
+1480
+01:06:25,570 --> 01:06:27,550
+ Jadi biarkan saya [TIDAK JELAS]. 
+
+1481
+01:06:27,550 --> 01:06:34,655
+
+
+1482
+01:06:34,655 --> 01:06:39,022
+ Jadi sekarang saya harus bisa masuk sebagai. 
+
+1483
+01:06:39,022 --> 01:06:40,360
+ OK, dan terima kata saya untuk itu. 
+
+1484
+01:06:40,360 --> 01:06:45,052
+ Sekarang ada satu set kue untuk mencatat informasi itu. 
+
+1485
+01:06:45,052 --> 01:06:47,510
+ Dan kemudian mari kita kembali ke ruang obrolan dan mengirim pesan. 
+
+1486
+01:06:47,510 --> 01:06:50,300
+ Kami sebenarnya belum menambahkan kontrol akses apa pun di sini. 
+
+1487
+01:06:50,300 --> 01:06:51,880
+ Jadi tidak banyak yang terjadi di sini. 
+
+1488
+01:06:51,880 --> 01:06:53,852
+ Tapi kita bisa mengecek untuk melihatnya. 
+
+1489
+01:06:53,852 --> 01:06:54,560
+ Ada kue. 
+
+1490
+01:06:54,560 --> 01:06:57,070
+ Tetapi sistem telah menetapkan bahwa kita tidak 
+
+1491
+01:06:57,070 --> 01:06:58,970
+ menggunakan cookie. 
+
+1492
+01:06:58,970 --> 01:07:01,500
+ Saat kami mengirimkan formulir ini, cookie tidak dibaca. 
+
+1493
+01:07:01,500 --> 01:07:04,492
+ Jadi sebenarnya tidak perlu menambahkan perlindungan CSRF di sini 
+
+1494
+01:07:04,492 --> 01:07:04,992
+ namun. 
+
+1495
+01:07:04,992 --> 01:07:07,144
+ Jadi sekarang kita harus menambahkan cara untuk menggunakan cookie. 
+
+1496
+01:07:07,144 --> 01:07:09,018
+ Dan kemudian kita harus melihat perlindungan muncul. 
+
+1497
+01:07:09,018 --> 01:07:09,974
+ Ya. 
+
+1498
+01:07:09,974 --> 01:07:10,930
+ SISWA: Apa isi dari cookie? 
+
+1499
+01:07:10,930 --> 01:07:12,265
+ ADAM CHLIPALA: Apa isi dari cookie? 
+
+1500
+01:07:12,265 --> 01:07:15,130
+ Isinya persis seperti yang Anda harapkan dari kode itu. 
+
+1501
+01:07:15,130 --> 01:07:17,840
+ Dengan kata lain, cookie tersebut dideklarasikan 
+
+1502
+01:07:17,840 --> 01:07:21,670
+ seperti mengetikkan catatan ini, ID, dan kata sandi. 
+
+1503
+01:07:21,670 --> 01:07:23,045
+ Jadi itulah tepatnya yang ada di sana 
+
+1504
+01:07:23,045 --> 01:07:24,378
+ dalam bentuk serial tertentu. 
+
+1505
+01:07:24,378 --> 01:07:29,930
+
+
+1506
+01:07:29,930 --> 01:07:32,000
+ Jadi sekarang mari kita benar-benar menggunakan cookie. 
+
+1507
+01:07:32,000 --> 01:07:34,310
+ Dan kita semestinya bisa melihat meskipun ada fakta 
+
+1508
+01:07:34,310 --> 01:07:36,995
+ kita akan menggunakan cookie secara tidak langsung, 
+
+1509
+01:07:36,995 --> 01:07:39,620
+ karena kita akan menggunakannya di modul ruang, yang tidak 
+
+1510
+01:07:39,620 --> 01:07:40,870
+ bahkan memiliki ruang lingkup cookie. 
+
+1511
+01:07:40,870 --> 01:07:44,675
+ Tetapi kami akan memanggil metode modul pengguna, yang secara tidak langsung 
+
+1512
+01:07:44,675 --> 01:07:45,550
+ menggunakan cookie. 
+
+1513
+01:07:45,550 --> 01:07:47,341
+ Dan kemudian sistem akan menyadari itu artinya 
+
+1514
+01:07:47,341 --> 01:07:48,710
+ kami memiliki ketergantungan padanya. 
+
+1515
+01:07:48,710 --> 01:07:55,671
+ Jadi mari kita buat ini benar-benar sederhana dan katakan saja 
+
+1516
+01:07:55,671 --> 01:07:57,360
+ sebut metode whoami. 
+
+1517
+01:07:57,360 --> 01:08:00,430
+
+
+1518
+01:08:00,430 --> 01:08:02,520
+ Dan saya sebenarnya hanya akan mengabaikan ini. 
+
+1519
+01:08:02,520 --> 01:08:04,320
+ Atau kita bisa melakukan ini. 
+
+1520
+01:08:04,320 --> 01:08:07,710
+ Mari putuskan bahwa pengguna yang kami buat benar-benar istimewa. 
+
+1521
+01:08:07,710 --> 01:08:12,938
+ Dan hanya pengguna ini yang diizinkan untuk memposting apa pun. 
+
+1522
+01:08:12,938 --> 01:08:18,426
+
+
+1523
+01:08:18,426 --> 01:08:22,418
+ Dan kami akan gagal jika kami bukan. 
+
+1524
+01:08:22,419 --> 01:08:25,412
+ Baiklah, mari kita lihat apakah ini berfungsi. 
+
+1525
+01:08:25,412 --> 01:08:26,909
+ Apakah saya lupa garis miring di suatu tempat? 
+
+1526
+01:08:26,910 --> 01:08:28,407
+ Oh ya. 
+
+1527
+01:08:28,407 --> 01:08:35,392
+
+
+1528
+01:08:35,392 --> 01:08:35,892
+ [TIDAK JELAS] 
+
+1529
+01:08:35,892 --> 01:08:48,367
+
+
+1530
+01:08:48,367 --> 01:08:51,120
+ Oh, saya berharap dia menjadi string. 
+
+1531
+01:08:51,120 --> 01:08:53,910
+ Tapi sebenarnya itu ID. 
+
+1532
+01:08:53,910 --> 01:08:59,979
+ Jadi mari kita baca sebuah ID seperti yang kami lakukan di bawah ini 
+
+1533
+01:08:59,979 --> 01:09:03,670
+ untuk memproses login. 
+
+1534
+01:09:03,670 --> 01:09:05,510
+ Dan kami belum mengungkapkan ID itu 
+
+1535
+01:09:05,510 --> 01:09:07,729
+ jenis mendukung pengujian kesetaraan. 
+
+1536
+01:09:07,729 --> 01:09:10,540
+ Jadi saya hanya akan menambahkannya ke modul pengguna. 
+
+1537
+01:09:10,540 --> 01:09:13,080
+ Dan kemudian itu harus bekerja. 
+
+1538
+01:09:13,080 --> 01:09:16,160
+ ID mendukung pengujian kesetaraan. 
+
+1539
+01:09:16,160 --> 01:09:18,948
+ Dan kita harus baik-baik saja. 
+
+1540
+01:09:18,948 --> 01:09:20,920
+ Jadi sekarang kami telah membawa antarmuka. 
+
+1541
+01:09:20,920 --> 01:09:23,648
+ Sekarang kita bisa melakukan lebih banyak hal dengan ID, yang bisa 
+
+1542
+01:09:23,648 --> 01:09:25,136
+ memicu beberapa masalah keamanan. 
+
+1543
+01:09:25,136 --> 01:09:27,756
+ Tapi itu memungkinkan kami menambahkan pemeriksaan kontrol akses ini, 
+
+1544
+01:09:27,756 --> 01:09:34,560
+ jadi mari kita lihat cara kerjanya, kembali ke halaman utama 
+
+1545
+01:09:34,560 --> 01:09:35,551
+ ke [TIDAK JELAS]. 
+
+1546
+01:09:35,551 --> 01:09:45,471
+
+
+1547
+01:09:45,471 --> 01:09:47,769
+ Baiklah, sekarang formulirnya otomatis 
+
+1548
+01:09:47,770 --> 01:09:50,550
+ memiliki nama masukan tersembunyi, yang 
+
+1549
+01:09:50,550 --> 01:09:53,544
+ adalah tanda cryptographic dari semua nilai 
+
+1550
+01:09:53,544 --> 01:09:54,890
+ cookie. 
+
+1551
+01:09:54,890 --> 01:10:00,380
+ Dan itu ditandatangani menggunakan kunci yang merupakan rahasia untuk server. 
+
+1552
+01:10:00,380 --> 01:10:04,110
+ Dan ketika formulir dikirimkan, aplikasi 
+
+1553
+01:10:04,110 --> 01:10:06,360
+ tahu, karena kompilator mengatakannya, 
+
+1554
+01:10:06,360 --> 01:10:09,130
+ bahwa itu harus memeriksa tanda tangan untuk yang berikut ini 
+
+1555
+01:10:09,130 --> 01:10:10,170
+ serangkaian operasi. 
+
+1556
+01:10:10,170 --> 01:10:13,460
+ Dalam hal ini, satu-satunya yang mengatakan operasi ini. 
+
+1557
+01:10:13,460 --> 01:10:13,960
+ Ya. 
+
+1558
+01:10:13,960 --> 01:10:17,910
+ SISWA: Apakah tanda tangan memiliki cap waktu juga? 
+
+1559
+01:10:17,910 --> 01:10:19,785
+ ADAM CHLIPALA: Ini tidak memiliki cap waktu. 
+
+1560
+01:10:19,785 --> 01:10:22,866
+ SISWA: Jika tidak, jika penyerang pernah melihat ini secara langsung, 
+
+1561
+01:10:22,866 --> 01:10:25,311
+ mereka bisa berpura-pura menjadi pengguna. 
+
+1562
+01:10:25,311 --> 01:10:27,010
+ Itu tidak pernah berakhir. 
+
+1563
+01:10:27,010 --> 01:10:29,140
+ ADAM CHLIPALA: Ini tidak pernah berakhir, benar. 
+
+1564
+01:10:29,140 --> 01:10:32,354
+ Jadi itu sesuatu yang bisa diubah 
+
+1565
+01:10:32,354 --> 01:10:34,020
+ dengan memodifikasi implementasi bahasa 
+
+1566
+01:10:34,020 --> 01:10:36,216
+ tanpa memodifikasi aplikasi, 
+
+1567
+01:10:36,216 --> 01:10:37,668
+ lalu langsung disebarkan. 
+
+1568
+01:10:37,668 --> 01:10:39,120
+ Tapi itu tidak ada sekarang. 
+
+1569
+01:10:39,120 --> 01:10:43,476
+ Dan saya bisa melihat mengapa itu bisa menjadi hal yang bermanfaat untuk ditambahkan. 
+
+1570
+01:10:43,476 --> 01:10:44,928
+ Pertanyaan, ya. 
+
+1571
+01:10:44,928 --> 01:10:48,030
+ SISWA: Anda juga dapat memperbaikinya dengan hanya memasukkan [TIDAK BISA DIANGGAP] 
+
+1572
+01:10:48,030 --> 01:10:49,440
+ demikian juga. 
+
+1573
+01:10:49,440 --> 01:10:50,565
+ ADAM CHLIPALA: Itu benar. 
+
+1574
+01:10:50,565 --> 01:10:52,398
+ Anda benar, Anda dapat mengubah aplikasi 
+
+1575
+01:10:52,398 --> 01:10:54,750
+ dengan sengaja memodifikasi data cookie cukup sering 
+
+1576
+01:10:54,750 --> 01:10:56,574
+ tanda tangan itu akan ketinggalan jaman. 
+
+1577
+01:10:56,574 --> 01:10:58,065
+ Itu juga benar. 
+
+1578
+01:10:58,065 --> 01:11:10,000
+
+
+1579
+01:11:10,000 --> 01:11:11,860
+ Jadi kita punya 10 menit lagi. 
+
+1580
+01:11:11,860 --> 01:11:14,340
+ Setiap permintaan untuk hal-hal yang sangat diinginkan seseorang 
+
+1581
+01:11:14,340 --> 01:11:16,026
+ untuk melihat sebelum kelas berakhir? 
+
+1582
+01:11:16,026 --> 01:11:19,190
+
+
+1583
+01:11:19,190 --> 01:11:21,930
+ Saya bisa mulai menampilkan beberapa hal Ajax secara default 
+
+1584
+01:11:21,930 --> 01:11:24,329
+ jika tidak ada yang memiliki permintaan lain. 
+
+1585
+01:11:24,329 --> 01:11:30,245
+
+
+1586
+01:11:30,245 --> 01:11:31,231
+ Ya. 
+
+1587
+01:11:31,231 --> 01:11:35,190
+ SISWA: Dapatkah Anda memetakan ulang URL? 
+
+1588
+01:11:35,190 --> 01:11:36,854
+ ADAM CHLIPALA: Anda bisa, ya. 
+
+1589
+01:11:36,854 --> 01:11:39,670
+ Jadi, pemetaan apa yang ingin Anda lihat? 
+
+1590
+01:11:39,670 --> 01:11:40,211
+ SISWA: Apa saja. 
+
+1591
+01:11:40,211 --> 01:11:41,923
+ Saya hanya ingin melihat bagaimana hal itu dilakukan. 
+
+1592
+01:11:41,923 --> 01:11:45,630
+ ADAM CHLIPALA: OK, jadi kompilernya 
+
+1593
+01:11:45,630 --> 01:11:48,210
+ sedang menetapkan-- seperti yang bisa kita lihat kembali di sini, 
+
+1594
+01:11:48,210 --> 01:11:49,460
+ kami menyebutnya fungsi say. 
+
+1595
+01:11:49,460 --> 01:11:50,835
+ Dan pada dasarnya, panggilan fungsi itu 
+
+1596
+01:11:50,835 --> 01:11:52,590
+ diserialkan sebagai bentuk URL tertentu. 
+
+1597
+01:11:52,590 --> 01:11:54,560
+ Mungkin kita tidak suka bentuk itu. 
+
+1598
+01:11:54,560 --> 01:12:00,615
+ Kami memutuskan kami akan menulis ulang URL, jadi katakanlah 
+
+1599
+01:12:00,615 --> 01:12:07,696
+ ada di dalam modul ruangan, di dalam demo. 
+
+1600
+01:12:07,696 --> 01:12:10,414
+ Lebih baik letakkan ini di atas agar berjalan 
+
+1601
+01:12:10,414 --> 01:12:14,620
+ sebelum ini rewrites-- menulis ulang url lainnya Demo / Room / katakan 
+
+1602
+01:12:14,620 --> 01:12:18,085
+ ke Demo / Kamar / berbicara. 
+
+1603
+01:12:18,085 --> 01:12:22,045
+
+
+1604
+01:12:22,045 --> 01:12:26,005
+ Dan semoga itulah yang saya inginkan. 
+
+1605
+01:12:26,005 --> 01:12:27,985
+ Mari lihat apa yang terjadi. 
+
+1606
+01:12:27,985 --> 01:12:34,915
+
+
+1607
+01:12:34,915 --> 01:12:39,587
+ Ya, dan Anda dapat memiliki kartu liar dalam aturan tersebut 
+
+1608
+01:12:39,587 --> 01:12:41,170
+ juga untuk memetakan satu awalan ke yang lain. 
+
+1609
+01:12:41,170 --> 01:12:44,490
+
+
+1610
+01:12:44,490 --> 01:12:47,100
+ Dan kompiler akan menegakkan setiap fungsi itu 
+
+1611
+01:12:47,100 --> 01:12:49,620
+ memiliki skema URL yang berbeda. 
+
+1612
+01:12:49,620 --> 01:12:51,890
+ Jadi jika Anda menambahkan aturan yang menyebabkan bentrokan, 
+
+1613
+01:12:51,890 --> 01:12:53,842
+ Anda akan mendapatkan [INAUDIBLE]. 
+
+1614
+01:12:53,842 --> 01:12:55,794
+ Secara default, otomatis dihasilkan 
+
+1615
+01:12:55,794 --> 01:12:58,722
+ Skema URL adalah [TIDAK JELAS]. 
+
+1616
+01:12:58,722 --> 01:13:03,602
+ Anda dapat memecahkannya dengan menggunakan fitur ini. 
+
+1617
+01:13:03,602 --> 01:13:06,518
+ Ada permintaan lain? 
+
+1618
+01:13:06,518 --> 01:13:07,018
+ Ya. 
+
+1619
+01:13:07,018 --> 01:13:13,220
+ SISWA: Jadi Anda menyebutkan bahwa HTML [tidak terdengar] 
+
+1620
+01:13:13,220 --> 01:13:15,110
+ bukan khusus compiler. 
+
+1621
+01:13:15,110 --> 01:13:16,335
+ Ini seperti perpustakaan. 
+
+1622
+01:13:16,335 --> 01:13:20,790
+ Apakah ada perpustakaan lain untuk format lain juga? 
+
+1623
+01:13:20,790 --> 01:13:22,760
+ ADAM CHLIPALA: Ada perpustakaan lain 
+
+1624
+01:13:22,760 --> 01:13:27,352
+ yang tidak melakukan pengecekan tipe pada tingkat kekayaan yang sama. 
+
+1625
+01:13:27,352 --> 01:13:28,810
+ Tapi misalnya, ada perpustakaan 
+
+1626
+01:13:28,810 --> 01:13:32,580
+ untuk serialisasi dan de-serialisasi JSON. 
+
+1627
+01:13:32,580 --> 01:13:34,440
+ Dan sebagian besar cara otomatis itu 
+
+1628
+01:13:34,440 --> 01:13:36,940
+ digerakkan oleh struktur jenis. 
+
+1629
+01:13:36,940 --> 01:13:40,364
+ Jadi Anda dapat melakukan hal-hal seperti itu yang tidak terintegrasi 
+
+1630
+01:13:40,364 --> 01:13:41,114
+ dengan compiler. 
+
+1631
+01:13:41,114 --> 01:13:47,040
+
+
+1632
+01:13:47,040 --> 01:13:47,540
+ Ya. 
+
+1633
+01:13:47,540 --> 01:13:50,396
+ SISWA: Mungkin Anda masih ingin menulis JavaScript. 
+
+1634
+01:13:50,396 --> 01:13:52,435
+ Apakah ada-- 
+
+1635
+01:13:52,435 --> 01:13:53,678
+ ADAM CHLIPALA: Saya tidak. 
+
+1636
+01:13:53,678 --> 01:13:54,674
+ Anda melakukannya. 
+
+1637
+01:13:54,674 --> 01:13:58,029
+ SISWA: Benar, tidak, tapi untuk, katakanlah, saya tidak tahu, 
+
+1638
+01:13:58,029 --> 01:13:59,654
+ Anda ingin menghidupkan sesuatu di halaman. 
+
+1639
+01:13:59,654 --> 01:14:00,974
+ Masih ada hal-hal di mana-- 
+
+1640
+01:14:00,974 --> 01:14:03,140
+ ADAM CHLIPALA: Biarkan saya memuat versi Ajax ini. 
+
+1641
+01:14:03,140 --> 01:14:05,132
+ Dan itu mungkin menjawab pertanyaan Anda. 
+
+1642
+01:14:05,132 --> 01:14:08,118
+
+
+1643
+01:14:08,118 --> 01:14:08,618
+ [TIDAK JELAS] 
+
+1644
+01:14:08,618 --> 01:14:29,036
+
+
+1645
+01:14:29,036 --> 01:14:31,526
+ Baiklah, jadi versi ini memiliki kode sisi klien. 
+
+1646
+01:14:31,526 --> 01:14:33,518
+ Mari kita [tidak terdengar]. 
+
+1647
+01:14:33,518 --> 01:14:41,010
+
+
+1648
+01:14:41,010 --> 01:14:45,946
+ Percaya atau tidak, kali ini add bekerja dengan panggilan Ajax. 
+
+1649
+01:14:45,946 --> 01:14:52,350
+ Dan Anda mendapatkan hal-hal seperti, inilah tag tombol. 
+
+1650
+01:14:52,350 --> 01:14:54,210
+ Dan itu memiliki atribut onclick yang kapan 
+
+1651
+01:14:54,210 --> 01:14:56,630
+ seorang pengguna mengklik tombol, semua kode ini di sini 
+
+1652
+01:14:56,630 --> 01:14:58,330
+ berjalan di sisi klien. 
+
+1653
+01:14:58,330 --> 01:14:59,769
+ Tapi itu kode Ur / Web. 
+
+1654
+01:14:59,769 --> 01:15:00,810
+ Ini bukan kode JavaScript. 
+
+1655
+01:15:00,810 --> 01:15:03,360
+ Kompilator menerjemahkannya menjadi JavaScript untuk Anda 
+
+1656
+01:15:03,360 --> 01:15:07,110
+ dan menjamin bahwa ia mempertahankan properti yang kita inginkan 
+
+1657
+01:15:07,110 --> 01:15:09,388
+ untuk abstraksi dalam daftar kami, 
+
+1658
+01:15:09,388 --> 01:15:12,934
+ selama pengguna tidak membicarakannya secara manual 
+
+1659
+01:15:12,934 --> 01:15:15,279
+ [TIDAK JELAS]. 
+
+1660
+01:15:15,279 --> 01:15:16,820
+ SISWA: Saya lebih berpikir di sana 
+
+1661
+01:15:16,820 --> 01:15:18,426
+ banyak perpustakaan [tidak terdengar] 
+
+1662
+01:15:18,426 --> 01:15:22,345
+ di luar sana hari ini yang melakukan hal-hal yang bermanfaat, dan dalam banyak kasus 
+
+1663
+01:15:22,345 --> 01:15:25,672
+ hal-hal rumit jika Anda ingin mengulang semuanya sendiri. 
+
+1664
+01:15:25,672 --> 01:15:28,355
+ Adakah cara berinteraksi dengan JavaScript dari Ur / Web? 
+
+1665
+01:15:28,355 --> 01:15:30,730
+ ADAM CHLIPALA: Ya, ada antarmuka fungsi asing, 
+
+1666
+01:15:30,730 --> 01:15:33,670
+ yang memungkinkan Anda memberikan nama fungsi Ur / Web ke JavaScript 
+
+1667
+01:15:33,670 --> 01:15:35,192
+ nama fungsi dan panggilan. 
+
+1668
+01:15:35,192 --> 01:15:38,452
+ Tapi kemudian setiap kali Anda menggunakan antarmuka fungsi asing, 
+
+1669
+01:15:38,452 --> 01:15:41,641
+ Anda tidak mendapatkan semua properti bagus ini seperti konstruksi 
+
+1670
+01:15:41,641 --> 01:15:42,141
+ lagi. 
+
+1671
+01:15:42,141 --> 01:15:43,632
+ Anda harus sangat berhati-hati. 
+
+1672
+01:15:43,632 --> 01:15:45,123
+ Dan untuk beberapa memperpanjang, Anda harus memahami penerapannya 
+
+1673
+01:15:45,123 --> 01:15:48,050
+ dari beberapa abstraksi ini untuk menghindari mengganggu mereka. 
+
+1674
+01:15:48,050 --> 01:15:51,256
+
+
+1675
+01:15:51,256 --> 01:15:56,245
+ Sementara saya memiliki kode ini di sini, saya hanya menunjukkannya kepada Anda. 
+
+1676
+01:15:56,245 --> 01:15:58,820
+ Kami masih memiliki fungsi mengucapkan yang sama seperti sebelumnya, kira-kira. 
+
+1677
+01:15:58,820 --> 01:16:00,940
+ Tapi sekarang, daripada memanggilnya melalui tautan, 
+
+1678
+01:16:00,940 --> 01:16:02,860
+ kami hanya mengambil panggilan fungsi, yang 
+
+1679
+01:16:02,860 --> 01:16:05,740
+ diisi dengan argumen yang muncul dari konteksnya 
+
+1680
+01:16:05,740 --> 01:16:08,640
+ dari penangan onclick ini. 
+
+1681
+01:16:08,640 --> 01:16:11,410
+ Dan kami hanya membungkus fungsi yang disebut di dalam sintaks RPC. 
+
+1682
+01:16:11,410 --> 01:16:14,680
+ Dan itu artinya ini adalah panggilan fungsi pada klien, 
+
+1683
+01:16:14,680 --> 01:16:17,195
+ tetapi jalankan panggilan itu sendiri di server dengan akses 
+
+1684
+01:16:17,195 --> 01:16:19,295
+ ke database dan sumber daya server lainnya, 
+
+1685
+01:16:19,295 --> 01:16:22,020
+ dan kemudian menggeser hasilnya kembali ke sini. 
+
+1686
+01:16:22,020 --> 01:16:23,920
+ Dan itu ditulis dalam gaya langsung ini 
+
+1687
+01:16:23,920 --> 01:16:26,490
+ di sini, bukan callback yang Anda 
+
+1688
+01:16:26,490 --> 01:16:28,150
+ perlu digunakan dalam JavaScript biasanya 
+
+1689
+01:16:28,150 --> 01:16:32,245
+ untuk menyelesaikan panggilan server jarak jauh [INAUDIBLE]. 
+
+1690
+01:16:32,245 --> 01:16:32,745
+ Ya. 
+
+1691
+01:16:32,745 --> 01:16:33,620
+ SISWA: [TIDAK JELAS]? 
+
+1692
+01:16:33,620 --> 01:16:38,717
+
+
+1693
+01:16:38,717 --> 01:16:40,217
+ ADAM CHLIPALA: Klien diizinkan 
+
+1694
+01:16:40,217 --> 01:16:41,804
+ untuk memanggil apa pun dalam lingkup. 
+
+1695
+01:16:41,804 --> 01:16:43,345
+ Jadi Anda hanya perlu menggunakan ruang lingkup 
+
+1696
+01:16:43,345 --> 01:16:46,410
+ kami biasanya menggunakannya untuk menyembunyikan bidang pribadi 
+
+1697
+01:16:46,410 --> 01:16:48,954
+ dan seterusnya di dalam abstraksi. 
+
+1698
+01:16:48,954 --> 01:16:57,420
+
+
+1699
+01:16:57,420 --> 01:16:59,480
+ Maksud saya, karena ada panggilan di sini, 
+
+1700
+01:16:59,480 --> 01:17:01,190
+ fungsi yang diizinkan untuk kami hubungi 
+
+1701
+01:17:01,190 --> 01:17:04,530
+ adalah orang-orang yang namanya dalam lingkup. 
+
+1702
+01:17:04,530 --> 01:17:06,660
+ Nama ini terjadi tidak dalam lingkup di sini. 
+
+1703
+01:17:06,660 --> 01:17:08,209
+ Jadi kami tidak bisa menyebutnya langsung di sini. 
+
+1704
+01:17:08,209 --> 01:17:09,667
+ Tetapi karena itu dalam lingkup di sana, 
+
+1705
+01:17:09,667 --> 01:17:11,158
+ kami diizinkan untuk menyebutnya. 
+
+1706
+01:17:11,158 --> 01:17:16,128
+
+
+1707
+01:17:16,128 --> 01:17:18,613
+ Apakah saya melihat tangan yang lain? 
+
+1708
+01:17:18,613 --> 01:17:23,583
+
+
+1709
+01:17:23,583 --> 01:17:25,226
+ Mari kita lihat, apakah ada hal lain 
+
+1710
+01:17:25,226 --> 01:17:27,559
+ menarik tentang versi ini yang ingin saya sebutkan? 
+
+1711
+01:17:27,559 --> 01:17:32,070
+
+
+1712
+01:17:32,070 --> 01:17:35,110
+ Ini melibatkan implementasi dari widget GUI menggunakan 
+
+1713
+01:17:35,110 --> 01:17:36,760
+ gaya reaktif fungsional ini, yang 
+
+1714
+01:17:36,760 --> 01:17:40,060
+ keren dari perspektif modularitas pemrograman 
+
+1715
+01:17:40,060 --> 01:17:43,790
+ tapi mungkin kurang menarik dari perspektif keamanan. 
+
+1716
+01:17:43,790 --> 01:17:47,210
+ Tapi inilah contoh memanggil metode abstraksi ini 
+
+1717
+01:17:47,210 --> 01:17:49,500
+ dari sebagian halaman yang ditampilkan 
+
+1718
+01:17:49,500 --> 01:17:51,103
+ daftar baris teks yang Anda bisa 
+
+1719
+01:17:51,103 --> 01:17:53,470
+ tambahkan tetapi jangan pernah menghapusnya. 
+
+1720
+01:17:53,470 --> 01:17:55,040
+ Dan Anda benar-benar dapat menegakkannya. 
+
+1721
+01:17:55,040 --> 01:17:56,944
+ Karena kita tidak punya dom di sini. 
+
+1722
+01:17:56,944 --> 01:17:58,360
+ Bukan itu bagian dari kode 
+
+1723
+01:17:58,360 --> 01:18:01,424
+ dapat mencapai ke dalam pohon dokumen dan mengubahnya dan berubah 
+
+1724
+01:18:01,424 --> 01:18:03,590
+ log dan hapus baris yang sebelumnya ditambahkan. 
+
+1725
+01:18:03,590 --> 01:18:06,175
+
+
+1726
+01:18:06,175 --> 01:18:07,675
+ Gaya yang lebih fungsional di sini berarti 
+
+1727
+01:18:07,675 --> 01:18:09,570
+ Anda benar-benar dapat memiliki widget GUI itu 
+
+1728
+01:18:09,570 --> 01:18:11,280
+ memiliki bagian dari halaman dan kontrol 
+
+1729
+01:18:11,280 --> 01:18:13,710
+ persis apa yang ditunjukkan di sana, dan bug dan kode lainnya 
+
+1730
+01:18:13,710 --> 01:18:16,682
+ tidak dapat mengganggu komputasi apa yang muncul di sana. 
+
+1731
+01:18:16,682 --> 01:18:21,570
+
+
+1732
+01:18:21,570 --> 01:18:23,070
+ Ini mungkin titik yang baik untuk berhenti, 
+
+1733
+01:18:23,070 --> 01:18:26,735
+ kecuali ada pertanyaan terakhir. 
+
+1734
+01:18:26,735 --> 01:18:28,190
+ SISWA: Saluran? 
+
+1735
+01:18:28,190 --> 01:18:29,650
+ ADAM CHLIPALA: Saluran. 
+
+1736
+01:18:29,650 --> 01:18:32,285
+ Saya tidak berpikir ada cukup waktu untuk berdemonstrasi dengan benar 
+
+1737
+01:18:32,285 --> 01:18:33,199
+ saluran. 
+
+1738
+01:18:33,199 --> 01:18:34,610
+ Tapi ada kode di koran. 
+
+1739
+01:18:34,610 --> 01:18:36,526
+ Dan ada berbagai macam demo dan tutorial 
+
+1740
+01:18:36,526 --> 01:18:39,250
+ di situs web untuk proyek ini. 
+
+1741
+01:18:39,250 --> 01:18:40,220
+ Ya. 
+
+1742
+01:18:40,220 --> 01:18:42,645
+ SISWA: Sangat sulit menulis dengan benar [TIDAK JELAS] 
+
+1743
+01:18:42,645 --> 01:18:43,615
+ dan kompiler. 
+
+1744
+01:18:43,615 --> 01:18:46,436
+ Bagaimana Anda mengurangi masalah itu 
+
+1745
+01:18:46,436 --> 01:18:52,284
+ mungkin hadir dari lapisan abstraksi itu sendiri? 
+
+1746
+01:18:52,284 --> 01:18:54,450
+ ADAM CHLIPALA: Dapatkan orang untuk menggunakannya dan melaporkan bug. 
+
+1747
+01:18:54,450 --> 01:18:58,060
+ Itu yang terbaik yang aku miliki untukmu. 
+
+1748
+01:18:58,060 --> 01:19:01,967
+ Saya kira idenya adalah compiler seperti ini 
+
+1749
+01:19:01,967 --> 01:19:03,550
+ harus ditulis lebih jarang 
+
+1750
+01:19:03,550 --> 01:19:04,810
+ dari aplikasi baru. 
+
+1751
+01:19:04,810 --> 01:19:07,675
+ Jadi untuk memadatkan semua penemuan bug di satu tempat ini 
+
+1752
+01:19:07,675 --> 01:19:09,586
+ masih merupakan peningkatan, bahkan jika tidak 
+
+1753
+01:19:09,586 --> 01:19:13,581
+ dilakukan dengan cara yang sangat berprinsip. 
+
+1754
+01:19:13,581 --> 01:19:14,080
+ Ya. 
+
+1755
+01:19:14,080 --> 01:19:15,538
+ SISWA: Hanya ingin tahu, bagaimana 
+
+1756
+01:19:15,538 --> 01:19:18,440
+ apakah file [TIDAK JELAS] ditangani? 
+
+1757
+01:19:18,440 --> 01:19:20,500
+ ADAM CHLIPALA: Anda dapat menggunakan konfigurasi itu 
+
+1758
+01:19:20,500 --> 01:19:24,090
+ file yang saya tunjukkan untuk memetakannya menjadi bagian dari ruang URL. 
+
+1759
+01:19:24,090 --> 01:19:27,430
+ Atau Anda dapat secara manual menghasilkan nilai 
+
+1760
+01:19:27,430 --> 01:19:29,630
+ dalam program yang mewakili file 
+
+1761
+01:19:29,630 --> 01:19:31,720
+ dan minta untuk mengembalikannya sebagai hasil dari halaman. 
+
+1762
+01:19:31,720 --> 01:19:35,319
+ Ada beberapa pendekatan berbeda. 
+
+1763
+01:19:35,319 --> 01:19:36,205
+ Ya. 
+
+1764
+01:19:36,205 --> 01:19:37,540
+ SISWA: Mengapa Ur? 
+
+1765
+01:19:37,540 --> 01:19:39,785
+ ADAM CHLIPALA: Anda bertanya bagaimana saya memilih nama itu? 
+
+1766
+01:19:39,785 --> 01:19:41,064
+ SISWA: Ya, seperti why-- 
+
+1767
+01:19:41,064 --> 01:19:43,480
+ ADAM CHLIPALA: Oh, Anda bertanya mengapa Anda ingin menggunakan ini. 
+
+1768
+01:19:43,480 --> 01:19:45,870
+ SISWA: Tidak, tidak, nama bahasa, 
+
+1769
+01:19:45,870 --> 01:19:47,850
+ hanya karena penasaran. 
+
+1770
+01:19:47,850 --> 01:19:51,320
+ ADAM CHLIPALA: Jadi bahasa Ur adalah konsep dari linguistik 
+
+1771
+01:19:51,320 --> 01:19:55,175
+ untuk menggambarkan bahasa yang merupakan leluhur 
+
+1772
+01:19:55,175 --> 01:19:56,930
+ dari bahasa modern. 
+
+1773
+01:19:56,930 --> 01:19:58,750
+ Dan idenya dalam bahasa ini, 
+
+1774
+01:19:58,750 --> 01:20:00,958
+ Anda bisa menyematkan semua jenis bahasa lain di dalamnya. 
+
+1775
+01:20:00,958 --> 01:20:02,919
+ Jadi itu semacam leluhur dari semua itu. 
+
+1776
+01:20:02,919 --> 00:00:00,000
+
+

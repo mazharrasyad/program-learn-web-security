@@ -1,0 +1,1048 @@
+1
+00:00:00,000 --> 00:00:02,060
+<font color="#E5E5E5">you</font>
+
+2
+00:00:09,610 --> 00:00:11,440
+hey everybody<font color="#E5E5E5"> john wagon here with dev</font>
+
+3
+00:00:11,440 --> 00:00:12,610
+central we're coming to you with<font color="#E5E5E5"> another</font>
+
+4
+00:00:12,610 --> 00:00:15,459
+<font color="#E5E5E5">light board lesson video and today we're</font>
+
+5
+00:00:15,459 --> 00:00:18,009
+gonna talk<font color="#E5E5E5"> about sensitive data exposure</font>
+
+6
+00:00:18,009 --> 00:00:20,740
+this<font color="#E5E5E5"> is one of the wasp</font><font color="#CCCCCC"> top 10</font>
+
+7
+00:00:20,740 --> 00:00:22,869
+vulnerabilities the new<font color="#E5E5E5"> OWASP list was</font>
+
+8
+00:00:22,869 --> 00:00:25,599
+just released the 2017 version and this
+
+9
+00:00:25,599 --> 00:00:27,670
+was<font color="#E5E5E5"> number</font><font color="#CCCCCC"> three on that</font><font color="#E5E5E5"> list so it's a</font>
+
+10
+00:00:27,670 --> 00:00:29,050
+<font color="#E5E5E5">pretty significant vulnerability out</font>
+
+11
+00:00:29,050 --> 00:00:31,779
+there<font color="#CCCCCC"> and so so we want to</font><font color="#E5E5E5"> talk about it</font>
+
+12
+00:00:31,779 --> 00:00:34,840
+<font color="#E5E5E5">so sensitive data exposure basically the</font>
+
+13
+00:00:34,840 --> 00:00:36,400
+<font color="#E5E5E5">bottom line</font><font color="#CCCCCC"> on this is where you have a</font>
+
+14
+00:00:36,400 --> 00:00:38,440
+web application<font color="#CCCCCC"> you have</font><font color="#E5E5E5"> sensitive data</font>
+
+15
+00:00:38,440 --> 00:00:41,530
+that's stored as a part of<font color="#E5E5E5"> that and</font><font color="#CCCCCC"> you</font>
+
+16
+00:00:41,530 --> 00:00:44,220
+allow that sensitive<font color="#E5E5E5"> data</font><font color="#CCCCCC"> to be exposed</font>
+
+17
+00:00:44,220 --> 00:00:46,330
+<font color="#CCCCCC">which is something</font><font color="#E5E5E5"> you don't want to do</font>
+
+18
+00:00:46,330 --> 00:00:47,949
+we hear<font color="#CCCCCC"> about the stuff</font><font color="#E5E5E5"> in the news</font><font color="#CCCCCC"> like</font>
+
+19
+00:00:47,949 --> 00:00:49,720
+all the time you<font color="#CCCCCC"> know company</font><font color="#E5E5E5"> acts</font><font color="#CCCCCC"> just</font>
+
+20
+00:00:49,720 --> 00:00:51,970
+got hacked<font color="#E5E5E5"> and everybody's</font><font color="#CCCCCC"> credit card</font>
+
+21
+00:00:51,970 --> 00:00:54,129
+number is now you know<font color="#E5E5E5"> available or</font>
+
+22
+00:00:54,129 --> 00:00:55,269
+<font color="#E5E5E5">social</font><font color="#CCCCCC"> security numbers</font><font color="#E5E5E5"> or</font><font color="#CCCCCC"> you know</font>
+
+23
+00:00:55,269 --> 00:00:56,470
+whatever<font color="#E5E5E5"> so you see it all the</font><font color="#CCCCCC"> time in</font>
+
+24
+00:00:56,470 --> 00:00:58,869
+the news so let's<font color="#CCCCCC"> not be that</font><font color="#E5E5E5"> guy let's</font>
+
+25
+00:00:58,869 --> 00:01:00,400
+not be<font color="#E5E5E5"> the one that allows the sensitive</font>
+
+26
+00:01:00,400 --> 00:01:02,589
+data<font color="#E5E5E5"> to be exposed</font><font color="#CCCCCC"> here's kind of the</font>
+
+27
+00:01:02,589 --> 00:01:06,060
+<font color="#E5E5E5">bottom line or a very generic sort of</font>
+
+28
+00:01:06,060 --> 00:01:09,460
+description<font color="#CCCCCC"> of</font><font color="#E5E5E5"> it or a or a you know</font>
+
+29
+00:01:09,460 --> 00:01:12,700
+<font color="#E5E5E5">scenario if you</font><font color="#CCCCCC"> have a user</font><font color="#E5E5E5"> out here in</font>
+
+30
+00:01:12,700 --> 00:01:15,450
+the<font color="#E5E5E5"> internet you have</font><font color="#CCCCCC"> a web application</font>
+
+31
+00:01:15,450 --> 00:01:18,429
+so<font color="#CCCCCC"> I'll put web app right</font><font color="#E5E5E5"> here</font><font color="#CCCCCC"> user</font>
+
+32
+00:01:18,429 --> 00:01:20,289
+wants<font color="#E5E5E5"> to</font><font color="#CCCCCC"> access</font><font color="#E5E5E5"> the web application and</font>
+
+33
+00:01:20,289 --> 00:01:24,240
+<font color="#E5E5E5">maybe there are you know several pages</font>
+
+34
+00:01:24,240 --> 00:01:26,740
+you know that this<font color="#E5E5E5"> web application has</font>
+
+35
+00:01:26,740 --> 00:01:28,299
+that's you know it's built<font color="#E5E5E5"> so you got</font>
+
+36
+00:01:28,299 --> 00:01:31,659
+example.com<font color="#E5E5E5"> example.com slash credit</font>
+
+37
+00:01:31,659 --> 00:01:34,119
+card number example.com slash sensitive
+
+38
+00:01:34,119 --> 00:01:37,539
+<font color="#E5E5E5">data information page or whatever</font><font color="#CCCCCC"> so you</font>
+
+39
+00:01:37,539 --> 00:01:39,130
+know<font color="#E5E5E5"> there's</font><font color="#CCCCCC"> several pages</font><font color="#E5E5E5"> that comprise</font>
+
+40
+00:01:39,130 --> 00:01:41,289
+this whole web application you may also
+
+41
+00:01:41,289 --> 00:01:42,909
+<font color="#E5E5E5">have a couple of databases</font><font color="#CCCCCC"> that this</font>
+
+42
+00:01:42,909 --> 00:01:45,520
+thing utilizes<font color="#CCCCCC"> all</font><font color="#E5E5E5"> put database here</font>
+
+43
+00:01:45,520 --> 00:01:48,009
+<font color="#E5E5E5">maybe a database here</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> let's say this</font>
+
+44
+00:01:48,009 --> 00:01:53,520
+one is<font color="#E5E5E5"> all of your you know</font><font color="#CCCCCC"> username and</font>
+
+45
+00:01:53,520 --> 00:01:55,929
+password all that stuff<font color="#E5E5E5"> and then this</font>
+
+46
+00:01:55,929 --> 00:01:58,539
+one over<font color="#E5E5E5"> here of course is your credit</font>
+
+47
+00:01:58,539 --> 00:02:00,670
+card<font color="#E5E5E5"> numbers you know everybody's credit</font>
+
+48
+00:02:00,670 --> 00:02:02,859
+card number<font color="#CCCCCC"> that you do business</font><font color="#E5E5E5"> with of</font>
+
+49
+00:02:02,859 --> 00:02:05,319
+course<font color="#CCCCCC"> you store all that</font><font color="#E5E5E5"> maybe you</font>
+
+50
+00:02:05,319 --> 00:02:07,539
+shouldn't store<font color="#E5E5E5"> all that</font><font color="#CCCCCC"> but anyway the</font>
+
+51
+00:02:07,539 --> 00:02:10,810
+<font color="#CCCCCC">the issue is the user comes in they</font>
+
+52
+00:02:10,810 --> 00:02:12,819
+access your web application<font color="#E5E5E5"> and they</font>
+
+53
+00:02:12,819 --> 00:02:14,200
+want to<font color="#E5E5E5"> buy</font><font color="#CCCCCC"> something</font><font color="#E5E5E5"> on your online</font>
+
+54
+00:02:14,200 --> 00:02:16,360
+marketplace<font color="#CCCCCC"> for example they've</font>
+
+55
+00:02:16,360 --> 00:02:17,740
+authenticated via the username and
+
+56
+00:02:17,740 --> 00:02:19,510
+<font color="#CCCCCC">password of course</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> you've</font><font color="#E5E5E5"> stored</font>
+
+57
+00:02:19,510 --> 00:02:20,920
+<font color="#E5E5E5">their credit card number for them so</font>
+
+58
+00:02:20,920 --> 00:02:21,150
+that
+
+59
+00:02:21,150 --> 00:02:22,560
+<font color="#CCCCCC">they don't have to mess around with</font>
+
+60
+00:02:22,560 --> 00:02:24,180
+looking at their credit<font color="#E5E5E5"> card number on</font>
+
+61
+00:02:24,180 --> 00:02:25,920
+<font color="#E5E5E5">their actual credit card they can just</font>
+
+62
+00:02:25,920 --> 00:02:27,329
+one click purchase<font color="#E5E5E5"> this thing you've</font>
+
+63
+00:02:27,329 --> 00:02:28,709
+already got the credit card<font color="#E5E5E5"> details</font>
+
+64
+00:02:28,709 --> 00:02:31,439
+stored for them so super<font color="#E5E5E5"> super nice for</font>
+
+65
+00:02:31,439 --> 00:02:35,610
+<font color="#E5E5E5">them all right well the of course with</font>
+
+66
+00:02:35,610 --> 00:02:37,769
+all<font color="#E5E5E5"> that niceness comes potential</font>
+
+67
+00:02:37,769 --> 00:02:39,390
+vulnerabilities and<font color="#E5E5E5"> so you have bad guys</font>
+
+68
+00:02:39,390 --> 00:02:40,530
+that<font color="#E5E5E5"> want to come</font><font color="#CCCCCC"> in and</font><font color="#E5E5E5"> they want</font><font color="#CCCCCC"> to</font>
+
+69
+00:02:40,530 --> 00:02:42,569
+expose all<font color="#CCCCCC"> of these credit card numbers</font>
+
+70
+00:02:42,569 --> 00:02:43,829
+<font color="#CCCCCC">and all these usernames and passwords</font>
+
+71
+00:02:43,829 --> 00:02:46,530
+<font color="#E5E5E5">and all that stuff</font><font color="#CCCCCC"> and they use</font>
+
+72
+00:02:46,530 --> 00:02:48,989
+<font color="#CCCCCC">different attacks to make that stuff</font>
+
+73
+00:02:48,989 --> 00:02:52,439
+<font color="#CCCCCC">happen and and you know and then bad</font>
+
+74
+00:02:52,439 --> 00:02:53,670
+<font color="#CCCCCC">things happen</font><font color="#E5E5E5"> all right</font>
+
+75
+00:02:53,670 --> 00:02:55,170
+<font color="#CCCCCC">a few different things</font><font color="#E5E5E5"> I wanted to point</font>
+
+76
+00:02:55,170 --> 00:02:57,720
+out<font color="#CCCCCC"> as</font><font color="#E5E5E5"> we look at the details of this is</font>
+
+77
+00:02:57,720 --> 00:02:59,489
+let's<font color="#CCCCCC"> say that of all these different</font>
+
+78
+00:02:59,489 --> 00:03:02,430
+<font color="#CCCCCC">you know</font><font color="#E5E5E5"> pages that comprise</font><font color="#CCCCCC"> your web</font>
+
+79
+00:03:02,430 --> 00:03:04,920
+<font color="#E5E5E5">applications some of them are use</font>
+
+80
+00:03:04,920 --> 00:03:07,470
+encryption<font color="#CCCCCC"> and some of them do not</font><font color="#E5E5E5"> so</font>
+
+81
+00:03:07,470 --> 00:03:09,510
+let's say that<font color="#CCCCCC"> this one right here</font><font color="#E5E5E5"> and</font>
+
+82
+00:03:09,510 --> 00:03:12,239
+this<font color="#E5E5E5"> one</font><font color="#CCCCCC"> right here both use</font><font color="#E5E5E5"> TLS</font>
+
+83
+00:03:12,239 --> 00:03:14,579
+encryption and<font color="#E5E5E5"> this one is just straight</font>
+
+84
+00:03:14,579 --> 00:03:17,760
+<font color="#E5E5E5">you know HTTP with no encryption</font><font color="#CCCCCC"> because</font>
+
+85
+00:03:17,760 --> 00:03:19,139
+<font color="#E5E5E5">this is</font><font color="#CCCCCC"> just like a page with some</font>
+
+86
+00:03:19,139 --> 00:03:20,370
+pictures on it or something<font color="#CCCCCC"> you</font><font color="#E5E5E5"> know</font>
+
+87
+00:03:20,370 --> 00:03:23,430
+<font color="#E5E5E5">it's not a big deal</font><font color="#CCCCCC"> so maybe not</font><font color="#E5E5E5"> all</font>
+
+88
+00:03:23,430 --> 00:03:25,620
+your pages<font color="#CCCCCC"> use that well</font><font color="#E5E5E5"> as you develop</font>
+
+89
+00:03:25,620 --> 00:03:28,319
+<font color="#E5E5E5">these sometimes you may you may sneak in</font>
+
+90
+00:03:28,319 --> 00:03:30,629
+some some data<font color="#CCCCCC"> onto a page that doesn't</font>
+
+91
+00:03:30,629 --> 00:03:34,079
+use encryption<font color="#E5E5E5"> but that data may be</font>
+
+92
+00:03:34,079 --> 00:03:35,819
+<font color="#E5E5E5">sensitive so you need to be</font><font color="#CCCCCC"> careful</font><font color="#E5E5E5"> with</font>
+
+93
+00:03:35,819 --> 00:03:39,180
+<font color="#CCCCCC">that also even with the pages that</font><font color="#E5E5E5"> do</font>
+
+94
+00:03:39,180 --> 00:03:42,840
+use TLS<font color="#E5E5E5"> or SSL encryption</font><font color="#CCCCCC"> maybe they use</font>
+
+95
+00:03:42,840 --> 00:03:46,650
+weak<font color="#E5E5E5"> cipher so I'll put weak ciphers</font>
+
+96
+00:03:46,650 --> 00:03:49,500
+right here<font color="#E5E5E5"> all right</font><font color="#CCCCCC"> and the problem</font>
+
+97
+00:03:49,500 --> 00:03:51,930
+<font color="#CCCCCC">with using weak ciphers</font><font color="#E5E5E5"> is that they're</font>
+
+98
+00:03:51,930 --> 00:03:54,629
+weak and bad guys could come in and say
+
+99
+00:03:54,629 --> 00:03:56,459
+hey I<font color="#CCCCCC"> am</font><font color="#E5E5E5"> going to use some</font><font color="#CCCCCC"> different</font>
+
+100
+00:03:56,459 --> 00:04:00,180
+tools<font color="#CCCCCC"> to</font><font color="#E5E5E5"> forcibly downgrade this</font>
+
+101
+00:04:00,180 --> 00:04:02,010
+connection that the user<font color="#E5E5E5"> would have with</font>
+
+102
+00:04:02,010 --> 00:04:04,169
+this page from TLS back down to just
+
+103
+00:04:04,169 --> 00:04:06,479
+<font color="#E5E5E5">HTTP so even though this</font><font color="#CCCCCC"> is sensitive</font>
+
+104
+00:04:06,479 --> 00:04:08,489
+<font color="#E5E5E5">data on this page and you set it up with</font>
+
+105
+00:04:08,489 --> 00:04:11,099
+TLS<font color="#E5E5E5"> encryption debate the the fact that</font>
+
+106
+00:04:11,099 --> 00:04:13,019
+<font color="#E5E5E5">you have weak ciphers could expose you</font>
+
+107
+00:04:13,019 --> 00:04:14,909
+to the<font color="#E5E5E5"> vulnerability of saying hey I'm</font>
+
+108
+00:04:14,909 --> 00:04:16,560
+<font color="#E5E5E5">gonna bad guy could come in and force</font>
+
+109
+00:04:16,560 --> 00:04:19,228
+this down<font color="#CCCCCC"> to just</font><font color="#E5E5E5"> HTTP instead of</font><font color="#CCCCCC"> HTTPS</font>
+
+110
+00:04:19,228 --> 00:04:21,988
+and then thereby<font color="#CCCCCC"> I get get the data that</font>
+
+111
+00:04:21,988 --> 00:04:24,449
+<font color="#CCCCCC">would be on</font><font color="#E5E5E5"> that page so so that's a</font>
+
+112
+00:04:24,449 --> 00:04:28,169
+<font color="#E5E5E5">that's a potential issue the another</font>
+
+113
+00:04:28,169 --> 00:04:30,450
+another<font color="#E5E5E5"> scenario might be that let's say</font>
+
+114
+00:04:30,450 --> 00:04:33,180
+<font color="#E5E5E5">you had some kind of a like a file</font>
+
+115
+00:04:33,180 --> 00:04:35,090
+<font color="#E5E5E5">upload flaw</font>
+
+116
+00:04:35,090 --> 00:04:37,190
+for all these<font color="#E5E5E5"> credit card numbers</font><font color="#CCCCCC"> that</font>
+
+117
+00:04:37,190 --> 00:04:39,830
+were stored in<font color="#E5E5E5"> a file</font><font color="#CCCCCC"> somewhere</font><font color="#E5E5E5"> and the</font>
+
+118
+00:04:39,830 --> 00:04:42,110
+user<font color="#E5E5E5"> the bad guy was able</font><font color="#CCCCCC"> to get in and</font>
+
+119
+00:04:42,110 --> 00:04:44,600
+grab that file and upload the file<font color="#E5E5E5"> and</font>
+
+120
+00:04:44,600 --> 00:04:47,660
+let's say you even encrypted it<font color="#CCCCCC"> you know</font>
+
+121
+00:04:47,660 --> 00:04:49,280
+because<font color="#CCCCCC"> you thought ahead</font><font color="#E5E5E5"> like hey this</font>
+
+122
+00:04:49,280 --> 00:04:50,870
+<font color="#E5E5E5">is sensitive data but but if you didn't</font>
+
+123
+00:04:50,870 --> 00:04:53,590
+encrypt it very well<font color="#E5E5E5"> then they could use</font>
+
+124
+00:04:53,590 --> 00:04:56,000
+<font color="#E5E5E5">something like a rainbow table which</font><font color="#CCCCCC"> is</font>
+
+125
+00:04:56,000 --> 00:04:58,880
+a known list of you know password<font color="#CCCCCC"> crack</font>
+
+126
+00:04:58,880 --> 00:05:01,550
+that<font color="#E5E5E5"> that they could run against that to</font>
+
+127
+00:05:01,550 --> 00:05:02,840
+try to crack the<font color="#CCCCCC"> password for that</font>
+
+128
+00:05:02,840 --> 00:05:04,910
+encryption<font color="#E5E5E5"> and then gain</font><font color="#CCCCCC"> access to the</font>
+
+129
+00:05:04,910 --> 00:05:07,280
+<font color="#E5E5E5">sensitive data</font><font color="#CCCCCC"> and then once they have</font>
+
+130
+00:05:07,280 --> 00:05:08,360
+the<font color="#E5E5E5"> sensitive data especially</font><font color="#CCCCCC"> if it's</font>
+
+131
+00:05:08,360 --> 00:05:10,160
+<font color="#E5E5E5">like a social</font><font color="#CCCCCC"> security number then that</font>
+
+132
+00:05:10,160 --> 00:05:11,660
+that<font color="#E5E5E5"> type of data doesn't really change</font>
+
+133
+00:05:11,660 --> 00:05:13,250
+when you get you<font color="#E5E5E5"> get that assigned at</font>
+
+134
+00:05:13,250 --> 00:05:14,660
+birth and<font color="#E5E5E5"> then that's yours for the rest</font>
+
+135
+00:05:14,660 --> 00:05:15,620
+<font color="#CCCCCC">of your life</font>
+
+136
+00:05:15,620 --> 00:05:17,480
+credit card number is going to<font color="#E5E5E5"> change in</font>
+
+137
+00:05:17,480 --> 00:05:21,890
+at<font color="#E5E5E5"> least every few years</font><font color="#CCCCCC"> so anyway</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> a</font>
+
+138
+00:05:21,890 --> 00:05:23,450
+<font color="#E5E5E5">couple of things</font><font color="#CCCCCC"> that you would need to</font>
+
+139
+00:05:23,450 --> 00:05:26,090
+<font color="#CCCCCC">do to guard against this sensitive data</font>
+
+140
+00:05:26,090 --> 00:05:29,120
+exposure other than you know you need to
+
+141
+00:05:29,120 --> 00:05:30,650
+<font color="#CCCCCC">build the web application properly</font><font color="#E5E5E5"> of</font>
+
+142
+00:05:30,650 --> 00:05:32,300
+course<font color="#CCCCCC"> you need to you need</font><font color="#E5E5E5"> to encrypt</font>
+
+143
+00:05:32,300 --> 00:05:33,950
+all<font color="#CCCCCC"> of the pages that need to be</font>
+
+144
+00:05:33,950 --> 00:05:36,130
+<font color="#CCCCCC">encrypted maybe even encrypt all of them</font>
+
+145
+00:05:36,130 --> 00:05:38,840
+<font color="#E5E5E5">you need to encrypt the sensitive data</font>
+
+146
+00:05:38,840 --> 00:05:41,510
+<font color="#E5E5E5">at rest</font><font color="#CCCCCC"> that sits there</font><font color="#E5E5E5"> as a part of</font>
+
+147
+00:05:41,510 --> 00:05:43,010
+your<font color="#CCCCCC"> web application but I'm just</font><font color="#E5E5E5"> going</font>
+
+148
+00:05:43,010 --> 00:05:46,370
+to list a<font color="#CCCCCC"> few sort of best practice or</font>
+
+149
+00:05:46,370 --> 00:05:49,250
+mitigations<font color="#E5E5E5"> that that you might have and</font>
+
+150
+00:05:49,250 --> 00:05:50,780
+the first one that<font color="#CCCCCC"> I would</font><font color="#E5E5E5"> say is</font>
+
+151
+00:05:50,780 --> 00:05:55,370
+classify your data so<font color="#E5E5E5"> classify data all</font>
+
+152
+00:05:55,370 --> 00:05:59,210
+<font color="#E5E5E5">right so we all</font><font color="#CCCCCC"> know</font><font color="#E5E5E5"> that not all</font><font color="#CCCCCC"> of the</font>
+
+153
+00:05:59,210 --> 00:06:00,590
+<font color="#E5E5E5">data that you would necessarily work</font>
+
+154
+00:06:00,590 --> 00:06:02,600
+with is sensitive data again you may
+
+155
+00:06:02,600 --> 00:06:04,340
+have<font color="#CCCCCC"> some like pictures that you have on</font>
+
+156
+00:06:04,340 --> 00:06:05,270
+one of your websites that's not
+
+157
+00:06:05,270 --> 00:06:07,310
+necessarily sensitive data<font color="#E5E5E5"> so classify</font>
+
+158
+00:06:07,310 --> 00:06:09,050
+the data some<font color="#E5E5E5"> a sensitive some is not</font>
+
+159
+00:06:09,050 --> 00:06:12,140
+and then you need<font color="#E5E5E5"> to apply controls</font>
+
+160
+00:06:12,140 --> 00:06:17,330
+I'll put apply controls to that data<font color="#E5E5E5"> so</font>
+
+161
+00:06:17,330 --> 00:06:18,950
+if it's very<font color="#E5E5E5"> sensitive then you need to</font>
+
+162
+00:06:18,950 --> 00:06:20,300
+make sure it's<font color="#E5E5E5"> very well you know</font>
+
+163
+00:06:20,300 --> 00:06:22,130
+protected it was not<font color="#E5E5E5"> sensitive at all</font>
+
+164
+00:06:22,130 --> 00:06:23,240
+<font color="#E5E5E5">then maybe you</font><font color="#CCCCCC"> don't have to worry as</font>
+
+165
+00:06:23,240 --> 00:06:25,430
+much<font color="#CCCCCC"> about it</font><font color="#E5E5E5"> all right another</font><font color="#CCCCCC"> one</font><font color="#E5E5E5"> I</font>
+
+166
+00:06:25,430 --> 00:06:27,620
+<font color="#E5E5E5">just mentioned</font><font color="#CCCCCC"> this a second</font><font color="#E5E5E5"> ago encrypt</font>
+
+167
+00:06:27,620 --> 00:06:33,740
+data at<font color="#E5E5E5"> rest</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> I'll put data at rest</font>
+
+168
+00:06:33,740 --> 00:06:36,980
+<font color="#CCCCCC">okay so the data at rest again that</font>
+
+169
+00:06:36,980 --> 00:06:38,870
+would qualify<font color="#E5E5E5"> based on your data Kalasha</font>
+
+170
+00:06:38,870 --> 00:06:41,300
+fication<font color="#CCCCCC"> that data you need</font><font color="#E5E5E5"> to make sure</font>
+
+171
+00:06:41,300 --> 00:06:42,620
+and<font color="#E5E5E5"> create you encrypted and you encrypt</font>
+
+172
+00:06:42,620 --> 00:06:44,810
+<font color="#E5E5E5">it well with some strong</font><font color="#CCCCCC"> encryption that</font>
+
+173
+00:06:44,810 --> 00:06:47,150
+<font color="#E5E5E5">way if it's ever you know if anyone ever</font>
+
+174
+00:06:47,150 --> 00:06:48,689
+gets<font color="#CCCCCC"> that file or whatever it would be</font>
+
+175
+00:06:48,689 --> 00:06:51,629
+<font color="#E5E5E5">then the data is</font><font color="#CCCCCC"> encrypted and the other</font>
+
+176
+00:06:51,629 --> 00:06:54,949
+thing<font color="#E5E5E5"> you need</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> use is strong ciphers</font>
+
+177
+00:06:54,949 --> 00:06:59,219
+<font color="#CCCCCC">and this gets</font><font color="#E5E5E5"> back to the experience</font>
+
+178
+00:06:59,219 --> 00:07:00,659
+<font color="#E5E5E5">that the user has with your web</font>
+
+179
+00:07:00,659 --> 00:07:02,879
+application<font color="#E5E5E5"> to</font><font color="#CCCCCC"> begin with</font><font color="#E5E5E5"> this</font>
+
+180
+00:07:02,879 --> 00:07:04,709
+<font color="#E5E5E5">connection needs</font><font color="#CCCCCC"> to be protected with</font>
+
+181
+00:07:04,709 --> 00:07:08,039
+TLS encryption<font color="#E5E5E5"> and you need to make sure</font>
+
+182
+00:07:08,039 --> 00:07:10,199
+you use strong ciphers as you build<font color="#E5E5E5"> out</font>
+
+183
+00:07:10,199 --> 00:07:12,959
+that that TLS<font color="#E5E5E5"> you know connection with</font>
+
+184
+00:07:12,959 --> 00:07:16,349
+your<font color="#E5E5E5"> end user</font><font color="#CCCCCC"> again if you use weak</font>
+
+185
+00:07:16,349 --> 00:07:18,029
+ciphers or<font color="#E5E5E5"> if you have any weak cipher</font>
+
+186
+00:07:18,029 --> 00:07:20,939
+at all in your<font color="#E5E5E5"> cipher list</font><font color="#CCCCCC"> then that</font>
+
+187
+00:07:20,939 --> 00:07:22,829
+exposes you potentially<font color="#E5E5E5"> just a problem</font>
+
+188
+00:07:22,829 --> 00:07:24,599
+<font color="#CCCCCC">so make sure</font><font color="#E5E5E5"> you use strong ciphers on</font>
+
+189
+00:07:24,599 --> 00:07:26,639
+your<font color="#CCCCCC"> web server because the web server</font>
+
+190
+00:07:26,639 --> 00:07:28,709
+gets to determine<font color="#CCCCCC"> what ciphers</font><font color="#E5E5E5"> are used</font>
+
+191
+00:07:28,709 --> 00:07:31,289
+in<font color="#E5E5E5"> that TLS connection</font><font color="#CCCCCC"> another one</font><font color="#E5E5E5"> that</font>
+
+192
+00:07:31,289 --> 00:07:35,489
+<font color="#E5E5E5">I'll put is I'll put possible or maybe</font><font color="#CCCCCC"> a</font>
+
+193
+00:07:35,489 --> 00:07:39,539
+consideration<font color="#CCCCCC"> for I'll put P</font><font color="#E5E5E5"> F</font><font color="#CCCCCC"> S which</font>
+
+194
+00:07:39,539 --> 00:07:42,300
+is<font color="#CCCCCC"> perfect forward secrecy and</font><font color="#E5E5E5"> then I'll</font>
+
+195
+00:07:42,300 --> 00:07:50,099
+say and or H s<font color="#E5E5E5"> T s which is HTTP strict</font>
+
+196
+00:07:50,099 --> 00:07:52,800
+Transport Security<font color="#CCCCCC"> perfect forward</font>
+
+197
+00:07:52,800 --> 00:07:55,469
+secrecy is<font color="#CCCCCC"> deals</font><font color="#E5E5E5"> with this TLS</font>
+
+198
+00:07:55,469 --> 00:07:56,639
+connection<font color="#CCCCCC"> we've got some other</font><font color="#E5E5E5"> light</font>
+
+199
+00:07:56,639 --> 00:07:58,079
+boards on that that we can link to but
+
+200
+00:07:58,079 --> 00:08:02,159
+<font color="#E5E5E5">basically it it doesn't it's a it's a</font>
+
+201
+00:08:02,159 --> 00:08:04,829
+stronger<font color="#E5E5E5"> form of communication using the</font>
+
+202
+00:08:04,829 --> 00:08:06,509
+TLS protocol<font color="#E5E5E5"> between the user and</font><font color="#CCCCCC"> the</font>
+
+203
+00:08:06,509 --> 00:08:10,529
+webserver<font color="#E5E5E5"> and then the HSTs basically</font>
+
+204
+00:08:10,529 --> 00:08:12,089
+says hey if you want<font color="#E5E5E5"> to communicate with</font>
+
+205
+00:08:12,089 --> 00:08:14,309
+<font color="#E5E5E5">my web application</font><font color="#CCCCCC"> then you have to do</font>
+
+206
+00:08:14,309 --> 00:08:17,329
+it<font color="#CCCCCC"> the</font><font color="#E5E5E5"> HTTP it has to be an encrypted</font>
+
+207
+00:08:17,329 --> 00:08:21,539
+communication<font color="#CCCCCC"> there are some some little</font>
+
+208
+00:08:21,539 --> 00:08:24,360
+<font color="#E5E5E5">gotchas on that one if once you go</font>
+
+209
+00:08:24,360 --> 00:08:27,139
+<font color="#E5E5E5">h.t.t.h HSTs</font>
+
+210
+00:08:27,139 --> 00:08:30,839
+<font color="#E5E5E5">then you can't really go</font><font color="#CCCCCC"> back so</font><font color="#E5E5E5"> you</font>
+
+211
+00:08:30,839 --> 00:08:32,308
+<font color="#CCCCCC">know you can't put the toothpaste</font><font color="#E5E5E5"> back</font>
+
+212
+00:08:32,308 --> 00:08:34,110
+in the tube as it<font color="#CCCCCC"> were on</font><font color="#E5E5E5"> that</font><font color="#CCCCCC"> thing so</font>
+
+213
+00:08:34,110 --> 00:08:35,729
+once you<font color="#E5E5E5"> make that</font><font color="#CCCCCC"> decision which is a</font>
+
+214
+00:08:35,729 --> 00:08:37,708
+decision<font color="#E5E5E5"> towards security towards</font>
+
+215
+00:08:37,708 --> 00:08:39,479
+strength<font color="#E5E5E5"> you need to make</font><font color="#CCCCCC"> sure you have</font>
+
+216
+00:08:39,479 --> 00:08:42,389
+everything<font color="#E5E5E5"> ready to</font><font color="#CCCCCC"> go</font><font color="#E5E5E5"> when you flip</font>
+
+217
+00:08:42,389 --> 00:08:44,879
+that<font color="#CCCCCC"> switch or else you could black hole</font>
+
+218
+00:08:44,879 --> 00:08:46,110
+<font color="#CCCCCC">some</font><font color="#E5E5E5"> things you could break some things</font>
+
+219
+00:08:46,110 --> 00:08:47,879
+<font color="#E5E5E5">so just be</font><font color="#CCCCCC"> careful on that</font><font color="#E5E5E5"> one</font><font color="#CCCCCC"> if</font><font color="#E5E5E5"> you</font>
+
+220
+00:08:47,879 --> 00:08:48,870
+want to go<font color="#E5E5E5"> that route I'm not saying</font>
+
+221
+00:08:48,870 --> 00:08:50,720
+don't<font color="#E5E5E5"> use it just</font><font color="#CCCCCC"> be careful when you do</font>
+
+222
+00:08:50,720 --> 00:08:54,149
+<font color="#CCCCCC">alright so again sensitive data exposure</font>
+
+223
+00:08:54,149 --> 00:08:56,880
+<font color="#E5E5E5">you</font><font color="#CCCCCC"> have this sensitive data</font><font color="#E5E5E5"> and you</font>
+
+224
+00:08:56,880 --> 00:08:58,259
+<font color="#CCCCCC">don't want</font><font color="#E5E5E5"> to expose it another thing</font>
+
+225
+00:08:58,259 --> 00:09:00,959
+<font color="#CCCCCC">that I would say</font><font color="#E5E5E5"> quickly is don't store</font>
+
+226
+00:09:00,959 --> 00:09:02,610
+<font color="#E5E5E5">sensitive data</font>
+
+227
+00:09:02,610 --> 00:09:04,110
+you absolutely<font color="#E5E5E5"> have to store sensitive</font>
+
+228
+00:09:04,110 --> 00:09:06,149
+<font color="#E5E5E5">data so if there's a if</font><font color="#CCCCCC"> there's an</font>
+
+229
+00:09:06,149 --> 00:09:07,740
+absolute<font color="#CCCCCC"> requirement where you have to</font>
+
+230
+00:09:07,740 --> 00:09:09,870
+sit<font color="#E5E5E5"> there and store this data as part of</font>
+
+231
+00:09:09,870 --> 00:09:11,459
+<font color="#E5E5E5">your web application or a database</font><font color="#CCCCCC"> that</font>
+
+232
+00:09:11,459 --> 00:09:14,220
+<font color="#CCCCCC">you control or whatever</font><font color="#E5E5E5"> then okay but if</font>
+
+233
+00:09:14,220 --> 00:09:17,250
+it if it is<font color="#CCCCCC"> at all possible</font><font color="#E5E5E5"> to you know</font>
+
+234
+00:09:17,250 --> 00:09:19,380
+use the<font color="#CCCCCC"> sensitive data and</font><font color="#E5E5E5"> then delete</font>
+
+235
+00:09:19,380 --> 00:09:22,170
+<font color="#CCCCCC">it and get rid of it and you know throw</font>
+
+236
+00:09:22,170 --> 00:09:24,690
+it away<font color="#CCCCCC"> you know right after</font><font color="#E5E5E5"> that moment</font>
+
+237
+00:09:24,690 --> 00:09:26,850
+<font color="#CCCCCC">that</font><font color="#E5E5E5"> you needed it then do</font><font color="#CCCCCC"> that so don't</font>
+
+238
+00:09:26,850 --> 00:09:28,860
+don't hold<font color="#E5E5E5"> on</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> this any longer than</font>
+
+239
+00:09:28,860 --> 00:09:30,209
+<font color="#CCCCCC">you absolutely have to</font>
+
+240
+00:09:30,209 --> 00:09:32,519
+so<font color="#E5E5E5"> anyway because if the data is not</font>
+
+241
+00:09:32,519 --> 00:09:34,860
+<font color="#E5E5E5">there then</font><font color="#CCCCCC"> it can't be</font><font color="#E5E5E5"> you know it can't</font>
+
+242
+00:09:34,860 --> 00:09:36,690
+<font color="#E5E5E5">be exposed</font><font color="#CCCCCC"> so that's kind of the the</font>
+
+243
+00:09:36,690 --> 00:09:39,060
+<font color="#CCCCCC">idea behind</font><font color="#E5E5E5"> that all right so again this</font>
+
+244
+00:09:39,060 --> 00:09:41,480
+is the number<font color="#E5E5E5"> three you know</font>
+
+245
+00:09:41,480 --> 00:09:44,070
+vulnerability on the OWASP top<font color="#CCCCCC"> ten on</font>
+
+246
+00:09:44,070 --> 00:09:45,600
+this list that<font color="#CCCCCC"> just came out sensitive</font>
+
+247
+00:09:45,600 --> 00:09:48,089
+data<font color="#E5E5E5"> exposure so it's happening</font><font color="#CCCCCC"> a lot</font>
+
+248
+00:09:48,089 --> 00:09:49,950
+again<font color="#CCCCCC"> all you have</font><font color="#E5E5E5"> to do is watch</font><font color="#CCCCCC"> the</font>
+
+249
+00:09:49,950 --> 00:09:51,360
+news these days<font color="#E5E5E5"> and you see this kind of</font>
+
+250
+00:09:51,360 --> 00:09:54,329
+stuff<font color="#E5E5E5"> happening so do these things build</font>
+
+251
+00:09:54,329 --> 00:09:56,640
+your web applications properly<font color="#CCCCCC"> there are</font>
+
+252
+00:09:56,640 --> 00:09:57,959
+some other things<font color="#CCCCCC"> like</font><font color="#E5E5E5"> you could put a</font>
+
+253
+00:09:57,959 --> 00:10:00,149
+like a<font color="#E5E5E5"> web application</font><font color="#CCCCCC"> firewall</font><font color="#E5E5E5"> in line</font>
+
+254
+00:10:00,149 --> 00:10:02,130
+<font color="#E5E5E5">that may help</font><font color="#CCCCCC"> with this you know help</font>
+
+255
+00:10:02,130 --> 00:10:05,550
+help secure a lot of this sensitive data
+
+256
+00:10:05,550 --> 00:10:08,130
+exposure<font color="#E5E5E5"> but nonetheless be careful out</font>
+
+257
+00:10:08,130 --> 00:10:09,899
+<font color="#CCCCCC">there make sure</font><font color="#E5E5E5"> you do things properly</font>
+
+258
+00:10:09,899 --> 00:10:12,360
+<font color="#E5E5E5">and and let's be safe on the</font><font color="#CCCCCC"> internet</font>
+
+259
+00:10:12,360 --> 00:10:13,649
+today<font color="#E5E5E5"> so thanks for watching</font><font color="#CCCCCC"> this</font><font color="#E5E5E5"> light</font>
+
+260
+00:10:13,649 --> 00:10:15,240
+<font color="#E5E5E5">board lesson and we'll see you guys out</font>
+
+261
+00:10:15,240 --> 00:10:17,930
+<font color="#E5E5E5">there in the community</font>
+
+262
+00:10:23,570 --> 00:00:00,000
+you
+

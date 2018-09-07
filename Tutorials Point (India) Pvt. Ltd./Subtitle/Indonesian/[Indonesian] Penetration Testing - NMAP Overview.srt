@@ -1,0 +1,504 @@
+1
+00:00:00,060 --> 00:00:02,899
+ Halo semuanya <font color="#E5E5E5">sekarang mari kita bicara tentang dan </font>
+
+2
+00:00:02,899 --> 00:00:04,259
+ <font color="#E5E5E5">peta </font>
+
+3
+00:00:04,259 --> 00:00:07,350
+ jadi <font color="#CCCCCC">nmf adalah </font><font color="#E5E5E5">network mapper dan </font>
+
+4
+00:00:07,350 --> 00:00:09,750
+ ini adalah salah satu <font color="#CCCCCC">alat open-source terbaik </font>
+
+5
+00:00:09,750 --> 00:00:12,090
+ digunakan untuk <font color="#E5E5E5">memindai jaringan dengan </font>
+
+6
+00:00:12,090 --> 00:00:14,820
+ <font color="#E5E5E5">bantuan </font><font color="#CCCCCC">sebuah peta </font><font color="#E5E5E5">kita dapat memindai port terbuka </font>
+
+7
+00:00:14,820 --> 00:00:17,160
+ <font color="#E5E5E5">dan </font><font color="#CCCCCC">layanan yang </font><font color="#E5E5E5">berjalan pada mereka </font>
+
+8
+00:00:17,160 --> 00:00:20,670
+ <font color="#CCCCCC">termasuk </font><font color="#E5E5E5">nomor versi mereka jadi </font>
+
+9
+00:00:20,670 --> 00:00:22,949
+ <font color="#E5E5E5">dan peta juga digunakan </font><font color="#CCCCCC">untuk mencari </font>
+
+10
+00:00:22,949 --> 00:00:24,689
+ <font color="#E5E5E5">sistem operasi yang sedang </font><font color="#CCCCCC">berjalan </font><font color="#E5E5E5">di </font>
+
+11
+00:00:24,689 --> 00:00:27,180
+ host jarak jauh <font color="#CCCCCC">dan dengan bantuan </font><font color="#E5E5E5">n peta </font>
+
+12
+00:00:27,180 --> 00:00:30,210
+ kita <font color="#E5E5E5">bisa melakukan berbagai </font><font color="#CCCCCC">pemindaian </font><font color="#E5E5E5">termasuk </font>
+
+13
+00:00:30,210 --> 00:00:32,910
+ layanan dapat memindai agresif <font color="#E5E5E5">dan dengan </font>
+
+14
+00:00:32,910 --> 00:00:35,070
+ bantuan pemindaian agresif kami <font color="#E5E5E5">dapat mengambil </font>
+
+15
+00:00:35,070 --> 00:00:37,200
+ <font color="#E5E5E5">informasi yang lebih rinci </font><font color="#CCCCCC">termasuk </font>
+
+16
+00:00:37,200 --> 00:00:39,750
+ sistem operasi target kami dan 
+
+17
+00:00:39,750 --> 00:00:41,730
+ metadata <font color="#E5E5E5">dan beberapa </font><font color="#CCCCCC">informasi </font><font color="#E5E5E5">tambahan </font>
+
+18
+00:00:41,730 --> 00:00:44,610
+ <font color="#CCCCCC">seperti file internal sekarang mari kita lihat bagaimana kita </font>
+
+19
+00:00:44,610 --> 00:00:46,410
+ dapat <font color="#E5E5E5">menggunakan </font><font color="#CCCCCC">peta M </font><font color="#E5E5E5">untuk melakukan </font>
+
+20
+00:00:46,410 --> 00:00:50,100
+ <font color="#E5E5E5">berbagai scan sekarang mari kita lihat </font><font color="#CCCCCC">bagaimana kita </font>
+
+21
+00:00:50,100 --> 00:00:52,949
+ <font color="#CCCCCC">dapat menemukan port terbuka dan </font><font color="#E5E5E5">versinya </font>
+
+22
+00:00:52,949 --> 00:00:57,690
+ nomor dengan <font color="#CCCCCC">menggunakan n peta </font><font color="#E5E5E5">agar </font><font color="#CCCCCC">dapat digunakan </font>
+
+23
+00:00:57,690 --> 00:00:59,910
+ n peta <font color="#E5E5E5">kita harus memulai Kali Linux kita </font>
+
+24
+00:00:59,910 --> 00:01:03,570
+ <font color="#E5E5E5">dan di sini Anda dapat melihat bahwa </font><font color="#CCCCCC">sekarang </font><font color="#E5E5E5">saya </font>
+
+25
+00:01:03,570 --> 00:01:06,689
+ di dalam contoh Kali Linux saya begitu masuk 
+
+26
+00:01:06,689 --> 00:01:08,580
+ <font color="#CCCCCC">untuk memulai n peta pertama kita harus </font>
+
+27
+00:01:08,580 --> 00:01:09,630
+ <font color="#CCCCCC">buka terminal </font>
+
+28
+00:01:09,630 --> 00:01:14,580
+ biarkan saya membukanya <font color="#E5E5E5">sehingga </font><font color="#CCCCCC">untuk memulai </font>
+
+29
+00:01:14,580 --> 00:01:17,090
+ n peta kita <font color="#E5E5E5">hanya perlu menulis dan memetakan </font>
+
+30
+00:01:17,090 --> 00:01:20,580
+ diikuti oleh <font color="#E5E5E5">nama situs web atau IP </font>
+
+31
+00:01:20,580 --> 00:01:26,750
+ alamat jadi <font color="#CCCCCC">saya hanya </font><font color="#E5E5E5">menulis di sini </font>
+
+32
+00:01:29,060 --> 00:01:33,810
+ <font color="#CCCCCC">ok jadi setelah Anda menulis nama situs web </font>
+
+33
+00:01:33,810 --> 00:01:36,659
+ <font color="#E5E5E5">Anda juga dapat </font><font color="#CCCCCC">menulis port tertentu </font><font color="#E5E5E5">dan </font>
+
+34
+00:01:36,659 --> 00:01:39,180
+ mari kita pindai <font color="#E5E5E5">semua port yang ada </font>
+
+35
+00:01:39,180 --> 00:01:42,479
+ dibuka di situs web ini <font color="#E5E5E5">bersama dengan </font><font color="#CCCCCC">mereka </font>
+
+36
+00:01:42,479 --> 00:01:47,100
+ layanan sekarang biarkan <font color="#E5E5E5">aku menekan enter dan di sini </font>
+
+37
+00:01:47,100 --> 00:01:49,560
+ Anda dapat melihat bahwa <font color="#E5E5E5">pemindaian nmap kami telah </font>
+
+38
+00:01:49,560 --> 00:01:53,549
+ dimulai dan itu <font color="#E5E5E5">versi peta n saya 7.40 </font>
+
+39
+00:01:53,549 --> 00:01:55,890
+ ini adalah versi yang lebih baru <font color="#E5E5E5">karena saya </font>
+
+40
+00:01:55,890 --> 00:02:01,710
+ menggunakan Kali Linux <font color="#E5E5E5">2 dan itu menunjukkan kepada kita </font>
+
+41
+00:02:01,710 --> 00:02:05,969
+ detail dari <font color="#E5E5E5">pelabuhan </font><font color="#CCCCCC">Negara </font><font color="#E5E5E5">dan bersama dengan </font>
+
+42
+00:02:05,969 --> 00:02:09,149
+ <font color="#E5E5E5">layanannya sehingga Anda dapat melihat di sini </font>
+
+43
+00:02:09,149 --> 00:02:12,700
+ bahwa <font color="#E5E5E5">pada port 22 ini </font>
+
+44
+00:02:12,700 --> 00:02:15,099
+ <font color="#E5E5E5">state terbuka port 22 terbuka dan </font>
+
+45
+00:02:15,099 --> 00:02:18,340
+ layanan yang berjalan <font color="#E5E5E5">pada port 22 adalah </font><font color="#CCCCCC">SSH </font>
+
+46
+00:02:18,340 --> 00:02:21,959
+ jadi sama Anda dapat melihat layanan HTTP <font color="#CCCCCC">carbo </font>
+
+47
+00:02:21,959 --> 00:02:26,920
+ <font color="#CCCCCC">https </font><font color="#E5E5E5">dan beberapa layanan sekuel saya dan sedikit </font>
+
+48
+00:02:26,920 --> 00:02:29,650
+ layanan lain <font color="#E5E5E5">jadi ini adalah dasar </font>
+
+49
+00:02:29,650 --> 00:02:34,000
+ <font color="#E5E5E5">penggunaan nmap sekarang bagaimana jika jika kita </font><font color="#CCCCCC">ingin </font>
+
+50
+00:02:34,000 --> 00:02:37,360
+ memindai nomor versi atau yang Anda inginkan 
+
+51
+00:02:37,360 --> 00:02:39,550
+ menyebutkan nomor versi a 
+
+52
+00:02:39,550 --> 00:02:42,849
+ <font color="#E5E5E5">layanan tertentu </font><font color="#CCCCCC">jadi mengapa dalam pertemuan </font>
+
+53
+00:02:42,849 --> 00:02:45,310
+ <font color="#E5E5E5">nomor versi penting agar sebagai </font>
+
+54
+00:02:45,310 --> 00:02:48,340
+ Penetrasi tester <font color="#E5E5E5">tujuan utama Anda adalah untuk </font>
+
+55
+00:02:48,340 --> 00:02:51,310
+ <font color="#E5E5E5">menemukan </font><font color="#CCCCCC">nomor versi karena setelah Anda </font>
+
+56
+00:02:51,310 --> 00:02:53,410
+ dapatkan <font color="#CCCCCC">nomor versi </font><font color="#E5E5E5">sebuah penetrasi </font>
+
+57
+00:02:53,410 --> 00:02:57,610
+ tester dapat menggunakan beberapa alat atau dapat mencari 
+
+58
+00:02:57,610 --> 00:03:00,370
+ eksploitasi khusus sesuai dengan 
+
+59
+00:03:00,370 --> 00:03:02,709
+ <font color="#E5E5E5">nomor versi itu jadi itu sebabnya </font>
+
+60
+00:03:02,709 --> 00:03:06,069
+ pemindaian nomor versi <font color="#E5E5E5">harus demikian </font>
+
+61
+00:03:06,069 --> 00:03:09,459
+ ada satu scan dalam <font color="#CCCCCC">nmap yang disebut sebagai </font>
+
+62
+00:03:09,459 --> 00:03:12,400
+ <font color="#E5E5E5">scan versi jadi mari kita lihat bagaimana kita bisa </font><font color="#CCCCCC">menggunakan </font>
+
+63
+00:03:12,400 --> 00:03:17,019
+ jadi kita <font color="#CCCCCC">harus menulis </font><font color="#E5E5E5">dan memetakan - </font><font color="#CCCCCC">dan </font>
+
+64
+00:03:17,019 --> 00:03:21,250
+ modal <font color="#E5E5E5">V jadi s adalah </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">baja dan V ini </font>
+
+65
+00:03:21,250 --> 00:03:23,220
+ adalah untuk <font color="#E5E5E5">nomor versi yang diikuti oleh </font>
+
+66
+00:03:23,220 --> 00:03:26,829
+ <font color="#E5E5E5">nama situs web sehingga Anda </font><font color="#CCCCCC">bahkan </font><font color="#E5E5E5">dapat </font><font color="#CCCCCC">menulis </font>
+
+67
+00:03:26,829 --> 00:03:28,750
+ Alamat IP <font color="#E5E5E5">bukannya menulis </font>
+
+68
+00:03:28,750 --> 00:03:36,540
+ nama situs web hit masuk <font color="#CCCCCC">jadi semacam ini </font>
+
+69
+00:03:36,540 --> 00:03:47,970
+ scan <font color="#CCCCCC">mengambil sedikit waktu ok jadi ayo </font>
+
+70
+00:03:47,970 --> 00:03:49,630
+ lihat hasilnya 
+
+71
+00:03:49,630 --> 00:03:52,570
+ jadi <font color="#E5E5E5">di sini adalah port kemudian berikutnya </font>
+
+72
+00:03:52,570 --> 00:03:56,109
+ kolom <font color="#CCCCCC">adalah negara kemudian layanan dan </font>
+
+73
+00:03:56,109 --> 00:03:58,390
+ di sini Anda dapat melihat <font color="#E5E5E5">kolom tambahan </font>
+
+74
+00:03:58,390 --> 00:04:01,989
+ versi jadi output <font color="#E5E5E5">ini </font><font color="#CCCCCC">sama tetapi di sini </font>
+
+75
+00:04:01,989 --> 00:04:04,269
+ adalah hal <font color="#CCCCCC">jadi di sini adalah layanan sebagai </font>
+
+76
+00:04:04,269 --> 00:04:07,450
+ dada dan Anda bisa membaca <font color="#E5E5E5">versinya </font>
+
+77
+00:04:07,450 --> 00:04:12,459
+ <font color="#CCCCCC">OpenSSL 6.2 kemudian versi HTTP kemudian saya </font>
+
+78
+00:04:12,459 --> 00:04:16,630
+ sekuel dan jalur yang <font color="#CCCCCC">diterapkan jadi sekarang </font>
+
+79
+00:04:16,630 --> 00:04:18,970
+ memberi kami informasi tambahan <font color="#CCCCCC">itu </font>
+
+80
+00:04:18,970 --> 00:04:22,750
+ situs web <font color="#E5E5E5">ini dihosting di Mac di sini Anda </font>
+
+81
+00:04:22,750 --> 00:04:24,730
+ dapat melihat Mac OS 
+
+82
+00:04:24,730 --> 00:04:28,450
+ jadi ini semua <font color="#E5E5E5">tentang </font><font color="#CCCCCC">pemindaian </font><font color="#E5E5E5">layanan </font>
+
+83
+00:04:28,450 --> 00:04:31,340
+ jadi <font color="#E5E5E5">praktik terbaik dari suatu sistem </font>
+
+84
+00:04:31,340 --> 00:04:34,730
+ administrator sini adalah untuk <font color="#CCCCCC">menyembunyikan </font>
+
+85
+00:04:34,730 --> 00:04:38,470
+ nomor versi <font color="#E5E5E5">layanan yang sedang berjalan </font>
+
+86
+00:04:40,630 --> 00:04:43,669
+ jadi sekarang mari kita bicara <font color="#CCCCCC">tentang pemindaian agresif </font>
+
+87
+00:04:43,669 --> 00:04:47,000
+ dalam <font color="#E5E5E5">nmap scan yang begitu agresif adalah salah satu dari </font>
+
+88
+00:04:47,000 --> 00:04:49,880
+ <font color="#E5E5E5">scan paling kuat dari nmap karena </font>
+
+89
+00:04:49,880 --> 00:04:53,690
+ pemindaian agresif mengandung semua 
+
+90
+00:04:53,690 --> 00:04:56,120
+ fitur <font color="#CCCCCC">scan berbeda yang berbeda atau </font>
+
+91
+00:04:56,120 --> 00:04:57,950
+ Anda dapat mengatakan <font color="#E5E5E5">bahwa pemindaian agresif adalah a </font>
+
+92
+00:04:57,950 --> 00:05:00,860
+ kombinasi <font color="#E5E5E5">pemindaian yang berbeda sehingga oleh </font>
+
+93
+00:05:00,860 --> 00:05:02,810
+ pemindaian agresif dapat ditemukan 
+
+94
+00:05:02,810 --> 00:05:05,710
+ <font color="#E5E5E5">metadata nomor versi layanan </font>
+
+95
+00:05:05,710 --> 00:05:09,919
+ <font color="#CCCCCC">direktori yang tidak diizinkan </font><font color="#E5E5E5">dan bahkan </font>
+
+96
+00:05:09,919 --> 00:05:12,740
+ routing juga nama server DNS juga <font color="#CCCCCC">dan </font>
+
+97
+00:05:12,740 --> 00:05:15,500
+ beberapa <font color="#CCCCCC">hal tambahan </font><font color="#E5E5E5">jadi sekarang mari kita lihat </font>
+
+98
+00:05:15,500 --> 00:05:18,380
+ bagaimana kita bisa menggunakan <font color="#E5E5E5">pemindaian agresif suatu nmap </font>
+
+99
+00:05:18,380 --> 00:05:21,350
+ <font color="#E5E5E5">jadi </font><font color="#CCCCCC">untuk menggunakannya, kita </font><font color="#E5E5E5">harus </font><font color="#CCCCCC">kembali </font>
+
+100
+00:05:21,350 --> 00:05:25,880
+ tulis dan petakan <font color="#E5E5E5">- modal yang diikuti </font>
+
+101
+00:05:25,880 --> 00:05:29,290
+ <font color="#CCCCCC">nama situs web </font>
+
+102
+00:05:33,230 --> 00:05:35,870
+ jadi <font color="#E5E5E5">ini bisa </font><font color="#CCCCCC">scan agresif mengambil </font>
+
+103
+00:05:35,870 --> 00:05:39,230
+ <font color="#E5E5E5">sedikit waktu sehingga kita harus bersabar </font>
+
+104
+00:05:39,230 --> 00:05:41,650
+ <font color="#CCCCCC">baik </font>
+
+105
+00:05:45,890 --> 00:05:48,830
+ sekarang scan sudah <font color="#E5E5E5">selesai </font><font color="#CCCCCC">sekarang mari </font>
+
+106
+00:05:48,830 --> 00:05:54,500
+ menganalisis <font color="#E5E5E5">hasilnya oke jadi di sini Anda </font><font color="#CCCCCC">bisa </font>
+
+107
+00:05:54,500 --> 00:05:58,100
+ <font color="#E5E5E5">lihat itu pertama </font><font color="#CCCCCC">-tama yang telah disebutkan </font>
+
+108
+00:05:58,100 --> 00:06:04,550
+ <font color="#E5E5E5">kunci tuan rumah ssh lalu PHP </font>
+
+109
+00:06:04,550 --> 00:06:08,840
+ <font color="#CCCCCC">versi juga </font><font color="#E5E5E5">dari port 80 HTTP dan di sini </font>
+
+110
+00:06:08,840 --> 00:06:10,460
+ Anda dapat <font color="#E5E5E5">melihat informasi tambahan </font>
+
+111
+00:06:10,460 --> 00:06:14,120
+ <font color="#CCCCCC">seperti judul HTTP judul </font><font color="#E5E5E5">situs web </font><font color="#CCCCCC">bersama </font>
+
+112
+00:06:14,120 --> 00:06:17,390
+ <font color="#E5E5E5">dengan </font><font color="#CCCCCC">detail</font><font color="#E5E5E5"> SSL server jadi jika saya </font>
+
+113
+00:06:17,390 --> 00:06:20,090
+ gulir <font color="#CCCCCC">ke bawah </font><font color="#E5E5E5">Anda dapat melihat </font><font color="#CCCCCC">banyak juicy </font>
+
+114
+00:06:20,090 --> 00:06:22,640
+ detail <font color="#E5E5E5">bersama dengan </font><font color="#CCCCCC">server nama </font>
+
+115
+00:06:22,640 --> 00:06:33,560
+ <font color="#E5E5E5">server nama domain </font><font color="#CCCCCC">dan itu </font><font color="#E5E5E5">juga </font><font color="#CCCCCC">telah </font><font color="#E5E5E5">ditemukan </font>
+
+116
+00:06:33,560 --> 00:06:36,740
+ bahwa <font color="#CCCCCC">sistem operasi yang ini </font>
+
+117
+00:06:36,740 --> 00:06:37,940
+ situs web dihosting 
+
+118
+00:06:37,940 --> 00:06:42,350
+ jadi ini dihosting di <font color="#CCCCCC">apple OS </font><font color="#E5E5E5">X dan jika saya </font>
+
+119
+00:06:42,350 --> 00:06:45,200
+ gulir ke bawah di <font color="#E5E5E5">sini </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">akan melihat atau menemukan </font>
+
+120
+00:06:45,200 --> 00:06:47,720
+ <font color="#E5E5E5">detail traceroute jadi di sini Anda bisa </font>
+
+121
+00:06:47,720 --> 00:06:51,070
+ lihat <font color="#CCCCCC">traceroute </font>
+
+122
+00:06:55,100 --> 00:06:58,640
+ jadi ini bisa melakukan yang terbaik 
+
+123
+00:06:58,640 --> 00:07:05,450
+ <font color="#E5E5E5">pengumpulan </font><font color="#CCCCCC">informasi </font><font color="#E5E5E5">untuk target kita </font>
+
+124
+00:07:05,450 --> 00:07:08,810
+ ini semua <font color="#E5E5E5">tentang </font><font color="#CCCCCC">dan memetakan dan dasar </font>
+
+125
+00:07:08,810 --> 00:07:12,380
+ penggunaan <font color="#CCCCCC">peta</font><font color="#E5E5E5"> sekarang berkat untuk </font><font color="#CCCCCC">menonton </font>
+
+126
+00:07:12,380 --> 00:00:00,000
+ <font color="#CCCCCC">video ini </font>
+

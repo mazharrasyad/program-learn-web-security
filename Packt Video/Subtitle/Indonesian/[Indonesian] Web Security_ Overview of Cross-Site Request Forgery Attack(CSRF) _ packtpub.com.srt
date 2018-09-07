@@ -1,0 +1,260 @@
+1
+00:00:01,580 --> 00:00:03,640
+ <font color="#E5E5E5">kamu </font>
+
+2
+00:00:07,900 --> 00:00:11,410
+ Bagian ini menjadi <font color="#E5E5E5">layu tentang CSRF dan </font>
+
+3
+00:00:11,410 --> 00:00:15,070
+ logika jepit <font color="#E5E5E5">sekarang di bagian ini apa yang kita </font>
+
+4
+00:00:15,070 --> 00:00:17,110
+ akan <font color="#CCCCCC">belajar</font><font color="#E5E5E5"> pertama-tama kita akan </font>
+
+5
+00:00:17,110 --> 00:00:20,650
+ pelajari <font color="#CCCCCC">tentang apa itu </font><font color="#E5E5E5">CSRF dan kemudian kami </font>
+
+6
+00:00:20,650 --> 00:00:23,140
+ akan belajar <font color="#CCCCCC">tentang </font><font color="#E5E5E5">efek CSRF </font><font color="#CCCCCC">untuk </font>
+
+7
+00:00:23,140 --> 00:00:25,090
+ aplikasi <font color="#E5E5E5">kami akan melakukan beberapa </font>
+
+8
+00:00:25,090 --> 00:00:27,759
+ mempraktekkan <font color="#E5E5E5">bentuk beberapa suguhan di </font>
+
+9
+00:00:27,759 --> 00:00:29,380
+ video terakhir yang akan kita pelajari <font color="#CCCCCC">tentang semua itu </font>
+
+10
+00:00:29,380 --> 00:00:31,720
+ <font color="#CCCCCC">teknik yang berbeda tentang CSI merujuk pada </font>
+
+11
+00:00:31,720 --> 00:00:34,020
+ ikhtisar <font color="#E5E5E5">pemalsuan permintaan lintas situs </font>
+
+12
+00:00:34,020 --> 00:00:37,000
+ <font color="#CCCCCC">serangan di </font><font color="#E5E5E5">video ini kita akan </font>
+
+13
+00:00:37,000 --> 00:00:38,890
+ Lihatlah beberapa <font color="#E5E5E5">poin yang akan kita bahas </font>
+
+14
+00:00:38,890 --> 00:00:41,140
+ belajar <font color="#CCCCCC">tentang </font><font color="#E5E5E5">apa itu </font><font color="#CCCCCC">serangan CSRF dan kemudian </font>
+
+15
+00:00:41,140 --> 00:00:43,929
+ kami akan menjelaskan tentang <font color="#E5E5E5">proses </font>
+
+16
+00:00:43,929 --> 00:00:47,739
+ <font color="#E5E5E5">Serangan CSRF pada </font><font color="#CCCCCC">persamaan </font><font color="#E5E5E5">tombol </font><font color="#CCCCCC">jadi </font>
+
+17
+00:00:47,739 --> 00:00:52,030
+ mari kita bicara tentang <font color="#E5E5E5">CSRF </font><font color="#CCCCCC">atau </font><font color="#E5E5E5">CSRF atau xsrf </font>
+
+18
+00:00:52,030 --> 00:00:54,399
+ <font color="#E5E5E5">juga disebut xsrf apa yang penuh </font>
+
+19
+00:00:54,399 --> 00:00:56,710
+ <font color="#E5E5E5">bentuk pemalsuan permintaan lintas situs CSRF </font>
+
+20
+00:00:56,710 --> 00:00:59,409
+ adalah <font color="#E5E5E5">bentuk penuh CSRF itu juga </font>
+
+21
+00:00:59,409 --> 00:01:01,390
+ disebut <font color="#CCCCCC">accessorize </font><font color="#E5E5E5">apa artinya </font>
+
+22
+00:01:01,390 --> 00:01:04,989
+ <font color="#E5E5E5">CSRF dan bagaimana cara kerjanya sehingga serangan CSRF </font>
+
+23
+00:01:04,989 --> 00:01:07,510
+ adalah serangan besar <font color="#E5E5E5">pada aplikasi web </font><font color="#CCCCCC">saya </font>
+
+24
+00:01:07,510 --> 00:01:08,500
+ <font color="#E5E5E5">sudah memberitahumu itu </font>
+
+25
+00:01:08,500 --> 00:01:11,650
+ <font color="#E5E5E5">Latihan injeksi SQL dan CS </font><font color="#CCCCCC">atom </font><font color="#E5E5E5">ini </font>
+
+26
+00:01:11,650 --> 00:01:13,210
+ tiga serangan adalah <font color="#E5E5E5">yang paling penting </font>
+
+27
+00:01:13,210 --> 00:01:16,240
+ serangan yang tersedia di <font color="#CCCCCC">aplikasi web di </font>
+
+28
+00:01:16,240 --> 00:01:18,580
+ penyerang mana yang <font color="#E5E5E5">mengeksekusi tindakan yang tidak diinginkan </font>
+
+29
+00:01:18,580 --> 00:01:20,460
+ dalam aplikasi web untuk <font color="#E5E5E5">mengelabui pengguna </font>
+
+30
+00:01:20,460 --> 00:01:23,740
+ <font color="#E5E5E5">benar-benar benar </font><font color="#CCCCCC">jadi </font><font color="#E5E5E5">pada dasarnya jika ini </font>
+
+31
+00:01:23,740 --> 00:01:25,660
+ <font color="#E5E5E5">adalah browser dan jika ini adalah pengguna </font>
+
+32
+00:01:25,660 --> 00:01:27,490
+ siapa yang menggunakan <font color="#E5E5E5">browser jadi apa yang bisa </font>
+
+33
+00:01:27,490 --> 00:01:30,400
+ <font color="#E5E5E5">terjadi </font><font color="#CCCCCC">misalnya jika pengguna mencoba </font>
+
+34
+00:01:30,400 --> 00:01:32,950
+ mengirim atau mentransfer uang <font color="#CCCCCC">dari banknya </font>
+
+35
+00:01:32,950 --> 00:01:35,800
+ akun ke akun <font color="#E5E5E5">bank temannya begitu </font>
+
+36
+00:01:35,800 --> 00:01:36,580
+ apa yang <font color="#E5E5E5">bisa terjadi </font>
+
+37
+00:01:36,580 --> 00:01:39,640
+ <font color="#CCCCCC">penyerang dapat menipu pengguna </font><font color="#E5E5E5">jadi apa </font>
+
+38
+00:01:39,640 --> 00:01:41,770
+ akan terjadi <font color="#CCCCCC">pada dasarnya akan </font><font color="#E5E5E5">mengubah </font>
+
+39
+00:01:41,770 --> 00:01:45,520
+ permintaan <font color="#CCCCCC">pengguna dan itu akan ditransfer </font>
+
+40
+00:01:45,520 --> 00:01:48,400
+ <font color="#E5E5E5">dana dari akunnya kepada seseorang </font>
+
+41
+00:01:48,400 --> 00:01:50,020
+ <font color="#CCCCCC">akun lain </font><font color="#E5E5E5">jadi ini adalah jenis </font>
+
+42
+00:01:50,020 --> 00:01:55,390
+ skenario <font color="#E5E5E5">di dalam CSS dan ini adalah sederhana </font>
+
+43
+00:01:55,390 --> 00:01:58,210
+ Skenario <font color="#E5E5E5">tetapi mereka beberapa skenario </font>
+
+44
+00:01:58,210 --> 00:02:00,660
+ tersedia di <font color="#E5E5E5">CSRF yang akan kita bicarakan </font>
+
+45
+00:02:00,660 --> 00:02:03,880
+ <font color="#E5E5E5">kemudian </font><font color="#CCCCCC">di video </font><font color="#E5E5E5">jadi inilah </font>
+
+46
+00:02:03,880 --> 00:02:06,310
+ Skenario <font color="#CCCCCC">benar jadi dia adalah korban yang </font>
+
+47
+00:02:06,310 --> 00:02:07,780
+ sedang <font color="#E5E5E5">mencoba </font><font color="#CCCCCC">menggunakan situs web yang sedang mencoba </font>
+
+48
+00:02:07,780 --> 00:02:10,628
+ <font color="#CCCCCC">untuk </font><font color="#E5E5E5">menggunakan server web yang </font><font color="#CCCCCC">tepat dan dia memilikinya </font>
+
+49
+00:02:10,628 --> 00:02:13,060
+ cookie benar jadi apa gunanya <font color="#E5E5E5">ini </font>
+
+50
+00:02:13,060 --> 00:02:15,280
+ menyerang <font color="#CCCCCC">dalam hal penyerang </font>
+
+51
+00:02:15,280 --> 00:02:19,299
+ jadi <font color="#E5E5E5">penyerang akan menipu pengguna dan pengguna </font>
+
+52
+00:02:19,299 --> 00:02:21,489
+ secara otomatis akan <font color="#E5E5E5">mengarahkan Anda sebagian </font>
+
+53
+00:02:21,489 --> 00:02:21,700
+ itu 
+
+54
+00:02:21,700 --> 00:02:23,920
+ situs web jahat <font color="#CCCCCC">dia tidak </font><font color="#E5E5E5">akan langsung </font>
+
+55
+00:02:23,920 --> 00:02:25,660
+ ke <font color="#E5E5E5">situs web asli yang akan dialihkan </font>
+
+56
+00:02:25,660 --> 00:02:27,430
+ ke beberapa <font color="#E5E5E5">situs web jahat apa yang bisa </font>
+
+57
+00:02:27,430 --> 00:02:29,769
+ terjadi sekarang penyerang <font color="#CCCCCC">pada dasarnya bisa mencuri </font>
+
+58
+00:02:29,769 --> 00:02:32,470
+ cookie <font color="#E5E5E5">atau sesi dari korban ini dan </font>
+
+59
+00:02:32,470 --> 00:02:34,660
+ dapat mengambil <font color="#E5E5E5">alih sesi lengkap dan </font>
+
+60
+00:02:34,660 --> 00:02:37,450
+ dapat memanipulasi akun pribadinya sebagai 
+
+61
+00:02:37,450 --> 00:02:39,640
+ <font color="#CCCCCC">jadi </font><font color="#E5E5E5">ini adalah jenis serangan CSRF </font>
+
+62
+00:02:39,640 --> 00:02:41,890
+ saat penyerang memanipulasi kueri 
+
+63
+00:02:41,890 --> 00:02:44,230
+ <font color="#E5E5E5">yang dihasilkan oleh korban baik-baik </font>
+
+64
+00:02:44,230 --> 00:02:46,690
+ ini semua <font color="#E5E5E5">tentang CSRF dan prosesnya </font>
+
+65
+00:02:46,690 --> 00:00:00,000
+ dari <font color="#CCCCCC">csr </font>
+

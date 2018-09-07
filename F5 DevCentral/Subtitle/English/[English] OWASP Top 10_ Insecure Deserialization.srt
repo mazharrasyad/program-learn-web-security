@@ -1,0 +1,816 @@
+1
+00:00:08,450 --> 00:00:10,620
+hey everybody<font color="#E5E5E5"> john wagon on here with</font>
+
+2
+00:00:10,620 --> 00:00:11,849
+<font color="#CCCCCC">deaf central we're coming to you with</font>
+
+3
+00:00:11,849 --> 00:00:14,070
+another<font color="#E5E5E5"> light board lesson video today</font>
+
+4
+00:00:14,070 --> 00:00:15,809
+we're<font color="#E5E5E5"> gonna be in the old wasp</font><font color="#CCCCCC"> top ten</font>
+
+5
+00:00:15,809 --> 00:00:18,480
+<font color="#CCCCCC">again</font><font color="#E5E5E5"> today is the number eight out of</font>
+
+6
+00:00:18,480 --> 00:00:22,500
+<font color="#E5E5E5">ten security risk on the OWASP list</font><font color="#CCCCCC"> the</font>
+
+7
+00:00:22,500 --> 00:00:25,550
+name<font color="#E5E5E5"> of this risk is insecure</font>
+
+8
+00:00:25,550 --> 00:00:27,359
+<font color="#E5E5E5">deserialization</font>
+
+9
+00:00:27,359 --> 00:00:30,029
+<font color="#E5E5E5">and this is new to the top ten actually</font>
+
+10
+00:00:30,029 --> 00:00:32,130
+<font color="#E5E5E5">this</font><font color="#CCCCCC"> year it was not on</font><font color="#E5E5E5"> the last top</font><font color="#CCCCCC"> 10</font>
+
+11
+00:00:32,130 --> 00:00:34,980
+list<font color="#CCCCCC"> mainly partly because it's</font><font color="#E5E5E5"> so hard</font>
+
+12
+00:00:34,980 --> 00:00:36,600
+<font color="#E5E5E5">to say no</font><font color="#CCCCCC"> I</font><font color="#E5E5E5"> don't think that's</font><font color="#CCCCCC"> actually</font>
+
+13
+00:00:36,600 --> 00:00:38,730
+true<font color="#E5E5E5"> but anyway</font><font color="#CCCCCC"> but it's a it probably</font>
+
+14
+00:00:38,730 --> 00:00:41,160
+takes<font color="#E5E5E5"> the award for the hardest security</font>
+
+15
+00:00:41,160 --> 00:00:42,809
+risk to<font color="#E5E5E5"> say I'm it on the entire top</font><font color="#CCCCCC"> 10</font>
+
+16
+00:00:42,809 --> 00:00:43,230
+list
+
+17
+00:00:43,230 --> 00:00:46,890
+anyway<font color="#E5E5E5"> insecure deserialization so many</font>
+
+18
+00:00:46,890 --> 00:00:48,840
+of you may<font color="#CCCCCC"> be</font><font color="#E5E5E5"> asking what is insecurity</font>
+
+19
+00:00:48,840 --> 00:00:51,270
+deserialization<font color="#CCCCCC"> and i guess to talk</font>
+
+20
+00:00:51,270 --> 00:00:53,250
+about<font color="#E5E5E5"> that we need to back</font><font color="#CCCCCC"> up and</font><font color="#E5E5E5"> talk</font>
+
+21
+00:00:53,250 --> 00:00:55,680
+about<font color="#E5E5E5"> the concept of serialization and</font>
+
+22
+00:00:55,680 --> 00:00:58,859
+in web applications<font color="#CCCCCC"> you'll have an</font>
+
+23
+00:00:58,859 --> 00:01:00,539
+<font color="#CCCCCC">object</font><font color="#E5E5E5"> so I'm just gonna write</font><font color="#CCCCCC"> a couple</font>
+
+24
+00:01:00,539 --> 00:01:03,210
+<font color="#E5E5E5">things here</font><font color="#CCCCCC"> so you'll have an object</font><font color="#E5E5E5"> out</font>
+
+25
+00:01:03,210 --> 00:01:06,570
+here maybe<font color="#E5E5E5"> you have like a you</font><font color="#CCCCCC"> have like</font>
+
+26
+00:01:06,570 --> 00:01:11,580
+a PHP<font color="#CCCCCC"> you know site or PHP forum</font><font color="#E5E5E5"> that's</font>
+
+27
+00:01:11,580 --> 00:01:12,720
+you<font color="#CCCCCC"> that you want</font><font color="#E5E5E5"> to host and you have</font>
+
+28
+00:01:12,720 --> 00:01:15,090
+this object and then you<font color="#E5E5E5"> want and then</font>
+
+29
+00:01:15,090 --> 00:01:18,150
+you need to<font color="#E5E5E5"> send it</font><font color="#CCCCCC"> across a network to</font>
+
+30
+00:01:18,150 --> 00:01:20,100
+another place or whatever<font color="#E5E5E5"> maybe need</font><font color="#CCCCCC"> to</font>
+
+31
+00:01:20,100 --> 00:01:22,560
+store it in a<font color="#E5E5E5"> database or store it in</font>
+
+32
+00:01:22,560 --> 00:01:25,830
+<font color="#E5E5E5">memory or that kind of thing</font><font color="#CCCCCC"> the the</font>
+
+33
+00:01:25,830 --> 00:01:28,619
+concept<font color="#E5E5E5"> of serialization is taking an</font>
+
+34
+00:01:28,619 --> 00:01:31,140
+<font color="#CCCCCC">object and transferring it or turning it</font>
+
+35
+00:01:31,140 --> 00:01:36,380
+<font color="#E5E5E5">into what I'll call a byte stream or a</font>
+
+36
+00:01:36,380 --> 00:01:42,210
+stream or a stream of bytes<font color="#CCCCCC"> so that it</font>
+
+37
+00:01:42,210 --> 00:01:44,670
+can be in the proper<font color="#E5E5E5"> format in order</font><font color="#CCCCCC"> to</font>
+
+38
+00:01:44,670 --> 00:01:49,170
+traverse things like an HTTP<font color="#CCCCCC"> network or</font>
+
+39
+00:01:49,170 --> 00:01:51,329
+so that<font color="#E5E5E5"> it can be stored in a database</font>
+
+40
+00:01:51,329 --> 00:01:53,909
+or to maybe save the memory<font color="#E5E5E5"> that kind of</font>
+
+41
+00:01:53,909 --> 00:01:55,860
+thing some<font color="#E5E5E5"> of the reasons</font><font color="#CCCCCC"> that you would</font>
+
+42
+00:01:55,860 --> 00:01:58,590
+<font color="#CCCCCC">use serialization is because you can</font>
+
+43
+00:01:58,590 --> 00:02:01,530
+save or persist the state of the<font color="#CCCCCC"> object</font>
+
+44
+00:02:01,530 --> 00:02:03,689
+so<font color="#CCCCCC"> that whenever you send it across</font><font color="#E5E5E5"> the</font>
+
+45
+00:02:03,689 --> 00:02:05,369
+wire then you know then this<font color="#E5E5E5"> then the</font>
+
+46
+00:02:05,369 --> 00:02:07,039
+state of the persistence is still there
+
+47
+00:02:07,039 --> 00:02:09,628
+<font color="#CCCCCC">so when you</font><font color="#E5E5E5"> when you take an object and</font>
+
+48
+00:02:09,628 --> 00:02:11,489
+<font color="#CCCCCC">you turn it</font><font color="#E5E5E5"> into a stream of bytes or</font>
+
+49
+00:02:11,489 --> 00:02:13,130
+into byte stream<font color="#E5E5E5"> format</font>
+
+50
+00:02:13,130 --> 00:02:14,330
+then that is<font color="#CCCCCC"> the process of</font>
+
+51
+00:02:14,330 --> 00:02:16,940
+<font color="#E5E5E5">serialization so just like in most</font>
+
+52
+00:02:16,940 --> 00:02:19,250
+<font color="#CCCCCC">things networking whenever you do</font>
+
+53
+00:02:19,250 --> 00:02:21,950
+<font color="#CCCCCC">something one way and then</font><font color="#E5E5E5"> you send it</font>
+
+54
+00:02:21,950 --> 00:02:23,660
+across and<font color="#E5E5E5"> the person receiving</font><font color="#CCCCCC"> it is</font>
+
+55
+00:02:23,660 --> 00:02:25,130
+<font color="#E5E5E5">going to have to undo that and so the</font>
+
+56
+00:02:25,130 --> 00:02:27,050
+same is<font color="#CCCCCC"> true here so when</font><font color="#E5E5E5"> you take that</font>
+
+57
+00:02:27,050 --> 00:02:28,790
+stream<font color="#CCCCCC"> of bye to that byte stream and</font>
+
+58
+00:02:28,790 --> 00:02:31,700
+then you turn<font color="#CCCCCC"> it back</font><font color="#E5E5E5"> into that that</font>
+
+59
+00:02:31,700 --> 00:02:35,630
+<font color="#E5E5E5">same</font><font color="#CCCCCC"> object then that turning it from</font>
+
+60
+00:02:35,630 --> 00:02:37,520
+<font color="#CCCCCC">bikes</font><font color="#E5E5E5"> treatment back into</font><font color="#CCCCCC"> object is</font>
+
+61
+00:02:37,520 --> 00:02:38,980
+<font color="#CCCCCC">deserialization</font>
+
+62
+00:02:38,980 --> 00:02:42,910
+<font color="#E5E5E5">many many programming languages today</font>
+
+63
+00:02:42,910 --> 00:02:45,680
+<font color="#CCCCCC">utilize this or</font><font color="#E5E5E5"> have the capability to</font>
+
+64
+00:02:45,680 --> 00:02:48,140
+serialize objects<font color="#E5E5E5"> for the for the</font>
+
+65
+00:02:48,140 --> 00:02:49,790
+reasons<font color="#E5E5E5"> that I stated plus many others</font>
+
+66
+00:02:49,790 --> 00:02:52,970
+so this this concept<font color="#CCCCCC"> of</font><font color="#E5E5E5"> serialization</font>
+
+67
+00:02:52,970 --> 00:02:55,520
+deserialization<font color="#CCCCCC"> is out there in web</font>
+
+68
+00:02:55,520 --> 00:02:58,760
+applications today so the<font color="#E5E5E5"> the question</font>
+
+69
+00:02:58,760 --> 00:03:01,820
+<font color="#CCCCCC">is how could this be a problem and the</font>
+
+70
+00:03:01,820 --> 00:03:04,610
+kind<font color="#CCCCCC"> of the bottom line answer is</font><font color="#E5E5E5"> this</font>
+
+71
+00:03:04,610 --> 00:03:06,920
+gets<font color="#E5E5E5"> back</font><font color="#CCCCCC"> to other</font><font color="#E5E5E5"> security risks that</font>
+
+72
+00:03:06,920 --> 00:03:08,330
+we've kind of seen a<font color="#CCCCCC"> pattern of as we</font>
+
+73
+00:03:08,330 --> 00:03:10,430
+walk<font color="#CCCCCC"> through this top</font><font color="#E5E5E5"> 10 and that is if</font>
+
+74
+00:03:10,430 --> 00:03:15,980
+you take untrusted user input and you
+
+75
+00:03:15,980 --> 00:03:18,470
+don't validate<font color="#CCCCCC"> that</font><font color="#E5E5E5"> and then you allow</font>
+
+76
+00:03:18,470 --> 00:03:20,170
+that untrusted user input to<font color="#CCCCCC"> be</font>
+
+77
+00:03:20,170 --> 00:03:23,000
+deserialized<font color="#E5E5E5"> from</font><font color="#CCCCCC"> byte stream back into</font>
+
+78
+00:03:23,000 --> 00:03:25,400
+object<font color="#E5E5E5"> then an attacker could take</font>
+
+79
+00:03:25,400 --> 00:03:28,460
+advantage<font color="#E5E5E5"> of that and throw an insert</font>
+
+80
+00:03:28,460 --> 00:03:32,180
+untrusted untrusted input and the this
+
+81
+00:03:32,180 --> 00:03:34,010
+<font color="#E5E5E5">process of D serialization could cause</font>
+
+82
+00:03:34,010 --> 00:03:39,380
+<font color="#CCCCCC">that attackers you know</font><font color="#E5E5E5"> attack vector to</font>
+
+83
+00:03:39,380 --> 00:03:41,720
+do bad things<font color="#CCCCCC"> to your web application</font><font color="#E5E5E5"> so</font>
+
+84
+00:03:41,720 --> 00:03:43,940
+<font color="#E5E5E5">let's say for</font><font color="#CCCCCC"> example I'll go back to</font>
+
+85
+00:03:43,940 --> 00:03:46,220
+this<font color="#E5E5E5"> PHP let's say we have a PHP forum</font>
+
+86
+00:03:46,220 --> 00:03:50,180
+so I'm gonna and it<font color="#E5E5E5"> uses these objects</font>
+
+87
+00:03:50,180 --> 00:03:52,220
+<font color="#CCCCCC">and let's say that as a part of that</font>
+
+88
+00:03:52,220 --> 00:03:57,620
+<font color="#E5E5E5">forum we want to save a save I'm gonna</font>
+
+89
+00:03:57,620 --> 00:04:02,930
+say this cookie<font color="#CCCCCC"> that includes a lot of</font>
+
+90
+00:04:02,930 --> 00:04:05,000
+<font color="#CCCCCC">different things</font><font color="#E5E5E5"> and the things that it</font>
+
+91
+00:04:05,000 --> 00:04:06,200
+includes I'm going to write<font color="#E5E5E5"> them right</font>
+
+92
+00:04:06,200 --> 00:04:11,209
+<font color="#E5E5E5">here I'm gonna say</font><font color="#CCCCCC"> user ID I'm gonna say</font>
+
+93
+00:04:11,209 --> 00:04:14,840
+<font color="#CCCCCC">it includes they're maybe their password</font>
+
+94
+00:04:14,840 --> 00:04:17,589
+or I'm sorry<font color="#E5E5E5"> maybe a role that they have</font>
+
+95
+00:04:17,589 --> 00:04:20,839
+<font color="#E5E5E5">maybe it includes like some password</font>
+
+96
+00:04:20,839 --> 00:04:25,430
+hash information<font color="#E5E5E5"> things like that</font><font color="#CCCCCC"> maybe</font>
+
+97
+00:04:25,430 --> 00:04:27,000
+<font color="#E5E5E5">the</font><font color="#CCCCCC"> state of the</font>
+
+98
+00:04:27,000 --> 00:04:28,530
+you know whatever it<font color="#CCCCCC"> is so let's say</font>
+
+99
+00:04:28,530 --> 00:04:30,660
+<font color="#CCCCCC">that there's a super cookie that is</font><font color="#E5E5E5"> used</font>
+
+100
+00:04:30,660 --> 00:04:33,240
+in<font color="#E5E5E5"> this PHP forum</font><font color="#CCCCCC"> that includes all</font>
+
+101
+00:04:33,240 --> 00:04:36,210
+these different<font color="#E5E5E5"> you know attributes of</font>
+
+102
+00:04:36,210 --> 00:04:38,730
+<font color="#E5E5E5">what this object would have all right so</font>
+
+103
+00:04:38,730 --> 00:04:41,340
+<font color="#CCCCCC">let's say that in a typical scenario</font><font color="#E5E5E5"> you</font>
+
+104
+00:04:41,340 --> 00:04:45,570
+<font color="#CCCCCC">have</font><font color="#E5E5E5"> Alice who is going to save her</font>
+
+105
+00:04:45,570 --> 00:04:48,870
+cookie here<font color="#E5E5E5"> and so the the</font><font color="#CCCCCC"> the proper</font>
+
+106
+00:04:48,870 --> 00:04:51,450
+format would be you know Alice<font color="#E5E5E5"> and then</font>
+
+107
+00:04:51,450 --> 00:04:55,050
+her role<font color="#E5E5E5"> let's say is user and then</font>
+
+108
+00:04:55,050 --> 00:04:57,300
+maybe her password hash is you know<font color="#CCCCCC"> one</font>
+
+109
+00:04:57,300 --> 00:05:00,300
+<font color="#CCCCCC">two three four</font><font color="#E5E5E5"> and then</font><font color="#CCCCCC"> maybe like it</font>
+
+110
+00:05:00,300 --> 00:05:01,740
+<font color="#CCCCCC">maybe you</font><font color="#E5E5E5"> save some state type</font>
+
+111
+00:05:01,740 --> 00:05:04,410
+information<font color="#E5E5E5"> and you know that's X Y Z</font>
+
+112
+00:05:04,410 --> 00:05:05,970
+whatever<font color="#E5E5E5"> it is all right so that's a</font>
+
+113
+00:05:05,970 --> 00:05:08,760
+<font color="#E5E5E5">that's a typical user in this forum and</font>
+
+114
+00:05:08,760 --> 00:05:11,160
+<font color="#E5E5E5">that's the that's the</font><font color="#CCCCCC"> super cookie as it</font>
+
+115
+00:05:11,160 --> 00:05:14,910
+were<font color="#E5E5E5"> object that's that's saved</font><font color="#CCCCCC"> well</font>
+
+116
+00:05:14,910 --> 00:05:16,830
+let's say that<font color="#CCCCCC"> an attacker comes in and</font>
+
+117
+00:05:16,830 --> 00:05:19,919
+your web application does<font color="#CCCCCC"> not validate</font>
+
+118
+00:05:19,919 --> 00:05:24,090
+<font color="#E5E5E5">the user input</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> so an attacker is</font>
+
+119
+00:05:24,090 --> 00:05:26,490
+<font color="#CCCCCC">going</font><font color="#E5E5E5"> to be able to insert this</font>
+
+120
+00:05:26,490 --> 00:05:28,800
+serialized data and then as<font color="#E5E5E5"> you</font>
+
+121
+00:05:28,800 --> 00:05:31,050
+<font color="#E5E5E5">deserialize it then it's gonna run some</font>
+
+122
+00:05:31,050 --> 00:05:33,030
+malicious stuff<font color="#E5E5E5"> so let's say that the</font>
+
+123
+00:05:33,030 --> 00:05:35,640
+attacker comes in and is able<font color="#E5E5E5"> to put</font>
+
+124
+00:05:35,640 --> 00:05:37,620
+information<font color="#CCCCCC"> in</font><font color="#E5E5E5"> this super cookie and</font>
+
+125
+00:05:37,620 --> 00:05:40,110
+let's say<font color="#CCCCCC"> that is Eve now they change</font>
+
+126
+00:05:40,110 --> 00:05:42,810
+the user name<font color="#CCCCCC"> to Eve and</font><font color="#E5E5E5"> maybe they</font>
+
+127
+00:05:42,810 --> 00:05:46,910
+<font color="#CCCCCC">changed</font><font color="#E5E5E5"> the role from user to admin and</font>
+
+128
+00:05:46,910 --> 00:05:50,030
+<font color="#E5E5E5">then they keep the same password hash</font>
+
+129
+00:05:50,030 --> 00:05:52,620
+because<font color="#E5E5E5"> they know that it that it gets</font>
+
+130
+00:05:52,620 --> 00:05:54,570
+them in and then the state is<font color="#CCCCCC"> going to</font>
+
+131
+00:05:54,570 --> 00:05:56,630
+<font color="#E5E5E5">be the same as well</font><font color="#CCCCCC"> alright so</font>
+
+132
+00:05:56,630 --> 00:05:58,710
+<font color="#E5E5E5">effectively what the attacker has done</font>
+
+133
+00:05:58,710 --> 00:06:01,710
+is taken taken<font color="#CCCCCC"> this object taking</font>
+
+134
+00:06:01,710 --> 00:06:02,970
+<font color="#E5E5E5">advantage of the fact that it is</font>
+
+135
+00:06:02,970 --> 00:06:05,100
+<font color="#E5E5E5">serialized and of course</font><font color="#CCCCCC"> deserialized</font>
+
+136
+00:06:05,100 --> 00:06:08,130
+<font color="#E5E5E5">and then when when they insert this</font>
+
+137
+00:06:08,130 --> 00:06:11,070
+malicious code as it<font color="#CCCCCC"> were now they have</font>
+
+138
+00:06:11,070 --> 00:06:13,020
+effectively<font color="#E5E5E5"> when this is</font><font color="#CCCCCC"> deserialized</font>
+
+139
+00:06:13,020 --> 00:06:16,200
+because this user input is not<font color="#E5E5E5"> validated</font>
+
+140
+00:06:16,200 --> 00:06:19,110
+on the web application side then they've
+
+141
+00:06:19,110 --> 00:06:21,680
+given themselves admin<font color="#CCCCCC"> access into that</font>
+
+142
+00:06:21,680 --> 00:06:25,080
+<font color="#E5E5E5">into that web application effectively</font><font color="#CCCCCC"> so</font>
+
+143
+00:06:25,080 --> 00:06:26,130
+what are some<font color="#E5E5E5"> of</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> things that</font><font color="#CCCCCC"> could</font>
+
+144
+00:06:26,130 --> 00:06:28,830
+happen with<font color="#E5E5E5"> this well ultimately</font><font color="#CCCCCC"> you</font>
+
+145
+00:06:28,830 --> 00:06:30,510
+could have things<font color="#E5E5E5"> like remote code</font>
+
+146
+00:06:30,510 --> 00:06:32,190
+execution that could<font color="#E5E5E5"> start happening</font>
+
+147
+00:06:32,190 --> 00:06:33,900
+here that<font color="#CCCCCC"> would be a really</font><font color="#E5E5E5"> bad</font><font color="#CCCCCC"> thing of</font>
+
+148
+00:06:33,900 --> 00:06:36,419
+course<font color="#E5E5E5"> you could do some denial</font><font color="#CCCCCC"> of</font>
+
+149
+00:06:36,419 --> 00:06:39,150
+service attacks using using
+
+150
+00:06:39,150 --> 00:06:42,360
+vectors like this<font color="#CCCCCC"> any number</font><font color="#E5E5E5"> of things a</font>
+
+151
+00:06:42,360 --> 00:06:44,090
+couple<font color="#CCCCCC"> of</font><font color="#E5E5E5"> things</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> I'll say about</font>
+
+152
+00:06:44,090 --> 00:06:47,370
+<font color="#E5E5E5">insecure deserialization is that it's</font>
+
+153
+00:06:47,370 --> 00:06:50,910
+not that<font color="#CCCCCC"> easy for most</font><font color="#E5E5E5"> people to find</font>
+
+154
+00:06:50,910 --> 00:06:52,199
+these because<font color="#E5E5E5"> it's kind of this niche</font>
+
+155
+00:06:52,199 --> 00:06:55,650
+area<font color="#CCCCCC"> so you would need to</font><font color="#E5E5E5"> you need to</font>
+
+156
+00:06:55,650 --> 00:06:57,030
+really scrub the code you<font color="#E5E5E5"> would need to</font>
+
+157
+00:06:57,030 --> 00:06:59,070
+use<font color="#E5E5E5"> a lot of scanning tools and frankly</font>
+
+158
+00:06:59,070 --> 00:07:00,870
+some human intervention as well<font color="#E5E5E5"> to say</font>
+
+159
+00:07:00,870 --> 00:07:03,389
+hey<font color="#E5E5E5"> are we deserializing</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> proper</font>
+
+160
+00:07:03,389 --> 00:07:05,610
+things and doing it in<font color="#E5E5E5"> an insecure way</font>
+
+161
+00:07:05,610 --> 00:07:07,800
+<font color="#CCCCCC">so this</font><font color="#E5E5E5"> does take a little</font><font color="#CCCCCC"> more human</font>
+
+162
+00:07:07,800 --> 00:07:10,080
+interaction to to<font color="#E5E5E5"> check it out and to</font>
+
+163
+00:07:10,080 --> 00:07:11,610
+make<font color="#CCCCCC"> sure</font><font color="#E5E5E5"> or to know if you're</font>
+
+164
+00:07:11,610 --> 00:07:14,760
+vulnerable<font color="#E5E5E5"> to this</font><font color="#CCCCCC"> but nonetheless</font><font color="#E5E5E5"> it is</font>
+
+165
+00:07:14,760 --> 00:07:17,340
+it is a threat<font color="#CCCCCC"> out there it's on the top</font>
+
+166
+00:07:17,340 --> 00:07:19,919
+<font color="#CCCCCC">ten</font><font color="#E5E5E5"> so so we need to make</font><font color="#CCCCCC"> sure</font><font color="#E5E5E5"> that</font>
+
+167
+00:07:19,919 --> 00:07:22,250
+we're prepared to<font color="#E5E5E5"> guard against this</font>
+
+168
+00:07:22,250 --> 00:07:24,360
+<font color="#CCCCCC">again I've said</font><font color="#E5E5E5"> it before I'll</font><font color="#CCCCCC"> say it</font>
+
+169
+00:07:24,360 --> 00:07:27,000
+<font color="#E5E5E5">one</font><font color="#CCCCCC"> more</font><font color="#E5E5E5"> time</font><font color="#CCCCCC"> the the main</font><font color="#E5E5E5"> I guess if I</font>
+
+170
+00:07:27,000 --> 00:07:29,039
+if I could<font color="#E5E5E5"> say one</font><font color="#CCCCCC"> thing</font><font color="#E5E5E5"> overall on this</font>
+
+171
+00:07:29,039 --> 00:07:32,370
+it's do not<font color="#E5E5E5"> accept untrusted user input</font>
+
+172
+00:07:32,370 --> 00:07:34,860
+<font color="#E5E5E5">or make sure you validate any kind of</font>
+
+173
+00:07:34,860 --> 00:07:37,680
+user<font color="#CCCCCC"> input so so anyway so that's that's</font>
+
+174
+00:07:37,680 --> 00:07:39,479
+<font color="#CCCCCC">just a good</font><font color="#E5E5E5"> approach</font><font color="#CCCCCC"> to take</font><font color="#E5E5E5"> that</font><font color="#CCCCCC"> I'll</font>
+
+175
+00:07:39,479 --> 00:07:41,250
+<font color="#CCCCCC">handle actually</font><font color="#E5E5E5"> more than one of the top</font>
+
+176
+00:07:41,250 --> 00:07:44,039
+<font color="#CCCCCC">ten</font><font color="#E5E5E5"> list security risk</font><font color="#CCCCCC"> there are some</font>
+
+177
+00:07:44,039 --> 00:07:45,450
+other<font color="#CCCCCC"> things that</font><font color="#E5E5E5"> you could do in</font>
+
+178
+00:07:45,450 --> 00:07:48,720
+addition<font color="#CCCCCC"> to</font><font color="#E5E5E5"> you know fixing this on the</font>
+
+179
+00:07:48,720 --> 00:07:50,280
+web application side of course and in
+
+180
+00:07:50,280 --> 00:07:52,320
+the code itself<font color="#E5E5E5"> like a Web Application</font>
+
+181
+00:07:52,320 --> 00:07:54,840
+<font color="#E5E5E5">Firewall</font><font color="#CCCCCC"> you could put that</font><font color="#E5E5E5"> in</font><font color="#CCCCCC"> front</font><font color="#E5E5E5"> of</font>
+
+182
+00:07:54,840 --> 00:07:56,180
+<font color="#E5E5E5">your web application and so as a</font>
+
+183
+00:07:56,180 --> 00:07:58,800
+potential<font color="#E5E5E5"> deserialization</font><font color="#CCCCCC"> you know</font>
+
+184
+00:07:58,800 --> 00:08:01,260
+<font color="#E5E5E5">insecure deserialization attack is</font>
+
+185
+00:08:01,260 --> 00:08:04,020
+attempted<font color="#E5E5E5"> at your web application then a</font>
+
+186
+00:08:04,020 --> 00:08:05,849
+<font color="#E5E5E5">web</font><font color="#CCCCCC"> application</font><font color="#E5E5E5"> firewall could could</font>
+
+187
+00:08:05,849 --> 00:08:07,440
+notice that and could stop that before
+
+188
+00:08:07,440 --> 00:08:09,660
+<font color="#E5E5E5">it ever gets to your web application so</font>
+
+189
+00:08:09,660 --> 00:08:10,919
+that's that's another<font color="#CCCCCC"> thing</font><font color="#E5E5E5"> you could do</font>
+
+190
+00:08:10,919 --> 00:08:12,960
+so again number eight on the<font color="#CCCCCC"> list</font>
+
+191
+00:08:12,960 --> 00:08:17,340
+<font color="#CCCCCC">insecure</font><font color="#E5E5E5"> D serialization</font><font color="#CCCCCC"> it's out</font><font color="#E5E5E5"> there</font>
+
+192
+00:08:17,340 --> 00:08:19,080
+<font color="#E5E5E5">it's a problem it's gaining traction</font>
+
+193
+00:08:19,080 --> 00:08:20,639
+frankly so I wouldn't<font color="#CCCCCC"> be surprised if</font>
+
+194
+00:08:20,639 --> 00:08:21,900
+it's actually higher on the list<font color="#E5E5E5"> the</font>
+
+195
+00:08:21,900 --> 00:08:24,570
+next<font color="#E5E5E5"> time the top ten comes out so so be</font>
+
+196
+00:08:24,570 --> 00:08:26,729
+aware<font color="#CCCCCC"> of this guard</font><font color="#E5E5E5"> yourself against it</font>
+
+197
+00:08:26,729 --> 00:08:28,770
+<font color="#E5E5E5">and thanks for</font><font color="#CCCCCC"> watching this light board</font>
+
+198
+00:08:28,770 --> 00:08:30,570
+lesson video today hey if you<font color="#CCCCCC"> liked</font><font color="#E5E5E5"> this</font>
+
+199
+00:08:30,570 --> 00:08:32,729
+<font color="#E5E5E5">one make sure you</font><font color="#CCCCCC"> subscribe to</font><font color="#E5E5E5"> our</font>
+
+200
+00:08:32,729 --> 00:08:34,080
+<font color="#CCCCCC">YouTube channel you</font><font color="#E5E5E5"> can</font><font color="#CCCCCC"> click the little</font>
+
+201
+00:08:34,080 --> 00:08:36,360
+DC ball here<font color="#E5E5E5"> and subscribe to our</font>
+
+202
+00:08:36,360 --> 00:08:38,339
+<font color="#CCCCCC">YouTube channel</font><font color="#E5E5E5"> and we will see you guys</font>
+
+203
+00:08:38,339 --> 00:08:41,360
+<font color="#E5E5E5">out there in the community</font>
+
+204
+00:08:47,070 --> 00:00:00,000
+you
+

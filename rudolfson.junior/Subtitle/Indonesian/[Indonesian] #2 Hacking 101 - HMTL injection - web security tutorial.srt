@@ -1,0 +1,668 @@
+1
+00:00:00,089 --> 00:00:02,280
+ Selamat datang <font color="#E5E5E5">wanita dan pria </font><font color="#CCCCCC">dengan </font>
+
+2
+00:00:02,280 --> 00:00:05,279
+ <font color="#E5E5E5">video kedua </font><font color="#CCCCCC">dari </font><font color="#E5E5E5">seri </font><font color="#CCCCCC">tutorial </font><font color="#E5E5E5">ini kami </font>
+
+3
+00:00:05,279 --> 00:00:09,719
+ akan belajar tentang <font color="#E5E5E5">keamanan web dan di </font>
+
+4
+00:00:09,719 --> 00:00:12,179
+ <font color="#E5E5E5">memulai semua yang Anda pelajari di sini adalah </font>
+
+5
+00:00:12,179 --> 00:00:14,099
+ untuk mengamankan <font color="#E5E5E5">aplikasi web Anda sendiri </font>
+
+6
+00:00:14,099 --> 00:00:16,710
+ <font color="#E5E5E5">tidak meretas orang lain karena </font><font color="#CCCCCC">ini </font>
+
+7
+00:00:16,710 --> 00:00:19,410
+ itu ilegal <font color="#CCCCCC">dan tentu saja </font><font color="#E5E5E5">saya tidak bertanggung jawab </font>
+
+8
+00:00:19,410 --> 00:00:22,170
+ untuk yang <font color="#E5E5E5">khusus langsung atau tidak langsung </font>
+
+9
+00:00:22,170 --> 00:00:24,570
+ <font color="#E5E5E5">kerusakan untuk kerusakan lainnya yang dihasilkan </font>
+
+10
+00:00:24,570 --> 00:00:26,130
+ <font color="#CCCCCC">dari penggunaan informasi </font>
+
+11
+00:00:26,130 --> 00:00:30,390
+ disajikan dalam <font color="#E5E5E5">video ini jadi gunakan saja ini </font>
+
+12
+00:00:30,390 --> 00:00:32,540
+ informasi <font color="#E5E5E5">untuk membuat milik Anda sendiri </font>
+
+13
+00:00:32,540 --> 00:00:37,050
+ aplikasi <font color="#E5E5E5">lebih baik lebih aman tetapi dilakukan </font>
+
+14
+00:00:37,050 --> 00:00:39,510
+ tidak meretas orang lain karena ini 
+
+15
+00:00:39,510 --> 00:00:47,129
+ jahat dan itu <font color="#CCCCCC">Leu jadi kita mulai dengan </font>
+
+16
+00:00:47,129 --> 00:00:49,110
+ suntikan <font color="#E5E5E5">seperti di video terakhir an </font>
+
+17
+00:00:49,110 --> 00:00:51,270
+ injeksi digunakan oleh penyerang untuk 
+
+18
+00:00:51,270 --> 00:00:54,059
+ memperkenalkan atau menyuntikkan kode ke dalam 
+
+19
+00:00:54,059 --> 00:00:56,969
+ <font color="#CCCCCC">program komputer yang rentan </font><font color="#E5E5E5">dan berubah </font>
+
+20
+00:00:56,969 --> 00:00:59,699
+ <font color="#E5E5E5">warna eksekusi </font><font color="#CCCCCC">jadi ini adalah </font>
+
+21
+00:00:59,699 --> 00:01:02,190
+ kutipan dari <font color="#CCCCCC">wikipedia dan hari ini kami </font>
+
+22
+00:01:02,190 --> 00:01:05,549
+ akan <font color="#E5E5E5">belajar tentang suntikan HTML jadi apa </font>
+
+23
+00:01:05,549 --> 00:01:08,909
+ apakah <font color="#E5E5E5">kita perlu untuk injeksi HTML yang kita butuhkan </font>
+
+24
+00:01:08,909 --> 00:01:12,979
+ <font color="#CCCCCC">website </font><font color="#E5E5E5">sih bola </font><font color="#CCCCCC">atau aplikasi web </font>
+
+25
+00:01:12,979 --> 00:01:18,150
+ yang tidak mencoba untuk <font color="#E5E5E5">mencari </font><font color="#CCCCCC">tahu yang mana </font>
+
+26
+00:01:18,150 --> 00:01:21,420
+ konten <font color="#CCCCCC">disimpan ke </font><font color="#E5E5E5">dalam database dan </font>
+
+27
+00:01:21,420 --> 00:01:25,979
+ <font color="#E5E5E5">konten mana dari database </font>
+
+28
+00:01:25,979 --> 00:01:28,590
+ ditampilkan di acara aplikasi web <font color="#E5E5E5">jadi </font>
+
+29
+00:01:28,590 --> 00:01:32,369
+ mereka tidak mencoba <font color="#CCCCCC">untuk menghapus tag HTML </font><font color="#E5E5E5">atau </font>
+
+30
+00:01:32,369 --> 00:01:35,340
+ sesuatu seperti <font color="#E5E5E5">itu jadi kita perlu menyimpan </font>
+
+31
+00:01:35,340 --> 00:01:39,840
+ <font color="#E5E5E5">string dalam database melalui formulir </font>
+
+32
+00:01:39,840 --> 00:01:44,460
+ atau input teks teks dan misalnya 
+
+33
+00:01:44,460 --> 00:01:50,130
+ <font color="#E5E5E5">seperti h1 dan tag penutup h1 dan ini </font>
+
+34
+00:01:50,130 --> 00:01:52,680
+ string yang <font color="#E5E5E5">harus</font><font color="#CCCCCC"> ditampilkan pada </font>
+
+35
+00:01:52,680 --> 00:01:55,619
+ <font color="#CCCCCC">situs web </font><font color="#E5E5E5">dan itu akan menghasilkan </font><font color="#CCCCCC">sesuatu </font>
+
+36
+00:01:55,619 --> 00:02:01,110
+ seperti yang kita lihat di <font color="#CCCCCC">sini, jadi kami coba lurus ini </font>
+
+37
+00:02:01,110 --> 00:02:06,450
+ keluar <font color="#E5E5E5">di </font><font color="#CCCCCC">buku tamu kami ok saya akan menggunakan saya </font>
+
+38
+00:02:06,450 --> 00:02:12,360
+ <font color="#CCCCCC">buku tamu di </font><font color="#E5E5E5">di localhost </font><font color="#CCCCCC">jadi</font><font color="#E5E5E5"> saya </font>
+
+39
+00:02:12,360 --> 00:02:13,890
+ pergi ke buku tamu 
+
+40
+00:02:13,890 --> 00:02:20,370
+ dan kami mencoba injeksi HTML dengan h1 dan 
+
+41
+00:02:20,370 --> 00:02:27,540
+ h2 dan Anda menulis <font color="#E5E5E5">sesuatu di sini </font><font color="#CCCCCC">berikan </font>
+
+42
+00:02:27,540 --> 00:02:31,470
+ umpan balik dan seperti yang kita lihat kita <font color="#CCCCCC">menyuntikkannya </font>
+
+43
+00:02:31,470 --> 00:02:37,440
+ Di <font color="#E5E5E5">sini HTML </font><font color="#CCCCCC">ok ini </font><font color="#E5E5E5">cukup keren karena </font>
+
+44
+00:02:37,440 --> 00:02:41,220
+ kita bisa <font color="#CCCCCC">melakukan beberapa hal </font><font color="#E5E5E5">dan menulis </font>
+
+45
+00:02:41,220 --> 00:02:44,970
+ nama orang lain <font color="#E5E5E5">misalnya saya </font><font color="#CCCCCC">masuk </font>
+
+46
+00:02:44,970 --> 00:02:49,050
+ sebagai admin kata sandi adalah admin <font color="#E5E5E5">1 2 3 4 dan </font>
+
+47
+00:02:49,050 --> 00:02:53,330
+ kami masuk dan pergi ke <font color="#E5E5E5">cek rahasia </font><font color="#CCCCCC">ok </font>
+
+48
+00:02:53,330 --> 00:02:56,280
+ jadi kita lihat halaman itu 
+
+49
+00:02:56,280 --> 00:03:03,540
+ sumber <font color="#E5E5E5">jadi jika kita ngobrol di sini dan </font>
+
+50
+00:03:03,540 --> 00:03:07,050
+ kami menulis sesuatu <font color="#CCCCCC">seperti </font><font color="#E5E5E5">pesan saya dan </font>
+
+51
+00:03:07,050 --> 00:03:12,200
+ maka tag ini menutup tag penutup <font color="#E5E5E5">itu </font>
+
+52
+00:03:12,200 --> 00:03:15,570
+ <font color="#CCCCCC">dipanggil </font><font color="#E5E5E5">secara otomatis atau diedit </font>
+
+53
+00:03:15,570 --> 00:03:19,709
+ otomatis dalam <font color="#E5E5E5">kode PHP </font><font color="#CCCCCC">jadi </font>
+
+54
+00:03:19,709 --> 00:03:25,080
+ mari mencoba <font color="#E5E5E5">melakukan sesuatu untuk menulis </font>
+
+55
+00:03:25,080 --> 00:03:30,930
+ pesan <font color="#E5E5E5">dengan </font><font color="#CCCCCC">nama </font><font color="#E5E5E5">orang lain jadi saya coba </font>
+
+56
+00:03:30,930 --> 00:03:35,519
+ untuk menyalin kode ini <font color="#CCCCCC">ok </font>
+
+57
+00:03:35,519 --> 00:03:40,920
+ dan saya mempostingnya <font color="#E5E5E5">di </font><font color="#CCCCCC">sini agar saya </font><font color="#E5E5E5">bisa </font>
+
+58
+00:03:40,920 --> 00:03:43,350
+ tulis <font color="#CCCCCC">pesan saya di </font><font color="#E5E5E5">sini </font><font color="#CCCCCC">halo </font>
+
+59
+00:03:43,350 --> 00:03:46,590
+ bekerja keras <font color="#E5E5E5">ini </font><font color="#CCCCCC">adalah </font><font color="#E5E5E5">pesan yang mendapat </font>
+
+60
+00:03:46,590 --> 00:03:49,260
+ ditampilkan sebagai admin maka <font color="#E5E5E5">kita membuat penutupan </font>
+
+61
+00:03:49,260 --> 00:03:55,830
+ <font color="#CCCCCC">tag dua tag penutup yang untuk ini </font>
+
+62
+00:03:55,830 --> 00:04:00,150
+ <font color="#E5E5E5">dua panel di sini jadi satu untuk div dengan </font>
+
+63
+00:04:00,150 --> 00:04:03,350
+ <font color="#E5E5E5">kolom kelas </font><font color="#CCCCCC">sembilan </font><font color="#E5E5E5">kecil </font><font color="#CCCCCC">dan satu untuk </font>
+
+64
+00:04:03,350 --> 00:04:08,130
+ <font color="#E5E5E5">div dengan baris panel kelas </font><font color="#CCCCCC">ok maka kita </font>
+
+65
+00:04:08,130 --> 00:04:14,640
+ membuka <font color="#E5E5E5">baris </font><font color="#CCCCCC">pertempuran div baru </font><font color="#E5E5E5">sesulit </font>
+
+66
+00:04:14,640 --> 00:04:17,040
+ <font color="#E5E5E5">baris panel dan di sini kita menulis berbeda </font>
+
+67
+00:04:17,040 --> 00:04:19,470
+ nama seperti <font color="#E5E5E5">salmon maka saya katakan saya benci saya </font>
+
+68
+00:04:19,470 --> 00:04:22,710
+ <font color="#CCCCCC">pekerjaan misalnya dan kami menulis pesan </font>
+
+69
+00:04:22,710 --> 00:04:24,660
+ dengan nama orang lain <font color="#CCCCCC">yang </font><font color="#E5E5E5">cantik </font>
+
+70
+00:04:24,660 --> 00:04:27,510
+ jahat <font color="#E5E5E5">jadi mari kita </font><font color="#CCCCCC">coba </font>
+
+71
+00:04:27,510 --> 00:04:33,210
+ dan seperti yang Anda lihat, saya memposting sebagai admin <font color="#E5E5E5">halo </font>
+
+72
+00:04:33,210 --> 00:04:39,420
+ bekerja keras <font color="#CCCCCC">dan </font><font color="#E5E5E5">tambahan saya </font><font color="#CCCCCC">menambahkan </font>
+
+73
+00:04:39,420 --> 00:04:43,860
+ kedua pesan kedua pada seseorang 
+
+74
+00:04:43,860 --> 00:04:47,760
+ nama lain <font color="#E5E5E5">Simon apa yang saya benci </font><font color="#CCCCCC">pekerjaan </font><font color="#E5E5E5">saya </font>
+
+75
+00:04:47,760 --> 00:04:50,790
+ jadi ini sangat jahat dan ini seharusnya 
+
+76
+00:04:50,790 --> 00:04:54,870
+ tidak bekerja di aplikasi web yang aman <font color="#E5E5E5">sehingga </font>
+
+77
+00:04:54,870 --> 00:05:00,150
+ bagaimana kita bisa mengubahnya <font color="#CCCCCC">, kita harus menghapusnya </font>
+
+78
+00:05:00,150 --> 00:05:05,220
+ setiap <font color="#E5E5E5">tag HTML sebelum </font><font color="#CCCCCC">kami menyimpannya </font>
+
+79
+00:05:05,220 --> 00:05:08,850
+ <font color="#E5E5E5">database</font><font color="#CCCCCC"> dan bagaimana kita </font><font color="#E5E5E5">melakukan ini di </font><font color="#CCCCCC">H </font>
+
+80
+00:05:08,850 --> 00:05:13,170
+ di PHP <font color="#CCCCCC">ini </font><font color="#E5E5E5">sangat sangat tidak aman </font>
+
+81
+00:05:13,170 --> 00:05:17,700
+ aplikasi <font color="#CCCCCC">saya punya </font><font color="#E5E5E5">video untuk </font>
+
+82
+00:05:17,700 --> 00:05:21,090
+ versi aman <font color="#CCCCCC">II telah ditulis di dalam </font>
+
+83
+00:05:21,090 --> 00:05:22,110
+ <font color="#CCCCCC">dari sini </font>
+
+84
+00:05:22,110 --> 00:05:26,670
+ <font color="#E5E5E5">dan saya memiliki </font><font color="#CCCCCC">MySQL yang </font><font color="#E5E5E5">sangat lama </font>
+
+85
+00:05:26,670 --> 00:05:32,100
+ koleksi untuk <font color="#CCCCCC">versi yang tidak aman </font>
+
+86
+00:05:32,100 --> 00:05:35,670
+ untuk menunjukkan kepada <font color="#CCCCCC">Anda bagaimana hal itu </font><font color="#E5E5E5">tidak dilakukan dan saya bisa </font>
+
+87
+00:05:35,670 --> 00:05:40,290
+ menunjukkan Anda komentar <font color="#E5E5E5">di beberapa </font>
+
+88
+00:05:40,290 --> 00:05:45,500
+ video berikutnya tetapi untuk <font color="#CCCCCC">sekarang kita masuk ke dalam </font>
+
+89
+00:05:45,500 --> 00:05:49,140
+ <font color="#E5E5E5">kirim obrolan rahasia jadi kita punya yang bersih </font>
+
+90
+00:05:49,140 --> 00:05:53,610
+ string di sini dan <font color="#E5E5E5">kami katakan masukkan ini baik-baik saja </font>
+
+91
+00:05:53,610 --> 00:06:01,670
+ tetapi apa yang terjadi jika kita mengatakan label strip 
+
+92
+00:06:03,980 --> 00:06:13,290
+ setiap <font color="#E5E5E5">tag HTML dihapus kecuali </font>
+
+93
+00:06:13,290 --> 00:06:17,400
+ dari setiap tag yang saya masukkan di sini <font color="#E5E5E5">kedua </font>
+
+94
+00:06:17,400 --> 00:06:24,480
+ parameter <font color="#E5E5E5">sehingga saya bisa menyuntikkan beberapa lateks </font>
+
+95
+00:06:24,480 --> 00:06:27,470
+ dek saya <font color="#E5E5E5">di teks saya tetapi itu tidak akan </font><font color="#CCCCCC">berfungsi </font>
+
+96
+00:06:27,470 --> 00:06:31,020
+ <font color="#E5E5E5">dengan </font><font color="#CCCCCC">cara yang sama </font><font color="#E5E5E5">lagi jadi </font><font color="#CCCCCC">jika saya </font><font color="#E5E5E5">menulis Simon </font>
+
+97
+00:06:31,020 --> 00:06:37,340
+ dan aku benci pekerjaanku <font color="#CCCCCC">lagi </font>
+
+98
+00:06:37,810 --> 00:06:43,169
+ tidak akan <font color="#E5E5E5">berfungsi lagi di sini bekerja keras </font>
+
+99
+00:06:43,169 --> 00:06:46,990
+ bekerja <font color="#E5E5E5">keras </font><font color="#CCCCCC">jika saya melakukan ini, ini tidak akan </font>
+
+100
+00:06:46,990 --> 00:06:49,600
+ <font color="#CCCCCC">bekerja lagi </font><font color="#E5E5E5">karena setiap </font><font color="#CCCCCC">DIF akan dapatkan </font>
+
+101
+00:06:49,600 --> 00:06:53,020
+ dilucuti <font color="#E5E5E5">jadi jika saya posting ini berakhir </font>
+
+102
+00:06:53,020 --> 00:06:58,060
+ <font color="#CCCCCC">di admin bekerja keras </font><font color="#E5E5E5">dan Simon </font><font color="#CCCCCC">saya benci </font>
+
+103
+00:06:58,060 --> 00:07:01,330
+ pekerjaan saya <font color="#CCCCCC">dan ada </font><font color="#E5E5E5">sesuatu yang mirip </font>
+
+104
+00:07:01,330 --> 00:07:05,350
+ setiap <font color="#E5E5E5">dalam setiap bahasa pemrograman jadi </font>
+
+105
+00:07:05,350 --> 00:07:10,000
+ <font color="#E5E5E5">Anda cukup menghapus setiap HTML </font>
+
+106
+00:07:10,000 --> 00:07:14,560
+ dek lalu tambahkan hanya <font color="#CCCCCC">dek </font><font color="#E5E5E5">HTML </font>
+
+107
+00:07:14,560 --> 00:07:18,310
+ yang Anda izinkan jadi jika kami ingin <font color="#CCCCCC">mengirim </font>
+
+108
+00:07:18,310 --> 00:07:21,120
+ tautan kami masih diizinkan <font color="#E5E5E5">untuk mengirim </font><font color="#CCCCCC">tautan </font>
+
+109
+00:07:21,120 --> 00:07:36,070
+ <font color="#CCCCCC">misalnya saya membuat tautan H RAF BW / </font>
+
+110
+00:07:36,070 --> 00:07:42,700
+ <font color="#CCCCCC">Leslie google.com </font><font color="#E5E5E5">dan jika saya memposting kami sebagai </font>
+
+111
+00:07:42,700 --> 00:07:48,130
+ Anda melihat kami masih diizinkan <font color="#E5E5E5">mengirim </font><font color="#CCCCCC">a </font>
+
+112
+00:07:48,130 --> 00:07:53,410
+ <font color="#CCCCCC">tag </font><font color="#E5E5E5">karena kami mengizinkannya </font><font color="#CCCCCC">di </font><font color="#E5E5E5">sini </font>
+
+113
+00:07:53,410 --> 00:07:56,110
+ dalam <font color="#CCCCCC">teks strip </font><font color="#E5E5E5">berfungsi strip </font>
+
+114
+00:07:56,110 --> 00:07:59,710
+ <font color="#E5E5E5">fungsi </font><font color="#CCCCCC">tag </font><font color="#E5E5E5">terutama untuk </font><font color="#CCCCCC">PHP tetapi </font>
+
+115
+00:07:59,710 --> 00:08:04,240
+ <font color="#E5E5E5">ada fungsi yang menggunakan itu </font>
+
+116
+00:08:04,240 --> 00:08:08,050
+ prinsip yang sama <font color="#CCCCCC">dalam setiap HTML </font><font color="#E5E5E5">di </font>
+
+117
+00:08:08,050 --> 00:08:14,590
+ setiap bahasa pemrograman <font color="#E5E5E5">oke begitu tapi </font>
+
+118
+00:08:14,590 --> 00:08:21,039
+ bagaimana <font color="#CCCCCC">kita masih bisa mengirim sesuatu </font><font color="#E5E5E5">ke dalam </font>
+
+119
+00:08:21,039 --> 00:08:23,740
+ nama orang lain <font color="#CCCCCC">jika kita </font><font color="#E5E5E5">lihat </font>
+
+120
+00:08:23,740 --> 00:08:29,260
+ di <font color="#CCCCCC">bentuk adda ini yang kita miliki </font>
+
+121
+00:08:29,260 --> 00:08:31,990
+ di sini kita memiliki <font color="#E5E5E5">field input yang tersembunyi dengan </font>
+
+122
+00:08:31,990 --> 00:08:35,349
+ nilai admin mari kita coba untuk mengubah <font color="#E5E5E5">ini </font>
+
+123
+00:08:35,349 --> 00:08:38,349
+ Saya <font color="#CCCCCC">sendiri tidak tahu </font>
+
+124
+00:08:38,349 --> 00:08:41,140
+ <font color="#E5E5E5">misalnya, mari kita lihat apa yang terjadi jika </font>
+
+125
+00:08:41,140 --> 00:08:47,310
+ Saya memposting <font color="#E5E5E5">formulir ini ke server </font><font color="#CCCCCC">Oh </font>
+
+126
+00:08:47,570 --> 00:08:52,740
+ field tersembunyi digunakan <font color="#E5E5E5">40 </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">nama pengguna </font>
+
+127
+00:08:52,740 --> 00:08:56,430
+ <font color="#E5E5E5">dan ini juga dapat diretas </font><font color="#CCCCCC">saat Anda melihatnya </font>
+
+128
+00:08:56,430 --> 00:08:58,230
+ Saya masih diizinkan <font color="#CCCCCC">untuk mengubahnya </font>
+
+129
+00:08:58,230 --> 00:09:04,019
+ Simon dan menulis <font color="#E5E5E5">sesuatu seperti aku membenci diriku </font>
+
+130
+00:09:04,019 --> 00:09:08,970
+ <font color="#CCCCCC">pekerjaan </font><font color="#E5E5E5">dan mengirim ini dan Anda melihat Simon </font>
+
+131
+00:09:08,970 --> 00:09:12,810
+ <font color="#E5E5E5">membenci pekerjaannya </font><font color="#CCCCCC">jadi ini </font><font color="#E5E5E5">masih belum </font>
+
+132
+00:09:12,810 --> 00:09:17,279
+ cukup keren jadi apa yang bisa <font color="#E5E5E5">kita lakukan seperti yang Anda </font><font color="#CCCCCC">lihat </font>
+
+133
+00:09:17,279 --> 00:09:24,690
+ kami memiliki <font color="#E5E5E5">nama pengguna </font><font color="#CCCCCC">entri </font><font color="#E5E5E5">tetapi ketika kami masuk </font>
+
+134
+00:09:24,690 --> 00:09:28,980
+ di dalam <font color="#E5E5E5">aplikasi kami, kami memiliki login </font>
+
+135
+00:09:28,980 --> 00:09:33,269
+ <font color="#CCCCCC">kami membuat sesi yang </font><font color="#E5E5E5">disebut </font>
+
+136
+00:09:33,269 --> 00:09:36,839
+ <font color="#CCCCCC">Vinnitsa yang berarti pengguna dalam </font><font color="#E5E5E5">bahasa Jerman </font>
+
+137
+00:09:36,839 --> 00:09:41,310
+ dan mengatur mereka untuk <font color="#CCCCCC">nama</font><font color="#E5E5E5"> yang diposting </font>
+
+138
+00:09:41,310 --> 00:09:45,660
+ <font color="#E5E5E5">dalam formulir login jadi mungkin kami menggunakan ini </font>
+
+139
+00:09:45,660 --> 00:09:51,600
+ sesi 4 untuk <font color="#CCCCCC">nama pengguna </font><font color="#E5E5E5">dan bukan </font>
+
+140
+00:09:51,600 --> 00:09:57,180
+ posting parameter di dalam yang tersembunyi 
+
+141
+00:09:57,180 --> 00:09:59,699
+ lapangan karena ini <font color="#CCCCCC">sangat tidak aman </font>
+
+142
+00:09:59,699 --> 00:10:04,339
+ mari kita <font color="#E5E5E5">keringkan apa yang terjadi jika saya mengatakan sesi </font>
+
+143
+00:10:04,339 --> 00:10:10,980
+ <font color="#CCCCCC">B tidak Pak </font><font color="#E5E5E5">dan ubah ini dan saya kembali </font>
+
+144
+00:10:10,980 --> 00:10:14,100
+ <font color="#CCCCCC">halaman saya dan apa yang terjadi jika </font><font color="#E5E5E5">saya masih menambahkan </font>
+
+145
+00:10:14,100 --> 00:10:17,279
+ sesuatu seperti Simon <font color="#E5E5E5">dan kemudian saya menulis saya </font>
+
+146
+00:10:17,279 --> 00:10:19,500
+ benci <font color="#CCCCCC">pekerjaan saya </font>
+
+147
+00:10:19,500 --> 00:10:22,980
+ dan berikan <font color="#E5E5E5">umpan balik apa yang terjadi pada Anda </font>
+
+148
+00:10:22,980 --> 00:10:27,389
+ lihat saya tidak <font color="#CCCCCC">menulis sebagai Simon </font><font color="#E5E5E5">lagi </font><font color="#CCCCCC">saya </font>
+
+149
+00:10:27,389 --> 00:10:30,600
+ tulis sebagai admin <font color="#E5E5E5">karena saya mengambil </font>
+
+150
+00:10:30,600 --> 00:10:35,100
+ sesi untuk memposting ke <font color="#E5E5E5">server yang mana </font>
+
+151
+00:10:35,100 --> 00:10:38,519
+ sedikit <font color="#E5E5E5">lebih aman daripada menggunakan yang tersembunyi </font>
+
+152
+00:10:38,519 --> 00:10:41,660
+ <font color="#E5E5E5">bidang yang dapat diubah oleh siapa saja </font>
+
+153
+00:10:41,660 --> 00:10:45,480
+ siapa yang menggerakkan HTML sedikit dan 
+
+154
+00:10:45,480 --> 00:10:51,120
+ <font color="#CCCCCC">tahu fungsi pemeriksaan jadi kurasa </font>
+
+155
+00:10:51,120 --> 00:10:54,600
+ <font color="#CCCCCC">kami </font><font color="#E5E5E5">cukup aman di sini untuk saat ini tentu saja </font>
+
+156
+00:10:54,600 --> 00:10:57,740
+ <font color="#E5E5E5">kami tidak aman terhadap apapun </font>
+
+157
+00:10:57,740 --> 00:11:01,350
+ terhadap <font color="#E5E5E5">injeksi SQL apa pun, tetapi kami akan melakukannya </font>
+
+158
+00:11:01,350 --> 00:11:05,190
+ belajar <font color="#E5E5E5">bahwa ini sedikit dalam </font>
+
+159
+00:11:05,190 --> 00:11:10,860
+ nanti video <font color="#CCCCCC">jadi </font><font color="#E5E5E5">saya punya beberapa komentar di sini </font>
+
+160
+00:11:10,860 --> 00:11:13,860
+ <font color="#E5E5E5">yang </font><font color="#CCCCCC">akan saya tunjukkan kepada Anda ketika kita berbicara </font>
+
+161
+00:11:13,860 --> 00:11:17,819
+ tentang <font color="#E5E5E5">suntikan SQL tetapi </font><font color="#CCCCCC">saya kira kita </font>
+
+162
+00:11:17,819 --> 00:11:19,860
+ selesai <font color="#E5E5E5">dan selesai dengan HTML </font>
+
+163
+00:11:19,860 --> 00:11:22,529
+ suntikan <font color="#E5E5E5">dan jika Anda menyukai video ini </font>
+
+164
+00:11:22,529 --> 00:11:25,139
+ jangan <font color="#CCCCCC">lupa untuk memberi saya </font><font color="#E5E5E5">jempol untuk memukul </font>
+
+165
+00:11:25,139 --> 00:11:27,269
+ tombol berlangganan <font color="#CCCCCC">dan kami melihat </font><font color="#E5E5E5">kami masuk </font>
+
+166
+00:11:27,269 --> 00:11:29,430
+ <font color="#CCCCCC">video berikutnya jangan </font><font color="#E5E5E5">lupa bagikan </font>
+
+167
+00:11:29,430 --> 00:00:00,000
+ video ini di <font color="#E5E5E5">mana-mana </font><font color="#CCCCCC">bye </font>
+

@@ -1,0 +1,680 @@
+1
+00:00:00,089 --> 00:00:02,429
+hello everyone let's<font color="#E5E5E5"> discuss about</font>
+
+2
+00:00:02,429 --> 00:00:04,920
+<font color="#CCCCCC">another</font><font color="#E5E5E5"> kind of</font><font color="#CCCCCC"> injection attack</font><font color="#E5E5E5"> that is</font>
+
+3
+00:00:04,920 --> 00:00:07,620
+<font color="#E5E5E5">formal injections so formal injections</font>
+
+4
+00:00:07,620 --> 00:00:10,469
+are also<font color="#E5E5E5"> called as CSV Excel macro</font>
+
+5
+00:00:10,469 --> 00:00:12,570
+injection<font color="#E5E5E5"> so before going further let me</font>
+
+6
+00:00:12,570 --> 00:00:14,820
+<font color="#E5E5E5">give you one scenario</font><font color="#CCCCCC"> that there is one</font>
+
+7
+00:00:14,820 --> 00:00:17,580
+web application<font color="#E5E5E5"> on which we can add it</font>
+
+8
+00:00:17,580 --> 00:00:21,000
+create and export<font color="#E5E5E5"> Microsoft Excel</font>
+
+9
+00:00:21,000 --> 00:00:23,640
+spreadsheets<font color="#CCCCCC"> so as a</font><font color="#E5E5E5"> penetration tester</font>
+
+10
+00:00:23,640 --> 00:00:26,519
+or a hacker<font color="#CCCCCC"> what we can do is we can try</font>
+
+11
+00:00:26,519 --> 00:00:28,859
+<font color="#CCCCCC">to inject something</font><font color="#E5E5E5"> malicious inside</font>
+
+12
+00:00:28,859 --> 00:00:31,260
+<font color="#E5E5E5">that spreadsheets</font><font color="#CCCCCC"> so once we inserted</font>
+
+13
+00:00:31,260 --> 00:00:33,719
+<font color="#CCCCCC">something malicious</font><font color="#E5E5E5"> then we will export</font>
+
+14
+00:00:33,719 --> 00:00:36,120
+<font color="#E5E5E5">that web sheet so if that web</font>
+
+15
+00:00:36,120 --> 00:00:37,950
+application<font color="#CCCCCC"> is vulnerable to formula</font>
+
+16
+00:00:37,950 --> 00:00:40,350
+injection then that web application will
+
+17
+00:00:40,350 --> 00:00:42,930
+not sanitize the user input and<font color="#E5E5E5"> export</font>
+
+18
+00:00:42,930 --> 00:00:44,430
+that<font color="#E5E5E5"> web sheet which contains the</font>
+
+19
+00:00:44,430 --> 00:00:46,200
+malicious code<font color="#E5E5E5"> injected by an attacker</font>
+
+20
+00:00:46,200 --> 00:00:49,260
+<font color="#CCCCCC">so if any other user will open that</font>
+
+21
+00:00:49,260 --> 00:00:51,600
+Microsoft Excel<font color="#CCCCCC"> spreadsheet</font><font color="#E5E5E5"> will get</font>
+
+22
+00:00:51,600 --> 00:00:53,329
+affected<font color="#CCCCCC"> and which results in</font>
+
+23
+00:00:53,329 --> 00:00:55,620
+client-side injections<font color="#E5E5E5"> so here you can</font>
+
+24
+00:00:55,620 --> 00:00:57,149
+see so these kinds of vulnerabilities
+
+25
+00:00:57,149 --> 00:00:59,820
+<font color="#CCCCCC">are often found on web applications</font>
+
+26
+00:00:59,820 --> 00:01:01,739
+which having export spreadsheet
+
+27
+00:01:01,739 --> 00:01:04,170
+functionality<font color="#E5E5E5"> and this spreadsheet is</font>
+
+28
+00:01:04,170 --> 00:01:06,750
+being generated<font color="#E5E5E5"> without sanitizing the</font>
+
+29
+00:01:06,750 --> 00:01:09,240
+<font color="#E5E5E5">user input</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> results in code</font>
+
+30
+00:01:09,240 --> 00:01:12,119
+execution at the<font color="#E5E5E5"> client side now let's</font>
+
+31
+00:01:12,119 --> 00:01:15,000
+<font color="#CCCCCC">see how formula injection works</font><font color="#E5E5E5"> now</font>
+
+32
+00:01:15,000 --> 00:01:18,380
+let's see how we can do CSV injection<font color="#E5E5E5"> or</font>
+
+33
+00:01:18,380 --> 00:01:20,790
+formula injection<font color="#E5E5E5"> so before going</font>
+
+34
+00:01:20,790 --> 00:01:23,159
+<font color="#CCCCCC">further</font><font color="#E5E5E5"> let's understand that how</font>
+
+35
+00:01:23,159 --> 00:01:26,460
+Microsoft<font color="#E5E5E5"> Excel</font><font color="#CCCCCC"> executes our formula so</font>
+
+36
+00:01:26,460 --> 00:01:32,630
+let<font color="#E5E5E5"> me start here Microsoft Excel and</font>
+
+37
+00:01:32,630 --> 00:01:35,640
+here you<font color="#E5E5E5"> will see a formula bar</font><font color="#CCCCCC"> so if I</font>
+
+38
+00:01:35,640 --> 00:01:38,520
+<font color="#E5E5E5">just write here equals to</font><font color="#CCCCCC"> sum so I am</font>
+
+39
+00:01:38,520 --> 00:01:40,770
+writing here very simple<font color="#E5E5E5"> formula which</font>
+
+40
+00:01:40,770 --> 00:01:44,340
+<font color="#E5E5E5">will do the sum of two numbers</font><font color="#CCCCCC"> and if I</font>
+
+41
+00:01:44,340 --> 00:01:46,470
+hit enter<font color="#CCCCCC"> here you</font><font color="#E5E5E5"> will see that our</font>
+
+42
+00:01:46,470 --> 00:01:48,180
+formula<font color="#E5E5E5"> has been</font><font color="#CCCCCC"> executed and</font><font color="#E5E5E5"> the sum is</font>
+
+43
+00:01:48,180 --> 00:01:54,479
+<font color="#E5E5E5">20 now what happen is while</font><font color="#CCCCCC"> pentesting</font>
+
+44
+00:01:54,479 --> 00:01:57,119
+any web application<font color="#CCCCCC"> sometimes the web</font>
+
+45
+00:01:57,119 --> 00:01:59,579
+application has a feature of exporting
+
+46
+00:01:59,579 --> 00:02:02,939
+data<font color="#CCCCCC"> in the</font><font color="#E5E5E5"> form of CSV files now as a</font>
+
+47
+00:02:02,939 --> 00:02:05,280
+penetration tester<font color="#E5E5E5"> what you can do is</font>
+
+48
+00:02:05,280 --> 00:02:07,950
+you can inject something<font color="#CCCCCC"> malicious in</font>
+
+49
+00:02:07,950 --> 00:02:11,489
+the CSV file and<font color="#E5E5E5"> that malicious code</font>
+
+50
+00:02:11,489 --> 00:02:13,709
+will execute<font color="#E5E5E5"> it as formula</font>
+
+51
+00:02:13,709 --> 00:02:16,409
+in the Microsoft Excel<font color="#CCCCCC"> and</font><font color="#E5E5E5"> some commands</font>
+
+52
+00:02:16,409 --> 00:02:20,150
+will be executed on client<font color="#CCCCCC"> side</font><font color="#E5E5E5"> now</font>
+
+53
+00:02:20,150 --> 00:02:24,329
+<font color="#CCCCCC">let's go here</font><font color="#E5E5E5"> dynamic data exchange</font>
+
+54
+00:02:24,329 --> 00:02:26,819
+protocol is responsible for<font color="#CCCCCC"> inter</font>
+
+55
+00:02:26,819 --> 00:02:29,010
+<font color="#CCCCCC">process communication</font><font color="#E5E5E5"> and for sharing</font>
+
+56
+00:02:29,010 --> 00:02:30,930
+<font color="#CCCCCC">data between the two applications in</font>
+
+57
+00:02:30,930 --> 00:02:33,750
+Microsoft Windows<font color="#E5E5E5"> so the format of this</font>
+
+58
+00:02:33,750 --> 00:02:36,750
+protocol<font color="#CCCCCC"> is like this</font><font color="#E5E5E5"> equals</font><font color="#CCCCCC"> two here</font>
+
+59
+00:02:36,750 --> 00:02:39,180
+will<font color="#E5E5E5"> be the server file and item and</font>
+
+60
+00:02:39,180 --> 00:02:41,969
+here the server is the<font color="#E5E5E5"> program which</font>
+
+61
+00:02:41,969 --> 00:02:44,670
+<font color="#CCCCCC">will handle</font><font color="#E5E5E5"> the user</font><font color="#CCCCCC"> request</font><font color="#E5E5E5"> and the</font>
+
+62
+00:02:44,670 --> 00:02:47,579
+file is<font color="#E5E5E5"> which we just execute and here</font>
+
+63
+00:02:47,579 --> 00:02:49,470
+you can see the most commonly used
+
+64
+00:02:49,470 --> 00:02:53,250
+payload<font color="#E5E5E5"> used to test the CSV injection</font>
+
+65
+00:02:53,250 --> 00:02:55,319
+so here you<font color="#E5E5E5"> can see the equals to sign</font>
+
+66
+00:02:55,319 --> 00:02:58,019
+is for<font color="#CCCCCC"> starting of the</font><font color="#E5E5E5"> formula</font><font color="#CCCCCC"> and here</font>
+
+67
+00:02:58,019 --> 00:03:00,389
+<font color="#E5E5E5">is a CMD so it's a server which will</font>
+
+68
+00:03:00,389 --> 00:03:03,000
+<font color="#E5E5E5">handle the user</font><font color="#CCCCCC"> request and it's the</font>
+
+69
+00:03:03,000 --> 00:03:05,760
+here is the<font color="#CCCCCC"> file see ALC which will get</font>
+
+70
+00:03:05,760 --> 00:03:09,540
+executed and we all know<font color="#E5E5E5"> that</font><font color="#CCCCCC"> CLC dot</font>
+
+71
+00:03:09,540 --> 00:03:11,939
+exe<font color="#E5E5E5"> is actually a</font><font color="#CCCCCC"> calculator dot exe</font>
+
+72
+00:03:11,939 --> 00:03:15,389
+<font color="#E5E5E5">file in Microsoft Windows now in order</font>
+
+73
+00:03:15,389 --> 00:03:18,780
+<font color="#CCCCCC">to test this payload</font><font color="#E5E5E5"> what we have to do</font>
+
+74
+00:03:18,780 --> 00:03:21,510
+is we'll use extreme<font color="#CCCCCC"> wearable web</font>
+
+75
+00:03:21,510 --> 00:03:25,099
+<font color="#E5E5E5">application which contains this</font><font color="#CCCCCC"> runnable</font>
+
+76
+00:03:25,099 --> 00:03:28,620
+<font color="#CCCCCC">csv</font><font color="#E5E5E5"> web page so let me go here</font><font color="#CCCCCC"> so here</font>
+
+77
+00:03:28,620 --> 00:03:30,810
+you can see that<font color="#E5E5E5"> my extreme whenever the</font>
+
+78
+00:03:30,810 --> 00:03:32,879
+application is up<font color="#E5E5E5"> and</font><font color="#CCCCCC"> running and i have</font>
+
+79
+00:03:32,879 --> 00:03:34,650
+hosted<font color="#E5E5E5"> this web</font><font color="#CCCCCC"> application on kali</font>
+
+80
+00:03:34,650 --> 00:03:38,159
+linux and if i scroll down<font color="#E5E5E5"> on the</font><font color="#CCCCCC"> left</font>
+
+81
+00:03:38,159 --> 00:03:39,989
+hand<font color="#E5E5E5"> side you will found a one challenge</font>
+
+82
+00:03:39,989 --> 00:03:42,180
+<font color="#E5E5E5">or formula injection so let's open this</font>
+
+83
+00:03:42,180 --> 00:03:43,009
+up
+
+84
+00:03:43,009 --> 00:03:47,280
+<font color="#E5E5E5">scroll down and here you will see</font><font color="#CCCCCC"> some</font>
+
+85
+00:03:47,280 --> 00:03:49,560
+list of items<font color="#CCCCCC"> including the</font><font color="#E5E5E5"> item code</font>
+
+86
+00:03:49,560 --> 00:03:53,009
+<font color="#CCCCCC">item name category</font><font color="#E5E5E5"> and price and here is</font>
+
+87
+00:03:53,009 --> 00:03:56,129
+one<font color="#E5E5E5"> option to export this file export</font>
+
+88
+00:03:56,129 --> 00:03:59,159
+this data to<font color="#CCCCCC"> csv file</font><font color="#E5E5E5"> let me just click</font>
+
+89
+00:03:59,159 --> 00:04:01,310
+over<font color="#CCCCCC"> here and</font><font color="#E5E5E5"> here you will see that</font>
+
+90
+00:04:01,310 --> 00:04:04,409
+<font color="#E5E5E5">it's saying</font><font color="#CCCCCC"> you want</font><font color="#E5E5E5"> to save this file</font>
+
+91
+00:04:04,409 --> 00:04:06,150
+or you want to open<font color="#E5E5E5"> this file so</font><font color="#CCCCCC"> let's</font>
+
+92
+00:04:06,150 --> 00:04:10,340
+save this file<font color="#E5E5E5"> and let me run this and</font>
+
+93
+00:04:10,340 --> 00:04:14,159
+here you will<font color="#E5E5E5"> see the list of the</font><font color="#CCCCCC"> items</font>
+
+94
+00:04:14,159 --> 00:04:18,089
+coffee items comes here now in order<font color="#CCCCCC"> to</font>
+
+95
+00:04:18,089 --> 00:04:20,639
+<font color="#CCCCCC">test that</font><font color="#E5E5E5"> whether this web</font><font color="#CCCCCC"> application</font>
+
+96
+00:04:20,639 --> 00:04:24,990
+is vulnerable<font color="#CCCCCC"> to</font><font color="#E5E5E5"> CSU injection or not we</font>
+
+97
+00:04:24,990 --> 00:04:27,389
+have<font color="#CCCCCC"> to find a way so that we can</font>
+
+98
+00:04:27,389 --> 00:04:30,810
+on input here<font color="#E5E5E5"> which comes under</font><font color="#CCCCCC"> this</font>
+
+99
+00:04:30,810 --> 00:04:34,050
+<font color="#CCCCCC">category</font><font color="#E5E5E5"> so there is one challenge here</font>
+
+100
+00:04:34,050 --> 00:04:37,289
+called as<font color="#E5E5E5"> unrestricted file upload</font><font color="#CCCCCC"> so if</font>
+
+101
+00:04:37,289 --> 00:04:40,349
+I go here here you will<font color="#CCCCCC"> find</font><font color="#E5E5E5"> that add a</font>
+
+102
+00:04:40,349 --> 00:04:43,680
+new<font color="#CCCCCC"> item to coffee list which means</font><font color="#E5E5E5"> by</font>
+
+103
+00:04:43,680 --> 00:04:47,639
+adding here by adding<font color="#E5E5E5"> some data here we</font>
+
+104
+00:04:47,639 --> 00:04:50,580
+will able<font color="#CCCCCC"> to inject our malicious code</font>
+
+105
+00:04:50,580 --> 00:04:53,069
+and that will comes under this page for
+
+106
+00:04:53,069 --> 00:04:55,710
+rule injection so now let's fill these
+
+107
+00:04:55,710 --> 00:04:57,990
+fields<font color="#E5E5E5"> let's go here</font><font color="#CCCCCC"> to the upload image</font>
+
+108
+00:04:57,990 --> 00:05:01,860
+and select any<font color="#E5E5E5"> random image so item name</font>
+
+109
+00:05:01,860 --> 00:05:05,639
+will be demo in äj-- so description
+
+110
+00:05:05,639 --> 00:05:11,000
+should<font color="#CCCCCC"> be anything so this</font><font color="#E5E5E5"> is csv</font>
+
+111
+00:05:11,000 --> 00:05:17,879
+injection test so now here in place of
+
+112
+00:05:17,879 --> 00:05:20,279
+<font color="#E5E5E5">category let's copy this payload and</font>
+
+113
+00:05:20,279 --> 00:05:27,479
+paste it and the price<font color="#E5E5E5"> should be</font>
+
+114
+00:05:27,479 --> 00:05:30,990
+<font color="#E5E5E5">anything so let's click on submit and</font>
+
+115
+00:05:30,990 --> 00:05:32,789
+<font color="#E5E5E5">here you will see</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> our item</font><font color="#CCCCCC"> upload</font>
+
+116
+00:05:32,789 --> 00:05:34,770
+successfully now let's go back to
+
+117
+00:05:34,770 --> 00:05:38,250
+formula injection page and if<font color="#CCCCCC"> i scroll</font>
+
+118
+00:05:38,250 --> 00:05:40,800
+<font color="#CCCCCC">down</font><font color="#E5E5E5"> here you will see that our item has</font>
+
+119
+00:05:40,800 --> 00:05:43,229
+been<font color="#E5E5E5"> added</font><font color="#CCCCCC"> into</font><font color="#E5E5E5"> its list and here is our</font>
+
+120
+00:05:43,229 --> 00:05:48,000
+payload<font color="#E5E5E5"> now let's export this file save</font>
+
+121
+00:05:48,000 --> 00:05:52,770
+this and run it so here you will see
+
+122
+00:05:52,770 --> 00:05:54,899
+that<font color="#E5E5E5"> it's saying</font><font color="#CCCCCC"> Microsoft officials</font>
+
+123
+00:05:54,899 --> 00:05:56,969
+<font color="#E5E5E5">that it's a kind of a malware security</font>
+
+124
+00:05:56,969 --> 00:06:01,080
+concern<font color="#E5E5E5"> enable and here you can see that</font>
+
+125
+00:06:01,080 --> 00:06:03,330
+Microsoft Excel is saying whether<font color="#E5E5E5"> we</font>
+
+126
+00:06:03,330 --> 00:06:06,029
+want to open<font color="#E5E5E5"> a CMD dot exe or not and if</font>
+
+127
+00:06:06,029 --> 00:06:08,129
+I<font color="#CCCCCC"> just</font><font color="#E5E5E5"> click on yes here you will see</font>
+
+128
+00:06:08,129 --> 00:06:10,680
+that<font color="#CCCCCC"> a calculator application</font><font color="#E5E5E5"> is up and</font>
+
+129
+00:06:10,680 --> 00:06:14,580
+running<font color="#E5E5E5"> automatically so which means we</font>
+
+130
+00:06:14,580 --> 00:06:16,949
+<font color="#E5E5E5">are successfully able to inject</font><font color="#CCCCCC"> CSV code</font>
+
+131
+00:06:16,949 --> 00:06:20,699
+and now we can execute any commands on
+
+132
+00:06:20,699 --> 00:06:23,279
+client<font color="#CCCCCC"> side now in</font><font color="#E5E5E5"> order to extend this</font>
+
+133
+00:06:23,279 --> 00:06:26,039
+attack what an attacker can do so they
+
+134
+00:06:26,039 --> 00:06:28,020
+<font color="#E5E5E5">can execute a matter patter scripts</font>
+
+135
+00:06:28,020 --> 00:06:30,870
+using invoke<font color="#E5E5E5"> shell codes using reverse</font>
+
+136
+00:06:30,870 --> 00:06:35,310
+handlers and so on now let's talk<font color="#E5E5E5"> up</font>
+
+137
+00:06:35,310 --> 00:06:37,289
+talk it<font color="#CCCCCC"> about written but more advanced</font>
+
+138
+00:06:37,289 --> 00:06:39,810
+so what happen is most of the web
+
+139
+00:06:39,810 --> 00:06:41,250
+application nowadays
+
+140
+00:06:41,250 --> 00:06:44,460
+and they just filter<font color="#CCCCCC"> out this equals</font><font color="#E5E5E5"> to</font>
+
+141
+00:06:44,460 --> 00:06:48,570
+sign<font color="#E5E5E5"> and the user input now what we can</font>
+
+142
+00:06:48,570 --> 00:06:50,520
+do is in<font color="#E5E5E5"> order to execute our CSV</font>
+
+143
+00:06:50,520 --> 00:06:52,980
+injection<font color="#E5E5E5"> again we can also use</font><font color="#CCCCCC"> a</font>
+
+144
+00:06:52,980 --> 00:06:54,840
+different characters that<font color="#CCCCCC"> will</font><font color="#E5E5E5"> also</font>
+
+145
+00:06:54,840 --> 00:06:56,760
+signifies the beginning<font color="#E5E5E5"> of a new formula</font>
+
+146
+00:06:56,760 --> 00:07:00,390
+<font color="#E5E5E5">so we can use at the</font><font color="#CCCCCC"> rate plus minus and</font>
+
+147
+00:07:00,390 --> 00:07:02,430
+some few more characters<font color="#CCCCCC"> so here you</font>
+
+148
+00:07:02,430 --> 00:07:06,720
+will find advanced payload<font color="#E5E5E5"> so it's an</font>
+
+149
+00:07:06,720 --> 00:07:08,670
+advanced payload which we can use in
+
+150
+00:07:08,670 --> 00:07:10,920
+<font color="#E5E5E5">order to test CSF injection so if we</font>
+
+151
+00:07:10,920 --> 00:07:12,390
+just look<font color="#CCCCCC"> at this payload you will see</font>
+
+152
+00:07:12,390 --> 00:07:15,030
+here that<font color="#E5E5E5"> the</font><font color="#CCCCCC"> add add the rate some</font><font color="#E5E5E5"> one</font>
+
+153
+00:07:15,030 --> 00:07:17,370
+plus<font color="#E5E5E5"> one so it's a beginning of a new</font>
+
+154
+00:07:17,370 --> 00:07:19,410
+<font color="#E5E5E5">function and here after</font><font color="#CCCCCC"> the</font>
+
+155
+00:07:19,410 --> 00:07:21,720
+multiplication we<font color="#CCCCCC"> have written</font><font color="#E5E5E5"> our same</font>
+
+156
+00:07:21,720 --> 00:07:25,980
+payload so let's try to<font color="#CCCCCC"> copy this</font>
+
+157
+00:07:25,980 --> 00:07:29,100
+payload and let's try<font color="#CCCCCC"> to execute</font><font color="#E5E5E5"> this</font>
+
+158
+00:07:29,100 --> 00:07:31,320
+payload<font color="#E5E5E5"> directly inside the Microsoft</font>
+
+159
+00:07:31,320 --> 00:07:34,230
+Excel and<font color="#E5E5E5"> let's see whether it works or</font>
+
+160
+00:07:34,230 --> 00:07:38,850
+not let go here<font color="#E5E5E5"> let's paste here hit</font>
+
+161
+00:07:38,850 --> 00:07:41,700
+<font color="#E5E5E5">enter and here you will see so it's</font>
+
+162
+00:07:41,700 --> 00:07:43,080
+saying<font color="#CCCCCC"> that whether we want to execute</font>
+
+163
+00:07:43,080 --> 00:07:45,450
+<font color="#E5E5E5">this file</font><font color="#CCCCCC"> if you just click</font><font color="#E5E5E5"> on yes here</font>
+
+164
+00:07:45,450 --> 00:07:50,550
+<font color="#E5E5E5">you will see</font><font color="#CCCCCC"> that calculator comes</font><font color="#E5E5E5"> in so</font>
+
+165
+00:07:50,550 --> 00:07:53,150
+this<font color="#E5E5E5"> is</font><font color="#CCCCCC"> how we can</font><font color="#E5E5E5"> inject</font><font color="#CCCCCC"> CSV code and</font>
+
+166
+00:07:53,150 --> 00:07:56,040
+we<font color="#E5E5E5"> can do formula injection so in this</font>
+
+167
+00:07:56,040 --> 00:07:57,690
+<font color="#E5E5E5">video we have covered that</font><font color="#CCCCCC"> what is</font><font color="#E5E5E5"> CS</font>
+
+168
+00:07:57,690 --> 00:07:59,640
+means<font color="#E5E5E5"> action what is</font><font color="#CCCCCC"> CSV macro injection</font>
+
+169
+00:07:59,640 --> 00:08:02,250
+and how we can<font color="#E5E5E5"> do it now thanks</font><font color="#CCCCCC"> for</font>
+
+170
+00:08:02,250 --> 00:00:00,000
+<font color="#CCCCCC">watching this video</font>
+

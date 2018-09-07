@@ -1,0 +1,404 @@
+1
+00:00:00,089 --> 00:00:02,419
+ Halo semuanya, <font color="#E5E5E5">mari kita bicarakan </font>
+
+2
+00:00:02,419 --> 00:00:05,640
+ <font color="#E5E5E5">kurva jadi </font><font color="#CCCCCC">keriting </font><font color="#E5E5E5">komputer kecil </font>
+
+3
+00:00:05,640 --> 00:00:08,250
+ utilitas yang <font color="#E5E5E5">digunakan untuk </font><font color="#CCCCCC">mentransfer </font>
+
+4
+00:00:08,250 --> 00:00:11,370
+ data <font color="#E5E5E5">dari </font><font color="#CCCCCC">berbagai protokol sehingga dengan </font>
+
+5
+00:00:11,370 --> 00:00:13,769
+ bantuan <font color="#E5E5E5">curl</font><font color="#CCCCCC"> kita dapat mengirim permintaan </font><font color="#E5E5E5">dan </font>
+
+6
+00:00:13,769 --> 00:00:16,289
+ kita bisa melihat responnya <font color="#CCCCCC">seperti a </font>
+
+7
+00:00:16,289 --> 00:00:19,830
+ <font color="#E5E5E5">browser </font><font color="#CCCCCC">baris perintah </font><font color="#E5E5E5">jadi di dalam ikal </font>
+
+8
+00:00:19,830 --> 00:00:21,810
+ <font color="#CCCCCC">ada satu perpustakaan yang disebut sebagai bibir </font>
+
+9
+00:00:21,810 --> 00:00:24,090
+ pencari <font color="#E5E5E5">yang </font><font color="#CCCCCC">bertanggung jawab atas </font>
+
+10
+00:00:24,090 --> 00:00:26,279
+ meminta <font color="#E5E5E5">sumber daya dan mengambil </font>
+
+11
+00:00:26,279 --> 00:00:28,710
+ <font color="#E5E5E5">data dan dengan bantuan curl kita bisa </font>
+
+12
+00:00:28,710 --> 00:00:31,800
+ juga melakukan <font color="#E5E5E5">verifikasi sertifikasi SSL </font>
+
+13
+00:00:31,800 --> 00:00:35,730
+ <font color="#E5E5E5">dan curl juga mendukung cookie HTTP </font>
+
+14
+00:00:35,730 --> 00:00:39,239
+ <font color="#CCCCCC">Protokol HTTP protokol Gopher dan sebagainya </font>
+
+15
+00:00:39,239 --> 00:00:41,579
+ <font color="#E5E5E5">jadi jika Anda tidak tahu apa yang pergi </font><font color="#CCCCCC">bulu </font><font color="#E5E5E5">sehingga </font>
+
+16
+00:00:41,579 --> 00:00:43,680
+ gopher <font color="#E5E5E5">adalah protokol yang </font><font color="#CCCCCC">digunakan </font>
+
+17
+00:00:43,680 --> 00:00:46,379
+ sebelum <font color="#E5E5E5">protokol HTTP untuk meminta </font>
+
+18
+00:00:46,379 --> 00:00:49,739
+ sumber daya namun saat <font color="#E5E5E5">ini tidak digunakan </font><font color="#CCCCCC">sehingga </font>
+
+19
+00:00:49,739 --> 00:00:52,100
+ dengan <font color="#E5E5E5">bantuan </font><font color="#CCCCCC">ikal </font><font color="#E5E5E5">kami juga dapat mengirim </font>
+
+20
+00:00:52,100 --> 00:00:55,079
+ <font color="#E5E5E5">Permintaan HTTP dengan menggunakan HTTP berbeda </font>
+
+21
+00:00:55,079 --> 00:00:57,949
+ metode <font color="#E5E5E5">sekarang mari kita lihat cara kerja saat ini </font>
+
+22
+00:00:57,949 --> 00:01:02,309
+ <font color="#E5E5E5">sekarang mari kita lihat bagaimana kita bisa </font><font color="#CCCCCC">menggunakan curl </font>
+
+23
+00:01:02,309 --> 00:01:04,110
+ <font color="#E5E5E5">untuk memulai curl kita harus memulai </font>
+
+24
+00:01:04,110 --> 00:01:07,979
+ Kali Linux karena <font color="#E5E5E5">ikal dibangun kembali </font>
+
+25
+00:01:07,979 --> 00:01:10,320
+ <font color="#E5E5E5">dipasang di Kali Linux jadi untuk </font>
+
+26
+00:01:10,320 --> 00:01:12,299
+ <font color="#E5E5E5">mulai curl kita harus memulai terminal kita </font>
+
+27
+00:01:12,299 --> 00:01:14,610
+ <font color="#E5E5E5">dan di sini Anda dapat melihat itu </font><font color="#CCCCCC">sekarang </font>
+
+28
+00:01:14,610 --> 00:01:18,540
+ dalam <font color="#CCCCCC">contoh Kali Linux saya </font><font color="#E5E5E5">dan hanya </font>
+
+29
+00:01:18,540 --> 00:01:20,909
+ <font color="#CCCCCC">sampai</font><font color="#E5E5E5"> disini menggulung diikuti oleh </font>
+
+30
+00:01:20,909 --> 00:01:28,020
+ <font color="#E5E5E5">nama situs web yang </font><font color="#CCCCCC">Anda inginkan </font>
+
+31
+00:01:28,020 --> 00:01:31,140
+ <font color="#E5E5E5">hubungkan dan transfer data atau Anda </font>
+
+32
+00:01:31,140 --> 00:01:34,049
+ <font color="#CCCCCC">ingin mengambil beberapa data dan jika saya menekan </font>
+
+33
+00:01:34,049 --> 00:01:39,810
+ <font color="#E5E5E5">masukkan Anda bisa lihat di sini yang dimilikinya </font>
+
+34
+00:01:39,810 --> 00:01:42,240
+ <font color="#E5E5E5">mengambil semua </font><font color="#CCCCCC">konten tml ini </font>
+
+35
+00:01:42,240 --> 00:01:46,280
+ <font color="#E5E5E5">website sehingga secara default jika kita </font><font color="#CCCCCC">membuat </font>
+
+36
+00:01:46,280 --> 00:01:49,890
+ <font color="#CCCCCC">permintaan </font><font color="#E5E5E5">ke salah satu situs web oleh </font>
+
+37
+00:01:49,890 --> 00:01:52,020
+ metode HTTP default yang digunakan oleh curtilage 
+
+38
+00:01:52,020 --> 00:01:56,369
+ <font color="#CCCCCC">Anda dapatkan sekarang bagaimana jika jika kita ingin </font><font color="#E5E5E5">mengirim </font>
+
+39
+00:01:56,369 --> 00:01:58,079
+ permintaan khusus <font color="#E5E5E5">dengan menggunakan yang berbeda </font>
+
+40
+00:01:58,079 --> 00:02:00,960
+ <font color="#CCCCCC">Metode </font><font color="#E5E5E5">HTTP </font><font color="#CCCCCC">ada cara untuk melakukan itu </font>
+
+41
+00:02:00,960 --> 00:02:04,530
+ ya <font color="#E5E5E5">jadi bagaimana kita bisa </font><font color="#CCCCCC">melakukan itu tepat </font>
+
+42
+00:02:04,530 --> 00:02:08,429
+ di sini ikal <font color="#E5E5E5">- </font><font color="#CCCCCC">V jadi - V adalah untuk verbose </font>
+
+43
+00:02:08,429 --> 00:02:10,530
+ mode berarti untuk informasi detail <font color="#CCCCCC">dan </font>
+
+44
+00:02:10,530 --> 00:02:13,500
+ di sini kita harus <font color="#E5E5E5">menulis </font><font color="#CCCCCC">- </font>
+
+45
+00:02:13,500 --> 00:02:16,170
+ modal X dan diikuti <font color="#CCCCCC">oleh HTTP </font>
+
+46
+00:02:16,170 --> 00:02:18,630
+ metode yang <font color="#E5E5E5">ingin </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">gunakan dalam permintaan ini </font><font color="#CCCCCC">jadi </font>
+
+47
+00:02:18,630 --> 00:02:23,360
+ <font color="#CCCCCC">mari kita minta </font><font color="#E5E5E5">bayi India </font><font color="#CCCCCC">modern </font>
+
+48
+00:02:23,360 --> 00:02:28,560
+ dot-com <font color="#E5E5E5">dengan </font><font color="#CCCCCC">menggunakan permintaan </font><font color="#E5E5E5">kepala </font><font color="#CCCCCC">jadi - X </font>
+
+49
+00:02:28,560 --> 00:02:31,860
+ telah <font color="#CCCCCC">menggunakan metode HTTP-nya </font><font color="#E5E5E5">yang digunakan </font>
+
+50
+00:02:31,860 --> 00:02:35,370
+ untuk <font color="#CCCCCC">mengambil </font><font color="#E5E5E5">data tetapi hanya tajuk </font>
+
+51
+00:02:35,370 --> 00:02:43,140
+ <font color="#E5E5E5">informasi dan dia berkelahi </font><font color="#CCCCCC">dan di sini Anda </font>
+
+52
+00:02:43,140 --> 00:02:45,120
+ <font color="#E5E5E5">dapat melihat informasi kepala header </font>
+
+53
+00:02:45,120 --> 00:02:48,630
+ permintaan dengan HTTP 1.1 <font color="#E5E5E5">dan agen pengguna adalah </font>
+
+54
+00:02:48,630 --> 00:02:51,420
+ curl dan di sini Anda dapat <font color="#E5E5E5">melihat server </font>
+
+55
+00:02:51,420 --> 00:02:54,239
+ <font color="#CCCCCC">informasi bersama dengan versi PHP </font>
+
+56
+00:02:54,239 --> 00:03:02,370
+ <font color="#E5E5E5">nomor dan informasi SSL </font><font color="#CCCCCC">oke sekarang biarkan </font>
+
+57
+00:03:02,370 --> 00:03:04,380
+ <font color="#CCCCCC">aku memberimu satu skenario </font><font color="#E5E5E5">hanya untuk </font>
+
+58
+00:03:04,380 --> 00:03:07,020
+ Misalnya kami ingin <font color="#E5E5E5">membuat permintaan </font><font color="#CCCCCC">curl </font>
+
+59
+00:03:07,020 --> 00:03:10,440
+ <font color="#E5E5E5">ke </font><font color="#CCCCCC">situs web </font><font color="#E5E5E5">tertentu </font><font color="#CCCCCC">tetapi ada </font>
+
+60
+00:03:10,440 --> 00:03:13,590
+ pengalihan <font color="#E5E5E5">pada domain itu hanya untuk </font>
+
+61
+00:03:13,590 --> 00:03:16,010
+ <font color="#E5E5E5">Sebagai contoh jika saya </font><font color="#CCCCCC">hanya menulis di sini ikal </font>
+
+62
+00:03:16,010 --> 00:03:18,959
+ <font color="#E5E5E5">google.com dan tekan enter bisa Anda </font><font color="#CCCCCC">lihat </font>
+
+63
+00:03:18,959 --> 00:03:24,420
+ <font color="#CCCCCC">di sini </font><font color="#E5E5E5">bahwa itu sama </font><font color="#CCCCCC">3:02 </font><font color="#E5E5E5">pindah dan kami </font>
+
+64
+00:03:24,420 --> 00:03:26,549
+ semua tahu bahwa <font color="#CCCCCC">kode respon 3 0 2 adalah </font>
+
+65
+00:03:26,549 --> 00:03:29,430
+ sebenarnya <font color="#CCCCCC">untuk pengalihan </font><font color="#E5E5E5">sekarang bagaimana jika </font>
+
+66
+00:03:29,430 --> 00:03:32,970
+ jika ada <font color="#E5E5E5">situs web yang berisi jenis ini </font>
+
+67
+00:03:32,970 --> 00:03:35,880
+ dari <font color="#CCCCCC">pengalihan </font><font color="#E5E5E5">yang bagaimana kita </font><font color="#CCCCCC">bisa </font>
+
+68
+00:03:35,880 --> 00:03:38,940
+ sebenarnya mengambil beberapa data dengan menggunakan curl 
+
+69
+00:03:38,940 --> 00:03:42,630
+ jadi tulis saja ikal dan tulis - <font color="#CCCCCC">L </font>
+
+70
+00:03:42,630 --> 00:03:46,590
+ huruf besar L dan nama situs web sekarang apa 
+
+71
+00:03:46,590 --> 00:03:49,500
+ akan terjadi <font color="#E5E5E5">jika curl </font><font color="#CCCCCC">akan melihatnya </font>
+
+72
+00:03:49,500 --> 00:03:52,140
+ ada <font color="#E5E5E5">pengalihan </font><font color="#CCCCCC">maka</font><font color="#E5E5E5"> ikal akan </font>
+
+73
+00:03:52,140 --> 00:03:55,440
+ sebenarnya mengarahkan <font color="#E5E5E5">ke redirection itu atau </font>
+
+74
+00:03:55,440 --> 00:03:57,959
+ curl akan <font color="#E5E5E5">mengikuti redirection dan </font>
+
+75
+00:03:57,959 --> 00:04:02,450
+ jika saya <font color="#CCCCCC">masukkan sekarang Anda dapat melihat yang sebenarnya </font>
+
+76
+00:04:02,450 --> 00:04:05,790
+ <font color="#E5E5E5">konten atau </font><font color="#CCCCCC">data HTML termasuk beberapa </font>
+
+77
+00:04:05,790 --> 00:04:08,340
+ JavaScript <font color="#CCCCCC">dan beberapa data memo dari </font>
+
+78
+00:04:08,340 --> 00:04:15,720
+ google.com jadi sekarang sebagai penguji pena di <font color="#CCCCCC">sana </font>
+
+79
+00:04:15,720 --> 00:04:17,608
+ <font color="#E5E5E5">ingat saya beberapa situasi di mana kita inginkan </font>
+
+80
+00:04:17,608 --> 00:04:20,010
+ <font color="#E5E5E5">untuk menyimpan semua isi ste ml itu dalam </font>
+
+81
+00:04:20,010 --> 00:04:21,510
+ file tertentu dalam teks tertentu 
+
+82
+00:04:21,510 --> 00:04:23,880
+ <font color="#E5E5E5">file untuk penggunaan masa depan kami dan untuk kami </font>
+
+83
+00:04:23,880 --> 00:04:26,370
+ referensi di masa mendatang <font color="#E5E5E5">maka </font><font color="#CCCCCC">untuk menghemat </font>
+
+84
+00:04:26,370 --> 00:04:27,060
+ itu 
+
+85
+00:04:27,060 --> 00:04:31,230
+ data di salah satu <font color="#E5E5E5">file teks yang kami dapat </font>
+
+86
+00:04:31,230 --> 00:04:35,190
+ tentukan <font color="#E5E5E5">- </font><font color="#CCCCCC">Oh metode - tidak ada parameter </font><font color="#E5E5E5">di sini </font>
+
+87
+00:04:35,190 --> 00:04:38,940
+ Anda dapat melihat <font color="#CCCCCC">Cal </font><font color="#E5E5E5">- </font><font color="#CCCCCC">o - o adalah </font><font color="#E5E5E5">untuk </font>
+
+88
+00:04:38,940 --> 00:04:42,450
+ <font color="#E5E5E5">ruang </font><font color="#CCCCCC">file output </font><font color="#E5E5E5">nama </font><font color="#CCCCCC">file </font><font color="#E5E5E5">seperti saya </font>
+
+89
+00:04:42,450 --> 00:04:44,580
+ ingin <font color="#CCCCCC">menyimpan data di dalam </font><font color="#E5E5E5">dot curl </font>
+
+90
+00:04:44,580 --> 00:04:52,080
+ txt diikuti <font color="#E5E5E5">oleh </font><font color="#CCCCCC">nama </font><font color="#E5E5E5">situs web </font><font color="#CCCCCC">dan jika </font>
+
+91
+00:04:52,080 --> 00:04:56,220
+ Saya menekan <font color="#E5E5E5">enter di sini </font><font color="#CCCCCC">Anda </font><font color="#E5E5E5">dapat melihat bahwa itu ada </font>
+
+92
+00:04:56,220 --> 00:04:59,040
+ <font color="#CCCCCC">disimpan dan diterima datanya </font><font color="#E5E5E5">dan sekarang jika </font>
+
+93
+00:04:59,040 --> 00:05:02,010
+ Saya melakukan LS di <font color="#E5E5E5">sini Anda dapat melihat file bernama </font>
+
+94
+00:05:02,010 --> 00:05:04,290
+ sebagai curl dot txt telah dibuat <font color="#E5E5E5">sekarang </font>
+
+95
+00:05:04,290 --> 00:05:06,390
+ <font color="#CCCCCC">mari kita lihat apa yang ada di </font><font color="#E5E5E5">dalam file ini </font>
+
+96
+00:05:06,390 --> 00:05:09,900
+ <font color="#E5E5E5">dan di sini Anda dapat melihat seluruh HTML </font>
+
+97
+00:05:09,900 --> 00:05:17,280
+ konten jadi ini singkat 
+
+98
+00:05:17,280 --> 00:05:19,440
+ pengenalan curl <font color="#E5E5E5">yang </font><font color="#CCCCCC">bisa </font><font color="#E5E5E5">kita gunakan </font>
+
+99
+00:05:19,440 --> 00:05:22,229
+ curl <font color="#E5E5E5">bagaimana kami bisa mengirim yang berbeda </font>
+
+100
+00:05:22,229 --> 00:05:24,540
+ <font color="#E5E5E5">permintaan metode HTTP yang berbeda dengan menggunakan </font>
+
+101
+00:05:24,540 --> 00:00:00,000
+ keriting jadi terima kasih <font color="#E5E5E5">untuk </font><font color="#CCCCCC">menonton video ini </font>
+

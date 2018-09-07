@@ -1,0 +1,664 @@
+1
+00:00:09,200 --> 00:00:12,870
+ dalam <font color="#E5E5E5">video ini kami akan mengatur </font><font color="#CCCCCC">lab kami jadi </font>
+
+2
+00:00:12,870 --> 00:00:14,759
+ <font color="#CCCCCC">bahwa kita dapat belajar dan memahami </font>
+
+3
+00:00:14,759 --> 00:00:17,130
+ bug keamanan <font color="#E5E5E5">perangkat lunak pertama yang kita butuhkan </font>
+
+4
+00:00:17,130 --> 00:00:18,080
+ <font color="#E5E5E5">adalah </font>
+
+5
+00:00:18,080 --> 00:00:30,590
+ [Musik] 
+
+6
+00:00:30,590 --> 00:00:33,730
+ [Tepuk tangan] 
+
+7
+00:00:34,460 --> 00:00:37,500
+ <font color="#CCCCCC">Zam </font><font color="#E5E5E5">membantu kami menciptakan </font><font color="#CCCCCC">localhost kami </font>
+
+8
+00:00:37,500 --> 00:00:39,720
+ yang kami akan jalankan situs web kami sendiri <font color="#CCCCCC">untuk </font>
+
+9
+00:00:39,720 --> 00:00:42,420
+ belajar <font color="#E5E5E5">jika Anda sudah tahu cara </font><font color="#CCCCCC">menjalankannya </font>
+
+10
+00:00:42,420 --> 00:00:44,460
+ localhost <font color="#CCCCCC">maka Anda dapat menggunakan </font><font color="#E5E5E5">milik Anda sendiri </font>
+
+11
+00:00:44,460 --> 00:00:47,460
+ perangkat lunak yang dikenal <font color="#E5E5E5">jadi mari kita unduh ini </font>
+
+12
+00:00:47,460 --> 00:00:51,739
+ <font color="#CCCCCC">aplikasi pertama pergi ke google </font><font color="#E5E5E5">dan ketik X </font>
+
+13
+00:00:51,739 --> 00:00:55,769
+ MPP atau kunjungi situs <font color="#CCCCCC">web resmi mereka </font>
+
+14
+00:00:55,769 --> 00:01:02,400
+ yang merupakan <font color="#E5E5E5">teman Apache </font><font color="#CCCCCC">dot </font><font color="#E5E5E5">org sekarang </font>
+
+15
+00:01:02,400 --> 00:01:04,800
+ situs web ini <font color="#CCCCCC">Anda akan melihat </font><font color="#E5E5E5">unduhan </font>
+
+16
+00:01:04,800 --> 00:01:07,560
+ <font color="#CCCCCC">bagian untuk sistem operasi yang berbeda </font>
+
+17
+00:01:07,560 --> 00:01:10,380
+ ini dia untuk <font color="#CCCCCC">sistem Windows untuk </font><font color="#E5E5E5">Linux </font>
+
+18
+00:01:10,380 --> 00:01:13,289
+ sistem dan untuk sistem mac yang saya gunakan 
+
+19
+00:01:13,289 --> 00:01:16,200
+ <font color="#E5E5E5">ubuntu yang merupakan distro linux jadi saya akan </font>
+
+20
+00:01:16,200 --> 00:01:18,119
+ klik <font color="#CCCCCC">pada </font><font color="#E5E5E5">linux </font><font color="#CCCCCC">jika Anda menggunakan windows </font>
+
+21
+00:01:18,119 --> 00:01:21,720
+ <font color="#E5E5E5">Anda dapat mengklik pada windows mari kita klik </font>
+
+22
+00:01:21,720 --> 00:01:25,500
+ linux <font color="#E5E5E5">dan prompt masuk jadi saya sudah </font>
+
+23
+00:01:25,500 --> 00:01:27,630
+ mengunduhnya <font color="#CCCCCC">jadi </font><font color="#E5E5E5">saya </font><font color="#CCCCCC">tidak akan mengunduhnya </font>
+
+24
+00:01:27,630 --> 00:01:29,970
+ <font color="#E5E5E5">sekarang jika Anda menggunakan windows dan Anda </font>
+
+25
+00:01:29,970 --> 00:01:31,950
+ men-download <font color="#CCCCCC">installer</font><font color="#E5E5E5"> maka Anda dapat menjalankan </font>
+
+26
+00:01:31,950 --> 00:01:34,289
+ <font color="#E5E5E5">installer</font><font color="#CCCCCC"> dengan double klik di atasnya sekarang </font>
+
+27
+00:01:34,289 --> 00:01:36,360
+ jika Anda <font color="#CCCCCC">menggunakan linux maka </font><font color="#E5E5E5">saya akan tunjukkan </font>
+
+28
+00:01:36,360 --> 00:01:39,390
+ <font color="#CCCCCC">Anda cara </font><font color="#E5E5E5">menginstalnya sekarang </font><font color="#CCCCCC">pergi ke </font><font color="#E5E5E5">Anda </font>
+
+29
+00:01:39,390 --> 00:01:41,820
+ unduh folder tempat file berada 
+
+30
+00:01:41,820 --> 00:01:46,170
+ <font color="#CCCCCC">klik kanan dan buka di terminal atau buka </font>
+
+31
+00:01:46,170 --> 00:01:48,119
+ <font color="#E5E5E5">terminal Anda dan ubah </font><font color="#CCCCCC">direktori </font>
+
+32
+00:01:48,119 --> 00:01:50,159
+ dimana <font color="#CCCCCC">file itu berada </font>
+
+33
+00:01:50,159 --> 00:01:53,970
+ sekarang ketikkan <font color="#CCCCCC">chi Modi untuk membuat file </font>
+
+34
+00:01:53,970 --> 00:01:58,890
+ dieksekusi <font color="#E5E5E5">tipe CH </font><font color="#CCCCCC">m OD </font><font color="#E5E5E5">+ </font><font color="#CCCCCC">x dan </font><font color="#E5E5E5">file </font>
+
+35
+00:01:58,890 --> 00:02:04,229
+ <font color="#CCCCCC">beri </font><font color="#E5E5E5">nama </font><font color="#CCCCCC">XA MPP di sini </font><font color="#E5E5E5">sekarang tekan enter </font>
+
+36
+00:02:04,229 --> 00:02:06,829
+ file akan diubah <font color="#E5E5E5">menjadi executable </font>
+
+37
+00:02:06,829 --> 00:02:11,130
+ sekarang jalankan dengan izin pengguna super 
+
+38
+00:02:11,130 --> 00:02:17,579
+ ketik saat <font color="#CCCCCC">Anda d </font><font color="#E5E5E5">spasi dot </font><font color="#CCCCCC">untuk slash dan </font>
+
+39
+00:02:17,579 --> 00:02:22,140
+ <font color="#E5E5E5">nama file tekan enter masukkan Anda </font>
+
+40
+00:02:22,140 --> 00:02:26,850
+ kata sandi dan <font color="#E5E5E5">Anda akan melihat penginstal kami </font>
+
+41
+00:02:26,850 --> 00:02:31,230
+ layar sekarang Anda <font color="#E5E5E5">dapat menginstalnya seperti </font>
+
+42
+00:02:31,230 --> 00:02:33,900
+ <font color="#CCCCCC">Sistem Windows klik </font><font color="#E5E5E5">berikutnya dan </font><font color="#CCCCCC">instal </font>
+
+43
+00:02:33,900 --> 00:02:36,450
+ perangkat lunak <font color="#E5E5E5">jika Anda telah menyelesaikan </font>
+
+44
+00:02:36,450 --> 00:02:39,480
+ rancang <font color="#E5E5E5">dan instal perangkat lunaknya </font><font color="#CCCCCC">sekarang </font>
+
+45
+00:02:39,480 --> 00:02:41,970
+ ke <font color="#E5E5E5">komputer Anda dan pergi ke pilihan Anda </font>
+
+46
+00:02:41,970 --> 00:02:45,420
+ folder dan kemudian di dalamnya <font color="#E5E5E5">folder tanah </font>
+
+47
+00:02:45,420 --> 00:02:46,050
+ dan 
+
+48
+00:02:46,050 --> 00:02:49,050
+ <font color="#E5E5E5">temukan file yang Anda gunakan jendela </font>
+
+49
+00:02:49,050 --> 00:02:51,570
+ sistem <font color="#E5E5E5">maka direktori Anda akan menjadi C </font>
+
+50
+00:02:51,570 --> 00:02:54,330
+ Drive atau <font color="#CCCCCC">drive lain yang mana </font>
+
+51
+00:02:54,330 --> 00:02:56,850
+ <font color="#E5E5E5">sistem operasi dipasang di dalam </font>
+
+52
+00:02:56,850 --> 00:03:00,180
+ drive itu Anda akan menemukan folder ujian dan 
+
+53
+00:03:00,180 --> 00:03:02,370
+ di <font color="#E5E5E5">dalam folder ujian yang akan Anda </font><font color="#CCCCCC">temukan </font>
+
+54
+00:03:02,370 --> 00:03:05,040
+ <font color="#E5E5E5">folder </font><font color="#CCCCCC">htdocs </font><font color="#E5E5E5">jadi folder Doc ekstra ini </font>
+
+55
+00:03:05,040 --> 00:03:08,040
+ berisi <font color="#CCCCCC">halaman web </font><font color="#E5E5E5">Anda </font><font color="#CCCCCC">sekarang jika Anda </font>
+
+56
+00:03:08,040 --> 00:03:09,750
+ menggunakan <font color="#CCCCCC">sistem Windows Anda, maka Anda bisa </font>
+
+57
+00:03:09,750 --> 00:03:12,090
+ jalankan <font color="#E5E5E5">ujian Anda dengan klik ganda pada nya </font>
+
+58
+00:03:12,090 --> 00:03:14,910
+ ikon <font color="#E5E5E5">jika Anda menggunakan Linux maka Anda </font>
+
+59
+00:03:14,910 --> 00:03:18,240
+ harus melakukan beberapa <font color="#CCCCCC">tugas yang lebih untuk </font><font color="#E5E5E5">menjalankannya </font>
+
+60
+00:03:18,240 --> 00:03:22,140
+ <font color="#CCCCCC">klik kanan dan buka di terminal </font><font color="#E5E5E5">atau hanya </font>
+
+61
+00:03:22,140 --> 00:03:23,670
+ <font color="#E5E5E5">buka terminal Anda dan ubah </font>
+
+62
+00:03:23,670 --> 00:03:25,920
+ langsung dengan menggunakan perintah CD yang 
+
+63
+00:03:25,920 --> 00:03:31,020
+ <font color="#E5E5E5">Ubah langsung sekarang di sini ketik </font><font color="#CCCCCC">UD </font><font color="#E5E5E5">Anda untuk </font>
+
+64
+00:03:31,020 --> 00:03:34,050
+ izin <font color="#E5E5E5">pengguna super lalu tekan </font>
+
+65
+00:03:34,050 --> 00:03:38,640
+ dot slash dan nama <font color="#E5E5E5">file yang ada </font>
+
+66
+00:03:38,640 --> 00:03:40,740
+ manajer - Linux 
+
+67
+00:03:40,740 --> 00:03:47,700
+ - x64 dot jalankan file ini <font color="#E5E5E5">sekarang tekan </font><font color="#CCCCCC">ENTER </font>
+
+68
+00:03:47,700 --> 00:03:54,150
+ dan <font color="#E5E5E5">masukkan password </font><font color="#CCCCCC">dan Anda melihat </font>
+
+69
+00:03:54,150 --> 00:03:55,770
+ aplikasi <font color="#CCCCCC">sekarang pergi ke </font><font color="#E5E5E5">kelola Anda </font>
+
+70
+00:03:55,770 --> 00:03:58,680
+ server dan belajar atau <font color="#E5E5E5">server web Apache </font>
+
+71
+00:03:58,680 --> 00:04:04,230
+ dan database keterampilan saya baik-baik saja <font color="#E5E5E5">sekarang pergi ke </font>
+
+72
+00:04:04,230 --> 00:04:09,260
+ <font color="#E5E5E5">browser Anda dan tipe n 127.0.0.1 </font>
+
+73
+00:04:18,100 --> 00:04:21,160
+ jika Anda menjalankan Windows <font color="#CCCCCC">maka Anda bisa </font>
+
+74
+00:04:21,160 --> 00:04:23,770
+ <font color="#CCCCCC">klik dua kali pada Anda sampai con dan </font>
+
+75
+00:04:23,770 --> 00:04:25,720
+ Anda akan menemukan <font color="#CCCCCC">produk</font><font color="#E5E5E5"> seperti ini saja atau </font>
+
+76
+00:04:25,720 --> 00:04:28,090
+ mirip seperti ini <font color="#CCCCCC">Anda harus memulai </font>
+
+77
+00:04:28,090 --> 00:04:30,670
+ <font color="#E5E5E5">layanan server web Apache dan keahlian saya </font>
+
+78
+00:04:30,670 --> 00:04:34,840
+ database <font color="#E5E5E5">untuk video selanjutnya jadi itu saja </font>
+
+79
+00:04:34,840 --> 00:04:37,120
+ untuk video ini <font color="#CCCCCC">di video selanjutnya </font><font color="#E5E5E5">kita akan </font>
+
+80
+00:04:37,120 --> 00:04:39,100
+ <font color="#E5E5E5">instal lebih banyak perangkat lunak untuk mengatur kami </font>
+
+81
+00:04:39,100 --> 00:04:41,770
+ lab terima kasih dan have a <font color="#E5E5E5">nice day </font><font color="#CCCCCC">di </font>
+
+82
+00:04:41,770 --> 00:04:44,050
+ video sebelumnya <font color="#CCCCCC">kami telah menginstal zem </font>
+
+83
+00:04:44,050 --> 00:04:46,420
+ <font color="#CCCCCC">perangkat lunak </font><font color="#E5E5E5">sekarang di </font><font color="#CCCCCC">video </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">kita akan </font>
+
+84
+00:04:46,420 --> 00:04:48,520
+ pasang dan <font color="#CCCCCC">atur </font><font color="#E5E5E5">jaring yang rentan </font>
+
+85
+00:04:48,520 --> 00:04:50,990
+ aplikasi <font color="#E5E5E5">atau singkatnya </font>
+
+86
+00:04:50,990 --> 00:05:03,500
+ [Musik] 
+
+87
+00:05:03,500 --> 00:05:07,089
+ [Tepuk tangan] 
+
+88
+00:05:07,260 --> 00:05:09,970
+ VW <font color="#E5E5E5">adalah aplikasi web yang rentan </font>
+
+89
+00:05:09,970 --> 00:05:12,250
+ yang digunakan untuk <font color="#CCCCCC">tujuan belajar Anda </font>
+
+90
+00:05:12,250 --> 00:05:14,050
+ bisa <font color="#CCCCCC">pergi ke sisi resmi mereka yang </font>
+
+91
+00:05:14,050 --> 00:05:16,930
+ dvwa dot co dot <font color="#CCCCCC">PUK dan </font><font color="#E5E5E5">Anda dapat mengunduh </font>
+
+92
+00:05:16,930 --> 00:05:20,170
+ <font color="#CCCCCC">file zip dari sana sebelumnya </font>
+
+93
+00:05:20,170 --> 00:05:22,240
+ download <font color="#E5E5E5">file zip ini kita </font><font color="#CCCCCC">harus </font>
+
+94
+00:05:22,240 --> 00:05:24,100
+ <font color="#E5E5E5">mengubah izin folder </font><font color="#CCCCCC">htdocs </font>
+
+95
+00:05:24,100 --> 00:05:26,440
+ yang <font color="#CCCCCC">saya ceritakan sebelumnya </font>
+
+96
+00:05:26,440 --> 00:05:28,960
+ video <font color="#E5E5E5">jika Anda menggunakan </font><font color="#CCCCCC">Linux </font><font color="#E5E5E5">maka kita </font>
+
+97
+00:05:28,960 --> 00:05:31,450
+ harus mengubah izin dari <font color="#CCCCCC">htdocs </font>
+
+98
+00:05:31,450 --> 00:05:34,540
+ <font color="#CCCCCC">folder jadi untuk itu kita </font><font color="#E5E5E5">harus pergi ke kami </font>
+
+99
+00:05:34,540 --> 00:05:37,900
+ pilih folder dan di dalam <font color="#CCCCCC">lampu itu secara langsung </font>
+
+100
+00:05:37,900 --> 00:05:39,910
+ dan seterusnya pada direktori lam kanan 
+
+101
+00:05:39,910 --> 00:05:43,030
+ klik dan buka di terminal <font color="#E5E5E5">atau buka saja </font>
+
+102
+00:05:43,030 --> 00:05:45,490
+ di terminal <font color="#E5E5E5">dan ubah direktori dengan </font>
+
+103
+00:05:45,490 --> 00:05:50,850
+ <font color="#E5E5E5">menggunakan perintah CD sekarang di sini </font><font color="#CCCCCC">CH </font><font color="#E5E5E5">m OD </font>
+
+104
+00:05:50,850 --> 00:05:55,210
+ tujuh tujuh <font color="#CCCCCC">tujuh dan kemudian htdocs </font><font color="#E5E5E5">ini </font>
+
+105
+00:05:55,210 --> 00:05:57,700
+ akan mengubah izin dari <font color="#CCCCCC">dokumen st </font>
+
+106
+00:05:57,700 --> 00:06:00,460
+ <font color="#E5E5E5">dan sekarang kita bisa menyalin file apa pun ke dalam ini </font>
+
+107
+00:06:00,460 --> 00:06:06,340
+ folder <font color="#CCCCCC">oke kita harus mengambil </font>
+
+108
+00:06:06,340 --> 00:06:09,190
+ <font color="#E5E5E5">izin super user juga jadi tipe </font><font color="#CCCCCC">su </font>
+
+109
+00:06:09,190 --> 00:06:14,950
+ <font color="#CCCCCC">lakukan dan kemudian masukkan password </font><font color="#E5E5E5">ini </font>
+
+110
+00:06:14,950 --> 00:06:16,900
+ untuk <font color="#E5E5E5">pengguna Linux jika Anda adalah pengguna Windows </font>
+
+111
+00:06:16,900 --> 00:06:19,030
+ maka tidak <font color="#E5E5E5">perlu ada perubahan </font>
+
+112
+00:06:19,030 --> 00:06:21,820
+ izin Anda dapat menyalin <font color="#E5E5E5">file apa pun </font>
+
+113
+00:06:21,820 --> 00:06:25,030
+ Anda <font color="#CCCCCC">sebagai </font><font color="#E5E5E5">doc Snyder bersih sekarang </font>
+
+114
+00:06:25,030 --> 00:06:28,990
+ izin diubah <font color="#E5E5E5">kembali ke </font><font color="#CCCCCC">Anda </font>
+
+115
+00:06:28,990 --> 00:06:30,940
+ browser dan kemudian <font color="#E5E5E5">klik unduhan </font>
+
+116
+00:06:30,940 --> 00:06:34,930
+ bagian dvwa <font color="#E5E5E5">sekarang saya menggunakan arsip </font>
+
+117
+00:06:34,930 --> 00:06:37,180
+ manager untuk mengekstrak folder ke dalam 
+
+118
+00:06:37,180 --> 00:06:40,000
+ <font color="#CCCCCC">folder htdocs jika Anda menggunakan Windows </font>
+
+119
+00:06:40,000 --> 00:06:42,430
+ Anda dapat menggunakan <font color="#E5E5E5">area </font><font color="#CCCCCC">Wynn </font><font color="#E5E5E5">atau Anda bisa saja </font>
+
+120
+00:06:42,430 --> 00:06:46,830
+ <font color="#E5E5E5">klik kanan pada folder dan diekstraksi </font>
+
+121
+00:06:49,650 --> 00:06:56,190
+ sekarang pergi ke komputer kemudian pilih lampu dan 
+
+122
+00:06:56,190 --> 00:06:59,730
+ di dalam htdocs ' 
+
+123
+00:07:03,790 --> 00:07:06,140
+ <font color="#E5E5E5">oke sekarang file berhasil </font>
+
+124
+00:07:06,140 --> 00:07:10,220
+ diekstraksi saatnya untuk <font color="#E5E5E5">memulai zamp kami </font><font color="#CCCCCC">sebagai </font>
+
+125
+00:07:10,220 --> 00:07:12,710
+ <font color="#E5E5E5">Aku </font><font color="#CCCCCC">bilang di video sebelumnya bagaimana </font>
+
+126
+00:07:12,710 --> 00:07:15,710
+ mulai mereka <font color="#E5E5E5">jika Anda menggunakan Windows itu </font>
+
+127
+00:07:15,710 --> 00:07:18,380
+ <font color="#E5E5E5">Anda dapat melipatgandakan klik pada </font><font color="#CCCCCC">ikon </font>
+
+128
+00:07:18,380 --> 00:07:21,320
+ Sam <font color="#E5E5E5">dan jika Anda menggunakan Ubuntu kemudian pergi </font>
+
+129
+00:07:21,320 --> 00:07:24,320
+ ke <font color="#CCCCCC">folder lampu Anda dan klik kanan terbuka </font>
+
+130
+00:07:24,320 --> 00:07:26,810
+ di terminal dan jalankan 
+
+131
+00:07:26,810 --> 00:07:31,970
+ zamp dengan menggunakan perintah ini sekarang masukkan 
+
+132
+00:07:31,970 --> 00:07:39,860
+ kata sandi <font color="#CCCCCC">dan zamp akan mulai pada ini </font>
+
+133
+00:07:39,860 --> 00:07:42,290
+ ini kita <font color="#E5E5E5">harus </font><font color="#CCCCCC">mulai dua layanan pertama </font>
+
+134
+00:07:42,290 --> 00:07:44,420
+ adalah patch <font color="#E5E5E5">server web dan yang kedua </font>
+
+135
+00:07:44,420 --> 00:07:50,570
+ adalah <font color="#CCCCCC">database MySQL sekarang sekarang mari kita periksa </font>
+
+136
+00:07:50,570 --> 00:07:53,660
+ apakah <font color="#E5E5E5">localhost berfungsi atau tidak </font>
+
+137
+00:07:53,660 --> 00:07:56,360
+ <font color="#CCCCCC">ok itu bekerja dengan baik kembali ke Anda </font>
+
+138
+00:07:56,360 --> 00:07:59,330
+ Lampu <font color="#CCCCCC">kembali </font><font color="#E5E5E5">kembali</font><font color="#CCCCCC"> ke htdocs kami </font>
+
+139
+00:07:59,330 --> 00:08:04,220
+ folder <font color="#E5E5E5">dan kemudian di dalam dvwa - master go </font>
+
+140
+00:08:04,220 --> 00:08:07,450
+ dalam config dan <font color="#CCCCCC">klik kanan </font><font color="#E5E5E5">pada </font>
+
+141
+00:08:07,450 --> 00:08:12,850
+ konflik dot an dot dot file dot ph PHP 
+
+142
+00:08:12,850 --> 00:08:15,910
+ <font color="#CCCCCC">klik kanan </font><font color="#E5E5E5">dan </font><font color="#CCCCCC">buka </font><font color="#E5E5E5">dengan editor </font>
+
+143
+00:08:15,910 --> 00:08:21,260
+ sekarang ubah <font color="#E5E5E5">kata sandi DV ini di sini </font>
+
+144
+00:08:21,260 --> 00:08:24,050
+ <font color="#E5E5E5">variabel kita harus </font><font color="#CCCCCC">mengubah ini dari </font>
+
+145
+00:08:24,050 --> 00:08:28,040
+ kata sandi untuk <font color="#E5E5E5">tidak kami hanya membatalkan </font>
+
+146
+00:08:28,040 --> 00:08:32,390
+ <font color="#E5E5E5">ini dan kemudian kita simpan dengan mengklik </font>
+
+147
+00:08:32,390 --> 00:08:37,849
+ <font color="#CCCCCC">ctrl s dan ubah nama file ini juga yang mana </font>
+
+148
+00:08:37,849 --> 00:08:42,770
+ konflik <font color="#E5E5E5">tidak termasuk dot PHP ok sekarang </font>
+
+149
+00:08:42,770 --> 00:08:47,750
+ buka <font color="#E5E5E5">browser Anda dan ketik 127.0.0.1 a </font>
+
+150
+00:08:47,750 --> 00:08:50,810
+ bintang dan kemudian <font color="#E5E5E5">pengaturan dot PHP yang akan Anda lihat </font>
+
+151
+00:08:50,810 --> 00:08:54,140
+ <font color="#E5E5E5">halaman ini di sini turun dan klik </font>
+
+152
+00:08:54,140 --> 00:08:56,450
+ <font color="#E5E5E5">buat database wizard yang </font><font color="#CCCCCC">akan dibuat </font>
+
+153
+00:08:56,450 --> 00:08:59,120
+ <font color="#CCCCCC">database sekarang </font><font color="#E5E5E5">akan dialihkan ke </font>
+
+154
+00:08:59,120 --> 00:09:03,440
+ halaman ini <font color="#E5E5E5">dvw - login master dot PHP </font><font color="#CCCCCC">sekarang </font>
+
+155
+00:09:03,440 --> 00:09:06,440
+ Anda dapat <font color="#CCCCCC">masuk </font><font color="#E5E5E5">dengan menggunakan kata sandi default </font>
+
+156
+00:09:06,440 --> 00:09:09,290
+ dan nama pengguna <font color="#E5E5E5">yang nama pengguna kami adalah admin </font>
+
+157
+00:09:09,290 --> 00:09:14,240
+ <font color="#CCCCCC">dan kata sandinya adalah </font><font color="#E5E5E5">PA SS wo Rd yang </font>
+
+158
+00:09:14,240 --> 00:09:16,250
+ kata sandi 
+
+159
+00:09:16,250 --> 00:09:19,670
+ seperti yang Anda lihat ini adalah dvwa kami <font color="#E5E5E5">yang </font>
+
+160
+00:09:19,670 --> 00:09:21,830
+ aplikasi web yang rentan <font color="#E5E5E5">pada kita ini </font>
+
+161
+00:09:21,830 --> 00:09:24,620
+ <font color="#CCCCCC">akan </font><font color="#E5E5E5">belajar banyak aplikasi web </font>
+
+162
+00:09:24,620 --> 00:09:27,620
+ <font color="#E5E5E5">bug keamanan sehingga Anda dapat melihat di sebelah kiri </font>
+
+163
+00:09:27,620 --> 00:09:29,660
+ sisi <font color="#E5E5E5">ada </font><font color="#CCCCCC">banyak bug yang </font><font color="#E5E5E5">disebutkan dan </font>
+
+164
+00:09:29,660 --> 00:09:32,480
+ <font color="#CCCCCC">alat turbin pada sebagian </font><font color="#E5E5E5">besar ini dalam hal ini </font>
+
+165
+00:09:32,480 --> 00:09:34,750
+ <font color="#E5E5E5">tentu saja </font>
+
+166
+00:09:36,690 --> 00:00:00,000
+ [Musik] 
+

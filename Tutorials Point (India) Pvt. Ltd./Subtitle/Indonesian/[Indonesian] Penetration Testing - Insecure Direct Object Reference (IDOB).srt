@@ -1,0 +1,668 @@
+1
+00:00:00,089 --> 00:00:02,330
+ Halo semuanya, <font color="#E5E5E5">mari </font><font color="#CCCCCC">kita </font><font color="#E5E5E5">bicarakan </font>
+
+2
+00:00:02,330 --> 00:00:04,710
+ <font color="#CCCCCC">referensi objek langsung tidak aman </font>
+
+3
+00:00:04,710 --> 00:00:08,220
+ kerentanan <font color="#E5E5E5">jadi kerentanan ini </font><font color="#CCCCCC">juga </font>
+
+4
+00:00:08,220 --> 00:00:10,620
+ dirujuk seperti <font color="#E5E5E5">saya melakukannya sebelum pergi </font>
+
+5
+00:00:10,620 --> 00:00:12,540
+ lebih lanjut <font color="#E5E5E5">izinkan saya </font><font color="#CCCCCC">memberi Anda sebuah contoh itu </font>
+
+6
+00:00:12,540 --> 00:00:15,450
+ <font color="#CCCCCC">ada lima objek </font><font color="#E5E5E5">atau lima file </font>
+
+7
+00:00:15,450 --> 00:00:17,910
+ <font color="#E5E5E5">dan ada satu file lain yang disebut sebagai </font>
+
+8
+00:00:17,910 --> 00:00:20,550
+ demo <font color="#CCCCCC">sehingga kami dapat mengakses </font><font color="#E5E5E5">semua lima itu </font>
+
+9
+00:00:20,550 --> 00:00:23,279
+ objek <font color="#CCCCCC">jika permintaan kami mengandung </font>
+
+10
+00:00:23,279 --> 00:00:27,060
+ referensi <font color="#CCCCCC">file demo itu </font><font color="#E5E5E5">dan jika kita </font>
+
+11
+00:00:27,060 --> 00:00:29,939
+ ingin <font color="#E5E5E5">mencoba </font><font color="#CCCCCC">mengakses objek yang hidup </font>
+
+12
+00:00:29,939 --> 00:00:32,488
+ <font color="#E5E5E5">tanpa referensi file demo </font>
+
+13
+00:00:32,488 --> 00:00:35,760
+ <font color="#E5E5E5">kami tidak dapat mengakses objek itu </font>
+
+14
+00:00:35,760 --> 00:00:38,340
+ <font color="#E5E5E5">sekarang yang terjadi adalah direct yang tidak aman </font>
+
+15
+00:00:38,340 --> 00:00:40,739
+ referensi objek input yang diberikan pengguna 
+
+16
+00:00:40,739 --> 00:00:43,230
+ <font color="#E5E5E5">digunakan untuk mengakses objek </font><font color="#CCCCCC">tertentu </font>
+
+17
+00:00:43,230 --> 00:00:47,250
+ <font color="#CCCCCC">dan jika </font><font color="#E5E5E5">pengguna menambahkan sesuatu yang </font><font color="#CCCCCC">berbahaya </font>
+
+18
+00:00:47,250 --> 00:00:49,620
+ sehingga bisa menunjukkan <font color="#E5E5E5">sesuatu </font>
+
+19
+00:00:49,620 --> 00:00:52,980
+ objek yang berbeda dan yang berarti a 
+
+20
+00:00:52,980 --> 00:00:56,520
+ pengguna <font color="#E5E5E5">mencoba mengakses </font><font color="#CCCCCC">objek tertentu </font>
+
+21
+00:00:56,520 --> 00:00:59,280
+ <font color="#E5E5E5">yang tidak diizinkan untuk diakses </font>
+
+22
+00:00:59,280 --> 00:01:02,219
+ jadi jika pengguna <font color="#E5E5E5">berhasil </font><font color="#CCCCCC">dapat </font>
+
+23
+00:01:02,219 --> 00:01:05,850
+ akses objek <font color="#E5E5E5">yang berarti kehendak itu </font>
+
+24
+00:01:05,850 --> 00:01:08,430
+ replikasi adalah <font color="#E5E5E5">objek langsung yang tidak aman </font>
+
+25
+00:01:08,430 --> 00:01:11,549
+ referensi rentan jadi di sini adalah satu HTTP 
+
+26
+00:01:11,549 --> 00:01:13,979
+ meminta Anda bisa <font color="#E5E5E5">lihat di sini dan ini </font>
+
+27
+00:01:13,979 --> 00:01:15,600
+ permintaan menerima satu parameter 
+
+28
+00:01:15,600 --> 00:01:18,509
+ <font color="#E5E5E5">disebut sebagai halaman dan di sini adalah nama halaman </font>
+
+29
+00:01:18,509 --> 00:01:21,659
+ <font color="#E5E5E5">Sumber penampil dot PHP </font><font color="#CCCCCC">jadi ini adalah </font><font color="#E5E5E5">ini </font>
+
+30
+00:01:21,659 --> 00:01:24,360
+ <font color="#CCCCCC">halaman referensi kami dan di sini Anda </font><font color="#E5E5E5">dapat melihat </font>
+
+31
+00:01:24,360 --> 00:01:25,979
+ <font color="#CCCCCC">argumen lain atau yang </font><font color="#E5E5E5">lain </font>
+
+32
+00:01:25,979 --> 00:01:29,490
+ <font color="#E5E5E5">parameter yang disebut sebagai file PHP dan PHP </font>
+
+33
+00:01:29,490 --> 00:01:31,590
+ file yang kami coba <font color="#CCCCCC">akses adalah </font>
+
+34
+00:01:31,590 --> 00:01:35,070
+ disebut sebagai pengguna <font color="#E5E5E5">Paul dot PHP sehingga </font><font color="#CCCCCC">kami bisa </font>
+
+35
+00:01:35,070 --> 00:01:38,729
+ coba <font color="#CCCCCC">pengguna ini Paul dot PHP jika kita </font>
+
+36
+00:01:38,729 --> 00:01:41,189
+ membuat <font color="#E5E5E5">permintaan HTTP dengan referensi </font>
+
+37
+00:01:41,189 --> 00:01:44,369
+ <font color="#E5E5E5">sumber file ini melalui dot PHP sekarang </font>
+
+38
+00:01:44,369 --> 00:01:46,590
+ mari kita lihat <font color="#E5E5E5">bagaimana objek langsung yang tidak aman </font>
+
+39
+00:01:46,590 --> 00:01:49,619
+ referensi berfungsi <font color="#E5E5E5">sekarang mari kita lihat bagaimana caranya </font>
+
+40
+00:01:49,619 --> 00:01:52,409
+ referensi objek langsung bekerja <font color="#E5E5E5">maka kita </font>
+
+41
+00:01:52,409 --> 00:01:55,229
+ akan <font color="#E5E5E5">dapat mengeksploitasi </font><font color="#CCCCCC">ketidakamanan langsung </font>
+
+42
+00:01:55,229 --> 00:01:57,689
+ kerentanan referensi objek <font color="#E5E5E5">jadi di </font>
+
+43
+00:01:57,689 --> 00:01:59,369
+ <font color="#E5E5E5">untuk menguji </font><font color="#CCCCCC">kerentanan itu dan untuk </font>
+
+44
+00:01:59,369 --> 00:02:02,219
+ <font color="#CCCCCC">lihat bagaimana cara </font><font color="#E5E5E5">kerjanya kita harus </font><font color="#CCCCCC">mulai </font>
+
+45
+00:02:02,219 --> 00:02:04,829
+ <font color="#CCCCCC">OS kami rusak aplikasi web dan kami </font>
+
+46
+00:02:04,829 --> 00:02:08,240
+ harus <font color="#E5E5E5">membuka </font><font color="#CCCCCC">mutilasi a </font>
+
+47
+00:02:15,230 --> 00:02:19,770
+ dan di sini Anda dapat melihat <font color="#CCCCCC">ovis memutilasi </font><font color="#E5E5E5">a </font>
+
+48
+00:02:19,770 --> 00:02:26,790
+ tautan <font color="#E5E5E5">biarkan saya membuka ini jadi mari kita pergi </font>
+
+49
+00:02:26,790 --> 00:02:27,120
+ sini 
+
+50
+00:02:27,120 --> 00:02:33,240
+ <font color="#CCCCCC">os 2013 dan di sini Anda akan </font><font color="#E5E5E5">menemukan </font>
+
+51
+00:02:33,240 --> 00:02:36,950
+ referensi objek langsung tidak aman begitu 
+
+52
+00:02:36,950 --> 00:02:39,780
+ mari kita buka <font color="#CCCCCC">tantangan kedua </font><font color="#E5E5E5">yaitu </font>
+
+53
+00:02:39,780 --> 00:02:46,560
+ penampil sumber sekarang mari kita <font color="#E5E5E5">lihat </font>
+
+54
+00:02:46,560 --> 00:02:50,460
+ fungsi <font color="#E5E5E5">halaman ini itu apa </font>
+
+55
+00:02:50,460 --> 00:02:53,250
+ itu melakukannya <font color="#E5E5E5">untuk melihat sumber </font>
+
+56
+00:02:53,250 --> 00:02:56,010
+ file pilih dan <font color="#E5E5E5">klik file tampilan jadi jika </font>
+
+57
+00:02:56,010 --> 00:02:58,260
+ Saya jika <font color="#CCCCCC">kita hanya pergi di sini Anda dapat melihat itu </font>
+
+58
+00:02:58,260 --> 00:03:01,200
+ ada <font color="#CCCCCC">banyak file PHP di sini jadi jika </font>
+
+59
+00:03:01,200 --> 00:03:02,670
+ kami ingin <font color="#E5E5E5">melihat kode sumber </font>
+
+60
+00:03:02,670 --> 00:03:05,460
+ <font color="#E5E5E5">mereka hanya </font><font color="#CCCCCC">memilih salah satu </font><font color="#E5E5E5">file </font>
+
+61
+00:03:05,460 --> 00:03:13,080
+ dan klik <font color="#E5E5E5">pada file </font><font color="#CCCCCC">tampilan </font><font color="#E5E5E5">dan di sini di </font>
+
+62
+00:03:13,080 --> 00:03:14,700
+ <font color="#CCCCCC">bawah Anda dapat melihat kode </font><font color="#E5E5E5">sumber </font>
+
+63
+00:03:14,700 --> 00:03:18,780
+ <font color="#E5E5E5">file </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">sekarang </font><font color="#CCCCCC">mari kita coba untuk </font><font color="#E5E5E5">menganalisis ini </font>
+
+64
+00:03:18,780 --> 00:03:21,510
+ meminta melalui Bob <font color="#E5E5E5">manis dan mari kita lihat </font>
+
+65
+00:03:21,510 --> 00:03:25,440
+ bahwa <font color="#CCCCCC">bagaimana permintaan ini terjadi, </font><font color="#E5E5E5">jadi saya </font>
+
+66
+00:03:25,440 --> 00:03:30,600
+ mulai <font color="#E5E5E5">Bob saya </font><font color="#CCCCCC">manis di sini dan biarkan aku </font>
+
+67
+00:03:30,600 --> 00:03:33,780
+ <font color="#CCCCCC">juga konfigurasikan pengaturan proksi saya pada saya </font>
+
+68
+00:03:33,780 --> 00:03:36,380
+ <font color="#E5E5E5">browser </font>
+
+69
+00:03:42,599 --> 00:03:44,730
+ konfigurasi proxy sehingga manual adalah 
+
+70
+00:03:44,730 --> 00:03:47,849
+ <font color="#CCCCCC">IP </font><font color="#E5E5E5">localhost </font><font color="#CCCCCC">dan port 8080 </font><font color="#E5E5E5">biarkan saya </font>
+
+71
+00:03:47,849 --> 00:03:51,239
+ <font color="#CCCCCC">klik </font><font color="#E5E5E5">oke membiarkan saya kembali </font><font color="#CCCCCC">hanya pergi </font>
+
+72
+00:03:51,239 --> 00:03:56,150
+ di sini dan <font color="#CCCCCC">mulai prop </font>
+
+73
+00:04:06,680 --> 00:04:09,079
+ jadi mari kita pilih file <font color="#E5E5E5">untuk </font>
+
+74
+00:04:09,079 --> 00:04:11,299
+ baca <font color="#E5E5E5">kode </font><font color="#CCCCCC">sumbernya </font><font color="#E5E5E5">klik pada </font><font color="#CCCCCC">file tampilan </font>
+
+75
+00:04:11,299 --> 00:04:13,129
+ dan Anda akan <font color="#E5E5E5">melihat bahwa Bob </font><font color="#CCCCCC">suite akan </font>
+
+76
+00:04:13,129 --> 00:04:15,709
+ mulai berkedip <font color="#E5E5E5">ayo ke sini </font><font color="#CCCCCC">untuk </font>
+
+77
+00:04:15,709 --> 00:04:18,380
+ tab proxy dan di sini adalah <font color="#E5E5E5">permintaan lengkap </font>
+
+78
+00:04:18,380 --> 00:04:22,039
+ <font color="#E5E5E5">yang akan melalui browser kami </font>
+
+79
+00:04:22,039 --> 00:04:24,770
+ ini adalah permintaan pos <font color="#CCCCCC">dan Anda dapat melihatnya </font>
+
+80
+00:04:24,770 --> 00:04:28,370
+ <font color="#E5E5E5">permintaan akan link ini </font><font color="#CCCCCC">sehingga </font>
+
+81
+00:04:28,370 --> 00:04:31,160
+ di sini adalah <font color="#E5E5E5">sumber halaman untuk dot PHP itu </font>
+
+82
+00:04:31,160 --> 00:04:33,080
+ halaman di mana <font color="#E5E5E5">kita </font><font color="#CCCCCC">ditulis </font><font color="#E5E5E5">Anda dapat melihat </font>
+
+83
+00:04:33,080 --> 00:04:38,449
+ di sini <font color="#E5E5E5">sekarang mari kita kembali jadi di sini adalah </font>
+
+84
+00:04:38,449 --> 00:04:39,289
+ Header HTTP 
+
+85
+00:04:39,289 --> 00:04:42,560
+ itu adalah <font color="#CCCCCC">agen pengguna informasi host kemudian </font>
+
+86
+00:04:42,560 --> 00:04:47,030
+ <font color="#E5E5E5">panjang konten kemudian pengarah dan di </font>
+
+87
+00:04:47,030 --> 00:04:49,220
+ bawah <font color="#CCCCCC">sini Anda </font><font color="#E5E5E5">akan menemukan </font>
+
+88
+00:04:49,220 --> 00:04:51,520
+ informasi menarik <font color="#CCCCCC">yang memberi kami </font>
+
+89
+00:04:51,520 --> 00:04:55,130
+ gagasan <font color="#E5E5E5">tentang bagaimana referensi objek langsung </font>
+
+90
+00:04:55,130 --> 00:04:58,160
+ berfungsi dengan baik jika kita hanya <font color="#E5E5E5">melihat di sini di </font>
+
+91
+00:04:58,160 --> 00:05:00,680
+ pertama di sini adalah <font color="#CCCCCC">halaman yang ditulis dan </font>
+
+92
+00:05:00,680 --> 00:05:03,710
+ nilai <font color="#CCCCCC">penampil sumber halaman dot PHP </font>
+
+93
+00:05:03,710 --> 00:05:08,090
+ yang ini <font color="#E5E5E5">dan itu adalah sebuah </font>
+
+94
+00:05:08,090 --> 00:05:10,789
+ <font color="#E5E5E5">file PHP parameter tambahan yang Anda </font>
+
+95
+00:05:10,789 --> 00:05:13,400
+ <font color="#CCCCCC">bisa lihat di sini </font><font color="#E5E5E5">dan nama file PHP adalah </font>
+
+96
+00:05:13,400 --> 00:05:15,530
+ <font color="#E5E5E5">nama file yang ingin kita lihat di sini </font>
+
+97
+00:05:15,530 --> 00:05:17,000
+ Anda <font color="#CCCCCC">dapat </font><font color="#E5E5E5">melihat bahwa kami telah </font><font color="#CCCCCC">memilih pengguna </font>
+
+98
+00:05:17,000 --> 00:05:19,849
+ <font color="#CCCCCC">pol dot PHP dan ini dia </font><font color="#E5E5E5">yang hadir </font>
+
+99
+00:05:19,849 --> 00:05:23,570
+ <font color="#E5E5E5">jadi yang berarti sumber halaman ini </font><font color="#CCCCCC">untuk titik </font>
+
+100
+00:05:23,570 --> 00:05:26,810
+ PHP yang <font color="#E5E5E5">satu ini sebenarnya bertindak sebagai </font>
+
+101
+00:05:26,810 --> 00:05:31,340
+ referensi atau <font color="#CCCCCC">ephra untuk melihat </font>
+
+102
+00:05:31,340 --> 00:05:33,400
+ isi <font color="#E5E5E5">halaman ini berarti jika kita mau </font>
+
+103
+00:05:33,400 --> 00:05:36,289
+ lihat <font color="#E5E5E5">sumber halaman dari semua ini </font>
+
+104
+00:05:36,289 --> 00:05:38,900
+ file <font color="#CCCCCC">maka kita dapat hanya </font><font color="#E5E5E5">mampu </font><font color="#CCCCCC">melihat </font>
+
+105
+00:05:38,900 --> 00:05:41,510
+ <font color="#E5E5E5">sumber halaman jika referensi kami adalah </font>
+
+106
+00:05:41,510 --> 00:05:44,720
+ diberikan oleh <font color="#E5E5E5">sumber file ini untuk </font><font color="#CCCCCC">dis </font><font color="#E5E5E5">Anda </font>
+
+107
+00:05:44,720 --> 00:05:46,190
+ file <font color="#CCCCCC">jika file ini diberikan </font><font color="#E5E5E5">sebagai </font>
+
+108
+00:05:46,190 --> 00:05:49,849
+ referensi maka <font color="#E5E5E5">kita bisa dapat melihat </font>
+
+109
+00:05:49,849 --> 00:05:52,490
+ kode sumber <font color="#E5E5E5">file-file ini </font><font color="#CCCCCC">sekarang biarkan </font>
+
+110
+00:05:52,490 --> 00:05:54,500
+ <font color="#E5E5E5">saya klik saja ke depan dan mari kita lihat </font>
+
+111
+00:05:54,500 --> 00:05:56,990
+ <font color="#E5E5E5">apakah kita bisa melihat </font>
+
+112
+00:05:56,990 --> 00:06:01,370
+ kode sumber <font color="#CCCCCC">dan di sini Anda dapat melihat itu </font>
+
+113
+00:06:01,370 --> 00:06:03,949
+ di sini adalah <font color="#E5E5E5">kode sumber </font><font color="#CCCCCC">dari </font><font color="#E5E5E5">file sekarang </font>
+
+114
+00:06:03,949 --> 00:06:06,620
+ <font color="#E5E5E5">seperti yang saya katakan </font><font color="#CCCCCC">sebelumnya bahwa </font><font color="#E5E5E5">apa itu </font>
+
+115
+00:06:06,620 --> 00:06:08,750
+ <font color="#E5E5E5">referensi objek langsung </font><font color="#CCCCCC">tidak aman </font><font color="#E5E5E5">begitu </font>
+
+116
+00:06:08,750 --> 00:06:11,060
+ yang artinya ada <font color="#CCCCCC">beberapa file yang </font>
+
+117
+00:06:11,060 --> 00:06:15,169
+ tidak diizinkan <font color="#CCCCCC">untuk dilihat </font><font color="#E5E5E5">oleh beberapa orang </font>
+
+118
+00:06:15,169 --> 00:06:16,849
+ orang lain berarti kita tidak 
+
+119
+00:06:16,849 --> 00:06:19,279
+ berwenang <font color="#CCCCCC">untuk melihat sumbernya </font>
+
+120
+00:06:19,279 --> 00:06:20,420
+ kode dari <font color="#E5E5E5">file itu </font>
+
+121
+00:06:20,420 --> 00:06:23,270
+ jadi apa yang bisa kita <font color="#E5E5E5">lakukan </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">menguji itu </font>
+
+122
+00:06:23,270 --> 00:06:25,070
+ apakah aplikasi ini rentan 
+
+123
+00:06:25,070 --> 00:06:27,140
+ untuk <font color="#E5E5E5">referensi objek langsung </font><font color="#CCCCCC">tidak aman </font><font color="#E5E5E5">kami </font>
+
+124
+00:06:27,140 --> 00:06:30,890
+ dapat <font color="#E5E5E5">mencoba untuk melihat </font><font color="#CCCCCC">sumber </font><font color="#E5E5E5">halaman </font>
+
+125
+00:06:30,890 --> 00:06:33,170
+ halaman berbeda <font color="#E5E5E5">yang tidak terdaftar </font>
+
+126
+00:06:33,170 --> 00:06:38,390
+ <font color="#CCCCCC">di sini Anda dapat melihat daftar </font><font color="#E5E5E5">tetapi indeks </font>
+
+127
+00:06:38,390 --> 00:06:41,300
+ <font color="#E5E5E5">dot </font><font color="#CCCCCC">halaman PHP tidak ada di sini jadi sekarang mari </font>
+
+128
+00:06:41,300 --> 00:06:44,870
+ cobalah <font color="#E5E5E5">untuk melihat sumber halaman indeks </font>
+
+129
+00:06:44,870 --> 00:06:48,320
+ dot PHP <font color="#CCCCCC">dan mari kita lihat </font><font color="#E5E5E5">apakah kita </font>
+
+130
+00:06:48,320 --> 00:06:50,420
+ <font color="#CCCCCC">dapat </font><font color="#E5E5E5">melihat kode sumber </font>
+
+131
+00:06:50,420 --> 00:06:52,880
+ indeks dot PHP <font color="#CCCCCC">dan jika kita bisa </font><font color="#E5E5E5">melihat </font>
+
+132
+00:06:52,880 --> 00:06:55,250
+ sumber halaman <font color="#E5E5E5">yang </font><font color="#CCCCCC">berarti </font><font color="#E5E5E5">tautan ini atau </font>
+
+133
+00:06:55,250 --> 00:06:57,710
+ <font color="#CCCCCC">halaman web ini </font><font color="#E5E5E5">adalah objek langsung yang tidak aman </font>
+
+134
+00:06:57,710 --> 00:07:00,110
+ referensi dibakar <font color="#E5E5E5">jadi biarkan aku mengklik </font>
+
+135
+00:07:00,110 --> 00:07:02,090
+ lihat profil lagi <font color="#E5E5E5">jika Anda mengajukan dan Anda </font>
+
+136
+00:07:02,090 --> 00:07:05,530
+ dapat <font color="#CCCCCC">melihat </font><font color="#E5E5E5">buff </font><font color="#CCCCCC">saya </font><font color="#E5E5E5">akan mulai berkedip </font>
+
+137
+00:07:08,650 --> 00:07:13,400
+ <font color="#E5E5E5">dan inilah permintaan itu lagi </font>
+
+138
+00:07:13,400 --> 00:07:16,910
+ sekarang alih-alih mengunggah file dot PHP <font color="#E5E5E5">mari </font>
+
+139
+00:07:16,910 --> 00:07:22,660
+ coba tuliskan indeks dot <font color="#CCCCCC">PHP dan mari kita lihat </font>
+
+140
+00:07:22,660 --> 00:07:27,290
+ apa yang <font color="#E5E5E5">terjadi klik maju ke depan </font>
+
+141
+00:07:27,290 --> 00:07:34,220
+ <font color="#E5E5E5">lagi biarkan aku </font><font color="#CCCCCC">kembali ke sini dan di sini kamu </font>
+
+142
+00:07:34,220 --> 00:07:37,430
+ <font color="#CCCCCC">dapat </font><font color="#E5E5E5">melihat bahwa kami berhasil dapat </font>
+
+143
+00:07:37,430 --> 00:07:39,440
+ lihat <font color="#CCCCCC">sumber halaman indeks dot PHP </font>
+
+144
+00:07:39,440 --> 00:07:44,300
+ <font color="#CCCCCC">file sehingga kami tidak berwenang untuk melihat </font>
+
+145
+00:07:44,300 --> 00:07:47,450
+ sumber halaman <font color="#E5E5E5">tapi masih kita </font><font color="#CCCCCC">bisa </font><font color="#E5E5E5">dapat </font>
+
+146
+00:07:47,450 --> 00:07:50,980
+ <font color="#E5E5E5">lihat sumber halaman </font><font color="#CCCCCC">karena </font><font color="#E5E5E5">tidak aman </font>
+
+147
+00:07:50,980 --> 00:07:55,340
+ referensi obyek jadi sekarang mari kita coba <font color="#E5E5E5">untuk </font>
+
+148
+00:07:55,340 --> 00:07:57,980
+ <font color="#E5E5E5">melihat </font><font color="#CCCCCC">sumber </font><font color="#E5E5E5">halaman</font><font color="#CCCCCC"> halaman ini </font><font color="#E5E5E5">sendiri </font>
+
+149
+00:07:57,980 --> 00:07:59,990
+ <font color="#E5E5E5">di mana kita berada tepat </font><font color="#CCCCCC">di </font><font color="#E5E5E5">jadi sekarang kita </font>
+
+150
+00:07:59,990 --> 00:08:02,240
+ <font color="#E5E5E5">ada </font><font color="#CCCCCC">di sumber halaman ini melalui </font><font color="#E5E5E5">dot PHP </font>
+
+151
+00:08:02,240 --> 00:08:04,070
+ yang sebenarnya memungkinkan <font color="#E5E5E5">kita untuk melihat </font>
+
+152
+00:08:04,070 --> 00:08:06,050
+ <font color="#CCCCCC">sumber halaman </font><font color="#E5E5E5">file yang berbeda jadi mengapa tidak </font>
+
+153
+00:08:06,050 --> 00:08:09,020
+ kami menemukan sumber halaman dari <font color="#E5E5E5">file ini </font>
+
+154
+00:08:09,020 --> 00:08:13,040
+ sendiri <font color="#E5E5E5">sekarang </font><font color="#CCCCCC">mari kita coba untuk melakukannya, mari kita pergi </font>
+
+155
+00:08:13,040 --> 00:08:17,810
+ di sini <font color="#CCCCCC">jadi biarkan aku </font><font color="#E5E5E5">coba saja di PHP </font>
+
+156
+00:08:17,810 --> 00:08:23,830
+ <font color="#E5E5E5">Penampil sumber parameter file dot PHP </font>
+
+157
+00:08:30,950 --> 00:08:34,610
+ dan jika saya <font color="#CCCCCC">klik </font><font color="#E5E5E5">ke depan </font><font color="#CCCCCC">jika saya </font><font color="#E5E5E5">hanya </font>
+
+158
+00:08:34,610 --> 00:08:39,169
+ <font color="#E5E5E5">kembali dan di sini Anda dapat melihat file </font><font color="#CCCCCC">tersebut </font>
+
+159
+00:08:39,169 --> 00:08:43,240
+ Sumber <font color="#CCCCCC">penampil dot PHP </font><font color="#E5E5E5">dan kita bisa </font><font color="#CCCCCC">dapat </font>
+
+160
+00:08:43,240 --> 00:08:46,250
+ <font color="#E5E5E5">melihat </font><font color="#CCCCCC">sumber dibayar dari halaman ini </font>
+
+161
+00:08:46,250 --> 00:08:50,900
+ sendiri jadi begini <font color="#E5E5E5">betapa tidak amannya </font>
+
+162
+00:08:50,900 --> 00:08:54,020
+ referensi obyek langsung bekerja <font color="#E5E5E5">begitu dalam hal ini </font>
+
+163
+00:08:54,020 --> 00:08:55,610
+ <font color="#CCCCCC">video yang kita bahas itu apa adanya </font>
+
+164
+00:08:55,610 --> 00:08:57,860
+ <font color="#E5E5E5">referensi objek langsung </font><font color="#CCCCCC">tidak aman </font><font color="#E5E5E5">dan bagaimana </font>
+
+165
+00:08:57,860 --> 00:09:00,260
+ kita dapat memanfaatkan itu <font color="#E5E5E5">terima kasih untuk menonton </font>
+
+166
+00:09:00,260 --> 00:09:02,560
+ video ini 
+
+167
+00:09:08,450 --> 00:00:00,000
+ kamu 
+

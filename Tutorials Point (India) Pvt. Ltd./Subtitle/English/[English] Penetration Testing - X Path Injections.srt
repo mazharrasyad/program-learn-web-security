@@ -1,0 +1,344 @@
+1
+00:00:00,060 --> 00:00:02,129
+hello everyone<font color="#E5E5E5"> now let us talk about</font>
+
+2
+00:00:02,129 --> 00:00:05,009
+XPath injections so<font color="#CCCCCC"> x5 injections are</font>
+
+3
+00:00:05,009 --> 00:00:08,970
+similar to SQL<font color="#E5E5E5"> injection so in SQL</font>
+
+4
+00:00:08,970 --> 00:00:11,370
+injection<font color="#CCCCCC"> user-supplied input becomes a</font>
+
+5
+00:00:11,370 --> 00:00:12,570
+<font color="#E5E5E5">part of</font><font color="#CCCCCC"> SQL query</font>
+
+6
+00:00:12,570 --> 00:00:15,660
+<font color="#CCCCCC">whereas in XPath injection user supplied</font>
+
+7
+00:00:15,660 --> 00:00:19,590
+<font color="#CCCCCC">input becomes</font><font color="#E5E5E5"> the path of XPath query so</font>
+
+8
+00:00:19,590 --> 00:00:22,170
+if the user will supply<font color="#E5E5E5"> a malformed</font>
+
+9
+00:00:22,170 --> 00:00:25,019
+input then that can result<font color="#CCCCCC"> into</font><font color="#E5E5E5"> access</font>
+
+10
+00:00:25,019 --> 00:00:28,650
+of restricted file contents so let's see
+
+11
+00:00:28,650 --> 00:00:32,040
+how XPath injection works<font color="#E5E5E5"> now let's see</font>
+
+12
+00:00:32,040 --> 00:00:35,399
+how XPath injection works<font color="#E5E5E5"> so in order to</font>
+
+13
+00:00:35,399 --> 00:00:39,030
+test XPath injection we have to<font color="#CCCCCC"> download</font>
+
+14
+00:00:39,030 --> 00:00:41,430
+this another one<font color="#E5E5E5"> never web application</font>
+
+15
+00:00:41,430 --> 00:00:42,960
+which is<font color="#CCCCCC"> extremely vulnerable</font><font color="#E5E5E5"> web</font>
+
+16
+00:00:42,960 --> 00:00:46,020
+<font color="#E5E5E5">application xvw a so you can download</font>
+
+17
+00:00:46,020 --> 00:00:48,750
+this application<font color="#E5E5E5"> from this link</font><font color="#CCCCCC"> so once</font>
+
+18
+00:00:48,750 --> 00:00:50,879
+you download this<font color="#CCCCCC"> application you have</font>
+
+19
+00:00:50,879 --> 00:00:53,370
+<font color="#CCCCCC">to</font><font color="#E5E5E5"> extract the file and then you</font><font color="#CCCCCC"> can</font>
+
+20
+00:00:53,370 --> 00:00:56,070
+host this application in your localhost
+
+21
+00:00:56,070 --> 00:00:59,010
+server of Kali Linux<font color="#E5E5E5"> so here you can see</font>
+
+22
+00:00:59,010 --> 00:01:00,660
+<font color="#E5E5E5">that I have already hosted this</font>
+
+23
+00:01:00,660 --> 00:01:02,399
+application on my local<font color="#CCCCCC"> o server and</font>
+
+24
+00:01:02,399 --> 00:01:05,430
+it's up and<font color="#E5E5E5"> running so this is how this</font>
+
+25
+00:01:05,430 --> 00:01:07,799
+<font color="#CCCCCC">application looks like this application</font>
+
+26
+00:01:07,799 --> 00:01:09,450
+also contains<font color="#E5E5E5"> different kind of</font>
+
+27
+00:01:09,450 --> 00:01:11,790
+<font color="#CCCCCC">vulnerabilities which you can test</font><font color="#E5E5E5"> but</font>
+
+28
+00:01:11,790 --> 00:01:13,950
+for the time<font color="#E5E5E5"> being we are interested</font>
+
+29
+00:01:13,950 --> 00:01:19,380
+only<font color="#E5E5E5"> in XPath so here is the link of</font>
+
+30
+00:01:19,380 --> 00:01:22,979
+<font color="#CCCCCC">that page X Box injection let's open</font>
+
+31
+00:01:22,979 --> 00:01:28,020
+this page so here<font color="#CCCCCC"> you can see a search</font>
+
+32
+00:01:28,020 --> 00:01:30,060
+bar and here it is<font color="#E5E5E5"> written search your</font>
+
+33
+00:01:30,060 --> 00:01:33,479
+coffee<font color="#E5E5E5"> so let's delete the previous</font>
+
+34
+00:01:33,479 --> 00:01:37,729
+input so here is mentioned<font color="#E5E5E5"> search by ID</font>
+
+35
+00:01:37,729 --> 00:01:41,400
+so just for example<font color="#CCCCCC"> let's</font><font color="#E5E5E5"> hit enter</font><font color="#CCCCCC"> here</font>
+
+36
+00:01:41,400 --> 00:01:44,189
+<font color="#CCCCCC">one so here you can see that it has</font>
+
+37
+00:01:44,189 --> 00:01:49,770
+displayed<font color="#E5E5E5"> the item the ID is</font><font color="#CCCCCC"> one so if</font>
+
+38
+00:01:49,770 --> 00:01:53,159
+we<font color="#E5E5E5"> change the ID let's change it to</font>
+
+39
+00:01:53,159 --> 00:01:55,860
+<font color="#CCCCCC">three so</font><font color="#E5E5E5"> where you can see that it has</font>
+
+40
+00:01:55,860 --> 00:02:00,899
+displayed<font color="#E5E5E5"> the item 3 which has ID 3 now</font>
+
+41
+00:02:00,899 --> 00:02:03,119
+<font color="#E5E5E5">as I told you</font><font color="#CCCCCC"> earlier that XPath</font>
+
+42
+00:02:03,119 --> 00:02:04,890
+injection<font color="#E5E5E5"> LDAP injection sequel</font>
+
+43
+00:02:04,890 --> 00:02:06,600
+injection<font color="#CCCCCC"> all kind</font><font color="#E5E5E5"> of injection are</font>
+
+44
+00:02:06,600 --> 00:02:11,340
+somehow same but instead of<font color="#E5E5E5"> executing a</font>
+
+45
+00:02:11,340 --> 00:02:13,380
+sequel query at the back end<font color="#E5E5E5"> what</font>
+
+46
+00:02:13,380 --> 00:02:16,380
+this<font color="#CCCCCC"> Exim XPath do it actually receives</font>
+
+47
+00:02:16,380 --> 00:02:17,940
+the<font color="#CCCCCC"> input from the user which we are</font>
+
+48
+00:02:17,940 --> 00:02:20,400
+just<font color="#E5E5E5"> giving so it takes the user input</font>
+
+49
+00:02:20,400 --> 00:02:25,010
+<font color="#E5E5E5">and forms a XML</font><font color="#CCCCCC"> curie</font><font color="#E5E5E5"> at the</font><font color="#CCCCCC"> backend so</font>
+
+50
+00:02:25,010 --> 00:02:27,570
+when the user input is<font color="#E5E5E5"> not sanitized</font>
+
+51
+00:02:27,570 --> 00:02:30,120
+properly<font color="#CCCCCC"> what</font><font color="#E5E5E5"> malicious can malicious</font>
+
+52
+00:02:30,120 --> 00:02:32,430
+attacker can do they actually<font color="#E5E5E5"> send the</font>
+
+53
+00:02:32,430 --> 00:02:34,230
+malicious<font color="#E5E5E5"> Curie and with the help of</font>
+
+54
+00:02:34,230 --> 00:02:37,380
+that<font color="#CCCCCC"> curie</font><font color="#E5E5E5"> we are able to display all</font>
+
+55
+00:02:37,380 --> 00:02:45,420
+the<font color="#E5E5E5"> XML data here now let's try to read</font>
+
+56
+00:02:45,420 --> 00:02:55,560
+the page source<font color="#E5E5E5"> of this challenge now</font>
+
+57
+00:02:55,560 --> 00:02:57,390
+let's have a look<font color="#E5E5E5"> at the page source of</font>
+
+58
+00:02:57,390 --> 00:02:59,850
+this challenge<font color="#E5E5E5"> so here</font><font color="#CCCCCC"> you can see that</font>
+
+59
+00:02:59,850 --> 00:03:03,140
+right now<font color="#CCCCCC"> I am</font><font color="#E5E5E5"> inside the xvw a path and</font>
+
+60
+00:03:03,140 --> 00:03:06,780
+if I do<font color="#E5E5E5"> LS here is a file home dot PHP</font>
+
+61
+00:03:06,780 --> 00:03:09,090
+which is responsible<font color="#CCCCCC"> for taking our</font>
+
+62
+00:03:09,090 --> 00:03:14,030
+input so let's see what inside<font color="#CCCCCC"> this</font><font color="#E5E5E5"> file</font>
+
+63
+00:03:14,120 --> 00:03:17,040
+so<font color="#E5E5E5"> here you can see it's a PHP file and</font>
+
+64
+00:03:17,040 --> 00:03:20,910
+if I scroll down<font color="#CCCCCC"> here is our</font><font color="#E5E5E5"> XPath</font><font color="#CCCCCC"> QT</font>
+
+65
+00:03:20,910 --> 00:03:24,360
+which you can see this is XPath query
+
+66
+00:03:24,360 --> 00:03:28,890
+and it's whatever<font color="#E5E5E5"> input is given by user</font>
+
+67
+00:03:28,890 --> 00:03:32,100
+<font color="#E5E5E5">is just</font><font color="#CCCCCC"> placed here and the curie</font>
+
+68
+00:03:32,100 --> 00:03:34,800
+becomes slash<font color="#CCCCCC"> coffees slash coffee and</font>
+
+69
+00:03:34,800 --> 00:03:39,000
+<font color="#CCCCCC">ids the user input</font><font color="#E5E5E5"> so if this input is</font>
+
+70
+00:03:39,000 --> 00:03:43,410
+<font color="#CCCCCC">not sanitized properly then a user can</font>
+
+71
+00:03:43,410 --> 00:03:47,820
+able<font color="#CCCCCC"> to retrieve all the XML data now</font>
+
+72
+00:03:47,820 --> 00:03:51,450
+let us go<font color="#CCCCCC"> back to this</font><font color="#E5E5E5"> challenge and let</font>
+
+73
+00:03:51,450 --> 00:03:53,760
+<font color="#E5E5E5">us try to add here</font><font color="#CCCCCC"> a sequel injection</font>
+
+74
+00:03:53,760 --> 00:03:58,500
+payload which we used to<font color="#CCCCCC"> bypass</font><font color="#E5E5E5"> login</font>
+
+75
+00:03:58,500 --> 00:04:09,360
+pages<font color="#E5E5E5"> so it was or equals</font><font color="#CCCCCC"> 1 now if we</font>
+
+76
+00:04:09,360 --> 00:04:11,850
+<font color="#CCCCCC">just click on search</font><font color="#E5E5E5"> you will</font><font color="#CCCCCC"> see that</font>
+
+77
+00:04:11,850 --> 00:04:14,550
+we<font color="#E5E5E5"> are able to retrieve all the data all</font>
+
+78
+00:04:14,550 --> 00:04:19,340
+the<font color="#CCCCCC"> XML data here in front of</font><font color="#E5E5E5"> us</font>
+
+79
+00:04:22,840 --> 00:04:25,669
+so this is how the<font color="#E5E5E5"> XPath injection works</font>
+
+80
+00:04:25,669 --> 00:04:28,250
+<font color="#E5E5E5">with a little difference that instead</font><font color="#CCCCCC"> of</font>
+
+81
+00:04:28,250 --> 00:04:30,320
+<font color="#E5E5E5">forming a my sequel</font><font color="#CCCCCC"> query</font><font color="#E5E5E5"> it forms the</font>
+
+82
+00:04:30,320 --> 00:04:34,479
+XPath<font color="#E5E5E5"> query and retrieves the XML data</font>
+
+83
+00:04:34,479 --> 00:04:36,889
+<font color="#E5E5E5">so in this video we have covered that</font>
+
+84
+00:04:36,889 --> 00:04:39,410
+what is XPath injection and how XPath
+
+85
+00:04:39,410 --> 00:04:41,479
+injection works<font color="#E5E5E5"> thanks for watching this</font>
+
+86
+00:04:41,479 --> 00:00:00,000
+video
+

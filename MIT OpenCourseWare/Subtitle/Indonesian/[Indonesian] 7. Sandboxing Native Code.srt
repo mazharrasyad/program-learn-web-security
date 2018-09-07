@@ -1,0 +1,7952 @@
+1
+00:00:00,000 --> 00:00:00,070
+
+
+2
+00:00:00,070 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,820
+ Lisensi Commons. 
+
+4
+00:00:03,820 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,260
+ di ocw.mit.edu. 
+
+9
+00:00:17,260 --> 00:00:26,730
+
+
+10
+00:00:26,730 --> 00:00:29,110
+ PROFESOR: Baiklah, mari kita mulai. 
+
+11
+00:00:29,110 --> 00:00:32,490
+ Jadi hari ini kita akan berbicara tentang sistem yang disebut 
+
+12
+00:00:32,490 --> 00:00:36,340
+ Native Client, yang sebenarnya adalah dunia nyata 
+
+13
+00:00:36,340 --> 00:00:39,779
+ sistem yang digunakan oleh Google. 
+
+14
+00:00:39,779 --> 00:00:42,070
+ Salah satu contohnya, mereka benar-benar menggunakannya di browser Chrome 
+
+15
+00:00:42,070 --> 00:00:45,290
+ untuk mengizinkan aplikasi web untuk menjalankan kode asli yang sewenang-wenang. 
+
+16
+00:00:45,290 --> 00:00:47,070
+ Ini sebenarnya sistem yang sangat keren, 
+
+17
+00:00:47,070 --> 00:00:49,560
+ dan itu juga sebuah ilustrasi. 
+
+18
+00:00:49,560 --> 00:00:52,900
+ Isolasi atau semacam sandboxing atau hak istimewa lainnya 
+
+19
+00:00:52,900 --> 00:00:55,320
+ teknik pemisahan, yang disebut kesalahan perangkat lunak 
+
+20
+00:00:55,320 --> 00:00:58,850
+ isolasi, tidak bergantung pada sistem operasi 
+
+21
+00:00:58,850 --> 00:01:01,130
+ ke kotak pasir suatu proses atau mesin virtual. 
+
+22
+00:01:01,130 --> 00:01:03,330
+ Tetapi sebaliknya, ia memiliki pendekatan yang sangat berbeda 
+
+23
+00:01:03,330 --> 00:01:05,830
+ untuk melihat instruksi tertentu dalam biner, 
+
+24
+00:01:05,830 --> 00:01:09,390
+ untuk mencari tahu apakah itu akan aman untuk dijalankan atau tidak. 
+
+25
+00:01:09,390 --> 00:01:11,900
+ Jadi sebelum kita saya kira mulai mencari 
+
+26
+00:01:11,900 --> 00:01:15,000
+ pada detail teknis sistem, mari kita cari tahu, 
+
+27
+00:01:15,000 --> 00:01:18,960
+ mengapa orang-orang ini benar-benar ingin menjalankan kode asli? 
+
+28
+00:01:18,960 --> 00:01:21,580
+ Jadi konteks khusus mereka 
+
+29
+00:01:21,580 --> 00:01:23,980
+ tertarik untuk menerapkan solusi mereka 
+
+30
+00:01:23,980 --> 00:01:26,420
+ adalah browser web, di mana Anda sudah bisa 
+
+31
+00:01:26,420 --> 00:01:29,750
+ jalankan kode JavaScript dan mungkin Flash, dan mungkin 
+
+32
+00:01:29,750 --> 00:01:31,510
+ beberapa hal lain. 
+
+33
+00:01:31,510 --> 00:01:34,070
+ Mengapa orang-orang ini sangat bersemangat untuk menggunakan x86 mentah? 
+
+34
+00:01:34,070 --> 00:01:36,758
+ Sepertinya langkah mundur. 
+
+35
+00:01:36,758 --> 00:01:38,590
+ AUDIENCE: Komputasi yang benar-benar cepat. 
+
+36
+00:01:38,590 --> 00:01:41,006
+ PROFESOR: Ya, itu salah satu keuntungan besar dari kode asli. 
+
+37
+00:01:41,006 --> 00:01:43,560
+ Meskipun mungkin tidak aman dari beberapa perspektif, 
+
+38
+00:01:43,560 --> 00:01:45,210
+ Ini kinerja yang sangat tinggi. 
+
+39
+00:01:45,210 --> 00:01:47,245
+ Dan apa pun yang dapat Anda lakukan di JavaScript, 
+
+40
+00:01:47,245 --> 00:01:49,870
+ Anda mungkin bisa menulis hal yang sama dan merakitnya, 
+
+41
+00:01:49,870 --> 00:01:53,900
+ dan itu akan setidaknya sama cepat - mungkin jauh lebih cepat. 
+
+42
+00:01:53,900 --> 00:01:54,650
+ Ada alasan lain? 
+
+43
+00:01:54,650 --> 00:01:55,395
+ Ya? 
+
+44
+00:01:55,395 --> 00:01:56,562
+ AUDIENCE: Jalankan kode yang ada? 
+
+45
+00:01:56,562 --> 00:01:57,228
+ PROFESOR: Ya. 
+
+46
+00:01:57,228 --> 00:01:58,610
+ Jadi hal besar lainnya mungkin tidak 
+
+47
+00:01:58,610 --> 00:02:00,110
+ semuanya ditulis dalam JavaScript. 
+
+48
+00:02:00,110 --> 00:02:03,090
+ Jadi jika Anda memiliki aplikasi yang sudah ada-- 
+
+49
+00:02:03,090 --> 00:02:06,664
+ Saya kira 'warisan' dalam terminologi industri-- 
+
+50
+00:02:06,664 --> 00:02:08,580
+ jika Anda sudah memiliki beberapa kode yang Anda miliki 
+
+51
+00:02:08,580 --> 00:02:10,774
+ ingin berjalan di web, lalu ini 
+
+52
+00:02:10,774 --> 00:02:11,940
+ sepertinya solusi yang bagus. 
+
+53
+00:02:11,940 --> 00:02:14,530
+ Karena Anda hanya bisa mengambil perpustakaan yang sudah ada, 
+
+54
+00:02:14,530 --> 00:02:17,485
+ seperti beberapa mesin pengolah grafis yang rumit itu 
+
+55
+00:02:17,485 --> 00:02:20,050
+ baik kinerja sensitif dan banyak hal rumit 
+
+56
+00:02:20,050 --> 00:02:21,550
+ Anda tidak ingin menerapkan kembali, kemudian 
+
+57
+00:02:21,550 --> 00:02:23,677
+ ini sepertinya solusi yang bagus. 
+
+58
+00:02:23,677 --> 00:02:26,260
+ Apa pun lainnya-- jika Anda seperti memprogram aplikasi web baru, 
+
+59
+00:02:26,260 --> 00:02:29,460
+ sebaiknya Anda menggunakan Native Client jika Anda 
+
+60
+00:02:29,460 --> 00:02:33,910
+ tidak terlalu peduli dengan legacy atau kinerja? 
+
+61
+00:02:33,910 --> 00:02:35,240
+ Ada alasan lain? 
+
+62
+00:02:35,240 --> 00:02:37,592
+
+
+63
+00:02:37,592 --> 00:02:38,550
+ Saya kira yang lain-- ya? 
+
+64
+00:02:38,550 --> 00:02:39,990
+ AUDIENCE: Anda tidak harus menggunakan JavaScript. 
+
+65
+00:02:39,990 --> 00:02:42,227
+ PROFESOR: Ya, itu alasan yang luar biasa, bukan? 
+
+66
+00:02:42,227 --> 00:02:43,810
+ Jika Anda tidak menyukai JavaScript, maka Anda 
+
+67
+00:02:43,810 --> 00:02:44,590
+ tidak harus menggunakannya, kan? 
+
+68
+00:02:44,590 --> 00:02:47,140
+ Anda benar-benar dapat menggunakan, baik, C, jika Anda begitu ingin. 
+
+69
+00:02:47,140 --> 00:02:49,680
+ Anda bisa menjalankan kode Python, Anda bisa menulis Haskell, 
+
+70
+00:02:49,680 --> 00:02:51,910
+ apa pun yang menurut Anda berguna. 
+
+71
+00:02:51,910 --> 00:02:54,400
+ Anda benar-benar dapat mendukung bahasa lain secara tiba-tiba. 
+
+72
+00:02:54,400 --> 00:02:58,240
+
+
+73
+00:02:58,240 --> 00:03:03,490
+ Jadi ini adalah daftar motivasi yang cukup menarik 
+
+74
+00:03:03,490 --> 00:03:06,700
+ bagi mereka untuk menjalankan kode asli di browser, 
+
+75
+00:03:06,700 --> 00:03:09,389
+ dan ternyata cukup sulit untuk menjadi benar. 
+
+76
+00:03:09,389 --> 00:03:11,430
+ Dan kita akan melihat detail teknisnya, saya kira, 
+
+77
+00:03:11,430 --> 00:03:13,100
+ cara kerjanya dalam hitungan detik. 
+
+78
+00:03:13,100 --> 00:03:15,730
+ Tapi hanya untuk menunjukkan kepada kalian apa yang dibicarakan makalah ini, 
+
+79
+00:03:15,730 --> 00:03:18,760
+ Saya hanya ingin menunjukkan demo tutorial yang sangat sederhana 
+
+80
+00:03:18,760 --> 00:03:22,410
+ hampir bahwa saya keluar dari situs web Native Client mereka. 
+
+81
+00:03:22,410 --> 00:03:25,850
+ Ini cukup sederhana karena ternyata hanya mengambil C ++ atau C 
+
+82
+00:03:25,850 --> 00:03:28,130
+ program dan jalankan di browser. 
+
+83
+00:03:28,130 --> 00:03:29,970
+ Jadi hanya untuk menunjukkan apa yang terlihat seperti ini, 
+
+84
+00:03:29,970 --> 00:03:32,640
+ pada dasarnya ini adalah demo yang kebanyakan saya ambil 
+
+85
+00:03:32,640 --> 00:03:34,600
+ dari salah satu contoh mereka. 
+
+86
+00:03:34,600 --> 00:03:39,110
+ Jadi Anda bisa melihat halaman web seperti file HTML indeks ini. 
+
+87
+00:03:39,110 --> 00:03:42,360
+ Dan di dalamnya, Anda memiliki banyak kode JavaScript. 
+
+88
+00:03:42,360 --> 00:03:44,620
+ Dan alasan kode JavaScript ini ada 
+
+89
+00:03:44,620 --> 00:03:47,710
+ adalah mengurutkan berinteraksi dengan bagian Native Client. 
+
+90
+00:03:47,710 --> 00:03:50,810
+ Jadi cara Anda bisa memikirkan ini berjalan di browser 
+
+91
+00:03:50,810 --> 00:03:53,904
+ adalah bahwa Anda memiliki browser - baik, kita akan 
+
+92
+00:03:53,904 --> 00:03:55,570
+ berbicara lebih banyak tentang keamanan web nanti, 
+
+93
+00:03:55,570 --> 00:03:59,320
+ tetapi kira-kira Anda memiliki semacam halaman, halaman web itu 
+
+94
+00:03:59,320 --> 00:04:01,540
+ mengandung beberapa kode JavaScript. 
+
+95
+00:04:01,540 --> 00:04:05,310
+ Dan ini berjalan dengan hak istimewa halaman. 
+
+96
+00:04:05,310 --> 00:04:08,160
+ Dan ini bisa melakukan berbagai hal ke halaman web 
+
+97
+00:04:08,160 --> 00:04:11,140
+ sendiri, mungkin berbicara dengan jaringan dalam beberapa keadaan. 
+
+98
+00:04:11,140 --> 00:04:13,080
+ Tapi apa yang Klien Native memungkinkan Anda lakukan 
+
+99
+00:04:13,080 --> 00:04:17,060
+ adalah agar modul Native Client ini berjalan 
+
+100
+00:04:17,060 --> 00:04:19,471
+ semacam ke samping di browser juga. 
+
+101
+00:04:19,471 --> 00:04:20,970
+ Dan kode JavaScript sebenarnya bisa 
+
+102
+00:04:20,970 --> 00:04:25,600
+ berinteraksi dengan modul Native Client dan mendapatkan tanggapan kembali. 
+
+103
+00:04:25,600 --> 00:04:27,440
+ Dan apa yang Anda lihat di sini di halaman web ini 
+
+104
+00:04:27,440 --> 00:04:29,140
+ adalah sedikit kode JavaScript 
+
+105
+00:04:29,140 --> 00:04:30,980
+ itu perlu di Native Client 
+
+106
+00:04:30,980 --> 00:04:34,060
+ interupsi dengan modul NaCl tertentu 
+
+107
+00:04:34,060 --> 00:04:35,920
+ bahwa kita akan berlari. 
+
+108
+00:04:35,920 --> 00:04:38,300
+ Dan Anda dapat mengirim pesan ke modul ini. 
+
+109
+00:04:38,300 --> 00:04:40,540
+ Cara Anda melakukannya adalah Anda mengambil objek modul ini 
+
+110
+00:04:40,540 --> 00:04:42,440
+ di JavaScript, dan Anda menyebutnya postMessage. 
+
+111
+00:04:42,440 --> 00:04:44,530
+ Dan Anda sebenarnya bisa memberikan pesan 
+
+112
+00:04:44,530 --> 00:04:47,560
+ untuk mengirim ke modul Native Client. 
+
+113
+00:04:47,560 --> 00:04:49,430
+ Dan ketika modul Native Client merespons, 
+
+114
+00:04:49,430 --> 00:04:52,751
+ itu akan menjalankan fungsi ini menangani pesan di JavaScript. 
+
+115
+00:04:52,751 --> 00:04:54,250
+ Dan dalam kasus khusus ini, itu saja 
+
+116
+00:04:54,250 --> 00:04:59,080
+ muncul dan memberi tanda kotak dialog di browser saya. 
+
+117
+00:04:59,080 --> 00:05:01,270
+ Jadi itu adalah antarmuka yang cukup sederhana dari halaman web 
+
+118
+00:05:01,270 --> 00:05:02,589
+ samping, dari sisi JavaScript. 
+
+119
+00:05:02,589 --> 00:05:04,630
+ Dan satu-satunya hal yang harus Anda lakukan, 
+
+120
+00:05:04,630 --> 00:05:07,560
+ apakah Anda benar-benar harus menyatakan Klien Asli ini 
+
+121
+00:05:07,560 --> 00:05:09,210
+ modul dengan cara ini. 
+
+122
+00:05:09,210 --> 00:05:12,489
+ Jadi Anda hanya mengatakan modul embed dengan ID khusus. 
+
+123
+00:05:12,489 --> 00:05:14,030
+ Dan semacam bagian yang paling menarik 
+
+124
+00:05:14,030 --> 00:05:16,290
+ apakah sumber ini sama dengan Hello. 
+
+125
+00:05:16,290 --> 00:05:19,230
+ beberapa atribut barch NMF. 
+
+126
+00:05:19,230 --> 00:05:21,710
+ Dan yang ini hanya mengatakan, nah inilah yang kira-kira bisa dieksekusi 
+
+127
+00:05:21,710 --> 00:05:24,220
+ file yang perlu Anda muat dan mulai berjalan 
+
+128
+00:05:24,220 --> 00:05:27,230
+ di sisi asli hal. 
+
+129
+00:05:27,230 --> 00:05:30,880
+ Dan kode asli ini sebenarnya mirip kode C ++ lainnya 
+
+130
+00:05:30,880 --> 00:05:32,230
+ Anda mungkin menulis dengan kasar. 
+
+131
+00:05:32,230 --> 00:05:34,290
+ Jadi, inilah programnya. 
+
+132
+00:05:34,290 --> 00:05:37,620
+ Bagian yang menarik kira-kira menangani fungsi pesan ini. 
+
+133
+00:05:37,620 --> 00:05:42,380
+ Jadi ini adalah kelas C ++, dan setiap kali kode JavaScript 
+
+134
+00:05:42,380 --> 00:05:44,510
+ mengirim beberapa pesan ke kode asli, 
+
+135
+00:05:44,510 --> 00:05:46,230
+ itu benar-benar akan menjalankan fungsi ini. 
+
+136
+00:05:46,230 --> 00:05:48,800
+ Dan itu akan memeriksa apakah pesan yang dikirimkan adalah halo. 
+
+137
+00:05:48,800 --> 00:05:51,310
+ Dan jika demikian, buatlah semacam string balasan 
+
+138
+00:05:51,310 --> 00:05:52,809
+ dan kirimkan kembali. 
+
+139
+00:05:52,809 --> 00:05:53,850
+ Ini hal yang cukup sederhana. 
+
+140
+00:05:53,850 --> 00:05:56,420
+ Tetapi hanya untuk menjadi nyata, mari coba 
+
+141
+00:05:56,420 --> 00:05:58,300
+ untuk menjalankannya dan melihat apa yang terjadi. 
+
+142
+00:05:58,300 --> 00:06:02,360
+ Jadi kita benar-benar bisa membangunnya, dan menjalankan sedikit web 
+
+143
+00:06:02,360 --> 00:06:08,850
+ server yang akan melayani halaman ini dan Native Client 
+
+144
+00:06:08,850 --> 00:06:09,950
+ modul. 
+
+145
+00:06:09,950 --> 00:06:12,850
+ Jadi di sini saya bisa pergi ke URL ini dan di sini kita pergi. 
+
+146
+00:06:12,850 --> 00:06:14,640
+ Benar, itu sebenarnya dimuat di modul. 
+
+147
+00:06:14,640 --> 00:06:16,681
+ Modulnya sepertinya telah mendapatkan pesan halo kami 
+
+148
+00:06:16,681 --> 00:06:17,436
+ dari JavaScript. 
+
+149
+00:06:17,436 --> 00:06:19,720
+ Itu membalas kembali dengan string kembali ke JavaScript. 
+
+150
+00:06:19,720 --> 00:06:22,600
+ Dan kode JavaScript muncul kotak dialog 
+
+151
+00:06:22,600 --> 00:06:24,390
+ mengandung tanggapan itu. 
+
+152
+00:06:24,390 --> 00:06:26,710
+ Jadi sebenarnya ini semacam pekerjaan. 
+
+153
+00:06:26,710 --> 00:06:29,680
+ Kami dapat mencoba untuk melihat apakah kami dapat menabrak Klien Asli - semoga 
+
+154
+00:06:29,680 --> 00:06:34,690
+ tidak, tetapi kita dapat mengambil kode ini dan kita memiliki buffer ini. 
+
+155
+00:06:34,690 --> 00:06:37,890
+ Kita bisa menulis banyak tentang itu-- 
+
+156
+00:06:37,890 --> 00:06:42,020
+ Saya tidak tahu, cukup banyak - dan lihat apa yang terjadi. 
+
+157
+00:06:42,020 --> 00:06:43,970
+ Jadi semoga ini tidak merusak browser saya, 
+
+158
+00:06:43,970 --> 00:06:47,760
+ karena Klien Asli mencoba memberikan isolasi. 
+
+159
+00:06:47,760 --> 00:06:50,740
+ Tapi mari kita lihat apa yang terjadi. 
+
+160
+00:06:50,740 --> 00:06:53,930
+ Jadi kita bisa membangunnya kembali, jalankan kembali server web. 
+
+161
+00:06:53,930 --> 00:06:57,037
+ Dan di sini jika Anda menjalankannya, tidak ada yang terjadi. 
+
+162
+00:06:57,037 --> 00:06:58,620
+ Kami tidak mendapatkan pesan itu lagi, 
+
+163
+00:06:58,620 --> 00:07:00,224
+ begitu jelas pesannya tidak diterima 
+
+164
+00:07:00,224 --> 00:07:01,890
+ dikirim kembali dari modul Native Client, 
+
+165
+00:07:01,890 --> 00:07:03,150
+ karena saya tidak melihat sembulan. 
+
+166
+00:07:03,150 --> 00:07:05,980
+ Kita dapat melihat konsol JavaScript di sini, 
+
+167
+00:07:05,980 --> 00:07:08,920
+ dan kita dapat melihat bahwa modul Native Client memberitahu kita 
+
+168
+00:07:08,920 --> 00:07:10,270
+ Kerusakan modul NaCl. 
+
+169
+00:07:10,270 --> 00:07:14,250
+ Jadi entah bagaimana itu menangkap alur penyangga ini 
+
+170
+00:07:14,250 --> 00:07:16,940
+ atas beberapa memori, atau mungkin melompat ke alamat yang buruk 
+
+171
+00:07:16,940 --> 00:07:18,780
+ mengandung semua As. 
+
+172
+00:07:18,780 --> 00:07:21,110
+ Tapi bagaimanapun juga, modul Native Client 
+
+173
+00:07:21,110 --> 00:07:23,850
+ sebenarnya bisa memuat ini tanpa ini sewenang-wenang 
+
+174
+00:07:23,850 --> 00:07:26,170
+ semacam korupsi memori dalam modul yang mempengaruhi 
+
+175
+00:07:26,170 --> 00:07:28,620
+ sisa peramban. 
+
+176
+00:07:28,620 --> 00:07:32,150
+ Jadi ini kira-kira hanya demo singkat tentang apa sistemnya, 
+
+177
+00:07:32,150 --> 00:07:38,209
+ dan bagaimana Anda menggunakannya sebagai pengguna akhir atau pengembang web. 
+
+178
+00:07:38,209 --> 00:07:39,500
+ Jadi mari kita lihat lagi sekarang. 
+
+179
+00:07:39,500 --> 00:07:42,380
+ Jadi itu semua dalam hal demo yang harus saya tunjukkan kepada Anda. 
+
+180
+00:07:42,380 --> 00:07:45,770
+ Jadi, mari kita lihat lebih banyak sekarang tentang bagaimana Klien Pribumi akan bekerja, 
+
+181
+00:07:45,770 --> 00:07:49,400
+ atau mungkin bahkan mengapa kita membutuhkan desain khusus ini sebagai lawan 
+
+182
+00:07:49,400 --> 00:07:51,050
+ ke beberapa alternatif. 
+
+183
+00:07:51,050 --> 00:07:54,120
+
+
+184
+00:07:54,120 --> 00:07:59,384
+ Jadi, jika sasaran Anda, saya kira adalah kode asli sandbox, 
+
+185
+00:07:59,384 --> 00:08:01,300
+ ada sejumlah alternatif yang bisa Anda buat. 
+
+186
+00:08:01,300 --> 00:08:02,716
+ Orang-orang benar-benar memiliki masalah ini 
+
+187
+00:08:02,716 --> 00:08:04,640
+ sebelumnya, tampilkan kode warisan yang ada 
+
+188
+00:08:04,640 --> 00:08:07,780
+ dan bahasa lain sebelum Native Client muncul. 
+
+189
+00:08:07,780 --> 00:08:10,960
+ Dan orang-orang hanya memecahkannya dengan cara yang berbeda 
+
+190
+00:08:10,960 --> 00:08:14,540
+ yang mungkin tidak memuaskan dari sudut pandang keamanan 
+
+191
+00:08:14,540 --> 00:08:17,570
+ atau sudut pandang kegunaan sebagai Native Client. 
+
+192
+00:08:17,570 --> 00:08:19,649
+ Tapi itu bisa dilakukan. 
+
+193
+00:08:19,649 --> 00:08:20,190
+ Jadi mari kita lihat. 
+
+194
+00:08:20,190 --> 00:08:21,606
+ Jadi apa yang bisa Anda lakukan jika Anda benar-benar 
+
+195
+00:08:21,606 --> 00:08:25,020
+ ingin menjalankan kode asli di browser? 
+
+196
+00:08:25,020 --> 00:08:28,730
+
+
+197
+00:08:28,730 --> 00:08:33,974
+ Jadi satu opsi yang dilakukan orang adalah mempercayai pengembang. 
+
+198
+00:08:33,974 --> 00:08:37,440
+
+
+199
+00:08:37,440 --> 00:08:39,500
+ Dan mungkin varian dari pendekatan ini 
+
+200
+00:08:39,500 --> 00:08:43,870
+ adalah bertanya kepada pengguna apakah mereka ingin menjalankan beberapa kode 
+
+201
+00:08:43,870 --> 00:08:46,420
+ di browser mereka atau tidak. 
+
+202
+00:08:46,420 --> 00:08:47,920
+ Begitu juga semua orang mengerti secara kasar 
+
+203
+00:08:47,920 --> 00:08:48,920
+ apa rencananya, kan? 
+
+204
+00:08:48,920 --> 00:08:51,660
+ Seperti bukannya memiliki kompilasi Native Client secara keseluruhan 
+
+205
+00:08:51,660 --> 00:08:52,710
+ strategi, saya bisa saja membangunnya 
+
+206
+00:08:52,710 --> 00:08:54,700
+ program C sederhana, menayangkannya di browser, 
+
+207
+00:08:54,700 --> 00:08:56,030
+ dan mungkin peramban bertanya, kan 
+
+208
+00:08:56,030 --> 00:08:57,238
+ ingin menjalankan situs ini atau tidak? 
+
+209
+00:08:57,238 --> 00:08:59,270
+ Jika saya klik ya, maka secara tidak sengaja 
+
+210
+00:08:59,270 --> 00:09:02,550
+ mencoret-coret di atas memori peramban dan merusak peramban. 
+
+211
+00:09:02,550 --> 00:09:04,860
+ Jadi itu mungkin, kan? 
+
+212
+00:09:04,860 --> 00:09:06,360
+ Ini tentu saja menyelesaikan semua tujuan ini, 
+
+213
+00:09:06,360 --> 00:09:07,980
+ tapi ada apa dengan itu? 
+
+214
+00:09:07,980 --> 00:09:11,180
+ Yah, saya kira ada bagian ketidakamanan, yang 
+
+215
+00:09:11,180 --> 00:09:12,560
+ sangat disayangkan. 
+
+216
+00:09:12,560 --> 00:09:15,340
+ Salah satu cara untuk berpotensi mengatasi ini-- dan beberapa sistem 
+
+217
+00:09:15,340 --> 00:09:15,840
+ melakukan. 
+
+218
+00:09:15,840 --> 00:09:17,720
+ Seperti Microsoft memiliki sistem yang disebut 
+
+219
+00:09:17,720 --> 00:09:22,190
+ ActiveX, yang pada dasarnya menerapkan rencana ini. 
+
+220
+00:09:22,190 --> 00:09:26,410
+ Anda dapat menyajikan binari ke IE, browser di komputer Anda. 
+
+221
+00:09:26,410 --> 00:09:28,400
+ Dan asalkan dilengkapi dengan sertifikat 
+
+222
+00:09:28,400 --> 00:09:30,860
+ dari pengembang tertentu yang ditandatangani oleh katakanlah 
+
+223
+00:09:30,860 --> 00:09:33,345
+ Microsoft atau orang lain, lalu itu 
+
+224
+00:09:33,345 --> 00:09:35,329
+ akan benar-benar menjalankan kode ini. 
+
+225
+00:09:35,329 --> 00:09:37,620
+ Apa yang kalian pikirkan tentang rencana ini, apakah ini berguna? 
+
+226
+00:09:37,620 --> 00:09:38,496
+ Ya? 
+
+227
+00:09:38,496 --> 00:09:39,412
+ AUDIENCE: [TIDAK JELAS]. 
+
+228
+00:09:39,412 --> 00:09:44,750
+
+
+229
+00:09:44,750 --> 00:09:46,000
+ PROFESOR: Itu benar, ya. 
+
+230
+00:09:46,000 --> 00:09:49,160
+ Jadi benar, Anda benar-benar harus menaruh sedikit kepercayaan 
+
+231
+00:09:49,160 --> 00:09:50,990
+ menjadi siapa pun yang menandatangani ini, 
+
+232
+00:09:50,990 --> 00:09:53,280
+ bahwa mereka hanya akan menandatangani binari itu 
+
+233
+00:09:53,280 --> 00:09:55,954
+ tidak akan melakukan sesuatu yang buruk. 
+
+234
+00:09:55,954 --> 00:09:57,870
+ Tapi agak tidak jelas apa hal buruk ini. 
+
+235
+00:09:57,870 --> 00:09:59,619
+ Dan mungkin mereka hanya menulis kode C. 
+
+236
+00:09:59,619 --> 00:10:04,250
+ dan menandatanganinya tanpa melakukan banyak pekerjaan. 
+
+237
+00:10:04,250 --> 00:10:07,480
+ Dalam hal ini, Anda mungkin rentan terhadap beberapa masalah 
+
+238
+00:10:07,480 --> 00:10:09,210
+ di bawah garis. 
+
+239
+00:10:09,210 --> 00:10:10,762
+ Bagaimana jika kita bertanya kepada pengguna? 
+
+240
+00:10:10,762 --> 00:10:11,734
+ Ya? 
+
+241
+00:10:11,734 --> 00:10:12,650
+ AUDIENCE: [TIDAK JELAS]. 
+
+242
+00:10:12,650 --> 00:10:16,239
+
+
+243
+00:10:16,239 --> 00:10:17,530
+ PROFESOR: Oh ya, ya, ya. 
+
+244
+00:10:17,530 --> 00:10:19,970
+ Seperti tujuan pengguna adalah menjalankan hal ini. 
+
+245
+00:10:19,970 --> 00:10:24,180
+ Dan bahkan jika pengguna ingin berhati-hati, sebenarnya tidak 
+
+246
+00:10:24,180 --> 00:10:25,700
+ jelas bagaimana seharusnya pengguna memutuskan? 
+
+247
+00:10:25,700 --> 00:10:27,410
+ Seandainya saya benar-benar ingin mengerti, 
+
+248
+00:10:27,410 --> 00:10:29,192
+ haruskah saya membiarkan program ini berjalan? 
+
+249
+00:10:29,192 --> 00:10:30,650
+ Semua itu memberitahu saya itu baik, mungkin itu 
+
+250
+00:10:30,650 --> 00:10:32,358
+ dibuat dari Google.com atau Microsoft.com, 
+
+251
+00:10:32,358 --> 00:10:34,590
+ dan nama filenya sebagai foo.exe. 
+
+252
+00:10:34,590 --> 00:10:37,587
+ Saya tidak tahu, seperti apa yang ada di sana? 
+
+253
+00:10:37,587 --> 00:10:39,170
+ Bahkan jika saya menyembunyikan kode itu, itu mungkin 
+
+254
+00:10:39,170 --> 00:10:40,794
+ sangat sulit untuk mengatakan apakah itu terjadi 
+
+255
+00:10:40,794 --> 00:10:42,310
+ untuk melakukan sesuatu yang buruk atau tidak. 
+
+256
+00:10:42,310 --> 00:10:44,270
+ Jadi sebenarnya sangat sulit untuk memutuskan. 
+
+257
+00:10:44,270 --> 00:10:45,980
+ Jadi salah satu cara untuk memikirkan Native Client 
+
+258
+00:10:45,980 --> 00:10:48,722
+ apakah itu mekanisme dimana pengguna dapat benar-benar 
+
+259
+00:10:48,722 --> 00:10:50,680
+ mendapatkan kepercayaan diri apakah mereka harus mengatakan ya 
+
+260
+00:10:50,680 --> 00:10:51,888
+ atau tidak menjalankan hal ini. 
+
+261
+00:10:51,888 --> 00:10:54,045
+ Jadi dalam prakteknya, saya kira seperti Paul Young, siapa 
+
+262
+00:10:54,045 --> 00:10:55,670
+ sedang memberi kuliah tamu minggu lalu, 
+
+263
+00:10:55,670 --> 00:10:57,400
+ dan dia menyarankan agar Anda harus mengaktifkan klik ini 
+
+264
+00:10:57,400 --> 00:10:58,566
+ untuk memainkan ekstensi di Chrome. 
+
+265
+00:10:58,566 --> 00:11:00,550
+ Jadi setiap ekstensi, termasuk Native Client, 
+
+266
+00:11:00,550 --> 00:11:03,209
+ Anda harus buru-buru mengklik hal ini sebelum mulai berjalan. 
+
+267
+00:11:03,209 --> 00:11:04,750
+ Jadi dalam beberapa hal, itu bertanya kepada pengguna. 
+
+268
+00:11:04,750 --> 00:11:06,080
+ Tetapi kemudian pengguna benar-benar memiliki beberapa pengertian, 
+
+269
+00:11:06,080 --> 00:11:08,130
+ dengan baik, jika saya mengkliknya, saya masih berharap 
+
+270
+00:11:08,130 --> 00:11:10,630
+ aman dalam arti bahwa Native Client akan melindungi saya. 
+
+271
+00:11:10,630 --> 00:11:13,210
+ Jadi keduanya tidak harus eksklusif, 
+
+272
+00:11:13,210 --> 00:11:15,640
+ tetapi Anda benar-benar menginginkan jaminan teknis 
+
+273
+00:11:15,640 --> 00:11:19,300
+ dari Native Client yang memastikan bahwa bahkan jika Anda menjawab ya, 
+
+274
+00:11:19,300 --> 00:11:21,290
+ ada sesuatu yang bermakna itu 
+
+275
+00:11:21,290 --> 00:11:24,210
+ tidak memberlakukan keamanan Anda. 
+
+276
+00:11:24,210 --> 00:11:26,440
+ Jadi ini masuk akal? 
+
+277
+00:11:26,440 --> 00:11:27,410
+ BAIK. 
+
+278
+00:11:27,410 --> 00:11:31,340
+ Jadi yang lain saya kira pendekatan yang diambil orang, 
+
+279
+00:11:31,340 --> 00:11:37,443
+ adalah menggunakan OS atau sandboxing perangkat keras, atau isolasi. 
+
+280
+00:11:37,443 --> 00:11:41,730
+
+
+281
+00:11:41,730 --> 00:11:45,470
+ Jadi ini adalah hal-hal yang kami lihat dalam beberapa ceramah terakhir. 
+
+282
+00:11:45,470 --> 00:11:49,800
+ Jadi mungkin Anda akan menggunakan Unix, mekanisme isolasi. 
+
+283
+00:11:49,800 --> 00:11:51,790
+ Mungkin jika Anda memiliki sesuatu yang lebih canggih, 
+
+284
+00:11:51,790 --> 00:11:53,289
+ jika Anda menjalankan [tidak terdengar] gratis 
+
+285
+00:11:53,289 --> 00:11:54,790
+ mungkin Anda akan menggunakan Capsicum. 
+
+286
+00:11:54,790 --> 00:11:58,060
+ Tampaknya sangat cocok untuk sandboxing beberapa bagian kode. 
+
+287
+00:11:58,060 --> 00:12:00,450
+ Karena Anda dapat memberikan kemampuan yang sangat sedikit, dan kemudian 
+
+288
+00:12:00,450 --> 00:12:02,070
+ sepertinya bagus. 
+
+289
+00:12:02,070 --> 00:12:04,380
+ Dan Linux memiliki mekanisme yang sama yang disebut Seccomp 
+
+290
+00:12:04,380 --> 00:12:07,420
+ yang kita bahas secara singkat di kuliah terakhir, itu bisa 
+
+291
+00:12:07,420 --> 00:12:09,844
+ memungkinkan Anda melakukan hal serupa. 
+
+292
+00:12:09,844 --> 00:12:11,425
+ Jadi sepertinya sudah ada 
+
+293
+00:12:11,425 --> 00:12:15,410
+ mekanisme untuk menulis kode secara terpisah di komputer Anda. 
+
+294
+00:12:15,410 --> 00:12:18,810
+ Mengapa orang-orang ini menentang menggunakan solusi yang ada ini? 
+
+295
+00:12:18,810 --> 00:12:22,130
+ Kemudian mereka seperti menciptakan roda untuk beberapa alasan. 
+
+296
+00:12:22,130 --> 00:12:24,110
+ Jadi apa yang terjadi? 
+
+297
+00:12:24,110 --> 00:12:25,110
+ Ya? 
+
+298
+00:12:25,110 --> 00:12:27,110
+ Oh ya? 
+
+299
+00:12:27,110 --> 00:12:29,925
+ AUDIENCE: Mungkin mereka ingin meminimalkan [tidak terdengar]? 
+
+300
+00:12:29,925 --> 00:12:31,800
+ PROFESOR: Ya, jadi dalam beberapa hal, mungkin mereka 
+
+301
+00:12:31,800 --> 00:12:34,429
+ tidak ingin mempercayai sistem operasi. 
+
+302
+00:12:34,429 --> 00:12:36,220
+ Jadi mungkin mereka ada di sini, dan mereka sebenarnya 
+
+303
+00:12:36,220 --> 00:12:39,430
+ khawatir tentang bug OS. 
+
+304
+00:12:39,430 --> 00:12:42,410
+ Mungkin dekernel sebelumnya, kernel Linux, 
+
+305
+00:12:42,410 --> 00:12:46,000
+ memiliki cukup banyak kode C yang ditulis yang tidak mereka inginkan 
+
+306
+00:12:46,000 --> 00:12:47,680
+ untuk mengaudit untuk kebenaran, atau mungkin 
+
+307
+00:12:47,680 --> 00:12:49,263
+ bahkan tidak bisa mengaudit kebenarannya 
+
+308
+00:12:49,263 --> 00:12:50,360
+ jika mereka mau. 
+
+309
+00:12:50,360 --> 00:12:54,549
+ Dan dalam salah satu dari rencana isolasi berbasis Capsicum atau Seccomp ini, 
+
+310
+00:12:54,549 --> 00:12:56,840
+ Anda mungkin cukup mempercayai kode di kernel 
+
+311
+00:12:56,840 --> 00:13:00,176
+ untuk menjadi benar, untuk sandbox untuk benar-benar memegang dan menegakkan 
+
+312
+00:13:00,176 --> 00:13:00,910
+ isolasi. 
+
+313
+00:13:00,910 --> 00:13:02,370
+ Ya? 
+
+314
+00:13:02,370 --> 00:13:06,105
+ AUDIENCE: Saat Anda mendapatkan lebih banyak cara untuk menggunakan browser dan lainnya, 
+
+315
+00:13:06,105 --> 00:13:08,620
+ seperti Anda harus berurusan dengan hal-hal semacam itu 
+
+316
+00:13:08,620 --> 00:13:10,612
+ Anda melakukannya dengan seperti iOS dan Android, 
+
+317
+00:13:10,612 --> 00:13:12,420
+ dan semua hal lainnya, mengakses-- 
+
+318
+00:13:12,420 --> 00:13:13,220
+ PROFESOR: Ya, jadi sebenarnya 
+
+319
+00:13:13,220 --> 00:13:14,595
+ pertimbangan menarik lainnya 
+
+320
+00:13:14,595 --> 00:13:17,200
+ adalah biasanya OS saya memiliki bug. 
+
+321
+00:13:17,200 --> 00:13:19,450
+ Tetapi sebenarnya OS tidak kompatibel 
+
+322
+00:13:19,450 --> 00:13:22,520
+ dengan satu sama lain dalam beberapa hal, artinya setiap OS 
+
+323
+00:13:22,520 --> 00:13:23,986
+ memiliki itu sendiri-- seperti di sini. 
+
+324
+00:13:23,986 --> 00:13:26,235
+ Nah, ada Unix, ada Capsicum, ada Seccomp, 
+
+325
+00:13:26,235 --> 00:13:27,290
+ tetapi ini hanyalah varian Unix. 
+
+326
+00:13:27,290 --> 00:13:29,920
+ Ada sabuk pengaman OS Mac, ada Windows yang lain, 
+
+327
+00:13:29,920 --> 00:13:31,970
+ dan daftar itu terus berlanjut. 
+
+328
+00:13:31,970 --> 00:13:34,920
+ Jadi alhasil, setiap platform Anda 
+
+329
+00:13:34,920 --> 00:13:37,750
+ harus menggunakan mekanisme isolasi yang berbeda. 
+
+330
+00:13:37,750 --> 00:13:39,480
+ Dan hal yang sebenarnya mengganggu mereka 
+
+331
+00:13:39,480 --> 00:13:42,146
+ tidak begitu banyak sehingga mereka harus menulis kode yang berbeda untuk Mac 
+
+332
+00:13:42,146 --> 00:13:43,390
+ dan Windows dan Linux. 
+
+333
+00:13:43,390 --> 00:13:46,510
+ Tetapi lebih dari itu, ini berdampak pada bagaimana Anda menulis hal itu 
+
+334
+00:13:46,510 --> 00:13:48,747
+ di dalam kotak pasir. 
+
+335
+00:13:48,747 --> 00:13:50,330
+ Karena dalam Native Client, Anda sebenarnya 
+
+336
+00:13:50,330 --> 00:13:53,140
+ tuliskan kode yang berjalan dengan cara yang sama, 
+
+337
+00:13:53,140 --> 00:13:56,580
+ atau itu adalah bagian kode yang sama yang dijalankan di Apple atau Windows 
+
+338
+00:13:56,580 --> 00:13:58,420
+ atau sistem Linux. 
+
+339
+00:13:58,420 --> 00:14:00,655
+ Dan jika Anda menggunakan mekanisme isolasi ini, 
+
+340
+00:14:00,655 --> 00:14:02,790
+ mereka benar-benar memberlakukan batasan yang berbeda 
+
+341
+00:14:02,790 --> 00:14:04,440
+ pada program yang sedang dikotori. 
+
+342
+00:14:04,440 --> 00:14:06,840
+ Jadi Anda harus menulis satu program itu 
+
+343
+00:14:06,840 --> 00:14:08,560
+ akan berjalan di dalam kotak pasir Linux, 
+
+344
+00:14:08,560 --> 00:14:11,296
+ program lain di dalam kotak pasir Windows, dan seterusnya. 
+
+345
+00:14:11,296 --> 00:14:13,400
+ Jadi ini sebenarnya tidak bisa diterima oleh mereka. 
+
+346
+00:14:13,400 --> 00:14:17,202
+ Mereka tidak mau berurusan dengan masalah semacam ini. 
+
+347
+00:14:17,202 --> 00:14:20,620
+ Jadi apakah ada pertimbangan lain? 
+
+348
+00:14:20,620 --> 00:14:21,692
+ Ya? 
+
+349
+00:14:21,692 --> 00:14:23,400
+ AUDIENCE: Agaknya kinerja juga. 
+
+350
+00:14:23,400 --> 00:14:26,890
+ Karena jika Anda mengatakan Capsicum, Anda perlu 
+
+351
+00:14:26,890 --> 00:14:29,510
+ untuk mengambil satu set [tidak terdengar], atau apa pun 
+
+352
+00:14:29,510 --> 00:14:31,370
+ sedang berjalan di dalam kotak pasir. 
+
+353
+00:14:31,370 --> 00:14:34,135
+ Dengan di sini, mereka benar-benar dapat menjalankannya dalam [TIDAK JELAS]. 
+
+354
+00:14:34,135 --> 00:14:34,830
+ PROFESOR: Itu benar, ya. 
+
+355
+00:14:34,830 --> 00:14:36,440
+ Jadi berpotensi pendekatan yang mereka ambil, 
+
+356
+00:14:36,440 --> 00:14:37,880
+ rencana isolasi kesalahan perangkat lunak 
+
+357
+00:14:37,880 --> 00:14:39,840
+ sebenarnya sangat berkinerja, dan bisa 
+
+358
+00:14:39,840 --> 00:14:43,517
+ mengungguli kotak pasir ini di tingkat OS. 
+
+359
+00:14:43,517 --> 00:14:44,975
+ Ternyata di Native Client, 
+
+360
+00:14:44,975 --> 00:14:49,390
+ mereka benar-benar menggunakan kotak pasir dan kotak pasir OS, 
+
+361
+00:14:49,390 --> 00:14:52,110
+ hanya untuk tindakan pencegahan ekstra demi keselamatan. 
+
+362
+00:14:52,110 --> 00:14:54,122
+ Jadi mereka tidak benar-benar menang dalam kinerja 
+
+363
+00:14:54,122 --> 00:14:56,080
+ dalam implementasinya, tetapi mereka bisa, benar. 
+
+364
+00:14:56,080 --> 00:14:56,627
+ Ya? 
+
+365
+00:14:56,627 --> 00:14:58,710
+ AUDIENCE: Ada beberapa aspek kontrol seperti itu. 
+
+366
+00:14:58,710 --> 00:15:00,834
+ Karena dapat mengontrol apa yang terjadi di browser, 
+
+367
+00:15:00,834 --> 00:15:04,132
+ tetapi jika mereka mengirim satu ke mesin klien ke dalam OS mereka, 
+
+368
+00:15:04,132 --> 00:15:05,590
+ mereka semacam belum tentu tahu 
+
+369
+00:15:05,590 --> 00:15:07,990
+ apa yang mungkin terjadi padanya? 
+
+370
+00:15:07,990 --> 00:15:09,930
+ PROFESOR: Jadi saya kira mungkin satu cara 
+
+371
+00:15:09,930 --> 00:15:12,630
+ untuk memikirkan itu adalah bahwa ya, OS mungkin memiliki bug, 
+
+372
+00:15:12,630 --> 00:15:15,710
+ atau OS saya mungkin tidak melakukan pekerjaan dengan baik di sandboxing itu. 
+
+373
+00:15:15,710 --> 00:15:18,310
+ Atau mungkin antarmukanya sedikit berbeda, 
+
+374
+00:15:18,310 --> 00:15:20,743
+ jadi Anda tidak tahu apa yang akan diekspos oleh OS. 
+
+375
+00:15:20,743 --> 00:15:22,617
+ AUDIENCE: Jadi tidak suka mencegah kode 
+
+376
+00:15:22,617 --> 00:15:24,655
+ melakukan hal-hal buruk. 
+
+377
+00:15:24,655 --> 00:15:26,447
+ Seperti ada banyak kasus hal buruk 
+
+378
+00:15:26,447 --> 00:15:27,988
+ yang bisa dilakukan kode, mungkin saja 
+
+379
+00:15:27,988 --> 00:15:29,910
+ Anda ingin secara statis menganalisis jaraknya, 
+
+380
+00:15:29,910 --> 00:15:32,034
+ tetapi mereka berdua duduk dalam satu lingkaran dan kemudian tidak mengijinkannya 
+
+381
+00:15:32,034 --> 00:15:32,949
+ sebagai program yang valid. 
+
+382
+00:15:32,949 --> 00:15:34,240
+ PROFESOR: Jadi Anda bisa, kan? 
+
+383
+00:15:34,240 --> 00:15:36,280
+ Jadi pendekatan mereka cukup kuat dalam arti 
+
+384
+00:15:36,280 --> 00:15:39,090
+ Anda bisa mencoba mencari berbagai macam masalah 
+
+385
+00:15:39,090 --> 00:15:41,740
+ dalam kode seperti loop mungkin tak terbatas, dan sebagainya. 
+
+386
+00:15:41,740 --> 00:15:44,480
+ Sulit untuk memutuskan, seperti masalah holding, 
+
+387
+00:15:44,480 --> 00:15:46,740
+ apakah itu akan memiliki loop yang tidak terbatas atau tidak. 
+
+388
+00:15:46,740 --> 00:15:50,390
+ Tetapi pada prinsipnya, Anda mungkin bisa menangkap beberapa masalah. 
+
+389
+00:15:50,390 --> 00:15:53,812
+ Saya pikir salah satu contoh yang sangat menarik bahwa saya hampir 
+
+390
+00:15:53,812 --> 00:15:55,270
+ tidak menyadari keberadaan semacam ini 
+
+391
+00:15:55,270 --> 00:15:56,936
+ sebelum membaca tulisan ini, apakah orang-orang ini 
+
+392
+00:15:56,936 --> 00:16:00,255
+ khawatir tentang bug perangkat keras juga, itu bukan hanya mereka 
+
+393
+00:16:00,255 --> 00:16:01,880
+ khawatir bahwa sistem operasi mungkin 
+
+394
+00:16:01,880 --> 00:16:04,870
+ memiliki kerentanan yang akan dieksploitasi oleh kode gerakan. 
+
+395
+00:16:04,870 --> 00:16:07,300
+ Tetapi juga prosesor itu sendiri 
+
+396
+00:16:07,300 --> 00:16:10,000
+ memiliki beberapa instruksi yang akan menggantungnya, 
+
+397
+00:16:10,000 --> 00:16:12,250
+ atau itu akan me-reboot komputer Anda. 
+
+398
+00:16:12,250 --> 00:16:15,850
+ Dan pada prinsipnya, perangkat keras Anda seharusnya tidak memiliki bug seperti itu, 
+
+399
+00:16:15,850 --> 00:16:19,440
+ karena sistem operasi bergantung pada perangkat keras 
+
+400
+00:16:19,440 --> 00:16:23,290
+ untuk menjebak ke kernel jika ada eksekusi yang buruk 
+
+401
+00:16:23,290 --> 00:16:26,650
+ mode pengguna, sehingga sistem operasi dapat memperbaikinya. 
+
+402
+00:16:26,650 --> 00:16:29,280
+ Namun secara eksperimental, ternyata prosesor itu 
+
+403
+00:16:29,280 --> 00:16:31,129
+ sangat rumit sehingga mereka memiliki bug, 
+
+404
+00:16:31,129 --> 00:16:32,670
+ dan orang-orang ini benar-benar berkata, baik, kita 
+
+405
+00:16:32,670 --> 00:16:34,705
+ sebenarnya menemukan beberapa bukti bahwa ini terjadi. 
+
+406
+00:16:34,705 --> 00:16:37,760
+ Jika Anda memiliki instruksi yang rumit bahwa CPU tidak 
+
+407
+00:16:37,760 --> 00:16:40,965
+ mengharapkan, CPU justru akan terhenti 
+
+408
+00:16:40,965 --> 00:16:42,950
+ dari menjebak ke kernel. 
+
+409
+00:16:42,950 --> 00:16:43,960
+ Ini sepertinya buruk. 
+
+410
+00:16:43,960 --> 00:16:46,290
+ Tapi saya kira itu bukan bencana, jika saya hanya semacam itu 
+
+411
+00:16:46,290 --> 00:16:48,560
+ menjalankan hal-hal yang wajar di laptop saya. 
+
+412
+00:16:48,560 --> 00:16:51,430
+ Tetapi itu buruk jika Anda mengunjungi beberapa halaman web dan komputer Anda 
+
+413
+00:16:51,430 --> 00:16:52,300
+ hang. 
+
+414
+00:16:52,300 --> 00:16:54,130
+ Jadi pada dasarnya mereka menginginkan level yang lebih kuat 
+
+415
+00:16:54,130 --> 00:16:57,810
+ perlindungan untuk modul Native Client ini daripada apa 
+
+416
+00:16:57,810 --> 00:17:01,410
+ Anda akan keluar dari semacam isolasi tingkat OS, 
+
+417
+00:17:01,410 --> 00:17:04,146
+ bahkan dari sudut pandang perangkat keras [INAUDIBLE]. 
+
+418
+00:17:04,146 --> 00:17:05,479
+ Jadi mereka sebenarnya sangat keren. 
+
+419
+00:17:05,480 --> 00:17:09,450
+ Mereka benar-benar paranoid tentang keamanan, 
+
+420
+00:17:09,450 --> 00:17:12,612
+ termasuk masalah perangkat keras. 
+
+421
+00:17:12,612 --> 00:17:15,140
+ Baiklah, jadi pertanyaan tentang semua alternatif ini, 
+
+422
+00:17:15,140 --> 00:17:17,400
+ bagaimana cara kerjanya, atau mengapa orang-orang ini tidak berfungsi 
+
+423
+00:17:17,400 --> 00:17:19,454
+ bersemangat tentang itu? 
+
+424
+00:17:19,454 --> 00:17:21,496
+ Masuk akal? 
+
+425
+00:17:21,496 --> 00:17:22,700
+ Baiklah. 
+
+426
+00:17:22,700 --> 00:17:25,990
+ Jadi saya kira mari coba lihat sekarang, 
+
+427
+00:17:25,990 --> 00:17:30,566
+ bagaimana Native Client benar-benar memutuskan untuk proses kotak pasir. 
+
+428
+00:17:30,566 --> 00:17:34,760
+ Biarkan saya menarik papan ini. 
+
+429
+00:17:34,760 --> 00:17:37,340
+ Jadi, Klien Asli mengambil pendekatan yang berbeda ini 
+
+430
+00:17:37,340 --> 00:17:41,070
+ itu pada umumnya disebut kesalahan isolasi perangkat lunak. 
+
+431
+00:17:41,070 --> 00:17:49,040
+
+
+432
+00:17:49,040 --> 00:17:52,630
+ Dan rencananya sebenarnya tidak bergantung pada operasi 
+
+433
+00:17:52,630 --> 00:17:55,500
+ sistem atau perangkat keras untuk memeriksa berbagai hal saat runtime, 
+
+434
+00:17:55,500 --> 00:18:00,000
+ tetapi untuk entah bagaimana melihat petunjuk di depan waktu, 
+
+435
+00:18:00,000 --> 00:18:03,950
+ dan memutuskan bahwa selalu akan aman untuk dieksekusi. 
+
+436
+00:18:03,950 --> 00:18:06,350
+ Jadi sebenarnya lihatlah biner, dan Anda 
+
+437
+00:18:06,350 --> 00:18:08,610
+ periksa semua instruksi yang mungkin 
+
+438
+00:18:08,610 --> 00:18:11,480
+ untuk melihat apakah mereka akan menjadi instruksi yang aman 
+
+439
+00:18:11,480 --> 00:18:12,660
+ atau instruksi tidak aman. 
+
+440
+00:18:12,660 --> 00:18:15,960
+ Dan setelah Anda memutuskan bahwa semuanya akan aman, 
+
+441
+00:18:15,960 --> 00:18:18,050
+ Anda bisa langsung melompat dan mulai mengeksekusi. 
+
+442
+00:18:18,050 --> 00:18:20,970
+ Karena Anda tahu itu semua terdiri dari hal-hal yang aman, 
+
+443
+00:18:20,970 --> 00:18:22,850
+ jadi itu tidak bisa salah. 
+
+444
+00:18:22,850 --> 00:18:25,800
+ Jadi kita akan berbicara tentang apa artinya ini. 
+
+445
+00:18:25,800 --> 00:18:28,130
+ Tapi kira-kira apa yang akan mereka lakukan adalah, 
+
+446
+00:18:28,130 --> 00:18:31,000
+ mereka akan melihat hampir semua instruksi 
+
+447
+00:18:31,000 --> 00:18:34,050
+ dalam kode biner yang disajikan hingga browser. 
+
+448
+00:18:34,050 --> 00:18:37,290
+ Dan mereka akan memutuskan bahwa instruksi khusus itu 
+
+449
+00:18:37,290 --> 00:18:41,872
+ akan aman atau tidak aman. 
+
+450
+00:18:41,872 --> 00:18:43,455
+ Apa yang mereka lakukan untuk instruksi yang aman? 
+
+451
+00:18:43,455 --> 00:18:46,010
+ Yah, mereka hanya akan mengizinkannya. 
+
+452
+00:18:46,010 --> 00:18:48,315
+ Apa contoh dari instruksi yang aman? 
+
+453
+00:18:48,315 --> 00:18:51,260
+ Apa yang mereka pikirkan tentang itu tidak perlu pemeriksaan tambahan 
+
+454
+00:18:51,260 --> 00:18:53,432
+ atau perlindungan, dan sebagainya? 
+
+455
+00:18:53,432 --> 00:18:54,424
+ AUDIENCE: [TIDAK JELAS]. 
+
+456
+00:18:54,424 --> 00:18:57,900
+ PROFESOR: Ya, jadi seperti jenis operasi ALU. 
+
+457
+00:18:57,900 --> 00:18:59,730
+ Pada dasarnya Anda memiliki matematika, mungkin 
+
+458
+00:18:59,730 --> 00:19:03,840
+ bergerak di antara register dan sebagainya. 
+
+459
+00:19:03,840 --> 00:19:06,490
+ Jadi ini tidak benar-benar mempengaruhi keamanan sistem, 
+
+460
+00:19:06,490 --> 00:19:07,410
+ sejauh mereka khawatir. 
+
+461
+00:19:07,410 --> 00:19:08,600
+ Karena mereka benar-benar peduli 
+
+462
+00:19:08,600 --> 00:19:11,045
+ adalah hal-hal seperti keamanan memori, di mana kode apa yang Anda jalankan, 
+
+463
+00:19:11,045 --> 00:19:12,321
+ dan seterusnya. 
+
+464
+00:19:12,321 --> 00:19:14,445
+ Jadi selama Anda hanya menghitung beberapa hal, 
+
+465
+00:19:14,445 --> 00:19:16,120
+ dan mendaftar, mereka tidak terlalu peduli. 
+
+466
+00:19:16,120 --> 00:19:19,660
+ Itu tidak akan mempengaruhi sisa browser. 
+
+467
+00:19:19,660 --> 00:19:21,350
+ Jadi bagaimana dengan operasi yang tidak aman? 
+
+468
+00:19:21,350 --> 00:19:22,960
+ Saya kira ini adalah hal-hal yang mereka 
+
+469
+00:19:22,960 --> 00:19:24,330
+ mungkin lebih peduli. 
+
+470
+00:19:24,330 --> 00:19:29,740
+ Jadi ini apa saja yang mungkin melakukan akses memori, atau mungkin 
+
+471
+00:19:29,740 --> 00:19:34,400
+ beberapa instruksi istimewa, mungkin memohon suatu sistem 
+
+472
+00:19:34,400 --> 00:19:37,670
+ hubungi mesin ini. 
+
+473
+00:19:37,670 --> 00:19:41,450
+ Mungkin mencoba melompat keluar dari kotak pasir, siapa yang tahu apa? 
+
+474
+00:19:41,450 --> 00:19:43,450
+ Jadi untuk jenis instruksi ini, 
+
+475
+00:19:43,450 --> 00:19:46,180
+ mereka akan melakukan satu dari dua hal. 
+
+476
+00:19:46,180 --> 00:19:50,090
+ Jika instruksi sebenarnya diperlukan untuk aplikasi 
+
+477
+00:19:50,090 --> 00:19:52,922
+ untuk melakukan pekerjaan itu, seperti mengakses memori tampaknya penting, 
+
+478
+00:19:52,922 --> 00:19:55,430
+ maka mereka akan entah bagaimana memastikan 
+
+479
+00:19:55,430 --> 00:19:59,650
+ bahwa mereka dapat melaksanakan instruksi yang tidak aman ini dengan aman. 
+
+480
+00:19:59,650 --> 00:20:02,300
+ Atau jika Anda melompat-lompat misalnya di program 
+
+481
+00:20:02,300 --> 00:20:04,425
+ ruang alamat, [tidak terdengar] apa yang akan mereka lakukan 
+
+482
+00:20:04,425 --> 00:20:07,048
+ entah bagaimana instrumen instruksi. 
+
+483
+00:20:07,048 --> 00:20:09,050
+ Dan apa yang mendasari instruksi itu 
+
+484
+00:20:09,050 --> 00:20:12,006
+ adalah bahwa Anda pernah memiliki satu instruksi yang tidak aman itu 
+
+485
+00:20:12,006 --> 00:20:14,630
+ kadang-kadang melakukan hal-hal yang baik, bahwa aplikasi mungkin sebenarnya 
+
+486
+00:20:14,630 --> 00:20:15,960
+ ingin lakukan secara sah. 
+
+487
+00:20:15,960 --> 00:20:18,620
+ Dan terkadang instruksi dapat melakukan hal-hal buruk. 
+
+488
+00:20:18,620 --> 00:20:20,722
+ Jadi apa sarana instrumentalnya adalah 
+
+489
+00:20:20,722 --> 00:20:22,680
+ Anda menambahkan beberapa instruksi tambahan sebelum itu, 
+
+490
+00:20:22,680 --> 00:20:26,240
+ yang akan diperiksa atau ditegakkan, tetapi hanya hal-hal baik 
+
+491
+00:20:26,240 --> 00:20:28,383
+ akan terjadi dengan instruksi itu. 
+
+492
+00:20:28,383 --> 00:20:30,850
+ Jadi misalnya, jika Anda mengakses lokasi memori, 
+
+493
+00:20:30,850 --> 00:20:32,267
+ yang bisa kamu lakukan-- ternyata, 
+
+494
+00:20:32,267 --> 00:20:34,016
+ mereka tidak melakukannya karena alasan kinerja-- 
+
+495
+00:20:34,016 --> 00:20:36,030
+ tetapi salah satu cara untuk instrumen akses memori akan 
+
+496
+00:20:36,030 --> 00:20:38,040
+ akan menaruh beberapa cek, seperti if 
+
+497
+00:20:38,040 --> 00:20:40,050
+ pernyataan sebelum instruksi, berkata, baik, 
+
+498
+00:20:40,050 --> 00:20:42,660
+ apakah alamat ini Anda akses dalam jangkauan apa 
+
+499
+00:20:42,660 --> 00:20:43,660
+ diizinkan untuk modul ini? 
+
+500
+00:20:43,660 --> 00:20:46,554
+ Dan jika demikian, lakukan itu - jika tidak, keluar. 
+
+501
+00:20:46,554 --> 00:20:48,220
+ Jadi itu akan menjadi instrumen instruksi. 
+
+502
+00:20:48,220 --> 00:20:50,370
+ Dan itu akan mengubah instruksi yang tidak aman 
+
+503
+00:20:50,370 --> 00:20:52,110
+ menjadi satu yang selalu aman untuk dieksekusi, 
+
+504
+00:20:52,110 --> 00:20:55,020
+ karena selalu ada cek di depannya. 
+
+505
+00:20:55,020 --> 00:20:56,020
+ Jadi apakah itu masuk akal? 
+
+506
+00:20:56,020 --> 00:20:58,940
+ Ini adalah ide besar mereka untuk berlari 
+
+507
+00:20:58,940 --> 00:21:02,830
+ ini menegakkan keamanan tanpa dukungan dari operasi itu 
+
+508
+00:21:02,830 --> 00:21:05,050
+ sistem pada tingkat tertentu. 
+
+509
+00:21:05,050 --> 00:21:06,880
+ Dan saya kira untuk instruksi tidak aman lainnya, 
+
+510
+00:21:06,880 --> 00:21:08,330
+ mereka tidak mendokumentasikan semuanya. 
+
+511
+00:21:08,330 --> 00:21:09,990
+ Beberapa dari mereka sebenarnya melarang, 
+
+512
+00:21:09,990 --> 00:21:12,425
+ jika mereka percaya bahwa ini adalah instruksi itu 
+
+513
+00:21:12,425 --> 00:21:14,830
+ tidak benar-benar diperlukan selama operasi normal, 
+
+514
+00:21:14,830 --> 00:21:16,875
+ dan jika aplikasi mencoba menjalankannya, 
+
+515
+00:21:16,875 --> 00:21:18,780
+ kita hanya harus membunuh aplikasi itu 
+
+516
+00:21:18,780 --> 00:21:22,450
+ atau tidak membiarkannya berjalan di tempat pertama. 
+
+517
+00:21:22,450 --> 00:21:23,150
+ Masuk akal? 
+
+518
+00:21:23,150 --> 00:21:26,840
+ Itu adalah rencana besar mereka untuk isolasi masalah perangkat lunak. 
+
+519
+00:21:26,840 --> 00:21:30,480
+ Dan setelah Anda memeriksa biner aplikasi, 
+
+520
+00:21:30,480 --> 00:21:32,214
+ dan semuanya berlalu, dan semuanya 
+
+521
+00:21:32,214 --> 00:21:33,630
+ tampaknya benar diinstrumentasi, 
+
+522
+00:21:33,630 --> 00:21:36,690
+ maka Anda bisa menjalankan program dan mematikannya. 
+
+523
+00:21:36,690 --> 00:21:39,115
+ Dan menurut definisi hampir, itu tidak akan 
+
+524
+00:21:39,115 --> 00:21:41,630
+ melakukan hal-hal buruk, jika kita melakukan semua pemeriksaan ini 
+
+525
+00:21:41,630 --> 00:21:44,310
+ dan instrumentasi [TIDAK JELAS]. 
+
+526
+00:21:44,310 --> 00:21:47,010
+ Dan saya kira ada satu lagi bagian dari kesalahan perangkat lunak 
+
+527
+00:21:47,010 --> 00:21:50,090
+ cerita isolasi, yang begitu Anda sudah pernah 
+
+528
+00:21:50,090 --> 00:21:51,650
+ pastikan semuanya aman, 
+
+529
+00:21:51,650 --> 00:21:53,470
+ maka itu tidak bisa benar-benar melakukan apa pun 
+
+530
+00:21:53,470 --> 00:21:55,570
+ menarik, selain menghitung hal-hal di dalamnya 
+
+531
+00:21:55,570 --> 00:21:56,502
+ memiliki sedikit memori. 
+
+532
+00:21:56,502 --> 00:21:58,876
+ Jadi tidak bisa mengakses jaringan, tidak bisa mengakses disk, 
+
+533
+00:21:58,876 --> 00:22:01,640
+ itu tidak dapat mengakses browser Anda, layar, keyboard, hampir 
+
+534
+00:22:01,640 --> 00:22:02,580
+ apa pun. 
+
+535
+00:22:02,580 --> 00:22:04,770
+ Jadi cukup banyak setiap cerita isolasi masalah perangkat lunak, 
+
+536
+00:22:04,770 --> 00:22:07,630
+ sebenarnya ada juga beberapa runtime layanan tepercaya. 
+
+537
+00:22:07,630 --> 00:22:12,580
+
+
+538
+00:22:12,580 --> 00:22:15,370
+ Dan runtime tepercaya ini akan terjadi 
+
+539
+00:22:15,370 --> 00:22:18,869
+ untuk tidak tunduk pada pemeriksaan ini pada instruksi itu. 
+
+540
+00:22:18,869 --> 00:22:20,410
+ Jadi runtime tepercaya sebenarnya bisa 
+
+541
+00:22:20,410 --> 00:22:22,034
+ melakukan semua hal yang berpotensi tidak aman ini. 
+
+542
+00:22:22,034 --> 00:22:23,980
+ Tetapi runtime tepercaya ini ditulis oleh Google. 
+
+543
+00:22:23,980 --> 00:22:25,940
+ Jadi semoga mereka mendapatkan [TIDAK JELAS]. 
+
+544
+00:22:25,940 --> 00:22:27,990
+ Dan itu akan mengimplementasikan semua fungsi 
+
+545
+00:22:27,990 --> 00:22:31,530
+ bahwa tim Google Native Client percaya 
+
+546
+00:22:31,530 --> 00:22:33,690
+ OK untuk seluruh modul ini. 
+
+547
+00:22:33,690 --> 00:22:36,420
+ Jadi ini akan menjadi hal-hal seperti mungkin dialokasikan 
+
+548
+00:22:36,420 --> 00:22:42,020
+ memori, mungkin membuat utas, mungkin 
+
+549
+00:22:42,020 --> 00:22:43,910
+ berkomunikasi dengan browser seperti kita 
+
+550
+00:22:43,910 --> 00:22:49,900
+ saw-- jadi semacam sistem pengiriman pesan, dan sebagainya. 
+
+551
+00:22:49,900 --> 00:22:54,310
+ Dan cara itu akan terkena modul terisolasi ini 
+
+552
+00:22:54,310 --> 00:23:00,730
+ melalui kemungkinan lompatan atau operasi tertentu 
+
+553
+00:23:00,730 --> 00:23:04,980
+ bahwa modul akan melakukan transisi 
+
+554
+00:23:04,980 --> 00:23:07,180
+ kontrol ke dalam runtime tepercaya ini, 
+
+555
+00:23:07,180 --> 00:23:11,195
+ tapi mudah-mudahan dengan cara yang sangat mudah ditebak - pertanyaan? 
+
+556
+00:23:11,195 --> 00:23:12,736
+ AUDIENCE: Aku hanya ingin tahu, kamu 
+
+557
+00:23:12,736 --> 00:23:16,432
+ harus merancang aplikasi ini, mengetahui bahwa itu terjadi 
+
+558
+00:23:16,432 --> 00:23:18,566
+ untuk dikirim ke modul NaCl? 
+
+559
+00:23:18,566 --> 00:23:21,458
+ Atau apakah itu suka mengubah kode ke [tidak terdengar] 
+
+560
+00:23:21,458 --> 00:23:23,386
+ membuat [TIDAK JELAS] semacam hal buruk? 
+
+561
+00:23:23,386 --> 00:23:27,540
+ PROFESOR: Jadi saya pikir jika Anda sedang membangun aplikasi, 
+
+562
+00:23:27,540 --> 00:23:29,550
+ Anda harus menyadari itu 
+
+563
+00:23:29,550 --> 00:23:32,580
+ akan berjalan di dalam Native Client. 
+
+564
+00:23:32,580 --> 00:23:36,610
+ Jadi beberapa fungsi panggilan seperti malloc atau pthread_create, 
+
+565
+00:23:36,610 --> 00:23:39,005
+ Saya pikir mereka hanya secara transparan ditempatkan dengan panggilan 
+
+566
+00:23:39,005 --> 00:23:40,670
+ ke runtime tepercaya mereka. 
+
+567
+00:23:40,670 --> 00:23:42,760
+ Tetapi jika Anda melakukan sesuatu seperti membuka file 
+
+568
+00:23:42,760 --> 00:23:45,830
+ dengan nama jalan, atau apa pun yang Anda sukai 
+
+569
+00:23:45,830 --> 00:23:47,790
+ harapkan untuk melakukan pada mesin Unix, 
+
+570
+00:23:47,790 --> 00:23:50,640
+ Anda mungkin harus mengganti dengan yang lain. 
+
+571
+00:23:50,640 --> 00:23:52,800
+ Dan Anda mungkin ingin menyusun hal Anda 
+
+572
+00:23:52,800 --> 00:23:55,341
+ untuk berinteraksi setidaknya sedikit dengan JavaScript atau web Anda 
+
+573
+00:23:55,341 --> 00:23:56,150
+ halaman dalam beberapa cara. 
+
+574
+00:23:56,150 --> 00:23:59,160
+ Dan itu harus Anda lakukan dengan secara eksplisit melakukan beberapa pesan 
+
+575
+00:23:59,160 --> 00:24:02,420
+ lewat atau RPC ke bagian JavaScript. 
+
+576
+00:24:02,420 --> 00:24:04,890
+ Sehingga Anda mungkin harus berubah. 
+
+577
+00:24:04,890 --> 00:24:08,620
+ Jadi ada beberapa - itu tidak seperti Anda dapat menjalankan sewenang-wenang 
+
+578
+00:24:08,620 --> 00:24:11,660
+ Program Unix di sana, dan Anda hanya akan mendapatkan semacam shell 
+
+579
+00:24:11,660 --> 00:24:13,599
+ dan Anda dapat menjalankan perintah secara tiba-tiba. 
+
+580
+00:24:13,599 --> 00:24:15,140
+ Mungkin jika Anda berusaha keras, mungkin Anda 
+
+581
+00:24:15,140 --> 00:24:17,170
+ bisa menciptakan lingkungan seperti itu. 
+
+582
+00:24:17,170 --> 00:24:19,110
+ Tetapi secara default, Anda mungkin memiliki 
+
+583
+00:24:19,110 --> 00:24:22,886
+ untuk membuatnya beroperasi di dalam halaman web ini, dan kemudian 
+
+584
+00:24:22,886 --> 00:24:23,386
+ [TIDAK JELAS]. 
+
+585
+00:24:23,386 --> 00:24:25,866
+ Apakah itu masuk akal? 
+
+586
+00:24:25,866 --> 00:24:28,346
+ Baiklah. 
+
+587
+00:24:28,346 --> 00:24:29,350
+ BAIK. 
+
+588
+00:24:29,350 --> 00:24:32,885
+ Jadi itulah keseluruhan rencana kesalahan isolasi perangkat lunak. 
+
+589
+00:24:32,885 --> 00:24:34,260
+ Jadi saya kira mari kita lihat sebenarnya 
+
+590
+00:24:34,260 --> 00:24:38,440
+ apa arti keamanan dalam kasus mereka untuk Klien Asli. 
+
+591
+00:24:38,440 --> 00:24:40,710
+ Jadi kami berbicara secara longgar tentang gagasan ini 
+
+592
+00:24:40,710 --> 00:24:43,290
+ instruksi aman, instruksi yang tidak aman - apa yang dilakukan 
+
+593
+00:24:43,290 --> 00:24:45,070
+ mereka benar-benar peduli di sini? 
+
+594
+00:24:45,070 --> 00:24:47,700
+ Jadi sejauh yang saya tahu untuk Klien Asli, 
+
+595
+00:24:47,700 --> 00:24:51,440
+ Keamanan pada dasarnya berarti dua hal. 
+
+596
+00:24:51,440 --> 00:24:57,040
+ Salah satunya adalah bahwa tidak ada instruksi yang dilarang 
+
+597
+00:24:57,040 --> 00:24:58,050
+ yang dapat dieksekusi. 
+
+598
+00:24:58,050 --> 00:25:00,750
+
+
+599
+00:25:00,750 --> 00:25:02,610
+ Dan instruksi yang dilarang ini 
+
+600
+00:25:02,610 --> 00:25:07,430
+ adalah hal-hal seperti mungkin panggilan sistem atau pemicuan 
+
+601
+00:25:07,430 --> 00:25:10,280
+ interop, yang merupakan mekanisme lain di x86 untuk melompat 
+
+602
+00:25:10,280 --> 00:25:12,310
+ ke dalam kernel dan memanggil sebuah system call, 
+
+603
+00:25:12,310 --> 00:25:15,520
+ dan mungkin instruksi istimewa lainnya itu 
+
+604
+00:25:15,520 --> 00:25:17,520
+ akan memungkinkan Anda keluar dari kotak pasir. 
+
+605
+00:25:17,520 --> 00:25:18,970
+ Kami akan melihat sedikit lebih lama nanti 
+
+606
+00:25:18,970 --> 00:25:20,428
+ pada instruksi apa yang sebenarnya bisa 
+
+607
+00:25:20,428 --> 00:25:23,420
+ membiarkan Anda melompat dari kotak pasir. 
+
+608
+00:25:23,420 --> 00:25:26,320
+ Dan selain ini tidak ada aturan instruksi yang tidak diizinkan, 
+
+609
+00:25:26,320 --> 00:25:33,900
+ mereka juga ingin memastikan bahwa semua kode dan akses data berada 
+
+610
+00:25:33,900 --> 00:25:36,670
+ dalam batasan untuk modul. 
+
+611
+00:25:36,670 --> 00:25:39,602
+
+
+612
+00:25:39,602 --> 00:25:41,310
+ Jadi apa artinya ini, adalah bahwa mereka sebenarnya 
+
+613
+00:25:41,310 --> 00:25:44,230
+ mendedikasikan bagian tertentu dari alamat program 
+
+614
+00:25:44,230 --> 00:25:47,150
+ space-- khususnya dari nol ke atas 
+
+615
+00:25:47,150 --> 00:25:51,250
+ hingga 256 MB dalam prosesnya. 
+
+616
+00:25:51,250 --> 00:25:54,570
+ Dan semua yang dilakukan oleh modul yang tidak dipercaya ini 
+
+617
+00:25:54,570 --> 00:25:57,950
+ harus merujuk ke lokasi dalam potongan memori ini 
+
+618
+00:25:57,950 --> 00:26:00,812
+ dalam program. 
+
+619
+00:26:00,812 --> 00:26:02,270
+ Baiklah, jadi hanya untuk memeriksa ulang. 
+
+620
+00:26:02,270 --> 00:26:05,910
+ Jadi mengapa mereka ingin melarang instruksi ini? 
+
+621
+00:26:05,910 --> 00:26:09,785
+ Jadi bagaimana jika mereka gagal untuk melarang instruksi? 
+
+622
+00:26:09,785 --> 00:26:10,285
+ Ya? 
+
+623
+00:26:10,285 --> 00:26:12,575
+ AUDIENCE: Modul dapat memanipulasi sistem. 
+
+624
+00:26:12,575 --> 00:26:14,700
+ PROFESOR: Benar, jadi itu cukup mudah, 
+
+625
+00:26:14,700 --> 00:26:15,283
+ tepatnya, ya. 
+
+626
+00:26:15,283 --> 00:26:17,040
+ Jadi bisa langsung reboot komputer 
+
+627
+00:26:17,040 --> 00:26:19,625
+ atau buka direktori home Anda dan sebutkan semua file, 
+
+628
+00:26:19,625 --> 00:26:20,740
+ dan melakukan semua hal ini. 
+
+629
+00:26:20,740 --> 00:26:22,720
+ Jadi sepertinya itu hal yang baik untuk dilakukan. 
+
+630
+00:26:22,720 --> 00:26:25,190
+ Mengapa mereka peduli dengan rencana ini, 
+
+631
+00:26:25,190 --> 00:26:28,140
+ seperti mengisolasi data yang dikodekan hanya untuk akses 
+
+632
+00:26:28,140 --> 00:26:30,174
+ alamat rendah ini? 
+
+633
+00:26:30,174 --> 00:26:31,840
+ Apa yang salah jika mereka gagal melakukan itu? 
+
+634
+00:26:31,840 --> 00:26:36,280
+
+
+635
+00:26:36,280 --> 00:26:36,960
+ Ya? 
+
+636
+00:26:36,960 --> 00:26:39,376
+ AUDIENCE: Kemudian mereka dapat mengurutkan dan menyela 
+
+637
+00:26:39,376 --> 00:26:42,004
+ Modul [INAUDIBLE] di komputer. 
+
+638
+00:26:42,004 --> 00:26:42,670
+ PROFESOR: Ya. 
+
+639
+00:26:42,670 --> 00:26:45,275
+ AUDIENCE: Kami tidak peduli jika mereka merusak program mereka sendiri 
+
+640
+00:26:45,275 --> 00:26:46,010
+ dan crash. 
+
+641
+00:26:46,010 --> 00:26:48,301
+ Tidak apa-apa, asalkan tidak akan merusak kunci 
+
+642
+00:26:48,301 --> 00:26:49,900
+ ke [TIDAK JELAS]. 
+
+643
+00:26:49,900 --> 00:26:52,100
+ PROFESOR: Ya, jadi dalam beberapa hal, itu benar. 
+
+644
+00:26:52,100 --> 00:26:54,080
+ Tetapi dalam kasus mereka, mereka benar-benar menjalankannya 
+
+645
+00:26:54,080 --> 00:26:55,250
+ dalam proses terpisah. 
+
+646
+00:26:55,250 --> 00:26:59,080
+ Jadi dalam teori, ini hanya akan merusak proses ekstra itu. 
+
+647
+00:26:59,080 --> 00:27:01,330
+ Saya pikir saya kira apa yang mereka khawatirkan 
+
+648
+00:27:01,330 --> 00:27:04,290
+ adalah bahwa ini adalah kondisi yang diperlukan 
+
+649
+00:27:04,290 --> 00:27:07,260
+ untuk memastikan ini tidak ada instruksi yang dilarang dalam beberapa cara, 
+
+650
+00:27:07,260 --> 00:27:09,540
+ karena ada hal lain, seperti ini dipercaya 
+
+651
+00:27:09,540 --> 00:27:11,470
+ runtime dalam proses Anda. 
+
+652
+00:27:11,470 --> 00:27:13,440
+ Jadi, jika yang Anda pedulikan tidak benar 
+
+653
+00:27:13,440 --> 00:27:15,030
+ merusak sisa komputer Anda, 
+
+654
+00:27:15,030 --> 00:27:18,150
+ maka jika modul yang tidak dipercaya bisa seenaknya 
+
+655
+00:27:18,150 --> 00:27:20,100
+ melompat ke runtime layanan tepercaya 
+
+656
+00:27:20,100 --> 00:27:22,460
+ dan melakukan apa pun yang dapat dilakukan oleh runtime layanan tepercaya, 
+
+657
+00:27:22,460 --> 00:27:24,582
+ maka mereka bisa menyortir properti ini. 
+
+658
+00:27:24,582 --> 00:27:27,040
+ Jadi dalam beberapa hal, ini benar-benar seperti mekanisme pendukung 
+
+659
+00:27:27,040 --> 00:27:30,000
+ untuk menegakkan itu. 
+
+660
+00:27:30,000 --> 00:27:33,670
+ Pada prinsipnya, ini juga bisa digunakan untuk bobot yang lebih ringan 
+
+661
+00:27:33,670 --> 00:27:37,200
+ isolasi jika Anda dapat menjalankan modul Native Client ini 
+
+662
+00:27:37,200 --> 00:27:39,320
+ di dalam proses browser itu sendiri, dan tidak 
+
+663
+00:27:39,320 --> 00:27:40,812
+ memulai proses tambahan. 
+
+664
+00:27:40,812 --> 00:27:42,520
+ Tapi ternyata karena alasan kinerja, 
+
+665
+00:27:42,520 --> 00:27:44,150
+ mereka benar-benar harus mengikat modulnya 
+
+666
+00:27:44,150 --> 00:27:46,360
+ ke rentang memori khusus ini, 
+
+667
+00:27:46,360 --> 00:27:48,310
+ atau harus mulai nol pula. 
+
+668
+00:27:48,310 --> 00:27:49,810
+ Jadi ini berarti Anda hanya dapat memilikinya 
+
+669
+00:27:49,810 --> 00:27:52,812
+ satu yang benar-benar modul tidak dapat dipercaya Native Client per proses. 
+
+670
+00:27:52,812 --> 00:27:55,020
+ Jadi Anda mungkin akan memulai proses terpisah 
+
+671
+00:27:55,020 --> 00:27:56,956
+ bagaimanapun. 
+
+672
+00:27:56,956 --> 00:27:58,408
+ Masuk akal? 
+
+673
+00:27:58,408 --> 00:27:59,376
+ Ada pertanyaan? 
+
+674
+00:27:59,376 --> 00:28:00,780
+ Ya? 
+
+675
+00:28:00,780 --> 00:28:02,280
+ AUDIENCE: Apakah sebenarnya ada alasan 
+
+676
+00:28:02,280 --> 00:28:04,230
+ mengapa harus mulai dari nol? 
+
+677
+00:28:04,230 --> 00:28:07,620
+ PROFESOR: Ya, jadi ternyata lebih efisien dalam hal 
+
+678
+00:28:07,620 --> 00:28:11,480
+ kinerja untuk menegakkan target lompatan, 
+
+679
+00:28:11,480 --> 00:28:14,922
+ jika Anda tahu bahwa alamat yang sah adalah satu set yang berdekatan 
+
+680
+00:28:14,922 --> 00:28:17,505
+ alamat mulai dari nol, karena Anda dapat melakukannya dengan 
+
+681
+00:28:17,505 --> 00:28:21,080
+ topeng DAN tunggal, di mana semua bit tinggi adalah satu, 
+
+682
+00:28:21,080 --> 00:28:27,140
+ dan hanya beberapa bit rendah adalah nol-- baik, 
+
+683
+00:28:27,140 --> 00:28:29,542
+ jika kamu bersedia-- baiklah 
+
+684
+00:28:29,542 --> 00:28:32,000
+ AUDIENCE: Saya pikir topeng DAN adalah untuk memastikan [TIDAK JELAS]. 
+
+685
+00:28:32,000 --> 00:28:34,166
+ PROFESOR: Benar, sehingga topeng DAN memastikan keselarasan, 
+
+686
+00:28:34,166 --> 00:28:35,240
+ kamu benar. 
+
+687
+00:28:35,240 --> 00:28:38,443
+ Jadi mengapa mereka mulai nol? 
+
+688
+00:28:38,443 --> 00:28:43,210
+ Saya pikir itu mungkin membantu mereka untuk-- baik, 
+
+689
+00:28:43,210 --> 00:28:45,715
+ Saya kira mereka mengandalkan perangkat keras segmentasi. 
+
+690
+00:28:45,715 --> 00:28:47,090
+ Jadi pada prinsipnya, mungkin mereka bisa 
+
+691
+00:28:47,090 --> 00:28:49,369
+ menggunakan perangkat keras segmentasi untuk menggeser wilayah ke atas, 
+
+692
+00:28:49,369 --> 00:28:50,410
+ dalam hal ruang linier. 
+
+693
+00:28:50,410 --> 00:28:52,076
+ Atau mungkin hanya dengan aplikasi itu, 
+
+694
+00:28:52,076 --> 00:28:53,480
+ semacam melihat kisaran ini. 
+
+695
+00:28:53,480 --> 00:28:54,810
+ Dan Anda benar-benar dapat menempatkannya di offset yang berbeda 
+
+696
+00:28:54,810 --> 00:28:56,260
+ di ruang alamat virtual Anda. 
+
+697
+00:28:56,260 --> 00:28:59,260
+ Bisa jadi - ya, jadi mungkin Anda bisa benar-benar 
+
+698
+00:28:59,260 --> 00:29:01,010
+ bermain trik dengan perangkat keras segmentasi 
+
+699
+00:29:01,010 --> 00:29:03,511
+ untuk menjalankan beberapa model dalam satu ruang alamat. 
+
+700
+00:29:03,511 --> 00:29:06,052
+ AUDIENCE: Tetapi apakah itu karena mereka ingin menangkap pointer null 
+
+701
+00:29:06,052 --> 00:29:06,552
+ penerimaan? 
+
+702
+00:29:06,552 --> 00:29:09,176
+ PROFESOR: Ya, jadi mereka ingin menangkap semua titik penerimaan. 
+
+703
+00:29:09,176 --> 00:29:10,570
+ Tapi Anda bisa melakukan itu. 
+
+704
+00:29:10,570 --> 00:29:11,610
+ Karena pointer null-- saya kira 
+
+705
+00:29:11,610 --> 00:29:13,359
+ kita akan berbicara tentang segmentasi dalam hitungan detik, 
+
+706
+00:29:13,359 --> 00:29:17,260
+ tetapi penunjuk nol sebenarnya relatif terhadap segmen 
+
+707
+00:29:17,260 --> 00:29:18,662
+ di mana Anda mengakses. 
+
+708
+00:29:18,662 --> 00:29:20,120
+ Jadi jika Anda menggeser segmen di sekitar, 
+
+709
+00:29:20,120 --> 00:29:22,574
+ maka Anda dapat memetakan halaman nol yang tidak terpakai 
+
+710
+00:29:22,574 --> 00:29:25,030
+ di awal segmen semua orang. 
+
+711
+00:29:25,030 --> 00:29:30,090
+ Jadi ya, mungkin Anda bisa melakukan banyak modul. 
+
+712
+00:29:30,090 --> 00:29:33,930
+ Saya pikir untuk - baik, karena satu alasan mereka mungkin 
+
+713
+00:29:33,930 --> 00:29:35,810
+ ingin melakukan ini adalah ketika mereka 
+
+714
+00:29:35,810 --> 00:29:38,110
+ port barang-barang mereka ke 64 bit, mereka punya 
+
+715
+00:29:38,110 --> 00:29:39,300
+ desain yang sedikit berbeda. 
+
+716
+00:29:39,300 --> 00:29:40,966
+ Makalah ini tidak benar-benar membicarakannya. 
+
+717
+00:29:40,966 --> 00:29:44,360
+ Dan saya berpikir tentang desain 64-bit, perangkat keras itu sendiri 
+
+718
+00:29:44,360 --> 00:29:46,230
+ menyingkirkan beberapa perangkat keras segmentasi 
+
+719
+00:29:46,230 --> 00:29:49,110
+ mereka mengandalkan untuk alasan efisiensi, 
+
+720
+00:29:49,110 --> 00:29:51,890
+ dan mereka harus melakukan pendekatan yang lebih berorientasi pada perangkat lunak, 
+
+721
+00:29:51,890 --> 00:29:54,880
+ dalam hal ini memiliki sedikit tidak membantu mereka. 
+
+722
+00:29:54,880 --> 00:29:57,580
+ Namun dalam versi 32-bit ini, saya pikir, ya, mungkin itu benar. 
+
+723
+00:29:57,580 --> 00:30:02,189
+ Itu bukan alasan yang mendalam mengapa harus dimulai dari nol. 
+
+724
+00:30:02,189 --> 00:30:02,855
+ Pertanyaan Lain? 
+
+725
+00:30:02,855 --> 00:30:05,500
+
+
+726
+00:30:05,500 --> 00:30:06,550
+ Baiklah. 
+
+727
+00:30:06,550 --> 00:30:10,549
+ Jadi saya kira kita agak kurang mengerti apa rencananya, 
+
+728
+00:30:10,549 --> 00:30:12,465
+ atau apa yang ingin kami terapkan dalam hal keamanan. 
+
+729
+00:30:12,465 --> 00:30:14,690
+ Jadi bagaimana kita melakukan ini? 
+
+730
+00:30:14,690 --> 00:30:16,920
+ Jadi mari kita lihat beberapa pendekatan yang paling naif, 
+
+731
+00:30:16,920 --> 00:30:19,540
+ dan lihat bagaimana kita bisa mengacaukannya, 
+
+732
+00:30:19,540 --> 00:30:22,580
+ Saya kira, dan kemudian kami akan mencoba memperbaikinya setelah itu. 
+
+733
+00:30:22,580 --> 00:30:25,734
+ Jadi saya kira rencana naif semacam itu 
+
+734
+00:30:25,734 --> 00:30:29,900
+ terlihat seperti apa yang mereka lakukan, adalah dengan hanya melihat 
+
+735
+00:30:29,900 --> 00:30:33,450
+ untuk instruksi yang tidak diizinkan hanya dengan memindai eksekutabel 
+
+736
+00:30:33,450 --> 00:30:34,815
+ dari awal maju. 
+
+737
+00:30:34,815 --> 00:30:37,612
+
+
+738
+00:30:37,612 --> 00:30:39,790
+ Jadi bagaimana Anda mendeteksi instruksi itu? 
+
+739
+00:30:39,790 --> 00:30:43,380
+ Anda hanya bisa mengambil kode program, 
+
+740
+00:30:43,380 --> 00:30:46,320
+ dan Anda semacam meletakkannya dalam string raksasa itu 
+
+741
+00:30:46,320 --> 00:30:50,780
+ pergi dari nol hingga mungkin sepanjang jalan sampai 56 megabyte, 
+
+742
+00:30:50,780 --> 00:30:53,850
+ tergantung pada seberapa besar kode Anda, dan Anda mulai mencari. 
+
+743
+00:30:53,850 --> 00:30:56,259
+ Oke, mungkin ada instruksi nop di sini. 
+
+744
+00:30:56,259 --> 00:30:58,425
+ Mungkin ada semacam instruksi tambahan di sana. 
+
+745
+00:30:58,425 --> 00:31:02,580
+ Mungkin tidak ada - saya tidak tahu, semacam lompatan, 
+
+746
+00:31:02,580 --> 00:31:03,350
+ dan sebagainya. 
+
+747
+00:31:03,350 --> 00:31:05,840
+ Dan Anda terus mencari. 
+
+748
+00:31:05,840 --> 00:31:07,450
+ Dan jika Anda menemukan instruksi yang buruk, 
+
+749
+00:31:07,450 --> 00:31:09,580
+ Anda berkata, ah, itu adalah modul yang buruk. 
+
+750
+00:31:09,580 --> 00:31:10,610
+ Dan kemudian Anda membuangnya. 
+
+751
+00:31:10,610 --> 00:31:13,193
+ Dan jika Anda tidak melihat instruksi system call [INAUDIBLE], 
+
+752
+00:31:13,193 --> 00:31:15,550
+ maka Anda akan membiarkan modul ini berjalan, 
+
+753
+00:31:15,550 --> 00:31:20,200
+ modul atau apa pun yang akan kita lakukan untuk pemeriksaan batas. 
+
+754
+00:31:20,200 --> 00:31:23,301
+ Jadi ini akan berhasil? 
+
+755
+00:31:23,301 --> 00:31:24,800
+ Jadi kenapa tidak? 
+
+756
+00:31:24,800 --> 00:31:26,320
+ Apa yang mereka khawatirkan? 
+
+757
+00:31:26,320 --> 00:31:27,470
+ Kenapa sangat rumit? 
+
+758
+00:31:27,470 --> 00:31:29,430
+ AUDIENCE: [INAUDIBLE] petunjuknya? 
+
+759
+00:31:29,430 --> 00:31:31,160
+ PROFESOR: Ya, jadi hal yang aneh 
+
+760
+00:31:31,160 --> 00:31:34,480
+ adalah x86, yang merupakan jenis platform yang mereka targetkan 
+
+761
+00:31:34,480 --> 00:31:36,305
+ memiliki instruksi panjang variabel. 
+
+762
+00:31:36,305 --> 00:31:39,448
+
+
+763
+00:31:39,448 --> 00:31:42,700
+ Jadi ini berarti ukuran tertentu 
+
+764
+00:31:42,700 --> 00:31:45,677
+ dari instruksi tergantung pada beberapa byte pertama 
+
+765
+00:31:45,677 --> 00:31:46,510
+ instruksi itu. 
+
+766
+00:31:46,510 --> 00:31:48,090
+ Jadi Anda harus benar-benar melihat byte pertama 
+
+767
+00:31:48,090 --> 00:31:49,305
+ dan berkata, OK, baik, instruksi 
+
+768
+00:31:49,305 --> 00:31:50,545
+ akan menjadi ini lebih banyak. 
+
+769
+00:31:50,545 --> 00:31:52,810
+ Dan kemudian mungkin Anda harus melihat beberapa byte lagi, 
+
+770
+00:31:52,810 --> 00:31:54,660
+ dan kemudian memutuskan, oke, yah, tepat berapa lama 
+
+771
+00:31:54,660 --> 00:31:55,440
+ akan menjadi. 
+
+772
+00:31:55,440 --> 00:31:56,981
+ Tetapi Anda tidak tahu bagaimana sebelumnya. 
+
+773
+00:31:56,981 --> 00:32:01,000
+ Jadi beberapa arsitektur seperti Spark, ARM, [INAUDIBLE], 
+
+774
+00:32:01,000 --> 00:32:03,700
+ memiliki instruksi panjang tetap. 
+
+775
+00:32:03,700 --> 00:32:05,731
+ Nah, ARM, misalnya-- ARM itu seperti aneh, 
+
+776
+00:32:05,731 --> 00:32:07,230
+ tetapi memiliki dua panjang instruksi. 
+
+777
+00:32:07,230 --> 00:32:10,200
+ Entah semuanya dua byte atau semuanya empat byte. 
+
+778
+00:32:10,200 --> 00:32:13,485
+ Tetapi x86, instruksi bisa seperti satu byte atau 10 byte 
+
+779
+00:32:13,485 --> 00:32:16,097
+ atau lima byte, apa pun di antaranya, juga. 
+
+780
+00:32:16,097 --> 00:32:17,180
+ Saya lupa sebenarnya seberapa besar. 
+
+781
+00:32:17,180 --> 00:32:18,763
+ Anda bisa mendapatkan instruksi yang cukup panjang. 
+
+782
+00:32:18,763 --> 00:32:21,150
+ Saya pikir Anda bisa mendapatkan seperti instruksi 15 byte dengan x86 
+
+783
+00:32:21,150 --> 00:32:23,044
+ jika kamu berusaha keras. 
+
+784
+00:32:23,044 --> 00:32:26,260
+ Ini instruksi yang rumit. 
+
+785
+00:32:26,260 --> 00:32:28,900
+ Namun akibatnya, masalah itu bisa muncul 
+
+786
+00:32:28,900 --> 00:32:31,270
+ adalah mungkin Anda sedang memindai secara linear 
+
+787
+00:32:31,270 --> 00:32:33,240
+ dan semuanya tampak baik-baik saja. 
+
+788
+00:32:33,240 --> 00:32:35,560
+ Tapi mungkin saat runtime, Anda akan benar-benar 
+
+789
+00:32:35,560 --> 00:32:38,420
+ melompat ke tengah-tengah beberapa instruksi. 
+
+790
+00:32:38,420 --> 00:32:40,220
+ Mungkin itu instruksi multi-byte, 
+
+791
+00:32:40,220 --> 00:32:42,340
+ jika Anda menafsirkannya mulai dari byte kedua, 
+
+792
+00:32:42,340 --> 00:32:44,890
+ ini terlihat seperti hal yang sama sekali berbeda. 
+
+793
+00:32:44,890 --> 00:32:47,190
+ Jadi itu hanya satu contoh dari semacam bermain-main 
+
+794
+00:32:47,190 --> 00:32:48,290
+ dengan seorang assembler. 
+
+795
+00:32:48,290 --> 00:32:56,210
+ Dan jika Anda memiliki instruksi seperti ini, 25 CD 80, 00, 00. 
+
+796
+00:32:56,210 --> 00:32:58,872
+ Dan jika Anda menafsirkannya sebagai instruksi lima byte ini, 
+
+797
+00:32:58,872 --> 00:33:00,330
+ artinya Anda melihat byte ini. 
+
+798
+00:33:00,330 --> 00:33:02,210
+ Dan oh ya, ini akan menjadi instruksi lima byte. 
+
+799
+00:33:02,210 --> 00:33:04,130
+ Jadi Anda harus melihat lima byte ke depan. 
+
+800
+00:33:04,130 --> 00:33:07,680
+ Dan kemudian ini menjadi instruksi yang cukup ramah 
+
+801
+00:33:07,680 --> 00:33:10,980
+ itu adalah dan dari daftar EAX, 
+
+802
+00:33:10,980 --> 00:33:16,380
+ dengan beberapa konstanta tertentu yang kebetulan saya pikir 00, 
+
+803
+00:33:16,380 --> 00:33:20,580
+ 00, 80, CD. bagaimanapun. 
+
+804
+00:33:20,580 --> 00:33:22,220
+ Jadi ini adalah salah satu instruksi aman 
+
+805
+00:33:22,220 --> 00:33:25,330
+ bahwa Klien Asli seharusnya hanya mengizinkan di bawah aturan pertama 
+
+806
+00:33:25,330 --> 00:33:28,020
+ dalam memeriksa instruksi biner ini. 
+
+807
+00:33:28,020 --> 00:33:29,780
+ Tetapi jika ternyata pada saat runtime CPU 
+
+808
+00:33:29,780 --> 00:33:33,150
+ memutuskan ini adalah di mana ia harus mulai mengeksekusi kode, 
+
+809
+00:33:33,150 --> 00:33:35,920
+ maka instruksi ini sebenarnya 
+
+810
+00:33:35,920 --> 00:33:39,040
+ instruksi empat byte, dan sebenarnya instruksi int 
+
+811
+00:33:39,040 --> 00:33:41,950
+ yang membuat OX80 mengganggu, yang 
+
+812
+00:33:41,950 --> 00:33:45,570
+ adalah salah satu cara untuk membuat panggilan sistem di Linux. 
+
+813
+00:33:45,570 --> 00:33:49,720
+ Jadi jika Anda melewatkan fakta ini, maka akhirnya Anda 
+
+814
+00:33:49,720 --> 00:33:53,600
+ akan memungkinkan modul yang tidak dipercaya untuk melompat ke kernel 
+
+815
+00:33:53,600 --> 00:33:56,988
+ dan membuat panggilan sistem, yang ingin Anda cegah. 
+
+816
+00:33:56,988 --> 00:33:59,790
+ Masuk akal? 
+
+817
+00:33:59,790 --> 00:34:01,255
+ Jadi bagaimana kita mencegahnya? 
+
+818
+00:34:01,255 --> 00:34:02,796
+ Seperti satu kemungkinan seperti mungkin kita 
+
+819
+00:34:02,796 --> 00:34:05,980
+ harus mencoba untuk melihat setiap offset byte. 
+
+820
+00:34:05,980 --> 00:34:09,125
+ Karena paling tidak x86 hanya bisa memulai menafsirkan instruksi 
+
+821
+00:34:09,125 --> 00:34:11,643
+ pada batas byte bukannya batas sedikit. 
+
+822
+00:34:11,643 --> 00:34:14,130
+ Jadi Anda suka melihat setiap kemungkinan byte, 
+
+823
+00:34:14,130 --> 00:34:17,420
+ dan Anda melihat instruksi apa yang dimulai di sana. 
+
+824
+00:34:17,420 --> 00:34:19,445
+ Apakah ini rencana yang wajar untuk dilaporkan? 
+
+825
+00:34:19,445 --> 00:34:19,944
+ Ya? 
+
+826
+00:34:19,944 --> 00:34:21,500
+ AUDIENCE: Maksud saya, bagaimana jika seseorang benar-benar 
+
+827
+00:34:21,500 --> 00:34:24,107
+ melakukan dan, dan mereka tidak akan pernah melompat ke dalam itu. 
+
+828
+00:34:24,107 --> 00:34:25,480
+ Dan sekarang Anda hanya mengizinkan program mereka. 
+
+829
+00:34:25,480 --> 00:34:27,000
+ PROFESOR: Benar, jadi pada dasarnya itu 
+
+830
+00:34:27,000 --> 00:34:30,310
+ rentan terhadap positif palsu. 
+
+831
+00:34:30,310 --> 00:34:32,770
+ Sekarang jika Anda benar-benar menginginkannya, Anda mungkin bisa 
+
+832
+00:34:32,770 --> 00:34:36,889
+ mengubah diri sendiri dan mengubah kode sedikit-- 
+
+833
+00:34:36,889 --> 00:34:38,330
+ dan entah bagaimana menghindari ini. 
+
+834
+00:34:38,330 --> 00:34:41,080
+ Jika Anda tahu persis apa yang dicari pemeriksa, 
+
+835
+00:34:41,080 --> 00:34:43,620
+ Anda berpotensi mengubah instruksi ini. 
+
+836
+00:34:43,620 --> 00:34:45,969
+ Mungkin seperti mengakhirinya dengan satu hal terlebih dahulu, dan kemudian 
+
+837
+00:34:45,969 --> 00:34:48,010
+ akhiri dengan topeng lain nanti. 
+
+838
+00:34:48,010 --> 00:34:51,520
+ Tetapi hindari pola-pola byte yang mencurigakan ini. 
+
+839
+00:34:51,520 --> 00:34:54,429
+ Tapi sepertinya itu cukup aneh untuk dilakukan. 
+
+840
+00:34:54,429 --> 00:34:56,948
+ Sekarang sebenarnya mungkin arsitektur itu 
+
+841
+00:34:56,949 --> 00:34:59,030
+ melibatkan mengubah kompilator. 
+
+842
+00:34:59,030 --> 00:35:01,400
+ Jadi pada prinsipnya, mereka memiliki beberapa komponen 
+
+843
+00:35:01,400 --> 00:35:05,150
+ yang sebenarnya harus mengkompilasi kode dengan benar. 
+
+844
+00:35:05,150 --> 00:35:07,020
+ Anda tidak bisa hanya mengambil dari rak GCC 
+
+845
+00:35:07,020 --> 00:35:08,880
+ dan kompilasi kode untuk Native Client. 
+
+846
+00:35:08,880 --> 00:35:10,100
+ Jadi pada prinsipnya itu bisa dilakukan. 
+
+847
+00:35:10,100 --> 00:35:12,500
+ Tapi saya pikir mereka hanya berpikir itu terlalu merepotkan, 
+
+848
+00:35:12,500 --> 00:35:15,065
+ dan itu tidak akan bisa diandalkan atau kinerja tinggi, 
+
+849
+00:35:15,065 --> 00:35:16,506
+ dan sebagainya. 
+
+850
+00:35:16,506 --> 00:35:18,420
+ Masuk akal? 
+
+851
+00:35:18,420 --> 00:35:20,770
+ Dan ditambah ada beberapa instruksi x86 
+
+852
+00:35:20,770 --> 00:35:24,780
+ yang dilarang atau harus tidak aman dan dilarang. 
+
+853
+00:35:24,780 --> 00:35:27,110
+ Tapi mereka seperti satu byte panjang, jadi itu 
+
+854
+00:35:27,110 --> 00:35:32,820
+ akan sangat merusak untuk mencari atau menyaring. 
+
+855
+00:35:32,820 --> 00:35:33,320
+ BAIK. 
+
+856
+00:35:33,320 --> 00:35:36,110
+ Jadi jika mereka tidak bisa berkumpul dan langsung naik 
+
+857
+00:35:36,110 --> 00:35:39,540
+ dan berharap yang terbaik, maka mereka membutuhkan rencana lain 
+
+858
+00:35:39,540 --> 00:35:43,830
+ untuk melakukan pembongkaran ini dengan cara yang dapat diandalkan. 
+
+859
+00:35:43,830 --> 00:35:46,070
+ Jadi apa klien itu atau Klien Asli 
+
+860
+00:35:46,070 --> 00:35:50,431
+ untuk memastikan mereka tidak tersandung oleh panjang variabel ini 
+
+861
+00:35:50,431 --> 00:35:50,930
+ encoding? 
+
+862
+00:35:50,930 --> 00:35:53,550
+
+
+863
+00:35:53,550 --> 00:35:58,839
+ Jadi saya kira salah satu cara untuk memikirkannya adalah, yah, 
+
+864
+00:35:58,839 --> 00:36:01,130
+ jadi bagaimana kita akan menyelesaikan pembongkaran yang dapat diandalkan ini? 
+
+865
+00:36:01,130 --> 00:36:06,310
+
+
+866
+00:36:06,310 --> 00:36:10,260
+ Jadi, dalam arti tertentu, jika kita benar-benar memindai ke depan 
+
+867
+00:36:10,260 --> 00:36:13,150
+ dari kiri ke kanan, dan kami mencari semua kemungkinan 
+
+868
+00:36:13,150 --> 00:36:16,910
+ kode, jika begitulah cara kode dijalankan, 
+
+869
+00:36:16,910 --> 00:36:18,080
+ maka kita dalam kondisi yang baik. 
+
+870
+00:36:18,080 --> 00:36:20,000
+ Jadi bahkan jika ada beberapa instruksi aneh 
+
+871
+00:36:20,000 --> 00:36:22,580
+ dan memiliki beberapa offset, lalu CPU 
+
+872
+00:36:22,580 --> 00:36:24,290
+ sebenarnya tidak akan melompat ke sana. 
+
+873
+00:36:24,290 --> 00:36:26,072
+ Ini benar-benar menjalankan cara yang sama 
+
+874
+00:36:26,072 --> 00:36:27,530
+ bahwa kami sedang memindai instruksi 
+
+875
+00:36:27,530 --> 00:36:29,740
+ layar dari kiri ke kanan. 
+
+876
+00:36:29,740 --> 00:36:34,020
+ Jadi masalah dengan pembongkaran menjadi dapat diandalkan 
+
+877
+00:36:34,020 --> 00:36:38,320
+ benar-benar berasal dari fakta bahwa ada lompatan. 
+
+878
+00:36:38,320 --> 00:36:40,920
+ Karena jika kita mengeksekusi secara linear dari kiri ke kanan, maka 
+
+879
+00:36:40,920 --> 00:36:42,390
+ CPU akan mengikuti aturan yang sama 
+
+880
+00:36:42,390 --> 00:36:45,000
+ bahwa pemeriksa kami mengikuti, dan melihat instruksi yang sama 
+
+881
+00:36:45,000 --> 00:36:45,840
+ layar. 
+
+882
+00:36:45,840 --> 00:36:48,230
+ Jadi masalahnya benar-benar turun ke apa 
+
+883
+00:36:48,230 --> 00:36:51,490
+ terjadi jika ada lompatan di suatu tempat dalam aplikasi. 
+
+884
+00:36:51,490 --> 00:36:53,500
+ Bisa melompat ke posisi tertentu dalam kode 
+
+885
+00:36:53,500 --> 00:36:57,654
+ yang tidak kita amati di pemindaian kiri ke kanan? 
+
+886
+00:36:57,654 --> 00:36:59,570
+ Jadi ini adalah apa yang mereka lakukan 
+
+887
+00:36:59,570 --> 00:37:01,380
+ dalam pembongkaran yang dapat diandalkan. 
+
+888
+00:37:01,380 --> 00:37:06,780
+ Dan rencana dasarnya adalah hanya memeriksa di mana semua lompatan pergi. 
+
+889
+00:37:06,780 --> 00:37:10,020
+ Ini sebenarnya cukup mudah pada level tertentu. 
+
+890
+00:37:10,020 --> 00:37:12,880
+ Mereka memiliki banyak aturan yang akan kita lihat sebentar lagi, 
+
+891
+00:37:12,880 --> 00:37:17,680
+ tapi kira-kira rencananya adalah jika Anda melihat instruksi lompat, 
+
+892
+00:37:17,680 --> 00:37:19,910
+ maka sebenarnya harus-- baik, 
+
+893
+00:37:19,910 --> 00:37:24,395
+ Anda harus memeriksa apakah target sudah terlihat sebelumnya. 
+
+894
+00:37:24,395 --> 00:37:28,360
+
+
+895
+00:37:28,360 --> 00:37:30,850
+ Jadi pada dasarnya Anda melakukan pemindaian kiri ke kanan 
+
+896
+00:37:30,850 --> 00:37:33,970
+ bahwa kami semacam dijelaskan dalam pendekatan naif kami di sini. 
+
+897
+00:37:33,970 --> 00:37:36,910
+ Tapi kemudian jika Anda melihat semacam instruksi lompat, 
+
+898
+00:37:36,910 --> 00:37:39,545
+ kemudian Anda melihat apa alamat dari instruksi lompatan 
+
+899
+00:37:39,545 --> 00:37:42,000
+ menunjuk ke, dan Anda memastikan bahwa itu 
+
+900
+00:37:42,000 --> 00:37:44,750
+ alamat yang Anda lihat di sebelah kiri Anda ke kanan pembongkaran. 
+
+901
+00:37:44,750 --> 00:37:47,240
+ Jadi jika ada instruksi lompatan misalnya 
+
+902
+00:37:47,240 --> 00:37:49,780
+ yang masuk ke CD byte itu, lalu kita 
+
+903
+00:37:49,780 --> 00:37:53,340
+ akan menandai lompatan itu sebagai tidak valid karena kami tidak pernah 
+
+904
+00:37:53,340 --> 00:37:55,250
+ melihat instruksi dimulai pada byte CD. 
+
+905
+00:37:55,250 --> 00:37:57,030
+ Kami melihat instruksi yang berbeda. 
+
+906
+00:37:57,030 --> 00:37:59,320
+ Tetapi jika semua instruksi, jika semua lompatan 
+
+907
+00:37:59,320 --> 00:38:01,540
+ pergi ke awal instruksi yang kita lihat, 
+
+908
+00:38:01,540 --> 00:38:03,622
+ maka kita dalam kondisi yang baik. 
+
+909
+00:38:03,622 --> 00:38:06,320
+ Apakah itu masuk akal? 
+
+910
+00:38:06,320 --> 00:38:08,910
+ Jadi masalahnya adalah Anda tidak bisa 
+
+911
+00:38:08,910 --> 00:38:11,690
+ periksa target setiap lompatan dalam program, 
+
+912
+00:38:11,690 --> 00:38:13,460
+ karena mungkin ada lompatan tidak langsung. 
+
+913
+00:38:13,460 --> 00:38:15,520
+ Misalnya di x86, Anda sebenarnya bisa 
+
+914
+00:38:15,520 --> 00:38:20,105
+ memiliki sesuatu seperti lompat ke nilai register EAX itu. 
+
+915
+00:38:20,105 --> 00:38:22,510
+ Ini bagus untuk menerapkan pointer fungsi. 
+
+916
+00:38:22,510 --> 00:38:24,670
+ Penunjuk fungsi di suatu tempat di memori, 
+
+917
+00:38:24,670 --> 00:38:26,080
+ maka Anda memegang fungsi pointer 
+
+918
+00:38:26,080 --> 00:38:27,870
+ ke dalam beberapa daftar sekaligus. 
+
+919
+00:38:27,870 --> 00:38:29,930
+ Dan kemudian Anda melompat ke alamat apa pun 
+
+920
+00:38:29,930 --> 00:38:34,240
+ berada di register relokasi [INAUDIBLE]. 
+
+921
+00:38:34,240 --> 00:38:36,894
+ Jadi bagaimana orang-orang ini berurusan dengan lompatan tidak langsung ini? 
+
+922
+00:38:36,894 --> 00:38:38,560
+ Jadi saya tidak tahu apakah ini benar-benar terjadi 
+
+923
+00:38:38,560 --> 00:38:42,674
+ untuk melompat ke CD byte atau 25 byte. 
+
+924
+00:38:42,674 --> 00:38:43,340
+ Apa yang mereka lakukan? 
+
+925
+00:38:43,340 --> 00:38:43,820
+ Ya? 
+
+926
+00:38:43,820 --> 00:38:45,310
+ AUDIENCE: Instrumen [TIDAK JELAS]. 
+
+927
+00:38:45,310 --> 00:38:45,976
+ PROFESOR: Ya. 
+
+928
+00:38:45,976 --> 00:38:48,690
+ Jadi ini adalah trik utama mereka di sini, adalah instrumentasi. 
+
+929
+00:38:48,690 --> 00:38:52,180
+ Jadi kapan pun mereka melihat lompatan seperti ini, 
+
+930
+00:38:52,180 --> 00:38:55,120
+ Yah, sebenarnya apa yang akan menghasilkan kompiler 
+
+931
+00:38:55,120 --> 00:38:56,960
+ adalah bukti bahwa lompatan ini sebenarnya 
+
+932
+00:38:56,960 --> 00:38:58,740
+ akan melakukan hal yang benar. 
+
+933
+00:38:58,740 --> 00:39:01,950
+ Dan cara mereka melakukan ini adalah-- mereka 
+
+934
+00:39:01,950 --> 00:39:04,610
+ tidak benar-benar tahu-- itu sebenarnya agak sulit 
+
+935
+00:39:04,610 --> 00:39:07,540
+ untuk memasukkan bukti di sini bahwa itu salah satu alamat 
+
+936
+00:39:07,540 --> 00:39:09,910
+ yang Anda lihat selama pembongkaran kiri kanan. 
+
+937
+00:39:09,910 --> 00:39:11,670
+ Jadi, sebaliknya apa yang mereka lakukan adalah yang mereka inginkan 
+
+938
+00:39:11,670 --> 00:39:15,770
+ untuk memastikan bahwa semua lompatan pergi ke kelipatan 32 byte. 
+
+939
+00:39:15,770 --> 00:39:17,470
+ Dan cara mereka melakukan ini sebenarnya 
+
+940
+00:39:17,470 --> 00:39:22,240
+ mengubah semua instruksi lompatan menjadi sesuatu 
+
+941
+00:39:22,240 --> 00:39:23,640
+ bahwa mereka instruksi palsu. 
+
+942
+00:39:23,640 --> 00:39:27,458
+ Jadi mereka masih melompat ke daftar EAX. 
+
+943
+00:39:27,458 --> 00:39:31,290
+
+
+944
+00:39:31,290 --> 00:39:35,220
+ Tapi mereka awalan dengan instruksi DAN 
+
+945
+00:39:35,220 --> 00:39:40,690
+ yang akan membersihkan lima rendah 
+
+946
+00:39:40,690 --> 00:39:50,610
+ bit, E 0 dengan daftar EAX. 
+
+947
+00:39:50,610 --> 00:39:53,820
+ Sehingga instruksi DAN membersihkan lima bit rendah, 
+
+948
+00:39:53,820 --> 00:39:56,120
+ yang berarti memaksa nilai ini 
+
+949
+00:39:56,120 --> 00:39:59,690
+ menjadi kelipatan 32, dua hingga lima. 
+
+950
+00:39:59,690 --> 00:40:01,570
+ Dan kemudian Anda melompat ke sana. 
+
+951
+00:40:01,570 --> 00:40:04,960
+ Jadi jika Anda melihatnya selama waktu verifikasi, 
+
+952
+00:40:04,960 --> 00:40:06,800
+ maka Anda bisa meyakinkan diri sendiri 
+
+953
+00:40:06,800 --> 00:40:12,170
+ bahwa pasangan instruksi ini hanya akan 
+
+954
+00:40:12,170 --> 00:40:15,180
+ melompat ke beberapa 32 byte. 
+
+955
+00:40:15,180 --> 00:40:17,420
+ Dan kemudian untuk memastikan bahwa ini tidak 
+
+956
+00:40:17,420 --> 00:40:19,777
+ akan melompat ke beberapa instruksi aneh, 
+
+957
+00:40:19,777 --> 00:40:21,610
+ Anda akan menegakkan aturan tambahan, yang 
+
+958
+00:40:21,610 --> 00:40:25,195
+ adalah selama pembongkaranmu, saat kau memindai 
+
+959
+00:40:25,195 --> 00:40:27,700
+ instruksi Anda dari kiri ke kanan, 
+
+960
+00:40:27,700 --> 00:40:30,640
+ Anda akan memastikan bahwa setiap kelipatan 32 byte 
+
+961
+00:40:30,640 --> 00:40:34,096
+ adalah awal dari instruksi yang valid. 
+
+962
+00:40:34,096 --> 00:40:35,720
+ Jadi selain instrumentasi ini, 
+
+963
+00:40:35,720 --> 00:40:44,867
+ Anda juga akan memeriksa setiap kelipatan 32 
+
+964
+00:40:44,867 --> 00:40:45,825
+ adalah instruksi yang valid. 
+
+965
+00:40:45,825 --> 00:40:51,070
+
+
+966
+00:40:51,070 --> 00:40:54,635
+ Yang saya maksud dengan instruksi yang valid di sini adalah instruksi 
+
+967
+00:40:54,635 --> 00:40:57,889
+ yang Anda lihat ketika Anda membongkar dari kiri ke kanan. 
+
+968
+00:40:57,889 --> 00:40:58,388
+ Ya? 
+
+969
+00:40:58,388 --> 00:40:59,730
+ AUDIENCE: Mengapa 32? 
+
+970
+00:40:59,730 --> 00:41:00,850
+ PROFESOR: Yah, ya, jadi mengapa mereka memilih 32? 
+
+971
+00:41:00,850 --> 00:41:02,225
+ Itu seperti angka ajaib 
+
+972
+00:41:02,225 --> 00:41:03,910
+ bahwa mereka menarik diri dari topi. 
+
+973
+00:41:03,910 --> 00:41:07,680
+ Haruskah Anda memilih 1.000 atau lima? 
+
+974
+00:41:07,680 --> 00:41:08,660
+ Ada komentar? 
+
+975
+00:41:08,660 --> 00:41:11,130
+ Oke, haruskah kita memilih lima? 
+
+976
+00:41:11,130 --> 00:41:12,766
+ Jadi mengapa lima yang buruk? 
+
+977
+00:41:12,766 --> 00:41:14,482
+ AUDIENCE: Kekuatan dua. 
+
+978
+00:41:14,482 --> 00:41:16,440
+ PROFESOR: Ya, oke, jadi kami memiliki kekuatan dua. 
+
+979
+00:41:16,440 --> 00:41:17,310
+ OK, bagus sekali. 
+
+980
+00:41:17,310 --> 00:41:19,827
+ Karena jika tidak memastikan sesuatu adalah kelipatan 5 
+
+981
+00:41:19,827 --> 00:41:21,910
+ akan membutuhkan beberapa instruksi di sini, 
+
+982
+00:41:21,910 --> 00:41:24,080
+ yang akan memimpin di atas. 
+
+983
+00:41:24,080 --> 00:41:25,420
+ Bagaimana dengan delapan? 
+
+984
+00:41:25,420 --> 00:41:26,550
+ Apakah delapan cukup baik, ya? 
+
+985
+00:41:26,550 --> 00:41:28,090
+ AUDIENCE: Anda dapat memiliki instruksi lebih dari delapan. 
+
+986
+00:41:28,090 --> 00:41:30,089
+ PROFESOR: Ya, oke, jadi itu harus setidaknya sama 
+
+987
+00:41:30,089 --> 00:41:32,399
+ selama instruksi x86 terpanjang yang ingin Anda izinkan. 
+
+988
+00:41:32,399 --> 00:41:33,940
+ Jadi jika ada instruksi sepuluh byte, 
+
+989
+00:41:33,940 --> 00:41:35,350
+ semuanya harus menjadi kelipatan delapan, baik, 
+
+990
+00:41:35,350 --> 00:41:37,474
+ Anda agak kacau dengan instruksi sepuluh byte. 
+
+991
+00:41:37,474 --> 00:41:39,025
+ Tidak ada tempat untuk meletakkannya. 
+
+992
+00:41:39,025 --> 00:41:40,400
+ Jadi harus setidaknya selama itu. 
+
+993
+00:41:40,400 --> 00:41:42,570
+ 32 cukup bagus, seperti yang terbesar yang bisa kutemukan 
+
+994
+00:41:42,570 --> 00:41:43,990
+ adalah 15 byte. 
+
+995
+00:41:43,990 --> 00:41:45,596
+ Jadi itu mungkin cukup bagus. 
+
+996
+00:41:45,596 --> 00:41:46,096
+ Ya? 
+
+997
+00:41:46,096 --> 00:41:50,080
+ AUDIENCE: Dapatkah [INAUDIBLE] lebih panjang dari kode [TIDAK JELAS], 
+
+998
+00:41:50,080 --> 00:41:52,570
+ mereka harus memiliki instruksi alt 
+
+999
+00:41:52,570 --> 00:41:54,064
+ di awal [tidak terdengar] 
+
+1000
+00:41:54,064 --> 00:41:56,105
+ jadi Anda tidak bisa langsung melompat ke [TIDAK BISA] 
+
+1001
+00:41:56,105 --> 00:41:58,048
+ dan mereka juga membutuhkan instruksi lompatan itu 
+
+1002
+00:41:58,048 --> 00:41:59,330
+ melompat ke yang lain [tidak terdengar]. 
+
+1003
+00:41:59,330 --> 00:42:00,580
+ PROFESOR: Itu benar, ya. 
+
+1004
+00:42:00,580 --> 00:42:02,390
+ Jadi Anda harus bisa masuk untuk masuk 
+
+1005
+00:42:02,390 --> 00:42:04,970
+ dan keluar dari runtime layanan proses, 
+
+1006
+00:42:04,970 --> 00:42:07,580
+ Anda harus bisa memasukkan sejumlah kode trivial 
+
+1007
+00:42:07,580 --> 00:42:09,799
+ dalam slot 32 byte tunggal. 
+
+1008
+00:42:09,799 --> 00:42:11,340
+ Kita akan melihat bagaimana ini bekerja dalam hitungan detik. 
+
+1009
+00:42:11,340 --> 00:42:13,590
+ Atau bahkan slot 31 byte, seperti yang Anda tunjukkan, 
+
+1010
+00:42:13,590 --> 00:42:17,150
+ untuk satu instruksi terus. 
+
+1011
+00:42:17,150 --> 00:42:18,250
+ Haruskah itu jauh lebih besar? 
+
+1012
+00:42:18,250 --> 00:42:22,788
+ Haruskah kita membuatnya, saya tidak tahu, seribu byte, yah, 10 24? 
+
+1013
+00:42:22,788 --> 00:42:25,776
+ AUDIENCE: [tidak terdengar] jarang, karena Anda harus memilikinya 
+
+1014
+00:42:25,776 --> 00:42:26,780
+ [TIDAK JELAS]. 
+
+1015
+00:42:26,780 --> 00:42:29,450
+ PROFESOR: Ya, jadi jika Anda memiliki banyak pointer fungsi 
+
+1016
+00:42:29,450 --> 00:42:32,530
+ atau banyak jenis lompatan tidak langsung, lalu setiap saat 
+
+1017
+00:42:32,530 --> 00:42:36,160
+ Anda ingin membuat tempat di mana Anda akan melompat ke, 
+
+1018
+00:42:36,160 --> 00:42:38,580
+ Anda harus memasukkannya ke batas berikutnya 
+
+1019
+00:42:38,580 --> 00:42:40,530
+ berapa pun nilai ini. 
+
+1020
+00:42:40,530 --> 00:42:41,830
+ Jadi dengan 32, mungkin itu tidak masalah. 
+
+1021
+00:42:41,830 --> 00:42:44,740
+ Anda seperti baik, kasus terburuk, Anda buang 31 byte, 
+
+1022
+00:42:44,740 --> 00:42:47,530
+ karena Anda hanya perlu maju cepat ke batas berikutnya. 
+
+1023
+00:42:47,530 --> 00:42:51,280
+ Tetapi jika itu kelipatan 1024, maka tiba-tiba Anda 
+
+1024
+00:42:51,280 --> 00:42:54,730
+ membuang satu kilobyte memori untuk lompatan tidak langsung. 
+
+1025
+00:42:54,730 --> 00:42:59,580
+ Dan jika Anda mungkin memiliki fungsi pendek atau banyak fungsi 
+
+1026
+00:42:59,580 --> 00:43:01,280
+ pointer, maka ini mungkin sebenarnya 
+
+1027
+00:43:01,280 --> 00:43:04,240
+ menjadi memori di atas semua tiba-tiba, juga. 
+
+1028
+00:43:04,240 --> 00:43:05,930
+ Apakah itu masuk akal? 
+
+1029
+00:43:05,930 --> 00:43:08,330
+ Jadi ya, saya pikir 32 tidak diatur di batu. 
+
+1030
+00:43:08,330 --> 00:43:11,485
+ Seperti Native Client harus memiliki 32 blok byte, 
+
+1031
+00:43:11,485 --> 00:43:13,310
+ tetapi sesuatu pada pesanan itu mungkin berhasil. 
+
+1032
+00:43:13,310 --> 00:43:15,330
+ 16 mungkin agak pendek. 
+
+1033
+00:43:15,330 --> 00:43:17,580
+ Di sisi lain, seperti 64 bisa berfungsi. 
+
+1034
+00:43:17,580 --> 00:43:21,740
+ 128 mungkin agak sedikit gondrong. 
+
+1035
+00:43:21,740 --> 00:43:23,750
+ Tapi saya tidak berpikir Anda dapat memperoleh angka 32 
+
+1036
+00:43:23,750 --> 00:43:26,231
+ dari prinsip pertama. 
+
+1037
+00:43:26,231 --> 00:43:28,880
+ Masuk akal? 
+
+1038
+00:43:28,880 --> 00:43:30,090
+ Baiklah. 
+
+1039
+00:43:30,090 --> 00:43:33,280
+ Jadi mari kita buat rencana untuk pembongkaran yang dapat diandalkan. 
+
+1040
+00:43:33,280 --> 00:43:38,030
+ Dan sebagai hasilnya, kompiler harus sedikit berhati-hati 
+
+1041
+00:43:38,030 --> 00:43:42,220
+ ketika itu mengkompilasi kode C atau C ++ Anda menjadi Native Client 
+
+1042
+00:43:42,220 --> 00:43:42,720
+ biner. 
+
+1043
+00:43:42,720 --> 00:43:44,344
+ Itu harus pada dasarnya mengikuti aturan-aturan ini. 
+
+1044
+00:43:44,344 --> 00:43:46,660
+ Jadi, setiap kali ada lompatan, itu terjadi 
+
+1045
+00:43:46,660 --> 00:43:49,640
+ untuk menambahkan tambahan instruksi tersebut. 
+
+1046
+00:43:49,640 --> 00:43:53,049
+ Dan apa pun itu menciptakan fungsi 
+
+1047
+00:43:53,049 --> 00:43:54,840
+ bahwa itu akan melompat ke, instruksi kami 
+
+1048
+00:43:54,840 --> 00:43:56,673
+ akan melompat ke, seperti yang kita bicarakan, 
+
+1049
+00:43:56,673 --> 00:43:58,000
+ itu harus padam. 
+
+1050
+00:43:58,000 --> 00:44:00,150
+ Dan itu tidak bisa menyelesaikannya dengan nol, 
+
+1051
+00:44:00,150 --> 00:44:02,590
+ karena semua itu harus memvalidasi kode. 
+
+1052
+00:44:02,590 --> 00:44:04,710
+ Jadi itu benar-benar harus menyelesaikannya dengan [TIDAK JELAS] 
+
+1053
+00:44:04,710 --> 00:44:06,535
+ hanya untuk membuat validator bahagia, 
+
+1054
+00:44:06,535 --> 00:44:08,720
+ hanya untuk memastikan bahwa setiap instruksi yang mungkin 
+
+1055
+00:44:08,720 --> 00:44:09,800
+ yang valid. 
+
+1056
+00:44:09,800 --> 00:44:12,390
+ Dan untungnya di x86, tidak ada op adalah satu byte, 
+
+1057
+00:44:12,390 --> 00:44:14,940
+ atau setidaknya tidak ada op-- itu adalah satu byte. 
+
+1058
+00:44:14,940 --> 00:44:17,600
+ Tidak banyak ops di x86. 
+
+1059
+00:44:17,600 --> 00:44:20,200
+ Jadi, Anda selalu dapat menyelesaikan berbagai hal 
+
+1060
+00:44:20,200 --> 00:44:22,670
+ apa pun konstanta ini. 
+
+1061
+00:44:22,670 --> 00:44:25,040
+ Masuk akal? 
+
+1062
+00:44:25,040 --> 00:44:26,330
+ Baiklah. 
+
+1063
+00:44:26,330 --> 00:44:29,030
+ Jadi, apa jaminan ini bagi kita? 
+
+1064
+00:44:29,030 --> 00:44:31,490
+ Saya kira mari kita pastikan bahwa kita selalu 
+
+1065
+00:44:31,490 --> 00:44:34,370
+ lihat apa yang terjadi dalam hal instruksi itu 
+
+1066
+00:44:34,370 --> 00:44:35,220
+ akan dieksekusi. 
+
+1067
+00:44:35,220 --> 00:44:37,630
+ Jadi ini akhirnya memberi kita aturan ini. 
+
+1068
+00:44:37,630 --> 00:44:43,280
+ Jadi kita bisa yakin tidak pernah ada panggilan sistem yang dikeluarkan. 
+
+1069
+00:44:43,280 --> 00:44:45,850
+ Bagaimana dengan ... Jadi ini untuk lompatan. 
+
+1070
+00:44:45,850 --> 00:44:46,700
+ Bagaimana dengan pengembalian? 
+
+1071
+00:44:46,700 --> 00:44:49,570
+ Bagaimana mereka menangani pengembalian? 
+
+1072
+00:44:49,570 --> 00:44:52,874
+ Bisakah Anda kembali untuk fungsi di Native Client? 
+
+1073
+00:44:52,874 --> 00:44:56,770
+ Apa yang akan terjadi jika Anda mendapat kode merah panas? 
+
+1074
+00:44:56,770 --> 00:44:57,731
+ Apakah itu bagus? 
+
+1075
+00:44:57,731 --> 00:44:58,231
+ Ya? 
+
+1076
+00:44:58,231 --> 00:45:01,640
+ AUDIENCE: [TIDAK JELAS] Anda tidak ingin-- [tidak terdengar] 
+
+1077
+00:45:01,640 --> 00:45:03,947
+ memodifikasi keseluruhan Anda [TIDAK JELAS]. 
+
+1078
+00:45:03,947 --> 00:45:06,030
+ PROFESOR: Yah, memang benar bahwa itu muncul tumpukan. 
+
+1079
+00:45:06,030 --> 00:45:09,700
+ Tetapi tumpukan yang digunakan modul Native Client, 
+
+1080
+00:45:09,700 --> 00:45:13,270
+ itu sebenarnya hanya beberapa data di dalam bagian mereka. 
+
+1081
+00:45:13,270 --> 00:45:16,309
+ Jadi Anda tidak benar-benar peduli - kontak Native Client 
+
+1082
+00:45:16,309 --> 00:45:18,600
+ tidak peduli apakah orang-orang itu mengacaukan tumpukan mereka, 
+
+1083
+00:45:18,600 --> 00:45:19,767
+ membanjiri tumpukan mereka, atau-- 
+
+1084
+00:45:19,767 --> 00:45:22,340
+ AUDIENCE: Tunggu, tetapi Anda bisa memasukkan apa pun ke tumpukan. 
+
+1085
+00:45:22,340 --> 00:45:24,340
+ Dan ketika Anda [TIDAK JELAS] Anda melompat melalui itu-- 
+
+1086
+00:45:24,340 --> 00:45:25,090
+ PROFESOR: Itu benar. 
+
+1087
+00:45:25,090 --> 00:45:27,048
+ Ya, jadi kembali hampir seperti lompatan tidak langsung 
+
+1088
+00:45:27,048 --> 00:45:29,160
+ dari lokasi memori aneh tertentu 
+
+1089
+00:45:29,160 --> 00:45:30,890
+ itu di bagian atas tumpukan. 
+
+1090
+00:45:30,890 --> 00:45:33,580
+ Jadi saya kira satu hal yang bisa mereka lakukan untuk kembali 
+
+1091
+00:45:33,580 --> 00:45:36,270
+ mungkin awalan dengan cek serupa, di mana mungkin seperti 
+
+1092
+00:45:36,270 --> 00:45:37,800
+ pop bagian atas tumpukan. 
+
+1093
+00:45:37,800 --> 00:45:40,080
+ Anda memeriksa apakah itu valid, dan kemudian Anda menulis, 
+
+1094
+00:45:40,080 --> 00:45:43,240
+ atau Anda entah bagaimana melakukan DAN ke operan memori, 
+
+1095
+00:45:43,240 --> 00:45:45,360
+ dan itu bagian atas tumpukan. 
+
+1096
+00:45:45,360 --> 00:45:48,640
+ Sepertinya agak rapuh, sebagian karena 
+
+1097
+00:45:48,640 --> 00:45:49,440
+ kondisi lomba. 
+
+1098
+00:45:49,440 --> 00:45:51,045
+ Karena misalnya, jika Anda melihat lokasi teratas 
+
+1099
+00:45:51,045 --> 00:45:53,020
+ tumpukan, Anda memeriksa bahwa itu tidak masalah, 
+
+1100
+00:45:53,020 --> 00:45:56,060
+ dan kemudian Anda menulis kemudian, ancaman lain 
+
+1101
+00:45:56,060 --> 00:45:58,090
+ dalam modul yang sama bisa memodifikasi hal itu 
+
+1102
+00:45:58,090 --> 00:45:59,710
+ di bagian atas tumpukan. 
+
+1103
+00:45:59,710 --> 00:46:02,640
+ Dan kemudian Anda akan merujuk ke alamat itu. 
+
+1104
+00:46:02,640 --> 00:46:05,100
+ AUDIENCE: Apakah ini tidak akan terjadi untuk lompatan juga? 
+
+1105
+00:46:05,100 --> 00:46:06,390
+ PROFESOR: Ya, jadi apa yang terjadi dengan lompatan? 
+
+1106
+00:46:06,390 --> 00:46:09,030
+ Mungkinkah kondisi balapan kami entah bagaimana membatalkan pemeriksaan ini? 
+
+1107
+00:46:09,030 --> 00:46:11,793
+
+
+1108
+00:46:11,793 --> 00:46:12,292
+ Ya? 
+
+1109
+00:46:12,292 --> 00:46:13,751
+ AUDIENCE: Kode ini tidak dapat ditulis. 
+
+1110
+00:46:13,751 --> 00:46:16,000
+ PROFESOR: Yah kode ini tidak dapat ditulis, itu benar. 
+
+1111
+00:46:16,000 --> 00:46:17,475
+ Jadi, Anda tidak dapat memodifikasi DAN. 
+
+1112
+00:46:17,475 --> 00:46:21,250
+ Tetapi, dapatkah thread lain memodifikasi target lompatan ini 
+
+1113
+00:46:21,250 --> 00:46:23,350
+ di antara dua instruksi ini? 
+
+1114
+00:46:23,350 --> 00:46:23,850
+ Ya? 
+
+1115
+00:46:23,850 --> 00:46:25,350
+ AUDIENCE: Ini dalam daftar, jadi-- 
+
+1116
+00:46:25,350 --> 00:46:26,975
+ PROFESOR: Ya, itu hal yang keren. 
+
+1117
+00:46:26,975 --> 00:46:29,880
+ Pada dasarnya ada-- jika memodifikasinya dalam memori 
+
+1118
+00:46:29,880 --> 00:46:32,520
+ atau di mana pun dimuat ke EAX dari, tentu, 
+
+1119
+00:46:32,520 --> 00:46:35,360
+ Anda melakukannya sebelum Anda memuat, dalam hal ini EX ini akan menjadi buruk, 
+
+1120
+00:46:35,360 --> 00:46:36,990
+ tapi kemudian akan membersihkan bagian yang buruk. 
+
+1121
+00:46:36,990 --> 00:46:38,909
+ Atau bisa memodifikasinya setelah, pada titik mana 
+
+1122
+00:46:38,909 --> 00:46:40,450
+ sudah ada di EX, jadi tidak 
+
+1123
+00:46:40,450 --> 00:46:43,920
+ peduli bahwa itu memodifikasi lokasi memori dari mana 
+
+1124
+00:46:43,920 --> 00:46:47,130
+ register EX dimuat. 
+
+1125
+00:46:47,130 --> 00:46:50,530
+ Dan untaian tidak benar-benar berbagi set register. 
+
+1126
+00:46:50,530 --> 00:46:52,650
+ Jadi jika utas lain memodifikasi register EX, 
+
+1127
+00:46:52,650 --> 00:46:55,210
+ itu tidak akan mempengaruhi register EX thread ini. 
+
+1128
+00:46:55,210 --> 00:46:57,860
+ Jadi instruksi ini sebenarnya semacam 
+
+1129
+00:46:57,860 --> 00:46:59,050
+ ras-bukti dalam arti tertentu. 
+
+1130
+00:46:59,050 --> 00:47:03,719
+ Benang lain tidak dapat membatalkan urutan instruksi ini. 
+
+1131
+00:47:03,719 --> 00:47:04,218
+ Masuk akal? 
+
+1132
+00:47:04,218 --> 00:47:06,930
+
+
+1133
+00:47:06,930 --> 00:47:08,490
+ Baiklah. 
+
+1134
+00:47:08,490 --> 00:47:11,750
+ Jadi, inilah pertanyaan menarik lainnya. 
+
+1135
+00:47:11,750 --> 00:47:14,370
+ Bisakah kita melewati ini DAN? 
+
+1136
+00:47:14,370 --> 00:47:16,760
+ Saya bisa melompat-lompat di ruang alamat ini yang saya inginkan. 
+
+1137
+00:47:16,760 --> 00:47:18,796
+ Dan ketika saya membongkar instruksi ini, 
+
+1138
+00:47:18,796 --> 00:47:21,045
+ ini tampak seperti instruksi paralel yang sangat baik, 
+
+1139
+00:47:21,045 --> 00:47:24,680
+ sebuah DAN dan melompat. 
+
+1140
+00:47:24,680 --> 00:47:30,155
+ Dan cek untuk lompatan statis adalah itu, yah, 
+
+1141
+00:47:30,155 --> 00:47:32,650
+ itu hanya harus menunjuk ke beberapa target yang terlihat. 
+
+1142
+00:47:32,650 --> 00:47:33,860
+ Jadi ya, kami melihat AND. 
+
+1143
+00:47:33,860 --> 00:47:35,360
+ Itu satu instruksi yang valid. 
+
+1144
+00:47:35,360 --> 00:47:37,980
+ Kami melihat lompatan, itu adalah instruksi lain yang valid. 
+
+1145
+00:47:37,980 --> 00:47:39,950
+ Jadi ketika saya melihat lompatan langsung di sini, 
+
+1146
+00:47:39,950 --> 00:47:42,280
+ mungkin saya lompat ke beberapa alamat. 
+
+1147
+00:47:42,280 --> 00:47:46,530
+ Saya tidak tahu, satu, dua, tiga, tujuh. 
+
+1148
+00:47:46,530 --> 00:47:49,542
+ Itu sebenarnya OK, meskipun itu bukan kelipatan 32. 
+
+1149
+00:47:49,542 --> 00:47:53,180
+ Native Client umumnya tidak mengizinkan lompatan langsung 
+
+1150
+00:47:53,180 --> 00:47:55,290
+ ke alamat sewenang-wenang, selama 
+
+1151
+00:47:55,290 --> 00:47:58,420
+ alamat itu adalah instruksi yang kami lihat selama pembongkaran, 
+
+1152
+00:47:58,420 --> 00:48:01,370
+ seperti yang baru saja kita bicarakan. 
+
+1153
+00:48:01,370 --> 00:48:05,600
+ Jadi saya bisa memasukkan lompat tidak langsung yang sangat baik ini, 
+
+1154
+00:48:05,600 --> 00:48:10,270
+ dan kemudian di kode melompat ke instruksi kedua 
+
+1155
+00:48:10,270 --> 00:48:12,220
+ dalam urutan itu? 
+
+1156
+00:48:12,220 --> 00:48:14,210
+ Jadi saya akan memuat sesuatu ke EX, 
+
+1157
+00:48:14,210 --> 00:48:15,850
+ melompat ke sini, dan kemudian langsung melompat 
+
+1158
+00:48:15,850 --> 00:48:17,910
+ ke dalam alamat yang tidak dikotakpasirkan ini. 
+
+1159
+00:48:17,910 --> 00:48:20,607
+
+
+1160
+00:48:20,607 --> 00:48:22,190
+ Itu akan melanggar keamanan, kan? 
+
+1161
+00:48:22,190 --> 00:48:23,148
+ Apakah setiap orang melihat itu? 
+
+1162
+00:48:23,148 --> 00:48:24,120
+ Jadi bagaimana ini dihindari? 
+
+1163
+00:48:24,120 --> 00:48:27,024
+ AUDIENCE: Yah, NaCl [tidak terdengar] dan lompatan 
+
+1164
+00:48:27,024 --> 00:48:28,274
+ harus memberi isyarat instruksi. 
+
+1165
+00:48:28,274 --> 00:48:30,440
+ PROFESOR: Ya, jadi ini mengapa mereka menyebut hal ini 
+
+1166
+00:48:30,440 --> 00:48:34,510
+ instruksi pseudo tunggal. 
+
+1167
+00:48:34,510 --> 00:48:36,660
+ Dan meskipun pada level x86, 
+
+1168
+00:48:36,660 --> 00:48:38,350
+ mereka sebenarnya instruksi yang berbeda, 
+
+1169
+00:48:38,350 --> 00:48:40,760
+ sejauh validator NaCl berpikir tentang itu, 
+
+1170
+00:48:40,760 --> 00:48:42,980
+ sebenarnya ini adalah unit atom tunggal. 
+
+1171
+00:48:42,980 --> 00:48:46,080
+ Jadi sejauh ini memeriksa apakah ini instruksi 
+
+1172
+00:48:46,080 --> 00:48:47,980
+ yang Anda lihat sebelumnya, mereka berpikir, oh, ini 
+
+1173
+00:48:47,980 --> 00:48:49,730
+ adalah satu-satunya instruksi yang saya lihat sebelumnya. 
+
+1174
+00:48:49,730 --> 00:48:51,400
+ Melompat di tengah seperti melompat 
+
+1175
+00:48:51,400 --> 00:48:53,565
+ di tengah-tengah pria ini. 
+
+1176
+00:48:53,565 --> 00:48:55,020
+ Itu adalah hal yang sama. 
+
+1177
+00:48:55,020 --> 00:48:58,360
+ Jadi pada dasarnya mereka menerapkan semantik yang sedikit berbeda 
+
+1178
+00:48:58,360 --> 00:49:02,640
+ dari apa yang ditegakkan x86 dalam hal apa instruksi itu. 
+
+1179
+00:49:02,640 --> 00:49:05,590
+ Dan ini mungkin benar-benar berarti bahwa Anda 
+
+1180
+00:49:05,590 --> 00:49:09,580
+ dapat mewakili urutan instruksi tertentu dalam NaCl. 
+
+1181
+00:49:09,580 --> 00:49:12,430
+ Jadi jika Anda benar-benar memiliki kode yang sah itu 
+
+1182
+00:49:12,430 --> 00:49:15,030
+ tampak seperti ini sebelumnya, ini terjadi 
+
+1183
+00:49:15,030 --> 00:49:18,002
+ untuk diubah menjadi kode tunggal di NaCl. 
+
+1184
+00:49:18,002 --> 00:49:19,460
+ Tapi semoga itu tidak masalah. 
+
+1185
+00:49:19,460 --> 00:49:20,127
+ Ya? 
+
+1186
+00:49:20,127 --> 00:49:21,710
+ AUDIENCE: Agaknya mereka bisa keluar itu 
+
+1187
+00:49:21,710 --> 00:49:27,040
+ dalam basis kode tepercaya di awal segmen teks. 
+
+1188
+00:49:27,040 --> 00:49:30,816
+ Karena dengan begitu, Anda akan selalu mengganti keduanya. 
+
+1189
+00:49:30,816 --> 00:49:33,440
+ Alih-alih menempatkan mereka di biner yang Anda hasilkan pula, 
+
+1190
+00:49:33,440 --> 00:49:36,290
+ Anda langsung melompat ke target lompatan itu 
+
+1191
+00:49:36,290 --> 00:49:37,795
+ di bagian istimewa. 
+
+1192
+00:49:37,795 --> 00:49:40,170
+ PROFESOR: Dalam runtime tepercaya, maksud Anda atau sesuatu? 
+
+1193
+00:49:40,170 --> 00:49:42,660
+ AUDIENCE: Tidak, jadi di 64 K pertama 
+
+1194
+00:49:42,660 --> 00:49:44,910
+ PROFESOR: Ya, mereka punya trampolin dan yeah-- 
+
+1195
+00:49:44,910 --> 00:49:46,420
+ AUDIENCE: Jadi mereka bisa membuat salah satu trampolin. 
+
+1196
+00:49:46,420 --> 00:49:48,156
+ Kecuali itu tidak melompat keluar. 
+
+1197
+00:49:48,156 --> 00:49:49,332
+ Ini melompat kembali. 
+
+1198
+00:49:49,332 --> 00:49:50,040
+ PROFESOR: Benar. 
+
+1199
+00:49:50,040 --> 00:49:51,861
+ AUDIENCE: Jadi demikian, itu tidak akan terjadi 
+
+1200
+00:49:51,861 --> 00:49:53,152
+ harus menjadi instruksi super. 
+
+1201
+00:49:53,152 --> 00:49:56,360
+ Itu hanya akan menjadi lompatan x86 tunggal 
+
+1202
+00:49:56,360 --> 00:49:58,194
+ ke sana, yang kemudian akan melompat keluar lagi. 
+
+1203
+00:49:58,194 --> 00:49:59,401
+ PROFESOR: Itu benar, ya. 
+
+1204
+00:49:59,401 --> 00:50:01,940
+ Itu semacam solusi pintar yang bisa Anda lakukan, 
+
+1205
+00:50:01,940 --> 00:50:04,710
+ adalah sebaliknya untuk pembebasan [tidak terdengar] 
+
+1206
+00:50:04,710 --> 00:50:07,704
+ jadi misalkan Anda tidak ingin melakukan instruksi semu ini 
+
+1207
+00:50:07,704 --> 00:50:12,920
+ trik, dan Anda hanya ingin memiliki satu instruksi 
+
+1208
+00:50:12,920 --> 00:50:14,590
+ mengganti lompatan EAX. 
+
+1209
+00:50:14,590 --> 00:50:16,090
+ Nah, apa yang pada dasarnya bisa Anda temukan 
+
+1210
+00:50:16,090 --> 00:50:18,630
+ dengan adalah perpustakaan dari semua kemungkinan lompatan tidak langsung 
+
+1211
+00:50:18,630 --> 00:50:19,710
+ Anda pernah bisa melakukannya. 
+
+1212
+00:50:19,710 --> 00:50:26,410
+ Jadi seperti juga, ada jump EAX, ada jumping EBX, dan seterusnya. 
+
+1213
+00:50:26,410 --> 00:50:28,460
+ Dan Anda akan membangun perpustakaan dari orang-orang ini 
+
+1214
+00:50:28,460 --> 00:50:31,209
+ untuk masing-masing, Anda akan membuat cek aman 
+
+1215
+00:50:31,209 --> 00:50:32,750
+ bahwa Anda ingin menggantinya dengan. 
+
+1216
+00:50:32,750 --> 00:50:36,040
+ Jadi untuk yang ini, Anda akan menempatkan AND di depannya, dan seterusnya. 
+
+1217
+00:50:36,040 --> 00:50:38,452
+ Dan untuk yang ini, Anda juga akan menempatkan AND di depannya, 
+
+1218
+00:50:38,452 --> 00:50:39,262
+ dan seterusnya. 
+
+1219
+00:50:39,262 --> 00:50:43,470
+ Dan kemudian dalam biner yang dikompilasi, setiap saat 
+
+1220
+00:50:43,470 --> 00:50:45,830
+ Anda ingin melompat ke EAX, apa yang sebenarnya Anda lakukan, 
+
+1221
+00:50:45,830 --> 00:50:48,690
+ sebenarnya lompat ke alamat tetap 
+
+1222
+00:50:48,690 --> 00:50:51,870
+ yang sesuai dengan bagian kode yang bermanfaat ini 
+
+1223
+00:50:51,870 --> 00:50:55,490
+ disimpan di suatu tempat di 64 k rendah dari program. 
+
+1224
+00:50:55,490 --> 00:50:59,660
+ Dan kemudian orang ini akan melakukan DAN dan melompat lagi. 
+
+1225
+00:50:59,660 --> 00:51:01,460
+ Alasan mereka mungkin tidak melakukan ini 
+
+1226
+00:51:01,460 --> 00:51:04,450
+ adalah kinerja untuk alasan yang menarik semacam ini. 
+
+1227
+00:51:04,450 --> 00:51:07,675
+ Sehingga prosesor Intel, sebetulnya kebanyakan prosesor 
+
+1228
+00:51:07,675 --> 00:51:11,720
+ hari-hari ini, harus memprediksi di mana 
+
+1229
+00:51:11,720 --> 00:51:14,830
+ cabang pergi untuk menjaga jalur pipa prosesor 
+
+1230
+00:51:14,830 --> 00:51:16,025
+ penuh setiap saat. 
+
+1231
+00:51:16,025 --> 00:51:18,150
+ Ini salah satu prediktor cabang yang sangat rumit 
+
+1232
+00:51:18,150 --> 00:51:20,649
+ yang tidak hanya memutuskan apakah Anda akan bercabang atau tidak, 
+
+1233
+00:51:20,649 --> 00:51:21,740
+ seperti jika pernyataan. 
+
+1234
+00:51:21,740 --> 00:51:23,949
+ Tetapi juga benar-benar menebak di mana Anda akan melompat. 
+
+1235
+00:51:23,949 --> 00:51:25,740
+ Jadi jika Anda melihat lompatan tidak langsung, itu sebenarnya 
+
+1236
+00:51:25,740 --> 00:51:27,880
+ akan menebak apa alamatnya. 
+
+1237
+00:51:27,880 --> 00:51:29,338
+ Dan ini sebenarnya tebakan itu 
+
+1238
+00:51:29,338 --> 00:51:32,720
+ disimpan per baris cache yang disimpan dalam instruksi lompat. 
+
+1239
+00:51:32,720 --> 00:51:34,980
+ Jadi jika Anda memiliki satu tempat di mana semua lompatan 
+
+1240
+00:51:34,980 --> 00:51:37,037
+ EAX berasal, lalu CPU selalu 
+
+1241
+00:51:37,037 --> 00:51:38,120
+ akan menjadi sangat bingung. 
+
+1242
+00:51:38,120 --> 00:51:40,250
+ Karena ini melompat EAXs tampaknya akan terjadi di semua tempat, 
+
+1243
+00:51:40,250 --> 00:51:41,045
+ dimana mana. 
+
+1244
+00:51:41,045 --> 00:51:43,170
+ Di mana seolah-olah kita benar-benar terikat pada lompatan tertentu 
+
+1245
+00:51:43,170 --> 00:51:45,215
+ instruksi, itu akan menjadi prediksi yang lebih baik. 
+
+1246
+00:51:45,215 --> 00:51:48,620
+ Itu hanya trik penampilan yang mereka mainkan. 
+
+1247
+00:51:48,620 --> 00:51:49,120
+ Masuk akal? 
+
+1248
+00:51:49,120 --> 00:51:51,760
+
+
+1249
+00:51:51,760 --> 00:51:52,860
+ Baiklah. 
+
+1250
+00:51:52,860 --> 00:51:56,127
+ Jadi saya kira kita kira-kira mengerti bagaimana caranya 
+
+1251
+00:51:56,127 --> 00:51:57,710
+ itu akan membongkar semua ini 
+
+1252
+00:51:57,710 --> 00:52:00,830
+ instruksi bagaimana itu akan mencegah instruksi ini. 
+
+1253
+00:52:00,830 --> 00:52:03,440
+ Jadi sekarang mari kita lihat sekumpulan aturan 
+
+1254
+00:52:03,440 --> 00:52:05,667
+ mereka akan menegakkannya melalui tabel ini 
+
+1255
+00:52:05,667 --> 00:52:08,560
+ di koran, meja satu. 
+
+1256
+00:52:08,560 --> 00:52:12,880
+ Dan ini memiliki semua aturan berbeda untuk validator ini 
+
+1257
+00:52:12,880 --> 00:52:15,396
+ untuk mengikuti, atau bahwa binari harus mengikuti 
+
+1258
+00:52:15,396 --> 00:52:17,010
+ dan validator memeriksa. 
+
+1259
+00:52:17,010 --> 00:52:19,176
+ Jadi saya akan membahas aturan-aturan ini dan hanya memeriksa ulang 
+
+1260
+00:52:19,176 --> 00:52:21,350
+ bahwa kita mengerti mengapa semua aturan ini ada di sana. 
+
+1261
+00:52:21,350 --> 00:52:28,510
+ Jadi kita memiliki hal-hal ini, C1, sampai ke C7. 
+
+1262
+00:52:28,510 --> 00:52:32,700
+ Jadi C1 pada dasarnya mengatakan bahwa setelah Anda memuat memori biner, 
+
+1263
+00:52:32,700 --> 00:52:38,720
+ maka biner sebenarnya tidak dapat ditulis pada tabel halaman 
+
+1264
+00:52:38,720 --> 00:52:40,100
+ tingkat. 
+
+1265
+00:52:40,100 --> 00:52:42,630
+ Jadi mereka mengatur bit izin untuk biner 
+
+1266
+00:52:42,630 --> 00:52:43,650
+ bisa tidak bisa ditulis. 
+
+1267
+00:52:43,650 --> 00:52:45,467
+ Jadi kenapa? 
+
+1268
+00:52:45,467 --> 00:52:47,050
+ Ini seharusnya cukup mudah diharapkan. 
+
+1269
+00:52:47,050 --> 00:52:49,870
+
+
+1270
+00:52:49,870 --> 00:52:52,020
+ Alasannya adalah keamanan mereka sepenuhnya 
+
+1271
+00:52:52,020 --> 00:52:55,749
+ rencana bergantung pada mereka memeriksa bahwa biner Anda sudah benar. 
+
+1272
+00:52:55,749 --> 00:52:57,290
+ Jadi begitu mereka sudah memeriksanya, mereka mau 
+
+1273
+00:52:57,290 --> 00:52:59,300
+ untuk memastikan Anda tidak dapat memodifikasi biner 
+
+1274
+00:52:59,300 --> 00:53:02,680
+ dan telah melakukan sesuatu yang ilegal yang dilarang. 
+
+1275
+00:53:02,680 --> 00:53:05,870
+ Jadi ini saya pikir cukup jelas saat itu. 
+
+1276
+00:53:05,870 --> 00:53:09,770
+ Jadi C2 adalah rencana mereka yang pada dasarnya harus 
+
+1277
+00:53:09,770 --> 00:53:16,890
+ dihubungkan pada nol pada awal pada 64 K. Jadi persyaratan ini, 
+
+1278
+00:53:16,890 --> 00:53:19,694
+ Saya pikir sebenarnya tidak ada hubungannya dengan keamanan. 
+
+1279
+00:53:19,694 --> 00:53:21,110
+ Saya pikir itu hanya untuk kenyamanan, 
+
+1280
+00:53:21,110 --> 00:53:23,570
+ karena mereka hanya ingin memiliki tata letak standar 
+
+1281
+00:53:23,570 --> 00:53:25,190
+ untuk program ini. 
+
+1282
+00:53:25,190 --> 00:53:27,440
+ Dalam beberapa hal, ini untuk kesederhanaan 
+
+1283
+00:53:27,440 --> 00:53:29,950
+ sehingga mereka tidak harus berurusan dengan relokasi yang rumit 
+
+1284
+00:53:29,950 --> 00:53:32,040
+ catatan, yang berarti ada 
+
+1285
+00:53:32,040 --> 00:53:35,630
+ lebih sedikit hal yang validator atau loader mungkin mengacaukan. 
+
+1286
+00:53:35,630 --> 00:53:39,140
+ Tapi pada dasarnya ini semacam rencana standardisasi untuk mereka, 
+
+1287
+00:53:39,140 --> 00:53:42,280
+ dalam hal bagaimana memuat eksekutabel mereka. 
+
+1288
+00:53:42,280 --> 00:53:44,280
+ Masuk akal? 
+
+1289
+00:53:44,280 --> 00:53:44,780
+ Baiklah. 
+
+1290
+00:53:44,780 --> 00:53:51,530
+ Jadi syarat ketiga adalah saya kira penggunaan lompatan tidak langsung 
+
+1291
+00:53:51,530 --> 00:53:53,632
+ dua instruksi. 
+
+1292
+00:53:53,632 --> 00:53:56,440
+
+
+1293
+00:53:56,440 --> 00:53:58,860
+ Jadi dua instruksi adalah hal ini di atas. 
+
+1294
+00:53:58,860 --> 00:54:01,980
+ Jadi, kita baru saja membicarakan, mengapa perlu memastikan ini, 
+
+1295
+00:54:01,980 --> 00:54:05,100
+ sehingga Anda tidak melompat ke tengah-tengah beberapa instruksi, 
+
+1296
+00:54:05,100 --> 00:54:09,542
+ atau entah bagaimana dipanggil [TIDAK JELAS], dan sebagainya. 
+
+1297
+00:54:09,542 --> 00:54:11,530
+ Masuk akal? 
+
+1298
+00:54:11,530 --> 00:54:12,620
+ Baiklah. 
+
+1299
+00:54:12,620 --> 00:54:14,430
+ Jadi apa yang terjadi dengan C4? 
+
+1300
+00:54:14,430 --> 00:54:22,680
+ Pada dasarnya Anda harus padam dua batas halaman dengan berhenti 
+
+1301
+00:54:22,680 --> 00:54:24,720
+ petunjuk. 
+
+1302
+00:54:24,720 --> 00:54:28,185
+ Mengapa mereka ingin memindahkan binary mereka dengan berhenti? 
+
+1303
+00:54:28,185 --> 00:54:31,000
+
+
+1304
+00:54:31,000 --> 00:54:32,332
+ Ada ide? 
+
+1305
+00:54:32,332 --> 00:54:33,876
+ Ya? 
+
+1306
+00:54:33,876 --> 00:54:34,792
+ AUDIENCE: [TIDAK JELAS]. 
+
+1307
+00:54:34,792 --> 00:54:41,680
+
+
+1308
+00:54:41,680 --> 00:54:46,360
+ PROFESOR: Ya, saya pikir - jadi saya harus akui, 
+
+1309
+00:54:46,360 --> 00:54:48,300
+ Saya tidak memiliki jawaban yang jelas mengapa C4 ada. 
+
+1310
+00:54:48,300 --> 00:54:49,674
+ Tapi saya kira itu kira-kira seperti apa Anda 
+
+1311
+00:54:49,674 --> 00:54:52,650
+ katakanlah, yaitu bahwa jika Anda-- kode secara alami 
+
+1312
+00:54:52,650 --> 00:54:53,685
+ berhenti di beberapa titik. 
+
+1313
+00:54:53,685 --> 00:54:54,946
+ Ada akhirnya. 
+
+1314
+00:54:54,946 --> 00:54:56,320
+ Dan pertanyaannya adalah, apa yang terjadi 
+
+1315
+00:54:56,320 --> 00:54:59,670
+ ketika Anda terus mengeksekusinya, dan Anda mencapai akhir? 
+
+1316
+00:54:59,670 --> 00:55:02,570
+ Maka prosesor mungkin terus mengeksekusi ujungnya, 
+
+1317
+00:55:02,570 --> 00:55:04,445
+ dan jalankan beberapa instruksi tambahan. 
+
+1318
+00:55:04,445 --> 00:55:06,450
+ Atau mungkin membungkus dengan cara yang aneh. 
+
+1319
+00:55:06,450 --> 00:55:08,450
+ Jadi mereka hanya ingin memastikan itu ada 
+
+1320
+00:55:08,450 --> 00:55:12,085
+ tidak ada ambiguitas tentang apa yang terjadi jika Anda terus berlari 
+
+1321
+00:55:12,085 --> 00:55:14,430
+ dan kamu tidak melompat, dan kamu lari dari akhir 
+
+1322
+00:55:14,430 --> 00:55:15,690
+ dari layar instruksi. 
+
+1323
+00:55:15,690 --> 00:55:18,220
+ Jadi, pastikan saja satu-satunya jawaban di sana 
+
+1324
+00:55:18,220 --> 00:55:20,835
+ adalah jika Anda terus mengeksekusi, Anda akan berhenti, 
+
+1325
+00:55:20,835 --> 00:55:22,245
+ dan Anda akan terjebak dalam runtime, 
+
+1326
+00:55:22,245 --> 00:55:24,139
+ dan Anda akan mengakhiri modul. 
+
+1327
+00:55:24,139 --> 00:55:26,180
+ Jadi itu hanya semacam kesederhanaan dan keamanan, 
+
+1328
+00:55:26,180 --> 00:55:27,545
+ [TIDAK JELAS]. 
+
+1329
+00:55:27,545 --> 00:55:30,780
+ Saya tidak berpikir ada serangan konkret yang saya bisa 
+
+1330
+00:55:30,780 --> 00:55:31,313
+ [TIDAK JELAS]. 
+
+1331
+00:55:31,313 --> 00:55:32,229
+ AUDIENCE: [TIDAK JELAS]. 
+
+1332
+00:55:32,229 --> 00:55:35,130
+
+
+1333
+00:55:35,130 --> 00:55:35,950
+ PROFESOR: Ya. 
+
+1334
+00:55:35,950 --> 00:55:37,120
+ Tapi inilah masalahnya. 
+
+1335
+00:55:37,120 --> 00:55:39,840
+ Anda tidak bisa melompat melewati akhir. 
+
+1336
+00:55:39,840 --> 00:55:41,990
+ Jadi hal terakhir yang bisa Anda lompati 
+
+1337
+00:55:41,990 --> 00:55:44,140
+ adalah instruksi terakhir. 
+
+1338
+00:55:44,140 --> 00:55:46,460
+ Dan dengan aturan ini, instruksi itu harus dipegang. 
+
+1339
+00:55:46,460 --> 00:55:49,350
+ Jadi Anda bisa melompat ke palka, tetapi kemudian akan berada di palka. 
+
+1340
+00:55:49,350 --> 00:55:52,570
+ Dan Anda ingin melewati ujung. 
+
+1341
+00:55:52,570 --> 00:55:54,890
+ Jadi saya pikir itu hanya semacam kebersihan, 
+
+1342
+00:55:54,890 --> 00:55:58,380
+ sejauh yang saya tahu, jaminan bagi mereka untuk memastikan 
+
+1343
+00:55:58,380 --> 00:56:00,362
+ bahwa tidak ada keanehan dalam hal 
+
+1344
+00:56:00,362 --> 00:56:03,870
+ membungkus di mesin. 
+
+1345
+00:56:03,870 --> 00:56:04,850
+ Baiklah? 
+
+1346
+00:56:04,850 --> 00:56:10,000
+ Jadi C5 pada dasarnya tidak ada instruksi 
+
+1347
+00:56:10,000 --> 00:56:16,160
+ yang menjangkau batas 32 byte. 
+
+1348
+00:56:16,160 --> 00:56:18,880
+ Jadi ini semacam varian dari aturan ini 
+
+1349
+00:56:18,880 --> 00:56:22,410
+ yang kita bicarakan sebelumnya, di mana setiap kelipatan 32 
+
+1350
+00:56:22,410 --> 00:56:25,080
+ harus merupakan instruksi yang valid yang kami solder dalam pembongkaran. 
+
+1351
+00:56:25,080 --> 00:56:27,880
+ Jadi sebaliknya, kita akan melompat ke tengah instruksi 
+
+1352
+00:56:27,880 --> 00:56:30,245
+ dan memiliki masalah dengan panggilan sys itu 
+
+1353
+00:56:30,245 --> 00:56:32,050
+ yang mungkin disembunyikan di sana. 
+
+1354
+00:56:32,050 --> 00:56:32,880
+ BAIK. 
+
+1355
+00:56:32,880 --> 00:56:38,580
+ Dan kemudian kita memiliki C6, yang pada dasarnya adalah semua instruksi 
+
+1356
+00:56:38,580 --> 00:56:45,584
+ dicapai dengan pembongkaran dari awal. 
+
+1357
+00:56:45,584 --> 00:56:47,500
+ Jadi ini memastikan bahwa kita melihat setiap instruksi, 
+
+1358
+00:56:47,500 --> 00:56:49,750
+ dan kami dapat memeriksa setiap instruksi yang mungkin 
+
+1359
+00:56:49,750 --> 00:56:51,930
+ dijalankan saat runtime. 
+
+1360
+00:56:51,930 --> 00:56:55,275
+ Dan saya kira C7 pada dasarnya adalah semua lompatan langsung. 
+
+1361
+00:56:55,275 --> 00:57:00,031
+
+
+1362
+00:57:00,031 --> 00:57:00,530
+ BAIK. 
+
+1363
+00:57:00,530 --> 00:57:03,020
+ Jadi ini adalah contoh dari lompatan di sana, di mana Anda 
+
+1364
+00:57:03,020 --> 00:57:04,760
+ kode di target segera. 
+
+1365
+00:57:04,760 --> 00:57:06,680
+ Jadi tidak memiliki kelipatan 32, 
+
+1366
+00:57:06,680 --> 00:57:08,770
+ tetapi masih harus menjadi instruksi yang valid 
+
+1367
+00:57:08,770 --> 00:57:12,003
+ bahwa kita solder di kiri ke kanan pembongkaran. 
+
+1368
+00:57:12,003 --> 00:57:12,503
+ Pertanyaan? 
+
+1369
+00:57:12,503 --> 00:57:16,984
+ AUDIENCE: Jadi apa perbedaan antara C5 dan C3? 
+
+1370
+00:57:16,984 --> 00:57:17,650
+ PROFESOR: Ya. 
+
+1371
+00:57:17,650 --> 00:57:22,830
+ Jadi saya pikir C5 mengatakan bahwa jika saya memiliki instruksi 
+
+1372
+00:57:22,830 --> 00:57:29,080
+ itu beberapa byte, itu tidak bisa tetap pada batas 32 byte. 
+
+1373
+00:57:29,080 --> 00:57:32,780
+ Jadi misalkan saya memiliki aliran instruksi saya. 
+
+1374
+00:57:32,780 --> 00:57:35,900
+ Dan ini alamatnya, 32. 
+
+1375
+00:57:35,900 --> 00:57:37,960
+ Ini alamat 64. 
+
+1376
+00:57:37,960 --> 00:57:40,050
+ Dan mungkin saya memiliki semacam instruksi DAN 
+
+1377
+00:57:40,050 --> 00:57:43,060
+ semacam itu mencakup batas ini. 
+
+1378
+00:57:43,060 --> 00:57:45,120
+ Jadi inilah yang dilarang C5. 
+
+1379
+00:57:45,120 --> 00:57:46,990
+ Tidak ada instruksi yang bisa menjangkau batas ini. 
+
+1380
+00:57:46,990 --> 00:57:49,470
+ Karena jika tidak, kami melihat ini DAN instruksi. 
+
+1381
+00:57:49,470 --> 00:57:51,665
+ Tetapi karena Anda selalu bisa melompat 32 byte kelipatan, 
+
+1382
+00:57:51,665 --> 00:57:53,290
+ Anda bisa melompat ke tengah-tengah itu. 
+
+1383
+00:57:53,290 --> 00:57:55,380
+ Dan siapa yang tahu apa yang akan terjadi di sana? 
+
+1384
+00:57:55,380 --> 00:57:57,920
+ Jadi inilah yang dilarang C5 untuk itu. 
+
+1385
+00:57:57,920 --> 00:58:02,090
+ Dan C3 adalah lawannya di sisi lompat. 
+
+1386
+00:58:02,090 --> 00:58:04,560
+ Jadi C3 mengatakan bahwa setiap kali Anda melompat, 
+
+1387
+00:58:04,560 --> 00:58:07,090
+ Anda akan melompat ke kelipatan 32 byte. 
+
+1388
+00:58:07,090 --> 00:58:10,450
+ Dan C5 mengatakan bahwa semua yang Anda temukan dalam kelipatan 32 
+
+1389
+00:58:10,450 --> 00:58:13,049
+ byte adalah instruksi yang aman. 
+
+1390
+00:58:13,049 --> 00:58:14,882
+ AUDIENCE: Saya ingin tahu apakah ada redundansi 
+
+1391
+00:58:14,882 --> 00:58:15,780
+ karena [TIDAK JELAS]. 
+
+1392
+00:58:15,780 --> 00:58:17,090
+ PROFESOR: Ya, saya tidak tahu. 
+
+1393
+00:58:17,090 --> 00:58:17,550
+ Aku tidak yakin. 
+
+1394
+00:58:17,550 --> 00:58:19,900
+ Saya memiliki sedikit perasaan itu ketika membaca daftar ini. 
+
+1395
+00:58:19,900 --> 00:58:21,691
+ Sepertinya, wow, mereka semua aturan yang bagus. 
+
+1396
+00:58:21,691 --> 00:58:24,000
+ Tapi saya tidak yakin itu set minimal, non-orthonormal 
+
+1397
+00:58:24,000 --> 00:58:31,640
+ of-- atau serangkaian aturan ortonormal yang perlu Anda terapkan ini. 
+
+1398
+00:58:31,640 --> 00:58:33,550
+ Tapi ada pertanyaan lain tentang set 
+
+1399
+00:58:33,550 --> 00:58:36,650
+ pembatasan yang mereka miliki? 
+
+1400
+00:58:36,650 --> 00:58:37,680
+ Baiklah. 
+
+1401
+00:58:37,680 --> 00:58:40,869
+ Jadi saya kira mari kita pikirkan pertanyaan pekerjaan rumah ini 
+
+1402
+00:58:40,869 --> 00:58:41,910
+ bahwa kami semacam ditugaskan. 
+
+1403
+00:58:41,910 --> 00:58:43,618
+ Ternyata - saya pikir sebenarnya ada 
+
+1404
+00:58:43,618 --> 00:58:45,243
+ bug yang dimiliki oleh Klien Asli dan itu 
+
+1405
+00:58:45,243 --> 00:58:46,701
+ di kotak pasir kami di beberapa titik, yang 
+
+1406
+00:58:46,701 --> 00:58:48,510
+ adalah bahwa untuk beberapa instruksi yang rumit, 
+
+1407
+00:58:48,510 --> 00:58:52,320
+ Saya yakin mereka tidak memiliki panjang penyandian dengan benar, 
+
+1408
+00:58:52,320 --> 00:58:55,980
+ jika saya ingat dengan benar, dalam hal ini 
+
+1409
+00:58:55,980 --> 00:58:58,090
+ sesuatu yang buruk mungkin terjadi. 
+
+1410
+00:58:58,090 --> 00:58:59,880
+ Saya tidak ingat persis apa bug itu. 
+
+1411
+00:58:59,880 --> 00:59:03,100
+ Tetapi anggaplah validator kotak pasir 
+
+1412
+00:59:03,100 --> 00:59:06,792
+ mendapat panjang dari beberapa instruksi yang salah. 
+
+1413
+00:59:06,792 --> 00:59:08,590
+ Hal buruk apa yang bisa terjadi? 
+
+1414
+00:59:08,590 --> 00:59:09,860
+ Bagaimana Anda memanfaatkan ini? 
+
+1415
+00:59:09,860 --> 00:59:12,132
+ AUDIENCE: Anda dapat menyembunyikan panggilan sys atau [tidak terdengar] 
+
+1416
+00:59:12,132 --> 00:59:12,924
+ berpotensi. 
+
+1417
+00:59:12,924 --> 00:59:13,590
+ PROFESOR: Ya. 
+
+1418
+00:59:13,590 --> 00:59:17,600
+ Jadi misalkan ada beberapa varian yang mewah dari beberapa AND 
+
+1419
+00:59:17,600 --> 00:59:19,570
+ instruksi yang bisa Anda tuliskan. 
+
+1420
+00:59:19,570 --> 00:59:21,570
+ Dan mungkin validator salah 
+
+1421
+00:59:21,570 --> 00:59:23,730
+ dan berpikir bahwa, oh, pria ini sebenarnya 
+
+1422
+00:59:23,730 --> 00:59:27,370
+ enam byte, padahal kenyataannya, itu lima gigitan panjang. 
+
+1423
+00:59:27,370 --> 00:59:30,200
+ Jadi Anda bisa menjatuhkan ini, tarik ini DAN ke bawah. 
+
+1424
+00:59:30,200 --> 00:59:32,660
+ Dan kemudian validator berpikir, oh, itu enam gigitan. 
+
+1425
+00:59:32,660 --> 00:59:34,380
+ Saya akan mencari enam gigitan lebih lanjut. 
+
+1426
+00:59:34,380 --> 00:59:36,669
+ Dan saya akan memeriksa apakah ini adalah instruksi yang valid. 
+
+1427
+00:59:36,669 --> 00:59:38,460
+ Dan kita harus memastikan apa pun itu 
+
+1428
+00:59:38,460 --> 00:59:40,920
+ enam byte kemudian tampak seperti instruksi yang valid. 
+
+1429
+00:59:40,920 --> 00:59:43,450
+ Tetapi CPU itu sendiri, ketika menjalankan kode ini, 
+
+1430
+00:59:43,450 --> 00:59:45,917
+ mungkin hanya akan terlihat lima byte dari AND 
+
+1431
+00:59:45,917 --> 00:59:48,000
+ karena itulah panjang sebenarnya dari instruksi. 
+
+1432
+00:59:48,000 --> 00:59:50,730
+ Jadi, jika kita bisa menggunakan byte ekstra ini untuk melakukan panggilan sys 
+
+1433
+00:59:50,730 --> 00:59:52,480
+ instruksi, maka kita bisa dalam bisnis. 
+
+1434
+00:59:52,480 --> 00:59:58,524
+ Jadi jika kita tetap itu-- ingat dari contoh di atas di x86, 
+
+1435
+00:59:58,524 --> 01:00:00,190
+ OXCD adalah cara Anda membuat instruksi DAN. 
+
+1436
+01:00:00,190 --> 01:00:05,050
+ Jadi jika kita menempelkan byte CD di akhir AND itu, 
+
+1437
+01:00:05,050 --> 01:00:06,870
+ maka mungkin kita bisa meletakkan sesuatu di sini 
+
+1438
+01:00:06,870 --> 01:00:08,859
+ yang terlihat seperti instruksi tetapi sebenarnya 
+
+1439
+01:00:08,859 --> 01:00:11,080
+ akan menjadi bagian dari instruksi DAN di sini. 
+
+1440
+01:00:11,080 --> 01:00:13,310
+ Dan kemudian kita bisa tiba-tiba membuat panggilan sys 
+
+1441
+01:00:13,310 --> 01:00:16,433
+ dan melarikan diri dari kotak pasir batin. 
+
+1442
+01:00:16,433 --> 01:00:17,415
+ Masuk akal? 
+
+1443
+01:00:17,415 --> 01:00:20,380
+ Ada pertanyaan? 
+
+1444
+01:00:20,380 --> 01:00:22,755
+ Jadi validator di Native Client 
+
+1445
+01:00:22,755 --> 01:00:24,330
+ harus benar-benar sinkron dengan apa 
+
+1446
+01:00:24,330 --> 01:00:27,400
+ CPU melakukan karena itu semacam menebak, baik, inilah 
+
+1447
+01:00:27,400 --> 01:00:29,900
+ persis bagaimana CPU akan menafsirkan setiap instruksi. 
+
+1448
+01:00:29,900 --> 01:00:32,746
+ Itu harus tepat di setiap tingkat di sini. 
+
+1449
+01:00:32,746 --> 01:00:35,477
+ Jadi itu akan sedikit sulit untuk dilakukan. 
+
+1450
+01:00:35,477 --> 01:00:37,560
+ Tetapi sebenarnya ada beberapa bug yang menarik lainnya 
+
+1451
+01:00:37,560 --> 01:00:39,300
+ di Native Client yang telah ditemukan orang. 
+
+1452
+01:00:39,300 --> 01:00:42,040
+ Satu, saya pikir, ada hubungannya dengan tidak benar-benar membersihkan 
+
+1453
+01:00:42,040 --> 01:00:45,390
+ lingkungan CPU saat Anda melompat ke tepercaya 
+
+1454
+01:00:45,390 --> 01:00:46,270
+ runtime layanan. 
+
+1455
+01:00:46,270 --> 01:00:48,020
+ Saya kira kita akan membicarakan ini sebentar lagi. 
+
+1456
+01:00:48,020 --> 01:00:50,213
+ Tetapi runtime layanan tepercaya adalah 
+
+1457
+01:00:50,213 --> 01:00:52,212
+ pada dasarnya akan berjalan dengan set yang sama 
+
+1458
+01:00:52,212 --> 01:00:55,400
+ CPU awalnya mendaftar bahwa modul yang tidak dipercaya adalah 
+
+1459
+01:00:55,400 --> 01:00:56,496
+ berjalan dengan. 
+
+1460
+01:00:56,496 --> 01:00:58,120
+ Jadi jika ada sesuatu yang terlupakan 
+
+1461
+01:00:58,120 --> 01:01:02,230
+ untuk menghapus atau mengatur ulang atau yang lainnya, maka layanan tepercaya 
+
+1462
+01:01:02,230 --> 01:01:05,070
+ runtime dapat diakali untuk melakukan sesuatu 
+
+1463
+01:01:05,070 --> 01:01:07,980
+ yang tidak dimaksudkan untuk dilakukan, atau para pengembang 
+
+1464
+01:01:07,980 --> 01:01:11,330
+ tidak ingin melakukannya pada awalnya. 
+
+1465
+01:01:11,330 --> 01:01:12,489
+ BAIK. 
+
+1466
+01:01:12,489 --> 01:01:13,030
+ Jadi mari kita lihat. 
+
+1467
+01:01:13,030 --> 01:01:13,910
+ Dimana kita sekarang? 
+
+1468
+01:01:13,910 --> 01:01:15,780
+ Jadi apa yang kita pahami sekarang adalah kasar 
+
+1469
+01:01:15,780 --> 01:01:17,820
+ bagaimana kita bisa membongkar semua instruksi 
+
+1470
+01:01:17,820 --> 01:01:19,860
+ dan bagaimana mencegah instruksi yang tidak diizinkan. 
+
+1471
+01:01:19,860 --> 01:01:24,860
+ Jadi sekarang mari kita lihat, bagaimana kita menyimpan ingatan dan referensi 
+
+1472
+01:01:24,860 --> 01:01:29,550
+ untuk kedua kode dan data dalam batas-batas modul? 
+
+1473
+01:01:29,550 --> 01:01:32,855
+ Jadi untuk alasan kinerja, para pengguna Native Client sebenarnya 
+
+1474
+01:01:32,855 --> 01:01:34,230
+ mulai menggunakan beberapa dukungan perangkat keras 
+
+1475
+01:01:34,230 --> 01:01:36,810
+ pada titik ini untuk memastikan ini benar-benar 
+
+1476
+01:01:36,810 --> 01:01:38,430
+ tidak memaksakan banyak overhead. 
+
+1477
+01:01:38,430 --> 01:01:40,664
+ Tetapi sebelum kita melihat dukungan perangkat keras yang mereka gunakan, 
+
+1478
+01:01:40,664 --> 01:01:43,330
+ apakah ada yang punya saran bagaimana kita bisa melakukannya sebenarnya 
+
+1479
+01:01:43,330 --> 01:01:44,538
+ tanpa dukungan perangkat keras apa pun? 
+
+1480
+01:01:44,538 --> 01:01:48,430
+ Bisakah kita hanya menegakkan semua akses memori 
+
+1481
+01:01:48,430 --> 01:01:52,085
+ akan terikat dengan mesin yang kita miliki sejauh ini? 
+
+1482
+01:01:52,085 --> 01:01:53,015
+ Ya. 
+
+1483
+01:01:53,015 --> 01:01:56,070
+ AUDIENCE: Anda dapat memainkan instruksinya 
+
+1484
+01:01:56,070 --> 01:01:57,370
+ untuk membersihkan semua bit yang lebih tinggi. 
+
+1485
+01:01:57,370 --> 01:01:58,370
+ PROFESOR: Benar. 
+
+1486
+01:01:58,370 --> 01:01:58,500
+ Ya. 
+
+1487
+01:01:58,500 --> 01:02:01,080
+ Jadi sebenarnya kita melihat bahwa kita memiliki instruksi ini di sini, 
+
+1488
+01:02:01,080 --> 01:02:02,980
+ yang setiap kali kita, misalnya, 
+
+1489
+01:02:02,980 --> 01:02:05,770
+ lompat ke suatu tempat, sekarang, kita bersihkan bit rendah. 
+
+1490
+01:02:05,770 --> 01:02:08,310
+ Tetapi jika kita ingin menyimpan semua kode yang mungkin bahwa Anda 
+
+1491
+01:02:08,310 --> 01:02:11,580
+ mengeksekusi dalam 256 Meg rendah, 
+
+1492
+01:02:11,580 --> 01:02:13,330
+ maka Anda bisa mengganti ini dengan 0. 
+
+1493
+01:02:13,330 --> 01:02:16,830
+ Jadi kita akhiri dengan 0ffffe0. 
+
+1494
+01:02:16,830 --> 01:02:21,521
+ Jadi ini membersihkan bit rendah dan juga membatasi paling banyak 256 Meg. 
+
+1495
+01:02:21,521 --> 01:02:23,645
+ Jadi ini persis seperti yang Anda sarankan 
+
+1496
+01:02:23,645 --> 01:02:26,720
+ dan memastikan bahwa kapan pun Anda melompat, 
+
+1497
+01:02:26,720 --> 01:02:29,940
+ Anda mengatakan dalam 256 Meg rendah. 
+
+1498
+01:02:29,940 --> 01:02:34,420
+ Dan fakta bahwa kami melakukan pembongkaran, 
+
+1499
+01:02:34,420 --> 01:02:36,890
+ Anda juga dapat memeriksa semua lompatan langsung, 
+
+1500
+01:02:36,890 --> 01:02:39,030
+ bahwa mereka semua terikat. 
+
+1501
+01:02:39,030 --> 01:02:40,414
+ Dan itu sebenarnya tidak terlalu buruk. 
+
+1502
+01:02:40,414 --> 01:02:42,330
+ Alasan saya pikir mereka tidak melakukan ini untuk kode 
+
+1503
+01:02:42,330 --> 01:02:46,340
+ karena di x86 Anda dapat dengan sangat efisien menyandikan AND di mana 
+
+1504
+01:02:46,340 --> 01:02:47,820
+ semua bit teratas adalah 1. 
+
+1505
+01:02:47,820 --> 01:02:50,490
+ Jadi ini ternyata, saya pikir, 
+
+1506
+01:02:50,490 --> 01:02:53,185
+ pada dasarnya instruksi 3 byte untuk AND, 
+
+1507
+01:02:53,185 --> 01:02:55,410
+ dan instruksi 2 byte untuk lompatan. 
+
+1508
+01:02:55,410 --> 01:02:57,270
+ Jadi overhead adalah, seperti, 3 byte lagi. 
+
+1509
+01:02:57,270 --> 01:03:00,260
+ Tetapi jika Anda ingin memiliki bit non-1 yang tinggi, 
+
+1510
+01:03:00,260 --> 01:03:02,830
+ maka ini sebenarnya adalah instruksi 5 byte tiba-tiba. 
+
+1511
+01:03:02,830 --> 01:03:04,240
+ Jadi saya pikir mereka khawatir sedikit tentang overhead 
+
+1512
+01:03:04,240 --> 01:03:05,500
+ sini. 
+
+1513
+01:03:05,500 --> 01:03:06,287
+ Pertanyaan? 
+
+1514
+01:03:06,287 --> 01:03:07,870
+ AUDIENCE: Apakah tidak ada masalah juga 
+
+1515
+01:03:07,870 --> 01:03:09,661
+ Anda mungkin memiliki beberapa instruksi yang 
+
+1516
+01:03:09,661 --> 01:03:11,840
+ menaikkan versi apa yang Anda coba dapatkan? 
+
+1517
+01:03:11,840 --> 01:03:14,020
+ Jadi Anda mungkin mengatakan - instruksi Anda 
+
+1518
+01:03:14,020 --> 01:03:16,187
+ mungkin memiliki offset konstan atau sesuatu seperti itu. 
+
+1519
+01:03:16,187 --> 01:03:17,478
+ PROFESOR: Yah, saya pikir, ya. 
+
+1520
+01:03:17,478 --> 01:03:19,240
+ Anda mungkin akan melarang instruksi 
+
+1521
+01:03:19,240 --> 01:03:21,990
+ yang melompat ke beberapa rumus rumit dari sebuah alamat. 
+
+1522
+01:03:21,990 --> 01:03:24,520
+ Jadi Anda hanya akan mendukung instruksi yang melompat secara langsung 
+
+1523
+01:03:24,520 --> 01:03:25,540
+ untuk nilai ini. 
+
+1524
+01:03:25,540 --> 01:03:28,262
+ Dan nilai ini selalu mendapat ANDed dan-- 
+
+1525
+01:03:28,262 --> 01:03:30,470
+ AUDIENCE: Ini lebih untuk mengakses memori daripada-- 
+
+1526
+01:03:30,470 --> 01:03:31,136
+ PROFESOR: Ya. 
+
+1527
+01:03:31,136 --> 01:03:33,600
+ Jadi itu poin yang bagus karena ini hanya kode. 
+
+1528
+01:03:33,600 --> 01:03:37,060
+ Dan untuk akses memori, ada banyak cara aneh di x86 
+
+1529
+01:03:37,060 --> 01:03:40,330
+ untuk merujuk ke lokasi memori tertentu. 
+
+1530
+01:03:40,330 --> 01:03:43,070
+ Dalam hal ini, pada dasarnya Anda harus menghitung dulu memori 
+
+1531
+01:03:43,070 --> 01:03:47,560
+ lokasi, lalu masukkan ekstra dan, lalu lakukan akses. 
+
+1532
+01:03:47,560 --> 01:03:50,210
+ Dan saya pikir itulah alasan sebenarnya mengapa mereka sebenarnya 
+
+1533
+01:03:50,210 --> 01:03:52,210
+ sangat khawatir tentang overhead kinerja 
+
+1534
+01:03:52,210 --> 01:03:54,020
+ instrumentasi ini. 
+
+1535
+01:03:54,020 --> 01:03:56,426
+ Jadi pada x86, setidaknya pada 32-bit, yang mana 
+
+1536
+01:03:56,426 --> 01:03:59,050
+ adalah apa yang dibicarakan makalah ini, mereka benar-benar menggunakan beberapa perangkat keras 
+
+1537
+01:03:59,050 --> 01:04:03,060
+ mendukung sebagai gantinya untuk membatasi kode dan data 
+
+1538
+01:04:03,060 --> 01:04:07,330
+ alamat yang dapat dipercaya oleh modul yang tidak dipercaya. 
+
+1539
+01:04:07,330 --> 01:04:11,810
+ Jadi ini benar-benar memanfaatkan beberapa perangkat keras yang agak esoterik 
+
+1540
+01:04:11,810 --> 01:04:12,980
+ di x86. 
+
+1541
+01:04:12,980 --> 01:04:16,320
+ Jadi mari kita lihat apa yang terlihat seperti dulu sebelum kita mulai 
+
+1542
+01:04:16,320 --> 01:04:17,932
+ mencari tahu bagaimana kami akan menggunakannya 
+
+1543
+01:04:17,932 --> 01:04:21,240
+ ke sandbox modul berikutnya. 
+
+1544
+01:04:21,240 --> 01:04:24,650
+ Jadi perangkat keras ini disebut segmentasi. 
+
+1545
+01:04:24,650 --> 01:04:28,220
+ Ini semacam sisa dari hari-hari sebelum x86 
+
+1546
+01:04:28,220 --> 01:04:30,650
+ sebenarnya bahkan memiliki paging. 
+
+1547
+01:04:30,650 --> 01:04:40,080
+ Jadi cara kerjanya sebenarnya ada segmentasi di x86. 
+
+1548
+01:04:40,080 --> 01:04:44,170
+ Cara kerjanya adalah bahwa setiap kali sebuah proses sedang berjalan, 
+
+1549
+01:04:44,170 --> 01:04:49,830
+ sebenarnya ada meja yang dikelola oleh perangkat keras. 
+
+1550
+01:04:49,830 --> 01:04:52,450
+ Mari kita menyebutnya tabel deskriptor segmen. 
+
+1551
+01:04:52,450 --> 01:04:59,324
+
+
+1552
+01:04:59,324 --> 01:05:02,610
+ Dan apa yang dimiliki tabel ini hanyalah sekumpulan segmen, 
+
+1553
+01:05:02,610 --> 01:05:05,670
+ bernomor dari 0 hingga apa pun ukuran meja 
+
+1554
+01:05:05,670 --> 01:05:08,350
+ adalah, semacam deskriptor file di Unix. 
+
+1555
+01:05:08,350 --> 01:05:11,870
+ Kecuali setiap entri memiliki dua nilai di dalamnya, 
+
+1556
+01:05:11,870 --> 01:05:16,050
+ semacam pangkalan dan panjang. 
+
+1557
+01:05:16,050 --> 01:05:19,110
+ Dan sama untuk setiap entri, dasar dan panjang. 
+
+1558
+01:05:19,110 --> 01:05:21,720
+
+
+1559
+01:05:21,720 --> 01:05:22,220
+ BAIK. 
+
+1560
+01:05:22,220 --> 01:05:24,790
+ Jadi apa yang dilakukan tabel ini adalah memberitahu kita 
+
+1561
+01:05:24,790 --> 01:05:27,040
+ bahwa kita memiliki beberapa segmen. 
+
+1562
+01:05:27,040 --> 01:05:30,070
+ Dan kapan pun kita merujuk ke segmen tertentu, apa 
+
+1563
+01:05:30,070 --> 01:05:33,140
+ ini dalam arti berarti adalah bahwa kita 
+
+1564
+01:05:33,140 --> 01:05:37,380
+ berbicara tentang sepotong memori yang dimulai pada basis alamat 
+
+1565
+01:05:37,380 --> 01:05:42,140
+ dan pergi untuk panjang ini dari dasar itu ke atas. 
+
+1566
+01:05:42,140 --> 01:05:43,640
+ Dan cara ini benar-benar membantu 
+
+1567
+01:05:43,640 --> 01:05:47,190
+ kami untuk menegakkan batas memori adalah bahwa pada x86, 
+
+1568
+01:05:47,190 --> 01:05:51,530
+ setiap instruksi tunggal dalam satu atau lain cara, 
+
+1569
+01:05:51,530 --> 01:05:53,050
+ setiap kali berbicara tentang ingatan, 
+
+1570
+01:05:53,050 --> 01:05:55,150
+ sebenarnya berbicara tentang memori dengan hormat 
+
+1571
+01:05:55,150 --> 01:05:58,820
+ ke segmen tertentu dalam tabel ini. 
+
+1572
+01:05:58,820 --> 01:06:02,366
+ Jadi misalnya, ketika Anda benar-benar melakukan sesuatu seperti bergerak 
+
+1573
+01:06:02,366 --> 01:06:09,130
+ nilai memori dari pointer yang disimpan dalam register EAX 
+
+1574
+01:06:09,130 --> 01:06:12,400
+ menjadi mungkin pointer lain yang tersimpan di EBX 
+
+1575
+01:06:12,400 --> 01:06:16,127
+ daftar, apa yang Anda pikir itu adalah angka keluar, baik, 
+
+1576
+01:06:16,127 --> 01:06:16,960
+ apa alamat ini? 
+
+1577
+01:06:16,960 --> 01:06:18,050
+ Ia tahu memori di alamat ini. 
+
+1578
+01:06:18,050 --> 01:06:20,091
+ Dan kemudian angka keluar, OK, apa alamat ini? 
+
+1579
+01:06:20,091 --> 01:06:21,700
+ Dan itu menyimpan nilai di sana. 
+
+1580
+01:06:21,700 --> 01:06:25,680
+ Namun kenyataannya di x86, kapan pun Anda berbicara tentang memori, 
+
+1581
+01:06:25,680 --> 01:06:27,900
+ ada implisit-- apa yang disebut segmen 
+
+1582
+01:06:27,900 --> 01:06:30,822
+ deskriptor, yang sejenis seperti deskriptor file di Unix. 
+
+1583
+01:06:30,822 --> 01:06:33,744
+ Ini hanya sebuah indeks ke tabel deskriptor ini. 
+
+1584
+01:06:33,744 --> 01:06:36,450
+ Dan kecuali ditentukan lain, setiap opcode 
+
+1585
+01:06:36,450 --> 01:06:38,490
+ memiliki segmen default di dalamnya. 
+
+1586
+01:06:38,490 --> 01:06:40,946
+ Jadi ketika Anda sedang bergerak, ini 
+
+1587
+01:06:40,946 --> 01:06:45,470
+ sebenarnya relatif terhadap DS atau register segmen data. 
+
+1588
+01:06:45,470 --> 01:06:47,790
+ Jadi itu seperti daftar khusus di CPU Anda 
+
+1589
+01:06:47,790 --> 01:06:51,250
+ itu adalah bilangan bulat 16-bit, jika saya ingat dengan benar. 
+
+1590
+01:06:51,250 --> 01:06:55,020
+ Dan itu bilangan bulat 16-bit menunjuk ke tabel deskripsi. 
+
+1591
+01:06:55,020 --> 01:06:55,810
+ Dan hal yang sama di sini. 
+
+1592
+01:06:55,810 --> 01:06:59,370
+ Ini sebenarnya relatif terhadap pemilih segmen DS. 
+
+1593
+01:06:59,370 --> 01:07:02,690
+ Sebenarnya, sekelompok orang-orang ini adalah 6 segmen pemilih di x86. 
+
+1594
+01:07:02,690 --> 01:07:10,740
+ Ada pemilih kode CS, DS, ES, FS, GS, dan SS. 
+
+1595
+01:07:10,740 --> 01:07:14,709
+ Dan pemilih kode semacam secara implisit 
+
+1596
+01:07:14,709 --> 01:07:16,000
+ digunakan untuk mengambil instruksi. 
+
+1597
+01:07:16,000 --> 01:07:18,360
+ Jadi jika penunjuk instruksi Anda menunjuk ke suatu tempat, 
+
+1598
+01:07:18,360 --> 01:07:22,300
+ itu sebenarnya relatif terhadap apa yang dikatakan pemilih segmen CS. 
+
+1599
+01:07:22,300 --> 01:07:26,620
+ Dan sebagian besar referensi data secara implisit menggunakan DS atau ES. 
+
+1600
+01:07:26,620 --> 01:07:28,890
+ Dan kemudian FS dan GS adalah beberapa hal khusus. 
+
+1601
+01:07:28,890 --> 01:07:30,920
+ Dan SS selalu digunakan untuk operasi stack. 
+
+1602
+01:07:30,920 --> 01:07:33,020
+ Jika Anda mendorong dan pop, mereka secara implisit 
+
+1603
+01:07:33,020 --> 01:07:35,625
+ datang dari pemilih segmen ini. 
+
+1604
+01:07:35,625 --> 01:07:38,400
+ Ini adalah mesin yang cukup barok, tetapi ternyata 
+
+1605
+01:07:38,400 --> 01:07:41,270
+ menjadi sangat berguna untuk kasus penggunaan khusus ini 
+
+1606
+01:07:41,270 --> 01:07:46,630
+ karena yang terjadi adalah jika Anda mengakses beberapa alamat di mungkin 
+
+1607
+01:07:46,630 --> 01:07:53,390
+ beberapa selector DS: beberapa offset atau beberapa alamat di sini, apa 
+
+1608
+01:07:53,390 --> 01:07:57,250
+ hardware sebenarnya akan menerjemahkannya ke-- baik, 
+
+1609
+01:07:57,250 --> 01:07:59,680
+ itu akan menempatkan alamat ini, dan itu akan 
+
+1610
+01:07:59,680 --> 01:08:07,140
+ tambahkan tabel DS, dasar untuk orang ini. 
+
+1611
+01:08:07,140 --> 01:08:10,730
+ Dan itu benar-benar akan mengambil modulo alamat 
+
+1612
+01:08:10,730 --> 01:08:13,880
+ panjang dari meja yang sama. 
+
+1613
+01:08:13,880 --> 01:08:16,390
+ Jadi kapanpun Anda melakukan akses memori, 
+
+1614
+01:08:16,390 --> 01:08:20,002
+ itu benar-benar akan memiliki basis pemilih segmen Anda, 
+
+1615
+01:08:20,002 --> 01:08:23,200
+ semacam entri tabel deskriptor, dan ambil alamat Anda 
+
+1616
+01:08:23,200 --> 01:08:25,250
+ bahwa Anda sebenarnya menentukan dan memodifikasinya 
+
+1617
+01:08:25,250 --> 01:08:28,390
+ dengan panjang segmen yang sesuai. 
+
+1618
+01:08:28,390 --> 01:08:29,689
+ Apakah ini masuk akal? 
+
+1619
+01:08:29,689 --> 01:08:32,750
+ Ini sedikit barok, tapi itulah yang [TIDAK JELAS]. 
+
+1620
+01:08:32,750 --> 01:08:34,729
+ AUDIENCE: Jadi mengapa ini tidak digunakan, misalnya, 
+
+1621
+01:08:34,729 --> 01:08:36,333
+ untuk perlindungan penyangga? 
+
+1622
+01:08:36,334 --> 01:08:37,000
+ PROFESOR: Ya. 
+
+1623
+01:08:37,000 --> 01:08:37,874
+ Ini pertanyaan yang bagus. 
+
+1624
+01:08:37,874 --> 01:08:39,709
+ Jadi bisakah kamu menggunakan ini untuk melindungi 
+
+1625
+01:08:39,709 --> 01:08:40,750
+ terhadap buffer overflows? 
+
+1626
+01:08:40,750 --> 01:08:43,729
+
+
+1627
+01:08:43,729 --> 01:08:44,910
+ Apa rencananya? 
+
+1628
+01:08:44,910 --> 01:08:48,760
+ Anda pada dasarnya dapat mengatur - untuk setiap buffer yang Anda miliki, 
+
+1629
+01:08:48,760 --> 01:08:51,080
+ Anda bisa meletakkan basis penyangga di sini. 
+
+1630
+01:08:51,080 --> 01:08:53,892
+ Anda dapat menempatkan ukuran buffer di sana. 
+
+1631
+01:08:53,892 --> 01:08:55,892
+ AUDIENCE: Bagaimana jika Anda tidak perlu menaruhnya di sana 
+
+1632
+01:08:55,892 --> 01:08:57,183
+ sebelum Anda ingin menulisnya? 
+
+1633
+01:08:57,183 --> 01:08:58,890
+ Anda tidak akan membutuhkannya terus-menerus. 
+
+1634
+01:08:58,890 --> 01:08:59,569
+ PROFESOR: Ya. 
+
+1635
+01:08:59,569 --> 01:09:01,250
+ Jadi saya pikir alasan bahwa ini bukan 
+
+1636
+01:09:01,250 --> 01:09:03,910
+ digunakan begitu banyak untuk melindungi terhadap buffer overflows 
+
+1637
+01:09:03,910 --> 01:09:09,140
+ adalah bahwa tabel ini memiliki paling banyak 2 hingga 16 entri 
+
+1638
+01:09:09,140 --> 01:09:11,604
+ karena pendeskripsi ini sebenarnya 16 bit panjang. 
+
+1639
+01:09:11,604 --> 01:09:14,379
+ Dan faktanya, beberapa bit digunakan untuk hal-hal lain. 
+
+1640
+01:09:14,380 --> 01:09:18,010
+ Jadi sebenarnya, saya pikir Anda hanya dapat menempel 2 dari 13 entri di sini. 
+
+1641
+01:09:18,010 --> 01:09:21,584
+ Jadi jika Anda memiliki lebih dari 2 hingga 13 ukuran variabel 
+
+1642
+01:09:21,584 --> 01:09:24,450
+ hal-hal dalam kode Anda, maka itu mungkin 
+
+1643
+01:09:24,450 --> 01:09:26,130
+ akan meluap tabel ini. 
+
+1644
+01:09:26,130 --> 01:09:27,630
+ Itu sebenarnya agak aneh 
+
+1645
+01:09:27,630 --> 01:09:29,339
+ bagi kompilator untuk memanipulasi tabel ini 
+
+1646
+01:09:29,339 --> 01:09:30,962
+ karena cara Anda benar-benar memanipulasi 
+
+1647
+01:09:30,962 --> 01:09:32,139
+ melalui sistem panggilan. 
+
+1648
+01:09:32,140 --> 01:09:33,899
+ Jadi Anda tidak bisa langsung menulis ke tabel ini. 
+
+1649
+01:09:33,899 --> 01:09:36,060
+ Anda harus mengeluarkan panggilan sistem ke sistem operasi. 
+
+1650
+01:09:36,060 --> 01:09:37,934
+ Dan sistem operasi akan menarik tabel ini 
+
+1651
+01:09:37,934 --> 01:09:39,800
+ ke dalam perangkat keras untuk Anda. 
+
+1652
+01:09:39,800 --> 01:09:42,040
+ Jadi saya pikir kebanyakan compiler tidak 
+
+1653
+01:09:42,040 --> 01:09:46,550
+ susah-susah memiliki kisah rumit ini untuk mengelola buffer. 
+
+1654
+01:09:46,550 --> 01:09:47,890
+ Multex sebenarnya melakukan ini. 
+
+1655
+01:09:47,890 --> 01:09:50,673
+ Jadi, di Multex, Anda sebenarnya memiliki 2 
+
+1656
+01:09:50,673 --> 01:09:54,902
+ ke 18 segmen yang berbeda dan 2 hingga 18 kemungkinan offset 
+
+1657
+01:09:54,902 --> 01:09:55,610
+ dalam suatu segmen. 
+
+1658
+01:09:55,610 --> 01:09:58,270
+ Dan setiap chunk perpustakaan bersama yang mungkin 
+
+1659
+01:09:58,270 --> 01:10:00,020
+ atau potongan memori adalah segmen yang berbeda. 
+
+1660
+01:10:00,020 --> 01:10:02,240
+ Dan kemudian mereka semua akan dicentang, 
+
+1661
+01:10:02,240 --> 01:10:04,134
+ tidak mungkin di level variabel. 
+
+1662
+01:10:04,134 --> 01:10:04,634
+ Tetapi tetap saja. 
+
+1663
+01:10:04,634 --> 01:10:05,286
+ Ya. 
+
+1664
+01:10:05,286 --> 01:10:07,119
+ AUDIENCE: Agaknya, itu juga sedikit lebih lambat 
+
+1665
+01:10:07,119 --> 01:10:09,110
+ jika Anda harus memasuki kernel sepanjang waktu untuk-- 
+
+1666
+01:10:09,110 --> 01:10:09,455
+ PROFESOR: Benar. 
+
+1667
+01:10:09,455 --> 01:10:09,955
+ Ya. 
+
+1668
+01:10:09,955 --> 01:10:11,330
+ Jadi ada juga biaya overhead. 
+
+1669
+01:10:11,330 --> 01:10:13,610
+ Saya kira untuk mengatur ini, akan ada beberapa overhead. 
+
+1670
+01:10:13,610 --> 01:10:16,390
+ Atau jika Anda membuat buffer baru di stack, tiba-tiba, 
+
+1671
+01:10:16,390 --> 01:10:20,510
+ Anda harus memanggil orang ini dan menambahkan ekstra. 
+
+1672
+01:10:20,510 --> 01:10:22,150
+ Jadi ya, ini mesin yang bagus. 
+
+1673
+01:10:22,150 --> 01:10:25,287
+ Tapi itu sebagian besar digunakan untuk hal-hal butiran kasar 
+
+1674
+01:10:25,287 --> 01:10:28,269
+ karena biaya overhead untuk mengubahnya sedikit. 
+
+1675
+01:10:28,269 --> 01:10:30,750
+ Masuk akal? 
+
+1676
+01:10:30,750 --> 01:10:31,250
+ Baiklah. 
+
+1677
+01:10:31,250 --> 01:10:32,680
+ Jadi berapa banyak dari mereka yang benar-benar digunakan 
+
+1678
+01:10:32,680 --> 01:10:33,971
+ sekarang mesin segmentasi? 
+
+1679
+01:10:33,971 --> 01:10:36,633
+ Anda bisa menebak bagaimana cara kerjanya. 
+
+1680
+01:10:36,633 --> 01:10:38,910
+ Saya kira secara default semua segmen ini di x86 
+
+1681
+01:10:38,910 --> 01:10:41,267
+ memiliki basis 0 dan panjang 2 hingga 32. 
+
+1682
+01:10:41,267 --> 01:10:43,100
+ Jadi Anda dapat mengakses seluruh rentang memori 
+
+1683
+01:10:43,100 --> 01:10:44,730
+ Anda mungkin ingin. 
+
+1684
+01:10:44,730 --> 01:10:48,120
+ Jadi untuk Native Client, apa yang mereka lakukan adalah kode dalam basis 0 
+
+1685
+01:10:48,120 --> 01:10:52,520
+ dan panjang 256 Meg. 
+
+1686
+01:10:52,520 --> 01:10:56,680
+ Dan kemudian mereka menunjukkan keenam segmen ini 
+
+1687
+01:10:56,680 --> 01:11:01,070
+ pemilih mendaftar ke entri ini untuk wilayah 256 Meg. 
+
+1688
+01:11:01,070 --> 01:11:03,700
+ Jadi kapanpun perangkat keras melakukan akses memori, 
+
+1689
+01:11:03,700 --> 01:11:04,700
+ itu akan memodifikasinya. 
+
+1690
+01:11:04,700 --> 01:11:06,410
+ Offsetnya adalah 256 Meg. 
+
+1691
+01:11:06,410 --> 01:11:10,850
+ Jadi itu akan dibatasi pada kisaran 256 Meg memori itu 
+
+1692
+01:11:10,850 --> 01:11:14,040
+ diizinkan untuk modul ke [TIDAK JELAS] modifikasi. 
+
+1693
+01:11:14,040 --> 01:11:16,360
+ Masuk akal? 
+
+1694
+01:11:16,360 --> 01:11:17,850
+ Baiklah. 
+
+1695
+01:11:17,850 --> 01:11:21,370
+ Jadi saya kira kita agak kurang mengerti sekarang perangkat keras ini 
+
+1696
+01:11:21,370 --> 01:11:25,745
+ mendukung dan bagaimana ini bekerja dan bagaimana Anda akhirnya bisa melakukannya 
+
+1697
+01:11:25,745 --> 01:11:28,070
+ pemilih segmen kekayaan. 
+
+1698
+01:11:28,070 --> 01:11:31,590
+ Jadi jika kita hanya melaksanakan rencana ini, 
+
+1699
+01:11:31,590 --> 01:11:33,380
+ apakah ada sesuatu yang bisa salah? 
+
+1700
+01:11:33,380 --> 01:11:37,160
+ Bisakah kita keluar dari pemilih segmen 
+
+1701
+01:11:37,160 --> 01:11:38,440
+ dalam modul yang tidak terpercaya? 
+
+1702
+01:11:38,440 --> 01:11:41,170
+
+
+1703
+01:11:41,170 --> 01:11:43,640
+ Saya kira satu hal yang harus diwaspadai 
+
+1704
+01:11:43,640 --> 01:11:46,534
+ karena register ini sama seperti register biasa. 
+
+1705
+01:11:46,534 --> 01:11:48,700
+ Dan Anda benar-benar dapat memindahkan nilai masuk dan keluar dari mereka. 
+
+1706
+01:11:48,700 --> 01:11:51,630
+ Jadi Anda harus memastikan bahwa modul yang tidak dipercaya tidak 
+
+1707
+01:11:51,630 --> 01:11:54,220
+ mengutak-atik register ini, pemilih segmen, 
+
+1708
+01:11:54,220 --> 01:11:56,535
+ karena di suatu tempat di meja deskriptor Anda 
+
+1709
+01:11:56,535 --> 01:11:59,830
+ juga merupakan pendeskripsi segmen asli 
+
+1710
+01:11:59,830 --> 01:12:02,295
+ untuk seluruh proses Anda, yang memiliki basis 0 
+
+1711
+01:12:02,295 --> 01:12:04,560
+ dan panjang 2 hingga 32. 
+
+1712
+01:12:04,560 --> 01:12:06,520
+ Jadi, jika modul yang tidak dipercaya entah bagaimana bisa 
+
+1713
+01:12:06,520 --> 01:12:10,120
+ ubah CS atau DS atau ES atau salah satu dari orang-orang ini 
+
+1714
+01:12:10,120 --> 01:12:14,890
+ untuk menunjuk ke sistem operasi asli ini 
+
+1715
+01:12:14,890 --> 01:12:16,370
+ mencakup seluruh ruang alamat Anda, 
+
+1716
+01:12:16,370 --> 01:12:18,578
+ maka Anda bisa melakukan referensi memori dengan hormat 
+
+1717
+01:12:18,578 --> 01:12:22,070
+ ke segmen ini dan keluar dari kotak pasir ini. 
+
+1718
+01:12:22,070 --> 01:12:25,137
+ Jadi sebagai hasilnya, Native Client memiliki 
+
+1719
+01:12:25,137 --> 01:12:27,930
+ untuk menambahkan beberapa petunjuk lagi ke daftar terlarang ini. 
+
+1720
+01:12:27,930 --> 01:12:31,380
+ Jadi saya pikir mereka pada dasarnya melarang semua instruksi itu 
+
+1721
+01:12:31,380 --> 01:12:35,590
+ pindah ke segmen pemilih DS, ES, dan sebagainya, 
+
+1722
+01:12:35,590 --> 01:12:37,810
+ sehingga begitu Anda berada di kotak pasir, 
+
+1723
+01:12:37,810 --> 01:12:41,840
+ Anda tidak dapat mengubah segmen yang Anda rujuk 
+
+1724
+01:12:41,840 --> 01:12:43,472
+ dengan hormat. 
+
+1725
+01:12:43,472 --> 01:12:44,430
+ Masuk akal? 
+
+1726
+01:12:44,430 --> 01:12:44,930
+ Ya. 
+
+1727
+01:12:44,930 --> 01:12:47,135
+ AUDIENCE: Segmentasi tersebut dan itu menyediakan [tidak terdengar]. 
+
+1728
+01:12:47,135 --> 01:12:47,801
+ PROFESOR: Ya. 
+
+1729
+01:12:47,801 --> 01:12:50,494
+ Jadi ternyata pada x86, instruksi 
+
+1730
+01:12:50,494 --> 01:12:53,040
+ untuk mengubah tabel deskriptor segmen yang istimewa. 
+
+1731
+01:12:53,040 --> 01:12:56,210
+ Tetapi mengubah indeks ini ke dalam tabel 
+
+1732
+01:12:56,210 --> 01:12:58,934
+ benar-benar tidak istimewa. 
+
+1733
+01:12:58,934 --> 01:13:00,355
+ Ya. 
+
+1734
+01:13:00,355 --> 01:13:01,220
+ Pertanyaan Lain? 
+
+1735
+01:13:01,220 --> 01:13:01,847
+ Ya. 
+
+1736
+01:13:01,847 --> 01:13:03,430
+ AUDIENCE: Bisakah Anda menginisialisasi meja 
+
+1737
+01:13:03,430 --> 01:13:07,380
+ untuk menempatkan semua 0 panjang di slot yang tidak digunakan? 
+
+1738
+01:13:07,380 --> 01:13:08,520
+ PROFESOR: Ya, ya. 
+
+1739
+01:13:08,520 --> 01:13:10,532
+ Jadi slot yang tidak digunakan-- kamu bisa-- ya. 
+
+1740
+01:13:10,532 --> 01:13:11,990
+ Anda dapat mengatur panjang meja 
+
+1741
+01:13:11,990 --> 01:13:14,390
+ untuk sesuatu sehingga tidak ada slot yang tidak digunakan. 
+
+1742
+01:13:14,390 --> 01:13:18,460
+ Ternyata Anda benar-benar membutuhkan slot tambahan ini 
+
+1743
+01:13:18,460 --> 01:13:22,260
+ 0 dan 2 ke 32 karena waktu berjalan tepercaya berjalan 
+
+1744
+01:13:22,260 --> 01:13:25,680
+ perlu dijalankan di segmen ini dan mengakses seluruh memori 
+
+1745
+01:13:25,680 --> 01:13:26,230
+ jarak. 
+
+1746
+01:13:26,230 --> 01:13:29,470
+ Jadi, Anda perlu entri ini di sana untuk runtime tepercaya 
+
+1747
+01:13:29,470 --> 01:13:30,390
+ bekerja. 
+
+1748
+01:13:30,390 --> 01:13:31,150
+ Pertanyaan? 
+
+1749
+01:13:31,150 --> 01:13:32,441
+ AUDIENCE: [INAUDIBLE] daftar set? 
+
+1750
+01:13:32,441 --> 01:13:34,920
+ Untuk mengatur output tabel hingga beberapa panjang, 
+
+1751
+01:13:34,920 --> 01:13:35,615
+ apakah kamu perlu-- 
+
+1752
+01:13:35,615 --> 01:13:36,615
+ PROFESOR: Tidak, sebenarnya. 
+
+1753
+01:13:36,615 --> 01:13:37,420
+ Ini keren sekali. 
+
+1754
+01:13:37,420 --> 01:13:39,470
+ Itu seperti sesuatu yang Anda tidak punya root untuk. 
+
+1755
+01:13:39,470 --> 01:13:40,928
+ Di Linux, sebenarnya ada sistem 
+
+1756
+01:13:40,928 --> 01:13:45,560
+ called-- Saya pikir itu disebut modify_ldt untuk deskriptor lokal 
+
+1757
+01:13:45,560 --> 01:13:46,370
+ meja. 
+
+1758
+01:13:46,370 --> 01:13:48,780
+ Dan itu memungkinkan proses memodifikasi tabelnya sendiri. 
+
+1759
+01:13:48,780 --> 01:13:50,792
+ Tabel-tabel ini sebenarnya per proses. 
+
+1760
+01:13:50,792 --> 01:13:53,250
+ Yah, karena semuanya di x86, sebenarnya lebih rumit. 
+
+1761
+01:13:53,250 --> 01:13:55,333
+ Ada meja global, dan ada meja lokal. 
+
+1762
+01:13:55,333 --> 01:13:57,148
+ Tetapi meja lokal adalah untuk suatu proses 
+
+1763
+01:13:57,148 --> 01:13:59,930
+ Anda dapat memodifikasi [TIDAK JELAS]. 
+
+1764
+01:13:59,930 --> 01:14:01,416
+ Masuk akal? 
+
+1765
+01:14:01,416 --> 01:14:03,601
+ Baiklah. 
+
+1766
+01:14:03,601 --> 01:14:04,100
+ BAIK. 
+
+1767
+01:14:04,100 --> 01:14:06,987
+ Jadi saya rasa satu hal yang sekarang bisa kita coba cari tahu 
+
+1768
+01:14:06,987 --> 01:14:11,780
+ adalah, bagaimana kita melompat masuk dan keluar dari runtime Native Client 
+
+1769
+01:14:11,780 --> 01:14:13,774
+ atau keluar dari kotak pasir? 
+
+1770
+01:14:13,774 --> 01:14:15,440
+ Jadi apa artinya bagi kita untuk melompat keluar? 
+
+1771
+01:14:15,440 --> 01:14:17,510
+ Jadi kita harus menjalankan kode tepercaya itu. 
+
+1772
+01:14:17,510 --> 01:14:19,540
+ Dan kode tepercaya hidup di suatu tempat 
+
+1773
+01:14:19,540 --> 01:14:22,190
+ di atas batas 256 Meg. 
+
+1774
+01:14:22,190 --> 01:14:24,470
+ Dan untuk melompat ke sana, kita pada dasarnya 
+
+1775
+01:14:24,470 --> 01:14:26,960
+ harus membatalkan semua perlindungan ini yang Native Client 
+
+1776
+01:14:26,960 --> 01:14:28,220
+ set di tempat. 
+
+1777
+01:14:28,220 --> 01:14:32,204
+ Dan mereka pada dasarnya mendidih untuk mengubah pemilih ini. 
+
+1778
+01:14:32,204 --> 01:14:33,745
+ Jadi kita sudah-- Kurasa validator kita 
+
+1779
+01:14:33,745 --> 01:14:35,520
+ tidak akan menegakkan aturan yang sama 
+
+1780
+01:14:35,520 --> 01:14:37,880
+ untuk barang-barang di atas 256 Meg. 
+
+1781
+01:14:37,880 --> 01:14:38,800
+ Jadi itu cukup mudah. 
+
+1782
+01:14:38,800 --> 01:14:42,280
+ Tapi kemudian kita perlu melompat ke dalam runtime yang terpercaya 
+
+1783
+01:14:42,280 --> 01:14:45,710
+ dan atur ulang pemilih segmen ini ke nilai yang tepat, 
+
+1784
+01:14:45,710 --> 01:14:50,440
+ ke segmen raksasa ini yang mencakup seluruh proses 
+
+1785
+01:14:50,440 --> 01:14:51,640
+ ruang alamat. 
+
+1786
+01:14:51,640 --> 01:14:54,490
+ Jadi cara kerjanya pada Native Client 
+
+1787
+01:14:54,490 --> 01:14:56,220
+ melalui mekanisme ini yang mereka sebut 
+
+1788
+01:14:56,220 --> 01:14:58,450
+ trampolin dan springboards. 
+
+1789
+01:14:58,450 --> 01:15:03,730
+
+
+1790
+01:15:03,730 --> 01:15:06,820
+ Jadi semua orang ini adalah hal yang hidup 
+
+1791
+01:15:06,820 --> 01:15:12,020
+ dalam 64k rendah dari modul. 
+
+1792
+01:15:12,020 --> 01:15:14,494
+ Dan hal keren tentang itu adalah ini 
+
+1793
+01:15:14,494 --> 01:15:16,910
+ akan menjadi semacam potongan kode di bagian bawah 
+
+1794
+01:15:16,910 --> 01:15:18,910
+ 64k ruang proses itu. 
+
+1795
+01:15:18,910 --> 01:15:21,460
+ Jadi itu berarti modul yang tidak dipercaya ini bisa benar-benar 
+
+1796
+01:15:21,460 --> 01:15:24,850
+ melompat ke sana karena itu alamat kode yang valid. 
+
+1797
+01:15:24,850 --> 01:15:27,300
+ Ini akan berada di batas 32 byte berpotensi. 
+
+1798
+01:15:27,300 --> 01:15:29,630
+ Dan itu akan berada dalam batas 256 Meg. 
+
+1799
+01:15:29,630 --> 01:15:31,675
+ Jadi Anda bisa melompat ke trampolin ini. 
+
+1800
+01:15:31,675 --> 01:15:33,920
+ Tetapi runtime Native Client sedang berjalan 
+
+1801
+01:15:33,920 --> 01:15:36,370
+ untuk benar-benar menyalin trampolin ini 
+
+1802
+01:15:36,370 --> 01:15:37,560
+ dari suatu tempat di luar. 
+
+1803
+01:15:37,560 --> 01:15:39,430
+ Jadi modul Native Client tidak 
+
+1804
+01:15:39,430 --> 01:15:41,730
+ diperbolehkan untuk menyediakan kode trampolin sendiri. 
+
+1805
+01:15:41,730 --> 01:15:43,905
+ Kode trampolin berasal dari runtime tepercaya. 
+
+1806
+01:15:43,905 --> 01:15:45,405
+ Jadi sebagai hasilnya, sebenarnya mengandung 
+
+1807
+01:15:45,405 --> 01:15:46,800
+ semua instruksi sensitif ini, 
+
+1808
+01:15:46,800 --> 01:15:50,390
+ seperti memindahkan DS dan CS, dan sebagainya, 
+
+1809
+01:15:50,390 --> 01:15:55,240
+ bahwa kode yang tidak dipercaya itu sendiri tidak diizinkan untuk memilikinya. 
+
+1810
+01:15:55,240 --> 01:15:58,320
+ Jadi cara Anda benar-benar melompat keluar dari kotak pasir 
+
+1811
+01:15:58,320 --> 01:16:01,010
+ dan ke dalam runtime tepercaya untuk melakukan sesuatu seperti malop 
+
+1812
+01:16:01,010 --> 01:16:04,790
+ atau menciptakan ancaman adalah Anda melompat ke trampolin, yang 
+
+1813
+01:16:04,790 --> 01:16:06,600
+ tinggal di 32 byte offset. 
+
+1814
+01:16:06,600 --> 01:16:08,150
+ Jadi mungkin itu alamatnya. 
+
+1815
+01:16:08,150 --> 01:16:08,970
+ Yah, siapa yang tahu? 
+
+1816
+01:16:08,970 --> 01:16:12,430
+ Mungkin itu 4.096 plus 32. 
+
+1817
+01:16:12,430 --> 01:16:15,790
+ Dan itu akan memiliki beberapa instruksi untuk membatalkannya 
+
+1818
+01:16:15,790 --> 01:16:16,820
+ pemilih segmen ini. 
+
+1819
+01:16:16,820 --> 01:16:18,195
+ Jadi apa yang mungkin akan dilakukan 
+
+1820
+01:16:18,195 --> 01:16:22,820
+ apakah itu akan memindahkan beberapa nilai-- Saya tidak tahu, mungkin 7-- 
+
+1821
+01:16:22,820 --> 01:16:26,420
+ ke dalam register DS dan mungkin beberapa poin untuk entri ini di sini 
+
+1822
+01:16:26,420 --> 01:16:30,670
+ yang diizinkan untuk seluruh 2 hingga 32 ruang alamat. 
+
+1823
+01:16:30,670 --> 01:16:33,140
+ Dan kemudian Anda akan bergerak secara efektif 
+
+1824
+01:16:33,140 --> 01:16:39,140
+ CS dan kemudian melompat ke suatu tempat ke dalam runtime layanan. 
+
+1825
+01:16:39,140 --> 01:16:44,382
+ Dan ini pada dasarnya akan melewati 256 Meg. 
+
+1826
+01:16:44,382 --> 01:16:46,340
+ Jadi akan ada lompatan di sini itu 
+
+1827
+01:16:46,340 --> 01:16:48,140
+ tidak diizinkan secara teratur. 
+
+1828
+01:16:48,140 --> 01:16:50,390
+ Tapi kita akan baik-baik saja dengan itu karena itu 
+
+1829
+01:16:50,390 --> 01:16:54,469
+ akan menjadi titik dalam runtime layanan tepercaya itu 
+
+1830
+01:16:54,469 --> 01:16:55,574
+ mengharapkan lompatan ini. 
+
+1831
+01:16:55,574 --> 01:16:58,440
+ Dan itu akan melakukan pemeriksaan yang tepat sesudahnya 
+
+1832
+01:16:58,440 --> 01:17:01,846
+ pada argumen dan apa pun itu 
+
+1833
+01:17:01,846 --> 01:17:03,240
+ sedang diedarkan. 
+
+1834
+01:17:03,240 --> 01:17:05,060
+ Dan kita benar-benar dapat melakukan ini, pindahkan DS di sini, 
+
+1835
+01:17:05,060 --> 01:17:06,840
+ karena kami tahu itu benar-benar aman. 
+
+1836
+01:17:06,840 --> 01:17:08,466
+ Kode yang akan kita lewati tidak 
+
+1837
+01:17:08,466 --> 01:17:10,090
+ akan melakukan sesuatu yang sewenang-wenang atau lucu 
+
+1838
+01:17:10,090 --> 01:17:13,340
+ dengan modul tidak terpercaya kami. 
+
+1839
+01:17:13,340 --> 01:17:16,930
+ Masuk akal, apa yang terjadi? 
+
+1840
+01:17:16,930 --> 01:17:19,400
+ Jadi mengapa orang-orang ini repot-repot melompat keluar dari segmen? 
+
+1841
+01:17:19,400 --> 01:17:22,020
+ Seperti, mengapa tidak meletakkan semuanya di trampolin? 
+
+1842
+01:17:22,020 --> 01:17:25,310
+
+
+1843
+01:17:25,310 --> 01:17:27,885
+ Sepertinya lebih banyak pekerjaan pada level tertentu. 
+
+1844
+01:17:27,885 --> 01:17:28,835
+ Ya. 
+
+1845
+01:17:28,835 --> 01:17:29,937
+ AUDIENCE: Kami hanya memiliki 64. 
+
+1846
+01:17:29,937 --> 01:17:32,270
+ PROFESOR: Ya, Anda sebenarnya tidak punya banyak ruang. 
+
+1847
+01:17:32,270 --> 01:17:34,270
+ Yah, saya kira Anda memiliki 64k. 
+
+1848
+01:17:34,270 --> 01:17:36,595
+ Jadi itu mungkin cukup potensial untuk-- mungkin Anda 
+
+1849
+01:17:36,595 --> 01:17:38,140
+ dapat memindahkan seekor malop di sana. 
+
+1850
+01:17:38,140 --> 01:17:40,820
+ Tapi masalahnya bukan masalah 64k 
+
+1851
+01:17:40,820 --> 01:17:43,090
+ tapi pembatasan 32 byte ini. 
+
+1852
+01:17:43,090 --> 01:17:45,314
+ Dan itu sebenarnya bukan pembatasan 
+
+1853
+01:17:45,314 --> 01:17:47,355
+ pada kode tepercaya, karena kode tepercaya dapat 
+
+1854
+01:17:47,355 --> 01:17:48,490
+ lakukan apapun yang diinginkannya di sini. 
+
+1855
+01:17:48,490 --> 01:17:49,790
+ Ini tidak akan diperiksa. 
+
+1856
+01:17:49,790 --> 01:17:52,520
+ Masalahnya adalah kode yang tidak dipercaya bisa 
+
+1857
+01:17:52,520 --> 01:17:54,890
+ lompat ke setiap 32 byte offset. 
+
+1858
+01:17:54,890 --> 01:17:56,550
+ Jadi setiap 32 byte harus diimbangi 
+
+1859
+01:17:56,550 --> 01:17:59,390
+ siap untuk menjadi sangat istimewa dalam argumennya. 
+
+1860
+01:17:59,390 --> 01:18:03,080
+ Jadi Anda mungkin akan kesulitan menulis 
+
+1861
+01:18:03,080 --> 01:18:05,500
+ kode ini di sini dengan setiap 32 byte 
+
+1862
+01:18:05,500 --> 01:18:07,970
+ memeriksa kembali argumen dan nilai dan sebagainya. 
+
+1863
+01:18:07,970 --> 01:18:10,980
+ Jadi pada dasarnya, Anda harus melompat keluar dari trampolin 
+
+1864
+01:18:10,980 --> 01:18:17,750
+ dan ke dalam runtime di sini dalam 32 byte kode. 
+
+1865
+01:18:17,750 --> 01:18:19,375
+ Jadi, jika Anda melompat ke hal berikutnya, 
+
+1866
+01:18:19,375 --> 01:18:21,500
+ maka, yah, sesuatu yang lain akan terjadi di sini. 
+
+1867
+01:18:21,500 --> 01:18:26,410
+ Namun ini bukan bagian dari rutinitas tepercaya yang sama di sini. 
+
+1868
+01:18:26,410 --> 01:18:28,270
+ Masuk akal? 
+
+1869
+01:18:28,270 --> 01:18:28,850
+ BAIK. 
+
+1870
+01:18:28,850 --> 01:18:32,060
+ Jadi beginilah cara Anda melompat keluar dari kotak pasir. 
+
+1871
+01:18:32,060 --> 01:18:36,090
+ Untuk melompat kembali, Anda juga perlu-- pada dasarnya Anda 
+
+1872
+01:18:36,090 --> 01:18:37,850
+ perlu membalikkan transformasi ini. 
+
+1873
+01:18:37,850 --> 01:18:41,280
+ Anda perlu mengatur DS back dan CS kembali dan seterusnya. 
+
+1874
+01:18:41,280 --> 01:18:44,320
+ Dan hal yang rumit adalah jika Anda berlari keluar 
+
+1875
+01:18:44,320 --> 01:18:49,040
+ dari batas 256 Meg ini, jika Anda berjalan di dalam yang tepercaya 
+
+1876
+01:18:49,040 --> 01:18:53,060
+ run time, maka Anda tidak dapat benar-benar mengatur ulang register ini, 
+
+1877
+01:18:53,060 --> 01:18:54,550
+ karena jika tidak, Anda tidak akan melakukannya 
+
+1878
+01:18:54,550 --> 01:18:58,019
+ dapat mengakses salah satu memori di luar angkasa Anda. 
+
+1879
+01:18:58,019 --> 01:19:00,310
+ Jadi apa yang sebenarnya mereka lakukan adalah mereka memiliki hal yang disebut ini 
+
+1880
+01:19:00,310 --> 01:19:03,211
+ batu loncatan, yang bagaimana dipercaya 
+
+1881
+01:19:03,211 --> 01:19:05,769
+ runtime dari luar batas 256 Meg 
+
+1882
+01:19:05,769 --> 01:19:08,310
+ sebenarnya akan melompat kembali ke modul Native Client. 
+
+1883
+01:19:08,310 --> 01:19:13,707
+ Jadi di sini akan memuat ulang register DS dengan mungkin apa pun 
+
+1884
+01:19:13,707 --> 01:19:16,060
+ batas itu dalam pendeskripsi segmen. 
+
+1885
+01:19:16,060 --> 01:19:17,180
+ Mungkin katakanlah itu 1. 
+
+1886
+01:19:17,180 --> 01:19:19,180
+ Dan kemudian akan mengatur ulang hal-hal lain, 
+
+1887
+01:19:19,180 --> 01:19:24,190
+ dan kemudian akan melompat ke alamat apa pun 
+
+1888
+01:19:24,190 --> 01:19:27,460
+ runtime tepercaya ingin kembali 
+
+1889
+01:19:27,460 --> 01:19:30,640
+ dalam modul yang tidak dipercaya. 
+
+1890
+01:19:30,640 --> 01:19:31,230
+ Masuk akal? 
+
+1891
+01:19:31,230 --> 01:19:32,650
+ Jadi begini cara Anda melompat kembali. 
+
+1892
+01:19:32,650 --> 01:19:34,025
+ Dan satu-satunya potongan yang rumit 
+
+1893
+01:19:34,025 --> 01:19:38,120
+ di sini adalah bahwa Anda tidak ingin kode yang tidak dipercaya untuk melompat 
+
+1894
+01:19:38,120 --> 01:19:39,840
+ ke batu loncatan itu sendiri. 
+
+1895
+01:19:39,840 --> 01:19:41,256
+ Mungkin sesuatu yang aneh akan terjadi. 
+
+1896
+01:19:41,256 --> 01:19:41,920
+ Siapa tahu? 
+
+1897
+01:19:41,920 --> 01:19:44,940
+ Jadi apa yang mereka lakukan adalah mereka benar-benar menghentikan instruksi 
+
+1898
+01:19:44,940 --> 01:19:49,330
+ sebagai byte pertama dari urutan ganda 32 byte ini. 
+
+1899
+01:19:49,330 --> 01:19:52,896
+ Jadi jika Anda melompat ke awal orang ini, 
+
+1900
+01:19:52,896 --> 01:19:55,750
+ Anda akan segera berhenti. Waktu proses tepercaya 
+
+1901
+01:19:55,750 --> 01:19:59,070
+ akan melompat ke satu melewati byte ini 
+
+1902
+01:19:59,070 --> 01:20:01,165
+ dan dapat mengeksekusi batu loncatan. 
+
+1903
+01:20:01,165 --> 01:20:03,800
+ Tapi ini adalah sesuatu yang hanya dapat dilakukan oleh runtime tepercaya 
+
+1904
+01:20:03,800 --> 01:20:05,321
+ lakukan karena secara teratur diperiksa, ini 
+
+1905
+01:20:05,321 --> 01:20:05,950
+ tidak akan diizinkan. 
+
+1906
+01:20:05,950 --> 01:20:06,340
+ Pertanyaan? 
+
+1907
+01:20:06,340 --> 01:20:06,964
+ AUDIENCE: Tunggu. 
+
+1908
+01:20:06,964 --> 01:20:09,570
+ Apakah itu loncatan di modul yang tidak terpercaya? 
+
+1909
+01:20:09,570 --> 01:20:12,140
+ PROFESOR: Jadi batu loncatan berada dalam 0 
+
+1910
+01:20:12,140 --> 01:20:14,500
+ hingga 256 Meg bagian dari modul yang tidak dipercaya. 
+
+1911
+01:20:14,500 --> 01:20:17,210
+ Tapi itu sebenarnya hidup dalam potongan 64 bit itu 
+
+1912
+01:20:17,210 --> 01:20:19,050
+ di awal yang sebenarnya tidak 
+
+1913
+01:20:19,050 --> 01:20:21,300
+ berasal dari biner yang Anda unduh dari beberapa situs web. 
+
+1914
+01:20:21,300 --> 01:20:22,690
+ Tapi itu sebenarnya ditambal ke dalamnya 
+
+1915
+01:20:22,690 --> 01:20:25,315
+ oleh runtime Native Client saat pertama kali 
+
+1916
+01:20:25,315 --> 01:20:27,123
+ memuat modul ini ke dalam memori. 
+
+1917
+01:20:27,123 --> 01:20:29,214
+ AUDIENCE: Mengapa tidak memilikinya dalam runtime? 
+
+1918
+01:20:29,214 --> 01:20:29,880
+ PROFESOR: Ya. 
+
+1919
+01:20:29,880 --> 01:20:30,780
+ Jadi mengapa tidak memilikinya di runtime? 
+
+1920
+01:20:30,780 --> 01:20:32,762
+ Jadi apa yang terjadi jika runtime diizinkan 
+
+1921
+01:20:32,762 --> 01:20:33,845
+ untuk memasok batu loncatan? 
+
+1922
+01:20:33,845 --> 01:20:38,269
+
+
+1923
+01:20:38,269 --> 01:20:38,995
+ Apakah ini buruk? 
+
+1924
+01:20:38,995 --> 01:20:43,094
+
+
+1925
+01:20:43,094 --> 01:20:44,528
+ Ya. 
+
+1926
+01:20:44,528 --> 01:20:47,635
+ AUDIENCE: Bagaimana itu akan tahu - bagaimana itu 
+
+1927
+01:20:47,635 --> 01:20:49,320
+ tahu kemana harus melompat kembali? 
+
+1928
+01:20:49,320 --> 01:20:51,930
+ PROFESOR: Yah, saya pikir apa sebenarnya ini sebenarnya 
+
+1929
+01:20:51,930 --> 01:20:54,290
+ melompat ke sesuatu seperti EAX. 
+
+1930
+01:20:54,290 --> 01:20:55,780
+ Jadi runtime tepercaya mengatakan, oh, saya 
+
+1931
+01:20:55,780 --> 01:20:57,342
+ ingin kembali ke alamat ini. 
+
+1932
+01:20:57,342 --> 01:20:59,580
+ Ini menempatkannya di daftar EAX, lompat di sini. 
+
+1933
+01:20:59,580 --> 01:21:02,374
+ Loncatan melakukan ini, ini, ini dan kemudian melompat ke EAX, 
+
+1934
+01:21:02,374 --> 01:21:05,130
+ dimanapun runtime yang dipercaya mengatur untuk melompat. 
+
+1935
+01:21:05,130 --> 01:21:08,960
+ Jadi bagaimana jika modul itu datang dengan loncatannya sendiri? 
+
+1936
+01:21:08,960 --> 01:21:13,366
+ AUDIENCE: Yah, Anda bisa melakukannya sebagai jenis lompatan alami. 
+
+1937
+01:21:13,366 --> 01:21:15,782
+ Tetapi seharusnya tidak tahu apa-apa tentang tabel deskripsi. 
+
+1938
+01:21:15,782 --> 01:21:16,710
+ Itu adalah hardware-- 
+
+1939
+01:21:16,710 --> 01:21:17,376
+ PROFESOR: Ya. 
+
+1940
+01:21:17,376 --> 01:21:19,734
+ Jadi sebenarnya, ini adalah instruksi yang sangat penting 
+
+1941
+01:21:19,734 --> 01:21:22,025
+ untuk sandboxing, fakta bahwa kami memuat kembali deskriptor itu 
+
+1942
+01:21:22,025 --> 01:21:25,130
+ untuk menunjuk salah satu deskriptor yang terbatas di sana. 
+
+1943
+01:21:25,130 --> 01:21:26,220
+ Itu sangat penting. 
+
+1944
+01:21:26,220 --> 01:21:30,360
+ Dan jika modul itu diizinkan untuk memasok batu loncatan sendiri, 
+
+1945
+01:21:30,360 --> 01:21:34,205
+ mungkin itu hanya akan melewati bagian ini dan kemudian tidak membatasi diri 
+
+1946
+01:21:34,205 --> 01:21:35,750
+ kembali ke 256 Meg. 
+
+1947
+01:21:35,750 --> 01:21:37,640
+ Jadi setelah Anda melompat melalui batu loncatan itu, 
+
+1948
+01:21:37,640 --> 01:21:40,050
+ Anda masih dapat mengakses seluruh alamat proses 
+
+1949
+01:21:40,050 --> 01:21:41,050
+ ruang. 
+
+1950
+01:21:41,050 --> 01:21:44,075
+ Jadi batu loncatan adalah bagian dari mekanisme penegakan hukum. 
+
+1951
+01:21:44,075 --> 01:21:46,050
+ Ini semacam mengatur batas-batas. 
+
+1952
+01:21:46,050 --> 01:21:47,642
+ Jadi inilah alasan mengapa saya berpikir 
+
+1953
+01:21:47,642 --> 01:21:51,914
+ mereka tidak ingin batu loncatan datang dari pengembang. 
+
+1954
+01:21:51,914 --> 01:21:53,440
+ Sekarang - ya, pertanyaan? 
+
+1955
+01:21:53,440 --> 01:21:56,750
+ AUDIENCE: Bisakah Anda meletakkan batu loncatan melewati 256 megabyte? 
+
+1956
+01:21:56,750 --> 01:21:58,650
+ PROFESOR: Jadi saya pikir mereka tidak mau 
+
+1957
+01:21:58,650 --> 01:22:01,505
+ untuk meletakkan batu loncatan melewati 256 Meg 
+
+1958
+01:22:01,505 --> 01:22:04,450
+ karena dengan demikian Anda mungkin mengalami kesulitan melompat ke bawah. 
+
+1959
+01:22:04,450 --> 01:22:07,720
+ Jadi Anda ingin melompat ke alamat tertentu, 
+
+1960
+01:22:07,720 --> 01:22:10,780
+ tetapi Anda juga ingin mengatur register ekstra di sini. 
+
+1961
+01:22:10,780 --> 01:22:14,660
+ Jadi jika Anda - Saya pikir ini pada dasarnya harus - maaf. 
+
+1962
+01:22:14,660 --> 01:22:17,500
+ Ini ada hubungannya dengan pengaturan pendeskripsi kode CS 
+
+1963
+01:22:17,500 --> 01:22:20,645
+ segmen karena Anda ingin mengatur pendeskripsi kode 
+
+1964
+01:22:20,645 --> 01:22:23,060
+ segmen ke segmen yang dibatasi ini, dan Anda 
+
+1965
+01:22:23,060 --> 01:22:25,789
+ ingin melompat ke beberapa alamat tertentu pada saat yang bersamaan. 
+
+1966
+01:22:25,789 --> 01:22:27,330
+ Jadi saya pikir itu lebih mudah untuk orang-orang ini 
+
+1967
+01:22:27,330 --> 01:22:30,010
+ untuk melakukannya melalui batu loncatan karena Anda pertama semacam melompat 
+
+1968
+01:22:30,010 --> 01:22:30,640
+ ke sini. 
+
+1969
+01:22:30,640 --> 01:22:32,436
+ Kemudian Anda dapat mengatur nilai CS Anda. 
+
+1970
+01:22:32,436 --> 01:22:34,060
+ Tetapi Anda masih bisa mengeksekusi kode yang sama 
+
+1971
+01:22:34,060 --> 01:22:40,355
+ Anda masih berjalan karena Anda berada dalam batas 256. 
+
+1972
+01:22:40,355 --> 01:22:42,215
+ Masuk akal? 
+
+1973
+01:22:42,215 --> 01:22:44,500
+ Saya pikir pada dasarnya itu ada hubungannya dengan apa 
+
+1974
+01:22:44,500 --> 01:22:47,510
+ primitif atom perangkat keras menyediakan untuk Anda. 
+
+1975
+01:22:47,510 --> 01:22:50,145
+ Jadi pada dasarnya, Anda ingin mengatur sejumlah besar segmen DS ini 
+
+1976
+01:22:50,145 --> 01:22:52,644
+ register pemilih dan register CS dan lompat ke suatu tempat 
+
+1977
+01:22:52,644 --> 01:22:53,870
+ pada waktu bersamaan. 
+
+1978
+01:22:53,870 --> 01:22:59,560
+ Jadi ini adalah salah satu cara bagi mereka untuk melakukannya. 
+
+1979
+01:22:59,560 --> 01:23:02,330
+ Saya pikir itu mungkin bukan sebagai [TIDAK JELAS]. 
+
+1980
+01:23:02,330 --> 01:23:04,532
+ Mungkin, jika Anda berusaha keras, Anda mungkin bisa 
+
+1981
+01:23:04,532 --> 01:23:06,490
+ datang dengan beberapa urutan instruksi x86 itu 
+
+1982
+01:23:06,490 --> 01:23:10,039
+ bisa melakukannya dari luar batas alamat 
+
+1983
+01:23:10,039 --> 01:23:12,558
+ ruang dalam modul. 
+
+1984
+01:23:12,558 --> 01:23:13,433
+ Masuk akal? 
+
+1985
+01:23:13,433 --> 01:23:13,932
+ Baiklah. 
+
+1986
+01:23:13,932 --> 01:23:17,212
+ Jadi saya rasa itu untuk Native Client. 
+
+1987
+01:23:17,212 --> 01:23:18,580
+ Dan saya akan bertemu kalian minggu depan. 
+
+1988
+01:23:18,580 --> 00:00:00,000
+ Kami akan berbicara tentang keamanan web sejauh yang saya tahu. 
+

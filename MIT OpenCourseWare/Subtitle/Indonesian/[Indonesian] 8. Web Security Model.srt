@@ -1,0 +1,6864 @@
+1
+00:00:00,000 --> 00:00:00,080
+
+
+2
+00:00:00,080 --> 00:00:02,430
+ Konten berikut disediakan di bawah Materi Iklan 
+
+3
+00:00:02,430 --> 00:00:03,810
+ Lisensi Commons. 
+
+4
+00:00:03,810 --> 00:00:06,060
+ Dukungan Anda akan membantu MIT OpenCourseWare 
+
+5
+00:00:06,060 --> 00:00:10,150
+ terus menawarkan sumber daya pendidikan berkualitas tinggi secara gratis. 
+
+6
+00:00:10,150 --> 00:00:12,700
+ Untuk membuat sumbangan atau melihat materi tambahan 
+
+7
+00:00:12,700 --> 00:00:16,600
+ dari ratusan kursus MIT, kunjungi MIT OpenCourseWare 
+
+8
+00:00:16,600 --> 00:00:17,305
+ di ocw.mit.edu. 
+
+9
+00:00:17,305 --> 00:00:26,380
+
+
+10
+00:00:26,380 --> 00:00:28,855
+ PROFESOR: Baiklah, teman-teman. 
+
+11
+00:00:28,855 --> 00:00:30,850
+ Mari kita mulai dengan angsuran berikutnya 
+
+12
+00:00:30,850 --> 00:00:34,290
+ dari perjalanan kita yang mengasyikkan ke dalam keamanan komputer. 
+
+13
+00:00:34,290 --> 00:00:36,665
+ Hari ini, kita benar-benar akan berbicara tentang keamanan web. 
+
+14
+00:00:36,665 --> 00:00:39,760
+ Keamanan web adalah, sebenarnya, salah satu topik favorit saya 
+
+15
+00:00:39,760 --> 00:00:41,657
+ untuk dibicarakan karena itu benar-benar memaparkan Anda 
+
+16
+00:00:41,657 --> 00:00:43,543
+ untuk kengerian sejati dunia. 
+
+17
+00:00:43,543 --> 00:00:45,126
+ Sangat mudah untuk berpikir, sebagai siswa, 
+
+18
+00:00:45,126 --> 00:00:46,780
+ bahwa semuanya akan menjadi hebat ketika Anda lulus. 
+
+19
+00:00:46,780 --> 00:00:48,516
+ Kuliah hari ini dan kuliah berikutnya 
+
+20
+00:00:48,516 --> 00:00:51,006
+ akan memberi tahu Anda itu, pada kenyataannya, bukan kasusnya. 
+
+21
+00:00:51,006 --> 00:00:52,030
+ Semuanya mengerikan. 
+
+22
+00:00:52,030 --> 00:00:53,760
+ Jadi apa itu web? 
+
+23
+00:00:53,760 --> 00:00:57,230
+ Nah kembali di masa lalu, web itu, sebenarnya, jauh lebih sederhana 
+
+24
+00:00:57,230 --> 00:00:58,630
+ daripada sekarang, benar. 
+
+25
+00:00:58,630 --> 00:01:00,780
+ Jadi klien, yang berarti peramban, 
+
+26
+00:01:00,780 --> 00:01:03,030
+ tidak bisa benar-benar melakukan apa pun sehubungan dengan menampilkan 
+
+27
+00:01:03,030 --> 00:01:04,030
+ konten yang kaku atau aktif. 
+
+28
+00:01:04,030 --> 00:01:06,540
+ Pada dasarnya mereka hanya bisa mendapatkan gambar statis, teks statis, 
+
+29
+00:01:06,540 --> 00:01:07,960
+ begitulah ceritanya. 
+
+30
+00:01:07,960 --> 00:01:10,512
+ Sekarang sisi server sedikit lebih menarik 
+
+31
+00:01:10,512 --> 00:01:13,320
+ karena bahkan jika ada konten statis di sisi klien. 
+
+32
+00:01:13,320 --> 00:01:15,830
+ Mungkin server sedang berbicara tentang database, 
+
+33
+00:01:15,830 --> 00:01:18,700
+ mungkin itu sedang berbicara dengan mesin lain di sisi server. 
+
+34
+00:01:18,700 --> 00:01:20,050
+ Hal-hal seperti itu. 
+
+35
+00:01:20,050 --> 00:01:22,950
+ Jadi untuk waktu yang sangat lama, pengertian keamanan web, 
+
+36
+00:01:22,950 --> 00:01:26,060
+ pada dasarnya, berarti melihat apa yang dilakukan server. 
+
+37
+00:01:26,060 --> 00:01:27,760
+ Dan sampai titik ini di kelas ini, kami sudah 
+
+38
+00:01:27,760 --> 00:01:29,430
+ pada dasarnya mengambil pendekatan itu. 
+
+39
+00:01:29,430 --> 00:01:33,450
+ Jadi kami melihat hal-hal seperti buffer ke serangan meluap. 
+
+40
+00:01:33,450 --> 00:01:35,890
+ Jadi bagaimana klien dapat mengelabui server dalam melakukan sesuatu 
+
+41
+00:01:35,890 --> 00:01:37,140
+ server tidak mau melakukannya. 
+
+42
+00:01:37,140 --> 00:01:39,500
+ Anda juga melihat server OKWS 
+
+43
+00:01:39,500 --> 00:01:43,750
+ dan melihat bagaimana kita bisa melakukan isolasi hak istimewa di sana. 
+
+44
+00:01:43,750 --> 00:01:46,230
+ Jadi pada titik ini, kami, semacam, melihat keamanan 
+
+45
+00:01:46,230 --> 00:01:50,489
+ melalui pengalaman yang sebenarnya 
+
+46
+00:01:50,489 --> 00:01:52,530
+ dialami oleh sumber keamanan itu sendiri. 
+
+47
+00:01:52,530 --> 00:01:55,269
+ Tapi sekarang, sebenarnya, browser ini sangat menarik 
+
+48
+00:01:55,269 --> 00:01:56,810
+ untuk dipikirkan, dalam hal keamanan, 
+
+49
+00:01:56,810 --> 00:02:02,484
+ karena perambannya super, super rumit belakangan ini. 
+
+50
+00:02:02,484 --> 00:02:05,460
+
+
+51
+00:02:05,460 --> 00:02:07,950
+ Jadi sekarang ada semua jenis hal yang gila dan dinamis 
+
+52
+00:02:07,950 --> 00:02:09,350
+ yang sebenarnya bisa dilakukan browser. 
+
+53
+00:02:09,350 --> 00:02:13,320
+ Jadi misalnya, Anda mungkin pernah mendengar tentang JavaScript. 
+
+54
+00:02:13,320 --> 00:02:16,450
+ Jadi JavaScript sekarang memungkinkan halaman untuk dieksekusi 
+
+55
+00:02:16,450 --> 00:02:18,465
+ kode sisi klien, Turing lengkap, 
+
+56
+00:02:18,465 --> 00:02:20,350
+ bisa melakukan segala macam hal aneh. 
+
+57
+00:02:20,350 --> 00:02:22,320
+ Ada model DOM, yang kita akan 
+
+58
+00:02:22,320 --> 00:02:25,100
+ bicarakan lebih mendalam nanti hari ini. 
+
+59
+00:02:25,100 --> 00:02:27,350
+ Model DOM, pada dasarnya, memungkinkan kode JavaScript 
+
+60
+00:02:27,350 --> 00:02:31,480
+ untuk secara dinamis mengubah tampilan visual halaman. 
+
+61
+00:02:31,480 --> 00:02:36,166
+ Bermain-main dengan hal-hal seperti gaya font dan hal-hal seperti itu. 
+
+62
+00:02:36,166 --> 00:02:40,630
+ Ada permintaan HTTP XML. 
+
+63
+00:02:40,630 --> 00:02:44,250
+ Ini adalah, pada dasarnya, cara untuk JavaScript 
+
+64
+00:02:44,250 --> 00:02:47,350
+ untuk mengambil konten secara asynchronous dari server. 
+
+65
+00:02:47,350 --> 00:02:53,520
+ Anda mungkin juga mendengar permintaan HTTP XML yang disebut sebagai AJAX. 
+
+66
+00:02:53,520 --> 00:02:56,030
+ Asynchronous JavaScript mengambil. 
+
+67
+00:02:56,030 --> 00:02:58,760
+ Ada beberapa hal seperti soket web. 
+
+68
+00:02:58,760 --> 00:03:02,780
+ Ini, sebenarnya, baru-baru ini memperkenalkan API. 
+
+69
+00:03:02,780 --> 00:03:05,960
+ Jadi WebSockets, pada dasarnya, memungkinkan dupleks penuh 
+
+70
+00:03:05,960 --> 00:03:08,260
+ komunikasi antara klien dan server. 
+
+71
+00:03:08,260 --> 00:03:09,920
+ Komunikasi berjalan dua arah. 
+
+72
+00:03:09,920 --> 00:03:12,610
+ Kami punya semua jenis dukungan multimedia. 
+
+73
+00:03:12,610 --> 00:03:16,230
+
+
+74
+00:03:16,230 --> 00:03:22,630
+ Jadi misalnya, kami memiliki hal-hal seperti tag video, 
+
+75
+00:03:22,630 --> 00:03:26,167
+ yang memungkinkan halaman web untuk memutar video 
+
+76
+00:03:26,167 --> 00:03:27,250
+ tanpa menggunakan aplikasi Flash. 
+
+77
+00:03:27,250 --> 00:03:30,110
+ Itu sebenarnya hanya dapat memutar video itu secara asli. 
+
+78
+00:03:30,110 --> 00:03:34,170
+ Ada juga geolokasi. 
+
+79
+00:03:34,170 --> 00:03:39,180
+ Jadi sekarang halaman web dapat benar-benar menentukan, secara fisik, 
+
+80
+00:03:39,180 --> 00:03:40,190
+ dimana kamu berada. 
+
+81
+00:03:40,190 --> 00:03:42,680
+ Misalnya, jika Anda menjalankan halaman web di smartphone, 
+
+82
+00:03:42,680 --> 00:03:45,360
+ browser benar-benar dapat mengakses unit GPS Anda. 
+
+83
+00:03:45,360 --> 00:03:48,550
+ Jika Anda mengakses halaman di browser desktop, 
+
+84
+00:03:48,550 --> 00:03:51,460
+ itu benar-benar dapat melihat koneksi Wi-Fi Anda 
+
+85
+00:03:51,460 --> 00:03:54,310
+ dan terhubung ke layanan geolokasi Wi-Fi Google 
+
+86
+00:03:54,310 --> 00:03:56,130
+ untuk mencari tahu di mana tepatnya Anda berada. 
+
+87
+00:03:56,130 --> 00:03:57,130
+ Itu, semacam, gila. 
+
+88
+00:03:57,130 --> 00:03:57,630
+ Kanan? 
+
+89
+00:03:57,630 --> 00:04:00,470
+ Tetapi sekarang halaman web dapat melakukan hal semacam itu. 
+
+90
+00:04:00,470 --> 00:04:05,000
+ Jadi kami juga membicarakan hal-hal seperti NaCl, 
+
+91
+00:04:05,000 --> 00:04:09,300
+ misalnya, yang memungkinkan browser untuk menjalankan kode asli. 
+
+92
+00:04:09,300 --> 00:04:11,371
+ Jadi ada banyak, banyak fitur lainnya 
+
+93
+00:04:11,371 --> 00:04:12,620
+ yang belum saya sebutkan di sini. 
+
+94
+00:04:12,620 --> 00:04:14,240
+ Tetapi cukuplah untuk mengatakan browser 
+
+95
+00:04:14,240 --> 00:04:16,480
+ sekarang sangat rumit. 
+
+96
+00:04:16,480 --> 00:04:19,750
+ Jadi apa artinya ini dari perspektif keamanan? 
+
+97
+00:04:19,750 --> 00:04:22,140
+ Pada dasarnya, itu berarti kita kacau. 
+
+98
+00:04:22,140 --> 00:04:22,640
+ Kanan? 
+
+99
+00:04:22,640 --> 00:04:25,590
+ Permukaan benang untuk itu di sana sangat besar. 
+
+100
+00:04:25,590 --> 00:04:28,580
+ Dan berbicara secara longgar, ketika Anda berpikir tentang keamanan, 
+
+101
+00:04:28,580 --> 00:04:31,460
+ Anda bisa memikirkan grafik yang, semacam, terlihat seperti ini. 
+
+102
+00:04:31,460 --> 00:04:37,230
+ Jadi Anda memiliki kemungkinan kebenaran. 
+
+103
+00:04:37,230 --> 00:04:41,214
+
+
+104
+00:04:41,214 --> 00:04:43,630
+ Dan kemudian, Anda punya sejumlah fitur yang Anda miliki. 
+
+105
+00:04:43,630 --> 00:04:48,430
+
+
+106
+00:04:48,430 --> 00:04:51,035
+ Dan Anda tahu, grafik ini dimulai di sini pada 100. 
+
+107
+00:04:51,035 --> 00:04:53,630
+ Yah tentu saja, kita bahkan tidak pernah memulai 100, 
+
+108
+00:04:53,630 --> 00:04:55,680
+ bahkan dengan kode yang sangat sederhana karena kita bahkan tidak bisa 
+
+109
+00:04:55,680 --> 00:04:58,190
+ lakukan gelembung urut benar. 
+
+110
+00:04:58,190 --> 00:05:00,470
+ Jadi pada dasarnya, kurva itu terlihat seperti ini. 
+
+111
+00:05:00,470 --> 00:05:03,490
+ Dan browser web ada di sini. 
+
+112
+00:05:03,490 --> 00:05:05,140
+ Jadi seperti yang akan kita bahas hari ini, Ada 
+
+113
+00:05:05,140 --> 00:05:09,210
+ semua jenis bug keamanan aneh yang muncul terus-menerus. 
+
+114
+00:05:09,210 --> 00:05:11,020
+ Dan segera setelah yang lama diperbaiki, 
+
+115
+00:05:11,020 --> 00:05:12,660
+ yang baru meningkat karena orang 
+
+116
+00:05:12,660 --> 00:05:14,530
+ terus tambahkan fitur-fitur baru ini. 
+
+117
+00:05:14,530 --> 00:05:16,270
+ Seringkali, tanpa memikirkan apa 
+
+118
+00:05:16,270 --> 00:05:19,270
+ implikasi keamanan fitur-fitur tersebut. 
+
+119
+00:05:19,270 --> 00:05:22,400
+ Jadi jika Anda berpikir tentang apa aplikasi web saat ini, 
+
+120
+00:05:22,400 --> 00:05:24,720
+ baik itu hal klien ini dan itu adalah hal server. 
+
+121
+00:05:24,720 --> 00:05:28,220
+ Dan aplikasi web kini mencakup beberapa bahasa pemrograman, 
+
+122
+00:05:28,220 --> 00:05:30,770
+ beberapa mesin, dan beberapa program perangkat keras. 
+
+123
+00:05:30,770 --> 00:05:32,972
+ Anda bisa menggunakan Firefox di Windows. 
+
+124
+00:05:32,972 --> 00:05:35,430
+ Maka itu akan berbicara dengan mesin di awan itu 
+
+125
+00:05:35,430 --> 00:05:36,030
+ menjalankan Linux. 
+
+126
+00:05:36,030 --> 00:05:38,230
+ Ini menjalankan server Apache. 
+
+127
+00:05:38,230 --> 00:05:41,460
+ Mungkin itu menjalankan chip ARM yang menentang x86 atau sesuatu 
+
+128
+00:05:41,460 --> 00:05:43,020
+ seperti itu, atau sebaliknya. 
+
+129
+00:05:43,020 --> 00:05:47,210
+ Singkat cerita, ada semua masalah komposisi ini. 
+
+130
+00:05:47,210 --> 00:05:49,935
+ Ada semua lapisan perangkat lunak dan semua perangkat keras ini 
+
+131
+00:05:49,935 --> 00:05:53,797
+ lapisan yang semuanya dapat mempengaruhi keamanan dalam beberapa cara. 
+
+132
+00:05:53,797 --> 00:05:54,880
+ Tapi itu juga rumit. 
+
+133
+00:05:54,880 --> 00:05:58,470
+ Tidak jelas bagaimana kita bisa memahami keseluruhannya. 
+
+134
+00:05:58,470 --> 00:06:03,170
+ Jadi misalnya, satu masalah umum dengan web 
+
+135
+00:06:03,170 --> 00:06:06,385
+ adalah masalah ini dari konteks parsing. 
+
+136
+00:06:06,385 --> 00:06:10,220
+
+
+137
+00:06:10,220 --> 00:06:12,050
+ Jadi sebagai contoh, anggaplah itu Anda 
+
+138
+00:06:12,050 --> 00:06:16,220
+ memiliki sesuatu di halaman yang terlihat seperti ini. 
+
+139
+00:06:16,220 --> 00:06:19,260
+ Anda menyatakan tag skrip. 
+
+140
+00:06:19,260 --> 00:06:22,470
+ Di dalam tag skrip itu, Anda mendeklarasikan variabel. 
+
+141
+00:06:22,470 --> 00:06:24,440
+ Ada beberapa string di sini. 
+
+142
+00:06:24,440 --> 00:06:29,700
+ Dan katakanlah bahwa string ini berasal dari pihak yang tidak dapat dipercaya. 
+
+143
+00:06:29,700 --> 00:06:34,810
+ Baik pengguna atau mesin lain atau sesuatu seperti itu. 
+
+144
+00:06:34,810 --> 00:06:36,710
+ Dan kemudian, Anda menutup tag skrip itu. 
+
+145
+00:06:36,710 --> 00:06:40,360
+
+
+146
+00:06:40,360 --> 00:06:42,074
+ Jadi barang ini dipercaya. 
+
+147
+00:06:42,074 --> 00:06:42,990
+ Barang ini dipercaya. 
+
+148
+00:06:42,990 --> 00:06:44,280
+ Barang-barang ini tidak dipercaya. 
+
+149
+00:06:44,280 --> 00:06:45,390
+ Jadi ada yang tahu mengapa di sana 
+
+150
+00:06:45,390 --> 00:06:47,775
+ mungkin ada beberapa masalah di sini jika kita mengambil string yang dipercayakan ini 
+
+151
+00:06:47,775 --> 00:06:48,608
+ dan taruh di sana? 
+
+152
+00:06:48,608 --> 00:06:51,422
+
+
+153
+00:06:51,422 --> 00:06:55,728
+ AUDIENCE: Anda dapat memiliki tanda kutip penutup di [tidak terdengar] 
+
+154
+00:06:55,728 --> 00:06:57,159
+ dan kemudian memiliki beberapa [TIDAK JELAS]. 
+
+155
+00:06:57,159 --> 00:06:58,640
+ PROFESOR: Benar, benar, persis. 
+
+156
+00:06:58,640 --> 00:07:01,320
+ Jadi masalahnya ada beberapa konteks, 
+
+157
+00:07:01,320 --> 00:07:04,590
+ bahwa kode yang tidak dipercaya ini bisa, semacam, masuk ke dalam. 
+
+158
+00:07:04,590 --> 00:07:09,390
+ Jadi misalnya, jika kode yang tidak tepercaya memiliki tanda kutip ganda di sini, 
+
+159
+00:07:09,390 --> 00:07:14,056
+ sekarang kami telah menutup definisi string JavaScript ini. 
+
+160
+00:07:14,056 --> 00:07:16,055
+ Jadi sekarang kami menambahkan konteks string JavaScript 
+
+161
+00:07:16,055 --> 00:07:18,570
+ dan membuat konteks eksekusi JavaScript biasa. 
+
+162
+00:07:18,570 --> 00:07:20,610
+ Dan kemudian penyerang mendapat pekerjaan tetap 
+
+163
+00:07:20,610 --> 00:07:22,540
+ kode pos di sini dan pergi ke kota. 
+
+164
+00:07:22,540 --> 00:07:25,580
+ Atau, penyerang bisa saja 
+
+165
+00:07:25,580 --> 00:07:31,220
+ letakkan tag skrip penutup di sini. 
+
+166
+00:07:31,220 --> 00:07:31,850
+ Kanan? 
+
+167
+00:07:31,850 --> 00:07:35,270
+ Dan kemudian, pada titik itu, penyerang 
+
+168
+00:07:35,270 --> 00:07:38,820
+ dapat, semacam, keluar dari konteks JavaScript 
+
+169
+00:07:38,820 --> 00:07:40,940
+ dan kemudian masuk ke dalam konteks HTML. 
+
+170
+00:07:40,940 --> 00:07:44,250
+ Mungkin untuk menemukan beberapa node HTML baru atau sesuatu seperti itu. 
+
+171
+00:07:44,250 --> 00:07:46,090
+ Jadi Anda melihat masalah ini dengan komposisi 
+
+172
+00:07:46,090 --> 00:07:48,185
+ seluruh tempat di web karena di sana 
+
+173
+00:07:48,185 --> 00:07:49,810
+ begitu banyak bahasa yang berbeda dan berjalan 
+
+174
+00:07:49,810 --> 00:07:51,018
+ kali bagi Anda untuk berpikir tentang. 
+
+175
+00:07:51,018 --> 00:07:54,575
+ HTML, CSS, JavaScript, mungkin MySQL di sisi server, 
+
+176
+00:07:54,575 --> 00:07:56,820
+ dan seterusnya dan seterusnya. 
+
+177
+00:07:56,820 --> 00:07:59,540
+ Jadi ini hanya contoh klasik 
+
+178
+00:07:59,540 --> 00:08:02,240
+ mengapa Anda harus melakukan sesuatu yang disebut standardisasi konten. 
+
+179
+00:08:02,240 --> 00:08:05,410
+ Jadi, setiap kali Anda mendapatkan masukan yang tidak tepercaya dari seseorang, 
+
+180
+00:08:05,410 --> 00:08:07,700
+ Anda benar-benar perlu menganalisisnya dengan sangat hati-hati 
+
+181
+00:08:07,700 --> 00:08:11,720
+ untuk memastikan bahwa itu tidak digunakan sebagai vektor untuk serangan. 
+
+182
+00:08:11,720 --> 00:08:14,420
+ Jadi alasan lain mengapa keamanan web jadi rumit 
+
+183
+00:08:14,420 --> 00:08:17,510
+ karena spesifikasi web luar biasa 
+
+184
+00:08:17,510 --> 00:08:19,130
+ panjang, mereka sangat membosankan, 
+
+185
+00:08:19,130 --> 00:08:21,857
+ mereka sangat membosankan, dan sering tidak konsisten. 
+
+186
+00:08:21,857 --> 00:08:23,440
+ Jadi ketika saya maksud spesifikasi web, 
+
+187
+00:08:23,440 --> 00:08:26,000
+ Maksud saya hal-hal seperti definisi JPEG, 
+
+188
+00:08:26,000 --> 00:08:28,522
+ definisi CSS, definisi HTML. 
+
+189
+00:08:28,522 --> 00:08:29,980
+ Dokumen-dokumen ini, seperti, ukurannya 
+
+190
+00:08:29,980 --> 00:08:33,480
+ konstitusi Uni Eropa dan sama-sama mudah dimengerti. 
+
+191
+00:08:33,480 --> 00:08:36,130
+ Jadi apa yang akhirnya terjadi adalah vendor browser 
+
+192
+00:08:36,130 --> 00:08:37,549
+ lihat semua spesifikasi ini. 
+
+193
+00:08:37,549 --> 00:08:40,080
+ Dan mereka pada dasarnya berkata, OK, terima kasih untuk itu. 
+
+194
+00:08:40,080 --> 00:08:42,169
+ Saya akan melakukan sesuatu yang agak mirip 
+
+195
+00:08:42,169 --> 00:08:43,320
+ seperti apa spesifikasi ini. 
+
+196
+00:08:43,320 --> 00:08:44,610
+ Kemudian mereka menyebutnya sehari dan mereka menertawakannya 
+
+197
+00:08:44,610 --> 00:08:45,410
+ dengan teman-teman mereka. 
+
+198
+00:08:45,410 --> 00:08:48,160
+ OK, jadi yang akhirnya terjadi adalah spesifikasi ini 
+
+199
+00:08:48,160 --> 00:08:52,550
+ akhirnya menjadi seperti ini, dokumen aspiratif itu 
+
+200
+00:08:52,550 --> 00:08:55,109
+ tidak selalu akurat mencerminkan apa yang dilakukan browser sebenarnya. 
+
+201
+00:08:55,109 --> 00:08:57,150
+ Dan jika Anda ingin memahami kengerian ini, 
+
+202
+00:08:57,150 --> 00:08:59,450
+ Anda dapat pergi ke situs yang disebut quirksmode.org ini. 
+
+203
+00:08:59,450 --> 00:09:01,050
+ Maksud saya, jangan pergi ke situs ini jika Anda ingin bahagia. 
+
+204
+00:09:01,050 --> 00:09:01,925
+ Tetapi Anda bisa pergi ke sana. 
+
+205
+00:09:01,925 --> 00:09:05,540
+ Dan itu sebenarnya mendokumentasikan semua inkonsistensi yang mengerikan ini 
+
+206
+00:09:05,540 --> 00:09:08,030
+ yang dimiliki browser sehubungan dengan apa yang terjadi 
+
+207
+00:09:08,030 --> 00:09:10,337
+ ketika pengguna menekan tombol pers? 
+
+208
+00:09:10,337 --> 00:09:12,670
+ Seharusnya hanya ada satu preseden kunci yang dihasilkan. 
+
+209
+00:09:12,670 --> 00:09:13,840
+ Kamu sangat salah. 
+
+210
+00:09:13,840 --> 00:09:15,680
+ Jadi, masuk ke quirksmode.org dan periksa itu, 
+
+211
+00:09:15,680 --> 00:09:17,075
+ dan lihat apa yang terjadi. 
+
+212
+00:09:17,075 --> 00:09:18,450
+ Jadi, dalam kuliah ini, kita 
+
+213
+00:09:18,450 --> 00:09:21,514
+ akan fokus pada sisi klien dari aplikasi web. 
+
+214
+00:09:21,514 --> 00:09:22,930
+ Khususnya, kita akan melihat 
+
+215
+00:09:22,930 --> 00:09:26,250
+ bagaimana kita dapat mengisolasi konten dari web yang berbeda 
+
+216
+00:09:26,250 --> 00:09:28,610
+ penyedia yang harus hidup berdampingan, entah bagaimana, 
+
+217
+00:09:28,610 --> 00:09:31,720
+ di mesin yang sama dan browser yang sama. 
+
+218
+00:09:31,720 --> 00:09:34,012
+ Jadi pada tingkat tinggi, ada perbedaan mendasar ini 
+
+219
+00:09:34,012 --> 00:09:35,386
+ antara cara Anda secara tradisional 
+
+220
+00:09:35,386 --> 00:09:37,362
+ memikirkan aplikasi desktop dan caranya 
+
+221
+00:09:37,362 --> 00:09:39,420
+ Anda memikirkan aplikasi web. 
+
+222
+00:09:39,420 --> 00:09:42,490
+ Secara abstrak, sebagian besar aplikasi desktop yang Anda 
+
+223
+00:09:42,490 --> 00:09:45,320
+ gunakan, Anda dapat menganggapnya sebagai berasal dari prinsipal tunggal. 
+
+224
+00:09:45,320 --> 00:09:47,490
+ Jadi kata berasal dari Microsoft. 
+
+225
+00:09:47,490 --> 00:09:49,925
+ Dan mungkin TurboTax berasal dari Mr. dan Mrs. TurboTax, 
+
+226
+00:09:49,925 --> 00:09:51,470
+ seterusnya dan seterusnya. 
+
+227
+00:09:51,470 --> 00:09:54,870
+ Tetapi ketika Anda melihat aplikasi web, sesuatu 
+
+228
+00:09:54,870 --> 00:09:58,830
+ yang terlihat bagi Anda, secara visual, sebagai satu aplikasi 
+
+229
+00:09:58,830 --> 00:10:01,226
+ sebenarnya terdiri dari banyak konten yang berbeda 
+
+230
+00:10:01,226 --> 00:10:02,600
+ dari sekelompok orang yang berbeda. 
+
+231
+00:10:02,600 --> 00:10:05,260
+ Jadi Anda pergi ke CNN, sepertinya itu semua di satu tab. 
+
+232
+00:10:05,260 --> 00:10:08,670
+ Tetapi masing-masing dari hal-hal visual yang Anda lihat 
+
+233
+00:10:08,670 --> 00:10:10,420
+ mungkin, sebenarnya, berasal dari seseorang yang berbeda. 
+
+234
+00:10:10,420 --> 00:10:15,530
+ Jadi mari kita lihat contoh yang sangat sederhana di sini. 
+
+235
+00:10:15,530 --> 00:10:20,020
+ Jadi mari kita katakan bahwa kita melihat situs berikut. 
+
+236
+00:10:20,020 --> 00:10:24,654
+ Jadi, HTTP food.com. 
+
+237
+00:10:24,654 --> 00:10:26,854
+ Dan kami hanya melihat index.html. 
+
+238
+00:10:26,854 --> 00:10:30,730
+
+
+239
+00:10:30,730 --> 00:10:35,170
+ Jadi Anda tahu, Anda melihat tab browser Anda. 
+
+240
+00:10:35,170 --> 00:10:36,240
+ Apa yang mungkin Anda lihat? 
+
+241
+00:10:36,240 --> 00:10:41,830
+ Jadi satu hal yang mungkin Anda lihat adalah iklan. 
+
+242
+00:10:41,830 --> 00:10:43,230
+ Jadi Anda mungkin melihat iklan 
+
+243
+00:10:43,230 --> 00:10:45,660
+ dalam bentuk hadiah. 
+
+244
+00:10:45,660 --> 00:10:49,082
+ Dan mungkin itu diunduh dari ads.com. 
+
+245
+00:10:49,082 --> 00:10:51,974
+
+
+246
+00:10:51,974 --> 00:10:56,270
+ Kemudian Anda juga mungkin melihat, katakanlah, pustaka analitik. 
+
+247
+00:10:56,270 --> 00:10:58,980
+
+
+248
+00:10:58,980 --> 00:11:03,062
+ Dan mungkin ini berasal dari google.com. 
+
+249
+00:11:03,062 --> 00:11:06,970
+
+
+250
+00:11:06,970 --> 00:11:09,470
+ Jadi perpustakaan ini sangat populer untuk melakukan sesuatu 
+
+251
+00:11:09,470 --> 00:11:11,760
+ seperti melacak berapa banyak orang yang memuat laman Anda, 
+
+252
+00:11:11,760 --> 00:11:14,600
+ mencari tahu di mana orang mengklik sesuatu 
+
+253
+00:11:14,600 --> 00:11:17,040
+ untuk melihat bagian mana dari situs mereka yang paling menarik 
+
+254
+00:11:17,040 --> 00:11:19,550
+ bagi orang untuk berinteraksi dengan, begitu seterusnya dan seterusnya. 
+
+255
+00:11:19,550 --> 00:11:22,690
+ Dan Anda mungkin juga memiliki pustaka JavaScript lain. 
+
+256
+00:11:22,690 --> 00:11:24,810
+ Katakanlah itu jQuery. 
+
+257
+00:11:24,810 --> 00:11:27,440
+
+
+258
+00:11:27,440 --> 00:11:33,370
+ Dan mungkin itu berasal dari cdn.foo.com. 
+
+259
+00:11:33,370 --> 00:11:38,190
+ Jadi beberapa jaringan distribusi konten yang dijalankan foo.com. 
+
+260
+00:11:38,190 --> 00:11:40,470
+ jQuery adalah pustaka yang sangat populer untuk melakukan sesuatu 
+
+261
+00:11:40,470 --> 00:11:41,822
+ seperti manipulasi GUI. 
+
+262
+00:11:41,822 --> 00:11:42,530
+ Hal-hal seperti itu. 
+
+263
+00:11:42,530 --> 00:11:44,670
+ Jadi banyak situs web populer yang memiliki jQuery. 
+
+264
+00:11:44,670 --> 00:11:47,140
+ Meskipun, mereka menyajikannya dari berbagai tempat. 
+
+265
+00:11:47,140 --> 00:11:53,170
+ Dan kemudian, di halaman ini Anda mungkin melihat beberapa HTML. 
+
+266
+00:11:53,170 --> 00:11:54,860
+ Dan di sinilah Anda mungkin melihat barang-barang 
+
+267
+00:11:54,860 --> 00:12:02,250
+ seperti tombol untuk pengguna untuk mengklik, input teks, dan sebagainya 
+
+268
+00:12:02,250 --> 00:12:03,020
+ dan seterusnya. 
+
+269
+00:12:03,020 --> 00:12:05,700
+
+
+270
+00:12:05,700 --> 00:12:08,120
+ Jadi itu hanya HTML mentah di halaman. 
+
+271
+00:12:08,120 --> 00:12:12,690
+ Dan kemudian, Anda mungkin melihat apa yang mereka sebut 
+
+272
+00:12:12,690 --> 00:12:19,075
+ JavaScript sebaris dari foo.com. 
+
+273
+00:12:19,075 --> 00:12:21,865
+
+
+274
+00:12:21,865 --> 00:12:27,480
+ Di inline saya, Anda memiliki tag skrip. 
+
+275
+00:12:27,480 --> 00:12:31,029
+ Dan kemudian, Anda memiliki tag skrip yang tertutup. 
+
+276
+00:12:31,029 --> 00:12:32,820
+ Dan kemudian Anda hanya memiliki beberapa kode JavaScript 
+
+277
+00:12:32,820 --> 00:12:34,430
+ dimasukkan secara langsung. 
+
+278
+00:12:34,430 --> 00:12:39,400
+ Itu bertentangan dengan di mana Anda mengatakan sesuatu seperti skrip. 
+
+279
+00:12:39,400 --> 00:12:43,780
+ Dan kemudian, sumber itu menyamai sesuatu itu 
+
+280
+00:12:43,780 --> 00:12:45,199
+ tinggal di beberapa server dari jarak jauh. 
+
+281
+00:12:45,199 --> 00:12:46,990
+ Jadi ini yang disebut JavaScript sebaris. 
+
+282
+00:12:46,990 --> 00:12:49,115
+ Ini adalah apa yang disebut sebagai yang didefinisikan secara eksternal 
+
+283
+00:12:49,115 --> 00:12:49,830
+ File JavaScript. 
+
+284
+00:12:49,830 --> 00:12:53,172
+ Jadi Anda mungkin memiliki beberapa JavaScript sebaris di sana dari foo.com. 
+
+285
+00:12:53,172 --> 00:12:55,130
+ Dan hal lain yang mungkin Anda miliki di sini 
+
+286
+00:12:55,130 --> 00:12:58,960
+ sebenarnya adalah sebuah bingkai. 
+
+287
+00:12:58,960 --> 00:13:01,680
+ Jadi kita akan berbicara tentang frame sedikit lebih dalam sedikit, 
+
+288
+00:13:01,680 --> 00:13:04,450
+ tetapi pikirkan bingkai sebagai hampir seperti JavaScript terpisah 
+
+289
+00:13:04,450 --> 00:13:05,770
+ alam semesta. 
+
+290
+00:13:05,770 --> 00:13:08,960
+ Ini sedikit setara dengan proses dan UNIX. 
+
+291
+00:13:08,960 --> 00:13:13,500
+ Jadi mungkin bingkai ini di sini, mungkin orang ini milik 
+
+292
+00:13:13,500 --> 00:13:15,226
+ ke https: // facebook .com / likethis.html. 
+
+293
+00:13:15,226 --> 00:13:30,690
+
+
+294
+00:13:30,690 --> 00:13:36,940
+ Jadi mungkin di sini kita memiliki beberapa JavaScript sebaris 
+
+295
+00:13:36,940 --> 00:13:40,240
+ dari Facebook. 
+
+296
+00:13:40,240 --> 00:13:43,300
+ Dan kemudian, mungkin, kami juga memiliki beberapa gambar. 
+
+297
+00:13:43,300 --> 00:13:46,410
+ Jadi Anda tahu, f.jpeg. 
+
+298
+00:13:46,410 --> 00:13:49,040
+
+
+299
+00:13:49,040 --> 00:14:00,140
+ Itu berasal dari https://facebook.com. 
+
+300
+00:14:00,140 --> 00:14:06,370
+ Oke, jadi inilah satu tab yang mungkin ada di isinya. 
+
+301
+00:14:06,370 --> 00:14:08,052
+ Tapi seperti yang baru saja saya sebutkan, semua ini 
+
+302
+00:14:08,052 --> 00:14:10,510
+ dapat, secara potensial, berasal dari semua prinsip yang berbeda ini. 
+
+303
+00:14:10,510 --> 00:14:12,301
+ Jadi ada banyak pertanyaan menarik 
+
+304
+00:14:12,301 --> 00:14:14,320
+ yang bisa kita tanyakan tentang aplikasi itu 
+
+305
+00:14:14,320 --> 00:14:15,200
+ terlihat seperti ini 
+
+306
+00:14:15,200 --> 00:14:19,354
+ Jadi misalnya, dapatkah kode analisis ini dari google.com 
+
+307
+00:14:19,354 --> 00:14:21,660
+ sebenarnya mengakses keadaan JavaScript itu 
+
+308
+00:14:21,660 --> 00:14:23,880
+ berada di kode jQuery. 
+
+309
+00:14:23,880 --> 00:14:26,840
+ Jadi untuk perkiraan pertama, mungkin itu sepertinya ide yang buruk 
+
+310
+00:14:26,840 --> 00:14:29,577
+ karena dua potongan kode ini berasal dari tempat yang berbeda. 
+
+311
+00:14:29,577 --> 00:14:31,160
+ Tetapi sekali lagi, mungkin itu sebenarnya tidak masalah 
+
+312
+00:14:31,160 --> 00:14:35,170
+ karena, mungkin, foo.com membawa kedua pustaka ini 
+
+313
+00:14:35,170 --> 00:14:37,270
+ agar mereka dapat bekerja dengan satu sama lain. 
+
+314
+00:14:37,270 --> 00:14:38,280
+ Jadi siapa yang tahu. 
+
+315
+00:14:38,280 --> 00:14:40,370
+ Pertanyaan lain yang mungkin Anda miliki adalah 
+
+316
+00:14:40,370 --> 00:14:43,090
+ dapatkah kode analisis di sini benar-benar 
+
+317
+00:14:43,090 --> 00:14:44,880
+ berinteraksi dengan input teks di sini. 
+
+318
+00:14:44,880 --> 00:14:47,350
+ Jadi misalnya, dapatkah kode analitik 
+
+319
+00:14:47,350 --> 00:14:49,460
+ mendefinisikan penangan kejadian? 
+
+320
+00:14:49,460 --> 00:14:51,720
+ Jadi sedikit latar belakang di JavaScript. 
+
+321
+00:14:51,720 --> 00:14:54,720
+ JavaScript adalah model penggerak ventilasi berulir tunggal. 
+
+322
+00:14:54,720 --> 00:14:56,280
+ Jadi pada dasarnya, di setiap bingkai, ada 
+
+323
+00:14:56,280 --> 00:14:58,970
+ hanya lingkaran acara yang hanya terus-menerus menarik acara. 
+
+324
+00:14:58,970 --> 00:15:01,570
+ Tekan tombol, pengatur waktu jaringan, dan hal-hal seperti itu. 
+
+325
+00:15:01,570 --> 00:15:03,260
+ Dan kemudian, melihat apakah ada penangan terkait 
+
+326
+00:15:03,260 --> 00:15:04,009
+ dengan kejadian itu. 
+
+327
+00:15:04,009 --> 00:15:05,460
+ Dan jika demikian, ia memecat mereka. 
+
+328
+00:15:05,460 --> 00:15:08,800
+ Jadi siapa yang harus dapat mendefinisikan penangan kejadian untuk HTML ini. 
+
+329
+00:15:08,800 --> 00:15:10,510
+ Seharusnya google.com dapat melakukannya. 
+
+330
+00:15:10,510 --> 00:15:14,520
+ Ini bukan dari foo.com jadi mungkin, mungkin tidak. 
+
+331
+00:15:14,520 --> 00:15:16,890
+ Pertanyaan lain juga adalah apa hubungannya 
+
+332
+00:15:16,890 --> 00:15:19,930
+ antara bingkai Facebook ini di sini dan bingkai yang lebih besar? 
+
+333
+00:15:19,930 --> 00:15:23,680
+ Bingkai Facebook adalah HTTPS, aman. 
+
+334
+00:15:23,680 --> 00:15:26,460
+ foo.com adalah HTTP, nonsecure. 
+
+335
+00:15:26,460 --> 00:15:29,090
+ Jadi bagaimana seharusnya kedua hal ini dapat berinteraksi? 
+
+336
+00:15:29,090 --> 00:15:31,900
+ Jadi pada dasarnya, untuk menjawab pertanyaan-pertanyaan ini, 
+
+337
+00:15:31,900 --> 00:15:38,015
+ browser menggunakan model keamanan yang disebut kebijakan asal yang sama. 
+
+338
+00:15:38,015 --> 00:15:43,910
+
+
+339
+00:15:43,910 --> 00:15:47,294
+ Jadi ada, semacam, tujuan yang tidak jelas ini 
+
+340
+00:15:47,294 --> 00:15:49,460
+ karena banyak hal berkenaan dengan keamanan web 
+
+341
+00:15:49,460 --> 00:15:50,436
+ adalah, jenis, tidak jelas karena tidak ada 
+
+342
+00:15:50,436 --> 00:15:51,477
+ tahu apa yang mereka lakukan. 
+
+343
+00:15:51,477 --> 00:15:58,140
+ Tetapi ide dasarnya adalah dua situs web 
+
+344
+00:15:58,140 --> 00:16:03,654
+ seharusnya tidak bisa mengutak-atik satu sama lain, 
+
+345
+00:16:03,654 --> 00:16:05,272
+ kecuali mereka mau. 
+
+346
+00:16:05,272 --> 00:16:14,090
+
+
+347
+00:16:14,090 --> 00:16:19,860
+ Jadi mendefinisikan apa artinya merusak itu sebenarnya lebih mudah 
+
+348
+00:16:19,860 --> 00:16:21,300
+ ketika web lebih sederhana. 
+
+349
+00:16:21,300 --> 00:16:23,032
+ Tetapi karena kami terus menambahkan API baru ini, 
+
+350
+00:16:23,032 --> 00:16:24,990
+ lebih sulit untuk memahami apa 
+
+351
+00:16:24,990 --> 00:16:26,760
+ tujuan yang tidak merusak ini berarti. 
+
+352
+00:16:26,760 --> 00:16:29,550
+ Jadi misalnya, ini jelas buruk 
+
+353
+00:16:29,550 --> 00:16:32,010
+ jika dua situs web, yang tidak saling mempercayai satu sama lain, 
+
+354
+00:16:32,010 --> 00:16:34,850
+ dapat lebih dari menulis tampilan visual masing-masing. 
+
+355
+00:16:34,850 --> 00:16:36,970
+ Sepertinya itu hal yang sangat buruk. 
+
+356
+00:16:36,970 --> 00:16:39,000
+ Sepertinya hal yang jelas bagus 
+
+357
+00:16:39,000 --> 00:16:41,680
+ jika dua situs web, yang ingin berkolaborasi, 
+
+358
+00:16:41,680 --> 00:16:44,977
+ dapat, entah bagaimana, bertukar data dengan cara yang aman. 
+
+359
+00:16:44,977 --> 00:16:47,310
+ Jadi, Anda bisa memikirkan situs mash up yang mungkin pernah Anda dengar. 
+
+360
+00:16:47,310 --> 00:16:49,040
+ Jadi terkadang Anda akan melihat hal-hal ini di internet. 
+
+361
+00:16:49,040 --> 00:16:50,990
+ Ini seperti seseorang mengambil data peta Google, 
+
+362
+00:16:50,990 --> 00:16:52,995
+ dan kemudian mengambil lokasi truk makanan. 
+
+363
+00:16:52,995 --> 00:16:54,620
+ Dan kemudian, Anda memiliki mash luar biasa ini 
+
+364
+00:16:54,620 --> 00:16:57,140
+ yang memungkinkan Anda makan dengan harga murah dan menghindari salmonella, bukan? 
+
+365
+00:16:57,140 --> 00:16:59,930
+ Jadi sepertinya hal yang seharusnya dapat Anda lakukan. 
+
+366
+00:16:59,930 --> 00:17:02,695
+ Tapi bagaimana tepatnya kita mengaktifkan jenis komposisi itu? 
+
+367
+00:17:02,695 --> 00:17:05,069
+ Lalu ada hal-hal lain yang agak sulit dikatakan. 
+
+368
+00:17:05,069 --> 00:17:07,910
+ Jadi misalnya, jika kode JavaScript berasal dari asal 
+
+369
+00:17:07,910 --> 00:17:11,270
+ x di dalam halaman itu dari asal y, 
+
+370
+00:17:11,270 --> 00:17:15,920
+ bagaimana tepatnya kode itu dan konten itu ditulis? 
+
+371
+00:17:15,920 --> 00:17:23,220
+ Jadi strategi yang dapat digunakan oleh pengguna kebijakan yang sama 
+
+372
+00:17:23,220 --> 00:17:25,579
+ kira-kira digambarkan sebagai berikut. 
+
+373
+00:17:25,579 --> 00:17:38,830
+ Jadi setiap sumber daya diberi asal, yang 
+
+374
+00:17:38,830 --> 00:17:41,680
+ kita akan bahas sebentar lagi. 
+
+375
+00:17:41,680 --> 00:17:44,790
+
+
+376
+00:17:44,790 --> 00:17:49,740
+ Dan pada dasarnya, kode JavaScript 
+
+377
+00:17:49,740 --> 00:17:57,430
+ hanya dapat mengakses sumber daya dari asalnya sendiri. 
+
+378
+00:17:57,430 --> 00:18:05,820
+
+
+379
+00:18:05,820 --> 00:18:08,820
+ Jadi ini adalah strategi tingkat tinggi 
+
+380
+00:18:08,820 --> 00:18:10,064
+ menggunakan kebijakan asal yang sama. 
+
+381
+00:18:10,064 --> 00:18:11,355
+ Tapi iblis ada dalam detailnya. 
+
+382
+00:18:11,355 --> 00:18:13,271
+ Dan ada banyak pengecualian, yang kami miliki 
+
+383
+00:18:13,271 --> 00:18:15,450
+ akan melihat ke dalam detik. 
+
+384
+00:18:15,450 --> 00:18:17,180
+ Tetapi pertama-tama, sebelum kita melanjutkan, 
+
+385
+00:18:17,180 --> 00:18:19,930
+ mari kita definisikan apa itu asal. 
+
+386
+00:18:19,930 --> 00:18:29,310
+ Jadi asal adalah, pada dasarnya, skema protokol jaringan 
+
+387
+00:18:29,310 --> 00:18:36,140
+ ditambah nama host plus port. 
+
+388
+00:18:36,140 --> 00:18:39,540
+
+
+389
+00:18:39,540 --> 00:18:44,952
+ Jadi misalnya, kita dapat memiliki sesuatu seperti HTTP foo.com. 
+
+390
+00:18:44,952 --> 00:18:47,664
+
+
+391
+00:18:47,664 --> 00:18:49,310
+ Dan kemudian, mungkin, itu index.html. 
+
+392
+00:18:49,310 --> 00:18:55,130
+
+
+393
+00:18:55,130 --> 00:18:58,536
+ Jadi skema di sini adalah HTTP. 
+
+394
+00:18:58,536 --> 00:19:02,400
+ Dan nama host adalah foo.com. 
+
+395
+00:19:02,400 --> 00:19:03,840
+ Dan portnya 80. 
+
+396
+00:19:03,840 --> 00:19:06,530
+ Sekarang port, dalam hal ini, implisit. 
+
+397
+00:19:06,530 --> 00:19:08,830
+ Port adalah port di sisi server 
+
+398
+00:19:08,830 --> 00:19:10,560
+ yang digunakan klien untuk terhubung. 
+
+399
+00:19:10,560 --> 00:19:13,490
+ Jadi jika Anda melihat URL dari skema HTTP 
+
+400
+00:19:13,490 --> 00:19:16,550
+ dan tidak ada port yang secara eksplisit disediakan, lalu, 
+
+401
+00:19:16,550 --> 00:19:19,000
+ secara implisit, port itu adalah 80. 
+
+402
+00:19:19,000 --> 00:19:26,220
+ Jadi, jika kita melihat sesuatu seperti HTTPS, 
+
+403
+00:19:26,220 --> 00:19:29,764
+ sekali lagi, foo.com index.html. 
+
+404
+00:19:29,764 --> 00:19:33,340
+
+
+405
+00:19:33,340 --> 00:19:37,270
+ Jadi dua URL ini memiliki nama host yang sama. 
+
+406
+00:19:37,270 --> 00:19:37,800
+ Kanan? 
+
+407
+00:19:37,800 --> 00:19:40,880
+ Tetapi mereka memiliki, sebenarnya, skema yang berbeda. 
+
+408
+00:19:40,880 --> 00:19:42,690
+ HTTPS vs HTTP. 
+
+409
+00:19:42,690 --> 00:19:46,710
+ Dan juga, di sini, port secara implisit 443. 
+
+410
+00:19:46,710 --> 00:19:48,880
+ Itu port HTTPS default. 
+
+411
+00:19:48,880 --> 00:19:51,940
+ Jadi dua URL ini memiliki asal yang berbeda. 
+
+412
+00:19:51,940 --> 00:19:54,840
+ Dan kemudian, sebagai contoh terakhir, jika Anda 
+
+413
+00:19:54,840 --> 00:20:00,830
+ memiliki situs seperti HTTP bar.com, lalu Anda 
+
+414
+00:20:00,830 --> 00:20:03,740
+ dapat menggunakan notasi kolon ini di sini. 
+
+415
+00:20:03,740 --> 00:20:07,330
+ 8181. 
+
+416
+00:20:07,330 --> 00:20:09,680
+ Anda tahu, hal-hal ini di luar sini 
+
+417
+00:20:09,680 --> 00:20:12,915
+ tidak masalah sehubungan dengan kebijakan asal yang sama, setidaknya 
+
+418
+00:20:12,915 --> 00:20:15,150
+ sehubungan dengan contoh yang sangat sederhana ini. 
+
+419
+00:20:15,150 --> 00:20:17,930
+ Di sini, kita melihat bahwa kita memiliki skema HTTP, sebuah host 
+
+420
+00:20:17,930 --> 00:20:22,230
+ nama bar.com, dan di sini kami telah menentukan port secara eksplisit. 
+
+421
+00:20:22,230 --> 00:20:25,771
+ Jadi dalam hal ini, ini adalah port non-default 8181. 
+
+422
+00:20:25,771 --> 00:20:26,770
+ Jadi apakah itu masuk akal? 
+
+423
+00:20:26,770 --> 00:20:29,480
+ Ini cukup mudah. 
+
+424
+00:20:29,480 --> 00:20:33,970
+ OK, jadi ini, pada dasarnya, apa itu asal. 
+
+425
+00:20:33,970 --> 00:20:39,630
+ Longgar berbicara, Anda dapat memikirkan asal sebagai UID di Unix 
+
+426
+00:20:39,630 --> 00:20:43,950
+ dengan bingkai yang dianggap sebagai, seperti, sebuah proses. 
+
+427
+00:20:43,950 --> 00:20:53,410
+ Jadi ada empat ide dasar di balik browser 
+
+428
+00:20:53,410 --> 00:20:56,100
+ implementasi kebijakan asal yang sama. 
+
+429
+00:20:56,100 --> 00:21:08,350
+ Jadi ide pertama adalah setiap asal memiliki sumber daya sisi klien. 
+
+430
+00:21:08,350 --> 00:21:14,180
+
+
+431
+00:21:14,180 --> 00:21:17,590
+ Jadi apa contoh dari sumber daya itu? 
+
+432
+00:21:17,590 --> 00:21:21,560
+ Hal-hal seperti kue. 
+
+433
+00:21:21,560 --> 00:21:25,170
+ Sekarang Anda dapat menganggap cookie sebagai cara yang sangat sederhana 
+
+434
+00:21:25,170 --> 00:21:29,560
+ untuk menerapkan status dalam protokol tanpa negara seperti HTTP. 
+
+435
+00:21:29,560 --> 00:21:31,740
+ Pada dasarnya, cookie itu seperti file kecil itu 
+
+436
+00:21:31,740 --> 00:21:33,614
+ terkait dengan masing-masing asal. 
+
+437
+00:21:33,614 --> 00:21:35,780
+ Dan kita akan membahas sedikit tentang hal ini. 
+
+438
+00:21:35,780 --> 00:21:38,238
+ Tetapi ide dasarnya adalah ketika browser mengirim permintaan 
+
+439
+00:21:38,238 --> 00:21:40,960
+ ke situs web tertentu, itu termasuk cookie 
+
+440
+00:21:40,960 --> 00:21:43,320
+ yang dimiliki klien untuk situs web itu. 
+
+441
+00:21:43,320 --> 00:21:46,230
+ Dan Anda dapat menggunakan cookie ini untuk berbagai hal 
+
+442
+00:21:46,230 --> 00:21:48,385
+ seperti mengimplementasikan kata sandi mengingat. 
+
+443
+00:21:48,385 --> 00:21:50,480
+ Mungkin jika Anda pergi ke situs e-niaga, 
+
+444
+00:21:50,480 --> 00:21:53,935
+ Anda dapat mengingat barang tentang keranjang belanja pengguna 
+
+445
+00:21:53,935 --> 00:21:55,960
+ di cookie ini, seterusnya dan seterusnya. 
+
+446
+00:21:55,960 --> 00:21:59,530
+ Jadi cookies adalah satu hal yang masing-masing asal 
+
+447
+00:21:59,530 --> 00:22:01,070
+ dapat dikaitkan dengan. 
+
+448
+00:22:01,070 --> 00:22:04,180
+ Anda juga dapat memikirkan penyimpanan DOM 
+
+449
+00:22:04,180 --> 00:22:06,170
+ sebagai salah satu dari sumber daya ini. 
+
+450
+00:22:06,170 --> 00:22:08,350
+ Ini adalah antarmuka yang cukup baru. 
+
+451
+00:22:08,350 --> 00:22:11,820
+ Namun, anggap penyimpanan DOM hanya sebagai penyimpanan nilai kunci. 
+
+452
+00:22:11,820 --> 00:22:14,600
+ Jadi penyimpanan DOM memungkinkan asal untuk mengatakan, 
+
+453
+00:22:14,600 --> 00:22:16,562
+ untuk kunci yang diberikan ini, yang merupakan string, 
+
+454
+00:22:16,562 --> 00:22:18,020
+ biarkan aku mengaitkannya dengan yang diberikan ini 
+
+455
+00:22:18,020 --> 00:22:21,650
+ nilai, yang juga merupakan string. 
+
+456
+00:22:21,650 --> 00:22:26,390
+ Hal lain yang bersifat sosial dengan asal 
+
+457
+00:22:26,390 --> 00:22:28,545
+ adalah ruang nama JavaScript. 
+
+458
+00:22:28,545 --> 00:22:32,810
+
+
+459
+00:22:32,810 --> 00:22:34,840
+ Sehingga ruang nama JavaScript mendefinisikan 
+
+460
+00:22:34,840 --> 00:22:36,530
+ fungsi apa dan antarmuka apa 
+
+461
+00:22:36,530 --> 00:22:38,887
+ tersedia untuk asal. 
+
+462
+00:22:38,887 --> 00:22:40,470
+ Beberapa dari antarmuka tersebut dibangun. 
+
+463
+00:22:40,470 --> 00:22:42,890
+ Seperti, katakanlah, prototipe string dan hal-hal seperti itu. 
+
+464
+00:22:42,890 --> 00:22:44,514
+ Dan kemudian, aplikasi mungkin sebenarnya 
+
+465
+00:22:44,514 --> 00:22:47,620
+ isi namespace JavaScript dengan beberapa konten lain. 
+
+466
+00:22:47,620 --> 00:22:53,180
+ Ada juga yang disebut pohon DOM. 
+
+467
+00:22:53,180 --> 00:22:56,580
+ Jadi DOM adalah kependekan dari Document Object Model. 
+
+468
+00:22:56,580 --> 00:22:58,410
+ Dan pohon Dom, pada dasarnya, 
+
+469
+00:22:58,410 --> 00:23:03,090
+ pantulan JavaScript dari HTML di halaman. 
+
+470
+00:23:03,090 --> 00:23:07,410
+ Jadi Anda bisa membayangkan bahwa pohon DOM 
+
+471
+00:23:07,410 --> 00:23:14,690
+ memiliki node untuk node HTML5 paling atas di HTML. 
+
+472
+00:23:14,690 --> 00:23:20,820
+ Dan kemudian, itu akan memiliki simpul untuk tag kepala. 
+
+473
+00:23:20,820 --> 00:23:24,470
+ Kemudian, itu akan memiliki simpul untuk tag tubuh. 
+
+474
+00:23:24,470 --> 00:23:27,176
+
+
+475
+00:23:27,176 --> 00:23:29,200
+ Baiklah, seterusnya dan seterusnya. 
+
+476
+00:23:29,200 --> 00:23:32,270
+ Sehingga cara itu banyak halaman web dinamis 
+
+477
+00:23:32,270 --> 00:23:35,470
+ dibuat dinamis adalah kode JavaScript 
+
+478
+00:23:35,470 --> 00:23:37,630
+ dapat mengakses struktur data ini di JavaScript 
+
+479
+00:23:37,630 --> 00:23:39,249
+ yang mencerminkan konten HTML. 
+
+480
+00:23:39,249 --> 00:23:41,040
+ Jadi Anda bisa membayangkan sebuah animasi terjadi 
+
+481
+00:23:41,040 --> 00:23:43,000
+ dengan mengubah beberapa simpul ini ke bawah 
+
+482
+00:23:43,000 --> 00:23:46,670
+ di sini untuk mengimplementasikan berbagai organisasi dari berbagai tab. 
+
+483
+00:23:46,670 --> 00:23:49,290
+ Jadi itulah pohon DOM. 
+
+484
+00:23:49,290 --> 00:23:53,085
+ Ada juga area tampilan visual. 
+
+485
+00:23:53,085 --> 00:23:57,398
+
+
+486
+00:23:57,398 --> 00:23:59,611
+ Meskipun, kita akan melihat bahwa area tampilan visual 
+
+487
+00:23:59,611 --> 00:24:01,860
+ sebenarnya berinteraksi sangat aneh dengan asal yang sama 
+
+488
+00:24:01,860 --> 00:24:02,910
+ kebijakan. 
+
+489
+00:24:02,910 --> 00:24:04,170
+ Begitu seterusnya dan seterusnya. 
+
+490
+00:24:04,170 --> 00:24:06,950
+ Jadi pada tingkat tinggi, setiap asal memiliki akses 
+
+491
+00:24:06,950 --> 00:24:10,160
+ untuk beberapa set sumber daya sisi klien dari jenis ini. 
+
+492
+00:24:10,160 --> 00:24:13,290
+ Apakah itu masuk akal? 
+
+493
+00:24:13,290 --> 00:24:21,920
+ Dan kemudian, ide besar kedua adalah setiap frame 
+
+494
+00:24:21,920 --> 00:24:28,100
+ mendapatkan asal URL-nya. 
+
+495
+00:24:28,100 --> 00:24:34,060
+
+
+496
+00:24:34,060 --> 00:24:35,790
+ Jadi seperti yang saya sebutkan sebelumnya, sebuah bingkai 
+
+497
+00:24:35,790 --> 00:24:39,850
+ secara kasar, analog dengan proses di Unix. 
+
+498
+00:24:39,850 --> 00:24:41,780
+ Ini, semacam, seperti ruang nama itu 
+
+499
+00:24:41,780 --> 00:24:45,700
+ mengumpulkan banyak sumber daya lain yang berbeda. 
+
+500
+00:24:45,700 --> 00:24:55,380
+ Jadi ide ketiga adalah skrip itu, jadi kode JavaScript, 
+
+501
+00:24:55,380 --> 00:25:09,700
+ jalankan dengan otoritas asal frame-nya. 
+
+502
+00:25:09,700 --> 00:25:18,510
+
+
+503
+00:25:18,510 --> 00:25:22,990
+ OK, jadi apa itu artinya adalah bahwa foo.com mengimpor JavaScript 
+
+504
+00:25:22,990 --> 00:25:24,130
+ file dari bar.com. 
+
+505
+00:25:24,130 --> 00:25:26,200
+ Nah, file JavaScript itu sedang berjalan 
+
+506
+00:25:26,200 --> 00:25:30,780
+ untuk dapat bertindak dengan otoritas foo.com. 
+
+507
+00:25:30,780 --> 00:25:34,125
+ Jadi berbicara dengan santai, ini, semacam, mirip dengan 
+
+508
+00:25:34,125 --> 00:25:36,220
+ jika Anda berada di dunia Unix untuk dijalankan 
+
+509
+00:25:36,220 --> 00:25:38,610
+ biner yang, semacam, milik di rumah orang lain 
+
+510
+00:25:38,610 --> 00:25:39,380
+ direktori. 
+
+511
+00:25:39,380 --> 00:25:41,760
+ Hal itu akan menjadi semacam, eksekusi, dengan hak istimewa Anda 
+
+512
+00:25:41,760 --> 00:25:43,650
+ sana. 
+
+513
+00:25:43,650 --> 00:25:50,020
+ Dan yang keempat adalah ada konten pasif. 
+
+514
+00:25:50,020 --> 00:25:55,980
+ Jadi dengan konten pasif maksud saya hal-hal seperti gambar itu, 
+
+515
+00:25:55,980 --> 00:25:57,490
+ sebagai contoh. 
+
+516
+00:25:57,490 --> 00:26:00,217
+ Atau file CSS atau hal-hal seperti itu. 
+
+517
+00:26:00,217 --> 00:26:01,800
+ Ini adalah hal-hal yang tidak kita pikirkan 
+
+518
+00:26:01,800 --> 00:26:03,750
+ memiliki kode yang dapat dieksekusi. 
+
+519
+00:26:03,750 --> 00:26:08,800
+ Jadi konten pasif mendapat otoritas nol dari browser. 
+
+520
+00:26:08,800 --> 00:26:16,430
+
+
+521
+00:26:16,430 --> 00:26:19,070
+ Jadi itu masuk akal. 
+
+522
+00:26:19,070 --> 00:26:21,270
+ Kita akan melihat mengapa hal keempat ini sedikit 
+
+523
+00:26:21,270 --> 00:26:22,280
+ halus dalam hitungan detik. 
+
+524
+00:26:22,280 --> 00:26:25,080
+ Jadi kembali ke contoh kita di sini. 
+
+525
+00:26:25,080 --> 00:26:27,830
+ Jadi kita lihat, misalnya, bahwa Google Analytics 
+
+526
+00:26:27,830 --> 00:26:32,425
+ skrip dan skrip jQuery dapat mengakses semua jenis barang 
+
+527
+00:26:32,425 --> 00:26:33,630
+ di foo.com. 
+
+528
+00:26:33,630 --> 00:26:35,970
+ Jadi misalnya, mereka dapat membaca dan menulis cookie. 
+
+529
+00:26:35,970 --> 00:26:39,440
+ Mereka dapat melakukan hal-hal seperti melampirkan pengendali event ke tombol di sini. 
+
+530
+00:26:39,440 --> 00:26:41,500
+ Begitu seterusnya dan seterusnya. 
+
+531
+00:26:41,500 --> 00:26:44,900
+ Jika kita melihat bingkai Facebook dan hubungannya 
+
+532
+00:26:44,900 --> 00:26:47,090
+ ke bingkai foo.com yang lebih besar, maka kita 
+
+533
+00:26:47,090 --> 00:26:49,440
+ melihat bahwa mereka berasal dari asal yang berbeda 
+
+534
+00:26:49,440 --> 00:26:51,830
+ karena mereka memiliki skema berbeda di sini. 
+
+535
+00:26:51,830 --> 00:26:54,660
+ Mereka memiliki nama host yang berbeda. 
+
+536
+00:26:54,660 --> 00:26:55,560
+ Port yang berbeda. 
+
+537
+00:26:55,560 --> 00:26:58,630
+ Jadi apa artinya ini adalah, ke pendekatan pertama, 
+
+538
+00:26:58,630 --> 00:27:00,010
+ terpencil. 
+
+539
+00:27:00,010 --> 00:27:03,630
+ Sekarang mereka dapat berkomunikasi jika mereka berdua memilih 
+
+540
+00:27:03,630 --> 00:27:07,885
+ ke dalamnya menggunakan antarmuka yang disebut postMessage ini. 
+
+541
+00:27:07,885 --> 00:27:12,540
+
+
+542
+00:27:12,540 --> 00:27:17,320
+ Jadi postMessage memungkinkan dua frame berbeda 
+
+543
+00:27:17,320 --> 00:27:20,960
+ untuk bertukar pesan berubah asynchronous 
+
+544
+00:27:20,960 --> 00:27:21,750
+ satu sama lain. 
+
+545
+00:27:21,750 --> 00:27:25,080
+ Jadi pikirkan fasilitas ini sebagai memungkinkan Facebook 
+
+546
+00:27:25,080 --> 00:27:27,310
+ untuk mencoba mengirim string. 
+
+547
+00:27:27,310 --> 00:27:30,860
+ Bukan referensi, string hingga frame foo.com yang dilampirkan. 
+
+548
+00:27:30,860 --> 00:27:34,420
+ Sekarang perhatikan bahwa jika foo.com tidak ingin menerima pesan-pesan itu, 
+
+549
+00:27:34,420 --> 00:27:35,430
+ itu tidak perlu. 
+
+550
+00:27:35,430 --> 00:27:37,940
+ Jadi ini harus diikutsertakan dari kedua sisi 
+
+551
+00:27:37,940 --> 00:27:41,220
+ untuk membuat benda ini bekerja. 
+
+552
+00:27:41,220 --> 00:27:45,880
+ Jadi perhatikan bahwa kode JavaScript di sini di bingkai Facebook 
+
+553
+00:27:45,880 --> 00:27:51,860
+ tidak dapat mengeluarkan permintaan HTTP XML ke server foo.com. 
+
+554
+00:27:51,860 --> 00:27:54,460
+ Itu sekali lagi karena tujuan jaringan juga 
+
+555
+00:27:54,460 --> 00:27:56,710
+ memiliki asal-usul ini yang terkait dengan mereka. 
+
+556
+00:27:56,710 --> 00:28:00,220
+ Jadi karena Facebook.com tidak memiliki asal yang sama dengan foo.com 
+
+557
+00:28:00,220 --> 00:28:05,610
+ itu tidak bisa secara asynchronous mengambil barang dari itu melalui permintaan HTML. 
+
+558
+00:28:05,610 --> 00:28:08,370
+ Jadi hal terakhir yang bisa kita lihat pada kita 
+
+559
+00:28:08,370 --> 00:28:10,480
+ dapat mengatakan, OK, kami mendapat gambar di sini dari ads.com. 
+
+560
+00:28:10,480 --> 00:28:12,302
+ Ini aturan nomor empat di sana. 
+
+561
+00:28:12,302 --> 00:28:13,760
+ Jadi sepertinya cukup mudah. 
+
+562
+00:28:13,760 --> 00:28:14,690
+ Ini adalah sebuah gambar. 
+
+563
+00:28:14,690 --> 00:28:15,890
+ Tidak memiliki kode yang bisa dieksekusi. 
+
+564
+00:28:15,890 --> 00:28:18,350
+ Jadi jelas, browser tidak akan memberikan otoritas. 
+
+565
+00:28:18,350 --> 00:28:20,320
+ Sekarang sepertinya itu seperti hal bodoh. 
+
+566
+00:28:20,320 --> 00:28:22,260
+ Seperti, mengapa kamu bahkan berbicara tentang gambar 
+
+567
+00:28:22,260 --> 00:28:23,800
+ memiliki otoritas atau tidak memiliki otoritas? 
+
+568
+00:28:23,800 --> 00:28:26,258
+ Terlihat jelas bahwa gambar tidak boleh bisa melakukan hal-hal. 
+
+569
+00:28:26,258 --> 00:28:28,530
+ Yah itu kelas keamanan. 
+
+570
+00:28:28,530 --> 00:28:32,005
+ Jadi jelas, ada kenakalan yang bersembunyi di nomor pernyataan 
+
+571
+00:28:32,005 --> 00:28:32,970
+ empat di sana. 
+
+572
+00:28:32,970 --> 00:28:39,600
+ Jadi apa yang terjadi jika browser salah mem-parsing objek 
+
+573
+00:28:39,600 --> 00:28:42,422
+ dan salah atribut itu tipe? 
+
+574
+00:28:42,422 --> 00:28:44,630
+ Jadi Anda benar-benar bisa masuk ke masalah keamanan di sana. 
+
+575
+00:28:44,630 --> 00:28:46,660
+ Dan ini sebenarnya masalah keamanan yang nyata. 
+
+576
+00:28:46,660 --> 00:28:49,340
+ Jadi ada hal yang disebut serangan MIME sniffing. 
+
+577
+00:28:49,340 --> 00:28:50,876
+ Jadi tipe MIME-- maksud saya, Anda sudah 
+
+578
+00:28:50,876 --> 00:28:52,000
+ mungkin melihat ini sebelumnya. 
+
+579
+00:28:52,000 --> 00:28:56,176
+ Anda tahu itu Sesuatu seperti teks dot HTML 
+
+580
+00:28:56,176 --> 00:28:58,360
+ atau gambar.JPEG Hal seperti itu. 
+
+581
+00:28:58,360 --> 00:29:00,240
+ Ini seperti tipe MIME. 
+
+582
+00:29:00,240 --> 00:29:04,690
+ Jadi versi lama yaitu digunakan untuk melakukan sesuatu yang mereka pikirkan 
+
+583
+00:29:04,690 --> 00:29:06,470
+ akan membantu Anda. 
+
+584
+00:29:06,470 --> 00:29:08,410
+ Jadi kadang-kadang apa yang server web akan lakukan 
+
+585
+00:29:08,410 --> 00:29:13,519
+ apakah mereka akan salah mengartikan ekstensi file dari suatu objek. 
+
+586
+00:29:13,519 --> 00:29:15,310
+ Jadi Anda bisa membayangkan bahwa web server itu 
+
+587
+00:29:15,310 --> 00:29:19,050
+ dikonfigurasi secara tidak benar mungkin melampirkan dot HTML 
+
+588
+00:29:19,050 --> 00:29:21,830
+ sufiks ke sesuatu yang benar-benar sebuah gambar. 
+
+589
+00:29:21,830 --> 00:29:24,470
+ Atau mungkin melampirkan dot JPEG akhiran 
+
+590
+00:29:24,470 --> 00:29:26,910
+ untuk sesuatu yang benar-benar HTML. 
+
+591
+00:29:26,910 --> 00:29:29,190
+ Jadi apa yang akan dilakukan IE di masa lalu 
+
+592
+00:29:29,190 --> 00:29:31,040
+ hari ini mencoba membantu Anda. 
+
+593
+00:29:31,040 --> 00:29:32,250
+ Jadi IE akan keluar. 
+
+594
+00:29:32,250 --> 00:29:34,270
+ Itu akan mengambil sumber daya ini. 
+
+595
+00:29:34,270 --> 00:29:37,020
+ Dan itu akan berkata, OK, sumber daya ini 
+
+596
+00:29:37,020 --> 00:29:39,840
+ mengklaim sebagai tipe tertentu, sesuai dengan nama filenya 
+
+597
+00:29:39,840 --> 00:29:40,570
+ perpanjangan. 
+
+598
+00:29:40,570 --> 00:29:43,520
+ Tapi kemudian itu benar-benar akan melihat 256 byte pertama 
+
+599
+00:29:43,520 --> 00:29:45,620
+ dari apa yang ada di objek itu. 
+
+600
+00:29:45,620 --> 00:29:48,089
+ Dan jika menemukan nilai-nilai sihir tertentu di sana 
+
+601
+00:29:48,089 --> 00:29:50,380
+ yang menunjukkan bahwa ada tipe yang berbeda untuk itu 
+
+602
+00:29:50,380 --> 00:29:54,440
+ keberatan, itu hanya akan mengatakan, hei, saya menemukan sesuatu yang keren di sini. 
+
+603
+00:29:54,440 --> 00:29:56,630
+ Server web salah mengidentifikasi objek. 
+
+604
+00:29:56,630 --> 00:29:59,640
+ Biarkan saya hanya memperlakukan objek seperti jenisnya 
+
+605
+00:29:59,640 --> 00:30:01,779
+ yang saya temukan di 256 byte pertama ini. 
+
+606
+00:30:01,779 --> 00:30:03,570
+ Dan kemudian, semua orang pemenang karena saya sudah 
+
+607
+00:30:03,570 --> 00:30:05,028
+ membantu pengembang server web 
+
+608
+00:30:05,028 --> 00:30:08,396
+ karena sekarang situs web mereka akan ditampilkan dengan benar. 
+
+609
+00:30:08,396 --> 00:30:09,770
+ Dan pengguna akan menyukai ini 
+
+610
+00:30:09,770 --> 00:30:11,290
+ karena mereka dapat membuka kunci konten ini 
+
+611
+00:30:11,290 --> 00:30:12,850
+ akan menjadi sampah sebelumnya. 
+
+612
+00:30:12,850 --> 00:30:15,320
+ Tapi ini jelas merupakan kerentanan 
+
+613
+00:30:15,320 --> 00:30:20,260
+ karena misalkan halaman berisi beberapa konten pasif. 
+
+614
+00:30:20,260 --> 00:30:23,400
+ Seperti, katakanlah, gambar dari domain itu 
+
+615
+00:30:23,400 --> 00:30:25,340
+ dikendalikan oleh penyerang. 
+
+616
+00:30:25,340 --> 00:30:28,750
+ Sekarang dari perspektif halaman korban, itu berkata, 
+
+617
+00:30:28,750 --> 00:30:32,820
+ bahkan jika situs penyerang ini jahat, itu adalah konten pasif. 
+
+618
+00:30:32,820 --> 00:30:34,189
+ Tidak bisa berbuat apa-apa. 
+
+619
+00:30:34,189 --> 00:30:36,230
+ Seperti, paling buruk, ini menampilkan gambar yang tidak menguntungkan. 
+
+620
+00:30:36,230 --> 00:30:38,130
+ Tetapi sebenarnya tidak dapat mengakses kode apa pun 
+
+621
+00:30:38,130 --> 00:30:40,820
+ karena konten pasif memberi 0 otoritas. 
+
+622
+00:30:40,820 --> 00:30:44,790
+ Tapi apa yang akan terjadi adalah IE bisa mengendus citra ini. 
+
+623
+00:30:44,790 --> 00:30:46,300
+ 256 byte pertama. 
+
+624
+00:30:46,300 --> 00:30:48,230
+ Dan penyerang itu bisa dengan sengaja 
+
+625
+00:30:48,230 --> 00:30:51,096
+ letakkan HTML dan JavaScript di sana. 
+
+626
+00:30:51,096 --> 00:30:53,220
+ Jadi apa yang akan terjadi adalah situs korban membawa 
+
+627
+00:30:53,220 --> 00:30:54,930
+ dalam apa yang dianggapnya sebagai gambar. 
+
+628
+00:30:54,930 --> 00:30:58,260
+ IE menggabungkannya ke dalam HTML dan JavaScript. 
+
+629
+00:30:58,260 --> 00:31:02,300
+ Dan kemudian, mengeksekusi kode itu dalam konteks 
+
+630
+00:31:02,300 --> 00:31:04,790
+ dari halaman melampirkan itu. 
+
+631
+00:31:04,790 --> 00:31:07,360
+ Jadi apakah serangan itu masuk akal? 
+
+632
+00:31:07,360 --> 00:31:07,860
+ begitu 
+
+633
+00:31:07,860 --> 00:31:12,420
+ Ini adalah semacam contoh bagaimana rumitnya browser 
+
+634
+00:31:12,420 --> 00:31:17,000
+ dan bagaimana menambahkan bahkan fitur yang sangat baik 
+
+635
+00:31:17,000 --> 00:31:22,010
+ dapat menyebabkan bug keamanan yang sangat halus ini. 
+
+636
+00:31:22,010 --> 00:31:26,740
+ Jadi, mari sekarang gali dan lihat lebih dalam 
+
+637
+00:31:26,740 --> 00:31:29,870
+ bagaimana browser mengamankan berbagai sumber daya. 
+
+638
+00:31:29,870 --> 00:31:36,515
+ Jadi mari kita lihat pada frame dan objek window. 
+
+639
+00:31:36,515 --> 00:31:42,100
+
+
+640
+00:31:42,100 --> 00:31:46,550
+ Jadi frame mewakili alam semesta JavaScript yang terpisah ini 
+
+641
+00:31:46,550 --> 00:31:48,720
+ yang kita diskusikan di sini. 
+
+642
+00:31:48,720 --> 00:31:51,610
+ Maksud saya, implementasi bijaksana, bingkai 
+
+643
+00:31:51,610 --> 00:31:55,400
+ sehubungan dengan JavaScript adalah turunan dari simpul DOM. 
+
+644
+00:31:55,400 --> 00:31:57,010
+ Jadi saya lupa di mana saya menggambar - oh, ya. 
+
+645
+00:31:57,010 --> 00:31:58,030
+ Node DOM ini di sini. 
+
+646
+00:31:58,030 --> 00:32:01,340
+ Jadi frame akan ada sebagai node DOM 
+
+647
+00:32:01,340 --> 00:32:03,080
+ objek di suatu tempat di hierarki ini itu 
+
+648
+00:32:03,080 --> 00:32:04,730
+ terlihat oleh JavaScript. 
+
+649
+00:32:04,730 --> 00:32:07,900
+ Di JavaScript, objek jendela sebenarnya adalah alias 
+
+650
+00:32:07,900 --> 00:32:09,030
+ untuk ruang nama global. 
+
+651
+00:32:09,030 --> 00:32:10,321
+ Ini, semacam, ide aneh ini. 
+
+652
+00:32:10,321 --> 00:32:12,980
+ Seperti, jika Anda menemukan nama variabel global ini x, 
+
+653
+00:32:12,980 --> 00:32:16,500
+ Anda juga dapat mengaksesnya melalui jendela nama.x. 
+
+654
+00:32:16,500 --> 00:32:19,260
+ OK, jadi pada dasarnya, frame dan objek window 
+
+655
+00:32:19,260 --> 00:32:22,450
+ adalah referensi yang sangat kuat bagi Anda untuk dapat mengakses. 
+
+656
+00:32:22,450 --> 00:32:24,662
+ Dan mereka benar-benar mengandung petunjuk satu sama lain. 
+
+657
+00:32:24,662 --> 00:32:26,120
+ Bingkai dapat [TIDAK JELAS] sebuah penunjuk 
+
+658
+00:32:26,120 --> 00:32:28,479
+ ke objek jendela terkait dan sebaliknya. 
+
+659
+00:32:28,479 --> 00:32:30,020
+ Jadi kedua hal ini, pada dasarnya, 
+
+660
+00:32:30,020 --> 00:32:31,130
+ sama kuatnya. 
+
+661
+00:32:31,130 --> 00:32:43,220
+ Jadi frame dan objek window mendapatkan asal dari URL yang dibingkai. 
+
+662
+00:32:43,220 --> 00:32:49,910
+
+
+663
+00:32:49,910 --> 00:32:54,650
+ Atau karena selalu ada atau dalam keamanan web, 
+
+664
+00:32:54,650 --> 00:33:10,530
+ mereka bisa mendapatkan akhiran dari nama domain asli. 
+
+665
+00:33:10,530 --> 00:33:11,890
+ Asal asli. 
+
+666
+00:33:11,890 --> 00:33:18,200
+ Jadi misalnya, bingkai bisa mulai 
+
+667
+00:33:18,200 --> 00:33:21,470
+ memiliki asal mulanya. 
+
+668
+00:33:21,470 --> 00:33:26,770
+ x dot y dot z dot com. 
+
+669
+00:33:26,770 --> 00:33:30,180
+ Jadi mari kita abaikan skema dan protokol untuk kedua. 
+
+670
+00:33:30,180 --> 00:33:33,020
+ Jadi awalnya, halaman bisa mulai seperti ini. 
+
+671
+00:33:33,020 --> 00:33:39,470
+ Dengan itu dapat dengan sengaja mengatakan saya ingin mengatur asal saya 
+
+672
+00:33:39,470 --> 00:33:41,782
+ menjadi y dot z dot com. 
+
+673
+00:33:41,782 --> 00:33:42,820
+ Suffix itu. 
+
+674
+00:33:42,820 --> 00:33:44,320
+ Dan cara itu menunjukkan hal ini 
+
+675
+00:33:44,320 --> 00:33:51,080
+ adalah dengan melakukan penugasan ke dokumen khusus 
+
+676
+00:33:51,080 --> 00:33:56,090
+ nilai domain dot yang dapat diakses melalui JavaScript. 
+
+677
+00:33:56,090 --> 00:33:59,600
+ Jadi kita bisa mengatur dokumen dot domain secara eksplisit ke kanan ini 
+
+678
+00:33:59,600 --> 00:34:00,150
+ sini. 
+
+679
+00:34:00,150 --> 00:34:02,060
+ Dan itu diijinkan karena orang ini 
+
+680
+00:34:02,060 --> 00:34:04,160
+ adalah suffix dari pria itu. 
+
+681
+00:34:04,160 --> 00:34:07,880
+ Dan kemudian, sama, itu juga bisa 
+
+682
+00:34:07,880 --> 00:34:10,770
+ atur dokumen dot domain ke z.com dan atur ulang secara efektif 
+
+683
+00:34:10,770 --> 00:34:12,770
+ asal-usulnya seperti itu. 
+
+684
+00:34:12,770 --> 00:34:16,980
+ Sekarang apa yang tidak dapat dilakukan adalah tidak dapat melakukan sesuatu seperti itu 
+
+685
+00:34:16,980 --> 00:34:23,728
+ pengaturan domain dokumen ke dot y dot z dot com. 
+
+686
+00:34:23,728 --> 00:34:25,269
+ Itu dianulir karena ini tidak 
+
+687
+00:34:25,270 --> 00:34:29,370
+ masalah ini bukan suffix yang tepat dari asal asli. 
+
+688
+00:34:29,370 --> 00:34:35,536
+ Dan juga, itu tidak bisa mengatur sufiksnya ke dot com. 
+
+689
+00:34:35,536 --> 00:34:39,510
+ Jadi apakah ada yang punya teori tentang mengapa ini adalah ide yang buruk? 
+
+690
+00:34:39,510 --> 00:34:40,270
+ Benar, persis. 
+
+691
+00:34:40,270 --> 00:34:41,760
+ Jadi orang-orang tertawa karena, jelas, ini 
+
+692
+00:34:41,760 --> 00:34:43,592
+ akan membawa kiamat, benar. 
+
+693
+00:34:43,592 --> 00:34:45,329
+ Jadi jika ini dilakukan, maka ini berarti 
+
+694
+00:34:45,330 --> 00:34:49,639
+ bahwa situs itu entah bagaimana bisa memengaruhi cookie 
+
+695
+00:34:49,639 --> 00:34:52,050
+ atau hal-hal seperti itu di situs dot com mana saja 
+
+696
+00:34:52,050 --> 00:34:53,250
+ akan sangat menghancurkan. 
+
+697
+00:34:53,250 --> 00:34:56,210
+ Motivasi mengapa hal-hal semacam ini diperbolehkan 
+
+698
+00:34:56,210 --> 00:34:59,910
+ karena, mungkin, asal-usul ini 
+
+699
+00:34:59,910 --> 00:35:02,130
+ memiliki beberapa jenis hubungan kepercayaan yang sudah ada sebelumnya. 
+
+700
+00:35:02,130 --> 00:35:04,330
+ Jadi ini sepertinya tidak apa-apa. 
+
+701
+00:35:04,330 --> 00:35:05,890
+ Padahal, ini tampaknya buruk. 
+
+702
+00:35:05,890 --> 00:35:07,650
+ AUDIENCE: Jadi Anda bisa membuat perpecahan ini 
+
+703
+00:35:07,650 --> 00:35:10,999
+ pada titik atau titik akhir yang sebenarnya? 
+
+704
+00:35:10,999 --> 00:35:12,811
+ Seperti, misalnya, untuk xyzz.com Anda, 
+
+705
+00:35:12,811 --> 00:35:14,956
+ dapatkah Anda mengubahnya ke z.com Anda? 
+
+706
+00:35:14,956 --> 00:35:16,730
+ PROFESOR: Tidak, itu tertulis di setiap titik. 
+
+707
+00:35:16,730 --> 00:35:17,936
+ AUDIENCE: OK. 
+
+708
+00:35:17,936 --> 00:35:20,150
+ Apakah ada alasan mengapa itu tidak dibuat 
+
+709
+00:35:20,150 --> 00:35:27,560
+ sehingga Anda dapat menentukan super atau subdomain, 
+
+710
+00:35:27,560 --> 00:35:31,820
+ tetapi entah bagaimana mereka harus sepakat tentang di mana informasi itu 
+
+711
+00:35:31,820 --> 00:35:33,050
+ berasal dari. 
+
+712
+00:35:33,050 --> 00:35:36,370
+ Jadi, seperti, Anda mengatakan semacam saya ingin mempertimbangkan semua ini 
+
+713
+00:35:36,370 --> 00:35:37,674
+ menjadi asal yang sama dengan saya. 
+
+714
+00:35:37,674 --> 00:35:39,940
+ Jadi mereka bisa menyerang saya. 
+
+715
+00:35:39,940 --> 00:35:42,945
+ Dan kemudian Anda membuat simetris ini untuk saya 
+
+716
+00:35:42,945 --> 00:35:44,315
+ untuk mempengaruhi mereka juga? 
+
+717
+00:35:44,315 --> 00:35:48,170
+ [TIDAK JELAS]. Berarti apa pun yang dapat mempengaruhi saya. 
+
+718
+00:35:48,170 --> 00:35:50,410
+ Dan kemudian Anda memasukkan [tidak terdengar]. 
+
+719
+00:35:50,410 --> 00:35:51,799
+ PROFESOR: Ya, itu rumit. 
+
+720
+00:35:51,799 --> 00:35:53,840
+ Jadi ada beberapa jawaban berbeda untuk itu. 
+
+721
+00:35:53,840 --> 00:35:55,770
+ Jadi pertama-tama, orang-orang sangat khawatir tentang serangan ini 
+
+722
+00:35:55,770 --> 00:35:56,440
+ sini. 
+
+723
+00:35:56,440 --> 00:36:00,570
+ Jadi mereka ingin membuat manipulasi domain 
+
+724
+00:36:00,570 --> 00:36:03,540
+ bahasa, setidaknya, agak mudah dimengerti. 
+
+725
+00:36:03,540 --> 00:36:05,859
+ Jadi mereka tidak mengizinkan lebih banyak pengaturan yang rusak. 
+
+726
+00:36:05,859 --> 00:36:08,150
+ Saya akan mendapatkan satu hal dalam sedetik, yang memungkinkan 
+
+727
+00:36:08,150 --> 00:36:10,720
+ apa yang Anda bicarakan tetapi hanya berkenaan dengan domain 
+
+728
+00:36:10,720 --> 00:36:11,220
+ [TIDAK JELAS]. 
+
+729
+00:36:11,220 --> 00:36:12,370
+ Saya akan membahasnya dalam satu detik. 
+
+730
+00:36:12,370 --> 00:36:15,070
+ Dan lain lagi, juga, adalah bahwa antarmuka posting pesan 
+
+731
+00:36:15,070 --> 00:36:18,230
+ tidak mengizinkan domain sewenang-wenang untuk berkomunikasi satu sama lain 
+
+732
+00:36:18,230 --> 00:36:20,080
+ jika mereka berdua ikut serta. 
+
+733
+00:36:20,080 --> 00:36:22,700
+ Jadi dalam prakteknya, orang menggunakan pesan pos 
+
+734
+00:36:22,700 --> 00:36:25,040
+ untuk komunikasi lintas domain jika mereka 
+
+735
+00:36:25,040 --> 00:36:27,510
+ tidak dapat mengatur asal mereka untuk menggunakan yang sama 
+
+736
+00:36:27,510 --> 00:36:30,060
+ trik ini di sini. 
+
+737
+00:36:30,060 --> 00:36:35,780
+ Jadi ya, jadi browser bisa membatasi atau memperluas, 
+
+738
+00:36:35,780 --> 00:36:37,880
+ Saya harus mengatakan, domain mereka untuk sufiks ini 
+
+739
+00:36:37,880 --> 00:36:39,404
+ dari domain asli. 
+
+740
+00:36:39,404 --> 00:36:41,570
+ Dan ada juga quark kecil yang menarik di sini, 
+
+741
+00:36:41,570 --> 00:36:45,980
+ yang mana browser sebenarnya membedakan antara dokumen 
+
+742
+00:36:45,980 --> 00:36:48,150
+ nilai domain dot yang telah ditulis 
+
+743
+00:36:48,150 --> 00:36:50,306
+ dan yang belum ditulis, oke. 
+
+744
+00:36:50,306 --> 00:36:51,805
+ Dan ada alasan halus untuk ini 
+
+745
+00:36:51,805 --> 00:36:52,930
+ kami akan masuk dalam hitungan detik. 
+
+746
+00:36:52,930 --> 00:37:03,100
+ Jadi pada dasarnya, dua frame dapat mengakses satu sama lain 
+
+747
+00:37:03,100 --> 00:37:06,840
+ jika salah satu dari dua hal itu benar. 
+
+748
+00:37:06,840 --> 00:37:13,290
+ Hal pertama adalah kedua frame mengatur dot dokumen 
+
+749
+00:37:13,290 --> 00:37:19,390
+ domain ke nilai yang sama. 
+
+750
+00:37:19,390 --> 00:37:24,330
+
+
+751
+00:37:24,330 --> 00:37:27,630
+ Dan cara lain yang dua frame dapat mengakses satu sama lain 
+
+752
+00:37:27,630 --> 00:37:36,110
+ adalah bahwa tak satu pun dari frame tersebut telah mengubah domain dokumen. 
+
+753
+00:37:36,110 --> 00:37:42,310
+
+
+754
+00:37:42,310 --> 00:37:46,110
+ Dan tentu saja, kedua nilai harus cocok. 
+
+755
+00:37:46,110 --> 00:37:49,278
+ Dan ada kecocokan nilai. 
+
+756
+00:37:49,278 --> 00:37:52,090
+
+
+757
+00:37:52,090 --> 00:37:57,290
+ Jadi alasannya agak halus. 
+
+758
+00:37:57,290 --> 00:38:02,540
+ Tetapi ide dasarnya adalah bahwa kedua aturan ini mencegah domain 
+
+759
+00:38:02,540 --> 00:38:06,060
+ dari diserang oleh salah satu buggy sendiri 
+
+760
+00:38:06,060 --> 00:38:08,150
+ atau sub-domain jahat. 
+
+761
+00:38:08,150 --> 00:38:08,760
+ BAIK? 
+
+762
+00:38:08,760 --> 00:38:13,110
+ Jadi bayangkan Anda memiliki domain xyzcom. 
+
+763
+00:38:13,110 --> 00:38:16,540
+
+
+764
+00:38:16,540 --> 00:38:19,985
+ Dan kemudian, bayangkan bahwa itu mencoba menyerang yzcom. 
+
+765
+00:38:19,985 --> 00:38:23,526
+
+
+766
+00:38:23,526 --> 00:38:29,040
+ Jadi orang ini di sini buggy atau jahat. 
+
+767
+00:38:29,040 --> 00:38:32,080
+
+
+768
+00:38:32,080 --> 00:38:36,140
+ Jadi apa yang orang ini coba lakukan adalah memperpendek domainnya 
+
+769
+00:38:36,140 --> 00:38:36,730
+ menjadi yzcom. 
+
+770
+00:38:36,730 --> 00:38:40,320
+ Dan kemudian, mulai main-main dengan keadaan JavaScript, 
+
+771
+00:38:40,320 --> 00:38:42,170
+ atau cookie atau barang seperti itu di sini. 
+
+772
+00:38:42,170 --> 00:38:42,690
+ Kanan? 
+
+773
+00:38:42,690 --> 00:38:45,420
+ Jadi pada dasarnya, apa yang akan dikatakan oleh dua aturan ini di sini 
+
+774
+00:38:45,420 --> 00:38:49,600
+ adalah bahwa jika yzcom tidak ingin benar-benar mengizinkan siapa pun 
+
+775
+00:38:49,600 --> 00:38:51,910
+ untuk berinteraksi dengannya, itu tidak akan pernah terjadi 
+
+776
+00:38:51,910 --> 00:38:54,560
+ ubah itu nilai document.domain 
+
+777
+00:38:54,560 --> 00:38:57,860
+ sehingga ketika bingkai di sini mempersingkatnya, 
+
+778
+00:38:57,860 --> 00:38:59,340
+ browser akan mengatakan aha. 
+
+779
+00:38:59,340 --> 00:39:00,700
+ Anda telah memendekkannya. 
+
+780
+00:39:00,700 --> 00:39:01,470
+ Kamu tidak punya. 
+
+781
+00:39:01,470 --> 00:39:03,379
+ Ada kecocokan di sini dalam hal nilai-nilai. 
+
+782
+00:39:03,379 --> 00:39:04,920
+ Tetapi orang ini tidak menunjukkan mereka 
+
+783
+00:39:04,920 --> 00:39:08,209
+ ingin ikut serta dalam jenis ketidakjujuran ini. 
+
+784
+00:39:08,209 --> 00:39:09,250
+ Jadi apakah itu masuk akal? 
+
+785
+00:39:09,250 --> 00:39:12,850
+
+
+786
+00:39:12,850 --> 00:39:18,610
+ OK, jadi itu, pada dasarnya, bagaimana frame bekerja dengan hormat 
+
+787
+00:39:18,610 --> 00:39:19,860
+ ke kebijakan asal yang sama. 
+
+788
+00:39:19,860 --> 00:39:23,280
+
+
+789
+00:39:23,280 --> 00:39:27,200
+ Jadi kita bisa melihat bagaimana perlakuan node DOM kita. 
+
+790
+00:39:27,200 --> 00:39:31,700
+ Jadi DOM node, itu cukup mudah untuk node DOM. 
+
+791
+00:39:31,700 --> 00:39:33,870
+ Jadi node DOM, pada dasarnya, dapatkan asalnya 
+
+792
+00:39:33,870 --> 00:39:35,950
+ bingkai sekitarnya. 
+
+793
+00:39:35,950 --> 00:39:37,140
+ Masuk akal. 
+
+794
+00:39:37,140 --> 00:39:38,590
+ Lalu kita bisa melihat cookie. 
+
+795
+00:39:38,590 --> 00:39:44,770
+ Cookie itu rumit dan sedikit rumit. 
+
+796
+00:39:44,770 --> 00:39:50,400
+ Jadi cookie memiliki domain. 
+
+797
+00:39:50,400 --> 00:39:52,555
+ Dan mereka punya jalan. 
+
+798
+00:39:52,555 --> 00:39:55,810
+
+
+799
+00:39:55,810 --> 00:40:01,040
+ Jadi misalnya, Anda dapat membayangkan suatu cookie mungkin terkait 
+
+800
+00:40:01,040 --> 00:40:02,680
+ dengan informasi berikut. 
+
+801
+00:40:02,680 --> 00:40:06,880
+ Jadi asterisk dot MIT.edu. 
+
+802
+00:40:06,880 --> 00:40:12,030
+ Dan kemudian, 6.858. 
+
+803
+00:40:12,030 --> 00:40:14,660
+ Jadi Anda punya domain ini duduk di sini, 
+
+804
+00:40:14,660 --> 00:40:18,000
+ dan kemudian, Anda punya hal jalan ini duduk di sini. 
+
+805
+00:40:18,000 --> 00:40:23,000
+ Jadi perhatikan bahwa domain ini dapat, mungkin, selesai 
+
+806
+00:40:23,000 --> 00:40:24,670
+ akhiran halaman domain saat ini. 
+
+807
+00:40:24,670 --> 00:40:26,378
+ Jadi Anda bisa bermain, agak, trik serupa 
+
+808
+00:40:26,378 --> 00:40:27,280
+ seperti yang kita punya di sana. 
+
+809
+00:40:27,280 --> 00:40:29,300
+ Dan perhatikan bahwa jalan ini di sini sebenarnya bisa 
+
+810
+00:40:29,300 --> 00:40:33,690
+ diatur hanya untuk garis miring dengan tidak ada yang lain di sana, yang 
+
+811
+00:40:33,690 --> 00:40:37,280
+ menunjukkan bahwa semua jalur di domain 
+
+812
+00:40:37,280 --> 00:40:40,230
+ harus dapat memiliki akses ke cookie ini di sini. 
+
+813
+00:40:40,230 --> 00:40:41,940
+ Tetapi dalam kasus ini, kita sebenarnya punya 
+
+814
+00:40:41,940 --> 00:40:43,800
+ salah satu jalur non-kosong ini. 
+
+815
+00:40:43,800 --> 00:40:46,500
+ Jadi siapa pun yang menetapkan cookie ini, pada dasarnya, 
+
+816
+00:40:46,500 --> 00:40:49,630
+ mendapat untuk memilih apa domain di jalan terlihat seperti. 
+
+817
+00:40:49,630 --> 00:40:51,950
+ Dan itu benar-benar dapat diatur oleh server 
+
+818
+00:40:51,950 --> 00:40:54,190
+ atau dapat diatur pada sisi klien. 
+
+819
+00:40:54,190 --> 00:40:56,260
+ Jadi di sisi klien, pada dasarnya Anda bisa 
+
+820
+00:40:56,260 --> 00:41:00,985
+ langsung ke objek JavaScript ini yang disebut document.cooking. 
+
+821
+00:41:00,985 --> 00:41:04,200
+
+
+822
+00:41:04,200 --> 00:41:06,540
+ Dan ada, semacam, format Bizantium ini 
+
+823
+00:41:06,540 --> 00:41:08,426
+ yang dapat Anda gunakan untuk menunjukkan semua jalur ini 
+
+824
+00:41:08,426 --> 00:41:09,300
+ dan hal-hal seperti itu. 
+
+825
+00:41:09,300 --> 00:41:11,320
+ Tetapi cukup untuk mengatakan itu bisa dilakukan. 
+
+826
+00:41:11,320 --> 00:41:13,280
+ Jadi JavaScript dapat mengatur cookie seperti ini. 
+
+827
+00:41:13,280 --> 00:41:14,690
+ Dan juga, server bisa benar-benar 
+
+828
+00:41:14,690 --> 00:41:18,880
+ mengatur cookie pada respons HP ketika mereka kembali melalui kabel. 
+
+829
+00:41:18,880 --> 00:41:21,740
+ Jadi Anda dapat, pada dasarnya, cukup gunakan header cookie yang disetel, 
+
+830
+00:41:21,740 --> 00:41:24,590
+ jika Anda adalah server, untuk mengatur beberapa hal ini. 
+
+831
+00:41:24,590 --> 00:41:30,530
+ Dan ketahuilah bahwa ada bendera yang aman 
+
+832
+00:41:30,530 --> 00:41:34,520
+ yang dapat Anda setel di cookie untuk menunjukkan bahwa ini adalah HTTPS 
+
+833
+00:41:34,520 --> 00:41:38,330
+ cookie, artinya konten HTTP tidak boleh 
+
+834
+00:41:38,330 --> 00:41:41,110
+ dapat mengakses cookie itu. 
+
+835
+00:41:41,110 --> 00:41:45,210
+ Jadi itulah ide dasar di balik cookie. 
+
+836
+00:41:45,210 --> 00:41:48,780
+ Sekarang perhatikan bahwa setiap kali browser menghasilkan permintaan 
+
+837
+00:41:48,780 --> 00:41:50,580
+ ke server web tertentu, itu terjadi 
+
+838
+00:41:50,580 --> 00:41:54,720
+ untuk memasukkan semua cookie yang cocok dalam permintaan itu. 
+
+839
+00:41:54,720 --> 00:41:56,540
+ Jadi ada sedikit, semacam, 
+
+840
+00:41:56,540 --> 00:41:58,093
+ pencocokan string dan algoritma itu 
+
+841
+00:41:58,093 --> 00:42:00,289
+ harus dilakukan untuk mencari tahu apa yang semua 
+
+842
+00:42:00,289 --> 00:42:01,830
+ cookie yang tepat yang harus dikirim 
+
+843
+00:42:01,830 --> 00:42:03,180
+ ke layanan untuk permintaan tertentu 
+
+844
+00:42:03,180 --> 00:42:04,990
+ karena Anda dapat memiliki semua yang aneh ini, 
+
+845
+00:42:04,990 --> 00:42:06,632
+ semacam, akhiran domain hal yang terjadi 
+
+846
+00:42:06,632 --> 00:42:07,590
+ dan seterusnya dan seterusnya. 
+
+847
+00:42:07,590 --> 00:42:12,890
+ Tapi itulah ide dasar di balik cookie. 
+
+848
+00:42:12,890 --> 00:42:16,224
+ Jadi apakah itu semua masuk akal? 
+
+849
+00:42:16,224 --> 00:42:18,654
+ AUDIENCE: Jadi dapat membingkai akses setiap cookie lainnya 
+
+850
+00:42:18,654 --> 00:42:21,084
+ apakah mereka cocok dengan aturan itu? 
+
+851
+00:42:21,084 --> 00:42:24,150
+ PROFESOR: Ya, jadi frame bisa melakukan itu. 
+
+852
+00:42:24,150 --> 00:42:28,430
+ Tapi itu tergantung pada bagaimana document.domain telah diatur. 
+
+853
+00:42:28,430 --> 00:42:32,315
+ Dan kemudian, itu tergantung pada apa domain cookie 
+
+854
+00:42:32,315 --> 00:42:33,760
+ dan jalan telah ditetapkan. 
+
+855
+00:42:33,760 --> 00:42:36,860
+ Jadi ya, setelah sekelompok perbandingan yang tegang ini, 
+
+856
+00:42:36,860 --> 00:42:38,610
+ ya, frame dapat mengakses cookie satu sama lain 
+
+857
+00:42:38,610 --> 00:42:39,810
+ jika semua tes itu lulus. 
+
+858
+00:42:39,810 --> 00:42:44,220
+
+
+859
+00:42:44,220 --> 00:42:47,400
+ Oke, jadi ya, itu menuntun saya ke pertanyaan berikutnya. 
+
+860
+00:42:47,400 --> 00:42:50,240
+ Jadi kami mencoba mencari tahu bagaimana frame yang berbeda bisa 
+
+861
+00:42:50,240 --> 00:42:51,580
+ mengakses cookie satu sama lain. 
+
+862
+00:42:51,580 --> 00:42:54,040
+ Jadi apa masalahnya? 
+
+863
+00:42:54,040 --> 00:42:56,910
+ Apa yang menjadi masalah adalah kami mengizinkan frame arbitrer 
+
+864
+00:42:56,910 --> 00:42:59,516
+ untuk menulis cookie orang yang sewenang-wenang? 
+
+865
+00:42:59,516 --> 00:43:00,390
+ Jadi apa yang Anda pikirkan? 
+
+866
+00:43:00,390 --> 00:43:06,513
+
+
+867
+00:43:06,513 --> 00:43:08,950
+ Yah, itu akan menjadi buruk, cukup untuk dikatakan. 
+
+868
+00:43:08,950 --> 00:43:11,150
+ Alasannya itu buruk karena, sekali lagi, 
+
+869
+00:43:11,150 --> 00:43:16,340
+ cookie ini memungkinkan sisi klien dari aplikasi 
+
+870
+00:43:16,340 --> 00:43:18,940
+ untuk menyimpan data per pengguna. 
+
+871
+00:43:18,940 --> 00:43:22,180
+ Jadi Anda bisa membayangkan bahwa jika seorang penyerang bisa mengendalikan 
+
+872
+00:43:22,180 --> 00:43:24,960
+ atau mengganti cookie pengguna, penyerang sebenarnya bisa, 
+
+873
+00:43:24,960 --> 00:43:27,940
+ misalnya, ubah cookie itu untuk Gmail 
+
+874
+00:43:27,940 --> 00:43:33,140
+ untuk membuat pengguna masuk ke akun Gmail penyerang. 
+
+875
+00:43:33,140 --> 00:43:35,230
+ Jadi ketika pengguna login ke penyerang Gmail 
+
+876
+00:43:35,230 --> 00:43:38,820
+ akun, email apa pun yang diketik pengguna 
+
+877
+00:43:38,820 --> 00:43:40,680
+ bisa dibaca oleh penyerang, misalnya. 
+
+878
+00:43:40,680 --> 00:43:42,680
+ Anda juga bisa membayangkan bahwa seseorang dapat merusak 
+
+879
+00:43:42,680 --> 00:43:44,177
+ dengan cookie Amazon.com. 
+
+880
+00:43:44,177 --> 00:43:46,510
+ Anda tahu, meletakkan segala macam hal konyol yang memalukan 
+
+881
+00:43:46,510 --> 00:43:49,066
+ di keranjang belanja Anda, mungkin, atau lebih dan sebagainya. 
+
+882
+00:43:49,066 --> 00:43:51,690
+ Jadi cookie adalah, sebenarnya, sumber daya yang sangat penting untuk dilindungi. 
+
+883
+00:43:51,690 --> 00:43:54,580
+ Dan banyak serangan keamanan web 
+
+884
+00:43:54,580 --> 00:43:59,390
+ cobalah mencuri kue itu untuk melakukan berbagai macam kejahatan. 
+
+885
+00:43:59,390 --> 00:44:01,750
+ Jadi, inilah pertanyaan menarik lainnya 
+
+886
+00:44:01,750 --> 00:44:03,370
+ sehubungan dengan cookie. 
+
+887
+00:44:03,370 --> 00:44:08,420
+ Jadi, katakanlah Anda memiliki situs itu 
+
+888
+00:44:08,420 --> 00:44:12,290
+ berasal dari foo.co.uk. 
+
+889
+00:44:12,290 --> 00:44:14,800
+
+
+890
+00:44:14,800 --> 00:44:18,690
+ Jadi seharusnya situs dari nama host ini 
+
+891
+00:44:18,690 --> 00:44:24,120
+ diperbolehkan mengatur cookie untuk co.uk? 
+
+892
+00:44:24,120 --> 00:44:26,630
+
+
+893
+00:44:26,630 --> 00:44:30,146
+ Jadi ini agak halus karena, menurut 
+
+894
+00:44:30,146 --> 00:44:31,520
+ dengan aturan yang telah kita diskusikan 
+
+895
+00:44:31,520 --> 00:44:37,320
+ sebelumnya, situs dari sini harus dapat mempersingkat domainnya, 
+
+896
+00:44:37,320 --> 00:44:41,000
+ mengatur cookie untuk ini, dan itu semua tampaknya legal. 
+
+897
+00:44:41,000 --> 00:44:42,760
+ Sekarang tentu saja, sebagai manusia, menurut kami 
+
+898
+00:44:42,760 --> 00:44:45,430
+ ini agak mencurigakan karena, sebagai manusia, 
+
+899
+00:44:45,430 --> 00:44:48,820
+ kami benar-benar mengerti bahwa ini berbicara secara moral 
+
+900
+00:44:48,820 --> 00:44:51,790
+ satu domain atom tunggal. 
+
+901
+00:44:51,790 --> 00:44:54,640
+ Secara moral, ini setara dengan .com. 
+
+902
+00:44:54,640 --> 00:44:55,640
+ Orang Inggris kacau. 
+
+903
+00:44:55,640 --> 00:44:56,311
+ Mereka harus memiliki titik di sana. 
+
+904
+00:44:56,311 --> 00:44:58,186
+ Tapi itu bukan salah mereka. Sejarah tidak adil. 
+
+905
+00:44:58,186 --> 00:44:58,720
+ Kanan? 
+
+906
+00:44:58,720 --> 00:45:02,470
+ Jadi secara moral, ini adalah domain tunggal. 
+
+907
+00:45:02,470 --> 00:45:05,040
+ Jadi Anda benar-benar harus memiliki beberapa infrastruktur khusus 
+
+908
+00:45:05,040 --> 00:45:08,260
+ untuk mendapatkan aturan pengaturan cookie agar berfungsi dengan benar. 
+
+909
+00:45:08,260 --> 00:45:12,400
+ Jadi pada dasarnya, Mozilla, mereka memiliki situs web ini 
+
+910
+00:45:12,400 --> 00:45:15,430
+ disebut publicsuffix.org. 
+
+911
+00:45:15,430 --> 00:45:21,220
+
+
+912
+00:45:21,220 --> 00:45:25,030
+ Dan pada dasarnya, apa isi situs web ini 
+
+913
+00:45:25,030 --> 00:45:29,360
+ adalah daftar aturan ini untuk bagaimana cookie, dan asal-usul, 
+
+914
+00:45:29,360 --> 00:45:32,480
+ dan domain harus menyusut mengingat beberapa hal mungkin terjadi 
+
+915
+00:45:32,480 --> 00:45:33,590
+ memiliki titik di dalamnya. 
+
+916
+00:45:33,590 --> 00:45:37,010
+ Namun sebenarnya, mereka harus diperlakukan sebagai satu, semacam, 
+
+917
+00:45:37,010 --> 00:45:38,930
+ benda atom. 
+
+918
+00:45:38,930 --> 00:45:41,500
+ Jadi sebenarnya, ketika browser Anda mencari tahu 
+
+919
+00:45:41,500 --> 00:45:44,512
+ bagaimana cara melakukan semua manipulasi berbagai cookie ini, 
+
+920
+00:45:44,512 --> 00:45:46,220
+ sebenarnya akan berkonsultasi dengan pihak ini. 
+
+921
+00:45:46,220 --> 00:45:47,730
+ Atau itu akan memanggang ini entah bagaimana 
+
+922
+00:45:47,730 --> 00:45:49,230
+ atau sesuatu seperti itu untuk memastikan 
+
+923
+00:45:49,230 --> 00:45:52,790
+ bahwa foo.co.uk sebenarnya tidak dapat mempersingkat domainnya 
+
+924
+00:45:52,790 --> 00:45:54,070
+ ke co.uk. 
+
+925
+00:45:54,070 --> 00:45:56,980
+ Dan kemudian, lakukan beberapa ketidakjujuran. 
+
+926
+00:45:56,980 --> 00:45:59,220
+ Jadi sekali lagi, ini sangat halus. 
+
+927
+00:45:59,220 --> 00:46:01,770
+ Dan banyak sekali keamanan web yang menarik 
+
+928
+00:46:01,770 --> 00:46:04,740
+ masalah yang kami temukan terjadi karena banyak 
+
+929
+00:46:04,740 --> 00:46:07,120
+ infrastruktur asli dirancang hanya 
+
+930
+00:46:07,120 --> 00:46:08,590
+ untuk bahasa inggris. 
+
+931
+00:46:08,590 --> 00:46:11,150
+ Anda tahu, untuk teks ASCII atau sesuatu seperti ini. 
+
+932
+00:46:11,150 --> 00:46:15,460
+ Itu tidak dirancang untuk komunitas internasional. 
+
+933
+00:46:15,460 --> 00:46:18,275
+ Jadi ketika internet menjadi lebih populer, orang-orang berkata, hei, 
+
+934
+00:46:18,275 --> 00:46:20,150
+ kami membuat beberapa keputusan desain yang cukup besar di sini 
+
+935
+00:46:20,150 --> 00:46:20,840
+ pada awalnya. 
+
+936
+00:46:20,840 --> 00:46:22,298
+ Kami benar-benar harus membuat ini dapat digunakan 
+
+937
+00:46:22,298 --> 00:46:25,181
+ pada orang-orang yang menggunakan pemahaman kami yang sempit tentang bahasa apa 
+
+938
+00:46:25,181 --> 00:46:25,680
+ cara. 
+
+939
+00:46:25,680 --> 00:46:27,319
+ Anda mengalami semua masalah gila ini. 
+
+940
+00:46:27,319 --> 00:46:28,860
+ Dan saya akan memberi Anda contoh lain 
+
+941
+00:46:28,860 --> 00:46:31,520
+ dari mereka kuliah nanti. 
+
+942
+00:46:31,520 --> 00:46:34,400
+ Jadi ini semua masuk akal? 
+
+943
+00:46:34,400 --> 00:46:36,220
+ BAIK. 
+
+944
+00:46:36,220 --> 00:46:44,930
+ Jadi sehubungan dengan tanggapan HTTP XML, 
+
+945
+00:46:44,930 --> 00:46:50,740
+ bagaimana mereka diperlakukan dengan kebijakan asal yang sama? 
+
+946
+00:46:50,740 --> 00:46:53,310
+
+
+947
+00:46:53,310 --> 00:46:58,510
+ Jadi secara default, JavaScript hanya dapat menghasilkan salah satunya 
+
+948
+00:46:58,510 --> 00:47:01,720
+ jika itu akan ke server asalnya. 
+
+949
+00:47:01,720 --> 00:47:05,500
+ Namun, ada antarmuka baru ini yang disebut 
+
+950
+00:47:05,500 --> 00:47:08,476
+ permintaan asal silang atau CORS. 
+
+951
+00:47:08,476 --> 00:47:13,970
+ Baiklah, jadi ini adalah asal yang sama 
+
+952
+00:47:13,970 --> 00:47:20,500
+ kecuali server telah mengaktifkan hal CORS ini. 
+
+953
+00:47:20,500 --> 00:47:24,120
+
+
+954
+00:47:24,120 --> 00:47:29,960
+ Jadi pada dasarnya, ini menambahkan header respons HTTP baru yang dipanggil 
+
+955
+00:47:29,960 --> 00:47:36,480
+ kontrol akses memungkinkan asal. 
+
+956
+00:47:36,480 --> 00:47:42,100
+
+
+957
+00:47:42,100 --> 00:47:43,960
+ Jadi mari kita katakan bahwa JavaScript dari foo.com 
+
+958
+00:47:43,960 --> 00:47:47,470
+ ingin membuat permintaan HTTP XML ke bar.com. 
+
+959
+00:47:47,470 --> 00:47:51,280
+ Jadi itulah asal silang, seperti yang kami jelaskan dalam aturan sejauh ini. 
+
+960
+00:47:51,280 --> 00:47:55,380
+ Jadi jika server di bar.com ingin mengizinkan ini, 
+
+961
+00:47:55,380 --> 00:47:59,220
+ itu akan kembali di dalamnya respons HTTP header ini di sini 
+
+962
+00:47:59,220 --> 00:48:07,670
+ itu akan mengatakan, ya, saya izinkan, misalnya, foo.com 
+
+963
+00:48:07,670 --> 00:48:13,220
+ untuk mengirim saya permintaan HTTP XML lintas silang ini. 
+
+964
+00:48:13,220 --> 00:48:15,270
+ Server di bar.com benar-benar bisa mengatakan tidak. 
+
+965
+00:48:15,270 --> 00:48:17,230
+ Itu bisa menolak permintaan itu. 
+
+966
+00:48:17,230 --> 00:48:21,440
+ Dalam hal ini, browser akan gagal permintaan HTTP HTTP. 
+
+967
+00:48:21,440 --> 00:48:23,260
+ Jadi ini, semacam, hal baru itu 
+
+968
+00:48:23,260 --> 00:48:27,270
+ muncul dalam jumlah besar karena aplikasi-aplikasi ini. 
+
+969
+00:48:27,270 --> 00:48:30,732
+ Kebutuhan ini, entah bagaimana, aplikasi 
+
+970
+00:48:30,732 --> 00:48:32,690
+ dari pengembang yang berbeda dan domain yang berbeda 
+
+971
+00:48:32,690 --> 00:48:35,930
+ untuk dapat berbagi data dalam beberapa jenis cara yang dibatasi. 
+
+972
+00:48:35,930 --> 00:48:38,085
+ Jadi ini juga bisa menjadi tanda bintang di sini 
+
+973
+00:48:38,085 --> 00:48:40,220
+ kalau ada yang bisa mengambil data lintas-asal, 
+
+974
+00:48:40,220 --> 00:48:42,630
+ seterusnya dan seterusnya. 
+
+975
+00:48:42,630 --> 00:48:45,316
+ Jadi saya pikir itu cukup mudah. 
+
+976
+00:48:45,316 --> 00:48:47,190
+ Jadi maksud saya, ada banyak sumber daya lain 
+
+977
+00:48:47,190 --> 00:48:50,220
+ kita bisa melihat. 
+
+978
+00:48:50,220 --> 00:48:52,030
+ Misalnya, gambar. 
+
+979
+00:48:52,030 --> 00:48:56,310
+ Jadi sebuah frame dapat memuat gambar dari asal mana pun yang diinginkannya. 
+
+980
+00:48:56,310 --> 00:49:01,044
+ Tapi itu tidak bisa benar-benar memeriksa bit di gambar itu 
+
+981
+00:49:01,044 --> 00:49:02,710
+ karena, entah bagaimana, kebijakan asal yang sama 
+
+982
+00:49:02,710 --> 00:49:04,790
+ mengatakan bahwa memiliki asal yang berbeda 
+
+983
+00:49:04,790 --> 00:49:07,870
+ langsung memeriksa konten satu sama lain adalah hal yang buruk. 
+
+984
+00:49:07,870 --> 00:49:10,390
+ Jadi frame tidak dapat memeriksa bit. 
+
+985
+00:49:10,390 --> 00:49:12,005
+ Tetapi sebenarnya, hal itu bisa menyimpulkan 
+
+986
+00:49:12,005 --> 00:49:14,630
+ seperti apa ukuran gambar itu karena sebenarnya bisa 
+
+987
+00:49:14,630 --> 00:49:17,490
+ lihat di mana domino lain di halaman itu 
+
+988
+00:49:17,490 --> 00:49:18,910
+ telah ditempatkan, misalnya. 
+
+989
+00:49:18,910 --> 00:49:20,700
+ Jadi ini adalah salah satu dari contoh aneh ini di mana 
+
+990
+00:49:20,700 --> 00:49:22,390
+ kebijakan asal yang sama adalah pura-pura 
+
+991
+00:49:22,390 --> 00:49:24,180
+ mencoba mencegah semua kebocoran informasi. 
+
+992
+00:49:24,180 --> 00:49:25,805
+ Tapi itu tidak bisa mencegah semuanya 
+
+993
+00:49:25,805 --> 00:49:27,670
+ karena embedding secara inheren mengungkapkan 
+
+994
+00:49:27,670 --> 00:49:29,960
+ beberapa jenis informasi. 
+
+995
+00:49:29,960 --> 00:49:33,280
+ CSS memiliki cerita yang mirip dengan gambar. 
+
+996
+00:49:33,280 --> 00:49:38,140
+ Jadi frame dapat menanamkan CSS dari asal mana pun. 
+
+997
+00:49:38,140 --> 00:49:41,850
+ Namun, tidak dapat secara langsung memeriksa teks di dalamnya 
+
+998
+00:49:41,850 --> 00:49:44,150
+ File CSS, jika berasal dari asal yang berbeda. 
+
+999
+00:49:44,150 --> 00:49:47,640
+ Tapi itu benar-benar dapat menyiratkan apa yang dilakukan CSS ini karena itu adil 
+
+1000
+00:49:47,640 --> 00:49:49,130
+ dapat membuat banyak node. 
+
+1001
+00:49:49,130 --> 00:49:51,370
+ Dan kemudian, lihat bagaimana gaya mereka berubah. 
+
+1002
+00:49:51,370 --> 00:49:53,740
+ Jadi agak aneh. 
+
+1003
+00:49:53,740 --> 00:49:59,020
+ JavaScript sebenarnya adalah contoh favorit saya 
+
+1004
+00:49:59,020 --> 00:50:01,440
+ tentang bagaimana perjuangan kebijakan asal yang sama ini 
+
+1005
+00:50:01,440 --> 00:50:04,550
+ untuk mempertahankan semua jenis konsistensi intelektual. 
+
+1006
+00:50:04,550 --> 00:50:08,740
+ Jadi ide di sini adalah bahwa, jika Anda melakukan pengambilan asal silang 
+
+1007
+00:50:08,740 --> 00:50:10,980
+ JavaScript, yang diizinkan. 
+
+1008
+00:50:10,980 --> 00:50:13,200
+ Anda dapat mengizinkan JavaScript eksternal tersebut 
+
+1009
+00:50:13,200 --> 00:50:15,810
+ untuk mengeksekusi dalam konteks halaman Anda sendiri. 
+
+1010
+00:50:15,810 --> 00:50:19,300
+ Anda tidak dapat, bagaimanapun, melihat kode sumber untuk itu. 
+
+1011
+00:50:19,300 --> 00:50:21,750
+ Jadi jika Anda memiliki sumber tag skrip 
+
+1012
+00:50:21,750 --> 00:50:23,700
+ sama dengan sesuatu di luar domain Anda, 
+
+1013
+00:50:23,700 --> 00:50:25,922
+ lalu kapan sumber itu dieksekusi, 
+
+1014
+00:50:25,922 --> 00:50:27,130
+ Anda dapat memanggil fungsi-fungsi di dalamnya. 
+
+1015
+00:50:27,130 --> 00:50:29,296
+ Tetapi Anda tidak dapat benar-benar melihat sumber JavaScript 
+
+1016
+00:50:29,296 --> 00:50:30,470
+ kode di dalamnya. 
+
+1017
+00:50:30,470 --> 00:50:31,370
+ Baiklah. 
+
+1018
+00:50:31,370 --> 00:50:32,510
+ Jadi sepertinya sangat bagus. 
+
+1019
+00:50:32,510 --> 00:50:34,343
+ Namun, ada banyak lubang di sini. 
+
+1020
+00:50:34,343 --> 00:50:38,040
+ Jadi misalnya, JavaScript adalah bahasa scripting yang dinamis. 
+
+1021
+00:50:38,040 --> 00:50:40,920
+ Dan fungsi adalah objek kelas satu. 
+
+1022
+00:50:40,920 --> 00:50:47,090
+ Jadi untuk fungsi apa pun, Anda cukup memanggil f.tostring. 
+
+1023
+00:50:47,090 --> 00:50:49,950
+ Dan itu akan memberi Anda kode sumber untuk fungsi tersebut. 
+
+1024
+00:50:49,950 --> 00:50:51,590
+ Dan orang-orang melakukan ini sepanjang waktu. 
+
+1025
+00:50:51,590 --> 00:50:54,654
+ Lakukan hal-hal seperti penulisan ulang yang dinamis dan hal-hal seperti itu. 
+
+1026
+00:50:54,654 --> 00:50:56,070
+ Jadi Anda tahu kebijakan asal yang sama 
+
+1027
+00:50:56,070 --> 00:50:57,880
+ tidak memungkinkan Anda untuk langsung melihat 
+
+1028
+00:50:57,880 --> 00:51:00,140
+ di isi tag skrip itu sendiri? 
+
+1029
+00:51:00,140 --> 00:51:02,864
+ Anda bisa memanggil ini untuk semua fungsi publik 
+
+1030
+00:51:02,864 --> 00:51:04,530
+ yang diberikan oleh skrip eksternal itu kepada Anda. 
+
+1031
+00:51:04,530 --> 00:51:06,600
+ Dan dapatkan kode sumber seperti itu. 
+
+1032
+00:51:06,600 --> 00:51:08,190
+ Hal lain yang bisa Anda bayangkan lakukan 
+
+1033
+00:51:08,190 --> 00:51:11,540
+ Anda hanya bisa mendapatkan server rumah dari domain Anda 
+
+1034
+00:51:11,540 --> 00:51:13,980
+ untuk hanya mengambil kode sumber untuk Anda. 
+
+1035
+00:51:13,980 --> 00:51:16,630
+ Dan kemudian, kirimkan kembali kepada Anda. 
+
+1036
+00:51:16,630 --> 00:51:17,275
+ Jadi, oops. 
+
+1037
+00:51:17,275 --> 00:51:19,400
+ Maksud saya, Anda pada dasarnya hanya meminta server rumah Anda 
+
+1038
+00:51:19,400 --> 00:51:20,610
+ untuk menjalankan Wget. 
+
+1039
+00:51:20,610 --> 00:51:22,180
+ Dan Anda mendapatkan kode sumber dengan cara itu. 
+
+1040
+00:51:22,180 --> 00:51:24,370
+ Oke, jadi itu, agak berpikir, konyol. 
+
+1041
+00:51:24,370 --> 00:51:27,290
+ Singkat cerita, kebijakan asal yang sama 
+
+1042
+00:51:27,290 --> 00:51:28,556
+ disini agak aneh. 
+
+1043
+00:51:28,556 --> 00:51:30,903
+ AUDIENCE: Anggap bahwa par dari alasan mereka 
+
+1044
+00:51:30,903 --> 00:51:33,281
+ lakukan itu untuk mencegah pengguna mengambil JavaScript 
+
+1045
+00:51:33,281 --> 00:51:35,030
+ karena dengan begitu cookie akan dikirim juga. 
+
+1046
+00:51:35,030 --> 00:51:37,284
+ Jadi Anda bisa mendapatkan JavaScript yang disesuaikan untuk Anda. 
+
+1047
+00:51:37,284 --> 00:51:38,276
+ PROFESOR: Ya. 
+
+1048
+00:51:38,276 --> 00:51:40,260
+ AUDIENCE: Jadi, jika Anda mendapatkan server untuk mengambilnya untuk Anda, 
+
+1049
+00:51:40,260 --> 00:51:41,252
+ itu tidak akan memiliki cookie pengguna [tidak terdengar]. 
+
+1050
+00:51:41,252 --> 00:51:42,640
+ PROFESOR: Itu benar. 
+
+1051
+00:51:42,640 --> 00:51:44,790
+ Meskipun, dalam prakteknya, banyak kali, 
+
+1052
+00:51:44,790 --> 00:51:49,119
+ kode sumber mentah, itu sendiri, bukan pengguna yang dirancang dalam praktik. 
+
+1053
+00:51:49,119 --> 00:51:50,660
+ Tetapi Anda benar bahwa itu akan mencegah 
+
+1054
+00:51:50,660 --> 00:51:52,960
+ beberapa serangan berperantara cookie seperti itu. 
+
+1055
+00:51:52,960 --> 00:51:54,630
+ Modulo, beberapa cookie [TIDAK JELAS]. 
+
+1056
+00:51:54,630 --> 00:51:57,160
+ Tapi itu benar sekali. 
+
+1057
+00:51:57,160 --> 00:52:02,505
+ Jadi karena itu sebenarnya cukup mudah bagi pengguna dan aplikasi 
+
+1058
+00:52:02,505 --> 00:52:04,809
+ untuk mendapatkan kode sumber JavaScript, banyak kali, 
+
+1059
+00:52:04,809 --> 00:52:06,600
+ Kode sumber JavaScript, saat disebarkan, 
+
+1060
+00:52:06,600 --> 00:52:09,070
+ itu sebenarnya dikaburkan dan dikecilkan. 
+
+1061
+00:52:09,070 --> 00:52:11,860
+ Jadi, jika Anda pernah mencoba untuk melihat dan melihat cara kerja laman web, 
+
+1062
+00:52:11,860 --> 00:52:13,800
+ jika Anda melihat sumbernya, terkadang orang 
+
+1063
+00:52:13,800 --> 00:52:16,330
+ akan melakukan hal-hal seperti memindahkan semua ruang putih. 
+
+1064
+00:52:16,330 --> 00:52:18,440
+ Mereka juga akan mengubah semua nama variabel 
+
+1065
+00:52:18,440 --> 00:52:21,070
+ menjadi super pendek dan memiliki semua tanda seru ini. 
+
+1066
+00:52:21,070 --> 00:52:23,940
+ Terlihat seperti karakter kartun yang mengutuk di kartun. 
+
+1067
+00:52:23,940 --> 00:52:25,650
+ Jadi begitulah, seperti bentuk curang 
+
+1068
+00:52:25,650 --> 00:52:27,290
+ manajemen hak digital. 
+
+1069
+00:52:27,290 --> 00:52:32,090
+ Tapi itu semua, akhirnya, sedikit omong kosong 
+
+1070
+00:52:32,090 --> 00:52:34,490
+ karena Anda dapat melakukan hal-hal seperti eksekusi 
+
+1071
+00:52:34,490 --> 00:52:36,450
+ kode itu di browser Anda sendiri. 
+
+1072
+00:52:36,450 --> 00:52:37,300
+ Lihat apa yang dilakukannya. 
+
+1073
+00:52:37,300 --> 00:52:38,220
+ Mengendus jaringan. 
+
+1074
+00:52:38,220 --> 00:52:40,352
+ Lihat siapa yang bicara, seterusnya, dan seterusnya. 
+
+1075
+00:52:40,352 --> 00:52:44,480
+ Tapi itu, pada dasarnya, cerita asal yang sama untuk JavaScript. 
+
+1076
+00:52:44,480 --> 00:52:45,255
+ Plug-ins-- 
+
+1077
+00:52:45,255 --> 00:52:46,754
+ AUDIENCE: Saya berada di bawah kesan 
+
+1078
+00:52:46,754 --> 00:52:50,051
+ bahwa alasan Anda melakukan itu adalah [TIDAK JELAS] 
+
+1079
+00:52:50,051 --> 00:52:52,330
+ kurangi waktu untuk mengunduh daripada [TIDAK JELAS]. 
+
+1080
+00:52:52,330 --> 00:52:54,820
+ PROFESOR: Jadi itu juga alasan mereka melakukan itu juga. 
+
+1081
+00:52:54,820 --> 00:52:56,100
+ Itu poin yang bagus. 
+
+1082
+00:52:56,100 --> 00:53:00,312
+ Tapi maksud saya, jika Anda mengetik ke internet, semacam, 
+
+1083
+00:53:00,312 --> 00:53:02,500
+ pengaburan halaman web atau hal-hal seperti itu, 
+
+1084
+00:53:02,500 --> 00:53:06,110
+ orang sering mencoba, entah bagaimana, membuat beberapa jenis rahasia 
+
+1085
+00:53:06,110 --> 00:53:08,330
+ ke dalam HTML atau JavaScript mereka. 
+
+1086
+00:53:08,330 --> 00:53:10,170
+ Mungkin mereka ingin mengaburkan protokol. 
+
+1087
+00:53:10,170 --> 00:53:13,230
+ Misalnya, jika klien menggunakannya untuk berbicara dengan server. 
+
+1088
+00:53:13,230 --> 00:53:16,222
+ Beberapa orang juga akan melakukan obfuscation karena alasan itu. 
+
+1089
+00:53:16,222 --> 00:53:17,680
+ Minification murni-- dengan kata lain, 
+
+1090
+00:53:17,680 --> 00:53:19,944
+ hanya membuat nama-nama variabel kecil 
+
+1091
+00:53:19,944 --> 00:53:21,360
+ dan memindahkan space-- [tidak terdengar] 
+
+1092
+00:53:21,360 --> 00:53:24,875
+ ya, itu terutama hanya untuk menghemat unduhan, waktu unduh. 
+
+1093
+00:53:24,875 --> 00:53:28,611
+
+
+1094
+00:53:28,611 --> 00:53:31,710
+ Oke, begitulah ceritanya untuk JavaScript. 
+
+1095
+00:53:31,710 --> 00:53:34,150
+ Ada juga plug-in. 
+
+1096
+00:53:34,150 --> 00:53:39,440
+ Jadi ini adalah hal-hal seperti Java dan hal-hal seperti ini. 
+
+1097
+00:53:39,440 --> 00:53:42,799
+ Jadi bingkai dapat dengan mudah menjalankan plug-in dari mana pun asal. 
+
+1098
+00:53:42,799 --> 00:53:44,590
+ Sekarang plug-in, tergantung siapa yang Anda percaya, 
+
+1099
+00:53:44,590 --> 00:53:46,548
+ sebenarnya menuju ke jalan dinosaurus. 
+
+1100
+00:53:46,548 --> 00:53:48,530
+ Karena banyak fitur HTML 5 baru, 
+
+1101
+00:53:48,530 --> 00:53:50,030
+ seperti tag video dan hal-hal seperti ini, 
+
+1102
+00:53:50,030 --> 00:53:51,488
+ dapat benar-benar melakukan hal-hal yang Anda gunakan 
+
+1103
+00:53:51,488 --> 00:53:53,574
+ hanya bisa dilakukan dengan plug-in seperti Java. 
+
+1104
+00:53:53,574 --> 00:53:55,490
+ Jadi tidak jelas berapa lama lagi hal ini 
+
+1105
+00:53:55,490 --> 00:53:58,460
+ akan ada di sekitar. 
+
+1106
+00:53:58,460 --> 00:53:59,590
+ Oke, jadi ada pertanyaan. 
+
+1107
+00:53:59,590 --> 00:54:02,992
+
+
+1108
+00:54:02,992 --> 00:54:07,560
+ OK, jadi ingat bahwa ketika browser menghasilkan HTTP 
+
+1109
+00:54:07,560 --> 00:54:11,090
+ minta secara otomatis menyertakan cookie yang relevan 
+
+1110
+00:54:11,090 --> 00:54:12,080
+ dalam permintaan itu. 
+
+1111
+00:54:12,080 --> 00:54:18,250
+ Jadi apa yang terjadi jika situs berbahaya menghasilkan 
+
+1112
+00:54:18,250 --> 00:54:21,280
+ sebuah URL yang terlihat seperti ini? 
+
+1113
+00:54:21,280 --> 00:54:24,538
+ Jadi misalnya, itu menciptakan bingkai anak baru. 
+
+1114
+00:54:24,538 --> 00:54:28,370
+ Ia mengatakan URL itu ke bank.com. 
+
+1115
+00:54:28,370 --> 00:54:31,990
+ Dan kemudian, itu benar-benar mencoba untuk meniru apa yang akan browser 
+
+1116
+00:54:31,990 --> 00:54:36,910
+ lakukan jika akan ada transfer uang 
+
+1117
+00:54:36,910 --> 00:54:39,780
+ antara pengguna dan orang lain. 
+
+1118
+00:54:39,780 --> 00:54:44,140
+
+
+1119
+00:54:44,140 --> 00:54:49,605
+ Jadi di URL ini, dalam bingkai inilah serangan itu 
+
+1120
+00:54:49,605 --> 00:54:53,020
+ sedang mencoba untuk membuat, mencoba untuk memohon perintah transfer ini 
+
+1121
+00:54:53,020 --> 00:54:53,520
+ sini. 
+
+1122
+00:54:53,520 --> 00:54:54,872
+ Katakan $ 500. 
+
+1123
+00:54:54,872 --> 00:54:58,960
+ Dan itu harus pergi ke akun penyerang di bank. 
+
+1124
+00:54:58,960 --> 00:55:01,800
+ Sekarang halaman penyerang, yang mana pengguna 
+
+1125
+00:55:01,800 --> 00:55:04,516
+ dikunjungi karena, entah bagaimana, penyerang adalah [TIDAK JELAS] 
+
+1126
+00:55:04,516 --> 00:55:07,450
+ pergi kesana. 
+
+1127
+00:55:07,450 --> 00:55:09,160
+ Yang menarik tentang ini adalah itu, 
+
+1128
+00:55:09,160 --> 00:55:11,760
+ meskipun halaman penyerang tidak mau 
+
+1129
+00:55:11,760 --> 00:55:14,930
+ dapat melihat isi bingkai anak ini 
+
+1130
+00:55:14,930 --> 00:55:18,020
+ karena mungkin akan berada di asal yang berbeda. 
+
+1131
+00:55:18,020 --> 00:55:21,880
+ Halaman bank.com akan tetap melakukan apa yang diinginkan penyerang 
+
+1132
+00:55:21,880 --> 00:55:24,220
+ karena peramban akan memindahkan semua pengguna 
+
+1133
+00:55:24,220 --> 00:55:25,506
+ cookie dengan permintaan ini. 
+
+1134
+00:55:25,506 --> 00:55:27,130
+ Ini akan melihat perintah ini di sini 
+
+1135
+00:55:27,130 --> 00:55:29,080
+ dan berkata, oh, pengguna pasti, entah bagaimana, 
+
+1136
+00:55:29,080 --> 00:55:31,770
+ meminta saya untuk mentransfer $ 500 ke nama misterius ini 
+
+1137
+00:55:31,770 --> 00:55:32,990
+ penyerang bernama individu. 
+
+1138
+00:55:32,990 --> 00:55:34,070
+ OK, saya akan lakukan. 
+
+1139
+00:55:34,070 --> 00:55:36,030
+ Baiklah, sepertinya masuk akal. 
+
+1140
+00:55:36,030 --> 00:55:38,080
+ Jadi itu masalah. 
+
+1141
+00:55:38,080 --> 00:55:39,620
+ Maka alasan serangan ini berhasil 
+
+1142
+00:55:39,620 --> 00:55:42,850
+ karena, pada dasarnya, penyerang 
+
+1143
+00:55:42,850 --> 00:55:45,760
+ dapat menentukan secara deterministik apa 
+
+1144
+00:55:45,760 --> 00:55:47,520
+ perintah ini akan terlihat seperti. 
+
+1145
+00:55:47,520 --> 00:55:49,825
+ Tidak ada keacakan dalam perintah ini di sini. 
+
+1146
+00:55:49,825 --> 00:55:51,200
+ Jadi intinya, apa si penyerang 
+
+1147
+00:55:51,200 --> 00:55:54,164
+ dapat lakukan adalah mencoba ini di rekening banknya sendiri, 
+
+1148
+00:55:54,164 --> 00:55:55,580
+ mencari tahu protokol ini, dan kemudian 
+
+1149
+00:55:55,580 --> 00:55:58,780
+ hanya, entah bagaimana, memaksa browser pengguna untuk mengeksekusi 
+
+1150
+00:55:58,780 --> 00:56:00,560
+ ini atas nama penyerang. 
+
+1151
+00:56:00,560 --> 00:56:08,639
+ Jadi ini adalah apa yang disebut pemalsuan lintas situs permintaan. 
+
+1152
+00:56:08,639 --> 00:56:12,180
+
+
+1153
+00:56:12,180 --> 00:56:16,690
+ Jadi terkadang Anda mendengar ini disebut CSRF. 
+
+1154
+00:56:16,690 --> 00:56:21,680
+ CSRF. 
+
+1155
+00:56:21,680 --> 00:56:25,620
+ Jadi solusi untuk memperbaiki serangan ini di sini 
+
+1156
+00:56:25,620 --> 00:56:28,540
+ adalah bahwa Anda sebenarnya hanya perlu memasukkan beberapa keacakan 
+
+1157
+00:56:28,540 --> 00:56:30,680
+ di URL ini yang dibuat. 
+
+1158
+00:56:30,680 --> 00:56:32,420
+ Jenis keacakan yang dimiliki penyerang 
+
+1159
+00:56:32,420 --> 00:56:33,810
+ tidak bisa menebak secara statis. 
+
+1160
+00:56:33,810 --> 00:56:42,960
+ Jadi misalnya, Anda dapat membayangkan bahwa di dalam halaman web bank 
+
+1161
+00:56:42,960 --> 00:56:45,110
+ itu akan memiliki beberapa bentuk. 
+
+1162
+00:56:45,110 --> 00:56:47,010
+ Bentuknya adalah benda, yang sebenarnya 
+
+1163
+00:56:47,010 --> 00:56:48,460
+ menghasilkan permintaan seperti ini. 
+
+1164
+00:56:48,460 --> 00:56:53,475
+ Jadi mungkin aksi dari formulir itu adalah transfer.cgi. 
+
+1165
+00:56:53,475 --> 00:56:57,690
+
+
+1166
+00:56:57,690 --> 00:57:02,330
+ Dan kemudian, di dalam formulir ini, Anda akan memiliki masukan. 
+
+1167
+00:57:02,330 --> 00:57:05,322
+ Input biasanya digunakan untuk memasukkan input pengguna seperti teks, 
+
+1168
+00:57:05,322 --> 00:57:07,280
+ menekan tombol, klik mouse, dan hal-hal seperti itu. 
+
+1169
+00:57:07,280 --> 00:57:09,310
+ Tetapi kita benar-benar dapat memberikan masukan ini 
+
+1170
+00:57:09,310 --> 00:57:12,950
+ sejenis tersembunyi, yang berarti tidak 
+
+1171
+00:57:12,950 --> 00:57:16,280
+ ditampilkan kepada pengguna. 
+
+1172
+00:57:16,280 --> 00:57:19,060
+ Dan kemudian, kami dapat memberikan atribut ini. 
+
+1173
+00:57:19,060 --> 00:57:24,190
+ Kami akan menyebutnya CSRF. 
+
+1174
+00:57:24,190 --> 00:57:26,020
+ Dan kemudian, kami akan memberikannya nilai acak. 
+
+1175
+00:57:26,020 --> 00:57:31,790
+
+
+1176
+00:57:31,790 --> 00:57:33,380
+ Anda tahu, a72f. 
+
+1177
+00:57:33,380 --> 00:57:35,240
+ Terserah. 
+
+1178
+00:57:35,240 --> 00:57:37,620
+ Jadi ingat, ini dihasilkan di sisi server. 
+
+1179
+00:57:37,620 --> 00:57:41,320
+ Jadi ketika pengguna masuk ke halaman ini, di sisi server, 
+
+1180
+00:57:41,320 --> 00:57:43,270
+ kadang-kadang menghasilkan acak ini di sini 
+
+1181
+00:57:43,270 --> 00:57:46,940
+ dan menyematkan itu di HTML yang diterima pengguna. 
+
+1182
+00:57:46,940 --> 00:57:49,390
+ Jadi ketika pengguna mengirimkan formulir ini, 
+
+1183
+00:57:49,390 --> 00:57:52,140
+ maka URL yang kita miliki di sini akan benar-benar 
+
+1184
+00:57:52,140 --> 00:58:03,620
+ memiliki benda ekstra ini di sini, yang merupakan token ini di sini. 
+
+1185
+00:58:03,620 --> 00:58:05,250
+ Jadi apa yang dilakukan sekarang adalah ini 
+
+1186
+00:58:05,250 --> 00:58:08,198
+ berarti bahwa penyerang akan 
+
+1187
+00:58:08,198 --> 00:58:10,450
+ untuk dapat menebak rentang token tertentu 
+
+1188
+00:58:10,450 --> 00:58:13,060
+ bahwa server dibuat untuk pengguna setiap saat 
+
+1189
+00:58:13,060 --> 00:58:14,460
+ pengguna telah pergi ke halaman. 
+
+1190
+00:58:14,460 --> 00:58:17,720
+ Jadi jika Anda cukup keacakan di sini, 
+
+1191
+00:58:17,720 --> 00:58:20,230
+ penyerang tidak bisa hanya memalsukan salah satu dari hal-hal ini 
+
+1192
+00:58:20,230 --> 00:58:23,250
+ karena jika penyerang menebak token yang salah, 
+
+1193
+00:58:23,250 --> 00:58:25,364
+ maka pesanan server akan menolak permintaan Anda. 
+
+1194
+00:58:25,364 --> 00:58:26,985
+ AUDIENCE: Yah mengapa harus selalu ini 
+
+1195
+00:58:26,985 --> 00:58:30,450
+ dimasukkan dalam URL dan tidak di badan [TIDAK JELAS]? 
+
+1196
+00:58:30,450 --> 00:58:35,286
+
+
+1197
+00:58:35,286 --> 00:58:36,160
+ PROFESOR: Ya, ya. 
+
+1198
+00:58:36,160 --> 00:58:38,836
+ Jadi HTTPS membantu banyak hal ini. 
+
+1199
+00:58:38,836 --> 00:58:40,502
+ Dan sebenarnya tidak ada alasan intrinsik 
+
+1200
+00:58:40,502 --> 00:58:42,240
+ kenapa kamu tidak bisa menaruh beberapa barang ini 
+
+1201
+00:58:42,240 --> 00:58:44,000
+ di tubuh permintaan. 
+
+1202
+00:58:44,000 --> 00:58:47,319
+ Ada beberapa alasan mengapa bentuk, semacam, bekerja seperti ini. 
+
+1203
+00:58:47,319 --> 00:58:48,110
+ Tapi kamu benar. 
+
+1204
+00:58:48,110 --> 00:58:50,690
+ Dan dalam prakteknya, Anda dapat menempatkan informasi itu di tempat lain 
+
+1205
+00:58:50,690 --> 00:58:51,660
+ dalam permintaan HTTPS. 
+
+1206
+00:58:51,660 --> 00:58:54,000
+ Tetapi perhatikan bahwa hanya memindahkan informasi itu, misalnya, 
+
+1207
+00:58:54,000 --> 00:58:56,280
+ ke tubuh permintaan, ada 
+
+1208
+00:58:56,280 --> 00:58:59,080
+ masih ada tantangan di sana, berpotensi karena jika ada 
+
+1209
+00:58:59,080 --> 00:59:01,350
+ sesuatu di sana yang dapat ditebak penyerang. 
+
+1210
+00:59:01,350 --> 00:59:03,635
+ Maka penyerang mungkin masih bisa, entah bagaimana, 
+
+1211
+00:59:03,635 --> 00:59:05,410
+ memunculkan URL itu. 
+
+1212
+00:59:05,410 --> 00:59:08,510
+ Misalnya, ketika saya membuat permintaan HTTP XML dan kemudian, 
+
+1213
+00:59:08,510 --> 00:59:10,370
+ secara eksplisit, mengatur tubuh untuk hal ini 
+
+1214
+00:59:10,370 --> 00:59:11,911
+ bahwa penyerang tahu cara menebak. 
+
+1215
+00:59:11,911 --> 00:59:15,154
+ AUDIENCE: Nah jika penyerang hanya memberi Anda URL, 
+
+1216
+00:59:15,154 --> 00:59:19,934
+ maka itu hanya di-encode di header [tidak terdengar]. 
+
+1217
+00:59:19,934 --> 00:59:22,620
+ PROFESOR: Jika penyerang hanya memberi Anda URL. 
+
+1218
+00:59:22,620 --> 00:59:26,320
+ Jadi, jika Anda hanya menetapkan bingkai ke URL, 
+
+1219
+00:59:26,320 --> 00:59:28,826
+ maka, itulah yang dapat dikendalikan oleh penyerang. 
+
+1220
+00:59:28,826 --> 00:59:30,450
+ Tetapi jika Anda menggunakan permintaan HTTP HTTP 
+
+1221
+00:59:30,450 --> 00:59:32,970
+ jika, jika penyerang dapat menghasilkan salah satunya, 
+
+1222
+00:59:32,970 --> 00:59:38,050
+ Maka antarmuka HTTP HTTP benar-benar memungkinkan Anda untuk mengatur tubuh. 
+
+1223
+00:59:38,050 --> 00:59:39,972
+ AUDIENCE: Permintaan HTTP HTTP akan 
+
+1224
+00:59:39,972 --> 00:59:41,740
+ dibatasi oleh, katakanlah, asal. 
+
+1225
+00:59:41,740 --> 00:59:44,110
+ Tetapi penyerang hanya bisa menulis formulir dan mengirimkannya. 
+
+1226
+00:59:44,110 --> 00:59:46,820
+ Tidak ada [TIDAK TERDENGAR] mengirimkan formulir seperti menggunakan 
+
+1227
+00:59:46,820 --> 00:59:47,330
+ [TIDAK JELAS]. 
+
+1228
+00:59:47,330 --> 00:59:49,910
+ Dan kemudian, itu dikirim ke dalam tubuh. 
+
+1229
+00:59:49,910 --> 00:59:50,710
+ Tapi itu masih-- 
+
+1230
+00:59:50,710 --> 00:59:51,710
+ PROFESOR: Benar. 
+
+1231
+00:59:51,710 --> 00:59:55,290
+ Jadi permintaan HTTP XML terbatas pada asal yang sama. 
+
+1232
+00:59:55,290 --> 00:59:58,190
+ Namun, jika misalnya, penyerang bisa, 
+
+1233
+00:59:58,190 --> 01:00:01,380
+ mungkin, lakukan sesuatu seperti ini, misalnya. 
+
+1234
+01:00:01,380 --> 01:00:04,070
+ Dan penyerang dapat menyuntikkan permintaan HTTP XML di sini, 
+
+1235
+01:00:04,070 --> 01:00:05,090
+ yang kemudian akan mengeksekusi dengan otoritas 
+
+1236
+01:00:05,090 --> 01:00:05,965
+ halaman tertanam. 
+
+1237
+01:00:05,965 --> 01:00:10,650
+
+
+1238
+01:00:10,650 --> 01:00:13,250
+ AUDIENCE: Bisakah penyerang [tidak terdengar] 
+
+1239
+01:00:13,250 --> 01:00:16,741
+ dengan memeriksa kode sumber HTML? 
+
+1240
+01:00:16,741 --> 01:00:19,360
+ PROFESOR: Ya, itu sebenarnya pertanyaan yang bagus. benar begitu 
+
+1241
+01:00:19,360 --> 01:00:22,830
+ itu tergantung pada apa yang memiliki akses penyerang. 
+
+1242
+01:00:22,830 --> 01:00:25,431
+ Jika penyerang - misalnya, dengan melakukan sesuatu yang konyol 
+
+1243
+01:00:25,431 --> 01:00:30,110
+ seperti itu-- sebenarnya dapat mengakses properti JavaScript ini 
+
+1244
+01:00:30,110 --> 01:00:33,870
+ disebut HTML batin. 
+
+1245
+01:00:33,870 --> 01:00:35,680
+ Ini adalah properti [TIDAK JELAS], benar. 
+
+1246
+01:00:35,680 --> 01:00:39,970
+ Jadi, jika saya mendokumentasikan badan itu di dalam HTML, 
+
+1247
+01:00:39,970 --> 01:00:42,536
+ Saya akan mendapatkan semua HTML yang ada di dalam halaman itu 
+
+1248
+01:00:42,536 --> 01:00:43,140
+ sekarang juga. 
+
+1249
+01:00:43,140 --> 01:00:43,640
+ Jadi ya. 
+
+1250
+01:00:43,640 --> 01:00:45,612
+ Jadi jika penyerang dapat melakukan ini, maka ya. 
+
+1251
+01:00:45,612 --> 01:00:46,570
+ Maka kamu dalam masalah. 
+
+1252
+01:00:46,570 --> 01:00:47,624
+ Betul. 
+
+1253
+01:00:47,624 --> 01:00:49,040
+ Jadi banyak detail ini, meskipun, 
+
+1254
+01:00:49,040 --> 01:00:50,970
+ tergantung pada apa yang dapat dan tidak bisa dilakukan oleh penyerang. 
+
+1255
+01:00:50,970 --> 01:00:52,230
+ Jadi itu masuk akal. 
+
+1256
+01:00:52,230 --> 01:00:54,780
+ Jadi jika penyerang dapat atau tidak dapat menghasilkan permintaan Ajax, 
+
+1257
+01:00:54,780 --> 01:00:55,800
+ itu berarti satu hal. 
+
+1258
+01:00:55,800 --> 01:00:57,690
+ Penyerang dapat atau tidak dapat melihat HTML yang tepat, 
+
+1259
+01:00:57,690 --> 01:00:58,760
+ maka Anda punya hal lain. 
+
+1260
+01:00:58,760 --> 01:00:59,551
+ Begitu seterusnya dan seterusnya. 
+
+1261
+01:00:59,551 --> 01:01:02,041
+
+
+1262
+01:01:02,041 --> 01:01:02,540
+ Baiklah. 
+
+1263
+01:01:02,540 --> 01:01:03,660
+ Jadi ya. 
+
+1264
+01:01:03,660 --> 01:01:06,340
+ Jadi ini token based thing adalah cara yang populer 
+
+1265
+01:01:06,340 --> 01:01:10,270
+ untuk mengatasi serangan CSRF ini. 
+
+1266
+01:01:10,270 --> 01:01:17,970
+ Baiklah, jadi hal lain yang bisa kita lihat 
+
+1267
+01:01:17,970 --> 01:01:19,595
+ adalah alamat jaringan. 
+
+1268
+01:01:19,595 --> 01:01:22,711
+
+
+1269
+01:01:22,711 --> 01:01:25,210
+ Jadi ini masuk ke beberapa percakapan yang kita alami 
+
+1270
+01:01:25,210 --> 01:01:30,610
+ tentang siapa penyerang tidak dapat menghubungi melalui permintaan HTTP XML, 
+
+1271
+01:01:30,610 --> 01:01:31,240
+ sebagai contoh. 
+
+1272
+01:01:31,240 --> 01:01:36,450
+
+
+1273
+01:01:36,450 --> 01:01:40,848
+ Jadi sehubungan dengan alamat jaringan, 
+
+1274
+01:01:40,848 --> 01:01:47,210
+ bingkai dapat mengirim permintaan HTTP dan HTTPS 
+
+1275
+01:01:47,210 --> 01:01:50,560
+ ke host plus port yang cocok dengan asalnya. 
+
+1276
+01:01:50,560 --> 01:01:54,950
+ Tetapi perhatikan bahwa keamanan dari kebijakan asal yang sama adalah, 
+
+1277
+01:01:54,950 --> 01:01:58,600
+ sebenarnya, sangat terkait erat dengan keamanan DNS 
+
+1278
+01:01:58,600 --> 01:02:01,730
+ infrastruktur karena semua asal yang sama 
+
+1279
+01:02:01,730 --> 01:02:04,360
+ aturan kebijakan didasarkan pada apa nama saya. 
+
+1280
+01:02:04,360 --> 01:02:06,080
+ Jadi, jika Anda dapat mengontrol nama saya, 
+
+1281
+01:02:06,080 --> 01:02:08,260
+ Anda sebenarnya bisa menginginkan beberapa serangan yang cukup ganas. 
+
+1282
+01:02:08,260 --> 01:02:14,520
+ Jadi contoh dari ini adalah serangan reball DNS. 
+
+1283
+01:02:14,520 --> 01:02:19,940
+
+
+1284
+01:02:19,940 --> 01:02:25,010
+ Jadi dalam serangan ini, tujuan penyerang 
+
+1285
+01:02:25,010 --> 01:02:40,577
+ menjalankan JavaScript yang dikontrol penyerang dengan otoritas 
+
+1286
+01:02:40,577 --> 01:02:42,997
+ dari beberapa situs web korban. 
+
+1287
+01:02:42,997 --> 01:02:44,330
+ Kami hanya akan memanggil mereka victim.com. 
+
+1288
+01:02:44,330 --> 01:02:48,232
+
+
+1289
+01:02:48,232 --> 01:02:50,440
+ Jadi penyerang ingin mengendarai kebijakan asal yang sama 
+
+1290
+01:02:50,440 --> 01:02:53,240
+ dan entah bagaimana menjalankan kode yang dia tulis 
+
+1291
+01:02:53,240 --> 01:02:55,620
+ dengan otoritas dari beberapa situs lain. 
+
+1292
+01:02:55,620 --> 01:02:59,480
+ Jadi inilah pendekatannya. 
+
+1293
+01:02:59,480 --> 01:03:03,740
+ Jadi hal pertama yang akan dilakukan penyerang 
+
+1294
+01:03:03,740 --> 01:03:07,460
+ adalah mendaftarkan nama domain. 
+
+1295
+01:03:07,460 --> 01:03:10,670
+
+
+1296
+01:03:10,670 --> 01:03:13,040
+ Jadi katakanlah kita sebut saja attacker.com itu. 
+
+1297
+01:03:13,040 --> 01:03:18,746
+
+
+1298
+01:03:18,746 --> 01:03:19,960
+ Sangat mudah dilakukan. 
+
+1299
+01:03:19,960 --> 01:03:21,089
+ Hanya membayar beberapa dolar. 
+
+1300
+01:03:21,089 --> 01:03:21,880
+ Anda siap untuk pergi. 
+
+1301
+01:03:21,880 --> 01:03:24,390
+ Anda memiliki nama domain Anda sendiri. 
+
+1302
+01:03:24,390 --> 01:03:26,220
+ Jadi perhatikan bahwa penyerang juga 
+
+1303
+01:03:26,220 --> 01:03:28,970
+ akan menyiapkan server DNS untuk merespons 
+
+1304
+01:03:28,970 --> 01:03:32,490
+ untuk memberi nama permintaan resolusi untuk objek 
+
+1305
+01:03:32,490 --> 01:03:33,960
+ yang berada di attacker.com. 
+
+1306
+01:03:33,960 --> 01:03:35,810
+ Jadi hal kedua yang harus terjadi 
+
+1307
+01:03:35,810 --> 01:03:40,980
+ adalah bahwa pengguna harus mengunjungi attacker.com. 
+
+1308
+01:03:40,980 --> 01:03:44,291
+
+
+1309
+01:03:44,291 --> 01:03:47,260
+ Secara khusus, pengguna harus mengunjungi beberapa situs web itu 
+
+1310
+01:03:47,260 --> 01:03:49,190
+ hang dari nama domain ini. 
+
+1311
+01:03:49,190 --> 01:03:50,990
+ Bagian ini sebenarnya tidak rumit. 
+
+1312
+01:03:50,990 --> 01:03:53,110
+ Lihat apakah Anda dapat membuat kampanye iklan. 
+
+1313
+01:03:53,110 --> 01:03:54,040
+ IPad Gratis. 
+
+1314
+01:03:54,040 --> 01:03:54,800
+ Semua orang menginginkan iPad gratis, bahkan 
+
+1315
+01:03:54,800 --> 01:03:56,730
+ meskipun saya tidak tahu siapa yang pernah memenangkan iPad gratis. 
+
+1316
+01:03:56,730 --> 01:03:57,647
+ Klik ini. 
+
+1317
+01:03:57,647 --> 01:03:58,230
+ Mereka ada di sana. 
+
+1318
+01:03:58,230 --> 01:04:00,063
+ Ada di email phising, begitu dan seterusnya. 
+
+1319
+01:04:00,063 --> 01:04:01,330
+ Bagian ini tidak sulit. 
+
+1320
+01:04:01,330 --> 01:04:03,030
+ Jadi apa yang akan terjadi? 
+
+1321
+01:04:03,030 --> 01:04:10,430
+ Jadi ini sebenarnya akan menyebabkan browser 
+
+1322
+01:04:10,430 --> 01:04:25,560
+ untuk menghasilkan permintaan DNS ke attacker.com 
+
+1323
+01:04:25,560 --> 01:04:27,540
+ karena halaman ini memiliki beberapa objek itu 
+
+1324
+01:04:27,540 --> 01:04:30,950
+ lihat beberapa objek yang ada di attacker.com. 
+
+1325
+01:04:30,950 --> 01:04:34,810
+ Browser akan mengatakan saya tidak pernah melihat domain ini sebelumnya. 
+
+1326
+01:04:34,810 --> 01:04:38,292
+ Biarkan saya mengirim permintaan resolusi DNS ke attacker.com. 
+
+1327
+01:04:38,292 --> 01:04:39,750
+ Jadi apa yang akhirnya akan terjadi 
+
+1328
+01:04:39,750 --> 01:04:42,570
+ adalah bahwa server DNS penyerang akan 
+
+1329
+01:04:42,570 --> 01:04:45,090
+ untuk menanggapi permintaan itu. 
+
+1330
+01:04:45,090 --> 01:04:49,100
+ Tapi itu akan merespon dengan hasil DNS itu 
+
+1331
+01:04:49,100 --> 01:04:51,630
+ memiliki waktu yang sangat singkat untuk hidup. 
+
+1332
+01:04:51,630 --> 01:04:52,210
+ BAIK? 
+
+1333
+01:04:52,210 --> 01:04:54,540
+ Artinya bahwa browser akan berpikir 
+
+1334
+01:04:54,540 --> 01:04:58,300
+ itu hanya berlaku untuk waktu yang sangat singkat 
+
+1335
+01:04:58,300 --> 01:05:00,400
+ sebelum harus keluar dan memvalidasi kembali itu. 
+
+1336
+01:05:00,400 --> 01:05:02,070
+ BAIK? 
+
+1337
+01:05:02,070 --> 01:05:17,780
+ Jadi dengan kata lain, respons penyerang memiliki DTL yang kecil. 
+
+1338
+01:05:17,780 --> 01:05:20,600
+
+
+1339
+01:05:20,600 --> 01:05:21,260
+ Baiklah. 
+
+1340
+01:05:21,260 --> 01:05:23,990
+ Jadi, pengguna mendapatkan respon balik. 
+
+1341
+01:05:23,990 --> 01:05:27,460
+ Situs web jahat sekarang berjalan di sisi pengguna. 
+
+1342
+01:05:27,460 --> 01:05:30,580
+ Sementara itu, ketika pengguna berinteraksi dengan pemandangan itu, 
+
+1343
+01:05:30,580 --> 01:05:34,580
+ penyerang akan mengkonfigurasi DNS 
+
+1344
+01:05:34,580 --> 01:05:37,310
+ server yang dia kontrol. 
+
+1345
+01:05:37,310 --> 01:05:45,390
+ Penyerang akan mengikat nama penyerang 
+
+1346
+01:05:45,390 --> 01:05:50,940
+ ke alamat IP victim.com. 
+
+1347
+01:05:50,940 --> 01:05:56,600
+
+
+1348
+01:05:56,600 --> 01:05:57,260
+ Kanan? 
+
+1349
+01:05:57,260 --> 01:06:02,050
+ Jadi apa artinya itu sekarang jika browser pengguna bertanya 
+
+1350
+01:06:02,050 --> 01:06:04,600
+ untuk resolusi nama domain untuk sesuatu itu 
+
+1351
+01:06:04,600 --> 01:06:06,730
+ berada di attacker.com, sebenarnya 
+
+1352
+01:06:06,730 --> 01:06:10,152
+ akan mendapatkan alamat internal untuk victim.com. 
+
+1353
+01:06:10,152 --> 01:06:12,750
+ Ini sebenarnya sangat halus. 
+
+1354
+01:06:12,750 --> 01:06:15,720
+ Sekarang mengapa penyelesai DNS penyerang melakukan itu? 
+
+1355
+01:06:15,720 --> 01:06:18,530
+ Karena penyerang mengaturnya untuk melakukannya. 
+
+1356
+01:06:18,530 --> 01:06:19,970
+ Server DNS penyerang tidak 
+
+1357
+01:06:19,970 --> 01:06:23,387
+ harus berkonsultasi dengan victim.com untuk melakukan rebinding ini. 
+
+1358
+01:06:23,387 --> 01:06:25,970
+ Jadi mungkin, Anda dapat melihat beberapa garis besar dalam serangan sekarang. 
+
+1359
+01:06:25,970 --> 01:06:32,450
+ Jadi yang akan terjadi adalah situs web itu 
+
+1360
+01:06:32,450 --> 01:06:44,185
+ ingin mengambil objek baru melalui, katakanlah, AJAX. 
+
+1361
+01:06:44,185 --> 01:06:47,480
+
+
+1362
+01:06:47,480 --> 01:06:50,300
+ Dan itu berpikir bahwa permintaan AJAX 
+
+1363
+01:06:50,300 --> 01:06:53,520
+ akan pergi ke attacker.com di suatu tempat secara eksternal. 
+
+1364
+01:06:53,520 --> 01:07:00,950
+ Namun permintaan AJAX ini benar-benar masuk ke victim.com. 
+
+1365
+01:07:00,950 --> 01:07:05,800
+
+
+1366
+01:07:05,800 --> 01:07:08,110
+ Dan alasan mengapa itu buruk karena sekarang kita sudah 
+
+1367
+01:07:08,110 --> 01:07:10,240
+ mendapat kode ini di sisi alat itu 
+
+1368
+01:07:10,240 --> 01:07:16,270
+ berada di halaman web penyerang yang benar-benar mengakses 
+
+1369
+01:07:16,270 --> 01:07:19,070
+ sekarang data dari asal yang berbeda 
+
+1370
+01:07:19,070 --> 01:07:20,990
+ dari victim.com. 
+
+1371
+01:07:20,990 --> 01:07:23,150
+ Jadi, setelah langkah serangan ini selesai, 
+
+1372
+01:07:23,150 --> 01:07:26,765
+ maka halaman web penyerang dapat mengirim kembali kontak itu 
+
+1373
+01:07:26,765 --> 01:07:30,600
+ ke server menggunakan [INAUDIBLE] atau melakukan hal lain seperti itu. 
+
+1374
+01:07:30,600 --> 01:07:32,709
+ Jadi apakah serangan ini masuk akal? 
+
+1375
+01:07:32,709 --> 01:07:35,000
+ AUDIENCE: Bukankah lebih masuk akal untuk melakukan serangan 
+
+1376
+01:07:35,000 --> 01:07:36,560
+ sebaliknya? 
+
+1377
+01:07:36,560 --> 01:07:41,732
+ Jadi untuk [INAUDIBLE] victim.com ke alamat IP penyerang. 
+
+1378
+01:07:41,732 --> 01:07:43,940
+ Karena dengan begitu Anda adalah asal yang sama dengan victim.com 
+
+1379
+01:07:43,940 --> 01:07:47,710
+ sehingga Anda bisa mendapatkan semua cookie dan semacamnya. 
+
+1380
+01:07:47,710 --> 01:07:50,330
+ PROFESOR: Ya, jadi itu juga akan berhasil. 
+
+1381
+01:07:50,330 --> 01:07:53,850
+ Jadi, apa yang baik tentang ini adalah, 
+
+1382
+01:07:53,850 --> 01:07:58,547
+ mungkin, ini memungkinkan Anda melakukan hal-hal baik seperti pemindaian port 
+
+1383
+01:07:58,547 --> 01:07:59,380
+ dan hal-hal seperti itu. 
+
+1384
+01:07:59,380 --> 01:08:01,500
+ Maksud saya, pendekatan Anda akan berhasil, benar. 
+
+1385
+01:08:01,500 --> 01:08:04,680
+ Tapi saya pikir di sini alasan mengapa Anda melakukannya-- 
+
+1386
+01:08:04,680 --> 01:08:05,780
+ AUDIENCE: [TIDAK JELAS]. 
+
+1387
+01:08:05,780 --> 01:08:07,280
+ PROFESOR: Karena, pada dasarnya, Anda 
+
+1388
+01:08:07,280 --> 01:08:11,460
+ dapat melakukan hal-hal seperti terus-menerus mengingat kembali apa yang disebut attacker.com 
+
+1389
+01:08:11,460 --> 01:08:15,680
+ untuk ke nama mesin yang berbeda dan port yang berbeda di dalamnya 
+
+1390
+01:08:15,680 --> 01:08:17,394
+ dari jaringan victim.com. 
+
+1391
+01:08:17,394 --> 01:08:19,060
+ Jadi, Anda bisa, semacam, melangkah. 
+
+1392
+01:08:19,060 --> 01:08:22,240
+ Jadi dengan kata lain, mari kita katakan bahwa halaman web penyerang 
+
+1393
+01:08:22,240 --> 01:08:28,899
+ selalu berpikir itu akan menjadi attacker.com 
+
+1394
+01:08:28,899 --> 01:08:32,540
+ dan mengeluarkan permintaan AJAX di sana. 
+
+1395
+01:08:32,540 --> 01:08:35,270
+ Jadi setiap kali server DNS me-rebinds, 
+
+1396
+01:08:35,270 --> 01:08:37,910
+ itu [tidak terdengar] ke beberapa alamat IP yang berbeda 
+
+1397
+01:08:37,910 --> 01:08:39,693
+ di dalam jaringan victim.com. 
+
+1398
+01:08:39,693 --> 01:08:42,109
+ Jadi bisa, semacam, melangkah melalui alamat IP satu 
+
+1399
+01:08:42,109 --> 01:08:47,368
+ oleh satu dan lihat apakah ada yang menanggapi permintaan tersebut. 
+
+1400
+01:08:47,368 --> 01:08:51,559
+ AUDIENCE: Tetapi klien, pengguna yang Anda serang, 
+
+1401
+01:08:51,560 --> 01:08:55,279
+ tidak selalu memiliki akses ke dalam ke jaringan victim.com. 
+
+1402
+01:08:55,279 --> 01:08:57,549
+ PROFESOR: Jadi apa serangan ini, biasanya, terjadi kemudian 
+
+1403
+01:08:57,550 --> 01:09:00,390
+ adalah bahwa ada aturan firewall tertentu itu 
+
+1404
+01:09:00,390 --> 01:09:03,399
+ akan mencegah attacker.com dari luar jaringan 
+
+1405
+01:09:03,399 --> 01:09:05,969
+ dari benar-benar melihat melalui masing-masing alamat IP 
+
+1406
+01:09:05,970 --> 01:09:07,354
+ di dalam victim.com. 
+
+1407
+01:09:07,354 --> 01:09:09,270
+ Namun, jika Anda berada di dalam corp.net-- jika Anda 
+
+1408
+01:09:09,270 --> 01:09:11,540
+ di dalam firewall perusahaan, katakanlah-- 
+
+1409
+01:09:11,540 --> 01:09:16,384
+ maka mesin sering memiliki kemampuan untuk menghubungi [tidak terdengar]. 
+
+1410
+01:09:16,384 --> 01:09:17,300
+ AUDIENCE: [TIDAK JELAS]. 
+
+1411
+01:09:17,300 --> 01:09:18,430
+ PROFESOR: Ya, ya. 
+
+1412
+01:09:18,430 --> 01:09:20,270
+ Persis. 
+
+1413
+01:09:20,270 --> 01:09:23,229
+ AUDIENCE: Apakah ini berfungsi melalui HTTPS? 
+
+1414
+01:09:23,229 --> 01:09:25,270
+ PROFESOR: Ah, jadi itu pertanyaan yang menarik. 
+
+1415
+01:09:25,270 --> 01:09:29,960
+ Jadi HTTPS memiliki kunci ini. 
+
+1416
+01:09:29,960 --> 01:09:33,090
+ Jadi cara Anda harus membuatnya bekerja dengan HTTPS 
+
+1417
+01:09:33,090 --> 01:09:41,497
+ adalah jika entah bagaimana, misalnya, jika attacker.com bisa - biarkan 
+
+1418
+01:09:41,497 --> 01:09:44,005
+ aku memikirkan ini. 
+
+1419
+01:09:44,005 --> 01:09:47,990
+ Ya, itu menarik karena, mungkin, 
+
+1420
+01:09:47,990 --> 01:09:51,450
+ jika Anda menggunakan HTTPS, maka ketika Anda mengirim Ajax ini 
+
+1421
+01:09:51,450 --> 01:09:53,510
+ permintaan, mesin korban tidak akan 
+
+1422
+01:09:53,510 --> 01:09:56,830
+ memiliki tombol HTTPS penyerang. 
+
+1423
+01:09:56,830 --> 01:10:00,896
+ Jadi, kriptografi akan gagal entah bagaimana. 
+
+1424
+01:10:00,896 --> 01:10:02,270
+ Jadi saya pikir HTTPS akan menghentikan itu. 
+
+1425
+01:10:02,270 --> 01:10:07,590
+ AUDIENCE: Atau jika korban hanya memiliki barang di HTTPS? 
+
+1426
+01:10:07,590 --> 01:10:08,570
+ PROFESOR: Ya. 
+
+1427
+01:10:08,570 --> 01:10:10,352
+ Jadi saya pikir itu akan menghentikannya. 
+
+1428
+01:10:10,352 --> 01:10:14,771
+
+
+1429
+01:10:14,771 --> 01:10:20,663
+ AUDIENCE: Jika Anda mengkonfigurasi [tidak terdengar] 
+
+1430
+01:10:20,663 --> 01:10:24,100
+ gunakan hasil awal atau penerimaan [TIDAK JELAS]? 
+
+1431
+01:10:24,100 --> 01:10:25,580
+ PROFESOR: Itu pertanyaan yang bagus. 
+
+1432
+01:10:25,580 --> 01:10:26,280
+ Saya sebenarnya tidak yakin tentang itu. 
+
+1433
+01:10:26,280 --> 01:10:27,739
+ Jadi sebenarnya, banyak sekali serangan ini 
+
+1434
+01:10:27,739 --> 01:10:29,821
+ tergantung pada iblis dalam rinciannya, bukan? 
+
+1435
+01:10:29,821 --> 01:10:31,732
+ Jadi saya tidak benar-benar yakin bagaimana pekerjaan yang kotor itu. 
+
+1436
+01:10:31,732 --> 01:10:33,190
+ AUDIENCE: Ini menggunakan domain pertama. 
+
+1437
+01:10:33,190 --> 01:10:34,898
+ PROFESOR: Ini akan menggunakan domain pertama? 
+
+1438
+01:10:34,898 --> 01:10:37,460
+ BAIK. 
+
+1439
+01:10:37,460 --> 01:10:37,960
+ Ya? 
+
+1440
+01:10:37,960 --> 01:10:40,030
+ AUDIENCE: Jadi mengapa bisa penyerang 
+
+1441
+01:10:40,030 --> 01:10:46,319
+ merespon dengan alamat IP korban di tempat pertama? 
+
+1442
+01:10:46,319 --> 01:10:48,110
+ PROFESOR: Jadi mengapa tidak bisa-- apa maksud Anda? 
+
+1443
+01:10:48,110 --> 01:10:50,900
+ AUDIENCE: [TIDAK JELAS]. 
+
+1444
+01:10:50,900 --> 01:10:53,630
+ Mengapa tim penyerang [tidak terdengar] 
+
+1445
+01:10:53,630 --> 01:10:57,777
+ harus merespon dengan IP penyerang [TIDAK JELAS]? 
+
+1446
+01:10:57,777 --> 01:10:58,860
+ PROFESOR: Oh, baiklah, ya. 
+
+1447
+01:10:58,860 --> 01:11:00,318
+ Karena penyerang harus, entah bagaimana, 
+
+1448
+01:11:00,318 --> 01:11:01,970
+ dapatkan kode itu sendiri di mesin korban 
+
+1449
+01:11:01,970 --> 01:11:05,090
+ terlebih dahulu sebelum kemudian bisa mulai melakukan omong kosong ini di tempat itu 
+
+1450
+01:11:05,090 --> 01:11:06,300
+ mencari di dalam jaringan. 
+
+1451
+01:11:06,300 --> 01:11:08,231
+ Jadi itulah langkah awal di mana itu 
+
+1452
+01:11:08,231 --> 01:11:10,467
+ harus meletakkan kode itu di mesin korban. 
+
+1453
+01:11:10,467 --> 01:11:12,050
+ Baiklah, jadi demi waktu, 
+
+1454
+01:11:12,050 --> 01:11:13,133
+ mari terus maju. 
+
+1455
+01:11:13,133 --> 01:11:15,556
+ Tapi temui aku setelah kelas jika kamu 
+
+1456
+01:11:15,556 --> 01:11:19,100
+ ingin menindaklanjuti pertanyaannya. 
+
+1457
+01:11:19,100 --> 01:11:22,560
+ Jadi itulah serangan DNS rebinding. 
+
+1458
+01:11:22,560 --> 01:11:24,546
+ Jadi bagaimana Anda bisa memperbaikinya? 
+
+1459
+01:11:24,546 --> 01:11:25,920
+ Jadi, salah satu cara Anda bisa memperbaikinya adalah demikian 
+
+1460
+01:11:25,920 --> 01:11:29,040
+ bahwa Anda memodifikasi penyelesai DNS sisi klien Anda 
+
+1461
+01:11:29,040 --> 01:11:31,700
+ sehingga nama-nama host eksternal tidak akan pernah bisa 
+
+1462
+01:11:31,700 --> 01:11:33,215
+ selesaikan ke alamat IP internal. 
+
+1463
+01:11:33,215 --> 01:11:35,590
+ Ini, jenis, konyol bahwa seseorang di luar jaringan Anda 
+
+1464
+01:11:35,590 --> 01:11:37,756
+ harus dapat membuat pengikatan DNS untuk sesuatu 
+
+1465
+01:11:37,756 --> 01:11:38,840
+ di dalam jaringan Anda. 
+
+1466
+01:11:38,840 --> 01:11:40,740
+ Itulah solusi yang paling mudah. 
+
+1467
+01:11:40,740 --> 01:11:43,310
+ Anda juga bisa membayangkan bahwa browser bisa melakukan sesuatu 
+
+1468
+01:11:43,310 --> 01:11:44,620
+ disebut pining DNS. 
+
+1469
+01:11:44,620 --> 01:11:47,760
+ Di mana, jika menerima catatan resolusi DNS, 
+
+1470
+01:11:47,760 --> 01:11:51,240
+ maka itu akan selalu memperlakukan catatan itu sebagai valid untuk, 
+
+1471
+01:11:51,240 --> 01:11:53,895
+ katakanlah, 30 menit, terlepas dari apakah itu 
+
+1472
+01:11:53,895 --> 01:11:56,740
+ memiliki set TTL pendek di dalamnya karena itu juga 
+
+1473
+01:11:56,740 --> 01:11:58,177
+ mencegah serangan juga. 
+
+1474
+01:11:58,177 --> 01:12:00,260
+ Solusi itu agak sedikit rumit karena ada 
+
+1475
+01:12:00,260 --> 01:12:02,920
+ beberapa situs yang sebenarnya, dengan sengaja, menggunakan DNS dinamis 
+
+1476
+01:12:02,920 --> 01:12:05,170
+ dan melakukan hal-hal seperti load balancing dan hal-hal seperti itu. 
+
+1477
+01:12:05,170 --> 01:12:08,230
+ Jadi solusi pertama mungkin yang paling baik. 
+
+1478
+01:12:08,230 --> 01:12:13,240
+ OK, jadi di sini adalah, semacam, serangan yang menyenangkan. 
+
+1479
+01:12:13,240 --> 01:12:18,680
+ Jadi kami sudah membicarakan banyak sumber daya 
+
+1480
+01:12:18,680 --> 01:12:20,628
+ bahwa asal melindungi - asal yang sama 
+
+1481
+01:12:20,628 --> 01:12:20,930
+ kebijakan melindungi. 
+
+1482
+01:12:20,930 --> 01:12:21,805
+ Jadi bagaimana dengan piksel? 
+
+1483
+01:12:21,805 --> 01:12:25,230
+
+
+1484
+01:12:25,230 --> 01:12:27,520
+ Jadi bagaimana kebijakan asal yang sama melindungi piksel? 
+
+1485
+01:12:27,520 --> 01:12:31,350
+ Yah ternyata, piksel tidak benar-benar memiliki asal. 
+
+1486
+01:12:31,350 --> 01:12:35,040
+ Jadi masing-masing bingkai mendapatkan kotak pembatas kecilnya sendiri. 
+
+1487
+01:12:35,040 --> 01:12:36,480
+ Hanya sebuah persegi, pada dasarnya. 
+
+1488
+01:12:36,480 --> 01:12:40,710
+ Jadi, bingkai dapat menggambar di mana pun yang diinginkannya di kotak itu. 
+
+1489
+01:12:40,710 --> 01:12:42,910
+ Jadi ini sebenarnya masalah karena apa 
+
+1490
+01:12:42,910 --> 01:12:45,700
+ ini berarti bahwa bingkai induk dapat 
+
+1491
+01:12:45,700 --> 01:12:49,030
+ menggambar di atas bingkai anak itu. 
+
+1492
+01:12:49,030 --> 01:12:51,250
+ Jadi ini dapat menyebabkan beberapa serangan yang sangat berbahaya. 
+
+1493
+01:12:51,250 --> 01:12:59,040
+ Jadi katakanlah bahwa penyerang menciptakan beberapa halaman. 
+
+1494
+01:12:59,040 --> 01:13:02,620
+ Dan katakanlah, di dalam halaman itu, 
+
+1495
+01:13:02,620 --> 01:13:09,420
+ penyerang mengatakan klik untuk memenangkan iPad. 
+
+1496
+01:13:09,420 --> 01:13:11,690
+ Hal standar yang sama. 
+
+1497
+01:13:11,690 --> 01:13:13,090
+ Jadi ini adalah bingkai induk. 
+
+1498
+01:13:13,090 --> 01:13:15,320
+ Sekarang apa yang bisa dilakukan oleh bingkai induk adalah benar-benar dibuat 
+
+1499
+01:13:15,320 --> 01:13:23,140
+ bingkai anak yang sebenarnya adalah bingkai tombol Suka Facebook. 
+
+1500
+01:13:23,140 --> 01:13:27,850
+
+
+1501
+01:13:27,850 --> 01:13:32,630
+ Jadi Facebook memungkinkan Anda untuk menjalankan bagian kecil Facebook ini 
+
+1502
+01:13:32,630 --> 01:13:34,210
+ kode yang dapat Anda masukkan ke halaman Anda. 
+
+1503
+01:13:34,210 --> 01:13:36,340
+ Anda tahu, jika pengguna mengklik Suka, maka itu berarti 
+
+1504
+01:13:36,340 --> 01:13:37,970
+ itu akan masuk ke Facebook dan berkata, hei, 
+
+1505
+01:13:37,970 --> 01:13:40,640
+ pengguna menyukai halaman tertentu. 
+
+1506
+01:13:40,640 --> 01:13:43,255
+ Jadi kita punya bingkai anak ini di sini. 
+
+1507
+01:13:43,255 --> 01:13:45,852
+
+
+1508
+01:13:45,852 --> 01:13:47,560
+ Itu ternyata sangat luar biasa. 
+
+1509
+01:13:47,560 --> 01:13:51,480
+ Ngomong-ngomong, jadi kau punya benda seperti ini di sini. 
+
+1510
+01:13:51,480 --> 01:13:58,200
+ Sekarang apa yang dapat dilakukan penyerang sebenarnya adalah overlay frame ini 
+
+1511
+01:13:58,200 --> 01:14:01,070
+ di atas klik untuk mendapatkan iPad gratis 
+
+1512
+01:14:01,070 --> 01:14:04,720
+ dan juga membuat ini tidak terlihat. 
+
+1513
+01:14:04,720 --> 01:14:06,252
+ Jadi CSS, mari kita lakukan itu. 
+
+1514
+01:14:06,252 --> 01:14:07,730
+ Jadi apa yang akan terjadi? 
+
+1515
+01:14:07,730 --> 01:14:10,260
+ Seperti yang sudah kami tetapkan, semua orang menginginkan iPad gratis. 
+
+1516
+01:14:10,260 --> 01:14:12,370
+ Jadi pengguna akan pergi ke situs ini, 
+
+1517
+01:14:12,370 --> 01:14:16,609
+ klik pada hal-- area ini dari layar - berpikir 
+
+1518
+01:14:16,609 --> 01:14:18,900
+ bahwa mereka akan klik di sini dan dapatkan iPad gratis. 
+
+1519
+01:14:18,900 --> 01:14:21,060
+ Namun kenyataannya, mereka mengklik tombol Suka 
+
+1520
+01:14:21,060 --> 01:14:23,130
+ bahwa mereka tidak dapat melihat itu tidak terlihat. 
+
+1521
+01:14:23,130 --> 01:14:25,560
+ Ini seperti berlapis di atas indeks C. 
+
+1522
+01:14:25,560 --> 01:14:27,640
+ Jadi apa artinya itu sekarang mungkin mereka 
+
+1523
+01:14:27,640 --> 01:14:30,310
+ periksa profil Facebook mereka, dan mereka menyukai attacker.com. 
+
+1524
+01:14:30,310 --> 01:14:33,300
+ Anda tahu, dan mereka tidak ingat bagaimana itu terjadi. 
+
+1525
+01:14:33,300 --> 01:14:36,050
+ Jadi ini sebenarnya disebut serangan klik pembajakan 
+
+1526
+01:14:36,050 --> 01:14:38,910
+ karena Anda dapat membayangkan Anda dapat melakukan semua jenis kejahatan 
+
+1527
+01:14:38,910 --> 01:14:39,410
+ sini. 
+
+1528
+01:14:39,410 --> 01:14:43,610
+ Jadi bisa dibayangkan Anda bisa mencuri kata sandi dengan cara ini. 
+
+1529
+01:14:43,610 --> 01:14:44,770
+ Anda bisa mendapatkan input mentah. 
+
+1530
+01:14:44,770 --> 01:14:46,270
+ Maksud saya, itu kegilaan. 
+
+1531
+01:14:46,270 --> 01:14:49,760
+ Jadi sekali lagi, ini terjadi karena orang tua, 
+
+1532
+01:14:49,760 --> 01:14:53,720
+ pada dasarnya, mendapatkan hak untuk menggambar apa pun itu 
+
+1533
+01:14:53,720 --> 01:14:56,140
+ di dalam kotak pembatas ini. 
+
+1534
+01:14:56,140 --> 01:15:00,084
+ Jadi apakah serangan itu masuk akal? 
+
+1535
+01:15:00,084 --> 01:15:00,724
+ Ya. 
+
+1536
+01:15:00,724 --> 01:15:02,140
+ AUDIENCE: [TIDAK JELAS], apa yang Anda lakukan 
+
+1537
+01:15:02,140 --> 01:15:06,400
+ berarti orang tua mendapatkan untuk menarik lebih dari apa pun [tidak terdengar]? 
+
+1538
+01:15:06,400 --> 01:15:08,900
+ PROFESOR: Jadi apa yang saya coba tunjukkan di sini 
+
+1539
+01:15:08,900 --> 01:15:14,415
+ apakah itu, secara visual, apa yang dilihat oleh pengguna adalah ini. 
+
+1540
+01:15:14,415 --> 01:15:16,040
+ AUDIENCE: Oh, itu bingkai induknya. 
+
+1541
+01:15:16,040 --> 01:15:17,140
+ PROFESOR: Ya, ini adalah bingkai induk. 
+
+1542
+01:15:17,140 --> 01:15:17,380
+ Betul. 
+
+1543
+01:15:17,380 --> 01:15:17,930
+ Ini adalah bingkai anak. 
+
+1544
+01:15:17,930 --> 01:15:20,120
+ Jadi secara visual, pengguna hanya melihat ini. 
+
+1545
+01:15:20,120 --> 01:15:23,790
+ Tetapi menggunakan keajaiban teknik menggambar gaya da Vinci saya, 
+
+1546
+01:15:23,790 --> 01:15:27,340
+ ini sebenarnya dihamparkan di atas ini secara transparan. 
+
+1547
+01:15:27,340 --> 01:15:28,720
+ Jadi itulah bingkai anak. 
+
+1548
+01:15:28,720 --> 01:15:30,505
+ Itu bingkai induknya. 
+
+1549
+01:15:30,505 --> 01:15:32,380
+ Oke, ada beberapa solusi yang berbeda-- 
+
+1550
+01:15:32,380 --> 01:15:34,575
+ Anda dapat membayangkan - untuk memecahkan ini. 
+
+1551
+01:15:34,575 --> 01:15:40,320
+ Solusi pertama adalah menggunakan kode penghilang bingkai. 
+
+1552
+01:15:40,320 --> 01:15:43,850
+
+
+1553
+01:15:43,850 --> 01:15:47,200
+ Jadi Anda benar-benar dapat menggunakan ekspresi JavaScript 
+
+1554
+01:15:47,200 --> 01:15:50,910
+ untuk mencari tahu apakah Anda telah dimasukkan ke dalam bingkai 
+
+1555
+01:15:50,910 --> 01:15:51,920
+ oleh orang lain. 
+
+1556
+01:15:51,920 --> 01:15:59,490
+ Jadi seperti, salah satu dari tes ini adalah Anda membandingkan diri referensi 
+
+1557
+01:15:59,490 --> 01:16:01,750
+ ke atas. 
+
+1558
+01:16:01,750 --> 01:16:04,330
+ Jadi di dunia JavaScript, mengacu pada diri sendiri 
+
+1559
+01:16:04,330 --> 01:16:06,800
+ untuk membingkai bahwa Anda sendiri tidak ada. 
+
+1560
+01:16:06,800 --> 01:16:10,700
+ Atas mengacu pada bingkai di bagian atas hierarki bingkai. 
+
+1561
+01:16:10,700 --> 01:16:12,846
+ Jadi jika Anda melakukan tes ini dan Anda mengetahuinya 
+
+1562
+01:16:12,846 --> 01:16:14,780
+ diri itu tidak sama dengan atas, maka Anda 
+
+1563
+01:16:14,780 --> 01:16:16,570
+ menyadari bahwa Anda adalah bingkai anak. 
+
+1564
+01:16:16,570 --> 01:16:19,039
+ Dan kemudian Anda dapat menolak memuat atau melakukan hal-hal seperti ini. 
+
+1565
+01:16:19,039 --> 01:16:20,580
+ Jadi ini sebenarnya adalah apa yang akan terjadi 
+
+1566
+01:16:20,580 --> 01:16:22,844
+ jika Anda mencoba membuat bingkai untuk, katakanlah, CNN.com. 
+
+1567
+01:16:22,844 --> 01:16:24,760
+ Anda benar-benar dapat melihat di sumber JavaScript 
+
+1568
+01:16:24,760 --> 01:16:26,940
+ dan melihat bahwa ini melakukan tes ini karena CNN.com 
+
+1569
+01:16:26,940 --> 01:16:29,980
+ tidak ingin orang lain mengambil kredit untuk kontennya. 
+
+1570
+01:16:29,980 --> 01:16:31,755
+ Jadi itu hanya ingin menjadi yang paling atas bingkai. 
+
+1571
+01:16:31,755 --> 01:16:33,550
+ Jadi itulah salah satu solusi yang bisa Anda gunakan di sini. 
+
+1572
+01:16:33,550 --> 01:16:35,216
+ Solusi lain yang dapat Anda gunakan di sini 
+
+1573
+01:16:35,216 --> 01:16:39,890
+ juga agar server web Anda mengirim respons HTTP ini 
+
+1574
+01:16:39,890 --> 01:16:41,900
+ pemukul disebut opsi x-frame. 
+
+1575
+01:16:41,900 --> 01:16:45,180
+
+
+1576
+01:16:45,180 --> 01:16:47,520
+ Jadi, ketika server web mengembalikan respons, 
+
+1577
+01:16:47,520 --> 01:16:48,690
+ itu dapat mengatur header ini. 
+
+1578
+01:16:48,690 --> 01:16:50,870
+ Dan pada dasarnya bisa mengatakan, hei, browser, 
+
+1579
+01:16:50,870 --> 01:16:54,740
+ jangan biarkan siapa pun menaruh konten saya di dalam bingkai. 
+
+1580
+01:16:54,740 --> 01:16:56,830
+ Sehingga memungkinkan browser melakukan penegakan hukum. 
+
+1581
+01:16:56,830 --> 01:16:59,540
+ Jadi itu cukup mudah. 
+
+1582
+01:16:59,540 --> 01:17:02,460
+ Jadi ada sekelompok lainnya, semacam, gila 
+
+1583
+01:17:02,460 --> 01:17:04,151
+ serangan yang bisa Anda luncurkan. 
+
+1584
+01:17:04,151 --> 01:17:06,150
+ Ini satu lagi yang sebenarnya cukup lucu. 
+
+1585
+01:17:06,150 --> 01:17:08,860
+ Jadi seperti yang saya sebutkan sebelumnya, faktanya 
+
+1586
+01:17:08,860 --> 01:17:11,180
+ bahwa kita sekarang hidup di web yang diinternasionalkan 
+
+1587
+01:17:11,180 --> 01:17:14,502
+ sebenarnya berarti bahwa ada semua masalah ini itu 
+
+1588
+01:17:14,502 --> 01:17:17,900
+ muncul melibatkan nama dan bagaimana Anda mewakili nama-nama host. 
+
+1589
+01:17:17,900 --> 01:17:23,434
+ Jadi misalnya, katakanlah Anda melihat surat ini di sini. 
+
+1590
+01:17:23,434 --> 01:17:24,600
+ Jadi seperti apakah ini? 
+
+1591
+01:17:24,600 --> 01:17:26,120
+ Ini terlihat seperti C, kan? 
+
+1592
+01:17:26,120 --> 01:17:27,490
+ Apa ini? 
+
+1593
+01:17:27,490 --> 01:17:30,460
+ AC dalam ASCII dalam alfabet Latin? 
+
+1594
+01:17:30,460 --> 01:17:33,250
+ Atau apakah ini C dalam Cyrillic? 
+
+1595
+01:17:33,250 --> 01:17:34,870
+ Sulit untuk dikatakan, bukan? 
+
+1596
+01:17:34,870 --> 01:17:37,890
+ Jadi Anda bisa berakhir dengan serangan yang benar-benar aneh di mana 
+
+1597
+01:17:37,890 --> 01:17:44,210
+ penyerang akan mendaftarkan nama domain, seperti cats.com, 
+
+1598
+01:17:44,210 --> 01:17:45,350
+ sebagai contoh. 
+
+1599
+01:17:45,350 --> 01:17:48,340
+ Tapi ini adalah Cyrillic C. 
+
+1600
+01:17:48,340 --> 01:17:50,724
+ Jadi pengguna akan masuk ke domain ini. 
+
+1601
+01:17:50,724 --> 01:17:52,140
+ Mereka mungkin mengkliknya atau apa pun 
+
+1602
+01:17:52,140 --> 01:17:55,840
+ berpikir mereka akan menggunakan huruf Latin C, cats.com. 
+
+1603
+01:17:55,840 --> 01:17:58,450
+ Tapi sebaliknya, mereka pergi ke penyerang. 
+
+1604
+01:17:58,450 --> 01:18:01,824
+ Dan kemudian, segala macam kegilaan bisa terjadi dari sana juga. 
+
+1605
+01:18:01,824 --> 01:18:03,240
+ Jadi Anda mungkin pernah mendengar tentang serangan 
+
+1606
+01:18:03,240 --> 01:18:05,240
+ seperti ini seperti serangan jongkok typo 
+
+1607
+01:18:05,240 --> 01:18:11,900
+ di mana orang mendaftar untuk nama-nama seperti FCE book.com. 
+
+1608
+01:18:11,900 --> 01:18:16,440
+
+
+1609
+01:18:16,440 --> 01:18:20,170
+ Ini adalah mengetik jari meraba yang umum untuk Facebook.com. 
+
+1610
+01:18:20,170 --> 01:18:23,745
+ Jadi jika Anda mengontrol ini, Anda akan mendapatkan banyak sekali lalu lintas 
+
+1611
+01:18:23,745 --> 01:18:26,456
+ dari orang-orang yang berpikir bahwa mereka akan masuk ke Facebook.com. 
+
+1612
+01:18:26,456 --> 01:18:29,130
+ Jadi ada banyak serangan yang berbeda, semacam serangan aneh 
+
+1613
+01:18:29,130 --> 01:18:31,710
+ yang dapat Anda luncurkan melalui domain 
+
+1614
+01:18:31,710 --> 01:18:34,806
+ sistem pencatatan yang rumit untuk dipertahankan dari prinsip pertama 
+
+1615
+01:18:34,806 --> 01:18:37,180
+ karena bagaimana Anda akan mencegah pengguna dari salah mengetik 
+
+1616
+01:18:37,180 --> 01:18:38,540
+ hal-hal, misalnya? 
+
+1617
+01:18:38,540 --> 01:18:41,700
+ Atau bagaimana browser menunjukkan kepada pengguna, hei, 
+
+1618
+01:18:41,700 --> 01:18:43,110
+ ini Cyrillic? 
+
+1619
+01:18:43,110 --> 01:18:45,260
+ Apakah browser akan memperingatkan pengguna setiap saat 
+
+1620
+01:18:45,260 --> 01:18:46,820
+ Font Cyrillic disertakan? 
+
+1621
+01:18:46,820 --> 01:18:49,070
+ Itu akan membuat orang marah jika mereka benar-benar menggunakannya 
+
+1622
+01:18:49,070 --> 01:18:51,220
+ Cyrillic sebagai font asli mereka. 
+
+1623
+01:18:51,220 --> 01:18:54,040
+ Jadi tidak begitu jelas, secara teknologi, 
+
+1624
+01:18:54,040 --> 01:18:56,940
+ bagaimana kita menangani beberapa masalah itu. 
+
+1625
+01:18:56,940 --> 01:19:01,430
+ Jadi ya, ada banyak masalah keamanan lainnya 
+
+1626
+01:19:01,430 --> 01:19:02,790
+ yang sangat halus di sini. 
+
+1627
+01:19:02,790 --> 01:19:07,670
+ Satu hal yang menarik adalah jika Anda melihat plugin. 
+
+1628
+01:19:07,670 --> 01:19:10,900
+ Jadi bagaimana plugin memperlakukan kebijakan asal yang sama? 
+
+1629
+01:19:10,900 --> 01:19:15,442
+ Plugin baik sering memiliki inkompatibilitas yang sangat halus 
+
+1630
+01:19:15,442 --> 01:19:17,150
+ dengan sisa browser dengan hormat 
+
+1631
+01:19:17,150 --> 01:19:17,941
+ ke asal yang sama. 
+
+1632
+01:19:17,941 --> 01:19:20,480
+ Jadi misalnya, jika Anda melihat Java plug-in, 
+
+1633
+01:19:20,480 --> 01:19:25,020
+ Java, seringkali, berasumsi bahwa tuan rumah yang berbeda 
+
+1634
+01:19:25,020 --> 01:19:28,730
+ nama-nama yang memiliki alamat IP yang sama 
+
+1635
+01:19:28,730 --> 01:19:31,420
+ sebenarnya memiliki asal yang sama. 
+
+1636
+01:19:31,420 --> 01:19:34,580
+ Itu sebenarnya penyimpangan yang cukup besar dari standar 
+
+1637
+01:19:34,580 --> 01:19:37,450
+ interpretasi dari kebijakan asal yang sama karena ini 
+
+1638
+01:19:37,450 --> 01:19:45,620
+ berarti jika Anda memiliki sesuatu seperti xycom dan, katakanlah, 
+
+1639
+01:19:45,620 --> 01:19:50,640
+ zycom, jika mereka memetakan ke alamat IP yang sama, 
+
+1640
+01:19:50,640 --> 01:19:53,940
+ maka Java akan menganggap ini berada di asal yang sama, 
+
+1641
+01:19:53,940 --> 01:19:55,580
+ yang merupakan masalah jika, misalnya, 
+
+1642
+01:19:55,580 --> 01:19:58,390
+ situs ini mendapat [? dimiliki?] tapi yang ini tidak. 
+
+1643
+01:19:58,390 --> 01:19:59,970
+ Jadi ada banyak sudut lainnya 
+
+1644
+01:19:59,970 --> 01:20:01,420
+ kasus yang melibatkan plug-in. 
+
+1645
+01:20:01,420 --> 01:20:05,190
+ Anda dapat merujuk ke web yang kusut untuk melihat lebih banyak tentang beberapa 
+
+1646
+01:20:05,190 --> 01:20:07,910
+ dari hal-hal semacam itu. 
+
+1647
+01:20:07,910 --> 01:20:09,740
+ Jadi hal terakhir yang ingin saya diskusikan-- 
+
+1648
+01:20:09,740 --> 01:20:11,323
+ Anda dapat melihat catatan kuliah untuk lebih banyak 
+
+1649
+01:20:11,323 --> 01:20:13,851
+ contoh serangan gila yang dapat diluncurkan orang-- 
+
+1650
+01:20:13,851 --> 01:20:15,600
+ tetapi hal terakhir yang ingin saya diskusikan 
+
+1651
+01:20:15,600 --> 01:20:19,680
+ adalah serangan berbagi layar ini. 
+
+1652
+01:20:19,680 --> 01:20:22,680
+ Jadi HTML 5 benar-benar mendefinisikan API BARU ini 
+
+1653
+01:20:22,680 --> 01:20:26,630
+ dimana halaman web dapat memungkinkan semua bit di layar itu 
+
+1654
+01:20:26,630 --> 01:20:28,560
+ untuk dibagikan dengan browser lain 
+
+1655
+01:20:28,560 --> 01:20:30,630
+ atau dibagikan dengan server. 
+
+1656
+01:20:30,630 --> 01:20:32,230
+ Ini sepertinya ide yang sangat keren 
+
+1657
+01:20:32,230 --> 01:20:34,170
+ karena sekarang saya bisa melakukan foo kolaboratif. 
+
+1658
+01:20:34,170 --> 01:20:36,406
+ Kami dapat berkolaborasi dalam dokumen pada saat yang bersamaan. 
+
+1659
+01:20:36,406 --> 01:20:38,405
+ Dan itu menarik karena kita hidup di masa depan. 
+
+1660
+01:20:38,405 --> 01:20:40,950
+ Tapi apa yang lucu tentang ini adalah itu, 
+
+1661
+01:20:40,950 --> 01:20:44,420
+ saat mereka mendesain API ini, dan itu adalah API yang sangat baru, 
+
+1662
+01:20:44,420 --> 01:20:47,560
+ mereka tampaknya tidak berpikir tentang kebijakan asal yang sama 
+
+1663
+01:20:47,560 --> 01:20:49,260
+ sama sekali. 
+
+1664
+01:20:49,260 --> 01:20:54,070
+ Jadi apa artinya itu jika Anda memiliki beberapa halaman itu 
+
+1665
+01:20:54,070 --> 01:20:57,775
+ memiliki banyak bingkai, lalu salah satu dari bingkai ini, 
+
+1666
+01:20:57,775 --> 01:21:00,180
+ jika mereka diberi izin untuk mengambil 
+
+1667
+01:21:00,180 --> 01:21:04,840
+ tangkapan layar monitor Anda, dapat mengambil seluruh layar 
+
+1668
+01:21:04,840 --> 01:21:07,630
+ tembakan dari seluruh hal, terlepas 
+
+1669
+01:21:07,630 --> 01:21:11,200
+ dari mana asal konten lain itu berasal. 
+
+1670
+01:21:11,200 --> 01:21:14,340
+ Jadi ini sebenarnya adalah cacat yang cukup merusak 
+
+1671
+01:21:14,340 --> 01:21:16,875
+ dalam kebijakan asal yang sama. 
+
+1672
+01:21:16,875 --> 01:21:19,250
+ Jadi ada beberapa perbaikan yang cukup jelas yang dapat Anda pikirkan. 
+
+1673
+01:21:19,250 --> 01:21:23,500
+ Jadi misalnya, jika kemampuan screenshot yang diberikan orang ini, 
+
+1674
+01:21:23,500 --> 01:21:25,310
+ hanya membiarkannya mengambil screenshot ini. 
+
+1675
+01:21:25,310 --> 01:21:25,810
+ Kanan? 
+
+1676
+01:21:25,810 --> 01:21:26,700
+ Bukan semua ini. 
+
+1677
+01:21:26,700 --> 01:21:29,010
+ Mengapa vendor browser tidak mengimplementasikannya seperti ini? 
+
+1678
+01:21:29,010 --> 01:21:32,410
+ Karena ada tekanan untuk bersaing di fitur, 
+
+1679
+01:21:32,410 --> 01:21:35,595
+ dan berinovasi pada fitur, dan untuk mendapatkan hal baru berikutnya 
+
+1680
+01:21:35,595 --> 01:21:36,150
+ sana. 
+
+1681
+01:21:36,150 --> 01:21:38,441
+ Jadi misalnya, banyak pertanyaan yang diajukan orang-orang 
+
+1682
+01:21:38,441 --> 01:21:40,940
+ bertanya tentang kuliah khusus ini secara online [tidak terdengar] 
+
+1683
+01:21:40,940 --> 01:21:42,711
+ seperti, yah, kenapa kamu tidak bisa melakukan ini? 
+
+1684
+01:21:42,711 --> 01:21:44,210
+ Bukankah ini lebih masuk akal? 
+
+1685
+01:21:44,210 --> 01:21:46,030
+ Sepertinya skema saat ini adalah mati otak. 
+
+1686
+01:21:46,030 --> 01:21:47,460
+ Bukankah ini yang satu ini lebih baik? 
+
+1687
+01:21:47,460 --> 01:21:48,210
+ Dan jawabannya adalah, ya. 
+
+1688
+01:21:48,210 --> 01:21:48,895
+ Semuanya, ya. 
+
+1689
+01:21:48,895 --> 01:21:50,850
+ Itu benar sekali. 
+
+1690
+01:21:50,850 --> 01:21:53,460
+ Hampir semua hal akan lebih baik dari ini. 
+
+1691
+01:21:53,460 --> 01:21:56,030
+ Saya malu dikaitkan dengan ini. 
+
+1692
+01:21:56,030 --> 01:21:57,220
+ Tapi ini yang kami miliki. 
+
+1693
+01:21:57,220 --> 01:21:59,440
+ Jadi apa yang akhirnya terjadi adalah jika Anda melihat kacang 
+
+1694
+01:21:59,440 --> 01:22:01,507
+ dan baut tentang bagaimana peramban web dikembangkan, 
+
+1695
+01:22:01,507 --> 01:22:03,590
+ orang-orang sedikit lebih baik tentang keamanan sekarang. 
+
+1696
+01:22:03,590 --> 01:22:05,256
+ Tapi seperti, dengan hal berbagi layar, 
+
+1697
+01:22:05,256 --> 01:22:08,290
+ orang-orang begitu terpompa untuk mengeluarkan benda ini di luar sana, 
+
+1698
+01:22:08,290 --> 01:22:10,310
+ mereka tidak menyadari itu akan bocor 
+
+1699
+01:22:10,310 --> 01:22:12,920
+ semua bit di layar Anda. 
+
+1700
+01:22:12,920 --> 01:22:14,864
+ Jadi sekarang kita ada di titik dengan web 
+
+1701
+01:22:14,864 --> 01:22:16,530
+ dimana-- maksud saya, lihat semua hal ini 
+
+1702
+01:22:16,530 --> 01:22:18,310
+ yang telah kita diskusikan hari ini. 
+
+1703
+01:22:18,310 --> 01:22:20,200
+ Jadi jika kita akan mulai dari awal 
+
+1704
+01:22:20,200 --> 01:22:22,280
+ dan muncul dengan kebijakan keamanan yang lebih baik, 
+
+1705
+01:22:22,280 --> 01:22:25,020
+ berapa bagian dari situs web yang Anda miliki hari ini 
+
+1706
+01:22:25,020 --> 01:22:26,870
+ akan benar-benar bekerja? 
+
+1707
+01:22:26,870 --> 01:22:28,941
+ Seperti, kira-kira, 0,2% dari mereka. 
+
+1708
+01:22:28,941 --> 01:22:29,440
+ Kanan? 
+
+1709
+01:22:29,440 --> 01:22:30,731
+ Jadi pengguna akan mengeluh. 
+
+1710
+01:22:30,731 --> 01:22:33,090
+ Dan ini adalah kisah konstan lainnya dengan keamanan. 
+
+1711
+01:22:33,090 --> 01:22:36,040
+ Setelah Anda memberikan fitur kepada pengguna, seringkali sangat sulit 
+
+1712
+01:22:36,040 --> 01:22:40,280
+ untuk mencakar itu kembali, bahkan jika fitur itu tidak aman. 
+
+1713
+01:22:40,280 --> 01:22:42,450
+ Jadi hari ini, kami membahas banyak hal yang berbeda 
+
+1714
+01:22:42,450 --> 01:22:44,120
+ tentang kebijakan asal yang sama dan hal-hal seperti itu. 
+
+1715
+01:22:44,120 --> 01:22:45,720
+ Kuliah berikutnya, kita akan membahas lebih lanjut 
+
+1716
+01:22:45,720 --> 00:00:00,000
+ mendalam tentang beberapa hal yang kita bicarakan [tidak terdengar]. 
+

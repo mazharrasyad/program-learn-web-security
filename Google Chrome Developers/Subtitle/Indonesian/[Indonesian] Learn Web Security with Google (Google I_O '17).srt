@@ -1,0 +1,3136 @@
+1
+00:00:00,000 --> 00:00:06,210
+
+
+2
+00:00:06,210 --> 00:00:07,230
+ ELIE BURSZTEIN: Bonjour. 
+
+3
+00:00:07,230 --> 00:00:10,810
+ Nama saya Elie Bursztein, dan saya bekerja pada anti-abuse dan keamanan 
+
+4
+00:00:10,810 --> 00:00:11,310
+ penelitian. 
+
+5
+00:00:11,310 --> 00:00:14,200
+ Dan hari ini dengan Yuan, yang bekerja dalam penelitian keamanan web, 
+
+6
+00:00:14,200 --> 00:00:17,790
+ dan Eric yang bekerja di hubungan webmaster, 
+
+7
+00:00:17,790 --> 00:00:21,000
+ kami akan memberi tahu Anda bagaimana Anda dapat belajar tentang keamanan web 
+
+8
+00:00:21,000 --> 00:00:22,530
+ dengan Google. 
+
+9
+00:00:22,530 --> 00:00:25,810
+ Tapi sebelum kita mulai, mari lakukan pertunjukan cepat. 
+
+10
+00:00:25,810 --> 00:00:27,480
+ Berapa banyak dari Anda yang memiliki situs web mereka 
+
+11
+00:00:27,480 --> 00:00:31,420
+ berkompromi atau mengetahui seseorang yang meretas situs web mereka? 
+
+12
+00:00:31,420 --> 00:00:31,920
+ Ayolah. 
+
+13
+00:00:31,920 --> 00:00:32,340
+ Jangan malu. 
+
+14
+00:00:32,340 --> 00:00:33,100
+ Angkat tanganmu. 
+
+15
+00:00:33,100 --> 00:00:33,600
+ Ya. 
+
+16
+00:00:33,600 --> 00:00:39,722
+
+
+17
+00:00:39,722 --> 00:00:40,930
+ Sebagian besar dari Anda mengangkat tangan Anda. 
+
+18
+00:00:40,930 --> 00:00:42,820
+ Ini tidak mengherankan. 
+
+19
+00:00:42,820 --> 00:00:46,960
+ Pada tahun 2016, peretasan tidak pernah begitu umum. 
+
+20
+00:00:46,960 --> 00:00:52,120
+ Kami telah menemukan 32% lebih banyak kompromi situs web daripada sebelumnya. 
+
+21
+00:00:52,120 --> 00:00:56,620
+ Jadi peretas mencoba meretas situs web Anda karena berbagai alasan, 
+
+22
+00:00:56,620 --> 00:01:00,040
+ dari menyerang pengguna Anda dengan mengirimkan malware ke mereka 
+
+23
+00:01:00,040 --> 00:01:03,580
+ atau mencoba menghipnotis mereka untuk menggunakan sumber daya Anda sebagai serangan 
+
+24
+00:01:03,580 --> 00:01:07,270
+ platform untuk meretas situs web lain untuk mencoba mencuri data Anda 
+
+25
+00:01:07,270 --> 00:01:08,830
+ dan memaparkan mereka. 
+
+26
+00:01:08,830 --> 00:01:11,880
+ Dengan cara apa pun, ketika Anda diretas, 
+
+27
+00:01:11,880 --> 00:01:13,900
+ konsekuensinya cukup sayang. 
+
+28
+00:01:13,900 --> 00:01:15,670
+ Anda kehilangan kepercayaan dari pengguna Anda 
+
+29
+00:01:15,670 --> 00:01:18,400
+ dan berpotensi menderita kerugian finansial. 
+
+30
+00:01:18,400 --> 00:01:20,620
+ Beberapa efek abadi, seperti kepercayaan pengguna, 
+
+31
+00:01:20,620 --> 00:01:23,450
+ butuh waktu bertahun-tahun untuk pulih. 
+
+32
+00:01:23,450 --> 00:01:27,490
+ Jadi inilah mengapa penting untuk menjaga keamanan 
+
+33
+00:01:27,490 --> 00:01:29,560
+ di garis depan strategi web Anda 
+
+34
+00:01:29,560 --> 00:01:32,290
+ dan pastikan Anda berinvestasi dalam keamanan secara konstan 
+
+35
+00:01:32,290 --> 00:01:35,000
+ dari saat Anda mengembangkan hal baru, jadi ketika Anda mempertahankannya, 
+
+36
+00:01:35,000 --> 00:01:36,840
+ jadi ketika Anda meningkatkannya. 
+
+37
+00:01:36,840 --> 00:01:39,340
+ Saya cukup yakin Anda sudah tahu itu, karena kalau tidak Anda 
+
+38
+00:01:39,340 --> 00:01:40,900
+ tidak akan ada di sana hari ini, kan? 
+
+39
+00:01:40,900 --> 00:01:43,780
+ Jadi hari ini, apa yang akan kita lakukan, 
+
+40
+00:01:43,780 --> 00:01:45,790
+ kami akan memandu Anda melalui sumber daya 
+
+41
+00:01:45,790 --> 00:01:48,640
+ yang disediakan Google untuk membantu Anda mengamankan situs web Anda 
+
+42
+00:01:48,640 --> 00:01:50,590
+ dan bertahan melawan peretas. 
+
+43
+00:01:50,590 --> 00:01:53,330
+ Lebih tepatnya, kita akan membahas dua topik. 
+
+44
+00:01:53,330 --> 00:01:58,005
+ Pertama, Eric akan membahas bagaimana Anda bisa mendapatkan bantuan dari Google saat itu 
+
+45
+00:01:58,005 --> 00:01:58,630
+ Anda diretas. 
+
+46
+00:01:58,630 --> 00:02:01,540
+ Apa sumber daya yang kami miliki untuk membantu Anda membersihkan 
+
+47
+00:02:01,540 --> 00:02:03,370
+ dan untuk membantu Anda merestrukturisasi situs web Anda? 
+
+48
+00:02:03,370 --> 00:02:05,470
+ Kemudian dengan Yuan, kami akan memberi Anda 
+
+49
+00:02:05,470 --> 00:02:08,590
+ pratinjau singkat dari kursus keamanan web kami yang akan datang. 
+
+50
+00:02:08,590 --> 00:02:11,290
+ Dan kami sangat bersemangat untuk merilisnya pada musim panas ini. 
+
+51
+00:02:11,290 --> 00:02:12,940
+ Untuk membuatnya sangat praktis dan memberi Anda 
+
+52
+00:02:12,940 --> 00:02:14,650
+ rasa apa yang akan Anda pelajari, 
+
+53
+00:02:14,650 --> 00:02:16,810
+ kami akan memberi Anda gambaran singkat, diikuti 
+
+54
+00:02:16,810 --> 00:02:20,020
+ oleh pratinjau singkat dari salah satu kuliah-- injeksi SQL 
+
+55
+00:02:20,020 --> 00:02:20,520
+ kuliah. 
+
+56
+00:02:20,520 --> 00:02:22,186
+ Dan tentu saja, karena kami ingin memilikinya 
+
+57
+00:02:22,186 --> 00:02:23,710
+ sesuatu yang sangat langsung, 
+
+58
+00:02:23,710 --> 00:02:25,300
+ kami memiliki banyak demo hari ini. 
+
+59
+00:02:25,300 --> 00:02:27,160
+ Yaitu, jika itu berhasil, tentu saja. 
+
+60
+00:02:27,160 --> 00:02:30,360
+ Dan mari kita pergi dan melompat ke kanan. 
+
+61
+00:02:30,360 --> 00:02:31,920
+ Eric, mereka semua milikmu. 
+
+62
+00:02:31,920 --> 00:02:33,610
+ ERIC KUAN: Terima kasih, Elie. 
+
+63
+00:02:33,610 --> 00:02:36,096
+ Jadi, pertama, hai, Bu. 
+
+64
+00:02:36,096 --> 00:02:38,220
+ Saya sedang siaran langsung sekarang, dan ibuku sedang menonton. 
+
+65
+00:02:38,220 --> 00:02:38,990
+ Jadi saya sangat bersemangat. 
+
+66
+00:02:38,990 --> 00:02:40,240
+ Saya selalu ingin melakukan itu. 
+
+67
+00:02:40,240 --> 00:02:41,178
+ Hai, Ibu. 
+
+68
+00:02:41,178 --> 00:02:44,047
+ [TEPUK TANGAN] 
+
+69
+00:02:44,047 --> 00:02:44,880
+ Mari melompat ke kanan. 
+
+70
+00:02:44,880 --> 00:02:47,530
+ Jadi apa yang harus Anda lakukan jika situs Anda diretas. 
+
+71
+00:02:47,530 --> 00:02:50,320
+ Anda kemungkinan besar akan mendapatkan beberapa jenis notifikasi. 
+
+72
+00:02:50,320 --> 00:02:52,300
+ Dari perspektif Google, pemberitahuan itu 
+
+73
+00:02:52,300 --> 00:02:54,670
+ interstisial merah ini yang mungkin pernah Anda lihat. 
+
+74
+00:02:54,670 --> 00:02:57,650
+ Mungkin ada beberapa jenis pemberitahuan dalam hasil pencarian. 
+
+75
+00:02:57,650 --> 00:02:59,230
+ Sekarang, notifikasi tidak hanya ada 
+
+76
+00:02:59,230 --> 00:03:00,616
+ datang dari Google, kan? 
+
+77
+00:03:00,616 --> 00:03:02,740
+ Jika pengguna Anda mengirim email kepada Anda, dan mereka berkata, 
+
+78
+00:03:02,740 --> 00:03:05,200
+ Saya dialihkan, ada yang salah dengan situs Anda, 
+
+79
+00:03:05,200 --> 00:03:07,020
+ atau jika Anda memantau lalu lintas web Anda 
+
+80
+00:03:07,020 --> 00:03:09,250
+ dan Anda melihat duri tiba-tiba, semua itu adalah awal 
+
+81
+00:03:09,250 --> 00:03:11,470
+ tanda-tanda peringatan bahwa situs Anda mungkin dikompromikan. 
+
+82
+00:03:11,470 --> 00:03:13,420
+ Dan Anda akan ingin memeriksanya. 
+
+83
+00:03:13,420 --> 00:03:16,120
+ Seperti kata Elie, jika situs Anda disusupi, 
+
+84
+00:03:16,120 --> 00:03:18,335
+ ada beban keuangan, reputasi merek. 
+
+85
+00:03:18,335 --> 00:03:19,210
+ Benar-benar menjengkelkan. 
+
+86
+00:03:19,210 --> 00:03:22,000
+ Dan yang terburuk dari semuanya, pengguna Anda mencoba membuka situs Anda, 
+
+87
+00:03:22,000 --> 00:03:23,570
+ dan mereka tidak bisa masuk ke situs Anda. 
+
+88
+00:03:23,570 --> 00:03:25,630
+ Jadi itu adalah kepentingan terbaik Anda untuk membersihkan 
+
+89
+00:03:25,630 --> 00:03:28,670
+ secepatnya. 
+
+90
+00:03:28,670 --> 00:03:34,160
+ Sekarang, proses pembersihan, itu bisa sangat menakutkan. 
+
+91
+00:03:34,160 --> 00:03:35,590
+ Ini akan memakan waktu. 
+
+92
+00:03:35,590 --> 00:03:37,600
+ Tetapi jika Anda mengikuti langkah-langkah ini secara metodis, 
+
+93
+00:03:37,600 --> 00:03:39,620
+ ada peluang sangat tinggi bahwa Anda dapat membersihkan situs Anda. 
+
+94
+00:03:39,620 --> 00:03:41,800
+ Jadi saya akan berjalan melalui ini dengan sangat cepat. 
+
+95
+00:03:41,800 --> 00:03:43,630
+ Hal pertama adalah mengkarantina situs Anda. 
+
+96
+00:03:43,630 --> 00:03:45,360
+ Itu berarti mengambil situs Anda secara offline. 
+
+97
+00:03:45,360 --> 00:03:47,110
+ Atau jika Anda dapat mengisolasinya ke bagian-bagian tertentu, 
+
+98
+00:03:47,110 --> 00:03:49,360
+ ambil bagian tertentu dari situs Anda secara offline. 
+
+99
+00:03:49,360 --> 00:03:50,860
+ Pada fase ini, Anda akan ingin berubah 
+
+100
+00:03:50,860 --> 00:03:53,159
+ nama pengguna, kata sandi, izin pengguna. 
+
+101
+00:03:53,159 --> 00:03:54,700
+ Intinya adalah, Anda tidak menginginkannya 
+
+102
+00:03:54,700 --> 00:03:57,430
+ diretas saat Anda mencoba memperbaiki situs Anda. 
+
+103
+00:03:57,430 --> 00:03:58,900
+ Dan juga, Anda tidak menginginkan pengguna Anda 
+
+104
+00:03:58,900 --> 00:04:01,090
+ mencoba masuk ke situs Anda saat disusupi. 
+
+105
+00:04:01,090 --> 00:04:03,310
+ Jadi, luangkan situs Anda secara offline untuk sementara 
+
+106
+00:04:03,310 --> 00:04:05,380
+ biasanya langkah terbaik. 
+
+107
+00:04:05,380 --> 00:04:07,450
+ Anda juga ingin mulai membangun tim Anda di sini. 
+
+108
+00:04:07,450 --> 00:04:08,740
+ Bicaralah dengan penyedia hosting Anda. 
+
+109
+00:04:08,740 --> 00:04:10,060
+ Mereka mungkin dapat membantu Anda. 
+
+110
+00:04:10,060 --> 00:04:11,080
+ Bicaralah dengan tim Anda yang lebih luas. 
+
+111
+00:04:11,080 --> 00:04:12,940
+ Biarkan mereka tahu bahwa dalam beberapa langkah berikut ini, 
+
+112
+00:04:12,940 --> 00:04:15,240
+ Anda mungkin akan membutuhkan bantuan mereka. 
+
+113
+00:04:15,240 --> 00:04:16,339
+ Identifikasi. 
+
+114
+00:04:16,339 --> 00:04:18,040
+ Ini mungkin bagian yang paling sulit 
+
+115
+00:04:18,040 --> 00:04:20,079
+ dan yang paling memakan waktu. 
+
+116
+00:04:20,079 --> 00:04:22,390
+ Peretas terus berusaha mencegah Anda 
+
+117
+00:04:22,390 --> 00:04:24,310
+ dari menghapus peretasan di situs Anda. 
+
+118
+00:04:24,310 --> 00:04:26,991
+ Jadi mereka akan melakukan hal-hal kecil yang aneh seperti cloaking, 
+
+119
+00:04:26,991 --> 00:04:28,740
+ di mana Anda akan pergi ke halaman, dan Anda akan melihat, 
+
+120
+00:04:28,740 --> 00:04:31,210
+ oh, halaman ini menampilkan HTTP 404, 
+
+121
+00:04:31,210 --> 00:04:34,600
+ tetapi masih melayani spam untuk pengguna dan mesin telusur Anda. 
+
+122
+00:04:34,600 --> 00:04:37,160
+ Jadi identifikasi sangat penting. 
+
+123
+00:04:37,160 --> 00:04:38,770
+ Tapi ini akan memakan waktu. 
+
+124
+00:04:38,770 --> 00:04:41,950
+ Pada fase ini, Anda juga ingin mengidentifikasi kerentanannya, 
+
+125
+00:04:41,950 --> 00:04:45,730
+ karena Anda ingin memahami bagaimana peretas masuk ke situs Anda. 
+
+126
+00:04:45,730 --> 00:04:48,460
+ Membersihkan hanya tentang menghapus file-file itu 
+
+127
+00:04:48,460 --> 00:04:50,980
+ dan kemudian menguji, memastikan bahwa situs Anda 
+
+128
+00:04:50,980 --> 00:04:52,770
+ berjalan dengan baik lagi. 
+
+129
+00:04:52,770 --> 00:04:54,520
+ Itu bagian utama dari pembersihan, 
+
+130
+00:04:54,520 --> 00:04:56,470
+ dan itu benar-benar semua yang perlu Anda lakukan. 
+
+131
+00:04:56,470 --> 00:04:58,962
+ Menambal adalah tentang menutup kerentanan tersebut 
+
+132
+00:04:58,962 --> 00:05:01,420
+ yang Anda identifikasi sebelumnya untuk memastikan bahwa peretas tidak bisa 
+
+133
+00:05:01,420 --> 00:05:02,740
+ kompromi situs Anda lagi. 
+
+134
+00:05:02,740 --> 00:05:03,910
+ Ini sangat penting. 
+
+135
+00:05:03,910 --> 00:05:05,770
+ Banyak orang kehilangan ini, dan situs mereka 
+
+136
+00:05:05,770 --> 00:05:06,850
+ jangan dikompromikan lagi. 
+
+137
+00:05:06,850 --> 00:05:09,490
+ Jadi jangan lupa tutup celah-celah itu. 
+
+138
+00:05:09,490 --> 00:05:11,230
+ Salah satu hal termudah yang bisa Anda lakukan 
+
+139
+00:05:11,230 --> 00:05:14,380
+ hanya untuk memperbarui perangkat lunak situs Anda, CMS Anda, 
+
+140
+00:05:14,380 --> 00:05:16,120
+ plugin Anda, hal-hal seperti itu. 
+
+141
+00:05:16,120 --> 00:05:17,920
+ Pastikan saja bahwa mereka diperbarui, 
+
+142
+00:05:17,920 --> 00:05:20,560
+ dan itu akan menutup banyak kerentanan. 
+
+143
+00:05:20,560 --> 00:05:22,480
+ Akhirnya, jika situs Anda ditandai oleh Google-- 
+
+144
+00:05:22,480 --> 00:05:24,839
+ Anda melihat interstisial merah di situs Anda atau Anda 
+
+145
+00:05:24,839 --> 00:05:26,380
+ melihat beberapa peringatan di hasil penelusuran-- 
+
+146
+00:05:26,380 --> 00:05:28,630
+ Anda ingin memberi tahu Google bahwa situs Anda diretas 
+
+147
+00:05:28,630 --> 00:05:34,120
+ atau situs Anda dibersihkan sehingga mereka dapat menghapus bendera tersebut. 
+
+148
+00:05:34,120 --> 00:05:36,150
+ Langkah-langkah yang kita bicarakan sekarang, 
+
+149
+00:05:36,150 --> 00:05:38,980
+ mereka akan bekerja untuk sebagian besar jenis peretasan di situs Anda. 
+
+150
+00:05:38,980 --> 00:05:41,590
+ Tapi kami sudah melakukan banyak penelitian, 
+
+151
+00:05:41,590 --> 00:05:43,930
+ dan kami menyadari bahwa banyak kampanye peretasan, 
+
+152
+00:05:43,930 --> 00:05:46,570
+ mereka bekerja dengan cara yang sangat, sangat mirip. 
+
+153
+00:05:46,570 --> 00:05:50,560
+ Dan ini membantu kami memahami cara penyerang melakukan penskalaan 
+
+154
+00:05:50,560 --> 00:05:54,280
+ serangan mereka, bagaimana mereka mencoba terbang di bawah radar, 
+
+155
+00:05:54,280 --> 00:05:55,690
+ melawan deteksi. 
+
+156
+00:05:55,690 --> 00:05:58,600
+ Dan ini juga membantu kami membangun sistem pendeteksian yang lebih baik 
+
+157
+00:05:58,600 --> 00:06:01,240
+ dan dokumentasi yang lebih baik untuk pengguna kami. 
+
+158
+00:06:01,240 --> 00:06:03,952
+ Kami telah mengidentifikasi tiga kampanye peretasan besar sejauh ini. 
+
+159
+00:06:03,952 --> 00:06:06,160
+ Peretasan kata kunci dan tautan tersembunyi, tempat mereka membuat 
+
+160
+00:06:06,160 --> 00:06:07,420
+ halaman terselubung. 
+
+161
+00:06:07,420 --> 00:06:09,790
+ Mereka menjatuhkan kata kunci dan tautan di halaman itu. 
+
+162
+00:06:09,790 --> 00:06:10,930
+ Peretasan nonsens. 
+
+163
+00:06:10,930 --> 00:06:14,020
+ Peretasan nonsens menciptakan sekelompok kata kunci ekor panjang 
+
+164
+00:06:14,020 --> 00:06:16,924
+ dan kemudian menggunakan reputasi domain untuk mendapat peringkat yang baik. 
+
+165
+00:06:16,924 --> 00:06:18,340
+ Lalu saat pengguna mengeklik, mereka 
+
+166
+00:06:18,340 --> 00:06:22,030
+ dialihkan ke situs jahat malware yang buruk ini. 
+
+167
+00:06:22,030 --> 00:06:24,370
+ Dan akhirnya, suntikan kata kunci bahasa Jepang. 
+
+168
+00:06:24,370 --> 00:06:27,490
+ Ini menargetkan barang-barang bermerek Jepang secara khusus 
+
+169
+00:06:27,490 --> 00:06:29,710
+ dan mengirim pengguna ke situs web palsu 
+
+170
+00:06:29,710 --> 00:06:32,856
+ dan mencoba menjualnya barang palsu. 
+
+171
+00:06:32,856 --> 00:06:35,230
+ Karena kami dapat mengelompokkan situs dengan cara ini, 
+
+172
+00:06:35,230 --> 00:06:37,630
+ kami dapat membuat dokumentasi yang sangat bagus, 
+
+173
+00:06:37,630 --> 00:06:39,939
+ panduan langkah demi langkah untuk masing-masing dari peretasan ini. 
+
+174
+00:06:39,939 --> 00:06:41,980
+ Dan saya akan menghubungkan Anda ke dokumen-dokumen ini dalam hitungan detik, 
+
+175
+00:06:41,980 --> 00:06:43,438
+ karena saya pikir itu akan sangat membantu 
+
+176
+00:06:43,438 --> 00:06:46,540
+ jika Anda, teman-teman Anda atau seseorang yang Anda kenal, 
+
+177
+00:06:46,540 --> 00:06:49,060
+ seperti yang Anda tunjukkan di acara tangan, telah diretas 
+
+178
+00:06:49,060 --> 00:06:50,809
+ atau akan diretas di masa mendatang. 
+
+179
+00:06:50,809 --> 00:06:53,350
+ Namun, pertama-tama, saya ingin membicarakan Anda melalui peretasan nonsens. 
+
+180
+00:06:53,350 --> 00:06:54,970
+ Memahami bagaimana hacks ini bekerja 
+
+181
+00:06:54,970 --> 00:06:56,980
+ sangat menarik, karena itu akan membantu Anda 
+
+182
+00:06:56,980 --> 00:06:59,990
+ dengan remediasi di masa depan. 
+
+183
+00:06:59,990 --> 00:07:01,990
+ Sekarang, ini seperti apa peretasan omong kosong itu. 
+
+184
+00:07:01,990 --> 00:07:03,100
+ Benar-benar polos. 
+
+185
+00:07:03,100 --> 00:07:05,110
+ Sekali lagi, kata kunci ekor panjang, mencoba 
+
+186
+00:07:05,110 --> 00:07:08,290
+ untuk menggunakan reputasi domain untuk memberi peringkat yang baik, mengarahkan pengguna. 
+
+187
+00:07:08,290 --> 00:07:11,120
+
+
+188
+00:07:11,120 --> 00:07:12,830
+ Mekanisme yang mendasari di baliknya 
+
+189
+00:07:12,830 --> 00:07:14,960
+ juga cukup sederhana ketika Anda meletakkannya 
+
+190
+00:07:14,960 --> 00:07:16,880
+ menjadi tiga bagian terpisah. 
+
+191
+00:07:16,880 --> 00:07:18,400
+ Pengguna mengklik situs, mereka 
+
+192
+00:07:18,400 --> 00:07:22,970
+ dialihkan dalam beberapa cara atau mode ke generator PHP 
+
+193
+00:07:22,970 --> 00:07:26,450
+ skrip, dan kemudian pengguna tersebut kemudian dialihkan ke spam. 
+
+194
+00:07:26,450 --> 00:07:29,650
+
+
+195
+00:07:29,650 --> 00:07:33,240
+ Jadi bagian penting pertama dari seluruh rantai ini 
+
+196
+00:07:33,240 --> 00:07:34,440
+ adalah pengalihan ini. 
+
+197
+00:07:34,440 --> 00:07:36,870
+ Jika Anda dapat mengidentifikasi bagaimana pengalihan itu terjadi, di mana 
+
+198
+00:07:36,870 --> 00:07:39,780
+ itu terjadi, Anda dapat mengidentifikasi bagian lain dari situs Anda 
+
+199
+00:07:39,780 --> 00:07:43,140
+ yang telah dikompromikan juga. 
+
+200
+00:07:43,140 --> 00:07:46,700
+ Dalam contoh ini, file htaccess telah dikompromikan. 
+
+201
+00:07:46,700 --> 00:07:47,984
+ Tiga baris kode. 
+
+202
+00:07:47,984 --> 00:07:50,400
+ Ini akan mengalihkan pengguna Anda dari pencarian utama 
+
+203
+00:07:50,400 --> 00:07:54,630
+ mesin dan kemudian mengirim mereka ke halaman ini di sini, 
+
+204
+00:07:54,630 --> 00:07:56,812
+ halaman halaman generator spam dot php. 
+
+205
+00:07:56,812 --> 00:07:58,770
+ Jadi Anda dapat melihat sekarang bahwa Anda telah mengidentifikasi 
+
+206
+00:07:58,770 --> 00:08:00,510
+ bagian rantai yang lain. 
+
+207
+00:08:00,510 --> 00:08:03,510
+ Dan ini adalah bagian yang ingin Anda identifikasi nanti. 
+
+208
+00:08:03,510 --> 00:08:05,220
+ Ini tidak akan disebut spam dot php. 
+
+209
+00:08:05,220 --> 00:08:06,790
+ Itu terlalu jelas. 
+
+210
+00:08:06,790 --> 00:08:09,670
+ Kami telah melihat peretas menyebut hal-hal kuda bebek 2. 
+
+211
+00:08:09,670 --> 00:08:12,435
+ Kami telah melihat mereka mencoba untuk menutupi sebagai file inti seperti wp 
+
+212
+00:08:12,435 --> 00:08:16,410
+ garis bawah konfigurasi bukannya wp dash config. 
+
+213
+00:08:16,410 --> 00:08:18,270
+ Mereka benar-benar mencoba mengelabui pengguna 
+
+214
+00:08:18,270 --> 00:08:23,490
+ dari secara akurat dan cepat memperbaiki situs mereka. 
+
+215
+00:08:23,490 --> 00:08:25,680
+ Jadi dari pengalihan, kami melihat Anda dikirim 
+
+216
+00:08:25,680 --> 00:08:28,696
+ ke halaman pembuatan halaman. 
+
+217
+00:08:28,696 --> 00:08:30,570
+ Sekarang, Anda mungkin akan membuka file ini. 
+
+218
+00:08:30,570 --> 00:08:32,195
+ Anda ingin mencari tahu apa yang terjadi. 
+
+219
+00:08:32,195 --> 00:08:32,880
+ Kamu penasaran. 
+
+220
+00:08:32,880 --> 00:08:35,486
+ Anda penasaran bagaimana mereka melakukan semua kerusakan ini. 
+
+221
+00:08:35,486 --> 00:08:37,318
+ Dan Anda akan mendapatkan sesuatu seperti ini. 
+
+222
+00:08:37,318 --> 00:08:39,588
+ Ini hanya omong kosong belaka. 
+
+223
+00:08:39,589 --> 00:08:40,380
+ Mereka telah dikaburkan. 
+
+224
+00:08:40,380 --> 00:08:41,130
+ Mereka telah dienkripsi. 
+
+225
+00:08:41,130 --> 00:08:43,650
+ Mereka tidak ingin Anda mengetahui apa yang sebenarnya mereka lakukan. 
+
+226
+00:08:43,650 --> 00:08:46,380
+ Sangat sulit dimengerti 
+
+227
+00:08:46,380 --> 00:08:48,180
+ apa yang banyak dilakukan skrip ini. 
+
+228
+00:08:48,180 --> 00:08:50,100
+ Bahkan jika Anda melakukan de-menyamarkan, dan Anda 
+
+229
+00:08:50,100 --> 00:08:54,060
+ luangkan waktu untuk mengetahui ini persis apa kode itu, 
+
+230
+00:08:54,060 --> 00:08:56,130
+ itu masih belum bisa dibaca manusia. 
+
+231
+00:08:56,130 --> 00:08:58,010
+ Ini bukan praktik terbaik pengkodean. 
+
+232
+00:08:58,010 --> 00:09:01,780
+ Profesor CS Anda akan terkejut dengan melihat ini. 
+
+233
+00:09:01,780 --> 00:09:06,540
+ Beruntung bagi Anda, yang perlu Anda lakukan hanyalah menghapus file ini. 
+
+234
+00:09:06,540 --> 00:09:09,690
+ Saya akan meminta Anda membuat cadangan file-file ini hanya dalam kasus-- 
+
+235
+00:09:09,690 --> 00:09:11,070
+ kalau-kalau mereka adalah file bagus. 
+
+236
+00:09:11,070 --> 00:09:13,110
+ Dan kemudian, jika Anda ingin melakukan beberapa pekerjaan forensik, 
+
+237
+00:09:13,110 --> 00:09:15,234
+ itu bisa membantu memiliki file-file ini sebagai cadangan. 
+
+238
+00:09:15,234 --> 00:09:18,506
+ Jadi, kembali saja untuk berjaga-jaga. 
+
+239
+00:09:18,506 --> 00:09:20,880
+ Anda dapat melihat dua file ini, mereka telah melakukan banyak kerusakan 
+
+240
+00:09:20,880 --> 00:09:23,160
+ ke situs web. 
+
+241
+00:09:23,160 --> 00:09:25,222
+ Dan itulah mengapa Anda bahkan tidak mau 
+
+242
+00:09:25,222 --> 00:09:26,930
+ berada di fase membersihkan situs web. 
+
+243
+00:09:26,930 --> 00:09:30,660
+ Membersihkan situs web itu sulit. Ini secara finansial mahal. 
+
+244
+00:09:30,660 --> 00:09:31,780
+ Menyebalkan sekali. 
+
+245
+00:09:31,780 --> 00:09:34,980
+ Anda memiliki reputasi merek Anda di telepon. 
+
+246
+00:09:34,980 --> 00:09:40,600
+ Dan itulah sebabnya kunci utama di sini adalah bahwa pencegahan adalah kuncinya. 
+
+247
+00:09:40,600 --> 00:09:42,390
+ Jadi mari kita bicara tentang beberapa hal cepat 
+
+248
+00:09:42,390 --> 00:09:44,730
+ yang dapat Anda lakukan hari ini tepat setelah sesi 
+
+249
+00:09:44,730 --> 00:09:46,690
+ untuk membantu pencegahan. 
+
+250
+00:09:46,690 --> 00:09:47,899
+ Pertama, cadangkan situs Anda. 
+
+251
+00:09:47,899 --> 00:09:50,231
+ Ada banyak orang yang tidak membuat cadangan situs mereka. 
+
+252
+00:09:50,231 --> 00:09:52,020
+ Dan itu sedikit membingungkan saya. 
+
+253
+00:09:52,020 --> 00:09:55,770
+ Pastikan cadangan situs Anda sesering mungkin. 
+
+254
+00:09:55,770 --> 00:09:58,890
+ Jika Anda dikompromikan, salah satu cara termudah untuk pulih 
+
+255
+00:09:58,890 --> 00:10:02,000
+ hanya untuk memulihkan versi cadangan situs Anda. 
+
+256
+00:10:02,000 --> 00:10:04,500
+ Ingatlah bahwa bahkan jika Anda sedang memulihkan versi yang dicadangkan 
+
+257
+00:10:04,500 --> 00:10:07,110
+ situs Anda, yaitu kerentanan yang diretas para peretas 
+
+258
+00:10:07,110 --> 00:10:08,910
+ harus mungkin masih ada. 
+
+259
+00:10:08,910 --> 00:10:11,160
+ Jadi Anda ingin memperbaiki kerentanan itu. 
+
+260
+00:10:11,160 --> 00:10:13,410
+ Kedua, daftar ke Search Console. 
+
+261
+00:10:13,410 --> 00:10:16,246
+ Jika Google menemukan bahwa ada kompromi di situs Anda, 
+
+262
+00:10:16,246 --> 00:10:18,120
+ kami akan mengirim pemberitahuan melalui Search Console. 
+
+263
+00:10:18,120 --> 00:10:20,550
+ Ini adalah salah satu cara Google berkomunikasi 
+
+264
+00:10:20,550 --> 00:10:22,680
+ dengan webmaster, tidak hanya masalah keamanan, 
+
+265
+00:10:22,680 --> 00:10:25,000
+ tetapi banyak masalah pencarian juga. 
+
+266
+00:10:25,000 --> 00:10:27,360
+ Dan terakhir, perbarui kode Anda, CMS Anda, plugin Anda, 
+
+267
+00:10:27,360 --> 00:10:28,260
+ tema Anda. 
+
+268
+00:10:28,260 --> 00:10:30,840
+ Seperti saya katakan sebelumnya, ini adalah salah satu cara paling umum 
+
+269
+00:10:30,840 --> 00:10:33,030
+ bahwa penyerang merusak situs. 
+
+270
+00:10:33,030 --> 00:10:34,840
+ Dan saya tahu ini sulit, karena saya sudah 
+
+271
+00:10:34,840 --> 00:10:38,820
+ berbicara dengan pengembang sebelumnya, dan dia berkata, klien saya, mereka 
+
+272
+00:10:38,820 --> 00:10:41,040
+ tidak ingin memperbarui situs mereka, karena jika kami memperbarui 
+
+273
+00:10:41,040 --> 00:10:43,260
+ CMS inti membangun file, mereka 
+
+274
+00:10:43,260 --> 00:10:46,510
+ akan mengacaukan sejumlah plugin. 
+
+275
+00:10:46,510 --> 00:10:47,010
+ Ya. 
+
+276
+00:10:47,010 --> 00:10:50,670
+ Itu memang terjadi, tetapi itu benar-benar dalam klien terbaik Anda 
+
+277
+00:10:50,670 --> 00:10:51,570
+ minat untuk memperbarui. 
+
+278
+00:10:51,570 --> 00:10:52,820
+ Dan Anda harus meyakinkan mereka. 
+
+279
+00:10:52,820 --> 00:10:54,570
+ Anda harus berbicara dengan mereka tentang membuat 
+
+280
+00:10:54,570 --> 00:10:57,130
+ situs yang aman dan masih berfungsi untuk mereka. 
+
+281
+00:10:57,130 --> 00:10:59,060
+ Jadi itu benar-benar bagian yang sangat penting. 
+
+282
+00:10:59,060 --> 00:11:01,660
+
+
+283
+00:11:01,660 --> 00:11:03,930
+ Seperti yang saya katakan sebelumnya, ada banyak dokumentasi 
+
+284
+00:11:03,930 --> 00:11:05,430
+ yang dapat Google berikan untuk membantu Anda. 
+
+285
+00:11:05,430 --> 00:11:09,522
+ Pusat bantuan diretas webmaster kami ada di g.co/hackedwebmasters, 
+
+286
+00:11:09,522 --> 00:11:11,230
+ dan di sanalah panduan keamanan kami berada, 
+
+287
+00:11:11,230 --> 00:11:13,300
+ yang untuk kampanye khusus peretasan itu 
+
+288
+00:11:13,300 --> 00:11:14,160
+ kami telah mengidentifikasi. 
+
+289
+00:11:14,160 --> 00:11:15,982
+ Dan kami terus membangun lebih banyak 
+
+290
+00:11:15,982 --> 00:11:18,190
+ panduan ini untuk berbagai jenis peretasan 
+
+291
+00:11:18,190 --> 00:11:20,260
+ yang telah kami identifikasi. 
+
+292
+00:11:20,260 --> 00:11:22,210
+ Yang kedua adalah forum bantuan webmaster. 
+
+293
+00:11:22,210 --> 00:11:24,700
+ Kami memiliki banyak kontributor top mengagumkan, 
+
+294
+00:11:24,700 --> 00:11:28,180
+ webmaster berpengalaman, dan Karyawan Google di forum bantuan ini 
+
+295
+00:11:28,180 --> 00:11:30,820
+ untuk membantu Anda memulihkan situs Anda, memperbaiki situs Anda, 
+
+296
+00:11:30,820 --> 00:11:32,980
+ mengidentifikasi setiap kerentanan. 
+
+297
+00:11:32,980 --> 00:11:34,570
+ Dan akhirnya, ikuti kami di Twitter. 
+
+298
+00:11:34,570 --> 00:11:36,190
+ Kami tidak hanya memberikan pembaruan keamanan, 
+
+299
+00:11:36,190 --> 00:11:38,609
+ kami akan memberi Anda pembaruan tentang pencarian. 
+
+300
+00:11:38,609 --> 00:11:40,150
+ Sekarang saya akan menyerahkannya kembali ke Elie 
+
+301
+00:11:40,150 --> 00:11:43,180
+ untuk berbicara dengan Anda tentang bagian kedua dari mengamankan situs Anda, 
+
+302
+00:11:43,180 --> 00:11:46,010
+ dan itu membangun situs web yang lebih aman. 
+
+303
+00:11:46,010 --> 00:11:47,704
+ ELIE BURSZTEIN: Terima kasih, Eric. 
+
+304
+00:11:47,704 --> 00:11:50,566
+ [TEPUK TANGAN] 
+
+305
+00:11:50,566 --> 00:11:54,870
+
+
+306
+00:11:54,870 --> 00:11:59,470
+ Seperti yang dikatakan Eric, ketika menyangkut keamanan, pencegahan adalah kuncinya. 
+
+307
+00:11:59,470 --> 00:12:04,200
+ Dan sejauh ini di Google, kami tidak memiliki banyak kursus publik 
+
+308
+00:12:04,200 --> 00:12:05,169
+ untuk membantumu. 
+
+309
+00:12:05,169 --> 00:12:06,960
+ Jadi kami memutuskan selama satu setengah tahun terakhir 
+
+310
+00:12:06,960 --> 00:12:09,120
+ untuk mengembangkan kursus keamanan baru yang 
+
+311
+00:12:09,120 --> 00:12:11,574
+ dimaksudkan untuk menjadi sangat tangan sehingga Anda dapat memiliki 
+
+312
+00:12:11,574 --> 00:12:12,990
+ pengetahuan yang sangat praktis yang Anda bisa 
+
+313
+00:12:12,990 --> 00:12:14,964
+ berlaku untuk mengamankan situs web Anda. 
+
+314
+00:12:14,964 --> 00:12:16,380
+ Gagasan inti di balik kursus adalah 
+
+315
+00:12:16,380 --> 00:12:19,637
+ untuk memiliki kuliah yang sangat singkat dan terfokus pada konsep inti 
+
+316
+00:12:19,637 --> 00:12:21,470
+ yang dapat Anda terapkan dengan segera, dan banyak 
+
+317
+00:12:21,470 --> 00:12:24,600
+ latihan sehingga Anda dapat membangun pengalaman langsung 
+
+318
+00:12:24,600 --> 00:12:28,000
+ dan memiliki pengetahuan ini yang dapat Anda miliki untuk melindungi situs Anda. 
+
+319
+00:12:28,000 --> 00:12:30,280
+ Jadi mari kita lihat seperti apa bentuknya. 
+
+320
+00:12:30,280 --> 00:12:33,030
+ Dan kemudian kami akan melakukan beberapa demo sepanjang jalan. 
+
+321
+00:12:33,030 --> 00:12:36,030
+ Kursus ini akan menjadi satu set 12 ceramah, yang akan dikelompokkan 
+
+322
+00:12:36,030 --> 00:12:37,567
+ menjadi tiga kategori utama. 
+
+323
+00:12:37,567 --> 00:12:39,150
+ Hal pertama yang akan kita diskusikan 
+
+324
+00:12:39,150 --> 00:12:42,270
+ adalah bagaimana menangani data pengguna dengan aman, 
+
+325
+00:12:42,270 --> 00:12:44,840
+ dari cara mengotentikasi pengguna saya? 
+
+326
+00:12:44,840 --> 00:12:47,010
+ Bagaimana cara menjaga sesi dengan mereka dengan aman? 
+
+327
+00:12:47,010 --> 00:12:50,040
+ Dan akhirnya, tentu saja, bagaimana cara mengenkripsi komunikasi saya 
+
+328
+00:12:50,040 --> 00:12:52,140
+ sehingga ketika mereka berinteraksi dengan situs web Anda, 
+
+329
+00:12:52,140 --> 00:12:53,840
+ pengguna Anda aman? 
+
+330
+00:12:53,840 --> 00:12:57,120
+ Jadi hal kedua yang akan kita bahas adalah serangan web. 
+
+331
+00:12:57,120 --> 00:12:59,370
+ Ini adalah serangan yang khusus untuk keamanan web 
+
+332
+00:12:59,370 --> 00:13:01,750
+ dan yang perlu Anda ketahui untuk memastikan bahwa Anda tidak 
+
+333
+00:13:01,750 --> 00:13:02,700
+ rentan terhadap mereka. 
+
+334
+00:13:02,700 --> 00:13:05,140
+ Kami akan membahas empat yang besar, yang 
+
+335
+00:13:05,140 --> 00:13:09,750
+ adalah XSS, CSRF, injeksi SQL, dan klikjacking. 
+
+336
+00:13:09,750 --> 00:13:13,500
+ Dan akhirnya, tetapi tidak sedikit, kami akan memberi tahu Anda caranya 
+
+337
+00:13:13,500 --> 00:13:16,050
+ untuk memasukkan konten pihak ketiga yang aman, 
+
+338
+00:13:16,050 --> 00:13:18,510
+ apakah Anda ingin menanamkan widget dari pihak ketiga 
+
+339
+00:13:18,510 --> 00:13:20,880
+ situs web dan pastikan bahwa ketika Anda melakukan itu, 
+
+340
+00:13:20,880 --> 00:13:21,981
+ Anda tidak diretas-- 
+
+341
+00:13:21,981 --> 00:13:22,980
+ dan Anda mengatakan diretas-- 
+
+342
+00:13:22,980 --> 00:13:25,200
+ bagaimana Anda menangani konten pengguna? 
+
+343
+00:13:25,200 --> 00:13:26,970
+ Bagaimana saya memastikan bahwa saya tidak memilikinya 
+
+344
+00:13:26,970 --> 00:13:28,800
+ konten beracun di situs web saya atau mereka 
+
+345
+00:13:28,800 --> 00:13:32,610
+ jangan posting gambar terkenal ke dalam aliran indah saya? 
+
+346
+00:13:32,610 --> 00:13:36,370
+ Dan akhirnya karena, seperti yang Eric katakan, ketika Anda diretas, 
+
+347
+00:13:36,370 --> 00:13:37,850
+ sangat sulit untuk pulih, 
+
+348
+00:13:37,850 --> 00:13:40,800
+ kami memiliki ceramah yang didedikasikan untuk penyelidikan 
+
+349
+00:13:40,800 --> 00:13:42,880
+ dan menunjukkan kasus peretasan konkret 
+
+350
+00:13:42,880 --> 00:13:46,230
+ sehingga Anda dapat mempelajari cara menyelidiki dan membersihkannya. 
+
+351
+00:13:46,230 --> 00:13:49,710
+ Jadi jika Anda diretas, Anda sudah siap. 
+
+352
+00:13:49,710 --> 00:13:53,590
+ Jadi untuk setiap ceramah, kami akan memberi Anda beberapa materi. 
+
+353
+00:13:53,590 --> 00:13:56,010
+ Pertama, kami akan memberi Anda slide di mana 
+
+354
+00:13:56,010 --> 00:13:57,720
+ Anda dapat meninjau ceramahnya. 
+
+355
+00:13:57,720 --> 00:14:00,900
+ Kami akan melakukan video slide dengan beberapa penjelasan. 
+
+356
+00:14:00,900 --> 00:14:02,400
+ Dan bagian terpenting, kami akan melakukannya 
+
+357
+00:14:02,400 --> 00:14:05,400
+ memberi Anda latihan yang dapat Anda lakukan dan kuis sehingga Anda 
+
+358
+00:14:05,400 --> 00:14:07,410
+ dapat mengetahui seberapa baik yang Anda lakukan dan jika Anda 
+
+359
+00:14:07,410 --> 00:14:09,270
+ telah mengerti konsepnya. 
+
+360
+00:14:09,270 --> 00:14:13,500
+ Jadi latihan adalah titik pengembangan utama. 
+
+361
+00:14:13,500 --> 00:14:15,360
+ Kami telah membangun banyak sekali. 
+
+362
+00:14:15,360 --> 00:14:17,970
+ Kami memiliki lebih dari 50 latihan untuk Anda. 
+
+363
+00:14:17,970 --> 00:14:20,870
+ Mereka akan berada dalam berbagai aspek di mana [tidak terdengar] 
+
+364
+00:14:20,870 --> 00:14:21,990
+ aspek keamanan web. 
+
+365
+00:14:21,990 --> 00:14:25,170
+ Pertama, Anda memiliki latihan menyerang, di mana Anda memakai topi hitam Anda 
+
+366
+00:14:25,170 --> 00:14:26,890
+ dan Anda mencoba menyerang situs web. 
+
+367
+00:14:26,890 --> 00:14:29,010
+ Jadi Anda masuk ke dalam pola pikir penyerang 
+
+368
+00:14:29,010 --> 00:14:31,464
+ dan pahami cara mereka meretas situs web Anda. 
+
+369
+00:14:31,464 --> 00:14:32,880
+ Kemudian, tentu saja, kita pergi ke pertahanan, 
+
+370
+00:14:32,880 --> 00:14:36,270
+ di mana Anda tahu bagaimana menerapkan teknik state-of-the-art terbaik 
+
+371
+00:14:36,270 --> 00:14:38,724
+ untuk melindungi situs web Anda, dan Anda benar-benar mengerti apa itu 
+
+372
+00:14:38,724 --> 00:14:40,890
+ rahasia untuk [TIDAK JELAS] dan bagaimana Anda dapat menerapkannya 
+
+373
+00:14:40,890 --> 00:14:41,670
+ berhasil. 
+
+374
+00:14:41,670 --> 00:14:43,170
+ Dan akhirnya, untuk beberapa hal, 
+
+375
+00:14:43,170 --> 00:14:45,850
+ terutama untuk peretasan, kami akan meliput investigasi, 
+
+376
+00:14:45,850 --> 00:14:48,480
+ di mana kami memberi Anda beberapa teka-teki dan beberapa peretasan yang menarik 
+
+377
+00:14:48,480 --> 00:14:52,480
+ untuk melihat dan memahami jika Anda bisa mengetahuinya. 
+
+378
+00:14:52,480 --> 00:14:55,470
+ Salah satu tantangan penting yang harus kami atasi 
+
+379
+00:14:55,470 --> 00:14:58,020
+ itu tidak mudah untuk mengajarkan keamanan web, 
+
+380
+00:14:58,020 --> 00:15:00,210
+ karena Anda memanipulasi kode rentan, bukan? 
+
+381
+00:15:00,210 --> 00:15:03,000
+ Jadi kami tidak bisa online karena kami 
+
+382
+00:15:03,000 --> 00:15:05,190
+ akan diretas, jadi bagaimana Anda melakukannya? 
+
+383
+00:15:05,190 --> 00:15:07,500
+ Awalnya, orang-orang datang dengan ide itu 
+
+384
+00:15:07,500 --> 00:15:09,510
+ menggunakan mesin virtual atau memiliki orang 
+
+385
+00:15:09,510 --> 00:15:10,830
+ menginstal satu ton paket. 
+
+386
+00:15:10,830 --> 00:15:12,570
+ Dan Anda harus menjalankan semua hal itu. 
+
+387
+00:15:12,570 --> 00:15:15,526
+ Ini tidak terlalu ideal, karena sangat padat sumber daya. 
+
+388
+00:15:15,526 --> 00:15:16,900
+ Anda harus melakukan hal-hal [TIDAK JELAS]. 
+
+389
+00:15:16,900 --> 00:15:18,450
+ Ada di komputer Anda. 
+
+390
+00:15:18,450 --> 00:15:20,490
+ Ini juga membatasi jumlah perangkat yang dapat Anda gunakan. 
+
+391
+00:15:20,490 --> 00:15:22,600
+ Tidak ada cara Anda dapat menggunakan tablet, misalnya. 
+
+392
+00:15:22,600 --> 00:15:25,080
+ Jadi sekitar setahun yang lalu, saya memikirkan masalahnya 
+
+393
+00:15:25,080 --> 00:15:30,060
+ dan kita berkata, wah, teknologi apa yang telah banyak berevolusi? 
+
+394
+00:15:30,060 --> 00:15:31,720
+ Mari mencoba melakukan sesuatu yang berbeda. 
+
+395
+00:15:31,720 --> 00:15:34,560
+ Mari mencoba menggunakan teknologi aplikasi web. 
+
+396
+00:15:34,560 --> 00:15:37,860
+ Dan ide gila yang kami miliki adalah, mari kita membangun server web 
+
+397
+00:15:37,860 --> 00:15:39,690
+ langsung ke halaman web. 
+
+398
+00:15:39,690 --> 00:15:42,030
+ Saya tahu itu kedengarannya gila, tetapi gagasannya 
+
+399
+00:15:42,030 --> 00:15:45,540
+ adalah kami memiliki pekerja layanan web sehingga kami dapat membuatnya offline. 
+
+400
+00:15:45,540 --> 00:15:48,270
+ Kami dapat membuatnya mencegat permintaan dan hanya menanggapi. 
+
+401
+00:15:48,270 --> 00:15:49,691
+ Jadi mari kita membangunnya. 
+
+402
+00:15:49,691 --> 00:15:50,440
+ Dan kamu tahu apa? 
+
+403
+00:15:50,440 --> 00:15:55,110
+ Mari kita masukkan dalam database SQL web dan mungkin PHP 
+
+404
+00:15:55,110 --> 00:15:57,262
+ interpreter dan lihat apakah itu berfungsi. 
+
+405
+00:15:57,262 --> 00:15:59,220
+ Dan itu gila, tetapi kami mencoba, dan itu sebenarnya 
+
+406
+00:15:59,220 --> 00:16:00,150
+ bekerja dengan sangat baik. 
+
+407
+00:16:00,150 --> 00:16:03,000
+ Jadi sekarang apa yang kami miliki untuk Anda adalah test bed 
+
+408
+00:16:03,000 --> 00:16:05,610
+ di mana Anda hanya pergi ke situs web dan kemudian semuanya 
+
+409
+00:16:05,610 --> 00:16:07,584
+ terjadi pada browser Anda, tidak ada yang perlu dipasang. 
+
+410
+00:16:07,584 --> 00:16:08,250
+ Anda memulai. 
+
+411
+00:16:08,250 --> 00:16:10,450
+ Ini sangat mudah, dan itu semua terjadi 
+
+412
+00:16:10,450 --> 00:16:12,540
+ karena Anda berada di situs web yang sebenarnya. 
+
+413
+00:16:12,540 --> 00:16:15,390
+ Jadi itu dikatakan, ini adalah dunia kita, bukan? 
+
+414
+00:16:15,390 --> 00:16:17,820
+ Dan Anda mungkin ingin melihatnya? 
+
+415
+00:16:17,820 --> 00:16:18,556
+ Iya nih? 
+
+416
+00:16:18,556 --> 00:16:19,300
+ [TEPUK TANGAN] 
+
+417
+00:16:19,300 --> 00:16:19,800
+ Baiklah. 
+
+418
+00:16:19,800 --> 00:16:23,340
+ Jadi mari lompat ke demo pertama kami, yang mana 
+
+419
+00:16:23,340 --> 00:16:25,470
+ akan menunjukkan kerangka kerja. 
+
+420
+00:16:25,470 --> 00:16:29,730
+ Jadi kita akan melakukan situs web sederhana, yang sedang berjalan 
+
+421
+00:16:29,730 --> 00:16:32,150
+ untuk memungkinkan kami untuk login pengguna kami. 
+
+422
+00:16:32,150 --> 00:16:34,650
+ Jadi untuk melakukan itu, kita harus lebih dulu 
+
+423
+00:16:34,650 --> 00:16:37,030
+ untuk memiliki sistem server. 
+
+424
+00:16:37,030 --> 00:16:40,362
+ Jadi karena semuanya terlihat seperti node dengan [? mengekspresikan. ?] 
+
+425
+00:16:40,362 --> 00:16:41,820
+ Jadi jika Anda terbiasa dengan node.js, 
+
+426
+00:16:41,820 --> 00:16:43,420
+ Anda akan mengenali sintaksnya. 
+
+427
+00:16:43,420 --> 00:16:44,820
+ Kita perlu menyatakan akar kita. 
+
+428
+00:16:44,820 --> 00:16:47,940
+ Jadi karena kami melakukan halaman login, kami membutuhkan dua halaman web. 
+
+429
+00:16:47,940 --> 00:16:51,540
+ Pertama, kita perlu suatu tempat di mana pengguna akan mendarat dan akan melakukannya 
+
+430
+00:16:51,540 --> 00:16:52,110
+ memiliki formulir. 
+
+431
+00:16:52,110 --> 00:16:53,810
+ Jadi mari kita buat itu. 
+
+432
+00:16:53,810 --> 00:16:55,880
+ Lalu mari tambahkan root kedua, yang 
+
+433
+00:16:55,880 --> 00:16:57,800
+ akan memproses informasi login 
+
+434
+00:16:57,800 --> 00:17:00,152
+ dan putuskan apakah Anda mengizinkan untuk masuk atau tidak. 
+
+435
+00:17:00,152 --> 00:17:01,610
+ Jadi kita akan membuat dua akar. 
+
+436
+00:17:01,610 --> 00:17:04,598
+
+
+437
+00:17:04,598 --> 00:17:07,549
+ Salah satunya adalah mendapatkan, seperti yang Anda lihat, dan yang lainnya adalah posting. 
+
+438
+00:17:07,550 --> 00:17:10,400
+ Dan untuk saat ini, kami hanya akan menyapa dunia, 
+
+439
+00:17:10,400 --> 00:17:12,020
+ hanya untuk melihat apakah itu berhasil. 
+
+440
+00:17:12,020 --> 00:17:14,490
+ Ingat, ini semua bersifat lokal sehingga Anda dapat melihatnya di bar. 
+
+441
+00:17:14,490 --> 00:17:15,980
+ Ini semua host lokal. 
+
+442
+00:17:15,980 --> 00:17:16,839
+ Tidak ada koneksi. 
+
+443
+00:17:16,839 --> 00:17:19,430
+ Semua offline. 
+
+444
+00:17:19,430 --> 00:17:22,200
+ Dan kami berharap ini akan berhasil. 
+
+445
+00:17:22,200 --> 00:17:23,660
+ Baiklah. 
+
+446
+00:17:23,660 --> 00:17:25,500
+ Jadi mari kita memuat latihan. 
+
+447
+00:17:25,500 --> 00:17:29,835
+ Kami memuat kerangka kerja dan pergi ke halaman dan melihat apakah itu berfungsi. 
+
+448
+00:17:29,835 --> 00:17:30,710
+ Dan di sini Anda memilikinya. 
+
+449
+00:17:30,710 --> 00:17:34,910
+ Kami memiliki halaman web yang berfungsi di browser kami. 
+
+450
+00:17:34,910 --> 00:17:37,599
+ Sekarang, mari tambahkan sedikit hal karena, Anda tahu, 
+
+451
+00:17:37,599 --> 00:17:39,140
+ ini adalah halaman login, jadi kita butuh formulir. 
+
+452
+00:17:39,140 --> 00:17:40,490
+ Jadi mari tambahkan formulir. 
+
+453
+00:17:40,490 --> 00:17:42,200
+ Untungnya, kerangka kerja kami resmi 
+
+454
+00:17:42,200 --> 00:17:45,050
+ dan template yang didukung seperti kerangka web normal apa pun. 
+
+455
+00:17:45,050 --> 00:17:48,290
+ Jadi mari kita tambahkan sedikit CSS, yang terlihat cantik, 
+
+456
+00:17:48,290 --> 00:17:51,200
+ kata sandi, dan bidang masuk. 
+
+457
+00:17:51,200 --> 00:17:54,070
+ Dan mari kembali untuk memastikan kami melihat formulir masuk kami. 
+
+458
+00:17:54,070 --> 00:18:00,120
+
+
+459
+00:18:00,120 --> 00:18:02,960
+ Jadi untuk menambahkan template, saya lupa menambahkan-- terima kasih, Yuan. 
+
+460
+00:18:02,960 --> 00:18:04,340
+ Kami harus menambahkan indeks HTML. 
+
+461
+00:18:04,340 --> 00:18:07,220
+ Jadi kita akan memuat template, mengembalikan template, 
+
+462
+00:18:07,220 --> 00:18:12,920
+ memuat ulang, dan semoga Anda memiliki formulir I / O Google yang bagus. 
+
+463
+00:18:12,920 --> 00:18:13,670
+ Ya. 
+
+464
+00:18:13,670 --> 00:18:14,695
+ Jadi itu hebat. 
+
+465
+00:18:14,695 --> 00:18:16,070
+ Tapi itu tidak banyak berpengaruh sekarang. 
+
+466
+00:18:16,070 --> 00:18:18,060
+ Kami memiliki formulir, tetapi kami perlu memprosesnya. 
+
+467
+00:18:18,060 --> 00:18:19,830
+ Jadi, mari kita memiliki banyak pengguna. 
+
+468
+00:18:19,830 --> 00:18:21,860
+ Jadi di sini apa yang akan kita lakukan adalah 
+
+469
+00:18:21,860 --> 00:18:24,150
+ kita akan menambahkan database. 
+
+470
+00:18:24,150 --> 00:18:26,880
+ Jadi menambahkan database dalam kerangka kerja sangat mudah. 
+
+471
+00:18:26,880 --> 00:18:30,510
+ Yang harus Anda lakukan adalah membuat database, satu baris kode. 
+
+472
+00:18:30,510 --> 00:18:32,690
+ Bentuknya akan melakukan semua keajaiban bagi kita. 
+
+473
+00:18:32,690 --> 00:18:34,410
+ Lalu kita akan menambahkan pengguna. 
+
+474
+00:18:34,410 --> 00:18:37,040
+ Jadi mari buat tabel pengguna, yang hanya akan berisi 
+
+475
+00:18:37,040 --> 00:18:40,230
+ login dan kata sandi. 
+
+476
+00:18:40,230 --> 00:18:40,730
+ Baiklah. 
+
+477
+00:18:40,730 --> 00:18:43,290
+ Mari tambahkan pengguna-- pengguna Google I / O-- untuk demo. 
+
+478
+00:18:43,290 --> 00:18:45,980
+
+
+479
+00:18:45,980 --> 00:18:48,050
+ Dan omong-omong, jangan lakukan itu nyata. 
+
+480
+00:18:48,050 --> 00:18:49,910
+ Jangan simpan kata sandi Anda di sini. 
+
+481
+00:18:49,910 --> 00:18:51,230
+ Jangan lakukan ini, kan? 
+
+482
+00:18:51,230 --> 00:18:52,140
+ Itu hanya untuk demo. 
+
+483
+00:18:52,140 --> 00:18:53,015
+ Tolong jangan lakukan itu. 
+
+484
+00:18:53,015 --> 00:18:53,672
+ Tidak aman. 
+
+485
+00:18:53,672 --> 00:18:54,880
+ Tetapi untuk demo, itu akan dilakukan. 
+
+486
+00:18:54,880 --> 00:18:57,650
+ Jadi mari kita tambahkan itu dan sedikit kode Javascript lainnya 
+
+487
+00:18:57,650 --> 00:19:00,910
+ untuk memeriksa di mana database dan memeriksa apakah itu terjadi. 
+
+488
+00:19:00,910 --> 00:19:01,490
+ Ini dia. 
+
+489
+00:19:01,490 --> 00:19:04,280
+ Jadi kita mendapat dua variabel dari lingkungan. 
+
+490
+00:19:04,280 --> 00:19:06,560
+ Jalankan ke dalam kueri SQL. 
+
+491
+00:19:06,560 --> 00:19:09,700
+ Uji apakah itu benar, dan kita harus memiliki segalanya untuk-- 
+
+492
+00:19:09,700 --> 00:19:10,880
+ dan kami siap untuk pergi, kan? 
+
+493
+00:19:10,880 --> 00:19:13,400
+ Jadi ayo coba. 
+
+494
+00:19:13,400 --> 00:19:14,180
+ Kami kembali. 
+
+495
+00:19:14,180 --> 00:19:15,517
+ Sekarang, kami memiliki halaman. 
+
+496
+00:19:15,517 --> 00:19:16,850
+ Mari coba dengan kata sandi yang salah. 
+
+497
+00:19:16,850 --> 00:19:18,683
+ Jadi GoogleIO, dan saya tidak tahu, kata sandi 123? 
+
+498
+00:19:18,683 --> 00:19:24,080
+
+
+499
+00:19:24,080 --> 00:19:25,400
+ Pengguna tidak dikenal. 
+
+500
+00:19:25,400 --> 00:19:26,730
+ Bekerja sebagaimana dimaksud. 
+
+501
+00:19:26,730 --> 00:19:29,750
+ Sekarang, mari kita salin yang sama, yang tidak aman, 
+
+502
+00:19:29,750 --> 00:19:31,080
+ dan coba lagi. 
+
+503
+00:19:31,080 --> 00:19:38,010
+ GoogleIO sebagai pengguna dan kata sandi dan klik di atasnya. 
+
+504
+00:19:38,010 --> 00:19:38,990
+ Ooh. 
+
+505
+00:19:38,990 --> 00:19:39,810
+ Kami masuk. 
+
+506
+00:19:39,810 --> 00:19:43,470
+ Jadi kami memiliki sistem login yang berfungsi penuh dengan database 
+
+507
+00:19:43,470 --> 00:19:44,769
+ situs web, beberapa baris kode. 
+
+508
+00:19:44,769 --> 00:19:47,060
+ Ini adalah kerangka kerja yang kami bangun, dan ini adalah kerangka kerja 
+
+509
+00:19:47,060 --> 00:19:48,805
+ kami gunakan untuk membuat latihan kami. 
+
+510
+00:19:48,805 --> 00:19:50,230
+ Sangat keren? 
+
+511
+00:19:50,230 --> 00:19:51,482
+ Iya nih? 
+
+512
+00:19:51,482 --> 00:19:53,790
+ [TEPUK TANGAN] 
+
+513
+00:19:53,790 --> 00:19:54,710
+ Baiklah. 
+
+514
+00:19:54,710 --> 00:19:57,770
+ Mari kembali ke slide dan bicara sedikit lagi 
+
+515
+00:19:57,770 --> 00:19:59,122
+ tentang konten. 
+
+516
+00:19:59,122 --> 00:20:01,580
+ Jadi kami menunjukkan kepada Anda kerangka teknis yang kami miliki di belakangnya. 
+
+517
+00:20:01,580 --> 00:20:04,730
+ Jadi kerangka kerjanya bagus, kontennya lebih baik. 
+
+518
+00:20:04,730 --> 00:20:05,520
+ Anda membutuhkannya. 
+
+519
+00:20:05,520 --> 00:20:08,570
+ Jadi mari kita melompat ke salah satu kuliah kami, injeksi SQL 
+
+520
+00:20:08,570 --> 00:20:10,520
+ ceramah, jadi kami tunjukkan konten apa 
+
+521
+00:20:10,520 --> 00:20:11,690
+ kamu akan belajar. 
+
+522
+00:20:11,690 --> 00:20:14,480
+ Jadi injeksi SQL adalah salah satu serangan paling mematikan 
+
+523
+00:20:14,480 --> 00:20:15,920
+ Anda bisa menderita. 
+
+524
+00:20:15,920 --> 00:20:18,130
+ Jadi saya akan memberi tahu Anda sedikit tentang mengapa 
+
+525
+00:20:18,130 --> 00:20:21,737
+ Kerentanan injeksi SQL, dan tentu saja, cara mencegahnya. 
+
+526
+00:20:21,737 --> 00:20:24,070
+ Dan kemudian setelah itu, Yuan akan melakukan beberapa latihan 
+
+527
+00:20:24,070 --> 00:20:26,690
+ untuk menunjukkan kepada Anda bagaimana Anda bisa mempelajarinya. 
+
+528
+00:20:26,690 --> 00:20:30,290
+ Jadi mengapa ada injeksi SQL? 
+
+529
+00:20:30,290 --> 00:20:32,930
+ Nah, ternyata selama demo kecil kami, 
+
+530
+00:20:32,930 --> 00:20:34,932
+ kami memperkenalkan kerentanan. 
+
+531
+00:20:34,932 --> 00:20:36,640
+ Salah satu sumber kerentanan, karena kapan 
+
+532
+00:20:36,640 --> 00:20:38,840
+ Anda memiliki pernyataan SQL, sebuah SQL 
+
+533
+00:20:38,840 --> 00:20:41,240
+ mengandung kedua kata kunci, yang memberi tahu Anda apa yang harus dilakukan, 
+
+534
+00:20:41,240 --> 00:20:43,660
+ dan juga parameter, yang memberi tahu Anda apa yang harus dicari. 
+
+535
+00:20:43,660 --> 00:20:45,170
+ Jika penyerang dapat mengontrol 
+
+536
+00:20:45,170 --> 00:20:47,690
+ salah satu parameter tersebut, dia benar-benar dapat menyuntikkan kata kunci, 
+
+537
+00:20:47,690 --> 00:20:50,366
+ dan server tidak memiliki cara untuk membedakan keduanya. 
+
+538
+00:20:50,366 --> 00:20:51,740
+ Kami benar-benar memiliki kerentanan 
+
+539
+00:20:51,740 --> 00:20:53,490
+ dalam kode kita sendiri. 
+
+540
+00:20:53,490 --> 00:20:55,760
+ Jadi ini adalah perpaduan antara kata kunci dan parameter, yang 
+
+541
+00:20:55,760 --> 00:20:58,430
+ membuat kondisi ini memungkinkan. 
+
+542
+00:20:58,430 --> 00:21:00,050
+ Jadi apa yang bisa dilakukan penyerang dengan itu? 
+
+543
+00:21:00,050 --> 00:21:01,820
+ Yah, penyerang dengan kemampuannya 
+
+544
+00:21:01,820 --> 00:21:05,600
+ untuk mengontrol query SQL akan melewati semua jenis keamanan 
+
+545
+00:21:05,600 --> 00:21:08,210
+ periksa apakah Anda memiliki dan akan melakukan kueri yang tidak diharapkan 
+
+546
+00:21:08,210 --> 00:21:12,050
+ dari membaca data sensitif untuk menghapus database Anda, 
+
+547
+00:21:12,050 --> 00:21:15,770
+ mengenkripsi itu, dan melakukan semua hal jahat. 
+
+548
+00:21:15,770 --> 00:21:18,860
+ Lebih formal, konsekuensi dari serangan seperti itu, jika Anda punya 
+
+549
+00:21:18,860 --> 00:21:21,290
+ itu, apakah itu melanggar integritas kerahasiaan 
+
+550
+00:21:21,290 --> 00:21:24,450
+ situs web Anda, karena semuanya adalah basis data, 
+
+551
+00:21:24,450 --> 00:21:26,729
+ dan juga memungkinkan untuk mengotentikasi 
+
+552
+00:21:26,729 --> 00:21:28,520
+ tanpa mengetahui kata sandi, misalnya, 
+
+553
+00:21:28,520 --> 00:21:31,310
+ karena Anda dapat mengalahkan semua jenis pemeriksaan. 
+
+554
+00:21:31,310 --> 00:21:36,877
+ Jadi ada beberapa jenis injeksi SQL. 
+
+555
+00:21:36,877 --> 00:21:39,210
+ Ada satu klasik yang akan kita tunjukkan hari ini, 
+
+556
+00:21:39,210 --> 00:21:42,112
+ dan ada yang lebih maju seperti injeksi SQL buta 
+
+557
+00:21:42,112 --> 00:21:43,320
+ dan suntikan second-order. 
+
+558
+00:21:43,320 --> 00:21:45,070
+ Saya tidak akan berbicara dengan mereka tentang hari ini, 
+
+559
+00:21:45,070 --> 00:21:46,380
+ karena kita tidak punya waktu. 
+
+560
+00:21:46,380 --> 00:21:48,420
+ Mari fokus pada yang klasik. 
+
+561
+00:21:48,420 --> 00:21:51,550
+ Jadi yang klasik, seperti yang saya jelaskan, bekerja sangat sederhana. 
+
+562
+00:21:51,550 --> 00:21:54,900
+ Penyerang, alih-alih mengirim apa yang Anda harapkan, 
+
+563
+00:21:54,900 --> 00:21:58,260
+ akan melakukan hal yang tidak terduga dan akan mencoba memanipulasi permintaan SQL 
+
+564
+00:21:58,260 --> 00:22:00,082
+ dengan mengirimkan muatan khusus. 
+
+565
+00:22:00,082 --> 00:22:02,040
+ Maka itu akan menghasilkan permintaan SQL yang tak terduga, 
+
+566
+00:22:02,040 --> 00:22:03,498
+ dan kemudian basis data Anda akan menjadi adil 
+
+567
+00:22:03,498 --> 00:22:05,310
+ senang melakukan apa pun yang diinginkan penyerang 
+
+568
+00:22:05,310 --> 00:22:08,670
+ dan berpotensi mengekstrak data yang sangat sensitif. 
+
+569
+00:22:08,670 --> 00:22:10,620
+ Inilah contoh konkretnya. 
+
+570
+00:22:10,620 --> 00:22:12,970
+ Jika penyerang dapat menyuntikkan nama pengguna, 
+
+571
+00:22:12,970 --> 00:22:16,890
+ maka ia dapat memutuskan alih-alih mengatakan nama pengguna untuk mengatakan, katakanlah, 
+
+572
+00:22:16,890 --> 00:22:20,490
+ Google, lalu tutup bidang lalu tambahkan dasbor dasbor, 
+
+573
+00:22:20,490 --> 00:22:21,810
+ yang [TIDAK JELAS]. 
+
+574
+00:22:21,810 --> 00:22:24,640
+ Sebagai akibatnya, seperti yang bisa Anda lihat di layar, 
+
+575
+00:22:24,640 --> 00:22:28,660
+ baik, Anda pada dasarnya melewati otentikasi. 
+
+576
+00:22:28,660 --> 00:22:31,980
+ Jadi untuk membuatnya lebih konkrit, mari melompat ke demo kedua kami. 
+
+577
+00:22:31,980 --> 00:22:37,389
+ Jadi kami akan menunjukkan serangan langsung, semoga. 
+
+578
+00:22:37,389 --> 00:22:37,930
+ Tolong, silakan. 
+
+579
+00:22:37,930 --> 00:22:40,850
+
+
+580
+00:22:40,850 --> 00:22:41,350
+ Baiklah. 
+
+581
+00:22:41,350 --> 00:22:43,810
+ Jadi kami kembali ke demo kami. 
+
+582
+00:22:43,810 --> 00:22:48,130
+ Dan jika Anda ingat - bisakah Anda kembali ke kode? 
+
+583
+00:22:48,130 --> 00:22:50,560
+ Jika Anda ingat, kami mengambil nama pengguna 
+
+584
+00:22:50,560 --> 00:22:52,800
+ dan langsung memasukkannya ke dalam permintaan kami. 
+
+585
+00:22:52,800 --> 00:22:54,040
+ Anda bisa melihatnya di layar. 
+
+586
+00:22:54,040 --> 00:22:55,090
+ Jadi kami tidak melakukan pemeriksaan apa pun. 
+
+587
+00:22:55,090 --> 00:22:57,465
+ Kami seperti, Oke, kami percaya masukan pengguna, yang Anda harus 
+
+588
+00:22:57,465 --> 00:23:00,550
+ tidak pernah melakukannya, dan sebagai hasilnya akan dapat masuk ke situs web 
+
+589
+00:23:00,550 --> 00:23:02,660
+ tanpa kata sandi. 
+
+590
+00:23:02,660 --> 00:23:04,190
+ Jadi mari kita tunjukkan itu. 
+
+591
+00:23:04,190 --> 00:23:06,820
+ Jadi cara untuk melakukan itu adalah, seperti yang kami jelaskan, 
+
+592
+00:23:06,820 --> 00:23:10,230
+ apakah Anda menggunakan nama pengguna Anda, jadi itulah GoogleIO. 
+
+593
+00:23:10,230 --> 00:23:12,710
+ Tapi kemudian, daripada melakukan apa yang diharapkan, 
+
+594
+00:23:12,710 --> 00:23:15,460
+ kita akan menambahkan kutipan untuk menutup parameter, 
+
+595
+00:23:15,460 --> 00:23:18,480
+ lalu kita akan melarikan diri. 
+
+596
+00:23:18,480 --> 00:23:20,890
+ Dan melarikan diri di SQL hanyalah ini. 
+
+597
+00:23:20,890 --> 00:23:23,740
+ Berapa banyak dari Anda yang percaya itu akan berhasil? 
+
+598
+00:23:23,740 --> 00:23:24,520
+ 1% dari Anda. 
+
+599
+00:23:24,520 --> 00:23:26,770
+ Anda tidak memiliki kepercayaan pada saya, kawan. 
+
+600
+00:23:26,770 --> 00:23:27,560
+ Ayolah. 
+
+601
+00:23:27,560 --> 00:23:28,060
+ Baiklah. 
+
+602
+00:23:28,060 --> 00:23:29,271
+ Jadi kita akan melakukannya. 
+
+603
+00:23:29,271 --> 00:23:29,770
+ BAIK. 
+
+604
+00:23:29,770 --> 00:23:32,231
+ Ayo coba. 
+
+605
+00:23:32,231 --> 00:23:32,730
+ Baiklah. 
+
+606
+00:23:32,730 --> 00:23:33,610
+ Jadi begini. 
+
+607
+00:23:33,610 --> 00:23:37,480
+ Kami dapat masuk ke situs web tanpa kata sandi apa pun, 
+
+608
+00:23:37,480 --> 00:23:40,370
+ karena kita membiarkan penyerang memanipulasi input, yang mana 
+
+609
+00:23:40,370 --> 00:23:42,891
+ kamu seharusnya tidak pernah melakukannya. 
+
+610
+00:23:42,891 --> 00:23:43,390
+ Baiklah. 
+
+611
+00:23:43,390 --> 00:23:44,473
+ Mari kembali ke situs. 
+
+612
+00:23:44,473 --> 00:23:47,820
+
+
+613
+00:23:47,820 --> 00:23:49,140
+ Jadi bagaimana Anda mencegahnya? 
+
+614
+00:23:49,140 --> 00:23:51,250
+ Ada cara sederhana untuk mempertahankannya. 
+
+615
+00:23:51,250 --> 00:23:53,730
+ Ini disebut permintaan parameterisasi, juga dikenal 
+
+616
+00:23:53,730 --> 00:23:54,680
+ sebagai pernyataan siap. 
+
+617
+00:23:54,680 --> 00:23:57,390
+ Idenya adalah, daripada menggunakan variabel secara langsung 
+
+618
+00:23:57,390 --> 00:24:00,542
+ ke dalam kueri Anda, Anda akan benar-benar menulis kueri Anda 
+
+619
+00:24:00,542 --> 00:24:02,250
+ dan tentukan di mana parameter harus pergi 
+
+620
+00:24:02,250 --> 00:24:04,440
+ dan kemudian memasukkannya sesudahnya. 
+
+621
+00:24:04,440 --> 00:24:06,000
+ Itu akan mencegah injeksi SQL. 
+
+622
+00:24:06,000 --> 00:24:08,814
+ Anda juga harus selalu menghindari input pengguna, karena Anda 
+
+623
+00:24:08,814 --> 00:24:09,730
+ seharusnya tidak mempercayai mereka. 
+
+624
+00:24:09,730 --> 00:24:14,430
+ Ini akan membuka Anda untuk banyak serangan lain seperti XSS. 
+
+625
+00:24:14,430 --> 00:24:18,800
+ Jadi itu menyimpulkan penjelasan singkat kami tentang injeksi SQL. 
+
+626
+00:24:18,800 --> 00:24:20,310
+ Yuan akan, dalam beberapa menit, 
+
+627
+00:24:20,310 --> 00:24:22,960
+ menunjukkan kepada Anda bagaimana latihan itu bekerja dan bagaimana kerangka kerjanya. 
+
+628
+00:24:22,960 --> 00:24:24,570
+ Tetapi sebelum itu, berapa banyak dari Anda 
+
+629
+00:24:24,570 --> 00:24:27,180
+ ingin mendapatkan akses awal ke kursus? 
+
+630
+00:24:27,180 --> 00:24:27,982
+ Kalian semua. 
+
+631
+00:24:27,982 --> 00:24:28,690
+ Itu luar biasa. 
+
+632
+00:24:28,690 --> 00:24:31,530
+ Jadi Yuan akan memberi tahu Anda sebelum latihan. 
+
+633
+00:24:31,530 --> 00:24:33,547
+ Yuan, ini milikmu. 
+
+634
+00:24:33,547 --> 00:24:34,380
+ YUAN NIU: Baiklah. 
+
+635
+00:24:34,380 --> 00:24:36,280
+ Jadi, mendaftar sangat mudah. 
+
+636
+00:24:36,280 --> 00:24:39,060
+ Anda hanya perlu mendaftar menggunakan tautan di layar, 
+
+637
+00:24:39,060 --> 00:24:40,830
+ mulai hari ini. 
+
+638
+00:24:40,830 --> 00:24:44,470
+ g.co/learnwebtech. 
+
+639
+00:24:44,470 --> 00:24:44,970
+ BAIK. 
+
+640
+00:24:44,970 --> 00:24:47,850
+ Mari beralih ke demo, dan kami akan menampilkan slide itu lagi 
+
+641
+00:24:47,850 --> 00:24:50,310
+ di akhir presentasi kami. 
+
+642
+00:24:50,310 --> 00:24:53,830
+ Jadi karena kita sudah terbiasa dengan injeksi SQL, 
+
+643
+00:24:53,830 --> 00:24:56,490
+ kami hanya akan melompat ke itu. 
+
+644
+00:24:56,490 --> 00:24:59,400
+ Seperti yang Elie sebutkan, setiap topik akan memiliki materi 
+
+645
+00:24:59,400 --> 00:25:01,030
+ sehingga Anda dapat belajar sendiri. 
+
+646
+00:25:01,030 --> 00:25:05,760
+ Jadi slide, ceramah, daftar bacaan terkait, kuis 
+
+647
+00:25:05,760 --> 00:25:08,070
+ dan, tentu saja, latihan itu 
+
+648
+00:25:08,070 --> 00:25:10,500
+ akan memberi Anda beberapa pengalaman langsung 
+
+649
+00:25:10,500 --> 00:25:13,830
+ sehingga Anda dapat memperkuat apa yang telah Anda pelajari. 
+
+650
+00:25:13,830 --> 00:25:17,490
+ Anda akan menyerang, membela, dan menginvestigasi situs. 
+
+651
+00:25:17,490 --> 00:25:19,030
+ Dan untuk membuatnya sedikit lebih menyenangkan, 
+
+652
+00:25:19,030 --> 00:25:24,240
+ kami mengambil inspirasi dari perang kue versus kue 
+
+653
+00:25:24,240 --> 00:25:27,280
+ untuk menyusun beberapa skenario kami. 
+
+654
+00:25:27,280 --> 00:25:30,630
+ Jadi di dunia kita, sindikat kue 
+
+655
+00:25:30,630 --> 00:25:34,530
+ sedikit khawatir bahwa toko kue baru baru saja dibuka. 
+
+656
+00:25:34,530 --> 00:25:37,780
+ Jadi mereka akan mencoba menyerang situs web pesaing mereka. 
+
+657
+00:25:37,780 --> 00:25:39,900
+ Dan kemudian orang-orang kue akan menjadi 
+
+658
+00:25:39,900 --> 00:25:43,391
+ membela diri dan menginvestigasi serangan-serangan ini. 
+
+659
+00:25:43,391 --> 00:25:43,890
+ Baiklah. 
+
+660
+00:25:43,890 --> 00:25:47,040
+ Jadi kita akan tetap dengan latihan dasar hari ini. 
+
+661
+00:25:47,040 --> 00:25:49,920
+ Dan karena kami sudah cukup banyak melakukan serangan nomor satu 
+
+662
+00:25:49,920 --> 00:25:52,440
+ dengan Elie, kita lewati saja ke nomor dua. 
+
+663
+00:25:52,440 --> 00:25:55,990
+ Dan untuk ini, saya akan membutuhkan topi hitam saya. 
+
+664
+00:25:55,990 --> 00:25:58,250
+ BAIK. 
+
+665
+00:25:58,250 --> 00:25:59,360
+ Baiklah. 
+
+666
+00:25:59,360 --> 00:26:01,720
+ Jadi kami memiliki tujuan kami di sebelah kiri. 
+
+667
+00:26:01,720 --> 00:26:05,310
+ Hei, kue minion, toko kue itu masih dalam bisnis. 
+
+668
+00:26:05,310 --> 00:26:07,550
+ Kita tidak bisa terus kehilangan irisan wilayah kita 
+
+669
+00:26:07,550 --> 00:26:09,860
+ untuk menyaingi industri. 
+
+670
+00:26:09,860 --> 00:26:12,250
+ Mereka masih memiliki sebagian besar operasi online untuk saat ini, 
+
+671
+00:26:12,250 --> 00:26:14,360
+ tetapi kita harus bertindak cepat. 
+
+672
+00:26:14,360 --> 00:26:17,600
+ Kata adalah bahwa mereka masih rentan terhadap injeksi SQL. 
+
+673
+00:26:17,600 --> 00:26:20,360
+ Kami mendapat salinan kode server mereka yang bocor, 
+
+674
+00:26:20,360 --> 00:26:23,570
+ tapi, sayangnya, tidak tahu siapa saja pengguna. 
+
+675
+00:26:23,570 --> 00:26:25,430
+ Kami membutuhkan Anda untuk mengalahkan pertahanan 
+
+676
+00:26:25,430 --> 00:26:27,530
+ dan dapatkan daftar pelanggan mereka. 
+
+677
+00:26:27,530 --> 00:26:28,550
+ Dapatkan itu. 
+
+678
+00:26:28,550 --> 00:26:30,110
+ Pie Boss. 
+
+679
+00:26:30,110 --> 00:26:30,620
+ Baiklah. 
+
+680
+00:26:30,620 --> 00:26:34,130
+ Jadi sangat membantu, kami memiliki tautan langsung ke halaman 
+
+681
+00:26:34,130 --> 00:26:37,460
+ bahwa kita akan menyerang. 
+
+682
+00:26:37,460 --> 00:26:39,920
+ Dan kami memiliki salinan kode server. 
+
+683
+00:26:39,920 --> 00:26:43,130
+ Jadi kita memiliki kerentanan yang sama seperti sebelumnya, 
+
+684
+00:26:43,130 --> 00:26:50,180
+ tetapi karena kita tidak tahu nama pengguna, 
+
+685
+00:26:50,180 --> 00:26:54,240
+ masukan buruk kami sebelumnya tidak akan berfungsi. 
+
+686
+00:26:54,240 --> 00:26:56,050
+ Jadi mari kita lihat kodenya. 
+
+687
+00:26:56,050 --> 00:26:59,930
+ Dan pada baris 12, kita melihat bahwa sebenarnya tidak benar 
+
+688
+00:26:59,930 --> 00:27:04,400
+ peduli apa pernyataan pilih kembali asalkan kembali 
+
+689
+00:27:04,400 --> 00:27:06,250
+ apa-apa. 
+
+690
+00:27:06,250 --> 00:27:08,990
+ Dan ini adalah tempat yang akan kami targetkan 
+
+691
+00:27:08,990 --> 00:27:11,750
+ pertanyaan kami yang baru dibuat. 
+
+692
+00:27:11,750 --> 00:27:15,140
+ Kita hanya perlu mendapatkan pernyataan WHERE untuk mengembalikan kebenaran 
+
+693
+00:27:15,140 --> 00:27:16,730
+ selalu. 
+
+694
+00:27:16,730 --> 00:27:26,000
+ Dan untuk melakukan itu, kita tambahkan saja, mari kita lihat, dan / atau 1 sama dengan 1. 
+
+695
+00:27:26,000 --> 00:27:31,520
+ Dan ini memiliki efek mengatakan pilih dari pengguna 
+
+696
+00:27:31,520 --> 00:27:35,720
+ di mana nama pengguna sama dengan admin atau benar. 
+
+697
+00:27:35,720 --> 00:27:38,400
+ Dan sekarang kita akan memaksakan pernyataan itu 
+
+698
+00:27:38,400 --> 00:27:41,060
+ untuk selalu mengevaluasi ke benar. 
+
+699
+00:27:41,060 --> 00:27:44,750
+ Dan sekarang kami memiliki akses ke daftar pelanggan mereka. 
+
+700
+00:27:44,750 --> 00:27:47,180
+ Dan popup itu berarti kita berhasil. 
+
+701
+00:27:47,180 --> 00:27:50,536
+ Jadi kita bisa melanjutkan ke pertahanan. 
+
+702
+00:27:50,536 --> 00:27:51,036
+ BAIK. 
+
+703
+00:27:51,036 --> 00:27:52,034
+ Mari kita tutup ini. 
+
+704
+00:27:52,034 --> 00:27:56,530
+
+
+705
+00:27:56,530 --> 00:27:57,070
+ BAIK. 
+
+706
+00:27:57,070 --> 00:28:00,340
+ Untuk ini, saya kembali ke kue tim. 
+
+707
+00:28:00,340 --> 00:28:03,320
+ Dan saya mendapatkan topi putih saya untuk itu. 
+
+708
+00:28:03,320 --> 00:28:08,860
+ Jadi misi kami, sekali lagi, salam, sesama tukang roti. 
+
+709
+00:28:08,860 --> 00:28:12,580
+ Seperti yang Anda ketahui, ada obrolan pembuat kue yang baru berdiri 
+
+710
+00:28:12,580 --> 00:28:14,800
+ dengan koneksi berkarat. 
+
+711
+00:28:14,800 --> 00:28:16,540
+ Kami menduga mereka mencoba menyerang 
+
+712
+00:28:16,540 --> 00:28:19,050
+ toko kue untuk beberapa kejujuran dan tidak diragukan lagi 
+
+713
+00:28:19,050 --> 00:28:21,190
+ tujuan irasional. 
+
+714
+00:28:21,190 --> 00:28:24,460
+ Situs Anda telah diidentifikasi sebagai salah satu dari target ini. 
+
+715
+00:28:24,460 --> 00:28:26,890
+ Secara khusus, tampaknya halaman login Anda meninggalkan Anda 
+
+716
+00:28:26,890 --> 00:28:29,650
+ rentan terhadap injeksi SQL. 
+
+717
+00:28:29,650 --> 00:28:31,930
+ Harap perbaiki sesegera mungkin. 
+
+718
+00:28:31,930 --> 00:28:33,040
+ Boss Kue. 
+
+719
+00:28:33,040 --> 00:28:33,649
+ BAIK. 
+
+720
+00:28:33,649 --> 00:28:35,440
+ Jadi kali ini kita akan menggunakan editor. 
+
+721
+00:28:35,440 --> 00:28:37,765
+ Dan mari kita lihat, saya akan menyegarkan. 
+
+722
+00:28:37,765 --> 00:28:41,080
+
+
+723
+00:28:41,080 --> 00:28:43,000
+ Ayo lihat. 
+
+724
+00:28:43,000 --> 00:28:44,500
+ Segarkan lagi. 
+
+725
+00:28:44,500 --> 00:28:47,380
+ Kadang-kadang pekerja layanan perlu diperbarui dengan benar. 
+
+726
+00:28:47,380 --> 00:28:51,571
+ Jadi butuh sedikit waktu. 
+
+727
+00:28:51,571 --> 00:28:52,070
+ BAIK. 
+
+728
+00:28:52,070 --> 00:28:54,810
+ Di sana kami pergi. 
+
+729
+00:28:54,810 --> 00:28:57,020
+ Dan mari kita verifikasi dulu bahwa kita masih hidup 
+
+730
+00:28:57,020 --> 00:28:59,820
+ rentan terhadap serangan injeksi SQL ini. 
+
+731
+00:28:59,820 --> 00:29:02,640
+
+
+732
+00:29:02,640 --> 00:29:05,730
+ Dan memang kami. 
+
+733
+00:29:05,730 --> 00:29:06,750
+ BAIK. 
+
+734
+00:29:06,750 --> 00:29:10,830
+ Jadi kita akan menggunakan editor kami untuk memperbaiki sesuatu. 
+
+735
+00:29:10,830 --> 00:29:14,500
+ Dan editor ini dilengkapi dengan penyorotan sintaks, 
+
+736
+00:29:14,500 --> 00:29:17,550
+ linting, semua barang bagus. 
+
+737
+00:29:17,550 --> 00:29:20,260
+ Dan kita juga akan membutuhkan ketiga tombol ini di samping. 
+
+738
+00:29:20,260 --> 00:29:24,450
+ Jadi yang pertama akan menjalankan kode kita terhadap kerangka uji 
+
+739
+00:29:24,450 --> 00:29:28,080
+ dan pastikan bahwa apa yang kita lakukan akan berhasil, 
+
+740
+00:29:28,080 --> 00:29:29,300
+ tidak akan berhasil. 
+
+741
+00:29:29,300 --> 00:29:32,460
+ Anda tahu, itu hanya memberitahu kita ketika kita selesai latihan. 
+
+742
+00:29:32,460 --> 00:29:34,860
+ Dalam hal ini, kami gagal karena kami sebenarnya tidak 
+
+743
+00:29:34,860 --> 00:29:36,670
+ memperbaiki apa pun. 
+
+744
+00:29:36,670 --> 00:29:39,240
+ Tombol kedua akan memberi kita petunjuk. 
+
+745
+00:29:39,240 --> 00:29:41,940
+
+
+746
+00:29:41,940 --> 00:29:47,160
+ Dan akhirnya, yang ketiga akan mengatur ulang semuanya 
+
+747
+00:29:47,160 --> 00:29:49,930
+ agar kita bisa mulai dari awal. 
+
+748
+00:29:49,930 --> 00:29:53,100
+ Jadi untuk benar-benar memperbaiki ini, 
+
+749
+00:29:53,100 --> 00:29:55,470
+ kami hanya akan menggunakan pertanyaan parameter, 
+
+750
+00:29:55,470 --> 00:29:58,980
+ atau itu juga disebut pernyataan siap. 
+
+751
+00:29:58,980 --> 00:30:02,770
+ Jadi ingat, kita tidak seharusnya menggunakan input pengguna secara langsung. 
+
+752
+00:30:02,770 --> 00:30:06,060
+ Jadi alih-alih kita akan memberitahu persiapan SQL 
+
+753
+00:30:06,060 --> 00:30:10,560
+ pernyataan yang telah ditentukan dengan tepat 
+
+754
+00:30:10,560 --> 00:30:14,290
+ kapan harus mengharapkan masukan eksternal. 
+
+755
+00:30:14,290 --> 00:30:17,520
+ Jadi di sini, ini adalah pernyataan parameter. 
+
+756
+00:30:17,520 --> 00:30:24,060
+ Dan kemudian kami akan memberikan nama pengguna dan kata sandi di sini. 
+
+757
+00:30:24,060 --> 00:30:27,600
+ Mari kita lihat apakah itu lolos dari ujian kita. 
+
+758
+00:30:27,600 --> 00:30:28,140
+ BAIK. 
+
+759
+00:30:28,140 --> 00:30:30,820
+ Jadi ini seharusnya bagus. 
+
+760
+00:30:30,820 --> 00:30:34,200
+ Sekarang mari kita segarkan dan periksa kembali 
+
+761
+00:30:34,200 --> 00:30:35,880
+ bahwa itu benar-benar berfungsi. 
+
+762
+00:30:35,880 --> 00:30:36,380
+ Ups. 
+
+763
+00:30:36,380 --> 00:30:43,510
+
+
+764
+00:30:43,510 --> 00:30:45,760
+ Dan kami berhasil membela diri 
+
+765
+00:30:45,760 --> 00:30:49,690
+ terhadap serangan injeksi SQL tertentu ini. 
+
+766
+00:30:49,690 --> 00:30:52,510
+ Jadi ingat bahwa ini hanya latihan dasar. 
+
+767
+00:30:52,510 --> 00:30:55,900
+ Jadi dalam praktiknya, dalam membuat situs web yang sebenarnya dalam siaran langsung, 
+
+768
+00:30:55,900 --> 00:30:59,710
+ Anda juga akan membersihkan input pengguna, seperti kata Elie. 
+
+769
+00:30:59,710 --> 00:31:01,300
+ Dan itu tidak bisa dikatakan cukup banyak, 
+
+770
+00:31:01,300 --> 00:31:04,840
+ tidak pernah mempercayai masukan eksternal. 
+
+771
+00:31:04,840 --> 00:31:06,730
+ Jadi itu untuk demo hari ini. 
+
+772
+00:31:06,730 --> 00:31:11,230
+ Mari kita tidak mencobai dewa demo lebih jauh. 
+
+773
+00:31:11,230 --> 00:31:12,656
+ Kembali ke slide, silakan. 
+
+774
+00:31:12,656 --> 00:31:18,050
+ [TEPUK TANGAN] 
+
+775
+00:31:18,050 --> 00:31:21,502
+ Jadi terima kasih telah menghadiri sesi kami. 
+
+776
+00:31:21,502 --> 00:31:23,710
+ Anda dapat mendaftar untuk akses awal ke kursus, yang 
+
+777
+00:31:23,710 --> 00:31:25,330
+ akan dirilis musim panas ini. 
+
+778
+00:31:25,330 --> 00:31:28,780
+ Dan jika Anda tertarik untuk mempelajari lebih lanjut 
+
+779
+00:31:28,780 --> 00:31:31,600
+ tentang teknologi web atau peta atau apa pun, 
+
+780
+00:31:31,600 --> 00:31:33,950
+ kepala ke beberapa kotak pasir. 
+
+781
+00:31:33,950 --> 00:31:35,980
+ Saya pikir ada satu dengan tahap 6 itu 
+
+782
+00:31:35,980 --> 00:31:38,830
+ akan berbicara tentang aplikasi web progresif. 
+
+783
+00:31:38,830 --> 00:31:41,940
+ Dan terima kasih lagi, dan nikmati sisa I / O. 
+
+784
+00:31:41,940 --> 00:00:00,000
+
+

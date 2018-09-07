@@ -1,0 +1,952 @@
+1
+00:00:08,690 --> 00:00:10,950
+ hey semua orang John bergoyang-goyang di sini dengan 
+
+2
+00:00:10,950 --> 00:00:12,120
+ <font color="#E5E5E5">Pusat </font><font color="#CCCCCC">deb </font><font color="#E5E5E5">kami datang kepada Anda dengan </font>
+
+3
+00:00:12,120 --> 00:00:13,950
+ <font color="#E5E5E5">video pelajaran papan cahaya lain dan </font>
+
+4
+00:00:13,950 --> 00:00:15,990
+ hari ini kita kembali ke <font color="#CCCCCC">tawon </font>
+
+5
+00:00:15,990 --> 00:00:19,230
+ <font color="#CCCCCC">10 </font><font color="#E5E5E5">teratas </font><font color="#CCCCCC">dan ini </font><font color="#E5E5E5">adalah </font><font color="#CCCCCC">angka 9 dari </font>
+
+6
+00:00:19,230 --> 00:00:22,560
+ 10 <font color="#CCCCCC">risiko keamanan di luar sana dalam daftar </font>
+
+7
+00:00:22,560 --> 00:00:25,410
+ <font color="#E5E5E5">dan daftar ini atau ini risiko keamanan ini </font>
+
+8
+00:00:25,410 --> 00:00:29,210
+ <font color="#E5E5E5">disebut menggunakan komponen yang dikenal </font>
+
+9
+00:00:29,210 --> 00:00:33,510
+ kerentanan <font color="#E5E5E5">jadi saya kira mudah </font>
+
+10
+00:00:33,510 --> 00:00:35,940
+ hal yang mudah untuk dikatakan <font color="#CCCCCC">dan banyak </font><font color="#E5E5E5">orang akan mengatakannya </font>
+
+11
+00:00:35,940 --> 00:00:37,440
+ mungkin berpikir <font color="#E5E5E5">baik, hei, </font><font color="#CCCCCC">jangan gunakan </font>
+
+12
+00:00:37,440 --> 00:00:39,390
+ komponen dalam <font color="#CCCCCC">aplikasi web Anda itu </font>
+
+13
+00:00:39,390 --> 00:00:41,340
+ telah mengetahui kerentanan dengan benar 
+
+14
+00:00:41,340 --> 00:00:43,559
+ itu <font color="#E5E5E5">lebih mudah diucapkan </font><font color="#CCCCCC">daripada dilakukan biasanya </font>
+
+15
+00:00:43,559 --> 00:00:44,969
+ <font color="#E5E5E5">ketika Anda membangun aplikasi web Anda </font>
+
+16
+00:00:44,969 --> 00:00:46,289
+ Anda <font color="#CCCCCC">akan </font><font color="#E5E5E5">memilih dan memilih yang </font><font color="#CCCCCC">berbeda </font>
+
+17
+00:00:46,289 --> 00:00:47,910
+ hal <font color="#E5E5E5">- hal yang Anda butuhkan </font><font color="#CCCCCC">untuk membuat web itu </font>
+
+18
+00:00:47,910 --> 00:00:51,480
+ aplikasi <font color="#CCCCCC">dan mau tidak mau ada </font><font color="#E5E5E5">sesuatu </font>
+
+19
+00:00:51,480 --> 00:00:54,180
+ akan <font color="#E5E5E5">memiliki </font><font color="#CCCCCC">kerentanan </font><font color="#E5E5E5">itu </font>
+
+20
+00:00:54,180 --> 00:00:57,239
+ dikenal <font color="#CCCCCC">jadi biarkan aku, aku hanya menggambar pasangan </font>
+
+21
+00:00:57,239 --> 00:00:59,670
+ <font color="#CCCCCC">segalanya di sini kami akan berbicara melalui </font><font color="#E5E5E5">Anda </font>
+
+22
+00:00:59,670 --> 00:01:01,890
+ mengetahui jenis <font color="#CCCCCC">situasi dan cara memilikinya </font>
+
+23
+00:01:01,890 --> 00:01:04,260
+ <font color="#CCCCCC">penjaga terhadap itu jadi katakanlah Anda punya </font>
+
+24
+00:01:04,260 --> 00:01:06,930
+ <font color="#E5E5E5">aplikasi web Anda yang mengagumkan jadi inilah </font>
+
+25
+00:01:06,930 --> 00:01:10,290
+ web Anda <font color="#E5E5E5">aplikasi web Anda di sini itu itu </font>
+
+26
+00:01:10,290 --> 00:01:13,049
+ <font color="#E5E5E5">semua orang suka dan mereka mengunjungi semua </font>
+
+27
+00:01:13,049 --> 00:01:15,210
+ <font color="#E5E5E5">waktu dan Anda mendapatkan sejuta hits yang Anda </font><font color="#CCCCCC">ketahui </font>
+
+28
+00:01:15,210 --> 00:01:17,520
+ sehari atau apa pun <font color="#E5E5E5">begitu kapan pun Anda membangun </font>
+
+29
+00:01:17,520 --> 00:01:19,380
+ benda <font color="#E5E5E5">ini </font><font color="#CCCCCC">memiliki beberapa hal </font><font color="#E5E5E5">mendasar </font>
+
+30
+00:01:19,380 --> 00:01:21,750
+ komponen untuk benar <font color="#E5E5E5">jadi </font><font color="#CCCCCC">mungkin Anda miliki </font>
+
+31
+00:01:21,750 --> 00:01:25,700
+ mungkin Anda memiliki server web tentunya 
+
+32
+00:01:25,700 --> 00:01:30,659
+ <font color="#CCCCCC">benar mungkin Anda memiliki cenar mungkin Anda </font>
+
+33
+00:01:30,659 --> 00:01:32,909
+ memiliki saya akan menempatkan DB seperti database 
+
+34
+00:01:32,909 --> 00:01:36,360
+ server <font color="#CCCCCC">dan katakanlah server web ini </font>
+
+35
+00:01:36,360 --> 00:01:38,220
+ katakanlah Anda memilih untuk menggunakan Apache 
+
+36
+00:01:38,220 --> 00:01:41,220
+ <font color="#E5E5E5">itu adalah salah satu yang cukup lumayan umum </font>
+
+37
+00:01:41,220 --> 00:01:43,799
+ katakanlah untuk <font color="#E5E5E5">penggunaan database Oracle itu </font>
+
+38
+00:01:43,799 --> 00:01:46,470
+ satu lagi yang cukup umum <font color="#E5E5E5">mari kita katakan itu </font>
+
+39
+00:01:46,470 --> 00:01:48,090
+ karena <font color="#CCCCCC">Anda semua </font><font color="#E5E5E5">tertarik </font>
+
+40
+00:01:48,090 --> 00:01:50,310
+ keamanan <font color="#CCCCCC">Anda </font><font color="#E5E5E5">ingin memastikan</font><font color="#CCCCCC"> bahwa </font>
+
+41
+00:01:50,310 --> 00:01:52,259
+ klien yang mengakses aplikasi web Anda 
+
+42
+00:01:52,259 --> 00:01:55,430
+ masuk dienkripsi <font color="#CCCCCC">jadi kami akan </font><font color="#E5E5E5">gunakan </font>
+
+43
+00:01:55,430 --> 00:02:00,990
+ <font color="#CCCCCC">kemampuan tls / ssl </font><font color="#E5E5E5">jadi itu begitu Anda </font>
+
+44
+00:02:00,990 --> 00:02:05,130
+ alamat web <font color="#E5E5E5">akan menjadi </font><font color="#CCCCCC">HTTPS yang Anda tahu </font>
+
+45
+00:02:05,130 --> 00:02:07,979
+ <font color="#E5E5E5">aplikasi web semacam hal </font><font color="#CCCCCC">semacam </font><font color="#E5E5E5">itu </font>
+
+46
+00:02:07,979 --> 00:02:10,258
+ itu hanya <font color="#E5E5E5">daftar yang sangat dasar tentu saja </font>
+
+47
+00:02:10,258 --> 00:02:11,610
+ tetapi Anda <font color="#E5E5E5">bisa mulai memahami itu </font>
+
+48
+00:02:11,610 --> 00:02:12,840
+ ada banyak <font color="#CCCCCC">komponen yang berbeda </font>
+
+49
+00:02:12,840 --> 00:02:13,970
+ <font color="#CCCCCC">yang masuk ke </font><font color="#E5E5E5">Anda </font>
+
+50
+00:02:13,970 --> 00:02:17,570
+ aplikasi <font color="#CCCCCC">saya pergi ke </font><font color="#E5E5E5">sana dan melihat </font>
+
+51
+00:02:17,570 --> 00:02:20,960
+ baru <font color="#E5E5E5">- baru ini dan dan check out seperti katakan di </font>
+
+52
+00:02:20,960 --> 00:02:23,330
+ <font color="#E5E5E5">web server </font><font color="#CCCCCC">Apache </font><font color="#E5E5E5">web </font><font color="#CCCCCC">Apache kami </font>
+
+53
+00:02:23,330 --> 00:02:25,520
+ server yang <font color="#E5E5E5">Anda tahu mereka </font><font color="#CCCCCC">tahu </font>
+
+54
+00:02:25,520 --> 00:02:28,490
+ kerentanan mereka <font color="#E5E5E5">ada di sana </font>
+
+55
+00:02:28,490 --> 00:02:30,650
+ yang <font color="#E5E5E5">cukup umum di luar sana </font><font color="#CCCCCC">itu </font>
+
+56
+00:02:30,650 --> 00:02:33,230
+ itu disebut struts. <font color="#CCCCCC">Aku hanya akan </font>
+
+57
+00:02:33,230 --> 00:02:34,550
+ jenis mulai menulis <font color="#E5E5E5">semua ini </font>
+
+58
+00:02:34,550 --> 00:02:36,020
+ <font color="#E5E5E5">di sini </font><font color="#CCCCCC">jadi ada yang </font><font color="#E5E5E5">membentang </font>
+
+59
+00:02:36,020 --> 00:02:37,400
+ kerentanan yang unik <font color="#CCCCCC">untuk </font>
+
+60
+00:02:37,400 --> 00:02:39,590
+ <font color="#E5E5E5">Server web Apache itu didasarkan pada </font>
+
+61
+00:02:39,590 --> 00:02:40,970
+ kata kerja yang berbeda <font color="#CCCCCC">tentang apa yang Anda ketahui </font>
+
+62
+00:02:40,970 --> 00:02:43,790
+ versi Anda memiliki server web Apache 
+
+63
+00:02:43,790 --> 00:02:45,410
+ bisa <font color="#E5E5E5">rentan terhadap struts </font><font color="#CCCCCC">ini </font>
+
+64
+00:02:45,410 --> 00:02:47,750
+ kerentanan yang <font color="#E5E5E5">lain katakan untuk Oracle </font>
+
+65
+00:02:47,750 --> 00:02:53,959
+ <font color="#E5E5E5">ada yang ada java java vm oracle </font>
+
+66
+00:02:53,959 --> 00:02:56,360
+ server database <font color="#CCCCCC">dikenal kerentanan keluar </font>
+
+67
+00:02:56,360 --> 00:02:58,430
+ di sana dan dengan <font color="#E5E5E5">cara ada </font><font color="#CCCCCC">banyak banyak </font>
+
+68
+00:02:58,430 --> 00:03:00,950
+ banyak kerentanan yang diketahui yang <font color="#CCCCCC">saya bisa </font>
+
+69
+00:03:00,950 --> 00:03:03,640
+ daftar di sini <font color="#E5E5E5">unik untuk apache atau oracle atau </font>
+
+70
+00:03:03,640 --> 00:03:05,900
+ <font color="#E5E5E5">sejumlah komponen </font><font color="#CCCCCC">yang Anda mungkin </font>
+
+71
+00:03:05,900 --> 00:03:08,720
+ <font color="#E5E5E5">gunakan untuk tls / ssl ada yang cukup umum </font>
+
+72
+00:03:08,720 --> 00:03:11,120
+ satu kembali pada bulan april 2014 
+
+73
+00:03:11,120 --> 00:03:16,130
+ disebut <font color="#E5E5E5">perdarahan hati dan jika Anda tidak </font>
+
+74
+00:03:16,130 --> 00:03:19,190
+ konfigurasikan konfigurasi tls / ssl Anda 
+
+75
+00:03:19,190 --> 00:03:21,230
+ benar <font color="#E5E5E5">Anda mungkin rentan </font>
+
+76
+00:03:21,230 --> 00:03:22,760
+ <font color="#E5E5E5">apa yang disebut </font><font color="#CCCCCC">heartbleed dan kalian </font>
+
+77
+00:03:22,760 --> 00:03:25,150
+ mungkin ingat yang <font color="#CCCCCC">menarik </font>
+
+78
+00:03:25,150 --> 00:03:28,850
+ <font color="#E5E5E5">ada situs web yang disebut </font><font color="#CCCCCC">acara Dan dan itu </font>
+
+79
+00:03:28,850 --> 00:03:31,100
+ <font color="#E5E5E5">melakukan pemindaian </font><font color="#CCCCCC">semua ini semua </font>
+
+80
+00:03:31,100 --> 00:03:32,959
+ <font color="#E5E5E5">aplikasi web situs web internet </font>
+
+81
+00:03:32,959 --> 00:03:35,720
+ apa pun yang <font color="#CCCCCC">saya lakukan </font><font color="#E5E5E5">secara harfiah hari ini dan </font>
+
+82
+00:03:35,720 --> 00:03:37,910
+ periksa <font color="#E5E5E5">untuk melihat apakah ada yang masih </font><font color="#CCCCCC">rentan </font>
+
+83
+00:03:37,910 --> 00:03:39,410
+ Maksud saya, ini sudah ada di luar sana untuk a 
+
+84
+00:03:39,410 --> 00:03:41,690
+ beberapa <font color="#E5E5E5">tahun sekarang adalah siapa pun masih </font>
+
+85
+00:03:41,690 --> 00:03:45,560
+ rentan <font color="#E5E5E5">terhadap heartbleed </font><font color="#CCCCCC">dan dan yang </font>
+
+86
+00:03:45,560 --> 00:03:47,180
+ daftar <font color="#E5E5E5">yang saya </font><font color="#CCCCCC">buat </font><font color="#E5E5E5">hari ini ada </font>
+
+87
+00:03:47,180 --> 00:03:50,060
+ hampir seratus <font color="#E5E5E5">dua puluh ribu </font><font color="#CCCCCC">web </font>
+
+88
+00:03:50,060 --> 00:03:51,890
+ <font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">masih </font><font color="#CCCCCC">rentan </font>
+
+89
+00:03:51,890 --> 00:03:54,769
+ heartbleed <font color="#E5E5E5">hari ini jadi hanya karena itu </font>
+
+90
+00:03:54,769 --> 00:03:56,090
+ yang lama di <font color="#E5E5E5">luar sana dan itu </font><font color="#CCCCCC">seperti kamu </font>
+
+91
+00:03:56,090 --> 00:03:57,350
+ <font color="#E5E5E5">tahu Anda mungkin </font><font color="#CCCCCC">berpikir hei jenis yang satu itu </font>
+
+92
+00:03:57,350 --> 00:03:59,030
+ <font color="#E5E5E5">aku agak </font><font color="#CCCCCC">pergi dan </font><font color="#E5E5E5">tidak </font>
+
+93
+00:03:59,030 --> 00:04:00,890
+ khawatir <font color="#CCCCCC">tentang itu </font><font color="#E5E5E5">lagi </font><font color="#CCCCCC">kebenaran </font>
+
+94
+00:04:00,890 --> 00:04:05,000
+ adalah banyak yang Anda tahu <font color="#CCCCCC">aplikasi web </font>
+
+95
+00:04:05,000 --> 00:04:06,830
+ mungkin masih rentan <font color="#E5E5E5">warisan ini </font>
+
+96
+00:04:06,830 --> 00:04:10,430
+ aplikasi atau apa pun <font color="#CCCCCC">semua </font><font color="#E5E5E5">benar </font><font color="#CCCCCC">sehingga begitu </font>
+
+97
+00:04:10,430 --> 00:04:11,870
+ Anda mulai <font color="#E5E5E5">mendapatkan </font><font color="#CCCCCC">gagasan itu </font><font color="#E5E5E5">seperti Anda </font>
+
+98
+00:04:11,870 --> 00:04:13,880
+ <font color="#E5E5E5">membangun aplikasi web Anda </font>
+
+99
+00:04:13,880 --> 00:04:15,709
+ untuk mungkin dipaksa <font color="#CCCCCC">ke dalam situasi </font>
+
+100
+00:04:15,709 --> 00:04:17,899
+ <font color="#E5E5E5">di mana Anda harus menggunakan komponen itu </font>
+
+101
+00:04:17,899 --> 00:04:20,029
+ telah diketahui kerentanan ada jenisnya 
+
+102
+00:04:20,029 --> 00:04:21,440
+ <font color="#CCCCCC">dari beberapa baik dan buruk </font><font color="#E5E5E5">dengan yang baik </font>
+
+103
+00:04:21,440 --> 00:04:23,990
+ bagian dari kerentanan yang diketahui <font color="#E5E5E5">adalah kita </font>
+
+104
+00:04:23,990 --> 00:04:26,550
+ memang tahu tentang <font color="#E5E5E5">mereka sehingga kami tahu apa yang harus dilakukan </font>
+
+105
+00:04:26,550 --> 00:04:28,259
+ Anda tahu untuk melindungi <font color="#CCCCCC">dan memperbaiki dan semua itu </font>
+
+106
+00:04:28,259 --> 00:04:31,830
+ barang <font color="#CCCCCC">- barang bagian buruk tentang hal itu adalah kita lakukan </font>
+
+107
+00:04:31,830 --> 00:04:34,080
+ tahu tentang <font color="#E5E5E5">mereka dan jadi jika kita tahu </font><font color="#CCCCCC">tentang </font>
+
+108
+00:04:34,080 --> 00:04:35,370
+ mereka kemudian orang jahat <font color="#E5E5E5">tahu tentang mereka </font>
+
+109
+00:04:35,370 --> 00:04:37,919
+ <font color="#E5E5E5">dan mereka tahu untuk pergi dan mengeksploitasinya </font>
+
+110
+00:04:37,919 --> 00:04:40,349
+ <font color="#E5E5E5">jadi katakanlah </font><font color="#CCCCCC">misalnya Anda punya </font>
+
+111
+00:04:40,349 --> 00:04:42,150
+ <font color="#CCCCCC">aplikasi web menggunakan </font><font color="#E5E5E5">ini berbeda </font>
+
+112
+00:04:42,150 --> 00:04:46,379
+ <font color="#CCCCCC">hal-hal dan </font><font color="#E5E5E5">untuk satu </font><font color="#CCCCCC">alasan atau yang lain </font>
+
+113
+00:04:46,379 --> 00:04:48,210
+ penyerang pria jahat akan <font color="#CCCCCC">mengatakan hei saya </font>
+
+114
+00:04:48,210 --> 00:04:49,919
+ tahu bahwa Anda <font color="#E5E5E5">menggunakan web Apache </font>
+
+115
+00:04:49,919 --> 00:04:51,629
+ server mungkin Anda <font color="#E5E5E5">mengungkapkan terlalu banyak </font>
+
+116
+00:04:51,629 --> 00:04:53,940
+ informasi <font color="#E5E5E5">atau </font><font color="#CCCCCC">hal semacam </font><font color="#E5E5E5">itu </font><font color="#CCCCCC">dan </font>
+
+117
+00:04:53,940 --> 00:04:55,650
+ mereka mengerti bahwa <font color="#E5E5E5">versi </font><font color="#CCCCCC">itu </font>
+
+118
+00:04:55,650 --> 00:04:58,020
+ <font color="#E5E5E5">Anda menggunakan dan kemudian mereka bisa pergi dan melakukan </font>
+
+119
+00:04:58,020 --> 00:05:00,750
+ Anda tahu pencarian Google untuk hey bagaimana <font color="#CCCCCC">bisa </font>
+
+120
+00:05:00,750 --> 00:05:02,759
+ Saya mengeksploitasi <font color="#E5E5E5">server web Apache ini </font>
+
+121
+00:05:02,759 --> 00:05:04,080
+ versi <font color="#E5E5E5">mereka mengetahui bahwa Anda </font>
+
+122
+00:05:04,080 --> 00:05:06,330
+ <font color="#E5E5E5">rentan terhadap kerentanan struts </font>
+
+123
+00:05:06,330 --> 00:05:08,580
+ <font color="#E5E5E5">dan kemudian mereka bisa tahu </font><font color="#CCCCCC">persis apa yang harus dilakukan </font>
+
+124
+00:05:08,580 --> 00:05:12,210
+ pergi setelah <font color="#CCCCCC">begitu lagi bagian yang baik adalah jika </font>
+
+125
+00:05:12,210 --> 00:05:14,639
+ Anda menggunakan versi rentan ini 
+
+126
+00:05:14,639 --> 00:05:17,750
+ <font color="#E5E5E5">Anda akan tahu apa yang harus dilindungi jika Anda </font>
+
+127
+00:05:17,750 --> 00:05:20,190
+ <font color="#E5E5E5">tetapi jika Anda menggunakan versi rentan </font>
+
+128
+00:05:20,190 --> 00:05:22,139
+ maka penyerang <font color="#E5E5E5">tahu apa yang harus diserang </font>
+
+129
+00:05:22,139 --> 00:05:24,539
+ untuk <font color="#E5E5E5">jenis hal sehingga dia tahu persis </font>
+
+130
+00:05:24,539 --> 00:05:26,819
+ <font color="#CCCCCC">ruang serangan karena </font><font color="#E5E5E5">semua baik-baik saja </font>
+
+131
+00:05:26,819 --> 00:05:29,879
+ itulah <font color="#CCCCCC">situasi yang diketahui </font>
+
+132
+00:05:29,879 --> 00:05:31,800
+ komponen <font color="#E5E5E5">dengan kerentanan yang diketahui a </font>
+
+133
+00:05:31,800 --> 00:05:34,949
+ beberapa <font color="#E5E5E5">hal yang perlu </font><font color="#CCCCCC">dipertimbangkan di sini adalah </font>
+
+134
+00:05:34,949 --> 00:05:38,580
+ <font color="#CCCCCC">hal menjaga terhadap ini adalah aku </font>
+
+135
+00:05:38,580 --> 00:05:41,940
+ akan mengatakan <font color="#E5E5E5">inventaris berkelanjutan Anda </font>
+
+136
+00:05:41,940 --> 00:05:43,500
+ klien dan server jadi saya hanya akan mengatakan 
+
+137
+00:05:43,500 --> 00:05:45,680
+ Saya hanya akan <font color="#E5E5E5">menaruh inventaris di sini </font>
+
+138
+00:05:45,680 --> 00:05:49,400
+ <font color="#E5E5E5">persediaan dan saya akan menempatkan klien dan </font>
+
+139
+00:05:49,400 --> 00:05:53,370
+ server <font color="#CCCCCC">baik-baik saja jadi yang dengan </font><font color="#E5E5E5">cara masuk </font>
+
+140
+00:05:53,370 --> 00:05:55,199
+ <font color="#E5E5E5">bisnis Anda yang Anda tahu dari bisnis </font>
+
+141
+00:05:55,199 --> 00:05:57,389
+ <font color="#CCCCCC">perspektif </font><font color="#E5E5E5">Anda punya banyak </font><font color="#CCCCCC">klien </font>
+
+142
+00:05:57,389 --> 00:05:58,860
+ di luar sana <font color="#CCCCCC">- yang mungkin </font><font color="#E5E5E5">rentan </font>
+
+143
+00:05:58,860 --> 00:06:01,319
+ berbagai komponen <font color="#CCCCCC">jadi mungkin tidak </font><font color="#E5E5E5">begitu saja </font>
+
+144
+00:06:01,319 --> 00:06:02,610
+ server web yang <font color="#E5E5E5">kita </font><font color="#CCCCCC">bicarakan </font>
+
+145
+00:06:02,610 --> 00:06:04,979
+ <font color="#E5E5E5">sini </font><font color="#CCCCCC">begitu dari perspektif bisnis dari </font>
+
+146
+00:06:04,979 --> 00:06:06,870
+ perspektif kepemilikan total yang Anda butuhkan 
+
+147
+00:06:06,870 --> 00:06:09,569
+ <font color="#E5E5E5">kepada Anda perlu terus berkomitmen </font>
+
+148
+00:06:09,569 --> 00:06:13,529
+ <font color="#CCCCCC">untuk inventori incluso yang Anda kendalikan </font>
+
+149
+00:06:13,529 --> 00:06:15,900
+ dan kemudian dengan cara itu Anda <font color="#E5E5E5">bisa tahu Anda tahu </font>
+
+150
+00:06:15,900 --> 00:06:17,909
+ <font color="#E5E5E5">apa </font><font color="#CCCCCC">yang ada di luar sana </font><font color="#E5E5E5">apa yang harus dicari </font>
+
+151
+00:06:17,909 --> 00:06:21,240
+ semua <font color="#E5E5E5">itu jadi lakukan inventarisasi terus menerus </font>
+
+152
+00:06:21,240 --> 00:06:24,150
+ seolah-olah itu <font color="#CCCCCC">dan kemudian aku akan mengatakan </font>
+
+153
+00:06:24,150 --> 00:06:27,150
+ mengunduh <font color="#E5E5E5">komponen dari </font><font color="#CCCCCC">sumber </font><font color="#E5E5E5">tepercaya </font>
+
+154
+00:06:27,150 --> 00:06:30,060
+ atau sumber resmi <font color="#E5E5E5">jadi saya hanya akan menempatkan </font>
+
+155
+00:06:30,060 --> 00:06:33,589
+ Saya akan menaruh unduhan 
+
+156
+00:06:33,589 --> 00:06:35,759
+ Saya hanya akan menaruh unduhan untuk saat ini tetapi 
+
+157
+00:06:35,759 --> 00:06:38,039
+ <font color="#CCCCCC">pada dasarnya ide di sini adalah </font><font color="#E5E5E5">jika </font><font color="#CCCCCC">Anda </font>
+
+158
+00:06:38,039 --> 00:06:40,460
+ <font color="#E5E5E5">akan mengunduh beberapa perangkat lunak </font>
+
+159
+00:06:40,460 --> 00:06:41,809
+ Anda tahu Anda belum <font color="#CCCCCC">tentu </font><font color="#E5E5E5">akan </font>
+
+160
+00:06:41,809 --> 00:06:43,339
+ <font color="#E5E5E5">berjalan di jalan </font><font color="#CCCCCC">dan membelinya </font><font color="#E5E5E5">di </font>
+
+161
+00:06:43,339 --> 00:06:45,169
+ di tempat yang Anda tahu <font color="#CCCCCC">di loket untuk ditawarkan </font>
+
+162
+00:06:45,169 --> 00:06:46,999
+ apa pun <font color="#E5E5E5">dengan orang yang berdiri di sana </font>
+
+163
+00:06:46,999 --> 00:06:49,699
+ <font color="#CCCCCC">mungkin </font><font color="#E5E5E5">Anda tetapi kemungkinan besar Anda akan melakukannya </font>
+
+164
+00:06:49,699 --> 00:06:51,889
+ <font color="#E5E5E5">unduh perangkat lunak dengan </font><font color="#CCCCCC">benar jadi ketika Anda </font>
+
+165
+00:06:51,889 --> 00:06:53,839
+ mengunduh <font color="#E5E5E5">perangkat lunak ini mungkin itu a </font>
+
+166
+00:06:53,839 --> 00:06:56,659
+ tambal sulam <font color="#CCCCCC">atau Oracle </font><font color="#E5E5E5">atau apapun </font><font color="#CCCCCC">itu kemudian </font>
+
+167
+00:06:56,659 --> 00:06:58,520
+ <font color="#E5E5E5">pastikan</font><font color="#CCCCCC"> Anda mendapatkannya dari yang tepat </font>
+
+168
+00:06:58,520 --> 00:07:01,520
+ <font color="#E5E5E5">saluran resmi </font><font color="#CCCCCC">yang mungkin Anda inginkan </font>
+
+169
+00:07:01,520 --> 00:07:03,830
+ <font color="#E5E5E5">pastikan</font><font color="#CCCCCC"> bahwa itu ditandatangani secara digital untuk </font>
+
+170
+00:07:03,830 --> 00:07:05,839
+ pastikan <font color="#E5E5E5">itu berasal </font><font color="#CCCCCC">dari yang bereputasi baik </font>
+
+171
+00:07:05,839 --> 00:07:08,360
+ <font color="#E5E5E5">sumber </font><font color="#CCCCCC">jika </font><font color="#E5E5E5">Anda mengunduh banyak </font>
+
+172
+00:07:08,360 --> 00:07:09,889
+ barang-barang dari <font color="#E5E5E5">beberapa situs web gila itu </font>
+
+173
+00:07:09,889 --> 00:07:10,759
+ <font color="#E5E5E5">Anda bahkan tidak tahu di mana mereka datang </font>
+
+174
+00:07:10,759 --> 00:07:13,460
+ <font color="#E5E5E5">sejak </font><font color="#CCCCCC">saat itu Anda tahu bahwa itu terbuka </font>
+
+175
+00:07:13,460 --> 00:07:15,800
+ kesempatan <font color="#CCCCCC">untuk mengunduh </font><font color="#E5E5E5">Anda </font>
+
+176
+00:07:15,800 --> 00:07:18,349
+ perangkat lunak <font color="#E5E5E5">mungkin saya tidak tahu mungkin penuh </font>
+
+177
+00:07:18,349 --> 00:07:19,909
+ lubang atau mungkin <font color="#CCCCCC">tidak </font><font color="#E5E5E5">persis seperti itu </font>
+
+178
+00:07:19,909 --> 00:07:21,830
+ <font color="#E5E5E5">Anda ingin hal itu terjadi </font><font color="#CCCCCC">yang bisa </font>
+
+179
+00:07:21,830 --> 00:07:22,759
+ <font color="#E5E5E5">bermasalah </font>
+
+180
+00:07:22,759 --> 00:07:24,439
+ jadi pastikan Anda mengunduh <font color="#E5E5E5">dari kanan </font>
+
+181
+00:07:24,439 --> 00:07:27,020
+ tempat <font color="#E5E5E5">aku akan mengatakan aku hanya akan menempatkan </font>
+
+182
+00:07:27,020 --> 00:07:31,870
+ rencanakan di sini rencana untuk hal <font color="#CCCCCC">- hal seperti </font>
+
+183
+00:07:31,870 --> 00:07:33,080
+ pemantauan 
+
+184
+00:07:33,080 --> 00:07:40,180
+ Saya akan menempatkan monitor <font color="#E5E5E5">saya akan menaruh patch </font>
+
+185
+00:07:40,509 --> 00:07:46,039
+ <font color="#CCCCCC">kita akan mengatakan konfigurasi semacam itu </font>
+
+186
+00:07:46,039 --> 00:07:49,339
+ <font color="#E5E5E5">hal-hal </font><font color="#CCCCCC">begitu memiliki rencana </font><font color="#E5E5E5">untuk </font><font color="#CCCCCC">dikatakan </font>
+
+187
+00:07:49,339 --> 00:07:52,129
+ hei saya tahu apa komponen saya itu 
+
+188
+00:07:52,129 --> 00:07:54,469
+ yang membentuk keseluruhan <font color="#CCCCCC">web saya </font>
+
+189
+00:07:54,469 --> 00:07:56,870
+ <font color="#CCCCCC">aplikasi dan saya akan memantau </font>
+
+190
+00:07:56,870 --> 00:07:59,449
+ komponen-komponen itu saya akan 
+
+191
+00:07:59,449 --> 00:08:01,129
+ menambal komponen-komponen itu sebagai tambalan 
+
+192
+00:08:01,129 --> 00:08:03,529
+ keluar dari Anda <font color="#E5E5E5">tahu katakanlah di </font>
+
+193
+00:08:03,529 --> 00:08:05,469
+ <font color="#CCCCCC">Apache apa pun </font><font color="#E5E5E5">Apache merilis patch </font>
+
+194
+00:08:05,469 --> 00:08:08,479
+ <font color="#CCCCCC">untuk menangani </font><font color="#E5E5E5">masalah peregangan </font><font color="#CCCCCC">ini </font><font color="#E5E5E5">jadi kami </font>
+
+195
+00:08:08,479 --> 00:08:10,189
+ perlu menambal yang perlu kita konfigurasi 
+
+196
+00:08:10,189 --> 00:08:13,309
+ <font color="#E5E5E5">klien dan server kami dengan benar dan kami </font>
+
+197
+00:08:13,309 --> 00:08:14,959
+ harus tetap di <font color="#CCCCCC">atas </font><font color="#E5E5E5">itu tetapi semua </font>
+
+198
+00:08:14,959 --> 00:08:16,610
+ ini <font color="#CCCCCC">kembali untuk membiarkan saya memiliki rencana dan </font>
+
+199
+00:08:16,610 --> 00:08:19,339
+ pastikan <font color="#E5E5E5">bahwa aku yang </font><font color="#CCCCCC">aku tahu </font><font color="#E5E5E5">itu </font>
+
+200
+00:08:19,339 --> 00:08:20,839
+ Saya melakukan hal-hal <font color="#CCCCCC">sesuai dengan </font><font color="#E5E5E5">rencana </font><font color="#CCCCCC">yang saya </font>
+
+201
+00:08:20,839 --> 00:08:24,110
+ ada di tempat <font color="#E5E5E5">semua yang tepat sehingga dengan </font><font color="#CCCCCC">semua </font>
+
+202
+00:08:24,110 --> 00:08:27,199
+ ini seperti yang saya katakan <font color="#E5E5E5">saya tahu itu </font>
+
+203
+00:08:27,199 --> 00:08:29,559
+ <font color="#E5E5E5">tak terelakkan </font><font color="#CCCCCC">bahwa Anda akan menempatkan </font>
+
+204
+00:08:29,559 --> 00:08:31,580
+ komponen dalam <font color="#CCCCCC">aplikasi </font><font color="#E5E5E5">web Anda </font><font color="#CCCCCC">itu </font>
+
+205
+00:08:31,580 --> 00:08:33,559
+ <font color="#E5E5E5">memiliki kerentanan yang diketahui, jadi itu </font>
+
+206
+00:08:33,559 --> 00:08:35,630
+ <font color="#E5E5E5">sangat sulit untuk </font><font color="#CCCCCC">berkeliling </font><font color="#E5E5E5">sehingga apa </font>
+
+207
+00:08:35,630 --> 00:08:36,529
+ <font color="#E5E5E5">Yang perlu kita lakukan adalah kita harus turun </font>
+
+208
+00:08:36,529 --> 00:08:37,760
+ <font color="#CCCCCC">di sini dan </font><font color="#E5E5E5">pastikan</font><font color="#CCCCCC"> bahwa kita </font>
+
+209
+00:08:37,760 --> 00:08:39,229
+ terus-menerus memeriksa <font color="#E5E5E5">hal-hal ini </font><font color="#CCCCCC">yang </font>
+
+210
+00:08:39,229 --> 00:08:40,399
+ beberapa <font color="#E5E5E5">beberapa hal yang saya akan </font>
+
+211
+00:08:40,399 --> 00:08:44,420
+ selesaikan <font color="#E5E5E5">dengan </font><font color="#CCCCCC">beberapa database satu </font>
+
+212
+00:08:44,420 --> 00:08:48,079
+ <font color="#E5E5E5">disebut CV II dan kemudian satu lagi </font>
+
+213
+00:08:48,079 --> 00:08:53,180
+ adalah <font color="#E5E5E5">di VD </font><font color="#CCCCCC">baik-baik saja CVE berdiri </font>
+
+214
+00:08:53,180 --> 00:08:53,870
+ untuk umum 
+
+215
+00:08:53,870 --> 00:08:56,600
+ kerentanan dan eksploitasi <font color="#CCCCCC">dan kemudian </font>
+
+216
+00:08:56,600 --> 00:08:58,660
+ <font color="#CCCCCC">nvd adalah kerentanan nasional </font>
+
+217
+00:08:58,660 --> 00:09:03,170
+ <font color="#E5E5E5">database </font><font color="#CCCCCC">jadi </font><font color="#E5E5E5">saya akan menaruh </font><font color="#CCCCCC">tautan ke Anda </font><font color="#E5E5E5">ini </font>
+
+218
+00:09:03,170 --> 00:09:05,120
+ tahu dengan <font color="#E5E5E5">video ini tetapi Anda </font><font color="#CCCCCC">dapat </font><font color="#E5E5E5">pergi dan </font>
+
+219
+00:09:05,120 --> 00:09:06,529
+ jika dan Anda dapat memeriksa hei inilah 
+
+220
+00:09:06,529 --> 00:09:08,510
+ perusahaan adalah komponen dari <font color="#CCCCCC">web saya </font>
+
+221
+00:09:08,510 --> 00:09:11,000
+ aplikasi <font color="#CCCCCC">biarkan aku biarkan aku memeriksa </font>
+
+222
+00:09:11,000 --> 00:09:13,610
+ kedua <font color="#E5E5E5">database ini untuk melihat apakah </font>
+
+223
+00:09:13,610 --> 00:09:16,070
+ ada kerentanan <font color="#CCCCCC">yang ada </font>
+
+224
+00:09:16,070 --> 00:09:18,490
+ dikenal dengan <font color="#CCCCCC">komponen yang saya miliki </font><font color="#E5E5E5">jadi </font>
+
+225
+00:09:18,490 --> 00:09:22,550
+ lagi nomor <font color="#CCCCCC">sembilan pada daftar teratas </font>
+
+226
+00:09:22,550 --> 00:09:25,839
+ <font color="#E5E5E5">sepuluh komponen </font><font color="#CCCCCC">tawon </font><font color="#E5E5E5">dengan komponen yang dikenal </font>
+
+227
+00:09:25,839 --> 00:09:28,660
+ Kerentanan itu hal yang tak terelakkan 
+
+228
+00:09:28,660 --> 00:09:31,520
+ <font color="#CCCCCC">jadi sementara mereka semua sementara di sana </font>
+
+229
+00:09:31,520 --> 00:09:33,890
+ kerentanan di luar <font color="#E5E5E5">sana </font><font color="#CCCCCC">kita bisa </font>
+
+230
+00:09:33,890 --> 00:09:35,900
+ masih <font color="#E5E5E5">mengambil langkah untuk mengurangi itu dan </font>
+
+231
+00:09:35,900 --> 00:09:39,080
+ dan memastikan bahwa kita <font color="#E5E5E5">tetap berada di sana </font>
+
+232
+00:09:39,080 --> 00:09:40,790
+ <font color="#E5E5E5">atas </font><font color="#CCCCCC">ini sebisa mungkin </font><font color="#E5E5E5">begitu </font>
+
+233
+00:09:40,790 --> 00:09:42,560
+ terima kasih <font color="#E5E5E5">untuk </font><font color="#CCCCCC">menonton </font><font color="#E5E5E5">papan cahaya </font><font color="#CCCCCC">ini </font>
+
+234
+00:09:42,560 --> 00:09:44,750
+ video pelajaran <font color="#E5E5E5">hey jika Anda </font><font color="#CCCCCC">menyukai video </font><font color="#E5E5E5">ini </font>
+
+235
+00:09:44,750 --> 00:09:46,910
+ Anda dapat <font color="#CCCCCC">mengklik Berlangganan di sini di </font>
+
+236
+00:09:46,910 --> 00:09:49,700
+ <font color="#CCCCCC">bola DC </font><font color="#E5E5E5">ini </font><font color="#CCCCCC">dan kami akan melihat kalian keluar </font>
+
+237
+00:09:49,700 --> 00:09:52,630
+ ada <font color="#E5E5E5">di komunitas </font>
+
+238
+00:09:58,830 --> 00:00:00,000
+ kamu 
+
