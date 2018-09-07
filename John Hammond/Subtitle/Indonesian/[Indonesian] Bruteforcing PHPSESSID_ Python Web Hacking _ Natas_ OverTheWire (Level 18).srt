@@ -1,0 +1,940 @@
+1
+00:00:00,030 --> 00:00:01,920
+ ada apa dengan YouTube ini <font color="#CCCCCC">adalah </font><font color="#E5E5E5">John Hammond </font>
+
+2
+00:00:01,920 --> 00:00:03,899
+ <font color="#E5E5E5">dan kita melihat lagi </font><font color="#CCCCCC">pada </font><font color="#E5E5E5">perang natus </font>
+
+3
+00:00:03,899 --> 00:00:05,670
+ permainan dari atas kawat <font color="#CCCCCC">jadi sekarang kita berada </font><font color="#E5E5E5">di </font>
+
+4
+00:00:05,670 --> 00:00:07,950
+ level <font color="#E5E5E5">18 dan mari kita jalankan dan jalankan </font>
+
+5
+00:00:07,950 --> 00:00:09,690
+ <font color="#E5E5E5">script untuk melihat apa </font><font color="#CCCCCC">yang</font><font color="#E5E5E5"> kita </font>
+
+6
+00:00:09,690 --> 00:00:10,860
+ sebenarnya <font color="#E5E5E5">bekerja dengan di sini </font>
+
+7
+00:00:10,860 --> 00:00:12,900
+ tampak seperti <font color="#E5E5E5">halaman kembali, silakan masuk </font>
+
+8
+00:00:12,900 --> 00:00:14,519
+ dengan akun admin Anda untuk mengambil 
+
+9
+00:00:14,519 --> 00:00:16,680
+ kredensial untuk natus 19 <font color="#CCCCCC">oke </font>
+
+10
+00:00:16,680 --> 00:00:18,420
+ <font color="#E5E5E5">jadi ini tidak terlihat seperti sekuelnya </font>
+
+11
+00:00:18,420 --> 00:00:21,210
+ injeksi <font color="#CCCCCC">atau </font><font color="#E5E5E5">eksekusi </font><font color="#CCCCCC">perintah </font><font color="#E5E5E5">itu </font>
+
+12
+00:00:21,210 --> 00:00:22,439
+ <font color="#E5E5E5">kami telah melihat di beberapa tingkat lainnya </font>
+
+13
+00:00:22,439 --> 00:00:24,449
+ <font color="#E5E5E5">mungkin ini adalah hal baru yang </font><font color="#CCCCCC">kita punya </font>
+
+14
+00:00:24,449 --> 00:00:26,490
+ <font color="#CCCCCC">bidang masukan nama pengguna dan kata sandi di sini </font>
+
+15
+00:00:26,490 --> 00:00:28,830
+ <font color="#E5E5E5">tapi mari kita lihat kode sumbernya </font>
+
+16
+00:00:28,830 --> 00:00:32,640
+ <font color="#E5E5E5">dan coba analisis apa yang bisa kita tempelkan itu </font>
+
+17
+00:00:32,640 --> 00:00:35,460
+ menjadi <font color="#CCCCCC">permintaan mendapatkan kami </font><font color="#E5E5E5">dan sekarang kita bisa </font>
+
+18
+00:00:35,460 --> 00:00:37,110
+ <font color="#CCCCCC">Diann </font><font color="#E5E5E5">mengikat apa yang dikembalikan untuk kita </font>
+
+19
+00:00:37,110 --> 00:00:39,920
+ <font color="#E5E5E5">dan hapus semua tag istirahat dengan beberapa </font>
+
+20
+00:00:39,920 --> 00:00:43,140
+ <font color="#CCCCCC">Cari dan Ganti </font><font color="#E5E5E5">sihir sehingga kode PHP </font>
+
+21
+00:00:43,140 --> 00:00:45,960
+ mulai memberitahu kami bahwa kami memiliki <font color="#E5E5E5">ID maksimal </font>
+
+22
+00:00:45,960 --> 00:00:48,600
+ <font color="#E5E5E5">set variabel ke 640 dalam komentar di sini </font>
+
+23
+00:00:48,600 --> 00:00:49,829
+ <font color="#CCCCCC">6-4 Anda seharusnya </font><font color="#E5E5E5">cukup untuk </font><font color="#CCCCCC">semua orang </font>
+
+24
+00:00:49,829 --> 00:00:51,930
+ <font color="#E5E5E5">tidak sepenuhnya tahu apa artinya </font><font color="#CCCCCC">hanya </font>
+
+25
+00:00:51,930 --> 00:00:54,989
+ namun <font color="#CCCCCC">demikian kami akan terus membaca di sini satu </font>
+
+26
+00:00:54,989 --> 00:00:59,399
+ fungsi <font color="#CCCCCC">login admin yang valid menentukan </font>
+
+27
+00:00:59,399 --> 00:01:00,780
+ jika <font color="#CCCCCC">nama pengguna permintaan sama dengan </font>
+
+28
+00:01:00,780 --> 00:01:02,460
+ admin metode <font color="#E5E5E5">otentikasi ini </font>
+
+29
+00:01:02,460 --> 00:01:04,680
+ tampaknya <font color="#E5E5E5">aman dan telah dinonaktifkan </font>
+
+30
+00:01:04,680 --> 00:01:07,049
+ <font color="#CCCCCC">untuk </font><font color="#E5E5E5">saat ini oke jadi hanya fungsi itu saja </font>
+
+31
+00:01:07,049 --> 00:01:09,240
+ mengembalikan <font color="#CCCCCC">nol itu cukup banyak tidak melakukan apa-apa </font>
+
+32
+00:01:09,240 --> 00:01:13,170
+ baru <font color="#CCCCCC">saja kembali </font><font color="#E5E5E5">nol oke </font><font color="#CCCCCC">tapi </font><font color="#E5E5E5">semacam itu </font>
+
+33
+00:01:13,170 --> 00:01:15,630
+ dari <font color="#E5E5E5">nerfs kemampuan kita </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">login sebagai admin </font>
+
+34
+00:01:15,630 --> 00:01:17,820
+ karena <font color="#E5E5E5">jika kita lulus </font><font color="#CCCCCC">paling lama </font>
+
+35
+00:01:17,820 --> 00:01:19,470
+ <font color="#E5E5E5">minta dengan </font><font color="#CCCCCC">bidang </font><font color="#E5E5E5">nama pengguna </font><font color="#CCCCCC">saja </font>
+
+36
+00:01:19,470 --> 00:01:20,970
+ mencoba masuk karena saya dan itu tidak akan 
+
+37
+00:01:20,970 --> 00:01:25,020
+ bekerja <font color="#E5E5E5">untuk kami jadi oke apa pun itu </font>
+
+38
+00:01:25,020 --> 00:01:26,430
+ <font color="#CCCCCC">akan melakukan apa pun </font><font color="#E5E5E5">hanya</font><font color="#CCCCCC"> kembali </font><font color="#E5E5E5">nol </font>
+
+39
+00:01:26,430 --> 00:01:29,250
+ <font color="#E5E5E5">jadi fungsi ini hanya ID yang valid </font>
+
+40
+00:01:29,250 --> 00:01:31,170
+ mengembalikan apakah <font color="#E5E5E5">itu nomor atau tidak </font>
+
+41
+00:01:31,170 --> 00:01:32,520
+ Argumen <font color="#E5E5E5">yang diteruskan ke ID itu adalah a </font>
+
+42
+00:01:32,520 --> 00:01:39,420
+ nomor buat ID pengguna tidak <font color="#E5E5E5">terlihat seperti </font>
+
+43
+00:01:39,420 --> 00:01:41,610
+ pengguna benar-benar <font color="#CCCCCC">digunakan dalam </font><font color="#E5E5E5">fungsi ini, tetapi </font>
+
+44
+00:01:41,610 --> 00:01:43,680
+ <font color="#E5E5E5">itu mengambil keuntungan dari ID maksimal ini </font>
+
+45
+00:01:43,680 --> 00:01:45,689
+ variabel <font color="#CCCCCC">itu </font><font color="#E5E5E5">lingkup global tepat di </font>
+
+46
+00:01:45,689 --> 00:01:47,369
+ di luar <font color="#E5E5E5">dan itu menciptakan nomor acak </font>
+
+47
+00:01:47,369 --> 00:01:51,180
+ <font color="#CCCCCC">dari 1 hingga 640 itulah rand itu </font>
+
+48
+00:01:51,180 --> 00:01:52,140
+ fungsi <font color="#CCCCCC">tidak </font>
+
+49
+00:01:52,140 --> 00:01:54,560
+ <font color="#CCCCCC">oke jadi buat ID adalah jenis acak </font>
+
+50
+00:01:54,560 --> 00:01:57,719
+ men-debug pesan yang <font color="#E5E5E5">bisa kita </font><font color="#CCCCCC">gunakan dengan </font><font color="#E5E5E5">get </font>
+
+51
+00:01:57,719 --> 00:02:01,079
+ parameter <font color="#CCCCCC">yang cukup </font><font color="#E5E5E5">berguna untuk </font><font color="#CCCCCC">mengetahui </font><font color="#E5E5E5">di </font>
+
+52
+00:02:01,079 --> 00:02:02,790
+ Kasus <font color="#E5E5E5">itu memberi kita yang berharga </font>
+
+53
+00:02:02,790 --> 00:02:06,299
+ informasi <font color="#E5E5E5">tetapi mulai sesi saya </font><font color="#CCCCCC">terlihat </font>
+
+54
+00:02:06,299 --> 00:02:09,989
+ seperti itu akan menentukan apakah atau <font color="#E5E5E5">tidak </font>
+
+55
+00:02:09,989 --> 00:02:11,970
+ ID sesi sudah ada di <font color="#CCCCCC">cookie </font>
+
+56
+00:02:11,970 --> 00:02:13,830
+ <font color="#E5E5E5">ID sesi PHP dan jika </font>
+
+57
+00:02:13,830 --> 00:02:17,450
+ valid atau <font color="#CCCCCC">tidak dan jika itu </font><font color="#E5E5E5">yang terjadi </font>
+
+58
+00:02:17,450 --> 00:02:20,190
+ <font color="#E5E5E5">itu akan melalui kode ini jika tidak </font>
+
+59
+00:02:20,190 --> 00:02:21,360
+ tidak ada yang <font color="#E5E5E5">tidak ada </font>
+
+60
+00:02:21,360 --> 00:02:23,970
+ pernyataan dengan ini <font color="#E5E5E5">sepertinya jadi jika </font>
+
+61
+00:02:23,970 --> 00:02:25,860
+ <font color="#E5E5E5">sesi </font><font color="#CCCCCC">belum sudah </font><font color="#E5E5E5">mulai </font>
+
+62
+00:02:25,860 --> 00:02:27,810
+ Sepertinya itu hanya akan mengatakan <font color="#E5E5E5">itu gagal atau </font>
+
+63
+00:02:27,810 --> 00:02:29,490
+ <font color="#CCCCCC">berubah palsu </font><font color="#E5E5E5">jika tidak maka akan menciptakan </font>
+
+64
+00:02:29,490 --> 00:02:31,770
+ sesi baru <font color="#E5E5E5">menentukan apakah Anda seorang admin </font>
+
+65
+00:02:31,770 --> 00:02:36,660
+ <font color="#E5E5E5">dan bug yang </font><font color="#CCCCCC">terlihat seperti menutupnya </font>
+
+66
+00:02:36,660 --> 00:02:39,690
+ <font color="#E5E5E5">variabel admin ada seperti sesi itu </font>
+
+67
+00:02:39,690 --> 00:02:43,590
+ admin sama dengan <font color="#CCCCCC">nol ok sehingga mengunci kita </font>
+
+68
+00:02:43,590 --> 00:02:44,880
+ keluar lagi <font color="#E5E5E5">menjadi </font><font color="#CCCCCC">band yang masih </font>
+
+69
+00:02:44,880 --> 00:02:49,170
+ tidak akan bekerja dengan <font color="#CCCCCC">benar ada kabut yang </font><font color="#E5E5E5">valid </font>
+
+70
+00:02:49,170 --> 00:02:50,940
+ admin log dan kembali <font color="#CCCCCC">nol seperti admin </font>
+
+71
+00:02:50,940 --> 00:02:55,440
+ dikirim ke <font color="#E5E5E5">nol sehingga sesi </font><font color="#CCCCCC">itu </font>
+
+72
+00:02:55,440 --> 00:02:57,959
+ flag admin lama mengatur ulang kita sehingga terlihat 
+
+73
+00:02:57,959 --> 00:02:59,850
+ <font color="#CCCCCC">seperti itu tidak pernah benar-benar memungkinkan kita </font><font color="#E5E5E5">menjadi seperti itu </font>
+
+74
+00:02:59,850 --> 00:03:03,540
+ admin sesi ya bahkan sesi ini 
+
+75
+00:03:03,540 --> 00:03:05,640
+ admin sama dengan nol tetapi nanti <font color="#CCCCCC">dalam hal ini </font>
+
+76
+00:03:05,640 --> 00:03:08,459
+ cetak fungsi kredensial <font color="#E5E5E5">sepertinya </font>
+
+77
+00:03:08,459 --> 00:03:10,140
+ itu mencoba <font color="#E5E5E5">untuk menentukan apakah seperti itu </font>
+
+78
+00:03:10,140 --> 00:03:12,959
+ admin sama dengan <font color="#E5E5E5">satu maka </font><font color="#CCCCCC">akan dikatakan </font>
+
+79
+00:03:12,959 --> 00:03:14,310
+ Anda seorang admin <font color="#E5E5E5">dalam kredensial </font><font color="#CCCCCC">berikutnya </font>
+
+80
+00:03:14,310 --> 00:03:18,810
+ tingkat di <font color="#E5E5E5">sini jadi kami harus mengatur sesi </font>
+
+81
+00:03:18,810 --> 00:03:22,640
+ admin ke <font color="#E5E5E5">satu tetapi kami tidak bisa dalam kode ini </font>
+
+82
+00:03:22,640 --> 00:03:25,580
+ <font color="#E5E5E5">tempatkan apa yang telah kita baca </font><font color="#CCCCCC">sejauh ini dengan baik </font>
+
+83
+00:03:25,580 --> 00:03:27,510
+ jika tidak, kami masuk sebagai biasa 
+
+84
+00:03:27,510 --> 00:03:29,970
+ pecundang <font color="#CCCCCC">semacam </font><font color="#E5E5E5">pengguna biasa </font><font color="#CCCCCC">masuk ke admin </font>
+
+85
+00:03:29,970 --> 00:03:35,580
+ untuk mengambil kredensial ya jika 
+
+86
+00:03:35,580 --> 00:03:38,360
+ sesi <font color="#E5E5E5">telah dimulai akan menampilkan </font><font color="#CCCCCC">itu </font>
+
+87
+00:03:38,360 --> 00:03:44,459
+ <font color="#E5E5E5">kalau tidak akan membaca mereka membaca </font>
+
+88
+00:03:44,459 --> 00:03:47,459
+ meminta kami <font color="#E5E5E5">sesi admin </font><font color="#CCCCCC">akan </font>
+
+89
+00:03:47,459 --> 00:03:49,320
+ menjadi 0 <font color="#CCCCCC">karena itu </font><font color="#E5E5E5">adalah login admin yang valid </font>
+
+90
+00:03:49,320 --> 00:03:53,940
+ <font color="#CCCCCC">adalah </font><font color="#E5E5E5">0 dan itu akan </font><font color="#CCCCCC">menunjukkan </font><font color="#E5E5E5">bentuknya jika kita </font>
+
+91
+00:03:53,940 --> 00:03:56,940
+ <font color="#E5E5E5">belum jika kami belum masuk ok jadi </font>
+
+92
+00:03:56,940 --> 00:04:01,320
+ mari kita <font color="#E5E5E5">mencobanya </font><font color="#CCCCCC">mari kita pergi ke depan dan </font>
+
+93
+00:04:01,320 --> 00:04:03,959
+ buat <font color="#CCCCCC">permintaan dapatkan di sini kami akan meneruskan </font>
+
+94
+00:04:03,959 --> 00:04:06,330
+ data <font color="#E5E5E5">memastikan bahwa kami benar-benar memposting </font>
+
+95
+00:04:06,330 --> 00:04:08,940
+ halaman asli bukan <font color="#CCCCCC">kode sumber no </font>
+
+96
+00:04:08,940 --> 00:04:12,900
+ mengubah <font color="#CCCCCC">URL agar </font><font color="#E5E5E5">nama pengguna </font><font color="#CCCCCC">mereka </font><font color="#E5E5E5">bisa sama </font>
+
+97
+00:04:12,900 --> 00:04:20,690
+ tolong dan kata sandi dapat berlangganan 
+
+98
+00:04:20,930 --> 00:04:25,330
+ iklan diri tidak tahu malu menjalankan <font color="#E5E5E5">ini </font>
+
+99
+00:04:25,330 --> 00:04:27,370
+ jadi kami <font color="#CCCCCC">tiba di </font><font color="#E5E5E5">sini </font><font color="#CCCCCC">login </font><font color="#E5E5E5">Anda </font><font color="#CCCCCC">ke reguler </font>
+
+100
+00:04:27,370 --> 00:04:28,960
+ pengguna <font color="#CCCCCC">masuk </font><font color="#E5E5E5">sebagai admin untuk mengambil </font>
+
+101
+00:04:28,960 --> 00:04:31,360
+ kredensial untuk <font color="#CCCCCC">natus </font><font color="#E5E5E5">19 apa sih </font>
+
+102
+00:04:31,360 --> 00:04:38,440
+ <font color="#E5E5E5">oke </font><font color="#CCCCCC">saya tidak tahu mengapa kita bukan admin </font>
+
+103
+00:04:38,440 --> 00:04:40,030
+ selain fakta bahwa saya <font color="#CCCCCC">mencoba masuk </font>
+
+104
+00:04:40,030 --> 00:04:43,330
+ sebagai silakan berlangganan dengan <font color="#CCCCCC">sangat jelas kami </font>
+
+105
+00:04:43,330 --> 00:04:44,440
+ <font color="#CCCCCC">tidak akan menjadi admin </font><font color="#E5E5E5">saja </font>
+
+106
+00:04:44,440 --> 00:04:46,300
+ <font color="#E5E5E5">mari cetak kue apa yang kita miliki </font>
+
+107
+00:04:46,300 --> 00:04:47,740
+ <font color="#CCCCCC">karena terlihat seperti </font><font color="#E5E5E5">di sumbernya </font>
+
+108
+00:04:47,740 --> 00:04:51,699
+ kode <font color="#E5E5E5">itu menunjukkan kepada kita sesi PHP </font>
+
+109
+00:04:51,699 --> 00:04:57,120
+ ID sesi PHP variabel <font color="#E5E5E5">ditetapkan ke </font><font color="#CCCCCC">260 </font>
+
+110
+00:04:57,120 --> 00:05:00,460
+ <font color="#CCCCCC">jadi itu harus apa kode sumber itu </font>
+
+111
+00:05:00,460 --> 00:05:02,650
+ <font color="#E5E5E5">memberi kami sebagai </font><font color="#CCCCCC">acak nomor acak </font>
+
+112
+00:05:02,650 --> 00:05:07,509
+ <font color="#E5E5E5">antara 1 dan 6 40 tapi tidak mungkin kita </font>
+
+113
+00:05:07,509 --> 00:05:11,289
+ <font color="#CCCCCC">sebaliknya bisa </font><font color="#E5E5E5">menjadi admin karena itu </font>
+
+114
+00:05:11,289 --> 00:05:13,389
+ <font color="#E5E5E5">bukankah itu tidak akan membiarkan kita menggunakan </font><font color="#CCCCCC">salah satu dari itu </font>
+
+115
+00:05:13,389 --> 00:05:16,210
+ mereka suka <font color="#E5E5E5">variabel admin sesi jadi </font>
+
+116
+00:05:16,210 --> 00:05:19,300
+ mungkin adalah <font color="#E5E5E5">salah satu dari ID sesi ini </font>
+
+117
+00:05:19,300 --> 00:05:23,050
+ hanya saja ID admin yang <font color="#E5E5E5">akan saya lakukan </font>
+
+118
+00:05:23,050 --> 00:05:24,490
+ sedikit <font color="#E5E5E5">penelitian di sini mari kita tembak </font>
+
+119
+00:05:24,490 --> 00:05:26,560
+ <font color="#E5E5E5">Firefox dan saya hanya ingin menunjukkan </font>
+
+120
+00:05:26,560 --> 00:05:30,069
+ ini <font color="#CCCCCC">untuk Anda karena ID sesi </font><font color="#E5E5E5">PHP </font><font color="#CCCCCC">adalah </font>
+
+121
+00:05:30,069 --> 00:05:32,080
+ sesuatu yang kita <font color="#CCCCCC">mungkin harus mengenal </font>
+
+122
+00:05:32,080 --> 00:05:40,449
+ Saya tahu ada PHP <font color="#E5E5E5">ID sesi PHP </font>
+
+123
+00:05:40,449 --> 00:05:43,960
+ tenang seperti artikel tentang hal ini ada 
+
+124
+00:05:43,960 --> 00:05:50,860
+ harus menjadi ID sesi <font color="#E5E5E5">PHP SS ID akan </font>
+
+125
+00:05:50,860 --> 00:05:54,069
+ sebenarnya memberitahu kita apa benda ini 
+
+126
+00:05:54,069 --> 00:05:56,830
+ terlihat <font color="#CCCCCC">seperti </font><font color="#E5E5E5">baru saja di set sesi </font>
+
+127
+00:05:56,830 --> 00:06:02,409
+ fungsi itu tidak akan memberi tahu kita apa pun 
+
+128
+00:06:02,409 --> 00:06:06,090
+ <font color="#E5E5E5">tentang apa itu ID sesi PHP </font>
+
+129
+00:06:06,090 --> 00:06:08,949
+ meskipun kemudian ada satu dan kelihatannya 
+
+130
+00:06:08,949 --> 00:06:14,129
+ <font color="#CCCCCC">seperti </font><font color="#E5E5E5">itu harus disimpan </font><font color="#CCCCCC">stack overflow </font>
+
+131
+00:06:18,110 --> 00:06:20,759
+ PHP menggunakan dua metode <font color="#E5E5E5">pelacakan </font>
+
+132
+00:06:20,759 --> 00:06:22,469
+ cookie sesi diaktifkan seperti di 
+
+133
+00:06:22,469 --> 00:06:24,389
+ <font color="#E5E5E5">kasus Anda menggunakan mereka </font><font color="#CCCCCC">baik </font><font color="#E5E5E5">- </font><font color="#CCCCCC">baik saja sehingga harus </font>
+
+134
+00:06:24,389 --> 00:06:26,219
+ akan apa yang kami bekerja dengan <font color="#E5E5E5">begitu terlihat seperti </font>
+
+135
+00:06:26,219 --> 00:06:27,990
+ <font color="#E5E5E5">kita harus mengubah variabel cookie itu </font>
+
+136
+00:06:27,990 --> 00:06:31,589
+ ID sesi PHP ke salah satu nomor 
+
+137
+00:06:31,589 --> 00:06:34,800
+ antara 1 dan 640 karena mungkin salah satunya 
+
+138
+00:06:34,800 --> 00:06:38,819
+ mereka akan <font color="#E5E5E5">menjadi ID admin jadi mari kita coba </font>
+
+139
+00:06:38,819 --> 00:06:43,830
+ <font color="#CCCCCC">yang mari kita dapatkan halaman dengan </font><font color="#E5E5E5">sesi </font>
+
+140
+00:06:43,830 --> 00:06:46,460
+ ID ditetapkan untuk <font color="#E5E5E5">hal lain </font><font color="#CCCCCC">jadi mari kita </font><font color="#E5E5E5">dapatkan </font>
+
+141
+00:06:46,460 --> 00:06:54,180
+ <font color="#E5E5E5">dengan cookie sama dengan set ID sesi PHP </font>
+
+142
+00:06:54,180 --> 00:06:57,539
+ untuk yang <font color="#CCCCCC">benar itu harus string </font>
+
+143
+00:06:57,539 --> 00:07:02,430
+ di sini <font color="#E5E5E5">saya tidak </font><font color="#CCCCCC">perlu cookie lagi </font><font color="#E5E5E5">jadi </font>
+
+144
+00:07:02,430 --> 00:07:04,080
+ Saya cukup percaya itu akan kembali berkata 
+
+145
+00:07:04,080 --> 00:07:06,419
+ Anda masuk sebagai reguler reguler 
+
+146
+00:07:06,419 --> 00:07:10,379
+ <font color="#E5E5E5">pecundang </font><font color="#CCCCCC">dan mari kita benar-benar bergerak </font>
+
+147
+00:07:10,379 --> 00:07:11,610
+ maju <font color="#E5E5E5">dari sini karena </font><font color="#CCCCCC">kita mau </font>
+
+148
+00:07:11,610 --> 00:07:13,379
+ untuk melihat oke <font color="#CCCCCC">itu jelas </font><font color="#E5E5E5">bukan </font>
+
+149
+00:07:13,379 --> 00:07:15,029
+ admin pengguna jadi apa lagi yang bisa <font color="#E5E5E5">kita dapatkan itu </font>
+
+150
+00:07:15,029 --> 00:07:19,129
+ mungkin kita ingin <font color="#E5E5E5">menentukan dalam satu lingkaran </font>
+
+151
+00:07:19,129 --> 00:07:21,029
+ <font color="#E5E5E5">karena kita mendapatkan </font><font color="#CCCCCC">halamannya </font><font color="#E5E5E5">dan </font>
+
+152
+00:07:21,029 --> 00:07:22,289
+ lagi <font color="#E5E5E5">dan </font><font color="#CCCCCC">lagi dengan </font><font color="#E5E5E5">sesi baru </font>
+
+153
+00:07:22,289 --> 00:07:25,709
+ ID <font color="#CCCCCC">jika kami adalah admin jadi jika Anda seorang </font>
+
+154
+00:07:25,709 --> 00:07:28,649
+ admin adalah string yang ada di dalamnya 
+
+155
+00:07:28,649 --> 00:07:30,680
+ <font color="#E5E5E5">kanan </font>
+
+156
+00:07:30,680 --> 00:07:38,399
+ mari lihat <font color="#E5E5E5">konten respons dot text bisa </font>
+
+157
+00:07:38,399 --> 00:07:40,139
+ hanya menjadi variabel konten <font color="#CCCCCC">yang kami </font>
+
+158
+00:07:40,139 --> 00:07:48,569
+ bekerja dengan konten sebenarnya <font color="#CCCCCC">mungkin </font>
+
+159
+00:07:48,569 --> 00:07:52,830
+ ingin <font color="#E5E5E5">yang di sini cetak mendapatkannya dan </font>
+
+160
+00:07:52,830 --> 00:07:59,089
+ lalu cetak <font color="#E5E5E5">konten hanya dengan mencetak coba </font>
+
+161
+00:07:59,089 --> 00:08:02,819
+ ID <font color="#E5E5E5">atau ID sesi dan kami akan mengulang </font>
+
+162
+00:08:02,819 --> 00:08:07,939
+ melalui <font color="#E5E5E5">untuk ID sesi dalam kisaran </font><font color="#CCCCCC">1 </font><font color="#E5E5E5">hingga </font>
+
+163
+00:08:07,939 --> 00:08:12,419
+ <font color="#E5E5E5">640 kita bisa naik ke </font><font color="#CCCCCC">1 641 sejak itu </font>
+
+164
+00:08:12,419 --> 00:08:18,089
+ akan inklusif di sini <font color="#E5E5E5">dan mari kita jalankan </font>
+
+165
+00:08:18,089 --> 00:08:22,039
+ string ID sesi kami 
+
+166
+00:08:25,250 --> 00:08:27,680
+ sebelum kami <font color="#E5E5E5">melakukan ini, saya harus </font><font color="#CCCCCC">melakukannya </font>
+
+167
+00:08:27,680 --> 00:08:30,530
+ sebenarnya memeriksa itu <font color="#E5E5E5">atau menyimpan itu </font>
+
+168
+00:08:30,530 --> 00:08:32,240
+ kode sumber <font color="#E5E5E5">karena saya ingin tahu </font>
+
+169
+00:08:32,240 --> 00:08:35,450
+ apa <font color="#CCCCCC">itu string itu karena </font>
+
+170
+00:08:35,450 --> 00:08:37,729
+ sejujurnya jujur ​​lupakan saja 
+
+171
+00:08:37,729 --> 00:08:41,360
+ periksa ayo kita lakukan satu lagi <font color="#E5E5E5">permintaan saja </font>
+
+172
+00:08:41,360 --> 00:08:45,520
+ <font color="#CCCCCC">memastikan </font><font color="#E5E5E5">bahwa </font><font color="#CCCCCC">adalah </font><font color="#E5E5E5">string yang benar </font>
+
+173
+00:08:45,520 --> 00:08:48,050
+ menentukan apakah kita bukan <font color="#E5E5E5">admin mari </font>
+
+174
+00:08:48,050 --> 00:08:54,290
+ cetak jawaban <font color="#E5E5E5">dot </font><font color="#CCCCCC">text DN untuk mengikat </font><font color="#E5E5E5">I </font>
+
+175
+00:08:54,290 --> 00:08:55,400
+ benar-benar harus <font color="#CCCCCC">menyimpan kode ini saya </font>
+
+176
+00:08:55,400 --> 00:09:00,110
+ maaf saya tidak Anda <font color="#CCCCCC">seorang admin ok itu </font>
+
+177
+00:09:00,110 --> 00:09:02,510
+ bekerja baik-baik saja untuk <font color="#CCCCCC">kita baik mari kita </font>
+
+178
+00:09:02,510 --> 00:09:04,160
+ ini di <font color="#E5E5E5">panel baru kalau-kalau kita membutuhkannya </font>
+
+179
+00:09:04,160 --> 00:09:11,240
+ lagi dan mari kita mulai <font color="#E5E5E5">sesi serangan </font>
+
+180
+00:09:11,240 --> 00:09:13,550
+ ID dapatkan dengan cookie ID sesi PHP 
+
+181
+00:09:13,550 --> 00:09:16,520
+ ditetapkan sebagai string di sini 
+
+182
+00:09:16,520 --> 00:09:18,050
+ konten <font color="#E5E5E5">menentukan apakah Anda seorang admin </font>
+
+183
+00:09:18,050 --> 00:09:19,820
+ ada di konten <font color="#E5E5E5">jika itu akan didapat </font>
+
+184
+00:09:19,820 --> 00:09:21,890
+ dan jika tidak <font color="#E5E5E5">maka akan dicetak </font>
+
+185
+00:09:21,890 --> 00:09:24,950
+ mencoba ID sesi <font color="#E5E5E5">dan mari kita lihat bagaimana ini </font>
+
+186
+00:09:24,950 --> 00:09:27,080
+ Sepertinya <font color="#E5E5E5">aku akan melakukan ini di perintah </font>
+
+187
+00:09:27,080 --> 00:09:31,700
+ baris sehingga kita bisa <font color="#CCCCCC">Python natus 18 pi coba 1 </font>
+
+188
+00:09:31,700 --> 00:09:36,310
+ <font color="#CCCCCC">2 3 </font><font color="#E5E5E5">etc etc etc </font><font color="#CCCCCC">jadi saya akan membiarkan ini berjalan dan </font>
+
+189
+00:09:36,310 --> 00:09:38,540
+ sebenarnya saya <font color="#CCCCCC">mungkin harus beristirahat </font>
+
+190
+00:09:38,540 --> 00:09:42,650
+ ketika <font color="#CCCCCC">kita mendapatkannya dan kemudian mencetak </font>
+
+191
+00:09:42,650 --> 00:09:46,400
+ ID sesi yang kita punya sekarang mari kita jalankan 
+
+192
+00:09:46,400 --> 00:09:50,780
+ ini <font color="#E5E5E5">dan saya akan menjeda video jadi </font><font color="#CCCCCC">peran </font>
+
+193
+00:09:50,780 --> 00:09:53,060
+ <font color="#E5E5E5">berhenti merekam jadi setelah selesai </font><font color="#CCCCCC">kita </font>
+
+194
+00:09:53,060 --> 00:09:55,700
+ dapat melihat apa kata sandi itu sehingga saya berlari 
+
+195
+00:09:55,700 --> 00:09:58,340
+ melewatinya <font color="#E5E5E5">dan itu tidak </font><font color="#CCCCCC">berhasil jadi mari </font>
+
+196
+00:09:58,340 --> 00:09:59,660
+ lihat <font color="#CCCCCC">kode dan lihat apa </font>
+
+197
+00:09:59,660 --> 00:10:00,080
+ <font color="#E5E5E5">salah </font>
+
+198
+00:10:00,080 --> 00:10:03,140
+ <font color="#CCCCCC">oh </font><font color="#E5E5E5">kami mengirim itu ke sumbernya </font>
+
+199
+00:10:03,140 --> 00:10:07,790
+ kode sepanjang aku bodoh sehingga kode itu 
+
+200
+00:10:07,790 --> 00:10:12,860
+ <font color="#CCCCCC">mungkin akan </font><font color="#E5E5E5">berhasil, aku akan membiarkan </font>
+
+201
+00:10:12,860 --> 00:10:15,680
+ video positif ini di sini menjeda 
+
+202
+00:10:15,680 --> 00:10:18,620
+ rekaman jadi saya bisa melihat <font color="#CCCCCC">ok jadi scriptnya </font>
+
+203
+00:10:18,620 --> 00:10:21,320
+ kembali sekarang dan saya mendapatkan yang benar 
+
+204
+00:10:21,320 --> 00:10:24,620
+ ID sesi <font color="#E5E5E5">di nomor ID atau ID admin di </font>
+
+205
+00:10:24,620 --> 00:10:28,700
+ <font color="#E5E5E5">ID 138 jadi di sini kita punya </font><font color="#CCCCCC">kata sandi </font>
+
+206
+00:10:28,700 --> 00:10:30,740
+ <font color="#E5E5E5">Anda </font><font color="#CCCCCC">ingin admin kredensial </font><font color="#E5E5E5">untuk selanjutnya </font>
+
+207
+00:10:30,740 --> 00:10:33,650
+ <font color="#CCCCCC">tingkat </font><font color="#E5E5E5">sekarang </font><font color="#CCCCCC">untuk menandatangani kata sandi remaja ini </font>
+
+208
+00:10:33,650 --> 00:10:39,110
+ pria <font color="#CCCCCC">dan itu begitu </font><font color="#E5E5E5">ID </font><font color="#CCCCCC">sesi </font>
+
+209
+00:10:39,110 --> 00:10:43,570
+ kami menyampaikan <font color="#E5E5E5">permintaan </font><font color="#CCCCCC">kami </font><font color="#E5E5E5">tetapi </font>
+
+210
+00:10:43,570 --> 00:10:46,070
+ karena itu <font color="#E5E5E5">bukan bagian dari sesi </font>
+
+211
+00:10:46,070 --> 00:10:47,750
+ <font color="#E5E5E5">keberatan itu tidak </font><font color="#CCCCCC">terlihat seperti itu tinggal </font>
+
+212
+00:10:47,750 --> 00:10:50,240
+ dalam <font color="#E5E5E5">objek sesi itu sendiri terlihat </font>
+
+213
+00:10:50,240 --> 00:10:52,070
+ <font color="#CCCCCC">seperti itu </font><font color="#E5E5E5">hanya terjadi </font><font color="#CCCCCC">untuk </font><font color="#E5E5E5">permintaan itu </font>
+
+214
+00:10:52,070 --> 00:10:56,540
+ jadi itu catatan yang aneh <font color="#E5E5E5">dan aku benar-benar </font>
+
+215
+00:10:56,540 --> 00:10:57,800
+ ingin meminta maaf <font color="#CCCCCC">tentang </font><font color="#E5E5E5">mengirimnya ke </font>
+
+216
+00:10:57,800 --> 00:11:00,290
+ <font color="#E5E5E5">halaman yang salah di sana dengan indeks </font>
+
+217
+00:11:00,290 --> 00:11:01,700
+ atau masih di URL saya yakin Anda 
+
+218
+00:11:01,700 --> 00:11:03,020
+ <font color="#CCCCCC">mungkin berteriak </font><font color="#E5E5E5">padaku sepanjang </font><font color="#CCCCCC">waktu </font>
+
+219
+00:11:03,020 --> 00:11:04,540
+ <font color="#E5E5E5">Saya ingin Anda </font><font color="#CCCCCC">ingat </font><font color="#E5E5E5">untuk mengubahnya </font>
+
+220
+00:11:04,540 --> 00:11:07,670
+ <font color="#CCCCCC">tapi terima kasih semuanya sudah menonton kamu </font>
+
+221
+00:11:07,670 --> 00:11:09,560
+ menikmati ini mari kita lanjutkan <font color="#CCCCCC">dan menempatkan ini </font>
+
+222
+00:11:09,560 --> 00:11:14,720
+ kata sandi baru yang baru di <font color="#CCCCCC">skrip baru </font><font color="#E5E5E5">mari </font>
+
+223
+00:11:14,720 --> 00:11:20,030
+ taruh ini di natus <font color="#E5E5E5">19 dan mari kita pergi dan </font>
+
+224
+00:11:20,030 --> 00:11:22,520
+ <font color="#CCCCCC">mengatur dan melihat apa yang dituntut oleh level ini </font>
+
+225
+00:11:22,520 --> 00:11:28,490
+ <font color="#CCCCCC">untuk melakukan hal yang baik, </font><font color="#E5E5E5">baiklah, </font><font color="#CCCCCC">terima kasih </font>
+
+226
+00:11:28,490 --> 00:11:29,630
+ <font color="#E5E5E5">orang-orang untuk menonton harapan yang Anda nikmati </font>
+
+227
+00:11:29,630 --> 00:11:31,340
+ <font color="#CCCCCC">video </font><font color="#E5E5E5">ini jika Anda suka video </font>
+
+228
+00:11:31,340 --> 00:11:33,500
+ tolong <font color="#E5E5E5">tekan tombol seperti itu tinggalkan aku </font>
+
+229
+00:11:33,500 --> 00:11:35,180
+ <font color="#CCCCCC">komentar biarkan saya tahu apa yang Anda </font><font color="#E5E5E5">pikirkan </font>
+
+230
+00:11:35,180 --> 00:11:36,890
+ <font color="#E5E5E5">apa yang Anda sukai </font><font color="#CCCCCC">apa yang </font><font color="#E5E5E5">bisa saya lakukan lebih baik apa </font>
+
+231
+00:11:36,890 --> 00:11:38,780
+ lain yang ingin Anda <font color="#CCCCCC">lihat </font><font color="#E5E5E5">silakan berlangganan </font>
+
+232
+00:11:38,780 --> 00:11:41,150
+ <font color="#CCCCCC">dan jika Anda benar-benar benar-benar </font><font color="#E5E5E5">ingin </font><font color="#CCCCCC">mendukung </font>
+
+233
+00:11:41,150 --> 00:11:42,770
+ saya <font color="#E5E5E5">lantai kepala di atas ke patreon saya </font>
+
+234
+00:11:42,770 --> 00:11:44,810
+ akun <font color="#CCCCCC">jadi terima kasih lagi orang-orang yang </font><font color="#E5E5E5">akan saya lihat </font>
+
+235
+00:11:44,810 --> 00:00:00,000
+ Anda di <font color="#E5E5E5">video selanjutnya </font>
+

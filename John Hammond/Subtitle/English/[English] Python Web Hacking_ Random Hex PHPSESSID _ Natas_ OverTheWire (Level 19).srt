@@ -1,0 +1,860 @@
+1
+00:00:00,260 --> 00:00:03,149
+so natus 19 from<font color="#E5E5E5"> the over the wire war</font>
+
+2
+00:00:03,149 --> 00:00:05,100
+game starts out in the prompt<font color="#E5E5E5"> and page</font>
+
+3
+00:00:05,100 --> 00:00:07,109
+telling<font color="#E5E5E5"> us that this page uses most of</font>
+
+4
+00:00:07,109 --> 00:00:08,639
+the<font color="#E5E5E5"> same code as the previous level</font>
+
+5
+00:00:08,639 --> 00:00:11,099
+<font color="#E5E5E5">level 18 but such an IDs are no longer</font>
+
+6
+00:00:11,099 --> 00:00:13,590
+sequential it gives us the prompt<font color="#E5E5E5"> to</font>
+
+7
+00:00:13,590 --> 00:00:14,969
+<font color="#E5E5E5">please</font><font color="#CCCCCC"> log in with your admin account to</font>
+
+8
+00:00:14,969 --> 00:00:16,529
+retrieve credentials for the next<font color="#E5E5E5"> level</font>
+
+9
+00:00:16,529 --> 00:00:19,949
+not as<font color="#E5E5E5"> 20 and we see this form with the</font>
+
+10
+00:00:19,949 --> 00:00:23,340
+HTTP POST method<font color="#CCCCCC"> to index dot PHP but</font>
+
+11
+00:00:23,340 --> 00:00:25,199
+there is no link<font color="#CCCCCC"> to view the source code</font>
+
+12
+00:00:25,199 --> 00:00:26,849
+in<font color="#E5E5E5"> this</font><font color="#CCCCCC"> level so we're just</font><font color="#E5E5E5"> gonna have</font>
+
+13
+00:00:26,849 --> 00:00:28,410
+<font color="#E5E5E5">to operate under the assumption that</font>
+
+14
+00:00:28,410 --> 00:00:30,810
+again<font color="#E5E5E5"> this page uses most of the same</font>
+
+15
+00:00:30,810 --> 00:00:32,880
+code as a previous<font color="#E5E5E5"> level so in our</font>
+
+16
+00:00:32,880 --> 00:00:34,590
+<font color="#E5E5E5">Python code let's actually take a</font><font color="#CCCCCC"> look</font>
+
+17
+00:00:34,590 --> 00:00:36,090
+<font color="#E5E5E5">at what we have here</font><font color="#CCCCCC"> after we make this</font>
+
+18
+00:00:36,090 --> 00:00:38,370
+request<font color="#CCCCCC"> we can see what our</font><font color="#E5E5E5"> session</font>
+
+19
+00:00:38,370 --> 00:00:39,960
+cookies are because we're using a
+
+20
+00:00:39,960 --> 00:00:42,030
+session to request this<font color="#E5E5E5"> page</font><font color="#CCCCCC"> we</font><font color="#E5E5E5"> should</font>
+
+21
+00:00:42,030 --> 00:00:43,579
+be able<font color="#E5E5E5"> to determine what the actual</font>
+
+22
+00:00:43,579 --> 00:00:45,750
+<font color="#E5E5E5">cookies are following this so we can</font>
+
+23
+00:00:45,750 --> 00:00:48,390
+<font color="#E5E5E5">print out session cookies and let's go</font>
+
+24
+00:00:48,390 --> 00:00:52,440
+<font color="#CCCCCC">ahead and check</font><font color="#E5E5E5"> out</font><font color="#CCCCCC"> the output</font><font color="#E5E5E5"> right now</font>
+
+25
+00:00:52,440 --> 00:00:53,940
+it should be<font color="#CCCCCC"> nothing</font><font color="#E5E5E5"> because</font><font color="#CCCCCC"> we</font><font color="#E5E5E5"> haven't</font>
+
+26
+00:00:53,940 --> 00:00:55,410
+actually<font color="#E5E5E5"> posted to the</font><font color="#CCCCCC"> form</font>
+
+27
+00:00:55,410 --> 00:00:59,100
+let's go ahead and<font color="#CCCCCC"> do that create a new</font>
+
+28
+00:00:59,100 --> 00:01:01,289
+response here but<font color="#E5E5E5"> instead</font><font color="#CCCCCC"> of</font><font color="#E5E5E5"> running a</font>
+
+29
+00:01:01,289 --> 00:01:04,349
+get command for HTTP<font color="#E5E5E5"> we'll run a post</font>
+
+30
+00:01:04,349 --> 00:01:07,979
+and the data there had a username and
+
+31
+00:01:07,979 --> 00:01:10,380
+password field<font color="#E5E5E5"> so that</font><font color="#CCCCCC"> will have to be a</font>
+
+32
+00:01:10,380 --> 00:01:13,080
+Python<font color="#CCCCCC"> dictionary</font><font color="#E5E5E5"> or we say</font><font color="#CCCCCC"> username</font><font color="#E5E5E5"> can</font>
+
+33
+00:01:13,080 --> 00:01:18,570
+be<font color="#E5E5E5"> please and password string can be</font>
+
+34
+00:01:18,570 --> 00:01:23,460
+<font color="#CCCCCC">subscribed okay</font><font color="#E5E5E5"> so let's actually</font>
+
+35
+00:01:23,460 --> 00:01:27,000
+display<font color="#CCCCCC"> the text</font><font color="#E5E5E5"> with it but let's have</font>
+
+36
+00:01:27,000 --> 00:01:29,159
+the session<font color="#E5E5E5"> cookies come with as well</font>
+
+37
+00:01:29,159 --> 00:01:32,850
+we'll just<font color="#CCCCCC"> have a divider there so as I</font>
+
+38
+00:01:32,850 --> 00:01:37,920
+run<font color="#CCCCCC"> this you can see over and over again</font>
+
+39
+00:01:37,920 --> 00:01:40,110
+if I keep<font color="#E5E5E5"> pressing</font><font color="#CCCCCC"> ctrl B to make this</font>
+
+40
+00:01:40,110 --> 00:01:41,909
+request<font color="#E5E5E5"> interesting things are</font><font color="#CCCCCC"> happening</font>
+
+41
+00:01:41,909 --> 00:01:43,619
+<font color="#E5E5E5">because we can see a cookie</font><font color="#CCCCCC"> that PHP</font>
+
+42
+00:01:43,619 --> 00:01:47,009
+session ID<font color="#E5E5E5"> again previous level level</font>
+
+43
+00:01:47,009 --> 00:01:49,590
+level 18 not<font color="#CCCCCC"> us 18 we were</font><font color="#E5E5E5"> working with</font>
+
+44
+00:01:49,590 --> 00:01:52,229
+<font color="#CCCCCC">brute-forcing the PHP session ID so in</font>
+
+45
+00:01:52,229 --> 00:01:55,680
+this case it looks<font color="#CCCCCC"> like we have kind of</font>
+
+46
+00:01:55,680 --> 00:02:00,090
+a random<font color="#E5E5E5"> number but not like we</font><font color="#CCCCCC"> used to</font>
+
+47
+00:02:00,090 --> 00:02:02,009
+<font color="#E5E5E5">it looks like the first couple numbers</font>
+
+48
+00:02:02,009 --> 00:02:05,420
+are changing<font color="#CCCCCC"> three three three</font><font color="#E5E5E5"> etcetera</font>
+
+49
+00:02:05,420 --> 00:02:08,878
+<font color="#CCCCCC">three</font><font color="#E5E5E5"> two three one etcetera</font><font color="#CCCCCC"> over and</font>
+
+50
+00:02:08,878 --> 00:02:10,830
+<font color="#E5E5E5">over</font><font color="#CCCCCC"> and over</font><font color="#E5E5E5"> again but</font><font color="#CCCCCC"> the last bit</font>
+
+51
+00:02:10,830 --> 00:02:13,819
+does not change
+
+52
+00:02:14,849 --> 00:02:18,670
+so I was curious<font color="#E5E5E5"> why that is and it</font>
+
+53
+00:02:18,670 --> 00:02:21,190
+looked like<font color="#E5E5E5"> it was almost dependent on</font>
+
+54
+00:02:21,190 --> 00:02:23,019
+the<font color="#CCCCCC"> username because</font><font color="#E5E5E5"> after some testing</font>
+
+55
+00:02:23,019 --> 00:02:28,120
+<font color="#E5E5E5">I changed this to like John and we have</font>
+
+56
+00:02:28,120 --> 00:02:31,110
+a different result for that<font color="#CCCCCC"> PHP session</font>
+
+57
+00:02:31,110 --> 00:02:34,120
+<font color="#E5E5E5">just at the very very end</font><font color="#CCCCCC"> but if we keep</font>
+
+58
+00:02:34,120 --> 00:02:36,310
+looking<font color="#E5E5E5"> at the three leading at the</font>
+
+59
+00:02:36,310 --> 00:02:38,140
+beginning of the string or<font color="#E5E5E5"> these numbers</font>
+
+60
+00:02:38,140 --> 00:02:40,629
+here<font color="#E5E5E5"> those tend to be the</font><font color="#CCCCCC"> same pattern</font>
+
+61
+00:02:40,629 --> 00:02:43,030
+<font color="#E5E5E5">so I tried to</font><font color="#CCCCCC"> check this out a little</font>
+
+62
+00:02:43,030 --> 00:02:43,660
+<font color="#E5E5E5">bit more</font>
+
+63
+00:02:43,660 --> 00:02:46,180
+<font color="#E5E5E5">I changed the</font><font color="#CCCCCC"> username</font><font color="#E5E5E5"> to actually</font>
+
+64
+00:02:46,180 --> 00:02:49,120
+nothing<font color="#CCCCCC"> and still logged in with a</font>
+
+65
+00:02:49,120 --> 00:02:54,700
+password supposedly but the numbers that
+
+66
+00:02:54,700 --> 00:02:57,340
+we're seeing<font color="#E5E5E5"> I'll shrink this text a</font>
+
+67
+00:02:57,340 --> 00:02:59,319
+little<font color="#E5E5E5"> bit so that won't scroll for us</font>
+
+68
+00:02:59,319 --> 00:03:02,769
+<font color="#CCCCCC">three five three four three one etc</font><font color="#E5E5E5"> 3 2</font>
+
+69
+00:03:02,769 --> 00:03:06,310
+<font color="#CCCCCC">3 7</font><font color="#E5E5E5"> 3 0 etc but that</font><font color="#CCCCCC"> 2d at the very very</font>
+
+70
+00:03:06,310 --> 00:03:09,069
+<font color="#CCCCCC">end tends</font><font color="#E5E5E5"> to stay there the</font><font color="#CCCCCC"> whole time</font>
+
+71
+00:03:09,069 --> 00:03:11,980
+<font color="#E5E5E5">and I was curious what that really is</font>
+
+72
+00:03:11,980 --> 00:03:14,319
+cuz this doesn't look<font color="#E5E5E5"> like</font><font color="#CCCCCC"> a hash and</font>
+
+73
+00:03:14,319 --> 00:03:16,389
+<font color="#E5E5E5">since</font><font color="#CCCCCC"> its variable on the username that</font>
+
+74
+00:03:16,389 --> 00:03:18,250
+<font color="#E5E5E5">couldn't be the</font><font color="#CCCCCC"> case</font><font color="#E5E5E5"> because they're not</font>
+
+75
+00:03:18,250 --> 00:03:20,410
+<font color="#E5E5E5">gonna have a length of 32</font><font color="#CCCCCC"> or whatever</font>
+
+76
+00:03:20,410 --> 00:03:24,010
+<font color="#CCCCCC">hash</font><font color="#E5E5E5"> length maybe a parent there so I</font>
+
+77
+00:03:24,010 --> 00:03:26,079
+try<font color="#E5E5E5"> to check out what are these numbers</font>
+
+78
+00:03:26,079 --> 00:03:33,069
+<font color="#CCCCCC">and other representations and that</font><font color="#E5E5E5"> 2d</font>
+
+79
+00:03:33,069 --> 00:03:34,239
+looked odd to me
+
+80
+00:03:34,239 --> 00:03:36,730
+so<font color="#E5E5E5"> I</font><font color="#CCCCCC"> actually determined what some of</font>
+
+81
+00:03:36,730 --> 00:03:39,910
+<font color="#E5E5E5">these</font><font color="#CCCCCC"> things</font><font color="#E5E5E5"> might be in hex because we</font>
+
+82
+00:03:39,910 --> 00:03:42,430
+have a D here<font color="#E5E5E5"> and the numbers that we've</font>
+
+83
+00:03:42,430 --> 00:03:45,340
+seen<font color="#E5E5E5"> earlier</font><font color="#CCCCCC"> we had a</font><font color="#E5E5E5"> 6 e etc etc</font><font color="#CCCCCC"> it</font>
+
+84
+00:03:45,340 --> 00:03:46,900
+didn't look like<font color="#E5E5E5"> we went to any letter</font>
+
+85
+00:03:46,900 --> 00:03:49,180
+as higher than<font color="#E5E5E5"> F and I thought</font><font color="#CCCCCC"> ok</font><font color="#E5E5E5"> maybe</font>
+
+86
+00:03:49,180 --> 00:03:52,630
+<font color="#CCCCCC">this</font><font color="#E5E5E5"> is hex so I tried to check that out</font>
+
+87
+00:03:52,630 --> 00:03:54,730
+and I'll<font color="#CCCCCC"> show it</font><font color="#E5E5E5"> here an idol let's</font>
+
+88
+00:03:54,730 --> 00:03:58,540
+decode that<font color="#E5E5E5"> string from hex and we get</font>
+
+89
+00:03:58,540 --> 00:04:04,209
+<font color="#CCCCCC">five six five and a hyphen here so that</font>
+
+90
+00:04:04,209 --> 00:04:06,549
+<font color="#CCCCCC">2d</font><font color="#E5E5E5"> must be the</font><font color="#CCCCCC"> hyphen and then the</font>
+
+91
+00:04:06,549 --> 00:04:08,739
+numbers must<font color="#E5E5E5"> be changing let's actually</font>
+
+92
+00:04:08,739 --> 00:04:13,769
+print out session cookies and let's get
+
+93
+00:04:13,769 --> 00:04:20,880
+<font color="#E5E5E5">that PHP session ID just like that and</font>
+
+94
+00:04:20,880 --> 00:04:24,960
+let's decode that<font color="#E5E5E5"> from hex</font>
+
+95
+00:04:24,960 --> 00:04:29,340
+cool<font color="#CCCCCC"> great</font><font color="#E5E5E5"> now I wonder if</font><font color="#CCCCCC"> I can do this</font>
+
+96
+00:04:29,340 --> 00:04:36,270
+<font color="#E5E5E5">a couple more times</font><font color="#CCCCCC"> just to showcase</font>
+
+97
+00:04:36,270 --> 00:04:39,840
+this so it<font color="#E5E5E5"> looks</font><font color="#CCCCCC"> like we're getting a</font>
+
+98
+00:04:39,840 --> 00:04:43,889
+random<font color="#CCCCCC"> number and a</font><font color="#E5E5E5"> hyphen and whatever</font>
+
+99
+00:04:43,889 --> 00:04:47,759
+we pass for our<font color="#E5E5E5"> username is that right</font>
+
+100
+00:04:47,759 --> 00:04:50,370
+yeah<font color="#CCCCCC"> looks like that username is also</font>
+
+101
+00:04:50,370 --> 00:04:52,500
+hex encoded<font color="#E5E5E5"> and the numbers that</font><font color="#CCCCCC"> we seen</font>
+
+102
+00:04:52,500 --> 00:04:53,130
+<font color="#CCCCCC">before</font>
+
+103
+00:04:53,130 --> 00:04:55,860
+look to<font color="#E5E5E5"> be bounded probably the same way</font>
+
+104
+00:04:55,860 --> 00:04:58,710
+<font color="#E5E5E5">that were in level 18 they were from 0</font>
+
+105
+00:04:58,710 --> 00:05:01,320
+to 640<font color="#E5E5E5"> okay</font>
+
+106
+00:05:01,320 --> 00:05:04,860
+so that kind of fills in the color of
+
+107
+00:05:04,860 --> 00:05:06,840
+<font color="#E5E5E5">this picture and now we can put together</font>
+
+108
+00:05:06,840 --> 00:05:09,599
+an attack<font color="#E5E5E5"> to try and find what admin</font>
+
+109
+00:05:09,599 --> 00:05:11,940
+credential<font color="#E5E5E5"> or what admin PHP a session</font>
+
+110
+00:05:11,940 --> 00:05:14,039
+ID there might be<font color="#CCCCCC"> the same way we brute</font>
+
+111
+00:05:14,039 --> 00:05:15,960
+forced it last time we're forcing<font color="#E5E5E5"> it</font>
+
+112
+00:05:15,960 --> 00:05:18,210
+again but now we'll<font color="#E5E5E5"> just have</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> hex</font>
+
+113
+00:05:18,210 --> 00:05:22,080
+encode<font color="#E5E5E5"> that cookie</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> we know the</font>
+
+114
+00:05:22,080 --> 00:05:24,330
+original<font color="#CCCCCC"> of and try and find the</font><font color="#E5E5E5"> correct</font>
+
+115
+00:05:24,330 --> 00:05:28,470
+number<font color="#E5E5E5"> so let's try</font><font color="#CCCCCC"> that now let's say</font>
+
+116
+00:05:28,470 --> 00:05:33,720
+for<font color="#CCCCCC"> I in range</font><font color="#E5E5E5"> 641 again we've got</font><font color="#CCCCCC"> a</font>
+
+117
+00:05:33,720 --> 00:05:42,289
+<font color="#E5E5E5">session and we want to see what is the</font>
+
+118
+00:05:42,289 --> 00:05:46,440
+cookie that we<font color="#E5E5E5"> can give it probably just</font>
+
+119
+00:05:46,440 --> 00:05:48,270
+<font color="#E5E5E5">a get request now because we're gonna</font>
+
+120
+00:05:48,270 --> 00:05:53,909
+pass in a cookie already prepared with
+
+121
+00:05:53,909 --> 00:05:58,320
+the PHP session ID<font color="#E5E5E5"> already set to our</font>
+
+122
+00:05:58,320 --> 00:05:59,340
+number
+
+123
+00:05:59,340 --> 00:06:06,270
+I'll just stringify that with the - it
+
+124
+00:06:06,270 --> 00:06:09,630
+should be<font color="#CCCCCC"> % D for a decimal over</font><font color="#E5E5E5"> digit I</font>
+
+125
+00:06:09,630 --> 00:06:11,849
+guess and then admin because<font color="#CCCCCC"> we want</font>
+
+126
+00:06:11,849 --> 00:06:15,900
+admin to be the<font color="#CCCCCC"> password here</font><font color="#E5E5E5"> and we</font>
+
+127
+00:06:15,900 --> 00:06:22,740
+want to encode that with hex<font color="#E5E5E5"> and don't</font>
+
+128
+00:06:22,740 --> 00:06:26,400
+forget<font color="#E5E5E5"> that we need to actually % in</font>
+
+129
+00:06:26,400 --> 00:06:28,919
+here inject that<font color="#CCCCCC"> I or whatever</font><font color="#E5E5E5"> iterating</font>
+
+130
+00:06:28,919 --> 00:06:29,250
+<font color="#E5E5E5">on</font>
+
+131
+00:06:29,250 --> 00:06:32,070
+so let's print<font color="#E5E5E5"> this out just to</font><font color="#CCCCCC"> see</font><font color="#E5E5E5"> what</font>
+
+132
+00:06:32,070 --> 00:06:34,080
+we've got<font color="#E5E5E5"> let's print out this whole</font>
+
+133
+00:06:34,080 --> 00:06:36,320
+<font color="#E5E5E5">thing</font>
+
+134
+00:06:38,480 --> 00:06:43,020
+and then let's print out what the
+
+135
+00:06:43,020 --> 00:06:48,150
+response text is let's do this for<font color="#E5E5E5"> only</font>
+
+136
+00:06:48,150 --> 00:06:50,220
+<font color="#E5E5E5">a couple requests so we can see it in</font>
+
+137
+00:06:50,220 --> 00:06:56,610
+action there's that session<font color="#E5E5E5"> ID session</font>
+
+138
+00:06:56,610 --> 00:06:59,790
+ID<font color="#E5E5E5"> again</font><font color="#CCCCCC"> etc etc etc</font><font color="#E5E5E5"> and it says your</font>
+
+139
+00:06:59,790 --> 00:07:02,370
+login is a<font color="#CCCCCC"> regularly a regular user I</font>
+
+140
+00:07:02,370 --> 00:07:05,040
+was gonna say<font color="#E5E5E5"> regular loser again</font><font color="#CCCCCC"> so now</font>
+
+141
+00:07:05,040 --> 00:07:07,320
+let's try and determine<font color="#E5E5E5"> if it says you</font>
+
+142
+00:07:07,320 --> 00:07:16,470
+are<font color="#CCCCCC"> an admin</font><font color="#E5E5E5"> I want to make</font><font color="#CCCCCC"> sure that's</font>
+
+143
+00:07:16,470 --> 00:07:20,639
+the correct<font color="#E5E5E5"> string that we had the same</font>
+
+144
+00:07:20,639 --> 00:07:24,270
+way it was<font color="#E5E5E5"> in</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> last level</font><font color="#CCCCCC"> it</font><font color="#E5E5E5"> says</font>
+
+145
+00:07:24,270 --> 00:07:25,950
+yeah you are an admin if you are an
+
+146
+00:07:25,950 --> 00:07:27,210
+admin is in the response<font color="#E5E5E5"> and then we've</font>
+
+147
+00:07:27,210 --> 00:07:34,979
+got the correct session ID if you are an
+
+148
+00:07:34,979 --> 00:07:40,100
+admin<font color="#CCCCCC"> in response to</font><font color="#E5E5E5"> text we can</font><font color="#CCCCCC"> print</font>
+
+149
+00:07:40,100 --> 00:07:50,190
+got it with the integer<font color="#CCCCCC"> that we're</font>
+
+150
+00:07:50,190 --> 00:07:52,950
+trying and let's break this and we'll
+
+151
+00:07:52,950 --> 00:07:56,460
+print response dot text<font color="#E5E5E5"> otherwise we</font>
+
+152
+00:07:56,460 --> 00:07:58,080
+will keep moving some of<font color="#CCCCCC"> those we</font><font color="#E5E5E5"> don't</font>
+
+153
+00:07:58,080 --> 00:08:01,440
+really need<font color="#CCCCCC"> one so I'm gonna go do</font><font color="#E5E5E5"> this</font>
+
+154
+00:08:01,440 --> 00:08:04,950
+in the terminal<font color="#CCCCCC"> I just killed my sublime</font>
+
+155
+00:08:04,950 --> 00:08:08,729
+text but we can<font color="#E5E5E5"> Python natus 19 and</font>
+
+156
+00:08:08,729 --> 00:08:11,160
+<font color="#CCCCCC">we'll start to run through</font><font color="#E5E5E5"> it</font><font color="#CCCCCC"> okay</font>
+
+157
+00:08:11,160 --> 00:08:13,139
+something strange happened oh no we
+
+158
+00:08:13,139 --> 00:08:16,349
+actually<font color="#E5E5E5"> just forgot to increase that</font>
+
+159
+00:08:16,349 --> 00:08:19,139
+loop counter<font color="#CCCCCC"> so now we want to</font><font color="#E5E5E5"> go to 641</font>
+
+160
+00:08:19,139 --> 00:08:23,479
+and go all<font color="#CCCCCC"> the way</font><font color="#E5E5E5"> to where we could I</font>
+
+161
+00:08:23,479 --> 00:08:25,550
+should have I should<font color="#CCCCCC"> background those</font>
+
+162
+00:08:25,550 --> 00:08:29,220
+now we'll keep moving<font color="#CCCCCC"> and I will pause</font>
+
+163
+00:08:29,220 --> 00:08:30,570
+the<font color="#CCCCCC"> recording</font><font color="#E5E5E5"> right here as this</font>
+
+164
+00:08:30,570 --> 00:08:32,640
+increments<font color="#E5E5E5"> if we wanted to we probably</font>
+
+165
+00:08:32,640 --> 00:08:33,929
+could have<font color="#CCCCCC"> just put the</font><font color="#E5E5E5"> number to</font>
+
+166
+00:08:33,929 --> 00:08:35,580
+display rather than the PHP session ID
+
+167
+00:08:35,580 --> 00:08:37,409
+<font color="#E5E5E5">but it looks like we're doing some</font><font color="#CCCCCC"> weed</font>
+
+168
+00:08:37,409 --> 00:08:39,809
+hack in here so I'll pause recording<font color="#E5E5E5"> and</font>
+
+169
+00:08:39,809 --> 00:08:41,458
+I'll get<font color="#CCCCCC"> back to you</font><font color="#E5E5E5"> once we've got the</font>
+
+170
+00:08:41,458 --> 00:08:43,860
+<font color="#E5E5E5">credentials okay so the script finished</font>
+
+171
+00:08:43,860 --> 00:08:47,730
+<font color="#CCCCCC">it says</font><font color="#E5E5E5"> got it at 89</font>
+
+172
+00:08:47,730 --> 00:08:50,570
+let's get sublime text<font color="#E5E5E5"> open</font>
+
+173
+00:08:50,570 --> 00:08:55,440
+<font color="#E5E5E5">I'll background at this time and oh I</font>
+
+174
+00:08:55,440 --> 00:08:58,230
+put the<font color="#CCCCCC"> break</font><font color="#E5E5E5"> before</font><font color="#CCCCCC"> it whatever let's</font>
+
+175
+00:08:58,230 --> 00:09:00,990
+try and just make this get<font color="#E5E5E5"> request with</font>
+
+176
+00:09:00,990 --> 00:09:11,040
+the<font color="#CCCCCC"> 89</font><font color="#E5E5E5"> as the correct ID number now</font>
+
+177
+00:09:11,040 --> 00:09:13,740
+let's print<font color="#E5E5E5"> response text if I run this</font>
+
+178
+00:09:13,740 --> 00:09:16,550
+<font color="#CCCCCC">you can</font><font color="#E5E5E5"> see it over on the</font><font color="#CCCCCC"> side here</font>
+
+179
+00:09:16,550 --> 00:09:19,290
+<font color="#CCCCCC">sessions not defined</font><font color="#E5E5E5"> because I commented</font>
+
+180
+00:09:19,290 --> 00:09:27,120
+that<font color="#E5E5E5"> out now let's keep moving how do we</font>
+
+181
+00:09:27,120 --> 00:09:27,450
+do
+
+182
+00:09:27,450 --> 00:09:29,339
+excellent<font color="#CCCCCC"> you are an admin the</font>
+
+183
+00:09:29,339 --> 00:09:30,839
+credentials for<font color="#CCCCCC"> the next level are and</font>
+
+184
+00:09:30,839 --> 00:09:34,440
+that is 20 and the password here so
+
+185
+00:09:34,440 --> 00:09:37,290
+that's the attack or a<font color="#CCCCCC"> quote-unquote</font>
+
+186
+00:09:37,290 --> 00:09:39,230
+attack<font color="#E5E5E5"> but just a</font><font color="#CCCCCC"> little</font><font color="#E5E5E5"> bit of</font>
+
+187
+00:09:39,230 --> 00:09:41,820
+experimentation<font color="#CCCCCC"> and poking around and</font>
+
+188
+00:09:41,820 --> 00:09:43,380
+trying<font color="#E5E5E5"> to</font><font color="#CCCCCC"> figure out</font><font color="#E5E5E5"> what really</font><font color="#CCCCCC"> was</font>
+
+189
+00:09:43,380 --> 00:09:46,200
+that original PHP session ID<font color="#E5E5E5"> but again</font>
+
+190
+00:09:46,200 --> 00:09:48,149
+very<font color="#CCCCCC"> very similar</font><font color="#E5E5E5"> to the previous level</font>
+
+191
+00:09:48,149 --> 00:09:50,490
+level 18<font color="#E5E5E5"> so let's go ahead and save this</font>
+
+192
+00:09:50,490 --> 00:09:53,000
+as in that is 20 and<font color="#CCCCCC"> we'll start to</font>
+
+193
+00:09:53,000 --> 00:09:55,920
+<font color="#E5E5E5">examine what's next for us in that level</font>
+
+194
+00:09:55,920 --> 00:09:57,810
+<font color="#CCCCCC">so thank you</font><font color="#E5E5E5"> guys for watching I hope</font>
+
+195
+00:09:57,810 --> 00:09:59,550
+<font color="#CCCCCC">you're enjoying this series</font><font color="#E5E5E5"> I hope</font>
+
+196
+00:09:59,550 --> 00:10:00,810
+<font color="#E5E5E5">you're enjoying these</font><font color="#CCCCCC"> videos if you do</font>
+
+197
+00:10:00,810 --> 00:10:02,880
+like the video<font color="#E5E5E5"> please do leave a like</font>
+
+198
+00:10:02,880 --> 00:10:04,680
+press that like button<font color="#E5E5E5"> maybe leave me a</font>
+
+199
+00:10:04,680 --> 00:10:05,820
+comment let me know what<font color="#CCCCCC"> you think what</font>
+
+200
+00:10:05,820 --> 00:10:07,620
+<font color="#CCCCCC">else</font><font color="#E5E5E5"> you'd</font><font color="#CCCCCC"> like to see</font><font color="#E5E5E5"> later in a future</font>
+
+201
+00:10:07,620 --> 00:10:09,390
+tutorial or video<font color="#E5E5E5"> if you're willing to</font>
+
+202
+00:10:09,390 --> 00:10:11,250
+subscribe and<font color="#E5E5E5"> if you would like to help</font>
+
+203
+00:10:11,250 --> 00:10:14,010
+<font color="#E5E5E5">me</font><font color="#CCCCCC"> out support me please</font><font color="#E5E5E5"> head over to my</font>
+
+204
+00:10:14,010 --> 00:10:15,660
+<font color="#E5E5E5">patreon account and would do</font><font color="#CCCCCC"> whatever</font>
+
+205
+00:10:15,660 --> 00:10:17,160
+you're comfortable<font color="#CCCCCC"> doing</font><font color="#E5E5E5"> so</font>
+
+206
+00:10:17,160 --> 00:10:19,199
+on that<font color="#CCCCCC"> note</font><font color="#E5E5E5"> I want</font><font color="#CCCCCC"> to give a special</font>
+
+207
+00:10:19,199 --> 00:10:21,839
+<font color="#E5E5E5">shout out to</font><font color="#CCCCCC"> Spencer Clark an individual</font>
+
+208
+00:10:21,839 --> 00:10:23,279
+<font color="#E5E5E5">that just recently wanted to support me</font>
+
+209
+00:10:23,279 --> 00:10:26,279
+<font color="#CCCCCC">for patreon I have a reward</font><font color="#E5E5E5"> that I'll</font>
+
+210
+00:10:26,279 --> 00:10:27,420
+give you<font color="#CCCCCC"> a shout-out</font><font color="#E5E5E5"> in every single</font>
+
+211
+00:10:27,420 --> 00:10:29,760
+<font color="#E5E5E5">video</font><font color="#CCCCCC"> that I do like literally</font><font color="#E5E5E5"> ever so</font>
+
+212
+00:10:29,760 --> 00:10:31,860
+props to<font color="#E5E5E5"> you Spencer thanks for your</font>
+
+213
+00:10:31,860 --> 00:10:33,630
+help<font color="#E5E5E5"> and thanks for your support</font><font color="#CCCCCC"> really</font>
+
+214
+00:10:33,630 --> 00:10:35,040
+<font color="#CCCCCC">hope</font><font color="#E5E5E5"> to keep making quality content for</font>
+
+215
+00:10:35,040 --> 00:00:00,000
+<font color="#E5E5E5">you guys</font>
+

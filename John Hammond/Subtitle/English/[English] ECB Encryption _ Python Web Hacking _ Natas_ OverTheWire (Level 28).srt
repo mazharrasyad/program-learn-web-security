@@ -1,0 +1,2936 @@
+1
+00:00:00,030 --> 00:00:02,220
+hello everyone my name<font color="#CCCCCC"> is</font><font color="#E5E5E5"> John Hammond</font>
+
+2
+00:00:02,220 --> 00:00:04,650
+and welcome back<font color="#E5E5E5"> to some more natus over</font>
+
+3
+00:00:04,650 --> 00:00:07,140
+the wire web application<font color="#E5E5E5"> security some</font>
+
+4
+00:00:07,140 --> 00:00:09,000
+<font color="#E5E5E5">Python scripting and programming</font><font color="#CCCCCC"> to hack</font>
+
+5
+00:00:09,000 --> 00:00:11,160
+some websites<font color="#E5E5E5"> free cool stuff I've been</font>
+
+6
+00:00:11,160 --> 00:00:12,960
+<font color="#CCCCCC">away from this for a while because this</font>
+
+7
+00:00:12,960 --> 00:00:15,870
+<font color="#E5E5E5">challenge level 28 is a little difficult</font>
+
+8
+00:00:15,870 --> 00:00:18,990
+<font color="#CCCCCC">and kind of hard</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> this</font><font color="#E5E5E5"> is going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> be</font>
+
+9
+00:00:18,990 --> 00:00:21,390
+a long video please do bear with me I
+
+10
+00:00:21,390 --> 00:00:22,830
+hope it's pretty cool though I hope you
+
+11
+00:00:22,830 --> 00:00:24,720
+learn a few<font color="#CCCCCC"> things so let's dive right</font>
+
+12
+00:00:24,720 --> 00:00:26,460
+in I have the<font color="#E5E5E5"> web page visible right</font>
+
+13
+00:00:26,460 --> 00:00:27,900
+here because I want to showcase<font color="#E5E5E5"> the</font>
+
+14
+00:00:27,900 --> 00:00:29,880
+functionality<font color="#CCCCCC"> of this application</font><font color="#E5E5E5"> before</font>
+
+15
+00:00:29,880 --> 00:00:32,340
+<font color="#CCCCCC">I start to look at</font><font color="#E5E5E5"> it in code so we have</font>
+
+16
+00:00:32,340 --> 00:00:34,590
+this computer joke database<font color="#E5E5E5"> where we</font>
+
+17
+00:00:34,590 --> 00:00:37,260
+could search for<font color="#E5E5E5"> a query</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> it will</font>
+
+18
+00:00:37,260 --> 00:00:39,059
+supposedly return information<font color="#CCCCCC"> back out</font>
+
+19
+00:00:39,059 --> 00:00:40,890
+to<font color="#E5E5E5"> us normally we were</font><font color="#CCCCCC"> able to view the</font>
+
+20
+00:00:40,890 --> 00:00:41,879
+source code of<font color="#CCCCCC"> some of these</font>
+
+21
+00:00:41,879 --> 00:00:43,710
+applications<font color="#CCCCCC"> just so we can</font><font color="#E5E5E5"> learn and</font>
+
+22
+00:00:43,710 --> 00:00:45,270
+<font color="#E5E5E5">understand a little</font><font color="#CCCCCC"> bit</font><font color="#E5E5E5"> more</font><font color="#CCCCCC"> going</font>
+
+23
+00:00:45,270 --> 00:00:46,649
+through the<font color="#E5E5E5"> wargames here but</font>
+
+24
+00:00:46,649 --> 00:00:48,329
+unfortunately<font color="#CCCCCC"> this level does not</font>
+
+25
+00:00:48,329 --> 00:00:50,610
+provide the source code<font color="#E5E5E5"> so if I don't</font>
+
+26
+00:00:50,610 --> 00:00:52,500
+enter<font color="#CCCCCC"> anything into</font><font color="#E5E5E5"> the search it will</font>
+
+27
+00:00:52,500 --> 00:00:54,090
+go ahead<font color="#E5E5E5"> and return some results for us</font>
+
+28
+00:00:54,090 --> 00:00:56,610
+<font color="#E5E5E5">in fact it gives us</font><font color="#CCCCCC"> just a couple</font><font color="#E5E5E5"> here</font>
+
+29
+00:00:56,610 --> 00:00:58,620
+no shortcuts<font color="#E5E5E5"> in life let's</font><font color="#CCCCCC"> right click</font>
+
+30
+00:00:58,620 --> 00:01:00,870
+<font color="#CCCCCC">on find one blah</font><font color="#E5E5E5"> blah blah</font><font color="#CCCCCC"> it gives us</font>
+
+31
+00:01:00,870 --> 00:01:03,960
+like computer jokes if we were to put in
+
+32
+00:01:03,960 --> 00:01:07,530
+stuff like anything<font color="#E5E5E5"> or please sub it</font>
+
+33
+00:01:07,530 --> 00:01:09,090
+would<font color="#CCCCCC"> return queries that</font><font color="#E5E5E5"> have that</font>
+
+34
+00:01:09,090 --> 00:01:11,520
+string in<font color="#E5E5E5"> it and unfortunately</font><font color="#CCCCCC"> nothing</font>
+
+35
+00:01:11,520 --> 00:01:13,560
+has please sub in it that's weird<font color="#CCCCCC"> if I</font>
+
+36
+00:01:13,560 --> 00:01:14,670
+tried<font color="#E5E5E5"> to search for the letter A</font>
+
+37
+00:01:14,670 --> 00:01:16,170
+obviously<font color="#E5E5E5"> it'll get a couple more</font>
+
+38
+00:01:16,170 --> 00:01:19,170
+results<font color="#CCCCCC"> if we wanted to just</font><font color="#E5E5E5"> go for</font>
+
+39
+00:01:19,170 --> 00:01:21,210
+sequel injection we particularly could
+
+40
+00:01:21,210 --> 00:01:22,500
+but obviously<font color="#E5E5E5"> that's not going to return</font>
+
+41
+00:01:22,500 --> 00:01:26,630
+<font color="#E5E5E5">anything because that text is not in</font>
+
+42
+00:01:26,630 --> 00:01:29,369
+that query or whatever it's trying to
+
+43
+00:01:29,369 --> 00:01:31,979
+run in the database however<font color="#CCCCCC"> if I</font><font color="#E5E5E5"> just</font>
+
+44
+00:01:31,979 --> 00:01:33,630
+<font color="#E5E5E5">went for like a single quote or a double</font>
+
+45
+00:01:33,630 --> 00:01:35,490
+quote or just a quote<font color="#E5E5E5"> it will be able to</font>
+
+46
+00:01:35,490 --> 00:01:37,350
+<font color="#E5E5E5">return things that have this in here so</font>
+
+47
+00:01:37,350 --> 00:01:40,470
+<font color="#E5E5E5">that lets me interpret that</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> it's</font>
+
+48
+00:01:40,470 --> 00:01:42,390
+<font color="#CCCCCC">probably escaping these single quotes</font>
+
+49
+00:01:42,390 --> 00:01:44,399
+<font color="#CCCCCC">and</font><font color="#E5E5E5"> double quotes it's not just gotta</font>
+
+50
+00:01:44,399 --> 00:01:47,280
+make the database crap out on<font color="#CCCCCC"> us so what</font>
+
+51
+00:01:47,280 --> 00:01:48,810
+I'm sure you're noticing<font color="#E5E5E5"> is when</font><font color="#CCCCCC"> we</font>
+
+52
+00:01:48,810 --> 00:01:51,420
+<font color="#CCCCCC">actually look</font><font color="#E5E5E5"> at some of these returns</font>
+
+53
+00:01:51,420 --> 00:01:53,130
+<font color="#E5E5E5">all these things that</font><font color="#CCCCCC"> actually return</font>
+
+54
+00:01:53,130 --> 00:01:54,509
+out to us that give us<font color="#E5E5E5"> some information</font>
+
+55
+00:01:54,509 --> 00:01:58,469
+<font color="#E5E5E5">we</font><font color="#CCCCCC"> are</font><font color="#E5E5E5"> getting a interesting change in</font>
+
+56
+00:01:58,469 --> 00:02:02,460
+the URL<font color="#CCCCCC"> it throws us to search PHP</font><font color="#E5E5E5"> it</font>
+
+57
+00:02:02,460 --> 00:02:04,409
+gives us this query variable that that
+
+58
+00:02:04,409 --> 00:02:06,119
+is the HTTP variable that we're working
+
+59
+00:02:06,119 --> 00:02:08,489
+with<font color="#E5E5E5"> and it looks</font><font color="#CCCCCC"> like a bunch</font><font color="#E5E5E5"> of</font>
+
+60
+00:02:08,489 --> 00:02:13,440
+garbage<font color="#CCCCCC"> a lot of encoded data</font><font color="#E5E5E5"> a lot of</font>
+
+61
+00:02:13,440 --> 00:02:15,870
+this<font color="#E5E5E5"> URL encoding it is likely for</font>
+
+62
+00:02:15,870 --> 00:02:17,910
+trying<font color="#CCCCCC"> to hide some special characters</font>
+
+63
+00:02:17,910 --> 00:02:19,410
+<font color="#E5E5E5">and that looks like it may turn out to</font>
+
+64
+00:02:19,410 --> 00:02:21,630
+<font color="#E5E5E5">be base64 when we actually</font><font color="#CCCCCC"> take a</font><font color="#E5E5E5"> look</font>
+
+65
+00:02:21,630 --> 00:02:23,040
+<font color="#E5E5E5">at it so let's</font><font color="#CCCCCC"> go ahead and do that</font>
+
+66
+00:02:23,040 --> 00:02:26,430
+<font color="#E5E5E5">let's get to our</font><font color="#CCCCCC"> Python script where we</font>
+
+67
+00:02:26,430 --> 00:02:29,370
+have the code<font color="#CCCCCC"> over on the left here</font><font color="#E5E5E5"> and</font>
+
+68
+00:02:29,370 --> 00:02:31,470
+then<font color="#E5E5E5"> the output of the the return and</font>
+
+69
+00:02:31,470 --> 00:02:33,150
+what the<font color="#CCCCCC"> webpage gives us</font><font color="#E5E5E5"> on the</font>
+
+70
+00:02:33,150 --> 00:02:34,890
+<font color="#CCCCCC">right-hand side so I just made a simple</font>
+
+71
+00:02:34,890 --> 00:02:36,990
+get request<font color="#E5E5E5"> to do that let's actually</font>
+
+72
+00:02:36,990 --> 00:02:42,120
+set this to and set this<font color="#CCCCCC"> to HTML for</font>
+
+73
+00:02:42,120 --> 00:02:44,580
+syntax highlighting that looks neat<font color="#CCCCCC"> okay</font>
+
+74
+00:02:44,580 --> 00:02:46,530
+<font color="#CCCCCC">good and let's go ahead</font><font color="#E5E5E5"> and try</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> make</font>
+
+75
+00:02:46,530 --> 00:02:49,440
+<font color="#E5E5E5">a request</font><font color="#CCCCCC"> now where we actually</font><font color="#E5E5E5"> submit a</font>
+
+76
+00:02:49,440 --> 00:02:51,750
+query<font color="#E5E5E5"> so we're gonna end up</font><font color="#CCCCCC"> posting to</font>
+
+77
+00:02:51,750 --> 00:02:54,920
+that URL<font color="#E5E5E5"> with data going through here</font>
+
+78
+00:02:54,920 --> 00:02:57,270
+<font color="#CCCCCC">I'll put this on a</font><font color="#E5E5E5"> new line so it looks</font>
+
+79
+00:02:57,270 --> 00:03:02,040
+a little bit nicer<font color="#E5E5E5"> let's say query can</font>
+
+80
+00:03:02,040 --> 00:03:05,970
+equal just<font color="#E5E5E5"> the letter A and then that</font>
+
+81
+00:03:05,970 --> 00:03:07,320
+should<font color="#CCCCCC"> be everything</font><font color="#E5E5E5"> we need right I'm</font>
+
+82
+00:03:07,320 --> 00:03:10,170
+hoping<font color="#E5E5E5"> well we get anything</font><font color="#CCCCCC"> yep okay</font>
+
+83
+00:03:10,170 --> 00:03:13,650
+<font color="#E5E5E5">cool we get some responses and now we</font>
+
+84
+00:03:13,650 --> 00:03:16,110
+want to be able<font color="#E5E5E5"> to look at the</font><font color="#CCCCCC"> URL</font><font color="#E5E5E5"> so we</font>
+
+85
+00:03:16,110 --> 00:03:17,640
+can do this<font color="#E5E5E5"> we can't actually just check</font>
+
+86
+00:03:17,640 --> 00:03:22,800
+out response dot URL and at the very
+
+87
+00:03:22,800 --> 00:03:24,930
+very top<font color="#E5E5E5"> here you see okay it gives us</font>
+
+88
+00:03:24,930 --> 00:03:28,110
+the<font color="#E5E5E5"> entire URL and this front part the</font>
+
+89
+00:03:28,110 --> 00:03:30,480
+<font color="#E5E5E5">whole actual web address</font><font color="#CCCCCC"> and the search</font>
+
+90
+00:03:30,480 --> 00:03:33,600
+dot PHP query that's all<font color="#E5E5E5"> going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> be a</font>
+
+91
+00:03:33,600 --> 00:03:35,580
+static length<font color="#E5E5E5"> so if I wanted to scrape</font>
+
+92
+00:03:35,580 --> 00:03:37,410
+out<font color="#CCCCCC"> the</font><font color="#E5E5E5"> very very end here we can</font>
+
+93
+00:03:37,410 --> 00:03:38,760
+probably just<font color="#E5E5E5"> take how</font><font color="#CCCCCC"> long how many</font>
+
+94
+00:03:38,760 --> 00:03:40,020
+<font color="#CCCCCC">characters is this you</font><font color="#E5E5E5"> can see at the</font>
+
+95
+00:03:40,020 --> 00:03:42,840
+bottom<font color="#E5E5E5"> left 60 60 character selected so</font>
+
+96
+00:03:42,840 --> 00:03:46,980
+<font color="#CCCCCC">let's go sixty characters</font><font color="#E5E5E5"> from the end</font>
+
+97
+00:03:46,980 --> 00:03:49,530
+and<font color="#E5E5E5"> we'll just get okay that portion</font>
+
+98
+00:03:49,530 --> 00:03:54,239
+<font color="#CCCCCC">that is</font><font color="#E5E5E5"> the encoded information</font><font color="#CCCCCC"> oh I put</font>
+
+99
+00:03:54,239 --> 00:03:57,090
+<font color="#E5E5E5">that on text not the URL okay cool</font>
+
+100
+00:03:57,090 --> 00:04:01,200
+so now let's go<font color="#CCCCCC"> ahead and encode this we</font>
+
+101
+00:04:01,200 --> 00:04:02,400
+probably won't<font color="#E5E5E5"> need you a relative</font>
+
+102
+00:04:02,400 --> 00:04:03,959
+I'll do this through<font color="#E5E5E5"> the requests I just</font>
+
+103
+00:04:03,959 --> 00:04:05,459
+actually learned<font color="#E5E5E5"> this the requests</font>
+
+104
+00:04:05,459 --> 00:04:07,650
+<font color="#CCCCCC">actually has a utils like sub module</font>
+
+105
+00:04:07,650 --> 00:04:10,380
+that<font color="#CCCCCC"> allows you to quote or unquote I</font>
+
+106
+00:04:10,380 --> 00:04:11,340
+think<font color="#CCCCCC"> it's unquote</font>
+
+107
+00:04:11,340 --> 00:04:14,459
+let me check<font color="#E5E5E5"> I'm hoping fingers</font><font color="#CCCCCC"> frost</font>
+
+108
+00:04:14,459 --> 00:04:15,810
+<font color="#E5E5E5">yeah okay cool</font>
+
+109
+00:04:15,810 --> 00:04:18,750
+now that is certainly<font color="#E5E5E5"> base64 and if we</font>
+
+110
+00:04:18,750 --> 00:04:21,000
+wanted to with<font color="#E5E5E5"> that base 64 module</font>
+
+111
+00:04:21,000 --> 00:04:23,820
+included<font color="#E5E5E5"> we could base 64 dot be 64</font>
+
+112
+00:04:23,820 --> 00:04:27,000
+decode and we'll get some
+
+113
+00:04:27,000 --> 00:04:28,950
+raw<font color="#E5E5E5"> bytes</font><font color="#CCCCCC"> out</font><font color="#E5E5E5"> of this that sublime text</font>
+
+114
+00:04:28,950 --> 00:04:30,240
+won't<font color="#E5E5E5"> be able to show for us so let's</font>
+
+115
+00:04:30,240 --> 00:04:32,490
+<font color="#CCCCCC">actually check</font><font color="#E5E5E5"> out the representation or</font>
+
+116
+00:04:32,490 --> 00:04:36,180
+our EPR to display those raw bytes and
+
+117
+00:04:36,180 --> 00:04:38,460
+<font color="#E5E5E5">okay looks like</font><font color="#CCCCCC"> we're getting a</font><font color="#E5E5E5"> lot of</font>
+
+118
+00:04:38,460 --> 00:04:39,480
+interesting<font color="#CCCCCC"> things there</font>
+
+119
+00:04:39,480 --> 00:04:42,270
+so as<font color="#E5E5E5"> I'm exploring this actually before</font>
+
+120
+00:04:42,270 --> 00:04:44,700
+I go<font color="#CCCCCC"> ahead and show the representation I</font>
+
+121
+00:04:44,700 --> 00:04:46,560
+want to look at some experiments when we
+
+122
+00:04:46,560 --> 00:04:50,250
+test with the okay we'll<font color="#E5E5E5"> just pay 6040</font>
+
+123
+00:04:50,250 --> 00:04:53,070
+<font color="#CCCCCC">code</font><font color="#E5E5E5"> let's again not do that just yet</font><font color="#CCCCCC"> I</font>
+
+124
+00:04:53,070 --> 00:04:55,170
+want to save<font color="#E5E5E5"> these lines though because</font>
+
+125
+00:04:55,170 --> 00:04:56,760
+<font color="#E5E5E5">we will probably keep track of them</font>
+
+126
+00:04:56,760 --> 00:05:01,410
+pretty<font color="#E5E5E5"> soon I would just want to see</font>
+
+127
+00:05:01,410 --> 00:05:03,960
+that base64 string<font color="#E5E5E5"> for a few of these</font>
+
+128
+00:05:03,960 --> 00:05:05,580
+and I want<font color="#CCCCCC"> to gather</font><font color="#E5E5E5"> these</font><font color="#CCCCCC"> I want to be</font>
+
+129
+00:05:05,580 --> 00:05:07,260
+<font color="#CCCCCC">able</font><font color="#E5E5E5"> to see are there</font><font color="#CCCCCC"> any</font><font color="#E5E5E5"> interesting</font>
+
+130
+00:05:07,260 --> 00:05:10,890
+<font color="#E5E5E5">changes when I change my query so just a</font>
+
+131
+00:05:10,890 --> 00:05:13,440
+less random inputs<font color="#CCCCCC"> I'll steal a few</font><font color="#E5E5E5"> more</font>
+
+132
+00:05:13,440 --> 00:05:15,240
+of these<font color="#E5E5E5"> and put</font><font color="#CCCCCC"> them down</font><font color="#E5E5E5"> here so I can</font>
+
+133
+00:05:15,240 --> 00:05:20,100
+<font color="#CCCCCC">examine them</font><font color="#E5E5E5"> say just what and get a few</font>
+
+134
+00:05:20,100 --> 00:05:25,470
+more<font color="#E5E5E5"> okay so if you check out this text</font>
+
+135
+00:05:25,470 --> 00:05:27,660
+<font color="#E5E5E5">here you should notice</font><font color="#CCCCCC"> that the</font><font color="#E5E5E5"> first</font>
+
+136
+00:05:27,660 --> 00:05:30,630
+portion<font color="#E5E5E5"> of this encrypted or encoded or</font>
+
+137
+00:05:30,630 --> 00:05:32,850
+whatever<font color="#E5E5E5"> this data is is actually</font>
+
+138
+00:05:32,850 --> 00:05:34,950
+staying the same<font color="#E5E5E5"> for the first part</font>
+
+139
+00:05:34,950 --> 00:05:37,100
+<font color="#E5E5E5">right here it looks</font><font color="#CCCCCC"> like it'll</font><font color="#E5E5E5"> get up to</font>
+
+140
+00:05:37,100 --> 00:05:39,870
+42<font color="#E5E5E5"> characters in and the base64 encoded</font>
+
+141
+00:05:39,870 --> 00:05:44,100
+values to give us<font color="#E5E5E5"> constant and the same</font>
+
+142
+00:05:44,100 --> 00:05:46,380
+values<font color="#CCCCCC"> however</font><font color="#E5E5E5"> everything that follows</font>
+
+143
+00:05:46,380 --> 00:05:49,020
+looks like it will change so<font color="#E5E5E5"> that leads</font>
+
+144
+00:05:49,020 --> 00:05:51,510
+me<font color="#CCCCCC"> to</font><font color="#E5E5E5"> think of the conclusion</font><font color="#CCCCCC"> that we</font>
+
+145
+00:05:51,510 --> 00:05:54,840
+are<font color="#CCCCCC"> having some static text or some non</font>
+
+146
+00:05:54,840 --> 00:05:58,020
+changing just regular text or data
+
+147
+00:05:58,020 --> 00:06:00,030
+<font color="#CCCCCC">that's being a pro pendant or put at the</font>
+
+148
+00:06:00,030 --> 00:06:02,729
+<font color="#CCCCCC">very very start of</font><font color="#E5E5E5"> our input or what</font>
+
+149
+00:06:02,729 --> 00:06:04,440
+goes<font color="#CCCCCC"> through and then</font><font color="#E5E5E5"> that's being</font>
+
+150
+00:06:04,440 --> 00:06:06,479
+encrypted<font color="#E5E5E5"> and then eventually encoded</font>
+
+151
+00:06:06,479 --> 00:06:09,690
+and it seems<font color="#E5E5E5"> that</font><font color="#CCCCCC"> that's it's it's not</font>
+
+152
+00:06:09,690 --> 00:06:12,660
+particularly changing the segments<font color="#E5E5E5"> that</font>
+
+153
+00:06:12,660 --> 00:06:15,300
+are<font color="#CCCCCC"> being</font><font color="#E5E5E5"> displayed</font><font color="#CCCCCC"> here</font><font color="#E5E5E5"> are being</font>
+
+154
+00:06:15,300 --> 00:06:18,090
+<font color="#E5E5E5">encrypted kind of piece by piece or</font>
+
+155
+00:06:18,090 --> 00:06:22,350
+chunk by chunk<font color="#E5E5E5"> or block by block and</font>
+
+156
+00:06:22,350 --> 00:06:24,900
+that's telling<font color="#CCCCCC"> us that</font><font color="#E5E5E5"> okay they're</font>
+
+157
+00:06:24,900 --> 00:06:27,229
+being<font color="#E5E5E5"> encrypted the exact same way</font><font color="#CCCCCC"> that</font>
+
+158
+00:06:27,229 --> 00:06:30,780
+<font color="#E5E5E5">points</font><font color="#CCCCCC"> me in direction the direction did</font>
+
+159
+00:06:30,780 --> 00:06:33,180
+<font color="#E5E5E5">I say and I say in other words I may</font>
+
+160
+00:06:33,180 --> 00:06:34,410
+have said in<font color="#E5E5E5"> other words okay I didn't</font>
+
+161
+00:06:34,410 --> 00:06:35,880
+<font color="#CCCCCC">want the England</font><font color="#E5E5E5"> cricket team that's not</font>
+
+162
+00:06:35,880 --> 00:06:39,150
+<font color="#E5E5E5">what I</font><font color="#CCCCCC"> wanted I</font><font color="#E5E5E5"> wanted ECB encryption</font>
+
+163
+00:06:39,150 --> 00:06:40,070
+this is
+
+164
+00:06:40,070 --> 00:06:44,330
+block<font color="#CCCCCC"> cipher that is</font><font color="#E5E5E5"> electronic codebook</font>
+
+165
+00:06:44,330 --> 00:06:45,700
+[Music]
+
+166
+00:06:45,700 --> 00:06:49,220
+<font color="#CCCCCC">electronic codebook</font><font color="#E5E5E5"> ECB it is a form of</font>
+
+167
+00:06:49,220 --> 00:06:51,260
+encryption<font color="#E5E5E5"> where the message is divided</font>
+
+168
+00:06:51,260 --> 00:06:53,390
+<font color="#E5E5E5">into blocks and each block is encrypted</font>
+
+169
+00:06:53,390 --> 00:06:55,580
+separately<font color="#E5E5E5"> but going through the exact</font>
+
+170
+00:06:55,580 --> 00:06:57,260
+<font color="#E5E5E5">same operation kind of using the same</font>
+
+171
+00:06:57,260 --> 00:06:59,930
+key<font color="#E5E5E5"> it's it's not chaining these blocks</font>
+
+172
+00:06:59,930 --> 00:07:03,470
+or these chunks together<font color="#CCCCCC"> so you'll be</font>
+
+173
+00:07:03,470 --> 00:07:05,930
+<font color="#CCCCCC">able to see a residual you'll be able to</font>
+
+174
+00:07:05,930 --> 00:07:09,230
+determine<font color="#E5E5E5"> portions of the encryption</font>
+
+175
+00:07:09,230 --> 00:07:11,810
+<font color="#E5E5E5">scheme as you tinker with and</font><font color="#CCCCCC"> as you</font>
+
+176
+00:07:11,810 --> 00:07:13,370
+play with<font color="#CCCCCC"> it you'll see some</font><font color="#E5E5E5"> examples so</font>
+
+177
+00:07:13,370 --> 00:07:16,070
+<font color="#E5E5E5">you're on this Wikipedia page the</font><font color="#CCCCCC"> image</font>
+
+178
+00:07:16,070 --> 00:07:17,900
+of<font color="#CCCCCC"> tux to Linux mascot when it's</font>
+
+179
+00:07:17,900 --> 00:07:19,730
+encrypted<font color="#CCCCCC"> use an ECB</font><font color="#E5E5E5"> you're still able</font>
+
+180
+00:07:19,730 --> 00:07:21,920
+to kind<font color="#E5E5E5"> of make out what that image</font>
+
+181
+00:07:21,920 --> 00:07:26,270
+actually<font color="#E5E5E5"> is so we can probably do</font>
+
+182
+00:07:26,270 --> 00:07:28,070
+<font color="#CCCCCC">something interesting here but let's</font>
+
+183
+00:07:28,070 --> 00:07:31,300
+keep in mind<font color="#E5E5E5"> that it</font><font color="#CCCCCC"> is</font><font color="#E5E5E5"> using this ECB</font>
+
+184
+00:07:31,300 --> 00:07:34,730
+electronic codebook<font color="#CCCCCC"> block cipher to</font>
+
+185
+00:07:34,730 --> 00:07:37,340
+encrypt our input so the next<font color="#E5E5E5"> kind of</font>
+
+186
+00:07:37,340 --> 00:07:39,680
+point of attack is to<font color="#E5E5E5"> determine the</font>
+
+187
+00:07:39,680 --> 00:07:42,590
+<font color="#E5E5E5">block size or how big or what are the</font>
+
+188
+00:07:42,590 --> 00:07:44,210
+what what's the dimensions<font color="#E5E5E5"> of these</font>
+
+189
+00:07:44,210 --> 00:07:46,160
+<font color="#E5E5E5">chunks or these blocks that our message</font>
+
+190
+00:07:46,160 --> 00:07:48,230
+is being<font color="#E5E5E5"> cut up into so</font><font color="#CCCCCC"> let's take a</font>
+
+191
+00:07:48,230 --> 00:07:49,730
+look<font color="#CCCCCC"> let's</font><font color="#E5E5E5"> see how we can figure that</font>
+
+192
+00:07:49,730 --> 00:07:52,700
+<font color="#CCCCCC">out what I want to</font><font color="#E5E5E5"> do first is</font><font color="#CCCCCC"> actually</font>
+
+193
+00:07:52,700 --> 00:07:56,720
+determine let's see here what query will
+
+194
+00:07:56,720 --> 00:07:59,060
+we have<font color="#CCCCCC"> oh I just</font><font color="#E5E5E5"> deleted those things</font>
+
+195
+00:07:59,060 --> 00:08:02,620
+that<font color="#E5E5E5"> I told myself I wanted classic</font>
+
+196
+00:08:02,620 --> 00:08:08,530
+let's try and see what the length of<font color="#E5E5E5"> the</font>
+
+197
+00:08:08,530 --> 00:08:12,170
+actually decoded or like<font color="#E5E5E5"> if the raw data</font>
+
+198
+00:08:12,170 --> 00:08:16,610
+is after we send it<font color="#E5E5E5"> different and</font>
+
+199
+00:08:16,610 --> 00:08:18,980
+varying lengths of information so let's
+
+200
+00:08:18,980 --> 00:08:23,000
+<font color="#E5E5E5">do for I in range and let's go about a</font>
+
+201
+00:08:23,000 --> 00:08:25,160
+like how<font color="#E5E5E5"> many characters</font><font color="#CCCCCC"> that we want to</font>
+
+202
+00:08:25,160 --> 00:08:28,670
+<font color="#CCCCCC">go for</font><font color="#E5E5E5"> well how about how long is this</font>
+
+203
+00:08:28,670 --> 00:08:31,070
+to<font color="#CCCCCC"> begin with how long is our decoded</font>
+
+204
+00:08:31,070 --> 00:08:33,919
+one to<font color="#E5E5E5"> begin with before</font><font color="#CCCCCC"> we actually</font>
+
+205
+00:08:33,919 --> 00:08:38,120
+<font color="#E5E5E5">check out the I put an extra string</font>
+
+206
+00:08:38,120 --> 00:08:42,309
+there<font color="#E5E5E5"> okay it is 80 characters long so</font>
+
+207
+00:08:42,309 --> 00:08:44,660
+what could we<font color="#E5E5E5"> potentially be working</font>
+
+208
+00:08:44,660 --> 00:08:48,740
+with<font color="#E5E5E5"> here let's go for I in range 30</font>
+
+209
+00:08:48,740 --> 00:08:52,089
+maybe 30 characters long
+
+210
+00:08:52,089 --> 00:08:56,019
+180<font color="#CCCCCC"> I don't know</font><font color="#E5E5E5"> let's try it let's</font><font color="#CCCCCC"> just</font>
+
+211
+00:08:56,019 --> 00:08:58,779
+<font color="#CCCCCC">go response equals all this let's</font>
+
+212
+00:08:58,779 --> 00:09:01,809
+determine the<font color="#E5E5E5"> length</font><font color="#CCCCCC"> we</font><font color="#E5E5E5"> don't have to</font>
+
+213
+00:09:01,809 --> 00:09:08,040
+view it<font color="#E5E5E5"> out let's just view the length I</font>
+
+214
+00:09:09,509 --> 00:09:19,059
+or query length and then response length
+
+215
+00:09:19,059 --> 00:09:20,529
+will be just<font color="#E5E5E5"> like</font><font color="#CCCCCC"> that</font>
+
+216
+00:09:20,529 --> 00:09:22,629
+so let's now change this query<font color="#CCCCCC"> to like</font>
+
+217
+00:09:22,629 --> 00:09:26,980
+the letter<font color="#CCCCCC"> A multiplied by</font><font color="#E5E5E5"> I so let's</font>
+
+218
+00:09:26,980 --> 00:09:28,600
+try and run this<font color="#E5E5E5"> see how long it takes</font>
+
+219
+00:09:28,600 --> 00:09:32,769
+for<font color="#CCCCCC"> us I forgot a comma here okay</font><font color="#E5E5E5"> so</font>
+
+220
+00:09:32,769 --> 00:09:35,680
+<font color="#E5E5E5">query length 0 response to length 80</font>
+
+221
+00:09:35,680 --> 00:09:37,509
+<font color="#E5E5E5">this will keep returning and returning</font>
+
+222
+00:09:37,509 --> 00:09:39,519
+and<font color="#E5E5E5"> returning for us until</font><font color="#CCCCCC"> okay we see</font>
+
+223
+00:09:39,519 --> 00:09:41,170
+something<font color="#CCCCCC"> change</font><font color="#E5E5E5"> here we've got a</font>
+
+224
+00:09:41,170 --> 00:09:44,350
+difference in the response length<font color="#E5E5E5"> being</font>
+
+225
+00:09:44,350 --> 00:09:47,050
+80 and the response length now going to
+
+226
+00:09:47,050 --> 00:09:51,220
+96<font color="#E5E5E5"> so that's changing the encryption</font>
+
+227
+00:09:51,220 --> 00:09:53,680
+<font color="#E5E5E5">that it's actually outputting here for</font>
+
+228
+00:09:53,680 --> 00:09:55,540
+us<font color="#E5E5E5"> it looks like we're getting more of</font>
+
+229
+00:09:55,540 --> 00:09:57,579
+<font color="#E5E5E5">these changes as we change our query</font>
+
+230
+00:09:57,579 --> 00:09:59,170
+length<font color="#E5E5E5"> just as we would expect</font>
+
+231
+00:09:59,170 --> 00:10:02,110
+<font color="#E5E5E5">we're gonna hit 100 pretty soon let's</font>
+
+232
+00:10:02,110 --> 00:10:05,920
+<font color="#E5E5E5">admit on this a little bit and okay</font><font color="#CCCCCC"> okay</font>
+
+233
+00:10:05,920 --> 00:10:10,089
+we<font color="#E5E5E5"> went to</font><font color="#CCCCCC"> 80</font><font color="#E5E5E5"> sweet so this starts at 80</font>
+
+234
+00:10:10,089 --> 00:10:13,179
+and goes until<font color="#E5E5E5"> a ends here and that</font>
+
+235
+00:10:13,179 --> 00:10:19,179
+takes<font color="#E5E5E5"> about or is it 13</font><font color="#CCCCCC"> lines</font><font color="#E5E5E5"> yep but we</font>
+
+236
+00:10:19,179 --> 00:10:23,350
+got 96<font color="#E5E5E5"> over here this length of</font><font color="#CCCCCC"> the</font>
+
+237
+00:10:23,350 --> 00:10:28,749
+response is only<font color="#E5E5E5"> 96 for 16 lines and</font>
+
+238
+00:10:28,749 --> 00:10:33,550
+then as we check<font color="#E5E5E5"> out 112 we have 112</font>
+
+239
+00:10:33,550 --> 00:10:36,309
+again 16 times you can see it at the
+
+240
+00:10:36,309 --> 00:10:39,040
+<font color="#CCCCCC">very</font><font color="#E5E5E5"> bottom I've selected 16 lines same</font>
+
+241
+00:10:39,040 --> 00:10:42,040
+thing for 128<font color="#E5E5E5"> if we check that out we</font>
+
+242
+00:10:42,040 --> 00:10:46,179
+have<font color="#E5E5E5"> 16 lines so what we can assume and</font>
+
+243
+00:10:46,179 --> 00:10:48,160
+understand here<font color="#CCCCCC"> is that this very very</font>
+
+244
+00:10:48,160 --> 00:10:50,350
+first<font color="#E5E5E5"> block</font><font color="#CCCCCC"> that we're looking</font><font color="#E5E5E5"> at is</font>
+
+245
+00:10:50,350 --> 00:10:52,720
+obviously taken up by<font color="#CCCCCC"> some of the</font>
+
+246
+00:10:52,720 --> 00:10:54,970
+<font color="#CCCCCC">original data or the original</font><font color="#E5E5E5"> string or</font>
+
+247
+00:10:54,970 --> 00:10:56,740
+text that<font color="#E5E5E5"> is being prepend</font><font color="#CCCCCC"> Adhan</font><font color="#E5E5E5"> or</font>
+
+248
+00:10:56,740 --> 00:10:58,480
+putting<font color="#CCCCCC"> in at the very start of our</font>
+
+249
+00:10:58,480 --> 00:11:01,720
+input so<font color="#E5E5E5"> that can't be that trustworthy</font>
+
+250
+00:11:01,720 --> 00:11:05,079
+<font color="#E5E5E5">but maybe these other 16 length blocks</font>
+
+251
+00:11:05,079 --> 00:11:05,800
+we certain
+
+252
+00:11:05,800 --> 00:11:07,510
+<font color="#E5E5E5">I can trust so that's how we can</font>
+
+253
+00:11:07,510 --> 00:11:10,209
+determine the block size<font color="#E5E5E5"> okay so now</font>
+
+254
+00:11:10,209 --> 00:11:12,730
+let's try<font color="#E5E5E5"> and figure out where our data</font>
+
+255
+00:11:12,730 --> 00:11:16,750
+actually is or kind<font color="#E5E5E5"> of how much room or</font>
+
+256
+00:11:16,750 --> 00:11:18,100
+what buffer do we have to work with
+
+257
+00:11:18,100 --> 00:11:20,140
+<font color="#CCCCCC">within these blocks so let's check</font><font color="#E5E5E5"> out</font>
+
+258
+00:11:20,140 --> 00:11:22,839
+<font color="#E5E5E5">let's say our block size can equal 16</font>
+
+259
+00:11:22,839 --> 00:11:24,610
+<font color="#E5E5E5">now that we've kind</font><font color="#CCCCCC"> of figured that out</font>
+
+260
+00:11:24,610 --> 00:11:27,700
+<font color="#E5E5E5">now we can determine what blocks we want</font>
+
+261
+00:11:27,700 --> 00:11:31,570
+to actually<font color="#E5E5E5"> check out let's do another</font>
+
+262
+00:11:31,570 --> 00:11:33,880
+for loop<font color="#E5E5E5"> for each of these let's do a</font>
+
+263
+00:11:33,880 --> 00:11:35,709
+print just<font color="#E5E5E5"> to get a nice visualizer</font>
+
+264
+00:11:35,709 --> 00:11:38,470
+<font color="#CCCCCC">let's get about 50 characters of a line</font>
+
+265
+00:11:38,470 --> 00:11:41,890
+there<font color="#E5E5E5"> and let's do</font><font color="#CCCCCC"> for block in range</font>
+
+266
+00:11:41,890 --> 00:11:43,360
+how many blocks we<font color="#E5E5E5"> want to check out</font>
+
+267
+00:11:43,360 --> 00:11:46,990
+<font color="#E5E5E5">well the original thing was</font><font color="#CCCCCC"> 80</font><font color="#E5E5E5"> and we</font>
+
+268
+00:11:46,990 --> 00:11:49,779
+want to go<font color="#CCCCCC"> to we don't</font><font color="#E5E5E5"> want</font><font color="#CCCCCC"> to go to MIT</font>
+
+269
+00:11:49,779 --> 00:11:50,769
+we<font color="#E5E5E5"> don't want to make</font><font color="#CCCCCC"> any requests</font>
+
+270
+00:11:50,769 --> 00:11:53,010
+<font color="#E5E5E5">anymore we saw that change happen about</font>
+
+271
+00:11:53,010 --> 00:11:55,750
+with character<font color="#CCCCCC"> length of</font><font color="#E5E5E5"> 16 a query</font>
+
+272
+00:11:55,750 --> 00:11:57,149
+length of 16 so let's change that<font color="#CCCCCC"> to</font>
+
+273
+00:11:57,149 --> 00:11:59,470
+<font color="#CCCCCC">against 16</font><font color="#E5E5E5"> or</font><font color="#CCCCCC"> 15 or whatever you want</font>
+
+274
+00:11:59,470 --> 00:12:01,060
+<font color="#E5E5E5">I'm not I'm</font><font color="#CCCCCC"> not choosing 16 because</font><font color="#E5E5E5"> it's</font>
+
+275
+00:12:01,060 --> 00:12:02,680
+a block size I'm choosing it because
+
+276
+00:12:02,680 --> 00:12:04,540
+<font color="#E5E5E5">that's where we saw</font><font color="#CCCCCC"> a change in the</font>
+
+277
+00:12:04,540 --> 00:12:06,339
+response length<font color="#E5E5E5"> and it gives us a couple</font>
+
+278
+00:12:06,339 --> 00:12:08,800
+<font color="#CCCCCC">in and out</font><font color="#E5E5E5"> so we can explore some</font><font color="#CCCCCC"> of</font>
+
+279
+00:12:08,800 --> 00:12:10,120
+<font color="#E5E5E5">those now</font>
+
+280
+00:12:10,120 --> 00:12:11,950
+let's check<font color="#E5E5E5"> out the actual blocks of the</font>
+
+281
+00:12:11,950 --> 00:12:13,450
+data<font color="#E5E5E5"> that we're seeing in the response</font>
+
+282
+00:12:13,450 --> 00:12:18,399
+let's check out about how<font color="#CCCCCC"> about 5 or</font>
+
+283
+00:12:18,399 --> 00:12:20,410
+let's say 80<font color="#E5E5E5"> the original length was 80</font>
+
+284
+00:12:20,410 --> 00:12:21,880
+<font color="#E5E5E5">and then we divide that by</font><font color="#CCCCCC"> the block</font>
+
+285
+00:12:21,880 --> 00:12:28,180
+size<font color="#E5E5E5"> so let's</font><font color="#CCCCCC"> check out</font><font color="#E5E5E5"> the response</font>
+
+286
+00:12:28,180 --> 00:12:30,880
+that<font color="#E5E5E5"> we're</font><font color="#CCCCCC"> getting just</font><font color="#E5E5E5"> like we've</font><font color="#CCCCCC"> seen</font>
+
+287
+00:12:30,880 --> 00:12:33,100
+<font color="#CCCCCC">before</font><font color="#E5E5E5"> except now we don't want the</font>
+
+288
+00:12:33,100 --> 00:12:36,910
+length we want the<font color="#E5E5E5"> original</font><font color="#CCCCCC"> thing</font>
+
+289
+00:12:36,910 --> 00:12:40,329
+decoded from<font color="#E5E5E5"> locks the current block</font>
+
+290
+00:12:40,329 --> 00:12:42,130
+that we're looking<font color="#E5E5E5"> at times block size</font>
+
+291
+00:12:42,130 --> 00:12:44,410
+so this will originally start at<font color="#E5E5E5"> 0 and</font>
+
+292
+00:12:44,410 --> 00:12:53,050
+then up until block plus 1 times block
+
+293
+00:12:53,050 --> 00:12:57,550
+size<font color="#E5E5E5"> so that'll go 16 bytes at a time 16</font>
+
+294
+00:12:57,550 --> 00:13:00,970
+first block and<font color="#CCCCCC"> then 16 to 32 the second</font>
+
+295
+00:13:00,970 --> 00:13:02,740
+block<font color="#CCCCCC"> and then</font><font color="#E5E5E5"> 32</font><font color="#CCCCCC"> to 48 the third block</font>
+
+296
+00:13:02,740 --> 00:13:05,649
+etc so if we wanted to<font color="#E5E5E5"> check that out</font>
+
+297
+00:13:05,649 --> 00:13:07,240
+let's wrap her to get the raw
+
+298
+00:13:07,240 --> 00:13:09,550
+representation again and let's print out
+
+299
+00:13:09,550 --> 00:13:16,529
+<font color="#E5E5E5">block block data just like that</font>
+
+300
+00:13:18,350 --> 00:13:21,540
+and we still<font color="#E5E5E5"> want to have our query</font>
+
+301
+00:13:21,540 --> 00:13:25,170
+<font color="#E5E5E5">length visible up at the top here</font><font color="#CCCCCC"> so now</font>
+
+302
+00:13:25,170 --> 00:13:29,570
+let's<font color="#E5E5E5"> check out what this does</font><font color="#CCCCCC"> response</font>
+
+303
+00:13:29,570 --> 00:13:33,330
+what's not what's going<font color="#E5E5E5"> wrong here</font><font color="#CCCCCC"> oh I</font>
+
+304
+00:13:33,330 --> 00:13:35,480
+would actually<font color="#CCCCCC"> need that</font><font color="#E5E5E5"> after</font><font color="#CCCCCC"> thee</font>
+
+305
+00:13:35,480 --> 00:13:38,100
+<font color="#E5E5E5">after I go ahead and query the site</font>
+
+306
+00:13:38,100 --> 00:13:41,040
+okay so query length<font color="#CCCCCC"> 0 response length</font>
+
+307
+00:13:41,040 --> 00:13:42,750
+<font color="#CCCCCC">80 and this is happening over</font><font color="#E5E5E5"> and over</font>
+
+308
+00:13:42,750 --> 00:13:45,660
+<font color="#CCCCCC">again until</font><font color="#E5E5E5"> we get to</font><font color="#CCCCCC"> about 16 requests</font>
+
+309
+00:13:45,660 --> 00:13:49,740
+15 requests<font color="#CCCCCC"> just fine so you can see</font>
+
+310
+00:13:49,740 --> 00:13:52,110
+again<font color="#CCCCCC"> I'm looking at the raw</font>
+
+311
+00:13:52,110 --> 00:13:53,610
+<font color="#E5E5E5">representation of the bytes your</font>
+
+312
+00:13:53,610 --> 00:13:55,230
+elaborate representation of the data<font color="#E5E5E5"> so</font>
+
+313
+00:13:55,230 --> 00:13:56,730
+it's<font color="#E5E5E5"> not basic</font><font color="#CCCCCC"> ste 4 encoded</font><font color="#E5E5E5"> just</font>
+
+314
+00:13:56,730 --> 00:13:58,110
+separate into<font color="#CCCCCC"> different chunks those</font>
+
+315
+00:13:58,110 --> 00:14:01,650
+different blocks so the first block<font color="#E5E5E5"> or I</font>
+
+316
+00:14:01,650 --> 00:14:04,290
+<font color="#E5E5E5">guess block 0 and we can</font><font color="#CCCCCC"> actually change</font>
+
+317
+00:14:04,290 --> 00:14:06,450
+this to block<font color="#CCCCCC"> +1 so it makes a little</font>
+
+318
+00:14:06,450 --> 00:14:08,310
+<font color="#E5E5E5">bit more sense or has a hat as to how we</font>
+
+319
+00:14:08,310 --> 00:14:14,940
+are reading it<font color="#E5E5E5"> okay check this out so</font>
+
+320
+00:14:14,940 --> 00:14:20,070
+blocks<font color="#E5E5E5"> 1</font><font color="#CCCCCC"> &</font><font color="#E5E5E5"> 2 seem</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> be the same for</font>
+
+321
+00:14:20,070 --> 00:14:23,760
+every query length that we send it so
+
+322
+00:14:23,760 --> 00:14:28,350
+that tells us that that<font color="#CCCCCC"> must be the</font>
+
+323
+00:14:28,350 --> 00:14:32,220
+amount that<font color="#E5E5E5"> is filled up by the original</font>
+
+324
+00:14:32,220 --> 00:14:34,110
+prepended text that's at the very<font color="#CCCCCC"> very</font>
+
+325
+00:14:34,110 --> 00:14:35,820
+that's<font color="#E5E5E5"> the static text that we don't</font>
+
+326
+00:14:35,820 --> 00:14:37,290
+have control<font color="#CCCCCC"> over it's just being added</font>
+
+327
+00:14:37,290 --> 00:14:39,060
+in at the<font color="#E5E5E5"> very</font><font color="#CCCCCC"> start</font><font color="#E5E5E5"> of our input and</font>
+
+328
+00:14:39,060 --> 00:14:41,400
+<font color="#E5E5E5">that's what's it's encrypting you can</font>
+
+329
+00:14:41,400 --> 00:14:43,440
+see that that<font color="#E5E5E5"> doesn't change blocks 1 &</font>
+
+330
+00:14:43,440 --> 00:14:44,160
+<font color="#E5E5E5">2 don't change</font>
+
+331
+00:14:44,160 --> 00:14:46,440
+however block 3 is changing with our
+
+332
+00:14:46,440 --> 00:14:48,960
+input<font color="#E5E5E5"> so where do we find</font><font color="#CCCCCC"> a threshold</font>
+
+333
+00:14:48,960 --> 00:14:51,900
+where we fill up<font color="#E5E5E5"> one block we fill up</font>
+
+334
+00:14:51,900 --> 00:14:54,360
+block<font color="#E5E5E5"> 3 and then we start to move into</font>
+
+335
+00:14:54,360 --> 00:14:56,730
+what would<font color="#E5E5E5"> be blocked for because</font>
+
+336
+00:14:56,730 --> 00:14:58,380
+apparently there's data<font color="#E5E5E5"> being added</font>
+
+337
+00:14:58,380 --> 00:15:00,390
+after our input so<font color="#CCCCCC"> we could potentially</font>
+
+338
+00:15:00,390 --> 00:15:03,020
+<font color="#E5E5E5">figure out what that is</font>
+
+339
+00:15:03,020 --> 00:15:05,460
+because it's<font color="#CCCCCC"> ECB because it's a lot</font>
+
+340
+00:15:05,460 --> 00:15:11,030
+electronic codebook cipher so I see in
+
+341
+00:15:11,030 --> 00:15:15,870
+query<font color="#E5E5E5"> length 10 in query length 11 block</font>
+
+342
+00:15:15,870 --> 00:15:23,010
+<font color="#E5E5E5">3 actually stays the same value so it</font>
+
+343
+00:15:23,010 --> 00:15:25,130
+looks<font color="#CCCCCC"> like that same way onward</font><font color="#E5E5E5"> from 12</font>
+
+344
+00:15:25,130 --> 00:15:28,440
+13<font color="#E5E5E5"> etcetera etcetera</font><font color="#CCCCCC"> so that means the</font>
+
+345
+00:15:28,440 --> 00:15:30,930
+threshold for filling all
+
+346
+00:15:30,930 --> 00:15:34,170
+of block<font color="#CCCCCC"> three that where that location</font>
+
+347
+00:15:34,170 --> 00:15:35,640
+in the message where we are where our
+
+348
+00:15:35,640 --> 00:15:39,770
+<font color="#CCCCCC">input is</font><font color="#E5E5E5"> going we have filled the block</font>
+
+349
+00:15:39,770 --> 00:15:46,470
+<font color="#E5E5E5">between ten and nine so nine means that</font>
+
+350
+00:15:46,470 --> 00:15:49,140
+there is<font color="#E5E5E5"> just one more character that</font>
+
+351
+00:15:49,140 --> 00:15:50,750
+<font color="#E5E5E5">wood has eventually</font><font color="#CCCCCC"> fill the block</font>
+
+352
+00:15:50,750 --> 00:15:53,580
+because once it has it hits<font color="#E5E5E5"> ten and</font>
+
+353
+00:15:53,580 --> 00:15:55,170
+<font color="#E5E5E5">eleven it's gonna stay the same</font><font color="#CCCCCC"> over and</font>
+
+354
+00:15:55,170 --> 00:15:56,370
+<font color="#E5E5E5">over and that means we fill the block</font>
+
+355
+00:15:56,370 --> 00:16:00,570
+with our<font color="#E5E5E5"> RA letters so if we have one</font>
+
+356
+00:16:00,570 --> 00:16:04,440
+last character available in the block if
+
+357
+00:16:04,440 --> 00:16:06,779
+we send it a query of<font color="#E5E5E5"> length nine we</font>
+
+358
+00:16:06,779 --> 00:16:09,620
+could potentially<font color="#E5E5E5"> figure out what that</font>
+
+359
+00:16:09,620 --> 00:16:13,620
+data is<font color="#E5E5E5"> following</font><font color="#CCCCCC"> our input because it's</font>
+
+360
+00:16:13,620 --> 00:16:15,420
+being encrypted<font color="#E5E5E5"> if we actually figured</font>
+
+361
+00:16:15,420 --> 00:16:18,779
+out<font color="#E5E5E5"> okay what is this block what does</font>
+
+362
+00:16:18,779 --> 00:16:20,700
+that<font color="#E5E5E5"> block look like if we</font><font color="#CCCCCC"> fill it with</font>
+
+363
+00:16:20,700 --> 00:16:22,410
+one<font color="#E5E5E5"> more character and</font><font color="#CCCCCC"> we could keep</font>
+
+364
+00:16:22,410 --> 00:16:24,120
+iterating through that character to<font color="#CCCCCC"> try</font>
+
+365
+00:16:24,120 --> 00:16:26,459
+and determine what character is<font color="#E5E5E5"> it in</font>
+
+366
+00:16:26,459 --> 00:16:28,470
+the real data<font color="#CCCCCC"> that they're appending</font>
+
+367
+00:16:28,470 --> 00:16:30,390
+that we don't know<font color="#E5E5E5"> yet we could probably</font>
+
+368
+00:16:30,390 --> 00:16:33,180
+leak it out so that<font color="#E5E5E5"> may seem weird that</font>
+
+369
+00:16:33,180 --> 00:16:35,970
+<font color="#CCCCCC">may sound</font><font color="#E5E5E5"> weird</font><font color="#CCCCCC"> let's let's do it</font><font color="#E5E5E5"> let me</font>
+
+370
+00:16:35,970 --> 00:16:37,110
+<font color="#E5E5E5">show you how we how we can make this</font>
+
+371
+00:16:37,110 --> 00:16:40,380
+happen<font color="#CCCCCC"> let's go ahead</font><font color="#E5E5E5"> and say the</font>
+
+372
+00:16:40,380 --> 00:16:44,490
+correct<font color="#E5E5E5"> string is just this</font>
+
+373
+00:16:44,490 --> 00:16:46,770
+<font color="#E5E5E5">representation again we'll put</font><font color="#CCCCCC"> that in</font>
+
+374
+00:16:46,770 --> 00:16:47,600
+<font color="#E5E5E5">repper</font>
+
+375
+00:16:47,600 --> 00:16:50,130
+so that is what they would is we would
+
+376
+00:16:50,130 --> 00:16:53,610
+assume from<font color="#CCCCCC"> that and we could import</font>
+
+377
+00:16:53,610 --> 00:16:56,880
+string have all of the potential
+
+378
+00:16:56,880 --> 00:16:59,370
+characters here there's principal
+
+379
+00:16:59,370 --> 00:17:03,439
+characters for<font color="#E5E5E5"> C in string dot printable</font>
+
+380
+00:17:03,439 --> 00:17:10,369
+then we'll make a request where we say a
+
+381
+00:17:10,369 --> 00:17:13,650
+nine times<font color="#E5E5E5"> because we know that that</font><font color="#CCCCCC"> is</font>
+
+382
+00:17:13,650 --> 00:17:15,630
+we're gonna have<font color="#E5E5E5"> one last character to</font>
+
+383
+00:17:15,630 --> 00:17:18,270
+fill this<font color="#E5E5E5"> block and we'll put in the</font>
+
+384
+00:17:18,270 --> 00:17:21,540
+character that we're<font color="#CCCCCC"> looking</font><font color="#E5E5E5"> at so then</font>
+
+385
+00:17:21,540 --> 00:17:25,199
+we can<font color="#E5E5E5"> go ahead and get what block we're</font>
+
+386
+00:17:25,199 --> 00:17:26,670
+looking at block three in this<font color="#E5E5E5"> case</font>
+
+387
+00:17:26,670 --> 00:17:28,590
+<font color="#E5E5E5">we'll take that original line that we</font>
+
+388
+00:17:28,590 --> 00:17:31,290
+had and just<font color="#E5E5E5"> set block</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> two because</font><font color="#CCCCCC"> it</font>
+
+389
+00:17:31,290 --> 00:17:34,200
+is<font color="#E5E5E5"> zero based when we know we're</font><font color="#CCCCCC"> looking</font>
+
+390
+00:17:34,200 --> 00:17:36,179
+<font color="#E5E5E5">at block three but since it counts 0 1 2</font>
+
+391
+00:17:36,179 --> 00:17:39,929
+that<font color="#E5E5E5"> will</font><font color="#CCCCCC"> be</font><font color="#E5E5E5"> the third block</font><font color="#CCCCCC"> our answer</font>
+
+392
+00:17:39,929 --> 00:17:43,530
+will be this again with the third block
+
+393
+00:17:43,530 --> 00:17:44,710
+that we're looking<font color="#E5E5E5"> at</font>
+
+394
+00:17:44,710 --> 00:17:47,289
+so we can test if answer is equal to the
+
+395
+00:17:47,289 --> 00:17:51,549
+correct string then we know we found the
+
+396
+00:17:51,549 --> 00:17:56,260
+<font color="#E5E5E5">character</font><font color="#CCCCCC"> that would</font><font color="#E5E5E5"> be following that</font>
+
+397
+00:17:56,260 --> 00:18:01,419
+that that<font color="#E5E5E5"> input that we supply so let's</font>
+
+398
+00:18:01,419 --> 00:18:03,340
+include that see right there<font color="#E5E5E5"> we can</font>
+
+399
+00:18:03,340 --> 00:18:08,289
+print trying<font color="#CCCCCC"> see and let's run</font><font color="#E5E5E5"> this</font>
+
+400
+00:18:08,289 --> 00:18:12,010
+<font color="#E5E5E5">trying 0 1 2 3</font><font color="#CCCCCC"> 4 etc etc and</font><font color="#E5E5E5"> this will</font>
+
+401
+00:18:12,010 --> 00:18:15,820
+loop through<font color="#E5E5E5"> the characters here</font><font color="#CCCCCC"> I hope</font>
+
+402
+00:18:15,820 --> 00:18:17,289
+<font color="#E5E5E5">this makes</font><font color="#CCCCCC"> sense</font><font color="#E5E5E5"> I'm gonna try and</font>
+
+403
+00:18:17,289 --> 00:18:19,539
+visualize it<font color="#E5E5E5"> here with some block stuff</font>
+
+404
+00:18:19,539 --> 00:18:22,570
+<font color="#CCCCCC">I'll try</font><font color="#E5E5E5"> and make these blocks</font><font color="#CCCCCC"> just like</font>
+
+405
+00:18:22,570 --> 00:18:26,500
+this<font color="#E5E5E5"> so if we were filling up</font><font color="#CCCCCC"> our blocks</font>
+
+406
+00:18:26,500 --> 00:18:32,440
+<font color="#CCCCCC">up until the last</font><font color="#E5E5E5"> segment here so 1st</font>
+
+407
+00:18:32,440 --> 00:18:35,260
+and<font color="#E5E5E5"> 2nd blocks are filled and then the</font>
+
+408
+00:18:35,260 --> 00:18:38,110
+third<font color="#E5E5E5"> block we know we just okay cool it</font>
+
+409
+00:18:38,110 --> 00:18:40,990
+<font color="#E5E5E5">found it % here hopefully that will</font>
+
+410
+00:18:40,990 --> 00:18:45,970
+close<font color="#E5E5E5"> in we are filling up until we just</font>
+
+411
+00:18:45,970 --> 00:18:50,409
+<font color="#E5E5E5">leak into whatever the</font><font color="#CCCCCC"> 4th</font><font color="#E5E5E5"> mole</font><font color="#CCCCCC"> 4th</font>
+
+412
+00:18:50,409 --> 00:18:57,250
+block<font color="#E5E5E5"> may end up</font><font color="#CCCCCC"> being so 1 2</font><font color="#E5E5E5"> 3 we fill</font>
+
+413
+00:18:57,250 --> 00:19:02,620
+the third block<font color="#E5E5E5"> up until the character</font>
+
+414
+00:19:02,620 --> 00:19:05,260
+that would eventually be starting the
+
+415
+00:19:05,260 --> 00:19:09,240
+<font color="#E5E5E5">next block starting the fourth block so</font>
+
+416
+00:19:09,240 --> 00:19:13,390
+since the original<font color="#E5E5E5"> data is at the very</font>
+
+417
+00:19:13,390 --> 00:19:16,539
+very<font color="#E5E5E5"> end here following our input we</font><font color="#CCCCCC"> can</font>
+
+418
+00:19:16,539 --> 00:19:19,299
+supply<font color="#E5E5E5"> everything</font><font color="#CCCCCC"> up</font><font color="#E5E5E5"> to that last block</font>
+
+419
+00:19:19,299 --> 00:19:21,010
+and since it will<font color="#CCCCCC"> be</font><font color="#E5E5E5"> encrypted one way</font>
+
+420
+00:19:21,010 --> 00:19:23,320
+or<font color="#E5E5E5"> the other we can</font><font color="#CCCCCC"> keep checking</font><font color="#E5E5E5"> to see</font>
+
+421
+00:19:23,320 --> 00:19:26,169
+what is that character<font color="#E5E5E5"> going to be is it</font>
+
+422
+00:19:26,169 --> 00:19:27,970
+going to equal<font color="#E5E5E5"> what it would</font><font color="#CCCCCC"> have been</font>
+
+423
+00:19:27,970 --> 00:19:30,610
+had it<font color="#CCCCCC"> been</font><font color="#E5E5E5"> actually encrypted following</font>
+
+424
+00:19:30,610 --> 00:19:34,000
+that<font color="#E5E5E5"> that's very very hard</font><font color="#CCCCCC"> to discuss</font>
+
+425
+00:19:34,000 --> 00:19:36,100
+and I'm<font color="#E5E5E5"> sorry if I suck at explaining</font>
+
+426
+00:19:36,100 --> 00:19:39,480
+that<font color="#E5E5E5"> hopefully you see it visually</font><font color="#CCCCCC"> ok</font><font color="#E5E5E5"> so</font>
+
+427
+00:19:39,480 --> 00:19:41,919
+since<font color="#E5E5E5"> we</font><font color="#CCCCCC"> are since</font><font color="#E5E5E5"> we found the</font>
+
+428
+00:19:41,919 --> 00:19:44,710
+character % we have an interesting hunch
+
+429
+00:19:44,710 --> 00:19:47,140
+here now<font color="#E5E5E5"> because knowing the application</font>
+
+430
+00:19:47,140 --> 00:19:48,460
+and knowing the functionality<font color="#CCCCCC"> of what</font>
+
+431
+00:19:48,460 --> 00:19:50,710
+<font color="#E5E5E5">this program does it's probably running</font>
+
+432
+00:19:50,710 --> 00:19:54,820
+<font color="#E5E5E5">a query something like select text from</font>
+
+433
+00:19:54,820 --> 00:19:58,119
+jokes<font color="#E5E5E5"> where the text</font><font color="#CCCCCC"> is</font>
+
+434
+00:19:58,119 --> 00:20:01,419
+like and this<font color="#E5E5E5"> is sequel right here where</font>
+
+435
+00:20:01,419 --> 00:20:04,329
+it's using that<font color="#E5E5E5"> % as a</font><font color="#CCCCCC"> wild-card where</font>
+
+436
+00:20:04,329 --> 00:20:09,339
+text is like our input with<font color="#E5E5E5"> the %</font>
+
+437
+00:20:09,339 --> 00:20:10,869
+<font color="#E5E5E5">following because that's the</font><font color="#CCCCCC"> wild-card</font>
+
+438
+00:20:10,869 --> 00:20:13,149
+<font color="#CCCCCC">it'll match anything</font><font color="#E5E5E5"> that has that</font>
+
+439
+00:20:13,149 --> 00:20:17,739
+notion in it so this<font color="#E5E5E5"> is doing an</font>
+
+440
+00:20:17,739 --> 00:20:20,049
+<font color="#E5E5E5">interesting thing because normally using</font>
+
+441
+00:20:20,049 --> 00:20:21,879
+this technique now that we found<font color="#E5E5E5"> that</font>
+
+442
+00:20:21,879 --> 00:20:24,369
+character<font color="#E5E5E5"> we could potentially shrink</font>
+
+443
+00:20:24,369 --> 00:20:26,829
+<font color="#E5E5E5">our test block and just</font><font color="#CCCCCC"> add</font><font color="#E5E5E5"> the</font>
+
+444
+00:20:26,829 --> 00:20:28,389
+<font color="#E5E5E5">character that we</font><font color="#CCCCCC"> found at the</font><font color="#E5E5E5"> very</font><font color="#CCCCCC"> very</font>
+
+445
+00:20:28,389 --> 00:20:31,569
+<font color="#E5E5E5">end</font><font color="#CCCCCC"> so it will encrypt and decrypt</font><font color="#E5E5E5"> the</font>
+
+446
+00:20:31,569 --> 00:20:33,219
+same way we<font color="#E5E5E5"> would</font><font color="#CCCCCC"> expect it</font><font color="#E5E5E5"> because now</font>
+
+447
+00:20:33,219 --> 00:20:34,959
+that<font color="#E5E5E5"> we figured out what character was</font>
+
+448
+00:20:34,959 --> 00:20:37,109
+<font color="#E5E5E5">next we can try that attack again</font>
+
+449
+00:20:37,109 --> 00:20:40,089
+<font color="#CCCCCC">shrinking down</font><font color="#E5E5E5"> our padding or our space</font>
+
+450
+00:20:40,089 --> 00:20:42,159
+that we're filling in<font color="#E5E5E5"> and so we can leak</font>
+
+451
+00:20:42,159 --> 00:20:45,339
+out more of<font color="#E5E5E5"> the message that follows or</font>
+
+452
+00:20:45,339 --> 00:20:49,509
+the text that follows<font color="#CCCCCC"> our input</font><font color="#E5E5E5"> but this</font>
+
+453
+00:20:49,509 --> 00:20:51,759
+is kind of<font color="#E5E5E5"> an</font><font color="#CCCCCC"> issue in this case</font><font color="#E5E5E5"> right</font>
+
+454
+00:20:51,759 --> 00:20:54,369
+<font color="#CCCCCC">here because we actually are</font><font color="#E5E5E5"> probably</font>
+
+455
+00:20:54,369 --> 00:20:57,639
+<font color="#E5E5E5">wrapped inside</font><font color="#CCCCCC"> of a string</font><font color="#E5E5E5"> we at least</font>
+
+456
+00:20:57,639 --> 00:20:58,989
+<font color="#E5E5E5">in the sequel code that's probably</font>
+
+457
+00:20:58,989 --> 00:21:01,329
+<font color="#E5E5E5">running in the back we wouldn't</font><font color="#CCCCCC"> be</font><font color="#E5E5E5"> able</font>
+
+458
+00:21:01,329 --> 00:21:04,089
+<font color="#E5E5E5">to</font><font color="#CCCCCC"> actually test this</font><font color="#E5E5E5"> because our input</font>
+
+459
+00:21:04,089 --> 00:21:06,609
+is again as we saw<font color="#E5E5E5"> from our testing in</font>
+
+460
+00:21:06,609 --> 00:21:09,579
+the beginning being escaped<font color="#E5E5E5"> like we we</font>
+
+461
+00:21:09,579 --> 00:21:11,559
+tried to enter a quote or<font color="#E5E5E5"> a single quote</font>
+
+462
+00:21:11,559 --> 00:21:14,019
+<font color="#E5E5E5">but we know that</font><font color="#CCCCCC"> that's probably not</font>
+
+463
+00:21:14,019 --> 00:21:16,989
+being<font color="#E5E5E5"> processed as real sequel commands</font>
+
+464
+00:21:16,989 --> 00:21:18,519
+<font color="#E5E5E5">so they're gonna be escaped with a</font>
+
+465
+00:21:18,519 --> 00:21:21,039
+<font color="#E5E5E5">backslash so unfortunately since that</font>
+
+466
+00:21:21,039 --> 00:21:24,579
+will take up<font color="#E5E5E5"> more than one</font><font color="#CCCCCC"> character and</font>
+
+467
+00:21:24,579 --> 00:21:26,589
+that's going<font color="#E5E5E5"> to leak over into</font><font color="#CCCCCC"> the</font>
+
+468
+00:21:26,589 --> 00:21:28,329
+<font color="#E5E5E5">fourth block and we won't be</font><font color="#CCCCCC"> able to</font>
+
+469
+00:21:28,329 --> 00:21:29,709
+test it we<font color="#E5E5E5"> won't be able</font><font color="#CCCCCC"> to track it</font>
+
+470
+00:21:29,709 --> 00:21:31,479
+<font color="#CCCCCC">down</font><font color="#E5E5E5"> since we are testing in just the</font>
+
+471
+00:21:31,479 --> 00:21:34,599
+very<font color="#E5E5E5"> very edge of the third block</font><font color="#CCCCCC"> okay</font>
+
+472
+00:21:34,599 --> 00:21:37,979
+<font color="#E5E5E5">but now we have a hunch now we know that</font>
+
+473
+00:21:37,979 --> 00:21:40,149
+<font color="#CCCCCC">maybe</font><font color="#E5E5E5"> this is running a sequel injection</font>
+
+474
+00:21:40,149 --> 00:21:42,849
+<font color="#E5E5E5">maybe this has some opportunity for</font>
+
+475
+00:21:42,849 --> 00:21:46,029
+<font color="#E5E5E5">sequel injection except we can't use</font>
+
+476
+00:21:46,029 --> 00:21:48,849
+those single quotes<font color="#CCCCCC"> or double quotes</font>
+
+477
+00:21:48,849 --> 00:21:50,769
+<font color="#CCCCCC">just as I was saying because</font><font color="#E5E5E5"> they're</font>
+
+478
+00:21:50,769 --> 00:21:52,239
+going<font color="#E5E5E5"> to be escaped we can't just do</font>
+
+479
+00:21:52,239 --> 00:21:56,589
+that<font color="#E5E5E5"> sequel</font><font color="#CCCCCC"> like Union selects</font><font color="#E5E5E5"> whatever</font>
+
+480
+00:21:56,589 --> 00:21:58,689
+we want blah blah blah password from
+
+481
+00:21:58,689 --> 00:22:00,429
+users we can't do that just<font color="#CCCCCC"> in the</font>
+
+482
+00:22:00,429 --> 00:22:02,079
+search query<font color="#E5E5E5"> because</font><font color="#CCCCCC"> it will be escaped</font>
+
+483
+00:22:02,079 --> 00:22:05,499
+out<font color="#CCCCCC"> of it so now</font><font color="#E5E5E5"> we have to take</font>
+
+484
+00:22:05,499 --> 00:22:07,449
+advantage<font color="#CCCCCC"> of what we</font><font color="#E5E5E5"> know with this</font>
+
+485
+00:22:07,449 --> 00:22:09,009
+electronic<font color="#E5E5E5"> code book with this</font>
+
+486
+00:22:09,009 --> 00:22:11,680
+encryption<font color="#E5E5E5"> scheme we could potentially</font>
+
+487
+00:22:11,680 --> 00:22:15,070
+try and figure out what what what could
+
+488
+00:22:15,070 --> 00:22:17,650
+we enter what encrypted<font color="#CCCCCC"> information</font>
+
+489
+00:22:17,650 --> 00:22:20,230
+could we get<font color="#E5E5E5"> that would actually</font><font color="#CCCCCC"> look</font>
+
+490
+00:22:20,230 --> 00:22:21,780
+like<font color="#E5E5E5"> we had entered that information</font>
+
+491
+00:22:21,780 --> 00:22:25,750
+<font color="#CCCCCC">since we can</font><font color="#E5E5E5"> encrypt the same way but if</font>
+
+492
+00:22:25,750 --> 00:22:28,840
+we<font color="#E5E5E5"> handle that escape sequence properly</font>
+
+493
+00:22:28,840 --> 00:22:30,700
+<font color="#E5E5E5">because</font><font color="#CCCCCC"> we know that</font><font color="#E5E5E5"> we're gonna end</font><font color="#CCCCCC"> up</font>
+
+494
+00:22:30,700 --> 00:22:34,600
+<font color="#CCCCCC">having it eventually following let's</font>
+
+495
+00:22:34,600 --> 00:22:39,910
+<font color="#E5E5E5">actually keep that that query here if we</font>
+
+496
+00:22:39,910 --> 00:22:42,220
+got this single quote to be included in
+
+497
+00:22:42,220 --> 00:22:45,010
+the third block<font color="#E5E5E5"> and not no longer really</font>
+
+498
+00:22:45,010 --> 00:22:47,110
+necessary<font color="#CCCCCC"> for the</font><font color="#E5E5E5"> fourth block that way</font>
+
+499
+00:22:47,110 --> 00:22:49,240
+we could be home free where<font color="#E5E5E5"> we could do</font>
+
+500
+00:22:49,240 --> 00:22:52,240
+our<font color="#CCCCCC"> own injection following it so now we</font>
+
+501
+00:22:52,240 --> 00:22:53,470
+just<font color="#CCCCCC"> have to figure out</font><font color="#E5E5E5"> how we can</font>
+
+502
+00:22:53,470 --> 00:22:55,120
+encrypt and get the data<font color="#E5E5E5"> forward that</font>
+
+503
+00:22:55,120 --> 00:22:58,750
+<font color="#E5E5E5">input this probably sounds weird again</font>
+
+504
+00:22:58,750 --> 00:23:01,450
+<font color="#CCCCCC">I'm gonna</font><font color="#E5E5E5"> show it</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> you let's write</font>
+
+505
+00:23:01,450 --> 00:23:03,760
+this<font color="#E5E5E5"> code here let's say our injection</font>
+
+506
+00:23:03,760 --> 00:23:07,870
+is a space<font color="#CCCCCC"> character or the letter A</font>
+
+507
+00:23:07,870 --> 00:23:10,180
+whatever padding we want to use times
+
+508
+00:23:10,180 --> 00:23:13,330
+<font color="#CCCCCC">nine so we fill up the</font><font color="#E5E5E5"> third block</font>
+
+509
+00:23:13,330 --> 00:23:14,950
+because that's<font color="#CCCCCC"> that's</font><font color="#E5E5E5"> our buffer here</font>
+
+510
+00:23:14,950 --> 00:23:17,500
+<font color="#E5E5E5">and I'm only going to use nine</font>
+
+511
+00:23:17,500 --> 00:23:20,890
+characters so just as we saw that<font color="#E5E5E5"> select</font>
+
+512
+00:23:20,890 --> 00:23:25,450
+text<font color="#E5E5E5"> from jokes where thing like blah</font>
+
+513
+00:23:25,450 --> 00:23:27,700
+blah<font color="#E5E5E5"> blah</font><font color="#CCCCCC"> that single quote at the very</font>
+
+514
+00:23:27,700 --> 00:23:30,460
+very<font color="#E5E5E5"> end</font><font color="#CCCCCC"> will</font><font color="#E5E5E5"> actually go ahead and be</font>
+
+515
+00:23:30,460 --> 00:23:33,670
+interpreted<font color="#CCCCCC"> just fine</font><font color="#E5E5E5"> we won't have an</font>
+
+516
+00:23:33,670 --> 00:23:36,100
+<font color="#E5E5E5">escape going through</font><font color="#CCCCCC"> we'll actually just</font>
+
+517
+00:23:36,100 --> 00:23:38,590
+have that single quote at the<font color="#E5E5E5"> very very</font>
+
+518
+00:23:38,590 --> 00:23:41,860
+<font color="#E5E5E5">end rather than the % so nine will be</font>
+
+519
+00:23:41,860 --> 00:23:44,980
+<font color="#E5E5E5">that threshold if I use</font><font color="#CCCCCC"> that injection</font>
+
+520
+00:23:44,980 --> 00:23:48,970
+<font color="#E5E5E5">and then I add on our single quote Union</font>
+
+521
+00:23:48,970 --> 00:23:51,970
+<font color="#E5E5E5">select let's just do password from users</font>
+
+522
+00:23:51,970 --> 00:23:53,590
+because that's kind of what we've<font color="#CCCCCC"> seen</font>
+
+523
+00:23:53,590 --> 00:23:55,330
+<font color="#E5E5E5">in the previous levels and we'll just do</font>
+
+524
+00:23:55,330 --> 00:23:57,520
+a comment here to note the very<font color="#E5E5E5"> end of</font>
+
+525
+00:23:57,520 --> 00:24:00,070
+the sequel injection<font color="#CCCCCC"> for the sequel</font>
+
+526
+00:24:00,070 --> 00:24:03,130
+query<font color="#E5E5E5"> now we have that string that we</font>
+
+527
+00:24:03,130 --> 00:24:04,960
+<font color="#CCCCCC">want to</font><font color="#E5E5E5"> figure out how we can encrypt</font>
+
+528
+00:24:04,960 --> 00:24:07,050
+<font color="#E5E5E5">how we could actually get that to</font><font color="#CCCCCC"> be</font>
+
+529
+00:24:07,050 --> 00:24:09,070
+something that<font color="#E5E5E5"> the backend application</font>
+
+530
+00:24:09,070 --> 00:24:12,060
+<font color="#E5E5E5">will handle so let's do that</font><font color="#CCCCCC"> let's</font>
+
+531
+00:24:12,060 --> 00:24:14,710
+<font color="#CCCCCC">determine first</font><font color="#E5E5E5"> of all how many blocks</font>
+
+532
+00:24:14,710 --> 00:24:16,780
+<font color="#E5E5E5">is this going to</font><font color="#CCCCCC"> take</font><font color="#E5E5E5"> the way that we</font>
+
+533
+00:24:16,780 --> 00:24:19,600
+can do that is we can just<font color="#CCCCCC"> say</font><font color="#E5E5E5"> locks</font>
+
+534
+00:24:19,600 --> 00:24:23,110
+equals<font color="#CCCCCC"> lengths of injection</font><font color="#E5E5E5"> and we got a</font>
+
+535
+00:24:23,110 --> 00:24:25,610
+<font color="#E5E5E5">minus the</font><font color="#CCCCCC"> ten here because we have</font>
+
+536
+00:24:25,610 --> 00:24:27,620
+<font color="#CCCCCC">is padding the A's or the spaces that</font>
+
+537
+00:24:27,620 --> 00:24:29,450
+we're filling it<font color="#E5E5E5"> up</font><font color="#CCCCCC"> with and the single</font>
+
+538
+00:24:29,450 --> 00:24:33,380
+quote<font color="#E5E5E5"> let's do minus</font><font color="#CCCCCC"> ten and then let's</font>
+
+539
+00:24:33,380 --> 00:24:37,220
+divide that by the block size<font color="#CCCCCC"> now</font><font color="#E5E5E5"> that</font>
+
+540
+00:24:37,220 --> 00:24:41,000
+will get<font color="#CCCCCC"> only up</font><font color="#E5E5E5"> until we have a</font>
+
+541
+00:24:41,000 --> 00:24:43,370
+remainder<font color="#CCCCCC"> so we have to say if we have a</font>
+
+542
+00:24:43,370 --> 00:24:45,200
+remainder<font color="#E5E5E5"> we're gonna need another block</font>
+
+543
+00:24:45,200 --> 00:24:46,910
+<font color="#CCCCCC">the way that we can do that is we can</font>
+
+544
+00:24:46,910 --> 00:24:50,570
+<font color="#CCCCCC">just test if</font><font color="#E5E5E5"> length of injection</font><font color="#CCCCCC"> minus</font>
+
+545
+00:24:50,570 --> 00:24:53,690
+<font color="#CCCCCC">ten modulus block size</font><font color="#E5E5E5"> is not equal zero</font>
+
+546
+00:24:53,690 --> 00:24:56,210
+<font color="#CCCCCC">so if it's</font><font color="#E5E5E5"> not a it's</font><font color="#CCCCCC"> not a straight</font>
+
+547
+00:24:56,210 --> 00:24:58,460
+factor<font color="#E5E5E5"> if we do have a remainder then we</font>
+
+548
+00:24:58,460 --> 00:25:00,559
+can just say blocks<font color="#E5E5E5"> plus equals one so</font>
+
+549
+00:25:00,559 --> 00:25:03,140
+we add a<font color="#E5E5E5"> an extra block in there let's</font>
+
+550
+00:25:03,140 --> 00:25:04,580
+see how<font color="#E5E5E5"> much how much this is going to</font>
+
+551
+00:25:04,580 --> 00:25:05,990
+take up<font color="#E5E5E5"> it's gonna take up three blocks</font>
+
+552
+00:25:05,990 --> 00:25:10,010
+<font color="#E5E5E5">okay that's fine now what we can do is</font>
+
+553
+00:25:10,010 --> 00:25:12,290
+we'll go<font color="#CCCCCC"> ahead and</font><font color="#E5E5E5"> encrypt this the way</font>
+
+554
+00:25:12,290 --> 00:25:15,980
+<font color="#E5E5E5">we can do that is by checking this</font>
+
+555
+00:25:15,980 --> 00:25:19,280
+response<font color="#CCCCCC"> and getting the URL just</font><font color="#E5E5E5"> as</font>
+
+556
+00:25:19,280 --> 00:25:21,740
+we've<font color="#E5E5E5"> done before and said rather the</font>
+
+557
+00:25:21,740 --> 00:25:23,600
+query we're working with will say our
+
+558
+00:25:23,600 --> 00:25:28,450
+injection<font color="#E5E5E5"> and then let's check out the</font>
+
+559
+00:25:28,450 --> 00:25:31,309
+block that's returned for us the full
+
+560
+00:25:31,309 --> 00:25:36,429
+thing we<font color="#E5E5E5"> don't need the representation</font>
+
+561
+00:25:36,429 --> 00:25:39,320
+we just want the raw bytes<font color="#E5E5E5"> and we don't</font>
+
+562
+00:25:39,320 --> 00:25:41,419
+need<font color="#E5E5E5"> it cut at any</font><font color="#CCCCCC"> specific block we</font>
+
+563
+00:25:41,419 --> 00:25:45,140
+don't want the full thing do I have a
+
+564
+00:25:45,140 --> 00:25:46,940
+<font color="#CCCCCC">number of parentheses there</font><font color="#E5E5E5"> okay cool</font>
+
+565
+00:25:46,940 --> 00:25:50,020
+we're good<font color="#E5E5E5"> so let's just say raw inject</font>
+
+566
+00:25:50,020 --> 00:25:55,360
+and if you wanted<font color="#E5E5E5"> to see this you</font><font color="#CCCCCC"> could</font>
+
+567
+00:25:55,510 --> 00:25:57,200
+if<font color="#E5E5E5"> we want to check out the</font>
+
+568
+00:25:57,200 --> 00:25:59,510
+representation<font color="#CCCCCC"> you</font><font color="#E5E5E5"> could that's just</font>
+
+569
+00:25:59,510 --> 00:26:02,179
+fine<font color="#E5E5E5"> so that</font><font color="#CCCCCC"> is going</font><font color="#E5E5E5"> to be the</font>
+
+570
+00:26:02,179 --> 00:26:04,130
+<font color="#E5E5E5">encrypted scheme that has our injection</font>
+
+571
+00:26:04,130 --> 00:26:05,570
+in now how are we<font color="#E5E5E5"> going to be able to</font>
+
+572
+00:26:05,570 --> 00:26:09,559
+<font color="#E5E5E5">properly put this into</font><font color="#CCCCCC"> a request</font><font color="#E5E5E5"> without</font>
+
+573
+00:26:09,559 --> 00:26:11,390
+actually making<font color="#CCCCCC"> the</font><font color="#E5E5E5"> request and having</font>
+
+574
+00:26:11,390 --> 00:26:12,890
+the program<font color="#CCCCCC"> encrypt it</font><font color="#E5E5E5"> we have to</font>
+
+575
+00:26:12,890 --> 00:26:15,650
+encrypt it for the program let's trick
+
+576
+00:26:15,650 --> 00:26:18,559
+it<font color="#E5E5E5"> let's try and give it original good</font>
+
+577
+00:26:18,559 --> 00:26:21,049
+data like the spaces that<font color="#CCCCCC"> we use to</font><font color="#E5E5E5"> earn</font>
+
+578
+00:26:21,049 --> 00:26:22,910
+the a characters that we use to fill the
+
+579
+00:26:22,910 --> 00:26:25,280
+<font color="#E5E5E5">third block then let's get the very very</font>
+
+580
+00:26:25,280 --> 00:26:29,419
+end<font color="#CCCCCC"> like after we have actually filled</font>
+
+581
+00:26:29,419 --> 00:26:31,070
+the third block just so we<font color="#CCCCCC"> know the</font><font color="#E5E5E5"> very</font>
+
+582
+00:26:31,070 --> 00:26:33,470
+data at the at the very<font color="#E5E5E5"> end of the</font>
+
+583
+00:26:33,470 --> 00:26:36,380
+<font color="#E5E5E5">original query and then fake</font><font color="#CCCCCC"> it with</font>
+
+584
+00:26:36,380 --> 00:26:38,960
+<font color="#E5E5E5">that first part of the the safe good</font>
+
+585
+00:26:38,960 --> 00:26:39,410
+string
+
+586
+00:26:39,410 --> 00:26:41,450
+and then let's put<font color="#CCCCCC"> our injection in</font>
+
+587
+00:26:41,450 --> 00:26:43,880
+between it<font color="#E5E5E5"> so that probably sounds</font>
+
+588
+00:26:43,880 --> 00:26:46,790
+strange but again<font color="#E5E5E5"> I'll show you in code</font>
+
+589
+00:26:46,790 --> 00:26:54,050
+<font color="#E5E5E5">so let's</font><font color="#CCCCCC"> get a response with just the a</font>
+
+590
+00:26:54,050 --> 00:26:57,140
+character or our padding<font color="#CCCCCC"> ten times to</font>
+
+591
+00:26:57,140 --> 00:27:01,900
+fill the third block<font color="#E5E5E5"> let's get that like</font>
+
+592
+00:27:01,900 --> 00:27:08,810
+good base<font color="#CCCCCC"> and let's actually say that</font>
+
+593
+00:27:08,810 --> 00:27:13,040
+<font color="#CCCCCC">our query will be or the URL that</font><font color="#E5E5E5"> we're</font>
+
+594
+00:27:13,040 --> 00:27:14,300
+end up going to the query<font color="#CCCCCC"> that we're</font>
+
+595
+00:27:14,300 --> 00:27:18,050
+gonna be<font color="#E5E5E5"> using is good base up tool the</font>
+
+596
+00:27:18,050 --> 00:27:20,660
+third<font color="#E5E5E5"> block size so the third block</font>
+
+597
+00:27:20,660 --> 00:27:22,970
+block size times<font color="#CCCCCC"> three</font><font color="#E5E5E5"> so we know that</font>
+
+598
+00:27:22,970 --> 00:27:24,950
+<font color="#E5E5E5">that's the third block that we want now</font>
+
+599
+00:27:24,950 --> 00:27:27,620
+<font color="#CCCCCC">that we</font><font color="#E5E5E5"> filled it we can go ahead and</font>
+
+600
+00:27:27,620 --> 00:27:29,360
+add our injection in there
+
+601
+00:27:29,360 --> 00:27:32,570
+so injection will get the third<font color="#CCCCCC"> block</font>
+
+602
+00:27:32,570 --> 00:27:39,100
+size filled<font color="#E5E5E5"> and let's take block size</font>
+
+603
+00:27:39,160 --> 00:27:45,110
+<font color="#CCCCCC">plus three plus blocks</font><font color="#E5E5E5"> because that is</font>
+
+604
+00:27:45,110 --> 00:27:46,790
+the amount<font color="#E5E5E5"> of blocks</font><font color="#CCCCCC"> that are necessary</font>
+
+605
+00:27:46,790 --> 00:27:51,100
+<font color="#CCCCCC">for our injection times the block size</font>
+
+606
+00:27:51,100 --> 00:27:55,340
+so that's a full value here now we
+
+607
+00:27:55,340 --> 00:27:57,770
+should<font color="#CCCCCC"> be</font><font color="#E5E5E5"> able to add on the very very</font>
+
+608
+00:27:57,770 --> 00:28:01,370
+end<font color="#CCCCCC"> that we had from</font><font color="#E5E5E5"> our good base again</font>
+
+609
+00:28:01,370 --> 00:28:04,820
+<font color="#E5E5E5">taking from three blocks</font><font color="#CCCCCC"> in to the very</font>
+
+610
+00:28:04,820 --> 00:28:07,460
+end<font color="#CCCCCC"> so it's it's faking the query</font><font color="#E5E5E5"> it</font>
+
+611
+00:28:07,460 --> 00:28:09,680
+essentially<font color="#E5E5E5"> just puts our injection in</font>
+
+612
+00:28:09,680 --> 00:28:11,270
+it encrypts it<font color="#E5E5E5"> the way that</font><font color="#CCCCCC"> it would</font>
+
+613
+00:28:11,270 --> 00:28:13,940
+have expected it again<font color="#E5E5E5"> making</font><font color="#CCCCCC"> sure the</font>
+
+614
+00:28:13,940 --> 00:28:16,760
+blocks are all in a line<font color="#E5E5E5"> I've set</font><font color="#CCCCCC"> up</font>
+
+615
+00:28:16,760 --> 00:28:19,340
+<font color="#E5E5E5">blocks I've said that a lot throughout</font>
+
+616
+00:28:19,340 --> 00:28:21,080
+this whole thing<font color="#E5E5E5"> so let's check out</font><font color="#CCCCCC"> our</font>
+
+617
+00:28:21,080 --> 00:28:25,250
+query right now probably<font color="#CCCCCC"> something that</font>
+
+618
+00:28:25,250 --> 00:28:26,660
+we can't see<font color="#E5E5E5"> that's fine</font>
+
+619
+00:28:26,660 --> 00:28:32,560
+let's go ahead<font color="#E5E5E5"> and basic</font><font color="#CCCCCC"> c4n code</font><font color="#E5E5E5"> it</font>
+
+620
+00:28:36,930 --> 00:28:39,300
+<font color="#E5E5E5">hmm</font><font color="#CCCCCC"> oh I'm sorry</font><font color="#E5E5E5"> I made a mistake here</font>
+
+621
+00:28:39,300 --> 00:28:42,090
+let's go from zero<font color="#E5E5E5"> to the</font><font color="#CCCCCC"> third block</font><font color="#E5E5E5"> at</font>
+
+622
+00:28:42,090 --> 00:28:44,820
+the start and<font color="#CCCCCC"> then other way around so</font>
+
+623
+00:28:44,820 --> 00:28:48,330
+from 48 in or the third block in that's
+
+624
+00:28:48,330 --> 00:28:51,870
+my<font color="#CCCCCC"> bad</font><font color="#E5E5E5"> now we have a proper looking</font>
+
+625
+00:28:51,870 --> 00:28:54,960
+injection string<font color="#E5E5E5"> okay now we want to go</font>
+
+626
+00:28:54,960 --> 00:29:00,780
+ahead and quote this so it is<font color="#E5E5E5"> properly</font>
+
+627
+00:29:00,780 --> 00:29:05,190
+URL encoded<font color="#E5E5E5"> and this was a sticking</font>
+
+628
+00:29:05,190 --> 00:29:09,060
+<font color="#E5E5E5">point for me it looks like that function</font>
+
+629
+00:29:09,060 --> 00:29:12,840
+<font color="#E5E5E5">does</font><font color="#CCCCCC"> not actually URL encode forward</font>
+
+630
+00:29:12,840 --> 00:29:16,110
+slashes<font color="#CCCCCC"> and that made all</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> difference</font>
+
+631
+00:29:16,110 --> 00:29:18,630
+<font color="#E5E5E5">when I actually tried this challenge so</font>
+
+632
+00:29:18,630 --> 00:29:21,000
+we're gonna have to<font color="#CCCCCC"> go ahead and replace</font>
+
+633
+00:29:21,000 --> 00:29:24,510
+those let's change those forward slashes
+
+634
+00:29:24,510 --> 00:29:29,730
+<font color="#E5E5E5">should be</font><font color="#CCCCCC"> % 2f in hex</font><font color="#E5E5E5"> so that does make</font>
+
+635
+00:29:29,730 --> 00:29:32,070
+<font color="#E5E5E5">all the difference in this challenge</font><font color="#CCCCCC"> we</font>
+
+636
+00:29:32,070 --> 00:29:33,660
+will<font color="#E5E5E5"> need to make</font><font color="#CCCCCC"> sure</font><font color="#E5E5E5"> those four</font>
+
+637
+00:29:33,660 --> 00:29:35,790
+slashes are URL<font color="#E5E5E5"> encoded this has to be</font>
+
+638
+00:29:35,790 --> 00:29:40,350
+fully URL encoded for it to work<font color="#CCCCCC"> ok so</font>
+
+639
+00:29:40,350 --> 00:29:46,200
+this<font color="#E5E5E5"> can</font><font color="#CCCCCC"> be our query now</font><font color="#E5E5E5"> and let's keep</font>
+
+640
+00:29:46,200 --> 00:29:50,190
+in mind<font color="#E5E5E5"> that when we actually retrieve</font>
+
+641
+00:29:50,190 --> 00:29:57,470
+this data<font color="#E5E5E5"> it was in the form of the URL</font>
+
+642
+00:29:57,470 --> 00:30:01,050
+<font color="#E5E5E5">with search dot PHP at the end it</font>
+
+643
+00:30:01,050 --> 00:30:03,330
+brought us to search PHP as a page and
+
+644
+00:30:03,330 --> 00:30:07,890
+then it had query as the<font color="#E5E5E5"> actual HTTP</font>
+
+645
+00:30:07,890 --> 00:30:09,510
+variable<font color="#E5E5E5"> that we're working with so now</font>
+
+646
+00:30:09,510 --> 00:30:11,220
+that we've constructed<font color="#E5E5E5"> that variable</font><font color="#CCCCCC"> on</font>
+
+647
+00:30:11,220 --> 00:30:14,240
+our own let's go ahead and add<font color="#CCCCCC"> that in</font>
+
+648
+00:30:14,240 --> 00:30:17,070
+so we don't post a request<font color="#E5E5E5"> we just get a</font>
+
+649
+00:30:17,070 --> 00:30:20,340
+request with argument query<font color="#E5E5E5"> now if I run</font>
+
+650
+00:30:20,340 --> 00:30:24,000
+<font color="#E5E5E5">this display out the text we're getting</font>
+
+651
+00:30:24,000 --> 00:30:29,040
+from that response nothing<font color="#E5E5E5"> so something</font>
+
+652
+00:30:29,040 --> 00:30:29,370
+<font color="#E5E5E5">is wrong</font>
+
+653
+00:30:29,370 --> 00:30:33,000
+let's explore<font color="#CCCCCC"> I think I see the</font><font color="#E5E5E5"> first</font>
+
+654
+00:30:33,000 --> 00:30:35,400
+problem and that I was<font color="#CCCCCC"> using just</font><font color="#E5E5E5"> the</font>
+
+655
+00:30:35,400 --> 00:30:38,730
+string injection as the blocks that<font color="#E5E5E5"> I</font>
+
+656
+00:30:38,730 --> 00:30:40,020
+was<font color="#E5E5E5"> trying to reach out rather than just</font>
+
+657
+00:30:40,020 --> 00:30:42,830
+<font color="#E5E5E5">raw inject so now let's try and run this</font>
+
+658
+00:30:42,830 --> 00:30:45,270
+<font color="#E5E5E5">okay all right that was it</font>
+
+659
+00:30:45,270 --> 00:30:48,720
+sweet<font color="#E5E5E5"> so that</font><font color="#CCCCCC"> is the password</font><font color="#E5E5E5"> that's the</font>
+
+660
+00:30:48,720 --> 00:30:50,340
+flag that<font color="#E5E5E5"> we're looking for</font>
+
+661
+00:30:50,340 --> 00:30:53,610
+but I hope<font color="#E5E5E5"> this made sense I hope this I</font>
+
+662
+00:30:53,610 --> 00:30:56,520
+know this is a crazy long video but<font color="#CCCCCC"> I</font>
+
+663
+00:30:56,520 --> 00:30:58,049
+hope you were<font color="#E5E5E5"> able to visualize</font>
+
+664
+00:30:58,049 --> 00:30:59,159
+everything that I was<font color="#CCCCCC"> doing because</font>
+
+665
+00:30:59,159 --> 00:31:01,200
+electronic<font color="#CCCCCC"> codebook cipher is very very</font>
+
+666
+00:31:01,200 --> 00:31:02,820
+strange<font color="#E5E5E5"> and the way that it encrypts</font>
+
+667
+00:31:02,820 --> 00:31:04,799
+<font color="#CCCCCC">block</font><font color="#E5E5E5"> by block and each block is just</font><font color="#CCCCCC"> a</font>
+
+668
+00:31:04,799 --> 00:31:07,740
+segment<font color="#E5E5E5"> of the original message</font><font color="#CCCCCC"> but we</font>
+
+669
+00:31:07,740 --> 00:31:09,360
+can detect it<font color="#E5E5E5"> we can determine what it</font>
+
+670
+00:31:09,360 --> 00:31:13,679
+actually is<font color="#CCCCCC"> so let's get</font><font color="#E5E5E5"> re and scrape</font>
+
+671
+00:31:13,679 --> 00:31:14,669
+out this flag here
+
+672
+00:31:14,669 --> 00:31:19,260
+I think it's re<font color="#E5E5E5"> dot find all</font><font color="#CCCCCC"> your raw</font>
+
+673
+00:31:19,260 --> 00:31:24,929
+string from Li<font color="#E5E5E5"> something in there</font>
+
+674
+00:31:24,929 --> 00:31:30,750
+<font color="#CCCCCC">anything to endo I with</font><font color="#E5E5E5"> our response dot</font>
+
+675
+00:31:30,750 --> 00:31:38,429
+<font color="#CCCCCC">txt zero</font><font color="#E5E5E5"> and we don't need a number</font><font color="#CCCCCC"> of</font>
+
+676
+00:31:38,429 --> 00:31:40,140
+<font color="#E5E5E5">blocks to be displayed anymore that's</font>
+
+677
+00:31:40,140 --> 00:31:45,390
+just fine<font color="#CCCCCC"> okay there is</font><font color="#E5E5E5"> the flag</font><font color="#CCCCCC"> just</font>
+
+678
+00:31:45,390 --> 00:31:48,570
+<font color="#CCCCCC">like that</font><font color="#E5E5E5"> so that</font><font color="#CCCCCC"> is natus level 28 I</font>
+
+679
+00:31:48,570 --> 00:31:51,450
+hope<font color="#E5E5E5"> that you guys enjoyed</font><font color="#CCCCCC"> it kind of a</font>
+
+680
+00:31:51,450 --> 00:31:53,460
+long process<font color="#E5E5E5"> doing some peculiar</font>
+
+681
+00:31:53,460 --> 00:31:56,640
+interesting things<font color="#E5E5E5"> I hope it was easy to</font>
+
+682
+00:31:56,640 --> 00:31:58,559
+<font color="#E5E5E5">see the code was easy easy to understand</font>
+
+683
+00:31:58,559 --> 00:32:00,720
+<font color="#E5E5E5">we're doing some interesting things but</font>
+
+684
+00:32:00,720 --> 00:32:04,409
+I was honestly<font color="#CCCCCC"> just very amazed and</font>
+
+685
+00:32:04,409 --> 00:32:05,669
+impressed and pleased with this<font color="#CCCCCC"> I</font>
+
+686
+00:32:05,669 --> 00:32:07,260
+thought<font color="#CCCCCC"> it was very cool and</font><font color="#E5E5E5"> honestly a</font>
+
+687
+00:32:07,260 --> 00:32:09,620
+really<font color="#CCCCCC"> big learning experience for</font><font color="#E5E5E5"> me</font><font color="#CCCCCC"> I</font>
+
+688
+00:32:09,620 --> 00:32:12,120
+will have to<font color="#CCCCCC"> jot down this</font><font color="#E5E5E5"> process is</font>
+
+689
+00:32:12,120 --> 00:32:14,159
+<font color="#E5E5E5">like the the procedure that I went</font>
+
+690
+00:32:14,159 --> 00:32:16,289
+<font color="#CCCCCC">through here</font><font color="#E5E5E5"> to actually</font><font color="#CCCCCC"> okay determine</font>
+
+691
+00:32:16,289 --> 00:32:18,149
+the<font color="#E5E5E5"> block size and</font><font color="#CCCCCC"> then determining</font>
+
+692
+00:32:18,149 --> 00:32:20,820
+where the<font color="#E5E5E5"> block actually has our input</font>
+
+693
+00:32:20,820 --> 00:32:22,620
+going<font color="#E5E5E5"> in and then determining how we</font>
+
+694
+00:32:22,620 --> 00:32:24,450
+could<font color="#CCCCCC"> take advantage</font><font color="#E5E5E5"> of the</font><font color="#CCCCCC"> fact that</font>
+
+695
+00:32:24,450 --> 00:32:28,010
+that escape sequence or that that string
+
+696
+00:32:28,010 --> 00:32:30,840
+delimiter the double quote or single
+
+697
+00:32:30,840 --> 00:32:32,850
+quote would actually be handy<font color="#CCCCCC"> for us</font>
+
+698
+00:32:32,850 --> 00:32:34,440
+<font color="#E5E5E5">when we're trying to do</font><font color="#CCCCCC"> our sequel</font>
+
+699
+00:32:34,440 --> 00:32:36,419
+injection so very very<font color="#E5E5E5"> cool very</font><font color="#CCCCCC"> very</font>
+
+700
+00:32:36,419 --> 00:32:40,679
+interesting hope you guys enjoy this hey
+
+701
+00:32:40,679 --> 00:32:42,149
+shout out to the people<font color="#CCCCCC"> that support</font><font color="#E5E5E5"> me</font>
+
+702
+00:32:42,149 --> 00:32:43,890
+on patreon thank you guys so much<font color="#E5E5E5"> you're</font>
+
+703
+00:32:43,890 --> 00:32:45,570
+fantastic<font color="#CCCCCC"> I love you I don't</font><font color="#E5E5E5"> know why no</font>
+
+704
+00:32:45,570 --> 00:32:46,919
+pixel has an O in front of the same
+
+705
+00:32:46,919 --> 00:32:48,299
+<font color="#E5E5E5">you're the best man</font>
+
+706
+00:32:48,299 --> 00:32:50,039
+$1 a month on patreon I'll give you a
+
+707
+00:32:50,039 --> 00:32:51,299
+<font color="#CCCCCC">special shout I just like</font><font color="#E5E5E5"> this have a</font>
+
+708
+00:32:51,299 --> 00:32:52,710
+never video<font color="#E5E5E5"> five dollars or more in</font>
+
+709
+00:32:52,710 --> 00:32:54,000
+patreon<font color="#CCCCCC"> will give you early access</font><font color="#E5E5E5"> to</font>
+
+710
+00:32:54,000 --> 00:32:55,020
+everything<font color="#CCCCCC"> there at least</font><font color="#E5E5E5"> on YouTube</font>
+
+711
+00:32:55,020 --> 00:32:56,970
+<font color="#CCCCCC">before it goes live if you want the</font>
+
+712
+00:32:56,970 --> 00:32:58,230
+content where I want<font color="#E5E5E5"> to</font><font color="#CCCCCC"> Todd wrote it's</font>
+
+713
+00:32:58,230 --> 00:32:59,820
+work ready<font color="#E5E5E5"> that's the best way to do</font>
+
+714
+00:32:59,820 --> 00:33:01,679
+that<font color="#E5E5E5"> please do join our discord server</font>
+
+715
+00:33:01,679 --> 00:33:03,330
+<font color="#E5E5E5">link in the description is an awesome</font>
+
+716
+00:33:03,330 --> 00:33:03,960
+community flow
+
+717
+00:33:03,960 --> 00:33:05,910
+CTF players programmers and hackers<font color="#CCCCCC"> you</font>
+
+718
+00:33:05,910 --> 00:33:07,050
+can hang<font color="#E5E5E5"> out with me and other cool</font>
+
+719
+00:33:07,050 --> 00:33:11,310
+people<font color="#CCCCCC"> we'll be tackling I CTF</font><font color="#E5E5E5"> Knox</font><font color="#CCCCCC"> CTF</font>
+
+720
+00:33:11,310 --> 00:33:12,630
+and<font color="#E5E5E5"> other competitions that are coming</font>
+
+721
+00:33:12,630 --> 00:33:14,310
+up<font color="#E5E5E5"> this week hey I have a link the</font>
+
+722
+00:33:14,310 --> 00:33:17,040
+description<font color="#E5E5E5"> for a Humble Bundle book</font>
+
+723
+00:33:17,040 --> 00:33:19,530
+package that will really<font color="#E5E5E5"> help</font><font color="#CCCCCC"> me out</font><font color="#E5E5E5"> its</font>
+
+724
+00:33:19,530 --> 00:33:21,390
+affiliate link<font color="#E5E5E5"> full disclaimer I'm a</font>
+
+725
+00:33:21,390 --> 00:33:24,030
+sellout I'm sorry I<font color="#CCCCCC"> suck but it helps</font><font color="#E5E5E5"> me</font>
+
+726
+00:33:24,030 --> 00:33:26,280
+put food on the table<font color="#CCCCCC"> and you guys and</font>
+
+727
+00:33:26,280 --> 00:33:28,140
+your support<font color="#CCCCCC"> really just enables</font><font color="#E5E5E5"> that</font>
+
+728
+00:33:28,140 --> 00:33:29,520
+for me so thank you thank<font color="#E5E5E5"> you</font>
+
+729
+00:33:29,520 --> 00:33:31,530
+<font color="#E5E5E5">would love to</font><font color="#CCCCCC"> see you on patreon please</font>
+
+730
+00:33:31,530 --> 00:33:32,760
+do like<font color="#E5E5E5"> this video comment this video</font>
+
+731
+00:33:32,760 --> 00:33:35,160
+<font color="#CCCCCC">subscribe</font><font color="#E5E5E5"> if you're into that stuff</font><font color="#CCCCCC"> I</font>
+
+732
+00:33:35,160 --> 00:33:37,740
+don't know<font color="#CCCCCC"> I love</font><font color="#E5E5E5"> to see you on patreon</font>
+
+733
+00:33:37,740 --> 00:33:38,760
+love to see in the next video
+
+734
+00:33:38,760 --> 00:00:00,000
+get out<font color="#CCCCCC"> of here man</font>
+

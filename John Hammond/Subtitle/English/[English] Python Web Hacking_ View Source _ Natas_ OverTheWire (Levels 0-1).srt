@@ -1,0 +1,948 @@
+1
+00:00:00,030 --> 00:00:02,550
+right hello everybody welcome back in
+
+2
+00:00:02,550 --> 00:00:03,959
+the YouTube video<font color="#E5E5E5"> my name is John</font>
+
+3
+00:00:03,959 --> 00:00:05,940
+Hammond and we are back looking at over
+
+4
+00:00:05,940 --> 00:00:07,500
+the wire the online<font color="#CCCCCC"> wargames</font>
+
+5
+00:00:07,500 --> 00:00:09,030
+<font color="#CCCCCC">and now we're moving</font><font color="#E5E5E5"> into the word game</font>
+
+6
+00:00:09,030 --> 00:00:11,730
+natus which it's all about<font color="#E5E5E5"> web</font>
+
+7
+00:00:11,730 --> 00:00:14,730
+<font color="#E5E5E5">applications stuff like web security so</font>
+
+8
+00:00:14,730 --> 00:00:17,250
+I like this<font color="#E5E5E5"> honestly this is kind of my</font>
+
+9
+00:00:17,250 --> 00:00:20,250
+favorite<font color="#E5E5E5"> category</font><font color="#CCCCCC"> this is what I'm</font>
+
+10
+00:00:20,250 --> 00:00:21,779
+<font color="#CCCCCC">really interested in web</font><font color="#E5E5E5"> applications</font>
+
+11
+00:00:21,779 --> 00:00:22,920
+security<font color="#CCCCCC"> because I think</font><font color="#E5E5E5"> that's</font><font color="#CCCCCC"> more</font>
+
+12
+00:00:22,920 --> 00:00:24,990
+applicable<font color="#E5E5E5"> to like</font><font color="#CCCCCC"> real-world</font><font color="#E5E5E5"> bug</font>
+
+13
+00:00:24,990 --> 00:00:27,510
+bounties<font color="#CCCCCC"> and cool things like</font><font color="#E5E5E5"> that so I</font>
+
+14
+00:00:27,510 --> 00:00:28,949
+<font color="#E5E5E5">really like a lot</font><font color="#CCCCCC"> of these challenges</font>
+
+15
+00:00:28,949 --> 00:00:32,279
+<font color="#E5E5E5">and they start off pretty pretty</font><font color="#CCCCCC"> not too</font>
+
+16
+00:00:32,279 --> 00:00:34,410
+bad<font color="#CCCCCC"> and then they</font><font color="#E5E5E5"> kind of</font><font color="#CCCCCC"> ramped up</font><font color="#E5E5E5"> to</font>
+
+17
+00:00:34,410 --> 00:00:35,940
+<font color="#CCCCCC">real cool stuff like</font><font color="#E5E5E5"> blind sequel</font>
+
+18
+00:00:35,940 --> 00:00:38,550
+injection and cookie stealing etc etc<font color="#CCCCCC"> so</font>
+
+19
+00:00:38,550 --> 00:00:41,100
+I want to show you how<font color="#E5E5E5"> to roll through</font>
+
+20
+00:00:41,100 --> 00:00:42,809
+some of these and I'm<font color="#E5E5E5"> gonna do in a</font>
+
+21
+00:00:42,809 --> 00:00:43,890
+<font color="#E5E5E5">little bit of a different way where I</font>
+
+22
+00:00:43,890 --> 00:00:47,390
+actually<font color="#E5E5E5"> create some get flag scripts</font><font color="#CCCCCC"> or</font>
+
+23
+00:00:47,390 --> 00:00:51,420
+really<font color="#E5E5E5"> just small containerized just</font>
+
+24
+00:00:51,420 --> 00:00:53,699
+individual standalone files or Python
+
+25
+00:00:53,699 --> 00:00:55,949
+code that<font color="#CCCCCC"> will be able to solve a level</font>
+
+26
+00:00:55,949 --> 00:00:57,840
+for<font color="#E5E5E5"> us or at least retrieve the</font><font color="#CCCCCC"> password</font>
+
+27
+00:00:57,840 --> 00:01:00,390
+for the next<font color="#E5E5E5"> level</font><font color="#CCCCCC"> so let's go ahead and</font>
+
+28
+00:01:00,390 --> 00:01:04,369
+<font color="#CCCCCC">get</font><font color="#E5E5E5"> started</font><font color="#CCCCCC"> you'll notice here that</font>
+
+29
+00:01:04,369 --> 00:01:07,950
+<font color="#E5E5E5">passwords are stored in a file inside</font>
+
+30
+00:01:07,950 --> 00:01:10,200
+<font color="#E5E5E5">the</font><font color="#CCCCCC"> file structure as we're used to in</font>
+
+31
+00:01:10,200 --> 00:01:12,659
+<font color="#E5E5E5">Leviathan and bandit</font><font color="#CCCCCC"> we just go by</font><font color="#E5E5E5"> the</font>
+
+32
+00:01:12,659 --> 00:01:16,740
+level name<font color="#E5E5E5"> so natus and the level</font><font color="#CCCCCC"> number</font>
+
+33
+00:01:16,740 --> 00:01:19,530
+that we're on 0<font color="#CCCCCC"> etc and by default it</font>
+
+34
+00:01:19,530 --> 00:01:21,570
+<font color="#CCCCCC">starts with</font><font color="#E5E5E5"> NAT as</font><font color="#CCCCCC"> zero as</font><font color="#E5E5E5"> the password</font>
+
+35
+00:01:21,570 --> 00:01:24,780
+just<font color="#E5E5E5"> like all the other all the other</font>
+
+36
+00:01:24,780 --> 00:01:25,979
+war games that<font color="#E5E5E5"> we've played so we can</font>
+
+37
+00:01:25,979 --> 00:01:27,479
+copy and<font color="#CCCCCC"> paste this URL in here and</font>
+
+38
+00:01:27,479 --> 00:01:30,270
+we'll use natus<font color="#CCCCCC"> 0 and Ngata</font><font color="#E5E5E5"> 0 to</font>
+
+39
+00:01:30,270 --> 00:01:34,530
+authenticate<font color="#E5E5E5"> and we can view the kind of</font>
+
+40
+00:01:34,530 --> 00:01:35,850
+file<font color="#E5E5E5"> that we're going to be presented</font>
+
+41
+00:01:35,850 --> 00:01:37,290
+with or the<font color="#CCCCCC"> webpage that's returned to</font>
+
+42
+00:01:37,290 --> 00:01:39,900
+<font color="#CCCCCC">us in our browser right here</font><font color="#E5E5E5"> it says you</font>
+
+43
+00:01:39,900 --> 00:01:41,310
+<font color="#CCCCCC">can find the</font><font color="#E5E5E5"> pastor for the next level</font>
+
+44
+00:01:41,310 --> 00:01:43,140
+<font color="#CCCCCC">on this page</font><font color="#E5E5E5"> obviously there's nothing</font>
+
+45
+00:01:43,140 --> 00:01:45,840
+<font color="#E5E5E5">really in the text here</font><font color="#CCCCCC"> I can use ctrl a</font>
+
+46
+00:01:45,840 --> 00:01:47,640
+to select everything but there's nothing
+
+47
+00:01:47,640 --> 00:01:50,820
+<font color="#E5E5E5">there so ctrl you to view the</font><font color="#CCCCCC"> source</font><font color="#E5E5E5"> or</font>
+
+48
+00:01:50,820 --> 00:01:52,409
+if you really<font color="#E5E5E5"> wanted to you</font><font color="#CCCCCC"> can</font>
+
+49
+00:01:52,409 --> 00:01:54,600
+<font color="#E5E5E5">right-click probably with your web</font>
+
+50
+00:01:54,600 --> 00:01:55,920
+browser and select<font color="#E5E5E5"> a view page source</font>
+
+51
+00:01:55,920 --> 00:01:58,649
+<font color="#CCCCCC">it'll do the same thing</font><font color="#E5E5E5"> control</font><font color="#CCCCCC"> you is</font>
+
+52
+00:01:58,649 --> 00:02:00,570
+<font color="#E5E5E5">just a hotkey that I typically use and</font>
+
+53
+00:02:00,570 --> 00:02:03,930
+<font color="#CCCCCC">see for it and when you see this</font><font color="#E5E5E5"> HTML</font>
+
+54
+00:02:03,930 --> 00:02:05,640
+comment right here<font color="#E5E5E5"> that says the pastor</font>
+
+55
+00:02:05,640 --> 00:02:08,038
+<font color="#E5E5E5">defer natus one is this string</font><font color="#CCCCCC"> okay so</font>
+
+56
+00:02:08,038 --> 00:02:10,649
+super easy<font color="#E5E5E5"> level</font><font color="#CCCCCC"> 0 was not hard at all</font>
+
+57
+00:02:10,649 --> 00:02:13,780
+<font color="#E5E5E5">but let's get set up with actually</font>
+
+58
+00:02:13,780 --> 00:02:16,810
+through this in<font color="#E5E5E5"> Python</font><font color="#CCCCCC"> and through a</font>
+
+59
+00:02:16,810 --> 00:02:19,900
+<font color="#E5E5E5">script</font><font color="#CCCCCC"> so I've got</font><font color="#E5E5E5"> my command line ready</font>
+
+60
+00:02:19,900 --> 00:02:22,510
+for us<font color="#CCCCCC"> again I</font><font color="#E5E5E5"> had this directory over</font>
+
+61
+00:02:22,510 --> 00:02:23,920
+the wire<font color="#E5E5E5"> that has some of the folders</font>
+
+62
+00:02:23,920 --> 00:02:25,630
+for<font color="#E5E5E5"> the other wargames we've been doing</font>
+
+63
+00:02:25,630 --> 00:02:27,280
+between manda<font color="#E5E5E5"> and Leviathan</font><font color="#CCCCCC"> vanilla</font><font color="#E5E5E5"> to</font>
+
+64
+00:02:27,280 --> 00:02:31,090
+make one dedicated<font color="#E5E5E5"> to natus and let's</font>
+
+65
+00:02:31,090 --> 00:02:32,920
+use sublime text and I'll call this
+
+66
+00:02:32,920 --> 00:02:36,100
+natus as you<font color="#CCCCCC"> wrote I so I'm using</font>
+
+67
+00:02:36,100 --> 00:02:39,550
+sublime text<font color="#E5E5E5"> sublime text</font><font color="#CCCCCC"> - and I'm</font>
+
+68
+00:02:39,550 --> 00:02:41,560
+using<font color="#E5E5E5"> that because</font><font color="#CCCCCC"> I wanted</font><font color="#E5E5E5"> to use the</font>
+
+69
+00:02:41,560 --> 00:02:43,630
+build<font color="#CCCCCC"> View</font><font color="#E5E5E5"> plugin that's gonna let me</font>
+
+70
+00:02:43,630 --> 00:02:44,980
+split the<font color="#CCCCCC"> screen</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> actually view the</font>
+
+71
+00:02:44,980 --> 00:02:47,200
+output<font color="#E5E5E5"> of my command the output of</font><font color="#CCCCCC"> my</font>
+
+72
+00:02:47,200 --> 00:02:49,570
+<font color="#E5E5E5">script on a side by side not a vertical</font>
+
+73
+00:02:49,570 --> 00:02:51,970
+build like sublime<font color="#E5E5E5"> normally does so</font>
+
+74
+00:02:51,970 --> 00:02:55,270
+let's create a shebang<font color="#E5E5E5"> line here it's</font>
+
+75
+00:02:55,270 --> 00:02:57,520
+create a<font color="#E5E5E5"> spread for us I'm also using</font>
+
+76
+00:02:57,520 --> 00:03:00,370
+<font color="#E5E5E5">the dark neon theme if you guys haven't</font>
+
+77
+00:03:00,370 --> 00:03:02,350
+heard<font color="#CCCCCC"> of that</font><font color="#E5E5E5"> you can install it with</font>
+
+78
+00:03:02,350 --> 00:03:05,440
+the install package<font color="#E5E5E5"> command from the</font>
+
+79
+00:03:05,440 --> 00:03:07,270
+command palette<font color="#CCCCCC"> and</font><font color="#E5E5E5"> sublime text control</font>
+
+80
+00:03:07,270 --> 00:03:08,950
+<font color="#E5E5E5">shift P to bring that up if you don't</font>
+
+81
+00:03:08,950 --> 00:03:11,530
+<font color="#CCCCCC">have that installed or</font><font color="#E5E5E5"> set up you can</font>
+
+82
+00:03:11,530 --> 00:03:14,940
+just build up that package<font color="#E5E5E5"> with the</font>
+
+83
+00:03:14,940 --> 00:03:17,700
+package controller if you google that
+
+84
+00:03:17,700 --> 00:03:23,739
+<font color="#E5E5E5">sublime text package control you have a</font>
+
+85
+00:03:23,739 --> 00:03:25,900
+package manager you can get to and it
+
+86
+00:03:25,900 --> 00:03:27,489
+shows you installation and stuff that
+
+87
+00:03:27,489 --> 00:03:29,590
+<font color="#CCCCCC">you can just</font><font color="#E5E5E5"> easily enter into the</font>
+
+88
+00:03:29,590 --> 00:03:32,019
+console<font color="#E5E5E5"> and either sublime text 3 or</font>
+
+89
+00:03:32,019 --> 00:03:33,940
+sublime<font color="#E5E5E5"> text</font><font color="#CCCCCC"> 2</font><font color="#E5E5E5"> again I'm using sublime</font>
+
+90
+00:03:33,940 --> 00:03:37,330
+text 2 here<font color="#E5E5E5"> so</font><font color="#CCCCCC"> I can use the package</font>
+
+91
+00:03:37,330 --> 00:03:43,959
+build view<font color="#CCCCCC"> which will build the output</font>
+
+92
+00:03:43,959 --> 00:03:46,480
+<font color="#E5E5E5">of my</font><font color="#CCCCCC"> script</font><font color="#E5E5E5"> in a separate tab so that</font>
+
+93
+00:03:46,480 --> 00:03:49,209
+way<font color="#CCCCCC"> I can split</font><font color="#E5E5E5"> the window with can</font>
+
+94
+00:03:49,209 --> 00:03:51,970
+shift alt<font color="#CCCCCC"> and to the number</font><font color="#E5E5E5"> of windows</font>
+
+95
+00:03:51,970 --> 00:03:54,400
+on<font color="#CCCCCC"> one hero just too so now I have</font><font color="#E5E5E5"> side</font>
+
+96
+00:03:54,400 --> 00:03:58,090
+<font color="#CCCCCC">by</font><font color="#E5E5E5"> side</font><font color="#CCCCCC"> the windows and my code and the</font>
+
+97
+00:03:58,090 --> 00:04:00,760
+build output<font color="#E5E5E5"> that I can move back</font><font color="#CCCCCC"> and</font>
+
+98
+00:04:00,760 --> 00:04:02,320
+<font color="#CCCCCC">forth with and</font><font color="#E5E5E5"> actually do stuff with in</font>
+
+99
+00:04:02,320 --> 00:04:04,120
+sublime<font color="#E5E5E5"> text so that's pretty handy so</font>
+
+100
+00:04:04,120 --> 00:04:05,829
+I'm gonna go<font color="#E5E5E5"> ahead and interact with</font>
+
+101
+00:04:05,829 --> 00:04:08,019
+these<font color="#CCCCCC"> webpages</font><font color="#E5E5E5"> with the requests module</font>
+
+102
+00:04:08,019 --> 00:04:11,320
+in Python<font color="#CCCCCC"> which I don't have a</font><font color="#E5E5E5"> tutorial</font>
+
+103
+00:04:11,320 --> 00:04:13,810
+<font color="#E5E5E5">series on but I very very much intend to</font>
+
+104
+00:04:13,810 --> 00:04:16,269
+because it's a better URL Lib<font color="#E5E5E5"> and can do</font>
+
+105
+00:04:16,269 --> 00:04:18,100
+really<font color="#E5E5E5"> awesome stuff</font><font color="#CCCCCC"> if you don't have</font>
+
+106
+00:04:18,100 --> 00:04:19,839
+<font color="#E5E5E5">that installed you</font><font color="#CCCCCC"> should be able to</font>
+
+107
+00:04:19,839 --> 00:04:25,300
+<font color="#E5E5E5">just do a</font><font color="#CCCCCC"> sudo pip install requests and</font>
+
+108
+00:04:25,300 --> 00:04:27,470
+if you<font color="#CCCCCC"> don't have</font><font color="#E5E5E5"> pip installed you can</font>
+
+109
+00:04:27,470 --> 00:04:29,390
+we do a sudo apt-get install<font color="#CCCCCC"> Python</font>
+
+110
+00:04:29,390 --> 00:04:31,430
+<font color="#CCCCCC">attack pip</font><font color="#E5E5E5"> and we'll need</font><font color="#CCCCCC"> your pass and</font>
+
+111
+00:04:31,430 --> 00:04:32,690
+<font color="#CCCCCC">everything just like</font><font color="#E5E5E5"> any sudo command</font>
+
+112
+00:04:32,690 --> 00:04:37,160
+would so let's import requests<font color="#E5E5E5"> let's</font>
+
+113
+00:04:37,160 --> 00:04:39,440
+import<font color="#CCCCCC"> re I'm going to use the regular</font>
+
+114
+00:04:39,440 --> 00:04:41,300
+expressions module so<font color="#E5E5E5"> I can quickly just</font>
+
+115
+00:04:41,300 --> 00:04:43,820
+grab out<font color="#E5E5E5"> the</font><font color="#CCCCCC"> password for the next</font><font color="#E5E5E5"> level</font>
+
+116
+00:04:43,820 --> 00:04:46,520
+here and let's<font color="#E5E5E5"> create a variable</font><font color="#CCCCCC"> for a</font>
+
+117
+00:04:46,520 --> 00:04:49,640
+<font color="#CCCCCC">username</font><font color="#E5E5E5"> natus</font><font color="#CCCCCC"> is zero</font><font color="#E5E5E5"> in this case</font><font color="#CCCCCC"> the</font>
+
+118
+00:04:49,640 --> 00:04:52,730
+password is going<font color="#E5E5E5"> to</font><font color="#CCCCCC"> be the same</font><font color="#E5E5E5"> since</font>
+
+119
+00:04:52,730 --> 00:04:55,100
+this is<font color="#CCCCCC"> just a unique case but we want</font>
+
+120
+00:04:55,100 --> 00:04:58,040
+the URL<font color="#E5E5E5"> to equal let's get this build</font>
+
+121
+00:04:58,040 --> 00:05:00,200
+view out of<font color="#E5E5E5"> here</font><font color="#CCCCCC"> handy that I can just</font>
+
+122
+00:05:00,200 --> 00:05:02,570
+<font color="#E5E5E5">kind of slide this to the side whoa</font>
+
+123
+00:05:02,570 --> 00:05:05,660
+<font color="#CCCCCC">clicking everything all</font><font color="#E5E5E5"> right we can go</font>
+
+124
+00:05:05,660 --> 00:05:07,880
+ahead<font color="#E5E5E5"> and copy and paste the URL here</font>
+
+125
+00:05:07,880 --> 00:05:13,520
+and let's actually replace the<font color="#E5E5E5"> username</font>
+
+126
+00:05:13,520 --> 00:05:16,640
+in here so now<font color="#E5E5E5"> we can</font><font color="#CCCCCC"> use requests dot</font>
+
+127
+00:05:16,640 --> 00:05:22,520
+get URL<font color="#E5E5E5"> and that</font><font color="#CCCCCC"> will return at HTTP GET</font>
+
+128
+00:05:22,520 --> 00:05:24,380
+that will actually<font color="#E5E5E5"> do an HTTP or get</font>
+
+129
+00:05:24,380 --> 00:05:26,810
+request<font color="#E5E5E5"> to access the URL and we'll</font>
+
+130
+00:05:26,810 --> 00:05:28,790
+<font color="#E5E5E5">store it in a response variable so if we</font>
+
+131
+00:05:28,790 --> 00:05:30,530
+wanted to<font color="#E5E5E5"> see that we can print it out</font>
+
+132
+00:05:30,530 --> 00:05:35,360
+and we are<font color="#E5E5E5"> getting a 401 which if we</font>
+
+133
+00:05:35,360 --> 00:05:37,220
+view<font color="#E5E5E5"> the text of that to see that actual</font>
+
+134
+00:05:37,220 --> 00:05:38,000
+response here
+
+135
+00:05:38,000 --> 00:05:40,760
+that's because oh we didn't authenticate
+
+136
+00:05:40,760 --> 00:05:43,490
+<font color="#E5E5E5">with it we're getting</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> 401 here</font>
+
+137
+00:05:43,490 --> 00:05:45,620
+because we didn't<font color="#E5E5E5"> supply the username</font>
+
+138
+00:05:45,620 --> 00:05:48,560
+<font color="#CCCCCC">and</font><font color="#E5E5E5"> password we can do that in the code</font>
+
+139
+00:05:48,560 --> 00:05:52,520
+<font color="#CCCCCC">here with auth equals and then username</font>
+
+140
+00:05:52,520 --> 00:05:54,919
+and password off being the function
+
+141
+00:05:54,919 --> 00:05:57,410
+keyword arguments to the get request<font color="#E5E5E5"> and</font>
+
+142
+00:05:57,410 --> 00:05:59,419
+just using a tuple for our username<font color="#E5E5E5"> and</font>
+
+143
+00:05:59,419 --> 00:06:02,210
+password<font color="#CCCCCC"> now when we run this you can</font>
+
+144
+00:06:02,210 --> 00:06:04,430
+see we've returned the source code of
+
+145
+00:06:04,430 --> 00:06:07,160
+<font color="#CCCCCC">the web page so what I'm going to do up</font>
+
+146
+00:06:07,160 --> 00:06:09,950
+<font color="#CCCCCC">here now is just set the syntax to HTML</font>
+
+147
+00:06:09,950 --> 00:06:12,800
+again I hit<font color="#E5E5E5"> ctrl shift P to tell sublime</font>
+
+148
+00:06:12,800 --> 00:06:14,870
+text<font color="#E5E5E5"> that's what I wanted to do and now</font>
+
+149
+00:06:14,870 --> 00:06:19,040
+we've got the like website source code
+
+150
+00:06:19,040 --> 00:06:21,380
+<font color="#CCCCCC">just that</font><font color="#E5E5E5"> web page code all the HTML</font>
+
+151
+00:06:21,380 --> 00:06:23,090
+<font color="#E5E5E5">just like we viewed in our browser a</font>
+
+152
+00:06:23,090 --> 00:06:25,610
+moment ago<font color="#E5E5E5"> but now</font><font color="#CCCCCC"> within</font><font color="#E5E5E5"> sublime text</font>
+
+153
+00:06:25,610 --> 00:06:27,830
+<font color="#E5E5E5">so we can copy and</font><font color="#CCCCCC"> paste this out if we</font>
+
+154
+00:06:27,830 --> 00:06:31,430
+want to<font color="#E5E5E5"> or we</font><font color="#CCCCCC"> can go ahead and</font><font color="#E5E5E5"> just get</font>
+
+155
+00:06:31,430 --> 00:06:37,910
+<font color="#E5E5E5">our regular expressions module to parse</font>
+
+156
+00:06:37,910 --> 00:06:38,960
+through it so I'm<font color="#E5E5E5"> going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> call this</font>
+
+157
+00:06:38,960 --> 00:06:40,640
+variable content and then I'm<font color="#E5E5E5"> going to</font>
+
+158
+00:06:40,640 --> 00:06:41,830
+<font color="#E5E5E5">print</font>
+
+159
+00:06:41,830 --> 00:06:45,470
+content or re dot find all sorry<font color="#E5E5E5"> find</font>
+
+160
+00:06:45,470 --> 00:06:47,660
+all being the regular expression that<font color="#CCCCCC"> I</font>
+
+161
+00:06:47,660 --> 00:06:50,930
+will function<font color="#CCCCCC"> that I</font><font color="#E5E5E5"> want to use and I'm</font>
+
+162
+00:06:50,930 --> 00:06:54,470
+just<font color="#E5E5E5"> gonna copy this HTML string here</font><font color="#CCCCCC"> so</font>
+
+163
+00:06:54,470 --> 00:06:56,840
+I can<font color="#E5E5E5"> use kind of a cheap hack to scrape</font>
+
+164
+00:06:56,840 --> 00:06:59,000
+out only<font color="#E5E5E5"> that password part using</font>
+
+165
+00:06:59,000 --> 00:07:00,800
+<font color="#E5E5E5">regular</font><font color="#CCCCCC"> expressions here</font><font color="#E5E5E5"> using the</font>
+
+166
+00:07:00,800 --> 00:07:03,169
+<font color="#CCCCCC">parentheses to say I want this item</font><font color="#E5E5E5"> this</font>
+
+167
+00:07:03,169 --> 00:07:05,630
+element<font color="#E5E5E5"> and I'm going to use a period</font>
+
+168
+00:07:05,630 --> 00:07:08,090
+<font color="#E5E5E5">and to denote any character and I'm</font>
+
+169
+00:07:08,090 --> 00:07:10,280
+using<font color="#E5E5E5"> asterisk to</font><font color="#CCCCCC"> know multiple of</font><font color="#E5E5E5"> these</font>
+
+170
+00:07:10,280 --> 00:07:11,720
+multiple<font color="#E5E5E5"> of these any characters and</font>
+
+171
+00:07:11,720 --> 00:07:13,220
+little<font color="#CCCCCC"> passing content here</font>
+
+172
+00:07:13,220 --> 00:07:17,630
+I don't want caps lock on cool so<font color="#E5E5E5"> now</font>
+
+173
+00:07:17,630 --> 00:07:20,539
+when I<font color="#CCCCCC"> run this let's move our</font><font color="#E5E5E5"> build</font>
+
+174
+00:07:20,539 --> 00:07:22,430
+output to the side here<font color="#E5E5E5"> you</font><font color="#CCCCCC"> can see it</font>
+
+175
+00:07:22,430 --> 00:07:24,139
+returns an array<font color="#CCCCCC"> of everything that</font><font color="#E5E5E5"> it</font>
+
+176
+00:07:24,139 --> 00:07:28,639
+found<font color="#CCCCCC"> and let's use</font><font color="#E5E5E5"> the zero index here</font>
+
+177
+00:07:28,639 --> 00:07:30,830
+to just scrape<font color="#E5E5E5"> that out</font><font color="#CCCCCC"> nice and easy</font>
+
+178
+00:07:30,830 --> 00:07:34,070
+<font color="#CCCCCC">cool so that's</font><font color="#E5E5E5"> the password for level</font><font color="#CCCCCC"> 1</font>
+
+179
+00:07:34,070 --> 00:07:37,310
+so we can<font color="#E5E5E5"> save this as natus</font><font color="#CCCCCC"> zero but</font>
+
+180
+00:07:37,310 --> 00:07:38,720
+now we can just<font color="#CCCCCC"> go</font><font color="#E5E5E5"> ahead and save</font>
+
+181
+00:07:38,720 --> 00:07:41,930
+<font color="#E5E5E5">another script call this natus one dot</font>
+
+182
+00:07:41,930 --> 00:07:44,270
+<font color="#CCCCCC">pi</font><font color="#E5E5E5"> change the</font><font color="#CCCCCC"> user name that</font><font color="#E5E5E5"> we're</font>
+
+183
+00:07:44,270 --> 00:07:46,099
+working with<font color="#E5E5E5"> because we can move</font><font color="#CCCCCC"> over</font><font color="#E5E5E5"> to</font>
+
+184
+00:07:46,099 --> 00:07:47,630
+the next<font color="#E5E5E5"> level here and let's paste in</font>
+
+185
+00:07:47,630 --> 00:07:50,199
+the<font color="#CCCCCC"> password</font><font color="#E5E5E5"> that we have so now our</font>
+
+186
+00:07:50,199 --> 00:07:52,639
+script will<font color="#E5E5E5"> automatically jump</font><font color="#CCCCCC"> to where</font>
+
+187
+00:07:52,639 --> 00:07:55,220
+we were previously<font color="#E5E5E5"> let's print out the</font>
+
+188
+00:07:55,220 --> 00:07:56,810
+content what's the response we're
+
+189
+00:07:56,810 --> 00:08:01,780
+<font color="#CCCCCC">getting here and if we see here again</font>
+
+190
+00:08:01,780 --> 00:08:04,340
+HTML source code<font color="#E5E5E5"> the web page source</font>
+
+191
+00:08:04,340 --> 00:08:07,250
+code and we just pretty<font color="#CCCCCC"> much got past</font>
+
+192
+00:08:07,250 --> 00:08:09,469
+the<font color="#E5E5E5"> next level because</font><font color="#CCCCCC"> how do we gone</font>
+
+193
+00:08:09,469 --> 00:08:11,210
+<font color="#E5E5E5">through this on our own over on the web</font>
+
+194
+00:08:11,210 --> 00:08:13,909
+browser natus<font color="#E5E5E5"> one and</font><font color="#CCCCCC"> Attis 1</font><font color="#E5E5E5"> paste in</font>
+
+195
+00:08:13,909 --> 00:08:16,669
+the password<font color="#E5E5E5"> here</font><font color="#CCCCCC"> it says you can</font><font color="#E5E5E5"> find</font>
+
+196
+00:08:16,669 --> 00:08:17,719
+the<font color="#E5E5E5"> pass through for the next level</font><font color="#CCCCCC"> on</font>
+
+197
+00:08:17,719 --> 00:08:18,919
+this page but<font color="#CCCCCC"> right clicking has been</font>
+
+198
+00:08:18,919 --> 00:08:21,969
+blocked<font color="#E5E5E5"> it seems</font><font color="#CCCCCC"> okay in my</font><font color="#E5E5E5"> web browser</font>
+
+199
+00:08:21,969 --> 00:08:25,159
+again<font color="#CCCCCC"> maybe maybe</font><font color="#E5E5E5"> it is not</font><font color="#CCCCCC"> in yours</font>
+
+200
+00:08:25,159 --> 00:08:26,599
+again control you will get you to the
+
+201
+00:08:26,599 --> 00:08:28,610
+<font color="#E5E5E5">source code and</font><font color="#CCCCCC"> you can see it here but</font>
+
+202
+00:08:28,610 --> 00:08:30,110
+<font color="#E5E5E5">doing this through</font><font color="#CCCCCC"> Python</font><font color="#E5E5E5"> doing this</font>
+
+203
+00:08:30,110 --> 00:08:31,969
+through code is still<font color="#E5E5E5"> going</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> get us</font>
+
+204
+00:08:31,969 --> 00:08:33,828
+the same same result<font color="#E5E5E5"> we're just getting</font>
+
+205
+00:08:33,828 --> 00:08:37,099
+the response<font color="#E5E5E5"> of the web page so now we</font>
+
+206
+00:08:37,099 --> 00:08:41,360
+can just<font color="#E5E5E5"> change our our code here have</font>
+
+207
+00:08:41,360 --> 00:08:43,700
+regular expressions parse out that HTML
+
+208
+00:08:43,700 --> 00:08:46,220
+<font color="#E5E5E5">comments again change it for natus</font><font color="#CCCCCC"> too</font>
+
+209
+00:08:46,220 --> 00:08:50,870
+and we can not<font color="#E5E5E5"> print the content and we</font>
+
+210
+00:08:50,870 --> 00:08:54,410
+can just print out what we find
+
+211
+00:08:54,410 --> 00:08:57,540
+we are getting<font color="#CCCCCC"> the flag</font><font color="#E5E5E5"> or the passenger</font>
+
+212
+00:08:57,540 --> 00:08:59,400
+<font color="#E5E5E5">for the next level right</font><font color="#CCCCCC"> here</font><font color="#E5E5E5"> so now</font><font color="#CCCCCC"> we</font>
+
+213
+00:08:59,400 --> 00:09:03,600
+<font color="#CCCCCC">can save this</font><font color="#E5E5E5"> as</font><font color="#CCCCCC"> natus to change the</font>
+
+214
+00:09:03,600 --> 00:09:07,070
+<font color="#E5E5E5">user name</font><font color="#CCCCCC"> to the correct</font><font color="#E5E5E5"> natus</font><font color="#CCCCCC"> to and</font>
+
+215
+00:09:07,070 --> 00:09:09,810
+comment<font color="#E5E5E5"> out this one print the content</font>
+
+216
+00:09:09,810 --> 00:09:12,210
+that we're seeing again<font color="#CCCCCC"> and</font><font color="#E5E5E5"> now we're</font>
+
+217
+00:09:12,210 --> 00:09:16,710
+into<font color="#E5E5E5"> level 3 cool all right so we're set</font>
+
+218
+00:09:16,710 --> 00:09:18,630
+up<font color="#E5E5E5"> we're rollin we've got some</font><font color="#CCCCCC"> Python</font>
+
+219
+00:09:18,630 --> 00:09:20,240
+<font color="#CCCCCC">code that</font><font color="#E5E5E5"> something has moved</font><font color="#CCCCCC"> through</font>
+
+220
+00:09:20,240 --> 00:09:22,500
+the natus levels that we would normally
+
+221
+00:09:22,500 --> 00:09:24,390
+<font color="#E5E5E5">be able</font><font color="#CCCCCC"> to interact with</font><font color="#E5E5E5"> through the</font><font color="#CCCCCC"> web</font>
+
+222
+00:09:24,390 --> 00:09:27,540
+browser<font color="#CCCCCC"> but we can still do that if we</font>
+
+223
+00:09:27,540 --> 00:09:29,910
+<font color="#E5E5E5">really wanted to but we're getting a</font>
+
+224
+00:09:29,910 --> 00:09:31,650
+little<font color="#E5E5E5"> bit more in the weeds including</font>
+
+225
+00:09:31,650 --> 00:09:33,450
+some automated tools and scripts that
+
+226
+00:09:33,450 --> 00:09:36,090
+<font color="#E5E5E5">will do the really cool</font><font color="#CCCCCC"> stuff for us and</font>
+
+227
+00:09:36,090 --> 00:09:37,380
+learning<font color="#CCCCCC"> a</font><font color="#E5E5E5"> little bit of Python</font><font color="#CCCCCC"> and</font>
+
+228
+00:09:37,380 --> 00:09:39,150
+stuff like that<font color="#CCCCCC"> and doing</font><font color="#E5E5E5"> some cool</font>
+
+229
+00:09:39,150 --> 00:09:40,340
+magic<font color="#E5E5E5"> in sublime</font><font color="#CCCCCC"> text</font>
+
+230
+00:09:40,340 --> 00:09:42,690
+so<font color="#E5E5E5"> we'll keep rolling with this in the</font>
+
+231
+00:09:42,690 --> 00:09:44,340
+<font color="#E5E5E5">next couple</font><font color="#CCCCCC"> videos I hope you</font><font color="#E5E5E5"> guys are</font>
+
+232
+00:09:44,340 --> 00:09:45,630
+<font color="#CCCCCC">enjoying these hope you guys like the</font>
+
+233
+00:09:45,630 --> 00:09:48,780
+quality<font color="#E5E5E5"> video whatever it is and really</font>
+
+234
+00:09:48,780 --> 00:09:50,160
+the personality that you got<font color="#E5E5E5"> with this</font>
+
+235
+00:09:50,160 --> 00:09:52,140
+series so thanks<font color="#E5E5E5"> again for watching I'll</font>
+
+236
+00:09:52,140 --> 00:09:54,300
+<font color="#E5E5E5">see you in the next video hopefully</font><font color="#CCCCCC"> tune</font>
+
+237
+00:09:54,300 --> 00:00:00,000
+<font color="#CCCCCC">in next</font><font color="#E5E5E5"> time</font>
+

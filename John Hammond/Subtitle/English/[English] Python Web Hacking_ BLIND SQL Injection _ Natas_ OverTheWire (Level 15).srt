@@ -1,0 +1,1500 @@
+1
+00:00:00,030 --> 00:00:01,709
+hey what's<font color="#E5E5E5"> up YouTube</font><font color="#CCCCCC"> this is John</font>
+
+2
+00:00:01,709 --> 00:00:03,360
+Hammond<font color="#E5E5E5"> and in this video</font><font color="#CCCCCC"> we're looking</font>
+
+3
+00:00:03,360 --> 00:00:06,089
+at<font color="#E5E5E5"> natus level 15 from over the wire so</font>
+
+4
+00:00:06,089 --> 00:00:08,940
+this<font color="#E5E5E5"> level</font><font color="#CCCCCC"> we just got the password for</font>
+
+5
+00:00:08,940 --> 00:00:10,889
+<font color="#E5E5E5">not as level 15 so we can use the same</font>
+
+6
+00:00:10,889 --> 00:00:12,780
+<font color="#E5E5E5">Python script when using</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> get the web</font>
+
+7
+00:00:12,780 --> 00:00:14,490
+page<font color="#E5E5E5"> see what we're actually</font><font color="#CCCCCC"> working</font>
+
+8
+00:00:14,490 --> 00:00:16,529
+<font color="#E5E5E5">with here</font><font color="#CCCCCC"> and when we're looking at the</font>
+
+9
+00:00:16,529 --> 00:00:18,779
+web page source HTML<font color="#E5E5E5"> here we have a form</font>
+
+10
+00:00:18,779 --> 00:00:20,820
+<font color="#E5E5E5">that goes to index dot PHP it's on the</font>
+
+11
+00:00:20,820 --> 00:00:23,310
+post request<font color="#CCCCCC"> with the</font><font color="#E5E5E5"> username we can</font>
+
+12
+00:00:23,310 --> 00:00:25,109
+fill out that looks like the<font color="#E5E5E5"> only field</font>
+
+13
+00:00:25,109 --> 00:00:28,019
+here and the button submit goes to check
+
+14
+00:00:28,019 --> 00:00:31,140
+existence<font color="#E5E5E5"> so maybe it's just trying to</font>
+
+15
+00:00:31,140 --> 00:00:33,030
+<font color="#E5E5E5">determine whether or not a</font><font color="#CCCCCC"> user exists</font>
+
+16
+00:00:33,030 --> 00:00:34,350
+we can go<font color="#CCCCCC"> ahead</font><font color="#E5E5E5"> and take a look at the</font>
+
+17
+00:00:34,350 --> 00:00:36,510
+source<font color="#E5E5E5"> code</font><font color="#CCCCCC"> here by going to that</font><font color="#E5E5E5"> view</font>
+
+18
+00:00:36,510 --> 00:00:38,910
+source or index source page<font color="#E5E5E5"> we'll go</font>
+
+19
+00:00:38,910 --> 00:00:40,559
+ahead<font color="#CCCCCC"> and DN to tie some of</font><font color="#E5E5E5"> these and</font>
+
+20
+00:00:40,559 --> 00:00:43,079
+let's remove all these break statements
+
+21
+00:00:43,079 --> 00:00:45,090
+here because<font color="#CCCCCC"> we're</font><font color="#E5E5E5"> getting in the way so</font>
+
+22
+00:00:45,090 --> 00:00:46,710
+now I've got the page source here and<font color="#E5E5E5"> we</font>
+
+23
+00:00:46,710 --> 00:00:48,840
+can see the PHP code<font color="#E5E5E5"> looks like it gives</font>
+
+24
+00:00:48,840 --> 00:00:50,700
+<font color="#E5E5E5">us a schema a little bit of the database</font>
+
+25
+00:00:50,700 --> 00:00:52,949
+like okay we have a user's<font color="#CCCCCC"> table with a</font>
+
+26
+00:00:52,949 --> 00:00:55,350
+<font color="#E5E5E5">username and password</font><font color="#CCCCCC"> just in there and</font>
+
+27
+00:00:55,350 --> 00:00:57,690
+<font color="#CCCCCC">we're determining if the array key</font>
+
+28
+00:00:57,690 --> 00:00:59,579
+exists<font color="#E5E5E5"> user name in the request so okay</font>
+
+29
+00:00:59,579 --> 00:01:01,890
+if we<font color="#CCCCCC"> actually post of the form and that</font>
+
+30
+00:01:01,890 --> 00:01:05,220
+user name<font color="#E5E5E5"> is is present we conduct the</font>
+
+31
+00:01:05,220 --> 00:01:07,770
+database with the<font color="#CCCCCC"> sensor password select</font>
+
+32
+00:01:07,770 --> 00:01:09,570
+a database<font color="#E5E5E5"> and the query that</font><font color="#CCCCCC"> we're</font>
+
+33
+00:01:09,570 --> 00:01:11,580
+running<font color="#E5E5E5"> is select all from users where</font>
+
+34
+00:01:11,580 --> 00:01:14,700
+<font color="#CCCCCC">username</font><font color="#E5E5E5"> again concatenate</font><font color="#CCCCCC"> it in so</font>
+
+35
+00:01:14,700 --> 00:01:16,909
+pretty obvious sequel injection there
+
+36
+00:01:16,909 --> 00:01:19,740
+and we get the debug query again if we
+
+37
+00:01:19,740 --> 00:01:22,770
+want<font color="#CCCCCC"> to take a look</font><font color="#E5E5E5"> at it and we get the</font>
+
+38
+00:01:22,770 --> 00:01:25,280
+<font color="#E5E5E5">query results and if we have a result</font>
+
+39
+00:01:25,280 --> 00:01:27,810
+<font color="#E5E5E5">one or another it tells us this user</font>
+
+40
+00:01:27,810 --> 00:01:30,060
+exists<font color="#E5E5E5"> or this user doesn't exist</font><font color="#CCCCCC"> or</font>
+
+41
+00:01:30,060 --> 00:01:32,180
+where there's an error<font color="#E5E5E5"> in the query okay</font>
+
+42
+00:01:32,180 --> 00:01:34,259
+<font color="#CCCCCC">so we don't actually get to know</font><font color="#E5E5E5"> any</font>
+
+43
+00:01:34,259 --> 00:01:35,909
+information<font color="#CCCCCC"> we don't actually log in or</font>
+
+44
+00:01:35,909 --> 00:01:38,340
+anything<font color="#E5E5E5"> really</font><font color="#CCCCCC"> just determining</font><font color="#E5E5E5"> a</font>
+
+45
+00:01:38,340 --> 00:01:40,829
+binary kind of a yes or<font color="#CCCCCC"> no does this</font>
+
+46
+00:01:40,829 --> 00:01:44,549
+<font color="#CCCCCC">unit exist</font><font color="#E5E5E5"> does this user not exist so</font>
+
+47
+00:01:44,549 --> 00:01:47,040
+<font color="#CCCCCC">let's go ahead</font><font color="#E5E5E5"> and play</font><font color="#CCCCCC"> with this let's</font>
+
+48
+00:01:47,040 --> 00:01:50,820
+go ahead<font color="#E5E5E5"> and change this to</font><font color="#CCCCCC"> a post</font>
+
+49
+00:01:50,820 --> 00:01:54,090
+request<font color="#CCCCCC"> and let's go to the</font><font color="#E5E5E5"> original web</font>
+
+50
+00:01:54,090 --> 00:01:55,649
+page not the<font color="#E5E5E5"> source anymore</font>
+
+51
+00:01:55,649 --> 00:01:57,479
+let's actually take the source though
+
+52
+00:01:57,479 --> 00:02:00,030
+and<font color="#E5E5E5"> just put it in a new pane in case we</font>
+
+53
+00:02:00,030 --> 00:02:01,170
+want it later<font color="#E5E5E5"> on</font>
+
+54
+00:02:01,170 --> 00:02:06,630
+<font color="#E5E5E5">and let's go ahead and post with the</font>
+
+55
+00:02:06,630 --> 00:02:11,849
+data<font color="#E5E5E5"> keyword arguments having user</font><font color="#CCCCCC"> name</font>
+
+56
+00:02:11,849 --> 00:02:13,110
+and what
+
+57
+00:02:13,110 --> 00:02:15,270
+say like<font color="#E5E5E5"> John just to test that stuff</font>
+
+58
+00:02:15,270 --> 00:02:18,450
+out<font color="#E5E5E5"> I'm going to assume user doesn't</font>
+
+59
+00:02:18,450 --> 00:02:22,110
+<font color="#CCCCCC">exist okay</font><font color="#E5E5E5"> then I miss my opportunity</font><font color="#CCCCCC"> to</font>
+
+60
+00:02:22,110 --> 00:02:24,180
+use like<font color="#CCCCCC"> username subscribe or something</font>
+
+61
+00:02:24,180 --> 00:02:25,500
+dang it<font color="#CCCCCC"> alright</font>
+
+62
+00:02:25,500 --> 00:02:28,950
+but natus<font color="#E5E5E5"> 16 so the</font><font color="#CCCCCC"> next</font><font color="#E5E5E5"> level here</font>
+
+63
+00:02:28,950 --> 00:02:31,470
+<font color="#E5E5E5">looks like that we can assume</font><font color="#CCCCCC"> that user</font>
+
+64
+00:02:31,470 --> 00:02:33,690
+probably will exist<font color="#CCCCCC"> okay that user does</font>
+
+65
+00:02:33,690 --> 00:02:36,600
+exist<font color="#E5E5E5"> so we want from the database here</font>
+
+66
+00:02:36,600 --> 00:02:39,180
+we want<font color="#E5E5E5"> to be able</font><font color="#CCCCCC"> to find the user</font>
+
+67
+00:02:39,180 --> 00:02:41,400
+where the<font color="#E5E5E5"> username</font><font color="#CCCCCC"> is equal to</font><font color="#E5E5E5"> Natta 16</font>
+
+68
+00:02:41,400 --> 00:02:43,230
+and we want to somehow leak out their
+
+69
+00:02:43,230 --> 00:02:46,260
+password<font color="#CCCCCC"> but we can't do sequel</font>
+
+70
+00:02:46,260 --> 00:02:47,610
+injection like we've done<font color="#E5E5E5"> before</font><font color="#CCCCCC"> because</font>
+
+71
+00:02:47,610 --> 00:02:49,140
+<font color="#E5E5E5">we're not logging</font><font color="#CCCCCC"> into anything</font>
+
+72
+00:02:49,140 --> 00:02:51,510
+we don't have explicit sequel injections
+
+73
+00:02:51,510 --> 00:02:53,550
+so we can't see some of the results<font color="#CCCCCC"> we</font>
+
+74
+00:02:53,550 --> 00:02:55,590
+<font color="#E5E5E5">can only determine whether or not a yes</font>
+
+75
+00:02:55,590 --> 00:02:57,510
+or<font color="#CCCCCC"> a No well user exists or the user</font>
+
+76
+00:02:57,510 --> 00:03:00,420
+doesn't<font color="#CCCCCC"> exist so</font><font color="#E5E5E5"> now we can get into a</font>
+
+77
+00:03:00,420 --> 00:03:04,940
+tactic<font color="#E5E5E5"> called blind sequel injection so</font>
+
+78
+00:03:04,940 --> 00:03:06,989
+blind sequel injection means we're
+
+79
+00:03:06,989 --> 00:03:09,450
+<font color="#E5E5E5">probably gonna have</font><font color="#CCCCCC"> to leak out data</font>
+
+80
+00:03:09,450 --> 00:03:11,850
+like byte by byte or character by
+
+81
+00:03:11,850 --> 00:03:14,910
+character<font color="#CCCCCC"> because we can't explicitly</font>
+
+82
+00:03:14,910 --> 00:03:18,330
+see a result but we can figure out<font color="#E5E5E5"> some</font>
+
+83
+00:03:18,330 --> 00:03:20,400
+data<font color="#E5E5E5"> by testing other characters over</font>
+
+84
+00:03:20,400 --> 00:03:22,140
+<font color="#E5E5E5">and over again</font><font color="#CCCCCC"> until we get one that</font>
+
+85
+00:03:22,140 --> 00:03:26,160
+matches<font color="#E5E5E5"> so we can determine through that</font>
+
+86
+00:03:26,160 --> 00:03:28,080
+yes or no determination<font color="#E5E5E5"> whether a user</font>
+
+87
+00:03:28,080 --> 00:03:31,170
+exists or does not exist<font color="#CCCCCC"> if we're on the</font>
+
+88
+00:03:31,170 --> 00:03:34,110
+correct character<font color="#E5E5E5"> or not and because we</font>
+
+89
+00:03:34,110 --> 00:03:36,000
+have our sequel injection<font color="#E5E5E5"> we know we can</font>
+
+90
+00:03:36,000 --> 00:03:37,890
+have a valid query if we<font color="#E5E5E5"> really wanted</font>
+
+91
+00:03:37,890 --> 00:03:41,730
+<font color="#E5E5E5">to so let's change this user name</font><font color="#CCCCCC"> to be</font>
+
+92
+00:03:41,730 --> 00:03:45,480
+able<font color="#E5E5E5"> to use the double quote here and we</font>
+
+93
+00:03:45,480 --> 00:03:48,959
+can<font color="#E5E5E5"> comment this out and we'll still get</font>
+
+94
+00:03:48,959 --> 00:03:53,700
+a user<font color="#CCCCCC"> exists' right</font><font color="#E5E5E5"> if we had and</font><font color="#CCCCCC"> one</font>
+
+95
+00:03:53,700 --> 00:03:55,980
+equals<font color="#CCCCCC"> two we can get this</font><font color="#E5E5E5"> to be an</font>
+
+96
+00:03:55,980 --> 00:03:57,900
+invalid statement that user doesn't
+
+97
+00:03:57,900 --> 00:04:00,180
+<font color="#E5E5E5">exist</font><font color="#CCCCCC"> because</font><font color="#E5E5E5"> one does not equal to an</font>
+
+98
+00:04:00,180 --> 00:04:02,940
+and statement<font color="#E5E5E5"> ruins that but that and</font>
+
+99
+00:04:02,940 --> 00:04:05,549
+condition<font color="#E5E5E5"> because we're using our sequel</font>
+
+100
+00:04:05,549 --> 00:04:07,739
+injection<font color="#CCCCCC"> lets us do more here we can</font>
+
+101
+00:04:07,739 --> 00:04:11,579
+test<font color="#E5E5E5"> and the password is equal</font><font color="#CCCCCC"> to</font>
+
+102
+00:04:11,579 --> 00:04:13,500
+something<font color="#E5E5E5"> right we don't</font><font color="#CCCCCC"> know what the</font>
+
+103
+00:04:13,500 --> 00:04:15,450
+password<font color="#E5E5E5"> actually is so we can't use</font>
+
+104
+00:04:15,450 --> 00:04:17,820
+equal<font color="#CCCCCC"> two but we can try</font><font color="#E5E5E5"> and figure out</font>
+
+105
+00:04:17,820 --> 00:04:21,829
+what the password is like and with that
+
+106
+00:04:21,829 --> 00:04:25,380
+we<font color="#E5E5E5"> can start to iterate</font><font color="#CCCCCC"> through possible</font>
+
+107
+00:04:25,380 --> 00:04:26,480
+characters like
+
+108
+00:04:26,480 --> 00:04:28,850
+maybe any any possible thing<font color="#CCCCCC"> a</font><font color="#E5E5E5"> letter</font>
+
+109
+00:04:28,850 --> 00:04:30,440
+not a uppercase<font color="#E5E5E5"> letter a lowercase</font>
+
+110
+00:04:30,440 --> 00:04:33,530
+<font color="#E5E5E5">letter or a number like the typical</font>
+
+111
+00:04:33,530 --> 00:04:35,570
+style we've seen in all the<font color="#CCCCCC"> other naty's</font>
+
+112
+00:04:35,570 --> 00:04:38,060
+passwords we can<font color="#E5E5E5"> figure out if the</font>
+
+113
+00:04:38,060 --> 00:04:41,630
+password is containing<font color="#E5E5E5"> those characters</font>
+
+114
+00:04:41,630 --> 00:04:41,930
+and
+
+115
+00:04:41,930 --> 00:04:44,060
+we can leak out<font color="#E5E5E5"> like character by</font>
+
+116
+00:04:44,060 --> 00:04:46,490
+character<font color="#CCCCCC"> what that password</font><font color="#E5E5E5"> is so we</font>
+
+117
+00:04:46,490 --> 00:04:48,380
+can<font color="#E5E5E5"> do that with the sequel like</font>
+
+118
+00:04:48,380 --> 00:04:51,950
+statement<font color="#CCCCCC"> and we can determine if it's</font>
+
+119
+00:04:51,950 --> 00:04:54,230
+like anything right
+
+120
+00:04:54,230 --> 00:04:56,180
+the anything character or the<font color="#E5E5E5"> wild-card</font>
+
+121
+00:04:56,180 --> 00:04:58,400
+<font color="#E5E5E5">character and a sequel like statement</font>
+
+122
+00:04:58,400 --> 00:05:02,570
+<font color="#E5E5E5">eyes a % so we can say and password like</font>
+
+123
+00:05:02,570 --> 00:05:05,360
+anything with the<font color="#E5E5E5"> wild-card</font><font color="#CCCCCC"> that will</font>
+
+124
+00:05:05,360 --> 00:05:08,090
+return true<font color="#E5E5E5"> right the user exists</font>
+
+125
+00:05:08,090 --> 00:05:09,560
+because<font color="#E5E5E5"> that</font><font color="#CCCCCC"> wildcard will match</font>
+
+126
+00:05:09,560 --> 00:05:11,540
+<font color="#E5E5E5">anything but if we had the password like</font>
+
+127
+00:05:11,540 --> 00:05:17,930
+the word anything or who knows right we
+
+128
+00:05:17,930 --> 00:05:19,670
+don't<font color="#CCCCCC"> know the password and</font><font color="#E5E5E5"> that user</font>
+
+129
+00:05:19,670 --> 00:05:21,860
+doesn't exist<font color="#CCCCCC"> because that like isn't</font>
+
+130
+00:05:21,860 --> 00:05:24,610
+<font color="#CCCCCC">going to work for us because there is no</font>
+
+131
+00:05:24,610 --> 00:05:27,170
+that<font color="#CCCCCC"> wildcard isn't affecting it and</font>
+
+132
+00:05:27,170 --> 00:05:28,970
+it's not<font color="#E5E5E5"> matching anything it's</font><font color="#CCCCCC"> matching</font>
+
+133
+00:05:28,970 --> 00:05:30,560
+only<font color="#E5E5E5"> who knows and the password</font>
+
+134
+00:05:30,560 --> 00:05:33,680
+obviously<font color="#E5E5E5"> isn't that so we can actually</font>
+
+135
+00:05:33,680 --> 00:05:35,510
+<font color="#CCCCCC">take advantage</font><font color="#E5E5E5"> of this though we can</font>
+
+136
+00:05:35,510 --> 00:05:37,310
+start to loop through<font color="#CCCCCC"> all</font><font color="#E5E5E5"> the possible</font>
+
+137
+00:05:37,310 --> 00:05:39,650
+characters or what could<font color="#E5E5E5"> be part of the</font>
+
+138
+00:05:39,650 --> 00:05:41,300
+<font color="#E5E5E5">password so let's go</font><font color="#CCCCCC"> ahead</font><font color="#E5E5E5"> and grab</font>
+
+139
+00:05:41,300 --> 00:05:45,500
+those things<font color="#E5E5E5"> from string import all so</font>
+
+140
+00:05:45,500 --> 00:05:47,150
+we can<font color="#E5E5E5"> say characters that we want to</font>
+
+141
+00:05:47,150 --> 00:05:49,700
+look through<font color="#E5E5E5"> can equal lowercase that</font>
+
+142
+00:05:49,700 --> 00:05:51,550
+we've got<font color="#E5E5E5"> from the string module appear</font>
+
+143
+00:05:51,550 --> 00:05:55,190
+<font color="#CCCCCC">and</font><font color="#E5E5E5"> uppercase that we've got from the</font>
+
+144
+00:05:55,190 --> 00:05:57,890
+string module above and digits<font color="#CCCCCC"> so all of</font>
+
+145
+00:05:57,890 --> 00:06:00,160
+<font color="#E5E5E5">these variables exist in that string</font>
+
+146
+00:06:00,160 --> 00:06:04,820
+<font color="#E5E5E5">module but if we're seeing them</font><font color="#CCCCCC"> seeing</font>
+
+147
+00:06:04,820 --> 00:06:05,930
+<font color="#E5E5E5">the characters that we've put together</font>
+
+148
+00:06:05,930 --> 00:06:10,420
+<font color="#CCCCCC">now we've got a list or a string really</font>
+
+149
+00:06:10,420 --> 00:06:14,240
+<font color="#CCCCCC">how this</font><font color="#E5E5E5"> 15 yeah okay all of</font><font color="#CCCCCC"> these</font>
+
+150
+00:06:14,240 --> 00:06:19,610
+things that<font color="#CCCCCC"> we can work with</font><font color="#E5E5E5"> so now we</font>
+
+151
+00:06:19,610 --> 00:06:23,690
+can post this request<font color="#CCCCCC"> make the</font><font color="#E5E5E5"> sequel</font>
+
+152
+00:06:23,690 --> 00:06:25,550
+injection happen and determine<font color="#E5E5E5"> what the</font>
+
+153
+00:06:25,550 --> 00:06:28,640
+password is like what we've built so far
+
+154
+00:06:28,640 --> 00:06:30,800
+of<font color="#CCCCCC"> the password and trying to test each</font>
+
+155
+00:06:30,800 --> 00:06:32,660
+character by character<font color="#E5E5E5"> if we wanted to</font>
+
+156
+00:06:32,660 --> 00:06:35,690
+<font color="#E5E5E5">test if</font><font color="#CCCCCC"> the passages like a and anything</font>
+
+157
+00:06:35,690 --> 00:06:38,300
+that<font color="#CCCCCC"> follows with our</font><font color="#E5E5E5"> wildcard here or B</font>
+
+158
+00:06:38,300 --> 00:06:40,129
+and anything that<font color="#E5E5E5"> follows with</font><font color="#CCCCCC"> the wild</font>
+
+159
+00:06:40,129 --> 00:06:43,489
+<font color="#CCCCCC">or either</font><font color="#E5E5E5"> C etc</font><font color="#CCCCCC"> de F and the list goes</font>
+
+160
+00:06:43,489 --> 00:06:46,909
+on<font color="#E5E5E5"> and on until you get like Oh F</font><font color="#CCCCCC"> maybe</font>
+
+161
+00:06:46,909 --> 00:06:48,469
+that's the correct letter it's<font color="#E5E5E5"> or until</font>
+
+162
+00:06:48,469 --> 00:06:50,929
+we find<font color="#E5E5E5"> ELLs correct letter and then B</font>
+
+163
+00:06:50,929 --> 00:06:53,869
+or a etc and we can leak out<font color="#E5E5E5"> the</font>
+
+164
+00:06:53,869 --> 00:06:56,149
+<font color="#E5E5E5">password by using this wildcard</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> by</font>
+
+165
+00:06:56,149 --> 00:06:57,889
+<font color="#CCCCCC">using this technique this</font><font color="#E5E5E5"> will happen</font>
+
+166
+00:06:57,889 --> 00:06:59,629
+<font color="#E5E5E5">over a period of time right we're gonna</font>
+
+167
+00:06:59,629 --> 00:07:03,050
+have<font color="#E5E5E5"> to loop here</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> let's start a while</font>
+
+168
+00:07:03,050 --> 00:07:04,039
+loop<font color="#E5E5E5"> Wow</font>
+
+169
+00:07:04,039 --> 00:07:07,009
+true do this<font color="#E5E5E5"> over and over</font><font color="#CCCCCC"> and over</font>
+
+170
+00:07:07,009 --> 00:07:10,819
+<font color="#E5E5E5">again we can</font><font color="#CCCCCC"> do for CH in characters so</font>
+
+171
+00:07:10,819 --> 00:07:11,959
+every<font color="#E5E5E5"> single</font><font color="#CCCCCC"> character that we're</font>
+
+172
+00:07:11,959 --> 00:07:13,759
+working with<font color="#CCCCCC"> let's just print that out</font>
+
+173
+00:07:13,759 --> 00:07:15,159
+<font color="#CCCCCC">for now</font>
+
+174
+00:07:15,159 --> 00:07:18,229
+and you can see that loop goes over and
+
+175
+00:07:18,229 --> 00:07:19,419
+over and<font color="#E5E5E5"> over</font><font color="#CCCCCC"> and with the</font><font color="#E5E5E5"> characters</font>
+
+176
+00:07:19,419 --> 00:07:22,069
+let's keep track of what we've<font color="#CCCCCC"> seen of</font>
+
+177
+00:07:22,069 --> 00:07:24,919
+the<font color="#E5E5E5"> password so</font><font color="#CCCCCC"> seeing password that</font>
+
+178
+00:07:24,919 --> 00:07:27,379
+will<font color="#CCCCCC"> be a list and I was gonna declare</font>
+
+179
+00:07:27,379 --> 00:07:29,029
+it empty like<font color="#CCCCCC"> this so it'll be really</font>
+
+180
+00:07:29,029 --> 00:07:31,159
+<font color="#CCCCCC">easy</font><font color="#E5E5E5"> for</font><font color="#CCCCCC"> us to append on to it or join</font>
+
+181
+00:07:31,159 --> 00:07:34,789
+it together<font color="#E5E5E5"> as a string so we can try</font>
+
+182
+00:07:34,789 --> 00:07:41,749
+and print out trying character with
+
+183
+00:07:41,749 --> 00:07:46,519
+password and then join of what we've
+
+184
+00:07:46,519 --> 00:07:48,319
+seen<font color="#CCCCCC"> of</font><font color="#E5E5E5"> the password so when we join</font>
+
+185
+00:07:48,319 --> 00:07:49,999
+that<font color="#CCCCCC"> scene password together that just</font>
+
+186
+00:07:49,999 --> 00:07:51,490
+makes it<font color="#E5E5E5"> a string that's some Python</font>
+
+187
+00:07:51,490 --> 00:07:54,649
+<font color="#E5E5E5">syntactic sugar to join every element in</font>
+
+188
+00:07:54,649 --> 00:07:55,759
+the<font color="#CCCCCC"> list or element in the array</font><font color="#E5E5E5"> to</font>
+
+189
+00:07:55,759 --> 00:07:57,499
+gether with an empty<font color="#CCCCCC"> string so it puts</font>
+
+190
+00:07:57,499 --> 00:08:00,769
+them<font color="#E5E5E5"> all together as one string nice so</font>
+
+191
+00:08:00,769 --> 00:08:03,259
+now we can get the response<font color="#E5E5E5"> but we're</font>
+
+192
+00:08:03,259 --> 00:08:05,209
+gonna have<font color="#E5E5E5"> to change our post request</font><font color="#CCCCCC"> to</font>
+
+193
+00:08:05,209 --> 00:08:09,469
+make that like statement<font color="#CCCCCC"> add in what</font>
+
+194
+00:08:09,469 --> 00:08:11,869
+we've seen so far of the password<font color="#CCCCCC"> as a</font>
+
+195
+00:08:11,869 --> 00:08:17,569
+string right so I'm terminating<font color="#E5E5E5"> my</font>
+
+196
+00:08:17,569 --> 00:08:19,909
+original string with the single quote
+
+197
+00:08:19,909 --> 00:08:22,789
+but I'm still inside<font color="#CCCCCC"> the like query here</font>
+
+198
+00:08:22,789 --> 00:08:24,379
+with the<font color="#E5E5E5"> double quotes that the note</font>
+
+199
+00:08:24,379 --> 00:08:26,800
+<font color="#E5E5E5">this is part of the like sequel string</font>
+
+200
+00:08:26,800 --> 00:08:28,610
+adding in what we've seen<font color="#E5E5E5"> of the</font>
+
+201
+00:08:28,610 --> 00:08:30,619
+password and then<font color="#E5E5E5"> the character that</font>
+
+202
+00:08:30,619 --> 00:08:33,828
+we're looking<font color="#E5E5E5"> at currently and if we</font>
+
+203
+00:08:33,828 --> 00:08:35,089
+wanted<font color="#E5E5E5"> to actually check out what the</font>
+
+204
+00:08:35,089 --> 00:08:36,529
+<font color="#CCCCCC">DES bug query is you can see that this</font>
+
+205
+00:08:36,529 --> 00:08:38,240
+is<font color="#E5E5E5"> going to be iterating through what</font>
+
+206
+00:08:38,240 --> 00:08:40,818
+we've seen including<font color="#CCCCCC"> our scene password</font>
+
+207
+00:08:40,818 --> 00:08:43,250
+<font color="#E5E5E5">so we can actually do</font><font color="#CCCCCC"> change this to</font>
+
+208
+00:08:43,250 --> 00:08:46,339
+trying with password<font color="#CCCCCC"> + CH and you'll see</font>
+
+209
+00:08:46,339 --> 00:08:47,680
+it move just<font color="#CCCCCC"> like that</font>
+
+210
+00:08:47,680 --> 00:08:50,680
+great
+
+211
+00:08:51,430 --> 00:08:54,380
+trying with password<font color="#CCCCCC"> ABCD efg</font><font color="#E5E5E5"> etc etc</font>
+
+212
+00:08:54,380 --> 00:08:56,120
+etc but right<font color="#CCCCCC"> now we're not actually</font>
+
+213
+00:08:56,120 --> 00:08:57,860
+seeing what the response is<font color="#CCCCCC"> coming back</font>
+
+214
+00:08:57,860 --> 00:09:00,920
+to us<font color="#CCCCCC"> with let's actually get the</font>
+
+215
+00:09:00,920 --> 00:09:02,720
+response and then let's just print<font color="#E5E5E5"> it</font>
+
+216
+00:09:02,720 --> 00:09:05,600
+out<font color="#E5E5E5"> in our loop this is gonna look</font>
+
+217
+00:09:05,600 --> 00:09:08,330
+pretty messy and pretty crazy<font color="#E5E5E5"> but as</font>
+
+218
+00:09:08,330 --> 00:09:10,490
+you'll<font color="#CCCCCC"> see this user doesn't exist for</font>
+
+219
+00:09:10,490 --> 00:09:12,710
+<font color="#E5E5E5">just about everything but eventually we</font>
+
+220
+00:09:12,710 --> 00:09:15,020
+will trigger<font color="#CCCCCC"> oh this user does exist</font><font color="#E5E5E5"> for</font>
+
+221
+00:09:15,020 --> 00:09:18,170
+<font color="#E5E5E5">one of these maybe it'll happen too</font>
+
+222
+00:09:18,170 --> 00:09:18,650
+quickly
+
+223
+00:09:18,650 --> 00:09:22,550
+<font color="#CCCCCC">oh actually</font><font color="#E5E5E5"> I forgot the % remember we</font>
+
+224
+00:09:22,550 --> 00:09:24,200
+need<font color="#E5E5E5"> our wild card</font><font color="#CCCCCC"> because doing</font><font color="#E5E5E5"> that</font>
+
+225
+00:09:24,200 --> 00:09:27,950
+<font color="#CCCCCC">like</font><font color="#E5E5E5"> is only going to be doing</font><font color="#CCCCCC"> ok</font><font color="#E5E5E5"> it'll</font>
+
+226
+00:09:27,950 --> 00:09:30,380
+<font color="#CCCCCC">match this</font><font color="#E5E5E5"> if it's like this query but</font>
+
+227
+00:09:30,380 --> 00:09:33,050
+the % with the wild card will allow us
+
+228
+00:09:33,050 --> 00:09:35,660
+to fill out the rest of<font color="#E5E5E5"> this now when I</font>
+
+229
+00:09:35,660 --> 00:09:37,790
+go<font color="#CCCCCC"> back and run</font><font color="#E5E5E5"> the script we should be</font>
+
+230
+00:09:37,790 --> 00:09:39,740
+<font color="#CCCCCC">able to see this user doesn't exist but</font>
+
+231
+00:09:39,740 --> 00:09:40,670
+<font color="#E5E5E5">for one</font><font color="#CCCCCC"> of these</font>
+
+232
+00:09:40,670 --> 00:09:43,430
+it'll gimmick<font color="#E5E5E5"> just like that you</font><font color="#CCCCCC"> just</font>
+
+233
+00:09:43,430 --> 00:09:46,340
+saw it and the user does exist<font color="#E5E5E5"> for where</font>
+
+234
+00:09:46,340 --> 00:09:49,970
+it is like trying with password<font color="#CCCCCC"> W this</font>
+
+235
+00:09:49,970 --> 00:09:52,640
+user does exist<font color="#E5E5E5"> ok cool</font><font color="#CCCCCC"> so now we know</font>
+
+236
+00:09:52,640 --> 00:09:55,190
+we've<font color="#CCCCCC"> just leaked out</font><font color="#E5E5E5"> W is the first</font>
+
+237
+00:09:55,190 --> 00:09:59,120
+character<font color="#E5E5E5"> of this password so we don't</font>
+
+238
+00:09:59,120 --> 00:10:01,430
+know whether or not it's gonna be<font color="#E5E5E5"> case</font>
+
+239
+00:10:01,430 --> 00:10:02,870
+sensitive or<font color="#E5E5E5"> not though because by</font>
+
+240
+00:10:02,870 --> 00:10:06,350
+default<font color="#CCCCCC"> sequel is case insensitive so</font>
+
+241
+00:10:06,350 --> 00:10:09,020
+that password<font color="#CCCCCC"> may be using maybe</font>
+
+242
+00:10:09,020 --> 00:10:10,280
+starting with<font color="#E5E5E5"> the W but we don't know</font>
+
+243
+00:10:10,280 --> 00:10:12,170
+there<font color="#CCCCCC"> abouts lowercase or</font><font color="#E5E5E5"> uppercase</font><font color="#CCCCCC"> we</font>
+
+244
+00:10:12,170 --> 00:10:14,710
+can change that by<font color="#CCCCCC"> our query</font><font color="#E5E5E5"> saying and</font>
+
+245
+00:10:14,710 --> 00:10:18,830
+binary password<font color="#E5E5E5"> putting binary right</font>
+
+246
+00:10:18,830 --> 00:10:20,390
+before that<font color="#E5E5E5"> in the</font><font color="#CCCCCC"> Select</font><font color="#E5E5E5"> statement</font>
+
+247
+00:10:20,390 --> 00:10:23,180
+<font color="#CCCCCC">we'll make</font><font color="#E5E5E5"> that</font><font color="#CCCCCC"> field case sensitive so</font>
+
+248
+00:10:23,180 --> 00:10:28,700
+<font color="#CCCCCC">now we can test if user</font><font color="#E5E5E5"> exists is in the</font>
+
+249
+00:10:28,700 --> 00:10:31,370
+content<font color="#E5E5E5"> and if that's the</font><font color="#CCCCCC"> case</font><font color="#E5E5E5"> we can</font>
+
+250
+00:10:31,370 --> 00:10:35,030
+<font color="#CCCCCC">say</font><font color="#E5E5E5"> scene password dot append the</font>
+
+251
+00:10:35,030 --> 00:10:37,670
+current<font color="#E5E5E5"> character we've got our CH and</font>
+
+252
+00:10:37,670 --> 00:10:39,980
+then we can break out of this for loop
+
+253
+00:10:39,980 --> 00:10:44,930
+<font color="#E5E5E5">and keep moving on cool so now</font><font color="#CCCCCC"> let's try</font>
+
+254
+00:10:44,930 --> 00:10:48,590
+<font color="#E5E5E5">and work through this we're not printing</font>
+
+255
+00:10:48,590 --> 00:10:50,210
+out the entire content<font color="#CCCCCC"> anymore but</font>
+
+256
+00:10:50,210 --> 00:10:52,850
+<font color="#E5E5E5">lowercase W didn't catch but</font><font color="#CCCCCC"> we'll</font>
+
+257
+00:10:52,850 --> 00:10:56,270
+capital<font color="#E5E5E5"> W catch it does</font><font color="#CCCCCC"> ok cool</font><font color="#E5E5E5"> and now</font>
+
+258
+00:10:56,270 --> 00:10:58,880
+we're leaking<font color="#E5E5E5"> out more W a that looked</font>
+
+259
+00:10:58,880 --> 00:11:02,540
+<font color="#CCCCCC">like</font><font color="#E5E5E5"> it went</font><font color="#CCCCCC"> through</font><font color="#E5E5E5"> that's</font><font color="#CCCCCC"> a true</font>
+
+260
+00:11:02,540 --> 00:11:03,420
+etcetera
+
+261
+00:11:03,420 --> 00:11:05,190
+<font color="#CCCCCC">cool we're getting</font><font color="#E5E5E5"> more of them and this</font>
+
+262
+00:11:05,190 --> 00:11:07,470
+<font color="#CCCCCC">will happen</font><font color="#E5E5E5"> slowly but surely we will</font>
+
+263
+00:11:07,470 --> 00:11:09,690
+<font color="#E5E5E5">get the flag just</font><font color="#CCCCCC"> like this so I'm gonna</font>
+
+264
+00:11:09,690 --> 00:11:13,290
+wait a second I'm going<font color="#CCCCCC"> to</font><font color="#E5E5E5"> pause the</font>
+
+265
+00:11:13,290 --> 00:11:16,590
+video<font color="#CCCCCC"> here and</font><font color="#E5E5E5"> let this</font><font color="#CCCCCC"> run</font><font color="#E5E5E5"> and we'll</font>
+
+266
+00:11:16,590 --> 00:11:18,180
+see if we can leak out<font color="#E5E5E5"> the whole</font>
+
+267
+00:11:18,180 --> 00:11:21,600
+password<font color="#CCCCCC"> I think we're getting close to</font>
+
+268
+00:11:21,600 --> 00:11:24,660
+<font color="#E5E5E5">the end</font><font color="#CCCCCC"> here I sure hope so</font><font color="#E5E5E5"> so this</font><font color="#CCCCCC"> is</font>
+
+269
+00:11:24,660 --> 00:11:25,950
+<font color="#CCCCCC">taking a little bit of</font><font color="#E5E5E5"> time right</font><font color="#CCCCCC"> that</font>
+
+270
+00:11:25,950 --> 00:11:29,010
+goes without<font color="#CCCCCC"> saying this</font><font color="#E5E5E5"> is obviously a</font>
+
+271
+00:11:29,010 --> 00:11:30,870
+real attack right blind sequel injection
+
+272
+00:11:30,870 --> 00:11:32,730
+is a real real thing you can take
+
+273
+00:11:32,730 --> 00:11:35,490
+<font color="#E5E5E5">advantage of with databases</font><font color="#CCCCCC"> so it's</font>
+
+274
+00:11:35,490 --> 00:11:36,600
+gonna take<font color="#E5E5E5"> a</font><font color="#CCCCCC"> little bit</font><font color="#E5E5E5"> of time because</font>
+
+275
+00:11:36,600 --> 00:11:38,370
+<font color="#CCCCCC">we're doing a real</font><font color="#E5E5E5"> take advantage of a</font>
+
+276
+00:11:38,370 --> 00:11:40,530
+real vulnerability<font color="#E5E5E5"> and</font><font color="#CCCCCC"> they're real</font>
+
+277
+00:11:40,530 --> 00:11:43,470
+technique<font color="#E5E5E5"> so we're almost at</font><font color="#CCCCCC"> the end</font>
+
+278
+00:11:43,470 --> 00:11:44,660
+here<font color="#CCCCCC"> I sure hope so</font>
+
+279
+00:11:44,660 --> 00:11:48,630
+<font color="#CCCCCC">how long are these passwords usually 32</font>
+
+280
+00:11:48,630 --> 00:11:53,400
+characters<font color="#CCCCCC"> Oh sublime text just had some</font>
+
+281
+00:11:53,400 --> 00:11:54,930
+of<font color="#E5E5E5"> those things that it acted funny with</font>
+
+282
+00:11:54,930 --> 00:12:02,850
+sorry<font color="#E5E5E5"> how much are we at right</font><font color="#CCCCCC"> now 27</font>
+
+283
+00:12:02,850 --> 00:12:07,200
+<font color="#E5E5E5">okay so we're getting real</font><font color="#CCCCCC"> close it</font>
+
+284
+00:12:07,200 --> 00:12:08,730
+looks like this<font color="#E5E5E5"> one has been going</font><font color="#CCCCCC"> for a</font>
+
+285
+00:12:08,730 --> 00:12:13,140
+<font color="#CCCCCC">while so I don't think there's any way</font>
+
+286
+00:12:13,140 --> 00:12:14,970
+we can particularly test this other than
+
+287
+00:12:14,970 --> 00:12:16,500
+<font color="#CCCCCC">just</font><font color="#E5E5E5"> looking at the length okay so that</font>
+
+288
+00:12:16,500 --> 00:12:20,310
+is<font color="#E5E5E5"> 32 characters right now and I guess</font>
+
+289
+00:12:20,310 --> 00:12:22,200
+we didn't make<font color="#E5E5E5"> our program smart enough</font>
+
+290
+00:12:22,200 --> 00:12:24,660
+to<font color="#E5E5E5"> determine that</font><font color="#CCCCCC"> that was the end</font><font color="#E5E5E5"> but</font>
+
+291
+00:12:24,660 --> 00:12:26,640
+<font color="#CCCCCC">we</font><font color="#E5E5E5"> aren't actually getting any other</font>
+
+292
+00:12:26,640 --> 00:12:29,220
+results back yet<font color="#E5E5E5"> so that must be the</font>
+
+293
+00:12:29,220 --> 00:12:31,290
+whole password so let's break<font color="#CCCCCC"> this for</font>
+
+294
+00:12:31,290 --> 00:12:34,500
+now<font color="#CCCCCC"> and</font><font color="#E5E5E5"> that should be what</font><font color="#CCCCCC"> we were able</font>
+
+295
+00:12:34,500 --> 00:12:37,140
+<font color="#E5E5E5">to move on with if for some reason I</font>
+
+296
+00:12:37,140 --> 00:12:38,520
+<font color="#CCCCCC">just want to tell you this for</font><font color="#E5E5E5"> your own</font>
+
+297
+00:12:38,520 --> 00:12:40,680
+<font color="#E5E5E5">knowledge here if you only got like half</font>
+
+298
+00:12:40,680 --> 00:12:43,200
+of<font color="#E5E5E5"> this password or something and you</font>
+
+299
+00:12:43,200 --> 00:12:44,820
+needed it<font color="#E5E5E5"> you want to keep moving</font><font color="#CCCCCC"> where</font>
+
+300
+00:12:44,820 --> 00:12:48,690
+you were like were<font color="#E5E5E5"> you left off</font><font color="#CCCCCC"> that's</font>
+
+301
+00:12:48,690 --> 00:12:50,850
+<font color="#E5E5E5">okay you</font><font color="#CCCCCC"> can easily</font><font color="#E5E5E5"> do</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> without</font>
+
+302
+00:12:50,850 --> 00:12:52,440
+wasting<font color="#CCCCCC"> all that time that</font><font color="#E5E5E5"> you spent</font>
+
+303
+00:12:52,440 --> 00:12:54,360
+waiting<font color="#E5E5E5"> by putting that in as you're</font>
+
+304
+00:12:54,360 --> 00:12:56,820
+seeing password like initialize it as a
+
+305
+00:12:56,820 --> 00:12:59,690
+string inside of the list object here
+
+306
+00:12:59,690 --> 00:13:03,720
+<font color="#CCCCCC">and that way you would start off right</font>
+
+307
+00:13:03,720 --> 00:13:04,950
+where you had everything to begin with
+
+308
+00:13:04,950 --> 00:13:07,140
+and you<font color="#E5E5E5"> can still keep moving along with</font>
+
+309
+00:13:07,140 --> 00:13:08,760
+your sequel injection<font color="#CCCCCC"> your blind sequel</font>
+
+310
+00:13:08,760 --> 00:13:11,460
+injection<font color="#E5E5E5"> loop with what you have so far</font>
+
+311
+00:13:11,460 --> 00:13:13,170
+<font color="#E5E5E5">well you've built so far of</font><font color="#CCCCCC"> the password</font>
+
+312
+00:13:13,170 --> 00:13:14,730
+<font color="#E5E5E5">so that's a good way to keep that in</font>
+
+313
+00:13:14,730 --> 00:13:17,340
+mind<font color="#CCCCCC"> let's go</font>
+
+314
+00:13:17,340 --> 00:13:19,110
+<font color="#E5E5E5">create a new script and</font><font color="#CCCCCC"> just kind of</font>
+
+315
+00:13:19,110 --> 00:13:21,900
+save this as<font color="#CCCCCC"> natus 16 because</font><font color="#E5E5E5"> now we've</font>
+
+316
+00:13:21,900 --> 00:13:24,180
+got the password<font color="#E5E5E5"> and let's see</font><font color="#CCCCCC"> if we can</font>
+
+317
+00:13:24,180 --> 00:13:26,340
+go ahead and<font color="#E5E5E5"> read that page let's make</font>
+
+318
+00:13:26,340 --> 00:13:27,510
+sure we actually<font color="#E5E5E5"> did get the correct</font>
+
+319
+00:13:27,510 --> 00:13:29,670
+password<font color="#CCCCCC"> let's print out response dot</font>
+
+320
+00:13:29,670 --> 00:13:32,130
+<font color="#E5E5E5">text should</font><font color="#CCCCCC"> just make that content</font><font color="#E5E5E5"> and</font>
+
+321
+00:13:32,130 --> 00:13:34,770
+then print that<font color="#CCCCCC"> out just like all</font><font color="#E5E5E5"> of our</font>
+
+322
+00:13:34,770 --> 00:13:38,430
+<font color="#CCCCCC">other</font><font color="#E5E5E5"> scripts and awesome we are on</font>
+
+323
+00:13:38,430 --> 00:13:42,510
+natus level 16<font color="#E5E5E5"> awesome looks like we</font>
+
+324
+00:13:42,510 --> 00:13:43,890
+just<font color="#E5E5E5"> did that looks like we just</font><font color="#CCCCCC"> got a</font>
+
+325
+00:13:43,890 --> 00:13:46,080
+blind sequel injection attack and leaked
+
+326
+00:13:46,080 --> 00:13:48,330
+out a password<font color="#E5E5E5"> from a database so I hope</font>
+
+327
+00:13:48,330 --> 00:13:49,970
+you guys<font color="#CCCCCC"> really liked that technique</font>
+
+328
+00:13:49,970 --> 00:13:52,260
+<font color="#CCCCCC">it's really just</font><font color="#E5E5E5"> looping through all</font><font color="#CCCCCC"> of</font>
+
+329
+00:13:52,260 --> 00:13:55,080
+the like common characters or printable
+
+330
+00:13:55,080 --> 00:13:56,210
+characters that you're<font color="#E5E5E5"> used to and</font>
+
+331
+00:13:56,210 --> 00:13:59,250
+adding them<font color="#CCCCCC"> onto a list or what you've</font>
+
+332
+00:13:59,250 --> 00:14:01,500
+already seen so far I'm using that like
+
+333
+00:14:01,500 --> 00:14:04,940
+technique with the<font color="#CCCCCC"> % is</font><font color="#E5E5E5"> really great</font>
+
+334
+00:14:04,940 --> 00:14:07,020
+<font color="#CCCCCC">there</font><font color="#E5E5E5"> are other techniques</font><font color="#CCCCCC"> where</font><font color="#E5E5E5"> you can</font>
+
+335
+00:14:07,020 --> 00:14:09,240
+say not<font color="#CCCCCC"> only</font><font color="#E5E5E5"> is the password because I</font>
+
+336
+00:14:09,240 --> 00:14:10,710
+showed you where<font color="#CCCCCC"> the password is equal</font>
+
+337
+00:14:10,710 --> 00:14:12,240
+<font color="#CCCCCC">to but</font><font color="#E5E5E5"> I said</font><font color="#CCCCCC"> you can</font><font color="#E5E5E5"> have the password</font>
+
+338
+00:14:12,240 --> 00:14:14,850
+greater than because<font color="#CCCCCC"> obviously when you</font>
+
+339
+00:14:14,850 --> 00:14:18,030
+get<font color="#E5E5E5"> down</font><font color="#CCCCCC"> to it</font><font color="#E5E5E5"> the numbers or all the</font>
+
+340
+00:14:18,030 --> 00:14:19,770
+letters or all these ASCII characters
+
+341
+00:14:19,770 --> 00:14:22,080
+that you're trying are just decimal
+
+342
+00:14:22,080 --> 00:14:24,660
+numbers<font color="#E5E5E5"> they're all 0 to 255 in the</font>
+
+343
+00:14:24,660 --> 00:14:26,550
+ASCII table<font color="#CCCCCC"> so if you went in ASCII</font>
+
+344
+00:14:26,550 --> 00:14:27,960
+order you could<font color="#CCCCCC"> terminal them</font><font color="#E5E5E5"> out the</font>
+
+345
+00:14:27,960 --> 00:14:29,430
+<font color="#E5E5E5">password is greater</font><font color="#CCCCCC"> than something</font><font color="#E5E5E5"> like</font>
+
+346
+00:14:29,430 --> 00:14:31,830
+<font color="#E5E5E5">that and binary of course will make</font><font color="#CCCCCC"> it</font>
+
+347
+00:14:31,830 --> 00:14:33,630
+case sensitive<font color="#CCCCCC"> so that's a</font><font color="#E5E5E5"> pretty</font><font color="#CCCCCC"> handy</font>
+
+348
+00:14:33,630 --> 00:14:35,850
+trick<font color="#E5E5E5"> too but I like the like character</font>
+
+349
+00:14:35,850 --> 00:14:38,640
+because or the<font color="#E5E5E5"> sorry the like term</font>
+
+350
+00:14:38,640 --> 00:14:40,230
+because<font color="#CCCCCC"> that way you can keep the</font>
+
+351
+00:14:40,230 --> 00:14:42,180
+current character<font color="#CCCCCC"> you're on rather than</font>
+
+352
+00:14:42,180 --> 00:14:44,280
+<font color="#E5E5E5">seeing that threshold trigger because if</font>
+
+353
+00:14:44,280 --> 00:14:45,480
+you're<font color="#E5E5E5"> using the greater than symbol</font>
+
+354
+00:14:45,480 --> 00:14:47,880
+<font color="#CCCCCC">you'll get results like the user does</font>
+
+355
+00:14:47,880 --> 00:14:49,470
+exist that<font color="#E5E5E5"> user does exist the user does</font>
+
+356
+00:14:49,470 --> 00:14:51,090
+exist and then once the user does not
+
+357
+00:14:51,090 --> 00:14:53,850
+<font color="#E5E5E5">exist you know that ok the previous</font>
+
+358
+00:14:53,850 --> 00:14:56,280
+character that<font color="#E5E5E5"> I was just on</font><font color="#CCCCCC"> with that</font>
+
+359
+00:14:56,280 --> 00:14:58,680
+technique<font color="#E5E5E5"> with the greater than symbol</font>
+
+360
+00:14:58,680 --> 00:15:01,710
+<font color="#E5E5E5">was the correct one</font><font color="#CCCCCC"> so you have to get a</font>
+
+361
+00:15:01,710 --> 00:15:03,630
+<font color="#CCCCCC">backtrack for</font><font color="#E5E5E5"> your character testing if</font>
+
+362
+00:15:03,630 --> 00:15:05,910
+you're using<font color="#E5E5E5"> that style but</font><font color="#CCCCCC"> I like the</font>
+
+363
+00:15:05,910 --> 00:15:08,280
+like<font color="#CCCCCC"> statements equal here that's I</font>
+
+364
+00:15:08,280 --> 00:15:09,510
+<font color="#E5E5E5">think that's a cool technique with the</font>
+
+365
+00:15:09,510 --> 00:15:11,490
+<font color="#E5E5E5">wild-card</font><font color="#CCCCCC"> so thank</font><font color="#E5E5E5"> you guys</font><font color="#CCCCCC"> for watching</font>
+
+366
+00:15:11,490 --> 00:15:13,170
+<font color="#E5E5E5">again I really hope you're</font><font color="#CCCCCC"> enjoying this</font>
+
+367
+00:15:13,170 --> 00:15:14,340
+I think<font color="#E5E5E5"> this is some really cool web</font>
+
+368
+00:15:14,340 --> 00:15:16,710
+application security<font color="#CCCCCC"> and exploits and</font>
+
+369
+00:15:16,710 --> 00:15:18,240
+attacks so I'll see you<font color="#E5E5E5"> in the next</font>
+
+370
+00:15:18,240 --> 00:15:22,380
+video when we<font color="#E5E5E5"> tackle</font><font color="#CCCCCC"> natus</font><font color="#E5E5E5"> level 16 hey</font>
+
+371
+00:15:22,380 --> 00:15:24,090
+if you<font color="#CCCCCC"> like this video please do like</font>
+
+372
+00:15:24,090 --> 00:15:25,800
+the<font color="#E5E5E5"> video or</font><font color="#CCCCCC"> comment tell</font><font color="#E5E5E5"> me let me</font><font color="#CCCCCC"> know</font>
+
+373
+00:15:25,800 --> 00:15:27,480
+what you think let me<font color="#E5E5E5"> know what I can do</font>
+
+374
+00:15:27,480 --> 00:15:29,190
+<font color="#E5E5E5">better subscribe and if you thanks so</font>
+
+375
+00:15:29,190 --> 00:00:00,000
+<font color="#CCCCCC">much guys</font><font color="#E5E5E5"> see you in another video</font>
+

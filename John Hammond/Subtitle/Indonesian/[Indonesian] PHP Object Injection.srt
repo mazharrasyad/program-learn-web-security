@@ -1,0 +1,1304 @@
+1
+00:00:00,000 --> 00:00:01,740
+ Objek injeksi PHP <font color="#E5E5E5">melalui </font>
+
+2
+00:00:01,740 --> 00:00:04,200
+ <font color="#E5E5E5">fungsi PHP serial </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">tidak beradab </font>
+
+3
+00:00:04,200 --> 00:00:06,450
+ bisa <font color="#CCCCCC">sangat berbahaya, </font><font color="#E5E5E5">terutama </font><font color="#CCCCCC">jika </font>
+
+4
+00:00:06,450 --> 00:00:08,280
+ ada kontrol pengguna yang lengkap atas apa 
+
+5
+00:00:08,280 --> 00:00:10,620
+ data sedang <font color="#E5E5E5">diserialkan </font><font color="#CCCCCC">terus </font><font color="#E5E5E5">menonton </font>
+
+6
+00:00:10,620 --> 00:00:12,120
+ <font color="#E5E5E5">untuk melihat bagaimana kita bisa </font><font color="#CCCCCC">memanfaatkan ini </font>
+
+7
+00:00:12,120 --> 00:00:13,920
+ untuk <font color="#E5E5E5">mendapatkan eksekusi kode jarak jauh pada </font>
+
+8
+00:00:13,920 --> 00:00:20,550
+ aplikasi web yang rentan <font color="#E5E5E5">sekarang</font><font color="#CCCCCC"> apa terserah </font>
+
+9
+00:00:20,550 --> 00:00:22,289
+ semua orang <font color="#E5E5E5">nama saya </font><font color="#CCCCCC">jon hamm </font><font color="#E5E5E5">dan kami </font>
+
+10
+00:00:22,289 --> 00:00:24,180
+ melihat tingkat natus 26 
+
+11
+00:00:24,180 --> 00:00:26,460
+ jadi kami diminta dengan ini menarik garis 
+
+12
+00:00:26,460 --> 00:00:28,199
+ fungsi dan sepertinya <font color="#E5E5E5">itu akan </font>
+
+13
+00:00:28,199 --> 00:00:30,210
+ <font color="#E5E5E5">mari kita masukkan koordinat untuk mungkin </font>
+
+14
+00:00:30,210 --> 00:00:33,030
+ garis <font color="#E5E5E5">yang ingin kita </font><font color="#CCCCCC">gambar dan </font><font color="#E5E5E5">terlihat </font>
+
+15
+00:00:33,030 --> 00:00:34,649
+ seperti aplikasi <font color="#CCCCCC">setelah </font><font color="#E5E5E5">kami mengirimkan ini </font>
+
+16
+00:00:34,649 --> 00:00:36,719
+ <font color="#E5E5E5">kami akan melanjutkan </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">membuat gambar </font><font color="#CCCCCC">itu </font>
+
+17
+00:00:36,719 --> 00:00:38,820
+ ditampilkan <font color="#CCCCCC">untuk kami dengan </font><font color="#E5E5E5">garis itu atau </font>
+
+18
+00:00:38,820 --> 00:00:41,790
+ <font color="#E5E5E5">apa pun yang dibuat </font><font color="#CCCCCC">jadi mari kita lihat </font>
+
+19
+00:00:41,790 --> 00:00:42,870
+ kode sumber mari kita lihat apa yang <font color="#E5E5E5">salah </font>
+
+20
+00:00:42,870 --> 00:00:44,219
+ <font color="#CCCCCC">dengan </font><font color="#E5E5E5">itu mari kita lihat </font><font color="#CCCCCC">apa yang </font><font color="#E5E5E5">bisa </font><font color="#CCCCCC">kita </font><font color="#E5E5E5">lakukan karena </font>
+
+21
+00:00:44,219 --> 00:00:46,079
+ <font color="#E5E5E5">ini adalah </font><font color="#CCCCCC">satu lagi </font><font color="#E5E5E5">benar-benar keren </font>
+
+22
+00:00:46,079 --> 00:00:49,350
+ kerentanan dalam objek PHP dengan <font color="#E5E5E5">baik mari </font>
+
+23
+00:00:49,350 --> 00:00:51,930
+ lihat <font color="#E5E5E5">kode sumber yang </font><font color="#CCCCCC">dimiliki </font><font color="#E5E5E5">HTTP </font>
+
+24
+00:00:51,930 --> 00:00:54,930
+ Barang HTML di sini <font color="#E5E5E5">bukan </font><font color="#CCCCCC">HTTP </font><font color="#E5E5E5">hanyalah HTML </font>
+
+25
+00:00:54,930 --> 00:00:57,329
+ <font color="#CCCCCC">akronim panjang apa pun dengan banyak kata-kata H </font>
+
+26
+00:00:57,329 --> 00:01:00,210
+ <font color="#E5E5E5">atau serangkaian kata-kata akronim </font><font color="#CCCCCC">sehingga PHP </font>
+
+27
+00:01:00,210 --> 00:01:03,750
+ <font color="#CCCCCC">kode di sini </font><font color="#E5E5E5">adalah menggunakan sedikit </font>
+
+28
+00:01:03,750 --> 00:01:05,610
+ <font color="#E5E5E5">pemrograman berorientasi objek yang </font><font color="#CCCCCC">dapat </font><font color="#E5E5E5">Anda </font><font color="#CCCCCC">lihat </font>
+
+29
+00:01:05,610 --> 00:01:08,189
+ kami memiliki kelas yang <font color="#CCCCCC">disebut kelas logger di sini </font>
+
+30
+00:01:08,189 --> 00:01:10,520
+ <font color="#E5E5E5">dan ini memiliki beberapa variabel yang disiapkan </font>
+
+31
+00:01:10,520 --> 00:01:13,470
+ <font color="#E5E5E5">pribadi yang </font><font color="#CCCCCC">hanya menggunakan </font><font color="#E5E5E5">di dalamnya </font>
+
+32
+00:01:13,470 --> 00:01:15,990
+ kelas atau di dalam objek itu <font color="#CCCCCC">dan mereka </font>
+
+33
+00:01:15,990 --> 00:01:19,680
+ dilambangkan dengan kata kunci <font color="#CCCCCC">PHP ini menggunakan </font>
+
+34
+00:01:19,680 --> 00:01:23,340
+ notasi panah untuk menunjukkan penggunaan nya 
+
+35
+00:01:23,340 --> 00:01:24,750
+ <font color="#E5E5E5">variabel pribadi sendiri di dalam suatu </font>
+
+36
+00:01:24,750 --> 00:01:26,549
+ <font color="#E5E5E5">objek atau di dalam </font><font color="#CCCCCC">kelas jadi itu </font>
+
+37
+00:01:26,549 --> 00:01:28,860
+ membuat file <font color="#E5E5E5">terlihat seperti sedang berjalan </font>
+
+38
+00:01:28,860 --> 00:01:33,270
+ <font color="#E5E5E5">untuk menggunakan log berbasis off sementara </font>
+
+39
+00:01:33,270 --> 00:01:34,920
+ direktori dan file sementara yang kita 
+
+40
+00:01:34,920 --> 00:01:36,750
+ buat di <font color="#CCCCCC">sini dan terus </font><font color="#E5E5E5">melacak </font>
+
+41
+00:01:36,750 --> 00:01:39,240
+ sesi seharusnya memiliki <font color="#E5E5E5">log fungsi </font>
+
+42
+00:01:39,240 --> 00:01:40,770
+ yang <font color="#E5E5E5">akan menampilkan barang di sana dan </font>
+
+43
+00:01:40,770 --> 00:01:42,720
+ merusak akan baik-baik saja menyimpannya <font color="#CCCCCC">ke file </font>
+
+44
+00:01:42,720 --> 00:01:43,590
+ dan <font color="#CCCCCC">menulis semuanya </font>
+
+45
+00:01:43,590 --> 00:01:45,810
+ <font color="#E5E5E5">itu baik-baik saja sehingga membangun adalah </font>
+
+46
+00:01:45,810 --> 00:01:48,950
+ <font color="#CCCCCC">destruktor konstruktor </font><font color="#E5E5E5">adalah destruktor </font>
+
+47
+00:01:48,950 --> 00:01:51,270
+ <font color="#E5E5E5">konstruktor terjadi pertama kali ketika </font>
+
+48
+00:01:51,270 --> 00:01:52,680
+ objek <font color="#E5E5E5">pertama dibuat destructor </font>
+
+49
+00:01:52,680 --> 00:01:55,020
+ terjadi setelah <font color="#E5E5E5">objek dihancurkan atau </font>
+
+50
+00:01:55,020 --> 00:01:56,729
+ setelah selesai setelah tidak <font color="#E5E5E5">digunakan </font>
+
+51
+00:01:56,729 --> 00:01:58,430
+ lagi 
+
+52
+00:01:58,430 --> 00:02:01,079
+ ini menggarisbawahi fungsi garis bawah 
+
+53
+00:02:01,079 --> 00:02:03,810
+ adalah fungsi objek sulap PHP sehingga mereka 
+
+54
+00:02:03,810 --> 00:02:06,619
+ seperti yang diperlukan dan built-in untuk PHP 
+
+55
+00:02:06,619 --> 00:02:09,000
+ <font color="#CCCCCC">ingatlah </font><font color="#E5E5E5">itu karena </font><font color="#CCCCCC">itu penting </font>
+
+56
+00:02:09,000 --> 00:02:10,229
+ untuk <font color="#CCCCCC">serangan ini bahwa kita akan </font><font color="#E5E5E5">menjadi </font>
+
+57
+00:02:10,229 --> 00:02:12,690
+ <font color="#CCCCCC">melihat </font><font color="#E5E5E5">dengan serialisasi objek kami </font>
+
+58
+00:02:12,690 --> 00:02:15,140
+ <font color="#E5E5E5">dan deserialization </font>
+
+59
+00:02:15,270 --> 00:02:17,310
+ <font color="#E5E5E5">ada kode untuk menunjukkan gambar itu </font>
+
+60
+00:02:17,310 --> 00:02:19,110
+ sepertinya <font color="#CCCCCC">itu hanya mencakup </font><font color="#E5E5E5">HTML itu </font>
+
+61
+00:02:19,110 --> 00:02:21,930
+ elemen gambar <font color="#E5E5E5">menarik gambar terlihat </font><font color="#CCCCCC">seperti </font>
+
+62
+00:02:21,930 --> 00:02:25,650
+ <font color="#E5E5E5">Fungsi PHP untuk menggunakan warna dan membuat </font>
+
+63
+00:02:25,650 --> 00:02:29,160
+ gambar PNG baru, dll. <font color="#E5E5E5">dan gambar dari </font>
+
+64
+00:02:29,160 --> 00:02:30,750
+ data pengguna <font color="#CCCCCC">tampak seperti kebiasaan lain </font>
+
+65
+00:02:30,750 --> 00:02:32,850
+ berfungsi di sini mengambil keuntungan <font color="#CCCCCC">dari </font>
+
+66
+00:02:32,850 --> 00:02:34,800
+ ini <font color="#E5E5E5">koordinat x dan </font><font color="#CCCCCC">koordinat Y. </font>
+
+67
+00:02:34,800 --> 00:02:36,630
+ yang kita lewati <font color="#CCCCCC">tampak seperti itu </font>
+
+68
+00:02:36,630 --> 00:02:38,120
+ melewati <font color="#E5E5E5">itu untuk mendapatkan </font>
+
+69
+00:02:38,120 --> 00:02:41,460
+ <font color="#E5E5E5">metode dan pergi untuk kepala dan menggambar a </font>
+
+70
+00:02:41,460 --> 00:02:44,700
+ baris <font color="#CCCCCC">seperti </font><font color="#E5E5E5">itu dan kelihatannya seperti itu </font>
+
+71
+00:02:44,700 --> 00:02:47,520
+ sebenarnya <font color="#E5E5E5">ini dengan cookie gambar </font>
+
+72
+00:02:47,520 --> 00:02:49,610
+ <font color="#CCCCCC">kita bisa melihat </font><font color="#E5E5E5">ini menguji apakah cookie ini </font>
+
+73
+00:02:49,610 --> 00:02:53,190
+ <font color="#CCCCCC">gambar itu ada di dalam cookie </font>
+
+74
+00:02:53,190 --> 00:02:55,830
+ Array <font color="#CCCCCC">maka itu uncie </font><font color="#E5E5E5">menyadari data ini </font>
+
+75
+00:02:55,830 --> 00:02:58,830
+ <font color="#E5E5E5">C </font><font color="#CCCCCC">Ford dasar yang </font><font color="#E5E5E5">dikodekan untuk memulai </font>
+
+76
+00:02:58,830 --> 00:03:00,240
+ jadi itu <font color="#E5E5E5">sebabnya mereka harus </font><font color="#CCCCCC">memecahkan kode itu </font>
+
+77
+00:03:00,240 --> 00:03:02,580
+ <font color="#E5E5E5">di sini </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">itu penting untuk diperhatikan </font>
+
+78
+00:03:02,580 --> 00:03:05,280
+ <font color="#CCCCCC">karena tidak sadar data yang kami sadari </font>
+
+79
+00:03:05,280 --> 00:03:07,590
+ memiliki kendali penuh <font color="#CCCCCC">atas sangat besar </font>
+
+80
+00:03:07,590 --> 00:03:10,260
+ <font color="#CCCCCC">kerentanan </font><font color="#E5E5E5">karena itu bisa mengarah ke </font>
+
+81
+00:03:10,260 --> 00:03:12,210
+ <font color="#E5E5E5">beberapa hal tidak aman terjadi yang bisa </font>
+
+82
+00:03:12,210 --> 00:03:14,700
+ menyebabkan <font color="#E5E5E5">beberapa eksekusi kode jauh PHP </font>
+
+83
+00:03:14,700 --> 00:03:17,460
+ <font color="#E5E5E5">dan </font><font color="#CCCCCC">akan memanfaatkannya </font><font color="#E5E5E5">dalam </font>
+
+84
+00:03:17,460 --> 00:03:19,260
+ cara yang benar- <font color="#E5E5E5">benar keren saat kita masuk </font><font color="#CCCCCC">ke </font><font color="#E5E5E5">dalamnya </font>
+
+85
+00:03:19,260 --> 00:03:21,660
+ tapi selain <font color="#E5E5E5">itu hanya menciptakan ini </font>
+
+86
+00:03:21,660 --> 00:03:24,480
+ <font color="#CCCCCC">gambar dalam data toko garis lagi </font><font color="#E5E5E5">mengambil </font>
+
+87
+00:03:24,480 --> 00:03:27,750
+ <font color="#CCCCCC">manfaat </font><font color="#E5E5E5">dari koordinat x1 y1 ini </font>
+
+88
+00:03:27,750 --> 00:03:31,320
+ <font color="#E5E5E5">menyimpannya sebagai objek </font><font color="#CCCCCC">dan membuat </font>
+
+89
+00:03:31,320 --> 00:03:34,740
+ <font color="#E5E5E5">itu sebagai cookie gambar yang kita miliki </font>
+
+90
+00:03:34,740 --> 00:03:38,940
+ base64 <font color="#E5E5E5">sehingga Anda dapat melihat data toko ini </font>
+
+91
+00:03:38,940 --> 00:03:42,450
+ fungsi melakukan itu dengan bit kosong atau 
+
+92
+00:03:42,450 --> 00:03:44,280
+ <font color="#CCCCCC">sedikit </font><font color="#E5E5E5">apa-apa untuk memulai dengan atau </font>
+
+93
+00:03:44,280 --> 00:03:46,230
+ menciptakan <font color="#CCCCCC">array kosong tetapi akan </font>
+
+94
+00:03:46,230 --> 00:03:49,560
+ <font color="#E5E5E5">buat bentuk serial objek itu </font>
+
+95
+00:03:49,560 --> 00:03:52,920
+ <font color="#CCCCCC">di </font><font color="#E5E5E5">base64 </font><font color="#CCCCCC">dikodekan halaman itu sendiri akan </font>
+
+96
+00:03:52,920 --> 00:03:55,860
+ buat <font color="#CCCCCC">sesi </font><font color="#E5E5E5">dan kelihatannya seperti itu </font>
+
+97
+00:03:55,860 --> 00:03:59,130
+ menggunakan ID sesi kami sebagai yang <font color="#E5E5E5">sebenarnya </font>
+
+98
+00:03:59,130 --> 00:04:01,260
+ lokasi yang <font color="#E5E5E5">memuat gambar </font>
+
+99
+00:04:01,260 --> 00:04:04,590
+ file <font color="#E5E5E5">dari jadi mari kita bermain-main dengan </font>
+
+100
+00:04:04,590 --> 00:04:06,060
+ <font color="#E5E5E5">kode mari kita lihat bagaimana kita dapat </font><font color="#CCCCCC">memanfaatkannya </font>
+
+101
+00:04:06,060 --> 00:04:06,990
+ <font color="#E5E5E5">ini </font><font color="#CCCCCC">dan mari kita lihat bagaimana </font><font color="#E5E5E5">kita bisa </font>
+
+102
+00:04:06,990 --> 00:04:10,880
+ <font color="#CCCCCC">memanipulasinya mari kita </font><font color="#E5E5E5">ke kami </font>
+
+103
+00:04:10,880 --> 00:04:14,790
+ <font color="#CCCCCC">skrip tekan </font><font color="#E5E5E5">ctrl </font><font color="#CCCCCC">B untuk menjalankannya mengatur </font>
+
+104
+00:04:14,790 --> 00:04:21,418
+ sintaks ke PHP di sini keren <font color="#E5E5E5">jadi mari kita </font><font color="#CCCCCC">lihat caranya </font>
+
+105
+00:04:21,418 --> 00:04:22,229
+ ini <font color="#E5E5E5">terlihat </font>
+
+106
+00:04:22,229 --> 00:04:26,220
+ jika kita menyampaikan <font color="#CCCCCC">beberapa </font><font color="#E5E5E5">argumen mereka </font>
+
+107
+00:04:26,220 --> 00:04:27,110
+ <font color="#E5E5E5">sini </font>
+
+108
+00:04:27,110 --> 00:04:29,300
+ mari buat <font color="#E5E5E5">permintaan lain yang akan kita lakukan </font>
+
+109
+00:04:29,300 --> 00:04:34,550
+ untuk mengubah <font color="#CCCCCC">URL agar menyertakan </font><font color="#E5E5E5">x1 bisa </font>
+
+110
+00:04:34,550 --> 00:04:39,199
+ sama dengan <font color="#E5E5E5">0 </font><font color="#CCCCCC">+ y1 </font><font color="#E5E5E5">bisa sama dengan 0 x2 bisa sama </font>
+
+111
+00:04:39,199 --> 00:04:42,229
+ seperti 500 seperti yang pernah kami gunakan <font color="#CCCCCC">sebelumnya </font><font color="#E5E5E5">dan </font>
+
+112
+00:04:42,229 --> 00:04:47,960
+ y2 bisa sama dengan 500 <font color="#E5E5E5">sekarang mari kita lanjutkan </font><font color="#CCCCCC">dan </font>
+
+113
+00:04:47,960 --> 00:04:52,129
+ cetak <font color="#CCCCCC">yang melihat bagaimana ini terlihat Anda bisa </font>
+
+114
+00:04:52,129 --> 00:04:54,680
+ lihat itu <font color="#E5E5E5">menggunakan sumber gambar kami di sini </font>
+
+115
+00:04:54,680 --> 00:04:56,780
+ itu menggunakan dari <font color="#E5E5E5">fungsi PHP dan </font>
+
+116
+00:04:56,780 --> 00:04:59,930
+ itu menggunakan <font color="#CCCCCC">ID sesi itu seharusnya </font>
+
+117
+00:04:59,930 --> 00:05:00,979
+ mari kita lanjutkan <font color="#CCCCCC">dan </font><font color="#E5E5E5">lihat </font>
+
+118
+00:05:00,979 --> 00:05:06,620
+ <font color="#E5E5E5">pada sesi itu cookie ID sesi PHP </font>
+
+119
+00:05:06,620 --> 00:05:12,469
+ <font color="#CCCCCC">dan oke </font><font color="#E5E5E5">Anda dapat melihat bahwa </font><font color="#CCCCCC">q1 </font><font color="#E5E5E5">c9 a adalah </font>
+
+120
+00:05:12,469 --> 00:05:13,729
+ hal <font color="#E5E5E5">yang sama yang digunakan di sana </font>
+
+121
+00:05:13,729 --> 00:05:16,729
+ <font color="#CCCCCC">tetapi perhatikan bahwa </font><font color="#E5E5E5">kita dapat mengendalikan ini </font>
+
+122
+00:05:16,729 --> 00:05:18,199
+ kita dapat benar-benar <font color="#CCCCCC">menyuntikkan sesuatu ke dalamnya </font>
+
+123
+00:05:18,199 --> 00:05:20,270
+ <font color="#E5E5E5">ini seperti ID sesi itu hanya a </font>
+
+124
+00:05:20,270 --> 00:05:23,090
+ cookie <font color="#E5E5E5">jadi mari kita mengubahnya </font><font color="#CCCCCC">menjadi sesuatu </font>
+
+125
+00:05:23,090 --> 00:05:26,539
+ seperti mencoba beberapa <font color="#CCCCCC">inklusi file lokal mari </font>
+
+126
+00:05:26,539 --> 00:05:28,460
+ pergi ke direktori induk ton melihat apakah 
+
+127
+00:05:28,460 --> 00:05:30,139
+ kita bisa membacakannya <font color="#E5E5E5">adalah kata sandi pohon </font><font color="#CCCCCC">I </font>
+
+128
+00:05:30,139 --> 00:05:32,000
+ tidak tahu apa yang <font color="#E5E5E5">akan dilakukannya </font>
+
+129
+00:05:32,000 --> 00:05:34,099
+ karena tidak dapat <font color="#E5E5E5">membuat PNG dari itu </font>
+
+130
+00:05:34,099 --> 00:05:36,830
+ <font color="#E5E5E5">tetapi kami mendapatkan banyak peringatan dan PHP </font>
+
+131
+00:05:36,830 --> 00:05:38,990
+ <font color="#E5E5E5">sesi kesalahan untuk </font><font color="#CCCCCC">memulai </font><font color="#E5E5E5">ID sesi </font>
+
+132
+00:05:38,990 --> 00:05:40,789
+ terlalu panjang berisi karakter-karakter kecil 
+
+133
+00:05:40,789 --> 00:05:42,889
+ sepertinya hanya <font color="#CCCCCC">karakter yang </font><font color="#E5E5E5">valid </font>
+
+134
+00:05:42,889 --> 00:05:46,099
+ alfanumerik <font color="#CCCCCC">dan tanda hubung dan koma jadi </font>
+
+135
+00:05:46,099 --> 00:05:47,779
+ jelas itu tidak bisa <font color="#E5E5E5">menciptakan aliran itu </font>
+
+136
+00:05:47,779 --> 00:05:52,039
+ <font color="#E5E5E5">dan </font><font color="#CCCCCC">itu bukan </font><font color="#E5E5E5">PNG sehingga tidak bisa menggunakan ini </font>
+
+137
+00:05:52,039 --> 00:05:54,110
+ gambar <font color="#E5E5E5">fungsi PNG sehingga </font><font color="#CCCCCC">tidak </font>
+
+138
+00:05:54,110 --> 00:05:57,289
+ <font color="#CCCCCC">benar-benar bekerja dengan </font><font color="#E5E5E5">sangat </font><font color="#CCCCCC">baik untuk kita tetapi kita </font>
+
+139
+00:05:57,289 --> 00:05:59,839
+ bisa masuk <font color="#E5E5E5">ke hal </font><font color="#CCCCCC">lain dengan itu </font>
+
+140
+00:05:59,839 --> 00:06:03,740
+ <font color="#E5E5E5">objek kelas logger ini karena itu </font>
+
+141
+00:06:03,740 --> 00:06:05,479
+ <font color="#CCCCCC">terlihat seperti sesuatu yang sedang terjadi </font>
+
+142
+00:06:05,479 --> 00:06:09,919
+ dianggap <font color="#E5E5E5">serial dan benar-benar suka </font>
+
+143
+00:06:09,919 --> 00:06:12,469
+ dimuat ke PHP dan kami telah menyelesaikannya 
+
+144
+00:06:12,469 --> 00:06:14,419
+ kontrol <font color="#CCCCCC">atas </font><font color="#E5E5E5">hal itu dapat kita mengambil </font><font color="#CCCCCC">keuntungan </font><font color="#E5E5E5">dari </font>
+
+145
+00:06:14,419 --> 00:06:16,639
+ <font color="#E5E5E5">itu karena </font><font color="#CCCCCC">itu </font><font color="#E5E5E5">hanya cookie yang tepat kita </font>
+
+146
+00:06:16,639 --> 00:06:20,949
+ dapat melihat <font color="#E5E5E5">permintaan dapatkan asli kami di sini </font>
+
+147
+00:06:20,949 --> 00:06:22,879
+ mari kita lihat cookie <font color="#E5E5E5">yang kita miliki </font>
+
+148
+00:06:22,879 --> 00:06:27,620
+ <font color="#CCCCCC">sebelum kami menyerahkan formulir tersebut </font>
+
+149
+00:06:27,620 --> 00:06:29,120
+ meminta toples cookie memiliki ID sesi 
+
+150
+00:06:29,120 --> 00:06:34,129
+ setelah <font color="#CCCCCC">itu tetapi jika kita lihat </font><font color="#E5E5E5">ini </font>
+
+151
+00:06:34,129 --> 00:06:36,949
+ cookie sesi mengikuti permintaan kami 
+
+152
+00:06:36,949 --> 00:06:39,090
+ <font color="#E5E5E5">mari coba dan jalankan ini </font>
+
+153
+00:06:39,090 --> 00:06:41,970
+ <font color="#CCCCCC">meminta toples kue </font><font color="#E5E5E5">ada cookie untuk </font>
+
+154
+00:06:41,970 --> 00:06:43,800
+ PHP <font color="#E5E5E5">sesi ID </font><font color="#CCCCCC">ketika kita memiliki </font><font color="#E5E5E5">satu </font><font color="#CCCCCC">sama lain </font>
+
+155
+00:06:43,800 --> 00:06:47,250
+ <font color="#E5E5E5">gambar yang terlihat seperti base64 dikodekan </font>
+
+156
+00:06:47,250 --> 00:06:49,919
+ data <font color="#E5E5E5">jadi mari kita pergi ke depan dan lihat </font>
+
+157
+00:06:49,919 --> 00:06:51,510
+ pada apa <font color="#E5E5E5">yang benar-benar </font><font color="#CCCCCC">mari kita menggambar </font>
+
+158
+00:06:51,510 --> 00:06:56,490
+ keluar dari sini dan mari kita pergi ke depan <font color="#E5E5E5">dan </font>
+
+159
+00:06:56,490 --> 00:06:58,440
+ mengimpor base64 sehingga kami dapat mendekodekannya <font color="#CCCCCC">dan </font>
+
+160
+00:06:58,440 --> 00:07:02,580
+ <font color="#CCCCCC">lihatlah</font><font color="#E5E5E5"> apa </font><font color="#CCCCCC">kode yang dasar-dasar </font>
+
+161
+00:07:02,580 --> 00:07:07,910
+ <font color="#E5E5E5">t4b 64 decode menjalankan </font><font color="#CCCCCC">padding yang salah </font><font color="#E5E5E5">ini </font>
+
+162
+00:07:07,910 --> 00:07:11,669
+ <font color="#CCCCCC">mari kita lihat seperti apa bentuknya </font>
+
+163
+00:07:11,669 --> 00:07:14,850
+ mungkin itu <font color="#E5E5E5">tidak termasuk tanda yang sama </font>
+
+164
+00:07:14,850 --> 00:07:16,590
+ dari <font color="#CCCCCC">encoding paling akhir atau 2rl di </font><font color="#E5E5E5">sana </font>
+
+165
+00:07:16,590 --> 00:07:16,919
+ aku s 
+
+166
+00:07:16,919 --> 00:07:22,200
+ jadi mari kita memecahkan kode itu <font color="#E5E5E5">dengan URL Lib Anda </font>
+
+167
+00:07:22,200 --> 00:07:26,010
+ adalah kutipan dot Lib <font color="#E5E5E5">dan mungkin tanda kutip </font><font color="#CCCCCC">saya </font>
+
+168
+00:07:26,010 --> 00:07:28,830
+ percaya saya melakukan itu <font color="#E5E5E5">terus menerus </font>
+
+169
+00:07:28,830 --> 00:07:33,600
+ tanda kutip <font color="#CCCCCC">oke sekarang kita </font><font color="#E5E5E5">memiliki tanda yang sama </font>
+
+170
+00:07:33,600 --> 00:07:42,600
+ <font color="#E5E5E5">decode base64 sempurna mari kita </font><font color="#CCCCCC">yang manis </font>
+
+171
+00:07:42,600 --> 00:07:46,169
+ <font color="#E5E5E5">jadi kami memiliki string </font><font color="#CCCCCC">dan </font><font color="#E5E5E5">objek </font><font color="#CCCCCC">dan </font>
+
+172
+00:07:46,169 --> 00:07:48,150
+ hal <font color="#E5E5E5">- hal yang semua diciptakan seharusnya dalam </font>
+
+173
+00:07:48,150 --> 00:07:51,690
+ Array tetapi ini adalah data serial PHP <font color="#E5E5E5">jadi </font>
+
+174
+00:07:51,690 --> 00:07:53,430
+ mari kita manfaatkan <font color="#E5E5E5">dengan kami </font>
+
+175
+00:07:53,430 --> 00:07:57,419
+ <font color="#E5E5E5">metode logger jika kita dapat mencuri </font><font color="#CCCCCC">kode itu </font>
+
+176
+00:07:57,419 --> 00:08:01,110
+ <font color="#E5E5E5">Logger kelas ini </font><font color="#CCCCCC">sebenarnya bisa kita </font><font color="#E5E5E5">ubah </font>
+
+177
+00:08:01,110 --> 00:08:02,880
+ <font color="#CCCCCC">apa variabel-variabel ini dan apa yang mereka </font>
+
+178
+00:08:02,880 --> 00:08:06,180
+ lakukan <font color="#E5E5E5">dan jika kami memberikannya </font><font color="#CCCCCC">ke cookie </font>
+
+179
+00:08:06,180 --> 00:08:08,220
+ bahwa <font color="#E5E5E5">menggambar cookie dan PHP </font>
+
+180
+00:08:08,220 --> 00:08:10,740
+ aplikasi akan suka <font color="#E5E5E5">uncie menyadari itu </font>
+
+181
+00:08:10,740 --> 00:08:12,599
+ data bagi kami <font color="#E5E5E5">itu akan memuat logger ini </font>
+
+182
+00:08:12,599 --> 00:08:15,270
+ <font color="#E5E5E5">dan kami akan mencoba dan menulis pesan itu dan </font>
+
+183
+00:08:15,270 --> 00:08:16,919
+ <font color="#CCCCCC">kita mungkin </font><font color="#E5E5E5">bisa </font><font color="#CCCCCC">memanfaatkan </font><font color="#E5E5E5">apa </font>
+
+184
+00:08:16,919 --> 00:08:19,169
+ <font color="#CCCCCC">kita benar-benar menulis ke file </font><font color="#E5E5E5">dan kita bisa </font>
+
+185
+00:08:19,169 --> 00:08:21,510
+ <font color="#CCCCCC">sebenarnya pada dasarnya mendapatkan beberapa kode </font>
+
+186
+00:08:21,510 --> 00:08:23,580
+ server <font color="#E5E5E5">dan mungkin menjalankan PHP kita sendiri </font>
+
+187
+00:08:23,580 --> 00:08:25,349
+ kode karena <font color="#CCCCCC">kami menulis </font><font color="#E5E5E5">ke </font><font color="#CCCCCC">file </font>
+
+188
+00:08:25,349 --> 00:08:25,889
+ dengan ini 
+
+189
+00:08:25,889 --> 00:08:29,760
+ jadi mari kita mencuri <font color="#E5E5E5">kelas pencatat ini aku </font>
+
+190
+00:08:29,760 --> 00:08:32,159
+ akan menempatkan ini di <font color="#E5E5E5">file lain </font><font color="#CCCCCC">saya akan </font>
+
+191
+00:08:32,159 --> 00:08:34,080
+ sebut saja 26 di <font color="#E5E5E5">bawah sekolah </font>
+
+192
+00:08:34,080 --> 00:08:39,979
+ alat <font color="#E5E5E5">dot PHP dan mengatur sintaks ke PHP </font>
+
+193
+00:08:39,979 --> 00:08:44,010
+ <font color="#E5E5E5">dengan menambahkan tag PHP ini dan hal-hal di atas </font>
+
+194
+00:08:44,010 --> 00:08:49,050
+ itu <font color="#E5E5E5">jadi mari kita indentasi mendapatkan spasi yang tepat </font>
+
+195
+00:08:49,050 --> 00:08:50,279
+ sini 
+
+196
+00:08:50,279 --> 00:08:52,170
+ jadi mari buat <font color="#E5E5E5">objek baru </font><font color="#CCCCCC">untuk itu </font>
+
+197
+00:08:52,170 --> 00:08:59,129
+ <font color="#E5E5E5">katakanlah pencatat baru bisa menjadi objek </font>
+
+198
+00:08:59,129 --> 00:09:01,079
+ objek bisa sama dengan logger baru <font color="#CCCCCC">dan kemudian </font>
+
+199
+00:09:01,079 --> 00:09:03,449
+ mari kita lanjutkan <font color="#CCCCCC">dan menggemakan </font><font color="#E5E5E5">base64 </font>
+
+200
+00:09:03,449 --> 00:09:05,790
+ versi sebenarnya <font color="#CCCCCC">jangan </font><font color="#E5E5E5">biarkan tidak </font>
+
+201
+00:09:05,790 --> 00:09:07,170
+ <font color="#E5E5E5">menyandikannya namun mari pastikan kita bisa melihat </font>
+
+202
+00:09:07,170 --> 00:09:08,819
+ bahwa <font color="#E5E5E5">data serialize mari kita jalankan </font>
+
+203
+00:09:08,819 --> 00:09:16,680
+ bersambung pada objek kami <font color="#E5E5E5">keren jadi di </font>
+
+204
+00:09:16,680 --> 00:09:21,589
+ shell di <font color="#E5E5E5">sini mari kita jalankan alat 26 kami </font>
+
+205
+00:09:21,589 --> 00:09:28,709
+ mungkin hanya menjalankan <font color="#E5E5E5">alat PHP 7.0 26 dan saya </font>
+
+206
+00:09:28,709 --> 00:09:30,750
+ mendapatkan beberapa <font color="#E5E5E5">peringatan PHP di sana </font>
+
+207
+00:09:30,750 --> 00:09:33,480
+ jadi mari kita <font color="#E5E5E5">benar - benar hanya mengarahkan </font><font color="#CCCCCC">Pusat </font>
+
+208
+00:09:33,480 --> 00:09:36,300
+ kesalahan ke tempat lain <font color="#CCCCCC">oke jadi kami melihat kami </font>
+
+209
+00:09:36,300 --> 00:09:38,160
+ memiliki <font color="#E5E5E5">objek logger dan itu menciptakan </font>
+
+210
+00:09:38,160 --> 00:09:40,649
+ melacak <font color="#E5E5E5">file-file ini di sini </font>
+
+211
+00:09:40,649 --> 00:09:43,319
+ mari kita lanjutkan <font color="#E5E5E5">dan itu </font><font color="#CCCCCC">mengubah sebagian </font>
+
+212
+00:09:43,319 --> 00:09:46,860
+ variabel-variabel ini <font color="#E5E5E5">karena dapat kita ambil </font>
+
+213
+00:09:46,860 --> 00:09:47,970
+ <font color="#CCCCCC">manfaatkan </font><font color="#E5E5E5">mereka </font><font color="#CCCCCC">dan minta mereka melakukannya </font>
+
+214
+00:09:47,970 --> 00:09:49,769
+ hal <font color="#E5E5E5">- hal menarik seperti menulis ke </font>
+
+215
+00:09:49,769 --> 00:09:52,500
+ file yang berbeda dan menulis hal-hal baru seperti 
+
+216
+00:09:52,500 --> 00:09:54,870
+ <font color="#E5E5E5">Kode PHP jadi mari kita lakukan beberapa kode PHP </font>
+
+217
+00:09:54,870 --> 00:09:56,189
+ injeksi <font color="#CCCCCC">seperti itu </font>
+
+218
+00:09:56,189 --> 00:09:58,500
+ mari kita letakkan ini di jalur relatif <font color="#E5E5E5">itu </font>
+
+219
+00:09:58,500 --> 00:10:00,720
+ kita tahu kita <font color="#CCCCCC">bisa mengakses </font><font color="#E5E5E5">sesuatu seperti </font>
+
+220
+00:10:00,720 --> 00:10:04,439
+ gambar yang benar karena itu mencoba memuat 
+
+221
+00:10:04,439 --> 00:10:09,420
+ dari <font color="#E5E5E5">gambar direktori itu gambar yep </font>
+
+222
+00:10:09,420 --> 00:10:11,759
+ file berasal <font color="#E5E5E5">dari gambar nih garis miring ke depan </font>
+
+223
+00:10:11,759 --> 00:10:13,379
+ di ID sesi jadi mari kita taruh <font color="#CCCCCC">sesuatu </font>
+
+224
+00:10:13,379 --> 00:10:17,910
+ di pemenang gambar seperti dot PHP dan <font color="#E5E5E5">kita bisa </font>
+
+225
+00:10:17,910 --> 00:10:19,860
+ memiliki beberapa kode PHP yang sedang ditulis 
+
+226
+00:10:19,860 --> 00:10:22,529
+ <font color="#E5E5E5">dalam inisialisasi atau pesan keluar </font>
+
+227
+00:10:22,529 --> 00:10:25,709
+ mari kita gunakan sintaks PHP biasa dan 
+
+228
+00:10:25,709 --> 00:10:29,730
+ mari kita jalankan <font color="#E5E5E5">kucing perintah sistem kami </font>
+
+229
+00:10:29,730 --> 00:10:33,899
+ sebagainya <font color="#E5E5E5">dan itu adalah web pass untuk </font>
+
+230
+00:10:33,899 --> 00:10:39,449
+ tingkat berikutnya <font color="#E5E5E5">keren yang seharusnya membuat kita </font>
+
+231
+00:10:39,449 --> 00:10:42,059
+ perintah berjalan di <font color="#E5E5E5">penunjuk gambar ini </font>
+
+232
+00:10:42,059 --> 00:10:45,209
+ dot file PHP jadi <font color="#E5E5E5">sekarang itu sudah </font>
+
+233
+00:10:45,209 --> 00:10:46,800
+ diperbarui <font color="#CCCCCC">mari kita lihat apa yang </font>
+
+234
+00:10:46,800 --> 00:10:49,800
+ output dari <font color="#E5E5E5">skrip adalah </font><font color="#CCCCCC">logger yang oke </font>
+
+235
+00:10:49,800 --> 00:10:51,809
+ kami mendapatkan objek <font color="#E5E5E5">itu di situ </font>
+
+236
+00:10:51,809 --> 00:10:53,339
+ file <font color="#E5E5E5">dan tampak seperti itu hanya berjalan </font>
+
+237
+00:10:53,339 --> 00:10:56,129
+ <font color="#CCCCCC">Kode PHP sempurna sekarang </font><font color="#E5E5E5">mari kita lanjutkan </font>
+
+238
+00:10:56,129 --> 00:10:59,300
+ base64 mengkodekan ini 
+
+239
+00:11:01,550 --> 00:11:04,010
+ <font color="#E5E5E5">oke </font><font color="#CCCCCC">banyak </font><font color="#E5E5E5">barang disini tapi </font><font color="#CCCCCC">kita bisa copy </font>
+
+240
+00:11:04,010 --> 00:11:06,410
+ ini <font color="#E5E5E5">dan kita bisa mengatur ini ke gambar kita </font>
+
+241
+00:11:06,410 --> 00:11:09,140
+ variabel dalam sesi <font color="#CCCCCC">cookie sesi kami </font>
+
+242
+00:11:09,140 --> 00:11:10,010
+ dot cookie 
+
+243
+00:11:10,010 --> 00:11:13,190
+ sama aku minta maaf menggambar yang benar <font color="#E5E5E5">karena </font>
+
+244
+00:11:13,190 --> 00:11:14,030
+ itulah <font color="#CCCCCC">cookie </font><font color="#E5E5E5">yang kami kerjakan </font>
+
+245
+00:11:14,030 --> 00:11:16,460
+ <font color="#E5E5E5">dengan set yang sama dengan base64 itu </font>
+
+246
+00:11:16,460 --> 00:11:20,870
+ string <font color="#E5E5E5">periksa respons di sini dan </font>
+
+247
+00:11:20,870 --> 00:11:23,480
+ mari kita lanjutkan <font color="#E5E5E5">dan jalankan ini di dalam build </font>
+
+248
+00:11:23,480 --> 00:11:28,420
+ output <font color="#E5E5E5">saya memiliki kesalahan di mana pun </font><font color="#CCCCCC">saya lakukan </font>
+
+249
+00:11:28,420 --> 00:11:29,930
+ <font color="#E5E5E5">lihat apa yang kami dapat </font>
+
+250
+00:11:29,930 --> 00:11:34,880
+ <font color="#CCCCCC">oh </font><font color="#E5E5E5">saya mungkin tidak menyertakan titik koma saya </font>
+
+251
+00:11:34,880 --> 00:11:37,610
+ disini belum <font color="#E5E5E5">ada pH di kode PHP itu sekarang </font>
+
+252
+00:11:37,610 --> 00:11:40,520
+ kita bisa <font color="#CCCCCC">kembali dan mendapatkan yang sebenarnya </font>
+
+253
+00:11:40,520 --> 00:11:42,770
+ kode base64 di <font color="#E5E5E5">sini sempurna mari kita lanjutkan </font>
+
+254
+00:11:42,770 --> 00:11:47,810
+ dan ubah itu <font color="#E5E5E5">sekarang ketika kita menjalankan ini </font>
+
+255
+00:11:47,810 --> 00:11:51,260
+ <font color="#CCCCCC">skrip </font><font color="#E5E5E5">kami memiliki kesalahan fatal baru tidak bisa </font>
+
+256
+00:11:51,260 --> 00:11:53,570
+ <font color="#E5E5E5">gunakan objek tipe logger </font><font color="#CCCCCC">sebagai larik </font>
+
+257
+00:11:53,570 --> 00:11:55,820
+ oke <font color="#E5E5E5">dan itu masuk akal </font><font color="#CCCCCC">karena </font>
+
+258
+00:11:55,820 --> 00:11:57,950
+ mereka <font color="#E5E5E5">hanya mencoba membaca file itu sebagai </font>
+
+259
+00:11:57,950 --> 00:12:01,220
+ array tepat di kode yang <font color="#CCCCCC">terlihat seperti </font>
+
+260
+00:12:01,220 --> 00:12:03,370
+ itu mencoba <font color="#CCCCCC">untuk membacanya </font><font color="#E5E5E5">sebagai array </font>
+
+261
+00:12:03,370 --> 00:12:06,830
+ tapi kami tahu <font color="#E5E5E5">itu </font><font color="#CCCCCC">artinya </font><font color="#E5E5E5">kami </font>
+
+262
+00:12:06,830 --> 00:12:08,540
+ kode <font color="#E5E5E5">berhasil dijalankan, kami tahu itu </font>
+
+263
+00:12:08,540 --> 00:12:11,720
+ kami mendapat <font color="#E5E5E5">objek yang </font><font color="#CCCCCC">ke </font><font color="#E5E5E5">unsee </font><font color="#CCCCCC">menyadari begitu </font>
+
+264
+00:12:11,720 --> 00:12:17,390
+ sekarang kita <font color="#CCCCCC">harus memiliki </font><font color="#E5E5E5">file baru yang seharusnya </font>
+
+265
+00:12:17,390 --> 00:12:23,720
+ di <font color="#E5E5E5">pemenang gambar dot PHP </font><font color="#CCCCCC">jadi jika kita dapatkan </font>
+
+266
+00:12:23,720 --> 00:12:28,610
+ <font color="#E5E5E5">itu dan periksa tanggapan kami </font>
+
+267
+00:12:28,610 --> 00:12:32,510
+ mendapat <font color="#E5E5E5">kata sandi berikutnya sih ya gitu </font>
+
+268
+00:12:32,510 --> 00:12:33,800
+ sebenarnya sudah <font color="#E5E5E5">menggunakan ini untuk </font><font color="#CCCCCC">sedikit </font>
+
+269
+00:12:33,800 --> 00:12:36,140
+ <font color="#CCCCCC">pengujian sebelumnya </font><font color="#E5E5E5">beberapa </font><font color="#CCCCCC">Nada 26 </font>
+
+270
+00:12:36,140 --> 00:12:38,420
+ penumpang di sini tapi itu adalah 
+
+271
+00:12:38,420 --> 00:12:42,080
+ kata sandi naddis 27 <font color="#CCCCCC">5/5 TB dll </font><font color="#E5E5E5">terlihat </font>
+
+272
+00:12:42,080 --> 00:12:43,760
+ seperti yang kita <font color="#CCCCCC">miliki </font><font color="#E5E5E5">beberapa kali lagi </font>
+
+273
+00:12:43,760 --> 00:12:47,360
+ apa pun alasannya tetapi itu <font color="#CCCCCC">berarti </font><font color="#E5E5E5">bahwa hei </font>
+
+274
+00:12:47,360 --> 00:12:49,760
+ kami menang ada <font color="#CCCCCC">serangan kami, kami melakukan beberapa </font>
+
+275
+00:12:49,760 --> 00:12:53,000
+ <font color="#E5E5E5">Manipulasi objek PHP dengan </font>
+
+276
+00:12:53,000 --> 00:12:55,310
+ deserializing objek dan mengambil 
+
+277
+00:12:55,310 --> 00:12:57,140
+ Keuntungan <font color="#E5E5E5">dari beberapa PHP yang keren itu </font>
+
+278
+00:12:57,140 --> 00:12:59,300
+ fungsi sulap jadi jika Anda ingin <font color="#E5E5E5">belajar </font>
+
+279
+00:12:59,300 --> 00:13:02,030
+ lebih lanjut tentang <font color="#E5E5E5">serangan ini adalah objek PHP </font>
+
+280
+00:13:02,030 --> 00:13:05,240
+ <font color="#CCCCCC">D serialisasi </font><font color="#E5E5E5">Saya ingin memastikan saya </font>
+
+281
+00:13:05,240 --> 00:13:09,050
+ sebenarnya dapat <font color="#E5E5E5">mengetik objek PHP ini </font><font color="#CCCCCC">D </font>
+
+282
+00:13:09,050 --> 00:13:12,320
+ serialisasi <font color="#CCCCCC">dan </font><font color="#E5E5E5">Anda akan melihat satu </font><font color="#CCCCCC">ton </font>
+
+283
+00:13:12,320 --> 00:13:15,529
+ menulis <font color="#E5E5E5">tentang ini, Anda akan melihat </font><font color="#CCCCCC">banyak </font>
+
+284
+00:13:15,529 --> 00:13:17,839
+ <font color="#CCCCCC">Oh tawon </font><font color="#E5E5E5">artikel dll dan mereka semua </font>
+
+285
+00:13:17,839 --> 00:13:20,839
+ memiliki <font color="#E5E5E5">metodologi yang sama di mana ada </font>
+
+286
+00:13:20,839 --> 00:13:22,279
+ adalah kelas atau sedikit 
+
+287
+00:13:22,279 --> 00:13:23,839
+ pemrograman berorientasi objek <font color="#E5E5E5">mengatur dan </font>
+
+288
+00:13:23,839 --> 00:13:26,029
+ mereka menggunakan <font color="#E5E5E5">metode sihir PHP seperti </font>
+
+289
+00:13:26,029 --> 00:13:28,550
+ garis bawah garis bawah <font color="#E5E5E5">atau </font>
+
+290
+00:13:28,550 --> 00:13:31,100
+ destructor ke string <font color="#E5E5E5">etcetra etcetra </font><font color="#CCCCCC">jadi </font>
+
+291
+00:13:31,100 --> 00:13:32,930
+ benar-benar memeriksa mereka <font color="#E5E5E5">karena Anda akan </font>
+
+292
+00:13:32,930 --> 00:13:35,420
+ melihat mereka banyak <font color="#CCCCCC">di </font><font color="#E5E5E5">CTF yang umum </font>
+
+293
+00:13:35,420 --> 00:13:38,209
+ serang <font color="#E5E5E5">jika Anda melihat yang tidak beradab </font>
+
+294
+00:13:38,209 --> 00:13:40,759
+ berfungsi di PHP Anda harus secara otomatis 
+
+295
+00:13:40,759 --> 00:13:42,410
+ tahu ada sesuatu yang salah <font color="#CCCCCC">terutama jika </font>
+
+296
+00:13:42,410 --> 00:13:43,579
+ Anda dapat mengontrol <font color="#E5E5E5">data yang ada di dalamnya </font>
+
+297
+00:13:43,579 --> 00:13:45,829
+ <font color="#E5E5E5">karena </font><font color="#CCCCCC">itu akan menjadi serangan Anda </font>
+
+298
+00:13:45,829 --> 00:13:48,620
+ vektor <font color="#E5E5E5">jadi SuperDuper keren </font><font color="#CCCCCC">terima kasih semuanya </font>
+
+299
+00:13:48,620 --> 00:13:50,120
+ <font color="#E5E5E5">untuk menonton </font><font color="#CCCCCC">saya ingin berteriak </font>
+
+300
+00:13:50,120 --> 00:13:52,120
+ untuk <font color="#CCCCCC">pendukung saya sangat cepat </font>
+
+301
+00:13:52,120 --> 00:13:55,100
+ terima kasih <font color="#E5E5E5">kepada semua orang ini Spencer </font>
+
+302
+00:13:55,100 --> 00:13:57,019
+ Clark <font color="#CCCCCC">Gayle Horowitz, </font><font color="#E5E5E5">baik </font><font color="#CCCCCC">Attila </font>
+
+303
+00:13:57,019 --> 00:13:59,389
+ atau <font color="#CCCCCC">Gaddafi dan penguasa perusak </font>
+
+304
+00:13:59,389 --> 00:14:01,519
+ <font color="#CCCCCC">kursi Madam </font><font color="#E5E5E5">dunia </font><font color="#CCCCCC">Jen Rob Timothy </font>
+
+305
+00:14:01,519 --> 00:14:03,889
+ County dan <font color="#E5E5E5">Jacob H dll jika saya dibantai </font>
+
+306
+00:14:03,889 --> 00:14:06,259
+ nama saya minta maaf <font color="#E5E5E5">tapi hei kamu mengagumkan </font>
+
+307
+00:14:06,259 --> 00:14:07,579
+ terima <font color="#E5E5E5">kasih </font><font color="#CCCCCC">banyak untuk mendukung saya </font>
+
+308
+00:14:07,579 --> 00:14:08,720
+ terima <font color="#E5E5E5">kasih </font><font color="#CCCCCC">karena bersedia untuk pergi pada </font>
+
+309
+00:14:08,720 --> 00:14:11,360
+ <font color="#E5E5E5">perjalanan ini dengan </font><font color="#CCCCCC">saya </font><font color="#E5E5E5">$ 1 untuk patreon a </font>
+
+310
+00:14:11,360 --> 00:14:12,829
+ bulan <font color="#E5E5E5">akan memberi Anda hanya </font><font color="#CCCCCC">berteriak </font>
+
+311
+00:14:12,829 --> 00:14:15,170
+ seperti ini di akhir <font color="#CCCCCC">setiap </font><font color="#E5E5E5">video $ 5 </font>
+
+312
+00:14:15,170 --> 00:14:16,459
+ dan lebih banyak lagi akan memberi Anda <font color="#CCCCCC">akses lebih awal </font>
+
+313
+00:14:16,459 --> 00:14:17,480
+ <font color="#E5E5E5">hal-hal yang saya coba </font><font color="#CCCCCC">dorong </font>
+
+314
+00:14:17,480 --> 00:14:20,449
+ <font color="#E5E5E5">YouTube sebelum </font><font color="#CCCCCC">ditayangkan jika dalam </font>
+
+315
+00:14:20,449 --> 00:14:21,949
+ <font color="#CCCCCC">kasus saya merekam apa pun di muka </font><font color="#E5E5E5">dan </font>
+
+316
+00:14:21,949 --> 00:14:24,019
+ <font color="#E5E5E5">YouTube sedang menjadwalkan jadi terima kasih terima kasih </font>
+
+317
+00:14:24,019 --> 00:14:25,579
+ <font color="#CCCCCC">terima kasih, </font><font color="#E5E5E5">hei jika kamu memang suka ini </font>
+
+318
+00:14:25,579 --> 00:14:27,110
+ silakan lakukan tekan tombol seperti itu 
+
+319
+00:14:27,110 --> 00:14:28,610
+ <font color="#CCCCCC">mungkin </font><font color="#E5E5E5">tinggalkan saya komentar beritahu saya </font>
+
+320
+00:14:28,610 --> 00:14:29,689
+ <font color="#E5E5E5">apa yang Anda pikirkan apa </font><font color="#CCCCCC">lagi yang Anda </font><font color="#E5E5E5">ingin </font>
+
+321
+00:14:29,689 --> 00:14:31,100
+ <font color="#E5E5E5">lihat apa yang bisa kami </font><font color="#CCCCCC">lakukan dengan lebih baik </font>
+
+322
+00:14:31,100 --> 00:14:32,930
+ Anda menyelesaikan ini di lain-lain <font color="#CCCCCC">jika Anda </font>
+
+323
+00:14:32,930 --> 00:14:34,339
+ bersedia berlangganan dan jika Anda benar-benar 
+
+324
+00:14:34,339 --> 00:14:35,720
+ <font color="#CCCCCC">ingin mendukung </font><font color="#E5E5E5">saya memeriksaku </font>
+
+325
+00:14:35,720 --> 00:14:37,399
+ patreon <font color="#E5E5E5">terima kasih lagi teman-teman </font>
+
+326
+00:14:37,399 --> 00:00:00,000
+ <font color="#CCCCCC">sampai jumpa nanti videonya </font>
+

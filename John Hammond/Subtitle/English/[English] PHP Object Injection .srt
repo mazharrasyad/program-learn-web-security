@@ -1,0 +1,1304 @@
+1
+00:00:00,000 --> 00:00:01,740
+PHP object injection through<font color="#E5E5E5"> the</font>
+
+2
+00:00:01,740 --> 00:00:04,200
+<font color="#E5E5E5">serialized</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> uncivilized PHP functions</font>
+
+3
+00:00:04,200 --> 00:00:06,450
+can<font color="#CCCCCC"> be super dangerous</font><font color="#E5E5E5"> especially</font><font color="#CCCCCC"> if</font>
+
+4
+00:00:06,450 --> 00:00:08,280
+there's complete user control over what
+
+5
+00:00:08,280 --> 00:00:10,620
+data is being<font color="#E5E5E5"> serialized</font><font color="#CCCCCC"> keep</font><font color="#E5E5E5"> watching</font>
+
+6
+00:00:10,620 --> 00:00:12,120
+<font color="#E5E5E5">to see how we can take</font><font color="#CCCCCC"> advantage of this</font>
+
+7
+00:00:12,120 --> 00:00:13,920
+to<font color="#E5E5E5"> get remote code execution on a</font>
+
+8
+00:00:13,920 --> 00:00:20,550
+vulnerable web app<font color="#E5E5E5"> right</font><font color="#CCCCCC"> now what's up</font>
+
+9
+00:00:20,550 --> 00:00:22,289
+everybody<font color="#E5E5E5"> my name is</font><font color="#CCCCCC"> jon hamm</font><font color="#E5E5E5"> and we're</font>
+
+10
+00:00:22,289 --> 00:00:24,180
+looking at natus level 26
+
+11
+00:00:24,180 --> 00:00:26,460
+so we're prompted with this draw a line
+
+12
+00:00:26,460 --> 00:00:28,199
+functionality and it looks<font color="#E5E5E5"> like it will</font>
+
+13
+00:00:28,199 --> 00:00:30,210
+<font color="#E5E5E5">let us just enter coordinates for maybe</font>
+
+14
+00:00:30,210 --> 00:00:33,030
+a line<font color="#E5E5E5"> that we want</font><font color="#CCCCCC"> to draw and</font><font color="#E5E5E5"> it looks</font>
+
+15
+00:00:33,030 --> 00:00:34,649
+like the application<font color="#CCCCCC"> once</font><font color="#E5E5E5"> we submit this</font>
+
+16
+00:00:34,649 --> 00:00:36,719
+<font color="#E5E5E5">we'll go ahead</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> create an image</font><font color="#CCCCCC"> that</font>
+
+17
+00:00:36,719 --> 00:00:38,820
+is displayed<font color="#CCCCCC"> for us with that</font><font color="#E5E5E5"> line or</font>
+
+18
+00:00:38,820 --> 00:00:41,790
+<font color="#E5E5E5">whatever created</font><font color="#CCCCCC"> so let's take a look at</font>
+
+19
+00:00:41,790 --> 00:00:42,870
+the source code let's see what's<font color="#E5E5E5"> wrong</font>
+
+20
+00:00:42,870 --> 00:00:44,219
+<font color="#CCCCCC">with</font><font color="#E5E5E5"> it let's see</font><font color="#CCCCCC"> what we</font><font color="#E5E5E5"> can do because</font>
+
+21
+00:00:44,219 --> 00:00:46,079
+<font color="#E5E5E5">this is</font><font color="#CCCCCC"> another</font><font color="#E5E5E5"> really cool</font>
+
+22
+00:00:46,079 --> 00:00:49,350
+vulnerability in PHP objects<font color="#E5E5E5"> well let's</font>
+
+23
+00:00:49,350 --> 00:00:51,930
+take a look at the source<font color="#E5E5E5"> code HTTP</font><font color="#CCCCCC"> had</font>
+
+24
+00:00:51,930 --> 00:00:54,930
+HTML stuff here<font color="#E5E5E5"> not</font><font color="#CCCCCC"> HTTP</font><font color="#E5E5E5"> are just HTML</font>
+
+25
+00:00:54,930 --> 00:00:57,329
+<font color="#CCCCCC">whatever long acronym a bunch of H words</font>
+
+26
+00:00:57,329 --> 00:01:00,210
+<font color="#E5E5E5">or series of words an acronym</font><font color="#CCCCCC"> so the PHP</font>
+
+27
+00:01:00,210 --> 00:01:03,750
+<font color="#CCCCCC">code here</font><font color="#E5E5E5"> is using a little</font><font color="#CCCCCC"> bit</font><font color="#E5E5E5"> of</font>
+
+28
+00:01:03,750 --> 00:01:05,610
+object-oriented<font color="#E5E5E5"> programming you</font><font color="#CCCCCC"> can see</font>
+
+29
+00:01:05,610 --> 00:01:08,189
+we have a class<font color="#CCCCCC"> here called class logger</font>
+
+30
+00:01:08,189 --> 00:01:10,520
+<font color="#E5E5E5">and this has some variables set up</font>
+
+31
+00:01:10,520 --> 00:01:13,470
+<font color="#E5E5E5">private that it</font><font color="#CCCCCC"> uses only</font><font color="#E5E5E5"> inside that</font>
+
+32
+00:01:13,470 --> 00:01:15,990
+class or inside that object<font color="#CCCCCC"> and they're</font>
+
+33
+00:01:15,990 --> 00:01:19,680
+denoted by the this keyword<font color="#CCCCCC"> PHP uses the</font>
+
+34
+00:01:19,680 --> 00:01:23,340
+arrow notation to denote the use of its
+
+35
+00:01:23,340 --> 00:01:24,750
+own private<font color="#E5E5E5"> variables inside of an</font>
+
+36
+00:01:24,750 --> 00:01:26,549
+<font color="#E5E5E5">object or inside</font><font color="#CCCCCC"> of a class so it</font>
+
+37
+00:01:26,549 --> 00:01:28,860
+creates a file<font color="#E5E5E5"> looks like that's going</font>
+
+38
+00:01:28,860 --> 00:01:33,270
+<font color="#E5E5E5">to use to log based off of temporary</font>
+
+39
+00:01:33,270 --> 00:01:34,920
+directory and temporary file that we
+
+40
+00:01:34,920 --> 00:01:36,750
+create<font color="#CCCCCC"> here and it keeps</font><font color="#E5E5E5"> track of the</font>
+
+41
+00:01:36,750 --> 00:01:39,240
+session supposedly it has a function<font color="#E5E5E5"> log</font>
+
+42
+00:01:39,240 --> 00:01:40,770
+that<font color="#E5E5E5"> will display stuff there and</font>
+
+43
+00:01:40,770 --> 00:01:42,720
+destruct will okay save<font color="#CCCCCC"> it to the file</font>
+
+44
+00:01:42,720 --> 00:01:43,590
+and<font color="#CCCCCC"> write it</font><font color="#E5E5E5"> all</font><font color="#CCCCCC"> up</font>
+
+45
+00:01:43,590 --> 00:01:45,810
+<font color="#E5E5E5">that's fine so construct is a</font>
+
+46
+00:01:45,810 --> 00:01:48,950
+constructor<font color="#CCCCCC"> destruct</font><font color="#E5E5E5"> is the destructor</font>
+
+47
+00:01:48,950 --> 00:01:51,270
+<font color="#E5E5E5">constructor happens first when the</font>
+
+48
+00:01:51,270 --> 00:01:52,680
+object<font color="#E5E5E5"> is first created destructor</font>
+
+49
+00:01:52,680 --> 00:01:55,020
+happens once<font color="#E5E5E5"> the object is destroyed or</font>
+
+50
+00:01:55,020 --> 00:01:56,729
+once it's done once it's not<font color="#E5E5E5"> in use</font>
+
+51
+00:01:56,729 --> 00:01:58,430
+anymore
+
+52
+00:01:58,430 --> 00:02:01,079
+these underscore underscore functions
+
+53
+00:02:01,079 --> 00:02:03,810
+are PHP magic object functions so they
+
+54
+00:02:03,810 --> 00:02:06,619
+are like necessary and built-in for PHP
+
+55
+00:02:06,619 --> 00:02:09,000
+<font color="#CCCCCC">keep</font><font color="#E5E5E5"> that in mind because</font><font color="#CCCCCC"> that's crucial</font>
+
+56
+00:02:09,000 --> 00:02:10,229
+to<font color="#CCCCCC"> this attack that we're going</font><font color="#E5E5E5"> to be</font>
+
+57
+00:02:10,229 --> 00:02:12,690
+looking<font color="#CCCCCC"> at</font><font color="#E5E5E5"> with our object serialization</font>
+
+58
+00:02:12,690 --> 00:02:15,140
+<font color="#E5E5E5">and deserialization</font>
+
+59
+00:02:15,270 --> 00:02:17,310
+<font color="#E5E5E5">there are codes to show an image it</font>
+
+60
+00:02:17,310 --> 00:02:19,110
+looks<font color="#CCCCCC"> like it just includes that</font><font color="#E5E5E5"> HTML</font>
+
+61
+00:02:19,110 --> 00:02:21,930
+image elements<font color="#E5E5E5"> draw image it looks</font><font color="#CCCCCC"> like</font>
+
+62
+00:02:21,930 --> 00:02:25,650
+<font color="#E5E5E5">PHP functions to use a color and create</font>
+
+63
+00:02:25,650 --> 00:02:29,160
+a new PNG image etc etc<font color="#E5E5E5"> and draw from</font>
+
+64
+00:02:29,160 --> 00:02:30,750
+user data it<font color="#CCCCCC"> looks like another custom</font>
+
+65
+00:02:30,750 --> 00:02:32,850
+function here it takes advantage<font color="#CCCCCC"> of</font>
+
+66
+00:02:32,850 --> 00:02:34,800
+these<font color="#E5E5E5"> x coordinates and</font><font color="#CCCCCC"> Y coordinates</font>
+
+67
+00:02:34,800 --> 00:02:36,630
+that we pass along<font color="#CCCCCC"> looks like it's</font>
+
+68
+00:02:36,630 --> 00:02:38,120
+passing<font color="#E5E5E5"> it through that to the get</font>
+
+69
+00:02:38,120 --> 00:02:41,460
+<font color="#E5E5E5">method and it goes to head and draws a</font>
+
+70
+00:02:41,460 --> 00:02:44,700
+line just<font color="#CCCCCC"> like</font><font color="#E5E5E5"> that and it looks like it</font>
+
+71
+00:02:44,700 --> 00:02:47,520
+actually<font color="#E5E5E5"> does this with a drawing cookie</font>
+
+72
+00:02:47,520 --> 00:02:49,610
+<font color="#CCCCCC">we can see</font><font color="#E5E5E5"> it's testing if this cookie</font>
+
+73
+00:02:49,610 --> 00:02:53,190
+<font color="#CCCCCC">drawing it exists in the in the cookie</font>
+
+74
+00:02:53,190 --> 00:02:55,830
+array<font color="#CCCCCC"> then it uncie</font><font color="#E5E5E5"> realises this data</font>
+
+75
+00:02:55,830 --> 00:02:58,830
+<font color="#CCCCCC">its basic</font><font color="#E5E5E5"> C</font><font color="#CCCCCC"> Ford</font><font color="#E5E5E5"> encoded to begin with</font>
+
+76
+00:02:58,830 --> 00:03:00,240
+so that's<font color="#E5E5E5"> why they have</font><font color="#CCCCCC"> to decode it</font>
+
+77
+00:03:00,240 --> 00:03:02,580
+<font color="#E5E5E5">here</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> that's important to note</font>
+
+78
+00:03:02,580 --> 00:03:05,280
+<font color="#CCCCCC">because uncie realizing data that we</font>
+
+79
+00:03:05,280 --> 00:03:07,590
+have complete control<font color="#CCCCCC"> over is a huge</font>
+
+80
+00:03:07,590 --> 00:03:10,260
+<font color="#CCCCCC">vulnerability</font><font color="#E5E5E5"> because that can lead to</font>
+
+81
+00:03:10,260 --> 00:03:12,210
+<font color="#E5E5E5">some unsafe stuff happening that can</font>
+
+82
+00:03:12,210 --> 00:03:14,700
+lead to<font color="#E5E5E5"> some PHP remote code execution</font>
+
+83
+00:03:14,700 --> 00:03:17,460
+<font color="#E5E5E5">and</font><font color="#CCCCCC"> will take advantage of it</font><font color="#E5E5E5"> in a</font>
+
+84
+00:03:17,460 --> 00:03:19,260
+really<font color="#E5E5E5"> really cool way as we get</font><font color="#CCCCCC"> into</font><font color="#E5E5E5"> it</font>
+
+85
+00:03:19,260 --> 00:03:21,660
+but other than that<font color="#E5E5E5"> it just creates this</font>
+
+86
+00:03:21,660 --> 00:03:24,480
+<font color="#CCCCCC">image in line store data again</font><font color="#E5E5E5"> taking</font>
+
+87
+00:03:24,480 --> 00:03:27,750
+<font color="#CCCCCC">advantage</font><font color="#E5E5E5"> of these x1 y1 coordinates</font>
+
+88
+00:03:27,750 --> 00:03:31,320
+<font color="#E5E5E5">storing them as an object</font><font color="#CCCCCC"> and creating</font>
+
+89
+00:03:31,320 --> 00:03:34,740
+<font color="#E5E5E5">that as a drawing cookie that we have in</font>
+
+90
+00:03:34,740 --> 00:03:38,940
+base64<font color="#E5E5E5"> so you can see this store data</font>
+
+91
+00:03:38,940 --> 00:03:42,450
+function does that with an empty bit or
+
+92
+00:03:42,450 --> 00:03:44,280
+a little<font color="#CCCCCC"> bit</font><font color="#E5E5E5"> of nothing to begin with or</font>
+
+93
+00:03:44,280 --> 00:03:46,230
+creates an empty<font color="#CCCCCC"> array but it will</font>
+
+94
+00:03:46,230 --> 00:03:49,560
+<font color="#E5E5E5">create a serialized form of that object</font>
+
+95
+00:03:49,560 --> 00:03:52,920
+<font color="#CCCCCC">in</font><font color="#E5E5E5"> base64</font><font color="#CCCCCC"> encoded the page itself will</font>
+
+96
+00:03:52,920 --> 00:03:55,860
+create<font color="#CCCCCC"> a session</font><font color="#E5E5E5"> and it looks like it's</font>
+
+97
+00:03:55,860 --> 00:03:59,130
+using our session ID as the<font color="#E5E5E5"> actual</font>
+
+98
+00:03:59,130 --> 00:04:01,260
+location that<font color="#E5E5E5"> it's loading the image</font>
+
+99
+00:04:01,260 --> 00:04:04,590
+file<font color="#E5E5E5"> from so let's play around with the</font>
+
+100
+00:04:04,590 --> 00:04:06,060
+<font color="#E5E5E5">code let's see how we can</font><font color="#CCCCCC"> take advantage</font>
+
+101
+00:04:06,060 --> 00:04:06,990
+of<font color="#E5E5E5"> this</font><font color="#CCCCCC"> and let's see how</font><font color="#E5E5E5"> we can</font>
+
+102
+00:04:06,990 --> 00:04:10,880
+<font color="#CCCCCC">manipulate it let's</font><font color="#E5E5E5"> get over to our</font>
+
+103
+00:04:10,880 --> 00:04:14,790
+<font color="#CCCCCC">script hit</font><font color="#E5E5E5"> ctrl</font><font color="#CCCCCC"> B to run it set the</font>
+
+104
+00:04:14,790 --> 00:04:21,418
+syntax to PHP here cool<font color="#E5E5E5"> so let's</font><font color="#CCCCCC"> see how</font>
+
+105
+00:04:21,418 --> 00:04:22,229
+this<font color="#E5E5E5"> looks</font>
+
+106
+00:04:22,229 --> 00:04:26,220
+if we pass along some<font color="#CCCCCC"> of</font><font color="#E5E5E5"> those arguments</font>
+
+107
+00:04:26,220 --> 00:04:27,110
+<font color="#E5E5E5">here</font>
+
+108
+00:04:27,110 --> 00:04:29,300
+let's create<font color="#E5E5E5"> another request we're going</font>
+
+109
+00:04:29,300 --> 00:04:34,550
+to change the<font color="#CCCCCC"> URL to include</font><font color="#E5E5E5"> x1 can</font>
+
+110
+00:04:34,550 --> 00:04:39,199
+equal<font color="#E5E5E5"> 0</font><font color="#CCCCCC"> + y1</font><font color="#E5E5E5"> can equal 0 x2 can equal</font>
+
+111
+00:04:39,199 --> 00:04:42,229
+like 500 just like we've used<font color="#CCCCCC"> before</font><font color="#E5E5E5"> and</font>
+
+112
+00:04:42,229 --> 00:04:47,960
+y2 can equal 500<font color="#E5E5E5"> now let's go</font><font color="#CCCCCC"> ahead and</font>
+
+113
+00:04:47,960 --> 00:04:52,129
+print<font color="#CCCCCC"> that see how this looks you can</font>
+
+114
+00:04:52,129 --> 00:04:54,680
+see it's<font color="#E5E5E5"> using our image source here</font>
+
+115
+00:04:54,680 --> 00:04:56,780
+that's using from that<font color="#E5E5E5"> PHP function and</font>
+
+116
+00:04:56,780 --> 00:04:59,930
+it's using<font color="#CCCCCC"> that session ID supposedly</font>
+
+117
+00:04:59,930 --> 00:05:00,979
+let's actually go ahead<font color="#CCCCCC"> and</font><font color="#E5E5E5"> take a look</font>
+
+118
+00:05:00,979 --> 00:05:06,620
+<font color="#E5E5E5">at that session cookies PHP session ID</font>
+
+119
+00:05:06,620 --> 00:05:12,469
+<font color="#CCCCCC">and okay</font><font color="#E5E5E5"> you can see that</font><font color="#CCCCCC"> q1</font><font color="#E5E5E5"> c9 a is the</font>
+
+120
+00:05:12,469 --> 00:05:13,729
+same thing<font color="#E5E5E5"> that it's using right there</font>
+
+121
+00:05:13,729 --> 00:05:16,729
+<font color="#CCCCCC">but take note that</font><font color="#E5E5E5"> we can control this</font>
+
+122
+00:05:16,729 --> 00:05:18,199
+we can actually<font color="#CCCCCC"> inject something into</font>
+
+123
+00:05:18,199 --> 00:05:20,270
+<font color="#E5E5E5">this like that session ID is just a</font>
+
+124
+00:05:20,270 --> 00:05:23,090
+cookie<font color="#E5E5E5"> so let's change it</font><font color="#CCCCCC"> to something</font>
+
+125
+00:05:23,090 --> 00:05:26,539
+like try some<font color="#CCCCCC"> local file inclusion let's</font>
+
+126
+00:05:26,539 --> 00:05:28,460
+go up the parent directory a ton see if
+
+127
+00:05:28,460 --> 00:05:30,139
+we can read out<font color="#E5E5E5"> it's a tree password</font><font color="#CCCCCC"> I</font>
+
+128
+00:05:30,139 --> 00:05:32,000
+don't know what this<font color="#E5E5E5"> even would do</font>
+
+129
+00:05:32,000 --> 00:05:34,099
+because it can't<font color="#E5E5E5"> create a PNG from that</font>
+
+130
+00:05:34,099 --> 00:05:36,830
+<font color="#E5E5E5">but we get a bunch of warnings and PHP</font>
+
+131
+00:05:36,830 --> 00:05:38,990
+<font color="#E5E5E5">errors session to</font><font color="#CCCCCC"> start the</font><font color="#E5E5E5"> session ID</font>
+
+132
+00:05:38,990 --> 00:05:40,789
+is too long contains little characters
+
+133
+00:05:40,789 --> 00:05:42,889
+looks like the only<font color="#E5E5E5"> valid</font><font color="#CCCCCC"> characters are</font>
+
+134
+00:05:42,889 --> 00:05:46,099
+alphanumeric<font color="#CCCCCC"> and hyphens and commas so</font>
+
+135
+00:05:46,099 --> 00:05:47,779
+obviously it can't<font color="#E5E5E5"> create that stream</font>
+
+136
+00:05:47,779 --> 00:05:52,039
+<font color="#E5E5E5">and</font><font color="#CCCCCC"> it's not a</font><font color="#E5E5E5"> PNG so it can't use this</font>
+
+137
+00:05:52,039 --> 00:05:54,110
+image<font color="#E5E5E5"> PNG function so</font><font color="#CCCCCC"> that doesn't</font>
+
+138
+00:05:54,110 --> 00:05:57,289
+<font color="#CCCCCC">really work</font><font color="#E5E5E5"> out very</font><font color="#CCCCCC"> well for us but we</font>
+
+139
+00:05:57,289 --> 00:05:59,839
+can get<font color="#E5E5E5"> into something</font><font color="#CCCCCC"> else with that</font>
+
+140
+00:05:59,839 --> 00:06:03,740
+<font color="#E5E5E5">object this logger class because that</font>
+
+141
+00:06:03,740 --> 00:06:05,479
+<font color="#CCCCCC">looks like something that's being</font>
+
+142
+00:06:05,479 --> 00:06:09,919
+considered<font color="#E5E5E5"> serialized and actually like</font>
+
+143
+00:06:09,919 --> 00:06:12,469
+loaded into PHP and we have complete
+
+144
+00:06:12,469 --> 00:06:14,419
+control<font color="#CCCCCC"> over</font><font color="#E5E5E5"> it we can take</font><font color="#CCCCCC"> advantage</font><font color="#E5E5E5"> of</font>
+
+145
+00:06:14,419 --> 00:06:16,639
+<font color="#E5E5E5">that because</font><font color="#CCCCCC"> it's</font><font color="#E5E5E5"> just a cookie right we</font>
+
+146
+00:06:16,639 --> 00:06:20,949
+can see our original get<font color="#E5E5E5"> request here</font>
+
+147
+00:06:20,949 --> 00:06:22,879
+let's see the cookies<font color="#E5E5E5"> that we have</font>
+
+148
+00:06:22,879 --> 00:06:27,620
+<font color="#CCCCCC">before we supposedly submit the form the</font>
+
+149
+00:06:27,620 --> 00:06:29,120
+request cookie jar has a session ID
+
+150
+00:06:29,120 --> 00:06:34,129
+after<font color="#CCCCCC"> that but if we take a look</font><font color="#E5E5E5"> at this</font>
+
+151
+00:06:34,129 --> 00:06:36,949
+session cookies following our request
+
+152
+00:06:36,949 --> 00:06:39,090
+<font color="#E5E5E5">let's try and run this</font>
+
+153
+00:06:39,090 --> 00:06:41,970
+<font color="#CCCCCC">request cookie jar</font><font color="#E5E5E5"> there's a cookie for</font>
+
+154
+00:06:41,970 --> 00:06:43,800
+PHP<font color="#E5E5E5"> session ID</font><font color="#CCCCCC"> when we have another</font><font color="#E5E5E5"> one</font>
+
+155
+00:06:43,800 --> 00:06:47,250
+<font color="#E5E5E5">drawing that looks like base64 encoded</font>
+
+156
+00:06:47,250 --> 00:06:49,919
+data<font color="#E5E5E5"> so let's go ahead and take a look</font>
+
+157
+00:06:49,919 --> 00:06:51,510
+at what<font color="#E5E5E5"> that really is</font><font color="#CCCCCC"> let's get drawing</font>
+
+158
+00:06:51,510 --> 00:06:56,490
+out of here and let's go ahead<font color="#E5E5E5"> and</font>
+
+159
+00:06:56,490 --> 00:06:58,440
+import base64 so we can decode it<font color="#CCCCCC"> and</font>
+
+160
+00:06:58,440 --> 00:07:02,580
+<font color="#CCCCCC">take a</font><font color="#E5E5E5"> look at what</font><font color="#CCCCCC"> that code is basics</font>
+
+161
+00:07:02,580 --> 00:07:07,910
+<font color="#E5E5E5">t4b 64 decode run this</font><font color="#CCCCCC"> incorrect padding</font>
+
+162
+00:07:07,910 --> 00:07:11,669
+<font color="#CCCCCC">let's see what that actually looks like</font>
+
+163
+00:07:11,669 --> 00:07:14,850
+maybe it's<font color="#E5E5E5"> not including the equal sign</font>
+
+164
+00:07:14,850 --> 00:07:16,590
+of the very end or<font color="#CCCCCC"> 2rl encoding</font><font color="#E5E5E5"> there it</font>
+
+165
+00:07:16,590 --> 00:07:16,919
+is
+
+166
+00:07:16,919 --> 00:07:22,200
+so let's decode that<font color="#E5E5E5"> with URL Lib you</font>
+
+167
+00:07:22,200 --> 00:07:26,010
+are a Lib dot quote<font color="#E5E5E5"> and maybe unquote</font><font color="#CCCCCC"> I</font>
+
+168
+00:07:26,010 --> 00:07:28,830
+believe I do that<font color="#E5E5E5"> constantly it is</font>
+
+169
+00:07:28,830 --> 00:07:33,600
+unquote<font color="#CCCCCC"> okay now we</font><font color="#E5E5E5"> have our equal sign</font>
+
+170
+00:07:33,600 --> 00:07:42,600
+perfect<font color="#E5E5E5"> let's base64 decode</font><font color="#CCCCCC"> that sweet</font>
+
+171
+00:07:42,600 --> 00:07:46,169
+<font color="#E5E5E5">so we have strings</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> objects</font><font color="#CCCCCC"> and</font>
+
+172
+00:07:46,169 --> 00:07:48,150
+things<font color="#E5E5E5"> all created supposedly in an</font>
+
+173
+00:07:48,150 --> 00:07:51,690
+array but this is PHP serialized data<font color="#E5E5E5"> so</font>
+
+174
+00:07:51,690 --> 00:07:53,430
+let's take advantage<font color="#E5E5E5"> of it with our</font>
+
+175
+00:07:53,430 --> 00:07:57,419
+<font color="#E5E5E5">logger method if we can steal</font><font color="#CCCCCC"> that code</font>
+
+176
+00:07:57,419 --> 00:08:01,110
+<font color="#E5E5E5">this class logger</font><font color="#CCCCCC"> we can actually</font><font color="#E5E5E5"> change</font>
+
+177
+00:08:01,110 --> 00:08:02,880
+<font color="#CCCCCC">what these variables are and what they</font>
+
+178
+00:08:02,880 --> 00:08:06,180
+do<font color="#E5E5E5"> and if we give that</font><font color="#CCCCCC"> to the cookie</font>
+
+179
+00:08:06,180 --> 00:08:08,220
+that<font color="#E5E5E5"> drawing cookie and the PHP</font>
+
+180
+00:08:08,220 --> 00:08:10,740
+application will like<font color="#E5E5E5"> uncie realize that</font>
+
+181
+00:08:10,740 --> 00:08:12,599
+data for us<font color="#E5E5E5"> it'll load up this logger</font>
+
+182
+00:08:12,599 --> 00:08:15,270
+<font color="#E5E5E5">and we'll try and write that message and</font>
+
+183
+00:08:15,270 --> 00:08:16,919
+<font color="#CCCCCC">we may</font><font color="#E5E5E5"> be able to take</font><font color="#CCCCCC"> advantage</font><font color="#E5E5E5"> of what</font>
+
+184
+00:08:16,919 --> 00:08:19,169
+<font color="#CCCCCC">we actually write to a file</font><font color="#E5E5E5"> and we can</font>
+
+185
+00:08:19,169 --> 00:08:21,510
+<font color="#CCCCCC">actually essentially get some code on</font>
+
+186
+00:08:21,510 --> 00:08:23,580
+the server<font color="#E5E5E5"> and maybe run our own PHP</font>
+
+187
+00:08:23,580 --> 00:08:25,349
+code because<font color="#CCCCCC"> we are writing</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> a file</font>
+
+188
+00:08:25,349 --> 00:08:25,889
+with this
+
+189
+00:08:25,889 --> 00:08:29,760
+so let's steal this logger<font color="#E5E5E5"> class I'm</font>
+
+190
+00:08:29,760 --> 00:08:32,159
+going to put this in<font color="#E5E5E5"> another file</font><font color="#CCCCCC"> I'll</font>
+
+191
+00:08:32,159 --> 00:08:34,080
+call it 26<font color="#E5E5E5"> under school</font>
+
+192
+00:08:34,080 --> 00:08:39,979
+tool<font color="#E5E5E5"> dot PHP and set the syntax to PHP</font>
+
+193
+00:08:39,979 --> 00:08:44,010
+<font color="#E5E5E5">by adding this PHP tags and stuff above</font>
+
+194
+00:08:44,010 --> 00:08:49,050
+it<font color="#E5E5E5"> so let's indent get proper whitespace</font>
+
+195
+00:08:49,050 --> 00:08:50,279
+here
+
+196
+00:08:50,279 --> 00:08:52,170
+so let's create<font color="#E5E5E5"> a new object</font><font color="#CCCCCC"> for that</font>
+
+197
+00:08:52,170 --> 00:08:59,129
+<font color="#E5E5E5">let's say new logger can be just object</font>
+
+198
+00:08:59,129 --> 00:09:01,079
+object can equal new logger<font color="#CCCCCC"> and then</font>
+
+199
+00:09:01,079 --> 00:09:03,449
+let's go ahead<font color="#CCCCCC"> and echo out the</font><font color="#E5E5E5"> base64</font>
+
+200
+00:09:03,449 --> 00:09:05,790
+version actually<font color="#CCCCCC"> let's not</font><font color="#E5E5E5"> let's not</font>
+
+201
+00:09:05,790 --> 00:09:07,170
+<font color="#E5E5E5">encode it yet let's make sure we can see</font>
+
+202
+00:09:07,170 --> 00:09:08,819
+that<font color="#E5E5E5"> serialize data let's just run</font>
+
+203
+00:09:08,819 --> 00:09:16,680
+serialize on our object<font color="#E5E5E5"> cool so in the</font>
+
+204
+00:09:16,680 --> 00:09:21,589
+shell over<font color="#E5E5E5"> here let's run our 26 tool</font>
+
+205
+00:09:21,589 --> 00:09:28,709
+might just run PHP 7.0<font color="#E5E5E5"> 26 tool and I'm</font>
+
+206
+00:09:28,709 --> 00:09:30,750
+getting a couple<font color="#E5E5E5"> PHP warnings in there</font>
+
+207
+00:09:30,750 --> 00:09:33,480
+so let's<font color="#E5E5E5"> actually just redirect</font><font color="#CCCCCC"> Center</font>
+
+208
+00:09:33,480 --> 00:09:36,300
+error to elsewhere<font color="#CCCCCC"> okay so we see we</font>
+
+209
+00:09:36,300 --> 00:09:38,160
+have a<font color="#E5E5E5"> logger object and it's creating</font>
+
+210
+00:09:38,160 --> 00:09:40,649
+keeping track of<font color="#E5E5E5"> these files here so</font>
+
+211
+00:09:40,649 --> 00:09:43,319
+let's go ahead<font color="#E5E5E5"> and it</font><font color="#CCCCCC"> changed some of</font>
+
+212
+00:09:43,319 --> 00:09:46,860
+these variables<font color="#E5E5E5"> because we can take</font>
+
+213
+00:09:46,860 --> 00:09:47,970
+<font color="#CCCCCC">advantage</font><font color="#E5E5E5"> of them</font><font color="#CCCCCC"> and have them do</font>
+
+214
+00:09:47,970 --> 00:09:49,769
+interesting things<font color="#E5E5E5"> like write to a</font>
+
+215
+00:09:49,769 --> 00:09:52,500
+different file and write new things like
+
+216
+00:09:52,500 --> 00:09:54,870
+PHP<font color="#E5E5E5"> code so let's do some PHP code</font>
+
+217
+00:09:54,870 --> 00:09:56,189
+injection<font color="#CCCCCC"> like that</font>
+
+218
+00:09:56,189 --> 00:09:58,500
+let's put this in a relative path<font color="#E5E5E5"> that</font>
+
+219
+00:09:58,500 --> 00:10:00,720
+we know we<font color="#CCCCCC"> can access</font><font color="#E5E5E5"> something like</font>
+
+220
+00:10:00,720 --> 00:10:04,439
+image right because it's trying to load
+
+221
+00:10:04,439 --> 00:10:09,420
+out of<font color="#E5E5E5"> that image directory yep image</font>
+
+222
+00:10:09,420 --> 00:10:11,759
+files are<font color="#E5E5E5"> from image forward slash natus</font>
+
+223
+00:10:11,759 --> 00:10:13,379
+in the session ID so let's put<font color="#CCCCCC"> something</font>
+
+224
+00:10:13,379 --> 00:10:17,910
+at like image winner dot PHP and<font color="#E5E5E5"> we can</font>
+
+225
+00:10:17,910 --> 00:10:19,860
+have some PHP code that's being written
+
+226
+00:10:19,860 --> 00:10:22,529
+<font color="#E5E5E5">in the initialization or exit message</font>
+
+227
+00:10:22,529 --> 00:10:25,709
+let's use that regular PHP syntax and
+
+228
+00:10:25,709 --> 00:10:29,730
+let's run<font color="#E5E5E5"> our system command cat</font>
+
+229
+00:10:29,730 --> 00:10:33,899
+etcetera<font color="#E5E5E5"> and that is web pass for the</font>
+
+230
+00:10:33,899 --> 00:10:39,449
+next level<font color="#E5E5E5"> cool that should get us some</font>
+
+231
+00:10:39,449 --> 00:10:42,059
+commands running in this image<font color="#E5E5E5"> pointer</font>
+
+232
+00:10:42,059 --> 00:10:45,209
+dot PHP file so<font color="#E5E5E5"> now that that's been</font>
+
+233
+00:10:45,209 --> 00:10:46,800
+updated<font color="#CCCCCC"> let's take a look at what the</font>
+
+234
+00:10:46,800 --> 00:10:49,800
+output of<font color="#E5E5E5"> the script is</font><font color="#CCCCCC"> okay logger</font>
+
+235
+00:10:49,800 --> 00:10:51,809
+we got the object<font color="#E5E5E5"> putting it at that</font>
+
+236
+00:10:51,809 --> 00:10:53,339
+file<font color="#E5E5E5"> and looked like it's just running</font>
+
+237
+00:10:53,339 --> 00:10:56,129
+<font color="#CCCCCC">PHP code perfect now</font><font color="#E5E5E5"> let's go ahead and</font>
+
+238
+00:10:56,129 --> 00:10:59,300
+base64 encode this
+
+239
+00:11:01,550 --> 00:11:04,010
+<font color="#E5E5E5">okay</font><font color="#CCCCCC"> a lot</font><font color="#E5E5E5"> of stuff here but</font><font color="#CCCCCC"> we can copy</font>
+
+240
+00:11:04,010 --> 00:11:06,410
+this<font color="#E5E5E5"> and we can set this to our drawing</font>
+
+241
+00:11:06,410 --> 00:11:09,140
+variable in our session<font color="#CCCCCC"> cookie session</font>
+
+242
+00:11:09,140 --> 00:11:10,010
+dot cookies
+
+243
+00:11:10,010 --> 00:11:13,190
+equal I'm sorry drawing right<font color="#E5E5E5"> because</font>
+
+244
+00:11:13,190 --> 00:11:14,030
+that's<font color="#CCCCCC"> the cookie</font><font color="#E5E5E5"> that we're working</font>
+
+245
+00:11:14,030 --> 00:11:16,460
+<font color="#E5E5E5">with set that equal to that base64</font>
+
+246
+00:11:16,460 --> 00:11:20,870
+string<font color="#E5E5E5"> check out the response here and</font>
+
+247
+00:11:20,870 --> 00:11:23,480
+let's go ahead<font color="#E5E5E5"> and run this in the build</font>
+
+248
+00:11:23,480 --> 00:11:28,420
+output<font color="#E5E5E5"> do I have an error anywhere</font><font color="#CCCCCC"> I do</font>
+
+249
+00:11:28,420 --> 00:11:29,930
+<font color="#E5E5E5">see what we got</font>
+
+250
+00:11:29,930 --> 00:11:34,880
+<font color="#CCCCCC">oh</font><font color="#E5E5E5"> I may not have included my semicolons</font>
+
+251
+00:11:34,880 --> 00:11:37,610
+here yet<font color="#E5E5E5"> the pH in that PHP code so now</font>
+
+252
+00:11:37,610 --> 00:11:40,520
+we can go<font color="#CCCCCC"> back and get actual proper</font>
+
+253
+00:11:40,520 --> 00:11:42,770
+base64 code<font color="#E5E5E5"> here perfect let's go ahead</font>
+
+254
+00:11:42,770 --> 00:11:47,810
+and change that<font color="#E5E5E5"> now when we run this</font>
+
+255
+00:11:47,810 --> 00:11:51,260
+<font color="#CCCCCC">script</font><font color="#E5E5E5"> we have a new fatal error cannot</font>
+
+256
+00:11:51,260 --> 00:11:53,570
+<font color="#E5E5E5">use object of type logger</font><font color="#CCCCCC"> as an array</font>
+
+257
+00:11:53,570 --> 00:11:55,820
+okay<font color="#E5E5E5"> and that makes sense</font><font color="#CCCCCC"> because</font>
+
+258
+00:11:55,820 --> 00:11:57,950
+they're<font color="#E5E5E5"> just trying to read that file as</font>
+
+259
+00:11:57,950 --> 00:12:01,220
+a array right in the code it<font color="#CCCCCC"> looks like</font>
+
+260
+00:12:01,220 --> 00:12:03,370
+it tries<font color="#CCCCCC"> to read</font><font color="#E5E5E5"> that out as an array</font>
+
+261
+00:12:03,370 --> 00:12:06,830
+but we know that<font color="#E5E5E5"> that</font><font color="#CCCCCC"> means that</font><font color="#E5E5E5"> our</font>
+
+262
+00:12:06,830 --> 00:12:08,540
+code<font color="#E5E5E5"> successfully executed we know that</font>
+
+263
+00:12:08,540 --> 00:12:11,720
+we got that<font color="#E5E5E5"> object</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> unsee</font><font color="#CCCCCC"> realized so</font>
+
+264
+00:12:11,720 --> 00:12:17,390
+now we<font color="#CCCCCC"> should have</font><font color="#E5E5E5"> a new file supposedly</font>
+
+265
+00:12:17,390 --> 00:12:23,720
+at image<font color="#E5E5E5"> winner dot PHP</font><font color="#CCCCCC"> so if we get</font>
+
+266
+00:12:23,720 --> 00:12:28,610
+<font color="#E5E5E5">that and check out the response we've</font>
+
+267
+00:12:28,610 --> 00:12:32,510
+got the<font color="#E5E5E5"> next password heck yeah so I</font>
+
+268
+00:12:32,510 --> 00:12:33,800
+actually had<font color="#E5E5E5"> use this for a little</font><font color="#CCCCCC"> bit</font>
+
+269
+00:12:33,800 --> 00:12:36,140
+<font color="#CCCCCC">of testing earlier</font><font color="#E5E5E5"> some</font><font color="#CCCCCC"> Nada's 26</font>
+
+270
+00:12:36,140 --> 00:12:38,420
+passengers up here but that is the
+
+271
+00:12:38,420 --> 00:12:42,080
+naddis 27 password<font color="#CCCCCC"> 5/5 TB etc etc</font><font color="#E5E5E5"> looks</font>
+
+272
+00:12:42,080 --> 00:12:43,760
+like we<font color="#CCCCCC"> had</font><font color="#E5E5E5"> it a couple more times from</font>
+
+273
+00:12:43,760 --> 00:12:47,360
+whatever reason but that<font color="#CCCCCC"> means</font><font color="#E5E5E5"> that hey</font>
+
+274
+00:12:47,360 --> 00:12:49,760
+we won there<font color="#CCCCCC"> was our attack we did some</font>
+
+275
+00:12:49,760 --> 00:12:53,000
+PHP<font color="#E5E5E5"> object manipulation with</font>
+
+276
+00:12:53,000 --> 00:12:55,310
+deserializing objects and take an
+
+277
+00:12:55,310 --> 00:12:57,140
+advantage<font color="#E5E5E5"> of some of those cool PHP</font>
+
+278
+00:12:57,140 --> 00:12:59,300
+magic functions so if you want<font color="#E5E5E5"> to learn</font>
+
+279
+00:12:59,300 --> 00:13:02,030
+more about<font color="#E5E5E5"> this attack it is PHP objects</font>
+
+280
+00:13:02,030 --> 00:13:05,240
+<font color="#CCCCCC">D serialization</font><font color="#E5E5E5"> I want to make sure I</font>
+
+281
+00:13:05,240 --> 00:13:09,050
+can actually<font color="#E5E5E5"> type this PHP object</font><font color="#CCCCCC"> D</font>
+
+282
+00:13:09,050 --> 00:13:12,320
+serialization<font color="#CCCCCC"> and</font><font color="#E5E5E5"> you'll see a ton</font><font color="#CCCCCC"> of</font>
+
+283
+00:13:12,320 --> 00:13:15,529
+write-ups<font color="#E5E5E5"> on this you'll see</font><font color="#CCCCCC"> a lot of</font>
+
+284
+00:13:15,529 --> 00:13:17,839
+<font color="#CCCCCC">Oh wasp</font><font color="#E5E5E5"> articles etc etc and they all</font>
+
+285
+00:13:17,839 --> 00:13:20,839
+have<font color="#E5E5E5"> that same methodology where there</font>
+
+286
+00:13:20,839 --> 00:13:22,279
+is a class or a little bit of
+
+287
+00:13:22,279 --> 00:13:23,839
+object-oriented programming<font color="#E5E5E5"> set up and</font>
+
+288
+00:13:23,839 --> 00:13:26,029
+they're using<font color="#E5E5E5"> a PHP magic method like</font>
+
+289
+00:13:26,029 --> 00:13:28,550
+underscore underscore<font color="#E5E5E5"> construct or</font>
+
+290
+00:13:28,550 --> 00:13:31,100
+destructor to string<font color="#E5E5E5"> etcetra etcetra</font><font color="#CCCCCC"> so</font>
+
+291
+00:13:31,100 --> 00:13:32,930
+totally check those out<font color="#E5E5E5"> because you'll</font>
+
+292
+00:13:32,930 --> 00:13:35,420
+see them a lot<font color="#CCCCCC"> in</font><font color="#E5E5E5"> CTF that is a common</font>
+
+293
+00:13:35,420 --> 00:13:38,209
+attack<font color="#E5E5E5"> if you see the uncivilized</font>
+
+294
+00:13:38,209 --> 00:13:40,759
+function in PHP you should automatically
+
+295
+00:13:40,759 --> 00:13:42,410
+know something is wrong<font color="#CCCCCC"> especially if</font>
+
+296
+00:13:42,410 --> 00:13:43,579
+you can control<font color="#E5E5E5"> the data that's inside</font>
+
+297
+00:13:43,579 --> 00:13:45,829
+<font color="#E5E5E5">because</font><font color="#CCCCCC"> that is going to be your attack</font>
+
+298
+00:13:45,829 --> 00:13:48,620
+vector<font color="#E5E5E5"> so SuperDuper cool</font><font color="#CCCCCC"> thank you guys</font>
+
+299
+00:13:48,620 --> 00:13:50,120
+<font color="#E5E5E5">for watching</font><font color="#CCCCCC"> I want to give a shout out</font>
+
+300
+00:13:50,120 --> 00:13:52,120
+to<font color="#CCCCCC"> my supporters real quick</font>
+
+301
+00:13:52,120 --> 00:13:55,100
+thank<font color="#E5E5E5"> you to all of these people Spencer</font>
+
+302
+00:13:55,100 --> 00:13:57,019
+Clark<font color="#CCCCCC"> Gayle Horowitz</font><font color="#E5E5E5"> ok</font><font color="#CCCCCC"> Attila</font>
+
+303
+00:13:57,019 --> 00:13:59,389
+or<font color="#CCCCCC"> Gaddafi and ruler unruly destroyer of</font>
+
+304
+00:13:59,389 --> 00:14:01,519
+<font color="#E5E5E5">worlds</font><font color="#CCCCCC"> madam chair Jen Rob Timothy</font>
+
+305
+00:14:01,519 --> 00:14:03,889
+County and<font color="#E5E5E5"> Jacob H etc if I butchered</font>
+
+306
+00:14:03,889 --> 00:14:06,259
+name I'm sorry<font color="#E5E5E5"> but hey you are awesome</font>
+
+307
+00:14:06,259 --> 00:14:07,579
+thank<font color="#CCCCCC"> you</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> much for supporting me</font>
+
+308
+00:14:07,579 --> 00:14:08,720
+thank<font color="#E5E5E5"> you for</font><font color="#CCCCCC"> being willing to go on</font>
+
+309
+00:14:08,720 --> 00:14:11,360
+this<font color="#E5E5E5"> journey with</font><font color="#CCCCCC"> me</font><font color="#E5E5E5"> $1 for patreon a</font>
+
+310
+00:14:11,360 --> 00:14:12,829
+month<font color="#E5E5E5"> will give you the</font><font color="#CCCCCC"> shout-out just</font>
+
+311
+00:14:12,829 --> 00:14:15,170
+like this at the end<font color="#CCCCCC"> of every</font><font color="#E5E5E5"> video $5</font>
+
+312
+00:14:15,170 --> 00:14:16,459
+and more will give you early<font color="#CCCCCC"> access to</font>
+
+313
+00:14:16,459 --> 00:14:17,480
+<font color="#E5E5E5">things that I'm trying</font><font color="#CCCCCC"> to push out in</font>
+
+314
+00:14:17,480 --> 00:14:20,449
+the<font color="#E5E5E5"> YouTube before</font><font color="#CCCCCC"> they go live if in</font>
+
+315
+00:14:20,449 --> 00:14:21,949
+<font color="#CCCCCC">case I record anything in advance</font><font color="#E5E5E5"> and</font>
+
+316
+00:14:21,949 --> 00:14:24,019
+<font color="#E5E5E5">YouTube is scheduling so thank you thank</font>
+
+317
+00:14:24,019 --> 00:14:25,579
+<font color="#CCCCCC">you thank you</font><font color="#E5E5E5"> hey if you did like this</font>
+
+318
+00:14:25,579 --> 00:14:27,110
+video please do press that like button
+
+319
+00:14:27,110 --> 00:14:28,610
+<font color="#CCCCCC">maybe</font><font color="#E5E5E5"> leave me a comment let me know</font>
+
+320
+00:14:28,610 --> 00:14:29,689
+<font color="#E5E5E5">what you think what</font><font color="#CCCCCC"> else you'd like</font><font color="#E5E5E5"> to</font>
+
+321
+00:14:29,689 --> 00:14:31,100
+<font color="#E5E5E5">see what we could have</font><font color="#CCCCCC"> done better how</font>
+
+322
+00:14:31,100 --> 00:14:32,930
+you solve this at cetera<font color="#CCCCCC"> if you're</font>
+
+323
+00:14:32,930 --> 00:14:34,339
+willing to subscribe and if you really
+
+324
+00:14:34,339 --> 00:14:35,720
+<font color="#CCCCCC">want to support</font><font color="#E5E5E5"> me check me out on</font>
+
+325
+00:14:35,720 --> 00:14:37,399
+patreon<font color="#E5E5E5"> thanks again guys</font>
+
+326
+00:14:37,399 --> 00:00:00,000
+<font color="#CCCCCC">see you later video</font>
+

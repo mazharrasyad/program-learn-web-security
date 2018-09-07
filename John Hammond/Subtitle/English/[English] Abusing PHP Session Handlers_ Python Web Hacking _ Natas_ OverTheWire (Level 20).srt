@@ -1,0 +1,980 @@
+1
+00:00:00,000 --> 00:00:02,700
+<font color="#E5E5E5">that is level 20 introduces the page in</font>
+
+2
+00:00:02,700 --> 00:00:04,380
+a different way than the previous levels
+
+3
+00:00:04,380 --> 00:00:06,509
+like<font color="#E5E5E5"> natus 18 and natus 19 did</font>
+
+4
+00:00:06,509 --> 00:00:08,880
+immediately<font color="#E5E5E5"> we</font><font color="#CCCCCC"> are</font><font color="#E5E5E5"> already logged in as</font>
+
+5
+00:00:08,880 --> 00:00:11,010
+<font color="#CCCCCC">opposed idli as a regular user</font><font color="#E5E5E5"> but we</font>
+
+6
+00:00:11,010 --> 00:00:13,530
+have to modify the credentials and<font color="#E5E5E5"> login</font>
+
+7
+00:00:13,530 --> 00:00:15,269
+as admin<font color="#E5E5E5"> to retrieve credentials for</font>
+
+8
+00:00:15,269 --> 00:00:17,850
+<font color="#CCCCCC">natus 21</font><font color="#E5E5E5"> the next level so we have a</font>
+
+9
+00:00:17,850 --> 00:00:20,160
+form<font color="#E5E5E5"> here that allows us to post another</font>
+
+10
+00:00:20,160 --> 00:00:23,310
+HTTP method to<font color="#E5E5E5"> index.php this home page</font>
+
+11
+00:00:23,310 --> 00:00:25,170
+here<font color="#E5E5E5"> and the functionality looks like</font>
+
+12
+00:00:25,170 --> 00:00:27,570
+it's asking<font color="#CCCCCC"> for a name</font><font color="#E5E5E5"> like we can</font>
+
+13
+00:00:27,570 --> 00:00:29,880
+change our name of<font color="#E5E5E5"> whatever user were</font>
+
+14
+00:00:29,880 --> 00:00:32,549
+logged<font color="#E5E5E5"> into</font><font color="#CCCCCC"> to verify this let's take</font><font color="#E5E5E5"> a</font>
+
+15
+00:00:32,549 --> 00:00:34,770
+look at the index source we can<font color="#E5E5E5"> go ahead</font>
+
+16
+00:00:34,770 --> 00:00:37,320
+<font color="#E5E5E5">and browse</font><font color="#CCCCCC"> to that page here with our</font>
+
+17
+00:00:37,320 --> 00:00:40,320
+<font color="#CCCCCC">python script and let's go ahead and</font>
+
+18
+00:00:40,320 --> 00:00:43,829
+take this remove all of the brake lines
+
+19
+00:00:43,829 --> 00:00:46,320
+that are in the way and<font color="#E5E5E5"> let's do ties</font>
+
+20
+00:00:46,320 --> 00:00:50,629
+this thing<font color="#CCCCCC"> I did that out</font><font color="#E5E5E5"> of order so</font>
+
+21
+00:00:50,629 --> 00:00:56,520
+<font color="#CCCCCC">diantha ties</font><font color="#E5E5E5"> does that work hello</font><font color="#CCCCCC"> okay</font>
+
+22
+00:00:56,520 --> 00:00:58,949
+cool<font color="#CCCCCC"> I don't know why I said</font><font color="#E5E5E5"> he'll</font><font color="#CCCCCC"> only</font>
+
+23
+00:00:58,949 --> 00:01:02,399
+talk<font color="#E5E5E5"> on the</font><font color="#CCCCCC"> phone here alright</font><font color="#E5E5E5"> so the</font>
+
+24
+00:01:02,399 --> 00:01:04,409
+source code<font color="#E5E5E5"> that we have gives us a</font>
+
+25
+00:01:04,409 --> 00:01:05,909
+debug message that<font color="#E5E5E5"> looks like it's</font>
+
+26
+00:01:05,909 --> 00:01:08,280
+enabled<font color="#E5E5E5"> once we actually run get</font>
+
+27
+00:01:08,280 --> 00:01:10,830
+requests with the variable debug and if
+
+28
+00:01:10,830 --> 00:01:12,780
+<font color="#E5E5E5">that's present</font><font color="#CCCCCC"> normally I've ignored</font>
+
+29
+00:01:12,780 --> 00:01:15,090
+this<font color="#E5E5E5"> but we are going to need it in this</font>
+
+30
+00:01:15,090 --> 00:01:16,830
+level<font color="#E5E5E5"> so that'll get a better</font><font color="#CCCCCC"> idea of</font>
+
+31
+00:01:16,830 --> 00:01:18,299
+what's<font color="#E5E5E5"> really</font><font color="#CCCCCC"> happening here</font><font color="#E5E5E5"> the</font>
+
+32
+00:01:18,299 --> 00:01:20,100
+function print credentials looks like it
+
+33
+00:01:20,100 --> 00:01:22,650
+is<font color="#E5E5E5"> being run because</font><font color="#CCCCCC"> it tells us</font>
+
+34
+00:01:22,650 --> 00:01:24,900
+<font color="#E5E5E5">originally your login as a regular user</font>
+
+35
+00:01:24,900 --> 00:01:26,610
+<font color="#CCCCCC">login as the admin to retrieve</font>
+
+36
+00:01:26,610 --> 00:01:28,710
+credentials so we're trying<font color="#E5E5E5"> to determine</font>
+
+37
+00:01:28,710 --> 00:01:32,520
+whether or not the session<font color="#CCCCCC"> little</font>
+
+38
+00:01:32,520 --> 00:01:35,670
+dictionary<font color="#CCCCCC"> in PHP has this admin index</font>
+
+39
+00:01:35,670 --> 00:01:38,220
+of<font color="#E5E5E5"> this admin admin value and make sure</font>
+
+40
+00:01:38,220 --> 00:01:42,240
+that that is<font color="#CCCCCC"> set to 1 there I guess it's</font>
+
+41
+00:01:42,240 --> 00:01:44,240
+an<font color="#E5E5E5"> associative array in PHP</font><font color="#CCCCCC"> whatever but</font>
+
+42
+00:01:44,240 --> 00:01:46,619
+we want to make sure<font color="#E5E5E5"> that such an admin</font>
+
+43
+00:01:46,619 --> 00:01:48,570
+is set to<font color="#CCCCCC"> 1 okay that's the goal here</font>
+
+44
+00:01:48,570 --> 00:01:49,950
+and then we get the password for the
+
+45
+00:01:49,950 --> 00:01:53,159
+next<font color="#E5E5E5"> level so it looks like that this</font>
+
+46
+00:01:53,159 --> 00:01:55,140
+program defines<font color="#E5E5E5"> a lot of boilerplate</font>
+
+47
+00:01:55,140 --> 00:01:58,590
+functions that are trying<font color="#E5E5E5"> to handle how</font>
+
+48
+00:01:58,590 --> 00:02:02,070
+a session or<font color="#E5E5E5"> a PHP session is stored and</font>
+
+49
+00:02:02,070 --> 00:02:04,170
+saved we can<font color="#E5E5E5"> scroll</font><font color="#CCCCCC"> down a</font><font color="#E5E5E5"> little bit</font>
+
+50
+00:02:04,170 --> 00:02:06,000
+earlier we see other functions<font color="#E5E5E5"> like my</font>
+
+51
+00:02:06,000 --> 00:02:09,660
+destroy my garbage etc and these are set
+
+52
+00:02:09,660 --> 00:02:12,930
+as the handlers for the default<font color="#CCCCCC"> PHP</font>
+
+53
+00:02:12,930 --> 00:02:14,060
+session
+
+54
+00:02:14,060 --> 00:02:17,490
+handler<font color="#CCCCCC"> or how that's really operated</font>
+
+55
+00:02:17,490 --> 00:02:19,260
+and done in PHP<font color="#CCCCCC"> so since we're using</font>
+
+56
+00:02:19,260 --> 00:02:22,140
+<font color="#E5E5E5">these custom-made functions</font><font color="#CCCCCC"> we have the</font>
+
+57
+00:02:22,140 --> 00:02:23,790
+code here that's<font color="#CCCCCC"> visible and we might</font><font color="#E5E5E5"> be</font>
+
+58
+00:02:23,790 --> 00:02:25,410
+<font color="#E5E5E5">able</font><font color="#CCCCCC"> to do something villainous if</font><font color="#E5E5E5"> we</font>
+
+59
+00:02:25,410 --> 00:02:27,720
+really wanted<font color="#E5E5E5"> to so things like my open</font>
+
+60
+00:02:27,720 --> 00:02:29,400
+my<font color="#E5E5E5"> clothes might destroy my garbage</font>
+
+61
+00:02:29,400 --> 00:02:30,690
+<font color="#CCCCCC">they're noted as we</font><font color="#E5E5E5"> don't need these</font>
+
+62
+00:02:30,690 --> 00:02:32,220
+<font color="#E5E5E5">things</font><font color="#CCCCCC"> they just kind of return true and</font>
+
+63
+00:02:32,220 --> 00:02:33,870
+<font color="#CCCCCC">they</font><font color="#E5E5E5"> aren't really anything interesting</font>
+
+64
+00:02:33,870 --> 00:02:36,470
+<font color="#E5E5E5">but what we have here is this</font>
+
+65
+00:02:36,470 --> 00:02:38,700
+functionality<font color="#E5E5E5"> that lets</font><font color="#CCCCCC"> us change the</font>
+
+66
+00:02:38,700 --> 00:02:41,700
+name<font color="#E5E5E5"> variable</font><font color="#CCCCCC"> just like</font><font color="#E5E5E5"> we saw in</font><font color="#CCCCCC"> that</font>
+
+67
+00:02:41,700 --> 00:02:44,370
+form<font color="#E5E5E5"> if we</font><font color="#CCCCCC"> actually post</font><font color="#E5E5E5"> the page make a</font>
+
+68
+00:02:44,370 --> 00:02:47,340
+request<font color="#E5E5E5"> and set the name</font><font color="#CCCCCC"> it will go</font>
+
+69
+00:02:47,340 --> 00:02:49,050
+ahead and<font color="#E5E5E5"> create</font><font color="#CCCCCC"> a session</font><font color="#E5E5E5"> variable for</font>
+
+70
+00:02:49,050 --> 00:02:52,080
+that<font color="#E5E5E5"> it displays</font><font color="#CCCCCC"> the credentials</font><font color="#E5E5E5"> and if</font>
+
+71
+00:02:52,080 --> 00:02:54,480
+they<font color="#E5E5E5"> key exists it gets it etc etc and</font>
+
+72
+00:02:54,480 --> 00:02:57,000
+we just have<font color="#E5E5E5"> our form so the interesting</font>
+
+73
+00:02:57,000 --> 00:02:59,130
+things here<font color="#CCCCCC"> are these</font><font color="#E5E5E5"> custom functions</font>
+
+74
+00:02:59,130 --> 00:03:01,080
+<font color="#CCCCCC">am I read</font><font color="#E5E5E5"> in my</font><font color="#CCCCCC"> write because they're</font>
+
+75
+00:03:01,080 --> 00:03:04,140
+the<font color="#CCCCCC"> only valuable</font><font color="#E5E5E5"> ones really being</font><font color="#CCCCCC"> used</font>
+
+76
+00:03:04,140 --> 00:03:07,370
+for<font color="#E5E5E5"> handling our session so my read is</font>
+
+77
+00:03:07,370 --> 00:03:10,200
+interesting because<font color="#E5E5E5"> it says okay I'm</font>
+
+78
+00:03:10,200 --> 00:03:13,110
+gonna read out of<font color="#E5E5E5"> a session ID and it</font>
+
+79
+00:03:13,110 --> 00:03:16,530
+tests is the<font color="#E5E5E5"> string matching these</font>
+
+80
+00:03:16,530 --> 00:03:18,720
+characters here<font color="#E5E5E5"> or they not equal to the</font>
+
+81
+00:03:18,720 --> 00:03:20,400
+length<font color="#E5E5E5"> or whatever and it looks</font><font color="#CCCCCC"> like</font>
+
+82
+00:03:20,400 --> 00:03:21,660
+that just determines whether or<font color="#E5E5E5"> not it's</font>
+
+83
+00:03:21,660 --> 00:03:24,630
+a valid session ID<font color="#E5E5E5"> so some kind of</font>
+
+84
+00:03:24,630 --> 00:03:26,820
+handling determines in a<font color="#E5E5E5"> write form and</font>
+
+85
+00:03:26,820 --> 00:03:29,490
+then it stores these in a file<font color="#E5E5E5"> a</font>
+
+86
+00:03:29,490 --> 00:03:31,800
+<font color="#CCCCCC">filename that it</font><font color="#E5E5E5"> determines a path for</font>
+
+87
+00:03:31,800 --> 00:03:34,620
+and whether or<font color="#E5E5E5"> not it exists it will</font>
+
+88
+00:03:34,620 --> 00:03:37,290
+handle<font color="#E5E5E5"> it appropriately</font><font color="#CCCCCC"> if it does exist</font>
+
+89
+00:03:37,290 --> 00:03:40,050
+<font color="#CCCCCC">it will read</font><font color="#E5E5E5"> from it it looks like it</font>
+
+90
+00:03:40,050 --> 00:03:42,510
+<font color="#E5E5E5">gets the contents of it it creates an</font>
+
+91
+00:03:42,510 --> 00:03:45,570
+array<font color="#E5E5E5"> for the session variable</font><font color="#CCCCCC"> and it</font>
+
+92
+00:03:45,570 --> 00:03:48,930
+will<font color="#E5E5E5"> process it bit by bit</font><font color="#CCCCCC"> that explode</font>
+
+93
+00:03:48,930 --> 00:03:52,190
+function<font color="#CCCCCC"> in PHP will take a string and</font>
+
+94
+00:03:52,190 --> 00:03:55,260
+explode or split<font color="#E5E5E5"> up</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> into an array or</font>
+
+95
+00:03:55,260 --> 00:03:59,220
+a list given<font color="#CCCCCC"> a DES specific delimiter so</font>
+
+96
+00:03:59,220 --> 00:04:00,990
+our new line here just<font color="#CCCCCC"> breaks</font><font color="#E5E5E5"> it up line</font>
+
+97
+00:04:00,990 --> 00:04:02,700
+by line and<font color="#CCCCCC"> you can see this debug</font>
+
+98
+00:04:02,700 --> 00:04:04,680
+statement here<font color="#E5E5E5"> it's reading each line by</font>
+
+99
+00:04:04,680 --> 00:04:07,850
+line and then it explodes by spaces and
+
+100
+00:04:07,850 --> 00:04:10,920
+it determines<font color="#E5E5E5"> each specific part or</font>
+
+101
+00:04:10,920 --> 00:04:13,020
+segment<font color="#E5E5E5"> of</font><font color="#CCCCCC"> a line</font><font color="#E5E5E5"> that it's reading so</font>
+
+102
+00:04:13,020 --> 00:04:15,240
+if it's not nothing<font color="#E5E5E5"> if it's not an empty</font>
+
+103
+00:04:15,240 --> 00:04:20,700
+line it sets a session variable<font color="#CCCCCC"> to the</font>
+
+104
+00:04:20,700 --> 00:04:25,080
+other part of<font color="#CCCCCC"> that line like</font><font color="#E5E5E5"> key value</font>
+
+105
+00:04:25,080 --> 00:04:27,300
+we have<font color="#CCCCCC"> a key pair here</font>
+
+106
+00:04:27,300 --> 00:04:29,639
+okay that looks peculiar<font color="#CCCCCC"> because that</font>
+
+107
+00:04:29,639 --> 00:04:31,860
+can probably<font color="#E5E5E5"> be taken</font><font color="#CCCCCC"> advantage of</font><font color="#E5E5E5"> so</font>
+
+108
+00:04:31,860 --> 00:04:33,810
+it's reading<font color="#E5E5E5"> out of</font><font color="#CCCCCC"> that session</font><font color="#E5E5E5"> file</font>
+
+109
+00:04:33,810 --> 00:04:36,330
+<font color="#E5E5E5">now</font><font color="#CCCCCC"> let's determine how is it</font><font color="#E5E5E5"> getting</font>
+
+110
+00:04:36,330 --> 00:04:38,580
+written<font color="#CCCCCC"> to how</font><font color="#E5E5E5"> how does the my</font><font color="#CCCCCC"> write</font>
+
+111
+00:04:38,580 --> 00:04:40,530
+<font color="#E5E5E5">function work we get our debug message</font>
+
+112
+00:04:40,530 --> 00:04:42,060
+we test if it's in the<font color="#E5E5E5"> correct form</font>
+
+113
+00:04:42,060 --> 00:04:45,150
+again we get the<font color="#E5E5E5"> same file name saving</font>
+
+114
+00:04:45,150 --> 00:04:48,629
+and we<font color="#CCCCCC"> sort by</font><font color="#E5E5E5"> keys the session</font><font color="#CCCCCC"> variable</font>
+
+115
+00:04:48,629 --> 00:04:51,030
+for each session variable that we have
+
+116
+00:04:51,030 --> 00:04:54,479
+we<font color="#E5E5E5"> to note</font><font color="#CCCCCC"> that the bug here and we add</font>
+
+117
+00:04:54,479 --> 00:04:57,000
+it<font color="#CCCCCC"> to a string that we're originally</font>
+
+118
+00:04:57,000 --> 00:04:59,129
+appending to<font color="#E5E5E5"> as from nothing and we</font>
+
+119
+00:04:59,129 --> 00:05:00,960
+build out a new<font color="#E5E5E5"> file based off of that</font>
+
+120
+00:05:00,960 --> 00:05:02,599
+<font color="#E5E5E5">because</font><font color="#CCCCCC"> we're using file put contents</font>
+
+121
+00:05:02,599 --> 00:05:05,759
+<font color="#CCCCCC">okay</font><font color="#E5E5E5"> so let's actually play with this</font>
+
+122
+00:05:05,759 --> 00:05:09,300
+<font color="#E5E5E5">now in code now in experimenting with</font>
+
+123
+00:05:09,300 --> 00:05:11,009
+the level because we're in Python
+
+124
+00:05:11,009 --> 00:05:13,259
+because<font color="#E5E5E5"> we're using this response dot</font>
+
+125
+00:05:13,259 --> 00:05:15,000
+<font color="#CCCCCC">text session that we're able</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> work</font>
+
+126
+00:05:15,000 --> 00:05:18,180
+with we can handle<font color="#E5E5E5"> multiple calls all in</font>
+
+127
+00:05:18,180 --> 00:05:19,800
+code because we're doing<font color="#CCCCCC"> this this code</font>
+
+128
+00:05:19,800 --> 00:05:20,400
+like this
+
+129
+00:05:20,400 --> 00:05:22,710
+so let's actually<font color="#E5E5E5"> have a divider here</font>
+
+130
+00:05:22,710 --> 00:05:25,159
+<font color="#E5E5E5">because I want to show you the</font>
+
+131
+00:05:25,159 --> 00:05:29,610
+development and in this by default we
+
+132
+00:05:29,610 --> 00:05:32,880
+are still going<font color="#E5E5E5"> to the source code</font><font color="#CCCCCC"> so</font>
+
+133
+00:05:32,880 --> 00:05:34,409
+<font color="#CCCCCC">let's</font><font color="#E5E5E5"> first fix that let's go to the</font>
+
+134
+00:05:34,409 --> 00:05:36,990
+<font color="#E5E5E5">original page it tells us you're logged</font>
+
+135
+00:05:36,990 --> 00:05:39,180
+in as an individual as a regular user
+
+136
+00:05:39,180 --> 00:05:42,180
+nothing special<font color="#E5E5E5"> let's turn those debug</font>
+
+137
+00:05:42,180 --> 00:05:46,050
+methods on by changing this link here to
+
+138
+00:05:46,050 --> 00:05:48,240
+include HTTP GET<font color="#CCCCCC"> variable so so</font>
+
+139
+00:05:48,240 --> 00:05:49,800
+following with the<font color="#E5E5E5"> question mark debug</font>
+
+140
+00:05:49,800 --> 00:05:51,479
+<font color="#E5E5E5">can equal really anything</font><font color="#CCCCCC"> but I'll just</font>
+
+141
+00:05:51,479 --> 00:05:54,240
+say true readability<font color="#E5E5E5"> and we'll check out</font>
+
+142
+00:05:54,240 --> 00:05:56,639
+what this<font color="#E5E5E5"> content is it says</font><font color="#CCCCCC"> okay debug</font>
+
+143
+00:05:56,639 --> 00:06:00,659
+my read<font color="#E5E5E5"> blah blah blah</font><font color="#CCCCCC"> this</font><font color="#E5E5E5"> must be the</font>
+
+144
+00:06:00,659 --> 00:06:02,699
+random<font color="#E5E5E5"> thing</font><font color="#CCCCCC"> that's created it says okay</font>
+
+145
+00:06:02,699 --> 00:06:04,590
+this session<font color="#E5E5E5"> file doesn't exist</font><font color="#CCCCCC"> so it</font>
+
+146
+00:06:04,590 --> 00:06:06,419
+<font color="#E5E5E5">must have been created and that's why at</font>
+
+147
+00:06:06,419 --> 00:06:08,039
+the<font color="#CCCCCC"> very end of the page we see the my</font>
+
+148
+00:06:08,039 --> 00:06:11,009
+write function<font color="#E5E5E5"> being ran and saving it</font>
+
+149
+00:06:11,009 --> 00:06:13,979
+in<font color="#CCCCCC"> varlyn PHP so whatever whatever file</font>
+
+150
+00:06:13,979 --> 00:06:15,509
+on the server<font color="#CCCCCC"> that this session</font><font color="#E5E5E5"> is being</font>
+
+151
+00:06:15,509 --> 00:06:19,650
+stored<font color="#E5E5E5"> into so we're operating in a</font>
+
+152
+00:06:19,650 --> 00:06:21,900
+session<font color="#CCCCCC"> right every</font><font color="#E5E5E5"> time I run this</font>
+
+153
+00:06:21,900 --> 00:06:24,180
+program run this<font color="#E5E5E5"> Python script we're</font>
+
+154
+00:06:24,180 --> 00:06:26,940
+gonna get a different<font color="#CCCCCC"> string as our</font>
+
+155
+00:06:26,940 --> 00:06:30,360
+session string<font color="#E5E5E5"> so what I'm going to do</font>
+
+156
+00:06:30,360 --> 00:06:32,550
+is just make multiple calls but I'm not
+
+157
+00:06:32,550 --> 00:06:34,770
+going to<font color="#E5E5E5"> I'm gonna keep</font><font color="#CCCCCC"> adding to the</font>
+
+158
+00:06:34,770 --> 00:06:36,719
+current script we're working with<font color="#CCCCCC"> let's</font>
+
+159
+00:06:36,719 --> 00:06:38,460
+go ahead and see if we<font color="#E5E5E5"> can change our</font>
+
+160
+00:06:38,460 --> 00:06:41,230
+name or let's before
+
+161
+00:06:41,230 --> 00:06:43,270
+<font color="#E5E5E5">we get into that let's see are we</font>
+
+162
+00:06:43,270 --> 00:06:46,120
+keeping the same session following this
+
+163
+00:06:46,120 --> 00:06:49,000
+or after<font color="#CCCCCC"> we if we get another</font><font color="#E5E5E5"> request</font>
+
+164
+00:06:49,000 --> 00:06:53,980
+here we say<font color="#CCCCCC"> ok</font><font color="#E5E5E5"> let's get a random one</font>
+
+165
+00:06:53,980 --> 00:06:57,190
+<font color="#CCCCCC">the session file doesn't exist we write</font>
+
+166
+00:06:57,190 --> 00:07:00,190
+<font color="#E5E5E5">to it and then in the second call using</font>
+
+167
+00:07:00,190 --> 00:07:01,720
+<font color="#E5E5E5">our dividers to tell that's a second</font>
+
+168
+00:07:01,720 --> 00:07:05,020
+call<font color="#E5E5E5"> we see</font><font color="#CCCCCC"> ok now that file does exist</font>
+
+169
+00:07:05,020 --> 00:07:07,090
+because<font color="#E5E5E5"> we created it there's nothing</font>
+
+170
+00:07:07,090 --> 00:07:09,460
+really<font color="#CCCCCC"> in there so it was able</font><font color="#E5E5E5"> to read</font>
+
+171
+00:07:09,460 --> 00:07:12,240
+<font color="#E5E5E5">nothing but we should have</font><font color="#CCCCCC"> some other</font>
+
+172
+00:07:12,240 --> 00:07:14,710
+variables we can<font color="#E5E5E5"> put into</font><font color="#CCCCCC"> it because</font><font color="#E5E5E5"> of</font>
+
+173
+00:07:14,710 --> 00:07:17,290
+<font color="#CCCCCC">that change name functionality now let's</font>
+
+174
+00:07:17,290 --> 00:07:20,200
+try and<font color="#E5E5E5"> include a name that we can post</font>
+
+175
+00:07:20,200 --> 00:07:28,450
+to it let's make<font color="#CCCCCC"> a call to post with</font>
+
+176
+00:07:28,450 --> 00:07:38,260
+data<font color="#E5E5E5"> being</font><font color="#CCCCCC"> name can</font><font color="#E5E5E5"> be</font><font color="#CCCCCC"> close</font><font color="#E5E5E5"> up</font><font color="#CCCCCC"> now that</font>
+
+177
+00:07:38,260 --> 00:07:42,040
+<font color="#CCCCCC">we've posted to it again</font><font color="#E5E5E5"> session file</font>
+
+178
+00:07:42,040 --> 00:07:45,220
+doesn't exist<font color="#E5E5E5"> it will create it now that</font>
+
+179
+00:07:45,220 --> 00:07:47,650
+we've made<font color="#E5E5E5"> a post we have set debug</font>
+
+180
+00:07:47,650 --> 00:07:49,180
+statements out here name is set to
+
+181
+00:07:49,180 --> 00:07:54,820
+<font color="#CCCCCC">please sub and we write in here the in</font>
+
+182
+00:07:54,820 --> 00:07:56,740
+the session file we're setting name a
+
+183
+00:07:56,740 --> 00:08:00,850
+string<font color="#E5E5E5"> a 6 character length to contents</font>
+
+184
+00:08:00,850 --> 00:08:04,480
+please<font color="#E5E5E5"> sub final call once we run get we</font>
+
+185
+00:08:04,480 --> 00:08:08,910
+<font color="#E5E5E5">are reading here reading from</font><font color="#CCCCCC"> var</font><font color="#E5E5E5"> Lib</font>
+
+186
+00:08:08,910 --> 00:08:14,290
+<font color="#E5E5E5">read name is please sub</font><font color="#CCCCCC"> ok</font><font color="#E5E5E5"> so we were</font>
+
+187
+00:08:14,290 --> 00:08:16,510
+able<font color="#CCCCCC"> to do that</font><font color="#E5E5E5"> and in the my write</font>
+
+188
+00:08:16,510 --> 00:08:18,400
+function it still keeps<font color="#E5E5E5"> the name here</font>
+
+189
+00:08:18,400 --> 00:08:21,820
+now let's see if<font color="#E5E5E5"> we can inject something</font>
+
+190
+00:08:21,820 --> 00:08:24,430
+<font color="#E5E5E5">or get in</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> way of this read and write</font>
+
+191
+00:08:24,430 --> 00:08:26,590
+function<font color="#E5E5E5"> because it doesn't look</font><font color="#CCCCCC"> like</font>
+
+192
+00:08:26,590 --> 00:08:28,690
+<font color="#E5E5E5">they're sanitizing anything at all in</font>
+
+193
+00:08:28,690 --> 00:08:31,780
+that in that<font color="#CCCCCC"> source code</font><font color="#E5E5E5"> if they're just</font>
+
+194
+00:08:31,780 --> 00:08:34,990
+splitting up variables line by line and
+
+195
+00:08:34,990 --> 00:08:37,240
+with a space in<font color="#CCCCCC"> between</font><font color="#E5E5E5"> each thing we</font>
+
+196
+00:08:37,240 --> 00:08:41,490
+could<font color="#E5E5E5"> just as easily add a new line and</font>
+
+197
+00:08:41,490 --> 00:08:43,960
+change whatever session variables we
+
+198
+00:08:43,960 --> 00:08:47,260
+really wanted<font color="#CCCCCC"> to</font><font color="#E5E5E5"> oh you know like admin</font>
+
+199
+00:08:47,260 --> 00:08:50,860
+and set admin equal to<font color="#CCCCCC"> 1 so let's go</font>
+
+200
+00:08:50,860 --> 00:08:53,410
+ahead<font color="#E5E5E5"> and try</font><font color="#CCCCCC"> that in our code when</font>
+
+201
+00:08:53,410 --> 00:08:55,030
+we're making<font color="#CCCCCC"> our post request</font>
+
+202
+00:08:55,030 --> 00:08:57,550
+we can say name<font color="#E5E5E5"> please sub or whatever</font>
+
+203
+00:08:57,550 --> 00:09:00,010
+we really wanted<font color="#E5E5E5"> to but if we had a new</font>
+
+204
+00:09:00,010 --> 00:09:02,860
+line character backslash n now<font color="#CCCCCC"> we can</font>
+
+205
+00:09:02,860 --> 00:09:04,630
+set any other session variable to
+
+206
+00:09:04,630 --> 00:09:06,220
+whatever<font color="#E5E5E5"> we want</font><font color="#CCCCCC"> because we're getting</font>
+
+207
+00:09:06,220 --> 00:09:08,470
+in the way of<font color="#E5E5E5"> that session</font><font color="#CCCCCC"> Handler admin</font>
+
+208
+00:09:08,470 --> 00:09:14,350
+and set it<font color="#E5E5E5"> to</font><font color="#CCCCCC"> one right cool let's go</font>
+
+209
+00:09:14,350 --> 00:09:17,260
+ahead and take a look<font color="#CCCCCC"> if</font><font color="#E5E5E5"> I run this code</font>
+
+210
+00:09:17,260 --> 00:09:19,930
+<font color="#CCCCCC">at the very very</font><font color="#E5E5E5"> end after we've</font>
+
+211
+00:09:19,930 --> 00:09:22,000
+established the session<font color="#E5E5E5"> and then after</font>
+
+212
+00:09:22,000 --> 00:09:24,430
+we've modified it<font color="#CCCCCC"> now we can</font><font color="#E5E5E5"> check back</font>
+
+213
+00:09:24,430 --> 00:09:27,910
+it says<font color="#E5E5E5"> awesome</font><font color="#CCCCCC"> you are an admin</font><font color="#E5E5E5"> the</font>
+
+214
+00:09:27,910 --> 00:09:29,920
+credentials for<font color="#CCCCCC"> the next level are NAT</font>
+
+215
+00:09:29,920 --> 00:09:32,950
+is 21 and the password<font color="#E5E5E5"> right here so I</font>
+
+216
+00:09:32,950 --> 00:09:35,050
+hope that<font color="#CCCCCC"> makes sense</font><font color="#E5E5E5"> because</font><font color="#CCCCCC"> we were</font>
+
+217
+00:09:35,050 --> 00:09:36,700
+able<font color="#E5E5E5"> to just read</font><font color="#CCCCCC"> the source code see</font>
+
+218
+00:09:36,700 --> 00:09:38,350
+how<font color="#CCCCCC"> its determining these variables</font>
+
+219
+00:09:38,350 --> 00:09:41,500
+<font color="#E5E5E5">getting saved and</font><font color="#CCCCCC"> loaded essentially</font>
+
+220
+00:09:41,500 --> 00:09:44,710
+from the<font color="#CCCCCC"> PHP</font><font color="#E5E5E5"> session with those custom</font>
+
+221
+00:09:44,710 --> 00:09:46,600
+handlers and<font color="#E5E5E5"> we're able to take</font>
+
+222
+00:09:46,600 --> 00:09:49,900
+<font color="#E5E5E5">advantage</font><font color="#CCCCCC"> of them so sweet let's go</font>
+
+223
+00:09:49,900 --> 00:09:52,480
+ahead<font color="#E5E5E5"> and save this now create a new</font>
+
+224
+00:09:52,480 --> 00:09:57,250
+script<font color="#CCCCCC"> and that is</font><font color="#E5E5E5"> 21 and we don't need</font>
+
+225
+00:09:57,250 --> 00:10:00,670
+all this junk<font color="#E5E5E5"> but we do want to move to</font>
+
+226
+00:10:00,670 --> 00:10:06,010
+the<font color="#E5E5E5"> next level</font><font color="#CCCCCC"> here and we've got the</font>
+
+227
+00:10:06,010 --> 00:10:07,960
+<font color="#E5E5E5">next level okay</font><font color="#CCCCCC"> so thank you guys for</font>
+
+228
+00:10:07,960 --> 00:10:11,560
+<font color="#CCCCCC">watching I</font><font color="#E5E5E5"> hope you enjoy this if you do</font>
+
+229
+00:10:11,560 --> 00:10:14,050
+like<font color="#E5E5E5"> these videos pre please press that</font>
+
+230
+00:10:14,050 --> 00:10:15,460
+like button<font color="#E5E5E5"> and I'm getting my</font><font color="#CCCCCC"> words</font>
+
+231
+00:10:15,460 --> 00:10:17,740
+<font color="#CCCCCC">tumbled</font><font color="#E5E5E5"> maybe leave me a comment let me</font>
+
+232
+00:10:17,740 --> 00:10:18,730
+know what<font color="#CCCCCC"> you think what you'd like to</font>
+
+233
+00:10:18,730 --> 00:10:20,320
+see next<font color="#CCCCCC"> what I can do</font><font color="#E5E5E5"> better how else</font>
+
+234
+00:10:20,320 --> 00:10:21,670
+you<font color="#E5E5E5"> solve this if you're willing to</font>
+
+235
+00:10:21,670 --> 00:10:23,320
+subscribe and<font color="#E5E5E5"> if you really</font><font color="#CCCCCC"> really want</font>
+
+236
+00:10:23,320 --> 00:10:24,970
+<font color="#E5E5E5">to support me please</font><font color="#CCCCCC"> check me out</font><font color="#E5E5E5"> on</font>
+
+237
+00:10:24,970 --> 00:10:28,660
+patreon<font color="#CCCCCC"> on that note I want to</font><font color="#E5E5E5"> give a</font>
+
+238
+00:10:28,660 --> 00:10:30,520
+special shout out to<font color="#E5E5E5"> Spencer Clark who</font>
+
+239
+00:10:30,520 --> 00:10:32,800
+is<font color="#E5E5E5"> currently supporting me on patreon</font><font color="#CCCCCC"> if</font>
+
+240
+00:10:32,800 --> 00:10:34,990
+you do<font color="#E5E5E5"> support</font><font color="#CCCCCC"> me I'll give you a shout</font>
+
+241
+00:10:34,990 --> 00:10:37,510
+<font color="#CCCCCC">out and literally</font><font color="#E5E5E5"> every</font><font color="#CCCCCC"> single video $5</font>
+
+242
+00:10:37,510 --> 00:10:38,890
+or more<font color="#CCCCCC"> I'll give you early access</font><font color="#E5E5E5"> to</font>
+
+243
+00:10:38,890 --> 00:10:40,030
+just<font color="#E5E5E5"> about everything I release on</font>
+
+244
+00:10:40,030 --> 00:10:41,500
+<font color="#E5E5E5">YouTube so thanks for</font><font color="#CCCCCC"> watching</font>
+
+245
+00:10:41,500 --> 00:00:00,000
+see you<font color="#E5E5E5"> soon</font>
+

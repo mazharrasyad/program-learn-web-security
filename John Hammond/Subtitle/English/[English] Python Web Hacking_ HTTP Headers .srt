@@ -1,0 +1,920 @@
+1
+00:00:00,030 --> 00:00:01,829
+what's up guys this<font color="#CCCCCC"> is</font><font color="#E5E5E5"> John Hammond</font>
+
+2
+00:00:01,829 --> 00:00:04,230
+continuing on the<font color="#CCCCCC"> natus war game from</font>
+
+3
+00:00:04,230 --> 00:00:06,210
+<font color="#E5E5E5">over the wire</font><font color="#CCCCCC"> I just got the</font><font color="#E5E5E5"> password</font>
+
+4
+00:00:06,210 --> 00:00:08,250
+for<font color="#CCCCCC"> natus level</font><font color="#E5E5E5"> 4</font><font color="#CCCCCC"> so we've got that</font>
+
+5
+00:00:08,250 --> 00:00:10,139
+<font color="#CCCCCC">going in our script</font><font color="#E5E5E5"> let's actually print</font>
+
+6
+00:00:10,139 --> 00:00:11,759
+<font color="#E5E5E5">out the content of the webpage</font><font color="#CCCCCC"> as we</font>
+
+7
+00:00:11,759 --> 00:00:14,130
+connect to it make sure<font color="#CCCCCC"> we update the</font>
+
+8
+00:00:14,130 --> 00:00:16,650
+path or the file that we're actually
+
+9
+00:00:16,650 --> 00:00:19,590
+retrieving<font color="#CCCCCC"> and we want to just go</font><font color="#E5E5E5"> ahead</font>
+
+10
+00:00:19,590 --> 00:00:22,140
+and<font color="#E5E5E5"> get the page</font><font color="#CCCCCC"> let's set the syntax to</font>
+
+11
+00:00:22,140 --> 00:00:24,689
+HTML so we get that<font color="#E5E5E5"> nice color coding in</font>
+
+12
+00:00:24,689 --> 00:00:27,660
+<font color="#E5E5E5">sublime</font><font color="#CCCCCC"> text and the content</font><font color="#E5E5E5"> of this web</font>
+
+13
+00:00:27,660 --> 00:00:30,179
+page says access disallowed<font color="#CCCCCC"> you're</font>
+
+14
+00:00:30,179 --> 00:00:32,759
+<font color="#E5E5E5">visiting from empty string well</font>
+
+15
+00:00:32,759 --> 00:00:35,450
+authorized<font color="#CCCCCC"> users should only come from</font>
+
+16
+00:00:35,450 --> 00:00:43,100
+<font color="#E5E5E5">HTTP natus</font><font color="#CCCCCC"> 5</font><font color="#E5E5E5"> at</font><font color="#CCCCCC"> nat Assad</font><font color="#E5E5E5"> Labs</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so</font>
+
+17
+00:00:43,100 --> 00:00:46,680
+well what do<font color="#E5E5E5"> we what do we need to do</font>
+
+18
+00:00:46,680 --> 00:00:50,760
+here<font color="#CCCCCC"> I am curious how its determining</font>
+
+19
+00:00:50,760 --> 00:00:53,160
+where we are visiting<font color="#E5E5E5"> from and I think</font>
+
+20
+00:00:53,160 --> 00:00:57,050
+<font color="#CCCCCC">it has something to do with</font><font color="#E5E5E5"> HTTP headers</font>
+
+21
+00:00:57,050 --> 00:01:00,570
+so HTTP headers are carried with every
+
+22
+00:01:00,570 --> 00:01:02,309
+single<font color="#E5E5E5"> request that you end up passing</font>
+
+23
+00:01:02,309 --> 00:01:05,369
+<font color="#E5E5E5">the server</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> typically they can come</font>
+
+24
+00:01:05,369 --> 00:01:10,500
+with a get or a post or any other HTTP
+
+25
+00:01:10,500 --> 00:01:13,140
+verb or what you're trying<font color="#CCCCCC"> to do so come</font>
+
+26
+00:01:13,140 --> 00:01:15,869
+on some of the common ones are like
+
+27
+00:01:15,869 --> 00:01:19,530
+x-forwarded-for<font color="#CCCCCC"> or</font><font color="#E5E5E5"> except the kind</font><font color="#CCCCCC"> of</font>
+
+28
+00:01:19,530 --> 00:01:21,119
+file<font color="#CCCCCC"> that you're looking for</font><font color="#E5E5E5"> even though</font>
+
+29
+00:01:21,119 --> 00:01:22,770
+it'll carry the cookies with you<font color="#CCCCCC"> etcetra</font>
+
+30
+00:01:22,770 --> 00:01:26,009
+<font color="#CCCCCC">etcetra and you can continue</font><font color="#E5E5E5"> through</font>
+
+31
+00:01:26,009 --> 00:01:28,590
+these etc and examine some of<font color="#E5E5E5"> them but</font>
+
+32
+00:01:28,590 --> 00:01:31,799
+they<font color="#CCCCCC"> are like a dictionary</font><font color="#E5E5E5"> value and key</font>
+
+33
+00:01:31,799 --> 00:01:35,040
+pair of things that you're giving<font color="#CCCCCC"> to the</font>
+
+34
+00:01:35,040 --> 00:01:38,009
+<font color="#E5E5E5">web server</font><font color="#CCCCCC"> so headers can</font><font color="#E5E5E5"> have</font><font color="#CCCCCC"> specific</font>
+
+35
+00:01:38,009 --> 00:01:40,619
+values and one of the<font color="#E5E5E5"> most common ones</font>
+
+36
+00:01:40,619 --> 00:01:42,509
+<font color="#CCCCCC">that we'll see</font><font color="#E5E5E5"> at least when we're</font>
+
+37
+00:01:42,509 --> 00:01:44,880
+making<font color="#E5E5E5"> a request with a get request or</font>
+
+38
+00:01:44,880 --> 00:01:46,770
+get verb<font color="#CCCCCC"> that we're doing</font><font color="#E5E5E5"> at least</font><font color="#CCCCCC"> in</font>
+
+39
+00:01:46,770 --> 00:01:48,350
+<font color="#E5E5E5">Python and through our web</font><font color="#CCCCCC"> browser is</font>
+
+40
+00:01:48,350 --> 00:01:52,920
+with the referrer<font color="#E5E5E5"> or HTTP header and</font>
+
+41
+00:01:52,920 --> 00:01:55,140
+that's I think what they're examining<font color="#E5E5E5"> to</font>
+
+42
+00:01:55,140 --> 00:01:58,590
+see where we are<font color="#CCCCCC"> coming from</font><font color="#E5E5E5"> this from 1</font>
+
+43
+00:01:58,590 --> 00:02:00,149
+up here typically contains internet
+
+44
+00:02:00,149 --> 00:02:04,649
+<font color="#E5E5E5">email address</font><font color="#CCCCCC"> host says the domain name</font>
+
+45
+00:02:04,649 --> 00:02:06,509
+of<font color="#E5E5E5"> the server</font><font color="#CCCCCC"> that's actually really</font>
+
+46
+00:02:06,509 --> 00:02:08,580
+crucial for<font color="#E5E5E5"> virtual hosting and virtual</font>
+
+47
+00:02:08,580 --> 00:02:11,190
+<font color="#CCCCCC">host routing you'll see that</font><font color="#E5E5E5"> a ton in a</font>
+
+48
+00:02:11,190 --> 00:02:13,410
+lot of<font color="#CCCCCC"> hack the box</font>
+
+49
+00:02:13,410 --> 00:02:15,660
+vulnerable machines and<font color="#E5E5E5"> other practice</font>
+
+50
+00:02:15,660 --> 00:02:17,490
+<font color="#E5E5E5">you may do with that hack the</font><font color="#CCCCCC"> box</font>
+
+51
+00:02:17,490 --> 00:02:20,220
+<font color="#E5E5E5">training platform but refer is</font><font color="#CCCCCC"> well I</font>
+
+52
+00:02:20,220 --> 00:02:21,210
+think<font color="#E5E5E5"> what we're gonna be checking out</font>
+
+53
+00:02:21,210 --> 00:02:23,040
+right now<font color="#E5E5E5"> user agents is all about your</font>
+
+54
+00:02:23,040 --> 00:02:24,720
+browser<font color="#E5E5E5"> and maybe we'll get into</font><font color="#CCCCCC"> some of</font>
+
+55
+00:02:24,720 --> 00:02:27,750
+<font color="#CCCCCC">that in a later level and natus and</font>
+
+56
+00:02:27,750 --> 00:02:29,490
+maybe a later video<font color="#CCCCCC"> let's</font><font color="#E5E5E5"> check out</font>
+
+57
+00:02:29,490 --> 00:02:32,760
+refer though<font color="#E5E5E5"> so we can add HTTP headers</font>
+
+58
+00:02:32,760 --> 00:02:36,300
+<font color="#E5E5E5">like kind of how we're doing a keyword</font>
+
+59
+00:02:36,300 --> 00:02:39,270
+argument here in our get<font color="#E5E5E5"> request</font><font color="#CCCCCC"> in</font>
+
+60
+00:02:39,270 --> 00:02:42,090
+using the request module in Python<font color="#E5E5E5"> and</font>
+
+61
+00:02:42,090 --> 00:02:44,700
+we can do that with a dictionary<font color="#E5E5E5"> data</font>
+
+62
+00:02:44,700 --> 00:02:46,620
+type<font color="#E5E5E5"> so I'm going to call this headers</font>
+
+63
+00:02:46,620 --> 00:02:49,290
+and in<font color="#E5E5E5"> Python</font><font color="#CCCCCC"> we'll</font><font color="#E5E5E5"> just have a string</font>
+
+64
+00:02:49,290 --> 00:02:52,200
+for the key<font color="#E5E5E5"> that we're trying to use</font>
+
+65
+00:02:52,200 --> 00:02:55,350
+refer and we'll give it a value<font color="#E5E5E5"> that we</font>
+
+66
+00:02:55,350 --> 00:02:57,300
+want<font color="#E5E5E5"> so</font><font color="#CCCCCC"> let's say</font><font color="#E5E5E5"> just to test it out</font>
+
+67
+00:02:57,300 --> 00:03:03,000
+<font color="#E5E5E5">will be like</font><font color="#CCCCCC"> a subscribe lols shameless</font>
+
+68
+00:03:03,000 --> 00:03:06,150
+<font color="#CCCCCC">plug there and let's pass that in to</font><font color="#E5E5E5"> our</font>
+
+69
+00:03:06,150 --> 00:03:08,190
+<font color="#CCCCCC">well I've</font><font color="#E5E5E5"> been calling this variable</font>
+
+70
+00:03:08,190 --> 00:03:11,910
+<font color="#E5E5E5">reponse for all of these videos holy cow</font>
+
+71
+00:03:11,910 --> 00:03:14,670
+why didn't you guys tell me that's<font color="#E5E5E5"> so</font>
+
+72
+00:03:14,670 --> 00:03:16,530
+funny I<font color="#E5E5E5"> got a rough fix</font><font color="#CCCCCC"> gotta fix</font><font color="#E5E5E5"> all</font>
+
+73
+00:03:16,530 --> 00:03:18,570
+those<font color="#E5E5E5"> other scripts</font><font color="#CCCCCC"> all right let's pass</font>
+
+74
+00:03:18,570 --> 00:03:20,610
+in this this argument<font color="#CCCCCC"> law as a keyword</font>
+
+75
+00:03:20,610 --> 00:03:23,030
+keyword variable and keyword argument
+
+76
+00:03:23,030 --> 00:03:25,470
+<font color="#CCCCCC">headers equals headers here</font>
+
+77
+00:03:25,470 --> 00:03:27,180
+that's<font color="#CCCCCC"> probably confusing because</font><font color="#E5E5E5"> I'm</font>
+
+78
+00:03:27,180 --> 00:03:30,209
+<font color="#E5E5E5">just using this variable named headers</font>
+
+79
+00:03:30,209 --> 00:03:32,310
+<font color="#E5E5E5">to refer</font><font color="#CCCCCC"> to this</font><font color="#E5E5E5"> keyword argument but I</font>
+
+80
+00:03:32,310 --> 00:03:34,709
+promise it's doing what we want<font color="#CCCCCC"> it to</font><font color="#E5E5E5"> do</font>
+
+81
+00:03:34,709 --> 00:03:36,660
+even though it sounds<font color="#E5E5E5"> pretty silly and</font>
+
+82
+00:03:36,660 --> 00:03:38,910
+repetitive now let's run this script<font color="#CCCCCC"> and</font>
+
+83
+00:03:38,910 --> 00:03:41,120
+see what happens
+
+84
+00:03:41,120 --> 00:03:43,800
+checking out the response it says access
+
+85
+00:03:43,800 --> 00:03:46,380
+to salade<font color="#CCCCCC"> you're visiting from</font><font color="#E5E5E5"> subscribe</font>
+
+86
+00:03:46,380 --> 00:03:49,560
+<font color="#CCCCCC">lolz okay so that clearly</font><font color="#E5E5E5"> did work while</font>
+
+87
+00:03:49,560 --> 00:03:51,000
+authorized<font color="#CCCCCC"> users should only come from</font>
+
+88
+00:03:51,000 --> 00:03:54,510
+<font color="#E5E5E5">this string that</font><font color="#CCCCCC"> is v then that</font><font color="#E5E5E5"> is v URL</font>
+
+89
+00:03:54,510 --> 00:03:56,790
+<font color="#E5E5E5">so let's use that</font><font color="#CCCCCC"> as the value for our</font>
+
+90
+00:03:56,790 --> 00:03:59,580
+<font color="#E5E5E5">referer header</font><font color="#CCCCCC"> paste that right</font><font color="#E5E5E5"> here and</font>
+
+91
+00:03:59,580 --> 00:04:02,489
+now we can<font color="#CCCCCC"> run this script</font><font color="#E5E5E5"> check out the</font>
+
+92
+00:04:02,489 --> 00:04:03,230
+response
+
+93
+00:04:03,230 --> 00:04:05,970
+it says awesome<font color="#CCCCCC"> access</font><font color="#E5E5E5"> granted the</font>
+
+94
+00:04:05,970 --> 00:04:09,450
+password<font color="#CCCCCC"> for NAT is v</font><font color="#E5E5E5"> is this</font><font color="#CCCCCC"> lets</font>
+
+95
+00:04:09,450 --> 00:04:13,920
+totally steal that<font color="#E5E5E5"> and use that for our</font>
+
+96
+00:04:13,920 --> 00:04:21,080
+<font color="#E5E5E5">regular expressions scraper</font>
+
+97
+00:04:23,069 --> 00:04:27,370
+do we get<font color="#E5E5E5"> the password that we want we</font>
+
+98
+00:04:27,370 --> 00:04:30,940
+do<font color="#E5E5E5"> perfect</font><font color="#CCCCCC"> alright let's go ahead</font><font color="#E5E5E5"> and</font>
+
+99
+00:04:30,940 --> 00:04:34,690
+save this this is the correct<font color="#CCCCCC"> natus for</font>
+
+100
+00:04:34,690 --> 00:04:37,150
+script now let's create a new<font color="#CCCCCC"> one for</font>
+
+101
+00:04:37,150 --> 00:04:45,490
+<font color="#CCCCCC">natus five changing the changing the</font>
+
+102
+00:04:45,490 --> 00:04:47,289
+<font color="#CCCCCC">username and</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> password</font>
+
+103
+00:04:47,289 --> 00:04:48,759
+we probably don't<font color="#E5E5E5"> need these headers</font>
+
+104
+00:04:48,759 --> 00:04:51,639
+anymore<font color="#CCCCCC"> so let's just go ahead and</font>
+
+105
+00:04:51,639 --> 00:04:53,050
+create<font color="#E5E5E5"> a new line where we aren't</font>
+
+106
+00:04:53,050 --> 00:04:55,419
+<font color="#CCCCCC">passing those in and</font><font color="#E5E5E5"> we don't need to</font>
+
+107
+00:04:55,419 --> 00:04:57,520
+see the password<font color="#E5E5E5"> we just want to see the</font>
+
+108
+00:04:57,520 --> 00:04:58,569
+content<font color="#E5E5E5"> because we are making a new</font>
+
+109
+00:04:58,569 --> 00:05:02,500
+request to jump into<font color="#E5E5E5"> this next level</font><font color="#CCCCCC"> on</font>
+
+110
+00:05:02,500 --> 00:05:06,580
+the script<font color="#E5E5E5"> it says access disallowed you</font>
+
+111
+00:05:06,580 --> 00:05:15,840
+are not logged in<font color="#E5E5E5"> hmm okay</font><font color="#CCCCCC"> that might be</font>
+
+112
+00:05:15,840 --> 00:05:19,629
+working<font color="#CCCCCC"> with cookies right typically if</font>
+
+113
+00:05:19,629 --> 00:05:21,789
+you want to log<font color="#E5E5E5"> in to</font><font color="#CCCCCC"> a website</font><font color="#E5E5E5"> or</font><font color="#CCCCCC"> a web</font>
+
+114
+00:05:21,789 --> 00:05:24,610
+<font color="#CCCCCC">application they store your login in in</font>
+
+115
+00:05:24,610 --> 00:05:25,779
+a cookie<font color="#E5E5E5"> or say that you over</font>
+
+116
+00:05:25,779 --> 00:05:29,770
+<font color="#E5E5E5">authenticated</font><font color="#CCCCCC"> with a cookie</font><font color="#E5E5E5"> so let's</font>
+
+117
+00:05:29,770 --> 00:05:31,509
+check out what<font color="#CCCCCC"> we</font><font color="#E5E5E5"> can see with</font><font color="#CCCCCC"> our</font>
+
+118
+00:05:31,509 --> 00:05:34,750
+cookies<font color="#E5E5E5"> since we're</font><font color="#CCCCCC"> making a standalone</font>
+
+119
+00:05:34,750 --> 00:05:37,719
+request<font color="#E5E5E5"> with requests</font><font color="#CCCCCC"> dot get we</font>
+
+120
+00:05:37,719 --> 00:05:40,270
+probably won't<font color="#E5E5E5"> keep track of cookies in</font>
+
+121
+00:05:40,270 --> 00:05:42,190
+an easy way<font color="#CCCCCC"> all we're doing</font><font color="#E5E5E5"> is a single</font>
+
+122
+00:05:42,190 --> 00:05:44,080
+or question it's not<font color="#CCCCCC"> keeping our our</font>
+
+123
+00:05:44,080 --> 00:05:47,229
+session or our cookies alive in a
+
+124
+00:05:47,229 --> 00:05:49,240
+repeated connections so let's actually
+
+125
+00:05:49,240 --> 00:05:54,729
+move to a new<font color="#CCCCCC"> object a session</font><font color="#E5E5E5"> and that</font>
+
+126
+00:05:54,729 --> 00:05:57,190
+can be recreated with just a request
+
+127
+00:05:57,190 --> 00:06:00,250
+module requests session and that will
+
+128
+00:06:00,250 --> 00:06:02,560
+return an<font color="#CCCCCC"> object for us that we can work</font>
+
+129
+00:06:02,560 --> 00:06:07,000
+<font color="#CCCCCC">with and create other create other</font>
+
+130
+00:06:07,000 --> 00:06:09,069
+requests<font color="#E5E5E5"> with that keep their state or</font>
+
+131
+00:06:09,069 --> 00:06:10,419
+<font color="#E5E5E5">they keep the session that they're</font>
+
+132
+00:06:10,419 --> 00:06:12,729
+working<font color="#E5E5E5"> with you can see it actually</font>
+
+133
+00:06:12,729 --> 00:06:16,120
+turned out here<font color="#E5E5E5"> okay it is a session</font>
+
+134
+00:06:16,120 --> 00:06:18,789
+object<font color="#E5E5E5"> I printed it twice</font><font color="#CCCCCC"> I'm a fool</font><font color="#E5E5E5"> so</font>
+
+135
+00:06:18,789 --> 00:06:21,900
+<font color="#CCCCCC">okay now we can make requests with that</font>
+
+136
+00:06:21,900 --> 00:06:24,819
+not using just<font color="#CCCCCC"> the request module as the</font>
+
+137
+00:06:24,819 --> 00:06:28,899
+scope we can say<font color="#CCCCCC"> response equals we're</font>
+
+138
+00:06:28,899 --> 00:06:32,080
+session dot get or<font color="#E5E5E5"> the name of our</font>
+
+139
+00:06:32,080 --> 00:06:33,910
+object what<font color="#CCCCCC"> we've created here</font>
+
+140
+00:06:33,910 --> 00:06:37,570
+so now we can still get the<font color="#E5E5E5"> same content</font>
+
+141
+00:06:37,570 --> 00:06:39,370
+<font color="#CCCCCC">and everything back</font><font color="#E5E5E5"> but now we're</font><font color="#CCCCCC"> using</font>
+
+142
+00:06:39,370 --> 00:06:41,980
+the request<font color="#E5E5E5"> object or the session object</font>
+
+143
+00:06:41,980 --> 00:06:45,370
+<font color="#E5E5E5">for</font><font color="#CCCCCC"> us</font><font color="#E5E5E5"> cool so the same response we'd</font>
+
+144
+00:06:45,370 --> 00:06:46,930
+seen before<font color="#E5E5E5"> but now</font><font color="#CCCCCC"> that we</font><font color="#E5E5E5"> have a</font>
+
+145
+00:06:46,930 --> 00:06:49,420
+<font color="#CCCCCC">session object we</font><font color="#E5E5E5"> can check out what</font><font color="#CCCCCC"> our</font>
+
+146
+00:06:49,420 --> 00:06:51,640
+session cookies are after<font color="#CCCCCC"> we've viewed</font>
+
+147
+00:06:51,640 --> 00:06:52,900
+<font color="#CCCCCC">this web page because</font><font color="#E5E5E5"> this web page</font>
+
+148
+00:06:52,900 --> 00:06:55,840
+probably<font color="#CCCCCC"> set a cookie for us let's print</font>
+
+149
+00:06:55,840 --> 00:06:58,600
+out session and the variable that<font color="#E5E5E5"> we</font>
+
+150
+00:06:58,600 --> 00:07:00,280
+<font color="#E5E5E5">want to check out to</font><font color="#CCCCCC"> see what cookies</font>
+
+151
+00:07:00,280 --> 00:07:02,650
+have been<font color="#E5E5E5"> set for us is just cookies and</font>
+
+152
+00:07:02,650 --> 00:07:04,150
+again if you don't<font color="#E5E5E5"> know any of this</font>
+
+153
+00:07:04,150 --> 00:07:05,830
+stuff<font color="#E5E5E5"> or you aren't familiar with the</font>
+
+154
+00:07:05,830 --> 00:07:07,990
+<font color="#CCCCCC">syntax you can</font><font color="#E5E5E5"> just go and check out the</font>
+
+155
+00:07:07,990 --> 00:07:12,640
+<font color="#E5E5E5">documentation</font><font color="#CCCCCC"> on the requests online</font>
+
+156
+00:07:12,640 --> 00:07:15,670
+<font color="#E5E5E5">website it kind of goes</font><font color="#CCCCCC"> through in the</font>
+
+157
+00:07:15,670 --> 00:07:17,170
+<font color="#CCCCCC">QuickStart how you can move into some</font>
+
+158
+00:07:17,170 --> 00:07:18,610
+cookies here I just control<font color="#E5E5E5"> out</font><font color="#CCCCCC"> four</font>
+
+159
+00:07:18,610 --> 00:07:21,040
+cookies<font color="#E5E5E5"> and it will go through an</font>
+
+160
+00:07:21,040 --> 00:07:24,100
+example<font color="#CCCCCC"> here oh I guess it does set it</font>
+
+161
+00:07:24,100 --> 00:07:27,660
+does it does to our cookies in this
+
+162
+00:07:27,660 --> 00:07:30,580
+response object cool<font color="#CCCCCC"> good to know I</font>
+
+163
+00:07:30,580 --> 00:07:33,400
+guess for moving<font color="#E5E5E5"> on we can keep the</font>
+
+164
+00:07:33,400 --> 00:07:36,100
+session variable<font color="#CCCCCC"> session object let's</font>
+
+165
+00:07:36,100 --> 00:07:38,590
+try it I guess<font color="#E5E5E5"> when we run the script we</font>
+
+166
+00:07:38,590 --> 00:07:41,670
+<font color="#CCCCCC">can check out</font><font color="#E5E5E5"> what cookies we</font><font color="#CCCCCC"> have here</font>
+
+167
+00:07:41,670 --> 00:07:45,850
+<font color="#CCCCCC">sessions is not a thing we do want</font>
+
+168
+00:07:45,850 --> 00:07:49,870
+session<font color="#CCCCCC"> okay cool</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> now we have a new</font>
+
+169
+00:07:49,870 --> 00:07:52,870
+<font color="#CCCCCC">object</font><font color="#E5E5E5"> a request cookie jar and we can</font>
+
+170
+00:07:52,870 --> 00:07:55,870
+see<font color="#E5E5E5"> this cookie logged in is set to zero</font>
+
+171
+00:07:55,870 --> 00:07:58,930
+so we can<font color="#E5E5E5"> index this kind of just like a</font>
+
+172
+00:07:58,930 --> 00:08:02,520
+dictionary here we can say logged in
+
+173
+00:08:02,520 --> 00:08:04,630
+<font color="#CCCCCC">just like that and you can see it's set</font>
+
+174
+00:08:04,630 --> 00:08:09,820
+to zero<font color="#CCCCCC"> if we set that to</font><font color="#E5E5E5"> one that will</font>
+
+175
+00:08:09,820 --> 00:08:14,350
+I don't know get a better get us logged
+
+176
+00:08:14,350 --> 00:08:15,760
+in maybe they get us<font color="#E5E5E5"> that that'll get us</font>
+
+177
+00:08:15,760 --> 00:08:20,140
+<font color="#E5E5E5">the password so since cookies also work</font>
+
+178
+00:08:20,140 --> 00:08:25,750
+like<font color="#E5E5E5"> headers</font><font color="#CCCCCC"> in that they use a</font>
+
+179
+00:08:25,750 --> 00:08:28,240
+dictionary data type in Python<font color="#CCCCCC"> we can</font>
+
+180
+00:08:28,240 --> 00:08:32,110
+say<font color="#E5E5E5"> a new dictionary object a new</font>
+
+181
+00:08:32,110 --> 00:08:35,200
+dictionary<font color="#E5E5E5"> variable cookies equals the</font>
+
+182
+00:08:35,200 --> 00:08:37,570
+syntax for a dictionary with the key
+
+183
+00:08:37,570 --> 00:08:39,099
+being logged<font color="#E5E5E5"> in and we'll set the</font>
+
+184
+00:08:39,099 --> 00:08:41,979
+password<font color="#E5E5E5"> we'll set the value to two one</font>
+
+185
+00:08:41,979 --> 00:08:44,290
+<font color="#E5E5E5">I'm using that</font><font color="#CCCCCC"> as a string here because</font>
+
+186
+00:08:44,290 --> 00:08:45,550
+all<font color="#CCCCCC"> of that</font><font color="#E5E5E5"> stuff that</font><font color="#CCCCCC"> when it makes</font>
+
+187
+00:08:45,550 --> 00:08:47,380
+connection to a<font color="#CCCCCC"> website has</font><font color="#E5E5E5"> to</font>
+
+188
+00:08:47,380 --> 00:08:53,260
+the<font color="#E5E5E5"> a-string so now we can use the same</font>
+
+189
+00:08:53,260 --> 00:08:56,590
+get function we've been using<font color="#CCCCCC"> before but</font>
+
+190
+00:08:56,590 --> 00:09:00,900
+we can pass in cookies equals cookies
+
+191
+00:09:00,900 --> 00:09:02,860
+<font color="#E5E5E5">kind</font><font color="#CCCCCC"> of just like</font><font color="#E5E5E5"> we did earlier with</font>
+
+192
+00:09:02,860 --> 00:09:05,530
+headers equals headers and that will
+
+193
+00:09:05,530 --> 00:09:09,310
+pass that dictionary<font color="#CCCCCC"> along to our get</font>
+
+194
+00:09:09,310 --> 00:09:12,430
+request<font color="#E5E5E5"> so now we can totally check out</font>
+
+195
+00:09:12,430 --> 00:09:14,910
+what the content is
+
+196
+00:09:14,910 --> 00:09:20,530
+and we're it<font color="#E5E5E5"> easy as that access</font><font color="#CCCCCC"> granted</font>
+
+197
+00:09:20,530 --> 00:09:22,750
+the password for<font color="#E5E5E5"> natto 6 is this stuff</font>
+
+198
+00:09:22,750 --> 00:09:25,810
+so I want<font color="#E5E5E5"> to just drive this point home</font>
+
+199
+00:09:25,810 --> 00:09:27,610
+here if we were to check out again
+
+200
+00:09:27,610 --> 00:09:33,220
+<font color="#E5E5E5">session dot cookies you can see</font><font color="#CCCCCC"> okay now</font>
+
+201
+00:09:33,220 --> 00:09:36,100
+the<font color="#E5E5E5"> request cookie jar has the cookie</font>
+
+202
+00:09:36,100 --> 00:09:37,900
+logged in set to<font color="#CCCCCC"> one</font><font color="#E5E5E5"> because we've set</font>
+
+203
+00:09:37,900 --> 00:09:42,970
+<font color="#CCCCCC">that with our request and the webserver</font>
+
+204
+00:09:42,970 --> 00:09:44,650
+<font color="#E5E5E5">just must be testing what the value of</font>
+
+205
+00:09:44,650 --> 00:09:46,420
+<font color="#E5E5E5">that cookie</font><font color="#CCCCCC"> is and it's letting us move</font>
+
+206
+00:09:46,420 --> 00:09:50,650
+so in the content we're getting as our
+
+207
+00:09:50,650 --> 00:09:55,650
+response<font color="#E5E5E5"> we can give this string to our</font>
+
+208
+00:09:55,650 --> 00:10:01,810
+<font color="#CCCCCC">we'll take the div with it to give that</font>
+
+209
+00:10:01,810 --> 00:10:06,990
+to<font color="#E5E5E5"> our regular expression hunter</font>
+
+210
+00:10:13,690 --> 00:10:15,460
+and let's see what went<font color="#E5E5E5"> along or</font>
+
+211
+00:10:15,460 --> 00:10:17,590
+<font color="#E5E5E5">anything nothing</font><font color="#CCCCCC"> cool we got the</font>
+
+212
+00:10:17,590 --> 00:10:19,510
+<font color="#E5E5E5">password so let's go ahead and save this</font>
+
+213
+00:10:19,510 --> 00:10:21,670
+script<font color="#E5E5E5"> this will remain as our natus</font><font color="#CCCCCC"> 5</font>
+
+214
+00:10:21,670 --> 00:10:24,820
+script<font color="#E5E5E5"> but we want to create a new</font><font color="#CCCCCC"> natus</font>
+
+215
+00:10:24,820 --> 00:10:28,000
+6 script with updating the<font color="#E5E5E5"> user name and</font>
+
+216
+00:10:28,000 --> 00:10:35,230
+giving<font color="#E5E5E5"> it the the new password here we</font>
+
+217
+00:10:35,230 --> 00:10:36,340
+don't need to pass<font color="#E5E5E5"> in the cookies</font>
+
+218
+00:10:36,340 --> 00:10:44,850
+<font color="#E5E5E5">anymore at least we don't think we do so</font>
+
+219
+00:10:44,850 --> 00:10:48,250
+we can take that<font color="#CCCCCC"> out of the get request</font>
+
+220
+00:10:48,250 --> 00:10:50,920
+<font color="#E5E5E5">and we should be ready to move on for</font>
+
+221
+00:10:50,920 --> 00:10:52,930
+<font color="#CCCCCC">the next level</font><font color="#E5E5E5"> once we get</font><font color="#CCCCCC"> moving in</font>
+
+222
+00:10:52,930 --> 00:10:55,360
+<font color="#E5E5E5">I'll actually end this video now because</font>
+
+223
+00:10:55,360 --> 00:10:57,550
+<font color="#E5E5E5">I think it's going on for long</font><font color="#CCCCCC"> enough</font>
+
+224
+00:10:57,550 --> 00:10:58,900
+but<font color="#E5E5E5"> I hope you guys are enjoying these</font>
+
+225
+00:10:58,900 --> 00:11:01,030
+again hopefully<font color="#CCCCCC"> the style isn't</font><font color="#E5E5E5"> too bad</font>
+
+226
+00:11:01,030 --> 00:11:03,130
+and<font color="#E5E5E5"> you're showcasing</font><font color="#CCCCCC"> some some cool</font>
+
+227
+00:11:03,130 --> 00:11:05,110
+<font color="#E5E5E5">things to do in sublime</font><font color="#CCCCCC"> text</font><font color="#E5E5E5"> and Python</font>
+
+228
+00:11:05,110 --> 00:11:07,120
+and running<font color="#E5E5E5"> through these natus levels</font>
+
+229
+00:11:07,120 --> 00:11:09,310
+so thanks again guys<font color="#CCCCCC"> see you in a later</font>
+
+230
+00:11:09,310 --> 00:00:00,000
+<font color="#CCCCCC">video</font>
+

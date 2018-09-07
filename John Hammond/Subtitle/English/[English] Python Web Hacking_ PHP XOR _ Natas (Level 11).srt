@@ -1,0 +1,1244 @@
+1
+00:00:00,030 --> 00:00:01,860
+hey what's going<font color="#CCCCCC"> on everybody</font><font color="#E5E5E5"> this is</font>
+
+2
+00:00:01,860 --> 00:00:03,659
+John Hammond<font color="#E5E5E5"> and we're still looking at</font>
+
+3
+00:00:03,659 --> 00:00:05,850
+<font color="#CCCCCC">the</font><font color="#E5E5E5"> natus war game from over the wire</font><font color="#CCCCCC"> so</font>
+
+4
+00:00:05,850 --> 00:00:08,039
+we're on level<font color="#CCCCCC"> 11 right now</font><font color="#E5E5E5"> that's just</font>
+
+5
+00:00:08,039 --> 00:00:10,230
+natus<font color="#E5E5E5"> 11</font><font color="#CCCCCC"> 9s that labs</font><font color="#E5E5E5"> over</font><font color="#CCCCCC"> the wire</font><font color="#E5E5E5"> at</font>
+
+6
+00:00:10,230 --> 00:00:13,230
+org<font color="#E5E5E5"> in the URL and we looks like we have</font>
+
+7
+00:00:13,230 --> 00:00:14,400
+an application<font color="#E5E5E5"> you're kind</font><font color="#CCCCCC"> of a web</font>
+
+8
+00:00:14,400 --> 00:00:16,139
+<font color="#E5E5E5">application</font><font color="#CCCCCC"> that will let us set the</font>
+
+9
+00:00:16,139 --> 00:00:20,820
+color of<font color="#E5E5E5"> the</font><font color="#CCCCCC"> backgrounds for this web</font>
+
+10
+00:00:20,820 --> 00:00:26,789
+page<font color="#CCCCCC"> and that is pretty neat but we want</font>
+
+11
+00:00:26,789 --> 00:00:28,349
+to see what's vulnerable what can we do
+
+12
+00:00:28,349 --> 00:00:30,449
+<font color="#E5E5E5">with it so the notice here is that</font>
+
+13
+00:00:30,449 --> 00:00:31,920
+cookies are protected with<font color="#CCCCCC"> xor</font>
+
+14
+00:00:31,920 --> 00:00:33,690
+encryption<font color="#E5E5E5"> so we can view the source</font>
+
+15
+00:00:33,690 --> 00:00:37,559
+code<font color="#E5E5E5"> here and this tells us okay here's</font>
+
+16
+00:00:37,559 --> 00:00:39,960
+the<font color="#CCCCCC"> HTML of</font><font color="#E5E5E5"> the page and we can</font><font color="#CCCCCC"> see some</font>
+
+17
+00:00:39,960 --> 00:00:42,960
+PHP<font color="#CCCCCC"> code here</font><font color="#E5E5E5"> this is the interesting</font>
+
+18
+00:00:42,960 --> 00:00:44,910
+<font color="#E5E5E5">stuff the PHP codes the server-side code</font>
+
+19
+00:00:44,910 --> 00:00:46,620
+so<font color="#E5E5E5"> that's what we want to</font><font color="#CCCCCC"> know and</font><font color="#E5E5E5"> see</font>
+
+20
+00:00:46,620 --> 00:00:49,079
+what we can what<font color="#E5E5E5"> we can mess</font><font color="#CCCCCC"> with what</font>
+
+21
+00:00:49,079 --> 00:00:51,750
+we<font color="#E5E5E5"> can get around so</font><font color="#CCCCCC"> looks</font><font color="#E5E5E5"> like we have</font>
+
+22
+00:00:51,750 --> 00:00:53,730
+a variable called<font color="#E5E5E5"> default data</font><font color="#CCCCCC"> you can</font>
+
+23
+00:00:53,730 --> 00:00:54,750
+tell<font color="#E5E5E5"> it's variable</font><font color="#CCCCCC"> because it has a</font>
+
+24
+00:00:54,750 --> 00:00:56,820
+dollar sign those are preceded variables
+
+25
+00:00:56,820 --> 00:00:58,140
+<font color="#CCCCCC">we received</font><font color="#E5E5E5"> with dollar sign and PHP</font><font color="#CCCCCC"> and</font>
+
+26
+00:00:58,140 --> 00:01:00,780
+<font color="#CCCCCC">it's an array</font><font color="#E5E5E5"> associative array of show</font>
+
+27
+00:01:00,780 --> 00:01:02,250
+password<font color="#CCCCCC"> assets in the string</font><font color="#E5E5E5"> no</font>
+
+28
+00:01:02,250 --> 00:01:04,970
+background<font color="#E5E5E5"> colors by</font><font color="#CCCCCC"> default</font><font color="#E5E5E5"> set to hex</font>
+
+29
+00:01:04,970 --> 00:01:09,869
+ffffff<font color="#E5E5E5"> or RGB 255 255 255 and we have</font>
+
+30
+00:01:09,869 --> 00:01:13,080
+functions<font color="#E5E5E5"> X or encrypt and load</font><font color="#CCCCCC"> data</font>
+
+31
+00:01:13,080 --> 00:01:16,200
+save data<font color="#E5E5E5"> etc and then</font><font color="#CCCCCC"> we actually have</font>
+
+32
+00:01:16,200 --> 00:01:19,439
+<font color="#CCCCCC">the level of the page the HTML</font><font color="#E5E5E5"> of the</font>
+
+33
+00:01:19,439 --> 00:01:21,570
+page and level<font color="#E5E5E5"> it looks like there's a</font>
+
+34
+00:01:21,570 --> 00:01:23,939
+note<font color="#CCCCCC"> here it does a little condition</font><font color="#E5E5E5"> if</font>
+
+35
+00:01:23,939 --> 00:01:27,299
+<font color="#E5E5E5">the data array index had show pass over</font>
+
+36
+00:01:27,299 --> 00:01:28,950
+<font color="#E5E5E5">to set to yes then it will give us the</font>
+
+37
+00:01:28,950 --> 00:01:31,079
+pass over for NAT is 12 the<font color="#E5E5E5"> next level</font>
+
+38
+00:01:31,079 --> 00:01:32,549
+so it's censored out here but looks<font color="#E5E5E5"> like</font>
+
+39
+00:01:32,549 --> 00:01:34,530
+that's the<font color="#E5E5E5"> functionality</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> we want we</font>
+
+40
+00:01:34,530 --> 00:01:36,630
+<font color="#E5E5E5">need to somehow set data show password</font>
+
+41
+00:01:36,630 --> 00:01:41,040
+to yes<font color="#CCCCCC"> and</font><font color="#E5E5E5"> checking out the code we can</font>
+
+42
+00:01:41,040 --> 00:01:43,380
+see<font color="#E5E5E5"> that data that variable is set from</font>
+
+43
+00:01:43,380 --> 00:01:45,780
+the function load data<font color="#E5E5E5"> and it uses by</font>
+
+44
+00:01:45,780 --> 00:01:47,850
+default<font color="#CCCCCC"> the default data</font><font color="#E5E5E5"> so we saw the</font>
+
+45
+00:01:47,850 --> 00:01:50,640
+default data up here<font color="#CCCCCC"> but what is load</font>
+
+46
+00:01:50,640 --> 00:01:53,189
+data do this is the function<font color="#E5E5E5"> looks</font><font color="#CCCCCC"> like</font>
+
+47
+00:01:53,189 --> 00:01:56,909
+it reads out<font color="#CCCCCC"> of</font><font color="#E5E5E5"> the cookie</font><font color="#CCCCCC"> PHP like</font>
+
+48
+00:01:56,909 --> 00:02:01,020
+special variable<font color="#CCCCCC"> it sets</font><font color="#E5E5E5"> up the argument</font>
+
+49
+00:02:01,020 --> 00:02:03,140
+<font color="#CCCCCC">that's passed</font><font color="#E5E5E5"> in so default data</font>
+
+50
+00:02:03,140 --> 00:02:06,000
+<font color="#E5E5E5">originally is def and goes through and</font>
+
+51
+00:02:06,000 --> 00:02:09,780
+that's my data and it tests<font color="#E5E5E5"> if the array</font>
+
+52
+00:02:09,780 --> 00:02:13,240
+<font color="#E5E5E5">Q exists so if the cookie has</font>
+
+53
+00:02:13,240 --> 00:02:19,390
+data set then it will looks<font color="#E5E5E5"> like it</font>
+
+54
+00:02:19,390 --> 00:02:21,460
+stores a variable temp data<font color="#E5E5E5"> where it</font>
+
+55
+00:02:21,460 --> 00:02:24,550
+tries to base64 decode<font color="#E5E5E5"> an X or incur it</font>
+
+56
+00:02:24,550 --> 00:02:27,130
+and then JSON decode<font color="#E5E5E5"> whatever that data</font>
+
+57
+00:02:27,130 --> 00:02:30,100
+cookie is set to and<font color="#E5E5E5"> that's a lot of</font>
+
+58
+00:02:30,100 --> 00:02:31,990
+stuff<font color="#E5E5E5"> but looks like that all it really</font>
+
+59
+00:02:31,990 --> 00:02:36,820
+does is extract out the<font color="#E5E5E5"> those variables</font>
+
+60
+00:02:36,820 --> 00:02:38,410
+it looks like it extracts out<font color="#CCCCCC"> to a</font>
+
+61
+00:02:38,410 --> 00:02:40,420
+password<font color="#CCCCCC"> which we know by default</font><font color="#E5E5E5"> is no</font>
+
+62
+00:02:40,420 --> 00:02:43,500
+and the background color<font color="#CCCCCC"> which is hex</font>
+
+63
+00:02:43,500 --> 00:02:47,530
+ffffff<font color="#E5E5E5"> in this case it</font><font color="#CCCCCC"> looks</font><font color="#E5E5E5"> like it</font>
+
+64
+00:02:47,530 --> 00:02:50,710
+does that just by<font color="#E5E5E5"> reading through it and</font>
+
+65
+00:02:50,710 --> 00:02:53,320
+it does some<font color="#E5E5E5"> preg match</font><font color="#CCCCCC"> okay that the</font>
+
+66
+00:02:53,320 --> 00:02:54,700
+regular expression is<font color="#CCCCCC"> just a test</font>
+
+67
+00:02:54,700 --> 00:02:56,410
+whether the background color is set to<font color="#CCCCCC"> a</font>
+
+68
+00:02:56,410 --> 00:02:59,950
+proper hexadecimal color<font color="#E5E5E5"> cool</font><font color="#CCCCCC"> and it</font>
+
+69
+00:02:59,950 --> 00:03:02,350
+<font color="#E5E5E5">will do these things if the key exists</font>
+
+70
+00:03:02,350 --> 00:03:06,130
+in that array<font color="#E5E5E5"> so there must be a cookie</font>
+
+71
+00:03:06,130 --> 00:03:07,480
+<font color="#E5E5E5">that's being</font><font color="#CCCCCC"> set let's go</font><font color="#E5E5E5"> ahead and take</font>
+
+72
+00:03:07,480 --> 00:03:10,360
+a<font color="#CCCCCC"> look at that I'm going to</font><font color="#E5E5E5"> switch</font><font color="#CCCCCC"> over</font>
+
+73
+00:03:10,360 --> 00:03:12,760
+to a sublime text where I have<font color="#E5E5E5"> Python</font>
+
+74
+00:03:12,760 --> 00:03:15,750
+script that's<font color="#E5E5E5"> letting us work</font><font color="#CCCCCC"> with this</font>
+
+75
+00:03:15,750 --> 00:03:18,340
+here is the page once we get it with the
+
+76
+00:03:18,340 --> 00:03:21,460
+request module in Python<font color="#E5E5E5"> and we have the</font>
+
+77
+00:03:21,460 --> 00:03:24,220
+content<font color="#CCCCCC"> etc</font><font color="#E5E5E5"> let's take a look at the</font>
+
+78
+00:03:24,220 --> 00:03:30,160
+source code<font color="#E5E5E5"> just</font><font color="#CCCCCC"> like this again run</font>
+
+79
+00:03:30,160 --> 00:03:35,230
+that and take a look<font color="#E5E5E5"> make sure we</font>
+
+80
+00:03:35,230 --> 00:03:37,660
+<font color="#E5E5E5">actually run it does it not doing that</font>
+
+81
+00:03:37,660 --> 00:03:41,830
+<font color="#E5E5E5">for</font><font color="#CCCCCC"> me</font><font color="#E5E5E5"> classic okay now I've got it set</font>
+
+82
+00:03:41,830 --> 00:03:46,840
+up<font color="#E5E5E5"> and it looks pretty gross so we can</font>
+
+83
+00:03:46,840 --> 00:03:49,870
+go<font color="#E5E5E5"> ahead and</font><font color="#CCCCCC"> do our tidy HTML and we can</font>
+
+84
+00:03:49,870 --> 00:03:56,950
+go ahead<font color="#CCCCCC"> and Deanna ties that</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> all</font>
+
+85
+00:03:56,950 --> 00:04:00,460
+those<font color="#CCCCCC"> BR or breaks in HTML</font><font color="#E5E5E5"> we can remove</font>
+
+86
+00:04:00,460 --> 00:04:04,030
+those because they're just<font color="#E5E5E5"> in the way so</font>
+
+87
+00:04:04,030 --> 00:04:06,190
+<font color="#CCCCCC">okay now we can</font><font color="#E5E5E5"> see the PHP</font><font color="#CCCCCC"> code in a</font>
+
+88
+00:04:06,190 --> 00:04:07,990
+little bit of a better<font color="#CCCCCC"> editor</font><font color="#E5E5E5"> and this</font>
+
+89
+00:04:07,990 --> 00:04:10,000
+is handy but let's just<font color="#E5E5E5"> kind of take</font>
+
+90
+00:04:10,000 --> 00:04:15,430
+note of this source<font color="#CCCCCC"> PHP source 11 up</font>
+
+91
+00:04:15,430 --> 00:04:19,209
+<font color="#CCCCCC">here or</font><font color="#E5E5E5"> whatever you may</font><font color="#CCCCCC"> have seen that</font>
+
+92
+00:04:19,209 --> 00:04:21,070
+<font color="#E5E5E5">in my file explorer I had some stuff</font>
+
+93
+00:04:21,070 --> 00:04:22,630
+<font color="#E5E5E5">already pre-prepared but that's because</font>
+
+94
+00:04:22,630 --> 00:04:24,700
+I've tried to test<font color="#E5E5E5"> the stuff and one of</font>
+
+95
+00:04:24,700 --> 00:04:25,870
+they have it done before<font color="#E5E5E5"> I started to</font>
+
+96
+00:04:25,870 --> 00:04:26,470
+record
+
+97
+00:04:26,470 --> 00:04:30,550
+so let's keep moving here<font color="#CCCCCC"> let's go ahead</font>
+
+98
+00:04:30,550 --> 00:04:31,600
+<font color="#E5E5E5">and take a look at what that cookie</font>
+
+99
+00:04:31,600 --> 00:04:34,450
+actually<font color="#E5E5E5"> looks like</font><font color="#CCCCCC"> so we're doing</font><font color="#E5E5E5"> that</font>
+
+100
+00:04:34,450 --> 00:04:35,920
+<font color="#E5E5E5">with the session variable</font><font color="#CCCCCC"> we're making</font>
+
+101
+00:04:35,920 --> 00:04:37,270
+this get<font color="#E5E5E5"> request with a session</font><font color="#CCCCCC"> variable</font>
+
+102
+00:04:37,270 --> 00:04:40,540
+so we can print out session cookies
+
+103
+00:04:40,540 --> 00:04:46,300
+<font color="#CCCCCC">check this out and we don't</font><font color="#E5E5E5"> have</font>
+
+104
+00:04:46,300 --> 00:04:48,070
+anything<font color="#CCCCCC"> oh</font><font color="#E5E5E5"> because we're still viewing</font>
+
+105
+00:04:48,070 --> 00:04:49,450
+the index source page let's go back to
+
+106
+00:04:49,450 --> 00:04:51,550
+the<font color="#CCCCCC"> original page now</font><font color="#E5E5E5"> we can check out</font>
+
+107
+00:04:51,550 --> 00:04:54,520
+the cookie jar and we have data so let's
+
+108
+00:04:54,520 --> 00:04:57,640
+scrape him out<font color="#E5E5E5"> just</font><font color="#CCCCCC"> some array indexing</font>
+
+109
+00:04:57,640 --> 00:05:00,640
+here and it looks like<font color="#E5E5E5"> this which</font><font color="#CCCCCC"> is</font>
+
+110
+00:05:00,640 --> 00:05:04,840
+clearly in base64<font color="#CCCCCC"> with the % 3d and we</font>
+
+111
+00:05:04,840 --> 00:05:07,840
+know that that is a URL encoded
+
+112
+00:05:07,840 --> 00:05:12,300
+character we can<font color="#CCCCCC"> just</font><font color="#E5E5E5"> remove</font><font color="#CCCCCC"> that we can</font>
+
+113
+00:05:12,300 --> 00:05:20,830
+decode that<font color="#E5E5E5"> with URL URL Lib dot quote I</font>
+
+114
+00:05:20,830 --> 00:05:24,520
+think<font color="#CCCCCC"> I should</font><font color="#E5E5E5"> bring it back nope</font>
+
+115
+00:05:24,520 --> 00:05:26,380
+unquote<font color="#E5E5E5"> is the one that we want because</font>
+
+116
+00:05:26,380 --> 00:05:29,860
+<font color="#CCCCCC">that will remove</font><font color="#E5E5E5"> okay</font><font color="#CCCCCC"> they're cool nodal</font>
+
+117
+00:05:29,860 --> 00:05:31,300
+properly interpret so now let's grab
+
+118
+00:05:31,300 --> 00:05:38,370
+base64 so we can decode that<font color="#CCCCCC"> a</font><font color="#E5E5E5"> 64 decode</font>
+
+119
+00:05:38,370 --> 00:05:43,090
+and we want be 64 decode my bad<font color="#CCCCCC"> so run</font>
+
+120
+00:05:43,090 --> 00:05:45,940
+that<font color="#CCCCCC"> and we have nonsense and garbage so</font>
+
+121
+00:05:45,940 --> 00:05:50,230
+this must<font color="#CCCCCC"> be</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> ex-ored version of this</font>
+
+122
+00:05:50,230 --> 00:05:51,520
+<font color="#E5E5E5">version of the data that we're working</font>
+
+123
+00:05:51,520 --> 00:05:53,080
+<font color="#E5E5E5">with because</font><font color="#CCCCCC"> remember in</font><font color="#E5E5E5"> the source code</font>
+
+124
+00:05:53,080 --> 00:05:56,350
+<font color="#CCCCCC">that we were looking at</font><font color="#E5E5E5"> they do run</font><font color="#CCCCCC"> XOR</font>
+
+125
+00:05:56,350 --> 00:05:59,740
+encrypt<font color="#E5E5E5"> on it so it's probably</font><font color="#CCCCCC"> going</font><font color="#E5E5E5"> to</font>
+
+126
+00:05:59,740 --> 00:06:02,220
+<font color="#E5E5E5">be</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> little bit difficult to really read</font>
+
+127
+00:06:02,220 --> 00:06:03,970
+because it's<font color="#CCCCCC"> x-ored</font>
+
+128
+00:06:03,970 --> 00:06:06,250
+or exclusive or encrypted stuff like
+
+129
+00:06:06,250 --> 00:06:08,140
+that<font color="#E5E5E5"> not</font><font color="#CCCCCC"> really encrypted but you know I</font>
+
+130
+00:06:08,140 --> 00:06:10,150
+guess<font color="#E5E5E5"> maybe whatever</font><font color="#CCCCCC"> however you want to</font>
+
+131
+00:06:10,150 --> 00:06:12,040
+interpret<font color="#E5E5E5"> it is XOR that operation is</font>
+
+132
+00:06:12,040 --> 00:06:13,840
+ran through the data so<font color="#CCCCCC"> we can</font><font color="#E5E5E5"> take a</font>
+
+133
+00:06:13,840 --> 00:06:15,370
+look<font color="#E5E5E5"> at that XOR encrypt function here</font>
+
+134
+00:06:15,370 --> 00:06:21,130
+<font color="#E5E5E5">and it happens with a key variable</font><font color="#CCCCCC"> that</font>
+
+135
+00:06:21,130 --> 00:06:24,100
+we don't know it's censored the input
+
+136
+00:06:24,100 --> 00:06:25,450
+that<font color="#E5E5E5"> we pass to</font><font color="#CCCCCC"> it so it looks like</font>
+
+137
+00:06:25,450 --> 00:06:28,330
+<font color="#E5E5E5">that's just what was basic C 4 decoded</font>
+
+138
+00:06:28,330 --> 00:06:31,900
+here and the out text or the<font color="#E5E5E5"> very the</font>
+
+139
+00:06:31,900 --> 00:06:33,550
+<font color="#E5E5E5">output variable that the result that</font>
+
+140
+00:06:33,550 --> 00:06:34,570
+happens when we<font color="#E5E5E5"> go</font><font color="#CCCCCC"> through this</font>
+
+141
+00:06:34,570 --> 00:06:37,930
+operation<font color="#CCCCCC"> so it does this XOR in a for</font>
+
+142
+00:06:37,930 --> 00:06:38,890
+<font color="#CCCCCC">loop that iterates through each</font>
+
+143
+00:06:38,890 --> 00:06:40,430
+character by<font color="#CCCCCC"> using I</font>
+
+144
+00:06:40,430 --> 00:06:43,970
+<font color="#E5E5E5">as her iterator</font><font color="#CCCCCC"> all the way</font><font color="#E5E5E5"> through the</font>
+
+145
+00:06:43,970 --> 00:06:45,620
+length of the text<font color="#CCCCCC"> so we can index the</font>
+
+146
+00:06:45,620 --> 00:06:49,100
+<font color="#CCCCCC">text and the key based off of the length</font>
+
+147
+00:06:49,100 --> 00:06:52,100
+of the key modulus so it wraps<font color="#E5E5E5"> around it</font>
+
+148
+00:06:52,100 --> 00:06:53,750
+does a circle operation thing and it
+
+149
+00:06:53,750 --> 00:06:55,460
+uses<font color="#E5E5E5"> the XOR operator here that that</font>
+
+150
+00:06:55,460 --> 00:06:57,350
+<font color="#E5E5E5">carrot symbol so we're appending to our</font>
+
+151
+00:06:57,350 --> 00:06:59,750
+<font color="#E5E5E5">output text or output</font><font color="#CCCCCC"> text that variable</font>
+
+152
+00:06:59,750 --> 00:07:03,680
+out text with the PHP concatenation
+
+153
+00:07:03,680 --> 00:07:05,810
+character with the dot<font color="#E5E5E5"> dot equals and</font>
+
+154
+00:07:05,810 --> 00:07:08,360
+then it<font color="#E5E5E5"> finally gives us the out text so</font>
+
+155
+00:07:08,360 --> 00:07:10,490
+<font color="#E5E5E5">okay let's try and</font><font color="#CCCCCC"> get in the middle of</font>
+
+156
+00:07:10,490 --> 00:07:12,170
+this<font color="#CCCCCC"> because we can totally recreate</font>
+
+157
+00:07:12,170 --> 00:07:18,130
+<font color="#E5E5E5">this function let's in</font><font color="#CCCCCC"> fact do that I</font>
+
+158
+00:07:18,130 --> 00:07:22,970
+want to<font color="#E5E5E5"> see if this will copy correctly</font>
+
+159
+00:07:22,970 --> 00:07:25,490
+because<font color="#CCCCCC"> I see some weird characters in</font>
+
+160
+00:07:25,490 --> 00:07:30,410
+this text<font color="#CCCCCC"> it looks like there's no real</font>
+
+161
+00:07:30,410 --> 00:07:34,010
+space or tab character in some<font color="#E5E5E5"> of the</font>
+
+162
+00:07:34,010 --> 00:07:35,690
+indentation for<font color="#E5E5E5"> this code so let's</font><font color="#CCCCCC"> go</font>
+
+163
+00:07:35,690 --> 00:07:38,450
+ahead<font color="#E5E5E5"> and did it may have done some</font>
+
+164
+00:07:38,450 --> 00:07:39,920
+weird<font color="#E5E5E5"> things with tidy HTML I'm</font><font color="#CCCCCC"> gonna</font>
+
+165
+00:07:39,920 --> 00:07:42,140
+<font color="#E5E5E5">copy this</font><font color="#CCCCCC"> code from the</font><font color="#E5E5E5"> web</font><font color="#CCCCCC"> site from</font>
+
+166
+00:07:42,140 --> 00:07:44,930
+<font color="#E5E5E5">the web page</font><font color="#CCCCCC"> so I want</font><font color="#E5E5E5"> X or encrypt and</font>
+
+167
+00:07:44,930 --> 00:07:47,810
+I want the default<font color="#E5E5E5"> data</font><font color="#CCCCCC"> and now let's</font>
+
+168
+00:07:47,810 --> 00:07:50,720
+<font color="#CCCCCC">create a</font><font color="#E5E5E5"> PHP script</font><font color="#CCCCCC"> where we can handle</font>
+
+169
+00:07:50,720 --> 00:07:53,080
+this stuff
+
+170
+00:07:53,890 --> 00:07:59,270
+<font color="#CCCCCC">second natus</font><font color="#E5E5E5"> 11 dot PHP</font><font color="#CCCCCC"> that already</font>
+
+171
+00:07:59,270 --> 00:08:00,500
+exists so let's go and<font color="#E5E5E5"> replace it</font>
+
+172
+00:08:00,500 --> 00:08:02,450
+<font color="#CCCCCC">because I was testing it earlier</font><font color="#E5E5E5"> so</font>
+
+173
+00:08:02,450 --> 00:08:07,250
+let's have<font color="#E5E5E5"> PHP tags in here and let's</font>
+
+174
+00:08:07,250 --> 00:08:13,970
+put<font color="#E5E5E5"> where is our</font><font color="#CCCCCC"> I did not</font><font color="#E5E5E5"> totally just</font>
+
+175
+00:08:13,970 --> 00:08:14,270
+<font color="#E5E5E5">color</font>
+
+176
+00:08:14,270 --> 00:08:18,020
+<font color="#CCCCCC">all right or whatever</font><font color="#E5E5E5"> whoops okay where</font>
+
+177
+00:08:18,020 --> 00:08:22,970
+is PHP<font color="#E5E5E5"> 7.0 you guys be</font><font color="#CCCCCC"> bin 7.0</font><font color="#E5E5E5"> let's use</font>
+
+178
+00:08:22,970 --> 00:08:25,700
+that as the interpreter here is our
+
+179
+00:08:25,700 --> 00:08:28,820
+shebang line okay now we have proper
+
+180
+00:08:28,820 --> 00:08:33,950
+things<font color="#E5E5E5"> so if we were to try and</font><font color="#CCCCCC"> run JSON</font>
+
+181
+00:08:33,950 --> 00:08:40,400
+decode<font color="#E5E5E5"> that</font><font color="#CCCCCC"> stuff JSON decode</font><font color="#E5E5E5"> is going</font>
+
+182
+00:08:40,400 --> 00:08:41,870
+to happen when we<font color="#CCCCCC"> have the encrypted</font>
+
+183
+00:08:41,870 --> 00:08:44,179
+data<font color="#E5E5E5"> but obviously it's going to just</font><font color="#CCCCCC"> be</font>
+
+184
+00:08:44,179 --> 00:08:47,090
+plain text of<font color="#E5E5E5"> this they they loaded this</font>
+
+185
+00:08:47,090 --> 00:08:47,840
+to begin<font color="#E5E5E5"> with</font>
+
+186
+00:08:47,840 --> 00:08:52,850
+with save data so that<font color="#E5E5E5"> must have</font>
+
+187
+00:08:52,850 --> 00:08:54,230
+happened with JSON<font color="#E5E5E5"> encode here</font>
+
+188
+00:08:54,230 --> 00:08:57,110
+let's go ahead<font color="#E5E5E5"> and</font><font color="#CCCCCC"> see what that looks</font>
+
+189
+00:08:57,110 --> 00:09:03,200
+like<font color="#E5E5E5"> JSON encode our default data and</font>
+
+190
+00:09:03,200 --> 00:09:05,120
+let's echo that out to the screen so we
+
+191
+00:09:05,120 --> 00:09:14,210
+<font color="#CCCCCC">can see it and second that is</font><font color="#E5E5E5"> 11 PHP we</font>
+
+192
+00:09:14,210 --> 00:09:16,910
+will run it and<font color="#E5E5E5"> okay it looks like just</font>
+
+193
+00:09:16,910 --> 00:09:21,050
+a string<font color="#E5E5E5"> that's all updated or it</font>
+
+194
+00:09:21,050 --> 00:09:24,350
+<font color="#E5E5E5">interprets it however we need to cool so</font>
+
+195
+00:09:24,350 --> 00:09:28,370
+if we wanted<font color="#CCCCCC"> to</font><font color="#E5E5E5"> use that and that's</font>
+
+196
+00:09:28,370 --> 00:09:31,190
+what's passed<font color="#E5E5E5"> in to our encrypt well</font>
+
+197
+00:09:31,190 --> 00:09:36,560
+perfect<font color="#CCCCCC"> let's try and</font><font color="#E5E5E5"> see if we can</font>
+
+198
+00:09:36,560 --> 00:09:40,010
+figure out the key for<font color="#CCCCCC"> that data that we</font>
+
+199
+00:09:40,010 --> 00:09:42,560
+already<font color="#E5E5E5"> have because</font><font color="#CCCCCC"> we know what the</font>
+
+200
+00:09:42,560 --> 00:09:46,580
+<font color="#CCCCCC">original is that's this encoded version</font>
+
+201
+00:09:46,580 --> 00:09:52,040
+and we know what the actual<font color="#CCCCCC"> XOR result</font>
+
+202
+00:09:52,040 --> 00:09:54,970
+was we can kind of figure<font color="#CCCCCC"> out what</font><font color="#E5E5E5"> the</font>
+
+203
+00:09:54,970 --> 00:09:57,500
+key might be because<font color="#CCCCCC"> XOR how it works</font>
+
+204
+00:09:57,500 --> 00:10:00,370
+with specific<font color="#E5E5E5"> properties</font><font color="#CCCCCC"> we have a</font>
+
+205
+00:10:00,370 --> 00:10:03,790
+ex-ored with<font color="#CCCCCC"> B</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> that equals C right</font>
+
+206
+00:10:03,790 --> 00:10:07,940
+so in that case plaintext<font color="#E5E5E5"> XOR with</font><font color="#CCCCCC"> the</font>
+
+207
+00:10:07,940 --> 00:10:11,480
+key equals ciphertext but we can reverse
+
+208
+00:10:11,480 --> 00:10:13,460
+this operation<font color="#E5E5E5"> because we can switch</font>
+
+209
+00:10:13,460 --> 00:10:16,520
+these things around<font color="#CCCCCC"> if we try an XOR the</font>
+
+210
+00:10:16,520 --> 00:10:19,310
+plaintext<font color="#CCCCCC"> with the cipher text will</font>
+
+211
+00:10:19,310 --> 00:10:25,180
+return<font color="#E5E5E5"> the key so let's try and do that</font>
+
+212
+00:10:26,170 --> 00:10:29,390
+<font color="#E5E5E5">let's create</font><font color="#CCCCCC"> another function</font><font color="#E5E5E5"> where we</font>
+
+213
+00:10:29,390 --> 00:10:37,610
+can pass in a key and and then key let's
+
+214
+00:10:37,610 --> 00:10:39,080
+<font color="#E5E5E5">just modify that actually we don't</font><font color="#CCCCCC"> need</font>
+
+215
+00:10:39,080 --> 00:10:40,610
+to create<font color="#CCCCCC"> a</font><font color="#E5E5E5"> whole new one now that</font>
+
+216
+00:10:40,610 --> 00:10:45,350
+that's passed in and somehow
+
+217
+00:10:45,350 --> 00:10:49,460
+let's okay let's call this original data
+
+218
+00:10:49,460 --> 00:10:51,500
+<font color="#E5E5E5">that we're working with</font><font color="#CCCCCC"> and let's go</font>
+
+219
+00:10:51,500 --> 00:10:59,000
+ahead<font color="#E5E5E5"> and get the yeah the XOR data is a</font>
+
+220
+00:10:59,000 --> 00:11:02,000
+way we can<font color="#CCCCCC"> pass it to this PHP code</font><font color="#E5E5E5"> so</font>
+
+221
+00:11:02,000 --> 00:11:04,540
+since we're working<font color="#E5E5E5"> with it over here as</font>
+
+222
+00:11:04,540 --> 00:11:07,370
+random garbage characters
+
+223
+00:11:07,370 --> 00:11:11,980
+actually go ahead and<font color="#E5E5E5"> hexif</font><font color="#CCCCCC"> I that</font>
+
+224
+00:11:11,980 --> 00:11:18,050
+encode<font color="#CCCCCC"> into</font><font color="#E5E5E5"> hex so that is now the raw</font>
+
+225
+00:11:18,050 --> 00:11:20,360
+<font color="#E5E5E5">version just in hex and then what we can</font>
+
+226
+00:11:20,360 --> 00:11:22,660
+give it<font color="#E5E5E5"> easily to the</font><font color="#CCCCCC"> PHP code by</font>
+
+227
+00:11:22,660 --> 00:11:26,870
+passing<font color="#E5E5E5"> that in and decoding it so let's</font>
+
+228
+00:11:26,870 --> 00:11:30,290
+actually because you saw in the source
+
+229
+00:11:30,290 --> 00:11:31,880
+code<font color="#E5E5E5"> they were using functions called</font>
+
+230
+00:11:31,880 --> 00:11:37,430
+bin<font color="#CCCCCC"> to hex or hex to bin that may</font>
+
+231
+00:11:37,430 --> 00:11:39,890
+<font color="#E5E5E5">actually they have been in another in</font>
+
+232
+00:11:39,890 --> 00:11:42,170
+the previous level but that<font color="#CCCCCC"> will you</font>
+
+233
+00:11:42,170 --> 00:11:44,029
+<font color="#CCCCCC">know get the raw bytes</font><font color="#E5E5E5"> out of some hacks</font>
+
+234
+00:11:44,029 --> 00:11:48,830
+so if I echo hex to bin and pass in that
+
+235
+00:11:48,830 --> 00:11:52,070
+<font color="#E5E5E5">hex</font><font color="#CCCCCC"> we should be able to see</font><font color="#E5E5E5"> that yeah</font>
+
+236
+00:11:52,070 --> 00:11:56,450
+<font color="#CCCCCC">okay</font><font color="#E5E5E5"> cool</font><font color="#CCCCCC"> so there's the raw stuff so</font>
+
+237
+00:11:56,450 --> 00:12:00,610
+let's say this is<font color="#E5E5E5"> the</font><font color="#CCCCCC"> ciphertext and</font>
+
+238
+00:12:05,290 --> 00:12:10,550
+<font color="#CCCCCC">this is the plaintext</font><font color="#E5E5E5"> so now we can</font>
+
+239
+00:12:10,550 --> 00:12:12,680
+<font color="#CCCCCC">figure out the key</font><font color="#E5E5E5"> by running our</font><font color="#CCCCCC"> XOR</font>
+
+240
+00:12:12,680 --> 00:12:15,320
+encrypt by passing in the plaintext<font color="#CCCCCC"> and</font>
+
+241
+00:12:15,320 --> 00:12:17,270
+what we're gonna<font color="#CCCCCC"> use as the</font><font color="#E5E5E5"> ciphertext</font>
+
+242
+00:12:17,270 --> 00:12:20,390
+<font color="#E5E5E5">for our key here because</font><font color="#CCCCCC"> we're just</font>
+
+243
+00:12:20,390 --> 00:12:28,130
+<font color="#E5E5E5">doing that</font><font color="#CCCCCC"> operation</font><font color="#E5E5E5"> a</font><font color="#CCCCCC"> XOR B equals C so</font>
+
+244
+00:12:28,130 --> 00:12:33,650
+a XOR C equals B now let's try and run
+
+245
+00:12:33,650 --> 00:12:36,709
+that echo<font color="#E5E5E5"> X or encrypt with the</font>
+
+246
+00:12:36,709 --> 00:12:41,150
+<font color="#E5E5E5">plaintext and the ciphertext check this</font>
+
+247
+00:12:41,150 --> 00:12:44,120
+out<font color="#CCCCCC"> and we get</font><font color="#E5E5E5"> something that repeats we</font>
+
+248
+00:12:44,120 --> 00:12:48,260
+get this<font color="#E5E5E5"> Q w8j over and over and</font><font color="#CCCCCC"> over</font>
+
+249
+00:12:48,260 --> 00:12:50,779
+again<font color="#CCCCCC"> so that must be the original key</font>
+
+250
+00:12:50,779 --> 00:12:54,980
+<font color="#E5E5E5">just those four so now we can</font><font color="#CCCCCC"> use</font><font color="#E5E5E5"> that</font>
+
+251
+00:12:54,980 --> 00:12:58,459
+as our key we can<font color="#E5E5E5"> say key equals this</font>
+
+252
+00:12:58,459 --> 00:13:01,850
+string<font color="#E5E5E5"> and so now we can</font><font color="#CCCCCC"> have the data</font>
+
+253
+00:13:01,850 --> 00:13:04,850
+<font color="#E5E5E5">that we</font><font color="#CCCCCC"> want to work</font><font color="#E5E5E5"> with</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> data that we</font>
+
+254
+00:13:04,850 --> 00:13:11,120
+actually want the<font color="#CCCCCC"> good data where show</font>
+
+255
+00:13:11,120 --> 00:13:13,750
+<font color="#CCCCCC">password is equal to</font><font color="#E5E5E5"> is set to yes</font><font color="#CCCCCC"> and</font>
+
+256
+00:13:13,750 --> 00:13:17,720
+now we can<font color="#E5E5E5"> run</font><font color="#CCCCCC"> the like operation to get</font>
+
+257
+00:13:17,720 --> 00:13:19,759
+<font color="#E5E5E5">the cookie value for that</font>
+
+258
+00:13:19,759 --> 00:13:22,759
+we let's see<font color="#E5E5E5"> that was first we have to</font>
+
+259
+00:13:22,759 --> 00:13:30,379
+XOR it we need<font color="#E5E5E5"> to run JSON</font><font color="#CCCCCC"> encode on</font><font color="#E5E5E5"> our</font>
+
+260
+00:13:30,379 --> 00:13:40,999
+good data so now good plaintext<font color="#E5E5E5"> and we</font>
+
+261
+00:13:40,999 --> 00:13:45,319
+have the key<font color="#CCCCCC"> so good ciphertext can</font>
+
+262
+00:13:45,319 --> 00:13:50,239
+equal to X<font color="#E5E5E5"> or</font><font color="#CCCCCC"> encrypts pass in the good</font>
+
+263
+00:13:50,239 --> 00:13:52,249
+plaintext now that we have and the key
+
+264
+00:13:52,249 --> 00:13:55,459
+that we want to give it cool<font color="#E5E5E5"> so now</font>
+
+265
+00:13:55,459 --> 00:13:57,109
+<font color="#CCCCCC">let's just echo that out and see what</font>
+
+266
+00:13:57,109 --> 00:14:01,639
+<font color="#E5E5E5">our good ciphertext is it's good</font>
+
+267
+00:14:01,639 --> 00:14:03,019
+probably<font color="#E5E5E5"> gonna look like nonsense yep</font>
+
+268
+00:14:03,019 --> 00:14:05,179
+because<font color="#CCCCCC"> it's X word</font><font color="#E5E5E5"> so what did they do</font>
+
+269
+00:14:05,179 --> 00:14:08,589
+in their script to handle it
+
+270
+00:14:08,589 --> 00:14:16,220
+they base64 encoded it okay
+
+271
+00:14:16,220 --> 00:14:19,189
+so let's do that<font color="#E5E5E5"> we have that function</font>
+
+272
+00:14:19,189 --> 00:14:28,579
+in PHP as well so cookie<font color="#E5E5E5"> can equal a 64</font>
+
+273
+00:14:28,579 --> 00:14:33,289
+<font color="#E5E5E5">in code of the good</font><font color="#CCCCCC"> ciphertext and now</font>
+
+274
+00:14:33,289 --> 00:14:37,119
+let's set check out what the cookie is
+
+275
+00:14:37,119 --> 00:14:40,339
+this whatever this is<font color="#CCCCCC"> so let's copy and</font>
+
+276
+00:14:40,339 --> 00:14:45,169
+<font color="#CCCCCC">paste</font><font color="#E5E5E5"> this into our Python script let's</font>
+
+277
+00:14:45,169 --> 00:14:54,139
+set<font color="#E5E5E5"> cookies data set to this and so now</font>
+
+278
+00:14:54,139 --> 00:14:57,169
+<font color="#CCCCCC">we will get this page just as we had</font>
+
+279
+00:14:57,169 --> 00:15:02,629
+before<font color="#E5E5E5"> but we'll pass in cookies equals</font>
+
+280
+00:15:02,629 --> 00:15:13,519
+cookies now we can print all this let's
+
+281
+00:15:13,519 --> 00:15:15,230
+move those<font color="#CCCCCC"> up</font><font color="#E5E5E5"> here so it looks</font><font color="#CCCCCC"> normal</font>
+
+282
+00:15:15,230 --> 00:15:18,679
+let's run<font color="#E5E5E5"> this and see we've got on the</font>
+
+283
+00:15:18,679 --> 00:15:20,029
+page now that<font color="#CCCCCC"> we've given</font><font color="#E5E5E5"> it the proper</font>
+
+284
+00:15:20,029 --> 00:15:30,050
+cookie we got it set this<font color="#CCCCCC"> index to HTML</font>
+
+285
+00:15:30,050 --> 00:15:32,869
+and you can see here<font color="#E5E5E5"> it ran with the</font>
+
+286
+00:15:32,869 --> 00:15:35,629
+password for<font color="#E5E5E5"> not as 12 is this guy cool</font>
+
+287
+00:15:35,629 --> 00:15:39,110
+<font color="#CCCCCC">so that worked all we did</font><font color="#E5E5E5"> was do a</font>
+
+288
+00:15:39,110 --> 00:15:41,689
+little trick with<font color="#CCCCCC"> XOR was figuring out</font>
+
+289
+00:15:41,689 --> 00:15:48,499
+what<font color="#CCCCCC"> the key was by XOR in both the</font>
+
+290
+00:15:48,499 --> 00:15:49,999
+plaintext<font color="#CCCCCC"> and the ciphertext because we</font>
+
+291
+00:15:49,999 --> 00:15:51,649
+had those originally and<font color="#CCCCCC"> that property</font>
+
+292
+00:15:51,649 --> 00:15:53,269
+of XOR will allow us<font color="#CCCCCC"> to determine</font><font color="#E5E5E5"> the</font>
+
+293
+00:15:53,269 --> 00:15:58,549
+key perfect<font color="#E5E5E5"> so now now that we have the</font>
+
+294
+00:15:58,549 --> 00:16:00,860
+password to<font color="#CCCCCC"> the NAT is 12</font><font color="#E5E5E5"> let's go ahead</font>
+
+295
+00:16:00,860 --> 00:16:08,839
+and create<font color="#CCCCCC"> a new script and get us back</font>
+
+296
+00:16:08,839 --> 00:16:17,929
+to where<font color="#CCCCCC"> we were</font><font color="#E5E5E5"> a fresh script that was</font>
+
+297
+00:16:17,929 --> 00:16:22,850
+12 and<font color="#E5E5E5"> when we run this</font><font color="#CCCCCC"> now you can see</font>
+
+298
+00:16:22,850 --> 00:16:25,720
+<font color="#CCCCCC">we are on NAT as level 12 okay awesome</font>
+
+299
+00:16:25,720 --> 00:16:30,829
+<font color="#CCCCCC">sweet</font><font color="#E5E5E5"> that was it that was our cool and</font>
+
+300
+00:16:30,829 --> 00:16:34,189
+<font color="#CCCCCC">good way to get through</font><font color="#E5E5E5"> natus level</font><font color="#CCCCCC"> 11</font>
+
+301
+00:16:34,189 --> 00:16:36,410
+just<font color="#E5E5E5"> trying to take</font><font color="#CCCCCC"> advantage of</font><font color="#E5E5E5"> their</font>
+
+302
+00:16:36,410 --> 00:16:39,439
+PHP code<font color="#CCCCCC"> modifying the XOR function so</font>
+
+303
+00:16:39,439 --> 00:16:41,059
+it can take<font color="#E5E5E5"> a key in</font><font color="#CCCCCC"> that we can pass to</font>
+
+304
+00:16:41,059 --> 00:16:42,889
+<font color="#CCCCCC">it and then using the plaintext and</font><font color="#E5E5E5"> the</font>
+
+305
+00:16:42,889 --> 00:16:45,319
+<font color="#CCCCCC">ciphertext</font><font color="#E5E5E5"> to our advantage</font><font color="#CCCCCC"> so thank</font><font color="#E5E5E5"> you</font>
+
+306
+00:16:45,319 --> 00:16:46,429
+<font color="#CCCCCC">guys</font><font color="#E5E5E5"> for watching</font><font color="#CCCCCC"> hope</font><font color="#E5E5E5"> you're enjoying</font>
+
+307
+00:16:46,429 --> 00:16:49,339
+this<font color="#CCCCCC"> and these</font><font color="#E5E5E5"> videos if you</font><font color="#CCCCCC"> are hey</font>
+
+308
+00:16:49,339 --> 00:16:50,660
+please like the video<font color="#CCCCCC"> maybe leave the</font>
+
+309
+00:16:50,660 --> 00:16:51,949
+comments and<font color="#E5E5E5"> what you think if you're</font>
+
+310
+00:16:51,949 --> 00:16:53,540
+willing<font color="#CCCCCC"> to</font><font color="#E5E5E5"> subscribe and thank you again</font>
+
+311
+00:16:53,540 --> 00:00:00,000
+<font color="#CCCCCC">I'll see you in the next video</font>
+

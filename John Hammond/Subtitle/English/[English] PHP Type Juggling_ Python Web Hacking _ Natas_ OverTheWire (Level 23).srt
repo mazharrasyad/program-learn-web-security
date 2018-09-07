@@ -1,0 +1,520 @@
+1
+00:00:00,030 --> 00:00:02,340
+level 23<font color="#E5E5E5"> of natus for the over the wire</font>
+
+2
+00:00:02,340 --> 00:00:04,250
+war game gets into a<font color="#E5E5E5"> little bit of PHP</font>
+
+3
+00:00:04,250 --> 00:00:08,370
+<font color="#E5E5E5">variable type misunderstanding</font><font color="#CCCCCC"> cuz see</font>
+
+4
+00:00:08,370 --> 00:00:09,960
+I'm actually looking<font color="#CCCCCC"> at the source</font><font color="#E5E5E5"> code</font>
+
+5
+00:00:09,960 --> 00:00:11,219
+in the<font color="#CCCCCC"> webpage here because they're</font>
+
+6
+00:00:11,219 --> 00:00:13,019
+doing<font color="#CCCCCC"> a little</font><font color="#E5E5E5"> bit of the PHP highlight</font>
+
+7
+00:00:13,019 --> 00:00:16,740
+file where<font color="#CCCCCC"> they're they throw a bunch of</font>
+
+8
+00:00:16,740 --> 00:00:19,289
+like<font color="#CCCCCC"> span characters or HTML stuff</font>
+
+9
+00:00:19,289 --> 00:00:21,810
+that's not that good<font color="#CCCCCC"> to</font><font color="#E5E5E5"> look at in</font>
+
+10
+00:00:21,810 --> 00:00:24,150
+<font color="#E5E5E5">sublime text</font><font color="#CCCCCC"> so I'm</font><font color="#E5E5E5"> back</font><font color="#CCCCCC"> in the web site</font>
+
+11
+00:00:24,150 --> 00:00:26,760
+here in in the Firefox<font color="#CCCCCC"> in a web browser</font>
+
+12
+00:00:26,760 --> 00:00:28,590
+but we're determining<font color="#E5E5E5"> okay if we've</font>
+
+13
+00:00:28,590 --> 00:00:31,260
+submitted<font color="#E5E5E5"> to the form here which asks us</font>
+
+14
+00:00:31,260 --> 00:00:34,290
+do we want to<font color="#CCCCCC"> enter a password</font><font color="#E5E5E5"> and the</font>
+
+15
+00:00:34,290 --> 00:00:36,450
+<font color="#E5E5E5">PHP code tests if that key exists if</font>
+
+16
+00:00:36,450 --> 00:00:37,770
+we've actually submitted the form is
+
+17
+00:00:37,770 --> 00:00:40,710
+there a stir stir or a string string
+
+18
+00:00:40,710 --> 00:00:44,579
+whatever PHP function that is and is the
+
+19
+00:00:44,579 --> 00:00:47,430
+<font color="#E5E5E5">request password greater than 10 so</font><font color="#CCCCCC"> this</font>
+
+20
+00:00:47,430 --> 00:00:49,110
+stir stir looks like it's kind<font color="#CCCCCC"> of</font>
+
+21
+00:00:49,110 --> 00:00:50,820
+comparing something<font color="#E5E5E5"> like the requested</font>
+
+22
+00:00:50,820 --> 00:00:52,879
+password with a string<font color="#CCCCCC"> I love you and</font>
+
+23
+00:00:52,879 --> 00:00:55,890
+and so and<font color="#CCCCCC"> obviously this both of these</font>
+
+24
+00:00:55,890 --> 00:00:57,750
+conditions must<font color="#E5E5E5"> be returned true to</font>
+
+25
+00:00:57,750 --> 00:00:59,910
+actually<font color="#E5E5E5"> be retrieving the credentials</font>
+
+26
+00:00:59,910 --> 00:01:02,100
+for<font color="#CCCCCC"> the next level password for</font><font color="#E5E5E5"> NAT is</font>
+
+27
+00:01:02,100 --> 00:01:04,290
+24<font color="#E5E5E5"> so I want to check out what these</font>
+
+28
+00:01:04,290 --> 00:01:07,560
+<font color="#E5E5E5">things</font><font color="#CCCCCC"> were I wanted to see okay what is</font>
+
+29
+00:01:07,560 --> 00:01:11,520
+PHP<font color="#CCCCCC"> stir stir</font><font color="#E5E5E5"> and it looks</font><font color="#CCCCCC"> like that</font>
+
+30
+00:01:11,520 --> 00:01:13,619
+<font color="#E5E5E5">will find the first occurrence of a</font>
+
+31
+00:01:13,619 --> 00:01:15,869
+string and<font color="#CCCCCC"> it</font><font color="#E5E5E5"> will return</font><font color="#CCCCCC"> part</font><font color="#E5E5E5"> of a</font>
+
+32
+00:01:15,869 --> 00:01:18,689
+haystack<font color="#E5E5E5"> string starting to something</font>
+
+33
+00:01:18,689 --> 00:01:19,920
+<font color="#E5E5E5">from and including the first occurrence</font>
+
+34
+00:01:19,920 --> 00:01:21,840
+of the needle to<font color="#E5E5E5"> the end of the haystack</font>
+
+35
+00:01:21,840 --> 00:01:27,720
+okay<font color="#E5E5E5"> and that greater</font><font color="#CCCCCC"> than</font><font color="#E5E5E5"> 10 thing is</font>
+
+36
+00:01:27,720 --> 00:01:29,729
+<font color="#E5E5E5">interesting because that's expecting</font>
+
+37
+00:01:29,729 --> 00:01:31,259
+that request password to be an integer
+
+38
+00:01:31,259 --> 00:01:34,259
+<font color="#E5E5E5">but we're using it as</font><font color="#CCCCCC"> a string over</font><font color="#E5E5E5"> here</font>
+
+39
+00:01:34,259 --> 00:01:36,329
+in this context so<font color="#E5E5E5"> how do we get around</font>
+
+40
+00:01:36,329 --> 00:01:41,250
+<font color="#E5E5E5">this interesting</font><font color="#CCCCCC"> thing is that PHP</font><font color="#E5E5E5"> type</font>
+
+41
+00:01:41,250 --> 00:01:46,460
+conversions<font color="#CCCCCC"> PHP</font><font color="#E5E5E5"> doesn't entirely care</font>
+
+42
+00:01:46,460 --> 00:01:50,310
+really<font color="#E5E5E5"> what your variable really is it</font>
+
+43
+00:01:50,310 --> 00:01:52,500
+all depends on what context<font color="#CCCCCC"> you're using</font>
+
+44
+00:01:52,500 --> 00:01:54,119
+it<font color="#E5E5E5"> in there how you're testing things</font>
+
+45
+00:01:54,119 --> 00:01:56,369
+with it PHP does not require support
+
+46
+00:01:56,369 --> 00:01:57,930
+explicit type definition variable
+
+47
+00:01:57,930 --> 00:01:59,100
+declarations<font color="#CCCCCC"> the variable types</font>
+
+48
+00:01:59,100 --> 00:02:00,450
+determined by the context in which<font color="#E5E5E5"> the</font>
+
+49
+00:02:00,450 --> 00:02:03,600
+<font color="#E5E5E5">variables being used so that is to say</font>
+
+50
+00:02:03,600 --> 00:02:05,939
+<font color="#CCCCCC">if string value is</font><font color="#E5E5E5"> assigned to variable</font>
+
+51
+00:02:05,939 --> 00:02:08,160
+<font color="#CCCCCC">var var becomes a string if an integer</font>
+
+52
+00:02:08,160 --> 00:02:09,660
+variable as a sign<font color="#CCCCCC"> of</font><font color="#E5E5E5"> our it becomes</font><font color="#CCCCCC"> an</font>
+
+53
+00:02:09,660 --> 00:02:10,979
+<font color="#E5E5E5">enter that's cool because it's dynamic</font>
+
+54
+00:02:10,979 --> 00:02:12,959
+<font color="#E5E5E5">type setting and stuff like that but</font>
+
+55
+00:02:12,959 --> 00:02:13,860
+<font color="#E5E5E5">it's</font><font color="#CCCCCC"> also</font>
+
+56
+00:02:13,860 --> 00:02:15,780
+interesting when<font color="#E5E5E5"> you're using comparison</font>
+
+57
+00:02:15,780 --> 00:02:18,000
+<font color="#E5E5E5">operators or just assignment operators</font>
+
+58
+00:02:18,000 --> 00:02:20,070
+on them so I'll shut up<font color="#E5E5E5"> and I'll show</font>
+
+59
+00:02:20,070 --> 00:02:21,450
+<font color="#CCCCCC">you what I mean if we get</font><font color="#E5E5E5"> back into our</font>
+
+60
+00:02:21,450 --> 00:02:23,640
+Python code<font color="#E5E5E5"> we'll go ahead and request</font>
+
+61
+00:02:23,640 --> 00:02:25,890
+<font color="#E5E5E5">this page with the get</font><font color="#CCCCCC"> function but if</font>
+
+62
+00:02:25,890 --> 00:02:29,340
+we wanted<font color="#CCCCCC"> to post to this page we</font><font color="#E5E5E5"> can</font>
+
+63
+00:02:29,340 --> 00:02:32,640
+change the method<font color="#E5E5E5"> there set data to have</font>
+
+64
+00:02:32,640 --> 00:02:35,250
+the password and we'll set it<font color="#E5E5E5"> to that</font>
+
+65
+00:02:35,250 --> 00:02:37,500
+string<font color="#E5E5E5"> I love you</font><font color="#CCCCCC"> so this will return</font>
+
+66
+00:02:37,500 --> 00:02:41,040
+<font color="#CCCCCC">wrong</font><font color="#E5E5E5"> after</font><font color="#CCCCCC"> I include a</font><font color="#E5E5E5"> comment or a</font>
+
+67
+00:02:41,040 --> 00:02:43,290
+comma there because we're not<font color="#E5E5E5"> getting</font>
+
+68
+00:02:43,290 --> 00:02:46,380
+that same<font color="#E5E5E5"> greater than 10 thing</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> this</font>
+
+69
+00:02:46,380 --> 00:02:48,990
+case<font color="#E5E5E5"> we're seeing that string I love you</font>
+
+70
+00:02:48,990 --> 00:02:50,730
+that the string<font color="#E5E5E5"> password interpreted as</font>
+
+71
+00:02:50,730 --> 00:02:54,620
+a string<font color="#E5E5E5"> and when it's being tested as</font>
+
+72
+00:02:54,620 --> 00:02:58,470
+less than<font color="#CCCCCC"> or greater</font><font color="#E5E5E5"> than 10 it's just</font>
+
+73
+00:02:58,470 --> 00:03:00,840
+gonna<font color="#E5E5E5"> be nothing really or a zero I</font>
+
+74
+00:03:00,840 --> 00:03:02,340
+<font color="#CCCCCC">don't I</font><font color="#E5E5E5"> don't entirely know I'll admit</font>
+
+75
+00:03:02,340 --> 00:03:04,950
+<font color="#CCCCCC">what PHP will evaluate it to however</font><font color="#E5E5E5"> if</font>
+
+76
+00:03:04,950 --> 00:03:06,720
+we were to give<font color="#E5E5E5"> it some numbers here</font>
+
+77
+00:03:06,720 --> 00:03:10,800
+<font color="#E5E5E5">like if we were to say</font><font color="#CCCCCC"> 10 PHP is gonna</font>
+
+78
+00:03:10,800 --> 00:03:13,080
+start<font color="#CCCCCC"> to think that this first part</font><font color="#E5E5E5"> here</font>
+
+79
+00:03:13,080 --> 00:03:14,670
+<font color="#E5E5E5">when you're interpreting it as a number</font>
+
+80
+00:03:14,670 --> 00:03:17,040
+as an integer<font color="#E5E5E5"> that's gonna be what takes</font>
+
+81
+00:03:17,040 --> 00:03:19,440
+precedence<font color="#E5E5E5"> if you interpret it as a</font>
+
+82
+00:03:19,440 --> 00:03:22,170
+number<font color="#E5E5E5"> so weird thing right</font><font color="#CCCCCC"> what if I</font>
+
+83
+00:03:22,170 --> 00:03:25,320
+were<font color="#E5E5E5"> to say</font><font color="#CCCCCC"> oh</font><font color="#E5E5E5"> 11 I love you</font><font color="#CCCCCC"> because 11</font>
+
+84
+00:03:25,320 --> 00:03:27,030
+is greater<font color="#E5E5E5"> than 10 and the</font><font color="#CCCCCC"> i-love-you</font>
+
+85
+00:03:27,030 --> 00:03:29,220
+<font color="#CCCCCC">string is still in there</font><font color="#E5E5E5"> it'll return</font>
+
+86
+00:03:29,220 --> 00:03:32,130
+true on<font color="#E5E5E5"> both of those cases</font><font color="#CCCCCC"> 11 is</font>
+
+87
+00:03:32,130 --> 00:03:34,530
+greater<font color="#E5E5E5"> than 10 and I love you is in the</font>
+
+88
+00:03:34,530 --> 00:03:36,750
+string<font color="#E5E5E5"> it's returning that needle and</font>
+
+89
+00:03:36,750 --> 00:03:38,430
+<font color="#E5E5E5">the rest of the haystack</font><font color="#CCCCCC"> so it gets it</font>
+
+90
+00:03:38,430 --> 00:03:40,739
+<font color="#CCCCCC">just fine here we go the credentials</font><font color="#E5E5E5"> for</font>
+
+91
+00:03:40,739 --> 00:03:42,690
+<font color="#E5E5E5">the next level are password for NAT is</font>
+
+92
+00:03:42,690 --> 00:03:45,750
+24 okay let's snag that<font color="#E5E5E5"> but keep</font><font color="#CCCCCC"> that in</font>
+
+93
+00:03:45,750 --> 00:03:48,030
+mind because PHP type juggling is seen
+
+94
+00:03:48,030 --> 00:03:50,549
+like everywhere and a lot<font color="#E5E5E5"> of web</font>
+
+95
+00:03:50,549 --> 00:03:53,370
+challenges and<font color="#E5E5E5"> in CTF style stuff</font><font color="#CCCCCC"> and</font>
+
+96
+00:03:53,370 --> 00:03:54,989
+I'm sure<font color="#CCCCCC"> you'll probably run into</font><font color="#E5E5E5"> it in</font>
+
+97
+00:03:54,989 --> 00:03:57,299
+the wild<font color="#E5E5E5"> because PHP is still out there</font>
+
+98
+00:03:57,299 --> 00:03:59,610
+like<font color="#E5E5E5"> crazy</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> definitely keep that</font><font color="#CCCCCC"> in</font>
+
+99
+00:03:59,610 --> 00:04:02,280
+mind<font color="#E5E5E5"> weird weird oddities</font><font color="#CCCCCC"> with PHP that</font>
+
+100
+00:04:02,280 --> 00:04:04,440
+stuff gets into<font color="#CCCCCC"> like magic hashes etc</font>
+
+101
+00:04:04,440 --> 00:04:07,530
+<font color="#E5E5E5">and PHP is just a bundle of bugs</font>
+
+102
+00:04:07,530 --> 00:04:09,750
+depending on on who you ask<font color="#E5E5E5"> and what</font>
+
+103
+00:04:09,750 --> 00:04:12,090
+opinions you get but<font color="#CCCCCC"> that is the</font>
+
+104
+00:04:12,090 --> 00:04:14,400
+<font color="#E5E5E5">solution for natus 23 let's save this</font>
+
+105
+00:04:14,400 --> 00:04:18,870
+for a script from<font color="#CCCCCC"> natus 24 and we will</font>
+
+106
+00:04:18,870 --> 00:04:22,220
+move on to see what's<font color="#E5E5E5"> next in this</font><font color="#CCCCCC"> level</font>
+
+107
+00:04:22,220 --> 00:04:26,220
+are we getting the page<font color="#E5E5E5"> perfect</font><font color="#CCCCCC"> all</font>
+
+108
+00:04:26,220 --> 00:04:27,090
+<font color="#CCCCCC">right thank you guys so much</font><font color="#E5E5E5"> for</font>
+
+109
+00:04:27,090 --> 00:04:27,750
+<font color="#CCCCCC">watching hope</font>
+
+110
+00:04:27,750 --> 00:04:29,130
+you're<font color="#E5E5E5"> enjoying these if you did like</font>
+
+111
+00:04:29,130 --> 00:04:30,360
+<font color="#E5E5E5">the video please do press that like</font>
+
+112
+00:04:30,360 --> 00:04:32,100
+<font color="#CCCCCC">button if you want</font><font color="#E5E5E5"> to comment tell me</font>
+
+113
+00:04:32,100 --> 00:04:33,570
+<font color="#CCCCCC">what</font><font color="#E5E5E5"> you think what you</font><font color="#CCCCCC"> like</font><font color="#E5E5E5"> what</font><font color="#CCCCCC"> you</font>
+
+114
+00:04:33,570 --> 00:04:34,980
+didn't<font color="#CCCCCC"> like what I can do better much</font>
+
+115
+00:04:34,980 --> 00:04:38,250
+how much I suck<font color="#E5E5E5"> etc</font><font color="#CCCCCC"> if you want to</font>
+
+116
+00:04:38,250 --> 00:04:40,410
+<font color="#CCCCCC">subscribe and if you would</font><font color="#E5E5E5"> like to</font>
+
+117
+00:04:40,410 --> 00:04:41,850
+support<font color="#E5E5E5"> me please</font><font color="#CCCCCC"> do check out</font><font color="#E5E5E5"> my</font>
+
+118
+00:04:41,850 --> 00:04:44,130
+patreon account<font color="#CCCCCC"> want to send a</font><font color="#E5E5E5"> special</font>
+
+119
+00:04:44,130 --> 00:04:45,210
+<font color="#E5E5E5">shout</font><font color="#CCCCCC"> out to the people that are</font>
+
+120
+00:04:45,210 --> 00:04:46,860
+<font color="#E5E5E5">supporting me already spencer clark</font>
+
+121
+00:04:46,860 --> 00:04:49,430
+thank you for supporting me on patreon<font color="#CCCCCC"> I</font>
+
+122
+00:04:49,430 --> 00:04:51,390
+try<font color="#E5E5E5"> to shout out everyone who does</font>
+
+123
+00:04:51,390 --> 00:04:52,980
+support<font color="#E5E5E5"> me if they give anything more</font>
+
+124
+00:04:52,980 --> 00:04:56,730
+than<font color="#CCCCCC"> just a dollar and five dollars or</font>
+
+125
+00:04:56,730 --> 00:04:58,050
+<font color="#CCCCCC">more we'll let</font><font color="#E5E5E5"> you all showcase</font>
+
+126
+00:04:58,050 --> 00:04:59,910
+<font color="#E5E5E5">everything</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> I upload to YouTube as</font>
+
+127
+00:04:59,910 --> 00:05:02,010
+early as I can<font color="#CCCCCC"> so even if it's scheduled</font>
+
+128
+00:05:02,010 --> 00:05:03,540
+for<font color="#E5E5E5"> upload later I'll give it</font><font color="#CCCCCC"> to you</font>
+
+129
+00:05:03,540 --> 00:05:05,580
+<font color="#CCCCCC">early</font><font color="#E5E5E5"> access so thanks for</font><font color="#CCCCCC"> watching</font><font color="#E5E5E5"> guys</font>
+
+130
+00:05:05,580 --> 00:00:00,000
+see<font color="#E5E5E5"> you</font><font color="#CCCCCC"> soon</font>
+

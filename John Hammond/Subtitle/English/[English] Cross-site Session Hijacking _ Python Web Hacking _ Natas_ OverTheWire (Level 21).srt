@@ -1,0 +1,752 @@
+1
+00:00:00,030 --> 00:00:02,730
+so<font color="#CCCCCC"> that is</font><font color="#E5E5E5"> 21</font><font color="#CCCCCC"> of the over the wire war</font>
+
+2
+00:00:02,730 --> 00:00:05,430
+game starts us off<font color="#CCCCCC"> with</font><font color="#E5E5E5"> the same kind of</font>
+
+3
+00:00:05,430 --> 00:00:08,099
+notification as earlier<font color="#E5E5E5"> your login is a</font>
+
+4
+00:00:08,099 --> 00:00:10,410
+regular user login as admin to retrieve
+
+5
+00:00:10,410 --> 00:00:12,570
+credentials for the next<font color="#E5E5E5"> level they give</font>
+
+6
+00:00:12,570 --> 00:00:13,980
+us a note here though they say the
+
+7
+00:00:13,980 --> 00:00:16,560
+website<font color="#CCCCCC"> is co-located</font><font color="#E5E5E5"> with another URL</font>
+
+8
+00:00:16,560 --> 00:00:19,980
+and<font color="#E5E5E5"> that is 21 experimenter and that's</font>
+
+9
+00:00:19,980 --> 00:00:21,660
+peculiar we'll have to note that<font color="#E5E5E5"> and</font>
+
+10
+00:00:21,660 --> 00:00:24,170
+we'll check<font color="#CCCCCC"> out what the source code is</font>
+
+11
+00:00:24,170 --> 00:00:27,289
+<font color="#CCCCCC">before I do that I want to snag that</font>
+
+12
+00:00:27,289 --> 00:00:32,130
+experimenter that just that URL<font color="#CCCCCC"> doesn't</font>
+
+13
+00:00:32,130 --> 00:00:33,570
+<font color="#E5E5E5">look like it needs a</font><font color="#CCCCCC"> username in there</font>
+
+14
+00:00:33,570 --> 00:00:35,340
+at<font color="#E5E5E5"> all</font><font color="#CCCCCC"> but let's</font><font color="#E5E5E5"> actually check</font><font color="#CCCCCC"> out</font><font color="#E5E5E5"> the</font>
+
+15
+00:00:35,340 --> 00:00:37,800
+source code for this<font color="#E5E5E5"> original page</font>
+
+16
+00:00:37,800 --> 00:00:40,260
+before<font color="#CCCCCC"> we move on let's go ahead</font><font color="#E5E5E5"> and</font>
+
+17
+00:00:40,260 --> 00:00:42,870
+Deanna ties that<font color="#E5E5E5"> and remove all the</font>
+
+18
+00:00:42,870 --> 00:00:44,969
+<font color="#E5E5E5">break</font><font color="#CCCCCC"> tags just</font><font color="#E5E5E5"> like usual so we can</font>
+
+19
+00:00:44,969 --> 00:00:46,289
+pretty much see the<font color="#E5E5E5"> source code</font><font color="#CCCCCC"> and</font>
+
+20
+00:00:46,289 --> 00:00:48,690
+let's put it in a new page<font color="#E5E5E5"> so it's easy</font>
+
+21
+00:00:48,690 --> 00:00:50,730
+<font color="#E5E5E5">to see here so it doesn't look like</font>
+
+22
+00:00:50,730 --> 00:00:52,289
+<font color="#E5E5E5">there's anything interesting</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> this</font>
+
+23
+00:00:52,289 --> 00:00:54,149
+page<font color="#E5E5E5"> other than it just gives us okay</font>
+
+24
+00:00:54,149 --> 00:00:55,949
+here's the function<font color="#E5E5E5"> source code for the</font>
+
+25
+00:00:55,949 --> 00:00:57,420
+print credential<font color="#CCCCCC"> thing determines</font>
+
+26
+00:00:57,420 --> 00:00:58,620
+whether or<font color="#E5E5E5"> not</font><font color="#CCCCCC"> we're a user and would</font>
+
+27
+00:00:58,620 --> 00:01:00,570
+give us the flag or the<font color="#CCCCCC"> password for the</font>
+
+28
+00:01:00,570 --> 00:01:03,149
+next<font color="#E5E5E5"> level and that's all it does so</font>
+
+29
+00:01:03,149 --> 00:01:05,188
+looks like<font color="#E5E5E5"> that experimenter link is</font>
+
+30
+00:01:05,188 --> 00:01:06,720
+where<font color="#E5E5E5"> we have to go next to be able</font><font color="#CCCCCC"> to</font>
+
+31
+00:01:06,720 --> 00:01:10,680
+move on so let's head over there<font color="#E5E5E5"> I'm</font>
+
+32
+00:01:10,680 --> 00:01:14,040
+gonna just copy this and<font color="#E5E5E5"> let's change</font>
+
+33
+00:01:14,040 --> 00:01:18,540
+the<font color="#E5E5E5"> get URL to</font><font color="#CCCCCC"> experimenter check</font><font color="#E5E5E5"> out</font>
+
+34
+00:01:18,540 --> 00:01:23,040
+<font color="#E5E5E5">that</font><font color="#CCCCCC"> webpage in source code so now does</font>
+
+35
+00:01:23,040 --> 00:01:25,710
+<font color="#E5E5E5">21 CSS style experimenter this website</font>
+
+36
+00:01:25,710 --> 00:01:27,479
+is<font color="#CCCCCC"> co-located with</font><font color="#E5E5E5"> okay the original</font>
+
+37
+00:01:27,479 --> 00:01:30,270
+page that's fine<font color="#E5E5E5"> example background</font>
+
+38
+00:01:30,270 --> 00:01:34,079
+color yellow looks like you can change
+
+39
+00:01:34,079 --> 00:01:37,020
+the colors of<font color="#E5E5E5"> the page here supposedly</font>
+
+40
+00:01:37,020 --> 00:01:38,640
+<font color="#E5E5E5">in the in this form</font><font color="#CCCCCC"> that's the</font>
+
+41
+00:01:38,640 --> 00:01:40,890
+functionality<font color="#E5E5E5"> this</font><font color="#CCCCCC"> webpage whatever</font><font color="#E5E5E5"> we</font>
+
+42
+00:01:40,890 --> 00:01:42,509
+care<font color="#CCCCCC"> about the vulnerabilities so let's</font>
+
+43
+00:01:42,509 --> 00:01:44,070
+go ahead<font color="#E5E5E5"> and</font><font color="#CCCCCC"> take a look at the index</font>
+
+44
+00:01:44,070 --> 00:01:47,070
+source code here<font color="#E5E5E5"> and see if we can read</font>
+
+45
+00:01:47,070 --> 00:01:50,220
+how how that<font color="#CCCCCC"> may have a vulnerability</font>
+
+46
+00:01:50,220 --> 00:01:53,070
+index<font color="#E5E5E5"> source</font><font color="#CCCCCC"> out HTML</font><font color="#E5E5E5"> just add it to the</font>
+
+47
+00:01:53,070 --> 00:01:55,610
+link here
+
+48
+00:01:55,880 --> 00:01:59,579
+let's also<font color="#CCCCCC"> D anta ties this</font><font color="#E5E5E5"> kill all the</font>
+
+49
+00:01:59,579 --> 00:02:02,130
+breaks and store this<font color="#E5E5E5"> in another</font><font color="#CCCCCC"> pane</font><font color="#E5E5E5"> in</font>
+
+50
+00:02:02,130 --> 00:02:04,710
+case we need<font color="#CCCCCC"> it again</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> okay PHP code</font>
+
+51
+00:02:04,710 --> 00:02:06,750
+here<font color="#CCCCCC"> a little bit more active than the</font>
+
+52
+00:02:06,750 --> 00:02:08,280
+previous page<font color="#CCCCCC"> we have a session</font><font color="#E5E5E5"> that</font>
+
+53
+00:02:08,280 --> 00:02:10,709
+we're working with<font color="#CCCCCC"> if Update was</font>
+
+54
+00:02:10,709 --> 00:02:12,870
+submitted store it so if a reiki exists
+
+55
+00:02:12,870 --> 00:02:13,430
+submit
+
+56
+00:02:13,430 --> 00:02:15,920
+request so essentially if they submit to
+
+57
+00:02:15,920 --> 00:02:19,310
+<font color="#CCCCCC">the page every single</font><font color="#E5E5E5"> key in the</font>
+
+58
+00:02:19,310 --> 00:02:21,230
+requests<font color="#CCCCCC"> Oh is actually stored in</font>
+
+59
+00:02:21,230 --> 00:02:22,579
+session that's awesome
+
+60
+00:02:22,579 --> 00:02:25,159
+that is<font color="#E5E5E5"> probably how we're</font><font color="#CCCCCC"> gonna be</font><font color="#E5E5E5"> able</font>
+
+61
+00:02:25,159 --> 00:02:28,250
+<font color="#E5E5E5">to become admin it looks like that's</font>
+
+62
+00:02:28,250 --> 00:02:30,439
+<font color="#CCCCCC">that that's pretty</font><font color="#E5E5E5"> much a vulnerability</font>
+
+63
+00:02:30,439 --> 00:02:32,659
+whatever we request<font color="#E5E5E5"> to it will just</font>
+
+64
+00:02:32,659 --> 00:02:34,069
+store in a session<font color="#E5E5E5"> and if we're using</font>
+
+65
+00:02:34,069 --> 00:02:35,689
+session to determine whether or<font color="#E5E5E5"> not</font>
+
+66
+00:02:35,689 --> 00:02:37,310
+we're<font color="#E5E5E5"> gonna get the password then that's</font>
+
+67
+00:02:37,310 --> 00:02:39,319
+it<font color="#E5E5E5"> looks like that a bug messages go</font>
+
+68
+00:02:39,319 --> 00:02:43,819
+through if we<font color="#E5E5E5"> include that this code</font>
+
+69
+00:02:43,819 --> 00:02:47,079
+<font color="#E5E5E5">looks</font><font color="#CCCCCC"> like it</font><font color="#E5E5E5"> it's trying to filter keys</font>
+
+70
+00:02:47,079 --> 00:02:50,810
+down here there's a loop that determines
+
+71
+00:02:50,810 --> 00:02:52,790
+<font color="#E5E5E5">whether or not it is inside the valid</font>
+
+72
+00:02:52,790 --> 00:02:55,400
+keys<font color="#E5E5E5"> but and then it will add it to the</font>
+
+73
+00:02:55,400 --> 00:02:58,040
+session key but it looks<font color="#E5E5E5"> like it that</font>
+
+74
+00:02:58,040 --> 00:03:00,109
+<font color="#E5E5E5">already happens like this exact line is</font>
+
+75
+00:03:00,109 --> 00:03:05,000
+already<font color="#CCCCCC"> being ran up here</font><font color="#E5E5E5"> okay whatever</font>
+
+76
+00:03:05,000 --> 00:03:06,560
+<font color="#E5E5E5">looks like we can still take advantage</font>
+
+77
+00:03:06,560 --> 00:03:11,060
+<font color="#E5E5E5">of that</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> let's see if we can get the</font>
+
+78
+00:03:11,060 --> 00:03:13,909
+session<font color="#E5E5E5"> admin variable updated</font><font color="#CCCCCC"> it looked</font>
+
+79
+00:03:13,909 --> 00:03:18,319
+<font color="#E5E5E5">like we could run with debug source</font><font color="#CCCCCC"> to</font>
+
+80
+00:03:18,319 --> 00:03:21,829
+bug<font color="#E5E5E5"> true being set we can go ahead and</font>
+
+81
+00:03:21,829 --> 00:03:24,590
+run<font color="#E5E5E5"> the get statement here and we see</font>
+
+82
+00:03:24,590 --> 00:03:26,540
+<font color="#E5E5E5">that above notifications okay session</font>
+
+83
+00:03:26,540 --> 00:03:28,729
+contents array<font color="#E5E5E5"> they're not set to</font>
+
+84
+00:03:28,729 --> 00:03:32,449
+anything<font color="#E5E5E5"> but since they're testing</font>
+
+85
+00:03:32,449 --> 00:03:34,579
+through the<font color="#E5E5E5"> request we don't have the</font>
+
+86
+00:03:34,579 --> 00:03:37,250
+request<font color="#E5E5E5"> associative array or that that</font>
+
+87
+00:03:37,250 --> 00:03:39,590
+that<font color="#CCCCCC"> notes that</font><font color="#E5E5E5"> global in PHP that's</font>
+
+88
+00:03:39,590 --> 00:03:45,019
+either PHP post or get so we could<font color="#E5E5E5"> just</font>
+
+89
+00:03:45,019 --> 00:03:47,180
+<font color="#E5E5E5">try submit equals one and see what</font>
+
+90
+00:03:47,180 --> 00:03:52,879
+<font color="#E5E5E5">happens here right yep okay it looks</font>
+
+91
+00:03:52,879 --> 00:03:54,799
+like<font color="#E5E5E5"> it's</font><font color="#CCCCCC"> gonna read the get variables</font>
+
+92
+00:03:54,799 --> 00:03:56,359
+just<font color="#E5E5E5"> as well as it would have read the</font>
+
+93
+00:03:56,359 --> 00:03:57,650
+post<font color="#CCCCCC"> variable so we don't have</font><font color="#E5E5E5"> to change</font>
+
+94
+00:03:57,650 --> 00:03:59,359
+<font color="#E5E5E5">the the</font><font color="#CCCCCC"> Python function that we're</font>
+
+95
+00:03:59,359 --> 00:04:01,549
+<font color="#CCCCCC">trying</font><font color="#E5E5E5"> to run with requests now let's go</font>
+
+96
+00:04:01,549 --> 00:04:04,250
+ahead and set admin equal to one because
+
+97
+00:04:04,250 --> 00:04:08,840
+<font color="#E5E5E5">we can do that just as easily and now we</font>
+
+98
+00:04:08,840 --> 00:04:10,579
+have a<font color="#E5E5E5"> session variable for</font><font color="#CCCCCC"> our admin</font>
+
+99
+00:04:10,579 --> 00:04:14,629
+being one perfect so I'm going to<font color="#E5E5E5"> assume</font>
+
+100
+00:04:14,629 --> 00:04:17,060
+if these websites are<font color="#CCCCCC"> co-located looks</font>
+
+101
+00:04:17,060 --> 00:04:18,709
+like the session variables are<font color="#E5E5E5"> probably</font>
+
+102
+00:04:18,709 --> 00:04:20,000
+<font color="#E5E5E5">just going to</font><font color="#CCCCCC"> be</font><font color="#E5E5E5"> there they're gonna</font>
+
+103
+00:04:20,000 --> 00:04:22,340
+stay<font color="#E5E5E5"> intact so let's check out</font><font color="#CCCCCC"> what our</font>
+
+104
+00:04:22,340 --> 00:04:24,970
+session cookie is
+
+105
+00:04:24,970 --> 00:04:28,120
+in this<font color="#CCCCCC"> website in the experimenter and</font>
+
+106
+00:04:28,120 --> 00:04:32,260
+then let's try<font color="#E5E5E5"> and use</font><font color="#CCCCCC"> that as the</font>
+
+107
+00:04:32,260 --> 00:04:34,750
+string<font color="#E5E5E5"> for our PHP session in the</font>
+
+108
+00:04:34,750 --> 00:04:36,340
+<font color="#E5E5E5">original page and</font><font color="#CCCCCC"> see if we can actually</font>
+
+109
+00:04:36,340 --> 00:04:39,160
+log in as as admin in that let's try
+
+110
+00:04:39,160 --> 00:04:43,180
+this<font color="#E5E5E5"> I'm just gonna note that there but</font>
+
+111
+00:04:43,180 --> 00:04:46,150
+let's change this<font color="#E5E5E5"> back to URL so we go</font>
+
+112
+00:04:46,150 --> 00:04:50,020
+<font color="#E5E5E5">to the</font><font color="#CCCCCC"> original page and let's try with</font>
+
+113
+00:04:50,020 --> 00:04:55,660
+<font color="#E5E5E5">a cookie PHP session ID set to that same</font>
+
+114
+00:04:55,660 --> 00:04:59,260
+string<font color="#CCCCCC"> and let's check out what we get</font>
+
+115
+00:04:59,260 --> 00:05:08,700
+Oh looks<font color="#CCCCCC"> like I put that to the source</font>
+
+116
+00:05:08,700 --> 00:05:14,680
+let's go to the<font color="#E5E5E5"> original page</font><font color="#CCCCCC"> and this</font>
+
+117
+00:05:14,680 --> 00:05:16,270
+website<font color="#CCCCCC"> is co-located</font><font color="#E5E5E5"> blah blah blah</font>
+
+118
+00:05:16,270 --> 00:05:17,890
+you're logged in as a regular<font color="#CCCCCC"> user okay</font>
+
+119
+00:05:17,890 --> 00:05:20,860
+<font color="#CCCCCC">so no dice on that one login as admin</font><font color="#E5E5E5"> to</font>
+
+120
+00:05:20,860 --> 00:05:24,880
+retrieve credentials for natus<font color="#E5E5E5"> 22 hmm do</font>
+
+121
+00:05:24,880 --> 00:05:26,380
+we need the same session already
+
+122
+00:05:26,380 --> 00:05:29,169
+<font color="#E5E5E5">occurring let's comment that out</font><font color="#CCCCCC"> and</font>
+
+123
+00:05:29,169 --> 00:05:31,440
+make sure<font color="#E5E5E5"> that all happens</font><font color="#CCCCCC"> I would think</font>
+
+124
+00:05:31,440 --> 00:05:33,370
+maybe you<font color="#E5E5E5"> need the session already</font>
+
+125
+00:05:33,370 --> 00:05:39,790
+occurring<font color="#E5E5E5"> no let's let's set a post</font>
+
+126
+00:05:39,790 --> 00:05:41,050
+request and<font color="#CCCCCC"> make sure that</font><font color="#E5E5E5"> actually</font>
+
+127
+00:05:41,050 --> 00:05:44,320
+<font color="#E5E5E5">happens I guess let's post to</font>
+
+128
+00:05:44,320 --> 00:05:48,310
+experimenter and let's let's do this
+
+129
+00:05:48,310 --> 00:05:51,400
+<font color="#E5E5E5">with post variables if we need to</font>
+
+130
+00:05:51,400 --> 00:05:52,840
+whatever<font color="#CCCCCC"> weighs a little</font><font color="#E5E5E5"> double them up</font>
+
+131
+00:05:52,840 --> 00:05:55,290
+<font color="#E5E5E5">there's nothing wrong with that</font><font color="#CCCCCC"> so data</font>
+
+132
+00:05:55,290 --> 00:05:59,260
+will equal that<font color="#CCCCCC"> and</font><font color="#E5E5E5"> submit can you cool</font>
+
+133
+00:05:59,260 --> 00:06:06,850
+whatever<font color="#CCCCCC"> admin can equal</font><font color="#E5E5E5"> one let's try</font>
+
+134
+00:06:06,850 --> 00:06:14,040
+that<font color="#E5E5E5"> let's</font><font color="#CCCCCC"> try</font><font color="#E5E5E5"> old session</font><font color="#CCCCCC"> being set</font>
+
+135
+00:06:14,040 --> 00:06:16,240
+<font color="#CCCCCC">here</font><font color="#E5E5E5"> because that's</font><font color="#CCCCCC"> not</font><font color="#E5E5E5"> gonna let us in</font>
+
+136
+00:06:16,240 --> 00:06:21,250
+is it<font color="#E5E5E5"> no okay let's grab</font><font color="#CCCCCC"> that text then</font>
+
+137
+00:06:21,250 --> 00:06:24,190
+or whatever it<font color="#E5E5E5"> did I print it</font><font color="#CCCCCC"> out in</font>
+
+138
+00:06:24,190 --> 00:06:27,340
+here I did so<font color="#E5E5E5"> whatever that PHP session</font>
+
+139
+00:06:27,340 --> 00:06:30,880
+ID might be we can pass that<font color="#CCCCCC"> along</font><font color="#E5E5E5"> to</font>
+
+140
+00:06:30,880 --> 00:06:38,099
+the<font color="#E5E5E5"> original page old session</font>
+
+141
+00:06:38,099 --> 00:06:44,289
+and let's see<font color="#CCCCCC"> if it runs</font><font color="#E5E5E5"> there we go</font>
+
+142
+00:06:44,289 --> 00:06:49,680
+cool so the way<font color="#CCCCCC"> that I</font><font color="#E5E5E5"> did</font><font color="#CCCCCC"> that was I</font>
+
+143
+00:06:49,680 --> 00:06:53,080
+got the original<font color="#E5E5E5"> session set up maybe we</font>
+
+144
+00:06:53,080 --> 00:06:55,030
+<font color="#CCCCCC">may</font><font color="#E5E5E5"> not</font><font color="#CCCCCC"> even</font><font color="#E5E5E5"> need this post since we</font>
+
+145
+00:06:55,030 --> 00:06:56,470
+were doing with get earlier let's try
+
+146
+00:06:56,470 --> 00:07:00,580
+that nope<font color="#E5E5E5"> looks like we don't need</font><font color="#CCCCCC"> to do</font>
+
+147
+00:07:00,580 --> 00:07:02,169
+it<font color="#E5E5E5"> in post because again</font><font color="#CCCCCC"> that requests</font>
+
+148
+00:07:02,169 --> 00:07:04,120
+global and PHP<font color="#E5E5E5"> will work just</font><font color="#CCCCCC"> fine it'll</font>
+
+149
+00:07:04,120 --> 00:07:06,699
+take either<font color="#E5E5E5"> get</font><font color="#CCCCCC"> or post variables it</font>
+
+150
+00:07:06,699 --> 00:07:09,550
+includes them all<font color="#E5E5E5"> so after I've got that</font>
+
+151
+00:07:09,550 --> 00:07:12,580
+session<font color="#E5E5E5"> already set</font><font color="#CCCCCC"> up I'm able to just</font>
+
+152
+00:07:12,580 --> 00:07:14,530
+steal the cookie from the<font color="#E5E5E5"> original page</font>
+
+153
+00:07:14,530 --> 00:07:16,569
+the experimenter<font color="#E5E5E5"> bring that over to</font><font color="#CCCCCC"> the</font>
+
+154
+00:07:16,569 --> 00:07:18,849
+real level<font color="#E5E5E5"> page pass that along with the</font>
+
+155
+00:07:18,849 --> 00:07:21,340
+cookies and it will say<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> great</font>
+
+156
+00:07:21,340 --> 00:07:23,319
+<font color="#E5E5E5">you're authenticated you're logged in</font>
+
+157
+00:07:23,319 --> 00:07:25,690
+with that admin credential<font color="#E5E5E5"> your admin</font>
+
+158
+00:07:25,690 --> 00:07:26,979
+the credentials<font color="#E5E5E5"> for the next level</font><font color="#CCCCCC"> are</font>
+
+159
+00:07:26,979 --> 00:07:31,479
+<font color="#CCCCCC">now tis 22</font><font color="#E5E5E5"> and we'll keep moving</font><font color="#CCCCCC"> save</font>
+
+160
+00:07:31,479 --> 00:07:34,690
+this as<font color="#CCCCCC"> natus 22</font><font color="#E5E5E5"> let's get the password</font>
+
+161
+00:07:34,690 --> 00:07:37,449
+in<font color="#CCCCCC"> here</font><font color="#E5E5E5"> we don't</font><font color="#CCCCCC"> need the experimenter</font>
+
+162
+00:07:37,449 --> 00:07:41,650
+variable anymore<font color="#CCCCCC"> probably</font><font color="#E5E5E5"> just use that</font>
+
+163
+00:07:41,650 --> 00:07:44,080
+and don't<font color="#E5E5E5"> need the others but</font><font color="#CCCCCC"> that is</font>
+
+164
+00:07:44,080 --> 00:07:46,169
+that that<font color="#CCCCCC"> is not</font><font color="#E5E5E5"> as level 21 an</font>
+
+165
+00:07:46,169 --> 00:07:48,699
+interesting trick with an<font color="#E5E5E5"> external page</font>
+
+166
+00:07:48,699 --> 00:07:50,889
+<font color="#E5E5E5">hmm</font><font color="#CCCCCC"> don't know what this</font><font color="#E5E5E5"> is</font><font color="#CCCCCC"> doing</font>
+
+167
+00:07:50,889 --> 00:07:52,930
+looks like we'll check out now<font color="#CCCCCC"> 222 in</font>
+
+168
+00:07:52,930 --> 00:07:54,729
+the next video but hey if you did like
+
+169
+00:07:54,729 --> 00:07:56,110
+<font color="#E5E5E5">this video please do press that like</font>
+
+170
+00:07:56,110 --> 00:07:57,909
+button<font color="#CCCCCC"> maybe leave me a comment let me</font>
+
+171
+00:07:57,909 --> 00:07:58,900
+know<font color="#E5E5E5"> what you think what</font><font color="#CCCCCC"> else you'd like</font>
+
+172
+00:07:58,900 --> 00:08:00,009
+<font color="#CCCCCC">to see what</font><font color="#E5E5E5"> else I could do better with</font>
+
+173
+00:08:00,009 --> 00:08:02,110
+<font color="#CCCCCC">how you solve this if you're willing to</font>
+
+174
+00:08:02,110 --> 00:08:03,699
+subscribe and if you really<font color="#E5E5E5"> want to</font>
+
+175
+00:08:03,699 --> 00:08:05,440
+<font color="#E5E5E5">support me</font><font color="#CCCCCC"> please just check me out</font><font color="#E5E5E5"> on</font>
+
+176
+00:08:05,440 --> 00:08:06,370
+patreon
+
+177
+00:08:06,370 --> 00:08:08,169
+on that note a special<font color="#E5E5E5"> shout out to</font>
+
+178
+00:08:08,169 --> 00:08:09,639
+<font color="#E5E5E5">those that support me already Spencer</font>
+
+179
+00:08:09,639 --> 00:08:11,169
+Clark thank you so so much<font color="#E5E5E5"> for</font>
+
+180
+00:08:11,169 --> 00:08:13,029
+everything<font color="#E5E5E5"> that</font><font color="#CCCCCC"> you're send along you</font>
+
+181
+00:08:13,029 --> 00:08:14,800
+really<font color="#E5E5E5"> help and support me in the</font>
+
+182
+00:08:14,800 --> 00:08:17,229
+channel<font color="#E5E5E5"> I offer a reward if</font><font color="#CCCCCC"> you some</font>
+
+183
+00:08:17,229 --> 00:08:19,029
+support anything<font color="#E5E5E5"> if you send in anything</font>
+
+184
+00:08:19,029 --> 00:08:20,409
+<font color="#E5E5E5">in patreon I'll give you a</font><font color="#CCCCCC"> shout-out</font><font color="#E5E5E5"> for</font>
+
+185
+00:08:20,409 --> 00:08:23,770
+<font color="#CCCCCC">every video</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> $5 or more</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> I'll give</font>
+
+186
+00:08:23,770 --> 00:08:25,419
+you early<font color="#CCCCCC"> access to whatever I can for</font>
+
+187
+00:08:25,419 --> 00:08:27,159
+<font color="#E5E5E5">what I upload to YouTube so thanks for</font>
+
+188
+00:08:27,159 --> 00:00:00,000
+<font color="#E5E5E5">watching</font><font color="#CCCCCC"> guys see you in the next</font><font color="#E5E5E5"> video</font>
+

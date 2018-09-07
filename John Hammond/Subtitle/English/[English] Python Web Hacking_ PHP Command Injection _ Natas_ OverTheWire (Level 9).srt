@@ -1,0 +1,676 @@
+1
+00:00:00,030 --> 00:00:02,009
+what's up guys<font color="#E5E5E5"> John Hammond here coming</font>
+
+2
+00:00:02,009 --> 00:00:03,629
+<font color="#CCCCCC">back at you</font><font color="#E5E5E5"> with another video</font><font color="#CCCCCC"> for the</font>
+
+3
+00:00:03,629 --> 00:00:06,660
+<font color="#E5E5E5">natus war game from over the wire so we</font>
+
+4
+00:00:06,660 --> 00:00:08,580
+just got the password<font color="#E5E5E5"> for level 9 and</font>
+
+5
+00:00:08,580 --> 00:00:10,679
+we've got a script that<font color="#E5E5E5"> will get the</font>
+
+6
+00:00:10,679 --> 00:00:12,780
+<font color="#CCCCCC">webpage content for us so we don't</font><font color="#E5E5E5"> have</font>
+
+7
+00:00:12,780 --> 00:00:15,420
+<font color="#E5E5E5">to use a web browser</font><font color="#CCCCCC"> and this one looks</font>
+
+8
+00:00:15,420 --> 00:00:18,480
+like it's<font color="#E5E5E5"> saying</font><font color="#CCCCCC"> alright natus</font><font color="#E5E5E5"> 9 here's</font>
+
+9
+00:00:18,480 --> 00:00:22,050
+a<font color="#CCCCCC"> form</font><font color="#E5E5E5"> you</font><font color="#CCCCCC"> can find words containing</font><font color="#E5E5E5"> and</font>
+
+10
+00:00:22,050 --> 00:00:25,019
+inputs just<font color="#E5E5E5"> regular text variable</font><font color="#CCCCCC"> looks</font>
+
+11
+00:00:25,019 --> 00:00:27,470
+like with the variable<font color="#E5E5E5"> name needle and</font>
+
+12
+00:00:27,470 --> 00:00:29,849
+it looks<font color="#E5E5E5"> like it'll search for us the</font>
+
+13
+00:00:29,849 --> 00:00:32,219
+output<font color="#E5E5E5"> is displayed in pre formatted</font>
+
+14
+00:00:32,219 --> 00:00:34,440
+text<font color="#E5E5E5"> and we could probably see that in</font>
+
+15
+00:00:34,440 --> 00:00:35,700
+the web browser if we really wanted to
+
+16
+00:00:35,700 --> 00:00:39,030
+let's do that<font color="#E5E5E5"> just</font><font color="#CCCCCC"> so</font><font color="#E5E5E5"> you get an idea</font><font color="#CCCCCC"> of</font>
+
+17
+00:00:39,030 --> 00:00:52,949
+what<font color="#CCCCCC"> this level looks like natus</font><font color="#E5E5E5"> 9 and</font>
+
+18
+00:00:52,949 --> 00:00:56,730
+<font color="#CCCCCC">thatis</font><font color="#E5E5E5"> 9 and you can see there is</font>
+
+19
+00:00:56,730 --> 00:00:58,440
+<font color="#E5E5E5">another option here to view source code</font>
+
+20
+00:00:58,440 --> 00:01:01,699
+so we<font color="#E5E5E5"> can check</font><font color="#CCCCCC"> that out</font>
+
+21
+00:01:01,699 --> 00:01:06,210
+index<font color="#E5E5E5"> source</font><font color="#CCCCCC"> HTML</font><font color="#E5E5E5"> that was the name of</font>
+
+22
+00:01:06,210 --> 00:01:10,970
+<font color="#E5E5E5">the file and we</font><font color="#CCCCCC"> can do that in our</font>
+
+23
+00:01:10,970 --> 00:01:13,500
+sublime text stuff if<font color="#CCCCCC"> we really wanted</font>
+
+24
+00:01:13,500 --> 00:01:14,909
+<font color="#CCCCCC">to</font><font color="#E5E5E5"> we could decode that</font><font color="#CCCCCC"> if we wanted to</font>
+
+25
+00:01:14,909 --> 00:01:16,860
+<font color="#E5E5E5">or we can just view</font><font color="#CCCCCC"> it</font><font color="#E5E5E5"> in the web</font>
+
+26
+00:01:16,860 --> 00:01:19,049
+browser<font color="#CCCCCC"> so it'll handle</font><font color="#E5E5E5"> that a little</font>
+
+27
+00:01:19,049 --> 00:01:24,500
+bit nicely<font color="#CCCCCC"> ok so looks like PHP code</font><font color="#E5E5E5"> the</font>
+
+28
+00:01:24,500 --> 00:01:27,960
+notes here with variables with a dollar
+
+29
+00:01:27,960 --> 00:01:31,860
+sign<font color="#CCCCCC"> and</font><font color="#E5E5E5"> all key is apparently set to</font>
+
+30
+00:01:31,860 --> 00:01:34,799
+whatever we post to<font color="#E5E5E5"> whatever is</font>
+
+31
+00:01:34,799 --> 00:01:37,079
+requested once we communicate with<font color="#E5E5E5"> the</font>
+
+32
+00:01:37,079 --> 00:01:40,710
+<font color="#E5E5E5">server and if key is not an empty string</font>
+
+33
+00:01:40,710 --> 00:01:44,790
+it will<font color="#E5E5E5"> pass</font><font color="#CCCCCC"> through hmm what is that</font>
+
+34
+00:01:44,790 --> 00:01:47,790
+<font color="#E5E5E5">looks like a function pass through</font><font color="#CCCCCC"> I'll</font>
+
+35
+00:01:47,790 --> 00:01:49,740
+check that<font color="#E5E5E5"> out and it's oh it looks like</font>
+
+36
+00:01:49,740 --> 00:01:51,390
+it might<font color="#CCCCCC"> be running a command here grep</font>
+
+37
+00:01:51,390 --> 00:01:53,280
+so like we've kind<font color="#E5E5E5"> of done in the</font>
+
+38
+00:01:53,280 --> 00:01:55,640
+command line<font color="#E5E5E5"> with</font><font color="#CCCCCC"> the bash shell</font><font color="#E5E5E5"> grep</font>
+
+39
+00:01:55,640 --> 00:02:01,469
+<font color="#E5E5E5">whatever we pass to</font><font color="#CCCCCC"> it</font><font color="#E5E5E5"> nice key in</font>
+
+40
+00:02:01,469 --> 00:02:04,200
+dictionary text dictionary text must be
+
+41
+00:02:04,200 --> 00:02:07,079
+a word<font color="#E5E5E5"> that's trying to</font><font color="#CCCCCC"> are dictionary</font>
+
+42
+00:02:07,079 --> 00:02:08,550
+<font color="#E5E5E5">that it's looking through what is the</font>
+
+43
+00:02:08,550 --> 00:02:11,280
+PHP pass-through function is it
+
+44
+00:02:11,280 --> 00:02:12,660
+literally<font color="#CCCCCC"> just gonna run a</font><font color="#E5E5E5"> command for</font>
+
+45
+00:02:12,660 --> 00:02:13,530
+<font color="#E5E5E5">us</font>
+
+46
+00:02:13,530 --> 00:02:16,290
+yes<font color="#E5E5E5"> it will totally just execute</font>
+
+47
+00:02:16,290 --> 00:02:20,880
+commands and display output<font color="#E5E5E5"> okay so we</font>
+
+48
+00:02:20,880 --> 00:02:22,560
+could<font color="#E5E5E5"> potentially have remote code</font>
+
+49
+00:02:22,560 --> 00:02:25,110
+execution here and we can<font color="#CCCCCC"> totally get in</font>
+
+50
+00:02:25,110 --> 00:02:27,300
+the way<font color="#CCCCCC"> of it because we're just</font><font color="#E5E5E5"> passing</font>
+
+51
+00:02:27,300 --> 00:02:29,490
+in raw arguments to this thing<font color="#E5E5E5"> so if we</font>
+
+52
+00:02:29,490 --> 00:02:32,700
+<font color="#E5E5E5">wanted</font><font color="#CCCCCC"> to find words that</font><font color="#E5E5E5"> say like</font><font color="#CCCCCC"> ten</font>
+
+53
+00:02:32,700 --> 00:02:35,459
+words<font color="#E5E5E5"> containing a p-- okay all of these</font>
+
+54
+00:02:35,459 --> 00:02:37,980
+things in dictionary<font color="#CCCCCC"> dot txt</font><font color="#E5E5E5"> Apple</font>
+
+55
+00:02:37,980 --> 00:02:39,450
+obviously<font color="#E5E5E5"> right</font>
+
+56
+00:02:39,450 --> 00:02:45,320
+what's etc so we can put more<font color="#E5E5E5"> in here</font>
+
+57
+00:02:45,320 --> 00:02:52,290
+<font color="#E5E5E5">like how</font><font color="#CCCCCC"> about a period so grep will use</font>
+
+58
+00:02:52,290 --> 00:02:53,400
+the<font color="#CCCCCC"> regular expressions here and that</font>
+
+59
+00:02:53,400 --> 00:02:55,860
+will return a period from<font color="#E5E5E5"> period will</font>
+
+60
+00:02:55,860 --> 00:02:57,239
+match everything<font color="#E5E5E5"> just like regular</font>
+
+61
+00:02:57,239 --> 00:02:59,100
+<font color="#E5E5E5">expressions will match any character so</font>
+
+62
+00:02:59,100 --> 00:03:01,500
+it returned the entire dictionary<font color="#E5E5E5"> text</font>
+
+63
+00:03:01,500 --> 00:03:04,440
+<font color="#E5E5E5">file but since we're supplying this as</font>
+
+64
+00:03:04,440 --> 00:03:07,200
+an argument<font color="#E5E5E5"> that you can see went</font>
+
+65
+00:03:07,200 --> 00:03:15,420
+through without any like quotes or
+
+66
+00:03:15,420 --> 00:03:17,100
+surrounding it to specify that<font color="#CCCCCC"> that</font><font color="#E5E5E5"> as a</font>
+
+67
+00:03:17,100 --> 00:03:18,840
+<font color="#E5E5E5">single</font><font color="#CCCCCC"> argument</font><font color="#E5E5E5"> we could bleed into</font>
+
+68
+00:03:18,840 --> 00:03:20,910
+other<font color="#E5E5E5"> arguments here and</font><font color="#CCCCCC"> specify other</font>
+
+69
+00:03:20,910 --> 00:03:23,489
+files that<font color="#E5E5E5"> we want</font><font color="#CCCCCC"> to read or change up</font>
+
+70
+00:03:23,489 --> 00:03:25,890
+how this command works<font color="#E5E5E5"> let's take</font><font color="#CCCCCC"> a look</font>
+
+71
+00:03:25,890 --> 00:03:30,330
+and let's do<font color="#CCCCCC"> that in</font><font color="#E5E5E5"> our shell here or</font>
+
+72
+00:03:30,330 --> 00:03:39,390
+are our sublime text script needle can
+
+73
+00:03:39,390 --> 00:03:45,060
+be app to see if we get responses<font color="#E5E5E5"> let's</font>
+
+74
+00:03:45,060 --> 00:03:46,769
+run this<font color="#E5E5E5"> we don't want</font><font color="#CCCCCC"> to go to index</font>
+
+75
+00:03:46,769 --> 00:03:48,360
+source anymore we want to be<font color="#E5E5E5"> posting it</font>
+
+76
+00:03:48,360 --> 00:03:50,640
+<font color="#CCCCCC">to the</font><font color="#E5E5E5"> actual page and we're getting all</font>
+
+77
+00:03:50,640 --> 00:03:55,709
+<font color="#CCCCCC">of this</font><font color="#E5E5E5"> output so can we return anything</font>
+
+78
+00:03:55,709 --> 00:04:04,560
+<font color="#CCCCCC">with the period huh</font><font color="#E5E5E5"> okay</font><font color="#CCCCCC"> I</font><font color="#E5E5E5"> must be</font>
+
+79
+00:04:04,560 --> 00:04:06,989
+getting some strange characters<font color="#E5E5E5"> out so</font>
+
+80
+00:04:06,989 --> 00:04:12,850
+let's go<font color="#CCCCCC"> a let's</font><font color="#E5E5E5"> just app huh</font>
+
+81
+00:04:12,850 --> 00:04:14,260
+maybe some maybe some strange characters
+
+82
+00:04:14,260 --> 00:04:16,870
+<font color="#E5E5E5">are in this</font><font color="#CCCCCC"> dictionary that</font><font color="#E5E5E5"> Python does</font>
+
+83
+00:04:16,870 --> 00:04:18,160
+not want to<font color="#E5E5E5"> render for us we can change</font>
+
+84
+00:04:18,160 --> 00:04:24,330
+the encoding here coding equals utf-8
+
+85
+00:04:24,330 --> 00:04:27,550
+that's the magic magic<font color="#E5E5E5"> Python syntax to</font>
+
+86
+00:04:27,550 --> 00:04:29,170
+<font color="#E5E5E5">suddenly be okay with Unicode characters</font>
+
+87
+00:04:29,170 --> 00:04:35,250
+<font color="#E5E5E5">will that work for</font><font color="#CCCCCC"> us</font><font color="#E5E5E5"> no okay</font>
+
+88
+00:04:35,250 --> 00:04:38,680
+man that's<font color="#E5E5E5"> super annoying let's do this</font>
+
+89
+00:04:38,680 --> 00:04:41,350
+with the verb browser then I suppose<font color="#E5E5E5"> at</font>
+
+90
+00:04:41,350 --> 00:04:45,220
+<font color="#E5E5E5">least</font><font color="#CCCCCC"> let's figure out our</font><font color="#E5E5E5"> attack let's</font>
+
+91
+00:04:45,220 --> 00:04:47,440
+say we can actually<font color="#E5E5E5"> return anything and</font>
+
+92
+00:04:47,440 --> 00:04:49,840
+if we get a space in<font color="#CCCCCC"> between</font><font color="#E5E5E5"> this we can</font>
+
+93
+00:04:49,840 --> 00:04:51,880
+actually<font color="#E5E5E5"> ask</font><font color="#CCCCCC"> for another file that we</font>
+
+94
+00:04:51,880 --> 00:04:54,460
+want<font color="#CCCCCC"> to look through I think right let's</font>
+
+95
+00:04:54,460 --> 00:04:58,120
+go to<font color="#E5E5E5"> natus</font><font color="#CCCCCC"> pass</font><font color="#E5E5E5"> and we want natus 10</font>
+
+96
+00:04:58,120 --> 00:05:02,590
+right search looks like it returns<font color="#E5E5E5"> from</font>
+
+97
+00:05:02,590 --> 00:05:06,430
+the file that<font color="#CCCCCC"> things matched in but the</font>
+
+98
+00:05:06,430 --> 00:05:09,910
+naty's password file<font color="#E5E5E5"> should get a result</font>
+
+99
+00:05:09,910 --> 00:05:13,560
+it should have matched at some point
+
+100
+00:05:13,860 --> 00:05:17,370
+let's check out what's control f4 natus
+
+101
+00:05:17,370 --> 00:05:24,090
+<font color="#E5E5E5">9 that is 10 no luck huh</font>
+
+102
+00:05:24,900 --> 00:05:29,020
+was it in etc<font color="#E5E5E5"> is it just gonna display</font>
+
+103
+00:05:29,020 --> 00:05:31,300
+anything<font color="#E5E5E5"> for us that's not dictionary</font>
+
+104
+00:05:31,300 --> 00:05:35,320
+<font color="#E5E5E5">dot txt it doesn't look</font><font color="#CCCCCC"> like there's any</font>
+
+105
+00:05:35,320 --> 00:05:38,980
+other notion of natus<font color="#CCCCCC"> no</font><font color="#E5E5E5"> so maybe that</font>
+
+106
+00:05:38,980 --> 00:05:42,280
+didn't work<font color="#E5E5E5"> okay</font><font color="#CCCCCC"> well we still have</font>
+
+107
+00:05:42,280 --> 00:05:48,880
+command execution right can we<font color="#E5E5E5"> do</font><font color="#CCCCCC"> period</font>
+
+108
+00:05:48,880 --> 00:05:55,150
+<font color="#E5E5E5">or like anything from</font><font color="#CCCCCC"> nowhere yep</font>
+
+109
+00:05:55,150 --> 00:05:59,380
+<font color="#E5E5E5">nothing nothing from nowhere and use a</font>
+
+110
+00:05:59,380 --> 00:06:05,590
+comment<font color="#E5E5E5"> to end the and what we're in and</font>
+
+111
+00:06:05,590 --> 00:06:07,450
+the rest of the line here<font color="#CCCCCC"> so it doesn't</font>
+
+112
+00:06:07,450 --> 00:06:08,890
+put in<font color="#E5E5E5"> that dictionary</font><font color="#CCCCCC"> dot txt for</font><font color="#E5E5E5"> us</font>
+
+113
+00:06:08,890 --> 00:06:10,480
+but<font color="#E5E5E5"> we use the semicolons to</font><font color="#CCCCCC"> note a new</font>
+
+114
+00:06:10,480 --> 00:06:13,000
+command right<font color="#CCCCCC"> ok cool so we've got</font>
+
+115
+00:06:13,000 --> 00:06:14,860
+command injection just<font color="#E5E5E5"> like that so now</font>
+
+116
+00:06:14,860 --> 00:06:19,260
+we should<font color="#CCCCCC"> just</font><font color="#E5E5E5"> be able to cat natus pass</font>
+
+117
+00:06:19,260 --> 00:06:22,680
+natus<font color="#CCCCCC"> 10</font>
+
+118
+00:06:23,830 --> 00:06:28,720
+is that not the is that not<font color="#CCCCCC"> the right</font>
+
+119
+00:06:28,720 --> 00:06:31,480
+location<font color="#CCCCCC"> a</font><font color="#E5E5E5"> little wire what the heck</font>
+
+120
+00:06:31,480 --> 00:06:33,340
+over the wire log<font color="#CCCCCC"> over the wild</font><font color="#E5E5E5"> org what</font>
+
+121
+00:06:33,340 --> 00:06:34,380
+am i doing
+
+122
+00:06:34,380 --> 00:06:42,390
+<font color="#CCCCCC">maddis etc</font><font color="#E5E5E5"> natus web pass oh I'm a fool</font>
+
+123
+00:06:44,070 --> 00:06:46,480
+so the old attack<font color="#E5E5E5"> probably would have</font>
+
+124
+00:06:46,480 --> 00:06:47,110
+<font color="#E5E5E5">worked just fine</font>
+
+125
+00:06:47,110 --> 00:06:52,090
+<font color="#CCCCCC">Matis web paths natus 10 yeah</font><font color="#E5E5E5"> oh jeez it</font>
+
+126
+00:06:52,090 --> 00:06:52,890
+totally would<font color="#CCCCCC"> have worked just</font><font color="#E5E5E5"> fine</font>
+
+127
+00:06:52,890 --> 00:06:54,580
+except I'm an idiot
+
+128
+00:06:54,580 --> 00:06:56,200
+I'm sorry I didn't even realize that
+
+129
+00:06:56,200 --> 00:06:57,430
+<font color="#E5E5E5">path guys I thought it was the same</font>
+
+130
+00:06:57,430 --> 00:06:59,950
+syntax as the other<font color="#CCCCCC"> war games well hey</font>
+
+131
+00:06:59,950 --> 00:07:02,680
+<font color="#E5E5E5">okay that's done for us right there's</font>
+
+132
+00:07:02,680 --> 00:07:07,570
+the attack we<font color="#E5E5E5"> can return</font><font color="#CCCCCC"> anything and</font>
+
+133
+00:07:07,570 --> 00:07:10,560
+let's<font color="#E5E5E5"> just get something that we know is</font>
+
+134
+00:07:10,560 --> 00:07:15,310
+<font color="#E5E5E5">in here</font><font color="#CCCCCC"> actually</font><font color="#E5E5E5"> no we can</font><font color="#CCCCCC"> just say</font>
+
+135
+00:07:15,310 --> 00:07:17,380
+<font color="#CCCCCC">anything</font><font color="#E5E5E5"> and</font><font color="#CCCCCC"> then we can still use a</font>
+
+136
+00:07:17,380 --> 00:07:22,060
+comment<font color="#E5E5E5"> to not include the not include</font>
+
+137
+00:07:22,060 --> 00:07:24,540
+the dictionary text<font color="#E5E5E5"> file natus web</font><font color="#CCCCCC"> Pass</font>
+
+138
+00:07:24,540 --> 00:07:29,620
+<font color="#CCCCCC">natus</font><font color="#E5E5E5"> 10 and use the hash tag here so we</font>
+
+139
+00:07:29,620 --> 00:07:33,940
+won't return<font color="#E5E5E5"> the rest of the responses</font>
+
+140
+00:07:33,940 --> 00:07:35,560
+from<font color="#CCCCCC"> the dictionary</font><font color="#E5E5E5"> text file we</font>
+
+141
+00:07:35,560 --> 00:07:37,360
+commented out<font color="#E5E5E5"> the rest of that command</font>
+
+142
+00:07:37,360 --> 00:07:40,420
+here so now we've got<font color="#CCCCCC"> our password</font>
+
+143
+00:07:40,420 --> 00:07:45,130
+loaded or displayed out to us and let's
+
+144
+00:07:45,130 --> 00:07:49,890
+<font color="#E5E5E5">use our regular expressions here to</font>
+
+145
+00:07:49,890 --> 00:07:54,010
+carve it out just like<font color="#E5E5E5"> that we get our</font>
+
+146
+00:07:54,010 --> 00:07:57,130
+password<font color="#E5E5E5"> and we are good to</font><font color="#CCCCCC"> go so</font><font color="#E5E5E5"> natus</font>
+
+147
+00:07:57,130 --> 00:08:00,790
+<font color="#E5E5E5">9 is done we can put this in the</font><font color="#CCCCCC"> script</font>
+
+148
+00:08:00,790 --> 00:08:04,270
+for<font color="#CCCCCC"> natus 10 and just</font><font color="#E5E5E5"> like that we</font><font color="#CCCCCC"> are</font>
+
+149
+00:08:04,270 --> 00:08:06,370
+ready to move on so I<font color="#E5E5E5"> hope you guys hope</font>
+
+150
+00:08:06,370 --> 00:08:08,110
+that made sense<font color="#E5E5E5"> a little bit of command</font>
+
+151
+00:08:08,110 --> 00:08:10,990
+injection because<font color="#E5E5E5"> that that code was</font>
+
+152
+00:08:10,990 --> 00:08:12,760
+just being passed through<font color="#CCCCCC"> two real</font>
+
+153
+00:08:12,760 --> 00:08:15,550
+command like a<font color="#E5E5E5"> bath shell and executing</font>
+
+154
+00:08:15,550 --> 00:08:16,690
+<font color="#E5E5E5">it and we can</font><font color="#CCCCCC"> just</font><font color="#E5E5E5"> kind of wrap around</font>
+
+155
+00:08:16,690 --> 00:08:19,240
+<font color="#CCCCCC">the arguments or and do some unique</font>
+
+156
+00:08:19,240 --> 00:08:22,900
+things<font color="#CCCCCC"> with it</font><font color="#E5E5E5"> and we can</font><font color="#CCCCCC"> load content</font>
+
+157
+00:08:22,900 --> 00:08:24,280
+from<font color="#E5E5E5"> other files because that's the way</font>
+
+158
+00:08:24,280 --> 00:08:26,410
+grep works and we can<font color="#E5E5E5"> use other bash</font>
+
+159
+00:08:26,410 --> 00:08:29,100
+syntax stuff like comments or other
+
+160
+00:08:29,100 --> 00:08:31,570
+<font color="#E5E5E5">commands with the semicolon</font><font color="#CCCCCC"> to do other</font>
+
+161
+00:08:31,570 --> 00:08:34,270
+<font color="#CCCCCC">interesting things so cool hack cool</font>
+
+162
+00:08:34,270 --> 00:08:36,280
+vulnerability there<font color="#E5E5E5"> and that's</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> real</font>
+
+163
+00:08:36,280 --> 00:08:37,309
+thing<font color="#E5E5E5"> command injection</font>
+
+164
+00:08:37,309 --> 00:08:40,130
+<font color="#E5E5E5">is for sure a real problem in web</font>
+
+165
+00:08:40,130 --> 00:08:43,039
+security<font color="#E5E5E5"> stuff so</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> now they filter</font>
+
+166
+00:08:43,039 --> 00:08:45,320
+on certain certain characters huh<font color="#E5E5E5"> let's</font>
+
+167
+00:08:45,320 --> 00:08:47,390
+<font color="#E5E5E5">get start on that in the next video guys</font>
+
+168
+00:08:47,390 --> 00:08:48,590
+thank you<font color="#E5E5E5"> guys for watching hope you're</font>
+
+169
+00:08:48,590 --> 00:00:00,000
+enjoying these
+

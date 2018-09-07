@@ -1,0 +1,1428 @@
+1
+00:00:00,060 --> 00:00:02,129
+in this<font color="#E5E5E5"> video I'm gonna show you a</font>
+
+2
+00:00:02,129 --> 00:00:04,200
+<font color="#CCCCCC">supercool attack that leverages local</font>
+
+3
+00:00:04,200 --> 00:00:06,270
+file inclusion against a blacklist<font color="#E5E5E5"> to</font>
+
+4
+00:00:06,270 --> 00:00:08,849
+<font color="#E5E5E5">achieve remote code execution by abusing</font>
+
+5
+00:00:08,849 --> 00:00:11,460
+PHP code injection<font color="#CCCCCC"> in the HTTP</font><font color="#E5E5E5"> user</font>
+
+6
+00:00:11,460 --> 00:00:13,559
+agent header<font color="#CCCCCC"> keep</font><font color="#E5E5E5"> watching to learn how</font>
+
+7
+00:00:13,559 --> 00:00:21,420
+to<font color="#E5E5E5"> do this and more right now what's up</font>
+
+8
+00:00:21,420 --> 00:00:23,189
+everybody my name<font color="#E5E5E5"> is John Hammond we're</font>
+
+9
+00:00:23,189 --> 00:00:25,500
+looking at natus level 25 and<font color="#E5E5E5"> I think</font>
+
+10
+00:00:25,500 --> 00:00:27,480
+this level<font color="#E5E5E5"> is awesome because it ties</font>
+
+11
+00:00:27,480 --> 00:00:29,609
+together a lot of<font color="#CCCCCC"> cool techniques that</font>
+
+12
+00:00:29,609 --> 00:00:31,260
+we've seen in<font color="#E5E5E5"> previous levels and things</font>
+
+13
+00:00:31,260 --> 00:00:33,030
+knowledge that we've built<font color="#E5E5E5"> up so far and</font>
+
+14
+00:00:33,030 --> 00:00:35,489
+it bundles<font color="#CCCCCC"> them together into</font><font color="#E5E5E5"> one really</font>
+
+15
+00:00:35,489 --> 00:00:38,100
+<font color="#E5E5E5">cool attack so I'm showing you this in</font>
+
+16
+00:00:38,100 --> 00:00:40,320
+the web browser first<font color="#E5E5E5"> because for</font><font color="#CCCCCC"> one</font>
+
+17
+00:00:40,320 --> 00:00:41,700
+thing<font color="#E5E5E5"> the source code looks better in</font>
+
+18
+00:00:41,700 --> 00:00:43,770
+<font color="#E5E5E5">the web browser for these levels because</font>
+
+19
+00:00:43,770 --> 00:00:45,809
+<font color="#E5E5E5">it has the PHP highlight file like</font>
+
+20
+00:00:45,809 --> 00:00:48,059
+syntax<font color="#CCCCCC"> highlighting and all that but in</font>
+
+21
+00:00:48,059 --> 00:00:49,170
+this<font color="#E5E5E5"> case I want to show you the</font>
+
+22
+00:00:49,170 --> 00:00:50,610
+functionality<font color="#CCCCCC"> of this Before we jump</font>
+
+23
+00:00:50,610 --> 00:00:52,680
+into attacking<font color="#CCCCCC"> it and writing our script</font>
+
+24
+00:00:52,680 --> 00:00:54,809
+<font color="#E5E5E5">so it looks like it's just a static page</font>
+
+25
+00:00:54,809 --> 00:00:57,180
+with blank text<font color="#E5E5E5"> which is weird we</font>
+
+26
+00:00:57,180 --> 00:00:59,129
+haven't seen<font color="#CCCCCC"> that</font><font color="#E5E5E5"> before in natus but we</font>
+
+27
+00:00:59,129 --> 00:01:00,930
+do have a little<font color="#CCCCCC"> bit of functionality up</font>
+
+28
+00:01:00,930 --> 00:01:02,910
+at<font color="#E5E5E5"> the top</font><font color="#CCCCCC"> right</font><font color="#E5E5E5"> it looks like it lets</font>
+
+29
+00:01:02,910 --> 00:01:05,220
+us<font color="#E5E5E5"> change the language that we're</font>
+
+30
+00:01:05,220 --> 00:01:07,260
+<font color="#CCCCCC">viewing this text in looks</font><font color="#E5E5E5"> like en for</font>
+
+31
+00:01:07,260 --> 00:01:10,380
+English<font color="#E5E5E5"> and</font><font color="#CCCCCC"> de for German and that's</font>
+
+32
+00:01:10,380 --> 00:01:14,100
+about<font color="#E5E5E5"> all</font><font color="#CCCCCC"> that we can do so thankfully</font>
+
+33
+00:01:14,100 --> 00:01:15,570
+over<font color="#E5E5E5"> the wire and</font><font color="#CCCCCC"> at us these</font><font color="#E5E5E5"> war games</font>
+
+34
+00:01:15,570 --> 00:01:17,430
+<font color="#CCCCCC">let us see the source code</font><font color="#E5E5E5"> as to what</font>
+
+35
+00:01:17,430 --> 00:01:19,500
+the code<font color="#CCCCCC"> is doing so let's take a look</font>
+
+36
+00:01:19,500 --> 00:01:21,000
+<font color="#CCCCCC">at what</font><font color="#E5E5E5"> that actually is here</font>
+
+37
+00:01:21,000 --> 00:01:23,700
+HTML<font color="#CCCCCC"> stuffs</font><font color="#E5E5E5"> not important but the PHP</font>
+
+38
+00:01:23,700 --> 00:01:25,409
+stuff that's<font color="#CCCCCC"> highlighted is interesting</font>
+
+39
+00:01:25,409 --> 00:01:28,049
+to<font color="#E5E5E5"> us so a lot of functions being</font>
+
+40
+00:01:28,049 --> 00:01:31,290
+defined<font color="#CCCCCC"> at the very very</font><font color="#E5E5E5"> bottom that</font>
+
+41
+00:01:31,290 --> 00:01:33,540
+just gets<font color="#E5E5E5"> the content of the web page</font>
+
+42
+00:01:33,540 --> 00:01:36,930
+<font color="#CCCCCC">looks like there's a</font><font color="#E5E5E5"> PHP function or set</font>
+
+43
+00:01:36,930 --> 00:01:39,360
+<font color="#E5E5E5">of the PHP</font><font color="#CCCCCC"> code</font><font color="#E5E5E5"> running this list files</font>
+
+44
+00:01:39,360 --> 00:01:41,520
+function that it defines<font color="#CCCCCC"> up top</font><font color="#E5E5E5"> and then</font>
+
+45
+00:01:41,520 --> 00:01:43,649
+the main section<font color="#E5E5E5"> of</font><font color="#CCCCCC"> the content</font><font color="#E5E5E5"> creates</font>
+
+46
+00:01:43,649 --> 00:01:45,060
+a new session uses the set language
+
+47
+00:01:45,060 --> 00:01:47,189
+<font color="#E5E5E5">function that it defines up top and then</font>
+
+48
+00:01:47,189 --> 00:01:49,140
+I think<font color="#E5E5E5"> these variables</font><font color="#CCCCCC"> that are</font><font color="#E5E5E5"> being</font>
+
+49
+00:01:49,140 --> 00:01:52,049
+<font color="#E5E5E5">displayed come from something earlier in</font>
+
+50
+00:01:52,049 --> 00:01:53,549
+the code<font color="#E5E5E5"> so let's actually floor what</font>
+
+51
+00:01:53,549 --> 00:01:56,000
+those<font color="#E5E5E5"> functions really are list files</font>
+
+52
+00:01:56,000 --> 00:01:59,640
+language as<font color="#E5E5E5"> F so a temporary variable</font>
+
+53
+00:01:59,640 --> 00:02:02,399
+<font color="#CCCCCC">for</font><font color="#E5E5E5"> okay just displaying the options for</font>
+
+54
+00:02:02,399 --> 00:02:04,469
+what<font color="#E5E5E5"> it's reading out it looks like list</font>
+
+55
+00:02:04,469 --> 00:02:09,090
+files must<font color="#E5E5E5"> be used to see the potential</font>
+
+56
+00:02:09,090 --> 00:02:11,940
+like English or German<font color="#E5E5E5"> or other</font>
+
+57
+00:02:11,940 --> 00:02:13,350
+different languages that<font color="#E5E5E5"> we want to</font>
+
+58
+00:02:13,350 --> 00:02:16,110
+this<font color="#E5E5E5"> message or this blog post</font><font color="#CCCCCC"> in and</font>
+
+59
+00:02:16,110 --> 00:02:18,540
+that looks<font color="#E5E5E5"> like it's going</font><font color="#CCCCCC"> to be used as</font>
+
+60
+00:02:18,540 --> 00:02:23,190
+and include because we see<font color="#E5E5E5"> for</font><font color="#CCCCCC"> each list</font>
+
+61
+00:02:23,190 --> 00:02:26,940
+files and<font color="#CCCCCC"> lists files it gets read all</font>
+
+62
+00:02:26,940 --> 00:02:30,830
+those things out<font color="#CCCCCC"> just as file names and</font>
+
+63
+00:02:30,830 --> 00:02:34,560
+that<font color="#E5E5E5"> option</font><font color="#CCCCCC"> that we give it looks to</font><font color="#E5E5E5"> be</font>
+
+64
+00:02:34,560 --> 00:02:36,990
+a form you can<font color="#CCCCCC"> see just barely in the</font>
+
+65
+00:02:36,990 --> 00:02:38,700
+HTML<font color="#E5E5E5"> here it's not highlighted pretty</font>
+
+66
+00:02:38,700 --> 00:02:41,400
+but on the form submit the option<font color="#CCCCCC"> that</font>
+
+67
+00:02:41,400 --> 00:02:43,500
+gets<font color="#E5E5E5"> sent</font><font color="#CCCCCC"> to it</font><font color="#E5E5E5"> up at the</font><font color="#CCCCCC"> very</font><font color="#E5E5E5"> top</font><font color="#CCCCCC"> you</font>
+
+68
+00:02:43,500 --> 00:02:45,900
+can see a function<font color="#E5E5E5"> set language that</font>
+
+69
+00:02:45,900 --> 00:02:47,760
+determines<font color="#E5E5E5"> okay if we have in the</font>
+
+70
+00:02:47,760 --> 00:02:50,160
+<font color="#E5E5E5">request a language being set whether or</font>
+
+71
+00:02:50,160 --> 00:02:53,100
+not we chose English or German<font color="#E5E5E5"> it's</font>
+
+72
+00:02:53,100 --> 00:02:54,690
+being<font color="#E5E5E5"> passed to the safe include</font>
+
+73
+00:02:54,690 --> 00:02:57,150
+function<font color="#CCCCCC"> by default it</font><font color="#E5E5E5"> will just return</font>
+
+74
+00:02:57,150 --> 00:02:59,370
+English<font color="#E5E5E5"> so this safe include function</font>
+
+75
+00:02:59,370 --> 00:03:00,750
+looks like<font color="#E5E5E5"> it takes an argument</font><font color="#CCCCCC"> for</font><font color="#E5E5E5"> the</font>
+
+76
+00:03:00,750 --> 00:03:03,720
+<font color="#CCCCCC">file</font><font color="#E5E5E5"> name</font><font color="#CCCCCC"> and it tries to</font><font color="#E5E5E5"> check for</font>
+
+77
+00:03:03,720 --> 00:03:06,000
+directory traversal<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> interesting</font><font color="#CCCCCC"> if</font>
+
+78
+00:03:06,000 --> 00:03:09,540
+string string<font color="#CCCCCC"> filename okay</font>
+
+79
+00:03:09,540 --> 00:03:12,960
+dot dot forward<font color="#E5E5E5"> slash so trying to</font>
+
+80
+00:03:12,960 --> 00:03:14,970
+<font color="#CCCCCC">determine if</font><font color="#E5E5E5"> the notion</font><font color="#CCCCCC"> of the parent</font>
+
+81
+00:03:14,970 --> 00:03:17,120
+<font color="#E5E5E5">directory is present inside the</font><font color="#CCCCCC"> string</font>
+
+82
+00:03:17,120 --> 00:03:20,220
+then it<font color="#E5E5E5"> runs this thing</font><font color="#CCCCCC"> log request</font>
+
+83
+00:03:20,220 --> 00:03:22,050
+<font color="#CCCCCC">that'll say</font><font color="#E5E5E5"> okay directory traversal</font>
+
+84
+00:03:22,050 --> 00:03:24,450
+attempt fixing<font color="#CCCCCC"> request and it looks like</font>
+
+85
+00:03:24,450 --> 00:03:27,090
+it<font color="#CCCCCC"> just replaces and tries to remove</font>
+
+86
+00:03:27,090 --> 00:03:30,660
+that up directory notion or that<font color="#E5E5E5"> that</font>
+
+87
+00:03:30,660 --> 00:03:32,010
+attempt<font color="#E5E5E5"> to go into the parent directory</font>
+
+88
+00:03:32,010 --> 00:03:34,620
+<font color="#E5E5E5">so what that's trying to prevent local</font>
+
+89
+00:03:34,620 --> 00:03:36,300
+<font color="#E5E5E5">file inclusion which we've seen before</font>
+
+90
+00:03:36,300 --> 00:03:39,630
+<font color="#E5E5E5">is a significant vulnerability it looks</font>
+
+91
+00:03:39,630 --> 00:03:42,210
+like it does that log request which is
+
+92
+00:03:42,210 --> 00:03:45,600
+<font color="#CCCCCC">another function down</font><font color="#E5E5E5"> here</font><font color="#CCCCCC"> log request</font>
+
+93
+00:03:45,600 --> 00:03:48,480
+<font color="#E5E5E5">gets the current date adds it to a</font>
+
+94
+00:03:48,480 --> 00:03:50,220
+string that<font color="#E5E5E5"> it keeps concatenating and</font>
+
+95
+00:03:50,220 --> 00:03:52,740
+<font color="#E5E5E5">adding things on to it adds the HTTP</font>
+
+96
+00:03:52,740 --> 00:03:56,100
+user agent so it would say like<font color="#E5E5E5"> Firefox</font>
+
+97
+00:03:56,100 --> 00:03:58,350
+or Chrome or Internet Explorer<font color="#E5E5E5"> whatever</font>
+
+98
+00:03:58,350 --> 00:04:01,110
+browser<font color="#E5E5E5"> you are using</font><font color="#CCCCCC"> and we've</font><font color="#E5E5E5"> seen</font>
+
+99
+00:04:01,110 --> 00:04:02,970
+<font color="#CCCCCC">that before also we may be able</font><font color="#E5E5E5"> to</font>
+
+100
+00:04:02,970 --> 00:04:05,640
+<font color="#E5E5E5">change its another HTTP header that</font><font color="#CCCCCC"> we</font>
+
+101
+00:04:05,640 --> 00:04:07,650
+<font color="#CCCCCC">can manipulate that's interesting thing</font>
+
+102
+00:04:07,650 --> 00:04:09,810
+to note and it adds the message so<font color="#CCCCCC"> that</font>
+
+103
+00:04:09,810 --> 00:04:11,550
+must be<font color="#E5E5E5"> the</font><font color="#CCCCCC"> okay directory traversal</font>
+
+104
+00:04:11,550 --> 00:04:13,470
+<font color="#E5E5E5">attempt</font><font color="#CCCCCC"> fixing</font><font color="#E5E5E5"> across the argument</font>
+
+105
+00:04:13,470 --> 00:04:17,040
+<font color="#E5E5E5">that's passed in and it puts this in</font><font color="#CCCCCC"> VAR</font>
+
+106
+00:04:17,040 --> 00:04:20,430
+dub dub dub<font color="#CCCCCC"> natus notice 25 logs</font><font color="#E5E5E5"> session</font>
+
+107
+00:04:20,430 --> 00:04:23,729
+ID<font color="#CCCCCC"> okay and that session ID</font><font color="#E5E5E5"> is that PHP</font>
+
+108
+00:04:23,729 --> 00:04:25,890
+<font color="#E5E5E5">session ID that we've seen before and</font>
+
+109
+00:04:25,890 --> 00:04:26,790
+are in our cookies
+
+110
+00:04:26,790 --> 00:04:29,400
+so we know that<font color="#CCCCCC"> value when we're working</font>
+
+111
+00:04:29,400 --> 00:04:30,690
+in our script<font color="#E5E5E5"> because we can just</font><font color="#CCCCCC"> get</font>
+
+112
+00:04:30,690 --> 00:04:32,550
+that<font color="#CCCCCC"> out from our cookies</font><font color="#E5E5E5"> interesting</font>
+
+113
+00:04:32,550 --> 00:04:35,100
+thing to keep in<font color="#CCCCCC"> mind another</font>
+
+114
+00:04:35,100 --> 00:04:36,870
+<font color="#E5E5E5">interesting thing that we saw in the</font>
+
+115
+00:04:36,870 --> 00:04:40,140
+safe include function<font color="#E5E5E5"> is it tests if the</font>
+
+116
+00:04:40,140 --> 00:04:42,690
+natus<font color="#E5E5E5"> web</font><font color="#CCCCCC"> pasture</font><font color="#E5E5E5"> ring is in the</font><font color="#CCCCCC"> file</font>
+
+117
+00:04:42,690 --> 00:04:45,780
+name<font color="#CCCCCC"> it will log ok illegal file access</font>
+
+118
+00:04:45,780 --> 00:04:47,850
+detected aborting it's not going to
+
+119
+00:04:47,850 --> 00:04:51,090
+allow<font color="#CCCCCC"> us to</font><font color="#E5E5E5"> simply type natus web pass</font>
+
+120
+00:04:51,090 --> 00:04:53,910
+in whatever file we're trying to read
+
+121
+00:04:53,910 --> 00:04:55,770
+out<font color="#CCCCCC"> of the</font><font color="#E5E5E5"> language keyword or the</font>
+
+122
+00:04:55,770 --> 00:04:57,480
+language variable that we're<font color="#CCCCCC"> passing to</font>
+
+123
+00:04:57,480 --> 00:05:00,450
+it and then it looks like<font color="#E5E5E5"> it makes</font><font color="#CCCCCC"> sure</font>
+
+124
+00:05:00,450 --> 00:05:01,890
+the file exists<font color="#CCCCCC"> sitting actually</font>
+
+125
+00:05:01,890 --> 00:05:03,900
+<font color="#E5E5E5">included at the very very end so</font><font color="#CCCCCC"> that</font>
+
+126
+00:05:03,900 --> 00:05:05,220
+<font color="#E5E5E5">looks like</font><font color="#CCCCCC"> it's how it's getting</font><font color="#E5E5E5"> that</font>
+
+127
+00:05:05,220 --> 00:05:07,200
+greeting<font color="#CCCCCC"> message and footer variable</font>
+
+128
+00:05:07,200 --> 00:05:10,350
+that's displayed on the page<font color="#CCCCCC"> so okay</font>
+
+129
+00:05:10,350 --> 00:05:12,180
+really<font color="#CCCCCC"> the only</font><font color="#E5E5E5"> thing we have</font><font color="#CCCCCC"> to work</font>
+
+130
+00:05:12,180 --> 00:05:14,400
+with is<font color="#E5E5E5"> this language variable so let's</font>
+
+131
+00:05:14,400 --> 00:05:17,820
+<font color="#CCCCCC">try and hit that local file inclusion</font>
+
+132
+00:05:17,820 --> 00:05:19,440
+let's see if we can actually get it<font color="#CCCCCC"> to</font>
+
+133
+00:05:19,440 --> 00:05:21,840
+<font color="#E5E5E5">trigger this directory traversal attempt</font>
+
+134
+00:05:21,840 --> 00:05:24,780
+and see if we can replace those dot dot
+
+135
+00:05:24,780 --> 00:05:27,390
+<font color="#CCCCCC">/a</font><font color="#E5E5E5"> dot dot slash us to see that up</font>
+
+136
+00:05:27,390 --> 00:05:28,860
+directory or<font color="#E5E5E5"> the parent directory and</font>
+
+137
+00:05:28,860 --> 00:05:29,640
+what we're<font color="#E5E5E5"> looking for</font>
+
+138
+00:05:29,640 --> 00:05:33,360
+<font color="#CCCCCC">ok it's</font><font color="#E5E5E5"> it over to sublime text</font><font color="#CCCCCC"> I've got</font>
+
+139
+00:05:33,360 --> 00:05:36,330
+it<font color="#E5E5E5"> printing out these page</font><font color="#CCCCCC"> results right</font>
+
+140
+00:05:36,330 --> 00:05:41,310
+here<font color="#E5E5E5"> and there is a long quote blah blah</font>
+
+141
+00:05:41,310 --> 00:05:45,080
+blah<font color="#CCCCCC"> okay so let's</font><font color="#E5E5E5"> try and post to this</font>
+
+142
+00:05:45,080 --> 00:05:48,600
+<font color="#E5E5E5">something with the language parameter</font>
+
+143
+00:05:48,600 --> 00:05:55,790
+being set post with data<font color="#CCCCCC"> lang</font><font color="#E5E5E5"> can equal</font>
+
+144
+00:05:55,790 --> 00:06:00,480
+<font color="#E5E5E5">let's see de just by default that will</font>
+
+145
+00:06:00,480 --> 00:06:02,220
+give<font color="#E5E5E5"> it</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> us in German right because</font>
+
+146
+00:06:02,220 --> 00:06:04,260
+that<font color="#CCCCCC"> is okay yeah that's the file name</font>
+
+147
+00:06:04,260 --> 00:06:06,890
+that<font color="#E5E5E5"> it's getting so let's try and</font>
+
+148
+00:06:06,890 --> 00:06:10,410
+change that<font color="#E5E5E5"> to just four slash dot dot</font>
+
+149
+00:06:10,410 --> 00:06:13,380
+slash dot dot slash dot dot slash go up
+
+150
+00:06:13,380 --> 00:06:15,660
+a couple many directories and let's try
+
+151
+00:06:15,660 --> 00:06:17,280
+<font color="#E5E5E5">and read</font><font color="#CCCCCC"> etcetera password</font><font color="#E5E5E5"> because we</font>
+
+152
+00:06:17,280 --> 00:06:19,050
+know that<font color="#E5E5E5"> file will</font><font color="#CCCCCC"> be on the system so</font>
+
+153
+00:06:19,050 --> 00:06:20,550
+if we were to<font color="#CCCCCC"> get a result</font><font color="#E5E5E5"> we would be</font>
+
+154
+00:06:20,550 --> 00:06:24,500
+<font color="#CCCCCC">able</font><font color="#E5E5E5"> to see it and it looks like we</font>
+
+155
+00:06:24,500 --> 00:06:30,600
+don't have<font color="#E5E5E5"> anything that that fires but</font>
+
+156
+00:06:30,600 --> 00:06:33,090
+that makes<font color="#E5E5E5"> sense</font><font color="#CCCCCC"> because that log</font>
+
+157
+00:06:33,090 --> 00:06:35,070
+request<font color="#E5E5E5"> function is just writing</font><font color="#CCCCCC"> to the</font>
+
+158
+00:06:35,070 --> 00:06:37,170
+file as<font color="#E5E5E5"> we know in the source code it's</font>
+
+159
+00:06:37,170 --> 00:06:38,910
+<font color="#E5E5E5">not writing out to any output or</font>
+
+160
+00:06:38,910 --> 00:06:41,580
+anything<font color="#E5E5E5"> that we can particularly see</font>
+
+161
+00:06:41,580 --> 00:06:45,990
+but we know<font color="#CCCCCC"> that it is replacing</font><font color="#E5E5E5"> those</font>
+
+162
+00:06:45,990 --> 00:06:48,060
+forward slashes the<font color="#CCCCCC"> dot sought for</font>
+
+163
+00:06:48,060 --> 00:06:50,759
+slashes in the up directory<font color="#CCCCCC"> because that</font>
+
+164
+00:06:50,759 --> 00:06:54,449
+would at least<font color="#E5E5E5"> be removed according</font><font color="#CCCCCC"> to</font>
+
+165
+00:06:54,449 --> 00:06:55,949
+that<font color="#E5E5E5"> string</font><font color="#CCCCCC"> replace function so let's</font>
+
+166
+00:06:55,949 --> 00:06:57,780
+try and<font color="#CCCCCC"> actually not give it a file here</font>
+
+167
+00:06:57,780 --> 00:07:00,419
+and see what<font color="#E5E5E5"> it</font><font color="#CCCCCC"> does</font><font color="#E5E5E5"> because I had an</font>
+
+168
+00:07:00,419 --> 00:07:02,520
+interesting hiccup that<font color="#CCCCCC"> I saw earlier</font><font color="#E5E5E5"> we</font>
+
+169
+00:07:02,520 --> 00:07:05,310
+see a lot of PHP warnings and notices if
+
+170
+00:07:05,310 --> 00:07:08,220
+we get it<font color="#E5E5E5"> to fail</font><font color="#CCCCCC"> without</font><font color="#E5E5E5"> reading actual</font>
+
+171
+00:07:08,220 --> 00:07:10,050
+<font color="#E5E5E5">file it</font><font color="#CCCCCC"> says here fails to open stream</font>
+
+172
+00:07:10,050 --> 00:07:13,500
+<font color="#E5E5E5">no such file directory in the current</font>
+
+173
+00:07:13,500 --> 00:07:15,289
+<font color="#E5E5E5">location</font><font color="#CCCCCC"> of that script index dot PHP</font>
+
+174
+00:07:15,289 --> 00:07:18,389
+<font color="#E5E5E5">etc etc</font><font color="#CCCCCC"> so an interesting thing</font><font color="#E5E5E5"> because</font>
+
+175
+00:07:18,389 --> 00:07:19,860
+<font color="#E5E5E5">it's not able to</font><font color="#CCCCCC"> actually</font><font color="#E5E5E5"> read these</font>
+
+176
+00:07:19,860 --> 00:07:21,360
+variables it's not able to<font color="#E5E5E5"> include</font>
+
+177
+00:07:21,360 --> 00:07:24,360
+anything<font color="#E5E5E5"> so we know we do</font><font color="#CCCCCC"> have that</font>
+
+178
+00:07:24,360 --> 00:07:26,910
+<font color="#E5E5E5">local file inclusion potential now we</font>
+
+179
+00:07:26,910 --> 00:07:28,669
+have to<font color="#E5E5E5"> actually get around that</font>
+
+180
+00:07:28,669 --> 00:07:32,130
+<font color="#E5E5E5">blacklist or trying</font><font color="#CCCCCC"> to replace these dot</font>
+
+181
+00:07:32,130 --> 00:07:34,380
+forward<font color="#E5E5E5"> slashes</font><font color="#CCCCCC"> so it's an interesting</font>
+
+182
+00:07:34,380 --> 00:07:36,150
+<font color="#E5E5E5">thing because it's simply doing a</font>
+
+183
+00:07:36,150 --> 00:07:39,570
+replacement<font color="#CCCCCC"> operation</font><font color="#E5E5E5"> because what's to</font>
+
+184
+00:07:39,570 --> 00:07:43,490
+stop us<font color="#CCCCCC"> from trying to hide or kind of</font>
+
+185
+00:07:43,490 --> 00:07:45,780
+camouflage or whatever you'd<font color="#CCCCCC"> like</font><font color="#E5E5E5"> to</font>
+
+186
+00:07:45,780 --> 00:07:48,030
+<font color="#E5E5E5">think of it as or trying to sneak in</font>
+
+187
+00:07:48,030 --> 00:07:51,750
+<font color="#CCCCCC">some more or like an actual parent</font>
+
+188
+00:07:51,750 --> 00:07:54,270
+directory or<font color="#E5E5E5"> up-up dot</font><font color="#CCCCCC"> for the dot dot</font>
+
+189
+00:07:54,270 --> 00:07:56,940
+forward<font color="#E5E5E5"> slash notation inside another</font>
+
+190
+00:07:56,940 --> 00:07:59,510
+<font color="#E5E5E5">one right because if we're</font><font color="#CCCCCC"> running a</font>
+
+191
+00:07:59,510 --> 00:08:04,020
+string to replace dot dot forward<font color="#E5E5E5"> slash</font>
+
+192
+00:08:04,020 --> 00:08:06,810
+with nothing so it'll go<font color="#CCCCCC"> away why</font><font color="#E5E5E5"> don't</font>
+
+193
+00:08:06,810 --> 00:08:11,430
+<font color="#E5E5E5">we try and put a</font><font color="#CCCCCC"> nother dot dot</font><font color="#E5E5E5"> forward</font>
+
+194
+00:08:11,430 --> 00:08:14,970
+slash inside what we have<font color="#E5E5E5"> before so</font>
+
+195
+00:08:14,970 --> 00:08:19,159
+it'll replace<font color="#E5E5E5"> maybe the innermost one</font>
+
+196
+00:08:19,159 --> 00:08:22,320
+this will go<font color="#CCCCCC"> away but then once it's</font>
+
+197
+00:08:22,320 --> 00:08:24,240
+left after<font color="#E5E5E5"> it's completed that replace</font>
+
+198
+00:08:24,240 --> 00:08:27,419
+operation you'll have just<font color="#CCCCCC"> okay the</font>
+
+199
+00:08:27,419 --> 00:08:30,960
+skeleton or the makings of an<font color="#E5E5E5"> original</font>
+
+200
+00:08:30,960 --> 00:08:33,990
+like<font color="#CCCCCC"> up</font><font color="#E5E5E5"> up like dot dot forward slash</font>
+
+201
+00:08:33,990 --> 00:08:35,729
+you'll be able<font color="#E5E5E5"> to actually transverse</font>
+
+202
+00:08:35,729 --> 00:08:38,219
+that see because I was<font color="#CCCCCC"> able to put in</font>
+
+203
+00:08:38,219 --> 00:08:40,409
+just another one here<font color="#E5E5E5"> that's all that it</font>
+
+204
+00:08:40,409 --> 00:08:42,630
+tried to<font color="#CCCCCC"> find and replace and then once</font>
+
+205
+00:08:42,630 --> 00:08:45,240
+that is<font color="#CCCCCC"> gone you're just simply</font><font color="#E5E5E5"> left</font>
+
+206
+00:08:45,240 --> 00:08:47,430
+<font color="#CCCCCC">with the same string that you wanted to</font>
+
+207
+00:08:47,430 --> 00:08:48,900
+begin<font color="#E5E5E5"> with so that's going to be an</font>
+
+208
+00:08:48,900 --> 00:08:50,370
+interesting<font color="#E5E5E5"> tactic let's see if we can</font>
+
+209
+00:08:50,370 --> 00:08:52,680
+actually<font color="#E5E5E5"> get some local file inclusion</font>
+
+210
+00:08:52,680 --> 00:08:54,209
+by using<font color="#E5E5E5"> that</font>
+
+211
+00:08:54,209 --> 00:08:58,279
+I'm going to include that<font color="#CCCCCC"> a couple times</font>
+
+212
+00:08:58,279 --> 00:09:00,899
+<font color="#CCCCCC">many times because we don't exactly</font><font color="#E5E5E5"> know</font>
+
+213
+00:09:00,899 --> 00:09:02,309
+how far up<font color="#CCCCCC"> the directory we're gonna</font>
+
+214
+00:09:02,309 --> 00:09:04,019
+have going but<font color="#E5E5E5"> let's try and include</font>
+
+215
+00:09:04,019 --> 00:09:06,329
+<font color="#CCCCCC">etcetera password</font><font color="#E5E5E5"> let's run the script</font>
+
+216
+00:09:06,329 --> 00:09:10,199
+<font color="#E5E5E5">see if we get it and we do</font><font color="#CCCCCC"> okay cool we</font>
+
+217
+00:09:10,199 --> 00:09:12,149
+just<font color="#E5E5E5"> leaked out etc password on the box</font>
+
+218
+00:09:12,149 --> 00:09:14,730
+<font color="#CCCCCC">so now we need to figure out how we can</font>
+
+219
+00:09:14,730 --> 00:09:17,100
+<font color="#E5E5E5">actually get the password for the next</font>
+
+220
+00:09:17,100 --> 00:09:19,499
+user this<font color="#CCCCCC"> is an interesting thing right</font>
+
+221
+00:09:19,499 --> 00:09:21,389
+<font color="#E5E5E5">because the source code has this</font>
+
+222
+00:09:21,389 --> 00:09:24,209
+explicit under blacklist operation if
+
+223
+00:09:24,209 --> 00:09:28,860
+<font color="#E5E5E5">natus web pass</font><font color="#CCCCCC"> is in the original</font>
+
+224
+00:09:28,860 --> 00:09:31,290
+<font color="#CCCCCC">filename</font><font color="#E5E5E5"> that</font><font color="#CCCCCC"> we supply it will log the</font>
+
+225
+00:09:31,290 --> 00:09:33,540
+request<font color="#E5E5E5"> and exit won't let us actually</font>
+
+226
+00:09:33,540 --> 00:09:36,269
+have the functionality anymore<font color="#E5E5E5"> so what</font>
+
+227
+00:09:36,269 --> 00:09:39,540
+can<font color="#CCCCCC"> we do instead</font><font color="#E5E5E5"> this is a really cool</font>
+
+228
+00:09:39,540 --> 00:09:41,519
+attack<font color="#CCCCCC"> and I</font><font color="#E5E5E5"> think this is an awesome</font>
+
+229
+00:09:41,519 --> 00:09:43,170
+<font color="#E5E5E5">thing</font><font color="#CCCCCC"> because it takes a</font><font color="#E5E5E5"> little bit of</font>
+
+230
+00:09:43,170 --> 00:09:45,029
+ingenuity thinking outside the box<font color="#E5E5E5"> but</font>
+
+231
+00:09:45,029 --> 00:09:46,230
+<font color="#E5E5E5">also keeping in mind the things that</font>
+
+232
+00:09:46,230 --> 00:09:47,970
+we've<font color="#E5E5E5"> learned in previous levels and</font>
+
+233
+00:09:47,970 --> 00:09:50,879
+combining them for an<font color="#E5E5E5"> awesome attack</font><font color="#CCCCCC"> so</font>
+
+234
+00:09:50,879 --> 00:09:54,779
+let's think what<font color="#CCCCCC"> files do we have access</font>
+
+235
+00:09:54,779 --> 00:09:56,790
+<font color="#CCCCCC">to right</font><font color="#E5E5E5"> now literally everything on the</font>
+
+236
+00:09:56,790 --> 00:09:59,399
+file system<font color="#CCCCCC"> right literally everything</font>
+
+237
+00:09:59,399 --> 00:10:02,369
+on the file system including<font color="#E5E5E5"> the logs</font>
+
+238
+00:10:02,369 --> 00:10:05,309
+<font color="#E5E5E5">that this</font><font color="#CCCCCC"> application like saves and</font>
+
+239
+00:10:05,309 --> 00:10:08,490
+reports for us<font color="#CCCCCC"> so because we know the</font>
+
+240
+00:10:08,490 --> 00:10:13,679
+location<font color="#E5E5E5"> of this like this</font><font color="#CCCCCC"> log</font><font color="#E5E5E5"> we can</font>
+
+241
+00:10:13,679 --> 00:10:16,259
+<font color="#CCCCCC">potentially</font><font color="#E5E5E5"> get it to be</font><font color="#CCCCCC"> displayed for</font>
+
+242
+00:10:16,259 --> 00:10:19,459
+us<font color="#CCCCCC"> so we know we</font><font color="#E5E5E5"> are going to have one</font>
+
+243
+00:10:19,459 --> 00:10:22,350
+entry in this log file because we're
+
+244
+00:10:22,350 --> 00:10:24,179
+using this directory<font color="#CCCCCC"> transversal</font><font color="#E5E5E5"> it'll</font>
+
+245
+00:10:24,179 --> 00:10:25,649
+say<font color="#CCCCCC"> ok</font><font color="#E5E5E5"> directory traversal attempt</font>
+
+246
+00:10:25,649 --> 00:10:27,809
+<font color="#E5E5E5">fixing a request now let's see if we</font><font color="#CCCCCC"> can</font>
+
+247
+00:10:27,809 --> 00:10:29,639
+<font color="#CCCCCC">actually read that file by trying</font><font color="#E5E5E5"> to</font>
+
+248
+00:10:29,639 --> 00:10:33,089
+<font color="#E5E5E5">locate this file in the</font><font color="#CCCCCC"> file system so</font>
+
+249
+00:10:33,089 --> 00:10:35,220
+we need to know the session ID<font color="#E5E5E5"> but we</font>
+
+250
+00:10:35,220 --> 00:10:37,350
+can do that right because<font color="#E5E5E5"> we've got a</font>
+
+251
+00:10:37,350 --> 00:10:39,660
+session<font color="#CCCCCC"> that we can create let's write a</font>
+
+252
+00:10:39,660 --> 00:10:41,850
+get request<font color="#E5E5E5"> to begin with so we actually</font>
+
+253
+00:10:41,850 --> 00:10:43,949
+get<font color="#CCCCCC"> a session set up and then let's</font>
+
+254
+00:10:43,949 --> 00:10:45,959
+<font color="#CCCCCC">determine what our cookies are when we</font>
+
+255
+00:10:45,959 --> 00:10:50,339
+try print session cookies<font color="#E5E5E5"> PHP session ID</font>
+
+256
+00:10:50,339 --> 00:10:52,649
+let's not display<font color="#E5E5E5"> the other things</font><font color="#CCCCCC"> just</font>
+
+257
+00:10:52,649 --> 00:10:54,600
+so we<font color="#CCCCCC"> know we</font><font color="#E5E5E5"> have a session</font><font color="#CCCCCC"> here</font><font color="#E5E5E5"> cool</font>
+
+258
+00:10:54,600 --> 00:10:56,610
+<font color="#CCCCCC">yep that</font><font color="#E5E5E5"> works just fine</font><font color="#CCCCCC"> for us we can</font>
+
+259
+00:10:56,610 --> 00:10:57,869
+index it just like that
+
+260
+00:10:57,869 --> 00:11:00,809
+so let's go ahead<font color="#CCCCCC"> and try to</font><font color="#E5E5E5"> in like</font>
+
+261
+00:11:00,809 --> 00:11:03,419
+read that<font color="#E5E5E5"> file we know in the source</font>
+
+262
+00:11:03,419 --> 00:11:06,360
+code<font color="#E5E5E5"> it's var dub</font><font color="#CCCCCC"> notice that</font><font color="#E5E5E5"> of 25 and</font>
+
+263
+00:11:06,360 --> 00:11:08,160
+25<font color="#E5E5E5"> it said our session ID</font>
+
+264
+00:11:08,160 --> 00:11:11,460
+dot log<font color="#E5E5E5"> so changing the file that we're</font>
+
+265
+00:11:11,460 --> 00:11:13,050
+trying<font color="#E5E5E5"> to read now to not</font><font color="#CCCCCC"> add cetra</font>
+
+266
+00:11:13,050 --> 00:11:15,210
+password<font color="#E5E5E5"> but that string</font>
+
+267
+00:11:15,210 --> 00:11:18,210
+remember to concatenate<font color="#E5E5E5"> on the dot log</font>
+
+268
+00:11:18,210 --> 00:11:20,580
+extension and remember we do want<font color="#CCCCCC"> to</font>
+
+269
+00:11:20,580 --> 00:11:25,710
+have our session dot cookies<font color="#E5E5E5"> PHP session</font>
+
+270
+00:11:25,710 --> 00:11:27,690
+ID<font color="#E5E5E5"> right there and that should be</font>
+
+271
+00:11:27,690 --> 00:11:29,160
+<font color="#CCCCCC">concatenated on just fine</font><font color="#E5E5E5"> and now we</font>
+
+272
+00:11:29,160 --> 00:11:35,040
+should<font color="#CCCCCC"> be able to read that remember to</font>
+
+273
+00:11:35,040 --> 00:11:38,370
+print out the output<font color="#CCCCCC"> I managed</font><font color="#E5E5E5"> to drop</font>
+
+274
+00:11:38,370 --> 00:11:44,700
+that cool<font color="#E5E5E5"> now we're seeing that log</font>
+
+275
+00:11:44,700 --> 00:11:47,100
+entry we're seeing the time and date
+
+276
+00:11:47,100 --> 00:11:49,860
+this<font color="#E5E5E5"> has occurred we're seeing our user</font>
+
+277
+00:11:49,860 --> 00:11:51,870
+agent<font color="#CCCCCC"> which right now is python request</font>
+
+278
+00:11:51,870 --> 00:11:53,100
+because<font color="#E5E5E5"> we're doing</font><font color="#CCCCCC"> this in the</font><font color="#E5E5E5"> script</font>
+
+279
+00:11:53,100 --> 00:11:54,780
+<font color="#E5E5E5">and we see that message directory</font>
+
+280
+00:11:54,780 --> 00:11:56,340
+traversal attempt to fixing the<font color="#E5E5E5"> request</font>
+
+281
+00:11:56,340 --> 00:11:59,220
+so<font color="#E5E5E5"> we know it's no replacing the dot dot</font>
+
+282
+00:11:59,220 --> 00:12:03,210
+<font color="#E5E5E5">forward slash</font><font color="#CCCCCC"> okay now here is the</font><font color="#E5E5E5"> next</font>
+
+283
+00:12:03,210 --> 00:12:06,210
+cool and<font color="#CCCCCC"> awesome part</font><font color="#E5E5E5"> because we can</font>
+
+284
+00:12:06,210 --> 00:12:09,930
+<font color="#E5E5E5">control what this HTTP user agent is we</font>
+
+285
+00:12:09,930 --> 00:12:12,240
+<font color="#E5E5E5">actually that</font><font color="#CCCCCC"> that is input</font><font color="#E5E5E5"> for us we</font>
+
+286
+00:12:12,240 --> 00:12:16,620
+can modify<font color="#CCCCCC"> that HTTP header so because</font>
+
+287
+00:12:16,620 --> 00:12:19,170
+we're<font color="#E5E5E5"> including this file</font><font color="#CCCCCC"> and because</font>
+
+288
+00:12:19,170 --> 00:12:21,450
+it's<font color="#E5E5E5"> being spat</font><font color="#CCCCCC"> out from the web server</font>
+
+289
+00:12:21,450 --> 00:12:24,630
+that<font color="#E5E5E5"> is looking at PHP code normally</font>
+
+290
+00:12:24,630 --> 00:12:26,400
+right we've got notices and warnings<font color="#E5E5E5"> and</font>
+
+291
+00:12:26,400 --> 00:12:27,330
+all these other<font color="#E5E5E5"> issues that are coming</font>
+
+292
+00:12:27,330 --> 00:12:28,250
+<font color="#E5E5E5">through</font>
+
+293
+00:12:28,250 --> 00:12:34,380
+what if we<font color="#E5E5E5"> put PHP code as our user</font>
+
+294
+00:12:34,380 --> 00:12:36,810
+agent<font color="#E5E5E5"> let's try this that's gonna be</font>
+
+295
+00:12:36,810 --> 00:12:39,540
+really<font color="#E5E5E5"> cool right let's get a headers</font>
+
+296
+00:12:39,540 --> 00:12:43,320
+dictionary here<font color="#E5E5E5"> headers can equal user</font>
+
+297
+00:12:43,320 --> 00:12:46,350
+<font color="#CCCCCC">tack agent</font><font color="#E5E5E5"> so that's it up and then</font>
+
+298
+00:12:46,350 --> 00:12:52,430
+let's use just the<font color="#E5E5E5"> syntax to run a PHP</font>
+
+299
+00:12:52,670 --> 00:12:56,310
+file command right<font color="#E5E5E5"> here</font><font color="#CCCCCC"> and now what do</font>
+
+300
+00:12:56,310 --> 00:12:59,940
+we<font color="#E5E5E5"> want to do</font><font color="#CCCCCC"> oh how about determine the</font>
+
+301
+00:12:59,940 --> 00:13:03,480
+contents<font color="#E5E5E5"> of you know the</font><font color="#CCCCCC"> natus password</font>
+
+302
+00:13:03,480 --> 00:13:07,080
+that we want<font color="#CCCCCC"> NAT is 26</font><font color="#E5E5E5"> so how can we do</font>
+
+303
+00:13:07,080 --> 00:13:09,930
+that well<font color="#E5E5E5"> it's PHP right we can just run</font>
+
+304
+00:13:09,930 --> 00:13:12,720
+<font color="#E5E5E5">shell commands we've got system passed</font>
+
+305
+00:13:12,720 --> 00:13:14,190
+<font color="#E5E5E5">through etcetera all those things</font><font color="#CCCCCC"> so</font>
+
+306
+00:13:14,190 --> 00:13:17,160
+<font color="#CCCCCC">let's just try system and let's use our</font>
+
+307
+00:13:17,160 --> 00:13:21,870
+classic cat etc<font color="#E5E5E5"> natus web pass natus 26</font>
+
+308
+00:13:21,870 --> 00:13:24,089
+subtle display it on<font color="#CCCCCC"> Center out for us</font>
+
+309
+00:13:24,089 --> 00:13:27,420
+and<font color="#E5E5E5"> we'll be able to read it because we</font>
+
+310
+00:13:27,420 --> 00:13:30,180
+can specify<font color="#E5E5E5"> we want our user agent to</font><font color="#CCCCCC"> be</font>
+
+311
+00:13:30,180 --> 00:13:32,970
+this string which will get injected<font color="#E5E5E5"> into</font>
+
+312
+00:13:32,970 --> 00:13:35,010
+that log entry which will<font color="#CCCCCC"> be</font><font color="#E5E5E5"> able to</font>
+
+313
+00:13:35,010 --> 00:13:36,930
+read because<font color="#CCCCCC"> of</font><font color="#E5E5E5"> local file inclusion and</font>
+
+314
+00:13:36,930 --> 00:13:39,750
+then<font color="#CCCCCC"> it'll</font><font color="#E5E5E5"> evaluate that</font><font color="#CCCCCC"> PHP and give us</font>
+
+315
+00:13:39,750 --> 00:13:42,060
+remote code execution with this super
+
+316
+00:13:42,060 --> 00:13:42,779
+<font color="#E5E5E5">super cool</font>
+
+317
+00:13:42,779 --> 00:13:46,680
+try<font color="#E5E5E5"> headers equals headers to make sure</font>
+
+318
+00:13:46,680 --> 00:13:48,690
+we include<font color="#CCCCCC"> that user agent</font><font color="#E5E5E5"> let's run</font>
+
+319
+00:13:48,690 --> 00:13:51,210
+this and what do we<font color="#E5E5E5"> got here</font>
+
+320
+00:13:51,210 --> 00:13:54,750
+excellent<font color="#E5E5E5"> our user agent is now the</font>
+
+321
+00:13:54,750 --> 00:13:58,650
+<font color="#E5E5E5">password for natus level 26</font><font color="#CCCCCC"> suite</font><font color="#E5E5E5"> let's</font>
+
+322
+00:13:58,650 --> 00:14:01,610
+go ahead<font color="#E5E5E5"> and save this as a new script</font>
+
+323
+00:14:01,610 --> 00:14:05,010
+<font color="#E5E5E5">NAT is 26 we can clear</font><font color="#CCCCCC"> up the junk</font><font color="#E5E5E5"> that</font>
+
+324
+00:14:05,010 --> 00:14:07,140
+we have here<font color="#E5E5E5"> go ahead and make just a</font>
+
+325
+00:14:07,140 --> 00:14:10,710
+regular get request<font color="#E5E5E5"> and let's see if</font><font color="#CCCCCC"> we</font>
+
+326
+00:14:10,710 --> 00:14:12,390
+<font color="#CCCCCC">are greeted with the next level make</font>
+
+327
+00:14:12,390 --> 00:14:14,910
+sure<font color="#CCCCCC"> that's the right</font><font color="#E5E5E5"> password and it</font>
+
+328
+00:14:14,910 --> 00:14:18,089
+certainly is<font color="#CCCCCC"> we're</font><font color="#E5E5E5"> on natus level 26 so</font>
+
+329
+00:14:18,089 --> 00:14:19,770
+cool<font color="#CCCCCC"> thank you</font><font color="#E5E5E5"> guys so much</font><font color="#CCCCCC"> for</font><font color="#E5E5E5"> watching</font>
+
+330
+00:14:19,770 --> 00:14:22,980
+<font color="#CCCCCC">I really do</font><font color="#E5E5E5"> hope you enjoyed this I love</font>
+
+331
+00:14:22,980 --> 00:14:24,480
+this<font color="#E5E5E5"> this level honestly this is I think</font>
+
+332
+00:14:24,480 --> 00:14:25,950
+<font color="#E5E5E5">one of the coolest levels that NAT has</font>
+
+333
+00:14:25,950 --> 00:14:28,470
+<font color="#E5E5E5">has so far and that you're</font><font color="#CCCCCC"> combining all</font>
+
+334
+00:14:28,470 --> 00:14:29,880
+the other tactics and techniques that
+
+335
+00:14:29,880 --> 00:14:31,980
+<font color="#CCCCCC">we've seen so far and making a really</font>
+
+336
+00:14:31,980 --> 00:14:34,230
+interesting attack<font color="#CCCCCC"> take an</font><font color="#E5E5E5"> advantage of</font>
+
+337
+00:14:34,230 --> 00:14:37,350
+<font color="#E5E5E5">that HTTP user agent injecting that</font><font color="#CCCCCC"> PHP</font>
+
+338
+00:14:37,350 --> 00:14:38,810
+code so<font color="#E5E5E5"> you get remote code execution</font>
+
+339
+00:14:38,810 --> 00:14:41,310
+<font color="#CCCCCC">through the local</font><font color="#E5E5E5"> file inclusion that</font>
+
+340
+00:14:41,310 --> 00:14:43,080
+you already<font color="#CCCCCC"> went through like some</font>
+
+341
+00:14:43,080 --> 00:14:46,680
+little like<font color="#CCCCCC"> blacklist evasion and I</font>
+
+342
+00:14:46,680 --> 00:14:48,870
+thought that's awesome so hey thank you
+
+343
+00:14:48,870 --> 00:14:50,880
+guys<font color="#CCCCCC"> for watching I want to give a shout</font>
+
+344
+00:14:50,880 --> 00:14:52,860
+out to<font color="#CCCCCC"> my supporters here this list is</font>
+
+345
+00:14:52,860 --> 00:14:54,690
+<font color="#CCCCCC">getting pretty</font><font color="#E5E5E5"> lengthy and long so I'm</font>
+
+346
+00:14:54,690 --> 00:14:56,550
+super duper grateful thank you guys so
+
+347
+00:14:56,550 --> 00:14:58,320
+<font color="#CCCCCC">much for</font><font color="#E5E5E5"> all</font><font color="#CCCCCC"> of</font><font color="#E5E5E5"> your support</font><font color="#CCCCCC"> I love that</font>
+
+348
+00:14:58,320 --> 00:15:00,270
+you<font color="#CCCCCC"> are willing</font><font color="#E5E5E5"> to go</font><font color="#CCCCCC"> on this adventure</font>
+
+349
+00:15:00,270 --> 00:15:03,120
+and<font color="#E5E5E5"> journey with me so hey if you did</font>
+
+350
+00:15:03,120 --> 00:15:04,680
+like<font color="#E5E5E5"> this video please do press that</font>
+
+351
+00:15:04,680 --> 00:15:06,630
+like<font color="#E5E5E5"> button</font><font color="#CCCCCC"> maybe</font><font color="#E5E5E5"> leave me a comment let</font>
+
+352
+00:15:06,630 --> 00:15:07,920
+me know<font color="#E5E5E5"> what you think what you'd like</font>
+
+353
+00:15:07,920 --> 00:15:09,420
+<font color="#E5E5E5">what you'd like to see what we could</font>
+
+354
+00:15:09,420 --> 00:15:11,310
+<font color="#CCCCCC">have</font><font color="#E5E5E5"> done better how you solve this etc</font>
+
+355
+00:15:11,310 --> 00:15:13,020
+if you're willing to subscribe and<font color="#E5E5E5"> if</font>
+
+356
+00:15:13,020 --> 00:15:14,730
+<font color="#CCCCCC">you really</font><font color="#E5E5E5"> want to support me check me</font>
+
+357
+00:15:14,730 --> 00:00:00,000
+out on patreon<font color="#E5E5E5"> cool</font><font color="#CCCCCC"> see you</font><font color="#E5E5E5"> soon guys</font>
+

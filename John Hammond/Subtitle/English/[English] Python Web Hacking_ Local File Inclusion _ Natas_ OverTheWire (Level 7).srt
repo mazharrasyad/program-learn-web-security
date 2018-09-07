@@ -1,0 +1,576 @@
+1
+00:00:00,030 --> 00:00:01,949
+what's up guys John Hammond<font color="#E5E5E5"> here coming</font>
+
+2
+00:00:01,949 --> 00:00:03,360
+back<font color="#E5E5E5"> at you with some</font><font color="#CCCCCC"> more videos on</font>
+
+3
+00:00:03,360 --> 00:00:05,910
+natus the over the wire war game for web
+
+4
+00:00:05,910 --> 00:00:08,220
+application security<font color="#E5E5E5"> just got the</font><font color="#CCCCCC"> pass</font>
+
+5
+00:00:08,220 --> 00:00:10,110
+before<font color="#E5E5E5"> level seven</font>
+
+6
+00:00:10,110 --> 00:00:11,610
+we<font color="#E5E5E5"> can probably clean up some of</font><font color="#CCCCCC"> these</font>
+
+7
+00:00:11,610 --> 00:00:13,380
+<font color="#E5E5E5">comments here they've</font><font color="#CCCCCC"> been around for</font>
+
+8
+00:00:13,380 --> 00:00:14,429
+too long and I'm sure you're<font color="#E5E5E5"> probably</font>
+
+9
+00:00:14,429 --> 00:00:18,300
+getting<font color="#E5E5E5"> sick of looking at them actually</font>
+
+10
+00:00:18,300 --> 00:00:19,529
+we do want to keep printing<font color="#E5E5E5"> the content</font>
+
+11
+00:00:19,529 --> 00:00:21,449
+in case we're ready to<font color="#E5E5E5"> move on to</font><font color="#CCCCCC"> the</font>
+
+12
+00:00:21,449 --> 00:00:22,289
+next<font color="#E5E5E5"> level</font>
+
+13
+00:00:22,289 --> 00:00:24,869
+and we won't need<font color="#E5E5E5"> to submit anything</font>
+
+14
+00:00:24,869 --> 00:00:27,599
+<font color="#E5E5E5">because we're not posting just yet</font><font color="#CCCCCC"> let's</font>
+
+15
+00:00:27,599 --> 00:00:29,760
+<font color="#E5E5E5">just get the page for</font><font color="#CCCCCC"> a natus level</font>
+
+16
+00:00:29,760 --> 00:00:30,840
+<font color="#CCCCCC">seven and see what we're working</font><font color="#E5E5E5"> with</font>
+
+17
+00:00:30,840 --> 00:00:34,590
+here<font color="#CCCCCC"> I'll run this</font><font color="#E5E5E5"> control</font><font color="#CCCCCC"> B</font><font color="#E5E5E5"> and here is</font>
+
+18
+00:00:34,590 --> 00:00:39,300
+our prompts here is the file and<font color="#E5E5E5"> the web</font>
+
+19
+00:00:39,300 --> 00:00:41,550
+page<font color="#CCCCCC"> that we returned with now to</font><font color="#E5E5E5"> seven</font>
+
+20
+00:00:41,550 --> 00:00:44,820
+<font color="#E5E5E5">great</font><font color="#CCCCCC"> in the content div we've got links</font>
+
+21
+00:00:44,820 --> 00:00:51,059
+<font color="#E5E5E5">here to</font><font color="#CCCCCC"> page home and page about</font><font color="#E5E5E5"> and</font>
+
+22
+00:00:51,059 --> 00:00:53,579
+there's<font color="#E5E5E5"> a HTML</font><font color="#CCCCCC"> comment here or hint</font>
+
+23
+00:00:53,579 --> 00:00:55,739
+password for the web user<font color="#CCCCCC"> natus a tisn't</font>
+
+24
+00:00:55,739 --> 00:00:57,899
+<font color="#E5E5E5">etcetera and that is what</font><font color="#CCCCCC"> passed NAT is</font>
+
+25
+00:00:57,899 --> 00:01:03,210
+<font color="#CCCCCC">8 so</font><font color="#E5E5E5"> hmm I'm sure you're probably</font>
+
+26
+00:01:03,210 --> 00:01:06,479
+wondering why are we passing<font color="#E5E5E5"> variables</font>
+
+27
+00:01:06,479 --> 00:01:09,450
+to the index<font color="#E5E5E5"> dot PHP page to refer to</font>
+
+28
+00:01:09,450 --> 00:01:11,159
+<font color="#E5E5E5">the page that</font><font color="#CCCCCC"> we actually want to view</font>
+
+29
+00:01:11,159 --> 00:01:17,939
+like home and about are those actual<font color="#E5E5E5"> as</font>
+
+30
+00:01:17,939 --> 00:01:21,600
+<font color="#E5E5E5">is home like a thing we can read or is</font>
+
+31
+00:01:21,600 --> 00:01:24,600
+about a thing we can<font color="#CCCCCC"> access even</font><font color="#E5E5E5"> in this</font>
+
+32
+00:01:24,600 --> 00:01:27,299
+current directory<font color="#E5E5E5"> or something if I just</font>
+
+33
+00:01:27,299 --> 00:01:31,520
+reach that yes<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so that in itself</font><font color="#CCCCCC"> is</font>
+
+34
+00:01:31,520 --> 00:01:38,009
+being<font color="#E5E5E5"> included in the index page so does</font>
+
+35
+00:01:38,009 --> 00:01:39,119
+<font color="#E5E5E5">it kind</font><font color="#CCCCCC"> of zoom out here</font><font color="#E5E5E5"> so you can see</font>
+
+36
+00:01:39,119 --> 00:01:42,810
+this a little<font color="#E5E5E5"> bit better let's say we</font>
+
+37
+00:01:42,810 --> 00:01:46,350
+gave it this URL<font color="#E5E5E5"> let's say we tried to</font>
+
+38
+00:01:46,350 --> 00:01:50,100
+read index dot PHP<font color="#CCCCCC"> with a</font><font color="#E5E5E5"> page variable</font>
+
+39
+00:01:50,100 --> 00:01:51,920
+<font color="#E5E5E5">being sent with with the get variable</font>
+
+40
+00:01:51,920 --> 00:01:54,149
+<font color="#E5E5E5">saying that we want to go to about okay</font>
+
+41
+00:01:54,149 --> 00:01:56,189
+it gives us this is<font color="#E5E5E5"> the about page</font><font color="#CCCCCC"> so</font>
+
+42
+00:01:56,189 --> 00:01:59,159
+this text<font color="#CCCCCC"> that we were able</font><font color="#E5E5E5"> to see when</font>
+
+43
+00:01:59,159 --> 00:02:02,009
+<font color="#E5E5E5">we went to just straight about that must</font>
+
+44
+00:02:02,009 --> 00:02:04,860
+be the raw text<font color="#E5E5E5"> of</font><font color="#CCCCCC"> that file</font><font color="#E5E5E5"> and about</font>
+
+45
+00:02:04,860 --> 00:02:07,320
+is its own file so we must be<font color="#E5E5E5"> reading a</font>
+
+46
+00:02:07,320 --> 00:02:10,919
+file that<font color="#E5E5E5"> is being included in index dot</font>
+
+47
+00:02:10,919 --> 00:02:13,020
+PHP so<font color="#E5E5E5"> index dot PHP must be</font><font color="#CCCCCC"> able</font><font color="#E5E5E5"> to</font>
+
+48
+00:02:13,020 --> 00:02:13,830
+read<font color="#E5E5E5"> other</font>
+
+49
+00:02:13,830 --> 00:02:17,100
+with that<font color="#E5E5E5"> page variable so when we went</font>
+
+50
+00:02:17,100 --> 00:02:19,200
+to home<font color="#E5E5E5"> it gave us the links here this</font>
+
+51
+00:02:19,200 --> 00:02:21,420
+is the<font color="#E5E5E5"> front page and about this is the</font>
+
+52
+00:02:21,420 --> 00:02:24,900
+<font color="#CCCCCC">about page so if we can</font><font color="#E5E5E5"> just access RAW</font>
+
+53
+00:02:24,900 --> 00:02:27,390
+files<font color="#CCCCCC"> maybe the vulnerability</font><font color="#E5E5E5"> here or</font>
+
+54
+00:02:27,390 --> 00:02:29,070
+the issue<font color="#E5E5E5"> the gimmick we can take</font>
+
+55
+00:02:29,070 --> 00:02:30,960
+<font color="#CCCCCC">advantage</font><font color="#E5E5E5"> of is called local file</font>
+
+56
+00:02:30,960 --> 00:02:35,790
+inclusion so local file inclusion<font color="#CCCCCC"> lfi</font>
+
+57
+00:02:35,790 --> 00:02:40,500
+<font color="#E5E5E5">and you can probably see here in the a</font>
+
+58
+00:02:40,500 --> 00:02:44,010
+wasp<font color="#E5E5E5"> security update and somewhere here</font>
+
+59
+00:02:44,010 --> 00:02:46,800
+<font color="#E5E5E5">here's an example when you have</font><font color="#CCCCCC"> a page</font>
+
+60
+00:02:46,800 --> 00:02:50,580
+or on a website<font color="#E5E5E5"> that is using a</font>
+
+61
+00:02:50,580 --> 00:02:53,250
+<font color="#E5E5E5">parameter or</font><font color="#CCCCCC"> an argument typically it</font>
+
+62
+00:02:53,250 --> 00:02:54,660
+looks most commonly<font color="#CCCCCC"> in</font><font color="#E5E5E5"> like a get</font>
+
+63
+00:02:54,660 --> 00:02:58,380
+request<font color="#E5E5E5"> as to load another page we can</font>
+
+64
+00:02:58,380 --> 00:03:00,990
+then and take<font color="#CCCCCC"> advantage</font><font color="#E5E5E5"> of that and kind</font>
+
+65
+00:03:00,990 --> 00:03:03,870
+<font color="#CCCCCC">of abuse it</font><font color="#E5E5E5"> make a request to</font><font color="#CCCCCC"> a</font>
+
+66
+00:03:03,870 --> 00:03:06,120
+different file located elsewhere on the
+
+67
+00:03:06,120 --> 00:03:07,950
+server like reading<font color="#E5E5E5"> its entry password</font>
+
+68
+00:03:07,950 --> 00:03:10,230
+if we back step through the file system
+
+69
+00:03:10,230 --> 00:03:11,430
+a<font color="#CCCCCC"> little bit because we don't know where</font>
+
+70
+00:03:11,430 --> 00:03:14,040
+in<font color="#CCCCCC"> the file system</font><font color="#E5E5E5"> we might be or the</font>
+
+71
+00:03:14,040 --> 00:03:16,470
+root<font color="#CCCCCC"> directory of</font><font color="#E5E5E5"> the file server</font><font color="#CCCCCC"> might</font>
+
+72
+00:03:16,470 --> 00:03:20,160
+be like we could<font color="#CCCCCC"> be in</font><font color="#E5E5E5"> VAR www HTML</font>
+
+73
+00:03:20,160 --> 00:03:22,050
+stuff if it's like an Apache server or
+
+74
+00:03:22,050 --> 00:03:24,000
+<font color="#E5E5E5">etcetera so we'll use the parent</font>
+
+75
+00:03:24,000 --> 00:03:25,680
+directory the two<font color="#E5E5E5"> periods to keep moving</font>
+
+76
+00:03:25,680 --> 00:03:27,660
+up up up<font color="#E5E5E5"> the file system and</font><font color="#CCCCCC"> eventually</font>
+
+77
+00:03:27,660 --> 00:03:29,190
+<font color="#E5E5E5">get to the root</font><font color="#CCCCCC"> directory we can</font><font color="#E5E5E5"> read</font>
+
+78
+00:03:29,190 --> 00:03:32,209
+other other files out<font color="#CCCCCC"> of let's try</font><font color="#E5E5E5"> that</font>
+
+79
+00:03:32,209 --> 00:03:37,940
+<font color="#CCCCCC">I will use that as the attack here</font>
+
+80
+00:03:37,940 --> 00:03:45,300
+multiple multiple parent directory
+
+81
+00:03:45,300 --> 00:03:47,400
+symbols period period<font color="#E5E5E5"> and then let's see</font>
+
+82
+00:03:47,400 --> 00:03:49,290
+if we can view<font color="#CCCCCC"> it set for</font><font color="#E5E5E5"> password we</font>
+
+83
+00:03:49,290 --> 00:03:53,250
+can<font color="#E5E5E5"> okay because</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> page is just</font>
+
+84
+00:03:53,250 --> 00:03:54,630
+straight up leaking<font color="#CCCCCC"> it for us it's</font>
+
+85
+00:03:54,630 --> 00:03:57,030
+including that file so we<font color="#E5E5E5"> can get some</font>
+
+86
+00:03:57,030 --> 00:03:59,459
+local<font color="#E5E5E5"> file inclusion and explore things</font>
+
+87
+00:03:59,459 --> 00:04:03,510
+in this in this website<font color="#E5E5E5"> and this web</font>
+
+88
+00:04:03,510 --> 00:04:05,459
+server<font color="#E5E5E5"> this is actually pretty dangerous</font>
+
+89
+00:04:05,459 --> 00:04:08,760
+especially<font color="#CCCCCC"> if we get to like the current</font>
+
+90
+00:04:08,760 --> 00:04:10,590
+<font color="#CCCCCC">process if we</font><font color="#E5E5E5"> can get the</font><font color="#CCCCCC"> process ID</font>
+
+91
+00:04:10,590 --> 00:04:13,760
+<font color="#CCCCCC">I think it's proc</font><font color="#E5E5E5"> self</font><font color="#CCCCCC"> right</font>
+
+92
+00:04:13,760 --> 00:04:16,798
+<font color="#CCCCCC">command-line</font><font color="#E5E5E5"> maybe that</font><font color="#CCCCCC"> will yeah we can</font>
+
+93
+00:04:16,798 --> 00:04:18,540
+<font color="#E5E5E5">see like</font><font color="#CCCCCC"> okay how is</font><font color="#E5E5E5"> this command</font>
+
+94
+00:04:18,540 --> 00:04:21,660
+started<font color="#E5E5E5"> what memory Maps does that have</font>
+
+95
+00:04:21,660 --> 00:04:26,720
+open the proc self check this out in
+
+96
+00:04:26,720 --> 00:04:33,110
+<font color="#E5E5E5">a</font><font color="#CCCCCC"> command line</font><font color="#E5E5E5"> proc self</font><font color="#CCCCCC"> file system</font>
+
+97
+00:04:33,110 --> 00:04:35,300
+<font color="#CCCCCC">that directory</font><font color="#E5E5E5"> will let you see really</font>
+
+98
+00:04:35,300 --> 00:04:37,580
+<font color="#CCCCCC">interesting things for how the program</font>
+
+99
+00:04:37,580 --> 00:04:39,290
+<font color="#CCCCCC">is</font><font color="#E5E5E5"> being</font><font color="#CCCCCC"> run so since I patchy is</font>
+
+100
+00:04:39,290 --> 00:04:41,090
+serving this<font color="#CCCCCC"> webpage we're seeing</font><font color="#E5E5E5"> how</font>
+
+101
+00:04:41,090 --> 00:04:43,100
+Apache was started with that<font color="#CCCCCC"> but</font>
+
+102
+00:04:43,100 --> 00:04:44,900
+<font color="#E5E5E5">whatever we want to get to the password</font>
+
+103
+00:04:44,900 --> 00:04:46,550
+<font color="#CCCCCC">we want to get to what we're</font><font color="#E5E5E5"> really</font>
+
+104
+00:04:46,550 --> 00:04:49,430
+looking forward to<font color="#CCCCCC"> move on in natus so</font>
+
+105
+00:04:49,430 --> 00:04:53,180
+let's try this<font color="#E5E5E5"> let's</font><font color="#CCCCCC"> use that attack</font>
+
+106
+00:04:53,180 --> 00:04:56,720
+<font color="#CCCCCC">local file inclusion with it set run at</font>
+
+107
+00:04:56,720 --> 00:04:58,780
+<font color="#CCCCCC">us web</font><font color="#E5E5E5"> past</font><font color="#CCCCCC"> eight and at its eight and</font>
+
+108
+00:04:58,780 --> 00:05:00,890
+we've got<font color="#E5E5E5"> it right</font><font color="#CCCCCC"> here</font>
+
+109
+00:05:00,890 --> 00:05:04,790
+cool we leaked out the<font color="#E5E5E5"> password so how</font>
+
+110
+00:05:04,790 --> 00:05:09,710
+can we steal this<font color="#E5E5E5"> with a</font><font color="#CCCCCC"> regular</font>
+
+111
+00:05:09,710 --> 00:05:10,730
+<font color="#CCCCCC">expression content</font>
+
+112
+00:05:10,730 --> 00:05:15,350
+let's go probably<font color="#CCCCCC"> a new line character</font>
+
+113
+00:05:15,350 --> 00:05:22,570
+<font color="#CCCCCC">between</font><font color="#E5E5E5"> a break newline character</font>
+
+114
+00:05:22,570 --> 00:05:27,230
+<font color="#CCCCCC">newline character and then the hint</font><font color="#E5E5E5"> sort</font>
+
+115
+00:05:27,230 --> 00:05:30,680
+<font color="#E5E5E5">of the hint comments let's see if that</font>
+
+116
+00:05:30,680 --> 00:05:37,010
+<font color="#CCCCCC">will actually return for</font><font color="#E5E5E5"> us will that</font>
+
+117
+00:05:37,010 --> 00:05:39,140
+get it it will awesome so the<font color="#CCCCCC"> newline</font>
+
+118
+00:05:39,140 --> 00:05:40,280
+<font color="#E5E5E5">character is just representing the</font>
+
+119
+00:05:40,280 --> 00:05:43,640
+breaks<font color="#E5E5E5"> in the text there and retrieve</font>
+
+120
+00:05:43,640 --> 00:05:47,030
+everything and use<font color="#E5E5E5"> HTML comments note to</font>
+
+121
+00:05:47,030 --> 00:05:49,070
+say that<font color="#E5E5E5"> we this is the very end of</font><font color="#CCCCCC"> or</font>
+
+122
+00:05:49,070 --> 00:05:52,340
+<font color="#E5E5E5">trying to</font><font color="#CCCCCC"> reach great so that's how we</font>
+
+123
+00:05:52,340 --> 00:05:54,919
+stole the password<font color="#E5E5E5"> using</font><font color="#CCCCCC"> some local</font><font color="#E5E5E5"> file</font>
+
+124
+00:05:54,919 --> 00:05:56,690
+inclusions and legitimate vulnerability
+
+125
+00:05:56,690 --> 00:05:58,640
+<font color="#CCCCCC">in a lot of</font><font color="#E5E5E5"> web servers on</font><font color="#CCCCCC"> what web</font>
+
+126
+00:05:58,640 --> 00:06:00,680
+applications doesn't have a whole<font color="#E5E5E5"> lot of</font>
+
+127
+00:06:00,680 --> 00:06:02,600
+<font color="#E5E5E5">security or mitigation techniques to</font>
+
+128
+00:06:02,600 --> 00:06:04,370
+prevent<font color="#E5E5E5"> it because most commonly you'll</font>
+
+129
+00:06:04,370 --> 00:06:06,169
+see<font color="#E5E5E5"> websites that will try and filter</font>
+
+130
+00:06:06,169 --> 00:06:09,020
+<font color="#CCCCCC">out these period periods or do kind of</font>
+
+131
+00:06:09,020 --> 00:06:12,020
+peculiar things<font color="#E5E5E5"> and how we can load</font><font color="#CCCCCC"> some</font>
+
+132
+00:06:12,020 --> 00:06:13,520
+<font color="#CCCCCC">of the files or try and</font><font color="#E5E5E5"> protect those</font>
+
+133
+00:06:13,520 --> 00:06:15,710
+<font color="#E5E5E5">things but obviously</font><font color="#CCCCCC"> local</font><font color="#E5E5E5"> file</font>
+
+134
+00:06:15,710 --> 00:06:17,479
+inclusion is a really bad vulnerability
+
+135
+00:06:17,479 --> 00:06:19,790
+to begin with but it's pretty cool<font color="#E5E5E5"> so</font>
+
+136
+00:06:19,790 --> 00:06:22,880
+alright thanks for watching this<font color="#E5E5E5"> guy</font><font color="#CCCCCC"> wow</font>
+
+137
+00:06:22,880 --> 00:06:23,870
+<font color="#E5E5E5">I don't</font><font color="#CCCCCC"> even know what I just said</font>
+
+138
+00:06:23,870 --> 00:06:27,590
+thanks for<font color="#E5E5E5"> watching this video guys same</font>
+
+139
+00:06:27,590 --> 00:06:30,890
+gonna send<font color="#E5E5E5"> a lot of words</font><font color="#CCCCCC"> hope you guys</font>
+
+140
+00:06:30,890 --> 00:06:32,120
+<font color="#E5E5E5">are enjoying the series hope it's pretty</font>
+
+141
+00:06:32,120 --> 00:06:33,380
+cool<font color="#E5E5E5"> hope you're</font><font color="#CCCCCC"> doing some neat hacker</font>
+
+142
+00:06:33,380 --> 00:06:35,990
+things<font color="#E5E5E5"> and cyber skills and sublime text</font>
+
+143
+00:06:35,990 --> 00:06:37,760
+<font color="#E5E5E5">and Python but I'll see you in later</font>
+
+144
+00:06:37,760 --> 00:00:00,000
+<font color="#E5E5E5">video</font>
+
